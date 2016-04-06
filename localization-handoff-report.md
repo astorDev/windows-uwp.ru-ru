@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\packaging\app-capability-declarations.md](https://github.com/Microsoft/windows-apps/blob/cf423961378c635ced07faed6494c21b79301a13/windows-apps-src/packaging/app-capability-declarations.md) | HandedOffSuccess | [Details](#a5e5ea1140b58d83ae1e80742293cb5de8fd83b23259)
+ [windows-apps-src\publish\package-version-numbering.md](https://github.com/Microsoft/windows-apps/blob/6faa6d7209ac102c2f6ed242cfa0211663c5ef1a/windows-apps-src/publish/package-version-numbering.md) | HandedOffSuccess | [Details](#c7dc934adf386cde27f1fbe4d885b65c45e659793417)
 
 ## Item Details
-##### <a name='a5e5ea1140b58d83ae1e80742293cb5de8fd83b23259'></a> Source: [windows-apps-src\packaging\app-capability-declarations.md](https://github.com/Microsoft/windows-apps/blob/cf423961378c635ced07faed6494c21b79301a13/windows-apps-src/packaging/app-capability-declarations.md)
+##### <a name='c7dc934adf386cde27f1fbe4d885b65c45e659793417'></a> Source: [windows-apps-src\publish\package-version-numbering.md](https://github.com/Microsoft/windows-apps/blob/6faa6d7209ac102c2f6ed242cfa0211663c5ef1a/windows-apps-src/publish/package-version-numbering.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/976c860ac563709a8062693bf7117b4df323e505/ol-handoff/Microsoft/windows-apps.ru-ru/master/app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.ru-ru.xlf)
-* Handoff Datetime: 2016-04-06 21:33:44
+* Handoff File: [package-version-numbering.d96c46cce07bde4de60c6fdd94923f98f423e4cd.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/d3ace6094f76c590a5fc71e3f40149bb9f317136/ol-handoff/Microsoft/windows-apps.ru-ru/master/package-version-numbering.d96c46cce07bde4de60c6fdd94923f98f423e4cd.ru-ru.xlf)
+* Handoff Datetime: 2016-04-06 23:33:36
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
