@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "b48716b79fae98ea5ef94085d6640093ff1946eb",
+  "LastProcessedCommit": "fa28f3dc396e47dbdc6ac97efb0dbdfcc10a2e92",
   "LastTranslatedCommit": null,
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -61038,6 +61038,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ru-ru\\master\\TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf",
       "HandoffFileCommit": "21ed9f7ec180511c2d1afd58f73916a79f1e7482",
       "HandoffDateTime": "2016-04-07T22:38:25.4901581Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "24edb831f1a5639ef861c196d6c8c74ebaf6e375": {
+      "FileHash": "24edb831f1a5639ef861c196d6c8c74ebaf6e375",
+      "SourceFileCommit": "fa28f3dc396e47dbdc6ac97efb0dbdfcc10a2e92",
+      "SourceFilePath": "windows-apps-src\\porting\\desktop-to-uwp-root.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ru-ru\\master\\desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ru-ru.xlf",
+      "HandoffFileCommit": "0b73b19acf4a1ffdca6accf1c4e2a8b853761147",
+      "HandoffDateTime": "2016-04-07T23:38:24.0265653Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
