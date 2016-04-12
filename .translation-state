@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "18e4b9b39540525a210786b6f7ce0ceb47412379",
+  "LastProcessedCommit": "00a89155136cd754d7f9b60a4c7d969688a492d9",
   "LastTranslatedCommit": null,
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -61998,6 +61998,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ru-ru\\master\\index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ru-ru.xlf",
       "HandoffFileCommit": "ecb84a69a23a5a3cb165d9a51f4820e1b2e614b3",
       "HandoffDateTime": "2016-04-12T20:06:15.2726715Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "515edfea148f0c677ed544feb1f5d5f1b6311b26": {
+      "FileHash": "515edfea148f0c677ed544feb1f5d5f1b6311b26",
+      "SourceFileCommit": "00a89155136cd754d7f9b60a4c7d969688a492d9",
+      "SourceFilePath": "windows-apps-src\\files\\quickstart-listing-files-and-folders.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\files\\quickstart-listing-files-and-folders.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ru-ru\\master\\quickstart-listing-files-and-folders.8e017a17f24a62b887486336251317a846ccb099.ru-ru.xlf",
+      "HandoffFileCommit": "a151223f66a7c27309acf2f8cfd654298cfcf468",
+      "HandoffDateTime": "2016-04-12T22:07:58.404762Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
