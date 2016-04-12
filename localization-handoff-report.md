@@ -1,45 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\getting-started-creating-a-project.md](https://github.com/Microsoft/windows-apps/blob/592201a14f2cccfcb8db962f25633af855f2a3a1/windows-apps-src/porting/getting-started-creating-a-project.md) | HandedOffSuccess | [Details](#6f6226ca3e4d50e1a8cd206e0c044148325770843278)
- [windows-apps-src\porting\getting-started-what-next.md](https://github.com/Microsoft/windows-apps/blob/592201a14f2cccfcb8db962f25633af855f2a3a1/windows-apps-src/porting/getting-started-what-next.md) | HandedOffSuccess | [Details](#dcbbc69eda6ee11c0b03f76a3e9ec6826f83a2333281)
- [windows-apps-src\porting\getting-started-with-uwp-for-ios-developers.md](https://github.com/Microsoft/windows-apps/blob/592201a14f2cccfcb8db962f25633af855f2a3a1/windows-apps-src/porting/getting-started-with-uwp-for-ios-developers.md) | HandedOffSuccess | [Details](#7e0842c010f733558436564d0aa9f5a09fca22393282)
+ [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/18e4b9b39540525a210786b6f7ce0ceb47412379/windows-apps-src/xbox-apps/index.md) | HandedOffSuccess | [Details](#03e28c2cd6a3e2e26a97c436680843b80c7d67f23730)
 
 ## Item Details
-##### <a name='6f6226ca3e4d50e1a8cd206e0c044148325770843278'></a> Source: [windows-apps-src\porting\getting-started-creating-a-project.md](https://github.com/Microsoft/windows-apps/blob/592201a14f2cccfcb8db962f25633af855f2a3a1/windows-apps-src/porting/getting-started-creating-a-project.md)
+##### <a name='03e28c2cd6a3e2e26a97c436680843b80c7d67f23730'></a> Source: [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/18e4b9b39540525a210786b6f7ce0ceb47412379/windows-apps-src/xbox-apps/index.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [getting-started-creating-a-project.e30ff7f8da2e17d37bb700e98bb864d5db3d4001.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/01172f12e2fd60e4baf5323f662eb13227f57c2f/ol-handoff/Microsoft/windows-apps.ru-ru/master/getting-started-creating-a-project.e30ff7f8da2e17d37bb700e98bb864d5db3d4001.ru-ru.xlf)
-* Handoff Datetime: 2016-04-12 18:35:54
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='dcbbc69eda6ee11c0b03f76a3e9ec6826f83a2333281'></a> Source: [windows-apps-src\porting\getting-started-what-next.md](https://github.com/Microsoft/windows-apps/blob/592201a14f2cccfcb8db962f25633af855f2a3a1/windows-apps-src/porting/getting-started-what-next.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [getting-started-what-next.ecd0afbdc8655298b5947469bb7c882adb3b3a4a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/01172f12e2fd60e4baf5323f662eb13227f57c2f/ol-handoff/Microsoft/windows-apps.ru-ru/master/getting-started-what-next.ecd0afbdc8655298b5947469bb7c882adb3b3a4a.ru-ru.xlf)
-* Handoff Datetime: 2016-04-12 18:35:54
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='7e0842c010f733558436564d0aa9f5a09fca22393282'></a> Source: [windows-apps-src\porting\getting-started-with-uwp-for-ios-developers.md](https://github.com/Microsoft/windows-apps/blob/592201a14f2cccfcb8db962f25633af855f2a3a1/windows-apps-src/porting/getting-started-with-uwp-for-ios-developers.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [getting-started-with-uwp-for-ios-developers.232ccd678509802266c1b48e1aec04371c9f4ae4.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/01172f12e2fd60e4baf5323f662eb13227f57c2f/ol-handoff/Microsoft/windows-apps.ru-ru/master/getting-started-with-uwp-for-ios-developers.232ccd678509802266c1b48e1aec04371c9f4ae4.ru-ru.xlf)
-* Handoff Datetime: 2016-04-12 18:35:54
+* Handoff File: [index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/ecb84a69a23a5a3cb165d9a51f4820e1b2e614b3/ol-handoff/Microsoft/windows-apps.ru-ru/master/index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ru-ru.xlf)
+* Handoff Datetime: 2016-04-12 20:06:15
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
