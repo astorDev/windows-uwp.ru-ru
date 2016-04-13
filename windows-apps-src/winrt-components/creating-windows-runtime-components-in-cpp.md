@@ -1,0 +1,601 @@
+---
+title: Создание компонентов среды выполнения Windows на C++
+description: В этой статье описывается использование C++ для создания компонента среды выполнения Windows, представляющего собой библиотеку DLL, которую можно вызывать из универсального приложения для Windows, созданного с помощью JavaScript, а также C#, Visual Basic или C++.
+ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
+---
+
+
+# Создание компонентов среды выполнения Windows на C++
+
+
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+
+\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
+
+В этой статье описывается использование C++ для создания компонента среды выполнения Windows, представляющего собой библиотеку DLL, которую можно вызывать из универсального приложения для Windows, созданного с помощью JavaScript, C#, Visual Basic или C++.
+
+Вот несколько причин для создания такого компонента.
+
+-   Использование повышенной производительности C++ при сложных или требующих большого объема вычислений операциях.
+
+-   Повторное использование уже написанного и протестированного кода.
+
+При создании решения, содержащего проект JavaScript или .NET и проект компонента среды выполнения Windows, файлы проекта JavaScript и скомпилированная библиотека DLL объединяются в один пакет, отладку которого вы можете выполнить локально в имитаторе или удаленно на связанном устройстве. Вы также можете распространять проект компонента отдельно в виде пакета SDK расширения. Дополнительную информацию см. в разделе [Создание пакета средств разработки](https://msdn.microsoft.com/library/hh768146.aspx).
+
+При написании кода компонента C++, как правило, используются обычная библиотека C++ и встроенные типы, за исключением границы абстрактного двоичного интерфейса (ABI), через которую происходит обмен данными и кодом с другим пакетом .winmd. Здесь используются типы среды выполнения Windows и специальный синтаксис, поддерживаемый средой Visual C++ для создания этих типов и управления ими. Кроме того, в коде Visual C++ используйте такие типы, как delegate и event, для реализации событий, которые можно инициировать из компонента и обрабатывать на языке JavaScript, Visual Basic или C#. Дополнительные сведения о новом синтаксисе Visual C++ см. в разделе [ Справочник по языку C++ (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
+
+## Регистр символов и правила именования
+
+
+### JavaScript
+
+В языке JavaScript учитывается регистр символов. Поэтому необходимо следовать следующим соглашениям об использовании регистров.
+
+-   При создании ссылок на пространства имен и классы C++ используйте тот же стиль, который используется в C++.
+-   При вызове методов используйте "верблюжий" стиль, даже если в компоненте C++ имя метода написано прописными буквами. Например, метод GetDate() C++ следует вызывать из JavaScript как getDate().
+-   Активируемые имена классов и пространств имен не могут содержать символы Юникода.
+
+### .NET
+
+В языках .NET действуют их обычные правила использования регистров.
+
+## Создание экземпляра объекта
+
+
+Через границу интерфейса ABI можно передавать только типы среды выполнения Windows. Если компонент содержит тип, подобный std::wstring в качестве возвращаемого типа или параметра открытого метода, компилятор создает ошибку. Встроенные типы Расширений компонентов Visual C++ (C++/CX) содержат обычные скаляры, такие как int и double, а также их эквиваленты typedef — int32, float64 и т. д. Дополнительные сведения см. в разделе [Система типов (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
+
+```cpp
+// ref class definition in C++
+public ref class SampleRefClass sealed
+{
+    // Class members...
+
+    // #include <valarray>
+public:
+    double LogCalc(double input)
+    {
+        // Use C++ standard library as usual.
+        return std::log(input); 
+    }
+
+};
+```
+
+```javascript
+//Instantiation in JavaScript (requires "Add reference > Project reference")
+var nativeObject = new CppComponent.SampleRefClass();
+```
+
+```csharp
+//Call a method and display result in a XAML TextBlock
+var num = nativeObject.LogCalc(21.5);
+ResultText.Text = num.ToString();
+```
+
+## Встроенные типы C++, типы библиотек и типы среды выполнения Windows
+
+
+Экземпляр активируемого класса (также называемого классом ссылки) может быть создан из другого языка, например из JavaScript, C# или Visual Basic. Чтобы компонент можно было использовать в другом языке, он должен содержать по крайней мере один активируемый класс.
+
+Компонент среды выполнения Windows может содержать несколько открытых активируемых классов, а также дополнительные классы, которые доступны только для внутреннего использования в компоненте. К типам C++, которые не предназначены для использования из JavaScript, необходимо применить атрибут [WebHostHidden](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx).
+
+Все открытые классы должны располагаться в одном и том же корневом пространстве имен, имя которого совпадает с именем файла метаданных компонента. Например, экземпляр класса с именем A.B.C.MyClass может быть создан, только если он определен в файле метаданных с именем A.winmd, A.B.winmd или A.B.C.winmd. Имя DLL-файла не обязательно должно соответствовать имени WINMD-файла.
+
+Клиентский код создает экземпляр компонента с помощью ключевого слова **new** (**New** в Visual Basic) точно так же, как для любого другого класса.
+
+Активируемый класс должен быть объявлен как **открытый запечатанный класс ссылки**. Ключевое слово **ref class** указывает компилятору, что нужно создать класс как тип, совместимый со средой выполнения Windows, а ключевое слово sealed запрещает наследование от этого класса. Среда выполнения Windows в настоящее время не поддерживает обобщенную модель наследования; ограниченная модель наследования поддерживает создание пользовательских элементов управления XAML. Дополнительные сведения см. в разделе [Классы и структуры ссылки (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx).
+
+В C++ все числовые примитивы определяются в пространстве имен по умолчанию. Пространство имен [Platform](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) содержит классы C++, относящиеся к системе типов среды выполнения Windows. К ним относятся классы [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) и [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx). Конкретные типы коллекций, такие как [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) и [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx), определяются в пространстве имен [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx). Открытые интерфейсы, реализуемые этими типами, определяются в пространстве имен [Windows::Foundation::Collections (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx). Именно эти типы интерфейсов используются кодом JavaScript, C# и Visual Basic. Дополнительные сведения см. в разделе [Система типов (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
+
+## Метод, возвращающий значение встроенного типа
+
+```cpp
+    // #include <valarray>
+public:
+    double LogCalc(double input)
+    {
+        // Use C++ standard library as usual.
+        return std::log(input); 
+    }
+```
+
+```javascript
+//Call a method
+var nativeObject = new CppComponent.SampleRefClass;
+var num = nativeObject.logCalc(21.5);
+document.getElementById('P2').innerHTML = num;
+```
+
+## Метод, возвращающий пользовательскую структуру значения
+
+```cpp
+namespace CppComponent
+{
+    // Custom struct
+    public value struct PlayerData
+    {
+        Platform::String^ Name;
+        int Number;
+        double ScoringAverage;
+    };
+
+    public ref class Player sealed
+    {
+    private:
+        PlayerData m_player;
+    public:
+        property PlayerData PlayerStats 
+        {
+            PlayerData get(){ return m_player; }
+            void set(PlayerData data) {m_player = data;}
+        }
+    };
+}
+```
+
+Для передачи определяемых пользователем структур значений через интерфейс ABI определите объект JavaScript, который содержит те же члены, что и структура значения, определенная в C++. Затем можно передать этот объект в качестве аргумента методу C++, чтобы объект был неявно преобразован в тип C++.
+
+```javascript
+// Get and set the value struct
+function GetAndSetPlayerData() {
+    // Create an object to pass to C++
+    var myData =
+        { name: "Bob Homer", number: 12, scoringAverage: .357 };
+    var nativeObject = new CppComponent.Player();
+    nativeObject.playerStats = myData;
+
+    // Retrieve C++ value struct into new JavaScript object
+    var myData2 = nativeObject.playerStats;
+    document.getElementById('P3').innerHTML = myData.name + " , " + myData.number + " , " + myData.scoringAverage.toPrecision(3);
+}
+```
+
+Другой способ состоит в определении класса, который реализует интерфейс IPropertySet (не показан).
+
+В языках .NET достаточно просто создать переменную типа, определенного в компоненте C++.
+
+```csharp
+private void GetAndSetPlayerData()
+{
+    // Create a ref class
+    var player = new CppComponent.Player();
+
+    // Create a variable of a value struct
+    // type that is defined in C++
+    CppComponent.PlayerData myPlayer;
+    myPlayer.Name = "Babe Ruth";
+    myPlayer.Number = 12;
+    myPlayer.ScoringAverage = .398;
+
+    // Set the property
+    player.PlayerStats = myPlayer;
+
+    // Get the property and store it in a new variable
+    CppComponent.PlayerData myPlayer2 = player.PlayerStats;
+    ResultText.Text += myPlayer.Name + " , " + myPlayer.Number.ToString() +
+        " , " + myPlayer.ScoringAverage.ToString();
+}
+```
+
+## Перегруженные методы
+
+
+Открытый класс ссылки C++ может содержать перегруженные методы, но в JavaScript возможности распознавания перегруженных методов ограничены. Например, он может найти разницу между следующими сигнатурами:
+
+```cpp
+public ref class NumberClass sealed 
+{
+public:
+    int GetNumber(int i);
+    int GetNumber(int i, Platform::String^ str);
+    double GetNumber(int i, MyData^ d);
+};
+```
+
+Однако ему не удастся найти разницу между следующими:
+
+```cpp
+int GetNumber(int i);
+double GetNumber(double d);
+```
+
+В случаях неоднозначности можно добиться того, что код JavaScript всегда будет вызывать конкретную перегрузку, применив атрибут [Windows::Foundation::Metadata::DefaultOverload](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) к сигнатуре метода в файле заголовка.
+
+Этот код JavaScript всегда вызывает перегрузку с атрибутом:
+
+```javascript
+var nativeObject = new CppComponent.NumberClass();
+var num = nativeObject.getNumber(9);
+document.getElementById('P4').innerHTML = num;
+```
+
+## .NET
+
+
+Языки .NET распознают перегруженные методы в классе ссылки C++, как и в любом другом классе .NET Framework.
+
+## DateTime
+
+В среде выполнения в Windows объект [Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/windows.foundation.datetime.aspx) является лишь 64-разрядным знаковым целым числом, представляющим количество 100-наносекундных интервалов до или после 1 января 1601 г. У объекта Windows:Foundation::DateTime нет методов. Вместо этого в каждом языке создается проекция DateTime, соответствующая этому языку: объект Date в JavaScript и типы System.DateTime и System.DateTimeOffset в .NET Framework.
+
+```cpp
+public  ref class MyDateClass sealed
+{
+public:
+    property Windows::Foundation::DateTime TimeStamp;
+    void SetTime(Windows::Foundation::DateTime dt)
+    {
+        auto cal = ref new Windows::Globalization::Calendar();
+        cal->SetDateTime(dt);
+        TimeStamp = cal->GetDateTime(); // or TimeStamp = dt;
+    }
+};
+```
+
+При передаче значения DateTime из C++ в JavaScript код JavaScript принимает это значение в качестве объекта Date и отображает его по умолчанию как строку даты в полном формате.
+
+```javascript
+function SetAndGetDate() {
+    var nativeObject = new CppComponent.MyDateClass();
+
+    var myDate = new Date(1956, 4, 21);
+    nativeObject.setTime(myDate);
+
+    var myDate2 = nativeObject.timeStamp;
+
+    //prints long form date string
+    document.getElementById('P5').innerHTML = myDate2;
+
+}
+```
+
+Если язык .NET передает System.DateTime в компонент C++, метод принимает его как Windows::Foundation::DateTime. Когда компонент передает Windows::Foundation::DateTime методу .NET Framework, метод .NET Framework принимает его как DateTimeOffset.
+
+```csharp
+private void DateTimeExample()
+{
+    // Pass a System.DateTime to a C++ method
+    // that takes a Windows::Foundation::DateTime
+    DateTime dt = DateTime.Now;
+    var nativeObject = new CppComponent.MyDateClass();
+    nativeObject.SetTime(dt);
+
+    // Retrieve a Windows::Foundation::DateTime as a
+    // System.DateTimeOffset
+    DateTimeOffset myDate = nativeObject.TimeStamp;
+
+    // Print the long-form date string
+    ResultText.Text += myDate.ToString();
+}
+```
+
+## Коллекции и массивы
+
+
+Коллекции всегда передаются через границу ABI в виде дескрипторов типов среды выполнения Windows, таких как Windows::Foundation::Collections::IVector^ и Windows::Foundation::Collections::IMap^. Например, если возвращается дескриптор типа Platform::Collections::Map, он будет неявно преобразован в Windows::Foundation::Collections::IMap^. Интерфейсы коллекций определяются в пространстве имен, отдельном от классов C++, которые предоставляют конкретные реализации. Эти интерфейсы используются в языках JavaScript и .NET. Дополнительные сведения см. в разделах [Коллекции (C++/CX)](https://msdn.microsoft.com//library/windows/apps/hh700103.aspx) и [Классы Array и WriteOnlyArray (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh700131.aspx).
+
+## Передача IVector
+
+
+```cpp
+// Windows::Foundation::Collections::IVector across the ABI.
+//#include <algorithm>
+//#include <collection.h>
+Windows::Foundation::Collections::IVector<int>^ SortVector(Windows::Foundation::Collections::IVector<int>^ vec)
+{
+    std::sort(begin(vec), end(vec));
+    return vec;
+}
+```
+
+```javascript
+var nativeObject = new CppComponent.CollectionExample();
+// Call the method to sort an integer array
+var inVector = [14, 12, 45, 89, 23];
+var outVector = nativeObject.sortVector(inVector);
+var result = "Sorted vector to array:";
+for (var i = 0; i < outVector.length; i++)
+{
+    outVector[i];
+    result += outVector[i].toString() + ",";
+}
+document.getElementById('P6').innerHTML = result;
+```
+
+В языках .NET IVector&lt;T&gt; представляется как IList&lt;T&gt;.
+
+```csharp
+private void SortListItems()
+{
+    IList<int> myList = new List<int>();
+    myList.Add(5);
+    myList.Add(9);
+    myList.Add(17);
+    myList.Add(2);
+
+    var nativeObject = new CppComponent.CollectionExample();
+    IList<int> mySortedList = nativeObject.SortVector(myList);
+
+    foreach (var item in mySortedList)
+    {
+        ResultText.Text += " " + item.ToString();
+    }
+}
+```
+
+## Передача IMap
+
+
+```cpp
+// #include <map>
+//#include <collection.h>
+Windows::Foundation::Collections::IMap<int, Platform::String^> ^GetMap(void)
+{    
+    Windows::Foundation::Collections::IMap<int, Platform::String^> ^ret = 
+        ref new Platform::Collections::Map<int, Platform::String^>;
+    ret->Insert(1, "One ");
+    ret->Insert(2, "Two ");
+    ret->Insert(3, "Three ");
+    ret->Insert(4, "Four ");
+    ret->Insert(5, "Five ");
+    return ret;
+}
+```
+
+```javascript
+// Call the method to get the map
+var outputMap = nativeObject.getMap();
+var mStr = "Map result:" + outputMap.lookup(1) + outputMap.lookup(2)
+    + outputMap.lookup(3) + outputMap.lookup(4) + outputMap.lookup(5);
+document.getElementById('P7').innerHTML = mStr;
+```
+
+В языках .NET IMap представляется как IDictionary&lt;K, V&gt;.
+
+```csharp
+private void GetDictionary()
+{
+    var nativeObject = new CppComponent.CollectionExample();
+    IDictionary<int, string> d = nativeObject.GetMap();
+    ResultText.Text += d[2].ToString();
+}
+```
+
+## Свойства
+
+
+Открытый класс ссылки в расширениях компонентов Visual C++ предоставляет открытые элементы данных как свойства с помощью ключевого слова property. Это понятие идентично свойствам в .NET Framework. Простое свойство похоже на элемент данных, поскольку его функциональность является неявной. Нетривиальное свойство имеет явные методы доступа get и set и закрытую переменную с именем, которая является «резервным хранилищем» для значения. В этом примере закрытая переменная-член \_propertyAValue является резервным хранилищем для свойства PropertyA. Свойство может инициировать событие при изменении значения свойства, а клиентское приложение может зарегистрироваться для получения этого события.
+
+```cpp
+//Properties
+public delegate void PropertyChangedHandler(Platform::Object^ sender, int arg);
+public ref class PropertyExample  sealed
+{
+public:
+    PropertyExample(){}
+
+    // Event that is fired when PropertyA changes
+    event PropertyChangedHandler^ PropertyChangedEvent;
+
+    // Property that has custom setter/getter
+    property int PropertyA
+    {
+        int get() { return m_propertyAValue; }
+        void set(int propertyAValue) 
+        {
+            if (propertyAValue != m_propertyAValue)
+            {
+                m_propertyAValue = propertyAValue;
+                // Fire event. (See event example below.)
+                PropertyChangedEvent(this, propertyAValue);
+            }
+        }
+    }
+
+    // Trivial get/set property that has a compiler-generated backing store.
+    property Platform::String^ PropertyB;
+
+private:
+    // Backing store for propertyA.
+    int m_propertyAValue;
+};
+```
+
+```javascript
+var nativeObject = new CppComponent.PropertyExample();
+var propValue = nativeObject.propertyA;
+document.getElementById('P8').innerHTML = propValue;
+
+//Set the string property
+nativeObject.propertyB = "What is the meaning of the universe?";
+document.getElementById('P9').innerHTML += nativeObject.propertyB;
+```
+
+В языках .NET обращение к свойствам неуправляемого объекта C++ происходит так, как если бы это был объект .NET Framework.
+
+```csharp
+private void GetAProperty()
+{
+    // Get the value of the integer property
+    // Instantiate the C++ object
+    var obj = new CppComponent.PropertyExample();
+
+    // Get an integer property
+    var propValue = obj.PropertyA;
+    ResultText.Text += propValue.ToString();
+
+    // Set a string property
+    obj.PropertyB = " What is the meaning of the universe?";
+    ResultText.Text += obj.PropertyB;
+
+}
+```
+
+## Делегаты и события
+
+
+Делегат — это тип среды выполнения Windows, представляющий объект функции. Делегаты можно использовать в связи с событиями, обратными вызовами и асинхронными вызовами методов, чтобы задать действие, которое будет выполнено позже. Подобно объекту функции, делегат обеспечивает безопасность типа, позволяя компилятору проверять тип возвращаемого значения и типы параметров функции. Объявление делегата напоминает сигнатуру функции, реализация аналогична определению класса, а его вызов похож на вызов функции.
+
+## Добавление прослушивателя событий
+
+
+Можно использовать ключевое слово event для объявления открытого члена конкретного типа делегата. Клиентский код подписывается на событие с помощью стандартных механизмов, которые содержатся в используемом языке.
+
+```cpp
+public:
+    event SomeHandler^ someEvent;
+```
+
+В этом примере используется тот же код C++, что и в предыдущем разделе, посвященном свойствам.
+
+```javascript
+function Button_Click() {
+    var nativeObj = new CppComponent.PropertyExample();
+    // Define an event handler method
+    var singlecasthandler = function (ev) {
+        document.getElementById('P10').innerHTML = "The button was clicked and the value is " + ev;
+    };
+
+    // Subscribe to the event
+    nativeObj.onpropertychangedevent = singlecasthandler;
+
+    // Set the value of the property and fire the event
+    var propValue = 21;
+    nativeObj.propertyA = 2 * propValue;
+
+}
+```
+
+В языках .NET подписка на событие в компоненте C++ не отличается от подписки на событие в классе .NET Framework:
+
+```csharp
+//Subscribe to event and call method that causes it to be fired.
+private void TestMethod()
+{
+    var objWithEvent = new CppComponent.PropertyExample();
+    objWithEvent.PropertyChangedEvent += objWithEvent_PropertyChangedEvent;
+
+    objWithEvent.PropertyA = 42;
+}
+
+//Event handler method
+private void objWithEvent_PropertyChangedEvent(object __param0, int __param1)
+{
+    ResultText.Text = "the event was fired and the result is " +
+         __param1.ToString();
+}
+```
+
+## Добавление нескольких прослушивателей событий для одного события
+
+
+В JavaScript имеется метод addEventListener, который позволяет нескольким обработчикам подписываться на одно событие.
+
+```cpp
+public delegate void SomeHandler(Platform::String^ str);
+
+public ref class LangSample sealed
+{
+public:
+    event SomeHandler^ someEvent;
+    property Platform::String^ PropertyA;
+
+    // Method that fires an event
+    void FireEvent(Platform::String^ str)
+    {
+        someEvent(Platform::String::Concat(str, PropertyA->ToString()));
+    }
+    //...
+};
+```
+
+```javascript
+// Add two event handlers
+var multicast1 = function (ev) {
+    document.getElementById('P11').innerHTML = "Handler 1: " + ev.target;
+};
+var multicast2 = function (ev) {
+    document.getElementById('P12').innerHTML = "Handler 2: " + ev.target;
+};
+
+var nativeObject = new CppComponent.LangSample();
+//Subscribe to the same event
+nativeObject.addEventListener("someevent", multicast1);
+nativeObject.addEventListener("someevent", multicast2);
+
+nativeObject.propertyA = "42";
+
+// This method should fire an event
+nativeObject.fireEvent("The answer is ");
+```
+
+В C# любое количество обработчиков событий может подписаться на событие с помощью оператора +=, как показано в предыдущем примере.
+
+## Перечисления
+
+
+Перечисление среды выполнения Windows в C++ объявляется с использованием конструкции public class enum; оно похоже на перечисление с ограниченной областью в стандартном коде C++.
+
+```cpp
+public enum class Direction {North, South, East, West};
+
+public ref class EnumExampleClass sealed
+{
+public:
+    property Direction CurrentDirection
+    {
+        Direction  get(){return m_direction; }
+    }
+
+private:
+    Direction m_direction;
+};
+```
+
+Значения перечисления передаются между C++ и JavaScript как целые числа. При необходимости можно объявить объект JavaScript, который содержит те же именованные значения, что и перечисление C++, а затем использовать его следующим образом.
+
+```javascript
+var Direction = { 0: "North", 1: "South", 2: "East", 3: "West" };
+//. . .
+
+var nativeObject = new CppComponent.EnumExampleClass();
+var curDirection = nativeObject.currentDirection;
+document.getElementById('P13').innerHTML =
+Direction[curDirection];
+```
+
+Перечисления поддерживаются как в C#, так и в Visual Basic. Эти языки обрабатывают открытый класс перечисления C++ так же, как и перечисление .NET Framework.
+
+## Асинхронные методы
+
+
+Чтобы использовать асинхронные методы, предоставляемые другими объектами среды выполнения Windows, используйте [класс task (среда выполнения с параллелизмом)](https://msdn.microsoft.com/library/hh750113.aspx). Дополнительные сведения см. в разделе [Параллелизм задач (среда выполнения с параллелизмом)](https://msdn.microsoft.com/library/dd492427.aspx).
+
+Для реализации асинхронных методов в C++ необходимо использовать функцию [create\_async](https://msdn.microsoft.com/library/hh750102.aspx), которая определена в файле ppltasks.h. Дополнительные сведения см. в разделе [Создание асинхронных операций на C++ для приложений Магазина Windows](https://msdn.microsoft.com/library/vstudio/hh750082.aspx). Пример см. в разделе [Пошаговое руководство: создание базового компонента среды выполнения Windows на C++ и его вызов из JavaScript или C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). В языках .NET асинхронные методы C++ используются так же, как и любые асинхронные методы, определенные в .NET Framework.
+
+## Исключения
+
+
+Можно создавать исключения любого типа, определенного в среде выполнения Windows. От типов исключений среды выполнения Windows нельзя наследовать пользовательские типы. Однако можно создать исключение COMException и предоставить пользовательский объект HRESULT, который может быть доступен для кода, перехватывающего исключение. Способы задания пользовательского сообщения в исключении COMException не предусмотрены.
+
+## Советы по отладке
+
+
+При отладке решения JavaScript, содержащего библиотеку DLL компонента, можно настроить отладчик для пошагового выполнения скрипта или машинного кода в компоненте, однако нельзя отлаживать эти части одновременно. Чтобы изменить этот параметр, разверните узел проекта JavaScript в обозревателе решений, а затем последовательно выберите пункты Свойства, Отладка, Тип отладчика.
+
+Обязательно выберите соответствующие возможности в конструкторе пакетов. Например, если вы пытаетесь открыть файл образа в библиотеке изображений пользователя с помощью интерфейсов API среды выполнения Windows, необходимо установить флажок Библиотека изображений в области Возможности конструктора манифестов.
+
+Если коду JavaScript не удается распознать открытые свойства или методы в компоненте, убедитесь, что в JavaScript используется "верблюжий" стиль имен. Например, метод LogCalc C++ следует вызывать из JavaScript как logCalc.
+
+При удалении проекта компонента среды выполнения Windows C++ из решения необходимо также вручную удалить ссылку на проект из проекта JavaScript. Невыполнение этого требования приведет к невозможности последующей отладки и сборки. При необходимости можно добавить ссылку на сборку в библиотеку DLL.
+
+## Ссылки по теме
+
+* [Пошаговое руководство: создание базового компонента среды выполнения Windows на C++ и его вызов из JavaScript или C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+
+
+
+<!--HONumber=Mar16_HO1-->
+
+

@@ -1,0 +1,131 @@
+---
+Description: Узнайте, как использовать плитки, индикаторы событий, всплывающие и простые уведомления, чтобы предоставлять точки входа в свои приложения и держать пользователей в курсе последних событий.
+title: Плитки, индикаторы событий и уведомления
+ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
+label: Плитки, индикаторы событий и уведомления
+template: detail.hbs
+---
+
+# Плитки, индикаторы событий и уведомления для приложений UWP
+
+
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+Узнайте, как использовать плитки, индикаторы событий, всплывающие и простые уведомления, чтобы предоставлять точки входа в свои приложения и держать пользователей в курсе последних событий.
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="images/tile-and-live-tile.png" alt="Breakdown of tile elements" /></td>
+<td align="left"><p>У каждого приложения имеется плитка. <em>Плитки</em> используются для представления приложений в меню "Пуск". Можно включить несколько размеров плиток (маленькая, средняя, широкая и большая). Можно использовать <em>уведомление на плитке</em>, чтобы сообщать пользователю новую информацию, например, заголовки новостей или тему последнего непрочитанного сообщения. Можно использовать <em>индикатор событий</em> или <em>индикатор событий-уведомлений</em> для предоставления сводной информации или информации о статусе в виде предоставленных системой глифов или числа от 1 до 99.</p>
+<p><em>Всплывающее уведомление</em> – это уведомление, которое ваше приложение отправляет пользователю с помощью элемента всплывающего пользовательского интерфейса под названием <em>всплывающее уведомление</em> (или <em>баннер</em>). Уведомление отображается независимо от того, включено ли приложение.</p>
+<p><em>Push-уведомление</em> или <em>необработанное уведомление</em> – это уведомление, отправляемое приложению из служб push-уведомлений Windows (WNS), или уведомление от фоновой задачи. Ваше приложение может реагировать на эти уведомления, либо сообщая пользователю о том, что произошло какое-то значимое событие (путем обновления индикатора событий, плитки или с помощью всплывающего уведомления), либо другим способом на ваш выбор.</p></td>
+</tr>
+</tbody>
+</table>
+
+ 
+## Плитки 
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Тема</th>
+<th align="left">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>[Create tiles](tiles-and-notifications-creating-tiles.md)</p></td>
+<td align="left"><p>Настройте стандартную плитку для своего приложения и предоставьте ресурсы для разных размеров экрана.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)</p></td>
+<td align="left"><p>Шаблоны адаптивных плиток — это новая возможность в Windows 10, которая позволяет создавать собственные уведомления плиток с помощью простого и гибкого языка разметки, который адаптируется к различной плотности экрана. В этой статье рассказывается, как создать адаптивные живые плитки для вашего приложения универсальной платформы Windows (UWP).</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md)</p></td>
+<td align="left"><p>Ниже приводится список элементов и атрибутов, используемых для создания этих плиток.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[Special tile templates](tiles-and-notifications-special-tile-templates-catalog.md)</p></td>
+<td align="left"><p>Специальные шаблоны плиток — это уникальные шаблоны, которые могут быть либо анимированными, либо предоставляют возможности, не поддерживаемые адаптивными плитками.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[App icon assets](tiles-and-notifications-app-assets.md)</p></td>
+<td align="left"><p>Ресурсы значков приложения, присутствующие в различных формах во всевозможных разделах операционной системы Windows 10, являются картами вызова приложения универсальной платформы для Windows (UWP). В данном руководстве рассказывается, где в системе расположены ресурсы значков приложений, а также приведены подробные советы по созданию безупречных значков.</p></td>
+</tr>
+</tbody>
+</table>
+
+## Уведомления
+
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Тема</th>
+<th align="left">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>[Adaptive and interactive toast notifications](tiles-and-notifications-adaptive-interactive-toasts.md)</p></td>
+<td align="left"><p>Функция адаптивных и интерактивных всплывающих уведомлений позволяет создавать удобные всплывающие уведомления с большим объемом содержимого, встроенными изображениями и дополнительными возможностями взаимодействия с пользователем.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[Notifications Visualizer](tiles-and-notifications-notifications-visualizer.md)</p></td>
+<td align="left"><p>Визуализатор уведомлений — это новое приложение универсальной платформы Windows (UWP) в [Магазине the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1), которое помогает разработчикам создавать адаптивные живые плитки для Windows 10.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[Choose a notification delivery method](tiles-and-notifications-choosing-a-notification-delivery-method.md)</p></td>
+<td align="left"><p>В этой статье рассматривается четыре варианта уведомлений локальные, запланированные, периодические и push-уведомления для доставки обновлений плиток и индикаторов событий, а также содержимого всплывающих уведомлений.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)</p></td>
+<td align="left"><p>В этой статье описывается, как с помощью шаблонов адаптивных плиток отправлять локальное уведомление на плитке на основную и вспомогательную плитку.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[Periodic notification overview](tiles-and-notifications-periodic-notification-overview.md)</p></td>
+<td align="left"><p>Периодические, или опросные, уведомления обновляют плитки и индикаторы событий через фиксированные интервалы, скачивая содержимое напрямую из облачной службы.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md)</p></td>
+<td align="left"><p>Службы push-уведомлений Windows (WNS) позволяют сторонним разработчикам отправлять обновления всплывающих уведомлений, плиток, индикаторов событий и необработанные обновления из своей облачной службы. Это обеспечивает энергоэффективный и надежный механизм передачи пользователям свежих обновлений.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[Code generated by the push notification wizard](tiles-and-notifications-the-code-generated-by-the-push-notification-wizard.md)</p></td>
+<td align="left"><p>С помощью мастера Visual Studio можно формировать push-уведомления из мобильной службы, созданной средствами мобильных служб Windows Azure. Мастер Visual Studio формирует код, облегчая начало работы. В этом разделе объясняется, как мастер изменяет ваш проект, что делает сформированный код, как его использовать и что надо сделать дальше для максимально полного использования преимуществ push-уведомлений. См. следующие разделы: [Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md).</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[Raw notification overview](tiles-and-notifications-raw-notification-overview.md)</p></td>
+<td align="left"><p>Необработанные уведомления представляют собой короткие push-уведомления общего характера. Они являются строго поясняющими и не включают компонент пользовательского интерфейса. Как и в случае других push-уведомлений, необработанные уведомления из облачной службы доставляются в ваше приложение с помощью функции WNS.</p></td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=Mar16_HO1-->
+
+

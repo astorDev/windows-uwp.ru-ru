@@ -1,0 +1,109 @@
+---
+ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
+description: В этой статье рассказывается, как использовать профили камеры для обнаружения возможностей различных устройств видеозахвата и управления ими.
+title: Профили камеры
+---
+
+# Профили камеры
+
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+
+В этой статье рассказывается, как использовать профили камеры для обнаружения возможностей различных устройств видеозахвата и управления ими.
+
+**Примечание.**  
+В этой статье используются понятия и код из статьи [Фото- и видеозахват с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md), в которой описаны этапы реализации основных принципов фото- и видеозахвата. Мы рекомендуем ознакомиться с базовым шаблоном захвата мультимедиа в этой статье, прежде чем перейти к более сложным сценариям захвата. Код в этой статье подразумевает, что ваше приложение уже содержит экземпляр MediaCapture, инициализированный надлежащим образом.
+
+ 
+
+## О профилях камеры
+
+Камеры на различных устройствах поддерживают разные возможности, в том числе позволяют использовать набор поддерживаемых разрешений захвата, определять частоту кадров видеозахвата, а также применять функцию HDR и видеозахвата с переменной частотой кадров (при наличии). С помощью инфраструктуры для захвата мультимедиа универсальной платформы Windows (UWP) этот набор возможностей сохраняется в профиле [**MediaCaptureVideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695). Профиль камеры, представленный объектом [**MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694), содержит три коллекции описания мультимедиа: для захвата фотографий, для видеозахвата и для предварительного просмотра видео.
+
+Перед инициализацией объекта [MediaCapture](capture-photos-and-video-with-mediacapture.md) вы можете отправить запрос в устройства захвата на текущем устройстве, чтобы узнать, какие профили поддерживаются. При выборе поддерживаемого профиля вы можете быть уверены, что устройство захвата поддерживает все возможности, указанные в описаниях мультимедиа профиля. Благодаря этому вам не понадобится методом проб и ошибок определять комбинации возможностей, поддерживаемых на определенном устройстве.
+
+В статье об основных способах захвата мультимедиа ([Фото- и видеозахват с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md)) класс [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573), который используется для инициализации захвата мультимедиа, создается только с помощью строки идентификатора устройства захвата. Это минимальный объем данных, необходимый для инициализации.
+
+[!code-cs[BasicInitExample](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetBasicInitExample)]
+
+Примеры кода в этой статье заменяют эту минимальную инициализацию функцией обнаружения профилей камеры с поддержкой нескольких возможностей, которые затем используются для инициализации устройства захвата мультимедиа.
+
+## Как найти видеоустройство с поддержкой профилей камеры
+
+Прежде чем выполнять поиск поддерживаемых профилей камеры, необходимо найти устройство захвата, которое поддерживает их использование. В приведенном ниже примере вспомогательный метод **GetVideoProfileSupportedDeviceIdAsync** предусматривает использование метода [**DeviceInformaion.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) для извлечения списка всех доступных устройств видеозахвата. Он перебирает все устройства в списке и с помощью статического метода [**IsVideoProfileSupported**](https://msdn.microsoft.com/library/windows/apps/dn926714) проверяет каждое устройство, чтобы определить, поддерживает ли оно профили видео. Кроме того, свойство [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) позволяет указать, какую камеру необходимо выбрать на каждом устройстве: переднюю или заднюю.
+
+Если устройство, поддерживающее профили камеры, находится на определенной панели, то возвращается значение [**Id**](https://msdn.microsoft.com/library/windows/apps/br225437), содержащее строку с идентификатором устройства.
+
+[!code-cs[GetVideoProfileSupportedDeviceIdAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetVideoProfileSupportedDeviceIdAsync)]
+
+Если вспомогательный метод **GetVideoProfileSupportedDeviceIdAsync** вместо идентификатора устройства возвращает значение null или пустую строку, значит на выбранной панели нет устройств, которые поддерживают профили камеры. В этом случае необходимо инициализировать устройство захвата мультимедиа без применения профилей.
+
+[!code-cs[GetDeviceWithProfileSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetDeviceWithProfileSupport)]
+
+## Как выбрать профиль в зависимости от поддерживаемого разрешения и частоты кадров
+
+Чтобы выбрать профиль с определенными функциями, например с возможностью достичь выбранного разрешения и частоты кадров, необходимо сначала вызвать указанный выше вспомогательный метод и с его помощью получить идентификатор устройства захвата с поддержкой профилей камеры.
+
+Создайте объект [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) с выбранным идентификатором устройства. Вызовите статический метод [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708), чтобы получить список всех профилей камеры, поддерживаемых устройством.
+
+В этом примере метод запроса Linq, содержащийся в пространстве имен **System.Linq**, используется для выбора профиля, содержащего объект [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705), свойства [**Width**](https://msdn.microsoft.com/library/windows/apps/dn926700), [**Height**](https://msdn.microsoft.com/library/windows/apps/dn926697), и [**FrameRate**](https://msdn.microsoft.com/library/windows/apps/dn926696) которого соответствуют запрошенным значениям. Если найдено соответствие, для свойств **MediaCaptureInitializationSettings** [**VideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926679) и [**RecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926678) задаются анонимные значения, возвращенные запросом Linq. Если совпадений не найдено, используется профиль по умолчанию.
+
+[!code-cs[FindWVGA30FPSProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindWVGA30FPSProfile)]
+
+После того как вы указали нужный профиль камеры в **MediaCaptureInitializationSettings**, просто вызовите метод [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) в объекте захвата мультимедиа, чтобы настроить этот параметр в профиле.
+
+[!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
+
+## Выбор профиля с поддержкой синхронного захвата
+
+Профили камеры можно использовать для того, чтобы определить, поддерживает ли устройство видеозахват одновременно с нескольких камер. В этом сценарии необходимо создать два набора объектов захвата: для передней и задней камеры. Для каждой камеры создайте **MediaCapture**, **MediaCaptureInitializationSettings** и строку для идентификатора устройства захвата. Кроме того, добавьте логическую переменную, которая будет отслеживать, поддерживается ли синхронный захват.
+
+[!code-cs[ConcurrencySetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConcurrencySetup)]
+
+Статический метод [**MediaCapture.FindConcurrentProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926709) возвращает список профилей камеры, поддерживаемых определенным устройством захвата, с помощью которого также можно осуществлять синхронный захват с нескольких камер. Используйте запрос Linq, чтобы найти профиль, который поддерживает синхронный захват, а также поддерживается как передней, так и задней камерой. Если найден профиль, который соответствует этим требованиям, установите его на каждом из объектов **MediaCaptureInitializationSettings** и задайте для логической переменной отслеживания синхронного захвата значение «true».
+
+[!code-cs[FindConcurrencyDevices](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindConcurrencyDevices)]
+
+Вызовите **MediaCapture.InitializeAsync** для основной камеры в сценарии приложения. Если поддерживается синхронный захват, инициализируйте также и вторую камеру.
+
+[!code-cs[InitConcurrentMediaCaptures](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
+
+## Как найти профиль с поддержкой видео HDR с помощью известных профилей
+
+Выбор профиля, который поддерживает HDR, начинается так же, как и другие сценарии. Создайте **MediaCaptureInitializationSettings** и строку для идентификатора устройства захвата. Добавьте логическую переменную, которая будет отслеживать, поддерживается ли видео HDR.
+
+[!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
+
+Используйте приведенный выше вспомогательный метод **GetVideoProfileSupportedDeviceIdAsync**, чтобы получить идентификатор устройства захвата, поддерживающего профили камеры.
+
+[!code-cs[FindDeviceHDR](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindDeviceHDR)]
+
+Статический метод [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) возвращает профили камеры, поддерживаемые указанным устройством, которое классифицировано выбранным значением [**KnownVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn948843). В этом сценарии с помощью значения **VideoRecording** возвращаются только профили камеры, которые поддерживают видеозапись.
+
+Просмотрите возвращенный список профилей камеры в цикле. В каждом профиле камеры просмотрите каждый класс [**VideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695) и проверьте, установлено ли для свойства [**IsHdrVideoSupported**](https://msdn.microsoft.com/library/windows/apps/dn926698) значение «true». Когда будет найдено подходящее описание мультимедиа, прервите цикл и назначьте объекты профиля и описания объекту **MediaCaptureInitializationSettings**.
+
+[!code-cs[FindHDRProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindHDRProfile)]
+
+## Как определить, поддерживает ли устройство синхронный фото- и видеозахват
+
+Многие устройства поддерживают одновременный захват фотографий и видео. Чтобы определить, поддерживает ли устройство захвата эту функцию, вызовите метод [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708), чтобы получить все профили камеры, поддерживаемые устройством. Используйте запрос ссылки, чтобы найти профиль, который содержит по крайней мере по одной записи для [**SupportedPhotoMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926703) и [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705). Если это так, профиль поддерживает синхронный захват.
+
+[!code-cs[GetPhotoAndVideoSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPhotoAndVideoSupport)]
+
+Этот запрос можно уточнить для поиска профилей, которые кроме одновременной записи видео поддерживают определенные разрешения или другие возможности. Вы также можете использовать для получения профилей, поддерживающих синхронный захват, метод [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) и значение [**BalancedVideoAndPhoto**](https://msdn.microsoft.com/library/windows/apps/dn948843). Однако обратите внимание, что при отправке запросов всем профилям можно получить более полные результаты.
+
+## Связанные темы
+
+* [Фото- и видеосъемка с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md)
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=Mar16_HO1-->
+
+
