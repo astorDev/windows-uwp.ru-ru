@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/cad401dfc1345b0def2586720b517f460d7c9e58/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | HandedOffSuccess | [Details](#b8d3ce9b0934ae57180c152111e056f74bfdad153269)
 
 ## Item Details
+##### <a name='b8d3ce9b0934ae57180c152111e056f74bfdad153269'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/cad401dfc1345b0def2586720b517f460d7c9e58/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/893034929a2f2c5224903a06b88c5b2a6d577fb2/ol-handoff/Microsoft/windows-apps.ru-ru/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ru-ru.xlf)
+* Handoff Datetime: 2016-04-13 21:17:11
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
