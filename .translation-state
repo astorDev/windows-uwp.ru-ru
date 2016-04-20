@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "a2f1a10660ee8b9615cbca6d45f36fdbb2624d43",
+  "LastProcessedCommit": "273430ac01baa072367b8e6eb02e2d6bc9b02be8",
   "LastTranslatedCommit": "b65b36d330ce4555aae53f1a94158a756ba19227",
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -83294,6 +83294,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ru-ru\\master\\326bdde5caaf3f610d434537f548563a7adc5a98.png",
       "HandoffFileCommit": "58e4c17bad4e56bc57edc021f03466ea72283930",
       "HandoffDateTime": "2016-04-20T23:17:09.7070813Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "6f7274de982a4f60f86f8e8cd9fdc5336a151522": {
+      "FileHash": "6f7274de982a4f60f86f8e8cd9fdc5336a151522",
+      "SourceFileCommit": "273430ac01baa072367b8e6eb02e2d6bc9b02be8",
+      "SourceFilePath": "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ru-ru\\master\\cortana-design-guidelines.3693f2e8faf3bbe006ccc6cc8626991846447184.ru-ru.xlf",
+      "HandoffFileCommit": "7b9bf99676e3ffaa0687f90c3edbeab6ed54d568",
+      "HandoffDateTime": "2016-04-20T23:47:11.5384662Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
