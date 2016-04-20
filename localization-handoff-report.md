@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\designing-for-tv.md](https://github.com/Microsoft/windows-apps/blob/a48dadbd16de6de12714e479cbf4d70255555d07/windows-apps-src/input-and-devices/designing-for-tv.md) | OutofSyncHandedBackSuccess | [Details](#bdd174527463aa009b503513ab17e35809b793ae2602)
+ [windows-apps-src\audio-video-camera\adaptive-streaming-with-playready.md](https://github.com/Microsoft/windows-apps/blob/f1c0513dd8ef004c2f686e098b54b5e163f08330/windows-apps-src/audio-video-camera/adaptive-streaming-with-playready.md) | OutofSyncHandedBackSuccess | [Details](#4d31e180dc3e92177f945f1157ae4ebc9cd76797124)
 
 ## Item Details
-##### <a name='bdd174527463aa009b503513ab17e35809b793ae2602'></a> Source: [windows-apps-src\input-and-devices\designing-for-tv.md](https://github.com/Microsoft/windows-apps/blob/a48dadbd16de6de12714e479cbf4d70255555d07/windows-apps-src/input-and-devices/designing-for-tv.md)
+##### <a name='4d31e180dc3e92177f945f1157ae4ebc9cd76797124'></a> Source: [windows-apps-src\audio-video-camera\adaptive-streaming-with-playready.md](https://github.com/Microsoft/windows-apps/blob/f1c0513dd8ef004c2f686e098b54b5e163f08330/windows-apps-src/audio-video-camera/adaptive-streaming-with-playready.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/e0676012098f6bfdbdc5c8cf08f45af222c26b99/ol-handoff/Microsoft/windows-apps.ru-ru/master/designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ru-ru.xlf)
-* Handoff Datetime: 2016-04-20 16:20:21
+* Handoff File: [adaptive-streaming-with-playready.fc985ed1b1d3c9fa50b477f463313823801d7872.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/11e5ed79c7592c1d58161fe6afda5674db898e7b/ol-handoff/Microsoft/windows-apps.ru-ru/master/adaptive-streaming-with-playready.fc985ed1b1d3c9fa50b477f463313823801d7872.ru-ru.xlf)
+* Handoff Datetime: 2016-04-20 22:15:29
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\input-and-devices\designing-for-tv.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/f26386d3135de516fc39f61f2da69e395c788cc7/windows-apps-src/input-and-devices/designing-for-tv.md)
-* Current Handback File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/70ba6fffae7ef0d1dd38768f01d259194a3bb24a/ol-handback/Microsoft/windows-apps.ru-ru/master/designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ru-ru.xlf)
+* Current Target File: [windows-apps-src\audio-video-camera\adaptive-streaming-with-playready.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/f26386d3135de516fc39f61f2da69e395c788cc7/windows-apps-src/audio-video-camera/adaptive-streaming-with-playready.md)
+* Current Handback File: [adaptive-streaming-with-playready.fc985ed1b1d3c9fa50b477f463313823801d7872.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/70ba6fffae7ef0d1dd38768f01d259194a3bb24a/ol-handback/Microsoft/windows-apps.ru-ru/master/adaptive-streaming-with-playready.fc985ed1b1d3c9fa50b477f463313823801d7872.ru-ru.xlf)
 * Current Handback Datetime: 2016-04-13 14:20:27
 * [Back to Top](#report-top)
 
