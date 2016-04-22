@@ -224,8 +224,8 @@ GLSL и HLSL отличаются в следующем.
 </ul></li>
 </ul>
 <p>Для определения матрицы вы также можете воспользоваться типом данных [matrix type](https://msdn.microsoft.com/library/windows/desktop/bb509623).</p>
-<p>Например: matrix <float, 2, 2> fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
-<p>Тип матрицы также можно определить как float4x4 (typedef matrix <float, 4, 4> matrix;). Подробнее см. в разделе [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
+<p>Например: matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
+<p>Тип матрицы также можно определить как float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;). Подробнее см. в разделе [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Квалификатор точности для числа с плавающей запятой, целого числа, дискретизатора</p>
