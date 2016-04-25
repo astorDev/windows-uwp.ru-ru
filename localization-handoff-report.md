@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\advertising-performance-report.md](https://github.com/Microsoft/windows-apps/blob/93e12837aec151b0cd1fa711c9e04081d74a3962/windows-apps-src/publish/advertising-performance-report.md) | OutofSyncHandedBackSuccess | [Details](#1617005cff264a89eb66e326e2bedf9f6641a3da3430)
+ [windows-apps-src\publish\analytics.md](https://github.com/Microsoft/windows-apps/blob/d204af573fdd7cc6c239d7a201ea6e295c061a28/windows-apps-src/publish/analytics.md) | OutofSyncHandedBackSuccess | [Details](#8bd2f6cfcfa36961740dde5738eee7d9b969d7063433)
 
 ## Item Details
-##### <a name='1617005cff264a89eb66e326e2bedf9f6641a3da3430'></a> Source: [windows-apps-src\publish\advertising-performance-report.md](https://github.com/Microsoft/windows-apps/blob/93e12837aec151b0cd1fa711c9e04081d74a3962/windows-apps-src/publish/advertising-performance-report.md)
+##### <a name='8bd2f6cfcfa36961740dde5738eee7d9b969d7063433'></a> Source: [windows-apps-src\publish\analytics.md](https://github.com/Microsoft/windows-apps/blob/d204af573fdd7cc6c239d7a201ea6e295c061a28/windows-apps-src/publish/analytics.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/8b014feb68a28cc4479b136dc544f9efc0a5e22b/ol-handoff/Microsoft/windows-apps.ru-ru/master/advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.ru-ru.xlf)
-* Handoff Datetime: 2016-04-25 19:13:07
+* Handoff File: [analytics.af2b800449cbe8bf6986c66ce2822732c6490965.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/57a423fe5aced7743eb54e82589eb1df5720a251/ol-handoff/Microsoft/windows-apps.ru-ru/master/analytics.af2b800449cbe8bf6986c66ce2822732c6490965.ru-ru.xlf)
+* Handoff Datetime: 2016-04-25 22:14:19
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\advertising-performance-report.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/f26386d3135de516fc39f61f2da69e395c788cc7/windows-apps-src/publish/advertising-performance-report.md)
-* Current Handback File: [advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/70ba6fffae7ef0d1dd38768f01d259194a3bb24a/ol-handback/Microsoft/windows-apps.ru-ru/master/advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.ru-ru.xlf)
+* Current Target File: [windows-apps-src\publish\analytics.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/f26386d3135de516fc39f61f2da69e395c788cc7/windows-apps-src/publish/analytics.md)
+* Current Handback File: [analytics.af2b800449cbe8bf6986c66ce2822732c6490965.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/70ba6fffae7ef0d1dd38768f01d259194a3bb24a/ol-handback/Microsoft/windows-apps.ru-ru/master/analytics.af2b800449cbe8bf6986c66ce2822732c6490965.ru-ru.xlf)
 * Current Handback Datetime: 2016-04-13 14:20:27
 * [Back to Top](#report-top)
 
