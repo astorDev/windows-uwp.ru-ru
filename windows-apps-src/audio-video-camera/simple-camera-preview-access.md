@@ -33,7 +33,7 @@ title: Простой доступ к просмотру камеры
 
 Объект [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) – это интерфейс приложения для взаимодействия с камерой устройства. Этот класс входит в пространство имен Windows.Media.Capture. В описанном в этой статье примере используются API из пространств имен [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) и [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) в дополнение к включенным в шаблон проекта по умолчанию.
 
-[!code-cs[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
+[!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
 
 Добавьте директивы using, чтобы включить следующие пространства имен в файл .cs вашей страницы.
 
