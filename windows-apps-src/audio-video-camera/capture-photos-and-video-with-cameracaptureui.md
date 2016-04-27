@@ -97,15 +97,8 @@ title: Фото- и видеозахват с помощью CameraCaptureUI
 
 * [Фото- и видеосъемка с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md)
 * [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030)
- 
-
- 
-
-
-
 
 
 
 <!--HONumber=Mar16_HO1-->
-
 
