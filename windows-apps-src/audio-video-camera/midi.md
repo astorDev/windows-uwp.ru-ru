@@ -1,6 +1,6 @@
 ---
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
-description: В этой статье показано, как перечислять MIDI-устройства (Musical Instrument Digital Interface), а также отправлять и получать сообщения MIDI из универсального приложения для Windows.
+description: В этой статье показано, как перечислять MIDI-устройства, а также отправлять и получать сообщения MIDI из универсального приложения для Windows.
 title: MIDI
 ---
 
@@ -57,7 +57,7 @@ title: MIDI
 
 [!code-cs[WatcherConstructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherConstructor)]
 
-**DeviceWatcher** содержит следующие события.
+**DeviceWatcher** содержит следующие события:
 
 -   [**Added**.
 						](https://msdn.microsoft.com/library/windows/apps/br225450)Создается, когда в систему добавлено новое устройство.

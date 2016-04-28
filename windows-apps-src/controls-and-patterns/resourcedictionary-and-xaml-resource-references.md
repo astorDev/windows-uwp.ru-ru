@@ -1,5 +1,5 @@
 ---
-Description: Сведения о том, как определить элемент ResourceDictionary и соответствующие ресурсы и как ресурсы XAML соотносятся с другими ресурсами, которые вы определяете как часть своего приложения или пакета приложения.
+description: Сведения о том, как определить элемент ResourceDictionary и соответствующие ресурсы и как ресурсы XAML соотносятся с другими частями приложения или пакета.
 MS-HAID: 'dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
@@ -71,8 +71,7 @@ template: detail.hbs
 Всем ресурсам понадобится ключ. Обычно этот ключ представляет собой строку, определенную с помощью `x:Key=”myString”`. Тем не менее существует ряд других способов задать ключ:
 
 -   [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) и [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) требуют **TargetType** и будут использовать **TargetType** в качестве ключа, если [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) не задан. В этом случае ключ фактически является объектом Type, а не строкой. (См. приведенные ниже примеры.)
--   [
-							Ресурсы **DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) с **TargetType** будут использовать **TargetType** в качестве ключа, если [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) не задан. В этом случае ключ фактически является объектом Type, а не строкой.
+-   Ресурсы [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) с **TargetType** будут использовать **TargetType** в качестве ключа, если [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) не задан. В этом случае ключ фактически является объектом Type, а не строкой.
 -   Вместо [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) можно использовать [x:Name](https://msdn.microsoft.com/library/windows/apps/mt204788). Однако x:Name также создает выделенный код поля для ресурса. В результате x:Name менее эффективен по сравнению с x:Key, так как это поле необходимо инициализировать при загрузке страницы.
 
 [Расширение разметки StaticResource](../xaml-platform/staticresource-markup-extension.md) может получить ресурсы только с именем строки ([x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) или [x:Name](https://msdn.microsoft.com/library/windows/apps/mt204788)). Однако платформа XAML также ищет неявные ресурсы стиля (которые используют **TargetType**, а не x:Key или x:Name), когда принимает решение об использовании стиля и шаблона для элемента управления, который не установил свойства [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) и [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) или [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830).
@@ -432,8 +431,7 @@ sealed partial class App : Application
 -   Типы анимации, включая [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)
 -   Преобразования (классы, производные от [**GeneralTransform**](https://msdn.microsoft.com/library/windows/apps/br210034))
 -   [**Matrix**](https://msdn.microsoft.com/library/windows/apps/br210127) и [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/br243266)
--   [
-							Значения **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)
+-   Значения [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)
 -   Некоторые другие структуры, связанные с пользовательским интерфейсом, например [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864) и [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/br242343)
 -   [Встроенные типы данных в языке XAML](https://msdn.microsoft.com/library/windows/apps/mt186448)
 
