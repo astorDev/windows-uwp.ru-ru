@@ -1,6 +1,6 @@
 ---
 title: Запрос ключа проверки подлинности карт
-description: Ваше приложение Universal Windows должно пройти проверку подлинности, прежде чем оно сможет использовать MapControl и службы карт в пространстве имен Windows.Services.Maps.
+description: Перед использованием MapControl и служб карт в пространстве имен Windows.Services.Maps универсальное приложение для Windows должно пройти проверку подлинности.
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 ---
 

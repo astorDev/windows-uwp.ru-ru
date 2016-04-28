@@ -1,6 +1,6 @@
 ---
 description: Практика определения пользовательского интерфейса в форме декларативной разметки XAML очень хорошо преобразуется из Windows Phone Silverlight в приложения универсальной платформы Windows (UWP).
-title: Перенос Windows Phone Silverlight XAML и пользовательского интерфейса в UWP
+title: Перенос Windows Phone Silverlight XAML и интерфейса в UWP
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 ---
 

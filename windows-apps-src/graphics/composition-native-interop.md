@@ -1,6 +1,6 @@
 ---
 ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
-title: Собственное взаимодействие DirectX и Direct2D композиции с BeginDraw и EndDraw
+title: Взаимодействие DirectX и Direct2D композиции с BeginDraw и EndDraw
 description: API Windows.UI.Composition предоставляет собственные интерфейсы взаимодействия, позволяющие перемещать содержимое непосредственно в компоновщик.
 ---
 # Собственное взаимодействие DirectX и Direct2D композиции с BeginDraw и EndDraw

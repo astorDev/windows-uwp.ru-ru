@@ -1,7 +1,7 @@
 ---
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: Bluetooth RFCOMM
-description: В этой статье приводится обзор протокола Bluetooth RFCOMM в приложениях на базе универсальной платформы Windows (UWP), а также пример кода для отправки и получения файла.
+description: В этой статье приводится обзор протокола Bluetooth RFCOMM в приложениях на базе UWP, а также пример кода для отправки и получения файла.
 ---
 # Bluetooth RFCOMM
 

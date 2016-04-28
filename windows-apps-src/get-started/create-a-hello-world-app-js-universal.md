@@ -1,7 +1,7 @@
 ---
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
 title: Создание приложения «Hello, world» (JS)
-description: В этом учебнике описано, как с помощью JavaScript и HTML создать простое приложение «Hello, world», предназначенное для универсальной платформы Windows (UWP) в Windows 10.
+description: В этом учебнике описано, как с помощью JavaScript и HTML создать простое приложение «Hello, world», предназначенное для UWP в Windows 10.
 ---
 # Создание приложения «Hello, world» (JS)
 

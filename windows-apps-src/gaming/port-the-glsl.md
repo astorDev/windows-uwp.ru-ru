@@ -1,6 +1,6 @@
 ---
 title: Перенос GLSL
-description: После переноса кода, который создает и настраивает буферы и объекты шейдеров, следует перенести внутренний код шейдеров из версии GLSL (GL Shader Language) для OpenGL ES 2.0 в HLSL (High-level Shader Language) для Direct3D 11.
+description: После переноса кода для создания и настройки буферов и объектов шейдеров следует перенести код шейдеров из версии GLSL для OpenGL ES 2.0 в HLSL для Direct3D 11.
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
 ---
 

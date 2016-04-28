@@ -1,5 +1,5 @@
 ---
-description: Для связи с другими устройствами в качестве разработчика приложений универсальной платформы для Windows (UWP) можно использовать как Windows.Networking.Sockets, так и Winsock.
+description: Для связи с другими устройствами в качестве разработчика приложений UWP можно использовать как Windows.Networking.Sockets, так и Winsock.
 title: Сокеты
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ---

@@ -1,6 +1,6 @@
 ---
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-description: В этой статье описано, как использовать класс CameraCaptureUI, чтобы фотографировать и снимать видео с помощью пользовательского интерфейса камеры, встроенного в Windows.
+description: В статье описано, как использовать класс CameraCaptureUI для съемки фото и видео с помощью пользовательского интерфейса камеры, встроенного в Windows.
 title: Фото- и видеозахват с помощью CameraCaptureUI
 ---
 
@@ -61,7 +61,7 @@ title: Фото- и видеозахват с помощью CameraCaptureUI
 
 Сначала добавьте элемент управления [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), в котором композиция видеороликов будет отображаться на вашей странице XAML.
 
-[!code-xml[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
+[!code-cs[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
 Добавьте в проект пространства имен [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) и [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962).
 
@@ -97,8 +97,15 @@ title: Фото- и видеозахват с помощью CameraCaptureUI
 
 * [Фото- и видеосъемка с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md)
 * [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030)
+ 
+
+ 
+
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
 

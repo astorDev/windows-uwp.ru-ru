@@ -1,6 +1,6 @@
 ---
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
-description: В этой статье объясняется, как загрузить и сохранить файлы изображений с помощью BitmapDecoder и BitmapEncoder, а также как использовать объект SoftwareBitmap для представления точечных рисунков.
+description: В этой статье описывается загрузка и сохранение изображений с помощью BitmapDecoder и BitmapEncoder и использование SoftwareBitmap с точечными рисунками.
 title: Обработка изображений
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Переход с DirectX 9 на DirectX 11 и универсальную платформу Windows (UWP)
+title: Переход с DirectX 9 на DirectX 11 и универсальную платформу Windows
 description: Этот раздел содержит руководство по переносу классической игры DirectX 9 на DirectX 11 и универсальную платформу Windows (UWP).
 ms.assetid: 7a3f8ddf-d5b2-1c05-b532-70459befda4e
 ---
