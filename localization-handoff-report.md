@@ -1,26 +1,42 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/ac5e6115a1d720a58bea6331aff08d44ec5064e3/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#6db9a90a8746ab4df214638cac509aee736552fb3753)
+ [windows-apps-src\launch-resume\declare-background-tasks-in-the-application-manifest.md](https://github.com/Microsoft/windows-apps/blob/fb7456f44095a0ef7b9a98f08f1be996d5c52aad/windows-apps-src/launch-resume/declare-background-tasks-in-the-application-manifest.md) | OutofSyncHandedBackSuccess | [Details](#4300c6eba40e8f3c38f464818d00a605a4805e0f2910)
+ [windows-apps-src\launch-resume\set-conditions-for-running-a-background-task.md](https://github.com/Microsoft/windows-apps/blob/fb7456f44095a0ef7b9a98f08f1be996d5c52aad/windows-apps-src/launch-resume/set-conditions-for-running-a-background-task.md) | OutofSyncHandedBackSuccess | [Details](#583c7e57d8680bff2ae2227ca1db36d911bcc17a2946)
 
 ## Item Details
-##### <a name='6db9a90a8746ab4df214638cac509aee736552fb3753'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/ac5e6115a1d720a58bea6331aff08d44ec5064e3/windows-apps-src/TOC.md)
+##### <a name='4300c6eba40e8f3c38f464818d00a605a4805e0f2910'></a> Source: [windows-apps-src\launch-resume\declare-background-tasks-in-the-application-manifest.md](https://github.com/Microsoft/windows-apps/blob/fb7456f44095a0ef7b9a98f08f1be996d5c52aad/windows-apps-src/launch-resume/declare-background-tasks-in-the-application-manifest.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/c7d997a8972d0575957d3d3b948f71ed9ce341f7/ol-handoff/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
-* Handoff Datetime: 2016-05-03 21:21:45
+* Handoff File: [declare-background-tasks-in-the-application-manifest.c8f31104969f1758f396c23ce4b28812e5f3e805.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/0452a82d826c5970f9ce0eec21501a68b5406a5a/ol-handoff/Microsoft/windows-apps.ru-ru/master/declare-background-tasks-in-the-application-manifest.c8f31104969f1758f396c23ce4b28812e5f3e805.ru-ru.xlf)
+* Handoff Datetime: 2016-05-03 21:52:55
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/f26386d3135de516fc39f61f2da69e395c788cc7/windows-apps-src/TOC.md)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/70ba6fffae7ef0d1dd38768f01d259194a3bb24a/ol-handback/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
+* Current Target File: [windows-apps-src\launch-resume\declare-background-tasks-in-the-application-manifest.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/f26386d3135de516fc39f61f2da69e395c788cc7/windows-apps-src/launch-resume/declare-background-tasks-in-the-application-manifest.md)
+* Current Handback File: [declare-background-tasks-in-the-application-manifest.c8f31104969f1758f396c23ce4b28812e5f3e805.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/70ba6fffae7ef0d1dd38768f01d259194a3bb24a/ol-handback/Microsoft/windows-apps.ru-ru/master/declare-background-tasks-in-the-application-manifest.c8f31104969f1758f396c23ce4b28812e5f3e805.ru-ru.xlf)
+* Current Handback Datetime: 2016-04-13 14:20:27
+* [Back to Top](#report-top)
+
+##### <a name='583c7e57d8680bff2ae2227ca1db36d911bcc17a2946'></a> Source: [windows-apps-src\launch-resume\set-conditions-for-running-a-background-task.md](https://github.com/Microsoft/windows-apps/blob/fb7456f44095a0ef7b9a98f08f1be996d5c52aad/windows-apps-src/launch-resume/set-conditions-for-running-a-background-task.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [set-conditions-for-running-a-background-task.c53f4c2f58fd6f26b4cb12d402addc6351fe354e.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/0452a82d826c5970f9ce0eec21501a68b5406a5a/ol-handoff/Microsoft/windows-apps.ru-ru/master/set-conditions-for-running-a-background-task.c53f4c2f58fd6f26b4cb12d402addc6351fe354e.ru-ru.xlf)
+* Handoff Datetime: 2016-05-03 21:52:55
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\launch-resume\set-conditions-for-running-a-background-task.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/f26386d3135de516fc39f61f2da69e395c788cc7/windows-apps-src/launch-resume/set-conditions-for-running-a-background-task.md)
+* Current Handback File: [set-conditions-for-running-a-background-task.c53f4c2f58fd6f26b4cb12d402addc6351fe354e.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/70ba6fffae7ef0d1dd38768f01d259194a3bb24a/ol-handback/Microsoft/windows-apps.ru-ru/master/set-conditions-for-running-a-background-task.c53f4c2f58fd6f26b4cb12d402addc6351fe354e.ru-ru.xlf)
 * Current Handback Datetime: 2016-04-13 14:20:27
 * [Back to Top](#report-top)
 
