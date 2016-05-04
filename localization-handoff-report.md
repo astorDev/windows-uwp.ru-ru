@@ -1,42 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\tools-for-profiling-and-performance.md](https://github.com/Microsoft/windows-apps/blob/5bbd14fb53cae67bbb827f94e695b2703e07fc34/windows-apps-src/debug-test-perf/tools-for-profiling-and-performance.md) | OutofSyncHandedBackSuccess | [Details](#f7f9821be7d1423b2f89367bd20c09981eca24eb1976)
- [windows-apps-src\debug-test-perf\windows-runtime-components-and-optimizing-interop.md](https://github.com/Microsoft/windows-apps/blob/5c7a49558ed11f82b7afea1ea96271c45c2f9139/windows-apps-src/debug-test-perf/windows-runtime-components-and-optimizing-interop.md) | OutofSyncHandedBackSuccess | [Details](#b9300b3feb1e5229951f3e1ebe454b61ba8065ae1979)
+ [windows-apps-src\xaml-platform\themeresource-markup-extension.md](https://github.com/Microsoft/windows-apps/blob/9c657f906e6dedb259b8a98373f56ac5a63bd845/windows-apps-src/xaml-platform/themeresource-markup-extension.md) | OutofSyncHandedBackSuccess | [Details](#246c991bbdbc95e73ea8d4884cd4d617592bfc513787)
 
 ## Item Details
-##### <a name='f7f9821be7d1423b2f89367bd20c09981eca24eb1976'></a> Source: [windows-apps-src\debug-test-perf\tools-for-profiling-and-performance.md](https://github.com/Microsoft/windows-apps/blob/5bbd14fb53cae67bbb827f94e695b2703e07fc34/windows-apps-src/debug-test-perf/tools-for-profiling-and-performance.md)
+##### <a name='246c991bbdbc95e73ea8d4884cd4d617592bfc513787'></a> Source: [windows-apps-src\xaml-platform\themeresource-markup-extension.md](https://github.com/Microsoft/windows-apps/blob/9c657f906e6dedb259b8a98373f56ac5a63bd845/windows-apps-src/xaml-platform/themeresource-markup-extension.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [tools-for-profiling-and-performance.bcfd5494bc17ab2ac8612e5434cdc737f2a45781.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/484c6fbe4085f5f03f556555fe7f92fed4e8cd97/ol-handoff/Microsoft/windows-apps.ru-ru/master/tools-for-profiling-and-performance.bcfd5494bc17ab2ac8612e5434cdc737f2a45781.ru-ru.xlf)
-* Handoff Datetime: 2016-05-04 19:50:31
+* Handoff File: [themeresource-markup-extension.1a19518a0f3da2f625793df3668c17ad6d82afc4.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/028625f929b26045c92689b287c0ce4af692ded1/ol-handoff/Microsoft/windows-apps.ru-ru/master/themeresource-markup-extension.1a19518a0f3da2f625793df3668c17ad6d82afc4.ru-ru.xlf)
+* Handoff Datetime: 2016-05-04 21:21:34
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\debug-test-perf\tools-for-profiling-and-performance.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/f26386d3135de516fc39f61f2da69e395c788cc7/windows-apps-src/debug-test-perf/tools-for-profiling-and-performance.md)
-* Current Handback File: [tools-for-profiling-and-performance.bcfd5494bc17ab2ac8612e5434cdc737f2a45781.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/70ba6fffae7ef0d1dd38768f01d259194a3bb24a/ol-handback/Microsoft/windows-apps.ru-ru/master/tools-for-profiling-and-performance.bcfd5494bc17ab2ac8612e5434cdc737f2a45781.ru-ru.xlf)
-* Current Handback Datetime: 2016-04-13 14:20:27
-* [Back to Top](#report-top)
-
-##### <a name='b9300b3feb1e5229951f3e1ebe454b61ba8065ae1979'></a> Source: [windows-apps-src\debug-test-perf\windows-runtime-components-and-optimizing-interop.md](https://github.com/Microsoft/windows-apps/blob/5c7a49558ed11f82b7afea1ea96271c45c2f9139/windows-apps-src/debug-test-perf/windows-runtime-components-and-optimizing-interop.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [windows-runtime-components-and-optimizing-interop.163b9b5eb45f5d53051455cc368ccf16da8de7d0.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/484c6fbe4085f5f03f556555fe7f92fed4e8cd97/ol-handoff/Microsoft/windows-apps.ru-ru/master/windows-runtime-components-and-optimizing-interop.163b9b5eb45f5d53051455cc368ccf16da8de7d0.ru-ru.xlf)
-* Handoff Datetime: 2016-05-04 19:50:31
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\debug-test-perf\windows-runtime-components-and-optimizing-interop.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/619d87eef5cf4864a20bb60bed4b7ab44b4fb245/windows-apps-src/debug-test-perf/windows-runtime-components-and-optimizing-interop.md)
-* Current Handback File: [windows-runtime-components-and-optimizing-interop.163b9b5eb45f5d53051455cc368ccf16da8de7d0.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/9b1301a45914bbb62b8802b66808db33701471e5/ol-handback/Microsoft/windows-apps.ru-ru/master/windows-runtime-components-and-optimizing-interop.163b9b5eb45f5d53051455cc368ccf16da8de7d0.ru-ru.xlf)
+* Current Target File: [windows-apps-src\xaml-platform\themeresource-markup-extension.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/619d87eef5cf4864a20bb60bed4b7ab44b4fb245/windows-apps-src/xaml-platform/themeresource-markup-extension.md)
+* Current Handback File: [themeresource-markup-extension.1a19518a0f3da2f625793df3668c17ad6d82afc4.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/9b1301a45914bbb62b8802b66808db33701471e5/ol-handback/Microsoft/windows-apps.ru-ru/master/themeresource-markup-extension.1a19518a0f3da2f625793df3668c17ad6d82afc4.ru-ru.xlf)
 * Current Handback Datetime: 2016-04-28 16:14:15
 * [Back to Top](#report-top)
 
