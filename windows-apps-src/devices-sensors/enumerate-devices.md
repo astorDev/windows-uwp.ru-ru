@@ -1,151 +1,146 @@
 ---
+author: DBirtolo
 ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
-title: Перечисление устройств
-description: Пространство имен перечисления позволяет найти устройства, которые подключены к системе изнутри, извне и которые можно обнаружить по сетевым протоколам.
+title: Enumerate devices
+description: The enumeration namespace enables you to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols.
 ---
-# Перечисление устройств
+# Enumerate devices
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Важные API **
+** Important APIs **
 
 -   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
 
-Пространство имен перечисления позволяет обнаружить устройства, которые подключены к системе изнутри, внешним образом или могут быть обнаружены по протоколам проводной или беспроводной сети. Для перечисления возможных устройств используются API пространства имен [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459). Ниже приводятся некоторые случаи, в которых следует использовать эти API.
+The enumeration namespace enables you to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols. The APIs that you use to enumerate through the possible devices are the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) namespace. Some reasons for using these APIs include the following.
 
--   Поиск устройства для подключения с помощью вашего приложения.
--   Получение информации об устройствах, подключенных или обнаруженных системой.
--   Получение приложением уведомлений о добавлении, подключении, отключении, изменении состояния или других свойств устройств.
--   Получение приложением фоновых триггеров о подключении, отключении, изменении состояния или других свойств устройств.
+-   Finding a device to connect to with your application.
+-   Getting information about devices connected to or discoverable by the system.
+-   Have an app receive notifications when devices are added, connect, disconnect, change online status, or change other properties.
+-   Have an app receive background triggers when devices connect, disconnect, change online status, or change other properties.
 
-Эти API могут перечислять устройства по любому из следующих протоколов и шин ниже при условии, что конкретное устройство и система, в которой работает приложение, поддерживают соответствующую технологию. Этот список не является исчерпывающим, и конкретное устройство может поддерживать другие протоколы.
+These APIs can enumerate devices over any of the following protocols and buses, provided the individual device and the system running the app support that technology. This is not an exhaustive list, and other protocols may be supported by a specific device.
 
--   Физически подключенные шины. К ним относятся PCI и USB. Например, все, что отображается в **диспетчере устройств**.
+-   Physically connected buses. This includes PCI and USB. For example, anything that you can see in the **Device Manager**.
 -   [UPnP](https://msdn.microsoft.com/library/windows/desktop/Aa382303)
 -   Digital Living Network Alliance (DLNA)
 -   [**Discovery and Launch (DIAL)**](https://msdn.microsoft.com/library/windows/apps/Dn946818)
--   [**Обнаружение служб DNS (DNS-SD)**](https://msdn.microsoft.com/library/windows/apps/Dn895183)
+-   [**DNS Service Discovery (DNS-SD)**](https://msdn.microsoft.com/library/windows/apps/Dn895183)
 -   [Web Services on Devices (WSD)](https://msdn.microsoft.com/library/windows/desktop/Aa826001)
 -   [Bluetooth](https://msdn.microsoft.com/library/windows/desktop/Aa362932)
 -   [**Wi-Fi Direct**](https://msdn.microsoft.com/library/windows/apps/Dn297687)
 -   WiGig
--   [**POS-терминал**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
+-   [**Point of Service**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
 
-Во многих случаях вам незачем беспокоиться об использовании API перечисления. Это связано с тем, что многие интерфейсы API, использующие устройства, автоматически выбирают подходящее устройство по умолчанию или предоставляют упрощенный API перечисления. Например, [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) автоматически использует устройство обработки звука по умолчанию. Если ваше приложение может использовать устройство по умолчанию, нет необходимости использовать в нем API перечисления. API перечисления предоставляют универсальный гибкий способ обнаружения доступных устройств и соединения с ними. В этом разделе представлены сведения о перечислении устройств и четыре стандартных способа перечисления.
+In many cases, you will not need to worry about using the enumeration APIs. This is because many APIs that use devices will automatically select the appropriate default device or provide a more streamlined enumeration API. For example, [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) will automatically use the default audio renderer device. As long as your app can use the default device, there is no need to use the enumeration APIs in your application. The enumeration APIs provide a general and flexible way for you to discover and connect to available devices. This topic provides information about enumerating devices and describes the four common ways to enumerate devices.
 
--   Применение пользовательского интерфейса [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841)
--   Перечисление снимка устройств, которые могут быть обнаружены системой в текущий момент
--   Перечисление устройств, которые могут быть обнаружены в текущий момент, и ожидание изменений
--   Перечисление устройств, которые могут быть обнаружены в текущий момент, и ожидание изменений в фоновой задаче
+-   Using the [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) UI
+-   Enumerating a snapshot of devices currently discoverable by the system
+-   Enumerating devices currently discoverable and watch for changes
+-   Enumerating devices currently discoverable and watch for changes in a background task
 
-## Объекты DeviceInformation
+## DeviceInformation objects
 
 
-При работе с API перечисления часто приходится использовать объекты [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393). Эти объекты содержат большинство доступных сведений об устройстве. В таблице ниже описаны некоторые свойства **DeviceInformation**, которые вам пригодятся. Полный список см. на странице со справочной документацией по **DeviceInformation**.
+Working with the enumeration APIs, you will frequently need to use [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) objects. These objects contain most of the available information about the device. The following table explains some of the **DeviceInformation** properties you will be interested in. For a complete list, see the reference page for **DeviceInformation**.
 
-| Свойство                         | Комментарии                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Property                         | Comments                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **DeviceInformation.Id**         | Это уникальный идентификатор устройства в виде строковой переменной. В большинстве случаев вы будете просто передавать это непрозрачное значение от одного метода к другому, чтобы указать конкретное устройство, которое вам необходимо. Это свойство и свойство **DeviceInformation.Kind** также можно использовать после закрытия приложения и его повторного открытия. Это гарантирует, что вы сможете восстановить и повторно использовать тот же самый объект [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393). |
-| **DeviceInformation.Kind**       | Указывает вид объекта устройства, представленного объектом [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393). Это не категория или тип устройства. Одно устройство может быть представлено несколькими различными объектами **DeviceInformation** разных видов. Возможные значения этого свойства и их взаимосвязи приводятся в разделе [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind).                           |
-| **DeviceInformation.Properties** | Этот контейнер свойств содержит сведения, запрашиваемые для объекта [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393). На наиболее распространенные свойства можно легко ссылаться как на свойства объекта **DeviceInformation**, например [**DeviceInformation.Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name). Дополнительные сведения см. в статье [Свойства сведений об устройстве](device-information-properties.md).                                                                |
+| **DeviceInformation.Id**         | This is the unique identifier of the device and is provided as a string variable. In most cases, this is an opaque value you will just pass from one method to another to indicate the specific device you are interested in. You can also use this property and the **DeviceInformation.Kind** property after closing down your app and reopening it. This will ensure that you can recover and reuse the same [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object. |
+| **DeviceInformation.Kind**       | This indicates the kind of device object represented by the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object. This is not the device category or type of device. A single device can be represented by several different **DeviceInformation** objects of different kinds. The possible values for this property are listed in [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) as well as how they relate to one another.                           |
+| **DeviceInformation.Properties** | This property bag contains information that is requested for the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object. The most common properties are easily referenced as properties of the **DeviceInformation** object, such as with [**DeviceInformation.Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name). For more information, see [Device information properties](device-information-properties.md).                                                                |
 
- 
+ 
 
-## Пользовательский интерфейс DevicePicker
-
-
-[
-            **DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) — это элемент управления, предоставляемый Windows, который создает небольшой пользовательский интерфейс, чтобы пользователь мог выбирать устройство из списка. Есть несколько способов настройки окна **DevicePicker**.
-
--   Вы можете управлять устройствами, отображаемыми в этом пользовательском интерфейсе, добавив [**SupportedDeviceSelectors**](https://msdn.microsoft.com/library/windows/apps/Dn930841filter_supporteddeviceselectors), [**SupportedDeviceClasses**](https://msdn.microsoft.com/library/windows/apps/Dn930841filter_supporteddeviceclasses) или оба этих параметра в [**DevicePicker.Filter**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.filter). В большинстве случаев требуется добавить только один селектор или класс, но если вам нужно больше, вы можете добавить несколько элементов. Если вы добавляете несколько селекторов или классов, они соединяются с помощью функции логики ИЛИ.
--   Вы можете указать свойства устройств, которые требуется получить. Для этого добавьте свойства в [**DevicePicker.RequestedProperties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.requestedproperties).
--   Вы можете изменить вид элемента [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) с помощью свойства [**Appearance**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.appearance).
--   Вы можете указать размер и расположение элемента [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841).
-
-При отображении элемента [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) произойдет автоматическое обновление содержимого пользовательского интерфейса, если устройства добавляются, удаляются или обновляются.
-
-**Примечание.** Нельзя указать [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) с помощью [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841). Если вам необходимы устройства определенного вида **DeviceInformationKind**, вам понадобится создать объект [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) и предоставить собственный пользовательский интерфейс.
-
- 
-
-Если вы захотите использовать трансляцию мультимедийного содержимого и DIAL, то они также имеют собственные средства выбора. Это [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn972525) и [**DialDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn946783), соответственно.
-
-## Перечисление снимка устройств
+## DevicePicker UI
 
 
-В некоторых сценариях [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) может не подойти для ваших потребностей, и вам понадобится что-то более универсальное. Возможно, вы хотите создать собственный пользовательский интерфейс или перечислить устройства без отображения интерфейса для пользователя. В таких случаях можно перечислить снимок устройств. Для этого вы просматриваете устройства, которые в данный момент подключены к системе или связаны с ней. Однако следует помнить, что этот метод анализирует только снимок доступных устройств, поэтому вы не сможете обнаружить устройства, подключаемые после получения перечисления. Вы также не будете получать уведомления об обновлении или удалении устройства. Другим потенциальным недостатком, о котором следует упомянуть, является то, что данный метод удерживает все результаты до полного завершения перечисления. По этой причине не следует использовать данный метод, если требуется получить объекты **AssociationEndpoint**, **AssociationEndpointContainer** или **AssociationEndpointService**, поскольку они определяются по протоколу проводной или беспроводной связи. Этот процесс может занять до 30 секунд. В этом случае для перечисления возможных устройств необходимо использовать объект [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446).
+The [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) is a control provided by Windows that creates a small UI that enables the user to select a device from a list. You can customize the **DevicePicker** window in a few ways.
 
-Чтобы выполнить перечисление посредством снимка устройств, используйте метод [**FindAllAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx). Этот метод ждет, пока весь процесс перечисления не будет завершен, и возвращает все результаты как один объект [**DeviceInformationCollection**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationcollection.aspx). Этот метод также перегружен и имеет несколько параметров для фильтрации результатов и выделения из них только нужных устройств. Для этого нужно предоставить значение [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) или передать средство выбора устройств. Средство выбора устройств — это строка AQS, определяющая устройства для перечисления. Подробнее: [Создание средства выбора устройств](build-a-device-selector.md).
+-   You can control the devices that are displayed in the UI by adding a [**SupportedDeviceSelectors**](https://msdn.microsoft.com/library/windows/apps/Dn930841filter_supporteddeviceselectors), a [**SupportedDeviceClasses**](https://msdn.microsoft.com/library/windows/apps/Dn930841filter_supporteddeviceclasses), or both to the [**DevicePicker.Filter**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.filter). In most cases, you only need to add one selector or class, but if you do need more than one you can add multiple. If you do add multiple selectors or classes, they are conjoined using an OR logic function.
+-   You can specify the properties you want to retrieve for the devices. You can do this by adding properties to [**DevicePicker.RequestedProperties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.requestedproperties).
+-   You can alter the appearance of the [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) using [**Appearance**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.appearance).
+-   You can specify the size and location of the [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) when it is displayed.
 
-Помимо ограничения результатов, вы также можете задать свойства устройств, которые требуется получить. В этом случае указанные свойства будут доступны в контейнере свойств для каждого из объектов [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393), возвращаемых в коллекцию. Важно помнить, что не все свойства доступны для всех видов устройств. Чтобы узнать, какие свойства доступны для тех или иных типов устройств, изучите раздел [Свойства сведений об устройстве](device-information-properties.md).
+While the [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) is displayed, the contents of the UI will be automatically updated if devices are added, removed, or updated.
 
-## Перечисление и отслеживание устройств
+**Note**  You cannot specify the [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) using the [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841). If you want to have devices of a specific **DeviceInformationKind**, you will need to build a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) and provide your own UI.
 
+ 
 
-Более мощным и гибким способом перечисления является создание объекта [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446). Этот вариант обеспечивает максимальную гибкость при перечислении устройств. Он позволяет перечислять устройства, присутствующие в настоящий момент, а также получать уведомления при добавлении и удалении устройств, которые соответствуют параметрам средства выбора устройств, а также при изменении свойств устройств. При создании **DeviceWatcher** вы предоставляете средство выбора устройств. Подробнее о средствах выбора устройств: [Создание средства выбора устройств](build-a-device-selector.md). После создания наблюдателя вы будете получать следующие уведомления для любого устройства, которое соответствует указанным критериям.
+Casting media content and DIAL also each provide their own pickers if you want to use them. They are [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn972525) and [**DialDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn946783), respectively.
 
--   Уведомление о добавлении устройства.
--   Уведомление об обновлении, если отслеживаемое свойство изменяется.
--   Уведомление об удалении, если устройство больше недоступно или не соответствует вашему фильтру.
-
-В большинстве случаев использования [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) вы храните список устройств и добавляете, удаляете или обновляете его элементы по мере того, как наблюдатель получает обновления от отслеживаемых устройств. При получении уведомления об обновлении измененная информация будет доступна как объект [**DeviceInformationUpdate**](https://msdn.microsoft.com/library/windows/apps/BR225393update). Чтобы обновить список устройств, сначала найдите соответствующий измененный объект [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393). Затем вызовите метод [**Update**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.update) для этого объекта, предоставив объект **DeviceInformationUpdate**. Это удобная функция, которая автоматически обновляет объект **DeviceInformation**.
-
-Поскольку [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) рассылает уведомления при добавлении и изменении устройств, рекомендуется использовать этот метод перечисления устройств, если вас интересуют объекты **AssociationEndpoint**, **AssociationEndpointContainer** или **AssociationEndpointService**, так как они перечисляются по сетевым или беспроводным протоколам.
-
-Для создания объекта [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) используйте один из методов [**CreateWatcher**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx). Эти методы перегружены, что предоставляет возможность указать требуемые устройства. Для этого нужно предоставить значение [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) или передать средство выбора устройств. Средство выбора устройств — это строка AQS, определяющая устройства для перечисления. Подробнее: [Создание средства выбора устройств](build-a-device-selector.md). Вы также можете задать свойства устройств, которые требуется получить. В этом случае указанные свойства будут доступны в контейнере свойств для каждого из объектов [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393), возвращаемых в коллекцию. Важно помнить, что не все свойства доступны для всех видов устройств. Чтобы узнать, какие свойства доступны для тех или иных типов устройств, изучите раздел [Свойства сведений об устройстве](device-information-properties.md).
-
-## Наблюдение за устройствами как фоновая задача
+## Enumerate a snapshot of devices
 
 
-Отслеживание устройств в фоновой задаче очень похоже на создание [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), рассмотренное выше. К слову, вам все равно придется сначала создать обычный объект **DeviceWatcher**, как описано в предыдущем разделе. После его создания вызовите [**GetBackgroundTrigger**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) вместо [**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start). При вызове метода **GetBackgroundTrigger** необходимо определить, какие из уведомлений вас интересуют: уведомления о добавлении, удалении или обновлении. Невозможно запросить обновление или удаление, не запросив также и добавление. После регистрации триггера объект **DeviceWatcher** сразу же начнет свою работу в фоновом режиме. С этого момента при получении нового уведомления для вашего приложения, которое соответствует заданным условиям, активируется фоновая задача, которая предоставит вам последние изменения с момента последней активации вашего приложения.
+In some scenarios, the [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) will not be suitable for your needs and you need something more flexible. Perhaps you want to build your own UI or need to enumerate devices without displaying a UI to the user. In these situations, you could enumerate a snapshot of devices. This involves looking through the devices that are currently connected to or paired with the system. However, you need to be aware that this method only looks at a snapshot of devices that are available, so you will not be able to find devices that connect after you enumerate through the list. You also will not be notified if a device is updated or removed. Another potential downside to be aware of is that this method will hold back any results until the entire enumeration is completed. For this reason, you should not use this method when you are interested in **AssociationEndpoint**, **AssociationEndpointContainer**, or **AssociationEndpointService** objects since they are found over a network or wireless protocol. This can take up to 30 seconds to complete. In that scenario, you should use a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) object to enumerate through the possible devices.
 
-**Важно!** В первый раз [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) активирует ваше приложение, когда наблюдатель переходит в состояние **EnumerationCompleted**. Это означает, что он будет содержать все исходные результаты. При последующей активации приложения он будет содержать только уведомления о добавлении, обновлении и удалении, полученные с момента последней активации. Это немного отличается от объекта переднего плана [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), так как исходные результаты поступают не по одному, а только пакетом после перехода в состояние **EnumerationCompleted**.
+To enumerate through a snapshot of devices, use the [**FindAllAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) method. This method waits until the entire enumeration process is complete and returns all the results as one [**DeviceInformationCollection**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationcollection.aspx) object. This method is also overloaded to provide you with several options for filtering your results and limiting them to the devices that you are interested in. You can do this by providing a [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) or passing in a device selector. The device selector is an AQS string that specifies the devices you want to enumerate. For more information, see [Build a device selector](build-a-device-selector.md).
 
- 
+In addition to limiting the results, you can also specify the properties that you want to retrieve for the devices. If you do, the specified properties will be available in the property bag for each of the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) objects returned in the collection. It is important to note that not all properties are available for all device kinds. To see what properties are available for which device kinds, see [Device information properties](device-information-properties.md).
 
-Некоторые беспроводные протоколы ведут себя по-другому, если ведут сканирование не в приоритетном, а фоновом режиме; они также могут совсем не поддерживать сканирование в фоновом режиме. Существует три варианта относительно возможности фонового сканирования. В следующей таблице перечислены возможности и их последствия для приложения. Например, Bluetooth и Wi-Fi Direct не поддерживают фоновое сканирование, поэтому они не поддерживают [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838).
+## Enumerate and watch devices
 
-| Поведение                                  | Влияние                                                                                                                                  |
+
+A more powerful and flexible method of enumerating devices is creating a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446). This option provides the most flexibility when you are enumerating devices. It allows you to enumerate devices that are currently present, and also receive notifications when devices that match your device selector are added, removed, or properties change. When you create a **DeviceWatcher**, you provide a device selector. For more information about device selectors, see [Build a device selector](build-a-device-selector.md). After creating the watcher, you will receive the following notifications for any device that matches your provided criteria.
+
+-   Add notification when a new device is added.
+-   Update notification when a property you are interested in is changed.
+-   Remove notification when a device is no longer available or no longer matches your filter.
+
+In most cases where you are using a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), you are maintaining a list of devices and adding to it, removing items from it, or updating items as your watcher receives updates from the devices that you are watching. When you receive an update notification, the updated information will be available as a [**DeviceInformationUpdate**](https://msdn.microsoft.com/library/windows/apps/BR225393update) object. In order to update your list of devices, first find the appropriate [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) that changed. Then call the [**Update**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.update) method for that object, providing the **DeviceInformationUpdate** object. This is a convenience function that will automatically update your **DeviceInformation** object.
+
+Since a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) sends notifications as devices arrive and when they change, you should use this method of enumerating devices when you are interested in **AssociationEndpoint**, **AssociationEndpointContainer**, or **AssociationEndpointService** objects since they are enumerated over networking or wireless protocols.
+
+To create a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), use one of the [**CreateWatcher**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx) methods. These methods are overloaded to enable you to specify the devices that you are interested in. You can do this by providing a [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) or passing in a device selector. The device selector is an AQS string that specifies the devices you want to enumerate. For more information, see [Build a device selector](build-a-device-selector.md). You can also specify the properties that you want to retrieve for the devices and are interested in. If you do, the specified properties will be available in the property bag for each of the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) objects returned in the collection. It is important to note that not all properties are available for all device kinds. To see what properties are available for which device kinds, see [Device information properties](device-information-properties.md)
+
+## Watch devices as a background task
+
+
+Watching devices as a background task is very similar to creating a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) as described above. In fact, you will still need to create a normal **DeviceWatcher** object first as described in the previous section. Once you create it, you call [**GetBackgroundTrigger**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) instead of [**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start). When you call **GetBackgroundTrigger**, you must specify which of the notifications you are interested in: add, remove, or update. You cannot request update or remove without requesting add as well. Once you register the trigger, the **DeviceWatcher** will start running immediately in the background. From this point forward, whenever it receives a new notification for your application that matches your criteria, the background task will trigger and it will provide you the latest changes since it last triggered your application.
+
+**Important**  The first time that a [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) triggers your application will be when the watcher reaches the **EnumerationCompleted** state. This means it will contain all of the initial results. Any future times it triggers your application, it will only contain the add, update, and remove notifications that have occurred since the last trigger. This is slightly different from a foreground [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) object because the initial results do not come in one at a time and are only delivered in a bundle after the **EnumerationCompleted** is reached.
+
+ 
+
+Some wireless protocols behave differently if they are scanning in the background versus the foreground, or they may not support scanning in the background at all. There are three possibilities with relation to background scanning. The following table lists the possibilities and the effects this may have on your application. For example, Bluetooth and Wi-Fi Direct do not support background scans, so by extension, they do not support a [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838).
+
+| Behavior                                  | Impact                                                                                                                                  |
 |-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| Такое же поведение в фоновом режиме               | Нет                                                                                                                                    |
-| В фоновом режиме возможно только пассивное сканирование | Для обнаружения устройства может потребоваться больше времени из-за ожидания пассивного сканирования.                                                           |
-| Фоновое сканирование не поддерживается            | С помощью [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) не будут обнаруживаться никакие устройства, уведомления об обновлении не будут отправляться. |
+| Same behavior in background               | None                                                                                                                                    |
+| Only passive scans possible in background | Device may take longer to discover while waiting for a passive scan to occur.                                                           |
+| Background scans not supported            | No devices will be detectable by the [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838), and no updates will be reported. |
 
- 
+ 
 
-Если [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) использует протокол, который не поддерживает сканирование в качестве фоновой задачи, ваш триггер все же будет работать. Однако вы не сможете получать обновления или результаты по этому протоколу. Обновления для других протоколов и устройств будут по-прежнему работать нормально.
+If your [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) includes a protocol that does not support scanning in as a background task, your trigger will still work. However, you will not be able to get any updates or results over that protocol. The updates for other protocols or devices will still be detected normally.
 
-## Использование DeviceInformationKind
-
-
-В большинстве сценариев вам незачем беспокоиться о виде [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) объекта [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393). Это связано с тем, что средство выбора устройств, возвращаемое используемым API устройства, во многих случаях гарантирует получение правильных видов объектов устройств для использования с соответствующими API. Однако в некоторых сценариях вам может потребоваться получить **DeviceInformation** для устройств, притом что соответствующий API устройства для предоставления средства выбора устройств отсутствует. В этом случае вам потребуется создать собственное средство выбора. Например, у Web Services on Devices нет специализированного API, но вы можете обнаружить эти устройства и получить информацию о них с помощью API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), а затем использовать их с помощью API сокетов.
-
-Если вы создаете собственное средство выбора устройств для перечисления объектов устройств, необходимо тщательно изучить [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind). Все возможные виды, а также их взаимосвязи описаны на странице справки для **DeviceInformationKind**. Один из самых распространенных способов использования **DeviceInformationKind** — определение вида устройств, которые вы ищете, при отправке запроса вместе со средством выбора устройств. Таким образом вы будете уверены, что перечисляете только те устройства, которые соответствуют указанному виду **DeviceInformationKind**. Например, вы можете найти объект **DeviceInterface**, а затем выполнить запрос, чтобы получить сведения для родительского объекта **Device**. Этот родительский объект может содержать дополнительные сведения.
-
-Важно отметить, что свойства, доступные в контейнере свойств объекта [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393), могут отличаться в зависимости от значения [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) устройства. Некоторые свойства доступны только для определенных видов. Подробнее о том, какие свойства доступны для каких видов, см. в разделе [Свойства сведений об устройстве](device-information-properties.md). Следовательно, в примере выше поиск родительского элемента **Device** даст доступ к дополнительным сведениям, которые не были доступны из объекта устройства **DeviceInterface**. Поэтому когда вы создаете строки фильтра AQS, запрошенные свойства должны быть доступны для перечисляемых объектов **DeviceInformationKind**. Подробнее о создании фильтра: [Создание средства выбора устройств](build-a-device-selector.md).
-
-Перечисление объектов **AssociationEndpoint**, **AssociationEndpointContainer** или **AssociationEndpointService** происходит по сетевому или беспроводному протоколу. В таких случаях вместо [**FindAllAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) рекомендуется использовать [**CreateWatcher**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx). Дело в том, что при поиске по сети время ожидания операций поиска может достигать 10 и более секунд, прежде чем будет получено событие [**EnumerationCompleted**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx). **FindAllAsync** будет работать до тех пор, пока не активируется событие **EnumerationCompleted**. Если вы используете [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), вы получите результаты, которые будут ближе к реальному времени, вне зависимости от того, когда вызывается событие **EnumerationCompleted**.
-
-## Сохранение устройства для использования в будущем
+## Using DeviceInformationKind
 
 
-Любой объект [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) однозначно определяется сочетанием двух параметров: [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) и [**DeviceInformation.Kind**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx). Если сохранить эти два значения, то можно будет воссоздать утерянный объект **DeviceInformation**, передав их в метод [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createfromidasync_907774063). В этом случае вы сможете сохранить настройки пользователя для устройства, которое интегрируется с вашим приложением.
+In most scenarios, you will not need to worry about the [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) of a [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object. This is because the device selector returned by the device API you're using will often guarantee you are getting the correct kinds of device objects to use with their API. However, in some scenarios you will want to get the **DeviceInformation** for devices, but there is not a corresponding device API to provide a device selector. In these cases you will need to build your own selector. For example, Web Services on Devices does not have a dedicated API, but you can discover those devices and get information about them using the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs and then use them using the socket APIs.
 
-## Пример
+If you are building your own device selector to enumerate through device objects, [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) will be important for you to understand. All of the possible kinds, as well as how they relate to one another, are described on the reference page for **DeviceInformationKind**. One of the most common uses of **DeviceInformationKind** is to specify what kind of devices you are searching for when submitting a query in conjunction with a device selector. By doing this, it makes sure that you only enumerate over devices that match the provided **DeviceInformationKind**. For example, you could find a **DeviceInterface** object and then run a query to get the information for the parent **Device** object. That parent object may contain additional information.
 
+It is important to note that the properties available in the property bag for a [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object will vary depending on the [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) of the device. Certain properties are only available with certain kinds. For more information about which properties are available for which kinds, see [Device information properties](device-information-properties.md). Hence, in the above example, searching for the parent **Device** will give you access to more information that was not available from the **DeviceInterface** device object. Because of this, when you create your AQS filter strings, it is important to ensure that the requested properties are available for the **DeviceInformationKind** objects you are enumerating. For more information about building a filter, see [Build a device selector](build-a-device-selector.md).
 
-Чтобы скачать пример использования API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), перейдите [по этой ссылке](http://go.microsoft.com/fwlink/?LinkID=620536).
+When enumerating **AssociationEndpoint**, **AssociationEndpointContainer**, or **AssociationEndpointService** objects, you are enumerating over a wireless or network protocol. In these situations, we recommend that you don't use [**FindAllAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) and instead use [**CreateWatcher**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx). This is because searching over a network often results in search operations that won't timeout for 10 or more seconds before generating [**EnumerationCompleted**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx). **FindAllAsync** doesn't complete its operation until **EnumerationCompleted** is triggered. If you are using a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), you'll get results closer to real time regardless of when **EnumerationCompleted** is called.
 
- 
-
- 
-
+## Save a device for later use
 
 
+Any [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object is uniquely identified by a combination of two pieces of information: [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) and [**DeviceInformation.Kind**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx). If you keep these two pieces of information, you can recreate the **DeviceInformation** object after it lost by supplying this information to [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createfromidasync_907774063). If you do this, you can save user preferences for a device that integrates with your app.
+
+## Sample
 
 
+To download a sample showing how to use the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs, click [here](http://go.microsoft.com/fwlink/?LinkID=620536).
 
-<!--HONumber=Mar16_HO1-->
+ 
+
+ 
+
+
 
 

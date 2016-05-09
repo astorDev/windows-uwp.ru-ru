@@ -1,29 +1,30 @@
 ---
-title: Отображение карт с помощью представлений 2D, 3D и Streetside
-description: Отображайте настраиваемые карты в приложении, используя класс MapControl. Кроме того, в данной статье рассказывается о трехмерных воздушных представлениях и представлениях Streetside.
+author: PatrickFarley
+title: 'Display maps with 2D, 3D, and Streetside views'
+description: Display customizable maps in your app by using the MapControl class. This topic also introduces aerial 3D and Streetside views.
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 ---
 
-# Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside
+# Display maps with 2D, 3D, and Streetside views
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Отображайте настраиваемые карты в приложении, используя класс [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Кроме того, в данной статье рассказывается о трехмерных воздушных представлениях и представлениях Streetside.
+Display customizable maps in your app by using the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) class. This topic also introduces aerial 3D and Streetside views.
 
-**Совет. ** Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте следующий пример из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
+**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
--   [Пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## Добавление элемента управления картой в приложение
+## Add the map control to your app
 
 
-Карту можно отображать на странице XAML, добавив класс [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Для использования **MapControl** необходимо объявить пространство имен [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) на странице XAML или в коде. Если перетащить элемент управления с панели элементов, объявление пространства имен будет добавлено автоматически. Если вы добавляете **MapControl** на страницу XAML вручную, придется вручную добавить и объявление пространства имен в верхнюю часть страницы.
+Display a map on a XAML page by adding a [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). To use the **MapControl**, you must declare the [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) namespace in the XAML page or in your code. If you drag the control from the Toolbox, this namespace declaration is added automatically. If you add the **MapControl** to the XAML page manually, you must add the namespace declaration manually at the top of the page.
 
-В примере ниже показано, как отобразить базовый элемент управления картой и настроить карту для отображения элементов управления масштабом и наклоном в дополнение к функции приема сенсорного ввода. Дополнительные сведения о настройке внешнего вида карты см. в статье [Настройка карты](#mapconfig).
+The following example displays a basic map control and configures the map to display the zoom and tilt controls in addition to accepting touch inputs. For more info about customizing the appearance of the map, see [Configure the map](#mapconfig).
 
-```xaml
+```xml
 <Page
     x:Class="MapsAndLocation1.DisplayMaps"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -46,7 +47,7 @@ ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 </Page>
 ```
 
-Если вы добавляете элемент управления картой в код, придется вручную добавить и объявление пространства имен в верхнюю часть файла кода.
+If you add the map control in your code, you must declare the namespace manually at the top of the code file.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -60,19 +61,19 @@ MapControl2.MapServiceToken = "EnterYourAuthenticationKeyHere";
 pageGrid.Children.Add(MapControl2);
 ```
 
-## Получение и установка ключа проверки подлинности карт
+## Get and set a maps authentication key
 
 
-Прежде чем использовать класс [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) и службы карт, необходимо в качестве значения свойства [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) указать ключ проверки подлинности карт. В предыдущих примерах замените код `EnterYourAuthenticationKeyHere` ключом, полученным из [Центра разработки Карт Bing](https://www.bingmapsportal.com/). Текст **Внимание! Не указан MapServiceToken** будет отображаться под элементом управления, до тех пор пока вы не укажете ключ проверки подлинности карт. Дополнительные сведения о получении и установке ключа проверки подлинности карт см. в статье [Запрос ключа проверки подлинности карт](authentication-key.md).
+Before you can use [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) and map services, you must specify the maps authentication key as the value of the [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) property. In the previous examples, replace `EnterYourAuthenticationKeyHere` with the key you get from the [Bing Maps Developer Center](https://www.bingmapsportal.com/). The text **Warning: MapServiceToken not specified** continues to appear below the control until you specify the maps authentication key. For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
 
-## Установите начальное местоположение для карты
+## Set a starting location for the map
 
 
-Укажите местоположение для отображения на карте, задав свойство [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) класса [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) в коде или путем привязки свойства в разметке XAML. В примере ниже показано, как отобразить карту, в центре которой расположен город Сиэтл.
+Set the location to display on the map by specifying the [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) property of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) in your code or by binding the property in your XAML markup. The following example displays a map with the city of Seattle as its center.
 
-**Совет.** Так как строку невозможно преобразовать в класс [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675), то, соответственно, невозможно задать значение для свойства [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) в разметке XAML, если вы не используете привязку данных. (Это ограничение также применяется к вложенному свойству [**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264).)
+**Tip**  Since a string can't be converted to a [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675), you can't specify a value for the [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) property in XAML markup unless you use data binding. (This limitation also applies to the [**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264) attached property.)
 
- 
+ 
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -88,14 +89,14 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-![Пример элемента управления картой.](images/displaymapsexample1.png)
+![an example of the map control.](images/displaymapsexample1.png)
 
-## Настройте карту в соответствии с текущим местоположением
+## Set the current location of the map
 
 
-Перед тем как приложение сможет получить доступ к сведениям о местоположении пользователя, оно должно вызвать метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152). В этот момент ваше приложение должно находиться на переднем плане, а из потока пользовательского интерфейса должен быть вызван метод **RequestAccessAsync**. До тех пор пока пользователь не предоставит вашему приложению разрешение на доступ к данным о местоположении, приложение не сможет использовать такие данные.
+Before your app can access the user’s location, your app must call the [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) method. At that time, your app must be in the foreground and **RequestAccessAsync** must be called from the UI thread. Until the user grants your app permission to their location, your app can't access location data.
 
-С помощью метода [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) класса [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) получите текущее местоположение устройства (если доступна функция определения местоположения). Чтобы получить соответствующий класс [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675), используйте свойство [**Point**](https://msdn.microsoft.com/library/windows/apps/dn263665) геокоординаты геоположения. Дополнительные сведения см. в статье [Получение сведений о текущем местоположении](get-location.md).
+Get the current location of the device (if location is available) by using the [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) method of the [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) class. To obtain the corresponding [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675), use the [**Point**](https://msdn.microsoft.com/library/windows/apps/dn263665) property of the geoposition's geocoordinate. For more info, see [Get current location](get-location.md).
 
 ```csharp
 // Set your current location.
@@ -125,65 +126,65 @@ switch (accessStatus)
 }
 ```
 
-При отображении местоположения устройства на карте рекомендуется отображать рисунки и задавать масштаб на основе точности данных о местоположении. Дополнительные сведения см. в статье [Руководство по приложениям с определением местонахождения](https://msdn.microsoft.com/library/windows/apps/hh465148).
+When you display your device's location on a map, consider displaying graphics and setting the zoom level based on the accuracy of the location data. For more info, see [Guidelines for location-aware apps](https://msdn.microsoft.com/library/windows/apps/hh465148).
 
-## Изменение местоположения на карте
-
-
-Чтобы изменить местоположение, отображаемое на двумерной карте, вызовите одну из перегрузок метода [**TrySetViewAsync**](https://msdn.microsoft.com/library/windows/apps/dn637060). Используйте этот метод для определения новых значений для [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005), [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068), [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019), и [**Pitch**](https://msdn.microsoft.com/library/windows/apps/dn637044). Кроме того, можно настроить использование дополнительной анимации при изменениях представления с помощью константы из перечисления [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002).
-
-Чтобы изменить местоположение трехмерной карты, используйте метод [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296). Дополнительные сведения см. в статье [Отображение трехмерных представлений](#display3d).
-
-Вызовите метод [**TrySetViewBoundsAsync**](https://msdn.microsoft.com/library/windows/apps/dn637065), чтобы отобразить содержимое [**GeoboundingBox**](https://msdn.microsoft.com/library/windows/apps/dn607949) на карте. Например, с помощью этого метода можно отобразить на карте маршрут или часть маршрута. Подробности см. в разделе [Отображение маршрутов и направлений на карте](routes-and-directions.md).
-
-## Настройка карты
+## Change the location of the map
 
 
-Чтобы настроить карту и ее внешний вид, установите значения следующих свойств объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+To change the location that appears in a 2D map, call one of the overloads of the [**TrySetViewAsync**](https://msdn.microsoft.com/library/windows/apps/dn637060) method. Use that method to specify new values for [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005), [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068), [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019), and [**Pitch**](https://msdn.microsoft.com/library/windows/apps/dn637044). You can also specify an optional animation to use when the view changes by providing a constant from the [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002) enumeration.
 
-**Параметры карты**
+To change the location of a 3D map, use the [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) method instead. For more info, see [Display 3D views](#display3d).
 
--   Установите географическую точку как **центр** карты, присвоив значение свойству [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005).
--   Установите **масштаб карты**, присвоив значение свойству [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) от 1 до 20.
--   Установите **вращение** карты, задав свойство [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019), для которого 0 или 360 градусов обозначают север, 90 — восток, 180 — юг и 270 — запад.
--   Установите **наклон** карты, присвоив значение свойству [**DesiredPitch**](https://msdn.microsoft.com/library/windows/apps/dn637012) от 0 до 65 градусов.
+Call the [**TrySetViewBoundsAsync**](https://msdn.microsoft.com/library/windows/apps/dn637065) method to display the contents of a [**GeoboundingBox**](https://msdn.microsoft.com/library/windows/apps/dn607949) on the map. Use this method, for example, to display a route or a portion of a route on the map. For more info, see [Display routes and directions on a map](routes-and-directions.md).
 
-**Вид карты**
-
--   Укажите **тип** карты (например, карта дорог или гибридный вид), присвоив свойству [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) одну из констант [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).
--   Вы можете задать светлую или темную **цветовую схему** карты, присвоив свойству [**ColorScheme**](https://msdn.microsoft.com/library/windows/apps/dn637010) значение одной из констант [**MapColorScheme**](https://msdn.microsoft.com/library/windows/apps/dn637003).
-
-Чтобы отобразить информацию на карте, установите значения указанных ниже свойств объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
-
--   Отобразите **здания и ориентиры** на карте, включив или отключив свойство [**LandmarksVisible**](https://msdn.microsoft.com/library/windows/apps/dn637023).
--   Чтобы показать на карте **объекты для пешеходов**, например надземные переходы, включите или отключите свойство [**PedestrianFeaturesVisible**](https://msdn.microsoft.com/library/windows/apps/dn637042).
--   Чтобы показать на карте **пробки**, включите или отключите свойство [**TrafficFlowVisible**](https://msdn.microsoft.com/library/windows/apps/dn637055).
--   Чтобы указать, необходимо ли отображать **водяной знак** на карте, присвойте свойству [**WatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn637066) значение одной из констант [**MapWatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn610749).
--   Чтобы показать на карте **маршруты для движения пешком или на автомобиле**, добавьте [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) в коллекцию [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) элемента управления картой. Подробности и примеры см. в разделе [Отображение маршрутов и направлений на карте](routes-and-directions.md).
-
-Сведения о том, как отображать вешки, фигуры и элементы управления XAML в объекте [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), см. в статье [Отображение объектов на карте](display-poi.md).
-
-## Отображение представлений Streetside
+## Configure the map
 
 
-Представление Streetside — это перспектива уровня улицы для местоположения, отображаемая в верхней части элемента управления картой.
+Configure the map and its appearance by setting the values of the following properties of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-![Пример представления Streetside элемента управления картой.](images/onlystreetside-730width.png)
+**Map settings**
 
-Рассмотрите возможность отделения взаимодействия «внутри» представления Streetside от карты, изначально отображаемой в элементе управления картой. Например, изменение расположения в представлении Streetside не изменяет расположение и внешний вид карты в представлении Streetside. После закрытия представления Streetside (с помощью значка **X** в правом верхнем углу элемента управления) исходная карта останется неизменной.
+-   Set the **center** of the map to a geographic point by setting the [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) property.
+-   Set the **zoom level** of the map by setting the [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) property to a value between 1 and 20.
+-   Set the **rotation** of the map by setting the [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019) property, where 0 or 360 degrees = North, 90 = East, 180 = South, and 270 = West.
+-   Set the **tilt** of the map by setting the [**DesiredPitch**](https://msdn.microsoft.com/library/windows/apps/dn637012) property to a value between 0 and 65 degrees.
 
-Чтобы отобразить представление Streetside, выполните указанные ниже действия.
+**Map appearance**
 
-1.  Проверьте свойство [**IsStreetsideSupported**](https://msdn.microsoft.com/library/windows/apps/dn974271), чтобы узнать, поддерживаются ли представления Streetside на устройстве.
-2.  Если представление Streetside поддерживается, создайте класс [**StreetsidePanorama**](https://msdn.microsoft.com/library/windows/apps/dn974360) возле указанного местоположения, вызвав метод [**FindNearbyAsync**](https://msdn.microsoft.com/library/windows/apps/dn974361).
-3.  Узнайте, обнаружена ли ближайшая панорама, проверив, имеет ли класс [**StreetsidePanorama**](https://msdn.microsoft.com/library/windows/apps/dn974360) значение null.
-4.  Если ближайшая панорама обнаружена, создайте объект [**StreetsideExperience**](https://msdn.microsoft.com/library/windows/apps/dn974356) для свойства [**CustomExperience**](https://msdn.microsoft.com/library/windows/apps/dn974263) элемента управления картой.
+-   Specify the **type** of map - for example, a road map or an aerial map - by setting the [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) property with one of the [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127) constants.
+-   Set the **color scheme** of the map to light or dark by setting the [**ColorScheme**](https://msdn.microsoft.com/library/windows/apps/dn637010) property with one of the [**MapColorScheme**](https://msdn.microsoft.com/library/windows/apps/dn637003) constants.
 
-В этом примере показано, как отображать представление Streetside, аналогичное предыдущему изображению.
+Show information on the map by setting the values of the following properties of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-**Примечание.** Если элемент управления картой имеет слишком маленький размер, карта обзора не будет отображаться.
+-   Display **buildings and landmarks** on the map by enabling or disabling the [**LandmarksVisible**](https://msdn.microsoft.com/library/windows/apps/dn637023) property.
+-   Display **pedestrian features** such as public stairs on the map by enabling or disabling the [**PedestrianFeaturesVisible**](https://msdn.microsoft.com/library/windows/apps/dn637042) property.
+-   Display **traffic** on the map by enabling or disabling the [**TrafficFlowVisible**](https://msdn.microsoft.com/library/windows/apps/dn637055) property.
+-   Specify whether the **watermark** is displayed on the map by setting the [**WatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn637066) property to one of the [**MapWatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn610749) constants.
+-   Display a **driving or walking route** on the map by adding a [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) to the [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) collection of the Map control. For more info and an example, see [Display routes and directions on a map](routes-and-directions.md).
 
- 
+For info about how to display pushpins, shapes, and XAML controls in the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), see [Display points of interest (POI) on a map](display-poi.md).
+
+## Display Streetside views
+
+
+A Streetside view is a street-level perspective of a location that appears on top of the map control.
+
+![an example of a streetside view of the map control.](images/onlystreetside-730width.png)
+
+Consider the experience "inside" the Streetside view separate from the map originally displayed in the map control. For example, changing the location in the Streetside view does not change the location or appearance of the map "under" the Streetside view. After you close the Streetside view (by clicking the **X** in the upper right corner of the control), the original map remains unchanged.
+
+To display a Streetside view
+
+1.  Determine if Streetside views are supported on the device by checking [**IsStreetsideSupported**](https://msdn.microsoft.com/library/windows/apps/dn974271).
+2.  If Streetside view is supported, create a [**StreetsidePanorama**](https://msdn.microsoft.com/library/windows/apps/dn974360) near the specified location by calling [**FindNearbyAsync**](https://msdn.microsoft.com/library/windows/apps/dn974361).
+3.  Determine if a nearby panorama was found by checking if the [**StreetsidePanorama**](https://msdn.microsoft.com/library/windows/apps/dn974360) is not null
+4.  If a nearby panorama was found, create a [**StreetsideExperience**](https://msdn.microsoft.com/library/windows/apps/dn974356) for the map control's [**CustomExperience**](https://msdn.microsoft.com/library/windows/apps/dn974263) property.
+
+This example shows how to display a Streetside view similar to the previous image.
+
+**Note**  The overview map will not appear if the map control is sized too small.
+
+ 
 
 ```csharp
 private async void showStreetsideView()
@@ -219,25 +220,25 @@ private async void showStreetsideView()
 }
 ```
 
-## Отображение трехмерных гибридных представлений
+## Display aerial 3D views
 
 
-Задайте трехмерную перспективу карты с помощью класса [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329). Сцена карты представляет трехмерное представление, отображаемое на карте. Класс [**MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) представляет положение камеры, отображающей такое представление.
+Specify a 3D perspective of the map by using the [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) class. The map scene represents the 3D view that appears in the map. The [**MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) class represents the position of the camera that would display such a view.
 
 ![](images/mapcontrol-techdiagram.png)
 
-Чтобы здания и другие объекты на карте отображались в трехмерном представлении, задайте для свойства [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) элемента управления картой значение [**MapStyle.Aerial3DWithRoads**](https://msdn.microsoft.com/library/windows/apps/dn637127). Это пример трехмерного представления со стилем **Aerial3DWithRoads**.
+To make buildings and other features on the map surface appear in 3D, set the map control's [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) property to [**MapStyle.Aerial3DWithRoads**](https://msdn.microsoft.com/library/windows/apps/dn637127). This is an example of a 3D view with the **Aerial3DWithRoads** style.
 
-![Пример трехмерного представления карты.](images/only3d-730width.png)
+![an example of a 3d map view.](images/only3d-730width.png)
 
-Чтобы отобразить трехмерное представление, выполните указанные ниже действия.
+To display a 3D view
 
-1.  Проверьте свойство [**Is3DSupported**](https://msdn.microsoft.com/library/windows/apps/dn974265), чтобы узнать, поддерживаются ли трехмерные представления на устройстве.
-2.  Если трехмерные представления поддерживаются, задайте для свойства [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) элемента управления картой значение [**MapStyle.Aerial3DWithRoads**](https://msdn.microsoft.com/library/windows/apps/dn637127).
-3.  Создайте объект [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) с помощью одного из множества методов **CreateFrom**, например [**CreateFromLocationAndRadius**](https://msdn.microsoft.com/library/windows/apps/dn974336) и [**CreateFromCamera**](https://msdn.microsoft.com/library/windows/apps/dn974334).
-4.  Вызовите метод [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296), чтобы отобразить трехмерное представление. Кроме того, можно настроить использование дополнительной анимации при изменениях представления с помощью константы из перечисления [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002).
+1.  Determine if 3D views are supported on the device by checking [**Is3DSupported**](https://msdn.microsoft.com/library/windows/apps/dn974265).
+2.  If 3D views is supported, set the map control's [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) property to [**MapStyle.Aerial3DWithRoads**](https://msdn.microsoft.com/library/windows/apps/dn637127).
+3.  Create a [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) object using one of the many **CreateFrom** methods, such as [**CreateFromLocationAndRadius**](https://msdn.microsoft.com/library/windows/apps/dn974336) and [**CreateFromCamera**](https://msdn.microsoft.com/library/windows/apps/dn974334).
+4.  Call [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) to display the 3D view. You can also specify an optional animation to use when the view changes by providing a constant from the [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002) enumeration.
 
-В данном примере показано, как отображать трехмерное представление.
+This example shows how to display a 3D view.
 
 ```csharp
 private async void display3DLocation()
@@ -273,52 +274,43 @@ private async void display3DLocation()
 }
 ```
 
-## Получение информации о местоположениях и элементах
+## Get info about locations and elements
 
 
-Чтобы получить информацию о местоположениях на карте, вызовите указанные ниже методы объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+Get info about locations on the map by calling the following methods of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
--   [
-							Метод **GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) — получение географического положения, соответствующего заданной точке в окне просмотра элемента управления картой.
--   [
-							Метод **GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) — получение в окне просмотра элемента управления картой точки, которая соответствует заданному географическому положению.
--   [
-							Метод **IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) — определение того, отображается ли в текущий момент заданное географическое положение в окне просмотра элемента управления картой.
--   [
-							Метод **FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) — получение элементов на карте, расположенных в заданной точке окна просмотра элемента управления картой.
+-   [**GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) method - Get the geographic location that corresponds to the specified point in the viewport of the Map control.
+-   [**GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) method - Get the point in the viewport of the Map control that corresponds to the specified geographic location.
+-   [**IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) method - Determine whether the specified geographic location is currently visible in the viewport of the Map control.
+-   [**FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) method - Get the elements on the map located at the specified point in the viewport of the Map control.
 
-## Обработка взаимодействия с пользователем и изменений
+## Handle user interaction and changes
 
 
-Чтобы обработать жесты ввода пользователя на карте, необходимо обработать указанные ниже события объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Получите информацию о географическом положении на карте и физическом положении в окне просмотра, где был выполнен жест, проверив значения свойств [**Location**](https://msdn.microsoft.com/library/windows/apps/dn637091) и [**Position**](https://msdn.microsoft.com/library/windows/apps/dn637093) класса [**MapInputEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637090).
+Handle user input gestures on the map by handling the following events of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Get info about the geographic location on the map and the physical position in the viewport where the gesture occurred by checking the values of the [**Location**](https://msdn.microsoft.com/library/windows/apps/dn637091) and [**Position**](https://msdn.microsoft.com/library/windows/apps/dn637093) properties of the [**MapInputEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637090).
 
 -   [**MapTapped**](https://msdn.microsoft.com/library/windows/apps/dn637038)
 -   [**MapDoubleTapped**](https://msdn.microsoft.com/library/windows/apps/dn637032)
 -   [**MapHolding**](https://msdn.microsoft.com/library/windows/apps/dn637035)
 
-Определите, загружена ли карта или только загружается, обработав событие [**LoadingStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn637028) элемента управления.
+Determine whether the map is loading or completely loaded by handling the control's [**LoadingStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn637028) event.
 
-Чтобы обработать изменения, которые происходят при изменении пользователем или приложением параметров карты, необходимо обработать указанные ниже события объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). [Руководства по картам](https://msdn.microsoft.com/library/windows/apps/dn596102)
+Handle changes that happen when the user or the app changes the settings of the map by handling the following events of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). [Guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
 
 -   [**CenterChanged**](https://msdn.microsoft.com/library/windows/apps/dn637006)
 -   [**HeadingChanged**](https://msdn.microsoft.com/library/windows/apps/dn637020)
 -   [**PitchChanged**](https://msdn.microsoft.com/library/windows/apps/dn637045)
 -   [**ZoomLevelChanged**](https://msdn.microsoft.com/library/windows/apps/dn637069)
 
-## Связанные разделы
+## Related topics
 
-* [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
-* [Пример карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Получение сведений о текущем местоположении](get-location.md)
-* [Рекомендации по разработке приложений с определением местоположения](https://msdn.microsoft.com/library/windows/apps/hh465148)
-* [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Видео c конференции Build 2015: использование карт и местоположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Пример приложения UWP для работы с картами](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Get current location](get-location.md)
+* [Design guidelines for location-aware apps](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)
-
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 

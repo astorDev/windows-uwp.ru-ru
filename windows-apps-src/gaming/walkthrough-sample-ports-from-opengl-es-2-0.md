@@ -1,17 +1,18 @@
 ---
-title: Пошаговое руководство: образцы переноса из OpenGL ES 2.0
-description: В этой группе разделов подробно рассматриваются несколько сценариев переноса графического конвейера OpenGL ES 2.0 разного уровня сложности.
+author: mtoepke
+title: Walkthrough sample ports from OpenGL ES 2.0
+description: This set of topics walks a number of OpenGL ES 2.0 graphics pipeline porting scenarios of differing complexity.
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 ---
 
-# Пошаговое руководство: образцы переноса из OpenGL ES 2.0
+# Walkthrough sample ports from OpenGL ES 2.0
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этой группе разделов подробно рассматриваются несколько сценариев переноса графического конвейера OpenGL ES 2.0 разного уровня сложности.
+This set of topics walks a number of OpenGL ES 2.0 graphics pipeline porting scenarios of differing complexity.
 
-## Пошаговые руководства по переносу из OpenGL ES 2.0 в Direct3D 11
+## OpenGL ES 2.0 to Direct3D 11 walkthroughs
 
 ## 
 <table>
@@ -21,29 +22,24 @@ ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Тема</th>
-<th align="left">Описание</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11.1](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)</p></td>
-<td align="left"><p>Для первого упражнения в переносе начнем с основ: с переноса простого обработчика для вращающегося, с затенением по вершинам, куба из OpenGL ES 2.0 в Direct3D, чтобы он соответствовал шаблону "Приложение DirectX 11 (универсальные приложения для Windows)" из Visual Studio 2015.</p></td>
+<td align="left"><p>For the first porting exercise, we'll start with the basics: bringing a simple renderer for a spinning, vertex-shaded cube from OpenGL ES 2.0 into Direct3D, such that it matches the DirectX 11 App (Universal Windows) template from Visual Studio 2015.</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

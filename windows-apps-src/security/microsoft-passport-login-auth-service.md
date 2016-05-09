@@ -1,36 +1,36 @@
 ---
-title: Создание службы входа Microsoft Passport
-description: Это вторая часть полного пошагового руководства по использованию Microsoft Passport в качестве альтернативы традиционным системам проверки подлинности с помощью имени пользователя и пароля в приложениях универсальной платформы Windows 10 (UWP).
+title: Create a Microsoft Passport login service
+description: This is Part 2 of a complete walkthrough on how to use Microsoft Passport as an alternative to traditional username and password authentication systems in Windows 10 UWP (Universal Windows platform) apps.
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 author: awkoren
 ---
 
-# Создание службы входа Microsoft Passport
+# Create a Microsoft Passport login service
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-Это вторая часть полного пошагового руководства по использованию Microsoft Passport в качестве альтернативы традиционным системам проверки подлинности с помощью имени пользователя и пароля в приложениях универсальной платформы Windows 10 (UWP). Эта статья является продолжением первой части [Приложение для входа с использованием Microsoft Passport](microsoft-passport-login.md) и описывает расширение функций, чтобы продемонстрировать интеграцию Microsoft Passport в существующие приложения.
+This is Part 2 of a complete walkthrough on how to use Microsoft Passport as an alternative to traditional username and password authentication systems in Windows 10 UWP (Universal Windows platform) apps. This article picks up where Part 1, [Microsoft Passport login app](microsoft-passport-login.md), left off and extends the functionality to demonstrate how you can integrate Microsoft Passport into your existing application.
 
-Для создания этого проекта необходим опыт работы с C# и XAML. Вам также потребуется использовать Visual Studio 2015 (Community Edition или более старший выпуск) на компьютере под управлением Windows 10.
+In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2015 (Community Edition or greater) on a Windows 10 machine.
 
-## Упражнение 1. Логика на стороне сервера
+## Exercise 1: Server Side Logic
 
 
-В этом упражнении вы будете использовать приложение для Microsoft Passport, созданное на первом практикуме, и создадите локальные сервер и базу данных. В этом практическом занятии вы узнаете, как интегрировать Microsoft Passport в существующую систему. С помощью макетного сервера и базы данных устраняется необходимость в настройке многих несущественных параметров. В ваших собственных приложениях потребуется заменить макетные объекты реальными службами и базами данных.
+In this exercise you will be starting with the Passport application built in the first lab and creating a local mock server and database. This hands on lab is designed to teach how Microsoft Passport could be integrated into an existing system. By using a mock server and mock database a lot of unrelated setup is eliminated. In your own applications you will need to replace the mock objects with the real services and databases.
 
--   Откройте решение PassportLogin из первого практического занятия по Microsoft Passport.
--   Начнем с реализации имитации сервера и базы данных. Создайте новую папку с именем "AuthService". Для этого щелкните правой кнопкой мыши решение «PassportLogin (универсальные приложения для Windows)» в обозревателе решений и выберите «Добавить > Новая папка».
--   Создайте классы UserAccount и PassportDevices, которые будут использоваться в качестве моделей данных, сохраняемых в макетной базе данных. UserAccount будет аналогичен модели пользователя, реализованной на традиционном сервере проверки подлинности. Щелкните правой кнопкой мыши папку AuthService и добавьте класс "UserAccount.cs".
+-   To begin, open up the PassportLogin solution from the first Passport Hands On Lab.
+-   You will start by implementing the mock server and mock database. Create a new folder called "AuthService". In solution explorer right click on the solution "PassportLogin (Universal Windows)" and select Add > New Folder.
+-   Create UserAccount and PassportDevices classes that will act as models for data to be saved in the mock database. The UserAccount will be similar to the user model implemented on a traditional authentication server. Right click on the AuthService folder and add a new class called "UserAccount.cs."
 
     ![](images/passport-auth-1.png)
 
     ![](images/passport-auth-2.png)
 
--   Измените определение класса на общий (public), а затем добавьте следующие открытые свойства. Вам потребуется следующая справочная информация.
+-   Change the class definition to be public and then add the following public properties. You will need the following reference.
 
     ```cs
     using System.ComponentModel.DataAnnotations;
@@ -49,9 +49,9 @@ author: awkoren
     }
     ```
 
-    Возможно, вы заметили закомментированный список PassportDevices. Это изменение следует внести в существующую модель пользователя в текущей реализации. Список PassportDevices будет содержать deviceID, открытый ключ, созданный в Microsoft Passport, и класс [**KeyCredentialAttestationResult**](https://msdn.microsoft.com/library/windows/apps/dn973034). В этом практическом занятии вам потребуется реализовать keyAttestationResult, поскольку аттестация ключа предоставляется Microsoft Passport только на устройствах с микросхемой доверенного платформенного модуля (TPM). Класс **KeyCredentialAttestationResult** представляет собой комбинацию нескольких свойств и должен быть разделен для сохранения свойств в базе данных и их загрузки из базы данных.
+    You may have noticed the commented out list of PassportDevices. This is a modification you will need to make to an existing user model in your current implementation. The list of PassportDevices will contain a deviceID, the public key made from Microsoft Passport, and a [**KeyCredentialAttestationResult**](https://msdn.microsoft.com/library/windows/apps/dn973034). For this hands on lab you will need to implement the keyAttestationResult as they are only provided by Microsoft Passport on devices that have a TPM (Trusted Platform Modules) chip. The **KeyCredentialAttestationResult** is a combination of multiple properties and would need to be split in order to save and load them with a database.
 
--   Создайте новый класс под названием "PassportDevice.cs" в папке AuthService. Это модель устройств Passport, упомянутая ранее. Измените определение класса на общий (public) и добавьте следующие свойства.
+-   Create a new class in the AuthService folder called "PassportDevice.cs". This is the model for the passport devices as discussed above. Change the class definition to be public and add the following properties.
 
     ```cs
     namespace PassportLogin.AuthService
@@ -70,7 +70,7 @@ author: awkoren
     }
     ```
 
--   Вернитесь в UserAccount.cs и удалите комментарий для списка устройств Passport.
+-   Return to in UserAccount.cs and uncomment the list of Passport devices.
 
     ```cs
     using System.Collections.Generic;
@@ -89,8 +89,8 @@ author: awkoren
     }
     ```
 
--   После создания моделей UserAccount и PassportDevice необходимо создать в AuthService еще один класс, который будет служить макетной базой данных. Это макетная база данных, которую вы будете использовать для сохранения и загрузки списка пользовательских учетных записей локально. В реальных сценариях это была бы ваша реализация базы данных. Создайте в AuthService новый класс "MockStore.cs". Измените определение класса на public.
--   Так как макетное хранилище сохраняет и загружает список учетных записей пользователей локально, вы можете реализовать логику сохранения и загрузки списка, используя XmlSerializer. Вам также необходимо запомнить имя файла и его расположение. Реализуйте в файле MockStore.cs следующие элементы.
+-   With the model for the UserAccount and the PassportDevice created, you need to create another new class in the AuthService that will act as the mock database. As this is a mock database from where you will be saving and loading a list of user accounts locally. In the real world this would be your database implementation. Create a new class in AuthService called "MockStore.cs". Change the class definition to public.
+-   As the mock store will save and load a list of user accounts locally you can implement the logic to save and load that list using an XmlSerializer. You will also need to remember the filename and save location. In MockStore.cs implement the following:
 -   
 
     ```cs
@@ -181,7 +181,7 @@ author: awkoren
     }
     ```
 
--   Возможно, вы заметили, что метод InitializeSampleUserAccounts в методе Load закомментирован. Вам необходимо создать этот метод в MockStore.cs. Он будет заполнять список учетных записей, чтобы можно было произвести вход. В реальных сценариях база данных пользователей будет уже заполнена. На этом шаге вы также создадите конструктор для инициализации списка пользователей и вызова загрузки.
+-   In the load method you may have noticed that an InitializeSampleUserAccounts method was commented out. You will need to create this method in the MockStore.cs. This method will populate the user accounts list so that a login can take place. In the real world the user database would already be populated. In this step you will also be creating a constructor that will initialise the user list and call load.
 
     ```cs
     namespace PassportLogin.AuthService
@@ -196,7 +196,7 @@ author: awkoren
      
             public MockStore()
             {
-                _mockDatabaseUserAccountsList = new List&amp; lt; UserAccount &amp; gt; ();
+                _mockDatabaseUserAccountsList = new List& lt; UserAccount & gt; ();
                 LoadAccountListAsync();
             }
 
@@ -220,7 +220,7 @@ author: awkoren
     }
     ```
 
--   Теперь, когда метод InitalizeSampleUserAccounts существует, удалите комментарий вызова этого метода в методе LoadAccountListAsync.
+-   Now that the InitalizeSampleUserAccounts method exists uncomment the method call in the LoadAccountListAsync method.
 
     ```cs
     private async void LoadAccountListAsync()
@@ -244,7 +244,7 @@ author: awkoren
     }
     ```
 
--   Теперь можно использовать макетное хранилище для сохранения и загрузки списка учетных записей пользователей. Доступ к этому списку потребуется и другим частям приложения, поэтому необходимо реализовать методы для получения этих данных. Добавьте следующие методы Get в метод InitializeSampleUserAccounts. Они позволят вам получить идентификатор пользователя, одиночного пользователя, список пользователей на определенном устройстве Passport, а также открытый ключ для пользователя определенного устройства.
+-   The user accounts list in mock store can now be saved and loaded. Other parts of the application will need to have access to this list so there will need to be some methods to retrieve this data. Underneath the InitializeSampleUserAccounts method, add the following get methods. They will allow you to get a userid, a single user, a list of users for a specific Passport device, and also get the public key for the user on a specific device.
 
     ```cs
     public Guid GetUserId(string username)
@@ -294,7 +294,7 @@ author: awkoren
     }
     ```
 
--   Следующие методы, которые необходимо реализовать, обрабатывают простые операции добавления и удаления учетной записи, а также удаления устройства. Удаление устройства необходимо, так как Microsoft Passport учитывает конкретное устройство. Microsoft Passport создает новую пару открытых и закрытых ключей для каждого устройства, на котором выполняется вход. Это похоже на использование для входа отдельного пароля для каждого устройства, но при этом вам не нужно запоминать все эти пароли, так как за вас это делает сервер. Добавьте в файл MockStore.cs следующие методы.
+-   The next methods to implement will handle simple operations to add account, remove account, and also remove device. Remove device is needed as Microsoft Passport is device specific. For each device to which you log in, a new public and private key pair will be created by Microsoft Passport. It is like having a different password for each device you sign in on, the only thing is you don’t need to remember all those passwords the server does. Add the following methods into the MockStore.cs
 
     ```cs
     public UserAccount AddAccount(string username)
@@ -357,7 +357,7 @@ author: awkoren
     }
     ```
 
--   В класс MockStore добавьте метод, который вносит данные Microsoft Passport в существующий UserAccount. Этот метод будет называться PassportUpdateDetails и использовать параметры для идентификации пользователя и сведения Passport. KeyAttestationResult при создании PassportDevice был закомментирован. В реальном приложении вам потребуется его использовать.
+-   In the MockStore class add a method that will add Passport related information to an existing UserAccount. This method will be called PassportUpdateDetails and will take parameters to identify the user, and the Passport details. The KeyAttestationResult has been commented out when creating a PassportDevice, in a real world application you would require this.
 
    ```cs
    using Windows.Security.Credentials;
@@ -484,7 +484,7 @@ author: awkoren
     ```cs
     public bool ValidateCredentials(string username, string password)
     {
-        if (!string.IsNullOrEmpty(username) &amp;&amp; !string.IsNullOrEmpty(password))
+        if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
         {
             // This would be used for existing accounts migrating to use Passport
             Guid userId = GetUserId(username);
@@ -528,7 +528,7 @@ author: awkoren
            // be configured for each company.
         // Simply just return true.
 
-        // You could get the User&#39;s Public Key with something similar to the following:
+        // You could get the User's Public Key with something similar to the following:
         byte[] userPublicKey = _mockStore.GetPublicKey(userId, deviceId);
         return true;
     }
@@ -550,7 +550,7 @@ In this exercise you will be changing the client side views and helper classes f
 
 -   Update the Login page interface to require a passport be entered. This hands on lab demonstrates how an existing system could be migrated to use Microsoft Passport and existing accounts will have a username and a password. Also update the explanation at the bottom of the XAML to include the default password. Update the following XAML in Login.xaml
 
-    ```xaml
+    ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <StackPanel Orientation="Vertical">
         <TextBlock Text="Login" FontSize="36" Margin="4" TextAlignment="Center"/>
@@ -578,7 +578,7 @@ In this exercise you will be changing the client side views and helper classes f
         <Button x:Name="PassportSignInButton" Content="Login" Background="DodgerBlue" Foreground="White"
             Click="PassportSignInButton_Click" Width="80" HorizontalAlignment="Center" Margin="0,20"/>
 
-        <TextBlock Text="Don&#39;t have an account?"
+        <TextBlock Text="Don't have an account?"
                     TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
         <TextBlock x:Name="RegisterButtonTextBlock" Text="Register now"
                    PointerPressed="RegisterButtonTextBlock_OnPointerPressed"
@@ -593,7 +593,7 @@ In this exercise you will be changing the client side views and helper classes f
 
         <TextBlock x:Name="LoginExplaination" FontSize="24" TextAlignment="Center" TextWrapping="Wrap" 
             Text="Please Note: To demonstrate a login, validation will only occur using the default username 
-            &#39;sampleUsername&#39; and default password &#39;samplePassword&#39;"/>
+            'sampleUsername' and default password 'samplePassword'"/>
 
       </StackPanel>
     </Grid>
@@ -682,7 +682,7 @@ In this exercise you will be changing the client side views and helper classes f
             }
         }
 
-        // Can&#39;t use Passport right now, try again later
+        // Can't use Passport right now, try again later
         return false;
     }
     ```
@@ -733,7 +733,7 @@ In this exercise you will be changing the client side views and helper classes f
 
 -   As Microsoft Passport will create a different public and private key pair for each account on each device the Welcome page will need to display a list of registered devices for the logged in account, and allow each one to be forgotten. In Welcome.xaml add in the following XAML underneath the ForgetButton. This will implement a forget device button, an error text area and a list to display all devices.
 
-    ```xaml
+    ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <StackPanel Orientation="Vertical">
         <TextBlock x:Name="Title" Text="Welcome" FontSize="40" TextAlignment="Center"/>
@@ -1111,11 +1111,11 @@ In this exercise you will be changing the client side views and helper classes f
         }
         else if (signResult.Status == KeyCredentialStatus.SecurityDeviceLocked)
         {
-            // Can&#39;t use Passport right now, remember that hardware failed and suggest restart
+            // Can't use Passport right now, remember that hardware failed and suggest restart
         }
         else if (signResult.Status == KeyCredentialStatus.UnknownError)
         {
-            // Can&#39;t use Passport right now, try again later
+            // Can't use Passport right now, try again later
         }
 
         return false;
@@ -1159,7 +1159,7 @@ In this exercise you will be changing the client side views and helper classes f
             }
         }
 
-        // Can&#39;t use Passport right now, try again later
+        // Can't use Passport right now, try again later
         return false;
     }
     ```
@@ -1175,7 +1175,3 @@ We have left as an exercise for you the details of how you will implement the au
 
 * [Microsoft Passport and Windows Hello](microsoft-passport.md)
 * [Microsoft Passport login app](microsoft-passport-login.md)
-
-<!--HONumber=Mar16_HO5-->
-
-

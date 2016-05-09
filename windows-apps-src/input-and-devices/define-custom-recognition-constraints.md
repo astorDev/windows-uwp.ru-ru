@@ -1,52 +1,50 @@
 ---
-Description: Из этой статьи вы узнаете, как определять и использовать нестандартные ограничения для распознавания речи.
-title: Определение настраиваемых ограничений распознавания
+author: Karl-Bridge-Microsoft
+Description: Learn how to define and use custom constraints for speech recognition.
+title: Define custom recognition constraints
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
-label: Определение настраиваемых ограничений распознавания
+label: Define custom recognition constraints
 template: detail.hbs
 ---
 
-# Определение настраиваемых ограничений распознавания
+# Define custom recognition constraints
 
+Learn how to define and use custom constraints for speech recognition.
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-Из этой статьи вы узнаете, как определять и использовать нестандартные ограничения для распознавания речи.
-
-**Важные API**
+**Important APIs**
 
 -   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)
 -   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)
 -   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 
-Для распознавания речи требуется по крайней мере одно ограничение, чтобы определить распознаваемый словарь. Если не задано ни одно ограничение, будет использоваться предопределенная грамматика речевого ввода универсальных приложений для Windows. См. [Распознавание речи](speech-recognition.md).
+Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, the predefined dictation grammar of Universal Windows apps is used. See [Speech recognition](speech-recognition.md).
 
 
-## <span id="Add_constraints"></span><span id="add_constraints"></span><span id="ADD_CONSTRAINTS"></span>Добавление ограничений
+## <span id="Add_constraints"></span><span id="add_constraints"></span><span id="ADD_CONSTRAINTS"></span>Add constraints
 
 
-Для добавления ограничений в распознаватель речи используйте свойство [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241).
+Use the [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) property to add constraints to a speech recognizer.
 
-Здесь мы рассмотрим три вида ограничений распознавания речи, используемых в пределах приложения. (Сведения об ограничениях голосовых команд см. в разделе [Запуск приложения переднего плана с помощью голосовых команд в Кортане](launch-a-foreground-app-with-voice-commands-in-cortana.md).)
+Here, we cover the three kinds of speech recognition constraints used from within an app. (For voice command constraints, see [Launch a foreground app with voice commands in Cortana](launch-a-foreground-app-with-voice-commands-in-cortana.md).)
 
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) — ограничение на базе предварительно заданной грамматики (диктовки или веб-поиска).
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) — ограничение на базе списка слов или фраз.
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) — ограничение, определенное в файле грамматики SRGS.
+-   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)—A constraint based on a predefined grammar (dictation or web search).
+-   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)—A constraint based on a list of words or phrases.
+-   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)—A constraint defined in a Speech Recognition Grammar Specification (SRGS) file.
 
-Распознаватель речи может иметь одну коллекцию ограничений. Только эти комбинации ограничений являются допустимыми:
+Each speech recognizer can have one constraint collection. Only these combinations of constraints are valid:
 
--   Ограничение по одной теме или предварительно заданная грамматика (диктовка или веб-поиск). Никакие другие ограничения не допускаются.
--   Комбинация ограничений на базе списка и (или) ограничений на базе файла грамматики.
+-   A single-topic constraint, or predefined grammar (dictation or web search). No other constraints are allowed.
+-   A combination of list constraints and/or grammar-file constraints.
 
-**Помните:** Перед запуском процесса распознавания вызовите метод [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) для компиляции ограничений.
+**Remember:  **Call the [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) method to compile the constraints before starting the recognition process.
 
-## <span id="Specify_a_web-search_grammar__SpeechRecognitionTopicConstraint_"></span><span id="specify_a_web-search_grammar__speechrecognitiontopicconstraint_"></span><span id="SPECIFY_A_WEB-SEARCH_GRAMMAR__SPEECHRECOGNITIONTOPICCONSTRAINT_"></span>Задание грамматики веб-поиска (SpeechRecognitionTopicConstraint)
+## <span id="Specify_a_web-search_grammar__SpeechRecognitionTopicConstraint_"></span><span id="specify_a_web-search_grammar__speechrecognitiontopicconstraint_"></span><span id="SPECIFY_A_WEB-SEARCH_GRAMMAR__SPEECHRECOGNITIONTOPICCONSTRAINT_"></span>Specify a web-search grammar (SpeechRecognitionTopicConstraint)
 
 
-Ограничения по теме (грамматика диктовки или веб-поиска) необходимо добавить к коллекции ограничений распознавателя речи.
+Topic constraints (dictation or web-search grammar) must be added to the constraints collection of a speech recognizer.
 
-Здесь мы добавляем к коллекции ограничений грамматику веб-поиска.
+Here, we add a web-search grammar to the constraints collection.
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -78,17 +76,17 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Specify_a_programmatic_list_constraint__SpeechRecognitionListConstraint_"></span><span id="specify_a_programmatic_list_constraint__speechrecognitionlistconstraint_"></span><span id="SPECIFY_A_PROGRAMMATIC_LIST_CONSTRAINT__SPEECHRECOGNITIONLISTCONSTRAINT_"></span>Задание программного ограничения на базе списка (SpeechRecognitionListConstraint)
+## <span id="Specify_a_programmatic_list_constraint__SpeechRecognitionListConstraint_"></span><span id="specify_a_programmatic_list_constraint__speechrecognitionlistconstraint_"></span><span id="SPECIFY_A_PROGRAMMATIC_LIST_CONSTRAINT__SPEECHRECOGNITIONLISTCONSTRAINT_"></span>Specify a programmatic list constraint (SpeechRecognitionListConstraint)
 
 
-Ограничения на базе списка необходимо добавить к коллекции ограничений распознавателя речи.
+List constraints must be added to the constraints collection of a speech recognizer.
 
-Помните следующее.
+Keep the following points in mind:
 
--   В коллекцию ограничений можно добавить несколько ограничений на базе списка.
--   Вы можете использовать любую коллекцию, которая реализует **IIterable&lt;String&gt;** для строковых значений.
+-   You can add multiple list constraints to a constraints collection.
+-   You can use any collection that implements **IIterable&lt;String&gt;** for the string values.
 
-Здесь мы программно задаем массив слов в качестве ограничения на базе списка и добавляем его к коллекции ограничений распознавателя речи.
+Here, we programmatically specify an array of words as a list constraint and add it to the constraints collection of a speech recognizer.
 
 ```CSharp
 private async void YesOrNo_Click(object sender, RoutedEventArgs e)
@@ -118,32 +116,32 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Specify_an_SRGS_grammar_constraint__SpeechRecognitionGrammarFileConstraint_"></span><span id="specify_an_srgs_grammar_constraint__speechrecognitiongrammarfileconstraint_"></span><span id="SPECIFY_AN_SRGS_GRAMMAR_CONSTRAINT__SPEECHRECOGNITIONGRAMMARFILECONSTRAINT_"></span>Задание ограничения на базе грамматики SRGS (SpeechRecognitionGrammarFileConstraint)
+## <span id="Specify_an_SRGS_grammar_constraint__SpeechRecognitionGrammarFileConstraint_"></span><span id="specify_an_srgs_grammar_constraint__speechrecognitiongrammarfileconstraint_"></span><span id="SPECIFY_AN_SRGS_GRAMMAR_CONSTRAINT__SPEECHRECOGNITIONGRAMMARFILECONSTRAINT_"></span>Specify an SRGS grammar constraint (SpeechRecognitionGrammarFileConstraint)
 
 
-Файлы грамматики SRGS необходимо добавить к коллекции ограничений распознавателя речи.
+SRGS grammar files must be added to the constraints collection of a speech recognizer.
 
-Спецификация грамматики распознавания речи (SRGS) версии 1.0 является стандартным для отрасли языком разметки для создания грамматик в формате XML для распознавания речи. Хотя универсальные приложения для Windows предоставляют альтернативы использованию SRGS для создания грамматик распознавания речи, для вас может оказаться так, что лучшие результаты дает создание грамматик с помощью SRGS, особенно для более сложных сценариев распознавания речи.
+The SRGS Version 1.0 is the industry-standard markup language for creating XML-format grammars for speech recognition. Although Universal Windows apps provide alternatives to using SRGS for creating speech-recognition grammars, you might find that using SRGS to create grammars produces the best results, particularly for more involved speech recognition scenarios.
 
-Грамматики SRGS предоставляют полный набор функций для разработки сложного голосового взаимодействия с вашими приложениями. Например, с помощью грамматики SRGS можно сделать следующее.
+SRGS grammars provide a full set of features to help you architect complex voice interaction for your apps. For example, with SRGS grammars you can:
 
--   Задать порядок, в котором слова и фразы должны произноситься для распознавания.
--   Группировать слова из нескольких списков и фраз для распознавания.
--   Добавлять ссылки на другие грамматики.
--   Присваивать "вес" альтернативному слову или фразе, чтобы увеличить или уменьшить вероятность их использования в поиске соответствий речевому вводу.
--   Включать необязательные слова или фразы.
--   Использовать особые правила, помогающие отфильтровать неопределенный или непредвиденный ввод, например случайную речь, которая не соответствует грамматике, или фоновый шум.
--   Использовать семантики, чтобы определить, что означает распознавание речи для вашего приложения.
--   Задать произношение в соответствии с грамматикой или посредством ссылки на лексикон.
+-   Specify the order in which words and phrases must be spoken to be recognized.
+-   Combine words from multiple lists and phrases to be recognized.
+-   Link to other grammars.
+-   Assign a weight to an alternative word or phrase to increase or decrease the likelihood that it will be used to match speech input.
+-   Include optional words or phrases.
+-   Use special rules that help filter out unspecified or unanticipated input, such as random speech that doesn't match the grammar, or background noise.
+-   Use semantics to define what speech recognition means to your app.
+-   Specify pronunciations, either inline in a grammar or via a link to a lexicon.
 
-Подробнее об элементах и атрибутах SRGS см. в разделе [Справочные материалы по XML для грамматики SRGS](http://go.microsoft.com/fwlink/p/?LinkID=269886). Начните создавать грамматику SRGS с изучения раздела о [создании основ грамматики XML](http://go.microsoft.com/fwlink/p/?LinkID=269887).
+For more info about SRGS elements and attributes, see the [SRGS Grammar XML Reference](http://go.microsoft.com/fwlink/p/?LinkID=269886) . To get started creating an SRGS grammar, see [How to Create a Basic XML Grammar](http://go.microsoft.com/fwlink/p/?LinkID=269887).
 
-Помните следующее.
+Keep the following points in mind:
 
--   В коллекцию ограничений можно добавить несколько ограничений на базе файла грамматики.
--   Используйте расширение GRXML для документов грамматик на базе XML, соответствующих правилам SRGS.
+-   You can add multiple grammar-file constraints to a constraints collection.
+-   Use the .grxml file extension for XML-based grammar documents that conform to SRGS rules.
 
-В данном примере используется грамматика SRGS, определенная в файле с именем srgs.grxml (описано далее). В свойствах файла для параметра **Действие пакета** задано значение **Содержимое**, а для параметра **Копировать в выходной каталог** — значение **Всегда копировать**:
+This example uses an SRGS grammar defined in a file named srgs.grxml (described later). In the file properties, the **Package Action** is set to **Content** with **Copy to Output Directory** set to **Copy always**:
 
 ```CSharp
 private async void Colors_Click(object sender, RoutedEventArgs e)
@@ -170,9 +168,9 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Этот файл SRGS (srgs.grxml) включает теги семантической интерпретации. Эти теги обеспечивают механизм возврата данных о проверке соответствия грамматике в ваше приложение. Грамматики должны соответствовать спецификации консорциума W3C [Semantic Interpretation for Speech Recognition (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765).
+This SRGS file (srgs.grxml) includes semantic interpretation tags. These tags provide a mechanism for returning grammar match data to your app. Grammars must conform to the World Wide Web Consortium (W3C) [Semantic Interpretation for Speech Recognition (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) specification.
 
-Здесь мы ожидаем передачи данных для вариантов yes и no.
+Here, we listen for variants of "yes" and "no".
 
 ```CSharp
 <grammar xml:lang="en-US" 
@@ -209,35 +207,30 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 </grammar>
 ```
 
-## <span id="Manage_constraints"></span><span id="manage_constraints"></span><span id="MANAGE_CONSTRAINTS"></span>Управление ограничениями
+## <span id="Manage_constraints"></span><span id="manage_constraints"></span><span id="MANAGE_CONSTRAINTS"></span>Manage constraints
 
 
-После загрузки коллекции ограничений для распознавания ваше приложение может управлять тем, какие ограничения нужно включать для операций распознавания, установив для свойства ограничения [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) значение **true** или **false**. Значение по умолчанию — **true**.
+After a constraint collection is loaded for recognition, your app can manage which constraints are enabled for recognition operations by setting the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) property of a constraint to **true** or **false**. The default setting is **true**.
 
-Обычно однократная загрузка ограничений с последующим включением или выключением по необходимости более эффективна, чем загрузка, выгрузка и компиляция ограничений для каждой операции распознавания. Используйте свойство [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) при необходимости.
+It's usually more efficient to load constraints once, enabling and disabling them as needed, rather than to load, unload, and compile constraints for each recognition operation. Use the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) property, as required.
 
-С помощью нормирования числа ограничений можно задать предел для количества данных, которое необходимо распознавателю речи для поиска соответствия речевому вводу. Это может улучшить как производительность, так и точность распознавания речи.
+Restricting the number of constraints serves to limit the amount of data that the speech recognizer needs to search and match against the speech input. This can improve both the performance and the accuracy of speech recognition.
 
-Решите, какие ограничения включить, на основе фраз, которые ожидает ваше приложение в контексте текущей операции распознавания. Например, если в текущем контексте приложения отображается цвет, то, возможно, вам не потребуется включать ограничение, распознающее названия животных.
+Decide which constraints are enabled based on the phrases that your app can expect in the context of the current recognition operation. For example, if the current app context is to display a color, you probably don't need to enable a constraint that recognizes the names of animals.
 
-Чтобы предложить пользователю, что сказать, используйте свойства [**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) и [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236), которые задаются с помощью свойства [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254). Информирование пользователей о том, что они могут сказать во время операции распознавания, повышает вероятность произнесения фразы, которая может быть сочтена удовлетворяющей активному ограничению.
+To prompt the user for what can be spoken, use the [**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) and [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236) properties, which are set by means of the [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) property. Preparing users for what they can say during the recognition operation increases the likelihood that they will speak a phrase that can be matched to an active constraint.
 
-## <span id="related_topics"></span>Статьи по теме
-
-
-* [Взаимодействия с помощью голосовых функций](speech-interactions.md)
-
-**Примеры**
-* [Пример распознавания и синтеза речи](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
-
- 
+## <span id="related_topics"></span>Related articles
 
 
+* [Speech interactions](speech-interactions.md)
+
+**Samples**
+* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+ 
+
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

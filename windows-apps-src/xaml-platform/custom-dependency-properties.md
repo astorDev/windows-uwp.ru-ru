@@ -1,65 +1,66 @@
 ---
-description: Узнайте, как определять и реализовывать пользовательские свойства зависимостей в приложении среды выполнения Windows на C++, C# или Visual Basic.
-title: Пользовательские свойства зависимостей
+author: jwmsft
+description: Explains how to define and implement custom dependency properties for a Windows Runtime app using C++, C#, or Visual Basic.
+title: Custom dependency properties
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ---
 
-# Пользовательские свойства зависимостей
+# Custom dependency properties
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этом разделе показано, как определять и реализовывать собственные свойства зависимостей для приложения среды выполнения Windows на C++, C# или Visual Basic. Перечислены причины, по которым разработчики приложений и авторы компонентов могут пожелать создавать пользовательские свойства зависимостей. Также описаны действия по реализации пользовательского свойства зависимостей и приведены некоторые рекомендации по повышению производительности, удобства или гибкости свойства зависимостей.
+Here we explain how to define and implement your own dependency properties for a Windows Runtime app using C++, C#, or Visual Basic. We list reasons why app developers and component authors might want to create custom dependency properties. We describe the implementation steps for a custom dependency property, as well as some best practices that can improve performance, usability, or versatility of the dependency property.
 
-## Необходимые условия
-
-
-Мы предполагаем, что вы ознакомились с разделом [Общая информация о свойствах зависимостей](dependency-properties-overview.md) и понимаете свойства зависимостей с точки зрения потребителя существующих свойств зависимостей. Чтобы читать примеры в этом разделе, необходимо также разбираться в языке XAML и знать, как написать простое приложение среды выполнения Windows на C++, C# или Visual Basic.
-
-## Что такое свойство зависимостей?
+## Prerequisites
 
 
-Свойства зависимостей — это свойства, зарегистрированные в системе свойств среды выполнения Windows посредством метода [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) и определяемые членом-идентификатором [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) в определяющем классе. Такое свойство, которое в ином случае было бы свойством среды CLR или C++, можно заставить поддерживать стили, привязку данных, анимацию и значения по умолчанию, реализовав его как свойство зависимостей. Свойства зависимостей могут использоваться только типами [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). Но **DependencyObject** находится довольно высоко в иерархии классов, так что большинство классов, предназначенных для поддержки пользовательского интерфейса и презентаций, могут поддерживать свойства зависимостей. Подробнее о свойствах зависимостей и некоторых терминов и правил их описания в этой документации см. в разделе [Общие сведения о свойствах зависимостей](dependency-properties-overview.md).
+We assume that you have read the [Dependency properties overview](dependency-properties-overview.md) and that you understand dependency properties from the perspective of a consumer of existing dependency properties. To follow the examples in this topic, you should also understand XAML and know how to write a basic Windows Runtime app using C++, C#, or Visual Basic.
 
-Примерами свойств зависимостей в среде выполнения Windows помимо прочих являются [**Control.Background**](https://msdn.microsoft.com/library/windows/apps/br209395), [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751) и [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/br209702). Каждое свойство зависимостей, предоставляемое классом, имеет соответствующее свойство (**public** **static** **readonly**) типа [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362), которое предоставляется этим же классом и является идентификатором для свойства зависимостей. Имя идентификатора формируется следующим образом: имя свойства зависимостей, со строкой «Property», добавленной к концу имени. Например, идентификатором **DependencyProperty**, соответствующим свойству **Control.Background**, является [**Control.BackgroundProperty**](https://msdn.microsoft.com/library/windows/apps/br209396). Идентификатор сохраняет информацию о свойстве зависимостей, как оно было зарегистрировано, после чего идентификатор можно использовать для других операций, в которые вовлечено свойство зависимостей, например вызова [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361).
+## What is a dependency property?
 
-##  Оболочки свойств
 
-Свойства зависимостей обычно имеют реализацию в виде оболочки. Без оболочки единственным способом получения или задания свойств будет использование служебных методов свойств зависимостей [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) и [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) и передача им идентификатора в качестве параметра. Это весьма противоестественный способ использования того, что предположительно является свойством. Но при использовании программы-оболочки ваш код и любой иной код, ссылающийся на свойство зависимостей, может использовать прямолинейный синтаксис объект-свойство, который естественен для используемого языка.
+Dependency properties are properties that are registered with the Windows Runtime property system by calling the [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) method, and that are identified by a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) identifier member on the defining class. You can enable what would otherwise be a common language runtime (CLR) or C++ property to support styling, data binding, animations, and default values by implementing it as a dependency property. Dependency properties can be used only by [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) types. But **DependencyObject** is quite high in the class hierarchy, so the majority of classes that are intended for UI and presentation support can support dependency properties. For more information about dependency properties and some of the terminology and conventions used for describing them in this documentation, see [Dependency properties overview](dependency-properties-overview.md).
 
-В случае самостоятельной реализации свойства зависимостей, которое должно быть общедоступным и простым для вызова, надо определить и программы-оболочки свойства. Программы-оболочки свойства также полезны для сообщения основной информации о свойстве зависимостей для процессов отражения или статического анализа. А именно, в оболочке мы размещаем атрибуты вроде [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011).
+Examples of dependency properties in the Windows Runtime are: [**Control.Background**](https://msdn.microsoft.com/library/windows/apps/br209395), [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751), and [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/br209702), among many others. Each dependency property exposed by a class has a corresponding **public** **static** **readonly** property of type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) that is exposed on that same class and that is the identifier for the dependency property. The identifier's name follows this convention: the name of the dependency property, with the string "Property" added to the end of the name. For example, the corresponding **DependencyProperty** identifier for the **Control.Background** property is [**Control.BackgroundProperty**](https://msdn.microsoft.com/library/windows/apps/br209396). The identifier stores the information about the dependency property as it was registered, and the identifier can then be used later for other operations involving the dependency property, such as calling [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361).
 
-## Ситуации, когда стоит реализовывать свойство как свойство зависимостей
+##  Property wrappers
 
-Если вы реализуете общедоступное свойство чтения/записи в классе и класс является производным [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), свойство можно сделать свойством зависимостей. Иногда достаточно типовой методики резервирования свойства с закрытым полем. Определять свое свойство как свойство зависимостей не всегда необходимо или разумно. Выбор должен зависеть от сценариев, для поддержки которых предназначено свойство.
+Dependency properties typically have a wrapper implementation. Without the wrapper, the only way to get or set the properties would be to use the dependency property utility methods [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) and [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) and to pass the identifier to them as a parameter. This is a rather unnatural usage for something that is ostensibly a property. But with the wrapper, your code and any other code that references the dependency property can use a straightforward object-property syntax that is natural for the language you're using.
 
-Реализацию свойства в качестве свойства зависимостей стоит рассмотреть, если оно должно поддерживать одну или несколько следующих функций среды выполнения Windows или приложений среды выполнения Windows.
+If you implement a custom dependency property yourself and want it to be public and easy to call, define the property wrappers too. The property wrappers are also useful for reporting basic information about the dependency property to reflection or static analysis processes. Specifically, the wrapper is where you place attributes such as [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011).
 
--   Задание свойства через [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849)
--   Выполнение функции допустимого целевого свойства для привязки данных.
--   Поддержка анимированных значений посредством [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)
--   Сообщение об изменении предыдущего значения свойства:
-    -   действиями самой системы свойств;
-    -   средой;
-    -   действиями пользователя;
-    -   чтением и записью стилей.
+## When to implement a property as a dependency property
 
-## Контрольный список для определения свойства зависимостей
+Whenever you implement a public read/write property on a class, as long as your class derives from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), you have the option to make your property work as a dependency property. Sometimes the typical technique of backing your property with a private field is adequate. Defining your custom property as a dependency property is not always necessary or appropriate. The choice will depend on the scenarios that you intend your property to support.
 
-Определение свойства зависимостей можно рассматривать как набор концепций. Эти концепции не обязательно являются этапами процедуры, поскольку в реализации нескольким из них может соответствовать одна строка кода. Данный список предоставляет лишь краткий обзор. Ниже в этом разделе мы расскажем о каждой из концепций подробнее , иллюстрируя их примерами кода на нескольких языках.
+You might consider implementing your property as a dependency property when you want it to support one or more of these features of the Windows Runtime or of Windows Runtime apps:
 
--   (Необязательно) Создайте метаданные свойства для свойства зависимостей. Метаданные свойства нужны, только если необходимы поведение, зависящее от изменения свойства, или значение по умолчанию на основе метаданных, которые можно восстановить вызовом [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357).
--   Зарегистрируйте имя свойства в системе свойств (путем вызова функции [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)), указав тип владельца и тип значения свойства. Существует обязательный параметр функции [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829), который принимает метаданные свойства. Для него можно указать значение **null** либо указать действительные метаданные свойства, если таковые объявлены.
--   Определите идентификатор [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) как член свойства (**public** **static** **readonly**) в типе владельца.
--   Определите свойство-оболочку, следуя модели метода доступа к свойству, применяемой в используемом языке. Имя свойства-оболочки должно совпадать со строкой *name*, используемой в [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). Реализуйте методы доступа **get** и **set** для соединения оболочки с заключенным в нее свойством зависимостей, вызывая [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) и [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) и передавая в качестве параметра идентификатор вашего свойства.
--   (Необязательно) Разместите в оболочке такие атрибуты как [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011).
+-   Setting the property through a [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849)
+-   Acting as valid target property for data binding
+-   Supporting animated values through a [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)
+-   Reporting when the previous value of the property has been changed by:
+    -   Actions taken by the property system itself
+    -   The environment
+    -   User actions
+    -   Reading and writing styles
 
-**Примечание.** Если вы определяете пользовательское присоединенное свойство, оболочка, как правило, не используется. Вместо нее вы создаете метод доступа в другом стиле, который может использоваться обработчиком XAML. См. раздел [Пользовательские присоединенные свойства](custom-attached-properties.md). 
+## Checklist for defining a dependency property
 
-## Регистрация свойства
+Defining a dependency property can be thought of as a set of concepts. These concepts are not necessarily procedural steps, because several concepts can be addressed in a single line of code in the implementation. This list gives just a quick overview. We'll explain each concept in more detail later in this topic, and we'll show you example code in several languages.
 
-Чтобы свойство стало свойством зависимостей, его необходимо зарегистрировать в хранилище свойств системы свойств среды выполнения Windows. Свойству необходимо дать уникальный идентификатор, который будет служить квалификатором при последующих операциях системы свойств. Это могут быть внутренние операции или ваш собственный код, вызывающий API системы свойств. Чтобы зарегистрировать свойство, вызовите метод [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829).
+-   (Optional) Create property metadata for the dependency property. You need property metadata only if you want property-changed behavior, or a metadata-based default value that can be restored by calling [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357).
+-   Register the property name with the property system (call [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)), specifying an owner type and the type of the property value. There's a required parameter for [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) that expects property metadata. Specify **null** for this, or specify the actual property metadata if you have declared any.
+-   Define a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) identifier as a **public** **static** **readonly** property member on the owner type.
+-   Define a wrapper property, following the property accessor model that's used in the language you are implementing. The wrapper property name should match the *name* string that you used in [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). Implement the **get** and **set** accessors to connect the wrapper with the dependency property that it wraps, by calling [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) and [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) and passing your own property's identifier as a parameter.
+-   (Optional) Place attributes such as [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) on the wrapper.
 
-Для языков Microsoft .NET (C# и Microsoft Visual Basic) мы вызываем [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) внутри тела класса (внутри класса, но вне любых определений членов). Идентификатор также предоставляется как возвращаемое значение метода [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). Вызов [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) обычно выполняется вне других определений членов, так как возвращаемое значение используется для назначения и создания свойства (**public** **static** **readonly**) типа [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) в качестве части нового класса. Это свойство становится идентификатором для свойства зависимостей. Вот примеры вызова [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829).
+**Note**  If you are defining a custom attached property, you generally omit the wrapper. Instead, you write a different style of accessor that a XAML processor can use. See [Custom attached properties](custom-attached-properties.md). 
+
+## Registering the property
+
+For your property to be a dependency property, you must register the property into a property store maintained by the Windows Runtime property system. You must give the property a unique identifier to be used as the qualifier for later property-system operations. These operations might be internal operations, or your own code calling property-system APIs. To register the property, you call the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) method.
+
+For Microsoft .NET languages (C# and Microsoft Visual Basic) you call [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) within the body of your class (inside the class, but outside any member definitions). The identifier is also provided by the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) method call, as the return value. The [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call is typically made outside of other member definitions because you use the return value to assign and create a **public** **static** **readonly** property of type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) as part of your class. This property becomes the identifier for your dependency property. Here are examples of the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -78,9 +79,9 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
       New PropertyMetadata(Nothing))
 ```
 
-**Примечание.** Обычной реализацией является регистрация свойства зависимостей в теле класса, но свойство зависимостей также можно зарегистрировать в статическом конструкторе класса. Такой подход может иметь смысл, если для инициализации свойства зависимостей необходимо более одной строки кода.
+**Note**  Registering the dependency property in a class body is the typical implementation, but you can also register a dependency property in the class static constructor. This approach may make sense if you need more than one line of code to initialize the dependency property.
 
-Для языка C++ имеются различные варианты разделения реализации между заголовочным файлом и файлом кода. Обычным вариантом является объявление самого идентификатора как свойства **public** **static** в заголовке, с реализацией **get**, но без **set**. Реализация **get** ссылается на закрытое поле, которым является неинициализированный экземпляр [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). Также можно объявить оболочки и реализации **get** и **set** для оболочки. В этом случае заголовок включает некоторую минимальную реализацию. Если оболочке нужно определение объекта среды выполнения Windows, выполните его также и в заголовке. Поместите вызов функции [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) в файл кода во вспомогательную функцию, которая выполняется только в момент первой инициализации приложения. Используйте возвращаемое значение **Register** для заполнения статических, но еще не инициализированных идентификаторов, объявленных в заголовочном файле, которым первоначально было присвоено значение **nullptr** в корневой области файла реализации.
+For C++, you have options for how you split the implementation between the header and the code file. The typical split is to declare the identifier itself as **public** **static** property in the header, with a **get** implementation but no **set**. The **get** implementation refers to a private field, which is an uninitialized [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) instance. You can also declare the wrappers and the **get** and **set** implementations of the wrapper. In this case the header includes some minimal implementation. If the wrapper needs Windows Runtime attribution, attribute in the header too. Put the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call in the code file, within a helper function that only gets run when the app initializes the first time. Use the return value of **Register** to fill the static but uninitialized identifiers that you declared in the header, which you initially set to **nullptr** at the root scope of the implementation file.
 
 ```cpp
 //.h file
@@ -123,21 +124,21 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 }
 ```
 
-**Примечание.** В коде на C++ и закрытое поле, и открытое свойство только для чтения, доступное в [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362), предусмотрены для того, чтобы другие вызывающие стороны, которые используют ваше свойство зависимостей, могли также использовать служебные API системы свойств, которым требуется открытый идентификатор. Если оставить идентификатор закрытым, то другие пользователи не смогут использовать служебные API. Примеры таких API и сценариев включают [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) или [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) (по выбору), [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) и [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). Для этого нельзя использовать открытое поле, так как правила компиляции среды выполнения Windows не допускают общедоступных данных-членов, использующих ссылочные типы вроде **DependencyProperty**.
+**Note**  For the C++ code, the reason why you have a private field and a public read-only property that surfaces the [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) is so that other callers who use your dependency property can also use property-system utility APIs that require the identifier to be public. If you keep the identifier private, people can't use these utility APIs. Examples of such API and scenarios include [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) or [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) by choice, [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257), and [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). You can't use a public field for this, because Windows Runtime compile rules don't allow public data members that use reference types like **DependencyProperty**.
 
-## Соглашения об именовании свойств зависимостей
+## Dependency property name conventions
 
-Для свойств зависимостей существуют соглашения об именовании; следуйте им, если не возникает каких-либо исключительных обстоятельств. У самого свойства зависимостей имеется простое имя («Label» в предыдущем примере), которое задается как первый параметр функции [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). Это имя должно быть уникально внутри каждого регистрирующего типа, и это требование уникальности также относится к любым унаследованным членам. Свойства зависимостей, унаследованные через базовые типы, уже считаются частью регистрирующего типа; имена унаследованных свойств нельзя зарегистрировать снова.
+There are naming conventions for dependency properties; follow them in all but exceptional circumstances. The dependency property itself has a basic name ("Label" in the preceding example) that is given as the first parameter of [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). The name must be unique within each registering type, and the uniqueness requirement also applies to any inherited members. Dependency properties inherited through base types are considered to be part of the registering type already; names of inherited properties cannot be registered again.
 
-**Внимание!** Хотя предоставляемое здесь имя может быть любым идентификатором строки, допустимым в программировании для используемого языка, желательно также иметь возможность задать свойство зависимостей и в коде XAML. Для задания в XAML выбранное имя свойства должно быть допустимым именем XAML. Подробнее см. в разделе [Обзор XAML](xaml-overview.md).
+**Caution**  Although the name you provide here can be any string identifier that is valid in programming for your language of choice, you usually want to be able to set your dependency property in XAML too. To be set in XAML, the property name you choose must be a valid XAML name. For more info, see [XAML overview](xaml-overview.md).
 
-При создании свойства-идентификатора соедините имя свойства в том виде, в котором оно было зарегистрировано, с суффиксом «Property» (например, «LabelProperty»). Данное свойство является идентификатором для свойства зависимостей и используется в качестве входных данных для вызовов [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) и [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359), выполняемых в ваших оболочках свойств. Оно также используется системой свойств и, возможно, обработчиками XAML.
+When you create the identifier property, combine the name of the property as you registered it with the suffix "Property" ("LabelProperty", for example). This property is your identifier for the dependency property, and it is used as an input for the [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) and [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) calls you make in your own property wrappers. It is also used by the property system and potentially by XAML processors.
 
-## Реализация оболочки
+## Implementing the wrapper
 
-Программе-оболочке свойства следует вызывать [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) в реализации **get** и [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) в реализации **set**.
+Your property wrapper should call [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) in the **get** implementation, and [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) in the **set** implementation.
 
-**Внимание!** Во всех неисключительных ситуациях реализация оболочки должна выполнять только операции [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) и [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361). В ином случае поведение при задании свойства через разметку XAML и при его задании через код будет различным. Для эффективности средство синтаксического анализа XAML пропускает оболочки при установке свойств зависимостей; по возможности используется реестр свойств зависимостей.
+**Caution**  In all but exceptional circumstances, your wrapper implementations should perform only the [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) and [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) operations. Otherwise, you'll get different behavior when your property is set via XAML versus when it is set via code. For efficiency, the XAML parser bypasses wrappers when setting dependency properties; whenever possible, it uses the registry of dependency properties.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -172,22 +173,22 @@ public:
   }
 ```
 
-## Метаданные свойства для настраиваемого свойства зависимостей
+## Property metadata for a custom dependency property
 
-Когда свойству зависимостей назначаются метаданные свойства, эти же метаданные применяются к этому свойству для любого экземпляра типа, которому принадлежит свойство, или его подклассов. В метаданных свойства можно указать два поведения:
+When property metadata is assigned to a dependency property, the same metadata is applied to that property for any instance of the property-owner type or its subclasses. In property metadata, you can specify two behaviors:
 
--   значение по умолчанию, назначаемое системой свойств всем случаям данного свойства;
--   статический метод обратного вызова, автоматически вызываемый в системе свойств при обнаружении значения свойства.
+-   A default value that the property system assigns to all cases of the property.
+-   A static callback method that is automatically invoked within the property system whenever a property value is detected.
 
-### Вызов метода Register с метаданными свойства
+### Calling Register with property metadata
 
-В предыдущих примерах вызова [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) мы передавали параметру *propertyMetadata* значение null. Чтобы свойство зависимостей предоставляло значение по умолчанию или использовало обратный вызов при изменении свойства, необходимо определить экземпляр [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771), который предоставляет одну или обе эти возможности.
+In the previous examples of calling [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829), we passed a null value for the *propertyMetadata* parameter. To enable a dependency property to provide a default value or use a property-changed callback, you must define a [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) instance that provides one or both of these capabilities.
 
-Как правило, вы предоставляете [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) как внутренне созданный экземпляр в параметрах для [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829).
+Typically you provide a [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) as an inline-created instance, within the parameters for [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829).
 
-**Примечание.** Если вы определяете реализацию [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812), необходимо использовать вспомогательный метод [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099), а не вызывать конструктор [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771), чтобы определить экземпляр **PropertyMetadata**.
+**Note**  If you are defining a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) implementation, you must use the utility method [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099) rather than calling a [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) constructor to define the **PropertyMetadata** instance.
 
-Следующий пример отличается от предыдущих примеров [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) ссылкой на экземпляр [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) с помощью значения [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770). Реализация обратного вызова OnLabelChanged показана далее в этом разделе.
+This next example modifies the previously shown [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) examples by referencing a [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) instance with a [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) value. The implementation of the "OnLabelChanged" callback will be shown later in this section.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -212,31 +213,31 @@ DependencyProperty^ ImageWithLabelControl::_LabelProperty =
     Platform::String::typeid,
     ImageWithLabelControl::typeid, 
     ref new PropertyMetadata(nullptr,
-      ref new PropertyChangedCallback(&amp;ImageWithLabelControl::OnLabelChanged))
+      ref new PropertyChangedCallback(&ImageWithLabelControl::OnLabelChanged))
     );
 ```
 
-### Значение по умолчанию
+### Default value
 
-Вы можете указать значение по умолчанию для свойства зависимостей, чтобы это свойство (если оно не задано) всегда возвращало определенное значение по умолчанию. Это значение может отличаться от значения по умолчанию, присущего типу этого свойства.
+You can specify a default value for a dependency property such that the property always returns a particular default value when it is unset. This value can be different than the inherent default value for the type of that property.
 
-Если значение по умолчанию не указано, то значением по умолчанию для свойства зависимостей будет null для ссылочного типа, значение по умолчанию типа для типа значения или примитив языка (например, 0 для целого числа или пустая строка для строки). Основная причина для установки значения по умолчанию состоит в том, что это значение восстанавливается при вызове [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) на свойстве. Установка значений по умолчанию для отдельных свойств может быть удобнее установки значений по умолчанию в конструкторах, особенно для типов значений. Однако для ссылочных типов следует убедиться, что установка значения по умолчанию не создает непредвиденного шаблона одноэлементного объекта. Подробнее см. далее в разделе [Рекомендации](#best-practices).
+If a default value is not specified, the default value for a dependency property is null for a reference type, or the default of the type for a value type or language primitive (for example, 0 for an integer or an empty string for a string). The main reason for establishing a default value is that this value is restored when you call [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) on the property. Establishing a default value on a per-property basis might be more convenient than establishing default values in constructors, particularly for value types. However, for reference types, make sure that establishing a default value does not create an unintentional singleton pattern. For more info, see [Best practices](#best-practices) later in this topic
 
-**Примечание.** При регистрации не следует использовать значение по умолчанию [**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371). Это может запутать объект-получатель свойств и повлечет непредвиденные последствия внутри системы свойств.
+**Note**  Do not register with a default value of [**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371). If you do, it will confuse property consumers and will have unintended consequences within the property system.
 
 ### CreateDefaultValueCallback
 
-В некоторых случаях необходимо определить свойства зависимостей для объектов, которые используются в нескольких потоках пользовательского интерфейса. Это требуется, например, когда вы определяете объект данных или элемент управления, которые используются в нескольких приложениях. Вы можете разрешить обмен объектом между разными потоками пользовательского интерфейса, предоставив реализацию [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812), а не экземпляр значения по умолчанию, привязанный к потоку, зарегистрировавшему это свойство. По сути, [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) определяет фабрику для значений по умолчанию. Значение, возвращаемое **CreateDefaultValueCallback**, всегда ассоциируется с текущим потоком пользовательского интерфейса **CreateDefaultValueCallback**, использующим этот объект.
+In some scenarios, you are defining dependency properties for objects that are used on more than one UI thread. This might be the case if you are defining a data object that is used by multiple apps, or a control that you use in more than one app. You can enable the exchange of the object between different UI threads by providing a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) implementation rather than a default value instance, which is tied to the thread that registered the property. Basically a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) defines a factory for default values. The value returned by **CreateDefaultValueCallback** is always associated with the current UI **CreateDefaultValueCallback** thread that is using the object.
 
-Чтобы определить метаданные, задающие [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812), необходимо вызвать метод [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702115) для возврата экземпляра метаданных. Конструкторы [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) не имеют подписи, включающей параметр **CreateDefaultValueCallback**.
+To define metadata that specifies a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812), you must call [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702115) to return a metadata instance; the [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) constructors do not have a signature that includes a **CreateDefaultValueCallback** parameter.
 
-Обычный шаблон реализации для [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812): создание нового класса [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), установка специального значения для каждого свойства **DependencyObject** равным желаемому значению по умолчанию, а затем возврат нового класса как ссылки **Object** с помощью возвращаемого значения метода **CreateDefaultValueCallback**.
+The typical implementation pattern for a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) is to create a new [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) class, set the specific property value of each property of the **DependencyObject** to the intended default, and then return the new class as an **Object** reference via the return value of the **CreateDefaultValueCallback** method.
 
-### Метод обратного вызова при изменении свойства
+### Property-changed callback method
 
-Для определения взаимодействия свойства с иными свойствами зависимостей либо задания внутреннего свойства или состояния объекта при изменении данного свойства можно задать метод обратного вызова при изменении свойства. Выполнение такого обратного вызова означает, что система свойств обнаружила фактическое изменение значения свойства. Метод обратного вызова является статическим, поэтому параметр *d* метода обратного вызова важен, так как он говорит нам, какой экземпляр класса сообщил об изменении. Типичная реализация использует свойство [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364) данных события и обрабатывает это значение тем или иным образом, обычно выполняя какое-то еще изменение объекта, переданного как *d*. Дополнительные ответы на изменение свойства включают отклонение значения, сообщаемого свойством **NewValue**, восстановление значения [**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365) или присвоение значению программного ограничения, примененного к **NewValue**.
+You can define a property-changed callback method to define your property's interactions with other dependency properties, or to set an internal property or state of your object whenever the property changes. If your callback is invoked, the property system has determined that there is an effective property value change. Because the callback method is static, the *d* parameter of the callback is important because it tells you which instance of the class has reported a change. A typical implementation uses the [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364) property of the event data and processes that value in some manner, usually by performing some other change on the object passed as *d*. Additional responses to a property change are to reject the value reported by **NewValue**, to restore [**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365), or to set the value to a programmatic constraint applied to the **NewValue**.
 
-Следующий пример показывает реализацию [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770). Он реализует метод, ссылки на который можно было заметить в предыдущих примерах [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829), в качестве части аргументов создания для [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771). Ситуация, которой касается данный обратный вызов, заключается в том, что у класса также имеется вычисляемое свойство только для чтения под названием HasLabelValue (реализация не показана). При каждой переоценке значения свойства Label вызывается метод обратного вызова и обратный вызов позволяет независимо вычисленному значению оставаться синхронизированным с изменениями в свойстве зависимостей.
+This next example shows a [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) implementation. It implements the method you saw referenced in the previous [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) examples, as part of the construction arguments for the [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771). The scenario addressed by this callback is that the class also has a calculated read-only property named "HasLabelValue" (implementation not shown). Whenever the "Label" property gets reevaluated, this callback method is invoked, and the callback enables the dependent calculated value to remain in synchronization with changes to the dependency property.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -273,9 +274,9 @@ static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventAr
 }
 ```
 
-### Реакция на событие изменения свойства для структур и перечислений
+### Property changed behavior for structures and enumerations
 
-Если тип [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) является перечислением или структурой, обратный вызов может выполняться, даже если внутренние значения структуры или перечисления не менялись. Этим он отличается от примитивов системы, например строки, где обратный вызов выполняется только в случае, если значение было изменено. Это побочный эффект, оказываемый на эти значения внутренними операциями упаковки-преобразования и распаковки-преобразования. Если вы используете метод [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) для свойства со значением, представленным перечислением или структурой, необходимо сравнить [**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365) и [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364), приведя значения самостоятельно и используя перегруженные операторы сравнения, доступные для только что приведенных значений. Или, если такой оператор недоступен (что возможно в случае пользовательской структуры), может потребоваться сравнить индивидуальные значения. Если в результате значения не меняются, то, как правило, предпринимать ничего не нужно.
+If the type of a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) is an enumeration or a structure, the callback may be invoked even if the internal values of the structure or the enumeration value did not change. This is different from a system primitive such as a string where it only is invoked if the value changed. This is a side effect of box and unbox operations on these values that is done internally. If you have a [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) method for a property where your value is an enumeration or structure, you need to compare the [**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365) and [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364) by casting the values yourself and using the overloaded comparison operators that are available to the now-cast values. Or, if no such operator is available (which might be the case for a custom structure), you may need to compare the individual values. You would typically choose to do nothing if the result is that the values have not changed.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -306,69 +307,64 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 }
 ```
 
-## Рекомендации
+## Best practices
 
-При определении своего свойства зависимостей учитывайте следующие рекомендации.
+Keep the following considerations in mind as best practices when as you define your custom dependency property.
 
-### DependencyObject и использование потоков
+### DependencyObject and threading
 
-Все экземпляры [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) должны создаваться в потоке пользовательского интерфейса, связанном с текущей версией [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041), которая отображается приложением среды выполнения Windows. Хотя каждый экземпляр **DependencyObject** должен создаваться в основном потоке пользовательского интерфейса, доступ к объектам может обеспечиваться при помощи диспетчерских ссылок из других потоков вызовом [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616).
+All [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) instances must be created on the UI thread which is associated with the current [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) that is shown by a Windows Runtime app. Although each **DependencyObject** must be created on the main UI thread, the objects can be accessed using a dispatcher reference from other threads, by calling [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616).
 
-Потоковые аспекты [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) имеют отношение к данному вопросу, поскольку фактически только код, выполняемый в потоке пользовательского интерфейса, может изменить или хотя бы прочитать значение свойства зависимостей. Проблем с потоками обычно можно избежать в стандартном коде пользовательского интерфейса, который обеспечивает корректное использование шаблонов **async** и фоновых рабочих потоков. Как правило, проблемы, связанные с потоками **DependencyObject**, возникают при определении ваших собственных типов **DependencyObject** и попытке использовать их для формирования источников данных либо в других сценариях, где использование **DependencyObject** может быть неуместно.
+The threading aspects of [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) are relevant because it generally means that only code that runs on the UI thread can change or even read the value of a dependency property. Threading issues can usually be avoided in typical UI code that makes correct use of **async** patterns and background worker threads. You typically only run into **DependencyObject**-related threading issues if you are defining your own **DependencyObject** types and you attempt to use them for data sources or other scenarios where a **DependencyObject** isn't necessarily appropriate.
 
-### Избежание незапланированных одноэлементных объектов
+### Avoiding unintentional singletons
 
-Незапланированный одноэлементный объект может возникнуть, если вы объявляете свойство зависимостей, принимающее ссылочный тип, и вызываете конструктор для этого типа в коде, устанавливающем [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771). В результате все случаи использования свойства зависимостей разделяют единственный экземпляр **PropertyMetadata** и пытаются совместно использовать единственный ссылочный тип, сконструированный вами. Тогда любые подсвойства этого типа значения, устанавливаемые через свойство зависимостей, распространятся на другие объекты путями, которые, возможно, не предусмотрены.
+An unintentional singleton can happen if you are declaring a dependency property that takes a reference type, and you call a constructor for that reference type as part of the code that establishes your [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771). What happens is that all usages of the dependency property share just one instance of **PropertyMetadata** and thus try to share the single reference type you constructed. Any subproperties of that value type that you set through your dependency property then propagate to other objects in ways you probably don't intend.
 
-Для установки исходных значений для свойства зависимостей ссылочного типа можно использовать конструкторы классов, если нужно значение, отличное от null, но следует учитывать, что эти значения будут считаться локальными значениями в целях [общих сведений о свойствах зависимостей](dependency-properties-overview.md). В таком случае правильнее будет использовать шаблон, если класс поддерживает шаблоны. Другой способ избежать одноэлементной схемы, но все же предоставить полезное значение по умолчанию — предоставить статическое свойство на ссылочном типе, дающее подходящие установки по умолчанию для значений класса.
+You can use class constructors to set initial values for a reference-type dependency property if you want a non-null value, but be aware that this would be considered a local value for purposes of [Dependency properties overview](dependency-properties-overview.md). It might be more appropriate to use a template for this purpose, if your class supports templates. Another way to avoid a singleton pattern, but still provide a useful default, is to expose a static property on the reference type that provides a suitable default for the values of that class.
 
-### Свойства зависимостей типа коллекции
+### Collection-type dependency properties
 
-У свойств зависимостей типа коллекции есть свои дополнительные проблемы реализации, которые следует рассмотреть.
+Collection-type dependency properties have some additional implementation issues to consider.
 
-Свойства зависимостей типа коллекции довольно редки в API среды выполнения Windows. В большинстве случаев коллекции можно использовать там, где элементы относятся к подклассу [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), но само свойство коллекции реализовано как свойство среды CLR или C++. Это вызвано тем, что коллекции не обязательно подходят некоторым типовым сценариям, включающим свойства зависимостей. Примеры:
+Collection-type dependency properties are relatively rare in the Windows Runtime API. In most cases, you can use collections where the items are a [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) subclass, but the collection property itself is implemented as a conventional CLR or C++ property. This is because collections do not necessarily suit some typical scenarios where dependency properties are involved. For example:
 
--   Мы обычно не анимируем коллекции.
--   Мы обычно не выполняем предварительного заполнения элемента в коллекции стилями или шаблоном.
--   Хотя привязка к коллекциям является распространенным сценарием, коллекция не обязана быть свойством зависимостей, чтобы быть источником привязки. Для целевых объектов привязки более типично использование подклассов [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) или [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) для поддержки элементов коллекции или использования схем моделей просмотра. Подробнее о привязке коллекций и к коллекциям см. в разделе [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
--   Для уведомлений об изменении коллекций лучше использовать такие интерфейсы, как **INotifyPropertyChanged** или **INotifyCollectionChanged**, либо наследовать тип коллекции от [**ObservableCollection**](T:System.Collections.ObjectModel.ObservableCollection%601).
+-   You do not typically animate a collection.
+-   You do not typically prepopulate the items in a collection with styles or a template.
+-   Although binding to collections is a major scenario, a collection does not need to be a dependency property to be a binding source. For binding targets, it is more typical to use subclasses of [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) or [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) to support collection items, or to use view-model patterns. For more info about binding to and from collections, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+-   Notifications for collection changes are better addressed through interfaces such as **INotifyPropertyChanged** or **INotifyCollectionChanged**, or by deriving the collection type from [**ObservableCollection**](T:System.Collections.ObjectModel.ObservableCollection%601).
 
-Тем не менее сценарии для свойств зависимостей типа коллекции существуют. Следующие три раздела предоставляют некоторые рекомендации по реализации свойства зависимостей типа коллекции.
+Nevertheless, scenarios for collection-type dependency properties do exist. The next three sections provide some guidance on how to implement a collection-type dependency property.
 
-### Инициализация коллекции
+### Initializing the collection
 
-При создании свойства зависимостей можно установить его значение по умолчанию с помощью метаданных. Но остерегайтесь использования одноэлементной статической коллекции в качестве значения по умолчанию. Вместо этого следует преднамеренно установить значение коллекции на уникальную коллекцию (экземпляров) в качестве части логики конструктора классов для класса, которому принадлежит свойство коллекции.
+When you create a dependency property, you can establish a default value by means of dependency property metadata. But be careful to not use a singleton static collection as the default value. Instead, you must deliberately set the collection value to a unique (instance) collection as part of class-constructor logic for the owner class of the collection property.
 
-### Уведомления об изменениях
+### Change notifications
 
-Определение коллекции как свойства зависимостей не предоставляет автоматически уведомления об изменениях для элементов в коллекции за счет обращения к методу обратного вызова PropertyChanged системы свойств. Если необходимы уведомления для коллекций или элементов коллекций (например, для сценариев привязки данных), реализуйте интерфейс **INotifyPropertyChanged** или **INotifyCollectionChanged** interface. Дополнительные сведения см. в статье [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
+Defining the collection as a dependency property does not automatically provide change notification for the items in the collection by virtue of the property system invoking the "PropertyChanged" callback method. If you want notifications for collections or collection items—for example, for a data-binding scenario— implement the **INotifyPropertyChanged** or **INotifyCollectionChanged** interface. For more info, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-### Вопросы безопасности свойств зависимостей
+### Dependency property security considerations
 
-Определяйте свойства зависимостей как открытые свойства. Определяйте идентификаторы свойств зависимостей как открытые статические члены только для чтения. Даже если попытаться объявить иные уровни доступа разрешенными с помощью языка (например, **protected**), доступ к свойству зависимостей всегда будет возможен через идентификатор в сочетании с API системы свойств. Объявление идентификатора свойств зависимостей внутренним или закрытым не будет работать, поскольку без него не сможет правильно работать система свойств.
+Declare dependency properties as public properties. Declare dependency property identifiers as public static read-only members. Even if you attempt to declare other access levels permitted by a language (such as **protected**), a dependency property can always be accessed through the identifier in combination with the property-system APIs. Declaring the dependency property identifier as internal or private will not work, because then the property system cannot operate properly.
 
-Свойства-оболочки по сути предназначены лишь для удобства пользователей. Механизмы безопасности, применяемые к оболочкам, можно обойти, вызвав [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) или [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361). То есть свойства оболочек лучше держать общедоступными; иначе обычным клиентам будет сложнее обратиться к ним, и при этом не возникнет никаких существенных улучшений безопасности.
+Wrapper properties are really just for convenience, Security mechanisms applied to the wrappers can be bypassed by calling [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) or [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) instead. So keep wrapper properties public; otherwise you just make your property harder for legitimate callers to use without providing any real security benefit.
 
-В среде выполнения Windows пользовательское свойство зависимостей нельзя зарегистрировать как свойство только для чтения.
+The Windows Runtime does not provide a way to register a custom dependency property as read-only.
 
-### Свойства зависимостей и конструкторы классов
+### Dependency properties and class constructors
 
-Общий принцип состоит в том, что конструкторы классов не должны вызывать виртуальные методы. Это связано с тем, что конструкторы можно вызывать для выполнения базовой инициализации конструктора производного класса, а вход в виртуальный метод через конструктор может произойти, когда конструируемый экземпляр объекта еще не до конца проинициализирован. При создании потомков любого класса, который сам является производным от [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), следует помнить, что сама система свойств вызывает и предоставляет виртуальные методы, как часть своих внутренних услуг. Во избежание потенциальных проблем с инициализацией во время выполнения не устанавливайте значения свойств зависимостей внутри конструкторов или классов.
+There is a general principle that class constructors should not call virtual methods. This is because constructors can be called to accomplish base initialization of a derived class constructor, and entering the virtual method through the constructor might occur when the object instance being constructed is not yet completely initialized. When you derive from any class that already derives from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), remember that the property system itself calls and exposes virtual methods internally as part of its services. To avoid potential problems with run-time initialization, don't set dependency property values within constructors of classes.
 
-### Регистрация свойств зависимостей в приложениях на C++/CX
+### Registering the dependency properties for C++/CX apps
 
-Чтобы реализовать регистрацию свойства в C++/CX, придется приложить больше усилий, чем в C#, так как имеется разделение на заголовочный файл и файл реализации, а также потому, что инициализацию в корневой области файла реализации выполнять не рекомендуется. (Расширения компонентов Visual C++ (C++/CX) помещают статический код инициализатора из корневой области непосредственно в функцию **DllMain**, в то время как компиляторы C# назначают статические инициализаторы классам, избегая таким образом проблем с блокировкой загрузки **DllMain**.) Лучше всего объявить вспомогательную функцию (для каждого класса), которая будет выполнять регистрацию всех свойств зависимостей для класса. Далее для каждого пользовательского класса, используемого в приложении, необходимо дать ссылку на вспомогательную функцию регистрации, которая предоставляется каждым требуемым пользовательским классом. Вызывайте каждую вспомогательную функцию регистрации один раз в [**конструкторе приложений**](https://msdn.microsoft.com/library/windows/apps/br242325) (`App::App()`) перед `InitializeComponent`. Этот конструктор выполняется только в случае, когда впервые возникает ссылка на приложение. При возобновлении работы приостановленного приложения этот конструктор не выполняется. Кроме того, как было показано в предыдущем примере регистрации для C++, важно выполнять проверку на **nullptr** каждого вызова [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) — это гарантия того, что на вызывающей стороне, обращающейся к функции, регистрация свойства не будет выполнена дважды. Без этой проверки повторная регистрация может вызвать аварийное завершение приложения, поскольку имя свойства будет дублироваться. Этот шаблон реализации можно посмотреть в [примере пользовательских и настраиваемых элементов управления XAML](http://go.microsoft.com/fwlink/p/?linkid=238581) (если нужен вариант этого примера для C++/CX).
+The implementation for registering a property in C++/CX is trickier than C#C#, both because of the separation into header and implementation file and also because initialization at the root scope of the implementation file is a bad practice. (Visual C++ component extensions (C++/CX) puts static initializer code from the root scope directly into **DllMain**, whereas C# compilers assign the static initializers to classes and thus avoid **DllMain** load lock issues.). The best practice here is to declare a helper function that does all your dependency property registration for a class, one function per class. Then for each custom class your app consumes, you'll have to reference the helper registration function that's exposed by each custom class you want to use. Call each helper registration function once as part of the [**Application constructor**](https://msdn.microsoft.com/library/windows/apps/br242325) (`App::App()`), prior to `InitializeComponent`. That constructor only runs when the app is really referenced for the first time, it won't run again if a suspended app resumes, for example. Also, as seen in the previous C++ registration example, the **nullptr** check around each [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call is important: it's insurance that no caller of the function can register the property twice. A second registration call would probably crash your app without such a check because the property name would be a duplicate. You can see this implementation pattern in the [XAML user and custom controls sample](http://go.microsoft.com/fwlink/p/?linkid=238581) if you look at the code for the C++/CX version of the sample.
 
-## Ссылки по теме
+## Related topics
 
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)
-* [Общие сведения о свойствах зависимостей](dependency-properties-overview.md)
-* [Пример пользовательских и настраиваемых элементов управления XAML](http://go.microsoft.com/fwlink/p/?linkid=238581)
- 
-
-
-
-<!--HONumber=Mar16_HO1-->
-
+* [Dependency properties overview](dependency-properties-overview.md)
+* [XAML user and custom controls sample](http://go.microsoft.com/fwlink/p/?linkid=238581)
+ 
 
