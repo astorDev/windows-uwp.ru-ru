@@ -1,84 +1,78 @@
 ---
+author: mcleblanc
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
-title: Виртуализация данных ListView и GridView
-description: Улучшите производительность и время запуска ListView и GridView с помощью виртуализации данных.
+title: ListView and GridView data virtualization
+description: Improve ListView and GridView performance and startup time through data virtualization.
 ---
-# Виртуализация данных ListView и GridView
+# ListView and GridView data virtualization
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Примечание.** Для получения дополнительных сведений см. мероприятие //build/ [Резкое повышение производительности при взаимодействии пользователей с большим объемом данных в GridView и ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
+**Note**  For more details, see the //build/ session [Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
 
-Улучшите производительность и время запуска [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) с помощью виртуализации данных. Подробнее о виртуализации пользовательского интерфейса, сокращении элементов и прогрессивном обновлении элементов см. в разделе [Оптимизация пользовательского интерфейса ListView и GridView](optimize-gridview-and-listview.md).
+Improve [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) performance and startup time through data virtualization. For UI virtualization, element reduction, and progressive updating of items, see [ListView and GridView UI optimization](optimize-gridview-and-listview.md).
 
-Для набора данных, который настолько велик, что не может или не должен храниться в памяти одновременно, необходим метод виртуализации данных. Вы загружаете первоначальный объем в память (из локального диска, сети или облака) и применяете виртуализацию пользовательского интерфейса к этой части набора данных. Позже вы можете загрузить дополнительные данные приращениями или по требованию из произвольных мест в наборе основных данных (прямой доступ). Подходит вам виртуализация данных или нет зависит от многих факторов:
+A method of data virtualization is needed for a data set that is so large that it cannot or should not all be stored in memory at one time. You load an initial portion into memory (from local disk, network, or cloud) and apply UI virtualization to this partial data set. You can later load data incrementally, or from arbitrary points in the master data set (random access), on demand. Whether data virtualization is appropriate for you depends on many factors.
 
--   размера набора данных;
--   размера каждого элемента;
--   источника набора данных (расположение на локальном диске, в сети или облаке);
--   общего потребления памяти вашим приложением.
+-   The size of your data set
+-   The size of each item
+-   The source of the data set (local disk, network, or cloud)
+-   The overall memory consumption of your app
 
-**Примечание.** Функция включена по умолчанию для ListView и GridView и отображает визуальные элементы временных заполнителей при быстром сдвиге или прокрутке. После загрузки данных эти визуальные элементы-заполнители заменяются вашим шаблоном элементов. Функцию можно отключить, установив для параметра [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) значение «false», но в таком случае рекомендуется использовать атрибут x:Phase для постепенной обработки элементов в вашем шаблоне элементов. См. раздел [Прогрессивное обновление элементов ListView и GridView](optimize-gridview-and-listview.md#update-items-incrementally).
+**Note**  Be aware that a feature is enabled by default for ListView and GridView that displays temporary placeholder visuals while the user is panning/scrolling quickly. As data is loaded, these placeholder visuals are replaced with your item template. You can turn the feature off by setting [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) to false, but if you do so then we recommend that you use the x:Phase attribute to progressively render the elements in your item template. See [Update ListView and GridView items progressively](optimize-gridview-and-listview.md#update-items-incrementally).
 
-Ниже приведены подробные сведения о методах добавочной виртуализации данных и виртуализации данных прямого доступа.
+Here are more details about the incremental and random-access data virtualization techniques.
 
-## Инкрементная виртуализация данных
+## Incremental data virtualization
 
-Инкрементная виртуализация данных загружает данные последовательно. [
-            **ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878), использующий инкрементную виртуализацию данных, можно использовать для просмотра коллекции миллиона элементов, но изначально загружаются только 50 элементов. Следующие 50 загружаются, когда пользователь прокручивает страницу. По мере загрузки элементов бегунок полосы прокрутки уменьшается в размере. Для этого типа виртуализации данных записывается класс источника данных, применяющий эти интерфейсы.
+Incremental data virtualization loads data sequentially. A [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) that uses incremental data virtualization may be used to view a collection of a million items, but only 50 items are loaded initially. As the user pans/scrolls, the next 50 are loaded. As items are loaded, the scroll bar's thumb decreases in size. For this type of data virtualization you write a data source class that implements these interfaces.
 
--   [**IList**](T:System.Collections.IList)
--   [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) (C#/VB) или [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
+-   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
+-   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) or [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
 -   [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)
 
-Подобный источник данных — это хранящийся в памяти список, который можно постоянно расширять. Элемент управления элементами запрашивает элементы, используя стандартный индексатор [**IList**](T:System.Collections.IList) и свойства подсчета. Подсчет должен представлять число элементов локально, а не фактический размер набора данных.
+A data source like this is an in-memory list that can be continually extended. The items control will ask for items using the standard [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) indexer and count properties. The count should represent the number of items locally, not the true size of the dataset.
 
-Когда элемент управления элементами подходит к концу существующих данных, он вызывает [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/Hh701916-hasmoreitems). Если возвратить **true**, он вызовет [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701916-loadmoreitemsasync), передавая рекомендованное число элементов для загрузки. В зависимости от того, откуда загружаются данные (из локального диска, сети или облака), можно указать другое число элементов для загрузки, отличающееся от рекомендованного. Например, если ваша служба поддерживает пакеты из 50 элементов, но элемент управления элементами запрашивает только 10, то вы можете загрузить 50. Загрузите данные из серверной части, добавьте их в список и вызовите уведомление об изменениях с помощью [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) или [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052), чтобы элемент управления элементами получил сведения о новых элементах. Следует также возвратить число фактически загруженных элементов. Если вы загружаете меньше элементов, чем рекомендовано, или элемент управления элементами прокручивается дальше на промежуточных этапах, то источник данных вызывается снова для большего числа элементов и цикл продолжается. Дополнительные сведения можно получить, скачав [образец привязки данных в XAML](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5) для Windows 8.1, а затем повторно использовав исходный код в приложении для Windows 10.
+When the items control gets close to the end of the existing data, it will call [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems). If you return **true**, then it will call [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync) passing an advised number of items to load. Depending on where you're loading data from (local disk, network, or cloud), you may choose to load a different number of items than that advised. For example, if your service supports batches of 50 items but the items control only asks for 10 then you can load 50. Load the data from your back end, add it to your list, and raise a change notification via [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) or [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) so that the items control knows about the new items. Also return a count of the items you actually loaded. If you load fewer items than advised, or the items control has been panned/scrolled even further in the interim, then your data source will be called again for more items and the cycle will continue. You can learn more by downloading the [XAML data binding sample](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5) for Windows 8.1 and re-using its source code in your Windows 10 app.
 
-## Виртуализация данных прямого доступа
+## Random access data virtualization
 
-Виртуализация данных прямого доступа позволяет загружать данные из произвольного места в наборе данных. [
-            **ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878), использующий виртуализацию данных прямого доступа, применяется для просмотра коллекции из миллиона элементов и может загружать элементы 100 000–100 050. Если пользователь затем перейдет к началу списка, элемент управления загрузит элементы 1–50. Бегунок полосы прокрутки всегда указывает, что **ListView** содержит миллион элементов. Положение бегунка полосы прокрутки зависит от того, где в полном наборе данных коллекции расположены видимые элементы. Этот тип виртуализации данных может значительно сократить требования к памяти и время загрузки для коллекции. Чтобы включить его, необходимо создать класс источника данных, который будет извлекать данные по запросу, управлять локальным кэшем и реализовывать указанные интерфейсы.
+Random access data virtualization allows loading from an arbitrary point in the data set. A [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) that uses random access data virtualization, used to view a collection of a million items, can load the items 100,000 – 100,050. If the user then moves to the beginning of the list, the control loads items 1 – 50. At all times, the scroll bar's thumb indicates that the **ListView** contains a million items. The position of the scroll bar's thumb is relative to where the visible items are located in the collection's entire data set. This type of data virtualization can significantly reduce the memory requirements and load times for the collection. To enable it you need to write a data source class that fetches data on demand and manages a local cache and implements these interfaces.
 
--   [**IList**](T:System.Collections.IList)
--   [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) (C#/VB) или [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
--   (Необязательно) [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)
--   (Необязательно) [**ISelectionInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877074)
+-   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
+-   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) or [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
+-   (Optionally) [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)
+-   (Optionally) [**ISelectionInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877074)
 
-[**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) предоставляет сведения о том, с какими элементами активно используется элемент управления. Элемент управления элементами вызывает этот метод при каждом изменении представления и включает эти два набора диапазонов.
+[**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) provides information on which items the control is actively using. The items control will call this method whenever its view is changing, and will include these two sets of ranges.
 
--   Набор элементов в окне просмотра.
--   Набор элементов без виртуализации, которые используются элементом управления и которых может не быть в окне просмотра.
-    -   Буфер элементов вокруг окна просмотра, который используется элементом управления элементами для плавности сенсорного панорамирования.
-    -   Элемент с фокусом ввода.
-    -   Первый элемент.
+-   The set of items that are in the viewport.
+-   A set of non-virtualized items that the control is using that may not be in the viewport.
+    -   A buffer of items around the viewport that the items control keeps so that touch panning is smooth.
+    -   The focused item.
+    -   The first item.
 
-Реализуя [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070), источник данных получает сведения о том, какие элементы необходимо извлечь и поместить в кэш, а также о том, когда вырезать из кэша данные, которые больше не нужны. **IItemsRangeInfo** использует объекты [**ItemIndexRange**](https://msdn.microsoft.com/library/windows/apps/Dn877081), чтобы описать набор элементов на основе их индекса в коллекции. Это необходимо для того, чтобы он не использовал указатели элемента, которые не могут быть неправильными или непостоянными. **IItemsRangeInfo** предназначен для использования только одним экземпляром элемента управления элементами, так как он зависит от сведений о состоянии этого элемента управления элементами. Если нескольким элементам управления элементами требуется доступ к тем же данным, то понадобиться отдельный экземпляр источника данных для каждого из них. Они могут использовать общий кэш, но логика для очистки из кэша будет более сложной.
+By implementing [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) your data source knows what items need to be fetched and cached, and when to prune from the cache data that is no longer needed. **IItemsRangeInfo** uses [**ItemIndexRange**](https://msdn.microsoft.com/library/windows/apps/Dn877081) objects to describe a set of items based on their index in the collection. This is so that it doesn't use item pointers, which may not be correct or stable. **IItemsRangeInfo** is designed to be used by only a single instance of an items control because it relies on state information for that items control. If multiple items controls need access to the same data then you will need a separate instance of the data source for each. They can share a common cache, but the logic to purge from the cache will be more complicated.
 
-Ниже приведена основная стратегия для вашего источника данных виртуализации данных прямого доступа.
+Here's the basic strategy for your random access data virtualization data source.
 
--   При запросе элемента
-    -   Если он доступен в памяти, возвратите его.
-    -   Если он отсутствует, возвратите значение null или заполнитель.
-    -   Используйте запрос элемента (или сведения о диапазоне из [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)), чтобы узнать, какие элементы обязательны, и асинхронно извлечь данные из серверной части. После извлечения данных отправьте уведомление об изменении с помощью [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) или [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052), чтобы элемент управления элементами получил сведения о новых элементах.
--   (Необязательно) По мере изменения окна просмотра элемента управления элементами определите, какие элементы из источника данных необходимы, используя [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070).
+-   When asked for an item
+    -   If you have it available in memory, then return it.
+    -   If you don’t have it, then return either null or a placeholder item.
+    -   Use the request for an item (or the range information from [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)) to know which items are needed, and to fetch data for items from your back end asynchronously. After retrieving the data, raise a change notification via [**INotifyCollectionChanged**]((https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) or [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) so that the items control knows about the new item.
+-   (Optionally) as the items control's viewport changes, identify what items are needed from your data source via your implementation of [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070).
 
-Более того, стратегия того, когда загружать элементы данных, сколько элементов загружать и какие элементы хранить в памяти, зависит от приложения. Несколько общих аспектов, о которых необходимо помнить.
+Beyond that, the strategy for when to load data items, how many to load, and which items to keep in memory is up to your application. Some general considerations to keep in mind:
 
--   Создайте асинхронные запросы данных; не блокируйте поток пользовательского интерфейса.
--   Найдите активную зону в размере пакетов, элементы которых вы извлекаете. Лучше коротко и по-крупному. Не так мало, чтобы создавать слишком много небольших запросов; не слишком много, чтобы их выполнение занимало слишком много времени.
--   Подумайте, сколько запросов должны ожидать выполнения одновременно. Выполнять их по одному проще, но это может быть слишком медленно при увеличении времени выполнения.
--   Можно ли отменить запросы данных?
--   Существует ли плата за транзакцию при использовании размещенных служб?
--   Какие уведомления предоставляются службой при изменении результатов запроса? Получите ли вы уведомление, если элемент будет вставлен с индексом 33? Если ваша служба поддерживает запросы типа ключ-плюс-смещении, это может быть лучше, чем просто использовать индекс.
--   Насколько вы хотите быть осведомлены об элементах, которые будут извлечены? Вы собираетесь испытать и отслеживать направление и скорость прокрутки, чтобы определить, какие элементы необходимы?
--   Насколько вы радикальны в вопросе очистки кэша? Это компромисс памяти и взаимодействия.
-
+-   Make asynchronous requests for data; don't block the UI thread.
+-   Find the sweet spot in the size of the batches you fetch items in. Prefer chunky to chatty. Not so small that you make too many small requests; not too large that they take too long to retrieve.
+-   Consider how many requests you want to have pending at the same time. Performing one at a time is easier, but it may be too slow if turnaround time is high.
+-   Can you cancel requests for data?
+-   If using a hosted service, is there a cost per transaction?
+-   What kind of notifications are provided by the service when the results of a query are changed? Will you know if an item is inserted at index 33? If your service supports queries based on a key-plus-offset, that may be better than just using an index.
+-   How smart do you want to be in pre-fetching items? Are you going to try and track the direction and velocity of scrolling to predict which items are needed?
+-   How aggressive do you want to be in purging the cache? This is a tradeoff of memory versus experience.
 
 
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 

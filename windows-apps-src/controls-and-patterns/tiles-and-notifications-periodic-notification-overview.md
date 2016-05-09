@@ -1,110 +1,106 @@
 ---
-Description: Периодические, или опросные, уведомления обновляют плитки и индикаторы событий через фиксированные интервалы, скачивая содержимое напрямую из облачной службы.
-title: Обзор периодических уведомлений
+author: mijacobs
+Description: Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service.
+title: Periodic notification overview
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
-label: подлежит уточнению
+label: TBD
 template: detail.hbs
 ---
 
-# Обзор периодических уведомлений
-
-
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-Периодические, или опросные, уведомления обновляют плитки и индикаторы событий через фиксированные интервалы, скачивая содержимое напрямую из облачной службы. Чтобы использовать периодические уведомления, код вашего приложения должен предоставить два фрагмента информации:
-
--   Универсальный код ресурса (URI) местоположения в Интернете, которое Windows будет опрашивать для обновления плиток или индикаторов событий для приложения
--   интервал опроса URI.
-
-Периодические уведомления позволяют приложению обновлять живые плитки с минимальным участием облачной службы и клиента. Периодические уведомления удобно использовать для распространения одного и того же содержимого среди широкой аудитории.
-
-**Примечание**. Дополнительные сведения можно получить, загрузив [Пример push-уведомлений и периодических уведомлений](http://go.microsoft.com/fwlink/p/?linkid=231476) для Windows 8.1 и повторно использовав исходный код в приложении для Windows 10.
-
- 
-
-## <span id="How_it_works"></span><span id="how_it_works"></span><span id="HOW_IT_WORKS"></span>Принцип работы
-
-
-Для периодических уведомлений требуется, чтобы ваше приложение размещало облачную службу. Эта служба будет периодически опрашиваться всеми пользователями, у которых установлено приложение. При каждом интервале опроса (допустим, раз в час) Windows отправляет HTTP-запрос GET для URI, скачивает запрошенное содержимое плитки или индикатора (в формате XML), которое предоставляется в ответ на запрос, и отображает это содержимое на плитке приложения.
-
-Обратите внимание, что периодические обновления нельзя использовать вместе со всплывающими уведомлениями. Последние лучше предоставлять через [запланированные](https://msdn.microsoft.com/library/windows/apps/hh465417) или [push-уведомления](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252).
-
-## <span id="URI_location_and_XML_content"></span><span id="uri_location_and_xml_content"></span><span id="URI_LOCATION_AND_XML_CONTENT"></span>Местоположение URI и содержимое XML
-
-
-В качестве URI для опроса можно использовать любые действующие веб-адреса HTTP или HTTPS.
-
-Ответ облачного сервера включает в себя скачанное содержимое. Содержимое, возвращаемое URI, должно соответствовать спецификациям схемы XML [Плитка](tiles-and-notifications-adaptive-tiles-schema.md) или [Индикатор](https://msdn.microsoft.com/library/windows/apps/br212851) и должно быть закодировано в UTF-8. Вы можете использовать определенные заголовки HTTP для указания [срока действия](#expiry) или [тега](#taggo) для уведомления.
-
-## <span id="Polling_Behavior"></span><span id="polling_behavior"></span><span id="POLLING_BEHAVIOR"></span>Поведение опроса
-
-
-Чтобы начать опрос, вызовите один из следующих методов:
-
--   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) (плитка)
--   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701611) (Индикатор событий)
--   [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) (плитка)
-
-При вызове одного из этих методов указанный в вызове URI немедленно опрашивается. Полученное содержимое используется для обновления плитки либо индикатора событий. После первоначального опроса Windows продолжает предоставлять обновления с указанной периодичностью. Опрос продолжается до явной остановки (с помощью [**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697)), удаления приложения или, если это вспомогательная плитка, — до удаления плитки. В противном случае Windows продолжит опрос для обновлений плитки или индикатора событий, даже если приложение никогда не будет запущено снова.
-
-### <span id="The_recurrence_interval"></span><span id="the_recurrence_interval"></span><span id="THE_RECURRENCE_INTERVAL"></span>Интервал повторения
-
-Интервал повторения передается перечисленным выше методам в виде параметра. Учтите, что хотя Windows стремится выполнять запросы с указанной периодичностью, интервал не является точным. Windows может отложить опрос на время до 15 минут.
-
-### <span id="The_start_time"></span><span id="the_start_time"></span><span id="THE_START_TIME"></span>Время начала
-
-Дополнительно можно указать конкретное время дня для опроса. Представим себе приложение, меняющее содержимое своей плитки один раз в день. В этом случае мы рекомендуем выполнять опрос через небольшой промежуток времени после обновления вашей облачной службы. Например, если интернет-магазин публикует актуальные предложения дня в 8 часов утра, опрос на наличие нового содержимого для плиток лучше всего выполнять чуть позже 8 часов.
-
-Если вы указали время начала опроса, то первый вызов метода сразу же запрашивает содержимое. Затем периодический опрос будет начинаться в течение 15 минут от указанного времени начала.
-
-### <span id="Automatic_retry_behavior"></span><span id="automatic_retry_behavior"></span><span id="AUTOMATIC_RETRY_BEHAVIOR"></span>Поведение автоматического повтора
-
-Универсальный код ресурса (URI) опрашивается, только если у устройства есть доступ к сети. Если сеть доступна, но связь с URI по какой-либо причине невозможна, данный цикл опроса будет пропущен, и URI будет опрошен снова в течение следующего интервала. Если на момент запланированного опроса устройство выключено, находится в спящем режиме или в режиме гибернации, то URI будет опрошен после выхода устройства из выключенного состояния или спящего режима.
-
-## <span id="expiry"></span><span id="EXPIRY"></span>Истечение сроков действия уведомлений на плитках и индикаторах событий
-
-
-По умолчанию срок действия периодических уведомлений на индикаторах событий и плитках истекает через три дня с момента скачивания уведомлений. По окончании срока действия уведомления содержимое удаляется с плитки или из очереди и более не показывается пользователю. Рекомендуется явным образом установить срок действия для всех периодических уведомлений на плитках и индикаторах событий. Исходя из особенностей вашего приложения или уведомления, следует выбрать время, позволяющее гарантировать, что содержание вашей плитки не будет сохраняться после того, как утратит актуальность. Явное указание срока действия важно для содержимого с определенной продолжительностью существования. Это также гарантирует удаление устаревшего содержимого, если облачная служба стала недоступной или если пользователь отключился от сети на продолжительное время.
-
-Облачная служба устанавливает срок действия и время уведомления добавлением HTTP-заголовка X-WNS-Expires в полезные данные HTTP-отклика. HTTP-заголовок X-WNS-Expires соответствует формату [HTTP-date](http://go.microsoft.com/fwlink/p/?linkid=253706). Подробнее: [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) или [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945).
-
-Например, во время торгового дня на бирже срок действия для обновлений курсов акций можно установить равным двойному интервалу опроса (допустим, через час после получения при опросе, выполняемом каждые полчаса). Рассмотрим другой пример: для новостного приложения можно определить, что один день является подходящим временем для истечения срока действия обновлений плитки ежедневных новостей.
-
-## <span id="taggo"></span><span id="TAGGO"></span>Периодические уведомления в очереди уведомлений
-
-
-Вы можете использовать периодические обновления плиток вместе с [цикличностью уведомлений](https://msdn.microsoft.com/library/windows/apps/hh781199). По умолчанию плитка на начальном экране показывает содержимое одного уведомления, пока его не заменит новое уведомление. При включении цикличности в ней сохраняется до пяти уведомлений, и плитка отображает их одно за другим.
-
-Если в очереди уже есть пять уведомлений, следующее новое уведомление заменит самое старое уведомление в очереди. Однако задав теги уведомления, вы можете повлиять на политику замены в очереди. Тег — это относящаяся к определенному приложению строка без учета регистра длиной до 16 алфавитно-цифровых символов, указанная в HTTP-заголовке [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) в полезных данных HTTP-отклика. Windows сравнивает тег входящего уведомления с тегами всех уведомлений в очереди. При совпадении тегов новое уведомление заменяет уведомление из очереди с тем же тегом. Если совпадение не найдено, применяется стандартное правило замены, и новое уведомление заменяет самое старое уведомление в очереди.
-
-Очереди и теги уведомлений вы можете использовать для реализации различных комплексных сценариев уведомлений. Например, биржевое приложение может отправлять пять уведомлений, каждое из которых относится к различным акциям и содержит тег с названием акции. Это предотвратит появление в очереди двух уведомлений об одних и тех же акциях, более раннее из которых устарело.
-
-Дополнительные сведения см. в разделе [Использование очереди уведомлений](https://msdn.microsoft.com/library/windows/apps/hh781199).
-
-### <span id="Enabling_the_notification_queue"></span><span id="enabling_the_notification_queue"></span><span id="ENABLING_THE_NOTIFICATION_QUEUE"></span>Включение очереди уведомлений
-
-Для реализации очереди уведомлений сначала включите очередь для плитки (см. раздел [Использование очереди уведомлений в случае локальных уведомлений](https://msdn.microsoft.com/library/windows/apps/hh465429)). Вызов для включения очереди достаточно выполнить однократно в течение жизненного цикла приложения, но можно также выполнять его при каждом запуске приложения.
-
-### <span id="Polling_for_more_than_one_notification_at_a_time"></span><span id="polling_for_more_than_one_notification_at_a_time"></span><span id="POLLING_FOR_MORE_THAN_ONE_NOTIFICATION_AT_A_TIME"></span>Выполнение опроса для нескольких уведомлений за раз
-
-Для каждого уведомления, которое Windows должна скачивать для вашей плитки, вам нужно предоставить уникальный URI. Использование метода [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) позволяет предоставить для работы с очередью уведомлений до пяти URI одновременно. Все URI опрашиваются на наличие отдельных полезных данных уведомления одновременно или почти одновременно. Каждый опрошенный URI может возвращать собственные срок действия и значение тега.
-
-## <span id="related_topics"></span>Ссылки по теме
-
-
-* [Руководство по периодическим уведомлениям](https://msdn.microsoft.com/library/windows/apps/hh761461)
-* [Настройка периодических уведомлений для индикаторов событий](https://msdn.microsoft.com/library/windows/apps/hh761476)
-* [Настройка периодических уведомлений для плиток](https://msdn.microsoft.com/library/windows/apps/hh761476)
- 
-
- 
+# Periodic notification overview
 
 
 
 
 
+Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service. To use periodic notifications, your client app code needs to provide two pieces of information:
 
-<!--HONumber=Mar16_HO1-->
+-   The Uniform Resource Identifier (URI) of a web location for Windows to poll for tile or badge updates for your app
+-   How often that URI should be polled
+
+Periodic notifications enable your app to get live tile updates with minimal cloud service and client investment. Periodic notifications are a good delivery method for distributing the same content to a wide audience.
+
+**Note**   You can learn more by downloading the [Push and periodic notifications sample](http://go.microsoft.com/fwlink/p/?linkid=231476) for Windows 8.1 and re-using its source code in your Windows 10 app.
+
+ 
+
+## <span id="How_it_works"></span><span id="how_it_works"></span><span id="HOW_IT_WORKS"></span>How it works
+
+
+Periodic notifications require that your app hosts a cloud service. The service will be polled periodically by all users who have the app installed. At each polling interval, such as once an hour, Windows sends an HTTP GET request to the URI, downloads the requested tile or badge content (as XML) that is supplied in response to the request, and displays the content on the app's tile.
+
+Note that periodic updates cannot be used with toast notifications. Toast is best delivered through [scheduled](https://msdn.microsoft.com/library/windows/apps/hh465417) or [push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252) notifications.
+
+## <span id="URI_location_and_XML_content"></span><span id="uri_location_and_xml_content"></span><span id="URI_LOCATION_AND_XML_CONTENT"></span>URI location and XML content
+
+
+Any valid HTTP or HTTPS web address can be used as the URI to be polled.
+
+The cloud server's response includes the downloaded content. The content returned from the URI must conform to the [Tile](tiles-and-notifications-adaptive-tiles-schema.md) or [Badge](https://msdn.microsoft.com/library/windows/apps/br212851) XML schema specification, and must be UTF-8 encoded. You can use defined HTTP headers to specify the [expiration time](#expiry) or [tag](#taggo) for the notification.
+
+## <span id="Polling_Behavior"></span><span id="polling_behavior"></span><span id="POLLING_BEHAVIOR"></span>Polling Behavior
+
+
+Call one of these methods to begin polling:
+
+-   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) (Tile)
+-   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701611) (Badge)
+-   [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) (Tile)
+
+When you call one of these methods, the URI is immediately polled and the tile or badge is updated with the received contents. After this initial poll, Windows continues to provide updates at the requested interval. Polling continues until you explicitly stop it (with [**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697)), your app is uninstalled, or, in the case of a secondary tile, the tile is removed. Otherwise, Windows continues to poll for updates to your tile or badge even if your app is never launched again.
+
+### <span id="The_recurrence_interval"></span><span id="the_recurrence_interval"></span><span id="THE_RECURRENCE_INTERVAL"></span>The recurrence interval
+
+You specify the recurrence interval as a parameter of the methods listed above. Note that while Windows makes a best effort to poll as requested, the interval is not precise. The requested poll interval can be delayed by up to 15 minutes at the discretion of Windows.
+
+### <span id="The_start_time"></span><span id="the_start_time"></span><span id="THE_START_TIME"></span>The start time
+
+You optionally can specify a particular time of day to begin polling. Consider an app that changes its tile content just once a day. In such a case, we recommend that you poll close to the time that you update your cloud service. For example, if a daily shopping site publishes the day's offers at 8 AM, poll for new tile content shortly after 8 AM.
+
+If you provide a start time, the first call to the method polls for content immediately. Then, regular polling starts within 15 minutes of the provided start time.
+
+### <span id="Automatic_retry_behavior"></span><span id="automatic_retry_behavior"></span><span id="AUTOMATIC_RETRY_BEHAVIOR"></span>Automatic retry behavior
+
+The URI is polled only if the device is online. If the network is available but the URI cannot be contacted for any reason, this iteration of the polling interval is skipped, and the URI will be polled again at the next interval. If the device is in an off, sleep, or hibernated state when a polling interval is reached, the URI is polled when the device returns from its off or sleep state.
+
+## <span id="expiry"></span><span id="EXPIRY"></span>Expiration of tile and badge notifications
+
+
+By default, periodic tile and badge notifications expire three days from the time they are downloaded. When a notification expires, the content is removed from the badge, tile, or queue and is no longer shown to the user. It is a best practice to set an explicit expiration time on all periodic tile and badge notifications, using a time that makes sense for your app or notification, to ensure that the content does not persist longer than it is relevant. An explicit expiration time is essential for content with a defined life span. It also assures the removal of stale content if your cloud service becomes unreachable, or if the user disconnects from the network for an extended period of time.
+
+Your cloud service sets an expiration date and time for a notification by including the X-WNS-Expires HTTP header in the response payload. The X-WNS-Expires HTTP header conforms to the [HTTP-date format](http://go.microsoft.com/fwlink/p/?linkid=253706). For more information, see [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) or [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945).
+
+For example, during a stock market's active trading day, you can set the expiration for a stock price update to twice that of your polling interval (such as one hour after receipt if you are polling every half-hour). As another example, a news app might determine that one day is an appropriate expiration time for a daily news tile update.
+
+## <span id="taggo"></span><span id="TAGGO"></span>Periodic notifications in the notification queue
+
+
+You can use periodic tile updates with [notification cycling](https://msdn.microsoft.com/library/windows/apps/hh781199). By default, a tile on the Start screen shows the content of a single notification until it is replaced by a new notification. When you enable cycling, up to five notifications are maintained in a queue and the tile cycles through them.
+
+If the queue has reached its capacity of five notifications, the next new notification replaces the oldest notification in the queue. However, by setting tags on your notifications, you can affect the queue's replacement policy. A tag is an app-specific, case-insensitive string of up to 16 alphanumeric characters, specified in the [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) HTTP header in the response payload. Windows compares the tag of an incoming notification with the tags of all notifications already in the queue. If a match is found, the new notification replaces the queued notification with the same tag. If no match is found, the default replacement rule is applied and the new notification replaces the oldest notification in the queue.
+
+You can use notification queuing and tagging to implement a variety of rich notification scenarios. For example, a stock app could send five notifications, each about a different stock and each tagged with a stock name. This prevents the queue from ever containing two notifications for the same stock, the older of which is out of date.
+
+For more information, see [Using the notification queue](https://msdn.microsoft.com/library/windows/apps/hh781199).
+
+### <span id="Enabling_the_notification_queue"></span><span id="enabling_the_notification_queue"></span><span id="ENABLING_THE_NOTIFICATION_QUEUE"></span>Enabling the notification queue
+
+To implement a notification queue, first enable the queue for your tile (see [How to use the notification queue with local notifications](https://msdn.microsoft.com/library/windows/apps/hh465429)). The call to enable the queue needs to be done only once in your app's lifetime, but there is no harm in calling it each time your app is launched.
+
+### <span id="Polling_for_more_than_one_notification_at_a_time"></span><span id="polling_for_more_than_one_notification_at_a_time"></span><span id="POLLING_FOR_MORE_THAN_ONE_NOTIFICATION_AT_A_TIME"></span>Polling for more than one notification at a time
+
+You must provide a unique URI for each notification that you'd like Windows to download for your tile. By using the [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) method, you can provide up to five URIs at once for use with the notification queue. Each URI is polled for a single notification payload, at or near the same time. Each polled URI can return its own expiration and tag value.
+
+## <span id="related_topics"></span>Related topics
+
+
+* [Guidelines for periodic notifications](https://msdn.microsoft.com/library/windows/apps/hh761461)
+* [How to set up periodic notifications for badges](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [How to set up periodic notifications for tiles](https://msdn.microsoft.com/library/windows/apps/hh761476)
+ 
+
+ 
+
+
 
 

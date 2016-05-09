@@ -1,91 +1,92 @@
 ---
-description: Ниже приведены действия, которые необходимо выполнить для любого приложения, подключаемого к сети.
-title: Основы работы с сетями
+author: DelfCo
+description: Things you must do for any network-enabled app.
+title: Networking basics
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 ---
 
-# Основы работы с сетями
+# Networking basics
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Ниже приведены действия, которые необходимо выполнить для любого приложения, подключаемого к сети.
+Things you must do for any network-enabled app.
 
-## Возможности
+## Capabilities
 
-Для работы в сети необходимо добавить соответствующие элементы возможности в манифест приложения. Если в манифесте приложения не указана возможность подключения к сети, то приложение не сможет подключаться к сети, а все попытки подключиться к сети будут неудачными.
+In order to use networking, you must add appropriate capability elements to your app manifest. If no network capability is specified in your app's manifest, your app will have no networking capability, and any attempt to connect to the network will fail.
 
-Ниже перечислены наиболее часто используемые возможности подключения к сети.
+The following are the most-used networking capabilities.
 
-| Возможность | Описание |
+| Capability | Description |
 |------------|-------------|
-| **internetClient** | Предоставляет исходящий доступ к Интернету и сетям в общественных местах, таких как аэропорт или кафе. Программы, которым требуется доступ в Интернет, должны использовать эту возможность. |
-| **internetClientServer** | Предоставляет приложению входящий и исходящий доступ к сети из Интернета и сетей в общественных местах, таких как аэропорт или кафе. |
-| **privateNetworkClientServer** | Предоставляет приложению входящий и исходящий доступ к сети в доверенных местах пользователя, таких как дом или рабочее место. |
+| **internetClient** | Provides outbound access to the Internet and networks in public places, like airports and coffee shop. Most apps that require Internet access should use this capability. |
+| **internetClientServer** | Gives the app inbound and outbound network access from the Internet and networks in public places like airports and coffee shops. |
+| **privateNetworkClientServer** | Gives the app inbound and outbound network access at the user's trusted places, like home and work. |
 
-Существуют и другие возможности, которые могут быть необходимы для вашего приложения при определенных обстоятельствах.
+There are other capabilities that might be necessary for your app, in certain circumstances.
 
-| Возможность | Описание |
+| Capability | Description |
 |------------|-------------|
-| **pushNotifications** | Если ваше приложение использует триггеры активности сокета, укажите эту возможность в манифесте приложения. |
-| **enterpriseAuthentication** | Позволяет приложению подключаться к сетевым ресурсам, для которых требуются учетные данные домена. Для этой характеристики необходимо, чтобы администратор домена включил такую функциональность для всех приложений. В качестве примера можно привести приложение, которое получает данные с серверов SharePoint в частной интрасети. <br/> С этой характеристикой ваши учетные данные могут быть использованы для доступа к сетевым ресурсам в сети, для которой требуются учетные данные. Приложение с этой характеристикой может выполнять вход в сеть под вашим именем. <br/> Эта возможность не требуется, если нужно разрешить приложению доступ к Интернету через прокси-сервер, выполняющий проверку подлинности. |
-| **proximity** | Требуется для близкого взаимодействия с устройствами, расположенными недалеко от компьютера. Близкое взаимодействие в ближайшей зоне может быть использовано для отправки или соединения с приложением на находящемся рядом устройстве. <br/> Эта возможность предоставляет приложению доступ к сети для подключения к расположенному недалеко устройству, если пользователь согласен отправить или принять приглашение. |
-| **sharedUserCertificates** | Предоставляет приложению доступ к сертификатам программного обеспечения и оборудования (например, сертификатам смарт-карт). Когда эта возможность вызывается во время выполнения, пользователь должен совершить действие (например, вставить карту или выбрать сертификат). <br/> В приложении с этой характеристикой для идентификации применяются сертификаты программного обеспечения и оборудования или смарт-карта. Эта характеристика может быть использована для идентификации работодателем, банком или государственными службами. |
+| **pushNotifications** | If your app uses socket activity triggers, you must specify this capability in the app manifest. |
+| **enterpriseAuthentication** | Allows an app to connect to network resources that require domain credentials. This capability will require a domain administrator to enable the functionality for all apps. An example would be an app that retrieves data from SharePoint servers on a private Intranet. <br/> With this capability your credentials can be used to access network resources on a network that requires credentials. An app with this capability can impersonate you on the network. <br/> This capability is not required to allow an app to access the Internet via an authenticating proxy. |
+| **proximity** | Required for near-field proximity communication with devices in close proximity to the computer. Near-field proximity may be used to send or connect with an application on a nearby device. <br/> This capability allows an app to access the network to connect to a device in close proximity, with user consent to send an invite or accept an invite. |
+| **sharedUserCertificates** | This capability allows an app to access software and hardware certificates, such as smart card certificates. When this capability is invoked at runtime, the user must take action, such as inserting a card or selecting a certificate. <br/> With this capability, your software and hardware certificates or a smart card are used for identification in the app. This capability may be used by your employer, bank, or government services for identification. |
 
-## Взаимодействовать, когда приложение выполняется не на переднем плане
+## Communicating when your app is not in the foreground
 
-[Поддержка приложения с помощью фоновых задач](https://msdn.microsoft.com/library/windows/apps/mt299103) содержит общие сведения об использовании фоновых задач для выполнения работы, когда приложение не находится на переднем плане. Если точнее, ваш код должен выполнить специальные действия, чтобы получать уведомление, когда он не является текущим приложением переднего плана и по сети поступают данные для него. Вы использовали триггеры канала управления для этой цели в Windows 8, и они по-прежнему поддерживаются в Windows 10. Все сведения об использовании триггеров канала управления доступны [**здесь**](https://msdn.microsoft.com/library/windows/apps/hh701032). Новая технология в Windows 10 имеет лучшую функциональность с более низкой нагрузкой для некоторых сценариев, как в случае с сокетами потока с поддержкой push-уведомлений: брокер сокета и триггеры активности сокетов.
+[Support your app with background tasks](https://msdn.microsoft.com/library/windows/apps/mt299103) contains general information about using background tasks to do work when your app is not in the foreground. More specifically, your code must take special steps to be notified when it is not the current foreground app and data arrives over the network for it. You used Control Channel Triggers for this purpose in Windows 8, and they are still supported in Windows 10. Full information about using Control Channel Triggers is available [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032). A new technology in Windows 10 provides better functionality with lower overhead for some scenarios, such as push-enabled stream sockets: the socket broker and socket activity triggers.
 
-Если ваше приложение использует [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) или [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906), то оно может передать право собственности на открытый сокет брокеру сокета, предоставляемому системой, а затем покинуть передний план или даже завершить работу. Если подключение устанавливается на передаваемом сокете или трафик поступает на этот сокет, то активируется приложение или его назначенная фоновая задача. Если приложение не запущено, оно запускается. Затем брокер сокетов уведомляет приложение о поступлении нового трафика с помощью [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). Приложение исправляет сокет от брокера сокетов и обрабатывает трафик на сокете. Это значит, что ваше приложение использует значительно меньше системных ресурсов, когда оно активно не обрабатывает сетевой трафик.
+If your app uses [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906), then your app can transfer ownership of an open socket to a socket broker provided by the system, and then leave the foreground, or even terminate. When a connection is made on the transferred socket, or traffic arrives on that socket, then your app or its designated background task are activated. If your app is not running, it is started. The socket broker then notifies your app using a [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) that new traffic has arrived. Your app reclaims the socket from the socket broker and process the traffic on the socket. This means that your app consumes far less system resources when it is not actively processing network traffic.
 
-Брокер сокетов может заменить триггеры канала управления, где это применимо, потому что он обеспечивает такую же функциональность, но обладает меньшими ограничениями и меньшим объемом используемой памяти. Брокер сокетов может использоваться приложениями, которые не являются приложениями на экране блокировки, и он используется на телефонах аналогично другим устройствам. Для активации брокером сокета необязательно запускать приложения при поступлении трафика. Брокер сокета поддерживает прослушивание на сокетах TCP, которые не поддерживают триггеры канала управления.
+The socket broker is intended to replace Control Channel Triggers where it is applicable, because it provides the same functionality, but with fewer restrictions and a smaller memory footprint. Socket broker can be used by apps that are not lock screen apps, and it is used the same way on phones as on other devices. Apps need not be running when traffic arrives in order to be activated by the socket broker. And the socket broker supports listening on TCP sockets, which Control Channel Triggers do not support.
 
-Если ваше приложение использует триггеры активности сокета, укажите возможность **pushNotifications** в манифесте приложения.
+If your app uses socket activity triggers, you must specify the **pushNotifications** capability in the app manifest.
 
-### Выбор сетевого триггера
+### Choosing a network trigger
 
-Существуют определенные сценарии, когда любой тип триггера будет соответствующим. При выборе типа триггера для использования в своем приложении не забывайте следующие рекомендации.
+There are some scenarios where either kind of trigger would be suitable. When you are choosing which kind of trigger to use in your app, consider the following advice.
 
--   Если вы используете [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) или [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638), вы должны использовать [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
--   Если вы используете **StreamSockets** с поддержкой push-уведомлений, можно использовать триггеры канала управления, но лучше всего использовать [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). Последний вариант позволяет системе освободить память и снизить энергопотребление, когда подключение активно не используется.
--   Если вы хотите сократить используемый объем памяти приложения, когда приложение активно не обслуживает запросы сети, отдайте предпочтение [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009), если это возможно.
--   Если вы хотите, чтобы ваше приложение могло получать данные, когда система находится в режиме ожидания с подключением, используйте [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009).
+-   If you are using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) or [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638), you must use [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+-   If you are using push-enabled **StreamSockets**, you can use control channel triggers, but should prefer [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). The latter choice allows the system to free up memory and reduce power requirements when the connection is not being actively used.
+-   If you want to minimize the memory footprint of your app when it is not actively servicing network requests, prefer [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) when possible.
+-   If you want your app to be able to receive data while the system is in Connected Standby mode, use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009).
 
-Дополнительные сведения и примеры использования брокера сокетов см. в разделе [Сетевые подключения в фоновом режиме](network-communications-in-the-background.md).
+For details and examples of how to use the socket broker, see [Network communications in the background](network-communications-in-the-background.md).
 
-## Безопасные подключения
+## Secured connections
 
-SSL и его преемник TLS — это протоколы шифрования, разработанные для проверки подлинности и шифрования сетевых подключений. Они предназначены для предотвращения перехвата и незаконного изменения данных, отправляемых и получаемых по сети. Для обмена данными по этим протоколам используется модель клиент-сервер. Эти протоколы также используют цифровые сертификаты и центры сертификации для проверки подлинности сервера.
+Secure Sockets Layer (SSL) and the more recent Transport Layer Security (TLS) are cryptographic protocols designed to provide authentication and encryption for network communication. These protocols are designed to prevent eavesdropping and tampering when sending and receiving network data. These protocols use a client-server model for the protocol exchanges. These protocols also use digital certificates and certificate authorities to verify that the server is who it claims to be.
 
-### Создание защищенных соединений сокетов
+### Creating secure socket connections
 
-Объект [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) можно настроить так, чтобы использовать протокол SSL/TLS для обмена данными между клиентом и сервером. Эта поддержка протокола SSL/TLS ограничена использованием объекта **StreamSocket** в качестве клиента при согласовании SSL/TLS. Невозможно использовать протокол SSL/TLS с объектом **StreamSocket**, созданным [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906), когда принимаются входящие сообщения, так как согласование SSL и TLS в качестве сервера не реализовано классом **StreamSocket**.
+A [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object can be configured to use SSL/TLS for communications between the client and the server. This support for SSL/TLS is limited to using the **StreamSocket** object as the client in the SSL/TLS negotiation. You cannot use SSL/TLS with the **StreamSocket** created by a [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) when incoming communications are received, because SSL/TLS negotiation as a server is not implemented by the **StreamSocket** class.
 
-Есть два способа защитить подключение [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) с помощью протокола SSL/TLS:
+There are two ways to secure a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) connection with SSL/TLS:
 
--   [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) — устанавливает начальное подключение к сетевой службе и сразу согласовывает использование протокола SSL/TLS для всех подключений.
--   [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) — сначала подключается к сетевой службе без использования шифрования. Приложение может отправлять и получать данные. Затем обновляет подключение, чтобы использовать протокол SSL/TLS для всех дальнейших подключений.
+-   [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) - Make the initial connection to a network service and negotiate immediately to use SSL/TLS for all communications.
+-   [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) - Connect initially to a network service without encryption. The app may send or receive data. Then, upgrade the connection to use SSL/TLS for all further communications.
 
-Указываемое значение SocketProtectionLevel задет наборы минимального уровня защиты, которые вы хотите разрешить. Однако полученный уровень защиты установленного соединения определяется в процессе согласования между двумя конечными точками подключения. Результатом может быть более безопасный уровень защиты, чем указанный, если другая конечная точка требует более высокого уровня. Фактически согласованную с помощью [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) или [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) надежность протокола SSL можно определить с помощью свойства [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) после успешного завершения асинхронной операции.
+The SocketProtectionLevel value that you provide sets the minimum protection level you are willing to allow. However, the eventual protection level of the established connection is determined in a negotiation process between both endpoints of the connection. The result can be a more-secure protection level than the one you specified, if the other endpoint requires a higher level. The SSL strength actually negotiated using [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) or [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) property after the async operation has completed successfully.
 
-> **Примечание.** Код не должен явным образом зависеть от использования определенного уровня защиты или предположения, что заданный уровень безопасности используется по умолчанию. Среда безопасности постоянно изменяется. Протоколы и уровни защиты по умолчанию будут также изменяться со временем, чтобы не допустить использование протоколов с известными слабыми местами. Значения по умолчанию могут отличаться в зависимости от конфигурации отдельного компьютера или установленного программного обеспечения и примененных исправлений. Если поведение приложения зависит от использования определенного уровня безопасности, необходимо явно указать этот уровень и убедиться, что этот уровень действительно используется в установленном подключении.
+> **Note**  Your code should never implicitly depend on using a particular protection level, or on the assumption that a given security level is used by default. The security landscape changes constantly, and protocols and default protection levels will be changed over time in order to avoid the use of protocols with known weaknesses. Defaults can vary depending on individual machine configuration, or on which software is installed and which patches have been applied. If your app depends on the use of a particular security level, you must explicitly specify that level and then check to be sure that it is actually in use on the established connection.
 
-### Использование ConnectAsync
+### Use ConnectAsync
 
-[**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) можно использовать для установки начального подключения к сетевой службе и немедленного согласования использования протокола SSL/TLS для всех подключений. Существует два метода **ConnectAsync**, поддерживающих передачу параметра *protectionLevel*:
+[**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) can be used to establish the initial connection with a network service and then negotiate immediately to use SSL/TLS for all communications. There are two **ConnectAsync** methods that support passing a *protectionLevel* parameter:
 
--   [**ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) начинает асинхронную операцию с объектом [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), чтобы подключиться к удаленному месту назначения в сети, указанному как объект [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) и [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880).
--   [**ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) — начинает асинхронную операцию с объектом [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), чтобы подключиться к удаленному месту назначения, указанному как имя удаленного узла, имя удаленной службы и [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880).
+-   [**ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - Starts an asynchronous operation on a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object to connect to a remote network destination specified as an [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) object and a [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880).
+-   [**ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) - Starts an asynchronous operation on a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object to connect to a remote destination specified by a remote hostname, a remote service name, and a [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880).
 
-Если параметр *protectionLevel* задан как **Windows.Networking.Sockets.SocketProtectionLevel.Ssl** при вызове любого из упомянутых выше методов [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504), то [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) должен использовать протокол SSL/TLS для шифрования. Это значение требует применения шифрования и не допускает шифр NULL.
+If the *protectionLevel* parameter is set to **Windows.Networking.Sockets.SocketProtectionLevel.Ssl** when calling either of the above [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) methods, the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) must will be established to use SSL/TLS for encryption. This value requires encryption and never allows a NULL cipher to be used.
 
-Применяется та же обычная последовательность с одним из этих методов [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504).
+The normal sequence to use with one of these [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) methods is the same.
 
--   Создайте объект [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
--   Если для сокета необходим дополнительный параметр, используйте свойство [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917), чтобы получить экземпляр [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893), связанный с объектом [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882). Задайте свойство в **StreamSocketControl**.
--   Вызовите один из упомянутых выше методов [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504), чтобы начать операцию подключения к удаленному месту назначения, и сразу согласуйте использование протокола SSL/TLS.
--   Фактически согласованную с помощью [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) надежность протокола SSL можно определить с помощью свойства [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) после успешного завершения асинхронной операции.
+-   Create a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
+-   If an advanced option on the socket is needed, use the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) property to get the [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) instance associated with a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object. Set a property on the **StreamSocketControl**.
+-   Call one of the above [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) methods to start an operation to connect to a remote destination and immediately negotiate the use of SSL/TLS.
+-   The SSL strength actually negotiated using [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) property after the async operation has completed successfully.
 
-В следующем примере создается [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), а также выполняется попытка установить подключение к сетевой службе и сразу согласовать использование протокола SSL/TLS. Если согласование выполнено успешно, все сетевые подключения, использующие **StreamSocket**, между клиентом и сетевым сервером будут зашифрованы.
+The following example creates a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and tries to establish a connection to the network service and negotiate immediately to use SSL/TLS. If the negotiation is successful, all network communication using the **StreamSocket** between the client the network server will be encrypted.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -159,21 +160,21 @@ using Windows::Networking::Sockets;
     // Then close the clientSocket when done
 ```
 
-### Использование UpgradeToSslAsync
+### Use UpgradeToSslAsync
 
-Если код использует [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922), сначала он устанавливает подключение к сетевой службе без шифрования. Приложение может отправлять и получать данные. Затем подключение обновляется, чтобы использовать протокол SSL/TLS для всех дальнейших подключений.
+When your code uses [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922), it first establishes a connection to a network service without encryption. The app may send or receive some data, then upgrade the connection to use SSL/TLS for all further communications.
 
-Метод [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) принимает два параметра. Параметр *protectionLevel* обозначает нужный уровень защиты. Параметр *validationHostName* — это имя удаленного места назначения в сети, которое используется для проверки при обновлении до протокола SSL. Как правило, *validationHostName* содержит то же имя узла, которое приложение использовало для начального установления подключения. Если параметр *protectionLevel* задан как **Windows.System.Socket.SocketProtectionLevel.Ssl** при вызове **UpgradeToSslAsync**, то [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) должен использовать протокол SSL/TLS для шифрования в будущих подключениях через сокет. Это значение требует применения шифрования и не допускает шифр NULL.
+The [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) method takes two parameters. The *protectionLevel* parameter indicates the protection level desired. The *validationHostName* parameter is the hostname of the remote network destination that is used for validation when upgrading to SSL. Normally the *validationHostName* would be the same hostname that the app used to initially establish the connection. If the *protectionLevel* parameter is set to **Windows.System.Socket.SocketProtectionLevel.Ssl** when calling **UpgradeToSslAsync**, the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) must use the SSL/TLS for encryption on further communications over the socket. This value requires encryption and never allows a NULL cipher to be used.
 
-Обычная последовательность, которая должна использоваться с методом [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922), описана ниже:
+The normal sequence to use with the [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) method is as follows:
 
--   Создайте объект [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
--   Если для сокета необходим дополнительный параметр, используйте свойство [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917), чтобы получить экземпляр [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893), связанный с объектом [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882). Задайте свойство в **StreamSocketControl**.
--   Если нужно отправить и получить какие-либо данные без шифрования, сделайте это сейчас.
--   Вызовите метод [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922), чтобы начать обновление подключения для использования протокола SSL/TLS.
--   Фактически согласованную с помощью [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) надежность протокола SSL можно определить с помощью свойства [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) после успешного завершения асинхронной операции.
+-   Create a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
+-   If an advanced option on the socket is needed, use the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) property to get the [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) instance associated with a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object. Set a property on the **StreamSocketControl**.
+-   If any data needs to be sent and received unencrypted, send it now.
+-   Call the [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) method to start an operation to upgrade the connection to use SSL/TLS.
+-   The SSL strength actually negotiated using [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) property after the async operation completes successfully.
 
-В следующем примере создается [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), выполняется попытка установить подключение к сетевой службе, отправляются некоторые исходные данные, а затем согласовывается использование протокола SSL/TLS. Если согласование выполнено успешно, все сетевые подключения, использующие **StreamSocket**, между клиентом и сетевым сервером будут зашифрованы.
+The following example creates a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), tries to establish a connection to the network service, sends some initial data, and then negotiates to use SSL/TLS. If the negotiation is successful, all network communication using the **StreamSocket** between the client and the network server will be encrypted.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -348,25 +349,25 @@ using Windows::Storage::Streams;
     });
 ```
 
-### Создание защищенных соединений WebSocket
+### Creating secure WebSocket connections
 
-Подобно традиционным соединениям сокетов, в Windows 8 для приложений Магазина Windows соединения WebSocket можно шифровать с помощью протоколов TLS/SSL при использовании компонентов [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) и [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842). В большинстве случаев необходимо использовать безопасное подключение WebSocket. Это увеличит шансы удачного подключения, поскольку многие прокси-серверы отклоняют незашифрованные подключения WebSocket.
+Like traditional socket connections, WebSocket connections can also be encrypted with Transport Layer Security (TLS)/Secure Sockets Layer (SSL) when using the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) features in Windows 8 for a Windows Store app. In most cases you'll want to use a secure WebSocket connection. This will increase the chances that your connection will succeed, as many proxies will reject unencrypted WebSocket connections.
 
-Примеры создания и обновления защищенных соединений сокетов до сетевых служб см. в разделе [Защита соединений WebSocket с помощью TLS/SSL](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399).
+For examples of how to create, or upgrade to, a secure socket connection to a network service, see [How to secure WebSocket connections with TLS/SSL](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399).
 
-Кроме шифрования TLS/SSL для завершения исходного подтверждения серверу может потребоваться значение заголовка **Sec-WebSocket-Protocol**. Это значение, представляемое свойствами [**StreamWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701514) и [**MessageWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701358), указывает версию протокола соединения и позволяет серверу правильно интерпретировать открытое подтверждение и обмениваемые впоследствии данные. Если на основе данной информации о протоколе в какой-то момент времени серверу не удается безопасно интерпретировать входящие данные, такое соединение может быть закрыто.
+In addition to TLS/SSL encryption, a server may require a **Sec-WebSocket-Protocol** header value to complete the initial handshake. This value, represented by the [**StreamWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701514) and [**MessageWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701358) properties, indicate the protocol version of the connection and enables the server to correctly interpret the opening handshake and the data being exchanged afterwards. Using this protocol information, if at any point if the server cannot interpret the incoming data in a safe manner the connection can be closed.
 
-Если в исходном запросе от клиента этого значения нет или предоставленное значение не соответствует ожидаемому сервером, в случае ошибки подтверждения WebSocket ожидаемое значение отправляется сервером клиенту.
+If the initial request from the client either does not contain this value, or provides a value that doesn't match what the server expects, the expected value is sent from the server to the client on WebSocket handshake error.
 
-## Проверка подлинности
+## Authentication
 
-Как предоставить учетные данные для проверки подлинности при подключении через сеть.
+How to provide authentication credentials when connecting over the network.
 
-### Предоставление сертификата клиента с классом StreamSocket
+### Providing a client certificate with the StreamSocket class
 
-Класс [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) поддерживает возможность использования протокола SSL/TLS для проверки подлинности сервера, к которому обращается приложение. В определенных случаях приложение также должно пройти проверку подлинности на сервере с помощью сертификата клиента TLS. В Windows 10 можно предоставить сертификат клиента на объект [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (необходимо задать перед началом подтверждения TLS). Если сервер запрашивает сертификат клиента, Windows ответит, воспользовавшись предоставленным сертификатом.
+The [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class supports using SSL/TLS to authenticate the server the app is talking to. In certain cases, the app also needs to authenticate itself to the server using a TLS client certificate. In Windows 10, you can provide a client certificate on the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) object (this must be set before the TLS handshake is started). If the server requests the client certificate, Windows will respond with the certificate provided.
 
-Фрагмент кода, демонстрирующий данную операцию:
+Here is a code snippet showing how to implement this:
 
 ```csharp
 var socket = new StreamSocket();
@@ -375,9 +376,9 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-### Предоставление веб-службе учетных данных для проверки подлинности
+### Providing authentication credentials to a web service
 
-Сетевые API, позволяющие приложениям взаимодействовать с защищенными веб-службами, предоставляют собственные методы инициализации клиента или формирования заголовка запроса с учетными данными для проверки подлинности на сервере и прокси-сервере. Для каждого метода задается объект [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061), указывающий имя пользователя, пароль и ресурс, для которого используются эти учетные данные. Ниже представлена таблица соответствия этих API.
+The networking APIs that enable apps to interact with secure web services each provide their own methods to either initialize a client or set a request header with server and proxy authentication credentials. Each method is set with a [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) object that indicates a user name, password, and the resource for which these credentials are used. The following table provides a mapping of these APIs:
 
 | **WebSockets** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
 |-------------------------|----------------------------------------------------------------------------------------------------------|
@@ -385,39 +386,34 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 |  | [**StreamWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226928) |
 |  | [**StreamWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226927) |
 |  |  |
-| **Передача в фоновом режиме** | [**BackgroundDownloader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701076) |
+| **Background Transfer** | [**BackgroundDownloader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701076) |
 |  | [**BackgroundDownloader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701068) |
 |  | [**BackgroundUploader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701184) |
 |  | [**BackgroundUploader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701178) |
 |  |  |
-| **Синдикация** | [**SyndicationClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
+| **Syndication** | [**SyndicationClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
 |  | [**SyndicationClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) |
 |  | [**SyndicationClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) |
 |  |  |
 | **AtomPub** | [**AtomPubClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702262) |
 |  | [**AtomPubClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243428) |
 |  | [**AtomPubClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243423) |
- 
-## Обработка сетевых исключений
+ 
+## Handling network exceptions
 
-В большинстве областей программирования исключение указывает на существенную проблему или ошибку, вызванную неполадкой в программе. В сетевом программировании существует дополнительный источник исключений: сама сеть и характер сетевых подключений. Сетевые подключения по сути ненадежны и сопровождаются непредвиденными ошибками. Для каждого из способов использования сети приложением необходимо сохранять некоторые сведения о состоянии; и код вашего приложения должно обрабатывать сетевые исключения, обновляя эти сведения о состоянии и инициируя соответствующую логику, чтобы ваше приложение повторно установило подключение или попыталось решить проблему со связью.
+In most areas of programming, an exception indicates a significant problem or failure, caused by some flaw in the program. In network programming, there is an additional source for exceptions: the network itself, and the nature of network communications. Network communications are inherently unreliable and prone to unexpected failure. For each of the ways your app uses networking, you must maintain some state information; and your app code must handle network exceptions by updating that state information and initiating appropriate logic for your app to re-establish or retry communication failures.
 
-Когда в универсальных приложениях для Windows отображается исключение, обработчик исключений может получить подробную информацию о причине исключения, чтобы разобраться в проблеме и принять необходимые меры.
+When Universal Windows apps throw an exception, your exception handler can retrieve more detailed information on the cause of the exception to better understand the failure and make appropriate decisions.
 
-В каждой языковой проекции поддерживается метод для доступа к подробной информации. Исключение проецируется в виде значения **HRESULT** в универсальных приложениях для Windows. *Winerror.h* включает файл, содержащий большой список возможных значений **HRESULT**, в том числе сетевые ошибки.
+Each language projection supports a method to access this more detailed information. An exception projects as an **HRESULT** value in Universal Windows apps. The *Winerror.h* include file contains a very large list of possible **HRESULT** values that includes network errors.
 
-Сетевые API поддерживают различные методы получения такой подробной информации о причине исключения.
+The networking APIs support different methods for retrieving this detailed information on the cause of an exception.
 
--   Некоторые API предоставляют вспомогательный метод, который преобразовывает значение **HRESULT** из исключения в значение перечисления.
--   Другие API предоставляют метод для получения фактического значения **HRESULT**.
+-   Some APIs provide a helper method that converts the **HRESULT** value from the exception to an enumeration value.
+-   Other APIs provide a method to retrieve the actual **HRESULT** value.
 
-## Ссылки по теме
+## Related topics
 
-* [Улучшения сетевых API в Windows 10](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
- 
-
-
-
-<!--HONumber=Mar16_HO1-->
-
+* [Networking API Improvements in Windows 10](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
+ 
 

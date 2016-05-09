@@ -1,20 +1,21 @@
 ---
-title: Объект приложения и DirectX
-description: В играх универсальной платформы Windows (UWP) с DirectX используется мало элементов и объектов интерфейса Windows.
+author: mtoepke
+title: The app object and DirectX
+description: Universal Windows Platform (UWP) with DirectX games don't use many of the Windows UI user interface elements and objects.
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 ---
 
-# Объект приложения и DirectX
+# The app object and DirectX
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В играх универсальной платформы Windows (UWP) с DirectX используется мало элементов и объектов интерфейса Windows. Поскольку они выполняются на более низком уровне в стеке среды выполнения Windows, они должны взаимодействовать со структурой пользовательского интерфейса более фундаментальным способом: напрямую получая доступ и взаимодействуя с объектом приложения. Узнайте, когда и как происходит такое взаимодействие и как вы, как разработчик DirectX, можете эффективно использовать эту модель при разработке приложений UWP.
+Universal Windows Platform (UWP) with DirectX games don't use many of the Windows UI user interface elements and objects. Rather, because they run at a lower level in the Windows Runtime stack, they must interoperate with the user interface framework in a more fundamental way: by accessing and interoperating with the app object directly. Learn when and how this interoperation occurs, and how you, as a DirectX developer, can effectively use this model in the development of your UWP app.
 
-## Важные основные пространства имен пользовательского интерфейса
+## The important core user interface namespaces
 
 
-Сначала отметим пространства имен среды выполнения Windows, которые необходимо включить (с помощью ключевого слова **using**) в приложение UWP. Рассмотрим подробнее.
+First, let's note the Windows Runtime namespaces that you must include (with **using**) in your UWP app. We get into the details in a bit.
 
 -   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865)
 -   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766)
@@ -22,94 +23,94 @@ ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **Примечание** Если вы не разрабатываете приложение UWP, используйте компоненты пользовательского интерфейса, предоставленные в библиотеках и пространствах имен JavaScript или XAML, а не типы, предоставленные в этих пространствах имен.
+> **Note**   If you are not developing a UWP app, use the user interface components provided in the JavaScript- or XAML-specific libraries and namespaces instead of the types provided in these namespaces.
 
- 
+ 
 
-## Объект приложения среды выполнения Windows
-
-
-В приложении UWP необходимо получить поставщик окон или представлений, чтобы можно было получить представление и подключить собственную цепочку буферов (ваши буферы отображения). Такое представление также можно привязать к событиям окон для вашего запущенного приложения. Чтобы получить родительское окно для объекта приложения, определяемого типом [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), создайте тип, реализующий интерфейс [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482), как это было сделано в предыдущем фрагменте кода.
-
-Здесь описаны основные действия для получения окна с помощью основной структуры пользовательского интерфейса.
-
-1.  Создайте тип, реализующий интерфейс [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). Это ваше представление.
-
-    В этом типе определяются:
-
-    -   Метод [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), принимающий экземпляр класса [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) в качестве параметра. Чтобы получить экземпляр этого типа, вызовите метод [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278). Объект приложения вызывает его при запуске приложения.
-    -   Метод [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), принимающий экземпляр класса [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) в качестве параметра. Экземпляр этого типа можно получить, обратившись к свойству [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) в новом экземпляре класса [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017).
-    -   Метод [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), принимающий строку для точки входа в качестве единственного параметра. При вызове этого метода объект приложения предоставляет строку точки входа. На этом этапе настраиваются ресурсы. Здесь вы создаете ресурсы устройства. Объект приложения вызывает его при запуске приложения.
-    -   Метод [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505), активирующий объект класса [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) и запускающий диспетчер событий окна. Объект приложения вызывает его при запуске процесса приложения.
-    -   Метод [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523), очищающий ресурсы, которые настроены в вызове метода [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501). Объект приложения вызывает этот метод при закрытии приложения.
-
-2.  Создайте тип, реализующий интерфейс [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482). Это ваш поставщик представлений.
-
-    В этом типе определяются:
-
-    -   Метод [**CreateView**](https://msdn.microsoft.com/library/windows/apps/hh700491), возвращающий экземпляр реализации [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478), полученной в шаге 1.
-
-3.  Передайте экземпляр поставщика представлений методу [**CoreApplication.Run**](https://msdn.microsoft.com/library/windows/apps/hh700469) из объекта **main**.
-
-Учитывая эти основы, рассмотрим другие возможности, на которые требуется распространить этот подход.
-
-## Основные типы пользовательского интерфейса
+## The Windows Runtime app object
 
 
-Здесь рассматриваются другие основные типы пользовательского интерфейса в среде выполнения Windows, которые могут быть полезны.
+In your UWP app, you want to get a window and a view provider from which you can get a view and to which you can connect your swap chain (your display buffers). You can also hook this view into the window-specific events for your running app. To get the parent window for the app object, defined by the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) type, create a type that implements [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482), as we did in the previous code snippet.
+
+Here's the basic set of steps to get a window using the core user interface framework:
+
+1.  Create a type that implements [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). This is your view.
+
+    In this type, define:
+
+    -   An [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) method that takes an instance of [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) as a parameter. You can get an instance of this type by calling [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278). The app object calls it when the app is launched.
+    -   A [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509) method that takes an instance of [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) as a parameter. You can get an instance of this type by accessing the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) property on your new [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) instance.
+    -   A [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501) method that takes a string for an entry point as the sole parameter. The app object provides the entry point string when you call this method. This is where you set up resources. You create your device resources here. The app object calls it when the app is launched.
+    -   A [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method that activates the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object and starts the window event dispatcher. The app object calls it when the app's process starts.
+    -   An [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523) method that cleans up the resources set up in the call to [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501). The app object calls this method when the app is closed.
+
+2.  Create a type that implements [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482). This is your view provider.
+
+    In this type, define:
+
+    -   A method named [**CreateView**](https://msdn.microsoft.com/library/windows/apps/hh700491) that returns an instance of your [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) implementation, as created in Step 1.
+
+3.  Pass an instance of the view provider to [**CoreApplication.Run**](https://msdn.microsoft.com/library/windows/apps/hh700469) from **main**.
+
+With those basics in mind, let's look at more options you have to extend this approach.
+
+## Core user interface types
+
+
+Here are other core user interface types in the Windows Runtime that you might find helpful:
 
 -   [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)
 -   [**Windows.UI.Core.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
 -   [**Windows.UI.Core.CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)
 
-Такие типы позволяют получить доступ к представлению приложения, в частности, к битам, отвечающим за прорисовку содержимого родительского окна приложения и обработку событий, предназначенных для этого окна. Процесс окна приложения — это *однопотоковое подразделение приложения* (ASTA), изолированное и обрабатывающее все обратные вызовы.
+You can use these types to access your app's view, specifically, the bits that draw the contents of the app's parent window, and handle the events fired for that window. The app window's process is an *application single-threaded apartment* (ASTA) that is isolated and that handles all callbacks.
 
-Представление приложения создается поставщиком представления для окна приложения, и в большинстве случаев оно будет реализовано специальным пакетом платформы или самой системой, поэтому вам не нужно его реализовывать. Для DirectX необходимо реализовать тонкий поставщик представлений, как обсуждалось ранее. Между следующими компонентами и видами поведения существует особое взаимно однозначное соотношение:
+Your app's view is generated by the view provider for your app window, and in most cases will be implemented by a specific framework package or the system itself, so you don't need to implement it yourself. For DirectX, you need to implement a thin view provider, as discussed previously. There is a specific 1-to-1 relationship between the following components and behaviors:
 
--   представление приложения, соответствующее типу класса [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) и определяющее методы обновления окна.
--   ASTA, определение которого задает поведение приложения. В ASTA нельзя создать экземпляры типов с атрибутами COM STA.
--   Поставщик представлений, который приложение получает из системы или вашей реализации.
--   Родительское окно, представленное типом класса [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225).
--   Привлечение ресурсов для всех событий активации. У представлений и окон отдельные события активации.
+-   An app's view, which is represented by the [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) type, and which defines the method(s) for updating the window.
+-   An ASTA, the attribution of which defines the threading behavior of the app. You cannot create instances of COM STA-attributed types on an ASTA.
+-   A view provider, which your app obtains from the system or which you implement.
+-   A parent window, which is represented by the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) type.
+-   Sourcing for all activation events. Both views and windows have separate activation events.
 
-Итак, объект приложения предоставляет фабрику поставщиков представлений. Для приложения он создает поставщик представлений и экземпляр родительского окна. Поставщик представлений определяет представление для родительского окна приложения. Теперь обсудим особенности данного представления и родительского окна.
+In summary, the app object provides a view provider factory. It creates a view provider and instantiates a parent window for the app. The view provider defines the app's view for the parent window of the app. Now, let's discuss the specifics of the view and the parent window.
 
-## Поведение и свойства класса CoreApplicationView
-
-
-[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) представляет текущее представление приложения. Во время инициализации singleton-объект приложения создает представление приложения, ожидающее своей активации. Класс [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), отображающий это представление, можно получить, обратившись к его свойству [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019), а события активации и деактивации для этого представления можно обработать, зарегистрировав делегаты с помощью события [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018).
-
-## Поведение и свойства класса CoreWindow
+## CoreApplicationView behaviors and properties
 
 
-Родительское окно (экземпляр класса [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)) создается и передается поставщику представлений при инициализации объекта приложения. Если у приложения есть окно для отображения, оно его отображает; в противном случае просто инициализирует данное представление.
+[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) represents the current app view. The app singleton creates the app view during initialization, but the view remains dormant until it is activated. You can get the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) that displays the view by accessing the [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) property on it, and you can handle activation and deactivation events for the view by registering delegates with the [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event.
 
-[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) предоставляет несколько событий, характерных для поведения входного и основного окон. Такие события можно обрабатывать, регистрируя с их помощью собственные делегаты.
-
-Для данного окна также можно получить диспетчер событий, обратившись к свойству [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264), предоставляющему экземпляр класса [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211).
-
-## Поведение и свойства класса CoreDispatcher
+## CoreWindow behaviors and properties
 
 
-Для окна с типом класса [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) можно определить поведение потоков отправки событий. Для этого типа есть один особенно важный метод: метод [**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215), запускающий обработку событий окна. Вызов этого метода с неправильным параметром для приложения может привести к неожиданному поведению обработки событий любого рода.
+The parent window, which is a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) instance, is created and passed to the view provider when the app object initializes. If the app has a window to display, it displays it; otherwise, it simply initializes the view.
 
-| Параметр CoreProcessEventsOption                                                           | Описание                                                                                                                                                                                                                                  |
+[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) provides a number of events specific to input and basic window behaviors. You can handle these events by registering your own delegates with them.
+
+You can also obtain the window event dispatcher for the window by accessing the [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) property, which provides an instance of [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211).
+
+## CoreDispatcher behaviors and properties
+
+
+You can determine the threading behavior of event dispatching for a window with the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) type. On this type, there's one particularly important method: the [**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) method, which starts window event processing. Calling this method with the wrong option for your app can lead to all sorts of unexpected event processing behaviors.
+
+| CoreProcessEventsOption option                                                           | Description                                                                                                                                                                                                                                  |
 |------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**CoreProcessEventsOption.ProcessOneAndAllPending**](https://msdn.microsoft.com/library/windows/apps/br208217) | Отправляет все доступные в настоящее время события в очереди. Если ожидающие события отсутствуют, ожидает следующее новое событие.                                                                                                                                 |
-| [**CoreProcessEventsOption.ProcessOneIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | Отправляет новое событие, если оно ожидает выполнения в очереди. Если ожидающие события отсутствуют, не ожидает вызова следующего нового события и немедленно возвращается.                                                                                          |
-| [**CoreProcessEventsOption.ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217)        | Ожидает новые события и отправляет все доступные события. Продолжает это поведение до тех пор, пока не будет закрыто окно или приложением не будет вызван метод [**Close**](https://msdn.microsoft.com/library/windows/apps/br208260) в экземпляре [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). |
-| [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | Отправляет все доступные в настоящее время события в очереди. Если ожидающие события отсутствуют, немедленно возвращается.                                                                                                                                          |
+| [**CoreProcessEventsOption.ProcessOneAndAllPending**](https://msdn.microsoft.com/library/windows/apps/br208217) | Dispatch all currently available events in the queue. If no events are pending, wait for the next new event.                                                                                                                                 |
+| [**CoreProcessEventsOption.ProcessOneIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | Dispatch one event if it is pending in the queue. If no events are pending, don't wait for a new event to be raised but instead return immediately.                                                                                          |
+| [**CoreProcessEventsOption.ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217)        | Wait for new events and dispatch all available events. Continue this behavior until the window is closed or the application calls the [**Close**](https://msdn.microsoft.com/library/windows/apps/br208260) method on the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) instance. |
+| [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | Dispatch all currently available events in the queue. If no events are pending, return immediately.                                                                                                                                          |
 
- 
+ 
 
-В приложениях UWP, использующих DirectX, следует использовать параметр [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217), чтобы предотвратить срабатывание правил блокировки, которая может прервать обновление графики.
+UWP using DirectX should use the [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217) option to prevent blocking behaviors that might interrupt graphics updates.
 
-## Соображения относительно однопотокового подразделения приложения для разработчиков, использующих DirectX
+## ASTA considerations for DirectX devs
 
 
-Чтобы разместить представления пользовательского интерфейса, объект приложения, определяющий состояние вашего приложения UWP и DirectX во время выполнения, использует потоковую модель, которая называется однопотоковым подразделением приложения (ASTA). Если вы разрабатываете приложение UWP и DirectX, вы уже знакомы со свойствами однопотокового подразделения приложения, потому что любой поток, обрабатываемый из вашего приложения UWP и DirectX, должен использовать либо API [**Windows::System::Threading**](https://msdn.microsoft.com/library/windows/apps/br229642), либо [**CoreWindow::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211). (Можно получить объект [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) для однопотокового подразделения приложения, вызвав [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) из своего приложения.)
+The app object that defines the run-time representation of yourUWP and DirectX app uses a threading model called Application Single-Threaded Apartment (ASTA) to host your app’s UI views. If you are developing a UWP and DirectX app, you're familiar with the properties of an ASTA, because any thread you dispatch from your UWP and DirectX app must use the [**Windows::System::Threading**](https://msdn.microsoft.com/library/windows/apps/br229642) APIs, or use [**CoreWindow::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211). (You can get the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object for the ASTA by calling [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) from your app.)
 
-Самое главное для вас как разработчика приложений UWP и DirectX — знать, что потоку вашего приложения необходимо позволить управлять потоками многопотокового подразделения, задав **Platform::MTAThread** в функции **main()**.
+The most important thing for you to be aware of, as a developer of a UWP DirectX app, is that you must enable your app thread to dispatch MTA threads by setting **Platform::MTAThread** on **main()**.
 
 ```cpp
 [Platform::MTAThread]
@@ -121,35 +122,30 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-Когда объект для вашего приложения UWP и DirectX активизируется, он создает однопотоковое подразделение приложения, которое будет использоваться для представления пользовательского интерфейса. Новый поток однопотокового подразделения приложения вызывает фабрику поставщика представления, чтобы создать поставщика представления для объекта вашего приложения; в результате код этого поставщика будет выполняться в этом новом потоке.
+When the app object for your UWP DirectX app activates, it creates the ASTA that will be used for the UI view. The new ASTA thread calls into your view provider factory, to create the view provider for your app object, and as a result, your view provider code will run on that ASTA thread.
 
-Кроме того, любой поток, являющийся ответвлением от однопотокового подразделения приложения, должен быть в многопотоковом подразделении. Имейте в виду, что любые потоки многопотокового подразделения, которые вы создаете, могут создавать проблемы повторного входа и приводить к взаимоблокировкам.
+Also, any thread that you spin off from the ASTA must be in an MTA. Be aware that any MTA threads that you spin off can still create reentrancy issues and result in a deadlock.
 
-Если вы занимаетесь адаптацией существующего кода для запуска его в потоке однопотокового подразделения приложения, имейте в виду следующее:
+If you're porting existing code to run on the ASTA thread, keep these considerations in mind:
 
--   Примитивы ожидания, такие как [**CoWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/desktop/hh404144), ведут себя в однопотоковом подразделении приложения (ASTA) не так, как в однопотоковом подразделении (STA).
--   Модальный цикл вызова COM в ASTA работает иначе. Вы больше не можете получать посторонние вызовы, пока выполняется исходящий вызов. Например, следующее поведение создаст взаимоблокировку из ASTA (что немедленно приведет к сбою приложения):
-    1.  ASTA вызывает объект MTA и передает указатель на интерфейс (P1).
-    2.  Позже ASTA вызывает тот же самый объект MTA. Объект MTA вызывает P1 прежде, чем тот вернется в ASTA.
-    3.  P1 не может войти в ASTA, поскольку тот блокируется во время осуществления постороннего вызова. Однако поток MTA блокируется, поскольку пытается осуществить вызов P1.
+-   Wait primitives, such as [**CoWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/desktop/hh404144), behave differently in an ASTA than in an STA.
+-   The COM call modal loop operates differently in an ASTA. You can no longer receive unrelated calls while an outgoing call is in progress. For example, the following behavior will create a deadlock from an ASTA (and immediately crash the app):
+    1.  The ASTA calls an MTA object and passes an interface pointer P1.
+    2.  Later, the ASTA calls the same MTA object. The MTA object calls P1 before it returns to the ASTA.
+    3.  P1 cannot enter the ASTA as it's blocked making an unrelated call. However, the MTA thread is blocked as it tries to make the call to P1.
 
-    Эту ситуацию можно разрешить следующими способами:
-    -   с помощью шаблона **async**, определенного в библиотеке параллельных шаблонов (PPLTasks.h);
-    -   вызовом метода [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) из однопотокового подразделения приложения вашего приложения (главного потока приложения), чтобы разрешить произвольные вызовы.
+    You can resolve this by :
+    -   Using the **async** pattern defined in the Parallel Patterns Library (PPLTasks.h)
+    -   Calling [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) from your app's ASTA (the main thread of your app) as soon as possible to allow arbitrary calls.
 
-    Тем не менее нельзя полагаться на немедленную доставку несвязанных вызовов в однопотоковое подразделение приложения вашего приложения. Для получения дополнительной информации об асинхронных вызовах см. раздел [Асинхронное программирование на языке C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    That said, you cannot rely on immediate delivery of unrelated calls to your app's ASTA. For more info about async calls, read [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
-В общем, при разработке приложения UWP используйте объект [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) для объектов [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) и [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) приложения, чтобы обработать все потоки пользовательского интерфейса, а не пытайтесь самостоятельно создавать потоки многопотокового подразделения и управлять ими. Если вам нужен отдельный поток, которым вы не можете управлять с помощью объекта **CoreDispatcher**, используйте асинхронные шаблоны и следуйте указаниям, приведенным ранее, чтобы избежать проблем с повторным вхождением.
+Overall, when designing your UWP app, use the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) for your app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) and [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) to handle all UI threads rather than trying to create and manage your MTA threads yourself. When you need a separate thread that you cannot handle with the **CoreDispatcher**, use async patterns and follow the guidance mentioned earlier to avoid reentrancy issues.
 
- 
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

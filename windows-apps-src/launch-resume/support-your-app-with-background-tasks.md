@@ -1,192 +1,188 @@
 ---
-title: Поддержка приложения с помощью фоновых задач
-description: В этом разделе показано, как выполнить собственный облегченный код в фоновом режиме, отвечая на триггеры с помощью фоновых задач.
+author: mcleblanc
+title: Support your app with background tasks
+description: The topics in this section show how to run your own lightweight code in the background by responding to triggers with background tasks.
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 ---
 
-# Поддержка приложения с помощью фоновых задач
+# Support your app with background tasks
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-В этом разделе показано, как выполнить собственный облегченный код в фоновом режиме, отвечая на триггеры с помощью фоновых задач. Фоновые задачи представляют собой облегченные классы, которые выполняются ОС в фоновом режиме. Фоновые задачи можно использовать для предоставления функциональных возможностей, когда приложение приостановлено или не выполняется. Фоновые задачи также можно использовать для приложений, обеспечивающих общение в реальном времени, например компьютерной телефонии, почты и обмена мгновенными сообщениями.
+The topics in this section show how to run your own lightweight code in the background by responding to triggers with background tasks. Background tasks are lightweight classes that the OS runs in the background. You can use background tasks to provide functionality when your app is suspended or not running. You can also use background tasks for real-time communication apps like VOIP, mail, and IM.
 
-Фоновые задачи — это отдельные классы, реализующие интерфейс [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Вы регистрируете фоновую задачу с помощью класса [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Имя класса используется для указания точки входа при регистрации фоновой задачи.
+Background tasks are separate classes that implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. You register a background task by using the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class. The class name is used to specify the entry point when you registering the background task.
 
-Чтобы быстро приступить к созданию фоновой задачи, см. раздел [Создание и регистрация фоновой задачи](create-and-register-a-background-task.md).
+To get started quickly with a background task, see [Create and register a background task](create-and-register-a-background-task.md).
 
-**Совет**. Начиная c Windows 10, вам больше не нужно будет помещать приложение на экран блокировки, чтобы успешно регистрировать фоновые задачи.
+**Tip**  Starting with Windows 10, you no longer need to place an app on the lock screen in order to register background tasks.
 
- 
+ 
 
-## Фоновые задачи для системных событий
+## Background tasks for system events
 
 
-Ваше приложение может отвечать на события, создаваемые системой, регистрируя фоновую задачу с помощью класса [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838). Оно может использовать любые из нижеперечисленных триггеров системных событий (определенных в [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839)).
+Your app can respond to system-generated events by registering a background task with the [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) class. An app can use any of the following system event triggers (defined in [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839))
 
-| Имя триггера                     | Описание                                                                                                    |
+| Trigger name                     | Description                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
-| **InternetAvailable**            | Появляется доступ к Интернету.                                                                                |
-| **NetworkStateChange**           | Происходит изменение сети, такое как изменение стоимости или подключения.                                              |
-| **OnlineIdConnectedStateChange** | ИД интернет-службы, связанный с изменением учетной записи.                                                                 |
-| **SmsReceived**                  | Установленным устройством с высокоскоростным мобильным подключением получено новое SMS-сообщение.                                         |
-| **TimeZoneChange**               | В устройстве изменяется часовой пояс (например, когда система переводит часы на летнее время). |
+| **InternetAvailable**            | The Internet becomes available.                                                                                |
+| **NetworkStateChange**           | A network change such as a change in cost or connectivity occurs.                                              |
+| **OnlineIdConnectedStateChange** | Online ID associated with the account changes.                                                                 |
+| **SmsReceived**                  | A new SMS message is received by an installed mobile broadband device.                                         |
+| **TimeZoneChange**               | The time zone changes on the device (for example, when the system adjusts the clock for daylight saving time). |
 
- 
+ 
 
-См. также: [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md).
+For more info see [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md).
 
-## Условия для фоновых задач
+## Conditions for background tasks
 
 
-Добавив условие, вы сможете контролировать выполнение фоновой задачи даже после ее запуска. При активации фоновая задача не будет выполняться, пока не будут соблюдены все условия. Можно использовать следующие условия (представленные перечислением [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)).
+You can control when the background task runs, even after it is triggered, by adding a condition. Once triggered, a background task will not run until all of its conditions are met. The following conditions (represented by the [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) enumeration) can be used.
 
-| Имя условия           | Описание                       |
+| Condition name           | Description                       |
 |--------------------------|-----------------------------------|
-| **InternetAvailable**    | Интернет должен быть доступен.   |
-| **InternetNotAvailable** | Интернет должен быть недоступен. |
-| **SessionConnected**     | Сеанс должен быть подключен.    |
-| **SessionDisconnected**  | Сеанс должен быть отключен. |
-| **UserNotPresent**       | Пользователь должен отсутствовать.            |
-| **UserPresent**          | Пользователь должен присутствовать.         |
+| **InternetAvailable**    | The Internet must be available.   |
+| **InternetNotAvailable** | The Internet must be unavailable. |
+| **SessionConnected**     | The session must be connected.    |
+| **SessionDisconnected**  | The session must be disconnected. |
+| **UserNotPresent**       | The user must be away.            |
+| **UserPresent**          | The user must be present.         |
 
- 
+ 
 
-См. также: [Задание условий для выполнения фоновой задачи](set-conditions-for-running-a-background-task.md).
+For more info see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
 
-## Требования к манифесту приложения
-
-
-Перед тем как приложение сможет успешно зарегистрировать фоновую задачу, оно должно быть объявлено в манифесте приложения. Узнать больше можно в разделе [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md).
-
-## Фоновые задачи
+## Application manifest requirements
 
 
-Следующие триггеры реального времени можно использовать для выполнения облегченного пользовательского кода в фоновом режиме.
+Before your app can successfully register a background task, it must be declared in the application manifest. For more info see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
 
-**Канал управления: **Фоновые задачи могут поддерживать подключение и получать сообщения по каналу управления, используя класс [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Если приложение ожидает передачи данных из сокета, можно использовать посредник сокетов вместо **ControlChannelTrigger**. Узнать больше об использовании посредника сокетов можно в разделе [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). **ControlChannelTrigger** не поддерживается в Windows Phone.
-
-**Таймер: **Фоновые задачи могут выполняться через каждые 15 минут, и их можно настроить на выполнение в определенное время, используя [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). См. также: [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md).
-
-**Push-уведомления: **Фоновые задачи реагируют на [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) , чтобы получать необработанные push-уведомления.
-
-**Примечание.**  
-
-Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
-
-Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем — метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Подробнее см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
-
-## Триггеры системных событий
+## Background tasks
 
 
-> **Примечание**. Перечисление [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) содержит следующие триггеры системных событий.
+The following real-time triggers can be used to run lightweight custom code in the background:
 
-| Имя триггера            | Описание                                                       |
+**Control Channel:  **Background tasks can keep a connection alive, and receive messages on the control channel, by using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). If your app is listening to a socket, you can use the Socket Broker instead of the **ControlChannelTrigger**. For more details on using the Socket Broker, see [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). The **ControlChannelTrigger** is not supported on Windows Phone.
+
+**Timer:  **Background tasks can run as frequently as every 15 minutes, and they can be set to run at a certain time by using the [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). For more info see [Run a background task on a timer](run-a-background-task-on-a-timer-.md).
+
+**Push Notification:  **Background tasks respond to the [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) to receive raw push notifications.
+
+**Note**  
+
+Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
+
+To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
+
+## System event triggers
+
+
+> **Note**  The [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) enumeration includes the following system event triggers.
+
+| Trigger name            | Description                                                       |
 |-------------------------|-------------------------------------------------------------------|
-| **UserPresent**         | Фоновая задача запускается в присутствии пользователя.   |
-| **UserAway**            | Фоновая задача запускается в отсутствие пользователя.    |
-| **ControlChannelReset** | Фоновая задача запускается при сбросе канала управления. |
-| **SessionConnected**    | Фоновая задача запускается при подключенном сеансе.   |
+| **UserPresent**         | The background task is triggered when the user becomes present.   |
+| **UserAway**            | The background task is triggered when the user becomes absent.    |
+| **ControlChannelReset** | The background task is triggered when a control channel is reset. |
+| **SessionConnected**    | The background task is triggered when the session is connected.   |
 
- 
+ 
 
-Следующие триггеры системных событий позволяют узнать, поместил ли пользователь приложение на экран блокировки или убрал с него.
+The following system event triggers make it possible to recognize when the user has moved an app on or off the lock screen.
 
-| Имя триггера                     | Описание                                  |
+| Trigger name                     | Description                                  |
 |----------------------------------|----------------------------------------------|
-| **LockScreenApplicationAdded**   | На экран блокировки добавляется плитка приложения.     |
-| **LockScreenApplicationRemoved** | С экрана блокировки удаляется плитка приложения. |
+| **LockScreenApplicationAdded**   | An app tile is added to the lock screen.     |
+| **LockScreenApplicationRemoved** | An app tile is removed from the lock screen. |
 
- 
-## Ограничения на ресурсы фоновых задач
-
-
-Фоновые задачи являются облегченными. Поддержание выполнения в фоновом режиме на минимальном уровне обеспечивает оптимальное взаимодействие с пользователем для приложений переднего плана и времени работы батареи. Для этого на ресурсы фоновых задач накладываются ограничения.
-
--   Фоновые задачи ограничены 30 секундами физического времени.
-
-## Дополнительные ограничения на ресурсы фоновых задач
+ 
+## Background task resource constraints
 
 
-### Ограничения на использование памяти
+Background tasks are lightweight. Keeping background execution to a minimum ensures the best user experience with foreground apps and battery life. This is enforced by applying resource constraints to background tasks:
 
-Из-за ограничений на ресурсы для устройств с небольшим объемом памяти фоновые задачи приложений могут иметь ограничение на использование памяти, определяющее максимальный объем памяти, который может использовать фоновая задача. Если фоновая задача попытается выполнить операцию, которая превысит это ограничение, операция завершится ошибкой и может вызвать исключение «Недостаточно памяти», которое задача сможет обработать. Если задача не обрабатывает исключение «Недостаточно памяти» или тип операции не вызывает такое исключение, задача будет немедленно остановлена. Вы можете использовать API [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831), чтобы запросить текущий объем и ограничение используемой памяти, а также чтобы отслеживать использование памяти фоновой задачей.
+-   Background tasks are limited to 30 seconds of wall-clock usage.
 
-### Ограничения «на устройство» для приложений с фоновыми задачами для устройств с небольшим объемом памяти
-
-Для устройств с малым объемом памяти существует ограничение на количество приложений, которые устанавливаются на устройство и используют фоновые задачи одновременно. Если превысить это количество, произойдет сбой вызова [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485), необходимого для регистрации всех фоновых задач.
-
-### Экономия заряда аккумулятора
-
-Если не добавить приложение в список исключений, чтобы оно могло продолжить выполнение фоновых задач и получать push-уведомления при включенной экономии заряда, фоновые задачи не будут запускаться, если устройство не подключено к внешнему источнику питания и заряд аккумулятора становится меньше определенного уровня. Но это не повлияет на возможность регистрации фоновых задач.
-
-## Ресурс фоновой задачи гарантирует связь в реальном времени
+## Additional background task resource constraints
 
 
-Чтобы исключить помехи для функций связи в реальном времени из-за выделения квот ресурсов, каждая выполняющаяся фоновая задача, использующая [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) и [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), получает гарантированные объемы ресурсов ЦП. Квоты ресурсов остаются такими, как упоминалось выше, и сохраняются постоянными для этих фоновых задач.
+### Memory constraints
 
-Приложению не нужно специально что-то делать, чтобы получать гарантированные квоты ресурсов для фоновых задач [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) и [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543). Система всегда рассматривает их как критически важные фоновые задачи.
+Due to the resource constraints for low-memory devices, background tasks may have a memory limit that determines the maximum amount of memory the background task can use. If your background task attempts an operation that would exceed this limit, the operation will fail and may generate an out-of-memory exception that the task can handle. If the task does not handle the out-of-memory exception, or the nature of the attempted operation is such that an out-of-memory exception was not generated, then the task will be terminated immediately. You can use the [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) APIs to query your current memory usage and limit in order to discover your cap (if any), and to monitor your background task's ongoing memory usage.
 
-## Триггер обслуживания
+### Per-device limit for apps with background tasks for low-memory devices
 
+On memory-constrained devices, there is a limit to the number of apps that can be installed on a device and use background tasks at any given time. If this number is exceeded, the call to [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485), which is required to register all background tasks, will fail.
 
-Задачи обслуживания выполняются только в том случае, если устройство подключено к сети переменного тока. См. также: [Использование триггера обслуживания](use-a-maintenance-trigger.md).
+### Battery Saver
 
-## Фоновая задача для датчиков и устройств
+Unless you exempt your app so that it can still run background tasks and receive push notifications when Battery Saver is on, the Battery Saver feature, when enabled, will prevent background tasks from running when the device is not connected to external power and the battery goes below a specified amount of power remaining. This will not prevent you from registering background tasks.
 
-
-Ваше приложение может получать доступ к датчикам и периферийным устройствам из фоновой задачи с помощью класса [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Этот триггер можно использовать для продолжительных операций, таких как синхронизация данных или мониторинг. В отличие от задач для системных событий задачу **DeviceUseTrigger** можно инициировать только во время работы приложения на переднем плане, и для нее невозможно установить какие-либо условия.
-
-Некоторые критические операции с устройством, например длительные обновления встроенного ПО, не могут выполняться с помощью класса [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Такие операции могут выполняться только на компьютере и только привилегированным приложением, которое использует [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). *Привилегированным* называется приложение, которому изготовитель устройства разрешил выполнять эти операции. Метаданные устройства позволяют указать, какое приложение (при его наличии) было назначено в качестве привилегированного приложения на устройстве. См. также раздел [о синхронизации и обновлении устройства с приложениями Магазина Windows для устройств](http://go.microsoft.com/fwlink/p/?LinkId=306619).
-
-## Управление фоновыми задачами
+## Background task resource guarantees for real-time communication
 
 
-Фоновые задачи могут передавать в приложение сообщения о ходе выполнения, завершении или отмене с помощью событий и локального хранилища. Кроме того, можно перехватывать исключения, поступающие от фоновой задачи, и управлять ее регистрацией в процессе обновления приложения. См. также:
+To prevent resource quotas from interfering with real-time communication functionality, background tasks using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) receive guaranteed CPU resource quotas for every running task. The resource quotas are as mentioned above, and remain constant for these background tasks.
 
-[Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
+Your app doesn't have to do anything differently to get the guaranteed resource quotas for [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) background tasks. The system always treats these as critical background tasks.
 
-[Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
-
-**Примечание.**  
-Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
-## Ссылки по теме
+## Maintenance trigger
 
 
-**Концептуальное руководство по многозадачности в Windows 10**
+Maintenance tasks only run when the device is plugged in to AC power. For more info see [Use a maintenance trigger](use-a-maintenance-trigger.md).
 
-* [Запуск, возобновление и многозадачность](index.md)
-
-**Руководство по фоновым задачам**
-
-* [Доступ к датчикам и устройствам из фоновой задачи](access-sensors-and-devices-from-a-background-task.md)
-* [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Создание и регистрация фоновой задачи](create-and-register-a-background-task.md)
-* [Отладка фоновой задачи](debug-a-background-task.md)
-* [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
-* [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
-* [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
-* [Регистрация фоновой задачи](register-a-background-task.md)
-* [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
-* [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
-* [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
-* [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)
-* [Использование триггера обслуживания](use-a-maintenance-trigger.md)
-* [Активация событий приостановки, возобновления и перевода в фоновый режим приложений Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-* [Синхронизация и обновление устройства с приложениями Магазина Windows для устройств](http://go.microsoft.com/fwlink/p/?LinkId=306619)
-
- 
-
- 
+## Background task for sensors and devices
 
 
+Your app can access sensors and peripheral devices from a background task with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) class. You can use this trigger for long-running operations such as data synchronization or monitoring. Unlike tasks for system events, a **DeviceUseTrigger** task can only be triggered while your app is running in the foreground and no conditions can be set on it.
+
+Some critical device operations, such as long running firmware updates, cannot be performed with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Such operations can be performed only on the PC, and only by a privileged app that uses the [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). A *privileged app* is an app that the device's manufacturer has authorized to perform those operations. Device metadata is used to specify which app, if any, has been designated as the privileged app for a device. For more info, see [Device sync and update for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+
+## Managing background tasks
 
 
+Background tasks can report progress, completion, and cancellation to your app using events and local storage. Your app can also catch exceptions thrown by a background task, and manage background task registration during app updates. For more info see:
 
-<!--HONumber=Mar16_HO1-->
+[Handle a cancelled background task](handle-a-cancelled-background-task.md)
+
+[Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+
+**Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+
+ 
+
+## Related topics
+
+
+**Conceptual guidance for multitasking in Windows 10**
+
+* [Launching, resuming, and multitasking](index.md)
+
+**Related background task guidance**
+
+* [Access sensors and devices from a background task](access-sensors-and-devices-from-a-background-task.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Create and register a background task](create-and-register-a-background-task.md)
+* [Debug a background task](debug-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Register a background task](register-a-background-task.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Device sync and update for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+
+ 
+
+ 
+
 
 

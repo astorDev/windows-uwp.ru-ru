@@ -1,105 +1,101 @@
 ---
-title: Запуск, возобновление и фоновые задачи
-description: В этом разделе описано, что происходит при запуске, приостановке, возобновлении и завершении приложения универсальной платформы Windows (UWP).
+author: mcleblanc
+title: Launching, resuming, and background tasks
+description: This section describes what happens when a Universal Windows Platform (UWP) app is started, suspended, resumed, and terminated.
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 ---
 
-# Запуск, возобновление и фоновые задачи
+# Launching, resuming, and background tasks
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-В этом разделе описано, что происходит при запуске, приостановке, возобновлении и завершении приложения универсальной платформы Windows (UWP). Описано, как активировать приложения с помощью контракта или расширения, а также как использовать фоновые задачи, позволяющие приложению UWP работать, даже когда оно не находятся на переднем плане. И наконец, в нем описано, как добавить экран-заставку в приложение.
+This section describes what happens when a Universal Windows Platform (UWP) app is started, suspended, resumed, and terminated. It covers how to activate apps by using a contract or extension, and how to use background tasks which allow a UWP app to do work even when the app is not in the foreground. Finally, it covers how to add a splash screen to your app.
 
-## Жизненный цикл приложения
+## The app lifecycle
 
 | Topic                                            | Description                                                                                                     |
 |--------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [Жизненный цикл приложения](app-lifecycle.md)               | Узнайте о жизненном цикле приложения UWP и о том, что происходит при загрузке, приостановке и возобновлении работы вашего приложения системой Windows. |
-| [Обработка предварительного запуска приложения](handle-app-prelaunch.md) | Узнайте, как обрабатывать предварительный запуск приложения.                                                                              |
-| [Обработка активации приложения](activate-an-app.md)     | Узнайте, как обрабатывать активацию приложения.                                                                             |
-| [Обработка приостановки работы приложения](suspend-an-app.md)         | Узнайте, как сохранить важные данные приложения, когда система приостанавливает его работу.                                 |
-| [Обработка возобновления работы приложения](resume-an-app.md)           | Узнайте, как обновить отображаемое содержимое, когда система возобновляет работу приложения.                                        |
+| [App lifecycle](app-lifecycle.md)               | Learn about the life cycle of a UWP app and what happens when Windows launches, suspends, and resumes your app. |
+| [Handle app prelaunch](handle-app-prelaunch.md) | Learn how to handle app prelaunch.                                                                              |
+| [Handle app activation](activate-an-app.md)     | Learn how to handle app activation.                                                                             |
+| [Handle app suspend](suspend-an-app.md)         | Learn how to save important application data when the system suspends your app.                                 |
+| [Handle app resume](resume-an-app.md)           | Learn how to refresh displayed content when the system resumes your app.                                        |
 
- 
+ 
 
-## Запуск приложений
+## Launch apps
 
 
-| Активация файла и универсального кода ресурса (URI)                                                                         | Description                                                                                                                                                                |
+| URI and File activation                                                                         | Description                                                                                                                                                                |
 |-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Запуск приложения для результатов](how-to-launch-an-app-for-results.md)                               | Узнайте, как запустить приложение из другого приложения и обмениваться данными между двумя приложениями.                                                                                             |
-| [Запуск приложения по умолчанию для URI](launch-default-app.md)                                      | Узнайте, как запускать приложение по умолчанию для универсального кода ресурса (URI).                                                                                               |
-| [Обработка активации URI](handle-uri-activation.md)                                              | Узнайте, как зарегистрировать приложение, которое будет обработчиком по умолчанию для имени схемы URI.                                                                                          |
-| [Запуск приложения по умолчанию для файла](launch-the-default-app-for-a-file.md)                      | Узнайте, как запустить приложение по умолчанию для определенного типа файла.                                                                                                                       |
-| [Обработка активации файла](handle-file-activation.md)                                            | Узнайте, как зарегистрировать приложение в качестве обработчика по умолчанию для определенного типа файла.                                                                                                  |
-| [Руководство по типам файлов и URI](https://msdn.microsoft.com/library/windows/apps/hh700321) | Понимание отношений между приложениями UWP и теми типами файлов и протоколами, которые они поддерживают, поможет вам создавать более единообразное и привлекательное взаимодействие с пользователем. |
-| [Зарезервированные имена файлов и схем URI](reserved-uri-scheme-names.md)                             | В этом разделе перечислены зарезервированные имена файлов и схем URI, которые недоступны в приложении.                                                                                |
-| Активация встроенных приложений                                                                          | Description                                                                                                                                                                |
-| [Запуск приложения "Параметры" для Windows](launch-settings-app.md)                                      | Узнайте, как запустить приложение "Параметры" для Windows.                                                                                                                              |
-| [Запуск приложения Магазина Windows](launch-store-app.md)                                            | Узнайте, как запустить приложение Магазина Windows.                                                                                                                                 |
-| [Запуск приложения "Карты Windows"](launch-maps-app.md)                                              | Узнайте, как запустить приложение "Карты Windows".                                                                                                                                  |
+| [Launch an app for results](how-to-launch-an-app-for-results.md)                               | Learn how to launch an app from another app and exchange data between the two.                                                                                             |
+| [Launch the default app for a URI](launch-default-app.md)                                      | Learn how to launch the default app for a Uniform Resource Identifier (URI).                                                                                               |
+| [Handle URI activation](handle-uri-activation.md)                                              | Learn how to register an app to become the default handler for a URI scheme name.                                                                                          |
+| [Launch the default app for a file](launch-the-default-app-for-a-file.md)                      | Learn how to launch the default app for a file type.                                                                                                                       |
+| [Handle file activation](handle-file-activation.md)                                            | Learn how to register your app to be the default handler for a file type.                                                                                                  |
+| [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321) | By understanding the relationship between UWP apps and the file types and protocols they support, you can provide a more consistent and elegant experience for your users. |
+| [Reserved file and URI scheme names](reserved-uri-scheme-names.md)                             | This topic lists the reserved file and URI scheme names that are not available to your app.                                                                                |
+| Activate built-in apps                                                                          | Description                                                                                                                                                                |
+| [Launch the Windows Settings app](launch-settings-app.md)                                      | Learn how to launch the Windows Settings app.                                                                                                                              |
+| [Launch the Windows Store app](launch-store-app.md)                                            | Learn how to launch the Windows Store app.                                                                                                                                 |
+| [Launch the Windows Maps app](launch-maps-app.md)                                              | Learn how to launch the Windows Maps app.                                                                                                                                  |
 
- 
+ 
 
-## Фоновые задачи и службы
+## Background tasks and services
 
 
 
 | Topic                                                                                                            | Description                                                                                                                                                                                   |
 |------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md)                             | В этом разделе показано, как выполнить собственный облегченный код в фоновом режиме, отвечая на триггеры с помощью фоновых задач.                                                       |
-| [Доступ к датчикам и устройствам из фоновой задачи](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) позволяет вашему универсальному приложению для Windows получать доступ к датчикам и периферийным устройствам в фоновом режиме даже тогда, когда ваше приложение переднего плана приостановлено. |
-| [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)                                           | Убедитесь, что ваше приложение отвечает требованиям, необходимым для выполнения фоновых задач.                                                                                                                          |
-| [Создание и использование службы приложения](how-to-create-and-consume-an-app-service.md)                                | Узнайте, как создать приложение UWP, которое сможет предоставлять службы другим приложениям UWP и как использовать эти службы.                                                                                  |
-| [Создание и регистрация фоновой задачи](create-and-register-a-background-task.md)                               | Создайте класс фоновой задачи и зарегистрируйте его выполнение, когда приложение не работает на переднем плане.                                                                                                 |
-| [Отладка фоновой задачи](debug-a-background-task.md)                                                           | Узнайте, как отладить фоновую задачу, выполнив в том числе активацию фоновой задачи и трассировку отладки в журнале событий Windows.                                                                        |
-| [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md) | Вы можете разрешить использование фоновых задач, объявив их как расширения в манифесте приложения.                                                                                                       |
-| [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)                                     | Узнайте, как создать фоновую задачу, которая распознает запросы на отмену, прекращает работу и сообщает приложению об отмене, используя постоянное хранилище.                                     |
-| [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)           | Узнайте, как ваше приложение распознает ход выполнения и завершение фоновой задачи.                                                                                                                     |
-| [Регистрация фоновой задачи](register-a-background-task.md)                                                     | Сведения о создании функции, которую можно многократно использовать для безопасной регистрации большинства фоновых задач.                                                                                                  |
-| [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)             | Узнайте, как создавать фоновые задачи, отвечающие на события [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).                                                                         |
-| [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)                                        | Узнайте, как планировать однократное выполнение фоновой задачи или периодически запускать фоновую задачу.                                                                                                          |
-| [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)                 | Узнайте, как задать условия, которые управляют запуском выполнения фоновой задачи.                                                                                                                  |
-| [Передача данных в фоновом режиме](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | Используйте фоновую передачу данных API для копирования файлов в фоновом режиме.                                                                                                                              |
-| [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)                       | Используйте фоновую задачу для обновления живой плитки вашего приложения свежим содержимым.                                                                                                                      |
-| [Использование триггера обслуживания](use-a-maintenance-trigger.md)                                                       | Узнайте, как использовать класс [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) для выполнения облегченного кода в фоновом режиме, когда устройство подключено к сети.                             |
+| [Support your app with background tasks](support-your-app-with-background-tasks.md)                             | The topics in this section show how to run your own lightweight code in the background by responding to triggers with background tasks.                                                       |
+| [Access sensors and devices from a background task](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) lets your Universal Windows app access sensors and peripheral devices in the background, even when your foreground app is suspended. |
+| [Guidelines for background tasks](guidelines-for-background-tasks.md)                                           | Ensure your app meets the requirements for running background tasks.                                                                                                                          |
+| [Create and consume an app service](how-to-create-and-consume-an-app-service.md)                                | Learn how to write a UWP app that can provide services to other UWP apps, and how to consume those services.                                                                                  |
+| [Create and register a background task](create-and-register-a-background-task.md)                               | Create a background task class and register it to run when your app is not in the foreground.                                                                                                 |
+| [Debug a background task](debug-a-background-task.md)                                                           | Learn how to debug a background task, including background task activation and debug tracing in the Windows event log.                                                                        |
+| [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md) | Enable the use of background tasks by declaring them as extensions in the app manifest.                                                                                                       |
+| [Handle a cancelled background task](handle-a-cancelled-background-task.md)                                     | Learn how to make a background task that recognizes cancellation requests and stops work, reporting the cancellation to the app using persistent storage.                                     |
+| [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)           | Learn how your app can recognize background task progress and completion.                                                                                                                     |
+| [Register a background task](register-a-background-task.md)                                                     | Learn how to create a function that can be re-used to safely register most background tasks.                                                                                                  |
+| [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)             | Learn how to create a background task that responds to [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) events.                                                                         |
+| [Run a background task on a timer](run-a-background-task-on-a-timer-.md)                                        | Learn how to schedule a one-time background task, or run a periodic background task.                                                                                                          |
+| [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)                 | Learn how to set conditions that control when your background task will run.                                                                                                                  |
+| [Transfer data in the background](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | Use the background transfer API to copy files in the background.                                                                                                                              |
+| [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)                       | Use a background task to update your app's live tile with fresh content.                                                                                                                      |
+| [Use a maintenance trigger](use-a-maintenance-trigger.md)                                                       | Learn how to use the [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) class to run lightweight code in the background while the device is plugged in.                             |
 
- 
+ 
 
-## Добавление экрана-заставки
+## Add a splash screen
 
 
-Все приложения UWP должны иметь экран-заставку, который представляет собой сочетание изображения экрана-заставки и цвета фона, причем оба эти компонента можно настраивать.
+All UWP apps must have a splash screen, which is a composite of a splash screen image and a background color, both of which can be customized.
 
-При запуске приложения пользователем немедленно отображается ваш экран-заставка. Это предоставляет пользователям немедленную обратную связь во время инициализации ресурсов приложения. Как только приложение готово к взаимодействию, экран-заставка закрывается.
+Your splash screen is displayed immediately when the user launches your app. This provides immediate feedback to users while app resources are initialized. As soon as your app is ready for interaction, the splash screen is dismissed.
 
-Хорошо спроектированный экран-заставка сделает приложение более привлекательным. Вот простой пример сдержанного экрана-заставки:
+A well-designed splash screen can make your app more inviting. Here's a simple, understated splash screen:
 
-![снимок экрана-заставки в масштабе 75 %, используемый в разделе “Пример экрана-заставки”.](images/regularsplashscreen.png)
+![a 75% scaled screen capture of the splash screen from the splash screen sample.](images/regularsplashscreen.png)
 
-Этот экран-заставка создан путем объединения зеленого цвета фона и прозрачного изображения в формате PNG.
+This splash screen is created by combining a green background color with a transparent PNG.
 
-Объединение изображения с цветом фона для создания экрана-заставки позволяет повысить качество экрана-заставки независимо от устройства, на котором установлено ваше приложение. При отображении экрана-заставки на экранах с разными размерами меняются только размеры фона. Размер изображения всегда будет неизменным.
+Putting an image and background color together to form the splash screen helps the splash screen look good, regardless of the device your app is installed on. When the splash screen is displayed, only the size of the background changes to compensate for a variety of screen sizes. Your image always remains intact.
 
-Кроме того, для настройки процедуры запуска вашего приложения можно использовать класс [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763). Вы можете разместить созданный вами расширенный экран-заставку, чтобы дать приложению больше времени для выполнения дополнительных задач, например подготовки интерфейса приложения или выполнения сетевых операций. Кроме того, для уведомления о закрытии экрана-заставки можно использовать класс **SplashScreen**, чтобы начать показывать анимации, предназначенные для входа в приложение.
+Additionally, you can use the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class to customize your app's launch experience. You can position an extended splash screen, which you create, to give your app more time to complete additional tasks like preparing app UI or completing networking operations. You can also use the **SplashScreen** class to notify you when the splash screen is dismissed, so that you can begin entrance animations.
 
 | Topic                                                                          | Description                                                                                                                                                                                       |
 |--------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Добавление экрана-заставки](add-a-splash-screen.md)                                 | Задайте изображение экрана-заставки и цвет фона вашего приложения.                                                                                                                                          |
-| [Более продолжительное отображение экрана-заставки](create-a-customized-splash-screen.md) | Увеличьте длительность отображения экрана-заставки, создав и использовав расширенный экран-заставку для приложения. Этот расширенный экран имитирует экран-заставку, отображаемый при запуске приложения, и его можно настраивать. |
+| [Add a splash screen](add-a-splash-screen.md)                                 | Set your app's splash screen image and background color.                                                                                                                                          |
+| [Display a splash screen for more time](create-a-customized-splash-screen.md) | Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, and can be customized. |
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
-
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 

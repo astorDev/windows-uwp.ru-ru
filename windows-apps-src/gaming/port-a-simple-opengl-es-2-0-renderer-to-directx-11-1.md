@@ -1,43 +1,44 @@
 ---
-title: Инструкции: перенос простого обработчика OpenGL ES 2.0 в Direct3D 11
-description: В качестве первого упражнения в переносе начнем с основ: с переноса простого обработчика для вращающегося куба с затенением по вершинам из OpenGL ES 2.0 в Direct3D, чтобы он соответствовал шаблону «Приложение DirectX 11 (универсальные приложения для Windows)» из Visual Studio 2015.
+author: mtoepke
+title: How to-- port a simple OpenGL ES 2.0 renderer to Direct3D 11
+description: For the first porting exercise, we'll start with the basics-- bringing a simple renderer for a spinning, vertex-shaded cube from OpenGL ES 2.0 into Direct3D, such that it matches the DirectX 11 App (Universal Windows) template from Visual Studio 2015.
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 ---
 
-# Инструкции: перенос простого обработчика OpenGL ES 2.0 в Direct3D 11
+# How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В качестве первого упражнения в переносе начнем с основ: с переноса простого обработчика для вращающегося куба с затенением по вершинам из OpenGL ES 2.0 в Direct3D, чтобы он соответствовал шаблону «Приложение DirectX 11 (универсальные приложения для Windows)» из Visual Studio 2015. Из разбора этого процесса переноса вы узнаете следующее:
+For the first porting exercise, we'll start with the basics: bringing a simple renderer for a spinning, vertex-shaded cube from OpenGL ES 2.0 into Direct3D, such that it matches the DirectX 11 App (Universal Windows) template from Visual Studio 2015. As we walk through this port process, you will learn the following:
 
--   как переносить простой набор буферов вершин в буферы ввода Direct3D;
--   как переносить однородности и атрибуты в буферы констант;
--   как настраивать объекты шейдеров Direct3D;
--   как базовая семантика HLSL используется в разработке шейдеров Direct3D;
--   как переносить очень простой GLSL в HLSL.
+-   How to port a simple set of vertex buffers to Direct3D input buffers
+-   How to port uniforms and attributes to constant buffers
+-   How to configure Direct3D shader objects
+-   How basic HLSL semantics are used in Direct3D shader development
+-   How to port very simple GLSL to HLSL
 
-Этот раздел начинается сразу после создания нового проекта DirectX 11. Чтобы узнать, как создавать новые проекты DirectX 11, ознакомьтесь с разделом [Создание нового проекта DirectX 11 для универсальной платформы Windows (UWP)](user-interface.md).
+This topic starts after you have created a new DirectX 11 project. To learn how to create a new DirectX 11 project, read [Create a new DirectX 11 project for Universal Windows Platform (UWP)](user-interface.md).
 
-В проекте, созданном на основании любой из этих ссылок, уже подготовлен весь нужный код для инфраструктуры [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476345), что позволяет немедленно начать процесс переноса обработчика из Open GL ES 2.0 в Direct3D 11.
+The project created from either of these links has all the code for the [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476345) infrastructure prepared, and you can immediately start into the process of porting your renderer from Open GL ES 2.0 to Direct3D 11.
 
-В этом разделе подробно разобраны две ветви кода, выполняющие одну и ту же базовую задачу обработки графики: отображение вращающегося куба с затененными вершинами. В обоих случаях код включает следующий процесс.
+This topic walks two code paths that perform the same basic graphics task: display a rotating vertex-shaded cube in a window. In both cases, the code covers the following process:
 
-1.  Создание сетки куба из встроенных данных. Эта сетка представлена как список вершин, каждая из которых обладает положением, нормальным вектором и вектором цвета. Эта сетка помещается в буфер вершин для обработки конвейера затенения.
-2.  Создание объектов шейдера для обработки сетки куба. Есть два шейдера: вершинный шейдер, который обрабатывает вершины для растеризации, и шейдер фрагментов, который окрашивает отдельные пиксели куба после растеризации. Эти пиксели записываются в однобуферную прорисовку для отображения.
-3.  Формирование языка затенения, который используется для обработки вершин и пикселей в вершинных шейдерах и шейдерах фрагментов соответственно.
-4.  Отображение отрисованного куба на экране.
+1.  Creating a cube mesh from hardcoded data. This mesh is represented as a list of vertices, with each vertex possessing a position, a normal vector, and a color vector. This mesh is put into a vertex buffer for the shading pipeline to process.
+2.  Creating shader objects to process the cube mesh. There are two shaders: a vertex shader that processes the vertices for rasterization, and a fragment (pixel) shader that colors the individual pixels of the cube after rasterization. These pixels are written into a render target for display.
+3.  Forming the shading language that is used for vertex and pixel processing in the vertex and fragment shaders, respectively.
+4.  Displaying the rendered cube on the screen.
 
-![Простой куб OpenGL](images/simple-opengl-cube.png)
+![simple opengl cube](images/simple-opengl-cube.png)
 
-По завершении этого пошагового руководства вы должны знать о следующих фундаментальных различиях между Open GL ES 2.0 и Direct3D 11:
+Upon completing this walkthrough, you should be familiar with the following basic differences between Open GL ES 2.0 and Direct3D 11:
 
--   отображение буферов и данных вершин;
--   процесс создания и настройки шейдеров;
--   языки затенения, а также входные и выходные данные объектов шейдеров;
--   поведение при прорисовке экрана.
+-   The representation of vertex buffers and vertex data.
+-   The process of creating and configuring shaders.
+-   Shading languages, and the inputs and outputs to shader objects.
+-   Screen drawing behaviors.
 
-В этом руководстве мы будем говорить о простой и стандартной структуре обработчика OpenGL, которая определена следующим образом.
+In this walkthrough, we refer to an simple and generic OpenGL renderer structure, which is defined like this:
 
 ``` syntax
 typedef struct 
@@ -70,25 +71,25 @@ typedef struct
 } Renderer;
 ```
 
-У этой структуры имеется один экземпляр, и он содержит все необходимые компоненты для прорисовки очень простой сетки с затенением по вершинам.
+This structure has one instance and contains all the necessary components for rendering a very simple vertex-shaded mesh.
 
-> **Примечание.** Весь код OpenGL ES 2.0 в этой теме основан на реализации API Windows, предоставленной Khronos Group, и использует синтаксис программирования Windows C.
+> **Note**  Any OpenGL ES 2.0 code in this topic is based on the Windows API implementation provided by the Khronos Group, and uses Windows C programming syntax.
 
- 
+ 
 
-## Что необходимо знать
+## What you need to know
 
 
-### Технологии
+### Technologies
 
 -   [Microsoft Visual C++](http://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
 -   OpenGL ES 2.0
 
-### Необходимые условия
+### Prerequisites
 
--   Необязательно. Просмотрите раздел [Перенос кода EGL в DXGI и Direct3D](moving-from-egl-to-dxgi.md). Прочитайте этот раздел, чтобы лучше понять графический интерфейс, предоставляемый DirectX.
+-   Optional. Review [Port EGL code to DXGI and Direct3D](moving-from-egl-to-dxgi.md). Read this topic to better understand the graphics interface provided by DirectX.
 
-## <span id="keylinks_steps_heading"></span>Этапы
+## <span id="keylinks_steps_heading"></span>Steps
 
 
 <table>
@@ -98,48 +99,43 @@ typedef struct
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Тема</th>
-<th align="left">Описание</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Port the shader objects](port-the-shader-config.md)</p></td>
-<td align="left"><p>При переносе простого обработчика из OpenGL ES 2.0 прежде всего следует задать эквивалентные объекты вершинного шейдера и шейдера фрагментов в Direct3D 11 и убедиться, что основная программа может связываться с объектами шейдера после их компиляции.</p></td>
+<td align="left"><p>When porting the simple renderer from OpenGL ES 2.0, the first step is to set up the equivalent vertex and fragment shader objects in Direct3D 11, and to make sure that the main program can communicate with the shader objects after they are compiled.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)</p></td>
-<td align="left"><p>На этом шаге вы определите буферы вершин, которые будут содержать ваши сетки, и буферы индексов, которые позволят шейдерам обходить вершины в указанном порядке.</p></td>
+<td align="left"><p>In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Port the GLSL](port-the-glsl.md)</p></td>
-<td align="left"><p>После переноса кода, который создает и настраивает буферы и объекты шейдеров, следует перенести внутренний код шейдеров из версии GLSL (GL Shader Language) для OpenGL ES 2.0 в HLSL (High-level Shader Language) для Direct3D 11.</p></td>
+<td align="left"><p>Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Draw to the screen](draw-to-the-screen.md)</p></td>
-<td align="left"><p>Наконец, мы переносим код, который отрисовывает вращающийся куб на экране.</p></td>
+<td align="left"><p>Finally, we port the code that draws the spinning cube to the screen.</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
-## <span id="additional_resources"></span>Дополнительные ресурсы
-
-
--   [Подготовьте свою среду разработки для создания игр DirectX для UWP](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
--   [Создание нового проекта DirectX 11 для UWP](user-interface.md)
--   [Сопоставьте концепции и инфраструктуру OpenGL ES 2.0 и Direct3D 11](map-concepts-and-infrastructure.md)
-
- 
-
- 
+## <span id="additional_resources"></span>Additional resources
 
 
+-   [Prepare your dev environment for UWP DirectX game development](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
+-   [Create a new DirectX 11 project for UWP](user-interface.md)
+-   [Map OpenGL ES 2.0 concepts and infrastructure to Direct3D 11](map-concepts-and-infrastructure.md)
+
+ 
+
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

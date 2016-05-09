@@ -1,171 +1,167 @@
 ---
-Description: В этом разделе содержатся рекомендации по производительности для приложений, которым требуется определение расположения пользователя.
-title: Руководство по приложениям с определением расположения
+author: PatrickFarley
+Description: This topic describes performance guidelines for apps that require access to a user's location.
+title: Guidelines for location-aware apps
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ---
 
-# Руководство по приложениям с определением расположения
+# Guidelines for location-aware apps
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Важные API**
+**Important APIs**
 
 -   [**Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603)
 -   [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)
 
-В этом разделе содержатся рекомендации по производительности для приложений, которым требуется определение расположения пользователя.
+This topic describes performance guidelines for apps that require access to a user's location.
 
-## Рекомендации
-
-
--   Начинайте использовать объект расположения только тогда, когда приложению требуются данные о расположении.
-
-    Вызовите метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) перед получением доступа к данным о расположении пользователя. В этот момент ваше приложение должно находиться на переднем плане, а из потока пользовательского интерфейса должен быть вызван метод **RequestAccessAsync**. До тех пор пока пользователь не предоставит вашему приложению разрешение на доступ к данным о расположении, приложение не сможет использовать такие данные.
-
--   Если расположение несущественно для вашего приложения, не открывайте к нему доступ, пока пользователь не попытается выполнить задачу, для которой требуются сведения о расположении. Например, если в приложение социальной сети есть кнопка "Проверить мое расположение", приложение не должно пытаться получить данные о расположении, пока пользователь не нажмет эту кнопку. Немедленный доступ к данным о расположении уместен, если он нужен вашему приложению для выполнения его основной функции.
-
--   Первое использование объекта [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) должно быть выполнено в основном потоке пользовательского интерфейса приложения переднего плана для показа пользователю запроса на согласие. Первым использованием **Geolocator** может быть либо первый вызов [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536), либо первая регистрация обработчика события [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540).
-
--   Предупредите пользователя о том, как будут использоваться данные о расположении.
--   Предоставьте пользовательский интерфейс, чтобы пользователь мог вручную обновить свое расположение.
--   Во время получения данных о расположении отображайте индикатор выполнения. <!--For info on the available progress controls and how to use them, see [**Guidelines for progress controls**](guidelines-and-checklist-for-progress-controls.md).-->
--   Отображайте соответствующие сообщения об ошибках или диалоговые окна, когда определение расположения отключено или недоступно.
-
-    Если параметры местоположения не позволяют вашему приложению получать доступ к данным о местоположении пользователя, мы рекомендуем реализовать удобную ссылку на **параметры конфиденциальности данных о местоположении** в приложении **Параметры**. Например, вы можете использовать элемент управления "Гиперссылка" или вызвать метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) для запуска приложения **Параметры** из кода с помощью URI `ms-settings:privacy-location`. Дополнительные сведения см. в разделе [Запуск приложения "Параметры" в Windows](https://msdn.microsoft.com/library/windows/apps/mt228342).
-
--   Очищайте кэшированные данные о расположении и освобождайте объект [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534), когда пользователь отключает доступ к сведениям о расположении.
-
-    Освобождайте объект [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534), если пользователь отключает доступ к сведениям о расположении через "Параметры". Тогда в ответ на любые вызовы API расположения приложение будет получать результаты **ACCESS\_DENIED**. Если приложение сохраняет или кэширует данные о расположении, очищайте все кэшированные данные, когда пользователь отключает доступ к данным о расположении. Предоставьте альтернативный способ ввода данных расположения вручную на случай, если они окажутся недоступны для служб определения расположения.
-
--   Предусмотрите пользовательский интерфейс для повторного включения определения расположения. Например, предоставьте кнопку обновления, которая создает новый экземпляр объекта [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) и пытается снова получить сведения о расположении.
-
-    Приложение должно предоставлять пользовательский интерфейс для повторного включения служб определения расположения.
-
-    -   Если пользователь повторно включает определение расположения после отключения этой функции, приложение не получает уведомления. Значение свойства [**status**](https://msdn.microsoft.com/library/windows/apps/br225601) не изменяется, и событие [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) не возникает. Ваше приложение должно создать новый объект [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) и вызвать [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) для получения обновленных данных о расположении или повторно подписаться на события [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540). Если после этого состояние приложения указывает на повторное включение определения расположения, удалите все элементы пользовательского интерфейса, которые ранее отображались для уведомления пользователя об отключенных службах определения расположения, и обрабатывайте новое состояние соответствующим образом.
-    -   Кроме того, ваше приложение должно повторять попытку определения расположения после активации или при явных попытках пользователя применить функции, требующие определения расположения, а также в любое другое время, соответствующее замыслу приложения.
-
-**Производительность**
-
--   Используйте однократные запросы расположения, если приложению не требуются обновления данных о расположении. Например, приложению, которое добавляет метку о географическом положении на фотографию, обновление данных о расположении не требуется. Вместо этого приложение должно запрашивать расположение с помощью метода [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536), как описано в разделе [Получение сведений о текущем расположении](https://msdn.microsoft.com/library/windows/apps/mt219698).
-
-    Когда вы создаете одноразовый запрос на определение расположения, необходимо задать следующие значения.
-
-    -   Укажите для приложения требуемую точность с помощью значений [**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) или [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271). См. ниже рекомендации по использованию этих параметров.
-    -   Задайте параметр максимального возраста [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536), чтобы указать, как долго полученное расположение будет полезным для приложения. Если приложение может использовать позицию, полученную несколько секунд или минут назад, приложение сможет получать данные о расположении почти немедленно, экономя при этом энергию устройства.
-    -   Задайте параметр времени ожидания для [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536). Это определит, как долго приложение сможет ожидать получения данных о расположении или возврата ошибки. Вам придется оценить баланс преимуществ и недостатков скорости реагирования и требуемой точности приложения.
--   Используйте непрерывный сеанс определения расположения, если требуются частые обновления позиции. Используйте события [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) и [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) для обнаружения перемещений, выходящих за определенные пороговые значения, или для непрерывного обновления данных об изменяющемся местоположении.
-
-    При запросах обновления расположения полезно указать требуемую приложением точность, задавая значения [**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) или [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271). Вам нужно также задать требуемую приложением частоту обновлений с помощью значений [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) или [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541).
-
-    -   Укажите пороговое значение перемещения. Некоторым приложениям требуется обновлять данные о расположении, только когда пользователь перемещается на значительное расстояние. Например, приложение, отображающее местные новости или прогноз погоды, потребует обновления данных о расположении, только когда пользователь переместится в другой город. В этом случае с помощью свойства [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) можно настроить минимальное расстояние перемещения, при котором данные о местоположении будут обновляться. Это обеспечивает фильтрацию событий [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540). Такие события будут вызываться, только если изменение расположения превысит заданный порог.
-
-    -   Используйте значение [**reportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541), чтобы обеспечить подходящие условия для работы приложения и свести к минимуму использование системных ресурсов. Например, приложению, отображающему прогноз погоды, обновление данных может требоваться только каждые 15 минут. Для большинства приложений, за исключением приложений для навигации в режиме реального времени, не нужен постоянный высокоточный поток обновлений расположения. Если приложению не требуется поток данных с максимально высокой точностью, а также частое обновление данных, задайте минимальную частоту обновления необходимых приложению данных о расположении в свойстве **ReportInterval**. Тогда источник данных о расположении сможет работать более экономно, вычисляя расположение только по необходимости.
-
-        В приложениях, которым требуются сведения в режиме реального времени, необходимо установить для свойства [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541) значение 0, указав таким образом на отсутствие минимального интервала. Интервал отчетов по умолчанию составляет 1 секунду или значение, соответствующее максимальной частоте, допустимой программным обеспечением, если это значение короче 1 секунды.
-
-        Устройства, предоставляющие данные расположения, могут отслеживать интервалы отчетов для разных приложений и предоставлять отчеты данных с минимальным запрошенным интервалом. Таким образом, приложение, которому нужна наибольшая точность, получает необходимые данные. При этом определитель расположения может создавать обновления чаще, чем необходимо вашему приложению, если для другого приложения задан меньший интервал.
-
-        **Примечание.**  Нет гарантии, что источник данных о расположении примет запрос в течение заданного отчетного периода. Не все устройства, предоставляющие данные расположения, могут отслеживать интервалы отчетов. Тем не менее стоит настроить интервал для тех устройств, которые поддерживают эту функцию.
-
-    -   Для экономии энергии задайте свойство [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535), чтобы сообщить платформе расположения, требуется ли вашему приложению высокая точность данных. Если высокая точность не требуется ни одному из приложений, система может экономить энергию, не включая поставщики данных GPS.
-
-        -   Установите для свойства [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) значение **HIGH**, чтобы модуль GPS получал данные.
-        -   Установите для свойства [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) значение **Default** и используйте только шаблон однократного вызова, чтобы снизить потребление энергии, если ваше приложение использует сведения о расположении только для определения целевой аудитории рекламы.
-
-        Если у вашего приложения имеются конкретные требования относительно точности, можно использовать свойство [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271) вместо [**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535). Это особенно полезно для устройства Windows Phone, которое обычно может определять расположение по маякам сотовой связи, маякам Wi-Fi и спутникам. Выбор более конкретного значения точности поможет системе определить правильную технологию для использования с минимальным энергопотреблением при определении позиции.
-
-        Например:
-
-        -   Если приложение определяет расположение для настройки рекламы, сводок погоды, новостей и т. п., вполне достаточной будет точность 5000 метров.
-        -   Если приложение отображает сделки по соседству, обычно хорошие результаты дает точность 300 метров.
-        -   Если пользователь ищет рекомендации для ближайших ресторанов, вероятно, требуется позиция в пределах квартала, то есть достаточной будет точность 100 метров.
-        -   Если пользователь хочет сообщить кому-то о своем местонахождении, приложение должно запрашивать точность около 10 метров.
-    -   Если у приложения имеются конкретные требования к точности, используйте свойство [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526). Например, в приложениях для навигации следует использовать свойство **Geocoordinate.accuracy** для определения того, соответствуют ли доступные данные о расположении требованиям приложения.
-
--   Учитывайте задержки при запуске. При первом запросе данных о расположении возможна короткая (1–2 секунды) задержка из-за запуска поставщика данных о расположении. Учитывайте это при разработке пользовательского интерфейса приложения. Например, можно предотвратить блокировку других задач во время ожидания завершения вызова [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536).
-
--   Учитывайте поведение приложения в фоновом режиме. Если ваше приложение находится не в фокусе, оно не будет получать события обновления данных о расположении, пока оно приостановлено в фоновом режиме. Если приложение регистрирует в журнале все обновления данных о расположении, это следует учитывать. Когда приложение возвращается в активный режим, оно получает информацию только о новых событиях. Обновления, которые происходили, пока оно было в неактивном состоянии, будут потеряны.
-
--   Эффективно используйте простые и комплексные датчики. Существует два типа датчиков: *простые* и *комплексные*.
-
-    -   Простые датчики включают акселерометр, гирометр и магнитометр.
-    -   Комплексные датчики включают ориентацию, инклинометр и компас. Комплексные датчики получают данные от комбинаций простых датчиков.
-
-    API среды выполнения Windows могут обращаться к любому из этих датчиков, кроме магнитометра. Датчики объединенных данных работают более точно и стабильно по сравнению с датчиками необработанных данных, но потребляют больше энергии. Для каждой цели следует использовать подходящие датчики. Подробнее см. в разделе [Датчики](https://msdn.microsoft.com/library/windows/apps/mt187358).
-
-**Режим ожидания с подключением:  **Объекты [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) могут создаваться и в то время, когда компьютер находится в режиме ожидания с подключением. Однако объект **Geolocator** не сможет обнаружить датчики, которые можно объединить, и поэтому вызовы метода [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) завершатся тайм-аутом по истечении 7 секунд, прослушиватели событий [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) никогда не будут вызваны, а прослушиватели событий [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) будут вызваны один раз с состоянием **NoData**.
-
-## Дополнительные рекомендации по использованию
+## Recommendations
 
 
-### Обнаружение изменений в параметрах расположения
+-   Start using the location object only when the app requires location data.
 
-Пользователь может отключить функцию определения расположения с помощью **параметров конфиденциальности сведений о местонахождении** в приложении **Параметры**.
+    Call the [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) before accessing the user’s location. At that time, your app must be in the foreground and **RequestAccessAsync** must be called from the UI thread. Until the user grants your app permission to their location, your app can't access location data.
 
--   Чтобы определить, когда пользователь отключает или вновь включает передачу данных о расположении:
-    -   Обработайте событие [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542). Свойство [**Status**](https://msdn.microsoft.com/library/windows/apps/br225601) аргумента события **StatusChanged** имеет значение **Disabled**, если пользователь отключает определение расположения.
-    -   Проверьте коды ошибок, возвращаемые методом [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536). Если пользователь отключил службы определения расположения, будет происходить сбой вызовов **GetGeopositionAsync** с ошибкой **ACCESS\_DENIED**, а свойство [**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) будет иметь значение **Disabled**.
--   Если данные о расположении имеют большое значение для вашего приложения (например, в случае картографического приложения), выполните следующие действия.
-    -   Обработайте событие [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540), чтобы получить обновления при изменении расположения пользователя.
-    -   Обработайте событие [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542), как описано выше, чтобы отследить изменения в параметрах расположения.
+-   If location isn't essential to your app, don't access it until the user tries to complete a task that requires it. For example, if a social networking app has a button for "Check in with my location," the app shouldn't access location until the user clicks the button. It's okay to immediately access location if it is required for your app's main function.
 
-Обратите внимание, что служба возвращает данные по мере их поступления. Сначала расположение может возвращаться с большим радиусом ошибки, а затем обновляться более точной информацией, когда она станет доступна. Приложения, отображающие расположение пользователя, обычно пытаются обновлять данные по мере того, как поступает более точная информация.
+-   The first use of the [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) object must be made on the main UI thread of the foreground app, to trigger the consent prompt to the user. The first use of the **Geolocator** can be either the first call to [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) or the first registration of a handler for the [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) event.
 
-### Графическое представление расположения
+-   Tell the user how location data will be used.
+-   Provide UI to enable users to manually refresh their location.
+-   Display a progress bar or ring while waiting to get location data. <!--For info on the available progress controls and how to use them, see [**Guidelines for progress controls**](guidelines-and-checklist-for-progress-controls.md).-->
+-   Show appropriate error messages or dialogs when location services are disabled or not available.
 
-Ваше приложение должно использовать [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526), чтобы точно показать на карте текущее расположение пользователя. Существуют три основных диапазона точности — радиусы ошибки около 10 метров, около 100 метров и больше 1 километра. Используя сведения о точности, вы обеспечиваете в вашем приложении точное отображение расположения в контексте доступных данных. Общие сведения об использовании элемента управления картой см. в статье [Отображение карт с помощью двумерных и трехмерных представлений, а также представлений Streetside](https://msdn.microsoft.com/library/windows/apps/mt219695).
+    If the location settings don't allow your app to access the user's location, we recommend providing a convenient link to the **location privacy settings** in the **Settings** app. For example, you could use a Hyperlink control or call the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method to launch the **Settings** app from code using the `ms-settings:privacy-location` URI. For more info, see [Launch the Windows Settings app](https://msdn.microsoft.com/library/windows/apps/mt228342).
 
--   Для точности около 10 метров (разрешение GPS) расположение на карте может быть обозначено точкой или булавкой. Для этой точности также могут быть отображены географические координаты (широта и долгота) и почтовый адрес.
+-   Clear cached location data and release the [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) when the user disables access to location info.
 
-    ![Пример карты с точностью около 10 метров (точность GPS).](images/10metererrorradius.png)
+    Release the [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) object if the user turns off access to location info through Settings. The app will then receive **ACCESS\_DENIED** results for any location API calls. If your app saves or caches location data, clear any cached data when the user revokes access to location info. Provide an alternate way to manually enter location info when location data is not available via location services.
 
--   Для точности в пределах от 10 до 500 метров (приблизительно 100 метров) получение данных о расположении происходит с разрешением Wi-Fi. Определение расположения по сотовой связи обычно имеет точность около 300 метров. В этом случае мы рекомендуем отображать в приложении радиус ошибки. Если в приложении показываются маршруты и требуется отображение точки центрирования, ее можно отображать в центре радиуса ошибки.
+-   Provide UI for reenabling location services. For example, provie a refresh button that reinstantiates the [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) object and tries to get location info again.
 
-    ![Пример карты с точностью около 100 метров (точность Wi-Fi).](images/100metererrorradius.png)
+    Have your app provide UI for reenabling location services—
 
--   Если возвращаемая точность больше 1 километра, скорее всего получение сведений о расположении происходит с разрешением уровня IP-адреса. Этого уровня точности обычно не хватает, чтобы показать определенную точку на карте. Ваше приложение должно увеличивать карту до уровня города или до уровня подходящей области в зависимости от радиуса ошибки (например, уровень региона).
+    -   If the user reenables location access after disabling it, there is no notification to the app. The [**status**](https://msdn.microsoft.com/library/windows/apps/br225601) property does not change and there is no [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) event. Your app should create a new [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) object and call [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) to try to get updated location data, or subscribe again to [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) events. If the status then indicates that location has been reenabled, clear any UI by which your app previously notified the user that location services were disabled, and respond appropriately to the new status.
+    -   Your app should also try again to get location data upon activation, or when the user explicitly tries to use functionality that requires location info, or at any other scenario-appropriate time.
 
-    ![Пример карты с точностью около 1 километра (точность Wi-Fi).](images/1000metererrorradius.png)
+**Performance**
 
-При переходе от одного уровня точности к другому обеспечьте плавный переход между соответствующими графическими представлениями. Как это можно сделать:
+-   Use one-time location requests if your app doesn't need to receive location updates. For example, an app that adds a location tag to a photo doesn't need to receive location update events. Instead, it should request location using [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536), as described in [Get current location](https://msdn.microsoft.com/library/windows/apps/mt219698).
 
--   Выполнить плавную анимацию перехода, плавно и быстро выполнив сам переход.
--   Использовать ряд последовательных сообщений с подтверждением изменения точности, чтобы предотвратить нежелательные и слишком частые изменения масштаба.
+    When you make a one-time location request, you should set the following values.
 
-### Текстовое представление расположения
+    -   Specify the accuracy requested by your app by setting the [**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) or the [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271). See below for recommendations on using these parameters
+    -   Set the max age parameter of [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) to specify how long ago a location can have been obtained to be useful for your app. If your app can use a position that is a few seconds or minutes old, your app can receive a position almost immediately and contribute to saving device power.
+    -   Set the timeout parameter of [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536). This is how long your app can wait for a position or an error to be returned. You will need to figure out the trade-offs between responsiveness to the user and accuracy your app needs.
+-   Use continuous location session when frequent position updates are required. Use [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) and [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) events for detecting movement past a specific threshold or for continuous location updates as they occur.
 
-Для некоторых приложений (например, приложений прогноза погоды и местных информационных приложений) требуется механизм вывода текстового представления расположения для различных диапазонов точности. Отображать расположение следует понятно и только в соответствии с уровнем точности, указанным в данных.
+    When requesting location updates, you may want to specify the accuracy requested by your app by setting the [**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) or the [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271). You should also set the frequency at which the location updates are needed, by using the [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) or the [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541).
 
--   Для точности около 10 метров (разрешение GPS) получение сведений о расположении производится довольно точно, и поэтому эти сведения можно сообщать с точностью до названия района. Также можно использовать название города, области, страны (региона).
--   Для точности около 100 метров (разрешение Wi-Fi) получение сведений о расположении производится со средней точностью, и поэтому мы рекомендуем отображать эти сведения с точностью до названия населенного пункта. Название района использовать не следует.
--   Для точности больше 1 километра (разрешение IP) отображайте только название области или страны (региона).
+    -   Specify the movement threshold. Some apps need location updates only when the user has moved a large distance. For example, an app that provides local news or weather updates may not need location updates unless the user's location has changed to a different city. In this case, you adjust the minimum required movement for a location update event by setting the [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) property. This has the effect of filtering out [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) events. These events are raised only when the change in position exceeds the movement threshold.
 
-### Соображения конфиденциальности
+    -   Use [**reportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541) that aligns with your app experience and that minimizes the use of system resources. For example, a weather app may require a data update only every 15 minutes. Most apps, other than real-time navigation apps, don't require a highly accurate, constant stream of location updates. If your app doesn't require the most accurate stream of data possible, or requires updates infrequently, set the **ReportInterval** property to indicate the minimum frequency of location updates that your app needs. The location source can then conserve power by calculating location only when needed.
 
-Данные о географическом положении пользователя являются персональными данными. На следующем веб-сайте приведены рекомендации по защите персональных данных пользователей.
+        Apps that do require real-time data should set [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541) to 0, to indicate that no minimum interval is specified. The default report interval is 1 second or as frequent as the hardware can support – whichever is shorter.
 
--   [Политика конфиденциальности Майкрософт]( http://go.microsoft.com/fwlink/p/?LinkId=259692)
+        Devices that provide location data may track the report interval requested by different apps, and provide data reports at the smallest requested interval. The app with the greatest need for accuracy thus receives the data it needs. Therefore, it's possible that the location provider will generate updates at a higher frequency than your app requested, if another app has requested more frequent updates.
+
+        **Note**  It isn't guaranteed that the location source will honor the request for the given report interval. Not all location provider devices track the report interval, but you should still provide it for those that do.
+
+    -   To help conserve power, set the [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) property to indicate to the location platform whether your app needs high-accuracy data. If no apps require high-accuracy data, the system can save power by not turning on GPS providers.
+
+        -   Set [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) to **HIGH** to enable the GPS to acquire data.
+        -   Set [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) to **Default** and use only a single-shot call pattern to minimize power consumption if your app uses location info solely for ad targeting.
+
+        If your app has specific needs around accuracy, you may want to use the [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271) property instead of using [**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535). This is particularly useful on Windows Phone, where position can usually be obtained based on cellular beacons, Wi-Fi beacons and satellites. Picking a more specific accuracy value will help the system identify the right technologies to use with the lowest power cost when providing a position.
+
+        For example:
+
+        -   If your app is obtaining location for ads tuning, weather, news, etc, an accuracy of 5000 meter is generally enough.
+        -   If you app is displaying nearby deals in the neighborhood, an accuracy of 300 meter is generally good to provide results.
+        -   If the user is looking for recommendations to nearby restaurants, we likely want to get a position within a block, so an accuracy of 100 meters is sufficient.
+        -   If the user is trying to share his position, the app should request an accuracy of about 10 meters.
+    -   Use the [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) property if your app has specific accuracy requirements. For example, navigation apps should use the **Geocoordinate.accuracy** property to determine whether the available location data meets the app's requirements.
+
+-   Consider start-up delay. The first time an app requests location data, there might be a short delay (1-2 seconds) while the location provider starts up. Consider this in the design of your app's UI. For instance, you may want to avoid blocking other tasks pending the completion of the call to [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536).
+
+-   Consider background behavior. If your app doesn't have focus, it won't receive location update events while it's suspended in the background. If your app tracks location updates by logging them, be aware of this. When the app regains focus, it receives only new events. It does not get any updates that occurred when it was inactive.
+
+-   Use raw and fusion sensors efficiently. There are two types of sensors: *raw* and *fusion*.
+
+    -   Raw sensors include the accelerometer, gyrometer, and magnetometer.
+    -   Fusion sensors include orientation, inclinometer, and compass. Fusion sensors get their data from combinations of the raw sensors.
+
+    The Windows Runtime APIs can access all of these sensors except for the magnetometer. Fusion sensors are more accurate and stable than raw sensors, but they use more power. You should use the right sensors for the right purpose. For more info, see [Sensors](https://msdn.microsoft.com/library/windows/apps/mt187358).
+
+**Connected standby:  **When the PC is in connected standby state, [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) objects can always be instantiated. However, the **Geolocator** object will not find any sensors to aggregate and therefore calls to [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) will time out after 7 seconds, [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) event listeners will never be called, and [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) event listeners will be called once with the **NoData** status.
+
+## Additional usage guidance
+
+
+### Detecting changes in location settings
+
+The user can turn off location functionality by using the **location privacy settings** in the **Settings** app.
+
+-   To detect when the user disables or reenables location services:
+    -   Handle the [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) event. The [**Status**](https://msdn.microsoft.com/library/windows/apps/br225601) property of the argument to the **StatusChanged** event has the value **Disabled** if the user turns off location services.
+    -   Check the error codes returned from [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536). If the user has disabled location services, calls to **GetGeopositionAsync** fail with an **ACCESS\_DENIED** error and the [**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) property has the value **Disabled**.
+-   If you have an app for which location data is essential—for example, a mapping app—, be sure to do the following:
+    -   Handle the [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) event to get updates if the user’s location changes.
+    -   Handle the [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) event as described previously, to detect changes in location settings.
+
+Note that the location service will return data as it becomes available. It may first return a location with a larger error radius and then update the location with more accurate information as it becomes available. Apps displaying the user's location would normally want to update the location as more accurate information becomes available.
+
+### Graphical representations of location
+
+Have your app use [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) to denote the user’s current location on the map clearly. There are three main bands for accuracy—an error radius of approximately 10 meters, an error radius of approximately 100 meters, and an error radius of greater than 1 kilometer. By using the accuracy information, you can ensure that your app displays location accurately in the context of the data available. For general information about using the map control, see [Display maps with 2D, 3D, and Streetside views](https://msdn.microsoft.com/library/windows/apps/mt219695).
+
+-   For accuracy approximately equal to 10 meters (GPS resolution), location can be denoted by a dot or pin on the map. With this accuracy, latitude-longitude coordinates and street address can be shown as well.
+
+    ![example of map displayed at gps accuracy of approximately 10 meters.](images/10metererrorradius.png)
+
+-   For accuracy between 10 and 500 meters (approximately 100 meters), location is generally received through Wi-Fi resolution. Location obtained from cellular has an accuracy of around 300 meters. In such a case, we recommend that your app show an error radius. For apps that show directions where a centering dot is required, such a dot can be shown with an error radius surrounding it.
+
+    ![example of map displayed at wi-fi accuracy of approximately 100 meters.](images/100metererrorradius.png)
+
+-   If the accuracy returned is greater than 1 kilometer, you are probably receiving location info at IP-level resolution. This level of accuracy is often too low to pinpoint a particular spot on a map. Your app should zoom in to the city level on the map, or to the appropriate area based on the error radius (for example, region level).
+
+    ![example of map displayed at wi-fi accuracy of approximately 1 kilometer.](images/1000metererrorradius.png)
+
+When location accuracy switches from one band of accuracy to another, provide a graceful transition between the different graphical representations. This can be done by:
+
+-   Making the transition animation smooth and keeping the transition fast and fluid.
+-   Waiting for a few consecutive reports to confirm the change in accuracy, to help prevent unwanted and too-frequent zooms.
+
+### Textual representations of location
+
+Some types of apps—for example, a weather app or a local information app—need ways to represent location textually at the different bands of accuracy. Be sure to display the location clearly and only down to the level of accuracy provided in the data.
+
+-   For accuracy approximately equal to 10 meters (GPS resolution), the location data received is fairly accurate and so can be communicated to the level of the neighborhood name. City name, state or province name, and country/region name can also be used.
+-   For accuracy approximately equal to 100 meters (Wi-Fi resolution), the location data received is moderately accurate and so we recommend that you display information down to the city name. Avoid using the neighborhood name.
+-   For accuracy greater than 1 kilometer (IP resolution), display only the state or province, or country/region name.
+
+### Privacy considerations
+
+A user's geographic location is personally identifiable information (PII). The following website provides guidance for protecting user privacy.
+
+-   [Microsoft Privacy]( http://go.microsoft.com/fwlink/p/?LinkId=259692)
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 
-## Связанные разделы
+## Related topics
 
 * [Set up a geofence](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [Get current location](https://msdn.microsoft.com/library/windows/apps/mt219698)
 * [Display maps with 2D, 3D, and Streetside views](https://msdn.microsoft.com/library/windows/apps/mt219695)
-          <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [Пример расположения для универсальной платформы Wndows (UWP) (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
- 
+<!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
+* [UWP location sample (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 
