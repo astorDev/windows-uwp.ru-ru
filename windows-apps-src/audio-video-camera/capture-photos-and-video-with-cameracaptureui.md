@@ -61,7 +61,7 @@ title: Фото- и видеозахват с помощью CameraCaptureUI
 
 Сначала добавьте элемент управления [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), в котором композиция видеороликов будет отображаться на вашей странице XAML.
 
-[!code-cs[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
+[!code-xml[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
 Добавьте в проект пространства имен [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) и [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962).
 

@@ -265,7 +265,7 @@ Let's go ahead and create the event handler.
     function buttonClickHandler(eventInfo) {
      
         }
-    ```
+```
 
 2.  Inside our event handler, retrieve the user's name from the `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) control and use it to create a greeting. Use the `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) to display the result.
 ```javascript
@@ -416,8 +416,8 @@ Let's add a [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR21189
 
 1.  In your default.html file, add a [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) and a [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control after the `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133).
 
-```html
-        <body class="win-type-body">
+    ```html
+    <body class="win-type-body">
         <h1>Hello, world!</h1>
         <p>What' s your name?</p>
         <input id="nameInput" type="text" />
@@ -428,14 +428,14 @@ Let's add a [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR21189
         </label>
         <div id="ratingControlDiv" data-win-control="WinJS.UI.Rating">
         </div>
-    </body>
-```
-
-    For the [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) to load, your page must call [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975). Because our app is using one of the Visual Studio templates, your default.js already includes a call to **WinJS.UI.processAll**, as described earlier, so you don't have to add any code.
+    </body> 
+    ```
 
 2.  Run the app on the local machine. Notice the new [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control.
 
    ![The Hello, world app, with a Windows Library for JavaScript control](images/helloworld-4-js.png)
+
+> For the [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) to load, your page must call [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975). Because our app is using one of the Visual Studio templates, your default.js already includes a call to **WinJS.UI.processAll**, as described earlier, so you don't have to add any code.
 
 Right now, clicking the [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control changes the rating, but it doesn't do anything else. Let's use an event handler to do something when the user changes the rating.
 

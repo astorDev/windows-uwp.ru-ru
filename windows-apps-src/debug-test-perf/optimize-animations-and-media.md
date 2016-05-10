@@ -27,9 +27,9 @@ All of these types of animations are guaranteed to be independent:
 -   Animations to properties of type [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) when targeting the [**SolidColorBrush.Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) subproperty
 -   Animations to the following [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) properties when targeting subproperties of these return value types:
 
-    -   [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208911-rendertransform)
-    -   [**Projection**](https://msdn.microsoft.com/library/windows/apps/BR208911-projection)
-    -   [**Clip**](https://msdn.microsoft.com/library/windows/apps/BR208911-clip)
+    -   [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.rendertransform)
+    -   [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
+    -   [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 
 Dependent animations affect layout, which therefore cannot be calculated without extra input from the UI thread. Dependent animations include modifications to properties like [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) and [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718). By default, dependent animations are not run and require an opt-in from the app developer. When enabled, they run smoothly if the UI thread remains unblocked, but they begin to stutter if the framework or app is doing a lot of other work on the UI thread.
 
@@ -37,11 +37,11 @@ Almost all animations in the XAML framework are independent by default, but ther
 
 -   Setting the [**EnableDependentAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210356) property to allow a dependent animation to run on the UI thread. Convert these animations into an independent version. For example animate [**ScaleTransform.ScaleX**](https://msdn.microsoft.com/library/windows/apps/BR242946) and [**ScaleTransform.ScaleY**](https://msdn.microsoft.com/library/windows/apps/BR242948) instead of the [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) and [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) of an object. Don’t be afraid to scale objects like images and text. The framework applies bilinear scaling only while the [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) is being animated. The image/text will be rerasterized at the final size to ensure it’s always clear.
 -   Making per frame updates, which are effectively dependent animations. An example of this is applying transformations in the handler of the [**CompositonTarget.Rendering**](https://msdn.microsoft.com/library/windows/apps/BR228127) event.
--   Running any animation considered independent in an element with the [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR208911-cachemode) property set to **BitmapCache**. This is considered dependent because the cache must be re-rasterized for each frame.
+-   Running any animation considered independent in an element with the [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.cachemode) property set to **BitmapCache**. This is considered dependent because the cache must be re-rasterized for each frame.
 
 ### Don't animate a WebView or MediaElement
 
-Web content within a [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) control is not directly rendered by the XAML framework and it requires extra work to be composed with the rest of the scene. This extra work adds up when animating the control around the screen and can potentially introduce synchronization issues (for example, the HTML content might not move in sync with the rest of the XAML content on the page). When you need to animate a **WebView** control, swap it with a [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227702brush) for the duration of the animation.
+Web content within a [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) control is not directly rendered by the XAML framework and it requires extra work to be composed with the rest of the scene. This extra work adds up when animating the control around the screen and can potentially introduce synchronization issues (for example, the HTML content might not move in sync with the rest of the XAML content on the page). When you need to animate a **WebView** control, swap it with a [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webviewbrush.aspx) for the duration of the animation.
 
 Animating a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) is a similarly bad idea. Beyond the performance detriment, it can cause tearing or other artifacts in the video content being played.
 
@@ -60,7 +60,7 @@ The [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/win
 
 ### Animate CompositeTransform3D properties independently
 
-You can animate each property of a [**CompositeTransform3D**](https://msdn.microsoft.com/library/windows/apps/Dn914714) independently, so apply only the animations you need. For examples and more info, see [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/BR208911-transform3d). For more info about animating transforms, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/Mt187354) and [Key-frame and easing function animations](https://msdn.microsoft.com/library/windows/apps/Mt187352).
+You can animate each property of a [**CompositeTransform3D**](https://msdn.microsoft.com/library/windows/apps/Dn914714) independently, so apply only the animations you need. For examples and more info, see [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d). For more info about animating transforms, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/Mt187354) and [Key-frame and easing function animations](https://msdn.microsoft.com/library/windows/apps/Mt187352).
 
 ## Optimize media resources
 
@@ -74,7 +74,7 @@ For example, if your app working with a [**RandomAccessStream**](https://msdn.mi
 
 ### Display full screen video playback when possible
 
-In UWP apps, always use the [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/BR242926-isfullwindow) property on the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) to enable and disable full window rendering. This insures system level optimizations are used during media playback.
+In UWP apps, always use the [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.isfullwindow) property on the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) to enable and disable full window rendering. This insures system level optimizations are used during media playback.
 
 The XAML framework can optimize the display of video content when it is the only thing being rendered, resulting in an experience that uses less power and yields higher frame rates. For most efficient media playback set the size of a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) to be the width and height of the screen and don’t display other XAML elements
 
@@ -105,20 +105,20 @@ Don’t place these controls on top of media that is not full screen. Instead pl
 
 ### Delay setting the source for a MediaElement
 
-Media engines are expensive objects and the XAML framework delays loading dlls and creating large objects as long as possible. The [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) is forced to do this work after its source is set via the [**Source**](https://msdn.microsoft.com/library/windows/apps/BR242926-source) property or the [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR242926-setsource) method. Setting these when the user is really ready to play media delays the majority of the cost associated with the **MediaElement** as long as possible.
+Media engines are expensive objects and the XAML framework delays loading dlls and creating large objects as long as possible. The [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) is forced to do this work after its source is set via the [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.source) property or the [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) method. Setting these when the user is really ready to play media delays the majority of the cost associated with the **MediaElement** as long as possible.
 
 ### Set MediaElement.PosterSource
 
-Setting [**MediaElement.PosterSource**](https://msdn.microsoft.com/library/windows/apps/BR242926-postersource) enables XAML to release some GPU resources that would have otherwise been used. This API allows an app to use as little memory as possible.
+Setting [**MediaElement.PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.postersource) enables XAML to release some GPU resources that would have otherwise been used. This API allows an app to use as little memory as possible.
 
 ### Improve media scrubbing
 
 Scrubbing is always a tough task for media platforms to make really responsive. Generally people accomplish this by changing the value of a Slider. Here are a couple tips on how to make this as efficient as possible:
 
--   Either bind the value of a [**Slider**](https://msdn.microsoft.com/library/windows/apps/BR209614) to [**MediaElement.Position**](https://msdn.microsoft.com/library/windows/apps/BR242926-position) or update it based on a timer. Don't do both. If you choose the latter, make sure to use a reasonable update frequency for your timer. The XAML framework only updates **MediaElement.Position** only every 250 milliseconds during playback.
+-   Either bind the value of a [**Slider**](https://msdn.microsoft.com/library/windows/apps/BR209614) to [**MediaElement.Position**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.position) or update it based on a timer. Don't do both. If you choose the latter, make sure to use a reasonable update frequency for your timer. The XAML framework only updates **MediaElement.Position** only every 250 milliseconds during playback.
 -   The size of the step frequency on the Slider must scale with the length of the video.
--   Subscribe to the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/BR208911-pointerpressed), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/BR208911-pointermoved), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/BR208911-pointerreleased) events on the slider to set the [**MediaElement.PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/BR242926-playbackrate) property to 0 when the user drags the thumb of the slider.
--   In the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/BR208911-pointerreleased) event handler, manually set the media position to the slider position value to achieve optimal thumb snapping while scrubbing.
+-   Subscribe to the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointermoved.aspx), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) events on the slider to set the [**MediaElement.PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.playbackrate) property to 0 when the user drags the thumb of the slider.
+-   In the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) event handler, manually set the media position to the slider position value to achieve optimal thumb snapping while scrubbing.
 
 ### Match video resolution to device resolution
 
@@ -134,7 +134,7 @@ When including short, low-latency audio effects, for example in games, use WAV f
 
 ### Hardware audio offloading
 
-For hardware audio offload to be automatically applied, [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/BR242926-audiocategory) must be set to **ForegroundOnlyMedia** or **BackgroundCapableMedia**. Hardware audio offload optimizes audio rendering which can improve functionality and battery life.
+For hardware audio offload to be automatically applied, [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.audiocategory) must be set to **ForegroundOnlyMedia** or **BackgroundCapableMedia**. Hardware audio offload optimizes audio rendering which can improve functionality and battery life.
 
 ## Optimize image resources
 
@@ -176,9 +176,9 @@ Note that Image.Stretch should be considered when determining the size of the de
 
 In the event that you don't set an explicit decode size, XAML will make a best effort attempt to save memory by decoding an image to the exact size it will appear on-screen according to the containing page’s initial layout. You're advised to write your application in such a way as to make use of this feature when possible. This feature will be disabled if any of the following conditions are met.
 
--   The [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) is connected to the live XAML tree after setting the content with [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) or [**UriSource**](https://msdn.microsoft.com/library/windows/apps/BR243235-urisource).
+-   The [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) is connected to the live XAML tree after setting the content with [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) or [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx).
 -   The image is decoded using synchronous decoding such as [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255).
--   The image is hidden via setting [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) to 0 or [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208911-visibility) to **Collapsed** on the host image element or brush or any parent element.
+-   The image is hidden via setting [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) to 0 or [**Visibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility) to **Collapsed** on the host image element or brush or any parent element.
 -   The image control or brush uses a [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242968) of **None**.
 -   The image is used as a [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756).
 -   `CacheMode="BitmapCache"` is set on the image element or on any parent element.
@@ -186,7 +186,7 @@ In the event that you don't set an explicit decode size, XAML will make a best e
 
 In the above scenarios, setting an explicit decode size is the only way to achieve memory savings.
 
-You should always attach a [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) to the live tree before setting the source. Any time an image element or brush is specified in markup, this will automatically be the case. Examples are provided below under the heading "Live tree examples". You should always avoid using [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) and instead use [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) when setting a stream source. And it's a good idea to avoid hiding image content (either with zero opacity or with collapsed visibility) while waiting for the [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/BR243235-imageopened) event to be raised. Doing this is a judgment call: you won't benefit from automatic right-sized decoding if it's done. If your app must hide image content initially then it should also set the decode size explicitly if possible.
+You should always attach a [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) to the live tree before setting the source. Any time an image element or brush is specified in markup, this will automatically be the case. Examples are provided below under the heading "Live tree examples". You should always avoid using [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) and instead use [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) when setting a stream source. And it's a good idea to avoid hiding image content (either with zero opacity or with collapsed visibility) while waiting for the [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) event to be raised. Doing this is a judgment call: you won't benefit from automatic right-sized decoding if it's done. If your app must hide image content initially then it should also set the decode size explicitly if possible.
 
 **Live tree examples**
 
@@ -220,11 +220,11 @@ myImage.Source = bitmapImage;
 
 ### Caching optimizations
 
-Caching optimizations are in effect for images that use [**UriSource**](https://msdn.microsoft.com/library/windows/apps/BR243235-urisource) to load content from an app package or from the web. The URI is used to uniquely identify the underlying content, and internally the XAML framework will not download or decode the content multiple times. Instead, it will use the cached software or hardware resources to display the content multiple times.
+Caching optimizations are in effect for images that use [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx) to load content from an app package or from the web. The URI is used to uniquely identify the underlying content, and internally the XAML framework will not download or decode the content multiple times. Instead, it will use the cached software or hardware resources to display the content multiple times.
 
 The exception to this optimization is if the image is displayed multiple times at different resolutions (which can be specified explicitly or through automatic right-sized decoding). Each cache entry also stores the resolution of the image, and if XAML cannot find an image with a source URI that matches the required resolution then it will decode a new version at that size. It will not, however, download the encoded image data again.
 
-Consequently, you should embrace using [**UriSource**](https://msdn.microsoft.com/library/windows/apps/BR243235-urisource) when loading images from an app package, and avoid using a file stream and [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) when it's not required.
+Consequently, you should embrace using [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx) when loading images from an app package, and avoid using a file stream and [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) when it's not required.
 
 ### Images in virtualized panels (ListView, for instance)
 
@@ -257,42 +257,42 @@ Your app should use [**SoftwareBitmap**](https://msdn.microsoft.com/library/wind
 One use case for scaling images is creating thumbnails. Although you could use [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) to provide small versions of images, UWP provides even more efficient APIs for retrieving thumbnails. [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) provides the thumbnails for images that have the file system already cached. This provides even better performance than the XAML APIs because the image doesn’t need to be opened or decoded.
 
 > [!div class="tabbedCodeSnippets"]
-```csharp
-FileOpenPicker picker = new FileOpenPicker();
-picker.FileTypeFilter.Add(".bmp");
-picker.FileTypeFilter.Add(".jpg");
-picker.FileTypeFilter.Add(".jpeg");
-picker.FileTypeFilter.Add(".png");
-picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-
-StorageFile file = await picker.PickSingleFileAsync();
-
-StorageItemThumbnail fileThumbnail = await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64);
-
-BitmapImage bmp = new BitmapImage();
-bmp.SetSource(fileThumbnail);
-
-Image img = new Image();
-img.Source = bmp;
-```
-```vb
-Dim picker As New FileOpenPicker()
-picker.FileTypeFilter.Add(".bmp")
-picker.FileTypeFilter.Add(".jpg")
-picker.FileTypeFilter.Add(".jpeg")
-picker.FileTypeFilter.Add(".png")
-picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary
-
-Dim file As StorageFile = Await picker.PickSingleFileAsync()
-
-Dim fileThumbnail As StorageItemThumbnail = Await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64)
-
-Dim bmp As New BitmapImage()
-bmp.SetSource(fileThumbnail)
-
-Dim img As New Image()
-img.Source = bmp
-```
+> ```csharp
+> FileOpenPicker picker = new FileOpenPicker();
+> picker.FileTypeFilter.Add(".bmp");
+> picker.FileTypeFilter.Add(".jpg");
+> picker.FileTypeFilter.Add(".jpeg");
+> picker.FileTypeFilter.Add(".png");
+> picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+> 
+> StorageFile file = await picker.PickSingleFileAsync();
+> 
+> StorageItemThumbnail fileThumbnail = await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64);
+> 
+> BitmapImage bmp = new BitmapImage();
+> bmp.SetSource(fileThumbnail);
+> 
+> Image img = new Image();
+> img.Source = bmp;
+> ```
+> ```vb
+> Dim picker As New FileOpenPicker()
+> picker.FileTypeFilter.Add(".bmp")
+> picker.FileTypeFilter.Add(".jpg")
+> picker.FileTypeFilter.Add(".jpeg")
+> picker.FileTypeFilter.Add(".png")
+> picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary
+> 
+> Dim file As StorageFile = Await picker.PickSingleFileAsync()
+> 
+> Dim fileThumbnail As StorageItemThumbnail = Await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64)
+> 
+> Dim bmp As New BitmapImage()
+> bmp.SetSource(fileThumbnail)
+> 
+> Dim img As New Image()
+> img.Source = bmp
+> ```
 
 ### Decode images once
 

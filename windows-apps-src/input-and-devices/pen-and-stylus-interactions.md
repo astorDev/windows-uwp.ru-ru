@@ -68,28 +68,9 @@ In this example, an [**InkCanvas**](https://msdn.microsoft.com/library/windows/a
 
 This series of images shows how pen input is rendered by this [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><img src="images/ink_basic_1_small.png" alt="The blank InkCanvas with a background image" /></td>
-<td align="left"><img src="images/ink_basic_2_small.png" alt="The InkCanvas with ink strokes" /></td>
-<td align="left"><img src="images/ink_basic_3_small.png" alt="The InkCanvas with one stroke erased" /></td>
-</tr>
-<tr class="even">
-<td align="left">The blank [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) with a background image.</td>
-<td align="left">The [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) with ink strokes.</td>
-<td align="left">The [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) with one stroke erased.
-<p>Note how erase operates on an entire stroke, not a portion.</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+| ![The blank InkCanvas with a background image](images/ink_basic_1_small.png) | ![The InkCanvas with ink strokes](images/ink_basic_2_small.png) | ![The InkCanvas with one stroke erased](images/ink_basic_3_small.png) |
+| --- | --- | ---|
+| The blank [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with a background image. | The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with ink strokes. | The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with one stroke erased (note how erase operates on an entire stroke, not a portion). |
 
 The inking functionality supported by the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control is provided by a code-behind object called the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
 
@@ -196,10 +177,9 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 These images shows how pen input is processed and customized by the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081).
 
-|                                                                                      |                                                                                          |
-|--------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
 | ![the inkcanvas with default black ink strokes](images/ink-basic-custom-1-small.png) | ![the inkcanvas with user selected red ink strokes](images/ink-basic-custom-2-small.png) |
-| The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with default black ink strokes.        | The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with user selected red ink strokes.        |
+| --- | -- |
+| The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with default black ink strokes. | The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with user selected red ink strokes. |
 
  
 
@@ -225,7 +205,6 @@ For this example, we use the MainPage.xaml and MainPage.xaml.cs files to host al
     Here, we add a canvas (below the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)) to draw the selection stroke. Using a separate layer to draw the selection stroke leaves the **InkCanvas** and its content untouched.
 
     ![the blank inkcanvas with an underlying selection canvas](images/ink-unprocessed-1-small.png)
-
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -249,7 +228,6 @@ For this example, we use the MainPage.xaml and MainPage.xaml.cs files to host al
 ```
 
 2.  In MainPage.xaml.cs, we declare a couple of global variables for keeping references to aspects of the selection UI. Specifically, the selection lasso stroke and the bounding rectangle that highlights the selected strokes.
-
 ```    CSharp
 // Stroke selection tool.
     private Polyline lasso;
@@ -266,7 +244,6 @@ For this example, we use the MainPage.xaml and MainPage.xaml.cs files to host al
     Finally, we assign listeners for the [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702) and [**StrokesErased**](https://msdn.microsoft.com/library/windows/apps/dn948767) events of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081). We use the handlers for these events to clean up the selection UI if a new stroke is started or an existing stroke is erased.
 
     ![the inkcanvas with default black ink strokes](images/ink-unprocessed-2-small.png)
-
 ```    CSharp
 public MainPage()
     {
@@ -315,7 +292,6 @@ public MainPage()
     All selection functionality is implemented in these handlers, including the lasso stroke and the bounding rectangle.
 
     ![the selection lasso](images/ink-unprocessed-3-small.png)
-
 ```    CSharp
 // Handle unprocessed pointer events from modifed input.
     // The input is used to provide selection functionality.
@@ -363,7 +339,6 @@ public MainPage()
 5.  To conclude the PointerReleased event handler, we clear the selection layer of all content (the lasso stroke) and then draw a single bounding rectangle around the ink strokes encompassed by the lasso area.
 
     ![the selection bounding rect](images/ink-unprocessed-4-small.png)
-
 ```    CSharp
 // Draw a bounding rectangle, on the selection canvas, encompassing 
     // all ink strokes within the lasso area.
@@ -398,7 +373,6 @@ public MainPage()
 6.  Finally, we define handlers for the [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702) and [**StrokesErased**](https://msdn.microsoft.com/library/windows/apps/dn948767) InkPresenter events.
 
     These both just call the same cleanup function to clear the current selection whenever a new stroke is detected.
-
 ```    CSharp
 // Handle new ink or erase strokes to clean up selection UI.
     private void StrokeInput_StrokeStarted(
@@ -415,7 +389,6 @@ public MainPage()
 ```
 
 7.  Here's the function to remove all selection UI from the selection canvas when a new stroke is started or an existing stroke is erased.
-
 ```    CSharp
 // Clean up selection UI.
     private void ClearSelection()
