@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1/windows-apps-src/publish/manage-account-users.md) | HandedOffSuccess | [Details](#18e25d0064652089d450eec811a7a5d24b8dc3e83513)
+ [windows-apps-src\publish\view-app-identity-details.md](https://github.com/Microsoft/windows-apps/blob/a25d87556bb85718f818af5b586f54e6985aaaa4/windows-apps-src/publish/view-app-identity-details.md) | HandedOffSuccess | [Details](#f00d817616d473ef220ebc1817c2bf9207a7aea03546)
 
 ## Item Details
-##### <a name='18e25d0064652089d450eec811a7a5d24b8dc3e83513'></a> Source: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1/windows-apps-src/publish/manage-account-users.md)
+##### <a name='f00d817616d473ef220ebc1817c2bf9207a7aea03546'></a> Source: [windows-apps-src\publish\view-app-identity-details.md](https://github.com/Microsoft/windows-apps/blob/a25d87556bb85718f818af5b586f54e6985aaaa4/windows-apps-src/publish/view-app-identity-details.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/0227b963510ef2f8a2952da27034aaad0a9b0a86/ol-handoff/Microsoft/windows-apps.ru-ru/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ru-ru.xlf)
-* Handoff Datetime: 2016-05-11 17:21:50
+* Handoff File: [view-app-identity-details.28e38a0d58b50b2c3f2749a9cb230e57494911dc.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/ea171be35ce989b63d565face7e52fb259ecee6f/ol-handoff/Microsoft/windows-apps.ru-ru/master/view-app-identity-details.28e38a0d58b50b2c3f2749a9cb230e57494911dc.ru-ru.xlf)
+* Handoff Datetime: 2016-05-11 17:50:21
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
