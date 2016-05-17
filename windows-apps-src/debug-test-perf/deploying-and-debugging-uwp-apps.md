@@ -1,85 +1,90 @@
 ---
 author: mcleblanc
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
-description: This article guides you through the steps to target various deployment and debugging targets.
-title: Deploying and debugging Universal Windows Platform (UWP) apps
+description: В данной статье описываются действия, которые необходимо выполнить, чтобы выбрать то или иное целевое устройство развертывания и отладки.
+title: Развертывание и отладка приложений универсальной платформы Windows (UWP)
 ---
 
-# Deploying and debugging Universal Windows Platform (UWP) apps
+# Развертывание и отладка приложений универсальной платформы Windows (UWP)
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This article guides you through the steps to target various deployment and debugging targets.
+В данной статье описываются действия, которые необходимо выполнить, чтобы выбрать то или иное целевое устройство развертывания и отладки.
 
-Microsoft Visual Studio allows you to deploy and debug your Universal Windows Platform (UWP) apps on a variety of Windows 10 devices. Visual Studio will handle the process of building and registering the application on the target device.
+Microsoft Visual Studio позволяет выполнять развертывание и отладку приложений универсальной платформы Windows (UWP) на различных устройствах с Windows 10. Visual Studio самостоятельно создает и регистрирует приложения на целевых устройствах.
 
-## Picking a deployment target
+## Выбор цели развертывания
 
-To pick a target, navigate to the debug target dropdown next to the **Start Debugging** button and select which target you want to deploy your application to. After the target is selected, choose **Start Debugging (F5)** to deploy and debug on that target, or press **Ctrl+F5** to just deploy to that target.
+Чтобы выбрать целевое устройство развертывания, перейдите к раскрывающемуся меню выбора цели отладки, которое располагается рядом с кнопкой **Начать отладку**, и выберите устройство, на котором вы хотите развернуть свое приложение. Выбрав целевое устройство, нажмите **Начать отладку (F5)**, чтобы выполнить на нем развертывание и отладку, или **Ctrl+F5**, чтобы выполнить только развертывание.
 
 ![](images/debug-device-target-list.png)
 
--   **Local Machine** will deploy the application to your current development machine. This option is only available if your application's **Target Platform Min. Version** is less than or equal to the operating system on your development machine.
--   **Simulator** will deploy the application to a simulated environment on your current development machine. This option is only available if your application's **Target Platform Min. Version** is less than or equal to the operating system on your development machine.
--   **Device** will deploy the application to a USB connected device. The device must be developer unlocked and have the screen unlocked.
--   An **Emulator** target will boot up and deploy the application to an emulator with the configuration specified in the name. Emulators are only available on Hyper-V enabled machines running Windows 8.1 or beyond.
--   **Remote Machine** will let you specify a remote target to deploy the application. More information about deploying to a remote machine can be found in [Specifying a remote device](#specifying-a-remote-device).
+-   **Локальный компьютер**. Позволяет развернуть приложение на компьютере, на котором в настоящее время выполняется разработка. Этот параметр доступен, только если **Минимальная версия целевой платформы** приложения ниже версии операционной системы компьютера, на котором выполняется разработка, или совпадает с ней.
+-   **Симулятор.** Позволяет развернуть приложение в среде моделирования на компьютере, на котором в настоящее время выполняется разработка. Этот параметр доступен, только если **Минимальная версия целевой платформы** приложения ниже версии операционной системы компьютера, на котором выполняется разработка, или совпадает с ней.
+-   **Устройство.** Позволяет развернуть приложение на устройстве, подключенном с помощью USB. На устройстве должен быть включен режим разработчика, а его экран должен быть разблокирован.
+-   **Эмулятор.** Позволяет загрузить и развернуть приложение на эмуляторе, конфигурация которого указана в его названии. Эмуляторы доступны только на машинах со включенным Hyper-V под управлением Windows 8.1 или более старшей версии.
+-   **Удаленный компьютер.** Позволяет указать удаленное целевое устройство для развертывания приложения. Дополнительные сведения о развертывании на удаленном компьютере см. в разделе [Определение удаленного устройства](#specifying-a-remote-device).
 
-## Specifying a remote device
+## Определение удаленного устройства
 
-### C# and Microsoft Visual Basic
+### C# и Microsoft Visual Basic
 
-To specify a remote machine for C# or Microsoft Visual Basic apps, select **Remote Machine** in the debug target dropdown. The **Remote Connections** dialog will appear which will let you specify an IP Address or select a discovered device. By default, the **Universal** authentication mode is selected. To determine which authentication mode to use, see [Authentication modes](#authentication-modes).
+Чтобы указать удаленный компьютер для развертывания приложения на C# или Microsoft Visual Basic, выберите **Удаленный компьютер** в раскрывающемся меню выбора целевого объекта отладки. Появится диалоговое окно **Удаленные подключения**, которое позволяет указать IP-адрес или выбрать обнаруженное устройство. По умолчанию выбран **универсальный** режим проверки подлинности. Чтобы определить, какой режим проверки подлинности следует использовать, см. раздел [Режимы проверки подлинности](#authentication-modes).
 
 ![](images/debug-remote-connections.png)
 
-To return to this dialog, you can open project properties and navigate to the **Debug** tab. From there, select **Find…** next to **Remote machine:**
+Чтобы вернуться к этому диалоговому окну, вы можете открыть свойства проекта и перейти на вкладку **Отладка**. После этого нажмите **Найти…** рядом с элементом **Удаленный компьютер**.
 
 ![](images/debug-remote-machine-config.png)
 
-To deploy an application to a remote PC, you will also need to download and install the Visual Studio Remote Tools on the target PC. See [Remote PC instructions](#remote-pc-instructions) for full instructions.
+Чтобы развернуть приложение на удаленном компьютере, вам также понадобится загрузить и установить инструменты удаленной отладки Visual Studio на целевом компьютере. Подробные инструкции см. в разделе [Инструкции для удаленных компьютеров](#remote-pc-instructions).
 
-### C++ and JavaScript
+### C++ и JavaScript
 
-To specify a remote machine target for a C++ or JavaScript UWP app, go to project properties by right clicking on the project in the **Solution Explorer**, and clicking **Properties**. Navigate to **Debugging** settings and change **Debugger to launch** to **Remote Machine**. Then fill in the **Machine Name** (or click **Locate…** to find one) and set the **Authentication Type** property.
+Чтобы указать удаленный компьютер для развертывания приложений UWP на C++ или JavaScript, перейдите в раздел свойств проекта, щелкнув правой кнопкой мыши на проекте в **Обозревателе решений** и выбрав **Свойства**. Перейдите в раздел настроек **отладки** и измените **Загружаемый отладчик** на **Удаленный компьютер**. После этого введите **Имя компьютера** (или щелкните **Найти…** , чтобы найти его) и укажите **Тип проверки подлинности** .
 
 ![](images/debug-property-pages.png)
-After the machine is specified, you can select **Remote Machine** in the debug target dropdown to return to that specified machine. Only one remote machine can be selected at a time.
+Указав компьютер, выберите **Удаленный компьютер** в раскрывающемся меню выбора цели отладки, чтобы вернуться к указанной машине. Одновременно можно выбрать только один удаленный компьютер.
 
-### Remote PC instructions
+### Инструкции для удаленных компьютеров
 
-To deploy to a remote PC, the target PC must have the Visual Studio Remote Tools installed. The remote PC must also be running a version of Windows that is greater than or equal to your apps **Target Platform Min. Version** property. Once you have installed the remote tools, you must launch the remote debugger on the target PC. To do this, search for **Remote Debugger** in the **Start** menu launch it, and if prompted allow the debugger to configure your firewall settings. By default, the debugger launches with Windows authentication. This will require user credentials if the logged in user is not the same on both PCs. To change it to **No authentication**, go to **Tools** -&gt; **Options** in the **Remote Debugger** and set it to **No Authentication**. Once the remote debugger is setup, you can deploy from your development machine.
+Чтобы выполнить развертывание на удаленном компьютере, на целевой компьютер необходимо установить инструменты удаленной отладки Visual Studio. На удаленном компьютере также должна быть установлена версия Windows, которая выше указанной в свойстве **Минимальная версия целевой платформы** приложения или которая совпадает с ней. После установки инструментов удаленной отладки необходимо запустить удаленный отладчик на целевом ПК. Для этого найдите **Удаленный отладчик** в меню **Пуск** и запустите его. При появлении запроса разрешите отладчику настроить параметры брандмауэра. По умолчанию при запуске отладчика открывается окно проверки подлинности Windows. Если вход на двух компьютерах выполнен от лица разных пользователей, то для прохождения проверки потребуются учетные данные пользователя. Чтобы выбрать вариант **Без проверки подлинности**, перейдите в пункт **Инструменты** -&gt; **Параметры** в меню **Удаленный отладчик** и установите значение **Без проверки подлинности**. Настроив удаленный отладчик, вы можете осуществить развертывание с того компьютера, на котором выполняется разработка.
 
-For more information see the [Remote Tools for Visual Studio]( http://go.microsoft.com/fwlink/?LinkId=717039) download page.
+Дополнительные сведения см. на странице скачивания [инструментов удаленной отладки для Visual Studio]( http://go.microsoft.com/fwlink/?LinkId=717039).
 
-## Authentication modes
+## Режимы проверки подлинности
 
-There are three authentication modes for remote machine deployment:
+Имеется три режима проверки подлинности для развертывания на удаленном компьютере.
 
-- **Universal (Unencrypted Protocol)**: Use this authentication mode whenever you are deploying to a remote device that is not a Windows PC (desktop or laptop). Currently, this is only IoT devices. Universal (Unencrypted Protocol) should only be used on trusted networks. The debugging connection is vulnerable to malicious users who could intercept and change data being passed between the development and remote machine.
-- **Windows**: This authentication mode is only intended to be used for remote PC deployment (desktop or laptop). Use this authentication mode when you have access to the credentials of the logged in user of the target machine. This is the most secure channel for remote deployment.
-- **None**: This authentication mode is only intended to be used for remote PC deployment (desktop or laptop). Use this authentication mode when you have a test machine setup in an environment that has a test account logged in and you cannot enter the credentials. Make sure the remote debugger settings are set to accept no authentication.
+- **Универсальный (незашифрованный протокол)**. Используйте этот режим проверки подлинности при развертывании на удаленном устройстве (настольных системах и ноутбуках) под управлением ОС, отличной от Windows. На данный момент сюда относятся только устройства IoT. Универсальный (незашифрованный протокол) следует использовать только в доверенных сетях. Подключение для отладки уязвимо для злонамеренных пользователей, которые могут перехватывать и изменить данные, передаваемые между компьютером разработчика и удаленным компьютером.
+- **Windows**. Этот режим проверки подлинности предназначен только для развертывания на удаленных компьютерах (настольных системах и ноутбуках). Используйте этот режим проверки подлинности при наличии доступа к учетным данным пользователя, от лица которого выполнен вход на целевом компьютере. Это наиболее безопасный режим удаленного развертывания.
+- **Нет**. Этот режим проверки подлинности предназначен только для развертывания на удаленных компьютерах (настольных системах и ноутбуках). Используйте этот режим проверки подлинности, если тестовый компьютер работает в среде, в которой вход выполнен под тестовой учетной записью, и если вы не можете ввести учетные данные. Убедитесь, что параметры удаленного отладчика позволяют отказаться от проверки подлинности.
 
-## Debugging options
+## Параметры отладки
 
-On Windows 10, the startup performance of UWP apps is improved by proactively launching and then suspending apps in a technique called [prelaunch](https://msdn.microsoft.com/library/windows/apps/Mt593297). Many applications will not need to do anything special to work in this mode, but some applications may need to adjust their behavior. To help debug any issues in these code paths you can start debugging the app from Visual Studio in prelaunch mode. Debugging is supported both from a Visual Studio project (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Universal Windows App Prelaunch**), and for apps already installed on the machine (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Installed App Package**, and check the box for **Activate app with Prelaunch**). For more information read about how to [Debug UWP Prelaunch]( http://go.microsoft.com/fwlink/?LinkId=717245).
+В Windows 10 скорость запуска приложений UWP увеличена благодаря запуску и приостановке приложений с помощью метода, называемого [предварительным запуском](https://msdn.microsoft.com/library/windows/apps/Mt593297). Многие приложения не выполняют никаких действий в этом режиме, однако другие могут использовать его для регулировки своей работы. Чтобы облегчить отладку проблем, связанных с этими ветвями кода, вы можете начать работу с приложением в Visual Studio в режиме предварительного запуска. Вы можете выполнить отладку как проекта Visual Studio (**Отладка** -&gt; **Другие целевые объекты отладки** -&gt; **Отладка предварительного запуска универсального приложения для Windows**), так и приложений, уже установленных на компьютере (выберите элементы **Отладка** -&gt; **Другие целевые объекты отладки** -&gt; **Отладка установленного пакета приложения** и установите флажок **Активировать приложение с помощью предварительного запуска**). Дополнительные инструкции см. в статье [Отладка предварительного запуска приложений UWP]( http://go.microsoft.com/fwlink/?LinkId=717245).
 
-You can set the following deployment options on the **Debug** property page of the startup project.
+Вы можете установить следующие параметры развертывания на странице свойств **Отладка** запускаемого проекта.
 
-**Allow Network Loopback**
+**Разрешение на использование петлевого адреса**
 
-For security reasons, a UWP app that is installed in the standard manner is not allowed to make network calls to the device it is installed on. By default, Visual Studio deployment creates an exemption from this rule for the deployed app. This exemption allows you to test communication procedures on a single machine. Before submitting your app to the Windows Store, you should test your app without the exemption.
+Из соображений безопасности приложению UWP, установленному стандартным образом, запрещено выполнять сетевые вызовы того устройства, на котором оно установлено. По умолчанию при развертывании с помощью Visual Studio для разворачиваемого приложения создается исключение. Это исключение позволяет тестировать процедуры связи на одном компьютере. Перед отправкой приложения в Магазин Windows необходимо проверить работу приложения без использования исключений.
 
-To remove the network loopback exemption from the app:
+Чтобы удалить из приложения исключение, связанное с использованием петлевого адреса, выполните следующие действия.
 
--   On the C# and Visual Basic **Debug** property page, clear the **Allow Network Loopback** check box.
--   On the JavaScript and C++ **Debugging** property page, set the **Allow Network Loopback** value to **No**.
+-   На странице свойств **Отладка** проектов C# и Visual Basic снимите флажок **Разрешить петлевой адрес**.
+-   На странице свойств **Отладка** проектов JavaScript и C++ установите для параметра **Разрешить петлевой адрес** значение **Нет**.
 
-**Do not launch, but debug my code when it starts (C# and Visual Basic) / Launch App (JavaScript and C++)**
+**"Не запускать, а отлаживать мой код при открытии" (C# и Visual Basic)/"Запустить приложение" (JavaScript и C++)**
 
-To configure the deployment to automatically start a debugging session when the app is launched:
+Чтобы настроить автоматическое начало сеанса отладки при запуске приложения во время развертывания, выполните следующие действия.
 
--   On the C# and Visual Basic **Debug** property page, check the **Do not launch, but debug my code when it starts** check box.
--   On the JavaScript and C++ **Debugging** property page, set the **Launch Application** value to **Yes**.
+-   На странице свойств **Отладка** проектов C# и Visual Basic установите флажок **Не запускать, а отлаживать мой код при открытии**.
+-   На странице свойств **Отладка** проектов JavaScript и C++ установите для параметра **Запустить приложение** значение **Да**.
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

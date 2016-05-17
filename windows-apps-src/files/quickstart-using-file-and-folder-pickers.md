@@ -1,66 +1,66 @@
 ---
 author: TylerMSFT
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
-title: Open files and folders with a picker
-description: Access files and folders by letting the user interact with a picker. You can use the FileOpenPicker and FileSavePicker classes to gain access to files, and the FolderPicker to gain access to a folder.
+title: Открытие файлов и папок с помощью средства выбора
+description: Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Можно использовать классы FileOpenPicker и FileSavePicker для получения доступа к файлам, а также FolderPicker — для получения доступа к папкам.
 ---
 
-# Open files and folders with a picker
+# Открытие файлов и папок с помощью средства выбора
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Important APIs**
+**Важные API**
 
 -   [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847)
 -   [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)
 -   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
 
-Access files and folders by letting the user interact with a picker. You can use the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) classes to gain access to files, and the [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) to gain access to a folder.
+Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Можно использовать классы [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) и [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) для получения доступа к файлам, а также [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) — для получения доступа к папкам.
 
-**Note**  Also see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994).
+**Примечание.**  См. также [пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
- 
+ 
 
-## Prerequisites
-
-
--   **Understand async programming for Universal Windows Platform (UWP) apps**
-
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
-
--   **Access permissions to the location**
-
-    See [File access permissions](file-access-permissions.md).
-
-## File picker UI
+## Необходимые условия
 
 
-A file picker displays information to orient users and to provide a consistent experience when users open or save files.
+-   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)**
 
-That information includes:
+    Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   The current location
--   The item or items that the user picked
--   A tree of locations that the user can browse to. These locations include file system locations—such as the Music or Downloads folder—as well as apps that implement the file picker contract (such as Camera, Photos, and Microsoft OneDrive).
+-   **Права на доступ к расположению**
 
-An email app might display a file picker so that the user can pick attachments.
+    См. раздел [Разрешения на доступ к файлам](file-access-permissions.md).
+
+## Пользовательский интерфейс средства выбора файлов
+
+
+Средство выбора файлов отображает сведения, позволяющие сориентировать пользователей и обеспечить им привычное взаимодействие с системой при доступе к файлам и их сохранении.
+
+Эти сведения включают следующее:
+
+-   текущее расположение;
+-   выбранный пользователем элемент или несколько элементов;
+-   дерево расположений, к которым может перейти пользователь. Они включают расположения в файловой системе, например папку «Музыка» или «Загрузки», а также приложения, которые реализуют контракт средства выбора файлов (такие как «Камера», «Фотографии» и Microsoft OneDrive).
+
+Почтовое приложение может отображать средство выбора файлов, чтобы предоставить пользователю возможность выбора вложений.
 
 ![a file picker with two files picked to be opened.](images/picker-multifile-600px.png)
 
-## How pickers work
+## Работа средств выбора
 
 
-Through a picker, your app can gain access to files and folders on the user's system. Through the picker, the user browses their system to pick files (or folders) to open or save to. Your app receives those picks as [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) and [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) objects, which you can then operate on.
+Используя средство выбора, ваше приложение может получить доступ к файлам и папкам в системе пользователя. С помощью средства выбора пользователь ищет в системе файлы (или папки) для открытия или сохранения. Ваше приложение получает эти выбранные элементы в виде объектов [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) и [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), с которыми потом можно работать.
 
-The picker uses a single, unified interface to let the user pick files and folders from the files system or from other apps. Files picked from other apps are like files from the file system: they are returned as [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) objects. In general, your app can operate on them in the same ways as other such objects. Other apps make files available by participating in file picker contracts. If you want your app to provide files, a save location, or file updates to other apps, see [Integrating with file picker contracts](https://msdn.microsoft.com/library/windows/apps/hh465192).
+Средство выбора использует единый унифицированный интерфейс для обеспечения пользователю возможности выбора файлов и папок из файловой системы либо из других приложений. Файлы, выбранные из других приложений, воспринимаются как файлы из файловой системы: они возвращаются как объекты [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). В целом ваше приложение может работать с ними так же, как с другими объектами подобного типа. Другие приложения обеспечивают доступ к файлам за счет участия в контрактах "Средство выбора файлов". Сведения о настройке вашего приложения для предоставления другим приложениям файлов, места сохранения или обновлений файлов см. в разделе [Взаимодействие с контрактами «Средство выбора файлов»](https://msdn.microsoft.com/library/windows/apps/hh465192).
 
-For example, you might call the file picker in your app so that your user can open a file. This makes your app the calling app. The file picker interacts with the system and/or other apps to let the user navigate and pick the file. When your user chooses a file, the file picker returns that file to your app. Here's the process for the case where the user chooses a file from another app, such as OneDrive. In this case OneDrive is the providing app.
+Например, вы можете вызывать средство выбора файлов в своем приложении, чтобы пользователь имел возможность открыть необходимый файл. За счет этого ваше приложение становится вызывающим приложением. Средство выбора файлов взаимодействует с системой и/или другими приложениями, обеспечивая пользователю возможность поиска и выбора определенного файла. Когда пользователь выбирает файл, средство выбора файлов возвращает этот файл в ваше приложение. Ниже показан процесс, происходящий, когда пользователь выбирает файл из другого приложения, например OneDrive. В данном случае OneDrive является поставляющим приложением.
 
-![a daigram that shows the process of one app getting a file to open from another app using the file picker as an interface bewteen the two apps.](images/app-to-app-diagram-600px.png)
+![На схеме одно приложение получает файл, который нужно открыть из другого, с использованием средства выбора файлов, играющего роль интерфейса между двумя приложениями.](images/app-to-app-diagram-600px.png)
 
-## Pick a single file to open it: complete code listing
+## Выбор одного файла для открытия: приводится полный код
 
 
 ```CSharp
@@ -84,14 +84,14 @@ else
 }
 ```
 
-For code to pick multiple files, see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994).
+Код выбора нескольких файлов см. в разделе [Пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
-## Pick a single file to open it: step-by-step
+## Выбор одного файла для открытия: пошаговые инструкции
 
 
-Using a file picker involves creating and customizing a file picker object, and then showing the file picker so the user can pick one or more items.
+Использование средства выбора файлов включает создание и настройку объекта средства выбора файлов и отображение средства выбора файлов, позволяющее пользователю выбрать элементы.
 
-1.  **Create and customize a FileOpenPicker**
+1.  **Создание и настройка FileOpenPicker**
 
 ```CSharp
 var picker = new Windows.Storage.Pickers.FileOpenPicker();
@@ -103,19 +103,20 @@ var picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.FileTypeFilter.Add(".png");
 ```
 
-Set properties on the file picker object that are relevant to your users and your app. For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://msdn.microsoft.com/library/windows/apps/hh465182).
+Задайте свойства объекта средства выбора файлов, соответствующие вашим пользователям и приложению. Указания по настройке средства выбора файлов см. в разделе [Руководство и контрольный список для средств выбора файлов](https://msdn.microsoft.com/library/windows/apps/hh465182).
 
-This example creates a rich, visual display of pictures in a convenient location that the user can pick from by setting three properties: [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855), [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854), and [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850).
+Этот пример создает сложное визуальное отображение в виде картинок в подходящем расположении, которое пользователь может выбрать, установив три свойства: [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855), [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) и [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850).
 
--   Setting [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) to the **Thumbnail** [**PickerViewMode**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) enum value creates a rich, visual display by using picture thumbnails to represent files in the file picker. Do this for picking visual files such as pictures or videos. Otherwise, use [**PickerViewMode.List**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list). A hypothetical email app with **Attach Picture or Video** and **Attach Document** features would set the **ViewMode** appropriate to the feature before showing the file picker.
+-   Установка [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) на перечислимые значения **Thumbnail**
+          [**PickerViewMode**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) создает сложное визуальное отображение за счет эскизов картинок, представляющих файлы в средстве выбора файлов. Выполните это, чтобы выбрать визуальные файлы, например фотографии или видео. В других случаях воспользуйтесь [**PickerViewMode.List**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list). Гипотетическое почтовое приложение с функциями **Прикрепить изображение или видео** и **Прикрепить документ** установит свойство **ViewMode**, соответствующее функции, прежде чем отобразить средство выбора файлов.
 
--   Setting [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) to Pictures using [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) starts the user in a location where they're likely to find pictures. Set **SuggestedStartLocation** to a location appropriate for the type of file being picked, for example Music, Pictures, Videos, or Documents. From the start location, the user can navigate to other locations.
+-   Выбор библиотеки «Изображения» в качестве значения для параметра [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) с помощью [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) позволяет пользователю начать работу в расположении вероятного нахождения изображений. Присвойте свойство **SuggestedStartLocation** расположению, подходящему для типа выбранных файлов, например «Музыка», «Изображения», «Видео» или «Документы». Из начального расположения пользователь может перейти в другие расположения.
 
--   Using [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) to specify file types keeps the user focused on picking files that are relevant. To replace previous file types in the **FileTypeFilter** with new entries, use [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) instead of [**Add**](https://msdn.microsoft.com/library/windows/apps/br207834).
+-   Использование [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) для указания типов файлов сохраняет внимание пользователя на выборе соответствующих файлов. Чтобы заменить предыдущие типы файлов в **FileTypeFilter** новыми записями, используйте [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) вместо [**Add**](https://msdn.microsoft.com/library/windows/apps/br207834).
 
-2.  **Show the FileOpenPicker**
+2.  **Показ FileOpenPicker**
 
-    -   **To pick a single file**
+    -   **Выбор одного файла**
 
 ```CSharp
 Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
@@ -151,7 +152,7 @@ var files = await picker.PickMultipleFilesAsync();
         }
 ```
 
-## Pick a folder: complete code listing
+## Выбор папки: приводится полный код
 
 
 ```CSharp
@@ -173,14 +174,19 @@ else
 }
 ```
 
-**Tip**  Whenever your app accesses a file or folder through a picker, add it to your app's [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) or [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) to keep track of it. You can learn more about using these lists in [How to track recently-used files and folders](how-to-track-recently-used-files-and-folders.md).
+**Подсказка.**  Каждый раз, когда ваше приложение получает доступ к файлу или папке через средство выбора, добавляйте этот элемент в свойство приложения [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) или [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) для отслеживания. Подробнее об использовании этих списков см. в разделе [Отслеживание последних использованных файлов и папок](how-to-track-recently-used-files-and-folders.md).
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

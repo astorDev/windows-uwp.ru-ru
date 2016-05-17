@@ -1,16 +1,16 @@
 ---
 author: mtoepke
-title: Walkthrough-- Implement shadow volumes using depth buffers in Direct3D 11
-description: This walkthrough demonstrates how to render shadow volumes using depth maps, using Direct3D 11 on devices of all Direct3D feature levels.
+title: Пошаговое руководство - реализация объемных теней с помощью буферов глубины в Direct3D 11
+description: Это пошаговое руководство демонстрирует, как преобразовать для просмотра объемные тени с помощью карт глубин теней, используя Direct3D 11 на устройствах всех функциональных уровней Direct3D.
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
 ---
 
-# Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11
+# Пошаговое руководство - реализация объемных теней с помощью буферов глубины в Direct3D 11
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This walkthrough demonstrates how to render shadow volumes using depth maps, using Direct3D 11 on devices of all Direct3D feature levels.
+Это пошаговое руководство демонстрирует, как преобразовать для просмотра объемные тени с помощью карт глубин теней, используя Direct3D 11 на устройствах всех функциональных уровней Direct3D.
 ## 
 <table>
 <colgroup>
@@ -19,67 +19,72 @@ This walkthrough demonstrates how to render shadow volumes using depth maps, usi
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
+<th align="left">Раздел</th>
+<th align="left">Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Create depth buffer device resources](create-depth-buffer-resource--view--and-sampler-state.md)</p></td>
-<td align="left"><p>Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes.</p></td>
+<td align="left"><p>[Создание ресурсов устройства для буфера глубины](create-depth-buffer-resource--view--and-sampler-state.md)</p></td>
+<td align="left"><p>Научитесь создавать ресурсы устройств Direct3D, необходимые для поддержки тестирования глубины для теневых томов.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Render the shadow map to the depth buffer](render-the-shadow-map-to-the-depth-buffer.md)</p></td>
-<td align="left"><p>Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume.</p></td>
+<td align="left"><p>[Прорисовка карты теней в буфере глубины](render-the-shadow-map-to-the-depth-buffer.md)</p></td>
+<td align="left"><p>Выполняя прорисовку с точки зрения освещения, вы можете создать двумерную карту глубин, представляющую объемную тень.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Render the scene with depth testing](render-the-scene-with-depth-testing.md)</p></td>
-<td align="left"><p>Create a shadow effect by adding depth testing to your vertex (or geometry) shader and your pixel shader.</p></td>
+<td align="left"><p>[Прорисовка сцены с тестированием глубины](render-the-scene-with-depth-testing.md)</p></td>
+<td align="left"><p>Создание эффекта тени путем добавления проверки глубины в шейдер вершин (или геометрии) и в построитель текстуры.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Support shadow maps on a range of hardware](target-a-range-of-hardware.md)</p></td>
-<td align="left"><p>Render higher-fidelity shadows on faster devices and faster shadows on less powerful devices.</p></td>
+<td align="left"><p>[Поддержка карт теней на различном оборудовании](target-a-range-of-hardware.md)</p></td>
+<td align="left"><p>Более высокое качество отображения теней на быстрых устройствах и быстрое отображение на менее мощных устройствах.</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
-## Shadow mapping application to Direct3D 9 desktop porting
-
-
-Windows 8 adde d depth comparison functionality to feature level 9\_1 and 9\_3. Now you can migrate rendering code with shadow volumes to DirectX 11, and the Direct3D 11 renderer will be downlevel compatible with feature level 9 devices. This walkthrough shows how any Direct3D 11 app or game can implement traditional shadow volumes using depth testing. The code covers the following process:
-
-1.  Creating Direct3D device resources for shadow mapping.
-2.  Adding a rendering pass to create the depth map.
-3.  Adding depth testing to the main rendering pass.
-4.  Implementing the necessary shader code.
-5.  Options for fast rendering on downlevel hardware.
-
-Upon completing this walkthrough, you should be familiar with how to implement a basic compatible shadow volume technique in Direct3D 11 that's compatible with feature level 9\_1 and above.
-
-## Prerequisites
+## Перенос приложения наложения теней в Direct3D 9 для рабочего стола
 
 
-You should [Prepare your dev environment for Universal Windows Platform (UWP) DirectX game development](prepare-your-dev-environment-for-windows-store-directx-game-development.md). You don't need a template yet, but you'll need Microsoft Visual Studio 2015 to build the code sample for this walkthrough.
+В Windows 8 добавлены функции сравнения глубин в функциональные уровни 9\_1 и 9\_3. Теперь код рендеринга с объемными тенями можно переносить в DirectX 11, и обработчик Direct3D 11 будет совместим с устройствами функционального уровня 9. Это пошаговое руководство показывает, как любое приложение или игра Direct3D 11 могут реализовать традиционные объемные тени, используя тестирование глубины. Код включает следующий процесс:
 
-## Related topics
+1.  Создание ресурсов устройств Direct3D для наложения теней.
+2.  Добавление этапа отрисовки для создания карты глубины теней.
+3.  Добавление тестирования глубины в главный этап отрисовки.
+4.  Реализация необходимого кода шейдера.
+5.  Параметры быстрой отрисовки на оборудовании прежних версий.
+
+По завершении этого пошагового руководства вы должны быть знакомы с реализацией базовых совместимых методик создания объемных теней Direct3D 11, которые годятся для функциональных уровней 9\_1 и выше.
+
+## Необходимые условия
+
+
+Вам нужно [подготовить среду для разработки игр универсальной платформы Windows (UWP) с использованием DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Шаблон пока не нужен, но чтобы создать пример кода для этого руководства, потребуется Microsoft Visual Studio 2015.
+
+## Связанные разделы
 
 
 **Direct3D**
 
-* [Writing HLSL Shaders in Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
-* [Create a new DirectX 11 project for UWP](user-interface.md)
+* [Создание шейдеров HLSL в Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Создание нового проекта DirectX 11 для UWP](user-interface.md)
 
-**Shadow mapping technical articles**
+**Технические статьи по наложению теней**
 
-* [Common Techniques to Improve Shadow Depth Maps](https://msdn.microsoft.com/library/windows/desktop/ee416324)
-* [Cascaded Shadow Maps](https://msdn.microsoft.com/library/windows/desktop/ee416307)
+* [Распространенные методики по улучшению карт глубины теней](https://msdn.microsoft.com/library/windows/desktop/ee416324)
+* [Каскадные карты теней](https://msdn.microsoft.com/library/windows/desktop/ee416307)
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

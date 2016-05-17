@@ -1,63 +1,68 @@
 ---
 author: Xansky
-Description: Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
+Description: В статье представлен контрольный список, который поможет вам удостовериться, что приложение универсальной платформы Windows (UWP) поддерживает специальные возможности.
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
-title: Accessibility checklist
+title: Контрольный список специальных возможностей
 label: Accessibility checklist
 template: detail.hbs
 ---
 
-# Accessibility checklist
+# Контрольный список специальных возможностей
 
 
 
-Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
+В статье представлен контрольный список, который поможет вам удостовериться, что приложение универсальной платформы Windows (UWP) поддерживает специальные возможности.
 
-Here we provide a checklist you can use to ensure that your app is accessible.
+Здесь представлен контрольный список, при помощи которого вы можете удостовериться, что ваше приложение использует специальные возможности.
 
-1.  Set the accessible name (required) and description (optional) for content and interactive UI elements in your app.
+1.  Задайте доступное имя (обязательно) и описание (необязательно) для содержимого и интерактивных элементов пользовательского интерфейса своей программы.
 
-    An accessible name is a short, descriptive text string that a screen reader uses to announce a UI element. Some UI elements such as [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) and [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) promote their text content as the default accessible name; see [Basic accessibility information](basic-accessibility-information.md#name_from_inner_text).
+    Доступное имя — это краткая описательная текстовая строка, используемая программой чтения с экрана для объявления элемента пользовательского интерфейса. Некоторые элементы пользовательского интерфейса, например [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) и [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), делают доступным именем по умолчанию свое текстовое содержимое (см. [Основные сведения о специальных возможностях](basic-accessibility-information.md#name_from_inner_text).
 
-    You should set the accessible name explicitly for images or other controls that do not promote inner text content as an implicit accessible name. You should use labels for form elements so that the label text can be used as a [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) target in the Microsoft UI Automation model for correlating labels and inputs. If you want to provide more UI guidance for users than is typically included in the accessible name, accessible descriptions and tooltips help users understand the UI.
+    Необходимо явно задать доступное имя для изображений и других элементов управления, которые не делают неявным специальным именем свое внутреннее текстовое содержимое. Следует использовать метки для элементов формы, чтобы текст метки можно было использовать в качестве целевого объекта [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) в модели автоматизации пользовательского интерфейса Майкрософт для сопоставления меток и вводимых данных. Если вы хотите предоставить пользователям больше сведений о пользовательском интерфейсе, чем обычно содержится в доступном имени, это можно сделать с помощью доступных описаний и подсказок.
 
-    For more info, see [Accessible name](basic-accessibility-information.md#accessible_name) and [Accessible description](basic-accessibility-information.md).
+    Дополнительные сведения см. в разделах [Доступное имя](basic-accessibility-information.md#accessible_name) и [Доступное описание](basic-accessibility-information.md).
 
-2.  Implement keyboard accessibility:
+2.  Реализуйте специальные возможности клавиатуры:
 
-    * Test the default tab index order for a UI. Adjust the tab index order if necessary, which may require enabling or disabling certain controls, or changing the default values of [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) on some of the UI elements.
-    * Use controls that support arrow-key navigation for composite elements. For default controls, the arrow-key navigation is typically already implemented.
-    * Use controls that support keyboard activation. For default controls, particularly those that support the UI Automation [**Invoke**](https://msdn.microsoft.com/library/windows/apps/BR242582) pattern, keyboard activation is typically available; check the documentation for that control.
-    * Set access keys or implement accelerator keys for specific parts of the UI that support interaction.
-    * For any custom controls that you use in your UI, verify that you have implemented these controls with correct [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) support for activation, and defined overrides for key handling as needed to support activation, traversal and access or accelerator keys.
+    * Протестируйте порядок табуляции по умолчанию пользовательского интерфейса. При необходимости измените этот порядок. Для этого может потребоваться включить либо отключить некоторые элементы управления или изменить значения [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) по умолчанию для некоторых элементов пользовательского интерфейса.
+    * Используйте элементы управления, которые поддерживают навигацию при помощи клавиш со стрелками для составных элементов. Как правило, такая навигация уже реализована для элементов управления по умолчанию.
+    * Используйте элементы управления, которые поддерживают активацию с помощью клавиатуры. Активация с помощью клавиатуры обычно доступна для элементов управления по умолчанию, в частности тех, которые поддерживают шаблон модели автоматизации пользовательского интерфейса [**Invoke**](https://msdn.microsoft.com/library/windows/apps/BR242582). См. документацию конкретного элемента управления.
+    * Задайте клавиши доступа или реализуйте сочетания клавиш для частей пользовательского интерфейса, которые поддерживают взаимодействие.
+    * Убедитесь, что для всех пользовательских элементов управления вашего пользовательского интерфейса реализована правильная поддержка [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) для активации и переопределена обработка клавиш для поддержки активации, просмотра, клавиш доступа или сочетаний клавиш.
 
-    For more info, see [Keyboard interactions](https://msdn.microsoft.com/library/windows/apps/Mt185607).
+    Дополнительные сведения см. в статье [Взаимодействия с помощью клавиатуры](https://msdn.microsoft.com/library/windows/apps/Mt185607).
 
-3.  Visually verify your UI to ensure that the text contrast is adequate, elements render correctly in the high-contrast themes, and colors are used correctly.
+3.  Визуально проверьте свой пользовательский интерфейс, чтобы удостовериться, что используется адекватный уровень контрастности текста, элементы в темах с высокой контрастностью отображаются правильно, а цвета используются надлежащим образом.
 
-    * Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from **Ease of Access**.)
-    * Use a color analyzer tool to verify that the visual text contrast ratio is at least 4.5:1.
-    * Switch to a high contrast theme and verify that the UI for your app is readable and usable.
-    * Ensure that your UI doesn’t use color as the only way to convey information.
+    * Используя системные параметры отображения, регулирующие количество точек на дюйм, убедитесь в правильности масштабирования пользовательского интерфейса вашего приложения при изменении этого значения. (Некоторые пользователи используют значения числа точек на дюйм как параметр специальных возможностей, который доступен на панели **специальных возможностей**.)
+    * Используйте анализатор цветов, чтобы убедиться, что коэффициент контрастности текста составляет не менее 4,5:1.
+    * Выберите тему с высокой контрастностью и убедитесь, что пользовательский интерфейс вашей программы можно читать и использовать.
+    * Удостоверьтесь, что цвет не является единственным способом передачи информации в вашем пользовательском интерфейсе.
 
-    For more info, see [High-contrast themes](high-contrast-themes.md) and [Accessible text requirements](accessible-text-requirements.md).
+    Дополнительные сведения см. в статьях [Темы с высокой контрастностью](high-contrast-themes.md) и [Требования к специальным возможностям отображения текста](accessible-text-requirements.md).
 
-4.  Run accessibility tools, address reported issues, and verify the screen reading experience.
+4.  Запустите средства специальных возможностей, устраните выявленные проблемы и проверьте процесс чтения с экрана.
 
-    Use tools such as [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) to verify programmatic access, run diagnostic tools such as [**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) to discover common errors, and verify the screen reading experience with Narrator.
+    Используйте такие инструменты как [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) для проверки программного доступа; запустите средства диагностики, например [**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985), чтобы обнаружить общие ошибки; проверьте также процесс чтения с экрана с помощью экранного диктора.
 
-    For more info, see [Accessibility testing](accessibility-testing.md).
+    Дополнительную информацию см. в [статье, посвященной проверке специальных возможностей](accessibility-testing.md).
 
-5.  Make sure your app manifest settings follow accessibility guidelines.
+5.  Убедитесь, что параметры манифеста вашего приложения соответствуют рекомендациям по реализации специальных возможностей.
 
-6.  Declare your app as accessible in the Windows Store.
+6.  Объявите о специальных возможностях своей программы в Магазине Windows.
 
-    If you implemented the baseline accessibility support, declaring your app as accessible in the Windows Store can help reach more customers and get some additional good ratings.
+    Если в приложении реализована поддержка основных специальных возможностей и вы объявили об этом в Магазине Windows, вы сможете привлечь больше клиентов и получить больше хороших оценок.
 
-    For more info, see [Accessibility in the Store](accessibility-in-the-store.md).
+    Дополнительную информацию см. в статье [Специальные возможности в Магазине](accessibility-in-the-store.md).
 
 <span id="related_topics"/>
-## Related topics  
-* [Accessibility](accessibility.md)
-* [Design for accessibility](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [Practices to avoid](practices-to-avoid.md)
+## Связанные темы  
+* [Специальные возможности](accessibility.md)
+* [Рекомендации по специальным возможностям](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [Нерекомендуемые методики](practices-to-avoid.md)
+
+
+<!--HONumber=May16_HO2-->
+
+

@@ -1,67 +1,69 @@
 ---
 author: Xansky
-Description: Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need.
+Description: Основные сведения о специальных возможностях часто классифицируются по названию, роли и значению. В этом разделе описывается код, благодаря которому ваше приложение сможет предоставлять основные сведения, необходимые вспомогательным технологиям.
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
-title: Expose basic accessibility information
+title: Предоставление основных сведений о специальных возможностях
 label: Expose basic accessibility information
 template: detail.hbs
 ---
 
-# Expose basic accessibility information  
+# Предоставление основных сведений о специальных возможностях  
 
 
 
-Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need.
+Основные сведения о специальных возможностях часто классифицируются по названию, роли и значению. В этом разделе описывается код, благодаря которому ваше приложение сможет предоставлять основные сведения, необходимые вспомогательным технологиям.
 
 <span id="accessible_name"/>
 <span id="ACCESSIBLE_NAME"/>
-## Accessible name  
-An accessible name is a short, descriptive text string that a screen reader uses to announce a UI element. Set the accessible name for UI elements so that have a meaning that is important for understanding the content or interacting with the UI. Such elements typically include images, input fields, buttons, controls, and regions.
+## Специальное имя  
+Специальное имя — это краткая описательная текстовая строка, которую использует программа чтения с экрана, чтобы объявить элемент пользовательского интерфейса. Задайте специальное имя для элементов пользовательского интерфейса со значением, важным для понимания содержимого или для взаимодействия с интерфейсом. К таким элементам обычно относятся изображения, поля ввода, кнопки, элементы управления и области.
 
-This table describes how to define or obtain an accessible name for various types of elements in a XAML UI.
+В этой таблице описано, как задать или получить специальное имя для различных типов элементов пользовательского интерфейса XAML.
 
-| Element type      | Description |
+| Тип элемента      | Описание |
 |-------------------|-------------|
-| Static text       | For [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) and [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) elements, an accessible name is automatically determined from the visible (inner) text. All of the text in that element is used as the name. See [Name from inner text](#name_from_inner_text). |
-| Images            | The XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) element does not have a direct analog to the HTML **alt** attribute of **img** and similar elements. Either use [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) to provide a name, or use the captioning technique. See [Accessible names for images](#images). |
-| Form elements     | The accessible name for a form element should be the same as the label that is displayed for that element. See [Labels and LabeledBy](#labels). |
-| Buttons and links | By default, the accessible name of a button or link is based on the visible text, using the same rules as described in [Name from inner text](#name_from_inner_text). In cases where a button contains only an image, use [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) to provide a text-only equivalent of the button's intended action. |
+| Статический текст       | Для элементов [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) и [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) специальное имя определяется автоматически на основе видимого (внутреннего) текста. Весь текст в этом элементе используется как имя. См. [Имя на основе внутреннего текста](#name_from_inner_text). |
+| Изображения            | Элемент XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) не имеет прямого аналога для атрибута HTML **alt** в **img** и аналогичных элементах. Используйте [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770), чтобы задать имя, или примените метод титров. Подробнее: [Специальные имена изображений](#images). |
+| Элементы формы     | Специальное имя для элемента формы должно совпадать с меткой, отображаемой для этого элемента. См. [Метки и LabeledBy](#labels). |
+| Кнопки и ссылки | По умолчанию специальное имя кнопки или ссылки задается на основе видимого текста с помощью правил, аналогичных указанным в статье [Имя на основе внутреннего текста](#name_from_inner_text). Если кнопка содержит только изображение, используйте [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) для предоставления текстового эквивалента предполагаемого действия кнопки. |
 
-Most container elements such as panels do not promote their content as accessible name. This is because it is the item content that should report a name and corresponding role, not its container. The container element might report that it is an element that has children in a Microsoft UI Automation representation, such that the assistive technology logic can traverse it. But users of assistive technologies don't generally need to know about the containers and thus most containers aren't named.
+Большинство элементов-контейнеров, например панели, не предлагают использовать свое содержимое в качестве специального имени. Это связано с тем, что именно содержимое элемента (а не его контейнер) должно сообщить имя и соответствующую роль. Элемент-контейнер может сообщить о том, что у него есть дочерние элементы в представлении модели автоматизации пользовательского интерфейса Майкрософт и что он доступен для просмотра логикой специальных возможностей. Но пользователям специальных возможностей обычно не нужно знать о контейнерах, поэтому большинство контейнеров не имеют имен.
 
 <span id="role_value"/>
 <span id="ROLE_VALUE"/>
-## Role and value  
-The controls and other UI elements that are part of the XAML vocabulary implement UI Automation support for reporting role and value as part of their definitions. You can use UI Automation tools to examine the role and value information for the controls, or you can read the documentation for the [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) implementations of each control. The available roles in a UI Automation framework are defined in the [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182) enumeration. UI Automation clients such as assistive technologies can obtain role information by calling methods that the UI Automation framework exposes by using the control's **AutomationPeer**.
+## Роль и значение  
+Элементы управления и другие элементы пользовательского интерфейса, которые входят в словарь XAML, реализуют поддержку модели автоматизации пользовательского интерфейса для сообщения роли и значения в рамках своих определений. С помощью инструментов модели автоматизации пользовательского интерфейса можно проверить сведения о роли и значении элементов управления. Вы также можете прочитать документацию по реализации [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) каждого элемента управления. Доступные роли в рамках инфраструктуры автоматизации пользовательского интерфейса определены в перечислении [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182). Клиенты автоматизации пользовательского интерфейса, в том числе специальные возможности, могут получать данные о роли, вызывая методы, предоставляемые инфраструктурой автоматизации пользовательского интерфейса, с помощью объекта **AutomationPeer** для элемента управления.
 
-Not all controls have a value. Controls that do have a value report this information to UI Automation through the peers and patterns that are supported by that control. For example, a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) form element does have a value. An assistive technology can be a UI Automation client and can discover both that a value exists and what the value is. In this specific case the **TextBox** supports the [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) pattern through the [**TextBoxAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242550) definitions.
+Не всем элементам управления присвоено значение. Элементы управления со значением передают эти сведения модели автоматизации пользовательского интерфейса через кэширующие узлы и шаблоны, которые поддерживаются этим элементом управления. Например, у элемента формы [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) есть значение. Специальные возможности иногда относятся к клиентам автоматизации пользовательского интерфейса и могут определить, существует ли значение и чему оно равно. В данном случае **TextBox** поддерживает шаблон [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) посредством определений [**TextBoxAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242550).
 
 > [!NOTE]
-> For cases where you use [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) or other techniques to supply the accessible name explicitly, do not include the same text as is used by the control role or type information in the accessible name. For example do not include strings such as "button" or "list" in the name. The role and type information comes from a different UI Automation property (**LocalizedControlType**) that is supplied by the default control support for UI Automation. Many assistive technologies append the **LocalizedControlType** to the accessible name, so duplicating the role in the accessible name can result in unnecessarily repeated words. For example, if you give a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) control an accessible name of "button" or include "button" as the last part of the name, this might be read by screen readers as "button button". You should test this aspect of your accessibility info using Narrator.
+> Если вы используете [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) или другие методы явного указания специального имени, не включайте в него текст, который используется в данных о роли или типе элемента управления. Например, не используйте в имени такие строки, как «button» или «list». Сведения о роли и типе поступают от другого свойства модели автоматизации пользовательского интерфейса (**LocalizedControlType**), которое предоставляется поддержкой элемента управления по умолчанию для модели автоматизации пользовательского интерфейса. Многие специальные возможности добавляют **LocalizedControlType** к специальному имени, поэтому дублирование роли в специальном имени может привести к повторению слов. Например, если вы зададите для элемента управления [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) специальное имя «button» или укажете строку «button» в качестве последней части имени, то средства чтения с экрана могут прочитать это имя как «button button». Эту особенность специальных возможностей нужно проверить с помощью экранного диктора.
 
 <span id="Influencing_the_UI_Automation_tree_views"/>
 <span id="influencing_the_ui_automation_tree_views"/>
 <span id="INFLUENCING_THE_UI_AUTOMATION_TREE_VIEWS"/>
-## Influencing the UI Automation tree views  
-The UI Automation framework has a concept of tree views, where UI Automation clients can retrieve the relationships between elements in a UI using three possible views: raw, control, and content. The control view is the view that's often used by UI Automation clients because it provides a good representation and organization of the elements in a UI that are interactive. Testing tools usually enable you to choose which tree view to use when the tool presents the organization of elements.
+## Воздействие на представления дерева автоматизации пользовательского интерфейса  
+Инфраструктура автоматизации пользовательского интерфейса Microsoft Windows включает иерархические представления, из которых клиенты модели могут получать отношения между элементами пользовательского интерфейса с помощью трех возможных представлений: базового представления, представления элементов управления или представления содержимого. Клиенты модели часто используют представление элементов управления, поскольку оно отражает представление и организацию интерактивных элементов интерфейса. Инструменты тестирования обычно позволяют выбрать иерархическое представление для отображения организации элементов.
 
-By default, any [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) derived class and a few other elements will appear in the control view when the UI Automation framework represents the UI for a Universal Windows Platform (UWP) app. But sometimes you don't want an element to appear in the control view because of UI composition, where that element is duplicating information or presenting information that's unimportant for accessibility scenarios. Use the attached property [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/Dn251788) to change how elements are exposed to the tree views. If you put an element in the **Raw** tree, most assistive technologies won't report that element as part of their views. To see some examples of how this works in existing controls, open the generic.xaml design reference XAML file in a text editor, and search for **AutomationProperties.AccessibilityView** in the templates.
+Когда инфраструктура автоматизации пользовательского интерфейса представляет пользовательский интерфейс приложения универсальной платформы Windows (UWP), в представлении элементов управления по умолчанию будут отображаться элементы любого класса, производного от [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390), и некоторые другие элементы. Однако в ряде случаев отображение элемента в представлении элементов управления нежелательно из-за состава пользовательского интерфейса, в котором этот элемент дублирует сведения или представляет информацию, лишнюю для сценариев специальных возможностей. Чтобы изменить способ предоставления элементов для иерархических представлений, используйте присоединенное свойство [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/Dn251788). Если вы добавите элемент в дерево **Raw**, то большинство специальных возможностей не будут сообщать о том, что этот элемент входит в их представление. Чтобы увидеть, как это работает в существующих элементах управления, откройте эталонный XAML-файл generic.xaml в текстовом редакторе и найдите в шаблонах строку **AutomationProperties.AccessibilityView**.
 
 <span id="name_from_inner_text"/>
 <span id="NAME_FROM_INNER_TEXT"/>
-## Name from inner text  
-To make it easier to use strings that already exist in the visible UI for accessible name values, many of the controls and other UI elements provide support for automatically determining a default accessible name based on inner text within the element, or from string values of content properties.
+## Имя на основе внутреннего текста  
+Чтобы было проще использовать строки, уже существующие в видимом пользовательском интерфейсе, для значений специальных имен, многие элементы управления и другие элементы пользовательского интерфейса автоматически определяют специальное имя по умолчанию на основе внутреннего текста элемента или строкового значения свойств содержимого.
 
-* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565), [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) and **RichTextBlock** each promote the value of the **Text** property as the default accessible name.
-* Any [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) subclass uses an iterative "ToString" technique to find strings in its [**Content**](https://msdn.microsoft.com/library/windows/apps/BR209365_content) value, and promotes these strings as the default accessible name.
+* [
+              **TextBlock**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209652), [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565), [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) и **RichTextBlock** представляют значение свойства **Text** в виде специального имени по умолчанию.
+* Любой подкласс [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) использует последовательные вызовы метода «ToString» для поиска строк в своем значении [**Content**](https://msdn.microsoft.com/library/windows/apps/BR209365_content) и предлагает эти строки в качестве специального имени по умолчанию.
 
 > [!NOTE]
-> As enforced by UI Automation, the accessible name length cannot be greater than 2048 characters. If a string used for automatic accessible name determination exceeds that limit, the accessible name is truncated at that point.
+> В модели автоматизации пользовательского интерфейса требуется, чтобы длина специального имени не превышала 2048 символов. Если строка, используемая для автоматического определения специального имени, превышает этот предел, специальное имя усекается в этой точке.
 
 <span id="images"/>
 <span id="IMAGES"/>
-## Accessible names for images
-To support screen readers and to provide the basic identifying information for each element in the UI, you sometimes must provide text alternatives to non-textual information such as images and charts (excluding any purely decorative or structural elements). These elements don't have inner text so the accessible name won't have a calculated value. You can set the accessible name directly by setting the [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) attached property as shown in this example.
+## Специальные имена изображений
+Для реализации поддержки программ чтения с экрана и предоставления основных идентифицирующих сведений для каждого элемента пользовательского интерфейса иногда необходимо добавить текстовые альтернативы нетекстовой информации, например изображениям и диаграммам (за исключением любых чисто декоративных или структурных элементов). Такие элементы не имеют внутреннего текста, и поэтому специальное имя не будет иметь вычисляемого значения. Вы можете непосредственно задать специальное имя, настроив присоединенное свойство [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770), как показано в следующем примере.
 
 XAML
 ```xml
@@ -69,7 +71,7 @@ XAML
   AutomationProperties.Name="An image of a customer using the product."/>
 ```
 
-Alternatively, consider including a text caption that appears in the visible UI and that also serves as the label-associated accessibility information for the image content. Here's an example:
+Как вариант, вы можете добавить текстовый заголовок, который появляется в видимом пользовательском интерфейсе и будет выступать в качестве связанной с меткой информации о специальных возможностях для содержимого изображения. Пример.
 
 XAML
 ```xml
@@ -81,8 +83,8 @@ XAML
 
 <span id="labels"/>
 <span id="LABELS"/>
-## Labels and LabeledBy  
-The preferred way to associate a label with a form element is to use a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) with an **x:Name** for label text, and then to set the [**AutomationProperties.LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) attached property on the form element to reference the labeling **TextBlock** by its XAML name. If you use this pattern, when the user clicks the label, the focus moves to the associated control and assistive technologies can use the label text as the accessible name for the form field. Here's an example that shows this technique.
+## Метки и LabeledBy  
+Предпочтительный способ связать метку с элементом формы — использовать [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) с **x:Name** в качестве текста метки, а затем задать присоединенное свойство [**AutomationProperties.LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) элемента формы для обращения к меткам **TextBlock** по имени XAML. Когда при использовании этого шаблона пользователь щелкает метку, фокус перемещается на связанный элемент управления, и специальные возможности могут использовать текст метки в качестве специального имени для поля формы. Вот пример, демонстрирующий этот метод.
 
 XAML
 ```xml
@@ -104,38 +106,43 @@ XAML
 
 <span id="accessible_description"/>
 <span id="ACCESSIBLE_DESCRIPTION"/>
-## Accessible description (optional)  
-An accessible description provides additional accessibility information about a particular UI element. You typically provide an accessible description when an accessible name alone does not adequately convey an element's purpose.
+## Специальное описание (необязательно)  
+Специальное описание предоставляет дополнительные сведения о специальных возможностях конкретного элемента пользовательского интерфейса. Обычно специальное описание используется тогда, когда специальное имя само по себе недостаточно точно передает назначение элемента.
 
-The Narrator screen reader reads an element's accessible description only when the user requests more information about the element by pressing CapsLock+F.
+Экранный диктор для чтения с экрана озвучивает специальное описание элемента только тогда, когда пользователь запрашивает дополнительные сведения об элементе, нажав клавиши CAPSLOCK+F.
 
-The accessible name is meant to identify the control rather than to fully document its behavior. If a brief description is not enough to explain the control, you can set the [**AutomationProperties.HelpText**](https://msdn.microsoft.com/library/windows/apps/Hh759765) attached property in addition to [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770).
+Специальное имя предназначено для идентификации элемента управления, а не для подробного описания его поведения. Если для пояснения элемента управления краткого описания недостаточно, вы можете задать присоединенное свойство [**AutomationProperties.HelpText**](https://msdn.microsoft.com/library/windows/apps/Hh759765) в дополнение к [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770).
 
 <span id="Testing_accessibility_early_and_often"/>
 <span id="testing_accessibility_early_and_often"/>
 <span id="TESTING_ACCESSIBILITY_EARLY_AND_OFTEN"/>
-## Testing accessibility early and often  
-Ultimately, the best approach for supporting screen readers is to test your app using a screen reader yourself. That will show you how the screen reader behaves and what basic accessibility information might be missing from the app. Then you can adjust the UI or UI Automation property values accordingly. For more info, see [Accessibility testing](accessibility-testing.md).
+## Раннее и частое тестирование специальных возможностей  
+Наилучший способ проверить поддержку программы чтения с экрана — самостоятельно протестировать свое приложение, используя эту программу. В результате вы узнаете, как ведет себя программа чтения с экрана и какие основные сведения о специальных возможностях отсутствуют в приложении. После этого вы сможете соответствующим образом настроить значения свойств пользовательского интерфейса или модели его автоматизации. Дополнительную информацию см. в [статье, посвященной проверке специальных возможностей](accessibility-testing.md).
 
-One of the tools you can use for testing accessibility is called **AccScope**. The **AccScope** tool is particularly useful because you can see visual representations of your UI that represent how assistive technologies might view your app as an automation tree. In particular, there's a Narrator mode that gives a view of how Narrator gets text from your app and how it organizes the elements in the UI. AccScope is designed so that it can be used and be useful throughout a development cycle for an app, even during the preliminary design phase. For more info see [AccScope](https://msdn.microsoft.com/library/windows/desktop/Dn433239).
+Один из инструментов проверки называется **AccScope**. Инструмент **AccScope** очень полезен, поскольку позволяет увидеть визуальное представление пользовательского интерфейса. По нему можно судить о том, как может выглядеть приложение с точки зрения специальных возможностей в качестве дерева автоматизации. В частности, в экранном дикторе есть режим, в котором можно увидеть, как диктор получает текст из приложения и упорядочивает элементы пользовательского интерфейса. AccScope можно с успехом использовать на протяжении всего цикла разработки приложения, даже на стадии предварительной разработки. Подробнее: [AccScope](https://msdn.microsoft.com/library/windows/desktop/Dn433239).
 
 <span id="Accessible_names_from_dynamic_data"/>
 <span id="accessible_names_from_dynamic_data"/>
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
-## Accessible names from dynamic data  
-Windows supports many controls that can be used to display values that come from an associated data source, through a feature known as *data binding*. When you populate lists with data items, you may need to use a technique that sets accessible names for data-bound list items after the initial list is populated. For more info, see "Scenario 4" in the [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570).
+## Специальные имена на основе динамических данных  
+Windows поддерживает множество элементов управления, которые можно использовать для отображения значений, поступающих из связанного источника данных, с помощью функции под названием *привязка данных*. При заполнении списков элементами данных вам, возможно, потребуется использовать метод, который задает специальные имена для элементов списка с привязкой к данным после заполнения первоначального списка. Подробнее см. сценарий 4 в [образце специальных возможностей XAML](http://go.microsoft.com/fwlink/p/?linkid=238570).
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
 <span id="ACCESSIBLE_NAMES_AND_LOCALIZATION"/>
-## Accessible names and localization  
-To make sure that the accessible name is also an element that is localized, you should use correct techniques for storing localizable strings as resources and then referencing the resource connections with [x:Uid directive](https://msdn.microsoft.com/library/windows/apps/Mt204791) values. If the accessible name is coming from an explicitly set [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) usage, make sure that the string there is also localizable.
+## Специальные имена и локализация  
+Чтобы гарантировать, что специальное имя также будет локализовано, используйте правильные методы для хранения локализуемых строк в качестве ресурсов, а также для ссылок на подключения ресурсов со значениями [x:Uid directive](https://msdn.microsoft.com/library/windows/apps/Mt204791). Если специальное имя происходит от явно заданного использования [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770), убедитесь, что его строка также может быть локализована.
 
-Note that attached properties such as the [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) properties use a special qualifying syntax for the resource name, so that the resource references the attached property as applied to a specific element. For example, the resource name for [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) as applied to a UI element named `MediumButton` is: `MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`.
+Помните, что вложенные свойства, такие как [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081), используют особый синтаксис соответствия имени ресурса, поэтому ресурс ссылается на вложенное свойство применительно к отдельному элементу. Например, имя ресурса [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) применительно к элементу пользовательского интерфейса с именем `MediumButton` —
 
 <span id="related_topics"/>
-## Related topics  
-* [Accessibility](accessibility.md)
+## Связанные темы  
+* [Специальные возможности](accessibility.md)
 * [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
-* [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
-* [Accessibility testing](accessibility-testing.md)
+* [Пример специальных возможностей XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Проверка специальных возможностей](accessibility-testing.md)
+
+
+<!--HONumber=May16_HO2-->
+
+

@@ -1,57 +1,61 @@
 ---
 author: mtoepke
-title: DirectX and XAML interop
-description: You can use Extensible Application Markup Language (XAML) and Microsoft DirectX together in your Universal Windows Platform (UWP) game.
+title: Межпрограммное взаимодействие DirectX и XAML
+description: Вы можете использовать одновременно и XAML, и Microsoft DirectX в своей игре универсальной платформы Windows (UWP).
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 ---
 
-# DirectX and XAML interop
+# Межпрограммное взаимодействие DirectX и XAML
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-You can use Extensible Application Markup Language (XAML) and Microsoft DirectX together in your Universal Windows Platform (UWP) game. The combination of XAML and DirectX lets you build flexible user interface frameworks that interop with your DirectX-rendered content, and is particularly useful for graphics-intensive apps. This topic explains the structure of a UWP app that uses DirectX and identifies the important types to use when building your UWP app to work with DirectX.
+Вы можете использовать одновременно и XAML, и Microsoft DirectX в своей игре универсальной платформы Windows (UWP). Сочетание XAML и DirectX позволяет создавать гибкие структуры пользовательского интерфейса, взаимодействующие с содержимым, обрабатываемым DirectX, что особенно удобно для приложений с интенсивным использованием графики. В этом разделе описывается структура приложения UWP, использующего DirectX, и вводятся важные типы, которые применяются при сборке приложения UWP для обеспечения работы с DirectX.
 
-> **Note**  DirectX APIs are not defined as Windows Runtime types, so you typically use Visual C++ component extensions (C++/CX) to develop XAMLUWP components that interop with DirectX. Also, you can create a UWP app with C# and XAML that uses DirectX, if you wrap the DirectX calls in a separate Windows Runtime metadata file.
+> **Примечание.** API DirectX не определены как типы среды выполнения Windows, поэтому для разработки компонентов приложений UWP на XAML, взаимодействующих с DirectX, обычно используются расширения компонентов Visual C++ (C++/CX). Кроме того, вы можете создавать приложения UWP, использующие DirectX, на C# и XAML, если инкорпорируете вызовы DirectX в отдельный файл метаданных среды выполнения Windows.
 
- 
+ 
 
-## XAML and DirectX
+## XAML и DirectX
 
 
-DirectX provides two powerful libraries for 2D and 3D graphics: Direct2D and Microsoft Direct3D. Although XAML provides support for basic 2D primitives and effects, many apps, such as modeling and gaming, need more complex graphics support. For these, you can use Direct2D and Direct3D to render part or all of the graphics and use XAML for everything else.
+DirectX предоставляет две мощные библиотеки для двух- и трехмерной графики: Direct2D и Microsoft Direct3D. Хотя язык XAML поддерживает базовые двухмерные примитивы и эффекты, многим приложениям (например, приложениям для моделирования или играм) необходима поддержка более сложной графики. В этих случаях библиотеки Direct2D и Direct3D можно использовать для обработки части или всей графики, а язык XAML — для всего остального.
 
-In the XAML and DirectX interop scenario, you need to know these two concepts:
+В сценарии взаимодействия XAML и DirectX вам нужно знать две следующие концепции.
 
--   Shared surfaces are sized regions of the display, defined by XAML, that you can use DirectX to draw into indirectly, using [**Windows::UI::Xaml::Media::Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) types. For shared surfaces, you don't control the calls to present the swap chain(s). The updates to the shared surface are synced to the XAML framework's updates.
--   The swap chain itself. This provides the back buffer of the DirectX rendering pipeline, the area of memory that is presented for display after the render target is complete.
+-   Общие поверхности — это области отображения заданного размера, определенные средствами языка XAML, для рисования на которых можно непрямо использовать DirectX с помощью типов [**Windows::UI::Xaml::Media::Brush**](https://msdn.microsoft.com/library/windows/apps/br228076). В случае общих поверхностей вы не управляете вызовами для представления цепочек буферов. Обновления общих поверхностей синхронизируются с обновлениями платформы XAML.
+-   Собственно цепочка буферов. Цепочка переключения предоставляет фоновый буфер конвейера визуализации DirectX — область памяти, предназначенную для отображения после того, как однобуферная прорисовка выполнена.
 
-Consider what you are using DirectX for. Will it be used to composite or animate a single control that fits within the dimensions of the display window? Can the composited surface be occluded by other surfaces, or the edges of the screen? Will it contain output that needs to be rendered and controlled in real-time, as in a game?
+Проанализируйте, для чего вы используете DirectX. Будет ли DirectX использоваться для формирования или анимации отдельного элемента управления, соответствующего размерам отображаемого окна? Может ли сформированная поверхность быть закрыта другими поверхностями или краями экрана? Будет ли она содержать выходные данные, требующие обработки и управления в режиме реального времени, как, например, в игре?
 
-Once you've determined how you intend to use DirectX, you use one of these Windows Runtime types to incorporate DirectX rendering into your Windows Store app:
+Определив способ использования DirectX, вы будете использовать один из типов среды выполнения Windows для включения обработки DirectX в приложение Магазина Windows:
 
--   If you want to compose a static image, or draw a complex image on event-driven intervals, draw to a shared surface with [**Windows::UI::Xaml::Media::Imaging::SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041). This type handles a sized DirectX drawing surface. Typically, you use this type when composing an image or texture as a bitmap for display in a document or UI element. It doesn't work well for real-time interactivity, such as a high-performance game. That's because updates to a **SurfaceImageSource** object are synced to XAML user interface updates, and that can introduce latency into the visual feedback you provide to the user, like a fluctuating frame rate or a perceived poor response to real-time input. Updates are still quick enough for dynamic controls or data simulations, though!
+-   Чтобы получить статическое изображение или нарисовать сложное изображение через интервалы, управляемые событиями, нарисуйте общую поверхность с помощью типа [**Windows::UI::Xaml::Media::Imaging::SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041). Этот тип обрабатывает поверхности определенного размера, рисуемые средствами DirectX. Обычно данный тип используется при формировании изображения или текстуры, например точечного рисунка, для отображения в документе или элементе пользовательского интерфейса. Он плохо подходит для обеспечения взаимодействия в реальном времени, например в высокопроизводительных играх. Это связано с тем, что обновления объекта **SurfaceImageSource** синхронизированы с обновлениями пользовательского интерфейса XAML, из-за чего возможна задержка предоставляемой пользователю визуальной обратной связи, например флуктуация частоты кадров или заметное ухудшение реакции на ввод данных в реальном времени. Хотя для динамических элементов управления или моделирования данных обновления выполняются достаточно быстро.
 
-    [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) graphics objects can be composited with other XAML UI elements. You can transform or project them , and the XAML framework respects any opacity or z-index values.
+    Графические объекты класса [
+              **SurfaceImageSource**
+            ](https://msdn.microsoft.com/library/windows/apps/hh702041) можно комбинировать с другими элементами пользовательского интерфейса на XAML. Их можно преобразовывать или проецировать, и платформа XAML будет учитывать любые значения прозрачности или z-индекса.
 
--   If the image is larger than the provided screen real estate, and can be panned or zoomed by the user, use [**Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050). This type handles a sized DirectX drawing surface that is larger than the screen. Like [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041), you use this when composing a complex image or control dynamically. And, also like **SurfaceImageSource**, it doesn't work well for high-performance games. Some examples of XAML elements that could use a **VirtualSurfaceImageSource** are map controls, or a large, image-dense document viewer.
+-   Если изображение больше предоставленного пространства на экране, пользователь может масштабировать его с помощью типа [**Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050). Данный тип обрабатывает нарисованную средствами DirectX поверхность определенного размера, которая больше экрана. Как и класс [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041), он используется при динамическом составлении сложного изображения или элемента управления. Кроме того, как и класс **SurfaceImageSource**, он плохо подходит для высокопроизводительных игр. К примерам элементов XAML, в которых может использоваться класс **VirtualSurfaceImageSource**, относятся элементы управления картой или средство просмотра документов с большим количеством изображений.
 
--   If you are using DirectX to present graphics updated in real-time, or in a situation where the updates must come on regular low-latency intervals, use the [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) class, so you can refresh the graphics without syncing to the XAML framework refresh timer. This type enables you to access the graphics device's swap chain ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)) directly and layer XAML atop the render target. This type works great for games and other full-screen DirectX apps that require a XAML-based user interface. You must know DirectX well to use this approach, including the Microsoft DirectX Graphics Infrastructure (DXGI), Direct2D, and Direct3D technologies. For more info, see [Programming Guide for Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345).
+-   При использовании DirectX для представления графики, обновляемой в реальном времени, или в ситуации, когда обновления должны выполняться регулярно с низкой задержкой, используйте класс [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) для обновления графики без синхронизации с таймером обновления платформы XAML. Этот тип предоставляет прямой доступ к цепочке буферов графического устройства ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)) и слою XAML, наложенному на однобуферную прорисовку. Этот тип отлично подходит для игр и других полноэкранных приложений DirectX, которым требуется пользовательский интерфейс на основе языка XAML. Чтобы использовать описанный подход, вы должны хорошо разбираться в DirectX, в том числе в технологиях Microsoft DirectX Graphics Infrastructure (DXGI), Direct2D и Direct3D. Дополнительные сведения см. в разделе [Руководство по программированию для Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345).
 
 ## SurfaceImageSource
 
 
-[**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) provides DirectX shared surfaces to draw into and then composes the bits into app content.
+[
+              **SurfaceImageSource**
+            ](https://msdn.microsoft.com/library/windows/apps/hh702041) предоставляет общие поверхности DirectX для рисования, а затем объединяет все биты в содержимое приложения.
 
-Here is the basic process for creating and updating a [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) object in the code behind:
+Здесь описывается простой процесс создания и обновления объекта [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) в коде программной части.
 
-1.  Define the size of the shared surface by passing the height and width to the [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) constructor. You can also indicate whether the surface needs alpha (opacity) support.
+1.  Определите размер общей поверхности, передав высоту и ширину конструктору [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041). Вы можете также указать, требуется ли поверхности поддержка альфа-режима (непрозрачности).
 
-    For example:
+    Пример:
 
     `SurfaceImageSource^ surfaceImageSource = ref new SurfaceImageSource(400, 300);`
 
-2.  Get a pointer to [**ISurfaceImageSourceNative**](https://msdn.microsoft.com/library/windows/desktop/hh848322). Cast the [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) object as [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) (or **IUnknown**), and call **QueryInterface** on it to get the underlying **ISurfaceImageSourceNative** implementation. You use the methods defined on this implementation to set the device and run the draw operations.
+2.  Получите указатель на интерфейс [**ISurfaceImageSourceNative**](https://msdn.microsoft.com/library/windows/desktop/hh848322). Приведите объект [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) к типу [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) (или **IUnknown**) и примените к нему метод **QueryInterface**, чтобы получить лежащую в основе реализацию интерфейса **ISurfaceImageSourceNative**. Методы, определенные в этой реализации, используются для настройки устройства и выполнения операций рисования.
 
     ```cpp
     Microsoft::WRL::ComPtr<ISurfaceImageSourceNative> m_sisNative;
@@ -60,7 +64,7 @@ Here is the basic process for creating and updating a [**SurfaceImageSource**](h
     sisInspectable->QueryInterface(__uuidof(ISurfaceImageSourceNative), (void **)&m_sisNative);
     ```
 
-3.  Set the DXGI device by first calling [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) and then passing the device and context to [**ISurfaceImageSourceNative::SetDevice**](https://msdn.microsoft.com/library/windows/desktop/hh848325). For example:
+3.  Настройте устройство DXGI, сначала вызвав метод [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082), а затем передав устройство и контекст методу [**ISurfaceImageSourceNative::SetDevice**](https://msdn.microsoft.com/library/windows/desktop/hh848325). Пример:
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device>              m_d3dDevice;
@@ -85,13 +89,13 @@ Here is the basic process for creating and updating a [**SurfaceImageSource**](h
     m_sisNative->SetDevice(dxgiDevice.Get());
     ```
 
-4.  Provide a pointer to [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) object to [**ISurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323), and draw into that surface using DirectX. Only the area specified for update in the *updateRect* parameter is drawn.
+4.  Предоставьте указатель объекту [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) для метода [**ISurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) и рисуйте на этой поверхности с помощью DirectX. Прорисовка будет производиться только в области, указанной для обновления в параметре *updateRect*.
 
-    > **Note**   You can only have one outstanding [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) operation active at a time per [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527).
+    > **Примечание.** В каждый момент времени у вас может быть только одна активная невыполненная операция [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) на один интерфейс [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527).
 
-     
+     
 
-    This method returns the point (x,y) offset of the updated target rectangle in the *offset* parameter. You use this offset to determine where to draw into inside the [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565).
+    Этот метод возвращает смещение точки (x, y) обновленного целевого прямоугольника в параметре *offset*. С помощью этого смещения вы можете определить место, где будет выполняться рисование, внутри поверхности [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565).
 
     ```cpp
     ComPtr<IDXGISurface> surface;
@@ -107,7 +111,7 @@ Here is the basic process for creating and updating a [**SurfaceImageSource**](h
     }
     ```
 
-5.  Call [**ISurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324) to complete the bitmap. Pass this bitmap to an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101).
+5.  Вызовите метод [**ISurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324) для завершения формирования растрового изображения. Передайте это растровое изображение методу [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101).
 
     ```cpp
     m_sisNative->EndDraw();
@@ -117,26 +121,30 @@ Here is the basic process for creating and updating a [**SurfaceImageSource**](h
     brush->ImageSource = surfaceImageSource;
     ```
 
-6.  Use the [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) to draw the bitmap.
+6.  Используйте метод [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101), чтобы отобразить растровое изображение.
 
-> **Note**   Calling [**SurfaceImageSource::SetSource**](https://msdn.microsoft.com/library/windows/apps/br243255) (inherited from **IBitmapSource::SetSource**) currently throws an exception. Do not call it from your [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) object.
+> **Примечание.** Вызов метода [**SurfaceImageSource::SetSource**](https://msdn.microsoft.com/library/windows/apps/br243255) (наследуемого от **IBitmapSource::SetSource**) в настоящее время инициирует исключение. Не вызывайте его из вашего объекта [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041).
 
- 
+ 
 
 ## VirtualSurfaceImageSource
 
 
-[**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) extends [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) when the content is potentially larger than what can fit on screen and so the content must be virtualized to render optimally.
+Класс [
+              **VirtualSurfaceImageSource**
+            ](https://msdn.microsoft.com/library/windows/apps/hh702050) расширяет класс [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041), когда содержимое может не поместиться на экране и поэтому требуется виртуализация содержимого для оптимального формирования изображения.
 
-[**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) differs from [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) in that it uses a callback, [**IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848337), that you implement to update regions of the surface as they become visible on the screen. You do not need to clear regions that are hidden, as the XAML framework takes care of that for you.
+Класс [
+              **VirtualSurfaceImageSource**
+            ](https://msdn.microsoft.com/library/windows/apps/hh702050) отличается от класса [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) тем, что использует обратный вызов [**IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848337), реализуемый для обновления областей поверхности по мере их появления на экране. Скрытые области очищать не нужно, так как за это отвечает платформа XAML.
 
-Here is basic process for creating and updating a [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) object in the codebehind:
+Здесь описывается простой процесс создания и обновления объекта [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) в коде программной части.
 
-1.  Create an instance of [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) with the size you want. For example:
+1.  Создайте экземпляр класса [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) нужного размера. Пример:
 
     `VirtualSurfaceImageSource^ virtualSIS = ref new VirtualSurfaceImageSource(2000, 2000);`
 
-2.  Get a pointer to [**IVirtualSurfaceImageSourceNative**](https://msdn.microsoft.com/library/windows/desktop/hh848328). Cast the [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) object as [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) or [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509), and call [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) on it to get the underlying **IVirtualSurfaceImageSourceNative** implementation. You use the methods defined on this implementation to set the device and run the draw operations.
+2.  Получите указатель на интерфейс [**IVirtualSurfaceImageSourceNative**](https://msdn.microsoft.com/library/windows/desktop/hh848328). Приведите объект [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) к типу [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) или [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) и примените к нему метод [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521), чтобы получить лежащую в основе реализацию интерфейса **IVirtualSurfaceImageSourceNative**. Методы, определенные в этой реализации, используются для настройки устройства и выполнения операций рисования.
 
     ```cpp
     Microsoft::WRL::ComPtr<IVirtualSurfaceImageSourceNative>  m_vsisNative;
@@ -145,7 +153,7 @@ Here is basic process for creating and updating a [**VirtualSurfaceImageSource**
     vsisInspectable->QueryInterface(__uuidof(IVirtualSurfaceImageSourceNative), (void **)&m_vsisNative);
     ```
 
-3.  Set the DXGI device by calling [**IVirtualSurfaceImageSourceNative::SetDevice**](https://msdn.microsoft.com/library/windows/desktop/hh848325). For example:
+3.  Настройте устройство DXGI, вызвав метод [**IVirtualSurfaceImageSourceNative::SetDevice**](https://msdn.microsoft.com/library/windows/desktop/hh848325). Пример:
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device>              m_d3dDevice;
@@ -170,7 +178,7 @@ Here is basic process for creating and updating a [**VirtualSurfaceImageSource**
     m_vsisNative->SetDevice(dxgiDevice.Get());
     ```
 
-4.  Call [**IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848334), passing in a reference to your implementation of [**IVirtualSurfaceUpdatesCallbackNative**](https://msdn.microsoft.com/library/windows/desktop/hh848336).
+4.  Вызовите метод [**IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848334), передав ссылку на свою реализацию интерфейса [**IVirtualSurfaceUpdatesCallbackNative**](https://msdn.microsoft.com/library/windows/desktop/hh848336).
 
     ```cpp
     class MyContentImageSource : public IVirtualSurfaceUpdatesCallbackNative
@@ -194,11 +202,11 @@ Here is basic process for creating and updating a [**VirtualSurfaceImageSource**
     }
     ```
 
-    The framework calls your implementation of [**IVirtualSurfaceUpdatesCallbackNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848334) when a region of the [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) needs to be updated.
+    Платформа вызывает вашу реализацию [**IVirtualSurfaceUpdatesCallbackNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848334), когда необходимо обновить область [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050).
 
-    This can happen either when the framework determines the region needs to be drawn (such as when the user pans or zooms the view of the surface), or after the app has called [**IVirtualSurfaceImageSourceNative::Invalidate**](https://msdn.microsoft.com/library/windows/desktop/hh848332) on that region.
+    Такое может произойти, если платформа определяет область, которую необходимо нарисовать (например, если пользователь масштабирует вид поверхности), или после применения к такой области метода [**IVirtualSurfaceImageSourceNative::Invalidate**](https://msdn.microsoft.com/library/windows/desktop/hh848332), вызванного приложением.
 
-5.  In [**IVirtualSurfaceImageSourceNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848337), use the [**IVirtualSurfaceImageSourceNative::GetUpdateRectCount**](https://msdn.microsoft.com/library/windows/desktop/hh848329) and [**IVirtualSurfaceImageSourceNative::GetUpdateRects**](https://msdn.microsoft.com/library/windows/desktop/hh848330) methods to determine which region(s) of the surface must be drawn.
+5.  В методе [**IVirtualSurfaceImageSourceNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848337) с помощью методов [**IVirtualSurfaceImageSourceNative::GetUpdateRectCount**](https://msdn.microsoft.com/library/windows/desktop/hh848329) и [**IVirtualSurfaceImageSourceNative::GetUpdateRects**](https://msdn.microsoft.com/library/windows/desktop/hh848330) определите, какие области поверхности необходимо нарисовать.
 
     ```cpp
     HRESULT STDMETHODCALLTYPE MyContentImageSource::UpdatesNeeded()
@@ -227,15 +235,15 @@ Here is basic process for creating and updating a [**VirtualSurfaceImageSource**
     }
     ```
 
-6.  Lastly, for each region that must be updated:
+6.  И наконец, для каждой области, которую нужно обновить, выполните следующее.
 
-    1.  Provide a pointer to the [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) object to [**IVirtualSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323), and draw into that surface using DirectX. Only the area specified for update in the *updateRect* parameter will be drawn.
+    1.  Предоставьте указатель объекту [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) для метода [**IVirtualSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) и рисуйте на этой поверхности с помощью DirectX. Прорисовка будет выполняться только в области, указанной для обновления в параметре *updateRect*.
 
-        As with [**IlSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323), this method returns the point (x,y) offset of the updated target rectangle in the *offset* parameter. You use this offset to determine where to draw into inside the [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565).
+        Так же как и [**IlSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323), этот метод возвращает смещение точки (x,y) обновленного целевого прямоугольника в параметре *offset*. С помощью этого смещения вы можете определить место, где будет выполняться рисование, внутри поверхности [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565).
 
-        > **Note**   You can only have one outstanding [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) operation active at a time per [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527).
+        > **Примечание.** В каждый момент времени у вас может быть только одна активная невыполненная операция [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) на один интерфейс [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527).
 
-         
+         
 
         ```cpp
         ComPtr<IDXGISurface> bigSurface;
@@ -251,47 +259,52 @@ Here is basic process for creating and updating a [**VirtualSurfaceImageSource**
         }
         ```
 
-    2.  Draw the specific content to that region, but constrain your drawing to the bounded regions for better performance.
+    2.  Рисуйте конкретное содержимое в этой области, но не выходите за пределы областей, чтобы не снизить производительность.
 
-    3.  Call [**IVirtualSurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324). The result is a bitmap.
+    3.  Вызовите [**IVirtualSurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324). Результат — растровое изображение
 
-## SwapChainPanel and gaming
+## SwapChainPanel и игры
 
 
-[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) is the Windows Runtime type designed to support high-performance graphics and gaming, where you manage the swap chain directly. In this case, you create your own DirectX swap chain and manage the presentation of your rendered content. You can then add XAML elements to the **SwapChainPanel** object, such as menus, heads-up displays, and other UI overlays.
+[
+              **SwapChainPanel**
+            ](https://msdn.microsoft.com/library/windows/apps/dn252834) — это тип среды выполнения Windows для поддержки высокопроизводительных игр и графики, в котором вы управляете цепочкой буферов напрямую. В данном случае вы создаете собственную цепочку буферов DirectX и управляете представлением своего отображаемого содержимого. Затем в объект **SwapChainPanel** можно добавить такие элементы XAML, как меню, верхние панели и другие наложения пользовательского интерфейса.
 
-To ensure good performance, there are certain limitations to the [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) type:
+Для обеспечения хорошей производительности у типа [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) есть определенные ограничения.
 
--   There are no more than 4 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) instances per app.
--   The **Opacity**, **RenderTransform**, **Projection**, and **Clip** properties inherited by [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) are not supported.
--   You should set the DirectX swap chain's height and width (in [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) to the current dimensions of the app window. If you don't, the display content will be scaled (using **DXGI\_SCALING\_STRETCH**) to fit.
--   You must set the DirectX swap chain's scaling mode (in [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) to **DXGI\_SCALING\_STRETCH**.
--   You can't set the DirectX swap chain's alpha mode (in [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) to **DXGI\_ALPHA\_MODE\_PREMULTIPLIED**.
--   You must create the DirectX swap chain by calling [**IDXGIFactory2::CreateSwapChainForComposition**](https://msdn.microsoft.com/library/windows/desktop/hh404558).
+-   Допускается только 4 экземпляра [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) на приложение.
+-   Свойства **Opacity**, **RenderTransform**, **Projection** и **Clip**, наследуемые классом [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834), не поддерживаются.
+-   Следует задать высоту и ширину цепочки буферов DirectX (в структуре [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) равными текущим размерам окна приложения. Если этого не сделать, содержимое экрана подгоняется под его размер (с помощью **DXGI\_SCALING\_STRETCH**).
+-   Для режима масштабирования цепочки буферов DirectX (в структуре [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) необходимо задать состояние **DXGI\_SCALING\_STRETCH**.
+-   Для режима альфа-канала цепочки буферов DirectX (в структуре [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) невозможно задать состояние **DXGI\_ALPHA\_MODE\_PREMULTIPLIED**.
+-   Необходимо создать цепочку буферов DirectX путем вызова [**IDXGIFactory2::CreateSwapChainForComposition**](https://msdn.microsoft.com/library/windows/desktop/hh404558).
 
-You update the [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) based on the needs of your app, and not the updates of the XAML framework. If you need to synchronize the updates of **SwapChainPanel** to those of the XAML framework, register for the [**Windows::UI::Xaml::Media::CompositionTarget::Rendering**](https://msdn.microsoft.com/library/windows/apps/br228127) event. Otherwise, you must consider any cross-thread issues if you try to update the XAML elements from a different thread than the one updating the **SwapChainPanel**.
+[
+            **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) обновляется в зависимости от потребностей приложения, а не обновлений платформы XAML. Если обновления **SwapChainPanel** необходимо синхронизировать с обновлениями платформы XAML, зарегистрируйте событие [**Windows::UI::Xaml::Media::CompositionTarget::Rendering**](https://msdn.microsoft.com/library/windows/apps/br228127). В противном случае необходимо учитывать все возможные проблемы с разными потоками при попытке обновления элементов XAML не из того потока, который обновляет **SwapChainPanel**.
 
-There are also a few general best practices to follow designing your app to use [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834).
+Также есть несколько общих рекомендаций по проектированию приложений с использованием [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834).
 
--   [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) inherits from [**Windows::UI::Xaml::Controls::Grid**](https://msdn.microsoft.com/library/windows/apps/br242704), and supports similar layout behavior. Familiarize yourself with the **Grid** type and its properties.
+-   [
+              **SwapChainPanel**
+            ](https://msdn.microsoft.com/library/windows/apps/dn252834) наследуется от класса [**Windows::UI::Xaml::Controls::Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) и поддерживает схожее поведение макета. Ознакомьтесь с типом **Grid** и его свойствами.
 
--   After a DirectX swap chain has been set, all input events that are fired for [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) work the same as they do for any other XAML element. You don't set a background brush for **SwapChainPanel**, and you don't need to handle input events from the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object directly as you do in DirectX apps that don't use **SwapChainPanel**.
+-   После задания цепочки буферов DirectX все события ввода, возникающие для класса [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834), действуют так же, как и для любого другого элемента XAML. Для класса **SwapChainPanel** не задается кисть фона, и события ввода объекта [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) приложения не требуется обрабатывать напрямую, как это делается в приложениях DirectX, которые не используют класс **SwapChainPanel**.
 
--   • All content of the visual XAML element tree under a direct child of a [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) is clipped to the layout size of the **SwapChainPanel** object’s immediate child. Any content that is transformed outside these layout bounds won't be rendered. Therefore, place any XAML content that you animate with a XAML[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) in the visual tree under an element whose layout bounds are large enough to contain the full range of the animation.
+-   • Все содержимое дерева визуальных элементов XAML в прямом дочернем элементе объекта [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) обрезается до размера макета непосредственного дочернего элемента объекта **SwapChainPanel**. Любое содержимое, которое в результате преобразования выходит за рамки макета, не визуализируется. Поэтому любое содержимое XAML, которое анимируется с помощью класса [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) XAML, размещайте в визуальном дереве элемента, рамки макета которого достаточно велики для включения всей области анимации.
 
--   Limit the number of immediate visual XAML elements under a [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834). If possible, group elements that are in close proximity under a common parent. But there is a performance tradeoff between the number of immediate visual children and the size of the children: too many or unnecessarily large XAML elements can impact overall performance. Likewise, don't create a single full-screen child XAML element for your app's **SwapChainPanel** because this increases overdraw in the app and decreases performance. As a rule, create no more than 8 immediate XAML visual children for your app's **SwapChainPanel**, and each element must have a layout size only as large as necessary to contain the element's visual content. However, you can make the visual tree of elements under a child element of the **SwapChainPanel** sufficiently complex without decreasing performance too badly.
+-   Ограничьте число непосредственных визуальных элементов XAML в [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834). По возможности группируйте под общим родительским объектом элементы, которые находятся в непосредственной близости. Однако между производительностью и числом непосредственных визуальных дочерних объектов и их размерами существует связь: слишком большое количество элементов XAML или неоправданно большой их размер могут повлиять на общую производительность. Аналогичным образом не создавайте отдельных полноэкранных дочерних элементов XAML для объекта **SwapChainPanel** своего приложения, так как это повышает избыточное использование ресурсов в приложении и снижает производительность. Как правило, не следует создавать больше 8 непосредственных визуальных дочерних элементов XAML для объекта **SwapChainPanel** приложения. Размер макета каждого элемента не должен превышать достаточный для включения визуального содержимого элемента. Однако в дочернем элементе объекта **SwapChainPanel** можно создать достаточно сложное визуальное дерево элементов без чрезмерного ухудшения производительности.
 
-> **Note**   In general, your DirectX apps should create swap chains in landscape orientation, and equal to the display window size (which is usually the native screen resolution in most Windows Store games). This ensures that your app uses the optimal swap chain implementation when it doesn't have any visible XAML overlay. If the app is rotated to portrait mode, your app should call [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) on the existing swap chain, apply a transform to the content if needed, and then call [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) again on the same swap chain. Similarly, your app should call **SetSwapChain** again on the same swap chain whenever the swap chain is resized by calling [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577).
+> **Примечание.** В целом ваши приложения DirectX должны создавать цепочки буферов в альбомной ориентации и быть равными по размеру окну отображения (как правило, оно определяется собственным разрешением экрана в большинстве игр Магазина Windows). Таким образом гарантируется, что ваше приложение использует оптимальную реализацию цепочки буферов при отсутствии видимого наложения XAML. Если ориентация приложения меняется на книжную, ваше приложение должно вызывать [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) в существующей цепочке буферов, при необходимости применить к содержимому преобразование, а затем вызывать метод [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) еще раз в той же цепочке буферов. Схожим образом ваше приложение должно снова вызывать **SetSwapChain** в той же цепочке буферов, когда размер этой цепочки изменяется посредством вызова [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577).
 
- 
+ 
 
-Here is basic process for creating and updating a [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) object in the code behind:
+Здесь описывается простой процесс создания и обновления объекта [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) в коде программной части.
 
-1.  Get an instance of a swap chain panel for your app. The instances are indicated in your XAML with the `<SwapChainPanel>` tag.
+1.  Получите экземпляр панели цепочки буферов для своего приложения. Экземпляры указываются в XAML-коде с помощью тега `<SwapChainPanel>`.
 
     `Windows::UI::Xaml::Controls::SwapChainPanel^ swapChainPanel;`
 
-    Here is an example `<SwapChainPanel>` tag.
+    Пример использования тега `<SwapChainPanel>`.
 
     ```xml
     <SwapChainPanel x:Name="swapChainPanel">
@@ -302,7 +315,7 @@ Here is basic process for creating and updating a [**SwapChainPanel**](https://m
     …
     ```
 
-2.  Get a pointer to [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/windows/desktop/dn302143). Cast the [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) object as [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) (or **IUnknown**), and call **QueryInterface** on it to get the underlying **ISwapChainPanelNative** implementation.
+2.  Получите указатель на интерфейс [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/windows/desktop/dn302143). Приведите объект [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) к типу [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) (или **IUnknown**) и примените к нему метод **QueryInterface**, чтобы получить лежащую в основе реализацию интерфейса **ISwapChainPanelNative**.
 
     ```cpp
     Microsoft::WRL::ComPtr<ISwapChainPanelNative> m_swapChainNative;
@@ -311,7 +324,7 @@ Here is basic process for creating and updating a [**SwapChainPanel**](https://m
     panelInspectable->QueryInterface(__uuidof(ISwapChainPanelNative), (void **)&m_swapChainNative);
     ```
 
-3.  Create the DXGI device and the swap chain, and set the swap chain to [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/windows/desktop/dn302143) by passing it to [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144).
+3.  Создайте устройство DXGI и цепочку буферов. Цепочку буферов настройте в [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/windows/desktop/dn302143), передав ее методу [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144).
 
     ```cpp
     Microsoft::WRL::ComPtr<IDXGISwapChain1>               m_swapChain;    
@@ -351,27 +364,32 @@ Here is basic process for creating and updating a [**SwapChainPanel**](https://m
     m_swapChainNative->SetSwapChain(m_swapChain.Get());
     ```
 
-4.  Draw to the DirectX swap chain, and present it to display the contents.
+4.  Нарисуйте цепочку буферов DirectX и выполните ее представление, чтобы отобразить содержимое.
 
     ```cpp
     HRESULT hr = m_swapChain->Present(1, 0);
     ```
 
-    The XAML elements are refreshed when the Windows Runtime layout/render logic signals an update.
+    Элементы XAML обновляются, когда логика макета или отрисовки среды выполнения Windows сигнализирует об обновлении.
 
-## Related topics
+## Связанные разделы
 
 
 * [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041)
 * [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050)
 * [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)
 * [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/windows/desktop/dn302143)
-* [Programming Guide for Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345)
+* [Руководство по программированию для Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345)
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

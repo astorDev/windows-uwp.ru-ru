@@ -1,135 +1,143 @@
 ---
 author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
-description: This article shows you how to use the MediaProcessingTrigger and a background task to process media files in the background.
-title: Process media files in the background
+description: В данной статье показано, как использовать MediaProcessingTrigger и фоновую задачу для обработки файлов мультимедиа в фоновом режиме.
+title: Обработка файлов мультимедиа в фоновом режиме
 ---
 
-# Process media files in the background
+# Обработка файлов мультимедиа в фоновом режиме
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article shows you how to use the [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) and a background task to process media files in the background.
+В данной статье показано, как использовать [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) и фоновую задачу для обработки файлов мультимедиа в фоновом режиме.
 
-The example app described in this article allows the user to select an input media file to transcode and specify an output file for the transcoding result. Then, a background task is launched to perform the transcoding operation. The [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) is intended to support many different media processing scenarios besides transcoding, including rendering media compositions to disk and uploading processed media files after processing is complete.
+Пример приложения, описанный в этой статье, позволяет пользователю выбрать входной файл мультимедиа для перекодирования и определить выходной файл для результата перекодирования. Затем запускается фоновая задача для выполнения операции перекодирования. [
+            **MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) предназначен для поддержки многих других сценариев обработки мультимедиа, кроме перекодирования, в том числе записи мультимедийных композиций на диск и передачи обработанных файлов мультимедиа после завершения обработки.
 
-For more detailed information on the different Universal Windows app features utilized in this sample, see:
+Дополнительные сведения о различных функциях универсального приложения для Windows, применяемых в этом примере, см. в следующих статьях:
 
--   [Transcode media files](transcode-media-files.md)
--   [Launching resuming and background tasks](https://msdn.microsoft.com/library/windows/apps/mt227652)
--   [Tiles badges and notifications](https://msdn.microsoft.com/library/windows/apps/mt185606)
+-   [Перекодирование файлов мультимедиа](transcode-media-files.md)
+-   [Запуск, возобновление и фоновые задачи](https://msdn.microsoft.com/library/windows/apps/mt227652)
+-   [Плитки, индикаторы событий и уведомления](https://msdn.microsoft.com/library/windows/apps/mt185606)
 
-## Create a media processing background task
+## Создание фоновой задачи обработки мультимедиа
 
-To add a background task to your existing solution in Microsoft Visual Studio, Enter a name for your comp
+Для добавления фоновой задачи в существующее решение в Microsoft Visual Studio введите имя вашего компьютера.
 
-1.  From the **File** menu, select **Add** and then **New Project...**.
-2.  Select the project type **Windows Runtime Component (Universal Windows)**.
-3.  Enter a name for your new component project. This example uses the project name **MediaProcessingBackgroundTask**.
-4.  Click OK.
+1.  В меню **Файл** выберите команду **Добавить** и затем **Новый проект...**.
+2.  Выберите тип проекта **Компонент среды выполнения Windows (универсальное приложение)**.
+3.  Введите имя вашего нового проекта компонента. В этом примере используется имя проекта **MediaProcessingBackgroundTask**.
+4.  Нажмите кнопку «ОК».
 
-In **Solution Explorer**, right-click the icon for the "Class1.cs" file that is created by default and select **Rename**. Rename the file to "MediaProcessingTask.cs". When Visual Studio asks if you want to rename all of the references to this class, click **Yes**.
+В **обозревателе решений**щелкните правой кнопкой мыши значок созданного по умолчанию файла Class1.cs и выберите пункт **Переименовать**. Переименуйте файл в MediaProcessingTask.cs. Когда Visual Studio запросит, требуется ли переименовать все ссылки на этот класс, выберите **Да**.
 
-In the renamed class file, add the following **using** directives to include these namespaces in your project.
+В переименованном файле класса добавьте следующие директивы **using**, чтобы включить эти пространства имен в проект.
                                   
 [!code-cs[BackgroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundUsing)]
 
-Update your class declaration to make your class inherit from [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794).
+Обновите свое объявление класса, чтобы класс наследовал от [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794).
 
 [!code-cs[BackgroundClass](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundClass)]
 
-Add the following member variables to your class:
+Добавьте следующие переменные-члены в класс.
 
--   An [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797) that will be used to update the foreground app with the progress of the background task.
--   A [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) that keeps the system from shutting down your background task while media transcoding is being performed asynchronously.
--   A **CancellationTokenSource** object that can be used to cancel the asynchronous transcoding operation.
--   The [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) object that will be used to transcode media files.
+-   [
+            **IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797), который будет использоваться для обновления сведений о ходе выполнения фоновой задачи в приложении переднего плана.
+-   [
+            **BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499), который не позволяет системе завершить фоновую задачу при выполнении перекодирования мультимедиа в асинхронном режиме.
+-   Объект **CancellationTokenSource**, который можно использовать для отмены асинхронной операции перекодирования.
+-   Объект [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080), который будет использоваться для перекодирования файлов мультимедиа.
 
 [!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
 
-The system calls [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method of a background task when the task is launched. Set the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) object passed into the method to the corresponding member variable. Register a handler for the [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) event, which will be raised if the system needs to shut down the background task. Then, set the [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) property to zero.
+Система вызывает метод [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) фоновой задачи, когда эта задача запускается. Задайте для объекта [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794), передаваемого в метод, соответствующую переменную-член. Зарегистрируйте обработчик для события [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798), которое возникает, когда системе нужно завершить работу фоновой задачи. После этого установите для свойства [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) нулевое значение.
 
-Next, call the background task object's [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700507) method to obtain a deferral. This tells the system not to shut down your task because you are performing asynchronous operations.
+Затем вызовите метод объекта [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700507) фоновой задачи для получения отсроченного объекта. Это сообщает системе, что завершать задачу не нужно, поскольку выполняются асинхронные операции.
 
-Next, call the helper method **TranscodeFileAsync**, which is defined in the next section. If that completes successfully, a helper method is called to launch a toast notification to alert the user that transcoding is complete.
+Затем вызовите вспомогательный метод **TranscodeFileAsync**, который определяется в следующем разделе. Если это успешно выполнено, вызывается вспомогательный метод, чтобы открыть всплывающее уведомление для оповещения пользователя о завершении перекодирования.
 
-At the end of the **Run** method, call [**Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) on the deferral object to let the system know that your background task is complete and can be terminated.
+В конце метода **Run** вызовите [**Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) для отсроченного объекта, чтобы сообщить системе, что фоновая задача выполнена и может быть завершена.
 
 [!code-cs[Run](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetRun)]
 
-In the **TranscodeFileAsync** helper method, the file names for the input and output files for the transcoding operations are retrieved from the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) for your app. These values will be set by your foreground app. Create a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object for the input and output files and then create an encoding profile to use for transcoding.
+Во вспомогательном методе **TranscodeFileAsync** имена входного и выходного файлов для операций перекодирования извлекаются из [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) для приложения. Эти значения устанавливаются вашим приложением переднего плана. Создайте объект [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) для входного и выходного файлов, а затем создайте профиль кодирования для использования во время перекодирования.
 
-Call [**PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936), passing in the input file, output file, and encoding profile. The [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) object returned from this call lets you know if transcoding can be performed. If the [**CanTranscode**](https://msdn.microsoft.com/library/windows/apps/hh700942) property is true, call [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) to perform the transcoding operation.
+Вызовите [**PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936), передав входной файл, выходной файл и профиль кодирования. Объект [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941), возвращенный из этого вызова, позволяет узнать, можно ли выполнить перекодирование. Если свойство [**CanTranscode**](https://msdn.microsoft.com/library/windows/apps/hh700942) имеет значение true, вызовите [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) для выполнения операции перекодирования.
 
-The **AsTask** method enables you to track the progress the asynchronous operation or cancel it. Create a new **Progress** object, specifying the units of progress you desire and the name of the method that will be called to notify you of the current progress of the task. Pass the **Progress** object into the **AsTask** method along with the cancellation token that allows you to cancel the task.
+Метод **AsTask** позволяет отслеживать ход выполнения асинхронной операции или отменить ее. Создайте новый объект **Progress**, указав нужные единицы хода выполнения и имя метода, который вызывается, чтобы уведомлять вас о ходе выполнения задачи. Передайте объект **Progress** в метод **AsTask** вместе с токеном отмены, который позволяет отменить задачу.
 
 [!code-cs[TranscodeFileAsync](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetTranscodeFileAsync)]
 
-In the method you used to create the Progress object in the previous step, **Progress**, set the progress of the background task instance. This will pass the progress to the foreground app, if it is running.
+В методе, использовавшемся для создания объекта Progress в предыдущем шаге **Progress**, задайте ход выполнения экземпляра фоновой задачи. Это позволит передать данные о ходе выполнения в приложение переднего плана, если оно запущено.
 
 [!code-cs[Progress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
 
-The **SendToastNotification** helper method creates a new toast notification by getting a template XML document for a toast that only has text content. The text element of the toast XML is set and then a new [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) object is created from the XML document. Finally, the toast is shown to the user by calling [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659).
+Вспомогательный метод **SendToastNotification** создает новое всплывающее уведомление, получая для него XML-документ шаблона, который содержит только текстовое содержимое. Задается текстовый элемент XML-кода всплывающего уведомления, а затем создается новый объект [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) из XML-документа. Наконец, всплывающее уведомление отображается пользователю путем вызова [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659).
 
 [!code-cs[SendToastNotification](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
 
-## Register and launch the background task
+## Регистрация и запуск фоновой задачи
 
-Before you can launch the background task from your foreground app, you must update your foreground app's Package.appmanifest file to let the system know that your app uses a background task.
+Прежде чем из приложения переднего плана можно будет запустить фоновую задачу, необходимо обновить файл Package.appmanifest приложения переднего плана, чтобы сообщить системе, что приложение использует фоновую задачу.
 
-1.  In **Solution Explorer**, double-click the Package.appmanifest file icon to open the manifest editor.
-2.  Select the **Declarations** tab.
-3.  From **Available Declarations**, select **Background Tasks** and click **Add**.
-4.  Under **Supported Declarations** make sure that the **Background Tasks** item is selected. Under **Properties**, select the checkbox for **Media processing**.
-5.  In the **Entry Point** text box, specify the namespace and class name for your background test, separated by a period. For this example, the entry is:
+1.  Дважды щелкните значок файла Package.appmanifest в **обозревателе решений**, чтобы открыть редактор манифестов.
+2.  Выберите вкладку **Объявления**.
+3.  В списке **Доступные объявления** выберите **Фоновые задачи** и щелкните **Добавить**.
+4.  Убедитесь, что в области **Поддерживаемые объявления** выбран элемент **Фоновые задачи**. В области **Свойства** установите флажок **Обработка мультимедиа**.
+5.  В текстовом поле **Точка входа** укажите пространство имен и имя класса для фонового теста, разделив их запятой. В этом примере данная запись имеет следующий вид:
    ```csharp
    MediaProcessingBackgroundTask.MediaProcessingTask
    ```
-Next, you need to add a reference to your background task to your foreground app.
-1.  In **Solution Explorer**, under your foreground app project, right-click the **References** folder and select **Add Reference...**.
-2.  Expand the **Projects** node and select **Solution**.
-3.  Check the box next to your background task project and click **OK**.
+Далее необходимо добавить ссылку на фоновую задачу в приложение переднего плана.
+1.  В области проекта приложения переднего плана в **обозревателе решений** щелкните правой кнопкой мыши папку **Ссылки** и выберите пункт **Добавить ссылку...**.
+2.  Разверните узел **Проекты** и выберите **Решение**.
+3.  Установите флажок рядом с проектом фоновой задачи и нажмите кнопку **ОК**.
 
-The rest of the code in this example should be added to your foreground app. First, you will need to add the following namespaces to your project.
+Оставшуюся часть кода в этом примере следует добавить в ваше приложение переднего плана. Для начала необходимо добавить в проект следующие пространства имен.
 
 [!code-cs[ForegroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundUsing)]
 
-Next, add the following member variables that are needed to register the background task.
+Далее добавьте следующие переменные-члены, необходимые для регистрации фоновой задачи.
 
 [!code-cs[ForegroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundMembers)]
 
-The **PickFilesToTranscode** helper method uses a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) to open the input and output files for transcoding. The user may select files in a location that your app does not have access to. To make sure your background task can open the files, add them to the [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) for your app.
+Вспомогательный метод **PickFilesToTranscode** использует [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) и [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), чтобы открыть входной и выходной файлы для перекодирования. Пользователь может выбрать файлы в недоступном для приложения расположении. Чтобы убедиться, что ваша фоновая задача может открыть такие файлы, добавьте их в [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) для своего приложения.
 
-Finally, set entries for the input and output file names in the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) for your app. The background task retrieves the file names from this location.
+В заключение задайте записи для имен входного и выходного файлов в [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) для приложения. Фоновая задача извлекает имена файлов из этого расположения.
 
 [!code-cs[PickFilesToTranscode](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetPickFilesToTranscode)]
 
-To register the background task, create a new [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) and a new [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Set the name of the background task builder so that you can identify it later. Set the [**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) to the same namespace and class name string you used in the manifest file. Set the [**Trigger**](https://msdn.microsoft.com/library/windows/apps/dn641725) property to the **MediaProcessingTrigger** instance.
+Для регистрации фоновой задачи создайте новый [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) и новый [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Задайте имя построителя фоновой задачи, чтобы позднее его можно было идентифицировать. Задайте для [**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) ту же строку пространства имен и имени класса, которую использовали в файле манифеста. Задайте для свойства [**Trigger**](https://msdn.microsoft.com/library/windows/apps/dn641725) значение экземпляра **MediaProcessingTrigger**.
 
-Before registering the task, make sure you unregister any previously registered tasks by looping through the [**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) collection and calling [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229870) on any tasks that have the name you specified in the [**BackgroundTaskBuilder.Name**](https://msdn.microsoft.com/library/windows/apps/br224771) property.
+Перед регистрацией задачи убедитесь, что отменена регистрация всех ранее зарегистрированных задач, пройдя в цикле по коллекции [**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) и вызывая [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229870) для всех задач с указанным в свойстве [**BackgroundTaskBuilder.Name**](https://msdn.microsoft.com/library/windows/apps/br224771) именем.
 
-Register the background task by calling [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772). Register handlers for the [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) and [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224808) events.
+Зарегистрируйте фоновую задачу, вызвав [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772). Зарегистрируйте обработчики для событий [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) и [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224808).
 
 [!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
-Launch the background task by calling the **MediaProcessingTrigger** object's [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) method. The [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) object returned by this method lets you know whether the background task was started successfully, and if not, lets you know why the background task wasn't launched.
+Запустите фоновую задачу, вызвав метод **MediaProcessingTrigger** объекта [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071). Объект [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007), возвращенный этим методом, позволяет узнать, была ли фоновая задача успешно запущена, а также определить причину, если эта фоновая задача не была запущена.
 
 [!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
 
-The **OnProgress** event handler is called when the background task updates the progress of the operation. You can use this opportunity to update your UI with progress information.
+Обработчик событий **OnProgress** вызывается каждый раз, когда фоновая задача обновляет данные о ходе выполнения операции. Вы можете использовать эту возможность, чтобы обновить пользовательский интерфейс данными о ходе выполнения.
 
 [!code-cs[OnProgress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnProgress)]
 
-The **OnCompleted** event handler is called when the background task has finished running. This is another opportunity to update your UI to give status information to the user.
+Обработчик событий **OnCompleted** вызывается каждый раз, когда фоновая задача завершает работу. Это еще одна возможность обновить пользовательский интерфейс для предоставления сведений о состоянии пользователю.
 
 [!code-cs[OnCompleted](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnCompleted)]
 
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

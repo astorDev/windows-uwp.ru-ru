@@ -1,114 +1,114 @@
 ---
 author: martinekuan
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-title: Create a Hello World app in C++ (Windows 10)
-description: With Microsoft Visual Studio 2015, you can use C++ to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that's defined in Extensible Application Markup Language (XAML).
+title: Создание приложения Hello World на C++ (Windows 10)
+description: В Microsoft Visual Studio 2015 вы можете использовать язык C++ для разработки приложения, которое работает в Windows 10, в том числе на телефонах под управлением Windows 10. Интерфейс пользователя в этих приложениях определен на языке XAML.
 ---
 
-# Create a "hello world" app in C++ (Windows 10)
+# Создание приложения «Hello World» на C++ (Windows 10)
 
-With Microsoft Visual Studio 2015, you can use C++ to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that's defined in Extensible Application Markup Language (XAML).
+В Microsoft Visual Studio 2015 вы можете использовать язык C++ для разработки приложения, которое работает в Windows 10, в том числе на телефонах под управлением Windows 10. Интерфейс пользователя в этих приложениях определен на языке XAML.
 
-To develop an app that runs on Windows 8.1 and Windows Phone 8.1, use Microsoft Visual Studio 2013 Update 3 or later and follow the steps [here](https://msdn.microsoft.com/library/windows/apps/Dn263168). The most significant difference is that for Windows 8.1 and Windows Phone 8.1, you use a solution with three projects, one for the desktop (or tablet device), one for the phone, and one for shared code. For Windows 10 development, all code shares the same project.
+Чтобы разработать приложение, которое работает в Windows 8.1 и Windows Phone 8.1, используйте Microsoft Visual Studio 2013 с обновлением 3 или более позднюю версию. Выполните действия, указанные [здесь](https://msdn.microsoft.com/library/windows/apps/Dn263168). Самое существенное отличие заключается в том, что для Windows 8.1 и Windows Phone 8.1 используется решение с тремя проектами: для компьютера (или планшета), для телефона и для общего кода. В разработке для Windows 10 все коды используют один и тот же проект.
 
-For tutorials in other programming languages, see:
+Учебники для других языков программирования см. в следующих разделах.
 
--   [Create your first Windows Store app using JavaScript](https://msdn.microsoft.com/library/windows/apps/BR211385)
+-   [Создание первого приложения Магазина Windows на JavaScript](https://msdn.microsoft.com/library/windows/apps/BR211385)
 
--   [Create your first Windows Store app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581)
+-   [Создание первого приложения Магазина Windows на C# или Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581)
 
-## Before you start...
+## Перед началом работы
 
--   To complete this tutorial, you must use Visual Studio 2015 Community or later, or one of the non-Community versions of Visual Studio 2015, on a computer that's running Windows 10 or Windows 8.1. To download, see [Get the tools](http://go.microsoft.com/fwlink/p/?LinkId=532666).
--   Install the appropriate [SDK](http://go.microsoft.com/fwlink/?LinkId=533049) for Windows Universal Platform development.
--   You also must have a developer license. For instructions, see [Get a developer license](https://msdn.microsoft.com/library/windows/apps/Hh974578).
--   We assume you have a basic understanding of standard C++, XAML, and the concepts in the [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595).
--   We assume you're using the default window layout in Visual Studio. To reset to the default layout, on the menu bar, choose **Window** > **Reset Window Layout**.
--   Note that there is a known issue with Visual Studio 2015 that can result in a NullReferenceException when loading the XAML designer. This issue blocks some of the steps of this tutorial, unless you apply the workaround. For details about this issue and the workaround, see [this MSDN forum post](http://go.microsoft.com/fwlink/p/?LinkId=624036) .
+-   Для работы с этим учебником необходимо использовать Visual Studio 2015 Community или более поздней версии или одну из версий Visual Studio 2015, кроме Community, на компьютере под управлением Windows 10 или Windows 8.1. Для скачивания перейдите на страницу [Получение инструментов](http://go.microsoft.com/fwlink/p/?LinkId=532666).
+-   Установите подходящий пакет [SDK](http://go.microsoft.com/fwlink/?LinkId=533049) для разработки приложений универсальной платформы для Windows.
+-   Вам также потребуется лицензия разработчика. Инструкции см. на странице [Получение лицензии разработчика](https://msdn.microsoft.com/library/windows/apps/Hh974578).
+-   Предполагается, что вы имеете общее представление о стандартном C++ и о XAML и владеете понятиями, описанными в разделе [Обзор языка XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
+-   Также предполагается, что вы используете в Visual Studio макет окна по умолчанию. Чтобы вернуться к макету по умолчанию, выберите в строке меню пункт **Окно** > **Сброс макета окон**.
+-   Обратите внимание, что существует известная проблема с Visual Studio 2015, которая может привести к исключению NullReferenceException при загрузке конструктора XAML. Эта проблема блокирует некоторые из этапов этого учебника, если вы не собираетесь применить решение. Подробнее об этой проблеме и решении, см. в [этой записи форума MSDN](http://go.microsoft.com/fwlink/p/?LinkId=624036) .
 
-## Comparing C++ desktop apps to Windows apps
+## Сравнение классических приложений на C++ с приложениями для Windows
 
-If you're coming from a background in Windows desktop programming in C++, you'll probably find that some aspects of Windows Store app and Windows Phone app programming are familiar, but other aspects require some learning.
+Если у вас есть опыт создания классических приложений для Windows на C++, то некоторые аспекты программирования приложений Магазина Windows и приложений для Windows Phone вам, вероятно, покажутся хорошо знакомыми, а другие потребуют изучения.
 
-### What's the same?
+### Сходство с традиционным программированием на C++
 
--   You can use the STL, the CRT (with some exceptions), and any other C++ library as long as the code does not attempt to call Windows functions that are not accessible from the Windows Runtime environment.
+-   Вы можете использовать STL, CRT (за некоторыми исключениями) и любую другую библиотеку C++, если код не пытается вызвать функции Windows, которые недоступны из среды выполнения Windows.
 
--   If you're accustomed to visual designers, you can still use the designer built into Microsoft Visual Studio, or you can use the more full-featured Blend for Visual Studio. If you're accustomed to coding UI by hand, you can hand-code your XAML.
+-   Если вы привыкли работать с визуальными конструкторами, можно использовать конструктор, встроенный в Microsoft Visual Studio, или использовать полнофункциональное приложение Blend для Visual Studio. Если вы обычно пишете код для пользовательского интерфейса вручную, вы точно так же можете писать код XAML.
 
--   You're still creating apps that use Windows operating system types and your own custom types.
+-   Создаваемые приложения могут использовать типы операционной системы Windows и ваши собственные настраиваемые типы.
 
--   You're still using the Visual Studio debugger, profiler, and other development tools.
+-   Вы по-прежнему можете использовать отладчик, профилировщик и другие инструменты разработки Visual Studio.
 
--   You're still creating apps that are compiled to native machine code by the Visual C++ compiler. Windows Store apps in C++ don't execute in a managed runtime environment.
+-   Для компиляции созданных вами приложений в машинный код так же используется компилятор Visual C++. Выполнение приложений Магазина Windows на C++ не поддерживается в управляемой среде выполнения.
 
-### What's new?
+### Что нового?
 
--   The design principles for Windows Store apps and Universal Windows apps are very different from those for desktop apps. Window borders, labels, dialog boxes, and so on, are de-emphasized. Content is foremost. Great Universal Windows apps incorporate these principles from the very beginning of the planning stage.
+-   Принципы разработки приложений Магазина Windows и универсальных приложений для Windows существенно отличаются от принципов разработки классических приложений. Утрачивают значение границы окон, подписи, диалоговые окна и прочее. Наибольшее значение приобретает содержимое. При создании универсальных приложений для Windows этим принципам необходимо следовать с самого начала стадии планирования.
 
--   You're using XAML to define the entire UI. The separation between UI and core program logic is much clearer in a Windows Universal app than in an MFC or Win32 app. Other people can work on the appearance of the UI in the XAML file while you're working on the behavior in the code file.
+-   Для определения всего пользовательского интерфейса используется XAML. Разделение между пользовательским интерфейсом и основной логикой в универсальном приложении для Windows намного более очевидно, чем в приложениях MFC или Win32. В то время как вы работаете над поведением приложения в файле кода, другие специалисты могут работать над внешним видом пользовательского интерфейса в файле XAML.
 
--   You're primarily programming against a new, easy-to-navigate, object-oriented API, the Windows Runtime, although on Windows devices Win32 is still available for some functionality.
+-   Программирование выполняется главным образом с помощью нового объектно-ориентированного API среды выполнения Windows с улучшенной навигацией, хотя на устройствах Windows для ряда функций можно по-прежнему использовать Win32.
 
--   You use C++/CX to consume and create Windows Runtime objects. C++/CX enables C++ exception handling, delegates, events, and automatic reference counting of dynamically created objects. When you use C++/CX, the details of the underlying COM and Windows architecture are hidden from your app code. For more information, see [C++/CX Language Reference](https://msdn.microsoft.com/en-us/library/windows/apps/hh699871.aspx).
+-   С помощью C++/CX можно использовать и создавать объекты среды выполнения Windows. C++/CX разрешает обработку исключений C++, делегаты, события и автоматический подсчет ссылок для динамически создаваемых объектов. При использовании C++/CX особенности базовой архитектуры COM и Windows скрыты от кода приложения. Подробнее: [Справочник по языку C++/CX](https://msdn.microsoft.com/en-us/library/windows/apps/hh699871.aspx).
 
--   Your app is compiled into a package that also contains metadata about the types that your app contains, the resources that it uses, and the capabilities that it requires (file access, internet access, camera access, and so forth).
+-   Приложение компилируется в пакет, также включающий метаданные о типах, которые содержатся в приложении, используемых ресурсах и требуемых возможностях (доступ к файловой системе, Интернету, камере и т. д.).
 
--   In the Windows Store and Windows Phone Store your app is verified as safe by a certification process and made discoverable to millions of potential customers.
+-   В Магазине Windows и Магазине Windows Phone приложение проходит сертификацию для подтверждения его надежности, после чего оно становится доступным для миллионов потенциальных клиентов.
 
-## Hello World Store app in C++
+## Приложение Магазина Hello World на C++
 
-Our first app is a "Hello World" that demonstrates some basic features of interactivity, layout, and styles. We'll create an app from the Windows Universal app project template. If you've developed apps for Windows 8.1 and Windows Phone 8.1 before, you might remember that you had to have three projects in Visual Studio, one for the Windows app, one for the phone app, and another with shared code. The Windows 10 Universal Windows Platform (UWP) makes it possible to have just one project, which runs on all devices, including desktop and laptop computers running Windows 10, devices such as tablets, mobile phones, and so on.
+Наше первое приложение Hello World демонстрирует некоторые основные возможности взаимодействия, стилей и макета. Мы создадим приложение, используя шаблон проекта универсального приложения для Windows. Если вы разрабатывали приложения для Windows 8.1 и Windows Phone 8.1 ранее, возможно, вы помните, что вам нужны были три проекта в Visual Studio: один для приложения для Windows, один для приложения для телефона и еще один с общим кодом. Благодаря универсальной платформе Windows (UWP) в Windows 10 можно создать всего один проект, который работает на всех устройствах, в том числе на настольных компьютерах и ноутбуках под управлением Windows 10, таких устройствах, как планшеты, мобильные телефоны и т. д.
 
-We'll start with the basics:
+Начнем с основ.
 
--   How to create a Universal Windows project in Visual Studio 2015 or later.
+-   Создание проекта универсального приложения для Windows в Visual Studio 2015 или более поздней версии
 
--   How to understand the projects and files that are created.
+-   Общее представление о проектах и создаваемых файлах.
 
--   How to understand the extensions in Visual C++ component extensions (C++/CX), and when to use them.
+-   Общее представление о расширениях в расширениях компонентов Visual C++ (C++/CX) и способах их использования
 
-**First, create a solution in Visual Studio**
+**Сначала создайте решение в Visual Studio**
 
-1.  In Visual Studio, on the menu bar, choose **File** > **New** > **Project**.
+1.  В Visual Studio в строке меню выберите **Файл** > **Создать** > **Проект**.
 
-2.  In the **New Project** dialog box, in the left pane, expand **Installed** > **Visual C++** > **Windows** > **Universal**.
+2.  В диалоговом окне **Создание проекта** разверните на левой панели узел **Установленные** > **Visual C++** > **Windows** > **Универсальные приложения для Windows**.
 
-3.  In the center pane, select **Blank App (Universal Windows)**.
+3.  На центральной панели выберите **Пустое приложение (универсальные приложения для Windows)**.
 
-4.  Enter a name for the project. We'll name it HelloWorld.
+4.  Введите имя проекта. Он будет называться HelloWorld.
 
- ![C++ project templates in the New Project dialog box ](images/vs2015-newuniversalproject-cpp.png)
+ ![Шаблоны проектов C++ в диалоговом окне "Создание проекта" ](images/vs2015-newuniversalproject-cpp.png)
 
-5.  Choose the **OK** button.
+5.  Нажмите кнопку **ОК**.
 
-   If this is the first UWP project you've created, and you haven't enabled Developer Mode on your computer, the Enable Developer mode dialog box appears. Click on the link to bring up the Settings page that lets you set Developer Mode. Developer Mode allows your apps to be deployed and run locally.
+   Если это первый проект UWP, который вы создали, и вы не включали режим разработчика на компьютере, отобразится диалоговое окно режима разработчика. Щелкните ссылку, чтобы открыть страницу параметров, позволяющую настроить режим разработчика. Режим разработчика позволяет разворачивать и запускать ваши приложения локально.
 
-   Your project files are created.
+   Файлы вашего проекта созданы.
 
-Before we go on, let’s look at what's in the solution.
+Перед тем как продолжить работу, давайте изучим файлы решения.
 
-![Univeral app solution with nodes collapsed](images/vs2015-solutionexploreruniversal-0-cpp.png)
+![Решение для универсального приложения со свернутыми узлами](images/vs2015-solutionexploreruniversal-0-cpp.png)
 
-### About the project files
+### Информация о файлах проекта
 
-Every .xaml file in a project folder has a corresponding .xaml.h file and .xaml.cpp file in the same folder and a .g file and a .g.hpp file in the Generated Files folder, which is on disk but not part of the project. You modify the XAML files to create UI elements and connect them to data sources (DataBinding). You modify the .h and .cpp files to add custom logic for event handlers. The auto-generated files represent the transformation of the XAML markup into C++. Don't modify these files, but you can study them to better understand how the code-behind works. Basically, the generated file contains a partial class definition for a XAML root element; this class is the same class that you modify in the \*.xaml.h and .cpp files. The generated files declare the XAML UI child elements as class members so that you can reference them in the code you write. At build time, the generated code and your code are merged into a complete class definition and then compiled.
+Каждый файл с расширением XAML в папке проекта имеет соответствующий файл .XAML.H и файл .XAML.CPP в той же папке, а также файл .G и файл .G.HPP в папке "Generated Files", которая находится на диске, но не является частью проекта. Следует изменить эти XAML-файлы, чтобы создать элементы пользовательского интерфейса и соединить их с источниками данных (привязка данных). Следует изменить файлы .H и .CPP, чтобы добавить настраиваемую логику для обработчиков событий. Автоматически создаваемые файлы представляют преобразование разметки XAML в C++. Не изменяйте эти файлы, но вы можете изучить их, чтобы лучше понимать, как работает код программной части. В основном созданный файл содержит частичное определение класса для корневого элемента XAML. Это тот же самый класс, который вы изменяете в файлах \*.XAML.H и .CPP. Созданные файлы объявляют дочерние элементы пользовательского интерфейса XAML как члены класса, чтобы вы могли ссылаться на них в своем коде. Во время выполнения сборки созданный код и ваш код объединяются в полное определение класса, а затем компилируются.
 
-Let's look first at the project files.
+Давайте сначала посмотрим на файлы проекта.
 
--   **App.xaml, App.xaml.h, App.xaml.cpp:** Represent the Application object, which is an app's entry point. App.xaml contains no page-specific UI markup, but you can add UI styles and other elements that you want to be accessible from any page. The code-behind files contain handlers for the **OnLaunched** and **OnSuspending** events. Typically, you add custom code here to initialize your app when it starts and perform cleanup when it's suspended or terminated.
--   **MainPage.xaml, MainPage.xaml.h, MainPage.xaml.cpp:**Contain the XAML markup and code-behind for the default "start" page in an app. It has no navigation support or built-in controls.
--   **pch.h, pch.cpp:** A precompiled header file and the file that includes it in your project. In pch.h, you can include any headers that do not change often and are included in other files in the solution.
--   **Package.appxmanifest:** An XML file that describes the device capabilities that your app requires, and the app version info and other metadata. To open this file in the **Manifest Designer**, just double-click it.
--   **HelloWorld\_TemporaryKey.pfx:**A key that enables deployment of the app on this machine, from Visual Studio.
+-   **App.xaml, App.xaml.h, App.xaml.cpp** — представляют объект приложения, который является точкой входа приложения. App.xaml не содержит разметки пользовательского интерфейса, относящейся к отдельным страницам, но вы можете добавить стили и другие элементы пользовательского интерфейса, которые следует сделать доступными с любой страницы. Файлы кода программной части содержат обработчики для событий **OnLaunched** и **OnSuspending**. Обычно сюда добавляется пользовательский код для инициализации приложения при запуске, а также здесь выполняется очистка при приостановке и завершении работы.
+-   **MainPage.xaml, MainPage.xaml.h, MainPage.xaml.cpp** — содержат разметку XAML и код программной части для стандартной начальной страницы в приложении. Эта страница не поддерживает навигацию и не имеет встроенных элементов управления.
+-   **pch.h, pch.cpp** — предварительно скомпилированный файл заголовка и файл, который включает его в ваш проект. В файле pch.h вы можете добавлять любые заголовки, которые не изменяются часто и которые добавлены в другие файлы в решении.
+-   **Package.appxmanifest:** — XML-файл, описывающий возможности устройства, которые необходимы вашему приложению. Также содержит информацию о версии приложения и другие метаданные. Чтобы открыть этот файл в **конструкторе манифеста**, просто дважды щелкните его.
+-   **HelloWorld\_TemporaryKey.pfx** — ключ, разрешающий развертывание приложения на этом компьютере из Visual Studio.
 
-## A first look at the code
+## Начало работы с программным кодом
 
-If you examine the code in App.xaml.h, App.xaml.cpp in the shared project, you'll notice that it's mostly C++ code that looks familiar. However, some syntax elements might not be as familiar if you are new to Windows Runtime apps, or you've worked with C++/CLI. Here are the most common non-standard syntax elements you'll see in C++/CX:
+Если вы изучите код в файлах App.xaml.h, App.xaml.cpp в общем проекте, то заметите, что в основном понимаете код C++. Тем не менее есть и некоторые незнакомые элементы синтаксиса, если вы ранее не сталкивались с приложениями для среды выполнения Windows, или если вы работали с C++/CLI. Вот общие нестандартные элементы синтаксиса, которые вы можете увидеть в C++/CX:
 
--   **Ref classes**
+-   **Классы "ref"**
 
-Almost all Windows Runtime classes, which includes all the types in the Windows API--XAML controls, the pages in your app, the App class itself, all device and network objects, all container types--are declared as a **ref class**. (A few Windows types are **value class** or **value struct**). A ref class is consumable from any language. In C++, the lifetime of these types is governed by automatic reference counting (not garbage collection) so that you never explicitly delete these objects. You can create your own ref classes as well.
+Почти все классы среды выполнения Windows, которые включают в себя все типы в API Windows (элементы управления XAML, страницы в вашем приложении, сам класс App, все объекты устройств и сетевые объекты, все типы контейнеров), объявляются как **ref class**. (Несколько типов в Windows: **класс значения** или **структура** значения). Класс ref может использоваться из любого языка. В C++ время жизни этих типов регулируется с помощью автоматического подсчета ссылок (а не сборки мусора), чтобы не приходилось явно удалять эти объекты. Вы также можете создавать свои собственные классы "ref".
 
 ```cpp
     namespace HelloWorld
@@ -125,13 +125,13 @@ Almost all Windows Runtime classes, which includes all the types in the Windows 
     }
 ```    
 
-All Windows Runtime types must be declared within a namespace and unlike in ISO C++ the types themselves have an accessibility modifier. The **public** modifier makes the class visible to Windows Runtime components outside the namespace. The **sealed** keyword means the class cannot serve as a base class. Almost all ref classes are sealed; class inheritance is not broadly used because Javascript does not understand it.
+Все типы среды выполнения Windows должны объявляться в пространстве имен и, в отличие от самих типов в C++ стандарта ISO, иметь модификатор доступа. Модификатор **public** делает класс видимым для компонентов среды выполнения Windows, которые находятся вне пространства имен. Ключевое слово **sealed** означает, что класс не может быть базовым классом. Почти все классы ref запечатаны. Наследование классов широко не используется, потому что JavaScript его не понимает.
 
--   **ref new** and **^ (hats)**
+-   **ref new** и **^ (крышка)**
 
- You declare a variable of a ref class by using the ^ (hat) operator, and you instantiate the object with the ref new keyword. Thereafter you access the object's instance methods with the -> operator just like a C++ pointer. Static methods are accessed with the :: operator just as in ISO C++.
+ Переменная класса ref объявляется с помощью оператора «^» («крышка»), и создается экземпляр объекта с помощью ключевого слова «ref new». После этого вы получаете доступ к методам экземпляров объекта, используя оператор "->" почти так же, как указатель C++. Доступ к статическим методам можно получить с помощью оператора "::", как в C++ стандарта ISO.
 
- In the following code, we use the fully qualified name to instantiate an object, and use the -> operator to call an instance method.
+ В следующем коде мы используем полное имя, чтобы создать экземпляр объекта, и оператор "->", чтобы вызвать метод экземпляров.
 
  ```cpp
     Windows::UI::Xaml::Media::Imaging::BitmapImage^ bitmapImage =
@@ -140,16 +140,16 @@ All Windows Runtime types must be declared within a namespace and unlike in ISO 
     bitmapImage->SetSource(fileStream);
     ```
 
-   Typically, in a .cpp file we would add a `using namespace  Windows::UI::Xaml::Media::Imaging` directive and the auto keyword, so that the same code would look like this:
+   Обычно в файле .CPP мы бы добавили директиву `using namespace  Windows::UI::Xaml::Media::Imaging` и ключевое слово "auto", чтобы тот же код выглядел так:
 
 ```cpp
     auto bitmapImage = ref new BitmapImage();
     bitmapImage->SetSource(fileStream);
 ```
 
--   **Properties**
+-   **Свойства**
 
-   A ref class can have properties, which, just as in managed languages, are special member functions that appear as fields to consuming code.
+   Класс "ref" может иметь свойства, которые, как и в управляемых языках, являются специальными функциями-членами. Они отображаются в виде полей в потребляющем коде.
 
 ```cpp
     public ref class SaveStateEventArgs sealed
@@ -175,9 +175,9 @@ All Windows Runtime types must be declared within a namespace and unlike in ISO 
     }
 ```
 
--   **Delegates**
+-   **Делегаты**
 
-   Just as in managed languages, a delegate is a reference type that encapsulates a function with a specific signature. They are most often used with events and event handlers
+   Как и в управляемых языках, делегат — это ссылочный тип, который инкапсулирует функцию с помощью специальной подписи. Делегаты часто используются с событиями и обработчиками событий.
 
 ```cpp
     // Delegate declaration (within namespace scope)
@@ -198,14 +198,14 @@ All Windows Runtime types must be declared within a namespace and unlike in ISO 
     }
 ```
 
-## Adding content to the app
+## Добавление содержимого в приложение
 
-Let's add some content to the app.
+Давайте добавим содержимое в приложение.
 
-**Step 1: Modify your start page**
+**Шаг 1. Изменение вашей начальной страницы**
 
-1.  In **Solution Explorer**, open MainPage.xaml.
-2.  Create controls for the UI by adding the following XAML to the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), immediately before its closing tag. It contains a [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) that has a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) that asks the user's name, a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) element that accepts the user's name, a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265), and another **TextBlock** element.
+1.  В **Обозревателе решений** откройте файл MainPage.xaml.
+2.  Создайте элементы управления для пользовательского интерфейса, добавив следующий код XAML в корневой элемент [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) сразу после его закрывающего тега. В нем содержится [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) с [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), который запрашивает имя пользователя; элемент [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), который принимает имя пользователя; элемент [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) и еще один элемент **TextBlock**.
 
 ```xml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
@@ -219,84 +219,86 @@ Let's add some content to the app.
     </StackPanel>
 ```
 
-We talk more about XAML layout in the [Navigation, layout, and views](https://msdn.microsoft.com/library/windows/apps/Dn263172) article.
+Подробнее о макете XAML: [Навигация, макет и представления](https://msdn.microsoft.com/library/windows/apps/Dn263172).
 
-3.  At this point, you have created a very basic Universal Windows app. To see what the UWP app looks like, press F5 to build, deploy, and run the app in debugging mode.
+3.  На этот момент вы создали очень простое универсальное приложение для Windows. Если вы хотите увидеть, как выглядит приложение UWP, нажмите клавишу F5, чтобы выполнить сборку, развернуть и запустить приложение в режиме отладки.
 
-The default splash screen appears first. It has an image—Assets\\SplashScreen.scale-100.png—and a background color that are specified in the app's manifest file. To learn how to customize the splash screen, see [Adding a splash screen](https://msdn.microsoft.com/library/windows/apps/Hh465332).
+Сначала появится экран-заставка по умолчанию. На нем будет присутствовать изображение (Assets\\SplashScreen.scale-100.png) и цвет фона, указанный в файле манифеста приложения. Подробнее о том, как настраивать экран-заставку, см. в разделе о [добавлении экрана-заставки](https://msdn.microsoft.com/library/windows/apps/Hh465332).
 
-When the splash screen disappears, your app appears. It displays the main page of the App.
+После того как экран-заставка исчезнет, появится ваше приложение. Отобразится основная страница приложения.
 
-Press the Windows key or click the Start button to go to the Start menu, and notice that deploying the app adds it to the Start menu's list of installed apps. It also appears when you click on the the New link next to the All Apps button. To run the app again, just tap or click its tile, press F5 or Ctrl+F5 in Visual Studio as usual.
+Нажмите клавишу Windows или кнопку меню "Пуск", чтобы перейти в меню "Пуск", и обратите внимание, что при развертывании приложение добавляется в список установленных программ меню "Пуск". Оно также появляется, когда вы нажимаете новую ссылку рядом с кнопкой "Все приложения". Чтобы снова запустить приложение, просто нажмите или щелкните его плитку, нажмите клавишу F5 или Ctrl+F5 в Visual Studio, как обычно.
 
- ![Windows Store app screen, with controls](images/xaml-hw-app2.png)
+ ![Приложение Магазина Windows: экран с элементами управления](images/xaml-hw-app2.png)
 
-   It doesn't do much—yet—but congratulations, you've built your first Universal Windows Platform app!
+   Пока это приложение не умеет выполнять много функций, но вас можно поздравить с успешным созданием вашего первого универсального приложения для Windows.
 
-   To stop debugging and close the app, return to Visual Studio and press Shift+F5.
+   Чтобы завершить отладку и закрыть приложение, вернитесь в Visual Studio и нажмите клавиши SHIFT+F5.
 
-   For more information, see [Run a Store app from Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=619619).
+   Дополнительные сведения см. в статье [Выполнение приложения Магазина в Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=619619).
 
-   In the app, you can type in the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), but clicking the [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) doesn't do anything. In later steps, you create an event handler for the button's [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event, which displays a personalized greeting.
+   В приложении можно вводить информацию в [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), но при нажатии [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) ничего не происходит. Позднее мы создадим для кнопки обработчик события [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737), который отображает персонализированное приветствие.
 
-## Start the app on a mobile device emulator
+## Запуск приложения в эмуляторе мобильного устройства
 
 
-Your app runs on any Windows 10 device, so let’s see how it looks on a Windows Phone. This section requires a Windows Phone running Windows 10, or access to a Windows Phone emulator and it requires that Visual Studio be running on a physical computer (not a virtual machine) with HyperV supported and enabled.
+Ваше приложение работает на любом устройстве с Windows 10, поэтому давайте посмотрим, как оно выглядит в Windows Phone. В этом разделе требуется Windows Phone под управлением Windows 10 или доступ к эмулятору Windows Phone. Также требуется запустить Visual Studio на физическом компьютере (не на виртуальной машине) с включенным и поддерживаемым HyperV.
 
-In addition to the options to debug on a desktop device, Visual Studio provides options for deploying and debugging your app on a physical mobile device connected to the computer, or on a mobile device emulator. You can choose among emulators for devices with different memory and display configurations.
+Помимо возможности отладки на настольном ПК Visual Studio предоставляет возможность развертывания и отладки приложения на физическом мобильном устройстве, подключенном к компьютеру, или на эмуляторе мобильного устройства. Вы можете выбрать эмулятор для устройств с теми или иными параметрами памяти и экрана.
 
--   **Device**
--   **Emulator 10.0.0.0 WVGA 4 inch 512MB**
--   Various emulators in other configurations
+-   **Устройство**
+-   **Эмулятор 10.0.0.0 WVGA, 4 дюйма, 512 МБ**
+-   Различные эмуляторы в других конфигурациях
 
-It's a good idea to test your app on a device with a small screen and limited memory, so use the **Emulator 10.0.0.0 WVGA 4 inch 512MB** option.
-**Tip**  For more info about using the phone emulator, see [Run Windows Phone apps in the emulator](http://go.microsoft.com/fwlink/p/?LinkId=394233).
+Рекомендуется протестировать приложение на устройстве с маленьким экраном и ограниченным объемом оперативной памяти, поэтому используется параметр **Эмулятор 10.0.0.0 WVGA, 4 дюйма, 512 МБ**.
+**Совет.** Подробнее об использовании эмулятора телефона см. в разделе [Выполнение приложений Windows Phone в эмуляторе](http://go.microsoft.com/fwlink/p/?LinkId=394233).
 
- 
+ 
 
-To debug your app on a physical device, you must have a device that’s registered for development. For more info, see [Register your Windows Phone](https://msdn.microsoft.com/library/windows/apps/Dn614128).
+Чтобы выполнить отладку приложения на физическом устройстве, необходимо, чтобы устройство было зарегистрировано для разработки. Дополнительные сведения см. в разделе [Регистрация устройства Windows Phone](https://msdn.microsoft.com/library/windows/apps/Dn614128).
 
-**To start debugging on a mobile device emulator**
+**Запуск отладки в эмуляторе мобильного устройства**
 
-1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, pick **Emulator 10.0.0.0 WVGA 4 inch 512MB**.
-2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) in the toolbar.
+1.  В меню целевого устройства (![Меню запуска отладки](images/startdebug-full.png)) на панели инструментов **Стандартная** выберите **Эмулятор 10.0.10240.0 WVGA, 4 дюйма, 512 МБ**.
+2.  Нажмите кнопку **Начать отладку** (![Кнопка запуска отладки](images/startdebug-sm.png)) на панели инструментов.
 
-   –or–
+   либо
 
-   From the **Debug** menu, click **Start Debugging**.
+   В меню **Отладка** щелкните **Начать отладку**.
 
-   –or–
+   либо
 
-   Press F5.
+   Нажмите клавишу F5.
 
-On the mobile device emulator, the app looks like this.
+В эмуляторе мобильного устройства приложение выглядит следующим образом.
 
-![Initial app screen on mobile device](images/hw10-screen1-mob.png)
+![Начальный экран приложения на мобильном устройстве](images/hw10-screen1-mob.png)
 
-Visual Studio starts the selected emulator and then deploys and starts your app. The first thing you'll notice is that the 120-pixel left margin that looks good on the local machine pushes your content off the smaller screen of a mobile device. Later in this tutorial, you'll learn how to adapt the UI to different screen sizes so your app always looks good.
+Visual Studio запускает выбранный эмулятор и затем разворачивает и запускает приложение. Прежде всего вы заметите, что левое поле размером 120 пикселей, которое хорошо выглядит на локальном компьютере, сдвигает содержимое за пределы небольшого экрана мобильного устройства. Далее вы узнаете, как адаптировать пользовательский интерфейс к различным размерам экрана, чтобы ваше приложение всегда выглядело хорошо.
 
-## Step 2: Create an event handler
+## Шаг 2. Создание обработчика события
 
-1.  In MainPage.xaml, in either XAML or design view, select the "Say Hello" [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) in the [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) you added earlier.
-2.  Open the **Properties Window** by pressing Alt+Enter, and then choose the Events button (![Events button](images/eventsbutton.png)).
-3.  Find the [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event. In its text box, type the name of the function that handles the **Click** event. For this example, type "Button\_Click".
+1.  В файле MainPage.xaml в коде XAML или в представлении конструирования выберите элемент Say Hello [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) в добавленном ранее элементе [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635).
+2.  Нажмите клавиши ALT+ВВОД, чтобы открыть окно **Свойства** , а затем выберите кнопку "События" (![Кнопка "События").
+3.  Найдите событие [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737). В текстовом поле введите имя функции, которая обрабатывает событие **Click**. Для этого примера введите Button\_Click.
 
-![Properties window, Events view](images/xaml-hw-event.png)
+![Окно “Свойства”, представление “События”](images/xaml-hw-event.png)
 
-4.  Press Enter. The event handler method is created in MainPage.xaml.cpp and opened so that you can add the code that's executed when the event occurs.
+4.  Нажмите клавишу ВВОД. Метод обработчика событий создается в файле MainPage.xaml.cpp и открывается в редакторе кода. Вы можете добавить код, который выполняется при возникновении события.
 
-   At the same time, in MainPage.xaml, the XAML for the [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) is updated to declare the [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event handler, like this:
+   В то же время в MainPage.xaml код XAML для [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) обновляется, чтобы объявить обработчик событий [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) следующим образом.
 
 ```xml
     <Button Content="Say \"Hello\"" Click="Button_Click"/>
 ```
 
-You could also have simply added this to the xaml code manually, which can be helpful if the designer doesn't load. If you enter this manually, type "Click" and then let IntelliSense pop up the option to add a new event handler. That way, Visual Studio creates the necessary method declaration and stub.
+Вы также можете просто добавить это значение к коду xaml вручную. Это может быть удобно, если не загружается конструктор. При вводе вручную введите "Щелкнуть" и позвольте IntelliSense отобразить параметр, чтобы добавить новый обработчик событий. Таким образом, Visual Studio создает необходимую декларацию о методе и заглушку.
 
-The designer fails to load if an unhandled exception occurs during rendering. Rendering in the designer involves running a design-time version of the page. It can be helpful to disable running user code. You can do this by changing the setting in the **Tools, Options** dialog box. Under **XAML Designer**, uncheck **Run project code in XAML designer (if supported)**.
+Конструктор не сможет загрузиться, если во время отрисовки возникнет необработанное исключение. Отрисовка в конструкторе предусматривает запуск версии времени разработки страницы. Это может быть удобно для отключения запущенного кода пользователя. Это можно сделать, изменив значение параметра в диалоговом окне **"Сервис ", "Параметры"**. В разделе **Конструктор XAML**снимите флажок **Запускать код проекта в конструкторе XAML (если поддерживается)**.
 
-5.  In MainPage.xaml.cpp, add the following code to the **Button\_Click** event handler that you just created. This code retrieves the user's name from the `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) control and uses it to create a greeting. The `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) displays the result.
+5.  В файле MainPage.xaml.cpp добавьте следующий код в обработчик событий **Button\_Click**, который вы только что создали. В этом коде вы получаете имя пользователя из элемента управления `nameInput`  [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) и используете его, чтобы создать приветствие. `greetingOutput` 
+            [
+            **TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) отображает результат.
 
 ```cpp
     void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
@@ -305,26 +307,26 @@ The designer fails to load if an unhandled exception occurs during rendering. Re
     }
 ```
 
-6.  Set the project as the startup, and then press F5 to build and run the app. When you type a name in the text box and click the button, the app displays a personalized greeting.
+6.  Назначьте проект запускаемым, а затем нажмите клавишу F5, чтобы выполнить сборку и запустить приложение. При вводе имени в текстовое поле и нажатии кнопки приложение отображает персонализированное приветствие.
 
-![App screen with message display](images/xaml-hw-app4.png)
+![Экран приложения с отображаемым сообщением](images/xaml-hw-app4.png)
 
-## Step 3: Style the start page
+## Шаг 3. Стиль начальной страницы
 
-### Choosing a theme
+### Выбор темы
 
-It's easy to customize the look and feel of your app. By default, your app uses resources that have a light style. The system resources also include a light theme. Let's try it out and see what it looks like.
+Внешний вид и функциональность приложения можно легко изменить. По умолчанию ваше приложение использует ресурсы со светлым стилем. Системные ресурсы также включают светлую тему. Примените ее и посмотрите, как будет выглядеть приложение.
 
-**To switch to the dark theme**
+**Переключение на темную тему**
 
-1.  Open App.xaml.
-2.  In the opening [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) tag, edit the [**RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme) property and set its value to **Dark**:
+1.  Откройте файл App.xaml.
+2.  В открывающем теге [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) измените свойство [**RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme) и установите для него значение **Dark**:
 
 ```xml
    RequestedTheme="Light"
 ```
 
-Here's the full [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) tag with the dark theme :
+Вот полный тег [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) с темной темой:
 
 ```xml 
         <Application
@@ -335,42 +337,42 @@ Here's the full [**Application**](https://msdn.microsoft.com/library/windows/app
         RequestedTheme="Dark">
 ```
 
-3.  Press F5 to build and run it. Notice that it uses the dark theme.
+3.  Чтобы выполнить сборку и запустить приложение, нажмите клавишу F5. Обратите внимание, что проект использует темную тему.
 
-![App screen with dark theme](images/xaml-hw-app3.png)
+![Экран приложения с темной темой](images/xaml-hw-app3.png)
 
-Which theme should you use? Whichever one you want. Here's our take: for apps that mostly display images or video, we recommend the dark theme; for apps that contain a lot of text, we recommend the light theme. If you're using a custom color scheme, use the theme that goes best with your app's look and feel. In the rest of this tutorial, we use the Light theme in screenshots.
+Какую тему использовать? Любую, какую пожелаете! Мы рекомендуем для приложений, которые главным образом отображают изображения или видео, лучше использовать темную тему, а для приложений с большим объемом текста — светлую тему. Если применяется пользовательская цветовая схема, используйте тему, которая лучше всего сочетается с внешним видом вашего приложения. В остальных разделах настоящего руководства мы используем светлую тему на снимках экрана.
 
-**Note**  The theme is applied when the app is started and can't be changed while the app is running.
+**Примечание.** Тема применяется после запуска приложения. Ее нельзя изменить, пока приложение работает.
 
-### Using system styles
+### Использование системных стилей
 
-Right now, in the Windows app the text is very small and difficult to read. Let's fix that by applying a system style.
+В данный момент в приложении для Windows текст является слишком мелким и трудным для чтения. Давайте исправим это, применив системный стиль.
 
-**To change the style of an element**
+**Изменение стиля элемента**
 
-1.  In the Windows project, open MainPage.xaml.
-2.  In either XAML or design view, select the "What's your name?"[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) that you added earlier.
-3.  In the **Properties** window (**F4**), choose the Properties button (![Properties button](images/propertiesbutton.png)) in the upper right.
-4.  Expand the **Text** group and set the font size to 18 px.
-5.  Expand the **Miscellaneous** group and find the **Style** property.
-6.  Click the property marker (the green box to the right of the **Style** property), and then, on the menu, choose **System Resource** > **BaseTextBlockStyle**.
+1.  Откройте файл MainPage.xaml в проекте Windows.
+2.  В коде XAML или в представлении конструирования выберите добавленный ранее элемент What's your name? [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652).
+3.  В окне **Свойства** (**F4**) нажмите кнопку «Свойства» (![Properties button](images/propertiesbutton.png)) в правом верхнем углу.
+4.  Разверните группу **Текст** и установите размер шрифта 18 пикселей.
+5.  Разверните группу **Разное** и найдите свойство **Style**.
+6.  Щелкните маркер свойств (зеленый прямоугольник справа от свойства **Стиль**), а затем в меню выберите пункты **Системный ресурс** > **BaseTextBlockStyle**.
 
- **BaseTextBlockStyle** is a resource that's defined in the [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) in <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml.
+ **BaseTextBlockStyle** — это ресурс, который определен в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) в файле <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml.
 
-![Properties window, Properties view](images/xaml-hw-style-cpp.png)
+![Окно “Свойства”, представление “Свойства”](images/xaml-hw-style-cpp.png)
 
- On the XAML design surface, the appearance of the text changes. In the XAML editor, the XAML for the [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) is updated:
+ Вид текста в рабочей области конструирования XAML изменится. В редакторе XAML обновляется код XAML для [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652).
 
 ```xml
    <TextBlock Text="What's your name?" Style="{StaticResource BasicTextStyle}"/><
 ```
 
-7.  Repeat the process to set the font size and assign the **BaseTextBlockStyle** to the `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) element.
+7.  Повторите процесс, чтобы установить размер шрифта, и назначьте значение **BaseTextBlockStyle** элементу `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652).
 
-  **Tip**  Although there's no text in this [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), when you move the pointer over the XAML design surface, a blue outline shows where it is so that you can select it.  
+  **Совет.** Хотя в этом элементе [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), нет текста, при наведении указателя мыши на поверхность разработки XAML голубой контур показывает его расположение, чтобы его можно было выбрать.  
 
-  Your XAML now looks like this:
+  XAML-код теперь выглядит так:
 
 ```xml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
@@ -383,17 +385,17 @@ Right now, in the Windows app the text is very small and difficult to read. Let'
     </StackPanel>
 ```
 
-8.  Press F5 to build and run the app. It now looks like this:
+8.  Чтобы выполнить сборку и запустить приложение, нажмите клавишу F5. Теперь оно выглядит следующим образом:
 
- ![App screen with larger text](images/xaml-hw-app5.png)
+ ![Экран приложения с более крупным текстом](images/xaml-hw-app5.png)
 
-### Step 4: Adapt the UI to different window sizes
+### Шаг 4. Адаптация пользовательского интерфейса к различным размерам окон
 
-Now we'll make the UI adapt to different screen sizes so it looks good on mobile devices. To do this, you add a [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) and set properties that are applied for different visual states.
+Теперь мы адаптируем пользовательский интерфейс к различным размерам экрана, чтобы приложение выглядело хорошо на мобильных устройствах. Для этого добавьте [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) и установите свойства, применяемые для различных визуальных состояний.
 
-**To adjust the UI layout**
+**Настройка макета пользовательского интерфейса**
 
-1.  In the XAML editor, add this block of XAML after the opening tag of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) element.
+1.  В редакторе XAML добавьте этот блок XAML после открывающего тега корневого элемента [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704).
 
 ```xml
     <VisualStateManager.VisualStateGroups>
@@ -417,28 +419,33 @@ Now we'll make the UI adapt to different screen sizes so it looks good on mobile
     </VisualStateManager.VisualStateGroups>
 ```
 
-2.  Debug the app on the local machine. Notice that the UI looks the same as before unless the window gets narrower than 641 device-independent pixels (DIPs).
-3.  Debug the app on the mobile device emulator. Notice that the UI uses the properties you defined in the `narrowState` and appears correctly on the small screen.
+2.  Выполните отладку приложения на локальном компьютере. Обратите внимание, что пользовательский интерфейс выглядит так же, как и раньше, пока ширина окна не станет меньше 641 аппаратно-независимого пикселя (DIP).
+3.  Выполните отладку приложения на эмуляторе мобильного устройства. Обратите внимание, что пользовательский интерфейс использует свойства, указанные вами в `narrowState`, и правильно отображается на маленьком экране.
 
-![Mobile app screen with styled text](images/hw10-screen2-mob.png)
+![Экран мобильного приложения с текстом после применения стиля](images/hw10-screen2-mob.png)
 
-If you've used a [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) in previous versions of XAML, you might notice that the XAML here uses a simplified syntax.
+Если вы использовали [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) в предыдущих версиях XAML, можно заметить, что в XAML здесь используется упрощенный синтаксис.
 
-The [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) named `wideState` has an [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) with its [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) property set to 641. This means that the state is to be applied only when the window width is not less than the minimum of 641 DIPs. You don't define any [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) objects for this state, so it uses the layout properties you defined in the XAML for the page content.
+У [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) с именем `wideState` имеется [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382), для свойства [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) которого задано значение 641. Это означает, что состояние будет применяться только тогда, когда ширина окна составляет не менее минимального значения 641 DIP. Вы не указываете никакие объекты [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) для этого состояния, поэтому оно использует свойства макета, заданные в XAML для содержимого страницы.
 
-The second [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, has an [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) with its [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) property set to 0. This state is applied when the window width is greater than 0, but less than 641 DIPs. (At 641 DIPs, the `wideState` is applied.) In this state, you do define some [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) objects to change the layout properties of controls in the UI:
+У второго [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, имеется [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382), для свойства [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) которого задано значение 0. Это состояние применяется, когда ширина окна больше 0, но меньше 641 DIP. (Для 641 DIP применяется `wideState`.) В этом состоянии необходимо указать некоторые объекты [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817), чтобы изменить свойства макета элементов управления в пользовательском интерфейсе:
 
--   You reduce the left margin of the `contentPanel` element from 120 to 20.
--   You change the [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) of the `inputPanel` element from **Horizontal** to **Vertical**.
--   You add a top margin of 4 DIPs to the `inputButton` element.
+-   Вы уменьшаете левое поле элемента `contentPanel` со 120 до 20.
+-   Вы изменяете [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) для элемента `inputPanel` с **Horizontal** на **Vertical**.
+-   Вы добавляете верхнее поле высотой 4 DIP к элементу `inputButton`.
 
-### Summary
+### Резюме
 
-Congratulations, you've completed the first tutorial! It taught how to add content to Windows Universal apps, how to add interactivity to them, and how to change their appearance.
+Поздравляем, вы завершили изучение первого учебника. Вы научились добавлять содержимое в универсальные приложения для Windows, менять их внешний вид и реализовывать возможности взаимодействия.
 
-## Next steps
+## Дальнейшие действия
 
-If you have a Windows Universal app project that targets Windows 8.1 and/or Windows Phone 8.1, you can port it to Windows 10. There is no automatic process for this, but you can do it manually with a little effort. Start with a new Windows Universal project to get the latest project system structure and manifest files, copy your code files into the project's directory structure, add the items to your project, and rewrite your XAML using the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) according to the guidance in this topic. For more information, see [Porting a Windows Runtime 8 project to a Universal Windows Platform (UWP) project](https://msdn.microsoft.com/library/windows/apps/Mt188203) and [Porting to the Universal Windows Platform (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525).
+Если у вас есть проект универсального приложения для Windows, ориентированный на Windows 8.1 и (или) Windows Phone 8.1, вы можете перенести его в Windows 10. Для этого действия нет автоматического процесса, но его можно выполнить вручную без особых усилий. Начните новый проект универсального приложения для Windows, чтобы получить последнюю структуру системы и файлы манифеста проекта, скопируйте файлы кода в структуру каталогов проекта, добавьте элементы в проект и перепишите код XAML, используя [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) в соответствии с рекомендациями в этом разделе. Дополнительные сведения см. в разделах: [Перенос проекта среды выполнения Windows 8 в проект универсальной платформы для Windows (UWP)](https://msdn.microsoft.com/library/windows/apps/Mt188203) и [Перенос на универсальную платформу приложений для Windows (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525).
 
-If you have existing C++ code that you want to integrate with a UWP app, such as to create a new UWP UI for an existing application, see [How to: Use existing C++ code in a Universal Windows project](http://go.microsoft.com/fwlink/p/?LinkId=619623).
+Если у вас есть код на C++, который вы хотите включить в приложение UWP, например для создания нового пользовательского интерфейса UWP для существующего приложения, см. раздел [Инструкции: использование существующего кода C++ в проекте универсального приложения для Windows](http://go.microsoft.com/fwlink/p/?LinkId=619623).
+
+
+
+<!--HONumber=May16_HO2-->
+
 

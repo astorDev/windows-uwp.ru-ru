@@ -1,27 +1,27 @@
 ---
 author: PatrickFarley
-title: Set up a geofence
-description: Set up a Geofence in your app, and learn how to handle notifications in the foreground and background.
+title: Настройка геозоны
+description: Настройте геозоны в своем приложении и узнайте, как обрабатывать уведомления на переднем и фоновом планах.
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
 ---
 
-# Set up a geofence
+# Настройка геозоны
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Set up a [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) in your app, and learn how to handle notifications in the foreground and background.
+Настройте [**геозоны**](https://msdn.microsoft.com/library/windows/apps/dn263587) в своем приложении и узнайте, как обрабатывать уведомления на переднем и фоновом планах.
 
-**Tip** To learn more about accessing location in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
+**Подсказка.** Чтобы получить дополнительные сведения о доступе к данным о расположении в приложении, загрузите следующий пример из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
 
--   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## Enable the location capability
+## Включение функции определения расположения
 
 
-1.  In **Solution Explorer**, double-click on **package.appxmanifest** and select the **Capabilities** tab.
-2.  In the **Capabilities** list, check **Location**. This adds the `Location` device capability to the package manifest file.
+1.  В **Обозревателе решений** дважды щелкните файл **package.appxmanifest** и выберите вкладку **Возможности**.
+2.  В списке **Расположение** выберите пункт **Расположение**. Возможность устройства `Location` будет добавлена к файлу манифеста пакета.
 
 ```xml
   <Capabilities>
@@ -30,12 +30,12 @@ Set up a [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587
   </Capabilities>
 ```
 
-## Set up a geofence
+## Настройка геозоны
 
 
-### Step 1: Request access to the user's location
+### Шаг 1. Запрос доступа к данным о расположении пользователя
 
-**Important** You must request access to the user's location by using the [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) method before attempting to access the user's location. You must call the **RequestAccessAsync** method from the UI thread and your app must be in the foreground. Your app will not be able to access the user's location information until after the user grants permission to your app.
+**Важно!** Необходимо запросить доступ к данным о местоположении пользователя с помощью метода [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152), прежде чем попытаться получить доступ к этим данным. Из потока пользовательского интерфейса необходимо вызвать метод **RequestAccessAsync**, а ваше приложение должно находиться на переднем плане. Приложение не сможет получить доступ к информации о местоположении пользователя, пока пользователь не предоставит разрешение вашему приложению.
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -43,13 +43,13 @@ using Windows.Devices.Geolocation;
 var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
-The [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) method prompts the user for permission to access their location. The user is only prompted once (per app). After the first time they grant or deny permission, this method no longer prompts the user for permission. To help the user change location permissions after they've been prompted, we recommend that you provide a link to the location settings as demonstrated later in this topic.
+Метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) запрашивает у пользователя разрешение на доступ к данным о местоположении. Каждое приложение запрашивает у пользователя доступ только один раз. После того как пользователь в первый раз предоставил или запретил доступ, этот метод больше не запрашивает его у пользователя. Чтобы помочь пользователю изменять разрешения на доступ к данным о местоположении после первоначального решения, рекомендуется предоставить ссылку на параметры местоположения, как показано далее в этом разделе.
 
-### Step 2: Register for changes in geofence state and location permissions
+### Шаг 2. Регистрация изменений состояния геозоны и разрешений на доступ к данным о расположении
 
-In this example, a **switch** statement is used with **accessStatus** (from the previous example) to act only when access to the user's location is allowed. If access to the user's location is allowed, the code accesses the current geofences, registers for geofence state changes, and registers for changes in location permissions.
+В этом примере оператор **switch** используется с **accessStatus** (из предыдущего примера), за счет чего действует, только когда доступ к сведениям о местоположении пользователя разрешен. Если доступ к расположению пользователя разрешен, код получает доступ к текущим геозонам, регистрируется на получение изменений состояния геозоны и изменений разрешений на доступ к информации о расположении.
 
-**Tip** When using a geofence, monitor changes in location permissions using the [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) event from the GeofenceMonitor class instead of the StatusChanged event from the Geolocator class. A [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599) of **Disabled** is equivalent to a disabled [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599) - both indicate that the app does not have permission to access the user's location.
+**Подсказка.** При использовании геозоны для отслеживания изменений в разрешениях на доступ к информации о расположении, используйте событие [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) класса GeofenceMonitor вместо события StatusChanged из класса Geolocator. Состояние [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599) значения **Disabled** эквивалентно отключению [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599) – оба параметра указывают, что приложение не имеет разрешения на доступ к информации о расположении пользователя.
 
 ```csharp
 switch (accessStatus)
@@ -75,7 +75,7 @@ switch (accessStatus)
 }
 ```
 
-Then, when navigating away from your foreground app, unregister the event listeners.
+Затем при переходе из приложения переднего плана отмените регистрацию прослушивателей событий.
 
 ```csharp
 protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
@@ -87,9 +87,9 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 }
 ```
 
-### Step 3: Create the geofence
+### Шаг 3. Создание геозоны
 
-Now, you are ready to define and set up a [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) object. There are several different constructor overloads to choose from, depending on your needs. In the most basic geofence constructor, specify only the [**Id**](https://msdn.microsoft.com/library/windows/apps/dn263724) and the [**Geoshape**](https://msdn.microsoft.com/library/windows/apps/dn263718) as shown here.
+Теперь вы можете приступить к определению и настройке объекта [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587). В зависимости от ваших потребностей на выбор предлагаются несколько различных перегрузок конструктора. В наиболее простом конструкторе геозоны укажите только [**Id**](https://msdn.microsoft.com/library/windows/apps/dn263724) и [**Geoshape**](https://msdn.microsoft.com/library/windows/apps/dn263718), как показано здесь.
 
 ```csharp
 // Set the fence ID.
@@ -109,13 +109,23 @@ Geocircle geocircle = new Geocircle(position, radius);
 Geofence geofence = new Geofence(fenceId, geocircle);
 ```
 
-You can fine-tune your geofence further by using one of the other constructors. In the next example, the geofence constructor specifies these additional parameters:
+Дальнейшие настройки геозоны можно выполнить с помощью других конструкторов. В следующем примере конструктор геозоны определяет следующие дополнительные параметры:
 
--   [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) - Indicates what geofence events you want to receive notifications for entering the defined region, leaving the defined region, or removal of the geofence.
--   [**SingleUse**](https://msdn.microsoft.com/library/windows/apps/dn263732) - Removes the geofence once all the states the geofence is being monitored for have been met.
--   [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) - Indicates how long the user must be in or out of the defined area before the enter/exit events are triggered.
--   [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn263735) - Indicates when to start monitoring the geofence.
--   [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn263697) - Indicates the period for which to monitor the geofence.
+-   флаг [
+              **MonitoredStates**
+            ](https://msdn.microsoft.com/library/windows/apps/dn263728) указывает, уведомления о каких событиях геозоны вы хотите получать: появление в заданной области, уход из заданной области или удаление геозоны;
+-   флаг [
+              **SingleUse**
+            ](https://msdn.microsoft.com/library/windows/apps/dn263732) удаляет геозону, как только она достигнет всех отслеживаемых состояний;
+-   флаг [
+              **DwellTime**
+            ](https://msdn.microsoft.com/library/windows/apps/dn263703) указывает, сколько времени пользователь должен находиться внутри или вне заданной зоны до инициации событий входа-выхода;
+-   флаг [
+              **StartTime**
+            ](https://msdn.microsoft.com/library/windows/apps/dn263735) указывает время начала слежения за геозоной;
+-   флаг [
+              **Duration**
+            ](https://msdn.microsoft.com/library/windows/apps/dn263697) указывает период, в течение которого выполняется слежение за геозоной.
 
 ```csharp
 // Set the fence ID.
@@ -153,9 +163,9 @@ DateTimeOffset startTime = DateTime.Now;
 Geofence geofence = new Geofence(fenceId, geocircle, monitoredStates, singleUse, dwellTime, startTime, duration);
 ```
 
-### Step 4: Handle changes in location permissions
+### Шаг 4. Обработка изменений в разрешениях, связанных с расположением
 
-The [**GeofenceMonitor**](https://msdn.microsoft.com/library/windows/apps/dn263595) object triggers the [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) event to indicate that the user's location settings changed. That event passes the corresponding status via the argument's **sender.Status** property (of type [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599)). Note that this method is not called from the UI thread and the [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) object invokes the UI changes.
+Объект [**GeofenceMonitor**](https://msdn.microsoft.com/library/windows/apps/dn263595) запускает событие [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) для указания того, что расположение пользователя меняется. Это событие передает данные о соответствующем состоянии через свойство аргумента **sender.Status** (типа [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599)). Обратите внимание, что этот метод не вызывается из потока пользовательского интерфейса и объект [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) фактически вызывает изменения пользовательского интерфейса.
 
 ```csharp
 using Windows.UI.Core;
@@ -205,20 +215,20 @@ public async void OnGeofenceStatusChanged(GeofenceMonitor sender, object e)
 }
 ```
 
-## Set up foreground notifications
+## Настройка уведомлений на переднем плане
 
 
-After your geofences are created, you must add the logic to handle what happens when a geofence event occurs. Depending on the [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) that you have set up, you may receive an event when:
+После создания геозон потребуется добавить логику для обработки действий при возникновении события геозоны. В зависимости от настройки элемента [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) вы можете получить событие, если:
 
--   The user enters a region of interest.
--   The user leaves a region of interest.
--   The geofence has expired or been removed. Note that a background app is not activated for a removal event.
+-   пользователь вошел в отслеживаемую область;
+-   пользователь покинул отслеживаемую область;
+-   срок действия геозоны истек или она была удалена. Обратите внимание, что для события удаления фоновое приложение не активируется.
 
-You can listen for events directly from your app when it is running or register for a background task so that you receive a background notification when an event occurs.
+Вы можете прослушивать события непосредственно из приложения, в котором работаете, или зарегистрировать фоновую задачу, чтобы получить фоновое уведомление при возникновении события.
 
-### Step 1: Register for geofence state change events
+### Шаг 1. Регистрация событий при изменении состояния геозоны
 
-For your app to receive a foreground notification of a geofence state change, you must register an event handler. This is typically set up when you create the geofence.
+Чтобы приложение получало уведомление переднего плана об изменении состояния геозоны, необходимо зарегистрировать обработчик событий. Как правило, этот обработчик настраивается при создании геозоны.
 
 ```csharp
 private void Initialize()
@@ -230,9 +240,9 @@ private void Initialize()
 
 ```
 
-### Step 2: Implement the geofence event handler
+### Шаг 2. Реализация обработчика событий геозоны
 
-The next step is to implement the event handlers. The action taken here depends on what your app is using the geofence for.
+Следующий шаг — реализация обработчиков событий. Действия, выполняемые на этом этапе, зависят от целей использования геозоны в приложении.
 
 ```csharp
 public async void OnGeofenceStateChanged(GeofenceMonitor sender, object e)
@@ -276,32 +286,32 @@ public async void OnGeofenceStateChanged(GeofenceMonitor sender, object e)
 
 ```
 
-## Set up background notifications
+## Настройка фоновых уведомлений
 
 
-After your geofences are created, you must add the logic to handle what happens when a geofence event occurs. Depending on the [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) that you have set up, you may receive an event when:
+После создания геозон потребуется добавить логику для обработки действий при возникновении события геозоны. В зависимости от настройки элемента [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) вы можете получить событие, если:
 
--   The user enters a region of interest.
--   The user leaves a region of interest.
--   The geofence has expired or been removed. Note that a background app is not activated for a removal event.
+-   пользователь вошел в отслеживаемую область;
+-   пользователь покинул отслеживаемую область;
+-   срок действия геозоны истек или она была удалена. Обратите внимание, что для события удаления фоновое приложение не активируется.
 
-To listen for a geofence event in the background
+Прослушивание событий геозоны в фоновом режиме
 
--   Declare the background task in your app’s manifest.
--   Register the background task in your app. If your app needs internet access, say for accessing a cloud service, you can set a flag for that when the event is triggered. You can also set a flag to make sure that the user is present when the event is triggered so that you are sure that the user gets notified.
--   While your app is running in the foreground, prompt the user to grant your app location permissions.
+-   Объявите фоновую задачу в манифесте приложения.
+-   Зарегистрируйте фоновую задачу в приложении. Если приложению требуется доступ к Интернету, например к облачной службе, вы можете при возникновении события установить для него флаг. Можно установить еще один флаг, чтобы убедиться в присутствии пользователя при инициации события. Таким образом вы будете уверены, что пользователь получил уведомление.
+-   Так как приложение выполняется на переднем плане, предложите пользователю разрешить приложению доступ к информации о расположении.
 
-### Step 1: Register for geofence state change events
+### Шаг 1. Регистрация событий при изменении состояния геозоны
 
-In your app's manifest, under the **Declarations** tab, add a declaration for a location background task. To do this:
+В манифесте приложения на вкладке **Объявления** добавьте объявление для фоновой задачи расположения. Для этого выполните следующие действия.
 
--   Add a declaration of type **Background Tasks**.
--   Set a property task type of **Location**.
--   Set an entry point into your app to call when the event is triggered.
+-   Добавьте объявление типа **Фоновые задачи**.
+-   Присвойте задаче свойства тип **Расположение**.
+-   Задайте точку входа в приложение для вызова при инициации события.
 
-### Step 2: Register the background task
+### Шаг 2. Регистрация фоновой задачи
 
-The code in this step registers the geofencing background task. Remember that when the geofence was created, we checked for location permissions. For more info, see [Set up a geofence](#setup).
+Код, представленный в этом параграфе, регистрирует фоновую задачу настройки геозоны: Помните, что при создании геозоны мы проверили разрешения на доступ к информации о местоположении. Подробнее см. в разделе [Настройка геозоны](#setup).
 
 ```csharp
 async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
@@ -351,9 +361,9 @@ async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
 
 ```
 
-### Step 3: Handling the background notification
+### Шаг 3. Обработка фонового уведомления
 
-The action that you take to notify the user depends on what your app does, but you can display a toast notification, play an audio sound, or update a live tile. The code in this step handles the notification.
+Действие, выполняемое для уведомления пользователя, зависит от возможностей приложения. Вы можете отобразить всплывающее уведомление, воспроизвести какой-нибудь звук или обновить живую плитку. Код, представленный в этом параграфе, служит для обработки уведомления.
 
 ```csharp
 async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTaskCompletedEventArgs e)
@@ -394,10 +404,10 @@ async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTas
 
 ```
 
-## Change the privacy settings
+## Изменение параметров конфиденциальности
 
 
-If the location privacy settings don't allow your app to access the user's location, we recommend that you provide a convenient link to the **location privacy settings** in the **Settings** app. In this example, a Hyperlink control is used navigate to the `ms-settings:privacy-location` URI.
+Если параметры конфиденциальности данных о местоположении не позволяют вашему приложению получать доступ к данным о местоположении пользователя, рекомендуется реализовать удобную ссылку на **параметры конфиденциальности данных о местоположении** в приложении **Параметры**. В этом примере используется элемент управления «Гиперссылка» для перехода к URI `ms-settings:privacy-location`.
 
 ```xml
 <!--Set Visibility to Visible when access to the user's location is denied. -->  
@@ -411,7 +421,7 @@ If the location privacy settings don't allow your app to access the user's locat
 </TextBlock>
 ```
 
-Alternatively, your app can call the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method to launch the **Settings** app from code. For more info, see [Launch the Windows Settings app](https://msdn.microsoft.com/library/windows/apps/mt228342).
+Ваше приложение также может вызвать метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476), чтобы запустить приложение **Параметры** из кода. Дополнительные сведения см. в разделе [Запуск приложения «Параметры» для Windows](https://msdn.microsoft.com/library/windows/apps/mt228342).
 
 ```csharp
 using Windows.System;
@@ -419,50 +429,55 @@ using Windows.System;
 bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-location"));
 ```
 
-## Test and debug your app
+## Тестирование и отладка приложения
 
 
-Testing and debugging geofencing apps can be a challenge because they depend on a device's location. Here, we outline several methods for testing both foreground and background geofences.
+Тестирование и отладка приложений с функцией геозон могут вызывать трудности, поскольку такие приложения зависят от расположения устройства. В этом разделе приведен краткий обзор методов тестирования приложений с функцией геозон, работающих как на переднем плане, так и в фоновом режиме.
 
-**To debug a geofencing app**
+**Отладка приложения с функцией геозон**
 
-1.  Physically move the device to new locations.
-2.  Test entering a geofence by creating a geofence region that includes your current physical location, so you're already inside the geofence and the "geofence entered" event is triggered immediately.
-3.  Use the Microsoft Visual Studio emulator to simulate locations for the device.
+1.  Физически переместите устройство в новое расположение.
+2.  Протестируйте вход в геозону, создав регион геозоны, включающий ваше текущее физическое расположение. В этом случае вы уже будете находиться внутри геозоны и сразу произойдет событие "вход в геозону".
+3.  Для моделирования расположений устройства используйте эмулятор Microsoft Visual Studio.
 
-### Test and debug a geofencing app that is running in the foreground
+### Тестирование и отладка приложения с функцией геозон, которое работает на переднем плане
 
-**To test your geofencing app that is running the foreground**
+**Чтобы протестировать приложение с функцией геозон, которое работает на переднем плане, сделайте следующее.**
 
-1.  Build your app in Visual Studio.
-2.  Launch your app in the Visual Studio emulator.
-3.  Use these tools to simulate various locations inside and outside of your geofence region. Be sure to wait long enough past the time specified by the [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) property to trigger the event. Note that you must accept the prompt to enable location permissions for the app. For more info about simulating locations, see [Set the simulated geolocation of the device](http://go.microsoft.com/fwlink/p/?LinkID=325245).
-4.  You can also use the emulator to estimate the size of fences and dwell times approximately needed to be detected at different speeds.
+1.  Выполните сборку приложения в Visual Studio.
+2.  Запустите приложение в эмуляторе Visual Studio.
+3.  Используйте эти инструменты, чтобы моделировать различные расположения внутри и вне региона геозоны. Подождите достаточное время после момента, указанного в свойстве [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703), пока не произойдет событие. Ответьте утвердительно на предложение разрешить доступ приложения к данным о расположении. Подробнее о моделировании местоположений см. в разделе [Установка смоделированного географического положения устройства](http://go.microsoft.com/fwlink/p/?LinkID=325245).
+4.  Эмулятор также может использоваться для оценки размера зон и определения количества времени, примерно необходимого для их обнаружения с разной скоростью.
 
-### Test and debug a geofencing app that is running in the background
+### Тестирование и отладка приложения с функцией геозон, которое работает в фоновом режиме
 
-**To test your geofencing app that is running the background**
+**Чтобы протестировать приложение с функцией геозон, которое работает в фоновом режиме, сделайте следующее.**
 
-1.  Build your app in Visual Studio. Note that your app should set the **Location** background task type.
-2.  Deploy the app locally first.
-3.  Close your app that is running locally.
-4.  Launch your app in the Visual Studio emulator. Note that background geofencing simulation is supported on only one app at a time within the emulator. Do not launch multiple geofencing apps within the emulator.
-5.  From the emulator, simulate various locations inside and outside of your geofence region. Be sure to wait long enough past the [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) to trigger the event. Note that you must accept the prompt to enable location permissions for the app.
-6.  Use Visual Studio to trigger the location background task. For more info about triggering background tasks in Visual Studio, see [How to trigger background tasks](http://go.microsoft.com/fwlink/p/?LinkID=325378).
+1.  Выполните сборку приложения в Visual Studio. Обратите внимание, что в вашем приложении должен быть задан тип фоновой задачи **расположение**.
+2.  Сначала разверните приложение локально.
+3.  Закройте свое локально работающее приложение.
+4.  Запустите приложение в эмуляторе Visual Studio. Учтите, что моделирование геозон в фоновом режиме в эмуляторе возможно одновременно только для одного приложения. Не запускайте в эмуляторе сразу несколько приложений с функцией геозон.
+5.  В эмуляторе смоделируйте различные расположения внутри и вне региона геозоны. Подождите достаточное время после момента, указанного в свойстве [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703), пока не произойдет событие. Ответьте утвердительно на предложение разрешить доступ приложения к данным о расположении.
+6.  Запустите фоновую задачу определения расположения в Visual Studio. Дополнительные сведения о запуске фоновых задач в Visual Studio см. в разделе [Активация фоновых задач](http://go.microsoft.com/fwlink/p/?LinkID=325378).
 
-## Troubleshoot your app
+## Устранение неполадок приложения
 
 
-Before your app can access location, **Location** must be enabled on the device. In the **Settings** app, check that the following **location privacy settings** are turned on:
+Для того чтобы ваше приложение могло получить доступ к данным о расположении, необходимо включить на устройстве функцию **расположение**. Убедитесь, что в приложении **Параметры** включены следующие **параметры конфиденциальности данных о расположении**.
 
--   **Location for this device...** is turned **on** (not applicable in Windows 10 Mobile)
--   The location services setting, **Location**, is turned **on**
--   Under **Choose apps that can use your location**, your app is set to **on**
+-   Параметр **Расположение для этого устройства...** **включен** (неприменимо в Windows 10 Mobile)
+-   Параметр **Местоположение** служб определения местоположения **включен**
+-   В разделе **Выберите приложения, которым будет разрешено использовать данные о вашем местоположении** для вашего приложения установлено значение **Вкл.**
 
-## Related topics
+## Ссылки по теме
 
-* [UWP geolocation sample](http://go.microsoft.com/fwlink/p/?linkid=533278)
-* [Design guidelines for geofencing](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [Design guidelines for location-aware apps](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [Пример определения географического положения UWP](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Рекомендации для разработчиков относительно создания геозон](https://msdn.microsoft.com/library/windows/apps/dn631756)
+* [Рекомендации по разработке приложений с определением местоположения](https://msdn.microsoft.com/library/windows/apps/hh465148)
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

@@ -1,34 +1,34 @@
 ---
 author: mtoepke
-title: Use depth and effects on primitives
-description: Here, we show you how to use depth, perspective, color, and other effects on primitives.
+title: Применение глубины и эффектов к примитивам
+description: Здесь мы узнаем, как применять к примитивам глубину, перспективу, цвет и другие эффекты.
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
 ---
 
-# Use depth and effects on primitives
+# Применение глубины и эффектов к примитивам
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Here, we show you how to use depth, perspective, color, and other effects on primitives.
+Здесь мы узнаем, как применять к примитивам глубину, перспективу, цвет и другие эффекты.
 
-**Objective:** To create a 3D object and apply basic vertex lighting and coloring to it.
+**Цель:** создание трехмерного объекта и применение к нему основных цветов и освещения вершин
 
-## Prerequisites
+## Необходимые условия
 
 
-We assume that you are familiar with C++. You also need basic experience with graphics programming concepts.
+Предполагается, что вы знакомы с C++. Также вы должны быть знакомы с основными принципами программирования графики.
 
-We also assume that you went through [Quickstart: setting up DirectX resources and displaying an image](setting-up-directx-resources.md) and [Creating shaders and drawing primitives](creating-shaders-and-drawing-primitives.md).
+Вам следует изучить разделы [Краткое руководство: настройка ресурсов DirectX и отображение изображения](setting-up-directx-resources.md) и [Создание построителей текстуры и рисование примитивов](creating-shaders-and-drawing-primitives.md).
 
-**Time to complete:** 20 minutes.
+**Время выполнения:** 20 минут.
 
-Instructions
+Инструкция
 ------------
 
-### 1. Defining cube variables
+### 1. Определение переменных куба
 
-First, we need to define the **SimpleCubeVertex** and **ConstantBuffer** structures for the cube. These structures specify the vertex positions and colors for the cube and how the cube will be viewed. We declare [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) and [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) with [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) and declare an instance of **ConstantBuffer**.
+Сначала потребуется определить структуры **SimpleCubeVertex** и **ConstantBuffer** для куба. Эти структуры определяют положения и цвета вершин для куба, а также метод его просмотра. Мы объявляем [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) и [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) с [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) и объявляем экземпляр **ConstantBuffer**.
 
 ```cpp
 struct SimpleCubeVertex
@@ -58,9 +58,9 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### 2. Creating a depth stencil view
+### 2. Создание представления "глубина-трафарет"
 
-In addition to creating the render-target view, we also create a depth-stencil view. The depth-stencil view enables Direct3D to efficiently render objects closer to the camera in front of objects further from the camera. Before we can create a view to a depth-stencil buffer, we must create the depth-stencil buffer. We populate a [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) to describe the depth-stencil buffer and then call [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) to create the depth-stencil buffer. To create the depth-stencil view, we populate a [**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112) to describe the depth-stencil view and pass the depth-stencil view description and the depth-stencil buffer to [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507).
+Помимо представления однобуферной обработки мы создаем представление "глубина-трафарет". Представление "глубина-трафарет" позволяет Direct3D эффективно рисовать объекты, расположенные ближе к камере, на фоне объектов, расположенных дальше от камеры. Перед созданием представления для буфера трафарета глубины необходимо создать этот буфер. Мы заполняем [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253), чтобы описать буфер трафарета глубины, а затем вызываем [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521), чтобы создать его. Для создания представления "глубина-трафарет" заполним структуру [**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112), чтобы описать его, и передадим описание представления вместе с буфером "глубина-трафарет" в [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507).
 
 ```cpp
         // Once the render target view is created, create a depth stencil view.  This
@@ -105,9 +105,9 @@ In addition to creating the render-target view, we also create a depth-stencil v
             );
 ```
 
-### 3. Updating perspective with the window
+### 3. Обновление перспективы по окну
 
-We update the perspective projection parameters for the constant buffer depending on the window dimensions. We fix the parameters to a 70-degree field of view with a depth range of 0.01 to 100.
+Мы обновляем параметры перспективной проекции для буфера констант в зависимости от размеров окна. Задаем параметры для поля обзора в 70 градусов с глубиной от 0,01 до 100.
 
 ```cpp
         // Finally, update the constant buffer perspective projection parameters
@@ -138,21 +138,21 @@ We update the perspective projection parameters for the constant buffer dependin
             );
 ```
 
-### 4. Creating vertex and pixel shaders with color elements
+### 4. Создание вершинных и обычных построителей текстуры с элементами цвета
 
-In this app, we create more complex vertex and pixel shaders than what we described in the previous tutorial, [Creating shaders and drawing primitives](creating-shaders-and-drawing-primitives.md). The app's vertex shader transforms each vertex position into projection space and passes the vertex color through to the pixel shader.
+В этом приложении мы создадим более сложные шейдеры вершин и пикселей, чем в предыдущем курсе ( [Создание шейдеров и рисование примитивов](creating-shaders-and-drawing-primitives.md)). Вершинный шейдер приложения преобразует положение каждой вершины в пространство проекции и передает цвет вершины в построитель текстуры.
 
-The app's array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures that describe the layout of the vertex shader code has two layout elements: one element defines the vertex position and the other element defines the color.
+Массив структур [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) приложения, которые описывают схему кода вершинных шейдеров, содержит два элемента: один определяет положение вершин, а второй — цвет.
 
-We create vertex, index, and constant buffers to define an orbiting cube.
+Чтобы определить вращающийся по орбите куб, мы создадим буфер вершин, буфер индексов и буфер констант.
 
-**To define an orbiting cube**
+**Определение вращающегося по орбите куба**
 
-1.  First, we define the cube. We assign each vertex a color in addition to a position. This allows the pixel shader to color each face differently so the face can be distinguished.
-2.  Next, we describe the vertex and index buffers ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) using the cube definition. We call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) once for each buffer.
-3.  Next, we create a constant buffer ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) for passing model, view, and projection matrices to the vertex shader. We can later use the constant buffer to rotate the cube and apply a perspective projection to it. We call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) to create the constant buffer.
-4.  Next, we specify the view transform that corresponds to a camera position of X = 0, Y = 1, Z = 2.
-5.  Finally, we declare a *degree* variable that we will use to animate the cube by rotating it every frame.
+1.  Сначала определим куб. Каждой вершине, помимо положения, назначается цвет. Это позволяет пиксельному построителю текстуры задавать различный цвет для каждой поверхности, чтобы упростить различение поверхностей.
+2.  Затем мы описываем буферы вершин и индексов ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) и [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)), используя определение куба. Для каждого буфера однократно вызывается метод [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501).
+3.  Затем создаем буфер констант ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) для передачи матриц моделей, представлений и проекций в вершинный шейдер. Буфер констант мы сможем использовать позже для вращения куба и применения к нему перспективной проекции. Для создания буфера констант вызываем метод [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501).
+4.  Затем определяем преобразование представления, соответствующее положению камеры X = 0, Y = 1, Z = 2.
+5.  Наконец, мы объявляем переменную *degree*, которая будет использоваться для анимации куба (поворот в каждом кадре).
 
 ```cpp
         
@@ -328,22 +328,22 @@ We create vertex, index, and constant buffers to define an orbiting cube.
         
 ```
 
-### 5. Rotating and drawing the cube and presenting the rendered image
+### 5. Вращение и рисование куба, представление обработанного изображения
 
-We enter an endless loop to continually render and display the scene. We call the **rotationY** inline function (BasicMath.h) with a rotation amount to set values that will rotate the cube’s model matrix around the Y axis. We then call [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) to update the constant buffer and rotate the cube model. We call [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) to specify the render target as the output target. In this **OMSetRenderTargets** call, we pass the depth-stencil view. We call [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) to clear the render target to a solid blue color and call [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) to clear the depth buffer.
+Для непрерывной обработки и вывода сцены на экран мы воспользуемся бесконечным циклом. Вызываем встроенную функцию **rotationY** (BasicMath.h) с величиной поворота, чтобы установить значения, позволяющие вращать матрицу модели куба вокруг оси Y. Затем вызываем [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) для обновления буфера констант и вращения модели куба. Вызываем [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464), чтобы указать однобуферную прорисовку в качестве цели вывода. В этом вызове **OMSetRenderTargets** мы передаем представление "глубина-трафарет". Вызываем метод [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) для очистки целевого объекта отрисовки до сплошного синего цвета, а метод [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) – для очистки буфера глубины.
 
-In the endless loop, we also draw the cube on the blue surface.
+В бесконечном цикле мы рисуем куб на синей поверхности.
 
-**To draw the cube**
+**Рисование куба**
 
-1.  First, we call [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) to describe how vertex buffer data is streamed into the input-assembler stage.
-2.  Next, we call [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) and [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) to bind the vertex and index buffers to the input-assembler stage.
-3.  Next, we call [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) with the [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) value to specify for the input-assembler stage to interpret the vertex data as a triangle strip.
-4.  Next, we call [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) to initialize the vertex shader stage with the vertex shader code and [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) to initialize the pixel shader stage with the pixel shader code.
-5.  Next, we call [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) to set the constant buffer that is used by the vertex shader pipeline stage.
-6.  Finally, we call [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) to draw the cube and submit it to the rendering pipeline.
+1.  Сначала мы вызываем метод [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454), чтобы описать способ потоковой передачи данных буфера вершин на этап входной сборки.
+2.  Далее вызываем [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) и [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453), чтобы связать буферы индексов и вершин с этапом входной сборки.
+3.  Затем вызываем [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) со значением [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP), чтобы на этапе входной сборки данные вершин интерпретировались как полоса треугольников.
+4.  Затем вызывается метод [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) для инициализации стадии вершинного шейдера и метод [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) для инициализации стадии пиксельного шейдера с кодом пиксельного шейдера.
+5.  Затем вызываем метод [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491), чтобы установить буфер констант, используемый на стадии конвейера вершинного шейдера.
+6.  Наконец, вызываем [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409), чтобы нарисовать куб и передать его в конвейер отрисовки.
 
-We call [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) to present the rendered image to the window.
+Мы вызываем метод [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576), чтобы представить отрисованное изображение в окне.
 
 ```cpp
             // Update the constant buffer to rotate the cube model.
@@ -435,19 +435,24 @@ We call [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows
                 );
 ```
 
-## Summary and next steps
+## Сводка и дальнейшие действия
 
 
-We used depth, perspective, color, and other effects on primitives.
+Мы применили к примитивам глубину, перспективу, цвет и другие эффекты.
 
-Next, we apply textures to primitives.
+Затем мы применим к примитивам текстуры.
 
-[Applying textures to primitives](applying-textures-to-primitives.md)
+[Применение текстур к примитивам](applying-textures-to-primitives.md)
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

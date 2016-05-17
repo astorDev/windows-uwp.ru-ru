@@ -1,51 +1,53 @@
 ---
 author: Jwmsft
-Description: A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
-title: Web view
+Description: Элемент управления представлением веб-страницы внедряет в приложение представление, которое отображает содержимое веб-страницы с помощью механизма визуализации Microsoft Edge. В элементе управления представлением веб-страницы могут отображаться и работать гиперссылки.
+title: Представление веб-страницы
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
 ---
 
-# Web view
+# Представление веб-страницы
 
 
 
-A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
+Элемент управления представлением веб-страницы внедряет в приложение представление, которое отображает содержимое веб-страницы с помощью механизма визуализации Microsoft Edge. В элементе управления представлением веб-страницы могут отображаться и работать гиперссылки.
 
-**Important APIs**
+**Важные API**
 
--   [**WebView class**](https://msdn.microsoft.com/library/windows/apps/br227702)
+-   [**Класс WebView**](https://msdn.microsoft.com/library/windows/apps/br227702)
 
-## Is this the right control?
+## Выбор правильного элемента управления
 
-Use a web view control to display richly formatted HTML content from a remote web server, dynamically generated code, or content files in your app package. Rich content can also contain script code and communicate between the script and your app's code.
+Используйте элемент управления представлением веб-страницы для отображения содержимого HTML-страниц расширенного формата с удаленного веб-сервера, динамически генерируемого кода или файлов содержимого в пакете приложения. Содержимое расширенного формата может также содержать код сценария и обеспечивать связь между этим сценарием и кодом вашего приложения.
 
-## Create a web view
+## Создание представления веб-страницы
 
-**Modify the appearance of a web view**
+**Изменение внешнего вида представления веб-страницы**
 
-[**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) is not a [**Control**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) subclass, so it doesn't have a control template. However, you can set various properties to control some visual aspects of the web view.
-- To constrain the display area, set the [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) and [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) properties. 
-- To translate, scale, skew, and rotate a web view, use the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransform.aspx) property.
-- To control the opacity of the web view, set the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) property.
-- To specify a color to use as the web page background when the HTML content does not specify a color, set the [**DefaultBackgroundColor**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultbackgroundcolor.aspx) property. 
+[
+              **WebView**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) не относится к подклассу [**Control**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx), поэтому у него нет шаблона элемента управления. Но можно задать различные свойства для управления некоторыми визуальными аспектами представления веб-страницы.
+- Чтобы ограничить область отображения, задайте свойства [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) и [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx). 
+- Для преобразования, масштабирования, наклона и поворота представления веб-страницы используйте свойство [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransform.aspx).
+- Для управления прозрачностью представления веб-страницы задайте свойство [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx).
+- Для определения цвета, который необходимо использовать в качестве фона веб-страницы, если содержимое HTML не определяет цвет, задайте свойство [**DefaultBackgroundColor**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultbackgroundcolor.aspx). 
 
-**Get the web page title**
+**Получение заголовка веб-страницы**
 
-You can get the title of the HTML document currently displayed in the web view by using the [**DocumentTitle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.documenttitle.aspx) property. 
+Получить заголовок документа HTML, отображаемого в представлении веб-страницы в настоящий момент, можно с помощью свойства [**DocumentTitle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.documenttitle.aspx). 
 
-**Input events and tab order**
+**События ввода и порядок вкладок**
 
-Although WebView is not a Control subclass, it will receive keyboard input focus and participate in the tab sequence. It provides a [**Focus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.focus.aspx) method, and [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.gotfocus.aspx) and [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.lostfocus.aspx) events, but it has no tab-related properties. Its position in the tab sequence is the same as its position in the XAML document order. The tab sequence includes all elements in the web view content that can receive input focus. 
+Хотя WebView не относится к подклассу "Control", он получает фокус ввода с клавиатуры и участвует в порядке вкладок. Он предоставляет метод [**Focus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.focus.aspx), а также события [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.gotfocus.aspx) и [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.lostfocus.aspx), но у него отсутствуют свойства, связанные с вкладками. Его положение в последовательности вкладок такое же, как его положение в порядке документа XAML. Последовательность вкладок включает все элементы в содержимом представления веб-страницы, которые могут получать фокус ввода. 
 
-As indicated in the Events table on the [**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) class page, web view doesn’t support most of the user input events inherited from [**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), such as [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx), [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx), and [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx). Instead, you can use [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) with the JavaScript **eval** function to use the HTML event handlers, and to use **window.external.notify** from the HTML event handler to notify the application using [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx).
+Как показано в таблице событий на странице класса [**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx), представление веб-страницы не поддерживает большинство событий пользовательского ввода, унаследованных от [**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), таких как [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx), [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx) и [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx). Вместо этого можно использовать [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) с функцией JavaScript **eval**, чтобы воспользоваться обработчиками событий HTML и **window.external.notify** из обработчика событий HTML для уведомления приложения с помощью [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx).
 
-### Navigating to content
+### Переход к содержимому
 
-Web view provides several APIs for basic navigation: [**GoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx), [**GoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx), [**Stop**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx), [**Refresh**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx), [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx), and [**CanGoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx). You can use these to add typical web browsing capabilities to your app. 
+Представление веб-страницы предоставляет несколько интерфейсов API для базовой навигации: [**GoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx), [**GoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx), [**Stop**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx), [**Refresh**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx), [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx) и [**CanGoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx). Вы можете использовать их, чтобы добавить в приложение типовые возможности веб-серфинга. 
 
-To set the initial content of the web view, set the [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.source.aspx) property in XAML. The XAML parser automatically converts the string to a [**Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.uri.aspx). 
+Задайте в коде XAML свойство [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.source.aspx), чтобы настроить начальное содержимое представления веб-страницы. Анализатор XAML автоматически преобразует строку в [**Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.uri.aspx). 
 
 ```xaml
 <!-- Source file is on the web. -->
@@ -58,38 +60,38 @@ To set the initial content of the web view, set the [**Source**](https://msdn.mi
 <WebView x:Name="webView3" Source="ms-appx-web:///help/about.html"/>
 ```
 
-The Source property can be set in code, but rather than doing so, you typically use one of the **Navigate** methods to load content in code. 
+Свойство Source можно задать в коде, но вместо этого для загрузки содержимого в код обычно предпочтительнее использовать один из методов **Navigate**. 
 
-To load web content, use the [**Navigate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigate.aspx) method with a **Uri** that uses the http or https scheme. 
+Для загрузки веб-содержимого используйте метод [**Navigate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigate.aspx) с **Uri**, который использует схему http или https. 
 
 ```csharp
 webView1.Navigate("http://www.contoso.com");
 ```
 
-To navigate to a URI with a POST request and HTTP headers, use the [**NavigateWithHttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx) method. This method supports only [**HttpMethod.Post**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) and [**HttpMethod.Get**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx) for the [**HttpRequestMessage.Method**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx) property value. 
+Для перехода к URI с запросом POST и заголовками HTTP, используйте метод [**NavigateWithHttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx). Этот метод поддерживает только [**HttpMethod.Post**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) и [**HttpMethod.Get**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx) для значения свойства [**HttpRequestMessage.Method**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx). 
 
-To load uncompressed and unencrypted content from your app’s [**LocalFolder**]() or [**TemporaryFolder**]() data stores, use the **Navigate** method with a **Uri** that uses the [ms-appdata scheme](). The web view support for this scheme requires you to place your content in a subfolder under the local or temporary folder. This enables navigation to URIs such as ms-appdata:///local/*folder*/*file*.html and ms-appdata:///temp/*folder*/*file*.html . (To load compressed or encrypted files, see [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx).) 
+Чтобы загрузить несжатое и незашифрованное содержимое хранилищ данных [**LocalFolder**]() или [**TemporaryFolder**]() вашего приложения, используйте метод **Navigate** с **Uri**, использующим [схему ms-appdata](). Для поддержки представлений веб-страницы для этой схемы необходимо поместить содержимое во вложенную папку локальной или временной папки. Это позволяет переходить к таким URI, как ms-appdata:///local/*folder*/*file*.html и ms-appdata:///temp/*folder*/*file*.html. (Подробнее о загрузке сжатых или зашифрованных файлов см. в разделе [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx).) 
 
-Each of these first-level subfolders is isolated from the content in other first-level subfolders. For example, you can navigate to ms-appdata:///temp/folder1/file.html, but you can’t have a link in this file to ms-appdata:///temp/folder2/file.html. However, you can still link to HTML content in the app package using the **ms-appx-web scheme**, and to web content using the **http** and **https** URI schemes.
+Каждая из этих вложенных папок первого уровня изолирована от содержимого других вложенных папок первого уровня. Например, вы можете перейти к ms-appdata:///temp/folder1/file.html, но в этом файле не может быть ссылки на ms-appdata:///temp/folder2/file.html. Тем не менее можно в пакете приложения сделать ссылку на содержимое HTML с помощью **схемы ms-appx-web** и на веб-содержимое с помощью схем URI **http** и **https**.
 
 ```csharp
 webView1.Navigate("ms-appdata:///local/intro/welcome.html");
 ```
 
-To load content from the your app package, use the **Navigate** method with a **Uri** that uses the [**ms-appx-web scheme**](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web). 
+Для загрузки содержимого из пакета приложения используйте метод **Navigate** с **Uri**, который использует [** схему ms-appx-web**](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web). 
 
 ```csharp
 webView1.Navigate("ms-appx-web:///help/about.html");
 ```
 
-You can load local content through a custom resolver using the [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) method. This enables advanced scenarios such as downloading and caching web-based content for offline use, or extracting content from a compressed file.
+Локальное содержимое можно загрузить с помощью пользовательского сопоставителя, используя метод [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx). Это позволяет выполнять сложные сценарии, например скачивание и кэширование веб-содержимого для использования в автономном режиме или извлечение содержимого из сжатого файла.
 
-### Responding to navigation events
+### Реакция на события навигации
 
-The web view control provides several events that you can use to respond to navigation and content loading states. The events occur in the following order for the root web view content: [**NavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx), [**ContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx), [**DOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx), [**NavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
+Элемент управления представлением веб-страницы имеет несколько событий, которые можно использовать, чтобы реагировать на состояния навигации и загрузки содержимого. Для корневого содержимого представления веб-страницы события происходят в следующем порядке: [**NavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx), [**ContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx), [**DOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx), [**NavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
 
 
-**NavigationStarting** - Occurs before the web view navigates to new content. You can cancel navigation in a handler for this event by setting the WebViewNavigationStartingEventArgs.Cancel property to true. 
+**NavigationStarting** — происходит перед тем, как представление веб-страницы переходит к новому содержимому. Можно отменить навигацию в обработчике для этого события, задав для свойства WebViewNavigationStartingEventArgs.Cancel значение "true". 
 
 ```csharp
 webView1.NavigationStarting += webView1_NavigationStarting;
@@ -102,7 +104,7 @@ private void webView1_NavigationStarting(object sender, WebViewNavigationStartin
 }
 ```
 
-**ContentLoading** - Occurs when the web view has started loading new content. 
+**ContentLoading** — происходит, когда представление веб-страницы начинает загружать новое содержимое. 
 
 ```csharp
 webView1.ContentLoading += webView1_ContentLoading;
@@ -117,7 +119,7 @@ private void webView1_ContentLoading(WebView sender, WebViewContentLoadingEventA
 }
 ```
 
-**DOMContentLoaded** - Occurs when the web view has finished parsing the current HTML content. 
+**DOMContentLoaded** — происходит, когда представление веб-страницы заканчивает анализировать текущее содержимое HTML. 
 
 ```csharp
 webView1.DOMContentLoaded += webView1_DOMContentLoaded;
@@ -132,7 +134,7 @@ private void webView1_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEv
 }
 ```
 
-**NavigationCompleted** - Occurs when the web view has finished loading the current content or if navigation has failed. To determine whether navigation has failed, check the [**IsSuccess**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) and [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) properties of the [**WebViewNavigationCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx) class. 
+**NavigationCompleted** — происходит, когда представление веб-страницы заканчивает загружать текущее содержимое, или при сбое навигации. Чтобы определить результат навигации, проверьте свойства [**IsSuccess**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) и [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) класса [**WebViewNavigationCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx). 
 
 ```csharp
 webView1.NavigationCompleted += webView1_NavigationCompleted;
@@ -151,27 +153,35 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 }
 ```
 
-Similar events occur in the same order for each **iframe** in the web view content: 
-- [**FrameNavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationstarting.aspx) - Occurs before a frame in the web view navigates to new content. 
-- [**FrameContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framecontentloading.aspx) - Occurs when a frame in the web view has started loading new content. 
-- [**FrameDOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) - Occurs when a frame in the web view has finished parsing its current HTML content. 
-- [**FrameNavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) - Occurs when a frame in the web view has finished loading its content. 
+Подобные события происходят в таком же порядке для каждого элемента **iframe** в содержимом представления веб-страницы. 
+- [
+              **FrameNavigationStarting**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationstarting.aspx) — происходит перед тем, как кадр в представлении веб-страницы перейдет к новому содержимому. 
+- [
+              **FrameContentLoading**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framecontentloading.aspx) — происходит, когда кадр в представлении веб-страницы начнет загрузку нового содержимого. 
+- [
+              **FrameDOMContentLoaded**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) — происходит, когда кадр в представлении веб-страницы заканчивает анализ текущего содержимого HTML. 
+- [
+              **FrameNavigationCompleted**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) — происходит, когда кадр в представлении веб-страницы заканчивает загружать свое содержимое. 
 
-### Responding to potential problems
+### Реакция на потенциальные проблемы
 
-You can respond to potential problems with the content such as long running scripts, content that web view can't load, and warnings of unsafe content. 
+Вы можете реагировать на потенциальные проблемы с содержимым, такие как длинные выполняемые сценарии, содержимое, которое представление веб-страницы не может загрузить, и предупреждения о небезопасном содержимом. 
 
-Your app might appear unresponsive while scripts are running. The [**LongRunningScriptDetected**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.longrunningscriptdetected.aspx) event occurs periodically while the web view executes JavaScript and provides an opportunity to interrupt the script. To determine how long the script has been running, check the [**ExecutionTime**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime.aspx) property of the [**WebViewLongRunningScriptDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.aspx). To halt the script, set the event args [**StopPageScriptExecution**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution.aspx) property to **true**. The halted script will not execute again unless it is reloaded during a subsequent web view navigation. 
+Ваше приложение может перестать отвечать на действия пользователя, пока выполняются сценарии. Пока представление веб-страницы выполняет сценарий JavaScript, периодически происходит событие [**LongRunningScriptDetected**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.longrunningscriptdetected.aspx), которое предоставляет возможность прервать сценарий. Чтобы определить, как долго выполняется сценарий, проверьте свойство [**ExecutionTime**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime.aspx) элемента [**WebViewLongRunningScriptDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.aspx). Чтобы остановить сценарий, задайте свойству аргументов событий [**StopPageScriptExecution**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution.aspx) значение **true**. Остановленный сценарий не будет выполняться снова, пока он не будет перезагружен во время последующего перехода представления веб-страницы. 
 
-The web view control cannot host arbitrary file types. When an attempt is made to load content that the web view can't host, the [**UnviewableContentIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unviewablecontentidentified.aspx) event occurs. You can handle this event and notify the user, or use the [**Launcher**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.system.launcher.aspx) class to redirect the file to an external browser or another app.
+Элемент управления представлением веб-страницы не может размещать произвольные типы файлов. При выполнении попытки загрузить содержимое, которое представление веб-страницы не может размещать, происходит событие [**UnviewableContentIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unviewablecontentidentified.aspx). Вы можете обработать такое событие и уведомить пользователя или использовать класс [**Launcher**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.system.launcher.aspx), чтобы перенаправить файл во внешний браузер или другое приложение.
 
-Similarly, the [**UnsupportedUriSchemeIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsupportedurischemeidentified.aspx) event occurs when a URI scheme that's not supported is invoked in the web content, such as fbconnect:// or mailto://. You can handle this event to provide custom behavior instead of allowing the default system launcher to launch the URI.
+Аналогичным образом событие [**UnsupportedUriSchemeIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsupportedurischemeidentified.aspx) происходит, когда неподдерживаемая схема URI (например, fbconnect:// или mailto://) вызывается в веб-содержимом. Вы можете обработать это событие для выполнения специального действия, а не разрешать системному обработчику по умолчанию запускать этот URI.
 
-The [**UnsafeContentWarningDisplayingevent**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsafecontentwarningdisplaying.aspx) occurs when the web view shows a warning page for content that was reported as unsafe by the SmartScreen Filter. If the user chooses to continue the navigation, subsequent navigation to the page will not display the warning nor fire the event.
+Событие [**UnsafeContentWarningDisplayingevent**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsafecontentwarningdisplaying.aspx) возникает, когда представление веб-страницы отображает страницу предупреждения для содержимого, которое фильтр SmartScreen определил как небезопасное. Если пользователь решает продолжить навигацию, последующий переход на страницу не будет отображать предупреждение или вызывать событие.
 
-### Handling special cases for web view content
+### Обработка особых случаев для содержимого представления веб-страницы
 
-You can use the [**ContainsFullScreenElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelement.aspx) property and [**ContainsFullScreenElementChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelementchanged.aspx) event to detect, respond to, and enable full-screen experiences in web content, such as full-screen video playback. For example, you may use the ContainsFullScreenElementChanged event to resize the web view to occupy the entirety of your app view, or, as the following example illustrates, put a windowed app in full screen mode when a full screen web experience is desired.
+Вы можете использовать свойство [**ContainsFullScreenElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelement.aspx) и событие [**ContainsFullScreenElementChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelementchanged.aspx), чтобы определять, реагировать и включать полноэкранный интерфейс в веб-содержимом, например воспроизведение видео в полноэкранном режиме. Например, можно использовать событие ContainsFullScreenElementChanged, чтобы изменить размер представления веб-страницы таким образом, чтобы оно полностью заняло представление приложения. Это событие также, как показано в следующем примере, можно использовать для перевода приложения из режима окна в полноэкранный режим, если требуется полноэкранное веб-приложение.
 
 ```csharp
 // Assume webView is defined in XAML
@@ -192,9 +202,9 @@ private void webView_ContainsFullScreenElementChanged(WebView sender, object arg
 }
 ```
 
-You can use the [**NewWindowRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.newwindowrequested.aspx) event to handle cases where hosted web content requests a new window to be displayed, such as a popup window. You can use another WebView control to display the contents of the requested window.
+Событие [**NewWindowRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.newwindowrequested.aspx) можно использовать для обработки случаев, в которых размещаемое веб-содержимое отправляет запрос на отображение нового окна, например всплывающего окна. Вы можете использовать другой элемент управления WebView, чтобы отобразить содержимого этого окна.
 
-Use [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) event to enable web features that require special capabilities. These currently include geolocation, IndexedDB storage, and user audio and video (for example, from a microphone or webcam). If your app accesses user location or user media, you still are required to declare this capability in the app manifest. For example, an app that uses geolocation needs the following capability declarations at minimum in Package.appxmanifest:
+Используйте событие [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx), чтобы включить веб-функции, которым требуются специальные возможности. Сейчас эти функции включают в себя географическое положение, хранилище IndexedDB, а также звук и видеоизображение пользователя (например, с микрофона или веб-камеры). Если ваше приложение получает доступ к данным о местоположении пользователя или его мультимедиа, вы обязаны объявить эту возможность в манифесте приложения. Например, приложению, использующему географическое положение, нужны следующие объявления возможностей как минимум в файле Package.appxmanifest.
 
 ```xml
   <Capabilities>
@@ -203,9 +213,9 @@ Use [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xa
   </Capabilities>
 ```
 
-In addition to the app handling the [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) event, the user will have to approve standard system dialogs for apps requesting location or media capabilities in order for these features to be enabled.
+Для включения этих функций, кроме обработки события [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) приложением, пользователь должен будет утвердительно ответить на стандартные системные диалоги для приложений, запрашивающих разрешение на доступ к сведениям о местоположении или мультимедиа.
 
-Here is an example of how an app would enable geolocation in a map from Bing:
+Приведем пример включения приложением географического положения на карте из коллекции Bing.
 
 ```csharp
 // Assume webView is defined in XAML
@@ -221,17 +231,17 @@ private void webView_PermissionRequested(WebView sender, WebViewPermissionReques
 }
 ```
 
-If your app requires user input or other asynchronous operations to respond to a permission request, use the [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) method of [**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) to create a [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx) that can be acted upon at a later time. See [**WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx). 
+Если вашему приложению требуется пользовательский ввод или другие асинхронные операции, чтобы ответить на запрос разрешения, используйте метод [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) функции [**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx), чтобы создать событие [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx), которое может быть выполнено позднее. Подробнее: [**WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx). 
 
-If users must securely log out of a website hosted in a web view, or in other cases when security is important, call the static method [**ClearTemporaryWebDataAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) to clear out all locally cached content from a web view session. This prevents malicious users from accessing sensitive data. 
+Если требуется, чтобы пользователи безопасно выходили с веб-сайта, размещенного в представлении веб-страницы, или в других случаях, в которых важна безопасность, вызовите статический метод [**ClearTemporaryWebDataAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) для очистки всего локально кэшированного содержимого из сеанса представления веб-страницы. Это предотвратит доступ злоумышленников к конфиденциальным данным. 
 
-### Interacting with web view content
+### Взаимодействие с содержимым представления веб-страницы
 
-You can interact with the content of the web view by using the [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) method to invoke or inject script into the web view content, and the [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) event to get information back from the web view content.
+Вы можете взаимодействовать с содержимым представления веб-страницы с помощью метода [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx), чтобы вызвать или внедрить в него сценарий, и события [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx), чтобы получить сведения от содержимого представления веб-страницы.
 
-To invoke JavaScript inside the web view content, use the [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) method. The invoked script can return only string values. 
+Чтобы вызвать сценарий JavaScript внутри представления веб-страницы, используйте метод [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx). Вызванный сценарий может возвращать только строковые значения. 
 
-For example, if the content of a web view named `webView1` contains a function named `setDate` that takes 3 parameters, you can invoke it like this. 
+Например, если содержимое представления веб-страницы с именем `webView1` содержит функцию с именем `setDate`, это составит три параметра, которые вы можете вызвать следующим образом. 
 
 ```csharp
 string[] args = {"January", "1", "2000"};
@@ -239,9 +249,9 @@ string returnValue = await webView1.InvokeScriptAsync("setDate", args);
 ```
 
 
-You can use **InvokeScriptAsync** with the JavaScript **eval** function to inject content into the web page.
+Можно использовать **InvokeScriptAsync** с функцией JavaScript **eval**, чтобы внедрить содержимое в веб-страницу.
 
-Here, the text of a XAML text box (`nameTextBox.Text`) is written to a div in an HTML page hosted in `webView1`. 
+В следующем примере текст текстового поля XAML (`nameTextBox.Text`) написан в элементе div на странице HTML, размещенной в 
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -251,15 +261,15 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Scripts in the web view content can use **window.external.notify** with a string parameter to send information back to your app. To receive these messages, handle the [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) event. 
+Сценарии в содержимом представления веб-страницы могут использовать событие **window.external.notify** с параметром строки для отправки сведений в ваше приложение. Для получения этих сообщений обработайте событие [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx). 
 
-To enable an external web page to fire the **ScriptNotify** event when calling window.external.notify, you must include the page's URI in the **ApplicationContentUriRules** section of the app manifest. (You can do this in Microsoft Visual Studio on the Content URIs tab of the Package.appxmanifest designer.) The URIs in this list must use HTTPS, and may contain subdomain wildcards (for example, `https://*.microsoft.com`) but they cannot contain domain wildcards (for example, `https://*.com` and `https://*.*`). The manifest requirement does not apply to content that originates from the app package, uses an ms-local-stream:// URI, or is loaded using [**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx). 
+Чтобы разрешить внешней веб-странице запускать событие **ScriptNotify** при вызове "window.external.notify", необходимо включить URI этой страницы в раздел **ApplicationContentUriRules** манифеста приложения. (Это можно сделать в Microsoft Visual Studio на вкладке "URI содержимого" конструктора Package.appxmanifest.) URI в этом списке должны использовать HTTPS и могут содержать знаки подстановки для поддоменов (например, `https://*.microsoft.com`), но не могут содержать знаки подстановки для доменов (например, `https://*.com` и `https://*.*`). Требования манифеста не применяются к содержимому, которое поступает из пакета приложения, использует URI ms-local-stream:// или загружается с помощью метода [**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx). 
 
-### Accessing the Windows Runtime in a web view
+### Доступ к среде выполнения Windows в представлении веб-страницы
 
-You can use the [**AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) method to inject an instance of a native class from a Windows Runtime component into the JavaScript context of the web view. This allows full access to the native methods, properties, and events of that object in the JavaScript content of that web view. The class must be decorated with the [**AllowForWeb**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.metadata.allowforwebattribute.aspx) attribute. 
+Метод [**AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) можно использовать для внедрения экземпляра собственного класса из компонента среды выполнения Windows в контекст JavaScript представления веб-страницы. Это дает полный доступ к собственным методам, свойствам и событиям этого объекта в содержимом JavaScript данного представления веб-страницы. Этот класс должен быть помечен атрибутом [**AllowForWeb**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.metadata.allowforwebattribute.aspx). 
 
-For example, this code injects an instance of `MyClass` imported from a Windows Runtime component into a web view.
+Например, данный код внедряет экземпляр `MyClass`, импортированный из компонента среды выполнения Windows, в представление веб-страницы.
 
 ```csharp
 private void webView_NavigationStarting(WebView sender, WebViewNavigationStartingEventArgs args) 
@@ -271,11 +281,11 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 }
 ```
 
-For more info, see [**WebView.AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx). 
+Подробнее см. в разделе [**WebView.AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx). 
 
-In addition, trusted JavaScript content in a web view can be allowed to directly access Windows Runtime APIs. This provides powerful native capabilities for web apps hosted in a web view. To enable this feature, the URI for trusted content must be whitelisted in the ApplicationContentUriRules of the app in Package.appxmanifest, with WindowsRuntimeAccess specifically set to "all". 
+Кроме того, доверенное содержимое JavaScript в представлении веб-страницы может получить разрешение на прямой доступ к API среды выполнения Windows. Это предоставляет мощные собственные функции для веб-приложений, размещенных в представлении веб-страницы. Чтобы реализовать эту функцию, URI для доверенного содержимого должен быть добавлен в список разрешенных URI в ApplicationContentUriRules приложения в Package.appxmanifest, при этом для WindowsRuntimeAccess должно быть специально установлено значение "all". 
 
-This example shows a section of the app manifest. Here, a local URI is given access to the Windows Runtime. 
+В этом примере показан раздел манифеста приложения. В нем локальному URI дается доступ к среде выполнения Windows. 
 
 ```csharp
   <Applications>
@@ -289,40 +299,46 @@ This example shows a section of the app manifest. Here, a local URI is given acc
   </Applications>
 ```
 
-### Options for web content hosting
+### Параметры для размещения веб-содержимого
 
-You can use the [**WebView.Settings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.settings.aspx) property (of type [**WebViewSettings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewsettings.aspx)) to control whether JavaScript and IndexedDB are enabled. For example, if you use a web view to display strictly static content, you might want to disable JavaScript for best performance.
+Вы можете использовать свойство [**WebView.Settings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.settings.aspx) (типа [**WebViewSettings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewsettings.aspx)), чтобы включать или отключать JavaScript и IndexedDB. Например, если вы используете представление веб-страницы для отображения исключительно статического содержимого, возможно, вы захотите отключить JavaScript для повышения производительности.
 
-### Capturing web view content
+### Захват содержимого представления веб-страницы
 
-To enable sharing web view content with other apps, use the [**CaptureSelectedContentToDataPackageAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync.aspx) method, which returns the selected content as a [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datapackage.aspx). This method is asynchronous, so you must use a deferral to prevent your [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx) event handler from returning before the asynchronous call is complete. 
+Чтобы включить общий доступ к содержимому представления веб-страницы для других приложений, используйте метод [**CaptureSelectedContentToDataPackageAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync.aspx), который возвращает выбранное содержимое в виде [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datapackage.aspx). Это асинхронный метод, поэтому вы должны использовать задержку, чтобы предотвратить возврат вашего обработчика событий [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx) до завершения асинхронного вызова. 
 
-To get a preview image of the web view's current content, use the [**CapturePreviewToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.capturepreviewtostreamasync.aspx) method. This method creates an image of the current content and writes it to the specified stream. 
+Чтобы получить изображение предпросмотра текущего содержимого представления веб-страницы, используйте метод [**CapturePreviewToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.capturepreviewtostreamasync.aspx). Этот метод создает образ текущей страницы и записывает его в указанный поток. 
 
-### Threading behavior
+### Поведение потоков
 
-By default, web view content is hosted on the UI thread on devices in the desktop device family, and off the UI thread on all other devices. You can use the [**WebView.DefaultExecutionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx) static property to query the default threading behavior for the current client. If necessary, you can use the [**WebView(WebViewExecutionMode)**](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx) constructor to override this behavior. 
+По умолчанию содержимое представления веб-страницы размещается в потоке пользовательского интерфейса на устройствах в семействе настольных устройств и вне потока пользовательского интерфейса на всех других устройствах. Статическое свойство [**WebView.DefaultExecutionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx) можно использовать для запроса поведения потока по умолчанию для текущего клиента. При необходимости можно использовать конструктор [**WebView(WebViewExecutionMode)**](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx), чтобы определить это поведение. 
 
-> **Note**&nbsp;&nbsp;There might be performance issues when hosting content on the UI thread on mobile devices, so be sure to test on all target devices when you change DefaultExecutionMode.
+> **Примечание**
+            &nbsp;&nbsp;При размещении содержимого в потоке пользовательского интерфейса на мобильных устройствах могут возникнуть проблемы с производительностью, поэтому убедитесь, что после изменения DefaultExecutionMode вы проверили работу приложения на всех целевых устройствах.
 
-A web view that hosts content off the UI thread is not compatible with parent controls that require gestures to propagate up from the web view control to the parent, such as [**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx), [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx), and other related controls. These controls will not be able to receive gestures initiated in the off-thread web view. In addition, printing off-thread web content is not directly supported – you should print an element with [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) fill instead.
+Представление веб-страницы, в котором размещается содержимое вне потока пользовательского интерфейса, несовместимо с родительскими элементами управления, которым требуются жесты для распространения вверх от элемента управления представления веб-страницы к родительскому элементу, например [**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx), [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) и другие связанные элементы управления. Эти элементы управления не смогут получать жесты, вызванные в представлении веб-страницы вне потока. Кроме того, вывод веб-содержимого вне потока не поддерживается прямо. Вместо этого необходимо выводить элемент с заполнением [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx).
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommendations
-
-
--   Make sure that the website loaded is formatted correctly for the device and uses colors, typography, and navigation that are consistent with the rest of your app.
--   Input fields should be appropriately sized. Users may not realize that they can zoom in to enter text.
--   If a web view doesn't look like the rest of your app, consider alternative controls or ways to accomplish relevant tasks. If your web view matches the rest of your app, users will see it all as one seamless experience.
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Рекомендации
 
 
-
-## <span id="related_topics"></span>Related topics
-
-* [**WebView class**](https://msdn.microsoft.com/library/windows/apps/br227702)
- 
-
- 
+-   Убедитесь, что загруженный веб-сайт имеет правильный формат при отображении на данном устройстве, а также использует цвета, шрифтовое оформление и навигацию в соответствии с вашим приложением.
+-   Поля ввода должны иметь правильный размер. Пользователи могут не понять, что у них есть возможность масштабирования для ввода текста.
+-   Если представление веб-страницы не соответствует вашему приложению, введите альтернативные элементы управления или придумайте собственные способы решения соответствующих задач. Если представление веб-страницы соответствует вашему приложению, пользователи будут воспринимать его как должное.
 
 
+
+## <span id="related_topics"></span>Ссылки по теме
+
+* [**Класс WebView**](https://msdn.microsoft.com/library/windows/apps/br227702)
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

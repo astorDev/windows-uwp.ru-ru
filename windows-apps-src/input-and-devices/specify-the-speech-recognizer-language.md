@@ -1,50 +1,50 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Learn how to select an installed language to use for speech recognition.
-title: Specify the speech recognizer language
+Description: Узнайте, как выбрать установленный язык для распознавания речи.
+title: Определение языка для распознавателя речи
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
 ---
 
-# Specify the speech recognizer language
+# Определение языка для распознавателя речи
 
 
-Learn how to select an installed language to use for speech recognition.
+Узнайте, как выбрать установленный язык для распознавания речи.
 
 
 
 
-**Important APIs**
+**Важные API**
 
 -   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)
 -   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)
--   [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804)
+-   [**Язык**](https://msdn.microsoft.com/library/windows/apps/br206804)
 
 
-Here, we enumerate the languages installed on a system, identify which is the default language, and select a different language for recognition.
+Здесь мы перечисляем языки, установленные в системе, определяем язык, используемый по умолчанию, и выбираем другой язык для распознавания.
 
-**Prerequisites:  **
+**Необходимые условия  **
 
-This topic builds on [Speech recognition](speech-recognition.md).
+В данной статье используются материалы статьи [Распознавание речи](speech-recognition.md).
 
-You should have a basic understanding of speech recognition and recognition constraints.
+От вас требуется понимание основных принципов распознавания речи и знание соответствующих ограничений.
 
-If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
+Если вы — начинающий разработчик приложений универсальной платформы Windows (UWP), прочитайте указанные ниже статьи, чтобы ознакомиться с описанными здесь технологиями.
 
--   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
+-   [Создание первого приложения](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   Дополнительную информацию о событиях см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
-**User experience guidelines:  **
+**Рекомендации по взаимодействию с пользователем.  **
 
-For helpful tips about designing a useful and engaging speech-enabled app, see [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121) .
+Полезные подсказки по разработке практичного и привлекательного приложения с поддержкой голосовых функций см. в разделе [Рекомендации по проектированию голосовых функций](https://msdn.microsoft.com/library/windows/apps/dn596121).
 
-## <span id="Identify_the_default_language"></span><span id="identify_the_default_language"></span><span id="IDENTIFY_THE_DEFAULT_LANGUAGE"></span>Identify the default language
+## <span id="Identify_the_default_language"></span><span id="identify_the_default_language"></span><span id="IDENTIFY_THE_DEFAULT_LANGUAGE"></span>Определение языка, используемого по умолчанию
 
 
-A speech recognizer uses the system speech language as its default recognition language. This language is set by the user on the device Settings &gt; System &gt; Speech &gt; Speech Language screen.
+В качестве языка по умолчанию распознаватель речи использует язык для голосовых функций, установленный в системе. Этот язык устанавливает пользователь на устройстве, в разделе «Параметры» &gt; «Система» &gt; «Речь» &gt; «Язык голосовых функций».
 
-We identify the default language by checking the [**SystemSpeechLanguage**](https://msdn.microsoft.com/library/windows/apps/dn653252) static property.
+Чтобы определить язык по умолчанию, нужно проверить статическое свойство [**SystemSpeechLanguage**](https://msdn.microsoft.com/library/windows/apps/dn653252).
 
 ```CSharp
 var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
@@ -53,27 +53,31 @@ var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
 </table>
 ```
 
-## <span id="Confirm_an_installed_language"></span><span id="confirm_an_installed_language"></span><span id="CONFIRM_AN_INSTALLED_LANGUAGE"></span>Confirm an installed language
+## <span id="Confirm_an_installed_language"></span><span id="confirm_an_installed_language"></span><span id="CONFIRM_AN_INSTALLED_LANGUAGE"></span>Подтверждение установленного языка
 
 
-Installed languages can vary between devices. You should verify the existence of a language if you depend on it for a particular constraint.
+На разных устройствах установленные языки могут отличаться. Следует проверить наличие языка, если с ним связано какое-либо ограничение, которое имеет для вас значение.
 
-**Note**  A reboot is required after a new language pack is installed. An exception with error code SPERR\_NOT\_FOUND (0x8004503a) is raised if the specified language is not supported or has not finished installing.
+**Примечание.**  После установки нового языкового пакета требуется перезагрузка. Если указанный язык не поддерживается или его установка не завершена, возникает исключение с кодом ошибки SPERR\_NOT\_FOUND (0x8004503a).
 
- 
+ 
 
-Determine the supported languages on a device by checking one of two static properties of the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) class:
+Определите поддерживаемые языки на устройстве, проверив одно из двух статических свойств класса [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226):
 
--   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)—The collection of [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) objects used with predefined dictation and web search grammars.
+-   [
+              **SupportedTopicLanguages**
+            ](https://msdn.microsoft.com/library/windows/apps/dn653251) — коллекция объектов [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804), используемых с предустановленными правилами грамматики для диктовки и поиска в Интернете.
 
--   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)—The collection of [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) objects used with a list constraint or a Speech Recognition Grammar Specification (SRGS) file.
+-   [
+              **SupportedGrammarLanguages**
+            ](https://msdn.microsoft.com/library/windows/apps/dn653250) — коллекция объектов [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804), используемых с ограничением по списку или файлом определения грамматики для распознавания речи (SRGS).
 
-## <span id="Specify_a_language"></span><span id="specify_a_language"></span><span id="SPECIFY_A_LANGUAGE"></span>Specify a language
+## <span id="Specify_a_language"></span><span id="specify_a_language"></span><span id="SPECIFY_A_LANGUAGE"></span>Определение языка
 
 
-To specify a language, pass a [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) object in the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) constructor.
+Чтобы определить язык, передайте объект [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) в конструктор [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226).
 
-Here, we specify "en-US" as the recognition language.
+Здесь мы определяем en-US как язык для распознавания.
 
 <span codelanguage="CSharp"></span>
 ```CSharp
@@ -91,28 +95,33 @@ var language = new Windows.Globalization.Language(“en-US”);
 var recognizer = new SpeechRecognizer(language); 
 ```
 
-## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>Remarks
+## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>Комментарии
 
 
-A topic constraint can be configured by adding a [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) to the [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) collection of the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) and then calling [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240). A [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) of **TopicLanguageNotSupported** is returned if the recognizer is not initialized with a supported topic language.
+Ограничение по одной теме можно настроить, добавив [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) в коллекцию [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) средства [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), а затем вызвав [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240). Если распознаватель не удалось инициализировать с поддерживаемым языком темы, возвращается состояние [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) для **TopicLanguageNotSupported**.
 
-A list constraint is configured by adding a [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) to the [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) collection of the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) and then calling [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240). You cannot specify the language of a custom list directly. Instead, the list will be processed using the language of the recognizer.
+Ограничение по списку можно настроить, добавив [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) в коллекцию [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) средства [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), а затем вызвав [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240). Вы не можете задать язык пользовательского списка напрямую. Список будет обрабатываться с использованием языка распознавателя.
 
-An SRGS grammar is an open-standard XML format represented by the [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) class. Unlike custom lists, you can specify the language of the grammar in the SRGS markup. [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) fails with a [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) of **TopicLanguageNotSupported** if the recognizer is not initialized to the same language as the SRGS markup.
+Грамматика SRGS – это открытый формат XML, представляемый классом [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412). В отличие от пользовательских списков язык грамматики можно указать в разметке SRGS. Выполнение [
+              **CompileConstraintsAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/dn653240) завершается ошибкой с состоянием [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) для **TopicLanguageNotSupported**, если распознаватель не удалось инициализировать на языке разметки SRGS.
 
-## <span id="related_topics"></span>Related articles
-
-
-**Developers**
-* [Speech interactions](speech-interactions.md)
-**Designers**
-* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**Samples**
-* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
-
- 
+## <span id="related_topics"></span>Связанные разделы
 
 
+**Разработчикам**
+* Взаимодействие с помощью голосовых функций
+* Проектировщикам
+* [Рекомендации по проектированию голосовых функций](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

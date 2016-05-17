@@ -1,18 +1,18 @@
 ---
 author: mcleblanc
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
-title: Optimize your XAML markup
-description: Parsing XAML markup to construct objects in memory is time-consuming for a complex UI. Here are some things you can do to improve XAML markup parse and load time and memory efficiency for your app.
+title: Оптимизация разметки XAML
+description: В случае использования сложных пользовательских интерфейсов анализ разметки XAML с целью создания объектов в памяти отнимает много времени. Вот что можно сделать, чтобы улучшить анализ разметки XAML, сократить время загрузки приложения и повысить эффективность его работы с памятью.
 ---
-# Optimize your XAML markup
+# Оптимизация разметки XAML
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Parsing XAML markup to construct objects in memory is time-consuming for a complex UI. Here are some things you can do to improve XAML markup parse and load time and memory efficiency for your app.
+В случае использования сложных пользовательских интерфейсов анализ разметки XAML с целью создания объектов в памяти отнимает много времени. Вот что можно сделать, чтобы улучшить анализ разметки XAML, сократить время загрузки приложения и повысить эффективность его работы с памятью.
 
-At app startup, limit the XAML markup that is loaded to only what you need for your initial UI. Examine the markup in your initial page and confirm it contains nothing that it doesn't need. If a page references a user control or a resource defined in a different file, then the framework parses that file, too.
+При запуске приложения загружайте только те элементы разметки XAML, которые входят в первоначальный пользовательский интерфейс. Проверьте разметку начальной страницы и убедитесь, что она не содержит ничего лишнего. Если страница ссылается на пользовательский элемент управления или ресурс, определенный в другом файле, платформа также анализирует и этот файл.
 
-In this example, because InitialPage.xaml uses one resource from ExampleResourceDictionary.xaml, the whole of ExampleResourceDictionary.xaml must be parsed at startup.
+Так как в этом примере InitialPage.xaml использует один ресурс из ExampleResourceDictionary.xaml, последний необходимо проанализировать при запуске.
 
 **InitialPage.xaml.**
 
@@ -43,7 +43,7 @@ In this example, because InitialPage.xaml uses one resource from ExampleResource
 </ResourceDictionary>
 ```
 
-If you use a resource on many pages throughout your app, then storing it in App.xaml is a good practice, and avoids duplication. But App.xaml is parsed at app startup so any resource that is used in only one page (unless that page is the initial page) should be put into the page's local resources. This counter-example shows App.xaml containing resources that are used by only one page (that's not the initial page). This needlessly increases app startup time.
+Если ресурс используется на нескольких страницах приложения, мы рекомендуем сохранить его в файл App.xaml, чтобы избежать дублирования. Но файл App.xaml анализируется при запуске приложения, поэтому любой ресурс, используемый только на одной странице (кроме начальной), необходимо включить в локальные ресурсы такой страницы. В этом примере неправильного использования файл App.xaml содержит ресурсы, используемые только одной страницей, которая не является начальной. Это снижает скорость загрузки приложения.
 
 **InitialPage.xaml.**
 
@@ -78,15 +78,15 @@ If you use a resource on many pages throughout your app, then storing it in App.
 </Application> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-The way to make the above counter-example more efficient is to move `SecondPageTextBrush` into SecondPage.xaml and to move `ThirdPageTextBrush` into ThirdPage.xaml. `InitialPageTextBrush` can remain in App.xaml because application resources must be parsed at app startup in any case.
+Чтобы исправить пример неэффективного использования выше нужно переместить файл `SecondPageTextBrush` в SecondPage.xaml, а `ThirdPageTextBrush` — в ThirdPage.xaml. `InitialPageTextBrush` можно оставить в файле App.xaml, потому что ресурсы приложения необходимо проанализировать при запуске в любом случае.
 
-## Minimize element count
+## Сокращение числа элементов
 
-Although the XAML platform is capable of displaying large numbers of elements, you can make your app lay out and render faster by using the fewest number of elements to achieve the visuals you want.
+Хотя платформа XAML может отображать большое количество элементов, загрузку макета приложения и его обработку можно ускорить, используя меньшее количество элементов для достижения требуемого внешнего вида.
 
--   Layout panels have a [**Background**](https://msdn.microsoft.com/library/windows/apps/BR227512) property so there's no need to put a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) in front of a Panel just to color it.
+-   У панелей макета есть свойство [**Background**](https://msdn.microsoft.com/library/windows/apps/BR227512), поэтому нет необходимости использовать перед ними класс [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371), только чтобы изменить цвет панели.
 
-**Inefficient.**
+**Неэффективно.**
 
 ```xml
 <Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -94,19 +94,19 @@ Although the XAML platform is capable of displaying large numbers of elements, y
     </Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**Efficient.**
+**Эффективно.**
 
 ```xml
 <Grid Background="Black"/>
 ```
 
--   If you reuse the same vector-based element enough times, it becomes more efficient to use an [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) element instead. Vector-based elements can be more expensive because the CPU must create each individual element separately. The image file needs to be decoded only once.
+-   Если один и тот же элемент на основе векторов используется несколько раз, эффективней будет использовать вместо него элемент [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752). Элементы на основе векторов могут быть более затратными, потому что ЦП приходится создавать каждый элемент по отдельности. Файл изображения требуется декодировать всего один раз.
 
-## Consolidate multiple brushes that look the same into one resource
+## Объедините несколько кистей, которые выглядят одинаково, в один ресурс
 
-The XAML platform tries to cache commonly-used objects so that they can be reused as often as possible. But XAML cannot easily tell if a brush declared in one piece of markup is the same as a brush declared in another. The example here uses [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) to demonstrate, but the case is more likely and more important with [**GradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210068).
+Платформа XAML пытается кэшировать часто используемые объекты, чтобы их можно было применять повторно как можно чаще. Но XAML не может определить, одинаковы ли две кисти, объявленные в разных частях разметки. В этом примере класс [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) использован для демонстрации, но гораздо важнее применять этот способ к классу [**GradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210068).
 
-**Inefficient.**
+**Неэффективно.**
 
 ```xml
 <Page ... > <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -125,9 +125,9 @@ The XAML platform tries to cache commonly-used objects so that they can be reuse
 </Page> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-Also check for brushes that use predefined colors: `"Orange"` and `"#FFFFA500"` are the same color. To fix the duplication, define the brush as a resource. If controls in other pages use the same brush, move it to App.xaml.
+Также проверьте кисти, использующие предопределенные цвета: `"Orange"` и `"#FFFFA500"` — это один и тот же цвет. Чтобы устранить дублирование, определите кисть как ресурс. Если элементы управления на других страницах используют эту же кисть, переместите ее в файл App.xaml.
 
-**Efficient.**
+**Эффективно.**
 
 ```xml
 <Page ... >
@@ -142,14 +142,14 @@ Also check for brushes that use predefined colors: `"Orange"` and `"#FFFFA500"` 
 </Page>
 ```
 
-## Minimize overdrawing
+## Сокращение перерисовки
 
-Overdrawing is where more than one object is drawn in the same screen pixels. Note that there is sometimes a trade-off between this guidance and the desire to minimize element count.
+Перерисовка происходит, когда одни и те же пиксели экрана используются для отрисовки нескольких объектов. Обратите внимание, что иногда приходится искать компромисс между выполнением этого руководства и сокращением количества элементов.
 
--   If an element isn't visible because it's transparent or hidden behind other elements, and it's not contributing to layout, then delete it. If the element is not visible in the initial visual state but it is visible in other visual states then set [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) to **Collapsed** on the element itself and change the value to **Visible** in the appropriate states. There will be exceptions to this heuristic: in general, the value a property has in the major of visual states is best set locally on the element.
--   Use a composite element instead of layering multiple elements to create an effect. In this example, the result is a two-toned shape where the top half is black (from the background of the [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)) and the bottom half is gray (from the semi-transparent white [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) alpha-blended over the black background of the **Grid**). Here, 150% of the pixels necessary to achieve the result are being filled.
+-   Если элемент не видно из-за того, что он прозрачный или скрыт за другими элементами, и при этом он не является частью макета, удалите его. Если первоначально элемент не отображается, но будет отображаться в последующих визуальных состояниях, присвойте параметру [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) элемента значение **Collapsed** и измените значение параметра на **Visible** для соответствующих состояний. У этой эвристической процедуры могут быть исключения: значение свойства в большинстве визуальных состояний лучше присваивать элементу локально.
+-   Для создания эффекта используйте составной элемент, а не несколько отдельных элементов. Результат выполнения этого примера — форма, закрашенная двумя цветами. Верхняя часть черного цвета (полученного присвоением соответствующего фона объекту класса [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)), а нижняя серого (полученного наложением объекта [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) полупрозрачного белого цвета в альфа-канале на объект **Grid** с черным фоном). Здесь для достижения результата заполняется 150 % пикселей.
 
-**Inefficient.**
+**Неэффективно.**
     
 ```xml
     <Grid Background="Black"> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -161,7 +161,7 @@ Overdrawing is where more than one object is drawn in the same screen pixels. No
     </Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**Efficient.**
+**Эффективно.**
 
 ```xml
     <Grid>
@@ -174,9 +174,9 @@ Overdrawing is where more than one object is drawn in the same screen pixels. No
     </Grid>
 ```
 
--   A layout panel can have two purposes: to color an area, and to lay out child elements. If an element further back in z-order is already coloring an area then a layout panel in front does not need to paint that area: instead it can just focus on laying out its children. Here's an example.
+-   У панели макета есть два варианта использования: для закрашивания области и для размещения дочерних элементов. Если элемент, который расположен ниже в z-порядке, уже закрашивает область, для этого не нужно использовать панель макета вверху. Вместо этого на ней можно просто размещать дочерние элементы. Пример:
 
-**Inefficient.**
+**Неэффективно.**
 
 ```xml
     <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -189,7 +189,7 @@ Overdrawing is where more than one object is drawn in the same screen pixels. No
     </GridView> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**Efficient.**
+**Эффективно.**
 
 ```xml
     <GridView Background="Blue">  
@@ -201,11 +201,11 @@ Overdrawing is where more than one object is drawn in the same screen pixels. No
     </GridView> 
 ```
 
-If the [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) has to be hit-testable then set a background value of transparent on it.
+Если следует выполнить проверку нажатия объекта класса [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), присвойте ему прозрачный фон.
 
--   Use a [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209253) element to draw a border around an object. In this example, a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) is used as a makeshift border around a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683). But all the pixels in the center cell are overdrawn.
+-   Используйте элемент [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209253) для рисования границы вокруг объекта. В этом примере объект класса [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) используется в качестве временной границы вокруг объекта класса [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683). Но все пиксели в центральной ячейке перерисованы.
 
-**Inefficient.**
+**Неэффективно.**
 
 ```xml
     <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -224,7 +224,7 @@ If the [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) has 
     </Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**Efficient.**
+**Эффективно.**
 
 ```xml
     <Border BorderBrush="Blue" BorderThickness="5" Width="300" Height="45">
@@ -232,15 +232,15 @@ If the [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) has 
     </Border>
 ```
 
--   Be aware of margins. Two neighboring elements will overlap (possibly accidentally) if negative margins extend into another’s render bounds and cause overdrawing.
+-   Учитывайте поля. Два соседних элемента могут перекрываться (вероятно, случайно), если отрицательные поля одного из них переходят границы соседнего отрисованного объекта и вызывают их перерисовку.
 
-Use [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/Hh701823) as a visual diagnostic. You may find objects being drawn that you weren't aware were in the scene.
+Для визуальной диагностики используйте свойство [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/Hh701823). Так вы можете обнаружить в сцене отрисованные объекты, о наличии которых не знали.
 
-## Cache static content
+## Кэширование статического содержимого
 
-Another source of overdrawing is a shape made from many overlapping elements. If you set [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) to **BitmapCache** on the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) that contains the composite shape then the platform renders the element to a bitmap once and then uses that bitmap each frame instead of overdrawing.
+Другая причина перерисовки — использование формы, созданной из большого количества перекрывающихся элементов. Если вы присвоили [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) значение **BitmapCache** в классе [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), который содержит составную форму, платформа обработает элемент как растровое изображение, а затем будет использовать это изображение в каждом кадре вместо того, чтобы перерисовывать объекты.
 
-**Inefficient.**
+**Неэффективно.**
 
 ```xml
 <Canvas Background="White">
@@ -250,13 +250,13 @@ Another source of overdrawing is a shape made from many overlapping elements. If
 </Canvas>
 ```
 
-![Venn diagram with three solid circles](images/solidvenn.png)
+![Диаграмма Венна с тремя сплошными кругами](images/solidvenn.png)
 
-The image above is the result, but here's a map of the overdrawn regions. Darker red indicates higher amounts of overdraw.
+Вверху вы видите результирующее изображение, а вот карта перерисовки областей: Более темному красному цвету соответствуют области с большим объемом перерисовки.
 
-![Venn diagram that shows overlapping areas](images/translucentvenn.png)
+![Диаграмма Венна с демонстрацией перекрывающихся областей](images/translucentvenn.png)
 
-**Efficient.**
+**Эффективно.**
 
 ```xml
 <Canvas Background="White" CacheMode="BitmapCache">
@@ -266,21 +266,26 @@ The image above is the result, but here's a map of the overdrawn regions. Darker
 </Canvas>
 ```
 
-Note the use of [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084). Don't use this technique if any of the sub-shapes animate because the bitmap cache will likely need to be regenerated every frame, defeating the purpose.
+Обратите внимание на использование класса [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084). Не используйте этот прием, если какая-либо из подформ является анимированной, так как, вероятно, потребуется повторная генерация кэша в каждом кадре, что неэффективно.
 
 ## ResourceDictionaries
 
-ResourceDictionaries are generally used to store your resources at a somewhat global level. Resources that your app wants to reference in multiple places. For example, styles, brushes, templates, and so on. In general, we have optimized ResourceDictionaries to not instantiate resources unless they're asked for. But there are few places where you need to be a little careful.
+ResourceDictionaries (Словари ресурсов) обычно используются для хранения ресурсов на глобальном уровне. Ресурсы, на которые приложение ссылается в нескольких местах. Например, стили, кисти, шаблоны и т. д. В целом мы оптимизировали ResourceDictionaries так, чтобы экземпляр ресурса не создавался без соответствующего запроса. Однако в некоторых случаях необходимо проявлять осторожность.
 
-**Resource with x:Name**. Any resource with x:Name will not benefit from the platform optimization, but instead it will be instantiated as soon as the ResourceDictionary is created. This happens because x:Name tells the platform that your app needs field access to this resource, so the platform needs to create something to create a reference to.
+**Ресурсы с атрибутом x:Name**. Ресурсы с атрибутом x:Name не получают преимуществ при оптимизации платформы. Вместо этого экземпляр ресурса создается сразу же после создания ResourceDictionary. Это происходит потому, что атрибут x:Name показывает платформе, что приложению требуется местный доступ к этому ресурсу. Поэтому платформе необходимо создать объект, на который можно создать ссылку.
 
-**ResourceDictionaries in a UserControl**. ResourceDictionaries defined inside of a UserControl carry a penalty. The platform will create a copy of such a ResourceDictionary for every instance of the UserControl. If you have a UserControl that is used a lot, then move the ResourceDictionary out of the UserControl and put it the page level.
+**ResourceDictionaries в UserControl**. Определение ResourceDictionaries в UserControl ведет к снижению производительности. Платформа создает копию такого ResourceDictionary для каждого экземпляра UserControl. Если UserControl используется интенсивно, извлеките ResourceDictionary из UserControl и разместите его на уровне страницы.
 
-## Use XBF2
+## Использование XBF2
 
-XBF2 is a binary representation of XAML markup that avoids all text-parsing costs at runtime. It also optimizes your binary for load and tree creation, and allows "fast-path" for XAML types to improve heap and object creation costs, for example VSM, ResourceDictionary, Styles, and so on. It is completely memory-mapped so there is no heap footprint for loading and reading a XAML Page. In addition, it reduces the disk footprint of stored XAML pages in an appx. XBF2 is a more compact representation and it can reduce disk footprint of comparative XAML/XBF1 files by up to 50%. For example, the built-in Photos app saw around a 60% reduction after conversion to XBF2 dropping from around ~1mb of XBF1 assets to ~400kb of XBF2 assets. We have also seen apps benefit anywhere from 15 to 20% in CPU and 10 to 15% in Win32 heap.
+XBF2 — это двоичное представление разметки XAML, которое позволяет избежать синтаксического разбора текста во время выполнения. Оно также оптимизирует двоичный объект для создания дерева и загрузки и позволяет использовать «быстрый путь» для типов XAML, чтобы оптимизировать создание кучи и объектов, например VSM, ResourceDictionary, стили и т. д. Оно полностью сопоставлено в памяти, поэтому для загрузки и чтения страницы XAML куча не используется. Кроме того, оно уменьшает место на диске, которое занимают хранящиеся в пакете приложения (.appx) страницы XAML. XBF2 — это более компактное представление. По сравнению с файлами XAML/XBF1, оно уменьшает занимаемое место на диске на 50 %. Например, после преобразования в представление XBF2 объем ресурсов встроенного приложения «Фотографии» уменьшился на 60 % — с примерно 1 МБ (XBF1) до 400 КБ (XBF2). Также такие приложения сокращают нагрузку на ЦП на 15–20 % и на 10–15 % уменьшают размер кучи в Win32.
 
-XAML built-in controls and dictionaries that the framework provides are already fully XBF2-enabled. For your own app, ensure that your project file declares TargetPlatformVersion 8.2 or later.
+Встроенные элементы управления и словари XAML, предоставляемые платформой, уже полностью поддерживают XBF2. Файл проекта вашего приложения должен поддерживать TargetPlatformVersion 8.2 или выше.
 
-To check whether you have XBF2, open your app in a binary editor; the 12th and 13th bytes are 00 02 if you have XBF2.
+Чтобы проверить наличие XBF2, откройте приложение в двоичном редакторе. При наличии XBF2 12-й и 13-й байты имеют значение «00 02».
+
+
+
+<!--HONumber=May16_HO2-->
+
 

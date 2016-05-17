@@ -1,54 +1,54 @@
 ---
 author: jwmsft
-description: A XAML namescope stores relationships between the XAML-defined names of objects and their instance equivalents. This concept is similar to the wider meaning of the term namescope in other programming languages and technologies.
-title: XAML namescopes
+description: В области имен XAML хранятся отношения между определенными в XAML именами объектов и их эквивалентными экземплярами. Этот принцип схож с более широким значением термина "область имен" в других языках и технологиях программирования.
+title: Пространства имен XAML
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 ---
 
-# XAML namescopes
+# Пространства имен XAML
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-A *XAML namescope* stores relationships between the XAML-defined names of objects and their instance equivalents. This concept is similar to the wider meaning of the term *namescope* in other programming languages and technologies.
+В *области имен XAML* хранятся отношения между определенными в XAML именами объектов и их эквивалентными экземплярами. Этот принцип схож с более широким значением термина *область имен* в других языках и технологиях программирования.
 
-## How XAML namescopes are defined
+## Метод определения областей имен в языке XAML
 
-Names in XAML namescopes enable user code to reference the objects that were initially declared in XAML. The internal result of parsing XAML is that the runtime creates a set of objects that retain some or all of the relationships these objects had in the XAML declarations. These relationships are maintained as specific object properties of the created objects, or are exposed to utility methods in the programming model APIs.
+Имена в областях имен XAML позволяют пользовательскому коду устанавливать ссылки на объекты, изначально описанные в XAML. Внутренним результатом анализа XAML является то, что среда выполнения создает набор объектов, которые сохраняют некоторые или все связи этих объектов в объявлениях XAML. Эти связи поддерживаются как специальные свойства созданных объектов или делаются доступными для вспомогательных методов в API моделей программирования.
 
-The most typical use of a name in a XAML namescope is as a direct reference to an object instance, which is enabled by the markup compile pass as a project build action, combined with a generated **InitializeComponent** method in the partial class templates.
+Наиболее распространенным примером использования имени в области имен XAML является прямая ссылка на экземпляр объекта, который включается на этапе компиляции разметки как действие при сборке проекта в сочетании с созданным методом **InitializeComponent** в шаблонах разделяемых классов.
 
-You can also use the utility method [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) yourself at run time to return a reference to objects that were defined with a name in the XAML markup.
+Можно также использовать вспомогательный метод [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) в среде выполнения для возвращения ссылки на объекты, для которых были определены имена в разметке XAML.
 
-### More about build actions and XAML
+### Подробнее о действиях при сборке и языке XAML
 
-What happens technically is that the XAML itself undergoes a markup compiler pass at the same time that the XAML and the partial class it defines for code-behind are compiled together. Each object element with a **Name** or [x:Name attribute](x-name-attribute.md) defined in the markup generates an internal field with a name that matches the XAML name. This field is initially empty. Then the class generates an **InitializeComponent** method that is called only after all the XAML is loaded. Within the **InitializeComponent** logic, each internal field is then populated with the [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) return value for the equivalent name string. You can observe this infrastructure for yourself by looking at the ".g" (generated) files that are created for each XAML page in the /obj subfolder of a Windows Runtime app project after compilation. You can also see the fields and **InitializeComponent** method as members of your resulting assemblies if you reflect over them or otherwise examine their interface language contents.
+С технической точки зрения происходит следующее: XAML проходит через компилятор разметки одновременно с компилированием XAML и разделяемого класса, который он определяет для программной части кода. Каждый элемент объекта с **Name** или [атрибутом x:Name](x-name-attribute.md), определенным в разметке, создает внутреннее поле с именем, которое соответствует имени XAML. Изначально это поле пустое. Затем класс создает метод **InitializeComponent**, который вызывается только после загрузки всего XAML. В логике **InitializeComponent** каждое внутреннее поле затем заполняется возвращаемым значением [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) для эквивалентной строки имени. Вы можете наблюдать эту инфраструктуру на примере файлов .g (generated), которые после компиляции создаются для каждой страницы XAML во вложенной папке /obj проекта приложения среды выполнения Windows. Кроме того, вы можете увидеть эти поля и метод **InitializeComponent** в результирующих сборках, если приглядитесь к ним или как-то иначе изучите содержимое, соответствующее их языку интерфейса.
 
-**Note**  Specifically for Visual C++ component extensions (C++/CX) apps, a backing field for an **x:Name** reference is not created for the root element of a XAML file. If you need to reference the root object from C++/CX code-behind, use other APIs or tree traversal. For example you can call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) for a known named child element and then call [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
+**Примечание.** Для приложений с расширениями компонентов Visual C++ (C++/CX) резервное поле для ссылки **x:Name** на корневой элемент XAML-файла не создается. Если возникает необходимость создать ссылку на корневой объект в коде программной части C++/CX, используйте другие API или просмотр дерева. Например, можно вызвать [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) для дочернего элемента с известным именем, а затем вызвать [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
 
-## Creating objects at run time with XamlReader.Load
+## Создание объектов в среде выполнения с использованием XamlReader.Load
 
-XAML can be also be used as the string input for the [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) method, which acts analogously to the initial XAML source parse operation. **XamlReader.Load** creates a new disconnected tree of objects at run time. The disconnected tree can then be attached to some point on the main object tree. You must explicitly connect your created object tree, either by adding it to a content property collection such as **Children**, or by setting some other property that takes an object value (for example, loading a new [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) for a [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) property value).
+XAML можно также использовать для ввода строк при использовании метода [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048), что дает результаты, аналогичные операции анализа исходного источника XAML. **XamlReader.Load** создает новое обособленное дерево объектов в среде выполнения. Обособленное дерево затем можно подключить к некоторой точке основного дерева объектов. Необходимо явным образом подключить созданное дерево объектов либо путем добавления его в коллекцию свойств содержимого (например, **Children**), либо путем определения какого-либо другого свойства, использующего значение объекта (например, загрузка нового [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) в качестве значения свойства [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378)).
 
-### XAML namescope implications of XamlReader.Load
+### Последствия XamlReader.Load для области имен XAML
 
-The preliminary XAML namescope defined by the new object tree created by [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) evaluates any defined names in the provided XAML for uniqueness. If names in the provided XAML are not internally unique at this point, **XamlReader.Load** throws an exception. The disconnected object tree does not attempt to merge its XAML namescope with the main application XAML namescope, if or when it is connected to the main application object tree. After you connect the trees, your app has a unified object tree, but that tree has discrete XAML namescopes within it. The divisions occur at the connection points between objects, where you set some property to be the value returned from a **XamlReader.Load** call.
+Предварительная область имен XAML, определенная новым деревом объектов, созданным [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048), проверяет определенные имена в представленном XAML на предмет их уникальности. Если на этом этапе имена в представленном XAML не имеют внутренней уникальности, то **XamlReader.Load** вызывает исключение. Обособленное дерево объектов не предпринимает попыток объединения своей области имен XAML с областью имен XAML главного приложения при подключении к дереву объектов главного приложения. После подключения деревьев в приложении образуется объединенное дерево объектов, но в этом дереве содержатся дискретные области имен XAML. Деление происходит в точках подключения между объектами, где вы указываете, что некоторые свойства должны иметь значение, возвращаемое при вызове **XamlReader.Load**.
 
-The complication of having discrete and disconnected XAML namescopes is that calls to the [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) method as well as direct managed object references no longer operate against a unified XAML namescope. Instead, the particular object that **FindName** is called on implies the scope, with the scope being the XAML namescope that the calling object is within. In the direct managed object reference case, the scope is implied by the class where the code exists. Typically, the code-behind for run-time interaction of a "page" of app content exists in the partial class that backs the root "page", and therefore the XAML namescope is the root XAML namescope.
+Сложность дискретных и отключенных областей имен XAML состоит в том, что вызовы метода [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) и прямые ссылки на управляемые объекты в объединенной области имен XAML больше не действуют. Вместо этого конкретный объект, для которого вызывается **FindName**, подразумевает область. Областью здесь является область имен XAML, в которой находится вызывающий объект. В случае прямой ссылки на управляемый объект область определяется классом, в котором существует код. Обычно базовый код для взаимодействия во время выполнения "страницы" содержимого приложения существует в разделяемом классе, который лежит в основе корневой "страницы", поэтому областью имен XAML является корневая область имен XAML.
 
-If you call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) to get a named object in the root XAML namescope, the method will not find the objects from a discrete XAML namescope created by [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048). Conversely, if you call **FindName** from an object obtained from out of the discrete XAML namescope, the method will not find named objects in the root XAML namescope.
+Если вызвать [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) для получения именованного объекта в корневой области имен XAML, то этот метод не позволит найти объекты в дискретной области имен XAML, созданной [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048). И наоборот, при вызове **FindName** из объекта, полученного из дискретной области имен XAML, этот метод не позволит найти именованные объекты в корневой области имен XAML.
 
-This discrete XAML namescope issue only affects finding objects by name in XAML namescopes when using the [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) call.
+Эта проблема с дискретными областями имен XAML влияет только на поиск объектов по имени в области имен XAML при вызове [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715).
 
-To get references to objects that are defined in a different XAML namescope, you can use several techniques:
+Чтобы получить ссылки на объекты, определенные в другой области имен XAML, можно использовать несколько способов:
 
--   Walk the entire tree in discrete steps with [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) and/or collection properties that are known to exist in your object tree structure (such as the collection returned by [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514)).
--   If you are calling from a discrete XAML namescope and want the root XAML namescope, it is always easy to get a reference to the main window currently displayed. You can get the visual root (the root XAML element, also known as the content source) from the current application window in one line of code with the call `Window.Current.Content`. You can then cast to [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) and call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) from this scope.
--   If you are calling from the root XAML namescope and want an object within a discrete XAML namescope, the best thing to do is to plan ahead in your code and retain a reference to the object that was returned by [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) and then added to the main object tree. This object is now a valid object for calling [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) within the discrete XAML namescope. You could keep this object available as a global variable or otherwise pass it by using method parameters.
--   You can avoid names and XAML namescope considerations entirely by examining the visual tree. The [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API enables you to traverse the visual tree in terms of parent objects and child collections, based purely on position and index.
+-   Пройдите по всему дереву дискретными шагами с [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) или свойствами коллекций, которые заведомо существуют в структуре вашего дерева объектов (например, коллекция, возвращаемая [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514)).
+-   Если вы обращаетесь из дискретной области имен XAML и хотите использовать корневую область имен XAML, можно легко получить ссылку на главное окно, которое отображается в данный момент. Вы можете получить визуальный корень (корневой элемент XAML, известный также под названием "источник содержимого") из текущего окна приложения в одной строке кода с вызовом `Window.Current.Content`. После этого можно выполнить приведение к типу [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) и вызвать [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) из этой области.
+-   Если вызов осуществляется из корневой области имен XAML и требуется объект в дискретной области имен XAML, то рекомендуется спланировать это заранее в коде и сохранить ссылку на объект, возвращенную [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) и затем добавленную в главное дерево объектов. Теперь этот объект стал действительным объектом для вызова [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) в дискретной области имен XAML. Вы можете сохранять этот объект доступным в качестве глобальной переменной или пройти его, используя параметры метода.
+-   Можно избежать проблем с именами и областями имен XAML, если изучить визуальное дерево. API [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) позволяет просматривать визуальное дерево на предмет родительских объектов и коллекций дочерних объектов только по признакам положения и индекса.
 
-## XAML namescopes in templates
+## Пространства имен XAML в шаблонах
 
-Templates in XAML provide the ability to reuse and reapply content in a straightforward way, but templates might also include elements with names defined at the template level. That same template might be used multiple times in a page. For this reason, templates define their own XAML namescopes, independent of the containing page where the style or template is applied. Consider this example:
+Шаблоны в XAML обеспечивают простой способ повторного использования и применения содержимого, однако шаблоны могут также включать элементы с именами, определенными на уровне шаблонов. Один и тот же шаблон можно использовать на странице неоднократно. Поэтому шаблоны определяют собственные области имен XAML, независимые от страницы, на которой применяется стиль или шаблон. Рассмотрим пример:
 
 ```xml
 <Page
@@ -67,16 +67,21 @@ Templates in XAML provide the ability to reuse and reapply content in a straight
 </Page>
 ```
 
-Here, the same template is applied to two different controls. If templates did not have discrete XAML namescopes, the "MyTextBlock" name used in the template would cause a name collision. Each instantiation of the template has its own XAML namescope, so in this example each instantiated template's XAML namescope would contain exactly one name. However, the root XAML namescope does not contain the name from either template.
+Здесь один шаблон применяется к двум разным элементам управления. Если у шаблонов не было дискретных областей имен XAML, то имя MyTextBlock, использованное в шаблоне, приведет к конфликту имен. Каждый экземпляр шаблона имеет собственную область имен XAML, поэтому в данном примере область имен XAML каждого экземпляра шаблона будет содержать только одно имя. Однако корневая область имен XAML не содержит имен из этих шаблонов.
 
-Because of the separate XAML namescopes, finding named elements within a template from the scope of the page where the template is applied requires a different technique. Rather than calling [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) on some object in the object tree, you first obtain the object that has the template applied, and then call [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416). If you are a control author and you are generating a convention where a particular named element in an applied template is the target for a behavior that is defined by the control itself, you can use the **GetTemplateChild** method from your control implementation code. The **GetTemplateChild** method is protected, so only the control author has access to it. Also, there are conventions that control authors should follow in order to name parts and template parts and report these as attribute values applied to the control class. This technique makes the names of important parts discoverable to control users who might wish to apply a different template, which would need to replace the named parts in order to maintain control functionality.
+Из-за наличия раздельных областей имен XAML для поиска именованных элементов в шаблоне из области страницы, на которой применен шаблон, требуется иной способ. Вместо вызова [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) для какого-либо объекта в дереве объектов следует вначале получить объект с примененным шаблоном, после чего вызвать [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416). Если вы являетесь разработчиком элементов управления и создаете соглашение, в котором конкретный именованный элемент в примененном шаблоне является получателем поведения, определяемого самим элементом управления, можно использовать метод **GetTemplateChild** из кода реализации элемента управления. Метод **GetTemplateChild** защищен, поэтому доступ к нему имеет только разработчик элементов управления. Кроме того, разработчики элементов управления должны следовать определенным соглашениям, чтобы именовать блоки и блоки шаблонов, и сообщать о них как о значениях атрибутов, примененных к классу элементов управления. Такой способ позволяет обнаруживать имена важных блоков пользователям элемента управления, которым захочется применить другой шаблон, что потребует замены именованных блоков для сохранения функций элемента управления.
 
-## Related topics
+## Ссылки по теме
 
-* [XAML overview](xaml-overview.md)
-* [x:Name attribute](x-name-attribute.md)
-* [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [Обзор языка XAML](xaml-overview.md)
+* [Атрибут x:Name](x-name-attribute.md)
+* [Краткое руководство: шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)
- 
+ 
+
+
+
+<!--HONumber=May16_HO2-->
+
 

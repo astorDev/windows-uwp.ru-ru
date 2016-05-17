@@ -1,84 +1,89 @@
 ---
 author: drewbatgit
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
-description: This article describes how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app.
-title: Simple camera preview access
+description: В этой статье описывается, как быстро вывести поток предварительного просмотра камеры на странице XAML в приложении универсальной платформы Windows (UWP).
+title: Простой доступ к просмотру камеры
 ---
 
-# Simple camera preview access
+# Простой доступ к просмотру камеры
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This article describes how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app. Creating an app that captures photos and videos using the camera requires you to perform tasks like handling device and camera orientation or setting encoding options for the captured file. For some app scenarios, you may want to just simply show the preview stream from the camera without worrying about these other considerations. This article shows you how to do that with a minimum of code. Note that you should always shut down the preview stream properly when you are done with it by following the steps below.
+В этой статье описывается, как быстро вывести поток предварительного просмотра камеры на странице XAML в приложении универсальной платформы Windows (UWP). Для создания приложения, захватывающего фотографии и видео с камеры, необходимо выполнить такие задачи, как обработка положения устройства и ориентации камеры и настройка параметров кодирования записанного файла. Для некоторых сценариев приложения может потребоваться просто отобразить поток предварительного просмотра камеры, не беспокоясь о других вопросах. В данной статье показано, как это сделать с применением минимального количества кода. Обратите внимание, что необходимо всегда надлежащим образом завершать поток предварительного просмотра после окончания работы с ним, выполняя приведенные ниже действия.
 
-For information on writing a camera app that captures photos or videos, see [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md).
+Подробнее о создании приложения для захвата фотографий и видео с камеры, см. [Фото- и видеозахват с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md).
 
-## Add capability declarations to the app manifest
+## Добавление объявлений возможностей в манифест приложения
 
-In order for your app to access a device's camera, you must declare that your app uses the *webcam* and *microphone* device capabilities. If you want to save captured photos and videos to the users's Pictures or Videos library, you must also declare the *picturesLibrary* and *videosLibrary* capability.
+Чтобы ваше приложение получило доступ к камере устройства, необходимо объявить, что оно использует возможности устройства *веб-камеры* и *микрофона*. Если нужно сохранить захваченные фотографии и видео в библиотеке изображений или видео пользователя, следует также объявить возможности *picturesLibrary* и *videosLibrary*.
 
-**Add capabilities to the app manifest**
+**Добавление возможностей в манифест приложения**
 
-1.  In Microsoft Visual Studio, in **Solution Explorer**, open the designer for the application manifest by double-clicking the **package.appxmanifest** item.
-2.  Select the **Capabilities** tab.
-3.  Check the box for **Webcam** and the box for **Microphone**.
-4.  For access to the Pictures and Videos library check the boxes for **Pictures Library** and the box for **Videos Library**.
+1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest** в **Обозревателе решений**.
+2.  Перейдите на вкладку **Возможности**.
+3.  Выставьте флажок для пункта **Веб-камера** и поле для параметра **Микрофон**.
+4.  Для доступа к библиотеке изображений и видео установите флажки **Библиотека изображений** и **Библиотека видео**.
 
-## Add a CaptureElement to your page
+## Добавление объекта CaptureElement на страницу
 
-Use a [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) to display the preview stream within your XAML page.
+Используйте объект [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) для отображения потока предварительного просмотра на странице XAML.
 
 [!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
 
-## Use MediaCapture to start the preview stream
+## Использование объекта MediaCapture для запуска потока предварительного просмотра
 
-The [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) object is your app's interface to the device's camera. This class is a member of the Windows.Media.Capture namespace. The example in this article also uses APIs from the [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) and [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) namespaces, in addition to those included by the default project template.
+Объект [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) — это интерфейс приложения для взаимодействия с камерой устройства. Этот класс входит в пространство имен Windows.Media.Capture. В описанном в этой статье примере используются API из пространств имен [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) и [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) в дополнение ко включенным в шаблон проекта по умолчанию.
 
-Add using directives to include the following namespaces in your page's .cs file.
+Добавьте директивы using, чтобы включить следующие пространства имен в файл .cs вашей страницы.
 
 [!code-cs[SimpleCameraPreviewUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSimpleCameraPreviewUsing)]
 
-Declare a class variable for the **MediaCapture** object.
+Объявите переменную класса для объекта **MediaCapture**.
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-Create a new instance of the **MediaCapture** class and call [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) to initialize the capture device. This method may fail, on devices that don't have a camera for example, so you should call it from within a **try** block. An **UnauthorizedAccessException** will be thrown when you attempt to initialize the camera if the user has disabled camera access in the device's privacy settings. You will also see this exception during development if you have neglected to add the proper capabilities to your app manifest.
+Создайте новый экземпляр класса **MediaCapture** и вызовите метод [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598), чтобы инициализировать устройство захвата. Этот метод может завершиться ошибкой, например, на устройствах, не оборудованных камерой, поэтому его необходимо вызывать из блока **try**. Если пользователь отключил доступ к камере в параметрах конфиденциальности устройства, при попытке инициализировать камеру будет вызвано исключение **UnauthorizedAccessException**. Вы также увидите это исключение во время разработки, если в манифест приложения не были добавлены необходимые возможности.
 
-**Important** On some device families, a user consent prompt is displayed to the user before your app is granted access to the device's camera. For this reason, you must only call [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) from the main UI thread. Attempting to initialize the camera from another thread may result in initialization failure.
+**Важно!** На устройствах некоторых семейств перед тем, как приложение получит доступ к камере устройства, отображается запрос на согласие пользователя. По этой причине следует вызывать только [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) из основного потока пользовательского интерфейса. Попытка инициализировать камеру через другой поток может привести к сбою инициализации.
 
-Connect the **MediaCapture** to the **CaptureElement** by setting the [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) property. Finally, start the preview by calling [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613).
+Подключите **MediaCapture** к **CaptureElement**, задав свойство [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280). И наконец, запустите предварительный просмотр путем вызова метода [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613).
 
 [!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
 
-## Shut down the preview stream
+## Завершение потока предварительного просмотра
 
-When you are done using the preview stream, you should always shut down the stream and properly dispose of the associated resources to ensure that the camera is available to other apps on the device. The required steps for shutting down the preview stream are:
+Каждый раз, закончив использование потока предварительного просмотра, необходимо завершить поток и очистить ресурсы захвата, чтобы камера была доступна для использования другим приложениям на устройстве. Для завершения потока предварительного просмотра необходимо выполнить следующие действия:
 
--   Call [**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) to stop the preview stream.
--   Set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) property of the **CaptureElement** to null.
--   Call the **MediaCapture** object's [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) method to release the object.
--   Set the **MediaCapture** member variable to null.
+-   вызвать метод [**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) для остановки потока предварительного просмотра;
+-   установить для свойства [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) класса **CaptureElement** значение null;
+-   вызвать метод [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) объекта **MediaCapture**, чтобы освободить ресурсы объекта;
+-   присвоить переменной-члену **MediaCapture** значение null.
 
 [!code-cs[CleanupCameraAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
 
-You should shut down the preview stream when the user navigates away from your page by overriding the [**OnNavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) method.
+Когда пользователь уходит со страницы, остановите поток предварительного просмотра путем переопределения метода [**OnNavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507).
 
 [!code-cs[OnNavigatedFrom](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
-You should also shut down the preview stream properly when your app is suspending. To do this, register a handler for the [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event in your page's constructor.
+Также необходимо надлежащим образом завершать поток предварительного просмотра в случае приостановки вашего приложения. Для этого зарегистрируйте обработчик для события [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) в конструкторе страницы.
 
 [!code-cs[RegisterSuspending](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterSuspending)]
 
-In the **Suspending** event handler, first check to make sure that the page is being displayed the application's [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) by comparing the page type to the [**CurrentSourcePageType**](https://msdn.microsoft.com/library/windows/apps/hh702390) property. If the page is not currently being displayed, then the **OnNavigatedFrom** event should already have been raised and the preview stream shut down. If the page is currently being displayed, get a [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) object from the event args passed into the handler to make sure the system does not suspend your app until the preview stream has been shut down. After shutting down the stream, call the deferral's [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) method to let the system continue suspending your app.
+Сначала проверьте в обработчике событий **Suspending**, что страница отображается в классе приложения [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682), сравнив тип страницы со свойством [**CurrentSourcePageType**](https://msdn.microsoft.com/library/windows/apps/hh702390). Если страница в настоящее время не отображается, событие **OnNavigatedFrom** уже должно быть вызвано, а поток предварительного просмотра остановлен. Если страница отображается, получите объект [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) из переданных в обработчик аргументов события, чтобы предотвратить приостановку приложения системой до остановки потока предварительного просмотра. После остановки потока вызовите метод отсрочки [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685), чтобы разрешить системе продолжить приостановку приложения.
 
 [!code-cs[SuspendingHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSuspendingHandler)]
 
-## Capture a still image from the preview stream
+## Захват неподвижных изображений из потока предварительного просмотра
 
-It's simple to get a still image from the media capture preview stream in the form of a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358). For more information, see [Get a preview frame](get-a-preview-frame.md).
+Получить неподвижное изображение из потока предварительного просмотра захвата мультимедиа в виде [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) несложно. Подробнее об этом см. в разделе [Получение кадра предварительного просмотра](get-a-preview-frame.md).
 
-## Related topics
+## Ссылки по теме
 
-* [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md)
-* [Get a preview frame](get-a-preview-frame.md)
+* [Захват фотографий и видео с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [Получение кадра предварительного просмотра](get-a-preview-frame.md)
+
+
+<!--HONumber=May16_HO2-->
+
+

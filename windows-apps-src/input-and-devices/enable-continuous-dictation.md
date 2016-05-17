@@ -1,49 +1,49 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Learn how to capture and recognize long-form, continuous dictation speech input.
-title: Enable continuous dictation
+Description: Узнайте, как записать и распознать длительный непрерывный речевой ввод.
+title: Включение непрерывной диктовки
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
 ---
 
-# Continuous dictation
+# Непрерывная диктовка
 
 
 
 
-Learn how to capture and recognize long-form, continuous dictation speech input.
+Узнайте, как записать и распознать длительный непрерывный речевой ввод.
 
-**Important APIs**
+**Важные API**
 
 -   [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)
 -   [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
 
 
-In [Speech recognition](speech-recognition.md), you learned how to capture and recognize relatively short speech input using the [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) or [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) methods of a [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) object, for example, when composing a short message service (SMS) message or when asking a question.
+В разделе [Распознавание речи](speech-recognition.md) вы узнали, как записать и распознать относительно короткий речевой ввод с помощью методов [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) или [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) объекта [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), например при составлении сообщения SMS или вопроса.
 
-For longer, continuous speech recognition sessions, such as dictation or email, use the [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) property of a [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) to obtain a [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) object.
-
-
-
-## <span id="Set_up"></span><span id="set_up"></span><span id="SET_UP"></span>Set up
+Чтобы записывать более длительные сеансы распознавания речи, например диктовку или сообщение электронной почты, используйте свойство [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) для получения объекта [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896).
 
 
-Your app needs a few objects to manage a continuous dictation session:
 
--   An instance of a [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) object.
--   A reference to a UI dispatcher to update the UI during dictation.
--   A way to track the accumulated words spoken by the user.
+## <span id="Set_up"></span><span id="set_up"></span><span id="SET_UP"></span>Настройка
 
-Here, we declare a [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) instance as a private field of the code-behind class. Your app needs to store a reference elsewhere if you want continuous dictation to persist beyond a single Extensible Application Markup Language (XAML) page.
+
+Для управления непрерывным сеансом диктовки вашему приложению понадобятся несколько объектов:
+
+-   экземпляр объекта [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226);
+-   ссылка на диспетчера пользовательского интерфейса для обновления пользовательского интерфейса во время диктовки;
+-   способ отслеживания всей совокупности слов, сказанных пользователем.
+
+Здесь мы объявляем экземпляр [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) как закрытое поле класса кода программной части. Ваше приложение должно сохранить ссылку в любом другом месте, если непрерывная диктовка должна продолжиться дальше отдельной XAML-страницы.
 
 ```CSharp
 private SpeechRecognizer speechRecognizer;
 ```
 
-During dictation, the recognizer raises events from a background thread. Because a background thread cannot directly update the UI in XAML, your app must use a dispatcher to update the UI in response to recognition events.
+Во время диктовки распознаватель создает события из фонового потока. Так как фоновый поток не может напрямую обновлять пользовательский интерфейс в XAML, ваше приложение должно использовать диспетчер для обновления пользовательского интерфейса в ответ на события распознавания.
 
-Here, we declare a private field that will be initialized later with the UI dispatcher.
+Здесь мы объявляем закрытое поле, которое будет инициализировано позже с помощью диспетчера пользовательского интерфейса.
 
 ```CSharp
 // Speech events may originate from a thread other than the UI thread.
@@ -52,42 +52,44 @@ Here, we declare a private field that will be initialized later with the UI disp
 private CoreDispatcher dispatcher;
 ```
 
-To track what the user is saying, you need to handle recognition events raised by the speech recognizer. These events provide the recognition results for chunks of user utterances.
+Для отслеживания речи пользователя необходимо обрабатывать события распознавания, которые создаются распознавателем речи. Эти события предоставляют результаты распознавания отрывков реплик пользователя.
 
-Here, we use a [**StringBuilder**](https://msdn.microsoft.com/library/system.text.stringbuilder.aspx) object to hold all the recognition results obtained during the session. New results are appended to the **StringBuilder** as they are processed.
+Здесь мы используем объект [**StringBuilder**](https://msdn.microsoft.com/library/system.text.stringbuilder.aspx), чтобы сохранить все предыдущие результаты распознавания, полученные в течение сеанса. Новые результаты добавляются в **StringBuilder** по мере обработки.
 
 ```CSharp
 private StringBuilder dictatedTextBuilder;
 ```
 
-## <span id="Initialization"></span><span id="initialization"></span><span id="INITIALIZATION"></span>Initialization
+## <span id="Initialization"></span><span id="initialization"></span><span id="INITIALIZATION"></span>Инициализация
 
 
-During the initialization of continuous speech recognition, you must:
+Во время инициализации непрерывного распознавания речи необходимо выполнить следующие действия.
 
--   Fetch the dispatcher for the UI thread if you update the UI of your app in the continuous recognition event handlers.
--   Initialize the speech recognizer.
--   Compile the built-in dictation grammar.
-    **Note**   Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, a predefined dictation grammar is used. See [Speech recognition](speech-recognition.md).
--   Set up the event listeners for recognition events.
+-   Получить диспетчер для потока пользовательского интерфейса, если пользовательский интерфейс приложения обновляется в обработчиках событий непрерывных речи.
+-   Инициализировать распознаватель речи.
+-   Скомпилировать встроенную грамматику диктовки.
+    **Примечание.** Для распознавания речи требуется по крайней мере одно ограничение, чтобы определить распознаваемый словарь. Если не задано ни одно ограничение, будет использоваться предопределенная грамматика речевого ввода. См. [Распознавание речи](speech-recognition.md).
+-   Настроить прослушиватели событий распознавания.
 
-In this example, we initialize speech recognition in the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) page event.
+В данном примере мы инициализируем распознавание речи в событии страницы [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508).
 
-1.  Because events raised by the speech recognizer occur on a background thread, create a reference to the dispatcher for updates to the UI thread. [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) is always invoked on the UI thread.
+1.  Поскольку события, создаваемые распознавателем речи, возникают в фоновом потоке, создайте ссылку на диспетчер для обновления потока пользовательского интерфейса. [
+              **OnNavigatedTo**
+            ](https://msdn.microsoft.com/library/windows/apps/br227508) всегда вызывается в потоке пользовательского интерфейса.
 ```    CSharp
 this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 ```
 
-2.  We then initialize the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) instance.
+2.  Затем мы инициализируем экземпляр [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226).
 ```    CSharp
 this.speechRecognizer = new SpeechRecognizer();
 ```
 
-3.  We then add and compile the grammar that defines all of the words and phrases that can be recognized by the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226).
+3.  Затем мы добавляем и компилируем грамматику, которая определяет все слова и фразы, распознаваемые классом [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226).
 
-    If you don't specify a grammar explicitly, a predefined dictation grammar is used by default. Typically, the default grammar is best for general dictation.
+    Если вы не укажете грамматику явным образом, по умолчанию используется предопределенная грамматика для диктовки. Как правило, грамматика по умолчанию лучше всего подходит для общей диктовки.
 
-    Here, we call [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) immediately without adding a grammar.
+    В данном случае мы сразу вызываем [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) без добавления грамматики.
 
     <span codelanguage="CSharp"></span>
 ```    CSharp
@@ -95,37 +97,46 @@ SpeechRecognitionCompilationResult result =
       await speechRecognizer.CompileConstraintsAsync();
 ```
 
-## <span id="Handle_recognition_events"></span><span id="handle_recognition_events"></span><span id="HANDLE_RECOGNITION_EVENTS"></span>Handle recognition events
+## <span id="Handle_recognition_events"></span><span id="handle_recognition_events"></span><span id="HANDLE_RECOGNITION_EVENTS"></span>Обработка событий распознавания
 
 
-You can capture a single, brief utterance or phrase by calling [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) or [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245). 
+Можно записать отдельную краткую реплику или фразу, вызвав [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) или [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245). 
 
-However, to capture a longer, continuous recognition session, we specify event listeners to run in the background as the user speaks and define handlers to build the dictation string.
+А чтобы записать более длительный сеанс непрерывного распознавания, мы определяем прослушиватели событий для работы в фоновом режиме во время речи пользователя, а также определяем обработчики для формирования строки диктовки.
 
-We then use the [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) property of our recognizer to obtain a [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) object that provides methods and events for managing a continuous recognition session.
+Затем мы используем свойство [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) нашего распознавателя, чтобы получить объект [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896), который предоставляет методы и события для управления сеансом непрерывного распознавания.
 
-Two events in particular are critical:
+Два события являются особенно важными.
 
--   [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900), which occurs when the recognizer has generated some results.
--   [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899), which occurs when the continuous recognition session has ended.
+-   [
+              **ResultGenerated**
+            ](https://msdn.microsoft.com/library/windows/apps/dn913900), которое возникает, когда распознаватель сформировал некоторые результаты.
+-   [
+              **Completed**
+            ](https://msdn.microsoft.com/library/windows/apps/dn913899), которое возникает при завершении сеанса непрерывного распознавания.
 
-The [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event is raised as the user speaks. The recognizer continuously listens to the user and periodically raises an event that passes a chunk of speech input. You must examine the speech input, using the [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) property of the event argument, and take appropriate action in the event handler, such as appending the text to a StringBuilder object.
+Событие [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) возникает, когда пользователь говорит. Распознаватель непрерывно слушает пользователя и периодически вызывает событие, которое передает реплики речевого ввода. Необходимо изучить речевой ввод с помощью свойства [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) аргумента события и принять необходимые меры в обработчике событий, например добавить текст в объект StringBuilder.
 
-As an instance of [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432), the [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) property is useful for determining whether you want to accept the speech input. A [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) provides two properties for this:
--   [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) indicates whether the recognition was successful. Recognition can fail for a variety of reasons.
--   [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) indicates the relative confidence that the recognizer understood the correct words.
+В качестве экземпляра [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) свойство [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) полезно для определения необходимости принятия речевого ввода. [
+            **SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) предоставляет два таких свойства:
+-   [
+              **Status**
+            ](https://msdn.microsoft.com/library/windows/apps/dn631440): указывает, было ли распознавание успешным. Распознавание может завершиться с ошибкой по различным причинам.
+-   [
+              **Confidence**
+            ](https://msdn.microsoft.com/library/windows/apps/dn631434): указывает относительную уверенность в том, что распознаватель понял правильные слова.
 
-Here are the basic steps for supporting continuous recognition:  
+Далее описаны основные действия, обеспечивающие поддержку непрерывного распознавания.  
 
-1.  Here, we register the handler for the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) continuous recognition event in the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) page event.
+1.  Здесь мы регистрируем обработчик для события непрерывного распознавания [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) в событии страницы [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508).
 ```    CSharp
 speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
         ContinuousRecognitionSession_ResultGenerated;
 ```
 
-2.  We then check the [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) property. If the value of Confidence is [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) or better, we append the text to the StringBuilder. We also update the UI as we collect input.
+2.  Затем мы проверяем свойство [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434). Если значение уверенности равно [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) или выше, мы добавляем текст в StringBuilder. Также мы обновляем пользовательский интерфейс по мере сбора ввода.
 
-    **Note**  the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event is raised on a background thread that cannot update the UI directly. If a handler needs to update the UI (as the \[Speech and TTS sample\] does), you must dispatch the updates to the UI thread through the [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) method of the dispatcher.
+    **Примечание.** Событие [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) создается в фоновом потоке, который не может обновить пользовательский интерфейс напрямую. Если обработчику необходимо обновить пользовательский интерфейс (как это делает, например, \[пример речи и преобразования текста в речь\]), вы должны подготовить к отправке обновления в поток пользовательского интерфейса с помощью метода [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) диспетчера.
 ```    CSharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -153,19 +164,19 @@ private async void ContinuousRecognitionSession_ResultGenerated(
       }
 ```
 
-3.  We then handle the [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) event, which indicates the end of continuous dictation.
+3.  Затем мы обрабатываем событие [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899), которое указывает на конец непрерывной диктовки.
 
-    The session ends when you call the [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) or [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) methods (described the next section). The session can also end when an error occurs, or when the user has stopped speaking. Check the [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) property of the event argument to determine why the session ended ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433)).
+    Сеанс заканчивается, когда вы вызываете методы [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) или [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) (описано в следующем разделе). Сеанс также завершается, когда возникает ошибка или когда пользователь перестает говорить. Проверьте свойство [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) аргумента события, чтобы определить причину завершения сеанса ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433)).
 
-    Here, we register the handler for the [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) continuous recognition event in the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) page event.
+    Здесь мы регистрируем обработчик для события непрерывного распознавания [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) в событии страницы [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508).
 ```    CSharp
 speechRecognizer.ContinuousRecognitionSession.Completed +=
       ContinuousRecognitionSession_Completed;
 ```
 
-4.  The event handler checks the Status property to determine whether the recognition was successful. It also handles the case where the user has stopped speaking. Often, a [**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) is considered successful recognition as it means the user has finished speaking. You should handle this case in your code for a good experience.
+4.  Обработчик событий проверяет свойства Status, чтобы определить, было ли распознавание успешным. Он также обрабатывает те случаи, когда пользователь перестает говорить. Часто [**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) считается успешным распознаванием, так как это означает, что пользователь перестал говорить. Вы должны обрабатывать эти случаи в своем коде, обеспечивая удобную работу пользователя.
 
-    **Note**  the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event is raised on a background thread that cannot update the UI directly. If a handler needs to update the UI (as the \[Speech and TTS sample\] does), you must dispatch the updates to the UI thread through the [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) method of the dispatcher.
+    **Примечание.** Событие [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) создается в фоновом потоке, который не может обновить пользовательский интерфейс напрямую. Если обработчику необходимо обновить пользовательский интерфейс (как это делает, например, \[пример речи и преобразования текста в речь\]), вы должны подготовить к отправке обновления в поток пользовательского интерфейса с помощью метода [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) диспетчера.
 ```    CSharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,
@@ -200,16 +211,16 @@ private async void ContinuousRecognitionSession_Completed(
       }
 ```
 
-## <span id="Provide_ongoing_recognition_feedback"></span><span id="provide_ongoing_recognition_feedback"></span><span id="PROVIDE_ONGOING_RECOGNITION_FEEDBACK"></span>Provide ongoing recognition feedback
+## <span id="Provide_ongoing_recognition_feedback"></span><span id="provide_ongoing_recognition_feedback"></span><span id="PROVIDE_ONGOING_RECOGNITION_FEEDBACK"></span>Отображение реакции в процессе распознавания
 
 
-When people converse, they often rely on context to fully understand what is being said. Similarly, the speech recognizer often needs context to provide high-confidence recognition results. For example, by themselves, the words "weight" and "wait" are indistinguishable until more context can be gleaned from surrounding words. Until the recognizer has some confidence that a word, or words, have been recognized correctly, it will not raise the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event.
+Когда люди беседуют, они, как правило, полагаются на контекст, чтобы полностью понять произносимое. Аналогичным образом распознаватель речи часто нуждается в контексте, чтобы обеспечить высокодостоверные результаты распознавания. Например, сами по себе слова «кот» и «код» неразличимы, пока за счет других слов в предложении или фразе не будет понятен контекст. Пока распознаватель не получит определенной степени уверенности, что слово или слова были распознаны надлежащим образом, событие [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) не будет создано.
 
-This can result in a less than ideal experience for the user as they continue speaking and no results are provided until the recognizer has high enough confidence to raise the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event.
+Это может привести к некоторым неудобствам для пользователя, так как он будет продолжать говорить, но не увидит результата, пока степень уверенности в распознавателе не будет достаточной для вызова события [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900).
 
-Handle the [**HypothesisGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913914) event to improve this apparent lack of responsiveness. This event is raised whenever the recognizer generates a new set of potential matches for the word being processed. The event argument provides an [**Hypothesis**](https://msdn.microsoft.com/library/windows/apps/dn913911) property that contains the current matches. Show these to the user as they continue speaking and reassure them that processing is still active. Once confidence is high and a recognition result has been determined, replace the interim **Hypothesis** results with the final [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) provided in the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event.
+Для исправления этого кажущегося отсутствия какой-либо реакции следует обработать событие [**HypothesisGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913914). Это событие возникает, когда распознаватель создает новый набор потенциальных соответствий для обрабатываемого слова. Аргумент события предоставляет свойство [**Hypothesis**](https://msdn.microsoft.com/library/windows/apps/dn913911), содержащее текущие соответствия. Покажите это пользователю по мере того, как он продолжает говорить, чтобы уверить его в том, что обработка все еще продолжается. После того как уверенность будет достаточно высокой и результат распознавания будет определен, замените промежуточные результаты **Hypothesis** окончательным результатом [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895), предоставленным в событии [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900).
 
-Here, we append the hypothetical text and an ellipsis ("…") to the current value of the output [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683). The contents of the text box are updated as new hypotheses are generated and until the final results are obtained from the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event.
+Здесь мы добавляем гипотетический текст и многоточие (...) в текущее значение поля вывода [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683). Содержимое текстового поля обновляется по мере формирования новых гипотез и до получения окончательных результатов из события [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900).
 
 ```CSharp
 private async void SpeechRecognizer_HypothesisGenerated(
@@ -228,12 +239,12 @@ private async void SpeechRecognizer_HypothesisGenerated(
   }
 ```
 
-## <span id="Start_and_stop_recognition"></span><span id="start_and_stop_recognition"></span><span id="START_AND_STOP_RECOGNITION"></span>Start and stop recognition
+## <span id="Start_and_stop_recognition"></span><span id="start_and_stop_recognition"></span><span id="START_AND_STOP_RECOGNITION"></span>Запуск и остановка распознавания
 
 
-Before starting a recognition session, check the value of the speech recognizer [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) property. The speech recognizer must be in an [**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227) state.
+Перед запуском сеанса распознавания проверьте значение свойства [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) распознавателя речи. Распознаватель речи должен находиться в состоянии [**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227).
 
-After checking the state of the speech recognizer, we start the session by calling the [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn913901) method of the speech recognizer's [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) property.
+После проверки состояния распознавателя речи мы начинаем сеанс, вызвав метод [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn913901) свойства [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) распознавателя речи.
 
 ```CSharp
 if (speechRecognizer.State == SpeechRecognizerState.Idle)
@@ -242,12 +253,16 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 }
 ```
 
-Recognition can be stopped in two ways:
+Распознавание может быть остановлено двумя способами:
 
--   [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) lets any pending recognition events complete ([**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) continues to be raised until all pending recognition operations are complete).
--   [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) terminates the recognition session immediately and discards any pending results.
+-   [
+              **StopAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/dn913908) позволяет завершиться всем ожидающим событиям распознавания речи ([**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) продолжает формироваться, пока все невыполненные операции распознавания не будут завершены).
+-   [
+              **CancelAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/dn913898) незамедлительно завершает сеанс распознавания речи и отменяет все невыполненные операции.
 
-After checking the state of the speech recognizer, we stop the session by calling the [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) method of the speech recognizer's [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) property.
+После проверки состояния распознавателя речи мы останавливаем сеанс, вызвав метод [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) свойства [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) распознавателя речи.
 
 ```CSharp
 if (speechRecognizer.State != SpeechRecognizerState.Idle)
@@ -256,24 +271,29 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 }
 ```
 
-[!NOTE]  
-A [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event can occur after a call to [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898).  
-Because of multithreading, a [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event might still remain on the stack when [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) is called. If so, the **ResultGenerated** event still fires.  
-If you set any private fields when canceling the recognition session, always confirm their values in the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) handler. For example, don't assume a field is initialized in your handler if you set them to null when you cancel the session.
+[!NOTE]  
+Событие [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) может возникнуть после вызова [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898).  
+Из-за многопоточности событие [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) может по-прежнему оставаться в стеке при вызове [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898). В этом случае событие **ResultGenerated** все равно возникает.  
+Если заданы какие-либо закрытые поля при отмене сеанса распознавания, всегда проверяйте их значения в обработчике [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900). Например, не думайте, что поле будет инициализироваться в обработчике, если ему задано значение NULL при отмене сеанса.
 
- 
+ 
 
-## <span id="related_topics"></span>Related articles
-
-
-* [Speech interactions](speech-interactions.md)
-
-**Samples**
-* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
-
- 
+## <span id="related_topics"></span>Связанные статьи
 
 
+* [Взаимодействие с помощью голосовых функций](speech-interactions.md)
+
+**Примеры**
+* [Пример распознавания и синтеза речи](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

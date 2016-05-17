@@ -1,7 +1,7 @@
 ---
 author: mijacobs
-Description: As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
-title: Typography
+Description: Основная цель шрифтового оформления как визуального представления языка — это ясность. Стиль шрифтов никогда не должен затмевать эту цель. Но шрифтовое оформление также играет важную роль как компонент макета. Оно сильно влияет на плотность и сложность дизайна, как и на взаимодействие с пользователем в целом.
+title: Шрифтовое оформление
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 label: Typography
 template: detail.hbs
@@ -9,33 +9,33 @@ extraBodyClass: style-typography
 brief: As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
 ---
 
-# Typography for UWP apps
+# Шрифтовое оформление для приложений UWP
 
-As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
+Основная цель шрифтового оформления как визуального представления языка — это ясность. Стиль шрифтов никогда не должен затмевать эту цель. Но шрифтовое оформление также играет важную роль как компонент макета. Оно сильно влияет на плотность и сложность дизайна, как и на взаимодействие с пользователем в целом.
 
-## Typeface
+## Шрифт
 
-We’ve selected Segoe UI for use on all Microsoft digital designs. Segoe UI provides a wide range of characters and is designed to maintain optimal legibility across sizes and pixel densities. It offers a clean, light, and open aesthetic that complements the content of the system.
+Для использования во всех цифровых макетах Майкрософт мы выбрали шрифт Segoe UI. Segoe UI предоставляет большой набор символов и предназначен для поддержания оптимальной четкости при любых размерах и плотности пикселей. Он предлагает чистую, легкую и открытую эстетику, дополняющую содержимое системы.
 
-![Sample text of Segoe UI font](images/segoe-sample.png)
+![Пример текста с использованием шрифта Segoe UI](images/segoe-sample.png)
 
-## Weights
+## Насыщенность
 
-We approach typography with an eye to simplicity and efficiency. We choose to use one typeface, a minimum of weights and sizes, and a clear hierarchy. Positioning and alignment follow the default style for the given language. In English the sequence runs left to right, top to bottom. Relationships between text and images are clear and straightforward.
+Наш подход к шрифтовому оформлению — простота и эффективность. Мы предпочитаем использовать один шрифт, минимальное количество уровней насыщенности и размеров и четкую иерархию. Расположение и выравнивание должно соответствовать стилю по умолчанию для данного языка. В английском языке последовательность идет слева направо, сверху вниз. Связи между текстом и изображениями четкие и понятные.
 
-![Shows supported font weights. Light, semilight, regular, semibold, and bold](images/weights.png)
+![Доступные уровни насыщенности шрифтов. Светлый, полусветлый, обычный, плотный, полужирный](images/weights.png)
 
-## Line spacing
+## Междустрочный интервал
 
-![Example of line spacing at 125%](images/line-spacing.png)
+![Пример междустрочного интервала в 125%](images/line-spacing.png)
 
-Line spacing should be calculated at 125% of the font size, rounding to the closest multiple of four when necessary. For example with 15px Segoe UI, 125% of 15px is 18.75px. We recommend rounding up and setting line height to 20px to stay on the 4px grid. This ensures a good reading experience and adequate space for diacritical marks. See the Type ramp section below for specific examples.
+Междустрочный интервал следует рассчитывать как 125 % от размера шрифта, при необходимости округляя до ближайшего значения, кратного четырем. Например, при размере шрифта Segoe UI, равном 15 пикселям, 125 % от 15 пикселей составит 18,75 пикселя. Рекомендуется округлить в большую сторону и установить значение высоты линии в 20 пикселей, чтобы остаться в сетке, кратной 4 пикселям. Это обеспечит хорошую читаемость и адекватное пространство для диакритических знаков. Конкретные примеры см. в разделе "Набор шрифтов".
 
-When stacking larger type on top of smaller type, the distance from the last baseline of the larger type to the first baseline of the smaller type should be equal to the larger type's line height.
+При размещении более крупного шрифта над менее крупным шрифтом расстояние от последней строки более крупного шрифта до первой строки менее крупного шрифта должно быть равно высоте строки более крупного шрифта.
 
-![Shows how large type stacks on small type](images/line-height-stacking.png)
+![Размещение более крупного шрифта над менее крупным шрифтом](images/line-height-stacking.png)
 
-In XAML, this is accomplished by stacking two [TextBlocks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) and setting the appropriate margin.
+В коде XAML это реализуется путем вертикального размещения двух элементов [TextBlocks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) и установки соответствующего поля.
 
 ```xaml
 <StackPanel Width="200">
@@ -59,19 +59,19 @@ In XAML, this is accomplished by stacking two [TextBlocks](https://msdn.microsof
 
 <!-- OP version -->
 
-## Kerning and tracking
+## Кернинг и уплотнение
 
-Segoe is a humanist typeface, with a soft, friendly appearance, it has organic, open forms based on handwritten text. To ensure optimum legibility and maintain it’s humanist integrity, the kerning and tracking settings must have specific values.
+Segoe — это гуманистический шрифт с мягким, дружественным внешним видом. Он имеет органичные, открытые формы, в основе которых лежит рукописный текст. Чтобы сохранить оптимальную четкость и поддержать гуманистическую цельность шрифта, параметры кернинга и уплотнения должны иметь определенные значения.
 
-Kerning should be set to “metrics” and tracking should be set to “0”.
+Следует установить для кернинга значение "metrics", а для уплотнения — значение "0 ".
 
 <img src="images/kerning-tracking.png" alt="Shows the difference between kerning and tracking" />
 
-## Word and letter spacing
+## Интервал между словами и межбуквенная разрядка
 
-Similar to kerning and tracking, word spacing and letter spacing use specific settings to ensure optimum legibility and humanist integrity.
+Как и в случае с кернингом и уплотнением, для интервала между словами и межбуквенной разрядки используются специальные параметры, помогающие достичь оптимальной четкости и гуманистической целостности.
 
-Word spacing by default is always 100% and letter spacing should be set to “0”.
+Интервал между словами по умолчанию всегда составляет 100 %, а для межбуквенной разрядки необходимо установить значение "0".
 
 <img src="images/word-letter.png" alt="Shows the difference between word and letter spacing" />
 
@@ -79,102 +79,107 @@ Word spacing by default is always 100% and letter spacing should be set to “0�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            In a XAML text control use [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) to control kerning and [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) to control tracking. By default Typography.Kerning is set to “true” and FontStretch is set to “Normal”, which are the recommended values.
+            В элементе управления текстом XAML используйте [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) для управления кернингом и [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) для управления отслеживанием. По умолчанию для Typography.Kerning установлено значение true, а для FontStretch — значение Normal (рекомендованные значения).
     </div>
 </aside>
 
 
 <!-- OP version -->
-## Alignment
+## Выравнивание
 
-Generally, we recommend that visual elements and columns of type be left-aligned. In most instances, this flush-left and ragged-right approach provides consistent anchoring of the content and a uniform layout.
+Обычно мы рекомендуем выравнивать визуальные элементы и столбцы по левому краю. В большинстве случаев такой подход, в котором содержимое сдвинуто влево и не выравнивается по правому краю, обеспечивает согласованную привязку содержимого и универсальный макет.
 
 <img src="images/alignment.png" alt="Shows flush-left text" />
 
-## Line endings
+## Окончания строк
 
-When typography is not positioned as flush left and ragged right, try to ensure even line endings and avoid hyphenation.
+Если оформление не предусматривает сдвиг влево с неровным правым краем, постарайтесь завершать строки примерно на одном уровне и избегать переносов.
 
 <img src="images/line-endings.png" alt="Shows even line endings" />
 
-## Paragraphs
+## Абзацы
 
-To provide aligned column edges, paragraphs should be indicated by skipping a line without indentation.
+Чтобы обеспечить выравнивание краев столбцов, параграфы должны выделяться пропуском строки без отступа.
 
-![Shows a full line of space between paragraphs](images/paragraphs.png)
+![Полная строка пространства между абзацами](images/paragraphs.png)
 
-## Character count
+## Количество символов
 
-If a line is too short, the eye will have to travel left and right too often, breaking the reader’s rhythm. If possible, 50–60 letters per line is best for ease of reading.
+Если строка слишком коротка, глазам придется часто перемещаться влево и вправо, что нарушит ритм чтения. Самым оптимальным для чтения количеством символов считается 50–60 символов в строке.
 
-Segoe provides a wide range of characters and is designed to maintain optimal legibility in both small and large sizes as well as low and high pixel densities. Using the optimal number of letters in a text column line ensures good legibility in an application.
+Segoe предоставляет широкий диапазон символов и разработан для обеспечения оптимальной четкости как в небольших, так и в больших размерах, а также при большой и малой плотности пикселей. Использование оптимального количества букв в строке текстового столбца обеспечивает хорошую четкость в приложении.
 
-Lines that are too long will strain the eye and may disorient the user. Lines that are too short force the reader’s eye to travel too much and can cause fatigue.
+Слишком длинные строки будут напрягать глаза и могут дезориентировать пользователя. Слишком короткие строки будут заставлять читателя часто менять направление взгляда и могут вызывать усталость.
 
-![Shows 3 paragraphs with different line lengths](images/character-count.png)
+![3 абзаца с различной длиной сроки](images/character-count.png)
 
-## Hanging text alignment
+## Выравнивание висящего текста
 
-The horizontal alignment of icons with text can be handled in a number of ways depending on the size of the icon and the amount of text. When the text, either single or multiple lines, fits within the height of the icon, the text should be vertically centered.
+Горизонтальное выравнивание значков с текстом может обрабатываться несколькими способами в зависимости от размера значков и объема текста. Если текст, независимо от количества линий, соответствует высоте значка, текст выравнивается по центру вертикально.
 
-Once the height of the text extends beyond the height of the icon, the first line of text should align vertically and the additional text should flow on naturally below. When using characters with larger cap, ascender and descender heights, care should be taken to observe the same alignment guidance.
+Если высота текста выходит за пределы высоты значка, первая строка текста должна выравниваться по вертикали, а дополнительный текст должен естественно переходить ниже. При использовании символов с высокими верхушками, а также букв с надстрочными и подстрочными элементами необходимо обратить особое внимание на соблюдение одинаковых правил выравнивания.
 
-![Shows several icon and text pairings](images/hanging-text-alignment.png)
+![Несколько значков и способов привязки текста](images/hanging-text-alignment.png)
 
 <aside class="aside-dev">
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            XAML's [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) property provides access to the cap height and baseline font metrics. It can be used to visually vertically center or top-align type.
+            Свойство XAML [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) предоставляет доступ к высоте верхушки и метрикам основного шрифта. Его можно использовать для визуального вертикального выравнивания по центру или по верху.
     </div>
 </aside>
 
-## Clipping and ellipses
+## Обрезка и многоточия
 
-Clip by default—assume that text will wrap unless the redline specifies otherwise. When using non-wrapping text, we recommend clipping rather than using ellipses. Clipping can occur at the edge of the container, at the edge of the device, at the edge of a scrollbar, etc.
+Параметр "Обрезка по умолчанию" предполагает, что текст будет переноситься, если только красная линия не указывает обратное. При использовании текста без переносов рекомендуется обрезать текст, а не использовать многоточия. Обрезка может происходить на краю контейнера, на краю устройства, на краю полосы прокрутки и т. д.
 
-Exceptions—for containers which are not well-defined (e.g. no differentiating background color), then non-wrapping text can be redlined to use the ellipse ”…”.
+Исключения составляют контейнеры, которые не определены точно (например, не указан отличающий цвет фона). В этом случае текст, в котором не используются переносы, может быть настроен на использование многоточий "...".
 
-![Shows a device frame with some text clipping](images/clipping.png)
+![Кадр устройства с обрезкой текста](images/clipping.png)
 
-# Type ramp
+# Набор шрифтов
 
-Different sizes of Segoe UI should be used to create hierarchy in a type ramp. This hierarchy builds a structure which enables users to easily navigate through written communication.
+Необходимо использовать разные размеры Segoe UI для создания иерархии в наборе шрифтов. Эта иерархия выполняет построение структуры, которая позволяет пользователям легко ориентироваться в письменных сообщениях.
 
 <figure class="figure-img" >
     <img src="images/type-ramp.png" alt="Shows the type ramp"  />
-        <figcaption>All sizes are in effective pixels. For more details, see the TODO: link</figcaption>
+        <figcaption>Все размеры указываются в эффективных пикселях. Подробнее см. в разделе, описывающем TODO (ссылка)</figcaption>
 </figure>
 
 <aside class="aside-dev">
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            Most levels of the ramp are available as XAML [static resources](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) that follow the `*TextBlockStyle` naming convention (ex: `HeaderTextBlockStyle`). 
+            Большинство уровней набора шрифтов доступны в виде [статических ресурсов](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) XAML, которые именуются в рамках соглашения `*TextBlockStyle` (например, 
     </div>
 </aside>
 
 
-## Primary and secondary text
+## Основной и второстепенный текст
 
-To create additional hierarchy beyond the type ramp, set secondary text to 60% opacity. In the [theming color palette](color.md#color-themes), you would use BaseMedium. Primary text should always be at 100% opacity, or BaseHigh.
-
-
-## All caps titles
-
-Certain page titles should be in ALL CAPS to add yet another dimension of hierarchy. These titles should use BaseAlt with the character spacing set to 75 thousandths of an em. This treatment may also be used to help with app navigation.
-
-However, proper names change their meaning when capitalized in certain languages, so any page titles based on names or user input should *not* be converted to all caps.
+Чтобы создать дополнительную иерархию не только с помощью набора шрифтов, задайте второстепенному тексту прозрачность 60 %. В [цветовой палитре темы](color.md#color-themes) следует использовать BaseMedium. Для основного текста прозрачность всегда должна иметь значение 100% или BaseHigh.
 
 
-## Do's and don'ts
-* Use Body for most text
-* Use Base for titles when space is constrained
-* Incorporate SubtitleAlt to create contrast and hierarchy by emphasizing top level content
-* Don't use Caption for long strings or any primary action
-* Don't use Header or Subheader if text needs to wrap
-* Don't combine Subtitle and SubtitleAlt on the same page
+## Заголовки заглавными буквами
 
-## Related articles
+Некоторые заголовки страниц должны быть написаны ПОЛНОСТЬЮ ЗАГЛАВНЫМИ БУКВАМИ, чтобы добавить еще один уровень иерархии. Эти заголовки должны использовать BaseAlt со значением межзнакового интервала, установленным на 75 тысячных доли длины буквы m. Этот принцип можно также использовать, чтобы упростить навигацию приложения.
 
-* [Text controls](../controls-and-patterns/text-controls.md)
+Однако имена собственные в некоторых языках меняют свое значение при написании заглавными буквами, поэтому заголовки страниц, основанные на именах или пользовательском вводе *не* должны преобразовываться в заголовки, написанные полностью заглавными буквами.
+
+
+## Рекомендации
+* Используйте параметр Body для основной части текста
+* Используйте параметр Base для заголовков, если пространство ограничено
+* Включайте SubtitleAlt, чтобы создать контраст и иерархию посредством подчеркивания содержимого верхнего уровня
+* Не используйте параметр Caption для длинных строк или основных действий
+* Не используйте параметры Header или Subheader, если текст необходимо переносить
+* Не совмещайте Subtitle and SubtitleAlt на одной странице
+
+## Статьи по теме
+
+* [Элементы управления текстом](../controls-and-patterns/text-controls.md)
+
+
+<!--HONumber=May16_HO2-->
+
+

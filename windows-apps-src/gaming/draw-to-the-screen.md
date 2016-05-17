@@ -1,40 +1,48 @@
 ---
 author: mtoepke
-title: Draw to the screen
-description: Finally, we port the code that draws the spinning cube to the screen.
+title: Отрисовка на экране
+description: Наконец, мы переносим код, который отрисовывает вращающийся куб на экране.
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
 ---
 
-# Draw to the screen
+# Рисование на экране
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Important APIs**
+**Важные API**
 
 -   [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)
 -   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)
 -   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)
 
-Finally, we port the code that draws the spinning cube to the screen.
+Наконец, мы переносим код, который отрисовывает вращающийся куб на экране.
 
-In OpenGL ES 2.0, your drawing context is defined as an EGLContext type, which contains the window and surface parameters as well the resources necessary for drawing to the render targets that will be used to compose the final image displayed to the window. You use this context to configure the graphics resources to correctly display the results of your shader pipeline on the display. One of the primary resources is the "back buffer" (or "frame buffer object") that contains the final, composited render targets, ready for presentation to the display.
+В OpenGL ES 2.0 тип контекста отрисовки определяется как EGLContext. Он содержит параметры окна и поверхности, а также ресурсы, необходимые для отрисовки в однобуферной прорисовке, которая будет использована для создания конечного изображения, отображаемого в окне. Вы используете этот контекст, чтобы настроить графические ресурсы на правильное отображение результатов конвейера шейдеров на дисплее. Одним из основных ресурсов является задний буфер (или объект буфера кадра), который содержит окончательную составленную однобуферную прорисовку, готовую к представлению на дисплее.
 
-With Direct3D, the process of configuring the graphics resources for drawing to the display is more didactic, and requires quite a few more APIs. (A Microsoft Visual Studio Direct3D template can significantly simplify this process, though!) To obtain a context (called a Direct3D device context), you must first obtain an [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) object, and use it to create and configure an [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) object. These two objects are used in conjunction to configure the specific resources you need for drawing to the display.
+При использовании Direct3D процесс настройки графических ресурсов для отрисовки на дисплее носит более дидактический характер и требует большего количества API. (Хотя шаблон Direct3D в Microsoft Visual Studio может существенно упростить этот процесс!) Чтобы получить контекст (который называется контекстом устройства Direct3D), сначала необходимо получить объект [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) и использовать его для создания и настройки объекта [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). Эти два объекта используются совместно для настройки определенных ресурсов, необходимых для отрисовки на дисплее.
 
-In short, the DXGI APIs contain primarily APIs for managing resources that directly pertain to the graphics adapter, and Direct3D contains the APIs that allow you to interface between the GPU and your main program running on the CPU.
+Если коротко, API DXGI содержат в основном API для управления ресурсами, которые имеют прямое отношение к графическому адаптеру, а Direct3D содержит API, которые обеспечивают интерфейс между GPU и вашей главной программой, работающей на ЦП.
 
-For the purposes of comparison in this sample, here are the relevant types from each API:
+Для сравнения в этом примере представлены соответствующие типы тех и других API.
 
--   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575): provides a virtual representation of the graphics device and its resources.
--   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598): provides the interface to configure buffers and issue rendering commands.
--   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631): the swap chain is analogous to the back buffer in OpenGL ES 2.0. It is the region of memory on the graphics adapter that contains the final rendered image(s) for display. It is called the "swap chain" because it has several buffers that can be written to and "swapped" to present the latest render to the screen.
--   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582): this contains the 2D bitmap buffer that the Direct3D device context draws into, and which is presented by the swap chain. As with OpenGL ES 2.0, you can have multiple render targets, some of which are not bound to the swap chain but are used for multi-pass shading techniques.
+-   [
+              **ID3D11Device1**
+            ](https://msdn.microsoft.com/library/windows/desktop/hh404575): обеспечивает виртуальное представление графического устройства и его ресурсов.
+-   [
+              **ID3D11DeviceContext1**
+            ](https://msdn.microsoft.com/library/windows/desktop/hh404598): обеспечивает интерфейс для настройки буферов и выпуска команд отрисовки.
+-   [
+              **IDXGISwapChain1**
+            ](https://msdn.microsoft.com/library/windows/desktop/hh404631): цепочка буферов является аналогом заднего буфера в OpenGL ES 2.0. Это область памяти на графическом адаптере, которая содержит окончательные обработанные изображения для дисплея. Она называется цепочкой буферов, потому что содержит несколько буферов, в которые можно записать последнюю обработку и которые можно переключить для ее представления на экране.
+-   [
+              **ID3D11RenderTargetView**
+            ](https://msdn.microsoft.com/library/windows/desktop/ff476582): содержит буфер двухмерных точечных рисунков, в котором выполняет отрисовку контекст устройства Direct3D и который представляется цепочкой буферов. Как и в OpenGL ES 2.0, вы можете использовать многобуферную прорисовку, часть буферов которой не привязана к цепочке буферов, но используется для методов многоэтапной заливки.
 
-In the template, the renderer object contains the following fields:
+В шаблоне объект обработчика содержит следующие поля.
 
-Direct3D 11: Device and device context declarations
+Direct3D 11: объявления устройства и контекста устройства
 
 ``` syntax
 Platform::Agile<Windows::UI::Core::CoreWindow>       m_window;
@@ -45,7 +53,7 @@ Microsoft::WRL::ComPtr<IDXGISwapChain1>                      m_swapChainCoreWind
 Microsoft::WRL::ComPtr<ID3D11RenderTargetView>          m_d3dRenderTargetViewWin;
 ```
 
-Here's how the back buffer is configured as a render target and provided to the swap chain.
+Вот как можно настроить задний буфер в качестве однобуферной прорисовки и предоставить его цепочке буферов.
 
 ``` syntax
 ComPtr<ID3D11Texture2D> backBuffer;
@@ -56,19 +64,19 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-The Direct3D runtime implicitly creates an [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) for the [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635), which represents the texture as a "back buffer" that the swap chain can use for display.
+Среда выполнения Direct3D неявно создает [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) для [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635), представляющий текстуру в качестве заднего буфера, который в свою очередь может использовать цепочка буферов для отображения.
 
-The initialization and configuration of the Direct3D device and device context, as well as the render targets, can be found in the custom **CreateDeviceResources** and **CreateWindowSizeDependentResources** methods in the Direct3D template.
+Инициализацию и настройку устройства и контекста устройства Direct3D, а также однобуферную прорисовку можно найти в пользовательских методах **CreateDeviceResources** и **CreateWindowSizeDependentResources** в шаблоне Direct3D.
 
-For more info on Direct3D device context as it relates to EGL and the EGLContext type, read [Port EGL code to DXGI and Direct3D](moving-from-egl-to-dxgi.md).
+Подробнее о контексте устройства Direct3D и его отношении к типам контекста EGL и EGLContext читайте в разделе [Портирование кода EGL в DXGI и Direct3D](moving-from-egl-to-dxgi.md).
 
-## Instructions
+## Инструкция
 
-### Step 1: Rendering the scene and displaying it
+### Шаг 1. Отрисовка и отображение сцены
 
-After updating the cube data (in this case, by rotating it slightly around the y axis), the Render method sets the viewport to the dimensions of he drawing context (an EGLContext). This context contains the color buffer that will be displayed to the window surface (an EGLSurface), using the configured display (EGLDisplay). At this time, the example updates the vertex data attributes, re-binds the index buffer, draws the cube, and swaps in color buffer drawn by the shading pipeline to the display surface.
+После обновления данных куба (в нашем случае путем небольшого вращения вокруг оси Y) метод обработки настраивает окно просмотра в соответствии с размерами контекста обработки (EGLContext). Этот контекст содержит буфер цвета, который будет отображен на поверхности окна (EGLSurface) с помощью настроенного дисплея (EGLDisplay). В это время пример обновляет атрибуты данных вершины, повторно привязывает буфер индексов, отрисовывает куб и подключает буфер цвета, отрисованный конвейером заливки на поверхности отображения.
 
-OpenGL ES 2.0: Rendering a frame for display
+OpenGL ES 2.0: отрисовка кадра для отображения
 
 ``` syntax
 void Render(GraphicsContext *drawContext)
@@ -114,19 +122,19 @@ void Render(GraphicsContext *drawContext)
 }
 ```
 
-In Direct3D 11, the process is very similar. (We're assuming that you're using the viewport and render target configuration from the Direct3D template.
+В Direct3D 11 процесс очень прост. (Мы предполагаем, что вы используете окно просмотра и конфигурацию однобуферной прорисовки шаблона Direct3D.)
 
--   Update the constant buffers (the model-view-projection matrix, in this case) with calls to [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790).
--   Set the vertex buffer with [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
--   Set the index buffer with [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453).
--   Set the specific triangle topology (a triangle list) with [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455).
--   Set the input layout of the vertex buffer with [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454).
--   Bind the vertex shader with [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493).
--   Bind the fragment shader with [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472).
--   Send the indexed vertices through the shaders and output the color results to the render target buffer with [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409).
--   Display the render target buffer with [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
+-   Обновите буферы констант (в данном случае — матрицу "модель-представление-проекция") с помощью вызовов [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790).
+-   Установите буфер вершин с помощью [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
+-   Установите буфер индексов с помощью [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453).
+-   Установите специфическую треугольную топологию (список треугольников) с помощью [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455).
+-   Установите входной макет буфера вершин с помощью [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454).
+-   Привяжите вершинный шейдер с помощью [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493).
+-   Привяжите шейдер фрагмента с помощью [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472).
+-   Отправьте индексированные вершины через шейдеры и выведите результаты цвета в буфер однобуферной прорисовки с помощью [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409).
+-   Отобразите буфер однобуферной прорисовки с помощью [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
 
-Direct3D 11: Rendering a frame for display
+Direct3D 11: отрисовка кадра для отображения
 
 ``` syntax
 void RenderObject::Render()
@@ -189,29 +197,34 @@ void RenderObject::Render()
 
 ```
 
-Once [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) is called, your frame is output to the configured display.
+После вызова [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) кадр выводится на настроенный дисплей.
 
-## Previous step
-
-
-[Port the GLSL](port-the-glsl.md)
-
-## Remarks
-
-This example glosses over much of the complexity that goes into configuring device resources, especially for Universal Windows Platform (UWP) DirectX apps. We suggest you review the full template code, especially the parts that perform the window and device resource setup and management. UWP apps have to support rotation events as well as suspend/resume events, and the template demonstrates best practices for handling the loss of an interface or a change in the display parameters.
-
-## Related topics
+## Предыдущий шаг
 
 
-* [How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
-* [Port the shader objects](port-the-shader-config.md)
-* [Port the GLSL](port-the-glsl.md)
-* [Draw to the screen](draw-to-the-screen.md)
+[Перенос GLSL](port-the-glsl.md)
 
- 
+## Примечания
 
- 
+Этот пример значительно снижает сложность настройки ресурсов устройства, особенно для приложений универсальной платформы Windows (UWP) с DirectX. Мы предлагаем вам просмотреть полный код шаблона, особенно те части, которые касаются настройки и управления окном и ресурсами устройства. Приложения UWP должны поддерживать события поворота, а также события приостановки и возобновления. Шаблон демонстрирует рекомендованный способ справиться с потерей интерфейса или изменением параметров дисплея.
+
+## Связанные разделы
 
 
+* [Инструкции: перенос простого обработчика OpenGL ES 2.0 в Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [Перенос объектов шейдеров](port-the-shader-config.md)
+* [Перенос GLSL](port-the-glsl.md)
+* [Отрисовка на экране](draw-to-the-screen.md)
+
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

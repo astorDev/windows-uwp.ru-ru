@@ -1,39 +1,43 @@
 ---
 author: Xansky
-Description: Introduces accessibility concepts that relate to Universal Windows Platform (UWP) apps.
+Description: Знакомство с понятиями специальных возможностей, относящимися к приложениям универсальной платформы Windows (UWP).
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
-title: Accessibility
+title: Специальные возможности
 label: Accessibility
 template: detail.hbs
 ---
 
-# Accessibility  
+# Специальные возможности  
 
 
 
-Introduces accessibility concepts that relate to Universal Windows Platform (UWP) apps.
+Знакомство с понятиями специальных возможностей, относящимися к приложениям универсальной платформы Windows (UWP).
 
-Accessibility is about building experiences that make your application available to people who use technology in a wide range of environments and approach your user interface with a range of needs and experiences. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience. There's also a Windows Store declaration regarding accessibility for your app.
+Специальные возможности предполагают создание таких способов взаимодействия, с помощью которых ваше приложение смогут использовать люди, применяющие технологии в различных средах и которые учитывают потребности людей с разными возможностями. В некоторых ситуациях специальные возможности требуются законодательством. Однако рекомендуется реализовать специальные возможности даже там, где они не обязательны по закону, так как это расширит аудиторию вашего приложения. Существует также объявление Магазина Windows о специальных возможностях приложения.
 
-> [!NOTE]
-> Declaring the app as accessible is only relevant to the Windows Store.
+> Объявление приложения как приложения со специальными возможностями используется только в Магазине Windows.
 
-| Article | Description |
+| Статья | Описание |
 |---------|-------------|
-| [Accessibility overview](accessibility-overview.md) | This article is an overview of the concepts and technologies related to accessibility scenarios for UWP apps. |
-| [Designing inclusive software](designing-inclusive-software.md) | Learn about evolving inclusive design with Universal Windows Platform (UWP) apps for Windows 10.  Design and build inclusive software with accessibility in mind. |
-| [Developing inclusive Windows apps](developing-inclusive-windows-apps.md) | This article is a roadmap for developing accessible UWP apps. |
-| [Accessibility testing](accessibility-testing.md) | Testing procedures to follow to ensure that your UWP app is accessible. |
-| [Accessibility in the Store](accessibility-in-the-store.md) | Describes the requirements for declaring your UWP app as accessible in the Windows Store. |
-| [Accessibility checklist](accessibility-checklist.md) | Provides a checklist to help you ensure that your UWP app is accessible. |
-| [Expose basic accessibility information](basic-accessibility-information.md) | Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need. |
-| [Keyboard accessibility](keyboard-accessibility.md) | If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all. |
-| [High-contrast themes](high-contrast-themes.md) | Describes the steps needed to ensure your UWP app is usable when a high-contrast theme is active. |
-| [Accessible text requirements](accessible-text-requirements.md) | This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio. This topic also discusses the Microsoft UI Automation roles that text elements in a UWP app can have, and best practices for text in graphics. |
-| [Accessibility practices to avoid](practices-to-avoid.md) | Lists the practices to avoid if you want to create an accessible UWP app. |
-| [Custom automation peers](custom-automation-peers.md) | Describes the concept of automation peers for UI Automation, and how you can provide automation support for your own custom UI class. |
-| [Control patterns and interfaces](control-patterns-and-interfaces.md) | Lists the Microsoft UI Automation control patterns, the classes that clients use to access them, and the interfaces providers use to implement them. |
+| [Обзор специальных возможностей](accessibility-overview.md) | В этой статье содержится обзор концепций и технологий, связанных со сценариями использования специальных возможностей для приложений UWP. |
+| [Проектирование инклюзивного программного обеспечения](designing-inclusive-software.md) | Сведения о развитии проектирования приложений универсальной платформы (UWP) для Windows 10.  Проектируйте и создавайте программное обеспечение с учетом специальных возможностей. |
+| [Разработка инклюзивных приложений для Windows](developing-inclusive-windows-apps.md) | Эта статья содержит схему разработки приложений UWP с поддержкой специальных возможностей. |
+| [Проверка специальных возможностей](accessibility-testing.md) | В статье приводятся процедуры проверки, позволяющие гарантировать наличие специальных возможностей в приложении UWP. |
+| [Специальные возможности в Магазине](accessibility-in-the-store.md) | Описание требований, которым должно соответствовать ваше приложение UWP, чтобы о его специальных возможностях можно было объявить в Магазине Windows. |
+| [Контрольный список специальных возможностей](accessibility-checklist.md) | В статье представлен контрольный список, который поможет вам удостовериться, что в приложении UWP реализованы специальные возможности. |
+| [Предоставление основных сведений о специальных возможностях](basic-accessibility-information.md) | Основные сведения о специальных возможностях часто классифицируются по названию, роли и значению. В этом разделе описывается код, благодаря которому ваше приложение сможет предоставлять основные сведения, необходимые вспомогательным технологиям. |
+| [Специальные возможности клавиатуры](keyboard-accessibility.md) | Если ваше приложение не поддерживает доступ с клавиатуры на достаточном уровне, пользователи с нарушениями зрения или опорно-двигательного аппарата будут испытывать трудности при его использовании или же совсем не смогут его использовать. |
+| [Темы с высокой контрастностью](high-contrast-themes.md) | Здесь описаны шаги, которые необходимо предпринять, чтобы ваше приложение UWP можно было использовать, когда активна тема с высокой контрастностью. |
+| [Требования к специальным возможностям отображения текста](accessible-text-requirements.md) | В этой статье приводятся рекомендации относительно специальных возможностей отображения текста в приложении, которые помогают обеспечить необходимый уровень контрастности между цветами текста и фона. Кроме того, в статье описываются роли модели автоматизации пользовательского интерфейса Майкрософт, которые могут быть присущи текстовым элементам в приложениях UWP, а также рекомендации по использованию текста в графике. |
+| [Рекомендации по специальным возможностям, которых следует избегать](practices-to-avoid.md) | В этой статье рассказывается о методиках, которых следует избегать при создании приложения UWP с поддержкой специальных возможностей. |
+| [Настраиваемые одноранговые элементы автоматизации](custom-automation-peers.md) | Здесь описана концепция одноранговых элементов для модели автоматизации пользовательского интерфейса, а также способы реализации поддержки автоматизации для вашего собственного настраиваемого класса пользовательского интерфейса. |
+| [Шаблоны и интерфейсы элементов управления](control-patterns-and-interfaces.md) | Здесь перечислены шаблоны элементов управления модели автоматизации пользовательского интерфейса Майкрософт, классы, которыми пользуются клиенты для доступа к ним, и интерфейсы, которыми пользуются поставщики для их реализации. |
 
 <span id="related_topics"/>
-## Related topics  
+## Связанные темы  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
+
+
+<!--HONumber=May16_HO2-->
+
+
