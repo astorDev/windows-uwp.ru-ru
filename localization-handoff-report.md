@@ -1,19 +1,77 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 5
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\guidelines-for-background-tasks.md](https://github.com/Microsoft/windows-apps/blob/9e62ab7d16ddb17d328251349d676c4cb835ca6e/windows-apps-src/launch-resume/guidelines-for-background-tasks.md) | HandedOffSuccess | [Details](#35b008aef077ed7bfd0c82ffdbb6cd4c7cfbae5a2913)
+ [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/213384a194513a0f98a5f37e7f0e0849bf0a66e2/windows-apps-src/get-started/universal-application-platform-guide.md) | OutofSyncHandedBackSuccess | [Details](#191a7aef1a027747379c991e17afc1580a9ec5492561)
+ [windows-apps-src\launch-resume\activate-an-app.md](https://github.com/Microsoft/windows-apps/blob/213384a194513a0f98a5f37e7f0e0849bf0a66e2/windows-apps-src/launch-resume/activate-an-app.md) | HandedOffSuccess | [Details](#4647b17e565f8e2e667e2e06d913f7dec496ef932905)
+ [windows-apps-src\launch-resume\app-lifecycle.md](https://github.com/Microsoft/windows-apps/blob/213384a194513a0f98a5f37e7f0e0849bf0a66e2/windows-apps-src/launch-resume/app-lifecycle.md) | OutofSyncHandedBackSuccess | [Details](#8451942c05d5d44cafba243f7cbebceedbe86fc02907)
+ [windows-apps-src\launch-resume\handle-app-prelaunch.md](https://github.com/Microsoft/windows-apps/blob/213384a194513a0f98a5f37e7f0e0849bf0a66e2/windows-apps-src/launch-resume/handle-app-prelaunch.md) | HandedOffSuccess | [Details](#d9d3bdf86d858367008a32d9d6a06ec9fc13787d2915)
+ [windows-apps-src\launch-resume\how-to-launch-an-app-for-results.md](https://github.com/Microsoft/windows-apps/blob/213384a194513a0f98a5f37e7f0e0849bf0a66e2/windows-apps-src/launch-resume/how-to-launch-an-app-for-results.md) | HandedOffSuccess | [Details](#5826b370df3dccd1590e3f67c15126b4e78c2c322919)
 
 ## Item Details
-##### <a name='35b008aef077ed7bfd0c82ffdbb6cd4c7cfbae5a2913'></a> Source: [windows-apps-src\launch-resume\guidelines-for-background-tasks.md](https://github.com/Microsoft/windows-apps/blob/9e62ab7d16ddb17d328251349d676c4cb835ca6e/windows-apps-src/launch-resume/guidelines-for-background-tasks.md)
+##### <a name='191a7aef1a027747379c991e17afc1580a9ec5492561'></a> Source: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/213384a194513a0f98a5f37e7f0e0849bf0a66e2/windows-apps-src/get-started/universal-application-platform-guide.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/b23284d205eef3f4dda1c51391a31d5147882e57/ol-handoff/Microsoft/windows-apps.ru-ru/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ru-ru.xlf)
+* Handoff Datetime: 2016-05-17 17:38:29
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/a588f547b39e33209321acb81b2236dbd6a3114c/windows-apps-src/get-started/universal-application-platform-guide.md)
+* Current Handback File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/54e8c14fc4ac74736ff4551ed9b15040a0f494bc/ol-handback/Microsoft/windows-apps.ru-ru/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ru-ru.xlf)
+* Current Handback Datetime: 2016-05-17 13:11:19
+* [Back to Top](#report-top)
+
+##### <a name='4647b17e565f8e2e667e2e06d913f7dec496ef932905'></a> Source: [windows-apps-src\launch-resume\activate-an-app.md](https://github.com/Microsoft/windows-apps/blob/213384a194513a0f98a5f37e7f0e0849bf0a66e2/windows-apps-src/launch-resume/activate-an-app.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [guidelines-for-background-tasks.72ec693c93a90692a20431e58b0ea291aeda6927.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/5e1b483854f94ae9268faf3c99f3735c0c27e757/ol-handoff/Microsoft/windows-apps.ru-ru/master/guidelines-for-background-tasks.72ec693c93a90692a20431e58b0ea291aeda6927.ru-ru.xlf)
-* Handoff Datetime: 2016-05-16 22:02:55
+* Handoff File: [activate-an-app.784fd90768a0c5a2493e6f978771b70856757c89.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/b23284d205eef3f4dda1c51391a31d5147882e57/ol-handoff/Microsoft/windows-apps.ru-ru/master/activate-an-app.784fd90768a0c5a2493e6f978771b70856757c89.ru-ru.xlf)
+* Handoff Datetime: 2016-05-17 17:38:29
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='8451942c05d5d44cafba243f7cbebceedbe86fc02907'></a> Source: [windows-apps-src\launch-resume\app-lifecycle.md](https://github.com/Microsoft/windows-apps/blob/213384a194513a0f98a5f37e7f0e0849bf0a66e2/windows-apps-src/launch-resume/app-lifecycle.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [app-lifecycle.ccef52258bdc75288e41f9726d49569048ea6c50.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/b23284d205eef3f4dda1c51391a31d5147882e57/ol-handoff/Microsoft/windows-apps.ru-ru/master/app-lifecycle.ccef52258bdc75288e41f9726d49569048ea6c50.ru-ru.xlf)
+* Handoff Datetime: 2016-05-17 17:38:29
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\launch-resume\app-lifecycle.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/a588f547b39e33209321acb81b2236dbd6a3114c/windows-apps-src/launch-resume/app-lifecycle.md)
+* Current Handback File: [app-lifecycle.ccef52258bdc75288e41f9726d49569048ea6c50.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/54e8c14fc4ac74736ff4551ed9b15040a0f494bc/ol-handback/Microsoft/windows-apps.ru-ru/master/app-lifecycle.ccef52258bdc75288e41f9726d49569048ea6c50.ru-ru.xlf)
+* Current Handback Datetime: 2016-05-17 13:11:19
+* [Back to Top](#report-top)
+
+##### <a name='d9d3bdf86d858367008a32d9d6a06ec9fc13787d2915'></a> Source: [windows-apps-src\launch-resume\handle-app-prelaunch.md](https://github.com/Microsoft/windows-apps/blob/213384a194513a0f98a5f37e7f0e0849bf0a66e2/windows-apps-src/launch-resume/handle-app-prelaunch.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [handle-app-prelaunch.190c562dc29d917606fd3934bde86bc8b2eeeafa.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/b23284d205eef3f4dda1c51391a31d5147882e57/ol-handoff/Microsoft/windows-apps.ru-ru/master/handle-app-prelaunch.190c562dc29d917606fd3934bde86bc8b2eeeafa.ru-ru.xlf)
+* Handoff Datetime: 2016-05-17 17:38:29
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='5826b370df3dccd1590e3f67c15126b4e78c2c322919'></a> Source: [windows-apps-src\launch-resume\how-to-launch-an-app-for-results.md](https://github.com/Microsoft/windows-apps/blob/213384a194513a0f98a5f37e7f0e0849bf0a66e2/windows-apps-src/launch-resume/how-to-launch-an-app-for-results.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [how-to-launch-an-app-for-results.5a61b6eab1b357c0c8755f14221834d13879fd41.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/b23284d205eef3f4dda1c51391a31d5147882e57/ol-handoff/Microsoft/windows-apps.ru-ru/master/how-to-launch-an-app-for-results.5a61b6eab1b357c0c8755f14221834d13879fd41.ru-ru.xlf)
+* Handoff Datetime: 2016-05-17 17:38:29
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
