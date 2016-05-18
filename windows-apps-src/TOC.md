@@ -685,8 +685,3 @@
 ### [Политики Магазина Windows](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)
 #### [Журнал изменений](https://msdn.microsoft.com/en-us/library/windows/apps/dn764945.aspx)
 ### [Правила поведения для разработчиков](https://msdn.microsoft.com/en-us/library/windows/apps/dn764941.aspx)
-
-
-<!--HONumber=Mar16_HO5-->
-
-
