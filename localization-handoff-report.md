@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\frequently-asked-questions.md](https://github.com/Microsoft/windows-apps/blob/4198d73eb651db71289d6503ac67a42614eb786f/windows-apps-src/xbox-apps/frequently-asked-questions.md) | HandedOffSuccess | [Details](#0ed5465bf5e7c1dbc3aec17769c428a5a8d7d9fc3819)
+ [windows-apps-src\debug-test-perf\getting-started-debugging-uwp-apps.md](https://github.com/Microsoft/windows-apps/blob/34f47c4f658024e607b3f14a480bd9ff1121ec20/windows-apps-src/debug-test-perf/getting-started-debugging-uwp-apps.md) | HandedOffSuccess | [Details](#cc4e5c49dcc36193d4d8b1bc835e2caceeaff6951918)
 
 ## Item Details
-##### <a name='0ed5465bf5e7c1dbc3aec17769c428a5a8d7d9fc3819'></a> Source: [windows-apps-src\xbox-apps\frequently-asked-questions.md](https://github.com/Microsoft/windows-apps/blob/4198d73eb651db71289d6503ac67a42614eb786f/windows-apps-src/xbox-apps/frequently-asked-questions.md)
+##### <a name='cc4e5c49dcc36193d4d8b1bc835e2caceeaff6951918'></a> Source: [windows-apps-src\debug-test-perf\getting-started-debugging-uwp-apps.md](https://github.com/Microsoft/windows-apps/blob/34f47c4f658024e607b3f14a480bd9ff1121ec20/windows-apps-src/debug-test-perf/getting-started-debugging-uwp-apps.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [frequently-asked-questions.49aa0704cf8127dd0b088146bf6643b88aa0ce3c.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/f8229d814ea5a7f6f0a9aceb6f78039deaebfa56/ol-handoff/Microsoft/windows-apps.ru-ru/master/frequently-asked-questions.49aa0704cf8127dd0b088146bf6643b88aa0ce3c.ru-ru.xlf)
-* Handoff Datetime: 2016-05-25 21:24:20
+* Handoff File: [getting-started-debugging-uwp-apps.39a77d3bfb7ac5cfec05330d2ab1472c63466e1a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/1bc9898ef21f9ca072cd0b6e8dcc3918face4be9/ol-handoff/Microsoft/windows-apps.ru-ru/master/getting-started-debugging-uwp-apps.39a77d3bfb7ac5cfec05330d2ab1472c63466e1a.ru-ru.xlf)
+* Handoff Datetime: 2016-05-25 22:24:39
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
