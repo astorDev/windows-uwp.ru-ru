@@ -1,24 +1,40 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\in-app-help\instructional-ui.md](https://github.com/Microsoft/windows-apps/blob/08b0b88e8ef17c2a8f264df5db4f971c8c49ab2e/windows-apps-src/in-app-help/instructional-ui.md) | HandedOffSuccess | [Details](#f9f1f34bb02cda89d31caa9453b6e3eb056e7bc92627)
+ [windows-apps-src\debug-test-perf\device-portal.md](https://github.com/Microsoft/windows-apps/blob/207013a86926f66189297236c1393873f7a9a222/windows-apps-src/debug-test-perf/device-portal.md) | HandedOffSuccess | [Details](#6fe6205b21835f29216c159c83aa4c9a48bee4f11917)
+ [windows-apps-src\graphics\transforms-overview.md](https://github.com/Microsoft/windows-apps/blob/a429fa659caf6c8032ad615f1b850092545d4439/windows-apps-src/graphics/transforms-overview.md) | OutofSyncHandedBackSuccess | [Details](#fa5e8964ab35cb33a1ff59a8a52aa384b9d115b42614)
 
 ## Item Details
-##### <a name='f9f1f34bb02cda89d31caa9453b6e3eb056e7bc92627'></a> Source: [windows-apps-src\in-app-help\instructional-ui.md](https://github.com/Microsoft/windows-apps/blob/08b0b88e8ef17c2a8f264df5db4f971c8c49ab2e/windows-apps-src/in-app-help/instructional-ui.md)
+##### <a name='6fe6205b21835f29216c159c83aa4c9a48bee4f11917'></a> Source: [windows-apps-src\debug-test-perf\device-portal.md](https://github.com/Microsoft/windows-apps/blob/207013a86926f66189297236c1393873f7a9a222/windows-apps-src/debug-test-perf/device-portal.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [instructional-ui.11ebd3bea6c19314f4e66ad89ce162b74f37d2ab.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/a90d9508b832abae068ffb1b27ef059eeebaeb9f/ol-handoff/Microsoft/windows-apps.ru-ru/master/instructional-ui.11ebd3bea6c19314f4e66ad89ce162b74f37d2ab.ru-ru.xlf)
-* Handoff Datetime: 2016-05-27 19:25:22
+* Handoff File: [device-portal.42fc9b6666795a143b3fca2c18dcbbe09f5edd1d.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/cfe61c14e8f929283dbf5c270bd1ebe8f08b9805/ol-handoff/Microsoft/windows-apps.ru-ru/master/device-portal.42fc9b6666795a143b3fca2c18dcbbe09f5edd1d.ru-ru.xlf)
+* Handoff Datetime: 2016-05-27 21:27:04
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='fa5e8964ab35cb33a1ff59a8a52aa384b9d115b42614'></a> Source: [windows-apps-src\graphics\transforms-overview.md](https://github.com/Microsoft/windows-apps/blob/a429fa659caf6c8032ad615f1b850092545d4439/windows-apps-src/graphics/transforms-overview.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [transforms-overview.c67ed92e5a7de6cb07da53c96f53aa002e3bf481.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/cfe61c14e8f929283dbf5c270bd1ebe8f08b9805/ol-handoff/Microsoft/windows-apps.ru-ru/master/transforms-overview.c67ed92e5a7de6cb07da53c96f53aa002e3bf481.ru-ru.xlf)
+* Handoff Datetime: 2016-05-27 21:27:04
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\graphics\transforms-overview.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/a588f547b39e33209321acb81b2236dbd6a3114c/windows-apps-src/graphics/transforms-overview.md)
+* Current Handback File: [transforms-overview.c67ed92e5a7de6cb07da53c96f53aa002e3bf481.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/54e8c14fc4ac74736ff4551ed9b15040a0f494bc/ol-handback/Microsoft/windows-apps.ru-ru/master/transforms-overview.c67ed92e5a7de6cb07da53c96f53aa002e3bf481.ru-ru.xlf)
+* Current Handback Datetime: 2016-05-17 13:11:19
 * [Back to Top](#report-top)
 
 
