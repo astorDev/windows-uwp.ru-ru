@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 Description: После того как вы определили свой эксперимент на панели мониторинга в Центре разработки, вы можете приступить к написанию кода для проведения эксперимента в своем приложении.
 title: Создание кода для проведения эксперимента в приложении
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
@@ -25,24 +26,24 @@ ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
 Откройте проект и найдите код для функции, которую требуется изменить в рамках эксперимента. Добавьте код, позволяющий получить параметры варианта, и используйте полученные данные для изменения поведения тестируемой функции. В каждом случае требуемый код зависит от приложения, но есть несколько общих действий. Полный пример кода можно найти в разделе [Создание и проведение первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md).
 
 1. Объявите объект [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentclient.aspx), с помощью которого вы будете получать варианты для эксперимента, и объект [ExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.aspx), представляющий текущее назначение вариантов.
-```
+```CSharp
 private readonly ExperimentClient experiment;
 private ExperimentVariation variation;
 ```
 
 2. Инициализируйте объект [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentclient.aspx) и передайте конструктору ключ API, полученный на странице **Эксперименты** панели мониторинга. Дополнительные сведения о ключе API можно найти в разделе [Определение эксперимента на панели мониторинга в Центре разработки](define-your-experiment-in-the-dev-center-dashboard.md#generate-an-api-key). Указанный ниже ключ API используется только в качестве примера.
-```
+```CSharp
 experiment = new ExperimentClient("F48AC670-4472-4387-AB7D-D65B095153FB");
 ```
 
 3. Получите текущее назначение кэшированного варианта для эксперимента, вызвав метод [GetVariationAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentclient.getvariationasync.aspx). Этот метод возвращает объект [ExperimentVariationResult](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariationresult.aspx), предоставляющий доступ к назначению варианта через свойство [Variation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariationresult.variation.aspx).
-```
+```CSharp
 ExperimentVariationResult result = await experiment.GetVariationAsync();
 variation = result.Variation;
 ```
 
 4. Проверьте свойство [NeedsRefresh](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.needsrefresh.aspx), чтобы определить необходимость обновления назначения кэшированного варианта. Если оно не требует обновления, вызовите метод [RefreshVariationAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentclient.refreshvariationasync.aspx), чтобы проверить наличие обновленного назначения варианта на сервере и обновить локальный кэшированный вариант.
-```
+```CSharp
 // Check whether the cached variation assignment needs to be refreshed.
 // If so, then refresh it.
 if (result.ErrorCode != EngagementErrorCode.Success || result.Variation.NeedsRefresh)
@@ -61,11 +62,11 @@ if (result.ErrorCode != EngagementErrorCode.Success || result.Variation.NeedsRef
 5. Используйте методы [GetBoolean](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getboolean.aspx), [GetDouble](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getdouble.aspx), [GetInteger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getinteger.aspx) или [GetString](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getstring.aspx) объекта [ExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.aspx) для получения параметров назначения варианта. В каждом методе первый параметр — это имя параметра, который требуется получить (указанное вами на панели мониторинга в Центре разработки). Второй параметр — это значение по умолчанию, которое метод должен вернуть, если ему не удастся получить указанное значение из Центра разработки (например, если отсутствует подключение к сети), а кэшированная версия варианта недоступна.
 
   В следующем примере используется метод [GetString](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getstring.aspx), чтобы получить параметр с именем *buttonText*, а в качестве значения по умолчанию для параметра указано значение **Grey Button**.
-```
+```CSharp
 var buttonText = currentVariation.GetString("buttonText", "Grey Button");
 ```
 4. В своем коде используйте значения параметров для изменения поведения тестируемой функции. Например, в следующем коде содержимому кнопки назначается значение *buttonText*.
-```
+```CSharp
 button.Content = buttonText;
 ```
 
@@ -76,11 +77,11 @@ button.Content = buttonText;
 В каждом случае требуемый код зависит от приложения, но есть несколько общих действий. Полный пример кода можно найти в разделе [Создание и проведение первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md).
 
 1. В коде, который выполняется, когда пользователь начинает просматривать вариант, вызовите статический метод [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) объекта [StoreServicesCustomEvents](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.aspx). Передайте имя события просмотра, определенное вами в эксперименте на панели мониторинга в Центр разработки, и объект [ExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.aspx), представляющий текущее назначение варианта (этот объект направляет контекст события в Центр разработки). В следующем примере в журнал заносится событие просмотра с именем **userViewedButton**.
-```
+```CSharp
 StoreServicesCustomEvents.Log("userViewedButton", variation);
 ```
 2. В коде, который выполняется, когда пользователь достигает цель одной из задач эксперимента, повторно вызовите метод [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) и передайте имя события преобразования, определенное вами в эксперименте, и объект [ExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.aspx). В следующем примере в журнал заносится событие преобразования с именем **userClickedButton**.
-```
+```CSharp
 StoreServicesCustomEvents.Log("userClickedButton", variation);
 ```
 
@@ -93,9 +94,9 @@ StoreServicesCustomEvents.Log("userClickedButton", variation);
   * [Определение эксперимента на панели мониторинга в Центре разработки](define-your-experiment-in-the-dev-center-dashboard.md)
   * [Управление экспериментом на панели мониторинга в Центре разработки](manage-your-experiment.md)
   * [Создание и запуск первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md)
-  * [Проведение экспериментов в приложении с использованием A/B-тестирования](run-app-experiments-with-a-b-testing.md)
+  * [Выполнение экспериментов в приложении с использованием A/B-тестирования](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

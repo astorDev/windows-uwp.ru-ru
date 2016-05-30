@@ -1,31 +1,30 @@
 ---
+author: Jwmsft
 Description: В этой статье перечислены и предоставлены рекомендации по использованию глифов, которые входят в состав шрифта Segoe MDL2 Assets.
 Search.Refinement.TopicID: 184
 title: Руководство по значкам Segoe MDL2
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
-label: Значки Segoe MDL2
+label: Segoe MDL2 icons
 template: detail.hbs
 ---
 
 # Руководство по значкам Segoe MDL2
 
-
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+В этой статье перечислены и предоставлены рекомендации по использованию глифов, которые входят в состав шрифта Segoe MDL2 Assets. Для получения этого шрифта необходимо установить Windows 10.
 
 **Важные API**
 
 -   [**Перечисление Symbol (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 -   [**Перечислении AppBarIcon (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh770557)
 
-В этой статье перечислены и предоставлены рекомендации по использованию глифов, которые входят в состав шрифта Segoe MDL2 Assets. Для получения этого шрифта необходимо установить Windows 10.
+
 
 ## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Рекомендации
 
 
 -   Используйте эти глифы, только если вы можете явно задать шрифт **Segoe MDL2 Assets**.
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Дополнительные рекомендации по использованию
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Дополнительное рекомендации по использованию
 
 
 Шрифт значков **Segoe UI Symbol** из Windows 8/8.1 был заменен шрифтом **Segoe MDL2 Assets**, который стал применяться с выходом Windows 10. Его можно использовать во многом так же, как и старый шрифт, но некоторые глифы были перерисованы в стиле значков Windows 10 с метрикой, позволяющей выравнивать значки с кегельной площадкой шрифта вместо типографской базовой линии.
@@ -357,7 +356,7 @@ template: detail.hbs
 
  
 
-## <span id="Back_buttons"></span><span id="back_buttons"></span><span id="BACK_BUTTONS"></span>Кнопки перехода назад
+## <span id="Back_buttons"></span><span id="back_buttons"></span><span id="BACK_BUTTONS"></span>Кнопки «Назад»
 
 
 Для кнопок перехода назад предусмотрены предыдущие версии глифов двух размеров, так что насыщенность внешнего кольца одинакова при 20 pt и 42 pt. Также доступны две новые пропорциональные хромированные кнопки перехода назад. Эти глифы разработаны для поддержки наложения.
@@ -1593,13 +1592,15 @@ template: detail.hbs
 
  
 
-## <span id="related_topics"></span>Связанные разделы
+## <span id="related_topics"></span>Ссылки по теме
 
 
 **Проектировщикам**
 * [Рекомендации по шрифтам](fonts.md)
 * [W3C о том, какие языки используют написание справа налево (RTL)](http://www.i18nguy.com/temp/rtl.mdl)
-**Разработчикам (XAML)**
+            
+          
+            **Для разработчиков (XAML)**
 * [**Перечисление Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 
 
@@ -1610,6 +1611,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

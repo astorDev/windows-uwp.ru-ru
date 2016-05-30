@@ -186,6 +186,6 @@ public void SampleReusableHash()
 
 Для перечисления доступных алгоритмов подписи, а также для формирования или импорта пары ключей можно использовать объект [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478). Для подписывания сообщения или проверки подписи можно использовать статические методы класса [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498).
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

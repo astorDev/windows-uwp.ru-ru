@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 Description: 'Это одна из ключевых тем руководства, позволяющая разработчикам сформировать полное представление о том, как защита корпоративных данных (EDP) связана с файлами, буферами, буфером обмена, сетью, фоновыми задачами и защитой заблокированных данных.'
 MS-HAID: 'dev\_enterprise.edp\_hub'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -8,7 +9,7 @@ title: 'Защита корпоративных данных (EDP)'
 
 # Защита корпоративных данных (EDP)
 
-__Примечание.__ Политику защиты корпоративных данных (EDP) нельзя применять в Windows 10 версии 1511 (сборка 10586) или более ранних версий.
+__Примечание.__ Политику защиты корпоративных данных (EDP) нельзя применить в Windows 10 версии 1511 (сборка 10586) или более ранних версий.
 
 Это одна из ключевых тем руководства, позволяющая разработчикам сформировать полное представление о том, как защита корпоративных данных (EDP) связана с файлами, буферами, буфером обмена, сетью, фоновыми задачами и защитой заблокированных данных.
 
@@ -173,7 +174,11 @@ private void SwitchMailbox(Mailbox targetMailbox)
 
 В этом сценарии мы рассмотрим пример почтового приложения, поддерживающего корпоративную безопасность, которое поддерживает работу с корпоративной и личной почтой. При работе приложения в организации, использующей безопасную политику защиты данных после блокировки (DPL), приложение должно гарантированно удалять все конфиденциальные данные из памяти на время блокировки устройства. Для этого оно регистрируется для получения событий [**ProtectionPolicyManager.ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) и [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786), чтобы получать уведомления, когда устройство блокируется и разблокируется (при использовании политики DPL).
 
-[**ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) возникает перед временным удалением подготовленных ключей защиты данных на устройстве. Причиной удаления этих ключей во время блокировки устройства является необходимость блокировки неавторизованного доступа к зашифрованным данным на заблокированном устройстве, которое может находиться не в руках владельца. [**ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) создается, как только ключи становятся доступными после разблокировки устройства.
+[
+              **ProtectedAccessSuspending**
+            ](https://msdn.microsoft.com/library/windows/apps/dn705787) возникает перед временным удалением подготовленных ключей защиты данных на устройстве. Причиной удаления этих ключей во время блокировки устройства является необходимость блокировки неавторизованного доступа к зашифрованным данным на заблокированном устройстве, которое может находиться не в руках владельца. [
+              **ProtectedAccessResumed**
+            ](https://msdn.microsoft.com/library/windows/apps/dn705786) создается, как только ключи становятся доступными после разблокировки устройства.
 
 Обработка этих двух событий позволяет приложению гарантировать защиту любого конфиденциального содержимого в памяти с помощью [**DataProtectionManager**](https://msdn.microsoft.com/library/windows/apps/dn706017). Оно также должно закрывать любые файловые потоки, открытые с использованием защищенных файлов, чтобы система не кэшировала в памяти какие-либо конфиденциальные данные. Это можно сделать несколькими способами. Чтобы закрыть файловый поток, возвращенный методом Open для **StorageFile**, можно вызвать метод **Dispose** для этого потока. Можно определить область использования потока с помощью оператора (C\# или VB). Также можно поместить объект **DataReader** или **DataWriter** в качестве оболочки потока и использовать применительно к этому объекту метод **Dispose** или оператор.
 
@@ -207,7 +212,7 @@ private DisplayedMail currentlyDisplayedMail = new DisplayedMail()
 // Gets the app's protected mail database file, then opens and stores a stream on it.
 private async void OpenMailDatabase()
 {
-    // Only attempt to open the database file stream if we know it&#39;s closed.
+    // Only attempt to open the database file stream if we know it's closed.
     if (this.mailDatabaseStream == null)
     {
         StorageFolder appDataStorageFolder = ApplicationData.Current.LocalFolder;
@@ -233,7 +238,7 @@ private void AppSetup()
 // Background work called when the app receives an email.
 private async void AppMailReceived(string fauxEmail)
 {
-    // Only attempt to write to the database file stream if we know it&#39;s open.
+    // Only attempt to write to the database file stream if we know it's open.
     if (this.mailDatabaseStream != null)
     {
         IBuffer emailAsBuffer = CryptographicBuffer.ConvertStringToBinary
@@ -339,7 +344,7 @@ private string mailIdentity = "contoso.com";
 void MailAppSetup()
 {
     ProtectionPolicyManager.ProtectedContentRevoked += ProtectionPolicyManager_ProtectedContentRevoked;
-    // Code goes here to set up mailbox for &#39;mailIdentity&#39;.
+    // Code goes here to set up mailbox for 'mailIdentity'.
 }
 
 private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, ProtectedContentRevokedEventArgs e)
@@ -351,7 +356,7 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
         return;
     }
 
-    // Code goes here to delete any metadata associated with &#39;mailIdentity&#39;.
+    // Code goes here to delete any metadata associated with 'mailIdentity'.
 }
 ```
 
@@ -372,6 +377,6 @@ Windows.Security.EnterpriseData.ProtectionPolicyManager.RevokeContent("contoso.c
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

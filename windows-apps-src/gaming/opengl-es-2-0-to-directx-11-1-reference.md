@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Справочник по переносу с OpenGL ES 2.0 на Direct3D 11
 description: Используйте эти справочные разделы для поиска соответствий API и коротких примеров кода при переносе из OpenGL ES 2.0 в Direct3D 11.
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
@@ -18,14 +19,14 @@ ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Тема</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[GLSL-to-HLSL reference](glsl-to-hlsl-reference.md)</p></td>
-<td align="left"><p>Вы переносите свой код с GLSL на HLSL, когда [port your graphics architecture from OpenGL ES 2.0 to Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md) при создании игры для универсальной платформы Windows (UWP).</p></td>
+<td align="left"><p>[Справочные материалы по переносу с GLSL на HLSL](glsl-to-hlsl-reference.md)</p></td>
+<td align="left"><p>Вы переносите код с GLSL на HLSL, когда [портируете графическую архитектуру с OpenGL ES 2.0 на Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md), чтобы создавать игры для универсальной платформы Windows (UWP).</p></td>
 </tr>
 </tbody>
 </table>
@@ -41,6 +42,6 @@ ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

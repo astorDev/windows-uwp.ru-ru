@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Использование RichTextBlock с элементами RichTextBlockOverflow позволяет создавать сложные текстовые макеты.
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
-label: Блок форматированного текста
+label: Rich text block
 template: detail.hbs
 ---
 # Блок форматированного текста
@@ -126,7 +127,7 @@ RichTextBlock поддерживает следующие функции.
 
 См. руководство по типографии и шрифтам.
 
-\[Эта статья содержит сведения, относящиеся к приложениям универсальной платформы Windows (UWP) и Windows 10. Для получения инструкций по Windows 8.1, скачайте [рекомендации для Windows 8.1 в формате PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+
 
 ## Связанные разделы
 
@@ -146,6 +147,6 @@ RichTextBlock поддерживает следующие функции.
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

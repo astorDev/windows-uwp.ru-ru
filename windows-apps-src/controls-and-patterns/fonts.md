@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: Следуйте данному руководству при выборе шрифтов и указании их размеров и цветов.
 title: Шрифты
 ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
@@ -7,10 +8,6 @@ template: detail.hbs
 ---
 
 # Рекомендации по шрифтам
-
-
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 **Важные API**
 
@@ -269,13 +266,14 @@ template: detail.hbs
 
  
 
-## <span id="related_topics"></span>Связанные разделы
-
+## <span id="related_topics"></span>Ссылки по теме
 
 **Проектировщикам**
 * [Метка (или блок текста)](labels.md)
-* [Руководство по значкам Segoe UI Symbol](segoe-ui-symbol-font.md)
-**Разработчикам (XAML)**
+* [Значки символов Segoe UI](segoe-ui-symbol-font.md)
+            
+          
+            **Для разработчиков (XAML)**
 * [Ресурсы темы XAML](https://msdn.microsoft.com/library/windows/apps/mt187274)
 * [Создание макета приложения](https://msdn.microsoft.com/library/windows/apps/hh872191)
 * [Руководство по значкам Segoe UI Symbol](segoe-ui-symbol-font.md)
@@ -294,6 +292,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

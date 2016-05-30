@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Выбор языка программирования
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: Выбор языка программирования
@@ -22,7 +23,7 @@ description: Выбор языка программирования
 -   [Создание первого приложения Магазина Windows Phone на C# или Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=397877)
 -   [WinJS в Windows Phone 8.1](http://go.microsoft.com/fwlink/p/?LinkID=397879)
 
-**Примечание.**  Для приложений, использующих трехмерную графику: стандарты OpenGL и OpenGL ES, по умолчанию не являются доступными для приложений UWP. Если вы не желаете переписывать код OpenGL ES в Microsoft DirectX, возможно, вам будет интересно узнать о проекте **Angle**. Angle — это текущий проект, предназначенный для преобразования OpenGL в DirectX путем перевода вызовов API OpenGL в вызовы API DirectX. Подробнее см. в следующих разделах:
+**Примечание.** Для приложений, использующих трехмерную графику: стандарты OpenGL и OpenGL ES, по умолчанию не являются доступными для приложений UWP. Если вы не желаете переписывать код OpenGL ES в Microsoft DirectX, возможно, вам будет интересно узнать о проекте **Angle**. Angle — это текущий проект, предназначенный для преобразования OpenGL в DirectX путем перевода вызовов API OpenGL в вызовы API DirectX. Подробнее см. в следующих разделах:
 -   [Angle](https://code.google.com/p/angleproject/)
 -   [Создание первого приложения Магазина Windows с поддержкой DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
 -   [Образцы приложений Магазина Windows, использующих DirectX](http://go.microsoft.com/fwlink/p/?LinkId=263603)
@@ -139,6 +140,6 @@ C# — это простой язык для выбора. Он содержит
 [Приступая к работе: введение в Visual Studio](getting-started-getting-around-in-visual-studio.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

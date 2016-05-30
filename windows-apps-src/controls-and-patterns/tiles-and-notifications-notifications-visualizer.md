@@ -1,20 +1,21 @@
 ---
-description: Визуализатор уведомлений — это новое приложение UWP в Магазине, которое помогает разработчикам создавать адаптивные живые плитки для Windows 10.
+author: mijacobs
+Description: Визуализатор уведомлений — это новое приложение универсальной платформы Windows (UWP) в Магазине, которое помогает разработчикам создавать адаптивные живые плитки для Windows 10.
 title: Визуализатор уведомлений
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
-label: подлежит уточнению
+label: TBD
 template: detail.hbs
 ---
 
 # Визуализатор уведомлений
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 Визуализатор уведомлений — это новое приложение универсальной платформы Windows (UWP) в [Магазине](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1), которое помогает разработчикам создавать адаптивные живые плитки для Windows 10.
 
-## <span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>Обзор
+## <span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>Описание
 
 
 Визуализатор уведомлений позволяет быстро просматривать плитки при их изменении, как представление редактора и конструирования XAML в Visual Studio. Приложение также проверяет полезные данные плиток на наличие ошибок.
@@ -63,6 +64,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

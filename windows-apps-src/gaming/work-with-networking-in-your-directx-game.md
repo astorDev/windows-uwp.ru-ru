@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Поддержка сети в играх
 description: Узнайте, как разрабатывать и включать компоненты для работы в сети в игру DirectX.
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
@@ -7,7 +8,7 @@ ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 # Поддержка сети в играх
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Узнайте, как разрабатывать и включать компоненты для работы в сети в игру DirectX.
 
@@ -386,6 +387,6 @@ using namespace Windows::Web::Http;
 * [Образец StreamSocket](http://go.microsoft.com/fwlink/p/?linkid=243037)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

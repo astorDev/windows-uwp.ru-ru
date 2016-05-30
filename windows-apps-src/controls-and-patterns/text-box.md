@@ -1,6 +1,7 @@
 ---
+author: Jwmsft
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-label: Текстовое поле
+label: Text box
 template: detail.hbs
 ---
 # Текстовое поле
@@ -89,7 +90,8 @@ IsEnabled
 - Чтобы позволить текстовому полю разрешать и отображать символы новой строки или возврата, установите для свойства [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) значение **true**.
 - Чтобы включить обтекание текстом, установите для свойства [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) значение **Wrap**. В результате будет включено обтекание текстом, когда он будет достигать края текстового поля, независимо от символов разделителя строки.
 
-> **Примечание**. Элементы TextBox и RichEditBox не поддерживают значение **WrapWholeWords** для своих свойств TextWrapping. Если попытаться использовать WrapWholeWords в качестве значения для параметр TextBox.TextWrapping или RichEditBox.TextWrapping, отобразится исключение относительно недействительного аргумента.
+> **Примечание.**
+            &nbsp;&nbsp;Элементы TextBox и RichEditBox не поддерживают значение **WrapWholeWords** для своих свойств TextWrapping. Если попытаться использовать WrapWholeWords в качестве значения для параметр TextBox.TextWrapping или RichEditBox.TextWrapping, отобразится исключение относительно недействительного аргумента.
 
 Многострочное текстовое поле будет по-прежнему увеличиваться по вертикали по мере ввода текста, если он не будет ограничен своим свойством [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) или [MaxHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) или родительским контейнером. Необходимо убедиться, что многострочечное текстовое поле не увеличивается за пределы своей видимой зоны, и ограничить его увеличение, если оно выходит за пределы. Мы рекомендуем всегда указывать надлежащую высоту для многострочечного текстового поля и не позволять ему увеличиваться в высоту во время ввода пользователем. 
 
@@ -207,7 +209,8 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 Например, если текстовое поле используется только для ввода 4-значного PIN-кода, установите для свойства [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) значение **Number**. Это сообщает системе, что нужно отобразить раскладку цифровой клавиатуры, благодаря чему пользователю проще вводить PIN-код.
 
-> **Внимание!**&nbsp;&nbsp;Тип вводимых данных не вызывает выполнение проверки ввода, а также не препятствует пользователю вводить любые данные через аппаратную клавиатуру или другое устройство ввода. При необходимости вы по-прежнему несете ответственность за проверку вводимых данных в коде.
+> **Внимание!**
+            &nbsp;&nbsp;Тип вводимых данных не вызывает выполнение проверки ввода, а также не препятствует пользователю вводить любые данные через аппаратную клавиатуру или другое устройство ввода. При необходимости вы по-прежнему несете ответственность за проверку вводимых данных в коде.
 
 Другие свойства, влияющие на сенсорную клавиатуру: [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx), [IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx) и [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx). (IsSpellCheckEnabled также влияет на элемент TextBox при использовании аппаратной клавиатуры.) 
 
@@ -256,9 +259,9 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 -   Не используйте поле для многострочного текста там, где требуется ввести всего одну строку.
 -   Не используйте поле с форматом там, где достаточно элемента управления обычного текста.
 
-\[Эта статья содержит сведения, относящиеся к приложениям универсальной платформы Windows (UWP) и Windows 10. Для получения инструкций по Windows 8.1, скачайте [рекомендации для Windows 8.1 в формате PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Связанные статьи
+
+## Статьи по теме
 
 [Элементы управления текстом](text-controls.md)
 
@@ -276,6 +279,6 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

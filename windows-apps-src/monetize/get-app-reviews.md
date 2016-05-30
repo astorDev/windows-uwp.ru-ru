@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: Используйте этот метод в API аналитики Магазина Windows для получения отзывов о приложении в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение отзывов о приложении
@@ -37,7 +38,7 @@ title: Получение отзывов о приложении
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Обязательный параметр. Маркер доступа Azure AD в форме **Bearer** &lt;*token*&gt; |
+| Authorization | строковый | Обязательное. 1Маркер доступа Azure AD в форме**Bearer**&lt;*token*&gt;. |
 
  
 
@@ -55,14 +56,14 @@ title: Получение отзывов о приложении
 <th align="left">Параметр</th>
 <th align="left">Тип</th>
 <th align="left">Описание</th>
-<th align="left">Обязательный параметр</th>
+<th align="left">Обязательное</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">string</td>
-<td align="left">Код продукта приложения, для которого требуется получить данные об отзывах. Код продукта внедрен в ссылку на страницу приложения. Эта ссылка находится на странице [App identity page](https://msdn.microsoft.com/library/windows/apps/mt148561) информационной панели Центра разработки. Пример кода продукта: 9WZDNCRFJ3Q8</td>
+<td align="left">Код продукта приложения, для которого требуется получить данные об отзывах. Код продукта внедрен в ссылку на страницу приложения. Эта ссылка находится на странице [Страница идентификации приложения](https://msdn.microsoft.com/library/windows/apps/mt148561) информационной панели Центра разработки. Пример кода продукта: 9WZDNCRFJ3Q8</td>
 <td align="left">Да</td>
 </tr>
 <tr class="even">
@@ -92,12 +93,12 @@ title: Получение отзывов о приложении
 <tr class="even">
 <td align="left">filter</td>
 <td align="left">string</td>
-<td align="left">Один или несколько операторов для фильтрации строк в ответе. Дополнительные сведения см. далее в разделе [filter fields](#filter-fields)</td>
+<td align="left">Один или несколько операторов для фильтрации строк в ответе. Дополнительные сведения см. далее в разделе [фильтрация полей](#filter-fields)</td>
 <td align="left">Нет</td>
 </tr>
 <tr class="odd">
 <td align="left">orderby</td>
-<td align="left">string</td>
+<td align="left">строковый</td>
 <td align="left">Оператор, который определяет порядок полученных значений данных для каждой оценки. Используется следующий синтаксис: <em>orderby=field [order],field [order],...</em>. Параметр <em>field</em> может быть одной из следующих строк:
 <ul>
 <li><strong>date,</strong></li>
@@ -218,7 +219,7 @@ title: Получение отзывов о приложении
 <tr class="even">
 <td align="left">deviceScreenResolution</td>
 <td align="left">eq, ne</td>
-<td align="left">Разрешение экрана устройства в формате «<em>ширина</em> x <em>высота</em>»</td>
+<td align="left">Разрешение экрана устройства в формате &quot;<em>ширина</em> x <em>высота</em>&quot;.</td>
 </tr>
 <tr class="odd">
 <td align="left">isTouchEnabled</td>
@@ -284,7 +285,7 @@ title: Получение отзывов о приложении
 
 Ниже приведено несколько примеров запросов для получения данных об отзывах. Замените значение *applicationId* кодом продукта для вашего приложения.
 
-```
+```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
@@ -382,6 +383,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

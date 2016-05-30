@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: Базовый компонент среды Windows на C++ и его вызов из JavaScript и C#
 description: В этом пошаговом руководстве описан процесс создания базового компонента среды выполнения Windows, являющегося библиотекой DLL, которую можно вызвать из JavaScript, C# или Visual Basic.
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
@@ -115,6 +116,6 @@ ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

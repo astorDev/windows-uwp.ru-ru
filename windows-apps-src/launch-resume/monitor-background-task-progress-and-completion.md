@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Отслеживание хода выполнения и завершения фоновых задач
 description: Узнайте, как ваше приложение распознает события выполнения и завершения, сообщаемые фоновой задачей.
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
@@ -45,8 +46,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
     Например, [образец фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) обновляет пользовательский интерфейс.
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > [!div class="tabbedCodeSnippets"] ```cs
     >     private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
     >     {
     >         UpdateUI();
@@ -66,8 +66,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
     Используйте следующий объем памяти для метода OnProgress обработчика событий фоновой задачи:
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > [!div class="tabbedCodeSnippets"] ```cs
     >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
     >     {
     >         // TODO: Add code that deals with background task progress.
@@ -84,12 +83,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
     Например, в [образце фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) пользовательский интерфейс обновляется с помощью состояния выполнения, передаваемого через параметр *args*:
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
-    >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
-    >     {
-    >         var progress = "Progress: " + args.Progress + "%";
-    >         BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
+    > [!div class="tabbedCodeSnippets"]     ```cs     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)     {         var progress = "Progress: " + args.Progress + "%";         BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
     > 
     >         UpdateUI();
     >     }
@@ -111,23 +105,15 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
     Например, в [образце фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) для каждой регистрируемой фоновой задачи вызывается следующая функция:
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > [!div class="tabbedCodeSnippets"] ```cs
     >     private void AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration task)
     >     {
     >         task.Progress += new BackgroundTaskProgressEventHandler(OnProgress);
     >         task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
     >     }
     >     ```
-    >     ```cpp
-    >     void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task)
-    >     {
-    >         auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
-    >         {
-    >             auto progress = "Progress: " + args->Progress + "%";
-    >             BackgroundTaskSample::SampleBackgroundTaskProgress = progress;
-    >             UpdateUI();
-    >         };
+    >     ```cpp     void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task)     {         auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
+    >                   {             auto progress = "Progress: " + args->Progress + "%";             BackgroundTaskSample::SampleBackgroundTaskProgress = progress;             UpdateUI();         };
     > 
     >         task->Progress += ref new BackgroundTaskProgressEventHandler(progress);
     >         
@@ -145,18 +131,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
     Например, чтобы подключить обработчики событий при выполнении перехода на страницу SampleBackgroundTask, в [образце фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) используется следующий код:
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
-    >     protected override void OnNavigatedTo(NavigationEventArgs e)
-    >     {
-    >         foreach (var task in BackgroundTaskRegistration.AllTasks)
-    >         {
-    >             if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName)
-    >             {
-    >                 AttachProgressAndCompletedHandlers(task.Value);
-    >                 BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true);
-    >             }
-    >         }
+    > [!div class="tabbedCodeSnippets"]     ```cs     protected override void OnNavigatedTo(NavigationEventArgs e)     {         foreach (var task in BackgroundTaskRegistration.AllTasks)         {             if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName)             {                 AttachProgressAndCompletedHandlers(task.Value);                 BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true);             }         }
     > 
     >         UpdateUI();
     >     }
@@ -219,6 +194,6 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

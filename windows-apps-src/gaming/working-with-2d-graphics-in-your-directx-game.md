@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Двумерная графика для игр DirectX
 description: В этом разделе обсуждаются двумерная растровая графика и эффекты, а также способы их использования в вашей игре.
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
@@ -52,7 +53,7 @@ ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 -   [Краткое руководство для работы в Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd535473)
 -   [Общие сведения о взаимодействии Direct2D и Direct3D](https://msdn.microsoft.com/library/windows/desktop/dd370966)
 
-> **Примечание**  
+> **Примечание.**  
 Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
@@ -66,6 +67,6 @@ ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Обработка приостановки работы приложения
 description: Узнайте, как сохранить важные данные приложения, когда система приостанавливает его работу.
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
@@ -7,7 +8,7 @@ ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 # Обработка приостановки работы приложения
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -58,7 +59,7 @@ MainPage::MainPage()
 {
    InitializeComponent();
    Application::Current->Suspending += 
-       ref new SuspendingEventHandler(this, &amp;MainPage::App_Suspending);
+       ref new SuspendingEventHandler(this, &MainPage::App_Suspending);
 }
 ```
 
@@ -129,6 +130,6 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

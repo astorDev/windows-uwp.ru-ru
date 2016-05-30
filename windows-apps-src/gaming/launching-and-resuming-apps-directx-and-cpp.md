@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Запуск и возобновление работы приложений (DirectX и C++)
 description: Узнайте о запуске, приостановке и возобновлении работы приложений универсальной платформы Windows (UWP), использующих DirectX.
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
@@ -27,6 +28,6 @@ ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

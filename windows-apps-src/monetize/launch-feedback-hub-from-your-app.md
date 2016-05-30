@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 Description: Вы можете подтолкнуть пользователей к тому, чтобы оставить отзыв, запустив Центр отзывов из вашего приложения.
 title: Запуск Центра отзывов из приложения
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
@@ -6,7 +7,9 @@ ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 
 # Запуск Центра отзывов из приложения
 
-Вы можете подтолкнуть пользователей к тому, чтобы оставить отзыв, добавив элемент управления (например, кнопку) в приложение универсальной платофрмы Windows (UWP), который открывает Центр отзывов. Центр отзывов — это предустановленное приложение, в котором собираются отзывы о Windows и установленных приложениях. Весь отзывы пользователей о вашем приложении, отправленные в Центре отзывов, собираются и отражаются в [отчете об отзывах](../publish/feedback-report.md) на информационной панели Центра разработки для Windows, чтобы вы могли просматривать проблемы, предложения и голоса «за» те или иные функции, которые отправили пользователи, в одном отчете.
+Вы можете подтолкнуть пользователей к тому, чтобы оставить отзыв, добавив элемент управления (например, кнопку) в приложение универсальной платофрмы Windows (UWP), который открывает Центр отзывов. Центр отзывов — это предустановленное приложение, в котором собираются отзывы о Windows и установленных приложениях. Весь отзывы пользователей о вашем приложении, отправленные в Центре отзывов, собираются и отражаются в [отчете об отзывах](../publish/feedback-report.md) на информационной панели Центра разработки для Windows, чтобы вы могли просматривать проблемы, предложения и голоса "за" те или иные функции, которые отправили пользователи, в одном отчете.
+
+>**Примечание**. Отчет **Отзывы** в настоящее время доступен только для учетных записей разработчиков, которые участвуют в [программе предварительной оценки Центра разработки](../publish/dev-center-insider-program.md). 
 
 Чтобы запустить Центр отзывов из вашего приложения, используйте API-интерфейс в [пакете SDK Microsoft Store Engagement and Monetization](http://aka.ms/store-em-sdk). Мы рекомендуем применять этот API для запуска Центра отзывов из элемента интерфейса в приложении, который соответствует нашим рекомендациями по оформлению.
 
@@ -29,18 +32,18 @@ ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
     > **Примечание.** Центр отзывов доступен только на устройствах под управлением Windows 10 версии 10.0.14271 или более поздней версии. Мы рекомендуем скрыть элемент управления отзывами по умолчанию и показывать его в коде инициализации, только если Центр отзывов доступен на устройстве пользователя. Далее показано, как это сделать.
 
   В следующем примере кода демонстрируется XAML-определение [кнопки](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx), которая настроена, как показано выше.
-  ```
+  ```xml
   <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
   ```
 7. В коде инициализации страницы приложения, на которой размещен элемент управления отзывами, используйте свойство [IsSupported](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.issupported.aspx) класса [Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx), чтобы определить, доступен ли Центр отзывов на устройстве пользователя. Если это свойство возвращает значение **true**, сделайте элемент управления видимым. В следующем примере кода показано, как это сделать для [кнопки](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
-```
+```CSharp
 if (Microsoft.Services.Store.Engagement.Feedback.IsSupported)
 {
         this.feedbackButton.Visibility = Visibility.Visible;
 }
 ```
-8. В обработчике событий, который запускается, когда пользователь щелкает элемент управления, вызовите статический метод [LaunchFeedbackAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.launchfeedbackasync.aspx) класса [Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx), чтобы открыть приложение Центр отзывов. У этого метода есть две перегруженные версии: одна без параметров и другая версия, которая принимает словарь пар «ключ-значение», содержащий метаданные, которые нужно связать с отзывом. В следующем примере показано, как запустить Центр отзывов в обработчике событий [Click](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) элемента управления [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
-```
+8. В обработчике событий, который запускается, когда пользователь щелкает элемент управления, вызовите статический метод [LaunchFeedbackAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.launchfeedbackasync.aspx) класса [Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx), чтобы открыть приложение Центр отзывов. У этого метода есть две перегруженные версии: одна без параметров и другая версия, которая принимает словарь пар «ключ-значение», содержащий метаданные, которые нужно связать с отзывом. В следующем примере показано, как запустить Центр отзывов в обработчике событий [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) элемента управления [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
+```CSharp
 private async void feedbackButton_Click(object sender, RoutedEventArgs e)
 {
         await Microsoft.Services.Store.Engagement.Feedback.LaunchFeedbackAsync();
@@ -51,7 +54,7 @@ private async void feedbackButton_Click(object sender, RoutedEventArgs e)
 
 Для запуска Центра отзывов мы рекомендуем добавить в приложение элемент пользовательского интерфейса (например, кнопку), который отображает следующий стандартный значок отзыва шрифта Segoe MDL2 Assets и символ с кодом E939.
 
-![]Значок отзыва](images/feedback_icon.png)
+![]Значок отзыва](images/feedback_icon.PNG)
 
 Мы также рекомендуем использовать один или несколько следующих вариантов размещения для привязки Центра отзывов в вашем приложении.
 * **Непосредственно на панели приложения**. В зависимости от реализации вы можете использовать только значок или можете добавить текст (как показано ниже).
@@ -70,6 +73,6 @@ private async void feedbackButton_Click(object sender, RoutedEventArgs e)
 * [Отчет об отзывах](../publish/feedback-report.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

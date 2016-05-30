@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Обработка предварительного запуска приложения
 description: Обработка предварительного запуска приложения путем переопределения метода OnLaunched.
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
@@ -7,7 +8,7 @@ ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 # Обработка предварительного запуска приложения
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -58,7 +59,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
             // TODO: This is not a prelaunch activation. Perform operations which
             // assume that the user explicitly launched the app such as updating
             // the online presence of the user on a social network, updating a 
-            // what&#39;s new feed, etc.
+            // what's new feed, etc.
         }
 
         // Place the frame in the current Window
@@ -67,7 +68,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
     if (rootFrame.Content == null)
     {
-        // When the navigation stack isn&#39;t restored navigate to the first page,
+        // When the navigation stack isn't restored navigate to the first page,
         // configuring the new page by passing required information as a navigation parameter
         rootFrame.Navigate(typeof(MainPage), e.Arguments);
     }
@@ -76,7 +77,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-**Совет.**  Если вы хотите явно отказаться от предварительного запуска, установите флажок [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740). Если он установлен, верните значение OnLaunched(), прежде чем выполнять какую-либо работу по созданию фрейма или активированию окна.
+**Подсказка.** Если вы хотите явно отказаться от предварительного запуска, установите флажок [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740). Если он установлен, верните значение OnLaunched(), прежде чем выполнять какую-либо работу по созданию фрейма или активированию окна.
 
  
 
@@ -98,7 +99,7 @@ public sealed partial class MainPage : Page
     void WindowVisibilityChangedEventHandler(System.Object sender, Windows.UI.Core.VisibilityChangedEventArgs e)
     {
         // Perform operations that should take place when the application becomes visible rather than 
-        // when it is prelaunched, such as building a what&#39;s new feed 
+        // when it is prelaunched, such as building a what's new feed 
     }
 }
 ```
@@ -114,7 +115,7 @@ public sealed partial class MainPage : Page
     -   Пример влияния производительности: можно ждать, пока пользователь не переключится на приложение, чтобы восстановить текущие сведения о погоде вместо того, чтобы загружать их при предварительном запуске приложения, а затем загружать их снова, когда приложение станет видимым, чтобы убедиться, что отображаются последние сведения.
 -   Если приложение при запуске очищает живую плитку, отложите это действие до события смены видимости.
 -   Телеметрия вашего приложения должна различать обычную активацию плиток и активацию при предварительном запуске, чтобы можно было определить сценарий, в котором происходит проблема.
--   При наличии обновления 1 для Microsoft Visual Studio 2015 и версии 1511 Windows 10 вы можете имитировать предварительный запуск своего приложения в Visual Studio 2015, последовательно выбрав элементы **Отладка** > **Другие цели отладки** > **Отладка предварительного запуска универсального приложения для Windows**.
+-   При наличии обновления 1 для Microsoft Visual Studio 2015 и версии 1511 Windows 10 вы можете имитировать предварительный запуск своего приложения в Visual Studio 2015, последовательно выбрав элементы **Отладка**&gt;**Другие цели отладки**&gt;**Отладка предварительного запуска универсального приложения для Windows**.
 
 ## Связанные разделы
 
@@ -128,6 +129,6 @@ public sealed partial class MainPage : Page
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

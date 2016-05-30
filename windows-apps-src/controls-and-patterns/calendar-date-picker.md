@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: Управляющий элемент выбора даты в календаре — это раскрывающийся элемент управления, оптимизированный для выбора отдельной даты в представлении календаря, когда важна контекстная информация, например день недели или заполненность календаря.
 title: Управляющий элемент выбора даты в календаре
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
@@ -61,9 +62,10 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 - Если значение **Date** меньше значения **MinDate**, будет использоваться **MinDate**.
 - Если значение **Date** больше значения **MaxDate**, будет использоваться **MaxDate**.
 
-Можно обработать событие [**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx), так чтобы получать уведомление при изменении значения Date.
+Можно обработать событие [**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx), чтобы получать уведомление при изменении значения Date.
 
-> **Примечание.**&nbsp;&nbsp;Важные сведения о значениях даты см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи "Элементы управления датой и временем".
+> **Примечание.**
+            &nbsp;&nbsp;Важные сведения о значениях даты см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи «Элементы управления датой и временем».
 
 ### Настройка текста заголовка и замещающего текста
 
@@ -84,6 +86,6 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 - [Управляющий элемент выбора времени](time-picker.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

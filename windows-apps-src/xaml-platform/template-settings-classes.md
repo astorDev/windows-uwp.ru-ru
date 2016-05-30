@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Классы параметров шаблона
 title: Классы параметров шаблона
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
@@ -18,14 +19,30 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 Есть несколько классов **TemplateSettings**. Все они находятся в пространстве имен [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818). Вот список классов и ссылка на свойства **TemplateSettings** соответствующего элемента управления. Это свойство **TemplateSettings** определяет способ получения доступа к значениям **TemplateSettings** для элемента управления и может установить привязки шаблона к его свойствам:
 
--   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752): значение [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
--   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499): значение [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
--   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948): значение [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
--   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856): значение [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
--   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248): значение [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
--   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721): значение [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
--   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804): значение [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
--   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813): значение [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
+-   [
+              **ComboBoxTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/br227752): значение [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
+-   [
+              **GridViewItemTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/hh738499): значение [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
+-   [
+              **ListViewItemTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/hh701948): значение [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
+-   [
+              **ProgressBarTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/br227856): значение [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
+-   [
+              **ProgressRingTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/hh702248): значение [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
+-   [
+              **SettingsFlyoutTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/dn298721): значение [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
+-   [
+              **ToggleSwitchTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/br209804): значение [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
+-   [
+              **ToolTipTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/br209813): значение [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
 
 Свойства **TemplateSettings** предназначены для использования в XAML, а не в коде. Это составляющие свойства только для чтения свойства **TemplateSettings** только для чтения родительского элемента управления. В случае сложного сценария пользовательского элемента управления, в котором вы создаете новый класс на основе [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) и таким образом можете повлиять на логику управления, рекомендуется определить пользовательское свойство **TemplateSettings** для элемента управления, чтобы передавать информацию, которая может быть полезна всем, кто создает шаблон элемента управления повторно. Так как это свойство — значение только для чтения, определите новый класс **TemplateSettings**, связанный с элементом управления, который содержит свойства только для чтения для каждого из информационных элементов, необходимых для измерений шаблона, размещения анимации и т.д., и предоставьте абонентам экземпляр среды выполнения этого класса, инициализированного с помощью логики управления. Классы **TemplateSettings** являются производными от [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), чтобы свойства могли использовать систему свойств зависимостей для обратных вызовов при изменении свойств. Но идентификаторы свойств зависимостей для свойств не отображаются как общедоступный API, так как свойства **TemplateSettings** должны быть доступны абонентам только для чтения.
 
@@ -33,7 +50,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 Вот пример запуска шаблонов элементов управления XAML по умолчанию. Это пример шаблона [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) по умолчанию:
 
-```xaml
+```xml
 <Ellipse
     x:Name="E1"
     Style="{StaticResource ProgressRingEllipseStyle}"
@@ -48,7 +65,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 Полный код XAML для шаблона [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) состоит из сотен строк, так что это всего лишь крошечный отрывок. Этот код XAML определяет часть элемента управления, одну из 6 элементов [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343), которая изображает анимацию вращения для неопределенного хода выполнения. Вам как разработчику могут не нравится круги, и вы можете использовать другой графический примитив или другую базовую фигуру для выполнения анимации. Например, вы можете создать компонент **ProgressRing**, который вместо этого использует набор элементов [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), размещенных в квадрате. В этом случае каждый отдельный компонент **Rectangle** нового шаблона может выглядеть следующим образом:
 
-```xaml
+```xml
 <Rectangle
     x:Name="R1"
     Width="{Binding RelativeSource={RelativeSource TemplatedParent}, 
@@ -64,7 +81,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 Вот другой пример использования в шаблонах элементов управления XAML по умолчанию, в котором показан один из наборов свойств со значениями анимации **From** и **To**. Это из шаблона [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) по умолчанию:
 
-```xaml
+```xml
 <VisualStateGroup x:Name="DropDownStates">
     <VisualState x:Name="Opened">
         <Storyboard>
@@ -87,7 +104,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 Опять же в шаблоне много кодов XAML, поэтому показан только отрывок. И это только одно из нескольких состояний и анимаций тем, в которых используются одинаковые свойства [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752). Для [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) использование значений **ComboBoxTemplateSettings** через привязки обеспечивает то, что соответствующие анимации в шаблоне будут остановлены и запущены в позициях, основой которых являются общие значения, результатом чего будет плавный переход.
 
-**Примечание**  
+**Примечание.**  
 При использовании значений **TemplateSettings** как части шаблона элемента управления убедитесь, что задаете свойства, которые соответствуют типу значения. В противном случае вам придется создать преобразователь значений для привязки, чтобы тип целевого объекта привязки можно было преобразовать из другого исходного типа значения **TemplateSettings**. Дополнительные сведения см. в разделе [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
 
 ## Ссылки по теме
@@ -96,6 +113,6 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

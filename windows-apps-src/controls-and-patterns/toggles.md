@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Элемент управления Toggle Switch имитирует физический переключатель, позволяющий пользователям включать и выключать что-либо.
 title: Руководство по элементам управления Toggle Switch
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
-label: Тумблеры
+label: Toggle switches
 template: detail.hbs
 ---
 # Тумблеры
@@ -156,6 +157,6 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 - [**ToggleSwitch class**](https://msdn.microsoft.com/library/windows/apps/br209712)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

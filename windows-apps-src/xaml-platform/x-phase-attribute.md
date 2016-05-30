@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 title: Атрибут xPhase
 description: Использование xPhase с расширением разметки xBind позволяет выполнять постепенную отрисовку элементов ListView и GridView, улучшая качество процесса сдвига.
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
@@ -6,7 +7,7 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 
 # Атрибут x:Phase
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Использование **x:Phase** с [расширением разметки {x:Bind}](x-bind-markup-extension.md) позволяет выполнять постепенную отрисовку элементов [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705), улучшая тем самым качество процесса сдвига. **x:Phase** дает возможность декларативным способом добиться того же эффекта, что и при ручном управлении отрисовкой элементов списка с помощью события [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914). См. также раздел [Добавочное обновление элементов ListView и GridView](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally).
 
@@ -32,7 +33,7 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 
 ## Пример.
 
-```xaml
+```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
     <Grid Width="200" Height="80">
         <Grid.ColumnDefinitions>
@@ -75,6 +76,6 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

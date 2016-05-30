@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Предоставьте прямые ссылки из службы фонового приложения в Кортане, чтобы запустить приложение на переднем плане в определенном состоянии или контексте.
 title: Прямая ссылка на фоновое приложение от Кортаны
 ms.assetid: BE811A87-8821-476A-90E4-2E20D37E4043
@@ -7,9 +8,6 @@ template: detail.hbs
 ---
 
 # Прямая ссылка на фоновое приложение от Кортаны
-
-
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -24,9 +22,9 @@ template: detail.hbs
 
 Прямая ссылка отображается по умолчанию на экране завершения **Кортаны**, как показано здесь («Перейти в AdventureWorks»), но можно отобразить прямые ссылки на других экранах. 
 
-![Экран завершения фонового приложения в Кортане](images/cortana-completion-screen-upcomingtrip-small.png)
+![экран завершения фонового приложения в Кортане](images/cortana-completion-screen-upcomingtrip-small.png)
 
-**Необходимые условия  **
+**Необходимые условия:  **
 
 В этом разделе используются сведения из раздела [Взаимодействие с фоновым приложением в Кортане](interact-with-a-background-app-in-cortana.md). Мы продолжим использование приложения для планирования поездок и управления ими под названием **Adventure Works**, чтобы продемонстрировать различные функции **Кортаны**.
 
@@ -35,9 +33,9 @@ template: detail.hbs
 -   [Создание первого приложения](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   Дополнительную информацию о событиях см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
-**Рекомендации по взаимодействию с пользователем: **
+**Рекомендации по взаимодействию с пользователем.  **
 
-Сведения об интеграции приложения с **Кортаной** см. в [рекомендациях по проектированию Кортаны](https://msdn.microsoft.com/library/windows/apps/dn974233), а подсказки по проектированию удобного и привлекательного приложения с поддержкой распознавания речи — в [рекомендациях по проектированию голосовых функций](https://msdn.microsoft.com/library/windows/apps/dn596121).
+Сведения об интеграции приложения с **Кортаной** см. в [рекомендациях по проектированию Кортаны](https://msdn.microsoft.com/library/windows/apps/dn974233), а полезные советы по проектированию удобного и привлекательного приложения с поддержкой распознавания речи — в [рекомендациях по проектированию голосовых функций](https://msdn.microsoft.com/library/windows/apps/dn596121).
 
 ## <span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>Обзор
 
@@ -50,7 +48,7 @@ template: detail.hbs
 
 Здесь мы рассмотрим прямые ссылки.
 
-Создание прямых ссылок удобно, когда Кортана и ваша служба приложения являются шлюзом к полному приложению (вместо требования от пользователя запустить ваше приложение через меню «Пуск»). Также оно подходит для предоставления доступа к более подробным сведениям и функциям в рамках приложения, которое невозможно с помощью Кортаны. Создание прямых ссылок — это еще один способ повысить удобство использования и упростить доступ к приложению.
+Создание прямых ссылок удобно, когда Кортана и ваша служба приложения являются шлюзом к полному приложению (вместо требования от пользователя запустить ваше приложение через меню «Пуск»). Также оно подходит для предоставления доступа к более подробным сведениям и функциям в рамках приложения, которое невозможно с помощью Кортаны. Создание прямых ссылок — это еще один способ повысить удобство использования и упростить доступ к приложению.
 
 Есть три способа предоставления прямых ссылок:
 
@@ -61,17 +59,17 @@ template: detail.hbs
 ## <span id="Go_to__app__deep_link"></span><span id="go_to__app__deep_link"></span><span id="GO_TO__APP__DEEP_LINK"></span>Прямая ссылка «Перейти в &lt;приложение&gt;»
 
 
-**Кортана** отображает прямую ссылку «Перейти к &lt;приложению&gt;» непосредственно под карточкой содержимого на большинстве экранов.
+**Кортана** отображает прямую ссылку «Перейти в &lt;приложение&gt;» непосредственно под карточкой содержимого на большинстве экранов.
 
-![Экран завершения фонового приложения в Кортане](images/cortana-completion-screen.png)
+![экран завершения фонового приложения в Кортане](images/cortana-completion-screen.png)
 
 Можно указать аргумент запуска для этой ссылки для открытия приложения с аналогичным службе приложения контекстом. Если не указать аргумент запуска, приложение запускается на главном экране.
 
 В этом примере из AdventureWorksVoiceCommandService.cs в **AdventureWorks** мы передаем указанный пункт назначения методу SendCompletionMessageForDestination, который извлекает все подходящие поездки и предоставляет прямую ссылку на приложение.
 
-Сначала мы создаем сообщение  [**VoiceCommandUserMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```), которое произносит **Кортана** и которое отображается на холсте **Кортаны**. Затем создается объект списка [**VoiceCommandContentTile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) для отображения коллекции карточек результата на холсте. 
+Сначала мы создаем сообщение  [**VoiceCommandUserMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```), которое произносит **Кортана** и которое отображается на холсте **Кортаны**. Затем создается объект списка [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) для отображения коллекции карточек результата на холсте. 
 
-Затем эти два объекта передаются методу [CreateResponse](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) объекта [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) (```response```). Затем в качестве значения свойства [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) мы устанавливаем пункт назначения в голосовой команде.
+Затем эти два объекта передаются методу [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) объекта [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) (```response```). Затем в качестве значения свойства [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) мы устанавливаем пункт назначения в голосовой команде.
 
 Наконец, мы вызываем метод [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) объекта [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).
 
@@ -106,15 +104,15 @@ private async Task SendCompletionMessageForDestination(string destination)
 
 Можно добавлять прямые ссылки на карточки содержимого на различных экранах **Кортаны**.
 
-![Экран передачи фонового приложения в Кортане ](images/cortana-backgroundapp-progress-result.png)
+![экран передачи фонового приложения в Кортане ](images/cortana-backgroundapp-progress-result.png)
 
-Как и в случае ссылок «Перейти в &lt;приложение&gt;», можно предоставить аргумент запуска для открытия приложения с аналогичным службе приложения контекстом. Если не указать аргумент запуска, плитка содержимого не будет связана с вашим приложением.
+Аналогично ссылкам «Перейти в &lt;приложение&gt;», вы можете предоставить аргумент запуска для открытия приложения с похожим контекстом в виде службы приложения. Если не указать аргумент запуска, плитка содержимого не будет связана с вашим приложением.
 
 В этом примере из AdventureWorksVoiceCommandService.cs в **AdventureWorks** мы передаем указанный пункт назначения методу SendCompletionMessageForDestination, который извлекает все подходящие поездки и предоставляет приложению карточки содержимого с прямыми ссылками.
 
-Сначала мы создаем сообщение  [**VoiceCommandUserMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```), которое произносит **Кортана** и которое отображается на холсте **Кортаны**. Затем создается объект списка [**VoiceCommandContentTile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) для отображения коллекции карточек результата на холсте. 
+Сначала мы создаем сообщение  [**VoiceCommandUserMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```), которое произносит **Кортана** и которое отображается на холсте **Кортаны**. Затем создается объект списка [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) для отображения коллекции карточек результата на холсте. 
 
-Затем эти два объекта передаются методу [CreateResponse](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) объекта [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) (```response```). Затем в качестве значения свойства [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) мы устанавливаем пункт назначения в голосовой команде.
+Затем эти два объекта передаются методу [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) объекта [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) (```response```). Затем в качестве значения свойства [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) мы устанавливаем пункт назначения в голосовой команде.
 
 Наконец, мы вызываем метод [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) объекта [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).
 Здесь мы добавляем две плитки содержимого с разными значениями параметра [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) в список [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/dn974168), используемый в вызове [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) объекта [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).
@@ -238,7 +236,7 @@ await  VoiceCommandServiceConnection.RequestAppLaunchAsync(response);
 </Extensions>
 ```
 
-## <span id="Protocol_contract"></span><span id="protocol_contract"></span><span id="PROTOCOL_CONTRACT"></span>Контракт Protocol
+## <span id="Protocol_contract"></span><span id="protocol_contract"></span><span id="PROTOCOL_CONTRACT"></span>Контракт протокола
 
 
 Ваше приложение запускается на переднем плане с помощью активации универсального кода ресурса (URI) с использованием контракта [**Protocol**](https://msdn.microsoft.com/library/windows/apps/br224693). Приложение должно переопределять событие [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) и проверять **ActivationKind** контракта **Protocol**. Подробнее см. в разделе [Обработка активации URI](https://msdn.microsoft.com/library/windows/apps/mt228339).
@@ -290,6 +288,6 @@ if (args.Kind == ActivationKind.Protocol)
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,23 +1,22 @@
 ---
-Description: Преобразуйте росчерки пера в текст с помощью распознавания рукописного текста или в фигуры с помощью настраиваемого распознавания.
-title: Распознавание росчерков пера
+author: Karl-Bridge-Microsoft
+Description: Преобразуйте росчерки пера в текст с помощью распознавания рукописного ввода или в фигуры с помощью настраиваемого распознавания.
+title: Распознавание росчерков пера Windows Ink как текста
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
-label: Распознавание росчерков пера
+label: Recognize Windows Ink strokes as text
 template: detail.hbs
+keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition
 ---
 
-# Распознавание росчерков пера
+# Распознавание росчерков пера Windows Ink как текста
 
-
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+Преобразуйте росчерки пера в текст с помощью распознавания рукописного ввода или в фигуры с помощью настраиваемого распознавания.
 
 **Важные API**
 
 -   [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)
 -   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
-Преобразуйте росчерки пера в текст с помощью распознавания рукописного текста или в фигуры с помощью настраиваемого распознавания.
 
 Распознавание рукописного ввода встроено в платформу рукописного ввода Windows и поддерживает множество языковых стандартов и языков.
 
@@ -32,8 +31,7 @@ template: detail.hbs
 
 1.  Сначала мы настраиваем пользовательский интерфейс.
 
-    Пользовательский интерфейс включает кнопку "Распознать", [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) и область для отображения результатов распознавания.
-
+    Пользовательский интерфейс включает кнопку "Распознать", [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) и область для отображения результатов распознавания.    
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -68,7 +66,6 @@ template: detail.hbs
 2.  Затем мы задаем некоторые основные реакции на рукописный ввод.
 
     Элемент [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) настраивается интерпретировать данные, вводимые пером или мышью, как росчерки пера ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Росчерки пера выводятся на [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) с помощью указанных атрибутов [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050). Также объявляется прослушиватель для события нажатия кнопки "Распознать".
-
 ```    CSharp
 public MainPage()
     {
@@ -95,14 +92,12 @@ public MainPage()
 
     [
             **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) сохраняет все росчерки пера в объекте [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Росчерки отображаются через свойство [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) **InkPresenter** и извлекаются методом [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499).
-
 ```    CSharp
 // Get all strokes on the InkCanvas.
     IReadOnlyList<InkStroke> currentStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
 ```
 
     An [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) is created to manage the handwriting recognition process.
-
 ```    CSharp
 // Create a manager for the InkRecognizer object 
     // used in handwriting recognition.
@@ -113,7 +108,6 @@ public MainPage()
     [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/br208446) is called to retrieve a set of [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) objects.
 
     Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478).
-
 ```    CSharp
 // Recognize all ink strokes on the ink canvas.
     IReadOnlyList<InkRecognitionResult> recognitionResults = 
@@ -125,7 +119,6 @@ public MainPage()
     Each [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
 
     We iterate through each [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) and compile the list of candidates. The candidates are then displayed and the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) is cleared (which also clears the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)).
-
 ```    CSharp
 string str = "Recognition result\n";
     // Iterate through the recognition results.
@@ -146,7 +139,6 @@ string str = "Recognition result\n";
 ```
 
     Here's the click handler example, in full.
-
 ```    CSharp
 // Handle button click to initiate recognition.
     private async void Recognize_Click(object sender, RoutedEventArgs e)
@@ -254,12 +246,12 @@ string str = "Recognition result\n";
 
 Ваше приложение может запросить набор установленных модулей распознавания рукописного ввода и использовать один из них или позволить пользователю выбрать предпочитаемый язык.
 
-**Примечание.**  
-Пользователи могут просмотреть список установленных языков в меню "Параметры" -> "Время и язык". Установленные языки перечислены в разделе "Языки".
+**Примечание**  
+Пользователи могут просмотреть список установленных языков в меню "Параметры" -&gt; "Время и язык". Установленные языки перечислены в разделе "Языки".
 
 Вот как установить новые языковые пакеты и включить распознавание рукописного ввода для конкретного языка.
 
-1.  Перейдите в меню **Параметры > Время и язык > Язык и региональные стандарты**.
+1.  Перейдите в меню **Параметры &gt; Время и язык &gt; Язык и региональные стандарты**.
 2.  Выберите **Добавить язык**.
 3.  Выберите язык из списка, а затем — региональную версию. Язык теперь указан на странице **Язык и региональные стандарты**.
 4.  Щелкните язык и выберите **Параметры**.
@@ -274,7 +266,6 @@ string str = "Recognition result\n";
 1.  Сначала мы настраиваем пользовательский интерфейс.
 
     Пользовательский интерфейс включает кнопку "Распознать", поле со списком всех установленных распознавателей рукописного ввода, [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) и область для отображения результатов распознавания.
-
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -324,7 +315,6 @@ string str = "Recognition result\n";
     Мы вызываем функцию `InitializeRecognizerList`, чтобы заполнить поле со списком распознавателя списком установленных распознавателей рукописного ввода.
 
     Мы также объявляем прослушиватели для события нажатия кнопки "Распознать" и для события изменения выбора в поле со списком распознавателя.
-
 ```    CSharp
  public MainPage()
      {
@@ -357,7 +347,6 @@ string str = "Recognition result\n";
 3.  Мы заполняем поле со списком распознавателя списком установленных распознавателей рукописного ввода.
 
     Объект [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) создается для управления процессом распознавания рукописного ввода. Используйте этот объект, чтобы вызвать [**GetRecognizers**](https://msdn.microsoft.com/library/windows/apps/br208480) и извлечь список установленных распознавателей для заполнения поля со списком распознавателя.
-
 ```    CSharp
 // Populate the recognizer combo box with installed recognizers.
     private void InitializeRecognizerList()
@@ -379,7 +368,6 @@ string str = "Recognition result\n";
 4.  Обновите распознаватель рукописного ввода при изменении выбора в поле со списком распознавателя.
 
     Используйте [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479), чтобы вызвать [**SetDefaultRecognizer**](https://msdn.microsoft.com/library/windows/apps/hh920328) на основе распознавателя, выбранного в поле со списком распознавателя.
-
 ```    CSharp
 // Handle recognizer change.
     private void comboInstalledRecognizers_SelectionChanged(
@@ -394,7 +382,6 @@ string str = "Recognition result\n";
 
     [
             **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) сохраняет все росчерки пера в объекте [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Росчерки отображаются через свойство [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) **InkPresenter** и извлекаются методом [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499).
-
 ```    CSharp
 // Get all strokes on the InkCanvas.
     IReadOnlyList<InkStroke> currentStrokes = 
@@ -404,7 +391,6 @@ string str = "Recognition result\n";
     [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/br208446) is called to retrieve a set of [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) objects.
 
     Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478).
-
 ```    CSharp
 // Recognize all ink strokes on the ink canvas.
     IReadOnlyList<InkRecognitionResult> recognitionResults =
@@ -416,7 +402,6 @@ string str = "Recognition result\n";
     Each [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
 
     We iterate through each [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) and compile the list of candidates. The candidates are then displayed and the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) is cleared (which also clears the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)).
-
 ```    CSharp
 string str = "Recognition result\n";
     // Iterate through the recognition results.
@@ -438,7 +423,6 @@ string str = "Recognition result\n";
 ```
 
     Here's the click handler example, in full.
-
 ```    CSharp
 // Handle button click to initiate recognition.
     private async void Recognize_Click(object sender, RoutedEventArgs e)
@@ -508,8 +492,7 @@ string str = "Recognition result\n";
 
 1.  Как и в предыдущих примерах, элемент [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) настраивается интерпретировать данные, вводимые пером или мышью, как росчерки пера ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), а росчерки пера выводятся на [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) с помощью указанных атрибутов [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050).
 
-    Вместо кнопки для запуска распознавания, мы добавили прослушиватели для двух событий росчерка [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) ([**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024) и [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)) и настроили основной таймер ([**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250)) на секундный интервал [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256).
-
+    Вместо кнопки для запуска распознавания, мы добавили прослушиватели для двух событий росчерка [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) ([**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024) и [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)) и настроили основной таймер ([**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250)) на секундный интервал [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256).    
 ```    CSharp
 public MainPage()
     {
@@ -572,8 +555,7 @@ public MainPage()
     private void inkCanvas_StrokesCollected(InkPresenter sender, InkStrokesCollectedEventArgs args)
     {
         recoTimer.Start();
-    }
-    
+    }    
 ```
 
 2.  Здесь есть обработчики событий, которые мы добавили в первом шаге.
@@ -586,7 +568,6 @@ public MainPage()
 
     <span id="Tick"></span><span id="tick"></span><span id="TICK"></span>[**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256)  
     Функция распознавания вызывается через одну секунду отсутствия рукописного ввода.
-
 ```    CSharp
 // Handler for the timer tick event calls the recognition function.
     private void recoTimer_Tick(object sender, object e)
@@ -617,7 +598,6 @@ public MainPage()
 
     [
             **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) сохраняет все росчерки пера в объекте [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Росчерки отображаются через свойство [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) **InkPresenter** и извлекаются методом [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499).
-
 ```    CSharp
 // Get all strokes on the InkCanvas.
     IReadOnlyList<InkStroke> currentStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
@@ -626,7 +606,6 @@ public MainPage()
     [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/br208446) is called to retrieve a set of [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) objects.
 
     Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478).
-
 ```    CSharp
 // Recognize all ink strokes on the ink canvas.
     IReadOnlyList<InkRecognitionResult> recognitionResults =
@@ -638,7 +617,6 @@ public MainPage()
     Each [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
 
     We iterate through each [**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) and compile the list of candidates. The candidates are then displayed and the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) is cleared (which also clears the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)).
-
 ```    CSharp
 string str = "Recognition result\n";
     // Iterate through the recognition results.
@@ -659,7 +637,6 @@ string str = "Recognition result\n";
 ```
 
     Here's the recognition function, in full.
-
 ```    CSharp
 // Respond to timer Tick and initiate recognition.
     private async void Recognize_Tick()
@@ -719,10 +696,10 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="related_topics"></span>Связанные статьи
-
+## <span id="related_topics"></span>Статьи по теме
 
 * [Взаимодействие с помощью пера](pen-and-stylus-interactions.md)
+
 **Примеры**
 * [Пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [Простой пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620312)
@@ -736,6 +713,6 @@ string str = "Recognition result\n";
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

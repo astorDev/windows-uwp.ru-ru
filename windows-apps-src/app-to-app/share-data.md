@@ -15,11 +15,11 @@ author: awkoren
 
 Добавьте обработчик событий [**DataRequested**][DataRequested], который будет срабатывать при каждом вызове функции общего доступа пользователем. Это может происходить, когда пользователь касается элемента управления в приложении (например, кнопки или команды на панели приложения), или автоматически в определенном сценарии (если, например, пользователь заканчивает уровень и получает рекордный результат).
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
 При возникновении события [**DataRequested**][DataRequested] приложение получает объект [**DataRequest**][DataRequest]. Этот объект содержит объект [**DataPackage**][DataPackage], который можно использовать, чтобы предоставить содержимое, которым пользователь хочет поделиться. Вы должны указать название и данные, к которым необходимо предоставить общий доступ. Описание необязательно, но рекомендуется.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
 ## Выбор данных
 
@@ -36,7 +36,7 @@ author: awkoren
 
 Объект [**DataPackage**][DataPackage] может содержать один или несколько указанных форматов в любом сочетании. В примере ниже показано, как предоставить общий доступ к тексту.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
 ## Задание свойств
 
@@ -44,13 +44,13 @@ author: awkoren
 
 Все свойства, кроме заголовка, не являются обязательными. Свойство заголовка является обязательным и должно быть задано.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
 ## Запуск пользовательского интерфейса общего доступа
 
 Пользовательский интерфейс для общего доступа предоставляется системой. Чтобы запустить его, вызовите метод [**ShowShareUI**][ShowShareUi].
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
 ## Обработка ошибок
 
@@ -102,6 +102,6 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

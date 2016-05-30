@@ -1,10 +1,11 @@
 ---
-title: Планирование переноса приложений на DirectX
-description: Планирование переноса игры с DirectX 9 на DirectX 11 в UWP, обновление кода графики и помещение игры в среду выполнения Windows.
+author: mtoepke
+title: Планирование переноса DirectX
+description: Спланируйте свой проект переноса игры с DirectX 9 на DirectX 11 и универсальную платформу Windows (UWP): обновление кода графики и помещение игры в среду выполнения Windows.
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 ---
 
-# Планирование переноса приложений на DirectX
+# Планирование портирования приложений на DirectX
 
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -62,6 +63,6 @@ ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

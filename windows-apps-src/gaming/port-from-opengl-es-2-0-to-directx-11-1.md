@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Перенос из OpenGL ES 2.0 в Direct3D 11
 description: Включает статьи, обзоры и пошаговые руководства по переносу графического конвейера из OpenGL ES 2.0 в Direct3D 11 и среду выполнения Windows.
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
@@ -22,21 +23,21 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Тема</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Map OpenGL ES 2.0 to Direct3D 11.1](map-concepts-and-infrastructure.md)</p></td>
+<td align="left"><p>[Сопоставление OpenGL ES 2.0 и Direct3D 11.1](map-concepts-and-infrastructure.md)</p></td>
 <td align="left"><p>Впервые приступая к процессу переноса графической архитектуры из OpenGL ES 2.0 в Direct3D, ознакомьтесь с ключевыми различиями между этими API. Темы данного раздела помогут вам спланировать стратегию переноса и изменения API, которые необходимо внести при переносе обработки графики в Direct3D.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Walkthrough sample ports from OpenGL ES 2.0](walkthrough-sample-ports-from-opengl-es-2-0.md)</p></td>
-<td align="left"><p>В этой группе статей подробно рассматриваются несколько сценариев переноса графического конвейера OpenGL ES 2.0 разного уровня сложности.</p></td>
+<td align="left"><p>[Пошаговое руководство: образцы переноса из OpenGL ES 2.0](walkthrough-sample-ports-from-opengl-es-2-0.md)</p></td>
+<td align="left"><p>В этой группе разделов подробно рассматриваются несколько сценариев переноса графического конвейера OpenGL ES 2.0 разного уровня сложности.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[OpenGL ES 2.0 to Direct3D 11.1 reference](opengl-es-2-0-to-directx-11-1-reference.md)</p></td>
+<td align="left"><p>[Справочник по переносу с OpenGL ES 2.0 на Direct3D 11.1](opengl-es-2-0-to-directx-11-1-reference.md)</p></td>
 <td align="left"><p>Используйте эти справочные разделы для поиска соответствий API и коротких примеров кода при переносе из OpenGL ES 2.0 в Direct3D 11.</p></td>
 </tr>
 </tbody>
@@ -58,6 +59,6 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

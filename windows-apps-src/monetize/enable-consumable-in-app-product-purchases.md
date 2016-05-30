@@ -1,14 +1,6 @@
 ---
-Description: Предоставьте пользователям возможность покупки из приложения потребляемых внутренних продуктов приложения (товаров, которые можно покупать, использовать и покупать снова) через Магазин. Покупка из приложения — удобный и надежный способ приобрести товар.
-title: Поддержка покупок потребляемых внутренних продуктов приложения
-ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
-keywords: продажа из приложения
-keywords: потребляемый товар
-keywords: покупка из приложения
-keywords: внутренний продукт приложения
-keywords: поддержка из приложения
-keywords: пример кода покупки из приложения
-keywords: пример кода продажи из приложения
+author: mcleanbyron Description: Предоставьте пользователям возможность покупки из приложения потребляемых внутренних продуктов приложения (товаров, которые можно покупать, использовать и покупать снова) через Магазин. Покупка из приложения — удобный и надежный способ приобрести товар.
+title: Подготовка к покупке внутренних потребляемых продуктов ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4 keywords: продажа из приложения keywords: потребляемые keywords: покупка из приложения keywords: внутренний продукт keywords: как обеспечить поддержку операций из приложения keywords: пример кода для покупок из приложения keywords: пример кода для продажи из приложения
 ---
 
 # Поддержка покупок потребляемых внутренних продуктов приложения
@@ -79,7 +71,7 @@ private void GrantFeatureLocally(string productId, Guid transactionId)
 ```CSharp
 private Boolean IsLocallyFulfilled(string productId, Guid transactionId)
 {
-    return grantedConsumableTransactionIds.ContainsKey(productId) &amp;&amp; grantedConsumableTransactionIds[productId].Contains(transactionId);
+    return grantedConsumableTransactionIds.ContainsKey(productId) && grantedConsumableTransactionIds[productId].Contains(transactionId);
 }
 ```
 
@@ -127,6 +119,6 @@ private async void GetUnfulfilledConsumables()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

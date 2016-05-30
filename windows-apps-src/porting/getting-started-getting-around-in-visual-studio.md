@@ -1,6 +1,7 @@
 ---
-description: Введение в Visual Studio
-title: Введение в Visual Studio
+author: mcleblanc
+description: Введение в Visual Studio
+title: Введение в Visual Studio
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ---
 
@@ -40,9 +41,9 @@ ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 
 Давайте изменим сведения о кнопке. Как известно, чтобы изменить имя кнопки в Xcode, необходимо изменить значение поля **Название** на панели свойств.
 
-В Visual Studio вы делаете что-то очень похожее. В области **Конструктор** нажмите кнопку, чтобы перевести на нее фокус. Затем на панели **Свойства** измените значение **Содержимое** с "Button" на "Press Me". Далее обновите имя элемента управления кнопкой, изменив значение **Имя** с <No Name> на "myButton", как показано здесь:
+В Visual Studio вы делаете что-то очень похожее. В области **Конструктор** нажмите кнопку, чтобы перевести на нее фокус. Затем на панели **Свойства** измените значение **Содержимое** с "Button" на "Press Me". Далее обновите имя элемента управления кнопкой, изменив значение **Имя** с "&lt;No Name&gt;" на "myButton", как показано здесь:
 
-![Окно свойств кнопки в Visual Studio](images/ios-to-uwp/vs-button-properties.png)
+![окно свойств кнопки в Visual Studio](images/ios-to-uwp/vs-button-properties.png)
 
 Теперь напишем код, чтобы после касания кнопки пользователем содержимое элемента управления **TextBlock** изменялось на "Hello, World!" (Здравствуй, мир!).
 
@@ -86,7 +87,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 1.  Коснитесь вкладки файла MainPage.xaml.
 2.  На панели **Конструктор** щелкните элемент управления **TextBlock**.
 3.  На панели **Свойства** нажмите кнопку с изображением гаечного ключа, чтобы просмотреть свойства.
-4.  В поле **Имя** измените значение <Без имени> на "myLabel".
+4.  В поле **Имя** измените "&lt;Без имени&gt;" на "myLabel".
 
 ![Окно свойств подписи в Visual Studio](images/ios-to-uwp/vs-label-properties.png)
 
@@ -120,6 +121,6 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

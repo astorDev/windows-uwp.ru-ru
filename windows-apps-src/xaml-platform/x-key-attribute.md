@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Присваивает уникальный идентификатор элементам, которые были созданы и отмечены как ресурсы и которые существуют в ResourceDictionary.
 title: Атрибут xKey
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
@@ -6,7 +7,7 @@ ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 
 # Атрибут x:Key
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Присваивает уникальный идентификатор элементам, которые были созданы и отмечены как ресурсы и которые существуют в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).
 
@@ -41,7 +42,7 @@ ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 XamlName ::= NameStartChar (NameChar)*
 NameStartChar ::= LetterCharacter | '_'
 NameChar ::= NameStartChar | DecimalDigit
-LetterCharacter ::= ('a'-'z') | ('A'–'Z')
+LetterCharacter ::= ('a'-'z') | ('A'-'Z')
 DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
@@ -64,6 +65,6 @@ CombiningCharacter::= none
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

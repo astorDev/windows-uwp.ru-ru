@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
 description: В этом разделе описываются эффекты, предназначенные для сценариев видеозахвата. В том числе и эффект стабилизации видео.
 title: Эффекты для видеозахвата
@@ -6,7 +7,7 @@ title: Эффекты для видеозахвата
 
 # Эффекты для видеозахвата
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе описываются эффекты, предназначенные для сценариев видеозахвата. В том числе и эффект стабилизации видео.
 
@@ -74,7 +75,7 @@ title: Эффекты для видеозахвата
 
 ## Связанные разделы
 
-* [Фото- и видеозахват с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [Захват фотографий и видео с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md)
  
 
  
@@ -84,6 +85,6 @@ title: Эффекты для видеозахвата
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,10 +1,11 @@
 ---
-title: Запуск приложения «Параметры»для Windows
-description: Узнайте, как запустить приложение «Параметры» для Windows из вашего приложения. В этом разделе приводится описание схемы URI ms-settings. Используйте эту схему URI для запуска приложения «Параметры» для Windows на определенных страницах параметров.
+author: mcleblanc
+title: Запуск приложения "Параметры" для Windows
+description: Узнайте, как запустить приложение "Параметры" для Windows из вашего приложения. В этом разделе приводится описание схемы URI ms-settings. Используйте эту схему URI для запуска приложения "Параметры" для Windows на определенных страницах параметров.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 ---
 
-# Запуск приложения «Параметры»для Windows
+# Запуск приложения "Параметры" для Windows
 
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -29,7 +30,7 @@ ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 
 В этом примере элемент управления XAML с гиперссылкой используется для запуска страницы параметров конфиденциальности для микрофона с помощью URI `ms-settings:privacy-microphone`.
 
-```xaml
+```xml
 <!--Set Visibility to Visible when access to the microphone is denied -->  
 <TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
@@ -125,6 +126,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

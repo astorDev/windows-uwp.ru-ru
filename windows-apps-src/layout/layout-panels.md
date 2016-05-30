@@ -1,8 +1,9 @@
 ---
-Description: Панели макета используются для упорядочивания и группирования элементов управления пользовательского интерфейса в приложении.
+author: Jwmsft
+Description: Панели макета используются для группирования и упорядочивания элементов управления пользовательского интерфейса в приложении.
 title: Панели макета для приложений универсальной платформы Windows (UWP)
 ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
-label: Панели макета
+label: Layout panels
 template: detail.hbs
 ---
 # Панели макета
@@ -28,9 +29,10 @@ template: detail.hbs
 </Canvas>
 ```
 
-Подробнее о присоединенных свойствах см. в разделе [Общие сведения о присоединенных свойствах](../xaml-platform/attached-properties-overview.md).
+Подробнее о подключенных свойствах см. в разделе [Общие сведения о подключенных свойствах](../xaml-platform/attached-properties-overview.md).
 
-> **Примечание.**&nbsp;Присоединенное свойство является концепцией языка XAML, требующей специального синтаксиса для получения или настройки из кода. Сведения об использовании прикрепленных свойств в коде см. в разделе *Присоединенные свойства в коде* статьи *Общие сведения о присоединенных свойствах*.
+> **Примечание**
+            &nbsp;&nbsp;Присоединенное свойство является концепцией языка XAML, требующего специального синтаксиса для получения или настройки из кода. Сведения об использовании прикрепленных свойств в коде см. в разделе *Присоединенные свойства в коде* статьи *Общие сведения о присоединенных свойствах*.
 
 **Границы панели**
 
@@ -51,7 +53,8 @@ template: detail.hbs
 ## RelativePanel
 
 [
-							Элемент **RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) позволяет создать макет элементов пользовательского интерфейса путем указания их расположения относительно других элементов и панели. По умолчанию элемент располагается в левом верхнем углу панели. Можно использовать RelativePanel с [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) и [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) для переупорядочивания пользовательского интерфейса для разных размеров окон.
+              **Элемент RelativePanel**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) позволяет создать макет элементов пользовательского интерфейса путем указания их расположения относительно других элементов и панели. По умолчанию элемент располагается в левом верхнем углу панели. Можно использовать RelativePanel с [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) и [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) для переупорядочивания пользовательского интерфейса для разных размеров окон.
 
 В этой таблице показаны присоединенные свойства, которые можно использовать для выравнивания элемента по краю или центру панели, а также выравнивания и расположения относительно других элементов.
 
@@ -98,7 +101,9 @@ template: detail.hbs
 
 ## StackPanel
 
-[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) — это простая панель макета, позволяющая разместить дочерние элементы в одной строке (горизонтально) или в одном столбце (вертикально). Элементы управления StackPanel обычно используются в сценариях, обеспечивающих размещение на странице небольших подразделов пользовательского интерфейса.
+[
+              **Элемент StackPanel**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) — это простая панель макета, позволяющая разместить дочерние элементы в одной строке (горизонтально) или в одном столбце (вертикально). Элементы управления StackPanel обычно используются в сценариях, обеспечивающих размещение на странице небольших подразделов пользовательского интерфейса.
 
 Для указания направления дочерних элементов можно использовать свойство [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.orientation.aspx). Ориентация по умолчанию — [**Vertical**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.orientation.aspx).
 
@@ -160,7 +165,8 @@ template: detail.hbs
 ## VariableSizedWrapGrid
 
 [
-							Элемент **VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) создает панель макета в виде сетки, в которой элементы упорядочены по строкам и столбцам с автоматическим переносом на новую строку или в новый столбец при достижении значения [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx). 
+              **Элемент VariableSizedWrapGrid**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) создает панель макета в виде сетки, в которой элементы упорядочены по строкам и столбцам с автоматическим переносом на новую строку или в новый столбец при достижении значения [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx). 
 
 Свойство [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.orientation.aspx) указывает, добавляет ли сетка свои элементы или столбцы перед переносом. Ориентация по умолчанию — **Vertical**. Это означает, что сетка добавляет элементы сверху вниз до заполнения столбца, а затем переносит данные в новый столбец. Если выбрано значение **Horizontal**, сетка добавляет элементы слева направо, а затем переносит данные в новую строку.
 
@@ -221,6 +227,6 @@ template: detail.hbs
 Существует несколько специальных панелей, которые можно использовать только в качестве [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) для отображения элементов в [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx). Это типы [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx), [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx), [**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx) и [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx). Эти панели невозможно использовать для общего макета пользовательского интерфейса.
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

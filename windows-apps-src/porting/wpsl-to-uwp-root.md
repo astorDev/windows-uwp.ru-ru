@@ -1,5 +1,6 @@
 ---
-description: Если вы — разработчик с приложением Windows Phone Silverlight, вы можете использовать свои навыки и исходный код при переходе на Windows 10.
+author: mcleblanc
+description: Если вы — разработчик с приложением Windows Phone Silverlight, вы можете использовать свои навыки и свой исходный код при переходе к Windows 10.
 title: Переход с Windows Phone Silverlight на UWP
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
 ---
@@ -75,14 +76,18 @@ Windows Phone Silverlight имеет инфраструктуру пользов
 * [Руководство по работе с приложениями универсальной платформы Windows](https://msdn.microsoft.com/library/windows/apps/dn894631)
 * [Схема создания приложений UWP на C# или Visual Basic](https://msdn.microsoft.com/library/windows/apps/br229583)
 * [Дальнейшие действия для разработчиков Windows Phone 8](https://msdn.microsoft.com/library/windows/apps/xaml/dn655121.aspx)
-**Статьи в журналах**
+            
+          
+            **Статьи в журналах**
 * [Статья в Visual Studio Magazine о Windows Phone 8.1 и ее гигантском шаге на пути к конвергенции](http://go.microsoft.com/fwlink/p/?LinkID=398541)
-**Презентации**
+            
+          
+            **Презентации**
 * [История переноса музыки Nokia из Windows Phone в Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=321521)
  
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

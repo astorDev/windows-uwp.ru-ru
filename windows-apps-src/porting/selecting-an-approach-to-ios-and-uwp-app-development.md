@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: Какие варианты доступны при разработке кроссплатформенных приложений?
 title: Выбор подхода к разработке приложений iOS и UWP
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
@@ -6,7 +7,7 @@ ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 
 # Выбор подхода к разработке приложений iOS и UWP
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Какие варианты доступны при разработке кроссплатформенных приложений?
 
@@ -90,6 +91,6 @@ ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

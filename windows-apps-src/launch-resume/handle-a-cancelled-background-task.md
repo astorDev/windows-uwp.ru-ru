@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Обработка отмененной фоновой задачи
 description: Узнайте, как создать фоновую задачу, которая распознает запросы на отмену, прекращает работу и сообщает приложению об отмене, используя постоянное хранилище.
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
@@ -16,7 +17,7 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 
 Узнайте, как создать фоновую задачу, которая распознает запросы на отмену, прекращает работу и сообщает приложению об отмене, используя постоянное хранилище.
 
-> **Примечание.**  Если устройству не хватает памяти, фоновые задачи могут быть завершены для всех семейств устройств (за исключением настольных компьютеров). Если исключение "Недостаточно памяти" не отображается или приложение не обрабатывает его, то фоновая задача будет завершена без предупреждения и без вызова события OnCanceled. Это позволяет не прерывать работу пользователя с активным приложением. Ваша фоновая задача должна поддерживать этот сценарий.
+> **Примечание.** Если устройству не хватает памяти, фоновые задачи могут быть завершены для всех семейств устройств (за исключением настольных компьютеров). Если исключение "Недостаточно памяти" не отображается или приложение не обрабатывает его, то фоновая задача будет завершена без предупреждения и без вызова события OnCanceled. Это позволяет не прерывать работу пользователя с активным приложением. Ваша фоновая задача должна поддерживать этот сценарий.
 
 В этом разделе предполагается, что класс фоновой задачи уже создан, включая метод Run, который используется в качестве точки входа фоновой задачи. См. раздел [Создание и регистрация фоновой задачи](create-and-register-a-background-task.md), чтобы научиться быстро создавать фоновые задачи. Более углубленно с условиями и триггерами можно ознакомиться в разделе [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
 
@@ -102,7 +103,7 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
->     if ((_cancelRequested == false) &amp;&amp; (_progress &lt; 100))
+>     if ((_cancelRequested == false) && (_progress < 100))
 >     {
 >         _progress += 10;
 >         _taskInstance.Progress = _progress;
@@ -115,7 +116,7 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 >     }
 > ```
 > ```cpp
->     if ((CancelRequested == false) &amp;&amp; (Progress &lt; 100))
+>     if ((CancelRequested == false) && (Progress < 100))
 >     {
 >         Progress += 10;
 >         TaskInstance->Progress = Progress;
@@ -128,7 +129,7 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 >     }
 > ```
 
-> **Примечание.**  Показанный ниже пример кода использует свойство [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800), которое применяется для записи хода выполнения фоновой задачи. Сведения о ходе выполнения возвращаются приложению при помощи класса [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
+> **Примечание.** Показанный ниже пример кода использует свойство [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800), которое применяется для записи хода выполнения фоновой задачи. Сведения о ходе выполнения возвращаются приложению при помощи класса [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
 
 Измените метод Run, чтобы после остановки работы он записывал, была ли задача завершена или отменена.
 
@@ -136,7 +137,7 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
->     if ((_cancelRequested == false) &amp;&amp; (_progress &lt; 100))
+>     if ((_cancelRequested == false) && (_progress < 100))
 >     {
 >         _progress += 10;
 >         _taskInstance.Progress = _progress;
@@ -171,7 +172,7 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 >     }
 > ```
 > ```cpp
->     if ((CancelRequested == false) &amp;&amp; (Progress &lt; 100))
+>     if ((CancelRequested == false) && (Progress < 100))
 >     {
 >         Progress += 10;
 >         TaskInstance->Progress = Progress;
@@ -186,7 +187,7 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 >         
 >         auto settings = ApplicationData::Current->LocalSettings;
 >         auto key = TaskInstance->Task->Name;
->         settings->Values->Insert(key, (Progress &lt; 100) ? "Canceled" : "Completed");
+>         settings->Values->Insert(key, (Progress < 100) ? "Canceled" : "Completed");
 >         
 >         //
 >         // Indicate that the background task has completed.
@@ -243,7 +244,7 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 > //
 > private void PeriodicTimerCallback(ThreadPoolTimer timer)
 > {
->     if ((_cancelRequested == false) &amp;&amp; (_progress < 100))
+>     if ((_cancelRequested == false) && (_progress < 100))
 >     {
 >         _progress += 10;
 >         _taskInstance.Progress = _progress;
@@ -283,7 +284,7 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 >     //
 >     // Associate a cancellation handler with the background task.
 >     //
->     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &amp;SampleBackgroundTask::OnCanceled);
+>     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > 
 >     //
 >     // Get the deferral object from the task instance, and take a reference to the taskInstance.
@@ -293,7 +294,7 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 > 
 >     auto timerDelegate = [this](ThreadPoolTimer^ timer)
 >     {
->         if ((CancelRequested == false) &amp;&amp;
+>         if ((CancelRequested == false) &&
 >             (Progress < 100))
 >         {
 >             Progress += 10;
@@ -323,7 +324,7 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 > }
 > ```
 
-> **Примечание.**  Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Связанные разделы
 
@@ -345,6 +346,6 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,6 +1,7 @@
 ---
+author: mcleblanc
 description: За вашим пользовательским интерфейсом расположены уровни бизнеса и данных.
-title: Перенос уровней бизнеса и данных для Windows Phone Silverlight в UWP
+title: Перенос уровней бизнеса и данных для Windows Phone Silverlight в UWP
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 ---
 
@@ -136,6 +137,6 @@ UWP частично поддерживает класс **System.Net.HttpWebReq
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

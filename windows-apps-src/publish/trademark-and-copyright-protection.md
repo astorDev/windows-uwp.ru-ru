@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Узнайте, что делать, если вы считаете, что другое приложение нарушает ваши права на интеллектуальную собственность.
 title: Защита товарных знаков и авторских прав
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
@@ -63,6 +64,6 @@ ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

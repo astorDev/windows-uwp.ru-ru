@@ -1,11 +1,6 @@
 ---
-description: Если использование приложения в течение пробного периода бесплатно, можно побудить пользователей приобрести полную версию, исключив или ограничив его функции.
-title: Исключение или ограничение функций в пробной версии
-ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
-keywords: бесплатная пробная версия
-keywords: бесплатный пробный период
-keywords: пример кода бесплатной пробной версии
-keywords: пример приложения с бесплатным пробным периодом
+author: mcleanbyron Description: Если использование приложения в течение пробного периода бесплатно, можно побудить пользователей приобрести полную версию, исключив или ограничив его функции.
+title: Отсутствующие или ограниченные функции в пробной версии ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056 keywords: бесплатная пробная версия keywords: бесплатный пробный период keywords: пример кода бесплатной пробной версии keywords: пример кода бесплатной пробной версии
 ---
 
 # Исключение или ограничение функций в пробной версии
@@ -166,7 +161,9 @@ void DisplayTrialVersionExpirationTime()
 
 Теперь можно протестировать ваше приложение, используя имитацию обращения к серверу лицензирования. В приложениях, написанных на JavaScript, C#, Visual Basic или Visual C++, замените все ссылки на [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) в коде инициализации элементом [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766).
 
-[**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) получает тестовую информацию о лицензии из XML-файла WindowsStoreProxy.xml, расположенного в папке %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. Если этот путь и файл не существуют, их нужно создать во время установки или выполнения приложения. Если файл WindowsStoreProxy.xml отсутствует в указанном выше расположении, при попытке обратиться к свойству [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) возникнет ошибка.
+[
+              **CurrentAppSimulator**
+            ](https://msdn.microsoft.com/library/windows/apps/hh779766) получает тестовую информацию о лицензии из XML-файла WindowsStoreProxy.xml, расположенного в папке %userprofile%\\AppData\\local\\packages\\&lt;название_пакета&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. Если этот путь и файл не существуют, их нужно создать во время установки или выполнения приложения. Если файл WindowsStoreProxy.xml отсутствует в указанном выше расположении, при попытке обратиться к свойству [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) возникнет ошибка.
 
 В следующем примере показано, как можно добавить код в ваше приложение и проверить его работу в различных состояниях лицензирования.
 
@@ -233,6 +230,6 @@ void appInit()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

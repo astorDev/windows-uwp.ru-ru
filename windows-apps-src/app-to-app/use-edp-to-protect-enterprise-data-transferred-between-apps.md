@@ -1,4 +1,5 @@
 ---
+author: awkoren
 Description: 'В этом разделе показаны примеры задач программирования, необходимых для реализации некоторых наиболее распространенных сценариев защиты корпоративных данных (EDP) при их передаче.'
 MS-HAID: 'dev\_app\_to\_app.use\_edp\_to\_protect\_enterprise\_data\_transferred\_between\_apps'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -8,7 +9,7 @@ title: Использование EDP для защиты корпоративн
 
 # Использование EDP для защиты корпоративных данных, передаваемых между приложениями
 
-__Примечание__ Политику защиты корпоративных данных (EDP) нельзя применить в Windows 10 версии 1511 (сборка 10586) или более ранних версий.
+__Примечание.__ Политику защиты корпоративных данных (EDP) нельзя применить в Windows 10 версии 1511 (сборка 10586) или более ранних версий.
 
 В этом разделе показаны примеры задач программирования, необходимых для реализации некоторых наиболее распространенных сценариев защиты корпоративных данных (EDP) при их передаче. Полное описание взаимосвязи EDP с файлами, потоками, буфером обмена, сетями, фоновыми задачами и защитой данных в режиме блокировки для разработчиков см. в разделе [Защита корпоративных данных (EDP)](../enterprise/edp-hub.md).
 
@@ -51,7 +52,7 @@ private void OnFileLoaded(FileProtectionInfo fileProtectionInfo, string contents
         }
         else
         {
-            // Enterprise policy is not in effect, because the file&#39;s identity
+            // Enterprise policy is not in effect, because the file's identity
             // is not managed. In this case, we have a file protected to an
             // unmanaged identity, which is not a valid situation.
             // We still have to call ClearProcessUIPolicy if we want to clear the policy.
@@ -123,7 +124,7 @@ private async void OnPasteWithApplyPolicy()
         {
             ProtectionPolicyEvaluationResult policyResult =
                 await dataPackageView.RequestAccessAsync(dataPackageView.Properties.EnterpriseId);
-            if (this.isNewEmptyDocument &amp;&amp;
+            if (this.isNewEmptyDocument &&
                 policyResult == ProtectionPolicyEvaluationResult.Allowed)
             {
                 // If this is a new and empty document, and we're allowed to access
@@ -264,7 +265,7 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
             if (this.isNewEmptyDocument && protectionPolicyEvaluationResult ==
                 ProtectionPolicyEvaluationResult.Allowed)
             {
-                // If this is a new and empty document, and we&#39;re allowed to access
+                // If this is a new and empty document, and we're allowed to access
                 // the data, then we can avoid popping the consent dialog.
                 bool isIdentityManaged = ProtectionPolicyManager.TryApplyProcessUIPolicy
                     (shareOperation.Data.Properties.EnterpriseId);
@@ -377,7 +378,7 @@ private async void OnPasteWithRequestAccess()
 }
 ```
 
-**Примечание.**  Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Примечание.**  Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 
 
@@ -394,6 +395,6 @@ private async void OnPasteWithRequestAccess()
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

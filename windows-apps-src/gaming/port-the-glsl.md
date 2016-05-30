@@ -1,13 +1,14 @@
 ---
+author: mtoepke
 title: Перенос GLSL
-description: После переноса кода для создания и настройки буферов и объектов шейдеров следует перенести код шейдеров из версии GLSL для OpenGL ES 2.0 в HLSL для Direct3D 11.
+description: После переноса кода, который создает и настраивает буферы и объекты шейдеров, следует перенести внутренний код шейдеров из версии GLSL (GL Shader Language) для OpenGL ES 2.0 в HLSL (High-level Shader Language) для Direct3D 11.
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
 ---
 
 # Перенос GLSL
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -148,12 +149,10 @@ float4 main(PixelShaderInput input) : SV_TARGET
 ## Предыдущий шаг
 
 
-[Перенос буферов вершин и данных](port-the-vertex-buffers-and-data-config.md)
-Следующий шаг
+[Перенос буферов вершин и данных](port-the-vertex-buffers-and-data-config.md) Следующий шаг
 ---------
 
-[Рисование на экране](draw-to-the-screen.md)
-Комментарии
+[Рисование на экране](draw-to-the-screen.md) Заметки
 -------
 
 Понимание семантики HLSL и упаковки буферов констант избавит вас от многих затруднений при отладке, а также обеспечит возможности оптимизации. Если у вас есть возможность, внимательно изучите разделы [Синтаксис переменных (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706), [Введение в буферы в Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898) и [Инструкции: создание буфера констант](https://msdn.microsoft.com/library/windows/desktop/ff476896). Если нет, вот для начала несколько полезных замечаний о семантике и буферах констант:
@@ -185,6 +184,6 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

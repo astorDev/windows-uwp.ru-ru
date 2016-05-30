@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Шаблон основных и подробных данных отображает основной список и подробные сведения о выбранном элементе. Этот шаблон часто используется для работы с почтой, списками контактов и адресными книгами.
-title: Основные данные и подробности
+title: Основные и подробные данные
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
-label: Основные данные и подробности
+label: Master/details
 template: detail.hbs
 ---
 # Шаблон основных и подробных данных
@@ -71,9 +72,9 @@ template: detail.hbs
 
 ![Пример приложения, использующего шаблон основных и подробных данных, на компьютере](images/uap-finance-desktop700.png)
 
-\[Эта статья содержит сведения, относящиеся к приложениям универсальной платформы Windows (UWP) и Windows 10. Для получения инструкций по Windows 8.1 скачайте [рекомендации для Windows 8.1 в формате PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Статьи по теме
+
+## Связанные разделы
 
 - [Списки](lists.md)
 - [Поиск](search.md)
@@ -81,6 +82,6 @@ template: detail.hbs
 - [**Класс ListView (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

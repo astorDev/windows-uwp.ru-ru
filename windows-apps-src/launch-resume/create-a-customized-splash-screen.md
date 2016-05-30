@@ -1,6 +1,7 @@
 ---
+author: mcleblanc
 title: Более продолжительное отображение экрана-заставки
-description: Увеличьте длительность отображения экрана-заставки, создав расширенный экран-заставку для приложения. Этот расширенный экран имитирует экран-заставку, отображаемый при запуске приложения, но его можно настраивать.
+description: Увеличьте длительность отображения экрана-заставки, создав и использовав расширенный экран-заставку для приложения. Этот расширенный экран имитирует экран-заставку, отображаемый при запуске приложения, но его можно настраивать.
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 ---
 
@@ -18,7 +19,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 
 Увеличьте длительность отображения экрана-заставки, создав и использовав расширенный экран-заставку для приложения. Этот расширенный экран имитирует экран-заставку, отображаемый при запуске приложения, но его можно настраивать. Если вы хотите показывать информацию о загрузке в реальном времени или дать приложению дополнительное время на подготовку начального пользовательского интерфейса, расширенный экран-заставка позволит определить взаимодействие с пользователем при запуске.
 
-> **Примечание.** Термин «расширенный экран-заставка» в этой статье означает экран-заставку, который остается на экране более продолжительное время. Он не представляет подкласс, производный от класса [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763).
+> **Примечание**  Термин «расширенный экран-заставка» в этой статье означает экран-заставку, который остается на экране более продолжительное время. Он не представляет подкласс, производный от класса [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763).
 
  
 
@@ -56,7 +57,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 
 Добавьте следующий код для определения элементов [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) и [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752), а также элемента управления [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) в файле ExtendedSplash.xaml:
 
-```xaml
+```xml
     <Grid Background="#464646">
         <Canvas>
             <Image x:Name="extendedSplashImage" Source="Assets/SplashScreen.png"/>
@@ -65,7 +66,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
     </Grid>
 ```
 
-**Примечание.** В этом коде устанавливается ширина [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538), равная 20 пикселям. Можно вручную задать для ширины значение, подходящее для вашего приложения, но элемент управления не будет выполнять отрисовку при ширине меньше 20 пикселей.
+**Примечание.**  В этом коде устанавливается ширина [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538), равная 20 пикселям. Можно вручную задать для ширины значение, подходящее для вашего приложения, но элемент управления не будет выполнять отрисовку при ширине меньше 20 пикселей.
 
  
 
@@ -120,7 +121,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
         if (splash != null)
         {
             // Register an event handler to be executed when the splash screen has been dismissed.
-            splash.Dismissed += new TypedEventHandler&lt;SplashScreen, Object&gt;(DismissedEventHandler);
+            splash.Dismissed += new TypedEventHandler<SplashScreen, Object>(DismissedEventHandler);
 
             // Retrieve the window coordinates of the splash screen image.
             splashImageRect = splash.ImageLocation;
@@ -168,7 +169,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
     В файле ExtendedSplash.xaml.cs определите реакцию на событие [**SplashScreen.Dismissed**](https://msdn.microsoft.com/library/windows/apps/br224764), задав для переменной класса `dismissed` значение true. Если ваше приложение предусматривает операции настройки, добавьте их в этот обработчик событий.
 
     ```cs
-    // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application&#39;s first view).
+    // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
     void DismissedEventHandler(SplashScreen sender, object e)
     {
         dismissed = true;
@@ -209,7 +210,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
     }
     ```
 
-    **Примечание.** Перед тем как получить данные о расположении изображения, убедитесь, что переменная класса (`splash`) содержит действительный объект [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763), как показано в примере.
+    **Примечание**  Перед тем как получить данные о расположении изображения, убедитесь, что переменная класса (`splash`) содержит действительный объект [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763), как показано в примере.
 
      
 
@@ -222,7 +223,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
     {
         if (loadState)
         {
-             // code to load your app&#39;s state here 
+             // code to load your app's state here 
         }
     }
     ```
@@ -255,13 +256,13 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ## Полный код
 
 
-> **Примечание.** Следующий код слегка отличается от фрагментов, приведенных в предыдущих шагах.
+> **Примечание**  Следующий код слегка отличается от фрагментов, приведенных в предыдущих шагах.
 -   ExtendedSplash.xaml включает кнопку `DismissSplash`. При нажатии этой кнопки обработчик событий `DismissSplashButton_Click` вызывает метод `DismissExtendedSplash`. В приложении вызовите `DismissExtendedSplash`, когда приложение закончит загрузку ресурсов или инициализацию пользовательского интерфейса.
 -   В этом приложении также используется шаблон приложения UWP с навигацией [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682). В результате в файле App.xaml.cs обработчик активации запуска ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) определяет элемент `rootFrame` и использует его для настройки содержимого окна приложения.
 
 ExtendedSplash.xaml: этот пример включает кнопку `DismissSplash`, так как у приложения нет загружаемых ресурсов. В вашем приложении расширенный экран-заставка должен автоматически закрыться, когда приложение закончит загрузку ресурсов или подготовку начального пользовательского интерфейса.
 
-```xaml
+```xml
 <Page
     x:Class="SplashScreenExample.ExtendedSplash"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -385,7 +386,7 @@ namespace SplashScreenExample
             }
         }
 
-        // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application&#39;s first view).
+        // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
         void DismissedEventHandler(SplashScreen sender, object e)
         {
             dismissed = true;
@@ -492,7 +493,7 @@ namespace SplashScreenExample
 
             if (rootFrame.Content == null)
             {
-                // When the navigation stack isn&#39;t restored navigate to the first page,
+                // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
@@ -548,6 +549,6 @@ namespace SplashScreenExample
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

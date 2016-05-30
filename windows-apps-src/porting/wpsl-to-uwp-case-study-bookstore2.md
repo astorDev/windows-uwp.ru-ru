@@ -1,7 +1,8 @@
 ---
+author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: Этот пример на основе Bookstore начинается с приложения Windows Phone Silverlight, отображающего сгруппированные данные в классе LongListSelector.
-title: Пример переноса Windows Phone Silverlight в UWP, Bookstore2
+description: Этот пример, в котором используются данные из примера Bookstore, начинается с приложения Windows Phone Silverlight, отображающего сгруппированные данные в классе LongListSelector.
+title: Пример переноса Windows Phone Silverlight в UWP, Bookstore2
 ---
 
 # Пример переноса Windows Phone Silverlight в UWP: Bookstore2
@@ -61,7 +62,7 @@ title: Пример переноса Windows Phone Silverlight в UWP, Bookstor
 
 Для замены **LongListSelector** элементом управления [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) нужно выполнить несколько действий. Рассмотрим их подробнее. Класс **LongListSelector** привязывается непосредственно к сгруппированному источнику данных, но **SemanticZoom** содержит элементы управления [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) или [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705), которые косвенно привязываются к данным через адаптер [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833). Класс **CollectionViewSource** должен быть размещен в разметке как ресурс, поэтому сначала добавим его в разметку в файле MainPage.xaml внутри `<Page.Resources>`.
 
-```xaml
+```xml
     <CollectionViewSource
         x:Name="AuthorHasACollectionOfBookSku"
         Source="{Binding Authors}"
@@ -72,7 +73,7 @@ title: Пример переноса Windows Phone Silverlight в UWP, Bookstor
 
 Затем замените `phone:LongListSelector` следующей разметкой, и мы получим предварительный **SemanticZoom** для работы.
 
-```xaml
+```xml
     <SemanticZoom>
         <SemanticZoom.ZoomedInView>
             <ListView
@@ -97,7 +98,7 @@ title: Пример переноса Windows Phone Silverlight в UWP, Bookstor
 
 Нам больше не требуется `AuthorNameJumpListStyle`, по крайней мере, не полностью. Нам нужен только шаблон данных для групп (в этом приложении это авторы) в уменьшенном представлении. Поэтому мы удалим стиль `AuthorNameJumpListStyle` и заменим его следующим шаблоном данных.
 
-```xaml
+```xml
    <DataTemplate x:Key="ZoomedOutAuthorTemplate">
         <Border Margin="9.6,0.8" Background="{Binding Converter={StaticResource JumpListItemBackgroundConverter}}">
             <TextBlock Margin="9.6,0,9.6,4.8" Text="{Binding Group.Name}" Style="{StaticResource SubtitleTextBlockStyle}"
@@ -140,7 +141,7 @@ title: Пример переноса Windows Phone Silverlight в UWP, Bookstor
 -   Замените содержимое `AuthorGroupHeaderTemplateWide` на `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>`.
 -   Замените содержимое `ZoomedOutAuthorTemplateWide` на:
 
-```xaml
+```xml
     <Grid HorizontalAlignment="Left" Width="250" Height="250" >
         <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"/>
         <StackPanel VerticalAlignment="Bottom" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
@@ -153,7 +154,7 @@ title: Пример переноса Windows Phone Silverlight в UWP, Bookstor
 
 -   Замените содержимое `BookTemplateWide` на:
 
-```xaml
+```xml
     <Grid HorizontalAlignment="Left" Width="250" Height="250">
         <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"/>
         <Image Source="{Binding CoverImage}" Stretch="UniformToFill"/>
@@ -171,7 +172,7 @@ title: Пример переноса Windows Phone Silverlight в UWP, Bookstor
 
 -   Для широкого состояния группам в представлении с увеличенным масштабом потребуется больше вертикального пространства вокруг них. Создав несколько шаблонов панелей элементов и добавив ссылки на них, мы получим нужные результаты. Вот как выглядит разметка.
 
-```xaml
+```xml
    <ItemsPanelTemplate x:Key="ZoomedInItemsPanelTemplate">
         <ItemsWrapGrid Orientation="Horizontal" GroupPadding="0,0,0,20"/>
     </ItemsPanelTemplate>
@@ -187,7 +188,7 @@ title: Пример переноса Windows Phone Silverlight в UWP, Bookstor
 
 -   Наконец, добавьте соответствующую разметку диспетчера визуальных состояний как первый дочерний элемент `LayoutRoot`.
 
-```xaml
+```xml
     <Grid x:Name="LayoutRoot" ... >
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -214,7 +215,7 @@ title: Пример переноса Windows Phone Silverlight в UWP, Bookstor
 -   Добавьте `FontWeight="SemiBold"` к **TextBlock** в `AuthorGroupHeaderTemplate` и `ZoomedOutAuthorTemplate`.
 -   В `narrowSeZo`заголовки групп и авторы в представлении с уменьшенным масштабом выровнены по левому краю, а не растянуты, поэтому давайте работать с этим. Мы создадим свойство [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841) для увеличенного представления со свойством [**HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417), для которого задано значение `Stretch`. Мы также создадим свойство [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817) для уменьшенного представления, содержащее тот же класс [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817). Вот как это выглядит.
 
-```xaml
+```xml
    <Style x:Key="AuthorGroupHeaderContainerStyle" TargetType="ListViewHeaderItem">
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
     </Style>
@@ -245,8 +246,7 @@ title: Пример переноса Windows Phone Silverlight в UWP, Bookstor
 
 ![Перенесенное приложение для Windows 10, запущенное на настольном устройстве, в увеличенном представлении, которое в два раза превышает размеры окна](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
-Перенесенное приложение для Windows 10, запущенное на настольном устройстве, в увеличенном представлении, которое в два раза превышает размеры окна
- 
+Перенесенное приложение для Windows 10, запущенное на настольном устройстве, в увеличенном представлении, которое в два раза превышает размеры окна  
 ![Перенесенное приложение для Windows 10, запущенное на настольном устройстве, в уменьшенном представлении, которое в два раза превышает размеры окна](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
 Перенесенное приложение для Windows 10, запущенное на настольном устройстве, в уменьшенном представлении, которое в два раза превышает размеры окна
@@ -261,7 +261,7 @@ title: Пример переноса Windows Phone Silverlight в UWP, Bookstor
 
 ## Создание более гибкой модели представления
 
-В этом разделе представлен пример, который показывает все преимущества переноса приложения в UWP. Здесь мы описываем необязательные действия, которые можно выполнить, чтобы сделать модель представления более гибкой при доступе через **CollectionViewSource**. Модель представления (исходный файл — ViewModel\\BookstoreViewModel.cs), которую мы перенесли из приложения Bookstore2WPSL8 для Windows Phone Silverlight, содержит класс с именем Author, производный от **List&lt;T&gt;**, где **T** — это BookSku. Это означает, что класс Author *является* группой BookSku.
+В этом разделе представлен пример, который показывает все преимущества переноса приложения в UWP. Здесь мы описываем необязательные действия, которые можно выполнить, чтобы сделать модель представления более гибкой при доступе через **CollectionViewSource**. Модель представления (исходный файл — ViewModel\\BookstoreViewModel.cs), которую мы перенесли из приложения Bookstore2WPSL8 для Windows Phone Silverlight, содержит класс с именем Author, производный от **List&lt;T&gt;** где **T** — это BookSku. Это означает, что класс Author *является* группой BookSku.
 
 Когда мы привязываем свойство **CollectionViewSource.Source** к Authors, мы просто сообщаем, что каждый класс Author — это группа *неких элементов*. Класс **CollectionViewSource** определяет, что представляет собой Author. В данном случае это группа BookSku. Этот подход работает, но он не универсальный. Как быть, если Author должен *одновременно* быть группой BookSku *и* группой адресов, где данный автор жил? Author не может *быть* двумя этими группами одновременно. Однако *у* Author может быть любое количество групп. Это и есть решение: используйте шаблон *has-a-group* вместо шаблона *is-a-group*, который мы применяем сейчас, или в дополнение к нему. Вот как это сделать.
 
@@ -297,6 +297,6 @@ title: Пример переноса Windows Phone Silverlight в UWP, Bookstor
 В этом примере представлен более амбициозный пользовательский интерфейс, чем в предыдущем примере. Все средства и концепции Windows Phone Silverlight **LongListSelector** (и не только) оказались доступными для приложения UWP в виде **SemanticZoom**, **ListView**, **GridView** и **CollectionViewSource**. Мы показали, как многократно использовать или копировать и изменять императивный код и разметку в приложении UWP, чтобы расширить его возможности, пользовательский интерфейс и взаимодействие согласно самым узким и самым широким форм-факторам Windows и всем размерам.
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

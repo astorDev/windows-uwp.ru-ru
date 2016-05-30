@@ -1,6 +1,7 @@
 ---
-title: Наложение плиточных изображений на карту
-description: Наложение сторонних или пользовательских плиточных изображений на карту с помощью источников плиточных данных. Используйте источники плиточных данных для наложения специальных сведений, таких как данные о погоде, населении или сейсмической активности, а также для полной замены карты по умолчанию.
+author: PatrickFarley
+title: Наложение мозаичных изображений на карту
+description: Наложение сторонних или настраиваемых мозаичных изображений на карте с помощью источников мозаичных данных. Используйте источники плиточных данных для наложения специальных сведений, таких как данные о погоде, населении или сейсмической активности, а также для полной замены карты по умолчанию.
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 ---
 
@@ -12,7 +13,7 @@ ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 
 Наложение сторонних или пользовательских плиточных изображений на карту с помощью источников плиточных данных. Используйте источники плиточных данных для наложения специальных сведений, таких как данные о погоде, населении или сейсмической активности, а также для полной замены карты по умолчанию.
 
-**Совет.** Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте следующий пример из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
+**Подсказка.** Чтобы получить дополнительные сведения об использовании карт в приложении, загрузите следующий пример из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
 
 -   [Пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
@@ -53,7 +54,7 @@ ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 
     ```cs
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
-          "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+          "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
 
 2.  Создайте экземпляр и настройте [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144). Задайте [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141), настроенный на предыдущем шаге как [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) для **MapTileSource**.
@@ -110,7 +111,7 @@ ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
             // Create an HTTP data source.
             // This example retrieves tiles from a fictitious web service.
             HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
-                "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+                "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
             // Optionally, add custom HTTP headers if the web service requires them.
             dataSource.AdditionalRequestHeaders.Add("header name", "header value");
@@ -129,7 +130,7 @@ void MainPage::AddHttpMapTileSource()
        GeoboundingBox^ boundingBox = ref new GeoboundingBox(northWest, southEast);
 
        auto dataSource = ref new Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource(
-             "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+             "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
        dataSource->AdditionalRequestHeaders->Insert("header name", "header value");
 
@@ -216,7 +217,7 @@ using System.Threading.Tasks;
             MapTileUriRequestedEventArgs args)
         {
             // Get a deferral to do something asynchronously.
-            // Omit this line if you don&#39;t have to do something asynchronously.
+            // Omit this line if you don't have to do something asynchronously.
             var deferral = args.Request.GetDeferral();
 
             // Get the custom Uri.
@@ -226,7 +227,7 @@ using System.Threading.Tasks;
             args.Request.Uri = uri;
 
             // Notify the app that the custom Uri is ready.
-            // Omit this line also if you don&#39;t have to do something asynchronously.
+            // Omit this line also if you don't have to do something asynchronously.
             deferral.Complete();
         }
 
@@ -307,7 +308,7 @@ using System.Threading.Tasks;
         }
 ```
 
-```ManagedCPlusPlus
+```cpp
 InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 {
        int pixelHeight = 256;
@@ -364,6 +365,6 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

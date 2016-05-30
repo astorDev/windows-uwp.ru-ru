@@ -1,20 +1,27 @@
 ---
+author: eliotcowley
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
-description: В этой статье описывается, как добавить возможности адаптивной потоковой передачи мультимедиа с защитой Microsoft PlayReady в приложение UWP.
+description: В этой статье описывается, как добавить возможности адаптивной потоковой передачи мультимедийного содержимого с защитой Microsoft PlayReady в приложение универсальной платформы Windows (UWP).
 title: Адаптивная потоковая передача с защитой PlayReady
 ---
 
 # Адаптивная потоковая передача с защитой PlayReady
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
+В этой статье описывается, как добавить возможности адаптивной потоковой передачи мультимедийного содержимого с защитой Microsoft PlayReady в приложение универсальной платформы Windows (UWP). 
 
-В этой статье описывается, как добавить возможности адаптивной потоковой передачи мультимедийного содержимого с защитой Microsoft PlayReady в приложение универсальной платформы Windows (UWP). В настоящее время эта функция поддерживает воспроизведение содержимого Http Live Streaming (HLS) и Dynamic Adaptive Streaming over HTTP (DASH).
+Эта функция в настоящее время поддерживает воспроизведение содержимого Dynamic Streaming over HTTP (DASH).
+
+HLS (HTTP Live Streaming компании Apple) не поддерживается PlayReady.
+
+Smooth Streaming также сейчас не поддерживается изначально; однако технология PlayReady является расширяемой и с помощью дополнительного кода или библиотек можно обеспечить поддержку Smooth Streaming с защитой PlayReady, с использованием программного или даже аппаратного DRM (управления цифровыми правами).
 
 В этой статье рассматриваются только аспекты адаптивной потоковой передачи, связанные с PlayReady. Общие сведения о реализации адаптивной потоковой передачи см. в разделе [Адаптивная потоковая передача](adaptive-streaming.md).
 
-Вам потребуется следующие операторы using:
+В данной статье используется код из [Примера адаптивной потоковой передачи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming) в репозитории **Универсальных примеров для Windows** корпорации Майкрософт на GitHub. В сценарии 4 рассматривается использование адаптивной потоковой передачи с помощью PlayReady. Вы можете скачать пример из репозитория в ZIP-файле путем перехода на корневой уровень репозитория и нажав кнопку **Скачать ZIP**.
+
+Вам потребуются следующие операторы использования:
 
 ```csharp
 using LicenseRequest;
@@ -44,7 +51,7 @@ private string playReadyChallengeCustomData = "";
 Также требуется объявить следующую константу:
 
 ```csharp
-private const int MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = -2147174251;
+private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
 ```
 
 ## Настройка MediaProtectionManager
@@ -154,7 +161,7 @@ async Task<bool> ReactiveIndivRequest(
         else
         {
             COMException comException = exception as COMException;
-            if (comException != null &amp;&amp; comException.HResult == MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED)
+            if (comException != null && comException.HResult == MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED)
             {
                 IndivRequest.NextServiceRequest();
             }
@@ -290,6 +297,6 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Активация приложения (DirectX и C++)
 description: В этом разделе показано, как определить процесс активации для приложения универсальной платформы Windows (UWP), использующего DirectX.
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
@@ -7,7 +8,7 @@ ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
 # Активация приложения (DirectX и C++)
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе показано, как определить процесс активации для приложения универсальной платформы Windows (UWP), использующего DirectX.
 
@@ -89,6 +90,6 @@ void App::Run()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

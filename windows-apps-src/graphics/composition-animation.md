@@ -1,7 +1,8 @@
 ---
+author: scottmill
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
 title: Анимации композиции
-description: Анимация по ключевым кадрам и анимация на основе выражений позволяет изменять свойства объектов композиции и эффектов во времени или на основе расчетов.
+description: Многие свойства объектов композиции и эффектов можно анимировать, используя анимацию по ключевым кадрам или анимацию с помощью выражений. Это позволяет изменять свойства элементов пользовательского интерфейса во времени или на основе расчетов.
 ---
 # Анимации композиции
 
@@ -122,7 +123,7 @@ animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f), easeIn);
 Ниже приведен общий пример синтаксиса.
 
 ```cs
-targetVisual.StartAnimation(“Offset”, animation);
+targetVisual.StartAnimation("Offset", animation);
 ```
 
 После запуска анимации ее также можно остановить и отключить. Для этого вызовите метод [**StopAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt590841) и укажите свойство, анимацию которого нужно остановить.
@@ -130,7 +131,7 @@ targetVisual.StartAnimation(“Offset”, animation);
 Например:
 
 ```cs
-targetVisual.StopAnimation(“Offset”);
+targetVisual.StopAnimation("Offset");
 ```
 
 ### События завершения анимации
@@ -167,7 +168,7 @@ myScopedBatch.End();
 
 ```cs
 myScopedBatch = _compositor.CreateScopedBatch(CompositionBatchTypes.Animation);
-Visual.StartAnimation(“Opacity”, myAnimation);
+Visual.StartAnimation("Opacity", myAnimation);
 myScopedBatch.End();
 ```
 
@@ -192,7 +193,7 @@ myCommitBatch = _compositor.GetCommitBatch(CompositionBatchTypes.Animation);
 Для создания выражения вызовите метод [**CreateExpressionAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt187002) в объекте Compositor и укажите нужное выражение.
 
 ```cs
-var expression = _compositor.CreateExpressionAnimation(“INSERT_EXPRESSION_STRING”)
+var expression = _compositor.CreateExpressionAnimation("INSERT_EXPRESSION_STRING")
 ```
 
 ### Операторы, приоритет и ассоциативность
@@ -229,8 +230,8 @@ ChildVisual.Offset.X / ParentVisual.Offset.Y
 В вышеприведенной строке выражения нам нужно создать два параметра для определения двух визуальных объектов.
 
 ```cs
-Expression.SetReferenceParameter(“ChildVisual”, childVisual);
-Expression.SetReferenceParameter(“ParentVisual”, parentVisual);
+Expression.SetReferenceParameter("ChildVisual", childVisual);
+Expression.SetReferenceParameter("ParentVisual", parentVisual);
 ```
 
 ### Вспомогательные функции выражений
@@ -244,7 +245,7 @@ Expression.SetReferenceParameter(“ParentVisual”, parentVisual);
 Вот более сложный пример строки выражения, в котором используется вспомогательная функция Clamp.
 
 ```cs
-Clamp((scroller.Offset.y * -1.0) – container.Offset.y, 0, container.Size.y – header.Size.y)
+Clamp((scroller.Offset.y * -1.0) - container.Offset.y, 0, container.Size.y - header.Size.y)
 ```
 
 ### Запуск и остановка анимации на основе выражений
@@ -264,14 +265,14 @@ _sharedProperties = _compositor.CreatePropertySet();
 Как только вы создали свой набор свойств, вы можете добавить в него свойство и значение, используя один из методов **Insert\*** класса [**CompositionPropertySet**](https://msdn.microsoft.com/library/windows/apps/Dn706772). Например:
 
 ```cs
-_sharedProperties.InsertVector3(“NewOffset”, offset);
+_sharedProperties.InsertVector3("NewOffset", offset);
 ```
 
 После создания анимации на основе выражений ссылаться на свойства из набора в строке выражения можно с помощью параметра ссылки. Например:
 
 ```cs
-var expression = _compositor.CreateExpressionAnimation(“sharedProperties.NewOffset”);
-expression.SetReferenceParameter(“sharedProperties”, _sharedProperties);
+var expression = _compositor.CreateExpressionAnimation("sharedProperties.NewOffset");
+expression.SetReferenceParameter("sharedProperties", _sharedProperties);
 ```
 
 ### Ключевые кадры выражения
@@ -291,7 +292,7 @@ expression.SetReferenceParameter(“sharedProperties”, _sharedProperties);
 
 ```cs
 var animation = _compositor.CreateScalarKeyFrameAnimation();
-animation.InsertExpressionKeyFrame(0.25, “VisualBOffset.X / VisualAOffset.Y”);
+animation.InsertExpressionKeyFrame(0.25, "VisualBOffset.X / VisualAOffset.Y");
 animation.InsertKeyFrame(1.00f, 0.8f);
 ```
 
@@ -305,7 +306,7 @@ animation.InsertKeyFrame(1.00f, 0.8f);
 Пример использования в ключевом кадре выражения.
 
 ```cs
-animation.InsertExpressionKeyFrame(0.0f, “this.CurrentValue + delta”);
+animation.InsertExpressionKeyFrame(0.0f, "this.CurrentValue + delta");
 ```
 
 ### Условные выражения
@@ -334,7 +335,7 @@ animation.InsertExpressionKeyFrame(0.0f, “this.CurrentValue + delta”);
 Следующий фрагмент кода демонстрирует пример использования условных операторов в выражении.
 
 ```cs
-var expression = _compositor.CreateExpressionAnimation(“target.Offset.x > 50 ? 0.0f +   (target.Offset.x / parent.Offset.x) : 1.0f”);
+var expression = _compositor.CreateExpressionAnimation("target.Offset.x > 50 ? 0.0f +   (target.Offset.x / parent.Offset.x) : 1.0f");
 ```
 
  
@@ -346,6 +347,6 @@ var expression = _compositor.CreateExpressionAnimation(“target.Offset.x > 50 ?
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

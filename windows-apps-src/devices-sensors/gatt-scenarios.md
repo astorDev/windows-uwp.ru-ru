@@ -1,13 +1,14 @@
 ---
+author: DBirtolo
 ms.assetid: 28B30708-FE08-4BE9-AE11-5429F963C330
 title: Bluetooth GATT
 description: В этой статье представлен обзор Bluetooth Generic Attribute Profile (GATT) для приложений UWP, а также пример кода для трех распространенных сценариев GATT.
 ---
 # Bluetooth GATT
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Важные API
+** Важные API **
 
 -   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
 -   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
@@ -43,7 +44,7 @@ API Bluetooth GATT упрощают разработку, взаимодейст
 
 В этом примере приложение принимает температурные показатели от устройства Bluetooth, в котором реализована служба Bluetooth Health Thermometer Service (Медицинский термометр). Программа указывает, что хочет получать уведомление при наличии нового значения температурного показателя. При помощи регистрации обработчика событий для события изменения значения характеристики термометра приложение будет получать уведомления об этом событии во время работы на переднем плане.
 
-Обратите внимание, что в случае приостановки приложение должно освободить все ресурсы устройства, а после возобновления — снова выполнить его перечисление и инициализацию.
+Обратите внимание, что в случае приостановки приложение должно освободить все ресурсы устройства, а после возобновления — снова выполнить его перечисление и инициализацию. Если взаимодействие устройств в фоновом режим является желательным, воспользуйтесь [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx) или [GattCharacteristicNotificationTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.gattcharacteristicnotificationtrigger.aspx). DeviceUseTrigger лучше использовать для событий, происходящих более регулярно, в то время как GattCharacteristicNotificationTrigger подходит для обработки нерегулярных событий.  
 
 ```csharp
 double convertTemperatureData(byte[] temperatureData)
@@ -132,7 +133,7 @@ void MainPage::Initialize()
                 ref new TypedEventHandler<
                     GattCharacteristic^, 
                     GattValueChangedEventArgs^>(
-                        this, &amp;MainPage::TemperatureMeasurementChanged);
+                        this, &MainPage::TemperatureMeasurementChanged);
 
             create_task(thermometerCharacteristic->
                 WriteClientCharacteristicConfigurationDescriptorAsync(
@@ -354,7 +355,7 @@ void MainPage::Initialize()
                 ref new TypedEventHandler<
                     GattCharacteristic^, 
                     GattValueChangedEventArgs^>
-                    (this, &amp;MainPage::BatteryLevelChanged);
+                    (this, &MainPage::BatteryLevelChanged);
 
             create_task(batteryLevelCharacteristic
                 ->WriteClientCharacteristicConfigurationDescriptorAsync(
@@ -395,6 +396,6 @@ void MainPage::BatteryLevelChanged(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

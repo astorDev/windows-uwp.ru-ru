@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
 description: В этой статье перечисляются параметры кодирования, которые можно использовать с BitmapEncoder.
 title: Справочник по параметрам BitmapEncoder
@@ -38,6 +39,6 @@ title: Справочник по параметрам BitmapEncoder
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,11 +1,12 @@
 ---
+author: TylerMSFT
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: Создание периодического рабочего элемента
 description: Узнайте, как создать периодически повторяющийся рабочий элемент.
 ---
 # Создание периодического рабочего элемента
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -18,11 +19,13 @@ description: Узнайте, как создать периодически по
 
 Для создания периодического рабочего элемента используется метод [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915). Создайте лямбда-функцию, выполняющую работу, и используйте параметр *period* для указания интервала между отправками. Период указывается с помощью структуры [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996). Рабочий элемент будет отправляться каждый раз по истечении периода времени, поэтому убедитесь, что этот период является достаточным для завершения работы.
 
-[**CreateTimer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) возвращает объект [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587). Храните этот объект на случай, если таймер придется отменить.
+[
+              **CreateTimer**
+            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) возвращает объект [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587). Храните этот объект на случай, если таймер придется отменить.
 
-> **Примечание.** Избегайте указания для интервала нулевого значения (или значения меньше одной миллисекунды). Это приведет к тому, что периодический таймер будет вести себя как одиночный.
+> **Примечание**  Избегайте указания для интервала нулевого значения (или значения меньше одной миллисекунды). Это приведет к тому, что периодический таймер будет вести себя как одиночный.
 
-> **Примечание.** Для доступа к пользовательскому интерфейсу и отображения хода выполнения рабочего элемента можно использовать [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317).
+> **Примечание**  Для доступа к пользовательскому интерфейсу и отображения хода выполнения рабочего элемента можно использовать [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317).
 
 Следующий пример создает рабочий элемент, который запускается каждые 60 секунд.
 
@@ -156,14 +159,14 @@ description: Узнайте, как создать периодически по
 > 
 >         }),
 >         period,
->         ref new TimerDestroyedHandler([&amp;](ThreadPoolTimer ^ source)
+>         ref new TimerDestroyedHandler([&](ThreadPoolTimer ^ source)
 >         {
 >             // 
 >             // TODO: Handle periodic timer cancellation.
 >             // 
 > 
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
->                 ref new DispatchedHandler([&amp;]()
+>                 ref new DispatchedHandler([&]()
 >                 {
 >                     // 
 >                     // UI components can be accessed within this scope.
@@ -200,6 +203,6 @@ description: Узнайте, как создать периодически по
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

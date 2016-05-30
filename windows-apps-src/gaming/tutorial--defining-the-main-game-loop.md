@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Определение основного игрового объекта
 description: Давайте подробнее рассмотрим игровой объект и механизм реализации правил взаимодействия с внутриигровым миром.
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
@@ -3619,6 +3620,6 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

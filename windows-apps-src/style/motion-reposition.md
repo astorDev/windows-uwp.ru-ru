@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: Используйте анимацию перемещения для перемещения элементов в новое положение.
 title: Анимации перемещения в приложениях UWP
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
@@ -9,7 +10,7 @@ template: detail.hbs
 # Анимации перемещения
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 Используйте анимацию перемещения для перемещения элементов в новое положение.
 
@@ -43,6 +44,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

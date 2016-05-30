@@ -1,11 +1,12 @@
 ---
+author: TylerMSFT
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: Отправка рабочего элемента по таймеру
 description: Узнайте, как создать рабочий элемент, который выполняется после истечения времени таймера.
 ---
 # Отправка рабочего элемента по таймеру
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -69,7 +70,7 @@ description: Узнайте, как создать рабочий элемент
 >                     // UI components can be accessed within this scope.
 >                     // 
 > 
->                     ExampleUIUpdateMethod(&quot;Timer completed.&quot;);
+>                     ExampleUIUpdateMethod("Timer completed.");
 > 
 >                 }));
 > 
@@ -148,7 +149,7 @@ description: Узнайте, как создать рабочий элемент
 > completed = false;
 > 
 > ThreadPoolTimer ^ DelayTimer = ThreadPoolTimer::CreateTimer(
->         ref new TimerElapsedHandler([&amp;](ThreadPoolTimer ^ source)
+>         ref new TimerElapsedHandler([&](ThreadPoolTimer ^ source)
 >         {
 >             // 
 >             // TODO: Work
@@ -158,7 +159,7 @@ description: Узнайте, как создать рабочий элемент
 >             // Update the UI thread by using the UI core dispatcher.
 >             // 
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
->                 ref new DispatchedHandler([&amp;]()
+>                 ref new DispatchedHandler([&]()
 >                 {
 >                     // 
 >                     // UI components can be accessed within this scope.
@@ -170,14 +171,14 @@ description: Узнайте, как создать рабочий элемент
 > 
 >         }),
 >         delay,
->         ref new TimerDestroyedHandler([&amp;](ThreadPoolTimer ^ source)
+>         ref new TimerDestroyedHandler([&](ThreadPoolTimer ^ source)
 >         {
 >             // 
 >             // TODO: Handle work cancellation/completion.
 >             // 
 > 
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
->                 ref new DispatchedHandler([&amp;]()
+>                 ref new DispatchedHandler([&]()
 >                 {
 >                     // 
 >                     // Update the UI thread by using the UI core dispatcher.
@@ -227,6 +228,6 @@ description: Узнайте, как создать рабочий элемент
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

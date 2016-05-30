@@ -1,7 +1,8 @@
 ---
+author: martinekuan
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
-title: Что такое приложение универсальной платформы Windows (UWP)?
-description: Ознакомьтесь с различными типами универсальных приложений для Windows — приложениями Магазина Windows, Магазина Windows Phone и среды выполнения Windows.
+title: Что такое приложение UWP?
+description: Ознакомьтесь с различными типами приложений, которые мы называем универсальными приложениями для Windows: это приложения Магазина Windows, приложения Магазина Windows Phone и приложения среды выполнения Windows.
 ---
 
 # Что такое приложение UWP?
@@ -89,6 +90,6 @@ Microsoft Visual Studio 2015 включает шаблон приложений 
 * [Подготовка](get-set-up.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

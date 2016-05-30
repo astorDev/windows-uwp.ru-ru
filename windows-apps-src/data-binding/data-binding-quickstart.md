@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: Обзор привязки данных
 description: В этом разделе показано, как привязать элемент управления (или другой элемент пользовательского интерфейса) к отдельному элементу или как привязать элемент управления к коллекции элементов в приложении универсальной платформы Windows (UWP).
@@ -194,7 +195,7 @@ namespace Quickstart
 Привязка к коллекции элементов
 ------------------------------------------------------------------------------------------------------------------
 
-Распространенный сценарий — привязка к коллекции бизнес-объектов. В C# и Visual Basic универсальный класс [**ObservableCollection&lt;T&gt;**](T:System.Collections.ObjectModel.ObservableCollection%601) является хорошим выбором коллекции для привязки данных, поскольку он реализует интерфейсы [**INotifyPropertyChanged**](T:System.ComponentModel.INotifyPropertyChanged) и [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged). Эти интерфейсы предоставляют уведомления об изменении для привязок при добавлении или удалении элементов, а также при изменении свойства самого списка. Если необходимо обновлять привязанные элементы управления при изменениях свойств объектов в коллекции, бизнес-объект также должен реализовать интерфейс **INotifyPropertyChanged**. Дополнительные сведения см. в статье [Подробно о привязке данных](data-binding-in-depth.md).
+Распространенный сценарий — привязка к коллекции бизнес-объектов. В C# и Visual Basic универсальный класс [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/ms668604.aspx) является хорошим вариантом коллекции для привязки данных, поскольку реализует интерфейсы [**INotifyPropertyChanged**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) и [**INotifyCollectionChanged**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx). Эти интерфейсы предоставляют уведомления об изменении для привязок при добавлении или удалении элементов, а также при изменении свойства самого списка. Если необходимо обновлять привязанные элементы управления при изменениях свойств объектов в коллекции, бизнес-объект также должен реализовать интерфейс **INotifyPropertyChanged**. Дополнительные сведения см. в статье [Подробно о привязке данных](data-binding-in-depth.md).
 
 В следующем примере выполняется привязка класса [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) к коллекции объектов `Recording`. Сначала добавим коллекцию к нашей модели представления. Просто добавьте эти новые члены в класс **RecordingViewModel**.
 
@@ -279,11 +280,11 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 </Page>
 ```
 
-Мы еще не указали шаблон данных для класса **Recording**, поэтому инфраструктура пользовательского интерфейса может только вызвать метод [**ToString**](M:System.Object.ToString) для каждого элемента в классе [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). По умолчанию метод **ToString** возвращает имя типа.
+Мы еще не указали шаблон данных для класса **Recording**, поэтому инфраструктура пользовательского интерфейса может только вызвать метод [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) для каждого элемента в классе [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). По умолчанию метод **ToString** возвращает имя типа.
 
 ![Привязка списка](images/xaml-databinding1.png)
 
-Чтобы решить эту проблему, мы можем переопределить метод [**ToString**](M:System.Object.ToString) таким образом, чтобы он возвращал значение **OneLineSummary**, или указать шаблон данных. Шаблон данных — более распространенное и, возможно, гибкое решение. Шаблон данных задается с помощью свойства [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) элемента управления содержимым или с помощью свойства [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) элемента управления элементами. Ниже приведены два способа разработки шаблона данных для класса **Recording**, а также показан результат его применения.
+Чтобы решить эту проблему, мы можем переопределить метод [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) таким образом, чтобы он возвращал значение **OneLineSummary**, или указать шаблон данных. Шаблон данных — более распространенное и, возможно, гибкое решение. Шаблон данных задается с помощью свойства [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) элемента управления содержимым или с помощью свойства [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) элемента управления элементами. Ниже приведены два способа разработки шаблона данных для класса **Recording**, а также показан результат его применения.
 
 ``` xml
     <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -326,7 +327,7 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 
 Этот вопрос можно решить двумя способами. Вы можете привязать представление подробностей к свойству [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) класса [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Вы также можете использовать класс [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833): привязать как класс **ListView**, так и представление подробностей к классу **CollectionViewSource** (который обеспечит обработку выбранного в настоящее время элемента). Оба способа описаны ниже. Они дают аналогичные результаты, показанные на иллюстрации.
 
-**Примечание.** Пока что в этом разделе мы использовали только [расширение разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), но для обоих приведенных ниже методов требуется более гибкое (но менее производительное) [расширение разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782).
+**Примечание.** До сих пор в этом разделе мы использовали только [расширение разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), но для обоих приведенных ниже методов требуется более гибкое (но менее производительное) [расширение разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782).
 
 Сначала рассмотрим способ с использованием свойства [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770). Если вы используете расширения компонентов Visual C++ (C++/CX), вам потребуется добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) в класс **Recording**, так как мы будем использовать [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782).
 
@@ -395,7 +396,7 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 Форматирование или преобразование значений данных для отображения
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-С описанной выше обработкой возникает одна небольшая проблема. Свойство **ReleaseDateTime** — это не просто дата, а [**DateTime**](T:System.DateTime), поэтому оно отображается с большей точностью, чем нам нужно. Возможное решение проблемы — добавить строковое свойство в класс **Recording**, который возвращает `this.ReleaseDateTime.ToString("d")`. Присвоение этому свойству имени **ReleaseDate** указывает, что оно возвращает дату, а не дату и время. Присвоение ему имени **ReleaseDateAsString** дополнительно указывает, что оно возвращает строку.
+С описанной выше обработкой возникает одна небольшая проблема. Свойство **ReleaseDateTime** — это не просто дата, а [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx), поэтому оно отображается с большей точностью, чем нам нужно. Возможное решение проблемы — добавить строковое свойство в класс **Recording**, который возвращает `this.ReleaseDateTime.ToString("d")`. Присвоение этому свойству имени **ReleaseDate** указывает, что оно возвращает дату, а не дату и время. Присвоение ему имени **ReleaseDateAsString** дополнительно указывает, что оно возвращает строку.
 
 Более гибкое решение — использовать преобразователь величин. Вот пример того, как создать собственный преобразователь величин. Добавьте следующий код в файл исходного кода Recording.cs.
 
@@ -450,6 +451,6 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

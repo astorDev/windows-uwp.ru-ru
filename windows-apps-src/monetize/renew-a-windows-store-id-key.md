@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: Используйте этот метод, чтобы обновить ключ Магазина Windows.
 title: Обновление ключа идентификатора Магазина Windows
@@ -7,7 +8,7 @@ title: Обновление ключа идентификатора Магази
 # Обновление ключа идентификатора Магазина Windows
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Используйте этот метод, чтобы обновить ключ Магазина Windows. При генерации ключа идентификатора Магазина Windows с помощью метода [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) и [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) срок его действия составляет 90 дней. После истечения срока действия ключа его можно использовать для создания нового ключа с помощью данного метода.
 
@@ -54,7 +55,7 @@ title: Обновление ключа идентификатора Магази
 
 ### Пример запроса
 
-```
+```syntax
 POST https://collections.mp.microsoft.com/v6.0/b2b/keys/renew HTTP/1.1
 Content-Length: 2774
 Content-Type: application/json
@@ -79,7 +80,7 @@ Host: collections.mp.microsoft.com
 
 ### Пример ответа
 
-```
+```syntax
 HTTP/1.1 200 OK
 Content-Length: 1646
 Content-Type: application/json
@@ -114,6 +115,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

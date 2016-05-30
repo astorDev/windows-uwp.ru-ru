@@ -1,15 +1,16 @@
 ---
+author: DelfCo
 Description: Чтобы приложение соответствовало международному стандарту, выбирайте при разработке правильные форматы дат, времени, чисел и валют.
 title: Использование форматов международного стандарта
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
-label: Использование форматов международного стандарта
+label: Use global-ready formats
 template: detail.hbs
 ---
 
 # <span id="dev_globalizing.use_global-ready_formats"></span>Использование форматов международного стандарта
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 **Важные API**
@@ -27,7 +28,7 @@ template: detail.hbs
 
 Процесс адаптации к новым рынкам можно упростить, если учесть несколько моментов при разработке приложения.
 
-## <span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>Предварительные требования
+## <span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>Необходимые условия
 
 
 [Планирование для мирового рынка](https://msdn.microsoft.com/library/windows/apps/hh465405)
@@ -117,7 +118,7 @@ template: detail.hbs
 
     // Results for display.
     var results = "Fixed number (" + fractionalNumber + ")\n" +
-                  "With user&#39;s default currency: " + currencyDefault + "\n" +
+                  "With user's default currency: " + currencyDefault + "\n" +
                   "Formatted US Dollar: " + currencyUSD + "\n" +
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
     ```
@@ -149,7 +150,7 @@ template: detail.hbs
 
     // Results for display.
     var results = "Fixed number (" + fractionalNumber + ")\n" +
-                  "With user&#39;s default currency: " + currencyDefault + "\n" +
+                  "With user's default currency: " + currencyDefault + "\n" +
                   "Formatted US Dollar: " + currencyUSD + "\n" +
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
     ```
@@ -164,7 +165,7 @@ template: detail.hbs
 
     Если от языка или региональных параметров зависит функциональность вашего приложения, Windows дает возможность обращаться к этим настройкам с помощью [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825). При необходимости используйте класс **GlobalizationPreferences**, чтобы получить данные текущего географического региона, предпочитаемых языков, валют и других настроек пользователя.
 
-## <span id="related_topics"></span>Связанные разделы
+## <span id="related_topics"></span>Ссылки по теме
 
 
 * [Планирование для мирового рынка](https://msdn.microsoft.com/library/windows/apps/hh465405)
@@ -189,6 +190,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

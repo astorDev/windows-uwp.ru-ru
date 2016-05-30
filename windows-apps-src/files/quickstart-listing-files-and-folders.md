@@ -1,7 +1,8 @@
 ---
+author: TylerMSFT
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: Перечисление и запрос файлов и папок
-description: Получайте доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения также можно создавать запросы файлов и папок.
+description: Доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения также можно создавать запросы файлов и папок.
 ---
 # Перечисление и запрос файлов и папок
 
@@ -11,7 +12,7 @@ description: Получайте доступ к файлам и папкам в 
 
 Доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения также можно создавать запросы файлов и папок.
 
-**Примечание.**  См. также раздел [Пример перечисления папок](http://go.microsoft.com/fwlink/p/?linkid=619993).
+**Примечание.** См. также раздел [Пример перечисления папок](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
  
 ## Необходимые условия
@@ -26,7 +27,7 @@ description: Получайте доступ к файлам и папкам в 
 
 ## Перечисление файлов и папок в расположении
 
-> **Примечание.**  Не забудьте объявить возможность **picturesLibrary**.
+> **Примечание.** Не забудьте объявить возможность **picturesLibrary**.
 
 В этом примере мы сначала используем метод [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276), чтобы получить все файлы в корневой папке [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (не во вложенных папках) и перечислить имена всех файлов. Далее мы используем метод [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280), чтобы получить все папки в **PicturesLibrary** и перечислить имена всех вложенных папок.
 
@@ -41,47 +42,47 @@ description: Получайте доступ к файлам и папкам в 
 > using namespace concurrency;
 > using namespace std;
 > 
-> // Не забудьте указать возможность Pictures Folder в файле appxmanifext.
+> // Be sure to specify the Pictures Folder capability in the appxmanifext file.
 > StorageFolder^ picturesFolder = KnownFolders::PicturesLibrary;
 > 
-> // Используйте shared_ptr, чтобы строка хранилась в памяти
-> // до завершения последней задачиe.
+> // Use a shared_ptr so that the string stays in memory
+> // until the last task is complete.
 > auto outputString = make_shared<wstring>();
 > *outputString += L"Files:\n";
 > 
-> // Получите вектор read-only файловых объектов
-> // и передайте его задаче-продолжениюn. 
+> // Get a read-only vector of the file objects
+> // and pass it to the continuation. 
 > create_task(picturesFolder->GetFilesAsync())        
->     // Получение outputString производится по значению, что позволяет создать копию a copy 
->     // shared_ptr и увеличить значение счетчикаeссылок  count.
->     .then ([outputString] (IVectorView\<StorageFile^>^ files)
-> {        
->     for ( unsigned int i = 0 ; i < files->Size; i++)
->     {
->         *outputString += files->GetAt(i)->Name->Data();
->         *outputString += L"\n";
->     }
-> })
->     // Необходимо в явной форме указать возвращаемый типpe 
->     // здесь: -> IAsyncOperation<...>
->     .then([picturesFolder]() -> IAsyncOperation\<IVectorView\<StorageFolder^>^>^ 
-> {
->     return picturesFolder->GetFoldersAsync();
-> })
->     // Получите указатель this для доступа к m_OutputTextBlock из лямбда-выраженияambda.
->     .then([this, outputString](IVectorView\<StorageFolder^>^ folders)
-> {        
->     *outputString += L"Folders:\n";
+>    // outputString is captured by value, which creates a copy 
+>    // of the shared_ptr and increments its reference count.
+>    .then ([outputString] (IVectorView\<StorageFile^>^ files)
+>    {        
+>        for ( unsigned int i = 0 ; i < files->Size; i++)
+>        {
+>            *outputString += files->GetAt(i)->Name->Data();
+>            *outputString += L"\n";
+>       }
+>    })
+>    // We need to explicitly state the return type 
+>    // here: -> IAsyncOperation<...>
+>    .then([picturesFolder]() -> IAsyncOperation\<IVectorView\<StorageFolder^>^>^ 
+>    {
+>        return picturesFolder->GetFoldersAsync();
+>    })
+>    // Capture "this" to access m_OutputTextBlock from within the lambda.
+>    .then([this, outputString](IVectorView\<StorageFolder^>^ folders)
+>    {        
+>        *outputString += L"Folders:\n";
 > 
->     for ( unsigned int i = 0; i < folders->Size; i++)
->     {
->         *outputString += folders->GetAt(i)->Name->Data();
->         *outputString += L"\n";
->     }
+>        for ( unsigned int i = 0; i < folders->Size; i++)
+>        {
+>           *outputString += folders->GetAt(i)->Name->Data();
+>           *outputString += L"\n";
+>        }
 > 
->     // Предполагается, что m_OutputTextBlock — это TextBlock, определенный в XAML.
->     m_OutputTextBlock->Text = ref new String((*outputString).c_str());
-> });
+>        // Assume m_OutputTextBlock is a TextBlock defined in the XAML.
+>        m_OutputTextBlock->Text = ref new String((*outputString).c_str());
+>     });
 > ```
 > ```cs
 > StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -131,7 +132,7 @@ description: Получайте доступ к файлам и папкам в 
 > ```
 
 
-> **Примечание.**  В языках C# или Visual Basic обязательно вставляйте ключевое слово **async** в объявления всех методов, в которых используется оператор **await**.
+> **Примечание.** В языках C# или Visual Basic обязательно вставляйте ключевое слово **async** в объявления всех методов, в которых используется оператор **await**.
  
 
 Также вы можете использовать метод [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286), чтобы получить все элементы (как файлы, так и вложенные папки) в определенном расположении. В следующем примере используется метод **GetItemsAsync** для получения всех файлов и вложенных папок в корневой папке [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (не во вложенных папках). Затем в примере перечисляются имена всех файлов и вложенных папок. Если элемент является вложенной папкой, в примере к имени добавляется `"folder"`.
@@ -205,7 +206,7 @@ description: Получайте доступ к файлам и папкам в 
 
 ## Запрос файлов в расположении и перечисление соответствующих файлов
 
-В этом примере мы запрашиваем все файлы в [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) сгруппированные по месяцам, и в этот раз пример выполняет рекурсию во вложенные папки. Сначала мы вызываем [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) и передаем значение [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) в метод. Благодаря этому получаем объект [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066).
+В этом примере мы запрашиваем все файлы в [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156), сгруппированные по месяцам, и в этот раз пример выполняет рекурсию во вложенные папки. Сначала мы вызываем [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) и передаем значение [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) в метод. Благодаря этому получаем объект [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066).
 
 Затем мы вызываем [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074), который возвращает объекты класса [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), представляющие виртуальные папки. В этом случае мы группируем по месяцам, поэтому каждая виртуальная папка представляет группу файлов с одинаковым месяцем.
 
@@ -226,8 +227,8 @@ description: Получайте доступ к файлам и папкам в 
 > StorageFolderQueryResult^ queryResult = 
 >     picturesFolder->CreateFolderQuery(CommonFolderQuery::GroupByMonth);
 > 
-> // Используйте shared_ptr, чтобы значение outputString хранилось в памяти
-> // до выполнения последней задачи, которое осуществляется после выхода функции за пределы областиe.
+> // Use shared_ptr so that outputString remains in memory
+> // until the task completes, which is after the function goes out of scope.
 > auto outputString = std::make_shared<wstring>();
 > 
 > create_task( queryResult->GetFoldersAsync()).then([this, outputString] (IVectorView<StorageFolder^>^ view) 
@@ -268,12 +269,12 @@ description: Получайте доступ к файлам и папкам в 
 > {
 >     IReadOnlyList<StorageFile> fileList = await folder.GetFilesAsync();
 > 
->     // Печать месяца и количества файлов в группе.
+>     // Print the month and number of files in this group.
 >     outputText.AppendLine(folder.Name + " (" + fileList.Count + ")");
 > 
 >     foreach (StorageFile file in fileList)
 >     {
->         // Печать имени файла.
+>         // Print the name of the file.
 >         outputText.AppendLine("   " + file.Name);
 >     }
 > }
@@ -293,12 +294,12 @@ description: Получайте доступ к файлам и папкам в 
 >     Dim fileList As IReadOnlyList(Of StorageFile) =
 >         Await folder.GetFilesAsync()
 > 
->     ' Печать месяца и количества файлов в группе.
+>     ' Print the month and number of files in this group.
 >     outputText.AppendLine(folder.Name & " (" & fileList.Count & ")")
 > 
 >     For Each file As StorageFile In fileList
 > 
->         ' Печать имени файла.
+>         ' Print the name of the file.
 >         outputText.AppendLine("   " & file.Name)
 > 
 >     Next file
@@ -306,7 +307,7 @@ description: Получайте доступ к файлам и папкам в 
 > Next folder
 > ```
 
-Результат выполнения примера выглядит примерно следующим образом.
+Результат работы программы выглядит примерно так:
 
 ``` syntax
 July ‎2015 (2)
@@ -319,6 +320,6 @@ July ‎2015 (2)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

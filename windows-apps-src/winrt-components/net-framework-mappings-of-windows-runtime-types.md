@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: Сопоставление типов .NET Framework с типами среды выполнения Windows
 description: В следующей таблице перечислены установленные в .NET Framework сопоставления между типами универсальной платформы Windows (UWP) и типами .NET Framework.
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
@@ -83,6 +84,6 @@ ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: Представление календаря позволяет пользователю просматривать календарь и взаимодействовать с ним, перемещаясь по месяцам, годам и десятилетиям.
 title: Представление календаря
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
@@ -57,7 +58,8 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 Можно обработать событие [**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx), так чтобы оно получало оповещение в случае изменения коллекции [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx).
 
-> **Примечание.**&nbsp;&nbsp;Важные сведения о значениях даты см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи "Элементы управления датой и временем".
+> **Примечание**
+            &nbsp;&nbsp;Важные сведения о значениях даты см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи «Элементы управления датой и временем».
 
 ### Настройка вида представления календаря
 
@@ -190,6 +192,6 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 - [Управляющий элемент выбора времени](time-picker.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

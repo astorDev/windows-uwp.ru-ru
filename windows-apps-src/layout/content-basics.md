@@ -1,22 +1,19 @@
 ---
-Description: Основная цель приложения — обеспечить доступ к содержимому. В приложении для редактирования фотографий содержимым является фотография, в приложении для путешествий — карты и сведения о достопримечательностях и т. д.
-title: Основы проектирования содержимого для приложений UWP
+author: mijacobs
+Description: Основная цель любого приложения — обеспечить доступ к содержимому. В приложении для редактирования фотографий содержимым является фотография, в приложении для путешествий — карты и сведения о достопримечательностях и т. д.
+title: Основы проектирования содержимого на платформе универсальных приложений для Windows (UWP)
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
-label: Основы проектирования содержимого
+label: Content design basics
 template: detail.hbs
 ---
 
 #  Основы проектирования содержимого для приложений UWP
 
-
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
 Основная функция любого приложения заключается в предоставлении доступа к содержимому: в приложении для редактирования фотографий содержимым является фотография, в приложении для путешествий — карты и сведения о достопримечательностях и т. д. Элементы навигации предоставляют доступ к содержимому; элементы команд позволяют пользователю взаимодействовать с содержимым; элементы содержимого непосредственно отображают содержимое.
 
 В этой статье предоставляются рекомендации по разработке содержимого для трех типов содержимого.
 
-## <span id="Design_for_the_right_content_scenario"></span><span id="design_for_the_right_content_scenario"></span><span id="DESIGN_FOR_THE_RIGHT_CONTENT_SCENARIO"></span>Разработка правильного сценария использования содержимого
+## <span id="Design_for_the_right_content_scenario"></span><span id="design_for_the_right_content_scenario"></span><span id="DESIGN_FOR_THE_RIGHT_CONTENT_SCENARIO"></span>Разработка нужного сценария использования содержимого
 
 
 Существует три основных сценариев использования содержимого:
@@ -88,41 +85,39 @@ template: detail.hbs
 <tbody>
 <tr class="odd">
 <td align="left">Звук и видео</td>
-<td align="left">[Media playback and transport controls](../controls-and-patterns/media-playback.md)</td>
+<td align="left">[Элементы управления транспортом и воспроизведением мультимедиа](../controls-and-patterns/media-playback.md)</td>
 <td align="left">Воспроизведение звука и видео.</td>
 </tr>
 <tr class="even">
 <td align="left">Средства просмотра изображения</td>
-<td align="left">[Flip view](../controls-and-patterns/flipview.md), [image](../controls-and-patterns/images-imagebrushes.md)</td>
+<td align="left">[Представление пролистывания](../controls-and-patterns/flipview.md), [изображение](../controls-and-patterns/images-imagebrushes.md)</td>
 <td align="left">Отображение изображений. Элемент пролистывания предназначен для просмотра изображений в коллекции, например фотографий в альбоме или элементов на странице описания продукта. Каждый раз отображается одно изображение.</td>
 </tr>
 <tr class="odd">
 <td align="left">Списки</td>
-<td align="left">[drop-down list, list box, list view and grid view](../controls-and-patterns/lists.md)</td>
+<td align="left">[раскрывающийся список, список, представление списка и представление сетки](../controls-and-patterns/lists.md)</td>
 <td align="left">Представляет элементы в интерактивном списке или сетке. Используйте эти элементы, чтобы позволить пользователям выбирать фильм из списка новинок или управлять складом.</td>
 </tr>
 <tr class="even">
 <td align="left">Текст и текстовый ввод</td>
-<td align="left"><p>[Text block](../controls-and-patterns/text-block.md), [text box](../controls-and-patterns/text-box.md), [rich edit box](../controls-and-patterns/rich-edit-box.md)</p>
+<td align="left"><p>[Блок текста](../controls-and-patterns/text-block.md), [блок текста](../controls-and-patterns/text-box.md), [поле с форматом](../controls-and-patterns/rich-edit-box.md)</p>
 </td>
-<td align="left">Отображение текста. Некоторые элементы позволяют пользователю редактировать текст. Подробнее см. в разделе [Text controls](../controls-and-patterns/text-controls.md).</td>
+<td align="left">Отображение текста. Некоторые элементы позволяют пользователю редактировать текст. Дополнительные сведения см. в разделе [Элементы управления текстом](../controls-and-patterns/text-controls.md)</td>
 </tr>
 </tbody>
 </table>
 
- 
 
-\[Эта статья содержит сведения, относящиеся к приложениям универсальной платформы Windows (UWP) и Windows 10. Для получения инструкций, относящихся к Windows 8.1, скачайте [рекомендации для Windows 8.1 в формате PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
-
- 
 
  
 
+ 
 
 
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+<!--HONumber=May16_HO2-->
 
 

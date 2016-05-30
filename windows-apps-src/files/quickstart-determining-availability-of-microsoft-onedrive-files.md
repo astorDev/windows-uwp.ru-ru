@@ -1,11 +1,12 @@
 ---
+author: TylerMSFT
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
-title: Определение доступности файлов Microsoft OneDrive
+title: Определение доступности файлов Microsoft OneDrive
 description: Определите доступность файла Microsoft OneDrive с помощью свойства StorageFile.IsAvailable.
 ---
 # Определение доступности файлов Microsoft OneDrive
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** Важные API **
@@ -30,7 +31,9 @@ description: Определите доступность файла Microsoft O
 
 Пользователи могут отмечать файлы OneDrive как "доступные автономно" (по умолчанию) и как "только в сети". Благодаря этому пользователи могут перемещать большие файлы (например, изображения или видео) в свое хранилище OneDrive, отмечать их как «только в сети» и тем самым экономить место на диске. (На локальном диске будет храниться только файл, содержащий метаданные.)
 
-[**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx)позволяет определить, доступен ли файл в настоящий момент. Значения свойства **StorageFile.IsAvailable** в различных сценариях перечислены в следующей таблице.
+[
+              **StorageFile.IsAvailable**
+            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx), позволяет определить, доступен ли файл в настоящий момент. Значения свойства **StorageFile.IsAvailable** в различных сценариях перечислены в следующей таблице.
 
 | Тип файла                              | В сети | Сеть с лимитным тарифным планом        | Вне сети |
 |-------------------------------------------|--------|------------------------|---------|
@@ -90,6 +93,6 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

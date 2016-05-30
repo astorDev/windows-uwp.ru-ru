@@ -1,6 +1,7 @@
 ---
+author: mcleblanc
 title: Запуск приложения Магазина Windows
-description: В этом разделе описывается схема URI ms-windows-store. Ваше приложение может использовать эту схему URI для запуска приложения Магазина Windows на определенных страницах в Магазине.
+description: В этом разделе описывается схема URI ms-windows-store. Ваше приложение может использовать эту схему URI для запуска приложения Магазина Windows на определенных страница в Магазине.
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ---
 
@@ -26,11 +27,11 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 </td>
 </tr>
 <tr>
-<td rowspan="4">Запускает страницу сведений о продукте (PDP). <p>Пользователям Windows 10 мы рекомендуем использовать код продукта, но можно воспользоваться и более старыми способами (например, PFN).</p>
+<td rowspan="4">Запускает страницу сведений о продукте (PDP). <p>Код продукта в Магазине рекомендуется использовать клиентам с Windows 10, он работает во всех версиях ОС, однако предыдущие методы решения этой задачи (например, с помощью PFN) по-прежнему поддерживаются.</p>
 <p>Эти значения можно найти на информационной панели Центра разработки для Windows на странице <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">Удостоверение приложения</a> в разделе управления приложениями.</p>
 </td>
 <td>
-Код продукта <p>(рекомендуется)</p>
+Код продукта в Магазине <p>(рекомендуется)</p>
 </td>
 <td>
 <p>ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL</p>
@@ -38,7 +39,7 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 </tr>
 <tr>
 <td>Имя семейства пакетов (PFN)</td>
-<td>ms-windows-store://pdp/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe 
+<td>ms-windows-store://pdp/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe
 </td>
 </tr>
 <tr>
@@ -47,17 +48,17 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 </tr>
 <tr>
 <td>Код продукта (Windows 8.x)</td>
-<td>ms-windows-store://pdp/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117 
+<td>ms-windows-store://pdp/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117
 </td>
 </tr>
 <tr>
 <td rowspan="4">Запускает запись обзора для продукта.</td>
-<td>Код продукта <p>(рекомендуется)</p></td>
+<td>Код продукта в Магазине <p>(рекомендуется)</p></td>
 <td>ms-windows-store://review/?ProductId=9WZDNCRFHVJL </td>
 </tr>
 <tr>
 <td>Имя семейства пакетов (PFN)</td>
-<td>ms-windows-store://review/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe 
+<td>ms-windows-store://review/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe
 </td>
 </tr>
 <tr>
@@ -71,7 +72,7 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 <tr>
 <td>Запускает поиск продуктов, связанных с расширением файла. </td>
 <td />
-<td>ms-windows-store://assoc/?FileExt=pdf 
+<td>ms-windows-store://assoc/?FileExt=pdf
 </td>
 </tr>
 <tr>
@@ -107,7 +108,7 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 <td>Запускает поиск продуктов от указанного издателя. Имя может содержать пробелы. 
 </td>
 <td />
-<td>ms-windows-store://publisher/?name=Microsoft Corporation 
+<td>ms-windows-store://publisher/?name=Microsoft Corporation
 </td>
 </tr>
 <tr><td>Запускает страницу загрузок и обновлений.</td>
@@ -129,6 +130,6 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

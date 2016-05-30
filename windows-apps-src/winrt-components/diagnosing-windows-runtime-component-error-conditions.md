@@ -1,15 +1,16 @@
 ---
+author: martinekuan
 title: Диагностика состояний ошибки компонентов среды выполнения Windows
-description: В этой статье приведены дополнительные сведения об ограничениях, которые применяются к компонентам, написанным с использованием управляемого кода.
+description: В этой статье приведены дополнительные сведения об ограничениях, которые применяются к компонентам среды выполнения Windows, написанным с использованием управляемого кода.
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ---
 
 # Диагностика состояний ошибки компонентов среды выполнения Windows
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Microsoft не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
+\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
 
 В этой статье приведены дополнительные сведения об ограничениях, которые применяются к компонентам среды выполнения Windows, написанным с использованием управляемого кода. Эти сведения расширяют информацию, которая предоставляется в сообщениях об ошибке, отправляемых средством [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx), и дополняют сведения об ограничениях, представленные в разделе [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
@@ -33,7 +34,7 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ## Отсутствуют ссылки на библиотеки mscorlib.dll или System.Runtime.dll
 
 
-Эта проблема возникает только при использовании средства Winmdexp.exe через командную строку. Рекомендуется использовать параметр /reference, чтобы включить ссылки на обе библиотеки — mscorlib.dll и System.Runtime.dll — из основных ссылочных сборок .NET Framework, расположенных в папке %ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5 (%ProgramFiles%\\... на 32-разрядном компьютере).
+Эта проблема возникает только при использовании средства Winmdexp.exe через командную строку. Мы рекомендуем использовать параметр /reference, чтобы включить ссылки на обе библиотеки — mscorlib.dll и System.Runtime.dll — из основных ссылочных сборок .NET Framework, расположенных в папке %ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5 (%ProgramFiles%\\... на 32-разрядном компьютере).
 
 | Номер ошибки | Текст сообщения                                                                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -47,7 +48,7 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 
 В компоненте среды выполнения Windows, написанном с использованием управляемого кода, нельзя предоставлять перегруженные операторы открытых типов.
 
-> **Примечание.** В сообщении об ошибке оператор определяется по имени метаданных, например op\_Addition, op\_Multiply, op\_ExclusiveOr, op\_Implicit (неявное преобразование) и т. д.
+> **Примечание.** В сообщении об ошибке оператор определяется по имени метаданных, например op\_Addition, op\_Multiply, op\_ExclusiveOr, op\_Implicit (неявное преобразование) и т. д.
 
  
 
@@ -117,9 +118,9 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ## Экспорт типов, не являющихся допустимыми типами универсальной платформы Windows
 
 
-Открытый интерфейс компонента должен предоставлять только типы UWP. Однако платформа .NET Framework предоставляет сопоставления для нескольких часто используемых типов, незначительно отличающихся в .NET Framework и UWP. Это позволяет разработчикам .NET Framework работать со знакомыми типами вместо изучения новых. Вы можете использовать эти сопоставленные типы .NET Framework в открытом интерфейсе компонента. Ознакомьтесь с подразделами "Объявление типов в компонентах среды выполнения Windows" и "Передача типов среды выполнения Windows в управляемый код" в разделах [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)и [Сопоставление типов .NET Framework с типами среды выполнения Windows](net-framework-mappings-of-windows-runtime-types.md).
+Открытый интерфейс компонента должен предоставлять только типы UWP. Однако платформа .NET Framework предоставляет сопоставления для нескольких часто используемых типов, незначительно отличающихся в .NET Framework и UWP. Это позволяет разработчикам .NET Framework работать со знакомыми типами вместо изучения новых. Вы можете использовать эти сопоставленные типы .NET Framework в открытом интерфейсе компонента. Ознакомьтесь с подразделами «Объявление типов в компонентах среды выполнения Windows» и «Передача типов универсальной платформы Windows в управляемый код» в разделах [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)и [Сопоставление типов .NET Framework с типами среды выполнения Windows](net-framework-mappings-of-windows-runtime-types.md).
 
-Многие из этих сопоставлений являются интерфейсами. Например, интерфейс [IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) соответствует интерфейсу [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx) UWP. При использовании List&lt;string&gt; (`List(Of String)` в Visual Basic) вместо IList&lt;string&gt в качестве типа параметра Winmdexp.exe предоставляет список альтернативных вариантов, который включает все сопоставленные интерфейсы, реализованные типом List&lt;T&gt;. При использовании вложенных универсальных типов, таких как List&lt;Dictionary&lt;int, string&gt;&gt; (List(Of Dictionary(Of Integer, String)) в Visual Basic), Winmdexp.exe предлагает варианты для каждого уровня вложения. Эти списки могут быть довольно длинными.
+Многие из этих сопоставлений являются интерфейсами. Например, интерфейс [IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) соответствует интерфейсу UPW [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx). При использовании List&lt;string&gt; (`List(Of String)` в Visual Basic) вместо IList&lt;string&gt; в качестве типа параметра Winmdexp.exe предоставляет список альтернативных вариантов, который включает все сопоставленные интерфейсы, реализованные типом List&lt;T&gt;. При использовании вложенных универсальных типов, таких как List&lt;Dictionary&lt;int, string&gt;&gt; (List(Of Dictionary(Of Integer, String)) в Visual Basic), Winmdexp.exe предлагает варианты для каждого уровня вложения. Эти списки могут быть довольно длинными.
 
 Как правило, наиболее подходящим является ближайший к типу интерфейс. Например, для Dictionary&lt;int, string&gt; самым подходящим, вероятнее всего, является интерфейс IDictionary&lt;int, string&gt;.
 
@@ -152,12 +153,12 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>Сигнатура метода "{0}" содержит параметр типа "{1}". Хотя этот универсальный тип не является допустимым типом среды выполнения Windows, сам тип или его универсальные параметры реализуют интерфейсы, являющиеся допустимыми типами среды выполнения Windows. {2}</p>
-> **Примечание.** Для {2} Winmdexp.exe добавляет список альтернативных вариантов, например «Попробуйте заменить тип System.Collections.Generic.List&lt;T&gt; в сигнатуре метода на один из следующих типов: System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;».
+> **Примечание.** Для {2} Winmdexp.exe добавляет список альтернативных вариантов, например «Попробуйте изменить тип System.Collections.Generic.List&lt;T&gt; в сигнатуре метода на один из следующих типов: System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;».
 </td>
 </tr>
 <tr class="even">
 <td align="left">WME1040</td>
-<td align="left">Сигнатура метода "{0}" содержит параметр типа "{1}". Вместо управляемого типа Task используйте Windows.Foundation.IAsyncAction, Windows.Foundation.IAsyncOperation или один из асинхронных интерфейсов среды выполнения Windows. Стандартный шаблон ожидания .NET также применим к этим интерфейсам. Дополнительные сведения о преобразовании объектов управляемых задач в асинхронные интерфейсы среды выполнения Windows вы можете найти в разделе System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.</td>
+<td align="left">Сигнатура метода «{0}» содержит параметр типа «{1}». Вместо управляемого типа Task используйте Windows.Foundation.IAsyncAction, Windows.Foundation.IAsyncOperation или один из асинхронных интерфейсов среды выполнения Windows. Стандартный шаблон ожидания .NET также применим к этим интерфейсам. Дополнительные сведения о преобразовании объектов управляемых задач в асинхронные интерфейсы среды выполнения Windows вы можете найти в разделе System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.</td>
 </tr>
 </tbody>
 </table>
@@ -247,6 +248,6 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 * [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

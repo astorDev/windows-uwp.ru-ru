@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Запуск приложения для результатов
 description: Узнайте, как запустить приложение из другого приложения и обмениваться данными между двумя приложениями. Эта процедура называется запуском приложения для результатов.
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
@@ -7,7 +8,7 @@ ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 # Запуск приложения для результатов
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -24,17 +25,17 @@ ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 ## Шаг 1. Регистрация протокола, который будет обрабатываться в приложении, запущенном для результатов
 
 
-В файле Package.appxmanifest запущенного приложения добавьте расширение протокола в раздел **&lt;Application&gt;**. В этом примере используется вымышленный протокол с именем **test-app2app**.
+В файле Package.appxmanifest запущенного приложения добавьте расширение протокола в раздел **&lt;Приложение&gt;**. В этом примере используется вымышленный протокол с именем **test-app2app**.
 
 Атрибут **ReturnResults** в расширении протокола принимает одно из указанных ниже значений.
 
 -   **optional** — приложение может запускаться для результатов с помощью метода [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) или не для результатов с помощью метода [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). Если вы используете ключевое слово **optional**, то запущенное приложение должно определить, было ли оно запущено для результатов. Это можно сделать путем проверки аргумента события [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330). Если свойство аргумента [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) возвращает перечисление [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) или тип аргумента события равен [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742), то приложение было запущено с помощью метода **LaunchUriForResultsAsync**.
--   **always** — приложение может быть запущено только для результатов, то есть оно может реагировать только на метод [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686).
--   **none** — приложение не может быть запущено для результатов, то есть оно может реагировать только на метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476).
+-   **always** — приложение может быть запущено только для результатов, то есть оно может реагировать только на метод [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686).
+-   **none** — приложение не может быть запущено для результатов, то есть оно может реагировать только на метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476).
 
 В этом примере расширения протокола приложение можно запустить только для результатов. Это упрощает логику в методе **OnActivated**, описанном ниже, так как нам придется обрабатывать только случай запуска для результатов, а не другие возможные способы активации приложения.
 
-```xaml
+```xml
 <Applications>
    <Application ...>
 
@@ -154,8 +155,8 @@ async Task<string> LaunchAppForResults()
 
     string theResult = "";
     LaunchUriResult result = await Windows.System.Launcher.LaunchUriForResultsAsync(testAppUri, options, inputData);
-    if (result.Status == LaunchUriStatus.Success &amp;&amp;
-        result.Result != null &amp;&amp;
+    if (result.Status == LaunchUriStatus.Success &&
+        result.Result != null &&
         result.Result.ContainsKey("ReturnedData"))
     {
         ValueSet theValues = result.Result;
@@ -201,6 +202,6 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

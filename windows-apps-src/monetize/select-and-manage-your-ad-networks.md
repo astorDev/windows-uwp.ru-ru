@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 86D9D3CF-8FDC-4B67-881B-DF33A1BEE8BF
 description: Перед использованием рекламного посредника вам понадобится настроить учетные записи для каждой рекламной сети, которая будет использоваться в ваших приложениях.
 title: Выбор рекламных сетей и управление ими
@@ -101,7 +102,7 @@ title: Выбор рекламных сетей и управление ими
 
 Помимо обязательных параметров, каждая рекламная сеть также предоставляет дополнительные необязательные параметры, которые можно настроить с помощью кода в приложении. Полный список необязательных параметров см. в документации для каждой рекламной сети. Чтобы установить эти необязательные параметры в коде, используйте свойство **AdSdkOptionalParameters** объекта **AdMediatorControl**.
 
-В следующем примере показано, как задать параметр **CountryOrRegion** для рекламы Microsoft Advertising.
+В следующем примере показано, как задать свойству [CountryOrRegion](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.countryorregion.aspx) значение двухбуквенного кода страны или региона пользователя для Microsoft Advertising.
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["CountryOrRegion"] = "IN";
@@ -125,6 +126,6 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Height"] = 250;
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

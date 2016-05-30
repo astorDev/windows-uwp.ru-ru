@@ -1,6 +1,7 @@
 ---
+author: jwmsft
 description: В разметке XAML для свойства задается значение null.
-title: Расширение разметки xNull
+title: Расширение разметки x:Null
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 ---
 
@@ -32,6 +33,6 @@ ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

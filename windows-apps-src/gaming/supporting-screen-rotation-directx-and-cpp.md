@@ -1,13 +1,14 @@
 ---
+author: mtoepke
 title: Поддержка ориентации экрана (DirectX и C++)
-description: Мы обсудим обработку поворота экрана в приложении UWP с использованием DirectX для эффективного использования графического оборудования устройства с Windows 10.
+description: Далее мы обсудим рекомендации по обработке поворота экрана в вашем приложении UWP с использованием DirectX, чтобы графическое оборудование устройства с Windows 10 использовалось эффективно.
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
 ---
 
 # Поддержка ориентации экрана (DirectX и C++)
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Приложение универсальной платформы Windows (UWP) может поддерживать разные варианты ориентации экрана при обработке события [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268). Далее мы обсудим рекомендации по обработке поворота экрана в вашем приложении UWP с использованием DirectX, чтобы графическое оборудование устройства с Windows 10 использовалось эффективно.
 
@@ -552,6 +553,6 @@ m_constantBufferData.projection = mul(m_constantBufferData.projection, m_rotatio
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

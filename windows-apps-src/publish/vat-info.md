@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Если вы должны указать номер плательщика НДС при регистрации в Центре разработки, начните со следующего.
 title: Сведения об НДС
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
@@ -245,6 +246,6 @@ ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

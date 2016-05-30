@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Расширение образца игры
 description: Поздравляем! Теперь вы знаете основные компоненты для создания трехмерной игры UWP на базе DirectX.
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
@@ -30,7 +31,7 @@ keywords: ["DirectX, XAML"]
 
 Вы объявляете XAML для объекта **SwapChainBackgroundPanel**, как в файле **Main.app.xaml**:
 
-```xaml
+```xml
 <Page
     x:Name="DXMainPage"
     x:Class="Simple3DGameXaml.MainPage"
@@ -863,7 +864,7 @@ void App::ResetGame()
 
 MainPage.xaml
 
-```xaml
+```xml
 <SwapChainBackgroundPanel
     x:Name="DXSwapChainPanel"
     x:Class="Simple3DGameXaml.MainPage"
@@ -1514,6 +1515,6 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

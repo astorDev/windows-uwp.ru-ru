@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: Подготовка
 description: Подготовка на самом деле проще, чем может показаться. Ознакомьтесь с этими инструкциями и начните создание приложений универсальной платформы Windows (UWP) для Windows 10.
@@ -50,6 +51,6 @@ Microsoft Visual Studio 2015 помогает в проектировании, 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

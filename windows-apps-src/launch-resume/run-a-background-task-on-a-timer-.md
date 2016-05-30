@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Запуск фоновой задачи по таймеру
 description: Узнайте, как запланировать однократное выполнение фоновой задачи или периодически запускать фоновую задачу.
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
@@ -7,7 +8,7 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 # Запуск фоновой задачи по таймеру
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -32,11 +33,11 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
     -   Если параметру *FreshnessTime* задано значение 15 минут, а параметру *OneShot* — false, задача выполняется каждые 15 минут через 0–15 минут с момента ее регистрации.
 
-    **Примечание.**  Если параметру *FreshnessTime* задано значение меньше 15 минут, при попытке зарегистрировать фоновую задачу появляется исключение.
+    **Примечание.** Если параметру *FreshnessTime* задано значение меньше 15 минут, при попытке зарегистрировать фоновую задачу появляется исключение.
 
      
 
-    For example, this trigger will cause a background task to run once an hour:
+    Например, данный триггер запускает выполнение фоновой задачи один раз в час:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -83,26 +84,26 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
     > > [!div class="tabbedCodeSnippets"]
     > ```cs
-    > string entryPoint = “Tasks.ExampleBackgroundTaskClass”;
-    > string taskName   = “Example hourly background task”;
+    > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
+    > string taskName   = "Example hourly background task";
     > 
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
     > ```cpp
-    > String ^ entryPoint = “Tasks.ExampleBackgroundTaskClass”;
-    > String ^ taskName   = “Example hourly background task”;
+    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
+    > String ^ taskName   = "Example hourly background task";
     > 
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
     
-    > **Примечание.**  Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации оказываются недопустимыми, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
+    > **Примечание.** Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации оказываются недопустимыми, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
 
    
 ## Комментарии
 
-> **Примечание.**  Начиная c Windows 10, пользователю больше не потребуется добавлять приложения на экран блокировки, чтобы использовать фоновые задачи. Руководство по таким типам триггеров фоновых задач см. в разделе [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
+> **Примечание.** Начиная c Windows 10, пользователю больше не потребуется добавлять приложения на экран блокировки, чтобы использовать фоновые задачи. Руководство по таким типам триггеров фоновых задач см. в разделе [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
 
-> **Примечание.**  Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 
 ## Связанные разделы
@@ -130,6 +131,6 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

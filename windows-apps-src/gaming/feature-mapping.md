@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Сопоставление компонентов DirectX 9 и API DirectX 11
 description: Прочитав этот раздел, вы поймете, как компоненты, которые использует ваша игра с Direct3D 9, будут перенесены в Direct3D 11 и на универсальную платформу Windows (UWP).
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
@@ -7,7 +8,7 @@ ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 # Сопоставление компонентов DirectX 9 и API DirectX 11
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Резюме**
 
@@ -21,7 +22,7 @@ ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 ## Сопоставление Direct3D 9 и API DirectX 11
 
 
-[Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) по-прежнему является основой графики DirectX, но после выхода DirectX 9 изменились API.
+[Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) по-прежнему является основой графики DirectX, но после DirectX 9 изменились API.
 
 -   Для установки графических адаптеров используется Microsoft DirectX Graphics Infrastructure (DXGI). Используйте [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534) для выбора форматов буферов, создания цепочек буферов, представления кадров и создания общих ресурсов. См. общие сведения о [DXGI](https://msdn.microsoft.com/library/windows/desktop/bb205075).
 -   Контекст устройства Direct3D используется для установки состояния конвейера и генерирования команд отрисовки. Во многих наших примерах используется немедленный контекст для прямой отрисовки на устройстве. Direct3D 11 также поддерживает многопотоковую отрисовку, в этом случае используются отложенные контексты. См. раздел [Введение в устройство в Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476880).
@@ -129,7 +130,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>[<strong>IDirect3DDevice9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174336)</p></td>
 <td align="left"><p>[<strong>ID3D11Device2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280493)</p>
 <p>[<strong>ID3D11DeviceContext2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280498)</p>
-<p>Этапы графического конвейера описаны в разделе [Graphics Pipeline](https://msdn.microsoft.com/library/windows/desktop/ff476882).</p></td>
+<p>Этапы графического конвейера описаны в разделе [Графический конвейер](https://msdn.microsoft.com/library/windows/desktop/ff476882).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[<strong>IDirect3D9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174300)</p></td>
@@ -334,7 +335,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>Примечание.</strong> Используйте преобразование ссылок при перемещении данных с внешнего устройства .r в шейдере, чтобы дублировать красный цвет в другие компоненты и задавать поведение Direct3D 9.
+<strong></strong>Примечание. Используйте преобразование ссылок при перемещении данных с внешнего устройства .r в шейдере, чтобы дублировать красный цвет в другие компоненты и задавать поведение Direct3D 9.
 </div>
 <div>
  
@@ -344,7 +345,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>Примечание.</strong> Используйте преобразование ссылок при перемещении данных с внешнего устройства .rrrg в шейдере, чтобы дублировать красный цвет, переместить зеленый цвет в альфа-компоненты и задавать поведение Direct3D 9.
+<strong></strong>Примечание. Используйте преобразование ссылок при перемещении данных с внешнего устройства .rrrg в шейдере, чтобы дублировать красный цвет, переместить зеленый цвет в альфа-компоненты и задавать поведение Direct3D 9.
 </div>
 <div>
  
@@ -390,7 +391,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>Примечание.</strong> В Direct3D 9 данные увеличивались в 255.0f раз, но это может быть обработано шейдером.
+<strong></strong>Примечание. В Direct3D 9 данные увеличивались в 255.0f раз, но это может быть обработано шейдером.
 </div>
 <div>
  
@@ -404,7 +405,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>Примечание.</strong> В Direct3D 9 данные увеличивались в 255.0f раз, но это может быть обработано шейдером.
+<strong></strong>Примечание. В Direct3D 9 данные увеличивались в 255.0f раз, но это может быть обработано шейдером.
 </div>
 <div>
  
@@ -418,7 +419,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM & DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>Примечание.</strong> DXT1 и DXT2 — одно и то же с точки зрения API и оборудования. Единственная разница заключается в том, использовалось ли предварительно умноженное альфа-значение, которое может отследить приложение и которому не требуется отдельный формат.
+<strong></strong>Примечание. DXT1 и DXT2 — одно и то же с точки зрения API и оборудования. Единственная разница заключается в том, использовалось ли предварительно умноженное альфа-значение, которое может отследить приложение и которому не требуется отдельный формат.
 </div>
 <div>
  
@@ -432,7 +433,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM & DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>Примечание.</strong> DXT3 и DXT4 — одно и то же с точки зрения API и оборудования. Единственная разница заключается в том, использовалось ли предварительно умноженное альфа-значение, которое может отследить приложение и которому не требуется отдельный формат.
+<strong></strong>Примечание. DXT3 и DXT4 — одно и то же с точки зрения API и оборудования. Единственная разница заключается в том, использовалось ли предварительно умноженное альфа-значение, которое может отследить приложение и которому не требуется отдельный формат.
 </div>
 <div>
  
@@ -498,7 +499,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>Примечание.</strong> Используйте преобразование ссылок при перемещении данных с внешнего устройства .r в шейдере, чтобы дублировать красный цвет в другие компоненты и задавать поведение D3D9.
+<strong></strong>Примечание. Используйте преобразование ссылок при перемещении данных с внешнего устройства .r в шейдере, чтобы дублировать красный цвет в другие компоненты и задавать поведение D3D9.
 </div>
 <div>
  
@@ -572,7 +573,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>Примечание.</strong> Шейдер получает значения UINT, но если нужны целые числа с плавающей точкой в стиле Direct3D 9 (0.0f, 1.0f... 255.f), UINT можно просто преобразовать в тип float32 в шейдере.
+<strong></strong>Примечание. Шейдер получает значения UINT, но если нужны целые числа с плавающей точкой в стиле Direct3D 9 (0.0f, 1.0f... 255.f), UINT можно просто преобразовать в тип float32 в шейдере.
 </div>
 <div>
  
@@ -582,7 +583,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>Примечание.</strong> Шейдер получает значения SINT, но если нужны целые числа с плавающей точкой в стиле Direct3D 9, SINT можно просто преобразовать в тип float32 в шейдере.
+<strong></strong>Примечание. Шейдер получает значения SINT, но если нужны целые числа с плавающей точкой в стиле Direct3D 9, SINT можно просто преобразовать в тип float32 в шейдере.
 </div>
 <div>
  
@@ -592,7 +593,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>Примечание.</strong> Шейдер получает значения SINT, но если нужны целые числа с плавающей точкой в стиле Direct3D 9, SINT можно просто преобразовать в тип float32 в шейдере.
+<strong></strong>Примечание. Шейдер получает значения SINT, но если нужны целые числа с плавающей точкой в стиле Direct3D 9, SINT можно просто преобразовать в тип float32 в шейдере.
 </div>
 <div>
  
@@ -638,7 +639,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>Примечание.</strong> Требует уровня компонентов 10.0 или выше
+<strong></strong>Примечание. Требует уровня компонентов 10.0 или выше
 </div>
 <div>
  
@@ -648,7 +649,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>Примечание.</strong> Требует уровня компонентов 10.0 или выше
+<strong></strong>Примечание. Требует уровня компонентов 10.0 или выше
 </div>
 <div>
  
@@ -668,6 +669,6 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

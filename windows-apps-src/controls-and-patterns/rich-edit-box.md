@@ -1,11 +1,12 @@
 ---
+author: Jwmsft
 Description: Элемент управления RichEditBox можно использовать для ввода и правки документов в формате RTF, содержащих форматированный текст, изображения и гиперссылки. Элемент управления RichEditBox можно сделать доступным только для чтения, задав для его свойства IsReadOnly значение true.
-title: RichEditBox
+title: Элемент управления RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
-label: Поле с форматом
+label: Rich edit box
 template: detail.hbs
 ---
-# Поле с форматом
+# Блок форматируемого текста
 Элемент управления RichEditBox можно использовать для ввода и правки документов в формате RTF, содержащих форматированный текст, изображения и гиперссылки. Элемент управления RichEditBox можно сделать доступным только для чтения, задав для его свойства IsReadOnly значение **true**.
 
 <span class="sidebar_heading" style="font-weight: bold;">Важные API</span>
@@ -193,7 +194,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 
 
-\[Эта статья содержит сведения, относящиеся к приложениям универсальной платформы Windows (UWP) и Windows 10. Для получения инструкций по Windows 8.1, скачайте [рекомендации для Windows 8.1 в формате PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+
 
 ## Связанные разделы
 
@@ -209,10 +210,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - [**Класс Windows.UI.Xaml.Controls PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**Разработчикам (прочее)**
-- [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

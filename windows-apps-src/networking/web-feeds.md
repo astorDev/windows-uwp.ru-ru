@@ -1,12 +1,13 @@
 ---
-description: Получайте и создавайте новый и популярный веб-контент на базе сводных каналов стандартов RSS и Atom с помощью функций пространства имен Windows.Web.Syndication.
+author: DelfCo
+description: Получайте или создавайте самое свежее и популярное веб-содержимое с помощью сводных веб-каналов, созданных по стандартам RSS и Atom с помощью компонентов в пространстве имен Windows.Web.Syndication.
 title: Каналы RSS и Atom
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ---
 
 # Каналы RSS и Atom
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -85,7 +86,7 @@ var uri = null;
 try {
     uri = new Windows.Foundation.Uri(uriString);
 } catch (error) {
-    WinJS.log &amp;&amp; WinJS.log("Error: Invalid URI");
+    WinJS.log && WinJS.log("Error: Invalid URI");
     return;
 }
 ```
@@ -125,7 +126,7 @@ catch (Exception ex)
 ```
 ```javascript
 function onError(err) {
-    WinJS.log &amp;&amp; WinJS.log(err, "sample", "error");
+    WinJS.log && WinJS.log(err, "sample", "error");
 
     // Match error number with a ErrorStatus value.
     // Use Windows.Web.WebErrorStatus.getStatus() to retrieve HTTP error status codes.
@@ -146,7 +147,7 @@ function retreiveFeed(uri) {
     client.retrieveFeedAsync(uri).done(function (feed) {
         currentFeed = feed;
 
-        WinJS.log &amp;&amp; WinJS.log("Feed download complete.", "sample", "status");
+        WinJS.log && WinJS.log("Feed download complete.", "sample", "status");
 
         var title = "(no title)";
         if (currentFeed.title) {
@@ -255,6 +256,6 @@ function displayCurrentItem() {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

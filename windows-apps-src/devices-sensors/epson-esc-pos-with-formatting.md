@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
 title: Epson ESC/POS с форматированием
-description: Узнайте, как использовать командный язык ESC/POS для форматирования текста (изменения начертания, увеличения размера символов) для принтера точки обслуживания.
+description: Узнайте, как использовать командный язык ESC/POS для форматирования текста (например, изменения начертания на полужирное или увеличения размера символов в два раза) для принтера точки обслуживания.
 ---
 # Epson ESC/POS с форматированием
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -30,22 +31,22 @@ ESC/POS — это система управления, созданная Epson
 
 ```csharp
 // … prior plumbing code removed for brevity
-// this code assumed you’ve already created a receipt print job (printJob)
-// and also that you’ve already checked the PosPrinter Capabilities to 
+// this code assumed you've already created a receipt print job (printJob)
+// and also that you've already checked the PosPrinter Capabilities to 
 // verify that the printer supports Bold and DoubleHighDoubleWide print modes
 
-const string ESC = “\u001B”;
-const string GS = “\u001D”;
-const string InitializePrinter = ESC + “@”;
-const string BoldOn = ESC + “E” + “\u0001”;
-const string BoldOff = ESC + “E” + “\0”;
-const string DoubleOn = GS + “!” + “\u0011”;  // 2x sized text (double-high + double-wide)
-const string DoubleOff = GS + “!” + “\0”;
+const string ESC = "\u001B";
+const string GS = "\u001D";
+const string InitializePrinter = ESC + "@";
+const string BoldOn = ESC + "E" + "\u0001";
+const string BoldOff = ESC + "E" + "\0";
+const string DoubleOn = GS + "!" + "\u0011";  // 2x sized text (double-high + double-wide)
+const string DoubleOff = GS + "!" + "\0";
 
 printJob.Print(InitializePrinter);
-printJob.PrintLine(“Here is some normal text.”);
-printJob.PrintLine(BoldOn + “Here is some bold text.” + BoldOff);
-printJob.PrintLine(DoubleOn + “Here is some large text.” + DoubleOff);
+printJob.PrintLine("Here is some normal text.");
+printJob.PrintLine(BoldOn + "Here is some bold text." + BoldOff);
+printJob.PrintLine(DoubleOn + "Here is some large text." + DoubleOff);
 
 printJob.ExecuteAsync();
 ```
@@ -55,6 +56,6 @@ printJob.ExecuteAsync();
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

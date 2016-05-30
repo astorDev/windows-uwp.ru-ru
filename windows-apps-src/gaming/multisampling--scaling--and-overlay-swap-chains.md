@@ -1,6 +1,7 @@
 ---
+author: mtoepke
 title: Наложения и масштабирование цепочки буферов
-description: Узнайте, как создавать масштабируемые цепочки буферов для быстрой отрисовки и как использовать наложения цепочки буферов для улучшения визуального восприятия.
+description: Узнайте, как создавать масштабируемые цепочки буферов для более быстрой отрисовки на мобильных устройствах и как использовать наложения цепочки буферов (если они есть) для повышения качества визуального восприятия.
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
 ---
 
@@ -158,7 +159,7 @@ Direct3D 11.2 также предлагает новую возможность 
 
     > **Примечание.** Устанавливайте [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) при каждом изменении размера цепочки буферов.
 
-     ```cpp
+    ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
         2, // Double-buffered swap chain.
         static_cast<UINT>(m_d3dRenderTargetSize.Width),
@@ -323,6 +324,6 @@ Direct3D 11.2 также предлагает новую возможность 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

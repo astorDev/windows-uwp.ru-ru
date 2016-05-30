@@ -1,10 +1,11 @@
 ---
-title: Полный код для BasicReaderWriter
+author: mtoepke
+title: Полный код класса BasicReaderWriter
 description: Полный код класса и методов для чтения и записи двоичных файлов данных без ограничений.
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 ---
 
-# Полный код для BasicReaderWriter
+# Полный код класса BasicReaderWriter
 
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -25,19 +26,14 @@ ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 
 ## Технологии
 
-|                       |                 |
-|-----------------------|-----------------|
-| Языки программирования | C++             |
-| Модели программирования    | Среда выполнения Windows |
+**Языки программирования** —  C++  
+**Модели программирования** — среда выполнения Windows
 
 
 ## Требования
 
-| Минимальная версия клиента | Windows 10                            |
-|--------------------------|---------------------------------------|
-| Минимальная версия сервера | Windows Server 2016 Technical Preview |
-| Минимальная версия пакета SDK     |                                       |
-
+ **Минимальная версия клиента** — Windows 10       
+ **Минимальная версия сервера** — Windows Server 2016 Technical Preview 
 
 ## Просмотреть код (C++)
 
@@ -265,6 +261,6 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

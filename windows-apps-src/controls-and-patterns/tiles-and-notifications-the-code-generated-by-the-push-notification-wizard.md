@@ -1,15 +1,16 @@
 ---
+author: mijacobs
 Description: С помощью мастера Visual Studio можно формировать push-уведомления из мобильной службы, созданной средствами мобильных служб Windows Azure.
 title: Код, генерируемый мастером push-уведомлений
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
-label: подлежит уточнению
+label: TBD
 template: detail.hbs
 ---
 
 # Код, генерируемый мастером push-уведомлений
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 С помощью мастера Visual Studio можно формировать push-уведомления из мобильной службы, созданной средствами мобильных служб Windows Azure. Мастер Visual Studio формирует код, облегчая начало работы. В этом разделе объясняется, как мастер изменяет ваш проект, что делает сформированный код, как его использовать и что надо сделать дальше для максимально полного использования преимуществ push-уведомлений. См. [общую информацию о службах push-уведомлений Windows (WNS)](tiles-and-notifications-windows-push-notification-services--wns--overview.md).
 
@@ -218,7 +219,7 @@ Push-уведомления следует использовать соглас
 
 В случае обновления живых плиток с помощью push-уведомлений рекомендуется также следовать указаниям в [руководстве и контрольном списке по плиткам и индикаторам событий](https://msdn.microsoft.com/library/windows/apps/hh465403).
 
-## <span id="Next_steps"></span><span id="next_steps"></span><span id="NEXT_STEPS"></span>Следующие этапы
+## <span id="Next_steps"></span><span id="next_steps"></span><span id="NEXT_STEPS"></span>Следующие действия
 
 
 ### <span id="Using_the_Windows_Push_Notification_Services__WNS_"></span><span id="using_the_windows_push_notification_services__wns_"></span><span id="USING_THE_WINDOWS_PUSH_NOTIFICATION_SERVICES__WNS_"></span>Использование служб push-уведомлений Windows (WNS)
@@ -231,7 +232,7 @@ Push-уведомления следует использовать соглас
 
  
 
-## <span id="related_topics"></span>Связанные разделы
+## <span id="related_topics"></span>Ссылки по теме
 
 
 * [Обзор служб push-уведомлений Windows (WNS)](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
@@ -248,6 +249,6 @@ Push-уведомления следует использовать соглас
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

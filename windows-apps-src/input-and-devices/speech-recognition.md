@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: С помощью функции распознавания речи можно вводить данные, указывать действия или команды и выполнять задачи.
 title: Распознавание речи
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
@@ -8,8 +9,6 @@ template: detail.hbs
 
 # Распознавание речи
 
-
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 С помощью функции распознавания речи можно вводить данные, указывать действия или команды и выполнять задачи.
 
@@ -50,13 +49,13 @@ template: detail.hbs
 
      
 
-    These predefined grammars can be used to recognize up to 10 seconds of speech input and require no authoring effort on your part. However, they do require a connection to a network.
+    Эти предопределенные грамматики можно использовать для распознавания до ввода речи продолжительностью до 10 секунд, и для этого не потребуется никаких доработок с вашей стороны. Однако потребуется подключение к сети.
 
-    To use web-service constraints, speech input and dictation support must be enabled in **Settings** by turning on the "Get to know me" option in the Settings -&gt; Privacy -&gt; Speech, inking, and typing page.
+    Чтобы использовать ограничения веб-службы, в меню **Параметры** необходимо включить поддержку речевого ввода и диктовки в разделе "Познакомьтесь со мной" на странице Параметры -&gt; Конфиденциальность -&gt; Голосовые функции, рукописный ввод и ввод с клавиатуры.
 
-    Here, we show how to test whether speech input is enabled and open the Settings -&gt; Privacy -&gt; Speech, inking, and typing page, if not.
+    Здесь показано, как проверить, включен ли голосовой ввод, и если нет, как открыть страницу Параметры -&gt; Конфиденциальность -&gt; Голосовые функции, рукописный ввод и ввод с клавиатуры.
 
-    First, we initialize a global variable (HResultPrivacyStatementDeclined) to the HResult value of 0x80045509. See [Exception handling for in C\# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
+    Сначала мы инициализируем глобальную переменную (HResultPrivacyStatementDeclined) до значения HResult 0x80045509. См. раздел [Обработка исключений в C\# или Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
 
 ```    CSharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
@@ -206,9 +205,13 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 **Разработчикам**
 * [Взаимодействие с помощью голосовых функций](speech-interactions.md)
-**Проектировщикам**
+            
+          
+            **Проектировщикам**
 * [Рекомендации по проектированию голосовых функций](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**Примеры**
+            
+          
+            **Примеры**
 * [Пример распознавания и синтеза речи](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -219,6 +222,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

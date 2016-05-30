@@ -1,5 +1,6 @@
 ---
-Description: Следуйте этим рекомендациям по созданию и настройке геозон в вашем приложении.
+author: PatrickFarley
+Description: Следуйте этим рекомендациям по функции создания геозон в своем приложении.
 title: Руководство по приложениям, использующим функцию геозон
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ---
@@ -7,7 +8,7 @@ ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 # Руководство по приложениям, использующим функцию геозон
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -121,7 +122,7 @@ function onVisibilityChanged() {
 * [Настройка геозоны](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [Получение сведений о текущем расположении](https://msdn.microsoft.com/library/windows/apps/mt219698)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [UWP location sample (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Пример расположения для универсальной платформы Wndows (UWP) (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  
@@ -131,6 +132,6 @@ function onVisibilityChanged() {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

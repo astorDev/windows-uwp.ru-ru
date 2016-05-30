@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: Bluetooth RFCOMM
-description: В этой статье приводится обзор протокола Bluetooth RFCOMM в приложениях на базе UWP, а также пример кода для отправки и получения файла.
+description: В этой статье приводится обзор протокола Bluetooth RFCOMM в приложениях на базе универсальной платформы Windows (UWP), а также пример кода для отправки и получения файла.
 ---
 # Bluetooth RFCOMM
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -16,12 +17,13 @@ description: В этой статье приводится обзор прото
 
 ## Описание
 
-API в пространстве имен [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) основываются на существующих шаблонах для Windows.Devices, включая [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) и [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654). Возможности чтения и записи данных позволяют использовать [**установленные шаблоны потоков данных**](https://msdn.microsoft.com/library/windows/apps/BR208119) и объекты в [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791). Атрибуты протокола SDP имеют значение и ожидаемый тип. Однако в некоторых распространенных устройствах атрибуты SDP реализованы неправильно, и значение не соответствует ожидаемому типу. Кроме того, во многих случаях использования RFCOMM дополнительные атрибуты SDP вовсе не требуются. Поэтому этот API предоставляет доступ к данным SDP до синтаксического анализа, из которых разработчики могут получить необходимую информацию.
+API в пространстве имен [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) основываются на существующих шаблонах для Windows.Devices, включая [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) и [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654). Возможности чтения и записи данных позволяют использовать [**установленные шаблоны потоков данных**](https://msdn.microsoft.com/library/windows/apps/BR208119) и объекты в [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791). Атрибуты протокола обнаружения сервисов (SDP) имеют значение и ожидаемый тип. Однако в некоторых распространенных устройствах атрибуты SDP реализованы неправильно, и значение не соответствует ожидаемому типу. Кроме того, во многих случаях использования RFCOMM дополнительные атрибуты SDP вовсе не требуются. Поэтому этот API предоставляет доступ к данным SDP до синтаксического анализа, из которых разработчики могут получить необходимую информацию.
 
 В API RFCOMM используется понятие идентификаторов служб. Идентификатор службы представляет собой просто 128-разрядный идентификатор GUID, но часто также задается в виде 16- или 32-разрядного целого числа. API RFCOMM предлагает для идентификаторов служб оболочку, которая позволяет указывать и обрабатывать их в виде 128-разрядных идентификаторов GUID и 32-разрядных целых чисел, но не поддерживает 16-разрядные целые числа. В API это не представляет проблему, поскольку языки программирования автоматически преобразуют значения в 32-разрядное целое число, и идентификатор создается успешно.
 
-Приложения могут выполнять многоэтапные операции с устройством в фоновой задаче, поэтому они могут продолжать свою работу до завершения, даже когда приложение переходит в фоновый режим и приостанавливается. Это позволяет надежно выполнять операции обслуживания устройства, например внесение изменений в постоянные параметры или встроенное ПО и синхронизацию содержимого. При этом пользователь может заниматься чем-то еще, а не следить за индикатором выполнения. Используйте [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297315) для обслуживания устройства и [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297337) для синхронизации содержимого. Учтите, что такие фоновые задачи ограничивают продолжительность выполнения приложения в фоновом режиме и не рассчитаны на неопределенно долгую работу или неограниченную по времени синхронизацию.
+Приложения могут выполнять многоэтапные операции с устройством в фоновой задаче, поэтому они могут продолжать свою работу до завершения, даже когда приложение переходит в фоновый режим и приостанавливается. Это позволяет надежно выполнять операции обслуживания устройства, например внесение изменений в постоянные параметры или встроенное ПО и синхронизацию содержимого. При этом пользователь может заниматься чем-то еще, а не следить за индикатором выполнения. Используйте [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297315) для обслуживания устройства и [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297337) для синхронизации содержимого. Обратите внимание, что такие фоновые задачи ограничивают продолжительность выполнения приложения в фоновом режиме и не рассчитаны на неопределенно долгую работу или неограниченную по времени синхронизацию.
 
+Полный пример кода, демонстрирующий работу RFCOMM, см. в [**Образце чата Bluetooth Rfcomm**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat) на Github.  
 ## Отправка файла в качестве клиента
 
 Основной сценарий при отправке файла — подключение к парному устройству на базе нужной службы. Этот сценарий включает в себя следующие шаги:
@@ -48,8 +50,8 @@ async void Initialize()
         // Initialize the target Bluetooth BR device
         auto service = await RfcommDeviceService.FromIdAsync(services[0].Id);
 
-        // Check that the service meets this App’s minimum requirement
-        if (SupportsProtection(service) &amp;&amp; IsCompatibleVersion(service))
+        // Check that the service meets this App's minimum requirement
+        if (SupportsProtection(service) && IsCompatibleVersion(service))
         {
             _service = service;
 
@@ -91,7 +93,7 @@ bool SupportsProtection(RfcommDeviceService service)
         else
         {
             // The connection cannot be upgraded so an App may offer UI here
-            // to explain why a connection won’t be made.
+            // to explain why a connection won't be made.
             return false;
         }
     case SocketProtectionLevel.BluetoothEncryptionWithAuthentication:
@@ -143,10 +145,10 @@ void Initialize()
             create_task(RfcommDeviceService::FromIdAsync(services[0]->Id))
             .then([](RfcommDeviceService^ service)
             {
-                // Check that the service meets this App’s minimum
+                // Check that the service meets this App's minimum
                 // requirement
                 if (SupportsProtection(service)
-                    &amp;&amp; IsCompatibleVersion(service))
+                    && IsCompatibleVersion(service))
                 {
                     _service = service;
 
@@ -193,7 +195,7 @@ bool SupportsProtection(RfcommDeviceService^ service)
         else
         {
             // The connection cannot be upgraded so an App may offer UI here
-            // to explain why a connection won’t be made.
+            // to explain why a connection won't be made.
             return false;
         }
     case SocketProtectionLevel::BluetoothEncryptionWithAuthentication:
@@ -235,6 +237,8 @@ bool IsCompatibleVersion(RfcommDeviceService^ service)
 -   Чтобы подключаться к клиентскому устройству, создайте обработчик сокетов для получения запросов на подключение.
 -   При установлении соединения сохраните подключенный сокет для дальнейшей обработки.
 -   Следуйте установленным шаблонам потоков данных для считывания блоков данных из InputStream сокета и их сохранения в файл.
+
+Для сохранения службы RFCOMM в фоновом режиме используйте [**RfcommConnectionTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.rfcommconnectiontrigger.aspx). Фоновая задача запускается при подключении к службе. Разработчик получает дескриптор сокета в фоновой задаче. Фоновая задача является долгосрочной и сохраняется, пока используется сокет.    
 
 ```csharp
 Windows.Devices.Bluetooth.RfcommServiceProvider _provider;
@@ -278,7 +282,7 @@ void OnConnectionReceived(
     StreamSocketListener listener,
     StreamSocketListenerConnectionReceivedEventArgs args)
 {
-    // Stop advertising/listening so that we’re only serving one client
+    // Stop advertising/listening so that we're only serving one client
     _provider.StopAdvertising();
     await listener.Close();
     _socket = args.Socket;
@@ -309,7 +313,7 @@ void Initialize()
         listener->ConnectionReceived += ref new TypedEventHandler<
                 StreamSocketListener^,
                 StreamSocketListenerConnectionReceivedEventArgs^>
-           (&amp;OnConnectionReceived);
+           (&OnConnectionReceived);
         return create_task(listener->BindServiceNameAsync(
             _provider->ServiceId->AsString(),
             SocketProtectionLevel
@@ -341,7 +345,7 @@ void OnConnectionReceived(
     StreamSocketListener^ listener,
     StreamSocketListenerConnectionReceivedEventArgs^ args)
 {
-    // Stop advertising/listening so that we’re only serving one client
+    // Stop advertising/listening so that we're only serving one client
     _provider->StopAdvertising();
     create_task(listener->Close())
     .then([args](void) {
@@ -359,6 +363,6 @@ void OnConnectionReceived(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

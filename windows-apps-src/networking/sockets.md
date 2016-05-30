@@ -1,12 +1,13 @@
 ---
-description: Для связи с другими устройствами в качестве разработчика приложений UWP можно использовать как Windows.Networking.Sockets, так и Winsock.
+author: DelfCo
+description: Для связи с другими устройствами в качестве разработчика приложений универсальной платформы для Windows (UWP) можно использовать как Windows.Networking.Sockets, так и Winsock.
 title: Сокеты
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ---
 
 # Сокеты
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -14,6 +15,8 @@ ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 -   [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
 Для связи с другими устройствами в качестве разработчика приложений универсальной платформы для Windows (UWP) можно использовать как [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960), так и [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523). В этом разделе представлено подробное руководство по использованию пространства имен **Windows.Networking.Sockets** для выполнения сетевых операций.
+
+>**Примечание.** В рамках [сетевой изоляции](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx) система запрещает установку соединений сокетов или WinSock между двумя приложениями UWP, работающими на одном компьютере, через локальный петлевой адрес (127.0.0.0) либо путем явного указания локального IP-адреса. Это значит, что использовать сокеты для связи между двумя приложений UWP нельзя. UWP предоставляет другие механизмы связи между приложениями. Дополнительные сведения см. в разделе [Связь между приложениями](https://msdn.microsoft.com/windows/uwp/app-to-app/index).
 
 ## Базовые операции сокетов TCP
 
@@ -293,6 +296,6 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

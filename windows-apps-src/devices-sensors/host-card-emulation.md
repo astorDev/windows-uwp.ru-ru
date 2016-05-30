@@ -1,13 +1,14 @@
 ---
+author: DBirtolo
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
 title: Создание приложения для смарт-карты NFC
-description: Windows Phone 8.1 поддерживала приложения эмуляции NFC с помощью элемента на основе SIM-карты, но эта модель требовала, чтобы они были тесно связаны с ОМС.
+description: ОС Windows Phone 8.1 поддерживала приложения эмуляции для карты NFC с помощью защищенного элемента на основе SIM-карты, но для этой модели требовалось, чтобы приложения для безопасной оплаты были тесно связаны с операторами мобильных сетей (ОМС).
 ---
 # Создание приложения для смарт-карты NFC
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Важно!**  Этот раздел относится только к Windows 10 Mobile.
+**Важно!** Этот раздел относится только к Windows 10 Mobile.
 
 ОС Windows Phone 8.1 поддерживала приложения эмуляции карты NFC с помощью защищенного элемента на основе SIM-карты, но для этой модели требовалось, чтобы приложения для безопасной оплаты были тесно связаны с операторами мобильных сетей (ОМС). Это ограничивало выбор возможных способов оплаты для продавцов и разработчиков, не связанных с ОМС. В ОС Windows 10 Mobile мы внедрили новую технологию эмуляции карты под названием HCE (Host Card Emulation – эмуляция карты узла). Технология HCE позволяет вашему приложению устанавливать прямую связь с устройством чтения карт NFC. В этом разделе показано, как технология HCE работает на устройствах под управлением Windows 10 Mobile и как можно разрабатывать приложение с поддержкой HCE, чтобы клиенты могли получать доступ к вашим службам с помощью телефона, а не физической карты, и без обязательной связи с ОМС.
 
@@ -160,7 +161,7 @@ void BgTask::HandleHceActivation()
         if (Windows::Phone::System::SystemProtection::ScreenLocked)
         {
             auto denyIfLocked = Windows::Storage::ApplicationData::Current->RoamingSettings->Values->Lookup("DenyIfPhoneLocked");
-            if (denyIfLocked != nullptr &amp;&amp; (bool)denyIfLocked == true)
+            if (denyIfLocked != nullptr && (bool)denyIfLocked == true)
             {
                 // The phone is locked, and our current user setting is to deny transactions while locked so let the user know
                 // Denied
@@ -176,7 +177,7 @@ void BgTask::HandleHceActivation()
         }
 
         m_emulator->ApduReceived += ref new TypedEventHandler<SmartCardEmulator^, SmartCardEmulatorApduReceivedEventArgs^>(
-            this, &amp;BgTask::ApduReceived);
+            this, &BgTask::ApduReceived);
 
         m_emulator->ConnectionDeactivated += ref new TypedEventHandler<SmartCardEmulator^, SmartCardEmulatorConnectionDeactivatedEventArgs^>(
                 [this](
@@ -228,7 +229,7 @@ public static byte[] AID_OTHER =
         {
             (byte)'1', (byte)'2', (byte)'3', (byte)'4',
             (byte)'5', (byte)'6', (byte)'7', (byte)'8',
-            (byte)'O', (byte)'T', (byte)'H', (byte)'E', (byte)'R’
+            (byte)'O', (byte)'T', (byte)'H', (byte)'E', (byte)'R'
         };
 
 var appletIdGroup = new SmartCardAppletIdGroup(
@@ -373,13 +374,13 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-**Важно! **  
-Поддержка традиционного двоичного перехвата SMS в Windows Phone 8.1 была удалена и заменена новой, более широкой поддержкой SMS в Windows 10 Mobile, но любые традиционные приложения для Windows Phone 8.1, основанные на этом, необходимо обновить для использования новых API SMS Windows 10 Mobile.
+** Важно! **  
+Поддержка традиционного двоичного перехвата SMS в Windows Phone 8.1 была удалена и заменена новой, более широкой поддержкой SMS в Windows 10 Mobile, но любые традиционные приложения для Windows Phone 8.1, основанные на этом, необходимо обновить для использования новых API SMS Windows 10 Mobile.
 
 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

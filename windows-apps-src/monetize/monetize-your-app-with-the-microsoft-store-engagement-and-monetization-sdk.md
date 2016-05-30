@@ -1,10 +1,11 @@
 ---
+author: mcleanbyron
 Description: Пакет SDK Microsoft Store Engagement and Monetization предоставляет библиотеки и средства, которые вы можете использовать для добавления в приложения функций, помогающие заработать и привлечь пользователей.
-title: Монетизация приложений и привлечение пользователей с помощью пакета SDK Store Engagement and Monetization
+title: Пакет SDK Microsoft Store Engagement and Monetization
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 ---
 
-# Монетизация приложений и привлечение пользователей с помощью пакета SDK Store Engagement and Monetization
+# Пакет SDK Microsoft Store Engagement and Monetization
 
 Пакет SDK Microsoft Store Engagement and Monetization предоставляет библиотеки и средства, которые помогают заработать и привлекать пользователей, например показ рекламы в приложениях и эксперименты с A/B-тестированием. Этот пакет SDK заменяет Microsoft Universal Ad Client SDK. Со временем он будет расширяться за счет новых возможностей привлечения и монетизации.
 
@@ -15,7 +16,7 @@ ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 
 ### Проведение экспериментов с A/B-тестированием приложений UWP
 
-Проводите A/B- тесты в приложениях универсальной платформы Windows, чтобы оценить эффективность функций на некоторых пользователях перед их выпуском для всех пользователей. После определения эксперимента в информационной панели Центра разработки используйте класс [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.engagementclient.aspx), чтобы получить варианты эксперимента. Воспользуйтесь этими данными, чтобы изменить поведение тестируемой функции, а затем вызовите метод [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx), чтобы отправить событие просмотра и события преобразования в Центр разработки. Наконец, используйте информационную панель для просмотра результатов и управления экспериментом.
+Проводите A/B- тесты в приложениях универсальной платформы Windows, чтобы оценить эффективность функций на некоторых пользователях перед их выпуском для всех пользователей. После определения эксперимента в информационной панели Центра разработки используйте класс [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentclient.aspx), чтобы получить варианты эксперимента. Воспользуйтесь этими данными, чтобы изменить поведение тестируемой функции, а затем вызовите метод [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx), чтобы отправить событие просмотра и события преобразования в Центр разработки. Наконец, используйте информационную панель для просмотра результатов и управления экспериментом.
 
 Дополнительные сведения можно см. в разделе [Проведение экспериментов с использованием A/B-тестирования](run-app-experiments-with-a-b-testing.md).
 
@@ -24,6 +25,8 @@ ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 Используйте класс [Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) в своих приложениях UWP, чтобы направлять пользователей Windows 10 в Центр отзывов, где они смогут сообщать о проблемах, делиться предложениями и голосовать за комментарии других пользователей. Затем вы сможете проанализировать все эти данные в [отчете об отзывах](../publish/feedback-report.md) на информационной панели Центра разработки.
 
 Дополнительные сведения см. в статье [Запуск Центра отзывов из приложения](launch-feedback-hub-from-your-app.md).
+
+>**Примечание**. Отчет **Отзывы** в настоящее время доступен только для учетных записей разработчиков, которые участвуют в [программе предварительной оценки Центра разработки](../publish/dev-center-insider-program.md).
 
 ### Показ рекламы в приложениях
 
@@ -72,6 +75,6 @@ ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 * [Запуск Центра отзывов из приложения](launch-feedback-hub-from-your-app.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

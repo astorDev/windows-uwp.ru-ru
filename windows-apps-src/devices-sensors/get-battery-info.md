@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
 title: Получение сведений о батарее
-description: Узнайте, как получить подробные сведения о батарее с помощью API в пространстве имен Windows.Devices.Power.
+description: Узнайте, как получить подробные сведения об аккумуляторе с помощью API в пространстве имен Windows.Devices.Power.
 ---
 # Получение сведений о батарее
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -250,7 +251,7 @@ namespace App1
             TextBlock txt5 = new TextBlock { Text = "Fully-charged energy capacity (mWh): " + report.FullChargeCapacityInMilliwattHours.ToString() };
             TextBlock txt6 = new TextBlock { Text = "Remaining energy capacity (mWh): " + report.RemainingCapacityInMilliwattHours.ToString() };
 
-            // Create energy capacity progress bar &amp; labels
+            // Create energy capacity progress bar & labels
             TextBlock pbLabel = new TextBlock { Text = "Percent remaining energy capacity" };
             pbLabel.Margin = new Thickness(0,10, 0, 5);
             pbLabel.FontFamily = new FontFamily("Segoe UI");
@@ -327,12 +328,12 @@ namespace App1
 
 И наконец для запуска основного приложения батареи сделайте следующее: в меню **Отладка** выберите пункт **Начать отладку**, чтобы протестировать решение.
 
-**Совет.** Чтобы получить числовые значения из объекта [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005), выполните отладку своего приложения на **локальном компьютере** или на внешнем **устройстве** (например, на Windows Phone). При отладке в эмуляторе устройства для свойств емкости и уровня заряда объект **BatteryReport** возвращает значение **null**.
+**Подсказка.** Чтобы получить числовые значения из объекта [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005), выполните отладку своего приложения на **локальном компьютере** или на внешнем **устройстве** (например, на Windows Phone). При отладке в эмуляторе устройства для свойств емкости и уровня заряда объект **BatteryReport** возвращает значение **null**.
 
  
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: Xansky
 description: Использование контактов и сведений календаря в приложении UWP.
 title: Контакты и календарь
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
@@ -32,6 +33,6 @@ ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

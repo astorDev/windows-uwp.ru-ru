@@ -1,13 +1,14 @@
 ---
+author: mtoepke
 title: Вопросы и ответы по переносу на DirectX 11
-description: Ответы на распространенные вопросы о переносе игр на универсальную платформу Windows (UWP).
+description: Ответы на часто встречающиеся вопросы о переносе игр на универсальную платформу Windows (UWP).
 ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
 ---
 
 # Вопросы и ответы по переносу на DirectX 11
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Ответы на часто встречающиеся вопросы о переносе игр на универсальную платформу Windows (UWP).
@@ -25,7 +26,9 @@ Direct3D 11 значительно обновлен по сравнению с 
 ##  Нужно ли обновлять таймер игры для UWP?
 
 
-[**QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904) и [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905) по-прежнему остаются лучшим способом реализации игрового таймера для приложений UWP.
+[
+              **QueryPerformanceCounter**
+            ](https://msdn.microsoft.com/library/windows/desktop/ms644904) вместе с [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905) по-прежнему являются наиболее эффективным способом реализации таймера игры для UWP.
 
 Помните о нюансе относительно таймеров и жизненного цикла приложения UWP. Приостановка и возобновление отличаются от перезапуска классического приложения, так как игра возобновляется с того момента, на котором была приостановлена. Если прошло длительное время, например несколько недель, некоторые реализации таймеров могут работать некорректно. Вы можете использовать события жизненного цикла приложения, чтобы сбросить таймер при возобновлении игры.
 
@@ -134,6 +137,6 @@ Microsoft Visual Studio 2015 включает средства диагност
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

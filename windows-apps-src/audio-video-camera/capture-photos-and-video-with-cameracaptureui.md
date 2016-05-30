@@ -1,7 +1,8 @@
 ---
+author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-description: В статье описано, как использовать класс CameraCaptureUI для съемки фото и видео с помощью пользовательского интерфейса камеры, встроенного в Windows.
-title: Фото- и видеозахват с помощью CameraCaptureUI
+description: В этой статье рассказывается, как использовать класс CameraCaptureUI, чтобы фотографировать и снимать видео с помощью пользовательского интерфейса камеры, встроенного в Windows.
+title: Фото- и видеосъемка с помощью CameraCaptureUI
 ---
 
 # Фото- и видеосъемка с помощью CameraCaptureUI
@@ -21,7 +22,7 @@ title: Фото- и видеозахват с помощью CameraCaptureUI
 
 Чтобы захватить фотографию, создайте новый объект [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). С помощью свойства [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) объекта можно указать параметры возвращенной фотографии, например ее формат. По умолчанию пользовательский интерфейс захвата с камеры позволяет обрезать фотографии перед их возвращением. Эту функцию можно отключить с помощью свойства [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042). В этом примере свойство [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) используется для возвращения изображений с разрешением 200 x 200 пикселей.
 
-**Примечание** Обрезка изображения в CameraCaptureUI не поддерживается для устройств из семейства мобильных устройств. Значение свойства [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) игнорируется, если приложение выполняется на этих устройствах.
+**Примечание**  Обрезка изображения в CameraCaptureUI не поддерживается для устройств из семейства мобильных устройств. Значение свойства [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) игнорируется, если приложение выполняется на этих устройствах.
 
 Вызовите метод [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) и задайте [**CameraCaptureUIMode.Photo**](https://msdn.microsoft.com/library/windows/apps/br241040), чтобы захватить фотографию. Если захват выполнен успешно, этот метод возвращает экземпляр [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171), содержащий изображение. Если пользователь отменил захват, возвращается объект null.
 
@@ -88,7 +89,7 @@ title: Фото- и видеозахват с помощью CameraCaptureUI
 
 Вы можете продолжать записывать видеоклипы и добавлять их в композицию. Дополнительные сведения о композициях мультимедиа см. в статье [Создание и редактирование мультимедиа](media-compositions-and-editing.md).
 
-**Примечание.**  
+**Примечание**  
 Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
@@ -106,6 +107,6 @@ title: Фото- и видеозахват с помощью CameraCaptureUI
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

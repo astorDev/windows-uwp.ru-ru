@@ -1,10 +1,11 @@
 ---
-title: Буферы, однородные элементы и атрибуты вершин OpenGL ES 2.0 и Direct3D
+author: mtoepke
+title: Сравнение буферов, однородных элементов и атрибутов вершин OpenGL ES 2.0 с Direct3D
 description: В процессе переноса в Direct3D 11 из OpenGL ES 2.0 необходимо изменить синтаксис и поведение API для передачи данных между приложением и программами-шейдерами.
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ---
 
-# Сравнение буферов, однородных элементов и атрибутов вершин OpenGL ES 2.0 с Direct3D
+# Сравнение атрибутов буферов, однородностей и вершин OpenGL ES 2.0 с Direct3D
 
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -296,6 +297,6 @@ struct VertexShaderInput
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

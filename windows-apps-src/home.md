@@ -43,6 +43,6 @@ redirect_url: https://developer.microsoft.com/en-us/windows/develop
 | [Платформа XAML](xaml-platform/index.md) | Начните работу с основами языка программирования XAML. Или, если вы уже знакомы с XAML, двигайтесь дальше и узнайте, как реализовать функции среды выполнения Windows в XAML с помощью Visual Studio, чтобы создать превосходное универсальное приложение для Windows. |
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

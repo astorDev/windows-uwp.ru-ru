@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Магазин Windows предлагает выставление счетов оператором мобильной связи в качестве метода оплаты для операторов мобильной связи, которые поддерживают эту возможность.
 title: Биллинг мобильного оператора
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
@@ -43,7 +44,7 @@ ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 | Австралия            | Telstra                                                            |
 | Австрия              | A1 Telekom, T-Mobile                                               |
 | Бахрейн              | Zain, VIVA                                                         |
-| Бельгия              | BASE, Mobistar                                                     |
+| Бельгия              | BASE, Mobistar, Proximus                                                     |
 | Бразилия               | Claro                                                              |
 | Болгария             | Telenor                                                            |
 | Канада               | Fido, Rogers, Telus                                                |
@@ -64,7 +65,7 @@ ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 | Венгрия              | Telenor, T-Mobile                                                  |
 | Индия                | Idea                                                               |
 | Индонезия            | Indosat, Telkomsel, XL Axiata, AXIS                                |
-| Ирландия              | O2, Vodafone                                                       |
+| Ирландия              | O2, Vodafone, Three                                                      |
 | Италия                | Telecom Italia, Vodafone, Wind, 3 Italia                           |
 | Иордания               | Zain, Umniah                                                       |
 | Кения                | Safaricom                                                          |
@@ -82,7 +83,7 @@ ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 | Польша               | T-Mobile, Orange, Polkomtel (Plus)                                 |
 | Пуэрто-Рико          | Claro                                                              |
 | Румыния              | Orange, Vodafone                                                   |
-| Россия               | Билайн                                                            |
+| Россия               | Билайн, МТС                                                          |
 | Саудовская Аравия         | Zain                                                               |
 | Сингапур            | M1, SingTel, StarHub                                               |
 | Словакия             | T-Mobile                                                           |
@@ -110,6 +111,6 @@ ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

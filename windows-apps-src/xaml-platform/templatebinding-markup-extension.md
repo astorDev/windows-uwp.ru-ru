@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Связывает значение свойства в шаблоне элемента управления и значение какого-либо другого предоставленного свойства элемента управления-шаблона. TemplateBinding может использоваться только в пределах определения ControlTemplate в XAML.
 title: Расширение разметки TemplateBinding
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
@@ -58,6 +59,6 @@ ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

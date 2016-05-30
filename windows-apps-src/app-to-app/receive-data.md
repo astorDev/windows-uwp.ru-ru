@@ -42,8 +42,6 @@ author: awkoren
 
 Когда пользователь выбирает ваше приложение (обычно из списка доступных приложений — получателей данных в пользовательском интерфейсе общего ресурса), создается событие [**Application.OnShareTargetActivated**][OnShareTargetActivated]. Ваше приложение должно обработать это событие, чтобы принять данные, к которым пользователь хочет предоставить общий доступ.
 
-Обратите внимание, что если приложение активировано в качестве получателя данных в то время, когда оно уже запущено, работа существующего экземпляра приложения будет завершена. Для обработки контракта будет запущен новый экземпляр приложения.
-
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
 protected override async void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -61,8 +59,8 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
     string text = await shareOperation.Data.GetTextAsync();
 
     // To output the text from this example, you need a TextBlock control
-    // with a name of &quot;sharedContent&quot;.
-    sharedContent.Text = &quot;Text: &quot; + text;
+    // with a name of "sharedContent".
+    sharedContent.Text = "Text: " + text;
 } 
 ```
 
@@ -85,7 +83,7 @@ shareOperation.ReportSubmittedBackgroundTask();
 При возникновении сбоя вызовите [**ReportError**][ReportError], чтобы отправить системе сообщение об ошибке. Пользователь увидит это сообщение при проверке состояния общего доступа. В этот момент ваше приложение завершило работу, и общий доступ закрыт. Пользователь должен запустить его снова, чтобы установить общий доступ к содержимому. В зависимости от сценария вы можете счесть некоторые ошибки недостаточно серьезными для завершения общего доступа. В этом случае вы можете не вызывать **ReportError** и продолжать работу с общим доступом.
 
 ```cs
-shareOperation.ReportError(&quot;Could not reach the server! Try again later.&quot;); 
+shareOperation.ReportError("Could not reach the server! Try again later."); 
 ```
 
 Наконец, когда приложение обработало общее содержимое, следует вызвать метод [**ReportCompleted**], чтобы сообщить об этом системе.
@@ -114,13 +112,13 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 
         // For quicklinks, the supported FileTypes and DataFormats are set 
         // independently from the manifest
-        SupportedFileTypes = { &quot;*&quot; },
+        SupportedFileTypes = { "*" },
         SupportedDataFormats = { StandardDataFormats.Text, StandardDataFormats.Uri, 
                 StandardDataFormats.Bitmap, StandardDataFormats.StorageItems }
     };
 
     StorageFile iconFile = await Windows.ApplicationModel.Package.Current.InstalledLocation.CreateFileAsync(
-            &quot;assets\\user.png&quot;, CreationCollisionOption.OpenIfExists);
+            "assets\\user.png", CreationCollisionOption.OpenIfExists);
     quickLinkInfo.Thumbnail = RandomAccessStreamReference.CreateFromFile(iconFile);
     shareOperation.ReportCompleted(quickLinkInfo);
 }
@@ -142,6 +140,6 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

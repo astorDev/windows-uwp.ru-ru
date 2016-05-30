@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: Обеспечение быстрого отклика потока пользовательского интерфейса
 description: Пользователи, независимо от типа компьютера, ожидают от приложений быстрого отклика во время вычислений.
@@ -22,7 +23,9 @@ description: Пользователи, независимо от типа ком
 -   Для создания экземпляров элементов задержки используйте [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785).
 -   Вставьте программным путем элементы в дерево по запросу.
 
-Очереди [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) работают для обработки потока пользовательского интерфейса, когда он не занят.
+Очереди [
+              **CoreDispatcher.RunIdleAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/Hh967918) работают для обработки потока пользовательского интерфейса, когда он не занят.
 
 ## Использование асинхронных API
 
@@ -32,7 +35,7 @@ description: Пользователи, независимо от типа ком
 
 Напишите код для обработчика событий, чтобы он быстро возвращался. В случаях, когда необходимо выполнить нестандартный объем работы, запланируйте выполнение в фоновом потоке и его возвращение.
 
-Запланировать задание можно асинхронно с помощью оператора **await** в C#, оператора **Await** в Visual Basic или делегатов в C++. Но это не гарантирует, что запланированное задание будет выполняться в фоновом потоке. Многие API универсальной платформы Windows (UWP) планируют выполнение в фоновом потоке, но если код приложения вызывается только с помощью **await** или делегата, этот делегат или метод будет выполнен в потоке пользовательского интерфейса. Необходимо явным образом указать, что требуется выполнение кода приложения в фоновом потоке. В C# и Visual Basic это можно сделать, передав код в метод [**Task.Run**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.run.aspx).
+Запланировать задание можно асинхронно с помощью оператора **await** в C#, оператора **Await** в Visual Basic или делегатов в C++. Но это не гарантирует, что запланированное задание будет выполняться в фоновом потоке. Многие API универсальной платформы Windows (UWP) планируют выполнение в фоновом потоке, но если код приложения вызывается только с помощью **await** или делегата, этот делегат или метод будет выполнен в потоке пользовательского интерфейса. Необходимо явным образом указать, что требуется выполнение кода приложения в фоновом потоке. В C# и Visual Basic это можно сделать, передав код в метод [**Task.Run**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.run.aspx).
 
 Помните, что доступ к элементам пользовательского интерфейса можно получить только из потока. Используйте поток пользовательского интерфейса для получения доступа к элементам пользовательского интерфейса, прежде чем запустить фоновую работу и/или использовать [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) или [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) в фоновом потоке.
 
@@ -58,41 +61,41 @@ public class AsyncExample
 ```
 
 > [!div class="tabbedCodeSnippets"]
-```csharp
-public class Example
-{
-    // ...
-    private async void NextMove-Click(object sender, RoutedEventArgs e)
-    {
-        await Task.Run(() => ComputeNextMove());
-        // Update the UI with results
-    }
-
-    private async Task ComputeNextMove()
-    {
-        // ...
-    }
-    // ...
-}
-```
-```vb
-Public Class Example
-    ' ...
-    Private Async Sub NextMove-Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-        Await Task.Run(Function() ComputeNextMove())
-        ' update the UI with results
-    End Sub
-
-    Private Async Function ComputeNextMove() As Task
-        ' ...
-    End Function
-    ' ...
-End Class
-```
+> ```csharp
+> public class Example
+> {
+>     // ...
+>     private async void NextMove-Click(object sender, RoutedEventArgs e)
+>     {
+>         await Task.Run(() => ComputeNextMove());
+>         // Update the UI with results
+>     }
+> 
+>     private async Task ComputeNextMove()
+>     {
+>         // ...
+>     }
+>     // ...
+> }
+> ```
+> ```vb
+> Public Class Example
+>     ' ...
+>     Private Async Sub NextMove-Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+>         Await Task.Run(Function() ComputeNextMove())
+>         ' update the UI with results
+>     End Sub
+> 
+>     Private Async Function ComputeNextMove() As Task
+>         ' ...
+>     End Function
+>     ' ...
+> End Class
+> ```
 
 В этом примере обработчик `NextMove-Click` возвращается в **await**, чтобы обеспечить быстроту отклика потока пользовательского интерфейса. Однако выполнение снова обращается к этому обработчику после завершения `ComputeNextMove` (которое выполняется в фоновом потоке). Оставшийся код в обработчике обновляет пользовательский интерфейс с учетом результатов.
 
-> **Примечание.** Для UWP существуют также API [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) и [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR229621timer) , которые можно использовать для аналогичных сценариев. Дополнительную информацию см. в разделе [Потоки и асинхронное программирование](https://msdn.microsoft.com/library/windows/apps/Mt187340).
+> **Примечание.** Для UWP существуют также API [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) и [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx) , которые можно использовать для аналогичных сценариев. Дополнительную информацию см. в разделе [Потоки и асинхронное программирование](https://msdn.microsoft.com/library/windows/apps/Mt187340).
 
 ## Связанные темы
 
@@ -100,6 +103,6 @@ End Class
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

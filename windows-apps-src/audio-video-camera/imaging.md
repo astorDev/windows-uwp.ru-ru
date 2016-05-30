@@ -1,27 +1,34 @@
 ---
+author: drewbatgit
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
-description: В этой статье описывается загрузка и сохранение изображений с помощью BitmapDecoder и BitmapEncoder и использование SoftwareBitmap с точечными рисунками.
+description: В этой статье объясняется, как загрузить и сохранить файлы изображений с помощью BitmapDecoder и BitmapEncoder, а также как использовать объект SoftwareBitmap для представления точечных рисунков.
 title: Обработка изображений
 ---
 
 # Обработка изображений
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье объясняется, как загрузить и сохранить файлы изображений с помощью [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) и [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206), а также как использовать объект [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) для представления точечных рисунков.
 
 Класс **SoftwareBitmap** — это универсальный API, который можно создать из нескольких источников, включая файлы изображений, объекты [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259), поверхности Direct3D и код. **SoftwareBitmap** позволяет легко преобразовывать различные форматы пикселей в режимы альфа-канала и наоборот, а также получить доступ на низком уровне к пиксельным данным. Кроме того, **SoftwareBitmap** — это распространенный интерфейс, который используется различными функциями Windows, включая следующие.
 
--   [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) позволяет получить кадры, захваченные с камеры в виде **SoftwareBitmap**.
+-   [
+              **CapturedFrame**
+            ](https://msdn.microsoft.com/library/windows/apps/dn278725) позволяет получить кадры, захваченные с камеры в виде **SoftwareBitmap**.
 
--   [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) позволяет получить представление **SoftwareBitmap** элемента **VideoFrame**.
+-   [
+              **VideoFrame**
+            ](https://msdn.microsoft.com/library/windows/apps/dn930917) позволяет получить представление **SoftwareBitmap** элемента **VideoFrame**.
 
--   [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) позволяет обнаруживать лица в **SoftwareBitmap**.
+-   [
+              **FaceDetector**
+            ](https://msdn.microsoft.com/library/windows/apps/dn974129) позволяет обнаруживать лица в **SoftwareBitmap**.
 
 В примере кода в этой статье используется API из следующих пространств имен.
 
-[!code-cs[Namespaces](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
+[!code-cs[Пространства имен](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
 
 ## Создание SoftwareBitmap из файла изображения с помощью BitmapDecoder
 
@@ -103,7 +110,7 @@ title: Обработка изображений
 
 Класс **SoftwareBitmap** предоставляет статический метод [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362), который позволяет легко создать **SoftwareBitmap**, использующий формат пикселей и режим альфа-канала, указанные вами в существующем **SoftwareBitmap**. Обратите внимание, что созданный точечный рисунок содержит отдельную копию данных изображения. Изменения нового точечного рисунка не будут влиять на исходный файл.
 
-[!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
+[!code-cs[Преобразование](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 
 ## Перекодирование файла изображения
 
@@ -124,6 +131,6 @@ title: Обработка изображений
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

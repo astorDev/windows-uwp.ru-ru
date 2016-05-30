@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Приступая к работе: навигация
 description: Приступая к работе: навигация
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
@@ -6,7 +7,7 @@ ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 
 # Приступая к работе: навигация
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## Добавление навигации
 
@@ -73,7 +74,7 @@ public BlankPage()
 
 Подробнее о навигации см. в разделах [Навигация](https://msdn.microsoft.com/library/windows/apps/mt187344) и [Пример анимаций персонализации на XAML](http://go.microsoft.com/fwlink/p/?LinkID=242401).
 
-**Примечание.**  Дополнительные сведения о навигации для приложений Магазина Windows на JavaScript и HTML см. в разделе [Краткое руководство: использование одностраничной навигации](https://msdn.microsoft.com/library/windows/apps/hh452768).
+**Примечание.** Дополнительные сведения о навигации для приложений Магазина Windows на JavaScript и HTML см. в разделе [Краткое руководство: использование одностраничной навигации](https://msdn.microsoft.com/library/windows/apps/hh452768).
  
 ### Следующие шаги
 
@@ -81,6 +82,6 @@ public BlankPage()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

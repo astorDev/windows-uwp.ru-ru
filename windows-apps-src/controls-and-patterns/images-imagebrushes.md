@@ -1,8 +1,9 @@
 ---
-Description: Вы узнаете, как интегрировать изображения в приложение, в том числе как использовать API двух основных классов XAML — Image и ImageBrush.
+author: Jwmsft
+Description: Узнайте, как интегрировать изображения в приложение, в том числе как использовать API двух основных классов XAML — Image и ImageBrush.
 title: Изображения и кисти изображений
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
-label: Изображения и кисти изображений
+label: Images and image brushes
 template: detail.hbs
 ---
 # Изображения и кисти изображений
@@ -137,20 +138,11 @@ API для [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/wind
 
 При определении Image или ImageBrush с помощью кода используйте конструкторы по умолчанию, а затем задайте соответствующее свойство источника ([**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) или [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)). При задании свойства источника с помощью кода потребуется [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (а не URI). Если источником является поток, для инициализации значения используйте метод [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx). Если источником является URI, который включает содержимое в ваше приложение, использующее схемы **ms-appx** или **ms-resource**, используйте конструктор [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx), который применяет URI. Также можно рассмотреть вариант обработки события [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx), если существуют некоторые временные проблемы с получением или декодированием источника изображения, при которых может понадобиться отображать альтернативное содержимое до тех пор, пока источник изображения не станет доступным. Пример кода см. в разделе [Пример использования изображений на основе XAML](http://go.microsoft.com/fwlink/p/?linkid=238575).
 
-> **Примечание**&nbsp;&nbsp;Если вы установили изображения с помощью кода, вы можете использовать автоматическую обработку для получения доступа к неквалифицированным ресурсам с текущими квалификаторами масштаба и языка, либо вы можете использовать [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) и [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) с квалификаторами масштаба и языка для непосредственного получения ресурсов. Подробнее см. в разделе [Система управления ресурсами](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx).
-
-## Рекомендации
-
-
-\[Эта статья содержит сведения, относящиеся к приложениям универсальной платформы Windows (UWP) и Windows 10. Для получения инструкций по Windows 8.1 скачайте [рекомендации для Windows 8.1 в формате PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
-
-## Связанные статьи
-
-**Проектировщикам**
-
-**Разработчикам (XAML)**
+> **Примечание.**
+            &nbsp;&nbsp;Если вы установили изображения с помощью кода, вы можете использовать автоматическую обработку для получения доступа к неквалифицированным ресурсам с текущими квалификаторами масштаба и языка, либо вы можете использовать [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) и [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) с квалификаторами масштаба и языка для непосредственного получения ресурсов. Подробнее см. в разделе [Система управления ресурсами](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx).
 
 
-<!--HONumber=Mar16_HO1-->
+
+<!--HONumber=May16_HO2-->
 
 

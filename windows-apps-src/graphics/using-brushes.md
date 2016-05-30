@@ -1,11 +1,12 @@
 ---
+author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: Использование кистей
-description: Объекты Brush используются для заливки и окраски контуров фигур, текста и частей элементов управления, что позволяет отображать окрашенные объекты в интерфейсе.
+description: Объекты Brush используются для окраски внутренних областей или контуров фигур, текста и частей элементов управления, чтобы окрашиваемый объект отображался в пользовательском интерфейсе.
 ---
 # Использование кистей
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** Важные API **
@@ -13,7 +14,8 @@ description: Объекты Brush используются для заливки
 -   [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
 
 [
-							Объекты **Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) используются для окраски внутренних областей или контуров фигур, текста и частей элементов управления, чтобы окрашиваемый объект отображался в пользовательском интерфейсе. Так какие же кисти доступны и как ими пользоваться?
+              Объекты **Brush**
+            ](https://msdn.microsoft.com/library/windows/apps/BR228076) используются для окраски внутренних областей или контуров фигур, текста и частей элементов управления, чтобы окрашиваемый объект отображался в пользовательском интерфейсе. Так какие же кисти доступны и как ими пользоваться?
 
 ## Знакомство с кистями
 
@@ -51,7 +53,7 @@ description: Объекты Brush используются для заливки
 </StackPanel>
 ```
 
-### <span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>Синтаксис элементов свойств
+### <span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>Синтаксис свойств
 
 Объект [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) можно определить в синтаксисе элементов свойств. Он не так компактен, как предыдущие способы, но позволяет задавать дополнительные значения свойств для элемента, например [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx). Подробнее о синтаксисе XAML, включая синтаксис элементов свойств, можно узнать в статьях [Обзор языка XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595) и [Руководство по основам синтаксиса языка XAML](https://msdn.microsoft.com/library/windows/apps/Mt185596).
 
@@ -93,8 +95,7 @@ description: Объекты Brush используются для заливки
 
 Цвет каждой точки между ограничениями градиента определяется линейной интерполяцией сочетания цветов, заданных соседними ограничениями градиента. На рисунке отмечены ограничения градиента из предыдущего примера. Положение ограничений градиента отмечено кружками, а ось градиента показана пунктирной линией.
 
-![Ограничения градиента](images/linear-gradients-stops.png)
-Можно изменить линию, по которой определяются позиции ограничений градиента, установив для свойств [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) и [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) значения, отличающиеся от принятых по умолчанию `(0,0)` и `(1,1)`. Изменяя значения координат **StartPoint** и **EndPoint**, можно создать горизонтальные и вертикальные градиенты, обратить направление градиента или сжать охват градиента, применив его к меньшему диапазону, чем полная закрашенная область. Чтобы сжать градиент, следует задать значения **StartPoint** и **EndPoint**, находящиеся между 0 и 1. Например, если требуется горизонтальный градиент, где все затухание цвета происходит на левой половине кисти, а с правой стороны используется сплошной цвет последнего [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078), следует указать для **StartPoint** значение `(0,0)`, а для **EndPoint** — значение `(0.5,0)`.
+![Ограничения градиента](images/linear-gradients-stops.png) Можно изменить линию, по которой определяются позиции ограничений градиента, установив для свойств [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) и [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) значения, отличающиеся от принятых по умолчанию `(0,0)` и `(1,1)`. Изменяя значения координат **StartPoint** и **EndPoint**, можно создать горизонтальные и вертикальные градиенты, обратить направление градиента или сжать охват градиента, применив его к меньшему диапазону, чем полная закрашенная область. Чтобы сжать градиент, следует задать значения **StartPoint** и **EndPoint**, находящиеся между 0 и 1. Например, если требуется горизонтальный градиент, где все затухание цвета происходит на левой половине кисти, а с правой стороны используется сплошной цвет последнего [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078), следует указать для **StartPoint** значение `(0,0)`, а для **EndPoint** — значение `(0.5,0)`.
 
 ### <span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>Использование средств для создания градиента
 
@@ -126,8 +127,7 @@ description: Объекты Brush используются для заливки
 
 ![Отображение ImageBrush.](images/brushes-imagebrush.jpg)
 
-[
-							Как **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) так и [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) ссылаются на исходный файл изображения по универсальному коду ресурса (URI). Для этого файла допустимы несколько графических форматов. Такие исходные файлы изображений указываются в виде URI. Подробнее об указании источников изображений, их возможных форматах и упаковке в приложении можно узнать в разделе [Классы Image и ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382).
+[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) и [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) ссылаются на исходный файл изображения по универсальному коду ресурса (URI). Для этого файла допустимы несколько графических форматов. Такие исходные файлы изображений указываются в виде URI. Подробнее об указании источников изображений, их возможных форматах и упаковке в приложении можно узнать в разделе [Классы Image и ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382).
 
 ## Кисти и текст
 
@@ -176,6 +176,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -53,7 +53,7 @@ author: awkoren
     -   TextBlock с состоянием Microsoft Passport;
     -   TextBlock для описания страницы входа, так как серверной части или настроенных пользователей нет.
 
-    ```xaml
+    ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <StackPanel Orientation="Vertical">
         <TextBlock Text="Login" FontSize="36" Margin="4" TextAlignment="Center"/>
@@ -64,7 +64,7 @@ author: awkoren
         <TextBox x:Name="UsernameTextBox" Margin="4" Width="250"/>
         <Button x:Name="PassportSignInButton" Content="Login" Background="DodgerBlue" Foreground="White"
             Click="PassportSignInButton_Click" Width="80" HorizontalAlignment="Center" Margin="0,20"/>
-        <TextBlock Text="Don&#39;t have an account?"
+        <TextBlock Text="Don't have an account?"
                     TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
         <TextBlock x:Name="RegisterButtonTextBlock" Text="Register now"
                    PointerPressed="RegisterButtonTextBlock_OnPointerPressed"
@@ -76,7 +76,7 @@ author: awkoren
                  Margin="4" TextAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
         </Border>
         <TextBlock x:Name="LoginExplaination" FontSize="24" TextAlignment="Center" TextWrapping="Wrap" 
-            Text="Please Note: To demonstrate a login, validation will only occur using the default username &#39;sampleUsername&#39;"/>
+            Text="Please Note: To demonstrate a login, validation will only occur using the default username 'sampleUsername'"/>
       </StackPanel>
     </Grid>
     ```
@@ -489,9 +489,9 @@ author: awkoren
 
 В этом упражнении вы продолжите предыдущий пример. Когда пользователи успешно входят в систему, они должны быть перенаправлены на страницу приветствия, где можно выйти из системы или удалить учетную запись. Так как служба Passport создает ключ для каждого компьютера, можно создать экран выбора пользователя, содержащий всех пользователей, вошедших в систему на этом компьютере. Затем пользователь может выбрать одну из учетных записей и перейти на экран приветствия, не вводя пароль еще раз, так как проверка подлинности уже пройдена.
 
--   1. В папке Views добавьте пустую страницу Welcome.xaml. Добавьте следующий код XAML для пользовательского интерфейса. Код отображает заголовок, имя пользователя, вошедшего в систему, и две кнопки. Одна из кнопок возвращает нас к списку пользователей (ее вы создадите позже), а другая кнопка позволяет забыть пользователя.
+-   В папке Views добавьте пустую страницу Welcome.xaml. Добавьте следующий код XAML для пользовательского интерфейса. Код отображает заголовок, имя пользователя, вошедшего в систему, и две кнопки. Одна из кнопок возвращает нас к списку пользователей (ее вы создадите позже), а другая кнопка позволяет забыть пользователя.
 
-    ```xaml
+    ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <StackPanel Orientation="Vertical">
         <TextBlock x:Name="Title" Text="Welcome" FontSize="40" TextAlignment="Center"/>
@@ -624,7 +624,7 @@ author: awkoren
 
 -   В папке Views создайте пустую страницу UserSelection.xaml и добавьте следующий код XAML для определения пользовательского интерфейса. Она будет содержать элемент [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878), отображающий всех пользователей в локальном списке учетных записей, и кнопку, которая позволяет перейти на страницу входа и добавить другую учетную запись.
 
-    ```xaml
+    ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <StackPanel Orientation="Vertical">
         <TextBlock x:Name="Title" Text="Select a User" FontSize="36" Margin="4" TextAlignment="Center" HorizontalAlignment="Center"/>
@@ -830,7 +830,7 @@ author: awkoren
             }
         }
 
-        // Can&#39;t use Passport right now, try again later
+        // Can't use Passport right now, try again later
         return false;
     }
     ```
@@ -877,7 +877,7 @@ author: awkoren
 
 -   В папке Views создайте пустую страницу PassportRegister.xaml. Добавьте следующий код XAML для настройки пользовательского интерфейса. Интерфейс здесь похож на страницу входа.
 
-    ```xaml
+    ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <StackPanel Orientation="Vertical">
         <TextBlock x:Name="Title" Text="Register New Passport User" FontSize="24" Margin="4" TextAlignment="Center"/>
@@ -968,6 +968,6 @@ author: awkoren
 * [Microsoft Passport и Windows Hello](microsoft-passport.md)
 * [Служба входа Microsoft Passport](microsoft-passport-login-auth-service.md)
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

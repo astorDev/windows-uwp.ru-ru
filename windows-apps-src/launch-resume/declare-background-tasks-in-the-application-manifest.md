@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Объявление фоновых задач в манифесте приложения
 description: Вы можете разрешить использование фоновых задач, объявив их как расширения в манифесте приложения.
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
@@ -7,7 +8,7 @@ ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 # Объявление фоновых задач в манифесте приложения
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -91,16 +92,16 @@ ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
                     <Task Type="pushNotification" />
                   </BackgroundTasks>
                 </Extension>
-                ```
+    ```
 
-    > **Note**  Normally, an app will run in a special process called "BackgroundTaskHost.exe". It is possible to add an Executable element to the Extension element, allowing the background task to run in the context of the app. Only use the Executable element with background tasks that require it, such as the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).    
+    > **Примечание.** Обычно программа выполняется в специальном процессе с именем «BackgroundTaskHost.exe». Элемент Executable можно добавить к элементу Extension, позволяя фоновой задаче выполняться в контексте приложения. Используйте элемент Executable только с теми фоновыми задачами, которым он требуется, например, [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).    
 
-## Add Additional Background Task Extensions
+## Добавление дополнительных расширений фоновой задачи
 
 
-Repeat step 2 for each additional background task class registered by your app.
+Повторите этап 2 для каждого дополнительного класса фоновой задачи, регистрируемого вашим приложением.
 
-The following example is the complete Application element from the [background task sample]( http://go.microsoft.com/fwlink/p/?linkid=227509). This shows the use of 2 background task classes with a total of 3 trigger types. Copy the Extensions section of this example, and modify it as needed, to declare background tasks in your application manifest.
+В следующем примере демонстрируется полный элемент Application из [образца фоновой задачи]( http://go.microsoft.com/fwlink/p/?linkid=227509). Здесь показано использование двух классов фоновых задач с тремя типами триггеров. Чтобы объявить фоновые задачи в манифесте вашего приложения, скопируйте раздел Extensions из этого примера и измените его так, как вам необходимо.
 
 ```xml
 <Applications>
@@ -112,7 +113,7 @@ The following example is the complete Application element from the [background t
           Square150x150Logo="Assets\StoreLogo-sdk.png"
           Square44x44Logo="Assets\SmallTile-sdk.png"
           Description="BackgroundTask"
-          
+
           BackgroundColor="#00b2f0">
           <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\smalltile-Windows-sdk.png" />
             <uap:SplashScreen Image="Assets\Splash-sdk.png" />
@@ -141,20 +142,13 @@ The following example is the complete Application element from the [background t
 </Applications>
 ```
 
-## Ссылки по теме
+## Связанные разделы
 
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Регистрация фоновой задачи](register-a-background-task.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 
- 
 
- 
-
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

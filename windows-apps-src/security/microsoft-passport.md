@@ -119,7 +119,7 @@ Windows Hello — это название, которое корпорация �
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
 if (!keyCredentialAvailable)
 {
-   // User didn&#39;t set up PIN yet
+   // User didn't set up PIN yet
    return;
 }
 ```
@@ -165,7 +165,7 @@ static async void RegisterUser(string AccountId)
     var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
     if (!keyCredentialAvailable)
     {
-        // The user didn&#39;t set up a PIN yet
+        // The user didn't set up a PIN yet
         return;
     }
 
@@ -449,6 +449,6 @@ Windows 10 представляет более высокий уровень б�
 * [Приложение для входа с использованием Microsoft Passport](microsoft-passport-login.md)
 * [Служба входа Microsoft Passport](microsoft-passport-login-auth-service.md)
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

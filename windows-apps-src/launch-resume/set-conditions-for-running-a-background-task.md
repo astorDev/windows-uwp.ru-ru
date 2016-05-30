@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Задание условий выполнения фоновой задачи
 description: Узнайте, как задать условия, которые управляют запуском выполнения фоновой задачи.
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
@@ -7,7 +8,7 @@ ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 # Задание условий выполнения фоновой задачи
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -90,102 +91,99 @@ ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 
 > [!div class="tabbedCodeSnippets"]
 ```cs
-> // 
+> //
 > // Set up the background task.
-> // 
-> 
+> //
+>
 > TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
-> 
+>
 > var recurringTaskBuilder = new BackgroundTaskBuilder();
-> 
+>
 > recurringTaskBuilder.Name           = "Hourly background task";
 > recurringTaskBuilder.TaskEntryPoint = "Tasks.ExampleBackgroundTaskClass";
 > recurringTaskBuilder.SetTrigger(hourlyTrigger);
-> 
-> // 
+>
+> //
 > // Begin adding conditions.
-> // 
-> 
+> //
+>
 > SystemCondition userCondition     = new SystemCondition(SystemConditionType.UserPresent);
 > SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
-> 
+>
 > recurringTaskBuilder.AddCondition(userCondition);
 > recurringTaskBuilder.AddCondition(internetCondition);
-> 
-> // 
+>
+> //
 > // Done adding conditions, now register the background task.
-> // 
-> 
+> //
+>
 > BackgroundTaskRegistration task = recurringTaskBuilder.Register();
-> ```
-> ```cpp
-> // 
+```
+```cpp
+> //
 > // Set up the background task.
-> // 
-> 
+> //
+>
 > TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
-> 
+>
 > auto recurringTaskBuilder = ref new BackgroundTaskBuilder();
-> 
+>
 > recurringTaskBuilder->Name           = "Hourly background task";
 > recurringTaskBuilder->TaskEntryPoint = "Tasks.ExampleBackgroundTaskClass";
 > recurringTaskBuilder->SetTrigger(hourlyTrigger);
-> 
-> // 
+>
+> //
 > // Begin adding conditions.
-> // 
-> 
+> //
+>
 > SystemCondition ^ userCondition     = ref new SystemCondition(SystemConditionType::UserPresent);
 > SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
-> 
+>
 > recurringTaskBuilder->AddCondition(userCondition);
 > recurringTaskBuilder->AddCondition(internetCondition);
-> 
-> // 
+>
+> //
 > // Done adding conditions, now register the background task.
-> // 
-> 
+> //
+>
 > BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
-> ```
+```
 
-## Remarks
+## Комментарии
 
 
-> **Note**  Chose the right conditions for your background task so that it only runs when it's needed, and doesn't run when it won't work. See [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) for descriptions of the different background task conditions.
+> **Примечание.** Выберите верные условия для фоновой задачи, чтобы она запускалась только при необходимости и никогда не выполнялась, когда не будет работать. Обзор различных условий выполнения фоновых задач см. в разделе [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Примечание.**  Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## Related topics
+## Связанные разделы
 
 
 ****
 
-* [Create and register a background task](create-and-register-a-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-* [Register a background task](register-a-background-task.md)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Создание и регистрация фоновой задачи](create-and-register-a-background-task.md)
+* [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
+* [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
+* [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
+* [Регистрация фоновой задачи](register-a-background-task.md)
+* [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
+* [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)
+* [Использование триггера обслуживания](use-a-maintenance-trigger.md)
+* [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
+* [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 
 ****
 
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Отладка фоновой задачи](debug-a-background-task.md)
+* [Вызов событий приостановки, возобновления и фоновых событий в приложениях Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
  
 
 
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

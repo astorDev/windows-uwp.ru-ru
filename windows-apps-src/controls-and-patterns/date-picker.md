@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: Элемент выбора даты — это стандартизованный способ, позволяющий пользователям выбирать локализованное значение даты с помощью сенсорного ввода, мыши или клавиатуры. 
 title: Элемент выбора даты
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
@@ -44,7 +45,8 @@ birthDatePicker.Header = "Date of birth";
 
 ![Пример элемента выбора даты](images/date-picker-closed.png)
 
-> **Примечание.**&nbsp;&nbsp;Важные сведения о значениях даты см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи «Элементы управления датой и временем».
+> **Примечание.**
+            &nbsp;&nbsp;Важные сведения о значениях даты см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи «Элементы управления датой и временем».
 
 
 
@@ -56,6 +58,6 @@ birthDatePicker.Header = "Date of birth";
 - [Элемент выбора времени](time-picker.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

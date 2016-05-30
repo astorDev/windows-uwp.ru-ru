@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Класс PropertyPath и синтаксис строки можно использовать для создания экземпляра значения PropertyPath в XAML или в коде.
 title: Синтаксис Property-path
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
@@ -100,7 +101,8 @@ ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 В большинстве случаев [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) можно применить в XAML, вообще не используя код. Но в некоторых случаях может потребоваться определить объект **PropertyPath** с помощью кода и назначить его свойству во время выполнения.
 
 [
-							У **PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) имеется конструктор [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) и нет конструктора по умолчанию. Строка, передаваемая в этот конструктор, является строкой, которая определена с помощью синтаксиса пути к свойству, как указано ранее. Это также та же строка, которая может использоваться для назначения [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) в качестве атрибута XAML. Единственным отличным API класса **PropertyPath** является свойство [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260), которое доступно только для чтения. Это свойство можно использовать в качестве строки конструктора для другого экземпляра **PropertyPath**.
+              **У PropertyPath**
+            ](https://msdn.microsoft.com/library/windows/apps/br244259) имеется конструктор [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261), но нет конструктора по умолчанию. Строка, передаваемая в этот конструктор, является строкой, которая определена с помощью синтаксиса пути к свойству, как указано ранее. Это также та же строка, которая может использоваться для назначения [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) в качестве атрибута XAML. Единственным отличным API класса **PropertyPath** является свойство [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260), которое доступно только для чтения. Это свойство можно использовать в качестве строки конструктора для другого экземпляра **PropertyPath**.
 
 ## Ссылки по теме
 
@@ -114,6 +116,6 @@ ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,7 +1,8 @@
 ---
+author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: Вызов асинхронных API в C# и Visual Basic
-description: Универсальная платформа Windows (UWP) включает много асинхронных API, позволяющих приложению  отвечать при выполнении времязатратной работы.
+description: Универсальная платформа Windows (UWP) включает много асинхронных API, позволяющих вашему приложению сохранить способность отвечать, когда выполняется работа, требующая много времени.
 ---
 # Вызов асинхронных API в C# и Visual Basic
 
@@ -23,9 +24,8 @@ description: Универсальная платформа Windows (UWP) вкл�
 
 Здесь дан пример кода для получения из блога списка его записей с помощью вызова асинхронного метода [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) и ожидания получения результата.
 
-> [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-[!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
-[!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
+> [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"] [!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
+          [!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
 
 Есть несколько важных замечаний о приведенном выше примере. Во-первых, в строке `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` используется оператор **await** вместе с вызовом асинхронного метода [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460). Можно представить себе, что оператор **await** сообщает компилятору о том, что вы вызываете асинхронный метод, в результате чего компилятор выполняет дополнительную работу за вас. Во-вторых, объявление обработчика событий включает ключевое слово **async**. Это ключевое слово необходимо включить в объявление любого метода, в котором используется оператор **await**.
 
@@ -57,7 +57,9 @@ description: Универсальная платформа Windows (UWP) вкл�
 | [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) | [**IAsyncOperation&lt;StorageFile&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)                                                                                | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)          |
 | [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)                                                                                                           | **void**                                          |
 | [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1)                                                                   | **void**                                          |
-| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120), пользовательский класс результатов, который реализует **IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](T:System.UInt32)                     |
+| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [
+              **DataReaderLoadOperation**
+            ](https://msdn.microsoft.com/library/windows/apps/BR208120), пользовательский класс результатов, который реализует **IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](T:System.UInt32)                     |
 
  
 
@@ -70,7 +72,7 @@ description: Универсальная платформа Windows (UWP) вкл�
 
 Когда асинхронные методы вызывают другие асинхронные методы, любой асинхронный метод, приводящий к вызову исключения, распространяется на внешние методы. Это означает, что в самый внешний метод можно поместить блок **try/catch**, чтобы перехватывать ошибки для вложенных асинхронных методов. Это аналогично перехвату исключений для синхронных методов. Однако вы не можете использовать **await** в блоке **catch**.
 
-**Совет**  Возможность использования оператора **await** в блоке **catch** в С# доступна начиная с Microsoft Visual Studio 2005 и выше.
+**Совет**  Возможность использования оператора **await** в блоке **catch** в С# доступна начиная с Microsoft Visual Studio 2005 и выше.
 
 ## Сводка и дальнейшие действия
 
@@ -107,6 +109,6 @@ Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -0
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

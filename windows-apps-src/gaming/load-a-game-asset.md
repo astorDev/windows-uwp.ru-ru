@@ -1,6 +1,7 @@
 ---
+author: mtoepke
 title: Загрузка ресурсов в игре DirectX
-description: В большинстве игр в определенный момент выполняется загрузка ресурсов из локального хранилища данных или другого потока данных.
+description: В большинстве игр в определенный момент выполняется загрузка ресурсов (например, шейдеров, текстур, ранее созданных mesh-объектов или других графических данных) из локального хранилища данных или другого потока данных.
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 ---
 
@@ -41,21 +42,21 @@ ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Статья</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Complete code for BasicLoader](complete-code-for-basicloader.md)</p></td>
+<td align="left"><p>[Полный код для BasicLoader](complete-code-for-basicloader.md)</p></td>
 <td align="left"><p>Полный код класса и методов для преобразования и загрузки в память графических mesh-объектов.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Complete code for BasicReaderWriter](complete-code-for-basicreaderwriter.md)</p></td>
+<td align="left"><p>[Полный код класса BasicReaderWriter](complete-code-for-basicreaderwriter.md)</p></td>
 <td align="left"><p>Полный код класса и методов для чтения и записи двоичных файлов данных без ограничений. Используется классом [BasicLoader](complete-code-for-basicloader.md).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Complete code for DDSTextureLoader](complete-code-for-ddstextureloader.md)</p></td>
+<td align="left"><p>[Полный код класса DDSTextureLoader](complete-code-for-ddstextureloader.md)</p></td>
 <td align="left"><p>Полный код класса и метода для загрузки из памяти текстуры DDS.</p></td>
 </tr>
 </tbody>
@@ -704,6 +705,6 @@ task<void> BasicLoader::LoadShaderAsync(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

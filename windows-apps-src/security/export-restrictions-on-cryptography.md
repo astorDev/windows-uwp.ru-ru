@@ -55,6 +55,6 @@ author: awkoren
 Если у вас нет ECCN, см. статью [Вопросы и ответы по ECCN](http://go.microsoft.com/fwlink/p/?LinkID=245646).
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

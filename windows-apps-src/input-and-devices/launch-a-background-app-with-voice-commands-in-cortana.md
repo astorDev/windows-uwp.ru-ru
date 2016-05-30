@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Помимо использования голосовых команд Кортаны для получения доступа к системным компонентам, вы также можете расширить возможности Кортаны за счет компонентов и функций из фонового приложения с помощью голосовых команд, которые определяют действие или команду для выполнения в приложении.
 title: Запуск фонового приложения с помощью голосовых команд в Кортане
 ms.assetid: DF5B530C-57DD-4CA5-B3BE-1A0B3695C9C6
@@ -8,16 +9,14 @@ template: detail.hbs
 
 # Активация фонового приложения с помощью голосовых команд в Кортане
 
-
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+Помимо использования голосовых команд **Кортаны** для получения доступа к системным компонентам, вы также можете расширить возможности **Кортаны** за счет компонентов и функций вашего приложения (в качестве фоновой задачи) с помощью голосовых команд, которые определяют действие или команду для выполнения в приложении. Если приложение обрабатывает голосовую команду в фоновом режиме, она не принимает на себя фокус. Она возвращает всю обратную связь и результаты на холсте **Кортаны** и с помощью голосовых функций **Кортаны**.
 
 **Важные API**
 
 -   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
--   [**Элементы и атрибуты VCD вер. 1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+-   [**Элементы и атрибуты в VCD-файле, версия 1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-Помимо использования голосовых команд **Кортаны** для получения доступа к системным компонентам, вы также можете расширить возможности **Кортаны** за счет компонентов и функций вашего приложения (в качестве фоновой задачи) с помощью голосовых команд, которые определяют действие или команду для выполнения в приложении. Если приложение обрабатывает голосовую команду в фоновом режиме, она не принимает на себя фокус. Она возвращает всю обратную связь и результаты на холсте **Кортаны** и с помощью голосовых функций **Кортаны**.
+
 
 Приложения можно активировать на переднем плане (тогда приложение оказывается в фокусе) или в фоновом режиме (в этом случае **Кортана** сохраняет фокус) в зависимости от сложности взаимодействия. Например, голосовые команды, для которых требуется дополнительный контекст или пользовательский ввод (такой как отправка сообщения определенному контакту), наилучшим образом обрабатываются на переднем плане, а основные команды (перечисление предстоящих поездок) при этом могут обрабатываться в **Кортане** в фоновом приложении.
 
@@ -50,16 +49,16 @@ template: detail.hbs
 4.  Осуществите фоновую активацию службы приложения и выполнение голосовой команды.
 5.  Отобразите и произнесите соответствующий отзыв о голосовой команде в **Кортане**.
 
-**Необходимые условия**
+**Предварительные требования:  **
 
-Если вы — начинающий разработчик приложений универсальной платформы Windows (UWP), ознакомьтесь со следующими разделами, чтобы получить представление об описываемых здесь технологиях.
+Если вы — начинающий разработчик приложений универсальной платформы для Windows (UWP), прочитайте указанные ниже статьи, чтобы ознакомиться с описанными здесь технологиями.
 
 -   [Создание первого приложения](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   Дополнительную информацию о событиях см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
-**Рекомендации по взаимодействию с пользователем: **
+**Рекомендации по взаимодействию с пользователем.  **
 
-Сведения об интеграции приложения с **Кортаной** см. в [рекомендациях по проектированию Кортаны](https://msdn.microsoft.com/library/windows/apps/dn974233), а полезные советы по проектированию удобного и привлекательного приложения с поддержкой распознавания речи — в [рекомендациях по проектированию голосовых функций](https://msdn.microsoft.com/library/windows/apps/dn596121).
+Сведения об интеграции приложения с **Кортаной** см. в [рекомендациях по проектированию Кортаны](https://msdn.microsoft.com/library/windows/apps/dn974233), а полезные советы по проектированию удобного и привлекательного приложения с поддержкой распознавания речи — в [рекомендациях по проектированию голосовых функций](https://msdn.microsoft.com/library/windows/apps/dn596121).
 
 ## <span id="Create_a_new_solution_with_a_primary_project_in_Visual_Studio"></span><span id="create_a_new_solution_with_a_primary_project_in_visual_studio"></span><span id="CREATE_A_NEW_SOLUTION_WITH_A_PRIMARY_PROJECT_IN_VISUAL_STUDIO"></span>Создание решения с основным проектом в Visual Studio
 
@@ -68,9 +67,9 @@ template: detail.hbs
 
     Откроется начальный экран Visual Studio 2015.
 
-2.  В меню **Файл** выберите команду **Создать** > **Проект**.
+2.  В меню **Файл** выберите элемент **Создать** > **Проект**.
 
-    Откроется диалоговое окно **Создать проект**. Левая панель диалогового окна позволяет выбрать тип отображаемого шаблона.
+    Откроется диалоговое окно **Создание проекта**. Левая панель диалогового окна позволяет выбрать тип отображаемого шаблона.
 
 3.  На левой панели разверните узел **Установленные > Шаблоны > Visual C\# > Windows** и выберите группу шаблонов **Универсальные**. На центральной панели диалогового окна отображается список шаблонов проектов для приложений универсальной платформы Windows (UWP).
 4.  На центральной панели выберите шаблон **Пустое приложение (универсальное приложение для Windows)**.
@@ -83,15 +82,15 @@ template: detail.hbs
     Microsoft Visual Studio создаст проект, который появится в **обозревателе решений**.
 
 
-## <span id="Add_image_assets_to_primary_project_and_specify_them_in_the_app_manifest"></span><span id="add_image_assets_to_primary_project_and_specify_them_in_the_app_manifest"></span><span id="ADD_IMAGE_ASSETS_TO_PRIMARY_PROJECT_AND_SPECIFY_THEM_IN_THE_APP_MANIFEST"></span>Добавление ресурсов изображений в основной проект и указание их в манифесте приложения
+## <span id="Add_image_assets_to_primary_project_and_specify_them_in_the_app_manifest"></span><span id="add_image_assets_to_primary_project_and_specify_them_in_the_app_manifest"></span><span id="ADD_IMAGE_ASSETS_TO_PRIMARY_PROJECT_AND_SPECIFY_THEM_IN_THE_APP_MANIFEST"></span>Добавление ресурсов изображений в проект и указание их в манифесте приложения
       
 Приложения UWP могут автоматически выбирать наиболее подходящие изображения на основе определенных параметров и возможностей устройства (высокая контрастность, эффективные пиксели, язык и т. д.). Достаточно предоставить изображения, придерживаясь соответствующего соглашения об именовании и используя правильную структуру папок в проекте приложения для различных версий ресурсов. Если не предоставить рекомендуемые версии ресурсов, это может отрицательно сказаться на специальных возможностях, качестве локализации и изображений в зависимости от пользовательских настроек, возможностей, типа устройства и местоположения.
 
-Дополнительную информацию о ресурсах изображений для высокой контрастности и коэффициентов масштабирования см. в статье [Руководство по работе с ресурсами плиток и значков](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets).
+Дополнительную информацию о ресурсах изображений для высокой контрастности и коэффициентов масштабирования см. в статье [Руководство по работе с ресурсами плиток и значков](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets).
 
 Назовите ресурсы с помощью квалификаторов. Квалификаторы ресурсов — это модификаторы папки и имени файла, которые определяют контекст использования версии ресурса.
 
-Стандартное соглашение об именовании — это `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`. Например, объект `images/en-US/logo.scale-100_contrast-white.png`, на который легко сослаться в коде, указав корневую папку и имя файла: `images/logo.png`. См. раздел [Как присваивать имена ресурсам с помощью квалификаторов](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965324.aspx).
+Стандартное соглашение об именовании — это `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`. Например, объект `images/en-US/logo.scale-100_contrast-white.png`, на который легко сослаться в коде, указав корневую папку и имя файла: `images/logo.png`. См. раздел [Как присваивать имена ресурсам с помощью квалификаторов](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324.aspx).
 
 Рекомендуется пометить язык по умолчанию и строковые файлы ресурсов (например, `en-US\resources.resw`), а также стандартный коэффициент масштабирования изображений (например, `logo.scale-100.png`), даже если вы не планируете в настоящий момент предоставлять локализованные ресурсы или ресурсы с разными разрешениями. Тем не менее, мы настоятельно рекомендуем предоставлять ресурсы с коэффициентами масштабирования 100, 200 и 400.
 
@@ -123,22 +122,22 @@ destinationTile.Image =
 
 <ol>
     <li>
-    Right-click your Solution name, select **New > Project**.
+    Щелкните правой кнопкой мыши название своего решения и выберите **Создать > Проект**.
     </li>
     <li>
-    Under **Installed > Templates > Visual C# > Windows > Universal**, select **Windows Runtime Component**. This is the component that implements the app service (**[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**).
+    В разделе **Установленные > Шаблоны > Visual C# > Windows > Универсальные** выберите **Windows Runtime Component**. Это компонент, который реализует службу приложения (см. раздел **[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**).
     </li>
     <li>
-    Type a name for the project (for example, "VoiceCommandService") and click **OK**.
+    Введите имя проекта (например, VoiceCommandService) и нажмите кнопку **ОК**.
     </li>
     <li>
-    In **Solution Explorer**, select the "VoiceCommandService" project and rename the "Class1.cs" file generated by Visual Studio. For the **Adventure Works** example we use "AdventureWorksVoiceCommandService.cs".
+    В **обозревателе решений** выберите проект VoiceCommandService и переименуйте файл Class1.cs, созданный в Visual Studio. В примере с **Adventure Works** используется файл AdventureWorksVoiceCommandService.cs.
     </li>
     <li>
-    Click **Yes** when asked if you want to rename all occurrences of "Class1.cs". 
+    Нажмите кнопку **Д** в ответ на запрос о переименовании всех вхождений Class1.cs. 
     </li>
     <li>
-    In the "AdventureWorksVoiceCommandService.cs" file:
+    В файле AdventureWorksVoiceCommandService.cs выполните следующие действия:
         <ol type="i">
  <li>
  Добавьте следующее, воспользовавшись директивой.  
@@ -161,9 +160,8 @@ destinationTile.Image =
 </ol>
 
 Это базовый класс фоновых задач из приложения **Adventure Works**. Позже мы предоставим дополнительную информацию по этому вопросу.
-> **Примечание.**
->             
-Класс фоновой задачи и все остальные классы в фоновой задаче должны быть запечатанными открытыми классами.
+> **Примечание.**    
+> Класс фоновой задачи и все остальные классы в фоновой задаче должны быть запечатанными открытыми классами.
  
 ``` csharp
 namespace AdventureWorks.VoiceCommands
@@ -185,7 +183,7 @@ namespace AdventureWorks.VoiceCommands
         /// Background tasks must respond to activation by Cortana within 0.5 seconds, and must 
         /// report progress to Cortana every 5 seconds (unless Cortana is waiting for user
         /// input). There is no execution time limit on the background task managed by Cortana,
-        /// but developers should use plmdebug (https://msdn.microsoft.com/en-us/library/windows/hardware/jj680085%28v=vs.85%29.aspx)
+        /// but developers should use plmdebug (https://msdn.microsoft.com/library/windows/hardware/jj680085%28v=vs.85%29.aspx)
         /// on the Cortana app package in order to prevent Cortana timing out the task during
         /// debugging.
         /// 
@@ -212,36 +210,36 @@ namespace AdventureWorks.VoiceCommands
 
 <ol start="7">
     <li>
-    Declare your background task as an **AppService** in the app manifest.
+    Объявите фоновую задачу как **AppService** в манифесте приложения.
     <ol type="i">
         <li>
-        In **Solution Explorer**, right click the "Package.appxmanifest" file and select **View Code**. 
+        В **обозревателе решений** щелкните правой кнопкой мыши файл Package.appxmanifest и выберите команду **Перейти к коду**. 
         </li>
         <li>
-        Find the [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) element.
+        Найдите элемент [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738).
         </li>
         <li>
-        Add an [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) element to the [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) element.
+        Добавьте элемент [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) к элементу [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738).
         </li>
         <li>
-        Add a [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) element to the [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) element.
+        Добавьте элемент [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) к элементу [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720).
         </li>
         <li>Добавьте атрибут **Category** в элемент **uap:Extension** и установите для атрибута **Category** значение windows.appService.
         </li>
         <li>
-        Add an **EntryPoint** attribute to the **uap:Extension** element and set the value of the **EntryPoint** attribute to the name of the class that implements [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794), in this case "AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService".
+        Добавьте атрибут **EntryPoint** в элемент **uap:Extension** и установите в качестве значения для атрибута **EntryPoint** имя класса, который реализует [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794), в данном случае — AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService.
         </li>
         <li>
-        Add a [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) element to the **uap:Extension** element.
+        Добавьте элемент [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) к элементу **uap:Extension**.
         </li>
         <li>
-        Add a **Name** attribute to the [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) element and set the value of the **Name** attribute to a name for the app service, in this case "AdventureWorksVoiceCommandService".
+        Добавьте атрибут **Name** в элемент [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) и установите в качестве значения атрибута **Name** имя службы приложений, в данном случае — AdventureWorksVoiceCommandService.
         </li>
         <li>
-        Add a second [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) element to [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720).
+        Добавьте второй элемент [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) к элементу [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720).
         </li>
         <li>
-        Add a **Category** attribute to this [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) element and set the value of the **Category** attribute to "windows.personalAssistantLaunch".
+        Добавьте атрибут **Category** к элементу [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) и задайте для атрибута **Category** значение windows.personalAssistantLaunch.
         </li>
     </li> 
     </ol>
@@ -269,19 +267,19 @@ namespace AdventureWorks.VoiceCommands
 
 <ol start="8">
     <li>
-    Add this app service project as a reference in the primary project. 
+    Добавьте этот проект службы приложения в основной проект в качестве ссылки. 
     <ol type="i">
         <li>
-        Right click **References**. 
+        Щелкните **Ссылки** правой кнопкой мыши. 
         </li>
         <li>
-        Select **Add Reference...** 
+        Выберите **Добавить ссылку...** 
         </li>
         <li>
-        In the **Reference Manager** dialog, expand **Projects** and select the app service project. 
+        В диалоговом окне **Диспетчер ссылок** разверните раздел **Проекты** и выберите проект службы приложения. 
         </li>
         <li>
-        Click OK. 
+        Нажмите кнопку "ОК". 
         </li>
     </ol>
     </li>
@@ -290,14 +288,14 @@ namespace AdventureWorks.VoiceCommands
 ## <span id="Create_a_VCD_file"></span><span id="create_a_vcd_file"></span><span id="CREATE_A_VCD_FILE"></span>Создание VCD-файла
 
 
-1. В Visual Studio щелкните правой кнопкой мыши имя основного проекта и выберите **Добавить > Новый элемент**. Добавьте **XML-файл**.
+1. В Visual Studio щелкните правой кнопкой мыши имя основного проекта и выберите элементы **Добавить > Новый элемент**. Добавьте **XML-файл**.
 2. Введите имя [**VCD-файла**](https://msdn.microsoft.com/library/windows/apps/dn706593) (например, AdventureWorksCommands.xml) и нажмите кнопку "Добавить". 
 3. В **обозревателе решений** выберите файл [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593).
 4.  В окне **Свойства** задайте для элемента **Действие при сборке** значение **Содержимое**, а для элемента **Копировать в выходной каталог** — значение **Копировать более позднюю версию**.
 
 ## <span id="Edit_the_VCD_file"></span><span id="edit_the_vcd_file"></span><span id="EDIT_THE_VCD_FILE"></span>Редактирование VCD-файла
 
-1. Добавьте элемент **VoiceCommands** с атрибутом **xmlns**, указывающим на адрес http://schemas.microsoft.com/voicecommands/1.2.
+1. Добавьте элемент **VoiceCommands** с атрибутом **xmlns**, указывающим на `http://schemas.microsoft.com/voicecommands/1.2`.
 
 2. Для каждого языка, поддерживаемого приложением, создайте элемент [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331), который содержит голосовые команды, поддерживаемые приложением.
 
@@ -311,7 +309,7 @@ namespace AdventureWorks.VoiceCommands
   Каждая команда (**Command**), объявленная в файле [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593), должна содержать приведенную ниже информацию.
 
   - Атрибут **Name**, используемый вашим приложением для идентификации голосовой команды в среде выполнения. 
-  - Элемент **Example**, который содержит фразу, описывающую возможные способы вызова команды пользователем. **Кортана** показывает этот пример, когда пользователь говорит «Что можно говорить?», «Помоги» или касается пункта **Подробнее**.    
+  - Элемент **Example**, который содержит фразу, описывающую возможные способы вызова команды пользователем. **Кортана** показывает этот пример, когда пользователь говорит "Что можно говорить?", "Помоги" или выбирает пункт **Подробнее**.    
   -   Элемент **ListenFor**, содержащий слова или фразы, которые приложение распознает в качестве команды. Каждый элемент **ListenFor** может содержать ссылки на один или несколько элементов **PhraseList** с конкретными словами, связанными с этой командой.
   > **Примечание.**  
 Элементы   **ListenFor** невозможно изменить программно. Однако программно можно изменять элементы **PhraseList**, связанные с элементами **ListenFor**. Приложения должны изменять содержимое **PhraseList** во время выполнения на основе созданного набора данных, когда пользователь использует приложение. Ознакомьтесь со статьей [Динамическое изменение списков фраз определения голосовых команд (VCD)](dynamically-modify-voice-command-definition--vcd--phrase-lists.md).
@@ -411,33 +409,34 @@ try
 catch (Exception ex)
 {
   System.Diagnostics.Debug.WriteLine("Installing Voice Commands Failed: " + ex.ToString());
-}```
+}
+```
 
-## <span id="Handle_activation_and_execute_voice_commands"></span><span id="handle_activation_and_execute_voice_commands"></span><span id="HANDLE_ACTIVATION_AND_EXECUTE_VOICE_COMMANDS"></span>Handle activation
+## <span id="Handle_activation_and_execute_voice_commands"></span><span id="handle_activation_and_execute_voice_commands"></span><span id="HANDLE_ACTIVATION_AND_EXECUTE_VOICE_COMMANDS"></span>Обработка активации
 
-Specify how your app responds to subsequent voice command activations (after it has been launched at least once and the voice command sets have been installed).
+Укажите, как приложение должно реагировать на последующие активации голосовой командой (после того, как приложение запускалось по меньшей мере один раз и были установлены наборы голосовых команд).
 
-1.  Confirm that your app was activated by a voice command.
+1.  Подтвердите, что приложение было активировано голосовой командой.
 
-    Override the [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) event and check whether [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727).[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) is [**VoiceCommand**](https://msdn.microsoft.com/library/windows/apps/br224693).
+    Переопределите событие [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) и убедитесь, что [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727).[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) имеет значение [**VoiceCommand**](https://msdn.microsoft.com/library/windows/apps/br224693).
 
-2.  Determine the name of the command and what was spoken.
+2.  Определите имя команды и фразу, которая была произнесена.
 
-    Get a reference to a [**VoiceCommandActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn609755) object from the [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727) and query the [**Result**](https://msdn.microsoft.com/library/windows/apps/dn609758) property for a [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) object.
+    Получите ссылку на объект [**VoiceCommandActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn609755) из [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727) и запросите свойство [**Result**](https://msdn.microsoft.com/library/windows/apps/dn609758) для объекта [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432).
 
-    To determine what the user said, check the value of [**Text**](https://msdn.microsoft.com/library/windows/apps/dn631441) or the semantic properties of the recognized phrase in the [**SpeechRecognitionSemanticInterpretation**](https://msdn.microsoft.com/library/windows/apps/dn631443) dictionary.
+    Чтобы определить, что было произнесено, проверьте значение [**Text**](https://msdn.microsoft.com/library/windows/apps/dn631441) или семантические свойства распознанной фразы в словаре [**SpeechRecognitionSemanticInterpretation**](https://msdn.microsoft.com/library/windows/apps/dn631443).
 
-3.  Take the appropriate action in your app, such as navigating to the desired page.
+3.  Выполните соответствующее действие в приложении, например переход на нужную страницу.
 
-For this example, we refer back to the VCD in Step 3: Edit the VCD file.
+В этом примере мы вернемся к VCD-файлу из шага 3 "Редактирование VCD-файла".
 
-Once we get the speech-recognition result for the voice command, we get the command name from the first value in the [**RulePath**](https://msdn.microsoft.com/library/windows/apps/dn631438) array. As the VCD file defined more than one possible voice command, we need to compare the value against the command names in the VCD and take the appropriate action.
+Получив результат распознавания речи для голосовой команды, мы получаем имя команды из первого значения в массиве [**RulePath**](https://msdn.microsoft.com/library/windows/apps/dn631438). Так как в VCD-файле определено несколько возможных голосовых команд, нужно сравнить значение с именами команд в VCD-файле и затем выполнить соответствующее действие.
 
-The most common action an application can take is to navigate to a page with content relevant to the context of the voice command. For this example, we navigate to a **TripPage** page and pass in the value of the voice command, how the command was input, and the recognized "destination" phrase (if applicable). Alternatively, the app could send a navigation parameter to the [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) when navigating to the page.
+Наиболее распространенным действием из тех, которые выполняются приложениями, является переход к странице, содержимое которой соответствует контексту голосовой команды. В нашем примере выполняется переход на страницу **TripPage**, и мы передаем значение голосовой команды, способ ее произнесения и распознанную фразу назначения (если применимо). Либо приложение может отправить навигационный параметр в [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) при переходе на страницу.
 
-You can find out whether the voice command that launched your app was actually spoken, or whether it was typed in as text, from the [**SpeechRecognitionSemanticInterpretation.Properties**](https://msdn.microsoft.com/library/windows/apps/dn631445) dictionary using the **commandMode** key. The value of that key will be either "voice" or "text". If the value of the key is "voice", consider using speech synthesis ([**Windows.Media.SpeechSynthesis**](https://msdn.microsoft.com/library/windows/apps/dn278951)) in your app to provide the user with spoken feedback.
+Узнать о том, была ли голосовая команда, запустившая приложение, произнесена или введена как текст, можно при помощи ключа **commandMode** из словаря [**SpeechRecognitionSemanticInterpretation.Properties**](https://msdn.microsoft.com/library/windows/apps/dn631445). Значение этого ключа будет либо «voice», либо «text». Если значение ключа — "voice", попробуйте воспользоваться синтезом речи ([**Windows.Media.SpeechSynthesis**](https://msdn.microsoft.com/library/windows/apps/dn278951)) в приложении, чтобы предоставить пользователю голосовой отзыв.
 
-Use the [**SpeechRecognitionSemanticInterpretation.Properties**](https://msdn.microsoft.com/library/windows/apps/dn631445) to find out the content spoken in the **PhraseList** or **PhraseTopic** constraints of a **ListenFor** element. The dictionary key is the value of the **Label** attribute of the **PhraseList** or **PhraseTopic** element. Here, we show how to access the value of **{destination}** phrase.
+Используйте [**SpeechRecognitionSemanticInterpretation.Properties**](https://msdn.microsoft.com/library/windows/apps/dn631445), чтобы определить произносимое содержимое в ограничениях **PhraseList** или **PhraseTopic** элемента **ListenFor**. Ключом словаря является значение атрибута **Label** элемента **PhraseList** или **PhraseTopic**. Здесь мы покажем, как получить доступ к значению фразы **{destination}**.
 
 ``` csharp
 /// <summary>
@@ -740,7 +739,7 @@ public sealed class VoiceCommandService : IBackgroundTask
 
 ![Базовый запрос с экранами выполнения и результатов, который использует приложение Adventure Works в фоновом режиме](images/cortana-backgroundapp-progress-result.png)
 
-## <span id="related_topics"></span>Статьи по теме
+## <span id="related_topics"></span>Связанные разделы
 
 
 **Разработчикам**
@@ -768,6 +767,6 @@ public sealed class VoiceCommandService : IBackgroundTask
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

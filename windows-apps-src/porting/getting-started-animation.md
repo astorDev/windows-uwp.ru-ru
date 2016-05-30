@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Начало работы с анимацией
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: В этом проекте мы будем перемещать прямоугольник, применять к нему эффект угасания и затем снова отображать прямоугольник.
@@ -62,7 +63,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Если вы откроете файл MainPage.xaml, то в представлении **XAML** вы увидите код XAML, добавленный приложением Blend, как в случае, если бы вы работали в конструкторе. В частности, просмотрите код в элементах `<Storyboard>` и `<Rectangle>`. Следующий код демонстрирует пример. Для краткости код, не имеющий отношения к примеру, опущен. (Для удобства чтения в код добавлены разрывы строк.)
 
-```xaml
+```xml
 ...
 <Storyboard 
         x:Name="Storyboard1" 
@@ -125,6 +126,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 [Приступая к работе: что дальше?](getting-started-what-next.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

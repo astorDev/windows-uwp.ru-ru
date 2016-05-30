@@ -1,9 +1,10 @@
 ---
+author: Jwmsft
 Description: Поле ввода пароля — это текстовое поле, в котором вводимые символы скрыты в целях безопасности.
-title: Руководство по полям ввода паролей
+title: Руководство по полям паролей
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
-label: Поле ввода пароля
+label: Password box
 template: detail.hbs
 ---
 # Поле ввода пароля
@@ -111,7 +112,8 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 Значение свойства [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) — не единственный фактор, который определяет видимость кнопки показа пароля. Среди других факторов: отображается ли элемент управления над минимальной шириной, имеет ли PasswordBox фокус и содержит ли поле ввода текста хотя бы один символ. Кнопка показа пароля отображается, только когда поле PasswordBox получает фокус в первый раз и в него вводится символ. Если PasswordBox теряет фокус, а затем вновь получает его, кнопка показа не отображается, пока пароль не очистят и не начнут вводить заново.
 
-> **Внимание!** До Windows 10 кнопка показа пароля не отображалась по умолчанию. Если в вашем приложении необходимо всегда скрывать пароль, установите для параметра PasswordRevealMode значение Hidden.
+> **Внимание!**
+            &nbsp;&nbsp;До Windows 10 кнопка показа пароля не отображалась по умолчанию. Если в вашем приложении необходимо всегда скрывать пароль, установите для параметра PasswordRevealMode значение Hidden.
 
 ### Режимы Hidden и Visible
 
@@ -166,9 +168,9 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 -   Для выполнения входа отображайте только одно поле ввода пароля.
 -   Когда поле ввода пароля используется для ПИН-кода, рассмотрите возможность предоставления незамедлительного ответа сразу после ввода последней цифры без использования кнопки подтверждения.
 
-\[Эта статья содержит сведения, относящиеся к приложениям универсальной платформы Windows (UWP) и Windows 10. Для получения инструкций по Windows 8.1, скачайте [рекомендации для Windows 8.1 в формате PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Статьи по теме
+
+## Связанные разделы
 
 [Элементы управления текстом](text-controls.md)
 
@@ -186,6 +188,6 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

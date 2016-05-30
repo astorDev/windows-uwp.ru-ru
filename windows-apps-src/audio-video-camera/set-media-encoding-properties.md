@@ -1,6 +1,7 @@
 ---
+author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
-description: Статья рассказывает, как с помощью IMediaEncodingProperties задать разрешение и частоту кадров потока предварительного просмотра камеры, а также фото и видео.
+description: В этой статье рассказывается, как с помощью интерфейса IMediaEncodingProperties задать разрешение и частоту кадров потока предварительного просмотра камеры, а также снятых фотографий и видео.
 title: Задание свойств кодирования мультимедиа
 ---
 
@@ -22,7 +23,7 @@ title: Задание свойств кодирования мультимеди
 
 Если создать простой вспомогательный класс, включающий функции интерфейса [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011), будет удобнее выбирать набор свойств кодирования, которые отвечают конкретным критериям. Этот вспомогательный класс особенно полезен для следующего поведения свойств кодирования.
 
-**Предупреждение.**  
+**Предупреждение**  
 Метод [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) берет элемент перечисления [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640), например **VideoRecord** или **Photo**, и возвращает список объектов [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) или [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217), которые выражают параметры кодирования потока, такие как разрешение снятой фотографии или видео. Результаты вызова **GetAvailableMediaStreamProperties** могут включать **ImageEncodingProperties** или **VideoEncodingProperties**, независимо от того, какое указано значение **MediaStreamType**. По этой причине необходимо всегда проверять тип каждого возвращенного значения и приводить его к соответствующему типу, прежде чем пытаться получить доступ к какому-либо значению свойства.
 
 Вспомогательный класс, определенный ниже, выполняет проверку и приведение типа для параметра [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) или [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217), чтобы коду приложения не нужно было различать два типа. В дополнение к этому, вспомогательный класс представляет свойства для пропорций свойств, частоты кадров (только для свойств кодирования видео) и понятного имени, что упрощает отображение свойств кодирования в пользовательском интерфейсе приложения.
@@ -84,6 +85,6 @@ title: Задание свойств кодирования мультимеди
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Запуск приложения с помощью автозапуска
 description: Автозапуск можно использовать для добавления приложения в список вариантов при подключении пользователем устройств к компьютеру. Это могут быть как устройства томов, такие как USB-устройства флэш-памяти, SD-карты или DVD-диски, так и прочие устройства, такие как камеры или проигрыватели мультимедиа.
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
@@ -7,7 +8,7 @@ ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 # <span id="dev_launch_resume.auto-launching_with_autoplay"></span>Запуск приложения с помощью автозапуска
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Автозапуск** можно использовать для добавления приложения в список вариантов при подключении пользователем устройств к компьютеру. Это могут быть как устройства томов, такие как USB-устройства флэш-памяти, SD-карты или DVD-диски, так и прочие устройства, такие как камеры или проигрыватели мультимедиа. **Автозапуск** также можно использовать, чтобы предложить свое приложение в качестве одного из открытых для общего доступа, при котором пользователи обмениваются файлами между двумя компьютерами с помощью близкого взаимодействия (касания).
@@ -61,9 +62,9 @@ ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 
 ### Шаг 2. Добавление пользовательского интерфейса XAML
 
-Откройте файл MainPage.xaml и добавьте следующий XAML в раздел &lt;Grid&gt; по умолчанию.
+Откройте файл MainPage.xaml и добавьте следующий код XAML в раздел &lt;Grid&gt; по умолчанию.
 
-```xaml
+```xml
 <TextBlock FontSize="18">File List</TextBlock>
 <TextBlock x:Name="FilesBlock" HorizontalAlignment="Left" TextWrapping="Wrap" 
            VerticalAlignment="Top" Margin="0,20,0,0" Height="280" Width="240" />
@@ -254,9 +255,9 @@ API, необходимые для получения доступа к хран
 
 ### Шаг 3. Добавление пользовательского интерфейса XAML
 
-Откройте файл MainPage.xaml и добавьте следующий XAML в раздел &lt;Grid&gt; по умолчанию.
+Откройте файл MainPage.xaml и добавьте следующий код XAML в раздел &lt;Grid&gt; по умолчанию.
 
-```xaml
+```xml
 <StackPanel Orientation="Vertical" Margin="10,0,-10,0">
     <TextBlock FontSize="24">Device Information</TextBlock>
     <StackPanel Orientation="Horizontal">
@@ -449,9 +450,9 @@ CustomEvent=AutoPlayCustomEventQuickstart
 
 ### Шаг 3. Добавление пользовательского интерфейса XAML
 
-Откройте файл MainPage.xaml и добавьте следующий XAML в раздел &lt;Grid&gt; по умолчанию.
+Откройте файл MainPage.xaml и добавьте следующий код XAML в раздел &lt;Grid&gt; по умолчанию.
 
-```xaml
+```xml
 <StackPanel Orientation="Vertical">
     <TextBlock FontSize="28" Margin="10,0,800,0">Files</TextBlock>
     <TextBlock x:Name="FilesBlock" FontSize="22" Height="600" Margin="10,0,800,0" />
@@ -577,6 +578,6 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

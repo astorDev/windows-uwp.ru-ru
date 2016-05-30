@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Расширьте основные функции Кортаны за счет голосовых команд, которые запускают и выполняют одно действие во внешнем приложении.
 title: Взаимодействие с Кортаной
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
@@ -9,7 +10,7 @@ template: detail.hbs
 # Взаимодействие с Кортаной в приложениях UWP
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 Расширьте основные функции **Кортаны** за счет голосовых команд, которые запускают и выполняют одно действие во внешнем приложении. 
 
@@ -21,7 +22,7 @@ template: detail.hbs
 > **Примечание.**  
 > Голосовая команда — это одно изречение с конкретной целью, определенное в файле определения голосовых команд (VCD) и направленное на установленное приложение через **Кортану**.
 
-> VCD-файл определяет одну или несколько голосовых команд, каждая из которых обладает уникальным смыслом.
+> VCD-файл определяет одну или несколько голосовых команд, каждая из которых несет в себе уникальное намерение.
 
 > Определение голосовых команд может иметь разную сложность. Определение может поддерживать от одного ограниченного изречения до набора более гибких, свойственных языку, изречений с одним и тем же смыслом.
 
@@ -46,31 +47,31 @@ template: detail.hbs
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Design guidelines](cortana-design-guidelines.md)</p></td>
+<td align="left"><p>[Рекомендации по проектированию](cortana-design-guidelines.md)</p></td>
 <td align="left"><p>В этих инструкциях и рекомендациях описано, как ваше приложение может наилучшим образом использовать **Кортану**, чтобы взаимодействовать с пользователем, помогать ему выполнять задачи и давать четкие пояснения.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Launch a foreground app with voice commands](launch-a-foreground-app-with-voice-commands-in-cortana.md)</p></td>
+<td align="left"><p>[Запуск приложения переднего плана с помощью голосовых команд](launch-a-foreground-app-with-voice-commands-in-cortana.md)</p></td>
 <td align="left"><p>Помимо использования голосовых команд <strong>Кортаны</strong> для получения доступа к системным компонентам, можно также использовать голосовые команды <strong>Кортаны</strong> для запуска приложения переднего плана и указания действия или команды, которые следует выполнить в приложении.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Dynamically modify VCD phrase lists](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)</p></td>
+<td align="left"><p>[Динамическое изменение списков фраз в формате VCD](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)</p></td>
 <td align="left"><p>Узнайте, как получить доступ к списку поддерживаемых фраз (элементы <strong>PhraseList</strong>) в VCD-файле и обновить его с помощью результата распознавания речи во время выполнения.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Launch a background app with voice commands](launch-a-background-app-with-voice-commands-in-cortana.md)</p></td>
+<td align="left"><p>[Запуск фонового приложения с помощью голосовых команд](launch-a-background-app-with-voice-commands-in-cortana.md)</p></td>
 <td align="left"><p>Помимо использования голосовых команд <strong>Кортаны</strong> для получения доступа к системным компонентам, вы также можете расширить возможности <strong>Кортаны</strong> за счет компонентов и функций из фонового приложения с помощью голосовых команд, которые определяют действие или команду для выполнения в приложении.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Interact with a background app](interact-with-a-background-app-in-cortana.md)</p></td>
+<td align="left"><p>[Взаимодействие с фоновым приложением](interact-with-a-background-app-in-cortana.md)</p></td>
 <td align="left"><p>Узнайте, как пользователь может взаимодействовать с фоновым приложением через голосовые функции и холст <strong>Кортаны</strong> во время выполнения голосовой команды.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Deep link to a background app](deep-link-into-your-app-from-cortana.md)</p></td>
+<td align="left"><p>[Прямая ссылка на фоновое приложение](deep-link-into-your-app-from-cortana.md)</p></td>
 <td align="left"><p>Предоставьте прямые ссылки из службы фонового приложения в <strong>Кортане</strong>, чтобы запустить приложение на переднем плане в определенном состоянии или контексте.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Support natural language voice commands](support-natural-language-voice-commands-in-cortana.md)</p></td>
+<td align="left"><p>[Поддержка голосовых команд на естественном языке](support-natural-language-voice-commands-in-cortana.md)</p></td>
 <td align="left"><p>Узнайте, как расширить возможности <strong>Кортаны</strong> за счет более гибких и естественных голосовых команд, которые позволяют пользователю произносить имя приложения в любом месте команды.</p></td>
 </tr>
 </tbody>
@@ -98,6 +99,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

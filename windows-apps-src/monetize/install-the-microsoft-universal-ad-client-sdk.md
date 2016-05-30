@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 28C6D865-2A5C-4B64-82E3-49A862A36850
 description: Элемент управления Ad Mediator и связанные средства разработчика доступны в пакете SDK Microsoft Universal Ad Client.
 title: Установка пакета SDK Universal Ad Client
@@ -6,6 +7,6 @@ redirect_url: https://msdn.microsoft.com/windows/uwp/monetize/monetize-your-app-
 ---
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

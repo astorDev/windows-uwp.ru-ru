@@ -1,16 +1,15 @@
 ---
-Description: Узнайте, как решать проблемы с точностью распознавания речи, вызванные качеством голосового ввода.
+author: Karl-Bridge-Microsoft
+Description: Узнайте, как решать проблемы с точностью распознавания речи, связанные с качеством голосового ввода.
 title: Решение проблем голосового ввода
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
-label: Решение проблем голосового ввода
+label: Manage audio input issues
 template: detail.hbs
 ---
 
 # Решение проблем голосового ввода
 
-
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+Узнайте, как решать проблемы с точностью распознавания речи, связанные с качеством голосового ввода.
 
 **Важные API**
 
@@ -18,7 +17,7 @@ template: detail.hbs
 -   [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)
 -   [**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
 
-Узнайте, как решать проблемы с точностью распознавания речи, связанные с качеством голосового ввода.
+
 
 
 ## <span id="Assess_audio-input_quality"></span><span id="assess_audio-input_quality"></span><span id="ASSESS_AUDIO-INPUT_QUALITY"></span>Оценка качества голосового ввода
@@ -100,7 +99,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 }
 ```
 
-## <span id="related_topics"></span>Статьи по теме
+## <span id="related_topics"></span>Связанные разделы
 
 
 * [Взаимодействия с помощью голосовых функций](speech-interactions.md)
@@ -116,6 +115,6 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

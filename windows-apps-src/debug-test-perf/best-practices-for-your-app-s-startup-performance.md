@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: Рекомендации по повышению производительности запуска приложения
 description: Создавайте приложения универсальной платформы Windows (UWP) с оптимальными временем запуска, улучшив управление им, а также активацией.
@@ -98,7 +99,7 @@ Ngen.exe выполнит предварительную компиляцию в
 
 ![Динамическое визуальное дерево/](images/live-visual-tree.png)
 
-**Использование x:DeferLoadStrategy**. Сворачивание элемента или установка его непрозрачности равной 0 не предотвратят создание этого элемента. С помощью атрибута x: DeferLoadStrategy можно отложить загрузку элемента пользовательского интерфейса и загрузить его, когда это потребуется. Это хороший способ отсрочки обработки пользовательского интерфейса, который не виден во время запуска экрана, чтобы его можно было загрузить в случае необходимости или в составе набора логики с отсрочкой. Чтобы запустить загрузку, необходимо просто вызвать FindName для элемента. Примеры и дополнительные сведения см. в разделе [Атрибут x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785).
+**Использование x: DeferLoadStrategy**. Сворачивание элемента или установка его непрозрачности равной 0 не предотвратят создание этого элемента. С помощью атрибута x: DeferLoadStrategy можно отложить загрузку элемента пользовательского интерфейса и загрузить его, когда это потребуется. Это хороший способ отсрочки обработки пользовательского интерфейса, который не виден во время запуска экрана, чтобы его можно было загрузить в случае необходимости или в составе набора логики с отсрочкой. Чтобы запустить загрузку, необходимо просто вызвать FindName для элемента. Примеры и дополнительные сведения см. в разделе [Атрибут x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785).
 
 **Виртуализация**. Если у вас есть список или повторяющееся содержимое в пользовательском интерфейсе, настоятельно рекомендуется использовать виртуализацию пользовательского интерфейса. Если пользовательский интерфейс из списка не виртуализирован, выполняется предварительное создание всех элементов, и это может замедлить запуск. См. раздел [Оптимизация пользовательского интерфейса ListView и GridView](optimize-gridview-and-listview.md).
 
@@ -146,173 +147,173 @@ Ngen.exe выполнит предварительную компиляцию в
 Есть несколько причин активации приложения, каждую из которых можно обрабатывать по-разному. Для обработки каждой причины активации можно переопределить методы [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330), [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797), [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331), [**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799), [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801), [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335), [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336) и [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806). Помимо всего прочего приложение с помощью этих методов должно создать пользовательский интерфейс, назначить его свойству [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051), а затем вызвать метод [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046). В этот момент экран-заставка замещается пользовательским интерфейсом, созданным приложением. Этот визуальный элемент может быть экраном загрузки или фактическим пользовательским интерфейсом приложения, если во время активации достаточно информации для его создания.
 
 > [!div class="tabbedCodeSnippets"]
-```csharp
-public partial class App : Application
-{
-    // A handler for regular activation.
-    async protected override void OnLaunched(LaunchActivatedEventArgs args)
-    {
-        base.OnLaunched(args);
-
-        // Asynchronously restore state based on generic launch.
-
-        // Create the ExtendedSplash screen which serves as a loading page while the
-        // reader downloads the section information.
-        ExtendedSplash eSplash = new ExtendedSplash();
-
-        // Set the content of the window to the extended splash screen.
-        Window.Current.Content = eSplash;
-
-        // Notify the Window that the process of activation is completed
-        Window.Current.Activate();
-    }
-
-    // a different handler for activation via the search contract
-    async protected override void OnSearchActivated(SearchActivatedEventArgs args)
-    {
-        base.OnSearchActivated(args);
-
-        // Do an asynchronous restore based on Search activation
-
-        // the rest of the code is the same as the OnLaunched method
-    }
-}
-
-partial class ExtendedSplash : Page
-{
-    // This is the UIELement that's the game's home page.
-    private GameHomePage homePage;
-
-    public ExtendedSplash()
-    {
-        InitializeComponent();
-        homePage = new GameHomePage();
-    }
-
-    // Shown for demonstration purposes only.
-    // This is typically autogenerated by Visual Studio.
-    private void InitializeComponent()
-    {
-    }
-}
-```
-```vb
-    Partial Public Class App
-    Inherits Application
-
-    ' A handler for regular activation.
-    Protected Overrides Async Sub OnLaunched(ByVal args As LaunchActivatedEventArgs)
-        MyBase.OnLaunched(args)
-
-        ' Asynchronously restore state based on generic launch.
-
-        ' Create the ExtendedSplash screen which serves as a loading page while the
-        ' reader downloads the section information.
-        Dim eSplash As New ExtendedSplash()
-
-        ' Set the content of the window to the extended splash screen.
-        Window.Current.Content = eSplash
-
-        ' Notify the Window that the process of activation is completed
-        Window.Current.Activate()
-    End Sub
-
-    ' a different handler for activation via the search contract
-    Protected Overrides Async Sub OnSearchActivated(ByVal args As SearchActivatedEventArgs)
-        MyBase.OnSearchActivated(args)
-
-        ' Do an asynchronous restore based on Search activation
-
-        ' the rest of the code is the same as the OnLaunched method
-    End Sub
-End Class
-
-Partial Friend Class ExtendedSplash
-    Inherits Page
-
-    Public Sub New()
-        InitializeComponent()
-
-        ' Downloading the data necessary for 
-        ' initial UI on a background thread.
-        Task.Run(Sub() DownloadData())
-    End Sub
-
-    Private Sub DownloadData()
-        ' Download data to populate the initial UI.
-
-        ' Create the first page. 
-        Dim firstPage As New MainPage()
-
-        ' Add the data just downloaded to the first page
-
-        ' Replace the loading page, which is currently 
-        ' set as the window’s content, with the initial UI for the app
-        Window.Current.Content = firstPage
-    End Sub
-
-    ' Shown for demonstration purposes only.
-    ' This is typically autogenerated by Visual Studio.
-    Private Sub InitializeComponent()
-    End Sub
-End Class 
-```
+> ```csharp
+> public partial class App : Application
+> {
+>     // A handler for regular activation.
+>     async protected override void OnLaunched(LaunchActivatedEventArgs args)
+>     {
+>         base.OnLaunched(args);
+> 
+>         // Asynchronously restore state based on generic launch.
+> 
+>         // Create the ExtendedSplash screen which serves as a loading page while the
+>         // reader downloads the section information.
+>         ExtendedSplash eSplash = new ExtendedSplash();
+> 
+>         // Set the content of the window to the extended splash screen.
+>         Window.Current.Content = eSplash;
+> 
+>         // Notify the Window that the process of activation is completed
+>         Window.Current.Activate();
+>     }
+> 
+>     // a different handler for activation via the search contract
+>     async protected override void OnSearchActivated(SearchActivatedEventArgs args)
+>     {
+>         base.OnSearchActivated(args);
+> 
+>         // Do an asynchronous restore based on Search activation
+> 
+>         // the rest of the code is the same as the OnLaunched method
+>     }
+> }
+> 
+> partial class ExtendedSplash : Page
+> {
+>     // This is the UIELement that's the game's home page.
+>     private GameHomePage homePage;
+> 
+>     public ExtendedSplash()
+>     {
+>         InitializeComponent();
+>         homePage = new GameHomePage();
+>     }
+> 
+>     // Shown for demonstration purposes only.
+>     // This is typically autogenerated by Visual Studio.
+>     private void InitializeComponent()
+>     {
+>     }
+> }
+> ```
+> ```vb
+>     Partial Public Class App
+>     Inherits Application
+> 
+>     ' A handler for regular activation.
+>     Protected Overrides Async Sub OnLaunched(ByVal args As LaunchActivatedEventArgs)
+>         MyBase.OnLaunched(args)
+> 
+>         ' Asynchronously restore state based on generic launch.
+> 
+>         ' Create the ExtendedSplash screen which serves as a loading page while the
+>         ' reader downloads the section information.
+>         Dim eSplash As New ExtendedSplash()
+> 
+>         ' Set the content of the window to the extended splash screen.
+>         Window.Current.Content = eSplash
+> 
+>         ' Notify the Window that the process of activation is completed
+>         Window.Current.Activate()
+>     End Sub
+> 
+>     ' a different handler for activation via the search contract
+>     Protected Overrides Async Sub OnSearchActivated(ByVal args As SearchActivatedEventArgs)
+>         MyBase.OnSearchActivated(args)
+> 
+>         ' Do an asynchronous restore based on Search activation
+> 
+>         ' the rest of the code is the same as the OnLaunched method
+>     End Sub
+> End Class
+> 
+> Partial Friend Class ExtendedSplash
+>     Inherits Page
+> 
+>     Public Sub New()
+>         InitializeComponent()
+> 
+>         ' Downloading the data necessary for 
+>         ' initial UI on a background thread.
+>         Task.Run(Sub() DownloadData())
+>     End Sub
+> 
+>     Private Sub DownloadData()
+>         ' Download data to populate the initial UI.
+> 
+>         ' Create the first page. 
+>         Dim firstPage As New MainPage()
+> 
+>         ' Add the data just downloaded to the first page
+> 
+>         ' Replace the loading page, which is currently 
+>         ' set as the window's content, with the initial UI for the app
+>         Window.Current.Content = firstPage
+>     End Sub
+> 
+>     ' Shown for demonstration purposes only.
+>     ' This is typically autogenerated by Visual Studio.
+>     Private Sub InitializeComponent()
+>     End Sub
+> End Class 
+> ```
 
 Приложения, отображающие страницу загрузки в обработчике активации, начинают работать над созданием пользовательского интерфейса в фоновом режиме. После создания такого элемента возникает соответствующее событие [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723). В обработчике событий содержимое окна (в данный момент экрана загрузки) замещается недавно созданной домашней страницей.
 
 Важно, чтобы приложение с длительной инициализацией отображало страницу загрузки. Кроме обеспечения обратной связи во время активации следует знать, что процесс приложения будет завершен, если метод [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) не вызывается в течение 15 секунд после начала активации.
 
 > [!div class="tabbedCodeSnippets"]
-```csharp
-partial class GameHomePage : Page
-{
-    public GameHomePage()
-    {
-        InitializeComponent();
-
-        // add a handler to be called when the home page has been loaded
-        this.Loaded += ReaderHomePageLoaded;
-
-        // load the minimal amount of image and sound data from disk necessary to create the home page.        
-    }
-    
-    void ReaderHomePageLoaded(object sender, RoutedEventArgs e)
-    {
-        // set the content of the window to the home page now that it’s ready to be displayed.
-        Window.Current.Content = this;
-    }
-
-    // Shown for demonstration purposes only.
-    // This is typically autogenerated by Visual Studio.
-    private void InitializeComponent()
-    {
-    }
-}
-```
-```vb
-    Partial Friend Class GameHomePage
-    Inherits Page
-
-    Public Sub New()
-        InitializeComponent()
-
-        ' add a handler to be called when the home page has been loaded
-        AddHandler Me.Loaded, AddressOf ReaderHomePageLoaded
-
-        ' load the minimal amount of image and sound data from disk necessary to create the home page.        
-    End Sub
-
-    Private Sub ReaderHomePageLoaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
-        ' set the content of the window to the home page now that it’s ready to be displayed.
-        Window.Current.Content = Me
-    End Sub
-
-    ' Shown for demonstration purposes only.
-    ' This is typically autogenerated by Visual Studio.
-    Private Sub InitializeComponent()
-    End Sub
-End Class
-```
+> ```csharp
+> partial class GameHomePage : Page
+> {
+>     public GameHomePage()
+>     {
+>         InitializeComponent();
+> 
+>         // add a handler to be called when the home page has been loaded
+>         this.Loaded += ReaderHomePageLoaded;
+> 
+>         // load the minimal amount of image and sound data from disk necessary to create the home page.        
+>     }
+>     
+>     void ReaderHomePageLoaded(object sender, RoutedEventArgs e)
+>     {
+>         // set the content of the window to the home page now that it's ready to be displayed.
+>         Window.Current.Content = this;
+>     }
+> 
+>     // Shown for demonstration purposes only.
+>     // This is typically autogenerated by Visual Studio.
+>     private void InitializeComponent()
+>     {
+>     }
+> }
+> ```
+> ```vb
+>     Partial Friend Class GameHomePage
+>     Inherits Page
+> 
+>     Public Sub New()
+>         InitializeComponent()
+> 
+>         ' add a handler to be called when the home page has been loaded
+>         AddHandler Me.Loaded, AddressOf ReaderHomePageLoaded
+> 
+>         ' load the minimal amount of image and sound data from disk necessary to create the home page.        
+>     End Sub
+> 
+>     Private Sub ReaderHomePageLoaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
+>         ' set the content of the window to the home page now that it's ready to be displayed.
+>         Window.Current.Content = Me
+>     End Sub
+> 
+>     ' Shown for demonstration purposes only.
+>     ' This is typically autogenerated by Visual Studio.
+>     Private Sub InitializeComponent()
+>     End Sub
+> End Class
+> ```
 
 Пример расширенных экранов-заставок см. в разделе [Образец экрана-заставки](http://go.microsoft.com/fwlink/p/?linkid=234889).
 
@@ -330,7 +331,7 @@ End Class
 
 Повторное использование кода часто реализуется в виде включения в проект модулей (DLL-файлов). Для загрузки таких модулей требуется доступ к диску и, как легко можно представить, затраты ресурсов для этого могут возрасти. Это прежде всего влияет на холодный запуск, но также может повлиять и на горячий запуск. В случае языков C# и Visual Basic среда CLR пытается максимально снизить эти затраты, загружая сборки по требованию. То есть среда CLR не загружает модуль, пока на него не ссылается выполняемый метод. Поэтому в коде запуска следует ссылаться только на сборки, необходимые для запуска приложения, чтобы среда CLR не загружала лишние модули. Если в пути запуска есть неиспользуемые ветви кода, в которых присутствуют ненужные ссылки, то такие ветви кода можно переместить в другие методы, чтобы избежать ненужных загрузок.
 
-Еще один способ сокращения загрузок модулей — объединить модули приложения. Обычно одна большая сборка загружается быстрее двух сборок меньшего размера. Но это не всегда возможно, к тому же объединение модулей оправданно, только когда оно не оказывает заметного влияния на производительность разработчика или повторное использование кода. Загружаемые при запуске модули выявляются с помощью таких инструментов, как [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) или [Windows Performance Analyzer (WPA)](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/ff191077.aspx).
+Еще один способ сокращения загрузок модулей — объединить модули приложения. Обычно одна большая сборка загружается быстрее двух сборок меньшего размера. Но это не всегда возможно, к тому же объединение модулей оправданно, только когда оно не оказывает заметного влияния на производительность разработчика или повторное использование кода. Загружаемые при запуске модули выявляются с помощью таких инструментов, как [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) или [Windows Performance Analyzer (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx).
 
 ### Создание интеллектуальных веб-запросов
 
@@ -358,6 +359,6 @@ PageStackEntry также содержит параметр, переданны�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

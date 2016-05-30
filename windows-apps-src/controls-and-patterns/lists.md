@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: Списки отображают содержимое коллекций и обеспечивают взаимодействие с ним.
 title: Списки
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
-label: Списки
+label: Lists
 template: detail.hbs
 ---
 # Списки
@@ -18,9 +19,9 @@ template: detail.hbs
 
 ## Важные API
 
--   [**Класс ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)
--   [**Класс GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)
--   [**Класс ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)
+-   [**Класс ListView **](https://msdn.microsoft.com/library/windows/apps/br242878)
+-   [**Класс GridView **](https://msdn.microsoft.com/library/windows/apps/br242705)
+-   [**Класс ComboBox **](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 ## Представления списка
@@ -172,9 +173,8 @@ template: detail.hbs
 </table>
 
 
-## Статьи по теме
+## Связанные разделы
 
-**Проектировщикам**
 - [Центр](hub.md)
 - [Основные и подробные данные](master-details.md)
 - [Панель навигации](nav-pane.md)
@@ -189,6 +189,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

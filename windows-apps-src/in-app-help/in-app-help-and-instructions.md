@@ -1,8 +1,9 @@
 ---
+author: QuinnRadich
 Description: Предоставьте пользователям советы по устранению неполадок и научите их эффективно взаимодействовать с вашим приложением. В этом разделе представлены рекомендации по поводу инструктирования пользователей в процессе использования приложения.
 title: Руководство по взаимодействию с пользователем — справка и инструкции
 ms.assetid: 87867BFE-35D1-466E-B1F6-9EDCA3E5EA92
-label: обучающий пользовательский интерфейс и справка в приложении
+label: In-app help and instructional UI
 template: detail.hbs
 ---
 
@@ -26,11 +27,11 @@ template: detail.hbs
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[App help](guidelines-for-app-help.md)</p></td>
+<td align="left"><p>[Справка по приложению](guidelines-for-app-help.md)</p></td>
 <td align="left"><p>В этом руководстве описано, как создать эффективное содержимое раздела справки для приложения.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Instructional UI](instructional-ui.md)</p></td>
+<td align="left"><p>[Инструктивный пользовательский интерфейс](instructional-ui.md)</p></td>
 <td align="left"><p>Информация о создании проекта обучающего пользовательского интерфейса, который помогает пользователям начать работать с вашим приложением Магазина Windows.</p></td>
 </tr>
 </tbody>
@@ -41,6 +42,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

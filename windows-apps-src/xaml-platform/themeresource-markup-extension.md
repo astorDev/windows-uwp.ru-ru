@@ -1,12 +1,13 @@
 ---
-description: Предоставляет значение для любого атрибута XAML, обрабатывая ссылку на ресурс. Системная логика возвращает ресурсы в зависимости от активной темы.
+author: jwmsft
+description: Предоставляет значение для любого атрибута XAML, обрабатывая ссылку на ресурс. Дополнительная системная логика возвращает различные ресурсы в зависимости от активной темы.
 title: Расширение разметки ThemeResource
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 ---
 
 # Расширение разметки {ThemeResource}
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Предоставляет значение для любого атрибута XAML, обрабатывая ссылку на ресурс. Дополнительная системная логика возвращает различные ресурсы в зависимости от активной темы. Аналогично ресурсу [Расширение разметки {StaticResource}](staticresource-markup-extension.md), ресурсы определены в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), а в **ThemeResource** используются ссылки на ключи ресурсов в **ResourceDictionary**.
 
@@ -20,7 +21,7 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 | Термин | Описание |
 |------|-------------|
-| key | Ключ для запрашиваемого ресурса. Изначально ключ назначается атрибутом [**ResourceDictionary**>](https://msdn.microsoft.com/library/windows/apps/br208794). Ключом ресурса может быть любая строка, определенная в грамматике XamlName. |
+| key | Ключ для запрашиваемого ресурса. Изначально ключ назначается атрибутом [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). Ключом ресурса может быть любая строка, определенная в грамматике XamlName. |
  
 ## Комментарии
 
@@ -32,7 +33,7 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 Дополнительные сведения о том, как определять ресурсы и правильно использовать [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), включая образец кода, см. в разделе [Ссылки ResourceDictionary и XAML](https://msdn.microsoft.com/library/windows/apps/mt187273).
 
-**Внимание!**  
+**Важно!**  
 Как и **StaticResource**, расширение **ThemeResource** не должно пытаться создать опережающую ссылку на ресурс, который лексически определен далее в XAML-файле. Создание таких ссылок не поддерживается. Даже если опережающая ссылка не вызовет ошибку, ее создание приведет к снижению производительности. Для достижения наилучших результатов составляйте словари ресурсов так, чтобы обходиться без опережающих ссылок.
 
 Если задать в **ThemeResource** ключ, который не удается разрешить, то во время выполнения создается исключение синтаксического анализа XAML. Средства разработки также могут выдавать предупреждения и ошибки.
@@ -61,7 +62,8 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 Использование **ThemeResource** можно представить как последовательность зависимых значений. Например, значение [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723), используемое параметром [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962), который также является ресурсом, доступным по ключу, может использовать ссылку **ThemeResource**. Но все свойства пользовательского интерфейса, использующие ресурс **SolidColorBrush** с ключом, будут использовать также ссылку **ThemeResource**, поэтому динамическое изменение значения при смене темы обеспечивается каждым свойством типа [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076).
 
-**Примечание**. `{ThemeResource}` и разрешение ресурсов во время выполнения при смене темы поддерживается XAML в Windows 8.1, но не поддерживается XAML для приложений, предназначенных для Windows 8.
+**Примечание.**
+            `{ThemeResource}` и разрешение ресурсов во время выполнения при смене темы поддерживается XAML в Windows 8.1, но не поддерживается XAML для приложений, предназначенных для Windows 8.
 
 ### Системные ресурсы
 
@@ -73,7 +75,7 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 Вот пример XAML, взятый с файлов generic.xaml и themeresources.xaml по умолчанию, чтобы проиллюстрировать варианты использования **ThemeResource**. Рассмотрим один шаблон (стандартный [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)) и объявление двух свойств ([**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) и [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414)), которые должны реагировать на изменение темы.
 
-```xaml
+```xml
     <!-- Default style for Windows.UI.Xaml.Controls.Button -->
     <Style TargetType="Button">
         <Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}" />
@@ -85,7 +87,7 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 Эти же свойства также изменяются некоторыми визуальными состояниями для [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). Обратите внимание, что при нажатии кнопки меняется цвет фона. В этом случае анимации [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) и [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) в раскадровке визуального состояния также используют объекты [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) и ссылки на кисти с **ThemeResource** в качестве значения опорного кадра.
 
-```xaml
+```xml
 <VisualState x:Name="Pressed">
   <Storyboard>
     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border"
@@ -102,7 +104,7 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 Каждая из этих кистей определена ранее в файле generic.xaml. Они должны быть определены до использования в шаблонах, чтобы избежать опережающих ссылок XAML. Вот эти определения для словаря темы "Default".
 
-```xaml
+```xml
     <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Default">
 ... 
@@ -116,7 +118,7 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 Затем эти кисти определяются в каждом из других словарей темы, например:
 
-```xaml
+```xml
         <ResourceDictionary x:Key="HighContrast">
             <!-- High Contrast theme resources -->
 ...
@@ -150,6 +152,6 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

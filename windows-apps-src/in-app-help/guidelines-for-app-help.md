@@ -1,4 +1,5 @@
 ---
+author: QuinnRadich
 Description: В этом руководстве описано, как создать эффективное содержимое раздела справки для приложения.
 title: Руководство по справке для приложений
 label: Guidelines for app help
@@ -60,6 +61,6 @@ template: detail.hbs
 \[Эта статья содержит сведения, относящиеся к приложениям универсальной платформы Windows (UWP) и Windows 10. Для получения инструкций, относящихся к Windows 8.1, скачайте [рекомендации для Windows 8.1 в формате PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

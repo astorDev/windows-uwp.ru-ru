@@ -1,25 +1,26 @@
 ---
+author: Xansky
 description: В данной статье рассказывается, как запустить диалоговое окно составления SMS, с помощью которого пользователь может отправить SMS-сообщение. Перед отображением диалогового окна вы можете заполнить поля SMS-сообщения значениями по умолчанию. Сообщение не будет отправлено до тех пор, пока пользователь не нажмет кнопку отправки.
 title: Отправка SMS-сообщения
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
-keywords: контакты, SMS, отправка
+keywords: contacts, SMS, send
 ---
 
 # Отправка SMS-сообщения
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В данной статье рассказывается, как запустить диалоговое окно составления SMS, с помощью которого пользователь может отправить SMS-сообщение. Перед отображением диалогового окна вы можете заполнить поля SMS-сообщения значениями по умолчанию. Сообщение не будет отправлено до тех пор, пока пользователь не нажмет кнопку отправки.
 
 ## Запуск диалогового окна составления SMS
 
-Создайте объект [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/Dn642160) и укажите данные, которые необходимо предварительно внести в поля диалогового окна составления электронного письма. Чтобы отобразить диалоговое окно, вызовите метод [**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/Dn642160manager-showcomposesmsmessageasync).
+Создайте объект [**ChatMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.chatmessage) и укажите данные, которые необходимо предварительно внести в поля диалогового окна составления электронного письма. Чтобы отобразить диалоговое окно, вызовите метод [**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync).
 
 ```cs
-private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient, 
-    string messageBody, 
-    StorageFile attachmentFile, 
+private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient,
+    string messageBody,
+    StorageFile attachmentFile,
     string mimeType)
 {
     var chatMessage = new Windows.ApplicationModel.Chat.ChatMessage();
@@ -36,7 +37,7 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
         chatMessage.Attachments.Add(attachment);
     }
 
-    var phone = recipient.Phones.FirstOrDefault&lt;Windows.ApplicationModel.Contacts.ContactPhone&gt;();
+    var phone = recipient.Phones.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactPhone>();
     if (phone != null)
     {
         chatMessage.Recipients.Add(phone.Number);
@@ -54,8 +55,6 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
 * [Выбор контактов](selecting-contacts.md)
 
 
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

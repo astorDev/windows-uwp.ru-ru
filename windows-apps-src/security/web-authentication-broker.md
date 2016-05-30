@@ -32,7 +32,7 @@ URI запроса отправляется как параметр *requestUri*
 В следующем примере показано, как составляется URI запроса.
 
 ```cs
-string startURL = "https://<providerendpoint>?client_id=<clientid>&amp;scope=<scopes>&amp;response_type=token";
+string startURL = "https://<providerendpoint>?client_id=<clientid>&scope=<scopes>&response_type=token";
 string endURL = "http://<appendpoint>";
 
 System.Uri startURI = new System.Uri(startURL);
@@ -148,7 +148,21 @@ catch (Exception ex)
 
 1.  Так как AuthHost работает в собственном контейнере приложения, чтобы предоставить ему возможность частной сети, необходимо настроить раздел реестра: редактор реестра Windows версии 5.00
 
-    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
+    **HKEY\_LOCAL\_MACHINE**
+            \\
+            **SOFTWARE**
+            \\
+            **Microsoft**
+            \\
+            **Windows NT**
+            \\
+            **CurrentVersion**
+            \\
+            **Image File Execution Options**
+            \\
+            **authhost.exe**
+            \\
+            **EnablePrivateNetwork** = 00000001
 
                          Data type  
                          DWORD
@@ -173,6 +187,6 @@ catch (Exception ex)
 
 3.  Добавьте правило брандмауэра для входящего трафика в Fiddler.
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

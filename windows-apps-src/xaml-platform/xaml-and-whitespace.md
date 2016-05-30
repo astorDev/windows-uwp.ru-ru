@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: В этом разделе вы научитесь обрабатывать пустое пространство в XAML.
 title: XAML и пустое пространство
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
@@ -6,7 +7,7 @@ ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 
 # XAML и пустое пространство
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе вы научитесь обрабатывать пустое пространство в XAML.
 
@@ -48,6 +49,6 @@ ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

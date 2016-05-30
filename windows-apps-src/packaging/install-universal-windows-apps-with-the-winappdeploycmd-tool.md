@@ -1,7 +1,8 @@
 ---
+author: msatranjr
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: Установка приложений с помощью средства WinAppDeployCmd.exe
-description: Windows Application Deployment (WinAppDeployCmd.exe) – это средство командной строки, которое используется для развертывания приложения универсальной платформы Windows (UWP) с компьютера под управлением Windows 10 на любом устройстве с операционной системой Windows 10 Mobile.
+description: Windows Application Deployment (WinAppDeployCmd.exe) — это средство командной строки, которое используется для развертывания приложения универсальной платформы Windows (UWP) с компьютера под управлением Windows 10 на любом устройстве с операционной системой Windows 10 Mobile.
 ---
 # Установка приложений с помощью средства WinAppDeployCmd.exe
 
@@ -107,6 +108,6 @@ WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

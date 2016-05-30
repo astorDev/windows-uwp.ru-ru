@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
 title: Перечисление устройств по сети
-description: Помимо обнаружения локально подключенных устройств, API Windows.Devices.Enumeration позволяют перечислять устройства по беспроводным и сетевым протоколам.
+description: Помимо обнаружения локально подключенных устройств вы можете использовать интерфейсы API Windows.Devices.Enumeration для перечисления устройств по беспроводным и сетевым протоколам.
 ---
 # Перечисление устройств по сети
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** Важные API **
@@ -35,8 +36,8 @@ description: Помимо обнаружения локально подключ
 | Windows Connect Now (WCN)                    | **{4c1b1ef8-2f62-4b9f-9bc5-b21ab636138f}** |
 | Док-станция WiGig                                  | **{a277f3a5-8764-4f88-8045-4c5e962640b1}** |
 | Подготовка Wi-Fi для принтеров HP           | **{c85ef710-f344-4792-bb6d-85a4346f1e69}** |
-| Bluetooth                                    | На данный момент недоступно                     |
-| Bluetooth с низким энергопотреблением                                 | На данный момент недоступно                     |
+| Bluetooth                                    | **{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}** |
+| Bluetooth с низким энергопотреблением                                 | **{bb7bb05e-5972-42b5-94fc-76eaa7084d49}** |
 
  
 
@@ -78,6 +79,6 @@ System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

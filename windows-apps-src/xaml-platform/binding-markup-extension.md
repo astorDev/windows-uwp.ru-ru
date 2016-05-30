@@ -1,16 +1,17 @@
 ---
+author: jwmsft
 description: Расширение разметки Binding преобразовывается во время загрузки XAML в экземпляр класса Binding.
-title: Расширение разметки Binding
+title: Расширение разметки Binding'
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ---
 
 # Расширение разметки {Binding}
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Примечание** Новый механизм привязки доступен для Windows 10. Он оптимизирован для повышения быстродействия и производительности и разработчика. См. раздел [Расширение разметки: {x:Bind}](x-bind-markup-extension.md).
+**Примечание**  Новый механизм привязки доступен для Windows 10. Он оптимизирован для повышения быстродействия и производительности и разработчика. См. раздел [Расширение разметки: {x:Bind}](x-bind-markup-extension.md).
 
-**Примечание** Общие сведения об использовании привязки данных в приложении с **{Binding}** (и комплексное сравнение между **{x:Bind}** и **{Binding}**) см. в разделе [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Примечание**  Общие сведения об использовании привязки данных в приложении с **{Binding}** (и комплексное сравнение между **{x:Bind}** и **{Binding}**) см. в разделе [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 Расширение разметки **{Binding}** преобразовывается во время загрузки XAML в экземпляр класса [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Этот объект привязки получает значения из свойства в источнике данных. Объект привязки можно дополнительно настроить таким образом, чтобы он регистрировал изменения значений свойства источника данных и сам обновлялся на основании этих данных. Кроме того, его можно настроить, чтобы он отправлял изменения собственного значения назад к свойству источника. Свойство, являющееся целью привязки данных, должно быть свойством зависимостей. Подробнее см. в разделе [Общие сведения о свойствах зависимостей](dependency-properties-overview.md).
 
@@ -37,7 +38,9 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 | Термин | Описание |
 |------|-------------|
 | *propertyPath* | Строка, указывающая путь свойства для привязки. Подробную информацию см. в разделе [Путь свойства](#property-path) ниже. |
-| *bindingProperties* | *propName*=*value*\[, *propName*=*value*\]*<br/>Одна или несколько привязок свойств, указанных с помощью синтаксиса пары "имя/значение". |
+| *bindingProperties* | *propName*
+            =
+            *value*\[, *propName*=*value*\]*<br/>Одна или несколько привязок свойств, указанных с помощью синтаксиса пары "имя/значение". |
 | *propName* | Имя строки свойства для установки в объекте [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Например, "Converter". | 
 | *value* | Значение, которое следует задать для свойства. Синтаксис аргумента зависит от свойства раздела [Свойства класса Binding, которые можно задать в {Binding}](#properties-of-binding) ниже |
 
@@ -60,7 +63,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ## Свойства класса привязок, которые можно задать с помощью {Binding}
 
 
-**{Binding}**демонстрируется с помощью замещающего синтаксиса *bindingProperties* поскольку есть несколько свойств, доступных для чтения и записи [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820), которые можно задавать в данном случае использования расширения разметки. Свойства можно задавать в любом порядке с парами *propName*=*value*, разделенными запятыми. Для некоторых свойств требуются типы, не предусматривающие преобразования; им необходимы их собственные расширения разметки, вложенные в **{Binding}**.
+**{Binding}** демонстрируется с помощью замещающего синтаксиса *bindingProperties* поскольку есть несколько свойств, доступных для чтения и записи [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820), которые можно задавать в данном случае использования расширения разметки. Свойства можно задавать в любом порядке с парами *propName*=*value*, разделенными запятыми. Для некоторых свойств требуются типы, не предусматривающие преобразования; им необходимы их собственные расширения разметки, вложенные в **{Binding}**.
 
 | Свойство | Описание |
 |----------|-------------|
@@ -72,21 +75,25 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 | [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | Задает значение, которое отображается, когда не удается разрешить источник или путь. | 
 | [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) | Указывает режим привязки как одну из этих строк: "OneTime", "OneWay" или "TwoWay". Эти строки соответствуют именам постоянных перечисления [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822). Значение по умолчанию зависит из целевого объекта привязки, но в большинстве случаев это "OneWay". Обратите внимание, что это поведение отличается от шаблона по умолчанию для параметра **{x:Bind}**, значением которого является "OneTime". | 
 | [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | Указывает источник данных, описывая положение источника привязки относительно целевого объекта привязки. Это представляется на графе объектов времени выполнения (например, можно указать родительский объект). Настройка [расширения разметки {RelativeSource}](relativesource-markup-extension.md). |
-| [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) | Указывает источник данных объекта. В расширении разметки **Binding**, [подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946). |
+| [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) | Указывает источник данных объекта. В расширении разметки **Binding** свойство [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) требует ссылки на объект, например на расширение разметки [{StaticResource}](staticresource-markup-extension.md). Если это свойство не указано, то источник задается действующим контекстом данных. Обычно значение Source не указывается в отдельных привязках, но используется общий контекст **DataContext** для нескольких привязок. Дополнительные сведения см. в статье [**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx) или [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946). |
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | Задает значение, которое отображается, когда значение источника разрешается, но оно явно равно **null**. |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | Задает время обновления источника привязки. Если значение не задано, по умолчанию используется **Default**. |
 
-**Примечание** Если вы преобразуете разметку **{x:Bind}** в **{Binding}**, то следует учитывать различия между значениями по умолчанию для свойства **Mode**.
+**Примечание**  Если вы преобразуете разметку **{x:Bind}** d **{Binding}**, то следует учитывать различия между значениями по умолчанию для свойства **Mode**.
 
-[**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) и **ConverterLanguage** связаны сценарием преобразования значения или типа из источника привязки в тип или значение, совместимые со свойством целевого объекта привязки. Более подробную информацию и примеры см. в разделе "Преобразования данных" статьи [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
+[
+              **Converter**
+            ](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) и **ConverterLanguage** связаны сценарием преобразования значения или типа из источника привязки в тип или значение, совместимые со свойством целевого объекта привязки. Более подробную информацию и примеры см. в разделе "Преобразования данных" статьи [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832), [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) и [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) указывают источник привязки, поэтому они являются взаимоисключающими.
+[
+              **Source**
+            ](https://msdn.microsoft.com/library/windows/apps/br209832), [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) и [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) указывают источник привязки, поэтому они являются взаимоисключающими.
 
-**Совет** Если для значения необходимо указать одни фигурные скобки, как, например, в [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) или [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), затем поставьте перед ними обратную косую черту: `\{`. Также можно включить всю строку, содержащую скобки, которые нужно преобразовать, в дополнительный набор кавычек, например: `ConverterParameter='{Mix}'`.
+**Совет**  Если для значения необходимо указать одни фигурные скобки, как, например, в [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) или [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), затем поставьте перед ними обратную косую черту: `\{`. Также можно включить всю строку, содержащую скобки, которые нужно преобразовать, в дополнительный набор кавычек, например: `ConverterParameter='{Mix}'`.
 
 ## Примеры.
 
-```XAML
+```XML
 <!-- binding a UI element to a view model -->    
 <Page ... >
     <Page.DataContext>
@@ -97,7 +104,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 </Page>
 ```
 
-```XAML
+```XML
 <!-- binding a UI element to another UI element -->
 <Page ... >
     <Page.Resources>
@@ -123,6 +130,6 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

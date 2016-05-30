@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Шаблоны проектов игр DirectX
 description: Узнайте о шаблонах для создания игры для универсальной платформы Windows (UWP) с использованием DirectX.
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
@@ -70,7 +71,7 @@ Visual Studio 2015 содержит три шаблона DirectX и UWP:
 -   [Создание простой игры UWP c использованием DirectX](tutorial--create-your-first-metro-style-directx-game.md)
 -   [Разработка Marble Maze — игры универсальной платформы Windows — на C++ и DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
-> **Примечание**  
+> **Примечание.**  
 Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
@@ -84,6 +85,6 @@ Visual Studio 2015 содержит три шаблона DirectX и UWP:
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

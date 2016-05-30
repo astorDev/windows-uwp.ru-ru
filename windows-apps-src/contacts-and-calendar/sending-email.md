@@ -1,13 +1,14 @@
 ---
-description: Статья рассказывает, как запустить диалоговое окно составления электронного письма, с помощью которого пользователь может отправить электронное письмо. Перед отображением диалогового окна вы можете заполнить поля сообщения значениями по умолчанию. Сообщение не будет отправлено до тех пор, пока пользователь не нажмет кнопку отправки.
+author: Xansky
+description: В данной статье рассказывается, как запустить диалоговое окно составления электронного письма, с помощью которого пользователь может отправить электронное письмо. Перед отображением диалогового окна вы можете заполнить поля сообщения значениями по умолчанию. Сообщение не будет отправлено до тех пор, пока пользователь не нажмет кнопку отправки.
 title: Отправка сообщения электронной почты
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
-keywords: контакты, электронное письмо, отправка
+keywords: contacts, email, send
 ---
 
 # Отправка сообщения электронной почты
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В данной статье рассказывается, как запустить диалоговое окно составления электронного письма, с помощью которого пользователь может отправить электронное письмо. Перед отображением диалогового окна вы можете заполнить поля сообщения значениями по умолчанию. Сообщение не будет отправлено до тех пор, пока пользователь не нажмет кнопку отправки.
@@ -41,7 +42,7 @@ private async void ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
         emailMessage.Attachments.Add(attachment);
     }
 
-    var email = recipient.Emails.FirstOrDefault&lt;Windows.ApplicationModel.Contacts.ContactEmail&gt;();
+    var email = recipient.Emails.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactEmail>();
     if (email != null)
     {
         var emailRecipient = new Windows.ApplicationModel.Email.EmailRecipient(email.Address);
@@ -70,6 +71,6 @@ private async void ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,16 +1,13 @@
 ---
+author: mijacobs
 Description: Ниже приводится список элементов и атрибутов, используемых для создания этих плиток.
 title: Шаблоны адаптивных плиток: схема и документация
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
-label: Шаблоны адаптивных плиток: схема и документация
+label: Adaptive tile schema and templates
 template: detail.hbs
 ---
 
 # Шаблоны адаптивных плиток: схема и руководство
-
-
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 Ниже приводится список элементов и атрибутов, используемых для создания этих плиток. Дополнительные сведения и примеры см. в разделе [Создание адаптивных плиток](tiles-and-notifications-create-adaptive-tiles.md).
 
@@ -131,11 +128,6 @@ template: detail.hbs
 </subgroup>
 ```
 
-**Примечание**.  
-Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
 ## <span id="related_topics"></span>Ссылки по теме
 
 
@@ -149,6 +141,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

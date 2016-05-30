@@ -1,6 +1,7 @@
 ---
+author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
-description: В этой статье описано, как добавить функцию воспроизведения мультимедийного содержимого адаптивной потоковой передачи в приложения UWP. В настоящее время эта функция поддерживает воспроизведение содержимого Http Live Streaming (HLS) и Dynamic Adaptive Streaming over HTTP (DASH).
+description: В этой статье описано, как добавить функцию воспроизведения мультимедийного содержимого адаптивной потоковой передачи в приложения универсальной платформы Windows (UWP). В настоящее время эта функция поддерживает воспроизведение содержимого Http Live Streaming (HLS) и Dynamic Adaptive Streaming over HTTP (DASH).
 title: Адаптивная потоковая передача
 ---
 
@@ -40,7 +41,7 @@ title: Адаптивная потоковая передача
 
 Обработчик событий **DownloadRequested** можно использовать для изменения запроса ресурса путем обновления свойств объекта [**AdaptiveMediaSourceDownloadResult**](https://msdn.microsoft.com/library/windows/apps/dn946942), предоставленных аргументами события. В приведенном ниже примере URI, из которого будет получен ресурс, изменяется путем обновления свойств [**ResourceUri**](https://msdn.microsoft.com/library/windows/apps/dn931250) объекта результата.
 
-Можно переопределить содержимое запрошенного ресурса, задав свойства [**Buffer**](https://msdn.microsoft.com/library/windows/apps/dn946943) или [**InputStream**](https://msdn.microsoft.com/library/windows/apps/dn931249) объекта результата. В приведенном ниже примере содержимое ресурса манифеста заменено путем присвоения значения свойству **Buffer**. Обратите внимание, что при обновлении запроса ресурса с данными, которые получены асинхронно (например, данные, извлеченные с удаленного сервера или в результате асинхронной проверки подлинности пользователя), следует вызвать метод [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn946936), чтобы получить отсрочку, а затем вызвать метод [**Complete**](https://msdn.microsoft.com/library/windows/apps/dn946934), когда операция завершится, чтобы сообщить системе, что операция запроса на загрузку может продолжаться.
+Можно переопределить содержимое запрошенного ресурса, задав свойства [**Buffer**](https://msdn.microsoft.com/library/windows/apps/dn946943) или [**InputStream**](https://msdn.microsoft.com/library/windows/apps/dn931249) объекта результата. В приведенном ниже примере содержимое ресурса манифеста заменено путем присвоения значения свойству **Buffer**. Обратите внимание, что при обновлении запроса ресурса данными, которые получены асинхронно (например, данные, извлеченные с удаленного сервера или в результате асинхронной проверки подлинности пользователя), следует вызвать метод [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn946936), чтобы получить отсрочку, а затем вызвать метод [**Complete**](https://msdn.microsoft.com/library/windows/apps/dn946934), когда операция завершится, чтобы сообщить системе, что операция запроса на загрузку может продолжаться.
 
 [!code-cs[AMSDownloadRequested](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetAMSDownloadRequested)]
 
@@ -57,6 +58,6 @@ title: Адаптивная потоковая передача
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

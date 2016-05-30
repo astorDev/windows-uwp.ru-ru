@@ -1,13 +1,14 @@
 ---
+author: mtoepke
 title: Портирование игрового цикла
-description: Здесь показано, как реализовать окно для игрового приложения UWP и перенести игровой цикл (создание интерфейса IFrameworkView для управления CoreWindow).
+description: Здесь показано, как реализовать окно для игрового приложения UWP и перенести игровой цикл, включая создание интерфейса IFrameworkView для управления полноэкранным CoreWindow.
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 ---
 
 # Портирование игрового цикла
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Резюме**
 
@@ -25,7 +26,7 @@ ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 
 В приложениях UWP все гораздо проще. Вместо того чтобы создавать традиционное окно, в игровом приложении Магазина Windows на базе DirectX реализуется интерфейс [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). Этот интерфейс предназначен для того, чтобы выполнять игры и приложения на базе DirectX непосредственно в объекте [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) внутри контейнера приложения.
 
-> **Примечание.** Windows предоставляет управляемые указатели на ресурсы, такие как объект приложения-источника и [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). См. [**Оператор дескриптора объекта (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
+> **Примечание.**   Windows предоставляет управляемые указатели на ресурсы, такие как объект приложения-источника и [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). См. [**Оператор дескриптора объекта (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
 
  
 
@@ -138,6 +139,6 @@ while (true)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

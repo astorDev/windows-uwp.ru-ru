@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 Description: 'Описание структуры типа файлов формате создания 3D и способов их создания и обработки с помощью Windows.Graphics.Printing3D API.'
 MS-HAID: 'dev\_devices\_sensors.generate\_3mf'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -14,24 +15,24 @@ title: Создание пакета 3MF
 
 **Важные API**
 
--   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.aspx)
+-   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
 
 \[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Microsoft не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
 
-Описание структуры типа файлов формате создания 3D и способов их создания и обработки с помощью [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.aspx) API.
+Описание структуры типа файлов формате создания 3D и способов их создания и обработки с помощью [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API.
 
 ## Что такое 3MF?
 
-Формат создания 3D — это набор соглашений об использовании XML для описания вида и структуры трехмерных моделей для производства (трехмерной печати). Он определяет набор компонентов (обязательных и необязательных) и их связи для предоставления всех необходимых сведений устройству для трехмерной печати. Набор данных, соответствующий формату создания 3D, можно сохранять как файл с расширением .3mf. 
+Формат создания 3D — это набор соглашений об использовании XML для описания вида и структуры трехмерных моделей для производства (трехмерной печати). Он определяет набор компонентов (обязательных и необязательных) и их связи для предоставления всех необходимых сведений устройству для трехмерной печати. Набор данных, соответствующий формату создания 3D, можно сохранять как файл с расширением .3mf.
 
-В Windows 10 класс [**Printing3D3MFPackage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) в пространстве имен **Windows.Graphics.Printing3D** аналогичен одному 3MF-файлу, а другие классы соответствуют определенным элементам XML в файле. В этом руководстве описывается, как создать и настроить основные части документа 3MF программными средствами, как использовать расширение 3MF Materials и как преобразовать объект **Printing3D3MFPackage** в C# и сохранить в виде 3MF-файла. Подробнее о стандартах 3MF и расширении 3MF Materials см. в разделе [3MF Specification](http://3mf.io/what-is-3mf/3mf-specification/).
+В Windows 10 класс [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) в пространстве имен **Windows.Graphics.Printing3D** аналогичен одному 3MF-файлу, а другие классы соответствуют определенным элементам XML в файле. В этом руководстве описывается, как создать и настроить основные части документа 3MF программными средствами, как использовать расширение 3MF Materials и как преобразовать объект **Printing3D3MFPackage** в C# и сохранить в виде 3MF-файла. Подробнее о стандартах 3MF и расширении 3MF Materials см. в разделе [3MF Specification](http://3mf.io/what-is-3mf/3mf-specification/).
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
 
 ## Основные классы в структуре 3MF
 
-Класс **Printing3D3MFPackage** представляет полный документ 3MF. В основе документа 3MF лежит часть модели, представленная классом [**Printing3DModel**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3dmodel.aspx). Большая часть сведений, которые мы хотим указать о трехмерной модели, хранятся в свойствах класса **Printing3DModel** и свойствах базовых классов.
+Класс **Printing3D3MFPackage** представляет полный документ 3MF. В основе документа 3MF лежит часть модели, представленная классом [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmodel.aspx). Большая часть сведений, которые мы хотим указать о трехмерной модели, хранятся в свойствах класса **Printing3DModel** и свойствах базовых классов.
 
 [!code-cs[InitClasses](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetInitClasses)]
 
@@ -39,13 +40,13 @@ title: Создание пакета 3MF
 
 ## Метаданные
 
-Часть модели документа 3MF может содержать метаданные в виде пар «ключ/значение», которые хранятся в свойстве **Metadata**. Существует ряд предопределенных имен метаданных, но можно добавить и другие пары как часть расширения (это описано более подробно в [спецификации 3MF](http://3mf.io/what-is-3mf/3mf-specification/). Получатель пакета (устройство трехмерной печати) определяет, следует ли обрабатывать метаданные и как это делать, но рекомендуется добавлять в пакет 3MF как можно больше базовых сведений:
+Часть модели документа 3MF может содержать метаданные в виде пар "ключ/значение", которые хранятся в свойстве **Metadata**. Существует ряд предопределенных имен метаданных, но можно добавить и другие пары как часть расширения (это описано более подробно в [спецификации 3MF](http://3mf.io/what-is-3mf/3mf-specification/). Получатель пакета (устройство трехмерной печати) определяет, следует ли обрабатывать метаданные и как это делать, но рекомендуется добавлять в пакет 3MF как можно больше базовых сведений:
 
-[!code-cs[Metadata](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMetadata)]
+[!code-cs[Метаданные](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMetadata)]
 
 ## Данные сетки
 
-В контексте этого руководства сетка — это тело трехмерной геометрии, созданное из одного набора вершин (хотя оно не должна отображаться как сплошное тело). Часть сетки представлена классом [**Printing3DMesh**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3dmesh.aspx). Допустимый объект сетки должен содержать информацию о местоположении всех вершин, а также всех треугольных граней между некоторыми наборами вершин. 
+В контексте этого руководства сетка — это тело трехмерной геометрии, созданное из одного набора вершин (хотя оно не должна отображаться как сплошное тело). Часть сетки представлена классом [**Printing3DMesh**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmesh.aspx). Допустимый объект сетки должен содержать информацию о местоположении всех вершин, а также всех треугольных граней между некоторыми наборами вершин.
 
 Следующий метод добавляет вершины в сетку и указывает их расположение в трехмерном пространстве.
 
@@ -65,7 +66,7 @@ title: Создание пакета 3MF
 ## Создание материалов
 
 
-Трехмерная модель может содержать данные для нескольких материалов. Это соглашение позволяет воспользоваться устройствами трехмерной печати, которые могут использовать несколько материалов в одном задании печати. Также существует несколько *типов* групп материалов, каждый из которых поддерживает нескольких различных материалов. У каждой группы материалов должен быть уникальный ссылочный номер, а у всех материалов в этой группе также должен быть уникальный идентификатор 
+Трехмерная модель может содержать данные для нескольких материалов. Это соглашение позволяет воспользоваться устройствами трехмерной печати, которые могут использовать несколько материалов в одном задании печати. Также существует несколько *типов* групп материалов, каждый из которых поддерживает нескольких различных материалов. У каждой группы материалов должен быть уникальный ссылочный номер, а у всех материалов в этой группе также должен быть уникальный идентификатор
 
 Различные объекты сетки в модели могут ссылаться на эти материалы. Кроме того, отдельные треугольники для каждой сетки могут определять различные материалы. Кроме того, различные материалы могут быт даже представлены одним треугольником, каждой вершине которого назначен разный материал, при этом материал грани вычисляется как градиент между ними.
 
@@ -97,9 +98,9 @@ title: Создание пакета 3MF
 
 [!code-cs[TextureResource](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTextureResource)]
 
-**Примечание.** Данные текстуру относятся к самому пакету 3MF, а не части модели в пакете. 
+**Примечание.** Данные текстуру относятся к самому пакету 3MF, а не части модели в пакете.
 
-Далее нам необходимо заполнить **материалы Texture3Coord**. Каждый из них ссылается на ресурс текстуры и указывает определенную точку на изображении (в координатах UV). 
+Далее нам необходимо заполнить **материалы Texture3Coord**. Каждый из них ссылается на ресурс текстуры и указывает определенную точку на изображении (в координатах UV).
 
 [!code-cs[Texture2CoordMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTexture2CoordMaterialGroup)]
 
@@ -111,37 +112,34 @@ title: Создание пакета 3MF
 
 ## Компоненты и сборка
 
-Структура компонента позволяет пользователю разместить несколько объектов сетки в печатаемой трехмерной модели. Объект [**Printing3DComponent**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) содержит одну сетку и список ссылок на другие компоненты. Фактически это список объектов [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx). Каждый объект **Printing3DComponentWithMatrix** содержит **Printing3DComponent** и, что важно, матрицу преобразования, которая применяется к сетке и компонентам **Printing3DComponent**. 
+Структура компонента позволяет пользователю разместить несколько объектов сетки в печатаемой трехмерной модели. Объект [**Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) содержит одну сетку и список ссылок на другие компоненты. Фактически это список объектов [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx). Каждый объект **Printing3DComponentWithMatrix** содержит **Printing3DComponent** и, что важно, матрицу преобразования, которая применяется к сетке и компонентам **Printing3DComponent**.
 
 Например, модель автомобиля может состоять из кузова **Printing3DComponent**, который содержит сетку кузова автомобиля. Компонент Body может содержать ссылки на четыре разных объекта **Printing3DComponentWithMatrix**, которые ссылаются на один объект **Printing3DComponent** с сеткой Wheel и содержат четыре разных матрицы преобразования (сопоставляющие колеса с различными позициями на кузове автомобиля). В этом сценарии сетку Body и сетку Wheel необходимо сохранить только один раз, хотя конечный продукт в итоге будет содержать пять сеток.
 
 Все объекты **Printing3DComponent** необходимо напрямую указать в свойстве **Components** модели. Компонент, который будет использоваться в задании печати, хранится в свойстве **Build**.
 
-[!code-cs[Components](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetComponents)]
+[!code-cs[Компоненты](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetComponents)]
 
 ## Сохранение пакета
-Получив модель с заданными материалами и компонентами, мы можем сохранить ее в пакете. 
+Получив модель с заданными материалами и компонентами, мы можем сохранить ее в пакете.
 
 [!code-cs[SavePackage](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSavePackage)]
 
-Затем мы можем запустить задание печати в приложении (см. раздел [Трехмерная печать из приложения](https://msdn.microsoft.com/en-us/library/windows/apps/mt204541.aspx)) или сохранить пакет **Printing3D3MFPackage** как 3MF-файл.
+Затем мы можем запустить задание печати в приложении (см. раздел [Трехмерная печать из приложения](https://msdn.microsoft.com/library/windows/apps/mt204541.aspx)) или сохранить пакет **Printing3D3MFPackage** как 3MF-файл.
 
-Следующий метод принимает готовый пакет **Printing3D3MFPackage** и сохраняет данные в 3MF-файле. 
+Следующий метод принимает готовый пакет **Printing3D3MFPackage** и сохраняет данные в 3MF-файле.
 
 [!code-cs[SaveTo3mf](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSaveTo3mf)]
 
 ## Связанные разделы
 
-[Трехмерная печать из приложения](https://msdn.microsoft.com/en-us/library/windows/apps/mt204541.aspx)
+[Трехмерная печать из приложения](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)
 
  
 
  
 
 
-
-
-
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: Хорошие значки согласуются со шрифтовым оформлением и языком проектирования в целом. В них метафоры не смешиваются — они сообщают только то, что нужно, как можно скорее и проще. 
 title: Значки
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
@@ -82,7 +83,7 @@ template: detail.hbs
     </tr>  
 </table>
 
-### Примеры
+<p>Вот несколько примеров:</p>
 
 <table>
     <tr>
@@ -152,9 +153,7 @@ template: detail.hbs
 
 <table>
 <tr><td>Зеленый — #128B44</td><td>Синий — #2C71B9</td><td>Желтый — #FDC214</td></tr>
-<tr><td>Положительные: готово, 
-выполнено </td><td>Нейтральные: справка, 
-уведомление </td><td>Предупреждающие: оповещение, предупреждение </td></tr>
+<tr><td>Положительное: выполнено, завершено </td><td>Нейтральное: справка, уведомление </td><td>Предупреждающие: оповещение, предупреждение </td></tr>
 <tr><td>![Green status](images/icons-color-inbadging-1.png)</td><td>![Blue status](images/icons-color-inbadging-2.png)</td>
 <td>![Yellow status](images/icons-color-inbadging-3.png)</td></tr>
 </table>
@@ -172,6 +171,7 @@ template: detail.hbs
 
 * [Руководство по работе с ресурсами плиток и значков](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 
-<!--HONumber=Mar16_HO5-->
+
+<!--HONumber=May16_HO2-->
 
 

@@ -1,6 +1,7 @@
 ---
-title: Простой компонент среды выполнения Windows и его вызов из JavaScript
-description: Создайте тип среды выполнения Windows в .NET Framework с Visual Basic или C#, упакуйте и вызовите из универсального приложения для Windows на JavaScript.
+author: martinekuan
+title: Создание простого компонента среды выполнения Windows и его вызов из JavaScript
+description: В этом пошаговом руководстве описан процесс использования платформы .NET Framework с Visual Basic или C# для создания собственных типов среды выполнения Windows, упакованных в компонент среды выполнения Windows, а также процедура вызова компонента из универсального приложения для Windows, собранного для Windows с использованием JavaScript.
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 ---
 
@@ -36,16 +37,16 @@ Visual Studio позволяет легко добавлять в приложе
 4.  Добавьте в класс два простых члена — метод **static** (метод **Shared** в Visual Basic) и свойство экземпляра:
 
     > [!div class="tabbedCodeSnippets"]
-    > ```cpp 
+    > ```cpp
     > namespace SampleComponent
     > {
     >     public sealed class Example
     >     {
-    >         public static string GetAnswer() 
-    >         { 
-    >             return "The answer is 42."; 
+    >         public static string GetAnswer()
+    >         {
+    >             return "The answer is 42.";
     >         }
-    > 
+    >
     >         public int SampleProperty { get; set; }
     >     }
     > }
@@ -55,7 +56,7 @@ Visual Studio позволяет легко добавлять в приложе
     >     Public Shared Function GetAnswer() As String
     >         Return "The answer is 42."
     >     End Function
-    > 
+    >
     >     Public Property SampleProperty As Integer
     > End Class
     > ```
@@ -77,7 +78,7 @@ function basics1() {
 
     ex = new SampleComponent.Example();
 
-   document.getElementById('output').innerHTML += "<br/>" + 
+   document.getElementById('output').innerHTML += "<br/>" +
        ex.sampleProperty;
 
 }
@@ -195,7 +196,7 @@ Visual Studio сначала компилирует библиотеку кла�
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
 > using Windows.Foundation.Collections;
-> 
+>
 > namespace SampleComponent
 > {
 >     public sealed class PropertySetStats
@@ -206,16 +207,16 @@ Visual Studio сначала компилирует библиотеку кла�
 >             _ps = new PropertySet();
 >             _ps.MapChanged += this.MapChangedHandler;
 >         }
-> 
+>
 >         public PropertySet PropertySet { get { return _ps; } }
-> 
+>
 >         int[] counts = { 0, 0, 0, 0 };
 >         private void MapChangedHandler(IObservableMap<string, object> sender,
 >             IMapChangedEventArgs<string> args)
 >         {
 >             counts[(int)args.CollectionChange] += 1;
 >         }
-> 
+>
 >         public string DisplayStats()
 >         {
 >             StringBuilder report = new StringBuilder("<br/>Number of changes:<ul>");
@@ -230,39 +231,39 @@ Visual Studio сначала компилирует библиотеку кла�
 > ```
 > ```vb
 > Imports System.Text
-> 
+>
 > Public NotInheritable Class PropertySetStats
 >     Private _ps As PropertySet
 >     Public Sub New()
 >         _ps = New PropertySet()
 >         AddHandler _ps.MapChanged, AddressOf Me.MapChangedHandler
 >     End Sub
-> 
+>
 >     Public ReadOnly Property PropertySet As PropertySet
 >         Get
 >             Return _ps
 >         End Get
 >     End Property
-> 
+>
 >     Dim counts() As Integer = {0, 0, 0, 0}
 >     Private Sub MapChangedHandler(ByVal sender As IObservableMap(Of String, Object),
 >         ByVal args As IMapChangedEventArgs(Of String))
-> 
+>
 >         counts(CInt(args.CollectionChange)) += 1
 >     End Sub
-> 
+>
 >     Public Function DisplayStats() As String
 >         Dim report As New StringBuilder("<br/>Number of changes:<ul>")
 >         For i As Integer = 0 To counts.Length - 1
->             report.Append("<li>" &amp; CType(i, CollectionChange).ToString() &amp;
->                           ": " &amp; counts(i) &amp; "</li>")
+>             report.Append("<li>" & CType(i, CollectionChange).ToString() &
+>                           ": " & counts(i) & "</li>")
 >         Next
->         Return report.ToString() &amp; "</ul>"
+>         Return report.ToString() & "</ul>"
 >     End Function
 > End Class
 > ```
 
-Обработчик событий работает в соответствии со стандартным шаблоном событий .NET Framework, за тем исключением, что отправитель события (в данном случае это объект PropertySet) приводится к интерфейсу IObservableMap&lt;string, object&gt; (IObservableMap(Of String, Object) в Visual Basic), который является реализацией интерфейса среды выполнения Windows [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx). (При необходимости можно привести параметр sender к его типу.) Кроме того, аргументы события представляются в качестве интерфейса, а не в качестве объекта.
+Обработчик событий работает в соответствии со стандартным шаблоном событий .NET Framework, за тем исключением, что отправитель события (в данном случае это объект PropertySet) приводится к интерфейсу IObservableMap&lt;string, object&gt; (IObservableMap(Of String, Object) в Visual Basic), который является реализацией интерфейса среды выполнения Windows [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx). Кроме того, аргументы события представляются в качестве интерфейса, а не в качестве объекта.
 
 В файл default.js добавьте функцию Runtime1, как показано ниже. Этот код создает объект PropertySetStats, получает коллекцию PropertySet и добавляет собственный обработчик событий (функция onMapChanged), чтобы обрабатывать событие MapChanged. После внесения изменений в коллекцию runtime1 вызывает метод DisplayStats, чтобы показать сводную информацию о типах изменений.
 
@@ -295,7 +296,7 @@ function onMapChanged(change) {
             result = "All properties cleared";
             break;
         case Windows.Foundation.Collections.CollectionChange.itemInserted:
-            result = "Inserted " + change.key + ": '" + 
+            result = "Inserted " + change.key + ": '" +
                 change.target.lookup(change.key) + "'";
             break;
         case Windows.Foundation.Collections.CollectionChange.itemRemoved:
@@ -403,9 +404,9 @@ runtimeButton2.addEventListener("click", runtime2, false);
 > End Function
 > ```
 
-Обратите внимание, что словарь должен возвращаться в форме интерфейса, реализуемого классом [Dictionary&lt;TKey, TValue&gt;](https://msdn.microsoft.com/library/xfhwa508.aspx) и сопоставляемого с интерфейсом среды выполнения Windows. В данном случае это интерфейс IDictionary&lt;int, string&gt; (IDictionary(Of Integer, String) в Visual Basic). Если тип среды выполнения Windows IMap&lt;int, string&gt; передается управляемому коду, он представляется в виде IDictionary&lt;int, string&gt;; а при передаче управляемого типа в код JavaScript верно обратное.
+Обратите внимание, что словарь должен возвращаться в форме интерфейса, реализуемого классом [Dictionary&lt;TKey, TValue&gt;](https://msdn.microsoft.com/library/xfhwa508.aspx) и сопоставляемого с интерфейсом среды выполнения Windows. В данном случае это интерфейс IDictionary&lt;int, string&gt; (IDictionary(Of Integer, String) в Visual Basic). Если тип среды выполнения Windows IMap&lt;int, string&gt; передается управляемому коду, он представляется в виде IDictionary&lt;int, string&gt;, а при передаче управляемого типа в код JavaScript верно обратное.
 
-**Внимание!** В коде JavaScript используется интерфейс, занимающий первую позицию в списке интерфейсов, если управляемый тип реализует несколько интерфейсов. Например, если в код JavaScript возвращается тип Dictionary&lt;int, string&gt;, он отображается как IDictionary&lt;int, string&gt; независимо от того, какой интерфейс указан в качестве типа возвращаемого значения. Это означает, что если первый интерфейс не включает член, который отображается в последующих интерфейсах, этот член не будет видимым в JavaScript.
+**Внимание!**  В коде JavaScript используется интерфейс, занимающий первую позицию в списке интерфейсов, если управляемый тип реализует несколько интерфейсов. Например, если в код JavaScript возвращается тип Dictionary&lt;int, string&gt;, он отображается как IDictionary&lt;int, string&gt; независимо от того, какой интерфейс указан в качестве типа возвращаемого значения. Это означает, что если первый интерфейс не включает член, который отображается в последующих интерфейсах, этот член не будет видимым в JavaScript.
 
  
 
@@ -454,11 +455,11 @@ var returnsButton2 = document.getElementById("returnsButton2");
 returnsButton2.addEventListener("click", returns2, false);
 ```
 
-Этот код JavaScript позволяет продемонстрировать несколько интересных особенностей. Во-первых, он включает функцию showMap для отображения содержимого словаря в формате HTML. В коде showMap обратите внимание на шаблон итерации. В .NET Framework отсутствует метод First универсального интерфейса IDictionary, а размер возвращается свойством Count, а не методом Size. В JavaScript IDictionary&lt;int, string&gt; представляется типом среды выполнения Windows IMap&lt;int, string&gt;. (См. описание интерфейса [IMap&lt;K,V&gt;](https://msdn.microsoft.com/library/windows/apps/br226042.aspx) ).
+Этот код JavaScript позволяет продемонстрировать несколько интересных особенностей. Во-первых, он включает функцию showMap для отображения содержимого словаря в формате HTML. В коде showMap обратите внимание на шаблон итерации. В .NET Framework отсутствует метод First универсального интерфейса IDictionary, а размер возвращается свойством Count, а не методом Size. В JavaScript IDictionary&lt;int, string&gt; представляется типом среды выполнения Windows IMap&lt;int, string&gt;. (См. описание интерфейса [IMap&lt;K,V&gt;](https://msdn.microsoft.com/library/windows/apps/br226042.aspx)).
 
 В функции returns2, как и в предыдущих примерах, JavaScript вызывает метод Insert (insert на языке JavaScript) для добавления элементов в словарь.
 
-Чтобы запустить приложение, нажмите клавишу F5. Для создания и отображения начального содержимого словаря нажмите кнопку **Returns 1**. Чтобы добавить в словарь еще две записи, нажмите кнопку **Returns 2**. Обратите внимание, что записи отображаются в порядке вставки, как и ожидалось для Dictionary&lt;TKey, TValue&gt;. Если требуется отсортировать их, можно вернуть SortedDictionary&lt;int, string&gt; из GetMapOfNames. (Класс PropertySet, используемый в предыдущих примерах, имеет другую внутреннюю структуру по сравнению с Dictionary&lt;TKey, TValue&gt;).
+Чтобы запустить приложение, нажмите клавишу F5. Для создания и отображения начального содержимого словаря нажмите кнопку **Returns 1**. Чтобы добавить в словарь еще две записи, нажмите кнопку **Returns 2**. Обратите внимание, что записи отображаются в порядке вставки, как и ожидалось для Dictionary&lt;TKey, TValue&gt;. Если требуется отсортировать их, можно вернуть SortedDictionary&lt;int, string&gt; из GetMapOfNames. (Класс PropertySet, используемый в предыдущих примерах, имеет иную внутреннюю структуру по сравнению с Dictionary&lt;TKey, TValue&gt;.)
 
 JavaScript не является строго типизированным языком, поэтому использование строго типизированных универсальных коллекций может приводить к неожиданным результатам. Еще раз нажмите кнопку **Returns 2**. JavaScript преобразует значение «7» в числовое значение 7, а хранящееся в ct число 7 — в строку. Строка «forty» будет преобразована в ноль. Но это только начало. Нажмите кнопку **Returns 2** еще несколько раз. В управляемом коде метод Add создал бы исключения повторяющихся ключей, даже если бы значения были приведены к правильным типам. В то время как метод Insert изменит значение, связанное с имеющимся ключом, и вернет логическое значение, показывающее, добавлен ли новый ключ в словарь. Именно поэтому значение, связанное с ключом 7, продолжает изменяться.
 
@@ -510,7 +511,7 @@ List&lt;T&gt; реализует IList&lt;T&gt;, который представ
 >             }
 >         }
 >     }
-> 
+>
 >     public sealed class TestEventArgs
 >     {
 >         public string Value1 { get; set; }
@@ -528,7 +529,7 @@ List&lt;T&gt; реализует IList&lt;T&gt;, который представ
 >                             })
 >     End Sub
 > End Class
-> 
+>
 > Public NotInheritable Class TestEventArgs
 >     Public Property Value1 As String
 >     Public Property Value2 As Long
@@ -564,36 +565,29 @@ events1Button.addEventListener("click", events1, false);
 ## Предоставление доступа к асинхронным операциям
 
 
-Платформа .NET Framework содержит богатый набор средств для асинхронной и параллельной обработки, основанных на классе Task и универсальном классе [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) . Для реализации асинхронной обработки на основе задач в компоненте среды выполнения Windows используйте интерфейсы среды выполнения Windows [IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/br205802.aspx)и [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/br205807.aspx). (В среде выполнения Windows операции возвращают результаты, а действия — нет).
+Платформа .NET Framework содержит богатый набор средств для асинхронной и параллельной обработки, основанных на классе Task и универсальном классе [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx). Для реализации асинхронной обработки на основе задач в компоненте среды выполнения Windows используйте интерфейсы среды выполнения Windows [IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/br205802.aspx) и [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/br205807.aspx). (В среде выполнения Windows операции возвращают результаты, а действия — нет).
 
-В этом разделе демонстрируется отменяемая асинхронная операция, которая информирует о ходе выполнения и возвращает результаты. Метод GetPrimesInRangeAsync использует класс [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) для создания задачи и подключения его функций отмены и хода выполнения к объекту WinJS.Promise. Сначала добавьте следующие директивы **using** (**Imports** в Visual Basic) в класс Example:
+В этом разделе демонстрируется отменяемая асинхронная операция, которая информирует о ходе выполнения и возвращает результаты. Метод GetPrimesInRangeAsync использует класс [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) для создания задачи и подключения его функций отмены и хода выполнения к объекту WinJS.Promise. Сначала добавьте метод GetPrimesInRangeAsync в класс Example:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
 > using System.Runtime.InteropServices.WindowsRuntime;
 > using Windows.Foundation;
-> ```
-> ```vb
-> Imports System.Runtime.InteropServices.WindowsRuntime
-> ```
-> 
-> Затем добавьте метод GetPrimesInRangeAsync в класс Example:
-> 
-> > [!div class="tabbedCodeSnippets"]
-> ```csharp
-> public static IAsyncOperationWithProgress<IList<long>, double> GetPrimesInRangeAsync(long start, long count)
+>
+> public static IAsyncOperationWithProgress<IList<long>, double>
+> GetPrimesInRangeAsync(long start, long count)
 > {
 >     if (start < 2 || count < 1) throw new ArgumentException();
-> 
+>
 >     return AsyncInfo.Run<IList<long>, double>((token, progress) =>
-> 
+>
 >         Task.Run<IList<long>>(() =>
 >         {
 >             List<long> primes = new List<long>();
 >             double onePercent = count / 100;
 >             long ctProgress = 0;
 >             double nextProgress = onePercent;
-> 
+>
 >             for (long candidate = start; candidate < start + count; candidate++)
 >             {
 >                 ctProgress += 1;
@@ -612,7 +606,7 @@ events1Button.addEventListener("click", events1, false);
 >                     }
 >                 }
 >                 if (isPrime) primes.Add(candidate);
-> 
+>
 >                 token.ThrowIfCancellationRequested();
 >             }
 >             progress.Report(100.0);
@@ -622,10 +616,13 @@ events1Button.addEventListener("click", events1, false);
 > }
 > ```
 > ```vb
-> Public Shared Function GetPrimesInRangeAsync(ByVal start As Long, ByVal count As Long) As IAsyncOperationWithProgress(Of IList(Of Long), Double)
-> 
+> Imports System.Runtime.InteropServices.WindowsRuntime
+>
+> Public Shared Function GetPrimesInRangeAsync(ByVal start As Long, ByVal count As Long)
+> As IAsyncOperationWithProgress(Of IList(Of Long), Double)
+>
 >     If (start < 2 Or count < 1) Then Throw New ArgumentException()
-> 
+>
 >     Return AsyncInfo.Run(Of IList(Of Long), Double)( _
 >         Function(token, prog)
 >             Return Task.Run(Of IList(Of Long))( _
@@ -634,15 +631,15 @@ events1Button.addEventListener("click", events1, false);
 >                     Dim onePercent As Long = count / 100
 >                     Dim ctProgress As Long = 0
 >                     Dim nextProgress As Long = onePercent
-> 
+>
 >                     For candidate As Long = start To start + count - 1
 >                         ctProgress += 1
-> 
+>
 >                         If ctProgress >= nextProgress Then
 >                             prog.Report(ctProgress / onePercent)
 >                             nextProgress += onePercent
 >                         End If
-> 
+>
 >                         Dim isPrime As Boolean = True
 >                         For i As Long = 2 To CLng(Math.Sqrt(candidate))
 >                             If (candidate Mod i) = 0 Then
@@ -650,9 +647,9 @@ events1Button.addEventListener("click", events1, false);
 >                                 Exit For
 >                             End If
 >                         Next
-> 
+>
 >                         If isPrime Then primes.Add(candidate)
-> 
+>
 >                         token.ThrowIfCancellationRequested()
 >                     Next
 >                     prog.Report(100.0)
@@ -738,7 +735,6 @@ btnCancel.addEventListener("click", asyncCancel, false);
 * [Пошаговое руководство. Создание простого компонента среды выполнения Windows и его вызов из кода JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
 
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: Разрешения на доступ к файлам
 description: Приложения могут иметь доступ к определенным расположениям в файловой системе по умолчанию. Приложения также могут получить доступ к дополнительным расположениям через средство выбора файлов или с помощью объявления возможностей.
@@ -121,7 +122,9 @@ description: Приложения могут иметь доступ к опре
         );
         ```
  
-        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) перегружен таким образом, чтобы вы могли указать системе алгоритм действий, если в папке скачиваемых файлов уже существует файл с таким же именем. После завершения эти методы возвращают класс [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171), соответствующий созданному файлу. В примере этот файл назван `newFile`.
+        [
+              **DownloadsFolder**
+            ](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) перегружен таким образом, чтобы вы могли указать системе алгоритм действий, если в папке скачиваемых файлов уже существует файл с таким же именем. После завершения эти методы возвращают класс [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171), соответствующий созданному файлу. В примере этот файл назван `newFile`.
 
     -   Вы можете создать вложенную папку в папке скачиваемых файлов пользователя следующим образом:
         > [!div class="tabbedCodeSnippets"]
@@ -137,7 +140,9 @@ description: Приложения могут иметь доступ к опре
         );
         ```
  
-        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) перегружен таким образом, чтобы вы могли указать системе алгоритм действий, если в папке скачиваемых файлов уже существует вложенная папка с таким же именем. После завершения эти методы возвращают класс [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), соответствующий созданной вложенной папке. В примере этот файл назван `newFolder`.
+        [
+              **DownloadsFolder**
+            ](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) перегружен таким образом, чтобы вы могли указать системе алгоритм действий, если в папке скачиваемых файлов уже существует вложенная папка с таким же именем. После завершения эти методы возвращают класс [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), соответствующий созданной вложенной папке. В примере этот файл назван `newFolder`.
 
     Если вы создаете файл или папку в папке скачиваемых файлов, мы рекомендуем добавить этот элемент в [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) вашего приложения, чтобы в дальнейшем оно могло быстро получать доступ к этому элементу.
 
@@ -160,6 +165,6 @@ description: Приложения могут иметь доступ к опре
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

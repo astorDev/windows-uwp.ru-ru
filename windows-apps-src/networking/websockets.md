@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 description: Протокол WebSockets определяет механизм быстрого и безопасного двустороннего взаимодействия между клиентом и сервером через HTTP(S).
 title: WebSockets
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
@@ -223,10 +224,16 @@ ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
 
 ## Использование расширенных элементов управления с подключениями WebSocket
 
-[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) и [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) соответствуют той же модели использования расширенных элементов управления. Основные классы, соответствующие каждому из названных выше классов, являются связанными классами для доступа к расширенным элементам управления.
+[
+              **MessageWebSocket**
+            ](https://msdn.microsoft.com/library/windows/apps/br226842) и [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) соответствуют одной и той же модели использования расширенных элементов управления. Основные классы, соответствующие каждому из названных выше классов, являются связанными классами для доступа к расширенным элементам управления.
 
-[**MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) предоставляет данные элемента управления сокетами для объекта [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842).
-[**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) предоставляет данные элемента управления сокетами для объекта [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
+[
+              **MessageWebSocketControl**
+            ](https://msdn.microsoft.com/library/windows/apps/br226843) предоставляет данные элемента управления сокетами для объекта [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842).
+[
+              **StreamWebSocketControl**
+            ](https://msdn.microsoft.com/library/windows/apps/br226924) предоставляет данные элемента управления сокетами для объекта [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
 Основная модель использования расширенных элементов управления является одинаковой для обоих типов протоколов WebSocket. В следующем рассуждении [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) применяется в качестве примера, но такой же процесс можно использовать и для [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842).
 
 1.  Создайте объект [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
@@ -240,11 +247,17 @@ ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
 
 ## Классы информации WebSocket
 
-[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) и [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) имеют соответствующий класс, который обеспечивает дополнительную информацию об экземпляре WebSocket.
+[
+              **MessageWebSocket**
+            ](https://msdn.microsoft.com/library/windows/apps/br226842) и [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) имеют соответствующий класс, который обеспечивает дополнительную информацию об экземпляре WebSocket.
 
-[**MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849) предоставляет информацию о [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), и вы можете извлечь экземпляр класса информации с помощью свойства [**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861).
+[
+              **MessageWebSocketInformation**
+            ](https://msdn.microsoft.com/library/windows/apps/br226849) предоставляет информацию о [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), , и вы можете извлечь экземпляр класса информации с помощью свойства [**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861).
 
-[**StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929) предоставляет информацию о [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), и вы можете извлечь экземпляр класса информации с помощью свойства [**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935).
+[
+              **StreamWebSocketInformation**
+            ](https://msdn.microsoft.com/library/windows/apps/br226929) предоставляет информацию о [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), и вы можете извлечь экземпляр класса информации с помощью свойства [**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935).
 
 Обратите внимание, что все свойства в обоих классах информации приведены только для чтения, а также что текущие сведения можно извлечь в любое время, пока существует объект веб-сокета.
 
@@ -341,6 +354,6 @@ ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

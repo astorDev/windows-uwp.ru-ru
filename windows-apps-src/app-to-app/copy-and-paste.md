@@ -49,7 +49,7 @@ Clipboard.SetContent(dataPackage);
 ```
 ## Вставка
 
-Чтобы получить содержимое буфера обмена, вызовите статический метод [**Clipboard.GetContent**[GetContent]. Этот метод возвращает объект [**DataPackageView**][DataPackageView] с содержимым. Этот объект практически идентичен объекту [**DataPackage**][DataPackage], но его содержимое доступно только для чтения. Чтобы определить доступные форматы данных, вы можете использовать метод [**AvailableFormats**][AvailableFormats] или [**Contains**][Contains] этого объекта. Затем вы можете вызвать соответствующий метод **DataPackageView**, чтобы получить эти данные.
+Чтобы получить содержимое буфера обмена, вызовите статический метод [**Clipboard.GetContent**[GetContent]. Этот метод возвращает объект [**DataPackageView**][DataPackageView] с его содержимым. Этот объект практически идентичен объекту [**DataPackage**][DataPackage], но его содержимое доступно только для чтения. Чтобы определить доступные форматы данных, вы можете использовать метод [**AvailableFormats**][AvailableFormats] или [**Contains**][Contains] этого объекта. Затем вы можете вызвать соответствующий метод **DataPackageView**, чтобы получить эти данные.
 
 ```cs
 DataPackageView dataPackageView = Clipboard.GetContent();
@@ -63,7 +63,7 @@ if (dataPackageView.Contains(StandardDataFormats.Text))
 
 ## Отслеживание изменений в буфере обмена
 
-В дополнение к командам копирования и вставки вам также может потребоваться отслеживать изменения в буфере обмена. Это можно сделать с помощью обработки события [**Clipboard.ContentChanged**][ContentChanged] буфера обмена.
+В дополнение к командам копирования и вставки вам также может потребоваться отслеживать изменения в буфере обмена. Это можно сделать с помощью обработки события [**Clipboard.ContentChanged**][ContentChanged] из буфера обмена.
 
 ```cs
 Clipboard.ContentChanged += (s, e) => 
@@ -97,6 +97,6 @@ Clipboard.ContentChanged += (s, e) =>
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

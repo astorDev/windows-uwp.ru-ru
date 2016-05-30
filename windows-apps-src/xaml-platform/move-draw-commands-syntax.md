@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Информация о командах перемещения и рисования (мини-языке), которые вы можете использовать для указания геометрии путей в качестве значения атрибута XAML.
 title: Синтаксис команд перемещения и рисования
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
@@ -16,12 +17,14 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 В среде выполнения Windows есть два свойства, которые умеют использовать строку, представляющую команды перемещения и рисования: [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) и [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723). Если вы задаете одно из этих свойств при помощи указания команд перемещения и рисования, вы обычно задаете его как значение атрибута XAML вместе с другими необходимыми атрибутами этого элемента. Если не вдаваться в подробности, это выглядит так:
 
-```xaml
+```xml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) также может использовать команды перемещения и рисования. Теоретически объект [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168), использующий команды перемещения и рисования, можно объединить с другими типами [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) в объекте [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057), который затем можно использовать как значение для [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). Но это применяется намного реже, чем использование команд перемещения и рисования для данных с определенным атрибутом.
+[
+              **PathGeometry.Figures**
+            ](https://msdn.microsoft.com/library/windows/apps/br210169) также может использовать команды перемещения и рисования. Теоретически объект [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168), использующий команды перемещения и рисования, можно объединить с другими типами [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) в объекте [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057), который затем можно использовать как значение для [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). Но это применяется намного реже, чем использование команд перемещения и рисования для данных с определенным атрибутом.
 
 ## Использование команд перемещения и рисования в сравнении с использованием **PathGeometry**
 
@@ -43,7 +46,17 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 -   Обычно после каждой команды, кроме команды закрытия, идет одно или несколько чисел.
 -   Если после команды идет несколько чисел, разделите их запятыми или пробелами.
 
-**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
+**\[**
+            _fillRule_
+            **\]**
+            _moveCommand_
+            _drawCommand_
+            **\[**
+            _drawCommand_
+            **\*\]**
+            **\[**
+            _closeCommand_
+            **\]**
 
 Многие команды рисования используют точки, при этом вы предоставляете значение _x,y_. Когда вы видите заполнитель \*_points_, вы можете предположить, что предоставляете два десятичных значения для значения _x,y_ точки.
 
@@ -123,7 +136,11 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | Синтаксис |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - или - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *controlPoint1*
+            *controlPoint2*
+            *endPoint* <br/> - или - <br/> `c ` *controlPoint1*
+            *controlPoint2*
+            *endPoint* |
 
 | Термин | Описание |
 |------|-------------|
@@ -150,7 +167,8 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | Синтаксис |
 |--------|
-| `S` *controlPoint2* *endPoint* <br/> - или - <br/>`s` *controlPoint2 endPoint* |
+| `S` *controlPoint2*
+            *endPoint* <br/> - или - <br/>`s` *controlPoint2 endPoint* |
 
 | Термин | Описание |
 |------|-------------|
@@ -163,7 +181,9 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | Синтаксис |
 |--------|
-| `T` *controlPoint* *endPoint* <br/> - или - <br/> `t` *controlPoint* *endPoint* |
+| `T` *controlPoint*
+            *endPoint* <br/> - или - <br/> `t` *controlPoint*
+            *endPoint* |
 
 | Термин | Описание |
 |------|-------------|
@@ -176,7 +196,11 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | Синтаксис |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - или - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *size*
+            *rotationAngle*
+            *isLargeArcFlag*
+            *sweepDirectionFlag*
+            *endPoint* <br/> - или - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
 | Термин | Описание |
 |------|-------------|
@@ -200,7 +224,8 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | Синтаксис |
 |--------|
-| *x*,*y*<br/> - или - <br/>*x* *y* |
+| *x*,*y*<br/> - или - <br/>*x*
+            *y* |
 
 | Термин | Описание |
 |------|-------------|
@@ -211,9 +236,9 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 Вместо стандартного числового значения вы также можете использовать следующие специальные значения. Эти значения указываются с учетом регистра.
 
--   **Infinity**. Представляет **PositiveInfinity**.
--   **\-Infinity**. Представляет **NegativeInfinity**.
--   **NaN**. Представляет **NaN** (не число).
+-   **Infinity**: представляет **PositiveInfinity**.
+-   **\-Infinity**: представляет **NegativeInfinity**.
+-   **NaN**: представляет **NaN**.
 
 Вместо десятичных или целых чисел можно использовать экспоненциальное представление. Например, `+1.e17` — допустимое значение.
 
@@ -234,6 +259,6 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

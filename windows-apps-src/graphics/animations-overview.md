@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: Обзор анимаций
 description: Используйте анимации из библиотеки среды выполнения Windows, чтобы ваше приложение соответствовало внешнему виду Windows.
@@ -67,7 +68,9 @@ description: Используйте анимации из библиотеки �
 
 ### Показ или скрытие всплывающих окон
 
-Используйте [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) и [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) во время показа и скрытия [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) или аналогичного элемента контекстного пользовательского интерфейса, который находится поверх текущего представления. [**PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) — это переход темы, который удобно использовать для отображения визуальной реакции во время исчезновения всплывающего окна.
+Используйте [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) и [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) во время показа и скрытия [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) или аналогичного элемента контекстного пользовательского интерфейса, который находится поверх текущего представления. [
+              **PopupThemeTransition**
+            ](https://msdn.microsoft.com/library/windows/apps/Hh969172) — это переход темы, который удобно использовать для отображения визуальной реакции во время исчезновения всплывающего окна.
 
 ### Показ или скрытие элементов пользовательского интерфейса границ
 
@@ -99,14 +102,24 @@ description: Используйте анимации из библиотеки �
 
 | Тип пользовательского интерфейса | Рекомендованная анимация |
 |---------|-----------------------|
-| Диалоговое окно | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) и [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| Всплывающий элемент | [**PopInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) и [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
-| Всплывающая подсказка | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) и [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| Контекстное меню | [**PopInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) и [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| Диалоговое окно | [
+              **FadeInThemeAnimation**
+            ](https://msdn.microsoft.com/library/windows/apps/BR210298) и [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| Всплывающий элемент | [
+              **PopInThemeAnimation**
+            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) и [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| Всплывающая подсказка | [
+              **FadeInThemeAnimation**
+            ](https://msdn.microsoft.com/library/windows/apps/BR210298) и [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| Контекстное меню | [
+              **PopInThemeAnimation**
+            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) и [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
 | Панель команд | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
 | Область задач или панель, привязанная к границам экрана | [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
 | Содержимое любого контейнера пользовательского интерфейса | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
-| Для элементов управления или если другая анимация не применяется | [**FadeInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) и [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| Для элементов управления или если другая анимация не применяется | [
+              **FadeInThemeAnimation**
+            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) и [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 
  
 
@@ -326,7 +339,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 В отличие от анимации перехода, анимация темы не имеет встроенного триггера, по которому она запускается. Следует использовать [**раскадровку**](https://msdn.microsoft.com/library/windows/apps/BR210490) в качестве контейнера для анимации тем на этапе определения в XAML. Кроме того, можно изменять действия анимации по умолчанию. Например, вы можете замедлить исчезновение, увеличив значение времени [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) объекта [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302).
 
-**Примечание**  Чтобы показать простые приемы анимации, мы запускаем анимацию из кода приложения, вызывая методы класса [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490). Управлять выполнением анимаций **раскадровки** можно с помощью методов [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491), [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop), [**Pause**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) и [**Resume**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) класса **Storyboard**. Однако это не типичный способ включения анимаций библиотеки в приложения. Обычно выполняется интеграция анимаций библиотеки в стили и шаблоны XAML, применяемые к элементам управления или элементам. Изучение шаблонов и визуальных состояний требует несколько больших усилий. Использование анимаций библиотеки в визуальных состояниях рассматривается в разделе [Раскадрованные анимации для визуальных состояний](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
+**Примечание**  Чтобы показать простые приемы анимации, мы запускаем анимацию из кода приложения, вызывая методы класса [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490). Управлять выполнением анимаций **раскадровки** можно с помощью методов [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491), [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop), [**Pause**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) и [**Resume**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx)**Storyboard**. Однако это не типичный способ включения анимаций библиотеки в приложения. Обычно выполняется интеграция анимаций библиотеки в стили и шаблоны XAML, применяемые к элементам управления или элементам. Изучение шаблонов и визуальных состояний требует несколько больших усилий. Использование анимаций библиотеки в визуальных состояниях рассматривается в разделе [Раскадрованные анимации для визуальных состояний](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
 
  
 
@@ -368,6 +381,6 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

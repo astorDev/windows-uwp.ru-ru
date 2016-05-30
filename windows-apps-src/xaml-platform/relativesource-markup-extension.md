@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Предоставляет способ указания источника привязки в терминах относительной связи внутри графа объекта среды выполнения.
 title: Расширение разметки RelativeSource
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
@@ -6,7 +7,7 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 
 # Расширение разметки {RelativeSource}
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Предоставляет способ указания источника привязки в терминах относительной связи внутри графа объекта среды выполнения.
 
@@ -28,9 +29,7 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 
 ## Значения XAML
 
-| Условие | Описание |
-| {RelativeSource Self} | Создает [<strong>режим</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) со значением, равным <strong>Self</strong>. В качестве источника этой привязки следует использовать целевой элемент. Это полезно для привязки одного из свойств элемента к другому свойству того же элемента. |
-| {RelativeSource TemplatedParent} | Создает [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391), который является источником этой привязки. Это полезно для применения информации времени выполнения к привязкам на уровне шаблонов. | 
+| Term | Description | | {RelativeSource Self} | Создает[<strong>Режим</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) со значением <strong>Self</strong>. В качестве источника этой привязки следует использовать целевой элемент. Это полезно для привязки одного из свойств элемента к другому свойству того же элемента. | | {RelativeSource TemplatedParent} | Создает элемент [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391), который является источником этой привязки. Это полезно для применения информации времени выполнения к привязкам на уровне шаблонов. | 
 
 ## Комментарии
 
@@ -43,7 +42,7 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 Пример: [
             **Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) использует [расширение разметки {Binding}](binding-markup-extension.md), чтобы значения [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) и [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) всегда были равны и при отрисовке отображался квадрат. Только значение Height является фиксированным. Для этого объекта **Rectangle** значение [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) по умолчанию равно **null**, а не **this**. Таким образом, чтобы установить источник контекста данных как объект (и включить привязку к другим его свойствам), используется аргумент `RelativeSource={RelativeSource Self}` в качестве расширения разметки {Binding}.
 
-```XAML
+```XML
 <Rectangle
   Fill="Orange" Width="200"
   Height="{Binding RelativeSource={RelativeSource Self}, Path=Width}"
@@ -52,7 +51,7 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 
 Кроме того, может быть полезно использовать `RelativeSource={RelativeSource Self}`, чтобы установить свойство [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) объекта само на себя, где класс [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) расширен настраиваемым свойством, которое уже предоставляет готовую модель представления для собственной привязки данных. Этот способ используется в некоторых примерах SDK: `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**Примечание.**  Использование XAML для **RelativeSource** показывает только изначально предполагаемый способ использования: задание значения [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) в XAML как части выражения привязки. Теоретически возможны и другие способы задания свойства, значением которого является [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
+**Примечание.** Использование XAML для **RelativeSource** показывает только изначально предполагаемый способ использования: задание значения [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) в XAML как части выражения привязки. Теоретически возможны и другие способы задания свойства, значением которого является [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
 
 ## Связанные разделы
 
@@ -64,6 +63,6 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

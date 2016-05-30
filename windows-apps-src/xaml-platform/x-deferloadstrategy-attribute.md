@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 title: Атрибут xDeferLoadStrategy
 description: xDeferLoadStrategy задерживает создание элемента и его дочерних объектов, сокращая тем самым время запуска и немного увеличивая объем использования памяти. Каждый задействованный элемент прибавляет около 600 байт к объему использования памяти.
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
@@ -54,7 +55,7 @@ ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 
 ## Пример:
 
-```xaml
+```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
     <Grid.RowDefinitions>
         <RowDefinition Height="Auto" />
@@ -82,6 +83,6 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

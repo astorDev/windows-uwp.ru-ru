@@ -1,6 +1,7 @@
 ---
+author: mcleblanc
 title: Создание и использование службы приложения
-description: Узнайте, как написать приложение UWP, которое может предоставлять службы другим приложениям UWP, и как использовать эти службы.
+description: Узнайте, как написать приложение универсальной платформы Windows (UWP), которое может предоставлять службы другим приложениям UWP, и как использовать эти службы.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 ---
 
@@ -17,7 +18,7 @@ ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 
 В этой инструкции для простоты мы создадим универсальное решение.
 
--   В Microsoft Visual Studio 2015 создайте проект приложения UWP и назовите его AppServiceProvider. (Для этого в диалоговом окне **Создание проекта** последовательно выберите пункты **Шаблоны &gt; Другие языки &gt; Visual C# &gt; Windows &gt; Универсальные &gt; Пустое приложение (универсальное приложение Windows)**.) Это приложение будет предоставлять службу приложений.
+-   В Microsoft Visual Studio 2015 создайте проект приложения UWP и назовите его AppServiceProvider. (Для этого в диалоговом окне **Создание проекта** последовательно выберите пункты **Шаблоны &gt; Другие языки &gt; Visual C# &gt;Windows &gt; Универсальные &gt; Пустое приложение (универсальное приложение Windows**)). Это приложение будет предоставлять службу приложений.
 
 ## Добавление в файл package.appxmanifest расширения службы приложений
 
@@ -47,7 +48,7 @@ ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 ## Создание службы приложений
 
 
-1.  Служба приложений будет реализована в виде фоновой задачи. Это позволяет приложению переднего плана вызывать службу приложений в другом приложении, чтобы выполнять задачи незаметно. Добавьте в решение новый проект компонента среды выполнения Windows (**Файл > Добавить > Создать проект**) с именем MyAppService. (Для этого в диалоговом окне **Добавление нового проекта** последовательно выберите пункты **Установленные &gt; Другие языки &gt; Visual C# &gt; Windows &gt; Универсальные &gt; Компонент среды выполнения Windows (универсальное приложение Windows)**.)
+1.  Служба приложений будет реализована в виде фоновой задачи. Это позволяет приложению переднего плана вызывать службу приложений в другом приложении, чтобы выполнять задачи незаметно. Добавьте в решение новый проект компонента среды выполнения Windows (**Файл &gt; Добавить &gt; Создать проект**) с именем MyAppService. (Для этого в диалоговом окне **Добавление нового проекта** последовательно выберите пункты **Установленные &gt; Другие языки &gt; Visual C# &gt; Windows &gt; Универсальные &gt; Компонент среды выполнения Windows (универсальное приложение Windows)**).
 2.  Добавьте в проект AppServiceProvider ссылку на проект MyAppService.
 3.  В проекте MyappService добавьте следующие операторы **using** в верхнюю часть файла Class1.cs:
     ```cs
@@ -68,7 +69,7 @@ ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 
         public void Run(IBackgroundTaskInstance taskInstance)
         {
-            this.backgroundTaskDeferral = taskInstance.GetDeferral(); // Get a deferral so that the service isn&#39;t terminated.
+            this.backgroundTaskDeferral = taskInstance.GetDeferral(); // Get a deferral so that the service isn't terminated.
             taskInstance.Canceled += OnTaskCanceled; // Associate a cancellation handler with the background task.
 
             // Retrieve the app service connection and set up a listener for incoming app service requests.
@@ -107,7 +108,7 @@ ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
 {
     // Get a deferral because we use an awaitable API below to respond to the message
-    // and we don&#39;t want this call to get cancelled while we are waiting.
+    // and we don't want this call to get cancelled while we are waiting.
     var messageDeferral = args.GetDeferral();
 
     ValueSet message = args.Request.Message;
@@ -116,8 +117,8 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
     string command = message["Command"] as string;
     int? inventoryIndex = message["ID"] as int?;
 
-    if ( inventoryIndex.HasValue &amp;&amp;
-         inventoryIndex.Value >= 0 &amp;&amp;
+    if ( inventoryIndex.HasValue &&
+         inventoryIndex.Value >= 0 &&
          inventoryIndex.Value < inventoryItems.GetLength(0))
     {
         switch (command)
@@ -149,13 +150,15 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
     }
 
     await args.Request.SendResponseAsync(returnData); // Return the data to the caller.
-    messageDeferral.Complete(); // Complete the deferral so that the platform knows that we&#39;re done responding to the app service call.
+    messageDeferral.Complete(); // Complete the deferral so that the platform knows that we're done responding to the app service call.
 }
 ```
 
 Обратите внимание, что метод **OnRequestedReceived()** принадлежит к типу **async**, так как в данном примере мы выполняем поддерживающий ожидание вызов метода [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722).
 
-Отсрочка используется для того, чтобы служба могла использовать методы **async** в обработчике OnRequestReceived. Это гарантирует, что вызов OnRequestReceived не завершится до тех пор, пока не будет обработано сообщение. [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) используется для отправки отклика по завершении. **SendResponseAsync** не сигнализирует о завершении вызова. Сигнал для [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) о завершении OnRequestReceived передается по завершении отсрочки.
+Отсрочка используется для того, чтобы служба могла использовать методы **async** в обработчике OnRequestReceived. Это гарантирует, что вызов OnRequestReceived не завершится до тех пор, пока не будет обработано сообщение. [
+              **SendResponseAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/dn921722) используется для отправки отклика по завершении. **SendResponseAsync** не сигнализирует о завершении вызова. Сигнал для [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) о завершении OnRequestReceived передается по завершении отсрочки.
 
 Для обмена информацией службы приложений используют [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131). Размер данных, которые можно передать, ограничен только ресурсами системы. Не существует предопределенных параметров, которые можно использовать в **ValueSet**. Вам необходимо решить, какие значения параметров вы будете использовать для определения протокола для службы приложений. Вызывающий код необходимо писать с учетом этого протокола. В этом примере мы выбрали параметр с именем "Command", значение которого указывает, что должна предоставить служба приложений: сведения об имени складской позиции или ее цене. Индекс имени складской позиции хранится в параметре "ID". Возвращаемое значение хранится в параметре "Result".
 
@@ -169,12 +172,12 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 Необходимо развернуть приложение поставщика служб приложений, прежде чем можно будет вызывать его из клиента. Кроме того, чтобы вызвать приложение службы приложений, вам понадобится имя его семейства пакетов.
 
 -   Один из способов получить имя семейства пакетов приложения службы приложений состоит в том, чтобы получить свойство [**Windows.ApplicationModel.Package.Current.Id.FamilyName**](https://msdn.microsoft.com/library/windows/apps/br224670) из проекта **AppServiceProvider** (например, из метода `public App()` в файле App.xaml.cs) и запомнить его значение. Чтобы запустить AppServiceProvider в Microsoft Visual Studio, настройте его в качестве запускаемого проекта в окне обозревателя решений и запустите проект.
--   Другой способ получить имя семейства пакетов — это развернуть решение (для этого последовательно выберите пункты **Сборка > Развернуть решение**) и запомнить полное имя пакета, которое отображается в окне вывода (для этого последовательно выберите пункты **Вид > Вывод**). Чтобы получить имя пакета, необходимо удалить сведения о платформе из строки в окне вывода. Например, если в окне вывода отображается полное имя пакета "9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_1.0.0.0\_x86\_\_yd7nk54bq29ra", то следует удалить подстроку "1.0.0.0\_x86\_\_", в результате чего вы получите имя семейства пакетов "9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_yd7nk54bq29ra".
+-   Другой способ получить имя семейства пакетов — это развернуть решение (для этого последовательно выберите пункты **Сборка &gt; Развернуть решение**) и запомнить полное имя пакета, которое отображается в окне вывода (для этого последовательно выберите пункты **Вид &gt; Вывод**). Чтобы получить имя пакета, необходимо удалить сведения о платформе из строки в окне вывода. Например, если в окне вывода отображается полное имя пакета "9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_1.0.0.0\_x86\_\_yd7nk54bq29ra", то следует удалить подстроку "1.0.0.0\_x86\_\_", в результате чего вы получите имя семейства пакетов "9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_yd7nk54bq29ra".
 
 ## Написание клиента для вызова службы приложений
 
 
-1.  Добавьте в решение новый пустой проект универсального приложения для Windows (для этого последовательно выберите пункты **Файл > Добавить > Создать проект**) с именем ClientApp. (Для этого в диалоговом окне **Добавление нового проекта** последовательно выберите пункты **Установленные &gt; Другие языки &gt; Visual C# &gt; Windows &gt; Универсальные &gt; Пустое приложение (универсальное приложение Windows)**.)
+1.  Добавьте в решение новый пустой проект универсального приложения для Windows (для этого последовательно выберите пункты **Файл &gt; Добавить &gt; Создать проект**) с именем ClientApp. (Для этого в диалоговом окне **Добавление нового проекта** последовательно выберите пункты **Установленные &gt; Другие языки &gt; Visual C# &gt; Windows &gt; Универсальные &gt; Пустое приложение (универсальное приложение Windows)**).
 2.  В проекте ClientApp добавьте следующий оператор **using** в верхнюю часть файла MainPage.xaml.cs:
     ```cs
     >using Windows.ApplicationModel.AppService;
@@ -193,7 +196,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
         {
             this.inventoryService = new AppServiceConnection();
 
-            // Here, we use the app service name defined in the app service provider&#39;s Package.appxmanifest file in the &lt;Extension&gt; section. 
+            // Here, we use the app service name defined in the app service provider's Package.appxmanifest file in the <Extension> section. 
             this.inventoryService.AppServiceName = "com.microsoft.inventory";
 
             // Use Windows.ApplicationModel.Package.Current.Id.FamilyName within the app service provider to get this value.
@@ -242,49 +245,49 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
     }
     ```
 
-    Replace the package family name in the line `this.inventoryService.PackageFamilyName = "replace with the package family name";` with the package family name of the **AppServiceProvider** project that you obtained in \[Step 5: Deploy the service app and get the package family name\].
+    Замените имя семейства пакетов в строке `this.inventoryService.PackageFamilyName = "replace with the package family name";` именем семейства пакета проекта **AppServiceProvider**, который вы получили в \[Разделе 5: "Развертывание приложения службы и получение имени семейства пакетов"].
 
-    The code first establishes a connection with the app service. The connection will remain open until you dispose **this.inventoryService**. The app service name must match the **AppService Name** attribute that you added to the AppServiceProvider project's Package.appxmanifest file. In this example, it is `<uap:AppService Name="com.microsoft.inventory"/>`.
+    Сначала код устанавливает связь со службой приложения. Подключение останется открытым, пока вы не удалите объект**this.inventoryService**. Имя службы приложения должно соответствовать атрибуту **AppService Name**, который вы добавили в файл Package.appxmanifest проекта AppServiceProvider. В этом примере это `<uap:AppService Name="com.microsoft.inventory"/>`.
 
-    A [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) named **message** is created to specify the command that we want to send to the app service. The example app service expects a command to indicate which of two actions to take. We get the index from the textbox in the ClientApp, and then call the service with the "Item" command to get the description of the item. Then, we make the call with the "Price" command to get the item's price. The button text is set to the result.
+    Сообщение с именем [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) **** создается, чтобы определить команду, которую требуется отправить службе приложения. Пример службы приложения будет ждать команду, чтобы указать, какое из 2 действий необходимо выполнить. Мы получаем индекс из текстового поля в ClientApp и вызываем службу с командой "Элемент", чтобы получить описание элемента. Затем с помощью команды "Цена" мы получаем цену элемента. Результат используется в качестве текста кнопки.
 
-    Because [**AppServiceResponseStatus**](https://msdn.microsoft.com/library/windows/apps/dn921724) only indicates whether the operating system was able to connect the call to the app service, we check the "Status" key in the [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) we receive from the app service to ensure that it was able to fulfill the request.
+    Так как [**AppServiceResponseStatus**](https://msdn.microsoft.com/library/windows/apps/dn921724) показывает только то, удалось ли операционной системе подключить вызов к службе приложения, мы проверяем ключ "Status" key в классе [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131), который мы получаем от службы приложений, чтобы убедиться, что ей удалось выполнить запрос.
 
-6.  In Visual Studio, set the ClientApp project to be the startup project in the Solution Explorer window and run the solution. Enter the number 1 into the text box and click the button. You should get "Chair : Price = 88.99" back from the service.
+6.  В Visual Studio настройте проект ClientApp в качестве запускаемого проекта в окне обозревателя решений и запустите решение. Введите число 1 в текстовое поле и нажмите кнопку. Служба возвратит следующие данные: "Chair : Price = 88.99".
 
-    ![sample app displaying chair price=88.99](images/appserviceclientapp.png)
+    ![Образец приложения, в котором отображаются данные: Chair price=88.99](images/appserviceclientapp.png)
 
-If the app service call fails, check the following in the ClientApp:
+Если не удается выполнить вызов службы приложений, выполните указанные ниже проверки для ClientApp.
 
-1.  Verify that the package family name assigned to the inventory service connection matches the package family name of the AppServiceProvider app. See: **button\_Click()**`this.inventoryService.PackageFamilyName = "...";`).
-2.  In **button\_Click()**, verify that the app service name that is assigned to the inventory service connection matches the app service name in the AppServiceProvider's Package.appxmanifest file. See: `this.inventoryService.AppServiceName = "com.microsoft.inventory";`.
-3.  Ensure that the AppServiceProvider app has been deployed (In the Solution Explorer, right-click the solution and choose **Deploy**).
+1.  Убедитесь, что имя семейства пакетов, назначенное подключению к службе складских запасов, совпадает с именем семейства пакетов приложения AppServiceProvider. См. метод: **button\_Click()**`this.inventoryService.PackageFamilyName = "...";`).
+2.  В методе **button\_Click()** проверьте, что имя службы приложений, назначенное подключению к службе складских запасов, совпадает с именем службы приложений в файле Package.appxmanifest проекта AppServiceProvider. См. `this.inventoryService.AppServiceName = "com.microsoft.inventory";`.
+3.  Убедитесь, что приложение AppServiceProvider развернуто (в обозревателе решений щелкните правой кнопкой мыши решение и выберите пункт **Развернуть**).
 
-## Debug the app service
-
-
-1.  Ensure that the entire solution is deployed before debugging because the app service provider app must be deployed before the service can be called. (In Visual Studio, **Build &gt; Deploy Solution**).
-2.  In the Solution Explorer, right-click the AppServiceProvider project and choose **Properties**. From the **Debug** tab, change the **Start action** to **Do not launch, but debug my code when it starts**.
-3.  In the MyAppService project, in the Class1.cs file, set a breakpoint in OnRequestReceived().
-4.  Set the AppServiceProvider project to be the startup project and press F5.
-5.  Start ClientApp from the Start menu (not from Visual Studio).
-6.  Enter the number 1 into the text box and press the button. The debugger will stop in the app service call on the breakpoint in your app service.
-
-## Debug the client
+## Отладка службы приложений
 
 
-1.  Follow the instructions in the preceding step to debug the app service.
-2.  Launch ClientApp from the Start menu.
-3.  Attach the debugger to the ClientApp.exe process (not the ApplicationFrameHost.exe process). (In Visual Studio, choose **Debug &gt; Attach to Process...**.)
-4.  In the ClientApp project, set a breakpoint in **button\_Click()**.
-5.  The breakpoints in both the client and the app service will now be hit when you enter the number 1 into the text box of the ClientApp and click the button.
+1.  Перед отладкой убедитесь, что решение развернуто полностью, так как перед вызовом службы необходимо развернуть приложение поставщика службы приложений. (Для этого в Visual Studio последовательно выберите пункты **Сборка &gt; Развернуть решение**).
+2.  В обозревателе решений щелкните правой кнопкой мыши проект AppServiceProvider и выберите пункт **Свойства**. На вкладке **Отладка** измените значение параметра **Действие при запуске** на **Не запускать, а отлаживать мой код при открытии**.
+3.  В проекте MyAppService в файле Class1.cs установите точку останова в методе OnRequestReceived().
+4.  Настройте проект AppServiceProvider в качестве запускаемого и нажмите клавишу F5.
+5.  Запустите ClientApp из меню "Пуск" (не из Visual Studio).
+6.  Введите число 1 в текстовое поле и нажмите кнопку. Отладчик остановится на вызове службы приложений в точке ее останова.
 
-## Remarks
+## Отладка клиента
 
 
-This example provides a simple introduction to creating an app service and calling it from another app. The key things to note are the creation of a background task to host the app service, the addition of the windows.appservice extension to the app service provider app's Package.appxmanifest file, obtaining the package family name of the app service provider app so that we can connect to it from the client app, and using [**Windows.ApplicationModel.AppService.AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704) to call the service.
+1.  Для отладки службы приложений выполните инструкции из предыдущего шага.
+2.  Запустите ClientApp из меню "Пуск".
+3.  Подключите отладчик к процессу ClientApp.exe (а не к процессу ApplicationFrameHost.exe). (В Visual Studio последовательно выберите пункты **Отладка &gt; Присоединиться к процессу...**).
+4.  В проекте ClientApp установите точку останова в **button\_Click()**.
+5.  Теперь, если вы введете число 1 в текстовое поле приложения ClientApp и нажмете кнопку, сработают точки останова и в клиенте, и в службе приложений.
 
-## Full code for MyAppService
+## Примечания
+
+
+В этом простом примере показано, как создать службу приложений и вызвать ее из другого приложения. Ключевые моменты, которые следует запомнить, — это создание фоновой задачи для размещения службы приложений, добавление расширения windows.appservice в файл Package.appxmanifest приложения поставщика службы приложений, получение имени семейства пакетов приложения поставщика службы приложений (чтобы к нему можно было подключиться из клиентского приложения), и использование [**Windows.ApplicationModel.AppService.AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704) для вызова службы.
+
+## Полный код MyAppService
 
 
 ```cs
@@ -304,7 +307,7 @@ namespace MyAppService
 
         public void Run(IBackgroundTaskInstance taskInstance)
         {
-            this.backgroundTaskDeferral = taskInstance.GetDeferral(); // Get a deferral so that the service isn&#39;t terminated.
+            this.backgroundTaskDeferral = taskInstance.GetDeferral(); // Get a deferral so that the service isn't terminated.
             taskInstance.Canceled += OnTaskCanceled; // Associate a cancellation handler with the background task.
 
             // Retrieve the app service connection and set up a listener for incoming app service requests.
@@ -316,7 +319,7 @@ namespace MyAppService
         private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
         {
             // Get a deferral because we use an awaitable API below to respond to the message
-            // and we don&#39;t want this call to get cancelled while we are waiting.
+            // and we don't want this call to get cancelled while we are waiting.
             var messageDeferral = args.GetDeferral();
 
             ValueSet message = args.Request.Message;
@@ -325,8 +328,8 @@ namespace MyAppService
             string command = message["Command"] as string;
             int? inventoryIndex = message["ID"] as int?;
 
-            if (inventoryIndex.HasValue &amp;&amp;
-                 inventoryIndex.Value >= 0 &amp;&amp;
+            if (inventoryIndex.HasValue &&
+                 inventoryIndex.Value >= 0 &&
                  inventoryIndex.Value < inventoryItems.GetLength(0))
             {
                 switch (command)
@@ -358,7 +361,7 @@ namespace MyAppService
             }
 
             await args.Request.SendResponseAsync(returnData); // Return the data to the caller.
-            messageDeferral.Complete(); // Complete the deferral so that the platform knows that we&#39;re done responding to the app service call.
+            messageDeferral.Complete(); // Complete the deferral so that the platform knows that we're done responding to the app service call.
         }
 
 
@@ -387,6 +390,6 @@ namespace MyAppService
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

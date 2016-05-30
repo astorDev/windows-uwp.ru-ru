@@ -1,4 +1,5 @@
 ---
+author: msatranjr
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: Объявления возможностей приложения
 description: Возможности должны быть заявлены в манифесте пакета приложения универсальной платформы Windows (UWP) для получения доступа к определенным API или ресурсам, например, изображениям, музыке или устройствам, в частности, камере или микрофону.
@@ -27,450 +28,28 @@ description: Возможности должны быть заявлены в м
 
 Возможности общего применения используются в большей части сценариев приложений.
 
-<table>
-        <thead>
-            <tr>
-                <th>Сценарий возможности</th>
-                <th>Использование возможности</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>**Музыка***</td>
-                <td>
-                    The **musicLibrary** capability provides programmatic access to the user's Music, allowing the app to enumerate and access all files in the library without user interaction. This capability is typically used in jukebox apps that make use of the entire Music library.
+| Сценарий возможности | Использование возможности |
+|---------------------|------------------|
+| **Музыка**\* | Возможность **musicLibrary** обеспечивает программный доступ к музыке пользователя, позволяя приложению перечислять все файлы в библиотеке и обращаться к ним без участия пользователя. Обычно данная возможность используется в приложениях-проигрывателях, которым необходим доступ ко всей фонотеке.<br /><br />Возможность [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) предоставляет надежный механизм пользовательского интерфейса, позволяющий пользователям открывать файлы для использования в приложении. Возможность **musicLibrary** следует объявлять, только если по сценарию работы приложения требуется программный доступ и его невозможно предоставить, используя **file picker**.<br /><br /> Возможность **musicLibrary** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже. <table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="musicLibrary"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **Изображения**\* | Возможность **picturesLibrary** обеспечивает программный доступ к изображениям пользователя, позволяя приложению перечислять все файлы в библиотеке и обращаться к ним без участия пользователя. Обычно данная возможность используется в приложениях для работы с фотографиями, которым необходим доступ ко всей библиотеке изображений.<br /><br />Возможность [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) предоставляет надежный механизм пользовательского интерфейса, позволяющий пользователям открывать файлы для использования в приложении. Возможность **picturesLibrary** следует объявлять, только если по сценарию работы приложения требуется программный доступ и его невозможно предоставить, используя **file picker**.<br /><br />Возможность **picturesLibrary** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:CapabilityName="picturesLibrary"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **Видео**\* | Возможность **videosLibrary** обеспечивает программный доступ к видеозаписям пользователя, позволяя приложению перечислять все файлы в библиотеке и обращаться к ним без участия пользователя. Обычно данная возможность используется в приложениях-видеопроигрывателях, которым необходим доступ ко всей библиотеке видео.<br /><br />Возможность [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) предоставляет надежный механизм пользовательского интерфейса, позволяющий пользователям открывать файлы для использования в приложении. Возможность **videosLibrary** следует объявлять, только если по сценарию работы приложения требуется программный доступ и его невозможно предоставить, используя **file picker**.<br /><br />Возможность **videosLibrary** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:CapabilityName="videosLibrary"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **Съемные носители** | Возможность **removableStorage** предоставляет программный доступ к файлам на съемных носителях, например на USB-накопителях и внешних жестких дисках, отфильтрованный на основе сопоставления типов файлов, которые объявлены в манифесте пакета. Например, если для средства просмотра документов объявлено сопоставление типов файлов с расширением DOC, оно сможет открывать DOC-файлы со съемных носителей, но не сможет работать с другими типами файлов. Будьте внимательны при объявлении этой возможности, так как пользователи могут записывать различные данные на свои съемные носители и рассчитывают, что ваше приложение будет иметь веские основания для программного доступа к съемным носителям для всех файлов с объявленным типом.<br /><br />Пользователи рассчитывают, что приложение правильно обработает все объявленные сопоставления файлов. Поэтому не объявляйте сопоставлений файлов, которые приложение не сможет достоверно обработать. Возможность [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) предоставляет надежный механизм пользовательского интерфейса, позволяющий пользователям открывать файлы для использования в приложении.<br /><br />Возможность **removableStorage** следует объявлять, только если по сценарию работы приложения требуется программный доступ и его невозможно предоставить, используя [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847).<br /><br />Возможность **removableStorage** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:CapabilityName="removableStorage"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **Интернет и общедоступные сети**\* | Существуют две возможности, которые предоставляют различные уровни доступа к Интернету и общедоступным сетям.<br /><br />Возможность **internetClient** показывает, что приложения могут получать входящие данные из Интернета. Не может работать в качестве сервера. Отсутствует доступ к локальной сети.<br />Возможность **internetClientServer** показывает, что приложения могут получать входящие данные из Интернета. Может работать в качестве сервера. Отсутствует доступ к локальной сети.<br /><br />Большинство приложений, использующих веб-службы, будет использовать **internetClient**. Приложения, реализующие одноранговые сценарии (P2P), когда приложение должно ожидать передачи данных для входящих сетевых подключений, будут использовать **internetClientServer**. Возможность **internetClientServer** включает в себя доступ, предоставляемый возможностью **internetClient**, поэтому нет необходимости указывать **internetClient** при использовании **internetClientServer**.
+| **Домашние и рабочие сети**\* | Возможность **privateNetworkClientServer** предоставляет входящий и исходящий доступ к домашней и рабочей сетям через брандмауэр. Эта возможность обычно используется для игр, которые связываются через локальную сеть, и для приложений, обменивающихся данными с несколькими локальными устройствами. Если для вашего приложения указаны возможности **musicLibrary**, **picturesLibrary** или **videosLibrary**, вам не требуется использовать эту возможность, чтобы получить доступ к соответствующей библиотеке в домашней группе. В Windows эта возможность не предоставляет доступ к Интернету.
+| **Встречи** | Возможность **appointments** предоставляет доступ к хранилищу встреч пользователя. Эта возможность предоставляет доступ для чтения к встречам, полученным из синхронизированных сетевых учетных записей, и к другим приложениям, записывающим данные в хранилище встреч. Эта возможность позволяет вашему приложению создавать новые календари и записывать в них встречи.<br /><br />Возможность **appointments** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:CapabilityName="appointments"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **Контакты**\* | Возможность **contacts** предоставляет доступ к сводному представлению контактов из различных хранилищ контактов. Эта возможность предоставляет приложению ограниченный доступ (действуют правила сетевого доступа) к контактам, которые были синхронизированы из разных сетей и локального хранилища контактов.<br /><br />Возможность **contacts** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:CapabilityName="contacts"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **Создание кода** | Возможность **codeGeneration** позволяет приложениям получать доступ к следующим функциям, предоставляющим приложениям возможности JIT.<br /><br />[**VirtualProtectFromApp**](https://msdn.microsoft.com/library/windows/desktop/Mt169846)<br />[**CreateFileMappingFromApp**](https://msdn.microsoft.com/library/windows/desktop/Hh994453)<br />[**OpenFileMappingFromApp**](https://msdn.microsoft.com/library/windows/desktop/Mt169844)<br />[**MapViewOfFileFromApp**](https://msdn.microsoft.com/library/windows/desktop/Hh994454)
+| **AllJoyn** | Возможность **allJoyn** позволяет приложениям и устройствам с поддержкой AllJoyn в сети обнаруживать и взаимодействовать друг с другом.<br /><br />Все приложения, которые имеют доступ к API в пространстве имен [**Windows.Devices.AllJoyn**](https://msdn.microsoft.com/library/windows/apps/Dn894971), должны использовать эту возможность.
+| **Телефонные звонки** | Возможность **phoneCall** предоставляет приложениям доступ ко всем телефонным линиям на устройстве и позволяет выполнять следующие функции.<br /><br />Звонок по телефонной линии и отображение системного телефона без показа предварительного запроса пользователю.<br />Доступ к связанным с линиями метаданным.<br />Доступ к связанным с линиями триггерам.<br />Позволяет выбранному пользователем приложению фильтра нежелательной почты устанавливать и проверять список блокировки и вызывать информацию об источнике.<br /><br />Возможность **phoneCall** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:CapabilityName="phoneCall"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>Возможность **phoneCallHistoryPublic** позволяет приложениям читать данные о мобильной сети и некоторую информацию журнала вызовов VOIP на устройстве. Эта возможность также позволяет приложению создавать записи в журнале вызовов VOIP. Эта возможность необходима для получения доступа ко всем членам класса [**PhoneCallHistoryStore**](https://msdn.microsoft.com/library/windows/apps/Dn705931).
+| **Папка записанных вызовов**\* | Возможность устройства **recordedCallsFolder** предоставляет приложениям доступ к папке записанных вызовов.<br /><br />Возможность **recordedCallsFolder** должна содержать пространство имен **mobile** при объявлении ее в манифесте пакета приложения, как показано ниже.<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;mobile:CapabilityName="recordedCallsFolder"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **Сведения об учетной записи пользователя**\* | Возможность **userAccountInformation** позволяет приложениям получать доступ к имени и изображению пользователя.<br /><br />Эта возможность требуется для доступа к некоторым API в пространстве имен Windows.System.User.<br /><br />Возможность **userAccountInformation** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:CapabilityName="userAccountInformation"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **Звонки VOIP** | Возможность **voipCall** предоставляет приложениям доступ к вызову API по протоколу VoIP в пространстве имен [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266).<br /><br />Возможность **voipCall** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:CapabilityName="voipCall"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **Трехмерные объекты** | Возможность **objects3D** позволяет приложениям программным способом получать доступ к файлам трехмерных объектов. Обычно данная возможность используется в приложениях и играх, работающих с трехмерной графикой, которым необходим доступ ко всей библиотеке трехмерных объектов.<br /><br />Эта возможность необходима для доступа к папке, содержащей трехмерные объекты, с помощью API в пространстве имен [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346).<br /><br />Возможность **objects3D** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:CapabilityName="objects3d"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **Читать заблокированные сообщения**\* | Возможность **blockedChatMessages** позволяет приложениям читать SMS- и MMS-сообщения, заблокированные приложением фильтра нежелательной почты.<br /><br />Эта возможность необходима для доступа к заблокированным сообщениям с помощью API в пространстве имен [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).<br /><br />Возможность **blockedChatMessages** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:CapabilityName="chat"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **Оборудование шины нижнего уровня IoT** | Возможность **lowLevelDevices** позволяет приложениям, запущенным на устройствах IoT, получать доступ к оборудованию шины нижнего уровня, например, GPIO, I2C, SPI, ADC и PWM.<br /><br />Эта возможность требуется для доступа к некоторым API в пространствах имен [**Windows.Devices.Spi**](https://msdn.microsoft.com/library/windows/apps/Dn708178).<br /><br />Возможность **lowLevelDevices** должна содержать пространство имен **iot** при объявлении ее в манифесте пакета приложения, как показано ниже.<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;iot:CapabilityName="lowLevelDevices"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **Администрирование системы IoT** | Возможность **systemManagement** позволяет приложениям иметь базовые права на администрирование системы, в частности, на завершение работы или перезагрузку, изменение языкового стандарта и часового пояса.<br /><br />Эта возможность требуется для доступа к некоторым API в пространстве имен [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/BR241814).<br /><br />Возможность **systemManagement** должна содержать пространство имен **iot** при объявлении ее в манифесте пакета приложения, как показано ниже.<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;iot:CapabilityName="systemManagement"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 
-                    The [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) provides a robust UI mechanism that lets users open files for use with an app. Declare the **musicLibrary** capability only when the scenarios for your app require programmatic access and can't be realized by using the **file picker**.
 
-                    The **musicLibrary** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="musicLibrary"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>**Изображения***</td>
-                <td>
-                    Возможность **picturesLibrary** обеспечивает программный доступ к изображениям пользователя, позволяя приложению перечислять все файлы в библиотеке и обращаться к ним без участия пользователя. Обычно данная возможность используется в приложениях для работы с фотографиями, которым необходим доступ ко всей библиотеке изображений.
-
-                    The [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) provides a robust UI mechanism that lets users open files for use with an app. Declare the **picturesLibrary** capability only when the scenarios for your app require programmatic access and can't be realized them by using the **file picker**.
-
-                    The **picturesLibrary** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-<pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="picturesLibrary"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>**Видео***</td>
-                <td>
-                    The **videosLibrary** capability provides programmatic access to the user's Videos, allowing the app to enumerate and access all files in the library without user interaction. This capability is typically used in movie-playback apps that make use of the entire Videos library.
-
-                    The [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) provides a robust UI mechanism that lets users open files for use with an app. Declare the **videosLibrary** capability only when the scenarios for your app require programmatic access and can't be realized by using the **file picker**.
-
-                    The **videosLibrary** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-<pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="videosLibrary"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>**Съемные носители**</td>
-                <td>
-                    The **removableStorage** capability provides programmatic access to files on removable storage, like USB keys and external hard drives, filtered to the file-type associations declared in the package manifest. For example, if a document-reader app declares a .doc file-type association, it can open .doc files on the removable storage device, but not other types of files. Be careful when you declare this capability, because users may include a variety of info in their removable storage devices, and will expect your app to provide a valid justification for programmatic access to the removable storage for all files of the declared type.
-
-                    Users will expect your app to handle any file associations that you declare. So don't declare file associations that your app cannot handle responsibly. The [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) provides a robust UI mechanism that lets users open files for use with an app.
-
-                    Declare the **removableStorage** capability only when the scenarios for your app require programmatic access and can't be realized by using the [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847).
-
-                    The **removableStorage** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-<pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="removableStorage"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>**Интернет и общедоступные сети***</td>
-                <td>
-                    There are two capabilities that provide different levels of access to the Internet and public networks.
-
-                    The **internetClient** capability indicates that apps can receive incoming data from the Internet. Cannot act as a server. No local network access.
-
-                    The **internetClientServer** capability indicates that apps can receive incoming data from the Internet. Can act as a server. No local network access.
-
-                    Most apps that have a web service component will use **internetClient**. Apps that enable peer-to-peer (P2P) scenarios where the app needs to listen for incoming network connections should use **internetClientServer**. The **internetClientServer** capability includes the access that the **internetClient** capability provides, so you don't need to specify **internetClient** when you specify **internetClientServer**.
-                </td>
-            </tr>
-            <tr>
-                <td>**Homes and work networks***</td>
-                <td>
-                    The **privateNetworkClientServer** capability provides inbound and outbound access to home and work networks through the firewall. This capability is typically used for games that communicate across the local area network (LAN), and for apps that share data across a variety of local devices. If your app specifies **musicLibrary**, **picturesLibrary**, or **videosLibrary**, you don't need to use this capability to access the corresponding library in a Home Group. On Windows, this capability does not provide access to the Internet.
-                </td>
-            </tr>
-            <tr>
-                <td>**Appointments**</td>
-                <td>
-                    The **appointments** capability provides access to the user’s appointment store. This capability allows read access to appointments obtained from the synced network accounts and to other apps that write to the appointment store. With this capability, your app can create new calendars and write appointments to calendars that it creates.
-
-                    The **appointments** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-<pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="appointments"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>**Контакты***</td>
-                <td>
-                    The **contacts** capability provides access to the aggregated view of the contacts from various contacts stores. This capability gives the app limited access (network permitting rules apply) to contacts that were synced from various networks and the local contact store.
-
-                    The **contacts** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-<pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="contacts"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>**Создание кода**</td>
-                <td>
-                    The **codeGeneration** capability allows apps to access the following functions which provide JIT capabilities to apps.
-
-                    - [**VirtualProtectFromApp**](https://msdn.microsoft.com/library/windows/desktop/Mt169846)
-                    - [**CreateFileMappingFromApp**](https://msdn.microsoft.com/library/windows/desktop/Hh994453)
-                    - [**OpenFileMappingFromApp**](https://msdn.microsoft.com/library/windows/desktop/Mt169844)
-                    - [**MapViewOfFileFromApp**](https://msdn.microsoft.com/library/windows/desktop/Hh994454)
-                </td>
-            </tr>
-            <tr>
-                <td>**AllJoyn**</td>
-                <td>
-                    The **allJoyn** capability allows AllJoyn-enabled apps and devices on a network to discover and interact with each other.
-
-                    All apps that access APIs in the [**Windows.Devices.AllJoyn**](https://msdn.microsoft.com/library/windows/apps/Dn894971) namespace must use this capability.
-                </td>
-            </tr>
-            <tr>
-                <td>**Phone calls**</td>
-                <td>
-                    The **phoneCall** capability allows apps to access all of the phone lines on the device and perform the following functions.
-
-                    - Place a call on the phone line and show the system dialer without prompting the user.
-                    - Access line-related metadata.
-                    - Access line-related triggers.
-                    - Allows the user-selected spam filter app to set and check block list and call origin information.
-
-                    The **phoneCall** capability must include the **uap** namespace when you declare it in your app's package manifest as shown below.
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-<pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="phoneCall"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    The **phoneCallHistoryPublic** capability allows apps to read cellular and some VOIP call history information on the device. This capability also allows the app to write VOIP call history entries. This capability is required to access all members of the [**PhoneCallHistoryStore**](https://msdn.microsoft.com/library/windows/apps/Dn705931) class.
-                </td>
-            </tr>
-            <tr>
-                <td>**Папка записанных вызовов***</td>
-                <td>
-                    <p>Возможность устройства **recordedCallsFolder** предоставляет приложениям доступ к папке записанных вызовов.</p>
-                    <p>Возможность **recordedCallsFolder** должна содержать пространство имен **mobile** при объявлении ее в манифесте пакета приложения, как показано ниже.</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <pre><code>&lt;Capabilities&gt;
-    &lt;mobile:Capability Name="recordedCallsFolder"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>**Сведения об учетной записи пользователя***</td>
-                <td>
-                    <p>Возможность **userAccountInformation** позволяет приложениям получать доступ к имени и изображению пользователя.</p>
-                    <p>Эта возможность требуется для доступа к некоторым API в пространстве имен Windows.System.User.</p>
-                    <p>Возможность **userAccountInformation** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.</p>
-                    <table>
-                        <colgroup>
-                            <col width="100%" />
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="userAccountInformation"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>**Звонки VOIP**</td>
-                <td>
-                    <p>Возможность **voipCall** предоставляет приложениям доступ к вызову API по протоколу VoIP в пространстве имен [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266).</p>
-                    <p>Возможность **voipCall** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.</p>
-                    <table>
-                        <colgroup>
-                            <col width="100%" />
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="voipCall"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>**Трехмерные объекты**</td>
-                <td>
-                    <p>Возможность **objects3D** позволяет приложениям программным способом получать доступ к файлам трехмерных объектов. Обычно данная возможность используется в приложениях и играх, работающих с трехмерной графикой, которым необходим доступ ко всей библиотеке трехмерных объектов.</p>
-                    <p>Эта возможность необходима для доступа к папке, содержащей трехмерные объекты, с помощью API в пространстве имен [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346).</p>
-                    <p>Возможность **objects3D** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.</p>
-                    <table>
-                        <colgroup>
-                            <col width="100%" />
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="objects3d"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>**Читать заблокированные сообщения***</td>
-                <td>
-                    <p>Возможность **blockedChatMessages** позволяет приложениям читать SMS- и MMS-сообщения, заблокированные приложением фильтра нежелательной почты.</p>
-                    <p>Эта возможность необходима для доступа к заблокированным сообщениям с помощью API в пространстве имен [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).</p>
-                    <p>Возможность **blockedChatMessages** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.</p>
-                    <table>
-                        <colgroup>
-                            <col width="100%" />
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="blockedChatMessages"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>**Доступ к сообщениям чата**</td>
-                <td>
-                    <p>Возможность **chat** позволяет приложениям читать и удалять текстовые сообщения. Эта возможность также позволяет приложениям хранить сообщения чата в хранилище системных данных.</p>
-                    <p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).</p>
-                    <p>Возможность **chat** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.</p>
-                    <table>
-                        <colgroup>
-                            <col width="100%" />
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="chat"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>**Оборудование шины нижнего уровня IoT**</td>
-                <td>
-                    <p>Возможность **lowLevelDevices** позволяет приложениям, запущенным на устройствах IoT, получать доступ к оборудованию шины нижнего уровня, например, GPIO, I2C, SPI, ADC и PWM.</p>
-                    <p>Эта возможность требуется для доступа к некоторым API в пространствах имен [**Windows.Devices.Spi**](https://msdn.microsoft.com/library/windows/apps/Dn708178).</p>
-                    <p>Возможность **lowLevelDevices** должна содержать пространство имен **iot** при объявлении ее в манифесте пакета приложения, как показано ниже.</p>
-                    <table>
-                        <colgroup>
-                            <col width="100%" />
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <pre><code>&lt;Capabilities&gt;
-    &lt;iot:Capability Name="lowLevelDevices"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>**Администрирование системы IoT**</td>
-                <td>
-                    <p>Возможность **systemManagement** позволяет приложениям иметь базовые права на администрирование системы, в частности, на завершение работы или перезагрузку, изменение языкового стандарта и часового пояса.</p>
-                    <p>Эта возможность требуется для доступа к некоторым API в пространстве имен [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/BR241814).</p>
-                    <p>Возможность **systemManagement** должна содержать пространство имен **iot** при объявлении ее в манифесте пакета приложения, как показано ниже.</p>
-                    <table>
-                        <colgroup>
-                            <col width="100%" />
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>XML</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <pre><code>&lt;Capabilities&gt;
-    &lt;iot:Capability Name="systemManagement"/&gt;
-&lt;/Capabilities&gt;</code></pre>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-        </tbody>
-</table>
-
- 
 ## Возможности устройств
 
 Возможности устройств позволяют вашему приложению получить доступ к периферийным и внутренним устройствам. Возможности устройства указываются с помощью элемента **DeviceCapability** в манифесте пакета приложения. Этот элемент может требовать дополнительных дочерних элементов, а некоторые возможности устройства необходимо добавлять в манифест пакета вручную. Дополнительные сведения см. в разделах [Определение возможностей устройств в манифесте пакета](https://msdn.microsoft.com/library/windows/apps/Dn263092) и [**Справочник по схеме DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/BR211430).
@@ -518,330 +97,63 @@ description: Возможности должны быть заявлены в м
     IgnorableNamespaces="uap mp wincap rescap">
 ```
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Сценарий возможности</th>
-<th align="left">Использование возможности</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">**Корпоративная**</td>
-<td align="left"><p>Учетные данные домена Windows позволяют пользователю входить на удаленные ресурсы при помощи учетных данных и действовать так, как будто он предоставил имя пользователя и пароль. Специальная возможность **enterpriseAuthentication** обычно используется в бизнес-приложениях, которые подключаются к серверам предприятия.</p>
-<p>Эта возможность не обязательна для обычной передачи данных через Интернет.</p>
+| Сценарий возможности | Использование возможности |
+|---------------------|------------------|
+| **Корпоративная** | Учетные данные домена Windows позволяют пользователю входить на удаленные ресурсы при помощи учетных данных и действовать так, как будто он предоставил имя пользователя и пароль. Специальная возможность **enterpriseAuthentication** обычно используется в бизнес-приложениях, которые подключаются к серверам предприятия.<br /><br />Эта возможность не обязательна для обычной передачи данных через Интернет.<br /><br />Специальная возможность **enterpriseAuthentication** предназначена для поддержки распространенных бизнес-приложений. Не объявляйте ее в приложениях, которым не требуется доступ к корпоративным ресурсам. Возможность [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) предоставляет надежный механизм пользовательского интерфейса, позволяющий пользователям открывать файлы в сетевой папке для использования в приложении. Специальную возможность **enterpriseAuthentication** следует объявлять, только если по сценарию работы приложения требуется программный доступ и его невозможно предоставить, используя **file picker**.<br /><br />Возможность **enterpriseAuthentication** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.<br /><br /><div class="code"><span codelanguage="XML"></span><table><colgroup><col width="100%" /></colgroup><thead><tr class="header"><th align="left">XML</th></tr></thead><tbody><tr class="odd"><td align="left"><pre><code>&lt;Capabilities&gt;&lt;uap:CapabilityName="enterpriseAuthentication"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table></div>Возможность **enterpriseDataPolicy** позволяет приложениям определять и использовать политики предприятия для устройства. Эта возможность необходима, чтобы использовать все члены следующих классов.<ul><li>[**FileProtectionManager**](https://msdn.microsoft.com/library/windows/apps/Dn705151)</li><li>[**DataProtectionManager**](https://msdn.microsoft.com/library/windows/apps/Dn706017)</li><li>[**ProtectionPolicyManager**](https://msdn.microsoft.com/library/windows/apps/Dn705170)</li></ul></td></tr>
+| **Общие сертификаты пользователей** | Специальная возможность **sharedUserCertificates** позволяет приложению добавлять и получать доступ к сертификатам программного обеспечения и оборудования в хранилище общих сертификатов пользователей, например к сертификатам, хранящимся на смарт-карте. Эта возможность обычно используется для финансовых или корпоративных приложений, требующих проверки подлинности с помощью смарт-карты.<br /><br />Возможность **sharedUserCertificates** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.<br /><br /><div class="code"><span codelanguage="XML"></span><table><colgroup><col width="100%" /></colgroup><thead><tr class="header"><th align="left">XML</th></tr></thead><tbody><tr class="odd"><td align="left"><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="sharedUserCertificates"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table></div>
+|**Документы**\* | Специальная возможность **documentsLibrary** предоставляет программный доступ к библиотеке документов пользователя, отфильтрованный на основе сопоставлений типов файлов, которые объявлены в манифесте пакета, для поддержки автономного доступа к OneDrive. Например, если для средства просмотра DOC-файлов объявлено сопоставление типов файлов с расширением DOC, оно сможет открывать DOC-файлы из библиотеки документов, но не сможет работать с другими типами файлов.<br /><br />Приложения с объявленной специальной возможностью **documentsLibrary** не будут иметь доступа к библиотеке документов на компьютерах домашней группы. Возможность [file picker](https://msdn.microsoft.com/library/windows/apps/Hh465174) предоставляет надежный механизм пользовательского интерфейса, позволяющий пользователям открывать файлы для использования в приложении. Объявляйте специальную возможность **documentsLibrary**, только если вы не можете использовать file picker.<br /><br />Чтобы использовать специальную возможность **documentsLibrary**, приложение должно:<ul><li>обеспечивать кроссплатформенный автономный доступ к определенному содержимому OneDrive с помощью действительных URL-адресов или идентификаторов ресурсов OneDrive;</li><li>автоматически сохранять открытые файлы в OneDrive пользователя в автономном режиме.</li></ul>Приложения, использующие специальную возможность **documentsLibrary** для этих двух целей, могут также дополнительно использовать эту возможность, чтобы открывать внедренное содержимое в других документах. Только перечисленные выше способы использования специальной возможности **documentsLibrary** являются допустимыми.<ul><li>Приложение не сможет получить доступ к библиотеке документов во внутренней памяти телефона. Однако если другое приложение создаст папку Documents на дополнительной SD-карте, ваше приложение сможет увидеть эту папку.</li></ul>Возможность **documentsLibrary** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.<div class="code"><span codelanguage="XML"></span><table><colgroup><col width="100%" /></colgroup><thead><tr class="header"><th align="left">XML</th></tr></thead><tbody><tr class="odd"><td align="left"><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="documentsLibrary"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table></div>
+| **Параметры DVR для игр** | Возможность с ограниченным доступом **appCaptureSettings** позволяет приложениям управлять параметрами пользователя для Game DVR.<br /><br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738).
+| **Мобильная связь** | Возможность с ограниченным доступом **cellularDeviceControl** позволяет приложениям контролировать сотовое устройство.<br /><br />Возможность **cellularDeviceIdentity** предоставляет приложениям доступ к сотовым идентификационным данным.<br /><br />Возможность **cellularMessaging** позволяет приложениям использовать SMS и RCS.<br /><br />Эти возможности требуются для использования некоторых API в пространстве имен [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/BR206567).<br /><br />Начиная c Windows 10, приложения, которые вызывают Windows.Networking.Connectivity.ConnectivityManager.AcquireConnectionAsync, должны или объявить возможность **cellularDeviceControl**, или находиться в списке приложений, включенных в список разрешенных контекстом протокола пакетных данных (PDP) ([**AppIDList**](https://msdn.microsoft.com/library/windows/apps/Dn393996)).
+| **Разблокировка устройства** | Возможность с ограниченным доступом **deviceUnlock** позволяет приложениям снимать блокировку устройства для сценариев загрузки неопубликованного приложения разработчика и неопубликованных корпоративных приложений.
+| **Плитки двойной SIM-карты** | Возможность с ограниченным доступом **dualSimTiles** позволяет приложениям создавать дополнительную запись списка приложений на устройствах с несколькими SIM-картами.<br /><br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.UI.StartScreen**](https://msdn.microsoft.com/library/windows/apps/BR242235).
+| **Общее корпоративное хранилище** | Возможность с ограниченным доступом **enterpriseDeviceLockdown** позволяет приложениям использовать API блокировки устройства и предоставляет им доступ к корпоративным папкам общего хранилища.
+| **Вставка системного ввода** | Возможность с ограниченным доступом **inputInjection** позволяет приложениям внедрять различные формы ввода, такие как HID, сенсорный ввод, перо, клавиатура или мышь, в систему программным путем. Обычно данная возможность используется в приложениях совместной работы, которые могут управлять системой.<br /><br /><div class="alert">**Примечание**  Для компьютера внедрение ввода из приложения, имеющего эту возможность, обеспечивается только процессами, которые относятся к одному контейнеру приложения.</div>
+| **Проверка ввода**\* | Возможность с ограниченным доступом **inputObservation** позволяет приложениям проверять различные формы необработанных входных данных (например, HID, сенсорный ввод, перо, клавиатура или мышь), получаемых системой, независимо от конечного места назначения.
+| **Подавление ввода** | Возможность с ограниченным доступом **inputSuppression** позволяет приложениям подавлять получение различных форм необработанных входных данных (например, HID, сенсорный ввод, перо, клавиатура или мышь) системой.
+| **Приложение VPN** | Возможность с ограниченным доступом **networkingVpnProvider** предоставляет приложениям полный доступ к функциям VPN, включая возможность управлять подключениями и обеспечивать функциональность подключаемого модуля VPN.<br /><br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.Networking.Vpn**](https://msdn.microsoft.com/library/windows/apps/Dn434040).
+| **Управление другими приложениями** | Возможность с ограниченным доступом **packageManagement** позволяет приложениям управлять другими приложениями напрямую.<br /><br />Возможность устройства **packageQuery** позволяет приложениям собирать сведения о других приложениях.<br /><br />Эти возможности требуются для доступа к некоторым методам и свойствам в классе [**PackageManager**](https://msdn.microsoft.com/library/windows/apps/BR240960).
+| **Проецирование экрана** | Возможность с ограниченным доступом **screenDuplication** позволяет приложениям проецировать экран на другое устройство.<br /><br />Эта возможность требуется для использования API в пространстве имен DirectX.
+| **Имя участника-пользователя** | Возможность с ограниченным доступом **userPrincipalName** позволяет приложениям изменять кэш эскизов и получать к нему доступ из фотографий.<br /><br />Эта возможность требуется для вызова функции [**GetUserNameEx**](https://msdn.microsoft.com/library/windows/desktop/ms724435).
+| **Кошелек** | Возможность с ограниченным доступом **walletSystem** позволяет приложениям получать полный доступ к сохраненным картам для бумажника.<br /><br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Wallet.System**](https://msdn.microsoft.com/library/windows/apps/Mt171610).
+| **Журнал расположений** | Возможность с ограниченным доступом **locationHistory** позволяет приложениям получать доступ к журналу расположения устройства.<br /><br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/BR225603).
+| **Подтверждение закрытия приложения** | Возможность ограниченным доступом **confirmAppClose** позволяет приложениям закрываться и закрывать свои окна, а также задерживать закрытие приложения.<br /><br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.UI.ViewManagement**](https://msdn.microsoft.com/library/windows/apps/BR242295).
+| **Журнал вызовов**\* | Возможность с ограниченным доступом **phoneCallHistory** позволяет приложениям читать журнал вызовов и удалять записи в журнале.<br /><br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).
+| **Доступ к встречам системного уровня** | Возможность ограниченным доступом **appointmentsSystem** позволяет приложениям читать и изменить все встречи в календаре пользователя.<br /><br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn263359).
+| **Доступ к сообщениям чата системного уровня**\* | Возможность с ограниченным доступом **chatSystem** позволяет приложениям читать и писать все SMS- и MMS-сообщения.<br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).
+| **Доступ к контактам системного уровня** | Возможность ограниченным доступом **contactsSystem** позволяет приложениям читать контактные данные, которые были обозначены как данные с ограниченным доступом или конфиденциальные, и изменять существующие контактные данные.<br /><br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).
+| **Доступ к электронной почте*** | Возможность с ограниченным доступом **email** позволяет приложениям читать, рассматривать и отправлять электронные сообщения пользователя.<br /><br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285).
+| **Доступ к электронной почте системного уровня**| Возможность ограниченным доступом **emailSystem** позволяет приложениям читать, рассматривать и отправлять электронные сообщения пользователя с ограниченным доступом или конфиденциальные сообщения.<br /><br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285).
+| **Доступ к журналу вызовов системного уровня** | Возможность с ограниченным доступом **phoneCallHistorySystem** позволяет приложениям полностью изменять журнал вызовов путем изменения существующих записей и записи новых.<br /><br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266).
+| **Отправка текстовых сообщений**\* | Возможность с ограниченным доступом **smsSend** позволяет приложениям отправлять SMS- и MMS-сообщения.<br /><br />Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).
+| **Доступ ко всем данным пользователя системного уровня** | Возможность с ограниченным доступом **userDataSystem** предоставляет приложениям доступ к данным пользователя в хранилище системных данных.
+| **Функции предварительного просмотра хранилища** | Возможность с ограниченным доступом **previewStore** позволяет приложениям получать и приобретать SKU продуктов из приложения.<br /><br />Эта возможность требуется для использования определенных API в пространстве имен [**Windows.ApplicationModel.Store.Preview**](https://msdn.microsoft.com/library/windows/apps/Mt185546).
+| **Параметры первого входа** | Возможность с ограниченным доступом **firstSignInSettings** позволяет приложениям получать доступ к настройкам пользователя, которые были установлены во время первого входа пользователя на устройство.
+| **Интерфейс команды разработчиков Windows** | Возможность с ограниченным доступом **teamEditionExperience** позволяет приложениям получать доступ ко внутренним API, которые контролируют многие экспериментальные аспекты сеанса Windows Team. Сеанс Windows Team, вероятнее всего, запущен на устройстве группы, например, Microsoft Surface Hub.
+| **Удаленная разблокировка** | Возможность с ограниченным доступом **remotePassportAuthentication** позволяет приложениям получать доступ к учетным данным, которые могут использоваться для разблокировки удаленного ПК.
+| **Композиция предварительного просмотра** | Возможность с ограниченным доступом **previewUiComposition** позволяет приложениям предварительно просматривать пространство имен [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) для интерфейса пользователя, чтобы можно было предоставить отзыв по API до завершения его работы. Для получения дополнительных сведения свяжитесь с wincomposition@microsoft.com.
+| **Блокировка безопасной оценки** | Возможность с ограниченным доступом **secureAssessment** позволяет приложениям заблокировать Windows в одном режиме приложения для обеспечения безопасности оценок.
+| **Подготовка диспетчера подключений** | Возможность с ограниченным доступом **networkConnectionManagerProvisioning** позволяет приложениям определять политики, которые связывают устройство с интерфейсами беспроводных сетей и беспроводных глобальных сетей. Приложения, использующие эту возможность, создаются мобильными операторами для администрирования устройств, подключенных к их мобильным сетям.
+| **Подготовка тарифного плана** | Возможность с ограниченным доступом **networkDataPlanProvisioning** позволяет приложениям собирать сведения о тарифных планах на устройстве и считывать трафик. Приложения, использующие эту возможность, создаются мобильными операторами, чтобы интегрировать фактический трафик своих клиентов в параметр трафика операционной системы.
+| **Лицензирование ПО** | Возможность с ограниченным доступом **slapiQueryLicenseValue** позволяет приложениям запрашивать политики лицензирования программного обеспечения.
+| **Расширенное выполнение** | Возможность с ограниченным доступом **extendedExecutionBackgroundAudio** позволяет приложениям воспроизводить аудио, когда приложения не запущены на переднем плане.<br /><br />Возможность с ограниченным доступом **extendedExecutionCritical** позволяет приложениям начинать критичный расширенный сеанс выполнения.<br /><br />Возможность с ограниченным доступом **extendedExecutionUnconstrained** позволяет приложениям начинать неограниченный расширенный сеанс выполнения.
+| **Управление мобильными устройствами** | Возможность с ограниченным доступом **deviceManagementDmAccount** позволяет приложениям готовить и настраивать учетные записи MO OMA-DM.<br /><br />Возможность с ограниченным доступом **deviceManagementFoundation** позволяет приложениям получать базовый доступ к инфраструктуре поставщика услуг конфигурации (CSP) управления мобильными устройствами (MDM) на устройстве. Обратите внимание, что другие возможности необходимы для получения доступа к конкретным CSP.<br /><br />Возможность с ограниченным доступом **deviceManagementWapSecurityPolicies** позволяет приложениям настраивать службы протокола на основе WAP, например, MM, индикацию служб/загрузку служб (SI/SL) и OMA-CP.<br /><br />Возможность с ограниченным доступом **deviceManagementEmailAccount** позволяет приложениям, созданным мобильными операторами, добавлять учетную запись электронной почты на устройства, которые они готовят для пользователей, и управлять ими.
+| **Управление политикой пакета** | Возможность с ограниченным доступом **packagePolicySystem** позволяет приложениям контролировать политики системы, связанные с приложениями, установленными на устройстве.
+| **Список игр** | Возможность с ограниченным доступом **gameList** позволяет приложениям получать список известных игр, установленных в системе.
+| **Приложение Xbox** | Возможность с ограниченным доступом **xboxAccessoryManagement** позволяет приложениям напрямую управлять устройствами Xbox, соответствующими спецификациям оборудования Xbox.
+| **Распознавание речи для стандартных программ** | Возможность с ограниченным доступом **cortanaSpeechAccessory** позволяет приложениям вызывать и передавать команды в Кортану.
+| **Вспомогательное управление** | Ограниченная возможность **accessoryManager** позволяет приложениям регистрироваться в качестве дополнительного приложения и подписываться на конкретные уведомления приложений, поэтому их можно переадресовывать в меню стандартных приложений и отображать для пользователя.
+| **Доступ к драйверу** | Возможность с ограниченным доступом **interopServices** позволяет приложениям взаимодействовать непосредственно с драйверами.
+| **Наблюдение переднего плана** | Возможность с ограниченным доступом **inputForegroundObservation** позволяет приложениям на переднем плане перехватывать ввод с клавиатуры и обходит всю обработку ввода с клавиатуры не из приложения. Специальные сочетания клавиш (SAS) не могут быть перехвачены этой возможностью. Эта возможность необходима для получения доступа ко всем членам класса [**KeyboardDeliveryInterceptor**](https://msdn.microsoft.com/library/windows/apps/Mt608395).
+| **Приложения партнеров изготовителей оборудования и операторов мобильной связи** | Возможность с ограниченным доступом **oemDeployment** позволяет приложениям, созданным партнерами корпорации Майкрософт устанавливать новые приложения и отправлять запросы установленным в данный момент приложениям на устройстве.<br /><br />Возможность с ограниченным доступом **oemPublicDirectory** позволяет приложениям, созданным партнерами корпорации Майкрософт, получать доступ к общей папке приложения.
+| **Поставщик пользовательских данных учетных записей** | Возможность **userDataAccountsProvider** с ограниченным доступом позволяет приложениям полностью управлять учетными записями почты, календаря и контактов.
+| **Лицензирование приложений** | Возможность с ограниченным доступом **appLicensing** разрешает запуск приложений без лицензии. Если вы объявите эту возможность в манифесте, то не сможете отправить свое приложение в магазин. Любые запросы на доступ к этой возможности для отправки в магазин всегда будут отклоняться.
+| **Система определения расположения**| Возможность с ограниченным доступом **locationSystem** позволяет приложениям вносить определенные привилегированные изменения в настройки расположения, такие как установка расположения по умолчанию для устройства. Если вы объявите эту возможность в манифесте, то не сможете отправить свое приложение в магазин. Любые запросы на доступ к этой возможности для отправки в магазин всегда будут отклоняться.
+| **Поставщик пользовательских данных учетных записей**| Возможность **userDataAccountsProvider** с ограниченным доступом позволяет приложениям полностью управлять учетными записями почты, календаря и контактов.
 
-<p>Специальная возможность **enterpriseAuthentication** предназначена для поддержки распространенных бизнес-приложений. Не объявляйте ее в приложениях, которым не требуется доступ к корпоративным ресурсам. Возможность [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) предоставляет надежный механизм пользовательского интерфейса, позволяющий пользователям открывать файлы в сетевой папке для использования в приложении. Специальную возможность **enterpriseAuthentication** следует объявлять, только если по сценарию работы приложения требуется программный доступ и его невозможно предоставить, используя **file picker**.</p>
-<p>Возможность **enterpriseAuthentication** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.</p>
-<div class="code">
-<span codelanguage="XML"></span>
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">XML</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="enterpriseAuthentication"/&gt;
-&lt;/Capabilities&gt;</code></pre></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Возможность **enterpriseDataPolicy** позволяет приложениям определять и использовать политики предприятия для устройства. Эта возможность необходима, чтобы использовать все члены следующих классов.</p>
-<ul>
-<li>[**FileProtectionManager**](https://msdn.microsoft.com/library/windows/apps/Dn705151)</li>
-<li>[**DataProtectionManager**](https://msdn.microsoft.com/library/windows/apps/Dn706017)</li>
-<li>[**ProtectionPolicyManager**](https://msdn.microsoft.com/library/windows/apps/Dn705170)</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td align="left">**Общие сертификаты пользователей**</td>
-<td align="left"><p>Специальная возможность **sharedUserCertificates** позволяет приложению добавлять и получать доступ к сертификатам программного обеспечения и оборудования в хранилище общих сертификатов пользователей, например к сертификатам, хранящимся на смарт-карте. Эта возможность обычно используется для финансовых или корпоративных приложений, требующих проверки подлинности с помощью смарт-карты.</p>
-<p>Возможность **sharedUserCertificates** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.</p>
-<div class="code">
-<span codelanguage="XML"></span>
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">XML</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="sharedUserCertificates"/&gt;
-&lt;/Capabilities&gt;</code></pre></td>
-</tr>
-</tbody>
-</table>
-</div></td>
-</tr>
-<tr class="odd">
-<td align="left">**Документы***</td>
-<td align="left"><p>Специальная возможность **documentsLibrary** предоставляет программный доступ к библиотеке документов пользователя, отфильтрованный на основе сопоставлений типов файлов, которые объявлены в манифесте пакета, для поддержки автономного доступа к OneDrive. Например, если для средства просмотра DOC-файлов объявлено сопоставление типов файлов с расширением DOC, оно сможет открывать DOC-файлы из библиотеки документов, но не сможет работать с другими типами файлов.</p>
-<p>Приложения с объявленной специальной возможностью **documentsLibrary** не будут иметь доступа к библиотеке документов на компьютерах домашней группы. Средство [file picker](https://msdn.microsoft.com/library/windows/apps/Hh465174) предоставляет надежный механизм пользовательского интерфейса, позволяющий пользователям открывать файлы для использования в приложении. Объявляйте специальную возможность **documentsLibrary**, только если вы не можете использовать file picker.</p>
-<p>Чтобы использовать специальную возможность **documentsLibrary**, приложение должно:</p>
-<ul>
-<li>обеспечивать кроссплатформенный автономный доступ к определенному содержимому OneDrive с помощью действительных URL-адресов или идентификаторов ресурсов OneDrive;</li>
-<li>автоматически сохранять открытые файлы в OneDrive пользователя в автономном режиме.</li>
-</ul>
-<p>Приложения, использующие специальную возможность **documentsLibrary** для этих двух целей, могут также дополнительно использовать эту возможность, чтобы открывать внедренное содержимое в других документах. Только перечисленные выше способы использования специальной возможности **documentsLibrary** являются допустимыми.</p>
-<ul>
-<li><p>Приложение не сможет получить доступ к библиотеке документов во внутренней памяти телефона. Однако если другое приложение создаст папку Documents на дополнительной SD-карте, ваше приложение сможет увидеть эту папку.</p></li>
-</ul>
-<p>Возможность **documentsLibrary** должна содержать пространство имен **uap** при объявлении ее в манифесте пакета приложения, как показано ниже.</p>
-<div class="code">
-<span codelanguage="XML"></span>
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">XML</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><pre><code>&lt;Capabilities&gt;
-    &lt;uap:Capability Name="documentsLibrary"/&gt;
-&lt;/Capabilities&gt;</code></pre></td>
-</tr>
-</tbody>
-</table>
-</div></td>
-</tr>
-<tr class="even">
-<td align="left">**Параметры DVR для игр**</td>
-<td align="left"><p>Возможность с ограниченным доступом **appCaptureSettings** позволяет приложениям управлять параметрами пользователя для Game DVR.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738).</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Мобильная связь**</td>
-<td align="left"><p>Возможность с ограниченным доступом **cellularDeviceControl** позволяет приложениям контролировать сотовое устройство.</p>
-<p>Возможность **cellularDeviceIdentity** предоставляет приложениям доступ к сотовым идентификационным данным.</p>
-<p>Возможность **cellularMessaging** позволяет приложениям использовать SMS и RCS.</p>
-<p>Эти возможности требуются для использования некоторых API в пространстве имен [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/BR206567).</p>
-<p>Начиная c Windows 10, приложения, которые вызывают Windows.Networking.Connectivity.ConnectivityManager.AcquireConnectionAsync, должны или объявить возможность **cellularDeviceControl**, или находиться в списке приложений, включенных в список разрешенных контекстом протокола пакетных данных (PDP) ([**AppIDList**](https://msdn.microsoft.com/library/windows/apps/Dn393996)).</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Разблокировка устройства**</td>
-<td align="left"><p>Возможность с ограниченным доступом **deviceUnlock** позволяет приложениям снимать блокировку устройства для сценариев загрузки неопубликованного приложения разработчика и неопубликованных корпоративных приложений.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Плитки двойной SIM-карты**</td>
-<td align="left"><p>Возможность с ограниченным доступом **dualSimTiles** позволяет приложениям создавать дополнительную запись списка приложений на устройствах с несколькими SIM-картами.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.UI.StartScreen**](https://msdn.microsoft.com/library/windows/apps/BR242235).</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Общее корпоративное хранилище**</td>
-<td align="left"><p>Возможность с ограниченным доступом **enterpriseDeviceLockdown** позволяет приложениям использовать API блокировки устройства и предоставляет им доступ к корпоративным папкам общего хранилища.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Вставка системного ввода**</td>
-<td align="left"><p>Возможность с ограниченным доступом **inputInjection** позволяет приложениям внедрять различные формы ввода, такие как HID, сенсорный ввод, перо, клавиатура или мышь, в систему программным путем. Обычно данная возможность используется в приложениях совместной работы, которые могут управлять системой.</p>
-<div class="alert">
-**Примечание**  Для компьютера внедрение ввода из приложения, имеющего эту возможность, обеспечивается только процессами, которые относятся к одному контейнеру приложения.
-</div>
-</td>
-</tr>
-<tr class="even">
-<td align="left">**Проверка ввода***</td>
-<td align="left"><p>Возможность с ограниченным доступом **inputObservation** позволяет приложениям проверять различные формы необработанных входных данных (например, HID, сенсорный ввод, перо, клавиатура или мышь), получаемых системой, независимо от конечного места назначения.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Подавление ввода**</td>
-<td align="left"><p>Возможность с ограниченным доступом **inputSuppression** позволяет приложениям подавлять получение различных форм необработанных входных данных (например, HID, сенсорный ввод, перо, клавиатура или мышь) системой.</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Приложение VPN**</td>
-<td align="left"><p>Возможность с ограниченным доступом **networkingVpnProvider** предоставляет приложениям полный доступ к функциям VPN, включая возможность управлять подключениями и обеспечивать функциональность подключаемого модуля VPN.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.Networking.Vpn**](https://msdn.microsoft.com/library/windows/apps/Dn434040).</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Управление другими приложениями**</td>
-<td align="left"><p>Возможность с ограниченным доступом **packageManagement** позволяет приложениям управлять другими приложениями напрямую.</p>
-<p>Возможность устройства **packageQuery** позволяет приложениям собирать сведения о других приложениях.</p>
-<p>Эти возможности требуются для доступа к некоторым методам и свойствам в классе [**PackageManager**](https://msdn.microsoft.com/library/windows/apps/BR240960).</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Проецирование экрана**</td>
-<td align="left"><p>Возможность с ограниченным доступом **screenDuplication** позволяет приложениям проецировать экран на другое устройство.</p>
-<p>Эта возможность требуется для использования API в пространстве имен DirectX.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Имя участника-пользователя**</td>
-<td align="left"><p>Возможность с ограниченным доступом **userPrincipalName** позволяет приложениям изменять кэш эскизов и получать к нему доступ из фотографий.</p>
-<p>Эта возможность требуется для вызова функции [**GetUserNameEx**](https://msdn.microsoft.com/library/windows/desktop/ms724435).</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Кошелек**</td>
-<td align="left"><p>Возможность с ограниченным доступом **walletSystem** позволяет приложениям получать полный доступ к сохраненным картам для бумажника.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Wallet.System**](https://msdn.microsoft.com/library/windows/apps/Mt171610).</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Журнал расположений**</td>
-<td align="left"><p>Возможность с ограниченным доступом **locationHistory** позволяет приложениям получать доступ к журналу расположения устройства.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/BR225603).</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Подтверждение закрытия приложения**</td>
-<td align="left"><p>Возможность ограниченным доступом **confirmAppClose** позволяет приложениям закрываться и закрывать свои окна, а также задерживать закрытие приложения.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.UI.ViewManagement**](https://msdn.microsoft.com/library/windows/apps/BR242295).</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Журнал вызовов***</td>
-<td align="left"><p>Возможность с ограниченным доступом **phoneCallHistory** позволяет приложениям читать журнал вызовов и удалять записи в журнале.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Доступ к встречам системного уровня**</td>
-<td align="left"><p>Возможность ограниченным доступом **appointmentsSystem** позволяет приложениям читать и изменить все встречи в календаре пользователя.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn263359).</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Доступ к сообщениям чата системного уровня***</td>
-<td align="left"><p>Возможность ограниченным доступом **chatSystem** позволяет приложениям читать и писать все SMS- и MMS-сообщения.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Доступ к контактам системного уровня**</td>
-<td align="left"><p>Возможность ограниченным доступом **contactsSystem** позволяет приложениям читать контактные данные, которые были обозначены как данные с ограниченным доступом или конфиденциальные, и изменять существующие контактные данные.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Доступ к электронной почте****</td>
-<td align="left"><p>Возможность ограниченным доступом **email** позволяет приложениям читать, рассматривать и отправлять электронные сообщения пользователя.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285).</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Доступ к электронной почте системного уровня**</td>
-<td align="left"><p>Возможность ограниченным доступом **emailSystem** позволяет приложениям читать, рассматривать и отправлять электронные сообщения пользователя с ограниченным доступом или конфиденциальные сообщения.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285).</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Доступ к журналу вызовов системного уровня**</td>
-<td align="left"><p>Возможность с ограниченным доступом **phoneCallHistorySystem** позволяет приложениям полностью изменять журнал вызовов путем изменения существующих записей и записи новых.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266).</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Отправка текстовых сообщений***</td>
-<td align="left"><p>Возможность ограниченным доступом **smsSend** позволяет приложениям отправлять SMS- и MMS-сообщения.</p>
-<p>Эта возможность требуется для использования некоторых API в пространстве имен [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321).</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Доступ ко всем данным пользователя системного уровня**</td>
-<td align="left"><p>Возможность с ограниченным доступом **userDataSystem** предоставляет приложениям доступ к данным пользователя в хранилище системных данных.</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Функции предварительного просмотра хранилища**</td>
-<td align="left"><p>Возможность с ограниченным доступом **previewStore** позволяет приложениям получать и приобретать SKU продуктов из приложения.</p>
-<p>Эта возможность требуется для использования определенных API в пространстве имен [**Windows.ApplicationModel.Store.Preview**](https://msdn.microsoft.com/library/windows/apps/Mt185546).</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Параметры первого входа**</td>
-<td align="left"><p>Возможность с ограниченным доступом **firstSignInSettings** позволяет приложениям получать доступ к настройкам пользователя, которые были установлены во время первого входа пользователя на устройство.</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Интерфейс команды разработчиков Windows**</td>
-<td align="left"><p>Возможность с ограниченным доступом **teamEditionExperience** позволяет приложениям получать доступ ко внутренним API, которые контролируют многие экспериментальные аспекты сеанса Windows Team. Сеанс Windows Team, вероятнее всего, запущен на устройстве группы, например, Microsoft Surface Hub.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Удаленная разблокировка**</td>
-<td align="left"><p>Возможность с ограниченным доступом **remotePassportAuthentication** позволяет приложениям получать доступ к учетным данным, которые могут использоваться для разблокировки удаленного ПК.</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Композиция предварительного просмотра**</td>
-<td align="left"><p>Возможность с ограниченным доступом **previewUiComposition** позволяет приложениям предварительно просматривать пространство имен [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) для интерфейса пользователя, чтобы можно было предоставить отзыв по API до завершения его работы. Для получения дополнительных сведения свяжитесь с wincomposition@microsoft.com.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Блокировка безопасной оценки**</td>
-<td align="left"><p>Возможность с ограниченным доступом **secureAssessment** позволяет приложениям заблокировать Windows в одном режиме приложения для обеспечения безопасности оценок.</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Подготовка диспетчера подключений**</td>
-<td align="left"><p>Возможность с ограниченным доступом **networkConnectionManagerProvisioning** позволяет приложениям определять политики, которые связывают устройство с интерфейсами беспроводных сетей и беспроводных глобальных сетей. Приложения, использующие эту возможность, создаются мобильными операторами для администрирования устройств, подключенных к их мобильным сетям.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Подготовка тарифного плана**</td>
-<td align="left"><p>Возможность с ограниченным доступом **networkDataPlanProvisioning** позволяет приложениям собирать сведения о тарифных планах на устройстве и считывать трафик. Приложения, использующие эту возможность, создаются мобильными операторами, чтобы интегрировать фактический трафик своих клиентов в параметр трафика операционной системы.</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Лицензирование ПО**</td>
-<td align="left"><p>Возможность с ограниченным доступом **slapiQueryLicenseValue** позволяет приложениям запрашивать политики лицензирования программного обеспечения.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Расширенное выполнение**</td>
-<td align="left"><p>Возможность с ограниченным доступом **extendedExecutionBackgroundAudio** позволяет приложениям воспроизводить аудио, когда приложения не запущены на переднем плане.</p>
-<p>Возможность с ограниченным доступом **extendedExecutionCritical** позволяет приложениям начинать критичный расширенный сеанс выполнения.</p>
-<p>Возможность с ограниченным доступом **extendedExecutionUnconstrained** позволяет приложениям начинать неограниченный расширенный сеанс выполнения.</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Управление мобильными устройствами**</td>
-<td align="left"><p>Возможность с ограниченным доступом **deviceManagementDmAccount** позволяет приложениям готовить и настраивать учетные записи MO OMA-DM.</p>
-<p>Возможность с ограниченным доступом **deviceManagementFoundation** позволяет приложениям получать базовый доступ к инфраструктуре поставщика услуг конфигурации (CSP) управления мобильными устройствами (MDM) на устройстве. Обратите внимание, что другие возможности необходимы для получения доступа к конкретным CSP.</p>
-<p>Возможность с ограниченным доступом **deviceManagementWapSecurityPolicies** позволяет приложениям настраивать службы протокола на основе WAP, например, MM, индикацию служб/загрузку служб (SI/SL) и OMA-CP.</p>
-<p>Возможность с ограниченным доступом **deviceManagementEmailAccount** позволяет приложениям, созданным мобильными операторами, добавлять учетную запись электронной почты на устройства, которые они готовят для пользователей, и управлять ими.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Управление политикой пакета**</td>
-<td align="left"><p>Возможность с ограниченным доступом **packagePolicySystem** позволяет приложениям контролировать политики системы, связанные с приложениями, установленными на устройстве.</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Список игр**</td>
-<td align="left"><p>Возможность с ограниченным доступом **gameList** позволяет приложениям получать список известных игр, установленных в системе.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Приложение Xbox**</td>
-<td align="left"><p>Возможность с ограниченным доступом **xboxAccessoryManagement** позволяет приложениям напрямую управлять устройствами Xbox, соответствующими спецификациям оборудования Xbox.</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Распознавание речи для стандартных программ**</td>
-<td align="left"><p>Возможность с ограниченным доступом **cortanaSpeechAccessory** позволяет приложениям вызывать и передавать команды в Кортану.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Вспомогательное управление**</td>
-<td align="left"><p>Ограниченная возможность **accessoryManager** позволяет приложениям регистрироваться в качестве дополнительного приложения и подписываться на конкретные уведомления приложений, поэтому их можно переадресовывать в меню стандартных приложений и отображать для пользователя.</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Доступ к драйверу**</td>
-<td align="left"><p>Возможность с ограниченным доступом **interopServices** позволяет приложениям взаимодействовать непосредственно с драйверами.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Наблюдение переднего плана**</td>
-<td align="left"><p>Возможность с ограниченным доступом **inputForegroundObservation** позволяет приложениям на переднем плане перехватывать ввод с клавиатуры и обходит всю обработку ввода с клавиатуры не из приложения. Специальные сочетания клавиш (SAS) не могут быть перехвачены этой возможностью. Эта возможность необходима для получения доступа ко всем членам класса [**KeyboardDeliveryInterceptor**](https://msdn.microsoft.com/library/windows/apps/Mt608395).</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Приложения партнеров изготовителей оборудования и операторов мобильной связи**</td>
-<td align="left"><p>Возможность с ограниченным доступом **oemDeployment** позволяет приложениям, созданным партнерами корпорации Майкрософт устанавливать новые приложения и отправлять запросы установленным в данный момент приложениям на устройстве.</p>
-<p>Возможность с ограниченным доступом **oemPublicDirectory** позволяет приложениям, созданным партнерами корпорации Майкрософт, получать доступ к общей папке приложения.</p></td>
-</tr>
-<tr class="odd">
-<td align="left">**Лицензирование приложений**</td>
-<td align="left"><p>Возможность с ограниченным доступом **appLicensing** разрешает запуск приложений без лицензии. Если вы объявите эту возможность в манифесте, то не сможете отправить свое приложение в магазин. Любые запросы на доступ к этой возможности для отправки в магазин всегда будут отклоняться.</p></td>
-</tr>
-<tr class="even">
-<td align="left">**Система определения расположения**</td>
-<td align="left"><p>Возможность с ограниченным доступом **locationSystem** позволяет приложениям вносить определенные привилегированные изменения в настройки расположения, такие как установка расположения по умолчанию для устройства. Если вы объявите эту возможность в манифесте, то не сможете отправить свое приложение в магазин. Любые запросы на доступ к этой возможности для отправки в магазин всегда будут отклоняться.</p></td>
-</tr>
-</tbody>
-</table>
 
-**Примечание.**  
-Эта статья адресована разработчикам приложений UWP для Windows 10. В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+
+**Примечание**  
+Эта статья адресована разработчикам приложений UWP для Windows 10. В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Связанные темы
 
@@ -852,6 +164,6 @@ description: Возможности должны быть заявлены в м
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

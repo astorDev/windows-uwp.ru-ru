@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Справочные материалы по переносу с GLSL на HLSL
 description: Вы переносите код с GLSL на HLSL, когда портируете графическую архитектуру с OpenGL ES 2.0 на Direct3D 11, чтобы создавать игры для универсальной платформы Windows (UWP).
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
@@ -7,7 +8,7 @@ ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 # Справочные материалы по переносу с GLSL на HLSL
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Вы переносите код с GLSL на HLSL, когда [портируете графическую архитектуру с OpenGL ES 2.0 на Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md), чтобы создавать игры для универсальной платформы Windows (UWP). Язык GLSL, о котором пойдет речь в этом разделе, совместим с OpenGL ES 2.0. Язык HLSL совместим с Direct3D 11. Подробнее об отличиях Direct3D 11 от предыдущих версий Direct3D см. в разделе [Сопоставление компонентов](feature-mapping.md).
 
@@ -55,20 +56,20 @@ GLSL и HLSL отличаются в следующем.
 </tr>
 <tr class="even">
 <td align="left">Компиляция шейдера интегрирована в графический API</td>
-<td align="left">Компилятор HLSL компилирует шейдер [compiles the shader](https://msdn.microsoft.com/library/windows/desktop/bb509633) в промежуточное двоичное представление, прежде чем Direct3D передает его драйверу.
+<td align="left">Компилятор HLSL [компилирует шейдер](https://msdn.microsoft.com/library/windows/desktop/bb509633) в промежуточное двоичное представление, прежде чем Direct3D передает его драйверу.
 <div class="alert">
-<strong>Примечание.</strong>  Это двоичное представление не зависит от оборудования. Оно обычно компилируется во время сборки приложения, а не во время его выполнения.
+<strong></strong>Примечание. Это двоичное представление не зависит от оборудования. Оно обычно компилируется во время сборки приложения, а не во время его выполнения.
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left">Модификаторы хранилищ переменных [Variable](#variables)</td>
-<td align="left">Буферы констант и передачи данных через объявления макетов входных данных</td>
+<td align="left">Модификаторы хранилищ [переменных](#variables)</td>
+<td align="left">Буферы констант и передачи данных через объявления входных макетов</td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Types](#types)</p>
+<td align="left"><p>[Типы](#types)</p>
 <p>Стандартный тип вектора: vec2/3/4</p>
 <p>lowp, mediump, highp</p></td>
 <td align="left"><p>Стандартный тип вектора: float2/3/4</p>
@@ -86,7 +87,7 @@ GLSL и HLSL отличаются в следующем.
 <td align="left">Развернутые по строкам матрицы (по умолчанию)</td>
 <td align="left">Развернутые по столбцам матрицы (по умолчанию)
 <div class="alert">
-<strong>Примечание.</strong>   Используйте модификатор типа <strong>row_major</strong>, чтобы изменить макет для одной переменной. Подробнее: [Variable Syntax](https://msdn.microsoft.com/library/windows/desktop/bb509706). Вы также можете указать флажок компилятора или псевдокомментарий, чтобы изменить глобальное значение по умолчанию.
+<strong>Примечание.</strong> Используйте модификатор типа <strong>row_major</strong>, чтобы изменить макет для одной переменной. Подробнее см. [Синтаксис переменной](https://msdn.microsoft.com/library/windows/desktop/bb509706). Вы также можете указать флажок компилятора или псевдокомментарий, чтобы изменить глобальное значение по умолчанию.
 </div>
 <div>
  
@@ -101,7 +102,7 @@ GLSL и HLSL отличаются в следующем.
 
  
 
-> **Примечание.**  В HLSL текстуры и дискретизаторы являются двумя отдельными объектами. В GLSL, как в Direct3D 9, привязка текстуры является частью состояния дискретизатора.
+> **Примечание.** В HLSL текстуры и дискретизаторы являются двумя отдельными объектами. В GLSL, как в Direct3D 9, привязка текстуры является частью состояния дискретизатора.
 
  
 
@@ -129,7 +130,7 @@ GLSL и HLSL отличаются в следующем.
 <p>Вы передаете неизменную переменную из кода приложения в вершинный шейдер и (или) шейдер фрагмента. Вы должны передать значения всех неизменных переменных перед отрисовкой какого-либо треугольника с помощью этих шейдеров, чтобы их значения остались теми же во время отрисовки треугольной сетки. Эти значения не меняются. Некоторые неизменные значения устанавливаются для всего кадра, другие — для одной конкретной пары вершина-пиксель.</p>
 <p>Неизменные переменные индивидуальны для полигона.</p></td>
 <td align="left"><p>Используйте буфер констант.</p>
-<p>См. разделы [How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896) и [Shader Constants](https://msdn.microsoft.com/library/windows/desktop/bb509581).</p></td>
+<p>См. разделы [Краткое руководство: создание буфера констант](https://msdn.microsoft.com/library/windows/desktop/ff476896) и [Постоянные шейдера](https://msdn.microsoft.com/library/windows/desktop/bb509581).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>varying</strong></p>
@@ -139,13 +140,13 @@ GLSL и HLSL отличаются в следующем.
 <tr class="odd">
 <td align="left"><p><strong>attribute</strong></p>
 <p>Атрибут является частью описания вершины, которое вы передаете из кода приложения только в вершинный шейдер. В отличие от неизменного значения вы устанавливаете значение каждого атрибута для каждой вершины, что, в свою очередь, позволяет всем вершинам иметь разные значения. Переменные атрибутов индивидуальны для вершин.</p></td>
-<td align="left"><p>Определите буфер вершины в коде приложения Direct3D и обеспечьте его соответствие входным данным вершины, определенным в вершинном шейдере. При желании определите буфер индексов. См. разделы [How to: Create a Vertex Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476899) и [How to: Create an Index Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476897).</p>
-<p>Создайте макет входных данных в коде приложения Direct3D и обеспечьте соответствие семантических значений семантическим значениям входных данных вершины. См. следующие разделы: [Create the input layout](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout).</p></td>
+<td align="left"><p>Определите буфер вершины в коде приложения Direct3D и обеспечьте его соответствие входным данным вершины, определенным в вершинном шейдере. При желании определите буфер индексов. См. разделы [Краткое руководство: создание буфера вершины](https://msdn.microsoft.com/library/windows/desktop/ff476899) и [Краткое руководство: создание буфера индексов](https://msdn.microsoft.com/library/windows/desktop/ff476897).</p>
+<p>Создайте макет входных данных в коде приложения Direct3D и обеспечьте соответствие семантических значений семантическим значениям входных данных вершины. См. раздел [Создание входного макета](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>const</strong></p>
 <p>Постоянные, которые компилируются в шейдер и никогда не меняются.</p></td>
-<td align="left">Используйте <strong>статическую константу</strong> <strong>Статическая</strong> означает, что данное значение не предоставляется буферам констант, а <strong>константа</strong> означает, что шейдер не может изменить данное значение. Таким образом, значение известно во время компиляции на основании инициализатора.</td>
+<td align="left">Используйте <strong>статическую константу</strong> <strong></strong>Статическая<strong> означает, что данное значение не предоставляется буферам констант, а </strong>константа означает, что шейдер не может изменить данное значение. Таким образом, значение известно во время компиляции на основании инициализатора.</td>
 </tr>
 </tbody>
 </table>
@@ -177,12 +178,12 @@ GLSL и HLSL отличаются в следующем.
 <td align="left">скалярные типы: float, int, bool</td>
 <td align="left"><p>скалярные типы: float, int, bool</p>
 <p>также uint, double</p>
-<p>Подробнее см. в разделе [Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646).</p></td>
+<p>Подробнее: [Скалярные типы](https://msdn.microsoft.com/library/windows/desktop/bb509646).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>векторные типы</p>
 <ul>
-<li>вектор из чисел с плавающей запятой: vec2, vec3, vec4</li>
+<li>вектор из чисел с плавающей точкой: vec2, vec3, vec4</li>
 <li>логический вектор: bvec2, bvec3, bvec4</li>
 <li>вектор из знаковых целых чисел: ivec2, ivec3, ivec4</li>
 </ul></td>
@@ -199,11 +200,11 @@ GLSL и HLSL отличаются в следующем.
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>Подробнее см. в разделах: [Vector Type](https://msdn.microsoft.com/library/windows/desktop/bb509707) и [Keywords](https://msdn.microsoft.com/library/windows/desktop/bb509568).</p>
-<p>Тип вектора также можно определить как float4 (typedef vector &lt;float, 4&gt; vector;). Подробнее см. в разделе [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
+<p>Подробнее см. в разделах [Тип вектора](https://msdn.microsoft.com/library/windows/desktop/bb509707) и [Ключевые слова](https://msdn.microsoft.com/library/windows/desktop/bb509568).</p>
+<p>тип вектора также можно определить, как float4 (typedef vector &lt;float, 4&gt; vector;). Дополнительные сведения см. в разделе [Определяемый пользователем тип](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Тип матрицы</p>
+<td align="left"><p>тип матрицы</p>
 <ul>
 <li>mat2: плавающая матрица 2x2</li>
 <li>mat3: плавающая матрица 3x3</li>
@@ -223,17 +224,17 @@ GLSL и HLSL отличаются в следующем.
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>Для определения матрицы вы также можете воспользоваться типом данных [matrix type](https://msdn.microsoft.com/library/windows/desktop/bb509623).</p>
+<p>Вы также можете воспользоваться [типом матрицы](https://msdn.microsoft.com/library/windows/desktop/bb509623), чтобы определить матрицу.</p>
 <p>Например: matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
-<p>Тип матрицы также можно определить как float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;). Подробнее см. в разделе [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
+<p>тип матрицы также можно определить как float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;). Дополнительные сведения см. в разделе [Определяемый пользователем тип](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Квалификатор точности для числа с плавающей запятой, целого числа, дискретизатора</p>
 <ul>
 <li><p>highp</p>
 <p>Этот квалификатор обеспечивает минимальные требования к точности, которые больше предоставляемых типом min16float и меньше полного 32-разрядного числа с плавающей запятой. Эквивалент в HLSL:</p>
-<p>highp float -> число с плавающей запятой</p>
-<p>highp int -> целое число</p></li>
+<p>highp float -&gt; число с плавающей точкой</p>
+<p>highp int -&gt; целое число</p></li>
 <li><p>mediump</p>
 <p>Этот квалификатор в применении к числу с плавающей запятой и целому числу эквивалентен типам min16float и min12int в HLSL. Минимум 10 бит мантиссы, не как min10float.</p></li>
 <li><p>lowp</p>
@@ -245,11 +246,11 @@ GLSL и HLSL отличаются в следующем.
 <li><p>min10float</p>
 <p>Минимальное значение с фиксированной запятой и знаком на 2,8 бита (2 бита целого числа и 8 бит дробного компонента). 8-разрядный дробный компонент может включать 1, чтобы дать полный суммарный диапазон от –2 до 2.</p></li>
 <li>min16int: минимум 16-разрядное знаковое целое число</li>
-<li><p>min12int: минимум 12-разрядное целое число со знаком</p>
-<p>Этот тип предназначен для 10Level9 (уровни функций 9_х [9_x feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876)), в котором целые числа представлены числами с плавающей запятой. Это точность, которую вы можете получить, когда эмулируете целое число с помощью 16-разрядного числа с плавающей точкой.</p></li>
+<li><p>min12int: минимум 12-разрядное знаковое целое число</p>
+<p>Этот тип для 10Level9 ([уровни функций 9_x](https://msdn.microsoft.com/library/windows/desktop/ff476876)), где целые числа представлены числами с плавающей точкой. Это точность, которую вы можете получить, когда эмулируете целое число с помощью 16-разрядного числа с плавающей точкой.</p></li>
 <li>min16uint: минимум 16-разрядное целое число без знака</li>
 </ul>
-<p>Подробнее см. в разделе [Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646) и [Using HLSL minimum precision](https://msdn.microsoft.com/library/windows/desktop/hh968108).</p></td>
+<p>Подробнее см. в разделах [Скалярные типы](https://msdn.microsoft.com/library/windows/desktop/bb509646) и [Использование минимальной точности HLSL](https://msdn.microsoft.com/library/windows/desktop/hh968108).</p></td>
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>
@@ -321,7 +322,7 @@ GLSL и HLSL отличаются в следующем.
 <p>Цвет фрагмента для прикрепления цвета n</p></td>
 <td align="left"><p>SV_Target[n]</p>
 <p>Эта семантика относится к типу <strong>float4</strong>.</p>
-<p>Выходное значение построителя текстуры, которое хранится в однобуферной прорисовке n, где 0 <= n <= 7.</p></td>
+<p>Выходное значение построителя текстуры, которое хранится в однобуферной прорисовке n, где 0 &lt;= n &lt;= 7.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>gl_FragCoord</strong></p>
@@ -544,7 +545,7 @@ m_d3dDeviceContext->PSSetShader(pixelShader.Get(),nullptr,0);
 m_d3dDeviceContext->IASetInputLayout(inputLayout.Get());
 m_d3dDeviceContext->IASetVertexBuffers(0, 1, vertexBuffer.GetAddressOf(), &stride, &offset);
 
-// Set the primitive’s topology.
+// Set the primitive's topology.
 m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
 // Draw a triangle with 3 vertices. triangleVertices is an array of 3 vertices.
@@ -565,6 +566,6 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
