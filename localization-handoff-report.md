@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\tax-details-for-paid-apps.md](https://github.com/Microsoft/windows-apps/blob/a59d999ac36e04fbfa53d5b8992b235bff2d3818/windows-apps-src/publish/tax-details-for-paid-apps.md) | OutofSyncHandedBackSuccess | [Details](#364608e1452ddff7aae261bb0f29ec14ee4fb0a33544)
+ [windows-apps-src\xaml-platform\xaml-intrinsic-data-types.md](https://github.com/Microsoft/windows-apps/blob/60e328ca8652baeb226e78f5a9d99fbf8c4f5208/windows-apps-src/xaml-platform/xaml-intrinsic-data-types.md) | OutofSyncHandedBackSuccess | [Details](#479b900ca14497712f25a7825fde6775a3c1ab603813)
 
 ## Item Details
-##### <a name='364608e1452ddff7aae261bb0f29ec14ee4fb0a33544'></a> Source: [windows-apps-src\publish\tax-details-for-paid-apps.md](https://github.com/Microsoft/windows-apps/blob/a59d999ac36e04fbfa53d5b8992b235bff2d3818/windows-apps-src/publish/tax-details-for-paid-apps.md)
+##### <a name='479b900ca14497712f25a7825fde6775a3c1ab603813'></a> Source: [windows-apps-src\xaml-platform\xaml-intrinsic-data-types.md](https://github.com/Microsoft/windows-apps/blob/60e328ca8652baeb226e78f5a9d99fbf8c4f5208/windows-apps-src/xaml-platform/xaml-intrinsic-data-types.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [tax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/78a9b38794ef897976ce30d46a05b71f397a36d0/ol-handoff/Microsoft/windows-apps.ru-ru/master/tax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.ru-ru.xlf)
-* Handoff Datetime: 2016-05-31 18:44:45
+* Handoff File: [xaml-intrinsic-data-types.fb0de19cdad63c788add66ad9b4077bd0bf29c8f.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/f38c476e657b7fef75da917c1ca01cefafaf8e38/ol-handoff/Microsoft/windows-apps.ru-ru/master/xaml-intrinsic-data-types.fb0de19cdad63c788add66ad9b4077bd0bf29c8f.ru-ru.xlf)
+* Handoff Datetime: 2016-05-31 19:14:02
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\tax-details-for-paid-apps.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/e7872f786e987c46c3fca5f20ec42607f78920f2/windows-apps-src/publish/tax-details-for-paid-apps.md)
-* Current Handback File: [tax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/tax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.ru-ru.xlf)
+* Current Target File: [windows-apps-src\xaml-platform\xaml-intrinsic-data-types.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/e7872f786e987c46c3fca5f20ec42607f78920f2/windows-apps-src/xaml-platform/xaml-intrinsic-data-types.md)
+* Current Handback File: [xaml-intrinsic-data-types.fb0de19cdad63c788add66ad9b4077bd0bf29c8f.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/xaml-intrinsic-data-types.fb0de19cdad63c788add66ad9b4077bd0bf29c8f.ru-ru.xlf)
 * Current Handback Datetime: 2016-05-30 14:06:03
 * [Back to Top](#report-top)
 
