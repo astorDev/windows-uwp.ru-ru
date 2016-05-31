@@ -371,15 +371,9 @@
 ##### [Пошаговое руководство по выполнению переноса с OpenGL ES 2.0](gaming/walkthrough-sample-ports-from-opengl-es-2-0.md)
 ###### [Инструкции: перенос простого обработчика OpenGL ES 2.0 в Direct3D 11](gaming/port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 ####### [Перенос объектов шейдеров](gaming/port-the-shader-config.md)
-            
-####### 
-            [Перенос буферов вершин и данных](gaming/port-the-vertex-buffers-and-data-config.md)
-            
-####### 
-            [Перенос GLSL](gaming/port-the-glsl.md)
-            
-####### 
-            [Отрисовка на экране](gaming/draw-to-the-screen.md)
+####### [Перенос буферов вершин и данных](gaming/port-the-vertex-buffers-and-data-config.md)
+####### [Перенос GLSL](gaming/port-the-glsl.md)
+####### [Отрисовка на экране](gaming/draw-to-the-screen.md)
 ##### [Справочник по переносу с OpenGL ES 2.0 на Direct3D 11.1](gaming/opengl-es-2-0-to-directx-11-1-reference.md)
 ###### [Справочные материалы по переносу с GLSL на HLSL](gaming/glsl-to-hlsl-reference.md)
 ### [Ресурсы по программированию игр](gaming/additional-directx-game-programming-resources.md)
