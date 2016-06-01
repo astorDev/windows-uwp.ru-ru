@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\create-an-ad-campaign-for-your-app.md](https://github.com/Microsoft/windows-apps/blob/ba56cb495cf2318a1b9791f3e8a7504a28b5d531/windows-apps-src/publish/create-an-ad-campaign-for-your-app.md) | OutofSyncHandedBackSuccess | [Details](#b94a96bc51d72377f68b39332d22776a3b333b463493)
+ [windows-apps-src\xbox-apps\getting-started.md](https://github.com/Microsoft/windows-apps/blob/cde4263cbf49ab3347752be678f1cbdac5d33eb8/windows-apps-src/xbox-apps/getting-started.md) | OutofSyncHandedBackSuccess | [Details](#b3509114cee233b451dbe769b945c354e713d5553824)
 
 ## Item Details
-##### <a name='b94a96bc51d72377f68b39332d22776a3b333b463493'></a> Source: [windows-apps-src\publish\create-an-ad-campaign-for-your-app.md](https://github.com/Microsoft/windows-apps/blob/ba56cb495cf2318a1b9791f3e8a7504a28b5d531/windows-apps-src/publish/create-an-ad-campaign-for-your-app.md)
+##### <a name='b3509114cee233b451dbe769b945c354e713d5553824'></a> Source: [windows-apps-src\xbox-apps\getting-started.md](https://github.com/Microsoft/windows-apps/blob/cde4263cbf49ab3347752be678f1cbdac5d33eb8/windows-apps-src/xbox-apps/getting-started.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/f5c18f2c1935bf7941322dd02b04f1149a0d0b60/ol-handoff/Microsoft/windows-apps.ru-ru/master/create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.ru-ru.xlf)
-* Handoff Datetime: 2016-06-01 17:44:22
+* Handoff File: [getting-started.e4f343d7b5d7d1d1af63a09965ea9cc6ef148b08.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/6440dfdb8c6b7a2a40f09bc7e5bf23dc567c43a1/ol-handoff/Microsoft/windows-apps.ru-ru/master/getting-started.e4f343d7b5d7d1d1af63a09965ea9cc6ef148b08.ru-ru.xlf)
+* Handoff Datetime: 2016-06-01 19:21:07
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\create-an-ad-campaign-for-your-app.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/e7872f786e987c46c3fca5f20ec42607f78920f2/windows-apps-src/publish/create-an-ad-campaign-for-your-app.md)
-* Current Handback File: [create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.ru-ru.xlf)
+* Current Target File: [windows-apps-src\xbox-apps\getting-started.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/e7872f786e987c46c3fca5f20ec42607f78920f2/windows-apps-src/xbox-apps/getting-started.md)
+* Current Handback File: [getting-started.e4f343d7b5d7d1d1af63a09965ea9cc6ef148b08.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/getting-started.e4f343d7b5d7d1d1af63a09965ea9cc6ef148b08.ru-ru.xlf)
 * Current Handback Datetime: 2016-05-30 14:06:03
 * [Back to Top](#report-top)
 
