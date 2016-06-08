@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\launch-settings-app.md](https://github.com/Microsoft/windows-apps/blob/3cf9dd4ab83139a2b4b0f44a36c2e57a92900903/windows-apps-src/launch-resume/launch-settings-app.md) | OutofSyncHandedBackSuccess | [Details](#e52a4245e8697a68bfc5c5605dc54e5ea510c6622945)
+ [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/6d1c6e836d666972641320c73896459490f45924/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | OutofSyncHandedBackSuccess | [Details](#874b6452386526d66062a27a5b520cb1a232ae643375)
 
 ## Item Details
-##### <a name='e52a4245e8697a68bfc5c5605dc54e5ea510c6622945'></a> Source: [windows-apps-src\launch-resume\launch-settings-app.md](https://github.com/Microsoft/windows-apps/blob/3cf9dd4ab83139a2b4b0f44a36c2e57a92900903/windows-apps-src/launch-resume/launch-settings-app.md)
+##### <a name='874b6452386526d66062a27a5b520cb1a232ae643375'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/6d1c6e836d666972641320c73896459490f45924/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [launch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/f66d835c8f8393bc48fe8baf9fc0b8e191199acb/ol-handoff/Microsoft/windows-apps.ru-ru/master/launch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.ru-ru.xlf)
-* Handoff Datetime: 2016-06-08 00:53:18
+* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/19f6bbecef15484e797205537ff8c0d18e1450dd/ol-handoff/Microsoft/windows-apps.ru-ru/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ru-ru.xlf)
+* Handoff Datetime: 2016-06-08 17:32:50
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\launch-resume\launch-settings-app.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/e7872f786e987c46c3fca5f20ec42607f78920f2/windows-apps-src/launch-resume/launch-settings-app.md)
-* Current Handback File: [launch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/launch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.ru-ru.xlf)
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/e7872f786e987c46c3fca5f20ec42607f78920f2/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+* Current Handback File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ru-ru.xlf)
 * Current Handback Datetime: 2016-05-30 14:06:03
 * [Back to Top](#report-top)
 
