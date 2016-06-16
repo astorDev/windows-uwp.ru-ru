@@ -1,27 +1,40 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/cea59b2c5a1c28f643fb22ddde97eb1e18a9fb23/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#f1230ffea3d7dffaf3073b7e60cf2c19978faa923780)
+ [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps/blob/2af4d73109745381244b48d5c599b8e03a6ddb7b/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md) | OutofSyncHandedBackSuccess | [Details](#5e5e620e2c50eb5a5cf8948194555e836d4dd8a73895)
+ [windows-apps-src\xbox-apps\whats-new.md](https://github.com/Microsoft/windows-apps/blob/6858afc53180a8b3ce026dc7b8dee02eb0af5dd4/windows-apps-src/xbox-apps/whats-new.md) | HandedOffSuccess | [Details](#bef6ee26876bdbb30799dd194279a493dbfa0a063904)
 
 ## Item Details
-##### <a name='f1230ffea3d7dffaf3073b7e60cf2c19978faa923780'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/cea59b2c5a1c28f643fb22ddde97eb1e18a9fb23/windows-apps-src/TOC.md)
+##### <a name='5e5e620e2c50eb5a5cf8948194555e836d4dd8a73895'></a> Source: [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps/blob/2af4d73109745381244b48d5c599b8e03a6ddb7b/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/0416db08164a66b7daad6c343a7cb340a511a2f0/ol-handoff/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
-* Handoff Datetime: 2016-06-16 18:53:11
+* Handoff File: [introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/7dc11ee1a3deccb3fc7209a7919ca4dd7c28bb89/ol-handoff/Microsoft/windows-apps.ru-ru/master/introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.ru-ru.xlf)
+* Handoff Datetime: 2016-06-16 19:58:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/e7872f786e987c46c3fca5f20ec42607f78920f2/windows-apps-src/TOC.md)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
+* Current Target File: [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/e7872f786e987c46c3fca5f20ec42607f78920f2/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md)
+* Current Handback File: [introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.ru-ru.xlf)
 * Current Handback Datetime: 2016-05-30 14:06:03
+* [Back to Top](#report-top)
+
+##### <a name='bef6ee26876bdbb30799dd194279a493dbfa0a063904'></a> Source: [windows-apps-src\xbox-apps\whats-new.md](https://github.com/Microsoft/windows-apps/blob/6858afc53180a8b3ce026dc7b8dee02eb0af5dd4/windows-apps-src/xbox-apps/whats-new.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [whats-new.b8d20ae2cec9ae573cc97899a792d28d9922e924.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/7dc11ee1a3deccb3fc7209a7919ca4dd7c28bb89/ol-handoff/Microsoft/windows-apps.ru-ru/master/whats-new.b8d20ae2cec9ae573cc97899a792d28d9922e924.ru-ru.xlf)
+* Handoff Datetime: 2016-06-16 19:58:05
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
 
