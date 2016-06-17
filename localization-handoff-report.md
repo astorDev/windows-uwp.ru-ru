@@ -6,19 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\whats-new.md](https://github.com/Microsoft/windows-apps/blob/59019f209729b56e02ebdbdfd53a8fbf835c69f7/windows-apps-src/xbox-apps/whats-new.md) | HandedOffSuccess | [Details](#dfa94ad42a79d0f6b3f72fbf2efe9ce043532c563913)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/387426186b375f26a7ac62cf4383ac16dba107a1/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#a88e5fd1900c798371eee0d454c1ca4ce8360bb33780)
 
 ## Item Details
-##### <a name='dfa94ad42a79d0f6b3f72fbf2efe9ce043532c563913'></a> Source: [windows-apps-src\xbox-apps\whats-new.md](https://github.com/Microsoft/windows-apps/blob/59019f209729b56e02ebdbdfd53a8fbf835c69f7/windows-apps-src/xbox-apps/whats-new.md)
-* Status: HandedOffSuccess
+##### <a name='a88e5fd1900c798371eee0d454c1ca4ce8360bb33780'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/387426186b375f26a7ac62cf4383ac16dba107a1/windows-apps-src/TOC.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [whats-new.b8d20ae2cec9ae573cc97899a792d28d9922e924.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/bb47cdd42737f2aa99ac26885ae9b74c0426ae81/ol-handoff/Microsoft/windows-apps.ru-ru/master/whats-new.b8d20ae2cec9ae573cc97899a792d28d9922e924.ru-ru.xlf)
-* Handoff Datetime: 2016-06-17 15:52:31
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/5b527b16dd50667d55e5ee3c72a6da486547f6e7/ol-handoff/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
+* Handoff Datetime: 2016-06-17 18:08:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/e7872f786e987c46c3fca5f20ec42607f78920f2/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
+* Current Handback Datetime: 2016-05-30 14:06:03
 * [Back to Top](#report-top)
 
 
