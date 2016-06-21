@@ -1,16 +1,16 @@
 ---
-title: Кодирование и декодирование данных
-description: В этом примере кода показано, как кодировать и декодировать данные base64 и шестнадцатеричные данные в приложении универсальной платформы Windows (UWP).
+title: Encode and decode data
+description: This example code shows how to encode and decode base64 and hexadecimal data in an Universal Windows Platform (UWP) app.
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
 author: awkoren
 ---
 
-# Кодирование и декодирование данных
+# Encode and decode data
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этом примере кода показано, как кодировать и декодировать данные base64 и шестнадцатеричные данные в приложении универсальной платформы Windows (UWP).
+This example code shows how to encode and decode base64 and hexadecimal data in an Universal Windows Platform (UWP) app.
 
 ```cs
 public void EncodeDecodeBase64()
@@ -39,6 +39,6 @@ public void EncodeDecodeHex()
 ```
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO3-->
 
 

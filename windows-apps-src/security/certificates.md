@@ -1,37 +1,37 @@
 ---
-title: Введение в сертификаты
-description: В этой статье описывается использование сертификатов в приложениях универсальной платформы Windows (UWP).
+title: Intro to certificates
+description: This article discusses the use of certificates in Universal Windows Platform (UWP) apps.
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 author: awkoren
 ---
 
-# Введение в сертификаты
+# Intro to certificates
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-В этой статье описывается использование сертификатов в приложениях UWP. Цифровые сертификаты применяются в шифровании с открытым ключом для привязки открытого ключа к пользователю, компьютеру или организации. Чаще всего удостоверения привязки используются для проверки подлинности одного объекта по отношению к другому. Например, часто сертификаты используются для проверки подлинности веб-сервера по отношению к пользователю и пользователя по отношению к веб-серверу. Можно создавать запросы сертификатов и устанавливать или импортировать выданные сертификаты. Сертификат также можно регистрировать в иерархии сертификатов.
+This article discusses the use of certificates in Universal Windows Platform (UWP) apps. Digital certificates are used in public key cryptography to bind a public key to a person, computer, or organization. The bound identities are most often used to authenticate one entity to another. For example, certificates are often used to authenticate a web server to a user and a user to a web server. You can create certificate requests and install or import issued certificates. You can also enroll a certificate in a certificate hierarchy.
 
-### Общие хранилища сертификатов
+### Shared certificate stores
 
-Приложения UWP используют новую изоляционистскую модель приложений, представленную в Windows 8. В этой модели приложения работают внутри низкоуровневого структурного элемента операционной системы, называемого контейнером приложения, который закрывает приложению доступ к ресурсам или файлам за своими пределами, если на это нет явного разрешения. В следующих разделах описаны последствия использования этой модели в инфраструктуре открытых ключей (PKI).
+UWP apps use the new isolationist application model introduced in Windows 8. In this model, apps run in low-level operating system construct, called an app container, that prohibits the app from accessing resources or files outside of itself unless explicitly permitted to do so. The following sections describe the implications this has on public key infrastructure (PKI).
 
-### Хранение сертификатов для контейнера приложения
+### Certificate storage per app container
 
-Сертификаты, предназначенные для использования в конкретном контейнере приложения, хранятся в отдельных для каждого пользователя и контейнера местах. Приложение, выполняющееся внутри контейнера, имеет доступ на запись только к своему хранилищу сертификатов. Если приложение добавляет сертификаты в какое-либо из своих хранилищ, другие приложения не могут читать эти сертификаты. Когда приложение удаляется, вместе с ним удаляются и его собственные сертификаты. Приложение имеет также доступ на чтение ко всем хранилищам сертификатов локального компьютера, кроме хранилищ MY и REQUEST.
+Certificates that are intended for use in a specific app container are stored in per user, per app container locations. An app running in an app container has write access to only its own certificate storage. If the application adds certificates to any of its stores, these certificates cannot be read by other apps. If an app is uninstalled, any certificates specific to it are also removed. An app also has read access to local machine certificate stores other than the MY and REQUEST store.
 
-### Кэш
+### Cache
 
-У каждого контейнера приложения есть изолированный кэш, в котором могут сохраняться сертификаты поставщиков, необходимые для проверки, списки отзыва сертификатов (CRL) и ответы OCSP.
+Each app container has an isolated cache in which it can store issuer certificates needed for validation, certificate revocation lists (CRL), and online certificate status protocol (OCSP) responses.
 
-### Общие сертификаты и ключи
+### Shared certificates and keys
 
-Когда в устройство чтения смарт-карт вставляется смарт-карта, действие сертификатов и ключей, содержащихся на карте, распространяется на хранилище MY пользователя, где любое выполняемое пользователем приложение с полным доверием может совместно использовать эти ключи и сертификаты. Однако по умолчанию контейнеры приложения лишены доступа к пользовательскому хранилищу MY.
+When a smart card is inserted into a reader, the certificates and keys contained on the card are propagated to the user MY store where they can be shared by any full-trust application the user is running. By default, however, app containers do not have access to the per user MY store.
 
-Устранить эту проблему и разрешить группам субъектов доступ к группам ресурсов можно с помощью модели изоляции для контейнера приложения, поддерживающей концепцию возможностей. Возможность — это атрибут, который обеспечивает процессу контейнера приложения доступ к конкретному ресурсу. Например, возможность sharedUserCertificates предоставляет контейнеру приложения доступ на чтение к сертификатам и ключам, находящимся в пользовательском хранилище MY и хранилище доверенных корневых сертификатов смарт-карты. При этом она не предоставляет доступа на чтение к хранилищу REQUEST пользователя.
+To address this issue and enable groups of principals to access groups of resources, the app container isolation model supports the capabilities concept. A capability allows an app container process to access a specific resource. The sharedUserCertificates capability grants an app container read access to the certificates and keys contained in the user MY store and the Smart Card Trusted Roots store. The capability does not grant read access to the user REQUEST store.
 
-Возможность sharedUserCertificates объявляется в манифесте, как показано в следующем примере.
+You specify the sharedUserCertificates capability in the manifest as shown in the following example.
 
 ```xml
 <Capabilities>
@@ -39,62 +39,62 @@ author: awkoren
 </Capabilities>
 ```
 
-## Поля сертификата
+## Certificate fields
 
 
-Со временем стандарт сертификатов открытого ключа X.509 подвергался пересмотрам. Каждая последующая версия структуры данных сохраняла поля, существовавшие в предыдущих версиях, и к ней добавлялись новые, как показано ниже.
+The X.509 public key certificate standard has been revised over time. Each successive version of the data structure has retained the fields that existed in the previous versions and added more, as shown in the following illustration.
 
-![Версии 1, 2 и 3 сертификата X.509](images/x509certificateversions.png)
+![x.509 certificate versions 1, 2, and 3](images/x509certificateversions.png)
 
-Некоторые из этих полей и расширений можно задавать непосредственно при использовании класса [**CertificateRequestProperties**](https://msdn.microsoft.com/library/windows/apps/br212079) для создания запроса сертификата, но для большинства полей и расширений это выполнить невозможно. Такие поля и расширения могут быть заполнены центром, выдающим сертификат, или могут быть оставлены пустыми. Дополнительные сведения об этих полях см. в следующих разделах:
+Some of these fields and extensions can be specified directly when you use the [**CertificateRequestProperties**](https://msdn.microsoft.com/library/windows/apps/br212079) class to create a certificate request. Most cannot. These fields can be filled by the issuing authority or they can be left blank. For more information about the fields, see the following sections:
 
-### Поля, версия 1
+### Version 1 fields
 
-| Поле               | Описание                                                                                                                                                                                                                                                                 |
+| Field               | Description                                                                                                                                                                                                                                                                 |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Версия             | Указывает номер версии закодированного сертификата. Текущие возможные значения этого поля: 0, 1 или 2.                                                                                                                                                       |
-| Серийный номер       | Содержит положительное уникальное целое число, присвоенное сертификату центром сертификации (ЦС).                                                                                                                                                                        |
-| Алгоритм подписи | Содержит идентификатор объекта (ИО), указывающий алгоритм, применявшийся ЦС для подписания сертификата. Например, 1.2.840.113549.1.1.5 указывает на использование хэш-алгоритма SHA-1 вместе с алгоритмом шифрования RSA, разработанного RSA Laboratories.                            |
-| Поставщик              | Содержит различающееся имя (РИ) X.500 ЦС, создавшего и подписавшего сертификат.                                                                                                                                                                               |
-| Срок действия            | Указывает промежуток времени, в течение которого действует сертификат. Для дат до конца 2049 года используется формат всемирного координированного времени (времени по Гринвичу) (ггммддччммссз). Для дат с 1 января 2050 года используется универсальный формат времени (ггггммддччммссз). |
-| Субъект             | Содержит различающееся имя X.500 объекта, связанного с открытым ключом, содержащимся в сертификате.                                                                                                                                                             |
-| Открытый ключ          | Содержит открытый ключ и данные связанного алгоритма.                                                                                                                                                                                                               |
+| Version             | Specifies the version number of the encoded certificate. Currently, the possible values of this field are 0, 1, or 2.                                                                                                                                                       |
+| Serial Number       | Contains a positive, unique integer assigned by the certification authority (CA) to the certificate.                                                                                                                                                                        |
+| Signature Algorithm | Contains an object identifier (OID) that specifies the algorithm used by the CA to sign the certificate. For example, 1.2.840.113549.1.1.5 specifies a SHA-1 hashing algorithm combined with the RSA encryption algorithm from RSA Laboratories.                            |
+| Issuer              | Contains the X.500 distinguished name (DN) of the CA that created and signed the certificate.                                                                                                                                                                               |
+| Validity            | Specifies the time interval during which the certificate is valid. Dates through the end of 2049 use the Coordinated Universal Time (Greenwich Mean Time) format (yymmddhhmmssz). Dates beginning with January 1st, 2050 use the generalized time format (yyyymmddhhmmssz). |
+| Subject             | Contains an X.500 distinguished name of the entity associated with the public key contained in the certificate.                                                                                                                                                             |
+| Public Key          | Contains the public key and associated algorithm information.                                                                                                                                                                                                               |
 
  
 
-### Поля, версия 2
+### Version 2 fields
 
-Сертификат X.509 версии 2 содержит основные поля, определенные в версии 1, а также следующие поля.
+An X.509 version 2 certificate contains the basic fields defined in version 1 and adds the following fields.
 
-| Поле                     | Описание                                                                                                                                         |
+| Field                     | Description                                                                                                                                         |
 |---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Уникальный идентификатор поставщика  | Содержит уникальное значение, которое может быть использовано для того, чтобы имя ЦС по стандарту X.500 однозначно идентифицировало этот ЦС при последующем многократном использовании различными объектами.                  |
-| Уникальный идентификатор субъекта | Содержит уникальное значение, которое может быть использовано для того, чтобы имя субъекта по стандарту X.500 однозначно идентифицировало этот субъект при последующем многократном использовании различными объектами. |
+| Issuer Unique Identifier  | Contains a unique value that can be used to make the X.500 name of the CA unambiguous when reused by different entities over time.                  |
+| Subject Unique Identifier | Contains a unique value that can be used to make the X.500 name of the certificate subject unambiguous when reused by different entities over time. |
  
 
-### Расширения, версия 3
+### Version 3 extensions
 
-Сертификат X.509 версии 3 содержит основные поля, определенные в версии 1 и в версии 2, а также следующие расширения сертификата.
+An X.509 version 3 certificate contains the fields defined in version 1 and version 2 and adds certificate extensions.
 
-| Поле                        | Описание                                                                                                                                                                                              |
+| Field                        | Description                                                                                                                                                                                              |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Идентификатор ключа центра сертификатов     | Идентифицирует открытый ключ центра сертификатов (ЦС), соответствующий закрытому ключу ЦС, который используется для подписания данного сертификата.                                                                              |
-| Основные ограничения            | Определяет, может ли объект использоваться в качестве ЦС, и, если может, номера подчиненных ЦС, которые могут присутствовать в нисходящей цепочке сертификатов.                                                           |
-| Политики сертификата         | Определяет политики, регулирующие выдачу сертификата, и возможные цели его использования.                                                                                            |
-| Точки распространения списков отзыва сертификатов (CRL)      | Содержит URI основного списка отзыва сертификата (CRL).                                                                                                                                          |
-| Использование улучшенного ключа           | Указывает механизм использования открытого ключа, содержащегося в данном сертификате.                                                                                                                   |
-| Дополнительное имя поставщика      | Определяет одну (или более одной) дополнительную форму имени для поставщика запроса сертификата.                                                                                                                  |
-| Использование ключа                    | Определяет ограничения для операций, которые могут выполняться с использованием открытого ключа, содержащегося в данном сертификате.                                                                                           |
-| Ограничения имени             | Определяет пространство имен, в котором должны быть размещены все имена субъектов в иерархии сертификата. Это расширение используется только в сертификате ЦС.                                                       |
-| Ограничения политики           | Ограничивает проверку пути при помощи запрещения сопоставлений политики или требования, чтобы каждый сертификат в данной иерархии содержал допустимый идентификатор политики. Это расширение используется только в сертификате ЦС. |
-| Сопоставления политики              | Указывает, какие политики в подчиненном ЦС соответствуют политикам в выдающем ЦС.                                                                                                                |
-| Период использования закрытого ключа     | Указывает срок действия закрытого ключа, отличающийся от срока действия сертификата, с которым связан этот закрытый ключ.                                                                             |
-| Дополнительное имя субъекта     | Определяет одну (или более одной) дополнительную форму имени для субъекта запроса сертификата. Примеры дополнительных форм могут включать адреса электронной почты, DNS-имена, IP-адреса и URI.                           |
-| Атрибуты каталога субъекта | Сообщает атрибуты идентификации, например национальную принадлежность субъекта сертификата. Значением расширения является последовательность пар значений кодов объекта (OID)                                                              |
-| Идентификатор ключа субъекта       | Служит для разделения нескольких открытых ключей, держателем которых является субъект сертификата. Значением расширения обычно является хэш SHA-1 ключа.                                                                   |
+| Authority Key Identifier     | Identifies the certification authority (CA) public key that corresponds to the CA private key used to sign the certificate.                                                                              |
+| Basic Constraints            | Specifies whether the entity can be used as a CA and, if so, the number of subordinate CAs that can exist beneath it in the certificate chain.                                                           |
+| Certificate Policies         | Specifies the policies under which the certificate has been issued and the purposes for which it can be used.                                                                                            |
+| CRL Distribution Points      | Contains the URI of the base certificate revocation list (CRL).                                                                                                                                          |
+| Enhanced Key Usage           | Specifies the manner in which the public key contained in the certificate can be used.                                                                                                                   |
+| Issuer Alternative Name      | Specifies one or more alternative name forms for the issuer of the certificate request.                                                                                                                  |
+| Key Usage                    | Specifies restrictions on the operations that can be performed by the public key contained in the certificate.                                                                                           |
+| Name Constraints             | Specifies the namespace within which all subject names in a certificate hierarchy must be located. The extension is used only in a CA certificate.                                                       |
+| Policy Constraints           | Constrains path validation by prohibiting policy mapping or by requiring that each certificate in the hierarchy contain an acceptable policy identifier. The extension is used only in a CA certificate. |
+| Policy Mappings              | Specifies the policies in a subordinate CA that correspond to policies in the issuing CA.                                                                                                                |
+| Private Key Usage Period     | Specifies a different validity period for the private key than for the certificate with which the private key is associated.                                                                             |
+| Subject Alternative Name     | Specifies one or more alternative name forms for the subject of the certificate request. Example alternative forms include email addresses, DNS names, IP addresses, and URIs.                           |
+| Subject Directory Attributes | Conveys identification attributes such as the nationality of the certificate subject. The extension value is a sequence of OID-value pairs.                                                              |
+| Subject Key Identifier       | Differentiates between multiple public keys held by the certificate subject. The extension value is typically a SHA-1 hash of the key.                                                                   |
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO3-->
 
 

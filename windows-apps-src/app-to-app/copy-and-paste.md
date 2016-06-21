@@ -1,33 +1,33 @@
 ---
-description: В этой статье объясняется, как обеспечить поддержку копирования и вставки в приложениях универсальной платформы Windows (UWP) с помощью буфера обмена.
-title: Копирование и вставка
+description: This article explains how to support copy and paste in Universal Windows Platform (UWP) apps using the clipboard.
+title: Copy and paste
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 author: awkoren
 ---
-#Копирование и вставка
+#Copy and paste
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x можно найти в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-В этой статье объясняется, как обеспечить поддержку копирования и вставки в приложениях универсальной платформы Windows (UWP) с помощью буфера обмена. Копирование и вставка — классический способ обмена данными между приложениями или внутри одного приложения. Почти каждое приложение в той или иной степени поддерживает операции буфера обмена.
-
-## Проверка встроенной поддержки буфера обмена
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Во многих случаях вам не потребуется писать какой-либо код для поддержки операций буфера обмена. Многие элементы управления XAML, которые вы по умолчанию можете использовать для создания приложений, поддерживают операции буфера обмена. Подробнее о доступных элементах управления см. в [списке элементов управления][ControlsList].
+This article explains how to support copy and paste in Universal Windows Platform (UWP) apps using the clipboard. Copy and paste is the classic way to exchange data either between apps, or within an app, and almost every app can support clipboard operations to some degree.
 
-## Подготовка
+## Check for built-in clipboard support
 
-Сначала добавьте в приложение пространство имен [**Windows.ApplicationModel.DataTransfer**][DataTransfer]. Затем добавьте экземпляр объекта [**DataPackage**][DataPackage]. Этот объект содержит данные, которые пользователь хочет скопировать, и все свойства (например описание), которые вы захотите в него включить.
+
+In many cases, you do not need to write code to support clipboard operations. Many of the default XAML controls you can use to create apps already support clipboard operations. For more information about which controls are available, see the [controls list][ControlsList].
+
+## Get set up
+
+First, include the [**Windows.ApplicationModel.DataTransfer**][DataTransfer] namespace in your app. Then, add an instance of the [**DataPackage**][DataPackage] object. This object contains both the data the user wants to copy and any properties (such as a description) that you want to include.
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
 DataPackage dataPackage = new DataPackage();
 ```
 
-## Копирование и вырезание
+## Copy and cut
 
-Копирование и вырезание (или по-другому перемещение) работают практически так же. Выберите необходимую операцию с помощью свойства [**DataPackage.RequestedOperation**][RequestedOperation].
+Copy and cut (also referred to as move) work almost exactly the same. Choose which operation you want using the [**DataPackage.RequestedOperation**][RequestedOperation] property.
 
 ```cs
 // copy 
@@ -36,20 +36,20 @@ dataPackage.RequestedOperation = DataPackageOperation.Copy;
 dataPackage.RequestedOperation = DataPackageOperation.Move;
 ```
 
-Затем вы можете добавить выбранные пользователем данные в объект [**DataPackage**][DataPackage]. Если класс **DataPackage** поддерживает эти данные, вы можете использовать один из соответствующих методов в объекте **DataPackage**. Вот как добавить текст:
+Next, you can add the data that a user has selected to the [**DataPackage**][DataPackage] object. If this data is supported by the **DataPackage** class, you can use one of the corresponding methods in the **DataPackage** object. Here's how to add text:
 
 ```cs
 dataPackage.SetText("Hello World!");
 ```
 
-Наконец добавьте [**DataPackage**][DataPackage] в буфер обмена, вызвав статический метод [**Clipboard.SetContent**][SetContent].
+The last step is to add the [**DataPackage**][DataPackage] to the clipboard by calling the static [**Clipboard.SetContent**][SetContent] method.
 
 ```cs
 Clipboard.SetContent(dataPackage);
 ```
-## Вставка
+## Paste
 
-Чтобы получить содержимое буфера обмена, вызовите статический метод [**Clipboard.GetContent**[GetContent]. Этот метод возвращает объект [**DataPackageView**][DataPackageView] с его содержимым. Этот объект практически идентичен объекту [**DataPackage**][DataPackage], но его содержимое доступно только для чтения. Чтобы определить доступные форматы данных, вы можете использовать метод [**AvailableFormats**][AvailableFormats] или [**Contains**][Contains] этого объекта. Затем вы можете вызвать соответствующий метод **DataPackageView**, чтобы получить эти данные.
+To get the contents of the clipboard, call the static [**Clipboard.GetContent**[GetContent] method. This method returns a [**DataPackageView**][DataPackageView] that contains the content. This object is almost identical to a [**DataPackage**][DataPackage] object, except that its contents are read-only. With that object, you can use either the [**AvailableFormats**][AvailableFormats] or the [**Contains**][Contains] method to identify what formats are available. Then, you can call the corresponding **DataPackageView** method to get the data.
 
 ```cs
 DataPackageView dataPackageView = Clipboard.GetContent();
@@ -61,9 +61,9 @@ if (dataPackageView.Contains(StandardDataFormats.Text))
 }
 ```
 
-## Отслеживание изменений в буфере обмена
+## Track changes to the clipboard
 
-В дополнение к командам копирования и вставки вам также может потребоваться отслеживать изменения в буфере обмена. Это можно сделать с помощью обработки события [**Clipboard.ContentChanged**][ContentChanged] из буфера обмена.
+In addition to copy and paste commands, you may also want to track clipboard changes. Do this by handling the clipboard's [**Clipboard.ContentChanged**][ContentChanged] event.
 
 ```cs
 Clipboard.ContentChanged += (s, e) => 

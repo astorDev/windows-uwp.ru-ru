@@ -1,16 +1,16 @@
 ---
-title: Преобразования между строками и двоичными данными
-description: В этом примере кода показано, как выполнять преобразование между строками и двоичными данными в приложении универсальной платформы Windows (UWP).
+title: Convert between strings and binary data
+description: This example code shows how to convert between strings and binary data in an Universal Windows Platform (UWP) app.
 ms.assetid: AED4C74F-E63B-4980-BB4D-28ACCC1AB58B
 author: awkoren
 ---
 
-# Преобразование между строками и двоичными данными
+# Convert between strings and binary data
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этом примере кода показано, как выполнять преобразование между строками и двоичными данными в приложении универсальной платформы Windows (UWP).
+This example code shows how to convert between strings and binary data in an Universal Windows Platform (UWP) app.
 
 ```cs
 public void ConvertData()
@@ -29,6 +29,6 @@ public void ConvertData()
 }
 ```
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO3-->
 
 

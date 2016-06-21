@@ -1,49 +1,49 @@
 ---
-description: В этой статье рассказывается, как добавить возможность перетаскивания в приложение универсальной платформы Windows (UWP).
-title: Перетаскивание
+description: This article explains how to add dragging and dropping in your Universal Windows Platform (UWP) app.
+title: Drag and drop
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 author: awkoren
 ---
-# Перетаскивание
+# Drag and drop
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-В этой статье рассказывается, как добавить возможность перетаскивания в приложение универсальной платформы Windows (UWP). Перетаскивание — это классический естественный способ взаимодействовать с таким содержимым, как изображения и файлы. После реализации перетаскивание работает без проблем во всех направлениях, в том числе из приложения в приложение, из приложения на рабочий стол и с рабочего стола в приложение.
+This article explains how to add dragging and dropping in your Universal Windows Platform (UWP) app. Drag and drop is a classic, natural way of interacting with content such as images and files. Once implemented, drag and drop works seamlessly in all directions, including app-to-app, app-to-desktop, and desktop-to app.
 
-## Определение допустимых областей
+## Set valid areas
 
-С помощью свойств [**AllowDrop**][AllowDrop] and [**CanDrag**][CanDrag] можно назначить области приложения, в которых будет работать перетаскивание.
+Use the [**AllowDrop**][AllowDrop] and [**CanDrag**][CanDrag] properties to designate the areas of your app valid for dragging and dropping.
 
-Разметка ниже демонстрирует, как сделать перетаскивание доступным для конкретной области приложения, используя [**AllowDrop**][AllowDrop] в XAML. Если пользователь попытается отпустить перетаскиваемое содержимое в другом месте, система не позволит сделать это. Если вы хотите, чтобы пользователи могли использовать перетаскивание в любом месте вашего приложения, установите весь фон в качестве места переноса.
+The markup below shows how to set a specific area of the app as a valid for dropping using the [**AllowDrop**][AllowDrop] in XAML. If a user tries to drop somewhere else, the system won't let them. If you want users to be able to drop items anywhere on your app, set the entire background as a drop target.
 
-[!code-xml[Основной блок](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
+[!code-xml[[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
 
-Вы чаще всего конкретизируете, что именно пользователи смогут перетаскивать. Это будут только определенные элементы, например картинки, а не вообще все в приложении. Здесь описано, как установить [**CanDrag**][CanDrag] в XAML.
+With dragging, you'll usually want to be specific about what's draggable. Users will want to drag certain items, like pictures, not everything in your app. Here's how to set [**CanDrag**][CanDrag] using XAML.
 
-[!code-xml[Основной блок](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
+[!code-xml[[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
 
-Чтобы разрешить перетаскивание, больше ничего делать не нужно, если только вы не собираетесь менять пользовательский интерфейс (об этом рассказывается дальше в статье). Для настройки завершения перетаскивания придется выполнить некоторые действия.
+You don't need to do any other work to allow dragging, unless you want to customize the UI (which is covered later in this article). Dropping requires a few more steps.
 
-## Обработка события DragOver
+## Handle the DragOver event
 
-Событие [**DragOver**][DragOver] возникает, когда пользователь перетаскивает элемент в приложении, но еще не отпустил кнопку мыши. В этом обработчике необходимо с помощью свойства [**DragEventArgs.AcceptedOperation**][AcceptedOperation] выбрать, какой вид операции будет поддерживать ваше приложение. Наиболее распространено копирование.
+The [**DragOver**][DragOver] event fires when a user has dragged an item over your app, but not yet dropped it. In this handler, you need to specify what kind of operations your app supports using the [**DragEventArgs.AcceptedOperation**][AcceptedOperation] property. Copy is the most common.
 
-[!code-cs[Основной блок](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
+[!code-cs[[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
 
-## Обработка завершения перетаскивания
+## Process the Drop event
 
-Событие [**Drop**][Drop] возникает, когда пользователь отпускает элементы в допустимой области приложения. Обработайте их с помощью свойства [**DragEventArgs.DataView**][DataView].
+The [**Drop**][Drop] event occurs when the user releases items in a valid drop area. Process them using the [**DragEventArgs.DataView**][DataView] property.
 
-Для простоты в примере ниже предположим, что пользователь перетащил одну фотографию. На самом деле пользователи могут перетаскивать несколько элементов разных форматов одновременно. Приложение должно обрабатывать эту возможность, проверяя, какие типы файлов перетащены, и обрабатывая их соответственно. Если пользователь пытается сделать что-то, не поддерживаемое приложением, ему необходимо показать соответствующее уведомление.
+For simplicity in the example below, we'll assume the user dropped a single photo and access. In reality, users can drop multiple items of varying formats simultaneously. Your app should handle this possibility by checking what types of files were dropped and processing them accordingly, and notifying the user if they're trying to do something your app don't support.
 
-[!code-cs[Основной блок](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
+[!code-cs[[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
 
-## Настройка пользовательского интерфейса
+## Customize the UI
 
-Система предоставляет пользовательский интерфейс по умолчанию для перетаскивания. Также можно настроить различные области пользовательского интерфейса, например пользовательские заголовки и глифы, или вообще отключить отображение пользовательского интерфейса. Чтобы настроить пользовательский интерфейс, используйте свойство [**DragUIOverride**][DragUiOverride] в обработчике событий [**DragOver**][DragOver].
+The system provides a default UI for dragging and dropping. However, you can also choose to customize various parts of the UI by setting custom captions and glyphs, or by opting not to show a UI at all. To customize the UI, use the [**DragUIOverride**][DragUiOverride] property in the [**DragOver**][DragOver] event handler.
 
-[!code-cs[Основной блок](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
+[!code-cs[[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
 
  <!-- LINKS -->
 [AllowDrop]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx

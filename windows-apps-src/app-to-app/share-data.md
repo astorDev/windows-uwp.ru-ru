@@ -1,66 +1,66 @@
 ---
-description: В этой статье объясняется, как обеспечить поддержку контракта отправки данных в приложении универсальной платформы Windows (UWP).
-title: Предоставление общего доступа к данным
+description: This article explains how to support the Share contract in a Universal Windows Platform (UWP) app.
+title: Share data
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: awkoren
 ---
 
-# Предоставление общего доступа к данным
+# Share data
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этой статье объясняется, как обеспечить поддержку контракта отправки данных в приложении универсальной платформы Windows (UWP). Контракт отправки данных — это простой способ, которым приложения могут быстро предоставлять друг другу общий доступ к данным, например к тексту, ссылкам, фотографиям и видео. Например, пользователю может быть необходимо поделиться со своими друзьями ссылкой на веб-страницу в приложении социальной сети или сохранить ее в приложении для заметок, чтобы вернуться к ней позже.
+This article explains how to support the Share contract in a Universal Windows Platform (UWP) app. The Share contract is an easy way to quickly share data, such as text, links, photos, and videos, between apps. For example, a user might want to share a webpage with their friends using a social networking app, or save a link in a notes app to refer to later.
 
-## Настройка обработчика событий
+## Set up an event handler
 
-Добавьте обработчик событий [**DataRequested**][DataRequested], который будет срабатывать при каждом вызове функции общего доступа пользователем. Это может происходить, когда пользователь касается элемента управления в приложении (например, кнопки или команды на панели приложения), или автоматически в определенном сценарии (если, например, пользователь заканчивает уровень и получает рекордный результат).
+Add a [**DataRequested**][DataRequested] event handler to be called whenever a user invokes share. This can occur either when the user taps a control in your app (such as a button or app bar command) or automatically in a specific scenario (if the user finishes a level and gets a high score, for example).
 
-[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+[!code-cs[[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
-При возникновении события [**DataRequested**][DataRequested] приложение получает объект [**DataRequest**][DataRequest]. Этот объект содержит объект [**DataPackage**][DataPackage], который можно использовать, чтобы предоставить содержимое, которым пользователь хочет поделиться. Вы должны указать название и данные, к которым необходимо предоставить общий доступ. Описание необязательно, но рекомендуется.
+When a [**DataRequested**][DataRequested] event occurs, your app receives a [**DataRequest**][DataRequest] object. This contains a [**DataPackage**][DataPackage] that you can use to provide the content that the user wants to share. You must provide a title and data to share. A description is optional, but recommended.
 
-[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+[!code-cs[[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
-## Выбор данных
+## Choose data
 
-Можно делиться разными типами данных, включая:
+You can share various types of data, including:
 
--   Обычный текст
--   Универсальные коды ресурсов (URI)
+-   Plain text
+-   Uniform Resource Identifiers (URIs)
 -   HTML
--   Форматированный текст
--   Растровые изображения
--   Обычный текст
--   Файлы
--   Пользовательские данные, определенные разработчиком
+-   Formatted text
+-   Bitmaps
+-   Plain text
+-   Files
+-   Custom developer-defined data
 
-Объект [**DataPackage**][DataPackage] может содержать один или несколько указанных форматов в любом сочетании. В примере ниже показано, как предоставить общий доступ к тексту.
+The [**DataPackage**][DataPackage] object can contain one or more of these formats, in any combination. The following example demonstrates sharing text.
 
-[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+[!code-cs[[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
-## Задание свойств
+## Set properties
 
-При подготовке данных пакета к совместному использованию можно установить ряд свойств, дающих дополнительную информацию о содержимом, предназначенном для общего доступа. Благодаря этим свойствам конечное приложение может улучшить взаимодействие с пользователем. Например, предоставление описания может быть полезным, если пользователь предоставляет общий доступ более чем одному приложению. Добавление эскиза при совместном использовании рисунка или ссылки на веб-страницу устанавливает визуальную связь с пользователем. Подробнее об этом см. в разделе [**DataPackage.DataPackagePropertySet**][DataPackagePropertySet].
+When you package data for sharing, you can supply a variety of properties that provide additional information about the content being shared. These properties help target apps improve the user experience. For example, a description helps when the user is sharing content with more than one app. Adding a thumbnail when sharing an image or a link to a web page provides a visual reference to the user. For more information, see [**DataPackage.DataPackagePropertySet**][DataPackagePropertySet].
 
-Все свойства, кроме заголовка, не являются обязательными. Свойство заголовка является обязательным и должно быть задано.
+All properties except the title are optional. The title property is mandatory and must be set.
 
-[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+[!code-cs[[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
-## Запуск пользовательского интерфейса общего доступа
+## Launch the share UI
 
-Пользовательский интерфейс для общего доступа предоставляется системой. Чтобы запустить его, вызовите метод [**ShowShareUI**][ShowShareUi].
+A UI for sharing is provided by the system. To launch it, call the [**ShowShareUI**][ShowShareUi] method.
 
-[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+[!code-cs[[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
-## Обработка ошибок
+## Handle errors
 
-В большинстве случаев предоставление общего доступа к содержимому – линейный процесс. Тем не менее всегда существует вероятность непредвиденных событий. Например, приложению может потребоваться, чтобы пользователь выбрал содержимое для общего доступа, но при этом пользователь ничего не выбирает. Для обработки таких ситуаций используйте метод [**FailWithDisplayText**][FailWithDisplayText], который отобразит соответствующее сообщение для пользователя, если что-то пойдет не так.
+In most cases, sharing content is a straightforward process. However, there's always a chance that something unexpected could happen. For example, the app might require the user to select content for sharing but the user didn't select any. To handle these situations, use the [**FailWithDisplayText**][FailWithDisplayText] method, which will display a message to the user if something goes wrong.
 
-## Задержка общего доступа с помощью делегатов
+## Delay share with delegates
 
-Готовить данные для общего доступа сразу не всегда целесообразно. Например, если ваше приложение поддерживает отправку большого файла изображения в нескольких различных графических форматах, то создавать все эти изображения до того, как пользователь сделает свой выбор, малоэффективно.
+Sometimes, it might not make sense to prepare the data that the user wants to share right away. For example, if your app supports sending a large image file in several different possible formats, it's inefficient to create all those images before the user makes their selection.
 
-Чтобы решить эту проблему, [**DataPackage**][DataPackage] может содержать делегат – функцию, которая вызывается, когда принимающее приложение запрашивает данные. Рекомендуется использовать делегат, когда пользователь хочет предоставить общий доступ к ресурсоемким данным.
+To solve this problem, a [**DataPackage**][DataPackage] can contain a delegate — a function that is called when the receiving app requests data. We recommend using a delegate any time that the data a user wants to share is resource-intensive.
 
 <!-- For some reason, this snippet was inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -87,8 +87,8 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 }
 ```
 
-## Ссылки по теме
-* [Получение данных](receive-data.md)
+## Related topics
+* [Receive data](receive-data.md)
 
 
 <!-- LINKS -->
