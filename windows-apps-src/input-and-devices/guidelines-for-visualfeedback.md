@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Используйте визуальную обратную связь, чтобы показать пользователю, что его взаимодействие с приложением Магазина Windows обнаружено, интерпретировано и обработано.
-title: Визуальная обратная связь
+Description: "Используйте визуальную обратную связь, чтобы показать пользователю, что его взаимодействие с приложением Магазина Windows обнаружено, интерпретировано и обработано."
+title: "Визуальная обратная связь"
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: 287ec24dbc60be39c0f944c6d4a86205961fb770
+
 ---
 
 # Руководство по визуальной обратной связи
@@ -182,6 +185,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

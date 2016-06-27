@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-description: Вы можете включить голосовые функции в ваши приложения с помощью средств работы с голосовыми командами, распознавания и синтеза речи в Кортане.
-title: Взаимодействие с помощью голосовых функций
+description: "Вы можете включить голосовые функции в ваши приложения с помощью средств работы с голосовыми командами, распознавания и синтеза речи в Кортане."
+title: "Взаимодействие с помощью голосовых функций"
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
 template: detail.hbs
+ms.sourcegitcommit: bcc401c515cdba899fb2202ddddf5bd98b64aecd
+ms.openlocfilehash: bdcced680b69ce6ff9caf3ac860cb139fdfdaeff
+
 ---
 
 # Взаимодействие с помощью голосовых функций
@@ -236,6 +239,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: Отображает изображения в виде коллекции, например фотографий в альбоме или элементов на странице описания продукта. Каждый раз отображается одно изображение.
-title: Руководство по элементам пролистывания
+Description: "Отображает изображения в виде коллекции, например фотографий в альбоме или элементов на странице описания продукта. Каждый раз отображается одно изображение."
+title: "Руководство по элементам пролистывания"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
+
 ---
 # Представление пролистывания
 
@@ -208,6 +211,7 @@ stackPanel1.Children.Add(flipView1);
 - [**Класс CarouselPanel (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Добавьте Кортану в функциональные возможности вашего приложения с помощью голосовых команд.
-title: Рекомендации по проектированию для Кортаны
+Description: "Добавьте Кортану в функциональные возможности вашего приложения с помощью голосовых команд."
+title: "Рекомендации по проектированию для Кортаны"
 ms.assetid: A92C084B-9913-4718-9A04-569D51ACE55D
 label: Guidelines
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: 31442ed17b9b463cbf10cecb564278b86086bbf2
+
 ---
 
 # Рекомендации по проектированию для Кортаны
@@ -390,6 +393,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

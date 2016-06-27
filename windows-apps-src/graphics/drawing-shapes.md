@@ -1,8 +1,11 @@
 ---
 author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
-title: Рисование фигур
-description: Узнайте, как рисовать фигуры — эллипсы, прямоугольники, многоугольники и пути. При помощи класса Path в пользовательском интерфейсе XAML можно применять довольно сложный язык для рисования на основе векторов, например рисовать кривые Безье.
+title: "Рисование фигур"
+description: "Узнайте, как рисовать фигуры — эллипсы, прямоугольники, многоугольники и пути. При помощи класса Path в пользовательском интерфейсе XAML можно применять довольно сложный язык для рисования на основе векторов, например рисовать кривые Безье."
+ms.sourcegitcommit: 04a3c2dabc4b115faf4b06aa3d3a59c5c38ab95f
+ms.openlocfilehash: 42514e5119b646d196e0a1c7d3099ebed2225c69
+
 ---
 # Рисование фигур
 
@@ -187,7 +190,7 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
           </Path>
 ```
 
-Причиной, по которой, возможно, используется [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) с различными частями, является то, что каждая часть содержит свойства **Double** и **Point**, которые в перспективе могут использоваться для анимации пользовательского интерфейса. Это невозможно сделать с помощью формы сериализации [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data). Подробнее: [Раскадрованные анимации](storyboarded-animations.md).
+Использование [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) может повысить читаемость по сравнению с заполнением строковой переменной [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data). С другой стороны, [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) использует синтаксис, совместимый с определениями пути к изображению в формате масштабируемого векторного рисунка (SVG), поэтому он может быть полезен для переноса графики из SVG или в виде результата использования такого средства, как Blend.
 
  
 
@@ -198,6 +201,7 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

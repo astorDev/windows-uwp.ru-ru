@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Предоставьте прямые ссылки из службы фонового приложения в Кортане, чтобы запустить приложение на переднем плане в определенном состоянии или контексте.
-title: Прямая ссылка на фоновое приложение от Кортаны
+Description: "Предоставьте прямые ссылки из службы фонового приложения в Кортане, чтобы запустить приложение на переднем плане в определенном состоянии или контексте."
+title: "Прямая ссылка на фоновое приложение от Кортаны"
 ms.assetid: BE811A87-8821-476A-90E4-2E20D37E4043
 label: Deep link to a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: b89aa43dffa69d092615e1b408feac77d0caa87c
+
 ---
 
 # Прямая ссылка на фоновое приложение от Кортаны
@@ -65,11 +68,11 @@ template: detail.hbs
 
 Можно указать аргумент запуска для этой ссылки для открытия приложения с аналогичным службе приложения контекстом. Если не указать аргумент запуска, приложение запускается на главном экране.
 
-В этом примере из AdventureWorksVoiceCommandService.cs в **AdventureWorks** мы передаем указанный пункт назначения методу SendCompletionMessageForDestination, который извлекает все подходящие поездки и предоставляет прямую ссылку на приложение.
+В этом примере из AdventureWorksVoiceCommandService.cs в **AdventureWorks** мы передаем указанную строку назначения (`destination`) методу SendCompletionMessageForDestination, который извлекает все подходящие поездки и предоставляет прямую ссылку на приложение.
 
 Сначала мы создаем сообщение  [**VoiceCommandUserMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```), которое произносит **Кортана** и которое отображается на холсте **Кортаны**. Затем создается объект списка [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) для отображения коллекции карточек результата на холсте. 
 
-Затем эти два объекта передаются методу [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) объекта [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) (```response```). Затем в качестве значения свойства [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) мы устанавливаем пункт назначения в голосовой команде.
+Затем эти два объекта передаются методу [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) объекта [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) (`response`). Затем мы задаем значению свойства [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) объекта отклика значение `destination`, переданное этой функции. Когда пользователь касается плитки содержимого на полотне Кортаны, значения параметров передаются приложению через объект отклика.
 
 Наконец, мы вызываем метод [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) объекта [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).
 
@@ -288,6 +291,7 @@ if (args.Kind == ActivationKind.Protocol)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

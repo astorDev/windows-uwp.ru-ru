@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Узнайте, как решать проблемы с точностью распознавания речи, связанные с качеством голосового ввода.
-title: Решение проблем голосового ввода
+Description: "Узнайте, как решать проблемы с точностью распознавания речи, связанные с качеством голосового ввода."
+title: "Решение проблем голосового ввода"
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 6dcab14a290367250e152fb8a1944a924d5aaf46
+
 ---
 
 # Решение проблем голосового ввода
@@ -115,6 +118,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

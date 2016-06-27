@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Узнайте, как выбрать установленный язык для распознавания речи.
-title: Определение языка для распознавателя речи
+Description: "Узнайте, как выбрать установленный язык для распознавания речи."
+title: "Определение языка для распознавателя речи"
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 24393ef52d72aa08f9aab2d541e65ccb5f2aceed
+
 ---
 
 # Определение языка для распознавателя речи
@@ -37,7 +40,7 @@ template: detail.hbs
 
 **Рекомендации по взаимодействию с пользователем.  **
 
-Полезные подсказки по разработке практичного и привлекательного приложения с поддержкой голосовых функций см. в разделе [Рекомендации по проектированию голосовых функций](https://msdn.microsoft.com/library/windows/apps/dn596121).
+Полезные советы по разработке практичного и привлекательного приложения с поддержкой голосовых функций см. в разделе [Рекомендации по проектированию голосовых функций](https://msdn.microsoft.com/library/windows/apps/dn596121).
 
 ## <span id="Identify_the_default_language"></span><span id="identify_the_default_language"></span><span id="IDENTIFY_THE_DEFAULT_LANGUAGE"></span>Определение языка, используемого по умолчанию
 
@@ -110,9 +113,15 @@ var recognizer = new SpeechRecognizer(language);
 
 
 **Разработчикам**
-* Взаимодействие с помощью голосовых функций
-* Проектировщикам
-* [Рекомендации по проектированию голосовых функций](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Взаимодействие с помощью голосовых функций](speech-interactions.md)
+            
+          
+            **Проектировщикам**
+* [Рекомендации по проектированию голосовых функций](https://msdn.microsoft.com/library/windows/apps/dn596121)
+            
+          
+            **Примеры**
+* [Пример распознавания и синтеза речи](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
@@ -122,6 +131,7 @@ var recognizer = new SpeechRecognizer(language);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

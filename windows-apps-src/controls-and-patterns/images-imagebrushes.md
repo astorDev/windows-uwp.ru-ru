@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: Узнайте, как интегрировать изображения в приложение, в том числе как использовать API двух основных классов XAML — Image и ImageBrush.
-title: Изображения и кисти изображений
+Description: "Узнайте, как интегрировать изображения в приложение, в том числе как использовать API двух основных классов XAML — Image и ImageBrush."
+title: "Изображения и кисти изображений"
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
+
 ---
 # Изображения и кисти изображений
 
@@ -143,6 +146,7 @@ API для [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/wind
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

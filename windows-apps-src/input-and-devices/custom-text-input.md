@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: API основного текста в пространстве имен Windows.UI.Text.Core активируют приложение универсальной платформы Windows (UWP) для получения ввода текста из любой текстовой службы, поддерживаемой устройствами с Windows.
-title: Обзор пользовательского ввода текста
+Description: "API основного текста в пространстве имен Windows.UI.Text.Core активируют приложение универсальной платформы Windows (UWP) для получения ввода текста из любой текстовой службы, поддерживаемой устройствами с Windows."
+title: "Обзор пользовательского ввода текста"
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
+
 ---
 
 # Пользовательский ввод текста
@@ -60,103 +63,103 @@ API основного текста в пространстве имен [**Wind
 
 ### <span id="Insertion_point"></span><span id="insertion_point"></span><span id="INSERTION_POINT"></span>Точка вставки
 
-Текущее положение курсора, часто называемое точкой вставки, представляется путем установки значения **StartCaretPosition**, равного **EndCaretPosition**.
+Текущее положение курсора, часто называемое точкой вставки, представлено установкой **StartCaretPosition**, равного **EndCaretPosition**.
 
 ### <span id="Noncontiguous_selection"></span><span id="noncontiguous_selection"></span><span id="NONCONTIGUOUS_SELECTION"></span>Несвязанное выделение
 
-Некоторые элементы управления "Поле ввода" поддерживают несвязанное выделение. Например, приложения Microsoft Office поддерживают несколько произвольных выделений, и многие редакторы исходного кода поддерживают выделение столбца. Однако API основного текста не поддерживают несвязанное выделение. Элементы управления редактированием должны сообщать только об одном связанном выделении. Чаще всего это активный поддиапазон несвязанных выделений.
+Некоторые элементы управления редактированием поддерживают несвязанное выделение. Например, приложения Microsoft Office поддерживают несколько произвольных выделений, и многие редакторы исходного кода поддерживают выделение столбца. Однако API основного текста не поддерживают несвязанное выделение. Элементы управления редактированием должны сообщать только об одном связанном выделении. Чаще всего это активный поддиапазон несвязанных выделений.
 
 Например, рассмотрим этот поток текста.
 
-![пример схемы потока текста Есть два выделения: \[0, 1\] и \[6, 11\].
+![пример схемы потока текста](images/coretext/stream-2.png) Есть два выделения: \[0, 1\] and \[6, 11\]. Элемент управления редактированием должен сообщать только об одном из них: \[0, 1\] или \[6, 11\].
 
-## <span id="Working_with_text"></span><span id="working_with_text"></span><span id="WORKING_WITH_TEXT"></span>Элемент управления редактированием должен сообщать только об одном из них: \[0, 1\] или \[6, 11\].
+## <span id="Working_with_text"></span><span id="working_with_text"></span><span id="WORKING_WITH_TEXT"></span>Работа с текстом
 
-
-Работа с текстом
 
 Класс [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) обеспечивает поток текста между Windows и элементами управления редактированием с помощью события [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176), события [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) и метода [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172).
 
 Элемент управления редактированием получает текст с помощью событий [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176), которые создаются, когда пользователи взаимодействуют с методами ввода текста с клавиатуры, речевым вводом или IME.
 
-При изменении текста в вашем элементе управления "Поле ввода", например при вставке текста в элемент управления, необходимо уведомить Windows, вызвав [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172). Если текстовая служба запрашивает новый текст, вызывается событие [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175).
+При изменении текста в вашем элементе управления редактированием, например путем вставки текста в элемент управления, необходимо уведомить Windows, вызвав [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172).
 
-### <span id="Accepting_text_updates"></span><span id="accepting_text_updates"></span><span id="ACCEPTING_TEXT_UPDATES"></span>Необходимо предоставить новый текст в обработчике событий **TextRequested**.
+Если текстовая служба запрашивает новый текст, вызывается событие [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175). Необходимо предоставить новый текст в обработчике событий **TextRequested**.
 
-Принятие обновлений текста Элемент управления редактированием обычно должен принимать запросы на обновление текста, так как они представляют собой текст, который хочет ввести пользователь.
+### <span id="Accepting_text_updates"></span><span id="accepting_text_updates"></span><span id="ACCEPTING_TEXT_UPDATES"></span>Принятие обновлений текста
 
-1.  В обработчике событий [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) эти действия ожидаются от элемента управления редактированием:
-2.  Вставьте текст, определенный в [**CoreTextTextUpdatingEventArgs.Text**](https://msdn.microsoft.com/library/windows/apps/dn958236), в положение, указанное в [**CoreTextTextUpdatingEventArgs.Range**](https://msdn.microsoft.com/library/windows/apps/dn958234).
-3.  Установите выделение в положении, указанном в [**CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233).
+Элемент управления редактированием обычно должен принимать запросы на обновление текста, так как они представляют собой текст, который хочет ввести пользователь. В обработчике событий [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) эти действия ожидаются от элемента управления редактированием:
 
-Сообщите системе об успешном обновлении, установив для параметра [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) значение [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237). Например, это — состояние элемента управления "Поле ввода" до того, как пользователь ввел "d".
+1.  Вставьте текст, определенный в [**CoreTextTextUpdatingEventArgs.Text**](https://msdn.microsoft.com/library/windows/apps/dn958236), в положение, указанное в [**CoreTextTextUpdatingEventArgs.Range**](https://msdn.microsoft.com/library/windows/apps/dn958234).
+2.  Установите выделение в положении, указанном в [**CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233).
+3.  Уведомите систему об успешном обновлении, установив для параметра [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) значение [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237).
 
-![Точка вставки находится в \[10, 10\].
+Например, это состояние элемента управления редактированием до того, как пользователь ввел «d». Точка вставки находится в \[10, 10\].
 
--   пример схемы потока текста
--   Когда пользователь вводит «d», вызывается событие [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) со следующими данными [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229):
+![пример схемы потока текста](images/coretext/stream-3.png) Когда пользователь вводит «d», вызывается событие [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) со следующими данными [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229):
+
 -   [
               **Range**
             ](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
-
-[
+-   [
               **Text**
-            ](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d" [
+            ](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
+-   [
               **NewSelection**
             ](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
-![В вашем элементе управления редактированием примените указанные изменения и установите для параметра [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) значение **Succeeded**.](images/coretext/stream-4.png)
-### <span id="Rejecting_text_updates"></span><span id="rejecting_text_updates"></span><span id="REJECTING_TEXT_UPDATES"></span>Далее описано состояние элемента управления после применения изменений.
+В вашем элементе управления редактированием примените указанные изменения и установите для параметра [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) значение **Succeeded**. Далее описано состояние элемента управления после применения изменений.
 
-пример схемы потока текста Отклонение обновлений текста Иногда вы не можете применить обновления текста, так как запрошенный диапазон находится в области элемента управления редактированием, которую не следует изменять.
+![пример схемы потока текста](images/coretext/stream-4.png)
+### <span id="Rejecting_text_updates"></span><span id="rejecting_text_updates"></span><span id="REJECTING_TEXT_UPDATES"></span>Отклонение обновлений текста
 
-В этом случае вам не нужно применять изменения. Вместо этого сообщите системе о невозможности обновления, установив для параметра [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) значение [**CoreTextTextUpdatingResult.Failed**](https://msdn.microsoft.com/library/windows/apps/dn958237).
+Иногда вы не можете применить обновления текста, так как запрошенный диапазон находится в области элемента управления редактированием, которую не следует изменять. В этом случае вам не нужно применять изменения. Вместо этого уведомите систему о невозможности обновления, установив для параметра [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) значение [**CoreTextTextUpdatingResult.Failed**](https://msdn.microsoft.com/library/windows/apps/dn958237).
 
-### <span id="Notifying_text_changes"></span><span id="notifying_text_changes"></span><span id="NOTIFYING_TEXT_CHANGES"></span>Например, рассмотрим элемент управления "Поле ввода", который принимает только адрес электронной почты.
+Например, рассмотрим элемент управления редактированием, который принимает только адрес электронной почты. Пробелы должны быть отклонены, так как адреса электронной почты не могут содержать пробелов. Поэтому, когда вызываются события [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) для клавиши ПРОБЕЛ, необходимо просто установить для параметра [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) значение **Failed** в элементе управления редактированием.
 
-Пробелы должны быть отклонены, так как адреса электронной почты не могут содержать пробелов. Поэтому, когда вызываются события [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) для клавиши ПРОБЕЛ, необходимо просто установить для параметра [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) значение **Failed** в элементе управления редактированием. Уведомление об изменениях текста
+### <span id="Notifying_text_changes"></span><span id="notifying_text_changes"></span><span id="NOTIFYING_TEXT_CHANGES"></span>Уведомление об изменениях текста
 
 Иногда элемент управления редактированием вносит изменения в текст, например при вставке текста или автоматических исправлениях. В таких случаях вы должны уведомить текстовые службы об этих изменениях, вызвав метод [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172).
 
-![Например, это состояние элемента управления редактированием до вставки пользователем слова World.
+Например, это состояние элемента управления редактированием до вставки пользователем слова World. Точка вставки находится в \[6, 6\].
 
-![Точка вставки находится в \[6, 6\].
+![пример схемы потока текста](images/coretext/stream-5.png) Пользователь выполняет действие вставки, и элемент управления редактированием отображает следующий текст:
 
--   пример схемы потока текста
--   Пользователь выполняет действие вставки, и элемент управления редактированием отображает следующий текст:
--   пример схемы потока текста
+![пример схемы потока текста](images/coretext/stream-4.png) В этом случае необходимо вызвать [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) с такими аргументами:
 
-В этом случае необходимо вызвать [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) с такими аргументами:
+-   *modifiedRange* = \[6, 6\]
+-   *newLength* = 5
+-   *newSelection* = \[11, 11\]
 
-### <span id="Overriding_text_updates"></span><span id="overriding_text_updates"></span><span id="OVERRIDING_TEXT_UPDATES"></span>*modifiedRange* = \[6, 6\]
+Последует одно или несколько событий [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175), которые вы обрабатываете для обновления текста, находящегося в ведении текстовых служб.
 
-*newLength* = 5
+### <span id="Overriding_text_updates"></span><span id="overriding_text_updates"></span><span id="OVERRIDING_TEXT_UPDATES"></span>Переопределение обновлений текста
 
-*newSelection* = \[11, 11\] Последует одно или несколько событий [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175), которые вы обрабатываете для обновления текста, находящегося в ведении текстовых служб. Переопределение обновлений текста
+В вашем элементе управления редактированием, возможно, вам придется переопределить обновление текста для предоставления функций автозамены.
 
-![В вашем элементе управления редактированием, возможно, вам придется переопределить обновление текста для предоставления функций автозамены. Например, рассмотрим элемент управления редактированием, который предоставляет функцию исправления, оформляющую сужения. Это состояние элемента управления редактированием до того, как пользователь нажал клавишу ПРОБЕЛ для активации исправления. Точка вставки находится в \[3, 3\].
+Например, рассмотрим элемент управления редактированием, который предоставляет функцию исправления, оформляющую сужения. Это состояние элемента управления редактированием до того, как пользователь нажал клавишу ПРОБЕЛ для активации исправления. Точка вставки находится в \[3, 3\].
 
-![пример схемы потока текста Пользователь нажимает клавишу ПРОБЕЛ и вызывает соответствующее событие [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176). Элемент управления редактированием принимает обновление текста.
+![пример схемы потока текста](images/coretext/stream-6.png) Пользователь нажимает клавишу ПРОБЕЛ и вызывает соответствующее событие [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176). Элемент управления редактированием принимает обновление текста. Это состояние элемента управления редактированием в течение короткого момента перед завершением исправления. Точка вставки находится в \[4, 4\].
 
-![Это состояние элемента управления редактированием в течение короткого момента перед завершением исправления.
+![пример схемы потока текста](images/coretext/stream-7.png) Вне обработчика событий [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) элемент управления редактированием делает следующее исправление. Это состояние элемента управления редактированием после завершения исправления. Точка вставки находится в \[5, 5\].
 
--   Точка вставки находится в \[4, 4\].
--   пример схемы потока текста
--   Вне обработчика событий [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) элемент управления редактированием делает следующее исправление.
+![пример схемы потока текста](images/coretext/stream-8.png) В этом случае необходимо вызвать [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) с такими аргументами:
 
-Это состояние элемента управления редактированием после завершения исправления.
+-   *modifiedRange* = \[1, 2\]
+-   *newLength* = 2
+-   *newSelection* = \[5, 5\]
 
-### <span id="Providing_requested_text"></span><span id="providing_requested_text"></span><span id="PROVIDING_REQUESTED_TEXT"></span>Точка вставки находится в \[5, 5\].
+Последует одно или несколько событий [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175), которые вы обрабатываете для обновления текста, находящегося в ведении текстовых служб.
 
-пример схемы потока текста В этом случае необходимо вызвать [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) с такими аргументами:
+### <span id="Providing_requested_text"></span><span id="providing_requested_text"></span><span id="PROVIDING_REQUESTED_TEXT"></span>Предоставление запрашиваемого текста
 
-*modifiedRange* = \[1, 2\] *newLength* = 2 *newSelection* = \[5, 5\]
+Важно, чтобы текстовые службы имели правильный текст для предоставления таких функций, как автозамена или прогнозирование, особенно для текста, который уже существовал в элементе управления редактированием, например с загрузки документа, или текста, который вставлен элементом управления редактированием, как описано в предыдущих разделах. Поэтому, когда возникает событие [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175), необходимо предоставить текст, который в настоящее время находится в вашем элементе управления редактированием для определенного диапазона.
 
-## <span id="related_topics"></span>Последует одно или несколько событий [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175), которые вы обрабатываете для обновления текста, находящегося в ведении текстовых служб.
+Иногда [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958227) в [**CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958221) определяет диапазон, который ваш элемент управления редактированием не может вставить «как есть». Например, **Range** больше, чем размер элемента управления редактированием в момент события [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175), или конец **Range** выходит за рамки. В таких случаях вы должны вернуть любой разумный диапазон. Обычно это подмножество запрашиваемого диапазона.
+
+## <span id="related_topics"></span>Связанные статьи
 
 
-**Предоставление запрашиваемого текста**
-* [Важно, чтобы текстовые службы имели правильный текст для предоставления таких функций, как автозамена или прогнозирование, особенно для текста, который уже существовал в элементе управления редактированием, например с загрузки документа, или текста, который вставлен элементом управления редактированием, как описано в предыдущих разделах.](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+**Примеры архива**
+* [Пример редактирования текста XAML](http://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 
  
@@ -166,6 +169,7 @@ API основного текста в пространстве имен [**Wind
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,11 +1,14 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Создавайте приложения универсальной платформы Windows (UWP), которые поддерживают специальные взаимодействия с помощью пера, в том числе рукописный ввод для естественного письма и рисования.
-title: Взаимодействие с помощью пера в приложениях UWP
+Description: "Создавайте приложения универсальной платформы Windows (UWP), которые поддерживают специальные взаимодействия с помощью пера, в том числе рукописный ввод для естественного письма и рисования."
+title: "Взаимодействие с помощью пера в приложениях UWP"
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen and stylus interactions in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: 218fae32f8b63c8fe5499af7d3fe6c1f0404334c
+
 ---
 
 # Взаимодействие с помощью пера в приложениях UWP
@@ -98,7 +101,7 @@ keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
 
  
 
-Здесь мы настраиваем [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) для интерпретации данных, вводимых пером или мышью, в качестве росчерков пера. Мы также задаем некоторые исходные атрибуты росчерка пера, используемые для вывода росчерков на [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+Здесь мы настраиваем [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) для интерпретации данных, вводимые пером или мышью, в качестве росчерков пера. Мы также задаем некоторые исходные атрибуты росчерка пера, используемые для вывода росчерков на [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
 ```CSharp
 public MainPage()
@@ -247,7 +250,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
     private Rect boundingRect;
 ```
 
-3.  Затем мы настраиваем [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) для интерпретации данных, вводимых пером или мышью, в качестве росчерков пера и задаем некоторые исходные атрибуты росчерка пера, используемые для вывода росчерков на [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+3.  Затем мы настраиваем [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) интерпретировать данные, вводимые пером или мышью, как росчерки пера и задаем некоторые исходные атрибуты росчерка пера, используемые для вывода росчерков на [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
     Важнее всего то, что мы используем свойство [**InputProcessingConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948764) элемента [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) для указания того, что любые измененные входные данные должны обрабатываться приложением. Измененные входные данные указываются путем назначения перечислению **InputProcessingConfiguration.RightDragAction** значения [**InkInputRightDragAction.LeaveUnprocessed**](https://msdn.microsoft.com/library/windows/apps/dn948760).
 
@@ -493,6 +496,7 @@ public MainPage()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

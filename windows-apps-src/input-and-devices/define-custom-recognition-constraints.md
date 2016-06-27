@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Из этой статьи вы узнаете, как определять и использовать настраиваемые ограничения для распознавания речи.
-title: Определение настраиваемых ограничений распознавания
+Description: "Из этой статьи вы узнаете, как определять и использовать настраиваемые ограничения для распознавания речи."
+title: "Определение настраиваемых ограничений распознавания"
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 7d91cef0955dbf8544f658369ee488c47aaef787
+
 ---
 
 # Определение настраиваемых ограничений распознавания
@@ -142,7 +145,7 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 
 Подробнее об элементах и атрибутах SRGS см. в разделе [Справочные материалы по XML для грамматики SRGS](http://go.microsoft.com/fwlink/p/?LinkID=269886). Начните создавать грамматику SRGS с изучения раздела о [создании основ грамматики XML](http://go.microsoft.com/fwlink/p/?LinkID=269887).
 
-Следует помнить следующее.
+Помните следующее.
 
 -   В коллекцию ограничений можно добавить несколько ограничений на базе файла грамматики.
 -   Используйте расширение GRXML для документов грамматик на базе XML, соответствующих правилам SRGS.
@@ -216,7 +219,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 ## <span id="Manage_constraints"></span><span id="manage_constraints"></span><span id="MANAGE_CONSTRAINTS"></span>Управление ограничениями
 
 
-После загрузки коллекции ограничений для распознавания ваше приложение может определять, какие ограничения нужно включать для операций распознавания, путем установки для свойства ограничения [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) значения **true** или **false**. Значение по умолчанию — **true**.
+После загрузки коллекции ограничений для распознавания ваше приложение может управлять тем, какие ограничения нужно включать для операций распознавания, установив для свойства ограничения [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) значение **true** или **false**. Значение по умолчанию — **true**.
 
 Обычно однократная загрузка ограничений с последующим включением или выключением по необходимости более эффективна, чем загрузка, выгрузка и компиляция ограничений для каждой операции распознавания. Используйте свойство [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) при необходимости.
 
@@ -242,6 +245,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

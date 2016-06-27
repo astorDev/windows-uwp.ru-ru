@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Узнайте, как получить доступ к списку поддерживаемых фраз (элементы PhraseList) в файле определения голосовых команд (VCD) и обновить его с помощью результата распознавания речи во время выполнения.
-title: Динамическое изменение списков фраз в формате VCD
+Description: "Узнайте, как получить доступ к списку поддерживаемых фраз (элементы PhraseList) в файле определения голосовых команд (VCD) и обновить его с помощью результата распознавания речи во время выполнения."
+title: "Динамическое изменение списков фраз в формате VCD"
 ms.assetid: 98024EAC-EC0E-44AA-AEC5-A611BA7C5884
 label: Modify VCD phrase lists
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 623243b94cf8ef6b276f8f2971af7bbdbdece81c
+
 ---
 
 # Динамическое изменение списков фраз в формате VCD
@@ -151,6 +154,7 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,11 +1,14 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Приложения UWP с поддержкой Windows Ink могут сериализовать и десериализовать росчерки пера в файл ISF. Файл ISF — это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала.
-title: Хранение и извлечение данных движения пера Windows Ink
+Description: "Приложения UWP с поддержкой Windows Ink могут сериализовать и десериализовать росчерки пера в файл ISF. Файл ISF — это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала."
+title: "Хранение и извлечение данных движения пера Windows Ink"
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: 0f2e95146281fb992af1201c408ed62705c77741
+
 ---
 
 # Хранение и извлечение данных движения пера Windows Ink
@@ -442,6 +445,7 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

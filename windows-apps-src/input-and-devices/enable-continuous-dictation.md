@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Узнайте, как записать и распознать длительный непрерывный речевой ввод.
-title: Включение непрерывной диктовки
+Description: "Узнайте, как записать и распознать длительный непрерывный речевой ввод."
+title: "Включение непрерывной диктовки"
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: a142592f878fa539d6c40ea2abfcbf834b2de34d
+
 ---
 
 # Непрерывная диктовка
@@ -85,7 +88,7 @@ this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 this.speechRecognizer = new SpeechRecognizer();
 ```
 
-3.  Затем мы добавляем и компилируем грамматику, которая определяет все слова и фразы, распознаваемые классом [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226).
+3.  Затем мы добавляем и компилируем грамматику, которая определяет все слова и фразы, распознаваемые [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226).
 
     Если вы не укажете грамматику явным образом, по умолчанию используется предопределенная грамматика для диктовки. Как правило, грамматика по умолчанию лучше всего подходит для общей диктовки.
 
@@ -100,7 +103,7 @@ SpeechRecognitionCompilationResult result =
 ## <span id="Handle_recognition_events"></span><span id="handle_recognition_events"></span><span id="HANDLE_RECOGNITION_EVENTS"></span>Обработка событий распознавания
 
 
-Можно записать отдельную краткую реплику или фразу, вызвав [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) или [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245). 
+Можно записать отдельную краткую реплику или фразу путем вызова [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) или [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245). 
 
 А чтобы записать более длительный сеанс непрерывного распознавания, мы определяем прослушиватели событий для работы в фоновом режиме во время речи пользователя, а также определяем обработчики для формирования строки диктовки.
 
@@ -294,6 +297,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

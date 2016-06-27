@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Помимо использования голосовых команд Кортаны для получения доступа к системным компонентам, вы также можете расширить возможности Кортаны за счет компонентов и функций из фонового приложения с помощью голосовых команд, которые определяют действие или команду для выполнения в приложении.
-title: Запуск фонового приложения с помощью голосовых команд в Кортане
+Description: "Помимо использования голосовых команд Кортаны для получения доступа к системным компонентам, вы также можете расширить возможности Кортаны за счет компонентов и функций из фонового приложения с помощью голосовых команд, которые определяют действие или команду для выполнения в приложении."
+title: "Запуск фонового приложения с помощью голосовых команд в Кортане"
 ms.assetid: DF5B530C-57DD-4CA5-B3BE-1A0B3695C9C6
 label: Launch a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: c65abdda905a390567d3c2b199a891c0c3067df1
+
 ---
 
 # Активация фонового приложения с помощью голосовых команд в Кортане
@@ -37,7 +40,7 @@ template: detail.hbs
 
 Чтобы просмотреть поездку **Adventure Works** без **Кортаны**, пользователь запустил бы приложение и перешел на страницу **Предстоящие поездки**.
 
-Используя голосовые команды в **Кортане** для запуска приложения в фоновом режиме, пользователь может просто произнести: «Adventure Works, когда я еду в Лас-Вегас?» Ваше приложение обрабатывает команду, и **Кортана** отображает результаты вместе со значком приложения и другими сведениями о приложении, если они предоставлены. Вот пример базового запроса поездки и экрана результатов **Кортаны**, который отображается и произносит: «Ваша следующая поездка в Лас-Вегас — 1 августа».
+Используя голосовые команды в **Кортане** для запуска приложения в фоновом режиме, пользователь может просто произнести: «Adventure Works, когда я еду в Лас-Вегас?» Ваше приложение обрабатывает команду, и **Кортана** отображает результаты вместе со значком приложения и другими сведениями о приложении, если они предоставлены. Вот пример базового запроса поездки и экрана результатов **Кортаны**, который отображается и произносит: «Ваша следующая поездка в Лас-Вегас — в пятницу 31 июля 2015 года».
 
 ![Базовый запрос и экран результатов, который использует приложение Adventure Works в фоновом режиме](images/cortana-backgroundapp-result.png)
 
@@ -122,38 +125,37 @@ destinationTile.Image =
 
 <ol>
     <li>
-    Щелкните правой кнопкой мыши название своего решения и выберите **Создать > Проект**.
+Щелкните правой кнопкой мыши название своего решения и выберите **Создать > Проект**.
     </li>
     <li>
-    В разделе **Установленные > Шаблоны > Visual C# > Windows > Универсальные** выберите **Windows Runtime Component**. Это компонент, который реализует службу приложения (см. раздел **[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**).
+В разделе **Установленные > Шаблоны > Visual C# > Windows > Универсальные** выберите **Windows Runtime Component**. Это компонент, который реализует службу приложения (см. раздел **[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**).
     </li>
     <li>
-    Введите имя проекта (например, VoiceCommandService) и нажмите кнопку **ОК**.
+Введите имя проекта (например, VoiceCommandService) и нажмите кнопку **ОК**.
     </li>
     <li>
-    В **обозревателе решений** выберите проект VoiceCommandService и переименуйте файл Class1.cs, созданный в Visual Studio. В примере с **Adventure Works** используется файл AdventureWorksVoiceCommandService.cs.
+В **обозревателе решений** выберите проект VoiceCommandService и переименуйте файл Class1.cs, созданный в Visual Studio. В примере с **Adventure Works** используется файл AdventureWorksVoiceCommandService.cs.
     </li>
     <li>
-    Нажмите кнопку **Д** в ответ на запрос о переименовании всех вхождений Class1.cs. 
+Нажмите кнопку **Д** в ответ на запрос о переименовании всех вхождений Class1.cs. 
     </li>
     <li>
-    В файле AdventureWorksVoiceCommandService.cs выполните следующие действия:
-        <ol type="i">
+В файле AdventureWorksVoiceCommandService.cs выполните следующие действия: <ol type="i">
  <li>
- Добавьте следующее, воспользовавшись директивой.  
+Добавьте следующее, воспользовавшись директивой.  
  ```using Windows.ApplicationModel.Background;```
  </li>
  <li>
- При создании нового проекта имя проекта используется как корневое пространство имен по умолчанию во всех файлах. Переименуйте пространство имен, чтобы вложить в него код службы приложения в составе основного проекта. Например, `namespace AdventureWorks.VoiceCommands`. 
+При создании нового проекта имя проекта используется как корневое пространство имен по умолчанию во всех файлах. Переименуйте пространство имен, чтобы вложить в него код службы приложения в составе основного проекта. Например, `namespace AdventureWorks.VoiceCommands`. 
  </li>
  <li>
- Правой кнопкой мыши щелкните имя проекта службы приложения в обозревателе решений и выберите **Свойства**. 
+Правой кнопкой мыши щелкните имя проекта службы приложения в обозревателе решений и выберите **Свойства**. 
  </li>
  <li>
- На вкладке **Библиотека** обновите значение в поле **Пространство имен по умолчанию**, указав то же значение (например, AdventureWorks.VoiceCommands). 
+На вкладке **Библиотека** обновите значение в поле **Пространство имен по умолчанию**, указав то же значение (например, AdventureWorks.VoiceCommands). 
  </li>
  <li>
- Создайте новый класс, реализующий интерфейс [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Этот класс требует метода [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811), который является точкой входа, когда Кортана распознает голосовую команду. 
+Создайте новый класс, реализующий интерфейс [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Этот класс требует метода [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811), который является точкой входа, когда Кортана распознает голосовую команду. 
  </li>
         </ol>
     </li>
@@ -210,36 +212,36 @@ namespace AdventureWorks.VoiceCommands
 
 <ol start="7">
     <li>
-    Объявите фоновую задачу как **AppService** в манифесте приложения.
+Объявите фоновую задачу как **AppService** в манифесте приложения.
     <ol type="i">
         <li>
-        В **обозревателе решений** щелкните правой кнопкой мыши файл Package.appxmanifest и выберите команду **Перейти к коду**. 
+В **обозревателе решений** щелкните правой кнопкой мыши файл Package.appxmanifest и выберите команду **Перейти к коду**. 
         </li>
         <li>
-        Найдите элемент [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738).
+Найдите элемент [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738).
         </li>
         <li>
-        Добавьте элемент [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) к элементу [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738).
+Добавьте элемент [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) к элементу [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738).
         </li>
         <li>
-        Добавьте элемент [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) к элементу [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720).
+Добавьте элемент [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) к элементу [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720).
         </li>
         <li>Добавьте атрибут **Category** в элемент **uap:Extension** и установите для атрибута **Category** значение windows.appService.
         </li>
         <li>
-        Добавьте атрибут **EntryPoint** в элемент **uap:Extension** и установите в качестве значения для атрибута **EntryPoint** имя класса, который реализует [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794), в данном случае — AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService.
+Добавьте атрибут **EntryPoint** в элемент **uap:Extension** и установите в качестве значения для атрибута **EntryPoint** имя класса, который реализует [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794), в данном случае — AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService.
         </li>
         <li>
-        Добавьте элемент [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) к элементу **uap:Extension**.
+Добавьте элемент [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) к элементу **uap:Extension**.
         </li>
         <li>
-        Добавьте атрибут **Name** в элемент [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) и установите в качестве значения атрибута **Name** имя службы приложений, в данном случае — AdventureWorksVoiceCommandService.
+Добавьте атрибут **Name** в элемент [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) и установите в качестве значения атрибута **Name** имя службы приложений, в данном случае — AdventureWorksVoiceCommandService.
         </li>
         <li>
-        Добавьте второй элемент [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) к элементу [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720).
+Добавьте второй элемент [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) к элементу [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720).
         </li>
         <li>
-        Добавьте атрибут **Category** к элементу [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) и задайте для атрибута **Category** значение windows.personalAssistantLaunch.
+Добавьте атрибут **Category** к элементу [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) и задайте для атрибута **Category** значение windows.personalAssistantLaunch.
         </li>
     </li> 
     </ol>
@@ -267,19 +269,19 @@ namespace AdventureWorks.VoiceCommands
 
 <ol start="8">
     <li>
-    Добавьте этот проект службы приложения в основной проект в качестве ссылки. 
+Добавьте этот проект службы приложения в основной проект в качестве ссылки. 
     <ol type="i">
         <li>
-        Щелкните **Ссылки** правой кнопкой мыши. 
+Щелкните **Ссылки** правой кнопкой мыши. 
         </li>
         <li>
-        Выберите **Добавить ссылку...** 
+Выберите **Добавить ссылку...** 
         </li>
         <li>
-        В диалоговом окне **Диспетчер ссылок** разверните раздел **Проекты** и выберите проект службы приложения. 
+В диалоговом окне **Диспетчер ссылок** разверните раздел **Проекты** и выберите проект службы приложения. 
         </li>
         <li>
-        Нажмите кнопку "ОК". 
+Нажмите кнопку "ОК". 
         </li>
     </ol>
     </li>
@@ -312,7 +314,7 @@ namespace AdventureWorks.VoiceCommands
   - Элемент **Example**, который содержит фразу, описывающую возможные способы вызова команды пользователем. **Кортана** показывает этот пример, когда пользователь говорит "Что можно говорить?", "Помоги" или выбирает пункт **Подробнее**.    
   -   Элемент **ListenFor**, содержащий слова или фразы, которые приложение распознает в качестве команды. Каждый элемент **ListenFor** может содержать ссылки на один или несколько элементов **PhraseList** с конкретными словами, связанными с этой командой.
   > **Примечание.**  
-Элементы   **ListenFor** невозможно изменить программно. Однако программно можно изменять элементы **PhraseList**, связанные с элементами **ListenFor**. Приложения должны изменять содержимое **PhraseList** во время выполнения на основе созданного набора данных, когда пользователь использует приложение. Ознакомьтесь со статьей [Динамическое изменение списков фраз определения голосовых команд (VCD)](dynamically-modify-voice-command-definition--vcd--phrase-lists.md).
+Элементы  **ListenFor** невозможно изменить программно. Однако программно можно изменять элементы **PhraseList**, связанные с элементами **ListenFor**. Приложения должны изменять содержимое **PhraseList** во время выполнения на основе созданного набора данных, когда пользователь использует приложение. Ознакомьтесь со статьей [Динамическое изменение списков фраз определения голосовых команд (VCD)](dynamically-modify-voice-command-definition--vcd--phrase-lists.md).
 
   -   Элемент **Feedback**, содержащий текст, который **Кортана** отображает и произносит при запуске приложения.
 
@@ -767,6 +769,7 @@ public sealed class VoiceCommandService : IBackgroundTask
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

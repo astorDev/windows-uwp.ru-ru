@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: Используется для выбора или отмены выбора элементов действий. Можно использовать для одного элемента списка или для нескольких элементов списка.
-title: Флажки
+Description: "Используется для выбора или отмены выбора элементов действий. Можно использовать для одного элемента списка или для нескольких элементов списка."
+title: "Флажки"
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: dcf9ca0757fdef78b71ae665772b980b08641d34
+
 ---
 # Флажки
 
@@ -288,6 +291,7 @@ private void SetCheckedState()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

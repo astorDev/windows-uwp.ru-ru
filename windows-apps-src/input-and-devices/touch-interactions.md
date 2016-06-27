@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Вы можете создавать приложения универсальной платформы Windows (UWP) с интуитивно понятным и четким взаимодействием с пользователем, которое оптимизировано для сенсорного ввода, но сохраняет функциональность при использовании других устройств ввода.
-title: Взаимодействие с помощью сенсорного экрана
+Description: "Вы можете создавать приложения универсальной платформы Windows (UWP) с интуитивно понятным и четким взаимодействием с пользователем, которое оптимизировано для сенсорного ввода, но сохраняет функциональность при использовании других устройств ввода."
+title: "Взаимодействие с помощью сенсорного экрана"
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
+
 ---
 
 # Взаимодействие с помощью сенсорного экрана
@@ -108,11 +111,11 @@ template: detail.hbs
 Для проектирования обработки небрежных касаний используются:
 
 -   Точки прикрепления, которые помогут остановиться в нужном месте при взаимодействии с содержимым.
--   Направляющие «рельсы», облегчающие вертикальный или горизонтальный сдвиг, даже если рука движется слегка по дуге. Дополнительные сведения см. в разделе [Руководство по функции сдвига](guidelines-for-panning.md)
+-   Направляющие "рельсы", облегчающие вертикальный или горизонтальный сдвиг, даже если рука движется слегка по дуге. Дополнительные сведения см. в разделе [Руководство по функции сдвига](guidelines-for-panning.md).
 
 ## Загораживание
 
-Чтобы пальцы и рука не загораживали элементы, сделайте следующее.
+Чтобы пальцы и рука не загораживали элементы, сделайте следующее:
 
 -   Размер и размещение пользовательского интерфейса
 
@@ -128,7 +131,7 @@ template: detail.hbs
 
 -   Маркеры для точности
 
-    Там, где нужна точность (например, при выборе текста), обеспечьте маркеры выделения, смещенные в целях повышения точности. Подробнее см. в разделе [Руководство по выделению текста и изображений (приложения среды выполнения Windows)](guidelines-for-textselection.md)
+    Там, где нужна точность (например, при выборе текста), обеспечьте маркеры выделения, смещенные в целях повышения точности. Подробнее: [Руководство по выделению текста и изображений (приложения среды выполнения Windows)](guidelines-for-textselection.md).
 
 ## Интервал времени
 
@@ -178,9 +181,9 @@ template: detail.hbs
 
 -   Статические события жестов срабатывают по завершении взаимодействия. События жестов включают в себя [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985), [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922), [**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) и [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928).
 
-    Можно отключить события жестов для определенных элементов, установив для параметров [**IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939), [**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931), [**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937) и [**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) значение **false**.
+    Вы можете отключить события жестов для определенных элементов, установив для параметров [**IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939), [**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931), [**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937) и [**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) значение **false**.
 
--   События указателя, например [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) и [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970), предоставляют низкоуровневые сведения для каждого сенсорного контакта, включая движение указателя и возможность различить события нажатия и отпускания.
+-   События указателя, например [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) и [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970), предоставляют низкоуровневые сведения для каждого сенсорного контакта, включая движение указателя и возможность отличить события нажатия и освобождения.
 
     Указатель — это универсальный тип ввода с унифицированным механизмом событий. Он предоставляет базовую информацию, такую как экранные координаты, для активного источника ввода, которым может быть сенсорный экран, сенсорная панель, мышь или перо.
 
@@ -481,7 +484,7 @@ End Sub
 </Grid>
 ```
 
-Затем создается глобальный параметр [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) с именем `dragTranslation` для преобразования [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371). Прослушиватель событий [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) указывается на объекте **Rectangle**, а параметр `dragTranslation` добавляется к параметру [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) объекта **Rectangle**.
+Затем создается глобальный параметр [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) с именем `dragTranslation` для преобразования [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371). Прослушиватель событий [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) указывается на объекте **Rectangle**, и параметр `dragTranslation` добавляется к параметру [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) объекта **Rectangle**.
 
 ```ManagedCPlusPlus
 // Global translation transform used for changing the position of 
@@ -599,7 +602,7 @@ End Sub
 ## <span id="Routed_events"></span><span id="routed_events"></span><span id="ROUTED_EVENTS"></span>Перенаправленные события
 
 
-Все события указателя, события жестов и события манипуляций, упомянутые здесь, реализованы как *перенаправленные события*. Это значит, что события потенциально могут обрабатываться объектами, отличными от объектов, которые вызвали событие. Последующие родительские объекты в дереве, такие как родительские контейнеры элементов [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) или корень [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) вашего приложения, могут обрабатывать эти события, даже если исходный элемент этого не делает. И наоборот, любой объект, который обрабатывает событие, может пометить событие как обработанное, чтобы оно не обращалось к родительским элементам. Подробнее о концепции перенаправленных событий и их влиянии на метод написания обработчиков для перенаправленных событий см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/hh758286).
+Все события указателя, события жестов и события манипуляций, упомянутые здесь, реализованы как *перенаправленные события*. Это значит, что события потенциально могут обрабатываться объектами, отличными от объектов, которые вызвали событие. Последующие родительские объекты в дереве, такие как родительские контейнеры элементов [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) или корень [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) вашего приложения, могут обрабатывать эти события, даже если исходный элемент этого не делает. И наоборот, любой объект, который обрабатывает событие, может пометить событие как обработанное, чтобы оно не обращалось к родительским элементам. Подробнее о концепции маршрутизированных событий и их влиянии на метод написания обработчиков для перенаправленных событий см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/hh758286).
 
 ## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Рекомендации
 
@@ -616,15 +619,21 @@ End Sub
 ## <span id="related_topics"></span>Статьи по теме
 
 * [Работа с данными указателя](handle-pointer-input.md)
-* Распознавание устройств ввода
-* [Примеры](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Пример базового ввода](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Пример ввода с малой задержкой](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* Пример режима взаимодействия с пользователем
-* [Пример визуальных элементов фокуса](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Примеры архивов](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Ввод: пример возможностей устройства](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Ввод: пример событий пользовательского ввода на XAML](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Определение устройств ввода](identify-input-devices.md)
+            
+          
+            **Примеры**
+* [Пример базового ввода](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Пример ввода с малой задержкой](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Пример режима взаимодействия с пользователем](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Пример визуальных элементов фокуса](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+            
+          
+            **Примеры из архива**
+* [Ввод: пример возможностей устройства](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Ввод: пример событий пользовательского ввода на XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Пример прокрутки, сдвига и масштабирования на XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Ввод: жесты и манипуляции с помощью GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
  
@@ -634,6 +643,7 @@ End Sub
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 
