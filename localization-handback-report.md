@@ -24,7 +24,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tiles-and-notifications-adaptive-tiles-schema.608254f9907dbb7d57e8b5ac6239d9be649d40d8.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/tiles-and-notifications-adaptive-tiles-schema.608254f9907dbb7d57e8b5ac6239d9be649d40d8.ru-ru.xlf)
-* Handback Datetime: 2016-06-30 17:49:36
+* Handback Datetime: 2016-06-30 18:12:17
 * Handback Error: [handback_transform_failed](#a5d061515eee1ab64f17e4f5aab8846adbd1c8f11929handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -37,7 +37,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [plan-your-directx-port.a4eca0df1e81d68bf007196d3ad2507770109c09.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/plan-your-directx-port.a4eca0df1e81d68bf007196d3ad2507770109c09.ru-ru.xlf)
-* Handback Datetime: 2016-06-30 17:49:36
+* Handback Datetime: 2016-06-30 18:12:17
 * Handback Error: [handback_transform_failed](#929ad82ce057754ee04f1f27537e03520e95157a2238handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -50,7 +50,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [plan-your-app.96433e3c23cb6ab47cd852804f47526706d28e0c.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/plan-your-app.96433e3c23cb6ab47cd852804f47526706d28e0c.ru-ru.xlf)
-* Handback Datetime: 2016-06-30 17:49:36
+* Handback Datetime: 2016-06-30 18:12:17
 * Handback Error: [handback_transform_failed](#9a3058aabdc6f710149a14d8f125b66efd0760072639handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -63,7 +63,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.ru-ru.xlf)
-* Handback Datetime: 2016-06-30 17:49:36
+* Handback Datetime: 2016-06-30 18:12:17
 * Handback Error: [handback_transform_failed](#f02851d848a82af7104a6038c5d8850d5362c8322642handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -76,7 +76,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [getting-started-navigation.335a2183e0538872e32c79b3290ea03af14a74ad.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/getting-started-navigation.335a2183e0538872e32c79b3290ea03af14a74ad.ru-ru.xlf)
-* Handback Datetime: 2016-06-30 17:49:36
+* Handback Datetime: 2016-06-30 18:12:17
 * Handback Error: [handback_transform_failed](#c542faa6365c8558988162bee12f266d674744613477handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -89,7 +89,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [getting-started-what-next.ecd0afbdc8655298b5947469bb7c882adb3b3a4a.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/getting-started-what-next.ecd0afbdc8655298b5947469bb7c882adb3b3a4a.ru-ru.xlf)
-* Handback Datetime: 2016-06-30 17:49:36
+* Handback Datetime: 2016-06-30 18:12:17
 * Handback Error: [handback_transform_failed](#2b11133fda76fb42f3a850848c426cbb33fb83663478handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -102,7 +102,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [w8x-to-uwp-case-study-quizgame.ee7bf79e60457837f1f1ef8bbdc006cd97a0f8fd.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/0faf9b4ce6b19170fe83f60d030e1eaf7d92ea97/ol-handback/Microsoft/windows-apps.ru-ru/master/w8x-to-uwp-case-study-quizgame.ee7bf79e60457837f1f1ef8bbdc006cd97a0f8fd.ru-ru.xlf)
-* Handback Datetime: 2016-06-30 17:49:36
+* Handback Datetime: 2016-06-30 18:12:17
 * Handback Error: [handback_transform_failed](#cd05c3edbc254cceb00c55caba698d21998f55943551handback_transform_failed)
 * [Back to Top](#report-top)
 
