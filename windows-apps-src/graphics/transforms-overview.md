@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
 title: "Обзор преобразований"
 description: "Узнайте, как использовать преобразования в API среды выполнения Windows путем изменения относительных систем координат элементов в пользовательском интерфейсе."
-ms.sourcegitcommit: a429fa659caf6c8032ad615f1b850092545d4439
-ms.openlocfilehash: fa5e8964ab35cb33a1ff59a8a52aa384b9d115b4
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: f6212143a83e7423550b6529ea62e25c00728f79
 
 ---
 
@@ -67,7 +67,7 @@ ms.openlocfilehash: fa5e8964ab35cb33a1ff59a8a52aa384b9d115b4
 
 Объекты [
               **Transform**
-            ](https://msdn.microsoft.com/library/windows/apps/BR243006) можно анимировать. Чтобы анимировать **Transform**, примените анимацию совместимого типа к свойству, которое требуется анимировать. Как правило, это значит, что вы используете объекты [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) или [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR243136usingkeyframes) для определения анимации, так как все свойства преобразования относятся к типу [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Анимации, которые влияют на преобразование, используемое для значения [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980), не считаются зависимыми даже тогда, когда их продолжительность не является нулевой. Подробнее о зависимых анимациях: [Раскадрованные анимации](storyboarded-animations.md).
+            ](https://msdn.microsoft.com/library/windows/apps/BR243006) можно анимировать. Чтобы анимировать **Transform**, примените анимацию совместимого типа к свойству, которое требуется анимировать. Как правило, это значит, что вы используете объекты [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) или [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimationusingkeyframes) для определения анимации, так как все свойства преобразования относятся к типу [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Анимации, которые влияют на преобразование, используемое для значения [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980), не считаются зависимыми даже тогда, когда их продолжительность не является нулевой. Подробнее о зависимых анимациях: [Раскадрованные анимации](storyboarded-animations.md).
 
 Если вы настраиваете анимацию свойств для создания эффекта, аналогичного преобразованию по визуальному представлению, например анимируете свойства [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) и [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) элемента [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706), а не применяете к нему [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), такие анимации почти всегда считаются зависимыми. Вам придется включить анимации и, возможно, столкнуться с серьезным снижением производительности из-за этой анимации, особенно если вы пытаетесь поддерживать взаимодействие с пользователем во время анимации данного объекта. По этой причине предпочтительней использовать преобразование и анимировать его, а не любое другое свойство, где анимация воспринималась бы в качестве зависимой.
 
@@ -154,6 +154,6 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

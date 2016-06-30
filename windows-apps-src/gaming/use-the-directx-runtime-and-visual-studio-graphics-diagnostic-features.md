@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Средства диагностики графики
-description: Узнайте, как использовать функции диагностики графики, включая отладку графики, анализ кадров графики и использование GPU в Visual Studio.
+title: "Средства диагностики графики"
+description: "Узнайте, как использовать функции диагностики графики, включая отладку графики, анализ кадров графики и использование GPU в Visual Studio."
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f266cb50893fd37162f21be169d6daf6e37c6bb9
+
 ---
 
 # Средства диагностики графики
@@ -35,6 +39,7 @@ ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

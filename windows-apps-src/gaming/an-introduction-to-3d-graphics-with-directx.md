@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Простая трехмерная графика для игр DirectX
-description: Здесь мы покажем, как использовать программирование в DirectX для реализации базовых принципов трехмерной графики.
+title: "Простая трехмерная графика для игр DirectX"
+description: "Здесь мы покажем, как использовать программирование в DirectX для реализации базовых принципов трехмерной графики."
 ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8f27c5060ffdc566c596168e54d51730c349d401
+
 ---
 
 # Простая трехмерная графика для игр DirectX
@@ -63,6 +67,7 @@ ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

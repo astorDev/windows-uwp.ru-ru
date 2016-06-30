@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Сборка структуры визуализации
-description: Теперь мы покажем, как образец игры использует эту структуру и состояние для отображения графики.
+title: "Сборка структуры визуализации"
+description: "Теперь мы покажем, как образец игры использует эту структуру и состояние для отображения графики."
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5eb6ea7ad1a30f020c155007396383b88d10c0a8
+
 ---
 
 # Сборка структуры визуализации
@@ -6321,6 +6325,7 @@ void Material::RenderSetup(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

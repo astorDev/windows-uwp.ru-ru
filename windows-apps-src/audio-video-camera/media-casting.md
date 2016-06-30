@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
-description: В этой статье показано, как транслировать мультимедиа в удаленные устройства из универсального приложения для Windows.
-title: Трансляция мультимедиа
+description: "В этой статье показано, как транслировать мультимедиа в удаленные устройства из универсального приложения для Windows."
+title: "Трансляция мультимедиа"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9c8d549c9b770af351894f2a19dd035a43d70264
+
 ---
 
 # Трансляция мультимедиа
@@ -152,6 +156,7 @@ title: Трансляция мультимедиа
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

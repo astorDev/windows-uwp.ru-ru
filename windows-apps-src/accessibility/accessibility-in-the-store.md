@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: В статье описываются требования, которым должно соответствовать приложение универсальной платформы Windows (UWP), чтобы о его специальных возможностях можно было объявить в Магазине Windows.
+Description: "В статье описываются требования, которым должно соответствовать приложение универсальной платформы Windows (UWP), чтобы о его специальных возможностях можно было объявить в Магазине Windows."
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
-title: Специальные возможности в Магазине
+title: "Специальные возможности в Магазине"
 label: Accessibility in the Store
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 46dfe4fba383861c704b2ba9070bdd8102b10562
+
 ---
 
 # Специальные возможности в Магазине  
@@ -42,6 +46,7 @@ template: detail.hbs
 * [Специальные возможности](accessibility.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

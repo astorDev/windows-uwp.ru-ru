@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Переключатели типа Radio Button позволяют пользователю выбрать один параметр из двух или более предлагаемых вариантов.
-title: Руководство по элементам управления Radio Button
+Description: "Переключатели типа Radio Button позволяют пользователю выбрать один параметр из двух или более предлагаемых вариантов."
+title: "Руководство по элементам управления Radio Button"
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 317df548e72f9aff475ba0959668b6441ac29d3d
+
 ---
 # Переключатели
 Переключатели типа Radio Button позволяют пользователю выбрать один параметр из двух или более предлагаемых вариантов. Каждый параметр представлен одним переключателем, пользователь может выбрать только один переключатель из группы.
@@ -181,6 +185,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 - [**Класс переключателей Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227544)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

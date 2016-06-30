@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
-title: Положение датчиков в пространстве
-description: Данные датчиков классов Accelerometer, Gyrometer, Compass, Inclinometer и OrientationSensor определяются их опорными осями. Эти оси определяются альбомной ориентацией устройства и поворачиваются вместе с ним.
+title: "Положение датчиков в пространстве"
+description: "Данные датчиков классов Accelerometer, Gyrometer, Compass, Inclinometer и OrientationSensor определяются их опорными осями. Эти оси определяются альбомной ориентацией устройства и поворачиваются вместе с ним."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3da7957bf9b162f1ac1533ccff90c8764f34890a
+
 ---
 # Положение датчиков в пространстве
 
@@ -166,6 +170,7 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

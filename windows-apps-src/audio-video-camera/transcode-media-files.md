@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
-description: Для перекодирования видеофайлов из одного формата в другой можно использовать API Windows.Media.Transcoding.
-title: Перекодирование файлов мультимедиа
+description: "Для перекодирования видеофайлов из одного формата в другой можно использовать API Windows.Media.Transcoding."
+title: "Перекодирование файлов мультимедиа"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 06c452291f10acd35dde9659c08a386ea38fa90a
+
 ---
 
 # Перекодирование файлов мультимедиа
@@ -71,6 +75,7 @@ title: Перекодирование файлов мультимедиа
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

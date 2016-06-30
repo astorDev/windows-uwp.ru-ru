@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
-description: Получите общую информацию для разработчиков о библиотеках Microsoft Advertising, входящих в состав пакета SDK Microsoft Store Engagement and Monetization.
-title: Информация для разработчиков о библиотеках Microsoft Advertising
+description: "Получите общую информацию для разработчиков о библиотеках Microsoft Advertising, входящих в состав пакета SDK Microsoft Store Engagement and Monetization."
+title: "Информация для разработчиков о библиотеках Microsoft Advertising"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
+
 
 ---
 
@@ -34,6 +38,7 @@ title: Информация для разработчиков о библиот�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

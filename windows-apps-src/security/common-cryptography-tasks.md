@@ -1,28 +1,33 @@
 ---
-title: Common cryptography tasks
-description: These articles provide example code for common Universal Windows Platform (UWP) cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.
+title: "Общие задачи шифрования"
+description: "В этих статьях показан пример кода для типичных задач шифрования универсальной платформы Windows (UWP), включая создание случайных значений, сравнение буферов, преобразование между строками и двоичными данными, копирование в массив байтов и из него, а также кодирование и декодирование данных."
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 38d0af2cdbf4137cbd0e005fcb750ed2f0b2c87c
+
 ---
 
-# Common cryptography tasks
+# Общие задачи шифрования
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-These articles provide example code for common Universal Windows Platform (UWP) cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.
+В данных статьях показан пример кода для типичных задач шифрования универсальной платформы Windows (UWP), включая создание случайных значений, сравнение буферов, преобразования между строками и двоичными данными, копирование в массив байтов и из него и кодирование и декодирование данных.
 
  
-| Topic                                                                                 | Description                                                                                            |
+| Статья                                                                                 | Описание                                                                                            |
 |---------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| [Create random numbers](create-random-numbers.md)                                     | This example code shows how to create a random number or buffer for use in cryptography in an UWP app. |
-| [Compare buffers](compare-buffers.md)                                                 | This example code shows how to compare buffers in an UWP app.                                          |
-| [Convert between strings and binary data](convert-between-strings-and-binary-data.md) | This example code shows how to convert between strings and binary data in an UWP app.                  |
-| [Copy to and from byte arrays](copy-to-and-from-byte-arrays.md)                       | This example code shows how to copy to and from byte arrays in an UWP app.                             |
-| [Encode and decode data](encode-and-decode-data.md)                                   | This example code shows how to encode and decode base64 and hexadecimal data in an UWP app.            |
+| [Создание случайных значений](create-random-numbers.md)                                     | В этом примере кода показано, как создать случайное число или буфер для использования в шифровании в приложении UWP для Windows. |
+| [Сравнение буферов](compare-buffers.md)                                                 | Этот образец кода показывает, как сравнивать буферы в приложении UWP.                                          |
+| [Преобразования между строками и двоичными данными](convert-between-strings-and-binary-data.md) | В этом примере кода показано, как выполнять преобразование между строками и двоичными данными в приложении UWP для Windows.                  |
+| [Копирование в массивы байтов и из них](copy-to-and-from-byte-arrays.md)                       | Этот образец кода показывает, как копировать в массив байтов и из него в приложении UWP.                             |
+| [Кодирование и декодирование данных](encode-and-decode-data.md)                                   | В этом примере кода показано, как кодировать и декодировать данные base64 и шестнадцатеричные данные в приложении UWP для Windows.            |
  
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

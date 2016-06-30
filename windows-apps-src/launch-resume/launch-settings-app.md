@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Запуск приложения "Параметры" для Windows
-description: Узнайте, как запустить приложение "Параметры" для Windows из вашего приложения. В этом разделе приводится описание схемы URI ms-settings. Используйте эту схему URI для запуска приложения "Параметры" для Windows на определенных страницах параметров.
+author: TylerMSFT
+title: "Запуск приложения \"Параметры\" для Windows"
+description: "Узнайте, как запустить приложение \"Параметры\" для Windows из вашего приложения. В этом разделе приводится описание схемы URI ms-settings. Используйте эту схему URI для запуска приложения \"Параметры\" для Windows на определенных страницах параметров."
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
+ms.sourcegitcommit: 3cf9dd4ab83139a2b4b0f44a36c2e57a92900903
+ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
+
 ---
 
 # Запуск приложения "Параметры" для Windows
@@ -32,7 +35,7 @@ ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 
 ```xml
 <!--Set Visibility to Visible when access to the microphone is denied -->  
-<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
+<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic"
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
           <Run Text="This app is not able to access the microphone. Go to " />
               <Hyperlink NavigateUri="ms-settings:privacy-microphone">
@@ -67,10 +70,10 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 | Система             | Дисплей                                | То и другое           | ms-settings:screenrotation                |
 |                    | Уведомления и действия                | То и другое           | ms-settings:notifications                 |
 |                    | Телефон                                  | Только на мобильных    | ms-settings:phone                         |
-|                    | Обмен сообщениями                              | Только на мобильных    | ms-settings:messaging                     |
-|                    | Экономия заряда аккумулятора                          | То и другое           | ms-settings:batterysaver                  |
-|                    | Экономия заряда аккумулятора и параметры экономии | То и другое           | ms-settings:batterysaver-settings         |
-|                    | Экономия и использование заряда аккумулятора            | То и другое           | ms-settings:batterysaver-usagedetails     |
+|                    | Сообщения                              | Только на мобильных    | ms-settings:messaging                     |
+|                    | Экономия заряда аккумулятора                          | В мобильной и настольной версиях на устройствах с батареей, таких как планшет    | ms-settings:batterysaver                  |
+|                    | Экономия заряда аккумулятора и параметры экономии | В мобильной и настольной версиях на устройствах с батареей, таких как планшет | ms-settings:batterysaver-settings         |
+|                    | Экономия и использование заряда аккумулятора            | В мобильной и настольной версиях на устройствах с батареей, таких как планшет    | ms-settings:batterysaver-usagedetails     |
 |                    | Питание и спящий режим                          | Только на ПК   | ms-settings:powersleep                    |
 |                    | ПК: описание                         | То и другое           | ms-settings:deviceencryption              |
 |                    |                                        |                |                                           |
@@ -124,8 +127,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

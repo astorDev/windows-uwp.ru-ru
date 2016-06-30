@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: Приложения используют фоновые задачи и два основных механизма для поддержания связи, когда они не находятся на переднем плане.
-title: Передача данных по сети в фоновом режиме
+description: "Приложения используют фоновые задачи и два основных механизма для поддержания связи, когда они не находятся на переднем плане."
+title: "Передача данных по сети в фоновом режиме"
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 4ab9ca2a1cd337bd0af8fbbfcf44d8fc6e6dda3e
+
 ---
 
 # Передача данных по сети в фоновом режиме
@@ -81,7 +85,7 @@ ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
     } 
 ```
 
--  В обработчике событий фоновой задачи
+-  В обработчике событий фоновой задачи:
 
    -  Сначала получите отсрочку фоновой задачи, чтобы вы могли обрабатывать событие с использованием асинхронных методов.
 
@@ -152,7 +156,7 @@ case SocketActivityTriggerReason.SocketClosed:
 
 Полный пример, демонстрирующий использование [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) и брокера сокетов, см. в разделе [Пример SocketActivityStreamSocket](http://go.microsoft.com/fwlink/p/?LinkId=620606). Инициализация сокета выполняется в Scenario1\_Connect.xaml.cs, а реализация фоновой задачи — в SocketActivityTask.cs.
 
-Возможно, вы заметите, что пример вызывает элемент **TransferOwnership**, как только создает новый или получает существующий сокет, вместо использования с этой целью обработчика событий **OnSuspending**, как описано в данном разделе. Это связано с тем, что в примере акцент сделан на демонстрации [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009), а не использовании сокета для любых других действий, когда он запущен. Вероятно, ваше приложение будет более сложным, и в нем необходимо будет использовать **OnSuspending**, чтобы определить, когда вызывать **TransferOwnership**.
+Возможно, вы заметите, что пример вызывает элемент **TransferOwnership**, как только создает новый или получает существующий сокет, вместо использования с этой целью обработчика событий **OnSuspending**, как описано в данном разделе. Это связано с тем, что в примере акцент сделан на демонстрации [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009), а не использовании сокета для любых других действий, когда он запущен. Вероятно, ваше приложение будет более сложным и в нем необходимо будет использовать **OnSuspending** для определения того, когда вызывать **TransferOwnership**.
 
 ## Триггеры канала управления
 
@@ -427,15 +431,13 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 }
 ```
 
-Дополнительные сведения об использовании [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) или [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) с [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) см. в разделе [Пример ControlChannelTrigger StreamWebSocket](http://go.microsoft.com/fwlink/p/?linkid=251232).
+Дополнительные сведения об использовании [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) или [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) с [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) см. в [Примере ControlChannelTrigger StreamWebSocket](http://go.microsoft.com/fwlink/p/?linkid=251232).
 
 ## ControlChannelTrigger с HttpClient
 
 При использовании [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) с [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) действуют особые условия. Существует ряд специфичных для транспорта шаблонов использования и рекомендаций, которыми следует руководствоваться при использовании [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) с **ControlChannelTrigger**. Кроме того, эти аспекты влияют на способ, которым обрабатываются запросы на получение пакетов в [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637).
 
 **Примечание.**
-            
-          
             Класс [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637), использующий SSL, в настоящее время не поддерживается с помощью функции сетевых триггеров и [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
  
@@ -580,7 +582,7 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 }
 ```
 
-Подробнее об использовании [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) с [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) см. в разделе [пример ControlChannelTrigger HttpClient](http://go.microsoft.com/fwlink/p/?linkid=258323).
+Подробнее об использовании [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) с [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) см. в [Примере ControlChannelTrigger HttpClient](http://go.microsoft.com/fwlink/p/?linkid=258323).
 
 ## ControlChannelTrigger с IXMLHttpRequest2
 
@@ -592,10 +594,11 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 -   Возможно, перед вызовом метода [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) приложению придется вызвать методы [**SetProperty**](https://msdn.microsoft.com/library/windows/desktop/hh831167) и [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/desktop/hh831168) для настройки транспорта HTTP.
 -   Приложению может потребоваться выполнить предварительный запрос [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) для проверки и правильной настройки транспорта, прежде чем оно создаст транспорт для использования с [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). После того как приложение подтвердит правильную настройку транспорта, можно настроить объект [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) в качестве транспортного объекта для использования с **ControlChannelTrigger**. Цель этой процедуры — предотвратить сценарии разрыва подключения, установленного по транспорту. Если используется SSL с проверкой сертификата, возможно, приложение должно будет вывести диалоговое окно для ввода ПИН-кода или выбора сертификата, если в системе их несколько. Возможно, возникнет необходимость в проверке подлинности прокси-сервера и сервера. По истечении срока действия кэшированных учетных данных прокси-сервера или сервера подключение может быть разорвано. Один из способов предотвратить проблемы, связанные с истечением срока действия кэшированных учетных данных, — это установка таймера. При необходимости перенаправления HTTP не гарантируется, что второе подключение будет установлено надежно. Предварительный тестовый запрос поможет убедиться в том, что приложение может использовать актуальный URL-адрес перенаправления, до использования объекта **IXMLHTTPRequest2** в качестве транспорта для объекта **ControlChannelTrigger**.
 
-Подробнее об использовании [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) с [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) см. в разделе [пример ControlChannelTrigger с IXMLHTTPRequest2](http://go.microsoft.com/fwlink/p/?linkid=258538).
+Подробнее об использовании [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) с [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) см. в [Примере ControlChannelTrigger с IXMLHTTPRequest2](http://go.microsoft.com/fwlink/p/?linkid=258538).
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

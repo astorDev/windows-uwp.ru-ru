@@ -1,7 +1,11 @@
 ---
 author: QuinnRadich
-title: Что нового в Windows 10 (версия 1511), ноябрь 2015 г.
-description: Windows 10 (версия 1511) и новые средства разработчика предоставляют инструменты, функции и возможности на основе новой универсальной платформы Windows.
+title: "Что нового в Windows 10 (версия 1511), ноябрь 2015 г."
+description: "Windows 10 (версия 1511) и новые средства разработчика предоставляют инструменты, функции и возможности на основе новой универсальной платформы Windows."
+translationtype: Human Translation
+ms.sourcegitcommit: 1029eff0f21c62f8235f37516971996791051d4c
+ms.openlocfilehash: 07d40584e998d358c6c80bd5aec43be885a79495
+
 ---
 
 # Что нового в Windows
@@ -26,6 +30,7 @@ API смарт-карт | В пространство имен [Windows.Devices.
 Загружаемые файлы оформления | Ознакомьтесь с новыми шаблонами оформления приложений UWP для Adobe Photoshop. Мы также обновили шаблоны Microsoft PowerPoint и Adobe Illustrator и опубликовали PDF-версию руководства. [Посетите страницу скачиваемых файлов, связанных с проектированием](https://developer.microsoft.com/en-us/windows/design/assets).
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

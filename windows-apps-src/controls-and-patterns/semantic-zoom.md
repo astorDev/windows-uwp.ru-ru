@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Элемент управления Semantic Zoom дает пользователю возможность изменять масштаб, переходя от одного семантического представления одного и того же набора данных к другому.
-title: Контекстное масштабирование
+Description: "Элемент управления Semantic Zoom дает пользователю возможность изменять масштаб, переходя от одного семантического представления одного и того же набора данных к другому."
+title: "Контекстное масштабирование"
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 47e39290a63408fc66783617ad2f12345eab2fa3
+
 ---
 
 # Контекстное масштабирование
@@ -65,6 +69,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

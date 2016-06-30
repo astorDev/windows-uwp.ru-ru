@@ -1,16 +1,20 @@
 ---
-title: Copy to and from byte arrays
-description: This example code shows how to copy to and from byte arrays in an Universal Windows Platform (UWP) app.
+title: "Копирование в массивы байтов и из них"
+description: "В этом примере кода показано, как копировать в массивы байтов и из них в приложении универсальной платформы Windows (UWP)."
 ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: db1691421cf4e540c9593efb4bbf2a608426c0ed
+
 ---
 
-# Copy to and from byte arrays
+# Копирование в массивы байтов и из них
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This example code shows how to copy to and from byte arrays in an Universal Windows Platform (UWP) app.
+В этом примере кода показано, как копировать в массивы байтов и из них в приложении универсальной платформы Windows (UWP).
 
 ```cs
 public void ByteArrayCopy()
@@ -30,6 +34,7 @@ public void ByteArrayCopy()
 }
 ```
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

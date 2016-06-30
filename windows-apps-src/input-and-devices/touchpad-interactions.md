@@ -5,8 +5,8 @@ title: "Взаимодействия с сенсорной панелью"
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
 
 ---
 
@@ -41,7 +41,7 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
 Жесты и правила, описанные в этой статье, могут помочь вам интегрировать поддержку ввода с сенсорной панели в свое приложение, используя минимальный объем кода.
 
-## <span id="The_touchpad_language"></span><span id="the_touchpad_language"></span><span id="THE_TOUCHPAD_LANGUAGE"></span>Язык сенсорной панели
+## Язык сенсорной панели
 
 
 Компактный набор взаимодействий с помощью сенсорной панели используется единообразно во всей системе. Если вы оптимизируете свое приложение для ввода с сенсорных устройств и мыши, ваше приложение сразу покажется пользователям знакомым. Они станут увереннее в своих действиях, и им легче будет освоить ваше приложение и пользоваться им.
@@ -71,39 +71,39 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>Касание тремя пальцами</p></td>
+<td align="left"><p>Касание тремя пальцами</p></td>
 <td align="left"><p>Настройка пользователя: выполнение поиска с помощью <strong>Кортаны</strong> или переход в <strong>Центр поддержки</strong>.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>Проведение тремя пальцами</p></td>
+<td align="left"><p>Проведение тремя пальцами</p></td>
 <td align="left"><p>Настройка пользователя: открытие представления задач виртуального рабочего стола, отображение рабочего стола или переключение между открытыми приложениями.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_tap_for_primary_action"></span><span id="single_finger_tap_for_primary_action"></span><span id="SINGLE_FINGER_TAP_FOR_PRIMARY_ACTION"></span>Касание одним пальцем — основное действие</p></td>
+<td align="left"><p>Касание одним пальцем — основное действие</p></td>
 <td align="left"><p>Касание элемента одним пальцем вызывает основное действие для этого элемента, например запуск приложения или выполнение команды.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Two_finger_tap_to_right-click"></span><span id="two_finger_tap_to_right-click"></span><span id="TWO_FINGER_TAP_TO_RIGHT-CLICK"></span>Касание двумя пальцами — щелчок правой кнопкой мыши</p></td>
+<td align="left"><p>Касание двумя пальцами — щелчок правой кнопкой мыши</p></td>
 <td align="left"><p>Коснитесь элемента двумя пальцами одновременно, чтобы выделить его и отобразить контекстные команды.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Two_finger_slide_to_pan"></span><span id="two_finger_slide_to_pan"></span><span id="TWO_FINGER_SLIDE_TO_PAN"></span>Проведение двумя пальцами — сдвиг</p></td>
+<td align="left"><p>Проведение двумя пальцами — сдвиг</p></td>
 <td align="left"><p>Скользящее движение используется главным образом для сдвига, но также подходит для перемещения, рисования и рукописного ввода.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Pinch_and_stretch_to_zoom"></span><span id="pinch_and_stretch_to_zoom"></span><span id="PINCH_AND_STRETCH_TO_ZOOM"></span>Сжатие и растяжение — изменение масштаба</p></td>
+<td align="left"><p>Сжатие и растяжение — изменение масштаба</p></td>
 <td align="left"><p>Жесты сжатия и растяжения обычно используются для изменения размера и контекстного масштабирования.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_rearrange"></span><span id="single_finger_press_and_slide_to_rearrange"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_REARRANGE"></span>Нажатие и проведение одним пальцем — изменение порядка</p></td>
+<td align="left"><p>Нажатие и проведение одним пальцем — изменение порядка</p></td>
 <td align="left"><p>Перетаскивание элемента.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_select_text"></span><span id="single_finger_press_and_slide_to_select_text"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_SELECT_TEXT"></span>Нажатие и проведение одним пальцем — выделение текста</p></td>
+<td align="left"><p>Нажатие и проведение одним пальцем — выделение текста</p></td>
 <td align="left"><p>Если нажать пальцем в пределах доступного для выделения текста, а затем провести пальцем, текст будет выделен. Двойное касание выделяет слово.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Left_and_right_click_zone"></span><span id="left_and_right_click_zone"></span><span id="LEFT_AND_RIGHT_CLICK_ZONE"></span>Зоны щелчка левой и правой кнопками мыши</p></td>
+<td align="left"><p>Зоны щелчка левой и правой кнопками мыши</p></td>
 <td align="left"><p>Вы можете эмулировать функции левой и правой кнопок мыши.</p></td>
 </tr>
 </tbody>
@@ -111,14 +111,14 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
  
 
-## <span id="Hardware"></span><span id="hardware"></span><span id="HARDWARE"></span>Оборудование
+## Оборудование
 
 
 Запросите возможности мыши ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)), чтобы определить, к каким аспектам пользовательского интерфейса вашего приложения у аппаратной части сенсорной панели есть прямой доступ. Мы рекомендуем предоставлять пользовательский интерфейс как для сенсорного ввода, так и для мыши.
 
 Подробнее о запросе возможностей устройств см. в разделе [Распознавание устройств ввода](identify-input-devices.md).
 
-## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>Визуальная обратная связь
+## Визуальная обратная связь
 
 
 -   Обнаружив курсор сенсорной панели (при помощи событий перемещения или наведения), отображайте пользовательский интерфейс для мыши, чтобы показать возможности, которые предоставляет элемент. Если указатель сенсорной панели не перемещается в течение определенного времени или если пользователь начинает сенсорное взаимодействие, сделайте так, чтобы пользовательский интерфейс сенсорной панели постепенно исчезал с экрана. В этом случае пользовательский интерфейс будет аккуратным, не загроможденным лишними элементами.
@@ -129,7 +129,7 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
 Дополнительные общие рекомендации по визуальной обратной связи см. в разделе [Руководство по визуальной обратной связи](https://msdn.microsoft.com/library/windows/apps/hh465342).
 
-## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>Курсоры
+## Курсоры
 
 
 Для указателя сенсорной панели предусмотрен набор стандартных указателей. Они указывают на основное действие элемента.
@@ -144,7 +144,7 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 -   Используйте курсоры изменения размеров по горизонтали, вертикали и диагонали (![Курсор изменения размеров по вертикали](images/cursor-vertical.png), ![Курсор изменения размеров по горизонтали](images/cursor-horizontal.png), ![Курсор изменения размеров по диагонали (левый нижний, правый верхний)](images/cursor-diagonal2.png), ![Курсор изменения размеров по диагонали (левый верхний, правый нижний)](images/cursor-diagonal1.png)), если размер объекта можно изменить.
 -   Используйте курсоры "хватающая рука" (![Курсор "хватающая рука" (открыта)](images/cursor-pan1.png), ![Курсор "хватающая рука" (сжатая)](images/cursor-pan2.png)) для сдвига содержимого в пределах фиксированного холста, например карты.
 
-## <span id="related_topics"></span>Статьи по теме
+## Статьи по теме
 
 
 * [Работа с данными указателя](handle-pointer-input.md)
@@ -170,6 +170,6 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

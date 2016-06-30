@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Сравнение буферов, однородных элементов и атрибутов вершин OpenGL ES 2.0 с Direct3D
-description: В процессе переноса в Direct3D 11 из OpenGL ES 2.0 необходимо изменить синтаксис и поведение API для передачи данных между приложением и программами-шейдерами.
+title: "Сравнение буферов, однородных элементов и атрибутов вершин OpenGL ES 2.0 с Direct3D"
+description: "В процессе переноса в Direct3D 11 из OpenGL ES 2.0 необходимо изменить синтаксис и поведение API для передачи данных между приложением и программами-шейдерами."
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a588ba010ddf21a07d493774cff7f6ab5dbfdf47
+
 ---
 
 # Сравнение атрибутов буферов, однородностей и вершин OpenGL ES 2.0 с Direct3D
@@ -297,6 +301,7 @@ struct VertexShaderInput
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

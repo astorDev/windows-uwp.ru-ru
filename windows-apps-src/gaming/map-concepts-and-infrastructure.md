@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Сопоставление OpenGL ES 2.0 с Direct3D 11
-description: Впервые приступая к процессу переноса графической архитектуры из OpenGL ES 2.0 в Direct3D, ознакомьтесь с ключевыми различиями между этими API.
+title: "Сопоставление OpenGL ES 2.0 с Direct3D 11"
+description: "Впервые приступая к процессу переноса графической архитектуры из OpenGL ES 2.0 в Direct3D, ознакомьтесь с ключевыми различиями между этими API."
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a058c5f669704695cc3a2ae5385feccbf6cb4bc3
+
 ---
 
 # Сопоставление OpenGL ES 2.0 с Direct3D 11
@@ -59,6 +63,7 @@ ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

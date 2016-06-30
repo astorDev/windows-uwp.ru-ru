@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Microsoft Advertising в pubCenter интегрирован в Центр разработки для Windows.
-title: Интеграция Центра разработки и pubCenter
+Description: "Microsoft Advertising в pubCenter интегрирован в Центр разработки для Windows."
+title: "Интеграция Центра разработки и pubCenter"
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d6bf60e1dae7ec62e3cdbba8098a24c093d5deb1
+
 ---
 
 # Интеграция Центра разработки и pubCenter
@@ -181,6 +185,7 @@ Microsoft Advertising в pubCenter интегрирован в Центр ра�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Двумерная графика для игр DirectX
-description: В этом разделе обсуждаются двумерная растровая графика и эффекты, а также способы их использования в вашей игре.
+title: "Двумерная графика для игр DirectX"
+description: "В этом разделе обсуждаются двумерная растровая графика и эффекты, а также способы их использования в вашей игре."
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 50782c5923f9c811f5d8e91aa9aee897876e6c24
+
 ---
 
 # Двумерная графика для игр DirectX
@@ -67,6 +71,7 @@ ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

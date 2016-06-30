@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Службы push-уведомлений Windows (WNS) позволяют сторонним разработчикам отправлять обновления всплывающих уведомлений, плиток, индикаторов событий и необработанные обновления из своей облачной службы. Это обеспечивает энергоэффективный и надежный механизм передачи пользователям свежих обновлений.
-title: Обзор служб push-уведомлений Windows (WNS)
+Description: "Службы push-уведомлений Windows (WNS) позволяют сторонним разработчикам отправлять обновления всплывающих уведомлений, плиток, индикаторов событий и необработанные обновления из своей облачной службы. Это обеспечивает энергоэффективный и надежный механизм передачи пользователям свежих обновлений."
+title: "Обзор служб push-уведомлений Windows (WNS)"
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 32471f23bf10a8430db6c6bd1376f1f7aa6c784c
+
 ---
 
 # Обзор служб push-уведомлений Windows (WNS)
@@ -262,6 +266,7 @@ async public void CheckForEnergySaving()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

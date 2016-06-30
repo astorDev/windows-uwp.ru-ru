@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Запуск приложения для результатов
-description: Узнайте, как запустить приложение из другого приложения и обмениваться данными между двумя приложениями. Эта процедура называется запуском приложения для результатов.
+author: TylerMSFT
+title: "Запуск приложения для результатов"
+description: "Узнайте, как запустить приложение из другого приложения и обмениваться данными между двумя приложениями. Эта процедура называется запуском приложения для результатов."
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
+ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
+ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
+
 ---
 
 # Запуск приложения для результатов
@@ -112,8 +115,8 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 {
     var protocolForResultsArgs = e.Parameter as ProtocolForResultsActivatedEventArgs;
     // Set the ProtocolForResultsOperation field.
-    _operation = protocolForResultsArgs.ProtocolForResultsOperation; 
-    
+    _operation = protocolForResultsArgs.ProtocolForResultsOperation;
+
     if (protocolForResultsArgs.Data.ContainsKey("TestData"))
     {
         string dataFromCaller = protocolForResultsArgs.Data["TestData"] as string;
@@ -200,8 +203,6 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

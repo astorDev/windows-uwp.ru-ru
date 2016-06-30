@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: В этом руководстве описано, как создать эффективное содержимое раздела справки для приложения.
-title: Руководство по справке для приложений
+Description: "В этом руководстве описано, как создать эффективное содержимое раздела справки для приложения."
+title: "Руководство по справке для приложений"
 label: Guidelines for app help
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 1e1e5e118eb44f6b491669dbd274fae05d92685b
+
 ---
 
 # Руководство по справке для приложений
@@ -61,6 +65,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

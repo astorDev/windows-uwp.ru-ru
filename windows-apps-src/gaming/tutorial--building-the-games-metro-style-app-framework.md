@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Определение структуры игрового приложения универсальной платформы Windows (UWP)
-description: Первый этап программирования игры универсальной платформы Windows (UWP) на базе DirectX заключается в создании структуры, которая позволит объекту игры взаимодействовать с Windows.
+title: "Определение структуры игрового приложения универсальной платформы Windows (UWP)"
+description: "Первый этап программирования игры универсальной платформы Windows (UWP) на базе DirectX заключается в создании структуры, которая позволит объекту игры взаимодействовать с Windows."
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2ebc7bca06454f78ab375058e49f012cacb00cc8
+
 ---
 
 #  Определение структуры игрового приложения универсальной платформы Windows (UWP)
@@ -1424,6 +1428,7 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

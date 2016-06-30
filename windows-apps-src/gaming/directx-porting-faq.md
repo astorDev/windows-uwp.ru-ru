@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Вопросы и ответы по переносу на DirectX 11
-description: Ответы на часто встречающиеся вопросы о переносе игр на универсальную платформу Windows (UWP).
+title: "Вопросы и ответы по переносу на DirectX 11"
+description: "Ответы на часто встречающиеся вопросы о переносе игр на универсальную платформу Windows (UWP)."
 ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: dc98f15d80fb70fb6e106555659d699c41fbfa0b
+
 ---
 
 # Вопросы и ответы по переносу на DirectX 11
@@ -137,6 +141,7 @@ Microsoft Visual Studio 2015 включает средства диагност
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

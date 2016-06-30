@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Использование выравнивания, полей и отбивки для изменения макета элементов на странице.
-title: Выравнивание, поля и отбивка для приложений универсальной платформы Windows (UWP)
+Description: "Использование выравнивания, полей и отбивки для изменения макета элементов на странице."
+title: "Выравнивание, поля и отбивка для приложений универсальной платформы Windows (UWP)"
 ms.assetid: 9412ABD4-3674-4865-B07D-64C7C26E4842
 label: Alignment, margin, and padding
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 86635255fbdae83fb2749e2aea7011a8b989e83f
+
 ---
 # Выравнивание, поля и отбивка
 
@@ -71,7 +75,7 @@ template: detail.hbs
 
 ## Связанные темы
 
-**Справочные материалы**
+**Справка**
 
 [**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718)
 
@@ -86,6 +90,7 @@ template: detail.hbs
 [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

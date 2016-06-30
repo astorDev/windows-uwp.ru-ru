@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Элемент управления представлением веб-страницы внедряет в приложение представление, которое отображает содержимое веб-страницы с помощью механизма визуализации Microsoft Edge. В элементе управления представлением веб-страницы могут отображаться и работать гиперссылки.
-title: Представление веб-страницы
+Description: "Элемент управления представлением веб-страницы внедряет в приложение представление, которое отображает содержимое веб-страницы с помощью механизма визуализации Microsoft Edge. В элементе управления представлением веб-страницы могут отображаться и работать гиперссылки."
+title: "Представление веб-страницы"
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: dd947d0b55dad56fdd6c684ae236f1c31ac8da86
+
 ---
 
 # Представление веб-страницы
@@ -41,7 +45,7 @@ template: detail.hbs
 
 Хотя WebView не относится к подклассу "Control", он получает фокус ввода с клавиатуры и участвует в порядке вкладок. Он предоставляет метод [**Focus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.focus.aspx), а также события [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.gotfocus.aspx) и [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.lostfocus.aspx), но у него отсутствуют свойства, связанные с вкладками. Его положение в последовательности вкладок такое же, как его положение в порядке документа XAML. Последовательность вкладок включает все элементы в содержимом представления веб-страницы, которые могут получать фокус ввода. 
 
-Как показано в таблице событий на странице класса [**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx), представление веб-страницы не поддерживает большинство событий пользовательского ввода, унаследованных от [**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), таких как [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx), [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx) и [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx). Вместо этого можно использовать [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) с функцией JavaScript **eval**, чтобы воспользоваться обработчиками событий HTML и **window.external.notify** из обработчика событий HTML для уведомления приложения с помощью [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx).
+Как показано в таблице событий на странице класса [**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx), представление веб-страницы не поддерживает большинство событий пользовательского ввода, унаследованных от [**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), таких как [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx), [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx) и [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx). Вместо этого вы можете использовать [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) с функцией JavaScript **eval**, чтобы использовать обработчики событий HTML и **window.external.notify** из обработчика событий HTML для уведомления приложения с помощью [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx).
 
 ### Переход к содержимому
 
@@ -60,7 +64,7 @@ template: detail.hbs
 <WebView x:Name="webView3" Source="ms-appx-web:///help/about.html"/>
 ```
 
-Свойство Source можно задать в коде, но вместо этого для загрузки содержимого в код обычно предпочтительнее использовать один из методов **Navigate**. 
+Свойство "Source" можно задать в коде, но вместо этого для загрузки содержимого в код обычно предпочтительнее использовать один из методов **Navigate**. 
 
 Для загрузки веб-содержимого используйте метод [**Navigate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigate.aspx) с **Uri**, который использует схему http или https. 
 
@@ -251,7 +255,7 @@ string returnValue = await webView1.InvokeScriptAsync("setDate", args);
 
 Можно использовать **InvokeScriptAsync** с функцией JavaScript **eval**, чтобы внедрить содержимое в веб-страницу.
 
-В следующем примере текст текстового поля XAML (`nameTextBox.Text`) написан в элементе div на странице HTML, размещенной в 
+В следующем примере текст текстового поля XAML (`nameTextBox.Text`) написан в элементе div в странице HTML, размещенной в `webView1`. 
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -339,6 +343,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

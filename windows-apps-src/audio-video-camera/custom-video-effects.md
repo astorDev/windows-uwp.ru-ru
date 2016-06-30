@@ -1,10 +1,14 @@
 ---
 author: drewbatgit
-Description: 'В этой статье описано, как создать компонент среды выполнения Windows, реализующий интерфейс IBasicVideoEffect, который позволяет создавать пользовательские эффекты для видеопотоков.'
-MS-HAID: 'dev\_audio\_vid\_camera.custom\_video\_effects'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "В этой статье описано, как создать компонент среды выполнения Windows, реализующий интерфейс IBasicVideoEffect, который позволяет создавать пользовательские эффекты для видеопотоков."
+MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: Пользовательские видеоэффекты
+title: "Пользовательские видеоэффекты"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
+
 ---
 
 # Пользовательские видеоэффекты
@@ -246,6 +250,7 @@ title: Пользовательские видеоэффекты
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

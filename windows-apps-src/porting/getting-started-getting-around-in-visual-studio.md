@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: Введение в Visual Studio
-title: Введение в Visual Studio
+description: "Введение в Visual Studio"
+title: "Введение в Visual Studio"
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d31e6e940f0b03667f1e19abec17804f6f3e16a6
+
 ---
 
 # Приступая к работе: введение в Visual Studio
@@ -121,6 +125,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

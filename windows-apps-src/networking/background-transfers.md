@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: Используйте фоновую передачу данных API, чтобы надежно копировать файлы по сети.
-title: Фоновая передача данных
+description: "Используйте фоновую передачу данных API, чтобы надежно копировать файлы по сети."
+title: "Фоновая передача данных"
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 02e01be9cf726731697eb5934cb86b398431b532
+
 ---
 
 # Фоновая передача данных
@@ -79,12 +83,12 @@ ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 
 Затем на основе свойств предоставленного класса [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (*file*) [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) заполняет заголовок запроса и задает свойство *SourceFile* с использованием объекта **StorageFile**. Далее вызывается метод [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) для вставки имени файла, предоставленного в виде строки, и свойства [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220).
 
-Наконец, [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) создает [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*.
+Наконец, [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) создает [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*).
 
 [!code-js[uploadFile]
             (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "Создание и инициализация операции отправки")]
 
-Обратите внимание на асинхронные вызовы метода, определенные при помощи объектов Promise на JavaScript. Рассмотрим строку из последнего примера:
+Обратите внимание на асинхронные вызовы метода, определенные с помощью объектов Promise на JavaScript. Рассмотрим строку из последнего примера:
 
 ```javascript
 promise = upload.startAsync().then(complete, error, progress);
@@ -192,7 +196,7 @@ upload.startMultipart = function (uriString, files) {
 promise = download.startAsync().then(complete, error, progress);
 ```
 
-За вызовом асинхронного метода следует оператор "then", указывающий определенные приложением методы, которые вызываются при возврате результата из асинхронного метода. Подробнее об этой технике программирования см. в разделе об [асинхронном программировании на JavaScript с использованием объектов Promise](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
+За вызовом асинхронного метода следует оператор "then", указывающий определенные приложением методы, которые вызываются при возврате результата из асинхронного метода. Подробнее об этой технике программирования: [Асинхронное программирование на JavaScript с использованием объектов Promise](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
 
 ### Добавление дополнительных методов управления работой
 
@@ -302,7 +306,7 @@ promise = download.startAsync().then(complete, error, progress);
 
 Исключение создается, если конструктору объекта [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) передается неправильная строка для универсального кода ресурса (URI).
 
-**.NET. **Тип [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) отображается как [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) в C# и VB.
+**.NET: **Тип [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) отображается как [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) в C# и VB.
 
 В C# и Visual Basic можно избежать этой ошибки, используя класс [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) из платформы .NET 4.5 и один из методов [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx), чтобы перед составлением URI проверить строку, полученную от пользователя приложения.
 
@@ -316,6 +320,7 @@ promise = download.startAsync().then(complete, error, progress);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

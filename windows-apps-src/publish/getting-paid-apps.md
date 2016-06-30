@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Ниже приводятся некоторые важные сведения, которые потребуются для получения платежей за ваши приложения, внутренние продукты приложений (IAP) и прибыли от рекламы Microsoft Advertising.
-title: Получение платежей
+Description: "Ниже приводятся некоторые важные сведения, которые потребуются для получения платежей за ваши приложения, внутренние продукты приложений (IAP) и прибыли от рекламы Microsoft Advertising."
+title: "Получение платежей"
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b7c9bcf36aaee0344c6916fcc81aca189ef0f481
+
 ---
 
 # Получение платежей
@@ -56,6 +60,7 @@ ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

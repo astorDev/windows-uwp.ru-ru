@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
-title: Оптимизация пользовательского интерфейса ListView и GridView
-description: Повысить производительность и время запуска ListView и GridView можно с помощью виртуализации пользовательского интерфейса, сокращения элементов и прогрессивного обновления элементов.
+title: "Оптимизация пользовательского интерфейса ListView и GridView"
+description: "Повысить производительность и время запуска ListView и GridView можно с помощью виртуализации пользовательского интерфейса, сокращения элементов и прогрессивного обновления элементов."
+translationtype: Human Translation
+ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
+ms.openlocfilehash: 362fbb6b733e855a2126196f12c650bdf2a7665d
+
 ---
 # Оптимизация пользовательского интерфейса ListView и GridView
 
@@ -321,6 +325,7 @@ private void lst-ChoosingItemContainer
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: scottmill
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
-title: Визуальный уровень
-description: API-интерфейс Windows.UI.Composition предоставляет доступ к уровню композиции, находящемуся между уровнем платформы (XAML) и уровнем графики (DirectX).
+title: "Визуальный уровень"
+description: "API-интерфейс Windows.UI.Composition предоставляет доступ к уровню композиции, находящемуся между уровнем платформы (XAML) и уровнем графики (DirectX)."
+translationtype: Human Translation
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: 164c01737d27451adcb685f9cda544cc00634af4
+
 ---
 # Визуальный уровень
 
@@ -52,11 +56,12 @@ Windows.UI.Composition — это декларативный API [абстрак
 
 ## <span id="XAML_Interoperation"></span><span id="xaml_interoperation"></span><span id="XAML_INTEROPERATION"></span>Взаимодействие с XAML
 
-Помимо создания визуального дерева с нуля, API композиции может взаимодействовать с существующим пользовательским интерфейсом XAML с помощью класса [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) в [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908).
+Помимо создания визуального дерева с нуля, API композиции может взаимодействовать с существующим пользовательским интерфейсом XAML с помощью класса [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) 
+        в [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908).
 
 
 **Примечание.**  
-Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132)
+Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -64,7 +69,9 @@ Windows.UI.Composition — это декларативный API [абстрак
 
 -   Ознакомьтесь со статьей Кенни Керра (Kenny Kerr) на MSDN, которая посвящена этому API: [Graphics and Animation — Windows Composition Turns 10](https://msdn.microsoft.com/magazine/mt590968) (Графика и анимация — композиция в Windows 10)
 -   Примеры композиции на веб-сайте [GitHub](https://github.com/Microsoft/composition).
--   Полная справочная документация для API
+-   [
+              **Полная справочная документация для API** —
+            ](https://msdn.microsoft.com/library/windows/apps/Dn706878).
 -   Известные проблемы: [Известные проблемы](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues).
 
  
@@ -76,6 +83,7 @@ Windows.UI.Composition — это декларативный API [абстрак
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

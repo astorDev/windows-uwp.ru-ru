@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Ресурсы значков приложения, присутствующие в различных формах во всевозможных разделах операционной системы Windows 10, являются картами вызова приложения универсальной платформы для Windows (UWP).
-title: Ресурсы плиток и значков
+Description: "Ресурсы значков приложения, присутствующие в различных формах во всевозможных разделах операционной системы Windows 10, являются картами вызова приложения универсальной платформы для Windows (UWP)."
+title: "Ресурсы плиток и значков"
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 98eebc4fbf18aa2fbe4586958f666b41580cf6d9
+
 ---
 
 # Руководство по работе с ресурсами плиток и значков
@@ -384,6 +388,7 @@ C помощью шаблона значка (также называемого 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,18 +1,18 @@
 ---
-author: martinekuan
-title: Создание компонентов среды выполнения Windows на C++
-description: В этой статье описывается использование C++ для создания компонента среды выполнения Windows, представляющего собой библиотеку DLL, которую можно вызывать из универсального приложения для Windows, созданного с помощью JavaScript, C#, Visual Basic или C++.
+author: msatranjr
+title: "Создание компонентов среды выполнения Windows на C++"
+description: "В этой статье описывается использование C++ для создания компонента среды выполнения Windows, представляющего собой библиотеку DLL, которую можно вызывать из универсального приложения для Windows, созданного с помощью JavaScript, C#, Visual Basic или C++."
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 1497175723738cc23ec21b280c9639b216a33ddd
+
 ---
 
 
 # Создание компонентов среды выполнения Windows на C++
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этой статье описывается использование C++ для создания компонента среды выполнения Windows, представляющего собой библиотеку DLL, которую можно вызывать из универсального приложения для Windows, созданного с помощью JavaScript, C#, Visual Basic или C++.
 
@@ -57,7 +57,7 @@ public:
     double LogCalc(double input)
     {
         // Use C++ standard library as usual.
-        return std::log(input); 
+        return std::log(input);
     }
 
 };
@@ -97,7 +97,7 @@ public:
     double LogCalc(double input)
     {
         // Use C++ standard library as usual.
-        return std::log(input); 
+        return std::log(input);
     }
 ```
 
@@ -126,7 +126,7 @@ namespace CppComponent
     private:
         PlayerData m_player;
     public:
-        property PlayerData PlayerStats 
+        property PlayerData PlayerStats
         {
             PlayerData get(){ return m_player; }
             void set(PlayerData data) {m_player = data;}
@@ -185,7 +185,7 @@ private void GetAndSetPlayerData()
 Открытый класс ссылки C++ может содержать перегруженные методы, но в JavaScript возможности распознавания перегруженных методов ограничены. Например, он может найти разницу между следующими сигнатурами:
 
 ```cpp
-public ref class NumberClass sealed 
+public ref class NumberClass sealed
 {
 public:
     int GetNumber(int i);
@@ -333,7 +333,7 @@ private void SortListItems()
 //#include <collection.h>
 Windows::Foundation::Collections::IMap<int, Platform::String^> ^GetMap(void)
 {    
-    Windows::Foundation::Collections::IMap<int, Platform::String^> ^ret = 
+    Windows::Foundation::Collections::IMap<int, Platform::String^> ^ret =
         ref new Platform::Collections::Map<int, Platform::String^>;
     ret->Insert(1, "One ");
     ret->Insert(2, "Two ");
@@ -383,7 +383,7 @@ public:
     property int PropertyA
     {
         int get() { return m_propertyAValue; }
-        void set(int propertyAValue) 
+        void set(int propertyAValue)
         {
             if (propertyAValue != m_propertyAValue)
             {
@@ -597,6 +597,6 @@ Direction[curDirection];
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

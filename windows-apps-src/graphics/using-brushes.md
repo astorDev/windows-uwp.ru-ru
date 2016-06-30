@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: "Использование кистей"
 description: "Объекты Brush используются для окраски внутренних областей или контуров фигур, текста и частей элементов управления, чтобы окрашиваемый объект отображался в пользовательском интерфейсе."
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a4063ee2372d69289fca74c81a4c7645909c7f37
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ---
 # Использование кистей
@@ -42,7 +42,7 @@ ms.openlocfilehash: a4063ee2372d69289fca74c81a4c7645909c7f37
 
 ![Отображение SolidColorBrush.](images/brushes-solidcolorbrush.jpg)
 
-При определении [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) с помощью кода вместо XAML каждый именованный цвет доступен в виде статического значения свойства класса [**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s). Например, чтобы объявить значение свойства [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) объекта **SolidColorBrush** для представления именованного цвета "Orchid", задайте в качестве значения **Color** статическое значение [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx).
+При определении [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) с помощью кода вместо XAML каждый именованный цвет доступен в виде статического значения свойства класса [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors). Например, чтобы объявить значение свойства [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) объекта **SolidColorBrush** для представления именованного цвета "Orchid", задайте в качестве значения **Color** статическое значение [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx).
 
 ### Шестнадцатеричные значения цвета
 
@@ -150,7 +150,7 @@ ms.openlocfilehash: a4063ee2372d69289fca74c81a4c7645909c7f37
 
 Обычно кисти указываются с помощью XAML, а не определяются с помощью кода. Это происходит потому, что кисти обычно определяются как ресурсы XAML, а значения кистей часто являются результатами работы инструментов проектирования либо частью определения пользовательского интерфейса XAML. Тем не менее иногда, когда вы хотите определить кисть с помощью кода, все типы [**Кисть**](https://msdn.microsoft.com/library/windows/apps/BR228076) доступны для создания кода.
 
-Чтобы создать [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) в коде, используйте конструктор, который применяет параметр [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Передайте значение, которое является статическим свойством класса [**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s), например:
+Чтобы создать [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) в коде, используйте конструктор, который применяет параметр [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Передайте значение, которое является статическим свойством класса [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors), например:
 
 ```cs
 SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
@@ -180,6 +180,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

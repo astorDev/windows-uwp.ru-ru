@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Основные положения примера Marble Maze
-description: В этом документе описаны основные характеристики проекта Marble Maze, такие как использование Visual C++ в среде выполнения Windows, создание проекта, его структурирование и сборка.
+title: "Основные положения примера Marble Maze"
+description: "В этом документе описаны основные характеристики проекта Marble Maze, такие как использование Visual C++ в среде выполнения Windows, создание проекта, его структурирование и сборка."
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5a9df995078763df73542a4101e73e147517b1eb
+
 ---
 
 # Основные положения примера Marble Maze
@@ -142,6 +146,7 @@ void LoadMesh(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

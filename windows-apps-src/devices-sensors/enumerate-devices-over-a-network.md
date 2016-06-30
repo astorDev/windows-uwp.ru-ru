@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
-title: Перечисление устройств по сети
-description: Помимо обнаружения локально подключенных устройств вы можете использовать интерфейсы API Windows.Devices.Enumeration для перечисления устройств по беспроводным и сетевым протоколам.
+title: "Перечисление устройств по сети"
+description: "Помимо обнаружения локально подключенных устройств вы можете использовать интерфейсы API Windows.Devices.Enumeration для перечисления устройств по беспроводным и сетевым протоколам."
+translationtype: Human Translation
+ms.sourcegitcommit: 6eca7156c8f81a9a89e006c09a232a255f3a8725
+ms.openlocfilehash: 9d2d58f2423688f895da1de56eef6448bb42692d
+
 ---
 # Перечисление устройств по сети
 
@@ -79,6 +83,7 @@ System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

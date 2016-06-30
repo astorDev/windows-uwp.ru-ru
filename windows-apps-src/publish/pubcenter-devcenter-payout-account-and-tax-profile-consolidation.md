@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Если ранее вы настроили счет для выплат прибыли от рекламы Microsoft Advertising в pubCenter, этот счет перестанет использоваться для платежей с 1 апреля 2016 г. Теперь платежи будут осуществляться через счет для выплат Центра разработки.
-title: Консолидация учетных записей для выплат pubCenter-DevCenter и налогового профиля
+Description: "Если ранее вы настроили счет для выплат прибыли от рекламы Microsoft Advertising в pubCenter, этот счет перестанет использоваться для платежей с 1 апреля 2016 г. Теперь платежи будут осуществляться через счет для выплат Центра разработки."
+title: "Консолидация учетных записей для выплат pubCenter-DevCenter и налогового профиля"
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8973b1def46c7ada8b73337cb20d01ae1e5b97d8
+
 ---
 
 # Консолидация учетных записей для выплат pubCenter-DevCenter и налогового профиля
@@ -80,6 +84,7 @@ ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

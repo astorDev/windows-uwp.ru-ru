@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Информация о хранении и извлечении локальных, перемещаемых и временных данных приложений.
-title: Хранение и извлечение параметров и прочих данных приложения
+Description: "Информация о хранении и извлечении локальных, перемещаемых и временных данных приложений."
+title: "Хранение и извлечение параметров и прочих данных приложения"
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 433cda6432d1e695bacb338e68012bcc9c837eb6
+
 ---
 
 # Хранение и извлечение параметров и прочих данных приложения
@@ -67,7 +71,7 @@ Windows.Storage.StorageFolder localFolder =
 
 ### <span id="Create_and_retrieve_a_simple_local_setting"></span><span id="create_and_retrieve_a_simple_local_setting"></span><span id="CREATE_AND_RETRIEVE_A_SIMPLE_LOCAL_SETTING"></span>Создание и извлечение простого локального параметра
 
-Для создания или записи параметра используйте свойство [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) для получения доступа к параметрам в контейнере `localSettings`, полученном на предыдущем этапе. В следующем примере создается параметр с именем
+Для создания или записи параметра используйте свойство [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) для получения доступа к параметрам в контейнере `localSettings`, полученном на предыдущем этапе. В следующем примере создается параметр с именем `exampleSetting`.
 
 ```CSharp
 // Simple setting
@@ -237,7 +241,7 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 
 ### <span id="Create_and_retrieve_roaming_settings"></span><span id="create_and_retrieve_roaming_settings"></span><span id="CREATE_AND_RETRIEVE_ROAMING_SETTINGS"></span>Создание и извлечение параметров перемещения
 
-Используйте свойство [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) для доступа к параметрам в контейнере `roamingSettings`, полученном в предыдущем разделе. В следующем примере создается простой параметр с именем `exampleSetting` и составное значение
+Используйте свойство [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) для доступа к параметрам в контейнере `roamingSettings`, полученном в предыдущем разделе. В следующем примере создается простой параметр с именем `exampleSetting` и составное значение `composite`.
 
 ```CSharp
 // Simple setting
@@ -279,7 +283,7 @@ else
 }
 ```
 
-### <span id="Create_and_retrieve_roaming_files"></span><span id="create_and_retrieve_roaming_files"></span><span id="CREATE_AND_RETRIEVE_ROAMING_FILES"></span>Создание и восстановление перемещаемых файлов
+### <span id="Create_and_retrieve_roaming_files"></span><span id="create_and_retrieve_roaming_files"></span><span id="CREATE_AND_RETRIEVE_ROAMING_FILES"></span>Создайте и восстановление перемещаемых файлов
 
 Для создания и обновления файла в хранилище данных перемещаемого приложения используйте файловые API, например, [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) и [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). В следующем примере создается файл с именем `dataFile.txt` в контейнере `roamingFolder` и в этот файл записываются текущие дата и время. Значение **ReplaceExisting** из перечисления [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) показывает, что, если файл уже существует, его следует заменить.
 
@@ -456,6 +460,7 @@ localSettings.DeleteContainer("exampleContainer");
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Активация приложения (DirectX и C++)
-description: В этом разделе показано, как определить процесс активации для приложения универсальной платформы Windows (UWP), использующего DirectX.
+title: "Активация приложения (DirectX и C++)"
+description: "В этом разделе показано, как определить процесс активации для приложения универсальной платформы Windows (UWP), использующего DirectX."
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 14859d03c7af45a17772c76f8c79b3c1bc56272c
+
 ---
 
 # Активация приложения (DirectX и C++)
@@ -90,6 +94,7 @@ void App::Run()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: TylerMSFT
-Description: 'В этом разделе представлены примеры задач по созданию кода для наиболее распространенных сценариев защиты корпоративных данных (EDP) на уровне файлов.'
-MS-HAID: 'dev\_files.protect\_your\_enterprise\_data\_with\_edp'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "В этом разделе представлены примеры задач по созданию кода для наиболее распространенных сценариев защиты корпоративных данных (EDP) на уровне файлов."
+MS-HAID: dev\_files.protect\_your\_enterprise\_data\_with\_edp
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 'Использование службы защиты корпоративных данных (EDP) для защиты файлов'
+title: "Использование службы защиты корпоративных данных (EDP) для защиты файлов"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 2d9b1ec4e39e5c8a100030184ee9287a0d97ea24
+
 ---
 
 # Использование службы защиты корпоративных данных (EDP) для защиты файлов
@@ -13,7 +17,7 @@ __Примечание.__ Политику защиты корпоративны
 
 В этом разделе представлены примеры задач по созданию кода для наиболее распространенных сценариев защиты корпоративных данных (EDP) на уровне файлов. Полное описание взаимосвязи EDP с файлами, потоками, буфером обмена, сетями, фоновыми задачами и защитой данных в режиме блокировки для разработчиков см. в разделе [Защита корпоративных данных (EDP)](../enterprise/edp-hub.md).
 
-**Примечание**. В [примере защиты корпоративных данных](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409) проиллюстрированы многие сценарии файлов, обсуждаемые в этом разделе.
+**Примечание**  В [примере защиты корпоративных данных](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409) проиллюстрированы многие сценарии файлов, обсуждаемые в этом разделе.
 
 ## Необходимые условия
 
@@ -245,7 +249,7 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 }
 ```
 
-**Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Примечание.**  Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -264,6 +268,7 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

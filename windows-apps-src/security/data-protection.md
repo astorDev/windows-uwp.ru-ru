@@ -1,30 +1,34 @@
 ---
-title: Data protection
-description: This article explains how to use the DataProtectionProvider class in the Windows.Security.Cryptography.DataProtection namespace to encrypt and decrypt digital data in a UWP app.
+title: "Защита данных"
+description: "В этой статье описано, как использовать класс DataProtectionProvider в пространстве имен Windows.Security.Cryptography.DataProtection для шифрования и расшифровки цифровых данных в приложении UWP."
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 958d5dd1c5f61078a0b288d53debe93875d65f06
+
 ---
 
-# Data protection
+# Защита данных
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This article explains how to use the [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) class in the [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) namespace to encrypt and decrypt digital data in a UWP app.
+В этой статье описано, как использовать класс [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) в пространстве имен [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) для шифрования и расшифровки цифровых данных в приложении UWP.
 
-You can use the data protection APIs in multiple ways:
+Вы можете использовать API защиты данных различными способами:
 
--   To protect data to an Active Directory (AD) security principal like an AD group. Any member of the group can decrypt the data.
--   To protect data to the public key contained in an X.509 certificate. The owner of the private key can decrypt the data.
--   To protect data by using a symmetric key. This works, for example, to protect data to a non-AD principal such as Live ID.
--   To protect data to the credentials (password) used during logon to a website.
+-   Для защиты данных субъекта безопасности службы каталогов Active Directory (AD), например группы AD. Данные может расшифровать любой член этой группы.
+-   Защитить данные в открытом ключе, содержащемся в сертификате X.509. Эти данные может расшифровать владелец закрытого ключа.
+-   Чтобы защитить данные с помощью симметричного ключа. Этот способ, например, подходит для защиты данных в субъекту недоменных приложения как Live ID.
+-   Чтобы защитить данные для учетных данных (пароль), используемых при входе на веб-сайт.
 
-To protect data, when you create a [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) object you must specify a protection descriptor before calling [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) or [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564). The following example shows possible sample protection descriptors.
+Чтобы защитить данные при создании объекта [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559), нужно указать дескриптор защиты, прежде чем вызывать [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) или [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564). В следующем примере показаны возможные дескрипторы защиты.
 
-## Protecting static data
+## Защита статических данных
 
 
-The following example shows how to use the [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) and [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) methods to asynchronously protect static data to the current user's SID.
+В примере ниже показано, как использовать методы [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) и [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) для асинхронной защиты статических данных в идентификаторе безопасности текущего пользователя.
 
 ```cs
 using Windows.Security.Cryptography;
@@ -106,10 +110,10 @@ namespace SampleProtectAsync
 }
 ```
 
-## Protecting stream data
+## Защита потоковых данных
 
 
-The following example shows how to use the [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) and [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) methods to asynchronously protect stream data to the current user's SID.
+В примере ниже показано, как использовать методы [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) и [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) для асинхронной защиты потоковых данных в идентификаторе безопасности текущего пользователя.
 
 ```cs
 using Windows.Security.Cryptography;
@@ -259,6 +263,7 @@ namespace SampleProtectStreamAsync
 }
 ```
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-Description: Следуйте этим рекомендациям по функции создания геозон в своем приложении.
-title: Руководство по приложениям, использующим функцию геозон
+Description: "Следуйте этим рекомендациям по функции создания геозон в своем приложении."
+title: "Руководство по приложениям, использующим функцию геозон"
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d631885eced58d360d3e0442cbb49ede7b9b86c3
+
 ---
 
 # Руководство по приложениям, использующим функцию геозон
@@ -132,6 +136,7 @@ function onVisibilityChanged() {
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -3,8 +3,8 @@ author: TylerMSFT
 title: "Запуск приложения по умолчанию для URI"
 description: "Узнайте, как запускать приложение по умолчанию для универсального кода ресурса (URI). Универсальные коды ресурсов (URI) позволяют запустить приложение, чтобы выполнить определенную задачу. В этом разделе также приводится обзор множества схем URI, встроенных в Windows."
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: b593a43bc5b95dd0880af972ca1514e657bbd9e3
+ms.sourcegitcommit: 9011d2e2e1e51edc89851e815d31e13390c24f96
+ms.openlocfilehash: d454317d135e2b2b952c16fb00685e34b489865c
 
 ---
 
@@ -45,7 +45,7 @@ ms.openlocfilehash: b593a43bc5b95dd0880af972ca1514e657bbd9e3
 
 Используйте метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) для запуска URI. При вызове этого метода ваше приложение должно быть приложением переднего плана, то есть быть видимым пользователю. Это требование обеспечивает контроль пользователя над ситуацией. Для соблюдения этого требования убедитесь, что все запуски URI напрямую связаны с пользовательским интерфейсом вашего приложения. Чтобы запустить URI, пользователь всегда должен выполнить какое-либо действие. Если вы попытаетесь запустить URI, когда приложение не находится на переднем плане, запуск завершится ошибкой, и будет выполнен обратный вызов для ошибки.
 
-Сначала создайте объект [**System.Uri**](T:System.Uri) для представления URI, а затем передайте его методу [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). С помощью возвращаемого результата узнайте, был ли вызов выполнен успешно, как показано в следующем примере.
+Сначала создайте объект [**System.Uri**](https://msdn.microsoft.com/en-us/library/windows/apps/system.uri.aspx) для представления URI, а затем передайте его методу [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). С помощью возвращаемого результата узнайте, был ли вызов выполнен успешно, как показано в следующем примере.
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -225,6 +225,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

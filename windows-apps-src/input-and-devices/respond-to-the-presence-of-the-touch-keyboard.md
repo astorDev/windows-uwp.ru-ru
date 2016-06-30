@@ -5,8 +5,8 @@ title: "Реакция на наличие сенсорной клавиатур
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 5f4f9553a54dc902c7c6a50d6a1b4cf6251fd72c
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 417668a24c4a2ba28671b6fb0a4da74c0cfab341
 
 ---
 
@@ -47,7 +47,7 @@ ms.openlocfilehash: 5f4f9553a54dc902c7c6a50d6a1b4cf6251fd72c
 
 Полезные советы по разработке удобных и привлекательных приложений, оптимизированных для ввода данных с клавиатуры, см. в разделе [Руководство по сенсорной клавиатуре](https://msdn.microsoft.com/library/windows/apps/hh972345).
 
-## <span id="Touch_keyboard_and_a_custom_UI"></span><span id="touch_keyboard_and_a_custom_ui"></span><span id="TOUCH_KEYBOARD_AND_A_CUSTOM_UI"></span>Сенсорная клавиатура и настраиваемый пользовательский интерфейс
+## Сенсорная клавиатура и настраиваемый пользовательский интерфейс
 
 
 Ниже перечислены несколько основных рекомендаций для пользовательских элементов управления для ввода текста.
@@ -70,7 +70,7 @@ ms.openlocfilehash: 5f4f9553a54dc902c7c6a50d6a1b4cf6251fd72c
 
     ![Форма, содержащая области, которые всегда должны быть в поле зрения](images/touch-keyboard-pan2.png)
 
-## <span id="handling_events"></span><span id="HANDLING_EVENTS"></span>Обработка событий отображения и скрытия
+## Обработка событий отображения и скрытия
 
 
 В примере ниже показано, как прикрепить обработчики событий [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) и [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) сенсорной клавиатуры.
@@ -123,7 +123,7 @@ public class MyApplication
 }
 ```
 
-## <span id="related_topics"></span>Связанные разделы
+## Связанные разделы
 
 * [Взаимодействие с помощью клавиатуры](keyboard-interactions.md)
 * [Специальные возможности клавиатуры](https://msdn.microsoft.com/library/windows/apps/mt244347)
@@ -145,6 +145,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

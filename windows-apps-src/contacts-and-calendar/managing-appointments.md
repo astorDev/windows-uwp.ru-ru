@@ -1,8 +1,11 @@
 ---
 author: Xansky
-description: Пространство имен Windows.ApplicationModel.Appointments позволяет создавать встречи в приложении календаря пользователя и управлять ими.
-title: Управление встречами
+description: "Пространство имен Windows.ApplicationModel.Appointments позволяет создавать встречи в приложении календаря пользователя и управлять ими."
+title: "Управление встречами"
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 020b020d90a52d45fa989e0f630320b4630b955e
+
 ---
 
 # Управление встречами
@@ -248,7 +251,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## Добавление встречи в календарь пользователя
 
-Создайте объект [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) и назначьте его переменной. Затем вызовите метод [**AppointmentManager.ShowAddAppointmentAsync(Appointment, Rect, Placement)**](https://msdn.microsoft.com/library/windows/apps/Dn297221manager-showaddappointmentasync-253292089), чтобы отобразить пользовательский интерфейс добавления встречи поставщика встреч по умолчанию, который позволит пользователю добавить встречу. Если пользователь нажимает кнопку **Добавить**, пример выводит идентификатор встречи, возвращенный **ShowAddAppointmentAsync**.
+Создайте объект [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) и назначьте его переменной. Затем вызовите метод [**AppointmentManager.ShowAddAppointmentAsync(Appointment, Rect, Placement)**](https://msdn.microsoft.com/library/windows/apps/dn297261), чтобы отобразить пользовательский интерфейс добавления встречи поставщика встреч по умолчанию, который позволит пользователю добавить встречу. Если пользователь нажимает кнопку **Добавить**, пример выводит идентификатор встречи, возвращенный **ShowAddAppointmentAsync**.
 
 ```cs
 private async void Add-Click(object sender, RoutedEventArgs e)
@@ -275,11 +278,11 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Примечание.** Для универсальных приложений Магазина Windows Phone функции [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221manager-showaddappointmentasync) сходны с [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221manager-showeditnewappointmentasync) в том, что диалоговое окно добавления встречи можно изменять.
+**Примечание.** Для универсальных приложений Магазина Windows Phone функции [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) сходны с [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) в том, что диалоговое окно добавления встречи можно изменять.
 
 ## Замена встречи в календаре пользователя
 
-Создайте объект [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) и назначьте его переменной. Затем вызовите соответствующий метод [**AppointmentManager.ShowReplaceAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/Dn297221manager-showreplaceappointmentasync), чтобы отобразить пользовательский интерфейс замены встречи поставщика встреч по умолчанию, который позволит пользователю заменить встречу. Пользователь предоставляет идентификатор встречи, которую хочет заменить. Это идентификатор, который был возвращен [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/Dn297221manager-showaddappointmentasync). Если пользователь нажал кнопку **Заменить**, пример сообщает, что идентификатор встречи обновлен.
+Создайте объект [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) и назначьте его переменной. Затем вызовите соответствующий метод [**AppointmentManager.ShowReplaceAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showreplaceappointmentasync), чтобы отобразить пользовательский интерфейс замены встречи поставщика встреч по умолчанию, который позволит пользователю заменить встречу. Пользователь предоставляет идентификатор встречи, которую хочет заменить. Это идентификатор, который был возвращен [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync). Если пользователь нажал кнопку **Заменить**, пример сообщает, что идентификатор встречи обновлен.
 
 ```cs
 private async void Replace-Click(object sender, RoutedEventArgs e)
@@ -333,7 +336,7 @@ private async void Replace-Click(object sender, RoutedEventArgs e)
 
 ## Удаление встречи из календаря пользователя
 
-Вызовите соответствующий метод [**AppointmentManager.ShowRemoveAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/Dn297221manager-showremoveappointmentasync), чтобы отобразить пользовательский интерфейс удаления встречи поставщика встреч по умолчанию, который позволит пользователю удалить встречу. Пользователь предоставляет идентификатор встречи, которую хочет заменить. Это идентификатор, который был возвращен [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/Dn297221manager-showaddappointmentasync). Если пользователь нажимает кнопку **Удалить**, пример сообщает, что встреча с этим идентификатором удалена.
+Вызовите соответствующий метод [**AppointmentManager.ShowRemoveAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showremoveappointmentasync), чтобы отобразить пользовательский интерфейс удаления встречи поставщика встреч по умолчанию, который позволит пользователю удалить встречу. Пользователь предоставляет идентификатор встречи, которую хочет заменить. Это идентификатор, который был возвращен [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync). Если пользователь нажимает кнопку **Удалить**, пример сообщает, что встреча с этим идентификатором удалена.
 
 ```cs
 private async void Remove-Click(object sender, RoutedEventArgs e)
@@ -383,9 +386,9 @@ private async void Remove-Click(object sender, RoutedEventArgs e)
 
 ## Отображение интервала времени для поставщика встреч
 
-Вызовите метод [**AppointmentManager.ShowTimeFrameAsync**](https://msdn.microsoft.com/library/windows/apps/Dn297221manager-showtimeframeasync), чтобы отобразить конкретный интервал времени для основного пользовательского интерфейса поставщика встреч по умолчанию, если пользователь нажал кнопку **Показать**. Пример сообщает, что поставщик встреч по умолчанию отображен на экране.
+Вызовите метод [**AppointmentManager.ShowTimeFrameAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync), чтобы отобразить конкретный интервал времени для основного пользовательского интерфейса поставщика встреч по умолчанию, если пользователь нажал кнопку **Показать**. Пример сообщает, что поставщик встреч по умолчанию отображен на экране.
 
-```cs 
+```cs
 private async void Show-Click(object sender, RoutedEventArgs e)
 {
     var dateToShow = new DateTimeOffset(2015, 6, 12, 18, 32, 0, 0, TimeSpan.FromHours(-8));
@@ -397,7 +400,7 @@ private async void Show-Click(object sender, RoutedEventArgs e)
 
 ## Создание объекта повторяющейся встречи и применение к нему данных
 
-Создайте объект [**Windows.ApplicationModel.Appointments.AppointmentRecurrence**](https://msdn.microsoft.com/library/windows/apps/Dn297221recurrence) и назначьте его переменной. Затем примените к **AppointmentRecurrence** свойства повторения, предоставленные пользователем через пользовательский интерфейс.
+Создайте объект [**Windows.ApplicationModel.Appointments.AppointmentRecurrence**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentrecurrence) и назначьте его переменной. Затем примените к **AppointmentRecurrence** свойства повторения, предоставленные пользователем через пользовательский интерфейс.
 
 ```cs
 private void Create-Click(object sender, RoutedEventArgs e)
@@ -502,7 +505,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 Метод [
               **ShowEditNewAppointmentAsync**
-            ](https://msdn.microsoft.com/library/windows/apps/Dn297221manager-showeditnewappointmentasync) работает так же, как [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/Dn297221manager-showaddappointmentasync), но диалоговое окно для добавления встречи редактируется, так что пользователь может изменить данные встречи перед ее сохранением.
+            ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) работает так же, как [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync), но диалоговое окно для добавления встречи редактируется, так что пользователь может изменить данные встречи перед ее сохранением.
 
 ``` cs
 private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
@@ -523,7 +526,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
     // An empty string return value indicates that the user canceled the operation before the appointment was added.
     String appointmentId =
         await Windows.ApplicationModel.Appointments.AppointmentManager.ShowEditNewAppointmentAsync(appointment);
-    
+
     if (appointmentId != String.Empty)
     {
         ResultTextBlock.Text = "Appointment Id: " + appointmentId;
@@ -539,7 +542,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 
 Метод [
               **ShowAppointmentDetailsAsync**
-            ](https://msdn.microsoft.com/library/windows/apps/Dn297221manager-showappointmentdetailsasync) приводит к отображению информации об определенной встрече в системе. Приложение, которое реализует календари приложения, может выбрать активацию для отображения информации для встреч в календарях, которыми оно владеет. В противном случае информацию о встрече будет показывать система. Перегрузка метода, который принимает аргумент даты начала, предоставляется, чтобы показать информацию о встрече для экземпляра повторяющейся встречи.
+            ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) приводит к отображению информации об определенной встрече в системе. Приложение, которое реализует календари приложения, может выбрать активацию для отображения информации для встреч в календарях, которыми оно владеет. В противном случае информацию о встрече будет показывать система. Перегрузка метода, который принимает аргумент даты начала, предоставляется, чтобы показать информацию о встрече для экземпляра повторяющейся встречи.
 
 ```cs
 private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e)
@@ -573,9 +576,6 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 
 
-
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

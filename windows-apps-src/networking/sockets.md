@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: Для связи с другими устройствами в качестве разработчика приложений универсальной платформы для Windows (UWP) можно использовать как Windows.Networking.Sockets, так и Winsock.
-title: Сокеты
+description: "Для связи с другими устройствами в качестве разработчика приложений универсальной платформы для Windows (UWP) можно использовать как Windows.Networking.Sockets, так и Winsock."
+title: "Сокеты"
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
+translationtype: Human Translation
+ms.sourcegitcommit: 4557fa59d377edc2ae5bf5a9be63516d152949bb
+ms.openlocfilehash: 432d9849335c537836fd23a4cd95c79c51bc881d
+
 ---
 
 # Сокеты
@@ -296,6 +300,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

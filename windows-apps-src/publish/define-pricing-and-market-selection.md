@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Магазин Windows доступен для потребителей в более чем 200 странах и регионах по всему миру.
-title: Определение цены и выбор рынка
+Description: "Магазин Windows доступен для потребителей в более чем 200 странах и регионах по всему миру."
+title: "Определение цены и выбор рынка"
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9a1d8b8fb57989091fe7b82ad34066240f62cb8b
+
 ---
 
 # Определение цены и выбор рынка
@@ -550,6 +554,7 @@ ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 > **Примечание.** Список стран и регионов, в которых можно зарегистрировать учетную запись разработчика: [Типы, доступность и стоимость учетных записей](https://msdn.microsoft.com/library/windows/apps/jj863494).
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

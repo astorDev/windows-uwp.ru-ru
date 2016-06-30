@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: Проектируйте внешние страницы справки так, чтобы они содержали подробные инструкции и советы по вашему приложению.
-title: Руководство по разработке внешних страниц справки
+Description: "Проектируйте внешние страницы справки так, чтобы они содержали подробные инструкции и советы по вашему приложению."
+title: "Руководство по разработке внешних страниц справки"
 label: External help
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 03ef3fc34d2018c0ec712977065377a9c52cd8b2
+
 ---
 
 # Страницы внешней справки
@@ -38,6 +42,7 @@ template: detail.hbs
 * [Руководство по справке для приложений](guidelines-for-app-help.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Предоставляет значение для любого атрибута XAML, обрабатывая ссылку на ресурс. Дополнительная системная логика возвращает различные ресурсы в зависимости от активной темы.
-title: Расширение разметки ThemeResource
+description: "Предоставляет значение для любого атрибута XAML, обрабатывая ссылку на ресурс. Дополнительная системная логика возвращает различные ресурсы в зависимости от активной темы."
+title: "Расширение разметки ThemeResource"
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
+translationtype: Human Translation
+ms.sourcegitcommit: 9c657f906e6dedb259b8a98373f56ac5a63bd845
+ms.openlocfilehash: 246c991bbdbc95e73ea8d4884cd4d617592bfc51
+
 ---
 
 # Расширение разметки {ThemeResource}
@@ -152,6 +156,7 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

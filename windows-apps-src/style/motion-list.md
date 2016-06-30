@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Анимации списка позволяют вставлять или удалять один или несколько элементов коллекции, например в фотоальбоме или результатах поиска.
-title: Анимации добавления и удаления в приложениях UWP
+Description: "Анимации списка позволяют вставлять или удалять один или несколько элементов коллекции, например в фотоальбоме или результатах поиска."
+title: "Анимации добавления и удаления в приложениях UWP"
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a795cf52c3d062d2131832ac3bc765f45097e849
+
 ---
 
 # Анимации добавления и удаления
@@ -49,6 +53,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

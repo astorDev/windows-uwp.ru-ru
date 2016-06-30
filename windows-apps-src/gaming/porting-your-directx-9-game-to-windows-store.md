@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Перенос из DirectX 9 на универсальную платформу Windows (UWP)
-description: Этот раздел содержит статьи, обзоры и пошаговые руководства для переноса игр DirectX 9 на универсальную платформу Windows (UWP).
+title: "Перенос из DirectX 9 на универсальную платформу Windows (UWP)"
+description: "Этот раздел содержит статьи, обзоры и пошаговые руководства для переноса игр DirectX 9 на универсальную платформу Windows (UWP)."
 ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1cb77db78fe368c567990c9521122b42ef10ec65
+
 ---
 
 # Перенос из DirectX 9 на универсальную платформу Windows (UWP)
@@ -35,6 +39,7 @@ ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

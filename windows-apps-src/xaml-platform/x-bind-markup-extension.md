@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Расширение разметки xBind в качестве альтернативы для Binding. Расширение разметки xBind не имеет некоторых функций Binding, но оно быстрее запускается, требует меньше памяти, чем Binding, и поддерживает более эффективную отладку.
-title: Расширение разметки xBind
+description: "Расширение разметки xBind в качестве альтернативы для Binding. Расширение разметки xBind не имеет некоторых функций Binding, но оно быстрее запускается, требует меньше памяти, чем Binding, и поддерживает более эффективную отладку."
+title: "Расширение разметки xBind"
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
+
 ---
 
 # Расширение разметки x:Bind
@@ -135,6 +139,7 @@ ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

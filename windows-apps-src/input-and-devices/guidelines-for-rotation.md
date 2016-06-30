@@ -5,8 +5,8 @@ title: "Поворот"
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: d91a3cf5dc5ae2e1a68e32fc64848b869f229391
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: a43bdd27ff7b79f561789a14d1a8e6caed08dc89
 
 ---
 
@@ -20,12 +20,12 @@ ms.openlocfilehash: d91a3cf5dc5ae2e1a68e32fc64848b869f229391
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Рекомендации
+## Рекомендации
 
 
 -   Используйте поворот, чтобы дать пользователям возможность непосредственно поворачивать элементы пользовательского интерфейса.
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Дополнительные рекомендации по использованию
+## Дополнительные рекомендации по использованию
 
 
 **Обзор поворота**
@@ -99,7 +99,7 @@ Windows 8 поддерживает три типа поворота: свобо
 
  
 
-## <span id="related_topics"></span>Связанные разделы
+## Связанные разделы
 
 
 **Примеры**
@@ -127,6 +127,6 @@ Windows 8 поддерживает три типа поворота: свобо
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

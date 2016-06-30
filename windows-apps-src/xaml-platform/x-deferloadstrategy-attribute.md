@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-title: Атрибут xDeferLoadStrategy
-description: xDeferLoadStrategy задерживает создание элемента и его дочерних объектов, сокращая тем самым время запуска и немного увеличивая объем использования памяти. Каждый задействованный элемент прибавляет около 600 байт к объему использования памяти.
+title: "Атрибут xDeferLoadStrategy"
+description: "xDeferLoadStrategy задерживает создание элемента и его дочерних объектов, сокращая тем самым время запуска и немного увеличивая объем использования памяти. Каждый задействованный элемент прибавляет около 600 байт к объему использования памяти."
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b989a31439444f06dacb86adb186f853d1637f6c
+
 ---
 
 # Атрибут x:DeferLoadStrategy
@@ -83,6 +87,7 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

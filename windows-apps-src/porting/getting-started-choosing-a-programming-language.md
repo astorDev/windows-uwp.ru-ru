@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-title: Выбор языка программирования
+title: "Выбор языка программирования"
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
-description: Выбор языка программирования
+description: "Выбор языка программирования"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 10fa4a349621c8e7b248c7daf4d7cdf967e25255
+
 ---
 
 # Приступая к работе: выбор языка программирования
@@ -140,6 +144,7 @@ C# — это простой язык для выбора. Он содержит
 [Приступая к работе: введение в Visual Studio](getting-started-getting-around-in-visual-studio.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

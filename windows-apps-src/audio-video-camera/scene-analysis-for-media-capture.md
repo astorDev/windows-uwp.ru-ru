@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
-description: В данной статье рассказывается о том, как с помощью классов SceneAnalysisEffect и FaceDetectionEffect анализировать содержимое потока предварительного просмотра при захвате мультимедиа.
-title: Анализ сцен для захвата мультимедиа
+description: "В данной статье рассказывается о том, как с помощью классов SceneAnalysisEffect и FaceDetectionEffect анализировать содержимое потока предварительного просмотра при захвате мультимедиа."
+title: "Анализ сцен для захвата мультимедиа"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 891c0d274c2d3fb82f855011158ecd3ccdcd87b3
+
 ---
 
 # Анализ сцен для захвата мультимедиа
@@ -118,6 +122,7 @@ title: Анализ сцен для захвата мультимедиа
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

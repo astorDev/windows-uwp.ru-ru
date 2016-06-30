@@ -6,8 +6,8 @@ ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen and stylus interactions in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
-ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
-ms.openlocfilehash: 218fae32f8b63c8fe5499af7d3fe6c1f0404334c
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: e642e6ba5319dce2d78c243ab3c57a9ffcc6902f
 
 ---
 
@@ -47,7 +47,7 @@ ms.openlocfilehash: 218fae32f8b63c8fe5499af7d3fe6c1f0404334c
               **IInkD2DRenderer**
             ](https://msdn.microsoft.com/library/mt147263) — позволяет преобразовать росчерки пера в специальный контекст устройства Direct2D универсального приложения для Windows вместо элемента управления по умолчанию [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535). Это делает возможным полную настройку рукописного ввода.
 
-## <span id="inkcanvas"></span><span id="INKCANVAS"></span>Базовый рукописный ввод с использованием InkCanvas
+## Базовый рукописный ввод с использованием InkCanvas
 
 
 Для выполнения базовой функции рукописного ввода просто поместите [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) в любом месте страницы.
@@ -88,7 +88,7 @@ ms.openlocfilehash: 218fae32f8b63c8fe5499af7d3fe6c1f0404334c
 
 При выполнении базового рукописного ввода вам не нужно беспокоиться об элементе [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011). Однако для настройки и конфигурации реакции на рукописный ввод в элементе [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) необходимо получить доступ к соответствующему объекту **InkPresenter**.
 
-## <span id="inkpresenter"></span><span id="INKPRESENTER"></span>Базовая настройка с использованием InkPresenter
+## Базовая настройка с использованием InkPresenter
 
 
 Объект [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) создается с каждым элементом управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
@@ -200,7 +200,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 Для предоставления функций помимо рукописного ввода и стирания, таких как возможность выбора росчерка, ваше приложение должно определить конкретные входные данные для элемента [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081), чтобы передать необработанные данные для обработки вашим приложением.
 
-## <span id="passthrough"></span><span id="PASSTHROUGH"></span>Передача входных данных для расширенной обработки
+## Передача входных данных для расширенной обработки
 
 
 По умолчанию [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) обрабатывает все входные данные как росчерк пера или росчерк стирания. Это относится и к входным данным, которые модифицированы дополнительной возможностью оборудования, например кнопкой пера, правой кнопкой мыши или чем-то подобным.
@@ -426,7 +426,7 @@ public MainPage()
     }
 ```
 
-## <span id="iinkd2drenderer"></span><span id="IINKD2DRENDERER"></span>Пользовательская передача рукописного ввода
+## Пользовательская передача рукописного ввода
 
 
 По умолчанию рукописные данные обрабатываются в фоновом потоке с низкой задержкой и отображаются как «влажные» в процессе ввода. После завершения росчерка (когда пользователь поднял перо или палец либо отпустил кнопку мыши) росчерк обрабатывается в потоке пользовательского интерфейса и отображается «сухим» на слое [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (над содержимым приложения, вместо влажных рукописных данных).
@@ -467,7 +467,7 @@ public MainPage()
  
 
 
-## <span id="related_topics"></span>Связанные разделы
+## Связанные разделы
 
 
 * [Работа с данными указателя](handle-pointer-input.md)
@@ -497,6 +497,6 @@ public MainPage()
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

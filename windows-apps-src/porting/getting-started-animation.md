@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-title: Начало работы с анимацией
+title: "Начало работы с анимацией"
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
-description: В этом проекте мы будем перемещать прямоугольник, применять к нему эффект угасания и затем снова отображать прямоугольник.
+description: "В этом проекте мы будем перемещать прямоугольник, применять к нему эффект угасания и затем снова отображать прямоугольник."
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 6e0b92af1d3c5f61aa2341d43ca40330fcc359f4
+
 ---
 
 # Начало работы: анимация
@@ -126,6 +130,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 [Приступая к работе: что дальше?](getting-started-what-next.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

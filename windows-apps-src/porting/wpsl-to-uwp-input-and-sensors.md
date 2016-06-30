@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: Код, интегрирующийся с устройством и его датчиками, включает ввод от пользователя и вывод к нему.
-title: Перенос Windows Phone Silverlight в UWP для ввода-вывода, устройства и модели приложения
+description: "Код, интегрирующийся с устройством и его датчиками, включает ввод от пользователя и вывод к нему."
+title: "Перенос Windows Phone Silverlight в UWP для ввода-вывода, устройства и модели приложения"
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 6b29e741c9cad68083502b25445b965fc266ef6e
+
 ---
 
 #  Перенос Windows Phone Silverlight в UWP для ввода-вывода, устройства и модели приложения
@@ -91,6 +95,7 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

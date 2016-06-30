@@ -1,14 +1,18 @@
 ---
 author: martinekuan
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: Создание приложения Hello, world (JS)
-description: В этом учебнике описано, как с помощью JavaScript и HTML создать простое приложение «Hello, world», предназначенное для универсальной платформы Windows (UWP) в Windows 10.
+title: "Создание приложения Hello, world (JS)"
+description: "В этом учебнике описано, как с помощью JavaScript и HTML создать простое приложение «Hello, world», предназначенное для универсальной платформы Windows (UWP) в Windows 10."
+translationtype: Human Translation
+ms.sourcegitcommit: f3cb50e5b0b0baa73431392a1f6854a62f3655de
+ms.openlocfilehash: 5f534169117da94cb2249c897603f567c007299b
+
 ---
 # Создание приложения «Hello, world» (JS)
 
 В этом учебнике описано, как с помощью JavaScript и HTML создать простое приложение «Hello, world», предназначенное для универсальной платформы Windows (UWP) в Windows 10. С помощью единственного проекта в Microsoft Visual Studio вы можете создать приложение, работающее на любом устройстве с Windows 10. Основное внимание мы уделим созданию приложений, которые работают одинаково хорошо как на настольных компьютерах, так и на мобильных устройствах.
 
-**Важно!** Этот учебник предназначен для использования с Microsoft Visual Studio 2015 и Windows 10. Он не будет работать правильно с предыдущими версиями.
+**Важно**   Этот учебник предназначен для использования с Microsoft Visual Studio 2015 и Windows 10. Он не будет работать правильно с предыдущими версиями.
 
 В этом разделе вы научитесь выполнять следующие действия.
 
@@ -54,7 +58,7 @@ description: В этом учебнике описано, как с помощь
 5.  Введите «HelloWorld» в текстовое поле **Имя**.
 6.  Нажмите **ОК**, чтобы создать проект.
 
-    Visual Studio создает проект и отображает его в окне **Обозреватель решений**.
+    Visual Studio создаст проект и отобразит его в **обозревателе решений**.
 
     ![Обозреватель решений Visual Studio для проекта HelloWorld](images/js-tut-helloworld.png)
 
@@ -66,7 +70,7 @@ description: В этом учебнике описано, как с помощь
 -   экран-заставка (images/SplashScreen.scale-200.png), который будет отображаться при запуске вашего приложения;
 -   начальная страница (default.html) и соответствующий файл JavaScript (default.js), который выполняется при запуске приложения.
 
-Для просмотра и изменения файлов дважды щелкните файл в **обозревателе решений**.
+Для просмотра и изменения файлов дважды щелкните нужный файл в **обозревателе решений**.
 
 Эти файлы необходимы для всех приложений UWP на JavaScript. Они должны содержаться в любом проекте, который вы создаете в Visual Studio.
 
@@ -92,7 +96,7 @@ description: В этом учебнике описано, как с помощь
 
    либо
 
-   В меню **Отладка** щелкните **Начать отладку**.
+   В меню **Отладка** выберите команду **Начать отладку**.
 
    либо
 
@@ -114,7 +118,7 @@ description: В этом учебнике описано, как с помощь
 
    либо
 
-   В меню **Отладка** щелкните **Остановить отладку**.
+   В меню **Отладка** выберите команду **Остановить отладку**.
 
    либо
 
@@ -127,8 +131,8 @@ description: В этом учебнике описано, как с помощь
 Помимо возможности отладки на настольном ПК Visual Studio предоставляет возможность развертывания и отладки приложения на физическом мобильном устройстве, подключенном к компьютеру, или на эмуляторе мобильного устройства. Вы можете выбрать эмулятор для устройств с теми или иными параметрами памяти и экрана.
 
 -   **устройство;**
--   **эмулятор <SDK version> WVGA 4 дюйма 512 МБ;**
--   **эмулятор <SDK version> WVGA 4 дюйма 1 ГБ;**
+-   **Эмулятор <SDK version> WVGA, 4 дюйма, 512 МБ**
+-   **Эмулятор <SDK version> WVGA, 4 дюйма, 1 ГБ**
 -   и т. д. (различные эмуляторы с другими конфигурациями).
 
 Рекомендуется протестировать приложение на устройстве с маленьким экраном и ограниченным объемом памяти, поэтому используйте параметр **Эмулятор 10.0.10240.0 WVGA 4 дюйма, 512 МБ**.
@@ -139,7 +143,7 @@ description: В этом учебнике описано, как с помощь
 
    либо
 
-   В меню **Отладка** щелкните **Начать отладку**.
+   В меню **Отладка** выберите команду **Начать отладку**.
 
    
 Visual Studio запускает выбранный эмулятор и затем разворачивает и запускает приложение. В эмуляторе мобильного устройства приложение выглядит следующим образом.
@@ -248,26 +252,26 @@ Visual Studio запускает выбранный эмулятор и зате
 })();
 ```
 
-Определим обработчик события для объекта [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017). Наш новый обработчик события получает имя пользователя из элемента управления `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) и использует его для вывода приветствия в элементе `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133), который был вами создан в последнем разделе.
+Определим обработчик события для объекта [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017). Наш новый обработчик события получает имя пользователя из элемента управления `nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) и использует его для вывода приветствия в элементе `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133), который был вами создан в последнем разделе.
 
 ### Использование событий, которые поддерживают сенсорный ввод, ввод с помощью мыши и ввод с помощью пера
 
 В приложении UWP не нужно беспокоиться о различиях между сенсорным вводом, вводом с помощью мыши и другими видами ввода с помощью указателя. Просто используйте такие известные вам события, как [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312), и они будут работать для всех видов ввода.
 
-**Совет.** Ваше приложение может также использовать новые события *MSPointer\** и *MSGesture\**, которые поддерживают сенсорный ввод, ввод с помощью мыши и ввод с помощью пера и могут предоставлять дополнительную информацию об устройстве, которое вызвало событие. Подробнее об этом см. в разделах [Ответ на взаимодействие с пользователем](https://msdn.microsoft.com/library/windows/apps/Hh700412) и [Жесты, манипуляции и взаимодействия](https://msdn.microsoft.com/library/windows/apps/Hh761498).
+**Совет.** Ваше приложение может также использовать новые события *MSPointer\** и *MSGesture\**, которые поддерживают сенсорный ввод, ввод с помощью мыши и ввод с помощью пера и могут предоставлять дополнительную информацию об устройстве, которое вызвало событие. Подробнее об этом см. в разделах [Реакция на взаимодействие с пользователем](https://msdn.microsoft.com/library/windows/apps/Hh700412) и [Жесты, манипуляции и взаимодействия](https://msdn.microsoft.com/library/windows/apps/Hh761498).
 
 Продолжим работу и создадим обработчик события.
 
 **Создание обработчика события**
 
-1.  В файле default.js после обработчика события [**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) и перед вызовом [**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705) создайте функцию обработчика события [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) с именем `buttonClickHandler`, имеющую единственный входной параметр с именем
+1.  В файле default.js после обработчика события [**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) и перед вызовом [**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705) создайте функцию обработчика события [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) с именем `buttonClickHandler`, имеющую единственный входной параметр `eventInfo`.
 ```javascript
     function buttonClickHandler(eventInfo) {
      
         }
 ```
 
-2.  Внутри нашего обработчика события получите имя пользователя из элемента управления `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) и используйте его, чтобы создать приветствие. Используйте `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133), чтобы отобразить результат.
+2.  Внутри нашего обработчика события получите имя пользователя из элемента управления `nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) и используйте его, чтобы создать приветствие. Используйте `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133), чтобы отобразить результат.
 ```javascript
     function buttonClickHandler(eventInfo) {
             var userName = document.getElementById("nameInput").value;
@@ -414,7 +418,7 @@ Visual Studio запускает выбранный эмулятор и зате
 
 Давайте добавим в приложение элемент управления [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895).
 
-1.  В файле default.html добавьте элементы управления [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) и [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) после `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133).
+1.  В файле default.html добавьте элементы управления [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) и [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) после `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133).
 
     ```html
     <body class="win-type-body">
@@ -550,6 +554,7 @@ Here's the updated [**onactivated**](https://msdn.microsoft.com/library/windows/
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

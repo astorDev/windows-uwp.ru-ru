@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: В этом разделе представлен практический пример переноса очень простого приложения Windows Phone Silverlight в приложение UWP для Windows 10.
-title: Пример переноса Windows Phone Silverlight в UWP, Bookstore1
+description: "В этом разделе представлен практический пример переноса очень простого приложения Windows Phone Silverlight в приложение UWP для Windows 10."
+title: "Пример переноса Windows Phone Silverlight в UWP, Bookstore1"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: dbffb4245efece2d39b4eba8979e323fd71626d0
+
 ---
 
 # Пример переноса Windows Phone Silverlight в UWP: Bookstore1
@@ -131,6 +135,7 @@ title: Пример переноса Windows Phone Silverlight в UWP, Bookstore
 Следующий пример — [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md), где мы рассмотрим доступ к сгруппированным данным и их и отображение.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

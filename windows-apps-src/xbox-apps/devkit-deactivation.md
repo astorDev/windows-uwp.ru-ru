@@ -1,8 +1,12 @@
 ---
 author: Mtoepke
-title: Деактивация режима разработчика Xbox One
-description: Сведения о выключении режима разработчика.
+title: "Деактивация режима разработчика Xbox One"
+description: "Сведения о выключении режима разработчика."
 area: Xbox
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 0751598ba50d69e1667b20ddc03f30d65ce08002
+
 ---
 
 # Деактивация режима разработчика Xbox One
@@ -84,6 +88,7 @@ area: Xbox
 - [UWP на Xbox One](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

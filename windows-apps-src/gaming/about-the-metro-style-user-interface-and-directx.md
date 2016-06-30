@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Объект приложения и DirectX
-description: В играх универсальной платформы Windows (UWP) с DirectX используется мало элементов и объектов интерфейса Windows.
+title: "Объект приложения и DirectX"
+description: "В играх универсальной платформы Windows (UWP) с DirectX используется мало элементов и объектов интерфейса Windows."
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf7
+
 ---
 
 # Объект приложения и DirectX
@@ -155,6 +159,7 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

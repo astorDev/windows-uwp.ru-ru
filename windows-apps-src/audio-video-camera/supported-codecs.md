@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
-description: В этой статье перечисляются аудио- и видеокодеки и форматы, поддерживаемые в приложениях UWP.
-title: Поддерживаемые кодеки
+description: "В этой статье перечисляются аудио- и видеокодеки и форматы, поддерживаемые в приложениях UWP."
+title: "Поддерживаемые кодеки"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1481f8bbb2c53f667d253e23af1422297e19c63d
+
 ---
 
 # Поддерживаемые кодеки
@@ -2692,6 +2696,7 @@ title: Поддерживаемые кодеки
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

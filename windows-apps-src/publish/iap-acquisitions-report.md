@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Отчет "Получения IAP" на панели мониторинга Центра разработки для Windows позволяет узнать, сколько IAP вы продали, а также просмотреть демографические сведения и данные о платформе.
-title: Отчет о приобретениях IAP
+Description: "Отчет \"Получения IAP\" на панели мониторинга Центра разработки для Windows позволяет узнать, сколько IAP вы продали, а также просмотреть демографические сведения и данные о платформе."
+title: "Отчет о приобретениях IAP"
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3191df12ca5b59f545cf250c3e669b30192af6bc
+
 ---
 
 # Отчет о приобретениях IAP
@@ -65,6 +69,7 @@ ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

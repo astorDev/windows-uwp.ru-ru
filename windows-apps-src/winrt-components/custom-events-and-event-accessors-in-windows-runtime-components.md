@@ -1,17 +1,17 @@
 ---
-author: martinekuan
-title: Пользовательские события и методы доступа к событиям в компонентах среды выполнения Windows
-description: Поддержка платформы .NET Framework для компонентов среды выполнения Windows позволяет без труда объявлять компоненты событий, скрывая различия между шаблонами событий универсальной платформы Windows (UWP) и платформы .NET Framework.
+author: msatranjr
+title: "Пользовательские события и методы доступа к событиям в компонентах среды выполнения Windows"
+description: "Поддержка платформы .NET Framework для компонентов среды выполнения Windows позволяет без труда объявлять компоненты событий, скрывая различия между шаблонами событий универсальной платформы Windows (UWP) и платформы .NET Framework."
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 1308989c8d1c6959560458dd4d87119b4bfa74b0
+
 ---
 
 # Пользовательские события и методы доступа к событиям в компонентах среды выполнения Windows
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Microsoft не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Поддержка платформы .NET Framework для компонентов среды выполнения Windows позволяет без труда объявлять компоненты событий, скрывая различия между шаблонами событий универсальной платформы Windows (UWP) и платформы .NET Framework. Однако при объявлении пользовательских методов доступа к событиям в компоненте среды выполнения Windows необходимо следовать шаблону, используемому в UWP.
 
@@ -32,9 +32,9 @@ ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
  
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
-> private EventRegistrationTokenTable<EventHandler<NumberChangedEventArgs>> 
+> private EventRegistrationTokenTable<EventHandler<NumberChangedEventArgs>>
 >     m_NumberChangedTokenTable = null;
-> 
+>
 > public event EventHandler<NumberChangedEventArgs> NumberChanged
 > {
 >     add
@@ -50,10 +50,10 @@ ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 >             .RemoveEventHandler(value);
 >     }
 > }
-> 
+>
 > internal void OnNumberChanged(int newValue)
 > {
->     EventHandler<NumberChangedEventArgs> temp = 
+>     EventHandler<NumberChangedEventArgs> temp =
 >         EventRegistrationTokenTable<EventHandler<NumberChangedEventArgs>>
 >         .GetOrCreateEventRegistrationTokenTable(ref m_NumberChangedTokenTable)
 >         .InvocationList;
@@ -66,21 +66,21 @@ ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 > ```vb
 > Private m_NumberChangedTokenTable As  _
 >     EventRegistrationTokenTable(Of EventHandler(Of NumberChangedEventArgs))
-> 
+>
 > Public Custom Event NumberChanged As EventHandler(Of NumberChangedEventArgs)
-> 
+>
 >     AddHandler(ByVal handler As EventHandler(Of NumberChangedEventArgs))
 >         Return EventRegistrationTokenTable(Of EventHandler(Of NumberChangedEventArgs)).
 >             GetOrCreateEventRegistrationTokenTable(m_NumberChangedTokenTable).
 >             AddEventHandler(handler)
 >     End AddHandler
-> 
+>
 >     RemoveHandler(ByVal token As EventRegistrationToken)
 >         EventRegistrationTokenTable(Of EventHandler(Of NumberChangedEventArgs)).
 >             GetOrCreateEventRegistrationTokenTable(m_NumberChangedTokenTable).
 >             RemoveEventHandler(token)
 >     End RemoveHandler
-> 
+>
 >     RaiseEvent(ByVal sender As Class1, ByVal args As NumberChangedEventArgs)
 >         Dim temp As EventHandler(Of NumberChangedEventArgs) = _
 >             EventRegistrationTokenTable(Of EventHandler(Of NumberChangedEventArgs)).
@@ -126,6 +126,6 @@ ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

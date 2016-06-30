@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-title: Атрибут xPhase
-description: Использование xPhase с расширением разметки xBind позволяет выполнять постепенную отрисовку элементов ListView и GridView, улучшая качество процесса сдвига.
+title: "Атрибут xPhase"
+description: "Использование xPhase с расширением разметки xBind позволяет выполнять постепенную отрисовку элементов ListView и GridView, улучшая качество процесса сдвига."
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: dfa12909d19a44ed38939c612712c8fe90f3f584
+
 ---
 
 # Атрибут x:Phase
@@ -76,6 +80,7 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

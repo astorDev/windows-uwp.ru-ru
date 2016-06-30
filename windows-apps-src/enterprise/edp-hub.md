@@ -1,10 +1,14 @@
 ---
 author: mcleblanc
-Description: 'Это одна из ключевых тем руководства, позволяющая разработчикам сформировать полное представление о том, как защита корпоративных данных (EDP) связана с файлами, буферами, буфером обмена, сетью, фоновыми задачами и защитой заблокированных данных.'
-MS-HAID: 'dev\_enterprise.edp\_hub'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "Это одна из ключевых тем руководства, позволяющая разработчикам сформировать полное представление о том, как защита корпоративных данных (EDP) связана с файлами, буферами, буфером обмена, сетью, фоновыми задачами и защитой заблокированных данных."
+MS-HAID: dev\_enterprise.edp\_hub
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 'Защита корпоративных данных (EDP)'
+title: "Защита корпоративных данных (EDP)"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 97bdbce8360fabad63f9fe7e85e5172ccd83f403
+
 ---
 
 # Защита корпоративных данных (EDP)
@@ -377,6 +381,7 @@ Windows.Security.EnterpriseData.ProtectionPolicyManager.RevokeContent("contoso.c
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

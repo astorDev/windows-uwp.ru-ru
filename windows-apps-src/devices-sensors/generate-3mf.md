@@ -1,10 +1,14 @@
 ---
 author: PatrickFarley
-Description: 'Описание структуры типа файлов формате создания 3D и способов их создания и обработки с помощью Windows.Graphics.Printing3D API.'
-MS-HAID: 'dev\_devices\_sensors.generate\_3mf'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "Описание структуры типа файлов формате создания 3D и способов их создания и обработки с помощью Windows.Graphics.Printing3D API."
+MS-HAID: dev\_devices\_sensors.generate\_3mf
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: Создание пакета 3MF
+title: "Создание пакета 3MF"
+translationtype: Human Translation
+ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
+ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
+
 ---
 
 # Создание пакета 3MF
@@ -140,6 +144,7 @@ title: Создание пакета 3MF
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

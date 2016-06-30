@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Служит уникальным идентификатором элементов объекта для доступа к созданному экземпляру объекта из кода программной части или общего кода.
-title: Атрибут xName
+description: "Служит уникальным идентификатором элементов объекта для доступа к созданному экземпляру объекта из кода программной части или общего кода."
+title: "Атрибут xName"
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: 442c2fa103e1e968ef47ea990bfe8e166daec88b
+
 ---
 
 # Атрибут x:Name
@@ -67,6 +71,7 @@ CombiningCharacter::= none
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

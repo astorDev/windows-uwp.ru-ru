@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
-description: Entity Framework (EF) — это объектно-реляционный модуль сопоставления, позволяющий разработчикам работать с реляционными данными с помощью объектов, специализированных для доменов.
-title: Entity Framework 7 с SQLite для приложений C#
+description: "Entity Framework (EF) — это объектно-реляционный модуль сопоставления, позволяющий разработчикам работать с реляционными данными с помощью объектов, специализированных для доменов."
+title: "Entity Framework 7 с SQLite для приложений C#"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4c9b674445e901a370f9822f8f11acdeba6061b6
+
 ---
 
 # Entity Framework 7 с SQLite для приложений C#
@@ -24,6 +28,7 @@ Entity Framework (EF) — это объектно-реляционный мод
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

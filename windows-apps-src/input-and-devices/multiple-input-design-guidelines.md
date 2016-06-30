@@ -5,8 +5,8 @@ title: "Правила разработки приложений с нескол
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 71c5994e1a308993aef6603ba77ab5e695bde293
 
 ---
 
@@ -23,20 +23,20 @@ ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
 -   Поддерживаются ли все методы ввода в любое время? С помощью определенных элементов управления? В определенных случаях или условиях?
 -   Является ли какой-либо из методов ввода приоритетным?
 
-## <span id="Single__or_exclusive_-mode_interactions_"></span><span id="single__or_exclusive_-mode_interactions_"></span><span id="SINGLE__OR_EXCLUSIVE_-MODE_INTERACTIONS_"></span>Взаимодействие в режиме единого (или монопольного) ввода
+## Взаимодействие в режиме единого (или монопольного) ввода
 
 
 В режиме единого взаимодействия поддерживаются несколько типов ввода, однако во время выполнения того или иного действия может использоваться только один из них. Например, распознавание речи для выполнения команд, использование жестов для навигации или ввод текста с помощью сенсорного экрана или жестов, в зависимости от параметров близкого взаимодействия.
 
-## <span id="Multimodal_interactions"></span><span id="multimodal_interactions"></span><span id="MULTIMODAL_INTERACTIONS"></span>Мультимодальные взаимодействия
+## Мультимодальные взаимодействия
 
 
 Мультимодальные взаимодействия позволяют последовательно использовать несколько методов для выполнения одного действия.
 
-<span id="Speech___gesture"></span><span id="speech___gesture"></span><span id="SPEECH___GESTURE"></span>Речь + жест  
+Речь + жест  
 Пользователь указывает на продукт, а затем говорит: "Добавить в корзину".
 
-<span id="Speech___touch"></span><span id="speech___touch"></span><span id="SPEECH___TOUCH"></span>Речь + сенсорный ввод  
+Речь + сенсорный ввод  
 Пользователь выбирает фотографию, нажав и удерживая ее, а затем говорит: «Отправить фото».
 
 
@@ -44,6 +44,6 @@ ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

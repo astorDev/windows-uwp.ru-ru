@@ -1,37 +1,41 @@
 ---
-title: MACs, hashes, and signatures
-description: This article discusses how message authentication codes (MACs), hashes, and signatures can be used in Universal Windows Platform (UWP) apps to detect message tampering.
+title: "Коды проверки подлинности сообщений, хэши и подписи"
+description: "В этой статье обсуждается выявление несанкционированных изменений сообщений с помощью кодов проверки подлинности сообщения (MAC), хэшей и подписей в приложениях универсальной платформы Windows (UWP)."
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: d7c66d9ead6e3dbf750f1d058e311ef3c84a204f
+
 ---
 
-# MACs, hashes, and signatures
+# Коды проверки подлинности сообщений, хэши и подписи
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article discusses how message authentication codes (MACs), hashes, and signatures can be used in Universal Windows Platform (UWP) apps to detect message tampering.
+В этой статье обсуждается выявление несанкционированных изменений сообщений с помощью кодов проверки подлинности сообщения (MAC), хэшей и подписей в приложениях универсальной платформы Windows (UWP).
 
-## Message authentication codes (MACs)
+## Коды проверки подлинности сообщения (MAC)
 
 
-Encryption helps prevent an unauthorized individual from reading a message, but it does not prevent that individual from tampering with the message. An altered message, even if the alteration results in nothing but nonsense, can have real costs. A message authentication code (MAC) helps prevent message tampering. For example, consider the following scenario:
+С помощью шифрования можно помешать злоумышленнику прочитать сообщение, но нельзя защитить сообщение от изменений. Цена фальсификации сообщения может оказаться очень большой, даже если текст изменен на бессмыслицу. С помощью кода проверки подлинности сообщения (MAC) можно выявить несанкционированное изменение передаваемой информации. В качестве примера рассмотрим следующую ситуацию.
 
--   Bob and Alice share a secret key and agree on a MAC function to use.
--   Bob creates a message and inputs the message and the secret key into a MAC function to retrieve a MAC value.
--   Bob sends the \[unencrypted\] message and the MAC value to Alice over a network.
--   Alice uses the secret key and the message as input to the MAC function. She compares the generated MAC value to the MAC value sent by Bob. If they are the same, the message was not changed in transit.
+-   Владимир и Юлия владеют общим секретным ключом и договорились об использовании определенной функции, выдающей код проверки подлинности сообщения.
+-   Владимир создает сообщение и вместе с секретным ключом передает его функции, которая выдает код проверки подлинности сообщения.
+-   Затем Владимир отправляет Юлии по сети сообщение \[в незашифрованном виде\] вместе с кодом проверки подлинности сообщения.
+-   Полученное сообщение вместе с секретным ключом Юлия передает функции, которая выдает код проверки подлинности сообщения. Этот код Юлия сравнивает с кодом, полученным от Владимира. Если они совпадают, это означает, что сообщение не подвергалось изменениям в процессе передачи.
 
-Note that Eve, a third party eavesdropping on the conversation between Bob and Alice, cannot effectively manipulate the message. Eve does not have access to the private key and cannot, therefore, create a MAC value which would make the tampered message appear legitimate to Alice.
+При этом у Инны, которая перехватывает сообщение Владимира Юлии, не получится подделать это сообщение. У Инны нет доступа к секретному ключу, и она, соответственно, не сможет генерировать код проверки подлинности сообщения, при помощи которого поддельное сообщение для Юлии выглядело бы подлинным.
 
-Creating a message authentication code ensures only that the original message was not altered and, by using a shared secret key, that the message hash was signed by someone with access to that private key.
+Использование кода проверки подлинности сообщения позволяет убедиться только в том, что исходное сообщение не было изменено, а использование общего секретного ключа — убедиться, что хэш сообщения подписан человеком, имеющим доступ к этому закрытому ключу.
 
-You can use the [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) to enumerate the available MAC algorithms and generate a symmetric key. You can use static methods on the [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) class to perform the necessary encryption that creates the MAC value.
+Для перечисления доступных алгоритмов получения кода проверки подлинности сообщения и генерации симметричного ключа можно использовать [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530). Для выполнения шифрования и генерации кода проверки подлинности сообщения можно использовать статические методы класса [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490).
 
-Digital signatures are the public key equivalent of private key message authentication codes (MACs). Although MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
+Цифровые подписи являются эквивалентом открытого ключа для кодов проверки подлинности сообщений (MAC) с закрытым ключом. Для проверки неизменности передаваемого сообщения коды проверки подлинности сообщений используют закрытые ключи, в то время как цифровые подписи — закрытый и открытый ключи в паре.
 
-This example code shows how to use the [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) class to create a hashed message authentication code (HMAC).
+В этом примере кода показано, как использовать класс [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530), чтобы создать хэш-код проверки подлинности сообщения (HMAC).
 
 ```cs
 using Windows.Security.Cryptography;
@@ -118,23 +122,23 @@ namespace SampleMacAlgorithmProvider
 }
 ```
 
-## Hashes
+## Хэши
 
 
-A cryptographic hash function takes an arbitrarily long block of data and returns a fixed-size bit string. Hash functions are typically used when signing data. Because most public key signature operations are computationally intensive, it is typically more efficient to sign (encrypt) a message hash than it is to sign the original message. The following procedure represents a common, albeit simplified, scenario:
+Криптографическая хэш-функция преобразовывает блок данных произвольной длины в двоичную строку фиксированной длины. Хэш-функции обычно используются при подписывании данных. В большинстве случаев операции подписывания с помощью открытого ключа требуют много вычислительных ресурсов. Вот почему целесообразно подписывать (шифровать) не само исходное сообщение, а его хэш. Рассмотрим типичный, хотя и упрощенный сценарий такой процедуры.
 
--   Bob and Alice share a secret key and agree on a MAC function to use.
--   Bob creates a message and inputs the message and the secret key into a MAC function to retrieve a MAC value.
--   Bob sends the \[unencrypted\] message and the MAC value to Alice over a network.
--   Alice uses the secret key and the message as input to the MAC function. She compares the generated MAC value to the MAC value sent by Bob. If they are the same, the message was not changed in transit.
+-   Владимир и Юлия владеют общим секретным ключом и договорились об использовании определенной функции, выдающей код проверки подлинности сообщения.
+-   Владимир создает сообщение и вместе с секретным ключом передает его функции, которая выдает код проверки подлинности сообщения.
+-   Затем Владимир отправляет Юлии по сети сообщение \[в незашифрованном виде\] вместе с кодом проверки подлинности сообщения.
+-   Полученное сообщение вместе с секретным ключом Юлия передает функции, которая выдает код проверки подлинности сообщения. Этот код Юлия сравнивает с кодом, полученным от Владимира. Если они совпадают, это означает, что сообщение не подвергалось изменениям в процессе передачи.
 
-Note that Alice sent an unencrypted message. Only the hash was encrypted. The procedure ensures only that the original message was not altered and, by using Alice's public key, that the message hash was signed by someone with access to Alice's private key, presumably Alice.
+Заметьте: Юлия послала незашифрованное сообщение. Только хэш был зашифрован. Эта процедура позволяет убедиться только в том, что исходное сообщение не было изменено. А использование открытого ключа Юлии показывает, что хэш сообщения был подписан кем-то, имеющим доступ к ее закрытому ключу, предположительно самой Юлией.
 
-You can use the [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) class to enumerate the available hash algorithms and create a [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) value.
+Можно использовать класс [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) для перечисления доступных алгоритмов хэширования и создания значения [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498).
 
-Digital signatures are the public key equivalent of private key message authentication codes (MACs). Whereas MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
+Цифровые подписи являются эквивалентом открытого ключа для кодов проверки подлинности сообщений (MAC) с закрытым ключом. Разница между ними в том, что MAC-коды используют закрытые ключи, для того чтобы получатель мог проверить, не было ли сообщение изменено при передаче, а в цифровых подписях для этого используются пары из открытого и закрытого ключей.
 
-The [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) object can be used to repeatedly hash different data without having to re-create the object for each use. The [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499) method adds new data to a buffer to be hashed. The [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) method hashes the data and resets the object for another use. This is shown by the following example.
+Объект [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) можно использовать для повторного хэширования различных данных без необходимости заново создавать объект для каждого случая применения. Метод [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499) добавляет новые данные для хэширования в буфер. Метод [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) хэширует данные и сбрасывает параметры объекта для следующего использования. Процедура показана в следующем примере.
 
 ```cs
 public void SampleReusableHash()
@@ -175,17 +179,18 @@ public void SampleReusableHash()
 
 ```
 
-## Digital signatures
+## Цифровые подписи
 
 
-Digital signatures are the public key equivalent of private key message authentication codes (MACs). Whereas MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
+Цифровые подписи являются эквивалентом открытого ключа для кодов проверки подлинности сообщений (MAC) с закрытым ключом. Разница между ними в том, что MAC-коды используют закрытые ключи для того, чтобы получатель мог проверить, не было ли сообщение изменено при передаче, а в цифровых подписях для этого используются пары из открытого и закрытого ключей.
 
-Because most public key signature operations are computationally intensive, however, it is typically more efficient to sign (encrypt) a message hash than it is to sign the original message. The sender creates a message hash, signs it, and sends both the signature and the (unencrypted) message. The recipient calculates a hash over the message, decrypts the signature, and compares the decrypted signature to the hash value. If they match, the recipient can be fairly certain that the message did, in fact, come from the sender and was not altered during transmission.
+Однако в большинстве случаев операции подписывания с помощью открытого ключа требуют много вычислительных ресурсов. Вот почему целесообразно подписывать (шифровать) не само исходное сообщение, а его хэш. Отправитель создает хэш сообщения, подписывает его и посылает подпись вместе с сообщением (в незашифрованном виде). Получатель вычисляет хэш-код сообщения, расшифровывает подпись и сравнивает полученный результат со значением хэша. Если они совпадают, получатель может быть уверен, что сообщение действительно было послано отправителем и не было изменено в процессе передачи.
 
-Signing ensures only that the original message was not altered and, by using the sender's public key, that the message hash was signed by someone with access to the private key.
+Подписывание сообщений дает возможность убедиться только в том, что исходное сообщение не было изменено. А использование открытого ключа отправителя показывает, что хэш сообщения был подписан кем-то, имеющим доступ к закрытому ключу.
 
-You can use an [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) object to enumerate the available signature algorithms and generate or import a key pair. You can use static methods on the [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) class to sign a message or verify a signature.
+Для перечисления доступных алгоритмов подписи, а также для формирования или импорта пары ключей можно использовать объект [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478). Для подписывания сообщения или проверки подписи можно использовать статические методы класса [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498).
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

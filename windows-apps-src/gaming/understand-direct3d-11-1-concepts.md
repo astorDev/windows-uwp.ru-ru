@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Важные изменения в Direct3D 11 по сравнению с Direct3D 9
-description: В этом разделе представлены общие отличия между DirectX 9 и DirectX 11.
+title: "Важные изменения в Direct3D 11 по сравнению с Direct3D 9"
+description: "В этом разделе представлены общие отличия между DirectX 9 и DirectX 11."
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8d63aebaf656b62481675eebf7c0bf9ea51784a8
+
 ---
 
 # Важные изменения в Direct3D 11 по сравнению с Direct3D 9
@@ -111,6 +115,7 @@ Direct3D 11 поддерживает дополнительный уровен�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

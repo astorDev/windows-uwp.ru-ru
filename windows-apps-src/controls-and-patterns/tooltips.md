@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Используйте всплывающую подсказку, чтобы получить дополнительную информацию об элементе управления прежде, чем совершить действие.
-title: Подсказки
+Description: "Используйте всплывающую подсказку, чтобы получить дополнительную информацию об элементе управления прежде, чем совершить действие."
+title: "Подсказки"
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 0529f212e9fac290bb58925e992518ab0e803bfa
+
 
 ---
 
@@ -70,6 +74,7 @@ template: detail.hbs
 * [**ToolTip class**](https://msdn.microsoft.com/library/windows/apps/br227608)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

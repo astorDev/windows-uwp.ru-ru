@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Поддержка ориентации экрана (DirectX и C++)
-description: Далее мы обсудим рекомендации по обработке поворота экрана в вашем приложении UWP с использованием DirectX, чтобы графическое оборудование устройства с Windows 10 использовалось эффективно.
+title: "Поддержка ориентации экрана (DirectX и C++)"
+description: "Далее мы обсудим рекомендации по обработке поворота экрана в вашем приложении UWP с использованием DirectX, чтобы графическое оборудование устройства с Windows 10 использовалось эффективно."
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8da32494e0bb0bd48d485c946df1c9a5baec7fbe
+
 ---
 
 # Поддержка ориентации экрана (DirectX и C++)
@@ -553,6 +557,7 @@ m_constantBufferData.projection = mul(m_constantBufferData.projection, m_rotatio
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

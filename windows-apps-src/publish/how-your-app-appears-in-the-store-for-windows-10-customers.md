@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Если вы ранее публиковали приложения в Магазине для Windows или Windows Phone, эти приложения также станут доступными для пользователей устройств под управлением Windows 10.
-title: Как пользователи Windows 10 видят ваше приложение в Магазине
+Description: "Если вы ранее публиковали приложения в Магазине для Windows или Windows Phone, эти приложения также станут доступными для пользователей устройств под управлением Windows 10."
+title: "Как пользователи Windows 10 видят ваше приложение в Магазине"
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
+
 ---
 
 # Как пользователи Windows 10 видят ваше приложение в Магазине
@@ -117,6 +121,7 @@ ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 | Игры &gt; Гонки           | Игры &gt; Гонки+авиасимуляторы           |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

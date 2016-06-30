@@ -1,7 +1,10 @@
 ---
-author: DBirtolo
-title: Объявления Bluetooth
-description: Этот раздел содержит статьи о том, как интегрировать рекламные объявления Bluetooth с низким энергопотреблением (LE) в приложения универсальной платформы Windows (UWP) с помощью пользователя API AdvertisementWatcher и AdvertisementPublisher.
+author: msatranjr
+title: "Объявления Bluetooth"
+description: "Этот раздел содержит статьи о том, как интегрировать рекламные объявления Bluetooth с низким энергопотреблением (LE) в приложения универсальной платформы Windows (UWP) с помощью пользователя API AdvertisementWatcher и AdvertisementPublisher."
+ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
+ms.openlocfilehash: a419ad04fe4f21867f2f1bd1664fbce39a7da792
+
 ---
 
 # Объявления Bluetooth
@@ -24,6 +27,7 @@ description: Этот раздел содержит статьи о том, ка
 Полный пример кода включен в [Пример объявления Bluetooth](http://go.microsoft.com/fwlink/p/?LinkId=619990) на Github
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

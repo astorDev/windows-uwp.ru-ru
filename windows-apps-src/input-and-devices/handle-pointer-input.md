@@ -5,8 +5,8 @@ title: "Работа с входными данными указателя"
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 2204e8f3ddce067cf2cbc24ce89cbdcea5b361bf
 
 ---
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
 Если вы реализуете собственную поддержку взаимодействий, помните: пользователи ожидают, что способ взаимодействия с элементами пользовательского интерфейса приложения будет интуитивно понятным. Рекомендуется моделировать взаимодействия с пользователем на базе [списка элементов управления](https://msdn.microsoft.com/library/windows/apps/mt185406) для обеспечения единообразия элементов и возможности их обнаруживать. Элементы управления платформы обеспечивают все механизмы взаимодействия с пользователем, используемые в приложениях универсальной платформы Windows (UWP), в том числе стандартные взаимодействия, анимированные физические эффекты, визуальную обратную связь и специальные возможности. Создавайте пользовательские взаимодействия, только если существует явное, четко определенное требование и если ни один стандартный механизм взаимодействия не поддерживает ваш сценарий.
 
 
-## <span id="Pointers"></span><span id="pointers"></span><span id="POINTERS"></span>Указатели
+## Указатели
 
 
 Зачастую взаимодействие предполагает определение пользователем объекта, с которым он собирается взаимодействовать, путем указания на него с помощью сенсорного ввода, мыши, пера/стилуса и сенсорной панели. Поскольку необработанные данные устройства HID, предоставляемые такими устройствами ввода, содержат много общих свойств, эта информация преобразовывается в единый входной стек и представляется в виде консолидированных, не зависящих от устройства данных указателя. Ваши приложения UWP смогут использовать эти данные независимо от того, какое устройство ввода используется.
@@ -36,7 +36,7 @@ ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
 
 Каждая точка ввода (или контакта) на входном стеке представляется объектом [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968), доступ к которому предоставляется с помощью параметра [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) на основании различных событий указателя. В случае ввода несколькими перьями или мультисенсорного ввода каждый контакт считается уникальной точкой ввода.
 
-## <span id="Pointer_events"></span><span id="pointer_events"></span><span id="POINTER_EVENTS"></span>События указателя
+## События указателя
 
 
 События указателя предоставляют основную информацию, например, о состоянии обнаружения (на расстоянии или в контакте) и типе устройства, а также дополнительную информацию, например, о давлении и геометрии контакта. Кроме того, предоставляются сведения о свойствах конкретных устройств, например, о том, какую кнопку мыши нажал пользователь и не использует ли он стирающий конец пера. Если ваше приложение должно различать устройства ввода и их возможности, см. раздел [Определение типов устройств ввода](identify-input-devices.md).
@@ -60,7 +60,7 @@ ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="PointerCanceled"></span><span id="pointercanceled"></span><span id="POINTERCANCELED"></span>([<strong>PointerCanceled</strong>]https://msdn.microsoft.com/library/windows/apps/br208964)</p></td>
+<td align="left"><p>([<strong>PointerCanceled</strong>]https://msdn.microsoft.com/library/windows/apps/br208964)</p></td>
 <td align="left"><p>Происходит, когда указатель отменяется платформой.</p>
 <ul>
 <li>Указатели касания отменяются в том случае, если перо обнаруживается в пределах поверхности ввода.</li>
@@ -71,7 +71,7 @@ ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerCaptureLost"></span><span id="pointercapturelost"></span><span id="POINTERCAPTURELOST"></span>([<strong>PointerCaptureLost</strong>]https://msdn.microsoft.com/library/windows/apps/br208965)</p></td>
+<td align="left"><p>([<strong>PointerCaptureLost</strong>]https://msdn.microsoft.com/library/windows/apps/br208965)</p></td>
 <td align="left"><p>Происходит, если указатель захватывается другим элементом пользовательского интерфейса, если указатель отпущен пользователем или если происходит захват другого указателя программным путем.</p>
 <div class="alert">
 <strong>Примечание.</strong> Соответствующее событие захвата указателя не происходит.
@@ -81,7 +81,7 @@ ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerEntered"></span><span id="pointerentered"></span><span id="POINTERENTERED"></span>[<strong>PointerEntered</strong>](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
+<td align="left"><p>[<strong>PointerEntered</strong>](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
 <td align="left"><p>Происходит, когда указатель входит в контактный участок элемента. Это может происходить немного по-разному в случае сенсорного ввода, использования сенсорной панели, мыши и пера.</p>
 <ul>
 <li>В случае сенсорного ввода для запуска этого события требуется контакт с пальцем либо путем непосредственного прикосновения к элементу, либо путем касания и перемещения пальца в контактный участок элемента.</li>
@@ -90,7 +90,7 @@ ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerExited"></span><span id="pointerexited"></span><span id="POINTEREXITED"></span>[<strong>PointerExited</strong>](https://msdn.microsoft.com/library/windows/apps/br208969)</p></td>
+<td align="left"><p>[<strong>PointerExited</strong>](https://msdn.microsoft.com/library/windows/apps/br208969)</p></td>
 <td align="left"><p>Происходит, когда указатель выходит из контактного участка элемента. Это может происходить немного по-разному в случае сенсорного ввода, использования сенсорной панели, мыши и пера.</p>
 <ul>
 <li>В случае сенсорного ввода для запуска этого события требуется контакт с пальцем, когда указатель выходит за пределы контактного участка элемента.</li>
@@ -99,7 +99,7 @@ ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerMoved"></span><span id="pointermoved"></span><span id="POINTERMOVED"></span>[<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970)</p></td>
+<td align="left"><p>[<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970)</p></td>
 <td align="left"><p>Происходит, когда указатель изменяет координаты, состояние кнопок, давление, наклон или геометрию контакта (например, ширину и высоту) в пределах контактного участка элемента. Это может происходить немного по-разному в случае сенсорного ввода, использования сенсорной панели, мыши и пера.</p>
 <ul>
 <li>Сенсорный ввод требует контакта с пальцем и запускает это событие только в случае контакта в пределах контактного участка элемента.</li>
@@ -108,16 +108,16 @@ ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerPressed"></span><span id="pointerpressed"></span><span id="POINTERPRESSED"></span>[<strong>PointerPressed</strong>](https://msdn.microsoft.com/library/windows/apps/br208971)</p></td>
+<td align="left"><p>[<strong>PointerPressed</strong>](https://msdn.microsoft.com/library/windows/apps/br208971)</p></td>
 <td align="left"><p>Происходит, когда указатель указывает действие нажатия (например, касание, нажатие кнопки мыши, касание пера или нажатие кнопки сенсорной панели) в пределах контактного участка элемента.</p>
 <p>Для этого события необходимо вызывать [<strong>CapturePointer</strong>](https://msdn.microsoft.com/library/windows/apps/br208918) из обработчика.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerReleased"></span><span id="pointerreleased"></span><span id="POINTERRELEASED"></span>[<strong>PointerReleased</strong>](https://msdn.microsoft.com/library/windows/apps/br208972)</p></td>
+<td align="left"><p>[<strong>PointerReleased</strong>](https://msdn.microsoft.com/library/windows/apps/br208972)</p></td>
 <td align="left"><p>Происходит, когда указатель указывает действие отпускания (например, разрыв контакта с пальцем или пером, поднятие кнопки мыши или кнопки сенсорной панели) на контактном участке элемента или, в случае захвата указателя, за пределами контактного участка.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerWheelChanged"></span><span id="pointerwheelchanged"></span><span id="POINTERWHEELCHANGED"></span>[<strong>PointerWheelChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208973)</p></td>
+<td align="left"><p>[<strong>PointerWheelChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208973)</p></td>
 <td align="left"><p>Происходит при вращении колесика мыши.</p>
 <p>Ввод мыши связывается с отдельным указателем, назначаемым при первом обнаружении ввода мыши. При щелчке кнопки мыши (левой, правой или колеса) создается вспомогательная связь между указателем и этой кнопкой с помощью события [<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970).</p></td>
 </tr>
@@ -126,12 +126,12 @@ ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
 
  
 
-## <span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Пример.
+## Пример.
 
 
 Ниже представлены примеры кода из основного приложения отслеживания указателя, которые показывают, как просматривать и обрабатывать события указателя и получать сведения о различных свойствах активных указателей.
 
-### <span id="Create_the_UI"></span><span id="create_the_ui"></span><span id="CREATE_THE_UI"></span>Создание пользовательского интерфейса
+### Создание пользовательского интерфейса
 
 В этом примере мы используем в качестве целевого объекта для ввода от указателя прямоугольник (`targetContainer`). Цвет целевого объекта изменяется при изменении состояния указателя.
 
@@ -194,7 +194,7 @@ ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
 </Page>
 ```
 
-### <span id="Listen_for_pointer_events"></span><span id="listen_for_pointer_events"></span><span id="LISTEN_FOR_POINTER_EVENTS"></span>Ожидание событий указателя
+### Ожидание событий указателя
 
 В большинстве случаев мы рекомендуем получать сведения от указателя посредством [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) обработчика событий.
 
@@ -243,7 +243,7 @@ ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
 
 ```
 
-### <span id="Handle_pointer_events"></span><span id="handle_pointer_events"></span><span id="HANDLE_POINTER_EVENTS"></span>Обработка событий указателя
+### Обработка событий указателя
 
 Далее мы воспользуемся обратной связью пользовательского интерфейса для демонстрации обработчиков основных событий указателя.
 
@@ -561,7 +561,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
-### <span id="Get_pointer_properties"></span><span id="get_pointer_properties"></span><span id="GET_POINTER_PROPERTIES"></span>Получение свойств указателя
+### Получение свойств указателя
 
 Как упоминалось ранее, вам необходимо получить наиболее полные сведения указателя от объекта [**Windows.UI.Input.PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038), получаемые с помощью методов [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) и [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) класса [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076).
 
@@ -657,7 +657,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
              }
 ```
 
-### <span id="Complete_example"></span><span id="complete_example"></span><span id="COMPLETE_EXAMPLE"></span>Полный пример
+### Полный пример
 
 Ниже приводится код C\# для этого примера. Ссылки на более сложные примеры см. в разделе "Связанные статьи" в нижней части страницы.
 
@@ -1085,7 +1085,7 @@ namespace PointerInput
 }
 ```
 
-## <span id="related_topics"></span>Связанные разделы
+## Связанные разделы
 
 
 **Примеры**
@@ -1111,6 +1111,6 @@ namespace PointerInput
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

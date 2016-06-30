@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: В этом разделе содержатся рекомендации по взаимодействию с пользователями, организации параметров приложений и сохранению этих параметров в качестве данных приложений.
-title: Параметры и данные приложения
+Description: "В этом разделе содержатся рекомендации по взаимодействию с пользователями, организации параметров приложений и сохранению этих параметров в качестве данных приложений."
+title: "Параметры и данные приложения"
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc462
+
 ---
 
 # Параметры и данные приложения
@@ -45,6 +49,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

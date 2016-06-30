@@ -5,8 +5,8 @@ title: "Взаимодействие с помощью мыши"
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 10deda7b44d4cfb5c65b425bf82ceaf6654aab95
 
 ---
 
@@ -27,7 +27,7 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 
 В этом разделе описываются вопросы разработки для взаимодействия с помощью мыши.
 
-## <span id="The_UWP_app_mouse_language"></span><span id="the_uwp_app_mouse_language"></span><span id="THE_UWP_APP_MOUSE_LANGUAGE"></span>Язык мыши приложения UWP
+## Язык мыши приложения UWP
 
 
 Компактный набор взаимодействий с помощью мыши используется единообразно во всей системе.
@@ -45,19 +45,19 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Hover_to_learn"></span><span id="hover_to_learn"></span><span id="HOVER_TO_LEARN"></span>Обучение при наведении</p></td>
+<td align="left"><p>Обучение при наведении</p></td>
 <td align="left"><p>Наведите указатель на элемент, чтобы показать подробную информацию или визуальные обучающие элементы (например, подсказку), не выполняя никакого действия.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Left-click_for_primary_action"></span><span id="left-click_for_primary_action"></span><span id="LEFT-CLICK_FOR_PRIMARY_ACTION"></span>Щелчок левой кнопкой для основного действия</p></td>
+<td align="left"><p>Щелчок левой кнопкой для основного действия</p></td>
 <td align="left"><p>Щелчок левой кнопкой вызывает основное действие (например, запуск приложения или выполнение команды).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Scroll_to_change_view"></span><span id="scroll_to_change_view"></span><span id="SCROLL_TO_CHANGE_VIEW"></span>Прокрутка для изменения представления</p></td>
+<td align="left"><p>Прокрутка для изменения представления</p></td>
 <td align="left"><p>Отображение полос прокрутки для перемещения вверх, вниз, влево и вправо в пределах области содержимого. Для прокрутки содержимого можно щелкать на полосах прокрутки или вращать колесо мыши. Полосы прокрутки могут обозначать расположение текущего представления в пределах области содержимого (сдвиг касанием отображает аналогичный пользовательский интерфейс).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Right-click_to_select_and_command"></span><span id="right-click_to_select_and_command"></span><span id="RIGHT-CLICK_TO_SELECT_AND_COMMAND"></span>Щелчок правой кнопкой мыши для выбора и выполнения команды</p></td>
+<td align="left"><p>Щелчок правой кнопкой мыши для выбора и выполнения команды</p></td>
 <td align="left"><p>Щелчок правой кнопкой мыши для отображения панели навигации (при наличии) и панели приложения с глобальными командами. Щелчок правой кнопкой мыши на элементе для его выделения и отображения контекстных команд для выбранного элемента.</p>
 <div class="alert">
 <strong>Примечание.</strong> Щелчок правой кнопкой мыши для отображения контекстного меню, если выбор или команды панели приложения не являются допустимыми вариантами поведения пользовательского интерфейса. Однако настоятельно рекомендуется для всех вариантов поведения команд использовать панель приложения.
@@ -67,19 +67,19 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="UI_commands_to_zoom"></span><span id="ui_commands_to_zoom"></span><span id="UI_COMMANDS_TO_ZOOM"></span>Команды пользовательского интерфейса для масштабирования</p></td>
+<td align="left"><p>Команды пользовательского интерфейса для масштабирования</p></td>
 <td align="left"><p>Отображение команд пользовательского интерфейса на панели приложения (например, + и -) либо нажатие клавиши CTRL и вращение колеса мыши для эмуляции жестов увеличения и уменьшения масштаба.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="UI_commands_to_rotate"></span><span id="ui_commands_to_rotate"></span><span id="UI_COMMANDS_TO_ROTATE"></span>Команды пользовательского интерфейса для поворота</p></td>
+<td align="left"><p>Команды пользовательского интерфейса для поворота</p></td>
 <td align="left"><p>Отображение команд пользовательского интерфейса на панели приложения либо нажатие клавиш CTRL+SHIFT и вращение колеса мыши для эмуляции жеста поворота. Чтобы повернуть весь экран, поверните само устройство.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Left-click_and_drag_to_rearrange"></span><span id="left-click_and_drag_to_rearrange"></span><span id="LEFT-CLICK_AND_DRAG_TO_REARRANGE"></span>Щелчок левой кнопкой мыши и перетаскивание для изменения взаимного расположения элементов</p></td>
+<td align="left"><p>Щелчок левой кнопкой мыши и перетаскивание для изменения взаимного расположения элементов</p></td>
 <td align="left"><p>Щелчок левой кнопкой мыши и перетаскивание элемента для его перемещения.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Left-click_and_drag_to_select_text"></span><span id="left-click_and_drag_to_select_text"></span><span id="LEFT-CLICK_AND_DRAG_TO_SELECT_TEXT"></span>Щелчок левой кнопкой мыши и перетаскивание для выделения текста</p></td>
+<td align="left"><p>Щелчок левой кнопкой мыши и перетаскивание для выделения текста</p></td>
 <td align="left"><p>Щелчок левой кнопкой мыши в пределах доступного для выделения текста и перемещение для выделения текста. Двойной щелчок для выделения слова.</p></td>
 </tr>
 </tbody>
@@ -100,7 +100,7 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 
 - [Ввод: жесты и манипуляции с помощью GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
 
-## <span id="Guidelines_for_visual_feedback"></span><span id="guidelines_for_visual_feedback"></span><span id="GUIDELINES_FOR_VISUAL_FEEDBACK"></span>Руководство по визуальной обратной связи
+## Руководство по визуальной обратной связи
 
 
 -   Обнаружив мышь (при помощи событий перемещения или наведения), отображайте пользовательский интерфейс для мыши, чтобы показать функциональность, которую предоставляет элемент. Если мышь не перемещается в течение определенного времени или если пользователь инициирует взаимодействие касанием, сделайте так, чтобы пользовательский интерфейс для мыши постепенно исчезал с экрана. В этом случае пользовательский интерфейс будет аккуратным, не загроможденным лишними элементами.
@@ -113,7 +113,7 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 Дополнительные общие рекомендации по визуальной обратной связи см. в разделе [Руководство по визуальной обратной связи](guidelines-for-visualfeedback.md).
 
 
-## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>Курсоры
+## Курсоры
 
 
 Для указателя мыши предусмотрен набор стандартных курсоров. Они указывают на основное действие элемента.
@@ -128,7 +128,7 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 -   Используйте курсоры изменения размеров по горизонтали, вертикали и диагонали (![Курсор изменения размеров по вертикали](images/cursor-vertical.png), ![Курсор изменения размеров по горизонтали](images/cursor-horizontal.png), ![Курсор изменения размеров по диагонали (левый нижний, правый верхний)](images/cursor-diagonal2.png), ![Курсор изменения размеров по диагонали (левый верхний, правый нижний)](images/cursor-diagonal1.png)), если размер объекта можно изменить.
 -   Используйте курсоры "хватающая рука" (![Курсор "хватающая рука" (открыта)](images/cursor-pan1.png), ![Курсор "хватающая рука" (сжатая)](images/cursor-pan2.png)) для сдвига содержимого в пределах фиксированного холста, например карты.
 
-## <span id="related_topics"></span>Статьи по теме
+## Статьи по теме
 
 * [Работа с данными указателя](handle-pointer-input.md)
 * [Распознавание устройств ввода](identify-input-devices.md)
@@ -155,6 +155,6 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

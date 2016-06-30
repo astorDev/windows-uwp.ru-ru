@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
-description: В этой статье описывается, как быстро вывести поток предварительного просмотра камеры на странице XAML в приложении универсальной платформы Windows (UWP).
-title: Простой доступ к просмотру камеры
+description: "В этой статье описывается, как быстро вывести поток предварительного просмотра камеры на странице XAML в приложении универсальной платформы Windows (UWP)."
+title: "Простой доступ к просмотру камеры"
+translationtype: Human Translation
+ms.sourcegitcommit: 72abc006de1925c3c06ecd1b78665e72e2ffb816
+ms.openlocfilehash: 05e752925c07b0e3720fbdd42d785381aa08b99c
+
 ---
 
 # Простой доступ к просмотру камеры
@@ -80,10 +84,11 @@ title: Простой доступ к просмотру камеры
 
 ## Ссылки по теме
 
-* [Захват фотографий и видео с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [Фото- и видеосъемка с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md)
 * [Получение кадра предварительного просмотра](get-a-preview-frame.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

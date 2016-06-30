@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: В этой статье описывается, как с помощью шаблонов адаптивных плиток отправлять локальное уведомление на плитке на основную и вспомогательную плитку.
-title: Отправка локального уведомления на плитке
+Description: "В этой статье описывается, как с помощью шаблонов адаптивных плиток отправлять локальное уведомление на плитке на основную и вспомогательную плитку."
+title: "Отправка локального уведомления на плитке"
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: cc2f86f2a56aae5ee9e3019dafa3417a25e7d610
+
 ---
 
 # Отправка локального уведомления на плитке
@@ -315,6 +319,7 @@ var notification = new TileNotification(doc);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,12 +1,16 @@
 ---
 author: mijacobs
-Description: Основная цель шрифтового оформления как визуального представления языка — это ясность. Стиль шрифтов никогда не должен затмевать эту цель. Но шрифтовое оформление также играет важную роль как компонент макета. Оно сильно влияет на плотность и сложность дизайна, как и на взаимодействие с пользователем в целом.
-title: Шрифтовое оформление
+Description: "Основная цель шрифтового оформления как визуального представления языка — это ясность. Стиль шрифтов никогда не должен затмевать эту цель. Но шрифтовое оформление также играет важную роль как компонент макета. Оно сильно влияет на плотность и сложность дизайна, как и на взаимодействие с пользователем в целом."
+title: "Шрифтовое оформление"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 label: Typography
 template: detail.hbs
 extraBodyClass: style-typography
-brief: As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
+brief: "As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design."
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 02d5149f945bb631e385e45a295fdfe08bd98fb0
+
 ---
 
 # Шрифтовое оформление для приложений UWP
@@ -79,7 +83,7 @@ Segoe — это гуманистический шрифт с мягким, др
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            В элементе управления текстом XAML используйте [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) для управления кернингом и [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) для управления отслеживанием. По умолчанию для Typography.Kerning установлено значение true, а для FontStretch — значение Normal (рекомендованные значения).
+В элементе управления текстом XAML используйте [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) для управления кернингом и [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) для управления отслеживанием. По умолчанию для Typography.Kerning установлено значение true, а для FontStretch — значение Normal (рекомендованные значения).
     </div>
 </aside>
 
@@ -125,7 +129,7 @@ Segoe предоставляет широкий диапазон символо�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            Свойство XAML [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) предоставляет доступ к высоте верхушки и метрикам основного шрифта. Его можно использовать для визуального вертикального выравнивания по центру или по верху.
+Свойство XAML [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) предоставляет доступ к высоте верхушки и метрикам основного шрифта. Его можно использовать для визуального вертикального выравнивания по центру или по верху.
     </div>
 </aside>
 
@@ -150,7 +154,7 @@ Segoe предоставляет широкий диапазон символо�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            Большинство уровней набора шрифтов доступны в виде [статических ресурсов](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) XAML, которые именуются в рамках соглашения `*TextBlockStyle` (например, 
+Большинство уровней набора шрифтов доступны в виде [статических ресурсов](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) XAML, которые именуются в рамках соглашения `*TextBlockStyle` (например, `HeaderTextBlockStyle`). 
     </div>
 </aside>
 
@@ -180,6 +184,7 @@ Segoe предоставляет широкий диапазон символо�
 * [Элементы управления текстом](../controls-and-patterns/text-controls.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

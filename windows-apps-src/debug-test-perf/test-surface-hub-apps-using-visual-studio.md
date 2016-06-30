@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: A5320094-DF53-42FC-A6BA-A958F8E9210B
-title: Проверка приложений Surface Hub с использованием Visual Studio
-description: Имитатор Visual Studio обеспечивает среду для проектирования, разработки, отладки и тестирования приложений UWP, в том числе приложений, созданных для Surface Hub.
+title: "Проверка приложений Surface Hub с использованием Visual Studio"
+description: "Имитатор Visual Studio обеспечивает среду для проектирования, разработки, отладки и тестирования приложений UWP, в том числе приложений, созданных для Surface Hub."
+translationtype: Human Translation
+ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
+ms.openlocfilehash: 655dffb5f1948724c894de291e119be1322f6e77
+
 ---
 
 # Проверка приложений Surface Hub с использованием Visual Studio
@@ -103,6 +107,7 @@ description: Имитатор Visual Studio обеспечивает среду 
    > **Совет**.&nbsp;&nbsp;Если Surface Hub находится на экране приветствия, закройте его, нажав любую кнопку.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

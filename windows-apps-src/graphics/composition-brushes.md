@@ -1,8 +1,12 @@
 ---
 author: scottmill
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
-title: Кисти композиции
-description: Кисть заполняет пространство объекта класса Visual своими выводимыми данными. Разные кисти имеют различные типы выводимых данных.
+title: "Кисти композиции"
+description: "Кисть заполняет пространство объекта класса Visual своими выводимыми данными. Разные кисти имеют различные типы выводимых данных."
+translationtype: Human Translation
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: 7f466607e48bb0d553892e09c6616f0dd0539d8e
+
 ---
 # Кисти композиции
 
@@ -74,14 +78,14 @@ Visual2.Offset = new Vector3(3, 3, 0);
 
 Кисть [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) заполняет визуальный объект поверхностью композиции (представляемой объектом [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819)). На следующем рисунке показан квадратный визуальный объект, заполненный растровым изображением лакрицы, отрисованным на поверхности **ICompositionSurface** с помощью D2D.
 
-![CompositionSurfaceBrush В первом примере поверхность композиции инициализируется для применения кисти. Поверхность композиции создается с помощью вспомогательного метода LoadImage, в который передаются объект [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) и URL-адрес в виде строки. Этот метод загружает изображение из URL-адреса, отрисовывает изображение на поверхности [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) и задает поверхность в качестве содержимого кисти **CompositionSurfaceBrush**.
+![CompositionSurfaceBrush](images/composition-compositionsurfacebrush.png) В первом примере поверхность композиции инициализируется для применения кисти. Поверхность композиции создается с помощью вспомогательного метода LoadImage, в который передаются объект [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) и URL-адрес в виде строки. Этот метод загружает изображение из URL-адреса, отрисовывает изображение на поверхности [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) и задает поверхность в качестве содержимого кисти **CompositionSurfaceBrush**. Обратите внимание, что **ICompositionSurface** предоставляется только в собственном машинном коде, поэтому метод LoadImage реализуется в нем же.
 
 ```cs
 LoadImage(Brush,
           "ms-appx:///Assets/liqorice.png");
 ```
 
-Обратите внимание, что **ICompositionSurface** предоставляется только в собственном машинном коде, поэтому метод LoadImage реализуется в нем же. Для создания кисти поверхности вызовите метод Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx). Этот метод возвращает объект [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415).
+Для создания кисти поверхности вызовите метод Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx). Этот метод возвращает объект [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415). Ниже показан код, который можно использовать для заполнения визуального объекта содержимым кисти **CompositionSurfaceBrush**.
 
 ```cs
 Compositor _compositor;
@@ -94,21 +98,21 @@ LoadImage(_surfaceBrush, "ms-appx:///Assets/liqorice.png");
 visual.Brush = _surfaceBrush;
 ```
 
-## Ниже показан код, который можно использовать для заполнения визуального объекта содержимым кисти **CompositionSurfaceBrush**.
+## Настройка растяжения и выравнивания
 
-Настройка растяжения и выравнивания Иногда содержимое поверхности [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) для кисти [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) не полностью заполняет площадь обрабатываемого визуального объекта.
+Иногда содержимое поверхности [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) для кисти [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) не полностью заполняет площадь обрабатываемого визуального объекта. В этом случае API композиции использует параметры режима [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx), [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) и [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch), чтобы определить, как заполнить оставшуюся область.
 
--   В этом случае API композиции использует параметры режима [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx), [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) и [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch), чтобы определить, как заполнить оставшуюся область.
-    -   [
+-   [
               **HorizontalAlignmentRatio**
             ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) и [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) имеют тип float и используются для позиционирования кисти в пределах визуального объекта.
     -   Значение 0,0 переводит левый верхний угол кисти в левый верхний угол визуального объекта.
     -   Значение 0,5 переводит центр кисти в центр визуального объекта.
--   Значение 1,0 переводит правый нижний угол кисти в правый нижний угол визуального объекта.
-    -   Для свойства [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) используются следующие значения, определенные в перечислении [**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786). None: кисть не растягивается для заполнения границ визуального объекта. Будьте осторожны с этим значением параметра Stretch: если размер кисти превышает границы визуального объекта, содержимое кисти будет обрезано.
-    -   Частью кисти, которая используется для заполнения границ визуального объекта, можно управлять с помощью свойств [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) и [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio). Uniform: кисть масштабируется таким образом, чтобы она помещалась в границах визуального объекта; пропорции кисти сохраняются.
-    -   Это значение используется по умолчанию.
-    -   UniformToFill: кисть масштабируется таким образом, чтобы она полностью заполняла границы визуального объекта; пропорции кисти сохраняются. Fill: кисть масштабируется таким образом, чтобы она помещалась в границах визуального объекта. Так как высота и ширина кисти изменяются независимо друг от друга, ее исходные пропорции могут быть нарушены.
+    -   Значение 1,0 переводит правый нижний угол кисти в правый нижний угол визуального объекта.
+-   Для свойства [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) используются следующие значения, определенные в перечислении [**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786).
+    -   None: кисть не растягивается для заполнения границ визуального объекта. Будьте осторожны с этим значением параметра Stretch: если размер кисти превышает границы визуального объекта, содержимое кисти будет обрезано. Частью кисти, которая используется для заполнения границ визуального объекта, можно управлять с помощью свойств [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) и [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio).
+    -   Uniform: кисть масштабируется таким образом, чтобы она помещалась в границах визуального объекта; пропорции кисти сохраняются. Это значение используется по умолчанию.
+    -   UniformToFill: кисть масштабируется таким образом, чтобы она полностью заполняла границы визуального объекта; пропорции кисти сохраняются.
+    -   Fill: кисть масштабируется таким образом, чтобы она помещалась в границах визуального объекта. Так как высота и ширина кисти изменяются независимо друг от друга, ее исходные пропорции могут быть нарушены. Таким образом, кисть может быть искажена для максимального заполнения границ визуального объекта.
 
  
 
@@ -119,6 +123,7 @@ visual.Brush = _surfaceBrush;
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Навигация в приложениях универсальной платформы Windows (UWP) основана на гибкой модели структур навигации, элементов навигации, и функций системного уровня.
-title: Основы проектирования навигации в приложениях универсальной платформы Windows (UWP)
+Description: "Навигация в приложениях универсальной платформы Windows (UWP) основана на гибкой модели структур навигации, элементов навигации, и функций системного уровня."
+title: "Основы проектирования навигации в приложениях универсальной платформы Windows (UWP)"
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 6926d70c7140b1545a8b5492981d6d0b61af3784
+
 ---
 
 #  Основы проектирования навигации для приложений UWP
@@ -264,6 +268,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

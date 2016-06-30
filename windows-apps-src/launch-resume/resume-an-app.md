@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Обработка возобновления работы приложения
-description: Узнайте, как обновить отображаемое содержимое, когда система возобновляет работу приложения.
+author: TylerMSFT
+title: "Обработка возобновления работы приложения"
+description: "Узнайте, как обновить отображаемое содержимое, когда система возобновляет работу приложения."
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
+ms.sourcegitcommit: e6957dd44cdf6d474ae247ee0e9ba62bf17251da
+ms.openlocfilehash: dd3d75c7f3dfe325324e1fe31c039cd207b68d0b
+
 ---
 
 # Обработка возобновления работы приложения
@@ -27,66 +30,66 @@ ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 Выполните регистрацию для обработки события [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339), которое сигнализирует о том, что пользователь переключился с вашего приложения на другую задачу, а затем вернулся к нему.
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-partial class MainPage
-{
-   public MainPage()
-   {
-      InitializeComponent();
-      Application.Current.Resuming += new EventHandler<Object>(App_Resuming);
-   }
-}
-```
-```vb
-Public NonInheritable Class MainPage
-
-   Public Sub New()
-      InitializeComponent() 
-      AddHandler Application.Current.Resuming, AddressOf App_Resuming
-   End Sub
-
-End Class
-```
-```cpp
-MainPage::MainPage()
-{
-    InitializeComponent();
-    Application::Current->Resuming += 
-        ref new EventHandler<Platform::Object^>(this, &MainPage::App_Resuming);
-}
-```
+> ```cs
+> partial class MainPage
+> {
+>    public MainPage()
+>    {
+>       InitializeComponent();
+>       Application.Current.Resuming += new EventHandler<Object>(App_Resuming);
+>    }
+> }
+> ```
+> ```vb
+> Public NonInheritable Class MainPage
+>
+>    Public Sub New()
+>       InitializeComponent()
+>       AddHandler Application.Current.Resuming, AddressOf App_Resuming
+>    End Sub
+>
+> End Class
+> ```
+> ```cpp
+> MainPage::MainPage()
+> {
+>     InitializeComponent();
+>     Application::Current->Resuming +=
+>         ref new EventHandler<Platform::Object^>(this, &MainPage::App_Resuming);
+> }
+> ```
 
 ## Обновление отображаемого содержимого после приостановки
 
 При обработке события [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) приложение имеет возможность обновить отображаемое в нем содержимое.
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-partial class MainPage
-{
-    private void App_Resuming(Object sender, Object e)
-    {
-        // TODO: Refresh network data
-    }
-}
-```
-```vb
-Public NonInheritable Class MainPage
-
-    Private Sub App_Resuming(sender As Object, e As Object)
- 
-        ' TODO: Refresh network data
-
-    End Sub
-
-End Class
-```
-```cpp
-void MainPage::App_Resuming(Object^ sender, Object^ e)
-{
-    // TODO: Refresh network data
-}
-```
+> ```cs
+> partial class MainPage
+> {
+>     private void App_Resuming(Object sender, Object e)
+>     {
+>         // TODO: Refresh network data
+>     }
+> }
+> ```
+> ```vb
+> Public NonInheritable Class MainPage
+>
+>     Private Sub App_Resuming(sender As Object, e As Object)
+>  
+>         ' TODO: Refresh network data
+>
+>     End Sub
+>
+> End Class
+> ```
+> ```cpp
+> void MainPage::App_Resuming(Object^ sender, Object^ e)
+> {
+>     // TODO: Refresh network data
+> }
+> ```
 
 > **Примечание.** Так как событие [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) не вызывается из потока пользовательского интерфейса, необходимо использовать диспетчер, чтобы получить доступ к потоку пользовательского интерфейса и реализовать обновление пользовательского интерфейса, если вы хотите сделать это в обработчике.
 
@@ -97,7 +100,7 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 
 Если в вашем приложении нет отображаемого содержимого, которое нужно обновлять, событие [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) обрабатывать не нужно.
 
-**Замечание об отладке с использованием Visual Studio: ** когда приложение подключено к отладчику Visual Studio, ему можно отправить событие возобновления **Resume**. Убедитесь, что отображается панель инструментов **Место отладки**, и нажмите раскрывающий список рядом со значком **Приостановить**. Затем выберите **Возобновить**.
+> **Примечание.** Если приложение подключено к отладчику Visual Studio, ему можно отправить событие **Resume**. Убедитесь, что отображается панель инструментов **Место отладки**, и нажмите раскрывающий список рядом со значком **Приостановить**. Затем выберите **Возобновить**.
 
 > **Примечание** Для приложений Магазина Windows Phone за событием [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) всегда следует событие [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), даже если работа приложения в настоящее время приостановлена и пользователь повторно запускает приложение с основной плитки или из списка приложений. Приложения могут пропустить инициализацию, если содержимое уже задано в текущем окне. Можно проверить свойство [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736), чтобы определить, было ли приложение запущено с основной или вспомогательной плитки, и на основе этих данных решить, нужно ли запускать приложение заново или можно возобновить его.
 
@@ -110,7 +113,6 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 
 
 
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: Jwmsft
 ms.assetid: ad7a739c-fd70-4068-9007-da28028abea3
-title: Графика и анимация
-description: Статьи этого раздела помогут вам начать использовать графику и анимации в своих приложениях Магазина.
+title: "Графика и анимация"
+description: "Статьи этого раздела помогут вам начать использовать графику и анимации в своих приложениях Магазина."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d46498e6e584d85cfce0be237878aff68dee9c50
+
 ---
 # Графика и анимация
 
@@ -34,6 +38,7 @@ description: Статьи этого раздела помогут вам нач
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

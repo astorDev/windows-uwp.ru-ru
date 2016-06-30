@@ -1,33 +1,38 @@
 ---
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
-description: This section explains how to share data between Universal Windows Platform (UWP) apps, including how to use the Share contract, copy and paste, and drag and drop.
-title: App-to-app communication
+description: "В этом разделе описан способ совместного использования данных приложениями универсальной платформы Windows (UWP), в том числе использования контракта отправки данных, копирования и вставки, а также перетаскивания."
+title: "Связь между приложениями"
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: dcd542257761083f3ec04eb0da2b13d5d68a19e2
+ms.openlocfilehash: 63550064b6f31b85cd3b6fa2a09bac4b7cfcf895
+
 ---
 
-# App-to-app communication
+# Связь между приложениями
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This section explains how to share data between Universal Windows Platform (UWP) apps, including how to use the Share contract, copy and paste, and drag and drop.
+В этом разделе описан способ совместного использования данных приложениями универсальной платформы Windows (UWP), в том числе использования контракта отправки данных, копирования и вставки, а также перетаскивания.
 
-The Share contract is one way users can quickly exchange data between apps. For example, a user might want to share a webpage with their friends using a social networking app, or save a link in a notes app to refer to later. Consider using a Share contract if your app receives content in scenarios that a user can quickly complete while in the context of another app.
+Контракт отправки данных — это один из способов быстрого обмена данными между приложениями. Например, пользователю может быть необходимо поделиться со своими друзьями ссылкой на веб-страницу в приложении социальной сети или сохранить ее в приложении для заметок, чтобы вернуться к ней позже. Попробуйте использовать контракт отправки данных, если ваше приложение получает содержимое в сценариях, которые пользователь может быстро выполнять, не выходя из другого приложения.
 
-An app can support the Share feature in two ways. First, it can be a source app that provides content that the user wants to share. Second, the app can be a target app that the user selects as the destination for shared content. An app can also be both a source app and a target app. If you want your app to share content as a source app, you need to decide what data formats your app can provide.
+Приложение, поддерживающее общий доступ, может делать это двумя способами. Во-первых, приложение может быть источником данных и предоставлять содержимое, которое пользователь хочет предоставить для общего доступа. Во-вторых, приложение может быть получателем данных, и пользователь может выбрать его как точку назначения для общего содержимого. Кроме того, одно и то же приложение может являться как источником, так и получателем данных. Если вы хотите, чтобы ваше приложение предоставляло общий доступ к содержимому в качестве источника данных, вам нужно решить, данные каких форматов может предоставлять это приложение.
 
-In addition to the Share contract, apps can also integrate classic techniques for transferring data, such as dragging and dropping or copy and pasting. In addition to communication between UWP apps, these methods also support sharing to and from desktop applications.
+В дополнение к контракту отправки данных приложения также могут использовать классические методы передачи данных, например перетаскивание или копирование и вставку. Помимо взаимодействия между приложениями UWP, эти методы также поддерживают общий доступ из классических приложений.
 
-## In this section
+## В этом разделе
 
 | Topic | Description |
 |-------|-------------|
-| [Share data](share-data.md) | This article explains how to support the Share contract in a UWP app. The Share contract is an easy way to quickly share data, such as text, links, photos, and videos, between apps. For example, a user might want to share a webpage with their friends using a social networking app, or save a link in a notes app to refer to later. |
-| [Receive data](receive-data.md) | This article explains how to receive content in your UWP app shared from another app using Share contract. This Share contract allows your app to be presented as an option when the user invokes Share. |
-| [Copy and paste](copy-and-paste.md) | This article explains how to support copy and paste in UWP apps using the clipboard. Copy and paste is the classic way to exchange data either between apps, or within an app, and almost every app can support clipboard operations to some degree. |
-| [Drag and drop](drag-and-drop.md) | This article explains how to add dragging and dropping in your UWP app. Drag and drop is a classic, natural way of interacting with content such as images and files. Once implemented, drag and drop works seamlessly in all directions, including app-to-app, app-to-desktop, and desktop-to app. |
-| [Use EDP to protect enterprise data transferred between apps](use-edp-to-protect-enterprise-data-transferred-between-apps.md) | This topic shows examples of the coding tasks needed to achieve some of the most common data-transfer-related enterprise data protection (EDP) scenarios. |
+| [Предоставление общего доступа к данным](share-data.md) | В этой статье объясняется, как обеспечить поддержку контракта отправки данных в приложении UWP. Контракт отправки данных – это простой способ, с помощью которого приложения могут быстро предоставлять друг другу общий доступ к данным, например к тексту, ссылкам, фотографиям и видео. Например, пользователю может быть необходимо поделиться со своими друзьями ссылкой на веб-страницу в приложении социальной сети или сохранить ее в приложении для заметок, чтобы вернуться к ней позже. |
+| [Получение данных](receive-data.md) | В данной статье рассказывается, как в приложении UWP получить содержимое, общий доступ к которому предоставлен из другого приложения с помощью контракта отправки данных. Контракт отправки данных позволяет предлагать ваше приложение как вариант, когда пользователь вызывает функцию общего доступа. |
+| [Копирование и вставка](copy-and-paste.md) | В этой статье объясняется, как обеспечить поддержку копирования и вставки в приложениях UWP с помощью буфера обмена. Копирование и вставка – классический способ обмена данными между приложениями или внутри одного приложения. Почти каждое приложение в той или иной степени поддерживает операции буфера обмена. |
+| [Перетаскивание](drag-and-drop.md) | В этой статье рассказывается, как добавить в приложение UWP возможность перетаскивания. Перетаскивание – это классический и естественный способ взаимодействия с таким содержимым, как изображения и файлы. После реализации перетаскивание работает без проблем во всех направлениях, в том числе из приложения UWP в приложение UWP, из приложения UWP в классическое приложение и из классического приложения в приложение UWP. |
+| [Используйте EDP для защиты корпоративных данных, перемещаемых между приложениями](use-edp-to-protect-enterprise-data-transferred-between-apps.md) | В этом разделе представлены примеры задач по созданию кода для наиболее распространенных сценариев защиты корпоративных данных (EDP) при переносе. |
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

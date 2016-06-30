@@ -1,8 +1,12 @@
 ---
-title: Создание приложение для входа с использованием Microsoft Passport
-description: Это первая часть полного пошагового руководства по созданию приложения Windows 10 UWP (универсальной платформы Windows), которое использует Microsoft Passport в качестве альтернативы традиционным системам проверки подлинности с помощью имени пользователя и пароля.
+title: "Создание приложение для входа с использованием Microsoft Passport"
+description: "Это первая часть полного пошагового руководства по созданию приложения Windows 10 UWP (универсальной платформы Windows), которое использует Microsoft Passport в качестве альтернативы традиционным системам проверки подлинности с помощью имени пользователя и пароля."
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: af8ae79f67d77195d5ed4801d040b2f1aafe8a97
+ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
+
 ---
 
 # Создание приложение для входа с использованием Microsoft Passport
@@ -968,6 +972,7 @@ author: awkoren
 * [Microsoft Passport и Windows Hello](microsoft-passport.md)
 * [Служба входа Microsoft Passport](microsoft-passport-login-auth-service.md)
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

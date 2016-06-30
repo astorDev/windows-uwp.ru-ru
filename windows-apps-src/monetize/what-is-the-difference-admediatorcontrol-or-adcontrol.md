@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 9165f709-71d7-42cf-9b30-3190fe029fb4
-description: Сведения о различиях между классом AdControl в библиотеках Microsoft advertising и классом AdMediatorControl в библиотеках рекламного посредника.
-title: В чем различие — AdMediatorControl или AdControl
+description: "Сведения о различиях между классом AdControl в библиотеках Microsoft advertising и классом AdMediatorControl в библиотеках рекламного посредника."
+title: "В чем различие — AdMediatorControl или AdControl"
+translationtype: Human Translation
+ms.sourcegitcommit: 8a5b02dbc40f3f0cd9be32aa7d5184e60a3b2707
+ms.openlocfilehash: 291e1c4d707e8987d29ae5840248918543d7d12a
+
 ---
 
 # В чем различие: AdMediatorControl или AdControl
@@ -42,6 +46,7 @@ title: В чем различие — AdMediatorControl или AdControl
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
-description: Класс SystemMediaTransportControls позволяет приложению использовать встроенные в ОС Windows системные элементы управления транспортом мультимедиа и обновлять отображаемые элементом управления метаданные о мультимедиа, воспроизводимом приложением.
-title: Системные элементы управления транспортом мультимедиа
+description: "Класс SystemMediaTransportControls позволяет приложению использовать встроенные в ОС Windows системные элементы управления транспортом мультимедиа и обновлять отображаемые элементом управления метаданные о мультимедиа, воспроизводимом приложением."
+title: "Системные элементы управления транспортом мультимедиа"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
+
 ---
 
 # Системные элементы управления транспортом мультимедиа
@@ -33,7 +37,7 @@ title: Системные элементы управления транспор
 
 [!code-cs[Пространство имен](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetNamespace)]
 
-Добавьте обработчик нажатия кнопки, использующий класс [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), чтобы пользователь мог выбрать файл, а затем вызовите метод [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338), чтобы сделать его активным файлом для элемента **MediaElement**.
+Добавьте обработчик нажатия кнопки, использующий класс [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), чтобы пользователь мог выбирать файл, а затем вызовите метод [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338), чтобы сделать его активным файлом для элемента **MediaElement**.
 
 [!code-cs[OpenMediaFile](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetOpenMediaFile)]
 
@@ -125,6 +129,7 @@ title: Системные элементы управления транспор
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

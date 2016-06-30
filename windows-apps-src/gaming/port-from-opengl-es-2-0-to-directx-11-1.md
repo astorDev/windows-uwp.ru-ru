@@ -1,8 +1,11 @@
 ---
 author: mtoepke
-title: Перенос из OpenGL ES 2.0 в Direct3D 11
-description: Включает статьи, обзоры и пошаговые руководства по переносу графического конвейера из OpenGL ES 2.0 в Direct3D 11 и среду выполнения Windows.
+title: "Перенос из OpenGL ES 2.0 в Direct3D 11"
+description: "Включает статьи, обзоры и пошаговые руководства по переносу графического конвейера из OpenGL ES 2.0 в Direct3D 11 и среду выполнения Windows."
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
+ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
+ms.openlocfilehash: 40380582a9210cb705a5e7e591d4a8f37c42f8dd
+
 ---
 
 # Перенос из OpenGL ES 2.0 в Direct3D 11
@@ -33,8 +36,8 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 <td align="left"><p>Впервые приступая к процессу переноса графической архитектуры из OpenGL ES 2.0 в Direct3D, ознакомьтесь с ключевыми различиями между этими API. Темы данного раздела помогут вам спланировать стратегию переноса и изменения API, которые необходимо внести при переносе обработки графики в Direct3D.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Пошаговое руководство: образцы переноса из OpenGL ES 2.0](walkthrough-sample-ports-from-opengl-es-2-0.md)</p></td>
-<td align="left"><p>В этой группе разделов подробно рассматриваются несколько сценариев переноса графического конвейера OpenGL ES 2.0 разного уровня сложности.</p></td>
+<td align="left"><p>[Инструкции: перенос простого обработчика OpenGL ES 2.0 в Direct3D 11.1](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)</p></td>
+<td align="left"><p>В качестве упражнения в переносе начнем с основ — с переноса простого обработчика для вращающегося куба с затенением по вершинам из OpenGL ES 2.0 в Direct3D, чтобы он соответствовал шаблону "Приложение DirectX 11 (универсальные приложения для Windows)" из Visual Studio 2015.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Справочник по переносу с OpenGL ES 2.0 на Direct3D 11.1](opengl-es-2-0-to-directx-11-1-reference.md)</p></td>
@@ -59,6 +62,7 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

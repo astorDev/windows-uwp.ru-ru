@@ -1,7 +1,11 @@
 ---
 author: QuinnRadich
-Description: В версии RTM ОС Windows 10 и обновленных средствах разработчика мы, как и прежде, предоставляем полезные инструменты, функции и возможности на основе универсальной платформы Windows.
-title: Что нового в Windows 10 (версия RTM), июль 2015 г.
+Description: "В версии RTM ОС Windows 10 и обновленных средствах разработчика мы, как и прежде, предоставляем полезные инструменты, функции и возможности на основе универсальной платформы Windows."
+title: "Что нового в Windows 10 (версия RTM), июль 2015 г."
+translationtype: Human Translation
+ms.sourcegitcommit: 1029eff0f21c62f8235f37516971996791051d4c
+ms.openlocfilehash: 67e5be130647e5ebeeef6e4c0dcbd822e8b84184
+
 ---
 
 # Что нового в Windows 10 (версия RTM), июль 2015 г.
@@ -195,6 +199,7 @@ WebView вне потока | Можно указать значение [WebVie
 ---
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

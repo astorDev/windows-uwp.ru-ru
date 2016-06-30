@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
-title: Использование датчика положения в пространстве
-description: Узнайте, как использовать датчики положения в пространстве для определения ориентации устройства.
+title: "Использование датчика положения в пространстве"
+description: "Узнайте, как использовать датчики положения в пространстве для определения ориентации устройства."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
+
 ---
 # Использование датчика положения в пространстве
 
@@ -348,6 +352,7 @@ SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

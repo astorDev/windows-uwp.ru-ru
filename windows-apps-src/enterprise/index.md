@@ -1,116 +1,121 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: This roadmap provides an overview of key enterprise features for Windows 10&\#160;Universal Windows Platform (UWP) apps.'
-title: Enterprise
+description: "В следующей схеме представлен обзор основных функций корпоративного уровня приложений универсальной платформы Windows (UWP) для&\\#160;Windows 10."
+title: "Функции корпоративного уровня"
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 468c87694f519a5081f3242346039e6e7310d1db
+ms.openlocfilehash: c2cfcc270d6b1380f065e7ada275c1c60ae05b04
+
 ---
 
-# Enterprise
+# Функции корпоративного уровня
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This roadmap provides an overview of key enterprise features for Windows 10 Universal Windows Platform (UWP) apps. Windows 10 lets you write once and deploy across all devices, creating one app that tailors to any device. This lets you build the great experiences your users expect, while providing control over the security, management, and configuration required by your organization.
+В следующей схеме представлен обзор основных функций корпоративного уровня приложений универсальной платформы Windows (UWP) для Windows 10. Windows 10 позволяет создавать приложение один раз и развертывать его на всех устройствах, то есть создавать универсальное приложение для всех типов устройств. Это позволяет сделать условия работы для пользователя максимально удобными, соблюдая при этом требования организации к безопасности, управлению и конфигурации.
 
-**Note**  This article is targeted towards developers writing enterprise UWP apps. For general UWP development, see the [How-to guides for Windows 10 apps](https://msdn.microsoft.com/library/windows/apps/mt244352). For WPF, Windows Forms, or Win32 development, visit the [Desktop dev center](https://dev.windows.com/en-us/desktop). For IT professional resources, like deploying Windows 10 or managing enterprise security features, see [Windows 10 on TechNet](https://msdn.microsoft.com/library/dn986868).
+**Примечание.** Эта статья предназначена для разработчиков корпоративных приложений UWP. Рекомендации по разработке обычных приложений UWP см. в разделе [Инструкции к приложениям для Windows 10](https://msdn.microsoft.com/library/windows/apps/mt244352). Для получения сведений о разработке на платформе WPF, Windows Forms или Win32 посетите [Центр разработки классических приложений](https://dev.windows.com/en-us/desktop). Сведения для ИТ-специалистов, например, о том, как разворачивать Windows 10 или управлять функциями безопасности предприятия, см. в разделе [Windows 10](https://msdn.microsoft.com/library/dn986868) на сайте TechNet.
 
  
 
-## Security
+## Безопасность
 
 
-Windows 10 provides a suite of security features for app developers to protect the identity of their users, the security of corporate networks, and any business data stored on devices. New for Windows 10 is Microsoft Passport, an easy-to-deploy two-factor password alternative that is accessible by using a PIN or Windows Hello, which provides enterprise grade security and supports fingerprint, facial, and iris based recognition.
+Windows 10 предоставляет набор функций безопасности для разработчиков приложений для защиты личности их покупателей, корпоративных сетей и всех коммерческих данных, хранящихся на устройствах. Функция Microsoft Passport, которая впервые появилась в ОС Windows 10, является простой в развертывании двухфакторной альтернативой паролю, которой можно воспользоваться с помощью PIN-кода или Windows Hello. Это гарантирует безопасность корпоративного уровня и обеспечивает возможность проверки подлинности с помощью сканирования отпечатков пальцев и радужной оболочки, а также распознавания лиц.
 
 | Topic | Description |
 |-------|-------------|
-| [Intro to secure Windows app development](https://msdn.microsoft.com/library/windows/apps/mt622741) | This introductory article explains various Windows security features across the stages of authentication, data-in-flight, and data-at-rest. It also describes how you can integrate those stages into your apps. It covers a large range of topics, and is aimed primarily at helping app architects better understand the Windows features that make creating Universal Windows   Platform apps quick and easy. |
-| [Authentication and user identity](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP apps have several options for user authentication which are outlined in this article. For the enterprise, the new Microsoft Passport feature is strongly recommended. Microsoft Passport replaces passwords with strong   two-factor authentication (2FA) by verifying existing credentials and by creating a device-specific credential that a biometric or PIN-based user gesture protects, resulting in a both convenient and highly secure experience. |
-| [Cryptography](https://msdn.microsoft.com/library/windows/apps/mt270191) | The cryptography section provides an overview of the cryptography features available to UWP apps. Articles range from introductory walkthroughs on how to easily encrypt sensitive business data, to advanced to advanced topics such as manipulating cryptographic keys and working with MACs, hashes, and signatures. |
-| [Enterprise data protection (EDP)](edp-hub.md) | This is a hub topic covering the full developer picture of how enterprise data protection (EDP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock. |
+| [Введение в разработку безопасных приложений для Windows](https://msdn.microsoft.com/library/windows/apps/mt622741) | Эта вводная статья объясняет различные функции безопасности Windows на этапе проверки подлинности, передачи данных и их неактивности. Здесь также рассказывается, как интегрировать эти этапы в приложение. Она охватывает различные темы и помогает архитекторам приложений понять суть функций Windows, позволяющих быстро и легко создавать приложения универсальной платформы Windows. |
+| [Проверка подлинности и удостоверение пользователя](https://msdn.microsoft.com/library/windows/apps/mt270184) | Приложения UWP поддерживают несколько вариантов проверки подлинности пользователей. Их описание приведено далее в этой статье. Для предприятий рекомендуется использовать новую функцию Microsoft Passport. Microsoft Passport заменяет пароли надежной двухфакторной проверкой подлинности (2FA) путем проверки имеющихся учетных данных и создания для каждого конкретного устройства учетных данных, защищаемых пользовательским жестом (биометрическим или на основе PIN-кода), что обеспечивает удобное и безопасное взаимодействие с приложением. |
+| [Шифрование](https://msdn.microsoft.com/library/windows/apps/mt270191) | Раздел о шифровании содержит обзор функций шифрования, поддерживаемых приложениями UWP. Статьи содержат как пошаговые руководства о том, как легко шифровать конфиденциальные коммерческих данные, так и более сложные темы, такие как работа с криптографическими ключами, кодами проверки подлинности сообщений, хэшами и подписями. |
+| [Защита корпоративных данных (EDP)](edp-hub.md) | Это одна из ключевых тем руководства, позволяющая разработчикам сформировать полное представление о том, как защита корпоративных данных (EDP) связана с файлами, буферами, буфером обмена, сетью, фоновыми задачами и защитой заблокированных данных. |
 
  
 
-## Data binding and databases
+## Привязка данных и базы данных
 
 
-Data binding is a way for your app's UI to display data from an external source, such as a database, and optionally to stay in sync with that data. Data binding allows you to separate the concern of data from the concern of UI, and that results in a simpler conceptual model as well as better readability, testability, and maintainability of your app.
+Привязка данных — это возможность отображения данных из внешнего источника (например, базы данных) в пользовательском интерфейсе приложения; при необходимости пользовательский интерфейс остается синхронизированным с этими данными. Используя привязку данных, вы можете отделить вопросы обработки данных от вопросов, связанных с пользовательским интерфейсом. Это упрощает концептуальную модель, а также улучшает удобочитаемость, возможности тестирования и удобство поддержки приложения.
 
 | Topic | Description |
 |-------|-------------|
-| [Data binding overview](https://msdn.microsoft.com/library/windows/apps/mt269383) | This topic shows you how to bind a control (or other UI element) to a   single item or bind an items control to a collection of items in a Universal Windows Platform (UWP) app. In addition, it shows how to control the rendering of items, implement a details view based on a selection, and convert data for display. |
-| [Entity Framework 7 for UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Performing complex queries against large data sets is vastly simplified using Entity Framework 7, which supports UWP. In this walkthrough, you will build a UWP app that performs basic data access against a local SQLite   database using Entity Framework. |
-| [SQLite local database](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | This video is a comprehensive developer's guide to using SQLite, the recommended solution for local app databases. Visit [SQLite](https://www.sqlite.org/download.html) to download the latest version for UWP, or use the version that's already provided with the Windows 10 SDK. |
+| [Общие сведения о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt269383) | В этом разделе показано, как привязать элемент управления (или другой элемент пользовательского интерфейса) к отдельному элементу или как привязать элемент управления к коллекции элементов в приложении универсальной платформы Windows (UWP). Кроме того, она объясняет, как управлять обработкой элементов, реализовать представление подробностей на основе выбранных данных и преобразовать данные для отображения. |
+| [Entity Framework 7 для UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Платформа Entity Framework 7, поддерживающая UWP, чрезвычайно упрощает выполнение сложных запросов в крупных наборах данных. В этом руководстве описывается создание приложения UWP, которое выполняет обычный доступ к данным локальной базы данных SQLite с помощью платформы Entity Framework. |
+| [Локальная база данных SQLite](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | Это видео представляет собой комплексное руководство разработчика по использованию SQLite – решения, рекомендуемого для локальных баз данных приложений. Скачайте последнюю версию для UWP на веб-сайте [SQLite](https://www.sqlite.org/download.html) или используйте версию, предоставленную вместе с пакетом SDK для Windows 10. |
 
  
 
-## Networking and data serialization
+## Работа с сетями и сериализация данных
 
 
-Line-of-business apps often need to communicate with or store data on a variety of other systems. This is typically accomplished by connecting to a network service (using protocols such as REST or SOAP) and then serializing or deserializing data into a common format. Working with networks and data serialization in UWP apps similar to WPF, WinForms, and ASP.NET applications. See the following articles for more information.
+Бизнес-приложениям часто требуется связываться с данными в различных системах или хранить их в них. Обычно это выполняется путем подключения к сетевой службе (по протоколу REST или SOAP) и сериализации или десериализации данных в общий формат. Работа с сетями и сериализацией данных в приложениях UWP выполняется так же, как и в приложениях WPF, WinForms и ASP.NET. Дополнительные сведения см. в следующих статьях:
 
 | Topic | Description |
 |-------|-------------|
-| [Networking basics](https://msdn.microsoft.com/library/windows/apps/mt280233) | This walkthrough explains basic networking concepts relevant to all UWP apps, regardless of the communication protocols in use.  |
-| [Which networking technology?](https://msdn.microsoft.com/library/windows/apps/mt280235) | A quick overview of the networking technologies available for UWP apps, with suggestions on how to choose the technologies that are the best fit for your app. |
-| [XML and SOAP serialization](https://msdn.microsoft.com/library/90c86ass.aspx) | XML serialization converts objects into an XML stream that conforms to a   specific XML Schema definition language (XSD). To convert between XML and a strongly-typed class, you can use the native [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx) class, or an external library. |
-| [JSON serialization](https://msdn.microsoft.com/library/windows/apps/br240639) | JSON (JavaScript object notation) serialization is a popular format for   communicating with REST APIs. The [Newtonsoft Json.NET](http://www.newtonsoft.com/json), which is fully supported for UWP apps. |
+| [Основы работы с сетями](https://msdn.microsoft.com/library/windows/apps/mt280233) | В этом пошаговом руководстве объясняются основные концепции сетевого подключения, используемые во всех приложениях UWP, независимо от применяемого протокола связи.  |
+| [Какую сетевую технологию выбрать?](https://msdn.microsoft.com/library/windows/apps/mt280235) | Краткий обзор сетевых технологий, поддерживаемых приложениями UWP, а также рекомендации по выбору технологии, которая лучше всего подходит для определенного приложения. |
+| [Сериализация XML и SOAP](https://msdn.microsoft.com/library/90c86ass.aspx) | Сериализация XML преобразует объекты в поток XML, который соответствует конкретному языку определения схемы XML (XSD). Для преобразования XML в строго типизированный класс можно использовать собственный класс [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx) или внешнюю библиотеку. |
+| [Сериализация JSON](https://msdn.microsoft.com/library/windows/apps/br240639) | Сериализация JSON (нотация объектов JavaScript) является популярным форматом взаимодействия с API REST. [Newtonsoft Json.NET](http://www.newtonsoft.com/json) полностью поддерживается приложениями UWP. |
 
  
 
-## Devices
+## Устройства
 
 
-In order to integrate with line-of-business tools, like printers, barcode scanners, or smart card readers, you may find it necessary to integrate external devices or sensors into your app. Here are some examples of features that you can add to your app using the technology described in this section.
+Для интеграции с бизнес-средствами, такими как принтеры, сканеры штрих-кодов или устройства чтения смарт-карт, может потребоваться интегрировать в приложение внешние устройства или датчики. Вот несколько примеров функций, которые можно добавить в приложение с помощью технологии, описанной в этом разделе.
 
 | Topic  | Description |
 |--------|-------------|
-| [Enumerate devices](https://msdn.microsoft.com/library/windows/apps/mt187355) | This article explains how to use the [Windows.Devices.Enumeration](https://msdn.microsoft.com/library/windows/apps/br225459) namespace to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols. Start here if you're building any app that works with devices. |
-| [Printing and scanniing](https://msdn.microsoft.com/library/windows/apps/mt204544) | Describes how to print and scan from your app, including connecting to   and working with business devices like point-of-sale (POS) systems, receipt printers, and high-capacity feeder scanners. |
-| [Bluetooth](https://msdn.microsoft.com/library/windows/apps/mt270288) | In addition to using traditional Bluetooth connections to send and receive data or control devices, Windows 10 enables using Bluetooth Low Energy (BTLE) to send or receive beacons in the background. Use this to display notifications or enable functionality when a user gets close to or leaves a particular location. |
-| [Enterprise shared storage](enterprise-shared-storage.md) | In device lockdown scenarios, learn how data can be shared within the same app, between instances of an app, or even between apps. |
+| [Перечисление устройств](https://msdn.microsoft.com/library/windows/apps/mt187355) | В статье описывается использование пространства имен [Windows.Devices.Enumeration](https://msdn.microsoft.com/library/windows/apps/br225459) для обнаружения устройств, которые подключены к системе изнутри, внешним образом или могут быть обнаружены по протоколам проводной или беспроводной сети. Начните отсюда, если вы разрабатываете приложение, которое работает с устройствами. |
+| [Печать и сканирование](https://msdn.microsoft.com/library/windows/apps/mt204544) | Описывает печать и сканирование из вашего приложения, включая подключение устройств для бизнеса, таких как POS-терминалы, чековые принтеры и высокоемкие сканеры с податчиком оригиналов, а также работу с ними. |
+| [Bluetooth](https://msdn.microsoft.com/library/windows/apps/mt270288) | Помимо использования традиционных подключений Bluetooth для отправки и получения данных или управления устройствами, в Windows 10 можно использовать Bluetooth с низким энергопотреблением (BTLE) для отправки или получения маяков в фоновом режиме. Используйте это для отображения оповещений или включения функции, когда пользователь приближается к определенному месту или отдаляется от него. |
+| [Общее корпоративное хранилище](enterprise-shared-storage.md) | Узнайте, как наладить обмен данными в пределах одного приложения, между экземплярами приложения или даже между разными приложениями в сценариях блокировки устройства. |
 
  
 
-## Device targeting
+## Определение устройства
 
 
-Many users today are bringing their own phone or tablet to work, which have varying form factors and screen sizes. With the Universal Windows Platform (UWP), you can write a single line-of-business app that runs seamlessly on all different types of devices, including desktop PCs and PPI displays, allowing you to maximize the reach of your app and the efficiency of your code.
+Сегодня многие пользователи приносят с собой на работу собственные телефоны и планшеты, которые имеют разные форм-факторы и размеры экрана. С помощью универсальной платформы Windows (UWP) можно создать одно бизнес-приложение, которое будет работать на всех возможных типах устройств, включая настольные компьютеры и мониторы с высоким разрешением, что позволит вам расширить целевую аудиторию вашего приложения и повысить эффективность работы кода.
 
 | Topic | Description |
 |-------|-------------|
-| [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631) | In this introductory guide, you'll get acquainted with the Windows 10UWP platform, including: what a device family is and how to decide which one to target, new UI controls and panels that allow you to adapt your UI to different device form factors, and how to understand and control the API surface that is available to your app. |
-| [Adaptive XAML UI code sample](http://go.microsoft.com/fwlink/p/?LinkId=619992) | This code sample shows all the possible layout options and controls for   your app, regardless of device type, and allows you to interact with the panels to show how to achieve any layout you are looking for. In addition to showing how each control responds to different form factors, the app itself is responsive and shows various methods for achieving adaptive UI. |
+| [Руководство по приложениям UWP](https://msdn.microsoft.com/library/windows/apps/dn894631) | В этом вводном руководстве вы познакомитесь с универсальной платформой Windows 10, узнаете, что такое семейство устройств и как решить, на какое из них нацелиться, получите сведения о новых элементах управления и панелях пользовательского интерфейса, которые позволяют адаптировать ваш пользовательский интерфейс для разных форм-факторов, а также научитесь понимать суть поверхности API, поддерживаемой вашим приложением, и управлять ею. |
+| [Пример кода адаптивного пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992) | Следующий пример кода отображает все возможные варианты макета и элементы управления для вашего приложения, независимо от типа устройства, и позволяет вам взаимодействовать с панелями, чтобы вы могли понять, как добиться желаемого макета. Помимо отображения реакции каждого элемента управления на разные форм-факторы, приложение само реагирует на действия и отображает различные методы достижения адаптивного пользовательского интерфейса. |
 
  
 
-## Deployment
+## Развертывание
 
 
-You have options for distributing apps to your organization’s users. You can use Windows Store for Business, existing mobile device management or you can sideload apps to devices. You can also make your apps available to the general public by publishing to the Windows Store.
+Распространять приложение среди пользователей организации можно несколькими способами. Вы можете воспользоваться Магазином Windows для бизнеса, политиками управления мобильными устройствами, а также загружать на устройства неопубликованные приложения. Можно также сделать приложение общедоступным, опубликовав его в Магазине Windows.
 
 | Topic | Description |
 |-------|-------------|
-| [Distribute LOB apps to enterprises](https://msdn.microsoft.com/library/windows/apps/mt608995) | You can publish line-of-business apps directly to enterprises for volume acquisition via the Windows Store for Business, without making the apps broadly available to the public. |
-| [Sideload apps](https://technet.microsoft.com/en-us/library/mt269549) | When you sideload an app, you deploy a signed app package to a device. You maintain the signing, hosting, and deployment of these apps. The process for sideloading apps is streamlined for Windows 10.             |
-| [Publish apps to the Windows store](https://dev.windows.com/publish) | The unified Windows Store lets you publish and manage all of your apps for all Windows devices. Customize your app’s availability with per-market pricing, distribution and visibility controls, and other options. |
+| [Распространение бизнес-приложений для предприятий](https://msdn.microsoft.com/library/windows/apps/mt608995) | В Магазине Windows для бизнеса можно публиковать бизнес-приложения, которые будут доступны только для приобретения предприятиями в больших объемах и недоступны остальным пользователям Магазина. |
+| [Загрузка неопубликованных приложений](https://technet.microsoft.com/en-us/library/mt269549) | При загрузке неопубликованного приложения вы развертываете на устройстве подписанный пакет приложения. Необходимо поддерживать подписывание, размещение и развертывание таких приложений. Процесс загрузки неопубликованных приложений для Windows 10 упрощен.             |
+| [Публикация приложений в Магазине Windows](https://dev.windows.com/publish) | Новый универсальный Магазин Windows позволяет публиковать приложения для всех устройств Windows и управлять ими. Настройте доступность своего приложения с помощью элементов управления ценами для рынка, распространением и видимостью, а также других параметров. |
 
  
 
-## Patterns and practices
+## Шаблоны и рекомендации
 
 
-Code bases for large scale, enterprise-grade apps can become unwieldy. Prism is a framework for building loosely coupled, maintainable, and testable XAML applications in WPF, Windows 10 UWP, and Xamarin Forms. Prism provides an implementation of a collection of design patterns that are helpful in writing well-structured and maintainable XAML applications, including MVVM, dependency injection, commands, EventAggregator, and others.
+Базы кодов для крупномасштабных корпоративных приложений могут медленно работать. Prism – платформа для создания слабосвязанных, легко поддерживаемых и тестируемых приложений XAML в WPF, Windows 10 UWP и Xamarin Forms. Prism представляет собой коллекцию конструктивных шаблонов, которые можно использовать для создания хорошо структурированных и легко поддерживаемых приложений XAML, включая шаблоны MVVM, внедрения зависимостей, команд, EventAggregator и других компонентов.
 
-For more information on Prism, see the [GitHub repo](https://github.com/PrismLibrary/Prism).
-
- 
+Подробные сведения о Prism см. в [репозитории GitHub](https://github.com/PrismLibrary/Prism).
 
  
 
+ 
 
 
 
 
-<!--HONumber=Jun16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

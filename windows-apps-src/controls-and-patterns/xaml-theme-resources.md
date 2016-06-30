@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: Ресурсы темы XAML представляют собой набор ресурсов, применяющих различные значения в зависимости от того, какая тема системы активна.
-MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_theme\_resources'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "Ресурсы темы XAML представляют собой набор ресурсов, применяющих различные значения в зависимости от того, какая тема системы активна."
+MS-HAID: dev\_ctrl\_layout\_txt.xaml\_theme\_resources
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: Ресурсы темы XAML
+title: "Ресурсы темы XAML"
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fa0d0881eee0f87b549a7d053e75882ffd2afa6e
+
 ---
 
 # Ресурсы темы XAML
@@ -442,6 +446,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

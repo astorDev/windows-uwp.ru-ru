@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: "Обзор анимаций"
 description: "Используйте анимации из библиотеки среды выполнения Windows, чтобы ваше приложение соответствовало внешнему виду Windows."
-ms.sourcegitcommit: c8ba7f6303a05b8de03aa29199aaa444abf75827
-ms.openlocfilehash: 2a70d73a5e714aaf1096fed5d08ec4844edd66a6
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 15fa3b33bf302633ef8cd51928e1af5ea726cc01
 
 ---
 # Обзор анимаций
@@ -26,7 +26,7 @@ ms.openlocfilehash: 2a70d73a5e714aaf1096fed5d08ec4844edd66a6
 
 Библиотека анимации не предоставляет анимаций для всех возможных сценариев. В некоторых случаях вам может понадобиться создать собственную анимацию на XAML. Подробнее: [Раскадрованные анимации](storyboarded-animations.md).
 
-Кроме того, для некоторых сложных сценариев, таких как анимация элемента на основе положения прокрутки ScrollViewer разработчикам может потребоваться использовать взаимодействие визуального уровня для реализации пользовательских анимаций. Дополнительные сведения см. в разделе [Визуальный уровень](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer).
+Кроме того, для некоторых сложных сценариев, таких как анимация элемента на основе положения прокрутки ScrollViewer разработчикам может потребоваться использовать взаимодействие визуального уровня для реализации пользовательских анимаций. Дополнительные сведения см. в разделе [Визуальный уровень](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer).
 
 ## Типы анимаций
 
@@ -53,7 +53,7 @@ ms.openlocfilehash: 2a70d73a5e714aaf1096fed5d08ec4844edd66a6
 
 ### Переход страницы
 
-Используйте переходы страницы для анимации навигации внутри приложения. Поскольку практически во всех приложениях используется какая-либо навигация, анимации перехода страницы являются наиболее распространенным типом анимации темы, используемым приложениями. Подробнее об API-интерфейсах перехода страницы: [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation. Therenavigationthemetransition).
+Используйте переходы страницы для анимации навигации внутри приложения. Поскольку практически во всех приложениях используется какая-либо навигация, анимации перехода страницы являются наиболее распространенным типом анимации темы, используемым приложениями. Подробнее об API-интерфейсах перехода страницы: [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition).
 
 
 
@@ -65,7 +65,7 @@ ms.openlocfilehash: 2a70d73a5e714aaf1096fed5d08ec4844edd66a6
               **EntranceThemeTransition**
             ](https://msdn.microsoft.com/library/windows/apps/BR210288) представляет собой движение, которое может быть применено к содержимому при первой загрузке страницы или большой части пользовательского интерфейса. Таким образом, реакция на первое представление содержимого и на его изменение может быть разной. Класс [
               **EntranceThemeTransition**
-            ](https://msdn.microsoft.com/library/windows/apps/BR210288) аналогичен классу [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) вместе с параметрами по умолчанию, однако может быть использован вне класса [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682).
+            ](https://msdn.microsoft.com/library/windows/apps/BR210288) аналогичен классу [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) вместе с параметрами по умолчанию, однако может быть использован вне класса [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682).
  
  
 
@@ -120,19 +120,19 @@ ms.openlocfilehash: 2a70d73a5e714aaf1096fed5d08ec4844edd66a6
             ](https://msdn.microsoft.com/library/windows/apps/BR210298) и [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 | Всплывающий элемент | [
               **PopInThemeAnimation**
-            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) и [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) и [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
 | Всплывающая подсказка | [
               **FadeInThemeAnimation**
             ](https://msdn.microsoft.com/library/windows/apps/BR210298) и [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 | Контекстное меню | [
               **PopInThemeAnimation**
-            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) и [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) и [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
 | Панель команд | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
 | Область задач или панель, привязанная к границам экрана | [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
 | Содержимое любого контейнера пользовательского интерфейса | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
 | Для элементов управления или если другая анимация не применяется | [
               **FadeInThemeAnimation**
-            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) и [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) и [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 
  
 
@@ -297,7 +297,7 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 
 | API | Описание |
 |-----|-------------|
-| [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) | Обеспечивает анимацию персонализации Windows для перемещения по страницам во [**фрейме**](https://msdn.microsoft.com/library/windows/apps/br242682). |
+| [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) | Обеспечивает анимацию персонализации Windows для перемещения по страницам во [**фрейме**](https://msdn.microsoft.com/library/windows/apps/br242682). |
 | [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) | Обеспечивает анимированный переход в ситуациях, когда элементы управления добавляют или удаляют дочерние объекты либо содержимое. Обычно элемент управления представляет собой контейнер элементов. |
 | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103) | Обеспечивает анимированный переход в ситуациях, когда содержимое элемента управления изменяется. Может применяться в дополнение к [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047). |
 | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) | Обеспечивает анимированный переход для (мелких) элементов пользовательского интерфейса по краям. |
@@ -353,7 +353,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 В отличие от анимации перехода, анимация темы не имеет встроенного триггера, по которому она запускается. Следует использовать [**раскадровку**](https://msdn.microsoft.com/library/windows/apps/BR210490) в качестве контейнера для анимации тем на этапе определения в XAML. Кроме того, можно изменять действия анимации по умолчанию. Например, вы можете замедлить исчезновение, увеличив значение времени [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) объекта [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302).
 
-**Примечание**  Чтобы показать простые приемы анимации, мы запускаем анимацию из кода приложения, вызывая методы класса [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490). Управлять выполнением анимаций **раскадровки** можно с помощью методов [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491), [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop), [**Pause**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) и [**Resume**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx)**Storyboard**. Однако это не типичный способ включения анимаций библиотеки в приложения. Обычно выполняется интеграция анимаций библиотеки в стили и шаблоны XAML, применяемые к элементам управления или элементам. Изучение шаблонов и визуальных состояний требует несколько больших усилий. Использование анимаций библиотеки в визуальных состояниях рассматривается в разделе [Раскадрованные анимации для визуальных состояний](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
+**Примечание**  Чтобы показать простые приемы анимации, мы запускаем анимацию из кода приложения, вызывая методы класса [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490). Управлять выполнением анимаций **раскадровки** можно с помощью методов [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491), [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop), [**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) и [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx)**Storyboard**. Однако это не типичный способ включения анимаций библиотеки в приложения. Обычно выполняется интеграция анимаций библиотеки в стили и шаблоны XAML, применяемые к элементам управления или элементам. Изучение шаблонов и визуальных состояний требует несколько больших усилий. Использование анимаций библиотеки в визуальных состояниях рассматривается в разделе [Раскадрованные анимации для визуальных состояний](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
 
  
 
@@ -373,8 +373,8 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 | [**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) | Анимация с заданными настройками, которая применяется к объекту при изменении его положения. |
 | [**SplitCloseThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210454) | Анимация с заданными настройками, которая скрывает целевой пользовательский интерфейс с помощью анимации в виде открытия и закрытия [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx). |
 | [**SplitOpenThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210472) | Анимация с заданными настройками, которая выводит целевой пользовательский интерфейс с помощью анимации в виде открытия и закрытия [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx). |
-| [**DrillInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.drillinthemeanimation) | Представляет собой анимацию с заданными настройками, которая выполняется при переходе вперед в логической иерархии, например от эталонной страницы к странице сведений. |
-| [**DrillOutThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.drilloutthemeanimation.aspx) | Представляет собой анимацию с заданными настройками, которая выполняется при переходе назад в логической иерархии, например от страницы сведений к эталонной странице. |
+| [**DrillInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.drillinthemeanimation) | Представляет собой анимацию с заданными настройками, которая выполняется при переходе вперед в логической иерархии, например от эталонной страницы к странице сведений. |
+| [**DrillOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.drilloutthemeanimation.aspx) | Представляет собой анимацию с заданными настройками, которая выполняется при переходе назад в логической иерархии, например от страницы сведений к эталонной странице. |
 
  
 
@@ -396,6 +396,6 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Ресурсы по программированию игр
-description: Следующие ресурсы содержат дополнительную информацию о программировании игр для Windows.
+title: "Ресурсы по программированию игр"
+description: "Следующие ресурсы содержат дополнительную информацию о программировании игр для Windows."
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 598d5d1afffd394b66aa7af23f22e7a13af48208
+
 ---
 
 # Ресурсы по программированию игр
@@ -80,6 +84,7 @@ ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

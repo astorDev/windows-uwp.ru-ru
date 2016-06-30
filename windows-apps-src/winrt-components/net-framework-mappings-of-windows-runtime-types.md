@@ -1,16 +1,17 @@
 ---
-author: martinekuan
-title: Сопоставление типов .NET Framework с типами среды выполнения Windows
-description: В следующей таблице перечислены установленные в .NET Framework сопоставления между типами универсальной платформы Windows (UWP) и типами .NET Framework.
+author: msatranjr
+title: "Сопоставление типов .NET Framework с типами среды выполнения Windows"
+description: "В следующей таблице перечислены установленные в .NET Framework сопоставления между типами универсальной платформы Windows (UWP) и типами .NET Framework."
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 286f479c86c06c9d08b4e36cf9776b590a13cc5f
+
 ---
 
 # Сопоставление типов .NET Framework с типами среды выполнения Windows
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В следующей таблице перечислены установленные в .NET Framework сопоставления между типами универсальной платформы Windows (UWP) и типами .NET Framework. В универсальном приложении для Windows, написанном с использованием управляемого кода, IntelliSense отображает тип .NET Framework вместо типа UWP. Например, если метод среды выполнения Windows принимает параметр типа IVector&lt;string&gt;, IntelliSense отображает параметр типа IList&lt;string&gt;. Аналогичным образом в компоненте среды выполнения Windows, написанном с использованием управляемого кода, в сигнатурах членов используются типы .NET Framework. Когда [средство экспорта метаданных среды выполнения Windows (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) создает компонент среды выполнения Windows, тип .NET Framework становится соответствующим типом UWP.
 
@@ -84,6 +85,6 @@ ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

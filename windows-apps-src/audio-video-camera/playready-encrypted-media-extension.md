@@ -1,8 +1,11 @@
 ---
 author: eliotcowley
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: В данном разделе рассказывается, как изменить веб-приложение PlayReady для поддержки изменений, появившихся в Windows 10, которых не было в Windows 8.1.
-title: Расширение зашифрованного мультимедиа PlayReady
+description: "В данном разделе рассказывается, как изменить веб-приложение PlayReady для поддержки изменений, появившихся в Windows 10, которых не было в Windows 8.1."
+title: "Расширение зашифрованного мультимедиа PlayReady"
+ms.sourcegitcommit: 965443672e52938d39069f14fe23b0c5dbd0ffa8
+ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
+
 ---
 
 # Расширение зашифрованного мультимедиа PlayReady
@@ -130,6 +133,7 @@ function main()
         // to set the stop state.
         //
         videoElement.removeAttribute("src");
+        videoElement.load();
 
         onEndOfStream();
     };
@@ -300,6 +304,7 @@ function foo() {
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

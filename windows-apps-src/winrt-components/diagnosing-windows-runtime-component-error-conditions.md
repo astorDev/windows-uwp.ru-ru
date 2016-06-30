@@ -1,16 +1,18 @@
 ---
-author: martinekuan
-title: Диагностика состояний ошибки компонентов среды выполнения Windows
-description: В этой статье приведены дополнительные сведения об ограничениях, которые применяются к компонентам среды выполнения Windows, написанным с использованием управляемого кода.
+author: msatranjr
+title: "Диагностика состояний ошибки компонентов среды выполнения Windows"
+description: "В этой статье приведены дополнительные сведения об ограничениях, которые применяются к компонентам среды выполнения Windows, написанным с использованием управляемого кода."
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
+
 ---
 
 # Диагностика состояний ошибки компонентов среды выполнения Windows
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
 
 В этой статье приведены дополнительные сведения об ограничениях, которые применяются к компонентам среды выполнения Windows, написанным с использованием управляемого кода. Эти сведения расширяют информацию, которая предоставляется в сообщениях об ошибке, отправляемых средством [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx), и дополняют сведения об ограничениях, представленные в разделе [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
@@ -220,17 +222,17 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
     > ```cs
     > using System.Runtime.InteropServices;
     > using System.Runtime.InteropServices.WindowsRuntime;
-    > 
+    >
     > [return: ReturnValueName("average")]
     > public int GetAverage(out int lowValue, out int highValue)
     > ```
     > ```vb
     > Imports System.Runtime.InteropServices
     > Imports System.Runtime.InteropServices.WindowsRuntime
-    > 
+    >
     > Public Function GetAverage(<Out> ByRef lowValue As Integer, _
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
-    > ``` 
+    > ```
 
 > **Примечание.** Если при изменении имени возвращаемого значения новое имя конфликтует с именем другого параметра, возникает ошибка WME1091.
 
@@ -248,6 +250,7 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 * [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: Этот пример, в котором используются данные из примера Bookstore1, начинается с универсального приложения для версии 8.1, отображающего сгруппированные данные в элементе управления SemanticZoom.
-title: Пример переноса среды выполнения Windows 8.x в UWP Bookstore2
+description: "Этот пример, в котором используются данные из примера Bookstore1, начинается с универсального приложения для версии 8.1, отображающего сгруппированные данные в элементе управления SemanticZoom."
+title: "Пример переноса среды выполнения Windows 8.x в UWP Bookstore2"
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 97682b2b914707874dcac998f7db5f2029ad433e
+
 ---
 
 # Пример переноса среды выполнения Windows 8.x в UWP: Bookstore2
@@ -169,6 +173,7 @@ Bookstore2\_81 в Windows Phone в уменьшенном масштабе
 Следующий пример — [QuizGame](w8x-to-uwp-case-study-quizgame.md), где мы рассмотрим доступ к сгруппированным данным и их и отображение.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

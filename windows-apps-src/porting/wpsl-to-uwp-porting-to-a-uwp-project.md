@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: Начните процесс переноса с создания нового проекта Windows 10 в Visual Studio и скопируйте в него свои файлы.
-title: Перенос проекта Windows Phone Silverlight в проект UWP
+description: "Начните процесс переноса с создания нового проекта Windows 10 в Visual Studio и скопируйте в него свои файлы."
+title: "Перенос проекта Windows Phone Silverlight в проект UWP"
 ms.assetid: d86c99c5-eb13-4e37-b000-6a657543d8f4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 74cbd9789636383e6d04798435780dcda6b897d0
+
 ---
 
 # Перенос проекта Windows Phone Silverlight в проект UWP
@@ -144,6 +148,7 @@ ms.assetid: d86c99c5-eb13-4e37-b000-6a657543d8f4
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

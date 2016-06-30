@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: В этом разделе подробно описывается сопоставление API Windows Phone Silverlight с их аналогами для универсальной платформы Windows (UWP).
-title: Сопоставление пространств имен и классов Windows Phone Silverlight и UWP
+description: "В этом разделе подробно описывается сопоставление API Windows Phone Silverlight с их аналогами для универсальной платформы Windows (UWP)."
+title: "Сопоставление пространств имен и классов Windows Phone Silverlight и UWP"
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
+
 ---
 
 # Сопоставление пространств имен и классов Windows Phone Silverlight и UWP
@@ -60,37 +64,37 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | Классы **System.Threading.Thread**, **System.Threading.ThreadPool** | Класс [
               **ThreadPool**
             ](https://msdn.microsoft.com/library/windows/apps/br229621) |
-| (ST = **System.Threading** <br/> Метод **ST.Thread.MemoryBarrier** | (ST = **System.Threading** <br/> Метод **ST.Interlocked.MemoryBarrier** |
-| (ST = **System.Threading** <br/> Свойство **ST.Thread.ManagedThreadId** | (S = **System** <br/> Свойство **S.Environment.ManagedThreadId** |
+| (ST = **System.Threading**) <br/> Метод **ST.Thread.MemoryBarrier** | (ST = **System.Threading**) <br/> Метод **ST.Interlocked.MemoryBarrier** |
+| (ST = **System.Threading**) <br/> Свойство **ST.Thread.ManagedThreadId** | (S = **System**) <br/> Свойство **S.Environment.ManagedThreadId** |
 | Класс **System.Threading.Timer** | Класс [
               **ThreadPoolTimer**
             ](https://msdn.microsoft.com/library/windows/apps/br230587) |
-| (SWT = **System.Windows.Threading** <br/> Класс **SWT.Dispatcher** | Класс [
+| (SWT = **System.Windows.Threading**) <br/> Класс **SWT.Dispatcher** | Класс [
               **CoreDispatcher**
             ](https://msdn.microsoft.com/library/windows/apps/br208211) |
-| (SWT = **System.Windows.Threading** <br/> Класс **SWT.DispatcherTimer** | Класс [
+| (SWT = **System.Windows.Threading**) <br/> Класс **SWT.DispatcherTimer** | Класс [
               **DispatcherTimer**
             ](https://msdn.microsoft.com/library/windows/apps/br244250) |
 | Blend для Visual Studio | |
-| (MEDC = **Microsoft.Expression.Drawing.Core** <br/> Класс **MEDC.GeometryHelper** | Нет прямого эквивалента |
+| (MEDC = **Microsoft.Expression.Drawing.Core**) <br/> Класс **MEDC.GeometryHelper** | Нет прямого эквивалента |
 | Пространство имен **Microsoft.Expression.Interactivity** | Пространство имен [Microsoft.Xaml.Interactivity](http://go.microsoft.com/fwlink/p/?LinkId=328776) |
 | Пространство имен **Microsoft.Expression.Interactivity.Core** | Пространство имен [Microsoft.Xaml.Interactions.Core](http://go.microsoft.com/fwlink/p/?LinkId=328773) |
-| (MEIC = **Microsoft.Expression.Interactivity.Core** <br/> Класс **MEIC.ExtendedVisualStateManager** | Нет прямого эквивалента |
+| (MEIC = **Microsoft.Expression.Interactivity.Core**) <br/> Класс **MEIC.ExtendedVisualStateManager** | Нет прямого эквивалента |
 | Пространство имен **Microsoft.Expression.Interactivity.Input** | Нет прямого эквивалента |
 | Пространство имен **Microsoft.Expression.Interactivity.Media** | Пространство имен [Microsoft.Xaml.Interactions.Media](http://go.microsoft.com/fwlink/p/?LinkId=328775) |
 | Пространство имен **Microsoft.Expression.Shapes** | Нет прямого эквивалента |
-| (MI = **Microsoft.Internal** <br/> Интерфейс **MI.IManagedFrameworkInternalHelper** | Нет прямого эквивалента |
+| (MI = **Microsoft.Internal**) <br/> Интерфейс **MI.IManagedFrameworkInternalHelper** | Нет прямого эквивалента |
 | Данные контактов и календаря | |
 | Пространство имен **Microsoft.Phone.UserData** | Пространство имен [
               **Windows.ApplicationModel.Contacts**
             ](https://msdn.microsoft.com/library/windows/apps/br225002), [**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/dn263359) |
-| (MPU = **Microsoft.Phone.UserData** <br/> Классы **MPU.Account**, **ContactAddress**, **ContactCompanyInformation**, **ContactEmailAddress**, **ContactPhoneNumber** | Класс [
+| (MPU = **Microsoft.Phone.UserData**) <br/> Классы **MPU.Account**, **ContactAddress**, **ContactCompanyInformation**, **ContactEmailAddress**, **ContactPhoneNumber** | Класс [
               **Contact**
             ](https://msdn.microsoft.com/library/windows/apps/br224849) |
-| (MPU = **Microsoft.Phone.UserData** <br/> Класс **MPU.Appointments** | Класс [
+| (MPU = **Microsoft.Phone.UserData**) <br/> Класс **MPU.Appointments** | Класс [
               **AppointmentCalendar**
             ](https://msdn.microsoft.com/library/windows/apps/dn596134) |
-| (MPU = **Microsoft.Phone.UserData** <br/> Класс **MPU.Contacts** | Класс [
+| (MPU = **Microsoft.Phone.UserData**) <br/> Класс **MPU.Contacts** | Класс [
               **ContactStore**
             ](https://msdn.microsoft.com/library/windows/apps/dn624859) |
 | Элементы управления и инфраструктура пользовательского интерфейса | |
@@ -98,51 +102,51 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | Пространство имен **Microsoft.Phone.Controls** | Пространство имен [
               **Windows.UI.Xaml.Controls**
             ](https://msdn.microsoft.com/library/windows/apps/br227716) |
-| (MPC = **Microsoft.Phone.Controls** <br/> Класс **MPC.ContextMenu** | Класс [
+| (MPC = **Microsoft.Phone.Controls**) <br/> Класс **MPC.ContextMenu** | Класс [
               **PopupMenu**
             ](https://msdn.microsoft.com/library/windows/apps/br208693) |
-| (MPC = **Microsoft.Phone.Controls** <br/>Класс **MPC.DatePickerPage** | Класс [
+| (MPC = **Microsoft.Phone.Controls**) <br/>Класс **MPC.DatePickerPage** | Класс [
               **DatePickerFlyout**
             ](https://msdn.microsoft.com/library/windows/apps/dn625013) |
-| (MPC = **Microsoft.Phone.Controls** <br/>Класс **MPC.GestureListener** | Класс [
+| (MPC = **Microsoft.Phone.Controls**) <br/>Класс **MPC.GestureListener** | Класс [
               **GestureRecognizer**
             ](https://msdn.microsoft.com/library/windows/apps/br241937) |
-| (MPC = **Microsoft.Phone.Controls** <br/>Класс **MPC.LongListSelector** | Класс [
+| (MPC = **Microsoft.Phone.Controls**) <br/>Класс **MPC.LongListSelector** | Класс [
               **SemanticZoom**
             ](https://msdn.microsoft.com/library/windows/apps/hh702601) |
-| (MPC = **Microsoft.Phone.Controls** <br/>Класс **MPC.ObscuredEventArgs** | Классы [
+| (MPC = **Microsoft.Phone.Controls**) <br/>Класс **MPC.ObscuredEventArgs** | Классы [
               **SystemProtection**
             ](https://msdn.microsoft.com/library/windows/apps/jj585394), [**WindowActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208377) | 
-| (MPC = **Microsoft.Phone.Controls** <br/>Класс**MPC.Panorama** | Класс [
+| (MPC = **Microsoft.Phone.Controls**) <br/>Класс**MPC.Panorama** | Класс [
               **Hub**
             ](https://msdn.microsoft.com/library/windows/apps/dn251843) | 
-| (MPC = **Microsoft.Phone.Controls** <br/>**MPC.PhoneApplicationFrame**,<br/>(SWN = **System.Windows.Navigation** <br/>Классы **SWN.NavigationService** | Класс [
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.PhoneApplicationFrame**,<br/>(SWN = **System.Windows.Navigation**) <br/>Классы **SWN.NavigationService** | Класс [
               **Frame**
             ](https://msdn.microsoft.com/library/windows/apps/br242682) |
-| (MPC = **Microsoft.Phone.Controls** <br/>Класс **MPC.PhoneApplicationPage** | Класс [
+| (MPC = **Microsoft.Phone.Controls**) <br/>Класс **MPC.PhoneApplicationPage** | Класс [
               **Page**
             ](https://msdn.microsoft.com/library/windows/apps/br227503)|
-| (MPC = **Microsoft.Phone.Controls** <br/>Класс **MPC.TiltEffect** | Класс [
+| (MPC = **Microsoft.Phone.Controls**) <br/>Класс **MPC.TiltEffect** | Класс [
               **PointerDownThemeAnimation**
             ](https://msdn.microsoft.com/library/windows/apps/hh969164) | 
-| (MPC = **Microsoft.Phone.Controls** <br/>Класс **MPC.TimePickerPage** | Класс [
+| (MPC = **Microsoft.Phone.Controls**) <br/>Класс **MPC.TimePickerPage** | Класс [
               **TimePickerFlyout**
             ](https://msdn.microsoft.com/library/windows/apps/dn608313) |
-| (MPC = **Microsoft.Phone.Controls** <br/>Класс **MPC.WebBrowser** | Класс [
+| (MPC = **Microsoft.Phone.Controls**) <br/>Класс **MPC.WebBrowser** | Класс [
               **WebView**
             ](https://msdn.microsoft.com/library/windows/apps/br227702) | 
-| (MPC = **Microsoft.Phone.Controls** <br/>Класс **MPC.WebBrowserExtensions** | Нет прямого эквивалента | 
-| (MPC = **Microsoft.Phone.Controls** <br/>Класс **MPC.WrapPanel** | Нет прямого эквивалента для макетирования. [
+| (MPC = **Microsoft.Phone.Controls**) <br/>Класс **MPC.WebBrowserExtensions** | Нет прямого эквивалента | 
+| (MPC = **Microsoft.Phone.Controls**) <br/>Класс **MPC.WrapPanel** | Нет прямого эквивалента для макетирования. [
               **ItemsWrapGrid**
             ](https://msdn.microsoft.com/library/windows/apps/dn298849) и [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227717) могут быть использованы в шаблоне панели элементов и элементах управления. | 
-| (MPD = **Microsoft.Phone.Data** <br/>Пространство имен **MPD.Linq** | Нет прямого эквивалента | 
-| (MPD = **Microsoft.Phone.Data** <br/>Пространство имен **MPD.Linq.Mapping** | Нет прямого эквивалента |
+| (MPD = **Microsoft.Phone.Data**) <br/>Пространство имен **MPD.Linq** | Нет прямого эквивалента | 
+| (MPD = **Microsoft.Phone.Data**) <br/>Пространство имен **MPD.Linq.Mapping** | Нет прямого эквивалента |
 | Пространство имен **Microsoft.Phone.Globalization** | Нет прямого эквивалента | 
-| (MPI = **Microsoft.Phone.Info** <br/>Классы **MPI.DeviceExtendedProperties**, **DeviceStatus** | Классы [
+| (MPI = **Microsoft.Phone.Info**) <br/>Классы **MPI.DeviceExtendedProperties**, **DeviceStatus** | Классы [
               **EasClientDeviceInformation**
             ](https://msdn.microsoft.com/library/windows/apps/hh701390), [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831). Дополнительные сведения см. в разделе [Состояние устройства](wpsl-to-uwp-input-and-sensors.md#device-status). | 
-| (MPI = **Microsoft.Phone.Info** <br/>Класс **MPI.MediaCapabilities** | Нет прямого эквивалента | 
-| (MPI = **Microsoft.Phone.Info** <br/>Класс **MPI.UserExtendedProperties** | Класс [
+| (MPI = **Microsoft.Phone.Info**) <br/>Класс **MPI.MediaCapabilities** | Нет прямого эквивалента | 
+| (MPI = **Microsoft.Phone.Info**) <br/>Класс **MPI.UserExtendedProperties** | Класс [
               **AdvertisingManager**
             ](https://msdn.microsoft.com/library/windows/apps/dn363391) | 
 | Пространство имен **System.Windows** | Пространство имен [
@@ -219,8 +223,8 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | Пространство имен **System.Globalization** | Пространство имен [
               **Windows.Globalization**
             ](https://msdn.microsoft.com/library/windows/apps/br206813) |
-| (ST = **System.Threading** <br/> Свойство **ST.Thread.CurrentCulture** | (SG = **System.Globalization** <br/> Свойство **S.CultureInfo.CurrentCulture** |
-| (ST = **System.Threading** <br/> Свойство **ST.Thread.CurrentUICulture** | (SG = **System.Globalization** <br/> Свойство **S.CultureInfo.CurrentUICulture** |
+| (ST = **System.Threading**) <br/> Свойство **ST.Thread.CurrentCulture** | (SG = **System.Globalization**) <br/> Свойство **S.CultureInfo.CurrentCulture** |
+| (ST = **System.Threading**) <br/> Свойство **ST.Thread.CurrentUICulture** | (SG = **System.Globalization**) <br/> Свойство **S.CultureInfo.CurrentUICulture** |
 | Графика и анимация | |
 | Пространства имен **Microsoft.Xna.Framework.\***, [XNA Framework Class Library](http://go.microsoft.com/fwlink/p/?LinkId=263769), [Content Pipeline Class Library](http://go.microsoft.com/fwlink/p/?LinkId=263770) | Нет прямого эквивалента. Обычно используется [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) и C++. См. разделы [Разработка игр](https://msdn.microsoft.com/library/windows/apps/hh452744) и [Взаимодействие DirectX и XAML](https://msdn.microsoft.com/library/windows/apps/hh825871). |
 | Класс **Microsoft.Xna.Framework.Audio.Microphone** | Класс [
@@ -229,7 +233,7 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | Класс **Microsoft.Xna.Framework.Audio.SoundEffect** | Класс [
               **MediaElement**
             ](https://msdn.microsoft.com/library/windows/apps/br242926) |
-| Пространство имен **Microsoft.Xna.Framework.GamerServices** | (WPS = **Windows.Phone.System** <br/> Пространство имен [
+| Пространство имен **Microsoft.Xna.Framework.GamerServices** | (WPS = **Windows.Phone.System**) <br/> Пространство имен [
               **WPS.UserProfile.GameServices.Core**
             ](https://msdn.microsoft.com/library/windows/apps/jj207609) |
 | Класс **Microsoft.Xna.Framework.GamerServices.Guide** | Нет прямого эквивалента | 
@@ -239,7 +243,7 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | Класс **Microsoft.Xna.Framework.Input.Touch.TouchPanel** | Класс [
               **GestureRecognizer**
             ](https://msdn.microsoft.com/library/windows/apps/br241937) |
-| (MXFM = **Microsoft.Xna.Framework.Media** <br/> Классы **MXFM.MediaLibrary**, **MXFM.PhoneExtensions.MediaLibraryExtensions** | Класс [
+| (MXFM = **Microsoft.Xna.Framework.Media**) <br/> Классы **MXFM.MediaLibrary**, **MXFM.PhoneExtensions.MediaLibraryExtensions** | Класс [
               **KnownFolders**
             ](https://msdn.microsoft.com/library/windows/apps/br227151) |
 | Класс **Microsoft.Xna.Framework.Media.MediaQueue** | Класс [
@@ -344,20 +348,20 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
               **MediaElement**
             ](https://msdn.microsoft.com/library/windows/apps/br242926) |
 | Сеть | |
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation** <br/> Класс **MPNN.DeviceNetworkInformation** | Классы [
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Класс **MPNN.DeviceNetworkInformation** | Классы [
               **Hostname**
             ](https://msdn.microsoft.com/library/windows/apps/br207113), [**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293)
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation** <br/> Класс **MPNN.NetworkInterface** | Класс [
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Класс **MPNN.NetworkInterface** | Класс [
               **NetworkInformation**
             ](https://msdn.microsoft.com/library/windows/apps/br207293) |
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation** <br/> Класс **MPNN.NetworkInterfaceInfo** | Класс [
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Класс **MPNN.NetworkInterfaceInfo** | Класс [
               **ConnectionProfile**
             ](https://msdn.microsoft.com/library/windows/apps/br207249) |
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation** <br/> Класс **MPNN.NetworkInterfaceList** | Класс [
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Класс **MPNN.NetworkInterfaceList** | Класс [
               **NetworkInformation**
             ](https://msdn.microsoft.com/library/windows/apps/br207293) |
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation** <br/> Класс **MPNN.SocketExtensions** | Нет прямого эквивалента | 
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation** <br/> Класс **MPNN.WebRequestExtensions** | Нет прямого эквивалента | 
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Класс **MPNN.SocketExtensions** | Нет прямого эквивалента | 
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Класс **MPNN.WebRequestExtensions** | Нет прямого эквивалента | 
 | Пространство имен **Microsoft.Phone.Networking.Voip** | Нет прямого эквивалента | 
 | Класс **System.Net.CookieCollection** | По-прежнему поддерживается, только некоторые свойства отсутствуют (например, IsReadOnly) |
 | Класс **System.Net.DownloadProgressChangedEventArgs** и похожие классы, связанные с **System.Net.WebClient** | Класс [
@@ -369,10 +373,10 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
             ](https://msdn.microsoft.com/library/windows/apps/hh738437) |
 | Класс **System.Net.HttpWebRequest** | Частичная поддержка, при этом рекомендованной перспективной альтернативой является класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). Эти API-интерфейсы используют [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) для представления запроса HTTP. |
 | Класс **System.Net.HttpWebResponse** | По-прежнему поддерживается, но вместо Close() используйте Dispose(). Рекомендуемой перспективной альтернативой является класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). Эти API используют [System.Net.Http.HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx) для представления ответа HTTP. |
-| (SNN = **System.Net.NetworkInformation** <br/> Класс **SNN.NetworkChange** | По-прежнему поддерживается за исключением конструктора. |
+| (SNN = **System.Net.NetworkInformation**) <br/> Класс **SNN.NetworkChange** | По-прежнему поддерживается за исключением конструктора. |
 | Класс **System.Net.OpenReadCompletedEventArgs** и похожие классы, связанные с **System.Net.WebClient** | Класс [
               **HttpClient**
-            ](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx) |
+            ](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)) |
 | Класс **System.Net.Sockets.Socket** | По-прежнему поддерживается, но вместо Close() используйте Dispose(). Можно также перенести в класс [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882). |
 | Класс **System.Net.Sockets.SocketException** | По-прежнему поддерживается, но используйте свойство SocketErrorCode вместо ErrorCode.
 | Классы **System.Net.Sockets.UdpAnySourceMulticastClient**, **UdpSingleSourceMulticastClient** | Классы [
@@ -380,18 +384,18 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
             ](https://msdn.microsoft.com/library/windows/apps/br241319) | 
 | Класс **System.Net.UploadProgressChangedEventArgs** и похожие классы, связанные с **System.Net.WebClient** | Класс [
               **HttpClient**
-            ](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)
+            ](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx))
 | Класс **System.Net.WebClient** | Класс [
               **HttpClient**
-            ](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)
+            ](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx))
 | Класс **System.Net.WebRequest** | Частичная поддержка (другой набор свойств), при этом рекомендованная перспективная альтернатива — класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). Эти API-интерфейсы используют [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) для представления запроса HTTP.
 | Класс **System.Net.WebResponse** | По-прежнему поддерживается, но вместо Close() используйте Dispose(). Рекомендуемой перспективной альтернативой является класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). Эти API используют [System.Net.Http.HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx) для представления ответа HTTP.
-| (SN = **System.Net** <br/> Класс **SN.WriteStreamClosedEventArgs** | Класс [
+| (SN = **System.Net**) <br/> Класс **SN.WriteStreamClosedEventArgs** | Класс [
               **HttpClient**
-            ](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)
-| (SN = **System.Net** <br/> Класс **SN.WriteStreamClosedEventHandler** | Класс [
+            ](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx))
+| (SN = **System.Net**) <br/> Класс **SN.WriteStreamClosedEventHandler** | Класс [
               **HttpClient**
-            ](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)
+            ](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx))
 | Класс **System.UriFormatException** | Класс **System.FormatException** |
 | Уведомления | |
 | Пространство имен MPN = **Microsoft.Phone.Notification** | Пространства имен [
@@ -418,61 +422,61 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | Отражение | |
 | Класс **System.Type** | Класс **System.Reflection.TypeInfo** См. раздел [Отражение в .NET Framework для приложений Магазина Windows](https://msdn.microsoft.com/library/hh535795.aspx). |
 | Ресурсы | |
-| Класс **System.Resources.ResourceManager** | (WA = **Windows.ApplicationModel**<br/>Пространства имен [
+| Класс **System.Resources.ResourceManager** | (WA = **Windows.ApplicationModel**)<br/>Пространства имен [
               **WA.Resources.Core**
             ](https://msdn.microsoft.com/library/windows/apps/br225039) и [**WA.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022), класс [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078). См. раздел [Создание и получение ресурсов в приложениях среды выполнения Windows](https://msdn.microsoft.com/library/windows/apps/xaml/hh694557.aspx). |
 | Защищенный элемент | |
-| (MPS = **Microsoft.Phone.SecureElement** <br/> Классы **MPS.SecureElementChannel**, **MPS.SecureElementSession** | Класс [
+| (MPS = **Microsoft.Phone.SecureElement**) <br/> Классы **MPS.SecureElementChannel**, **MPS.SecureElementSession** | Класс [
               **SmartCardConnection**
             ](https://msdn.microsoft.com/library/windows/apps/dn608002) |
-| (MPS = **Microsoft.Phone.SecureElement** <br/> Класс **MPS.SecureElementReader** | Класс [
+| (MPS = **Microsoft.Phone.SecureElement**) <br/> Класс **MPS.SecureElementReader** | Класс [
               **SmartCardReader**
             ](https://msdn.microsoft.com/library/windows/apps/dn263857) |
 | Безопасность | |
-| (SSC = **System.Security.Cryptography** <br/> Классы **SSC.Aes**, **SSC.RSA** | Класс [
+| (SSC = **System.Security.Cryptography**) <br/> Классы **SSC.Aes**, **SSC.RSA** | Класс [
               **CryptographicEngine**
             ](https://msdn.microsoft.com/library/windows/apps/br241490) |
-| (SSC = **System.Security.Cryptography** <br/> Классы **SSC.HMACSHA256**, **SSC.SHA256** | Класс [
+| (SSC = **System.Security.Cryptography**) <br/> Классы **SSC.HMACSHA256**, **SSC.SHA256** | Класс [
               **HashAlgorithmProvider**
             ](https://msdn.microsoft.com/library/windows/apps/br241511) |
-| (SSC = **System.Security.Cryptography** <br/> Класс **SSC.ProtectedData** | Класс [
+| (SSC = **System.Security.Cryptography**) <br/> Класс **SSC.ProtectedData** | Класс [
               **DataProtectionProvider**
             ](https://msdn.microsoft.com/library/windows/apps/br241559) |
-| (SSC = **System.Security.Cryptography** <br/> Класс **SSC.RandomNumberGenerator** | Класс [
+| (SSC = **System.Security.Cryptography**) <br/> Класс **SSC.RandomNumberGenerator** | Класс [
               **CryptographicBuffer**
             ](https://msdn.microsoft.com/library/windows/apps/br227092) |
-| (SSC = **System.Security.Cryptography** <br/> Класс **SSC.X509Certificates.X509Certificate** | Класс [
+| (SSC = **System.Security.Cryptography**) <br/> Класс **SSC.X509Certificates.X509Certificate** | Класс [
               **CertificateEnrollmentManager**
             ](https://msdn.microsoft.com/library/windows/apps/br212075) |
 | Оболочка | |
-| (MPSh = **Microsoft.Phone.Shell** <br/> Класс **MPSh.ApplicationBar** | Класс [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> Класс **MPSh.ApplicationBar** | Класс [
               **CommandBar**
             ](https://msdn.microsoft.com/library/windows/apps/dn279427) |
-| (MPSh = **Microsoft.Phone.Shell** <br/> Класс **MPSh.ApplicationBarIconButton** | Класс [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> Класс **MPSh.ApplicationBarIconButton** | Класс [
               **AppBarButton**
             ](https://msdn.microsoft.com/library/windows/apps/dn279244) (при использовании в свойстве [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/dn279430))
-| (MPSh = **Microsoft.Phone.Shell** <br/> Класс **MPSh.ApplicationBarMenuItem** | Класс [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> Класс **MPSh.ApplicationBarMenuItem** | Класс [
               **AppBarButton**
             ](https://msdn.microsoft.com/library/windows/apps/dn279244) (при использовании в свойстве [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/dn279434))
-| (MPSh = **Microsoft.Phone.Shell** <br/> Классы **MPSh.CycleTileData**, **MPSh.FlipTileData**, **MPSh.IconicTileData**, **MPSh.ShellTileData**, **MPSh.StandardTileData** | Класс [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> Классы **MPSh.CycleTileData**, **MPSh.FlipTileData**, **MPSh.IconicTileData**, **MPSh.ShellTileData**, **MPSh.StandardTileData** | Класс [
               **TileTemplateType**
             ](https://msdn.microsoft.com/library/windows/apps/br208621) |
-| (MPSh = **Microsoft.Phone.Shell** <br/> Класс **MPSh.PhoneApplicationService** | Классы [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> Класс **MPSh.PhoneApplicationService** | Классы [
               **CoreApplication**
             ](https://msdn.microsoft.com/library/windows/apps/br225016), [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816)
-| (MPSh = **Microsoft.Phone.Shell** <br/> Класс **MPSh.ProgressIndicator** | Класс [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> Класс **MPSh.ProgressIndicator** | Класс [
               **StatusBarProgressIndicator**
             ](https://msdn.microsoft.com/library/windows/apps/dn633865) |
-| (MPSh = **Microsoft.Phone.Shell** <br/> Класс **MPSh.ShellTile** | Класс [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> Класс **MPSh.ShellTile** | Класс [
               **SecondaryTile**
             ](https://msdn.microsoft.com/library/windows/apps/br242183) |
-| (MPSh = **Microsoft.Phone.Shell** <br/> Класс **MPSh.ShellTileSchedule** | Класс [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> Класс **MPSh.ShellTileSchedule** | Класс [
               **TileUpdater**
             ](https://msdn.microsoft.com/library/windows/apps/br208628) |
-| (MPSh = **Microsoft.Phone.Shell** <br/> Класс **MPSh.ShellToast** | Класс [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> Класс **MPSh.ShellToast** | Класс [
               **ToastNotificationManager**
             ](https://msdn.microsoft.com/library/windows/apps/br208642) |
-| (MPSh = **Microsoft.Phone.Shell** <br/> Класс **MPSh.SystemTray** | Класс [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> Класс **MPSh.SystemTray** | Класс [
               **StatusBar**
             ](https://msdn.microsoft.com/library/windows/apps/dn633864) |
 | Хранилище и ввод-вывод | |
@@ -488,10 +492,10 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | Класс **System.IO.File** | Классы [
               **StorageFile**
             ](https://msdn.microsoft.com/library/windows/apps/br227171) и [**PathIO**](https://msdn.microsoft.com/library/windows/apps/hh701663)
-| (SII = **System.IO.IsolatedStorage** <br/> Класс **SII.IsolatedStorageFile** | Свойство [
+| (SII = **System.IO.IsolatedStorage**) <br/> Класс **SII.IsolatedStorageFile** | Свойство [
               **ApplicationData.LocalFolder**
             ](https://msdn.microsoft.com/library/windows/apps/br241621) |
-| (SII = **System.IO.IsolatedStorage** <br/> Класс **SII.IsolatedStorageSettings** | Свойство [
+| (SII = **System.IO.IsolatedStorage**) <br/> Класс **SII.IsolatedStorageSettings** | Свойство [
               **ApplicationData.LocalSettings**
             ](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.localsettings.aspx) |
 | Класс **System.IO.Stream** | По-прежнему поддерживается, используйте ReadAsync() и WriteAsync() вместо BeginRead()/EndRead() и BeginWrite()/EndWrite(). |
@@ -500,14 +504,15 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
               **Windows.ApplicationModel.Wallet**
             ](https://msdn.microsoft.com/library/windows/apps/dn631399) |
 | Xml | |
-| (SX = **System.Xml** | Метод **SX.XmlConvert.ToDateTime** |
-| (SX = **System.Xml** | Метод **SX.XmlConvert.ToDateTimeOffset** |
+| (SX = **System.Xml**) | Метод **SX.XmlConvert.ToDateTime** |
+| (SX = **System.Xml**) | Метод **SX.XmlConvert.ToDateTimeOffset** |
  
 
 Следующий раздел называется [Перенос проекта](wpsl-to-uwp-porting-to-a-uwp-project.md).
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

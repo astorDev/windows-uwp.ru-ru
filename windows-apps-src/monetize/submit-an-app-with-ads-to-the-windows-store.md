@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: b307fc7d-0424-459d-8c20-e37e5cfec0d0
-description: Сведения о требованиях, которым должны отвечать приложения, использующие библиотеки Microsoft advertising, для публикации в Магазине.
-title: Отправка приложения с рекламой в Магазин Windows
+description: "Сведения о требованиях, которым должны отвечать приложения, использующие библиотеки Microsoft advertising, для публикации в Магазине."
+title: "Отправка приложения с рекламой в Магазин Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: d2e6f9873b2539f9c0558abdc9ee936b938a03b1
+
 
 ---
 
@@ -25,6 +29,7 @@ title: Отправка приложения с рекламой в Магази
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

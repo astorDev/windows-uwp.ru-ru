@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Отчет Оценки на информационной панели Центра разработки для Windows позволяет просматривать распределение оценок вашего приложения пользователями в Магазине Windows.
-title: Отчет "Оценки"
+Description: "Отчет Оценки на информационной панели Центра разработки для Windows позволяет просматривать распределение оценок вашего приложения пользователями в Магазине Windows."
+title: "Отчет \"Оценки\""
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e0258bc9402772d0a036b32563348d11acd0fdb7
+
 ---
 
 # Отчет "Оценки"
@@ -68,6 +72,7 @@ ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

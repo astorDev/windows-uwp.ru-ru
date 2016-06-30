@@ -1,10 +1,13 @@
 ---
 author: Xansky
-Description: В этой статье приводятся рекомендации относительно специальных возможностей отображения текста в приложении, которые помогают обеспечить необходимый уровень контрастности между цветами текста и фона.
+Description: "В этой статье приводятся рекомендации относительно специальных возможностей отображения текста в приложении, которые помогают обеспечить необходимый уровень контрастности между цветами текста и фона."
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
-title: Требования к специальным возможностям отображения текста
+title: "Требования к специальным возможностям отображения текста"
 label: Accessible text requirements
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 1307b4f70cf7ffed300f4254a7d92b67b5afd085
+
 ---
 
 # Требования к специальным возможностям отображения текста  
@@ -44,7 +47,7 @@ template: detail.hbs
             ](https://msdn.microsoft.com/library/windows/apps/BR209683): роль — [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 * [
               **RichTextBlock**
-            ](https://msdn.microsoft.com/library/windows/apps/BR227565) (и класс переполнения [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/BR227565overflow)): роль — [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+            ](https://msdn.microsoft.com/library/windows/apps/BR227565) (и класс переполнения [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)): роль — [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 * [
               **RichEditBox**
             ](https://msdn.microsoft.com/library/windows/apps/BR227548): роль — [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
@@ -72,7 +75,7 @@ template: detail.hbs
 <span id="text_scale_factor"/>
 <span id="TEXT_SCALE_FACTOR"/>
 ## Коэффициент масштабирования текста  
-Разные текстовые элементы и элементы управления имеют свойство [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209652_istextscalefactorenabled). По умолчанию оно имеет значение **true**. Если значение свойства — **true**, настройка **Масштабирование текста** на телефоне (в разделе **Параметры &gt; Специальные возможности**) позволяет увеличить размер текста в этом элементе. Масштабирование применяется к тексту с малым значением **FontSize** в большей степени, чем к тексту с большим значением **FontSize**. Чтобы отключить автоматическое увеличение шрифта, присвойте свойству **IsTextScaleFactorEnabled** элемента значение **false**. Попробуйте эту разметку, измените параметр телефона **Размер текста** и посмотрите, как изменятся элементы **TextBlock**.
+Разные текстовые элементы и элементы управления имеют свойство [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled). По умолчанию оно имеет значение **true**. Если значение свойства — **true**, настройка **Масштабирование текста** на телефоне (в разделе **Параметры &gt; Специальные возможности**) позволяет увеличить размер текста в этом элементе. Масштабирование применяется к тексту с малым значением **FontSize** в большей степени, чем к тексту с большим значением **FontSize**. Чтобы отключить автоматическое увеличение шрифта, присвойте свойству **IsTextScaleFactorEnabled** элемента значение **false**. Попробуйте эту разметку, измените параметр телефона **Размер текста** и посмотрите, как изменятся элементы **TextBlock**.
 
 XAML
 ```xml
@@ -126,6 +129,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [Пример реализации специальных возможностей в XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

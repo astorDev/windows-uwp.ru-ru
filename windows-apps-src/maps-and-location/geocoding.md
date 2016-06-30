@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-title: Выполнение геокодирования и обратного геокодирования
-description: Вы можете преобразовывать адреса в географические расположения (выполнять геокодирование) и наоборот (выполнять обратное геокодирование), вызывая методы класса MapLocationFinder в пространстве имен Windows.Services.Maps.
+title: "Выполнение геокодирования и обратного геокодирования"
+description: "Вы можете преобразовывать адреса в географические расположения (выполнять геокодирование) и наоборот (выполнять обратное геокодирование), вызывая методы класса MapLocationFinder в пространстве имен Windows.Services.Maps."
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: caf3ad6fecd6ed90c65f85477643fb42ab4787d3
+
 ---
 
 # Выполнение геокодирования и обратного геокодирования
@@ -28,10 +32,10 @@ ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 
  
 
-## Получение сведений о расположении (геокодирование)
+## Получение сведений о местоположении (геокодирование)
 
 
-Вы можете преобразовать адрес или название места в географическое расположение (выполнить геокодирование), последовательно выполнив следующие действия.
+Вы можете преобразовать адрес или название места в географическое положение (выполнить геокодирование), последовательно выполнив следующие действия.
 
 1.  Вызовите одну из перегрузок метода [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) класса [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550).
 2.  Метод [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) возвращает объект [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551), который содержит коллекцию подходящих объектов [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549).
@@ -133,6 +137,7 @@ town = Redmond
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

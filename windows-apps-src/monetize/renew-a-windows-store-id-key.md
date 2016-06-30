@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
-description: Используйте этот метод, чтобы обновить ключ Магазина Windows.
-title: Обновление ключа идентификатора Магазина Windows
+description: "Используйте этот метод, чтобы обновить ключ Магазина Windows."
+title: "Обновление ключа идентификатора Магазина Windows"
+ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
+ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
+
 ---
 
 # Обновление ключа идентификатора Магазина Windows
@@ -17,7 +20,7 @@ title: Обновление ключа идентификатора Магази
 
 Для использования этого метода вам понадобится:
 
--   маркер доступа Azure AD, созданный с помощью URI аудитории **https://onestore.microsoft.com**.
+-   маркер доступа Azure AD, созданный с помощью URI аудитории `https://onestore.microsoft.com`;
 -   Ключ идентификатора Магазина Windows с истекшим сроком действия, который был создан с помощью метода [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) или [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675), вызываемого в клиентском коде вашего приложения.
 
 Подробные сведения см. в разделе [Просмотр и предоставление продуктов из службы](view-and-grant-products-from-a-service.md).
@@ -29,20 +32,20 @@ title: Обновление ключа идентификатора Магази
 
 | Тип ключа    | Метод | URI запроса                                              |
 |-------------|--------|----------------------------------------------------------|
-| Коллекции | POST   | https://collections.mp.microsoft.com/v6.0/b2b/keys/renew |
-| Покупка    | POST   | https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew    |
+| Коллекции | POST   | `https://collections.mp.microsoft.com/v6.0/b2b/keys/renew` |
+| Покупка    | POST   | `https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew`    |
 
- 
+<br/> 
 
 ### Заголовок запроса
 
 | Заголовок         | Тип   | Описание                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Host           | Строка | Должен иметь значение **collections.mp.microsoft.com** или **purchase.mp.microsoft.com**.           |
+| Host           | string | Должен иметь значение **collections.mp.microsoft.com** или **purchase.mp.microsoft.com**.           |
 | Content-Length | Число | Длина тела запроса.                                                                       |
 | Content-Type   | Строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
 
- 
+<br/> 
 
 ### Тело запроса
 
@@ -51,7 +54,7 @@ title: Обновление ключа идентификатора Магази
 | serviceTicket | Строка | Маркер доступа Azure AD.        | Да      |
 | key           | Строка | Ключ идентификатора Магазина Windows с истекшим сроком действия. | Нет       |
 
- 
+<br/> 
 
 ### Пример запроса
 
@@ -61,7 +64,7 @@ Content-Length: 2774
 Content-Type: application/json
 Host: collections.mp.microsoft.com
 
-{ 
+{
     "serviceTicket": "eyJ0eXAiOiJKV1QiLCJhb….",
     "Key": "eyJ0eXAiOiJKV1QiLCJhbG…."
 }
@@ -76,7 +79,7 @@ Host: collections.mp.microsoft.com
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
 | key       | Строка | Обновленный ключ Магазина Windows, который можно использовать при последующих вызовах API-интерфейсов коллекций Магазина Windows или API покупок. | Нет       |
 
- 
+<br/> 
 
 ### Пример ответа
 
@@ -103,7 +106,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 | 401  | Unauthorized | AuthenticationTokenInvalid | Маркер доступа Azure AD недействителен. В некоторых случаях сведения об ошибке ServiceError содержат больше информации, например если истек срок действия маркера или отсутствует утверждение *appid*. |
 | 401  | Unauthorized | InconsistentClientId       | Утверждение *clientId* в ключе идентификатора Магазина Windows и утверждение *appid* в маркере доступа Azure AD не совпадают.                                                                     |
 
- 
+<br/> 
 
 ## Связанные разделы
 
@@ -115,6 +118,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

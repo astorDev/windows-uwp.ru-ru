@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: Код, интегрирующийся с устройством и его датчиками, включает ввод от пользователя и вывод к нему.
-title: Перенос среды выполнения Windows 8.x в UWP для ввода-вывода, устройств и модели приложений
+description: "Код, интегрирующийся с устройством и его датчиками, включает ввод от пользователя и вывод к нему."
+title: "Перенос среды выполнения Windows 8.x в UWP для ввода-вывода, устройств и модели приложений"
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e5e560ca4f40496edf9d11c3eef546fdc4c3b079
+
 ---
 
 # Перенос среды выполнения Windows 8.x в UWP для ввода-вывода, устройств и модели приложений
@@ -73,6 +77,7 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

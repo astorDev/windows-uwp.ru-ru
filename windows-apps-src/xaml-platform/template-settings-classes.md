@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Классы параметров шаблона
-title: Классы параметров шаблона
+description: "Классы параметров шаблона"
+title: "Классы параметров шаблона"
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 1ae6ca45808eae8943f471cceaf78fc5e8d81410
+
 ---
 
 # Классы параметров шаблона
@@ -113,6 +117,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

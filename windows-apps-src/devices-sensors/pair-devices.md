@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
-title: Связывание устройств
-description: Некоторые устройства необходимо связать, прежде чем их можно будет использовать. Пространство имен Windows.Devices.Enumeration поддерживает три разных способа связывания устройств.
+title: "Связывание устройств"
+description: "Некоторые устройства необходимо связать, прежде чем их можно будет использовать. Пространство имен Windows.Devices.Enumeration поддерживает три разных способа связывания устройств."
+translationtype: Human Translation
+ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
+ms.openlocfilehash: fa736c200185192cfd40a1c09f2da02cae67c05c
+
 ---
 # Связывание устройств
 
@@ -44,9 +48,9 @@ description: Некоторые устройства необходимо свя
 
 Пользовательское связывание позволяет приложению участвовать в процессе связывания. Это позволяет вашему приложению указать [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808), поддерживаемые для процесса связывания. На вас также ляжет ответственность за создание собственного пользовательского интерфейса для взаимодействия с пользователем при необходимости. Используйте пользовательское связывание, если необходимо, чтобы приложение имело несколько больше влияния на ход процесса связывания, или для отображения собственного пользовательского интерфейса связывания.
 
-Для реализации пользовательского связывания вам потребуется получить объект [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) для необходимого устройства, как и в случае с базовым связыванием. Однако конкретным свойством, в котором вы заинтересованы, является [**DeviceInformation.Pairing.Custom**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_custom). Это даст вам объект [**DeviceInformationCustomPairing**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing). Все методы [**DeviceInformationCustomPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing_pairasync) требуют включения параметра [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808). Это указывает на действия, которые пользователю необходимо предпринять, чтобы попытаться связать устройство. Дополнительные сведения о различных видах и необходимых действиях см. на справочной странице **DevicePairingKinds**. Как и в случае с базовым связыванием, вам необходимо будет **подождать** результат, чтобы предоставить приложению время попытаться выполнить действие связывания. Будет возвращен результат действия связывания, и при отсутствии ошибок устройство будет связано.
+Для реализации пользовательского связывания вам потребуется получить объект [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) для необходимого устройства, как и в случае с базовым связыванием. Однако конкретным свойством, в котором вы заинтересованы, является [**DeviceInformation.Pairing.Custom**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.custom.aspx). Это даст вам объект [**DeviceInformationCustomPairing**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.aspx). Все методы [**DeviceInformationCustomPairing.PairAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairasync.aspx) требуют включения параметра [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808). Это указывает на действия, которые пользователю необходимо предпринять, чтобы попытаться связать устройство. Дополнительные сведения о различных видах и необходимых действиях см. на справочной странице **DevicePairingKinds**. Как и в случае с базовым связыванием, вам необходимо будет **подождать** результат, чтобы предоставить приложению время попытаться выполнить действие связывания. Будет возвращен результат действия связывания, и при отсутствии ошибок устройство будет связано.
 
-Для поддержки пользовательского связывания вам необходимо создать обработчик для события [**PairingRequested**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing_pairingrequested). Этот обработчик должен учитывать все различные значения [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808), которые могут использоваться в сценарии пользовательского связывания. Соответствующее действие будет зависеть от значения **DevicePairingKinds**, предоставляемого в числе аргументов события.
+Для поддержки пользовательского связывания вам необходимо создать обработчик для события [**PairingRequested**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairingrequested.aspx). Этот обработчик должен учитывать все различные значения [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808), которые могут использоваться в сценарии пользовательского связывания. Соответствующее действие будет зависеть от значения **DevicePairingKinds**, предоставляемого в числе аргументов события.
 
 Важно помнить о том, что пользовательское связывание всегда является операцией на уровне системы. Из-за этого при работе на настольном компьютере или в Windows Phone перед началом связывания на экране всегда будет отображаться диалоговое окно системы. Это связано с тем, что для обеих этих платформ требуется согласие пользователя. Поскольку это диалоговое окно создается автоматически, вам не нужно будет создавать собственное диалоговое окно при выборе [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) **ConfirmOnly** во время работы на этих платформах. Для другого **DevicePairingKinds** необходимо будет выполнить специальную обработку в зависимости от конкретного значения **DevicePairingKinds**. См. пример обработки пользовательского связывания для разных значений **DevicePairingKinds**.
 
@@ -71,6 +75,7 @@ description: Некоторые устройства необходимо свя
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

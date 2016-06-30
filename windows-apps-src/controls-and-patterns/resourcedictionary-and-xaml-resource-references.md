@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: 'В данной статье приводятся сведения о том, как определить элемент ResourceDictionary и соответствующие ресурсы и как ресурсы XAML соотносятся с другими ресурсами, которые вы определяете как часть своего приложения или пакета приложения.'
-MS-HAID: 'dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "В данной статье приводятся сведения о том, как определить элемент ResourceDictionary и соответствующие ресурсы и как ресурсы XAML соотносятся с другими ресурсами, которые вы определяете как часть своего приложения или пакета приложения."
+MS-HAID: dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: Ссылки на ресурсы ResourceDictionary и XAML
+title: "Ссылки на ресурсы ResourceDictionary и XAML"
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fddd345507aace54aca66fe1caa2d9f89a74a299
+
 ---
 
 # Ссылки на ресурсы ResourceDictionary и XAML
@@ -465,9 +469,9 @@ sealed partial class App : Application
 
 ## Использование ResourceDictionary из кода
 
-Большинство сценариев для [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) обрабатывается исключительно в XAML. Контейнер **ResourceDictionary** и ресурсы объявляются как XAML-файл или набор узлов XAML в файле определения пользовательского интерфейса. Затем с помощью ссылок на ресурсы XAML отправляется запрос на эти ресурсы из других частей XAML. По-прежнему существуют некоторые сценарии, где приложению может потребоваться изменить содержимое **ResourceDictionary** с помощью кода, выполняемого во время работы приложения, или по крайней мере запросить содержимое **ResourceDictionary**, чтобы выяснить, определен ли ресурс. Вызовы этого кода осуществляются в экземпляре **ResourceDictionary**, поэтому сначала необходимо получить либо один непосредственный **ResourceDictionary** где-либо в дереве объектов, получив [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740), либо
+Большинство сценариев для [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) обрабатывается исключительно в XAML. Контейнер **ResourceDictionary** и ресурсы объявляются как XAML-файл или набор узлов XAML в файле определения пользовательского интерфейса. Затем с помощью ссылок на ресурсы XAML отправляется запрос на эти ресурсы из других частей XAML. По-прежнему существуют некоторые сценарии, где приложению может потребоваться изменить содержимое **ResourceDictionary** с помощью кода, выполняемого во время работы приложения, или по крайней мере запросить содержимое **ResourceDictionary**, чтобы выяснить, определен ли ресурс. Вызовы этого кода осуществляются в экземпляре **ResourceDictionary**, поэтому сначала необходимо получить либо один непосредственный **ResourceDictionary** где-либо в дереве объектов, получив [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) либо `Application.Current.Resources`.
 
-В коде на C\# или Microsoft Visual Basic можно сослаться на ресурс в данном [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) с помощью индексатора ([**Item**](https://msdn.microsoft.com/library/windows/apps/jj603134)). Элемент **ResourceDictionary** представляет собой словарь со строковыми ключами, поэтому индексатор использует такие ключи вместо целочисленного индекса. В коде, использующем расширения компонентов Visual C++ (C++/CX), применяйте [**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800).
+В коде на C\# или Microsoft Visual Basic можно сослаться на ресурс в данном [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) с помощью индексатора ([**Item**](https://msdn.microsoft.com/library/windows/apps/jj603134)). Элемент **ResourceDictionary** представляет собой словарь со строковыми ключами, поэтому индексатор использует такие ключи вместо целочисленного индекса. В коде, использующем расширения компонентов Visual C++ (C++/CX), применяйте [**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800).
 
 Во время использования кода для проверки или изменения [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) такие API, как [**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800) или [**Item**](https://msdn.microsoft.com/library/windows/apps/jj603134), не переходят от непосредственных ресурсов к ресурсам приложения. Это поведение анализатора XAML, которое вызывается только при загрузке страниц XAML. Во время выполнения область ключей самодостаточна в экземпляре **ResourceDictionary**, используемом в это время. Однако эта область не распространяется на [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801).
 
@@ -489,7 +493,7 @@ sealed partial class App : Application
 В сложных сценариях можно реализовать класс, поведение которого будет отличаться от поведения поиска ссылок на ресурсы XAML, описанного в этой теме. Для этого реализуется класс [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327), после чего можно пользоваться этим поведением, применяя для ссылок на ресурсы [расширение разметки CustomResource](https://msdn.microsoft.com/library/windows/apps/mt185580) вместо [StaticResource](../xaml-platform/staticresource-markup-extension.md) или [ThemeResource](../xaml-platform/themeresource-markup-extension.md). В большинстве приложений не будет сценариев, которым требуется такое поведение. Более подробную информацию см. в статье [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327).
 
  
-## Ссылки по теме
+## Статьи по теме
 
 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
 
@@ -513,6 +517,7 @@ sealed partial class App : Application
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

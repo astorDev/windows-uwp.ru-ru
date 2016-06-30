@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Создание и отображение базовой сетки
-description: Для представления объектов и поверхностей в трехмерных играх универсальной платформы Windows (UWP) обычно используются многоугольники.
+title: "Создание и отображение базовой сетки"
+description: "Для представления объектов и поверхностей в трехмерных играх универсальной платформы Windows (UWP) обычно используются многоугольники."
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c082456d5eb0cf1c5c697a6af5bc1d4de1f5ada2
+
 ---
 
 # Создание и отображение базовой сетки
@@ -445,6 +449,7 @@ m_swapChain->Present(1, 0);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

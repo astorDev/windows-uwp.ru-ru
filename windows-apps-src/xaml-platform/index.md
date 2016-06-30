@@ -1,8 +1,12 @@
 ---
 author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-description: В этом разделе содержатся статьи, объясняющие принципы программирования, которые, как правило, применимы к любому разрабатываемому приложению.
-title: Платформа XAML
+description: "В этом разделе содержатся статьи, объясняющие принципы программирования, которые, как правило, применимы к любому разрабатываемому приложению."
+title: "Платформа XAML"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4deae037857312f891c8c4beae2b6a89adc152cd
+
 ---
 
 # Платформа XAML
@@ -23,6 +27,7 @@ title: Платформа XAML
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

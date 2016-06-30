@@ -1,10 +1,13 @@
 ---
 author: Xansky
-Description: Здесь перечислены шаблоны элементов управления модели автоматизации пользовательского интерфейса Майкрософт, классы, которыми пользуются клиенты для доступа к ним, и интерфейсы, которыми пользуются поставщики для их реализации.
+Description: "Здесь перечислены шаблоны элементов управления модели автоматизации пользовательского интерфейса Майкрософт, классы, которыми пользуются клиенты для доступа к ним, и интерфейсы, которыми пользуются поставщики для их реализации."
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
-title: Шаблоны и интерфейсы элементов управления
+title: "Шаблоны и интерфейсы элементов управления"
 label: Control patterns and interfaces
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 9f38c3bd26ef7b409d4c743abf25a5b0a6455f20
+
 ---
 
 # Шаблоны и интерфейсы элементов управления  
@@ -43,10 +46,10 @@ template: detail.hbs
 | **SynchronizedInput** | [**ISynchronizedInputProvider**](https://msdn.microsoft.com/library/windows/apps/Dn279198) | Позволяет клиентским приложениям UI Automation направлять данные, вводимые с помощью мыши или клавиатуры, в определенный элемент пользовательского интерфейса. |
 | **Table** | [**ITableProvider**](https://msdn.microsoft.com/library/windows/apps/BR242623) | Используется для элементов управления, у которых есть сетка и заголовок. Например, табличный элемент управления "Календарь". |
 | **TableItem** | [**ITableItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242620) | Используется для элементов в таблице. |
-| **Text** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | Используется для полей ввода и документов, которые предоставляют текстовую информацию. Также см. разделы [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242634) и [**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/BR2426272). |
-| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/Hh701839) | Используется для доступа к ближайшему предку элемента, поддерживающему шаблон элемента управления **Text**. |
+| **Text** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | Используется для полей ввода и документов, которые предоставляют текстовую информацию. Также см. разделы [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) и [**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider2). |
+| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextchildprovider) | Используется для доступа к ближайшему предку элемента, поддерживающему шаблон элемента управления **Text**. |
 | **TextEdit** | Управляемые классы недоступны | Предоставляет доступ к элементу управления, изменяющему текст, например к элементу управления, который выполняет автозамену или позволяет вводить данные с помощью редактора метода ввода (IME). |
-| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242634) | Предоставляет доступ к диапазону непрерывного текста в текстовом контейнере, который реализует [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627). Также см. раздел [**ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/BR2426342). |
+| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) | Предоставляет доступ к диапазону непрерывного текста в текстовом контейнере, который реализует [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider). Также см. раздел [**ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider2). |
 | **Toggle** | [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) | Используется для элементов управления с переключаемым состоянием. Например, для [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/BR209316) и элементов меню, которые можно выбрать. |
 | **Transform** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | Используется для элементов управления, которые можно переместить, повернуть или размер которых можно изменить. Обычно используется для шаблона элемента управления "Преобразование" в конструкторах, формах, графических редакторах и приложениях для рисования. |
 | **Value** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | Позволяет клиенту получить или установить значение элемента управления, который не поддерживает диапазон значений. |
@@ -65,6 +68,7 @@ template: detail.hbs
 * [Специальные возможности](accessibility.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

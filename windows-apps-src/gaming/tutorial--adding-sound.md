@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Добавление звука
-description: На этом этапе мы познакомимся с тем, как в образце игры-шутера создается объект для воспроизведения звука с помощью API XAudio2.
+title: "Добавление звука"
+description: "На этом этапе мы познакомимся с тем, как в образце игры-шутера создается объект для воспроизведения звука с помощью API XAudio2."
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f9e536e71dd7b5c94d587a8bb66df3b41cc9a4ae
+
 ---
 
 # Добавление звука
@@ -205,10 +209,10 @@ Platform::Array<byte>^  MediaReader::LoadMedia(_In_ Platform::String^ filename)
 
 1.  Создает объект устройства чтения источника мультимедиа ([**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655)), вызывая [**MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110).
 2.  Создает тип мультимедиа ([**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850)) для декодирования звукового файла, вызывая [**MFCreateMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms693861). Данный метод определяет декодированный вывод как звуковой файл PCM, представляющий собой тип звукового файла, который может использовать XAudio2.
-3.  Задает тип декодированного выходящего мультимедиа для устройства чтения путем вызова [**IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432).
+3.  Задает тип декодированного выходящего мультимедиа для устройства чтения, направляя вызов [**IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432).
 4.  Создает буфер [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) и копирует результаты вызова [**IMFMediaType::MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) объекта [**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850). В результате буфер, в котором хранится звуковой файл после загрузки, форматируется.
 5.  Получает продолжительность (в секундах) звукового потока, вызывая [**IMFSourceReader::GetPresentationAttribute**](https://msdn.microsoft.com/library/windows/desktop/dd374662), а затем преобразует в продолжительность в байтах.
-6.  Считывает звуковой файл в виде потока путем вызова [**IMFSourceReader::ReadSample**](https://msdn.microsoft.com/library/windows/desktop/dd374665).
+6.  Считывает звуковой файл в виде потока, направляя вызов [**IMFSourceReader::ReadSample**](https://msdn.microsoft.com/library/windows/desktop/dd374665).
 7.  Копирует содержимое буфера образцов звуков в массив, возвращенный данным методом.
 
 Самое важное в **SoundEffect::Initialize** — создание исходного речевого объекта, **m\_sourceVoice**, из управляющего аудиоустройства. Исходная речь используется для воспроизведения буфера звуковых данных, полученных из **MediaReader::LoadMedia**.
@@ -298,7 +302,7 @@ void SoundEffect::PlaySound(_In_ float volume)
 }
 ```
 
-Чтобы воспроизвести звук, данный метод использует объект исходной речи **m\_sourceVoice** для воспроизведения буфера звуковых данных **m\_soundData**. Он создает [**XAUDIO2\_BUFFER**](https://msdn.microsoft.com/library/windows/desktop/ee419228), для которого обеспечивает ссылку на буфер звуковых данных, а затем отправляет ее в вызове [**IXAudio2SourceVoice::SubmitSourceBuffer**](https://msdn.microsoft.com/library/windows/desktop/ee418473). После добавления в очередь звуковых данных **SoundEffect::PlaySound** начинает воспроизведение путем вызова [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471).
+Чтобы воспроизвести звук, данный метод использует объект исходной речи **m\_sourceVoice** для воспроизведения буфера звуковых данных **m\_soundData**. Он создает [**XAUDIO2\_BUFFER**](https://msdn.microsoft.com/library/windows/desktop/ee419228), для которого обеспечивает ссылку на буфер звуковых данных, а затем отправляет ее в вызове [**IXAudio2SourceVoice::SubmitSourceBuffer**](https://msdn.microsoft.com/library/windows/desktop/ee418473). После добавления в очередь звуковых данных **SoundEffect::PlaySound** начинает воспроизведение, направляя вызов [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471).
 
 Когда происходит контакт между снарядом и мишенью, вызов **SoundEffect::PlaySound** воспроизводит шум.
 
@@ -559,6 +563,7 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

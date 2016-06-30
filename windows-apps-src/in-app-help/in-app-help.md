@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: Вы сможете проектировать эффективную справку, которая будет отображаться в приложении в ответ на действия пользователя.
-title: Здесь вы найдете рекомендации по проектированию справки в приложении.
+Description: "Вы сможете проектировать эффективную справку, которая будет отображаться в приложении в ответ на действия пользователя."
+title: "Здесь вы найдете рекомендации по проектированию справки в приложении."
 label: In-app help
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 7edad75b1639768023eb8add1e23fe0aafb0b674
+
 ---
 
 # Страницы справки в приложении
@@ -52,6 +56,7 @@ template: detail.hbs
 * [Руководство по справке для приложений](guidelines-for-app-help.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

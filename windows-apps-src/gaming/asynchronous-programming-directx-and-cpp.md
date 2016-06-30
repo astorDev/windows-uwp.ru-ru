@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Асинхронное программирование (DirectX и C++)
-description: В данной статье рассматриваются различные вопросы использования асинхронного программирования и потоковой модели с DirectX.
+title: "Асинхронное программирование (DirectX и C++)"
+description: "В данной статье рассматриваются различные вопросы использования асинхронного программирования и потоковой модели с DirectX."
 ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 67a75e9d1324e7ac50e0575bfd7bda870a87efb2
+
 ---
 
 # Асинхронное программирование (DirectX и C++)
@@ -63,6 +67,7 @@ ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

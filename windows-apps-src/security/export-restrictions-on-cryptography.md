@@ -1,60 +1,65 @@
 ---
-title: Export restrictions on cryptography
-description: Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Windows Store.
+title: "Ограничения на экспорт, связанные со средствами шифрования"
+description: "В данной статье рассказывается, как определить, используются ли в вашем приложении средства шифрования, из-за которых вам может быть отказано в публикации приложения в Магазине Windows."
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 37d6131891e93d73021c860df45d1b5fdd7cfa53
+
 ---
 
-# Export restrictions on cryptography
+# Ограничения на экспорт, связанные со средствами шифрования
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Windows Store.
+В данной статье рассказывается, как определить, используются ли в вашем приложении средства шифрования, из-за которых вам может быть отказано в публикации приложения в Магазине Windows.
 
-The Bureau of Industry and Security in the United States Department of Commerce regulates the export of technology that uses certain types of encryption. All apps listed in the Windows Store must comply with these laws and regulations because the app files can be stored in the United States. Even apps that are uploaded by app developers from other countries for distribution outside of the United States must comply with these regulations. Consequently, when submitting an app to the Windows Store, all app developers must make sure that their apps don't contain any technology that is restricted by these regulations.
+Управление промышленности и безопасности министерства торговли США регулирует экспорт технологий, использующих определенные виды шифрования. Все приложения, размещенные в Магазине Windows, должны соблюдать эти законы, так как файлы приложений могут храниться в США. Этим требованиям должны соответствовать даже приложения, выложенные разработчиками из других стран для распространения за пределами США. Соответственно, при отправке приложения в Магазин Windows все разработчики должны подтверждать, что их приложения не содержат технологий, на использование которых наложены ограничения согласно нормативным требованиям.
 
-> **Note**  The information provided here provides some guidance, but it is your responsibility as the app developer who is publishing apps in the Windows Store to make sure that your app complies with all applicable laws and regulations.
+> **Примечание.** В данной статье приведены некоторые рекомендации, но вы как разработчик, публикующий приложения в Магазине Windows, несете полную ответственность за соответствие ваших приложений требованиям всех применимых законов и нормативных актов.
 
  
 
-For more info about the U.S.
+Подробнее о министерстве торговли США и управлении промышленности и безопасности см. в разделе [Об управлении промышленности и безопасности](http://go.microsoft.com/fwlink/p/?LinkID=245644).
 
-Department of Commerce and the Bureau of Industry and Security, see [About the Bureau of Industry and Security](http://go.microsoft.com/fwlink/p/?LinkID=245644).
+Сведения о Правилах экспортного управления (EAR), которые регулируют экспорт технологий, содержащих средства шифрования, см. в статье [Директивы EAR для объектов, использующих шифрование](http://go.microsoft.com/fwlink/p/?LinkID=245645).
 
-## For info about the Export Administration Regulations (EAR) that govern the export of technology that includes encryption, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+## Регламентированное использование
 
-Governed uses First, determine if your app uses a type of cryptography that is governed by the Export Administration Regulations.
+Прежде всего, определите, используется ли в вашем приложении тип шифрования, попадающий под юрисдикцию Правил экспортного управления (EAR). Ниже приведены некоторые примеры, но учтите, что в этом списке присутствуют не все возможные области применения шифрования.
 
-> The question includes the examples shown in the list here; but remember that this list doesn't include every possible application of cryptography.
+> **Важно!** Следует принимать во внимание не только написанный вами код, но и библиотеки программного обеспечения, служебные программы и компоненты операционных систем, которые включает или на которые ссылается ваше приложение.
 
--   **Important**  Consider not only the code you wrote for your app, but also all the software libraries, utilities and operating system components that your app includes or links to.
--   Any use of a digital signature, such as authentication or integrity checking
--   Encryption of any data or files that your app uses or accesses
--   Key management, certificate management, or anything that interacts with a public key infrastructure
--   Using a secure communication channel such as NTLM, Kerberos, Secure Sockets Layer (SSL), or Transport Layer Security (TLS)
--   Encrypting passwords or other forms of information security
--   Copy protection or digital rights management (DRM)
+-   Любое использование цифровой подписи — например, для проверки подлинности или проверки целостности
+-   Шифрование любых данных или файлов, которые ваше приложение использует или обращается к ним
+-   Управление ключами, управление сертификатами или иные действия, связанные с инфраструктурой открытых ключей
+-   Использование безопасного коммуникационного канала — например, NTLM, Kerberos, протокола SSL или протокола TLS
+-   Шифрование паролей и других форм защиты информации
+-   Защита копирования или управление цифровыми правами (DRM)
+-   Антивирусная защита
 
-Antivirus protection
+Полный актуальный перечень приложений для шифрования см. в статье [Директивы EAR для объектов, использующих шифрование](http://go.microsoft.com/fwlink/p/?LinkID=245645).
 
-## For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+## Неограниченное использование
 
-Non-restricted uses Note that some of the applications of cryptography are not restricted.
+Обратите внимание, что некоторые приложения для шифрования не запрещены. Ограничения не наложены на указанные ниже задачи.
 
--   Here are the unrestricted tasks:
--   Password encryption
--   Copy protection
--   Authentication
--   Digital rights management
+-   Шифрование паролей
+-   Защита копирования
+-   Проверка подлинности
+-   Управление цифровыми правами
+-   Использование цифровых подписей
 
-Using digital signatures
+Полный актуальный перечень приложений для шифрования см. в статье [Директивы EAR для объектов, использующих шифрование](http://go.microsoft.com/fwlink/p/?LinkID=245645).
 
-For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+Если ваше приложение вызывает, поддерживает, содержит или использует средства шифрования для выполнения каких-либо задач, не включенных в этот список, то для него потребуется классификационный номер экспортного контроля (ECCN).
 
-If your app calls, supports, contains, or uses cryptography or encryption for any task that is not in this list, it needs an Export Commodity Classification Number (ECCN).
+Если у вас нет ECCN, см. статью [Вопросы и ответы по ECCN](http://go.microsoft.com/fwlink/p/?LinkID=245646).
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

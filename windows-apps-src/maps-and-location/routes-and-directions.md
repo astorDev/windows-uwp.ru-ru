@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-title: Отображение маршрутов и направлений на карте
-description: Запрос маршрутов и направлений и их отображение в вашем приложении.
+author: msatranjr
+title: "Отображение маршрутов и направлений на карте"
+description: "Запрос маршрутов и направлений и их отображение в вашем приложении."
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 2132b0c76a78dac5250ea85f08abd0b1edbd6ed7
+
 ---
 
 # Отображение маршрутов и направлений на карте
@@ -17,7 +20,7 @@ ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 
 -   [Пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-**Подсказка.**  Если работа с картами является второстепенной функцией приложения, то рекомендуется использовать приложение «Карты Windows». Вы можете использовать `bingmaps:`, `ms-drive-to:`и схемы URI `ms-walk-to:` для запуска приложения «Карты Windows» с определенными картами и маршрутами. Дополнительные сведения см. в разделе [Запуск приложения «Карты Windows»](https://msdn.microsoft.com/library/windows/apps/mt228341).
+**Подсказка.**  Если работа с картами является второстепенной функцией приложения, то рекомендуется использовать приложение «Карты Windows». Вы можете использовать `bingmaps:`, `ms-drive-to:`и схемы URI `ms-walk-to:` для запуска приложения "Карты Windows" с определенными картами и маршрутами. Дополнительные сведения см. в разделе [Запуск приложения "Карты Windows"](https://msdn.microsoft.com/library/windows/apps/mt228341).
 
  
 
@@ -34,7 +37,7 @@ ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
             **MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) содержит коллекцию объектов [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955). Получите доступ к этой коллекции с помощью свойства [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) класса **MapRoute**.
 -   Каждый [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) содержит коллекцию объектов [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961). Получите доступ к этой коллекции с помощью свойства [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) класса **MapRouteLeg**.
 
-## Отображение маршрутов
+## Отображение направлений
 
 
 Получите маршрут и направления, чтобы добраться до места пешком или на машине, вызвав методы класса [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938), например [**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943) или [**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953). В объекте [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) содержится объект [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937), доступ к которому можно получить с помощью свойства [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940).
@@ -47,7 +50,7 @@ ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 
 Созданный класс [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) имеет свойства, показывающие время прохождения маршрута и его длину, а также содержит коллекцию объектов [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955), составляющих отрезки маршрута. Каждый объект **MapRouteLeg** содержит коллекцию объектов [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961). В объекте **MapRouteManeuver** содержатся направления, доступ к которым можно получить с помощью свойства [**InstructionText**](https://msdn.microsoft.com/library/windows/apps/dn636964).
 
-**Важно!**  Прежде чем использовать службы карт, необходимо указать ключ проверки подлинности карт. Дополнительные сведения см. в статье [Запрос ключа проверки подлинности карт](authentication-key.md).
+**Важно!** Прежде чем использовать службы карт, необходимо указать ключ проверки подлинности карт. Дополнительные сведения см. в статье [Запрос ключа проверки подлинности карт](authentication-key.md).
 
  
 
@@ -129,7 +132,7 @@ You have reached your destination.
 
 Чтобы отобразить [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) в [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), постройте [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) с **MapRoute**. Затем добавьте **MapRouteView** в коллекцию [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) элемента **MapControl**.
 
-**Важно!**  Прежде чем использовать службы карт или элемент управления картой, необходимо указать ключ проверки подлинности карт. Дополнительные сведения см. в статье [Запрос ключа проверки подлинности карт](authentication-key.md).
+**Важно!** Прежде чем использовать службы карт или элемент управления картой, необходимо указать ключ проверки подлинности карт. Дополнительные сведения см. в статье [Запрос ключа проверки подлинности карт](authentication-key.md).
 
  
 
@@ -180,11 +183,11 @@ private async void ShowRouteOnMap()
 
 В этом примере показан следующий элемент управления [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) с именем **MapWithRoute**.
 
-![Отображение карты с маршрутом](images/routeonmap.png)
+![map control with route displayed.](images/routeonmap.png)
 
-## Ссылки по теме
+## Связанные разделы
 
-* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
 * [Пример карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Видео Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
@@ -192,6 +195,7 @@ private async void ShowRouteOnMap()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

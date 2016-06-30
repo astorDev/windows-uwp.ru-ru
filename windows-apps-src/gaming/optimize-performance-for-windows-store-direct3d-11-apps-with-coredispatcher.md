@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Минимизация задержки ввода в играх DirectX универсальной платформы Windows (UWP)
-description: Задержка ввода может серьезно повлиять на впечатление от игры, поэтому чем меньше задержка — тем лучше выглядит продукт.
+title: "Минимизация задержки ввода в играх DirectX универсальной платформы Windows (UWP)"
+description: "Задержка ввода может серьезно повлиять на впечатление от игры, поэтому чем меньше задержка — тем лучше выглядит продукт."
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 19bcf043f3fc8c729f5f9fbbeee237bd1749443d
+
 ---
 
 #  Минимизация задержки ввода в играх DirectX универсальной платформы Windows (UWP)
@@ -256,6 +260,7 @@ void JigsawPuzzleMain::StartRenderThread()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

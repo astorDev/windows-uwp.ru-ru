@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
-description: В этой статье показано, как с помощью API в пространстве имен Windows.Media.Audio создавать звуковые графы для передачи, микширования и обработки звука.
-title: Звуковые графики
+description: "В этой статье показано, как с помощью API в пространстве имен Windows.Media.Audio создавать звуковые графы для передачи, микширования и обработки звука."
+title: "Звуковые графики"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7e8df66a1fc4c95cb8b0b4be9eded8ef58b6803a
+
 ---
 
 # Звуковые графики
@@ -155,7 +159,7 @@ API звуковых графов среды выполнения Windows обе
 
 -   Как и в приведенном выше примере узла ввода аудиокадра, потребуется объявить COM-интерфейс **IMemoryBufferByteAccess** и настроить проект на разрешение небезопасного кода, чтобы получить доступ к базовому звуковому буферу.
 -   Получите [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454) аудиокадра, вызвав [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878).
--   Получите экземпляр COM-интерфейса **IMemoryBufferByteAccess** из звукового буфера путем вызова метода [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457).
+-   Получите экземпляр COM-интерфейса **IMemoryBufferByteAccess** из звукового буфера путем вызова метода [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457)..
 -   Получите указатель на необработанные данные звукового буфера, вызвав метод **IMemoryBufferByteAccess.GetBuffer**, и приведите его к типу примеров звуковых данных.
 
 ## Соединения узлов и узлы субмикширования
@@ -208,6 +212,7 @@ API звукового графа позволяет добавить звуко
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

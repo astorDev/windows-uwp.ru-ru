@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Справочные материалы по переносу с GLSL на HLSL
-description: Вы переносите код с GLSL на HLSL, когда портируете графическую архитектуру с OpenGL ES 2.0 на Direct3D 11, чтобы создавать игры для универсальной платформы Windows (UWP).
+title: "Справочные материалы по переносу с GLSL на HLSL"
+description: "Вы переносите код с GLSL на HLSL, когда портируете графическую архитектуру с OpenGL ES 2.0 на Direct3D 11, чтобы создавать игры для универсальной платформы Windows (UWP)."
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: 02a3ba1768b6fa7b09b6c9f637a72d88c0cef604
+
 ---
 
 # Справочные материалы по переносу с GLSL на HLSL
@@ -566,6 +570,7 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

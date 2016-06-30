@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Используйте анимацию перетаскивания, когда пользователь перемещает объекты, например передвигает элемент в списке или размещает один элемент выше другого.
-title: Анимации перетаскивания в приложениях UWP
+Description: "Используйте анимацию перетаскивания, когда пользователь перемещает объекты, например передвигает элемент в списке или размещает один элемент выше другого."
+title: "Анимации перетаскивания в приложениях UWP"
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: c975ba3d03c06009710f4f57edf8a4cc517ad90c
+
 ---
 
 # Анимации перетаскивания
@@ -66,6 +70,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

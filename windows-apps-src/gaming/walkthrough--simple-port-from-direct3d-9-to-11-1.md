@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Пошаговое руководство. Перенос простого приложения Direct3D 9 в DirectX 11 и UWP
-description: Это упражнение по переносу научит вас переносить простую структуру прорисовки из Direct3D 9 в Direct3D 11 и универсальную платформу Windows (UWP).
+title: "Пошаговое руководство. Перенос простого приложения Direct3D 9 в DirectX 11 и UWP"
+description: "Это упражнение по переносу научит вас переносить простую структуру прорисовки из Direct3D 9 в Direct3D 11 и универсальную платформу Windows (UWP)."
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 27c6f82e97e9eb24dedcc5d83a18e6aba6961194
+
 ---
 
 # Пошаговое руководство: перенос простого приложения Direct3D 9 в DirectX 11 и UWP
@@ -93,6 +97,7 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

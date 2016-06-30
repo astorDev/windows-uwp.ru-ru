@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Игровые технологии для приложений универсальной платформы Windows (UWP)
-description: В данном руководстве содержатся сведения о технологиях, доступных для разработки игр универсальной платформы Windows (UWP).
+title: "Игровые технологии для приложений универсальной платформы Windows (UWP)"
+description: "В данном руководстве содержатся сведения о технологиях, доступных для разработки игр универсальной платформы Windows (UWP)."
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3c7807d0b46a32bfe90c79b7eee3111039ca94ab
+
 ---
 
 # Игровые технологии для приложений универсальной платформы Windows (UWP)
@@ -351,6 +355,7 @@ ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

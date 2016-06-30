@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Сопоставление компонентов DirectX 9 и API DirectX 11
-description: Прочитав этот раздел, вы поймете, как компоненты, которые использует ваша игра с Direct3D 9, будут перенесены в Direct3D 11 и на универсальную платформу Windows (UWP).
+title: "Сопоставление компонентов DirectX 9 и API DirectX 11"
+description: "Прочитав этот раздел, вы поймете, как компоненты, которые использует ваша игра с Direct3D 9, будут перенесены в Direct3D 11 и на универсальную платформу Windows (UWP)."
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3a9e9c32ed2d892674592f32d0f067fed668d9d1
+
 ---
 
 # Сопоставление компонентов DirectX 9 и API DirectX 11
@@ -669,6 +673,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

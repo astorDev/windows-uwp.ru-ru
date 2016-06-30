@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 1361E82A-202F-40F7-9239-56F00DFCA54B
-description: В этой статье описываются этапы захвата фотографий и видео с помощью API MediaCapture, в том числе инициализация и завершение работы MediaCapture, а также управление изменениями ориентации устройства.
-title: Захват фотографий и видео с помощью MediaCapture
+description: "В этой статье описываются этапы захвата фотографий и видео с помощью API MediaCapture, в том числе инициализация и завершение работы MediaCapture, а также управление изменениями ориентации устройства."
+title: "Захват фотографий и видео с помощью MediaCapture"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
+
 ---
 
 # Захват фотографий и видео с помощью MediaCapture
@@ -221,105 +225,106 @@ title: Захват фотографий и видео с помощью MediaCa
 
 В обработчике события **Application.Suspending** необходимо отменить регистрацию обработчиков событий ориентации устройства и экрана, а также завершить работу объекта **MediaCapture**. Событие [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720), которое не зарегистрировано в этом обработчике, необходимо для другой задачи, связанной с жизненным циклом приложения, как описано далее в этой статье.
 
-Внимание Необходимо запросить приостановку задержки, вызвав метод [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) в начале приостановки обработчика события. В результате этого система будет ожидать сигнала о завершении операции, прежде чем демонтировать приложение. Это необходимо, поскольку операции завершения работы **MediaCapture** асинхронны. По этой причине обработчик события **Application.Suspending** может завершить работу до прекращения работы камеры.
+**Внимание!** Необходимо запросить приостановку задержки, вызвав метод [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) в начале приостановки обработчика события. В результате этого система будет ожидать сигнала о завершении операции, прежде чем демонтировать приложение. Это необходимо, поскольку операции завершения работы **MediaCapture** асинхронны. По этой причине обработчик события **Application.Suspending** может завершить работу до прекращения работы камеры. После завершения асинхронных вызовов необходимо устранить задержку, вызвав метод [**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685).
 
-[!code-cs[После завершения асинхронных вызовов необходимо устранить задержку, вызвав метод [**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685).](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSuspending)]
+[!code-cs[Приостановка](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSuspending)]
 
-Suspending
+В обработчике события **Application.Resuming** необходимо зарегистрировать обработчики событий ориентации устройства и экрана, зарегистрировать событие **SystemMediaTransportControls.PropertyChanged** и инициализировать объект **MediaCapture**.
 
-[!code-cs[В обработчике события **Application.Resuming** необходимо зарегистрировать обработчики событий ориентации устройства и экрана, зарегистрировать событие **SystemMediaTransportControls.PropertyChanged** и инициализировать объект **MediaCapture**.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
+[!code-cs[Возобновление](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
 
-Возобновление
+Событие [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) дает возможность впервые зарегистрировать обработчики событий ориентации устройства и экрана и инициализировать объект **MediaCapture**.
 
-[!code-cs[Событие [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) дает возможность впервые зарегистрировать обработчики событий ориентации устройства и экрана и инициализировать объект **MediaCapture**.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatedTo)]
+[!code-cs[OnNavigatedTo](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatedTo)]
 
-OnNavigatedTo
+Если в приложении несколько страниц, необходимо очистить объекты захвата мультимедиа в обработчике событий [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509).
 
-[!code-cs[Если в приложении несколько страниц, необходимо очистить объекты захвата мультимедиа в обработчике событий [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509).](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatingFrom)]
+[!code-cs[OnNavigatingFrom](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatingFrom)]
 
-OnNavigatingFrom Чтобы приложение корректно работало на устройствах с поддержкой нескольких открытых окон, оно должно отвечать в свернутом и восстановленном виде. Для этого необходимо обработать событие [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720).
+Чтобы приложение корректно работало на устройствах с поддержкой нескольких открытых окон, оно должно отвечать в свернутом и восстановленном виде. Для этого необходимо обработать событие [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720). Инициализируйте переменную-член для хранения ссылки на объект [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) в приложении.
 
-[!code-cs[Инициализируйте переменную-член для хранения ссылки на объект [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) в приложении.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSystemMediaTransportControls)]
+[!code-cs[DeclareSystemMediaTransportControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSystemMediaTransportControls)]
 
-DeclareSystemMediaTransportControls Код, который регистрирует и отменяет регистрацию события **PropertyChanged**, необходимо добавить в события жизненного цикла приложения, как показано в примерах выше. В обработчике события проверьте, было ли событие запущено в результате изменения свойства [**SystemMediaTransportControlsProperty.SoundLevel**](https://msdn.microsoft.com/library/windows/apps/dn278721). Если это так, проверьте значение свойства. Если значением является [**SoundLevel.Muted**](https://msdn.microsoft.com/library/windows/apps/hh700852), приложение было свернуто и необходимо соответствующим образом очистить ресурсы захвата мультимедиа. В противном случае событие сигнализирует о том, что окно приложения восстановлено и следует снова запустить инициализацию ресурсов захвата мультимедиа.
+Код, который регистрирует и отменяет регистрацию события **PropertyChanged**, необходимо добавить в события жизненного цикла приложения, как показано в примерах выше. В обработчике события проверьте, было ли событие запущено в результате изменения свойства [**SystemMediaTransportControlsProperty.SoundLevel**](https://msdn.microsoft.com/library/windows/apps/dn278721). Если это так, проверьте значение свойства. Если значением является [**SoundLevel.Muted**](https://msdn.microsoft.com/library/windows/apps/hh700852), приложение было свернуто и необходимо соответствующим образом очистить ресурсы захвата мультимедиа. В противном случае событие сигнализирует о том, что окно приложения восстановлено и следует снова запустить инициализацию ресурсов захвата мультимедиа. Доступ к свойству **SoundLevel** следует получать в потоке пользовательского интерфейса, поэтому код в этом методе содержится в вызове метода [**Dispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
 
-[!code-cs[Доступ к свойству **SoundLevel** следует получать в потоке пользовательского интерфейса, поэтому код в этом методе содержится в вызове метода [**Dispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSystemMediaControlsPropertyChanged)]
+[!code-cs[SystemMediaControlsPropertyChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSystemMediaControlsPropertyChanged)]
 
-## SystemMediaControlsPropertyChanged
+## Дополнительные сведения о пользовательском интерфейсе для захвата мультимедиа
 
-### Дополнительные сведения о пользовательском интерфейсе для захвата мультимедиа
+### Настройка автоматического поворота
 
-Настройка автоматического поворота Как упоминалось в предыдущем разделе, посвященном повороту потока предварительного просмотра, некоторые устройства поддерживают параметр [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259), который предотвращает поворот страниц, в том числе элемента [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278), в котором отображается содержимое для предварительного просмотра, при вращении устройства. Это обеспечивает удобство работы пользователей на устройствах, которые поддерживают такую возможность. Установить это значение можно при запуске приложения или в начале предварительного просмотра.
+Как упоминалось в предыдущем разделе, посвященном повороту потока предварительного просмотра, некоторые устройства поддерживают параметр [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259), который предотвращает поворот страниц, в том числе элемента [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278), в котором отображается содержимое для предварительного просмотра, при вращении устройства. Это обеспечивает удобство работы пользователей на устройствах, которые поддерживают такую возможность. Установить это значение можно при запуске приложения или в начале предварительного просмотра. Обратите внимание, что поворот при предварительном просмотре необходимо внедрить для устройств, которые не поддерживают настройки автоповорота.
 
-[!code-cs[Обратите внимание, что поворот при предварительном просмотре необходимо внедрить для устройств, которые не поддерживают настройки автоповорота.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetAutoRotationPreferences)]
+[!code-cs[SetAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetAutoRotationPreferences)]
 
-### SetAutoRotationPreferences
+### Управление ориентацией элемента пользовательского интерфейса
 
-Управление ориентацией элемента пользовательского интерфейса Обычно пользователям необходимо, чтобы элементы пользовательского интерфейса в приложении камеры, например кнопки для фото- и видеозахвата, вращались вместе с устройством при предварительном просмотре видео. Описанный ниже метод иллюстрирует использование двух приведенных ранее вспомогательных методов для правильной ориентации кнопок в пользовательском интерфейсе камеры. Его необходимо вызывать из обработчиков событий [**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) и [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407), а также при первом запуске приложения.
+Обычно пользователям необходимо, чтобы элементы пользовательского интерфейса в приложении камеры, например кнопки для фото- и видеозахвата, вращались вместе с устройством при предварительном просмотре видео. Описанный ниже метод иллюстрирует использование двух приведенных ранее вспомогательных методов для правильной ориентации кнопок в пользовательском интерфейсе камеры. Его необходимо вызывать из обработчиков событий [**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) и [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407), а также при первом запуске приложения. Реализация может быть разной в зависимости от пользовательского интерфейса приложения.
 
-[!code-cs[Реализация может быть разной в зависимости от пользовательского интерфейса приложения.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateButtonOrientation)]
+[!code-cs[UpdateButtonOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateButtonOrientation)]
 
-UpdateButtonOrientation
+При завершении работы приложения или переходе на страницу, не связанную с захватом мультимедиа, установите для параметра автоповорота значение [**None**](https://msdn.microsoft.com/library/windows/apps/br226142), чтобы пользовательский интерфейс вращался правильно.
 
-[!code-cs[При завершении работы приложения или переходе на страницу, не связанную с захватом мультимедиа, установите для параметра автоповорота значение [**None**](https://msdn.microsoft.com/library/windows/apps/br226142), чтобы пользовательский интерфейс вращался правильно.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRevertAutoRotationPreferences)]
+[!code-cs[RevertAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRevertAutoRotationPreferences)]
 
-### RevertAutoRotationPreferences
+### Поддержка синхронного фото- и видеозахвата
 
-Поддержка синхронного фото- и видеозахвата API [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) позволяет одновременно захватывать фотографии и видео на устройствах, которые поддерживают эту функцию. Для краткости в этом примере используется свойство [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843), чтобы определить, поддерживается ли синхронный захват видео и фото, но более надежный и рекомендуемый способ это делать — использовать профили камеры.
+API [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) позволяет одновременно захватывать фотографии и видео на устройствах, которые поддерживают эту функцию. Для краткости в этом примере используется свойство [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843), чтобы определить, поддерживается ли синхронный захват видео и фото, но более надежный и рекомендуемый способ это делать — использовать профили камеры. Подробнее см. [Профили камеры](camera-profiles.md).
 
-Дополнительные сведения см. в разделе [Профили камеры](camera-profiles.md). Приведенный ниже вспомогательный метод обновляет элементы управления приложения, чтобы они соответствовали текущему состоянию захвата.
+Приведенный ниже вспомогательный метод обновляет элементы управления приложения, чтобы они соответствовали текущему состоянию захвата. Вызывайте этот метод при изменении состояния захвата приложения, например при запуске или остановке видеозахвата.
 
-[!code-cs[Вызывайте этот метод при изменении состояния захвата приложения, например при запуске или остановке видеозахвата.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateCaptureControls)]
+[!code-cs[UpdateCaptureControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateCaptureControls)]
 
-### UpdateCaptureControls
+### Поддержка функций пользовательского интерфейса на мобильных устройствах
 
-Поддержка функций пользовательского интерфейса на мобильных устройствах Приведенный в этой статье код работает в универсальном приложении для Windows. С помощью нескольких дополнительных строк кода можно воспользоваться дополнительными функциями пользовательского интерфейса, которые доступны только на мобильных устройствах.
+Приведенный в этой статье код работает в универсальном приложении для Windows. С помощью нескольких дополнительных строк кода можно воспользоваться дополнительными функциями пользовательского интерфейса, которые доступны только на мобильных устройствах. Чтобы использовать их, добавьте в проект ссылку на Microsoft Mobile Extension SDK для универсальной платформы приложений.
 
-**Чтобы использовать их, добавьте в проект ссылку на Microsoft Mobile Extension SDK для универсальной платформы приложений.**
+**Как добавить ссылку на мобильный SDK расширения для поддержки кнопки камеры**
 
-1.  Как добавить ссылку на мобильный SDK расширения для поддержки кнопки камеры
+1.  В **обозревателе решений** щелкните правой кнопкой мыши **Ссылки** и выберите **Добавить ссылку**.
 
-2.  В **обозревателе решений** щелкните правой кнопкой мыши **Ссылки** и выберите **Добавить ссылку**.
+2.  Разверните узел **универсальных приложений для Windows** и выберите **Расширения**.
 
-3.  Разверните узел **универсальных приложений для Windows** и выберите **Расширения**.
+3.  Установите флажок **Microsoft Desktop Extension SDK для универсальной платформы приложений**.
 
-Установите флажок **Microsoft Desktop Extension SDK для универсальной платформы приложений**. На мобильных устройствах доступен элемент управления [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864), который предоставляет пользователю сведения о состоянии устройства. Этот элемент занимает место на экране, что может повлиять на возможности пользовательского интерфейса для захвата мультимедиа. Строку строка состояния можно скрыть с помощью метода [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339), однако его следует вызывать из условного блока, в котором метод [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) определяет доступность API. Этот метод возвратит значение true только на мобильных устройствах, которые поддерживают строку состояния.
+На мобильных устройствах доступен элемент управления [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864), который предоставляет пользователю сведения о состоянии устройства. Этот элемент занимает место на экране, что может повлиять на возможности пользовательского интерфейса для захвата мультимедиа. Строку строка состояния можно скрыть с помощью метода [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339), однако его следует вызывать из условного блока, в котором метод [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) определяет доступность API. Этот метод возвратит значение true только на мобильных устройствах, которые поддерживают строку состояния. Строку состояния необходимо скрывать при запуске приложения и во время предварительного просмотра с камеры.
 
-[!code-cs[Строку состояния необходимо скрывать при запуске приложения и во время предварительного просмотра с камеры.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
+[!code-cs[HideStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
 
-HideStatusBar
+Когда приложение завершает работу или пользователь покидает страницу захвата мультимедиа, этот элемент управления можно снова сделать видимым.
 
-[!code-cs[Когда приложение завершает работу или пользователь покидает страницу захвата мультимедиа, этот элемент управления можно снова сделать видимым.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
+[!code-cs[ShowStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
 
-ShowStatusBar На некоторых мобильных устройствах есть специальная кнопка камеры, которую некоторые пользователи применяют вместо элемента управления на экране. Чтобы получать уведомления о нажатии кнопки камеры, зарегистрируйте обработчик события [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805).
+На некоторых мобильных устройствах есть специальная кнопка камеры, которую некоторые пользователи применяют вместо элемента управления на экране. Чтобы получать уведомления о нажатии кнопки камеры, зарегистрируйте обработчик события [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805). Поскольку этот API доступен только на мобильных устройствах, перед попыткой получить к нему доступ необходимо снова использовать **IsTypePresent**, чтобы убедиться, что API поддерживается на текущем устройстве.
 
-[!code-cs[Поскольку этот API доступен только на мобильных устройствах, перед попыткой получить к нему доступ необходимо снова использовать **IsTypePresent**, чтобы убедиться, что API поддерживается на текущем устройстве.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
+[!code-cs[PhoneUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
 
-[!code-cs[PhoneUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
+[!code-cs[RegisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
 
-RegisterCameraButtonHandler
+В обработчике события **CameraPressed** можно начать фотозахват.
 
-[!code-cs[В обработчике события **CameraPressed** можно начать фотозахват.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
+[!code-cs[CameraPressed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
 
-CameraPressed
+Когда приложение завершает работу или пользователь покидает страницу захвата мультимедиа, отмените регистрацию обработчика кнопки.
 
-[!code-cs[Когда приложение завершает работу или пользователь покидает страницу захвата мультимедиа, отмените регистрацию обработчика кнопки.](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
+[!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
-UnregisterCameraButtonHandler **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP).
+**Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132)
+## Связанные темы
 
-* [Связанные темы](camera-profiles.md)
-* [Профили камеры](high-dynamic-range-hdr-photo-capture.md)
-* [Фотозахват HDR (High Dynamic Range)](capture-device-controls-for-photo-and-video-capture.md)
-* [Доступ к элементам управления фото- и видеозахватом на устройстве](capture-device-controls-for-video-capture.md)
-* [Доступ к элементам управления видеозахватом на устройстве](effects-for-video-capture.md)
-* [Эффекты для видеозахвата](scene-analysis-for-media-capture.md)
-* [Анализ сцен для захвата мультимедиа](variable-photo-sequence.md)
-* [Переменная последовательность фотографий](get-a-preview-frame.md)
-* [Получение кадра предварительного просмотра](http://go.microsoft.com/fwlink/?LinkId=619479)
+* [Профили камеры](camera-profiles.md)
+* [Фотозахват HDR (High Dynamic Range)](high-dynamic-range-hdr-photo-capture.md)
+* [Доступ к элементам управления фото- и видеозахватом на устройстве](capture-device-controls-for-photo-and-video-capture.md)
+* [Доступ к элементам управления видеозахватом на устройстве](capture-device-controls-for-video-capture.md)
+* [Эффекты для видеозахвата](effects-for-video-capture.md)
+* [Анализ сцен для захвата мультимедиа](scene-analysis-for-media-capture.md)
+* [Переменная последовательность фотографий](variable-photo-sequence.md)
+* [Получение кадра предварительного просмотра](get-a-preview-frame.md)
+* [Пример CameraStarterKit](http://go.microsoft.com/fwlink/?LinkId=619479)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

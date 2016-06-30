@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
-description: Узнайте о том, как устанавливать библиотеки Microsoft Advertising.
-title: Установка библиотек Microsoft Advertising
+description: "Узнайте о том, как устанавливать библиотеки Microsoft Advertising."
+title: "Установка библиотек Microsoft Advertising"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
+
 
 ---
 
@@ -91,6 +95,7 @@ title: Установка библиотек Microsoft Advertising
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
-title: Печать из приложения
-description: Узнайте, как печатать документы из универсального приложения для Windows. В этом разделе также показано, как печатать отдельные страницы.
+title: "Печать из приложения"
+description: "Узнайте, как печатать документы из универсального приложения для Windows. В этом разделе также показано, как печатать отдельные страницы."
+translationtype: Human Translation
+ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
+ms.openlocfilehash: 363c19cfc15a883c4b6d951c59c63187f4239dec
+
 ---
 # Печать из приложения
 
@@ -114,7 +118,7 @@ async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 
 ## Форматирование содержимого приложения
 
-При вызове **ShowPrintUIAsync** порождается событие [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597). Обработчик событий **PrintTaskRequested**, показанный на данном этапе, создает класс [**PrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436), вызывая метод [**PrintTaskRequest.CreatePrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436request_createprinttask), и передает заголовок страницы для печати и имя делегата [**PrintTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source). Обратите внимание, что в этом примере делегат **PrintTaskSourceRequestedHandler** определен как встроенный. Делегат **PrintTaskSourceRequestedHandler** предоставляет отформатированное содержимое для печати и описан далее.
+При вызове **ShowPrintUIAsync** порождается событие [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597). Обработчик событий **PrintTaskRequested**, показанный на данном этапе, создает класс [**PrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436), вызывая метод [**PrintTaskRequest.CreatePrintTask**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing.printtaskrequest.createprinttask.aspx), и передает заголовок страницы для печати и имя делегата [**PrintTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source). Обратите внимание, что в этом примере делегат **PrintTaskSourceRequestedHandler** определен как встроенный. Делегат **PrintTaskSourceRequestedHandler** предоставляет отформатированное содержимое для печати и описан далее.
 
 В этом примере также определяется обработчик завершения для перехвата ошибок. Мы рекомендуем обрабатывать события завершения, так как в этом случае ваше приложение сможет сообщать пользователю о возникновении ошибок и предлагать возможные решения. Аналогично ваше приложение может использовать событие завершения, чтобы указать пользователю дальнейшие шаги, которые он может предпринять после успешного завершения печати.
 
@@ -378,6 +382,7 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

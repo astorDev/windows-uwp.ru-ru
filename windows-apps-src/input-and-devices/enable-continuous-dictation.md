@@ -5,8 +5,8 @@ title: "Включение непрерывной диктовки"
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
-ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
-ms.openlocfilehash: a142592f878fa539d6c40ea2abfcbf834b2de34d
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 1bcf6ce700b50ff633a29863fee41c2bfa3d9f98
 
 ---
 
@@ -29,7 +29,7 @@ ms.openlocfilehash: a142592f878fa539d6c40ea2abfcbf834b2de34d
 
 
 
-## <span id="Set_up"></span><span id="set_up"></span><span id="SET_UP"></span>Настройка
+## Настройка
 
 
 Для управления непрерывным сеансом диктовки вашему приложению понадобятся несколько объектов:
@@ -63,7 +63,7 @@ private CoreDispatcher dispatcher;
 private StringBuilder dictatedTextBuilder;
 ```
 
-## <span id="Initialization"></span><span id="initialization"></span><span id="INITIALIZATION"></span>Инициализация
+## Инициализация
 
 
 Во время инициализации непрерывного распознавания речи необходимо выполнить следующие действия.
@@ -94,13 +94,13 @@ this.speechRecognizer = new SpeechRecognizer();
 
     В данном случае мы сразу вызываем [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) без добавления грамматики.
 
-    <span codelanguage="CSharp"></span>
+    
 ```    CSharp
 SpeechRecognitionCompilationResult result =
       await speechRecognizer.CompileConstraintsAsync();
 ```
 
-## <span id="Handle_recognition_events"></span><span id="handle_recognition_events"></span><span id="HANDLE_RECOGNITION_EVENTS"></span>Обработка событий распознавания
+## Обработка событий распознавания
 
 
 Можно записать отдельную краткую реплику или фразу путем вызова [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) или [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245). 
@@ -214,7 +214,7 @@ private async void ContinuousRecognitionSession_Completed(
       }
 ```
 
-## <span id="Provide_ongoing_recognition_feedback"></span><span id="provide_ongoing_recognition_feedback"></span><span id="PROVIDE_ONGOING_RECOGNITION_FEEDBACK"></span>Отображение реакции в процессе распознавания
+## Отображение реакции в процессе распознавания
 
 
 Когда люди беседуют, они, как правило, полагаются на контекст, чтобы полностью понять произносимое. Аналогичным образом распознаватель речи часто нуждается в контексте, чтобы обеспечить высокодостоверные результаты распознавания. Например, сами по себе слова «кот» и «код» неразличимы, пока за счет других слов в предложении или фразе не будет понятен контекст. Пока распознаватель не получит определенной степени уверенности, что слово или слова были распознаны надлежащим образом, событие [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) не будет создано.
@@ -242,7 +242,7 @@ private async void SpeechRecognizer_HypothesisGenerated(
   }
 ```
 
-## <span id="Start_and_stop_recognition"></span><span id="start_and_stop_recognition"></span><span id="START_AND_STOP_RECOGNITION"></span>Запуск и остановка распознавания
+## Запуск и остановка распознавания
 
 
 Перед запуском сеанса распознавания проверьте значение свойства [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) распознавателя речи. Распознаватель речи должен находиться в состоянии [**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227).
@@ -281,7 +281,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
  
 
-## <span id="related_topics"></span>Связанные статьи
+## Связанные статьи
 
 
 * [Взаимодействие с помощью голосовых функций](speech-interactions.md)
@@ -298,6 +298,6 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

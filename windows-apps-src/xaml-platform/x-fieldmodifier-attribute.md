@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Изменяет поведение компиляции XAML таким образом, что поля для ссылок на именованный объект определяются с открытым доступом, а не с закрытым доступом по умолчанию.
-title: Атрибут xFieldModifier
+description: "Изменяет поведение компиляции XAML таким образом, что поля для ссылок на именованный объект определяются с открытым доступом, а не с закрытым доступом по умолчанию."
+title: "Атрибут xFieldModifier"
 ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3f6c759d582d92aa33df5874186aeaa3a7c37b01
+
 ---
 
 # Атрибут x:FieldModifier
@@ -33,6 +37,7 @@ ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

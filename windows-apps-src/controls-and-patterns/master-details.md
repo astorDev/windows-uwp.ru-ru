@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Шаблон основных и подробных данных отображает основной список и подробные сведения о выбранном элементе. Этот шаблон часто используется для работы с почтой, списками контактов и адресными книгами.
-title: Основные и подробные данные
+Description: "Шаблон основных и подробных данных отображает основной список и подробные сведения о выбранном элементе. Этот шаблон часто используется для работы с почтой, списками контактов и адресными книгами."
+title: "Основные и подробные данные"
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 5845aaf69bbcf561164c519f76f93578bf0da6db
+
 ---
 # Шаблон основных и подробных данных
 
@@ -82,6 +86,7 @@ template: detail.hbs
 - [**Класс ListView (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

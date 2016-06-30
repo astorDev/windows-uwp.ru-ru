@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Справочник по переносу с OpenGL ES 2.0 на Direct3D 11
-description: Используйте эти справочные разделы для поиска соответствий API и коротких примеров кода при переносе из OpenGL ES 2.0 в Direct3D 11.
+title: "Справочник по переносу с OpenGL ES 2.0 на Direct3D 11"
+description: "Используйте эти справочные разделы для поиска соответствий API и коротких примеров кода при переносе из OpenGL ES 2.0 в Direct3D 11."
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: ad6da83773bf5b791f4b2921b8ea55345aae999b
+
 ---
 
 # Справочник по переносу с OpenGL ES 2.0 на Direct3D 11
@@ -42,6 +46,7 @@ ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

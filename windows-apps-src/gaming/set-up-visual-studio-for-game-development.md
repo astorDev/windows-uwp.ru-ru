@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Средства Visual Studio для программирования игр
-description: Обзор средств разработки для DirectX, имеющихся в составе Visual Studio.
+title: "Средства Visual Studio для программирования игр"
+description: "Обзор средств разработки для DirectX, имеющихся в составе Visual Studio."
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2202474f24e93aab32ec9f4e85e765616cbae056
+
 ---
 
 # Средства Visual Studio для программирования игр
@@ -147,6 +151,7 @@ float3 LambertLighting(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

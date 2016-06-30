@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Подробная аналитика по вашим приложениям доступна на панели мониторинга в Центре разработки для Windows.
-title: Аналитика
+Description: "Подробная аналитика по вашим приложениям доступна на панели мониторинга в Центре разработки для Windows."
+title: "Аналитика"
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
+translationtype: Human Translation
+ms.sourcegitcommit: dfaf348956b19746aa5332aeb7ad5cbc4b224e8c
+ms.openlocfilehash: 8922a53da8b1bc97bef7faf49d0e412a26127188
+
 ---
 
 # Аналитика
@@ -74,6 +78,7 @@ ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 Установите приложение [Центра разработки](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) для быстрого просмотра сведений о работоспособности и производительности своих приложений на любом устройстве с Windows 10. 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

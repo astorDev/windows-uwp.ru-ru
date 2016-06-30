@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Необработанные уведомления представляют собой короткие push-уведомления общего характера.
-title: Общие сведения о необработанных уведомлениях
+Description: "Необработанные уведомления представляют собой короткие push-уведомления общего характера."
+title: "Общие сведения о необработанных уведомлениях"
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 4b487e44c7acd882a86c0b24dd9994092d976b06
+
 ---
 
 # Общие сведения о необработанных уведомлениях
@@ -126,6 +130,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

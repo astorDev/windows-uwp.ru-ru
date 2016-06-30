@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
-description: Используйте класс AdvancedPhotoCapture для захвата фотографий с использованием технологии High Dynamic Range (HDR).
-title: Фотозахват HDR (High Dynamic Range)
+description: "Используйте класс AdvancedPhotoCapture для захвата фотографий с использованием технологии High Dynamic Range (HDR)."
+title: "Фотозахват HDR (High Dynamic Range)"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3015aa4338ddb0c0a006eb631026261a4453f376
+
 ---
 
 # Фотозахват HDR (High Dynamic Range)
@@ -21,7 +25,7 @@ title: Фотозахват HDR (High Dynamic Range)
 -   Вы можете использовать [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) для захвата последовательности фотографий (при чем для каждой из них можно указать особые параметры захвата) и внедрения собственного алгоритма HDR или другого алгоритма обработки. Дополнительные сведения см. в статье [Переменная последовательность фотографий](variable-photo-sequence.md).
 
 **Примечание.**
--   Одновременная запись видео и захват фотографий с помощью **AdvancedPhotoCapture** не поддерживается.
+-   Одновременный захват фотографий и видео с помощью **AdvancedPhotoCapture** не поддерживается.
 
 -   Использование вспышки камеры во время расширенной фотосъемки не поддерживается.
 
@@ -48,7 +52,7 @@ title: Фотозахват HDR (High Dynamic Range)
 
 После того как вы инициализировали объект **MediaCapture**, создайте в своем приложении объект [**AdvancedPhotoCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/mt147837) и установите режим [**AdvancedPhotoMode.Hdr**](https://msdn.microsoft.com/library/windows/apps/mt147845). Вызовите метод [**Configure**](https://msdn.microsoft.com/library/windows/apps/mt147841) объекта [**AdvancedPhotoControl**](https://msdn.microsoft.com/library/windows/apps/mt147840), передав созданный объект **AdvancedPhotoCaptureSettings**.
 
-Вызовите метод [**PrepareAdvancedPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181403) объекта **MediaCapture**, передав объект [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) с указанием типа кодирования, которое должно использоваться в захвате. Класс **ImageEncodingProperties** предоставляет статические методы для создания кодирования изображений, которые поддерживает **MediaCapture**.
+Вызовите метод [**PrepareAdvancedPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181403) объекта **MediaCapture**, передав объект [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) с указанием типа кодирования, которое должно использоваться в захвате. Класс **ImageEncodingProperties** предоставляет статические методы для создания кодирования изображений, которые поддерживаются **MediaCapture**.
 
 **PrepareAdvancedPhotoCaptureAsync** возвращает объект [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386), который будет использоваться для инициализации фотозахвата. Вы можете использовать этот объект, чтобы зарегистрировать обработчики событий для [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392) и [**AllPhotosCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181387), которые описываются далее в этой статье.
 
@@ -60,18 +64,16 @@ title: Фотозахват HDR (High Dynamic Range)
 
 [!code-cs[CaptureHdrPhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureHdrPhotoAsync)]
 
-**ConvertOrientationToPhotoOrientation** и **ReencodeAndSavePhotoAsync** — это вспомогательные методы, которые рассматриваются в статье [Фото- и видеозахват с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md) как часть основного сценария захвата мультимедиа.
+**ConvertOrientationToPhotoOrientation** и **ReencodeAndSavePhotoAsync** — это вспомогательные методы, которые рассматриваются в статье [Фото- и видеозахват с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md) как часть основного сценария захвата мультимедиа.
 
 ## Получение дополнительного опорного кадра
 
-При использовании технологии HDR захватывается несколько кадров. После захвата всех кадров из них составляется одно изображение. Вы можете получить доступ к кадру после его захвата, но до завершения обработки HDR, обработав событие [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392). Если вас интересует только конечный результат фотографии с расширенным динамическим диапазоном (HDR), этого делать не нужно.
+При обработке HDR захватывается несколько кадров. После захвата всех кадров они составляются в одно изображение. Вы можете получить доступ к кадру после его захвата, но до завершения обработки HDR, обработав событие [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392). Если вас интересует только конечный результат фотографии с расширенным динамическим диапазоном (HDR), этого делать не нужно.
 
 **Важно!**
-            
-          
             [
               **OptionalReferencePhotoCaptured**
-            ](https://msdn.microsoft.com/library/windows/apps/mt181392) не вызывается на устройствах, которые поддерживают HDR-оборудование, а потому не создают опорные кадры. В приложении должны предусматриваться случаи, при которых это событие не возникает.
+            ](https://msdn.microsoft.com/library/windows/apps/mt181392) не вызывается на устройствах, которые поддерживают аппаратный режим HDR, а потому не создают опорные кадры. В приложении должны предусматриваться случаи, при которых это событие не возникает.
 
 Поскольку опорный кадр поступает из контекста вызова **CaptureAsync**, предусмотрен механизм для передачи контекстной информации обработчику **OptionalReferencePhotoCaptured**. Сначала нужно определить объект, который будет содержать контекстные данные. При этом имя и содержимое этого объекта зависит только от вас. В этом примере определяется объект, который содержит члены для отслеживания имени файла и ориентации камеры при захвате.
 
@@ -102,6 +104,7 @@ title: Фотозахват HDR (High Dynamic Range)
 * [Захват фотографий и видео с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
-title: Использование акселерометра
-description: Узнайте, как использовать акселерометр для реагирования на движения пользователя.
+title: "Использование акселерометра"
+description: "Узнайте, как использовать акселерометр для реагирования на движения пользователя."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f1ec749d7bec245632f1998ac5cc94b9bfcad533
+
 ---
 # Использование акселерометра
 
@@ -170,6 +174,7 @@ AccelerometerReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: msatranjr
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
-title: Создание пакетов приложений
-description: Этот раздел содержит статьи о создании пакетов приложений универсальной платформы Windows (UWP) или ссылки на них.
+title: "Создание пакетов приложений"
+description: "Этот раздел содержит статьи о создании пакетов приложений универсальной платформы Windows (UWP) или ссылки на них."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 6f50874ceb5e133f2b1b764bfc6fcff6422172db
+
 ---
 # Создание пакетов приложений
 
@@ -21,6 +25,7 @@ description: Этот раздел содержит статьи о создан
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -3,8 +3,8 @@ author: jwmsft
 description: "Информация о командах перемещения и рисования (мини-языке), которые вы можете использовать для указания геометрии путей в качестве значения атрибута XAML."
 title: "Синтаксис команд перемещения и рисования"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
-ms.sourcegitcommit: e1399a25b0455c9a79dcb217c5df1a397420d1f3
-ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 ---
 
@@ -119,7 +119,7 @@ ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
 
 | Термин | Описание |
 |------|-------------|
-| x | [**Double**](T:System.Double) <br/> X-координата конечной точки линии. |
+| x | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> X-координата конечной точки линии. |
 
 **Команда вертикальной линии**
 
@@ -131,7 +131,7 @@ ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
 
 | Термин | Описание |
 |------|-------------|
-| *y* | [**Double**](T:System.Double) <br/> Y-координата конечной точки линии. |
+| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Y-координата конечной точки линии. |
 
 **Команда кривой Безье третьего порядка**
 
@@ -208,7 +208,7 @@ ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
 | Термин | Описание |
 |------|-------------|
 | *size* | [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>Радиусы дуги по оси x и по оси y. |
-| *rotationAngle* | [**Double**](T:System.Double) <br/> Поворот эллипса в градусах. |
+| *rotationAngle* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Поворот эллипса в градусах. |
 | *isLargeArcFlag* | Значение «1», если угол дуги должен быть больше или равен 180 градусам. В противном случае — значение «0». |
 | *sweepDirectionFlag* | Значение «1», если дуга рисуется в направлении положительного угла. В противном случае — значение «0». |
 | *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Конечная точка дуги.|
@@ -232,8 +232,8 @@ ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
 
 | Термин | Описание |
 |------|-------------|
-| *x* | [**Double**](T:System.Double) <br/> X-координата точки. |
-| *y* | [**Double**](T:System.Double) <br/> Y-координата точки. |
+| *x* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> X-координата точки. |
+| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Y-координата точки. |
 
 **Дополнительные примечания**
 
@@ -263,6 +263,6 @@ ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

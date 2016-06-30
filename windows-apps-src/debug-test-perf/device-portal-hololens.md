@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
-title: Портал устройства для HoloLens
-description: Узнайте, как портал устройств Windows для HoloLens позволяет удаленно настраивать устройство HoloLens и управлять им.
+title: "Портал устройства для HoloLens"
+description: "Узнайте, как портал устройств Windows для HoloLens позволяет удаленно настраивать устройство HoloLens и управлять им."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: bd1ae8ccdd81f319fc36ca04b8b839cb313b2854
+
 ---
 # Портал устройства для HoloLens
 
@@ -166,6 +170,7 @@ description: Узнайте, как портал устройств Windows дл
 Щелкните или нажмите область под виртуальной клавиатурой, чтобы включить отправку нажатий клавиш на устройство HoloLens. Введите в текстовом поле ввода текста, затем щелкните или нажмите «Отправить», чтобы передать нажатия клавиш в активное приложение.
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

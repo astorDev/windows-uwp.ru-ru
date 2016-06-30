@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Более продолжительное отображение экрана-заставки
-description: Увеличьте длительность отображения экрана-заставки, создав и использовав расширенный экран-заставку для приложения. Этот расширенный экран имитирует экран-заставку, отображаемый при запуске приложения, но его можно настраивать.
+author: TylerMSFT
+title: "Более продолжительное отображение экрана-заставки"
+description: "Увеличьте длительность отображения экрана-заставки, создав и использовав расширенный экран-заставку для приложения. Этот расширенный экран имитирует экран-заставку, отображаемый при запуске приложения, но его можно настраивать."
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
+
 ---
 
 # Более продолжительное отображение экрана-заставки
@@ -97,7 +100,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
         private SplashScreen splash; // Variable to hold the splash screen object.
         internal bool dismissed = false; // Variable to track splash screen dismissal status.
         internal Frame rootFrame;
-     
+
        // Define methods and constructor
     }
     ```
@@ -131,7 +134,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
             PositionRing();
         }
 
-        // Create a Frame to act as the navigation context 
+        // Create a Frame to act as the navigation context
         rootFrame = new Frame();            
     }
     ```
@@ -223,11 +226,11 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
     {
         if (loadState)
         {
-             // code to load your app's state here 
+             // code to load your app's state here
         }
     }
     ```
-    
+
     При изменении обработчика активации запуска в файле App.xaml.cs также задайте для `loadstate` значение true, если предыдущее состояние [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) приложения было **Terminated**. В этом случае метод `RestoreStateAsync` восстанавливает предыдущее состояние приложения. Обзор запуска, приостановки и завершения приложения см. в статье [Жизненный цикл приложения](app-lifecycle.md).
 
 ## Измените обработчик события активации запуска
@@ -547,8 +550,6 @@ namespace SplashScreenExample
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

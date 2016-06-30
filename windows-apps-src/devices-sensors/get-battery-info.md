@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
-title: Получение сведений о батарее
-description: Узнайте, как получить подробные сведения об аккумуляторе с помощью API в пространстве имен Windows.Devices.Power.
+title: "Получение сведений о батарее"
+description: "Узнайте, как получить подробные сведения об аккумуляторе с помощью API в пространстве имен Windows.Devices.Power."
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 716123f7401350748c7eb81a2ca4208a74b6e4ac
+
 ---
 # Получение сведений о батарее
 
@@ -334,6 +338,7 @@ namespace App1
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

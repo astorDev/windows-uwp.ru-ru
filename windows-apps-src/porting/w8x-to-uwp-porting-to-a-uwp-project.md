@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: У вас есть два варианта разработки процесса переноса.
-title: Перенос среды выполнения Windows 8.x в проект UWP
+description: "У вас есть два варианта разработки процесса переноса."
+title: "Перенос среды выполнения Windows 8.x в проект UWP"
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
+translationtype: Human Translation
+ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
+ms.openlocfilehash: 60f59c58aedc56da58350a050acd184a376b8067
+
 ---
 
 # Перенос среды выполнения Windows 8.x в проект UWP
@@ -172,6 +176,7 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

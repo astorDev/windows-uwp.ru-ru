@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: Для отображения даты и времени в желаемом формате можно использовать API Windows.Globalization.DateTimeFormatting с пользовательскими шаблонами.
-title: Использование шаблонов для форматирования даты и времени
+Description: "Для отображения даты и времени в желаемом формате можно использовать API Windows.Globalization.DateTimeFormatting с пользовательскими шаблонами."
+title: "Использование шаблонов для форматирования даты и времени"
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 17cd1619a13adced643b4c8983dbf874bebaa740
+
 ---
 
 # Использование шаблонов для форматирования даты и времени
@@ -189,6 +193,7 @@ var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
-description: Используйте пошаговые руководства в этом разделе, чтобы узнать, как добавлять рекламные баннеры и промежуточную видеорекламу в приложения с помощью библиотек Microsoft Advertising.
-title: Пошаговые руководства для разработчиков по работе с библиотеками Microsoft Advertising
+description: "Используйте пошаговые руководства в этом разделе, чтобы узнать, как добавлять рекламные баннеры и промежуточную видеорекламу в приложения с помощью библиотек Microsoft Advertising."
+title: "Пошаговые руководства для разработчиков по работе с библиотеками Microsoft Advertising"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: b36b5d5ba747fbb71c988033ddd0cdb4cee0ed8b
+
 ---
 
 # Пошаговые руководства для разработчиков по работе с библиотеками Microsoft Advertising
@@ -30,6 +34,7 @@ title: Пошаговые руководства для разработчико
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

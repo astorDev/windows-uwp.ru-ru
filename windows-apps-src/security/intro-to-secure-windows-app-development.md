@@ -1,8 +1,12 @@
 ---
-title: Введение в разработку безопасных приложений для Windows
-description: Эта вводная статья помогает архитекторам и разработчикам приложений лучше понять различные возможности платформы Windows 10, которые ускоряют создание безопасных приложений универсальной платформы Windows (UWP).
+title: "Введение в разработку безопасных приложений для Windows"
+description: "Эта вводная статья помогает архитекторам и разработчикам приложений лучше понять различные возможности платформы Windows 10, которые ускоряют создание безопасных приложений универсальной платформы Windows (UWP)."
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: c09170042841dcff6625d1d236cf708c717301c5
+
 ---
 
 # Введение в разработку безопасных приложений для Windows
@@ -496,6 +500,7 @@ public void SampleReusableHash()
 -   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://msdn.microsoft.com/library/windows/apps/hh701506)
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

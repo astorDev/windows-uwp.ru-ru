@@ -1,19 +1,19 @@
 ---
-author: martinekuan
-title: Создание компонентов среды выполнения Windows в C# и Visual Basic
-description: Начиная с .NET Framework 4.5 можно создавать собственные типы среды выполнения Windows, упакованные в компонент среды выполнения Windows, с помощью управляемого кода.
+author: msatranjr
+title: "Создание компонентов среды выполнения Windows в C# и Visual Basic"
+description: "Начиная с .NET Framework 4.5 можно создавать собственные типы среды выполнения Windows, упакованные в компонент среды выполнения Windows, с помощью управляемого кода."
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
+
 ---
 
 # Создание компонентов среды выполнения Windows в C# и Visual Basic
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x можно найти в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
-
-Начиная с .NET Framework 4.5 вы можете с помощью управляемого кода создавать собственные типы среды выполнения Windows, упакованных в компонент среды выполнения Windows. Этот компонент можно использовать в приложениях универсальной платформы Windows (UWP), написанных на C++, JavaScript, Visual Basic или C#. В данной статье описываются правила создания компонента и рассматриваются некоторые аспекты поддержки среды выполнения Windows в .NET Framework. Как правило, такая поддержка разрабатывается таким образом, чтобы быть прозрачной для разработчиков .NET Framework. Однако при создании компонента, использующего JavaScript или C++, следует учитывать различия в том, как эти языки поддерживают среду выполнения Windows.
+Начиная с .NET Framework 4.5 можно создавать собственные типы среды выполнения Windows, упакованные в компонент среды выполнения Windows, с помощью управляемого кода. Этот компонент можно использовать в приложениях универсальной платформы Windows (UWP), написанных на C++, JavaScript, Visual Basic или C#. В данной статье описываются правила создания компонента и рассматриваются некоторые аспекты поддержки среды выполнения Windows в .NET Framework. Как правило, такая поддержка разрабатывается таким образом, чтобы быть прозрачной для разработчиков .NET Framework. Однако при создании компонента, использующего JavaScript или C++, следует учитывать различия в том, как эти языки поддерживают среду выполнения Windows.
 
 Если вы создаете компонент для использования только в приложениях UWP на Visual Basic или C#, и он не содержит элементы управления UWP, рассмотрите возможность использования шаблона **Библиотека классов** вместо шаблона **Компонент среды выполнения Windows**. У простой библиотеки классов меньше ограничений.
 
@@ -121,11 +121,11 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 > {
 >     return s;
 > }
-> [Windows.Foundation.Metadata.DefaultOverload()] 
+> [Windows.Foundation.Metadata.DefaultOverload()]
 > public int OverloadExample(int x)
 > {
 >     return x;
-> } 
+> }
 > ```
 > ```vb
 > Public Function OverloadExample(ByVal s As String) As String
@@ -137,7 +137,7 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 > End Function
 > ```
 
-> **Внимание!** JavaScript позволяет передавать в OverloadExample любое значение и приводит это значение к типу, который требуется параметром. Можно вызвать OverloadExample со значением "forty-two", "42" или 42.3, но все они будут переданы перегруженному методу по умолчанию. В предыдущем примере перегруженный метод по умолчанию возвращает значения 0, 42 и 42 соответственно.
+ **Внимание!** JavaScript позволяет передавать в OverloadExample любое значение и приводит это значение к типу, который требуется параметром. Можно вызвать OverloadExample со значением "forty-two", "42" или 42.3, но все они будут переданы перегруженному методу по умолчанию. В предыдущем примере перегруженный метод по умолчанию возвращает значения 0, 42 и 42 соответственно.
 
 Нельзя применять атрибут DefaultOverloadAttribute к конструкторам. Все конструкторы в классе должны иметь различное число параметров.
 
@@ -202,7 +202,7 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 > ```vb
 > Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 >      As IAsyncOperation(Of IList(Of String))
-> 
+>
 >     Return Task.Run(Of IList(Of String))(
 >         Async Function()
 >             Dim data = Await DownloadDataAsync(id)
@@ -241,7 +241,7 @@ function asyncExample(id) {
 > ```vb
 > Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 >     As IAsyncOperation(Of IList(Of String))
-> 
+>
 >     Return AsyncInfo.Run(Of IList(Of String))(
 >         Async Function()
 >             Dim data = Await DownloadDataAsync(id)
@@ -293,7 +293,6 @@ function asyncExample(id) {
 
 
 
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Пошаговое руководство - образцы переноса из OpenGL ES 2.0
-description: В этой группе разделов подробно рассматриваются несколько сценариев переноса графического конвейера OpenGL ES 2.0 разного уровня сложности.
+title: "Пошаговое руководство - образцы переноса из OpenGL ES 2.0"
+description: "В этой группе разделов подробно рассматриваются несколько сценариев переноса графического конвейера OpenGL ES 2.0 разного уровня сложности."
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c7fcbcdfc1b0776ac53728fc4f2dc58b6887ab56
+
 ---
 
 # Пошаговое руководство - образцы переноса из OpenGL ES 2.0
@@ -45,6 +49,7 @@ ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

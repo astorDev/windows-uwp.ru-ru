@@ -3,8 +3,8 @@ author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: "Визуальное дерево композиции"
 description: "В композиции объекты класса Visual составляют визуальную древовидную структуру, которую используют и на которую опираются другие функции API композиции. API позволяет разработчикам определить и создать один или несколько объектов класса Visual, каждый из которых представляет отдельный узел визуального дерева."
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: e31d3b23871bd37cde26fb3e9414e8cfae340d3d
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 
 ---
 # Визуальное дерево композиции
@@ -114,7 +114,7 @@ visual.Opacity = 0.8f;
 
 ## Изменение положения объекта класса Visual в коллекции
 
-API композиции позволяет изменять положение объекта класса Visual в коллекции [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection) различными способами: его можно разместить выше других объекта класса Visual с помощью метода [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertabove), разместить ниже с помощью метода [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertbelow), переместить вверх с помощью метода [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertattop) или вниз с помощью метода [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertatbottom).
+API композиции позволяет изменять положение объекта класса Visual в коллекции [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection) различными способами: его можно разместить выше других объекта класса Visual с помощью метода [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertabove), разместить ниже с помощью метода [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertbelow), переместить вверх с помощью метода [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertattop) или вниз с помощью метода [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertatbottom).
 
 В этом примере объект класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), на который нажимает пользователь, перемещается наверх.
 
@@ -522,6 +522,6 @@ namespace compositionvisual
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

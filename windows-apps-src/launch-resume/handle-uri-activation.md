@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Обработка активации URI
-description: Узнайте, как зарегистрировать приложение в качестве стандартного обработчика определенного имени схемы универсального кода ресурса (URI).
+author: TylerMSFT
+title: "Обработка активации URI"
+description: "Узнайте, как зарегистрировать приложение в качестве стандартного обработчика определенного имени схемы универсального кода ресурса (URI)."
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
+ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
+ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
+
 ---
 
 # Обработка активации URI
@@ -32,7 +35,7 @@ ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 1.  В **обозревателе решений** дважды щелкните файл package.appxmanifest, чтобы открыть конструктор манифеста. Перейдите на вкладку **Объявления** и в раскрывающемся списке **Доступные объявления** выберите **Протокол** и нажмите кнопку **Добавить**.
 
     Далее приведено краткое описание каждого из полей, которое можно заполнить в конструкторе манифеста для протокола (подробнее см. [**AppX Package Manifest**](https://msdn.microsoft.com/library/windows/apps/dn934791)):
-    
+
 | Поле | Описание |
 |-------|-------------|
 | **Логотип** | Укажите логотип, по которому можно будет определить имя схемы URI в разделе [Выбор программ по умолчанию](https://msdn.microsoft.com/library/windows/desktop/cc144154) на **панели управления**. Если логотип не указан, используется мелкий логотип приложения. |
@@ -41,9 +44,6 @@ ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 |  | **Примечание.** Все буквы имени должны быть строчными. |
 |  | **Зарезервированные и запрещенные типы файлов** Алфавитный список схем URI, которые нельзя зарегистрировать для приложений UWP, поскольку они уже зарегистрированы или запрещены, см. в статье [Зарезервированные имена схем URI и типы файлов](reserved-uri-scheme-names.md). |
 | **Исполняемый файл** | Указывает исполняемый файл по умолчанию для протокола. Если он не указан, используется исполняемый файл приложения. Если указан, строка должна содержать от 1 до 256 символов, заканчиваться на ".exe" и не содержать символы &gt;, &lt;, :, ", &#124;, ?, или \*. Если указан, **точка входа** также используется. Если **точка входа** не указана, используется точка входа, заданная для приложения. |
-       
-| Термин | Описание |
-|------|-------------|
 | **Точка входа** | Определяет задачу, которая обрабатывает расширение протокола. Как правило, соответствует полному имени пространства имен типа среды выполнения Windows. Если не указана, используется точка входа для приложения. |
 | **Начальная страница** | Веб-страница, обрабатывающая точку расширения. |
 | **Группа ресурсов** | Тег, который можно применять для группировки активаций расширения в целях управления ресурсами. |
@@ -81,43 +81,43 @@ ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 Обработчик событий [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) принимает все события активации. Свойство **Kind** обозначает тип события активации. В этом примере выполняется обработка событий активации [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol).
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-public partial class App
-{
-   protected override void OnActivated(IActivatedEventArgs args)
-   {
-      if (args.Kind == ActivationKind.Protocol)
-      {
-         ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
-         // TODO: Handle URI activation
-         // The received URI is eventArgs.Uri.AbsoluteUri
-      }
-   }
-}
-```
-```vb
-Protected Overrides Sub OnActivated(ByVal args As Windows.ApplicationModel.Activation.IActivatedEventArgs)
-   If args.Kind = ActivationKind.Protocol Then
-      ProtocolActivatedEventArgs eventArgs = args As ProtocolActivatedEventArgs
-      
-      ' TODO: Handle URI activation
-      ' The received URI is eventArgs.Uri.AbsoluteUri
-   End If
-End Sub
-```
-```cpp
-void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs^ args)
-{
-   if (args->Kind == Windows::ApplicationModel::Activation::ActivationKind::Protocol)
-   {
-      Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^ eventArgs = 
-          dynamic_cast<Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^>(args);
-      
-      // TODO: Handle URI activation  
-      // The received URI is eventArgs->Uri->RawUri
-   } 
-}
-```
+> ```cs
+> public partial class App
+> {
+>    protected override void OnActivated(IActivatedEventArgs args)
+>   {
+>       if (args.Kind == ActivationKind.Protocol)
+>       {
+>          ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
+>          // TODO: Handle URI activation
+>          // The received URI is eventArgs.Uri.AbsoluteUri
+>       }
+>    }
+> }
+> ```
+> ```vb
+> Protected Overrides Sub OnActivated(ByVal args As Windows.ApplicationModel.Activation.IActivatedEventArgs)
+>    If args.Kind = ActivationKind.Protocol Then
+>       ProtocolActivatedEventArgs eventArgs = args As ProtocolActivatedEventArgs
+>       
+>       ' TODO: Handle URI activation
+>       ' The received URI is eventArgs.Uri.AbsoluteUri
+>  End If
+> End Sub
+> ```
+> ```cpp
+> void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs^ args)
+> {
+>    if (args->Kind == Windows::ApplicationModel::Activation::ActivationKind::Protocol)
+>    {
+>       Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^ eventArgs =
+>           dynamic_cast<Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^>(args);
+>       
+>       // TODO: Handle URI activation  
+>       // The received URI is eventArgs->Uri->RawUri
+>    }
+> }
+> ```
 
 > **Примечание.** При запуске приложения через контракт протокола кнопка "Назад" должна возвращать пользователя обратно на экран, с которого было запущено приложение, а не к предыдущему содержимому приложения.
 
@@ -175,8 +175,6 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,12 +1,15 @@
 ---
 author: mijacobs
-Description: Цвета позволяют интуитивно ориентироваться среди различных информационных уровней приложения и служат важнейшим средством для усиления модели взаимодействия.
-title: Цвет
+Description: "Цвета позволяют интуитивно ориентироваться среди различных информационных уровней приложения и служат важнейшим средством для усиления модели взаимодействия."
+title: "Цвет"
 ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
-
 label: Color
 template: detail.hbs
 extraBodyClass: style-color
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 878470a7cbf44862c47a1428a1d25d332db32fdc
+
 ---
 
 # Цвет
@@ -50,7 +53,7 @@ extraBodyClass: style-color
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            В XAML основной цвет элементов рассматривается как [ресурс темы](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx) под названием `SystemAccentColor`. Оттенки доступны в виде `SystemAccentColorLight3`, `SystemAccentColorLight2`, `SystemAccentColorLight1`, `SystemAccentColorDark1`, `SystemAccentColorDark2` и `SystemAccentColorDark3`. Также возможен программный доступ с помощью [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) и перечисления [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx).
+В XAML основной цвет элементов рассматривается как [ресурс темы](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx) под названием `SystemAccentColor`. Оттенки доступны в виде `SystemAccentColorLight3`, `SystemAccentColorLight2`, `SystemAccentColorLight1`, `SystemAccentColorDark1`, `SystemAccentColorDark2` и `SystemAccentColorDark3`. Также возможен программный доступ с помощью [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) и перечисления [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx).
     </div>
 </aside>
 
@@ -90,7 +93,7 @@ extraBodyClass: style-color
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            Каждый цвет доступен как [ресурс темы](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_color_ramp_and_theme-dependent_brushes) XAML, выполняющий условия именования `System*Color` (например `SystemChromeHighColor`). Вы можете управлять темой своего приложения с помощью либо [Application.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme.aspx), либо [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.requestedtheme.aspx).
+Каждый цвет доступен как [ресурс темы](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_color_ramp_and_theme-dependent_brushes) XAML, выполняющий условия именования `System*Color` (например `SystemChromeHighColor`). Вы можете управлять темой своего приложения с помощью либо [Application.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme.aspx), либо [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.requestedtheme.aspx).
     </div>
 </aside>
 
@@ -99,6 +102,7 @@ extraBodyClass: style-color
 Наша палитра оптимизирована для различных экранов. Мы рекомендуем поддерживать минимальный коэффициент контрастности текста к фону на уровне 4,5:1 для максимального удобства при чтении. Существует множество бесплатных средств для проверки соответствия выбранных вами цветов этим требованиям, например [Contrast Ratio](http://leaverou.github.io/contrast-ratio/).
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Вы можете рекламировать свое приложение или внутренний продукт приложения (IAP) в Магазине Windows, выставив его на распродажу на некоторое время.
-title: Выставление приложений и IAP на распродажу
+Description: "Вы можете рекламировать свое приложение или внутренний продукт приложения (IAP) в Магазине Windows, выставив его на распродажу на некоторое время."
+title: "Выставление приложений и IAP на распродажу"
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b53d8d4ddcf3f75ffe039203377d12fd02e52f07
+
 ---
 
 # Выставление приложений и IAP на распродажу
@@ -65,6 +69,7 @@ ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

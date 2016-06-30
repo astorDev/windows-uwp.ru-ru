@@ -1,8 +1,12 @@
 ---
-title: Биометрия отпечатков пальцев
-description: В этой статье рассказывается, как добавить биометрию отпечатков пальцев в приложение универсальной платформы Windows (UWP).
+title: "Биометрия отпечатков пальцев"
+description: "В этой статье рассказывается, как добавить биометрию отпечатков пальцев в приложение универсальной платформы Windows (UWP)."
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 093924b51c48c3bed71e0a47b10fc80f966b34ac
+
 ---
 
 # Биометрия отпечатков пальцев
@@ -120,6 +124,7 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
 }
 ```
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

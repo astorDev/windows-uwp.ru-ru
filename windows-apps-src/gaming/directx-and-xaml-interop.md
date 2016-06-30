@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Межпрограммное взаимодействие DirectX и XAML
-description: Вы можете использовать одновременно и XAML, и Microsoft DirectX в своей игре универсальной платформы Windows (UWP).
+title: "Межпрограммное взаимодействие DirectX и XAML"
+description: "Вы можете использовать одновременно и XAML, и Microsoft DirectX в своей игре универсальной платформы Windows (UWP)."
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 97e694ae2fb8af30a35aa9ebdb714db50a506e6c
+
 ---
 
 # Межпрограммное взаимодействие DirectX и XAML
@@ -38,7 +42,7 @@ DirectX предоставляет две мощные библиотеки дл
 
 -   Если изображение больше предоставленного пространства на экране, пользователь может масштабировать его с помощью типа [**Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050). Данный тип обрабатывает нарисованную средствами DirectX поверхность определенного размера, которая больше экрана. Как и класс [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041), он используется при динамическом составлении сложного изображения или элемента управления. Кроме того, как и класс **SurfaceImageSource**, он плохо подходит для высокопроизводительных игр. К примерам элементов XAML, в которых может использоваться класс **VirtualSurfaceImageSource**, относятся элементы управления картой или средство просмотра документов с большим количеством изображений.
 
--   При использовании DirectX для представления графики, обновляемой в реальном времени, или в ситуации, когда обновления должны выполняться регулярно с низкой задержкой, используйте класс [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) для обновления графики без синхронизации с таймером обновления платформы XAML. Этот тип предоставляет прямой доступ к цепочке буферов графического устройства ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)) и слою XAML, наложенному на однобуферную прорисовку. Этот тип отлично подходит для игр и других полноэкранных приложений DirectX, которым требуется пользовательский интерфейс на основе языка XAML. Чтобы использовать описанный подход, вы должны хорошо разбираться в DirectX, в том числе в технологиях Microsoft DirectX Graphics Infrastructure (DXGI), Direct2D и Direct3D. Дополнительные сведения см. в разделе [Руководство по программированию для Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345).
+-   При использовании DirectX для представления графики, обновляемой в реальном времени, или в ситуации, когда обновления должны выполняться регулярно с низкой задержкой, используйте класс [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) для обновления графики без синхронизации с таймером обновления платформы XAML. Этот тип предоставляет прямой доступ к цепочке буферов графического устройства ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)) и слою XAML, наложенному на однобуферную прорисовку. Этот тип отлично подходит для игр и других полноэкранных приложений DirectX, которым требуется пользовательский интерфейс на основе языка XAML. Чтобы использовать описанный подход, вы должны хорошо разбираться в DirectX, в том числе в технологиях Microsoft DirectX Graphics Infrastructure (DXGI), Direct2D и Direct3D. Дополнительные сведения см. в [Руководстве по программированию для Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345).
 
 ## SurfaceImageSource
 
@@ -91,7 +95,7 @@ DirectX предоставляет две мощные библиотеки дл
 
 4.  Предоставьте указатель объекту [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) для метода [**ISurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) и рисуйте на этой поверхности с помощью DirectX. Прорисовка будет производиться только в области, указанной для обновления в параметре *updateRect*.
 
-    > **Примечание.** В каждый момент времени у вас может быть только одна активная невыполненная операция [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) на один интерфейс [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527).
+    > **Примечание.**   В каждый момент времени у вас может быть только одна активная невыполненная операция [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) на один интерфейс [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527).
 
      
 
@@ -241,7 +245,7 @@ DirectX предоставляет две мощные библиотеки дл
 
         Так же как и [**IlSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323), этот метод возвращает смещение точки (x,y) обновленного целевого прямоугольника в параметре *offset*. С помощью этого смещения вы можете определить место, где будет выполняться рисование, внутри поверхности [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565).
 
-        > **Примечание.** В каждый момент времени у вас может быть только одна активная невыполненная операция [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) на один интерфейс [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527).
+        > **Примечание.**   В каждый момент времени у вас может быть только одна активная невыполненная операция [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) на один интерфейс [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527).
 
          
 
@@ -276,7 +280,7 @@ DirectX предоставляет две мощные библиотеки дл
 -   Свойства **Opacity**, **RenderTransform**, **Projection** и **Clip**, наследуемые классом [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834), не поддерживаются.
 -   Следует задать высоту и ширину цепочки буферов DirectX (в структуре [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) равными текущим размерам окна приложения. Если этого не сделать, содержимое экрана подгоняется под его размер (с помощью **DXGI\_SCALING\_STRETCH**).
 -   Для режима масштабирования цепочки буферов DirectX (в структуре [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) необходимо задать состояние **DXGI\_SCALING\_STRETCH**.
--   Для режима альфа-канала цепочки буферов DirectX (в структуре [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) невозможно задать состояние **DXGI\_ALPHA\_MODE\_PREMULTIPLIED**.
+-   Для режима альфа-канала цепочки буферов DirectX (в структуре [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) нельзя задать состояние **DXGI\_ALPHA\_MODE\_PREMULTIPLIED**.
 -   Необходимо создать цепочку буферов DirectX путем вызова [**IDXGIFactory2::CreateSwapChainForComposition**](https://msdn.microsoft.com/library/windows/desktop/hh404558).
 
 [
@@ -288,9 +292,9 @@ DirectX предоставляет две мощные библиотеки дл
               **SwapChainPanel**
             ](https://msdn.microsoft.com/library/windows/apps/dn252834) наследуется от класса [**Windows::UI::Xaml::Controls::Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) и поддерживает схожее поведение макета. Ознакомьтесь с типом **Grid** и его свойствами.
 
--   После задания цепочки буферов DirectX все события ввода, возникающие для класса [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834), действуют так же, как и для любого другого элемента XAML. Для класса **SwapChainPanel** не задается кисть фона, и события ввода объекта [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) приложения не требуется обрабатывать напрямую, как это делается в приложениях DirectX, которые не используют класс **SwapChainPanel**.
+-   После задания цепочки буферов DirectX все события ввода, возникающие для класса [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834), действуют так же, как и для любого другого элемента XAML. Если для класса **SwapChainPanel** кисть фона не задается, события ввода объекта [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) приложения не требуется обрабатывать напрямую, как это делается в приложениях DirectX, которые не используют класс **SwapChainPanel**.
 
--   • Все содержимое дерева визуальных элементов XAML в прямом дочернем элементе объекта [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) обрезается до размера макета непосредственного дочернего элемента объекта **SwapChainPanel**. Любое содержимое, которое в результате преобразования выходит за рамки макета, не визуализируется. Поэтому любое содержимое XAML, которое анимируется с помощью класса [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) XAML, размещайте в визуальном дереве элемента, рамки макета которого достаточно велики для включения всей области анимации.
+-   Все содержимое дерева визуальных элементов XAML прямого потомка объекта [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) обрезается до размера макета непосредственного потомка объекта **SwapChainPanel**. Любое содержимое, которое в результате преобразования выходит за рамки макета, не визуализируется. Поэтому любое содержимое XAML, которое анимируется с помощью класса [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) XAML, размещайте в визуальном дереве элемента, рамки макета которого достаточно велики для включения всей области анимации.
 
 -   Ограничьте число непосредственных визуальных элементов XAML в [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834). По возможности группируйте под общим родительским объектом элементы, которые находятся в непосредственной близости. Однако между производительностью и числом непосредственных визуальных дочерних объектов и их размерами существует связь: слишком большое количество элементов XAML или неоправданно большой их размер могут повлиять на общую производительность. Аналогичным образом не создавайте отдельных полноэкранных дочерних элементов XAML для объекта **SwapChainPanel** своего приложения, так как это повышает избыточное использование ресурсов в приложении и снижает производительность. Как правило, не следует создавать больше 8 непосредственных визуальных дочерних элементов XAML для объекта **SwapChainPanel** приложения. Размер макета каждого элемента не должен превышать достаточный для включения визуального содержимого элемента. Однако в дочернем элементе объекта **SwapChainPanel** можно создать достаточно сложное визуальное дерево элементов без чрезмерного ухудшения производительности.
 
@@ -390,6 +394,7 @@ DirectX предоставляет две мощные библиотеки дл
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

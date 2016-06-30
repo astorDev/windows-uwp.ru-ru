@@ -1,8 +1,12 @@
 ---
 author: msatranjr
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
-title: Формирование пакетов приложений UWP
-description: Для продажи или распространения среди других пользователей вашего приложения универсальной платформы Windows (UWP) для него необходимо создать пакет appxupload.
+title: "Формирование пакетов приложений UWP"
+description: "Для продажи или распространения среди других пользователей вашего приложения универсальной платформы Windows (UWP) для него необходимо создать пакет appxupload."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a77e441cbd1b6826e06064dbd4be449813754b25
+
 ---
 # Создание пакетов приложений UWP
 
@@ -136,6 +140,7 @@ Visual Studio может сопоставить пакет с Магазином
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

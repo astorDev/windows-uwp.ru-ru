@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Предоставляет значение для любого атрибута языка XAML путем оценки ссылки на уже определенный ресурс. Ресурсы определены в ResourceDictionary, а использование StaticResource определяет ссылку на ключ ресурса в ResourceDictionary.
-title: Расширение разметки StaticResource
+description: "Предоставляет значение для любого атрибута языка XAML путем оценки ссылки на уже определенный ресурс. Ресурсы определены в ResourceDictionary, а использование StaticResource определяет ссылку на ключ ресурса в ResourceDictionary."
+title: "Расширение разметки StaticResource"
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 3f486a8ac56e37a7401b9a87a4d560cac6b68f6f
+
 ---
 
 # Расширение разметки {StaticResource}
@@ -82,6 +86,7 @@ ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

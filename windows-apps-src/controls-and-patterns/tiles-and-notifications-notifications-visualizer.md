@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Визуализатор уведомлений — это новое приложение универсальной платформы Windows (UWP) в Магазине, которое помогает разработчикам создавать адаптивные живые плитки для Windows 10.
-title: Визуализатор уведомлений
+Description: "Визуализатор уведомлений — это новое приложение универсальной платформы Windows (UWP) в Магазине, которое помогает разработчикам создавать адаптивные живые плитки для Windows 10."
+title: "Визуализатор уведомлений"
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: dcbf05669093047bd76dc01c217daf353d8fb9da
+
 ---
 
 # Визуализатор уведомлений
@@ -64,6 +68,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

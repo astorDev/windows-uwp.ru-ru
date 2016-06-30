@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: "Раскадрованные анимации"
 description: "Раскадрованные анимации — это не просто анимации в визуальном смысле."
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83e361fd736ce46893517c7a5cccc9c5efc9a889
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 6c900ae6e1cfde8ec7261acfc57ea19b49f2ede1
 
 ---
 # Раскадрованные анимации
@@ -224,7 +224,7 @@ ms.openlocfilehash: 83e361fd736ce46893517c7a5cccc9c5efc9a889
 
  
 
-Вы также помещаете анимации в [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) при объявлении анимаций визуального состояния для визуального отображения элемента управления. В этом случае определяемые вами элементы **Storyboard** помещаются в контейнер [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), расположенный на более глубоком уровне в [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) (ресурсом с ключом является **Style**). В данном случае вам не требуется ключ или имя для **Storyboard**, поскольку **VisualState** имеет конечное имя, которое может вызвать класс [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager). Стили элементов управления часто раскладываются на отдельные файлы [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) XAML, а не помещаются в коллекцию **Resources** приложения или страницы. Дополнительные сведения об этом см. в статье [Раскадрованные анимации для визуальных состояний](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
+Вы также помещаете анимации в [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) при объявлении анимаций визуального состояния для визуального отображения элемента управления. В этом случае определяемые вами элементы **Storyboard** помещаются в контейнер [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), расположенный на более глубоком уровне в [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) (ресурсом с ключом является **Style**). В данном случае вам не требуется ключ или имя для **Storyboard**, поскольку **VisualState** имеет конечное имя, которое может вызвать класс [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager). Стили элементов управления часто раскладываются на отдельные файлы [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) XAML, а не помещаются в коллекцию **Resources** приложения или страницы. Дополнительные сведения об этом см. в статье [Раскадрованные анимации для визуальных состояний](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
 
 ## Зависимые и независимые анимации
 
@@ -307,11 +307,11 @@ myStoryBoard.Begin()
 
 ### Анимации для визуальных состояний
 
-Поведение при выполнении для класса [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490), который используется для определения визуального состояния элемента управления, отличается от того, как приложение может выполнить раскадровку напрямую. Применительно к определению визуального состояния в XAML, **Storyboard** – это элемент содержащего класса [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), а состояние в целом управляется при помощи API [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager). Все анимации внутри будут выполнены в соответствии с их значениями анимации и свойствами [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517), когда содержащий класс **VisualState** будет использован элементом управления. Подробнее об этом см. в разделе [Раскадровки для визуальных состояний](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808). Видимое свойство [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) для визуальных состояний другое. При переходе в другое визуальное состояние все изменения свойств, примененные предыдущим визуальным состоянием, и его анимации отменяются, даже если новое визуальное состояние прямо не применяет новую анимацию к свойству.
+Поведение при выполнении для класса [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490), который используется для определения визуального состояния элемента управления, отличается от того, как приложение может выполнить раскадровку напрямую. Применительно к определению визуального состояния в XAML, **Storyboard** – это элемент содержащего класса [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), а состояние в целом управляется при помощи API [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager). Все анимации внутри будут выполнены в соответствии с их значениями анимации и свойствами [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517), когда содержащий класс **VisualState** будет использован элементом управления. Подробнее об этом см. в разделе [Раскадровки для визуальных состояний](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808). Видимое свойство [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) для визуальных состояний другое. При переходе в другое визуальное состояние все изменения свойств, примененные предыдущим визуальным состоянием, и его анимации отменяются, даже если новое визуальное состояние прямо не применяет новую анимацию к свойству.
 
 ### **Storyboard** и **EventTrigger**
 
-Существует способ запустить анимацию, которая может быть полностью объявлена в XAML. Однако он больше не применяется широко. Это традиционный синтаксис из WPF и ранних версий Silverlight до поддержки [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager). Этот синтаксис [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) до сих пор работает в XAML среды выполнения Windows для обеспечения импорта или совместимости, но только для поведения триггера, основанного на событии [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723); попытка активировать другие события приведет к вызову исключений или к ошибке при компиляции. Подробнее об этом см. в разделе [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) или [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053).
+Существует способ запустить анимацию, которая может быть полностью объявлена в XAML. Однако он больше не применяется широко. Это традиционный синтаксис из WPF и ранних версий Silverlight до поддержки [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager). Этот синтаксис [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) до сих пор работает в XAML среды выполнения Windows для обеспечения импорта или совместимости, но только для поведения триггера, основанного на событии [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723); попытка активировать другие события приведет к вызову исключений или к ошибке при компиляции. Подробнее об этом см. в разделе [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) или [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053).
 
 ## Анимирование присоединенных свойств XAML
 
@@ -340,6 +340,6 @@ myStoryBoard.Begin()
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

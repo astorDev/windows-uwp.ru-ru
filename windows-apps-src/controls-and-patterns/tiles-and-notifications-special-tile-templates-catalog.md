@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Специальные шаблоны плиток — это уникальные шаблоны, которые могут быть анимированными или предоставлять возможности, не поддерживаемые адаптивными плитками.
-title: Специальные шаблоны плиток
+Description: "Специальные шаблоны плиток — это уникальные шаблоны, которые могут быть анимированными или предоставлять возможности, не поддерживаемые адаптивными плитками."
+title: "Специальные шаблоны плиток"
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
+
 ---
 
 # Специальные шаблоны плиток
@@ -283,6 +287,7 @@ TileContent content = new TileContent()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

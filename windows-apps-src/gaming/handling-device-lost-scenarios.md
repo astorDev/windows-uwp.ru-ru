@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Обработка сценариев удаления устройства в Direct3D 11
-description: В этом разделе объясняется, как повторно создать цепочку интерфейса устройства Direct3D и DXGI при удалении или повторной инициализации графического адаптера.
+title: "Обработка сценариев удаления устройства в Direct3D 11"
+description: "В этом разделе объясняется, как повторно создать цепочку интерфейса устройства Direct3D и DXGI при удалении или повторной инициализации графического адаптера."
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8d522a309386b06f97bc63b9eead1ca4cecf165c
+
 ---
 
 # <span id="dev_gaming.handling_device-lost_scenarios"></span>Обработка сценариев удаления устройства в Direct3D 11
@@ -27,7 +31,7 @@ ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
 
 Включите проверку ошибки удаленного устройства в цикле отрисовки. Представьте кадр, вызвав метод [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) (или метод [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797)  и т. д.). Затем проверьте, возвратил ли метод ошибку [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) или **DXGI\_ERROR\_DEVICE\_RESET**.
 
-Прежде всего шаблон сохраняет HRESULT, возвращенный цепочкой буферов DXGI.
+Прежде всего, шаблон сохраняет HRESULT, возвращенный цепочкой буферов DXGI.
 
 ```cpp
 HRESULT hr = m_swapChain->Present(1, 0);
@@ -172,6 +176,7 @@ if (m_deviceNotify != nullptr)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

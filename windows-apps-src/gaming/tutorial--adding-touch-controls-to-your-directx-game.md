@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Сенсорные элементы управления для игр
-description: Узнайте, как добавлять основные сенсорные элементы управления в игровое приложение универсальной платформы Windows (UWP) на языке C++ с поддержкой DirectX.
+title: "Сенсорные элементы управления для игр"
+description: "Узнайте, как добавлять основные сенсорные элементы управления в игровое приложение универсальной платформы Windows (UWP) на языке C++ с поддержкой DirectX."
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a2460ba2ffcf191fe87132180b2cca7519e87141
+
 ---
 
 # Сенсорные элементы управления для игр
@@ -348,6 +352,7 @@ void CameraPanController::Update( CoreWindow ^window )
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

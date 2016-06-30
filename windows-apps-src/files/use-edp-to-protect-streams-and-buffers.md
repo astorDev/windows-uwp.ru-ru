@@ -1,10 +1,14 @@
 ---
 author: TylerMSFT
-Description: 'В этом разделе показаны примеры задач программирования, необходимых для реализации некоторых наиболее распространенных сценариев защиты корпоративных данных (EDP), связанных с потоками и буферами.'
-MS-HAID: 'dev\_files.use\_edp\_to\_protect\_streams\_and\_buffers'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "В этом разделе показаны примеры задач программирования, необходимых для реализации некоторых наиболее распространенных сценариев защиты корпоративных данных (EDP), связанных с потоками и буферами."
+MS-HAID: dev\_files.use\_edp\_to\_protect\_streams\_and\_buffers
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 'Использование защиты корпоративных данных (EDP) для защиты потоков и буферов'
+title: "Использование защиты корпоративных данных (EDP) для защиты потоков и буферов"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: fdde4f7d2ab46b6349273f7c1c9d91cf27aa341a
+
 ---
 
 # Использование защиты корпоративных данных (EDP) для защиты потоков и буферов
@@ -308,6 +312,7 @@ private async void EnableUIPolicyFromProtectedBuffer(IBuffer buffer)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

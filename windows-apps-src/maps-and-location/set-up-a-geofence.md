@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-title: Настройка геозоны
-description: Настройте геозоны в своем приложении и узнайте, как обрабатывать уведомления на переднем и фоновом планах.
+title: "Настройка геозоны"
+description: "Настройте геозоны в своем приложении и узнайте, как обрабатывать уведомления на переднем и фоновом планах."
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: e161e478b1b306f5d8d77b7649aeecd80e21b5be
+
 ---
 
 # Настройка геозоны
@@ -303,7 +307,7 @@ public async void OnGeofenceStateChanged(GeofenceMonitor sender, object e)
 
 ### Шаг 1. Регистрация событий при изменении состояния геозоны
 
-В манифесте приложения на вкладке **Объявления** добавьте объявление для фоновой задачи расположения. Для этого выполните следующие действия.
+В манифесте приложения на вкладке **Объявления** добавьте объявление для фоновой задачи расположения. Для этого:
 
 -   Добавьте объявление типа **Фоновые задачи**.
 -   Присвойте задаче свойства тип **Расположение**.
@@ -361,7 +365,7 @@ async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
 
 ```
 
-### Шаг 3. Обработка фонового уведомления
+### Шаг 3. Обработка фонового уведомления
 
 Действие, выполняемое для уведомления пользователя, зависит от возможностей приложения. Вы можете отобразить всплывающее уведомление, воспроизвести какой-нибудь звук или обновить живую плитку. Код, представленный в этом параграфе, служит для обработки уведомления.
 
@@ -421,7 +425,7 @@ async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTas
 </TextBlock>
 ```
 
-Ваше приложение также может вызвать метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476), чтобы запустить приложение **Параметры** из кода. Дополнительные сведения см. в разделе [Запуск приложения «Параметры» для Windows](https://msdn.microsoft.com/library/windows/apps/mt228342).
+Либо ваше приложение может вызвать метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476), чтобы запустить приложение **Параметры** из кода. Дополнительные сведения см. в разделе [Запуск приложения "Параметры" в Windows](https://msdn.microsoft.com/library/windows/apps/mt228342).
 
 ```csharp
 using Windows.System;
@@ -478,6 +482,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

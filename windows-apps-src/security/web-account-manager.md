@@ -1,7 +1,11 @@
 ---
-title: Подключение к поставщикам удостоверений с помощью диспетчера учетных записей в Интернете
-description: В этой статье описан метод использования AccountsSettingsPane для подключения приложения универсальной платформы Windows (UWP) к внешним поставщикам удостоверений, например Майкрософт или Facebook, с помощью новых API диспетчера учетных записей в Интернете для Windows 10. 
+title: "Подключение к поставщикам удостоверений с помощью диспетчера учетных записей в Интернете"
+description: "В этой статье описан метод использования AccountsSettingsPane для подключения приложения универсальной платформы Windows (UWP) к внешним поставщикам удостоверений, например Майкрософт или Facebook, с помощью новых API диспетчера учетных записей в Интернете для Windows 10."
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: c9f6a0183edc3c01566311360417c256329ef904
+ms.openlocfilehash: 6ab12d6da9c4858cf6ab16d4143cf073bb0cb275
+
 ---
 # Подключение к поставщикам удостоверений с помощью диспетчера учетных записей в Интернете
 
@@ -383,6 +387,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 [Пример WebAccountManagement](http://go.microsoft.com/fwlink/p/?LinkId=620621)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

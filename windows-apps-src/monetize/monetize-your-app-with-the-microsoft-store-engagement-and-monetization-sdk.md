@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: Пакет SDK Microsoft Store Engagement and Monetization предоставляет библиотеки и средства, которые вы можете использовать для добавления в приложения функций, помогающие заработать и привлечь пользователей.
-title: Пакет SDK Microsoft Store Engagement and Monetization
+Description: "Пакет SDK Microsoft Store Engagement and Monetization предоставляет библиотеки и средства, которые вы можете использовать для добавления в приложения функций, помогающие заработать и привлечь пользователей."
+title: "Пакет SDK Microsoft Store Engagement and Monetization"
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
+translationtype: Human Translation
+ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
+ms.openlocfilehash: 481cf2aab806a1f9ce368256a9df8930cbc756c1
+
 ---
 
 # Пакет SDK Microsoft Store Engagement and Monetization
@@ -75,6 +79,7 @@ ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 * [Запуск Центра отзывов из приложения](launch-feedback-hub-from-your-app.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: Узнайте, как разрабатывать доступные приложения UWP для Windows 10, в которых реализована навигация с помощью клавиатуры, поддержка специальных возможностей, а также присутствуют параметры настройки цвета и контрастности.
+Description: "Узнайте, как разрабатывать доступные приложения UWP для Windows 10, в которых реализована навигация с помощью клавиатуры, поддержка специальных возможностей, а также присутствуют параметры настройки цвета и контрастности."
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
-title: Разработка инклюзивных приложений для Windows 10
+title: "Разработка инклюзивных приложений для Windows 10"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 77c401fd9686cb260e7b2d9e4bdf47a91d76802e
+
 ---
 
 # Разработка инклюзивных приложений для Windows  
@@ -80,6 +84,7 @@ XAML
 * [Информация о специальных возможностях Microsoft в центре разработчиков](https://msdn.microsoft.com/enable)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

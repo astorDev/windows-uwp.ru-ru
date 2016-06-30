@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 5cde1c22-91fd-4f5c-ac82-32efaa0d9fee
-description: Используйте библиотеки Microsoft Advertising в составе пакета SDK Microsoft Store Engagement and Monetization, чтобы отображать рекламные баннеры и промежуточную видеорекламу в своих приложениях XAML или JavaScript/HTML.
-title: Показ рекламы с помощью библиотек Microsoft Advertising
+description: "Используйте библиотеки Microsoft Advertising в составе пакета SDK Microsoft Store Engagement and Monetization, чтобы отображать рекламные баннеры и промежуточную видеорекламу в своих приложениях XAML или JavaScript/HTML."
+title: "Показ рекламы с помощью библиотек Microsoft Advertising"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: ab96dac3af382d334c767ad42a563c0dbc67a8f5
+
 ---
 
 # Показ рекламы с помощью библиотек Microsoft Advertising
@@ -47,6 +51,7 @@ title: Показ рекламы с помощью библиотек Microsoft 
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

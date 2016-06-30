@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Отрисовка на экране
-description: Наконец, мы переносим код, который отрисовывает вращающийся куб на экране.
+title: "Отрисовка на экране"
+description: "Наконец, мы переносим код, который отрисовывает вращающийся куб на экране."
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1b7431c20e25173a0aa3f8d6ee0d407be869d60a
+
 ---
 
 # Рисование на экране
@@ -68,9 +72,9 @@ m_d3dDevice->CreateRenderTargetView(
 
 Инициализацию и настройку устройства и контекста устройства Direct3D, а также однобуферную прорисовку можно найти в пользовательских методах **CreateDeviceResources** и **CreateWindowSizeDependentResources** в шаблоне Direct3D.
 
-Подробнее о контексте устройства Direct3D и его отношении к типам контекста EGL и EGLContext читайте в разделе [Портирование кода EGL в DXGI и Direct3D](moving-from-egl-to-dxgi.md).
+Подробнее о контексте устройства Direct3D и его отношении к типам контекста EGL и EGLContext читайте в разделе [Перенос кода EGL в DXGI и Direct3D](moving-from-egl-to-dxgi.md).
 
-## Инструкция
+## Инструкции
 
 ### Шаг 1. Отрисовка и отображение сцены
 
@@ -124,7 +128,7 @@ void Render(GraphicsContext *drawContext)
 
 В Direct3D 11 процесс очень прост. (Мы предполагаем, что вы используете окно просмотра и конфигурацию однобуферной прорисовки шаблона Direct3D.)
 
--   Обновите буферы констант (в данном случае — матрицу "модель-представление-проекция") с помощью вызовов [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790).
+-   Обновите буферы констант (в данном случае — матрицу «модель-представление-проекция») с помощью вызовов [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790).
 -   Установите буфер вершин с помощью [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
 -   Установите буфер индексов с помощью [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453).
 -   Установите специфическую треугольную топологию (список треугольников) с помощью [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455).
@@ -225,6 +229,7 @@ void RenderObject::Render()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

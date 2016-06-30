@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Звук для игр
-description: Узнайте, как создавать и встраивать музыку и звуки в игры DirectX, а также обрабатывать звуковые сигналы для создания динамичного и позиционного звука.
+title: "Звук для игр"
+description: "Узнайте, как создавать и встраивать музыку и звуки в игры DirectX, а также обрабатывать звуковые сигналы для создания динамичного и позиционного звука."
 ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 98896d4966ee2adb3bf494dcba22656fc8bb6414
+
 ---
 
 # Звук для игр
@@ -315,6 +319,7 @@ Media Foundation (MF) — это платформа мультимедиа дл
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

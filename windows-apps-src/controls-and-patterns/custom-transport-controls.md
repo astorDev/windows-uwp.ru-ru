@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Проигрыватель мультимедиа имеет настраиваемые элементы управления транспортировкой XAML для управления аудио- и видеосодержимым.
-title: Создание пользовательских элементов управления транспортировкой мультимедиа
+Description: "Проигрыватель мультимедиа имеет настраиваемые элементы управления транспортировкой XAML для управления аудио- и видеосодержимым."
+title: "Создание пользовательских элементов управления транспортировкой мультимедиа"
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 5500f41b254b32b8d293181fba3acebbfffa90e7
+
 ---
 # Создание пользовательских элементов управления транспортировкой
 
@@ -270,6 +274,7 @@ private void MediaElement_MediaOpened(object sender, RoutedEventArgs e)
 - [Воспроизведение мультимедиа](media-playback.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Прорисовка карты теней в буфер глубины
-description: Выполняя прорисовку с точки зрения освещения, вы можете создать двумерную карту глубин, представляющую объемную тень.
+title: "Прорисовка карты теней в буфер глубины"
+description: "Выполняя прорисовку с точки зрения освещения, вы можете создать двумерную карту глубин, представляющую объемную тень."
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 644e2084baa750965a5283208fde1cea24ecfdea
+
 ---
 
 # Прорисовка карты теней в буфере глубины
@@ -152,6 +156,7 @@ PixelShaderInput main(VertexShaderInput input)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
-title: Отслеживание недавно использовавшихся файлов и папок
-description: Отслеживайте файлы, к которым часто обращается пользователь, добавляя их в список недавно использованных файлов (MRU).
+title: "Отслеживание недавно использовавшихся файлов и папок"
+description: "Отслеживайте файлы, к которым часто обращается пользователь, добавляя их в список недавно использованных файлов (MRU)."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
+
 ---
 # Отслеживание недавно использовавшихся файлов и папок
 
@@ -107,6 +111,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

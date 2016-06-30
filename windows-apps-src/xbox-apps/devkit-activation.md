@@ -1,8 +1,12 @@
 ---
 author: Mtoepke
-title: Активация режима разработчика Xbox One
-description: Активация режима разработчика для переключения между коммерческим режимом и режимом разработчика.
+title: "Активация режима разработчика Xbox One"
+description: "Активация режима разработчика для переключения между коммерческим режимом и режимом разработчика."
 area: Xbox
+translationtype: Human Translation
+ms.sourcegitcommit: 7d832fee5bcd3a15cee1e7d8f4c66da9b0afa5e1
+ms.openlocfilehash: 9ad9904150acb00982c96eebeaf010f7023d3320
+
 ---
 
 # Активация режима разработчика Xbox One
@@ -83,6 +87,7 @@ Xbox One поддерживает два режима: *коммерческий
 - [UWP на Xbox One](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Вы можете помочь пользователям найти ваше приложение, привязав его к описанию в Магазине.
-title: Ссылка на ваше приложение
+Description: "Вы можете помочь пользователям найти ваше приложение, привязав его к описанию в Магазине."
+title: "Ссылка на ваше приложение"
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
+translationtype: Human Translation
+ms.sourcegitcommit: d36f14604bd8c2ce0d5778a67f5b5b9460d9fbf3
+ms.openlocfilehash: 891b99b52f7e3b347c0e2f9d298f144313cc7b2d
+
 ---
 
 # Ссылка на ваше приложение
@@ -56,6 +60,7 @@ ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

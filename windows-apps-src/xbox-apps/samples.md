@@ -1,8 +1,12 @@
 ---
 author: Mtoepke
-title: Примеры приложений UWP для Xbox One
-description: Примеры и библиотеки, которые помогут вам создавать замечательные приложения для Xbox One и телевизоров.
+title: "Примеры приложений UWP для Xbox One"
+description: "Примеры и библиотеки, которые помогут вам создавать замечательные приложения для Xbox One и телевизоров."
 area: Xbox
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 6f38f5aabb6a409fab894bf7127ad4011162f7c6
+
 ---
 
 # Примеры приложений UWP для Xbox One
@@ -16,6 +20,7 @@ TVHelpers — это набор примеров и библиотек JavaScrip
 - [UWP на Xbox One](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

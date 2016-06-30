@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Создание шейдеров и примитивов рисования
-description: В этом разделе мы покажем, как использовать исходные HLSL-файлы для компиляции и создания шейдеров, при помощи которых впоследствии можно отрисовывать на экране примитивы.
+title: "Создание шейдеров и примитивов рисования"
+description: "В этом разделе мы покажем, как использовать исходные HLSL-файлы для компиляции и создания шейдеров, при помощи которых впоследствии можно отрисовывать на экране примитивы."
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 15b5f83b45b928baaa484c10dc6e7bfe9c27a924
+
 ---
 
 # Создание шейдеров и примитивов рисования
@@ -291,6 +295,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

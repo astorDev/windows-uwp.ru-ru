@@ -1,9 +1,13 @@
 ---
 author: mcleblanc
-description: Переход с iOS на UWP
+description: "Переход с iOS на UWP"
 Search.SourceType: Video
-title: Переход с iOS на UWP
+title: "Переход с iOS на UWP"
 ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7f6160d651a4264d81ac1a1c9a011e32f53778b0
+
 ---
 
 # Переход с iOS на UWP
@@ -35,6 +39,7 @@ ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
