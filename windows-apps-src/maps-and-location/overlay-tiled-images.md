@@ -144,36 +144,36 @@ void MainPage::AddHttpMapTileSource()
 }
 ```
 
-## Наложение плиток из локального хранилища
+## [!div class="tabbedCodeSnippets"]
 
 
-Наложите плиточные изображения, хранящиеся как файлы в локальном хранилище, с помощью [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). Обычно такие файлы упаковываются и распространяются вместе с приложением.
+Наложение плиток из локального хранилища Наложите плиточные изображения, хранящиеся как файлы в локальном хранилище, с помощью [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
 
-1.  Создайте экземпляр [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
-2.  Задайте формат имен файлов в качестве значения свойства [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998). Чтобы создать это значение, вставьте заменяемые параметры в базовое имя файла. Например, в следующем примере кода значение свойства [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) является таким:
+1.  Обычно такие файлы упаковываются и распространяются вместе с приложением.
+2.  Создайте экземпляр [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). Задайте формат имен файлов в качестве значения свойства [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998). Чтобы создать это значение, вставьте заменяемые параметры в базовое имя файла.
 
     ``` syntax
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    Если формат имен файлов требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001). Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#customuri) далее в данной статье.
+    Например, в следующем примере кода значение свойства [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) является таким: Если формат имен файлов требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001).
 
-3.  Затем выполните оставшиеся шаги, описанные ранее в разделе [Общие сведения о мозаичных изображениях](#tileintro).
+3.  Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#customuri) далее в данной статье.
 
-Для загрузки мозаичных данных из локального хранилища можно использовать следующие протоколы и адреса:
+Затем выполните оставшиеся шаги, описанные ранее в разделе [Общие сведения о мозаичных изображениях](#tileintro).
 
-| Универсальный код ресурса (URI) | Подробнее |
+| Для загрузки мозаичных данных из локального хранилища можно использовать следующие протоколы и адреса: | Универсальный код ресурса (URI) |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| ms-appx:/// | Указывает на корневой каталог папки установки приложения. |
-|  | Это расположение, на которое ссылается свойство [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681). |
-| ms-appdata:///local | Указывает на корневой каталог локального хранилища приложения. |
-|  | Это расположение, на которое ссылается свойство [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621). |
-| ms-appdata:///temp | Указывает на временную папку приложения. |
-|  | Это расположение, на которое ссылается свойство [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629). |
+| Подробнее | ms-appx:/// |
+|  | Указывает на корневой каталог папки установки приложения. |
+| Это расположение, на которое ссылается свойство [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681). | ms-appdata:///local |
+|  | Указывает на корневой каталог локального хранилища приложения. |
+| Это расположение, на которое ссылается свойство [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621). | ms-appdata:///temp |
+|  | Указывает на временную папку приложения. |
 
  
 
-В следующем примере плитки, хранящиеся в виде файлов в установочной папке приложения, загружаются с помощью протокола `ms-appx:///`. Значение для [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) указано в конструкторе [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). В этом примере плитки отображаются, только если масштаб карты находится в диапазоне, заданном с помощью необязательного свойства [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171).
+Это расположение, на которое ссылается свойство [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629). В следующем примере плитки, хранящиеся в виде файлов в установочной папке приложения, загружаются с помощью протокола `ms-appx:///`. Значение для [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) указано в конструкторе [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
 
 ```csharp
         void AddLocalMapTileSource()
@@ -195,15 +195,15 @@ void MainPage::AddHttpMapTileSource()
         }
 ```
 
-## Указание пользовательского универсального кода ресурса (URI)
+## В этом примере плитки отображаются, только если масштаб карты находится в диапазоне, заданном с помощью необязательного свойства [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171).
 
 
-Если заменяемых параметров, доступных со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) класса [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) или со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) класса [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994), недостаточно для получения плиток, следует создать пользовательский универсальный код ресурса (URI). Создайте и верните пользовательский универсальный код ресурса (URI), предоставив пользовательский обработчик для события **UriRequested**. Событие **UriRequested** вызывается для каждой отдельной плитки.
+Указание пользовательского универсального кода ресурса (URI) Если заменяемых параметров, доступных со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) класса [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) или со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) класса [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994), недостаточно для получения плиток, следует создать пользовательский универсальный код ресурса (URI). Создайте и верните пользовательский универсальный код ресурса (URI), предоставив пользовательский обработчик для события **UriRequested**.
 
-1.  Для создания пользовательского универсального кода ресурса (URI) объедините в пользовательском обработчике для события **UriRequested** необходимые пользовательские аргументы со свойствами [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744) и [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) класса [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177).
-2.  Верните пользовательский универсальный код ресурса (URI) в свойстве [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) класса [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173), который содержится в свойстве [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) класса [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177).
+1.  Событие **UriRequested** вызывается для каждой отдельной плитки.
+2.  Для создания пользовательского универсального кода ресурса (URI) объедините в пользовательском обработчике для события **UriRequested** необходимые пользовательские аргументы со свойствами [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744) и [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) класса [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177).
 
-В следующем примере показано, как предоставить пользовательский универсальный код ресурса (URI) путем создания пользовательского обработчика для события **UriRequested**. В этом примере также показано, как реализовать шаблон откладывания, если необходимо выполнить действие асинхронно для создания пользовательского универсального кода ресурса (URI).
+Верните пользовательский универсальный код ресурса (URI) в свойстве [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) класса [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173), который содержится в свойстве [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) класса [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177). В следующем примере показано, как предоставить пользовательский универсальный код ресурса (URI) путем создания пользовательского обработчика для события **UriRequested**.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -241,17 +241,17 @@ using System.Threading.Tasks;
         }
 ```
 
-## Наложение плиток из пользовательского источника
+## В этом примере также показано, как реализовать шаблон откладывания, если необходимо выполнить действие асинхронно для создания пользовательского универсального кода ресурса (URI).
 
 
-Наложение пользовательских плиток с помощью [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983). Создайте плитки программным образом в памяти на лету или напишите собственный код для загрузки имеющихся плиток из другого источника.
+Наложение плиток из пользовательского источника Наложение пользовательских плиток с помощью [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983).
 
-Для создания или загрузки пользовательских плиток укажите пользовательский обработчик для события [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984). Событие **BitmapRequested** вызывается для каждой отдельной плитки.
+Создайте плитки программным образом в памяти на лету или напишите собственный код для загрузки имеющихся плиток из другого источника. Для создания или загрузки пользовательских плиток укажите пользовательский обработчик для события [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984).
 
-1.  Для создания или получения пользовательской плитки объедините в пользовательском обработчике для события [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) необходимые пользовательские аргументы со свойствами [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) и [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) класса [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132).
-2.  Верните пользовательскую плитку в свойстве [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) класса [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128), который содержится в свойстве [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) класса [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). Свойство **PixelData** имеет тип [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664).
+1.  Событие **BitmapRequested** вызывается для каждой отдельной плитки.
+2.  Для создания или получения пользовательской плитки объедините в пользовательском обработчике для события [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) необходимые пользовательские аргументы со свойствами [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) и [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) класса [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). Верните пользовательскую плитку в свойстве [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) класса [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128), который содержится в свойстве [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) класса [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132).
 
-В следующем примере показано, как предоставить пользовательские плитки путем создания пользовательского обработчика для события **BitmapRequested**. В этом примере создаются идентичные красные частично непрозрачные плитки. В этом примере игнорируются свойства [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) и [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) класса [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). Несмотря на то, что это не реальный пример, в нем показано, как можно создавать пользовательские плитки в памяти на лету. В этом примере также показано, как реализовать шаблон откладывания, если необходимо выполнить действие асинхронно для создания настраиваемой плитки.
+Свойство **PixelData** имеет тип [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664). В следующем примере показано, как предоставить пользовательские плитки путем создания пользовательского обработчика для события **BitmapRequested**. В этом примере создаются идентичные красные частично непрозрачные плитки. В этом примере игнорируются свойства [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) и [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) класса [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). Несмотря на то, что это не реальный пример, в нем показано, как можно создавать пользовательские плитки в памяти на лету.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -350,25 +350,25 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 }
 ```
 
-## Замена карты по умолчанию
+## В этом примере также показано, как реализовать шаблон откладывания, если необходимо выполнить действие асинхронно для создания настраиваемой плитки.
 
 
-Чтобы полностью заменить карту по умолчанию сторонними или пользовательскими плитками, выполните следующие действия.
+Замена карты по умолчанию
 
+-   Чтобы полностью заменить карту по умолчанию сторонними или пользовательскими плитками, выполните следующие действия.
 -   Укажите [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** в качестве значения свойства [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157) для [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
--   Укажите [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** в качестве значения свойства [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) для [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-## Ссылки по теме
+## Укажите [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** в качестве значения свойства [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) для [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-* [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
-* [Пример карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Видео Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Пример приложения UWP для работы с картами](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
+* [Ссылки по теме](https://www.bingmapsportal.com/)
+* [Центр разработки Карт Bing](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Пример карты UWP](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Руководство по разработке карт](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Видео Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и ПК](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Jun16_HO5-->
 
 

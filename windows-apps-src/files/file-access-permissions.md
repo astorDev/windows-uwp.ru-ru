@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
-title: Разрешения на доступ к файлам
-description: Приложения могут иметь доступ к определенным расположениям в файловой системе по умолчанию. Приложения также могут получить доступ к дополнительным расположениям через средство выбора файлов или с помощью объявления возможностей.
+title: "Разрешения на доступ к файлам"
+description: "Приложения могут иметь доступ к определенным расположениям в файловой системе по умолчанию. Приложения также могут получить доступ к дополнительным расположениям через средство выбора файлов или с помощью объявления возможностей."
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
+
 ---
 # Разрешения на доступ к файлам
 
@@ -19,7 +23,7 @@ description: Приложения могут иметь доступ к опре
 
     Существуют два основных способа получения доступа к файлам и папкам в папке установки вашего приложения.
 
-    1.  Так можно получить класс [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), соответствующий папке установки вашего приложения:
+    1.  Так вы можете получить класс [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), соответствующий папке установки вашего приложения:
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         Windows.Storage.StorageFolder installedLocation = Windows.ApplicationModel.Package.Current.InstalledLocation;
@@ -28,9 +32,9 @@ description: Приложения могут иметь доступ к опре
         var installDirectory = Windows.ApplicationModel.Package.current.installedLocation;
         ```
 
-       Затем можно получить доступ к файлам и папкам каталога с помощью методов [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230). В примере этот класс **StorageFolder** хранится в переменной `installDirectory`. Чтобы узнать больше о работе с пакетом приложения и каталогом установки, скачайте [Пример сведений о пакете приложения](http://go.microsoft.com/fwlink/p/?linkid=231526) для Windows 8.1, а затем используйте исходный код из него в приложении для Windows 10.
+       Затем вы можете получить доступ к файлам и папкам каталога с помощью методов [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230). В примере этот класс **StorageFolder** хранится в переменной `installDirectory`. Чтобы узнать больше о работе с пакетом приложения и каталогом установки, скачайте [Пример сведений о пакете приложения](http://go.microsoft.com/fwlink/p/?linkid=231526) для Windows 8.1, а затем используйте исходный код из него в приложении для Windows 10.
 
-    2.  Так можно загрузить файл непосредственно из каталога установки приложения с помощью URI приложения:
+    2.  Так вы можете загрузить файл непосредственно из каталога установки приложения с помощью URI приложения:
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;            
@@ -165,6 +169,7 @@ description: Приложения могут иметь доступ к опре
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

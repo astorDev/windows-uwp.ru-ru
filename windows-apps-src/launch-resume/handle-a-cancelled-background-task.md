@@ -46,7 +46,7 @@ ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
 >    }
 > ```
 
-Добавьте флаговую переменную **\_CancelRequested** в класс фоновой задачи. Она будет использоваться для обозначения того, что был сделан запрос на отмену.
+[!div class="tabbedCodeSnippets"] Добавьте флаговую переменную **\_CancelRequested** в класс фоновой задачи.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -57,9 +57,9 @@ ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
 >     volatile bool CancelRequested;
 > ```
 
-В методе OnCanceled, созданном на этапе 1, установите для переменной флага **\_CancelRequested** значение **true**.
+Она будет использоваться для обозначения того, что был сделан запрос на отмену.
 
-Весь метод OnCanceled [примера фоновой задачи]( http://go.microsoft.com/fwlink/p/?linkid=227509) устанавливает для поля **\_CancelRequested** значение **true** и записывает потенциально полезную отладочную информацию:
+[!div class="tabbedCodeSnippets"]
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -85,7 +85,7 @@ ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
 >     }
 > ```
 
-Перед началом работы зарегистрируйте метод обработчика событий OnCanceled в методе Run фоновой задачи. Например, используйте следующую строку кода:
+В методе OnCanceled, созданном на этапе 1, установите для переменной флага **\_CancelRequested** значение **true**. Весь метод OnCanceled [примера фоновой задачи]( http://go.microsoft.com/fwlink/p/?linkid=227509) устанавливает для поля **\_CancelRequested** значение **true** и записывает потенциально полезную отладочную информацию:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -95,14 +95,14 @@ ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
 >     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > ```
 
-## Обработка события с помощью выхода из метода Run
+## [!div class="tabbedCodeSnippets"]
 
 
-При получении запроса на отмену необходимо остановить работу метода Run и выйти из него, если для переменной **\_cancelRequested** установлено значение **true**.
+Перед началом работы зарегистрируйте метод обработчика событий OnCanceled в методе Run фоновой задачи.
 
-Измените код класса вашей фоновой задачи, чтобы проверить переменную флага во время выполнения задачи. Если для переменной **\_cancelRequested** установлено значение true, остановите выполнение работы.
+Например, используйте следующую строку кода: [!div class="tabbedCodeSnippets"]
 
-[Пример фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) содержит проверку, которая останавливает периодический обратный вызов таймера, если фоновая задача отменена:
+Обработка события с помощью выхода из метода Run
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -132,11 +132,11 @@ ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
 >     }
 > ```
 
-> **Примечание.** Показанный ниже пример кода использует свойство [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800), которое применяется для записи хода выполнения фоновой задачи. Сведения о ходе выполнения возвращаются приложению при помощи класса [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
+> При получении запроса на отмену необходимо остановить работу метода Run и выйти из него, если для переменной **\_cancelRequested** установлено значение **true**. Измените код класса вашей фоновой задачи, чтобы проверить переменную флага во время выполнения задачи.
 
-Измените метод Run, чтобы после остановки работы он записывал, была ли задача завершена или отменена.
+Если для переменной **\_cancelRequested** установлено значение true, остановите выполнение работы.
 
-В [примере фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) состояние записывается в LocalSettings:
+[Пример фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) содержит проверку, которая останавливает периодический обратный вызов таймера, если фоновая задача отменена:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -200,15 +200,15 @@ ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
 >     }
 > ```
 
-## Комментарии
+## [!div class="tabbedCodeSnippets"]
 
-Вы можете скачать [пример фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666), чтобы увидеть эти примеры кода в контексте методов.
+**Примечание.** Показанный ниже пример кода использует свойство [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800), которое применяется для записи хода выполнения фоновой задачи.
 
-Для наглядности в примере кода показана только часть метода Run (и обратный вызов таймера) из [примера фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+Сведения о ходе выполнения возвращаются приложению при помощи класса [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
 
-## Пример метода Run
+## Измените метод Run, чтобы после остановки работы он записывал, была ли задача завершена или отменена.
 
-Весь метод Run, а также код обратного вызова для таймера из [примера фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) показаны ниже для контекста.
+В [примере фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) состояние записывается в LocalSettings:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -327,26 +327,26 @@ ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
 > }
 > ```
 
-> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> [!div class="tabbedCodeSnippets"] Комментарии
 
-## Связанные разделы
+## Вы можете скачать [пример фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666), чтобы увидеть эти примеры кода в контексте методов.
 
-* [Создание и регистрация фоновой задачи](create-and-register-a-background-task.md)
-* [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
-* [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
-* [Регистрация фоновой задачи](register-a-background-task.md)
-* [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
-* [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
-* [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
-* [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)
-* [Использование триггера обслуживания](use-a-maintenance-trigger.md)
+* [Для наглядности в примере кода показана только часть метода Run (и обратный вызов таймера) из [примера фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666).](create-and-register-a-background-task.md)
+* [Пример метода Run](declare-background-tasks-in-the-application-manifest.md)
+* [Весь метод Run, а также код обратного вызова для таймера из [примера фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) показаны ниже для контекста.](guidelines-for-background-tasks.md)
+* [[!div class="tabbedCodeSnippets"]](monitor-background-task-progress-and-completion.md)
+* [**Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP).](register-a-background-task.md)
+* [В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).](respond-to-system-events-with-background-tasks.md)
+* [Связанные разделы](run-a-background-task-on-a-timer-.md)
+* [Создание и регистрация фоновой задачи](set-conditions-for-running-a-background-task.md)
+* [Объявление фоновых задач в манифесте приложения](update-a-live-tile-from-a-background-task.md)
+* [Руководство по работе с фоновыми задачами](use-a-maintenance-trigger.md)
 
-* [Отладка фоновой задачи](debug-a-background-task.md)
-* [Вызов событий приостановки, возобновления и фоновых событий в приложениях Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Отслеживание хода выполнения и завершения фоновых задач](debug-a-background-task.md)
+* [Регистрация фоновой задачи](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

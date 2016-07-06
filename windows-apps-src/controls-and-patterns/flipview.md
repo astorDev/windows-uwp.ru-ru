@@ -5,8 +5,8 @@ title: "Руководство по элементам пролистывани�
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: ecb46c0d42821d833e8232780b553754f8f097c5
 
 ---
 # Представление пролистывания
@@ -14,7 +14,7 @@ ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
 Используйте представление пролистывания для просмотра изображений или других элементов в коллекции, например фотографий в альбоме или элементов на странице описания продукта. Каждый раз отображается один элемент. В случае сенсорных устройств для прокрутки коллекции необходимо коснуться элемента и провести пальцем. Если используется мышь, кнопки навигации отображаются при наведении ее указателя. При использовании клавиатуры для перемещения по коллекции используются клавиши со стрелками.
 
 
-<span class="sidebar_heading" style="font-weight: bold;">Важные API</span>
+
 
 -   [**Класс FlipView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)
 -   [**Свойство ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
@@ -204,14 +204,13 @@ stackPanel1.Children.Add(flipView1);
 </table>
 
 
-## Статьи по теме
+## Связанные статьи
 
-- [Руководство по спискам](https://msdn.microsoft.com/library/windows/apps/mt186889)
-- [**Класс FlipView (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242678)
-- [**Класс CarouselPanel (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
-
+- [Руководство по спискам](lists.md)
+- [**Класс FlipView**](https://msdn.microsoft.com/library/windows/apps/br242678)
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

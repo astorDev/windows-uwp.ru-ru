@@ -3,8 +3,8 @@ author: Mtoepke
 title: "Вводные сведения об инструментах Xbox One"
 description: "Работа с инструментом Dev Home, созданным специально для Xbox One, с использованием портала Windows Device Portal."
 area: Xbox
-ms.sourcegitcommit: 4872ac9587b3e2e14860cb152bf33536faccc48d
-ms.openlocfilehash: c975cb07aa9b7f0d30a9905cbceba11e89c8f7df
+ms.sourcegitcommit: 914a1b76c6b502415bee36865af009a8dfe9bb53
+ms.openlocfilehash: e2f87cdeb8ce3371a34bb989e5fa29ef63d18621
 
 ---
 
@@ -56,6 +56,11 @@ Dev Home прикрепится справа. Чтобы изменить кон
 | Visual Studio | Позволяет связывать консоль с экземпляром Visual Studio в целях развертывания. При необходимости удалите любые существующие связанные экземпляры VS, чтобы не допустить развертывания приложения UWP в комплекте средств разработки. |
 | [Портал Windows Device Portal](#windows-device-portal) | Включает WDP (инструмент управления устройствами в браузере) для комплекта. |
 | Статус Xbox Live | Указывает на текущий статус службы Xbox Live. |
+
+### Управление размером хранилища разработчика
+
+Чтобы увеличить или уменьшить объем дискового пространства, используемый в качестве хранилища разработчика, выберите пункт **Управление хранилищем разработчика** в главном меню. Измените значение панели **Хранилище разработчика**, а затем выберите **Сохранить и перезапустить**, чтобы перезагрузить консоль.
+  ![Управление объемом хранилища разработчика](images/devhome_storage.png)
 
 ### Пользовательская настройка Dev Home
 
@@ -110,7 +115,7 @@ Dev Home прикрепится справа. Чтобы изменить кон
   ![Предупреждение о сертификате безопасности](images/security_cert_warning.jpg)
 
 ## См. также
-- [Технологии разработчика Microsoft: портал Windows Device Portal](https://ms-iot.github.io/content/en-US/win10/tools/DevicePortal.htm)
+- [Технологии разработчика Microsoft: портал Windows Device Portal](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-xbox)
 - [Приложения UWP для Xbox One](index.md)
 
 
@@ -119,6 +124,6 @@ Dev Home прикрепится справа. Чтобы изменить кон
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

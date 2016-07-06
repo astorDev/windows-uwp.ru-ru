@@ -3,8 +3,8 @@ author: jwmsft
 description: "Узнайте, как определять и реализовывать пользовательские свойства зависимостей в приложении среды выполнения Windows на C++, C# или Visual Basic."
 title: "Пользовательские свойства зависимостей"
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 63301870ab53f4061cac9b9ad87a5fb75e8c48da
+ms.sourcegitcommit: d50b73fcf78c28157cff7003dc3e180de9d69f70
+ms.openlocfilehash: 80a42040887818a0c6a66ed32327144bed586dc2
 
 ---
 
@@ -249,7 +249,7 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
     String s = e.NewValue as String; //null checks omitted
     if (s == String.Empty)
     {
-        iwlc.HasLabelValue = false;
+        iwlc.HasLabelValue = false;s
     } else {
         iwlc.HasLabelValue = true;
     }
@@ -274,7 +274,7 @@ static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventAr
     if (s->IsEmpty()) {
         iwlc->HasLabelValue=false;
     }
-}
+}s
 ```
 
 ### Реакция на событие изменения свойства для структур и перечислений
@@ -335,7 +335,7 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 -   Мы обычно не анимируем коллекции.
 -   Мы обычно не выполняем предварительного заполнения элемента в коллекции стилями или шаблоном.
 -   Хотя привязка к коллекциям является распространенным сценарием, коллекция не обязана быть свойством зависимостей, чтобы быть источником привязки. Для целевых объектов привязки более типично использование подклассов [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) или [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) для поддержки элементов коллекции или использования схем моделей просмотра. Подробнее о привязке коллекций и к коллекциям см. в разделе [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
--   Для уведомлений об изменении коллекций лучше использовать такие интерфейсы, как **INotifyPropertyChanged** или **INotifyCollectionChanged**, либо наследовать тип коллекции от [**ObservableCollection**](T:System.Collections.ObjectModel.ObservableCollection%601).
+-   Для уведомлений об изменении коллекций лучше использовать такие интерфейсы, как **INotifyPropertyChanged** или **INotifyCollectionChanged**, либо наследовать тип коллекции от [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx).
 
 Тем не менее сценарии для свойств зависимостей типа коллекции существуют. Следующие три раздела предоставляют некоторые рекомендации по реализации свойства зависимостей типа коллекции.
 
@@ -374,6 +374,6 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

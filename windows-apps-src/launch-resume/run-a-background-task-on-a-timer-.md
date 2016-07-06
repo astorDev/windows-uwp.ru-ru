@@ -50,12 +50,12 @@ ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
     > TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
     > ```
 
-## Добавление условия (необязательно)
+## [!div class="tabbedCodeSnippets"]
 
 
--   При необходимости можно также создать условие фоновой задачи, чтобы контролировать время запуска задачи. Условие не даст запустить фоновую задачу, пока это условие не будет выполнено. Подробнее можно узнать в разделе [Задание условий для выполнения фоновой задачи](set-conditions-for-running-a-background-task.md).
+-   Добавление условия (необязательно) При необходимости можно также создать условие фоновой задачи, чтобы контролировать время запуска задачи.
 
-    В этом примере условию присвоено значение **UserPresent**, поэтому после срабатывания триггера задача выполняется, только если пользователь активен. Список возможных условий см. в статье [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+    Условие не даст запустить фоновую задачу, пока это условие не будет выполнено. Подробнее можно узнать в разделе [Задание условий для выполнения фоновой задачи](set-conditions-for-running-a-background-task.md). В этом примере условию присвоено значение **UserPresent**, поэтому после срабатывания триггера задача выполняется, только если пользователь активен.
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -65,10 +65,10 @@ ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
     > SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
     > ```
 
-##  Вызов RequestAccessAsync()
+##  Список возможных условий см. в статье [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
 
--   Перед регистрацией фоновой задачи [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) вызовите [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494).
+-   [!div class="tabbedCodeSnippets"]
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -78,12 +78,12 @@ ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
     > BackgroundExecutionManager::RequestAccessAsync();
     > ```
 
-## Регистрация фоновой задачи
+## Вызов RequestAccessAsync()
 
 
--   Зарегистрируйте фоновую задачу, вызвав функцию регистрации фоновой задачи. Узнать больше о регистрации фоновых задач можно в разделе [Регистрация фоновой задачи](register-a-background-task.md).
+-   Перед регистрацией фоновой задачи [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) вызовите [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494). [!div class="tabbedCodeSnippets"]
 
-    Следующий код регистрирует фоновую задачу:
+    Регистрация фоновой задачи
 
     > > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -99,39 +99,39 @@ ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
 
-    > **Примечание.** Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации оказываются недопустимыми, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
+    > Зарегистрируйте фоновую задачу, вызвав функцию регистрации фоновой задачи. Узнать больше о регистрации фоновых задач можно в разделе [Регистрация фоновой задачи](register-a-background-task.md). Следующий код регистрирует фоновую задачу:
 
 
-## Комментарии
+## [!div class="tabbedCodeSnippets"]
 
-> **Примечание.** Начиная c Windows 10, пользователю больше не потребуется добавлять приложения на экран блокировки, чтобы использовать фоновые задачи. Руководство по таким типам триггеров фоновых задач см. в разделе [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
+> **Примечание.** Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации оказываются недопустимыми, возвращается ошибка.
 
-> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
-
-## Связанные разделы
+> Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой. Комментарии
 
 
-* [Создание и регистрация фоновой задачи](create-and-register-a-background-task.md)
-* [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
-* [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
-* [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
-* [Регистрация фоновой задачи](register-a-background-task.md)
-* [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
-* [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
-* [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)
-* [Использование триггера обслуживания](use-a-maintenance-trigger.md)
-* [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
+## **Примечание.** Начиная c Windows 10, пользователю больше не потребуется добавлять приложения на экран блокировки, чтобы использовать фоновые задачи.
 
-* [Отладка фоновой задачи](debug-a-background-task.md)
-* [Вызов событий приостановки, возобновления и фоновых событий в приложениях Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
- 
+* [Руководство по таким типам триггеров фоновых задач см. в разделе [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).](create-and-register-a-background-task.md)
+* [**Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP).](declare-background-tasks-in-the-application-manifest.md)
+* [В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).](handle-a-cancelled-background-task.md)
+* [Связанные разделы](monitor-background-task-progress-and-completion.md)
+* [Создание и регистрация фоновой задачи](register-a-background-task.md)
+* [Объявление фоновых задач в манифесте приложения](respond-to-system-events-with-background-tasks.md)
+* [Обработка отмененной фоновой задачи](set-conditions-for-running-a-background-task.md)
+* [Отслеживание хода выполнения и завершения фоновых задач](update-a-live-tile-from-a-background-task.md)
+* [Регистрация фоновой задачи](use-a-maintenance-trigger.md)
+* [Реагирование на системные события с помощью фоновых задач](guidelines-for-background-tasks.md)
+
+* [Задание условий выполнения фоновой задачи](debug-a-background-task.md)
+* [Обновление живой плитки из фоновой задачи](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Jun16_HO5-->
 
 

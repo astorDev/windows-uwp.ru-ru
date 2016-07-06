@@ -5,8 +5,8 @@ title: "Создание адаптивных плиток"
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 0bcdc9570365ca0dcacf4f9c0c1b99afaffcf157
+ms.sourcegitcommit: a6632c7b8fdee5320f35e316abd318193a254c51
+ms.openlocfilehash: 6cd4519007d1241cb7c411dade1a092140b598c4
 
 ---
 
@@ -20,21 +20,21 @@ ms.openlocfilehash: 0bcdc9570365ca0dcacf4f9c0c1b99afaffcf157
 
 (При желании вы можете по-прежнему использовать стандартные шаблоны из [каталога шаблонов плиток Windows 8](https://msdn.microsoft.com/library/windows/apps/hh761491) при создании уведомлений для Windows 10.)
 
-## <span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>Начало работы
+## Начало работы
 
 
 **Установите NotificationsExtensions.** Если вы хотите использовать C# вместо XML для создания уведомлений, установите пакет NuGet с именем [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki). В примерах на C#, приведенных в этой статье, используется пакет NotificationsExtensions.
 
 **Установите Визуализатор уведомлений.** Это бесплатное приложение UWP помогает проектировать адаптивные живые плитки, мгновенно отображая плитку при ее изменении, как в представлении редактора или конструирования XAML в Visual Studio. Ознакомьтесь с [этой записью блога](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx), чтобы узнать больше. Скачать приложение Notifications Visualizer можно [здесь](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
-## <span id="Usage_guidance"></span><span id="usage_guidance"></span><span id="USAGE_GUIDANCE"></span>Руководство по использованию
+## Руководство по использованию
 
 
 Адаптивные шаблоны предназначены для работы с различными форм-факторами устройств и типами уведомлений. Такие элементы, как группы и подгруппы, связывают содержимое и не подразумевают определенного самостоятельного визуального поведения. Окончательный вид уведомления должен зависеть от конкретного устройства, на котором оно появляется, будь то телефон, планшет, настольный компьютер или другое устройство.
 
 Подсказки — это дополнительные атрибуты, которые можно добавлять к элементам, чтобы добиться определенного визуального поведения. Подсказки могут зависеть от устройства или уведомления.
 
-## <span id="A_basic_example"></span><span id="a_basic_example"></span><span id="A_BASIC_EXAMPLE"></span>Базовый пример
+## Базовый пример
 
 
 В этом примере показано, чего можно добиться с помощью шаблонов адаптивных плиток.
@@ -104,7 +104,7 @@ TileContent content = new TileContent()
 
 ![краткий пример плитки](images/adaptive-tiles-quicksample.png)
 
-## <span id="Tile_sizes"></span><span id="tile_sizes"></span><span id="TILE_SIZES"></span>Размеры плиток
+## Размеры плиток
 
 
 Содержимое для плитки каждого размера указывается в отдельных элементах [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) в полезных данных XML. Выберите целевой размер, задав для атрибута шаблона одно из следующих значений:
@@ -196,12 +196,12 @@ TileContent content = new TileContent()
 
 ![размеры адаптивной плитки: маленькая, средняя, широкая и большая](images/adaptive-tiles-sizes.png)
 
-## <span id="Branding"></span><span id="branding"></span><span id="BRANDING"></span>Branding
+## Branding
 
 
 Вы можете контролировать фирменную символику в нижней части живой плитки (отображаемое имя и угловой логотип) с помощью атрибута branding в полезных данных уведомления. Доступные значения: none (нет), name (только имя), logo (только логотип) или nameAndLogo (имя и логотип).
 
-**Примечание**. Windows Phone не поддерживает угловой логотип, поэтому по умолчанию для "logo" и "nameAndLogo" используется значение name.
+**Примечание**. Windows Mobile не поддерживает угловой логотип, поэтому по умолчанию для "logo" и "nameAndLogo" используется значение name.
 
  
 
@@ -283,10 +283,12 @@ TileContent content = new TileContent()
 
  
 
-## <span id="Display_name"></span><span id="display_name"></span><span id="DISPLAY_NAME"></span>Отображаемое имя
+## Отображаемое имя
 
 
 Вы можете переопределить отображаемое имя уведомления, введя собственную текстовую строку в атрибуте **displayName**. Как и для фирменной символики, вы можете указать это в элементе [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md), который влияет на все полезные данные уведомления, или в элементе [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md), который затрагивает только отдельные плитки.
+
+**Известная проблема**. Если в Windows Mobile указать короткое имя плитки, отображаемое имя, указанное в уведомлении, не будут использоваться (всегда отображается короткое имя). 
 
 ```XML
 <tile>
@@ -332,7 +334,7 @@ TileContent content = new TileContent()
 
 ![отображаемое имя адаптивной плитки](images/adaptive-tiles-displayname.png)
 
-## <span id="Text"></span><span id="text"></span><span id="TEXT"></span>Text
+## Текст
 
 
 Элемент [&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) используется для отображения текста. Можно использовать подсказки, чтобы изменить способ отображения текста.
@@ -344,7 +346,7 @@ TileContent content = new TileContent()
 </table>
 ```
 
-<span codelanguage="CSharp"></span>
+
 ```CSharp
 <colgroup>
 <col width="100%" />
@@ -366,7 +368,7 @@ new TileText()
 
 ![текст адаптивной плитки](images/adaptive-tiles-text.png)
 
-## <span id="Text_wrapping"></span><span id="text_wrapping"></span><span id="TEXT_WRAPPING"></span>Обтекание текстом
+## Обтекание текстом
 
 
 По умолчанию текст не переносится и продолжается после края плитки. Используйте **hint-wrap** для настройки обтекания текстом для текстового элемента. Вы также можете задать минимальное и максимальное число строк с помощью атрибутов **hint-minLines** и **hint-maxLines**, которые принимают положительные целые числа.
@@ -378,7 +380,7 @@ new TileText()
 </table>
 ```
 
-<span codelanguage="CSharp"></span>
+
 ```CSharp
 <colgroup>
 <col width="100%" />
@@ -401,7 +403,7 @@ new TileText()
 
 ![адаптивная плитка с обтеканием текстом](images/adaptive-tiles-textwrapping.png)
 
-## <span id="Text_styles"></span><span id="text_styles"></span><span id="TEXT_STYLES"></span>Стили текста
+## Стили текста
 
 
 Стили определяют размер и цвет шрифта, а также насыщенность текстовых элементов. Доступно несколько стилей, включая «утонченную» версию каждого стиля с прозрачностью 60 %, отчего цвет текста обычно становится светло-серым.
@@ -479,7 +481,7 @@ new TileText()
 
  
 
-## <span id="Text_alignment"></span><span id="text_alignment"></span><span id="TEXT_ALIGNMENT"></span>Выравнивание текста
+## Выравнивание текста
 
 
 Текст может быть выровнен по левому краю, центру или правому краю. В языках с написанием слева направо языках, таких как английский, по умолчанию текст выравнивается по левому краю. В языках с написанием справа налево, таких как арабский, по умолчанию текст выравнивается по правому краю. Можно вручную задать выравнивание с помощью атрибута элементов **hint-align**.
@@ -491,7 +493,7 @@ new TileText()
 </table>
 ```
 
-<span codelanguage="CSharp"></span>
+
 ```CSharp
 <colgroup>
 <col width="100%" />
@@ -514,7 +516,7 @@ new TileText()
 
 ![выравнивание текста адаптивных плиток](images/adaptive-tiles-textalignment.png)
 
-## <span id="Groups_and_subgroups"></span><span id="groups_and_subgroups"></span><span id="GROUPS_AND_SUBGROUPS"></span>Группы и подгруппы
+## Группы и подгруппы
 
 
 Группы позволяют семантически объявить, что содержимое в группе взаимосвязано и должно отображаться согласованно. Например, у вас может быть два текстовых элемента, заголовок и подзаголовок, поэтому не имеет смысла отображать только заголовок. Если объединить эти элементы в подгруппу, они или будут отображаться все вместе (если помещаются), или не будут отображаться вовсе (если не помещаются).
@@ -616,7 +618,7 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 
 ![группы и подгруппы адаптивных плиток](images/adaptive-tiles-groups-subgroups.png)
 
-## <span id="Subgroups__columns_"></span><span id="subgroups__columns_"></span><span id="SUBGROUPS__COLUMNS_"></span>Подгруппы (столбцы)
+## Подгруппы (столбцы)
 
 
 Подгруппы также позволяют разбить данные на семантические разделы в группе. Для живых плиток визуально это соответствует столбцам.
@@ -841,7 +843,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![пример плитки погоды](images/adaptive-tiles-weathertile.png)
 
-## <span id="Images"></span><span id="images"></span><span id="IMAGES"></span>Изображения
+## Изображения
 
 
 Элемент &lt;image&gt; используется для показа изображений на уведомлении плитки. Изображения можно разместить вместе с содержимым плитки (по умолчанию), как фоновое изображение за содержимым или как всплывающее изображение, которое анимируется в верхней части уведомления.
@@ -939,7 +941,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 Изображения, размещенные в корневом элементе &lt;binding&gt; или в первой группе, также растягиваются по всей доступной высоте.
 
-### <span id="Image_alignment"></span><span id="image_alignment"></span><span id="IMAGE_ALIGNMENT"></span>Выравнивание изображений
+### Выравнивание изображений
 
 Изображения можно выравнивать по левому краю, центру или правому краю с помощью атрибута **hint-align**. Также при этом изображения будут показываться в исходном разрешении, а не растягиваться на всю ширину.
 
@@ -974,7 +976,7 @@ TileLarge = new TileBinding()
 
 ![пример выравнивания изображения (по левому краю, по центру, по правому краю)](images/adaptive-tiles-imagealignment.png)
 
-### <span id="Image_margins"></span><span id="image_margins"></span><span id="IMAGE_MARGINS"></span>Поля изображений
+### Поля изображений
 
 По умолчанию для встроенных изображений применяется поле в 8 пикселей между любым содержимым над или под изображением. Это поле можно удалить с помощью атрибута изображения **hint-removeMargin**. Однако для изображений всегда сохраняется 8-пиксельное поле от края плитки, а для подгрупп (столбцов) всегда сохраняется 8-пиксельная отбивка между столбцами.
 
@@ -1064,7 +1066,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![пример удаления поля подсказки](images/adaptive-tiles-removemargin.png)
 
-### <span id="Image_cropping"></span><span id="image_cropping"></span><span id="IMAGE_CROPPING"></span>Кадрирование изображений
+### Кадрирование изображений
 
 Изображения можно обрезать в форме круга с помощью атрибута **hint-crop**, который в настоящий момент поддерживает только значения "none" (по умолчанию) или "circle".
 
@@ -1142,7 +1144,7 @@ TileLarge = new TileBinding()
 
 ![пример обрезки изображения](images/adaptive-tiles-imagecropping.png)
 
-### <span id="Background_image"></span><span id="background_image"></span><span id="BACKGROUND_IMAGE"></span>Фоновое изображение
+### Фоновое изображение
 
 Чтобы задать фоновое изображение, разместите элемент изображения в корневом элементе &lt;binding&gt; и задайте для атрибута placement значение background.
 
@@ -1266,7 +1268,7 @@ TileWide = new TileBinding()
 
 ![пример наложения подсказки изображения](images/adaptive-tiles-image-hintoverlay.png)
 
-### <span id="Peek_image"></span><span id="peek_image"></span><span id="PEEK_IMAGE"></span>Всплывающее изображение
+### Всплывающее изображение
 
 Вы можете указать изображение, которое «выглядывает» из-за верхней границы плитки. Такое изображение использует анимацию для скольжения вниз и вверх в верхней части плитки, отображаясь полностью и затем скрываясь, чтобы показать основное содержимое плитки. Чтобы задать всплывающее изображение, разместите элемент изображения в корневом элементе &lt;binding&gt; и задайте для атрибута placement значение peek.
 
@@ -1344,12 +1346,12 @@ hint-crop="circle"
 
 ![наложение подсказки на обзорном изображении](images/hintoverlay.png)
 
-## <span id="Vertical_alignment__text_stacking_"></span><span id="vertical_alignment__text_stacking_"></span><span id="VERTICAL_ALIGNMENT__TEXT_STACKING_"></span>Вертикальное выравнивание (размещение текста)
+## Вертикальное выравнивание (размещение текста)
 
 
 Вы можете контролировать вертикальное выравнивание содержимого на плитке с помощью атрибута **hint-textStacking** в элементе [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) и элементе [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md). По умолчанию все содержимое вертикально выравнивается по верхней границе, но также можно выравнивать его по нижней границе или центру.
 
-### <span id="Text_stacking_on_binding_element"></span><span id="text_stacking_on_binding_element"></span><span id="TEXT_STACKING_ON_BINDING_ELEMENT"></span>Размещение текста в элементе binding
+### Размещение текста в элементе binding
 
 Если размещение текста применяется на уровне элемента [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md), вертикальное выравнивание задается для содержимого уведомления в целом, при этом используется доступное вертикальное пространство над областью фирменной символики или индикатора событий.
 
@@ -1397,7 +1399,7 @@ TileMedium = new TileBinding()
 
 ![размещение текста в элементе binding](images/adaptive-tiles-textstack-bindingelement.png)
 
-### <span id="Text_stacking_on_subgroup_element"></span><span id="text_stacking_on_subgroup_element"></span><span id="TEXT_STACKING_ON_SUBGROUP_ELEMENT"></span>Размещение текста в элементе subgroup
+### Размещение текста в элементе subgroup
 
 Если размещение текста применяется на уровне элемента [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md), вертикальное выравнивание задается для содержимого подгруппы (столбца) с использованием доступного вертикального пространства всей группы.
 
@@ -1476,7 +1478,7 @@ TileWide = new TileBinding()
 ...
 ```
 
-## <span id="related_topics"></span>Ссылки по теме
+## Ссылки по теме
 
 
 * [Схема адаптивных плиток](tiles-and-notifications-adaptive-tiles-schema.md)
@@ -1492,6 +1494,6 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

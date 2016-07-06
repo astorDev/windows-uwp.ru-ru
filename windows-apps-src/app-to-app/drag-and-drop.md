@@ -59,6 +59,6 @@ ms.openlocfilehash: ffa2f0f368a61ef4f3003c1fa03e143b26c6859b
 * [Drop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

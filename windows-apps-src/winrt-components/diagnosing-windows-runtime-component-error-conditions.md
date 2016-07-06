@@ -234,23 +234,23 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **Примечание.** Если при изменении имени возвращаемого значения новое имя конфликтует с именем другого параметра, возникает ошибка WME1091.
+> [!div class="tabbedCodeSnippets"]
 
-Код JavaScript может получить доступ к выходным параметрам метода (в том числе к возвращаемому значению) по имени. Пример можно найти в описании атрибута [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx).
+**Примечание.** Если при изменении имени возвращаемого значения новое имя конфликтует с именем другого параметра, возникает ошибка WME1091. Код JavaScript может получить доступ к выходным параметрам метода (в том числе к возвращаемому значению) по имени.
 
-| Номер ошибки | Текст сообщения |
+| Пример можно найти в описании атрибута [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx). | Номер ошибки |
 |---------------|------------|
-| WME1091 | У метода "{0}" есть возвращаемое значение с именем "{1}", которое совпадает с именем параметра. В среде выполнения Windows параметры методов и возвращаемые значения должны иметь уникальные имена. |
-| WME1092 | У метода "{0}" есть параметр с именем "{1}", которое совпадает с именем возвращаемого значения по умолчанию. Попробуйте использовать другое имя параметра или с помощью атрибута System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute явно укажите имя возвращаемого значения.<br/>**Примечание.** returnValue является именем по умолчанию только для методов доступа к свойствам, а для всех других методов по умолчанию используется имя value. |
+| Текст сообщения | WME1091 У метода "{0}" есть возвращаемое значение с именем "{1}", которое совпадает с именем параметра. |
+| В среде выполнения Windows параметры методов и возвращаемые значения должны иметь уникальные имена. | WME1092 У метода "{0}" есть параметр с именем "{1}", которое совпадает с именем возвращаемого значения по умолчанию.<br/>Попробуйте использовать другое имя параметра или с помощью атрибута System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute явно укажите имя возвращаемого значения. |
  
 
-## Связанные разделы
+## **Примечание.** returnValue является именем по умолчанию только для методов доступа к свойствам, а для всех других методов по умолчанию используется имя value.
 
-* [Создание компонентов среды выполнения Windows на C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx)
+* [Связанные разделы](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Создание компонентов среды выполнения Windows на C# и Visual Basic](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

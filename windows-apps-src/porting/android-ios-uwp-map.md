@@ -1,8 +1,11 @@
 ---
 author: GrantMeStrength
-Description: Сравнение возможностей платформ iOS, Android и Windows 10.
+Description: "Сравнение возможностей платформ iOS, Android и Windows 10."
 Search.Product: eADQiWindows 10XVcnh
-title: Сопоставление концепций приложений для Windows для разработчиков iOS и Android
+title: "Сопоставление концепций приложений для Windows для разработчиков iOS и Android"
+ms.sourcegitcommit: de5420b45832a482d08e5e7ede436407f7dbf2af
+ms.openlocfilehash: 074a71bf3d037004ca376c11b58d17c906f804a5
+
 ---
 
 #Сопоставление концепций приложений для Windows для разработчиков iOS и Android
@@ -137,7 +140,7 @@ title: Сопоставление концепций приложений для
 <td align="left"><strong>Экран-заставка.</strong> <br><br>Изображение, показываемое при запуске приложения и в основном использующееся для добавления фирменной символики.</td>
 <td align="left">Экран-заставка не предоставляется по умолчанию и реализуется посредством редактирования <strong>фона темы</strong> первой активности.</td>
 <td align="left">Приложения должны иметь <strong>статическое изображение запуска</strong> или <strong>XIB-файл либо файл раскадровки запуска</strong>.</td>
-<td align="left">Экран-заставка создается с помощью <strong>изображения</strong> и цветного фона. <a href="https://msdn.microsoft.com/library/windows/apps/mt187309.aspx">Время отображения экрана-заставки можно увеличить</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187306.aspx">Добавление экрана-заставки</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/hh465338.aspx">Рекомендации по экранам-заставкам</a></td>
+<td align="left">Экран-заставка создается с помощью <strong>изображения</strong> и цветного фона. <a href="https://msdn.microsoft.com/library/windows/apps/mt187309.aspx">Время отображения экрана-заставки можно увеличить</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187306.aspx">Добавление экрана-заставки</a></td>
 </tr>
 </tbody>
 </table>
@@ -154,12 +157,12 @@ title: Сопоставление концепций приложений для
 <th align="left"><strong>Универсальное понятие</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Голос.</strong> <br><br>Распознавание речи для голосового ввода и дополнительные голосовые возможности.</td>
+<td align="left"><strong>Речь.</strong> <br><br>Распознавание речи для голосового ввода и дополнительные голосовые возможности.</td>
 <td align="left">Голосовой ввод может обеспечиваться любым приложением, в котором реализован класс <strong>RecognizerIntent</strong>, таким как <strong>Голосовой поиск Google</strong>. Класс <strong>SpeechRecognizer</strong> позволяет приложениям использовать API распознавания речи Google.</td>
 <td align="left">Встроенные API распознавания речи и речевого ввода отсутствуют.</td>
 <td align="left">Можно использовать API <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">распознавания речи</a></strong> для взаимодействия с приложением, выполняемым на переднем плане. Вы можете использовать голосовые <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">взаимодействия с Cortana</a></strong> для запуска приложений на переднем плане или в фоновом режиме, а также для взаимодействия с фоновыми приложениями.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">Взаимодействие с помощью голосовых функций</a></td>
@@ -660,6 +663,7 @@ title: Сопоставление концепций приложений для
 </table>
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

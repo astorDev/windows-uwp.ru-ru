@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
-title: Отправка рабочего элемента в пул потоков
-description: Узнайте, как выполнить работу в отдельном потоке, отправив рабочий элемент в пул потоков.
+title: "Отправка рабочего элемента в пул потоков"
+description: "Узнайте, как выполнить работу в отдельном потоке, отправив рабочий элемент в пул потоков."
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: afb6d8b1b1ee5eeb99ba68e8b842436bd58619d0
+
 ---
 # Отправка рабочего элемента в пул потоков
 
@@ -258,6 +262,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

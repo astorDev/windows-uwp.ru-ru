@@ -1,11 +1,17 @@
 ---
-author: Xansky description: Пространство имен Windows.ApplicationModel.Contacts позволяет выбирать контакты несколькими способами.
-title: Выбор контактов ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442 keywords: контакты, выбор keywords: выбор одного контакта keywords: выбор нескольких контактов keywords: контакты, выбор нескольких keywords: выбор определенных данных контактов keywords: контакт, выбор определенных данных keywords: контакт, выбор определенных полей
+author: Xansky
+description: "Пространство имен Windows.ApplicationModel.Contacts позволяет выбирать контакты несколькими способами."
+title: "Выбор контактов"
+ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
+keywords: contact, selecting specific fields
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 6f2c6a546ed3daa0ef0311bc54ca47f31d01f3d8
+
 ---
 
 # Выбор контактов
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Пространство имен [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) позволяет выбирать контакты несколькими способами. В этой статье описано, как выбрать один или несколько контактов, и показано, как настроить окно выбора контактов, чтобы получать только необходимые вашему приложению сведения о контактах.
@@ -20,15 +26,15 @@ var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 
 ## Настройка режима выбора (необязательно)
 
-По умолчанию окно выбора контактов извлекает все доступные данные о контактах, выбранных пользователем. Свойство [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) позволяет настроить окно выбора контактов так, чтобы получать только поля данных, необходимые вашему приложению. Этот способ использования окна выбора контактов более эффективен, если нужна только часть доступных сведений контакта.
+По умолчанию окно выбора контактов извлекает все доступные данные о контактах, выбранных пользователем. Свойство [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) позволяет настроить окно выбора контактов так, чтобы получать только поля данных, необходимые вашему приложению. Этот способ использования окна выбора контактов более эффективен, если нужна только часть доступных сведений контакта.
 
-Сначала задайте свойство [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) для параметра **Поля**:
+Сначала задайте свойство [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) для параметра **Поля**:
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-Затем при помощи свойства [**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/BR224913-desiredfieldswithcontactfieldtype) укажите поля, которые должно извлекать окно выбора контактов. В примере ниже показано, как настроить окно выбора контактов для извлечения электронных адресов.
+Затем при помощи свойства [**DesiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) укажите поля, которые должно извлекать окно выбора контактов. В примере ниже показано, как настроить окно выбора контактов для извлечения адресов электронной почты.
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
@@ -40,7 +46,7 @@ contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Con
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-Если вы хотите, чтобы пользователь выбрал один или несколько контактов, используйте [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/BR224913-pickcontactsasync).
+Если вы хотите, чтобы пользователь выбрал один или несколько контактов, используйте [**PickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync).
 
 ```cs
 public IList<Contact> contacts;
@@ -225,6 +231,6 @@ public class ContactItemAdapter
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

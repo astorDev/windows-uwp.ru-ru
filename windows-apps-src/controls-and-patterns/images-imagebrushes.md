@@ -5,15 +5,15 @@ title: "Изображения и кисти изображений"
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
+ms.sourcegitcommit: 485f3069ff92995082550366839f14be50f674a5
+ms.openlocfilehash: f37f609d87b48a39b958a8e32470488689a3e68c
 
 ---
 # Изображения и кисти изображений
 
 Чтобы отобразить изображение, вы можете использовать объект **Image** или **ImageBrush**. Объект Image отрисовывает изображение, а объект ImageBrush закрашивает изображением другой объект. 
 
-<span class="sidebar_heading" style="font-weight: bold;">Важные API</span>
+
 
 -   [**Класс Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
 -   [**Свойство Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)
@@ -24,9 +24,6 @@ ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
 Используйте элемент **Image** для отображения отдельного изображения в приложении.
 
 Используйте **ImageBrush** для применения изображения к другому объекту. Способы использования ImageBrush включают декоративные эффекты для текста или мозаичные фоны для элементов управления или контейнеров макета. Вы можете задать растяжение, выравнивание и замощение изображения, а также создать шаблоны и другие эффекты. 
-
-## Примеры.
-
 
 
 ## Создание изображения
@@ -144,9 +141,13 @@ API для [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/wind
 > **Примечание.**
             &nbsp;&nbsp;Если вы установили изображения с помощью кода, вы можете использовать автоматическую обработку для получения доступа к неквалифицированным ресурсам с текущими квалификаторами масштаба и языка, либо вы можете использовать [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) и [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) с квалификаторами масштаба и языка для непосредственного получения ресурсов. Подробнее см. в разделе [Система управления ресурсами](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx).
 
+## Связанные статьи
+
+-   [Звук, видео и камера](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
+-   [**Класс Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
+-   [**Класс ImageBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
 
 
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

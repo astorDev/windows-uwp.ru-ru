@@ -220,6 +220,6 @@ in the app package must be trusted."
 [Примеры кода на GitHub для преобразования классических приложений в приложения UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

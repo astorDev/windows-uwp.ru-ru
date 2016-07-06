@@ -100,10 +100,10 @@ ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
 > }
 > ```
 
-## Восстановление данных приложения, если его работа была приостановлена, а затем завершена
+## [!div class="tabbedCodeSnippets"]
 
 
-Когда пользователь переключается на приложение, которое завершило работу, система отправляет событие [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), свойству [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) которого задано значение **Launch**, а свойству [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) — значение **Terminated** или **ClosedByUser**. Приложение должно загрузить свои сохраненные данные и обновить отображаемое содержимое.
+Восстановление данных приложения, если его работа была приостановлена, а затем завершена Когда пользователь переключается на приложение, которое завершило работу, система отправляет событие [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), свойству [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) которого задано значение **Launch**, а свойству [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) — значение **Terminated** или **ClosedByUser**.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -158,30 +158,30 @@ ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
 > }
 > ```
 
-Если для свойства [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) задано значение **NotRunning**, это означает, что приложению не удалось успешно сохранить свои данные и поэтому оно вынуждено начать работу с состояния первоначального запуска.
+Приложение должно загрузить свои сохраненные данные и обновить отображаемое содержимое.
 
-## Примечания
+## [!div class="tabbedCodeSnippets"]
 
-> **Примечание**  Для приложений Магазина Windows Phone за событием [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) всегда следует событие [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), даже если работа приложения в настоящее время приостановлена и пользователь повторно запускает приложение с основной плитки или из списка приложений. Приложения могут пропустить инициализацию, если содержимое уже задано в текущем окне. Можно проверить свойство [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736), чтобы определить, было ли приложение запущено с основной или вспомогательной плитки, и на основе этих данных решить, нужно ли запускать приложение заново или можно возобновить его.
+> Если для свойства [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) задано значение **NotRunning**, это означает, что приложению не удалось успешно сохранить свои данные и поэтому оно вынуждено начать работу с состояния первоначального запуска. Примечания **Примечание**  Для приложений Магазина Windows Phone за событием [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) всегда следует событие [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), даже если работа приложения в настоящее время приостановлена и пользователь повторно запускает приложение с основной плитки или из списка приложений.
 
-## Связанные темы
+## Приложения могут пропустить инициализацию, если содержимое уже задано в текущем окне.
 
-* [Обработка приостановки работы приложения](suspend-an-app.md)
-* [Обработка возобновления работы приложения](resume-an-app.md)
-* [Руководство по приостановке и возобновлению работы приложения](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [Жизненный цикл приложения](app-lifecycle.md)
+* [Можно проверить свойство [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736), чтобы определить, было ли приложение запущено с основной или вспомогательной плитки, и на основе этих данных решить, нужно ли запускать приложение заново или можно возобновить его.](suspend-an-app.md)
+* [Связанные темы](resume-an-app.md)
+* [Обработка приостановки работы приложения](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [Обработка возобновления работы приложения](app-lifecycle.md)
 
-**Справка**
+**Руководство по приостановке и возобновлению работы приложения**
 
-* [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766)
-* [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324)
-
- 
+* [**Жизненный цикл приложения**](https://msdn.microsoft.com/library/windows/apps/br224766)
+* [**Справка**](https://msdn.microsoft.com/library/windows/apps/br242324)
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Jun16_HO5-->
 
 

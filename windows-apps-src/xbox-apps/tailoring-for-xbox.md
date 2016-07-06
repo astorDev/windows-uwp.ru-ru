@@ -24,6 +24,6 @@ ms.openlocfilehash: ef0fef1dd43444771add4ed6d9db1300f8d33210
 Подробнее о методах проектирования см. в разделе [Проектирование для Xbox и телевизора](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode).
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

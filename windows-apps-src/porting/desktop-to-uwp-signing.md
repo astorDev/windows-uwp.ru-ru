@@ -52,6 +52,6 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 - [SignTool.exe (инструмент подписывания)](https://msdn.microsoft.com/library/8s9b9yaz(v=vs.110).aspx)
 - [Подписание пакета приложения с помощью SignTool](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835835(v=vs.85).aspx)
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -45,11 +45,12 @@ ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
 >  };
 >  ```
 
-2.  Добавьте в обработчик событий код, обрабатывающий завершение фоновой задачи.
+2.  [!div class="tabbedCodeSnippets"]
 
-    Например, [образец фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) обновляет пользовательский интерфейс.
+    Добавьте в обработчик событий код, обрабатывающий завершение фоновой задачи.
 
-    > [!div class="tabbedCodeSnippets"] ```cs
+    > [!div class="tabbedCodeSnippets"]
+    >     ```cs
     >     private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
     >     {
     >         UpdateUI();
@@ -62,14 +63,26 @@ ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
     >     };
     >     ```
 
-## Создание функции обработчика событий для обработки хода выполнения фоновых задач
+## Например, [образец фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) обновляет пользовательский интерфейс.
 
 
-1.  Создайте функцию обработчика событий для обработки завершенных фоновых задач. В этом коде необходимо использовать отдельный объем памяти, которая принимает объект [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) и объект [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782):
+1.  [!div class="tabbedCodeSnippets"] ```cs
+    private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
+    {
+        UpdateUI();
+    }
+    ```
+    ```cpp
+    auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskCompletedEventArgs^ args)
+    {    
+        UpdateUI();
+    };
+    ``` Создание функции обработчика событий для обработки хода выполнения фоновых задач
 
-    Используйте следующий объем памяти для метода OnProgress обработчика событий фоновой задачи:
+    Создайте функцию обработчика событий для обработки завершенных фоновых задач.
 
-    > [!div class="tabbedCodeSnippets"] ```cs
+    > [!div class="tabbedCodeSnippets"]
+    >     ```cs
     >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
     >     {
     >         // TODO: Add code that deals with background task progress.
@@ -82,11 +95,23 @@ ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
     >     };
     >     ```
 
-2.  Добавьте в обработчик событий код, обрабатывающий завершение фоновой задачи.
+2.  В этом коде необходимо использовать отдельный объем памяти, которая принимает объект [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) и объект [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782):
 
-    Например, в [образце фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) пользовательский интерфейс обновляется с помощью состояния выполнения, передаваемого через параметр *args*:
+    Используйте следующий объем памяти для метода OnProgress обработчика событий фоновой задачи:
 
-    > [!div class="tabbedCodeSnippets"]     ```cs     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)     {         var progress = "Progress: " + args.Progress + "%";         BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
+    > [!div class="tabbedCodeSnippets"]
+    >     [!div class="tabbedCodeSnippets"] ```cs
+    >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
+    >     {
+    >         // TODO: Add code that deals with background task progress.
+    >     }
+    ```
+    ```cpp
+    auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
+    {
+        // TODO: Add code that deals with background task progress.
+    };
+    ```
     >
     >         UpdateUI();
     >     }
@@ -101,22 +126,22 @@ ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
     >     };
     >     ```
 
-## Регистрируйте функции обработчика событий в новых и существующих фоновых задачах.
+## Добавьте в обработчик событий код, обрабатывающий завершение фоновой задачи.
 
 
-1.  Когда приложение регистрирует фоновую задачу впервые, оно должно выполнить регистрацию, чтобы получить обновления выполнения и завершения для задачи, в случае если задача выполняется в то время, когда приложение еще работает на переднем плане.
+1.  Например, в [образце фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) пользовательский интерфейс обновляется с помощью состояния выполнения, передаваемого через параметр *args*:
 
-    Например, в [образце фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) для каждой регистрируемой фоновой задачи вызывается следующая функция:
+    [!div class="tabbedCodeSnippets"]     ```cs     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)     {         var progress = "Progress: " + args.Progress + "%";         BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
 
-    > [!div class="tabbedCodeSnippets"] ```cs
+    > [!div class="tabbedCodeSnippets"]
+    >     ```cs
     >     private void AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration task)
     >     {
     >         task.Progress += new BackgroundTaskProgressEventHandler(OnProgress);
     >         task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
     >     }
     >     ```
-    >     ```cpp     void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task)     {         auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
-    >                   {             auto progress = "Progress: " + args->Progress + "%";             BackgroundTaskSample::SampleBackgroundTaskProgress = progress;             UpdateUI();         };
+    >     Регистрируйте функции обработчика событий в новых и существующих фоновых задачах.
     >
     >         task->Progress += ref new BackgroundTaskProgressEventHandler(progress);
     >         
@@ -130,11 +155,20 @@ ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
     >     }
     >     ```
 
-2.  Когда приложение запускается или переходит на новую страницу, где состояние фоновой задачи имеет значение, оно должно получить список зарегистрированных в настоящее время фоновых задач и сопоставить их с функциями обработчика событий выполнения и завершения. Список фоновых задач, зарегистрированных приложением в настоящее время, хранится в свойстве [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787).
+2.  Когда приложение регистрирует фоновую задачу впервые, оно должно выполнить регистрацию, чтобы получить обновления выполнения и завершения для задачи, в случае если задача выполняется в то время, когда приложение еще работает на переднем плане. Например, в [образце фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) для каждой регистрируемой фоновой задачи вызывается следующая функция:
 
-    Например, чтобы подключить обработчики событий при выполнении перехода на страницу SampleBackgroundTask, в [образце фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) используется следующий код:
+    [!div class="tabbedCodeSnippets"] ```cs
+    private void AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration task)
+    {
+        task.Progress += new BackgroundTaskProgressEventHandler(OnProgress);
+        task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
+    }
+    ```
+    ```cpp     void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task)     {         auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
+                  {             auto progress = "Progress: " + args->Progress + "%";             BackgroundTaskSample::SampleBackgroundTaskProgress = progress;             UpdateUI();         };
 
-    > [!div class="tabbedCodeSnippets"]     ```cs     protected override void OnNavigatedTo(NavigationEventArgs e)     {         foreach (var task in BackgroundTaskRegistration.AllTasks)         {             if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName)             {                 AttachProgressAndCompletedHandlers(task.Value);                 BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true);             }         }
+    > [!div class="tabbedCodeSnippets"]
+    >     Когда приложение запускается или переходит на новую страницу, где состояние фоновой задачи имеет значение, оно должно получить список зарегистрированных в настоящее время фоновых задач и сопоставить их с функциями обработчика событий выполнения и завершения.
     >
     >         UpdateUI();
     >     }
@@ -168,26 +202,26 @@ ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
     >     }
     >     ```
 
-## Ссылки по теме
+## Список фоновых задач, зарегистрированных приложением в настоящее время, хранится в свойстве [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787).
 
 
 ****
 
-* [Создание и регистрация фоновой задачи](create-and-register-a-background-task.md)
-* [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
-* [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
-* [Регистрация фоновой задачи](register-a-background-task.md)
-* [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
-* [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
-* [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)
-* [Использование триггера обслуживания](use-a-maintenance-trigger.md)
-* [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
-* [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
+* [Например, чтобы подключить обработчики событий при выполнении перехода на страницу SampleBackgroundTask, в [образце фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) используется следующий код:](create-and-register-a-background-task.md)
+* [[!div class="tabbedCodeSnippets"]     ```cs     protected override void OnNavigatedTo(NavigationEventArgs e)     {         foreach (var task in BackgroundTaskRegistration.AllTasks)         {             if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName)             {                 AttachProgressAndCompletedHandlers(task.Value);                 BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true);             }         }](declare-background-tasks-in-the-application-manifest.md)
+* [Ссылки по теме](handle-a-cancelled-background-task.md)
+* [Создание и регистрация фоновой задачи](register-a-background-task.md)
+* [Объявление фоновых задач в манифесте приложения](respond-to-system-events-with-background-tasks.md)
+* [Обработка отмененной фоновой задачи](set-conditions-for-running-a-background-task.md)
+* [Регистрация фоновой задачи](update-a-live-tile-from-a-background-task.md)
+* [Реагирование на системные события с помощью фоновых задач](use-a-maintenance-trigger.md)
+* [Задание условий выполнения фоновой задачи](run-a-background-task-on-a-timer-.md)
+* [Обновление живой плитки из фоновой задачи](guidelines-for-background-tasks.md)
 
 ****
 
-* [Отладка фоновой задачи](debug-a-background-task.md)
-* [Вызов событий приостановки, возобновления и фоновых событий в приложениях Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Использование триггера обслуживания](debug-a-background-task.md)
+* [Запуск фоновой задачи по таймеру](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
@@ -195,6 +229,6 @@ ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

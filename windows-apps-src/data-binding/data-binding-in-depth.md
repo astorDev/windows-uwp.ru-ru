@@ -3,8 +3,8 @@ author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "Подробно о привязке данных"
 description: "Привязка данных обеспечивает отображение данных в пользовательском интерфейсе приложения и (дополнительно) синхронизацию с этими данными."
-ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
-ms.openlocfilehash: c371ca1804d76a0ffdf812cfb933b03916654bad
+ms.sourcegitcommit: ca92d44cc8e3fb7eaed5a522435efe9cb4796560
+ms.openlocfilehash: d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2
 
 ---
 # Подробно о привязке данных
@@ -12,15 +12,15 @@ ms.openlocfilehash: c371ca1804d76a0ffdf812cfb933b03916654bad
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Важные API **
+**Важные API**
 
 -   [**Класс Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820)
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-**Примечание.** В этой статье подробно описаны средства привязки данных. Краткое практическое введение см. в [Обзоре привязки данных](data-binding-quickstart.md).
+> **Примечание.**
+            &nbsp;&nbsp;В этой статье подробно описаны средства привязки данных. Краткое практическое введение см. в [Обзоре привязки данных](data-binding-quickstart.md).
 
- 
 
 Привязка данных обеспечивает отображение данных в пользовательском интерфейсе приложения и (дополнительно) синхронизацию с этими данными. Используя привязку данных, вы можете отделить вопросы обработки данных от вопросов, связанных с пользовательским интерфейсом. Это упрощает концептуальную модель, а также улучшает удобочитаемость, возможности тестирования и удобство поддержки приложения.
 
@@ -77,7 +77,7 @@ public class HostViewModel
 
 **Примечание.** При использовании C++/CX необходимо реализовать интерфейс [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899), а класс источника привязки должен либо иметь атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872), либо реализовывать интерфейс [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
 
-``` csharp
+```csharp
 public class HostViewModel : INotifyPropertyChanged
 {
     private string nextButtonText;
@@ -111,7 +111,7 @@ public class HostViewModel : INotifyPropertyChanged
 
 Чтобы приведенный выше шаблон не требовалось реализовывать несколько раз, вы можете просто выполнить наследование от базового класса **BindableBase**, доступного в примере [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (в папке Common). Пример приведен ниже.
 
-``` csharp
+```csharp
 public class HostViewModel : BindableBase
 {
     private string nextButtonText;
@@ -151,11 +151,11 @@ public class HostViewModel : BindableBase
 В двух примерах ниже свойство **Button.Content** представляет собой целевой объект привязки, и в качестве его значения устанавливается расширение разметки, которое объявляет объект привязки. Сначала отображается расширение разметки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), а затем — [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Объявления привязок в разметке используется очень часто (благодаря удобству и удобочитаемости). Однако вы можете не использовать разметку, а вместо этого при необходимости императивно (программными средствами) создать экземпляр класса [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820).
 
 <!-- XAML lang specifier not yet supported in OP. Using XML for now. -->
-``` xml
+```xml
 <Button Content="{x:Bind ...}" ... />
 ```
 
-``` xml
+```xml
 <Button Content="{Binding ...}" ... />
 ```
 
@@ -163,7 +163,7 @@ public class HostViewModel : BindableBase
 
 Для создания разметки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) необходимо выполнить еще один шаг. Нужно предоставить класс источника привязки из класса, представляющего нашу страницу разметки. Для этого следует добавить свойство (типа **HostViewModel** в данном случае) к нашему классу страницы **HostView**.
 
-``` csharp
+```csharp
 namespace QuizGame.View
 {
     public sealed partial class HostView : Page
@@ -181,7 +181,7 @@ namespace QuizGame.View
 
 После этого мы можем подробнее рассмотреть разметку, объявляющую объект привязки. В приведенном ниже примере используется целевой объект привязки **Button.Content**, который мы ранее применяли в разделе "Целевой объект привязки". Он уже привязан к свойству **HostViewModel.NextButtonText**.
 
-``` xml
+```xml
 <Page x:Class="QuizGame.View.HostView" ... >
     <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
 </Page>
@@ -197,7 +197,7 @@ namespace QuizGame.View
 
 В классе [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) (который используется как шаблон элемента, шаблон содержимого или шаблон заголовка) значение **Path** интерпретируется не в контексте страницы, а в контексте объекта данных, для которого создается шаблон. Чтобы его привязки (и созданный для них эффективный код) можно было проверить во время компиляции, класс **DataTemplate** должен объявлять тип своего объекта данных с помощью атрибута **x:DataType**. Приведенный ниже пример можно использовать в качестве свойства **ItemTemplate** элемента управления, привязанного к коллекции объектов **SampleDataGroup**.
 
-``` xml
+```xml
 <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{x:Bind Title}"/>
@@ -222,7 +222,7 @@ namespace QuizGame.View
 
 Расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) по умолчанию предполагает, что вы выполняете привязку к свойству [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) страницы разметки. Поэтому в качестве свойства **DataContext** страницы мы установим экземпляр нашего класса источника привязки (типа **HostViewModel** в данном случае). В примере ниже показана разметка, объявляющая объект привязки. Мы используем тот же целевой объект привязки **Button.Content**, который ранее использовался в разделе "Целевой объект привязки", и выполняем привязку к свойству **HostViewModel.NextButtonText**.
 
-``` xml
+```xml
 <Page xmlns:viewmodel="using:QuizGame.ViewModel" ... >
     <Page.DataContext>
         <viewmodel:HostViewModel/>
@@ -240,7 +240,7 @@ namespace QuizGame.View
 
 В классе [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) для свойства [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) устанавливается шаблонный объект данных. Приведенный ниже пример можно использовать в качестве свойства **ItemTemplate** элемента управления, привязанного к коллекции любого типа, содержащей строковые свойства **Title** и **Description**.
 
-``` xml
+```xml
 <DataTemplate x:Key="SimpleItemTemplate">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{Binding Title}"/>
@@ -259,7 +259,7 @@ namespace QuizGame.View
 
 Ниже приведен преобразователь величин, который подходит для единовременной или односторонней привязки и преобразует значение [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) в строковое значение, содержащее месяц. Класс реализует интерфейс [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903).
 
-``` csharp
+```csharp
 public class DateToStringConverter : IValueConverter
 {
     // Define the Convert method to convert a DateTime value to 
@@ -296,7 +296,7 @@ public class DateToStringConverter : IValueConverter
 }
 ```
 
-``` vbnet
+```vbnet
 Public Class DateToStringConverter
     Implements IValueConverter
 
@@ -338,7 +338,7 @@ End Class
 
 Ниже показано, как использовать этот преобразователь величин в разметке объекта привязки.
 
-``` xml
+```xml
 <UserControl.Resources>
   <local:DateToStringConverter x:Key="Converter1"/>
 </UserControl.Resources>
@@ -368,7 +368,7 @@ End Class
 
 TemplatesResourceDictionary.xaml
 
-``` xml
+```xml
 <ResourceDictionary
     x:Class="ExampleNamespace.TemplatesResourceDictionary"
     .....
@@ -384,7 +384,7 @@ TemplatesResourceDictionary.xaml
 
 TemplatesResourceDictionary.xaml.cs
 
-``` csharp
+```csharp
 using Windows.UI.Xaml.Data;
  
 namespace ExampleNamespace
@@ -401,7 +401,7 @@ namespace ExampleNamespace
 
 MainPage.xaml
 
-``` xml
+```xml
 <Page x:Class="ExampleNamespace.MainPage"
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
@@ -421,7 +421,7 @@ MainPage.xaml
 
 Расширение разметки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) поддерживает функцию, которая называется привязкой событий. Эта функция позволяет указать обработчик для события посредством привязки, которая дополняет события обработки с методом в файле кода программной части. Предположим, у вас есть свойство **RootFrame** в классе **MainPage**.
 
-``` csharp
+```csharp
     public sealed partial class MainPage : Page
     {
         ....    
@@ -431,7 +431,7 @@ MainPage.xaml
 
 Затем вы можете привязать событие **Click** кнопки к методу объекта **Frame**, возвращенного свойством **RootFrame**, как показано ниже. Обратите внимание, что мы также привязываем свойство **IsEnabled** кнопки к другому члену того же объекта **Frame**.
 
-``` xml
+```xml
     <AppBarButton Icon="Forward" IsCompact="True"
     IsEnabled="{x:Bind RootFrame.CanGoForward, Mode=OneWay}"
     Click="{x:Bind RootFrame.GoForward}"/>
@@ -441,13 +441,14 @@ MainPage.xaml
               **Frame.GoBack**
             ](https://msdn.microsoft.com/library/windows/apps/Dn996568) перегружен, поэтому мы не можем использовать этот метод данным способом.
 
-Привязка событий похожа на реализацию и использование команд (команда — это свойство, которое возвращает объект, реализующий интерфейс [**ICommand**](T:System.Windows.Input.ICommand)). С командами можно использовать как [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), так и [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Чтобы приведенный выше шаблон команд не требовалось реализовывать несколько раз, вы можете использовать вспомогательный класс **DelegateCommand**, приведенный в примере [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (в папке "Общие").
+Привязка событий похожа на реализацию и использование команд (команда — это свойство, которое возвращает объект, реализующий интерфейс [**ICommand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.icommand.aspx)). С командами можно использовать как [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), так и [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Чтобы приведенный выше шаблон команд не требовалось реализовывать несколько раз, вы можете использовать вспомогательный класс **DelegateCommand**, приведенный в примере [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (в папке "Общие").
+
 
 ## Привязка к коллекции папок или файлов
 
 Для извлечения данных из папок и файлов можно использовать API в пространстве имен [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346). Однако разные методы **GetFilesAsync**, **GetFoldersAsync** и **GetItemsAsync** не возвращают значения, которые подходят для привязки к элементам управления списком. Вместо этого необходимо выполнить привязку к возвращаемым значениям методов [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701422), [**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428) и [**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430) класса [**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/BR207501). В приведенном ниже примере кода из [статьи с примером StorageDataSource и GetVirtualizedFilesVector](http://go.microsoft.com/fwlink/p/?linkid=228621) демонстрируется типичное использование. Не забудьте объявить возможность **picturesLibrary** в манифесте пакета приложения и убедитесь, что в вашей папке библиотеки изображений есть изображения.
 
-``` csharp
+```csharp
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             var library = Windows.Storage.KnownFolders.PicturesLibrary;
@@ -487,7 +488,7 @@ MainPage.xaml
 В примере ниже приведен шаблон has-a-group. Класс страницы имеет свойство [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713), которое возвращает экземпляр нашей модели представления. [
             **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) привязывается к свойству **Authors** модели представления (**Authors** — это коллекция объектов группы), а также указывает, что это свойство **Author.BookSkus** содержит сгруппированные элементы. Наконец, класс [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) привязан к классу **CollectionViewSource**, а его стиль группы определен таким образом, чтобы он мог обрабатывать элементы в группах.
 
-``` csharp
+```csharp
     <Page.Resources>
         <CollectionViewSource
         x:Name="AuthorHasACollectionOfBookSku"
@@ -512,7 +513,7 @@ MainPage.xaml
 
 В примере ниже показан шаблон "is-a-group", использующий выражение [LINQ](http://msdn.microsoft.com/library/bb397926.aspx). На этот раз мы группируем книги по жанрам, причем названия жанров отображаются в заголовках групп. На это указывает путь свойства Key в ссылке на значение [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx) группы.
 
-``` csharp
+```csharp
     using System.Linq;
 
     ...
@@ -536,7 +537,7 @@ MainPage.xaml
 
 Помните, что при использовании расширения разметки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) с шаблонами данных необходимо указать тип, к которому выполняется привязка, установив значение **x:DataType**. Если это универсальный тип, мы не сможем отобразить это в разметке, поэтому в шаблоне заголовка стиля группы необходимо использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782).
 
-``` xml
+```xml
     <Grid.Resources>
         <CollectionViewSource x:Name="GenreIsACollectionOfBookSku"
         Source="{Binding Genres}"
@@ -582,7 +583,7 @@ MainPage.xaml
 
 В следующем примере показано, как реализовать привязку в коде.
 
-``` xml
+```xml
 <TextBox x:Name="MyTextBox" Text="Text"/>
 ```
 
@@ -602,7 +603,7 @@ Binding binding = new Binding() { Path = new PropertyPath("Brush1") };
 MyTextBox.SetBinding(TextBox.ForegroundProperty, binding);
 ```
 
-``` vbnet
+```vbnet
 ' Create an instance of the MyColors class 
 ' that implements INotifyPropertyChanged. 
 Dim textcolor As New MyColors()
@@ -642,6 +643,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

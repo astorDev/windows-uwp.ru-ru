@@ -103,11 +103,11 @@ ms.openlocfilehash: dd107f55e6dbeda6f48de27b3a84006954a46338
 >     }
 > ```
 
-4.  Если в вашей фоновой задаче выполняется асинхронный код, для нее необходимо использовать задержку. Если вы не используете задержку и если метод Run будет выполнен до завершения вызова асинхронного метода, то процесс фоновой задачи может неожиданно прерваться.
+4.  [!div class="tabbedCodeSnippets"] Если в вашей фоновой задаче выполняется асинхронный код, для нее необходимо использовать задержку.
 
-    Запросите задержку в методе Run перед вызовом асинхронного метода. Чтобы к задержке можно было получить доступ из асинхронного метода, сохраните ее в глобальной переменной. Объявите задержку завершенной после выполнения асинхронного кода.
+    Если вы не используете задержку и если метод Run будет выполнен до завершения вызова асинхронного метода, то процесс фоновой задачи может неожиданно прерваться. Запросите задержку в методе Run перед вызовом асинхронного метода. Чтобы к задержке можно было получить доступ из асинхронного метода, сохраните ее в глобальной переменной.
 
-    Следующий пример кода получает задержку, сохраняет и освобождает ее после выполнения асинхронного кода:
+    Объявите задержку завершенной после выполнения асинхронного кода.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -146,16 +146,16 @@ ms.openlocfilehash: dd107f55e6dbeda6f48de27b3a84006954a46338
 
     For more information on asynchronous patterns, see [Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/mt187335). For additional examples of how to use deferrals to keep a background task from stopping early, see the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666).
 
-Следующие действия выполняются в одном из классов вашего приложения (например, MainPage.xaml.cs).
+Следующий пример кода получает задержку, сохраняет и освобождает ее после выполнения асинхронного кода:
 
-> **Примечание**  Также можно создать функцию для регистрации фоновых задач — см. раздел [Регистрация фоновой задачи](register-a-background-task.md). В этом случае вместо выполнения следующих трех шагов вы можете просто создать триггер и назначить его функции регистрации, указав имя задачи, точку входа задачи и (не обязательно) условие.
+> [!div class="tabbedCodeSnippets"] Следующие действия выполняются в одном из классов вашего приложения (например, MainPage.xaml.cs).
 
  
-**Регистрация фоновой задачи для запуска**
+****Примечание**  Также можно создать функцию для регистрации фоновых задач — см. раздел [Регистрация фоновой задачи](register-a-background-task.md).**
 
-1.  Чтобы узнать, зарегистрирована ли уже фоновая задача, выполните итерацию по свойству [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787). Это важный шаг: если приложение не проверяет, зарегистрирована ли уже фоновая задача, оно может выполнить регистрацию несколько раз, вызывая проблемы производительности и полное использование доступного задаче времени ЦП до завершения работы.
+1.  В этом случае вместо выполнения следующих трех шагов вы можете просто создать триггер и назначить его функции регистрации, указав имя задачи, точку входа задачи и (не обязательно) условие. Регистрация фоновой задачи для запуска
 
-    В следующем примере выполняется итерация по свойству AllTasks и устанавливается флаг переменной, если задача уже зарегистрирована:
+    Чтобы узнать, зарегистрирована ли уже фоновая задача, выполните итерацию по свойству [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787).
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -192,11 +192,11 @@ ms.openlocfilehash: dd107f55e6dbeda6f48de27b3a84006954a46338
 >     }
 > ```
 
-2.  Если фоновая задача еще не зарегистрирована, используйте [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) для создания экземпляра фоновой задачи. Точка входа задачи является именем класса фоновых задач, перед которым располагается пространство имен.
+2.  Это важный шаг: если приложение не проверяет, зарегистрирована ли уже фоновая задача, оно может выполнить регистрацию несколько раз, вызывая проблемы производительности и полное использование доступного задаче времени ЦП до завершения работы. В следующем примере выполняется итерация по свойству AllTasks и устанавливается флаг переменной, если задача уже зарегистрирована:
 
-    Триггер фоновой задачи определяет, когда должна быть запущена фоновая задача. Список возможных триггеров см. в статье [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
+    [!div class="tabbedCodeSnippets"] Если фоновая задача еще не зарегистрирована, используйте [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) для создания экземпляра фоновой задачи.
 
-    Например, этот код создает новую фоновую задачу и запускает ее, когда срабатывает триггер **TimeZoneChanged**:
+    Точка входа задачи является именем класса фоновых задач, перед которым располагается пространство имен.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -214,9 +214,9 @@ ms.openlocfilehash: dd107f55e6dbeda6f48de27b3a84006954a46338
 >     builder->SetTrigger(ref new SystemTrigger(SystemTriggerType::TimeZoneChange, false));
 > ```
 
-3.  Вы можете добавить условие, чтобы контролировать, в какой момент времени после возникновения события триггера запустится ваша задача (не обязательно). Например, если вы не хотите, чтобы задача запускалась в отсутствие пользователя, используйте условие **UserPresent**. Список возможных условий см. в статье [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+3.  Триггер фоновой задачи определяет, когда должна быть запущена фоновая задача. Список возможных триггеров см. в статье [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839). Например, этот код создает новую фоновую задачу и запускает ее, когда срабатывает триггер **TimeZoneChanged**:
 
-    Следующий пример кода назначает условие, при котором необходимо присутствие пользователя:
+    [!div class="tabbedCodeSnippets"]
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -226,11 +226,12 @@ ms.openlocfilehash: dd107f55e6dbeda6f48de27b3a84006954a46338
 >     builder->AddCondition(ref new SystemCondition(SystemConditionType::UserPresent));
 > ```
 
-4.  Зарегистрируйте фоновую задачу, вызвав метод Register в объекте [**BackgroundTaskBuilder **](https://msdn.microsoft.com/library/windows/apps/br224768). Сохраните результат выполнения [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786), чтобы использовать его в следующем шаге.
+4.  Вы можете добавить условие, чтобы контролировать, в какой момент времени после возникновения события триггера запустится ваша задача (не обязательно). Например, если вы не хотите, чтобы задача запускалась в отсутствие пользователя, используйте условие **UserPresent**.
 
-    Следующий код регистрирует фоновую задачу и сохраняет результат:
+    Список возможных условий см. в статье [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-> [!div class="tabbedCodeSnippets"] ```cs
+> [!div class="tabbedCodeSnippets"]
+>     ```cs
 >     BackgroundTaskRegistration task = builder.Register();
 >     ```
 >     ```cpp
@@ -241,16 +242,22 @@ ms.openlocfilehash: dd107f55e6dbeda6f48de27b3a84006954a46338
 
     To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-## Обработка завершения фоновой задачи с помощью обработчиков событий
+## Следующий пример кода назначает условие, при котором необходимо присутствие пользователя:
 
 
-Следует зарегистрировать метод с помощью [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781), чтобы ваше приложение могло получить результаты от фоновой задачи. При запуске или возобновлении приложения будет вызван метод mark, если фоновая задача завершилась с момента последней работы приложения на переднем плане. (Метод OnCompleted будет вызван немедленно, если фоновая задача завершается во время работы приложения на переднем плане в настоящее время.)
+[!div class="tabbedCodeSnippets"] Зарегистрируйте фоновую задачу, вызвав метод Register в объекте [**BackgroundTaskBuilder **](https://msdn.microsoft.com/library/windows/apps/br224768). Сохраните результат выполнения [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786), чтобы использовать его в следующем шаге.
 
-1.  Создайте метод OnCompleted для обработки завершения фоновых задач. Например, результат фоновой задачи может быть причиной обновления пользовательского интерфейса. Представленный здесь объем памяти метода необходим для метода обработчика событий OnCompleted, даже если в этом примере не используется параметр *args*.
+1.  Следующий код регистрирует фоновую задачу и сохраняет результат: [!div class="tabbedCodeSnippets"] ```cs
+    BackgroundTaskRegistration task = builder.Register();
+    ```
+    ```cpp
+    BackgroundTaskRegistration^ task = builder->Register();
+    ``` Обработка завершения фоновой задачи с помощью обработчиков событий
 
-    Следующий пример кода распознает завершение фоновой задачи и вызывает пример метода (принимающего строку сообщения) для обновления пользовательского интерфейса.
+    Следует зарегистрировать метод с помощью [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781), чтобы ваше приложение могло получить результаты от фоновой задачи.
 
-> [!div class="tabbedCodeSnippets"] ```cs
+> [!div class="tabbedCodeSnippets"]
+>     ```cs
 >     private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
 >     {
 >         var settings = Windows.Storage.ApplicationData.Current.LocalSettings;
@@ -273,30 +280,53 @@ ms.openlocfilehash: dd107f55e6dbeda6f48de27b3a84006954a46338
 
      
 
-2.  Вернитесь к тому месту, где вы регистрировали фоновую задачу. После этой строки кода добавьте новый объект [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781). Предоставьте свой метод OnCompleted в качестве параметра для конструктора **BackgroundTaskCompletedEventHandler**.
+2.  При запуске или возобновлении приложения будет вызван метод mark, если фоновая задача завершилась с момента последней работы приложения на переднем плане. (Метод OnCompleted будет вызван немедленно, если фоновая задача завершается во время работы приложения на переднем плане в настоящее время.) Создайте метод OnCompleted для обработки завершения фоновых задач.
 
-    Следующий пример кода добавляет [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) в [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).
+    Например, результат фоновой задачи может быть причиной обновления пользовательского интерфейса.
 
-> [!div class="tabbedCodeSnippets"] ```cs
+> [!div class="tabbedCodeSnippets"]
+>     ```cs
 >     task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
 >     ```
 >     ```cpp
 >     task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &ExampleBackgroundTask::OnCompleted);
 >     ```
 
-## Объявление использования приложением фоновых задач в манифесте приложения
+## Представленный здесь объем памяти метода необходим для метода обработчика событий OnCompleted, даже если в этом примере не используется параметр *args*.
 
 
-Чтобы приложение могло выполнять фоновые задачи, вам необходимо сперва объявить каждую такую задачу в манифесте приложения. Если приложение попытается зарегистрировать фоновую задачу с триггером, который не указан в манифесте, регистрация не будет выполнена.
+Следующий пример кода распознает завершение фоновой задачи и вызывает пример метода (принимающего строку сообщения) для обновления пользовательского интерфейса. [!div class="tabbedCodeSnippets"] ```cs
+    private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
+    {
+        var settings = Windows.Storage.ApplicationData.Current.LocalSettings;
+        var key = task.TaskId.ToString();
+        var message = settings.Values[key].ToString();
+        UpdateUI(message);
+    }
+    ```
+    ```cpp
+    void ExampleBackgroundTask::OnCompleted(BackgroundTaskRegistration^ task, BackgroundTaskCompletedEventArgs^ args)
+    {
+        auto settings = ApplicationData::Current->LocalSettings->Values;
+        auto key = task->TaskId.ToString();
+        auto message = dynamic_cast<String^>(settings->Lookup(key));
+        UpdateUI(message);
+    }
+    ```
 
-1.  Откройте конструктор манифеста пакета, запустив файл Package.appxmanifest.
-2.  Перейдите на вкладку **Объявления**.
-3.  В раскрывающемся списке **Доступные объявления** выберите **Фоновые задачи** и щелкните **Добавить**.
-4.  Установите флажок **Системное событие**.
-5.  В текстовом поле **Точка входа:** введите пространство имен и имя вашего фонового класса (в этом примере использовано имя RuntimeComponent1.ExampleBackgroundTask).
-6.  Закройте конструктор манифестов.
+1.  Вернитесь к тому месту, где вы регистрировали фоновую задачу.
+2.  После этой строки кода добавьте новый объект [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781).
+3.  Предоставьте свой метод OnCompleted в качестве параметра для конструктора **BackgroundTaskCompletedEventHandler**.
+4.  Следующий пример кода добавляет [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) в [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).
+5.  [!div class="tabbedCodeSnippets"] ```cs
+    task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
+    ```
+    ```cpp
+    task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &ExampleBackgroundTask::OnCompleted);
+    ```
+6.  Объявление использования приложением фоновых задач в манифесте приложения
 
-    Следующий элемент расширений добавляется в файл Package.appxmanifest для регистрации фоновой задачи:
+    Чтобы приложение могло выполнять фоновые задачи, вам необходимо сперва объявить каждую такую задачу в манифесте приложения.
 
     ```xml
     <Extensions>
@@ -308,43 +338,43 @@ ms.openlocfilehash: dd107f55e6dbeda6f48de27b3a84006954a46338
     </Extensions>
     ```
 
-## Сводка и дальнейшие действия
+## Если приложение попытается зарегистрировать фоновую задачу с триггером, который не указан в манифесте, регистрация не будет выполнена.
 
 
-Теперь вы понимаете, как создавать класс фоновой задачи, как регистрировать фоновую задачу из приложения и как сделать так, чтобы приложение распознавало ее завершение. Вы также знаете, как обновить манифест приложения, чтобы приложение могло успешно регистрировать фоновые задачи.
+Откройте конструктор манифеста пакета, запустив файл Package.appxmanifest. Перейдите на вкладку **Объявления**.
 
-> **Примечание**  Скачайте [пример фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666), чтобы ознакомиться с похожими примерами кода в контексте полного и надежного приложения UWP, использующего фоновые задачи.
-
- 
-
-В статьях ниже можно найти справочник по API, концептуальное руководство по фоновым задачам и подробные инструкции по созданию приложений, использующих фоновые задачи.
-
-> **Примечание.**  Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> В раскрывающемся списке **Доступные объявления** выберите **Фоновые задачи** и щелкните **Добавить**.
 
  
 
-## Ссылки по теме
+Установите флажок **Системное событие**.
 
+> В текстовом поле **Точка входа:** введите пространство имен и имя вашего фонового класса (в этом примере использовано имя RuntimeComponent1.ExampleBackgroundTask). Закройте конструктор манифестов.
+
+ 
+
+## Следующий элемент расширений добавляется в файл Package.appxmanifest для регистрации фоновой задачи:
+
+
+**Сводка и дальнейшие действия**
+
+* [Теперь вы понимаете, как создавать класс фоновой задачи, как регистрировать фоновую задачу из приложения и как сделать так, чтобы приложение распознавало ее завершение.](respond-to-system-events-with-background-tasks.md)
+* [Вы также знаете, как обновить манифест приложения, чтобы приложение могло успешно регистрировать фоновые задачи.](register-a-background-task.md)
+* [**Примечание**  Скачайте [пример фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666), чтобы ознакомиться с похожими примерами кода в контексте полного и надежного приложения UWP, использующего фоновые задачи.](set-conditions-for-running-a-background-task.md)
+* [В статьях ниже можно найти справочник по API, концептуальное руководство по фоновым задачам и подробные инструкции по созданию приложений, использующих фоновые задачи.](use-a-maintenance-trigger.md)
+* [**Примечание.**  Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP).](handle-a-cancelled-background-task.md)
+* [В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).](monitor-background-task-progress-and-completion.md)
+* [Ссылки по теме](run-a-background-task-on-a-timer-.md)
 
 **Учебные статьи с подробными сведениями о фоновых задачах**
 
-* [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
-* [Регистрация фоновой задачи](register-a-background-task.md)
-* [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
-* [Использование триггера обслуживания](use-a-maintenance-trigger.md)
-* [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
-* [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
-* [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
+* [Реагирование на системные события с помощью фоновых задач](guidelines-for-background-tasks.md)
+* [Регистрация фоновой задачи](debug-a-background-task.md)
+* [Задание условий выполнения фоновой задачи](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
-**Руководство по фоновым задачам**
+**Использование триггера обслуживания**
 
-* [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Отладка фоновой задачи](debug-a-background-task.md)
-* [Активация событий приостановки, возобновления и перевода в фоновый режим приложений Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
-**Справочник по API для фоновых задач**
-
-* [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
+* [**Обработка отмененной фоновой задачи**](https://msdn.microsoft.com/library/windows/apps/br224847)
 
  
 
@@ -352,6 +382,6 @@ ms.openlocfilehash: dd107f55e6dbeda6f48de27b3a84006954a46338
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

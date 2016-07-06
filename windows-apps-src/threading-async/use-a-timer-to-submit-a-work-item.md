@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
-title: Отправка рабочего элемента по таймеру
-description: Узнайте, как создать рабочий элемент, который выполняется после истечения времени таймера.
+title: "Отправка рабочего элемента по таймеру"
+description: "Узнайте, как создать рабочий элемент, который выполняется после истечения времени таймера."
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
+
 ---
 # Отправка рабочего элемента по таймеру
 
@@ -228,6 +232,7 @@ description: Узнайте, как создать рабочий элемент
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

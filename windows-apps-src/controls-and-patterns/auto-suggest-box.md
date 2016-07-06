@@ -6,23 +6,23 @@ ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 2900aa542a7986cac408051159f013e10dd3a5aa
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: bc3337101f0f2e8449d052743f7b3ce8d2dac516
 
 ---
 # Поле автозаполнения
-Используйте AutoSuggestBox, чтобы предоставить список предложений, из которых пользователь может выбрать нужное по мере набора.
+Используйте AutoSuggestBox, чтобы предоставить список предложений, из которых пользователь по мере ввода текста может выбрать нужное.
 
 ![Поле автозаполнения](images/controls/auto-suggest-box-open.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">Важные API</span>
+
 
 -   [**Класс AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
 -   [**Событие TextChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)
 -   [**Событие SuggestionChose**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx)
 -   [**Событие QuerySubmitted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)
 
-## Это подходящий элемент управления?
+## Выбор правильного элемента управления
 
 Если вам нужен простой настраиваемый элемент управления, который обеспечивает текстовый поиск со списком предложений, выберите поле автозаполнения.
 
@@ -76,11 +76,11 @@ ms.openlocfilehash: 2900aa542a7986cac408051159f013e10dd3a5aa
 - Нажать клавишу ВВОД или щелкнуть значок запроса, в то время как фокус находится в текстовом поле. Свойство аргумента события [ChosenSuggestion](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion.aspx) — **null**.
 - Нажать клавишу ВВОД, щелкнуть или нажать элемент, в то время как фокус находится в списке предложений. Свойство аргумента события ChosenSuggestion содержит элемент, который был выбран в списке.
 
-Во всех случаях свойство аргумента [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) содержит текст из текстового поля. 
+Во всех случаях свойство аргумента [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) содержит текст из текстового поля.
 
-### Использование AutoSuggestBox для поиска
+## Использование AutoSuggestBox для поиска
 
-Используйте AutoSuggestBox, чтобы предоставить список предложений, из которых пользователь может выбрать нужный по мере набора.
+Используйте AutoSuggestBox, чтобы предоставить список предложений, из которых пользователь по мере ввода текста может выбрать нужное.
 
 По умолчанию поле ввода текста не имеет кнопки запроса. Вы можете настроить свойство [QueryIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx), чтобы добавить кнопку с выбранным значком справа от текстового поля. Например, чтобы AutoSuggestBox выглядело как типичное поле поиска, добавьте значок поиска.
 
@@ -92,9 +92,9 @@ ms.openlocfilehash: 2900aa542a7986cac408051159f013e10dd3a5aa
 
 ![Пример точки входа для элемента управления автозаполнения](images/controls_autosuggest_entrypoint.png)
 
-## Образцы
+## Примеры
 
-Полные рабочие примеры AutoSuggestBox см. в статье [Пример переноса AutoSuggestBox](http://go.microsoft.com/fwlink/p/?LinkId=619996) и [Пример базовых характеристик пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992).
+Полные рабочие примеры AutoSuggestBox см. в статьях [Пример переноса AutoSuggestBox](http://go.microsoft.com/fwlink/p/?LinkId=619996) и [Пример базовых характеристик пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992).
 
 Вот простой класс AutoSuggestBox с необходимыми обработчиками событий.
 
@@ -108,8 +108,8 @@ ms.openlocfilehash: 2900aa542a7986cac408051159f013e10dd3a5aa
 ```csharp
 private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
 {
-    // Only get results when it was a user typing, 
-    // otherwise assume the value got filled in by TextMemberPath 
+    // Only get results when it was a user typing,
+    // otherwise assume the value got filled in by TextMemberPath
     // or the handler for SuggestionChosen.
     if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
     {
@@ -140,14 +140,26 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 ## Рекомендации
 
--   Если используется поле автозаполнения и для введенного текста поиск не дает результатов, выводите вместо результатов строку сообщения "Результатов нет", чтобы пользователь знал, что поисковый запрос был выполнен.
+-   При использовании поля заполнения, если для введенного текста поиск не дает результатов, выводите вместо результатов строку сообщения "Результатов нет", чтобы пользователь знал, что поисковый запрос был выполнен.
 
     ![Пример поля автозаполнения без результатов поиска](images/controls_autosuggest_noresults.png)
 
+{{> aside-internal content = "
+## Глобализация и локализация: контрольный список
 
-## Связанные статьи
+<table>
+<tr>
+<th>Вертикальный интервал</th><td>Используйте для вертикального интервала символы, не входящие в латинский алфавит, чтобы символы других алфавитов (включая цифры) правильно отображались.</td>
+</tr>
+<tr>
+<th>Прокрутка</th><td>При выборе текста автозаполнения пользователь должен иметь возможность прокрутить его до конца строки.</td>
+</tr>
+</table>
+"}}
 
-- [Элементы управления текстом](text-controls.md)
+## Статьи по теме
+
+- [Элементы управления для текста](text-controls.md)
 - [Проверка правописания](spell-checking-and-prediction.md)
 - [Поиск](search.md)
 - [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
@@ -156,6 +168,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

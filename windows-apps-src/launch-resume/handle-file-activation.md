@@ -110,49 +110,49 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
     > **Note**  When launched via File Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
 
-Рекомендуется, чтобы приложения создавали новый элемент XAML Frame для каждого события активации, открывающего новую страницу. Тогда стек переходов назад для нового фрейма XAML не будет включать предыдущее содержимое, которое могло отображаться в текущем окне во время приостановки приложения. Приложения, использующие один элемент XAML Frame для контрактов файла и запуска, должны очищать страницы в журнале навигации "Frame" перед переходом на новую страницу.
+[!div class="tabbedCodeSnippets"] Рекомендуется, чтобы приложения создавали новый элемент XAML Frame для каждого события активации, открывающего новую страницу. Тогда стек переходов назад для нового фрейма XAML не будет включать предыдущее содержимое, которое могло отображаться в текущем окне во время приостановки приложения.
 
-При запуске через активацию файла в приложении должен быть предусмотрен пользовательский интерфейс, при помощи которого можно вернуться на начальную страницу приложения.
+Приложения, использующие один элемент XAML Frame для контрактов файла и запуска, должны очищать страницы в журнале навигации "Frame" перед переходом на новую страницу.
 
-## Примечания
+## При запуске через активацию файла в приложении должен быть предусмотрен пользовательский интерфейс, при помощи которого можно вернуться на начальную страницу приложения.
 
 
-Принимаемые вами файлы могут поступать из ненадежного источника. Мы рекомендуем проверять содержимое файла перед тем, как выполнять с ним какие-либо действия. Подробнее о проверке ввода см. в книге [Написание безопасного кода](http://go.microsoft.com/fwlink/p/?LinkID=142053).
+Примечания Принимаемые вами файлы могут поступать из ненадежного источника. Мы рекомендуем проверять содержимое файла перед тем, как выполнять с ним какие-либо действия.
 
-> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
-## Связанные разделы
-
-**Полный пример**
-
-* [Пример запуска с сопоставлением](http://go.microsoft.com/fwlink/p/?LinkID=231484)
-
-**Понятия**
-
-* [Программы по умолчанию](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [Модель сопоставления типов файлов и протоколов](https://msdn.microsoft.com/library/windows/desktop/hh848047)
-
-**Задачи**
-
-* [Запуск приложения по умолчанию для файла](launch-the-default-app-for-a-file.md)
-* [Обработка активации URI](handle-uri-activation.md)
-
-**Руководства**
-
-* [Руководство по типам файлов и URI](https://msdn.microsoft.com/library/windows/apps/hh700321)
-
-**Ссылки**
-* [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
-* [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
+> Подробнее о проверке ввода см. в книге [Написание безопасного кода](http://go.microsoft.com/fwlink/p/?LinkID=142053). **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP).
 
  
 
+## В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+
+**Связанные разделы**
+
+* [Полный пример](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+
+**Пример запуска с сопоставлением**
+
+* [Понятия](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+* [Программы по умолчанию](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+
+**Модель сопоставления типов файлов и протоколов**
+
+* [Задачи](launch-the-default-app-for-a-file.md)
+* [Запуск приложения по умолчанию для файла](handle-uri-activation.md)
+
+**Обработка активации URI**
+
+* [Руководства](https://msdn.microsoft.com/library/windows/apps/hh700321)
+
+**Руководство по типам файлов и URI**
+* [**Ссылки**](https://msdn.microsoft.com/library/windows/apps/br224716)
+* [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br242331)
+
+ 
+
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 
