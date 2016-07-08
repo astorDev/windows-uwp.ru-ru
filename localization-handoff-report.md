@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\style\index.md](https://github.com/Microsoft/windows-apps/blob/0a7f655a6f122787873adac76ac4dec9d775a154/windows-apps-src/style/index.md) | OutofSyncHandedBackSuccess | [Details](#d55aab04696441dbbcba0cbda61fd599fdacec673858)
+ [windows-apps-src\controls-and-patterns\index.md](https://github.com/Microsoft/windows-apps/blob/7c45a464be250e210df48d3fdef35f00d77e16d5/windows-apps-src/controls-and-patterns/index.md) | OutofSyncHandedBackSuccess | [Details](#23fdd3513d11a0fa0171e50fe71d49c8e3db73761903)
 
 ## Item Details
-##### <a name='d55aab04696441dbbcba0cbda61fd599fdacec673858'></a> Source: [windows-apps-src\style\index.md](https://github.com/Microsoft/windows-apps/blob/0a7f655a6f122787873adac76ac4dec9d775a154/windows-apps-src/style/index.md)
+##### <a name='23fdd3513d11a0fa0171e50fe71d49c8e3db73761903'></a> Source: [windows-apps-src\controls-and-patterns\index.md](https://github.com/Microsoft/windows-apps/blob/7c45a464be250e210df48d3fdef35f00d77e16d5/windows-apps-src/controls-and-patterns/index.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [index.d6e9f38c58272fbda56115c34e5b402317c1ea66.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/02924b855e1fd0435f333c9fb28866bb163ea3f9/ol-handoff/Microsoft/windows-apps.ru-ru/master/index.d6e9f38c58272fbda56115c34e5b402317c1ea66.ru-ru.xlf)
-* Handoff Datetime: 2016-07-08 16:19:56
+* Handoff File: [index.fbf3d9a627adba69545b050281feb3391279f52e.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/47b6f53bd1cf9529f89c0f46183b5dcfd542ccbb/ol-handoff/Microsoft/windows-apps.ru-ru/master/index.fbf3d9a627adba69545b050281feb3391279f52e.ru-ru.xlf)
+* Handoff Datetime: 2016-07-08 18:21:24
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\style\index.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/style/index.md)
-* Current Handback File: [index.d6e9f38c58272fbda56115c34e5b402317c1ea66.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/index.d6e9f38c58272fbda56115c34e5b402317c1ea66.ru-ru.xlf)
+* Current Target File: [windows-apps-src\controls-and-patterns\index.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/controls-and-patterns/index.md)
+* Current Handback File: [index.fbf3d9a627adba69545b050281feb3391279f52e.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/index.fbf3d9a627adba69545b050281feb3391279f52e.ru-ru.xlf)
 * Current Handback Datetime: 2016-07-06 15:19:45
 * [Back to Top](#report-top)
 
