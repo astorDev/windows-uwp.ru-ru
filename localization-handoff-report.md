@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\advertising-performance-report.md](https://github.com/Microsoft/windows-apps/blob/6b354b1b009bf9e4f2899f7ef97ef8791712f52b/windows-apps-src/publish/advertising-performance-report.md) | OutofSyncHandedBackSuccess | [Details](#2b06e25a7e96c3645d7067dc0082da3fc942249d3597)
+ [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/30aeffcf090c881f84331ced4f7199fd0092b676/windows-apps-src/debug-test-perf/device-portal-api-core.md) | OutofSyncHandedBackSuccess | [Details](#0fa515d28431d4256b977ee3c3c41169661f129f1972)
 
 ## Item Details
-##### <a name='2b06e25a7e96c3645d7067dc0082da3fc942249d3597'></a> Source: [windows-apps-src\publish\advertising-performance-report.md](https://github.com/Microsoft/windows-apps/blob/6b354b1b009bf9e4f2899f7ef97ef8791712f52b/windows-apps-src/publish/advertising-performance-report.md)
+##### <a name='0fa515d28431d4256b977ee3c3c41169661f129f1972'></a> Source: [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/30aeffcf090c881f84331ced4f7199fd0092b676/windows-apps-src/debug-test-perf/device-portal-api-core.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/548242bcdbc9efba8f83b6d43e8891250702bb1e/ol-handoff/Microsoft/windows-apps.ru-ru/master/advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.ru-ru.xlf)
-* Handoff Datetime: 2016-07-12 17:27:50
+* Handoff File: [device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/e927b42fc723d2f1b8fc8e62c0d2cc10467c3f3d/ol-handoff/Microsoft/windows-apps.ru-ru/master/device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ru-ru.xlf)
+* Handoff Datetime: 2016-07-12 17:54:22
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\advertising-performance-report.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/publish/advertising-performance-report.md)
-* Current Handback File: [advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.ru-ru.xlf)
+* Current Target File: [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/debug-test-perf/device-portal-api-core.md)
+* Current Handback File: [device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ru-ru.xlf)
 * Current Handback Datetime: 2016-07-06 15:19:45
 * [Back to Top](#report-top)
 
