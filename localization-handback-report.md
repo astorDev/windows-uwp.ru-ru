@@ -1,26 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\porting\wpsl-to-uwp-namespace-and-class-mappings.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/porting/wpsl-to-uwp-namespace-and-class-mappings.md) | InSyncHandedBackSuccess | [Details](#164e5303c48b6c65807984e4afcaf81ac12f64313600)
 
 ## Item Details
-##### <a name='164e5303c48b6c65807984e4afcaf81ac12f64313600'></a> Source: [windows-apps-src\porting\wpsl-to-uwp-namespace-and-class-mappings.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/porting/wpsl-to-uwp-namespace-and-class-mappings.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\porting\wpsl-to-uwp-namespace-and-class-mappings.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/a4b0567641de7b22ab2091656f524e23e22482c6/windows-apps-src/porting/wpsl-to-uwp-namespace-and-class-mappings.md)
-* Handoff File: [wpsl-to-uwp-namespace-and-class-mappings.fce290826379913fb0e7a47808f5b925af2f56ed.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/b8ffcb95ee7dea3211fa09dc32513b729aa10693/ol-handoff/Microsoft/windows-apps.ru-ru/master/wpsl-to-uwp-namespace-and-class-mappings.fce290826379913fb0e7a47808f5b925af2f56ed.ru-ru.xlf)
-* Handoff Datetime: 2016-06-27 18:35:41
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [wpsl-to-uwp-namespace-and-class-mappings.fce290826379913fb0e7a47808f5b925af2f56ed.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/5a2c09a231213c5dfebb931669deb2fedb350c18/ol-handback/Microsoft/windows-apps.ru-ru/master/wpsl-to-uwp-namespace-and-class-mappings.fce290826379913fb0e7a47808f5b925af2f56ed.ru-ru.xlf)
-* Handback Datetime: 2016-07-14 14:51:17
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
