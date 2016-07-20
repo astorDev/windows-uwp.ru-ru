@@ -1,120 +1,66 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 7
+ Total Files | 4
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\code-your-experiment-in-your-app.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/monetize/code-your-experiment-in-your-app.md) | OutofSyncHandedBackSuccess | [Details](#1bd29f9fbc707838d4fe737e5aa3da4684eb06f33390)
- [windows-apps-src\monetize\create-and-run-your-first-experiment-with-a-b-testing.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/monetize/create-and-run-your-first-experiment-with-a-b-testing.md) | OutofSyncHandedBackSuccess | [Details](#ef6e7675bbc093f23f7bacea0ef835a03e678e9f3393)
- [windows-apps-src\monetize\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md) | HandedOffSuccess | [Details](#b5c9b219724131f4b27a2d55519b316e863981b43391)
- [windows-apps-src\monetize\define-your-experiment-in-the-dev-center-dashboard.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/monetize/define-your-experiment-in-the-dev-center-dashboard.md) | OutofSyncHandedBackSuccess | [Details](#14e252fdfc0464e8fd992b8648ef506cbefb9bf13394)
- [windows-apps-src\monetize\manage-your-experiment.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/monetize/manage-your-experiment.md) | OutofSyncHandedBackSuccess | [Details](#c9883882021468c0569c7e244423f68181d978bd3451)
- [windows-apps-src\monetize\run-app-experiments-with-a-b-testing.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/monetize/run-app-experiments-with-a-b-testing.md) | OutofSyncHandedBackSuccess | [Details](#3bcdd109454d89961696124eacd4cdbd7563b17f3457)
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#adf630f9ae7904639c8d51857d4fb46bf7f6c68e5311)
+ [windows-apps-src\accessibility\accessibility-testing.md](https://github.com/Microsoft/windows-apps/blob/6baf122491374dcaeee48440fad0af3431e39e70/windows-apps-src/accessibility/accessibility-testing.md) | OutofSyncHandedBackSuccess | [Details](#748845ac4da7805d824b22c173058a9e1c81599a9)
+ [windows-apps-src\xbox-apps\wdp-sandbox-api.md](https://github.com/Microsoft/windows-apps/blob/a857ba338a971e651653193ff2149f08b1665a36/windows-apps-src/xbox-apps/wdp-sandbox-api.md) | OutofSyncHandedBackSuccess | [Details](#c1671db55dcb05ab7a126fad271a5e49146fe9ac5447)
+ [windows-apps-src\xbox-apps\wdp-smb-api.md](https://github.com/Microsoft/windows-apps/blob/3d76bf181baa9dfd973467d43241230fddf2daf7/windows-apps-src/xbox-apps/wdp-smb-api.md) | OutofSyncHandedBackSuccess | [Details](#5efe2af3524d97e6014c4d6be2a8f1aef22f2e665448)
+ [windows-apps-src\xbox-apps\wdp-user-management.md](https://github.com/Microsoft/windows-apps/blob/67f158b1d3d5ece14c36483a2513a2db2f478660/windows-apps-src/xbox-apps/wdp-user-management.md) | OutofSyncHandedBackSuccess | [Details](#ad01d4daf089c61fc50c7927cfbf123d7d7ee4df5449)
 
 ## Item Details
-##### <a name='1bd29f9fbc707838d4fe737e5aa3da4684eb06f33390'></a> Source: [windows-apps-src\monetize\code-your-experiment-in-your-app.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/monetize/code-your-experiment-in-your-app.md)
+##### <a name='748845ac4da7805d824b22c173058a9e1c81599a9'></a> Source: [windows-apps-src\accessibility\accessibility-testing.md](https://github.com/Microsoft/windows-apps/blob/6baf122491374dcaeee48440fad0af3431e39e70/windows-apps-src/accessibility/accessibility-testing.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [code-your-experiment-in-your-app.ecef6b7f13ebf77fb7057ec2b2c647f02eb5c098.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6289a29f2022b0e7e73d5c00a54577bb84b9b5a/ol-handoff/Microsoft/windows-apps.ru-ru/master/code-your-experiment-in-your-app.ecef6b7f13ebf77fb7057ec2b2c647f02eb5c098.ru-ru.xlf)
-* Handoff Datetime: 2016-07-20 14:31:28
+* Handoff File: [accessibility-testing.19ca6daf735ac109c169a1cf5bceb7a3d0765571.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/13a84f40b2d049c332dd2e728ff420c40b457b3d/ol-handoff/Microsoft/windows-apps.ru-ru/master/accessibility-testing.19ca6daf735ac109c169a1cf5bceb7a3d0765571.ru-ru.xlf)
+* Handoff Datetime: 2016-07-20 23:03:30
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\monetize\code-your-experiment-in-your-app.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/monetize/code-your-experiment-in-your-app.md)
-* Current Handback File: [code-your-experiment-in-your-app.ecef6b7f13ebf77fb7057ec2b2c647f02eb5c098.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/code-your-experiment-in-your-app.ecef6b7f13ebf77fb7057ec2b2c647f02eb5c098.ru-ru.xlf)
+* Current Target File: [windows-apps-src\accessibility\accessibility-testing.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/accessibility/accessibility-testing.md)
+* Current Handback File: [accessibility-testing.19ca6daf735ac109c169a1cf5bceb7a3d0765571.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/accessibility-testing.19ca6daf735ac109c169a1cf5bceb7a3d0765571.ru-ru.xlf)
 * Current Handback Datetime: 2016-07-06 15:19:45
 * [Back to Top](#report-top)
 
-##### <a name='ef6e7675bbc093f23f7bacea0ef835a03e678e9f3393'></a> Source: [windows-apps-src\monetize\create-and-run-your-first-experiment-with-a-b-testing.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/monetize/create-and-run-your-first-experiment-with-a-b-testing.md)
+##### <a name='c1671db55dcb05ab7a126fad271a5e49146fe9ac5447'></a> Source: [windows-apps-src\xbox-apps\wdp-sandbox-api.md](https://github.com/Microsoft/windows-apps/blob/a857ba338a971e651653193ff2149f08b1665a36/windows-apps-src/xbox-apps/wdp-sandbox-api.md)
 * Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [create-and-run-your-first-experiment-with-a-b-testing.8b39dd5321e7b83486bcfd31970accb68eca1c33.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6289a29f2022b0e7e73d5c00a54577bb84b9b5a/ol-handoff/Microsoft/windows-apps.ru-ru/master/create-and-run-your-first-experiment-with-a-b-testing.8b39dd5321e7b83486bcfd31970accb68eca1c33.ru-ru.xlf)
-* Handoff Datetime: 2016-07-20 14:31:28
+* Target File: [windows-apps-src\xbox-apps\wdp-sandbox-api.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/xbox-apps/wdp-sandbox-api.md)
+* Handoff File: [wdp-sandbox-api.a29c98e0aa057cb09485d178ec8bbfe0fe4a3994.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/13a84f40b2d049c332dd2e728ff420c40b457b3d/ol-handoff/Microsoft/windows-apps.ru-ru/master/wdp-sandbox-api.a29c98e0aa057cb09485d178ec8bbfe0fe4a3994.ru-ru.xlf)
+* Handoff Datetime: 2016-07-20 23:03:30
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\monetize\create-and-run-your-first-experiment-with-a-b-testing.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/monetize/create-and-run-your-first-experiment-with-a-b-testing.md)
-* Current Handback File: [create-and-run-your-first-experiment-with-a-b-testing.8b39dd5321e7b83486bcfd31970accb68eca1c33.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/create-and-run-your-first-experiment-with-a-b-testing.8b39dd5321e7b83486bcfd31970accb68eca1c33.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-06 15:19:45
+* Handback File: [wdp-sandbox-api.a29c98e0aa057cb09485d178ec8bbfe0fe4a3994.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/wdp-sandbox-api.a29c98e0aa057cb09485d178ec8bbfe0fe4a3994.ru-ru.xlf)
+* Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
-##### <a name='b5c9b219724131f4b27a2d55519b316e863981b43391'></a> Source: [windows-apps-src\monetize\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.2a8dad6a811656c190ed2876e3ca656d1cfe3db0.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6289a29f2022b0e7e73d5c00a54577bb84b9b5a/ol-handoff/Microsoft/windows-apps.ru-ru/master/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.2a8dad6a811656c190ed2876e3ca656d1cfe3db0.ru-ru.xlf)
-* Handoff Datetime: 2016-07-20 14:31:28
+##### <a name='5efe2af3524d97e6014c4d6be2a8f1aef22f2e665448'></a> Source: [windows-apps-src\xbox-apps\wdp-smb-api.md](https://github.com/Microsoft/windows-apps/blob/3d76bf181baa9dfd973467d43241230fddf2daf7/windows-apps-src/xbox-apps/wdp-smb-api.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: [windows-apps-src\xbox-apps\wdp-smb-api.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/xbox-apps/wdp-smb-api.md)
+* Handoff File: [wdp-smb-api.08bc95b72815e67bdb9cf7c3ad75d1a63d9cbca2.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/13a84f40b2d049c332dd2e728ff420c40b457b3d/ol-handoff/Microsoft/windows-apps.ru-ru/master/wdp-smb-api.08bc95b72815e67bdb9cf7c3ad75d1a63d9cbca2.ru-ru.xlf)
+* Handoff Datetime: 2016-07-20 23:03:30
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Handback File: [wdp-smb-api.08bc95b72815e67bdb9cf7c3ad75d1a63d9cbca2.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/wdp-smb-api.08bc95b72815e67bdb9cf7c3ad75d1a63d9cbca2.ru-ru.xlf)
+* Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
-##### <a name='14e252fdfc0464e8fd992b8648ef506cbefb9bf13394'></a> Source: [windows-apps-src\monetize\define-your-experiment-in-the-dev-center-dashboard.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/monetize/define-your-experiment-in-the-dev-center-dashboard.md)
+##### <a name='ad01d4daf089c61fc50c7927cfbf123d7d7ee4df5449'></a> Source: [windows-apps-src\xbox-apps\wdp-user-management.md](https://github.com/Microsoft/windows-apps/blob/67f158b1d3d5ece14c36483a2513a2db2f478660/windows-apps-src/xbox-apps/wdp-user-management.md)
 * Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [define-your-experiment-in-the-dev-center-dashboard.f8531319c141ba0616b6774b54e9c4c657e45c68.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6289a29f2022b0e7e73d5c00a54577bb84b9b5a/ol-handoff/Microsoft/windows-apps.ru-ru/master/define-your-experiment-in-the-dev-center-dashboard.f8531319c141ba0616b6774b54e9c4c657e45c68.ru-ru.xlf)
-* Handoff Datetime: 2016-07-20 14:31:28
+* Target File: [windows-apps-src\xbox-apps\wdp-user-management.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/xbox-apps/wdp-user-management.md)
+* Handoff File: [wdp-user-management.15fe408141746fcb5f48a4210dc6edd7bfcb55f1.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/13a84f40b2d049c332dd2e728ff420c40b457b3d/ol-handoff/Microsoft/windows-apps.ru-ru/master/wdp-user-management.15fe408141746fcb5f48a4210dc6edd7bfcb55f1.ru-ru.xlf)
+* Handoff Datetime: 2016-07-20 23:03:30
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\monetize\define-your-experiment-in-the-dev-center-dashboard.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/monetize/define-your-experiment-in-the-dev-center-dashboard.md)
-* Current Handback File: [define-your-experiment-in-the-dev-center-dashboard.f8531319c141ba0616b6774b54e9c4c657e45c68.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/define-your-experiment-in-the-dev-center-dashboard.f8531319c141ba0616b6774b54e9c4c657e45c68.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-06 15:19:45
-* [Back to Top](#report-top)
-
-##### <a name='c9883882021468c0569c7e244423f68181d978bd3451'></a> Source: [windows-apps-src\monetize\manage-your-experiment.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/monetize/manage-your-experiment.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [manage-your-experiment.bf04c15762ccb0b30f4711939844018736814d88.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6289a29f2022b0e7e73d5c00a54577bb84b9b5a/ol-handoff/Microsoft/windows-apps.ru-ru/master/manage-your-experiment.bf04c15762ccb0b30f4711939844018736814d88.ru-ru.xlf)
-* Handoff Datetime: 2016-07-20 14:31:28
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\monetize\manage-your-experiment.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/monetize/manage-your-experiment.md)
-* Current Handback File: [manage-your-experiment.bf04c15762ccb0b30f4711939844018736814d88.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/manage-your-experiment.bf04c15762ccb0b30f4711939844018736814d88.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-06 15:19:45
-* [Back to Top](#report-top)
-
-##### <a name='3bcdd109454d89961696124eacd4cdbd7563b17f3457'></a> Source: [windows-apps-src\monetize\run-app-experiments-with-a-b-testing.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/monetize/run-app-experiments-with-a-b-testing.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [run-app-experiments-with-a-b-testing.4cb001447ccf39d2caa97811d3905ae10cf01c7d.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6289a29f2022b0e7e73d5c00a54577bb84b9b5a/ol-handoff/Microsoft/windows-apps.ru-ru/master/run-app-experiments-with-a-b-testing.4cb001447ccf39d2caa97811d3905ae10cf01c7d.ru-ru.xlf)
-* Handoff Datetime: 2016-07-20 14:31:28
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\monetize\run-app-experiments-with-a-b-testing.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/monetize/run-app-experiments-with-a-b-testing.md)
-* Current Handback File: [run-app-experiments-with-a-b-testing.4cb001447ccf39d2caa97811d3905ae10cf01c7d.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/run-app-experiments-with-a-b-testing.4cb001447ccf39d2caa97811d3905ae10cf01c7d.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-06 15:19:45
-* [Back to Top](#report-top)
-
-##### <a name='adf630f9ae7904639c8d51857d4fb46bf7f6c68e5311'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/702db72e74578b7861e2c0ee383c6200458e3960/windows-apps-src/TOC.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6289a29f2022b0e7e73d5c00a54577bb84b9b5a/ol-handoff/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
-* Handoff Datetime: 2016-07-20 14:31:28
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/TOC.md)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-06 15:19:45
+* Handback File: [wdp-user-management.15fe408141746fcb5f48a4210dc6edd7bfcb55f1.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/wdp-user-management.15fe408141746fcb5f48a4210dc6edd7bfcb55f1.ru-ru.xlf)
+* Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
 
