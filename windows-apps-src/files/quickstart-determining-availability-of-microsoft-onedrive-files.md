@@ -2,24 +2,24 @@
 author: TylerMSFT
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
 title: "Определение доступности файлов Microsoft OneDrive"
-description: "Определите доступность файла Microsoft OneDrive с помощью свойства StorageFile.IsAvailable."
+description: "Определите доступность файла MicrosoftOneDrive с помощью свойства StorageFile.IsAvailable."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 17893ac17a741f2a6220b1826547c700af0f0f33
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a46507f007e0f5c3a9b28e4a6e72f6ba31114294
 
 ---
-# Определение доступности файлов Microsoft OneDrive
+# Определение доступности файлов MicrosoftOneDrive
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** Важные API **
 
 -   [**Класс FileIO**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
 -   [**Класс StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)
--   [**Свойство StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
+-   [**Свойство StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
 
-Определите доступность файла Microsoft OneDrive с помощью свойства [**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx).
+Определите доступность файла Microsoft OneDrive с помощью свойства [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx).
 
 ## Необходимые условия
 
@@ -35,9 +35,9 @@ ms.openlocfilehash: 17893ac17a741f2a6220b1826547c700af0f0f33
 
 Пользователи могут отмечать файлы OneDrive как "доступные автономно" (по умолчанию) и как "только в сети". Благодаря этому пользователи могут перемещать большие файлы (например, изображения или видео) в свое хранилище OneDrive, отмечать их как «только в сети» и тем самым экономить место на диске. (На локальном диске будет храниться только файл, содержащий метаданные.)
 
-[
-              **StorageFile.IsAvailable**
-            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx), позволяет определить, доступен ли файл в настоящий момент. Значения свойства **StorageFile.IsAvailable** в различных сценариях перечислены в следующей таблице.
+
+              [
+              **StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) позволяет определить, доступен ли файл в настоящий момент. Значения свойства **StorageFile.IsAvailable** в различных сценариях перечислены в следующей таблице.
 
 | Тип файла                              | В сети | Сеть с лимитным тарифным планом        | Вне сети |
 |-------------------------------------------|--------|------------------------|---------|
@@ -52,10 +52,10 @@ ms.openlocfilehash: 17893ac17a741f2a6220b1826547c700af0f0f33
 
 1.  Объявите возможность, соответствующую библиотеке, к которой требуется получить доступ.
 2.  Включите пространство имен [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346). Это пространство имен содержит типы для управления файлами, папками и параметрами приложений. Кроме того, оно включает необходимый тип [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171).
-3.  Получите объект [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) для нужных файлов. Если выполняется перечисление библиотеки, для выполнения этого шага обычно необходимо вызвать метод [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252), а затем — метод [**GetFilesAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/br227276.aspx) результирующего объекта [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046). Метод **GetFilesAsync** возвращает коллекцию [IReadOnlyList](http://go.microsoft.com/fwlink/p/?LinkId=324970) объектов **StorageFile**.
-4.  После получения доступа к объекту [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171), представляющему нужные файлы, значение свойства [**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) показывает, доступен ли файл.
+3.  Получите объект [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) для нужных файлов. Если выполняется перечисление библиотеки, для выполнения этого шага обычно необходимо вызвать метод [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252), а затем — метод [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276.aspx) результирующего объекта [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046). Метод **GetFilesAsync** возвращает коллекцию [IReadOnlyList](http://go.microsoft.com/fwlink/p/?LinkId=324970) объектов **StorageFile**.
+4.  После получения доступа к объекту [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171), представляющему нужные файлы, значение свойства [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) показывает, доступен ли файл.
 
-Следующий общий метод иллюстрирует способ перечисления любой папки и возвращения коллекции объектов [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) для этой папки. Затем метод вызова повторяется для возвращенной коллекции, ссылаясь на свойство [**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) каждого файла.
+Следующий общий метод иллюстрирует способ перечисления любой папки и возвращения коллекции объектов [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) для этой папки. Затем метод вызова повторяется для возвращенной коллекции, ссылаясь на свойство [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) каждого файла.
 
 ```CSharp
 /// <summary>
@@ -98,6 +98,6 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

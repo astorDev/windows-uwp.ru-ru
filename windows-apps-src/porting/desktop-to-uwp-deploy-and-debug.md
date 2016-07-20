@@ -3,8 +3,9 @@ author: awkoren
 Description: "Развертывание и отладка приложений универсальной платформы Windows (UWP), преобразованных из классических приложений для Windows (Win32, WPF и формы Windows Forms) с помощью расширений для преобразования классических приложений."
 Search.Product: eADQiWindows 10XVcnh
 title: "Развертывание и отладка приложений универсальной платформы Windows (UWP), преобразованных из классических приложений для Windows"
-ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
-ms.openlocfilehash: 14634c12435cd8d6d4471a65c0f8deb36e3b1c80
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 618b129449d285054604008615c32de74c8bfd9b
 
 ---
 
@@ -16,7 +17,7 @@ ms.openlocfilehash: 14634c12435cd8d6d4471a65c0f8deb36e3b1c80
 
 ## Отладка преобразованных приложений UWP
 
-Есть 2 основных варианта отладки преобразованного приложения с помощью Visual Studio.
+Есть 2основных варианта отладки преобразованного приложения с помощью Visual Studio.
 
 ### Прикрепление к процессу
 
@@ -123,7 +124,7 @@ ms.openlocfilehash: 14634c12435cd8d6d4471a65c0f8deb36e3b1c80
 
 10. Наконец, вы можете задать точку останова в коде Win32 и нажать клавишу F5, чтобы запустить отладчик. Он скопирует все обновления, которые вы внесли в приложение Win32 во всем пакете AppX, и вы сможете выполнить отладку непосредственно из Visual Studio.
 
-11. Если вы обновите приложение, будет необходимо использовать программу MakeAppx, чтобы перепаковать приложение повторно. Дополнительные сведения см. в статье [упаковщик приложений (MakeAppx.exe)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh446767(v=vs.85).aspx). 
+11. Если вы обновите приложение, будет необходимо использовать программу MakeAppx, чтобы перепаковать приложение повторно. Дополнительные сведения см. в статье [упаковщик приложений (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx). 
 
 Если у вас несколько конфигураций сборки (например, для выпуска и отладки), можно добавить следующий код в файл AppXFileList.xml, чтобы скопировать сборку Win32 из различных расположений:
 
@@ -215,11 +216,11 @@ in the app package must be trusted."
 
 [Обзор преобразователя классических приложений (Project Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 
-[Ручное преобразование классического приложения для Windows в приложение для универсальной платформы Windows (UWP)](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-manual-conversion)
+[Ручное преобразование классического приложения для Windows в приложение для универсальной платформы Windows (UWP)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)
 
 [Примеры кода на GitHub для преобразования классических приложений в приложения UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

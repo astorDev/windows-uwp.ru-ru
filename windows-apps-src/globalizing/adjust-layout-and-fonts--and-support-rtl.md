@@ -6,8 +6,8 @@ ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 989d810724c925a5bcbebf5f7fb301636905fff9
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a1b271360b84e670f0b28557ffc499436487ad5f
 
 ---
 
@@ -50,7 +50,7 @@ ms.openlocfilehash: 989d810724c925a5bcbebf5f7fb301636905fff9
 
 ### <span id="HTML"></span><span id="html"></span>HTML
 
-Для приложений Магазина Windows на JavaScript применяйте такие механизмы макета [каскадных таблиц стилей (CSS)](https://msdn.microsoft.com/library/ms531209), как [-ms-grid](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#g_section) и [–ms-box](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#f_section). Используйте симметричные поля и заполнение для локализации различных направлений макета.
+Для приложений Магазина Windows на JavaScript применяйте такие механизмы макета [каскадных таблиц стилей (CSS)](https://msdn.microsoft.com/library/ms531209), как [-ms-grid](https://msdn.microsoft.com/library/windows/apps/hh465453.aspx#g_section) и [–ms-box](https://msdn.microsoft.com/library/windows/apps/hh465453.aspx#f_section). Используйте симметричные поля и заполнение для локализации различных направлений макета.
 
 В приложении также можно использовать селектор псевдокласса [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867), чтобы настраивать свойства CSS, например ширину, для конкретных элементов в зависимости от языка приложения. Для включения этой возможности хост приложений присваивает атрибуту **lang** корневого элемента значение языка приложения.
 
@@ -97,12 +97,14 @@ body:-ms-lang(ar,he…) { direction: rtl;}
 .mirrorable { transform: scaleX(-1); }
 ```
 
-**И для XAML, и для HTML:** если вашему приложению требуется другое изображение для правильного отражения, можно использовать систему управления ресурсами с [квалификатором layoutdir](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324). Система выбирает изображение с именем file.layoutdir-rtl.png, когда в качестве [языка приложения](manage-language-and-region.md) задан язык с написанием справа налево. Этот подход может применяться, если одна часть изображения зеркально отражается, а другая — нет.
+
+              **И для XAML, и для HTML:** если вашему приложению требуется другое изображение для правильного отражения, можно использовать систему управления ресурсами с [квалификатором layoutdir](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324). Система выбирает изображение с именем file.layoutdir-rtl.png, когда в качестве [языка приложения](manage-language-and-region.md) задан язык с написанием справа налево. Этот подход может применяться, если одна часть изображения зеркально отражается, а другая— нет.
 
 ## <span id="Fonts"></span><span id="fonts"></span><span id="FONTS"></span>Шрифты
 
 
-**И для XAML, и для HTML:** используйте API сопоставления шрифтов [**LanguageFont**](https://msdn.microsoft.com/library/windows/apps/br206864) для программного доступа к рекомендуемому семейству, размеру, насыщенности и стилю шрифта определенного языка. Объект **LanguageFont** предоставляет доступ к нужной информации о шрифте для различных категорий содержимого, включая заголовки, уведомления, текст пользовательского интерфейса и шрифты доступных для редактирования текстов.
+
+              **И для XAML, и для HTML:** используйте API сопоставления шрифтов [**LanguageFont**](https://msdn.microsoft.com/library/windows/apps/br206864) для программного доступа к рекомендуемому семейству, размеру, насыщенности и стилю шрифта определенного языка. Объект **LanguageFont** предоставляет доступ к нужной информации о шрифте для различных категорий содержимого, включая заголовки, уведомления, текст пользовательского интерфейса и шрифты доступных для редактирования текстов.
 
 ### <span id="HTML"></span><span id="html"></span>HTML
 
@@ -119,6 +121,6 @@ body:-ms-lang(ar,he…) { direction: rtl;}
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

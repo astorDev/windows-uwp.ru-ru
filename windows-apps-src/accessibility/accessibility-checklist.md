@@ -6,8 +6,8 @@ title: "Контрольный список специальных возмож�
 label: Accessibility checklist
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d
+ms.sourcegitcommit: 6ac5430a3e18a02d5f2fc82829631b7649ea547d
+ms.openlocfilehash: 2d632c524de8299378d8cc059d1c522080a2df2e
 
 ---
 
@@ -61,13 +61,13 @@ ms.openlocfilehash: 9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d
     Дополнительную информацию см. в статье [Специальные возможности в Магазине](accessibility-in-the-store.md).
 
 <span id="related_topics"/>
-## Связанные темы  
+## Связанные разделы  
 * [Специальные возможности](accessibility.md)
 * [Рекомендации по специальным возможностям](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [Нерекомендуемые методики](practices-to-avoid.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

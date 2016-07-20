@@ -4,13 +4,13 @@ ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
 title: "Отправка рабочего элемента в пул потоков"
 description: "Узнайте, как выполнить работу в отдельном потоке, отправив рабочий элемент в пул потоков."
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: afb6d8b1b1ee5eeb99ba68e8b842436bd58619d0
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: d8b0f512d075510fae527e563ef99f24cc201577
 
 ---
 # Отправка рабочего элемента в пул потоков
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -25,7 +25,8 @@ ms.openlocfilehash: afb6d8b1b1ee5eeb99ba68e8b842436bd58619d0
 
 Доступны три версии функции [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593), поэтому вы можете при необходимости задать приоритет рабочего элемента и контролировать, выполняется ли он параллельно с другими рабочими элементами.
 
-**Примечание.**  Для доступа к пользовательскому интерфейсу и отображения хода выполнения рабочего элемента используйте [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317).
+
+              **Примечание.**  Для доступа к пользовательскому интерфейсу и отображения хода выполнения рабочего элемента используйте [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317).
 
 В примере ниже создается рабочий элемент и предоставляется лямбда-функция для выполнения работы.
 
@@ -197,7 +198,7 @@ m_workItem = asyncAction;
 
 ## Обработка завершения рабочего элемента
 
-Предоставьте обработчик завершения, задав свойство [**IAsyncAction.Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) рабочего элемента. Предоставьте делегат (можно использовать лямбда-функцию или функцию-делегат) для обработки завершения рабочего элемента. Например, используйте [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) для доступа к потоку пользовательского интерфейса и отображения результатов.
+Предоставьте обработчик завершения, задав свойство [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) рабочего элемента. Предоставьте делегат (можно использовать лямбда-функцию или функцию-делегат) для обработки завершения рабочего элемента. Например, используйте [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) для доступа к потоку пользовательского интерфейса и отображения результатов.
 
 В следующем примере пользовательский интерфейс обновляется на основе результатов выполнения рабочего элемента, отправленного на шаге 1:
 
@@ -253,7 +254,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 Для получения дополнительной информации скачайте код из этого краткого руководства в [примере создания рабочего элемента ThreadPool](http://go.microsoft.com/fwlink/p/?LinkID=328569), созданного для Windows 8.1, и повторно используйте исходный код в приложении Windows 10 win\_unap.
 
-## Ссылки по теме
+## Связанные разделы
 
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)
@@ -263,6 +264,6 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

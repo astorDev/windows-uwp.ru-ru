@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: "Используйте этот метод в API коллекции Магазина Windows, чтобы объявить потребляемый продукт в качестве выполненного для указанного покупателя. Перед повторной покупкой продукта пользователем ваше приложение или служба должны сообщить о нем как о выполненном для этого пользователя."
 title: "Объявление потребляемого продукта в качестве выполненного"
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: b099bdc26565ef218eaf1f73c5bb3ec9c24065c3
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 5bd85c6ec9728a0dc08ab8ef4f586b0017510a74
 
 ---
 
@@ -37,46 +38,43 @@ ms.openlocfilehash: b099bdc26565ef218eaf1f73c5bb3ec9c24065c3
 
 | Метод | URI запроса                                                   |
 |--------|---------------------------------------------------------------|
-| POST   | `https://collections.mp.microsoft.com/v6.0/collections/consume` |
+| POST   | ```https://collections.mp.microsoft.com/v6.0/collections/consume``` |
 
-<br/> 
+<span/> 
 
 ### Заголовок запроса
 
 | Заголовок         | Тип   | Описание                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | string | Обязательное. 1Маркер доступа Azure AD в форме**Bearer**&lt;*token*&gt;.                           |
-| Host           | строковый | Должен иметь значение **collections.mp.microsoft.com**.                                            |
+| Authorization  | Строка | Обязательный. Маркер доступа Azure AD в форме**Bearer**&lt;*token*&gt;.                           |
+| Host           | Строка | Должен иметь значение **collections.mp.microsoft.com**.                                            |
 | Content-Length | Число | Длина тела запроса.                                                                       |
 | Content-Type   | Строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
 
-<br/> 
+<span/>
 
 ### Тело запроса
 
-| Параметр     | Тип         | Описание         | Обязательный параметр |
+| Параметр     | Тип         | Описание         | Обязательный |
 |---------------|--------------|---------------------|----------|
 | beneficiary   | UserIdentity | Пользователь, для которого выполняется потребление этого элемента.                                                                                                                                                                                                                                                                 | Да      |
 | itemId        | Строка       | Значение itemId, возвращаемое [запросом продуктов](query-for-products.md). Используйте этот параметр с trackingId                                                                                                                                                                                                  | Нет       |
 | trackingId    | Guid         | Уникальный ИД отслеживания, предоставляемый разработчиком. Используйте этот параметр с itemId.                                                                                                                                                                                                                                     | Нет       |
 | productId     | Строка       | Значение productId, возвращаемое [запросом продуктов](query-for-products.md). Используйте этот параметр с transactionId                                                                                                                                                                                            | Нет       |
-| transactionId | Guid         | Код транзакции получаемый от одного следующих источников:                                                                                                                                                                                                                                      | Нет       |
-|               |              | * Свойство [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) класса [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392).   |        |
-|               |              | * Квитанция приложения или продукта, возвращаемая [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381), [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) или [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811).   |        |
-|               |              | * Параметр transactionId, возвращаемый [запросом продуктов](query-for-products.md).   |        |        
-|               |              | Используйте этот параметр с productId.   |        |
+| transactionId | Guid         | Код транзакции, получаемый от одного следующих источников. Используйте этот параметр с productId.  <br/><br/><ul><li>Свойство [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) класса [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392).</li><li>Квитанция приложения или продукта, возвращаемая [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381), [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) или [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811).</li><li>Параметр transactionId, возвращаемый [запросом продуктов](query-for-products.md).</li></ul>                                                                                                                                                                                                                                   | Нет       |
+
  
-<br/>
+<span/>
 
 Объект UserIdentity содержит следующие параметры.
 
-| Параметр            | Тип   | Описание                                                                                                                                 | Обязательный параметр |
+| Параметр            | Тип   | Описание                                                                                                                                 | Обязательный |
 |----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | identityType         | Строка | Укажите строковое значение **b2b**.                                                                                                           | Да      |
 | identityValue        | Строка | Строковое значение ключа идентификатора Магазина Windows.                                                                                                   | Да      |
 | localTicketReference | Строка | Запрошенный идентификатор для возвращаемого ответа. Рекомендуется использовать то же значение, которое использует утверждение *userId* в ключе идентификатора Магазина Windows. | Да      |
 
-<br/> 
+<span/> 
 
 ### Примеры запросов
 
@@ -146,7 +144,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 | 401  | Unauthorized | PartnerAadTicketRequired   | Маркер доступа Azure AD не был передан службе в заголовке авторизации.                                                                                                   |
 | 401  | Unauthorized | InconsistentClientId       | Утверждение *clientId* в ключе идентификатора Магазина Windows в теле запроса и утверждение *appid* в маркере доступа Azure AD в заголовке авторизации не совпадают.                     |
 
-<br/> 
+<span/> 
 
 ## Связанные разделы
 
@@ -160,6 +158,6 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

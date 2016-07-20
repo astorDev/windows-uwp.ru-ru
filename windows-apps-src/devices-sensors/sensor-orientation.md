@@ -4,13 +4,13 @@ ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: "Положение датчиков в пространстве"
 description: "Данные датчиков классов Accelerometer, Gyrometer, Compass, Inclinometer и OrientationSensor определяются их опорными осями. Эти оси определяются альбомной ориентацией устройства и поворачиваются вместе с ним."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3da7957bf9b162f1ac1533ccff90c8764f34890a
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 0f1123d3be66973d5b56a4789b1ff6e171f94900
 
 ---
 # Положение датчиков в пространстве
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -33,7 +33,7 @@ ms.openlocfilehash: 3da7957bf9b162f1ac1533ccff90c8764f34890a
 
 ![Дисплей в альбомной ориентации, а устройство — в альбомной (перевернутой)](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
 
-Можно запросить значения ориентации при помощи класса [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258), используя метод [**GetForCurrentView**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) со свойством [**CurrentOrientation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx). Затем можно создать логику путем сравнения с перечислением [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142). Следует помнить, что для каждой поддерживаемой ориентации необходимо предусмотреть преобразование опорных осей.
+Можно запросить значения ориентации при помощи класса [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258), используя метод [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) со свойством [**CurrentOrientation**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx). Затем можно создать логику путем сравнения с перечислением [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142). Следует помнить, что для каждой поддерживаемой ориентации необходимо предусмотреть преобразование опорных осей.
 
 ## Устройства с преимущественно альбомной и преимущественно книжной ориентацией
 
@@ -50,7 +50,7 @@ ms.openlocfilehash: 3da7957bf9b162f1ac1533ccff90c8764f34890a
 
 Некоторые устройства имеют возможность транслировать изображение на другое устройство. Например, можно транслировать изображение дисплея планшета на экран проектора, который находится в альбомной ориентации. В этом сценарии важно помнить, что ориентация изображения зависит от ориентации исходного устройства, а не того устройства, на которое транслируется изображение. Таким образом, акселерометр предоставляет данные для планшета.
 
-Кроме того, некоторые устройства не имеют дисплея. Для этих устройств ориентация по умолчанию — книжная.
+Кроме того, некоторые устройства не имеют дисплея. Для этих устройств ориентация по умолчанию— книжная.
 
 ## Ориентация экрана и направление по компасу
 
@@ -60,9 +60,9 @@ ms.openlocfilehash: 3da7957bf9b162f1ac1533ccff90c8764f34890a
 | Ориентация экрана | Опорная ось для направления по компасу | Направление по компасу, когда пользователь стоит лицом к северу, согласно API | Компенсация отклонения компаса | 
 |---------------------|------------------------------------|---------------------------------------|------------------------------|
 | Альбомная           | -Z | 0   | Направление               |
-| Книжная            |  Y | 90  | (Направление + 270) % 360 | 
-| LandscapeFlipped    |  Z | 180 | (Направление + 180) % 360 |
-| PortraitFlipped     |  Y | 270 | (Направление + 90) % 360  |
+| Книжная            |  Y | 90  | (Направление + 270)% 360 | 
+| LandscapeFlipped    |  Z | 180 | (Направление + 180)% 360 |
+| PortraitFlipped     |  Y | 270 | (Направление + 90)% 360  |
 
 Измените направление по компасу согласно таблице, чтобы правильно отобразить курс. В приведенном ниже фрагменте кода показано, как это сделать.
 
@@ -171,6 +171,6 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

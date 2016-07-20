@@ -3,8 +3,8 @@ author: Jwmsft
 label: Buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 91399060e129df18acd38e18d98cad848667a5ad
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: de5af77435b34b8f28005351a7de125f211ca522
 
 ---
 # Кнопки
@@ -29,7 +29,7 @@ ms.openlocfilehash: 91399060e129df18acd38e18d98cad848667a5ad
 
 ## Пример
 
-В этом примере используются две кнопки — "Закрыть все" и "Отмена" — в диалоговом окне в браузере Microsoft Edge. 
+В этом примере используются две кнопки— "Закрыть все" и "Отмена"— в диалоговом окне в браузере Microsoft Edge. 
 
 ![Пример кнопок, используемых в диалоговом окне](images/control-examples/buttons-edge.png)
 
@@ -71,14 +71,14 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 
 Если коснуться кнопки пальцем или стилусом либо навести на нее указатель и нажать левую кнопку мыши, кнопка вызывает событие [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx). Если для кнопки предусмотрен фокус клавиатуры, при нажатии клавиши ВВОД или ПРОБЕЛ также происходит вызов события «Click».
 
-Как правило, нельзя обрабатывать низкоуровневые события [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) с помощью элемента «Button», поскольку для него предусмотрено поведение «Click». Дополнительные сведения см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/en-us/library/windows/apps/mt185584.aspx).
+Как правило, нельзя обрабатывать низкоуровневые события [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) с помощью элемента «Button», поскольку для него предусмотрено поведение «Click». Дополнительные сведения см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx).
 
 Можно выбирать порядок вызова кнопкой события «Click» путем изменения свойства [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx). Значением ClickMode по умолчанию является **Release**. Если для параметра ClickMode выбрано значение **Hover**, событие «Click» невозможно вызвать нажатием клавиши или касанием. 
 
 
 ### Содержимое кнопки
 
-Кнопка представляет собой [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Ее свойство содержимого XAML — [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), благодаря чему возможно использование подобного синтаксиса для: `<Button>A button's content</Button>`. В качестве содержимого кнопки можно задать любой объект. Если содержимым является класс [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), он обрабатывается для просмотра в кнопке. Если содержимым является другой тип объекта, в кнопке отображается его строковое представление.
+Кнопка представляет собой [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Ее свойство содержимого XAML— [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), благодаря чему возможно использование подобного синтаксиса для: `<Button>A button's content</Button>`. В качестве содержимого кнопки можно задать любой объект. Если содержимым является класс [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), он обрабатывается для просмотра в кнопке. Если содержимым является другой тип объекта, в кнопке отображается его строковое представление.
 
 Здесь класс **StackPanel**, содержащий изображение банана и текст, задан в качестве содержимого кнопки.
 
@@ -100,8 +100,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 
 ## Создание кнопки повтора
 
-[
-            **RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) — это кнопка, при нажатии которой события [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) повторяются до тех пор, пока она не будет отпущена. Задайте свойство [**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx), чтобы указать время задержки после нажатия кнопки, по прошествии которого начнется повторение действия щелчка. Задайте свойство [**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx), чтобы указать время между повторениями действия щелчка. Время для обоих свойств указывается в миллисекундах.
+[**RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)— это кнопка, при нажатии которой события [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) повторяются до тех пор, пока она не будет отпущена. Задайте свойство [**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx), чтобы указать время задержки после нажатия кнопки, по прошествии которого начнется повторение действия щелчка. Задайте свойство [**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx), чтобы указать время между повторениями действия щелчка. Время для обоих свойств указывается в миллисекундах.
 
 В следующем примере показаны два элемента управления RepeatButton, чьи соответствующие события «Click» используются для увеличения и уменьшения значения, приведенного в блоке текста.
 
@@ -205,7 +204,8 @@ Surface Hub ![системная кнопка "Назад" на Surface Hub](ima
 
     Журнал перемещения по страницам в приложении поддерживается, обратная навигация от приложения к приложению не поддерживается.
 
-    **Примечание**  В режиме планшета заголовок окна отображается при проведении пользователем вниз от верхнего края устройства или перемещения указателя мыши в верхней части устройства. Во избежание дублирования и путаницы кнопка "Назад" заголовка не отображается в режиме планшета.
+    
+              **Примечание.**  В режиме планшета заголовок окна отображается при проведении пользователем вниз от верхнего края устройства или перемещения указателя мыши в верхней части устройства. Во избежание дублирования и путаницы кнопка "Назад" заголовка не отображается в режиме планшета.
 
      
 
@@ -217,7 +217,7 @@ Surface Hub ![системная кнопка "Назад" на Surface Hub](ima
 
     Пользователи могут запутаться, если обратная навигация не будет интуитивно понятной, согласованной и прогнозируемой.
 
-## Статьи по теме
+## Связанные разделы
 
 - [Переключатели](radio-button.md)
 - [Тумблеры](toggles.md)
@@ -230,6 +230,6 @@ Surface Hub ![системная кнопка "Назад" на Surface Hub](ima
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

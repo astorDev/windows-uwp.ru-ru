@@ -3,8 +3,9 @@ author: Mtoepke
 title: "Известные проблемы с предварительным выпуском для разработчиков UWP для Xbox One."
 description: 
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: 9a9180f8d6fcd51808310a7f8fbac986ca9c3817
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: e016be20af9a0d7a67fa383cbdc93083d12a1113
 
 ---
 
@@ -21,7 +22,8 @@ ms.openlocfilehash: 9a9180f8d6fcd51808310a7f8fbac986ca9c3817
 
 В следующем списке приведены некоторые известные проблемы, которые могут возникнуть при работе с этим выпуском (список не является исчерпывающим). 
 
-**Мы хотим услышать ваши отзывы**, поэтому сообщайте о любых возникающих проблемах на форуме [Разработка универсальных приложений для Windows](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop). 
+
+              **Мы хотим услышать ваши отзывы**, поэтому сообщайте о любых возникающих проблемах на форуме [Разработка универсальных приложений для Windows](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop). 
 
 Если ваша проблема не решена, прочитайте информацию в этом разделе и обратитесь к разделу [Часто задаваемые вопросы](frequently-asked-questions.md) и на форумы, чтобы получить помощь.
 
@@ -44,17 +46,19 @@ public App() {
 }
 ```
 
-Для отключения режима мыши в приложении на HTML/Javascript изучите приведенный ниже пример.
+Для отключения режима мыши в приложении на HTML и JavaScript изучите приведенный ниже пример.
 
 ```code
 // Turn off mouse mode
 navigator.gamepadInputEmulation = "keyboard";
 ```
 
-> **Примечание**
-            &nbsp;&nbsp;В этой предварительной версии для разработчиков, если режим мыши включен, использование сдвига с помощью правого джойстика на контроллере может привести к зависанию консоли. Если вы столкнетесь с такой проблемой, потребуется перезагрузка консоли.
+Дополнительные сведения, включая способ включения направленной навигации в приложении на HTML и JavaScript, см. в разделе [Отключение режима мыши](how-to-disable-mouse-mode.md#html).
 
-Сведения о поддержке режима мыши см. в разделе [Разработка для Xbox и ТВ](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode). В этом разделе представлены сведения о том, как включать и отключать режим мыши, чтобы вы могли выбрать подходящее поведение для своего приложения.
+> 
+              **Примечание.**&nbsp;&nbsp;В этой предварительной версии для разработчиков, если режим мыши включен, использование сдвига с помощью правого джойстика на контроллере может привести к зависанию консоли. Если вы столкнетесь с такой проблемой, потребуется перезагрузка консоли.
+
+Сведения о поддержке режима мыши см. в разделе [Разработка для Xbox и ТВ](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode). В этом разделе представлены сведения о том, как включать и отключать режим мыши, чтобы вы могли выбрать подходящее поведение для своего приложения.
 
 ## Для развертывания приложения необходимо, чтобы какой-либо пользователь выполнил вход (ошибка 0x87e10008)
 
@@ -110,7 +114,7 @@ Please use the forum to report any issues you see.-->
 
 ## Поддержка DirectX 12
 
-UWP для Xbox One поддерживает DirectX 11 с уровнем компонентов 10. DirectX 12 в настоящее время не поддерживается. Xbox One, как и все традиционные игровые консоли, — это специализированный аппаратный компонент, для реализации полного потенциала которого требуется специальный комплект SDK. Если вы работаете с игрой, которая требует максимального использования возможностей оборудования Xbox One, можно зарегистрироваться в программе [ID@XBOX](http://www.xbox.com/en-us/Developers/id), чтобы получить доступ к этому комплекту SDK (в котором реализована поддержка DirectX 12).
+UWP для Xbox One поддерживает DirectX 11 с уровнем компонентов 10. DirectX 12 в настоящее время не поддерживается. Xbox One, как и все традиционные игровые консоли,— это специализированный аппаратный компонент, для реализации полного потенциала которого требуется специальный комплект SDK. Если вы работаете с игрой, которая требует максимального использования возможностей оборудования Xbox One, можно зарегистрироваться в программе [ID@XBOX](http://www.xbox.com/Developers/id), чтобы получить доступ к этому комплекту SDK (в котором реализована поддержка DirectX 12).
 
 <!-- ### Xbox One Developer Preview disables game streaming to Windows 10
 
@@ -121,10 +125,10 @@ To restore the game streaming feature, you must leave the developer preview. -->
 
 По умолчанию область отображения в приложениях UWP на Xbox должна отображаться внутри зоны безопасности на ТВ. Однако предварительный выпуск для разработчиков Xbox One содержит известную ошибку, из-за которой зона безопасности на ТВ начинается в [0, 0], а не [_offset_, _offset_].
 
-> **Примечание**
-            &nbsp;&nbsp;Это применяется только к приложениям UWP на JavaScript.
+> 
+              **Примечание.**&nbsp;&nbsp;Применяется только к приложениям UWP на JavaScript.
 
-Самый простой способ обойти эту проблему — отключить зону безопасности на ТВ, как показано в следующем примере JavaScript.
+Самый простой способ обойти эту проблему— отключить зону безопасности на ТВ, как показано в следующем примере JavaScript.
 
     var applicationView = Windows.UI.ViewManagement.ApplicationView.getForCurrentView();
 
@@ -138,15 +142,17 @@ UWP apps and games running on Xbox One share resources with the system and other
 If you are running into memory or performance issues, this may be why. 
 For more details, see [System resources for UWP apps and games on Xbox One](system-resource-allocation.md).-->
 
+<!--
+## Networking using traditional sockets
 
-## Сетевые подключения с использованием традиционных сокетов
-
-В данном предварительном выпуске для разработчиков входящий и исходящий сетевой доступ с консоли, на которой используются традиционные сокеты TCP/UDP (WinSock, Windows.Networking.Sockets), отсутствует. Разработчикам, тем не мене, доступны протоколы HTTP и WebSockets. 
+In this developer preview, inbound and outbound network access from the console that uses traditional TCP/UDP sockets (WinSock, Windows.Networking.Sockets) is not available. 
+Developers can still use HTTP and WebSockets.
+--> 
 
 
 ## Охват API платформы UWP
 
-Не все API UWP поддерживаются на Xbox. См. список API, которые по имеющимся у нас сведениям не работают, в разделе [Функции UWP, которые еще не поддерживаются в Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). При обнаружении проблем с другими API следует сообщить о них на форумах. 
+Не все API UWP поддерживаются на Xbox. См. список API, которые, по имеющимся у нас сведениям, не работают, см. в разделе [Функции UWP, которые еще не поддерживаются в Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). При обнаружении проблем с другими API следует сообщить о них на форумах. 
 
 <!--## XAML controls do not look like or behave like the controls in the Xbox One shell
 
@@ -226,10 +232,10 @@ This is caused by a failure in the WDP infrastructure on the console and can be 
 
 ## См. также
 - [Вопросы и ответы](frequently-asked-questions.md)
-- [UWP на Xbox One](index.md)
+- [Приложения UWP для Xbox One](index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

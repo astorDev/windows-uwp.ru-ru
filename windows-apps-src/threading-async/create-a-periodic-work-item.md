@@ -4,8 +4,8 @@ ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: "Создание периодического рабочего элемента"
 description: "Узнайте, как создать периодически повторяющийся рабочий элемент."
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: f5b16c62b591481c52cfa4bb7e1ddb162bf18f42
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 8bf4bb511f84b314d48aedf9dd05c8955875029c
 
 ---
 # Создание периодического рабочего элемента
@@ -23,13 +23,15 @@ ms.openlocfilehash: f5b16c62b591481c52cfa4bb7e1ddb162bf18f42
 
 Для создания периодического рабочего элемента используется метод [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915). Создайте лямбда-функцию, выполняющую работу, и используйте параметр *period* для указания интервала между отправками. Период указывается с помощью структуры [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996). Рабочий элемент будет отправляться каждый раз по истечении периода времени, поэтому убедитесь, что этот период является достаточным для завершения работы.
 
-[
-              **CreateTimer**
-            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) возвращает объект [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587). Храните этот объект на случай, если таймер придется отменить.
 
-> **Примечание**  Избегайте указания для интервала нулевого значения (или значения меньше одной миллисекунды). Это приведет к тому, что периодический таймер будет вести себя как одиночный.
+              [
+              **CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) возвращает объект [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587). Храните этот объект на случай, если таймер придется отменить.
 
-> **Примечание**  Для доступа к пользовательскому интерфейсу и отображения хода выполнения рабочего элемента можно использовать [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317).
+> 
+              **Примечание.**  Избегайте указания для интервала нулевого значения (или значения меньше одной миллисекунды). Это приведет к тому, что периодический таймер будет вести себя как одиночный.
+
+> 
+              **Примечание.**  Для доступа к пользовательскому интерфейсу и отображения хода выполнения из рабочего элемента можно использовать [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317).
 
 В следующем фрагменте кода создается рабочий элемент, который запускается каждые 60 секунд.
 
@@ -184,7 +186,7 @@ ms.openlocfilehash: f5b16c62b591481c52cfa4bb7e1ddb162bf18f42
 
 ## Отмена таймера
 
-При необходимости вызовите метод [**Cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx), чтобы отменить повторы периодического рабочего элемента. Если рабочий элемент запущен во время отмены периодического таймера, ему будет разрешено завершиться. Метод [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (если предоставлен) вызывается, когда все экземпляры периодического рабочего элемента завершили работу.
+При необходимости вызовите метод [**Cancel**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx), чтобы отменить повторы периодического рабочего элемента. Если рабочий элемент запущен во время отмены периодического таймера, ему будет разрешено завершиться. Метод [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (если предоставлен) вызывается, когда все экземпляры периодического рабочего элемента завершили работу.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -198,7 +200,7 @@ ms.openlocfilehash: f5b16c62b591481c52cfa4bb7e1ddb162bf18f42
 
 Подробнее об одиночных таймерах см. в разделе [Отправка рабочего элемента по таймеру](use-a-timer-to-submit-a-work-item.md).
 
-## Ссылки по теме
+## Связанные разделы
 
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)
@@ -208,6 +210,6 @@ ms.openlocfilehash: f5b16c62b591481c52cfa4bb7e1ddb162bf18f42
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

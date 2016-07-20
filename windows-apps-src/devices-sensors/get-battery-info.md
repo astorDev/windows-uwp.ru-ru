@@ -4,13 +4,13 @@ ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
 title: "Получение сведений о батарее"
 description: "Узнайте, как получить подробные сведения об аккумуляторе с помощью API в пространстве имен Windows.Devices.Power."
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 716123f7401350748c7eb81a2ca4208a74b6e4ac
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 9b1394c28b25b8b1b7401fcc794659dcf38fed6f
 
 ---
 # Получение сведений о батарее
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -24,7 +24,8 @@ ms.openlocfilehash: 716123f7401350748c7eb81a2ca4208a74b6e4ac
 
 В некоторых устройствах используется несколько батарей. При этом не всегда очевидно, какой вклад делает каждая из них в общую энергоемкость устройства. Поэтому следует использовать класс [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011). *Система батарей* содержит все контроллеры батарей, подключенные к устройству. Она предоставляет один общий объект [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005).
 
-**Примечание.** Класс [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) фактически соответствует контроллеру батареи. В зависимости от устройства контроллер может быть подключен как к физической батарее, так и к корпусу устройства. Таким образом, можно создать объект батареи даже при отсутствии батарей. В других случаях объект батареи может иметь значение **null**.
+
+              **Примечание.**  Класс [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) фактически соответствует контроллеру батареи. В зависимости от устройства контроллер может быть подключен как к физической батарее, так и к корпусу устройства. Таким образом, можно создать объект батареи даже при отсутствии батарей. В других случаях объект батареи может иметь значение **null**.
 
 Если у вас есть объект системы батарей, то вызвав метод [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport), можно получить соответствующий класс [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005).
 
@@ -44,7 +45,7 @@ private void RequestAggregateBatteryReport()
 
 ## Получение отчетов об отдельных батареях
 
-Вы также можете создать объект [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) для отдельных батарей. Используйте методы [**GetDeviceSelector**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.battery.getdeviceselector.aspx) и [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432) вместе, чтобы получить коллекцию объектов [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393), представляющих все контроллеры батарей, подключенные к устройству. Затем, используя свойство **Id** необходимого объекта **DeviceInformation**, создайте соответствующий класс [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) с помощью метода [**FromIdAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.battery.fromidasync.aspx). И наконец вызовите метод [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport), чтобы получить отчет об отдельной батарее.
+Вы также можете создать объект [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) для отдельных батарей. Используйте методы [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getdeviceselector.aspx) и [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432) вместе, чтобы получить коллекцию объектов [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393), представляющих все контроллеры батарей, подключенные к устройству. Затем, используя свойство **Id** необходимого объекта **DeviceInformation**, создайте соответствующий класс [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) с помощью метода [**FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.fromidasync.aspx). И наконец вызовите метод [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport), чтобы получить отчет об отдельной батарее.
 
 В этом примере показано, как создать отчет о батарее для всех батарей, подключенных к устройству.
 
@@ -73,7 +74,7 @@ async private void RequestIndividualBatteryReports()
 
 ## Получение доступа к сведениям отчета
 
-Объект [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) предоставляет большое количество сведений о батарее. Подробнее о его свойствах **Status** (перечисление [**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458)), [**ChargeRateInMilliwatts**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx), [**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx), [**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx) и [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours) см. в справочнике по API. В этом примере показаны некоторые свойства отчета о батарее, используемые основным приложением батареи, которое описано далее в этой статье.
+Объект [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) предоставляет большое количество сведений о батарее. Подробнее о его свойствах **Status** (перечисление [**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458)), [**ChargeRateInMilliwatts**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx), [**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx), [**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx) и [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours) см. в справочнике по API. В этом примере показаны некоторые свойства отчета о батарее, используемые основным приложением батареи, которое описано далее в этой статье.
 
 ```csharp
 ...
@@ -87,7 +88,7 @@ TextBlock txt6 = new TextBlock { Text = "Remaining energy capacity (mWh): " + re
 
 ## Запрос обновлений отчета
 
-При изменении заряда, емкости или состояния батареи объект [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) создает событие [**ReportUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated). Обычно это происходит немедленно при изменениях состояния и периодически — при всех других изменениях. В этом примере показано, как зарегистрироваться для получения обновлений отчета о батарее.
+При изменении заряда, емкости или состояния батареи объект [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) создает событие [**ReportUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated). Обычно это происходит немедленно при изменениях состояния и периодически— при всех других изменениях. В этом примере показано, как зарегистрироваться для получения обновлений отчета о батарее.
 
 ```csharp
 ...
@@ -128,7 +129,7 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 
 ## Пример: основное приложение для работы с батареей
 
-Попробуйте использовать эти API, создав указанное ниже основное приложение батареи в Microsoft Visual Studio. На начальной странице Visual Studio щелкните **Новый проект**, а затем в разделе шаблонов **Visual C# &gt; Windows &gt; Universal** создайте приложение на базе шаблона **Пустое приложение**.
+Попробуйте использовать эти API, создав указанное ниже основное приложение батареи в MicrosoftVisualStudio. На начальной странице Visual Studio щелкните **Новый проект**, а затем в разделе шаблонов **Visual C# &gt; Windows &gt; Universal** создайте приложение на базе шаблона **Пустое приложение**.
 
 Затем откройте файл **MainPage.xaml** и скопируйте в него указанный ниже XML-код (заменив исходное содержимое файла).
 
@@ -332,13 +333,14 @@ namespace App1
 
 И наконец для запуска основного приложения батареи сделайте следующее: в меню **Отладка** выберите пункт **Начать отладку**, чтобы протестировать решение.
 
-**Подсказка.** Чтобы получить числовые значения из объекта [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005), выполните отладку своего приложения на **локальном компьютере** или на внешнем **устройстве** (например, на Windows Phone). При отладке в эмуляторе устройства для свойств емкости и уровня заряда объект **BatteryReport** возвращает значение **null**.
+
+              **Совет.**  Чтобы получить числовые значения из объекта [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005), выполните отладку своего приложения на **локальном компьютере** или на внешнем **устройстве** (например, на WindowsPhone). При отладке в эмуляторе устройства для свойств емкости и уровня заряда объект **BatteryReport** возвращает значение **null**.
 
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -5,6 +5,7 @@ title: "Элементы управления текстом"
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
 ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
@@ -102,7 +103,8 @@ ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
 ## Выбор подходящей клавиатуры для элемента управления текстом
 
-**Применимо к:** TextBox, PasswordBox RichEditBox
+
+            **Применимо к:** TextBox, PasswordBox RichEditBox
 
 Чтобы упростить пользователям ввод данных с помощью сенсорной клавиатуры или панели функционального ввода, можно настроить тип вводимых данных элемента управления текстом, чтобы он соответствовал типу данных, которые должен вводить пользователь.
 
@@ -119,7 +121,8 @@ ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
 ## Шрифты цвета
 
-**Применимо к:** TextBlock, RichTextBlock, TextBox, RichEditBox
+
+            **Применимо к:** TextBlock, RichTextBlock, TextBox, RichEditBox
 
 В Windows шрифты могут включать в себя несколько цветных слоев для каждого глифа. Например, шрифт Segoe UI Emoji определяет версии цветов смайликов и прочих символов-смайликов.
 
@@ -137,7 +140,8 @@ ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
 ## Инструкции по разделителям строк и абзацев
 
-**Применимо к:** TextBlock, RichTextBlock, многострочному TextBox, RichEditBox
+
+            **Применимо к:** TextBlock, RichTextBlock, многострочному TextBox, RichEditBox
 
 Используйте символ знак разделителя в виде линии (0x2028) и символ разделения абзацев (0x2029) для разделения обычного текста. Новая строка начинается после каждого разделителя в виде линии. Новый абзац начинается после каждого разделителя абзаца.
 
@@ -149,7 +153,8 @@ ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
 ## Руководство по проверке орфографии
 
-**Применимо к:** TextBox, RichEditBox
+
+            **Применимо к:** TextBox, RichEditBox
 
 Во время ввода и редактирования текста проверка орфографии сообщает пользователю об ошибке в написании слова, подчеркивая его красной волнистой линией и давая пользователю возможность исправить ошибку.
 
@@ -173,7 +178,7 @@ ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
 Для элементов управления TextBox и RichEditBox проверка орфографии включена по умолчанию. Ее можно выключить, задав для свойства **IsSpellCheckEnabled** значение **false**.
 
-## Статьи по теме
+## Связанные разделы
 
 **Проектировщикам**
 - [**Шрифт, руководство**](fonts.md)
@@ -187,6 +192,6 @@ ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

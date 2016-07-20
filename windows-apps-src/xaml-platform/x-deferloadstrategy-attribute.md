@@ -4,16 +4,17 @@ title: "Атрибут xDeferLoadStrategy"
 description: "xDeferLoadStrategy задерживает создание элемента и его дочерних объектов, сокращая тем самым время запуска и немного увеличивая объем использования памяти. Каждый задействованный элемент прибавляет около 600 байт к объему использования памяти."
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: b989a31439444f06dacb86adb186f853d1637f6c
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a5230a92ad919fc52c40c19646ff799453e64fa4
 
 ---
 
 # Атрибут x:DeferLoadStrategy
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**x:DeferLoadStrategy="Lazy"** задерживает создание элемента и его дочерних объектов, сокращая тем самым время запуска и немного увеличивая объем использования памяти. Каждый задействованный элемент прибавляет около 600 байт к объему использования памяти. Чем большее дерево элементов вы отложите, тем больше времени вы сэкономите при запуске, однако за счет увеличения потребления памяти. Поэтому можно злоупотребить этим атрибутом в степени, в которой уменьшается ваша производительность.
+
+              **x:DeferLoadStrategy="Lazy"** задерживает создание элемента и его дочерних объектов, сокращая тем самым время запуска и немного увеличивая объем использования памяти. Каждый задействованный элемент прибавляет около 600 байт к объему использования памяти. Чем большее дерево элементов вы отложите, тем больше времени вы сэкономите при запуске, однако за счет увеличения потребления памяти. Поэтому можно злоупотребить этим атрибутом в степени, в которой уменьшается ваша производительность.
 
 ## Использование атрибутов XAML
 
@@ -27,7 +28,7 @@ ms.openlocfilehash: b989a31439444f06dacb86adb186f853d1637f6c
 
 -   Необходимо определить [x:Имя](x-name-attribute.md) , поскольку должна быть возможность найти этот элемент после.
 -   Только [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) можно пометить как отложенный, за исключением типов, полученных из [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
--   Корневые элементы нельзя откладывать в [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page), [**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol) и [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
+-   Корневые элементы нельзя откладывать в [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page), [**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) и [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
 -   Элементы в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) нельзя откладывать.
 -   Функция не поддерживает свободные страницы XAML, загружаемые с помощью [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048).
 -   Перемещение родительского элемента приведет к удалению всех элементов, которые не были реализованы.
@@ -88,6 +89,6 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

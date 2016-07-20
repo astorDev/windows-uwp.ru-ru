@@ -3,17 +3,18 @@ author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "Используйте этот метод, чтобы обновить ключ Магазина Windows."
 title: "Обновление ключа идентификатора Магазина Windows"
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: a3cef13e84c5bb06be4f3e3d4b2db4e02650df62
 
 ---
 
 # Обновление ключа идентификатора Магазина Windows
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Используйте этот метод, чтобы обновить ключ Магазина Windows. При генерации ключа идентификатора Магазина Windows с помощью метода [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) и [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) срок его действия составляет 90 дней. После истечения срока действия ключа его можно использовать для создания нового ключа с помощью данного метода.
+Используйте этот метод, чтобы обновить ключ Магазина Windows. При генерации ключа идентификатора Магазина Windows с помощью метода [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) и [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) срок его действия составляет 90дней. После истечения срока действия ключа его можно использовать для создания нового ключа с помощью данного метода.
 
 ## Необходимые условия
 
@@ -32,29 +33,29 @@ ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
 
 | Тип ключа    | Метод | URI запроса                                              |
 |-------------|--------|----------------------------------------------------------|
-| Коллекции | POST   | `https://collections.mp.microsoft.com/v6.0/b2b/keys/renew` |
-| Покупка    | POST   | `https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew`    |
+| Коллекции | POST   | ```https://collections.mp.microsoft.com/v6.0/b2b/keys/renew``` |
+| Покупка    | POST   | ```https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew```    |
 
-<br/> 
+<span/>
 
 ### Заголовок запроса
 
 | Заголовок         | Тип   | Описание                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Host           | string | Должен иметь значение **collections.mp.microsoft.com** или **purchase.mp.microsoft.com**.           |
+| Host           | Строка | Должен иметь значение **collections.mp.microsoft.com** или **purchase.mp.microsoft.com**.           |
 | Content-Length | Число | Длина тела запроса.                                                                       |
 | Content-Type   | Строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
 
-<br/> 
+<span/>
 
 ### Тело запроса
 
-| Параметр     | Тип   | Описание                       | Обязательный параметр |
+| Параметр     | Тип   | Описание                       | Обязательный |
 |---------------|--------|-----------------------------------|----------|
 | serviceTicket | Строка | Маркер доступа Azure AD.        | Да      |
 | key           | Строка | Ключ идентификатора Магазина Windows с истекшим сроком действия. | Нет       |
 
-<br/> 
+<span/> 
 
 ### Пример запроса
 
@@ -75,11 +76,11 @@ Host: collections.mp.microsoft.com
 
 ### Тело ответа
 
-| Параметр | Тип   | Описание                                                                                                            | Обязательный параметр |
+| Параметр | Тип   | Описание                                                                                                            | Обязательный |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
 | key       | Строка | Обновленный ключ Магазина Windows, который можно использовать при последующих вызовах API-интерфейсов коллекций Магазина Windows или API покупок. | Нет       |
 
-<br/> 
+<span/>
 
 ### Пример ответа
 
@@ -106,7 +107,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 | 401  | Unauthorized | AuthenticationTokenInvalid | Маркер доступа Azure AD недействителен. В некоторых случаях сведения об ошибке ServiceError содержат больше информации, например если истек срок действия маркера или отсутствует утверждение *appid*. |
 | 401  | Unauthorized | InconsistentClientId       | Утверждение *clientId* в ключе идентификатора Магазина Windows и утверждение *appid* в маркере доступа Azure AD не совпадают.                                                                     |
 
-<br/> 
+<span/>
 
 ## Связанные разделы
 
@@ -118,6 +119,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

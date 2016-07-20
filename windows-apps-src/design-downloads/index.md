@@ -1,16 +1,17 @@
 ---
-description: "Скачиваемые файлы, связанные с проектированием и пользовательским интерфейсом, для приложений UWP."
-title: "Скачиваемые файлы проектирования для приложений UWP — разработка приложений для Windows"
+description: "Получите новейшие загружаемые файлы и инструменты для создания макета пользовательского интерфейса приложений UWP экранов и проектирования элементов управления."
+keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
+title: "Загружаемые файлы проектирования для приложений UWP— разработка приложений для Windows"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: 4101b60c0f640fd54d67a8e57f0a06622c6ec85c
+ms.sourcegitcommit: 1370af75dcd45d52d0d31f57acb958d366f9bee5
+ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 
 ---
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Скачиваемые файлы проектирования для приложений UWP
+# Загружаемые файлы проектирования для приложений UWP
 
 
 Этот раздел содержит скачиваемые файлы для приложений UWP, связанные с пользовательским интерфейсом и проектированием. Дополнительные средства, такие как Visual Studio, можно найти [на главной странице скачиваемых файлов](https://developer.microsoft.com/downloads). 
@@ -108,6 +109,6 @@ ms.openlocfilehash: 4101b60c0f640fd54d67a8e57f0a06622c6ec85c
 <b>Вам нужно больше примеров кода?</b> Полный список всех наших примеров приложений UWP вы можете найти на странице примеров Windows. [Перейти на портал примеров](https://developer.microsoft.com/samples)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -8,15 +8,15 @@ keywords:
 - game sample, Universal Windows Platform (UWP)
 - Direct3D 11 game
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9f62e2a42dc0a1b70e37194cd5755e51699ddc38
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 7891642d33e7391e05ae0639e36ff90e6697def6
 
 ---
 
 # Создание простой игры универсальной платформы Windows (UWP) с использованием DirectX
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Из данных учебников вы узнаете, как создать игру универсальной платформы Windows (UWP) с помощью DirectX и C++. Мы расскажем обо всех основных частях игры, включая процессы загрузки таких активов, как графика и сетки, создание основного цикла игры, реализацию простого конвейера визуализации, а также добавление звуков и элементов управления.
 
@@ -32,11 +32,11 @@ ms.openlocfilehash: 9f62e2a42dc0a1b70e37194cd5755e51699ddc38
 
 Прежде чем приступить к изучению руководства, необходимо знать следующее.
 
--   Microsoft C++ с расширениями компонентов (C++/CX). Это обновление Microsoft C++, в которое входит автоматический подсчет ссылок, является языком разработки игр UWP с помощью DirectX 11.1 или более поздних версий.
+-   Microsoft C++ с расширениями компонентов (C++/CX). Это обновление Microsoft C++, в которое входит автоматический подсчет ссылок, является языком разработки игр UWP с помощью DirectX11.1 или более поздних версий.
 -   Базовое знание линейной алгебры и ньютоновской физики.
 -   Базовое знание терминологии программирования графики.
 -   Базовое знание программирования в Windows.
--   Базовые знания API [Direct2D](https://msdn.microsoft.com/en-us/library/windows/apps/dd370990.aspx) и [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569).
+-   Базовые знания API [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) и [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569).
 
 ##  Образец игры-шутера Direct3D Магазина Windows
 
@@ -78,6 +78,6 @@ ms.openlocfilehash: 9f62e2a42dc0a1b70e37194cd5755e51699ddc38
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

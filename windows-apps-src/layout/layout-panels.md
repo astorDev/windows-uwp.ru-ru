@@ -6,8 +6,8 @@ ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
 label: Layout panels
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a8abaf9e272af3e9563ddb48a1a53993a762c675
 
 ---
 # Панели макета
@@ -25,7 +25,7 @@ ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
 
 В большинстве панелей макета XAML используются присоединенные свойства, что позволяет их дочерним элементам сообщить родительской панели, как они должны быть расположены в пользовательском интерфейсе. Присоединенные свойства используют синтаксис *AttachedPropertyProvider.PropertyName*. При наличии панелей, вложенных в другие панели, присоединенные свойства элементов пользовательского интерфейса, которые описывают характеристики макета родительскому объекту, будут интерпретированы только ближайшей родительской панелью.
 
-Ниже приведен пример задания присоединенного свойства [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) в элементе управления «Кнопка» в XAML. Оно информирует родительский элемент Canvas о том, что кнопка Button должна располагаться в 50 эффективных пикселах от левого края Canvas.
+Ниже приведен пример задания присоединенного свойства [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) в элементе управления «Кнопка» в XAML. Оно информирует родительский элемент Canvas о том, что кнопка Button должна располагаться в 50эффективных пикселах от левого края Canvas.
 
 ```xaml
 <Canvas>
@@ -35,8 +35,8 @@ ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
 
 Подробнее о подключенных свойствах см. в разделе [Общие сведения о подключенных свойствах](../xaml-platform/attached-properties-overview.md).
 
-> **Примечание**
-            &nbsp;&nbsp;Присоединенное свойство является концепцией языка XAML, требующего специального синтаксиса для получения или настройки из кода. Сведения об использовании прикрепленных свойств в коде см. в разделе *Присоединенные свойства в коде* статьи *Общие сведения о присоединенных свойствах*.
+> 
+              **Примечание.**&nbsp;&nbsp;Присоединенное свойство является концепцией языка XAML, требующего специального синтаксиса для получения или настройки из кода. Сведения об использовании прикрепленных свойств в коде см. в разделе *Присоединенные свойства в коде* статьи *Общие сведения о присоединенных свойствах*.
 
 **Границы панели**
 
@@ -52,13 +52,13 @@ ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
 
 ![Сетка с границами](images/layout-panel-grid-border.png)
 
-Использование встроенных свойств границ уменьшает количество элементов XAML, что может повысить производительность пользовательского интерфейса приложения. Подробнее о панелях макета и производительности пользовательского интерфейса см. в разделе [Оптимизация макета XAML](https://msdn.microsoft.com/en-us/library/windows/apps/mt404609.aspx).
+Использование встроенных свойств границ уменьшает количество элементов XAML, что может повысить производительность пользовательского интерфейса приложения. Подробнее о панелях макета и производительности пользовательского интерфейса см. в разделе [Оптимизация макета XAML](https://msdn.microsoft.com/library/windows/apps/mt404609.aspx).
 
 ## RelativePanel
 
-[
-              **Элемент RelativePanel**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) позволяет создать макет элементов пользовательского интерфейса путем указания их расположения относительно других элементов и панели. По умолчанию элемент располагается в левом верхнем углу панели. Можно использовать RelativePanel с [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) и [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) для переупорядочивания пользовательского интерфейса для разных размеров окон.
+
+              [
+              **RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) позволяет создать макет элементов пользовательского интерфейса путем указания их расположения относительно других элементов и панели. По умолчанию элемент располагается в левом верхнем углу панели. Можно использовать RelativePanel с [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) и [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) для переупорядочивания пользовательского интерфейса для разных размеров окон.
 
 В этой таблице показаны присоединенные свойства, которые можно использовать для выравнивания элемента по краю или центру панели, а также выравнивания и расположения относительно других элементов.
 
@@ -105,9 +105,9 @@ ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
 
 ## StackPanel
 
-[
-              **Элемент StackPanel**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) — это простая панель макета, позволяющая разместить дочерние элементы в одной строке (горизонтально) или в одном столбце (вертикально). Элементы управления StackPanel обычно используются в сценариях, обеспечивающих размещение на странице небольших подразделов пользовательского интерфейса.
+
+              [
+              **StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) — это простая панель макета, позволяющая разместить дочерние элементы в одной строке (горизонтально) или в одном столбце (вертикально). Элементы управления StackPanel обычно используются в сценариях, обеспечивающих размещение на странице небольших подразделов пользовательского интерфейса.
 
 Для указания направления дочерних элементов можно использовать свойство [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.orientation.aspx). Ориентация по умолчанию — [**Vertical**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.orientation.aspx).
 
@@ -127,7 +127,7 @@ ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
 
 ![Панель стека](images/layout-panel-stack-panel.png)
 
-В StackPanel, если размер дочернего элемента явным образом не задан, он растягивается на всю доступную ширину (или высоту, если ориентация — **Horizontal**). В этом примере ширина прямоугольников не задана. Прямоугольники растягиваются, заполняя всю ширину StackPanel.
+В StackPanel, если размер дочернего элемента явным образом не задан, он растягивается на всю доступную ширину (или высоту, если ориентация— **Horizontal**). В этом примере ширина прямоугольников не задана. Прямоугольники растягиваются, заполняя всю ширину StackPanel.
 
 ## Сетка
 
@@ -168,9 +168,9 @@ ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
 
 ## VariableSizedWrapGrid
 
-[
-              **Элемент VariableSizedWrapGrid**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) создает панель макета в виде сетки, в которой элементы упорядочены по строкам и столбцам с автоматическим переносом на новую строку или в новый столбец при достижении значения [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx). 
+
+              [
+              **Элемент VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) создает панель макета в виде сетки, в которой элементы упорядочены по строкам и столбцам с автоматическим переносом на новую строку или в новый столбец при достижении значения [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx). 
 
 Свойство [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.orientation.aspx) указывает, добавляет ли сетка свои элементы или столбцы перед переносом. Ориентация по умолчанию — **Vertical**. Это означает, что сетка добавляет элементы сверху вниз до заполнения столбца, а затем переносит данные в новый столбец. Если выбрано значение **Horizontal**, сетка добавляет элементы слева направо, а затем переносит данные в новую строку.
 
@@ -204,7 +204,7 @@ ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
 
 Панель [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) располагает свои дочерние элементы с помощью фиксированных точек координат. Эти точки указываются в индивидуальных дочерних элементах заданием присоединенных свойств [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) и [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.top.aspx) для каждого элемента. В макете родительский объект Canvas считывает значения этих присоединенных свойств со своих дочерних элементов и берет эти значения во время этапа [Arrange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.arrange.aspx) макета.
 
-Объекты в Canvas могут перекрываться, когда один объект рисуется поверх другого. По умолчанию Canvas отображает дочерние объекты в порядке, в котором они объявляются. Таким образом, последний дочерний объект отображается сверху (каждый элемент имеет по умолчанию значение z-index, равное 0). То же самое справедливо и для других встроенных панелей. Однако Canvas также поддерживает присоединенное свойство [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx), которое можно задать на каждом из дочерних элементов. Вы можете задать это свойство в коде, чтобы изменять последовательность перекрытия элементов во время выполнения. Элемент с наиболее высоким значением Canvas.ZIndex соответствует последнему элементу, загораживающему все прочие элементы, которые используют то же пространство, или перекрывающему их. Обратите внимание, что учитывается альфа-фактор (прозрачность), поэтому даже если элементы перекрываются, содержимое в зонах перекрытия может смешиваться, если у верхнего элемента альфа-фактор не является максимальной величиной.
+Объекты в Canvas могут перекрываться, когда один объект рисуется поверх другого. По умолчанию Canvas отображает дочерние объекты в порядке, в котором они объявляются. Таким образом, последний дочерний объект отображается сверху (каждый элемент имеет по умолчанию значение z-index, равное0). То же самое справедливо и для других встроенных панелей. Однако Canvas также поддерживает присоединенное свойство [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx), которое можно задать на каждом из дочерних элементов. Вы можете задать это свойство в коде, чтобы изменять последовательность перекрытия элементов во время выполнения. Элемент с наиболее высоким значением Canvas.ZIndex соответствует последнему элементу, загораживающему все прочие элементы, которые используют то же пространство, или перекрывающему их. Обратите внимание, что учитывается альфа-фактор (прозрачность), поэтому даже если элементы перекрываются, содержимое в зонах перекрытия может смешиваться, если у верхнего элемента альфа-фактор не является максимальной величиной.
 
 Объект Canvas никак не изменяет размер своих дочерних элементов. Каждый элемент должен указывать свой размер.
 
@@ -232,6 +232,6 @@ ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

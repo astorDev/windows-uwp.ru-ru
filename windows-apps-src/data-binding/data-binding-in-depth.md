@@ -3,13 +3,14 @@ author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "Подробно о привязке данных"
 description: "Привязка данных обеспечивает отображение данных в пользовательском интерфейсе приложения и (дополнительно) синхронизацию с этими данными."
+translationtype: Human Translation
 ms.sourcegitcommit: ca92d44cc8e3fb7eaed5a522435efe9cb4796560
 ms.openlocfilehash: d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2
 
 ---
 # Подробно о привязке данных
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -18,7 +19,8 @@ ms.openlocfilehash: d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-> **Примечание.**
+> 
+            **Примечание.**
             &nbsp;&nbsp;В этой статье подробно описаны средства привязки данных. Краткое практическое введение см. в [Обзоре привязки данных](data-binding-quickstart.md).
 
 
@@ -30,13 +32,16 @@ ms.openlocfilehash: d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2
 -   Односторонняя привязка позволяет привязать объект [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) к коллекции актуальных новостных статей, сгруппированных по разделу газеты.
 -   С помощью двусторонней привязки вы можете привязать объект [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) к имени пользователя в форме.
 
-Существует два типа привязки, для объявления которых обычно используется разметка пользовательского интерфейса. Вы можете использовать [расширение разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) или [расширение разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Кроме того, можно одновременно использовать оба типа привязки в одном приложении и даже в одном элементе пользовательского интерфейса. Расширение разметки {x:Bind}, которое впервые появилось в ОС Windows 10, отличается улучшенной производительностью. Расширение разметки {Binding} выполняет больше функций. Все сведения, описанные в этом разделе, касаются обоих типов привязки, если явно не указано иное.
+Существует два типа привязки, для объявления которых обычно используется разметка пользовательского интерфейса. Вы можете использовать [расширение разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) или [расширение разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Кроме того, можно одновременно использовать оба типа привязки в одном приложении и даже в одном элементе пользовательского интерфейса. Расширение разметки {x:Bind}, которое впервые появилось в ОС Windows10, отличается улучшенной производительностью. Расширение разметки {Binding} выполняет больше функций. Все сведения, описанные в этом разделе, касаются обоих типов привязки, если явно не указано иное.
 
 **Примеры приложений с расширением разметки {x:Bind}**
 
--   [{x:Bind}: пример](http://go.microsoft.com/fwlink/p/?linkid=619989).
--   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame).
--   [Пример базовых характеристик пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?linkid=619992).
+-   
+            [{x:Bind}: пример](http://go.microsoft.com/fwlink/p/?linkid=619989).
+-   
+            [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame).
+-   
+            [Пример базовых характеристик пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?linkid=619992).
 
 **Примеры приложений с расширением разметки {Binding}**
 
@@ -55,7 +60,8 @@ ms.openlocfilehash: d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2
 
 Здесь приведен простейший пример реализации класса, который можно использовать в качестве источника привязки.
 
-**Примечание.** Если вы используете [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) с расширениями компонентов Visual C++ (C++/CX), вам также понадобится добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) в класс источника привязки. Если вы используете [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), этот атрибут не нужен. Фрагмент кода см. в разделе [Добавление представления подробностей](data-binding-quickstart.md#adding-a-details-view).
+
+            **Примечание.** Если вы используете [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) с расширениямикомпонентов Visual C++ (C++/CX), вам также понадобится добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) в класс источника привязки. Если вы используете [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), этот атрибут не нужен. Фрагмент кода см. в разделе [Добавление представления подробностей](data-binding-quickstart.md#adding-a-details-view).
 
 ```csharp
 public class HostViewModel
@@ -71,11 +77,13 @@ public class HostViewModel
 
 Эта реализация класса **HostViewModel** и его свойство **NextButtonText** подходят только для единовременной привязки. Однако односторонние и двусторонние привязки используются очень часто. Привязки этих типов обеспечивают автоматическое обновление пользовательского интерфейса в результате внесения изменений в значениях данных источника привязки. Чтобы эти типы привязки работали правильно, необходимо сделать так, чтобы объект привязки "отслеживал" ваш источник привязки. Поэтому если мы хотим выполнить одно- или двустороннюю привязку к свойству **NextButtonText** в нашем примере, объект привязки должен отслеживать все изменения, которые вносятся в значение этого свойства во время выполнения.
 
-Для этого на основе класса [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/BR242356) можно создать производный класс, представляющий собой источник привязки, и предоставить значение данных с помощью класса [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362). Именно так класс [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) становится доступным для отслеживания. **FrameworkElements** — хорошие источники привязки, готовые к немедленному применению.
+Для этого на основе класса [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/BR242356) можно создать производный класс, представляющий собой источник привязки, и предоставить значение данных с помощью класса [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362). Именно так класс [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) становится доступным для отслеживания. 
+            **FrameworkElements** — хорошие источники привязки, готовые к немедленному применению.
 
 Более легким способом сделать класс доступным для отслеживания (что также необходимо для классов, уже имеющих базовый класс) является реализация интерфейса [**System.ComponentModel.INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx). Для этого необходимо всего лишь реализовать одно событие с именем **PropertyChanged**. Пример использования класса **HostViewModel** см. ниже.
 
-**Примечание.** При использовании C++/CX необходимо реализовать интерфейс [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899), а класс источника привязки должен либо иметь атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872), либо реализовывать интерфейс [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
+
+            **Примечание.** При использовании C++/CX необходимо реализовать интерфейс [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899), а класс источника привязки должен либо иметь атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872), либо реализовывать интерфейс [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
 
 ```csharp
 public class HostViewModel : INotifyPropertyChanged
@@ -148,7 +156,7 @@ public class HostViewModel : BindableBase
 
 ### Целевой объект привязки
 
-В двух примерах ниже свойство **Button.Content** представляет собой целевой объект привязки, и в качестве его значения устанавливается расширение разметки, которое объявляет объект привязки. Сначала отображается расширение разметки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), а затем — [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Объявления привязок в разметке используется очень часто (благодаря удобству и удобочитаемости). Однако вы можете не использовать разметку, а вместо этого при необходимости императивно (программными средствами) создать экземпляр класса [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820).
+В двух примерах ниже свойство **Button.Content** представляет собой целевой объект привязки, и в качестве его значения устанавливается расширение разметки, которое объявляет объект привязки. Сначала отображается расширение разметки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), а затем— [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Объявления привязок в разметке используется очень часто (благодаря удобству и удобочитаемости). Однако вы можете не использовать разметку, а вместо этого при необходимости императивно (программными средствами) создать экземпляр класса [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820).
 
 <!-- XAML lang specifier not yet supported in OP. Using XML for now. -->
 ```xml
@@ -191,7 +199,8 @@ namespace QuizGame.View
 
 Свойство [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) поддерживает несколько вариантов синтаксиса для привязки к вложенным и подключенным свойствам, а также целочисленным и строковым индексаторам. Дополнительные сведения см. в разделе [Синтаксис Property-path](https://msdn.microsoft.com/library/windows/apps/Mt185586). Привязка к строковым индексаторам позволяет выполнять привязку к динамическим свойствам без реализации интерфейса [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). Другие параметры см. в [статье о расширении разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783).
 
-**Примечание.** Изменения, внесенные в свойство [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text), отправляются в источник двусторонней привязки, когда фокус переключается с класса [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), а не после каждого нажатия клавиши пользователем.
+
+            **Примечание.** Изменения, внесенные в свойство [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text), отправляются в источник двусторонней привязки, когда фокус переключается с класса [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), а не после каждого нажатия клавиши пользователем.
 
 **DataTemplate и x:DataType**
 
@@ -212,15 +221,19 @@ namespace QuizGame.View
 
 **Если данные загружаются асинхронно**
 
-Код для поддержки **{x:Bind}** создается во время компиляции в разделяемых классах для ваших страниц. Эти файлы можно найти в папке `obj` с такими именами, как `<view name>.g.cs` (для C#). Созданный код содержит обработчик события [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) страницы, который вызывает метод **Initialize** в созданном классе, представляющем привязки вашей страницы. **Initialize** в свою очередь вызывает **Update** для перемещения данных между источником и целевым объектом привязки. **Loading** создается только перед первым этапом измерения страницы или пользовательского элемента управления. Поэтому если ваши данные загружаются асинхронно, они могут быть не готовы к моменту вызова **Initialize**. Поэтому после загрузки данных вы можете принудительно инициализировать однократные привязки, вызвав `this->Bindings->Update();`. Если вам нужны однократные привязки только для асинхронно загружаемых данных, намного эффективнее инициализировать их так, чем создать односторонние привязки и ожидать изменений. Если в ваши данные не вносятся точечные изменения и они будут обновляться в рамках определенного действия, вы можете сделать привязки однократными и принудительно выполнять обновление вручную с помощью вызова **Update**.
+Код для поддержки **{x:Bind}** создается во время компиляции в разделяемых классах для ваших страниц. Эти файлы можно найти в папке `obj` с такими именами, как `<view name>.g.cs` (для C#). Созданный код содержит обработчик события [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) страницы, который вызывает метод **Initialize** в созданном классе, представляющем привязки вашей страницы. 
+            **Initialize** в свою очередь вызывает **Update** для перемещения данных между источником и целевым объектом привязки. 
+            **Loading** создается только перед первым этапом измерения страницы или пользовательского элемента управления. Поэтому если ваши данные загружаются асинхронно, они могут быть не готовы к моменту вызова **Initialize**. Поэтому после загрузки данных вы можете принудительно инициализировать однократные привязки, вызвав `this->Bindings->Update();`. Если вам нужны однократные привязки только для асинхронно загружаемых данных, намного эффективнее инициализировать их так, чем создать односторонние привязки и ожидать изменений. Если в ваши данные не вносятся точечные изменения и они будут обновляться в рамках определенного действия, вы можете сделать привязки однократными и принудительно выполнять обновление вручную с помощью вызова **Update**.
 
 **Ограничения**
 
-**{x:Bind}** не подходит для сценариев позднего связывания, таких как перемещение по структуре словаря объекта JSON или "утиная типизация", которая представляет собой слабую форму типизации на основе словарных соответствий имен свойств ("если это ходит, плавает и крякает как утка, это утка"). С утиной типизацией привязка к свойству Age одинаково удовлетворяется объектом Person или Wine. В этих сценариях используйте **{Binding}**.
+
+            **{x:Bind}** не подходит для сценариев позднего связывания, таких как перемещение по структуре словаря объекта JSON или "утиная типизация", которая представляет собой слабую форму типизации на основе словарных соответствий имен свойств ("если это ходит, плавает и крякает как утка, это утка"). С утиной типизацией привязка к свойству Age одинаково удовлетворяется объектом Person или Wine. В этих сценариях используйте **{Binding}**.
 
 ### Объект привязки, объявленный с использованием расширения разметки {Binding}
 
-Расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) по умолчанию предполагает, что вы выполняете привязку к свойству [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) страницы разметки. Поэтому в качестве свойства **DataContext** страницы мы установим экземпляр нашего класса источника привязки (типа **HostViewModel** в данном случае). В примере ниже показана разметка, объявляющая объект привязки. Мы используем тот же целевой объект привязки **Button.Content**, который ранее использовался в разделе "Целевой объект привязки", и выполняем привязку к свойству **HostViewModel.NextButtonText**.
+
+            Расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) по умолчанию предполагает, что вы выполняете привязку к свойству [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) страницы разметки. Поэтому в качестве свойства **DataContext** страницы мы установим экземпляр нашего класса источника привязки (типа **HostViewModel** в данном случае). В примере ниже показана разметка, объявляющая объект привязки. Мы используем тот же целевой объект привязки **Button.Content**, который ранее использовался в разделе "Целевой объект привязки", и выполняем привязку к свойству **HostViewModel.NextButtonText**.
 
 ```xml
 <Page xmlns:viewmodel="using:QuizGame.ViewModel" ... >
@@ -249,7 +262,8 @@ namespace QuizGame.View
   </DataTemplate>
 ```
 
-**Примечание.** По умолчанию изменения, внесенные в свойство [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text), отправляются в источник двусторонней привязки, когда фокус переключается с класса [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683). Чтобы изменения отправлялись после каждого нажатия клавиши пользователем, установите для перечисления **UpdateSourceTrigger** событие **PropertyChanged** в привязке разметки. Вы также можете полностью взять на себя управление отправкой изменений в источник, установив для перечисления **UpdateSourceTrigger** значение **Explicit**. Затем необходимо обработать события в текстовом поле (обычно с помощью события [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)), вызвать метод [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) для целевого объекта, чтобы получить объект [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx), а в самом конце вызвать метод [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) для обновления источника данных программными средствами.
+
+            **Примечание.** По умолчанию изменения, внесенные в свойство [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text), отправляются в источник двусторонней привязки, когда фокус переключается с класса [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683). Чтобы изменения отправлялись после каждого нажатия клавиши пользователем, установите для перечисления **UpdateSourceTrigger** событие **PropertyChanged** в привязке разметки. Вы также можете полностью взять на себя управление отправкой изменений в источник, установив для перечисления **UpdateSourceTrigger** значение **Explicit**. Затем необходимо обработать события в текстовом поле (обычно с помощью события [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)), вызвать метод [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) для целевого объекта, чтобы получить объект [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx), а в самом конце вызвать метод [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) для обновления источника данных программными средствами.
 
 Свойство [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) поддерживает несколько вариантов синтаксиса для привязки к вложенным и подключенным свойствам, а также целочисленным и строковым индексаторам. Дополнительные сведения см. в разделе [Синтаксис Property-path](https://msdn.microsoft.com/library/windows/apps/Mt185586). Привязка к строковым индексаторам позволяет выполнять привязку к динамическим свойствам без реализации интерфейса [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). Свойство [**ElementName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.elementname) позволяет эффективно привязывать элементы один к другому. Свойство [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.relativesource) можно использовать в различных целях, в том числе в качестве более эффективной альтернативы привязке шаблона внутри класса [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391). Описание других параметров см. в статьях о [расширении разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) и классе [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820).
 
@@ -356,7 +370,8 @@ End Class
 
 Преобразователь также включает дополнительные параметры: [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterlanguage), позволяющий указать язык, который используется в преобразовании, и [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterparameter), позволяющий передать параметр для логики преобразования. Пример использования параметра преобразователя см. в описании [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903).
 
-**Примечание.** Если в преобразовании возникает ошибка, не выдавайте исключение. Вместо этого возвращайте свойство [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue), которое остановит передачу данных.
+
+            **Примечание.** Если в преобразовании возникает ошибка, не выдавайте исключение. Вместо этого возвращайте свойство [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue), которое остановит передачу данных.
 
 Чтобы отображать значение по умолчанию, которое используется, когда невозможно разрешить источник привязки, задайте свойство **FallbackValue** для объекта привязки в разметке. Это полезно при обработке ошибок преобразования и форматирования. Это также полезно при привязке к свойствам источника, которые могут существовать не у всех объектов в привязанной коллекции различных типов.
 
@@ -419,7 +434,8 @@ MainPage.xaml
 
 ## Привязка событий и ICommand
 
-Расширение разметки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) поддерживает функцию, которая называется привязкой событий. Эта функция позволяет указать обработчик для события посредством привязки, которая дополняет события обработки с методом в файле кода программной части. Предположим, у вас есть свойство **RootFrame** в классе **MainPage**.
+
+            Расширение разметки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) поддерживает функцию, которая называется привязкой событий. Эта функция позволяет указать обработчик для события посредством привязки, которая дополняет события обработки с методом в файле кода программной части. Предположим, у вас есть свойство **RootFrame** в классе **MainPage**.
 
 ```csharp
     public sealed partial class MainPage : Page
@@ -437,11 +453,12 @@ MainPage.xaml
     Click="{x:Bind RootFrame.GoForward}"/>
 ```
 
-Для обработки события этим способом невозможно использовать перегруженные методы. Кроме того, если метод, который обрабатывает событие, содержит параметры, они должны поддерживать назначение из типов всех соответствующих параметров события. В этом случае метод [**Frame.GoForward**](https://msdn.microsoft.com/library/windows/apps/BR242693) не перегружен и не содержит параметров (но он оставался бы допустимым, даже если бы принимал два параметра **object**). Однако метод [
+Для обработки события этим способом невозможно использовать перегруженные методы. Кроме того, если метод, который обрабатывает событие, содержит параметры, они должны поддерживать назначение из типов всех соответствующих параметров события. В этом случае метод [**Frame.GoForward**](https://msdn.microsoft.com/library/windows/apps/BR242693) не перегружен и не содержит параметров (но он оставался бы допустимым, даже если бы принимал два параметра **object**). 
+            Однако метод [
               **Frame.GoBack**
             ](https://msdn.microsoft.com/library/windows/apps/Dn996568) перегружен, поэтому мы не можем использовать этот метод данным способом.
 
-Привязка событий похожа на реализацию и использование команд (команда — это свойство, которое возвращает объект, реализующий интерфейс [**ICommand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.icommand.aspx)). С командами можно использовать как [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), так и [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Чтобы приведенный выше шаблон команд не требовалось реализовывать несколько раз, вы можете использовать вспомогательный класс **DelegateCommand**, приведенный в примере [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (в папке "Общие").
+Привязка событий похожа на реализацию и использование команд (команда— это свойство, которое возвращает объект, реализующий интерфейс [**ICommand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.icommand.aspx)). С командами можно использовать как [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), так и [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Чтобы приведенный выше шаблон команд не требовалось реализовывать несколько раз, вы можете использовать вспомогательный класс **DelegateCommand**, приведенный в примере [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (в папке "Общие").
 
 
 ## Привязка к коллекции папок или файлов
@@ -479,14 +496,13 @@ MainPage.xaml
 
 ## Привязка к данным, сгруппированным на основании ключа
 
-Если взять плоскую коллекцию элементов, например книги, представленные классом **BookSku**, и сгруппировать элементы с помощью общего свойства в качестве ключа, например свойства **BookSku.AuthorName**, то в результате будут получены сгруппированные данные. При группировке данные больше не являются плоской коллекцией. Сгруппированные данные — это коллекция объектов группы, каждый из которых имеет а) ключ и б) коллекцию элементов, свойства которых соответствуют этому ключу. Если вернуться к примеру с книгами, при группировании книг по имени автора будет получена коллекция групп с именами автора, причем каждая группа будет иметь а) ключ (в этом случае — имя автора) и б) коллекцию элементов **BookSku**, свойство **AuthorName** которых соответствует ключу группы.
+Если взять плоскую коллекцию элементов, например книги, представленные классом **BookSku**, и сгруппировать элементы с помощью общего свойства в качестве ключа, например свойства **BookSku.AuthorName**, то в результате будут получены сгруппированные данные. При группировке данные больше не являются плоской коллекцией. Сгруппированные данные— это коллекция объектов группы, каждый из которых имеет а) ключ и б) коллекцию элементов, свойства которых соответствуют этому ключу. Если вернуться к примеру с книгами, при группировании книг по имени автора будет получена коллекция групп с именами автора, причем каждая группа будет иметь а) ключ (в этом случае— имя автора) и б) коллекцию элементов **BookSku**, свойство **AuthorName** которых соответствует ключу группы.
 
-В общем, для отображения коллекции необходимо привязать свойство [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) элемента управления (например, [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) или [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)) непосредственно к свойству, которое возвращает коллекцию. Если это плоская коллекция элементов, вам не нужно выполнять никаких особенных действий. Однако если это коллекция объектов группы (что наблюдается при привязке к сгруппированным данным), вам нужно воспользоваться объектом-посредником с именем [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), который размещается между элементом управления и источником привязки. Объект **CollectionViewSource** следует привязать к свойству, возвращающему сгруппированные данные, а элемент управления — к объекту **CollectionViewSource**. Дополнительное добавление объекта **CollectionViewSource** обеспечивает отслеживание с его помощью текущего элемента, поэтому вы можете синхронизировать несколько элементов управления путем их привязки к **CollectionViewSource**. Кроме того, вы можете получить доступ к текущему элементу программными средствами с помощью свойства [**ICollectionView.CurrentItem**](https://msdn.microsoft.com/library/windows/apps/BR209857) объекта, возвращенного свойством [**CollectionViewSource.View**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.view).
+В общем, для отображения коллекции необходимо привязать свойство [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) элемента управления (например, [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) или [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)) непосредственно к свойству, которое возвращает коллекцию. Если это плоская коллекция элементов, вам не нужно выполнять никаких особенных действий. Однако если это коллекция объектов группы (что наблюдается при привязке к сгруппированным данным), вам нужно воспользоваться объектом-посредником с именем [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), который размещается между элементом управления и источником привязки. Объект **CollectionViewSource** следует привязать к свойству, возвращающему сгруппированные данные, а элемент управления— к объекту **CollectionViewSource**. Дополнительное добавление объекта **CollectionViewSource** обеспечивает отслеживание с его помощью текущего элемента, поэтому вы можете синхронизировать несколько элементов управления путем их привязки к **CollectionViewSource**. Кроме того, вы можете получить доступ к текущему элементу программными средствами с помощью свойства [**ICollectionView.CurrentItem**](https://msdn.microsoft.com/library/windows/apps/BR209857) объекта, возвращенного свойством [**CollectionViewSource.View**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.view).
 
 Чтобы активировать возможность группирования с помощью класса [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), установите для свойства [**IsSourceGrouped**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.issourcegrouped) значение **true**. Целесообразность одновременного задания свойства [**ItemsPath**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.itemspath) зависит от того, как именно вы создаете объекты группы. Объект группы можно создать двумя способами: с помощью шаблона "is-a-group" или "has-a-group". В шаблоне "is-a-group" объект группы создается на основе типа коллекции (например, **List&lt;T&gt;**), поэтому сам объект группы является группой элементов. Если используется этот шаблон, не нужно задавать свойство **ItemsPath**. В шаблоне "has-a-group" объект группы включает одно или несколько свойств типа коллекции (например, **List&lt;T&gt;**), поэтому группа включает группу элементов в форме свойства (или несколько групп элементов в виде ряда свойств). При использовании этого шаблона для **ItemsPath** необходимо задать имя свойства, содержащего группу элементов.
 
-В примере ниже приведен шаблон has-a-group. Класс страницы имеет свойство [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713), которое возвращает экземпляр нашей модели представления. [
-            **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) привязывается к свойству **Authors** модели представления (**Authors** — это коллекция объектов группы), а также указывает, что это свойство **Author.BookSkus** содержит сгруппированные элементы. Наконец, класс [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) привязан к классу **CollectionViewSource**, а его стиль группы определен таким образом, чтобы он мог обрабатывать элементы в группах.
+В примере ниже приведен шаблон has-a-group. Класс страницы имеет свойство [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713), которое возвращает экземпляр нашей модели представления. [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) привязывается к свойству **Authors** модели представления (**Authors** — это коллекция объектов группы), а также указывает, что это свойство **Author.BookSkus** содержит сгруппированные элементы. Наконец, класс [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) привязан к классу **CollectionViewSource**, а его стиль группы определен таким образом, чтобы он мог обрабатывать элементы в группах.
 
 ```csharp
     <Page.Resources>
@@ -509,7 +525,7 @@ MainPage.xaml
 
 Обратите внимание, что свойство [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) должно использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) (а не [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)), чтобы задать свойство **Source** для ресурса. Чтобы просмотреть приведенный выше пример в контексте готового приложения, скачайте пример приложения [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952). В отличие от показанной выше разметки, приложение [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) использует исключительно расширение разметки {Binding}.
 
-Вы можете реализовать шаблон "is-a-group" одним из двух способов. Первый способ — создать собственный класс группы. Создайте класс на основе **List&lt;T&gt;** (где *T* — это тип элементов). Например, `public class Author : List<BookSku>`. Второй способ — использовать выражение [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) для динамического создания объектов группы (и класса группы) из вероятных значений свойств элементов **BookSku**. Этот подход с поддержкой только плоского списка элементов и их группированием в ходе процесса обычно используется приложением, которое получает доступ к данным из облачной службы. Это позволяет гибко группировать книги по авторам или жанрам (к примеру) без специальных классов групп, таких как **Author** и **Genre**.
+Вы можете реализовать шаблон "is-a-group" одним из двух способов. Первый способ — создать собственный класс группы. Создайте класс на основе **List&lt;T&gt;** (где *T*— это тип элементов). Например, `public class Author : List<BookSku>`. Второй способ — использовать выражение [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) для динамического создания объектов группы (и класса группы) из вероятных значений свойств элементов **BookSku**. Этот подход с поддержкой только плоского списка элементов и их группированием в ходе процесса обычно используется приложением, которое получает доступ к данным из облачной службы. Это позволяет гибко группировать книги по авторам или жанрам (к примеру) без специальных классов групп, таких как **Author** и **Genre**.
 
 В примере ниже показан шаблон "is-a-group", использующий выражение [LINQ](http://msdn.microsoft.com/library/bb397926.aspx). На этот раз мы группируем книги по жанрам, причем названия жанров отображаются в заголовках групп. На это указывает путь свойства Key в ссылке на значение [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx) группы.
 
@@ -573,11 +589,13 @@ MainPage.xaml
 
 Как правило, объекты привязки, создаваемые с помощью расширений разметки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) и [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), выполняют аналогичные функции. Однако расширение разметки {x:Bind} включает сведения о типе источника привязки, что обеспечивает формирование исходного кода во время компиляции. При использовании расширения разметки {x:Bind} обнаружение проблем выполняется так же, как с помощью остальной части кода. Действия по обнаружению включают проверку выражений привязки во время компиляции и отладку путем вставки точек останова в исходный код, сформированный в качестве разделяемого класса для страницы. Эти классы можно найти в папке `obj` в файлах с такими именами, как (для C#) `<view name>.g.cs`. Если при привязке возникает проблема, установите флажок **Останавливать при неперехваченных исключениях** в отладчике Microsoft Visual Studio. Отладчик прервет выполнение в этой точке, после чего вы можете перейти к отладке. В коде, формируемом расширением разметки {x:Bind}, применяется один шаблон для каждой части графа узлов источника привязки. С помощью сведений в окне **Стек вызовов** вы можете определить последовательность вызовов, которые привели к проблеме.
 
-В расширении разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) не указываются сведения о типе источника привязки. Однако, когда приложение выполняется с подключенным отладчиком, любые ошибки привязки отображаются в окне **Вывод** приложения Visual Studio.
+
+            В расширении разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) не указываются сведения о типе источника привязки. Однако, когда приложение выполняется с подключенным отладчиком, любые ошибки привязки отображаются в окне **Вывод** приложения Visual Studio.
 
 ## Создание привязок в коде
 
-**Примечание.** Этот раздел относится только к [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), потому что невозможно создать привязки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) в коде. Однако некоторые из преимуществ {x:Bind} можно получить с помощью метода [**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx), что позволяет зарегистрироваться для получения уведомлений об изменениях любого свойства зависимости.
+
+            **Примечание.** Этот раздел относится только к [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), потому что невозможно создать привязки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) в коде. Однако некоторые из преимуществ {x:Bind} можно получить с помощью метода [**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx), что позволяет зарегистрироваться для получения уведомлений об изменениях любого свойства зависимости.
 
 Вы также можете связывать элементы пользовательского интерфейса в процедурах в коде вместо использования XAML. Для этого создайте новый объект [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820), задайте соответствующие свойства, а затем вызовите [**FrameworkElement.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257.aspx) или [**BindingOperations.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244376.aspx). Создание привязок программными средствами полезно, когда требуется выбирать значения свойств привязки во время выполнения или совместно использовать одну привязку в нескольких элементах управления. Однако отметим, что невозможно использовать значения свойств привязки после вызова **SetBinding**.
 
@@ -643,6 +661,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -5,6 +5,7 @@ ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: "Темы с высокой контрастностью"
 label: High-contrast themes
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
 ms.openlocfilehash: 4201f5a0b08f1fc8d691218da0803ee04ab2c86a
 
@@ -43,7 +44,8 @@ ms.openlocfilehash: 4201f5a0b08f1fc8d691218da0803ee04ab2c86a
 </Application.Resources
 ```
 
-* **HighContrast** — не единственное возможное имя ключа. Также существуют **HighContrastBlack**, **HighContrastWhite** и **HighContrastCustom**. В большинстве случаев **HighContrast** будет достаточно.
+* 
+            **HighContrast** — не единственное возможное имя ключа. Также существуют **HighContrastBlack**, **HighContrastWhite** и **HighContrastCustom**. В большинстве случаев **HighContrast** будет достаточно.
 * В разделе **Default** создайте тот тип инструмента [**Brush**](http://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx), который вам необходим; чаще всего это **SolidColorBrush**. Задайте ему имя **x:Key**, указывающее его предназначение.<br/>
     `<SolidColorBrush x:Key="BrandedPageBackground" />`
 * Назначьте ему требуемое значение цвета **Color**.<br/>
@@ -161,7 +163,8 @@ _Область навигации отделена от других часте
 Если для различения перекрывающихся элементов пользовательского интерфейса используются высококонтрастные цвета фона, единственным методом гарантированного обеспечения контрастности между этими элементами является применение границ.
 
 ## Обнаружение включения темы с высокой контрастностью  
-Используйте члены класса [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237), чтобы определить текущие параметры тем с высокой контрастностью. Свойство [**HighContrast**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrast) определяет, установлена ли в данный момент тема с высокой контрастностью. Если свойство **HighContrast** имеет значение **true**, то нужно проверить значение свойства [**HighContrastScheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrastscheme), чтобы получить имя используемой высококонтрастной темы. Типичные значения **HighContrastScheme**, на которые должен реагировать ваш код, — "High Contrast White" (Контрастная белая) и "High Contrast Black" (Контрастная черная). Определяемые в XAML ключи [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) не могут содержать пробелов. Поэтому ключи этих тем в словаре ресурсов обычно имеют вид "HighContrastWhite" и "HighContrastBlack" соответственно. Следует также предусмотреть логику перехода для темы с высокой контрастностью по умолчанию на случай, если значение задается другой строкой. Такую логику демонстрирует [пример XAML с высокой контрастностью](http://go.microsoft.com/fwlink/p/?linkid=254993).
+Используйте члены класса [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237), чтобы определить текущие параметры тем с высокой контрастностью. Свойство [**HighContrast**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrast) определяет, установлена ли в данный момент тема с высокой контрастностью. Если свойство **HighContrast** имеет значение **true**, то нужно проверить значение свойства [**HighContrastScheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrastscheme), чтобы получить имя используемой высококонтрастной темы. Типичные значения **HighContrastScheme**, на которые должен реагировать ваш код, — "High Contrast White" (Контрастная белая) и "High Contrast Black" (Контрастная черная). Определяемые в XAML ключи [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) не могут содержать пробелов. Поэтому ключи этих тем в словаре ресурсов обычно имеют вид "HighContrastWhite" и "HighContrastBlack" соответственно. Следует также предусмотреть логику перехода для темы с высокой контрастностью по умолчанию на случай, если значение задается другой строкой. 
+            Такую логику демонстрирует [пример XAML с высокой контрастностью](http://go.microsoft.com/fwlink/p/?linkid=254993).
 
 > [!NOTE]
 > Убедитесь, что конструктор [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237) вызывается из области, в которой приложение инициализировано и уже отображает содержимое.
@@ -177,6 +180,6 @@ _Область навигации отделена от других часте
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

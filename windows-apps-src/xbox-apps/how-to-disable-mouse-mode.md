@@ -3,8 +3,9 @@ author: payzer
 title: "Отключение режима мыши"
 description: 
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: bd7780f105f86d7d292c5db2535ad40af07d6e4f
+translationtype: Human Translation
+ms.sourcegitcommit: 6f4719c98d490cdcac8c799c4c68af55b217cbc5
+ms.openlocfilehash: d1ee946693b9f9714b8d570b8ae3718469d2c10d
 
 ---
 
@@ -12,28 +13,36 @@ ms.openlocfilehash: bd7780f105f86d7d292c5db2535ad40af07d6e4f
 Режим мыши по умолчанию включен для всех приложений. Это означает, что все приложения, которые не отключили этот режим, получат указатель мыши (подобно браузеру Edge на консоли). Настоятельно рекомендуется отключать эту функцию и выполнять оптимизацию для навигации с помощью направляемого контроллера.   
    
 ## HTML   
-Для отключения режима мыши добавьте следующий код в файл JavaScript в своем приложении:   
+Для включения навигации с помощью направляемого контроллера в приложении UWP на языке JavaScript используйте библиотеку JavaScript [TVHelpers DirectionalNavigation](https://github.com/Microsoft/TVHelpers/wiki/Using-DirectionalNavigation). Включите JavaScript-файл для работы с направленной навигацией в пакет приложения и добавьте ссылку на этот файл во все HTML-страницы, на которых требуется использовать навигацию с помощью направляемого контроллера.
+```code
+<script src="directionalnavigation-1.0.0.0.js"></script>
+```
+Подробнее см. в [вики-статье, посвященной направленной навигации](https://github.com/Microsoft/TVHelpers/wiki/Using-DirectionalNavigation).
+
+Если вместо этого вы хотите отключить режим мыши и использовать модель DOM или API-интерфейсы WinRT для игрового контроллера напрямую, выполните следующие действия для всех страниц, на которых требуется это сделать. 
    
 ```code
-navigator.gamepadInputEmulation = "keyboard";
+navigator.gamepadInputEmulation = "gamepad";
 ```   
 
+По умолчанию это свойство имеет значение ```'mouse'```, которое включает режим мыши. Если для свойства установить значение ```'keyboard'```, то режим мыши будет отключен и вместо него при получении входных сигналов с игрового контроллера будут генерироваться события клавиатуры модели DOM. Если для свойства установить значение ```'gamepad'```, то режим мыши будет отключен, события клавиатуры модели DOM генерироваться не будут, и вы сможете просто использовать модель DOM или API-интерфейсы WinRT для игрового контроллера.
+
 ## XAML    
-Для отключения режима мыши добавьте следующий код в файл JavaScript в своем приложении:   
+Чтобы отключить режим мыши, добавьте следующий код в конструктор для вашего приложения.   
    
 ```code
 public App() {
         this.InitializeComponent();
         this.RequiresPointerMode = Windows.UI.Xaml.ApplicationRequiresPointerMode.WhenRequested;
         this.Suspending += OnSuspending;
-        }
+}
 ```
 
 ## C++/DirectX   
-Если вы пишете приложение на C++/DirectX, то ничего делать не надо. Режим мыши применяется только к приложениям на HTML и XAML.
+Если вы пишете приложение на C++/DirectX, то ничего делать не нужно. Режим мыши применяется только к приложениям на HTML и XAML.
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

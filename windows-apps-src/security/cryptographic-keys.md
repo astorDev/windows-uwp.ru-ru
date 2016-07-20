@@ -3,8 +3,9 @@ title: "Криптографические ключи"
 description: "В этой статье описано, как использовать стандартные функции формирования производных ключей и шифровать содержимое с помощью симметричных и асимметричных ключей."
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 author: awkoren
-ms.sourcegitcommit: 4c8f586f711b1a9e2d2f252cf28a5239d9d68122
-ms.openlocfilehash: c23e0ba44a5013dca9ceec94ff434a34323d53bc
+translationtype: Human Translation
+ms.sourcegitcommit: e7fba930c108744815f261e7d01d198626d7e7c9
+ms.openlocfilehash: a86f31a0b62958f1300e386dfb99fd7fc1432fc5
 
 ---
 
@@ -14,7 +15,7 @@ ms.openlocfilehash: c23e0ba44a5013dca9ceec94ff434a34323d53bc
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-В этой статье описано, как использовать стандартные функции формирования производных ключей и шифровать содержимое с помощью симметричных и асимметричных ключей.
+В этой статье описано, как использовать стандартные функции формирования производных ключей и шифровать содержимое с помощью симметричных и асимметричных ключей. 
 
 ## Симметричные ключи
 
@@ -67,7 +68,7 @@ ms.openlocfilehash: c23e0ba44a5013dca9ceec94ff434a34323d53bc
 
 | Объект                                                                            | Описание                                                                                                                                |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | Создает объект KeyDerivationParameters, который используется функцией формирования ключа при помощи пароля 2 (PBKDF2).                                 |
+| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | Создает объект KeyDerivationParameters, который используется функцией формирования ключа при помощи пароля2 (PBKDF2).                                 |
 | [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | Создает объект KeyDerivationParameters для использования в режиме счетчика функцией формирования ключа при помощи хэш-кода проверки подлинности сообщения (HMAC). |
 | [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | Создает объект KeyDerivationParameters, который используется функцией формирования ключа при помощи SP800-56A.                                                 |
 
@@ -75,6 +76,6 @@ ms.openlocfilehash: c23e0ba44a5013dca9ceec94ff434a34323d53bc
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

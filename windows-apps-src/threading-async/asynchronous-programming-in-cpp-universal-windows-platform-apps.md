@@ -3,16 +3,17 @@ author: TylerMSFT
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: "В этой статье описываются рекомендации по использованию асинхронных методов в расширениях компонентов Visual C++ (C++/CX) с помощью класса task, определенного в пространстве имен concurrency файла ppltasks.h."
 title: "Асинхронное программирование на языке C++"
-ms.sourcegitcommit: c440d0dc2719a982a6b566c788d76111c40e263e
-ms.openlocfilehash: c33c05c6ec7f36b8ba7db840613fbfb7eb394c3f
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: b0a3faa56249ccfe693438c1077b7500736f3ec5
 
 ---
 
 # Асинхронное программирование на языке C++
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x можно найти в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи для Windows8.x можно найти в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этой статье описываются рекомендации по использованию асинхронных методов в расширениях компонентов Visual C++ (C++/CX) с помощью класса `task`, определенного в пространстве имен `concurrency` файла ppltasks.h.
+В этой статье описываются рекомендации по использованию асинхронных методов в расширениях компонентов VisualC++ (C++/CX) с помощью класса `task`, определенного в пространстве имен `concurrency` файла ppltasks.h.
 
 ## Асинхронные типы универсальной платформы для Windows (UWP)
 
@@ -79,7 +80,7 @@ void App::TestAsync()
 
 ## Создание цепочки задач
 
-Одной из распространенных практик асинхронного программирования является задание последовательности операций, называемой *цепочкой задач*, в которой каждая задача-продолжение выполняется только после завершения предыдущей. В некоторых случаях входным параметром для дополнительной задачи является результат выполнения предыдущей задачи (называемой также *задачей-предшественником*). Используя метод [**task::then**]taskThen[, вы можете создавать цепочки задач простым и наглядным способом. Этот метод возвращает ]task**<T>, где **T** — тип значения, возвращаемого лямбда-функцией. Можно создать цепочку задач из нескольких задач-продолжений: `myTask.then(…).then(…).then(…);`
+Одной из распространенных практик асинхронного программирования является задание последовательности операций, называемой *цепочкой задач*, в которой каждая задача-продолжение выполняется только после завершения предыдущей. В некоторых случаях входным параметром для дополнительной задачи является результат выполнения предыдущей задачи (называемой также *задачей-предшественником*). Используя метод [**task::then**]taskThen[, вы можете создавать цепочки задач простым и наглядным способом. Этот метод возвращает ]task**<T>, где **T** — тип значения, возвращаемого лямбда-функцией. Можно создать цепочку задач из нескольких задач-продолжений:  `myTask.then(…).then(…).then(…);`
 
 Цепочки задач удобно использовать, когда задача-продолжение создает новую асинхронную операцию. Такая задача называется асинхронной. В следующем примере показана цепочка, состоящая из двух задач-продолжений. Начальная задача получает дескриптор существующего файла. Когда эта операция завершается, первая задача-продолжение запускает новую асинхронную операцию, удаляющую файл. Когда эта операция завершается, запускается вторая задача-продолжение, отображающая подтверждение.
 
@@ -111,7 +112,8 @@ void App::DeleteWithTasks(String^ fileName)
 
 -   Поскольку вторая задача-продолжение основывается на значении предыдущей, возникновение исключения в операции, запускаемой вызовом функции [**DeleteAsync**]deleteAsync[, приведет к тому, что вторая задача-продолжение не запустится.
 
-**Примечание**  Создание цепочки задач — это только один из способов использования класса **task** для построения асинхронных операций. Кроме того, можно создавать операции с помощью операторов подключения и выбора **&&** и **||**. Дополнительные сведения см. в разделе [Параллелизм задач (среда выполнения с параллелизмом)]taskParallelism[.
+
+              **Примечание.**  Создание цепочки задач — это только один из способов использования класса **task** для построения асинхронных операций. Кроме того, можно создавать операции с помощью операторов подключения и выбора **&&** и **||**. Дополнительные сведения см. в разделе [Параллелизм задач (среда выполнения с параллелизмом)]taskParallelism[.
 
 ## Типы значений, которые возвращают лямбда-функция и задача
 
@@ -132,7 +134,7 @@ void App::DeleteWithTasks(String^ fileName)
 
 ## Отмена задач
 
-Часто бывает нужно дать пользователю возможность отменить асинхронную операцию. А иногда возникает необходимость отменить асинхронную операцию программным путем извне цепочки задач. Хотя каждый возвращаемый функциями \***Async** объект имеет метод [**Cancel**]IAsyncInfoCancel[, который наследуется от ][IAsyncInfo****IAsyncInfo], предоставлять его для внешних функций — не лучшая идея. Для поддержки отмены в цепочке задач предпочтительно с помощью класса [**cancellation\_token\_source**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749985.aspx) создать маркер [**cancellation\_token**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749975.aspx), а затем передать этот маркер в конструктор исходной задачи. Если асинхронная задача создана с маркером отмены и вызывается метод [**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750076.aspx), задача автоматически вызывает метод **Cancel** для операции **IAsync\*** и передает запрос на отмену дальше по цепочке задач-продолжений. Следующий псевдокод иллюстрирует этот подход.
+Часто бывает нужно дать пользователю возможность отменить асинхронную операцию. А иногда возникает необходимость отменить асинхронную операцию программным путем извне цепочки задач. Хотя каждый возвращаемый функциями \***Async** объект имеет метод [**Cancel**]IAsyncInfoCancel[, который наследуется от ][IAsyncInfo****IAsyncInfo], предоставлять его для внешних функций — не лучшая идея. Для поддержки отмены в цепочке задач предпочтительно с помощью класса [**cancellation\_token\_source**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx) создать маркер [**cancellation\_token**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx), а затем передать этот маркер в конструктор исходной задачи. Если асинхронная задача создана с маркером отмены и вызывается метод [**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx), задача автоматически вызывает метод **Cancel** для операции **IAsync\*** и передает запрос на отмену дальше по цепочке задач-продолжений. Следующий псевдокод иллюстрирует этот подход.
 
 ``` cpp
 //Class member:
@@ -147,11 +149,11 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 //getFileTask2.then ...
 ```
 
-При отмене задачи исключение [**task\_canceled**]taskCanceled[ передается по цепочке задач. Задачи-продолжения, основанные на предыдущих значениях, просто не запустятся, а в безусловных задачах-продолжениях возникнет исключение при вызове [**task::get**]taskGet[. Если ваша задача-продолжение производит обработку ошибок, в ней также необходимо явным образом перехватывать исключение **task\_canceled**. (Это исключение не является производным от [**Platform::Exception**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh755825.aspx).)
+При отмене задачи исключение [**task\_canceled**]taskCanceled[ передается по цепочке задач. Задачи-продолжения, основанные на предыдущих значениях, просто не запустятся, а в безусловных задачах-продолжениях возникнет исключение при вызове [**task::get**]taskGet[. Если ваша задача-продолжение производит обработку ошибок, в ней также необходимо явным образом перехватывать исключение **task\_canceled**. (Это исключение не является производным от [**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755825.aspx).)
 
-Отмена выполняется для всех задач. Если ваша задача-продолжение не просто вызывает метод UWP, а выполняет какие-то длительные операции, необходимо периодически проверять состояние маркера отмены и останавливать выполнение при отмене. Освободив все ресурсы, выделенные в задаче-продолжении, вызовите [**cancel\_current\_task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749945.aspx), чтобы отменить эту задачу и передать запрос на отмену всем последующим задачам-продолжениям, основанным на значении предыдущих. Другой пример: вы можете создать цепочку задач, представляющую результат операции [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871). Если пользователь нажимает кнопку **Отмена**, метод [**IAsyncInfo::Cancel**]IAsyncInfoCancel[ не вызывается. Вместо этого операция успешно завершается, но возвращает **nullptr**. Задача-продолжение может проверить входной параметр и вызвать **cancel\_current\_task**, если он равен **nullptr**.
+Отмена выполняется для всех задач. Если ваша задача-продолжение не просто вызывает метод UWP, а выполняет какие-то длительные операции, необходимо периодически проверять состояние маркера отмены и останавливать выполнение при отмене. Освободив все ресурсы, выделенные в задаче-продолжении, вызовите [**cancel\_current\_task**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749945.aspx), чтобы отменить эту задачу и передать запрос на отмену всем последующим задачам-продолжениям, основанным на значении предыдущих. Другой пример: вы можете создать цепочку задач, представляющую результат операции [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871). Если пользователь нажимает кнопку **Отмена**, метод [**IAsyncInfo::Cancel**]IAsyncInfoCancel[ не вызывается. Вместо этого операция успешно завершается, но возвращает **nullptr**. Задача-продолжение может проверить входной параметр и вызвать **cancel\_current\_task**, если он равен **nullptr**.
 
-Подробнее см. в разделе [Отмена в библиотеке параллельных шаблонов](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd984117.aspx).
+Подробнее см. в разделе [Отмена в библиотеке параллельных шаблонов](https://msdn.microsoft.com/library/windows/apps/xaml/dd984117.aspx).
 
 ## Обработка ошибок в цепочках задач
 
@@ -222,9 +224,9 @@ void App::SetFeedText()
 
 Если задача не возвращает [**IAsyncAction**]IAsyncAction[ или ][IAsyncOperation****IAsyncOperation], то она не поддерживает подразделения и по умолчанию ее задачи-продолжения работают в первом доступном фоновом потоке.
 
-Вы можете переопределить контекст потока по умолчанию для любого вида задач, перегрузив функцию [**task::then**]taskThen[, принимающую в качестве параметра ][task\_continuation\_context****. Например, в некоторых случаях для задачи, поддерживающей подразделения, желательно запланировать работу задачи-продолжения в фоновом потоке. В этом случае вы можете передать [**task\_continuation\_context::use\_arbitrary**]useArbitrary[, чтобы запланировать работу задачи в следующем доступном потоке во многопотоковом подразделении. Это может повысить производительность задачи-продолжения, поскольку ее работу не нужно синхронизировать с другими действиями в потоке пользовательского интерфейса.
+Вы можете переопределить контекст потока по умолчанию для любого вида задач, перегрузив функцию [**task::then**][taskThen] принимающую в качестве параметра [**task\_continuation\_context**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749968.aspx). Например, в некоторых случаях для задачи, поддерживающей подразделения, желательно запланировать работу задачи-продолжения в фоновом потоке. В этом случае вы можете передать [**task\_continuation\_context::use\_arbitrary**]useArbitrary[, чтобы запланировать работу задачи в следующем доступном потоке во многопотоковом подразделении. Это может повысить производительность задачи-продолжения, поскольку ее работу не нужно синхронизировать с другими действиями в потоке пользовательского интерфейса.
 
-В следующем примере приведена ситуация, когда следует использовать параметр [**task\_continuation\_context::use\_arbitrary**]useArbitrary[, а также показано использование контекста задачи-продолжения по умолчанию для синхронизации параллельных операций в коллекциях, не являющихся потокобезопасными. В приведенном фрагменте кода мы циклически обрабатываем список URL-адресов для RSS-каналов и для каждого адреса запускаем асинхронную операцию, чтобы получить данные этого веб-канала. Мы не можем контролировать порядок, в котором обрабатываются веб-каналы, и это нас не интересует. После завершения каждой операции [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR210642) первая задача-продолжение принимает объект [**SyndicationFeed^**](https://msdn.microsoft.com/library/windows/apps/BR243485) и использует его для инициализации установленного объекта `FeedData^` приложения. Так как каждая из этих операций независима от остальных, можно повысить скорость работы, если указать контекст задачи-продолжения **task\_continuation\_context::use\_arbitrary**. Но после инициализации каждого объекта `FeedData` нам нужно добавить его в [**Vector**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh441570.aspx), который не является потокобезопасной коллекцией. Поэтому мы создаем задачу-продолжение и используем [**task\_continuation\_context::use\_current**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750085.aspx), чтобы все вызовы [**Append**](https://msdn.microsoft.com/library/windows/apps/BR206632) происходили в том же контексте однопотокового подразделения приложения (ASTA). Поскольку [**task\_continuation\_context::use\_default**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750085.aspx) является контекстом по умолчанию, его необязательно указывать явно, но в данном случае мы делаем это для ясности.
+В следующем примере приведена ситуация, когда следует использовать параметр [**task\_continuation\_context::use\_arbitrary**]useArbitrary[, а также показано использование контекста задачи-продолжения по умолчанию для синхронизации параллельных операций в коллекциях, не являющихся потокобезопасными. В приведенном фрагменте кода мы циклически обрабатываем список URL-адресов для RSS-каналов и для каждого адреса запускаем асинхронную операцию, чтобы получить данные этого веб-канала. Мы не можем контролировать порядок, в котором обрабатываются веб-каналы, и это нас не интересует. После завершения каждой операции [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR210642) первая задача-продолжение принимает объект [**SyndicationFeed^**](https://msdn.microsoft.com/library/windows/apps/BR243485) и использует его для инициализации установленного объекта `FeedData^` приложения. Так как каждая из этих операций независима от остальных, можно повысить скорость работы, если указать контекст задачи-продолжения **task\_continuation\_context::use\_arbitrary**. Но после инициализации каждого объекта `FeedData` нам нужно добавить его в [**Vector**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx), который не является потокобезопасной коллекцией. Поэтому мы создаем задачу-продолжение и используем [**task\_continuation\_context::use\_current**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx), чтобы все вызовы [**Append**](https://msdn.microsoft.com/library/windows/apps/BR206632) происходили в том же контексте однопотокового подразделения приложения (ASTA). Поскольку [**task\_continuation\_context::use\_default**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx) является контекстом по умолчанию, его необязательно указывать явно, но в данном случае мы делаем это для ясности.
 
 ``` cpp
 #include <ppltasks.h>
@@ -289,54 +291,54 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 ## Обработка информации о ходе выполнения операции
 
-Методы, поддерживающие [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) или [**IAsyncActionWithProgress**](https://msdn.microsoft.com/en-us/library/windows/apps/br206581.aspx), могут периодически передавать информацию о ходе выполнения операции. Эта информация передается независимо от состояния задач и задач-продолжений. Нужно просто указать делегат для свойства [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) объекта. Этот делегат обычно используется для обновления индикатора выполнения в пользовательском интерфейсе.
+Методы, поддерживающие [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) или [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx), могут периодически передавать информацию о ходе выполнения операции. Эта информация передается независимо от состояния задач и задач-продолжений. Нужно просто указать делегат для свойства [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) объекта. Этот делегат обычно используется для обновления индикатора выполнения в пользовательском интерфейсе.
 
-## Связанные темы
+## Связанные разделы
 
-* [Создание асинхронных операций на языке C++ для приложений Магазина Windows]
-            [createAsyncCpp]
+* 
+              [Создание асинхронных операций на языке C++ для приложений Магазина Windows][createAsyncCpp]
 * [Справочник по языку Visual C++](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
-* [Асинхронное программирование]
-            [AsyncProgramming]
-* [Параллельное выполнение задач (параллельная среда выполнения)]
-            [taskParallelism]
-* [класс задачи]
-            [task-class]
+* 
+              [Асинхронное программирование][AsyncProgramming]
+* 
+              [Параллельное выполнение задач (параллельная среда выполнения)][taskParallelism]
+* 
+              [класс задачи][task-class]
  
 <!-- LINKS -->
-[AsyncProgramming]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464924.aspx>
-             "AsyncProgramming"
-[concurrencyNamespace]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492819.aspx>
-             "Пространство имен параллельной обработки"
-[createTask]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh913025.aspx>
-             "CreateTask"
-[createAsyncCpp]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx>
-             "CreateAsync"
-[deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199>
-             "DeleteAsync"
-[IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx>
-             "IAsyncAction"
-[IAsyncOperation]: <https://msdn.microsoft.com/library/windows/apps/BR206598>
-             "IAsyncOperation"
-[IAsyncInfo]: <https://msdn.microsoft.com/library/windows/apps/BR206587>
-             "IAsyncInfo"
-[IAsyncInfoCancel]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel>
-             "IAsyncInfoCancel"
-[taskCanceled]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750106.aspx>
-             "TaskCancelled"
-[task-class]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx>
-             "Класс задачи"
-[taskGet]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750017.aspx>
-             "TaskGet"
-[taskParallelism]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492427.aspx>
-             "Параллельность выполнения задач"
-[taskThen]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx>
-             "TaskThen"
-[useArbitrary]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750036.aspx>
-             "UseArbitrary"
+
+              [AsyncProgramming]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh464924.aspx> "AsyncProgramming"
+
+              [concurrencyNamespace]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492819.aspx> "Пространство имен параллельной обработки"
+
+              [createTask]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh913025.aspx> "CreateTask"
+
+              [createAsyncCpp]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx> "CreateAsync"
+
+              [deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199> "DeleteAsync"
+
+              [IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx> "IAsyncAction"
+
+              [IAsyncOperation]: <https://msdn.microsoft.com/library/windows/apps/BR206598> "IAsyncOperation"
+
+              [IAsyncInfo]: <https://msdn.microsoft.com/library/windows/apps/BR206587> "IAsyncInfo"
+
+              [IAsyncInfoCancel]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel> "IAsyncInfoCancel"
+
+              [taskCanceled]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750106.aspx> "TaskCancelled"
+
+              [task-class]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx> "Task Class"
+
+              [taskGet]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750017.aspx> "TaskGet"
+
+              [taskParallelism]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492427.aspx> "Параллельность выполнения задач"
+
+              [taskThen]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx> "TaskThen"
+
+              [useArbitrary]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 
