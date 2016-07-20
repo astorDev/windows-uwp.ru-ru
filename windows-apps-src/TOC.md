@@ -481,8 +481,7 @@
 ###### [События AdControl в JavaScript](monetize/adcontrol-events-in-javascript.md)
 ###### [События AdControl в C#](monetize/adcontrol-events-in-c.md)
 ###### [Обработка ошибок AdControl](monetize/adcontrol-error-handling.md)
-####### 
-              [Пошаговое руководство по обработке ошибок в XAML/C#](monetize/error-handling-in-xamlc-walkthrough.md)
+####### [Пошаговое руководство по обработке ошибок в XAML/C#](monetize/error-handling-in-xamlc-walkthrough.md)
 ####### [Пошаговое руководство по обработке ошибок в JavaScript](monetize/error-handling-in-javascript-walkthrough.md)
 ###### [Пример кода промежуточной рекламы в C#](monetize/interstitial-ad-sample-code-in-c.md)
 ###### [Пример кода промежуточной рекламы в JavaScript](monetize/interstitial-ad-sample-code-in-javascript.md)
