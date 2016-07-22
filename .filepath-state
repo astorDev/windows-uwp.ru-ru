@@ -6407,9 +6407,6 @@
   "41e4cc67120b9e32fac34404ca918edcf58ba267": [
     "windows-apps-src\\xbox-apps\\wdp-loose-folder-register-api.md"
   ],
-  "cb26ea1d80e6d370f16785429a683159f2134ad1": [
-    "windows-apps-src\\xbox-apps\\wdp-loose-folder-register-api.md"
-  ],
   "c1671db55dcb05ab7a126fad271a5e49146fe9ac": [
     "windows-apps-src\\xbox-apps\\wdp-sandbox-api.md"
   ],
@@ -6573,9 +6570,6 @@
     "windows-apps-src\\porting\\hwa-access-features.md"
   ],
   "7d1cceb931d3ee9d128c6ba47113f501625830da": [
-    "windows-apps-src\\porting\\hwa-chrome-conversion.md"
-  ],
-  "4d0c935d63e6326fc2ae1c73044ddbcee64067ec": [
     "windows-apps-src\\porting\\hwa-chrome-conversion.md"
   ],
   "775963ae3d12023488c79ded1cc83d464e84169c": [
