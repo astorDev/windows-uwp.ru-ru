@@ -1,13 +1,17 @@
 ---
 author: mijacobs
-Description: Ниже приводится список элементов и атрибутов, используемых для создания этих плиток.
-title: Шаблоны адаптивных плиток: схема и документация
+Description: "Ниже приводится список элементов и атрибутов, используемых для создания этих плиток."
+title: "Шаблоны адаптивных плиток - схема и документация"
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
+
 ---
 
-# Шаблоны адаптивных плиток: схема и руководство
+# Шаблоны адаптивных плиток - схема и руководство
 
 Ниже приводится список элементов и атрибутов, используемых для создания этих плиток. Дополнительные сведения и примеры см. в разделе [Создание адаптивных плиток](tiles-and-notifications-create-adaptive-tiles.md).
 
@@ -128,7 +132,7 @@ template: detail.hbs
 </subgroup>
 ```
 
-## <span id="related_topics"></span>Ссылки по теме
+## <span id="related_topics"></span>Связанные разделы
 
 
 * [Создание адаптивных плиток](tiles-and-notifications-create-adaptive-tiles.md)
@@ -141,6 +145,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
