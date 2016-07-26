@@ -6,22 +6,19 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/7ddbb72f89129ab418d303cb31a3eab8d88b7873/windows-apps-src/debug-test-perf/device-portal-api-core.md) | OutofSyncHandedBackSuccess | [Details](#3afebfa474a059d2a0115ea9ee2faed800acbbc31999)
+ [windows-apps-src\debug-test-perf\app-analysis.md](https://github.com/Microsoft/windows-apps/blob/06aed6e530d7f9dbcfb67d29545c26b63d93a559/windows-apps-src/debug-test-perf/app-analysis.md) | HandedOffSuccess | [Details](#30f8dd0171ed120733cc513bbf6d9ea40849584e1995)
 
 ## Item Details
-##### <a name='3afebfa474a059d2a0115ea9ee2faed800acbbc31999'></a> Source: [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/7ddbb72f89129ab418d303cb31a3eab8d88b7873/windows-apps-src/debug-test-perf/device-portal-api-core.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='30f8dd0171ed120733cc513bbf6d9ea40849584e1995'></a> Source: [windows-apps-src\debug-test-perf\app-analysis.md](https://github.com/Microsoft/windows-apps/blob/06aed6e530d7f9dbcfb67d29545c26b63d93a559/windows-apps-src/debug-test-perf/app-analysis.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/2e77956c4387fe3d50dd241651d4f4c2a6d54485/ol-handoff/Microsoft/windows-apps.ru-ru/master/device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ru-ru.xlf)
-* Handoff Datetime: 2016-07-25 23:17:44
+* Handoff File: [app-analysis.5342254e750c7e0022473bb64f5ded310b2ea84b.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/e183b3bf629eb215245b90d0d47953ebef214c9f/ol-handoff/Microsoft/windows-apps.ru-ru/master/app-analysis.5342254e750c7e0022473bb64f5ded310b2ea84b.ru-ru.xlf)
+* Handoff Datetime: 2016-07-26 16:49:26
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/debug-test-perf/device-portal-api-core.md)
-* Current Handback File: [device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
 
