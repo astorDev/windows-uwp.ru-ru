@@ -6,22 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps/blob/061f85794b793097c76c9ac7d81e6cee3a2d4406/windows-apps-src/get-started/enable-your-device-for-development.md) | OutofSyncHandedBackSuccess | [Details](#f2070522a8a672498e2ac1cf27be55c1bec796e32311)
+ [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/df6a420e560295f07ae49c1013b4d9702af1ad35/windows-apps-src/publish/dev-center-insider-program.md) | OutofSyncHandedBackSuccess | [Details](#b87f36eff39fc1305299f16823f6907d76ace1f13671)
 
 ## Item Details
-##### <a name='f2070522a8a672498e2ac1cf27be55c1bec796e32311'></a> Source: [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps/blob/061f85794b793097c76c9ac7d81e6cee3a2d4406/windows-apps-src/get-started/enable-your-device-for-development.md)
+##### <a name='b87f36eff39fc1305299f16823f6907d76ace1f13671'></a> Source: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/df6a420e560295f07ae49c1013b4d9702af1ad35/windows-apps-src/publish/dev-center-insider-program.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/888f145c6b13bf96879288f5a1e68ce2600c662d/ol-handoff/Microsoft/windows-apps.ru-ru/master/enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ru-ru.xlf)
-* Handoff Datetime: 2016-07-28 23:18:15
+* Handoff File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/5e0440a289c1a652b1e091daa5b03c89f0621bf9/ol-handoff/Microsoft/windows-apps.ru-ru/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ru-ru.xlf)
+* Handoff Datetime: 2016-07-29 00:18:44
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/get-started/enable-your-device-for-development.md)
-* Current Handback File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-06 15:19:45
+* Current Target File: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/publish/dev-center-insider-program.md)
+* Current Handback File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ru-ru.xlf)
+* Current Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
 
