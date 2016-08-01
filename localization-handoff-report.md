@@ -1,43 +1,56 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/a357e2304cb0c5b206726e6580eb370e9bff5e1e/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md) | OutofSyncHandedBackSuccess | [Details](#4d92bca22f35a76922e75b9a6c4a7966be1f381d2309)
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/2e052ba064bf9d96b259d5854ada22ca16410e39/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#24f7d3c25596b9e727ecfd226ee456c995af055b5329)
+ [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps/blob/5ae70a41fc690f78e4a5cdfd5caa84d325357d0b/windows-apps-src/get-started/enable-your-device-for-development.md) | OutofSyncHandedBackSuccess | [Details](#e5a865d9ce30108302a2ca627f5cdbc03632a9042311)
+ [windows-apps-src\xbox-apps\reference.md](https://github.com/Microsoft/windows-apps/blob/3d1c06c556ac8d5bbb915bbfa9f023b0d2b4544f/windows-apps-src/xbox-apps/reference.md) | OutofSyncHandedBackSuccess | [Details](#ae53e0a9d59121ab37ccd59008dac9792312eaf75453)
+ [windows-apps-src\xbox-apps\wdp-updatepolicy-api.md](https://github.com/Microsoft/windows-apps/blob/8f02e0c2f6fa30a3ac56945347c5bec253189bd8/windows-apps-src/xbox-apps/wdp-updatepolicy-api.md) | HandedOffSuccess | [Details](#6cbddf77b63831d2fa3bfa82bdb4ca495c98f4025467)
 
 ## Item Details
-##### <a name='4d92bca22f35a76922e75b9a6c4a7966be1f381d2309'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/a357e2304cb0c5b206726e6580eb370e9bff5e1e/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md)
+##### <a name='e5a865d9ce30108302a2ca627f5cdbc03632a9042311'></a> Source: [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps/blob/5ae70a41fc690f78e4a5cdfd5caa84d325357d0b/windows-apps-src/get-started/enable-your-device-for-development.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/4d6de071b47b650b3ff5c8448fa17b69631fb029/ol-handoff/Microsoft/windows-apps.ru-ru/master/create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.ru-ru.xlf)
-* Handoff Datetime: 2016-07-29 22:17:39
+* Handoff File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/2199353ee8acb0d3d01fcdd17827d1836a75ab2d/ol-handoff/Microsoft/windows-apps.ru-ru/master/enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ru-ru.xlf)
+* Handoff Datetime: 2016-08-01 20:49:43
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md)
-* Current Handback File: [create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.ru-ru.xlf)
+* Current Target File: [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/get-started/enable-your-device-for-development.md)
+* Current Handback File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ru-ru.xlf)
+* Current Handback Datetime: 2016-07-06 15:19:45
+* [Back to Top](#report-top)
+
+##### <a name='ae53e0a9d59121ab37ccd59008dac9792312eaf75453'></a> Source: [windows-apps-src\xbox-apps\reference.md](https://github.com/Microsoft/windows-apps/blob/3d1c06c556ac8d5bbb915bbfa9f023b0d2b4544f/windows-apps-src/xbox-apps/reference.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [reference.626dfb5537cffcf798971423ba8d5b8ed5ec5291.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/2199353ee8acb0d3d01fcdd17827d1836a75ab2d/ol-handoff/Microsoft/windows-apps.ru-ru/master/reference.626dfb5537cffcf798971423ba8d5b8ed5ec5291.ru-ru.xlf)
+* Handoff Datetime: 2016-08-01 20:49:43
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\xbox-apps\reference.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/xbox-apps/reference.md)
+* Current Handback File: [reference.626dfb5537cffcf798971423ba8d5b8ed5ec5291.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/reference.626dfb5537cffcf798971423ba8d5b8ed5ec5291.ru-ru.xlf)
 * Current Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
-##### <a name='24f7d3c25596b9e727ecfd226ee456c995af055b5329'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/2e052ba064bf9d96b259d5854ada22ca16410e39/windows-apps-src/TOC.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='6cbddf77b63831d2fa3bfa82bdb4ca495c98f4025467'></a> Source: [windows-apps-src\xbox-apps\wdp-updatepolicy-api.md](https://github.com/Microsoft/windows-apps/blob/8f02e0c2f6fa30a3ac56945347c5bec253189bd8/windows-apps-src/xbox-apps/wdp-updatepolicy-api.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/4d6de071b47b650b3ff5c8448fa17b69631fb029/ol-handoff/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
-* Handoff Datetime: 2016-07-29 22:17:39
+* Handoff File: [wdp-updatepolicy-api.43b9ad5f0421c97597ba8227383f1cd1f2adf007.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/2199353ee8acb0d3d01fcdd17827d1836a75ab2d/ol-handoff/Microsoft/windows-apps.ru-ru/master/wdp-updatepolicy-api.43b9ad5f0421c97597ba8227383f1cd1f2adf007.ru-ru.xlf)
+* Handoff Datetime: 2016-08-01 20:49:43
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/TOC.md)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
 
