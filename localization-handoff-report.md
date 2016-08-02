@@ -1,43 +1,24 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/1bc2d0c5acb35cdcfe30faeb751662d2898b4dab/windows-apps-src/xbox-apps/known-issues.md) | OutofSyncHandedBackSuccess | [Details](#7fca468bea74d53c0540a337405c479fcfa4bbbf8061)
- [windows-apps-src\xbox-apps\whats-new.md](https://github.com/Microsoft/windows-apps/blob/2b6fe4530e63b6f466cadf2a7159a5c3d04cf739/windows-apps-src/xbox-apps/whats-new.md) | OutofSyncHandedBackSuccess | [Details](#027e1f0e547ee9d6fa6a38f7342132c67ec4ddad8080)
+ [windows-apps-src\whats-new\windows-10-version-1607-api-diff.md](https://github.com/Microsoft/windows-apps/blob/086bf7ca30e5f1886f61408aae40cebe02ff9460/windows-apps-src/whats-new/windows-10-version-1607-api-diff.md) | HandedOffSuccess | [Details](#17d128459403426af15081764385be30b079ffe47942)
 
 ## Item Details
-##### <a name='7fca468bea74d53c0540a337405c479fcfa4bbbf8061'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/1bc2d0c5acb35cdcfe30faeb751662d2898b4dab/windows-apps-src/xbox-apps/known-issues.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='17d128459403426af15081764385be30b079ffe47942'></a> Source: [windows-apps-src\whats-new\windows-10-version-1607-api-diff.md](https://github.com/Microsoft/windows-apps/blob/086bf7ca30e5f1886f61408aae40cebe02ff9460/windows-apps-src/whats-new/windows-10-version-1607-api-diff.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/ee630b7401b86f1f76bfa24c36295f23ed5f8325/ol-handoff/Microsoft/windows-apps.ru-ru/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ru-ru.xlf)
-* Handoff Datetime: 2016-08-02 19:07:43
+* Handoff File: [windows-10-version-1607-api-diff.3f27db6e828e403f589951962a160d763082dafe.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/66a6568747df0c8912c0a7bb55d69e6b5dc7a3de/ol-handoff/Microsoft/windows-apps.ru-ru/master/windows-10-version-1607-api-diff.3f27db6e828e403f589951962a160d763082dafe.ru-ru.xlf)
+* Handoff Datetime: 2016-08-02 20:13:40
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/xbox-apps/known-issues.md)
-* Current Handback File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-20 16:39:45
-* [Back to Top](#report-top)
-
-##### <a name='027e1f0e547ee9d6fa6a38f7342132c67ec4ddad8080'></a> Source: [windows-apps-src\xbox-apps\whats-new.md](https://github.com/Microsoft/windows-apps/blob/2b6fe4530e63b6f466cadf2a7159a5c3d04cf739/windows-apps-src/xbox-apps/whats-new.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [whats-new.b8d20ae2cec9ae573cc97899a792d28d9922e924.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/ee630b7401b86f1f76bfa24c36295f23ed5f8325/ol-handoff/Microsoft/windows-apps.ru-ru/master/whats-new.b8d20ae2cec9ae573cc97899a792d28d9922e924.ru-ru.xlf)
-* Handoff Datetime: 2016-08-02 19:07:43
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xbox-apps\whats-new.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/xbox-apps/whats-new.md)
-* Current Handback File: [whats-new.b8d20ae2cec9ae573cc97899a792d28d9922e924.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/whats-new.b8d20ae2cec9ae573cc97899a792d28d9922e924.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
 
