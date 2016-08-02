@@ -1,95 +1,27 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 6
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\files\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md](https://github.com/Microsoft/windows-apps/blob/affe6002e22bd10e714dc4782a60ef528c31a407/windows-apps-src/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | OutofSyncHandedBackSuccess | [Details](#def1c5c8d9d062a81731744e1e1465472225494a3445)
- [windows-apps-src\launch-resume\communicate-with-a-remote-app-service.md](https://github.com/Microsoft/windows-apps/blob/52be9c19354e9c767edc2556e01762c28e89df50/windows-apps-src/launch-resume/communicate-with-a-remote-app-service.md) | HandedOffSuccess | [Details](#3090cee0bdfbfb4a0320cce0279e2328e33866eb4372)
- [windows-apps-src\launch-resume\connected-apps-and-devices.md](https://github.com/Microsoft/windows-apps/blob/46b9f82f5545ad45d7c3d4c9f6bfd6e2c29424bd/windows-apps-src/launch-resume/connected-apps-and-devices.md) | HandedOffSuccess | [Details](#7fe473661ce2818acd903bd416b1ad080596ef7f4373)
- [windows-apps-src\launch-resume\discover-connected-devices.md](https://github.com/Microsoft/windows-apps/blob/a77540d3a2effa924fcdf22e2ec8b20be664a3d7/windows-apps-src/launch-resume/discover-connected-devices.md) | HandedOffSuccess | [Details](#d4c2f02a6b753d5d9b920cb65f68b8586b9e42aa4381)
- [windows-apps-src\launch-resume\index.md](https://github.com/Microsoft/windows-apps/blob/6027bd0cf70e9e491a1fbe72748428ffcf618430/windows-apps-src/launch-resume/index.md) | OutofSyncHandedBackSuccess | [Details](#a20ee98e4287d26875792c740c6f8f68b29c131a4404)
- [windows-apps-src\launch-resume\launch-a-remote-app.md](https://github.com/Microsoft/windows-apps/blob/63acfc60f2af0e54b01c80e0448e503b95f4d49e/windows-apps-src/launch-resume/launch-a-remote-app.md) | HandedOffSuccess | [Details](#713028609c9bd742e6768dfc569efbbd2c3bd5d14405)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/6a567a48f24bd2e2e7473f7bf9754b71cfff919c/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#1622b1cd0f100a80db274233ae0da013e67c91ec7937)
 
 ## Item Details
-##### <a name='def1c5c8d9d062a81731744e1e1465472225494a3445'></a> Source: [windows-apps-src\files\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md](https://github.com/Microsoft/windows-apps/blob/affe6002e22bd10e714dc4782a60ef528c31a407/windows-apps-src/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)
+##### <a name='1622b1cd0f100a80db274233ae0da013e67c91ec7937'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/6a567a48f24bd2e2e7473f7bf9754b71cfff919c/windows-apps-src/TOC.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.456abf07716609290d85d95f1289d7ef25751fe4.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/08797b8a3a4fda6352d3d90799b960c6a97a74ca/ol-handoff/Microsoft/windows-apps.ru-ru/master/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.456abf07716609290d85d95f1289d7ef25751fe4.ru-ru.xlf)
-* Handoff Datetime: 2016-08-02 22:08:23
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/6ef035ab49e47cb4caae89d71c507819ea171b92/ol-handoff/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
+* Handoff Datetime: 2016-08-02 22:40:01
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\files\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)
-* Current Handback File: [quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.456abf07716609290d85d95f1289d7ef25751fe4.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.456abf07716609290d85d95f1289d7ef25751fe4.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-06 15:19:45
-* [Back to Top](#report-top)
-
-##### <a name='3090cee0bdfbfb4a0320cce0279e2328e33866eb4372'></a> Source: [windows-apps-src\launch-resume\communicate-with-a-remote-app-service.md](https://github.com/Microsoft/windows-apps/blob/52be9c19354e9c767edc2556e01762c28e89df50/windows-apps-src/launch-resume/communicate-with-a-remote-app-service.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [communicate-with-a-remote-app-service.69868a774210ff17c04a11fc7511d0ac1dca3d9d.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/08797b8a3a4fda6352d3d90799b960c6a97a74ca/ol-handoff/Microsoft/windows-apps.ru-ru/master/communicate-with-a-remote-app-service.69868a774210ff17c04a11fc7511d0ac1dca3d9d.ru-ru.xlf)
-* Handoff Datetime: 2016-08-02 22:08:23
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='7fe473661ce2818acd903bd416b1ad080596ef7f4373'></a> Source: [windows-apps-src\launch-resume\connected-apps-and-devices.md](https://github.com/Microsoft/windows-apps/blob/46b9f82f5545ad45d7c3d4c9f6bfd6e2c29424bd/windows-apps-src/launch-resume/connected-apps-and-devices.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [connected-apps-and-devices.bc37f58754b7bcb70f7340552b803a3428d1f746.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/08797b8a3a4fda6352d3d90799b960c6a97a74ca/ol-handoff/Microsoft/windows-apps.ru-ru/master/connected-apps-and-devices.bc37f58754b7bcb70f7340552b803a3428d1f746.ru-ru.xlf)
-* Handoff Datetime: 2016-08-02 22:08:23
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='d4c2f02a6b753d5d9b920cb65f68b8586b9e42aa4381'></a> Source: [windows-apps-src\launch-resume\discover-connected-devices.md](https://github.com/Microsoft/windows-apps/blob/a77540d3a2effa924fcdf22e2ec8b20be664a3d7/windows-apps-src/launch-resume/discover-connected-devices.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [discover-connected-devices.c79b65dc0050392e38891f1b7a9ad78e950d8b9e.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/08797b8a3a4fda6352d3d90799b960c6a97a74ca/ol-handoff/Microsoft/windows-apps.ru-ru/master/discover-connected-devices.c79b65dc0050392e38891f1b7a9ad78e950d8b9e.ru-ru.xlf)
-* Handoff Datetime: 2016-08-02 22:08:23
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='a20ee98e4287d26875792c740c6f8f68b29c131a4404'></a> Source: [windows-apps-src\launch-resume\index.md](https://github.com/Microsoft/windows-apps/blob/6027bd0cf70e9e491a1fbe72748428ffcf618430/windows-apps-src/launch-resume/index.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [index.7f38ebfeadef5946145c54c9dd9fb44894d2175a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/08797b8a3a4fda6352d3d90799b960c6a97a74ca/ol-handoff/Microsoft/windows-apps.ru-ru/master/index.7f38ebfeadef5946145c54c9dd9fb44894d2175a.ru-ru.xlf)
-* Handoff Datetime: 2016-08-02 22:08:23
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\launch-resume\index.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/launch-resume/index.md)
-* Current Handback File: [index.7f38ebfeadef5946145c54c9dd9fb44894d2175a.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/index.7f38ebfeadef5946145c54c9dd9fb44894d2175a.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-06 15:19:45
-* [Back to Top](#report-top)
-
-##### <a name='713028609c9bd742e6768dfc569efbbd2c3bd5d14405'></a> Source: [windows-apps-src\launch-resume\launch-a-remote-app.md](https://github.com/Microsoft/windows-apps/blob/63acfc60f2af0e54b01c80e0448e503b95f4d49e/windows-apps-src/launch-resume/launch-a-remote-app.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [launch-a-remote-app.ca9376133d84e80a1e47cffe465fc9586a55369d.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/08797b8a3a4fda6352d3d90799b960c6a97a74ca/ol-handoff/Microsoft/windows-apps.ru-ru/master/launch-a-remote-app.ca9376133d84e80a1e47cffe465fc9586a55369d.ru-ru.xlf)
-* Handoff Datetime: 2016-08-02 22:08:23
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
+* Current Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
 
