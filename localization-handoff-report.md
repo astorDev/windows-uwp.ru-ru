@@ -6,22 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\accessibility\practices-to-avoid.md](https://github.com/Microsoft/windows-apps/blob/014fb096817a25651188821fa59b202d260781d5/windows-apps-src/accessibility/practices-to-avoid.md) | HandedOffSuccess | [Details](#382899f038e2ac2ad6e34e98b3ba4849e9685d1040)
+ [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps/blob/5b4889a3c10a61c5319603314ef7f87bed163d04/windows-apps-src/publish/mobile-operator-billing.md) | HandedOffSuccess | [Details](#fbd38c10d4afaff0b049da0434379f6a335ce2f05024)
 
 ## Item Details
-##### <a name='382899f038e2ac2ad6e34e98b3ba4849e9685d1040'></a> Source: [windows-apps-src\accessibility\practices-to-avoid.md](https://github.com/Microsoft/windows-apps/blob/014fb096817a25651188821fa59b202d260781d5/windows-apps-src/accessibility/practices-to-avoid.md)
+##### <a name='fbd38c10d4afaff0b049da0434379f6a335ce2f05024'></a> Source: [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps/blob/5b4889a3c10a61c5319603314ef7f87bed163d04/windows-apps-src/publish/mobile-operator-billing.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [practices-to-avoid.8ed8037e895cde1a19d30fd6ae1ecbf8ae679566.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/996afc1af44559c30f6a3aaaff052c84ea5cfdce/ol-handoff/Microsoft/windows-apps.ru-ru/master/practices-to-avoid.8ed8037e895cde1a19d30fd6ae1ecbf8ae679566.ru-ru.xlf)
-* Handoff Datetime: 2016-08-10 19:51:44
+* Handoff File: [mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/607fc8030b613d614470fa3c11669d96612b76d4/ol-handoff/Microsoft/windows-apps.ru-ru/master/mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ru-ru.xlf)
+* Handoff Datetime: 2016-08-10 20:22:53
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\accessibility\practices-to-avoid.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/accessibility/practices-to-avoid.md)
-* Current Handback File: [practices-to-avoid.8ed8037e895cde1a19d30fd6ae1ecbf8ae679566.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/practices-to-avoid.8ed8037e895cde1a19d30fd6ae1ecbf8ae679566.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-06 15:19:45
+* Current Target File: [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/publish/mobile-operator-billing.md)
+* Current Handback File: [mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ru-ru.xlf)
+* Current Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
 
