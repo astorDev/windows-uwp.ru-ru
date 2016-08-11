@@ -6,38 +6,38 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\app-to-app\drag-and-drop.md](https://github.com/Microsoft/windows-apps/blob/f2133ca15e30f7451a61f78b48e883db1a5687a6/windows-apps-src/app-to-app/drag-and-drop.md) | HandedOffSuccess | [Details](#ee3d0c40effc12382f6fd31154016953f172be70149)
- [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps/blob/b8d627da82da463b87ace2a2ef6e739b1caafaa2/windows-apps-src/app-to-app/receive-data.md) | HandedOffSuccess | [Details](#0092fe2832eeafbc4e7cfa36a3444b9551a4f672151)
+ [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps/blob/a3d49d0812d4c33583a97b31c378030fb8986a20/windows-apps-src/launch-resume/launch-default-app.md) | HandedOffSuccess | [Details](#90d2696d20b0e4242df664f9f68fa48259d072e64398)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/a3d49d0812d4c33583a97b31c378030fb8986a20/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#04614e609d015ddcea477b394d53d08a6434de697937)
 
 ## Item Details
-##### <a name='ee3d0c40effc12382f6fd31154016953f172be70149'></a> Source: [windows-apps-src\app-to-app\drag-and-drop.md](https://github.com/Microsoft/windows-apps/blob/f2133ca15e30f7451a61f78b48e883db1a5687a6/windows-apps-src/app-to-app/drag-and-drop.md)
+##### <a name='90d2696d20b0e4242df664f9f68fa48259d072e64398'></a> Source: [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps/blob/a3d49d0812d4c33583a97b31c378030fb8986a20/windows-apps-src/launch-resume/launch-default-app.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [drag-and-drop.691a174bd4bab63c05fbd6093e6a7ed72f7b0a97.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/22cd13efc6f8a24471af6d33265956e4d01f125f/ol-handoff/Microsoft/windows-apps.ru-ru/master/drag-and-drop.691a174bd4bab63c05fbd6093e6a7ed72f7b0a97.ru-ru.xlf)
-* Handoff Datetime: 2016-08-11 17:53:48
+* Handoff File: [launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6198dc10f9139a0cde5fc1f2e3e5f684ab7d6e0/ol-handoff/Microsoft/windows-apps.ru-ru/master/launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.ru-ru.xlf)
+* Handoff Datetime: 2016-08-11 18:23:12
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\app-to-app\drag-and-drop.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/app-to-app/drag-and-drop.md)
-* Current Handback File: [drag-and-drop.691a174bd4bab63c05fbd6093e6a7ed72f7b0a97.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/drag-and-drop.691a174bd4bab63c05fbd6093e6a7ed72f7b0a97.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-06 15:19:45
+* Current Target File: [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/launch-resume/launch-default-app.md)
+* Current Handback File: [launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.ru-ru.xlf)
+* Current Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
-##### <a name='0092fe2832eeafbc4e7cfa36a3444b9551a4f672151'></a> Source: [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps/blob/b8d627da82da463b87ace2a2ef6e739b1caafaa2/windows-apps-src/app-to-app/receive-data.md)
+##### <a name='04614e609d015ddcea477b394d53d08a6434de697937'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/a3d49d0812d4c33583a97b31c378030fb8986a20/windows-apps-src/TOC.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/22cd13efc6f8a24471af6d33265956e4d01f125f/ol-handoff/Microsoft/windows-apps.ru-ru/master/receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ru-ru.xlf)
-* Handoff Datetime: 2016-08-11 17:53:48
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6198dc10f9139a0cde5fc1f2e3e5f684ab7d6e0/ol-handoff/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
+* Handoff Datetime: 2016-08-11 18:23:12
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/app-to-app/receive-data.md)
-* Current Handback File: [receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-06 15:19:45
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
+* Current Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
 
