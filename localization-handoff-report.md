@@ -1,26 +1,42 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\capture-device-controls-for-photo-and-video-capture.md](https://github.com/Microsoft/windows-apps/blob/4c6a7aabb39b3835e042481ccae7da60e899e7cf/windows-apps-src/audio-video-camera/capture-device-controls-for-photo-and-video-capture.md) | HandedOffSuccess | [Details](#13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38159)
+ [windows-apps-src\audio-video-camera\capture-photos-and-video-with-cameracaptureui.md](https://github.com/Microsoft/windows-apps/blob/b4bf4d74ae291186100a553a90fd93f890b8ece4/windows-apps-src/audio-video-camera/capture-photos-and-video-with-cameracaptureui.md) | HandedOffSuccess | [Details](#fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc161)
+ [windows-apps-src\audio-video-camera\capture-photos-and-video-with-mediacapture.md](https://github.com/Microsoft/windows-apps/blob/f42a093a42f43177f70c418c65a250b38e3dcd58/windows-apps-src/audio-video-camera/capture-photos-and-video-with-mediacapture.md) | HandedOffSuccess | [Details](#8e3ff7b37e0b5883d5e84ab5440bec78e35dd772162)
 
 ## Item Details
-##### <a name='13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38159'></a> Source: [windows-apps-src\audio-video-camera\capture-device-controls-for-photo-and-video-capture.md](https://github.com/Microsoft/windows-apps/blob/4c6a7aabb39b3835e042481ccae7da60e899e7cf/windows-apps-src/audio-video-camera/capture-device-controls-for-photo-and-video-capture.md)
+##### <a name='fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc161'></a> Source: [windows-apps-src\audio-video-camera\capture-photos-and-video-with-cameracaptureui.md](https://github.com/Microsoft/windows-apps/blob/b4bf4d74ae291186100a553a90fd93f890b8ece4/windows-apps-src/audio-video-camera/capture-photos-and-video-with-cameracaptureui.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [capture-device-controls-for-photo-and-video-capture.b82ba2adf368a6a80f591d0840b970a4c68a333f.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/2fcffe2870b6907f8e7e394fec42e55453925d09/ol-handoff/Microsoft/windows-apps.ru-ru/master/capture-device-controls-for-photo-and-video-capture.b82ba2adf368a6a80f591d0840b970a4c68a333f.ru-ru.xlf)
-* Handoff Datetime: 2016-08-12 18:53:22
+* Handoff File: [capture-photos-and-video-with-cameracaptureui.4f71d01201f482dcdd17f5ac916ad18ff39d8546.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/1c463d7ca34e7778f26ccf31af849eb0b600b340/ol-handoff/Microsoft/windows-apps.ru-ru/master/capture-photos-and-video-with-cameracaptureui.4f71d01201f482dcdd17f5ac916ad18ff39d8546.ru-ru.xlf)
+* Handoff Datetime: 2016-08-12 19:23:17
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\capture-device-controls-for-photo-and-video-capture.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/audio-video-camera/capture-device-controls-for-photo-and-video-capture.md)
-* Current Handback File: [capture-device-controls-for-photo-and-video-capture.b82ba2adf368a6a80f591d0840b970a4c68a333f.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/capture-device-controls-for-photo-and-video-capture.b82ba2adf368a6a80f591d0840b970a4c68a333f.ru-ru.xlf)
+* Current Target File: [windows-apps-src\audio-video-camera\capture-photos-and-video-with-cameracaptureui.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/audio-video-camera/capture-photos-and-video-with-cameracaptureui.md)
+* Current Handback File: [capture-photos-and-video-with-cameracaptureui.4f71d01201f482dcdd17f5ac916ad18ff39d8546.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/capture-photos-and-video-with-cameracaptureui.4f71d01201f482dcdd17f5ac916ad18ff39d8546.ru-ru.xlf)
+* Current Handback Datetime: 2016-07-06 15:19:45
+* [Back to Top](#report-top)
+
+##### <a name='8e3ff7b37e0b5883d5e84ab5440bec78e35dd772162'></a> Source: [windows-apps-src\audio-video-camera\capture-photos-and-video-with-mediacapture.md](https://github.com/Microsoft/windows-apps/blob/f42a093a42f43177f70c418c65a250b38e3dcd58/windows-apps-src/audio-video-camera/capture-photos-and-video-with-mediacapture.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [capture-photos-and-video-with-mediacapture.d8e382ecfb63a19bedd8f76740ef7f04d2b0173e.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/1c463d7ca34e7778f26ccf31af849eb0b600b340/ol-handoff/Microsoft/windows-apps.ru-ru/master/capture-photos-and-video-with-mediacapture.d8e382ecfb63a19bedd8f76740ef7f04d2b0173e.ru-ru.xlf)
+* Handoff Datetime: 2016-08-12 19:23:17
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\audio-video-camera\capture-photos-and-video-with-mediacapture.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/audio-video-camera/capture-photos-and-video-with-mediacapture.md)
+* Current Handback File: [capture-photos-and-video-with-mediacapture.d8e382ecfb63a19bedd8f76740ef7f04d2b0173e.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/capture-photos-and-video-with-mediacapture.d8e382ecfb63a19bedd8f76740ef7f04d2b0173e.ru-ru.xlf)
 * Current Handback Datetime: 2016-07-06 15:19:45
 * [Back to Top](#report-top)
 
