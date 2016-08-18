@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\layout\show-multiple-views.md](https://github.com/Microsoft/windows-apps/blob/0d67e3cef26ca6aca07556312a18be93fe758c85/windows-apps-src/layout/show-multiple-views.md) | HandedOffSuccess | [Details](#ccbcb1f3f5ee31724416f512138757865ffabc984672)
+ [windows-apps-src\controls-and-patterns\xaml-theme-resources.md](https://github.com/Microsoft/windows-apps/blob/32b6685dfd04994d13dc8805c5205e87a20b10f1/windows-apps-src/controls-and-patterns/xaml-theme-resources.md) | HandedOffSuccess | [Details](#092b183ead828ae411ff64d37e581bbbb59a1f5b3198)
 
 ## Item Details
-##### <a name='ccbcb1f3f5ee31724416f512138757865ffabc984672'></a> Source: [windows-apps-src\layout\show-multiple-views.md](https://github.com/Microsoft/windows-apps/blob/0d67e3cef26ca6aca07556312a18be93fe758c85/windows-apps-src/layout/show-multiple-views.md)
+##### <a name='092b183ead828ae411ff64d37e581bbbb59a1f5b3198'></a> Source: [windows-apps-src\controls-and-patterns\xaml-theme-resources.md](https://github.com/Microsoft/windows-apps/blob/32b6685dfd04994d13dc8805c5205e87a20b10f1/windows-apps-src/controls-and-patterns/xaml-theme-resources.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [show-multiple-views.2d939f4f8c3043c2ce07e4630f0ed1e36ca6d908.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/407c1a9df04927eee1c9b06c38ad08b40288d503/ol-handoff/Microsoft/windows-apps.ru-ru/master/show-multiple-views.2d939f4f8c3043c2ce07e4630f0ed1e36ca6d908.ru-ru.xlf)
-* Handoff Datetime: 2016-08-18 21:53:29
+* Handoff File: [xaml-theme-resources.44ab71091ba985b4a3127b7f58980eecf9a95090.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/9b396a14ab895ca37b5bb8dc941612ecffdf1cd2/ol-handoff/Microsoft/windows-apps.ru-ru/master/xaml-theme-resources.44ab71091ba985b4a3127b7f58980eecf9a95090.ru-ru.xlf)
+* Handoff Datetime: 2016-08-18 23:23:44
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\layout\show-multiple-views.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/layout/show-multiple-views.md)
-* Current Handback File: [show-multiple-views.2d939f4f8c3043c2ce07e4630f0ed1e36ca6d908.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/show-multiple-views.2d939f4f8c3043c2ce07e4630f0ed1e36ca6d908.ru-ru.xlf)
+* Current Target File: [windows-apps-src\controls-and-patterns\xaml-theme-resources.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/controls-and-patterns/xaml-theme-resources.md)
+* Current Handback File: [xaml-theme-resources.44ab71091ba985b4a3127b7f58980eecf9a95090.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/xaml-theme-resources.44ab71091ba985b4a3127b7f58980eecf9a95090.ru-ru.xlf)
 * Current Handback Datetime: 2016-07-06 15:19:45
 * [Back to Top](#report-top)
 
