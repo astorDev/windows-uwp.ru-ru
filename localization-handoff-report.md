@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/db271d616cf957877f302802a813eb06c7d09c18/windows-apps-src/publish/manage-account-users.md) | HandedOffSuccess | [Details](#c5a257e763c2298e54b215e87d3ab54e6f89a2755016)
+ [windows-apps-src\publish\the-app-certification-process.md](https://github.com/Microsoft/windows-apps/blob/865d71374cf7d678804ce16548edd819faafed33/windows-apps-src/publish/the-app-certification-process.md) | HandedOffSuccess | [Details](#07b3631ccc875222b8d2ea30a2b69e2995a09e235048)
 
 ## Item Details
-##### <a name='c5a257e763c2298e54b215e87d3ab54e6f89a2755016'></a> Source: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/db271d616cf957877f302802a813eb06c7d09c18/windows-apps-src/publish/manage-account-users.md)
+##### <a name='07b3631ccc875222b8d2ea30a2b69e2995a09e235048'></a> Source: [windows-apps-src\publish\the-app-certification-process.md](https://github.com/Microsoft/windows-apps/blob/865d71374cf7d678804ce16548edd819faafed33/windows-apps-src/publish/the-app-certification-process.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/9135e36e26fb1201fe93021f4dbd7b515532a2e9/ol-handoff/Microsoft/windows-apps.ru-ru/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ru-ru.xlf)
-* Handoff Datetime: 2016-08-19 19:55:38
+* Handoff File: [the-app-certification-process.4048325d389849d9ef4fac70cf8ced1a5f98b319.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/b92826999514ed9bace30a2a6411c253ca87e5db/ol-handoff/Microsoft/windows-apps.ru-ru/master/the-app-certification-process.4048325d389849d9ef4fac70cf8ced1a5f98b319.ru-ru.xlf)
+* Handoff Datetime: 2016-08-19 20:24:35
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/publish/manage-account-users.md)
-* Current Handback File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ru-ru.xlf)
+* Current Target File: [windows-apps-src\publish\the-app-certification-process.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/publish/the-app-certification-process.md)
+* Current Handback File: [the-app-certification-process.4048325d389849d9ef4fac70cf8ced1a5f98b319.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/the-app-certification-process.4048325d389849d9ef4fac70cf8ced1a5f98b319.ru-ru.xlf)
 * Current Handback Datetime: 2016-07-06 15:19:45
 * [Back to Top](#report-top)
 
