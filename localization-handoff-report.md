@@ -1,43 +1,27 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/c0929728535bff1f92e0dab8527fae2e5e800244/windows-apps-src/porting/desktop-to-uwp-root.md) | HandedOffSuccess | [Details](#5e3f77e968d7d4aa8eef3601e8ea3adc3ad44a284846)
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/856f8fff9280b54dda1ef294c7577612b7c195ec/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#d5381fd13fee66aa1f8444333cda302c6fd6a1f37936)
+ [windows-apps-src\debug-test-perf\listview-and-gridview-data-optimization.md](https://github.com/Microsoft/windows-apps/blob/e44dd5c2c3c9fb252062af3a6a9f409e1777a878/windows-apps-src/debug-test-perf/listview-and-gridview-data-optimization.md) | HandedOffSuccess | [Details](#0a16dc27db6fb1e04e1ab0c575077ca10b97f12d3289)
 
 ## Item Details
-##### <a name='5e3f77e968d7d4aa8eef3601e8ea3adc3ad44a284846'></a> Source: [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/c0929728535bff1f92e0dab8527fae2e5e800244/windows-apps-src/porting/desktop-to-uwp-root.md)
+##### <a name='0a16dc27db6fb1e04e1ab0c575077ca10b97f12d3289'></a> Source: [windows-apps-src\debug-test-perf\listview-and-gridview-data-optimization.md](https://github.com/Microsoft/windows-apps/blob/e44dd5c2c3c9fb252062af3a6a9f409e1777a878/windows-apps-src/debug-test-perf/listview-and-gridview-data-optimization.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/e9f3e02d3c0041882d0e1c7cd8286ecd50657389/ol-handoff/Microsoft/windows-apps.ru-ru/master/desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ru-ru.xlf)
-* Handoff Datetime: 2016-08-23 16:55:12
+* Handoff File: [listview-and-gridview-data-optimization.930d2dd4f169293f1f100ae2b8215463bd0ec15f.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/8a1b99994853cbd90d4cf3efc5a62d46d9ca3a71/ol-handoff/Microsoft/windows-apps.ru-ru/master/listview-and-gridview-data-optimization.930d2dd4f169293f1f100ae2b8215463bd0ec15f.ru-ru.xlf)
+* Handoff Datetime: 2016-08-23 20:55:03
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/porting/desktop-to-uwp-root.md)
-* Current Handback File: [desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-20 16:39:45
-* [Back to Top](#report-top)
-
-##### <a name='d5381fd13fee66aa1f8444333cda302c6fd6a1f37936'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/856f8fff9280b54dda1ef294c7577612b7c195ec/windows-apps-src/TOC.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/e9f3e02d3c0041882d0e1c7cd8286ecd50657389/ol-handoff/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
-* Handoff Datetime: 2016-08-23 16:55:12
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/TOC.md)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-20 16:39:45
+* Current Target File: [windows-apps-src\debug-test-perf\listview-and-gridview-data-optimization.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/debug-test-perf/listview-and-gridview-data-optimization.md)
+* Current Handback File: [listview-and-gridview-data-optimization.930d2dd4f169293f1f100ae2b8215463bd0ec15f.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/listview-and-gridview-data-optimization.930d2dd4f169293f1f100ae2b8215463bd0ec15f.ru-ru.xlf)
+* Current Handback Datetime: 2016-07-06 15:19:45
 * [Back to Top](#report-top)
 
 
