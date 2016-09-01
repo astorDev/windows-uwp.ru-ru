@@ -6,22 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\distribute-lob-apps-to-enterprises.md](https://github.com/Microsoft/windows-apps/blob/44485b32a7c5580e1a7a0ca9ca7c642e0b9b29d2/windows-apps-src/publish/distribute-lob-apps-to-enterprises.md) | HandedOffSuccess | [Details](#76fc4e5cfa70d06d6f378409ecd9f331f64c08035050)
+ [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/88eb05d15b6845899ab407825340b732f4ae2da9/windows-apps-src/get-started/learn-more.md) | HandedOffSuccess | [Details](#aa91d42ecf2dfc57f377c29294676c9bd8d8f0543933)
 
 ## Item Details
-##### <a name='76fc4e5cfa70d06d6f378409ecd9f331f64c08035050'></a> Source: [windows-apps-src\publish\distribute-lob-apps-to-enterprises.md](https://github.com/Microsoft/windows-apps/blob/44485b32a7c5580e1a7a0ca9ca7c642e0b9b29d2/windows-apps-src/publish/distribute-lob-apps-to-enterprises.md)
+##### <a name='aa91d42ecf2dfc57f377c29294676c9bd8d8f0543933'></a> Source: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/88eb05d15b6845899ab407825340b732f4ae2da9/windows-apps-src/get-started/learn-more.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [distribute-lob-apps-to-enterprises.0b587ccf3d72dde21acfcdb2eded5841e0f9ffea.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/5413a1ead45b3b8b3adad8ecba73580a817a609a/ol-handoff/Microsoft/windows-apps.ru-ru/master/distribute-lob-apps-to-enterprises.0b587ccf3d72dde21acfcdb2eded5841e0f9ffea.ru-ru.xlf)
-* Handoff Datetime: 2016-09-01 17:43:05
+* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/597da8cdba0afb71acc9332c745a27a33656dd44/ol-handoff/Microsoft/windows-apps.ru-ru/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf)
+* Handoff Datetime: 2016-09-01 18:12:47
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\distribute-lob-apps-to-enterprises.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/publish/distribute-lob-apps-to-enterprises.md)
-* Current Handback File: [distribute-lob-apps-to-enterprises.0b587ccf3d72dde21acfcdb2eded5841e0f9ffea.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/distribute-lob-apps-to-enterprises.0b587ccf3d72dde21acfcdb2eded5841e0f9ffea.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-06 15:19:45
+* Current Target File: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/get-started/learn-more.md)
+* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf)
+* Current Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
 
