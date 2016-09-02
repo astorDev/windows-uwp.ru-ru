@@ -6,30 +6,30 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\data-binding\data-binding-quickstart.md](https://github.com/Microsoft/windows-apps/blob/e89580ef62d5d6ae095aa27628181181aaac9666/windows-apps-src/data-binding/data-binding-quickstart.md) | HandedOffSuccess | [Details](#d452751fd4ab0cc422c3eae94507923440ec45df3205)
- [windows-apps-src\whats-new\windows-10-version-1607-api-diff.md](https://github.com/Microsoft/windows-apps/blob/8b64cb00c5c06e6dc5a8ee4751e45ba1a5c1e65e/windows-apps-src/whats-new/windows-10-version-1607-api-diff.md) | HandedOffSuccess | [Details](#20e3a37428f2c4c918d0b6f10dfca2e6f02cf41b7998)
+ [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/1efb12b79e55b19f363c2f1c852b809e6789b672/windows-apps-src/get-started/learn-more.md) | HandedOffSuccess | [Details](#71d60e1dfb4f6dbe9ff2fe1b0f893658a71297783933)
+ [windows-apps-src\monetize\create-and-manage-submissions-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/87ad884a1c8bed817bd35845d607b9ca2271a60c/windows-apps-src/monetize/create-and-manage-submissions-using-windows-store-services.md) | HandedOffSuccess | [Details](#63ab2eb3b12c5c8552130846aa0e626b99b1b06d4743)
 
 ## Item Details
-##### <a name='d452751fd4ab0cc422c3eae94507923440ec45df3205'></a> Source: [windows-apps-src\data-binding\data-binding-quickstart.md](https://github.com/Microsoft/windows-apps/blob/e89580ef62d5d6ae095aa27628181181aaac9666/windows-apps-src/data-binding/data-binding-quickstart.md)
+##### <a name='71d60e1dfb4f6dbe9ff2fe1b0f893658a71297783933'></a> Source: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/1efb12b79e55b19f363c2f1c852b809e6789b672/windows-apps-src/get-started/learn-more.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/5a093bfddb26c47352445b385077accbdbd5aaef/ol-handoff/Microsoft/windows-apps.ru-ru/master/data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.ru-ru.xlf)
-* Handoff Datetime: 2016-09-01 21:14:45
+* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/09e93e02ddcbed00c12ac7c80d96e792cfc99574/ol-handoff/Microsoft/windows-apps.ru-ru/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf)
+* Handoff Datetime: 2016-09-02 16:42:15
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\data-binding\data-binding-quickstart.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/data-binding/data-binding-quickstart.md)
-* Current Handback File: [data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.ru-ru.xlf)
+* Current Target File: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/get-started/learn-more.md)
+* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf)
 * Current Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
-##### <a name='20e3a37428f2c4c918d0b6f10dfca2e6f02cf41b7998'></a> Source: [windows-apps-src\whats-new\windows-10-version-1607-api-diff.md](https://github.com/Microsoft/windows-apps/blob/8b64cb00c5c06e6dc5a8ee4751e45ba1a5c1e65e/windows-apps-src/whats-new/windows-10-version-1607-api-diff.md)
+##### <a name='63ab2eb3b12c5c8552130846aa0e626b99b1b06d4743'></a> Source: [windows-apps-src\monetize\create-and-manage-submissions-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/87ad884a1c8bed817bd35845d607b9ca2271a60c/windows-apps-src/monetize/create-and-manage-submissions-using-windows-store-services.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [windows-10-version-1607-api-diff.3f27db6e828e403f589951962a160d763082dafe.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/5a093bfddb26c47352445b385077accbdbd5aaef/ol-handoff/Microsoft/windows-apps.ru-ru/master/windows-10-version-1607-api-diff.3f27db6e828e403f589951962a160d763082dafe.ru-ru.xlf)
-* Handoff Datetime: 2016-09-01 21:14:45
+* Handoff File: [create-and-manage-submissions-using-windows-store-services.d17cd67e3f06021e1bcff183a35fea407e0be645.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/09e93e02ddcbed00c12ac7c80d96e792cfc99574/ol-handoff/Microsoft/windows-apps.ru-ru/master/create-and-manage-submissions-using-windows-store-services.d17cd67e3f06021e1bcff183a35fea407e0be645.ru-ru.xlf)
+* Handoff Datetime: 2016-09-02 16:42:15
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
