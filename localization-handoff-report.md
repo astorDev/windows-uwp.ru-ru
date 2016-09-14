@@ -6,27 +6,30 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\devices-sensors\point-of-service.md](https://github.com/Microsoft/windows-apps/blob/e28134c21654c957c9d9b70fa7edef49419998b9/windows-apps-src/devices-sensors/point-of-service.md) | HandedOffSuccess | [Details](#0db6e9dbc8b2c1a7ab01e65cb750b47c278ce1c03401)
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/e28134c21654c957c9d9b70fa7edef49419998b9/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#cd48affc280f2a18ea3cb04600b7709218c4b5038004)
+ [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/1cae625559ad95c1de577e57bfd5087e55a0c2f5/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | HandedOffSuccess | [Details](#daa29e4e96219bd1eaf7f2dca29fc685b65897744910)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/1cae625559ad95c1de577e57bfd5087e55a0c2f5/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#1c9b52594ed1a3b519d5d20fea23f9a0c5bca1c88004)
 
 ## Item Details
-##### <a name='0db6e9dbc8b2c1a7ab01e65cb750b47c278ce1c03401'></a> Source: [windows-apps-src\devices-sensors\point-of-service.md](https://github.com/Microsoft/windows-apps/blob/e28134c21654c957c9d9b70fa7edef49419998b9/windows-apps-src/devices-sensors/point-of-service.md)
+##### <a name='daa29e4e96219bd1eaf7f2dca29fc685b65897744910'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/1cae625559ad95c1de577e57bfd5087e55a0c2f5/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [point-of-service.3e0a7abf540bfdb3b589ce5caf9b2ffcd7eff3f8.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/acf8a96cd1ebccfb2781b106ded01fab0a174a47/ol-handoff/Microsoft/windows-apps.ru-ru/master/point-of-service.3e0a7abf540bfdb3b589ce5caf9b2ffcd7eff3f8.ru-ru.xlf)
-* Handoff Datetime: 2016-09-14 20:44:38
+* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/7b28cc80bea9f3d580aed6c0d5004f2969388307/ol-handoff/Microsoft/windows-apps.ru-ru/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ru-ru.xlf)
+* Handoff Datetime: 2016-09-14 22:13:29
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+* Current Handback File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ru-ru.xlf)
+* Current Handback Datetime: 2016-07-20 16:39:45
 * [Back to Top](#report-top)
 
-##### <a name='cd48affc280f2a18ea3cb04600b7709218c4b5038004'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/e28134c21654c957c9d9b70fa7edef49419998b9/windows-apps-src/TOC.md)
+##### <a name='1c9b52594ed1a3b519d5d20fea23f9a0c5bca1c88004'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/1cae625559ad95c1de577e57bfd5087e55a0c2f5/windows-apps-src/TOC.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/acf8a96cd1ebccfb2781b106ded01fab0a174a47/ol-handoff/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
-* Handoff Datetime: 2016-09-14 20:44:38
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/7b28cc80bea9f3d580aed6c0d5004f2969388307/ol-handoff/Microsoft/windows-apps.ru-ru/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf)
+* Handoff Datetime: 2016-09-14 22:13:29
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
