@@ -6,22 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\graphics\composition-animation.md](https://github.com/Microsoft/windows-apps/blob/9146f0d3771f1f3687c94dc9f4978b5db5765c5d/windows-apps-src/graphics/composition-animation.md) | HandedOffSuccess | [Details](#9f098ef590e51547f066289965a7ce9fd02dc8cd3965)
+ [windows-apps-src\maps-and-location\guidelines-and-checklist-for-detecting-location.md](https://github.com/Microsoft/windows-apps/blob/7159aea3feef96781575825d019a379e0eadc603/windows-apps-src/maps-and-location/guidelines-and-checklist-for-detecting-location.md) | HandedOffSuccess | [Details](#133add15e0e5681ec85a0800c52605262a82f8b44703)
 
 ## Item Details
-##### <a name='9f098ef590e51547f066289965a7ce9fd02dc8cd3965'></a> Source: [windows-apps-src\graphics\composition-animation.md](https://github.com/Microsoft/windows-apps/blob/9146f0d3771f1f3687c94dc9f4978b5db5765c5d/windows-apps-src/graphics/composition-animation.md)
+##### <a name='133add15e0e5681ec85a0800c52605262a82f8b44703'></a> Source: [windows-apps-src\maps-and-location\guidelines-and-checklist-for-detecting-location.md](https://github.com/Microsoft/windows-apps/blob/7159aea3feef96781575825d019a379e0eadc603/windows-apps-src/maps-and-location/guidelines-and-checklist-for-detecting-location.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [composition-animation.64277e041816f40676f859bbeb8895857bec9110.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/25dd0fc79087233ec05e6885924e1955a50174d7/ol-handoff/Microsoft/windows-apps.ru-ru/master/composition-animation.64277e041816f40676f859bbeb8895857bec9110.ru-ru.xlf)
-* Handoff Datetime: 2016-09-16 22:43:44
+* Handoff File: [guidelines-and-checklist-for-detecting-location.c5bffe8f6b87c3384095787e6fe9475cacd5260a.ru-ru.xlf](https://github.com/Microsoft/WDG.handoff/blob/4f48262a50be6b70385d07d6ee5b308848817e08/ol-handoff/Microsoft/windows-apps.ru-ru/master/guidelines-and-checklist-for-detecting-location.c5bffe8f6b87c3384095787e6fe9475cacd5260a.ru-ru.xlf)
+* Handoff Datetime: 2016-09-19 17:14:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\graphics\composition-animation.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/34a9aa0ec25917104b15042b1c4a956abe9c8ca4/windows-apps-src/graphics/composition-animation.md)
-* Current Handback File: [composition-animation.64277e041816f40676f859bbeb8895857bec9110.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/34f8c55e7da1172ae438666ddec75c2a14fc2151/ol-handback/Microsoft/windows-apps.ru-ru/master/composition-animation.64277e041816f40676f859bbeb8895857bec9110.ru-ru.xlf)
-* Current Handback Datetime: 2016-07-20 16:39:45
+* Current Target File: [windows-apps-src\maps-and-location\guidelines-and-checklist-for-detecting-location.md](https://github.com/Microsoft/windows-apps.ru-ru/blob/93f7daed53c2f646ab9c83858aa28237022d818d/windows-apps-src/maps-and-location/guidelines-and-checklist-for-detecting-location.md)
+* Current Handback File: [guidelines-and-checklist-for-detecting-location.c5bffe8f6b87c3384095787e6fe9475cacd5260a.ru-ru.xlf](https://github.com/Microsoft/WDG.handback/blob/d3d0e23c0b6ca1c844ba3c34aead5291de8d3362/ol-handback/Microsoft/windows-apps.ru-ru/master/guidelines-and-checklist-for-detecting-location.c5bffe8f6b87c3384095787e6fe9475cacd5260a.ru-ru.xlf)
+* Current Handback Datetime: 2016-07-06 15:19:45
 * [Back to Top](#report-top)
 
 
