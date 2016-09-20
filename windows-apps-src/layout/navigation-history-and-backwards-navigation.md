@@ -6,7 +6,6 @@ ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
 label: History and backwards navigation
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
 
@@ -166,7 +165,8 @@ private void App_BackRequested(object sender,
 
 Такая кнопка доступна только в приложениях, работающих на устройствах в настольном режиме, и поддерживает только журнал навигации в приложении, но не журнал навигации между приложениями.
 
-**Важно!** Кнопка возврата в строке заголовка по умолчанию не отображается. Ее необходимо включить.
+
+            **Важно!** Кнопка возврата в строке заголовка по умолчанию не отображается. Ее необходимо включить.
 
  
 

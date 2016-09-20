@@ -3,7 +3,6 @@ author: mcleblanc
 description: "Какие варианты доступны при разработке кроссплатформенных приложений?"
 title: "Выбор подхода к разработке приложений iOS и UWP"
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 2703a0c919b08331cc7ab55fe78b868555312ac0
 
@@ -11,7 +10,7 @@ ms.openlocfilehash: 2703a0c919b08331cc7ab55fe78b868555312ac0
 
 # Выбор подхода к разработке приложений iOS и UWP
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Какие варианты доступны при разработке кроссплатформенных приложений?
 
@@ -29,7 +28,7 @@ ms.openlocfilehash: 2703a0c919b08331cc7ab55fe78b868555312ac0
 
 -   [Apache Cordova](http://go.microsoft.com/fwlink/p/?LinkID=400439)
 
-    Если вам больше по душе JavaScript и HTML, Apache Cordova (другое название — PhoneGap) поможет вам создать кроссплатформенные приложения для iOS, Windows и Android. Этот тип проекта также встроен в Visual Studio.
+    Если вам больше по душе JavaScript и HTML, Apache Cordova (другое название— PhoneGap) поможет вам создать кроссплатформенные приложения для iOS, Windows и Android. Этот тип проекта также встроен в Visual Studio.
 
 -   Игровые модули
 
@@ -51,9 +50,9 @@ ms.openlocfilehash: 2703a0c919b08331cc7ab55fe78b868555312ac0
 
     Если ваша основная бизнес-логика написана на C++, а не Objective-C или Swift, зачастую можно использовать этот код, внеся в проект незначительные изменения. Затем можно использовать XAML для определения пользовательского интерфейса, как и в других приложениях для Windows, и при необходимости вызывать код C++.
 
--   [Запуск OpenGL ES в Windows с помощью ANGLE](http://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [Запуск OpenGLES в Windows с помощью ANGLE](http://go.microsoft.com/fwlink/p/?linkid=618387)
 
-    В качестве промежуточного действия при портировании проекта OpenGL ES 2.0 можно использовать ANGLE. ANGLE позволяет запускать содержимое OpenGL ES в Windows путем преобразования вызовов API OpenGL ES в вызовы API DirectX 11.
+    В качестве промежуточного действия при портировании проекта OpenGLES2.0 можно использовать ANGLE. ANGLE позволяет запускать содержимое OpenGLES в Windows путем преобразования вызовов API OpenGLES в вызовы API DirectX11.
 
 ## Другие средства разработки кроссплатформенных приложений
 

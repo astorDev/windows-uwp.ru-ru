@@ -1,50 +1,54 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Add a default InkToolbar to a Universal Windows Platform (UWP) inking app, add a custom pen button to the InkToolbar, and bind the custom pen button to a custom pen definition.
-title: Add an InkToolbar to a Universal Windows Platform (UWP) inking app
+Description: "Добавьте InkToolbar по умолчанию в приложение универсальной платформы Windows (UWP) для рукописного ввода, добавьте кнопку специального пера в InkToolbar и привяжите кнопку специального пера к определению специального пера."
+title: "Добавление элемента управления InkToolbar в приложение рукописного ввода UWP"
 label: Add an InkToolbar to a Universal Windows Platform (UWP) inking app
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, InkToolbar, Universal Windows Platform, UWP
+translationtype: Human Translation
+ms.sourcegitcommit: 743ce43be6220d96d7e9bc295ab72bdec4905edc
+ms.openlocfilehash: 4c50c8ded127b2261df901d9da3210ff397b00ca
+
 ---
 
-# Add an InkToolbar to a Universal Windows Platform (UWP) inking app
+# Добавление элемента управления InkToolbar в приложение рукописного ввода UWP
 
-There are two different controls that facilitate inking in Universal Windows Platform (UWP) apps: [**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) and [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
+В приложениях универсальной платформы Windows (UWP) рукописный ввод контролируется с помощью двух разных элементов управления: [**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) и [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
 
-The [**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) control provides basic Windows Ink functionality. Use it to render pen input as either an ink stroke (using default settings for color and thickness) or an erase stroke.
+Элемент управления [**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) предоставляет базовую функциональность Windows Ink. Используйте его для отрисовки ввода с помощью пера в качестве росчерка пера (с параметрами цвета и толщины по умолчанию) или росчерка стирания.
 
-> For InkCanvas implementation details, see [Pen and stylus interactions in UWP apps](pen-and-stylus-interactions.md).
+> Подробные сведения о реализации элемента управления InkCanvas см. в разделе [Взаимодействие с помощью пера в приложениях UWP](pen-and-stylus-interactions.md).
 
-As a completely transparent overlay, the InkCanvas does not provide any built-in UI for setting ink stroke properties. If you want to change the default inking experience, let users set ink stroke properties, and support other custom inking features, you have two options:
+Элемент управления InkCanvas представляет собой полностью прозрачное наложение и не предоставляет никакого встроенного пользовательского интерфейса для настройки свойств росчерка пера. Изменить стандартные настройки рукописного ввода, предоставить пользователям возможность настраивать свойства росчерка пера и обеспечить поддержку других специальных функций рукописного ввода можно двумя способами.
 
-- In code-behind, use the underlying [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) object bound to the InkCanvas.
+- В коде программной части с помощью объекта [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx), привязанного к элементу управления InkCanvas.
 
-  The InkPresenter APIs support extensive customization of the inking experience. For more detail, see [Pen and stylus interactions in UWP apps](pen-and-stylus-interactions.md).
+  API InkPresenter предоставляют широкие возможности пользовательской настройки рукописного ввода. Подробные сведения см. в разделе [Взаимодействие с помощью пера в приложениях UWP](pen-and-stylus-interactions.md).
 
-- Bind an [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) to the InkCanvas. By default, the InkToolbar provides a basic UI for activating ink features and setting ink properties such as stroke size, ink color, and pen tip shape.
+- Привяжите элемент управления [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) к элементу InkCanvas. По умолчанию InkToolbar предоставляет базовый пользовательский интерфейс для активации функций рукописного ввода и настройки параметров ввода, таких как размер росчерка, цвет чернил и форма кончика пера.
 
-  We discuss the InkToolbar in this topic.
+  В этом разделе мы рассмотрим элемент управления InkToolbar.
 
-## Important APIs
+## Важные API
 
-  -   [**InkCanvas class**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)
-  -   [**InkToolbar class**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)
-  -   [**InkPresenter class**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)
+  -   [**Класс InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)
+  -   [**Класс InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)
+  -   [**Класс InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)
   -   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 
-## Default InkToolbar
+## InkToolbar по умолчанию
 
-By default, the InkToolbar includes buttons for drawing, erasing, highlighting, and displaying a ruler. Depending on the feature, other settings and commands, such as ink color, stroke thickness, erase all ink, are provided in a flyout.
+По умолчанию элемент управления InkToolbar содержит кнопки для рисования, стирания, выделения и отображения линейки. В зависимости от функции во всплывающем элементе могут отображаться другие параметры и команды, например цвет чернил, толщина росчерка и стирание всего написанного.
 
 ![InkToolbar](.\images\ink\ink-tools-invoked-toolbar-small.png)  
-*Default Windows Ink toolbar*
+*Windows Ink toolbar по умолчанию*
 
-To add a basic default InkToolbar:
-1. In MainPage.xaml, declare a container object (for this example, we use a Grid control) for the inking surface.
-2. Declare an InkCanvas object as a child of the container. (The InkCanvas size is inherited from the container.)
-3. Declare an InkToolbar and use the TargetInkCanvas attribute to bind it to the InkCanvas.
-  Ensure the InkToolbar is declared after the InkCanvas. If not, the InkCanvas overlay renders the InkToolbar inaccessible.
+Чтобы добавить базовый элемент управления InkToolbar по умолчанию, выполните следующие действия.
+1. В файле MainPage.xaml объявите объект-контейнер (в этом примере мы используем элемент управления «сетка») для поверхности рукописного ввода.
+2. Объявите объект InkCanvas в качестве дочернего элемента контейнера. (Размер элемента управления InkCanvas наследуется от контейнера.)
+3. Объявите элемент управления InkToolbar и используйте атрибут TargetInkCanvas, чтобы привязать этот элемент к InkCanvas.
+  Убедитесь, что элемент управления InkToolbar объявлен после InkCanvas. В противном случае наложение InkCanvas сделает InkToolbar недоступным.
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -68,24 +72,24 @@ To add a basic default InkToolbar:
 </Grid>
 ```
 
-## Basic customization
+## Базовая настройка
 
-In this section, we cover some basic Windows Ink toolbar customization scenarios.
+В этом разделе мы рассмотрим некоторые базовые сценарии пользовательской настройки панели инструментов Windows Ink.
 
-### Specify the selected button  
-![Pencil button selected at initialization](.\images\ink\ink-tools-default-toolbar.png)  
-*Windows Ink toolbar with pencil button selected at initialization*
+### Укажите выделенную кнопку  
+![Кнопка карандаша, выбранная при инициализации](.\images\ink\ink-tools-default-toolbar.png)  
+*Панель инструментов Windows Ink с кнопкой карандаша, выбранной при инициализации*
 
-By default, the first (or leftmost) button is selected when your app is launched and the toolbar is initialized. In the default Windows Ink toolbar, this is the ballpoint pen button.
+По умолчанию первая (или крайняя левая) кнопка выбрана, когда запускается приложение и инициируется панель инструментов. На панели инструментов Windows Ink по умолчанию это кнопка шариковой ручки.
 
-Because the framework defines the order of the built-in buttons, the first button might not be the pen or tool you want to activate by default.
+Поскольку порядок встроенных кнопок определяется платформой, первая кнопка не обязательно связана с пером или инструментом, который требуется активировать по умолчанию.
 
-You can override this default behavior and specify the selected button on the toolbar.
+Можно переопределить это поведение по умолчанию и указать выбранную кнопку на панели инструментов.
 
-For this example, we initialize the default toolbar with the pencil button selected and the pencil activated (instead of the ballpoint pen).
+В этом примере мы инициализируем панель инструментов по умолчанию с выбранной кнопкой карандаша и активированным карандашом (вместо шариковой ручки).
 
-1. Use the XAML declaration for the InkCanvas and InkToolbar from the previous example.
-2. In code-behind, set up a handler for the [Loaded](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.loaded.aspx) event of the [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) object.
+1. Используйте объявление XAML для элементов управления InkToolbar и InkCanvas из предыдущего примера.
+2. В коде программной части настройте обработчик для события [Loaded](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.loaded.aspx) объекта [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
 
   ```csharp
   /// <summary>
@@ -100,12 +104,12 @@ For this example, we initialize the default toolbar with the pencil button selec
   }
   ```
 
-3. In the handler for the [Loaded](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.loaded.aspx) event:
-  1. Get a reference to the built-in [InkToolbarPencilButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx).
+3. В обработчике события [Loaded](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.loaded.aspx) выполните следующие действия:
+  1. Получите ссылку на встроенную кнопку [InkToolbarPencilButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx).
 
-    Passing an [InkToolbarTool.Pencil](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbartool.aspx) object in the [GetToolButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.gettoolbutton.aspx) method returns an [InkToolbarToolButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbartoolbutton.aspx) object for the [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx).
+    При передаче объекта [InkToolbarTool.Pencil](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbartool.aspx) в метод [GetToolButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.gettoolbutton.aspx) возвращается объект [InkToolbarToolButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbartoolbutton.aspx) для элемента [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx).
 
-  2. Set [ActiveTool](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.activetool.aspx) to the object returned in the previous step.
+  2. Настройте [ActiveTool](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.activetool.aspx) для объекта, возвращенного в предыдущем шаге.
 
 ```CSharp
 /// <summary>
@@ -122,12 +126,12 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-### Specify the built-in buttons
+### Определение встроенных кнопок
 
-![Specific buttons included at initialization](.\images\ink\ink-tools-specific.png)  
-*Specific buttons included at initialization*
+![Конкретные кнопки, включенные при инициализации](.\images\ink\ink-tools-specific.png)  
+*Конкретные кнопки, включенные при инициализации*
 
-As mentioned, the Windows Ink toolbar includes a collection of default, built-in buttons. These buttons are displayed in the following order (from left to right):
+Как уже упоминалось, панель инструментов Windows Ink содержит коллекцию встроенных кнопок по умолчанию. Эти кнопки отображаются в следующем порядке (слева направо):
 
 - [InkToolbarBallpointPenButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarballpointpenbutton.aspx)
 - [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx)
@@ -135,17 +139,17 @@ As mentioned, the Windows Ink toolbar includes a collection of default, built-in
 - [InkToolbarEraserButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbareraserbutton.aspx)
 - [InkToolbarRulerButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarrulerbutton.aspx)
 
-For this example, we initialize the toolbar with only the built-in ballpoint pen, pencil, and eraser buttons.
+В этом примере мы инициализируем панель инструментов только с встроенными кнопками шариковой ручки, карандаша и ластика.
 
-You can do this using either XAML or code-behind.
+Это можно сделать с помощью XAML или кода программной части.
 
 **XAML**
 
-Modify the XAML declaration for the InkCanvas and InkToolbar from the first example.
-- Add an [InitialControls](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.initialcontrols.aspx) attribute and set its value to "[None](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarinitialcontrols.aspx)". This clears the default collection of built-in buttons.
-- Add the specific InkToolbar buttons required by your app. Here, we add [InkToolbarBallpointPenButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarballpointpenbutton.aspx), [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx), and [InkToolbarEraserButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbareraserbutton.aspx) only.
+Измените объявление XAML для элементов управления InkCanvas и InkToolbar из первого примера.
+- Добавьте атрибут [InitialControls](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.initialcontrols.aspx) и сделайте его значение равным [None](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarinitialcontrols.aspx). Коллекция встроенных кнопок по умолчанию будет очищена.
+- Добавьте кнопки InkToolbar, необходимые в вашем приложении. Здесь мы добавим только кнопки [InkToolbarBallpointPenButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarballpointpenbutton.aspx), [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx) и [InkToolbarEraserButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbareraserbutton.aspx).
 > [!NOTE]
-> Buttons are added to the toolbar in the order defined by the framework, not the order specified here.
+> Кнопки добавляются на панель инструментов в порядке, определяемом платформой, а не в указанном здесь порядке.
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -181,8 +185,8 @@ Modify the XAML declaration for the InkCanvas and InkToolbar from the first exam
 </Grid>
 ```
 
-**Code-behind**
-1. Use the XAML declaration for the InkCanvas and InkToolbar from the first example.
+**Поддерживающий код**
+1. Используйте объявление XAML для элементов управления InkCanvas и InkToolbar из первого примера.
 
   ```xaml
   <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -206,7 +210,7 @@ Modify the XAML declaration for the InkCanvas and InkToolbar from the first exam
   </Grid>
   ```
 
-2. In code-behind, set up a handler for the [Loading](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.loading.aspx) event of the [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) object.
+2. В коде программной части настройте обработчик для события [Loading](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.loading.aspx) объекта [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
 
   ```csharp
   /// <summary>
@@ -221,12 +225,12 @@ Modify the XAML declaration for the InkCanvas and InkToolbar from the first exam
   }
   ```
 
-3. Set [InitialControls](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.initialcontrols.aspx) to "[None](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarinitialcontrols.aspx)".
-4. Create object references for the buttons required by your app. Here, we add [InkToolbarBallpointPenButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarballpointpenbutton.aspx), [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx), and [InkToolbarEraserButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbareraserbutton.aspx) only.
+3. Задайте для параметра [InitialControls](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.initialcontrols.aspx) значение [None](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarinitialcontrols.aspx).
+4. Создайте ссылки на объекты для кнопок, которые требуются вашему приложению. Здесь мы добавим только кнопки [InkToolbarBallpointPenButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarballpointpenbutton.aspx), [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx) и [InkToolbarEraserButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbareraserbutton.aspx).
   > [!NOTE]
-  > Buttons are added to the toolbar in the order defined by the framework, not the order specified here.
+  > Кнопки добавляются на панель инструментов в порядке, определяемом платформой, а не в указанном здесь порядке.
 
-5. [Add](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobjectcollection.add.aspx) the buttons to the InkToolbar.
+5. [Добавьте](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobjectcollection.add.aspx) кнопки в элемент управления InkToolbar.
 
   ```csharp
   /// <summary>
@@ -258,40 +262,40 @@ Modify the XAML declaration for the InkCanvas and InkToolbar from the first exam
 By default, the InkToolbar supports both pen and mouse input, you have to enable support for touch input.
 -->
 
-## Custom buttons and inking features
+## Специальные кнопки и функции рукописного ввода
 
-You can customize and extend the collection of buttons (and associated inking features) that are provided through the InkToolbar.
+Можно настроить и расширить коллекцию кнопок (и связанных с ними функций рукописного ввода), предоставляемую элементом управления InkToolbar.
 
-The InkToolbar consists of two distinct groups of button types:
+В элементе управления InkToolbar представлены две группы кнопок разных типов.
 
-1. A group of "tool" buttons containing the built-in drawing, erasing, and highlighting buttons. Custom pens and tools are added here.
-> **Note**&nbsp;&nbsp;Feature selection is mutually exclusive.
+1. Группа кнопок-инструментов, которая включает встроенные кнопки для рисования, стирания и выделения. Сюда добавляются специальные перья и инструменты.
+> **Примечание.**&nbsp;&nbsp;Функции являются взаимоисключающими.
 
-2. A group of "toggle" buttons containing the built-in ruler button. Custom toggles are added here.
-> **Note**&nbsp;&nbsp;Features are not mutually exclusive and can be used concurrently with other active tools.
+2. Группа кнопок-переключателей, которая содержит встроенную кнопку линейки. Сюда добавляются специальные переключатели.
+> **Примечание.**&nbsp;&nbsp;Эти функции не являются взаимоисключающими, их можно использовать вместе с другими активными элементами.
 
-Depending on your application and the inking functionality required, you can add any of the following buttons (bound to your custom ink features) to the InkToolbar:
+В зависимости от используемого приложения и требуемой функции рукописного ввода в элемент управления InkToolbar можно добавить любые нижеперечисленные кнопки (связанные со специальными функциями пера).
 
-- Custom pen – a pen for which the ink color palette and pen tip properties, such as shape, rotation, and size, are defined by the host app.
-- Custom tool – a non-pen tool, defined by the host app.
-- Custom toggle – Sets the state of an app-defined feature to on or off. When turned on, the feature works in conjunction with the active tool.
+- Специальное перо— перо, для которого соответствующее приложение определяет цветовую палитру и свойства кончика пера, такие как форма, поворот и размер.
+- Специальный инструмент— отличный от пера инструмент, который определяется соответствующим приложением.
+- Специальный переключатель— включает или выключает определенную приложением функцию. Если функция включена, она действует вместе с активным инструментом.
 
-> **Note**&nbsp;&nbsp;You cannot change the display order of the built-in buttons. The default display order is: Ballpoint pen, pencil, highlighter, eraser, and ruler. Custom pens are appended to the last default pen, custom tool buttons are added between the last pen button and the eraser button and custom toggle buttons are added after the ruler button. (Custom buttons are added in the order they are specified.)
+> **Примечание.**&nbsp;&nbsp;Изменить порядок отображения встроенных кнопок невозможно. Они отображаются в следующем порядке: шариковая ручка, карандаш, маркер, ластик и линейка. Специальные перья добавляются после последнего пера по умолчанию, кнопки специальных инструментов располагаются между кнопкой последнего пера и кнопкой ластика, а кнопки специальных переключателей— после кнопки линейки (специальные кнопки добавляются в порядке настройки).
 
-### Custom pen
+### Специальное перо
 
-![Custom calligraphic pen button](.\images\ink\ink-tools-custompen.png)  
-*Custom calligraphic pen button*
+![Кнопка специального каллиграфического пера](.\images\ink\ink-tools-custompen.png)  
+*Кнопка специального каллиграфического пера*
 
-For this example, we define a custom pen with a broad tip that enables basic calligraphic ink strokes. We also customize the collection of brushes in the palette displayed on the button flyout.
+В этом примере мы определяем специальное перо с широким кончиком, с помощью которого можно делать основные каллиграфические росчерки пера. Кроме того, мы настроим коллекцию кистей в палитре, которая отображается во всплывающем элементе кнопки.
 
-**Code-behind**
+**Поддерживающий код**
 
-First, we define our custom pen and specify the drawing attributes in code-behind. We reference this custom pen from XAML later.
+Сначала мы определим специальное перо и зададим атрибуты рисования в коде программной части. Впоследствии мы будем ссылаться на это специальное перо из XAML.
 
-1. Right click the project in Solution Explorer and select Add -> New item.
-2. Under Visual C# -> Code, add a new Class file and call it CalligraphicPen.cs.
-3. In Calligraphic.cs, replace the default using block with the following:
+1. Щелкните правой кнопкой мыши проект в обозревателе решений и выберите команду «Добавить» > «Новый элемент».
+2. В разделе Visual C# -> «Код» добавьте новый файл класса и назовите его CalligraphicPen.cs.
+3. В этом файле Calligraphic.cs замените блок использования по умолчанию следующим кодом:
 ```csharp
 using System.Numerics;
 using Windows.UI;
@@ -299,13 +303,13 @@ using Windows.UI.Input.Inking;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 ```
-4. Specify that the CalligraphicPen class is derived from [InkToolbarCustomPen](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompen.aspx).
+4. Укажите, что класс CalligraphicPen наследуется от [InkToolbarCustomPen](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompen.aspx).
 ```csharp
 class CalligraphicPen : InkToolbarCustomPen
 {
 }
 ```
-5. Override  [CreateInkDrawingAttributesCore](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompen.createinkdrawingattributescore.aspx)  to specify your own brush and stroke size.
+5. Переопределите [CreateInkDrawingAttributesCore](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompen.createinkdrawingattributescore.aspx), чтобы задать собственную кисть и нужный размер росчерка.
 ```csharp
 class CalligraphicPen : InkToolbarCustomPen
 {
@@ -315,7 +319,7 @@ class CalligraphicPen : InkToolbarCustomPen
     }
 }
 ```
-6. Create an [InkDrawingAttributes](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.aspx) object and set the [pen tip shape](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.pentip.aspx), [tip rotation](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.pentiptransform.aspx), [stroke size](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.size.aspx), and [ink color](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.color.aspx).
+6. Создайте объект [InkDrawingAttributes](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.aspx) и настройте [форму наконечника пера](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.pentip.aspx), [поворот кончика](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.pentiptransform.aspx), [размер росчерка](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.size.aspx) и [цвет чернил](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.color.aspx).
 ```csharp
 class CalligraphicPen : InkToolbarCustomPen
 {
@@ -347,9 +351,9 @@ class CalligraphicPen : InkToolbarCustomPen
 
 **XAML**
 
-Next, we add the necessary references to the custom pen in MainPage.xaml.
+Затем добавим необходимые ссылки на специальное перо в файле MainPage.xaml.
 
-1. We declare a local page resource dictionary that creates a reference to the custom pen (`CalligraphicPen`) defined in CalligraphicPen.cs, and a [brush collection](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.UI.Xaml.Media.BrushCollection.aspx) supported by the custom pen (`CalligraphicPenPalette`).
+1. Мы объявим словарь ресурсов локальной страницы, который создает ссылку на специальное перо (`CalligraphicPen`), определенное в файле CalligraphicPen.cs, и [коллекцию кистей](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.UI.Xaml.Media.BrushCollection.aspx), поддерживаемых специальным пером (`CalligraphicPenPalette`).
 ```xaml
 <Page.Resources>
     <!-- Add the custom CalligraphicPen to the page resources. -->
@@ -361,11 +365,11 @@ Next, we add the necessary references to the custom pen in MainPage.xaml.
     </BrushCollection>
 </Page.Resources>
 ```
-2. We then add an InkToolbar with a child [InkToolbarCustomPenButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompenbutton.aspx) element.
+2. Затем добавим элемент управления InkToolbar с дочерним элементом управления [InkToolbarCustomPenButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompenbutton.aspx).
 
-  The custom pen button includes the two static resource references declared in the page resources: `CalligraphicPen` and `CalligraphicPenPalette`.
+  Кнопка специального пера содержит две статические ссылки на ресурсы, объявленные в ресурсах страницы: `CalligraphicPen` и `CalligraphicPenPalette`.
 
-  We also specify the range for the stroke size slider ([MinStrokeWidth](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.minstrokewidth.aspx), [MaxStrokeWidth](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.maxstrokewidth.aspx), and [SelectedStrokeWidth](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.selectedstrokewidthproperty.aspx)), the selected brush ([SelectedBrushIndex](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.selectedbrushindex.aspx)), and the icon for the custom pen button ([SymbolIcon](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.symbolicon.aspx)).
+  Кроме того, зададим диапазон для ползунка, регулирующего размер штриха ([MinStrokeWidth](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.minstrokewidth.aspx), [MaxStrokeWidth](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.maxstrokewidth.aspx) и [SelectedStrokeWidth](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.selectedstrokewidthproperty.aspx)), выбранной кисти ([SelectedBrushIndex](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.selectedbrushindex.aspx)) и значка для кнопки специального пера ([SymbolIcon](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.symbolicon.aspx)).
 ```xaml
 <Grid Grid.Row="1">
     <InkCanvas x:Name="inkCanvas" />
@@ -395,11 +399,17 @@ Enable touch inking
 -->
 
 
-## Related articles
+## Связанные разделы
 
-* [Pen and stylus interactions](pen-and-stylus-interactions.md)
+* [Взаимодействие с помощью пера](pen-and-stylus-interactions.md)
 
-**Samples**
-* [Ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Simple ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+**Примеры**
+* [Пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Простой пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

@@ -5,13 +5,13 @@ title: WebSockets
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7e9ee140914718ce71357ba8ecaf10116949b87b
+ms.openlocfilehash: ff2429e1e9ea56c414978c126497551b1e1864b8
 
 ---
 
 # WebSockets
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -29,10 +29,10 @@ ms.openlocfilehash: 7e9ee140914718ce71357ba8ecaf10116949b87b
 | Поддерживает двоичные сообщения и сообщения в кодировке UTF-8.                                 | Поддерживает только двоичные сообщения.                                                                |
 | Аналогичен UDP-сокету или сокету датаграммы.                                     | Аналогичен TCP-сокету или сокету потока.                                                            |
 
-В большинстве случаев необходимо использовать безопасное соединение WebSocket для шифрования отправляемых и получаемых данных. Это также увеличивает шансы успешного подключения, т. к. многие прокси-серверы отклоняют незашифрованные соединения WebSocket. Протокол WebSocket определяет две следующие схемы URI.
+В большинстве случаев необходимо использовать безопасное соединение WebSocket для шифрования отправляемых и получаемых данных. Это также увеличивает шансы успешного подключения, т.к. многие прокси-серверы отклоняют незашифрованные соединения WebSocket. Протокол WebSocket определяет две следующие схемы URI.
 
--   ws – используется для незашифрованных соединений;
--   wss – используется для защищенных соединений, которые должны быть зашифрованы.
+-   ws– используется для незашифрованных соединений;
+-   wss– используется для защищенных соединений, которые должны быть зашифрованы.
 
 Для шифрования подключения WebSocket используйте wss: схема URI, например, `wss://www.contoso.com/mywebservice`.
 
@@ -178,7 +178,7 @@ ms.openlocfilehash: 7e9ee140914718ce71357ba8ecaf10116949b87b
 
 После установления подключения клиент WebSocket может отправлять данные на сервер. Метод [**DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) возвращает параметр, который отображается в виде целого числа без знака. Это меняет способ определения задачи по отправке сообщения по отношению к задаче по установлению подключения.
 
-**Примечание.**   При создании нового объекта DataWriter с помощью OutputStream сокета MessageWebSocket DataWriter берет под контроль OutputStream и при выходе DataWriter за пределы области отменяет распределение Outputstream. В результате все последующие попытки использовать OutputStream будут неудачными со значением HRESULT 0x80000013. Чтобы избежать отмены распределения OutputStream, данный код вызывает метод DetachStream DataWriter, который возвращает контроль над потоком объекту WebSocket.
+**Примечание.** При создании нового объекта DataWriter с помощью OutputStream сокета MessageWebSocket объект DataWriter берет под контроль OutputStream и при выходе DataWriter за пределы области отменяет распределение Outputstream. В результате все последующие попытки использовать OutputStream будут неудачными со значением HRESULT 0x80000013. Чтобы избежать отмены распределения OutputStream, данный код вызывает метод DetachStream DataWriter, который возвращает контроль над потоком объекту WebSocket.
 
 Следующая функция отправляет данную строку к подключенному WebSocket и выводит сообщения проверки в окне вывода отладчика.
 
@@ -228,16 +228,10 @@ ms.openlocfilehash: 7e9ee140914718ce71357ba8ecaf10116949b87b
 
 ## Использование расширенных элементов управления с подключениями WebSockets
 
-[
-              **MessageWebSocket**
-            ](https://msdn.microsoft.com/library/windows/apps/br226842) и [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) соответствуют одной и той же модели использования расширенных элементов управления. Основные классы, соответствующие каждому из названных выше классов, являются связанными классами для доступа к расширенным элементам управления.
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) и [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) соответствуют одной и той же модели использования расширенных элементов управления. Основные классы, соответствующие каждому из названных выше классов, являются связанными классами для доступа к расширенным элементам управления.
 
-[
-              **MessageWebSocketControl**
-            ](https://msdn.microsoft.com/library/windows/apps/br226843) предоставляет данные элемента управления сокетами для объекта [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842).
-[
-              **StreamWebSocketControl**
-            ](https://msdn.microsoft.com/library/windows/apps/br226924) предоставляет данные элемента управления сокетами для объекта [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
+[**MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) предоставляет данные элемента управления сокетами для объекта [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842).
+[**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) предоставляет данные элемента управления сокетами для объекта [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
 Основная модель использования расширенных элементов управления является одинаковой для обоих типов протоколов WebSocket. В следующем рассуждении [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) применяется в качестве примера, но такой же процесс можно использовать и для [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842).
 
 1.  Создайте объект [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
@@ -251,17 +245,11 @@ ms.openlocfilehash: 7e9ee140914718ce71357ba8ecaf10116949b87b
 
 ## Классы информации WebSocket
 
-[
-              **MessageWebSocket**
-            ](https://msdn.microsoft.com/library/windows/apps/br226842) и [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) имеют соответствующий класс, который обеспечивает дополнительную информацию об экземпляре WebSocket.
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) и [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) имеют соответствующий класс, который обеспечивает дополнительную информацию об экземпляре WebSocket.
 
-[
-              **MessageWebSocketInformation**
-            ](https://msdn.microsoft.com/library/windows/apps/br226849) предоставляет информацию о [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), , и вы можете извлечь экземпляр класса информации с помощью свойства [**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861).
+[**MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849) предоставляет информацию о [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), и вы можете извлечь экземпляр информационного класса с помощью свойства [**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861).
 
-[
-              **StreamWebSocketInformation**
-            ](https://msdn.microsoft.com/library/windows/apps/br226929) предоставляет информацию о [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), и вы можете извлечь экземпляр класса информации с помощью свойства [**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935).
+[**StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929) предоставляет информацию о [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), и вы можете извлечь экземпляр информационного класса с помощью свойства [**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935).
 
 Обратите внимание, что все свойства в обоих классах информации приведены только для чтения, а также что текущие сведения можно извлечь в любое время, пока существует объект веб-сокета.
 
@@ -273,7 +261,7 @@ ms.openlocfilehash: 7e9ee140914718ce71357ba8ecaf10116949b87b
 
 ## Назначение времени ожидания при выполнении операций с WebSocket
 
-Классы MessageWebSocket и StreamWebSocket используют внутреннюю системную службу для отправки запросов клиента WebSocket и получения откликов от сервера. Время ожидания, используемое для операции подключения WebSocket, по умолчанию составляет 60 секунд. Если HTTP-сервер, поддерживающий WebSocket, временно недоступен либо блокируется в результате отказа сети, и сервер не отвечает или не может ответить на запрос подключения WebSocket, внутренняя системная служба ожидает заданные по умолчанию 60 секунд, а затем возвращает ошибку, которая приводит к созданию исключения по методу WebSocket ConnectAsync. Если запрос имени HTTP-сервера в URI возвращает несколько IP-адресов, то перед завершением с ошибкой внутренняя системная служба проверяет до 5 IP-адресов для сайта, по умолчанию ожидая ответа по каждому адресу в течение 60 секунд. Приложение, создающее запрос подключения WebSocket, может ожидать несколько минут, повторяя попытки соединения с несколькими IP-адресами, а затем возвращает ошибку и создает исключение. Пользователю в этом случае может показаться, что приложение не работает. Время ожидания, используемое по умолчанию для операций отправки и получения после установления подключения WebSocket, составляет 30 секунд.
+Классы MessageWebSocket и StreamWebSocket используют внутреннюю системную службу для отправки запросов клиента WebSocket и получения откликов от сервера. Время ожидания, используемое для операции подключения WebSocket, по умолчанию составляет 60секунд. Если HTTP-сервер, поддерживающий WebSocket, временно недоступен либо блокируется в результате отказа сети, и сервер не отвечает или не может ответить на запрос подключения WebSocket, внутренняя системная служба ожидает заданные по умолчанию 60секунд, а затем возвращает ошибку, которая приводит к созданию исключения по методу WebSocket ConnectAsync. Если запрос имени HTTP-сервера в URI возвращает несколько IP-адресов, то перед завершением с ошибкой внутренняя системная служба проверяет до 5 IP-адресов для сайта, по умолчанию ожидая ответа по каждому адресу в течение 60секунд. Приложение, создающее запрос подключения WebSocket, может ожидать несколько минут, повторяя попытки соединения с несколькими IP-адресами, а затем возвращает ошибку и создает исключение. Пользователю в этом случае может показаться, что приложение не работает. Время ожидания, используемое по умолчанию для операций отправки и получения после установления подключения WebSocket, составляет 30секунд.
 
 Чтобы уменьшить влияние таких проблем и ускорить ответ приложения, можно задать более короткое время ожидания отклика на запросы соединения, чтобы операция завершалась с ошибкой раньше, чем при параметрах по умолчанию.
 
@@ -359,6 +347,6 @@ ms.openlocfilehash: 7e9ee140914718ce71357ba8ecaf10116949b87b
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

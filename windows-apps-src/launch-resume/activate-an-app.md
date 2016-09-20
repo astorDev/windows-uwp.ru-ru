@@ -36,7 +36,8 @@ ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
 
 Переопределите метод [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335). Этот метод вызывается при каждом запуске приложения пользователем. Параметр [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) содержит предыдущее состояние приложения и аргументы активации.
 
-**Примечание**  Для приложений из Магазина Windows Phone этот метод вызывается каждый раз, когда пользователь запускает приложение с начальной плитки или из списка приложений, даже если приложение находится в памяти в приостановленном состоянии. В Windows при запуске приостановленного приложения с начальной плитки или из списка приложений этот метод не вызывается.
+
+            **Примечание**  Для приложений из Магазина Windows Phone этот метод вызывается каждый раз, когда пользователь запускает приложение с начальной плитки или из списка приложений, даже если приложение находится в памяти в приостановленном состоянии. В Windows при запуске приостановленного приложения с начальной плитки или из списка приложений этот метод не вызывается.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -103,7 +104,7 @@ ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
 ## [!div class="tabbedCodeSnippets"]
 
 
-Восстановление данных приложения, если его работа была приостановлена, а затем завершена Когда пользователь переключается на приложение, которое завершило работу, система отправляет событие [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), свойству [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) которого задано значение **Launch**, а свойству [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) — значение **Terminated** или **ClosedByUser**.
+Восстановление данных приложения, если его работа была приостановлена, а затем завершена Когда пользователь переключается на приложение, которое завершило работу, система отправляет событие [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), свойству [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) которого задано значение **Launch**, а свойству [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729)— значение **Terminated** или **ClosedByUser**.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -162,7 +163,8 @@ ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
 
 ## [!div class="tabbedCodeSnippets"]
 
-> Если для свойства [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) задано значение **NotRunning**, это означает, что приложению не удалось успешно сохранить свои данные и поэтому оно вынуждено начать работу с состояния первоначального запуска. Примечания **Примечание**  Для приложений Магазина Windows Phone за событием [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) всегда следует событие [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), даже если работа приложения в настоящее время приостановлена и пользователь повторно запускает приложение с основной плитки или из списка приложений.
+> Если для свойства [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) задано значение **NotRunning**, это означает, что приложению не удалось успешно сохранить свои данные и поэтому оно вынуждено начать работу с состояния первоначального запуска. Примечания 
+            **Примечание**  Для приложений Магазина Windows Phone за событием [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) всегда следует событие [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), даже если работа приложения в настоящее время приостановлена и пользователь повторно запускает приложение с основной плитки или из списка приложений.
 
 ## Приложения могут пропустить инициализацию, если содержимое уже задано в текущем окне.
 

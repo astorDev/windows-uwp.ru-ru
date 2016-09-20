@@ -3,7 +3,6 @@ author: mtoepke
 title: "Переход с DirectX 9 на DirectX 11 и универсальную платформу Windows (UWP)"
 description: "Этот раздел содержит руководство по переносу классической игры DirectX 9 на DirectX 11 и универсальную платформу Windows (UWP)."
 ms.assetid: 7a3f8ddf-d5b2-1c05-b532-70459befda4e
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 0f27f9e9219fca10798a09e6f934b72ad7b1b5a8
 
@@ -12,7 +11,7 @@ ms.openlocfilehash: 0f27f9e9219fca10798a09e6f934b72ad7b1b5a8
 # Переход с DirectX 9 на DirectX 11 и универсальную платформу Windows (UWP)
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Этот раздел содержит руководство по переносу классической игры DirectX 9 на DirectX 11 и универсальную платформу Windows (UWP).
 

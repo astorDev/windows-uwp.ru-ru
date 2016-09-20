@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
 description: "В этом разделе описываются эффекты, предназначенные для сценариев видеозахвата. В том числе и эффект стабилизации видео."
 title: "Эффекты для видеозахвата"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
@@ -11,7 +10,7 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 # Эффекты для видеозахвата
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе описываются эффекты, предназначенные для сценариев видеозахвата. В том числе и эффект стабилизации видео.
 
@@ -64,8 +63,7 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 ### Обработка отключения эффекта стабилизации видео
 
-Система может автоматически отключать эффект стабилизации видео, если поток пикселей слишком высок и эффект не может с ним справиться либо работает медленно. В этом случае вызывается событие EnabledChanged. Экземпляр **VideoStabilizationEffect** в параметре *sender* показывает новое состояние эффекта: включен или выключен. [
-            **VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) имеет значение [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981), показывающее, по какой причине включен или выключен эффект. Обратите внимание, что это событие также вызывается при включении или выключении эффекта программным способом. В этом случае причина будет указана как **Programmatic**.
+Система может автоматически отключать эффект стабилизации видео, если поток пикселей слишком высок и эффект не может с ним справиться либо работает медленно. В этом случае вызывается событие EnabledChanged. Экземпляр **VideoStabilizationEffect** в параметре *sender* показывает новое состояние эффекта: включен или выключен. [**VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) имеет значение [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981), показывающее, по какой причине включен или выключен эффект. Обратите внимание, что это событие также вызывается при включении или выключении эффекта программным способом. В этом случае причина будет указана как **Programmatic**.
 
 Как правило, это событие используется для того, чтобы настроить в пользовательском интерфейсе приложения отображение текущего состояния стабилизации видео.
 

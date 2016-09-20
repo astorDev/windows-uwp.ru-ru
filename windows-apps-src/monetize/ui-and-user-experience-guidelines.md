@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "Ознакомьтесь с рекомендациями по пользовательскому интерфейсу и взаимодействию с пользователем для рекламы в приложениях."
 title: "Рекомендации по пользовательскому интерфейсу и взаимодействию с пользователем для рекламы в приложениях"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a
 
@@ -13,7 +12,7 @@ ms.openlocfilehash: 87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a
 # Рекомендации по пользовательскому интерфейсу и взаимодействию с пользователем для рекламы в приложениях
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## Общие ресурсы пользовательского интерфейса для приложений для Windows
 

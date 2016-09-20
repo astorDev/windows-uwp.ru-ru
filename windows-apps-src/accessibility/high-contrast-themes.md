@@ -1,177 +1,297 @@
 ---
 author: Xansky
-Description: "В этом разделе описываются шаги, которые необходимо предпринять, чтобы ваше приложение универсальной платформы Windows (UWP) можно было использовать, когда активна тема с высокой контрастностью."
+description: "В этом разделе описываются шаги, которые необходимо предпринять, чтобы ваше приложение универсальной платформы Windows (UWP) можно было использовать, когда активна тема с высокой контрастностью."
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: "Темы с высокой контрастностью"
-label: High-contrast themes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 4201f5a0b08f1fc8d691218da0803ee04ab2c86a
+ms.sourcegitcommit: f3da82cab8813653a6ee999976983937649b42b2
+ms.openlocfilehash: 30785998d11f09ef94f33789e3e74b0933d9c83e
 
 ---
 
 # Темы с высокой контрастностью  
 
-В этом разделе описываются шаги, которые необходимо предпринять, чтобы ваше приложение универсальной платформы Windows (UWP) можно было использовать, когда активна тема с высокой контрастностью.
+Windows поддерживает темы с высокой контрастностью для операционной системы и приложений, которые пользователи могут включить. В темах с высокой контрастностью используется небольшая палитра контрастных цветов, благодаря чему интерфейс хорошо видно.
 
-В приложении UWP темы с высокой контрастностью поддерживаются по умолчанию. Если пользователь выбрал тему с высокой контрастностью в системных параметрах или в средствах специальных возможностей, платформа автоматически использует настройки цветов и стиля, обеспечивающие высокую контрастность макета, элементов управления и компонентов в пользовательском интерфейсе.
+**Рисунок 1. Калькулятор в светлой теме и в черной теме с высокой контрастностью.**
 
-Такая поддержка по умолчанию основана на использовании шаблонов и тем по умолчанию. Эти темы и шаблоны ссылаются в определениях ресурсов на системные цвета. Когда система использует режим высокой контрастности, источники ресурсов изменяются автоматически. Если же вы используете для элементов управления другие шаблоны, темы и стили, будьте внимательны: не отключайте встроенную поддержку высокой контрастности. Если для создания стиля вы используете один из конструкторов XAML для Microsoft Visual Studio, то вместе с основной темой конструктор будет создавать отдельную тему с высокой контрастностью каждый раз, когда вы определите шаблон, который значительно отличается от шаблона по умолчанию. Отдельные словари тем переходят в коллекцию [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.themedictionaries.aspx), специальное свойство элемента [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794).
+![Калькулятор в светлой теме и в черной теме с высокой контрастностью.](images/high-contrast-calculators.png)
 
-Дополнительные сведения о темах и шаблонах элементов управления см. в статье [Краткое руководство: шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/Hh465374). Зачастую полезно ознакомиться со словарями ресурсов XAML и темами для конкретных элементов управления и узнать, как строятся темы и как они ссылаются на ресурсы, которые в целом похожи, но все же различаются для каждой возможной настройки высокой контрастности.
 
-## Тематические словари
+Для переключения на тему с высокой контрастностью последовательно щелкните *Параметры > Специальные возможности > Высокая контрастность*.
 
-Если необходимо использовать цвет, отличный от используемого системой по умолчанию, или добавить изображения для украшения, например установить фоновое изображение, создайте коллекцию **ThemeDictionaries** для своего приложения.
+> [!NOTE]
+> Не путайте темы с высокой контрастностью со светлыми и темными темами. Последние представлены в гораздо более разнообразной цветовой палитре, которая не считается палитрой с высокой контрастностью. Более подробные сведения о светлых и темных темах см. в статье о [цвете](../style/color.md).
 
-* Начните с создания надлежащих элементов подключения, если они еще не созданы. В файле App.xaml создайте коллекцию **ThemeDictionaries**:
+Стандартные элементы управления предоставляются с полной бесплатной поддержкой высокой контрастности, а вот при пользовательской настройке интерфейса следует проявлять осторожность. Самая распространенная ошибка в области высокой контрастности вызвана жестким программированием цвета в элементе управления.
 
-``` xaml
- <Application.Resources>
-    <ResourceDictionary>
-        <ResourceDictionary.ThemeDictionaries>
-            <!-- Default is a fallback if a more precise theme isn't called out below -->
-            <ResourceDictionary x:Key="Default">
+```xaml
+<!-- Don't do this! -->
+<Grid Background="#E6E6E6">
 
-            </ResourceDictionary>
-            <!-- HighContrast is used in any high contrast theme -->
-            <ResourceDictionary x:Key="HighContrast">
-
-            </ResourceDictionary>
-        </ResourceDictionary.ThemeDictionaries>
-    </ResourceDictionary>
-</Application.Resources
+<!-- Instead, create BrandedPageBackgroundBrush and do this. -->
+<Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-* 
-            **HighContrast** — не единственное возможное имя ключа. Также существуют **HighContrastBlack**, **HighContrastWhite** и **HighContrastCustom**. В большинстве случаев **HighContrast** будет достаточно.
-* В разделе **Default** создайте тот тип инструмента [**Brush**](http://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx), который вам необходим; чаще всего это **SolidColorBrush**. Задайте ему имя **x:Key**, указывающее его предназначение.<br/>
-    `<SolidColorBrush x:Key="BrandedPageBackground" />`
-* Назначьте ему требуемое значение цвета **Color**.<br/>
-    `<SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />`
-* Скопируйте этот инструмент **Brush** в **HighContrast**.
+Если цвет `#E6E6E6` задан в самом элементе (см. первый пример), этот цвет фона будет использоваться во всех темах сетки. Если пользователь переключается на черную тему с высокой контрастностью, ожидается, что у приложения будет черный фон. Поскольку `#E6E6E6` почти белый, некоторые пользователи не смогут взаимодействовать с вашим приложением.
+
+Во втором примере [**расширение разметки {ThemeResource}**](../xaml-platform/themeresource-markup-extension.md) используется для ссылки на цвет в коллекции [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.themedictionaries.aspx), которая представляет собой выделенное свойство элемента [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794). ThemeDictionaries позволяет XAML автоматически менять для вас цвета с учетом текущей темы пользователя.
+
+## Словари тем
+
+Если необходимо изменить цвет, заданный в системе по умолчанию, создайте для приложения коллекцию ThemeDictionaries.
+
+1. Начните с создания надлежащих элементов подключения, если они еще не созданы. В файле App.xaml создайте коллекцию ThemeDictionaries и включите в нее (как минимум) элементы **Default** и **HighContrast**.
+2. В разделе Default создайте нужный тип элемента [Brush](http://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx)— как правило, это кисть SolidColorBrush. Присвойте этому элементу имя x:Key, указывающее на его предназначение.
+3. Назначьте ему требуемое значение цвета Color.
+4. Скопируйте этот инструмент Brush в раздел HighContrast.
 
 ``` xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.ThemeDictionaries>
-            <!-- Default is a fallback if a more precise theme isn't called out below -->
+            <!-- Default is a fallback if a more precise theme isn't called
+            out below -->
             <ResourceDictionary x:Key="Default">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
             </ResourceDictionary>
-            <!-- HighContrast is used in any high contrast theme -->
+
+            <!-- Optional, Light is used in light theme.
+            If included, Default will be used for Dark theme -->
+            <ResourceDictionary x:Key="Light">
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
+            </ResourceDictionary>
+
+            <!-- HighContrast is used in all high contrast themes -->
             <ResourceDictionary x:Key="HighContrast">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
             </ResourceDictionary>
         </ResourceDictionary.ThemeDictionaries>
     </ResourceDictionary>
 </Application.Resources>
 ```
 
-* Определите, какого цвета должен быть ваш инструмент **Brush**, и измените его в **HighContrast**.
+Наконец, нужно определить, какой цвет использовать в режиме высокой контрастности (см. следующий раздел).
 
-Определение цвета для режима высокой контрастности требует определенной подготовки. Созданные вами ранее элементы подключения облегчают изменение кода.
+> [!NOTE]
+> HighContrast— не единственное доступное имя ключа. Также существуют HighContrastBlack, HighContrastWhite и HighContrastCustom. В большинстве случаев HighContrast будет достаточно.
 
 ## Высококонтрастные цвета
 
-Пользователи могут переключаться в режим высокой контрастности на странице параметров. Существует 4 темы с высокой контрастностью по умолчанию. Когда пользователь выбирает какой-либо вариант, на странице отображается предварительный образец того, как будут выглядеть приложения.
+На странице *Параметры > Специальные возможности > Высокая контрастность* по умолчанию доступны 4 темы с высокой контрастностью. 
 
-![Параметры высокой контрастности](images/high-contrast-settings.png)<br/>
-_Параметры высокой контрастности_
+**Рисунок 2. После того как пользователь выберет один из параметров, на странице отображается образец для предварительного просмотра.**
 
- Каждый квадрат на предварительном образце можно нажать, чтобы изменить его значение. Каждый квадрат также непосредственно сопоставляется системному ресурсу.
+![Параметры высокой контрастности](images/high-contrast-settings.png)
 
-![Высококонтрастные ресурсы](images/high-contrast-resources.png)<br/>
-_Высококонтрастные ресурсы_
+**Рисунок 3. Каждый набор цветов на образце для предварительного просмотра можно нажать, чтобы изменить его значение. Каждый набор также напрямую связан с ресурсом цвета XAML.**
 
-Если использовать для приведенных выше имен префиксы _SystemColor_ и постфиксы _Color_, например **SystemColorWindowTextColor**, они будут динамически обновляться в соответствии с параметрами, которые укажет пользователь. Это позволяет вам не выбирать конкретный цвет для режима высокой контрастности. Вместо этого выберите системный ресурс, соответствующий тому, для чего используется этот цвет. В приведенном выше примере мы задали цвету фона страницы имя **SolidColorBrushBrandedPageBackground**. Поскольку этот элемент будет использоваться для фона, можно сопоставить ему **SystemColorWindowColor** в режиме высокой контрастности.
+![Высококонтрастные ресурсы](images/high-contrast-resources.png)
+
+Каждый ресурс `SystemColor*Color` представляет собой переменную, которая автоматически обновляет цвет, когда пользователь меняет высококонтрастные темы. Ниже приведены рекомендации о том, где и когда использовать каждый ресурс.
+
+Ресурс | Использование
+-------- | -----
+SystemColorWindowTextColor | Основной текст, заголовки, списки; любой текст, с которым невозможно осуществлять взаимодействие
+SystemColorHotlightColor | Гиперссылки
+SystemColorGrayTextColor | Отключенный пользовательский интерфейс
+SystemColorHighlightTextColor | Основной цвет текста или элементов пользовательского интерфейса, которые в настоящее время выполняются, выбраны или участвуют во взаимодействии
+SystemColorHighlightColor | Фоновый цвет текста или элементов пользовательского интерфейса, которые в настоящее время выполняются, выбраны или участвуют во взаимодействии
+SystemColorButtonTextColor | Основной цвет кнопок и любых элементов пользовательского интерфейса, с которыми можно осуществлять взаимодействие
+SystemColorButtonFaceColor | Фоновый цвет кнопок и любых элементов пользовательского интерфейса, с которыми можно осуществлять взаимодействие
+SystemColorWindowColor | Фон страниц, областей, всплывающих окон и панелей
+<br/>
+Часто полезно взглянуть на существующие приложения, меню «Пуск» и стандартные элементы управления, чтобы понять, как другие разработчики решают аналогичные задачи по созданию высококонтрастного интерфейса.
+
+**Рекомендуется**
+
+* По возможности сохранять пары основных и фоновых цветов.
+* Протестировать работающее приложение во всех 4 темах с высокой контрастностью. После переключения тем не должно возникать необходимости в перезапуске приложения.
+* Соблюдать единообразие.
+
+**Не рекомендуется**
+
+* Выполнять жесткое кодирование цвета в теме HighContrast; используйте ресурсы `SystemColor*Color`.
+* Выберите ресурс цвета, исходя из эстетических предпочтений. Помните, что цвета меняются с темой!
+* Не используйте `SystemColorGrayTextColor` для основного текста, который является дополнительным или выступает в качестве подсказки.
+
+
+Чтобы продолжить предыдущий пример, необходимо выбрать ресурс для `BrandedPageBackgroundBrush`. Поскольку имя указывает, что он будет использован для фона, имеет смысл выбрать `SystemColorWindowColor`.
 
 ``` xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.ThemeDictionaries>
-            <!-- Default is a fallback if a more precise theme isn't called out below -->
+            <!-- Default is a fallback if a more precise theme isn't called
+            out below -->
             <ResourceDictionary x:Key="Default">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
             </ResourceDictionary>
-            <!-- HighContrast is used in any high contrast theme -->
+
+            <!-- Optional, Light is used in light theme.
+            If included, Default will be used for Dark theme -->
+            <ResourceDictionary x:Key="Light">
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
+            </ResourceDictionary>
+
+            <!-- HighContrast is used in all high contrast themes -->
             <ResourceDictionary x:Key="HighContrast">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="{ThemeResource SystemColorWindowColor}" />
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="{ThemeResource SystemColorWindowColor}" />
             </ResourceDictionary>
         </ResourceDictionary.ThemeDictionaries>
     </ResourceDictionary>
 </Application.Resources>
 ```
 
-При работе с исходной палитрой из 8 высококонтрастных цветов не требуется создавать какие-либо дополнительные высококонтрастные словари **ResourceDictionaries**. Эта ограниченная палитра может вызвать определенные сложности при представлении сложных визуальных состояний. Зачастую добавление границы к области только в режиме высокой контрастности может улучшить ситуацию.
+Теперь можно задать фон в приложении.
 
-### Рекомендации
-
-* Проводите тестирование в режиме высокой контрастности часто и на ранних стадиях разработки.
-* Присваивайте имена цветам с указанием их предназначения.
-* Помещайте примитивы, такие как **Color**, **Brush** и **Thickness** в словари **ThemeDictionaries**. Старайтесь не размещать в них более сложные ресурсы, такие как **Style**. Следующий пример работает отлично.
-
-``` xaml
-<Application.Resources>
-    <ResourceDictionary>
-        <ResourceDictionary.ThemeDictionaries>
-            <!-- Default is a fallback if a more precise theme isn't called out below -->
-            <ResourceDictionary x:Key="Default">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />
-            </ResourceDictionary>
-            <!-- HighContrast is used in any high contrast theme -->
-            <ResourceDictionary x:Key="HighContrast">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="{ThemeResource SystemColorWindowColor}" />
-            </ResourceDictionary>
-        </ResourceDictionary.ThemeDictionaries>
-
-        <Style x:Key="MyButtonStyle" TargetType="Button">
-            <Setter Property="Foreground" Value="{ThemeResource BrandedPageBackground}" />
-        </Style>
-    </ResourceDictionary>
-</Application.Resources>
-
-...
-
-<Button Style="{StaticResource MyButtonStyle}" />
+```xaml
+<Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-* Используйте высококонтрастные цвета переднего плана для элементов пользовательского интерфейса, расположенных на переднем плане.
-* Используйте высококонтрастные цвета с заданными цветовыми парами. Например, всегда используйте **BUTTONTEXT** с **BUTTONFACE**, особенно в ситуациях с использованием переднего и заднего плана.
-* Используйте рекомендуемые пары высококонтрастных цветов для определенных элементов пользовательского интерфейса, чтобы достичь требуемого коэффициента контрастности 14:1.
-* Не разбивайте пары высококонтрастных цветов и не смешивайте высококонтрастные цвета произвольным образом. Зачастую это приводит к образованию невидимых элементов пользовательского интерфейса хотя бы в одной из предустановленных высококонтрастных тем.
-* Не используйте объекты **Brush**, созданные за пределами коллекции **ThemeDictionaries**.
-* Ни в коем случае не используйте **StaticResource** для ссылок на ресурс в коллекции **ThemeDictionaries**. Возможно, это будет работать, но только до тех пор, пока пользователь не сменит тему во время работы приложения. Вместо этого используйте **ThemeResource**.
-* Не используйте жестко заданные значения цвета.
-* Не используйте какой-либо цвет просто потому, что он вам нравится.
-
-Дополнительные сведения см. в разделе [Ресурсы тем в XAML](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources).
+Обратите внимание, что `{ThemeResource}` используется дважды: один раз, чтобы создать ссылку на `SystemColorWindowColor`, а второй— на `BrandedPageBackgroundBrush`. Оба необходимы для правильного использования темы в приложении во время выполнения. Это хорошая возможность протестировать эту функциональность в вашем приложении. Фон сетки автоматически обновляется по мере переключения на высококонтрастную тему. Фон также обновляется при переключении между разными высококонтрастными темами.
 
 ## Когда следует использовать границы
-В режиме высокой контрастности добавляйте границы элементу пользовательского интерфейса, если необходимо сохранить узнаваемые очертания этого элемента. Используйте границы для различения между областями, используемыми для содержимого, навигации и действий.
 
-![Область навигации отделена от других частей страницы](images/high-contrast-actions-content.png)<br/>
-_Область навигации отделена от других частей страницы_
+`SystemColorWindowColor` следует использовать для фона страниц, областей, всплывающих окон и панелей в режиме высокой контрастности. Чтобы сохранить важные границы в пользовательском интерфейсе, при необходимости можно добавить границу высокой контрастности.
 
-Если элемент пользовательского интерфейса _не_ имеет границы или фона по умолчанию, не добавляйте границу или фон в состояние по умолчанию для режима высокой контрастности.
+**Рисунок 4. Панель навигации и страница имеют общий цвет фона в режиме высокой контрастности. Для их разделения необходимо использовать границу высокой контрастности.**
 
-Если элемент пользовательского интерфейса _имеет_ границу по умолчанию, сохраните границу в режиме высокой контрастности.
+![Область навигации отделена от других частей страницы](images/high-contrast-actions-content.png)
 
-Перекрывающиеся и соседствующие цвета должны отличаться от друг от друга, но они не обязательно должны достигать коэффициента цветовой контрастности 14:1. Однако для таких случаев рекомендуется использовать коэффициент контрастности 3:1.
+## Элементы списка
 
-Если для различения перекрывающихся элементов пользовательского интерфейса используются высококонтрастные цвета фона, единственным методом гарантированного обеспечения контрастности между этими элементами является применение границ.
+В режиме высокой контрастности для элементов в [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) при наведении, нажатии или выборе используется фон `SystemColorHighlightColor`. Сложные элементы списка содержат ошибку, когда содержимое элемента списка не меняет цвет при наведении на элемент, нажатии или выборе элемента. В результате прочитать элемент невозможно.
 
-## Обнаружение включения темы с высокой контрастностью  
-Используйте члены класса [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237), чтобы определить текущие параметры тем с высокой контрастностью. Свойство [**HighContrast**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrast) определяет, установлена ли в данный момент тема с высокой контрастностью. Если свойство **HighContrast** имеет значение **true**, то нужно проверить значение свойства [**HighContrastScheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrastscheme), чтобы получить имя используемой высококонтрастной темы. Типичные значения **HighContrastScheme**, на которые должен реагировать ваш код, — "High Contrast White" (Контрастная белая) и "High Contrast Black" (Контрастная черная). Определяемые в XAML ключи [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) не могут содержать пробелов. Поэтому ключи этих тем в словаре ресурсов обычно имеют вид "HighContrastWhite" и "HighContrastBlack" соответственно. Следует также предусмотреть логику перехода для темы с высокой контрастностью по умолчанию на случай, если значение задается другой строкой. 
-            Такую логику демонстрирует [пример XAML с высокой контрастностью](http://go.microsoft.com/fwlink/p/?linkid=254993).
+**Рисунок 5. Простой список в светлой теме (слева) и черной теме с высокой контрастностью (справа). Выбран второй элемент; обратите внимание, как цвет текста меняется в режиме высокой контрастности.**
+
+![Простой список в светлой теме и черной теме высокой контрастности](images/high-contrast-list1.png)
+
+
+
+### Элементы списка с цветным текстом
+
+Одно из затруднений— настройка параметра TextBlock.Foreground в элементе [DataTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) представления списка. Это обычно делается, чтобы установить визуальную иерархию. Свойство Foreground настраивается в элементе [ListViewItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx), а элемент TextBlocks в шаблоне DataTemplate наследует правильный цвет фона при наведении на элемент, нажатии или выборе элемента. Однако при настройке параметра Foreground наследование нарушается.
+
+**Рисунок 6. Сложный список в светлой теме (слева) и черной теме с высокой контрастностью (справа). Обратите внимание, что в режиме высокой контрастности вторая строка выбранного элемента не поменяла цвет.**
+
+![Сложный список в светлой теме и черной теме высокой контрастности](images/high-contrast-list2.png)
+
+Чтобы решить эту проблему, можно условно настроить параметр Foreground в элементе Style, который находится в коллекции ThemeDictionaries. Поскольку параметр Foreground не настраивается элементом SecondaryBodyTextBlockStyle из коллекции HighContrast, его цвет будет меняться правильно.
+
+```xaml
+<!-- In App.xaml... -->
+<ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Default">
+        <Style
+            x:Key="SecondaryBodyTextBlockStyle"
+            TargetType="TextBlock"
+            BasedOn="{StaticResource BodyTextBlockStyle}">
+            <Setter Property="Foreground" Value="{StaticResource SystemControlForegroundBaseMediumBrush}" />
+        </Style>
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="Light">
+        <Style
+            x:Key="SecondaryBodyTextBlockStyle"
+            TargetType="TextBlock"
+            BasedOn="{StaticResource BodyTextBlockStyle}">
+            <Setter Property="Foreground" Value="{StaticResource SystemControlForegroundBaseMediumBrush}" />
+        </Style>
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="HighContrast">
+        <!-- The Foreground Setter is omitted in HighContrast -->
+        <Style
+            x:Key="SecondaryBodyTextBlockStyle"
+            TargetType="TextBlock"
+            BasedOn="{StaticResource BodyTextBlockStyle}" />
+    </ResourceDictionary>
+</ResourceDictionary.ThemeDictionaries>
+
+<!-- Usage in your DataTemplate... -->
+<DataTemplate>
+    <StackPanel>
+        <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="Double line list item" />
+
+        <!-- Note how ThemeResource is used to reference the Style -->
+        <TextBlock Style="{ThemeResource SecondaryBodyTextBlockStyle}" Text="Second line of text" />
+    </StackPanel>
+</DataTemplate>
+```
+
+### Элементы списка с кнопками и ссылками
+
+Иногда в состав элементов списка входят более сложные элементы управления, такие как [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.hyperlinkbutton.aspx) или [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx). Эти элементы управления имеют собственные состояния для наведения, нажатия и выбора, которые не работают таким же образом для элемента списка. В черной теме с высокой контрастностью гиперссылки желтые, что осложняет их чтение при наведении указателя на элемент списка, нажатии или выборе элемента.
+
+**Рисунок 7. Обратите внимание, как сложно прочитать гиперссылку в режиме высокой контрастности.**
+
+![Список с гиперссылкой в светлой теме и черной теме высокой контрастности](images/high-contrast-list3.png)
+
+Чтобы решить эту проблему, нужно задать фон DataTemplate равным `SystemColorWindowColor` с высокой контрастностью. Это создает эффект рамки с высокой контрастностью.
+
+```xaml
+<!-- In App.xaml... -->
+<ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Default">
+        <SolidColorBrush x:Key="HighContrastOnlyBackgroundBrush" Color="Transparent" />
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="HighContrast">
+        <SolidColorBrush x:Key="HighContrastOnlyBackgroundBrush" Color="{ThemeResource SystemColorWindowColor}" />
+    </ResourceDictionary>
+</ResourceDictionary.ThemeDictionaries>
+
+<!-- Usage in your ListView... -->
+<ListView>
+    <ListView.ItemContainerStyle>
+        <Style TargetType="ListViewItem">
+            <!-- Causes the DataTemplate to fill the entire width and height
+            of the list item -->
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+
+            <!-- Padding is handled in the DataTemplate -->
+            <Setter Property="Padding" Value="0" />
+        </Style>
+    </ListView.ItemContainerStyle>
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <!-- Margin of 2px allows some of the ListViewItem's background
+            to shine through. An additional left padding of 10px puts the
+            content a total of 12px from the left edge -->
+            <StackPanel
+                Margin="2,2,2,2"
+                Padding="10,0,0,0"
+                Background="{ThemeResource HighContrastOnlyBackgroundBrush}">
+
+                <!-- Foreground is explicitly set so that it doesn't
+                disappear on hovered, pressed, or selected -->
+                <TextBlock
+                    Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                    Text="Double line list item" />
+
+                <HyperlinkButton Content="Hyperlink" />
+            </StackPanel>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
+```
+**Рисунок 8. Эффект рамки— отличное решение, если в элементах списка имеются более сложные элементы управления.**
+
+![Список с гиперссылкой в светлой теме и черной теме высокой контрастности, исправлено](images/high-contrast-list4.png)
+
+
+
+## Обнаружение высокой контрастности
+
+Можно программным способом проверить, является ли текущая тема темой с высокой контрастностью, воспользовавшись элементами класса [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237).
 
 > [!NOTE]
-> Убедитесь, что конструктор [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237) вызывается из области, в которой приложение инициализировано и уже отображает содержимое.
+> Убедитесь, что конструктор **AccessibilitySettings** вызывается из области, в которой приложение инициализировано и уже отображает содержимое.
 
-Приложения могут переключаться на значения ресурсов для высокой контрастности во время выполнения. Это работает, если ресурсы запрашиваются при помощи [расширения разметки {ThemeResource}](https://msdn.microsoft.com/library/windows/apps/Mt185591) в коде XAML стиля или шаблона. Такой прием с расширением разметки {ThemeResource} действует для всех тем по умолчанию (generic.xaml). Благодаря этому при использовании тем элементов управления по умолчанию можно переходить на высокую контрастность во время работы приложения. Если применить такой же прием с ресурсами расширения разметки {ThemeResource} в пользовательских шаблонах и стилях, эта возможность будет доступна также для пользовательских элементов управления и их стилей.
-
-## Связанные разделы  
+## Связанные статьи  
 * [Специальные возможности](accessibility.md)
 * [Пример контрастности и параметров пользовательского интерфейса](http://go.microsoft.com/fwlink/p/?linkid=231539)
 * [Пример XAML accessibility](http://go.microsoft.com/fwlink/p/?linkid=238570)
@@ -180,6 +300,6 @@ _Область навигации отделена от других часте
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

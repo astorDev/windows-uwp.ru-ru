@@ -1,60 +1,67 @@
 ---
 author: mcleanbyron
 ms.assetid: FD381669-F962-465E-940B-AED9C8D19C90
-description: Learn how to use the Windows.Services.Store namespace to work with consumable add-ons.
-title: Enable consumable add-on purchases
-keywords: in-app offer
-keywords: consumable
-keywords: in-app purchase
-keywords: in-app product
-keywords: how to support in-app
-keywords: in-app purchase code sample
-keywords: in-app offer code sample
+description: "Узнайте, как использовать пространство имен Windows.Services.Store для работы с потребляемыми надстройками."
+title: "Поддержка покупок потребляемых надстроек внутри приложения"
+keywords: "Пример кода продажи из приложения"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 1e9ecad5abb9addbe41b38d0b56b84404716f2a8
+
 ---
 
-# Enable consumable add-on purchases
+# Поддержка покупок потребляемых надстроек внутри приложения
 
-Apps that target Windows 10, version 1607 or later can use methods of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage the user's fulfillment of consumable add-ons in your UWP apps (add-ons are also known as in-app products or IAPs). Use consumable add-ons for items that can be purchased, used, and purchased again. This is especially useful for things like in-game currency (gold, coins, etc.) that can be purchased and then used to purchase specific power-ups.
+Приложения, предназначенные для Windows 10 версии 1607 и выше, могут использовать методы класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) для управления покупкой пользователями потребляемых надстроек в приложениях UWP (надстройки также называются внутренними продуктами приложения или IAP). Используйте потребляемые надстройки для элементов, которые можно приобретать, использовать и снова приобретать. Это особенно удобно при покупке виртуальной валюты для игр (например, золота или монет), которую можно потом использовать в процессе игры.
 
->**Note** This article is applicable to apps that target Windows 10, version 1607 or later. If your app targets an earlier version of Windows 10, you must use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead of the **Windows.Services.Store** namespace. For more information, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+>**Примечание.**&nbsp;&nbsp;Эта статья относится к приложениям, предназначенным для Windows 10 версии 1607 и старше. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Подробнее см. в разделе [Внутренние покупки приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-## Overview of consumable add-ons
+## Обзор потребляемых надстроек
 
-Apps that target Windows 10, version 1607 or later can offer two types of consumable add-ons that differ in the way that fulfillments are managed:
+Приложения, предназначенные для Windows 10 версии 1607 и выше, могут предлагать два типа потребляемых надстроек, которые отличаются способом управления покупками:
 
-* **Developer-managed consumable**. For this type of consumable, you are responsible for keep tracking of the user's balance of items that the add-on represents. For example, if your add-on represents 100 coins in a game and the user consumes 10 coins, your app must report the add-on as fulfilled to the Store and your app or service must maintain the new remaining balance for the user.
-* **Store-managed consumable**. For this type of consumable, Microsoft keeps track of the user's balance of items that the add-on represents. For example, if your add-on represents an initial quantity of 100 coins in a game and the user consumes 10 coins, your app reports to the Store that 10 units of the add-on were fulfilled, and the Store maintains the remaining balance. **This type is available starting in Windows 10, version 1607. The ability to create a Store-managed consumable in the Windows Dev Center dashboard is coming soon.**
+* **Потребляемый элемент, управляемый разработчиком**. Для этого типа потребляемых элементов вы отвечаете за отслеживание баланса пользователя для элементов, представляемых настройкой, а также за сообщение Магазину о том, что купленная надстройка израсходована, после того как пользователь израсходует все элементы. Пользователь не может снова приобрести надстройку, пока ваше приложение не сообщит об израсходовании предыдущей покупки.
 
-To offer a consumable add-on to a user, follow this general process:
+  Например, если ваша надстройка представляет 100 игровых монет и пользователь израсходовал 10 монет, ваше приложение или служба должны поддерживать для пользователя новый баланс остатка в 90 монет. Когда пользователь израсходует все 100 монет, ваше приложение должно сообщить, что надстройка израсходована, после чего пользователь снова сможет приобрести 100 монет из надстройки.
 
-1. Enable users to [purchase the add-on](enable-in-app-purchases-of-apps-and-add-ons.md) from your app.
-3. When the user consumes the add-on (for example, they spend coins in a game), [report the add-on as fulfilled](enable-consumable-add-on-purchases.md#report_fulfilled).
+* **Потребляемый элемент, управляемый Магазином**. Для этого типа потребляемых элементов, представляемых надстройкой, учет баланса пользователя производится Магазином. Когда пользователь использует какие-либо элементы, вы должны сообщить Магазину, что эти элементы израсходованы, после чего Магазин обновляет баланс пользователя. Приложение может в любой момент запросить текущий баланс пользователя. Когда пользователь израсходует все элементы, он снова может приобрести надстройку.
 
-At any time, you can also [get the remaining balance](enable-consumable-add-on-purchases.md#get_balance) for a Store-managed consumable.
+  Например, если надстройка представляет начальную сумму в 100 игровых монет и пользователь израсходовал 10 монет, приложение сообщает Магазину, что израсходованы 10 единиц надстройки, и Магазин обновляет баланс. Когда пользователь израсходует все 100 монет, он сможет снова купить 100 монет надстройки.
 
-## Prerequisites
+  >**Примечание.**&nbsp;&nbsp;Потребляемые элементы, управляемые Магазином, доступны начиная с Windows 10 версии 1607. Скоро будет реализована возможность создавать потребляемые элементы, управляемые Магазином, на информационной панели Центра разработки для Windows.
 
-These examples have the following prerequisites:
-* A Visual Studio project for a Universal Windows Platform (UWP) app that targets Windows 10, version 1607 or later.
-* You have created an app in the Windows Dev Center dashboard with consumable add-ons (also known as in-app products or IAPs), and this app is published and available in the Store. This can be an app that you want to release to customers, or it can be a basic app that meets minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements that you are using for testing purposes only. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
+Чтобы предложить пользователю потребляемую надстройку, следуйте приведенному ниже общему процессу.
 
-The code in these examples assume:
-* The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.
-* The code file has a **using** statement for the **Windows.Services.Store** namespace.
-* The app is a single-user app that runs only in the context of the user that launched the app. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md#api_intro).
+1. Разрешите пользователями [приобретать надстройку](enable-in-app-purchases-of-apps-and-add-ons.md) из приложения.
+3. Когда пользователь израсходует надстройку (например, истратит монеты в игре), [сообщите, что надстройка израсходована](enable-consumable-add-on-purchases.md#report_fulfilled).
+
+В любой момент можно также [получить оставшийся баланс](enable-consumable-add-on-purchases.md#get_balance) для потребляемого элемента, управляемого Магазином.
+
+## Предварительные условия и необходимые компоненты
+
+Для этих примеров необходимо выполнение следующих предварительных условий:
+* Создан проект Visual Studio для приложения универсальной платформы Windows (UWP), предназначенный для Windows 10 версии 1607 и выше.
+* На панели Центра разработки для Windows создано приложение с потребляемыми надстройками (также называемыми внутренними продуктами приложения или IAP), и это приложение опубликовано и доступно в Магазине. Это может быть приложение, которое вы хотите предложить пользователям, или базовое приложение, соответствующее минимальным требованиям [комплекта сертификации приложений для Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) и используемое только для тестирования. Подробнее см. в [руководстве по тестированию](in-app-purchases-and-trials.md#testing).
+
+В коде из этих примеров предполагается следующее:
+* Код выполняется в контексте страницы [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx), которая содержит [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) с именем ```workingProgressRing``` и [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) с именем ```textBlock```. Эти объекты используются для индикации выполнения асинхронной операции и отображения выводимых сообщений, соответственно.
+* Файл кода содержит оператор **using** для пространства имен **Windows.Services.Store**.
+* Приложение является однопользовательским и выполняется только в контексте пользователя, запустившего его. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md#api_intro).
+
+Полный пример приложения см. в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
 <span id="report_fulfilled" />
-## Report a consumable add-on as fulfilled
+## Сообщение о том, что потребляемая надстройка израсходована
 
-After the user [purchases the add-on](enable-in-app-purchases-of-apps-and-add-ons.md) from your app and they consume your add-on, your app must report the add-on as fulfilled by calling the [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.reportconsumablefulfillmentasync.aspx) method of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class. You must pass the following information to this method:
+После того как пользователь [приобрел надстройку](enable-in-app-purchases-of-apps-and-add-ons.md) из приложения и израсходовал ее, приложение должно сообщить об израсходовании надстройки, вызвав метод [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.reportconsumablefulfillmentasync.aspx) класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Этому методу необходимо передать следующую информацию:
 
-* The [Store ID](in-app-purchases-and-trials.md#store_ids) of the add-on that you want to report as fulfilled.
-* The units of the add-on you want to report as fulfilled.
-  * For a developer-managed consumable, specify 1 for the *quantity* parameter. This alerts the Store that the consumable has been fulfilled, and the customer can then purchase the consumable again. The user cannot purchase the consumable again until your app has notified the Store that it was fulfilled.
-  * For a Store-managed consumable, specify the actual number of units that have been consumed. The Store will update the remaining balance for the consumable.
-* The tracking ID for the fulfillment. This is a developer-supplied GUID that identifies the specific transaction that the fulfillment operation is associated with for tracking purposes. For more information, see the remarks in [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.reportconsumablefulfillmentasync.aspx).
+* [Код продукта в Магазине](in-app-purchases-and-trials.md#store_ids) для надстройки, об израсходовании которой требуется сообщить.
+* Единицы надстройки, об израсходовании которой требуется сообщить.
+  * В случае потребляемого элемента, управляемого разработчиком, укажите для параметра *quantity* значение «1». Таким образом Магазин извещается, что потребляемый элемент израсходован, и пользователь снова может приобрести этот потребляемый элемент. Пользователь не может снова приобрести потребляемый элемент, пока приложение не уведомит Магазин о том, что этот элемент израсходован.
+  * В случае потребляемого элемента, управляемого Магазином, укажите фактическое число израсходованных единиц. Магазин обновит оставшийся баланс для потребляемого элемента.
+* Код отслеживания для расхода. Это предоставляемый разработчиком идентификатор GUID, который определяет конкретную транзакцию, с которой связана операция расхода для целей отслеживания. Подробнее см. в примечаниях в разделе [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.reportconsumablefulfillmentasync.aspx).
 
-This example demonstrates how to report a Store-managed consumable as fulfilled.
+Этот пример показывает, как сообщить об израсходовании потребляемого элемента, управляемого Магазином.
 
 ```csharp
 private StoreContext context = null;
@@ -114,9 +121,9 @@ public async void ConsumeAddOn(string storeId)
 ```
 
 <span id="get_balance" />
-## Get the remaining balance for a Store-managed consumable
+## Получение оставшегося баланса для потребляемого элемента, управляемого Магазином
 
-This example demonstrates how to use the [GetConsumableBalanceRemainingAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getconsumablebalanceremainingasync.aspx) method of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class to get the remaining balance for a Store-managed consumable add-on.
+Этот пример демонстрирует использование метода [GetConsumableBalanceRemainingAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getconsumablebalanceremainingasync.aspx) класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) для получения оставшегося баланса потребляемой надстройки, управляемой Магазином.
 
 ```csharp
 private StoreContext context = null;
@@ -162,10 +169,17 @@ public async void GetRemainingBalance(string storeId)
 }
 ```
 
-## Related topics
+## Связанные разделы
 
-* [In-app purchases and trials](in-app-purchases-and-trials.md)
-* [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
-* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
-* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)
+* [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
+* [Получение информации о продукте для приложений и надстроек](get-product-info-for-apps-and-add-ons.md)
+* [Получение информации о лицензии для приложений и надстроек](get-license-info-for-apps-and-add-ons.md)
+* [Поддержка покупок приложений и надстроек внутри приложения](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Реализация пробной версии приложения](implement-a-trial-version-of-your-app.md)
+* [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

@@ -18,7 +18,8 @@ ms.openlocfilehash: 21e4b504b4adc6e2cb9b16d377781aaaab6a4aac
 
 -   Для возвращаемого значения или выходного параметра (параметр **ByRef** с атрибутом [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) в Visual Basic) массив всегда предназначен только для вывода. Не применяйте атрибут ReadOnlyArrayAttribute. Атрибут WriteOnlyArrayAttribute разрешен для выходных параметров, но он избыточен.
 
-    > **Внимание!** Компилятор Visual Basic не применяет правила только для вывода. Ни в коем случае не следует читать данные из выходного параметра, так как он может содержать **Nothing**. Всегда присваивайте новый массив.
+    > 
+            **Внимание!** Компилятор Visual Basic не применяет правила только для вывода. Ни в коем случае не следует читать данные из выходного параметра, так как он может содержать **Nothing**. Всегда присваивайте новый массив.
  
 -   Параметры с модификатором **ref** (**ByRef** в Visual Basic) не разрешены. Winmdexp.exe вызывает ошибку.
 -   Для параметра, который передается значением, необходимо указать, предназначено ли содержимое массива для ввода или вывода, применив атрибут [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) или [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx). Если указать оба атрибута, возникнет ошибка.

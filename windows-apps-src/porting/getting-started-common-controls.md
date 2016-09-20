@@ -3,7 +3,6 @@ author: mcleblanc
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
 description: "Приступая к работе с общими элементами управления"
 title: "Приступая к работе с общими элементами управления"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 9d67cf02f80b5aa9d49fe3a0c5eb47a89419991a
 
@@ -48,7 +47,8 @@ ms.openlocfilehash: 9d67cf02f80b5aa9d49fe3a0c5eb47a89419991a
 
 Сведения о других элементах управления: [Список элементов управления](https://msdn.microsoft.com/library/windows/apps/mt185406).
 
-**Примечание.** Список элементов управления для приложений Магазина Windows на JavaScript и HTML см. в статье [Список элементов управления](https://msdn.microsoft.com/library/windows/apps/hh465453).
+
+            **Примечание.** Список элементов управления для приложений Магазина Windows на JavaScript и HTML см. в статье [Список элементов управления](https://msdn.microsoft.com/library/windows/apps/hh465453).
 
 ### Следующие шаги
 

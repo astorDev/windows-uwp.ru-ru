@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: "Пакет SDK Microsoft Store Engagement and Monetization предоставляет несколько способов получать доход от приложения с помощью рекламы."
 title: "Показ рекламы в приложении"
-translationtype: Human Translation
 ms.sourcegitcommit: 8a5b02dbc40f3f0cd9be32aa7d5184e60a3b2707
 ms.openlocfilehash: c79ba96908cc7b52afefbe44c3f56ce009c87f16
 
@@ -12,7 +11,7 @@ ms.openlocfilehash: c79ba96908cc7b52afefbe44c3f56ce009c87f16
 # Показ рекламы в приложении
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Пакет [SDK Microsoft Store Engagement and Monetization](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md) предоставляет несколько способов получения дохода от приложений с помощью рекламы.
 

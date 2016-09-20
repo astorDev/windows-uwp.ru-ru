@@ -3,7 +3,6 @@ author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: "Этот пример, в котором используются данные из примера Bookstore, начинается с приложения Windows Phone Silverlight, отображающего сгруппированные данные в классе LongListSelector."
 title: "Пример переноса Windows Phone Silverlight в UWP, Bookstore2"
-translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
 ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
 

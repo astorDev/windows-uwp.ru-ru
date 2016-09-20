@@ -3,7 +3,6 @@ title: "Защита данных"
 description: "В этой статье описано, как использовать класс DataProtectionProvider в пространстве имен Windows.Security.Cryptography.DataProtection для шифрования и расшифровки цифровых данных в приложении UWP."
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 author: awkoren
-translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
 ms.openlocfilehash: 958d5dd1c5f61078a0b288d53debe93875d65f06
 

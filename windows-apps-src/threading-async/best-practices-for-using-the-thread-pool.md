@@ -3,14 +3,13 @@ author: TylerMSFT
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: "Рекомендации по использованию пула потоков"
 description: "Этот раздел содержит рекомендации по работе с пулом потоков."
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 53f7460be63fa9bd440ed6999ac9cca7cdca0174
 
 ---
 # Рекомендации по использованию пула потоков
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Этот раздел содержит рекомендации по работе с пулом потоков.

@@ -56,10 +56,12 @@ ms.openlocfilehash: 8954b14a84241686a7c784c3d250f197bed7c8b6
 
 * [Текст и элементы управления текстом](text-controls.md)
 * [Руководство по текстовому вводу](https://msdn.microsoft.com/library/windows/apps/hh750315)
-* [Руководство по тексту и его оформлению](https://msdn.microsoft.com/library/windows/apps/hh700394)
+* 
+            [Руководство по тексту и его оформлению](https://msdn.microsoft.com/library/windows/apps/hh700394)
             
           
             **Для разработчиков (XAML)**
+          
 * [**Свойство TextBox.IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688)
 * [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 

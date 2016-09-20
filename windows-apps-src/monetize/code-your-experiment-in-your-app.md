@@ -3,7 +3,6 @@ author: mcleanbyron
 Description: "После того как вы определили свой эксперимент на панели мониторинга в Центре разработки, вы можете приступить к написанию кода для проведения эксперимента в своем приложении."
 title: "Создание кода для проведения эксперимента в приложении"
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
-translationtype: Human Translation
 ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
 ms.openlocfilehash: 4e6706624e71c6d448a3d457c27d11c9f6ecc156
 
@@ -21,7 +20,7 @@ ms.openlocfilehash: 4e6706624e71c6d448a3d457c27d11c9f6ecc156
 
 1. Установите пакет [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk).
 2. Откройте проект в Visual Studio.
-3. В обозревателе решений разверните узел проекта, щелкните правой кнопкой мыши **Ссылки**, а затем — **Добавить ссылку**.
+3. В обозревателе решений разверните узел проекта, щелкните правой кнопкой мыши **Ссылки**, а затем— **Добавить ссылку**.
 3. В диалоговом окне **Диспетчер ссылок** разверните список **Универсальная платформа Windows** и выберите **Расширения**.
 4. В списке пакетов SDK выберите флажок рядом с пунктом **Microsoft Store Engagement SDK** и нажмите кнопку **ОК**.
 
@@ -63,7 +62,7 @@ if (result.ErrorCode != EngagementErrorCode.Success || result.Variation.NeedsRef
 }
 ```
 
-5. Используйте методы [GetBoolean](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getboolean.aspx), [GetDouble](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getdouble.aspx), [GetInteger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getinteger.aspx) или [GetString](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getstring.aspx) объекта [ExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.aspx) для получения параметров назначения варианта. В каждом методе первый параметр — это имя параметра, который требуется получить (указанное вами на панели мониторинга в Центре разработки). Второй параметр — это значение по умолчанию, которое метод должен вернуть, если ему не удастся получить указанное значение из Центра разработки (например, если отсутствует подключение к сети), а кэшированная версия варианта недоступна.
+5. Используйте методы [GetBoolean](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getboolean.aspx), [GetDouble](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getdouble.aspx), [GetInteger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getinteger.aspx) или [GetString](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getstring.aspx) объекта [ExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.aspx) для получения параметров назначения варианта. В каждом методе первый параметр— это имя параметра, который требуется получить (указанное вами на панели мониторинга в Центре разработки). Второй параметр— это значение по умолчанию, которое метод должен вернуть, если ему не удастся получить указанное значение из Центра разработки (например, если отсутствует подключение к сети), а кэшированная версия варианта недоступна.
 
   В следующем примере используется метод [GetString](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentvariation.getstring.aspx), чтобы получить параметр с именем *buttonText*, а в качестве значения по умолчанию для параметра указано значение **Grey Button**.
 ```CSharp

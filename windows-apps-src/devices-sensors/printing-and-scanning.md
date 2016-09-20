@@ -3,14 +3,13 @@ author: DBirtolo
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
 title: "Печать и сканирование"
 description: "В этом разделе описываются печать и сканирование из вашего универсального приложения для Windows."
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 81a96c4c519a112551cab83425caf782b13ea9be
 
 ---
 # Печать и сканирование
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе описываются печать и сканирование из вашего универсального приложения для Windows.
 
@@ -24,7 +23,7 @@ ms.openlocfilehash: 81a96c4c519a112551cab83425caf782b13ea9be
 ## Ссылки по теме
 
 * [Руководство по проектированию печати](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Видео c конференции Build 2015: разработка приложений для печати в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [//Видео c конференции Build 2015: разработка приложений для печати в Windows10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [Пример печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)
  
 

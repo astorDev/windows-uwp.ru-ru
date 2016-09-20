@@ -11,7 +11,7 @@ ms.openlocfilehash: 9b48aeddb5ddc912fccd07149980655a06535470
 # Запуск приложения Магазина Windows
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе описывается схема URI **ms-windows-store:**. Ваше приложение может использовать эту схему URI для запуска приложения Магазина Windows на определенных страницах в Магазине.
 

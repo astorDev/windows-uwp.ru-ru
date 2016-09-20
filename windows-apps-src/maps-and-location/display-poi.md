@@ -3,18 +3,19 @@ author: msatranjr
 title: "Отображение объектов на карте"
 description: "Добавляйте объекты на карту, используя вешки, изображения, фигуры и элементы пользовательского интерфейса XAML."
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: 6f21f9bf9c909d0f89a663cdda05934ad9b4011b
+ms.openlocfilehash: aec420d6591546e63c6343d7151afe9e95d1afd8
 
 ---
 
 # Отображение объектов на карте
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Добавляйте объекты на карту, используя вешки, изображения, фигуры и элементы пользовательского интерфейса XAML. Объект — это определенная точка на карте, представляющая что-нибудь интересное. Например, это может быть расположение компании, города или друга.
+Добавляйте объекты на карту, используя вешки, изображения, фигуры и элементы пользовательского интерфейса XAML. Объект— это определенная точка на карте, представляющая что-нибудь интересное. Например, это может быть расположение компании, города или друга.
 
 **Совет.** Чтобы получить дополнительные сведения об отображении объектов в приложении, скачайте следующий пример из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на сайте GitHub.
 
@@ -83,7 +84,7 @@ ms.openlocfilehash: 6f21f9bf9c909d0f89a663cdda05934ad9b4011b
 -   Свойство [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) поддерживает изображения размером не более 2048×2048 пикселей.
 -   По умолчанию отображение изображения значка карты не гарантируется. Этот элемент может быть скрыт, если он заслоняет другие элементы или метки на карте. Чтобы он оставался видимым, задайте для свойства [**CollisionBehaviorDesired**](https://msdn.microsoft.com/library/windows/apps/dn974327) значение [**MapElementCollisionBehavior.RemainVisible**](https://msdn.microsoft.com/library/windows/apps/dn974314).
 -   Отображение необязательного свойства [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) объекта [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) не гарантируется. Если текст не отображается, уменьшите масштаб, уменьшив значение свойства [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
--   При показе изображения [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077), которое указывает определенное местоположение на карте, например вешки или стрелки, попробуйте присвоить значению свойства [**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) приблизительное местоположение указателя на изображении. Если для свойства **NormalizedAnchorPoint** оставить значение по умолчанию (0, 0), которое соответствует верхнему левому углу изображения, то в результате изменений свойства карты [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) изображение может указывать на другое местоположение.
+-   При показе изображения [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077), которое указывает определенное местоположение на карте, например вешки или стрелки, попробуйте присвоить значению свойства [**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) приблизительное местоположение указателя на изображении. Если для свойства **NormalizedAnchorPoint** оставить значение по умолчанию (0,0), которое соответствует верхнему левому углу изображения, то в результате изменений свойства карты [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) изображение может указывать на другое местоположение.
 
 ## Добавление объекта MapPolygon
 
@@ -177,7 +178,7 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 
 ![](images/displaypoixaml.png)
 
-В примерах ниже показано, как добавить элементы пользовательского интерфейса XAML непосредственно в разметку XAML страницы, используя привязку данных. Как и другие элементы XAML, отображающие содержимое, [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) — это свойство содержимого по умолчанию объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), и его не нужно явно задавать в разметке XAML.
+В примерах ниже показано, как добавить элементы пользовательского интерфейса XAML непосредственно в разметку XAML страницы, используя привязку данных. Как и другие элементы XAML, отображающие содержимое, [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008)— это свойство содержимого по умолчанию объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), и его не нужно явно задавать в разметке XAML.
 
 В этом примере показано, как отобразить два элемента управления XAML в качестве неявных потомков класса [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
@@ -230,6 +231,6 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,7 +3,6 @@ author: mtoepke
 title: "Портирование игрового цикла"
 description: "Здесь показано, как реализовать окно для игрового приложения UWP и перенести игровой цикл, включая создание интерфейса IFrameworkView для управления полноэкранным CoreWindow."
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 3c2369a2fdc48aed14f7ad363df8792e0ed5d795
 
@@ -12,7 +11,7 @@ ms.openlocfilehash: 3c2369a2fdc48aed14f7ad363df8792e0ed5d795
 # Портирование игрового цикла
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Резюме**
 
@@ -26,15 +25,16 @@ ms.openlocfilehash: 3c2369a2fdc48aed14f7ad363df8792e0ed5d795
 ## Создание окна
 
 
-Чтобы создать окно рабочего стола с окном просмотра Direct3D 9, нам приходилось реализовывать традиционную оконную инфраструктуру классических приложений. В частности, нужно было создавать HWND, устанавливать размер окна, предоставлять обратный вызов обработки окон, делать окно видимым и т. д.
+Чтобы создать окно рабочего стола с окном просмотра Direct3D 9, нам приходилось реализовывать традиционную оконную инфраструктуру классических приложений. В частности, нужно было создавать HWND, устанавливать размер окна, предоставлять обратный вызов обработки окон, делать окно видимым и т.д.
 
 В приложениях UWP все гораздо проще. Вместо того чтобы создавать традиционное окно, в игровом приложении Магазина Windows на базе DirectX реализуется интерфейс [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). Этот интерфейс предназначен для того, чтобы выполнять игры и приложения на базе DirectX непосредственно в объекте [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) внутри контейнера приложения.
 
-> **Примечание.**   Windows предоставляет управляемые указатели на ресурсы, такие как объект приложения-источника и [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). См. [**Оператор дескриптора объекта (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
+> 
+            **Примечание.**   Windows предоставляет управляемые указатели на ресурсы, такие как объект приложения-источника и [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). См. [**Оператор дескриптора объекта (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
 
  
 
-Ваш класс main должен наследовать от [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) и реализовывать пять методов интерфейса **IFrameworkView**: [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) и [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523). Помимо создания интерфейса **IFrameworkView**, внутри которого будет существовать ваша игра, вам необходимо реализовать фабрику классов, которая создает экземпляр вашего **IFrameworkView**. У вашей игры по-прежнему будет исполняемый файл с методом под названием **main()**, но все, что этот метод будет делать, – создавать экземпляр **IFrameworkView** с помощью фабрики.
+Ваш класс main должен наследовать от [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) и реализовывать пять методов интерфейса **IFrameworkView**: [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) и [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523). Помимо создания интерфейса **IFrameworkView**, внутри которого будет существовать ваша игра, вам необходимо реализовать фабрику классов, которая создает экземпляр вашего **IFrameworkView**. У вашей игры по-прежнему будет исполняемый файл с методом под названием **main()**, но все, что этот метод будет делать,–создавать экземпляр **IFrameworkView** с помощью фабрики.
 
 Функция main
 
@@ -102,7 +102,7 @@ while(WM_QUIT != msg.message)
 
 Игровой цикл выполняется внутри метода [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505), а не **main()**, потому что наша игра работает внутри класса [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478).
 
-Вместо того чтобы реализовать инфраструктуру обработки сообщений и вызывать [**PeekMessage**](https://msdn.microsoft.com/library/windows/desktop/ms644943), мы можем вызвать встроенный метод [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) класса [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) окна нашего приложения. В игровом цикле не требуется ветвление для обработки сообщений – достаточно вызвать метод **ProcessEvents**.
+Вместо того чтобы реализовать инфраструктуру обработки сообщений и вызывать [**PeekMessage**](https://msdn.microsoft.com/library/windows/desktop/ms644943), мы можем вызвать встроенный метод [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) класса [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) окна нашего приложения. В игровом цикле не требуется ветвление для обработки сообщений–достаточно вызвать метод **ProcessEvents**.
 
 Игровой цикл в игровом приложении Магазина Windows на базе Direct3D 11
 

@@ -3,7 +3,6 @@ author: mcleblanc
 title: "Пример переноса среды выполнения Windows 8.x в UWP, Bookstore1"
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
 description: "В этом разделе рассматривается пример переноса очень простого универсального приложения для версии 8.1 в приложение Windows10 универсальной платформы Windows (UWP)."
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 43536aacb37a79b3e8507896474be67423a0b9fe
 

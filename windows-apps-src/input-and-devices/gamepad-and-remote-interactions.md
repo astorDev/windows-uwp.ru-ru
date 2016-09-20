@@ -8,7 +8,7 @@ template: detail.hbs
 isNew: true
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 463da46dc1f4e2ed5125a26b058075e7fe1faafd
+ms.openlocfilehash: c353d649529eef8361c982ff6451371a4cebc4eb
 
 ---
 
@@ -19,20 +19,17 @@ ms.openlocfilehash: 463da46dc1f4e2ed5125a26b058075e7fe1faafd
 
 Для успешной работы приложения UWP при использовании геймпада или пульта управления нужно принять во внимание следующее.
 
-* [Аппаратные кнопки](designing-for-tv.md#hardware-buttons)
-             -
+* [Аппаратные кнопки](designing-for-tv.md#hardware-buttons) -
 Геймпад и пульт управления предоставляют разные кнопки и конфигурации.
 
-* [Навигация и взаимодействие с фокусом XY](designing-for-tv.md#xy-focus-navigation-and-interaction)
-             -
+* [Навигация и взаимодействие с фокусом XY](designing-for-tv.md#xy-focus-navigation-and-interaction) -
 Навигация с фокусом XY позволяет пользователю осуществлять навигацию по интерфейсу приложения.
 
-* [Режим мыши](designing-for-tv.md#mouse-mode)
-             -
+* [Режим мыши](designing-for-tv.md#mouse-mode) -
 Режим мыши позволяет приложению эмулировать использование мыши, если перемещения фокуса по оси X и Y недостаточно.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

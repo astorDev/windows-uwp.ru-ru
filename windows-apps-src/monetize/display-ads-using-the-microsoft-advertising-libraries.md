@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 5cde1c22-91fd-4f5c-ac82-32efaa0d9fee
 description: "Используйте библиотеки Microsoft Advertising в составе пакета SDK Microsoft Store Engagement and Monetization, чтобы отображать рекламные баннеры и промежуточную видеорекламу в своих приложениях XAML или JavaScript/HTML."
 title: "Показ рекламы с помощью библиотек Microsoft Advertising"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: ab96dac3af382d334c767ad42a563c0dbc67a8f5
 
@@ -12,11 +11,12 @@ ms.openlocfilehash: ab96dac3af382d334c767ad42a563c0dbc67a8f5
 # Показ рекламы с помощью библиотек Microsoft Advertising
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Используйте библиотеки Microsoft Advertising в составе пакета [SDK Microsoft Store Engagement and Monetization](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md), чтобы отображать рекламные баннеры и промежуточную видеорекламу в своих приложениях XAML или JavaScript/HTML для Windows 10, Windows 8.1, Windows Phone 8.1 и Windows Phone 8.
 
-> **Важно!** Библиотеки Microsoft Advertising представляют собой другой набор расширений из библиотек рекламного посредника. Дополнительные сведения об отличиях разработчика рекламного посредника и библиотек Microsoft Advertising см. в разделе [В чем различие: AdMediatorControl или AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md). Дополнительные сведения об использовании рекламного посредника см. в разделе [Использование рекламного посредника для повышения дохода](https://msdn.microsoft.com/windows/uwp/monetize/use-ad-mediation-to-maximize-revenue).
+> 
+            **Важно!** Библиотеки Microsoft Advertising представляют собой другой набор расширений из библиотек рекламного посредника. Дополнительные сведения об отличиях разработчика рекламного посредника и библиотек Microsoft Advertising см. в разделе [В чем различие: AdMediatorControl или AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md). Дополнительные сведения об использовании рекламного посредника см. в разделе [Использование рекламного посредника для повышения дохода](https://msdn.microsoft.com/windows/uwp/monetize/use-ad-mediation-to-maximize-revenue).
 
  
 Следующие разделы содержат сведения об общих задачах, выполняемых с помощью библиотек Windows Advertising.

@@ -3,23 +3,31 @@ author: Jwmsft
 label: App bars/command bars
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
-ms.openlocfilehash: c7107599529d5af5b118a46cb065106f08afe113
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4ce59951387542124bcea1cbd0f636c0e44e0d1e
 
 ---
-
 # Панель приложения и панель команд
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Панели команд (также называемые "панели приложения") предоставляют пользователям удобный доступ к самым распространенным задачам приложения и могут использоваться для отображения команд или параметров, относящихся к пользовательскому контексту, например к выбору фотографий или режиму рисования. Кроме того, они могут служить для навигации по страницам или разделам приложения. Панели команд можно использовать с любым шаблоном навигации.
 
 ![Пример панели команд со значками](images/controls_appbar_icons.png)
 
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx"><strong>CommandBar</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx"><strong>AppBarButton</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx"><strong>AppBarToggleButton</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx"><strong>AppBarSeparator</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
--   [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)
--   [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)
--   [**AppBarToggleButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)
--   [**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
 
 ## Выбор правильного элемента управления
 
@@ -51,10 +59,8 @@ XAML одновременно поддерживает элементы упра
 ![Закрытая панель команд](images/commandbar_anatomy_open.png)
 
 Панель команд разделена на четыре основных области:
-- Кнопка "Дополнительно" (\[•••\]) отображается в правой части панели. Кнопка "Дополнительно" \[•••\] выполняет две функции: отображает подписи на кнопках основных команд и открывает меню переполнения, если присутствуют второстепенные команды. В последнем SDK эта кнопка не будет видна при отсутствии второстепенных команд и скрытых подписей. 
-            Свойство [
-              **OverflowButtonVisibility**
-            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) позволяет приложениям изменять это предусмотренное по умолчанию поведение с автоматическим скрытием.
+- Кнопка "Дополнительно" (\[•••\]) отображается в правой части панели. Кнопка "Дополнительно" \[•••\] выполняет две функции: отображает подписи на кнопках основных команд и открывает меню переполнения, если присутствуют второстепенные команды. В последнем SDK эта кнопка не будет видна при отсутствии второстепенных команд и скрытых подписей. [
+              Свойство **OverflowButtonVisibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) позволяет приложениям изменять это предусмотренное по умолчанию поведение с автоматическим скрытием.
 - Область содержимого находится в левой части панели. Она отображается, если заполнено значение свойства [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx).
 - Область главных команд выровнена по правому краю панели и расположена рядом с кнопкой "Дополнительно" (\[•••\]). Она отображается, если заполнено значение свойства [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx).  
 - Меню переполнения отображается, только когда панель команд открыта и заполнено значение свойства [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx). С новым поведением динамического переполнения основные команды будут автоматически перемещаться в область SecondaryCommands, если пространство ограничено.
@@ -185,12 +191,9 @@ private void CommandBar_Closing(object sender, object e)
 ### ClosedDisplayMode
 
 Вы можете управлять отображением панели в закрытом состоянии, установив свойство [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx). Вы можете выбрать один из трех режимов отображения:
-- 
-            **Compact**: режим по умолчанию. Отображается содержимое, значки основных команд без меток и кнопка "Дополнительно" (\[•••\]).
-- 
-            **Minimal**: отображается только тонкая панель, действующая как кнопка "Дополнительно" (\[•••\]). Пользователь может открыть панель нажатием в любом месте панели.
-- 
-            **Hidden**: панель команд в закрытом состоянии не отображается. Это может быть полезно для отображения контекстно-зависимых команд с помощью встроенной панели команд. В этом случае следует открыть панель команд программным способом, установив свойство **IsOpen** или изменив значение свойства ClosedDisplayMode на **Minimal** или **Compact**.
+- **Compact**: режим по умолчанию. Отображается содержимое, значки основных команд без меток и кнопка "Дополнительно" (\[•••\]).
+- **Minimal**: отображается только тонкая панель, действующая как кнопка "Дополнительно" (\[•••\]). Пользователь может открыть панель нажатием в любом месте панели.
+- **Hidden**: панель команд в закрытом состоянии не отображается. Это может быть полезно для отображения контекстно-зависимых команд с помощью встроенной панели команд. В этом случае следует открыть панель команд программным способом, установив свойство **IsOpen** или изменив значение свойства ClosedDisplayMode на **Minimal** или **Compact**.
 
 В этом примере панель команд используется для отображения простых команд форматирования для [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx). Когда поле ввода не имеет фокуса, команды форматирования могут отвлекать, поэтому они скрыты. При использовании поля ввода значение свойства панели команд ClosedDisplayMode меняется на Compact, чтобы отобразить команды форматирования.
 
@@ -219,9 +222,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 }
 ```
 
->
-            **Примечание**
-            &nbsp;&nbsp;В данном примере не рассматривается реализация команд редактирования. Дополнительные сведения см. в статье [RichEditBox](rich-edit-box.md).
+>**Примечание.**&nbsp;&nbsp;В данном примере не рассматривается реализация команд редактирования. Дополнительные сведения см. в статье [RichEditBox](rich-edit-box.md).
 
 Несмотря на то, что режимы Minimal и Hidden могут быть полезны в некоторых ситуациях, необходимо помнить о том, что сокрытие всех действий может поставить пользователя в замешательство.
 
@@ -247,8 +248,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ![Пример 2 размещения панели приложения](images/AppbarGuidelines_Placement2.png)
 
->
-            **Сенсорные устройства**: если панель команд должна оставаться видимой пользователю при появлении сенсорной клавиатуры или панели функционального ввода (SIP), вы можете присвоить панель команд в качестве значения свойству [BottomAppBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.bottomappbar.aspx) объекта Page, и панель будет перемещена и останется видимой при появлении SIP. В противном случае следует встроить панель команд и позиционировать ее относительно содержимого приложения.
+>**Сенсорные устройства**: если панель команд должна оставаться видимой пользователю при появлении сенсорной клавиатуры или панели функционального ввода (SIP), вы можете присвоить панель команд в качестве значения свойству [BottomAppBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.bottomappbar.aspx) объекта Page, и панель будет перемещена и останется видимой при появлении SIP. В противном случае следует встроить панель команд и позиционировать ее относительно содержимого приложения.
 
 ### Действия
 
@@ -288,24 +288,14 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ## Связанные разделы
 
+**Для дизайнеров**
+[Основы проектирования команд в приложениях UWP](../layout/commanding-basics.md)
 
-            **Для дизайнеров**
-            
-          
-            [Основы проектирования команд в приложениях UWP](../layout/commanding-basics.md)
-          
-
-
-            **Для разработчиков (XAML)**
-            
-          
-            [
-              **CommandBar**
-            ](https://msdn.microsoft.com/library/windows/apps/dn279427)
-          
+**Для разработчиков (XAML)**
+[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
 description: "В этой статье показано, как транслировать мультимедиа в удаленные устройства из универсального приложения для Windows."
 title: "Трансляция мультимедиа"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 9c8d549c9b770af351894f2a19dd035a43d70264
 
@@ -11,7 +10,7 @@ ms.openlocfilehash: 9c8d549c9b770af351894f2a19dd035a43d70264
 
 # Трансляция мультимедиа
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье показано, как транслировать мультимедиа в удаленные устройства из универсального приложения для Windows.
@@ -66,7 +65,8 @@ ms.openlocfilehash: 9c8d549c9b770af351894f2a19dd035a43d70264
 
 В обработчике события **CastingDeviceSelected** вызовите метод [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) свойства [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) аргументов события, которое обозначает выбранное пользователем транслирующее устройство. Зарегистрируйте обработчики для событий [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) и [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523). В заключение, чтобы начать трансляцию, вызовите метод [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520), передав результаты метода [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) объекта **MediaElement**, чтобы указать, что транслируемое мультимедиа — это содержимое **MediaElement**.
 
-**Примечание.** Подключение к трансляции должно быть инициировано в потоке пользовательского интерфейса. Так как поток пользовательского интерфейса не вызывает **CastingDeviceSelected**, вам необходимо разместить эти вызовы внутри вызова [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317), который вызовет их в потоке пользовательского интерфейса.
+
+            **Примечание.** Подключение к трансляции должно быть инициировано в потоке пользовательского интерфейса. Так как поток пользовательского интерфейса не вызывает **CastingDeviceSelected**, вам необходимо разместить эти вызовы внутри вызова [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317), который вызовет их в потоке пользовательского интерфейса.
 
 [!code-cs[CastingDeviceSelected](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
@@ -86,8 +86,7 @@ ms.openlocfilehash: 9c8d549c9b770af351894f2a19dd035a43d70264
 
 -   Кнопку для запуска наблюдателя устройств, который осуществляет поиск доступных транслирующих устройств.
 -   Элемент управления [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) для обратной связи с пользователем, для которого проходит перечисление трансляции.
--   [
-            **ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) для перечисления обнаруженных транслирующих устройств. Определите [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) для элемента управления, чтобы объекты транслирующих устройств можно было присвоить непосредственно элементу управления и по-прежнему отображать свойство [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549).
+-   [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) для перечисления обнаруженных транслирующих устройств. Определите [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) для элемента управления, чтобы объекты транслирующих устройств можно было присвоить непосредственно элементу управления и по-прежнему отображать свойство [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549).
 -   Кнопка для отключения от транслирующего устройства.
 
 [!code-xml[CustomPickerXAML](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetCustomPickerXAML)]

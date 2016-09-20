@@ -5,7 +5,6 @@ title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 28c78b39bad4c66457ec5aba8cf0b4ce0de4f00a
 
@@ -57,7 +56,7 @@ RichTextBlock поддерживает следующие функции.
 
 ### Строковые элементы пользовательского интерфейса
 
-Класс [**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) позволяет встроить в текст любой элемент UIElement. Распространенный сценарий — вставка элемента Image в текст, но можно использовать и интерактивные элементы, такие как Button или CheckBox.
+Класс [**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) позволяет встроить в текст любой элемент UIElement. Распространенный сценарий— вставка элемента Image в текст, но можно использовать и интерактивные элементы, такие как Button или CheckBox.
 
 Если в одно и то же место нужно встроить несколько элементов, используйте панель в качестве отдельного дочернего элемента InlineUIContainer, а затем поместите несколько элементов на эту панель.
 
@@ -103,9 +102,9 @@ RichTextBlock поддерживает следующие функции.
 
 ### Строковые элементы
 
-Пространство имен [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) предоставляет разнообразные строковые элементы, которые можно использовать для форматирования текста, например Bold, Italic, Run, Span и LineBreak. Типичный способ применить форматирование к отдельным частям текста — это поместить текст в элемент Run или Span и задать свойства этого элемента.
+Пространство имен [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) предоставляет разнообразные строковые элементы, которые можно использовать для форматирования текста, например Bold, Italic, Run, Span и LineBreak. Типичный способ применить форматирование к отдельным частям текста— это поместить текст в элемент Run или Span и задать свойства этого элемента.
 
-Вот элемент Paragraph, первая фраза которого отображается полужирным шрифтом 16 пт в синем цвете.
+Вот элемент Paragraph, первая фраза которого отображается полужирным шрифтом 16пт в синем цвете.
 
 ```xaml
 <Paragraph>

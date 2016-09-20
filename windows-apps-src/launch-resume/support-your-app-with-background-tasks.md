@@ -11,7 +11,7 @@ ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
 # Поддержка приложения с помощью фоновых задач
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этом разделе показано, как выполнить собственный облегченный код в фоновом режиме, отвечая на триггеры с помощью фоновых задач. Фоновые задачи представляют собой облегченные классы, которые выполняются ОС в фоновом режиме. Фоновые задачи можно использовать для предоставления функциональных возможностей, когда приложение приостановлено или не выполняется. Фоновые задачи также можно использовать для приложений, обеспечивающих общение в реальном времени, например компьютерной телефонии, почты и обмена мгновенными сообщениями.
@@ -20,7 +20,8 @@ ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
 
 Чтобы быстро приступить к созданию фоновой задачи, см. раздел [Создание и регистрация фоновой задачи](create-and-register-a-background-task.md).
 
-**Совет**. Начиная c Windows 10, больше не нужно помещать приложение на экран блокировки, чтобы регистрировать фоновые задачи.
+
+            **Совет**. Начиная c Windows 10, больше не нужно помещать приложение на экран блокировки, чтобы регистрировать фоновые задачи.
 
  
 
@@ -69,22 +70,26 @@ ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
 
 Следующие триггеры реального времени можно использовать для выполнения облегченного пользовательского кода в фоновом режиме.
 
-**Control Channel: **фоновые задачи могут поддерживать подключение и получать сообщения по каналу управления, используя класс [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Если приложение ожидает передачи данных из сокета, можно использовать посредник сокетов вместо **ControlChannelTrigger**. Узнать больше об использовании посредника сокетов можно в разделе [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). **ControlChannelTrigger** не поддерживается в Windows Phone.
 
-**Timer: **фоновые задачи могут выполняться через каждые 15 минут, и их можно настроить на выполнение в определенное время, используя [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). См. также: [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md).
+            **Control Channel: **фоновые задачи могут поддерживать подключение и получать сообщения по каналу управления, используя класс [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Если приложение ожидает передачи данных из сокета, можно использовать посредник сокетов вместо **ControlChannelTrigger**. Узнать больше об использовании посредника сокетов можно в разделе [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). **ControlChannelTrigger** не поддерживается в Windows Phone.
 
-**Push Notification: **фоновые задачи реагируют на [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), чтобы получать необработанные push-уведомления.
+
+            **Timer: **фоновые задачи могут выполняться через каждые 15 минут, и их можно настроить на выполнение в определенное время, используя [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). См. также: [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md).
+
+
+            **Push Notification: **фоновые задачи реагируют на [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), чтобы получать необработанные push-уведомления.
 
 **Примечание.**  
 
 Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
 
-Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем — метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Подробнее см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
+Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем— метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Подробнее см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
 
 ## Триггеры системных событий
 
 
-> **Примечание**. Перечисление [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) содержит следующие триггеры системных событий.
+> 
+            **Примечание**. Перечисление [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) содержит следующие триггеры системных событий.
 
 | Имя триггера            | Описание                                                       |
 |-------------------------|-------------------------------------------------------------------|

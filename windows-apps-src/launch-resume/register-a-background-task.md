@@ -11,7 +11,7 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 # Регистрация фоновой задачи
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -30,7 +30,7 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
 
-Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем — метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Подробнее см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
+Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем— метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Подробнее см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
 
 ## Определение подписи и типа возвращаемых данных метода
 
@@ -70,7 +70,8 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 Это важно проверить, потому что при многократной регистрации задачи она будет выполняться несколько раз при каждом срабатывании триггера, что может привести к избыточному потреблению ресурсов ЦП и непредсказуемому поведению. Для проверки наличия существующих регистраций можно запросить свойство [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) и выполнить итерацию по результату.
 
-> Проверьте имя каждого экземпляра: если оно совпадает с именем регистрируемой задачи, следует прервать цикл и установить переменную флага, чтобы вашему коду удалось выбрать другой путь в следующем шаге. **Примечание.** Используйте имена фоновых задач, которые уникальны для вашего приложения.
+> Проверьте имя каждого экземпляра: если оно совпадает с именем регистрируемой задачи, следует прервать цикл и установить переменную флага, чтобы вашему коду удалось выбрать другой путь в следующем шаге. 
+            **Примечание.** Используйте имена фоновых задач, которые уникальны для вашего приложения.
 
 Убедитесь, что каждая фоновая задача имеет уникальное имя.
 
@@ -143,7 +144,8 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 Проверьте, не найдена ли задача в списке существующих регистраций фоновых задач. Если да, верните этот экземпляр задачи. Затем зарегистрируйте задачу с использованием нового объекта [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768).
 
-> Этот код должен проверить, имеет ли параметр условия значение NULL, и, если нет, добавить условие к объекту регистрации. Верните объект [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786), возвращенный методом [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772). **Примечание.** Параметры регистрации фоновых задач проверяются во время регистрации.
+> Этот код должен проверить, имеет ли параметр условия значение NULL, и, если нет, добавить условие к объекту регистрации. Верните объект [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786), возвращенный методом [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772). 
+            **Примечание.** Параметры регистрации фоновых задач проверяются во время регистрации.
 
 Если какие-либо из параметров регистрации оказываются недопустимыми, возвращается ошибка.
 
@@ -374,8 +376,9 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 ****
 
 * [[!div class="tabbedCodeSnippets"]](create-and-register-a-background-task.md)
-* [**Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP).](declare-background-tasks-in-the-application-manifest.md)
-* [В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).](handle-a-cancelled-background-task.md)
+* [
+            **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP).](declare-background-tasks-in-the-application-manifest.md)
+* [В случае разработки приложений для Windows8.x или Windows Phone8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).](handle-a-cancelled-background-task.md)
 * [Связанные разделы](monitor-background-task-progress-and-completion.md)
 * [Создание и регистрация фоновой задачи](respond-to-system-events-with-background-tasks.md)
 * [Объявление фоновых задач в манифесте приложения](set-conditions-for-running-a-background-task.md)

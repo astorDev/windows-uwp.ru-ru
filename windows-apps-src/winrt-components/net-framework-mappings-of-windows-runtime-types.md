@@ -81,7 +81,7 @@ ms.openlocfilehash: 286f479c86c06c9d08b4e36cf9776b590a13cc5f
 
 ## Ссылки по теме
 
-* [Создание компонентов среды выполнения Windows на C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Создание компонентов среды выполнения Windows на C# и VisualBasic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 
 
 

@@ -3,7 +3,6 @@ author: mtoepke
 title: "Приостановка работы приложения (DirectX и C++)"
 description: "В этом разделе показано, как сохранять важное состояние системы и данные приложения, когда система приостанавливает работу приложения универсальной платформы Windows (UWP), использующего DirectX."
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 38e03a4a6312c5a0521c7263944897260624aa38
 

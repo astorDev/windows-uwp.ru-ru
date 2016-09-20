@@ -3,7 +3,6 @@ author: mcleblanc
 title: "Начало работы с анимацией"
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: "В этом проекте мы будем перемещать прямоугольник, применять к нему эффект угасания и затем снова отображать прямоугольник."
-translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
 ms.openlocfilehash: 6e0b92af1d3c5f61aa2341d43ca40330fcc359f4
 
@@ -123,7 +122,8 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Вы можете изменить этот код XAML вручную или вернуться к Blend, чтобы продолжить работу над кодом. Blend значительно упрощает создание интересных пользовательских интерфейсов, а возможность анимировать их при помощи графического инструмента может существенно сократить время разработки. Дополнительную информацию об анимациях см. в статье [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350).
 
-**Примечание.** Подробнее об анимации для приложений Магазина Windows на JavaScript и HTML: [Анимация пользовательского интерфейса (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
+
+            **Примечание.** Подробнее об анимации для приложений Магазина Windows на JavaScript и HTML: [Анимация пользовательского интерфейса (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
 
 ### Следующие шаги
 

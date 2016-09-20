@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: "Изучите заметки о выпуске библиотек Microsoft Advertising в пакете SDK Microsoft Store Engagement and Monetization."
 title: "Заметки о выпуске библиотек Microsoft Advertising"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
 
@@ -12,7 +11,7 @@ ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
 # Заметки о выпуске библиотек Microsoft Advertising
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Этот раздел содержит заметки о текущем выпуске библиотек Microsoft Advertising в пакете SDK Microsoft Store Engagement and Monetization. Библиотеки поддерживают приложения XAML и JavaScript/HTML для Windows 10, Windows 8.1, Windows Phone 8.1 и Windows Phone 8.
 
@@ -49,7 +48,7 @@ ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
 
 ## Важное примечание
 
-Обязательно прочитайте лицензионное соглашение с конечным пользователем (EULA) полностью. См. раздел [Важное примечание — EULA](important-notice-eula.md).
+Обязательно прочитайте лицензионное соглашение с конечным пользователем (EULA) полностью. См. раздел [Важное примечание— EULA](important-notice-eula.md).
 
  
 

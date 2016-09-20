@@ -3,7 +3,6 @@ title: "Копирование в массивы байтов и из них"
 description: "В этом примере кода показано, как копировать в массивы байтов и из них в приложении универсальной платформы Windows (UWP)."
 ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
 author: awkoren
-translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
 ms.openlocfilehash: db1691421cf4e540c9593efb4bbf2a608426c0ed
 
@@ -12,7 +11,7 @@ ms.openlocfilehash: db1691421cf4e540c9593efb4bbf2a608426c0ed
 # Копирование в массивы байтов и из них
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом примере кода показано, как копировать в массивы байтов и из них в приложении универсальной платформы Windows (UWP).
 

@@ -1,34 +1,38 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Ink tools described
-title: Inking Controls
+Description: "Описанные инструменты для рукописного ввода"
+title: "Элементы управления рукописным вводом"
 label: Inking Controls
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 7198f4084df8ce484cdc5f6b3231a4bdb02f18b5
+
 ---
+# Элементы управления рукописным вводом
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-# Inking controls
+В приложениях универсальной платформы Windows (UWP) рукописный ввод контролируется с помощью двух разных элементов управления: [**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) и [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
 
-There are two different controls that facilitate inking in Universal Windows Platform (UWP) apps: [**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) and [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
+Элемент управления InkCanvas отображает ввод с помощью пера в виде росчерка пера (используя параметры цвета и толщины штриха по умолчанию) или росчерка стирания. Этот элемент управления представляет собой прозрачное наложение, которое не содержит никаких встроенных элементов пользовательского интерфейса для изменения свойств росчерка пера по умолчанию.
 
-The InkCanvas control renders pen input as either an ink stroke (using default settings for color and thickness) or an erase stroke. This control is a transparent overlay that doesn't include any built-in UI for changing the default ink stroke properties.
+>**Примечание.**&nbsp;&nbsp;InkCanvas можно настроить так, чтобы обеспечить поддержку аналогичных функций для ввода с помощью мыши и сенсорного ввода.
 
->**Note**&nbsp;&nbsp;InkCanvas can be configured to support similar functionality for both mouse and touch input.
+Поскольку элемент управления InkCanvas не поддерживает изменение параметров росчерка пера по умолчанию, его можно связать с элементом управления InkToolbar. Элемент управления InkToolbar содержит настраиваемую и расширяемую коллекцию кнопок, которые включают связанные с рукописным вводом функции в элементе управления InkCanvas.
 
-As the InkCanvas control does not include support for changing the default ink stroke settings, it can be paired with an InkToolbar control. The InkToolbar contains a customizable and extensible collection of buttons that activate ink-related features in an associated InkCanvas.
+По умолчанию элемент управления InkToolbar содержит кнопки для рисования, стирания, выделения и отображения линейки. В зависимости от функции во всплывающем элементе могут отображаться другие параметры и команды, например цвет чернил, толщина росчерка и стирание всего написанного.
 
-By default, the InkToolbar includes buttons for drawing, erasing, highlighting, and displaying a ruler. Depending on the feature, other settings and commands, such as ink color, stroke thickness, erase all ink, are provided in a flyout.
-
->**Note**&nbsp;&nbsp;InkToolbar supports pen and mouse input and can be configured to recognize touch input.
+>**Примечание**&nbsp;&nbsp;. Элемент управления InkToolbar поддерживает ввод с помощью мыши и с помощью пера; кроме того, его можно настроить для распознавания сенсорного ввода.
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300">
 
 <div class="important-apis" >
-<b>Important APIs</b><br/>
+<b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx"><strong>InkCanvas class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx"><strong>InkToolbar class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx"><strong>InkPresenter class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx"><strong>Класс InkCanvas</strong></a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx"><strong>Класс InkToolbar</strong></a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx"><strong>Класс InkPresenter</strong></a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/apps/br208524"><strong>Windows.UI.Input.Inking</strong></a></li>
 </ul>
 
@@ -38,118 +42,124 @@ By default, the InkToolbar includes buttons for drawing, erasing, highlighting, 
 
 
 
-## Is this the right control?
+## Выбор правильного элемента управления
 
-Use the InkCanvas when you need to enable basic inking features in your app without providing any ink settings to the user.
+InkCanvas позволяет включить в приложении базовые функции рукописного ввода, не предоставляя пользователю никаких настроек рукописного ввода.
 
-By default, strokes are rendered as ink when using the pen tip (a black ballpoint pen with a thickness of 2 pixels) and as an eraser when using the eraser tip. If an eraser tip is not present, the InkCanvas can be configured to process input from the pen tip as an erase stroke.
+По умолчанию росчерки отображаются как рукописный ввод при использовании кончика пера (штрих черной шариковой ручки толщиной 2 пикселя) и как ластик при использовании кончика ластика. Если кончик ластика отсутствует, InkCanvas можно настроить для отображения ввода кончиком пера в виде росчерка стирания.
 
-Pair the InkCanvas with an InkToolbar to provide a UI for activating ink features and setting basic ink properties such as stroke size, color, and shape of the pen tip.
+Свяжите элементы управления InkCanvas и InkToolbar, чтобы предоставить пользователям интерфейс для активации функций рукописного ввода и настройки основных свойств пера, таких как размер штриха, цвет и форма кончика пера.
 
->**Note**&nbsp;&nbsp;For more extensive customization of ink stroke rendering on an InkCanvas, use the underlying [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) object.
+>**Примечание.**&nbsp;&nbsp;Для более детальной настройки отображения росчерков пера с помощью элемента управления InkCanvas воспользуйтесь объектом [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx).
 
-## Examples
+## Примеры
 
 **Microsoft Edge**
 
-The Edge browser uses the InkCanvas and InkToolbar for **Web Notes**.  
-![InkCanvas is used to ink in Microsoft Edge](images/ink-tools-edge.png)
+В браузере Edge элементы управления InkCanvas и InkToolbar используются для **веб-заметок**.  
+![InkCanvas используется для рукописного ввода в Microsoft Edge](images/ink-tools-edge.png)
 
 **Windows Ink Workspace**
 
-The InkCanvas and InkToolbar are also used for both **Sketchpad** and **Screen sketch** in the **Windows Ink Workspace**.  
-![InkToolbar in the Windows Ink Workspace](images/ink-tools-ink-workspace.png)
+Элементы управления InkCanvas и InkToolbar также используются в **Windows Ink Workspace** для **альбома** и **наброска экрана**.  
+![Элемент управления InkToolbar в Windows Ink Workspace](images/ink-tools-ink-workspace.png)
 
-## Create an InkCanvas and InkToolbar
+## Создание элементов управления InkCanvas и InkToolbar
 
-Adding an InkCanvas to your app requires just one line of markup:
+Чтобы добавить элемент управления InkCanvas в приложение, достаточно одной строки разметки:
 
 ```xaml
 <InkCanvas x:Name=“myInkCanvas”/>
 ```
 
->**Note**&nbsp;&nbsp;For detailed InkCanvas customization using InkPresenter, see the ["Pen and stylus interactions in UWP apps"](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/) article.
+>**Примечание.**&nbsp;&nbsp;Сведения о детальной настройке элемента управления InkCanvas с использованием InkPresenter см. в статье [«Взаимодействие с помощью пера в приложениях UWP»](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/).
 
-The InkToolbar control must be used in conjunction with an InkCanvas. Incorporating an InkToolbar (with all built-in tools) into your app requires one additional line of markup:
+Элементы управления InkToolbar и InkCanvas необходимо использовать вместе. Чтобы включить элемент управления InkToolbar (со всеми встроенными инструментами) в приложение, необходима одна дополнительная строка разметки:
 
  ```xaml
 <InkToolbar TargetInkCanvas=“{x:Bind myInkCanvas}”/>
  ```
 
-This displays the following InkToolbar:
+Она позволяет отобразить следующий элемент управления InkToolbar:
 <img src="images/ink-tools-uninvoked-toolbar.png" width="250">
 
-### Built-in buttons
+### Встроенные кнопки
 
-The InkToolbar includes the following built-in buttons:
+Элемент управления InkToolbar содержит следующие встроенные кнопки:
 
-**Pens**
+**Перья**
 
-- Ballpoint pen - draws a solid, opaque stroke with a circle pen tip. The stroke size is dependent on the pen pressure detected.
-- Pencil - draws a soft-edged, textured, and semi-transparent stroke (useful for layered shading effects) with a circle pen tip. The stroke color (darkness) is dependent on the pen pressure detected.
-- Highlighter – draws a semi-transparent stroke with a rectangle pen tip.
+- Шариковая ручка: рисует сплошной непрозрачный росчерк круглым кончиком пера. Размер росчерка зависит от давления на перо.
+- Карандаш: рисует текстурированный полупрозрачный росчерк с плавными границами (полезно для многоуровневых эффектов затенения) круглым кончиком пера. Цвет росчерка (интенсивность) зависит от давления на перо.
+- Маркер: рисует полупрозрачный росчерк прямоугольным кончиком пера.
 
-You can customize both the color palette and size attributes (min, max, default) in the flyout for each pen.
+Во всплывающем элементе можно настроить цветовую палитру и атрибуты размера (минимальный, максимальный, по умолчанию) для каждого пера.
 
-**Tool**
+**Инструмент**
 
-- Eraser – deletes any ink stroke touched. Note that the entire ink stroke is deleted, not just the portion under the eraser stroke.
+- Ластик: удаляет все росчерки пера, которых касается. Обратите внимание, что удаляется весь росчерк пера, а не только часть, по которой провели ластиком.
 
-**Toggle**
+**Переключение**
 
-- Ruler – shows or hides the ruler. Drawing near the ruler edge causes the ink stroke to snap to the ruler.  
- ![Ruler visual associated with InkToolbar](images/inking-tools-ruler.png)
+- Линейка: отображает или скрывает линейку. При рисовании у края линейки росчерк пера прикрепляется к линейке.  
+ ![Визуальный элемент линейки, связанный с элементом управления InkToolbar](images/inking-tools-ruler.png)
 
-Although this is the default configuration, you have complete control over which built-in buttons are included in the InkToolbar for your app.
+Несмотря на то что это конфигурация по умолчанию, вы сохраняете полный контроль над составом встроенных кнопок в элементе управления InkToolbar вашего приложения.
 
-### Custom buttons
+### Пользовательские кнопки
 
-The InkToolbar consists of two distinct groups of button types:
+В элементе управления InkToolbar представлены две группы кнопок разных типов.
 
-1. A group of "tool" buttons containing the built-in drawing, erasing, and highlighting buttons. Custom pens and tools are added here.
-> **Note**&nbsp;&nbsp;Feature selection is mutually exclusive.
+1. Группа кнопок-инструментов, которая включает встроенные кнопки для рисования, стирания и выделения. Сюда добавляются специальные перья и инструменты.
+> **Примечание.**&nbsp;&nbsp;Функции являются взаимоисключающими.
 
-2. A group of "toggle" buttons containing the built-in ruler button. Custom toggles are added here.
-> **Note**&nbsp;&nbsp;Features are not mutually exclusive and can be used concurrently with other active tools.
+2. Группа кнопок-переключателей, которая содержит встроенную кнопку линейки. Сюда добавляются специальные переключатели.
+> **Примечание.**&nbsp;&nbsp;Эти функции не являются взаимоисключающими, их можно использовать вместе с другими активными элементами.
 
-Depending on your application and the inking functionality required, you can add any of the following buttons (bound to your custom ink features) to the InkToolbar:
+В зависимости от используемого приложения и требуемой функции рукописного ввода в элемент управления InkToolbar можно добавить любые нижеперечисленные кнопки (связанные со специальными функциями пера).
 
-- Custom pen – a pen for which the ink color palette and pen tip properties, such as shape, rotation, and size, are defined by the host app.
-- Custom tool – a non-pen tool, defined by the host app.
-- Custom toggle – Sets the state of an app-defined feature to on or off. When turned on, the feature works in conjunction with the active tool.
+- Специальное перо— перо, для которого соответствующее приложение определяет цветовую палитру и свойства кончика пера, такие как форма, поворот и размер.
+- Специальный инструмент— отличный от пера инструмент, который определяется соответствующим приложением.
+- Специальный переключатель— включает или выключает определенную приложением функцию. Если функция включена, она действует вместе с активным инструментом.
 
-> **Note**&nbsp;&nbsp;You cannot change the display order of the built-in buttons. The default display order is: Ballpoint pen, pencil, highlighter, eraser, and ruler. Custom pens are appended to the last default pen, custom tool buttons are added between the last pen button and the eraser button and custom toggle buttons are added after the ruler button. (Custom buttons are added in the order they are specified.)
+> **Примечание.**&nbsp;&nbsp;Изменить порядок отображения встроенных кнопок невозможно. Они отображаются в следующем порядке: шариковая ручка, карандаш, маркер, ластик и линейка. Специальные перья добавляются после последнего пера по умолчанию, кнопки специальных инструментов располагаются между кнопкой последнего пера и кнопкой ластика, а кнопки специальных переключателей— после кнопки линейки (специальные кнопки добавляются в порядке настройки).
 
-Although the InkToolbar can be a top level item, it is typically exposed through an “Inking” button or command. We recommend using EE56 glyph from the Segoe MLD2 Assets font as a top level icon.
+Элемент управления InkToolbar может являться элементом верхнего уровня, однако обычно он предоставляется с помощью кнопки или команды рукописного ввода. Для оформления значка верхнего уровня рекомендуется использовать глиф EE56 шрифта Segoe MLD2 Assets.
 
-## InkToolbar Interaction
+## Взаимодействие с элементом управления InkToolbar
 
-All built-in pen and tool buttons include a flyout menu where ink properties and pen tip shape and size can be set. An "extension glyph" ![InkToolbar glyph](images/ink-tools-glyph.png) is displayed on the button to indicate the existence of the flyout.
+Все встроенные кнопки перьев и инструментов включают всплывающее меню, где можно настроить свойства пера, а также форму и размер кончика пера. «Глиф расширения» ![Глиф InkToolbar](images/ink-tools-glyph.png) отображается на кнопке и указывает на наличие всплывающего элемента.
 
-The flyout is shown when the button of an active tool is selected again. When the color or size is changed, the flyout is automatically dismissed and inking can be resumed. Custom pens and tools can use the default flyout or specify a custom flyout.
+Всплывающий элемент отображается, когда пользователь повторно нажимает кнопку активного инструмента. Как только цвет или размер изменен, всплывающий элемент автоматически закрывается и рукописный ввод можно продолжать. Для специальных перьев и инструментов можно использовать всплывающий элемент по умолчанию или указать настраиваемый всплывающий элемент.
 
-The eraser also has a flyout that provides the **Erase All Ink** command.  
-![InkToolbar with eraser flyout invoked](images/ink-tools-erase-all-ink.png)
+Ластик тоже имеет всплывающий элемент с командой **Удалить все рукописные данные**.  
+![Элемент управления InkToolbar с отображающимся всплывающим элементом ластика](images/ink-tools-erase-all-ink.png)
 
- For information on customization and extensibility, check out [SimpleInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk).
+ Сведения о пользовательской настройке и возможностях расширения см. в статье [Пример элемента управления SimpleInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk).
 
-## Do's and don'ts
+## Возможности и ограничения
 
-- The InkCanvas, and inking in general, is best experienced through an active pen. However, we recommend supporting inking with mouse and touch (including passive pen) input if required by your app.
-- Use an InkToolbar control with the InkCanvas to provide basic inking features and settings. Both the InkCanvas and InkToolbar can be programmatically customized.
-- The InkToolbar, and inking in general, is best experienced through an active pen. However, inking with mouse and touch can be supported if required by your app.
-- If supporting inking with touch input, we recommend using the ED5F icon from the Segoe MLD2 Assets font for the toggle button, with a “Touch writing” tooltip.
-- If using more than one InkCanvas, we recommend using a single InkToolbar to control inking across canvases.
-- For best performance, we recommend altering the default flyout rather than creating a custom one for both default and custom tools.
+- Элемент управления InkCanvas (и рукописный ввод в общем) удобнее и эффективнее всего использовать с активным пером, однако если этого требует ваше приложение, мы рекомендуем включить поддержку рукописного ввода с помощью мыши и касания (включая неактивное перо).
+- Используйте элемент управления InkToolbar вместе с InkCanvas, чтобы реализовать базовые функции и параметры рукописного ввода. Возможна программная настройка обоих элементов управления (InkCanvas и InkToolbar).
+- Элемент управления InkToolbar (и рукописный ввод в общем) удобнее и эффективнее всего использовать с активным пером, однако если этого требует ваше приложение, можно включить поддержку рукописного ввода с помощью мыши и касания.
+- Если реализуется поддержка рукописного ввода с помощью касания, рекомендуется использовать значок ED5F шрифта Segoe MLD2 Assets для кнопки переключения с подсказкой «Письмо касанием».
+- Если используется несколько элементов управления InkCanvas, рекомендуется контролировать рукописный ввод на разных полотнах с помощью одного элемента управления InkToolbar.
+- Для оптимальной производительности рекомендуется изменить всплывающий элемент по умолчанию, вместо того чтобы создавать один специальный всплывающий элемент для инструментов по умолчанию и специальных инструментов.
 
-## Get the samples
+## Воспользуйтесь примерами
 
-[SimpleInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) demonstrates 8 scenarios around the customization and extensibility capabilities of the InkCanvas and InkToolbar controls. Each scenario provides basic guidance on common inking situations and control implementations.
+[В примере использования элемента управления SimpleInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) показано 8 сценариев реализации возможностей настройки и расширения элементов управления InkCanvas и InkToolbar. Каждый сценарий сопровождается базовыми инструкциями по наиболее распространенным ситуациям, в которых используется рукописный ввод, и реализации элементов управления.
 
-For a more advanced inking sample, see [ComplexInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk).
+Более подробный пример рукописного ввода см. в разделе [Пример использования элемента управления ComplexInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk).
 
-## Related articles
+## Связанные разделы
 
-- [Pen and stylus interactions in UWP apps](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)
-- [Recognize ink strokes](http://windowsstyleguide/input-and-devices/convert-ink-to-text/)
-- [Store and retrieve ink strokes](http://windowsstyleguide/input-and-devices/save-and-load-ink/)
+- [Взаимодействие с помощью пера в приложениях UWP](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)
+- [Распознавание росчерков пера](http://windowsstyleguide/input-and-devices/convert-ink-to-text/)
+- [Хранение и извлечение росчерков пера](http://windowsstyleguide/input-and-devices/save-and-load-ink/)
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

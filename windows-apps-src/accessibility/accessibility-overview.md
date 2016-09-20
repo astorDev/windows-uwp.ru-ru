@@ -5,7 +5,6 @@ ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: "Обзор специальных возможностей"
 label: Accessibility overview
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
 ms.openlocfilehash: 430484a9243abc644de75d35c03bb11cf47960c0
 
@@ -158,7 +157,8 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 Подробные сведения о декларациях специальных возможностей и публикации приложения см. в разделе [Специальные возможности в Магазине](accessibility-in-the-store.md).
 
 > [!NOTE]
-> Объявление приложения как приложения со специальными возможностями используется только в Магазине Windows.
+> 
+            [!NOTE] Объявление приложения как приложения со специальными возможностями используется только в Магазине Windows.
 
 <span id="Assistive_technology_support_in_custom_controls"/>
 <span id="assistive_technology_support_in_custom_controls"/>

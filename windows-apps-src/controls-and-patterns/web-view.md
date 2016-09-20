@@ -6,20 +6,29 @@ ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: dd947d0b55dad56fdd6c684ae236f1c31ac8da86
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 5752e1a7f7ac358043ec99c8db07cbfda9c4cd37
 
 ---
-
 # Представление веб-страницы
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 
 
 
 Элемент управления представлением веб-страницы внедряет в приложение представление, которое отображает содержимое веб-страницы с помощью механизма визуализации Microsoft Edge. В элементе управления представлением веб-страницы могут отображаться и работать гиперссылки.
 
-**Важные API**
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br227702"><strong>Класс WebView</strong></a></li>
+</ul>
 
--   [**Класс WebView**](https://msdn.microsoft.com/library/windows/apps/br227702)
+</div>
+</div>
+
+
+
 
 ## Выбор правильного элемента управления
 
@@ -29,9 +38,7 @@ ms.openlocfilehash: dd947d0b55dad56fdd6c684ae236f1c31ac8da86
 
 **Изменение внешнего вида представления веб-страницы**
 
-[
-              **WebView**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) не относится к подклассу [**Control**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx), поэтому у него нет шаблона элемента управления. Но можно задать различные свойства для управления некоторыми визуальными аспектами представления веб-страницы.
+[**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) не относится к подклассу [**Control**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx), поэтому у него нет шаблона элемента управления. Но можно задать различные свойства для управления некоторыми визуальными аспектами представления веб-страницы.
 - Чтобы ограничить область отображения, задайте свойства [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) и [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx). 
 - Для преобразования, масштабирования, наклона и поворота представления веб-страницы используйте свойство [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransform.aspx).
 - Для управления прозрачностью представления веб-страницы задайте свойство [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx).
@@ -158,18 +165,10 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 ```
 
 Подобные события происходят в таком же порядке для каждого элемента **iframe** в содержимом представления веб-страницы. 
-- [
-              **FrameNavigationStarting**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationstarting.aspx) — происходит перед тем, как кадр в представлении веб-страницы перейдет к новому содержимому. 
-- [
-              **FrameContentLoading**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framecontentloading.aspx) — происходит, когда кадр в представлении веб-страницы начнет загрузку нового содержимого. 
-- [
-              **FrameDOMContentLoaded**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) — происходит, когда кадр в представлении веб-страницы заканчивает анализ текущего содержимого HTML. 
-- [
-              **FrameNavigationCompleted**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) — происходит, когда кадр в представлении веб-страницы заканчивает загружать свое содержимое. 
+- [**FrameNavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationstarting.aspx) — происходит перед тем, как кадр в представлении веб-страницы перейдет к новому содержимому. 
+- [**FrameContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framecontentloading.aspx) — происходит, когда кадр в представлении веб-страницы начнет загрузку нового содержимого. 
+- [**FrameDOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) — происходит, когда кадр в представлении веб-страницы заканчивает анализ текущего содержимого HTML. 
+- [**FrameNavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) — происходит, когда кадр в представлении веб-страницы заканчивает загружать свое содержимое. 
 
 ### Реакция на потенциальные проблемы
 
@@ -317,12 +316,11 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 По умолчанию содержимое представления веб-страницы размещается в потоке пользовательского интерфейса на устройствах в семействе настольных устройств и вне потока пользовательского интерфейса на всех других устройствах. Статическое свойство [**WebView.DefaultExecutionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx) можно использовать для запроса поведения потока по умолчанию для текущего клиента. При необходимости можно использовать конструктор [**WebView(WebViewExecutionMode)**](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx), чтобы определить это поведение. 
 
-> **Примечание**
-            &nbsp;&nbsp;При размещении содержимого в потоке пользовательского интерфейса на мобильных устройствах могут возникнуть проблемы с производительностью, поэтому убедитесь, что после изменения DefaultExecutionMode вы проверили работу приложения на всех целевых устройствах.
+> **Примечание.**&nbsp;&nbsp;При размещении содержимого в потоке пользовательского интерфейса на мобильных устройствах могут возникнуть проблемы с производительностью, поэтому убедитесь, что после изменения DefaultExecutionMode вы проверили работу приложения на всех целевых устройствах.
 
 Представление веб-страницы, в котором размещается содержимое вне потока пользовательского интерфейса, несовместимо с родительскими элементами управления, которым требуются жесты для распространения вверх от элемента управления представления веб-страницы к родительскому элементу, например [**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx), [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) и другие связанные элементы управления. Эти элементы управления не смогут получать жесты, вызванные в представлении веб-страницы вне потока. Кроме того, вывод веб-содержимого вне потока не поддерживается прямо. Вместо этого необходимо выводить элемент с заполнением [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx).
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Рекомендации
+## Рекомендации
 
 
 -   Убедитесь, что загруженный веб-сайт имеет правильный формат при отображении на данном устройстве, а также использует цвета, шрифтовое оформление и навигацию в соответствии с вашим приложением.
@@ -331,7 +329,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 
 
-## <span id="related_topics"></span>Ссылки по теме
+## Ссылки по теме
 
 * [**Класс WebView**](https://msdn.microsoft.com/library/windows/apps/br227702)
  
@@ -344,6 +342,6 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

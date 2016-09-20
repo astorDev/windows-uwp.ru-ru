@@ -4,18 +4,18 @@ description: "В этом разделе объясняется, каким об
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 6e673ce75ee7f178332da6fc9ae68dbf01a9d7ce
+ms.sourcegitcommit: 2ea21aeee5dd93bb44de3a1793b352d2046b3839
+ms.openlocfilehash: d0646aca9863f3f326df9b3a86adb2481fdcda70
 
 ---
 
 # Смарт-карты
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-В этом разделе объясняется, каким образом приложения универсальной платформы для Windows (UWP) могут использовать смарт-карты для подключения пользователей к защищенным сетевым службам, включая получение доступа к физическим устройствам чтения смарт-карт, создание виртуальных смарт-карт, связь со смарт-картами, проверку подлинности пользователей, сброс ПИН-кодов пользователей и удаление или отключение смарт-карт.
+В этом разделе объясняется, каким образом приложения универсальной платформы для Windows (UWP) могут использовать смарт-карты для подключения пользователей к защищенным сетевым службам, включая получение доступа к физическим устройствам чтения смарт-карт, создание виртуальных смарт-карт, связь со смарт-картами, проверку подлинности пользователей, сброс ПИН-кодов пользователей и удаление или отключение смарт-карт. 
 
 ## Настройка манифеста приложения
 
@@ -116,9 +116,8 @@ static class ChallengeResponseAlgorithm
 
 2.  Затем передайте значение запроса карты и ключ администратора, предоставленный службой или средством управления, в **ChallengeResponseAlgorithm** , определенный в предыдущем примере.
 
-3.  Если проверка подлинности проходит успешно, [
-              **VerifyResponseAsync**
-            ](https://msdn.microsoft.com/library/windows/apps/dn297627) возвращает значение **true**.
+3.  
+              Если проверка подлинности проходит успешно, [**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) возвращает значение **true**.
 
 ```cs
 bool verifyResult = false;
@@ -156,9 +155,7 @@ bool result = await provisioning.RequestPinChangeAsync();
 Чтобы запросить сброс ПИН-кода, сделайте следующее.
 
 1.  Вызовите метод [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) для запуска операции. В этот вызов входит метод [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701), который представляет смарт-карту, и запрос на сброс ПИН-кода.
-2.  [
-              **SmartCardPinResetHandler**
-            ](https://msdn.microsoft.com/library/windows/apps/dn297701) предоставляет информацию, которая используется алгоритмом **ChallengeResponseAlgorithm**, заключенным в вызов [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693), для сравнения значения запроса карты и ключа администратора, предоставленного службой или средством управления, для проверки подлинности запроса.
+2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) предоставляет информацию, которая используется алгоритмом **ChallengeResponseAlgorithm**, заключенным в вызов [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693), для сравнения значения запроса карты и ключа администратора, предоставленного службой или средством управления, для проверки подлинности запроса.
 
 3.  Если запрос выполняется успешно, то вызов [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) завершается, и возвращается значение **true**, если ПИН-код успешно сброшен.
 
@@ -208,6 +205,6 @@ bool result = await SmartCardProvisioning
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

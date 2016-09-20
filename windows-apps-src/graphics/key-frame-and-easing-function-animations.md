@@ -5,7 +5,7 @@ ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
 description: "Линейные анимации по ключевым кадрам, анимации по ключевым кадрам со значением KeySpline и функции для реалистичной анимации—это три различные методики реализации приблизительно одного и того же сценария."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 9c010e0abca4dd095b32b42b3a8606f8faf3fcaa
+ms.openlocfilehash: 00abdacf8d1f8376a3d1a0c472ff7cf2c15afb01
 
 ---
 # Анимации по ключевым кадрам и на основе функций для реалистичной анимации
@@ -31,25 +31,14 @@ ms.openlocfilehash: 9c010e0abca4dd095b32b42b3a8606f8faf3fcaa
 
 Помимо [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration), в анимации по ключевым кадрам можно задать все свойства, основанные на [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517), как в случае анимации **From**/**To**/**By**, поскольку классы анимации по ключевым кадрам также наследуются от **Timeline**. К ним относятся следующие:
 
--   
-              [
-              **AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse): по достижении последнего ключевого кадра воспроизведение кадров повторяется в обратном порядке, начиная с конца. Это удваивает кажущуюся продолжительность анимации.
--   
-              [
-              **BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime): задерживает запуск анимации. Отсчет временной шкалы для значений **KeyTime** в кадрах не начинается, пока не будет достигнуто значение **BeginTime**, что исключает риск обрезания кадров.
--   
-              [
-              **FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior): определение дальнейших действий по достижении последнего ключевого кадра. 
-              **FillBehavior** не влияет на какие-либо промежуточные ключевые кадры.
--   
-              [
-              **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty):
+-   [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse): по достижении последнего ключевого кадра воспроизведение кадров повторяется в обратном порядке, начиная с конца. Это удваивает кажущуюся продолжительность анимации.
+-   [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime): задерживает запуск анимации. Отсчет временной шкалы для значений **KeyTime** в кадрах не начинается, пока не будет достигнуто значение **BeginTime**, что исключает риск обрезания кадров.
+-   [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior): определение дальнейших действий по достижении последнего ключевого кадра. **FillBehavior** не влияет на какие-либо промежуточные ключевые кадры.
+-   [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty):
     -   Если задано значение **Forever**, ключевые кадры и их временная шкала повторяются бесконечно.
     -   Если задан счетчик итерации, временная шкала повторяется указанное количество раз.
     -   Если задано значение [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377), временная шкала повторяется, пока не будет достигнуто это значение времени. Это может привести к усечению анимации во время последовательности ключевых кадров, если значение не является целым множителем значения неявной продолжительности временной шкалы.
--   
-              [
-              **SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) (не является широко используемым)
+-   [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) (не является широко используемым)
 
 ### Линейные ключевые кадры
 
@@ -77,8 +66,7 @@ ms.openlocfilehash: 9c010e0abca4dd095b32b42b3a8606f8faf3fcaa
 
 Дискретные ключевые кадры не используют интерполяцию вовсе. По достижении значения **KeyTime** просто применяется новое значение **Value**. В зависимости от того, какое свойство пользовательского интерфейса анимируется, это часто приводит к тому, что кажется, будто анимация "прыгает". Убедитесь, что это именно то поведение, которое вам нужно. Вы можете свести к минимуму видимые прыжки, увеличив количество объявляемых ключевых кадров, но если вам требуется плавная анимация, рекомендуется использовать линейные или сплайновые ключевые кадры.
 
-
-              **Примечание.** Дискретные ключевые кадры— это единственный способ анимировать значение, которое не относится к типам [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) и [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723), с помощью [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132). Более подробное описание процесса приводится далее в этом разделе.
+**Примечание.** Дискретные ключевые кадры— это единственный способ анимировать значение, которое не относится к типам [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) и [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723), с помощью [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132). Более подробное описание процесса приводится далее в этом разделе.
 
  
 
@@ -166,39 +154,17 @@ This example applies a [**CubicEase**](https://msdn.microsoft.com/library/window
 
 Ниже представлен список функций для реалистичной анимации.
 
--   
-              [
-              **BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049): объект немного отводится в противоположную сторону, прежде чем начинает двигаться по заданному пути.
--   
-              [
-              **BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057): создается эффект отскакивания.
--   
-              [
-              **CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063): создается анимация, которая ускоряется или замедляется на основании круговой функции.
--   
-              [
-              **CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126): создается анимация, которая ускоряется или замедляется на основании формулы f(t)=t3.
--   
-              [
-              **ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282): создается анимация, напоминающая колебания пружины взад и вперед до полной остановки.
--   
-              [
-              **ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294): создается анимация, которая ускоряется или замедляется на основании экспоненциальной формулы.
--   
-              [
-              **PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399): создается анимация, которая ускоряется или замедляется на основании формулы f(t) = tp, где p равно свойству [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power).
--   
-              [
-              **QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403): создается анимация, которая ускоряется или замедляется на основании формулы f(t)=t2.
--   
-              [
-              **QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405): создается анимация, которая ускоряется или замедляется на основании формулы f(t)=t4.
--   
-              [
-              **QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407): создается анимация, которая ускоряется или замедляется на основании формулы f(t)=t5.
--   
-              [
-              **SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439): создается анимация, которая ускоряется или замедляется на основании синусоидальной функции.
+-   [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049): объект немного отводится в противоположную сторону, прежде чем начинает двигаться по заданному пути.
+-   [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057): создается эффект отскакивания.
+-   [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063): создается анимация, которая ускоряется или замедляется на основании круговой функции.
+-   [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126): создается анимация, которая ускоряется или замедляется на основании формулы f(t)=t3.
+-   [**ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282): создается анимация, напоминающая колебания пружины взад и вперед до полной остановки.
+-   [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294): создается анимация, которая ускоряется или замедляется на основании экспоненциальной формулы.
+-   [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399): создается анимация, которая ускоряется или замедляется на основании формулы f(t) = tp, где p равно свойству [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power).
+-   [**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403): создается анимация, которая ускоряется или замедляется на основании формулы f(t)=t2.
+-   [**QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405): создается анимация, которая ускоряется или замедляется на основании формулы f(t)=t4.
+-   [**QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407): создается анимация, которая ускоряется или замедляется на основании формулы f(t)=t5.
+-   [**SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439): создается анимация, которая ускоряется или замедляется на основании синусоидальной функции.
 
 Некоторые из функций для реалистичной анимации имеют собственные свойства. Например, [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) имеет два свойства [**Bounces**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) и [**Bounciness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx), которые изменяют поведение функции во времени данной конкретной функции **BounceEase**. Другие функции для реалистичной анимации, такие как [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126), не имеют иных свойств, кроме свойства [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275), общего для всех функций для реалистичной анимации, и всегда создают одинаковое поведение функции во времени.
 
@@ -317,6 +283,6 @@ You also might use [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.co
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

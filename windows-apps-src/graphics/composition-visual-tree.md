@@ -3,13 +3,14 @@ author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: "Визуальное дерево композиции"
 description: "В композиции объекты класса Visual составляют визуальную древовидную структуру, которую используют и на которую опираются другие функции API композиции. API позволяет разработчикам определить и создать один или несколько объектов класса Visual, каждый из которых представляет отдельный узел визуального дерева."
+translationtype: Human Translation
 ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
+ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
 
 ---
 # Визуальное дерево композиции
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В композиции объекты класса Visual составляют визуальную древовидную структуру, которую используют и на которую опираются другие функции API композиции. API позволяет разработчикам определить и создать один или несколько объектов класса Visual, каждый из которых представляет отдельный узел визуального дерева.
 
@@ -17,18 +18,10 @@ ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 
 Визуальная древовидная структура включает три типа объектов класса Visual, а также базовый класс кисти с несколькими подклассами, которые влияют на содержимое визуального объекта.
 
--   [
-              **Visual**
-            ](https://msdn.microsoft.com/library/windows/apps/Dn706858) — базовый объект, обладающий большей частью свойств, которые наследуют другие объекты класса Visual.
--   [
-              **ContainerVisual**
-            ](https://msdn.microsoft.com/library/windows/apps/Dn706810) — потомок объекта класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), который добавляет возможность создавать дочерние объекты.
--   [
-              **SpriteVisual**
-            ](https://msdn.microsoft.com/library/windows/apps/Mt589433) — потомок класса [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810), который добавляет возможность подключения кисти. Это позволяет визуальному объекту отрисовывать пиксели, в том числе изображения, эффекты или заполнение сплошным цветом.
--   [
-              **CompositionBrush**
-            ](https://msdn.microsoft.com/library/windows/apps/Mt589398) — позволяет применять эффекты к содержимому объекта класса Visual. Существует несколько подклассов CompositionBrush.
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)— базовый объект, обладающий большей частью свойств, которые наследуют другие объекты класса Visual.
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)— является производным от класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) и добавляет возможность создавать дочерние объекты.
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)— класс, производный от класса [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810), в котором добавляется возможность подключения кисти. Это позволяет визуальному объекту отрисовывать пиксели, в том числе изображения, эффекты или заполнение сплошным цветом.
+-   [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398)— позволяет применять эффекты к содержимому объекта класса Visual. Существует несколько подклассов CompositionBrush.
 
 ## Пример CompositionVisual
 
@@ -45,15 +38,9 @@ ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 
 В примере также используются три различных объекта класса Visual.
 
--   [
-              **Visual**
-            ](https://msdn.microsoft.com/library/windows/apps/Dn706858) — базовый объект, обладающий большей частью свойств, которые наследуют другие объекты класса Visual.
--   [
-              **ContainerVisual**
-            ](https://msdn.microsoft.com/library/windows/apps/Dn706810) — потомок объекта класса Visual, который добавляет возможность создавать дочерние объекты.
--   [
-              **SpriteVisual**
-            ](https://msdn.microsoft.com/library/windows/apps/Mt589433) — потомок Visual, который добавляет возможность подключать кисть, позволяя визуальному объекту отрисовывать пиксели, в том числе изображения, эффекты или заполнение сплошным цветом.
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)— базовый объект, обладающий большей частью свойств, которые наследуют другие объекты класса Visual.
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)— класс, производный от класса Visual, в котором добавляется возможность создавать дочерние объекты.
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)— класс, производный от класса Visual, в котором добавляется возможность подключения кисти. Это позволяет визуальному объекту отрисовывать пиксели, в том числе изображения, эффекты или заполнение сплошным цветом.
 
 Этот пример не охватывает такие понятия как анимация или более сложные эффекты, но он содержит стандартные элементы, которые используются всеми этими системами.
 
@@ -78,8 +65,7 @@ visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xF
 
 ## Обрезка объекта класса Visual
 
-[
-            **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) также можно использовать для обрезки объектов класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858). Ниже приведен фрагмент примера, в котором [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) используется для усечения каждой стороны визуального объекта.
+[**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) также можно использовать для обрезки объектов класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858). Ниже приведен фрагмент примера, в котором [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) используется для усечения каждой стороны визуального объекта.
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -522,6 +508,6 @@ namespace compositionvisual
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

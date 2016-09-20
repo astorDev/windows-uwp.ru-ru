@@ -3,7 +3,6 @@ author: TylerMSFT
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: "Перечисление и запрос файлов и папок"
 description: "Доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения также можно создавать запросы файлов и папок."
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 
@@ -15,6 +14,7 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 
 
 Доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения также можно создавать запросы файлов и папок.
+
 
 **Примечание.** См. также раздел [Пример перечисления папок](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
@@ -31,7 +31,8 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 
 ## Перечисление файлов и папок в расположении
 
-> **Примечание.** Не забудьте объявить возможность **picturesLibrary**.
+> 
+            **Примечание.** Не забудьте объявить возможность **picturesLibrary**.
 
 В этом примере мы сначала используем метод [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276), чтобы получить все файлы в корневой папке [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (не во вложенных папках) и перечислить имена всех файлов. Далее мы используем метод [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280), чтобы получить все папки в **PicturesLibrary** и перечислить имена всех вложенных папок.
 
@@ -136,10 +137,11 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 > ```
 
 
-> **Примечание.** В языках C# или Visual Basic обязательно вставляйте ключевое слово **async** в объявления всех методов, в которых используется оператор **await**.
+> [!div class="tabbedCodeSnippets"]
  
 
-Также вы можете использовать метод [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286), чтобы получить все элементы (как файлы, так и вложенные папки) в определенном расположении. В следующем примере используется метод **GetItemsAsync** для получения всех файлов и вложенных папок в корневой папке [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (не во вложенных папках). Затем в примере перечисляются имена всех файлов и вложенных папок. Если элемент является вложенной папкой, в примере к имени добавляется `"folder"`.
+
+            **Примечание.** В языках C# или Visual Basic обязательно вставляйте ключевое слово **async** в объявления всех методов, в которых используется оператор **await**. Также вы можете использовать метод [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286), чтобы получить все элементы (как файлы, так и вложенные папки) в определенном расположении. В следующем примере используется метод **GetItemsAsync** для получения всех файлов и вложенных папок в корневой папке [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (не во вложенных папках). Затем в примере перечисляются имена всех файлов и вложенных папок.
 
 > [!div class="tabbedCodeSnippets"] 
 > ```cpp
@@ -208,11 +210,11 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 > Next item
 > ```
 
-## Запрос файлов в расположении и перечисление соответствующих файлов
+## Если элемент является вложенной папкой, в примере к имени добавляется `"folder"`.
 
-В этом примере мы запрашиваем все файлы в [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156), сгруппированные по месяцам, и в этот раз пример выполняет рекурсию во вложенные папки. Сначала мы вызываем [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) и передаем значение [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) в метод. Благодаря этому получаем объект [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066).
+[!div class="tabbedCodeSnippets"] Запрос файлов в расположении и перечисление соответствующих файлов В этом примере мы запрашиваем все файлы в [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156), сгруппированные по месяцам, и в этот раз пример выполняет рекурсию во вложенные папки.
 
-Затем мы вызываем [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074), который возвращает объекты класса [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), представляющие виртуальные папки. В этом случае мы группируем по месяцам, поэтому каждая виртуальная папка представляет группу файлов с одинаковым месяцем.
+Сначала мы вызываем [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) и передаем значение [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) в метод. Благодаря этому получаем объект [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066).
 
 > [!div class="tabbedCodeSnippets"] 
 > ```cpp
@@ -311,7 +313,7 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 > Next folder
 > ```
 
-Результат работы программы выглядит примерно так:
+Затем мы вызываем [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074), который возвращает объекты класса [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), представляющие виртуальные папки.
 
 ``` syntax
 July ‎2015 (2)

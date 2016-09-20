@@ -1,144 +1,151 @@
 ---
 author: Jwmsft
-Description: Use nested UI to enable multiple actions on a list item
-title: Nested UI in list items
+Description: "Использование вложенных элементов пользовательского интерфейса для выполнения нескольких действий над элементом списка"
+title: "Вложенные элементы интерфейса в элементах списка"
 label: Nested UI in list items
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
+
 ---
+# Вложенные элементы интерфейса в элементах списка
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Nested UI in list items
+Вложенный элемент интерфейса предоставляет вложенные активные элементы управления, заключенные в контейнер, которые также могут брать на себя независимый фокус.
 
-Nested UI is a user interface (UI) that exposes nested actionable controls enclosed inside a container that also can take independent focus.
+Вложенные элементы интерфейса можно использовать для предоставления пользователю дополнительных параметров, ускоряющих выполнение важных действий. Однако чем больше действий предоставляется, тем сложнее становится пользовательский интерфейс. Выбирать этот шаблон пользовательского интерфейса следует с особым вниманием. В это статье представлены рекомендации, которые помогут вам составит лучший план действий для вашего пользовательского интерфейса.
 
-You can use nested UI to present a user with additional options that help accelerate taking important actions. However, the more actions you expose, the more complicated your UI becomes. You need to take extra care when you choose to use this UI pattern. This article provides guidelines to help you determine the best course of action for your particular UI.
+В этой статье мы рассмотрим создание вложенных элементов пользовательского интерфейса в элементах [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) и [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). Хотя в этом разделе не рассматриваются другие варианты вложенных элементов интерфейса, данные концепции универсальны. Перед началом вам следует ознакомиться с общими рекомендациями по использованию элементов управления ListView или GridView в пользовательском интерфейсе. Эти рекомендации можно найти в статьях [Списки](lists.md) и [Представления списка и сетки](listview-and-gridview.md).
 
-In this article, we discuss the creation of nested UI in [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) and [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) items. While this section does not talk about other nested UI cases, these concepts are transferrable. Before you start, you should be familiar with the general guidance for using ListView or GridView controls in your UI, which is found in the [Lists](lists.md) and [List view and grid view](listview-and-gridview.md) articles.
+В этой статье используются термины *список*, *элемент списка* и *вложенный элемент пользовательского интерфейса* согласно указанным определениям:
+- *Список* обозначает коллекцию элементов, содержащихся в представлении списка или сетки.
+- *Элемент списка* обозначает отдельный элемент, над которым пользователь может выполнить действие в списке.
+- *Вложенный элемент пользовательского интерфейса*обозначает элемент пользовательского интерфейса, над которым пользователь может выполнить действие отдельно от действий над самим элементом списка.
 
-In this article, we use the terms *list*, *list item*, and *nested UI* as defined here:
-- *List* refers to a collection of items contained in a list view or grid view.
-- *List item* refers to an individual item that a user can take action on in a list.
-- *Nested UI* refers to UI elements within a list item that a user can take action on separate from taking action on the list item itself.
+![Части вложенных элементов пользовательского интерфейса](images/nested-ui-example-1.png)
 
-![Nested UI parts](images/nested-ui-example-1.png)
+> Примечание.&nbsp;&nbsp; Элементы ListView и GridView наследуют от класса [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), поэтому они обладают идентичными функциями, но отображают данные по-разному. В этой статье вся информация о списках актуальна для обоих элементов управления (ListView и GridView).
 
-> NOTE&nbsp;&nbsp; ListView and GridView both derive from the [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) class, so they have the same functionality, but display data differently. In this article, when we talk about lists, the info applies to both the ListView and GridView controls.
+## Основные и дополнительные действия
 
-## Primary and secondary actions
+При создании пользовательского интерфейса со списком продумайте, какие действия пользователь может выполнять с элементами этого списка.  
 
-When creating UI with a list, consider what actions the user might take from those list items.  
+- Может ли пользователь щелкнуть элемент для выполнения действия?
+    - Как правило, нажатие на элемент списка указывает на действие, но не всегда.
+- Может ли пользователь выполнять несколько действий?
+    - Например, нажатие сообщения электронной почты в списке открывает его. Однако могут быть и другие действия, например удаление сообщения электронной почты, которые пользователю может потребоваться выполнить, не открывая сообщение. Пользователю было бы удобнее иметь доступ к этому действию непосредственно в списке.
+- Каким образом действия должны быть представлены пользователю?
+    - Продумайте все типы ввода. Некоторые виды вложенных элементов пользовательского интерфейса удобно использовать с одним методом ввода, но неудобно с другими.  
 
-- Can a user click on the item to perform an action?
-    - Typically, clicking a list item initiates an action, but it doesn't have too.
-- Is there more than one action the user can take?
-    - For example, tapping an email in a list opens that email. However, there might be other actions, like deleting the email, that the user would want to take without opening it first. It would benefit the user to access this action directly in the list.
-- How should the actions be exposed to the user?
-    - Consider all input types. Some forms of nested UI work great with one method of input, but might not work with other methods.  
+*Основное действие*— это то действие, которое пользователь ожидает при нажатии элемента списка.
 
-The *primary action* is what the user expects to happen when they press the list item.
+*Дополнительные действия*— это, как правило, ускорители, связанные с элементами списка. Эти ускорители могут использоваться для управления списком или действий над элементом списка.
 
-*Secondary actions* are typically accelerators associated with list items. These accelerators can be for list management or actions related to the list item.
+## Варианты дополнительных действий
 
-## Options for secondary actions
+При создании пользовательского интерфейса со списком сначала необходимо учесть все методы ввода, поддерживаемые UWP. Подробнее о различных типах ввода см. в разделе [Азбука методов ввода](../input-and-devices/input-primer.md).
 
-When creating list UI, you first need to make sure you account for all input methods that UWP supports. For more info about different kinds of input, see [Input primer](../input-and-devices/input-primer.md).
+Убедившись, что ваше приложение поддерживает все методы ввода, доступные в UWP, вам следует решить, достаточно ли важны дополнительные действия вашего приложения, чтобы предоставлять их в виде ускорителей в основном списке. Не забывайте, что чем больше действий предоставляется, тем сложнее становится пользовательский интерфейс. Действительно ли вам нужно предоставлять дополнительные действия в основном пользовательском интерфейсе списка или их можно разместить где-то еще?
 
-After you have made sure that your app supports all inputs that UWP supports, you should decide if your app’s secondary actions are important enough to expose as accelerators in the main list. Remember that the more actions you expose, the more complicated your UI becomes. Do you really need to expose the secondary actions in the main list UI, or can you put them somewhere else?
+Вы можете рассмотреть вариант предоставления дополнительных действий в основном пользовательском интерфейсе списка, если необходимо обеспечить постоянный доступ к этим действиям любым методом ввода.
 
-You might consider exposing additional actions in the main list UI when those actions need to be accessible by any input at all times.
+Если вы решите, что размещать дополнительные действия в основном пользовательском интерфейсе списка не обязательно, есть несколько других способов их предоставления пользователю. Вот несколько возможных вариантов размещения дополнительных действий.
 
-If you decide that putting secondary actions in the main list UI is not necessary, there are several other ways you can expose them to the user. Here are some options you can consider for where to place secondary actions.
+### Размещение дополнительных действий на странице сведений
 
-### Put secondary actions on the detail page
+Разместите дополнительные действия на странице, которая открывается при нажатии элемента списка. При использовании шаблона основных и подробных данных зачастую удобно разместить дополнительные действия на странице сведений.
 
-Put the secondary actions on the page that the list item navigates to when it’s pressed. When you use the master/details pattern, the detail page is often a good place to put secondary actions.
+Подробнее см. в разделе [Шаблон основных и подробных данных](master-details.md).
 
-For more info, see the [Master/detail pattern](master-details.md).
+### Размещение дополнительных действий в контекстном меню
 
-### Put secondary actions in a context menu
+Разместите дополнительные действия в контекстном меню, доступ к которому пользователь может получить с помощью правого щелчка мышью или нажатия и удержания. Преимущество этого варианта в том, что пользователь может выполнить действие, например удалить сообщение электронной почты, не загружая страницу сведений. Также рекомендуется предоставить доступ к этим параметрам на странице сведений, так как контекстные меню больше подходят на роль ускорителей, а не основных элементов пользовательского интерфейса.
 
-Put the secondary actions in a context menu that the user can access via right-click or press-and-hold. This provides the benefit of letting the user perform an action, such as deleting an email, without having to load the detail page. It's a good practice to also make these options available on the detail page, as context menus are intended to be accelerators rather than primary UI.
+Для предоставления дополнительных действия при вводе с помощью геймпада или пульта дистанционного управления мы рекомендуем использовать контекстное меню.
 
-To expose secondary actions when input is from a gamepad or remote control, we recommend that you use a context menu.
+Подробнее см. в разделе [Контекстные меню и всплывающие элементы](menus.md).
 
-For more info, see [Context menus and flyouts](menus.md).
+### Размещение дополнительных действий в элементах пользовательского интерфейса, отображаемых при наведении на них указателя, для оптимизации ввода с помощью указателя
 
-### Put secondary actions in hover UI to optimize for pointer input
+Если вы ожидаете, что ваше приложение будет часто использоваться с помощью ввода указателем, таким как мышь или перо, и желаете обеспечить мгновенный доступ к дополнительным действиям только посредством указанных методов ввода, вы можете настроить отображение дополнительных действий только при наведении указателя. Этот ускоритель отображается только при использовании метода ввода указателем, поэтому не забудьте использовать другие варианты для поддержки остальных методов ввода.
 
-If you expect your app to be used frequently with pointer input such as mouse and pen, and want to make secondary actions readily available only to those inputs, then you can show the secondary actions only on hover. This accelerator is visible only when a pointer input is used, so be sure to use the other options to support other input types as well.
-
-![Nested UI shown on hover](images/nested-ui-hover.png)
+![Отображение вложенного элемента пользовательского интерфейса при наведении указателя](images/nested-ui-hover.png)
 
 
-For more info, see [Mouse interactions](../input-and-devices/mouse-interactions.md).
+Дополнительные сведения см. в статье [Взаимодействие с помощью мыши](../input-and-devices/mouse-interactions.md).
 
-## UI placement for primary and secondary actions
+## Размещение элементов пользовательского интерфейса для основных и дополнительных действий
 
-If you decide that secondary actions should be exposed in the main list UI, we recommend the following guidelines.
+Если вы решите предоставить дополнительные действия в основном пользовательском интерфейсе списка, воспользуйтесь следующими рекомендациями.
 
-When you create a list item with primary and secondary actions, place the primary action to the left and secondary actions to the right. In left-to-right reading cultures, users associate actions on the left side of list item as the primary action.
+При создании элемента списка с основными и дополнительными действиям размещайте основное действие слева, а дополнительные— справа. В странах с направлением чтения слева направо пользователи считают действия с левой стороны элемента списка основными.
 
-In these examples, we talk about list UI where the item flows more horizontally (it is wider than its height). However, you might have list items that are more square in shape, or taller than their width. Typically, these are items used in a grid. For these items, if the list doesn't scroll vertically, you can place the secondary actions at the bottom of the list item rather than to the right side.
+В этих примерах мы рассмотрим пользовательский интерфейс списка с преимущественно горизонтальным размещением элемента (ширина больше высоты). Но вы можете использовать элементы списка более квадратной формы или вытянутые в высоту. Обычно эти элементы используются в сетке. Для таких элементов (если список не прокручивается вертикально) вы можете разместить дополнительные действия в нижней части элемента списка, а не справа.
 
-## Consider all inputs
+## Рассмотрите все методы ввода
 
-When deciding to use nested UI, also evaluate the user experience with all input types. As mentioned earlier, nested UI works great for some input types. However, it does not always work great for some other. In particular, keyboard, controller, and remote inputs can have difficulty accessing nested UI elements. Be sure to follow the guidance below to ensure your UWP works with all input types.
+Принимая решение об использовании вложенных элементов пользовательского интерфейса, также оцените удобство использования приложения со всеми методами ввода. Как уже говорилось, вложенные элементы пользовательского интерфейса отлично подходят для определенных методов ввода. Но с некоторыми методами ввода их использовать неудобно. В частности, доступ к вложенным элементам пользовательского интерфейса может быть затруднен при вводе с помощью клавиатуры, контроллера или пульта дистанционного управления. Следуйте рекомендациями ниже, чтобы ваше приложение UWP поддерживало все методы ввода.
 
-## Nested UI handling
+## Использование вложенных элементов пользовательского интерфейса
 
-When you have more than one action nested in the list item, we recommend this guidance to handle navigation with a keyboard, gamepad, remote control, or other non-pointer input.
+Если в элемент списка вложено несколько действий, следуйте нашим рекомендациям для обеспечения навигации с помощью клавиатуры, геймпада, пульта дистанционного управления и других методов ввода без указателя.
 
-### Nested UI where list items perform an action
+### Вложенные элементы пользовательского интерфейса, с которыми элементы списка выполняют действие
 
-If your list UI with nested elements supports actions such as invoking, selection (single or multiple), or drag-and-drop operations, we recommend these arrowing techniques to navigate through your nested UI elements.
+Если ваш пользовательский интерфейс списка с вложенными элементами поддерживает такие действия, как вызов, выделение (одного или нескольких элементов) или перетаскивание, мы рекомендуем следующие техники с использованием стрелок для навигации по вложенным элементам пользовательского интерфейса.
 
-![Nested UI parts](images/nested-ui-navigation.png)
+![Части вложенных элементов пользовательского интерфейса](images/nested-ui-navigation.png)
 
-**Gamepad**
+**Геймпад**
 
-When input is from a gamepad, provide this user experience:
+При вводе с помощью геймпада предоставьте пользователю следующие возможности:
 
-- From **A**, right directional key puts focus on **B**.
-- From **B**, right directional key puts focus on **C**.
-- From **C**, right directional key is either no op, or if there is a focusable UI element to the right of List, put the focus there.
-- From **C**, left directional key puts focus on **B**.
-- From **B**, left directional key puts focus on **A**.
-- From **A**, left directional key is either no op, or if there is a focusable UI element to the right of List, put the focus there.
-- From **A**, **B**, or **C**, down directional key puts focus on **D**.
-- From UI element to the left of List Item, right directional key puts focus on **A**.
-- From UI element to the right of List Item, left directional key puts focus on **A**.
+- нажатие кнопки навигации "Вправо" при фокусе на элементе **A** перемещает фокус на элемент **B**;
+- нажатие кнопки навигации "Вправо" при фокусе на элементе **B** перемещает фокус на элемент **C**;
+- при фокусе на элементе **C** кнопка навигации "Вправо" не выполняет никаких действий или перемещает фокус на фокусируемый элемент пользовательского интерфейса справа от списка, если таковой имеется;
+- нажатие кнопки навигации "Влево" при фокусе на элементе **C** перемещает фокус на элемент **B**;
+- нажатие кнопки навигации "Влево" при фокусе на элементе **B** перемещает фокус на элемент **A**;
+- при фокусе на элементе **A** кнопка навигации "Вправо" не выполняет никаких действий или перемещает фокус на фокусируемый элемент пользовательского интерфейса справа от списка, если таковой имеется;
+- нажатие кнопки навигации "Вниз" при фокусе на элементах **A**, **B** или **C** перемещает фокус на элемент **D**;
+- нажатие кнопки навигации "Вправо" при фокусе на элементе пользовательского интерфейса слева от элемента списка перемещает фокус на элемент **A**;
+- нажатие кнопки навигации "Влево" при фокусе на элементе пользовательского интерфейса справа от элемента списка перемещает фокус на элемент **A**.
 
-**Keyboard**
+**Клавиатура**
 
-When input is from a keyboard, this is the experience user gets:
+При вводе с помощью клавиатуры пользователь получает следующие возможности:
 
-- From **A**, tab key puts focus on **B**.
-- From **B**, tab key puts focus on **C**.
-- From **C**, tab key puts focus on next focusable UI element in the tab order.
-- From **C**, shift+tab key puts focus on **B**.
-- From **B**, shift+tab or left arrow key puts focus on **A**.
-- From **A**, shift+tab key puts focus on next focusable UI element in the reverse tab order.
-- From **A**, **B**, or **C**, down arrow key puts focus on **D**.
-- From UI element to the left of List Item, tab key puts focus on **A**.
-- From UI element to the right of List Item, shift tab key puts focus on **C**.
+- нажатие клавиши TAB при фокусе на элементе **A** перемещает фокус на элемент **B**;
+- нажатие клавиши TAB при фокусе на элементе **B** перемещает фокус на элемент **C**;
+- нажатие клавиши TAB при фокусе на элементе **C** перемещает фокус на следующий фокусируемый элемент пользовательского интерфейса в последовательности табуляции;
+- нажатие клавиш SHIFT+C при фокусе на элементе **C** перемещает фокус на элемент **B**;
+- нажатие клавиш SHITF+TAB или клавиши со стрелкой влево при фокусе на элементе **B** перемещает фокус на элемент **A**;
+- нажатие клавиш SHIFT+TAB при фокусе на элементе **A** перемещает фокус на следующий фокусируемый элемент пользовательского интерфейса в обратной последовательности табуляции;
+- нажатие клавиши со стрелкой вниз при фокусе на элементах **A**, **B** или **C** перемещает фокус на элемент **D**;
+- нажатие клавиши TAB при фокусе на элементе пользовательского интерфейса слева от элемента списка перемещает фокус на элемент **A**;
+- нажатие клавиш SHIFT+TAB при фокусе на элементе пользовательского интерфейса справа от элемента списка перемещает фокус на элемент **C**.
 
-To achieve this UI, set [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) to **true** on your list. [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) can be any value.
+Чтобы создать такой пользовательский интерфейс, установите свойству [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) значение **true** в списке. [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) может иметь любое значение.
 
-For the code to implement this, see the [Example](#example) section of this article.
+Код для реализации этого интерфейса см. в разделе [Пример](#example) данной статьи.
 
-### Nested UI where list items do not perform an action
+### Вложенные элементы пользовательского интерфейса, с которыми элементы списка не выполняют действий
 
-You might use a list view because it provides virtualization and optimized scrolling behavior, but not have an action associated with a list item. These UIs typically use the list item only to group elements and ensure they scroll as a set.
+Вы можете использовать представление списка, так как оно обеспечивает виртуализацию и оптимизирует прокручивание, но не привязывать действий к элементу списка. Как правило, в таких пользовательских интерфейсах элемент списка используется только для группировки элементов и их прокручивания как набора.
 
-This kind of UI tends to be much more complicated than the previous examples, with a lot of nested elements that the user can take action on.
+Обычно подобные пользовательские интерфейсы гораздо сложнее предыдущих примеров и содержат множество вложенных элементов, над которыми пользователь может выполнять действия.
 
-![Nested UI parts](images/nested-ui-grouping.png)
+![Части вложенных элементов пользовательского интерфейса](images/nested-ui-grouping.png)
 
 
-To achieve this UI, set the following properties on your list:
-- [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) to **None**.
-- [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) to **false**.
-- [IsFocusEngagementEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isfocusengagementenabled.aspx) to **true**.
+Чтобы создать такой пользовательский интерфейс, установите следующие свойства в вашем списке:
+- 
+              свойству [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) задайте значение **None**;
+- 
+              свойству [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) задайте значение **false**;
+- 
+              свойству [IsFocusEngagementEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isfocusengagementenabled.aspx) задайте значение **true**.
 
 ```xaml
 <ListView SelectionMode="None" IsItemClickEnabled="False" >
@@ -150,30 +157,30 @@ To achieve this UI, set the following properties on your list:
 </ListView>
 ```
 
-When the list items do not perform an action, we recommend this guidance to handle navigation with a gamepad or keyboard.
+Если элементы списка не выполняют действий, следуйте нашим рекомендациям для обеспечения навигации с помощью геймпада или клавиатуры.
 
-**Gamepad**
+**Геймпад**
 
-When input is from a gamepad, provide this user experience:
+При вводе с помощью геймпада предоставьте пользователю следующие возможности:
 
-- From List Item, down directional key puts focus on next List Item.
-- From List Item, left/right key is either no op, or if there is a focusable UI element to the right of List, put the focus there.
-- From List Item, 'A' button puts the focus on Nested UI in top/down left/right priority.
-- While inside Nested UI, follow the XY Focus navigation model.  Focus can only navigate around Nested UI contained inside the current List Item until user presses 'B' button, which puts the focus back onto the List Item.
+- нажатие кнопки навигации "Вниз" при фокусе на элементе списка перемещает фокус на следующий элемент списка;
+- при фокусе на элементе списка кнопки навигации "Вправо" и "Влево" не выполняют никаких действий или перемещают фокус на фокусируемый элемент пользовательского интерфейса справа от списка, если таковой имеется;
+- нажатие кнопки "A" при фокусе на элементе списка перемещает фокус на вложенный элемент пользовательского интерфейса в порядке сверху вниз и слева направо.
+- Для навигации по вложенному элементу пользовательского интерфейса используется модель фокуса XY.  Фокус может перемещаться только в пределах вложенного элемента пользовательского интерфейса внутри текущего элемента списка, пока пользователь не нажмет кнопку "B", после чего фокус переместится на элемент списка.
 
-**Keyboard**
+**Клавиатура**
 
-When input is from a keyboard, this is the experience user gets:
+При вводе с помощью клавиатуры пользователь получает следующие возможности:
 
-- From List Item, down arrow key puts focus on the next List Item.
-- From List Item, pressing left/right key is no op.
-- From List Item, pressing tab key puts focus on the next tab stop amongst the Nested UI item.
-- From one of the Nested UI items, pressing tab traverses the nested UI items in tab order.  Once all the Nested UI items are traveled to, it puts the focus onto the next control in tab order after ListView.
-- Shift+Tab behaves in reverse direction from tab behavior.
+- нажатие клавиши со стрелкой вниз при фокусе на элементе списка перемещает фокус на следующий элемент списка;
+- при фокусе на элементе списка клавиши со стрелками влево/вправо не выполняют действий;
+- нажатие клавиши TAB при фокусе на элементе списка перемещает фокус на следующую остановку перехода внутри вложенного элемента пользовательского интерфейса;
+- нажатие клавиши TAB при фокусе на одном из вложенных элементов пользовательского интерфейса переходит между такими элементами в последовательности табуляции;  после перехода по всем вложенным элементам пользовательского интерфейса фокус перемещается на следующий элемент управления в последовательности табуляции после ListView;
+- клавиши SHIFT+TAB функционируют прямо противоположно клавише TAB.
 
-## Example
+## Пример
 
-This example shows how to implement [nested UI where list items perform an action](#nested-ui-where-list-items-perform-an-action).
+В этом примере показано, как реализовать [вложенный элементы пользовательского интерфейса, с которыми элементы списка выполняют действие](#nested-ui-where-list-items-perform-an-action).
 
 ```xaml
 <ListView SelectionMode="None" IsItemClickEnabled="True"
@@ -298,3 +305,9 @@ public static class DependencyObjectExtensions
     }
 }
 ```
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

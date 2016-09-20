@@ -3,7 +3,6 @@ author: mtoepke
 title: "Полный код класса BasicReaderWriter"
 description: "Полный код класса и методов для чтения и записи двоичных файлов данных без ограничений."
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
-translationtype: Human Translation
 ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
 ms.openlocfilehash: 46762d7b7234be9ff7b4c288a09162d4f942a707
 
@@ -30,14 +29,18 @@ ms.openlocfilehash: 46762d7b7234be9ff7b4c288a09162d4f942a707
 
 ## Технологии
 
-**Языки программирования** —  C++  
-**Модели программирования** — среда выполнения Windows
+
+            **Языки программирования** —  C++  
+
+            **Модели программирования** — среда выполнения Windows
 
 
 ## Требования
 
- **Минимальная версия клиента** — Windows 10       
- **Минимальная версия сервера** — Windows Server 2016 Technical Preview 
+ 
+            **Минимальная версия клиента** — Windows 10       
+
+             **Минимальная версия сервера** — Windows Server 2016 Technical Preview 
 
 ## Просмотреть код (C++)
 

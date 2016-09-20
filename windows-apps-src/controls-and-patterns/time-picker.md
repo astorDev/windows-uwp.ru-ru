@@ -5,7 +5,6 @@ title: "Управляющий элемент выбора времени"
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 5056a9f304ca21c977b9cc65b8ead007eccd4288
 
@@ -48,7 +47,8 @@ arrivalTimePicker.Header = "Arrival time";
 
 ![Пример элемента выбора времени](images/time-picker-closed.png)
 
-> **Примечание.**
+> 
+            **Примечание.**
             &nbsp;&nbsp;Важные сведения о значениях даты и времени см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи *«Элементы управления датой и временем»*.
 
 

@@ -3,7 +3,6 @@ author: DelfCo
 description: "Получайте или создавайте самое свежее и популярное веб-содержимое с помощью сводных веб-каналов, созданных по стандартам RSS и Atom с помощью компонентов в пространстве имен Windows.Web.Syndication."
 title: "Каналы RSS и Atom"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
-translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
 ms.openlocfilehash: 625a18203bd2d60acc97a6243d4f3e1e0cf2b297
 
@@ -11,7 +10,7 @@ ms.openlocfilehash: 625a18203bd2d60acc97a6243d4f3e1e0cf2b297
 
 # Каналы RSS и Atom
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -29,7 +28,7 @@ ms.openlocfilehash: 625a18203bd2d60acc97a6243d4f3e1e0cf2b297
 
 Универсальная платформа Windows (UWP) поддерживает извлечение веб-каналов формата RSS версий 0.91–2.0 и формата Atom версий 0.3–1.0. Классы в пространстве имен [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) могут определять веб-каналы и их элементы, способные представлять элементы RSS и Atom.
 
-Кроме того, в форматах Atom 1.0 и RSS 2.0 документы веб-каналов могут содержать элементы или атрибуты, не определенные в официальных спецификациях. Со временем эти особые элементы стали способом определения информации домена, потребляемой другими форматами данных веб-служб, например GData и OData. Чтобы обеспечить поддержку нового компонента, класс [**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) представляет универсальные XML-элементы. Использование **SyndicationNode** с классами в пространстве имен [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) позволяет приложениям получать доступ к атрибутам, расширениям и любому содержимому, которое они могут включать.
+Кроме того, в форматах Atom1.0 и RSS2.0 документы веб-каналов могут содержать элементы или атрибуты, не определенные в официальных спецификациях. Со временем эти особые элементы стали способом определения информации домена, потребляемой другими форматами данных веб-служб, например GData и OData. Чтобы обеспечить поддержку нового компонента, класс [**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) представляет универсальные XML-элементы. Использование **SyndicationNode** с классами в пространстве имен [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) позволяет приложениям получать доступ к атрибутам, расширениям и любому содержимому, которое они могут включать.
 
 Обратите внимание, что для публикации сводного содержимого реализация протокола Atom Publication ([**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)) платформы UWP поддерживает только операции с содержимым веб-каналов согласно стандартам Atom и Atom Publication.
 
@@ -95,13 +94,13 @@ try {
 }
 ```
 
-Теперь настроим запрос путем установки всех необходимых учетных данных сервера (свойство [**ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461)), учетных данных прокси-сервера (свойство [**ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459)) и заголовков HTTP (метод [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br243462)). После настройки основных параметров запроса получаем допустимый объект [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017), созданный с помощью предоставляемой приложением строки URI канала. Затем объект **Uri** передается в функцию [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) для запроса канала.
+[!div class="tabbedCodeSnippets"] Теперь настроим запрос путем установки всех необходимых учетных данных сервера (свойство [**ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461)), учетных данных прокси-сервера (свойство [**ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459)) и заголовков HTTP (метод [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br243462)). После настройки основных параметров запроса получаем допустимый объект [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017), созданный с помощью предоставляемой приложением строки URI канала.
 
-Допустим, было возвращено нужное содержимое канала. В этом случае код из примера перебирает каждый элемент канала, вызывая **displayCurrentItem** (который мы определим позже), чтобы отобразить элементы и их содержимое в виде списка с помощью пользовательского интерфейса.
+Затем объект **Uri** передается в функцию [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) для запроса канала.
 
-При вызове большинства асинхронных сетевых методов вам нужно создать код для обработки исключений. Обработчик исключений может получить подробную информацию о причине исключения, чтобы разобраться в проблеме и принять необходимые меры.
+Допустим, было возвращено нужное содержимое канала. В этом случае код из примера перебирает каждый элемент канала, вызывая **displayCurrentItem** (который мы определим позже), чтобы отобразить элементы и их содержимое в виде списка с помощью пользовательского интерфейса. При вызове большинства асинхронных сетевых методов вам нужно создать код для обработки исключений.
 
-Метод [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) создает исключение, если не удается установить подключение к HTTP-серверу или объект [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) не указывает на действительный AtomPub или RSS-канал. В примере кода Javascript используется функция **onError** для захвата любых исключений и вывода подробной информации об исключении при ошибке.
+Обработчик исключений может получить подробную информацию о причине исключения, чтобы разобраться в проблеме и принять необходимые меры. Метод [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) создает исключение, если не удается установить подключение к HTTP-серверу или объект [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) не указывает на действительный AtomPub или RSS-канал.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -170,7 +169,7 @@ function retreiveFeed(uri) {
 }
 ```
 
-В предыдущем шаге метод [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) вернул запрошенное содержимое канала, а код примера перебрал все доступные элементы канала. Каждый из этих элементов представляется с помощью объекта [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533), содержащего все свойства элемента и содержимое, которое предоставляется соответствующим стандартом синдикации (RSS или Atom). В следующем примере рассматривается функция **displayCurrentItem**, которая обрабатывает каждый элемент и отображает его содержимое с помощью элементов пользовательского интерфейса с различными именами.
+В примере кода Javascript используется функция **onError** для захвата любых исключений и вывода подробной информации об исключении при ошибке. [!div class="tabbedCodeSnippets"] В предыдущем шаге метод [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) вернул запрошенное содержимое канала, а код примера перебрал все доступные элементы канала.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -218,7 +217,7 @@ function displayCurrentItem() {
                 //displayCurrentItem is continued below.
 ```
 
-Как упоминалось выше, содержимое, представленное объектом [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533), будет различаться в зависимости от того, какой стандарт (RSS или Atom) используется для публикации веб-канала. Например, веб-канал Atom может предоставлять список [**Contributors**](https://msdn.microsoft.com/library/windows/apps/br243540), а RSS-канал — нет. Но входящие в элемент канала элементы расширения, которые не поддерживаются никаким стандартом (например, элементы расширения Dublin Core), доступны с помощью свойства [**SyndicationItem.ElementExtensions**](https://msdn.microsoft.com/library/windows/apps/br243543) и отображаются, как показано в следующем примере кода.
+Каждый из этих элементов представляется с помощью объекта [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533), содержащего все свойства элемента и содержимое, которое предоставляется соответствующим стандартом синдикации (RSS или Atom). В следующем примере рассматривается функция **displayCurrentItem**, которая обрабатывает каждый элемент и отображает его содержимое с помощью элементов пользовательского интерфейса с различными именами. [!div class="tabbedCodeSnippets"]
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

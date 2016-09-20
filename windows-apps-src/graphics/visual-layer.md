@@ -4,8 +4,8 @@ ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: "Визуальный уровень"
 description: "API-интерфейс Windows.UI.Composition предоставляет доступ к уровню композиции, находящемуся между уровнем платформы (XAML) и уровнем графики (DirectX)."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 1abb663d0ee27d7e57ab83dab2589557d1f9f29a
+ms.sourcegitcommit: 4a00847f0559d93eea199d7ddca0844b5ccaa5aa
+ms.openlocfilehash: 3a3dbf7b529d5d2848b161869d2f77fef3651488
 
 ---
 # Визуальный уровень
@@ -27,18 +27,10 @@ Windows.UI.Composition — это декларативный API [абстрак
 
 Объекты класса Visual могут являться контейнерами для других визуальных объектов или содержать визуальные объекты с содержимым. Этот API легко использовать, так как он предоставляет понятный иерархический набор объектов класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) для определенных задач.
 
--   
-              [
-              **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) — базовый объект. Обладает большей частью свойств, которые наследуются другими объектами класса Visual.
--   
-              [
-              **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) является потомком объекта класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) и позволяет добавлять дочерние визуальные объекты.
--   
-              [
-              **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) является потомком объекта класса [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) и включает содержимое в виде изображений, эффектов и цепочек переключений.
--   
-              [
-              **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) — фабрика объектов, которая управляет взаимодействием между приложением и процессом компоновщика системы.
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) — базовый объект. Обладает большей частью свойств, которые наследуются другими объектами класса Visual.
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) является потомком объекта класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) и позволяет добавлять дочерние визуальные объекты.
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) является потомком объекта класса [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) и включает содержимое в виде изображений, эффектов и цепочек переключений.
+-   [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) — фабрика объектов, которая управляет взаимодействием между приложением и процессом компоновщика системы.
 
 Компоновщик также является фабрикой для ряда других объектов композиции, используемых для обрезки или преобразования визуальных объектов дерева, а также богатого набора анимаций и эффектов.
 
@@ -58,15 +50,9 @@ Windows.UI.Composition — это декларативный API [абстрак
 
 Помимо создания визуального дерева с нуля, API композиции может взаимодействовать с существующим пользовательским интерфейсом XAML с помощью класса [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) в [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908).
 
-- 
-              [
-              **ElementCompositionPreview.GetElementVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): получение резервного визуального элемента для анимирования с помощью API композиции.
-- 
-              [
-              **ElementCompositionPreview.SetChildVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): добавление «визуального острова» содержимого композиции в дерево XAML.
-- 
-              [
-              **ElementCompositionPreview.GetScrollViewerManipulationPropertySet()**](https://msdn.microsoft.com/library/windows/apps/mt608980.aspx): используйте манипуляцию [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) в качестве входных данных для анимации композиции.
+- [**ElementCompositionPreview.GetElementVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): получение резервного визуального элемента для анимирования с помощью API композиции.
+- [**ElementCompositionPreview.SetChildVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): добавление «визуального острова» содержимого композиции в дерево XAML.
+- [**ElementCompositionPreview.GetScrollViewerManipulationPropertySet()**](https://msdn.microsoft.com/library/windows/apps/mt608980.aspx): используйте манипуляцию [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) в качестве входных данных для анимации композиции.
 
 
 **Примечание**  
@@ -78,10 +64,8 @@ Windows.UI.Composition — это декларативный API [абстрак
 
 -   Ознакомьтесь со статьей Кенни Керра (Kenny Kerr) на MSDN, которая посвящена этому API: [Graphics and Animation — Windows Composition Turns 10](https://msdn.microsoft.com/magazine/mt590968) (Графика и анимация — композиция в Windows 10)
 -   Расширенные примеры пользовательского интерфейса и композиции в [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs).
--   
-              [
-              **Полная справочная документация для API**](https://msdn.microsoft.com/library/windows/apps/Dn706878).
--   Известные проблемы: [Известные проблемы](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues).
+-   [**Полная справочная документация для API**](https://msdn.microsoft.com/library/windows/apps/Dn706878).
+-   Известные проблемы: [Известные проблемы](http://go.microsoft.com/fwlink/?LinkId=823237).
 
  
 
@@ -93,6 +77,6 @@ Windows.UI.Composition — это декларативный API [абстрак
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,7 +3,6 @@ author: Jwmsft
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
 label: Text box
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 873ca8f869f4303f8fc4a9a7ff08f81df29d367d
 
@@ -62,7 +61,8 @@ rootGrid.Children.Add(textBox);
 
 Текстовое поле часто используется для принятия ввода данных в форму и использования свойства [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) для получения полной текстовой строки из текстового поля. Обычно вы используете событие, например, нажатие кнопки "Отправить", для получения доступа к свойству Text, но вы можете обрабатывать событие [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) или [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx), если необходимо выполнить какие-либо действия в случае изменения текста. 
 
-К элементу выбора даты в календаре можно добавить [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx) (или метку) и [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx) (или водяной знак), чтобы пользователь понимал, для чего он используется. Чтобы настроить оформление заголовка, задайте свойство [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx) вместо Header. *Сведения о проектировании см. в Руководстве по использованию меток*.
+К элементу выбора даты в календаре можно добавить [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx) (или метку) и [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx) (или водяной знак), чтобы пользователь понимал, для чего он используется. Чтобы настроить оформление заголовка, задайте свойство [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx) вместо Header. 
+            *Сведения о проектировании см. в Руководстве по использованию меток*.
 
 Вы можете ограничить число вводимых пользователем символов, настроив свойство [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx). Однако свойство MaxLength не ограничивает длину вставленного текста. Используйте событие [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx), чтобы изменить вставленный текст, если это важно для вашего приложения.
 
@@ -73,9 +73,12 @@ rootGrid.Children.Add(textBox);
 Кнопка "Очистить все" отображается только для редактируемых, однострочных текстовых полей, которые содержат текст и имеют фокусировку. 
 
 Кнопка "Очистить все" не отображается в любом из перечисленных ниже случаев.
-- Параметр **IsReadOnly** имеет значение **true**
-- Параметр **AcceptsReturn** имеет значение **true**
-- **TextWrap** имеет значение, отличное от **NoWrap**
+- 
+            Параметр **IsReadOnly** имеет значение **true**
+- 
+            Параметр **AcceptsReturn** имеет значение **true**
+- 
+            **TextWrap** имеет значение, отличное от **NoWrap**
 
 ### Текст, предназначенный только для чтения
 
@@ -93,7 +96,8 @@ IsEnabled
 - Чтобы позволить текстовому полю разрешать и отображать символы новой строки или возврата, установите для свойства [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) значение **true**.
 - Чтобы включить обтекание текстом, установите для свойства [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) значение **Wrap**. В результате будет включено обтекание текстом, когда он будет достигать края текстового поля, независимо от символов разделителя строки.
 
-> **Примечание.**
+> 
+            **Примечание.**
             &nbsp;&nbsp;Элементы TextBox и RichEditBox не поддерживают значение **WrapWholeWords** для своих свойств TextWrapping. Если попытаться использовать WrapWholeWords в качестве значения для параметр TextBox.TextWrapping или RichEditBox.TextWrapping, отобразится исключение относительно недействительного аргумента.
 
 Многострочное текстовое поле будет по-прежнему увеличиваться по вертикали по мере ввода текста, если он не будет ограничен своим свойством [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) или [MaxHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) или родительским контейнером. Необходимо убедиться, что многострочечное текстовое поле не увеличивается за пределы своей видимой зоны, и ограничить его увеличение, если оно выходит за пределы. Мы рекомендуем всегда указывать надлежащую высоту для многострочечного текстового поля и не позволять ему увеличиваться в высоту во время ввода пользователем. 
@@ -212,7 +216,8 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 Например, если текстовое поле используется только для ввода 4-значного PIN-кода, установите для свойства [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) значение **Number**. Это сообщает системе, что нужно отобразить раскладку цифровой клавиатуры, благодаря чему пользователю проще вводить PIN-код.
 
-> **Внимание!**
+> 
+            **Внимание!**
             &nbsp;&nbsp;Тип вводимых данных не вызывает выполнение проверки ввода, а также не препятствует пользователю вводить любые данные через аппаратную клавиатуру или другое устройство ввода. При необходимости вы по-прежнему несете ответственность за проверку вводимых данных в коде.
 
 Другие свойства, влияющие на сенсорную клавиатуру: [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx), [IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx) и [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx). (IsSpellCheckEnabled также влияет на элемент TextBox при использовании аппаратной клавиатуры.) 

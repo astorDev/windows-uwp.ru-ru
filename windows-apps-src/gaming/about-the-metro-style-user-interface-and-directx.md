@@ -5,14 +5,14 @@ description: "В играх универсальной платформы Window
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf7
+ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 ---
 
 # Объект приложения и DirectX
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В играх универсальной платформы Windows (UWP) с DirectX используется мало элементов и объектов интерфейса Windows. Поскольку они выполняются на более низком уровне в стеке среды выполнения Windows, они должны взаимодействовать со структурой пользовательского интерфейса более фундаментальным способом: напрямую получая доступ и взаимодействуя с объектом приложения. Узнайте, когда и как происходит такое взаимодействие и как вы, как разработчик DirectX, можете эффективно использовать эту модель при разработке приложений UWP.
 
@@ -82,18 +82,14 @@ ms.openlocfilehash: a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf7
 ## Поведение и свойства класса CoreApplicationView
 
 
-[
-              **CoreApplicationView**
-            ](https://msdn.microsoft.com/library/windows/apps/br225017) представляет текущее представление приложения. Во время инициализации singleton-объект приложения создает представление приложения, ожидающее своей активации. Класс [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), отображающий это представление, можно получить, обратившись к его свойству [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019), а события активации и деактивации для этого представления можно обработать, зарегистрировав делегаты с помощью события [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018).
+[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) представляет текущее представление приложения. Во время инициализации singleton-объект приложения создает представление приложения, ожидающее своей активации. Класс [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), отображающий это представление, можно получить, обратившись к его свойству [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019), а события активации и деактивации для этого представления можно обработать, зарегистрировав делегаты с помощью события [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018).
 
 ## Поведение и свойства класса CoreWindow
 
 
 Родительское окно (экземпляр класса [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)) создается и передается поставщику представлений при инициализации объекта приложения. Если у приложения есть окно для отображения, оно его отображает; в противном случае просто инициализирует данное представление.
 
-[
-              **CoreWindow**
-            ](https://msdn.microsoft.com/library/windows/apps/br208225) предоставляет несколько событий, характерных для поведения входного и основного окон. Такие события можно обрабатывать, регистрируя с их помощью собственные делегаты.
+[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) предоставляет несколько событий, характерных для поведения входного и основного окон. Такие события можно обрабатывать, регистрируя с их помощью собственные делегаты.
 
 Для данного окна также можно получить диспетчер событий, обратившись к свойству [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264), предоставляющему экземпляр класса [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211).
 
@@ -160,6 +156,6 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

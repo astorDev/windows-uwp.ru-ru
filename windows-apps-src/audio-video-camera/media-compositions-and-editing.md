@@ -5,7 +5,7 @@ description: "API-интерфейсы в пространстве имен Wind
 title: "Создание и редактирование композиций мультимедиа"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
+ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 ---
 
@@ -86,8 +86,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
--   [
-            **MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) позволяет указать приоритет скорости перекодировки в зависимости от точности обрезки соседних клипов мультимедиа. **Fast** приводит к более быстрой перекодировке с меньшей точностью обрезки, **Precise** — к более медленной перекодировке с более точной обрезкой.
+-   [**MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) позволяет указать приоритет скорости перекодировки в зависимости от точности обрезки соседних клипов мультимедиа. **Fast** приводит к более быстрой перекодировке с меньшей точностью обрезки, **Precise** — к более медленной перекодировке с более точной обрезкой.
 
 ## Обрезка видеоклипа
 
@@ -156,6 +155,6 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

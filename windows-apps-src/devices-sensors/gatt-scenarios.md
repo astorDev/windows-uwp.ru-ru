@@ -9,7 +9,7 @@ ms.openlocfilehash: 664f6ce7829c9e9a6674daa6cdc21e7561ff094b
 ---
 # Bluetooth GATT
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -47,7 +47,7 @@ API Bluetooth GATT упрощают разработку, взаимодейст
 
 В этом примере приложение принимает температурные показатели от устройства Bluetooth, в котором реализована служба Bluetooth Health Thermometer Service (Медицинский термометр). Программа указывает, что хочет получать уведомление при наличии нового значения температурного показателя. При помощи регистрации обработчика событий для события изменения значения характеристики термометра приложение будет получать уведомления об этом событии во время работы на переднем плане.
 
-Обратите внимание, что в случае приостановки приложение должно освободить все ресурсы устройства, а после возобновления — снова выполнить его перечисление и инициализацию. Если взаимодействие устройств в фоновом режим является желательным, воспользуйтесь [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx) или [GattCharacteristicNotificationTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.gattcharacteristicnotificationtrigger.aspx). DeviceUseTrigger лучше использовать для событий, происходящих более регулярно, в то время как GattCharacteristicNotificationTrigger подходит для обработки нерегулярных событий.  
+Обратите внимание, что в случае приостановки приложение должно освободить все ресурсы устройства, а после возобновления— снова выполнить его перечисление и инициализацию. Если взаимодействие устройств в фоновом режим является желательным, воспользуйтесь [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx) или [GattCharacteristicNotificationTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.gattcharacteristicnotificationtrigger.aspx). DeviceUseTrigger лучше использовать для событий, происходящих более регулярно, в то время как GattCharacteristicNotificationTrigger подходит для обработки нерегулярных событий.  
 
 ```csharp
 double convertTemperatureData(byte[] temperatureData)

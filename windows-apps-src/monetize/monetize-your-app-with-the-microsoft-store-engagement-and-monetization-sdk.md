@@ -3,7 +3,6 @@ author: mcleanbyron
 Description: "Пакет SDK Microsoft Store Engagement and Monetization предоставляет библиотеки и средства, которые вы можете использовать для добавления в приложения функций, помогающие заработать и привлечь пользователей."
 title: "Пакет SDK Microsoft Store Engagement and Monetization"
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
-translationtype: Human Translation
 ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
 ms.openlocfilehash: 481cf2aab806a1f9ce368256a9df8930cbc756c1
 
@@ -30,7 +29,8 @@ ms.openlocfilehash: 481cf2aab806a1f9ce368256a9df8930cbc756c1
 
 Дополнительные сведения см. в статье [Запуск Центра отзывов из приложения](launch-feedback-hub-from-your-app.md).
 
->**Примечание**. Отчет **Отзывы** в настоящее время доступен только для учетных записей разработчиков, которые участвуют в [программе предварительной оценки Центра разработки](../publish/dev-center-insider-program.md).
+>
+            **Примечание**. Отчет **Отзывы** в настоящее время доступен только для учетных записей разработчиков, которые участвуют в [программе предварительной оценки Центра разработки](../publish/dev-center-insider-program.md).
 
 ### Показ рекламы в приложениях
 
@@ -38,7 +38,8 @@ ms.openlocfilehash: 481cf2aab806a1f9ce368256a9df8930cbc756c1
 
 Дополнительные сведения см. в статье [Показ рекламы в приложениях](display-ads-in-your-app.md).
 
->**Примечание.** Возможности показа рекламы из предыдущих выпусков пакета Universal Ad Client SDK, расширения рекламного посредника и пакета Microsoft Advertising SDK теперь включены в пакет SDK Microsoft Store Monetization and Engagement.
+>
+            **Примечание.** Возможности показа рекламы из предыдущих выпусков пакета Universal Ad Client SDK, расширения рекламного посредника и пакета Microsoft Advertising SDK теперь включены в пакет SDK Microsoft Store Monetization and Engagement.
 
 ### Справочник по API
 
@@ -50,13 +51,14 @@ ms.openlocfilehash: 481cf2aab806a1f9ce368256a9df8930cbc756c1
 
 1.  Закройте все экземпляры Visual Studio 2013 или Visual Studio 2015 и удалите предыдущие версии Universal Ad Client SDK, расширения рекламного посредника или Microsoft Advertising SDK.
 2.  Скачайте и установите пакет [SDK](http://aka.ms/store-em-sdk). Установка может занять несколько минут. Обязательно дождитесь завершения процесса.
-3.  Перезапустите Visual Studio.
+3.  Перезапустите VisualStudio.
 
 Корпорация Майкрософт периодически выпускает новые версии пакета SDK Microsoft Store Monetization and Engagement для повышения производительности и расширения возможностей. Если в ваших существующих проектах используется пакет SDK Microsoft Store Monetization and Engagement и вы хотите использовать последнюю версию, просто скачайте и установите последнюю версию SDK.
 
 Возможности показа рекламы из предыдущих выпусков пакета Universal Ad Client SDK, расширения рекламного посредника и пакета Microsoft Advertising SDK теперь включены в пакет SDK Microsoft Store Monetization and Engagement. Если в существующих проектах Visual Studio 2015 или Visual Studio 2013 используются возможности рекламы предыдущих выпусков, вы можете продолжить работу с ними без каких-либо изменений после установки пакета SDK Microsoft Store Monetization and Engagement.
 
->**Примечание.** Для установки пакета SDK Microsoft Store Engagement and Monetization с помощью Visual Studio 2015 должны быть установлены инструменты Visual Studio для универсальных приложений для Windows версии 1.1 или более поздней. Дополнительные сведений об этом обновлении инструментов Visual Studio для универсальных приложений для Windows см. в [заметках о выпуске](http://go.microsoft.com/fwlink/?LinkID=624516).
+>
+            **Примечание.** Для установки пакета SDK Microsoft Store Engagement and Monetization с помощью VisualStudio2015 должны быть установлены инструментыVisualStudio для универсальных приложений для Windows версии 1.1 или более поздней. Дополнительные сведений об этом обновлении инструментов Visual Studio для универсальных приложений для Windows см. в [заметках о выпуске](http://go.microsoft.com/fwlink/?LinkID=624516).
 
 ## Пакеты платформы в SDK
 

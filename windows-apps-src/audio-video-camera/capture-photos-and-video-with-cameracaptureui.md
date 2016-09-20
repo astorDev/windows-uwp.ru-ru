@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
 description: "В этой статье рассказывается, как использовать класс CameraCaptureUI, чтобы фотографировать и снимать видео с помощью пользовательского интерфейса камеры, встроенного в Windows."
 title: "Фото- и видеосъемка с помощью CameraCaptureUI"
-translationtype: Human Translation
 ms.sourcegitcommit: 72abc006de1925c3c06ecd1b78665e72e2ffb816
 ms.openlocfilehash: a98edd0b4c52271fad4255af5ab0a005b0c66d68
 
@@ -24,9 +23,10 @@ ms.openlocfilehash: a98edd0b4c52271fad4255af5ab0a005b0c66d68
 
 [!code-cs[UsingCaptureUI](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingCaptureUI)]
 
-Чтобы захватить фотографию, создайте новый объект [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). С помощью свойства [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) объекта можно указать параметры возвращенной фотографии, например ее формат. По умолчанию пользовательский интерфейс захвата с камеры позволяет обрезать фотографии перед их возвращением. Эту функцию можно отключить с помощью свойства [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042). В этом примере свойство [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) используется для возвращения изображений с разрешением 200 x 200 пикселей.
+Чтобы захватить фотографию, создайте новый объект [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). С помощью свойства [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) объекта можно указать параметры возвращенной фотографии, например ее формат. По умолчанию пользовательский интерфейс захвата с камеры позволяет обрезать фотографии перед их возвращением. Эту функцию можно отключить с помощью свойства [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042). В этом примере свойство [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) используется для возвращения изображений с разрешением 200x200 пикселей.
 
-**Примечание**  Обрезка изображения в CameraCaptureUI не поддерживается для устройств из семейства мобильных устройств. Значение свойства [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) игнорируется, если приложение выполняется на этих устройствах.
+
+            **Примечание**  Обрезка изображения в CameraCaptureUI не поддерживается для устройств из семейства мобильных устройств. Значение свойства [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) игнорируется, если приложение выполняется на этих устройствах.
 
 Вызовите метод [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) и задайте [**CameraCaptureUIMode.Photo**](https://msdn.microsoft.com/library/windows/apps/br241040), чтобы захватить фотографию. Если захват выполнен успешно, этот метод возвращает экземпляр [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171), содержащий изображение. Если пользователь отменил захват, возвращается объект null.
 
@@ -94,7 +94,7 @@ ms.openlocfilehash: a98edd0b4c52271fad4255af5ab0a005b0c66d68
 Вы можете продолжать записывать видеоклипы и добавлять их в композицию. Дополнительные сведения о композициях мультимедиа см. в статье [Создание и редактирование мультимедиа](media-compositions-and-editing.md).
 
 **Примечание**  
-Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows8.x или Windows Phone8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 

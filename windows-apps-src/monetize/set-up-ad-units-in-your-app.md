@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: "Сведения о добавлении в приложение значений идентификатора приложения и идентификатора рекламного блока из информационной панели Центра разработки для Windows перед отправкой приложения в Магазин."
 title: "Настройка рекламных блоков в приложении"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
 
@@ -13,7 +12,7 @@ ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
 # Настройка рекламных блоков в приложении
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 При использовании [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) или [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) для отображения рекламных объявлений в приложении вы должны указать идентификатор приложения и идентификатор рекламного блока. Во время разработки приложения используйте соответствующие [тестовые значения идентификатора приложения и идентификатора рекламного блока](test-mode-values.md), чтобы увидеть, как отображается реклама в вашем приложении во время тестирования.
 
@@ -30,7 +29,8 @@ ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
 
     * Если в вашем приложении содержится промежуточная реклама, передайте эти значения в метод **RequestAd** объекта **InterstitialAd**.
 
-> **Важно!**   Если в вашем приложении используется рекламный посредник для отображения баннеров от Майкрософт (то есть, используется объект **AdMediatorControl**), вам не нужно запрашивать рекламные блоки. В этом сценарии рекламные блоки Microsoft Advertising создаются автоматически. Дополнительные сведения см. в разделе [Отличия класса AdMediatorControl от класса AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md).
+> 
+            **Важно!**   Если в вашем приложении используется рекламный посредник для отображения баннеров от Майкрософт (то есть, используется объект **AdMediatorControl**), вам не нужно запрашивать рекламные блоки. В этом сценарии рекламные блоки Microsoft Advertising создаются автоматически. Дополнительные сведения см. в разделе [Отличия класса AdMediatorControl от класса AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md).
 
  
 

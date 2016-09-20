@@ -1,129 +1,141 @@
 ---
 author: mcleanbyron
 ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
-description: Learn how to enable in-app purchases and trials in UWP apps.
-title: In-app purchases and trials
+description: "Узнайте, как включить покупки из приложения и пробные версии в приложениях UWP."
+title: "Покупки из приложения и пробные версии"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 99143d48a5f2155b0a47008574d0a78243dea925
+
 ---
 
-# In-app purchases and trials
+# Покупки из приложения и пробные версии
 
-The Windows SDK provides APIs you can use to add in-app purchases and trial functionality to your Universal Windows Platform (UWP) app to help monetize your app and add new functionality. These APIs also provide access to the license info for your app.
+Пакет Windows SDK предоставляет API, которые можно использовать для добавления функций совершения покупок из приложения и пробных версий в ваше приложение UWP, чтобы получать доход от приложения и расширять его функциональность. Эти API также предоставляют доступ к лицензионной информации вашего приложения.
 
-For these scenarios, Windows 10 offers two different APIs:
+Для этих сценариев Windows 10 предлагает два разных API.
 
-* All versions of Windows 10 support an API for in-app purchases and license info in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace.
+* API для покупок из приложения и лицензионных сведений в пространстве имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) поддерживается во всех версиях Windows10.
 
-* Starting in Windows 10, version 1607, there is an alternate API for in-app purchases and license info in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace.  
+* В Windows 10 (версия 1607) впервые появился альтернативный API для покупок из приложения и лицензионных сведений в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx).  
 
-Although the APIs in these namespaces serve the same goals, they are designed quite differently, and code is not compatible between the two APIs. If your app targets Windows 10, version 1607 or later, we recommend that you use the **Windows.Services.Store** namespace. This namespace supports the latest add-on types, such as Store-managed consumable add-ons, and is designed to be compatible with future types of products and features supported by Windows Dev Center and the Store. The **Windows.Services.Store** namespace is also designed to have better performance than the **Windows.ApplicationModel.Store** namespace.
+Несмотря на то что API в этих пространствах имен служат тем же целям, они различаются принципами разработки и имеют несовместимый код. Если ваше приложение предназначено для Windows 10 (версия 1607) или выше, рекомендуется использовать пространство имен **Windows.Services.Store**. Это пространство имен поддерживает новейшие типы надстроек, включая потребляемые надстройки, управляемые Магазином, а его архитектура обеспечивает совместимость с будущими продуктами и компонентами, которые поддерживаются Центром разработки Windows и Магазином. Пространство имен **Windows.Services.Store** также отличается повышенной производительностью.
 
-This article introduces in-app purchases for UWP apps and provides an overview of the **Windows.Services.Store** namespace that is available starting in Windows 10, version 1607. For information about using the members in the **Windows.ApplicationModel.Store** namespace, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+В этой статье содержатся вводные сведения о покупках из приложения для приложений UWP и обзор пространства имен **Windows.Services.Store**, доступного в Windows 10 версии 1607 и выше. Сведения об использовании элементов в пространстве имен **Windows.ApplicationModel.Store** см. в разделе [Внутренние покупки приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
 
-## Overview of in-app purchases in UWP apps
+## Обзор покупок из приложения в приложениях UWP
 
-This section describes core concepts about how in-app purchases and trials work with UWP apps in the Store. Most of these concepts apply to both the **Windows.Services.Store** and the **Windows.ApplicationModel.Store** namespaces.
+В этом разделе описаны основные принципы осуществления покупок из приложений и использования пробных версий в приложениях UWP в Магазине. Большая часть сказанного здесь актуальна для обоих пространств имен: **Windows.Services.Store** и **Windows.ApplicationModel.Store**.
 
-Every item that is offered in the Store is generally called a *product*. Most developers work with the following types of products: *apps* and *add-ons* (also known as in-app products or IAPs). An add-on refers to a product or feature that you make available to your customers in the context of your app. An add-on can represent any functionality that your app offers to customers; for example, new maps or weapons for a game, the ability to use your app without ads, or digital content such as music or videos for apps that have the ability to offer that type of content.
+Каждый элемент, предлагаемый в Магазине, как правило, называется *продукт*. Большинство разработчиков работают со следующими типами продуктов: *приложения* и *надстройки* (которые также известны под названием «продукты из приложения» или API). Надстройкой называют продукт или функцию, которую вы предоставляете своим клиентам (пользователям) в контексте приложения. Надстройка может представлять любую функциональную возможность, предлагаемую клиентам в приложении: например, валюту для использования в приложении или игре, новые карты или оружие для игры, возможность использовать приложение без рекламы, а также цифровое содержимое (музыку или видео) для приложений, в которых реализована возможность предоставления такого типа содержимого.
 
-Every app and add-on has an associated license that indicates whether the user is entitled to use the app or add-on. If the user is entitled to use the app or add-on as a trial, the license also provides additional info about the trial.
+С каждым приложением и каждой надстройкой связана лицензия, указывающая, имеет ли пользователь право на использование приложения или надстройки. Если пользователь имеет право на использование приложения или надстройки в качестве пробной версии, лицензия также предоставляет дополнительную информацию об этой пробной версии.
 
-To offer an add-on to customers in your app, start by [defining the add-ons for your app in the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions). Then, write code in your app to determine whether the user has a license to use the feature that is represented by the add-on, and offer the add-on for sale to the user as an in-app purchase if they don't yet have a license for it. For examples that demonstrate related tasks using the **Windows.Services.Store** namespace in apps that target Windows 10, version 1607 or later, see the following articles:
+Чтобы предложить надстройку пользователям вашего приложения, сначала [определите надстройки для вашего приложения на информационной панели Центра разработки](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions). Затем напишите код в своем приложении, чтобы определить, имеет ли пользователь лицензию на использование функции, реализованной в надстройке, и предложить пользователю приобрести надстройку (в качестве покупки из приложения), если лицензия на нее отсутствует. Примеры, демонстрирующие выполнение соответствующих задач с использованием пространства имен **Windows.Services.Store** в приложениях для Windows 10 (версия 1607 и выше), доступны в следующих статьях.
 
-* [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
-* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
-* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
-* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)
+* [Получение информации о продукте для приложений и надстроек](get-product-info-for-apps-and-add-ons.md)
+* [Получение информации о лицензии для приложений и надстроек](get-license-info-for-apps-and-add-ons.md)
+* [Поддержка покупок приложений и расширений внутри приложения](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Поддержка покупок потребляемых надстроек](enable-consumable-add-on-purchases.md)
+* [Реализация пробной версии приложения](implement-a-trial-version-of-your-app.md)
 
-For examples that demonstrate related tasks using the **Windows.ApplicationModel.Store** namespace, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+Примеры, демонстрирующие выполнение соответствующих задач с использованием пространства имен **Windows.ApplicationModel.Store**, доступны в статье [Внутренние покупки приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-All developers can create the following types of add-ons.
+Все разработчики могут создавать следующие типы надстроек.
 
-| Add-on type |  Description  |
+| Тип надстройки |  Описание  |
 |---------|-------------------|
-| Durable  |  An add-on that can only be purchased once. |
-| Developer-managed consumable  |  An add-on that can be purchased, used, and purchased again. For this type of consumable, you are responsible for keep tracking of the user's balance of items that the add-on represents. For example, if your add-on represents 100 coins in a game and the user consumes 10 coins, your app must report the add-on as fulfilled to the Store and your app or service must update the new remaining balance for the user (in this example, the user now has 90 coins left).  |
-| Store-managed consumable  |  An add-on that can be purchased, used, and purchased again. For this type of consumable, Microsoft keeps track of the user's balance of items that the add-on represents. For example, if your add-on represents an initial quantity of 100 coins in a game and the user consumes 10 coins, your app reports to the Store that 10 units of the add-on were fulfilled, and the Store updates the remaining balance. You can use a method to query for the current balance. <p/><p/> **Store-managed consumables are available starting in Windows 10, version 1607. The ability to create a Store-managed consumable in the Windows Dev Center dashboard is coming soon.**  |
+| Надстройка длительного пользования  |  Надстройка, которая существует в течение срока, указанного вами на [информационной панели Центра разработки для Windows](https://msdn.microsoft.com/windows/uwp/publish/enter-iap-properties). <p/><p/>По умолчанию срок действия надстроек длительного пользования никогда не истекает, а приобрести их можно только один раз. Если указать для надстройки определенный срок действия, пользователь сможет повторно приобрести ее по окончании срока действия.  |
+| Потребляемые надстройки, управляемые разработчиком  |  Надстройка, которую можно приобрести, использовать и приобрести снова. Этот тип надстройки, как правило, используется для валюты в приложении. <p/><p/>Для этого типа потребляемых надстроек вы отвечаете за отслеживание баланса пользователя по продуктам, представляемым надстройкой, а также за сообщение Магазину о том, что купленная надстройка израсходована, после того как пользователь израсходует все элементы. Пользователь не может снова приобрести надстройку, пока ваше приложение не сообщит об израсходовании предыдущей покупки. <p/><p/>Например, если ваша надстройка представляет 100 игровых монет и пользователь израсходовал 10 монет, ваше приложение или служба должны поддерживать для пользователя новый баланс остатка в 90 монет. Когда пользователь израсходует все 100 монет, ваше приложение должно сообщить, что надстройка израсходована, после чего пользователь снова сможет приобрести 100 монет из надстройки.    |
+| Потребляемые надстройки, управляемые Магазином  |  Надстройка, которую можно приобрести, использовать и приобрести снова. Этот тип надстройки, как правило, используется для валюты в приложении.<p/><p/>Для этого типа потребляемых надстроек учет баланса пользователя производится Магазином. Когда пользователь использует какие-либо элементы, вы должны сообщить Магазину, что эти элементы израсходованы, после чего Магазин обновляет баланс пользователя. Приложение может в любой момент запросить текущий баланс пользователя. Когда пользователь израсходует все элементы, он снова может приобрести надстройку.  <p/><p/> Например, если надстройка представляет начальную сумму в 100 игровых монет и пользователь израсходовал 10 монет, приложение сообщает Магазину, что израсходованы 10 единиц надстройки, и Магазин обновляет баланс. Когда пользователь израсходует все 100 монет, он сможет снова купить 100 монет надстройки. <p/><p/> **Потребляемые надстройки, управляемые Магазином, доступны начиная с Windows 10 (версия 1607). Скоро будет реализована возможность создавать потребляемые надстройки, управляемые Магазином, на информационной панели Центра разработки для Windows.**  |
 
 <span />
 
->**Note** Other types of add-ons, such as durable add-ons with packages (also known as downloadable content or DLC) are only available to a restricted set of developers, and are not covered in this documentation.
+>**Примечание.**&nbsp;&nbsp;Другие типы надстроек, например надстройки длительного пользования с пакетами (также известны как «загружаемое содержимое» или DLC), доступны ограниченному кругу разработчиков и не освещаются в этой документации.
 
 <span id="api_intro" />
-## Introduction to the Windows.Services.Store namespace
+## Вводные сведения о пространстве имен Windows.Services.Store
 
-The main entry point to the **Windows.Services.Store** namespace is the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class. This class provides methods you can use to get info for the current app and its available add-ons, purchase an app or add-on for the current user, get license info for the current app or its add-ons, and other tasks. To get a [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) object, do one of the following:
+Главной точкой входа в пространство имен **Windows.Services.Store** является класс [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Этот класс предоставляет методы, которые можно использовать, чтобы получить сведения о текущем приложении и его доступных надстройках, приобрести приложение или надстройку для текущего пользователя, получить лицензионные сведения о текущем приложении или его надстройках и решить другие задачи. Чтобы получить объект [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx), выполните одно из следующих действий.
 
-* In a single-user app (that is, an app that runs only in the context of the user that launched the app), use the [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) method to get a **StoreContext** object that you can use to access and manage Windows Store-related data for the user. Most Universal Windows Platform (UWP) apps are single-user apps.
+* В однопользовательском приложении (то есть приложении, которое работает только в контексте пользователя, который запустил это приложение) воспользуйтесь методом [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx), чтобы получить объект **StoreContext**, который можно использовать для доступа к актуальным для пользователя данным, связанным с Магазином Windows, и управлять ими. Большинство приложений UWP— это однопользовательские приложения.
 
   ```csharp
   Windows.Services.Store.StoreContext context = StoreContext.GetDefault();
   ```
 
-* In a multi-user app (that is, an app that runs only in the context of the user that launched the app), use the [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) method to get a **StoreContext** object that you can use to access and manage Windows Store-related data for a specific user who is signed in with their Microsoft account while using the app. For more information about multi-user apps, see [Introduction to multi-user applications](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications). The following example gets a **StoreContext** object for the first available user.
+* В многопользовательском приложении используйте метод [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx), чтобы получить объект **StoreContext**, который можно использовать для доступа к данным, связанным с Магазином Windows, и управлять ими. Речь идет о данных для конкретного пользователя, который при работе с приложением выполнил вход с учетной записью Майкрософт. Дополнительные сведения о многопользовательских приложениях см. в разделе [Вводные сведения о многопользовательских приложениях](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications). В следующем примере мы получим объект **StoreContext** для первого доступного пользователя.
 
   ```csharp
   var users = await Windows.System.User.FindAllAsync();
   Windows.Services.Store.StoreContext context = StoreContext.GetForUser(users[0]);
   ```
 
-After you have a [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx), you can start calling methods to purchase an app or add-on for the current user and other tasks. For more information, see the following articles:
+Получив объект [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx), можно начинать вызывать методы для приобретения приложения или надстройки для текущего пользователя и решения других задач. Дополнительные сведения доступны в следующих статьях.
 
-* [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
-* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
-* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
-* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)
+* [Получение информации о продукте для приложений и надстроек](get-product-info-for-apps-and-add-ons.md)
+* [Получение информации о лицензии для приложений и надстроек](get-license-info-for-apps-and-add-ons.md)
+* [Поддержка покупок приложений и расширений внутри приложения](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Поддержка покупок потребляемых надстроек](enable-consumable-add-on-purchases.md)
+* [Реализация пробной версии приложения](implement-a-trial-version-of-your-app.md)
+
+Полный пример, в котором показана реализация пробных версий и покупок из приложения с использованием пространства имен **Windows.Services.Store**, доступен в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
 <span />
-### Object model for products, SKUs, and availabilities
+### Объектная модель для продуктов, SKU и доступности
 
-Every product in the Store has at least one *SKU*, and each SKU has at least one *availability*. These concepts are abstracted away from most developers in the Windows Dev Center dashboard, and most developers will never define SKUs or availabilities for their apps or add-ons. However, because the object model for Store products in the **Windows.Services.Store** namespace includes SKUs and availabilities, a basic understanding of these concepts can be helpful.
+Каждый продукт в Магазине имеет по меньшей мере одну *SKU*, а каждая SKU— по меньшей мере одну *доступность*. Разработчики избавлены от необходимости работать с этими абстрактными концепциями на информационной панели Центра разработки для Windows, и большинство разработчиков никогда не определяют SKU или доступности для своих приложений или надстроек. Поскольку объектная модель для продуктов из Магазина в пространстве имен **Windows.Services.Store** все же содержит SKU и доступности, общие сведения об этих понятиях будут вам полезны.
 
-| Object type |  Description  |
+| Тип объекта |  Описание  |
 |---------|-------------------|
-| Product  |  The [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) class represents any type of product that is available in the Store, including an app or add-on. This class provides properties you can use to access data such as the Store ID of the product, the images and videos for the Store listing, and pricing info. It also provides methods you can use to purchase the product. |
-| SKU |  The [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) class represents a *SKU* for a product. A SKU is a specific version of a product with its own description, price, and other unique product details. Each app or add-on has a default SKU. The only time most developers will ever have multiple SKUs for an app is if they publish a full version of your app and a trial version (in the Store catalog, each of these versions is a different SKU of the same app). <p/><p/> Some publishers have the ability to define their own SKUs. For example, a large game publisher might release a game with one SKU that shows green blood in markets that don't allow red blood and a different SKU that shows red blood in all other markets. Alternatively, a publisher who sells digital video content might publish two SKUs for a video, one SKU for the high-definition version and a different SKU for the standard-definition version. <p/><p/> Each product has a [Skus](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.skus.aspx) property you can use to access the SKUs. |
-| Availability  |  The [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) class represents an *availability* for a SKU. An availability is a specific version of a SKU with its own unique pricing info. Each SKU has a default availability. Some publishers have the ability to define their own availabilities to introduce different price options for a given SKU. <p/><p/> Each SKU has an [Availabilities](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.availabilities.aspx) property you can use to access the availabilities. For most developers, each SKU has a single default availability.  |
+| Продукт  |  Класс [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) представляет любой тип продукта, который доступен в Магазине, включая приложение или надстройку. Этот класс предоставляет свойства, которые можно использовать для получения доступа к данным, таким как код продукта в Магазине, изображения и видео для описания в Магазине и сведения о ценах. Кроме того, класс предоставляет методы, которые можно использовать для приобретения продукта. |
+| SKU |  Класс [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) представляет *SKU* для продукта. SKU— это конкретная версия продукта с уникальным описанием, ценой и прочими сведениями. У каждого приложения или надстройки имеется SKU по умолчанию. Единственный случай, когда разработчик может иметь несколько SKU для приложения, это если публикуется и полная, и пробная версии приложения (в каталоге Магазина каждая из этих версий будет иметь свою SKU одного и того же приложения). <p/><p/> Некоторые издатели могут определять собственные SKU. Например, крупный издатель игр может выпустить игру с одной SKU для стран, где показывать кровь красным запрещено и, следовательно, нужно показать ее зеленым цветом, а другую SKU— чтобы показывать кровь красной в любых странах. Кроме того, издатель, продающий цифровое видеосодержимое, может опубликовать две SKU для видео: одну— для версии высокой четкости, а другую— для версии стандартной четкости. <p/><p/> Каждый продукт имеет свойство [Skus](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.skus.aspx), которое можно использовать для доступа к SKU. |
+| Доступность  |  Класс [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) представляет *доступность* для SKU. Доступность— это конкретная версия SKU с уникальной ценовой информацией. Каждая SKU имеет доступность по умолчанию. Некоторые издатели имеют возможность определять собственные доступности, предлагая разные ценовые варианты для данной SKU. <p/><p/> Каждая SKU имеет свойство [Availabilities](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.availabilities.aspx), которое можно использовать для доступа к доступности. Для большинства разработчиков каждая SKU имеет одну доступность по умолчанию.  |
 
 <span id="store_ids" />
-### Store IDs
+### Коды продукта в Магазине
 
-Every app and add-on in the Store has an associated **Store ID**. Many of the APIs in the **Windows.Services.Store** namespace require the Store ID in order to perform an operation on an app or add-on. Products, SKUs, and availabilities have different Store ID formats.
+С каждым приложением и каждой надстройкой в Магазине связан специальный **код продукта в Магазине**. Многие API в пространстве имен **Windows.Services.Store** требуют указания кода продукта в Магазине для выполнения операции с приложением или надстройкой. Продукты, SKU и доступности имеют код продукта в Магазине разных форматов.
 
-| Object type |  Store ID format  |
+| Тип объекта |  Формат кода продукта в Магазине  |
 |---------|-------------------|
-| Product  |  The Store ID of any product in the Store is 12-character alpha-numeric string, such as ```9NBLGGH4R315```. This Store ID is available in the Windows Dev Center dashboard page for the app or add-on, and it is returned by the [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.storeid.aspx) property [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) object. This ID is sometimes called the *product Store ID*. |
-| SKU |  For a SKU, the Store ID has the format ```<product Store ID>/xxxx```, where ```xxxx``` is a 4-character alpha-numeric string that identifies a SKU for the product. For example, ```9NBLGGH4R315/000N```. This ID is returned by the [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.storeid.aspx) property of a  [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) object, and it is sometimes called the *SKU Store ID*. |
-| Availability  |  For an availability, the Store ID has the format ```<product Store ID>/xxxx/yyyyyyyyyyyy```, where ```xxxx``` is a 4-character alpha-numeric string that identifies a SKU for the product and ```yyyyyyyyyyyy``` is a 12-character alpha-numeric string that identifies an availability for the SKU. For example, ```9NBLGGH4R315/000N/4KW6QZD2VN6X```. This ID is returned by the [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.storeid.aspx) property of a  [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) object, and it is sometimes called the *availability Store ID*.  |
+| Продукт  |  Код любого продукта в Магазине— это буквенно-цифровая строка, состоящая из 12 символов, например ```9NBLGGH4R315```. Код приложения или надстройки в Магазине доступен на информационной панели Центра разработки для Windows и возвращается объектом [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.storeid.aspx) свойства [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx). Этот идентификатор иногда называется *кодом продукта в Магазине*. |
+| SKU |  Код SKU в Магазине имеет формат ```<product Store ID>/xxxx```, где ```xxxx```— это буквенно-цифровая строка из 4 символов, идентифицирующая SKU для продукта. Например, ```9NBLGGH4R315/000N```. Этот идентификатор возвращается свойством [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.storeid.aspx) объекта [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) и иногда называется *кодом SKU в Магазине*. |
+| Доступность  |  Код доступности в Магазине имеет формат ```<product Store ID>/xxxx/yyyyyyyyyyyy```, где ```xxxx```— это буквенно-цифровая строка из 4 символов, которая определяет SKU для продукта, а ```yyyyyyyyyyyy```— это буквенно-цифровая строка из 12 символов, которая определяет доступность для SKU. Например, ```9NBLGGH4R315/000N/4KW6QZD2VN6X```. Этот идентификатор возвращается свойством [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.storeid.aspx) объекта [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) и иногда называется *кодом доступности в Магазине*.  |
 
 <span id="testing" />
-### Testing apps that use the Windows.Services.Store namespace
+### Тестирование приложений, использующих пространство имен Windows.Services.Store
 
-The **Windows.Services.Store** namespace does not provide a class that you can use to simulate license info during testing. Instead, you must publish an app to the Store and download that app to your development device to use its license for testing. This is a different experience from apps that use the **Windows.ApplicationModel.Store** namespace, as these apps can use the [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) class to simulate license info during testing
+Пространство имен **Windows.Services.Store** не предоставляет класс, который можно использовать для имитации лицензионных сведений во время тестирования. Вместо этого необходимо опубликовать приложение в Магазине и скачать его на свое устройство разработки, чтобы использовать его лицензию для тестирования. В приложениях, использующих пространство имен **Windows.ApplicationModel.Store**, действует несколько другой принцип, поскольку эти приложения могут использовать класс [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) для моделирования лицензионных сведений во время тестирования.
 
-If your app uses APIs in the **Windows.Services.Store** namespace to access info for your app and its add-ons, follow this process to test your code:
+Если приложение использует API в пространстве имен **Windows.Services.Store** для доступа к информации для вашего приложения и его надстроек, выполните следующие инструкции, чтобы протестировать код.
 
-1. If your app is already published and available in the Store and you want to update this app to use APIs in the **Windows.Services.Store** namespace, you are ready to get started. If you want to offer add-ons for the app, make sure that you [define the add-ons for your app](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions) in the Dev Center dashboard.
+1. Если приложение уже опубликовано и доступно в Магазине и требуется обновить это приложение для использования API в пространстве имен **Windows.Services.Store**, вы готовы приступить. Если нужно предложить надстройки для приложения, обязательно [определите надстройки для своего приложения](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions) на информационной панели Центра разработки.
 
-  If you don't yet have an app that is published and available in the Store, build a basic app that meets minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements and [submit this app](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) to the Windows Dev Center dashboard. If you want to offer add-ons for the app, make sure that you [define the add-ons for your app](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions). Optionally, you can [hide the app from the Store](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) during testing.
+  Если у вас еще нет опубликованного и доступного в Магазине приложения, создайте базовое приложение, соответствующее минимальным требованиям [комплекта сертификации приложений для Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) и [отправьте это приложение](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) на информационную панель Центра разработки для Windows. Если вы хотите предложить надстройки для приложения, обязательно [определите надстройки для своего приложения](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions). Кроме того, на время тестирования [приложение можно скрыть из Магазина](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability).
 
-2. Write code in your app that uses one of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) methods in the **Windows.Services.Store** namespace to perform tasks such as [getting the add-ons available for the current app](get-product-info-for-apps-and-add-ons.md), [purchasing an app or add-on](enable-in-app-purchases-of-apps-and-add-ons.md), or [getting license info for your app](get-license-info-for-apps-and-add-ons.md). See the related topics section below for more examples.
+2. Создайте в своем приложении код, который использует один из методов [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) в пространстве имен **Windows.Services.Store**, чтобы выполнить такие задачи, как [обеспечение доступности надстроек для текущего приложения](get-product-info-for-apps-and-add-ons.md), [приобретение приложения или надстройки](enable-in-app-purchases-of-apps-and-add-ons.md) и [получение лицензионных сведений для приложения](get-license-info-for-apps-and-add-ons.md). См. другие примеры в разделе «Связанные статьи» ниже.
 
-3. In Visual Studio, click the **Project menu**, point to **Store**, and then click **Associate App with the Store**. Complete the instructions in the wizard to associate the app project with the app in your Windows Dev Center account that you want to use for testing.
+3. В Visual Studio щелкните **Меню проекта**, укажите на **Магазин** и выберите **Связать приложение с Магазином**. Выполните инструкции мастера, чтобы связать проект приложения с приложением в вашей учетной записи Центра разработки для Windows, которое требуется использовать для тестирования.
 
-  >**Note** If you do not associate your project with an app in the Store, the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) methods set the **ExtendedError** property of their return values to the error code value 0x803F6107. This value indicates that the Store doesn't have any knowledge about the app.
+  >**Примечание.**&nbsp;&nbsp;Если не связать свой проект с приложением в Магазине, методы[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) присвоят свойству **ExtendedError** возвращаемых значений этих методов значение кода ошибки 0x803F6107. Это значение указывает, что Магазин ничего не знает об этом приложении.
 
-4. If you have not done so already, install the app from the Store that you specified in the previous step, run the app once, and then close this app. This ensures that a valid license for the app is installed to your development device.
+4. Если вы еще не сделали этого, установите приложение из Магазина (см. предыдущий шаг), запустите приложение один раз и затем закройте его. Это гарантирует, что на устройстве разработки установлена действующая лицензия приложения.
 
-5. In Visual Studio, start running or debugging your project. Your code should retrieve app and add-on data from the Store app that you associated with your local project. If you are prompted to reinstall the app, follow the instructions and then run or debug your project.
+5. Запустите свой проект или начните его отладку в Visual Studio. Код должен извлечь данные приложения и надстройки из приложения Магазина, которое вы связали с локальным проектом. В ответ на предложение переустановить приложение выполните инструкции, а затем запустите свой проект или начните его отладку.
 
-## Related topics
+## Связанные статьи
 
-* [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
-* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
-* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
-* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)
-* [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
+* [Получение информации о продукте для приложений и надстроек](get-product-info-for-apps-and-add-ons.md)
+* [Получение информации о лицензии для приложений и надстроек](get-license-info-for-apps-and-add-ons.md)
+* [Поддержка покупок приложений и расширений внутри приложения](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Поддержка покупок потребляемых расширений внутри приложения](enable-consumable-add-on-purchases.md)
+* [Реализация пробной версии приложения](implement-a-trial-version-of-your-app.md)
+* [Внутренние покупки приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

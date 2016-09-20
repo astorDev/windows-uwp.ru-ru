@@ -3,7 +3,6 @@ author: mtoepke
 title: "Шаблоны проектов и средства для игр"
 description: "Содержит сведения о том, что вам потребуется, чтобы начать программирование игр DirectX для универсальной платформы Windows (UWP)."
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: b7b4cba0c88a914c3d0da4cf79adb51bcad2307f
 
@@ -12,7 +11,7 @@ ms.openlocfilehash: b7b4cba0c88a914c3d0da4cf79adb51bcad2307f
 # Шаблоны проектов и средства для игр
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этом разделе объясняется, что вам потребуется, чтобы начать программирование игр DirectX для универсальной платформы Windows (UWP).
@@ -22,7 +21,8 @@ ms.openlocfilehash: b7b4cba0c88a914c3d0da4cf79adb51bcad2307f
 ## Получение Visual Studio
 
 
-[Скачайте и установите Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
+
+            [Скачайте и установите Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
 
 <table>
 <colgroup>
@@ -58,16 +58,16 @@ ms.openlocfilehash: b7b4cba0c88a914c3d0da4cf79adb51bcad2307f
 
 Сведения о переносе существующей игры см. в следующих разделах.
 
--   [Портирование из OpenGL ES 2.0 в DirectX 11](port-from-opengl-es-2-0-to-directx-11-1.md)
+-   [Портирование из OpenGL ES2.0 в DirectX11](port-from-opengl-es-2-0-to-directx-11-1.md)
 -   [Портирование из DirectX 9 в UWP](porting-your-directx-9-game-to-windows-store.md)
 
 Сведения о создании новой игры DirectX см. в следующих разделах.
 
 -   [Создание простой игры UWP c использованием DirectX](tutorial--create-your-first-metro-style-directx-game.md)
--   [Разработка Marble Maze — игры универсальной платформы Windows — на C++ и DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [Разработка Marble Maze— игры универсальной платформы Windows— на C++ и DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
 > **Примечание.**  
-Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Эта статья адресована разработчикам приложений для Windows10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 

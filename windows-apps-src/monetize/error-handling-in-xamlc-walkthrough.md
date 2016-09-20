@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
 description: "Узнайте, как перехватывать ошибки AdControl в приложении."
 title: "Пошаговое руководство по обработке ошибок XAML/C#"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 7cb827b4269afb55f0326eec0a0ee25b93119eb0
 
@@ -13,7 +12,7 @@ ms.openlocfilehash: 7cb827b4269afb55f0326eec0a0ee25b93119eb0
 # Пошаговое руководство по обработке ошибок XAML/C#
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе рассматривается перехват ошибок [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) в приложении.
 

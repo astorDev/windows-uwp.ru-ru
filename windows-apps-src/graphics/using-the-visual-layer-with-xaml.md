@@ -1,45 +1,49 @@
 ---
 author: jaster
-ms.assetid:
-title: Using the Visual Layer with XAML
-description: Learn techniques for using the Visual Layer API's in combination with existing XAML content to create advanced animations and effects.
+ms.assetid: 
+title: "Использование визуального уровня с помощью XAML"
+description: "Узнайте методы использования интерфейсов API визуального уровня в сочетании с существующим содержимым XAML, чтобы создавать сложные анимации и эффекты."
+translationtype: Human Translation
+ms.sourcegitcommit: dfda33c70224f32d9c3e8877eabdfcd965521757
+ms.openlocfilehash: 00d663b130202f4513cd1a9d82baed4068d909d3
+
 ---
 
-# Using the Visual Layer with XAML
+# Использование визуального уровня с помощью XAML
 
-## Introduction
+## Введение
 
-Most apps that consume Visual Layer capabilities will use XAML to define the main UI content. In the Windows 10 Anniversary Update, there are new features in the XAML framework and the Visual Layer that make it easier to combine these two technologies to create stunning user experiences.
-XAML and Visual Layer “interop” functionality can be used to create advanced animations and effects not available using XAML API’s alone. This includes:
+Большинство приложений, задействующих возможности визуального уровня, будут использовать XAML для определения содержимого основного пользовательского интерфейса. В юбилейном обновлении Windows 10 предусмотрены новые возможности платформы XAML и визуального уровня, которые упрощают объединение этих двух технологий для создания потрясающих элементов взаимодействия с пользователем.
+Функциональность взаимодействия XAML и визуального уровня можно использовать для создания сложных анимаций и эффектов, недоступных при использовании только интерфейсов API XAML. Сюда входят следующие возможности.
 
--              Scroll driven animations and parallax
--              Automatic layout animations
--              Pixel perfect drop shadows
--              Blur and frosted glass effects
+-              Анимации и параллакс, управляемые прокруткой
+-              Автоматические анимации макета
+-              Точные до пикселя тени
+-              Эффекты размытия и матированного стекла
 
-These effects and animations can be applied to existing XAML content, so you don’t have to dramatically restructure your XAML app to take advantage of the new functionality.
-Layout animations, shadows, and blur effects are covered in the Recipes section below. For a code sample implementing parallax, see the [ParallaxingListItems sample](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems). The [WindowsUIDevLabs repository](https://github.com/Microsoft/WindowsUIDevLabs) also has several other samples for implementing animations, shadows and effects.
+Эти эффекты и анимации можно применять к существующему содержимому XAML, поэтому вам не придется кардинально менять структуру вашего приложения на XAML, чтобы использовать эти новые функции.
+Анимации макета, тени и эффекты размытия описываются в разделе рецептов ниже. Пример кода с реализацией параллакса см. в разделе [Пример ParallaxingListItems](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems). В [репозитории WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs) также есть ряд других примеров реализации анимаций, теней и эффектов.
 
-## The **ElementCompositionPreview** class
+## Класс **ElementCompositionPreview**
 
-[**ElementCompositionPreview**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.aspx) is a static class that provides XAML and Visual Layer interop functionality. For an overview of the Visual Layer and its functionality, see [Visual Layer](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer). The **ElementCompositionPreview** class provides the following methods:
+[**ElementCompositionPreview**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.aspx) — статический класс, обеспечивающий функции взаимодействия между XAML и визуальным уровнем. Обзор визуального уровня и его функций см. в разделе [Визуальный уровень](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer). Класс **ElementCompositionPreview** предоставляет следующие методы.
 
--   [**GetElementVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): Get a "handout" Visual that is used to render this element
--   [**SetElementChildVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual.aspx): Sets a "handin" Visual as the last child of this element’s visual tree. This Visual will draw on top of the rest of the element. 
--   [**GetElementChildVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): Retrieve the Visual set using **SetElementChildVisual**
--   [**GetScrollViewerManipulationPropertySet**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): Get an object that can be used to create 60fps animations based on scroll offset in a **ScrollViewer**
+-   [**GetElementVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): получение "выдаваемого" объекта Visual, используемого для отрисовки этого элемента
+-   [**SetElementChildVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual.aspx): определение "возвращаемого" объекта Visual как последнего дочернего элемента в визуальном дереве данного элемента. Этот объект Visual отрисовывается поверх остальных элементов. 
+-   [**GetElementChildVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): получение набора объектов Visual с помощью **SetElementChildVisual**
+-   [**GetScrollViewerManipulationPropertySet**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): получение объекта, который может использоваться для создания анимаций 60 кадров в секунду на основании смещения прокрутки в **ScrollViewer**
 
-## Remarks on **ElementCompositionPreview.GetElementVisual**
+## Примечания относительно **ElementCompositionPreview.GetElementVisual**
 
-**ElementCompositionPreview.GetElementVisual** returns a “handout” Visual that is used to render the given **UIElement**. Properties such as **Visual.Opacity**, **Visual.Offset**, and **Visual.Size** are set by the XAML framework based on the state of the UIElement. This enables techniques such as implicit reposition animations (see *Recipes*).
+**ElementCompositionPreview.GetElementVisual** возвращает "выдаваемый" объект Visual, используемый для отрисовки данного **UIElement**. Такие свойства, как **Visual.Opacity**, **Visual.Offset** и **Visual.Size**, устанавливаются платформой XAML на основании состояния UIElement. Это позволяет использовать такие методы, как неявные анимации изменения положения (см. *Рецепты*).
 
-Note that since **Offset** and **Size** are set as the result of XAML framework layout, developers should be careful when modifying or animating these properties. Developers should only modify or animate Offset when the element’s top-left corner has the same position as that of its parent in layout. Size should generally not be modified, but accessing the property may be useful. For example, the Drop Shadow and Frosted Glass samples below use Size of a handout Visual as input to an animation.
+Обратите внимание, что, поскольку свойства **Offset** и **Size** задаются в соответствии с макетом платформы на XAML, разработчикам следует осторожно подходить к изменению и анимации этих свойств. Разработчикам следует изменять и анимировать Offset, только когда верхний левый угол элемента совпадает с верхним левым углом его родительского элемента в макете. Размер обычно не следует менять, но доступ к этому свойству может быть полезен. Например, в приведенных ниже примерах с отбрасыванием тени и матированным стеклом свойство Size выданного объекта Visual используется в качестве входных данных для анимации.
 
-As an additional caveat, updated properties of the handout Visual will not be reflected in the corresponding UIElement. So for example, setting **UIElement.Opacity** to 0.5 will set the corresponding handout Visual’s Opacity to 0.5. However, setting the handout Visual’s **Opacity** to 0.5 will cause the content to appear at 50% opacity, but will not change the value of the corresponding UIElement’s Opacity property.
+Также следует помнить, что обновленные свойства выданного объекта Visual не будут отражаться в соответствующем UIElement. Так, например, установка для **UIElement.Opacity** значения 0,5 задаст прозрачности соответствующего выданного объекта Visual значение 0,5. Однако установка свойству **Opacity** выданного объекта Visual значения 0,5 приведет к тому, что содержимое будет отображаться с прозрачностью 50%, но это не изменит значение свойства Opacity соответствующего UIElement.
 
-### Example of **Offset** animation
+### Пример анимации **Offset**
 
-#### Incorrect
+#### Неверно
 
 ```xml
 <Border>
@@ -52,7 +56,7 @@ As an additional caveat, updated properties of the handout Visual will not be re
 ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", parallaxAnimation);
 ```
 
-#### Correct
+#### Верно
 
 ```xml
 <Border>
@@ -67,25 +71,27 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", parallaxAnimation);
 ```
 
-## The **ElementCompositionPreview.SetElementChildVisual** method
+## Метод **ElementCompositionPreview.SetElementChildVisual**
 
-**ElementCompositionPreview.SetElementChildVisual** allows the developer to supply a “handin” Visual that will appear as part of an element’s Visual Tree. This allows developers to create a “Composition Island” where Visual-based content can appear inside a XAML UI. Developers should be conservative about using this technique because Visual-based content will not have the same accessibility and user experience guarantees of XAML content. Therefore, it is generally recommended that this technique only be used when necessary to implement custom effects such as those found in the Recipes section below.
+**ElementCompositionPreview.SetElementChildVisual** позволяет разработчику предоставить "возвращаемый" объект Visual, который будет отображаться как часть визуального дерева элемента. Это позволяет разработчикам создавать "Остров композиции", где содержимое на основе объекта Visual может размещаться в пользовательском интерфейсе на XAML. Разработчикам следует осторожно использовать этот подход, поскольку содержимое на основе объекта Visual не будет обладать теми же гарантиями по специальным возможностям и взаимодействию с пользователем, как содержимое на XAML. Соответственно, обычно рекомендуется использовать этот метод, только если это необходимо для реализации пользовательских эффектов, подобных приведенным ниже в разделе рецептов.
 
-## **GetAlphaMask** methods
+## 
+              Методы **GetAlphaMask**
 
-[**Image**](https://msdn.microsoft.com/library/windows/apps/br242752), [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652), and [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) each implement a method called **GetAlphaMask** that returns a **CompositionBrush** representing a grayscale image with the shape of the element. This **CompositionBrush** can serve as an input for a Composition **DropShadow**, so the shadow can reflect the shape of the element instead of a rectangle. This enables pixel perfect, contour-based shadows for text, images with alpha, and shapes. See *Drop Shadow* below for an example of this API.
 
-## Recipes
+              Каждый из классов [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752), [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) и [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) реализует метод под названием **GetAlphaMask**, возвращающий объект **CompositionBrush**, представляющий собой черно-белое изображение, по форме соответствующее данному элементу. Этот объект **CompositionBrush** может служить входными данными для **DropShadow** композиции, чтобы тень соответствовала форме элемента и не была просто прямоугольной. Это позволяет использовать точные до пикселя основанные на контурах тени для текста, изображений с альфа-каналом и различных фигур. См. раздел *Отбрасывание тени* ниже для ознакомления с примером этого API.
 
-### Reposition animation
+## Рецепты
 
-Using Composition Implicit Animations, a developer can automatically animate changes in an element’s layout relative to its parent. For example, if you change the **Margin** of the button below, it will automatically animate to its new layout position.
+### Анимация перемещения
 
-#### Implementation overview
+Используя неявные анимации композиции, разработчик может автоматически анимировать изменения в макете элемента по отношению к его родительскому элементу. Например, если изменить свойство **Margin** приведенной ниже кнопки, она автоматически анимированным образом переместится на свое новое место в макете.
 
-1.            Get the handout **Visual** for the target element
-2.            Create an **ImplicitAnimationCollection** that automatically animates changes in the **Offset** property
-3.            Associate the **ImplicitAnimationCollection** with the backing Visual
+#### Обзор реализации
+
+1.            Получение выдаваемого объекта **Visual** для целевого элемента
+2.            Создание **ImplicitAnimationCollection**, что автоматически анимирует изменения в свойстве **Offset**
+3.            Связывание **ImplicitAnimationCollection** с поддерживающим объектом Visual
 
 #### XAML
 
@@ -121,18 +127,18 @@ private void InitializeRepositionAnimation(UIElement repositionTarget)
 }
 ```
 
-### Drop shadow
+### Отбрасывание тени
 
-Apply a pixel-perfect drop shadow to a **UIElement**, for example an **Ellipse** containing a picture. Since the shadow requires a **SpriteVisual** created by the app, we need to create a “host” element which will contain the **SpriteVisual** using **ElementCompositionPreview.SetElementChildVisual**.
+Добавление точной до пикселя тени для **UIElement**, например **Ellipse** с картинкой. Поскольку тень требует создания **SpriteVisual** приложением, необходимо создать "принимающий" элемент, который будет содержать **SpriteVisual** с помощью **ElementCompositionPreview.SetElementChildVisual**.
 
-#### Implementation overview
+#### Обзор реализации
 
-1.            Get the handout **Visual** for the host element
-2.            Create a Windows.UI.Composition **DropShadow**
-3.            Configure the **DropShadow** to get its shape from the target element via a mask
-    - **DropShadow** is rectangular by default, so this is not necessary if the target is rectangular
-4.            Attach shadow to a new **SpriteVisual**, and set the **SpriteVisual** as the child of the host element
-5.            Bind size of the **SpriteVisual** to the size of the host using an **ExpressionAnimation**
+1.            Получение выдаваемого объекта **Visual** для принимающего элемента
+2.            Создание **DropShadow** из Windows.UI.Composition
+3.            Настройка **DropShadow** для получения формы тени из целевого элемента через маску
+    - **DropShadow** по умолчанию имеет прямоугольную форму, так что этот этап не требуется, если целевой объект прямоугольный
+4.            Прикрепление тени к новому объекту **SpriteVisual** и назначение **SpriteVisual** дочерним элементом принимающего элемента
+5.            Привязка размера **SpriteVisual** к размеру принимающего элемента с помощью **ExpressionAnimation**
 
 #### XAML
 
@@ -184,18 +190,18 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-### Frosted glass
+### Матированное стекло
 
-Create an effect that blurs and tints background content. Note that developers need to install the Win2D NuGet package to use effects. See the [Win2D homepage](http://microsoft.github.io/Win2D/html/Introduction.htm) for installation instructions.
+Создание эффекта, размывающего и придающего оттенок расположенному за ним содержимому. Обратите внимание, что для использования эффектов разработчики должны установить пакет Win2D NuGet. Инструкции по установке см. на [Домашней странице Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm).
 
-#### Implementation overview
+#### Обзор реализации
 
-1.            Get handout **Visual** for the host element
-2.            Create a blur effect tree using Win2D and **CompositionEffectSourceParameter**
-3.            Create a **CompositionEffectBrush** based on the effect tree
-4.            Set input of the **CompositionEffectBrush** to a **CompositionBackdropBrush**, which allows an effect to be applied to the content behind a **SpriteVisual**
-5.            Set the **CompositionEffectBrush** as the content of a new **SpriteVisual**, and set the **SpriteVisual** as the child of the host element
-6.            Bind size of the **SpriteVisual** to the size of the host using an **ExpressionAnimation**
+1.            Получение выдаваемого объекта **Visual** для принимающего элемента
+2.            Создание дерева эффекта размытия с помощью Win2D и **CompositionEffectSourceParameter**
+3.            Создание **CompositionEffectBrush** на основании дерева эффекта
+4.            Установка **CompositionBackdropBrush** в качестве входных данных для **CompositionEffectBrush**, что позволяет применить эффект к содержимому позади **SpriteVisual**.
+5.            Установка **CompositionEffectBrush** в качестве содержимого нового объекта **SpriteVisual** и установка **SpriteVisual** в качестве дочернего элемента принимающего элемента
+6.            Привязка размера **SpriteVisual** к размеру принимающего элемента с помощью **ExpressionAnimation**
 
 #### XAML
 
@@ -267,10 +273,17 @@ private void InitializedFrostedGlass(UIElement glassHost)
 }
 ```
 
-## Additional Resources:
+## Дополнительные ресурсы:
 
--   [Visual Layer overview](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer)
--   [**ElementCompositionPreview** class](https://msdn.microsoft.com/library/windows/apps/mt608976)
--   Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs)
--   [BasicXamlInterop sample](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
--   [ParallaxingListItems sample](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)
+-   [Обзор визуального уровня](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer)
+-   [
+              Класс **ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/mt608976)
+-   Расширенные примеры пользовательского интерфейса и композиции в [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs)
+-   [Пример BasicXamlInterop](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
+-   [Пример ParallaxingListItems](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

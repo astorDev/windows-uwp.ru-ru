@@ -3,7 +3,6 @@ author: mtoepke
 title: "Запуск и возобновление работы приложений (DirectX и C++)"
 description: "Узнайте о запуске, приостановке и возобновлении работы приложений универсальной платформы Windows (UWP), использующих DirectX."
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: cc9468e278d651729740147cb21c70d53b43800f
 
@@ -12,7 +11,7 @@ ms.openlocfilehash: cc9468e278d651729740147cb21c70d53b43800f
 # Запуск и возобновление работы приложений (DirectX и C++)
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Узнайте о запуске, приостановке и возобновлении работы приложений универсальной платформы Windows (UWP), использующих DirectX.
 

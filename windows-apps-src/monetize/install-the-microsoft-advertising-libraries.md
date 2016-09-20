@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: "Узнайте о том, как устанавливать библиотеки Microsoft Advertising."
 title: "Установка библиотек Microsoft Advertising"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
 
@@ -13,13 +12,14 @@ ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
 # Установка библиотек Microsoft Advertising
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Библиотеки Microsoft Advertising для приложений для Windows включены в [пакет SDK Microsoft Store Engagement and Monetization](http://aka.ms/store-em-sdk). Этот пакет SDK является расширением Visual Studio 2015 или Visual Studio 2013.
+Библиотеки Microsoft Advertising для приложений для Windows включены в [пакет SDK Microsoft Store Engagement and Monetization](http://aka.ms/store-em-sdk). Этот пакет SDK является расширением VisualStudio2015 или VisualStudio2013.
 
 Руководство по установке см. в статье [Монетизация приложений и привлечение пользователей с помощью пакета SDK Microsoft Store Engagement and Monetization](https://msdn.microsoft.com/windows/uwp/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk).
 
-> **Примечание.** Если вы установили SDK Windows 10 Anniversary, предварительная сборка 14295 или выше, с Visual Studio 2015, необходимо также установить библиотеку WinJS, если вы хотите добавлять рекламу в приложение JavaScript/HTML. Эта библиотека ранее включалась в предыдущие версии Windows SDK для Windows 10, но, начиная с предварительной сборки Windows 10 Anniversary SDK 14295, ее необходимо устанавливать отдельно. Сведения по установке WinJS см. в разделе [Скачать WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> 
+            **Примечание.** Если вы установили SDK Windows 10 Anniversary, предварительная сборка 14295 или выше, с Visual Studio 2015, необходимо также установить библиотеку WinJS, если вы хотите добавлять рекламу в приложение JavaScript/HTML. Эта библиотека ранее включалась в предыдущие версии Windows SDK для Windows 10, но, начиная с предварительной сборки Windows 10 Anniversary SDK 14295, ее необходимо устанавливать отдельно. Сведения по установке WinJS см. в разделе [Скачать WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
 ## Имена библиотек для рекламных объявлений и рекламного посредника
 
@@ -38,7 +38,8 @@ ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
     </thead>
     <tbody>
     <tr>
-            <td rowspan="3">**AdControl** и **InterstitialAd** (XAML)</td>
+            <td rowspan="3">
+            **AdControl** и **InterstitialAd** (XAML)</td>
             <td>UWP</td>
             <td>SDK Microsoft Advertising для XAML</td>
             <td>10.0</td>
@@ -54,7 +55,8 @@ ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
             <td>1.0</td>
         </tr>
     <tr>
-            <td rowspan="3">**AdControl** и **InterstitialAd** (JavaScript/HTML)</td>
+            <td rowspan="3">
+            **AdControl** и **InterstitialAd** (JavaScript/HTML)</td>
             <td>UWP</td>
             <td>SDK Microsoft Advertising для JavaScript</td>
             <td>10.0</td>
@@ -65,12 +67,13 @@ ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
             <td>8.5</td>
         </tr>
         <tr>
-            <td>Windows Phone 8.1</td>
+            <td>Windows Phone8.1</td>
             <td>SDK Microsoft Advertising для Windows Phone 8.1 Native (JS)</td>
             <td>8.5</td>
         </tr>
     <tr>
-            <td rowspan="3">**AdMediatorControl** (только XAML)</td>
+            <td rowspan="3">
+            **AdMediatorControl** (только XAML)</td>
             <td>UWP</td>
             <td>Универсальный SDK Microsoft Advertising</td>
             <td>1.0</td>
@@ -81,7 +84,7 @@ ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
             <td>1.0</td>
         </tr>
         <tr>
-            <td>Windows Phone 8.1</td>
+            <td>Windows Phone8.1</td>
             <td>SDK Ad Mediator для XAML Windows Phone 8.1</td>
             <td>1.0</td>
         </tr>

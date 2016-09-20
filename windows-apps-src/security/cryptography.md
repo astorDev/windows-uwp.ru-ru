@@ -3,7 +3,6 @@ title: "Шифрование"
 description: "В статье содержится обзор функций шифрования, доступных для приложений универсальной платформы Windows (UWP). Подробнее об определенных задачах см. в таблице в конце данной статьи."
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
 author: awkoren
-translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
 ms.openlocfilehash: b8cccf54e414de084c5b3fd080007b225b9a9b12
 

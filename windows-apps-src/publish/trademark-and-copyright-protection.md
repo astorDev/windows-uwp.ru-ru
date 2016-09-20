@@ -3,7 +3,6 @@ author: jnHs
 Description: "Узнайте, что делать, если вы считаете, что другое приложение нарушает ваши права на интеллектуальную собственность."
 title: "Защита товарных знаков и авторских прав"
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 2c3f35ee5fb3f04e9f2fc389162793caa9ce5f1a
 

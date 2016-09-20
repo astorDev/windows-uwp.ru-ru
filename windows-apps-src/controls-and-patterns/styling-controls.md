@@ -8,7 +8,6 @@ title: "Настройка стиля элементов управления"
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: Styling controls
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 02cd8f7777f169ad9fc4e5bfe854a8b6e0fe5060
 
@@ -31,7 +30,7 @@ ms.openlocfilehash: 02cd8f7777f169ad9fc4e5bfe854a8b6e0fe5060
 
 В определении [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) требуется атрибут [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) и коллекция одного или нескольких элементов [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817). Атрибут **TargetType** является строкой, задающей тип [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), к которому применяется стиль. Значение **TargetType** должно указывать производный от **FrameworkElement** тип, определенный средой выполнения Windows, или пользовательский тип, доступный в ссылаемой сборке. Если вы попытаетесь применить стиль к элементу управления, тип которого не соответствует атрибуту **TargetType** этого стиля, будет выдано исключение.
 
-Для каждого элемента [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) необходимы параметры [**Property**](https://msdn.microsoft.com/library/windows/apps/br208836) и [**Value**](https://msdn.microsoft.com/library/windows/apps/br208838). Эти параметры свойства показывают, к какому свойству элемента управления применяется параметр, а также значение, задаваемое для этого свойства. Параметр **Setter.Value** можно настроить с помощью синтаксиса атрибута или элемента свойства. В этом примере кода XAML показано, как применить стиль к показанным ранее кнопкам. В этом коде XAML для первых двух элементов **Setter** используется синтаксис атрибута, а в последнем элементе **Setter** (для свойства [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397)) – синтаксис элемента свойства. В примере не используется атрибут [x:Key](../xaml-platform/x-key-attribute.md), и поэтому стиль неявно применяется к кнопкам. Явное и неявное применение стилей поясняется в следующем разделе.
+Для каждого элемента [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) необходимы параметры [**Property**](https://msdn.microsoft.com/library/windows/apps/br208836) и [**Value**](https://msdn.microsoft.com/library/windows/apps/br208838). Эти параметры свойства показывают, к какому свойству элемента управления применяется параметр, а также значение, задаваемое для этого свойства. Параметр **Setter.Value** можно настроить с помощью синтаксиса атрибута или элемента свойства. В этом примере кода XAML показано, как применить стиль к показанным ранее кнопкам. В этом коде XAML для первых двух элементов **Setter** используется синтаксис атрибута, а в последнем элементе **Setter** (для свойства [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397))–синтаксис элемента свойства. В примере не используется атрибут [x:Key](../xaml-platform/x-key-attribute.md), и поэтому стиль неявно применяется к кнопкам. Явное и неявное применение стилей поясняется в следующем разделе.
 
 ```XAML
 <Page.Resources>

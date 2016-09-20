@@ -3,7 +3,6 @@ author: jnHs
 Description: "Теперь, когда ваше приложение опубликовано в Магазине Windows, самое время представить его максимальному количеству пользователей."
 title: "Повышение популярности приложения и информированности о нем пользователей"
 ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 3511533f76294767ca409b09a718555a6194e451
 

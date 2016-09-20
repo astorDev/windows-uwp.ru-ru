@@ -3,14 +3,13 @@ author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: "Эффекты композиции"
 description: "API эффектов позволяют разработчикам настраивать отрисовку пользовательского интерфейса."
-translationtype: Human Translation
 ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
 ms.openlocfilehash: 10c3b6d0f56d0e8670cc202ac8d8a3f7538eb5a7
 
 ---
 # Эффекты композиции
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 API [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT позволяет применять эффекты в режиме реального времени к изображениям и пользовательскому интерфейсу, поддерживающему свойства анимации эффектов. В этом обзоре мы рассмотрим доступные функциональные возможности, позволяющие применять эффекты к визуальным элементам композиции.
 

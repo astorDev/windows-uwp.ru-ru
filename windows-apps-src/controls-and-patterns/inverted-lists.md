@@ -1,26 +1,30 @@
 ---
 author: Jwmsft
-Description: Use an inverted list to add new items at the bottom.
-title: Inverted lists
+Description: "Использование перевернутого списка для добавления новых элементов в конце."
+title: "Перевернутые списки"
 label: Inverted lists
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: c70cafe4d1dd3db46d48e9844ba9086dbba9acaa
+
 ---
+# Перевернутые списки
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Inverted lists
-
-You can use a list view to present a conversation in a chat experience with items that are visually distinct to represent the sender/receiver.  Using different colors and horizontal alignment to separate messages from the sender/receiver helps the user quickly orient themselves in a conversation.
+Вы можете использовать представление списка для отображения беседы в чате с визуально выделенными элементами для представления отправителя/получателя.  Использование разных цветов и горизонтального выравнивания для разделения сообщений отправителя и получателя помогает пользователю быстро ориентироваться в беседе.
  
-You will typically need to present the list such that it appears to grow from the bottom up instead of from the top down.  When a new message arrives and is added to the end, the previous messages slide up to make room drawing the user’s attention to the latest arrival.  However, if a user has scrolled up to view previous replies then the arrival of a new message must not cause a visual shift that would disrupt their focus.
+Как правило, вам потребуется представить список таким образом, чтобы он раскрывался снизу вверх, а не наоборот.  При получении нового сообщения и его добавлении в конец списка предыдущие сообщения сдвигаются вверх, чтобы освободить место, обращая внимание пользователя на последнее сообщение.  Но если пользователь прокрутил вверх, чтобы просмотреть предыдущие ответы, получение нового сообщения не должно вызывать визуального смещения, дабы не нарушать концентрацию пользователя.
 
-![chat app with inverted list](images/listview-inverted.png)
+![приложение-чат с перевернутым списком](images/listview-inverted.png)
 
 <div class="important-apis" >
-<b>Important APIs</b><br/>
+<b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx"><strong>ListView class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx"><strong>ItemsStackPanel class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx"><strong>ItemsUpdatingScrollMode property</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx"><strong>Класс ListView</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx"><strong>Класс ItemsStackPanel</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx"><strong>Свойство ItemsUpdatingScrollMode</strong></a></li>
 </ul>
 
 </div>
@@ -31,13 +35,13 @@ You will typically need to present the list such that it appears to grow from th
 
 
 
-## Create an inverted list
+## Создание перевернутого списка
 
-To create an inverted list, use a list view with an [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) as its items panel. On the ItemsStackPanel, set the [**ItemsUpdatingScrollMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx) to [**KeepLastItemInView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsupdatingscrollmode.aspx).
+Для создания перевернутого списка используйте представление списка, в качестве панели элементов которого используется класс [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx). В классе ItemsStackPanel установите свойству [**ItemsUpdatingScrollMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx) значение [**KeepLastItemInView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsupdatingscrollmode.aspx).
 
-> **Important**&nbsp;&nbsp;The **KeepLastItemInView** enum value is available starting with Windows 10, version 1607. You can't use this value when your app runs on earlier versions of Windows 10.
+> **Важно!**&nbsp;&nbsp;Значение перечисления **KeepLastItemInView** доступно, начиная с Windows 10 версии 1607. Если ваше приложение работает в более ранних версиях Windows 10, вы не сможете использовать это значение.
 
-This example shows how to align the list view’s items to the bottom and indicate that when there is a change to the items the last item should remain in view.
+В это примере показано, как выравнивать элементы представления списка по низу и указать, что при изменении элементов последний элемент должен оставаться на виду.
  
  **XAML**
  ```xaml
@@ -51,8 +55,14 @@ This example shows how to align the list view’s items to the bottom and indica
 </ListView>
 ```
 
-## Recommendations
+## Рекомендации
 
-- Align messages from the sender/receiver on opposite sides to make the flow of conversation clear to users.
-- Animate the existing messages out of the way to display the latest message if the user is already at the end of the conversation awaiting the next message.
-- Don’t disrupt the users focus by moving items if they’re not reading the end of the conversation.
+- Выравнивайте сообщения отправителя и получателя по противоположным сторонам, чтобы сделать ход беседы понятным пользователям.
+- Убирайте существующие сообщения с помощью анимации для отображения последнего сообщения, если пользователь уже достиг конца беседы в ожидании следующего сообщения.
+- Не нарушайте концентрации пользователя перемещением элементов, если он не находится в конце беседы.
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

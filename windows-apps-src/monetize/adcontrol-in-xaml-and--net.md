@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: "Узнайте, как использовать класс AdControl для показа баннерной рекламы в приложении на XAML для Windows 10 (UWP), Windows 8.1 или Windows Phone 8.1."
 title: "AdControl в XAML и .NET"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
 
@@ -40,7 +39,8 @@ ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
 
   ![addreferences](images/13-a84c026e-b283-44f2-8816-f950a1ef89aa.png)
 
-    > **Примечание**  Это изображение относится к Visual Studio 2015, где создается проект UWP для Windows 10. Если выполняется сборка приложения для Windows 8.1 или Windows Phone 8.1 либо с использованием Visual Studio 2013, экран будет выглядеть иначе.
+    > 
+            **Примечание**  Это изображение относится к Visual Studio 2015, где создается проект UWP для Windows 10. Если выполняется сборка приложения для Windows 8.1 или Windows Phone 8.1 либо с использованием Visual Studio 2013, экран будет выглядеть иначе.
 
 3.  В **Диспетчере ссылок** нажмите "ОК".
 4.  Измените код XAML для страницы, где вы размещаете рекламу, для включения пространства имен **Microsoft.Advertising.WinRT.UI**. Например, в образце приложения по умолчанию, созданного Visual Studio (с названием MyAdFundedWindows10AppXAML в этом приложении), страницей XAML является **MainPage.xaml**.
@@ -86,7 +86,8 @@ ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
 
     1.  Назначьте свойствам [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) и [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) в разделе **Page** тестовые значения, приведенные в разделе [Значения тестового режима](test-mode-values.md).
 
-        > **Примечание**   Перед отправкой приложения замените тестовые значения действительными.
+        > 
+            **Примечание**   Перед отправкой приложения замените тестовые значения действительными.
 
     2.  Измените высоту и ширину элемента управления, чтобы эти параметры соответствовали одному из [поддерживаемых размеров объявлений для баннерной рекламы](supported-ad-sizes-for-banner-ads.md).
 
@@ -138,7 +139,8 @@ ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
 
 2.  В своем коде замените тестовые значения (**ApplicationId** и **AdUnitId**) рекламного блока действительными значениями, сгенерированными в Центре разработки.
 
-3.  [Отправьте приложение](../publish/app-submissions.md) в Магазин с помощью информационной панели в Центре разработки.
+3.  
+            [Отправьте приложение](../publish/app-submissions.md) в Магазин с помощью информационной панели в Центре разработки.
 
 4.  Изучите [отчеты по показателям рекламы](../publish/advertising-performance-report.md) на информационной панели Центра разработки.
 

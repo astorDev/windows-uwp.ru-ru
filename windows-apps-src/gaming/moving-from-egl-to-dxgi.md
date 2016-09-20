@@ -3,7 +3,6 @@ author: mtoepke
 title: "Сравнение кода EGL с DXGI и Direct3D"
 description: "Программный интерфейс DirectX для работы с графикой (DXGI) и несколько API Direct3D выполняют ту же роль, что и EGL. Этот раздел помогает разобраться в DXGI и Direct3D 11 с точки зрения EGL."
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 461983b646148c21aba7da2adb703510d95b0343
 
@@ -12,7 +11,7 @@ ms.openlocfilehash: 461983b646148c21aba7da2adb703510d95b0343
 # Сравнение кода EGL с DXGI и Direct3D
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -25,7 +24,8 @@ ms.openlocfilehash: 461983b646148c21aba7da2adb703510d95b0343
 
 DXGI и Direct3D, подобно EGL, предоставляют методы для настройки графических ресурсов, получения контекста отрисовки, в котором будут рисовать шейдеры, и отображения результатов в окне. Но у DXGI и Direct3D есть целый ряд дополнительных возможностей, и они требуют дополнительных усилий для правильной настройки при переносе с EGL.
 
-> **Примечание.** Это руководство построено на открытой спецификации Khronos Group для EGL 1.4, которую можно найти тут: [Графический интерфейс собственной платформы Khronos (версия EGL 1.4, 6 апреля 2011 г.) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Различия в синтаксисе, касающиеся других платформ и языков разработки, не охвачены в этом руководстве.
+> 
+            **Примечание.** Это руководство построено на открытой спецификации Khronos Group для EGL 1.4, которую можно найти тут: [Графический интерфейс собственной платформы Khronos (версия EGL 1.4, 6 апреля 2011г.) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Различия в синтаксисе, касающиеся других платформ и языков разработки, не охвачены в этом руководстве.
 
  
 
@@ -38,7 +38,7 @@ DXGI и Direct3D, подобно EGL, предоставляют методы д
 
 -   Получение буфера кадров, чтение и запись в него (называется "цепочкой буферов" в DXGI).
 -   Связь буфера кадров с окном пользовательского интерфейса.
--   Получение и настройка контекстов отрисовки, в которых следует рисовать.
+-   Получение и настройка контекстов отрисовки, в которых следует рисовать. 
 -   Выдача команд графическому конвейеру для конкретного контекста отрисовки.
 -   Создание ресурсов шейдеров и управление ими, а также связывание их с контекстом отрисовки.
 -   Отрисовка в конкретную однобуферную прорисовку (например, в случае текстур).
@@ -53,8 +53,7 @@ DXGI и Direct3D, подобно EGL, предоставляют методы д
 | Абстракция EGL | Аналогичное представление Direct3D                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **EGLDisplay**  | В Direct3D (для приложений UWP) дескриптор экрана получается через API [**Windows::UI::CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) (или интерфейс **ICoreWindowInterop**, предоставляющий HWND). Конфигурации адаптера и оборудования задаются с помощью интерфейсов СОМ [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) и [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543) соответственно.                                                                                                                                                                                                                                                           |
-| **EGLSurface**  | В Direct3D буферы и прочие ресурсы окон (видимые или находящиеся за экраном) создаются и настраиваются с помощью конкретных интерфейсов DXGI, включая [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) (фабричная реализация шаблона, используемая для получения ресурсов DXGI, таких как [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) (буферы экрана)). [
-            **ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575), представляющий графическое устройство и его ресурсы, получается с помощью [**D3D11Device::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082). Для однобуферных прорисовок используйте интерфейс [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582). |
+| **EGLSurface**  | В Direct3D буферы и прочие ресурсы окон (видимые или находящиеся за экраном) создаются и настраиваются с помощью конкретных интерфейсов DXGI, включая [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) (фабричная реализация шаблона, используемая для получения ресурсов DXGI, таких как [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) (буферы экрана)). [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575), представляющий графическое устройство и его ресурсы, получается с помощью [**D3D11Device::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082). Для однобуферных прорисовок используйте интерфейс [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582). |
 | **EGLContext**  | В Direct3D команды настраиваются и выдаются графическому конвейеру с помощью интерфейса [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | **EGLConfig**   | В Direct3D 11 ресурсы графики, такие как буферы, текстуры, наборы элементов и шейдеры, создаются и настраиваются с помощью методов интерфейса [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575).                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
@@ -70,7 +69,8 @@ DXGI и Direct3D, подобно EGL, предоставляют методы д
 6.  После выполнения конвейера и перехода кадра в задний буфер представьте его на экране с помощью метода [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
 
 Этот процесс подробно описан в разделе [Начало работы с графикой DirectX](https://msdn.microsoft.com/library/windows/desktop/hh309467). Далее в статье описываются многие распространенные действия по базовой настройке графического конвейера и по управлению конвейером.
-> **Примечание.** У классических приложений Windows имеются различные API для получения цепочки буферов Direct3D, такие как [**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083), и они не используют объект [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225).
+> 
+            **Примечание.** У классических приложений Windows имеются различные API для получения цепочки буферов Direct3D, такие как [**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083), и они не используют объект [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225).
 
  
 
@@ -212,7 +212,7 @@ m_d3dContext->OMSetRenderTargets(
 
 Поток вызовов обычно выглядит примерно так:
 
--   Вызовите eglGetDisplay с дескриптором для отображения или ресурса окна и получите объект отображения.
+-   Вызовите eglGetDisplay с дескриптором для отображения или ресурса окна и получите объект отображения. 
 -   Инициализируйте отображение с помощью eglInitialize.
 -   Получите доступные конфигурации отображения и выберите одну из них с помощью eglGetConfigs и eglChooseConfig.
 -   Создайте поверхность окна с помощью eglCreateWindowSurface.
@@ -390,7 +390,7 @@ EGLBoolean eglTerminate(eglDisplay);
 | eglDestroySurface                | Н/д. Графические ресурсы очищаются, когда CoreWindow приложения UWP закрывается платформой.                                                                                                                                                                                                                                                                                                                                                                                                 |
 | eglGetCurrentDisplay             | Вызовите [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589), чтобы получить ссылку на текущее основное окно приложения.                                                                                                                                                                                                                                                                                                                                                         |
 | eglGetCurrentSurface             | Это текущий [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582). Обычно его область устанавливается на ваш объект обработчика.                                                                                                                                                                                                                                                                                                                                                         |
-| eglGetError                      | Ошибки получаются как результаты HRESULT, возвращаемые большинством методов интерфейсов DirectX. Если метод не возвращает HRESULT, вызовите [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360). Чтобы преобразовать системную ошибку в значение HRESULT, используйте макрос [**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746).                                                                                                                                                                                                  |
+| eglGetError                      | Ошибки получаются как результаты HRESULT, возвращаемые большинством методов интерфейсов DirectX. Если метод не возвращает HRESULT, вызовите [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360). Чтобы преобразовать системную ошибку в значениеHRESULT, используйтемакрос [**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746).                                                                                                                                                                                                  |
 | eglInitialize                    | Вызовите [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589), чтобы получить ссылку на текущее основное окно приложения.                                                                                                                                                                                                                                                                                                                                                         |
 | eglMakeCurrent                   | Установите однобуферную прорисовку для рисования в текущем контексте с помощью [**ID3D11DeviceContext1::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464).                                                                                                                                                                                                                                                                                                                                  |
 | eglQueryContext                  | Н/д. Однако однобуферные прорисовки, а также некоторые данные конфигурации можно получать из экземпляра [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575). (Список доступных методов см. по ссылке.)                                                                                                                                                                                                                                                                                           |

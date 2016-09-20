@@ -5,7 +5,6 @@ MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Пользовательские видеоэффекты"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
@@ -69,7 +68,8 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
 Свойство [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) позволяет системе узнать, будет ли ваш эффект записывать данные в выходной поток эффекта. Если ваше приложение не изменяет видеокадры, например применяется эффект, который только анализирует видеокадры, этому свойство следует задать значение true, и это позволит системе эффективно копировать поток ввода кадров в поток вывода кадров за вас.
 
-**Подсказка**. Если свойству [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) задано значение true, система копирует кадр ввода в кадр вывода перед вызовом [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794). Присвоение свойству **IsReadOnly** значения true не лишает вас возможности производить запись в кадры вывода эффекта в методе **ProcessFrame**.
+
+            **Подсказка**. Если свойству [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) задано значение true, система копирует кадр ввода в кадр вывода перед вызовом [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794). Присвоение свойству **IsReadOnly** значения true не лишает вас возможности производить запись в кадры вывода эффекта в методе **ProcessFrame**.
 
 [!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)] 
 
@@ -89,7 +89,8 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 [!code-cs[SupportedEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedEncodingProperties)]
 
 
-**Примечание**. Если вы вернете пустой список объектов [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) при вызове **SupportedEncodingProperties**, система по умолчанию перейдет на кодирование ARGB32.
+
+            **Примечание**. Если вы вернете пустой список объектов [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) при вызове **SupportedEncodingProperties**, система по умолчанию перейдет на кодирование ARGB32.
 
  
 
@@ -100,7 +101,8 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 [!code-cs[SupportedMemoryTypes](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedMemoryTypes)]
 
 
-**Примечание**. Если вы укажете [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822), система будет память либо GPU, либо системы, в зависимости от того, какой вариант будет более эффективен для конвейера. При использовании этого значения необходимо провести проверку в методе [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794), чтобы узнать, содержит ли передаваемый методу объект [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) или [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) какие-либо данные, и затем соответствующим образом обработать кадр.
+
+            **Примечание**. Если вы укажете [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822), система будет память либо GPU, либо системы, в зависимости от того, какой вариант будет более эффективен для конвейера. При использовании этого значения необходимо провести проверку в методе [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794), чтобы узнать, содержит ли передаваемый методу объект [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) или [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) какие-либо данные, и затем соответствующим образом обработать кадр.
 
  
 
@@ -139,7 +141,8 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 [!code-cs[COMImport](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMImport)]
 
 
-**Примечание**. Поскольку этот метод получает доступ к необработанному буферу изображений в его исходной форме, необходимо в настройках проекта разрешить использование небезопасного кода.
+
+            **Примечание**. Поскольку этот метод получает доступ к необработанному буферу изображений в его исходной форме, необходимо в настройках проекта разрешить использование небезопасного кода.
 1.  В обозревателе решений щелкните правой кнопкой мыши по проекту VideoEffectComponent решений и выберите "Свойства...".
 2.  Выберите вкладку "Сборка".
 3.  Установите флажок "Разрешить небезопасный код"
@@ -216,7 +219,8 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
 Выполнив инструкции из статьи [Удобный доступ к предварительному просмотру на камере](simple-camera-preview-access.md), можно настроить простой поток предварительного просмотра с камеры. Выполнение этих шагов позволит создать инициализированный объект [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124), который используется для доступа к видеопотоку камеры.
 
-Чтобы добавить настраиваемый видеоэффект в тот же поток камеры, сначала создайте новый объект [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055), передав пространство имен и имя класса для соответствующего эффекта. Затем вызовите метод **AddVideoEffect** объекта [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/dn878035), чтобы добавить эффект в указанный поток. В этом примере значение параметра [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) используется, чтобы указать, что эффект необходимо добавить в поток предварительного просмотра. Если приложение поддерживает видеофиксацию, для добавления эффекта в поток фиксации можно воспользоваться параметром **MediaStreamType.VideoRecord**. **AddVideoEffect** возвращает объект [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/br240985), который представляет пользовательский эффект. Для настройки конфигурации нужного эффекта можно воспользоваться методом SetProperties.
+Чтобы добавить настраиваемый видеоэффект в тот же поток камеры, сначала создайте новый объект [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055), передав пространство имен и имя класса для соответствующего эффекта. Затем вызовите метод **AddVideoEffect** объекта [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/dn878035), чтобы добавить эффект в указанный поток. В этом примере значение параметра [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) используется, чтобы указать, что эффект необходимо добавить в поток предварительного просмотра. Если приложение поддерживает видеофиксацию, для добавления эффекта в поток фиксации можно воспользоваться параметром **MediaStreamType.VideoRecord**. 
+            **AddVideoEffect** возвращает объект [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/br240985), который представляет пользовательский эффект. Для настройки конфигурации нужного эффекта можно воспользоваться методом SetProperties.
 
 После добавления эффекта [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) вызывается для запуска потока предварительного просмотра.
 
@@ -235,13 +239,15 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 ## Связанные разделы
 
 
-[Простой доступ к предварительному просмотру камеры](simple-camera-preview-access.md)
+
+            [Простой доступ к предварительному просмотру камеры](simple-camera-preview-access.md)
             
           
             [Мультимедийные композиции и редактирование](media-compositions-and-editing.md)
             
           
             [Документация по Win2D](http://go.microsoft.com/fwlink/?LinkId=519078)
+          
  
 
  

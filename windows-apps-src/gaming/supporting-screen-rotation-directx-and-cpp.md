@@ -3,7 +3,6 @@ author: mtoepke
 title: "Поддержка ориентации экрана (DirectX и C++)"
 description: "Далее мы обсудим рекомендации по обработке поворота экрана в вашем приложении UWP с использованием DirectX, чтобы графическое оборудование устройства с Windows 10 использовалось эффективно."
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 8da32494e0bb0bd48d485c946df1c9a5baec7fbe
 
@@ -12,7 +11,7 @@ ms.openlocfilehash: 8da32494e0bb0bd48d485c946df1c9a5baec7fbe
 # Поддержка ориентации экрана (DirectX и C++)
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Приложение универсальной платформы Windows (UWP) может поддерживать разные варианты ориентации экрана при обработке события [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268). Далее мы обсудим рекомендации по обработке поворота экрана в вашем приложении UWP с использованием DirectX, чтобы графическое оборудование устройства с Windows 10 использовалось эффективно.
 
@@ -344,7 +343,8 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
     Правильная матрица выбирается на основе данных, предоставляемых Windows 10 (например, результатов [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268)) для определения ориентации экрана. Она будет умножена на координаты каждого пикселя (Direct2D) или вершины (Direct3D) в сцене так, чтобы они повернулись, исходя из ориентации экрана. Учтите, что в Direct2D в качестве начала координат экрана определен верхний левый угол, тогда как в Direct3D начало координат определено как логический центр окна.
 
-> **Примечание**. Подробнее о двухмерных трансформациях, используемых при вращении, и о том, как их определить, см. в разделе [Определение матриц для двухмерного вращения экрана (2-D)](#defining_matrices_2d). Подробнее о трехмерных трансформациях, используемых при вращении, см. в разделе [Определение матриц для трехмерного вращения экрана](#defining_matrices_3d).
+> 
+            **Примечание**. Подробнее о двухмерных трансформациях, используемых при вращении, и о том, как их определить, см. в разделе [Определение матриц для двухмерного вращения экрана (2-D)](#defining_matrices_2d). Подробнее о трехмерных трансформациях, используемых при вращении, см. в разделе [Определение матриц для трехмерного вращения экрана](#defining_matrices_3d).
 
  
 
@@ -446,7 +446,8 @@ default:
 
 После получения правильной матрицы вращения и начала координат для двухмерного изображения задайте его, вставив вызов [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857) между вызовами [**ID2D1DeviceContext::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/dd371768) и [**ID2D1DeviceContext::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/dd371924).
 
-**Внимание**. В Direct2D нет стека преобразования. Если ваше приложение также использует [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857) как компонент кода прорисовки, эту матрицу необходимо будет затем умножить с учетом любого другого выполненного преобразования.
+
+            **Внимание**. В Direct2D нет стека преобразования. Если ваше приложение также использует [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857) как компонент кода прорисовки, эту матрицу необходимо будет затем умножить с учетом любого другого выполненного преобразования.
 
  
 

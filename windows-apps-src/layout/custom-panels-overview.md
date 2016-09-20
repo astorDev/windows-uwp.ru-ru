@@ -10,13 +10,13 @@ label: XAML custom panels overview
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 8fba13d28f885d89d5b115eebf1a2e75abb8c890
+ms.openlocfilehash: aebe6b873fff2a4284f03ca519f998ded742f677
 
 ---
 
 # Обзор настраиваемых панелей XAML
 
-*Панель* — это объект, который определяет поведение макета для содержащихся в нем дочерних элементов при работе системы макетов XAML и отрисовке пользовательского интерфейса вашего приложения. Вы можете определить настраиваемые панели для макета XAML, создав пользовательский класс, производный от класса [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511). Поведение для вашей панели предоставляется путем переопределения методов [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) и [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711), обеспечивающих логику, которая измеряет и упорядочивает дочерние элементы.
+*Панель*— это объект, который определяет поведение макета для содержащихся в нем дочерних элементов при работе системы макетов XAML и отрисовке пользовательского интерфейса вашего приложения. Вы можете определить настраиваемые панели для макета XAML, создав пользовательский класс, производный от класса [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511). Поведение для вашей панели предоставляется путем переопределения методов [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) и [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711), обеспечивающих логику, которая измеряет и упорядочивает дочерние элементы.
 
 ## Базовый класс **Panel**
 
@@ -35,7 +35,8 @@ ms.openlocfilehash: 8fba13d28f885d89d5b115eebf1a2e75abb8c890
 ## Свойство **Children**
 
 
-Свойство [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) важно для настраиваемой панели, поскольку все классы, производные от [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), используют свойство **Children** для хранения дочерних элементов в коллекции. Свойство **Children** служит свойством содержимого XAML для класса **Panel**, и все классы, производные от **Panel**, могут наследовать поведение свойства содержимого XAML. Если свойство является свойством содержимого XAML, то в разметке XAML можно не указывать элемент этого свойства, а значениями задаются непосредственные потомки разметки (содержимое). Например, если создать класс с именем **CustomPanel**, производный от **Panel**, где не определяется нового поведения, то по-прежнему можно пользоваться такой разметкой:
+Свойство [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) важно для настраиваемой панели, поскольку все классы, производные от [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), используют свойство **Children** для хранения дочерних элементов в коллекции. 
+              Свойство **Children** служит свойством содержимого XAML для класса **Panel**, и все классы, производные от **Panel**, могут наследовать поведение свойства содержимого XAML. Если свойство является свойством содержимого XAML, то в разметке XAML можно не указывать элемент этого свойства, а значениями задаются непосредственные потомки разметки (содержимое). Например, если создать класс с именем **CustomPanel**, производный от **Panel**, где не определяется нового поведения, то по-прежнему можно пользоваться такой разметкой:
 
 ```XAML
 <local:CustomPanel>
@@ -46,7 +47,9 @@ ms.openlocfilehash: 8fba13d28f885d89d5b115eebf1a2e75abb8c890
 
 Когда модуль синтаксического анализа XAML считывает эту разметку, то известно, что свойство [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) является свойством содержимого XAML для всех типов, производных от [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), поэтому модуль синтаксического анализа добавляет два элемента [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) к значению [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) свойства **Children**. Свойство содержимого XAML облегчает создание упрощенных связей между родительскими и дочерними элементами в разметке XAML, используемой для определения пользовательского интерфейса. Дополнительные сведения о свойствах содержимого XAML и о заполнении свойств коллекции при анализе XAML см. в [руководстве по синтаксису XAML](https://msdn.microsoft.com/library/windows/apps/mt185596).
 
-Типом коллекции, в которой хранится значение свойства [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514), является класс [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633). Коллекция **UIElementCollection** строго типизирована, и для всех элементов принудительно задается тип [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). Базовый тип **UIElement** наследуется сотнями реально используемых типов элементов пользовательского интерфейса, поэтому здесь намеренно предусмотрено не слишком строгое соблюдение типов. Однако оно запрещает, например, элементу [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) быть непосредственным потомком класса [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) и обычно предполагает, что дочерними для **Panel** будут считаться только элементы, которые должны быть видимыми в пользовательском интерфейсе и включаться в макет.
+Типом коллекции, в которой хранится значение свойства [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514), является класс [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633). 
+              Коллекция **UIElementCollection** строго типизирована, и для всех элементов принудительно задается тип [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). 
+              Базовый тип **UIElement** наследуется сотнями реально используемых типов элементов пользовательского интерфейса, поэтому здесь намеренно предусмотрено не слишком строгое соблюдение типов. Однако оно запрещает, например, элементу [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) быть непосредственным потомком класса [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) и обычно предполагает, что дочерними для **Panel** будут считаться только элементы, которые должны быть видимыми в пользовательском интерфейсе и включаться в макет.
 
 Обычно настраиваемая панель принимает любой дочерний элемент [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) по определению XAML и использует характеристики свойства [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) как есть. В более сложных сценариях вы можете реализовать дополнительную проверку типов дочерних элементов во время прохода по коллекции в переопределяемых методах макета.
 
@@ -71,28 +74,17 @@ ms.openlocfilehash: 8fba13d28f885d89d5b115eebf1a2e75abb8c890
 
 Главным принципом работы системы макета является наличие в каждом элементе, основанном на [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), некоторого собственного поведения в случае, когда он выступает дочерним элементом в контейнере. Например, в классе **FrameworkElement** есть несколько API, которые передают нужную информацию для поведения макета или принципиально необходимы для работы макета. К ним относятся:
 
--   [
-              **DesiredSize**
-            ](https://msdn.microsoft.com/library/windows/apps/br208921) (фактически — свойство [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911))
--   [
-              **ActualHeight**
-            ](https://msdn.microsoft.com/library/windows/apps/br208707) и [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709)
--   [
-              **Height**
-            ](https://msdn.microsoft.com/library/windows/apps/br208718) и [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
+-   [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) (фактически— свойство [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911))
+-   [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) и [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709)
+-   [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) и [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
 -   [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
--   Событие [
-              **LayoutUpdated**
-            ](https://msdn.microsoft.com/library/windows/apps/br208722)
--   [
-              **HorizontalAlignment**
-            ](https://msdn.microsoft.com/library/windows/apps/br208720) и [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
--   Методы [
-              **ArrangeOverride**
-            ](https://msdn.microsoft.com/library/windows/apps/br208711) и [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
--   Методы [
-              **Arrange**
-            ](https://msdn.microsoft.com/library/windows/apps/br208914) и [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952): они имеют собственные реализации, определенные на уровне [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), которые обрабатывают действия макета на уровне элементов.
+-   
+              Событие [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722)
+-   [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) и [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
+-   
+              Методы [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) и [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
+-   
+              Методы [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) и [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952): они имеют собственные реализации, определенные на уровне [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), которые обрабатывают действия макета на уровне элементов.
 
 ## **MeasureOverride**
 
@@ -133,7 +125,7 @@ protected override Size MeasureOverride(Size availableSize)
 
 ### Советы и рекомендации
 
--   В идеальном случае настраиваемая панель должна подходить на роль первого визуального элемента в структуре пользовательского интерфейса — возможно, сразу после элемента [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503), [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) или другого элемента, служащего корнем XAML-страницы. В реализациях [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) не следует просто возвращать входной параметр [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) без проверки значений. Если в возвращаемом параметре **Size** окажется значение **Infinity**, то в логике макета во время выполнения может возникнуть исключение. Значение **Infinity** может передаваться из главного окна приложения, которое поддерживает прокрутку и поэтому не имеет максимальной высоты. Другое содержимое с возможностью прокрутки может вести себя аналогичным образом.
+-   В идеальном случае настраиваемая панель должна подходить на роль первого визуального элемента в структуре пользовательского интерфейса— возможно, сразу после элемента [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503), [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) или другого элемента, служащего корнем XAML-страницы. В реализациях [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) не следует просто возвращать входной параметр [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) без проверки значений. Если в возвращаемом параметре **Size** окажется значение **Infinity**, то в логике макета во время выполнения может возникнуть исключение. Значение **Infinity** может передаваться из главного окна приложения, которое поддерживает прокрутку и поэтому не имеет максимальной высоты. Другое содержимое с возможностью прокрутки может вести себя аналогичным образом.
 -   Другой распространенной ошибкой в реализациях [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) является возвращение нового значения [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) по умолчанию (с нулевыми значениями высоты и ширины). С этого значения можно начинать, и оно даже может оказаться правильным, если окажется, что не нужно отрисовывать ни один из дочерних элементов панели. Однако если задать значение **Size** по умолчанию, то основной элемент панели неправильно определит ее размер. Для панели не будет запрошено (и не будет получено) пространство в пользовательском интерфейсе, и в итоге она не будет отрисовываться. Весь остальной код панели может работать правильно, однако ни панель, ни ее содержимое не будут видны, если при компоновке для нее заданы нулевая высота и нулевая ширина.
 -   В переопределяемых методах не поддавайтесь искушению приводить дочерние элементы к типу [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) и использовать в качестве результата макета вычисляемые свойства, главным образом [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) и [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707). В самых распространенных сценариях вы можете опираться в логике на значение [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) дочернего элемента, и тогда не понадобятся никакие свойства дочернего элемента, связанные с [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) или [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751). В особых случаях, когда тип элемента известен и имеется дополнительная информация, например естественный размер файла изображения, вы можете воспользоваться этими данными элемента, поскольку такое значение не меняется системами макета. Включение в логику свойств, вычисляемых макетом, значительно повышает риск непреднамеренного определения цикла в макете. Такие циклы приводят к ситуации, когда не удается создать правильный макет, и, если цикл невозможно прервать, система создает исключение [**LayoutCycleException**](https://msdn.microsoft.com/library/windows/apps/hh673799).
 -   Панели обычно распределяют свое доступное пространство между несколькими дочерними элементами, но точное распределение пространства может меняться. Например, в классе [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) реализована логика макета, которая с помощью значений [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) и [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) делит пространство на ячейки **Grid**, поддерживая и режим звезды, и значения в пикселях. Если используются значения в пикселях, то для каждого дочернего элемента уже известен доступный размер, и он передается в качестве входного размера в метод [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) (табличного типа).
@@ -171,12 +163,12 @@ protected override Size ArrangeOverride(Size finalSize)
 
 Реализации [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) обычно различаются логикой, по которой панель определяет компонент [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), используемый в упорядочении каждого дочернего элемента. Панель с абсолютным позиционированием, например [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), использует явную информацию о размещении, получаемую из значений [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) и [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) каждого элемента. Панель с разделением пространства, например [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704), выполняет математические операции, делящие доступное пространство на ячейки; у каждой ячейки имеется значение x-y, в соответствии с которым размещается и упорядочивается ее содержимое. Адаптивная панель, например [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635), может расширяться таким образом, чтобы уместить все содержимое в направлении своей ориентации.
 
-На расположение элементов в макете влияют и другие факторы помимо тех, которые вы можете явным образом контролировать и передавать в метод [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914). Это влияние объясняется собственной внутренней реализацией метода **Arrange**, общей для всех типов, производных от [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), и дополненной некоторыми другими типами, например текстовыми элементами. Например, какие-то элементы могут иметь поля и различное выравнивание, а какие-то — заполнение. Эти свойства часто взаимодействуют друг с другом. Дополнительные сведения см. в статье [Выравнивание, поле и заполнение](alignment-margin-padding.md).
+На расположение элементов в макете влияют и другие факторы помимо тех, которые вы можете явным образом контролировать и передавать в метод [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914). Это влияние объясняется собственной внутренней реализацией метода **Arrange**, общей для всех типов, производных от [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), и дополненной некоторыми другими типами, например текстовыми элементами. Например, какие-то элементы могут иметь поля и различное выравнивание, а какие-то— заполнение. Эти свойства часто взаимодействуют друг с другом. Дополнительные сведения см. в статье [Выравнивание, поле и заполнение](alignment-margin-padding.md).
 
 ## Панели и элементы управления
 
 
-Не помещайте в настраиваемую панель функции, которые следует реализовать в пользовательском элементе управления. Задача панели — представить все содержащиеся в ней дочерние элементы в виде автоматически срабатывающей функции макета. Панель может добавлять к содержимому элементы оформления (аналогично тому, как [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) добавляет границу вокруг элемента) или выполнять другие изменения, относящиеся к макету, например добавлять заполнение. Однако на этом фактически заканчиваются возможности расширения визуального дерева, не привлекающие информацию от дочерних элементов и не связанные с составлением отчетов.
+Не помещайте в настраиваемую панель функции, которые следует реализовать в пользовательском элементе управления. Задача панели— представить все содержащиеся в ней дочерние элементы в виде автоматически срабатывающей функции макета. Панель может добавлять к содержимому элементы оформления (аналогично тому, как [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) добавляет границу вокруг элемента) или выполнять другие изменения, относящиеся к макету, например добавлять заполнение. Однако на этом фактически заканчиваются возможности расширения визуального дерева, не привлекающие информацию от дочерних элементов и не связанные с составлением отчетов.
 
 Если пользователю должно быть доступно какое-либо взаимодействие, его нужно реализовать в пользовательском элементе управления, а не посредством панели. Например, панель не должна добавлять окна просмотра с прокруткой к своему содержимому даже для того, чтобы исключить отсечение, поскольку полосы прокрутки, бегунки и прочие компоненты относятся к интерактивным элементам управления. (Содержимое может иметь полосу прокрутки, но она должна подчиняться логике дочернего элемента. Не добавляйте прокрутку специально в качестве операции макета.) Вы можете создать элемент управления, а также настраиваемую панель, которая будет играть важную роль в визуальном дереве этого элемента управления, когда нужно будет представить его содержимое. Однако элемент управления и панель должны быть различными объектами кода.
 
@@ -187,15 +179,13 @@ protected override Size ArrangeOverride(Size finalSize)
 
 В систему макета входят и другие API, которые не объявлены в классе [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511). Их можно использовать в реализации панели или в пользовательском элементе управления, в котором применяются панели.
 
--   Методы [
-              **UpdateLayout**
-            ](https://msdn.microsoft.com/library/windows/apps/br208989), [**InvalidateMeasure**](https://msdn.microsoft.com/library/windows/apps/br208930) и [**InvalidateArrange**](https://msdn.microsoft.com/library/windows/apps/br208929) запускают этап разметки. Метод **InvalidateArrange** может не запустить этап измерения, но два других метода запускают его. Никогда не запускайте эти методы из переопределенного метода макета, потому что в этом случае почти наверняка возникнет зацикливание макета. В коде элемента управления, как правило, тоже нет необходимости вызывать эти методы. Большинство аспектов макета активируются автоматически, когда обнаруживаются изменения в свойствах макета, определяемых платформой, например [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) и т. д.
--   Событие [
-              **LayoutUpdated**
-            ](https://msdn.microsoft.com/library/windows/apps/br208722) создается, когда меняется какой-либо аспект макета элемента. Это справедливо не только для панелей. Данное событие определено в классе [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706).
--   Событие [
-              **SizeChanged**
-            ](https://msdn.microsoft.com/library/windows/apps/br208742) создается только после завершения этапов разметки и показывает, что в результате изменилось значение [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) или [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709). Это событие также определяется в классе [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706). Существуют ситуации, когда событие [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) генерируется, а событие **SizeChanged** — нет. Например, порядок расположения внутреннего содержимого изменился, но размер элементов не изменился.
+-   
+              Методы [**UpdateLayout**](https://msdn.microsoft.com/library/windows/apps/br208989), [**InvalidateMeasure**](https://msdn.microsoft.com/library/windows/apps/br208930) и [**InvalidateArrange**](https://msdn.microsoft.com/library/windows/apps/br208929) запускают этап разметки. 
+              Метод **InvalidateArrange** может не запустить этап измерения, но два других метода запускают его. Никогда не запускайте эти методы из переопределенного метода макета, потому что в этом случае почти наверняка возникнет зацикливание макета. В коде элемента управления, как правило, тоже нет необходимости вызывать эти методы. Большинство аспектов макета активируются автоматически, когда обнаруживаются изменения в свойствах макета, определяемых платформой, например [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) ит.д.
+-   
+              Событие [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) возникает, когда меняется какой-либо аспект макета элемента. Это справедливо не только для панелей. Данное событие определено в классе [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706).
+-   
+              Событие [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742) возникает только после завершения этапов разметки и показывает, что в результате изменилось значение [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) или [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709). Это событие также определяется в классе [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706). Существуют ситуации, когда событие [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) генерируется, а событие **SizeChanged**— нет. Например, порядок расположения внутреннего содержимого изменился, но размер элементов не изменился.
 
 
 ## Связанные разделы
@@ -214,6 +204,6 @@ protected override Size ArrangeOverride(Size finalSize)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

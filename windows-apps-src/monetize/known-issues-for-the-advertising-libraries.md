@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: "Изучите известные проблемы текущего выпуска библиотек Microsoft Advertising в пакете SDK Microsoft Store Engagement and Monetization."
 title: "Известные проблемы для библиотек Microsoft Advertising"
-translationtype: Human Translation
 ms.sourcegitcommit: 5b6d3e034b73e6ae693fbeab3ecd3b2b81f38bb1
 ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
 
@@ -12,13 +11,13 @@ ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
 # Известные проблемы для библиотек Microsoft Advertising
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе перечислены известные проблемы текущего выпуска библиотек Microsoft Advertising в пакете SDK Microsoft Store Engagement and Monetization.
 
 ## Установка требует инструментов Visual Studio для универсальных приложений для Windows
 
-Для установки пакета [SDK Microsoft Store Engagement and Monetization](http://aka.ms/store-em-sdk) с помощью Visual Studio 2015 должны быть установлены инструменты Visual Studio для универсальных приложений для Windows версии 1.1 или более поздней. Дополнительные сведения см. в [примечаниях к выпуску](http://go.microsoft.com/fwlink/?LinkID=624516) Visual Studio.
+Для установки пакета [SDK Microsoft Store Engagement and Monetization](http://aka.ms/store-em-sdk) с помощью VisualStudio2015 должны быть установлены инструментыVisualStudio для универсальных приложений для Windows версии 1.1 или более поздней. Дополнительные сведения см. в [примечаниях к выпуску](http://go.microsoft.com/fwlink/?LinkID=624516) Visual Studio.
 
 ## Проекты Silverlight в Windows Phone 8.x
 
@@ -62,7 +61,7 @@ ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
 
 * Неопубликованные приложения или приложения, работающие в эмуляторе, не отображают актуальные объявления.
 
-Если реальная рекламная единица показывает тестовые объявления,статус рекламной единицы в Центре разработки Windows — **Активная и показывает тестовые объявления**. В настоящее время это неактуально для телефонных приложений.
+Если реальная рекламная единица показывает тестовые объявления,статус рекламной единицы в Центре разработки Windows— **Активная и показывает тестовые объявления**. В настоящее время это неактуально для телефонных приложений.
 
 ## Устаревшие тестовые значения для ИД рекламной единицы и ИД приложения более не работают
 
@@ -94,7 +93,7 @@ ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
 
 ## Z-порядок в приложениях JavaScript и HTML
 
-Приложения JavaScript/HTML не должны помещать элементы в зарезервированный диапазон MAX-10 z-порядка. Единственное исключение — это наложение прерывания, например уведомление о входящем вызове в Skype.
+Приложения JavaScript/HTML не должны помещать элементы в зарезервированный диапазон MAX-10 z-порядка. Единственное исключение— это наложение прерывания, например уведомление о входящем вызове в Skype.
 
 <span id="bkmk-ui"/>
 ## Не используйте границы

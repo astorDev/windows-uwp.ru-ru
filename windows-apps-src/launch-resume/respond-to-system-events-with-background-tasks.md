@@ -11,7 +11,7 @@ ms.openlocfilehash: f6845dce428f5e22ec68744293b1668da52002bf
 # Реагирование на системные события с помощью фоновых задач
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -64,9 +64,11 @@ ms.openlocfilehash: f6845dce428f5e22ec68744293b1668da52002bf
 
     > Следующий код регистрирует фоновую задачу:
 
-    [!div class="tabbedCodeSnippets"] **Примечание.** Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
+    [!div class="tabbedCodeSnippets"] 
+            **Примечание.** Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
 
-    > Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем — метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Подробнее см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md). **Примечание.**  Параметры регистрации фоновых задач проверяются во время регистрации.
+    > Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем— метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Подробнее см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md). 
+            **Примечание.**  Параметры регистрации фоновых задач проверяются во время регистрации.
 
      
 
@@ -82,12 +84,13 @@ ms.openlocfilehash: f6845dce428f5e22ec68744293b1668da52002bf
 > Приложения способны регистрировать фоновые задачи, которые выполняются в ответ на события [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843), [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) и [**NetworkOperatorNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/br224831). Это позволяет им поддерживать связь с пользователем в реальном времени, даже когда приложение не находится на переднем плане. Дополнительные сведения см. в разделе [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
 
  
-## **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP).
+## 
+            **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP).
 
 
 ****
 
-* [В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).](create-and-register-a-background-task.md)
+* [В случае разработки приложений для Windows8.x или Windows Phone8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).](create-and-register-a-background-task.md)
 * [Связанные разделы](declare-background-tasks-in-the-application-manifest.md)
 * [Создание и регистрация фоновой задачи](handle-a-cancelled-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](monitor-background-task-progress-and-completion.md)

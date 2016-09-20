@@ -3,7 +3,6 @@ author: mcleblanc
 description: "Введение в Visual Studio"
 title: "Введение в Visual Studio"
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: d31e6e940f0b03667f1e19abec17804f6f3e16a6
 
@@ -11,7 +10,7 @@ ms.openlocfilehash: d31e6e940f0b03667f1e19abec17804f6f3e16a6
 
 # Приступая к работе: введение в Visual Studio
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## Знакомство с Microsoft Visual Studio
 
@@ -49,7 +48,7 @@ ms.openlocfilehash: d31e6e940f0b03667f1e19abec17804f6f3e16a6
 
 ![окно свойств кнопки в Visual Studio](images/ios-to-uwp/vs-button-properties.png)
 
-Теперь напишем код, чтобы после касания кнопки пользователем содержимое элемента управления **TextBlock** изменялось на "Hello, World!" (Здравствуй, мир!).
+Теперь напишем код, чтобы после касания кнопки пользователем содержимое элемента управления **TextBlock** изменялось на  "Hello, World!" (Здравствуй, мир!).
 
 В Xcode связывание события с элементом управления включает написание кода и последующее связывание этого кода с элементом управления, часто с помощью перетаскивания кнопки в исходный код, примерно так:
 

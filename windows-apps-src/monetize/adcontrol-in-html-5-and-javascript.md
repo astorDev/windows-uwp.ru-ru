@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: "Узнайте, как использовать класс AdControl для показа баннерной рекламы в приложении на JavaScript или HTML для Windows 10 (UWP), Windows 8.1 или Windows Phone 8.1."
 title: "AdControl в HTML 5 и JavaScript"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 
@@ -23,7 +22,8 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 
 * Установите [пакет SDK Microsoft Store Engagement and Monetization](http://aka.ms/store-em-sdk) для Visual Studio 2015 или Visual Studio 2013.
 
-> **Примечание** Если вы установили предварительную сборку Windows 10 Anniversary SDK 14295 или более позднюю версию в Visual Studio 2015, вам также потребуется установить библиотеку WinJS. Эта библиотека ранее включалась в предыдущие версии Windows SDK для Windows 10, но, начиная с предварительной сборки Windows 10 Anniversary SDK 14295, ее необходимо устанавливать отдельно. Сведения по установке WinJS см. в разделе [Скачать WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> 
+            **Примечание** Если вы установили предварительную сборку Windows 10 Anniversary SDK 14295 или более позднюю версию в Visual Studio 2015, вам также потребуется установить библиотеку WinJS. Эта библиотека ранее включалась в предыдущие версии Windows SDK для Windows 10, но, начиная с предварительной сборки Windows 10 Anniversary SDK 14295, ее необходимо устанавливать отдельно. Сведения по установке WinJS см. в разделе [Скачать WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
 ## Написание кода
 
@@ -43,7 +43,8 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 
     ![javascriptaddreference](images/13-f7f6d6a6-161e-4f17-995d-1236d0b5d9f2.png)
 
-    > **Примечание**  Это изображение относится к Visual Studio 2015, где создается проект UWP для Windows 10. Если выполняется сборка приложения для Windows 8.1 или Windows Phone 8.1 либо с использованием Visual Studio 2013, экран будет выглядеть иначе.
+    > 
+            **Примечание**  Это изображение относится к Visual Studio 2015, где создается проект UWP для Windows 10. Если выполняется сборка приложения для Windows 8.1 или Windows Phone 8.1 либо с использованием Visual Studio 2013, экран будет выглядеть иначе.
 
 5.  В **Диспетчере ссылок** нажмите "ОК".
 
@@ -65,7 +66,8 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
     <script src="/MSAdvertisingJS/ads/ad.js"></script>
     ```
 
-    > **Примечание**   Эта строка должна располагаться в разделе **&lt;head&gt;** после включения default.js; в противном случае будет выдано сообщение об ошибке при сборке проекта.
+    > 
+            **Примечание**   Эта строка должна располагаться в разделе **&lt;head&gt;** после включения default.js; в противном случае будет выдано сообщение об ошибке при сборке проекта.
 
 8.  Измените раздел **&lt;body&gt;** в файле default.html (или другом html-файле, если это необходимо для вашего проекта), включив в него элемент div для **AdControl**. Задайте свойства **applicationId** и **adUnitId** в **AdControl**, чтобы проверить значения, предоставляемые в разделе [Значения тестового режима](test-mode-values.md), и измените высоту и ширину этого элемента управления, чтобы он соответствовал одному из [поддерживаемых размеров баннерной рекламы](supported-ad-sizes-for-banner-ads.md).
 
@@ -88,7 +90,8 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 
 2.  В своем коде замените тестовые значения (**applicationId** и **adUnitId**) рекламного блока действительными значениями, сгенерированными в Центре разработки.
 
-3.  [Отправьте приложение](../publish/app-submissions.md) в Магазин с помощью информационной панели в Центре разработки.
+3.  
+            [Отправьте приложение](../publish/app-submissions.md) в Магазин с помощью информационной панели в Центре разработки.
 
 4.  Изучите [отчеты по показателям рекламы](../publish/advertising-performance-report.md) на информационной панели Центра разработки.
 

@@ -3,7 +3,6 @@ author: jnHs
 Description: "Если вы должны указать номер плательщика НДС при регистрации в Центре разработки, начните со следующего."
 title: "Сведения об НДС"
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 4dd91c901ade83e482061bed781e3fdcd9dde141
 

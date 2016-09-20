@@ -1,136 +1,145 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Enable keyboard access using tab navigation and access keys so users can navigate across UI elements with the keyboard.
-title: Access keys
+Description: "Реализуйте доступ с клавиатуры с помощью навигации клавишей TAB и клавиш доступа, чтобы пользователи могли переходить по элементам интерфейса с помощью клавиатуры."
+title: "Клавиши доступа"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Access keys
 template: detail.hbs
 keyword: Access keys, keyboard, accessibility
+translationtype: Human Translation
+ms.sourcegitcommit: ac86012b63646e53dbde492eef504cb8230f2afd
+ms.openlocfilehash: d96d507c6ce8537888619ce174e2ff0e5284dcce
+
 ---
 
-# Access keys
+# Клавиши доступа
 
-Users who cannot easily use a mouse, such as those with motor disabilities, often rely on the keyboard to navigate and interact with an app.  The XAML framework lets you enable keyboard access using tab navigation and access keys so users can navigate across UI elements with the keyboard.
+Пользователи, которым сложно работать с мышью, например люди с нарушениями опорно-двигательного аппарата, часто применяют клавиатуру для перемещения и взаимодействия с приложением.  Платформа XAML позволяет предоставить доступ к элементам интерфейса с помощью клавиши TAB и клавиш доступа.
 
-- Tab navigation is a basic keyboard accessibility resource that’s enabled by default. Users press the tab and arrow keys on the keyboard to move focus around the UI elements.  
-- Access keys are an additional accessibility aid that you can implement. An access key uses the Alt key plus one or more alphanumeric characters associated with a UI element. For example, _Alt, F_ is commonly used to open the File menu, while _Alt, AL_ could invoke the Align Left option.  
+- Навигация клавишей TAB — это базовая возможность доступа с помощью клавиатуры (включенная по умолчанию), которая позволяет пользователям перемещать фокус между элементами интерфейса с помощью клавиши TAB и стрелок на клавиатуре.
+- Клавиши доступа — это дополнительная возможность доступа (которую можно реализовать в вашем приложении) для быстрого доступа к командам приложения с помощью сочетания клавиши-модификатор (ALT) и одной или нескольких буквенно-цифровых клавиш (обычно это буква, связанная с командой). Среди распространенных клавиш доступа _ALT+F_ для открытия меню "Файл" и _ALT+AL_ для выравнивать по левому краю.  
 
-For more info about keyboard navigation and accessibility, see [Keyboard interaction](https://msdn.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) and [Keyboard accessibility](https://msdn.microsoft.com/windows/uwp/accessibility/keyboard-accessibility). This article assumes you understand the concepts discussed in those articles.
+Дополнительные сведения о навигации с помощью клавиатуры и специальных возможностях см. в разделах [Взаимодействие с помощью клавиатуры](https://msdn.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) и [Специальные возможности клавиатуры](https://msdn.microsoft.com/windows/uwp/accessibility/keyboard-accessibility). Предполагается, что вы знакомы с понятиями, которые обсуждаются в этих статьях.
 
-## Access key overview
+## Обзор клавиш доступа
 
-Access keys let users directly invoke buttons or set focus with the keyboard without requiring them to repeatedly press the arrow keys and tab. Access keys are intended to be easily discoverable, so you should document them directly in the UI; for example, a floating badge over the control with the access key.
+Клавиши доступа позволяют пользователям напрямую активировать кнопки или устанавливать фокус с помощью клавиатуры, не нажимая несколько раз клавиши со стрелками и клавишу TAB. Клавиши доступа должны быть легко заметны, поэтому следует обозначить их непосредственно в пользовательском интерфейсе, например с помощью всплывающего индикатора событий над элементом управления с клавишей доступа.
 
+![Пример клавиш доступа и связанных подсказок в Microsoft Word](images/keyboard/accesskeys-keytips.png)
 
-_Figure 1: Example of Key Tips; floating badge access keys from Microsoft Word._
+_Рис. 1. Пример клавиш доступа и связанных подсказок в Microsoft Word._
 
-An access key is one or several alphanumeric characters associated with a UI element. For example, Microsoft Word uses _H_ for the Home tab, _2_ for Undo button, or _JI_ for the Draw tab.
+Клавиша доступа — это один или несколько буквенно-цифровых символов, связанных с элементом пользовательского интерфейса. Например, в Microsoft Word _H_ использует для вкладки "Главная", _2_ для кнопки "Отменить" и _JI_для вкладки "Рисование".
 
-**Access key scope**
+**Область клавиши доступа**
 
-An access key belongs to a specific scope. For example, in Figure 1, _F_, _H_, _N_, and _JI_, belong to the page’s scope.  When the user presses _H_, the scope changes to the Home tab’s scope and its access keys are shown as seen in Figure 2. The access keys, _V_, _FP_, _FF_, and _FS_ belong to the Home tab’s scope.
+Клавиша доступа относится к определенной области. Например, на рисунке 1 клавиши _F_, _H_, _N_ и _JI_ относятся к области страницы.  Когда пользователь нажимает _H_, область изменяется на вкладку "Главная", и отображаются ее клавиши доступа, как показано на рисунке 2. Клавиши доступа _V_, _FP_, _FF_ и _FS_ относятся к области вкладки "Главная".
 
+![Пример клавиш доступа и связанные подсказки для области вкладки "Главная" в Microsoft Word](images/keyboard/accesskeys-keytips-hometab.png)
 
-_Figure 2: Access keys that belong to the Home tab’s scope_
+_Рис. 2. Пример клавиш доступа и связанные подсказки для области вкладки "Главная" в Microsoft Word._
 
-Two elements can have the same access keys if the elements belong to different scopes. For example, _2_ is the access key for Undo on the page’s scope (Figure 1), and also for Italic in the Home tab’s scope (Figure 2). All access keys belong to the default scope unless another scope is specified.
+У двух элементов могут быть одинаковые клавиши доступа, если элементы относятся к разным областям. Например, _2_ — это клавиша доступа для кнопки "Отменить" в области страницы (рис. 1), а также для курсива в области вкладки "Главная" (рис. 2). Все клавиши доступа относятся к области по умолчанию, если не задана другая область.
 
-**Access key sequence**
+**Последовательность клавиш доступа**
 
-To use access keys, users typically press one key at a time to achieve an action rather than pressing keys simultaneously. (There is an exception to this that we discuss in the next section.) The sequence of keystrokes needed to achieve the action is an _access key sequence_. The user presses the Alt key to initiate the access key sequence. An access key is invoked when the user presses the last key in an access key sequence. For example, to open the View tab in Word, the user would press the _Alt, W_ access key sequence.
+Сочетания клавиш доступа обычно нажимаются один по одной клавише, а не одновременно. (Существует исключение, которое мы рассмотрим в следующем разделе.) Последовательность нажатий клавиш, необходимая для выполнения действия — это _последовательность клавиши доступа_. Пользователь нажимает клавишу ALT, чтобы инициировать последовательность. Клавиша доступа вызывается, когда пользователь нажимает последнюю клавишу в последовательности. Например, чтобы открыть вкладку "Вид" в Word, пользователь нажимает последовательность клавиши доступа _ALT, W_.
 
-A user can invoke several access keys in an access key sequence. For example, to open the Format Painter in a Word document, the user presses Alt to initialize the sequence, then presses _H_ to navigate to the Home section and change the access key scope, then _F_, and eventually _P_. _H_ and _FP_ are the access keys for the Home tab and the Format Painter button respectively.
+Пользователь может вызывать несколько клавиш доступа в последовательности. Например, чтобы открыть форматирование по образцу в документе Word, пользователь нажимает ALT, чтобы инициализировать последовательность, затем нажимает _H_ для перехода в раздел "Главная" и изменения области клавиши доступа, нажмите _F_ и, наконец, _P_. _H_ и _FP_ — это клавиши доступа для вкладки "Главная" и кнопки "Форматирование по образцу" соответственно.
 
-Some elements finalize an access key sequence after they’re invoked (like the Format Painter button) and others don’t (like the Home tab). Invoking an access key can result in executing a command, moving the focus, changing the access key scope, or some other action associated with it.
+Некоторые элементы завершают последовательность клавиши доступа после их вызова (например, кнопку "Форматирование по образцу"), а некоторые нет (например, вкладка "Главная"). Вызов клавиши доступа может привести к выполнению команды, перемещению фокуса, изменению области клавиши доступа и другому действию, связанному с ним.
 
-## Access Key User Interaction
+## Взаимодействие с пользователем с помощью клавиш доступа
 
-To understand the Access Key APIs, it is necessary to first understand the user interaction model. Below you can find a summary of the access key user interaction model:
+Чтобы понять API-интерфейса клавиш доступа, сначала необходимо изучить модель взаимодействия с пользователем. Ниже представлен обзор модели взаимодействия с пользователем с помощью клавиш доступа.
 
-- When the user presses the Alt key, the access key sequence starts, even when the focus is on an input control. Then, the user can press the access key to invoke the associated action. This user interaction requires that you document the available access keys within the UI with some visual affordance, such as floating badges, that are shown when the Alt key is pressed
-- When the user presses the Alt key plus the access key simultaneously, the access key is invoked immediately. This is similar to having a keyboard shorcut defined by Alt+_access key_. In this case, the access key visual affordances are not shown. However, invoking an access key could result in changing the access key scope. In this case, an access key sequence is initiated and the visual affordances are shown for the new scope.
+- Когда пользователь нажимает клавишу ALT, начинается последовательность клавиша доступа, даже если фокус находится на элементе управления вводом. После этого пользователь может нажать клавишу доступа для вызова связанного с ней действия. Для этого необходимо визуально обозначить доступные клавиши доступа в пользовательском интерфейсе, например с помощью всплывающих индикаторов событий, которые отображаются при нажатии клавиши ALT.
+- Когда пользователь одновременно нажимает клавишу ALT и клавишу доступа, немедленно вызывается клавиша доступа. Это похоже на сочетание клавиш, заданное ALT и _клавишей доступа_. В этом случае визуальная возможность клавиши доступа не отображается. Однако вызов клавиши доступа может привести к изменению ее области. В этом случае инициируется последовательность клавиши доступа, и отображаются визуальные возможности для новой области.
+    > [!NOTE]
+    > Такая функциональность применима только к клавишам доступа с одним символом. Сочетание ALT+_клавиша доступа_ не поддерживается для клавиш доступа с несколькими символами.    
+- Если существуют клавиши доступа с несколькими символами, в которых определенные символы совпадают, то они фильтруются, когда пользователь нажимает общей символ. Например, предположим, что показано три клавиши доступа: _A1_, _A2_ и _C_. Если пользователь нажимает _A_, отображаются только клавиши доступа _A1_ и _A2_, а визуальная возможность для C скрывается.
+- Клавиша ESC удаляет один уровень фильтрации. Например, если существуют клавиши доступа _B_, _ABC_, _ACD_ и _ABD_, а пользователь нажимает _A_, будут показаны только _ABC_, _ACD_ и _ABD_. Если пользователь затем нажмет _B_, отображаются только _ABC_ и _ABD_. Если пользователь нажимает клавишу ESC, один уровень фильтрации удаляется, после чего будут показаны клавиши доступа _ABC_, _ACD_ и _ABD_. Если пользователь еще раз нажмет ESC, будет удален другой уровень фильтрации, и активируются все клавиши доступа — _B_, _ABC_, _ACD_ и _ABD_ — и их визуальные возможности.
+- Клавиша ESC возвращает пользователя к предыдущей области. Клавиши доступа могут относиться к различным областям, что упрощает навигацию в приложениях с большим количеством команд. Последовательность клавиши доступа всегда начинается в главной области. Все клавиши доступа принадлежат главной области, за исключением тех, для которых в качестве области задан определенный элемент пользовательского интерфейса. Когда пользователь вызывает клавишу доступа элемента-владельца области, платформа XAML автоматически переключает область и добавляет ее к внутреннему стеку навигации клавиш доступа. Клавиша ESC позволяет сделать шаг назад в стеке навигации клавиш доступа.
+- Существует несколько способов закрыть последовательность клавиш доступа.
+    - Пользователь может нажать ALT, чтобы закрыть текущую последовательность. Помните, что при нажатии клавиши ALT также инициируется последовательность клавиш доступа.
+    - Клавиша ESC закрывает последовательность, если клавиша доступа находится в главной области и не скрыта.
+        > [!NOTE]
+        > Нажатие клавиши ESC также передается на уровень пользовательского интерфейса для обработки.
+- Клавиша TAB закрывает последовательность клавиш доступа и возвращается к навигации клавишей TAB.
+- Клавиша ВВОД закрывает последовательность клавиш доступа и отправляет сведения о нажатии элементу с фокусом.
+- Клавиши со стрелками закрывают последовательность клавиш доступа и отправляют сведения о нажатии элементу с фокусом.
+- Событие указателя, например щелчок мыши или касание, закрывает последовательность клавиш доступа.
+- По умолчанию при вызове клавиши доступа, последовательность закрывается.  Однако вы можете переопределить такое поведение, задав для свойства [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) значение **false**.
+- Конфликты клавиш доступа возникают, если детерминистический конечный автомат не реализуем. Конфликты клавиш доступа нежелательны, но могут возникать из-за большого числа команд, проблем с локализацией или созданием клавиш доступа во время выполнения.
 
-    **NOTE**&nbsp;&nbsp;Only access keys with one character can take advantage of this user interaction. The Alt+_access key_ combination is not supported for access keys with more than one character.
-- When there are several multi-character access keys that share some characters, when the user presses a shared character, the access keys are filtered. For example, assume there are three access keys shown: _A1_, _A2_, and _C_. If the user presses _A_, then only the _A1_ and _A2_ access key are shown and the visual affordance for C is hidden.
-- The Esc key removes one level the filtering. For example, if there are access keys _B_, _ABC_, _ACD_, and _ABD_ and the user presses _A_, then only _ABC_, _ACD_ and _ABD_ are shown. If the user then presses _B_, only _ABC_ and _ABD_ are shown. If user presses Esc, one level of filtering is removed and _ABC_, _ACD_ and _ABD_ access keys are shown. If the user presses Esc again, another level of filtering is removed and all the access keys -   _B_, _ABC_, _ACD_, and _ABD_ – are enabled and their visual affordances are shown.
-- The Esc key navigates back to the previous scope. Access keys can belong to different scopes to make it easier to navigate across apps that have a lot of commands. The access key sequence always starts on the main scope. All access keys belong to the main scope except those that specify a particular UI element as their scope owner. When the user invokes the access key of an element that is a scope owner, the XAML framework automatically moves the scope to it and adds it to an internal access key navigation stack. The Esc key moves back through the access key navigation stack.
-- There are several ways to dismiss the access key sequence:
-    - The user can press Alt to dismiss an access key sequence that is in progress. Remember that pressing Alt initiates the access key sequence as well.
-    - The Esc key dismisses the access key sequence if it is in the main scope and is not filtered.
+ Возможны два вида конфликтов.
+ - Если у двух элементов пользовательского интерфейса одинаковые клавиши доступа, принадлежащие одной области. Например, клавиша доступа _A1_ для `button1` и клавиша доступа _A1_ для `button2`, которая принадлежит области по умолчанию. В этом случае система разрешит конфликт, выбрав клавишу доступа первого элемента, добавленного в виртуальное дерево. Остальные клавиши доступа игнорируются.
+ - Если существует несколько вариантов в одной области клавиш доступа. Например, _A_ и _A1_. Когда пользователь нажимает _A_, у системы есть два варианта: вызвать клавишу доступа _A_ или использовать символ A клавиши доступа _A1_. В этом случае система обработает только первый вызов клавиши доступа, достигнутый автоматом. В нашем примере с _A_ и _A1_ система вызовет только клавишу доступа _A_.
+-   Когда пользователь нажимает недопустимое значение клавиши доступа в последовательности, ничего не происходит. Существуют две категории клавиш, которые считаются допустимыми в последовательности клавиш доступа:
+ - специальные клавиши для выхода из последовательности клавиш доступа — это ESC, ALT, клавиши со стрелками, ВВОД и TAB;
+ - буквенно-цифровые символы, назначенные клавишам доступа.
 
-        **NOTE**&nbsp;&nbsp;The Esc keystroke is passed to the UI layer to be handled there as well.
-    - The Tab key dismisses the access key sequence and returns to the Tab navigation.
-    - The Enter key dismisses the access key sequence and sends the keystroke to the element that has the focus.
-    - The arrow keys dismiss the access key sequence and send the keystroke to the element that has the focus.
-    - A pointer down event such a mouse click or a touch dismisses the access key sequence.
-    - By default, when an access key is invoked, the access key sequence is dismissed.  However, you can override this behavior by setting the [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) property to **false**.
-- Access key collisions occur when a deterministic finite automaton is not possible. Access key collisions are not desirable but can happen because of a large number of commands, localization issues, or runtime generation of access keys.
+## API-интерфейсы клавиш доступа
 
- There are two cases where collisions happen:
- - When two UI elements have the same access key value and belong to the same access key scope. For example, an access key _A1_ for a `button1` and access key _A1_ for a `button2` that belongs to the default scope. In this case, the system resolves the collision by processing the access key of the first element added to the visual tree. The rest are ignored.
- - When there is more than one computational option in the same access key scope. For example, _A_ and _A1_. When user presses _A_, the system has two options: invoke the _A_ access key or keep going and consume the A character from the _A1_ access key. In this case, the system will process only the first access key invocation reached by the automata. For the example, _A_ and _A1_, the system will only invoke the _A_ access key.
-- 	When the user presses an invalid access key value in an access key sequence, nothing happens. There are two categories of keys considered as valid access keys in an access key sequence:
- - Special keys to exit the access key sequence: This is Esc, Alt, the arrow keys, Enter, and Tab.
- - The alphanumeric characters assigned to the access keys.
-
-## Access key APIs
-
-To support the access key user interaction, the XAML framework provides the APIs described here.
+Для поддержки взаимодействия с пользователем с помощью клавиш доступ платформа XAML предоставляет описанные ниже API-интерфейсы.
 
 **AccessKeyManager**
 
-The [AccessKeyManager](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.aspx) is a helper class that you can use to manage your UI when access keys are shown or hidden. The [IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) event is raised each time the app enters and exits from the access key sequence. You can query the [IsDisplayModeEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabled.aspx) property to determine whether the visual affordances are shown or hidden.  You can also call [ExitDisplayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.exitdisplaymode.aspx) to force dismissal of an access key sequence.
+[AccessKeyManager](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.aspx) — это вспомогательный класс, с помощью которого можно управлять пользовательским интерфейсом, когда клавиши доступа отображаются или скрываются. Событие [IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) вызывается каждый раз, когда приложение инициирует последовательность клавиш доступа и выходит из нее. Вы можете запросить свойство [IsDisplayModeEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabled.aspx), чтобы определить, отображаются ли визуальные возможности.  Вы также можете вызвать [ExitDisplayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.exitdisplaymode.aspx), чтобы принудительно закрыть последовательность клавиши доступа.
 
-**NOTE**&nbsp;&nbsp;There is no built-in implementation of the access key's visual; you have to provide it.  
+> [!NOTE]
+> Визуализация клавиш доступа не реализована, это необходимо сделать самостоятельно.  
 
 **AccessKey**
 
-The [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) property lets you specify an access key on a UIElement or [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.accesskey.aspx). If two elements have the same access key and the same scope, only the first element added to the visual tree will be processed.
+Свойство [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) позволяет определить клавишу доступа для UIElement или [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.accesskey.aspx). Если у двух элементов одинаковые клавиши доступа в одной области, обрабатывается только первый элемент, добавленный в виртуальное дерево.
 
-To ensure the XAML Framework processes the access keys, the UI elements must be realized in the visual tree. If there are no elements in the visual tree with an access key, no access key events are raised.
+Чтобы платформа XAML могла обработать клавиши доступа, элементы пользовательского интерфейса необходимо реализовать в визуальном дереве. Если в визуальном дереве нет элементов с клавишей доступа, события клавиши доступа не вызываются.
 
-Access key APIs don’t support characters that need two keystrokes to be generated. An individual character must correspond to a key on a particular language’s native keyboard layout.  
+API клавиш доступа не поддерживают символы, для которых требуется два нажатия клавиши. Отдельный символ должен соответствовать клавише на клавиатуре в исходной раскладке.  
 
-**AccessKeyDisplayRequested/Dismissed**
+**AccessKeyDisplayRequested и AccessKeyDisplayDismissed**
 
-The [AccessKeyDisplayRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplayrequested.aspx) and the [AccessKeyDisplayDismissed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplaydismissed.aspx) events are raised when an access key visual affordance should be displayed or dismissed. These events are not raised for elements with their [Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) property set to **Collapsed**. The AccessKeyDisplayRequested event is raised during an access key sequence every time the user presses a character that is used by the access key. For example, if an access key is set to _AB_, this event is raised when the user presses Alt, and again when the user presses _A_. When user presses _B_, the AccessKeyDisplayDismissed event is raised
+События [AccessKeyDisplayRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplayrequested.aspx) и [AccessKeyDisplayDismissed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplaydismissed.aspx) инициируются, если следует показать или скрыть визуальную возможность клавиши доступа. Эти события не вызываются для элементов, свойству [Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) которых присвоено значение **Collapsed**. Событие AccessKeyDisplayRequested вызывается во время последовательности клавиш доступа каждый раз, когда пользователь нажимает символ, который применяется клавишей доступа. Например, если задана клавиша доступа _AB_, это событие инициируется, когда пользователь нажимает ALT и когда пользователь нажимает _A_. Если нажать _B_, инициируется событие AccessKeyDisplayDismissed.
 
 **AccessKeyInvoked**
 
-The [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) event is raised when a user reaches the last character of an access key. An access key can have one or several characters. For example, for access keys _A_ and _BC_, when a user presses _Alt, A_, or _Alt,  B, C_, the event is raised, but not when the user presses just _Alt, B_. This event is raised when the key is pressed, not when it’s released.
+Событие [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) инициируется, когда пользователь достигает последнего символа клавиши доступа. Клавиша доступа может использовать один или несколько символов. Например, для клавиш доступа _A_ и _BC_, когда пользователь нажимает _ALT, A_ или _ALT, B, C_, событие инициируется, а когда пользователь нажимает только _ALT, B_ — нет. Это событие вызывается, когда клавиша нажимается, а не когда она отпускается.
 
 **IsAccessKeyScope**
 
-The [IsAccessKeyScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.isaccesskeyscope.aspx) property lets you specify that a UIElement is the root of an access key scope. The AccessKeyDisplayRequested event is raised for this element, but not for its children. When a user invokes this element, the XAML framework changes the scope automatically and raises the AccessKeyDisplayRequested event on its children and the AccessKeyDisplayDismissed event on other UI elements (including the parent).  The access key sequence is not exited when the scope is changed.
+Свойство [IsAccessKeyScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.isaccesskeyscope.aspx) позволяет указать, что UIElement — это корневой элемент области клавиши доступа. Событие AccessKeyDisplayRequested вызывается для этого элемента, но не для его потомков. Когда пользователь вызывает этот элемент, платформа XAML автоматически изменяет область и вызывает событие AccessKeyDisplayRequested для его потомков и событие AccessKeyDisplayDismissed для других элементах пользовательского интерфейса (включая родительский элемент).  Последовательность клавиш доступа не закрывается, если область изменяется.
 
 **AccessKeyScopeOwner**
 
-To make an element participate in the scope of another element (the source) that is not its parent in the visual tree, you can set the [AccessKeyScopeOwner](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyscopeowner.aspx) property. The element bound to the AccessKeyScopeOwner property must have IsAccessKeyScope set to **true**. Otherwise, an exception is thrown.
+Чтобы элемент участвовал в области другого элемента (источника), который не является его родителем в визуальном дереве, можно задать свойство [AccessKeyScopeOwner](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyscopeowner.aspx). Свойству IsAccessKeyScope элемента, который привязывается к свойству AccessKeyScopeOwner, должно быть задано значение **true**. В противном случае создается исключение.
 
 **ExitDisplayModeOnAccessKeyInvoked**
 
-By default, when an access key is invoked and the element is not a scope owner, the access key sequence is finalized and the [AccessKeyManager.IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) event is raised. You can set the [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) property to **false** to override this behavior and prevent exiting from the access key sequence after its invoked. (This property is on both [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) and [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.exitdisplaymodeonaccesskeyinvoked.aspx)).
+По умолчанию когда клавиша доступа вызывается и элемент не является владельцем области, последовательность клавиш доступа завершается, и вызывается событие [AccessKeyManager.IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx). Вы можете задать для свойства [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) значение **false**, чтобы переопределить это поведение и не закрывать последовательность после ее вызова. (Это свойство есть в элементах [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) и [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.exitdisplaymodeonaccesskeyinvoked.aspx).)
 
-**NOTE**&nbsp;&nbsp;If the element is a scope owner (`IsAccessKeyScope="True"`), the app enters a new access key scope and the IsDisplayModeEnabledChanged event is not raised.
+> [!NOTE]
+> Если элемент — владелец области (`IsAccessKeyScope="True"`), приложение переходит в новую область клавиш доступа, а событие IsDisplayModeEnabledChanged не вызывается.
 
-**Localization**
+**Локализация**
 
-Access keys can be localized in multiple languages and loaded at runtime using the [ResourceLoader](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.resources.resourceloader.aspx) APIs.
+Клавиши доступа можно локализовать на нескольких языках и загружать во время выполнения с помощью API-интерфейсов [ResourceLoader](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.resources.resourceloader.aspx).
 
-## Control patterns used when an access key is invoked
+## Шаблоны элементов управления, которые используются, когда вызывается клавиша доступа
 
-Control patterns are interface implementations that expose common control functionality; for example, buttons implement the **Invoke** control pattern and this raises the **Click** event. When an access key is invoked, the XAML framework looks up whether the invoked element implements a control pattern and executes it if it does. If the element has more than one control pattern, only one is invoked, the rest are ignored. Control patterns are searched in the following order:
+Шаблоны элементов управления — это реализации интерфейса, предоставляющие общие функции элементов управления. Например, в кнопках реализован шаблон элемента управления **Invoke**, и они вызывают событие **Click**. Когда вызывается клавиша доступа, платформа XAML определяет, реализован ли в вызванном элементе шаблон элемента управления, и выполняет его, если это так. Если в элементе несколько шаблонов элементов управления, вызывается только один из них, а остальные игнорируются. Поиск шаблонов элементов управления осуществляется в следующем порядке:
 
-1.	Invoke. For example, a Button.
-2.	Toggle. For example, a Checkbox.
-3.	Selection. For example, a RadioButton.
-4.	Expand/Collapse. For example, a ComboBox.
+1.  Вызов. Например, кнопка.
+2.  Переключение. Например, флажок.
+3.  Выбор. Например, переключатель.
+4.  Развернуть и свернуть. Например, поле со списком.
 
-If a control pattern is not found, the access key invocation will appear as a no-op and a debug message is recorded to assist you in debugging this situation: "No automation patterns for this component found. Implement desired behavior in the event handler for AccessKeyInvoked. Setting Handled to true in your event handler will suppress this message."
+Если шаблон элемента управления не найден, вызов клавиши доступа отображается как отсутствие операции, при этом записывается сообщение отладки, которое поможет разобраться с этой ситуацией: "Шаблоны автоматизации для этого компонента не найдены. Реализуйте необходимое поведение в обработчике события AccessKeyInvoked. Если присвоить свойству Handled значение true в обработчике событий, это сообщение будет отключено".
 
-**NOTE**&nbsp;&nbsp;The debugger's Application process type must be _Mixed (Managed and Native)_ or _Native_ in Visual Studio's Debug Settings to see this message.
+> [!NOTE]
+> Чтобы это сообщение отображалось, тип процесса приложения отладчика должен быть задан в параметрах отладки Visual Studio как _Смешанный (управляемый и машинный)_ или _Машинный_.
 
-If you do not want an access key to execute its default control pattern, or if the element does not have a control pattern, you should handle the [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) event and implement the desired behavior.
+Если вы не хотите, чтобы клавиша доступа выполняла шаблон элемента управления по умолчанию, или если элемент не использует шаблон элемента управления, следует обработать событие [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) и реализовать необходимое поведение.
 ```csharp
 private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
 {
@@ -139,19 +148,20 @@ private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args
 }
 ```
 
-For more info about control patterns, see [UI Automation Control Patterns Overview](https://msdn.microsoft.com/library/windows/desktop/ee671194.aspx).
+Дополнительные сведения о шаблонах элементов управления см. в разделе [Обзор шаблонов элементов управления модели автоматизации пользовательского интерфейса](https://msdn.microsoft.com/library/windows/desktop/ee671194.aspx).
 
-## Access keys and Narrator
+## Клавиши доступа и экранный диктор
 
-Windows Runtime has UI Automation providers that expose properties on Microsoft UI Automation elements. These properties enable UI Automation client applications to discover information about pieces of the user interface. The [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) property lets clients, such as Narrator, discover the access key associated with an element. Narrator will read this property every time an element gets focus. If AutomationProperties.AccessKey is does not have value, the XAML framework returns the [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) property value from the UIElement or TextElement. You don't need to setup AutomationProperties.AccessKey if the AccessKey property already has a value.
+В среде выполнения Windows есть поставщики автоматизации пользовательского интерфейса, которые предоставляют свойства элементов модели автоматизации пользовательского интерфейса Майкрософт. Эти свойства позволяют клиентским приложениям получать сведения об элементах пользовательского интерфейса. Свойство [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) позволяет клиентам, таким как экранный диктор, определять клавишу доступа, связанную с элементом. Экранный диктор читает это свойство каждый раз, когда элемент получает фокус. Если для AutomationProperties.AccessKey значение не задано, платформа XAML возвращает значение свойства [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) из UIElement или TextElement. Вам не нужно настраивать AutomationProperties.AccessKey, если свойству AccessKey уже присвоено значение.
 
-## Example: Access key for button
+## Пример: клавиша доступа для кнопки
 
-This example shows how to create an access key for a Button. It uses Tooltips as a visual affordance to implement a floating badge that contains the access key.
+В этом примере показано, как создать клавишу доступа для кнопки. В качестве визуальной возможности используются подсказки для реализации всплывающего индикатора событий, который содержит клавишу доступа.
 
-**NOTE**&nbsp;&nbsp;Tooltip is used for simplicity, but we recommend that you create your own control to display it using, for example, [Popup](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.popup.aspx).
+> [!NOTE]
+> Подсказка применяется для простоты, но мы рекомендуем создать собственный элемент управления для отображения, используя, например, [всплывающее окно](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.popup.aspx).
 
-The XAML framework automatically calls the handler for the Click event, so you don't need to handle the AccessKeyInvoked event. The example provides visual affordances for only the characters that are remaining to invoke the access key by using the [AccessKeyDisplayRequestedEventArgs.PressedKeys](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeydisplayrequestedeventargs.pressedkeys.aspx) property. For example, if there are three displayed access keys: _A1_, _A2_, and _C_, and the user presses _A_, then only _A1_ and _A2_ access key are unfiltered, and are displayed as _1_ and _2_ instead of _A1_ and _A2_.
+Платформа XAML автоматически вызывает обработчик события Click, поэтому вам не нужно обрабатывать событие AccessKeyInvoked. В примере представлены визуальные возможности только для оставшихся символов для вызова клавиш доступа с помощью свойства [AccessKeyDisplayRequestedEventArgs.PressedKeys](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeydisplayrequestedeventargs.pressedkeys.aspx). Например, если отображаются три клавиши доступа _A1_, _A2_ и _C_, и пользователь нажимает _A_, остаются только клавиши доступа _A1_ и _A2_, которые отображаются как _1_ и _2_ вместо _A1_ и _A2_.
 
 ```xaml
 <StackPanel
@@ -219,13 +229,13 @@ The XAML framework automatically calls the handler for the Click event, so you d
     }
 ```
 
-## Example: Scoped access keys
+## Пример: клавиши доступа с областью действия
 
-This example shows how to create scoped access keys. The PivotItem’s IsAccessKeyScope property prevents the access keys of the PivotItem's child elements from showing when user presses Alt. These access keys are shown only when the user invokes the PivotItem because the XAML framework automatically switches the scope. The framework also hides the access keys of the other scopes.
+В этом примере показано, как создать клавиши доступа с областью действия. Свойство IsAccessKeyScope элемент PivotItem отключает отображение клавиш доступа дочерних элементов PivotItem, когда пользователь нажимает ALT. Эти клавиши доступа отображаются, только если пользователь вызывает PivotItem, поскольку платформа XAML автоматически переключает область. Эта платформа также скрывает клавиши доступа других областей.
 
-This example also shows how to handle the AccessKeyInvoked event. The PivotItem doesn’t implement any control pattern, so the XAML framework doesn't invoke any action by default. This implementation shows how to select the PivotItem that was invoked using the access key.
+В этом примере также показано, как обрабатывать событие AccessKeyInvoked. В элементе PivotItem не реализован шаблон элемент управления, поэтому платформа XAML не вызывает какие-либо действия по умолчанию. В этой реализации показано, как выбрать элемент PivotItem, вызванный с помощью клавиши доступа.
 
-Finally, the example shows the IsDisplayModeChanged event where you can do something when the display mode changes. In this example, the Pivot control is collapsed until the user presses Alt. When the user finishes interacting with the Pivot, it collapses again. You can use IsDisplayModeEnabled to check if the access key display mode is enabled or disabled.
+Наконец, в примере показано событие IsDisplayModeChanged, в котором можно выполнить определенное действие при изменении режима отображения. В этом примере элемент управления Pivot свернут, пока пользователь не нажмет ALT. Когда пользователь закончит взаимодействовать с элементом управления Pivot, он снова будет свернут. Вы можете использовать свойство IsDisplayModeEnabled, чтобы узнать, включен ли режим отображения клавиш доступа.
 
 ```xaml   
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -372,3 +382,9 @@ public sealed partial class ScopedAccessKeys : Page
         }
     }
 ```
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

@@ -5,8 +5,9 @@ title: "Определение языка для распознавателя р
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 8af4fe64e586037d68ab5cd422d7195bd3a64b94
+ms.openlocfilehash: 1a70ac671c11d2ab3c34a95f2571685f4f851836
 
 ---
 
@@ -33,7 +34,7 @@ ms.openlocfilehash: 8af4fe64e586037d68ab5cd422d7195bd3a64b94
 
 От вас требуется понимание основных принципов распознавания речи и знание соответствующих ограничений.
 
-Если вы — начинающий разработчик приложений универсальной платформы Windows (UWP), прочитайте указанные ниже статьи, чтобы ознакомиться с описанными здесь технологиями.
+Если вы— начинающий разработчик приложений универсальной платформы Windows (UWP), прочитайте указанные ниже статьи, чтобы ознакомиться с описанными здесь технологиями.
 
 -   [Создание первого приложения](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   Дополнительную информацию о событиях см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/mt185584).
@@ -61,19 +62,15 @@ var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
 
 На разных устройствах установленные языки могут отличаться. Следует проверить наличие языка, если с ним связано какое-либо ограничение, которое имеет для вас значение.
 
-**Примечание.**  После установки нового языкового пакета требуется перезагрузка. Если указанный язык не поддерживается или его установка не завершена, возникает исключение с кодом ошибки SPERR\_NOT\_FOUND (0x8004503a).
+**Примечание.** После установки нового языкового пакета требуется перезагрузка. Если указанный язык не поддерживается или его установка не завершена, возникает исключение с кодом ошибки SPERR\_NOT\_FOUND (0x8004503a).
 
  
 
 Определите поддерживаемые языки на устройстве, проверив одно из двух статических свойств класса [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226):
 
--   [
-              **SupportedTopicLanguages**
-            ](https://msdn.microsoft.com/library/windows/apps/dn653251) — коллекция объектов [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804), используемых с предустановленными правилами грамматики для диктовки и поиска в Интернете.
+-   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251) — коллекция объектов [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804), используемых с предустановленными правилами грамматики для диктовки и поиска в Интернете.
 
--   [
-              **SupportedGrammarLanguages**
-            ](https://msdn.microsoft.com/library/windows/apps/dn653250) — коллекция объектов [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804), используемых с ограничением по списку или файлом определения грамматики для распознавания речи (SRGS).
+-   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250) — коллекция объектов [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804), используемых с ограничением по списку или файлом определения грамматики для распознавания речи (SRGS).
 
 ## Определение языка
 
@@ -105,22 +102,17 @@ var recognizer = new SpeechRecognizer(language);
 
 Ограничение по списку можно настроить, добавив [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) в коллекцию [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) средства [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), а затем вызвав [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240). Вы не можете задать язык пользовательского списка напрямую. Список будет обрабатываться с использованием языка распознавателя.
 
-Грамматика SRGS – это открытый формат XML, представляемый классом [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412). В отличие от пользовательских списков язык грамматики можно указать в разметке SRGS. Выполнение [
-              **CompileConstraintsAsync**
-            ](https://msdn.microsoft.com/library/windows/apps/dn653240) завершается ошибкой с состоянием [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) для **TopicLanguageNotSupported**, если распознаватель не удалось инициализировать на языке разметки SRGS.
+Грамматика SRGS–это открытый формат XML, представляемый классом [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412). В отличие от пользовательских списков язык грамматики можно указать в разметке SRGS. 
+              Выполнение [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) завершается ошибкой с состоянием [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) для **TopicLanguageNotSupported**, если распознаватель не удалось инициализировать на языке разметки SRGS.
 
 ## Связанные разделы
 
 
 **Разработчикам**
 * [Взаимодействие с помощью голосовых функций](speech-interactions.md)
-            
-          
-            **Проектировщикам**
+**Проектировщикам**
 * [Рекомендации по проектированию голосовых функций](https://msdn.microsoft.com/library/windows/apps/dn596121)
-            
-          
-            **Примеры**
+**Примеры**
 * [Пример распознавания и синтеза речи](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -132,6 +124,6 @@ var recognizer = new SpeechRecognizer(language);
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

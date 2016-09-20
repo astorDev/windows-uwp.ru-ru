@@ -1,31 +1,37 @@
 ---
 author: normesta
-description: 'Shows how to integrate social feeds into the People app'
-MSHAttr: 'PreferredLib:/library/windows/apps'
-title: 'Provide social feeds to the People app'
+description: "Инструкция по интеграции социальных веб-каналов с приложением \"Люди\""
+MSHAttr: PreferredLib:/library/windows/apps
+title: "Реализация социальных веб-каналов в приложении \"Люди\""
+translationtype: Human Translation
+ms.sourcegitcommit: 767acdc847e1897cc17918ce7f49f9807681f4a3
+ms.openlocfilehash: c5b9666d8654a4065bc0e4e400d3e47de4773b8b
+
 ---
 
-# Provide social feeds to the People app
+# Реализация социальных веб-каналов в приложении "Люди"
 
-Integrate social feed data from your database into the People app.
+Интеграция данных социальных веб-каналов из базы данных с приложением "Люди".
 
-Your feed data will appear in the **What's New** pages of the People app or in the **Profile** page of a contact.
+Данные ваших веб-каналов появятся на страницах **Что нового** в приложении "Люди" или на странице **Профиль** контакта.
 
-![Social Feeds in People App](images/social-feeds.png)
+Пользователи могут нажать элемента веб-канала, чтобы открыть приложение.
 
-To get started, create a foreground app that tags contacts for social feeds and a background agent that sends feed data to the People app.
+![Социальные веб-каналы в приложении "Люди"](images/social-feeds.png)
 
-For a more complete sample, see [Social Info Sample](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp).
+Для начала создайте приложение переднего плана, помечающее контакты для социальных веб-каналов, и фоновый агент, отправляющий данные веб-каналов в приложение "Люди".
 
-## Create a foreground app
+Более подробный пример см. в разделе [Пример сведений социальных сетей](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp).
 
-First, create a Universal Windows Platform (UWP) project and then add the **Windows Mobile Extensions for UWP** to it.
+## Создание приложения переднего плана
 
-![Mobile Extensions](images/mobile-extensions.png)
+Сначала создайте проект универсальной платформы Windows (UWP), а затем добавьте к нему **Мобильные расширения Windows для UWP**.
 
-### Find or create contacts
+![Мобильные расширения](images/mobile-extensions.png)
 
-You can find contacts by using a name, email address, or phone number.
+### Поиск и создание контактов
+
+Вы можете искать контакты по имени, адресу электронной почты или номеру телефона.
 
 ```cs
 ContactStore contactStore = await ContactManager.RequestStoreAsync();
@@ -36,7 +42,7 @@ contacts = await contactStore.FindContactsAsync(emailAddress);
 
 Contact contact = contacts[0];
 ```
-You can also create contacts and then add them to a contact list.
+Вы также можете создавать контакты и добавлять их в список контактов.
 
 ```cs
 Contact contact = new Contact();
@@ -67,11 +73,11 @@ else
 await contactList.SaveContactAsync(contact);
 ```
 
-### Tag each contact with an annotation
+### Маркировка каждого контакта с помощью аннотаций
 
-This *annotation* causes the People app to request feed data for the contact from your background agent.
+В результате добавления этой *аннотации* приложение "Люди" запрашивает данные веб-каналов для контакта из фонового агента.
 
-As part of the annotation, associate the ID of the contact to an ID that your app uses internally to identify that contact.
+В рамках аннотации свяжите идентификатор контакта с идентификатором, который приложение использует внутренне для определения этого контакта.
 
 ```cs
 ContactAnnotationStore annotationStore = await
@@ -94,11 +100,11 @@ annotation.SupportedOperations = ContactAnnotationOperations.SocialFeeds;
 await annotationList.TrySaveAnnotationAsync(annotation);
 
 ```
-### Provision the background agent
+### Подготовка фонового агента к работе
 
-Make sure that the [SocialInfoContract](https://msdn.microsoft.com/library/windows/apps/dn706146.aspx) API contract is available on the device that will run your app.
+Убедитесь, что контракт API [SocialInfoContract](https://msdn.microsoft.com/library/windows/apps/dn706146.aspx) доступен на устройстве, на котором будет запускаться приложение.
 
-If it's available, then provision the background agent.
+Если он доступен, подготовьте фоновый агент к работе.
 
 ```cs
 if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent(
@@ -114,21 +120,21 @@ if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent(
     }
 }
 ```
-## Create the background agent
+## Создание фонового агента
 
-The background agent is a Windows Runtime Component that responds to feed requests from the People app.
+Фоновый агент— это компонент среды выполнения Windows, отвечающий на запросы веб-каналов от приложения "Люди".
 
-In your agent, you'll respond to those requests by giving the People app feed data from your database.
+В вашем агенте вы будете отвечать на эти запросы, предоставляя приложению "Люди" данные веб-каналов из вашей базы данных.
 
-### Create a Windows Runtime Component
+### Создание компонента среды выполнения Windows
 
-Add a **Windows Runtime Component (Universal Windows)** project to your solution.
+Добавьте проект **Компонент среды выполнения Windows (универсальная платформа Windows)** в ваше решение.
 
-![Windows Runtime Component](images/windows-runtime-component.png)
+![Компонент среды выполнения Windows](images/windows-runtime-component.png)
 
-### Register the background agent as an app service
+### Регистрация фонового агента в качестве службы приложения
 
-Register by adding protocol handlers to the ``Extensions`` element of the manifest.
+Выполните регистрацию путем добавления обработчиков протоколов в элемент ``Extensions`` манифеста.
 
 ```xml
 <Extensions>
@@ -137,27 +143,27 @@ Register by adding protocol handlers to the ``Extensions`` element of the manife
   </uap:Extension>
 </Extensions>
 ```
-You can also add these in the **Declarations** tab of the manifest designer in Visual Studio.
+Вы также можете добавить их на вкладку **Объявления** конструктора манифестов в Visual Studio.
 
-![App Service in Manifest Designer](images/manifest-designer-app-service.png)
+![Служба приложения в конструкторе манифестов](images/manifest-designer-app-service.png)
 
-### Request operations from the People app
+### Запрос операций у приложения "Люди"
 
-Ask the People app what type of data it wants next. The People app will respond to your request with a code that indicates which feed it wants data for.
+Запросите у приложения "Люди" требуемый далее тип данных. В ответ на ваш запрос приложение "Люди" отправит код, в котором будет указано, для какого веб-канала требуются данные.
 
-This table describes each feed:
+В этой таблице описан каждый веб-канал:
 
-| Feed | Description |
+| Веб-канал | Описание |
 |-------|-------------|
-| Home | Feed that appears in the What's New page of the People app. |
-| Contact | Feed that appears in the What's New page of a contact. |
-| Dashboard | Feed that appears in the contact card next to the profile picture. |
+| Главный | Этот веб-канал появляется на странице "Что нового" в приложении "Люди". |
+| Контакт | Этот веб-канал появляется на странице "Что нового" в контакте. |
+| Информационная панель | Этот веб-канал появляется на карточке контакта рядом с изображением профиля. |
 <br>
-You'll ask the People app by requesting an *operation*. Implement the [IBackgroundTask](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.aspx) interface and override the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method.
+Для отправки запроса в приложение "Люди" требуется запросить *операцию*. Реализуйте интерфейс [IBackgroundTask](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.aspx) и переопределите метод [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx).
 
-In the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method, send the People app two key-value pairs. One of them contains the version of the protocol and the other one contains the type of the operation.
+В методе [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) отправьте приложению "Люди" две пары "ключ-значение". Одна из них содержит версию протокола, а другая— тип операции.
 
-Then listen for a response from the People app. That response will contain a code.
+Затем дождитесь ответа от приложения "Люди". Ответ будет содержать код.
 
 ```cs
 public sealed class BackgroundAgent : IBackgroundTask
@@ -225,41 +231,41 @@ public sealed class BackgroundAgent : IBackgroundTask
 }
 ```
 
-Refer to the ``Type`` element of the [AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) property to get that code. Here's a complete list of the codes.
+Сошлитесь на элемент ``Type`` свойства [AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) для получения этого кода. Вот полный список кодов.
 
-| Type| Description |
+| Тип| Описание |
 |-----|-------------|
-| 0x10 | A request to the People app for the next operation. |
-| 0x11 | A request from the People app to provide the home feed for the primary user. |
-| 0x13 | A request from the People app to get the contact feed for the selected contact. |
-| 0x15 | A request from the People app to get the dashboard item of the selected contact. |
-| 0x80 | Indicates that the operation is completed. This notifies the People app that the data is now available. |
-| 0xF1 | A message from the People app indicating that it does not require any other operations. The background agent can shut down now. |
+| 0x10 | Запрос приложению "Люди" на следующую операцию. |
+| 0x11 | Запрос от приложения "Люди" на предоставление главного веб-канала для основного пользователя. |
+| 0x13 | Запрос от приложения "Люди" на получение веб-канала контакта для выбранного контакта. |
+| 0x15 | Запрос от приложения "Люди" на получение элемента информационной панели выбранного контакта. |
+| 0x80 | Указывает на завершение операции. Этот код уведомляет приложение "Люди" о доступности данных. |
+| 0xF1 | Сообщение от приложения "Люди", указывающее на отсутствие необходимости выполнения каких-либо других операций. Теперь фоновый агент может завершить работу. |
 <br>
-The [AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) property also returns a collection of other key-value pairs that describe the response. Here's a list of them.
+Свойство [AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) также возвращает коллекцию других пар "ключ-значение", описывающих ответ. Вот их перечень.
 
-| Key | Type | Description |
+| Ключ | Тип | Описание |
 |-----|------|-------------|
-| Version | UINT32 | (Required) Identifies the version of the message protocol. The upper 16 bits are the major version, and the lower 16 bits are the minor version. |
-| Type | UINT32 | (Required) The type of operation to perform. The previous example uses the Type key to determine what operation the People app is asking for.
-| OperationId | UINT32 | The ID of the operation. |
-| OwnerRemoteId | String | ID that your app uses internally to identify that contact. |
-| LastFeedItemTimeStamp | String | The ID of the last feed item that was retrieved. |
-| LastFeedItemTimeStamp | DateTime | The time stamp of the last feed item that was retrieved. |
-| ItemCount | UINT32 | The number of items that the People app asks for. |
-| IsFetchMore | BOOLEAN | Determines when the internal cache is updated. |
-| ErrorCode | UINT32 | The error code associated with the background agent operation. |
+| Version | UINT32 | (Обязательно) Указывает версию протокола сообщений. Верхние 16 бит указывают основной номер версии, а нижние— дополнительный. |
+| Type | UINT32 | (Обязательно) Тип выполняемой операции. В предыдущем примере ключ Type используется для определения типы операции, которую запрашивает приложение "Люди".
+| OperationId | UINT32 | Идентификатор операции. |
+| OwnerRemoteId | Строка | Идентификатор, который приложение использует внутренне для определения этого контакта. |
+| LastFeedItemTimeStamp | Строка | Идентификатор последнего полученного элемента веб-канала. |
+| LastFeedItemTimeStamp | Дата и время | Метка времени последнего полученного элемента веб-канала. |
+| ItemCount | UINT32 | Число элементов, запрашиваемых приложением "Люди". |
+| IsFetchMore | Логический | Определяет время обновления внутреннего кэша. |
+| ErrorCode | UINT32 | Код ошибки, связанный с операцией фонового агента. |
 <br>
-### Provide a data feed to the People app
+### Предоставление веб-канала данных приложению "Люди"
 
-A **Type** value of ``0x11``, ``0x13``, or ``0x15`` is a request from the People app for feed data.  
+Значение **Type** ``0x11``, ``0x13`` или ``0x15``— это запрос от приложению "Люди" на данные веб-канала.  
 
-The next few snippets show an approach to providing that data to the People app.
+В нескольких следующих фрагментах кода демонстрируется подход к предоставлению данных приложению "Люди".
 
 > [!NOTE]
-> These snippets come from the [Social Info Sample](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp). They contain references to interfaces, classes and members that are defined elsewhere in the sample. Use these snippets along with the other examples in this topic to understand the flow of tasks and refer to the sample if you're interested in diving further into the stack of interfaces, classes, and types.
+> Эти фрагменты кода взяты из раздела [Пример сведений социальных сетей](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp). Они содержат ссылки на интерфейсы, классы и участников, определенных в других частях примера. Используйте эти фрагменты кода с другими примерами в данной статье, чтобы уяснить последовательность задач и обратиться к примеру, если вам требуется подробнее изучить стек интерфейсов, классов и типов.
 
-**Get contact feed items**
+**Получение элементов веб-канала контакта**
 
 ```cs
 public override async Task DownloadFeedAsync()
@@ -311,7 +317,7 @@ public override async Task DownloadFeedAsync()
 }
 ```
 
-**Get dashboard items**
+**Получение элементов информационной панели**
 
 ```cs
 public override async Task DownloadFeedAsync()
@@ -354,7 +360,7 @@ public override async Task DownloadFeedAsync()
 }
 ```
 
-**Get home feed items**
+**Получение элементов главного веб-канала**
 
 ```cs
 public override async Task DownloadFeedAsync()
@@ -406,9 +412,9 @@ public override async Task DownloadFeedAsync()
 }
 ```
 
-### Send success or failure notification back to the People app
+### Отправка уведомления об успешном или неуспешном выполнении операции приложению "Люди"
 
-Encapsulate your calls in a try catch block and then pass back a success or failure message to the People app after you've provided feed data.
+Инкапсулируйте вызовы в блоке Try/Catch, а затем передайте сообщение об успешном или неуспешном выполнении операции приложению "Люди" после предоставления данных веб-канала.
 
 ```cs
 try
@@ -433,3 +439,9 @@ fields.Add("OperationId", operationID);
 await this.mAppServiceConnection.SendMessageAsync(fields);
 
 ```
+
+
+
+<!--HONumber=Aug16_HO4-->
+
+

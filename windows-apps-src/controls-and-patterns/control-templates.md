@@ -8,7 +8,6 @@ title: "Шаблоны элементов управления"
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 071ba59af02b860e9fe58133eb5f1c2a7207ed2b
 
@@ -96,7 +95,10 @@ ms.openlocfilehash: 071ba59af02b860e9fe58133eb5f1c2a7207ed2b
 
 |                     |                    |                         |
 |---------------------|--------------------|-------------------------|
-| Значение **IsChecked** | Состояние **CheckBox** | Вид **CheckBox** |
+| 
+            Значение **IsChecked** | 
+            Состояние **CheckBox** | 
+            Вид **CheckBox** |
 | **true**            | `Checked`          | Содержит X.        |
 | **false**           | `Unchecked`        | Пусто.                  |
 | **null**            | `Indeterminate`    | Содержит кружок.      |
@@ -105,8 +107,7 @@ ms.openlocfilehash: 071ba59af02b860e9fe58133eb5f1c2a7207ed2b
 
 Для указания представления элемента управления, когда он находится в определенном состоянии, используйте объекты [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007). Объект **VisualState** содержит класс [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) или [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053), меняющий представление элементов в классе [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). Когда элемент управления переходит в состояние, указанное в свойстве [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031), применяются изменения свойств в **Setter** или [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490). Когда элемент управления выходит из этого состояния, изменения удаляются. Мы добавляем объекты **VisualState** к объектам [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014). Мы добавляем объекты **VisualStateGroup** к подключенному свойству [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505), установленному на корневом элементе [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) шаблона **ControlTemplate**.
 
-Приведенный XAML-код показывает объекты [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) для состояний `Checked`, `Unchecked` и `Indeterminate`. Данный пример задает присоединенное свойство [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) для [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250), который является корневым элементом [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). `Checked` **VisualState** указывает, что значение [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) у [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) с именем `CheckGlyph` (показанного в предыдущем примере) равно 1. `Indeterminate`
-            **VisualState** указывает, что значение **Opacity** у [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) с именем `IndeterminateGlyph` равно 1. У `Unchecked`**VisualState** нет [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) или [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490), поэтому класс [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) возвращается к своему внешнему виду по умолчанию.
+Приведенный XAML-код показывает объекты [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) для состояний `Checked`, `Unchecked` и `Indeterminate`. Данный пример задает присоединенное свойство [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) для [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250), который является корневым элементом [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). `Checked` **VisualState** указывает, что значение [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) у [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) с именем `CheckGlyph` (показанного в предыдущем примере) равно 1. `Indeterminate`**VisualState** указывает, что значение **Opacity** у [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) с именем `IndeterminateGlyph` равно 1. У `Unchecked`**VisualState** нет [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) или [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490), поэтому класс [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) возвращается к своему внешнему виду по умолчанию.
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -202,7 +203,7 @@ ms.openlocfilehash: 071ba59af02b860e9fe58133eb5f1c2a7207ed2b
 В некоторых атрибутах в примерах кода XAML вы могли заметить ссылки на ресурсы, которые используют [расширение разметки {ThemeResource}](../xaml-platform/themeresource-markup-extension.md). Данная технология позволяет одному шаблону элемента управления использовать разнообразные ресурсы в зависимости от того, какая из тем активна на текущий момент. Это особенно важно для кистей и цветов, поскольку основная цель тем — предоставить пользователям возможность выбора темной или светлой темы либо темы "Высокая контрастность" в применении к системе в целом. Приложения, которые используют систему на базе ресурсов XAML, могут использовать набор ресурсов, соответствующий определенной теме. Выбор темы в пользовательском интерфейсе приложения будет отражать выбор пользователем темы для всей системы в целом.
 
 **Примечание**  
-Эта статья адресована разработчикам приложений UWP для Windows 10. В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Эта статья адресована разработчикам приложений UWP для Windows10. В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 

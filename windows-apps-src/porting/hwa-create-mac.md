@@ -23,8 +23,7 @@ ms.openlocfilehash: 775963ae3d12023488c79ded1cc83d464e84169c
 
 ## Вариант 1. ManifoldJS
 
-
-            [ManifoldJS](http://manifoldjs.com/) — это приложение Node.js, которое легко устанавливается из NPM. Оно берет метаданные о вашем веб-сайте и создает собственные размещенные приложения для Android, iOS и Windows. Если ваш сайт не имеет [манифеста веб-приложения](https://www.w3.org/TR/appmanifest/), он будет автоматически создан.
+[ManifoldJS](http://manifoldjs.com/) — это приложение Node.js, которое легко устанавливается из NPM. Оно берет метаданные о вашем веб-сайте и создает собственные размещенные приложения для Android, iOS и Windows. Если ваш сайт не имеет [манифеста веб-приложения](https://www.w3.org/TR/appmanifest/), он будет автоматически создан.
 
 1. Установите [NodeJS](https://nodejs.org/), который содержит NPM (диспетчер пакетов узла). <br>
 
@@ -40,16 +39,14 @@ manifoldjs http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 
 4. Следуйте инструкциям в нижеприведенном видео, чтобы выполнить упаковку и опубликовать размещенное веб-приложение в Магазине Windows.
 
-
-            [
+[
               ![Публикация веб-приложения UWP на компьютере Mac с использованием ManifoldJS]
             (images/hwa-to-uwp/mac_manifoldjs_video.png)](https://sec.ch9.ms/ch9/0a67/9b06e5c7-d7aa-478d-b30d-f99e145a0a67/ManifoldJS_high.mp4 "Публикация веб-приложения UWP на компьютере Mac с использованием ManifoldJS")
           
 
 ## Вариант 2. App Studio
 
-
-            [App Studio](http://appstudio.windows.com/) — это бесплатное интернет-средство для сборки приложений, которое позволяет быстро создавать приложения для Windows 10.
+[App Studio](http://appstudio.windows.com/) — это бесплатное интернет-средство для сборки приложений, которое позволяет быстро создавать приложения для Windows 10.
 
 1. Откройте [App Studio](http://appstudio.windows.com/) в браузере.
 

@@ -2,15 +2,14 @@
 author: martinekuan
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: "Создание первого приложения"
-description: "Создать приложение для Windows 10 на базе универсальной платформы Windows (UWP) проще, чем кажется."
-translationtype: Human Translation
+description: "Создать приложение для Windows10 на базе универсальной платформы Windows (UWP) проще, чем кажется."
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d
 
 ---
 # Создание первого приложения
 
-Создать приложение для Windows 10 на базе универсальной платформы Windows (UWP) проще, чем кажется. Вам не нужно изучать для этого новый язык — вы можете воспользоваться теми знаниями, которые у вас уже есть:
+Создать приложение для Windows10 на базе универсальной платформы Windows (UWP) проще, чем кажется. Вам не нужно изучать для этого новый язык — вы можете воспользоваться теми знаниями, которые у вас уже есть:
 
 -   C# или Visual Basic и XAML
 -   C++ и XAML
@@ -38,7 +37,7 @@ ms.openlocfilehash: e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d
 
 ## Учебники по расширениям компонентов Visual C++ (C++/CX) и языку XAML
 
-Воспользуйтесь своим опытом программирования на С++ и создайте приложения с помощью расширений компонентов Visual C++ (C++/CX) в XAML.
+Воспользуйтесь своим опытом программирования на С++ и создайте приложения с помощью расширений компонентов VisualC++ (C++/CX) в XAML.
 
 [Создание приложения Hello, world на XAML и C++/CX](create-a-basic-windows-10-app-in-cpp.md)
 
@@ -62,7 +61,7 @@ ms.openlocfilehash: e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d
 
 Если вы хотите разрабатывать игры с помощью C++ и Microsoft DirectX, см. раздел [Разработка игр в Windows 10](https://dev.windows.com/games).
 
-Уже есть опыт работы с iOS или Android? Раздел [Перенос приложений в Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321) содержит ресурсы, которые помогут вам приступить к работе.
+Уже есть опыт работы с iOS или Android? Раздел [Перенос приложений в Windows10](https://msdn.microsoft.com/library/windows/apps/Mt238321) содержит ресурсы, которые помогут вам приступить к работе.
 
 # Ссылки по теме
 

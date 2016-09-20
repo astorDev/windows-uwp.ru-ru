@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
 description: "Узнайте, как запускать промежуточную рекламу с помощью C#."
 title: "Пример кода промежуточной рекламы в C#"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: e83730c60eada273aee4f3bca4ff28cf6feccbf8
 
@@ -13,7 +12,7 @@ ms.openlocfilehash: e83730c60eada273aee4f3bca4ff28cf6feccbf8
 # Пример кода промежуточной рекламы в C\# #  
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе показано, как запустить промежуточную рекламу с помощью C#. Пошаговые инструкции по настройке проекта для использования этого кода см. в разделе [Промежуточная реклама](interstitial-ads.md). Полный пример с проектом, демонстрирующим способы добавления промежуточной видеорекламы в приложение на XAML с использованием C#, см. в разделе [примеров рекламы на GitHub](http://aka.ms/githubads).
 

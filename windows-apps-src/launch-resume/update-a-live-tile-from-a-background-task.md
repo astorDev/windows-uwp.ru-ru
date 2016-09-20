@@ -13,7 +13,7 @@ ms.openlocfilehash: 5b11c3d4757d7da0c4c99d8f74a8988babfc26fd
 # Обновление живой плитки из фоновой задачи
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -25,7 +25,7 @@ ms.openlocfilehash: 5b11c3d4757d7da0c4c99d8f74a8988babfc26fd
 
 Ниже представлено видео, демонстрирующее, как добавлять живые плитки в приложения.
 
-<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">Минута разработчика — обновление живой плитки из фоновой задачи</iframe>
+<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">Минута разработчика— обновление живой плитки из фоновой задачи</iframe>
 
 ## Создание проекта фоновых задач
 
@@ -153,7 +153,8 @@ namespace BackgroundTasks
 6.  Щелкните вкладку **Application UI** (Пользовательский интерфейс приложения) или коснитесь ее.
 7.  Установите для параметра **Lock screen notifications** (Уведомления экрана блокировки) значение **Badge and Tile Text** (Индикатор событий и текст плитки).
 8.  Укажите путь к значку размером 24x24 пикселя в поле **Badge logo** (Индикатор событий).
-    **Важно**  В этом значке должны быть использованы только монохромные и прозрачные пиксели.
+    
+            **Важно**  В этом значке должны быть использованы только монохромные и прозрачные пиксели.
 9.  В поле **Small logo** (Мелкий значок) укажите путь к значку размером 30x30 пикселей.
 10. В поле **Wide logo** (Широкий значок) укажите путь к значку размером 310x150 пикселей.
 
@@ -162,7 +163,8 @@ namespace BackgroundTasks
 
 Создайте [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768), чтобы зарегистрировать свою задачу.
 
-> **Примечание**  Начиная с Windows 8.1, параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации недопустимы, возвращается ошибка. Если фоновая задача не прошла регистрацию, приложение должно выполнить соответствующее действие — например, применить условный оператор для проверки наличия ошибок регистрации и затем повторить попытку регистрации с другими значениями параметров.
+> 
+            **Примечание**  Начиная с Windows8.1, параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации недопустимы, возвращается ошибка. Если фоновая задача не прошла регистрацию, приложение должно выполнить соответствующее действие— например, применить условный оператор для проверки наличия ошибок регистрации и затем повторить попытку регистрации с другими значениями параметров.
  
 
 На главной странице приложения добавьте метод **RegisterBackgroundTask** и вызовите его в обработчике событий **OnNavigatedTo**.

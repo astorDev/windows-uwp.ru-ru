@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "Открытие файлов и папок с помощью средства выбора"
 description: "Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Можно использовать классы FileOpenPicker и FileSavePicker для получения доступа к файлам, а также FolderPicker — для получения доступа к папкам."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 387529636eb44206a23356b0a8bb2748d7c10748
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 91128639cea8948579ec128e4cd695bdfeb5fe86
 
 ---
 
@@ -23,8 +23,7 @@ ms.openlocfilehash: 387529636eb44206a23356b0a8bb2748d7c10748
 
 Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Можно использовать классы [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) и [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) для получения доступа к файлам, а также [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) — для получения доступа к папкам.
 
-
-              **Примечание.** См. также [пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994).
+**Примечание.** См. также [пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
  
 
@@ -71,7 +70,7 @@ ms.openlocfilehash: 387529636eb44206a23356b0a8bb2748d7c10748
 ```CSharp
 var picker = new Windows.Storage.Pickers.FileOpenPicker();
 picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-picker.SuggestedStartLocation = 
+picker.SuggestedStartLocation =
     Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
 picker.FileTypeFilter.Add(".jpg");
 picker.FileTypeFilter.Add(".jpeg");
@@ -101,7 +100,7 @@ else
 ```CSharp
 var picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-    picker.SuggestedStartLocation = 
+    picker.SuggestedStartLocation =
         Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
     picker.FileTypeFilter.Add(".jpg");
     picker.FileTypeFilter.Add(".jpeg");
@@ -178,21 +177,16 @@ else
 }
 ```
 
-
-              **Подсказка.**  Каждый раз, когда ваше приложение получает доступ к файлу или папке через средство выбора, добавляйте этот элемент в свойство приложения [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) или [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) для отслеживания. Подробнее об использовании этих списков см. в разделе [Отслеживание последних использованных файлов и папок](how-to-track-recently-used-files-and-folders.md).
-
- 
+**Подсказка.** Каждый раз, когда ваше приложение получает доступ к файлу или папке через средство выбора, добавляйте этот элемент в свойство приложения [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) или [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) для отслеживания. Подробнее об использовании этих списков см. в разделе [Отслеживание последних использованных файлов и папок](how-to-track-recently-used-files-and-folders.md).
 
  
 
  
 
+ 
 
 
 
-
-
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

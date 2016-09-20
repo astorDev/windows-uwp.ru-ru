@@ -5,7 +5,6 @@ title: "Руководство по полосам прокрутки"
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scroll bars
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
 ms.openlocfilehash: b390f8a2cbabf243bd4d73c16122648e3d4a0586
 
@@ -21,7 +20,8 @@ ms.openlocfilehash: b390f8a2cbabf243bd4d73c16122648e3d4a0586
 
 Элемент управления "Средство прокрутки" состоит из такого объема содержимого, который помещается в окно просмотра, и одной или двух полос прокрутки. Сенсорные жесты можно использовать для сдвигания и масштабирования (полосы прокрутки затемняются только во время управления), а для прокрутки можно использовать указатель. Быстрое движение пальца заставит содержимое прокручиваться по инерции.
 
-**Примечание.**  Windows: различают два режима отображения сдвига в зависимости от обнаруженного устройства ввода: индикаторы сдвига для сенсорного ввода и полосы прокрутки для других устройств ввода, в том числе мыши, сенсорной панели, клавиатуры и пера.
+
+            **Примечание.**  Windows: различают два режима отображения сдвига в зависимости от обнаруженного устройства ввода: индикаторы сдвига для сенсорного ввода и полосы прокрутки для других устройств ввода, в том числе мыши, сенсорной панели, клавиатуры и пера.
 
 ![Пример внешнего вида стандартных элементов управления “Полоса прокрутки” и “Индикатор сдвига”](images/SCROLLBAR.png)
 
@@ -45,7 +45,8 @@ ms.openlocfilehash: b390f8a2cbabf243bd4d73c16122648e3d4a0586
 
 ## ScrollViewer в шаблоне элемента управления
 
-Обычно элемент управления ScrollViewer является составной частью других элементов управления. Объект ScrollViewer с классом поддержки [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) будет отображать окно просмотра вместе с полосами прокрутки только тогда, когда пространство макета основного элемента управления имеет меньший размер, чем размер развернутого содержимого. Такая ситуация часто возникает со списками, поэтому шаблоны [**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) всегда содержат ScrollViewer. Шаблоны [
+Обычно элемент управления ScrollViewer является составной частью других элементов управления. Объект ScrollViewer с классом поддержки [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) будет отображать окно просмотра вместе с полосами прокрутки только тогда, когда пространство макета основного элемента управления имеет меньший размер, чем размер развернутого содержимого. Такая ситуация часто возникает со списками, поэтому шаблоны [**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) всегда содержат ScrollViewer. 
+            Шаблоны [
               **TextBox**
             ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) и [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) также включают ScrollViewer.
 

@@ -3,20 +3,21 @@ author: msatranjr
 title: "Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside"
 description: "Отображайте настраиваемые карты в приложении, используя класс MapControl. В этой статье также рассказывается о трехмерных воздушных представлениях и представлениях Streetside."
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: 249503f6a43ef8c38e76ed29aed4a1bfdb26e9fb
+ms.openlocfilehash: 5569722bdfc8dfb78d43dbe6abf23dcd06f619c0
 
 ---
 
 # Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Отображайте настраиваемые карты в приложении, используя класс [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Кроме того, в данной статье рассказывается о трехмерных воздушных представлениях и представлениях Streetside.
 
-**Подсказка.** Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте следующий пример из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
+**Совет.** Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте следующий пример из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
 
 -   [Пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
@@ -149,7 +150,7 @@ switch (accessStatus)
 
 -   Установите географическую точку как **центр** карты, присвоив значение свойству [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005).
 -   Установите **масштаб карты**, присвоив значение свойству [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) от 1 до 20.
--   Установите **вращение** карты, задав свойство [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019), для которого 0 или 360 градусов обозначают север, 90 — восток, 180 — юг и 270 — запад.
+-   Установите **вращение** карты, задав свойство [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019), для которого 0 или 360 градусов обозначают север, 90— восток, 180— юг и 270— запад.
 -   Установите **наклон** карты, присвоив значение свойству [**DesiredPitch**](https://msdn.microsoft.com/library/windows/apps/dn637012) от 0 до 65 градусов.
 
 **Вид карты**
@@ -170,7 +171,7 @@ switch (accessStatus)
 ## Отображение представлений Streetside
 
 
-Представление Streetside — это перспектива уровня улицы для местоположения, отображаемая в верхней части элемента управления картой.
+Представление Streetside— это перспектива уровня улицы для местоположения, отображаемая в верхней части элемента управления картой.
 
 ![Пример представления Streetside элемента управления картой.](images/onlystreetside-730width.png)
 
@@ -282,18 +283,14 @@ private async void display3DLocation()
 
 Чтобы получить информацию о местоположениях на карте, вызовите указанные ниже методы объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
--   Метод [
-              **GetLocationFromOffset**
-            ](https://msdn.microsoft.com/library/windows/apps/dn637016): получение географического расположения, соответствующего заданной точке в окне просмотра элемента управления картой.
--   Метод [
-              **GetOffsetFromLocation**
-            ](https://msdn.microsoft.com/library/windows/apps/dn637018): получение в окне просмотра элемента управления картой точки, которая соответствует заданному географическому расположению.
--   Метод [
-              **IsLocationInView**
-            ](https://msdn.microsoft.com/library/windows/apps/dn637022): определение того, отображается ли в текущий момент заданное географическое расположение в окне просмотра элемента управления картой.
--   Метод [
-              **FindMapElementsAtOffset**
-            ](https://msdn.microsoft.com/library/windows/apps/dn637014): получение элементов на карте, расположенных в заданной точке окна просмотра элемента управления картой.
+-   
+              Метод [**GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016): получение географического расположения, соответствующего заданной точке в окне просмотра элемента управления картой.
+-   
+              Метод [**GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018): получение в окне просмотра элемента управления картой точки, которая соответствует заданному географическому расположению.
+-   
+              Метод [**IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022): определение того, отображается ли в текущий момент заданное географическое расположение в окне просмотра элемента управления картой.
+-   
+              Метод [**FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014): получение элементов на карте, расположенных в заданной точке окна просмотра элемента управления картой.
 
 ## Обработка взаимодействия с пользователем и изменений
 
@@ -328,6 +325,6 @@ private async void display3DLocation()
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

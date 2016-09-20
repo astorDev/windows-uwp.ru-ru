@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
 description: "В этой статье описано, как добавить функцию воспроизведения мультимедийного содержимого адаптивной потоковой передачи в приложения универсальной платформы Windows (UWP). В настоящее время эта функция поддерживает воспроизведение содержимого Http Live Streaming (HLS) и Dynamic Adaptive Streaming over HTTP (DASH)."
 title: "Адаптивная потоковая передача"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 8ebf90b02fcfbb4349ba2b303d9c91727b731ad7
 

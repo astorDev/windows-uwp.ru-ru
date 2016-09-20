@@ -5,7 +5,7 @@ title: "Кисти композиции"
 description: "Кисть заполняет пространство объекта класса Visual своими выводимыми данными. Разные кисти имеют различные типы выводимых данных."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a9f30ca041d320798c7ace596bd9be37f9712129
+ms.openlocfilehash: 11989aafb86d280b93eed7c2e3f016b5914b15ab
 
 ---
 # Кисти композиции
@@ -14,15 +14,9 @@ ms.openlocfilehash: a9f30ca041d320798c7ace596bd9be37f9712129
 
 Кисть заполняет пространство объекта класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) своими выводимыми данными. Разные кисти имеют различные типы выводимых данных. В API композиции представлены три типа кистей.
 
--   
-              [
-              **CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) закрашивает визуальный объект сплошным цветом
--   
-              [
-              **CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) заполняет визуальный объект содержимым поверхности композиции
--   
-              [
-              **CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) заполняет визуальный объект содержимым эффекта композиции
+-   [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) закрашивает визуальный объект сплошным цветом
+-   [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) заполняет визуальный объект содержимым поверхности композиции
+-   [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) заполняет визуальный объект содержимым эффекта композиции
 
 Все кисти наследуются от [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398). Они создаются прямо или косвенно с помощью объекта [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) и являются ресурсами, не зависящими от устройства. Несмотря на то, что кисти являются независимыми от устройства ресурсами, [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) и [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) заполняют объект класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) содержимым поверхности композиции, которая является ресурсом, зависимым от устройства.
 
@@ -102,9 +96,7 @@ visual.Brush = _surfaceBrush;
 
 Иногда содержимое поверхности [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) для кисти [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) не полностью заполняет площадь обрабатываемого визуального объекта. В этом случае API композиции использует параметры режима [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx), [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) и [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch), чтобы определить, как заполнить оставшуюся область.
 
--   
-              [
-              **HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) и [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) имеют тип float и используются для позиционирования кисти в пределах визуального объекта.
+-   [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) и [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) имеют тип float и используются для позиционирования кисти в пределах визуального объекта.
     -   Значение 0,0 переводит левый верхний угол кисти в левый верхний угол визуального объекта.
     -   Значение 0,5 переводит центр кисти в центр визуального объекта.
     -   Значение 1,0 переводит правый нижний угол кисти в правый нижний угол визуального объекта.
@@ -124,6 +116,6 @@ visual.Brush = _surfaceBrush;
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

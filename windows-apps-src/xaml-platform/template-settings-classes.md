@@ -3,7 +3,6 @@ author: jwmsft
 description: "Классы параметров шаблона"
 title: "Классы параметров шаблона"
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
-translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
 ms.openlocfilehash: 1ae6ca45808eae8943f471cceaf78fc5e8d81410
 
@@ -11,7 +10,7 @@ ms.openlocfilehash: 1ae6ca45808eae8943f471cceaf78fc5e8d81410
 
 # Классы параметров шаблона
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## Необходимые условия
 
@@ -19,36 +18,47 @@ ms.openlocfilehash: 1ae6ca45808eae8943f471cceaf78fc5e8d81410
 
 ## Сценарий для классов **TemplateSettings**
 
-Классы **TemplateSettings** предоставляют набор свойств, которые используются при определении нового шаблона элементов управления для элемента управления. Свойства имеют значения, такие как размеры в пикселях для определенных составных частей пользовательского интерфейса. Значения могут быть вычисленными значениями логики управления, которую обычно легко переопределить или даже получить к ней доступ. Некоторые свойства используются как значения **From** и **To**, которые управляют переходами и анимациями компонентов, и поэтому соответствующие свойства **TemplateSettings** идут парами.
+
+            Классы **TemplateSettings** предоставляют набор свойств, которые используются при определении нового шаблона элементов управления для элемента управления. Свойства имеют значения, такие как размеры в пикселях для определенных составных частей пользовательского интерфейса. Значения могут быть вычисленными значениями логики управления, которую обычно легко переопределить или даже получить к ней доступ. Некоторые свойства используются как значения **From** и **To**, которые управляют переходами и анимациями компонентов, и поэтому соответствующие свойства **TemplateSettings** идут парами.
 
 Есть несколько классов **TemplateSettings**. Все они находятся в пространстве имен [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818). Вот список классов и ссылка на свойства **TemplateSettings** соответствующего элемента управления. Это свойство **TemplateSettings** определяет способ получения доступа к значениям **TemplateSettings** для элемента управления и может установить привязки шаблона к его свойствам:
 
--   [
+-   
+            [
               **ComboBoxTemplateSettings**
             ](https://msdn.microsoft.com/library/windows/apps/br227752): значение [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
--   [
+-   
+            [
               **GridViewItemTemplateSettings**
             ](https://msdn.microsoft.com/library/windows/apps/hh738499): значение [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
--   [
+-   
+            [
               **ListViewItemTemplateSettings**
             ](https://msdn.microsoft.com/library/windows/apps/hh701948): значение [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
--   [
+-   
+            [
               **ProgressBarTemplateSettings**
             ](https://msdn.microsoft.com/library/windows/apps/br227856): значение [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
--   [
+-   
+            [
               **ProgressRingTemplateSettings**
             ](https://msdn.microsoft.com/library/windows/apps/hh702248): значение [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
--   [
+-   
+            [
               **SettingsFlyoutTemplateSettings**
             ](https://msdn.microsoft.com/library/windows/apps/dn298721): значение [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
--   [
+-   
+            [
               **ToggleSwitchTemplateSettings**
             ](https://msdn.microsoft.com/library/windows/apps/br209804): значение [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
--   [
+-   
+            [
               **ToolTipTemplateSettings**
             ](https://msdn.microsoft.com/library/windows/apps/br209813): значение [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
 
-Свойства **TemplateSettings** предназначены для использования в XAML, а не в коде. Это составляющие свойства только для чтения свойства **TemplateSettings** только для чтения родительского элемента управления. В случае сложного сценария пользовательского элемента управления, в котором вы создаете новый класс на основе [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) и таким образом можете повлиять на логику управления, рекомендуется определить пользовательское свойство **TemplateSettings** для элемента управления, чтобы передавать информацию, которая может быть полезна всем, кто создает шаблон элемента управления повторно. Так как это свойство — значение только для чтения, определите новый класс **TemplateSettings**, связанный с элементом управления, который содержит свойства только для чтения для каждого из информационных элементов, необходимых для измерений шаблона, размещения анимации и т.д., и предоставьте абонентам экземпляр среды выполнения этого класса, инициализированного с помощью логики управления. Классы **TemplateSettings** являются производными от [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), чтобы свойства могли использовать систему свойств зависимостей для обратных вызовов при изменении свойств. Но идентификаторы свойств зависимостей для свойств не отображаются как общедоступный API, так как свойства **TemplateSettings** должны быть доступны абонентам только для чтения.
+
+              Свойства **TemplateSettings** предназначены для использования в XAML, а не в коде. Это составляющие свойства только для чтения свойства **TemplateSettings** только для чтения родительского элемента управления. В случае сложного сценария пользовательского элемента управления, в котором вы создаете новый класс на основе [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) и таким образом можете повлиять на логику управления, рекомендуется определить пользовательское свойство **TemplateSettings** для элемента управления, чтобы передавать информацию, которая может быть полезна всем, кто создает шаблон элемента управления повторно. Так как это свойство — значение только для чтения, определите новый класс **TemplateSettings**, связанный с элементом управления, который содержит свойства только для чтения для каждого из информационных элементов, необходимых для измерений шаблона, размещения анимации и т.д., и предоставьте абонентам экземпляр среды выполнения этого класса, инициализированного с помощью логики управления. 
+            Классы **TemplateSettings** являются производными от [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), чтобы свойства могли использовать систему свойств зависимостей для обратных вызовов при изменении свойств. Но идентификаторы свойств зависимостей для свойств не отображаются как общедоступный API, так как свойства **TemplateSettings** должны быть доступны абонентам только для чтения.
 
 ## Использование **TemplateSettings** в шаблоне элемента управления
 

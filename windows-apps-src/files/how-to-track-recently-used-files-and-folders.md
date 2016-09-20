@@ -3,14 +3,13 @@ author: TylerMSFT
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: "Отслеживание недавно использовавшихся файлов и папок"
 description: "Отслеживайте файлы, к которым часто обращается пользователь, добавляя их в список недавно использованных файлов (MRU)."
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
 
 ---
 # Отслеживание недавно использовавшихся файлов и папок
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** Важные API **
@@ -22,7 +21,8 @@ ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
 
 Список MRU вашего приложения представлен классом [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475), полученным из статического свойства [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458). Элементы MRU хранятся в виде объектов [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129). Поэтому в список можно добавлять и объекты [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (то есть файлы), и объекты [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) (то есть папки).
 
-**Примечание.** См. также [пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994) и [пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
+
+            **Примечание.** См. также [пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994) и [пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
  
 
@@ -53,11 +53,13 @@ ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
     string mruToken = mru.Add(file, "profile pic");
     ```
     
-    [
+    
+            [
               **StorageItemMostRecentlyUsedList.Add**
             ](https://msdn.microsoft.com/library/windows/apps/br207476) перегружается. В примере используется [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481), поэтому можно сопоставить метаданные с файлом. Указание метаданных позволяет записать назначение элемента, например "изображение профиля". Кроме того, вы можете добавить файл в список MRU и без метаданных, вызвав метод [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). При добавлении элемента в список MRU метод возвращает уникальную идентификационную строку, так называемый маркер, который используется для извлечения элемента.
 
-    **Подсказка.** Чтобы извлечь элемент из списка MRU, вам потребуется маркер, поэтому сохраните его. Подробные сведения о данных приложения см. в статье [Управление данными приложения](https://msdn.microsoft.com/library/windows/apps/hh465109).
+    
+            **Подсказка.** Чтобы извлечь элемент из списка MRU, вам потребуется маркер, поэтому сохраните его. Подробные сведения о данных приложения см. в статье [Управление данными приложения](https://msdn.microsoft.com/library/windows/apps/hh465109).
 
      
 
@@ -75,7 +77,7 @@ ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
 StorageFile retrievedFile = await mru.GetFileAsync(mruToken);
 ```
 
-Вот как выполнить итерацию всех записей, чтобы получить маркеры, а затем — элементы:
+Вот как выполнить итерацию всех записей, чтобы получить маркеры, а затем— элементы:
 
 ```csharp
 foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
@@ -87,7 +89,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 }
 ```
 
-Класс [**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) позволяет выполнять итерацию записей в MRU. Эти записи — структуры [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348), которые содержат маркер и метаданные элемента.
+Класс [**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) позволяет выполнять итерацию записей в MRU. Эти записи— структуры [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348), которые содержат маркер и метаданные элемента.
 
 ## Удаление элементов из списка MRU при его заполнении
 

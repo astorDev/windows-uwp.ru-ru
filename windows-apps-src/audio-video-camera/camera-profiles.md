@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
 description: "В этой статье рассказывается, как использовать профили камеры для обнаружения возможностей различных устройств видеозахвата и управления ими."
 title: "Профили камеры"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
 
@@ -11,7 +10,7 @@ ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
 
 # Профили камеры
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье рассказывается, как использовать профили камеры для обнаружения возможностей различных устройств видеозахвата и управления ими.

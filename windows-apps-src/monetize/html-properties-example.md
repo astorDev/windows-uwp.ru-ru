@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 5fa16a27-fdc0-43b2-84cd-8547fd4915de
 description: "Узнайте, как назначать свойства ** AdControl ** в HTML."
 title: "Пример свойств HTML"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 53b9afdcdc697e3ed508ef6e5ed5d684bdf5aa69
 
@@ -13,7 +12,7 @@ ms.openlocfilehash: 53b9afdcdc697e3ed508ef6e5ed5d684bdf5aa69
 # Пример свойств HTML
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В следующем примере показано, как назначать свойства [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) в HTML. **applicationId** и **adUnitId** являются обязательными свойствами. Другие свойства и события являются дополнительными. Если вы не зададите значения для дополнительных свойств, элемент управления будет использовать значения по умолчанию, обеспечивающие согласованность рекламного объявления с процессом взаимодействия пользователя с приложением.
 

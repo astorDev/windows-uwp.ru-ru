@@ -4,8 +4,8 @@ ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
 description: "В этой статье показано, как перечислять MIDI-устройства (Musical Instrument Digital Interface), а также отправлять и получать сообщения MIDI из универсального приложения для Windows."
 title: MIDI
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 ---
 
@@ -45,8 +45,7 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 -   Объект [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446), который будет отслеживать изменения устройств.
 -   Строку селектора устройства, которая будет содержать строку селектора входного MIDI-порта для одного экземпляра и строку селектора выходного MIDI-порта для другого экземпляра.
 -   Элемент управления [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868), который будет заполнен именами доступных устройств.
--   [
-            **CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211), необходимый для обновления пользовательского интерфейса из потока, отличного от потока пользовательского интерфейса.
+-   [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211), необходимый для обновления пользовательского интерфейса из потока, отличного от потока пользовательского интерфейса.
 
 [!code-cs[WatcherVariables](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherVariables)]
 
@@ -64,18 +63,10 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 
 **DeviceWatcher** содержит следующие события.
 
--   [
-              **Added**
-            ](https://msdn.microsoft.com/library/windows/apps/br225450). Создается при добавлении в систему нового устройства.
--   [
-              **Removed**
-            ](https://msdn.microsoft.com/library/windows/apps/br225453). Создается при удалении устройства из системы.
--   [
-              **Updated**
-            ](https://msdn.microsoft.com/library/windows/apps/br225458). Создается при обновлении информации, связанной с существующим устройством.
--   [
-              **EnumerationCompleted**
-            ](https://msdn.microsoft.com/library/windows/apps/br225451). Создается, когда наблюдатель завершил перечисление типов запрошенных устройств.
+-   [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450). Создается при добавлении в систему нового устройства.
+-   [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453). Создается при удалении устройства из системы.
+-   [**Updated**](https://msdn.microsoft.com/library/windows/apps/br225458). Создается при обновлении информации, связанной с существующим устройством.
+-   [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451). Создается, когда наблюдатель завершил перечисление типов запрошенных устройств.
 
 В обработчике событий для каждого из этих событий вызывается вспомогательный метод **UpdateDevices**, который обновляет **ListBox** с помощью текущего списка устройств. Поскольку **UpdateDevices** обновляет элементы пользовательского интерфейса, а эти обработчики событий не вызываются в потоке пользовательского интерфейса, каждый вызов должен быть заключен в вызов [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317), который запускает указанный код в потоке пользовательского интерфейса.
 
@@ -115,8 +106,7 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 
 [!code-cs[InPortSelectionChanged](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetInPortSelectionChanged)]
 
-Когда вызывается обработчик **MessageReceived**, это сообщение содержится в свойстве [**Message**](https://msdn.microsoft.com/library/windows/apps/dn894783) для **MidiMessageReceivedEventArgs**. [
-            **Type**](https://msdn.microsoft.com/library/windows/apps/dn894726) объекта сообщения — это значение из перечисления [**MidiMessageType**](https://msdn.microsoft.com/library/windows/apps/dn894786), указывающее тип полученного сообщения. Данные сообщения зависят от его типа. Этот пример выполняет проверку, определяющую, является ли данное сообщение инициирующим, и если это так, выводит MIDI-канал, примечание и скорость сообщения.
+Когда вызывается обработчик **MessageReceived**, это сообщение содержится в свойстве [**Message**](https://msdn.microsoft.com/library/windows/apps/dn894783) для **MidiMessageReceivedEventArgs**. [**Type**](https://msdn.microsoft.com/library/windows/apps/dn894726) объекта сообщения — это значение из перечисления [**MidiMessageType**](https://msdn.microsoft.com/library/windows/apps/dn894786), указывающее тип полученного сообщения. Данные сообщения зависят от его типа. Этот пример выполняет проверку, определяющую, является ли данное сообщение инициирующим, и если это так, выводит MIDI-канал, примечание и скорость сообщения.
 
 [!code-cs[MessageReceived](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetMessageReceived)]
 
@@ -142,7 +132,8 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 2.  Разверните узел **Универсальное приложение для Windows**.
 3.  Выберите **Расширения**.
 4.  В списке расширений выберите **Microsoft General MIDI DLS для универсальных приложений для Windows**.
-    **Примечание.**  Если доступно несколько версий расширения, выберите ту из них, которая соответствует целевой версии SDK вашего приложения. Вы можете узнать, для какой версии SDK предназначено приложение на вкладке **Приложение** свойств проекта.
+    > [!NOTE] 
+    > Если доступно несколько версий расширения, выберите ту из них, которая соответствует целевой версии SDK вашего приложения. Вы можете узнать, для какой версии SDK предназначено приложение на вкладке **Приложение** свойств проекта.
 
  
 
@@ -154,6 +145,6 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

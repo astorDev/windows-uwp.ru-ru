@@ -2,17 +2,16 @@
 author: mcleanbyron
 ms.assetid: 5efb4f40-a021-4dd2-82b4-7c95c3849485
 description: "Полностью прочитайте лицензионное соглашение с пользователем (EULA), чтобы узнать важные сведения."
-title: "Важное примечание — EULA"
-translationtype: Human Translation
+title: "Важное примечание— EULA"
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 89af54f5b8cf52366100b4751ed37ddd7a7bacb7
 
 ---
 
-# Важное примечание — EULA
+# Важное примечание— EULA
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Полностью прочитайте лицензионное соглашение с пользователем (EULA).
 

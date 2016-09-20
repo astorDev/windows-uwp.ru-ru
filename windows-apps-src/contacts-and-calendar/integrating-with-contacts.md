@@ -1,27 +1,31 @@
 ---
 author: normesta
-description: 'Shows how to add your app next to actions in a contact card'
-MSHAttr: 'PreferredLib:/library/windows/apps'
-title: 'Connect your app to actions on a contact card'
+description: "Инструкция по добавлению приложения рядом с действиями в карточке контакта"
+MSHAttr: PreferredLib:/library/windows/apps
+title: "Подключение приложения к действиям в карточках контактов"
+translationtype: Human Translation
+ms.sourcegitcommit: 5c0f6ef1f1a346a66ca554a415d9f24c8a314ae1
+ms.openlocfilehash: 034dc2b7be69763416192014abe24b9bf924c443
+
 ---
 
-# Connect your app to actions on a contact card
+# Подключение приложения к действиям в карточках контактов
 
-Your app can appear next to actions on a contact card or mini contact card. Users can choose your app to perform an action such as open a profile page, place a call, or send a message.
+Ваше приложение может отображаться рядом с действиями на карточке контакта или свернутой карточке контакта. Пользователи могут выбрать действие, выполняемое вашим приложением, например открытие страницы профиля, совершение вызова или отправку сообщения.
 
-![Contact card and mini contact card](images/all-contact-cards.png)
+![Карточка контакта или свернутая карточка контакта](images/all-contact-cards.png)
 
-To get started, find existing contacts or create new ones. Next, create an *annotation* and a few package manifest entries to describe which actions your app supports. Then, write code that perform the actions.
+Для начала найдите существующие контакты или создайте новые. Затем создайте *аннотацию* и несколько записей в манифесте пакета для описания поддерживаемых приложением действий. Затем напишите код для выполнения действий.
 
-For a more complete sample, see [Contact Card Integration Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration).
+Более подробный пример см. в разделе [Пример интеграции с карточкой контакта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration).
 
-## Find or create a contact
+## Поиск и создание контакта
 
-If your app helps people connect with others, search Windows for contacts and then annotate them. If your app manages contacts, you can add them to a Windows contact list and then annotate them.
+Если ваше приложение служит для общения, найдите контакты в Windows и добавьте к ним аннотации. Если ваше приложение управляет контактами, вы можете внести их в список контактов Windows, а затем добавить к ним аннотации.
 
-### Find a contact
+### Поиск контакта
 
-Find contacts by using a name, email address, or phone number.
+Найдите контакты по имени, адресу электронной почты или номеру телефона.
 
 ```cs
 ContactStore contactStore = await ContactManager.RequestStoreAsync();
@@ -33,9 +37,9 @@ contacts = await contactStore.FindContactsAsync(emailAddress);
 Contact contact = contacts[0];
 ```
 
-### Create a contact
+### Создание контакта
 
-If your app is more like an address book, create contacts and then add them to a contact list.
+Если ваше приложение больше напоминает адресную книгу, создайте контакты и добавьте их в список контактов.
 
 ```cs
 Contact contact = new Contact();
@@ -67,11 +71,11 @@ await contactList.SaveContactAsync(contact);
 
 ```
 
-## Tag each contact with an annotation
+## Маркировка каждого контакта с помощью аннотаций
 
-Tag each contact with a list of actions (operations) that your app can perform (for example: video calls and messaging).
+Пометьте каждый контакт списком действий (операций), которые может выполнять приложение (например, видеовызовы и обмен сообщениями).
 
-Then, associate the ID of a contact to an ID that your app uses internally to identify that user.
+Затем свяжите идентификатор контакта с идентификатором, который приложение использует внутренне для определения этого пользователя.
 
 ```cs
 ContactAnnotationStore annotationStore = await
@@ -97,11 +101,11 @@ annotation.SupportedOperations = ContactAnnotationOperations.Message |
 await annotationList.TrySaveAnnotationAsync(annotation);
 ```
 
-## Register for each operation
+## Регистрация каждой операции
 
-In your package manifest, register for each operation that you listed in your annotation.
+В манифесте пакета зарегистрируйте каждую операцию, указанную в аннотации.
 
-Register by adding protocol handlers to the ``Extensions`` element of the manifest.
+Выполните регистрацию путем добавления обработчиков протоколов в элемент ``Extensions`` манифеста.
 
 ```xml
 <Extensions>
@@ -127,25 +131,25 @@ Register by adding protocol handlers to the ``Extensions`` element of the manife
   </uap:Extension>
 </Extensions>
 ```
-You can also add these in the **Declarations** tab of the manifest designer in Visual Studio.
+Вы также можете добавить их на вкладку **Объявления** конструктора манифестов в Visual Studio.
 
-![Declarations tab of the manifest designer](images/manifest-designer-protocols.png)
+![Вкладка объявлений конструктора манифестов](images/manifest-designer-protocols.png)
 
-## Find your app next to actions in a contact card
+## Поиск приложения рядом с действиями на карточке контакта
 
-Open the People app. Your app appears next to each action (operation) that you specified in your annotation and package manifest.
+Откройте приложение "Люди". Ваше приложение отображается рядом с каждым действием (операцией), указанным в аннотации и манифесте пакета.
 
-![Contact Card](images/a-contact-card.png)
+![Карточка контакта](images/a-contact-card.png)
 
-If users choose your app for an action, it appears as the default app for that action the next time users open a contact card.
+Если пользователь выбрал ваше приложение для выполнения действия, оно отобразится как приложение по умолчанию для этого действия, когда пользователь откроет карточку контакта в следующий раз.
 
-## Find your app next to actions in a mini contact card
+## Поиск приложения рядом с действиями на свернутой карточке контакта
 
-In mini contact cards, your app appears in tabs that represent actions.
+В свернутых карточках контакта ваше приложение появляется на вкладках, представляющих действия.
 
-![Mini Contact Card](images/mini-contact-card.png)
+![Свернутая карточка контакта](images/mini-contact-card.png)
 
-Apps such as the **Mail** app open mini contact cards. Your app can open them too. This code shows you how to do that.
+Такие приложения, как **Почта**, открывают свернутые карточки контактов. Ваше приложение тоже может их открывать. В данном примере кода показано, как это делается.
 
 ```cs
 public async void OpenContactCard(object sender, RoutedEventArgs e)
@@ -166,21 +170,21 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 }
 ```
 
-To see more examples with mini contact cards, see [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards).
+Дополнительные примеры со свернутыми карточками контактов см. в разделе [Пример с карточками контактов](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards).
 
-Just like the contact card, each tab remembers the app that the user last used so it's easy for them to return to your app.
+Как и в случае с карточкой контакта, на каждой вкладке запоминается последнее использованное приложение, что упрощает возврат к приложению.
 
-## Perform operations when users select your app in a contact card
+## Выполнение операций при выборе приложения пользователем в карточке контакта
 
-Override the [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) method  in your **App.cs** file and navigate users to a page in your app. The [Contact Card Integration Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) shows one way to do that.
+Переопределите метод [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) в файле **App.cs** и переведите пользователя на страницу в приложении. В [примере интеграции с карточкой контакта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) показан один из способов сделать это.
 
-In the code behind file of the page, override the [Page.OnNavigatedTo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx) method. The contact card passes this method the name of operation and the ID of the user.
+В коде файла страницы переопределите метод [Page.OnNavigatedTo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx). Карточка контакта передает этому методу название операции и идентификатор пользователя.
 
-To start a video or audio call, see this sample: [VoIP sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). You'll find the complete API in the [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx) namespace.
+См. [пример с VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP), чтобы начать видеовызов или звонок. Полноценный API можно найти в пространстве имен [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
 
-To facilitate messaging, see the [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.aspx) namespace.
+Способ упрощения обмена сообщениями см. в пространстве имен [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.aspx).
 
-You can also start another app. That's what this code does.
+Вы также можете запустить другое приложение. Вот что делает этот код.
 
 ```cs
 protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -204,4 +208,10 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-The ```args.uri.scheme``` property contains the name of the operation, and the ```args.uri.Query``` property contains the ID of the user.
+Свойство ```args.uri.scheme``` содержит название операции, а свойство ```args.uri.Query```— идентификатор пользователя.
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

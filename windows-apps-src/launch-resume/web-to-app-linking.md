@@ -1,27 +1,28 @@
 ---
 author: TylerMSFT
-title: Support web-to-app linking with app Uri handlers
-description: Drive user engagement with your app by using app URI handlers
-keywords: App Links Windows
-keywords: Universal Links Windows
-keywords: App Handlers Windows
-keywords: Deep Linking Windows
+title: "Поддержка привязки приложений к Интернету с помощью обработчиков URI приложения"
+description: "Повышайте интерес пользователей к вашему приложению с помощью обработчиков URI приложения"
+keywords: "Глубокие связи Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: 9ef86dcd4ae3d922b713d585543f1def48fcb645
+ms.openlocfilehash: c9833f29d6080509c849e9d624f2bfcd0b0af04c
+
 ---
 
-# Support web-to-app linking with app URI handlers
+# Поддержка привязки приложений к Интернету с помощью обработчиков URI приложения
 
-Learn how to drive user engagement with your app by supporting web-to-app linking. Web-to-app linking allows you to associate an app with a website. When users open an http or https link to your website, instead of opening the browser, your app is launched. If your app is not installed, a link is provided to open your website in the browser. Users can trust this experience because only verified content owners can register for a link.
+Узнайте, как повысить интерес пользователей к вашему приложению путем поддержки привязки приложений к Интернету. Привязка приложений к Интернету позволяет связать приложение с веб-сайтом. Когда пользователи открывают ссылку http или https на ваш сайт, вместо открытия браузера запускается ваше приложение. Если ваше приложение не установлено, предоставляется ссылка на ваш сайт в браузере. Пользователи могут доверять такому подходу, поскольку только проверенные владельцы содержимого могут зарегистрироваться для предоставления ссылки.
 
-In order to enable web to app linking you will need:
-- Identify the URIs your app will handle in the manifest file
-- A JSON file with the app Package Family Name at the same host root as the app manifest declaration.
-- Handle the activation in the app.
+Для включения привязки приложения к Интернету необходимо выполнить следующие требования.
+- Определите URI, которые ваше приложение будет обрабатывать, в файле манифеста
+- Файл JSON с именем семейства пакетов для приложения должен находиться в той же корневой папке, что и объявление манифеста приложения.
+- Обработка активации в приложении.
 
-## Register to handle http and https links in the app manifest
+## Регистрация для обработки ссылок вида http и https в манифесте приложения
 
-Your app needs to identify the URIs for the websites it will handle. To do so, add the **Windows.appUriHandler** extension registration to your app’s manifest file **Package.appxmanifest**.
+Ваше приложение должно распознавать URI для веб-сайтов, которые оно будет обрабатывать. Для этого добавьте регистрацию расширения **Windows.appUriHandler** в файл манифеста вашего приложения **Package.appxmanifest**.
 
-For example, if your website’s address is “msn.com” you would make the following entry in your app’s manifest:
+Например, если адрес вашего сайта — msn.com, следует внести следующую запись в манифест приложения:
 
 ```xml
 <Applications>
@@ -37,13 +38,16 @@ For example, if your website’s address is “msn.com” you would make the fol
 </Applications>
 ```
 
-The declaration above registers your app to handle links from the specified host. If your website has multiple addresses (for example: m.example.com, www.example.com, and example.com) then add a separate `<uap3:Host Name=... />` entry inside of the `<uap3:AppUriHandler>` for each address.
+Приведенное выше объявления регистрирует ваше приложение для обработки ссылок, относящихся к указанному узлу. Если у вашего сайта несколько адресов (например, m.example.com, www.example.com и example.com), добавьте отдельную запись `<uap3:Host Name=... />` в разделе `<uap3:AppUriHandler>` для каждого адреса.
 
-## Associate your app and website with a JSON file
+## Связывание приложения и веб-сайта в JSON-файле
 
-To ensure that only your app can open content on your website, include your app's package family name in a JSON file located in the web server root, or at the well-known directory on the domain. This signifies that your website gives consent for the listed apps to open content on your site. You can find the package family name in the Packages section in the app manifest designer.
+Для обеспечения возможности открытия расположенного на сайте содержимого вашим приложением добавьте имя семейства пакетов вашего приложения в JSON-файл, расположенный в корневом каталоге вашего веб-сервера или в известном каталоге в домене. Это указывает, что ваш сайт дает согласие на открытие содержимого в перечисленных приложениях. Имя семейства пакетов можно найти в разделе Packages в конструкторе манифеста приложения.
 
-Create a JSON file named **microsoft-app-uri-handlers** and provide your app’s package family name. For example:
+>[!Important]
+> JSON-файл не должен иметь расширение .json.
+
+Создайте JSON-файл (без расширения .json) с именем **windows-app-web-link** и укажите имя семейства пакетов вашего приложения. Пример:
 
 ``` JSON
 [{
@@ -53,23 +57,23 @@ Create a JSON file named **microsoft-app-uri-handlers** and provide your app’s
  }]
 ```
 
-Windows will make an https connection to your website and will look for the corresponding JSON file on your web server.
+Windows установит https-соединение с вашим сайтом и будет искать соответствующий JSON-файл на вашем сервере.
 
-### Wildcards
+### Подстановочные символы
 
-The JSON file example above demonstrates the use of wildcards. Wildcards allow you to support a wide variety of links with fewer lines of code. Web-to-app linking supports two types of wildcards in the JSON file:
+В приведенном выше примере JSON-файла демонстрируется использование подстановочных символов. Подстановочные символы позволяют поддерживать разнообразные ссылки, используя меньше строк кода. Привязка приложений к Интернету поддерживает два типа подстановочных символов в файле JSON:
 
-| **Wildcard** | **Description**               |
+| **Подстановочный символ** | **Описание**               |
 |--------------|-------------------------------|
-| **\***       | Represents any substring      |
-| **?**        | Represents a single character |
+| *****       | Представляет любую подстроку      |
+| **?**        | Представляет единичный символ |
 
-For instance, given `"excludePaths" : [ "/news/*, /blog/*" ]` in the example above, your app will support all paths that start with your website’s address (e.g. msn.com), **except** those under `/news/` and `/blog/`. **msn.com/weather.html** will be supported, but not ****msn.com/news/topnews.html****.
+Например, при использовании приведенного в примере выше кода `"excludePaths" : [ "/news/*, /blog/*" ]` ваше приложение будет поддерживать все пути, начинающиеся с адреса вашего сайта (например, msn.com) **кроме** адресов в разделах `/news/` и `/blog/`. **msn.com/weather.html** будет поддерживаться, а ****msn.com/news/topnews.html**** — нет.
 
 
-### Multiple apps
+### Несколько приложений
 
-If you have two apps that you would like to link to your website, list both of the application package family names in your **microsoft-app-uri-handlers** JSON file. Both apps can be supported. The user will be presented with a choice of which is the default link if both are installed. If they want to change the default link later, they can change it in **Settings > Apps for Websites**. Developers can also change the JSON file at any time and see the change as early as the same day but no later than eight days after the update.
+Если вы хотите привязать к своему сайту два приложения, укажите оба имени семейства пакетов приложения в вашем JSON-файле **windows-app-web-link**. Возможна поддержка обоих приложений. Пользователю будет предлагаться выбрать способ открытия ссылки по умолчанию, если установлены оба приложения. Если в дальнейшем пользователь захочет изменить способ открытия ссылок по умолчанию, это можно сделать в разделе **Параметры > Приложения для веб-сайтов**. Разработчики также могут изменить файл JSON в любое время, и изменения могут вступить в силу в тот же день, но не позднее чем через 8 дней после обновления.
 
 ``` JSON
 [{
@@ -83,13 +87,13 @@ If you have two apps that you would like to link to your website, list both of t
  }]
 ```
 
-To provide the best experience for your users, use excluded paths to make sure that online-only content is excluded from the supported paths in your JSON file.
+Для обеспечения наилучшего взаимодействия пользователя с приложением используйте пути исключений, чтобы предотвратить обращение к доступному только через Интернет содержимому в поддерживаемых путях в файле JSON.
 
-Excluded paths are checked first and if there is a match the corresponding page will be opened with the browser instead of the designated app. In the example above, ‘/news/\*’ includes any pages under that path while ‘/news\*’ (no forward slash trails 'news') includes any paths under ‘news\*’ such as ‘newslocal/’, ‘newsinternational/’, and so on.
+Пути исключений проверяются в первую очередь, и, если обнаруживается соответствие, эта страница будет открыта в браузере, а не в заданном приложении. В приведенном выше примере "/news/\*" включает в себя все страницы с таким путем, тогда как "/news\*" (без косой черты после "news") включает в себя все пути, начинающиеся с "news\*", такие как "newslocal/", "newsinternational/" и т. п.
 
-## Handle links on Activation to link to content
+## Обработка ссылок на активацию для привязки ссылки к содержимому
 
-Navigate to **App.xaml.cs** in your app’s Visual Studio solution and in **OnActivated()** add handling for linked content. In the following example, the page that is opened in the app depends on the URI path:
+Перейдите к файлу **App.xaml.cs** в вашем проекте Visual Studio и добавьте обработку связанного содержимого в разделе **OnActivated()**. В следующем примере страница, открываемая в приложении, зависит от URI:
 
 ``` CS
 protected override void OnActivated(IActivatedEventArgs e)
@@ -137,54 +141,60 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-**Important** Make sure to replace the final `if (rootFrame.Content == null)` logic with `rootFrame.Navigate(deepLinkPageType, e);` as shown in the example above.
+**Важно!** Не забудьте заменить заключительный фрагмент `if (rootFrame.Content == null)` кодом `rootFrame.Navigate(deepLinkPageType, e);`, как показано в примере выше.
 
-## Test it out: Local validation tool
+## Тестирование: локальное средство проверки
 
-You can test the configuration of your app and website by running the App host registration verifier tool which is available in:
+Вы можете тестировать конфигурацию своего приложения и веб-сайта путем запуска средства проверки регистрации хоста приложения, расположенного в папке:
 
 %windir%\\system32\\**AppHostRegistrationVerifier.exe**
 
-Test the configuration of your app and website by running this tool with the following parameters:
+Проверяйте конфигурацию своего приложения и веб-сайта путем запуска этого средства со следующими параметрами:
 
 **AppHostRegistrationVerifier.exe** *hostname packagefamilyname filepath*
 
--   Hostname: Your website (e.g. microsoft.com)
--   Package Family Name (PFN): Your app’s PFN
--   File path: The JSON file for local validation (e.g. C:\\SomeFolder\\microsoft-app-uri-handlers.json)
+-   Hostname: ваш веб-сайт (например, microsoft.com)
+-   Package Family Name: имя семейства пакетов вашего приложения
+-   File path: JSON-файл для локальной проверки (например, C:\\SomeFolder\\windows-app-web-link)
 
-## Test it: Web validation
+## Тестирование: проверка в Интернете
 
-Close your application to verify that the app is activated when you click a link. Then, copy the address of one of the supported paths in your website. For example, if your website’s address is “msn.com”, and one of the support paths is “path1”, you would use `http://msn.com/path1`
+Закройте свое приложение, чтобы убедиться, что приложение запускается, когда вы нажимаете на ссылку. Затем скопируйте адрес одного из поддерживаемых путей на вашем веб-сайте. Например, если адрес вашего веб-сайта — msn.com, и один из путей поддержки — path1, следует использовать `http://msn.com/path1`
 
-Verify that your app is closed. Press **Windows Key + R** to open the **Run** dialog box and paste the link in the window. Your app should launch instead of the web browser.
+Убедитесь, что ваше приложение закрыто. Нажмите **клавишу Windows + R**, чтобы открыть диалоговое окно **Выполнить**, и вставьте ссылку в этом окне. Вместо браузера должно запуститься ваше приложение.
 
-Additionally, you can test your app by launching it from another app using the [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) API. You can use this API to test on phones as well.
+Кроме того, можно протестировать приложение, запустив его из другого приложения с помощью API [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx). Можно также использовать этот API для тестирования на телефонах.
 
-If you would like to follow the protocol activation logic, set a breakpoint in the **OnActivated** event handler.
+Если вы хотите отслеживать логику активации протокола, установите точку останова в обработчике событий **OnActivated**.
 
-**Note:** If you click a link in the Microsoft Edge browser, it will not launch your app but will take you to your website.
+**Примечание.** Если нажать ссылку в браузере Microsoft Edge, это приведет не к запуску приложения, а к переходу на ваш сайт.
 
-## AppUriHandlers tips:
+## Советы по AppUriHandlers.
 
-- Make sure to only specify links that your app can handle.
+- Следите за тем, чтобы были указаны только те ссылки, которые ваше приложение может обработать.
 
-- List all of the hosts that you will support.  Note that www.example.com and example.com are different hosts.
+- Перечисляйте все узлы, которые вы будете поддерживать.  Обратите внимание, что www.example.com и example.com — это различные узлы.
 
-- Users can choose which app they prefer to handle websites in Settings.
+- Пользователи могут выбрать, какое приложение они предпочитают использовать для открытия сайтов, в Параметрах.
 
-- Your JSON file must be uploaded to an https server.
+- Файл JSON должен быть размещен на https-сервере.
 
-- If you need to change the paths that you wish to support, you can republish your JSON file without republishing your app. Users will see the changes in 1-8 days.
+- Если вам нужно изменить пути, которые вы хотите поддерживать, можно повторно опубликовать JSON-файл, не переиздавая приложение. Пользователи увидят изменения через 1-8 дней.
 
-- All sideloaded apps with AppUriHandlers will have validated links for the host on install. You do not need to have a JSON file uploaded to test the feature.
+- Все неопубликованные приложения с AppUriHandlers будут иметь проверенные ссылки для данного узла при установке. Для проверки функциональности не требуется передавать JSON-файл на сайт.
 
-- This feature works whenever your app is a UWP app launched with  [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) or a Windows desktop app launched with  [ShellExecuteEx](https://msdn.microsoft.com/en-us/library/windows/desktop/bb762154(v=vs.85).aspx). If the URL corresponds to a registered App URI handler, the app will be launched instead of the browser.
+- Эта функция работает во всех случаях, когда ваше приложение является приложением UWP и запускается с помощью [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) или является приложением для настольной версии Windows и запускается с помощью [ShellExecuteEx](https://msdn.microsoft.com/en-us/library/windows/desktop/bb762154(v=vs.85).aspx). Если URL-адрес совпадает с зарегистрированным обработчиком URI приложения, вместо браузера будет запущено приложение.
 
-## See also
+## См. также
 
-[windows.protocol registration](https://msdn.microsoft.com/en-us/library/windows/apps/br211458.aspx)
+[Регистрация windows.protocol](https://msdn.microsoft.com/en-us/library/windows/apps/br211458.aspx)
 
-[Handle URI Activation](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
+[Активация обработки URI](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
 
-[Association Launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustrates how to use the LaunchUriAsync() API.
+[Пример запуска по сопоставлению](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) демонстрирует использование API LaunchUriAsync().
+
+
+
+<!--HONumber=Aug16_HO4-->
+
+

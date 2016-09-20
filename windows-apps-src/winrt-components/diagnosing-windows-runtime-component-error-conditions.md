@@ -21,7 +21,7 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 ## При реализации асинхронного интерфейса сообщение об ошибке содержит неверный тип
 
 
-Управляемые компоненты среды выполнения Windows не могут реализовывать интерфейсы универсальной платформы Windows (UWP), представляющие асинхронные действия или операции ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) или [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). Вместо этого в .NET Framework есть класс [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) для создания асинхронных операций в компонентах среды выполнения Windows. В сообщении об ошибке, отображаемом в Winmdexp.exe при попытке реализовать асинхронный интерфейс, по ошибке указывается прежнее имя класса — AsyncInfoFactory. Платформа .NET Framework больше не содержит класс AsyncInfoFactory.
+Управляемые компоненты среды выполнения Windows не могут реализовывать интерфейсы универсальной платформы Windows (UWP), представляющие асинхронные действия или операции ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) или [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). Вместо этого в .NET Framework есть класс [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) для создания асинхронных операций в компонентах среды выполнения Windows. В сообщении об ошибке, отображаемом в Winmdexp.exe при попытке реализовать асинхронный интерфейс, по ошибке указывается прежнее имя класса— AsyncInfoFactory. Платформа .NET Framework больше не содержит класс AsyncInfoFactory.
 
 | Номер ошибки | Текст сообщения                                                                                                                                                                                                                                                          |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -29,14 +29,15 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 
  
 
-> **Примечание.** В сообщениях об ошибках, в которых упоминается среда выполнения Windows, используется устаревшая терминология. Теперь эта среда называется универсальной платформой Windows (UWP). Например, типы среды выполнения Windows теперь называются типами UWP.
+> 
+            **Примечание.** В сообщениях об ошибках, в которых упоминается среда выполнения Windows, используется устаревшая терминология. Теперь эта среда называется универсальной платформой Windows (UWP). Например, типы среды выполнения Windows теперь называются типами UWP.
 
  
 
 ## Отсутствуют ссылки на библиотеки mscorlib.dll или System.Runtime.dll
 
 
-Эта проблема возникает только при использовании средства Winmdexp.exe через командную строку. Мы рекомендуем использовать параметр /reference, чтобы включить ссылки на обе библиотеки — mscorlib.dll и System.Runtime.dll — из основных ссылочных сборок .NET Framework, расположенных в папке %ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5 (%ProgramFiles%\\... на 32-разрядном компьютере).
+Эта проблема возникает только при использовании средства Winmdexp.exe через командную строку. Мы рекомендуем использовать параметр /reference, чтобы включить ссылки на обе библиотеки— mscorlib.dll и System.Runtime.dll— из основных ссылочных сборок .NET Framework, расположенных в папке %ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5 (%ProgramFiles%\\... на 32-разрядном компьютере).
 
 | Номер ошибки | Текст сообщения                                                                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -50,7 +51,8 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 
 В компоненте среды выполнения Windows, написанном с использованием управляемого кода, нельзя предоставлять перегруженные операторы открытых типов.
 
-> **Примечание.** В сообщении об ошибке оператор определяется по имени метаданных, например op\_Addition, op\_Multiply, op\_ExclusiveOr, op\_Implicit (неявное преобразование) и т. д.
+> 
+            **Примечание.** В сообщении об ошибке оператор определяется по имени метаданных, например op\_Addition, op\_Multiply, op\_ExclusiveOr, op\_Implicit (неявное преобразование) и т.д.
 
  
 
@@ -88,7 +90,8 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 
 На универсальной платформе Windows все открытые типы из файла метаданных Windows (.winmd) должны находиться в пространстве имен, совместно использующем имя файла .winmd, или во вложенных пространствах имен имени файла. Например, если проект Visual Studio называется A.B (т. е. компонент среды выполнения Windows — это файл A.B.winmd), он может содержать открытые классы A.B.Class1 и A.B.C.Class2, но не классы A.Class3 (WME0006) или D.Class4 (WME1044).
 
-> **Примечание.** Эти ограничения относятся только к открытым типам, а не к закрытым типам, используемым в вашей реализации.
+> 
+            **Примечание.** Эти ограничения относятся только к открытым типам, а не к закрытым типам, используемым в вашей реализации.
 
  
 
@@ -102,7 +105,8 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 
 В компоненте среды выполнения Windows у типа не может быть имени, совпадающего с пространством имен (WME1068).
 
-> **Внимание!** Если при непосредственном вызове Winmdexp.exe вы не используете параметр /out для указания имени компонента среды выполнения Windows, Winmdexp.exe пытается сформировать имя, включающее все пространства имен в компоненте. Переименование пространств имен может изменить имя компонента.
+> 
+            **Внимание!** Если при непосредственном вызове Winmdexp.exe вы не используете параметр /out для указания имени компонента среды выполнения Windows, Winmdexp.exe пытается сформировать имя, включающее все пространства имен в компоненте. Переименование пространств имен может изменить имя компонента.
 
  
 
@@ -126,9 +130,11 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 
 Как правило, наиболее подходящим является ближайший к типу интерфейс. Например, для Dictionary&lt;int, string&gt; самым подходящим, вероятнее всего, является интерфейс IDictionary&lt;int, string&gt;.
 
-> **Важно!** В коде JavaScript используется интерфейс, занимающий первую позицию в списке интерфейсов, реализуемых управляемым типом. Например, если в код JavaScript возвращается тип Dictionary&lt;int, string&gt;, он отображается как IDictionary&lt;int, string&gt; независимо от того, какой интерфейс указан в качестве типа возвращаемого значения. Это означает, что если первый интерфейс не включает член, который отображается в последующих интерфейсах, этот член не будет видимым в JavaScript.
+> 
+            **Важно!** В коде JavaScript используется интерфейс, занимающий первую позицию в списке интерфейсов, реализуемых управляемым типом. Например, если в код JavaScript возвращается тип Dictionary&lt;int, string&gt;, он отображается как IDictionary&lt;int, string&gt; независимо от того, какой интерфейс указан в качестве типа возвращаемого значения. Это означает, что если первый интерфейс не включает член, который отображается в последующих интерфейсах, этот член не будет видимым в JavaScript.
 
-> **Внимание!** Старайтесь не использовать неуниверсальные интерфейсы [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) и [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx), если компонент будет использоваться в коде JavaScript. Эти интерфейсы сопоставляются с [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) и [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx), соответственно. Они поддерживают привязку для элементов управления XAML и невидимы в коде JavaScript. JavaScript выдает ошибку во время выполнения «Не удается вызвать функцию 'X', так как ее подпись недопустима».
+> 
+            **Внимание!** Старайтесь не использовать неуниверсальные интерфейсы [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) и [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx), если компонент будет использоваться в коде JavaScript. Эти интерфейсы сопоставляются с [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) и [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx), соответственно. Они поддерживают привязку для элементов управления XAML и невидимы в коде JavaScript. JavaScript выдает ошибку во время выполнения «Не удается вызвать функцию 'X', так как ее подпись недопустима».
 
  
 
@@ -155,6 +161,7 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>Сигнатура метода "{0}" содержит параметр типа "{1}". Хотя этот универсальный тип не является допустимым типом среды выполнения Windows, сам тип или его универсальные параметры реализуют интерфейсы, являющиеся допустимыми типами среды выполнения Windows. {2}</p>
+            
 > **Примечание.** Для {2} Winmdexp.exe добавляет список альтернативных вариантов, например «Попробуйте изменить тип System.Collections.Generic.List&lt;T&gt; в сигнатуре метода на один из следующих типов: System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;».
 </td>
 </tr>
@@ -183,7 +190,8 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 
 В UWP массивы в сигнатурах членов должны быть одномерными с нижней границей, равной 0 (нулю). Вложенные типы массивов, такие как `myArray[][]` (`myArray()()` в Visual Basic), не допускаются.
 
-> **Примечание.** Это ограничение не применяется к массивам, предназначенным для внутреннего использования в реализации.
+> 
+            **Примечание.** Это ограничение не применяется к массивам, предназначенным для внутреннего использования в реализации.
 
  
 
@@ -236,7 +244,8 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 
 > [!div class="tabbedCodeSnippets"]
 
-**Примечание.** Если при изменении имени возвращаемого значения новое имя конфликтует с именем другого параметра, возникает ошибка WME1091. Код JavaScript может получить доступ к выходным параметрам метода (в том числе к возвращаемому значению) по имени.
+
+            **Примечание.** Если при изменении имени возвращаемого значения новое имя конфликтует с именем другого параметра, возникает ошибка WME1091. Код JavaScript может получить доступ к выходным параметрам метода (в том числе к возвращаемому значению) по имени.
 
 | Пример можно найти в описании атрибута [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx). | Номер ошибки |
 |---------------|------------|
@@ -244,10 +253,11 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 | В среде выполнения Windows параметры методов и возвращаемые значения должны иметь уникальные имена. | WME1092 У метода "{0}" есть параметр с именем "{1}", которое совпадает с именем возвращаемого значения по умолчанию.<br/>Попробуйте использовать другое имя параметра или с помощью атрибута System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute явно укажите имя возвращаемого значения. |
  
 
-## **Примечание.** returnValue является именем по умолчанию только для методов доступа к свойствам, а для всех других методов по умолчанию используется имя value.
+## 
+            **Примечание.** returnValue является именем по умолчанию только для методов доступа к свойствам, а для всех других методов по умолчанию используется имя value.
 
 * [Связанные разделы](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Создание компонентов среды выполнения Windows на C# и Visual Basic](https://msdn.microsoft.com/library/hh925576.aspx)
+* [Создание компонентов среды выполнения Windows на C# и VisualBasic](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
 

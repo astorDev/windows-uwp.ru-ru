@@ -1,16 +1,20 @@
 ---
 author: TylerMSFT
-title: Convert an app service to run in the same process as its provider
-description: Convert app service code that ran in a separate background process into code that runs inside the same process as your app service provider.
+title: "Преобразование службы приложения для запуска в одном процессе с ее поставщиком"
+description: "Преобразуйте код службы приложения, выполняемый в отдельном фоновом процессе, в код, выполняемый в одном процессе с поставщиком службы приложения."
+translationtype: Human Translation
+ms.sourcegitcommit: 9e959a8ae6bf9496b658ddfae3abccf4716957a3
+ms.openlocfilehash: 0990e9938bb9bf1794cf58c5541a64f22853b093
+
 ---
 
-# Convert an app service to run in the same process as its provider
+# Преобразование службы приложения для запуска в одном процессе с ее поставщиком
 
-An App Service Connection enables another application to wake up your app in the background and start a direct line of communication with it.
+[AppServiceConnection](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceconnection.aspx) позволяет другому приложению выводить ваше приложение из фонового режима и устанавливать прямую линию связи с ним.
 
-With the introduction of single-process App Services, two running foreground applications can have a direct line of communication via an app service connection. App Services can now run in the same process as the foreground application; which makes communication between apps much easier while removing the need to separate the service code into a separate project.
+С появлением служб приложений, работающих в одном процессе, два запущенных на переднем плане приложения могут устанавливать прямую линию обмена данными через подключение служб приложения. Службы приложения теперь могут выполняется в том же процессе, что и приложение переднего плана, что упрощает обмен данными между приложениями, одновременно исключая необходимость выделения кода службы в отдельный проект.
 
-Turning a multiple process model App Service into single process model requires two changes. The first is a manifest change.
+Для перехода от модели службы приложения с несколькими процессами к модели с одним процессом необходимо сделать два изменения. Первое изменение вносится в манифест.
 
 > ```xml
 >  <uap:Extension Category="windows.appService">
@@ -18,11 +22,11 @@ Turning a multiple process model App Service into single process model requires 
 >  </uap:Extension>
 > ```
 
-Remove the `EntryPoint` attribute. Now `OnBackgroundActivated()` callback will be used as the callback method when the app service is invoked.
+Удалите атрибут `EntryPoint`. Теперь в качестве метода обратного вызова при вызове службы приложения будет использоваться обратный вызов [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).
 
-The second change is to move the service logic from its separate background task project into methods that can be called from `OnBackgroundActivated()`.
+Второе изменение заключается в переносе логики службы из отдельного проекта фоновой задачи в методы, которые можно вызывать из метода **OnBackgroundActivated()**.
 
-Now your application can directly run your App Service.  For example:
+Теперь приложение может напрямую выполнять службу приложения.  Пример.
 
 > ``` cs
 > private AppServiceConnection appServiceconnection;
@@ -65,8 +69,14 @@ Now your application can directly run your App Service.  For example:
 > }
 > ```
 
-In the code above the `OnBackgroundActivated` method handles the app service activation. All of the events required for communication through an `AppServiceConnection` are registered, and the task deferral object is stored so that it can be marked as complete when the communication between the applications is done.
+В приведенном выше коде метод `OnBackgroundActivated` обрабатывает активацию службы приложения. Регистрируются все события, необходимые для обмена данными через [AppServiceConnection](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceconnection.aspx), и сохраняется объект откладывания задачи, чтобы ее можно было пометить как выполненную после завершения обмена данными между приложениями.
 
-When the app receives a request and reads the `ValueSet` provided to see if the `Key` and `Value` strings are present. If they are present then the app service returns a pair of `Response` and `True` string values back to the app on the other side of the AppServiceConnection.
+Когда приложение получает запрос, оно считывает предоставленный [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) для проверки наличия строк `Key` и `Value`. Если они существуют, служба приложения возвращает пару строковых значений `Response` и `True` в приложение на другой стороне **AppServiceConnection**.
 
-Learn more about connecting and communicating with other apps at [Create and Consume an App Service](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service?f=255&MSPPError=-2147217396).
+Подробнее о подключении к другим приложением и обмене данными с ними см. в разделе [Создание и использование службы приложения](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service?f=255&MSPPError=-2147217396).
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

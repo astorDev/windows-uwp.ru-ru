@@ -5,12 +5,12 @@ title: "Перечисление устройств по сети"
 description: "Помимо обнаружения локально подключенных устройств вы можете использовать интерфейсы API Windows.Devices.Enumeration для перечисления устройств по беспроводным и сетевым протоколам."
 translationtype: Human Translation
 ms.sourcegitcommit: 6eca7156c8f81a9a89e006c09a232a255f3a8725
-ms.openlocfilehash: 9d2d58f2423688f895da1de56eef6448bb42692d
+ms.openlocfilehash: 5f62063a7b9c80b8c3715b539a9ebe2505dc9ae0
 
 ---
 # Перечисление устройств по сети
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** Важные API **
@@ -84,6 +84,6 @@ System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

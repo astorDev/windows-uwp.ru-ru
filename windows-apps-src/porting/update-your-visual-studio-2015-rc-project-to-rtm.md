@@ -1,23 +1,22 @@
 ---
 author: mcleblanc
-description: "Если у вас есть проект Windows 10, созданный в Microsoft Visual Studio 2015 RC, вы можете обновить файлы проекта до формата, подходящего для Visual Studio 2015 RTM, с помощью двух параметров."
-title: "Обновление проекта Microsoft Visual Studio 2015 RC UWP до RTM-версии"
+description: "Если у вас есть проект Windows10, созданный в MicrosoftVisualStudio2015RC, вы можете обновить файлы проекта до формата, подходящего для VisualStudio2015RTM, с помощью двух параметров."
+title: "Обновление проекта MicrosoftVisualStudio2015RC UWP до RTM-версии"
 ms.assetid: 104E36CE-36DE-4E9C-A944-711C200B44EF
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 9c2b9f164b6578a9e1d269295b3fa0d7a863a6a0
 
 ---
 
-# Обновление проекта Microsoft Visual Studio 2015 RC UWP до RTM-версии
+# Обновление проекта MicrosoftVisualStudio2015RC UWP до RTM-версии
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Если у вас есть проект Windows 10, созданный в Microsoft Visual Studio 2015 RC, вы можете обновить файлы проекта до формата, подходящего для Visual Studio 2015 RTM, с помощью двух параметров. Рекомендуемый метод – создать новый проект Windows 10 в Visual Studio 2015 RTM и копировать файлы в него. Также можно изменить существующие файлы проекта и перевести их в новый формат, следуя инструкциям в расширенной документации.
+Если у вас есть проект Windows10, созданный в MicrosoftVisualStudio2015RC, вы можете обновить файлы проекта до формата, подходящего для VisualStudio2015RTM, с помощью двух параметров. Рекомендуемый метод–создать новый проект Windows10 в VisualStudio2015RTM и копировать файлы в него. Также можно изменить существующие файлы проекта и перевести их в новый формат, следуя инструкциям в расширенной документации.
 
-## Что вы видите при открытии проекта для Windows 10, созданного в Visual Studio 2015 RC, в Visual Studio 2015 RTM
+## Что вы видите при открытии проекта для Windows10, созданного в Visual Studio2015 RC, в Visual Studio2015 RTM
 
-Открыв проект для Windows 10, созданный в Visual Studio 2015 RC, в Visual Studio 2015 RTM, вы увидите сообщение "требуется обновление" в разделе **Обозреватель решений**.
+Открыв проект для Windows10, созданный вVisual Studio2015 RC, в Visual Studio2015 RTM, вы увидите сообщение "требуется обновление" в разделе **Обозреватель решений**.
 
 ![требуется обновление](images/vsrc-to-rtm/solution-explorer.png)
 
@@ -35,9 +34,9 @@ ms.openlocfilehash: 9c2b9f164b6578a9e1d269295b3fa0d7a863a6a0
 
 ## Дополнительно: изменение существующих файлов проекта
 
-Существенное различие между форматами проектов для Windows 10 в Visual Studio 2015 RC и в Visual Studio 2015 RTM — формат RTM использует [NuGet](http://docs.nuget.org/) версии 3. Помните о нем, если вы хотите изменить свой проект вручную.
+Существенное различие между форматамипроектов для Windows10 в Visual Studio2015 RC и в Visual Studio2015 RTM— формат RTM использует [NuGet](http://docs.nuget.org/) версии3. Помните о нем, если вы хотите изменить свой проект вручную.
 
-Если вы хотите изменить свой проект вручную или если вас интересуют различия между форматами проекта в Visual Studio 2015 RC и Visual Studio 2015 RTM, обратитесь к разделу [Перенос приложений на универсальную платформу Windows (UWP)](http://msdn.microsoft.com/library/mt148501.aspx).
+Если вы хотите изменить свой проект вручную или если вас интересуют различия между форматами проекта в Visual Studio2015 RC и Visual Studio2015 RTM, обратитесь к разделу [Перенос приложений на универсальную платформу Windows (UWP)](http://msdn.microsoft.com/library/mt148501.aspx).
 
 
 

@@ -11,7 +11,7 @@ ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 # Запуск приложения "Люди"
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этом разделе приводится описание схемы URI **ms-people:**. Ваше приложение может использовать эту схему URI для запуска приложения «Люди» для конкретных действий.

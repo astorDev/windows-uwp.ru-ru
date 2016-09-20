@@ -3,7 +3,6 @@ author: Jwmsft
 ms.assetid: DA562509-D893-425A-AAE6-B2AE9E9F8A19
 label: Text block
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 7666c7a82b2959aa1329bbfe2532dccdc7fb38a5
 
@@ -65,28 +64,35 @@ textBlock1.Text = "Hello, world!";
 Для размещения текста XAML использует более эффективный программный путь, когда это возможно. Этот быстрый путь уменьшает общее потребление памяти и значительно уменьшает время, которое необходимо ЦП на измерение и размещение текста. Этот быстрый путь используется только для объекта TextBlock, поэтому по возможности следует использовать этот объект вместо объекта RichTextBlock.
 
 В некоторых условиях для отрисовки текста объекту TextBlock приходится использовать более функциональный программный путь, потребляющий больше ресурсов ЦП. Чтобы функция отрисовки текста всегда использовала быстрый путь, при настройке перечисленных здесь свойств соблюдайте указанные ниже рекомендации.
-- [
+- 
+            [
               **Text**
             ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx): самое важное условие состоит в том, что быстрый путь используется только тогда, когда вы настраиваете свойство Text, явно указав свойство либо в XAML, либо в коде (как показано в предыдущих примерах). Если настроить текст с помощью коллекции Inlines объекта TextBlock (например, с помощью `<TextBlock>Inline text</TextBlock>`), это быстрый путь будет выключен из-за потенциальной сложности, вызванной использованием нескольких форматов.
-- [
+- 
+            [
               **CharacterSpacing**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx): быстрому пути соответствует только значение 0, используемое по умолчанию.
-- [
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx): быстрому пути соответствует только значение0, используемое по умолчанию.
+- 
+            [
               **Typography**
             ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx): быстрому пути соответствуют только значения по умолчанию для различных свойств Typography.
-- [
+- 
+            [
               **TextTrimming**
             ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.texttrimming.aspx): только значения **None**, **CharacterEllipsis** и **WordEllipsis** соответствуют быстрому пути. Значение **Clip** выключает быстрый путь.
-- [
+- 
+            [
               **LineStackingStrategy**
             ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.linestackingstrategy.aspx): если для параметра [LineHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.lineheight.aspx) не установлено значение 0, значения **BaselineToBaseline** и **MaxHeight** отключают быстрый путь.
-- [
+- 
+            [
               **IsTextSelectionEnabled**
             ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.istextselectionenabled.aspx): только значение **false** соответствует быстрому пути. Если задать для этого свойства значение **true**, быстрый путь будет выключен.
 
 Во время отладки для свойства [DebugSettings.IsTextPerformanceVisualizationEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled.aspx) можно задать значение **true**, чтобы определить, используется ли быстрый путь для отрисовки текста. Если для этого свойства задано значение true, то текст, отрисовываемый с использованием быстрого пути, будет отображаться ярко-зеленым цветом. 
 
->**Совет**
+>
+            **Совет**
             &nbsp;&nbsp;Эта функция подробно описана в данном семинаре Build 2015 [Производительность XAML: методы для расширения взаимодействия с универсальными приложениями для Windows, созданными с помощью XAML](https://channel9.msdn.com/Events/Build/2015/3-698).
 
  
@@ -119,14 +125,16 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ![Текст, отрисованный в режиме отладки](images/text-block-rendering-performance.png)
 
->**Внимание**
+>
+            **Внимание**
             &nbsp;&nbsp;Цвет текста, для отрисовки которого не используется быстрый путь, не изменяется. Если в вашем приложении есть текст, для которого указан ярко-зеленый цвет, он будет отображаться ярко-зеленым и в более медленном пути отрисовки. Будьте внимательны, чтобы не спутать текст, для которого в приложении установлен зеленый цвет, с текстом, отрисовываемый с использованием быстрого пути, который зеленый из-за параметров отладки.
 
 ## Форматирование текста
 
 Хотя свойство Text хранит обычный текст, к элементу управления TextBlock можно применять различные параметры форматирования для настройки отрисовки текста в приложении. Можно задать стандартные свойства элемента управления, например FontFamily, FontSize, FontStyle, Foreground и CharacterSpacing, чтобы изменить внешний вид текста. Для форматирования текста также можно использовать строковые текстовые элементы и вложенные свойства Typography. Эти параметры влияют только на то, как TextBlock отображает текст локально, поэтому если, например, скопировать и вставить текст в элемент управления для форматированного текста, форматирование не будет применено.
 
->**Примечание.**
+>
+            **Примечание.**
             &nbsp;&nbsp;Как отмечено в предыдущем разделе, помните о том, что быстрый путь не используется для отрисовки строковых текстовых элементов и нестандартных значений оформления.
  
 

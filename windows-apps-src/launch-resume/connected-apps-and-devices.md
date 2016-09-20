@@ -1,29 +1,35 @@
 ---
 author: TylerMSFT
-title: Connected apps and devices
-description: This section describes how to discover connected devices, launch an app on another device, and communicate with an app on a remote device.
+title: "Подключенные приложения и устройства (проект «Рим»)"
+description: "В этом разделе описывается, как использовать проект «Рим» для обнаружения подключенных устройств, запуска приложения на другом устройстве и обмена данными с приложением на удаленном устройстве."
+translationtype: Human Translation
+ms.sourcegitcommit: ff8e16d0e376d502157ae42b9cdae11875008554
+ms.openlocfilehash: 4f49acfd7efcb10d99f9d23884d20c0fc51e5a4a
+
 ---
 
-# Connected apps and devices
+# Подключенные приложения и устройства (проект «Рим»)
 
-This section explains how to connect apps across devices and platforms. Learn how to discover connected devices, launch an app on another device, and communicate with an app on a remote device.
+В этом разделе объясняется, как подключать приложения на различных устройствах и платформах с использованием проекта «Рим». Узнайте, как обнаруживать подключенные устройства, запускать приложение на другом устройстве и обмениваться данными с приложением на удаленном устройстве.
 
-Most people have multiple devices, and often begin an activity on one device and finish it on another. To accommodate this, apps need to span devices and platforms.
+У большинства людей имеется несколько устройств, и они часто начинают действие на одном устройстве, а завершают его на другом. Для учета такого поведения приложения должны работать на различных устройствах и платформах.
 
-The [Remote Systems APIs](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems)
-introduced in Windows 10, version 1607, enable you to write apps that allow users to start a task on one device and finish it on another. The task remains the central focus, and users can do their work on the device that is most convenient. For example, you might be listening to the radio on your phone in the car, but when you get home you may want to transfer playback to your Xbox One that is hooked up to your home stereo system.
+[API удаленных систем](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems), которые появились в Windows 10 версии 1607, позволяют создавать приложения, в которых пользователи могут начинать задачу на одном устройстве, а завершать ее на другом. В центре внимания остается задача, и пользователи могут выполнять свою работу на наиболее удобном устройстве. Например, в автомобиле вы можете слушать радио по телефону, но, приехав домой, захотите продолжить прослушивание на системе Xbox One, подключенной к домашней стереосистеме.
 
-You can also use connected apps and devices for companion devices, or remote control scenarios. Use the app messaging APIs to create an app channel between two devices to send and receive custom messages. For example, you can write an app for your phone that controls playback on your TV, or a companion app that provides information about the characters on a TV show you are watching on another app.  
+Проект «Рим» можно также использовать для сопутствующих устройств или сценариев удаленного управления. Используйте интерфейсы API служб сообщений приложения для создания канала приложения между двумя устройствами, чтобы отправлять и получать настраиваемые сообщения. Например, можно создать приложение для телефона, которое управляет воспроизведением на телевизоре, или сопутствующее приложение, предоставляющее сведения о героях телевизионного шоу, которое вы смотрите в другом приложении.  
 
-Devices can be connected proximally through Bluetooth and wireless, or remotely through the cloud, and are connected by the Microsoft account of the person using them.
+Устройства можно подключать локально через Bluetooth и по беспроводной сети, или удаленно через облако; устройства связываются между собой учетной записью Майкрософт пользователя.
 
-See the [Remote Systems sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems ) for examples of how to discover remote system, launch an app on a remote system, and use app services to send messages between apps running on two systems.  
+В разделе [Пример удаленных систем](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems ) приведены примеры обнаружения удаленной системы, запуска приложения в удаленной системе и использования службы приложений для передачи сообщений между приложениями, работающими в двух системах.
 
-
-Install the Connected Apps and Devices SDK to enable remote experiences on iOS and Android devices.
-
-| Remote activity | Description                                                                                                                                                                |
+| Удаленное действие | Описание                                                                                                                                                                |
 |-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Discover remote devices](discover-connected-devices.md)  | Learn how to discover devices that you can connect to. |
-| [Launch an app on a remote device](launch-a-remote-app.md) | Learn how to launch an app on a remote device.  |
-| [Communicate with a remote app service](communicate-with-a-remote-app-service.md) | Learn how to interact with an app on a remote device. |
+| [Обнаружение удаленных устройств](discover-remote-devices.md)  | Узнайте, как обнаруживать устройства, к которым можно подключиться. |
+| [Запуск приложения на удаленном устройстве](launch-a-remote-app.md) | Узнайте, как запустить приложение на удаленном устройстве.  |
+| [Обмен данными с удаленной службой приложения](communicate-with-a-remote-app-service.md) | Узнайте, как взаимодействовать с приложением на удаленном устройстве. |
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

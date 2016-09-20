@@ -3,7 +3,6 @@ author: mtoepke
 title: "Перенос буферов вершин и данных"
 description: "На этом шаге вы определите буферы вершин, которые будут содержать ваши сетки, и буферы индексов, которые позволят шейдерам обходить вершины в указанном порядке."
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 9692b33303099f9d1193b93ab458a19a5d95abe3
 
@@ -12,7 +11,7 @@ ms.openlocfilehash: 9692b33303099f9d1193b93ab458a19a5d95abe3
 # Перенос данных и буферов вершин
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -152,7 +151,8 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 
 Перечень всех возможных типов формата см. в описании [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
 
-Когда макет входных данных для вершин определен, вы создаете объект макета. В следующем коде вы записываете его в **m\_inputLayout**, переменную типа **ComPtr**, которая указывает на объект типа [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575). **fileData** содержит компилированный объект вершинного шейдера из предыдущего шага, [Перенос шейдеров](port-the-shader-config.md).
+Когда макет входных данных для вершин определен, вы создаете объект макета. В следующем коде вы записываете его в **m\_inputLayout**, переменную типа **ComPtr**, которая указывает на объект типа [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575). 
+            **fileData** содержит компилированный объект вершинного шейдера из предыдущего шага, [Перенос шейдеров](port-the-shader-config.md).
 
 Direct3D: создание макета входных данных, используемого буфером вершин
 

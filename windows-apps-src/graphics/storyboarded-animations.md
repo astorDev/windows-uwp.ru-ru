@@ -5,7 +5,7 @@ title: "Раскадрованные анимации"
 description: "Раскадрованные анимации— это не просто анимации в визуальном смысле."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: bcb8dbd3c0b2556c3d426687eb9be02ffe7265fb
+ms.openlocfilehash: 361765de700af2a701e16fc27a5867d80907865a
 
 ---
 # Раскадрованные анимации
@@ -97,15 +97,9 @@ ms.openlocfilehash: bcb8dbd3c0b2556c3d426687eb9be02ffe7265fb
 
 Система анимации среды выполнения Windows имеет три отдельных типа, к которым может применяться раскадрованная анимация.
 
--   
-              [
-              **Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) может быть анимирован при помощи любого [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136)
--   
-              [
-              **Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) может быть анимирован при помощи любого [**PointAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210346)
--   
-              [
-              **Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) может быть анимирован при помощи любого [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066)
+-   [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) может быть анимирован при помощи любого [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136)
+-   [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) может быть анимирован при помощи любого [**PointAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210346)
+-   [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) может быть анимирован при помощи любого [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066)
 
 Также существует универсальный тип анимации [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) для значений ссылок на объекты, который мы рассмотрим позднее.
 
@@ -140,8 +134,7 @@ ms.openlocfilehash: bcb8dbd3c0b2556c3d426687eb9be02ffe7265fb
 
 Подробнее о значениях [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) и синтаксисе XAML: [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377).
 
-
-              **Примечание.** Если вы уверены, что начальное состояние анимируемого объекта содержит свойство [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962), всегда равное 1 (заданное по умолчанию или явно), то для нашего примера можно пропустить значение **From**—анимация будет использовать неявное начальное значение, а результат будет тот же.
+**Примечание.** Если вы уверены, что начальное состояние анимируемого объекта содержит свойство [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962), всегда равное 1 (заданное по умолчанию или явно), то для нашего примера можно пропустить значение **From** —анимация будет использовать неявное начальное значение, а результат будет тот же.
 
  
 
@@ -221,8 +214,7 @@ ms.openlocfilehash: bcb8dbd3c0b2556c3d426687eb9be02ffe7265fb
 
 Для упорядочения ресурсов с ключом в XAML обычно определяются ресурсы в корневом элементе файла XAML, например page.xaml или app.xaml. Вы также можете разложить ресурсы на отдельные файлы, а затем выполнить их слияние в приложениях или на страницах. Подробнее: [ResourceDictionary и ссылки на ресурсы XAML](https://msdn.microsoft.com/library/windows/apps/Mt187273).
 
-
-              **Примечание.** XAML среды выполнения Windows поддерживает идентификацию ресурсов при помощи атрибута [x:Key](https://msdn.microsoft.com/library/windows/apps/Mt204787) или [x:Name](https://msdn.microsoft.com/library/windows/apps/Mt204788). Атрибут x:Name чаще используется для класса [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490), так как в конечном счете вам нужно будет ссылаться на него при помощи имени переменной, чтобы вы могли вызвать его метод [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) и выполнить анимацию. Если вы все-таки будете применять атрибут [x:Key](https://msdn.microsoft.com/library/windows/apps/Mt204787), вам потребуется использовать методы [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794), например индексатор [**Item**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.item), чтобы получить его как различаемый по ключу ресурс, а затем привести полученный объект к **Storyboard**, чтобы использовать методы **Storyboard**.
+**Примечание.** XAML среды выполнения Windows поддерживает идентификацию ресурсов при помощи атрибута [x:Key](https://msdn.microsoft.com/library/windows/apps/Mt204787) или [x:Name](https://msdn.microsoft.com/library/windows/apps/Mt204788). Атрибут x:Name чаще используется для класса [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490), так как в конечном счете вам нужно будет ссылаться на него при помощи имени переменной, чтобы вы могли вызвать его метод [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) и выполнить анимацию. Если вы все-таки будете применять атрибут [x:Key](https://msdn.microsoft.com/library/windows/apps/Mt204787), вам потребуется использовать методы [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794), например индексатор [**Item**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.item), чтобы получить его как различаемый по ключу ресурс, а затем привести полученный объект к **Storyboard**, чтобы использовать методы **Storyboard**.
 
  
 
@@ -243,8 +235,7 @@ ms.openlocfilehash: bcb8dbd3c0b2556c3d426687eb9be02ffe7265fb
 -   Анимация предназначена для значения [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) и использует [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962), анимируя его [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963).
 -   Анимация представляет собой [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320).
 
-
-              **Внимание!** Чтобы ваша анимация обрабатывалась как независимая, необходимо явно задать `Duration="0"`. Например, если вы удалите `Duration="0"` из этого XAML, анимация будет обрабатываться как зависимая, даже если [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR243169) кадра равно "0:0:0".
+**Внимание!** Чтобы ваша анимация обрабатывалась как независимая, необходимо явно задать `Duration="0"`. Например, если вы удалите `Duration="0"` из этого XAML, анимация будет обрабатываться как зависимая, даже если [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR243169) кадра равно "0:0:0".
 
  
 
@@ -265,8 +256,7 @@ ms.openlocfilehash: bcb8dbd3c0b2556c3d426687eb9be02ffe7265fb
 
 Кроме того, как разработчик вы можете решить применять параметр приложения, который всегда отключает зависимые анимации, даже те, где **EnableDependentAnimation** имеет значение **true**. См.: [**Timeline.AllowDependentAnimations**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.allowdependentanimations).
 
-
-              **Совет.** Если вы создаете визуальные состояния для элемента управления с помощью Visual Studio, то конструктор будет отображать предупреждения при каждой попытке применить зависимую анимацию к свойству визуального состояния.
+**Совет.** Если вы создаете визуальные состояния для элемента управления с помощью Visual Studio, то конструктор будет отображать предупреждения при каждой попытке применить зависимую анимацию к свойству визуального состояния.
 
  
 
@@ -305,8 +295,7 @@ myStoryBoard.Begin()
 
 Вы можете обработать событие [**Completed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.completed.aspx), чтобы запустить другую логику после завершения применения значений в анимации. Кроме того, метод [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/BR242358) может быть полезен в диагностике взаимодействия системы свойств и анимации.
 
-
-              **Совет.** Всякий раз, когда вы пишете код для сценария приложения, в котором анимация запускается из кода приложения, рекомендуется дополнительно проверить, нет ли в библиотеке анимаций для вашего сценария пользовательского интерфейса готовой анимации или перехода. Анимации из библиотеки проще в использовании и обеспечивают более согласованное взаимодействие с пользовательским интерфейсом во всех приложениях среды выполнения Windows.
+**Совет.** Всякий раз, когда вы пишете код для сценария приложения, в котором анимация запускается из кода приложения, рекомендуется дополнительно проверить, нет ли в библиотеке анимаций для вашего сценария пользовательского интерфейса готовой анимации или перехода. Анимации из библиотеки проще в использовании и обеспечивают более согласованное взаимодействие с пользовательским интерфейсом во всех приложениях среды выполнения Windows.
 
  
 
@@ -314,8 +303,7 @@ myStoryBoard.Begin()
 
 Поведение при выполнении для класса [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490), который используется для определения визуального состояния элемента управления, отличается от того, как приложение может выполнить раскадровку напрямую. Применительно к определению визуального состояния в XAML, **Storyboard**–это элемент содержащего класса [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), а состояние в целом управляется при помощи API [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager). Все анимации внутри будут выполнены в соответствии с их значениями анимации и свойствами [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517), когда содержащий класс **VisualState** будет использован элементом управления. Подробнее об этом см. в разделе [Раскадровки для визуальных состояний](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808). Видимое свойство [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) для визуальных состояний другое. При переходе в другое визуальное состояние все изменения свойств, примененные предыдущим визуальным состоянием, и его анимации отменяются, даже если новое визуальное состояние прямо не применяет новую анимацию к свойству.
 
-### 
-              **Storyboard** и **EventTrigger**
+### **Storyboard** и **EventTrigger**
 
 Существует способ запустить анимацию, которая может быть полностью объявлена в XAML. Однако он больше не применяется широко. Это традиционный синтаксис из WPF и ранних версий Silverlight до поддержки [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager). Этот синтаксис [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) до сих пор работает в XAML среды выполнения Windows для обеспечения импорта или совместимости, но только для поведения триггера, основанного на событии [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723); попытка активировать другие события приведет к вызову исключений или к ошибке при компиляции. Подробнее об этом см. в разделе [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) или [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053).
 
@@ -346,6 +334,6 @@ myStoryBoard.Begin()
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
 description: "В этой статье рассказывается, как с помощью интерфейса IMediaEncodingProperties задать разрешение и частоту кадров потока предварительного просмотра камеры, а также снятых фотографий и видео."
 title: "Задание свойств кодирования мультимедиа"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: d7b44ce9db2e3d540036525c4b43e155a9500010
 

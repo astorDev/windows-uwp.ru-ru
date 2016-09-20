@@ -1,21 +1,23 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Создавайте приложения универсальной платформы Windows (UWP), которые поддерживают специальные взаимодействия с помощью пера, в том числе рукописный ввод для естественного письма и рисования."
-title: "Взаимодействие с помощью пера в приложениях UWP"
+Description: "Создавайте приложения универсальной платформы Windows (UWP), поддерживающие специальные взаимодействия с помощью пера, в том числе рукописный ввод для естественного письма и рисования."
+title: "Взаимодействие с пером и Windows Ink в приложениях UWP"
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
-label: Pen and stylus interactions in UWP apps
+label: Pen interactions and Windows Ink in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: e642e6ba5319dce2d78c243ab3c57a9ffcc6902f
+translationtype: Human Translation
+ms.sourcegitcommit: 8bc5612c0fc9273d32ccbfcd5b4334566d24b017
+ms.openlocfilehash: 67149f51cc16fee6f5ba818915432b18d2c1a549
 
 ---
 
-# Взаимодействие с помощью пера в приложениях UWP
+# Взаимодействие с пером и Windows Ink в приложениях UWP
 
 Оптимизируйте взаимодействия с помощью пера в своем приложении универсальной платформы Windows (UWP), чтобы обеспечить как стандартные функциональные возможности для работы с [**указателем**](https://msdn.microsoft.com/library/windows/apps/br225633), так и возможности Windows Ink.
 
-> Примечание. Данный раздел посвящен платформе Windows Ink. Общую информацию о работе со входными данными указателей, сходных с мышью, сенсорным краном и сенсорной панелью, см. в разделе [Работа с входными данными указателя](handle-pointer-input.md).
+> [!NOTE]
+> Данный раздел посвящен платформе Windows Ink. Общую информацию о работе с входными данными указателей, аналогично мыши, сенсорному экрану и сенсорной панели, см. в разделе [Работа с входными данными указателя](handle-pointer-input.md).
 
 ![Сенсорная панель](images/input-patterns/input-pen.jpg)
 
@@ -29,44 +31,45 @@ ms.openlocfilehash: e642e6ba5319dce2d78c243ab3c57a9ffcc6902f
 
 В дополнение к получению данных об основном положении и движении пера, когда пользователь пишет или рисует, ваше приложение также может отслеживать и собирать сведения об изменяющейся силе нажатия, используемой в росчерке. Эти сведения вместе с параметрами формы, размера и поворота кончика пера, цвета чернил и цели (обычный рукописный ввод, стирание, выделение и выбор) позволяют обеспечить результат взаимодействия, очень похожий на письмо или рисунок ручкой, карандашом или кистью на бумаге.
 
-**Примечание.**  Ваше приложение может поддерживать рукописный ввод и от других устройств на основе указателя, например дигитайзеров сенсорного ввода и мыши. 
+> [!NOTE]
+> Ваше приложение может также поддерживать рукописный ввод и от других устройств на основе указателя, например дигитайзеров сенсорного ввода и мыши. 
 
 Платформа рукописного ввода очень гибкая. Она предназначена для поддержки различных уровней функциональности в зависимости от ваших требований.
 
-Платформа рукописного ввода включает три компонента.
 
--   [
-              **InkCanvas**
-            ](https://msdn.microsoft.com/library/windows/apps/dn858535) — элемент управления платформы пользовательского интерфейса XAML, который по умолчанию получает и отображает все входные данные от пера, будь то росчерк пера или росчерк стирания.
 
--   [
-              **InkPresenter**
-            ](https://msdn.microsoft.com/library/windows/apps/dn922011) — объект кода программной части, создаваемый вместе с элементом управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (предоставляется свойством [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)). Этот объект обеспечивает все возможности рукописного ввода по умолчанию, предоставляемые элементом **InkCanvas**, вместе с полным набором API для дополнительной настройки и персонализации.
+Рекомендации по взаимодействию с пользователем для Windows Ink см. в разделе [Элементы управления рукописным вводом](../controls-and-patterns/inking-controls.md).
 
--   [
-              **IInkD2DRenderer**
-            ](https://msdn.microsoft.com/library/mt147263) — позволяет преобразовать росчерки пера в специальный контекст устройства Direct2D универсального приложения для Windows вместо элемента управления по умолчанию [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535). Это делает возможным полную настройку рукописного ввода.
+## Компоненты платформы Windows Ink
+
+| Компонент | Описание |
+| --- | --- |
+| [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | Элемент управления платформы пользовательского интерфейса XAML, который по умолчанию получает и отображает все входные данные от пера как росчерк пера или росчерк стирания.<br/>Дополнительные сведения о том, как использовать InkCanvas, см. в разделах [Распознавание росчерков пера Windows Ink как текста](convert-ink-to-text.md) и [Хранение и извлечение данных движения пера Windows Ink](save-and-load-ink.md). |
+| [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | Объект кода программной части, создаваемый вместе с элементом управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (предоставляется свойством [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)). Этот объект обеспечивает все возможности рукописного ввода по умолчанию, предоставляемые элементом **InkCanvas**, вместе с полным набором API для дополнительной настройки и персонализации.<br/>Дополнительные сведения о том, как использовать InkPresenter, см. в разделах [Распознавание росчерков пера Windows Ink как текста](convert-ink-to-text.md) и [Хранение и извлечение данных движения пера Windows Ink](save-and-load-ink.md). |
+| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Добавьте InkToolbar по умолчанию в приложение универсальной платформы Windows (UWP) для рукописного ввода, добавьте кнопку специального пера в InkToolbar и привяжите кнопку специального пера к определению специального пера. Это элемент управления платформы интерфейса пользователя XAML, содержащий настраиваемую и расширяемую коллекцию кнопок, которые активируют функции рукописного ввода в соответствующем элементе InkCanvas.<br/>Дополнительные сведения о том, как использовать InkToolbar, см. в разделе [Добавление InkToolbar в приложение универсальной платформы Windows (UWP) для рукописного ввода](ink-toolbar.md). |
+| [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | Позволяет преобразовать росчерки пера в специальный контекст устройства Direct2D универсального приложения для Windows вместо элемента управления по умолчанию [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535). Это делает возможным полную настройку рукописного ввода.<br/>Дополнительные сведения см. в разделе [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314). |
 
 ## Базовый рукописный ввод с использованием InkCanvas
 
-
 Для выполнения базовой функции рукописного ввода просто поместите [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) в любом месте страницы.
 
-[
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) поддерживает рукописный ввод только с помощью пера. Входные данные обрабатываются как росчерк пера с помощью параметров цвета и толщины по умолчанию или трактуются как ластик для росчерков (когда ввод осуществляется кончиком ластика или кончиком пера, модифицированным при помощи кнопки стирания).
+По умолчанию [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) поддерживает рукописный ввод только с помощью пера. Входные данные обрабатываются как росчерк пера с использованием параметров цвета и толщины по умолчанию (черная шариковая ручка с толщиной 2 пикселя) или трактуются как ластик для росчерков (когда ввод осуществляется кончиком ластика или кончиком пера, модифицированным при помощи кнопки стирания).
+
+> [!NOTE]
+> Если кнопка или кончик ластика отсутствуют, InkCanvas можно настроить для обработки ввода кончика пера как росчерка стирания.
 
 В этом примере [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) перекрывает фоновое изображение.
 
-```XAML
+```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid.RowDefinitions>
         <RowDefinition Height="Auto"/>
         <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
     <StackPanel x:Name="HeaderPanel" Orientation="Horizontal" Grid.Row="0">
-        <TextBlock x:Name="Header" 
-                   Text="Basic ink sample" 
-                   Style="{ThemeResource HeaderTextBlockStyle}" 
+        <TextBlock x:Name="Header"
+                   Text="Basic ink sample"
+                   Style="{ThemeResource HeaderTextBlockStyle}"
                    Margin="10,0,0,0" />            
     </StackPanel>
     <Grid Grid.Row="1">
@@ -80,9 +83,7 @@ ms.openlocfilehash: e642e6ba5319dce2d78c243ab3c57a9ffcc6902f
 
 | ![Пустой элемент InkCanvas с фоновым изображением](images/ink_basic_1_small.png) | ![InkCanvas с росчерками пера](images/ink_basic_2_small.png) | ![InkCanvas с одним стертым росчерком](images/ink_basic_3_small.png) |
 | --- | --- | ---|
-| Пустой элемент [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) с фоновым изображением. | [
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) с росчерками пера. | [
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) с одним росчерком (обратите внимание, как операция стирания применяется ко всему росчерку, а не его части). |
+| Пустой элемент [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) с фоновым изображением. | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) с росчерками пера. | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) с одним росчерком (обратите внимание, как операция стирания применяется ко всему росчерку, а не его части). |
 
 Возможности рукописного ввода, поддерживаемые элементом управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), предоставляются объектом кода программной части [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
 
@@ -90,27 +91,23 @@ ms.openlocfilehash: e642e6ba5319dce2d78c243ab3c57a9ffcc6902f
 
 ## Базовая настройка с использованием InkPresenter
 
-
 Объект [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) создается с каждым элементом управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
 Помимо всех реакций на рукописный ввод по умолчанию для соответствующего элемента управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) предоставляет полный набор API для дополнительной настройки росчерков. Это касается свойств росчерков, поддерживаемых типов устройств ввода и того, обрабатываются входные данные объектом или передаются приложению.
 
-**Примечание.**  
-[
-            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) нельзя создавать напрямую. Вместо этого доступ к нему осуществляется с помощью свойства [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) элемента [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
-
- 
+> [!NOTE]
+> [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) нельзя создавать напрямую. Вместо этого доступ к нему осуществляется с помощью свойства [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) элемента [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535). 
 
 Здесь мы настраиваем [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) для интерпретации данных, вводимые пером или мышью, в качестве росчерков пера. Мы также задаем некоторые исходные атрибуты росчерка пера, используемые для вывода росчерков на [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
-```CSharp
+```csharp
 public MainPage()
 {
     this.InitializeComponent();
 
     // Set supported inking device types.
-    inkCanvas.InkPresenter.InputDeviceTypes = 
-        Windows.UI.Core.CoreInputDeviceTypes.Mouse | 
+    inkCanvas.InkPresenter.InputDeviceTypes =
+        Windows.UI.Core.CoreInputDeviceTypes.Mouse |
         Windows.UI.Core.CoreInputDeviceTypes.Pen;
 
     // Set initial ink stroke attributes.
@@ -126,17 +123,17 @@ public MainPage()
 
 Здесь мы позволяем пользователю выбирать цвет чернил в списке.
 
-```XAML
+```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid.RowDefinitions>
         <RowDefinition Height="Auto"/>
         <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
     <StackPanel x:Name="HeaderPanel" Orientation="Horizontal" Grid.Row="0">
-        <TextBlock x:Name="Header" 
-                   Text="Basic ink customization sample" 
+        <TextBlock x:Name="Header"
+                   Text="Basic ink customization sample"
                    VerticalAlignment="Center"
-                   Style="{ThemeResource HeaderTextBlockStyle}" 
+                   Style="{ThemeResource HeaderTextBlockStyle}"
                    Margin="10,0,0,0" />
         <TextBlock Text="Color:"
                    Style="{StaticResource SubheaderTextBlockStyle}"
@@ -159,13 +156,13 @@ public MainPage()
 
 Затем мы обрабатываем изменения в выбранном цвете и обновляем соответствующим образом атрибуты росчерка пера.
 
-```CSharp
+```csharp
 // Update ink stroke color for new strokes.
 private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 {
     if (inkCanvas != null)
     {
-        InkDrawingAttributes drawingAttributes = 
+        InkDrawingAttributes drawingAttributes =
             inkCanvas.InkPresenter.CopyDefaultDrawingAttributes();
 
         string value = ((ComboBoxItem)PenColor.SelectedItem).Content.ToString();
@@ -191,17 +188,12 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 На этих изображениях показано, как ввод с помощью пера обрабатывается и настраивается элементом [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081).
 
 | ![InkCanvas с черными росчерками пера по умолчанию](images/ink-basic-custom-1-small.png) | ![InkCanvas с выбранными пользователем красными росчерками пера](images/ink-basic-custom-2-small.png) |
-| --- | -- |
-| [
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) с черными росчерками пера по умолчанию. | [
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) с выбранными пользователем красными росчерками пера. |
-
- 
+| --- | --- |
+| [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) с черными росчерками пера по умолчанию. | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) с выбранными пользователем красными росчерками пера. | 
 
 Для предоставления функций помимо рукописного ввода и стирания, таких как возможность выбора росчерка, ваше приложение должно определить конкретные входные данные для элемента [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081), чтобы передать необработанные данные для обработки вашим приложением.
 
 ## Передача входных данных для расширенной обработки
-
 
 По умолчанию [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) обрабатывает все входные данные как росчерк пера или росчерк стирания. Это относится и к входным данным, которые модифицированы дополнительной возможностью оборудования, например кнопкой пера, правой кнопкой мыши или чем-то подобным.
 
@@ -220,35 +212,37 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
     Здесь мы добавляем холст (под элементом [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)) для рисования росчерка выбора. Если использовать отдельный слой для рисования росчерка выбора, элемент **InkCanvas** и его содержимое останутся без изменений.
 
     ![Пустой элемент InkCanvas с базовым холстом выбора](images/ink-unprocessed-1-small.png)
-```    XAML
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
+
+      ```xaml
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+          <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <StackPanel x:Name="HeaderPanel" Orientation="Horizontal" Grid.Row="0">
-            <TextBlock x:Name="Header" 
-                       Text="Advanced ink customization sample" 
-                       VerticalAlignment="Center"
-                       Style="{ThemeResource HeaderTextBlockStyle}" 
-                       Margin="10,0,0,0" />
-        </StackPanel>
-        <Grid Grid.Row="1">
+          </Grid.RowDefinitions>
+          <StackPanel x:Name="HeaderPanel" Orientation="Horizontal" Grid.Row="0">
+            <TextBlock x:Name="Header"
+              Text="Advanced ink customization sample"
+              VerticalAlignment="Center"
+              Style="{ThemeResource HeaderTextBlockStyle}"
+              Margin="10,0,0,0" />
+          </StackPanel>
+          <Grid Grid.Row="1">
             <!-- Canvas for displaying selection UI. -->
             <Canvas x:Name="selectionCanvas"/>
             <!-- Inking area -->
             <InkCanvas x:Name="inkCanvas"/>
+          </Grid>
         </Grid>
-    </Grid>
-```
+      ```
 
 2.  В файле MainPage.xaml.cs мы объявляем несколько глобальных переменных для сохранения ссылок на аспекты пользовательского интерфейса выбора. В частности, росчерк лассо выбора и ограничивающий прямоугольник, который выделяет выбранные росчерки.
-```    CSharp
-// Stroke selection tool.
-    private Polyline lasso;
-    // Stroke selection area.
-    private Rect boundingRect;
-```
+
+      ```csharp
+        // Stroke selection tool.
+        private Polyline lasso;
+        // Stroke selection area.
+        private Rect boundingRect;
+      ```
 
 3.  Затем мы настраиваем [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) интерпретировать данные, вводимые пером или мышью, как росчерки пера и задаем некоторые исходные атрибуты росчерка пера, используемые для вывода росчерков на [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
@@ -259,175 +253,179 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
     Наконец, мы назначаем прослушиватели для событий [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702) и [**StrokesErased**](https://msdn.microsoft.com/library/windows/apps/dn948767) элемента [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081). Мы используем обработчики для этих событий, чтобы очистить пользовательский интерфейс выбора, если начинается новый росчерк или стирается существующий.
 
     ![InkCanvas с черными росчерками пера по умолчанию](images/ink-unprocessed-2-small.png)
-```    CSharp
-public MainPage()
-    {
-        this.InitializeComponent();
 
-        // Set supported inking device types.
-        inkCanvas.InkPresenter.InputDeviceTypes =
+      ```csharp
+        public MainPage()
+        {
+          this.InitializeComponent();
+
+          // Set supported inking device types.
+          inkCanvas.InkPresenter.InputDeviceTypes =
             Windows.UI.Core.CoreInputDeviceTypes.Mouse |
             Windows.UI.Core.CoreInputDeviceTypes.Pen;
 
-        // Set initial ink stroke attributes.
-        InkDrawingAttributes drawingAttributes = new InkDrawingAttributes();
-        drawingAttributes.Color = Windows.UI.Colors.Black;
-        drawingAttributes.IgnorePressure = false;
-        drawingAttributes.FitToCurve = true;
-        inkCanvas.InkPresenter.UpdateDefaultDrawingAttributes(drawingAttributes);
+          // Set initial ink stroke attributes.
+          InkDrawingAttributes drawingAttributes = new InkDrawingAttributes();
+          drawingAttributes.Color = Windows.UI.Colors.Black;
+          drawingAttributes.IgnorePressure = false;
+          drawingAttributes.FitToCurve = true;
+          inkCanvas.InkPresenter.UpdateDefaultDrawingAttributes(drawingAttributes);
 
-        // By default, the InkPresenter processes input modified by 
-        // a secondary affordance (pen barrel button, right mouse 
-        // button, or similar) as ink.
-        // To pass through modified input to the app for custom processing 
-        // on the app UI thread instead of the background ink thread, set 
-        // InputProcessingConfiguration.RightDragAction to LeaveUnprocessed.
-        inkCanvas.InkPresenter.InputProcessingConfiguration.RightDragAction = 
-            InkInputRightDragAction.LeaveUnprocessed;
+          // By default, the InkPresenter processes input modified by
+          // a secondary affordance (pen barrel button, right mouse
+          // button, or similar) as ink.
+          // To pass through modified input to the app for custom processing
+          // on the app UI thread instead of the background ink thread, set
+          // InputProcessingConfiguration.RightDragAction to LeaveUnprocessed.
+          inkCanvas.InkPresenter.InputProcessingConfiguration.RightDragAction =
+              InkInputRightDragAction.LeaveUnprocessed;
 
-        // Listen for unprocessed pointer events from modified input.
-        // The input is used to provide selection functionality.
-        inkCanvas.InkPresenter.UnprocessedInput.PointerPressed += 
-            UnprocessedInput_PointerPressed;
-        inkCanvas.InkPresenter.UnprocessedInput.PointerMoved += 
-            UnprocessedInput_PointerMoved;
-        inkCanvas.InkPresenter.UnprocessedInput.PointerReleased += 
-            UnprocessedInput_PointerReleased;
+          // Listen for unprocessed pointer events from modified input.
+          // The input is used to provide selection functionality.
+          inkCanvas.InkPresenter.UnprocessedInput.PointerPressed +=
+              UnprocessedInput_PointerPressed;
+          inkCanvas.InkPresenter.UnprocessedInput.PointerMoved +=
+              UnprocessedInput_PointerMoved;
+          inkCanvas.InkPresenter.UnprocessedInput.PointerReleased +=
+              UnprocessedInput_PointerReleased;
 
-        // Listen for new ink or erase strokes to clean up selection UI.
-        inkCanvas.InkPresenter.StrokeInput.StrokeStarted += 
-            StrokeInput_StrokeStarted;
-        inkCanvas.InkPresenter.StrokesErased += 
-            InkPresenter_StrokesErased;
-    }
-```
+          // Listen for new ink or erase strokes to clean up selection UI.
+          inkCanvas.InkPresenter.StrokeInput.StrokeStarted +=
+              StrokeInput_StrokeStarted;
+          inkCanvas.InkPresenter.StrokesErased +=
+              InkPresenter_StrokesErased;
+        }
+      ```
 
 4.  Затем мы определяем обработчики для необработанных событий [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711) и [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713), переданных элементом [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081).
 
     Все функции выбора реализованы в этих обработчиках, включая росчерк лассо и ограничивающий прямоугольник.
 
     ![Лассо выбора](images/ink-unprocessed-3-small.png)
-```    CSharp
-// Handle unprocessed pointer events from modifed input.
-    // The input is used to provide selection functionality.
-    // Selection UI is drawn on a canvas under the InkCanvas.
-    private void UnprocessedInput_PointerPressed(
-        InkUnprocessedInput sender, PointerEventArgs args)
-    {
-        // Initialize a selection lasso.
-        lasso = new Polyline()
+
+      ```csharp
+        // Handle unprocessed pointer events from modifed input.
+        // The input is used to provide selection functionality.
+        // Selection UI is drawn on a canvas under the InkCanvas.
+        private void UnprocessedInput_PointerPressed(
+          InkUnprocessedInput sender, PointerEventArgs args)
         {
+          // Initialize a selection lasso.
+          lasso = new Polyline()
+          {
             Stroke = new SolidColorBrush(Windows.UI.Colors.Blue),
-            StrokeThickness = 1,
-            StrokeDashArray = new DoubleCollection() { 5, 2 },
-        };
+              StrokeThickness = 1,
+              StrokeDashArray = new DoubleCollection() { 5, 2 },
+              };
 
-        lasso.Points.Add(args.CurrentPoint.RawPosition);
+              lasso.Points.Add(args.CurrentPoint.RawPosition);
 
-        selectionCanvas.Children.Add(lasso);
-    }
+              selectionCanvas.Children.Add(lasso);
+          }
 
-    private void UnprocessedInput_PointerMoved(
-        InkUnprocessedInput sender, PointerEventArgs args)
-    {
-        // Add a point to the lasso Polyline object.
-        lasso.Points.Add(args.CurrentPoint.RawPosition);
-    }
+          private void UnprocessedInput_PointerMoved(
+            InkUnprocessedInput sender, PointerEventArgs args)
+          {
+            // Add a point to the lasso Polyline object.
+            lasso.Points.Add(args.CurrentPoint.RawPosition);
+          }
 
-    private void UnprocessedInput_PointerReleased(
-        InkUnprocessedInput sender, PointerEventArgs args)
-    {
-        // Add the final point to the Polyline object and 
-        // select strokes within the lasso area.
-        // Draw a bounding box on the selection canvas 
-        // around the selected ink strokes.
-        lasso.Points.Add(args.CurrentPoint.RawPosition);
+          private void UnprocessedInput_PointerReleased(
+            InkUnprocessedInput sender, PointerEventArgs args)
+          {
+            // Add the final point to the Polyline object and
+            // select strokes within the lasso area.
+            // Draw a bounding box on the selection canvas
+            // around the selected ink strokes.
+            lasso.Points.Add(args.CurrentPoint.RawPosition);
 
-        boundingRect = 
-            inkCanvas.InkPresenter.StrokeContainer.SelectWithPolyLine(
+            boundingRect =
+              inkCanvas.InkPresenter.StrokeContainer.SelectWithPolyLine(
                 lasso.Points);
 
-        DrawBoundingRect();
-    }
-```
+            DrawBoundingRect();
+          }
+      ```
 
 5.  Чтобы закончить обработчик событий PointerReleased, мы очищаем слой выбора всего содержимого (росчерк лассо) и рисуем один ограничивающий прямоугольник вокруг росчерков пера, включенных в область лассо.
 
     ![Ограничивающий прямоугольник выбора](images/ink-unprocessed-4-small.png)
-```    CSharp
-// Draw a bounding rectangle, on the selection canvas, encompassing 
-    // all ink strokes within the lasso area.
-    private void DrawBoundingRect()
-    {
-        // Clear all existing content from the selection canvas.
-        selectionCanvas.Children.Clear();
 
-        // Draw a bounding rectangle only if there are ink strokes 
-        // within the lasso area.
-        if (!((boundingRect.Width == 0) || 
-            (boundingRect.Height == 0) || 
-            boundingRect.IsEmpty))
+      ```csharp
+        // Draw a bounding rectangle, on the selection canvas, encompassing
+        // all ink strokes within the lasso area.
+        private void DrawBoundingRect()
         {
-            var rectangle = new Rectangle()
+          // Clear all existing content from the selection canvas.
+          selectionCanvas.Children.Clear();
+
+          // Draw a bounding rectangle only if there are ink strokes
+          // within the lasso area.
+          if (!((boundingRect.Width == 0) ||
+            (boundingRect.Height == 0) ||
+            boundingRect.IsEmpty))
             {
+              var rectangle = new Rectangle()
+              {
                 Stroke = new SolidColorBrush(Windows.UI.Colors.Blue),
-                StrokeThickness = 1,
-                StrokeDashArray = new DoubleCollection() { 5, 2 },
-                Width = boundingRect.Width,
-                Height = boundingRect.Height
-            };
+                  StrokeThickness = 1,
+                  StrokeDashArray = new DoubleCollection() { 5, 2 },
+                  Width = boundingRect.Width,
+                  Height = boundingRect.Height
+              };
 
-            Canvas.SetLeft(rectangle, boundingRect.X);
-            Canvas.SetTop(rectangle, boundingRect.Y);
+              Canvas.SetLeft(rectangle, boundingRect.X);
+              Canvas.SetTop(rectangle, boundingRect.Y);
 
-            selectionCanvas.Children.Add(rectangle);
-        }
-    }
-```
+              selectionCanvas.Children.Add(rectangle);
+            }
+          }
+      ```
 
 6.  Наконец мы определяем обработчики для событий InkPresenter [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702) и [**StrokesErased**](https://msdn.microsoft.com/library/windows/apps/dn948767).
 
     Оба эти события просто вызывают одну и ту же функцию очистки, чтобы сбросить текущий выбор при обнаружении нового росчерка.
-```    CSharp
-// Handle new ink or erase strokes to clean up selection UI.
-    private void StrokeInput_StrokeStarted(
-        InkStrokeInput sender, Windows.UI.Core.PointerEventArgs args)
-    {
-        ClearSelection();
-    }
 
-    private void InkPresenter_StrokesErased(
-        InkPresenter sender, InkStrokesErasedEventArgs args)
-    {
-        ClearSelection();
-    }
-```
+      ```csharp
+        // Handle new ink or erase strokes to clean up selection UI.
+        private void StrokeInput_StrokeStarted(
+          InkStrokeInput sender, Windows.UI.Core.PointerEventArgs args)
+        {
+          ClearSelection();
+        }
+
+        private void InkPresenter_StrokesErased(
+          InkPresenter sender, InkStrokesErasedEventArgs args)
+        {
+          ClearSelection();
+        }
+      ```
 
 7.  Вот функция для удаления всего пользовательского интерфейса выбора с холста выбора, когда начинается новый росчерк или стирается существующий.
-```    CSharp
-// Clean up selection UI.
-    private void ClearSelection()
-    {
-        var strokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
-        foreach (var stroke in strokes)
-        {
-            stroke.Selected = false;
-        }
-        ClearDrawnBoundingRect();
-    }
 
-    private void ClearDrawnBoundingRect()
-    {
-        if (selectionCanvas.Children.Any())
+      ```csharp
+        // Clean up selection UI.
+        private void ClearSelection()
         {
+          var strokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
+          foreach (var stroke in strokes)
+          {
+            stroke.Selected = false;
+          }
+          ClearDrawnBoundingRect();
+        }
+
+        private void ClearDrawnBoundingRect()
+        {
+          if (selectionCanvas.Children.Any())
+          {
             selectionCanvas.Children.Clear();
             boundingRect = Rect.Empty;
+          }
         }
-    }
-```
+      ```
 
 ## Пользовательская передача рукописного ввода
-
 
 По умолчанию рукописные данные обрабатываются в фоновом потоке с низкой задержкой и отображаются как «влажные» в процессе ввода. После завершения росчерка (когда пользователь поднял перо или палец либо отпустил кнопку мыши) росчерк обрабатывается в потоке пользовательского интерфейса и отображается «сухим» на слое [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (над содержимым приложения, вместо влажных рукописных данных).
 
@@ -440,38 +438,18 @@ public MainPage()
 Полный пример этой функции см. в разделе [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314).
 
 
-## Другие статьи в этом разделе 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Раздел</th>
-<th align="left">Описание</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>[Распознавание росчерков пера](convert-ink-to-text.md)</p></td>
-<td align="left"><p>Преобразуйте росчерки пера в текст с помощью распознавания рукописного ввода или в фигуры с помощью настраиваемого распознавания.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[Хранение и извлечение росчерков пера](save-and-load-ink.md)</p></td>
-<td align="left"><p>Храните данные росчерка пера в GIF-файле, используя встроенные метаданные формата Ink Serialized Format (ISF).</p></td>
-</tr>
-</tbody>
-</table>
+## Другие статьи в этом разделе
 
- 
+| Раздел | Описание |
+| --- | --- |
+| [Распознавание росчерков пера](convert-ink-to-text.md) | Преобразуйте росчерки пера в текст с помощью распознавания рукописного ввода или в фигуры с помощью настраиваемого распознавания. |
+| [Хранение и извлечение росчерков пера](save-and-load-ink.md) | Храните данные росчерка пера в GIF-файле, используя встроенные метаданные формата Ink Serialized Format (ISF). |
+| [Добавление InkToolbar в приложение UWP для рукописного ввода](ink-toolbar.md) | Добавьте InkToolbar по умолчанию в приложение универсальной платформы Windows (UWP) для рукописного ввода, добавьте кнопку специального пера в InkToolbar и привяжите кнопку специального пера к определению специального пера. |
 
+## Статьи по теме
 
-## Связанные разделы
-
-
-* [Работа с данными указателя](handle-pointer-input.md)
-* [Распознавание устройств ввода](identify-input-devices.md)
+* [Работа с входными данными указателя](handle-pointer-input.md)
+* [Определение устройств ввода](identify-input-devices.md)
 
 **Примеры**
 * [Пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620308)
@@ -493,10 +471,6 @@ public MainPage()
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

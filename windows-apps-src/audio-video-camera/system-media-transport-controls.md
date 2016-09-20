@@ -1,53 +1,38 @@
 ---
 author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
-description: "Класс SystemMediaTransportControls позволяет приложению использовать встроенные в ОС Windows системные элементы управления транспортом мультимедиа и обновлять отображаемые элементом управления метаданные о мультимедиа, воспроизводимом приложением."
-title: "Системные элементы управления транспортом мультимедиа"
+description: "Класс SystemMediaTransportControls позволяет приложению использовать встроенные в Windows системные элементы управления транспортом мультимедиа и обновлять отображаемые элементом управления метаданные о мультимедиа, воспроизводимом приложением."
+title: "Ручное управление системными элементами управления воспроизведением мультимедиа"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
+ms.sourcegitcommit: 2cf432bc9d6eb0e564b6d6aa7fdbfd78c7eef272
+ms.openlocfilehash: 6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e2
 
 ---
 
-# Системные элементы управления транспортом мультимедиа
+# Ручное управление системными элементами управления воспроизведением мультимедиа
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+Начиная c Windows 10 версии 1607, приложения UWP, использующие класс [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) для воспроизведения мультимедиа, по умолчанию автоматически интегрируются с системными элементами управления транспортировкой мультимедиа (SMTC). Это рекомендуемый способ взаимодействия с SMTC для большинства сценариев. Дополнительные сведения о настройке интеграции SMTC с **MediaPlayer** по умолчанию см. в разделе [Интеграция с системными элементами управления транспортировкой мультимедиа](integrate-with-systemmediatransportcontrols.md).
 
-Класс [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) позволяет приложению использовать встроенные в ОС Windows системные элементы управления транспортом мультимедиа и обновлять отображаемые элементом управления метаданные о мультимедиа, воспроизводимом приложением.
-
-Системные элементы управления транспортом отличаются от элементов управления транспортом в объекте [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). Системные элементы управления открываются при нажатии клавиши на мультимедийном оборудовании (регулировка громкости на наушниках или клавиши мультимедиа на клавиатуре). Если пользователь нажимает клавишу ПАУЗА на клавиатуре и ваше приложение поддерживает [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677), приложение получает уведомление и может выполнить соответствующее действие.
-
-Приложение также может обновлять сведения о мультимедиа, в том числе название композиции и эскиз, отображаемые классом [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677).
-
-**Примечание.**  
-Код, описанный в этом обзоре, реализован в [примере системных элементов управления транспортировкой мультимедиа UWP](http://go.microsoft.com/fwlink/?LinkId=619488). Скачайте этот пример, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки вашего приложения.
+Несколько ситуаций, в которых может потребоваться реализовать ручной элемент управления SMTC. К ним относятся те, в которых [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) используется для управления воспроизведением одного или нескольких проигрывателей мультимедиа. Если вы используете несколько проигрывателей мультимедиа и хотите иметь только один экземпляр SMTC для вашего приложения. Необходимо вручную управлять SMTC, если вы используете [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaElement) для воспроизведения мультимедиа.
 
 ## Настройка элементов управления транспортом
+Если вы используете **MediaPlayer** для воспроизведения мультимедиа, вы можете получить экземпляр класса [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.SystemMediaTransportControls) путем получения доступа к свойству [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.SystemMediaTransportControls). Если вы собираетесь вручную управлять SMTC, отключите автоматическую интеграцию, обеспечиваемую **MediaPlayer**, задав свойству [**CommandManager.IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) значение false.
 
-В XAML-файле страницы определите класс [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), которым будут управлять системные элементы управления транспортом мультимедиа. События [**CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) и [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) используются для обновления системных элементов управления транспортом мультимедиа и будут описаны в этой статье.
+[!code-cs[InitSMTCMediaPlayer](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaPlayer)]
 
-[!code-xml[MediaElementSystemMediaTransportControls](./code/SMTCWin10/cs/MainPage.xaml#SnippetMediaElementSystemMediaTransportControls)]
+Также можно получить экземпляр класса [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677), вызвав метод [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708). Необходимо получить объект с помощью этого метода, если вы используете **MediaElement** для воспроизведения мультимедиа.
 
-Добавьте в XAML-файл кнопку, с помощью которой пользователь сможет выбирать файл для воспроизведения.
-
-[!code-xml[OpenButton](./code/SMTCWin10/cs/MainPage.xaml#SnippetOpenButton)]
-
-В коде страницы добавьте директивы using для указанных ниже пространств имен.
-
-[!code-cs[Пространство имен](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetNamespace)]
-
-Добавьте обработчик нажатия кнопки, использующий класс [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), чтобы пользователь мог выбирать файл, а затем вызовите метод [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338), чтобы сделать его активным файлом для элемента **MediaElement**.
-
-[!code-cs[OpenMediaFile](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetOpenMediaFile)]
-
-Получите экземпляр класса [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677), вызвав метод [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708).
+[!code-cs[InitSMTCMediaElement](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaElement)]
 
 Включите кнопки, которые будут использоваться приложением, настроив соответствующее свойство "is enabled" объекта **SystemMediaTransportControls**, например [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714), [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713), [**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712) и [**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715). Полный список доступных элементов управления см. в справочной документации для **SystemMediaTransportControls**.
 
+[!code-cs[EnableContols](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetEnableContols)]
+
 Зарегистрируйте обработчик события [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706), чтобы получать уведомления, когда пользователь нажимает кнопку.
 
-[!code-cs[SystemMediaTransportControlsSetup](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsSetup)]
+[!code-cs[RegisterButtonPressed](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterButtonPressed)]
 
 ## Обработка нажатий кнопок системных элементов управления транспортом мультимедиа
 
@@ -83,9 +68,8 @@ ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 
 -   Необходимо указать значение для свойств [**StartTime**](https://msdn.microsoft.com/library/windows/apps/mt218751), [**EndTime**](https://msdn.microsoft.com/library/windows/apps/mt218747) и [**Position**](https://msdn.microsoft.com/library/windows/apps/mt218755), чтобы системные элементы управления отображали временную шкалу для воспроизводящегося элемента.
 
--   С помощью свойств [
-              **MinSeekTime**
-            ](https://msdn.microsoft.com/library/windows/apps/mt218749) и [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) можно указать диапазон в пределах временной шкалы, в котором пользователь может выполнять поиск. Для этого можно использовать типичный сценарий, заключающийся в том, чтобы разрешить поставщикам содержимого включать рекламные паузы в их мультимедиа.
+-   
+              С помощью свойств [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) и [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) можно указать диапазон в пределах временной шкалы, в котором пользователь может выполнять поиск. Для этого можно использовать типичный сценарий, заключающийся в том, чтобы разрешить поставщикам содержимого включать рекламные паузы в их мультимедиа.
 
     Необходимо настроить свойства [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) и [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748), чтобы можно было создать событие [**PositionChangeRequest**](https://msdn.microsoft.com/library/windows/apps/mt218755).
 
@@ -106,7 +90,7 @@ ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 
 [!code-cs[RegisterPlaybackChangedHandler](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterPlaybackChangedHandler)]
 
-Прежде всего убедитесь, что в обработчике события необходимое значение находится в допустимом и ожидаемом диапазоне. Если это так, настройте соответствующее свойство объекта [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), а затем — соответствующее свойство объекта [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677).
+Прежде всего убедитесь, что в обработчике события необходимое значение находится в допустимом и ожидаемом диапазоне. Если это так, настройте соответствующее свойство объекта [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), а затем— соответствующее свойство объекта [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677).
 
 [!code-cs[PlaybackChangedHandler](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetPlaybackChangedHandler)]
 
@@ -114,22 +98,25 @@ ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 
 ## Использование системных элементов управления транспортом мультимедиа для воспроизведения звука в фоновом режиме
 
-Чтобы использовать системные элементы управления транспортом мультимедиа для воспроизведения звука в фоновом режиме, необходимо включить кнопки воспроизведения и приостановки, задав для свойств [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714) и [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713) значение true. Кроме того, ваше приложение должно обрабатывать событие [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706).
+Если вы не используете автоматическую интеграцию SMTC, обеспечиваемую **MediaPlayer**, необходимо вручную провести интеграцию с SMTC для включения звука в фоновом режиме. Как минимум, ваше приложение должно включить кнопки воспроизведения и приостановки, задав свойствам [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714) и [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713) значение true. Кроме того, ваше приложение должно обрабатывать событие [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706). Если ваше приложение не соответствует этим требованиям, воспроизведение звука будет прекращаться при переходе приложения в фоновый режим.
 
-Чтобы получить экземпляр класса [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) из фоновой задачи приложения, необходимо использовать свойство [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) вместо метода [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708), который можно использовать только из приложения переднего плана.
+Приложения, которые используют новую модель с одним процессом для воспроизведения звука в фоновом режиме, должны получать экземпляр [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) путем вызова [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708). Приложения, использующие устаревшую модель с двумя процессами для фонового воспроизведения звука, должны использовать [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) для получения доступа к SMTC из своего фонового процесса.
 
-Дополнительные сведения о воспроизведении звука в фоновом режиме см. в разделе [Фоновый звук](background-audio.md).
+Дополнительные сведения о воспроизведении звука в фоновом режиме см. в разделе [Воспроизведение мультимедиа в фоновом режиме](background-audio.md).
+
+## Статьи по теме
+* [Воспроизведение мультимедиа](media-playback.md)
+* [Интеграция с системными элементами управления транспортировкой мультимедиа](integrate-with-systemmediatransportcontrols.md) 
+* [Пример системной транспортировки мультимедиа](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
 
  
 
- 
 
 
 
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

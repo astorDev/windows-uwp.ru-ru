@@ -1,59 +1,70 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: This article lists the camera features that are available for UWP apps and links to the how-to articles that show how to use them.
-title: Camera
+description: "В этой статье перечисляются функции камеры, доступные для приложений UWP, и приводятся ссылки на статьи с инструкциями по их использованию."
+title: "Камера"
+translationtype: Human Translation
+ms.sourcegitcommit: f9f85359bd24e0a642bf9cbe3c76f6bfac7866f8
+ms.openlocfilehash: 8759a7cdb1d516f9c88f866887861c2f28085b5b
+
 ---
 
-# Camera
+# Камера
 
-##Use the Windows built-in camera UI
-| Topic                                                                                             | Description                                                                                                                                                                                                                                                                                    |
+Этот раздел содержит рекомендации по созданию приложений универсальной платформы Windows (UWP), которые используют камеру или микрофон для захвата фотографий, видео или аудио.
+
+##Использование встроенного пользовательского интерфейса камеры в Windows
+| Раздел                                                                                             | Описание                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Capture photos and video with Windows built-in camera UI](capture-photos-and-video-with-cameracaptureui.md) | Shows how to use the [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) class to capture photos or videos using the camera UI built into Windows. If you simply want to enable the user to capture a photo or video and return the result to your app, this is the quickest and easiest way to do it.  |
-##Basic MediaCapture tasks
-| Topic                                                                                             | Description                                                                                                                                                                                                                                                                                    |
+| [Фото- и видеосъемка с использованием встроенного пользовательского интерфейса камеры в Windows](capture-photos-and-video-with-cameracaptureui.md) | Здесь рассказывается, как использовать класс [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) для фото- и видеосъемки с помощью встроенного пользовательского интерфейса камеры в Windows. Если требуется просто предоставить пользователю возможность снимать фотографии или видеоклипы и возвращать результат в приложение, это самый быстрый и простой способ.  |
+##Основные задачи MediaCapture
+| Раздел                                                                                             | Описание                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Capture photos and video with Windows built-in camera UI](simple-camera-preview-access.md) | Shows how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app. |
-| [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md) | Shows the simplest way to capture photos and video using the [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) class. The **MediaCapture** class exposes a robust set of APIs that provide low-level control over the capture pipeline and enable advanced capture scenarios, but this article is intended to help you add basic media capture to your app quickly and easily. |
-| [Camera UI features for mobile devices](camera-ui-features-for-mobile-devices.md) | Shows you how to take advantage of special camera UI features that are only present on mobile devices.  |
+| [Отображение предварительного изображения с камеры](simple-camera-preview-access.md) | Показано, как быстро вывести поток предварительного просмотра изображения с камеры на странице XAML в приложении UWP. |
+| [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md) | Показан простейший способ съемки фотографий и видеоклипов с помощью класса [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture). Класс **MediaCapture** предоставляет широкий набор API, которые обеспечивают низкоуровневое управление конвейером захвата и поддерживают расширенные сценарии захвата, но цель этой статьи— помочь быстро и просто добавлять в приложение основные функции захвата мультимедиа. |
+| [Функции пользовательского интерфейса камеры для мобильных устройств](camera-ui-features-for-mobile-devices.md) | Здесь показано, как использовать особенные элементы пользовательского интерфейса камеры, которые присутствуют только на мобильных устройствах.  |
                                                                                                                
-##Advanced MediaCapture tasks   
+##Дополнительные задачи MediaCapture   
                                                                                                                
-| Topic                                                                                             | Description                                                                                                                                                                                                                                                                                    |
+| Раздел                                                                                             | Описание                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Handle device and screen orientation with MediaCapture](handle-device-orientation-with-mediacapture.md) | Shows you how to handle device orientation when capturing photos and videos by using a helper class. | 
-| [Discover and select camera capabilities with camera profiles](camera-profiles.md) | Shows how to use camera profiles to discover and manage the capabilities of different video capture devices. This includes tasks such as selecting profiles that support specific resolutions or frame rates, profiles that support simultaneous access to multiple cameras, and profiles that support HDR. |
-| [Set format, resolution, and frame rate for MediaCapture](set-media-encoding-properties.md) | Shows you how to use the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) interface to set the resolution and frame rate of the camera preview stream and captured photos and video. It also shows how to ensure that the aspect ratio of the preview stream matches that of the captured media. |
-| [HDR and low-light photo capture](high-dynamic-range-hdr-photo-capture.md) | Shows you how to use the AdvancedPhotoCapture class to capture High Dynamic Range (HDR) and low-light photos. |
-| [Manual camera controls for photo and video capture](capture-device-controls-for-photo-and-video-capture.md) | Shows you how to use manual device controls to enable enhanced photo and video capture scenarios including optical image stabilization and smooth zoom. |
-| [Manual camera controls for video capture](capture-device-controls-for-video-capture.md) | Shows you how to use manual device controls to enable enhanced video capture scenarios including HDR video and exposure priority.  |
-| [Manual camera controls for video capture](capture-device-controls-for-video-capture.md) | Shows you how to use manual device controls to enable enhanced video capture scenarios including HDR video and exposure priority.  |
-| [Video stabilization effect for video capture](effects-for-video-capture.md) | Shows you how to use the video stabilization effect.  |
-| [Scene anlysis for MediaCapture](scene-analysis-for-media-capture.md) | Shows how to use the SceneAnalysisEffect and the FaceDetectionEffect to analyze the content of the media capture preview stream.  |
-| [Capture a photo sequence with VariablePhotoSequence](variable-photo-sequence.md) | Shows you how to capture a variable photo sequence, which allows you to capture multiple frames of images in rapid succession and configure each frame to use different focus, flash, ISO, exposure, and exposure compensation settings.  |
-| [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md) | Shows you how to use a [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) with [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) to get media frames from one or more available sources, including color, depth, and infrared cameras, audio devices, or even custom frame sources such as those that produce skeletal tracking frames. This feature is designed to be used by apps that perform real-time processing of media frames, such as augmented reality and depth-aware camera apps.  |
-| [Get a preview frame](get-a-preview-frame.md) | Shows you how to get a single preview frame from the media capture preview stream.  |                                                                                                   
+| [Обработка ориентации устройства и экрана с помощью MediaCapture](handle-device-orientation-with-mediacapture.md) | Показано, как обрабатывать ориентацию устройства при захвате фотографий и видео с помощью вспомогательного класса. | 
+| [Обнаружение и выбор возможностей камеры с помощью профилей камеры](camera-profiles.md) | Здесь рассказывается, как использовать профили камеры для обнаружения возможностей различных устройств видеозахвата и управления ими. Сюда входят такие задачи, как выбор профилей, которые поддерживают определенные значения разрешения и частоты кадров, профилей, которые поддерживают одновременный доступ к нескольким камерам, и профилей, которые поддерживают HDR. |
+| [Установка формата, разрешения и частоты кадров для MediaCapture](set-media-encoding-properties.md) | Здесь рассказывается, как с помощью интерфейса [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) задать разрешение и частоту кадров потока предварительного просмотра изображения с камеры, а также снятых фотографий и видео. Кроме того, здесь рассказывается, как обеспечить соответствие пропорций потока предварительного просмотра пропорциям записи мультимедиа. |
+| [HDR и фотосъемка при слабом освещении](high-dynamic-range-hdr-photo-capture.md) | Здесь рассказывается, как использовать класс [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture) для съемки фотографий с расширенным динамическим диапазоном (HDR) и в условиях низкой освещенности. |
+| [Ручные элементы управления фото- и видеозахватом на камере](capture-device-controls-for-photo-and-video-capture.md) | Здесь рассказывается, как использовать ручные элементы управления устройства для включения расширенных сценариев фото- и видеозахвата, в том числе оптической стабилизации изображений и плавного масштабирования. |
+| [Ручные элементы управления для видеозахвата на камере](capture-device-controls-for-video-capture.md) | Здесь рассказывается, как с помощью ручных элементов управления устройства включить расширенные сценарии видеозахвата, в том числе видеосъемку с расширенным динамическим диапазоном (HDR) и приоритетом экспозиции.  |
+| [Эффект стабилизации видео для видеозахвата](effects-for-video-capture.md) | Здесь показано, как использовать эффект стабилизации видеоизображения.  |
+| [Анализ сцен для MediaCapture](scene-analysis-for-media-capture.md) | Здесь рассказывается, как с помощью классов [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.SceneAnalysisEffect) и [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.FaceDetectionEffect) анализировать содержимое потока предварительного просмотра при захвате мультимедиа.  |
+| [Съемка последовательности фотографий с помощью VariablePhotoSequence](variable-photo-sequence.md) | Здесь рассказывается, как захватить переменную серию фотографий (то есть несколько снимков, быстро следующих один за другим) и настроить для каждого снимка различные параметры фокусировки, вспышки, числа ISO, экспозиции и коррекции экспозиции.  |
+| [Обработка кадров мультимедиа с помощью MediaFrameReader](process-media-frames-with-mediaframereader.md) | Здесь, рассказывается, как использовать класс [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) с [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) для получения кадров мультимедиа из одного или нескольких доступных источников, включая цветные камеры, камеры с эффектом глубины, инфракрасные камеры, звуковые устройства и даже специальные источники кадров, например создающие скелетные кадры отслеживания. Эта возможность предназначена для использования приложениями, которые выполняют обработку кадров мультимедиа в режиме реального времени, например приложениями дополненной реальности или камеры с эффектом глубины.  |
+| [Получение кадра предварительного просмотра](get-a-preview-frame.md) | Здесь объясняется, как получить один кадр предварительного просмотра из потока предварительного просмотра захвата мультимедийного содержимого.  |                                                                                                   
 
 
-## Windows Universal app samples for camera
+## Примеры приложений UWP для камеры
 
-* [Camera face detection sample](http://go.microsoft.com/fwlink/?LinkID=619486&clcid=0x409)
-* [Camera preview frame sample](http://go.microsoft.com/fwlink/?LinkID=620516&clcid=0x409)
-* [Camera HDR sample](http://go.microsoft.com/fwlink/?LinkID=620517&clcid=0x409)
-* [Camera manual controls sample](http://go.microsoft.com/fwlink/?LinkID=627611&clcid=0x409)
-* [Camera profile sample](http://go.microsoft.com/fwlink/?LinkID=620518&clcid=0x409)
-* [Camera resolution sample](http://go.microsoft.com/fwlink/?LinkID=624252&clcid=0x409)
-* [Camera starter kit](http://go.microsoft.com/fwlink/?LinkID=619479&clcid=0x409)
-* [Camera video stabilization sample](http://go.microsoft.com/fwlink/?LinkID=620519&clcid=0x409)
+* [Пример обнаружения лиц с камеры](http://go.microsoft.com/fwlink/p/?LinkID=619486&clcid=0x409)
+* [Пример предварительного просмотра кадра с камеры](http://go.microsoft.com/fwlink/p/?LinkID=620516&clcid=0x409)
+* [Пример камеры с расширенным динамическим диапазоном (HDR)](http://go.microsoft.com/fwlink/p/?LinkID=620517&clcid=0x409)
+* [Пример ручных элементов управления камеры](http://go.microsoft.com/fwlink/p/?LinkID=627611&clcid=0x409)
+* [Пример профиля камеры](http://go.microsoft.com/fwlink/p/?LinkID=620518&clcid=0x409)
+* [Пример разрешения камеры](http://go.microsoft.com/fwlink/p/?LinkID=624252&clcid=0x409)
+* [Начальный набор камеры](http://go.microsoft.com/fwlink/p/?LinkID=619479&clcid=0x409)
+* [Пример стабилизации видеоизображения с камеры](http://go.microsoft.com/fwlink/p/?LinkID=620519&clcid=0x409)
 
-## Related topics
+## Связанные разделы
 
-* [Audio, Video, and Camera](index.md)
- 
+* [Звук, видео и камера](index.md)
+ 
 
- 
+ 
 
 
+
+
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

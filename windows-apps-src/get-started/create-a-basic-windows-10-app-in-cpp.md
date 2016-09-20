@@ -1,11 +1,11 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: "Создание приложения Hello World на C++ (Windows 10)"
 description: "В Microsoft Visual Studio 2015 вы можете использовать язык C++ для разработки приложения, которое работает в Windows10, в том числе на телефонах под управлением Windows10. Интерфейс пользователя в этих приложениях определен на языке XAML."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 7836cb385cc37f39fa1af01ea981263fcf3f3634
+ms.sourcegitcommit: cedab04d2969809dca84097b027e973be9b9948b
+ms.openlocfilehash: 55d5b160bbf1d877408a52e981a030dee28515c4
 
 ---
 
@@ -13,21 +13,19 @@ ms.openlocfilehash: 7836cb385cc37f39fa1af01ea981263fcf3f3634
 
 В Microsoft Visual Studio 2015 вы можете использовать язык C++ для разработки приложения, которое работает в Windows10, в том числе на телефонах под управлением Windows10. Интерфейс пользователя в этих приложениях определен на языке XAML.
 
-Чтобы разработать приложение, которое работает в Windows8.1 и Windows Phone 8.1, используйте Microsoft Visual Studio2013 с обновлением3 или более позднюю версию. Выполните действия, указанные [здесь](https://msdn.microsoft.com/library/windows/apps/Dn263168). Самое существенное отличие заключается в том, что для Windows 8.1и Windows Phone 8.1 используется решение с тремя проектами: для компьютера (или планшета), для телефона и для общего кода. В разработке для Windows 10 все коды используют один и тот же проект.
-
 Учебники для других языков программирования см. в следующих разделах.
 
 -   [Создание первого приложения Магазина Windows на JavaScript](https://msdn.microsoft.com/library/windows/apps/BR211385)
 
--   [Создание первого приложения Магазина Windows на C# или Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581)
+-   [Создание первого приложения Магазина Windows на C#](https://msdn.microsoft.com/library/windows/apps/Hh974581)
 
-## Перед началом работы
+## Перед началом работы...
 
 -   Для работы с этим учебником необходимо использовать Visual Studio 2015 Community или более поздней версии или одну из версий Visual Studio 2015, кроме Community, на компьютере под управлением Windows10 или Windows 8.1. Для скачивания перейдите на страницу [Получение инструментов](http://go.microsoft.com/fwlink/p/?LinkId=532666).
 -   Установите подходящий пакет [SDK](http://go.microsoft.com/fwlink/?LinkId=533049) для разработки приложений универсальной платформы Windows.
 -   Предполагается, что вы имеете общее представление о стандартном C++ и о XAML и владеете понятиями, описанными в разделе [Обзор языка XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 -   Также предполагается, что вы используете в Visual Studio макет окна по умолчанию. Чтобы вернуться к макету по умолчанию, выберите в строке меню пункт **Окно** > **Сброс макета окон**.
--   Обратите внимание, что существует известная проблема с Visual Studio2015, которая может привести к исключению NullReferenceException при загрузке конструктора XAML. Эта проблема блокирует некоторые из этапов этого учебника, если вы не собираетесь применить решение. Подробнее об этой проблеме и решении, см. в [этой записи форума MSDN](http://go.microsoft.com/fwlink/p/?LinkId=624036) .
+
 
 ## Сравнение классических приложений на C++ с приложениями для Windows
 
@@ -101,112 +99,104 @@ ms.openlocfilehash: 7836cb385cc37f39fa1af01ea981263fcf3f3634
 
 Давайте сначала посмотрим на файлы проекта.
 
--   
-              **App.xaml, App.xaml.h, App.xaml.cpp** — представляют объект приложения, который является точкой входа приложения. App.xaml не содержит разметки пользовательского интерфейса, относящейся к отдельным страницам, но вы можете добавить стили и другие элементы пользовательского интерфейса, которые следует сделать доступными с любой страницы. Файлы кода программной части содержат обработчики для событий **OnLaunched** и **OnSuspending**. Обычно сюда добавляется пользовательский код для инициализации приложения при запуске, а также здесь выполняется очистка при приостановке и завершении работы.
--   
-              **MainPage.xaml, MainPage.xaml.h, MainPage.xaml.cpp** — содержат разметку XAML и код программной части для стандартной начальной страницы в приложении. Эта страница не поддерживает навигацию и не имеет встроенных элементов управления.
--   
-              **pch.h, pch.cpp** — предварительно скомпилированный файл заголовка и файл, который включает его в ваш проект. В файле pch.h вы можете добавлять любые заголовки, которые не изменяются часто и которые добавлены в другие файлы в решении.
--   
-              **Package.appxmanifest** — XML-файл, описывающий возможности устройства, которые необходимы вашему приложению. Также содержит информацию о версии приложения и другие метаданные. Чтобы открыть этот файл в **конструкторе манифеста**, просто дважды щелкните его.
--   
-              **HelloWorld\_TemporaryKey.pfx** — ключ, разрешающий развертывание приложения на этом компьютере из Visual Studio.
+-   **App.xaml, App.xaml.h, App.xaml.cpp**— представляют объект приложения, который является точкой входа приложения. App.xaml не содержит разметки пользовательского интерфейса, относящейся к отдельным страницам, но вы можете добавить стили и другие элементы пользовательского интерфейса, которые следует сделать доступными с любой страницы. Файлы кода программной части содержат обработчики для событий **OnLaunched** и **OnSuspending**. Обычно сюда добавляется пользовательский код для инициализации приложения при запуске, а также здесь выполняется очистка при приостановке и завершении работы.
+-   **MainPage.xaml, MainPage.xaml.h, MainPage.xaml.cpp**— содержат разметку XAML и код программной части для стандартной начальной страницы в приложении. Эта страница не поддерживает навигацию и не имеет встроенных элементов управления.
+-   **pch.h, pch.cpp**— предварительно скомпилированный файл заголовка и файл, который включает его в ваш проект. В файле pch.h вы можете добавлять любые заголовки, которые не изменяются часто и которые добавлены в другие файлы в решении.
+-   **Package.appxmanifest**— XML-файл, описывающий возможности устройства, которые необходимы вашему приложению. Также содержит информацию о версии приложения и другие метаданные. Чтобы открыть этот файл в **конструкторе манифеста**, просто дважды щелкните его.
+-   **HelloWorld\_TemporaryKey.pfx**— ключ, разрешающий развертывание приложения на этом компьютере из Visual Studio.
 
 ## Начало работы с программным кодом
 
 Если вы изучите код в файлах App.xaml.h, App.xaml.cpp в общем проекте, то заметите, что в основном понимаете код C++. Тем не менее есть и некоторые незнакомые элементы синтаксиса, если вы ранее не сталкивались с приложениями для среды выполнения Windows, или если вы работали с C++/CLI. Вот общие нестандартные элементы синтаксиса, которые вы можете увидеть в C++/CX:
 
--   **Классы "ref"**
+**Классы "ref"**
 
 Почти все классы среды выполнения Windows, которые включают в себя все типы в API Windows (элементы управления XAML, страницы в вашем приложении, сам класс App, все объекты устройств и сетевые объекты, все типы контейнеров), объявляются как **ref class**. (Несколько типов в Windows: **класс значения** или **структура** значения). Класс ref может использоваться из любого языка. В C++ время жизни этих типов регулируется с помощью автоматического подсчета ссылок (а не сборки мусора), чтобы не приходилось явно удалять эти объекты. Вы также можете создавать свои собственные классы "ref".
 
 ```cpp
-    namespace HelloWorld
-    {
-        /// <summary>
-        /// An empty page that can be used on its own or navigated to within a Frame.
-        /// </summary>
-        public ref class MainPage sealed
-        {
-        public:
-            MainPage();
-
-        };
-    }
+namespace HelloWorld
+{
+   /// <summary>
+   /// An empty page that can be used on its own or navigated to within a Frame.
+   /// </summary>
+   public ref class MainPage sealed
+   {
+      public:
+      MainPage();
+   };
+}
 ```    
 
 Все типы среды выполнения Windows должны объявляться в пространстве имен и, в отличие от самих типов в C++ стандарта ISO, иметь модификатор доступа. Модификатор **public** делает класс видимым для компонентов среды выполнения Windows, которые находятся вне пространства имен. Ключевое слово **sealed** означает, что класс не может быть базовым классом. Почти все классы ref запечатаны. Наследование классов широко не используется, потому что JavaScript его не понимает.
 
--   
-              **ref new** и **^ (крышка)**
+**ref new** и **^ (крышка)**
 
- Переменная класса ref объявляется с помощью оператора «^» («крышка»), и создается экземпляр объекта с помощью ключевого слова «ref new». После этого вы получаете доступ к методам экземпляров объекта, используя оператор "->" почти так же, как указатель C++. Доступ к статическим методам можно получить с помощью оператора "::", как в C++ стандарта ISO.
+Переменная класса ref объявляется с помощью оператора «^» («крышка»), и создается экземпляр объекта с помощью ключевого слова «ref new». После этого вы получаете доступ к методам экземпляров объекта, используя оператор "->" почти так же, как указатель C++. Доступ к статическим методам можно получить с помощью оператора "::", как в C++ стандарта ISO.
 
- В следующем коде мы используем полное имя, чтобы создать экземпляр объекта, и оператор "->", чтобы вызвать метод экземпляров.
+В следующем коде мы используем полное имя, чтобы создать экземпляр объекта, и оператор "->", чтобы вызвать метод экземпляров.
 
- ```cpp
-    Windows::UI::Xaml::Media::Imaging::BitmapImage^ bitmapImage =
-        ref new Windows::UI::Xaml::Media::Imaging::BitmapImage();
+```cpp
+Windows::UI::Xaml::Media::Imaging::BitmapImage^ bitmapImage =
+     ref new Windows::UI::Xaml::Media::Imaging::BitmapImage();
       
-    bitmapImage->SetSource(fileStream);
-    ```
-
-   Обычно в файле .CPP мы бы добавили директиву `using namespace  Windows::UI::Xaml::Media::Imaging` и ключевое слово "auto", чтобы тот же код выглядел так:
-
-```cpp
-    auto bitmapImage = ref new BitmapImage();
-    bitmapImage->SetSource(fileStream);
+bitmapImage->SetSource(fileStream);
 ```
 
--   **Свойства**
-
-   Класс "ref" может иметь свойства, которые, как и в управляемых языках, являются специальными функциями-членами. Они отображаются в виде полей в потребляющем коде.
+Обычно в файле .CPP мы бы добавили директиву `using namespace  Windows::UI::Xaml::Media::Imaging` и ключевое слово "auto", чтобы тот же код выглядел так:
 
 ```cpp
-    public ref class SaveStateEventArgs sealed
-            {
-            public:
-
-                // Declare the property
-                property Windows::Foundation::Collections::IMap<Platform::String^, Platform::Object^>^ PageState
-                {
-                    Windows::Foundation::Collections::IMap<Platform::String^, Platform::Object^>^ get();
-                }
-    ...
-    };
-
-    ...
-    // consume the property like a public field
-    void PhotoPage::SaveState(Object^ sender, Common::SaveStateEventArgs^ e)
-    {    
-        if (mruToken != nullptr && !mruToken->IsEmpty())
-        {
-            e->PageState->Insert("mruToken", mruToken);
-        }
-    }
+auto bitmapImage = ref new BitmapImage();
+bitmapImage->SetSource(fileStream);
 ```
 
--   **Делегаты**
+**Свойства**
 
-   Как и в управляемых языках, делегат— это ссылочный тип, который инкапсулирует функцию с помощью специальной подписи. Делегаты часто используются с событиями и обработчиками событий.
+Класс "ref" может иметь свойства, которые, как и в управляемых языках, являются специальными функциями-членами. Они отображаются в виде полей в потребляющем коде.
 
 ```cpp
-    // Delegate declaration (within namespace scope)
-    public delegate void LoadStateEventHandler(Platform::Object^ sender, LoadStateEventArgs^ e);
+public ref class SaveStateEventArgs sealed
+{
+   public:
+   // Declare the property
+   property Windows::Foundation::Collections::IMap<Platform::String^, Platform::Object^>^ PageState
+   {
+      Windows::Foundation::Collections::IMap<Platform::String^, Platform::Object^>^ get();
+   }
+   ...
+};
 
-    // Event declaration (class scope)
-    public ref class NavigationHelper sealed
-    {
-      public:
-        event LoadStateEventHandler^ LoadState;
-    };
+   ...
+   // consume the property like a public field
+   void PhotoPage::SaveState(Object^ sender, Common::SaveStateEventArgs^ e)
+   {    
+      if (mruToken != nullptr && !mruToken->IsEmpty())
+   {
+      e->PageState->Insert("mruToken", mruToken);
+   }
+}
+```
 
-    // Create the event handler in consuming class
-    MainPage::MainPage()
-    {
-        auto navigationHelper = ref new Common::NavigationHelper(this);
-        navigationHelper->LoadState += ref new Common::LoadStateEventHandler(this, &MainPage::LoadState);
-    }
+**Делегаты**
+
+Как и в управляемых языках, делегат— это ссылочный тип, который инкапсулирует функцию с помощью специальной подписи. Делегаты часто используются с событиями и обработчиками событий.
+
+```cpp
+// Delegate declaration (within namespace scope)
+public delegate void LoadStateEventHandler(Platform::Object^ sender, LoadStateEventArgs^ e);
+
+// Event declaration (class scope)
+public ref class NavigationHelper sealed
+{
+   public:
+   event LoadStateEventHandler^ LoadState;
+};
+
+// Create the event handler in consuming class
+MainPage::MainPage()
+{
+   auto navigationHelper = ref new Common::NavigationHelper(this);
+   navigationHelper->LoadState += ref new Common::LoadStateEventHandler(this, &MainPage::LoadState);
+}
 ```
 
 ## Добавление содержимого в приложение
@@ -218,7 +208,7 @@ ms.openlocfilehash: 7836cb385cc37f39fa1af01ea981263fcf3f3634
 1.  В **Обозревателе решений** откройте файл MainPage.xaml.
 2.  Создайте элементы управления для пользовательского интерфейса, добавив следующий код XAML в корневой элемент [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) сразу после его закрывающего тега. В нем содержится [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) с [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), который запрашивает имя пользователя; элемент [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), который принимает имя пользователя; элемент [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) и еще один элемент **TextBlock**.
 
-```xml
+    ```xaml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
         <TextBlock HorizontalAlignment="Left" Text="Hello World" FontSize="36"/>
         <TextBlock Text="What's your name?"/>
@@ -228,30 +218,25 @@ ms.openlocfilehash: 7836cb385cc37f39fa1af01ea981263fcf3f3634
         </StackPanel>
         <TextBlock x:Name="greetingOutput"/>
     </StackPanel>
-```
-
-Подробнее о макете XAML: [Навигация, макет и представления](https://msdn.microsoft.com/library/windows/apps/Dn263172).
+    ```
 
 3.  На этот момент вы создали очень простое универсальное приложение для Windows. Если вы хотите увидеть, как выглядит приложение UWP, нажмите клавишу F5, чтобы выполнить сборку, развернуть и запустить приложение в режиме отладки.
 
 Сначала появится экран-заставка по умолчанию. На нем будет присутствовать изображение (Assets\\SplashScreen.scale-100.png) и цвет фона, указанный в файле манифеста приложения. Подробнее о том, как настраивать экран-заставку, см. в разделе о [добавлении экрана-заставки](https://msdn.microsoft.com/library/windows/apps/Hh465332).
 
-После того как экран-заставка исчезнет, появится ваше приложение. Отобразится основная страница приложения.
+После того как экран-заставка исчезнет, появится ваше приложение. Отображается основная страница приложения.
 
-Нажмите клавишу Windows или кнопку меню "Пуск", чтобы перейти в меню "Пуск", и обратите внимание, что при развертывании приложение добавляется в список установленных программ меню "Пуск". Оно также появляется, когда вы нажимаете новую ссылку рядом с кнопкой "Все приложения". Чтобы снова запустить приложение, просто нажмите или щелкните его плитку, нажмите клавишу F5 или Ctrl+F5 в Visual Studio, как обычно.
+![Приложение Магазина Windows: экран с элементами управления](images/xaml-hw-app2.png)
 
- ![Приложение Магазина Windows: экран с элементами управления](images/xaml-hw-app2.png)
+Пока это приложение мало что умеет, но вас можно поздравить с успешным созданием первого универсального приложения для Windows.
 
-   Пока это приложение не умеет выполнять много функций, но вас можно поздравить с успешным созданием вашего первого универсального приложения для Windows.
+Чтобы завершить отладку и закрыть приложение, вернитесь в Visual Studio и нажмите клавиши SHIFT+F5.
 
-   Чтобы завершить отладку и закрыть приложение, вернитесь в Visual Studio и нажмите клавиши SHIFT+F5.
+Дополнительные сведения см. в статье [Выполнение приложения Магазина в Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=619619).
 
-   Дополнительные сведения см. в статье [Выполнение приложения Магазина в Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=619619).
-
-   В приложении можно вводить информацию в [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), но при нажатии [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) ничего не происходит. Позднее мы создадим для кнопки обработчик события [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737), который отображает персонализированное приветствие.
+В приложении можно вводить информацию в [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), но при нажатии [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) ничего не происходит. Позднее мы создадим для кнопки обработчик события [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737), который отображает персонализированное приветствие.
 
 ## Запуск приложения в эмуляторе мобильного устройства
-
 
 Ваше приложение работает на любом устройстве с Windows 10, поэтому давайте посмотрим, как оно выглядит в Windows Phone. В этом разделе требуется Windows Phone под управлением Windows10 или доступ к эмулятору Windows Phone. Также требуется запустить Visual Studio на физическом компьютере (не на виртуальной машине) с включенным и поддерживаемым HyperV.
 
@@ -264,10 +249,7 @@ ms.openlocfilehash: 7836cb385cc37f39fa1af01ea981263fcf3f3634
 (Если эти эмуляторы не отображаются, убедитесь, что вы установили средства разработки универсальных приложений для Windows. Подробнее см. в разделе [Подготовка](get-set-up.md)).
 
 Рекомендуется протестировать приложение на устройстве с маленьким экраном и ограниченным объемом оперативной памяти, поэтому используется параметр **Эмулятор 10.0.0.0 WVGA, 4дюйма, 512МБ**.
-
-              **Совет.**  Подробнее об использовании эмулятора телефона см. в разделе [Выполнение приложений Windows Phone в эмуляторе](http://go.microsoft.com/fwlink/p/?LinkId=394233).
-
- 
+**Совет.** Подробнее об использовании эмулятора телефона см. в разделе [Выполнение приложений Windows Phone в эмуляторе](http://go.microsoft.com/fwlink/p/?LinkId=394233).
 
 Чтобы выполнить отладку приложения на физическом устройстве, необходимо, чтобы устройство было зарегистрировано для разработки. Дополнительные сведения см. в разделе [Регистрация устройства Windows Phone](https://msdn.microsoft.com/library/windows/apps/Dn614128).
 
@@ -296,28 +278,28 @@ Visual Studio запускает выбранный эмулятор и зате
 2.  Нажмите клавиши ALT+ВВОД, чтобы открыть окно **Свойства**, а затем нажмите кнопку «События» (![Events button](images/eventsbutton.png)).
 3.  Найдите событие [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737). В его текстовом поле введите имя функции, которая обрабатывает событие **Click**. Для этого примера введите Button\_Click.
 
-![Окно “Свойства”, представление “События”](images/xaml-hw-event.png)
+    ![Окно “Свойства”, представление “События”](images/xaml-hw-event.png)
 
 4.  Нажмите клавишу ВВОД. Метод обработчика событий создается в файле MainPage.xaml.cpp и открывается в редакторе кода. Вы можете добавить код, который выполняется при возникновении события.
 
    В то же время в MainPage.xaml код XAML для [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) обновляется, чтобы объявить обработчик событий [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) следующим образом.
 
-```xml
+    ```xaml
     <Button Content="Say \"Hello\"" Click="Button_Click"/>
-```
+    ```
 
-Вы также можете просто добавить это значение к коду xaml вручную. Это может быть удобно, если не загружается конструктор. При вводе вручную введите "Щелкнуть" и позвольте IntelliSense отобразить параметр, чтобы добавить новый обработчик событий. Таким образом, Visual Studio создает необходимую декларацию о методе и заглушку.
+    Вы также можете просто добавить это значение к коду xaml вручную. Это может быть удобно, если не загружается конструктор. При вводе вручную введите "Щелкнуть" и позвольте IntelliSense отобразить параметр, чтобы добавить новый обработчик событий. Таким образом, Visual Studio создает необходимую декларацию о методе и заглушку.
 
-Конструктор не сможет загрузиться, если во время отрисовки возникнет необработанное исключение. Отрисовка в конструкторе предусматривает запуск версии времени разработки страницы. Это может быть удобно для отключения запущенного кода пользователя. Это можно сделать, изменив значение параметра в диалоговом окне **"Сервис ", "Параметры"**. В разделе **Конструктор XAML** снимите флажок **Запускать код проекта в конструкторе XAML (если поддерживается)**.
+    Конструктор не сможет загрузиться, если во время отрисовки возникнет необработанное исключение. Отрисовка в конструкторе предусматривает запуск версии времени разработки страницы. Это может быть удобно для отключения запущенного кода пользователя. Это можно сделать, изменив значение параметра в диалоговом окне **"Сервис ", "Параметры"**. В разделе **Конструктор XAML** снимите флажок **Запускать код проекта в конструкторе XAML (если поддерживается)**.
 
 5.  В файле MainPage.xaml.cpp добавьте следующий код в обработчик событий **Button\_Click**, который вы только что создали. В этом коде вы получаете имя пользователя из элемента управления `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) и используете его, чтобы создать приветствие. `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) отображает результат.
 
-```cpp
+    ```cpp
     void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
     {
         greetingOutput->Text = "Hello, " + nameInput->Text + "!";
     }
-```
+    ```
 
 6.  Назначьте проект запускаемым, а затем нажмите клавишу F5, чтобы выполнить сборку и запустить приложение. При вводе имени в текстовое поле и нажатии кнопки приложение отображает персонализированное приветствие.
 
@@ -334,20 +316,20 @@ Visual Studio запускает выбранный эмулятор и зате
 1.  Откройте файл App.xaml.
 2.  В открывающем теге [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) измените свойство [**RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme) и установите для него значение **Dark**:
 
-```xml
-   RequestedTheme="Light"
-```
+    ```xaml
+    RequestedTheme="Light"
+    ```
 
-Вот полный тег [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) с темной темой:
+    Вот полный тег [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) с темной темой:
 
-```xml 
+    ```xaml 
         <Application
         x:Class="HelloWorld.App"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:HelloWorld" 
+        xmlns:local="using:HelloWorld"
         RequestedTheme="Dark">
-```
+    ```
 
 3.  Чтобы выполнить сборку и запустить приложение, нажмите клавишу F5. Обратите внимание, что проект использует темную тему.
 
@@ -355,8 +337,7 @@ Visual Studio запускает выбранный эмулятор и зате
 
 Какую тему использовать? Любую, какую пожелаете! Мы рекомендуем для приложений, которые главным образом отображают изображения или видео, лучше использовать темную тему, а для приложений с большим объемом текста— светлую тему. Если применяется пользовательская цветовая схема, используйте тему, которая лучше всего сочетается с внешним видом вашего приложения. В остальных разделах настоящего руководства мы используем светлую тему на снимках экрана.
 
-
-              **Примечание.**  Тема применяется после запуска приложения. Ее нельзя изменить, пока приложение работает.
+**Примечание.** Тема применяется после запуска приложения. Ее нельзя изменить, пока приложение работает.
 
 ### Использование системных стилей
 
@@ -371,25 +352,23 @@ Visual Studio запускает выбранный эмулятор и зате
 5.  Разверните группу **Разное** и найдите свойство **Style**.
 6.  Щелкните маркер свойств (зеленый прямоугольник справа от свойства **Стиль**), а затем в меню выберите пункты **Системный ресурс** > **BaseTextBlockStyle**.
 
- 
-              **BaseTextBlockStyle** — это ресурс, который определен в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) в файле <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml.
+     **BaseTextBlockStyle**— это ресурс, который определен в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) в файле <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml.
 
-![Окно “Свойства”, представление “Свойства”](images/xaml-hw-style-cpp.png)
+    ![Окно “Свойства”, представление “Свойства”](images/xaml-hw-style-cpp.png)
 
- Вид текста в рабочей области конструирования XAML изменится. В редакторе XAML обновляется код XAML для [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652).
+     Вид текста в рабочей области конструирования XAML изменится. В редакторе XAML обновляется код XAML для [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652).
 
-```xml
-   <TextBlock Text="What's your name?" Style="{StaticResource BasicTextStyle}"/><
-```
+    ```xaml
+    <TextBlock Text="What's your name?" Style="{StaticResource BasicTextStyle}"/><
+    ```
 
 7.  Повторите процесс, чтобы установить размер шрифта, и назначьте значение **BaseTextBlockStyle** элементу `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652).
 
-  
-              **Совет.**  Хотя в этом элементе [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) нет текста, при наведении указателя мыши на поверхность разработки XAML голубой контур показывает его расположение, чтобы его можно было выбрать.  
+    **Совет.** Хотя в этом элементе [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) нет текста, при наведении указателя мыши на поверхность разработки XAML голубой контур показывает его расположение, чтобы его можно было выбрать.  
 
-  XAML-код теперь выглядит так:
+    XAML-код теперь выглядит так:
 
-```xml
+    ```xaml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
         <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" Text="What's your name?"/>
         <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
@@ -398,11 +377,11 @@ Visual Studio запускает выбранный эмулятор и зате
         </StackPanel>
         <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" x:Name="greetingOutput"/>
     </StackPanel>
-```
+    ```
 
 8.  Чтобы выполнить сборку и запустить приложение, нажмите клавишу F5. Теперь оно выглядит следующим образом:
 
- ![Экран приложения с более крупным текстом](images/xaml-hw-app5.png)
+![Экран приложения с более крупным текстом](images/xaml-hw-app5.png)
 
 ### Шаг 4. Адаптация пользовательского интерфейса к различным размерам окон
 
@@ -412,7 +391,7 @@ Visual Studio запускает выбранный эмулятор и зате
 
 1.  В редакторе XAML добавьте этот блок XAML после открывающего тега корневого элемента [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704).
 
-```xml
+    ```xaml
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup>
             <VisualState x:Name="wideState">
@@ -432,7 +411,7 @@ Visual Studio запускает выбранный эмулятор и зате
             </VisualState>
         </VisualStateGroup>
     </VisualStateManager.VisualStateGroups>
-```
+    ```
 
 2.  Выполните отладку приложения на локальном компьютере. Обратите внимание, что пользовательский интерфейс выглядит так же, как и раньше, пока ширина окна не станет меньше 641 аппаратно-независимого пикселя (DIP).
 3.  Выполните отладку приложения на эмуляторе мобильного устройства. Обратите внимание, что пользовательский интерфейс использует свойства, указанные вами в `narrowState`, и правильно отображается на маленьком экране.
@@ -462,6 +441,6 @@ Visual Studio запускает выбранный эмулятор и зате
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

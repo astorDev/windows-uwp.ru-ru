@@ -3,7 +3,6 @@ author: mtoepke
 title: "Прорисовка сцены с проверкой глубины"
 description: "Создание эффекта тени путем добавления проверки глубины в шейдер вершин (или геометрии) и в построитель текстуры."
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 2bac8e8337a10a8411b02eeed53d772dbb5abad6
 
@@ -12,7 +11,7 @@ ms.openlocfilehash: 2bac8e8337a10a8411b02eeed53d772dbb5abad6
 # Прорисовка сцены с тестированием глубины
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Создание эффекта тени путем добавления проверки глубины в шейдер вершин (или геометрии) и в построитель текстуры. [Пошаговое руководство. Реализация теневых объемов с помощью буферов глубины в Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md), часть 3.

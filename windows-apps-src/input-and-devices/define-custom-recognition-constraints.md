@@ -5,8 +5,9 @@ title: "Определение настраиваемых ограничений
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 75e7367ee13357d3463213ca7d8f1ff37c4f0b77
+ms.openlocfilehash: d619cd6b3c9f5d62ca7d68f555e4c051abaf9bad
 
 ---
 
@@ -31,22 +32,16 @@ ms.openlocfilehash: 75e7367ee13357d3463213ca7d8f1ff37c4f0b77
 
 Здесь мы рассмотрим три вида ограничений распознавания речи, используемых в пределах приложения. (Сведения об ограничениях голосовых команд см. в разделе [Запуск приложения переднего плана с помощью голосовых команд в Кортане](launch-a-foreground-app-with-voice-commands-in-cortana.md).)
 
--   [
-              **SpeechRecognitionTopicConstraint**
-            ](https://msdn.microsoft.com/library/windows/apps/dn631446) — ограничение на базе предварительно заданной грамматики (диктовки или веб-поиска).
--   [
-              **SpeechRecognitionListConstraint**
-            ](https://msdn.microsoft.com/library/windows/apps/dn631421) — ограничение на базе списка слов или фраз.
--   [
-              **SpeechRecognitionGrammarFileConstraint**
-            ](https://msdn.microsoft.com/library/windows/apps/dn631412) — ограничение, определенное в файле грамматики SRGS.
+-   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)— ограничение на базе предварительно заданной грамматики (диктовки или веб-поиска).
+-   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)— ограничение на базе списка слов или фраз.
+-   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)— ограничение, определенное в файле грамматики SRGS.
 
 Распознаватель речи может иметь одну коллекцию ограничений. Только эти комбинации ограничений являются допустимыми:
 
 -   Ограничение по одной теме или предварительно заданная грамматика (диктовка или веб-поиск). Никакие другие ограничения не допускаются.
 -   Комбинация ограничений на базе списка и (или) ограничений на базе файла грамматики.
 
-**Помните:  **перед запуском процесса распознавания необходимо вызвать метод [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) для компиляции ограничений.
+**Помните: **перед запуском процесса распознавания необходимо вызвать метод [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) для компиляции ограничений.
 
 ## Задание грамматики веб-поиска (SpeechRecognitionTopicConstraint)
 
@@ -246,6 +241,6 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

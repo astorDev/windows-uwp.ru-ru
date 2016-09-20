@@ -11,7 +11,7 @@ ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
 # Запуск приложения для результатов
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -21,7 +21,7 @@ ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
 
 Узнайте, как запустить приложение из другого приложения и обмениваться данными между двумя приложениями. Эта процедура называется *запуском приложения для результатов*. В приведенном примере показано, как запустить приложение для результатов с помощью метода [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686).
 
-Благодаря новым API для связи между приложениями в Windows 10 приложения для Windows (а также веб-приложения для Windows) могут запускать приложения и обмениваться данными и файлами. Это позволяет выполнять построение смешанных решений из нескольких приложений. С помощью этих новых API сложные задачи, для которых раньше приходилось использовать несколько приложений, теперь можно выполнять без проблем. Например, ваше приложение может запустить приложение социальной сети для выбора контакта или приложение для оформления заказа, чтобы завершить оплату.
+Благодаря новым API для связи между приложениями в Windows10 приложения для Windows (а также веб-приложения для Windows) могут запускать приложения и обмениваться данными и файлами. Это позволяет выполнять построение смешанных решений из нескольких приложений. С помощью этих новых API сложные задачи, для которых раньше приходилось использовать несколько приложений, теперь можно выполнять без проблем. Например, ваше приложение может запустить приложение социальной сети для выбора контакта или приложение для оформления заказа, чтобы завершить оплату.
 
 Приложение, которое запускается для результатов, называется запущенным приложением. Приложение, которое запускает другое приложение, называется вызывающим приложением. В этом примере мы создадим и вызывающее, и запущенное приложение.
 
@@ -32,9 +32,12 @@ ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
 
 Атрибут **ReturnResults** в расширении протокола принимает одно из указанных ниже значений.
 
--   **optional** — приложение может запускаться для результатов с помощью метода [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) или не для результатов с помощью метода [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). Если вы используете ключевое слово **optional**, то запущенное приложение должно определить, было ли оно запущено для результатов. Это можно сделать путем проверки аргумента события [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330). Если свойство аргумента [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) возвращает перечисление [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) или тип аргумента события равен [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742), то приложение было запущено с помощью метода **LaunchUriForResultsAsync**.
--   **always** — приложение может быть запущено только для результатов, то есть оно может реагировать только на метод [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686).
--   **none** — приложение не может быть запущено для результатов, то есть оно может реагировать только на метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476).
+-   
+           **optional** — приложение может запускаться для результатов с помощью метода [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) или не для результатов с помощью метода [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). Если вы используете ключевое слово **optional**, то запущенное приложение должно определить, было ли оно запущено для результатов. Это можно сделать путем проверки аргумента события [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330). Если свойство аргумента [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) возвращает перечисление [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) или тип аргумента события равен [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742), то приложение было запущено с помощью метода **LaunchUriForResultsAsync**.
+-   
+            **always**— приложение может быть запущено только для результатов, то есть оно может реагировать только на метод [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686).
+-   
+            **none**— приложение не может быть запущено для результатов, то есть оно может реагировать только на метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476).
 
 В этом примере расширения протокола приложение можно запустить только для результатов. Это упрощает логику в методе **OnActivated**, описанном ниже, так как нам придется обрабатывать только случай запуска для результатов, а не другие возможные способы активации приложения.
 
@@ -104,7 +107,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
 using Windows.ApplicationModel.Activation
 ```
 
-Объект [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) в методе [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) содержит данные, переданные из вызывающего приложения. Данные хранятся в объекте [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131), а их объем не может превышать 100 КБ.
+Объект [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) в методе [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) содержит данные, переданные из вызывающего приложения. Данные хранятся в объекте [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131), а их объем не может превышать 100КБ.
 
 В этом примере кода запущенное приложение ожидает, что данные, отправленные из вызывающего приложения, будут находиться в разделе с именем **TestData** класса [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131), так как вызывающее приложение запрограммировано отправлять их именно таким образом.
 
@@ -173,7 +176,7 @@ async Task<string> LaunchAppForResults()
 
 Перед запуском вызывающего приложения следует собрать и развернуть приложение, которое будет запущено для результатов. В противном случае [**LaunchUriResult.Status**](https://msdn.microsoft.com/library/windows/apps/dn906892) сообщит об ошибке **LaunchUriStatus.AppUnavailable**.
 
-Вам потребуется указать имя семейства запущенного приложения, чтобы задать значение [**TargetApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/dn893511). Один из способов получить имя семейства — это выполнить следующий вызов из запущенного приложения:
+Вам потребуется указать имя семейства запущенного приложения, чтобы задать значение [**TargetApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/dn893511). Один из способов получить имя семейства— это выполнить следующий вызов из запущенного приложения:
 
 ```cs
 string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
@@ -182,7 +185,7 @@ string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ## Примечания
 
 
-В примере из этой инструкции представлены основы по запуску приложения для результатов. Следует помнить о том, что новый API [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) позволяет запускать приложение асинхронно и поддерживать связь посредством класса [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131). Объем передаваемых через **ValueSet** данных не может превышать 100 КБ. Если нужно передать больший объем данных, вы можете поделиться файлами, используя класс [**SharedStorageAccessManager**](https://msdn.microsoft.com/library/windows/apps/dn889985), чтобы создать маркеры файлов, которые можно передавать между приложениями. Например, если у вас есть **ValueSet** с именем `inputData`, вы можете сохранить маркер в файле, которым нужно поделиться с запущенным приложением:
+В примере из этой инструкции представлены основы по запуску приложения для результатов. Следует помнить о том, что новый API [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) позволяет запускать приложение асинхронно и поддерживать связь посредством класса [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131). Объем передаваемых через **ValueSet** данных не может превышать 100КБ. Если нужно передать больший объем данных, вы можете поделиться файлами, используя класс [**SharedStorageAccessManager**](https://msdn.microsoft.com/library/windows/apps/dn889985), чтобы создать маркеры файлов, которые можно передавать между приложениями. Например, если у вас есть **ValueSet** с именем `inputData`, вы можете сохранить маркер в файле, которым нужно поделиться с запущенным приложением:
 
 ```cs
 inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);

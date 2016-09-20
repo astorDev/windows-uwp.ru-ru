@@ -3,7 +3,6 @@ author: eliotcowley
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
 description: "В этой статье описывается, как добавить возможности адаптивной потоковой передачи мультимедийного содержимого с защитой Microsoft PlayReady в приложение универсальной платформы Windows (UWP)."
 title: "Адаптивная потоковая передача с защитой PlayReady"
-translationtype: Human Translation
 ms.sourcegitcommit: 176f8989aea5402106e3c14144948cec87a5dc27
 ms.openlocfilehash: d76f50e97f16699f34f138fcd25af8a90696085a
 

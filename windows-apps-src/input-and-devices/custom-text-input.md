@@ -5,8 +5,9 @@ title: "Обзор пользовательского ввода текста"
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
+ms.openlocfilehash: 614c1b8f319ea1925cd15c5ad1a3093b2bce54d3
 
 ---
 
@@ -59,7 +60,8 @@ API основного текста в пространстве имен [**Wind
 
  
 
-Например, в диапазоне текста, показанном ранее, диапазон \[0, 5\] обозначает слово Hello. **StartCaretPosition** должно быть меньше или равно **EndCaretPosition**. Диапазон \[5, 0\] является недопустимым.
+Например, в диапазоне текста, показанном ранее, диапазон \[0, 5\] обозначает слово Hello. 
+              Значение **StartCaretPosition** должно быть меньше или равно **EndCaretPosition**. Диапазон \[5, 0\] является недопустимым.
 
 ### Точка вставки
 
@@ -96,15 +98,9 @@ API основного текста в пространстве имен [**Wind
 
 ![пример схемы потока текста](images/coretext/stream-3.png) Когда пользователь вводит «d», вызывается событие [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) со следующими данными [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229):
 
--   [
-              **Range**
-            ](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
--   [
-              **Text**
-            ](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
--   [
-              **NewSelection**
-            ](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
+-   [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
+-   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
+-   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
 В вашем элементе управления редактированием примените указанные изменения и установите для параметра [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) значение **Succeeded**. Далее описано состояние элемента управления после применения изменений.
 
@@ -170,6 +166,6 @@ API основного текста в пространстве имен [**Wind
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

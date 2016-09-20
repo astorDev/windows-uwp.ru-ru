@@ -5,7 +5,6 @@ title: "Элементы управления по функциям"
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
 ms.openlocfilehash: 5d6548a4b72144e3a9bf5d759809720c79472afb
 
@@ -16,7 +15,7 @@ ms.openlocfilehash: 5d6548a4b72144e3a9bf5d759809720c79472afb
 
 Чтобы просмотреть элементы управления интерфейса Windows в действии, скачайте [**пример основных элементов пользовательского интерфейса XAML**](http://go.microsoft.com/fwlink/p/?LinkId=619992). 
 
-Ниже перечислены сгруппированные по функциям типовые элементы управления XAML, которые можно использовать в приложении. 
+Ниже перечисленысгруппированные по функциям типовые элементы управления XAML, которые можно использовать в приложении. 
 
 ## Панели приложения и команды
 
@@ -413,7 +412,7 @@ ms.openlocfilehash: 5d6548a4b72144e3a9bf5d759809720c79472afb
 Справка: [RelativePanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)
 
 ### Полоса прокрутки
-См. "Средство прокрутки". (ScrollBar — это элемент ScrollViewer. Он обычно не используется в качестве изолированного элемента управления.)
+См. "Средство прокрутки". (ScrollBar— это элемент ScrollViewer. Он обычно не используется в качестве изолированного элемента управления.)
 
 Справка: [ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
  

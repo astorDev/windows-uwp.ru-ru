@@ -3,14 +3,13 @@ author: TylerMSFT
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: "Доступ к содержимому домашней группы"
 description: "Получайте доступ к содержимому в папке домашней группы пользователя, включая изображения, музыку и видео."
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
 ---
 # Доступ к содержимому домашней группы
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** Важные API **
@@ -29,7 +28,8 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
     Для получения доступа к содержимому домашней группы на компьютере пользователя должна быть настроена домашняя группа, а ваше приложение должно поддерживать по крайней мере одну из следующих возможностей: **picturesLibrary**, **musicLibrary** или **videosLibrary**. Получив доступ к папке домашней группы, ваше приложение будет видеть только те библиотеки, которые соответствуют характеристикам, объявленным в манифесте приложения. Дополнительную информацию см. в разделе [Разрешения на доступ к файлам](file-access-permissions.md).
 
-    **Примечание.** Содержимое библиотеки документов домашней группы невидимо для вашего приложения независимо от характеристик, объявленных в манифесте, и настроек общего доступа пользователя.
+    
+            **Примечание.** Содержимое библиотеки документов домашней группы невидимо для вашего приложения независимо от характеристик, объявленных в манифесте, и настроек общего доступа пользователя.
 
      
 
@@ -170,8 +170,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
 1.  **Включите MediaElement в свое приложение.**
 
-    [
-            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) позволяет воспроизводить звук и видео в приложении. Дополнительные сведения о воспроизведении звука и видео см. в разделах [Создание пользовательских элементов управления транспортировкой](https://msdn.microsoft.com/library/windows/apps/mt187271) и [Звук, видео и камера](https://msdn.microsoft.com/library/windows/apps/mt203788).
+    [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) позволяет воспроизводить звук и видео в приложении. Дополнительные сведения о воспроизведении звука и видео см. в разделах [Создание пользовательских элементов управления транспортировкой](https://msdn.microsoft.com/library/windows/apps/mt187271) и [Звук, видео и камера](https://msdn.microsoft.com/library/windows/apps/mt203788).
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>
@@ -191,7 +190,8 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **Откройте доступ на чтение для файла, выбранного пользователем, и задайте поток файла в качестве источника для**
+3.  
+            **Откройте доступ на чтение для файла, выбранного пользователем, и задайте поток файла в качестве источника для**
             [
               **MediaElement**
             ](https://msdn.microsoft.com/library/windows/apps/br242926), а затем воспроизведите файл.

@@ -3,7 +3,6 @@ author: jwmsft
 description: "Присваивает уникальный идентификатор элементам, которые были созданы и отмечены как ресурсы и которые существуют в ResourceDictionary."
 title: "Атрибут xKey"
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
-translationtype: Human Translation
 ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
 ms.openlocfilehash: 00d801dc3ebb8894f8e21ba0c1b9f3aecc981f30
 
@@ -11,7 +10,7 @@ ms.openlocfilehash: 00d801dc3ebb8894f8e21ba0c1b9f3aecc981f30
 
 # Атрибут x:Key
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Присваивает уникальный идентификатор элементам, которые были созданы и отмечены как ресурсы и которые существуют в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).
 
@@ -59,7 +58,9 @@ CombiningCharacter::= none
 
 Дочерние элементы [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) обычно содержат атрибут **x:Key**, который указывает уникальное значение ключа в этом словаре. Уникальность ключа требуется процессором XAML во время загрузки. Неуникальные значения **x:Key** приведут к исключениям синтаксического анализа XAML. Если этого требует [Расширение разметки {StaticResource}](staticresource-markup-extension.md), неразрешенный ключ также приведет к исключениям синтаксического анализа XAML.
 
-**x:Key** и [x:Name](x-name-attribute.md) не являются идентичными концепциями. **x:Key** используется только в словарях ресурсов. x:Name используется во всех областях XAML. Вызов [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) с помощью значения ключа не возвращает ресурс с ключом.
+
+            **x:Key** и [x:Name](x-name-attribute.md) не являются идентичными концепциями. 
+            **x:Key** используется только в словарях ресурсов. x:Name используется во всех областях XAML. Вызов [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) с помощью значения ключа не возвращает ресурс с ключом.
 
 Обратите внимание, что в приведенном примере неявного синтаксиса объект [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) подразумевает, каким образом процессор XAML создает новый объект, чтобы заполнить коллекцию [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740).
 

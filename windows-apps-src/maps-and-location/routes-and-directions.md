@@ -3,8 +3,9 @@ author: msatranjr
 title: "Отображение маршрутов и направлений на карте"
 description: "Запрос маршрутов и направлений и их отображение в вашем приложении."
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: 2132b0c76a78dac5250ea85f08abd0b1edbd6ed7
+ms.openlocfilehash: eb3596236e7de29473635b26f48f0c7e4fa1d49f
 
 ---
 
@@ -16,11 +17,11 @@ ms.openlocfilehash: 2132b0c76a78dac5250ea85f08abd0b1edbd6ed7
 
 Запрос маршрутов и направлений и их отображение в вашем приложении.
 
-**Подсказка.** Чтобы получить дополнительные сведения об использовании карт в приложении, загрузите следующий пример из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
+**Подсказка.** Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте следующий пример из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
 
 -   [Пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-**Подсказка.**  Если работа с картами является второстепенной функцией приложения, то рекомендуется использовать приложение «Карты Windows». Вы можете использовать `bingmaps:`, `ms-drive-to:`и схемы URI `ms-walk-to:` для запуска приложения "Карты Windows" с определенными картами и маршрутами. Дополнительные сведения см. в разделе [Запуск приложения "Карты Windows"](https://msdn.microsoft.com/library/windows/apps/mt228341).
+**Подсказка.** Если работа с картами является второстепенной функцией приложения, то рекомендуется использовать приложение «Карты Windows». Вы можете использовать `bingmaps:`, `ms-drive-to:`и схемы URI `ms-walk-to:` для запуска приложения "Карты Windows" с определенными картами и маршрутами. Дополнительные сведения см. в разделе [Запуск приложения "Карты Windows"](https://msdn.microsoft.com/library/windows/apps/mt228341).
 
  
 
@@ -31,10 +32,8 @@ ms.openlocfilehash: 2132b0c76a78dac5250ea85f08abd0b1edbd6ed7
 
 -   Класс [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) использует методы, позволяющие получать маршруты и направления.
 -   Эти методы возвращают [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939).
--   [
-            **MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) содержит объект [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937). Получите доступ к этому объекту через свойство [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) класса **MapRouteFinderResult**.
--   [
-            **MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) содержит коллекцию объектов [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955). Получите доступ к этой коллекции с помощью свойства [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) класса **MapRoute**.
+-   [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) содержит объект [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937). Получите доступ к этому объекту через свойство [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) класса **MapRouteFinderResult**.
+-   [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) содержит коллекцию объектов [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955). Получите доступ к этой коллекции с помощью свойства [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) класса **MapRoute**.
 -   Каждый [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) содержит коллекцию объектов [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961). Получите доступ к этой коллекции с помощью свойства [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) класса **MapRouteLeg**.
 
 ## Отображение направлений
@@ -196,6 +195,6 @@ private async void ShowRouteOnMap()
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,6 @@ title: "Элемент управления RichEditBox"
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: fc685b952db7292a9eea4d8a54bd6e2685cb13c0
 
@@ -40,7 +39,7 @@ ms.openlocfilehash: fc685b952db7292a9eea4d8a54bd6e2685cb13c0
 
 По умолчанию элемент управления RichEditBox поддерживает проверку орфографии. Чтобы отключить функцию проверки орфографии, задайте для свойства [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) значение **false**. Подробнее см. в статье «Руководство и контрольный список для проверки орфографии».
 
-Свойство [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) элемента RichEditBox используется для получения его содержимого. Содержимое RichEditBox — это объект [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx), в отличие от элемента управления RichTextBlock, использующего объекты [Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) в качестве своего содержимого. С помощью интерфейса ITextDocument можно загрузить и сохранить документ в потоке, получить фрагменты текста, выделить текст, отменить и повторить изменения, задать атрибуты форматирования по умолчанию и т. д.
+Свойство [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) элемента RichEditBox используется для получения его содержимого. Содержимое RichEditBox — это объект [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx), в отличие от элемента управления RichTextBlock, использующего объекты [Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) в качестве своего содержимого. С помощью интерфейса ITextDocument можно загрузить и сохранить документ в потоке, получить фрагменты текста, выделить текст, отменить и повторить изменения, задать атрибуты форматирования по умолчанию и т.д.
 
 В этом примере показано, как редактировать, загружать и сохранять файл в формате RTF в элементе управления RichEditBox.
 

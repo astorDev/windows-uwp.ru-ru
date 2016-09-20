@@ -5,7 +5,7 @@ title: "Обзор преобразований"
 description: "Узнайте, как использовать преобразования в API среды выполнения Windows путем изменения относительных систем координат элементов в пользовательском интерфейсе."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 9e01a64f02d8a36e72c31263400130d0d808eb1b
+ms.openlocfilehash: 6534e7337ecaa081d0bb05335425f5b58557ab32
 
 ---
 
@@ -22,18 +22,10 @@ ms.openlocfilehash: 9e01a64f02d8a36e72c31263400130d0d808eb1b
 
 Преобразования можно поделить на четыре широкие категории: перевод, вращение, масштабирование и наклон (или сдвиг). При использовании API графики для изменения внешнего вида элементов пользовательского интерфейса обычно проще всего создавать преобразования, которые за один раз определяют только одну операцию трансформации. Поэтому в среде выполнения Windows для каждой из этих категорий преобразования определен отдельный класс.
 
--   
-              [
-              **TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027): переносит элемент в пространстве x-y путем задания значений [**X**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.x.aspx) и [**Y**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.y).
--   
-              [
-              **ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940): масштабирует преобразование, считая от центральной точки, путем задания значений [**CenterX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centerx.aspx), [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centery.aspx), [**ScaleX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scalex.aspx) и [**ScaleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scaleyproperty).
--   
-              [
-              **RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932): выполняет поворот в пространстве x-y путем задания значений [**Angle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.angle.aspx), [**CenterX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centerx.aspx) и [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centery).
--   
-              [
-              **SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950): выполняет сдвиг или наклон в пространстве x-y путем задания значений [**AngleX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.skewtransform.anglex.aspx), [**AngleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.skewtransform.angley.aspx), [**CenterX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.skewtransform.centerx.aspx) и [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centeryproperty).
+-   [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027): переносит элемент в пространстве x-y путем задания значений [**X**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.x.aspx) и [**Y**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.y).
+-   [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940): масштабирует преобразование, считая от центральной точки, путем задания значений [**CenterX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centerx.aspx), [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centery.aspx), [**ScaleX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scalex.aspx) и [**ScaleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scaleyproperty).
+-   [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932): выполняет поворот в пространстве x-y путем задания значений [**Angle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.angle.aspx), [**CenterX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centerx.aspx) и [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centery).
+-   [**SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950): выполняет сдвиг или наклон в пространстве x-y путем задания значений [**AngleX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.skewtransform.anglex.aspx), [**AngleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.skewtransform.angley.aspx), [**CenterX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.skewtransform.centerx.aspx) и [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centeryproperty).
 
 Скорее всего, для сценариев пользовательского интерфейса вы обычно будете использовать [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) и [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940).
 
@@ -43,8 +35,7 @@ ms.openlocfilehash: 9e01a64f02d8a36e72c31263400130d0d808eb1b
 
 В макете XAML преобразования применяются после завершения этапа разметки. Поэтому вычисление доступного пространства и принятие других решений относительно макета выполнялось еще до применения преобразований. Так как сначала создается макет, иногда вы будете получать неожиданные результаты при преобразовании элементов, находящихся в ячейке [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) или похожем контейнере макета, которому в процессе разметки выделяется пространство. Преобразованный элемент может оказаться усеченным или загороженным, поскольку его пытаются переместить в область, для которой при делении пространства родительского контейнера не учитывались размеры после преобразования. Возможно, вам стоит поэкспериментировать с результатами преобразования и скорректировать некоторые параметры. Например, вместо использования адаптивного макета и изменения размера с помощью Star вам, возможно, придется изменить свойства **Center** или объявить фиксированные размеры в пикселях для пространств макета, чтобы гарантировать, что родительский элемент выделяет достаточно места.
 
-
-              **Примечание о миграции.**  Windows Presentation Foundation (WPF) имеет свойство **LayoutTransform**, применяющее преобразования перед этапом разметки. Однако XAML среды выполнения Windows не поддерживает свойство **LayoutTransform**. (В Microsoft Silverlight нет этого свойства.)
+**Примечание о миграции.** Windows Presentation Foundation (WPF) имеет свойство **LayoutTransform**, применяющее преобразования перед этапом разметки. Однако XAML среды выполнения Windows не поддерживает свойство **LayoutTransform**. (В Microsoft Silverlight нет этого свойства.)
 
 ## <span id="Applying_a_transform_to_a_UI_element"></span><span id="applying_a_transform_to_a_ui_element"></span><span id="APPLYING_A_TRANSFORM_TO_A_UI_ELEMENT"></span>Применение преобразования к элементу пользовательского интерфейса
 
@@ -59,17 +50,14 @@ ms.openlocfilehash: 9e01a64f02d8a36e72c31263400130d0d808eb1b
 ## <span id="Other_transform_properties"></span><span id="other_transform_properties"></span><span id="OTHER_TRANSFORM_PROPERTIES"></span>Другие свойства преобразования
 
 -   
-              Свойства [
-              **Brush.Transform**](https://msdn.microsoft.com/library/windows/apps/BR228082), [**Brush.RelativeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228080) влияют на то, как[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) использует пространство координат в области, к которой применили **Brush** для задания таких визуальных свойств, как передние планы и фоны. Эти преобразования обычно не применяются для большинства распространенных кистей (для которых обычно задается сплошной цвет с помощью свойства [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)), но иногда могут оказаться полезными при рисовании областей при помощи [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) или [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108).
+              Свойства [**Brush.Transform**](https://msdn.microsoft.com/library/windows/apps/BR228082), [**Brush.RelativeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228080) влияют на то, как[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) использует пространство координат в области, к которой применили **Brush** для задания таких визуальных свойств, как передние планы и фоны. Эти преобразования обычно не применяются для большинства распространенных кистей (для которых обычно задается сплошной цвет с помощью свойства [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)), но иногда могут оказаться полезными при рисовании областей при помощи [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) или [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108).
 -   
-              Свойство [
-              **Geometry.Transform**](https://msdn.microsoft.com/library/windows/apps/BR210066) можно использовать для применения преобразования к геометрии перед использованием этой геометрии для значения свойства [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/BR243356).
+              Свойство [**Geometry.Transform**](https://msdn.microsoft.com/library/windows/apps/BR210066) можно использовать для применения преобразования к геометрии перед использованием этой геометрии для значения свойства [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/BR243356).
 
 ## <span id="Animating_a_transform"></span><span id="animating_a_transform"></span><span id="ANIMATING_A_TRANSFORM"></span>Анимация преобразования
 
 
-              Объекты [
-              **Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) можно анимировать. Чтобы анимировать **Transform**, примените анимацию совместимого типа к свойству, которое требуется анимировать. Как правило, это значит, что вы используете объекты [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) или [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimationusingkeyframes) для определения анимации, так как все свойства преобразования относятся к типу [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Анимации, которые влияют на преобразование, используемое для значения [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980), не считаются зависимыми даже тогда, когда их продолжительность не является нулевой. Подробнее о зависимых анимациях: [Раскадрованные анимации](storyboarded-animations.md).
+              Объекты [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) можно анимировать. Чтобы анимировать **Transform**, примените анимацию совместимого типа к свойству, которое требуется анимировать. Как правило, это значит, что вы используете объекты [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) или [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimationusingkeyframes) для определения анимации, так как все свойства преобразования относятся к типу [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Анимации, которые влияют на преобразование, используемое для значения [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980), не считаются зависимыми даже тогда, когда их продолжительность не является нулевой. Подробнее о зависимых анимациях: [Раскадрованные анимации](storyboarded-animations.md).
 
 Если вы настраиваете анимацию свойств для создания эффекта, аналогичного преобразованию по визуальному представлению, например анимируете свойства [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) и [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) элемента [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706), а не применяете к нему [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), такие анимации почти всегда считаются зависимыми. Вам придется включить анимации и, возможно, столкнуться с серьезным снижением производительности из-за этой анимации, особенно если вы пытаетесь поддерживать взаимодействие с пользователем во время анимации данного объекта. По этой причине предпочтительней использовать преобразование и анимировать его, а не любое другое свойство, где анимация воспринималась бы в качестве зависимой.
 
@@ -110,8 +98,7 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 ## <span id="Accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="ACCOUNTING_FOR_COORDINATE_FRAMES_OF_REFERENCE_AT_RUN_TIME"></span>Учет координатных систем отсчета во время выполнения
 
 
-              В [
-              **UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) есть метод с именем [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.transformtovisual.aspx), способный создавать класс [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006), соотносящий координатные системы отсчета для двух элементов пользовательского интерфейса. Его можно использовать для сравнения элемента со стандартной для приложения координатной системой отсчета, если вы передаете в качестве первого параметра корневой визуальный элемент. Это может быть удобно в случае, если вы перенаправили событие ввода из другого элемента или пытаетесь предсказать поведение макета без фактического запроса этапа разметки.
+              В [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) есть метод с именем [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.transformtovisual.aspx), способный создавать класс [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006), соотносящий координатные системы отсчета для двух элементов пользовательского интерфейса. Его можно использовать для сравнения элемента со стандартной для приложения координатной системой отсчета, если вы передаете в качестве первого параметра корневой визуальный элемент. Это может быть удобно в случае, если вы перенаправили событие ввода из другого элемента или пытаетесь предсказать поведение макета без фактического запроса этапа разметки.
 
 Данные о событии, полученные из событий указателя, обеспечивают доступ к методу [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/BR212141), где вы можете указать параметр *relativeTo*, чтобы заменить координатную систему отсчета определенным элементом, а не стандартным значением приложения. Этот подход просто вызывает внутреннее применение преобразования переноса и преобразует данные координат x-y при создании возвращенного объекта [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/BR242038).
 
@@ -157,6 +144,6 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,14 +3,13 @@ author: TylerMSFT
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: "Получение свойств файла"
 description: "Получите свойства&\\#8212;верхнего уровня, базовые и расширенные&\\#8212;для файла, представленного объектом StorageFile."
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 56b83d2f05189b4cbb5bbc015987a4ffce8d86fd
 
 ---
 # Получение свойств файла
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** Важные API **
@@ -21,7 +20,8 @@ ms.openlocfilehash: 56b83d2f05189b4cbb5bbc015987a4ffce8d86fd
 
 Получите свойства — верхнего уровня, базовые и расширенные — для файла, представленного объектом [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
 
-**Примечание.** См. также [пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
+
+            **Примечание.** См. также [пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
  
 
@@ -40,7 +40,8 @@ ms.openlocfilehash: 56b83d2f05189b4cbb5bbc015987a4ffce8d86fd
 
 Доступ ко многим свойствам файла верхнего уровня можно получить как к членам класса [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). К таким свойствам относятся атрибуты файлов, тип содержимого, дата создания, отображаемое имя, тип файла и т. д.
 
-**Примечание.** Не забудьте объявить возможность **picturesLibrary**.
+
+            **Примечание.** Не забудьте объявить возможность **picturesLibrary**.
 
  
 
