@@ -4,8 +4,9 @@ title: "Инструкции к приложениям для Windows10— ра�
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 author: martinekuan
 redirect_url: https://developer.microsoft.com/en-us/windows/develop
+translationtype: Human Translation
 ms.sourcegitcommit: 753a917c0ecbf445560203dbc1406acae52e5265
-ms.openlocfilehash: 97e016047c864026fe0c72e4b7cb819f0fc80748
+ms.openlocfilehash: 2b4bae1606f9b51e2d4901218ebd2d616e4c5edc
 
 ---
 
@@ -19,12 +20,12 @@ ms.openlocfilehash: 97e016047c864026fe0c72e4b7cb819f0fc80748
 Если вы желаете понять принцип работы универсальной платформы Windows (UWP) и то, как она позволяет использовать один и тот же код для создания требуемого уровня взаимодействия на устройствах Windows нескольких типов, см. эти статьи:
 
 -   [Создание первого приложения универсальной платформы Windows](get-started/create-a-hello-world-app-xaml-universal.md)
--   [Руководство по работе с приложениями универсальной платформы Windows](get-started/universal-application-platform-guide.md)
+-   [Руководство по работе с приложениями универсальной платформы Windows (UWP)](get-started/universal-application-platform-guide.md)
 -   [Что такое приложение универсальной платформы Windows?](get-started/whats-a-uwp.md)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 
