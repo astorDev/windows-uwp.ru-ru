@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: "Оптимизация макета XAML"
 description: "Макет может быть затратной частью приложения XAML как в плане загрузки ЦП, так и в плане использования памяти. Ниже приведены несколько простых действий, которые можно выполнить для повышения производительности макета приложения XAML."
+translationtype: Human Translation
 ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
+ms.openlocfilehash: ae6ad7a761737613c323eb80af993ab5dfcd7977
 
 ---
 # Оптимизация макета XAML
@@ -129,8 +130,7 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 
 Общее требование к пользовательскому интерфейсу заключается в том, чтобы в макете элементы накладывались друг на друга. Как правило, для размещения элементов подобным образом используют заполнение, поля, выравнивание и преобразование. Элемент управления XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) оптимизирован для повышения производительности макета с накладывающимися элементами.
 
-
-            **Важно!** Чтобы добиться видимого улучшения, используйте элемент [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) с одной ячейкой. Не задавайте [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) или [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
+**Важно!** Чтобы добиться видимого улучшения, используйте элемент [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) с одной ячейкой. Не задавайте [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) или [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
 
 ### Примеры
 
@@ -156,10 +156,7 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 
 ## Используйте свойства встроенной границы панели
 
-
-            [
-              **Элементы управления Grid**
-            ](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546)и [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) имеют свойства встроенной границы, позволяющие рисовать вокруг них границу без добавления дополнительного элемента [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250). Новые свойства, поддерживающие встроенную границу: **BorderBrush**, **BorderThickness**, **CornerRadius** и **Padding**. Каждое из этих свойств представляет собой [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362), в связи с чем их можно использовать с привязками и анимациями. Они предназначены для того, чтобы служить полной заменой отдельного элемента **Border**.
+[**Элементы управления Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546)и [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) имеют свойства встроенной границы, позволяющие рисовать вокруг них границу без добавления дополнительного элемента [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250). Новые свойства, поддерживающие встроенную границу: **BorderBrush**, **BorderThickness**, **CornerRadius** и **Padding**. Каждое из этих свойств представляет собой [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362), в связи с чем их можно использовать с привязками и анимациями. Они предназначены для того, чтобы служить полной заменой отдельного элемента **Border**.
 
 Если ваш пользовательский интерфейс включает элементы [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) вокруг этих панелей, используйте вместо них встроенную границу, которая позволит сэкономить место для дополнительного элемента в структуре макета вашего приложения. Как упоминалось ранее, это может обеспечить значительную экономию, особенно в случае повторяемых пользовательских интерфейсов.
 
@@ -176,13 +173,9 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 
 Класс [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) предоставляет два аналогичных события на случай изменения макета: [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) и [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged). Вы можете использовать одно из этих событий для получения уведомлений об изменении размера элемента во время редактирования макета. Семантика этих двух событий отличается, и при выборе одного из них важно учитывать производительность.
 
-Для обеспечения высокой производительности почти всегда лучше выбирать [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged). 
-            Событие **SizeChanged** имеет интуитивную семантику. Оно возникает во время редактирования макета в случае изменения размера [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706).
+Для обеспечения высокой производительности почти всегда лучше выбирать [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged). Событие **SizeChanged** имеет интуитивную семантику. Оно возникает во время редактирования макета в случае изменения размера [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706).
 
-
-            [
-              **Событие LayoutUpdated**
-            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) также возникает при редактировании макета, но при этом оно имеет глобальную семантику, так как возникает при изменении любого элемента. Это событие, как правило, выбирают только для локальной обработки в обработчике событий; и в этом случае код запускается чаще, чем это необходимо. Используйте **LayoutUpdated** только в том случае, если вам необходимо получать уведомление о перемещении элемента без изменения размера (что происходит нечасто).
+[**Событие LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) также возникает при редактировании макета, но при этом оно имеет глобальную семантику, так как возникает при изменении любого элемента. Это событие, как правило, выбирают только для локальной обработки в обработчике событий; и в этом случае код запускается чаще, чем это необходимо. Используйте **LayoutUpdated** только в том случае, если вам необходимо получать уведомление о перемещении элемента без изменения размера (что происходит нечасто).
 
 ## Выбор панелей
 
@@ -193,6 +186,6 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

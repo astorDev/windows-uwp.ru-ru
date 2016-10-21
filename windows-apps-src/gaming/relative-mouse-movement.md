@@ -1,35 +1,39 @@
 ---
 author: scottmill
-title: Relative mouse movement
+title: "Относительное движение мыши"
+translationtype: Human Translation
+ms.sourcegitcommit: 4a00847f0559d93eea199d7ddca0844b5ccaa5aa
+ms.openlocfilehash: b035e81776039fba60f239b18efef8fe5b43b2f6
+
 ---
 
-In games, the mouse is a common control option that is familiar to many players, and is likewise essential to many genres of games, including first- and third-person shooters, and real-time strategy games. Here we discuss the implementation of relative mouse controls, which don't use the system cursor and don't return absolute screen coordinates; instead, they track the pixel delta between mouse movements.
+Распространенным средством управления в играх служит мышь, привычная пользователям и неотъемлемая в играх таких жанров, как "стрелялки" от первого и от третьего лица, стратегические игры в реальном времени и другие. Здесь мы рассмотрим реализацию относительных элементов управления для мыши, которые не используют системный курсор и не возвращают абсолютные экранные координаты, а отслеживают изменение значений пикселей при перемещении мыши.
 
-# Relative mouse movement and CoreWindow
+# Относительное перемещение мыши и CoreWindow
 
-Some apps, such as games, use the mouse as a more general input device. For example, a 3-D modeler might use mouse input to orient a 3-D object by simulating a virtual trackball; or a game might use the mouse to change the direction of the viewing camera via mouse-look controls. 
+Во многих приложениях, например в играх, мышь используется в качестве основного устройства ввода. Скажем, ввод с помощью мыши может применяться в трехмерной модели, чтобы задавать направление трехмерному объекту при имитации виртуального трекбола, или в игре с помощью мыши может изменяться направление камеры (через элементы управления мышью и обзором). 
 
-In these scenarios, the app requires relative mouse data. Relative mouse values represent how far the mouse moved since the last frame, rather than the absolute x-y coordinate values within a window or screen. Also, apps often hide the mouse cursor since the position of the cursor with respect to the screen coordinates is not relevant when manipulating a 3-D object or scene. 
+При таких сценариях приложению нужны относительные данные ввода с мыши. Относительные значения перемещения мыши означают дальность перемещения мыши относительно предыдущего кадра, а не абсолютные координаты в пределах окна или экрана. Кроме того, приложения зачастую скрывают курсор мыши, так как положение курсора относительно экранных координат несущественно при управлении трехмерным объектом или пространством. 
 
-When the user takes an action that moves the app into a relative 3-D object/scene manipulation mode, the app must: 
-- Ignore default mouse handling.
-- Enable relative mouse handling.
-- Hide the mouse cursor by setting it a null pointer (nullptr). 
+Если пользователь выполняет действие, которое переводит приложение в режим относительного управления трехмерным объектом или пространством, приложение должно: 
+- игнорировать обработку сигналов мыши по умолчанию;
+- включить относительную обработку сигналов мыши;
+- скрыть курсор мыши, установив пустой указатель (nullptr). 
 
-When the user takes an action that moves the app out of a relative 3-D object/scene manipulation mode, the app must: 
-- Enable default/absolute mouse handling.
-- Turn off relative mouse handling. 
-- Set the mouse cursor to a non-null value (which makes it visible).
+Если пользователь выполняет действие, которое выводит приложение из режима относительного управления трехмерным объектом или пространством, приложение должно: 
+- включить обработку сигналов мыши по умолчанию;
+- выключить относительную обработку сигналов мыши; 
+- задать для курсора мыши значение, отличное от null (отчего курсор становится виден).
 
-> **Note**  
-With this pattern, the location of the absolute mouse cursor is preserved on entering the cursorless relative mode. The cursor re-appears in the same screen coordinate location as it was previous to enabling the relative mouse movement mode.
+> **Примечание.**  
+При такой схеме абсолютное положение курсора мыши сохраняется при переходе в относительный режим, когда курсор скрыт. Курсор вновь появится в той же координате экрана, что и до перехода в режим относительной обработки сигналов мыши.
 
  
 
-## Handling relative mouse movement
+## Обработка относительных значений перемещения мыши
 
 
-To access relative mouse delta values, register for the [MouseDevice::MouseMoved](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.devices.input.mousedevice.mousemoved.aspx) event as shown here.
+Чтобы получить доступ к относительным значениям перемещения мыши, выполните регистрацию события [MouseDevice::MouseMoved](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.devices.input.mousedevice.mousemoved.aspx), как показано ниже.
 
 
 ```cpp
@@ -55,11 +59,11 @@ void MoveLookController::OnMouseMoved(
     pointerDelta.y = static_cast<float>(args->MouseDelta.Y);
 
     float2 rotationDelta;
-    rotationDelta = pointerDelta * ROTATION_GAIN;	// scale for control sensitivity
+    rotationDelta = pointerDelta * ROTATION_GAIN;   // scale for control sensitivity
 
     // update our orientation based on the command
-    m_pitch -= rotationDelta.y;						// mouse y increases down, but pitch increases up
-    m_yaw   -= rotationDelta.x;						// yaw defined as CCW around y-axis
+    m_pitch -= rotationDelta.y;                     // mouse y increases down, but pitch increases up
+    m_yaw   -= rotationDelta.x;                     // yaw defined as CCW around y-axis
 
     // limit pitch to straight up or straight down
     float limit = (float)(M_PI/2) - 0.01f;
@@ -75,18 +79,23 @@ void MoveLookController::OnMouseMoved(
 
 ```
 
-The event handler in this code example, **OnMouseMoved**, renders the view based on the movements of the mouse. The position of the mouse pointer is passed to the handler as a [MouseEventArgs](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.devices.input.mouseeventargs.aspx) object. 
+Обработчик событий **OnMouseMoved** в данном примере кода выполняет преобразование для просмотра в зависимости от перемещений мыши. Положение указателя мыши передается в обработчик в качестве объекта [MouseEventArgs](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.devices.input.mouseeventargs.aspx). 
 
-Skip over processing of absolute mouse data from the [CoreWindow::PointerMoved](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.core.corewindow.pointermoved.aspx) event when your app changes to handling relative mouse movement values. However, only skip this input if the **CoreWindow::PointerMoved** event occurred as the result of mouse input (as opposed to touch input). The cursor is hidden by setting the [CoreWindow::PointerCursor](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx) to **nullptr**. 
+Пропускайте обработку данных об абсолютном положении мыши от события [CoreWindow::PointerMoved](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.core.corewindow.pointermoved.aspx), если ваше приложение переходит в режим обработки относительных значений перемещения мыши. При этом пропускайте эти данные, только если событие **CoreWindow::PointerMoved** наступило в результате ввода с помощью мыши (а не сенсорного ввода). Курсор скрыт, потому что для свойства [CoreWindow::PointerCursor](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx) установлено значение **nullptr**. 
 
-## Returning to absolute mouse movement
+## Возвращение в режим обработки абсолютных значений перемещения мыши
 
-When the app exits the 3-D object or scene manipulation mode and no longer uses relative mouse movement (such as when it returns to a menu screen), return to normal processing of absolute mouse movement. At this time, stop reading relative mouse data, restart the processing of standard mouse (and pointer) events, and set [CoreWindow::PointerCursor](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx) to non-null value. 
+Когда приложение выходит из режима относительного управления трехмерным объектом или пространством и более не использует относительные значения перемещения мыши (например, при возвращении в экран меню), вернитесь к обычной обработке абсолютных значений перемещения мыши. Теперь нужно прекратить чтение относительных данных о положении мыши, перезапустить обработку обычных событий мыши (и указателя) и установить для [CoreWindow::PointerCursor](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx) значение, отличное от null. 
 
-> **Note**  
-When your app is in the 3-D object/scene manipulation mode (processing relative mouse movements with the cursor off), the mouse cannot invoke edge UI such as the charms, back stack, or app bar. Therefore, it is important to provide a mechanism to exit this particular mode, such as the commonly used **Esc** key.
+> **Примечание.**  
+Когда приложение находится в режиме относительного управления трехмерным объектом или пространством (обрабатывает относительные значения перемещения мыши при отключенном курсоре), с помощью мыши невозможно вызывать элементы пользовательского интерфейса, расположенные по краям, например чудо-кнопки, кнопку "Назад" или панель приложения. Поэтому важно предусмотреть способ выхода из данного режима, например с помощью клавиши **ESC**.
 
-## Related topics
+## Связанные статьи
 
-* [Move-look controls for games](tutorial--adding-move-look-controls-to-your-directx-game.md) 
-* [Touch controls for games](tutorial--adding-touch-controls-to-your-directx-game.md)
+* [Элементы управления перемещением и обзором для игр](tutorial--adding-move-look-controls-to-your-directx-game.md) 
+* [Сенсорные элементы управления для игр](tutorial--adding-touch-controls-to-your-directx-game.md)
+
+
+<!--HONumber=Aug16_HO3-->
+
+

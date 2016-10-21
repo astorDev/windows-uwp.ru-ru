@@ -1,45 +1,55 @@
-﻿---
+---
 author: jnHs
-Description: When you create a new add-on in the Windows Dev Center dashboard, you need to specify a product type and assign it a product ID.
-title: Set your add-on product type and product ID
+Description: "При создании новой надстройки на информационной панели Центра разработки для Windows вам потребуется указать тип продукта и назначить ему код продукта."
+title: "Установка типа и кода продукта для надстройки"
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
+translationtype: Human Translation
+ms.sourcegitcommit: e59324aca65cf8baacb085da22a20d952fdb8c9a
+ms.openlocfilehash: 2a469506c8b440e1aa8555ac57b88f2026ae4d8e
+
 ---
 
-# Set your add-on product type and product ID
+# Установка типа и кода продукта для надстройки
 
-An add-on must be associated with an app that you've created in the dashboard already (even if you haven't submitted it yet). You can find the button to **Create a new add-on** on either your app's **Overview** page or its **Add-ons** page.
+Надстройка должна быть связана с приложением, которое вы уже создали на информационной панели (даже если еще не отправили его). Вы можете найти кнопку **Создать новую надстройку** на странице **Обзор** или на странице **Надстройки** вашего приложения.
 
-Once you've clicked the button, you'll see the **Create a new add-on** page. Here, you'll need to specify a product type and assign it a product ID.
+После нажатия этой кнопки появится страница **Создать новую надстройку**. Здесь необходимо указать тип продукта и назначить ему код продукта.
 
-## Product type
+## Тип продукта
 
-First, you'll need to indicate which type of add-on you are offering. This selection refers to how the customer can use your add-on.
+Сначала необходимо указать, какой тип надстройки вы предлагаете. Это выбор относится к тому, как клиенты могут использовать вашу надстройку.
 
-> **Note** You won't be able to change the product type after you save this page to create the add-on. If you did choose the wrong product type, you can always delete your in-progress add-on submission and start over by creating a new add-on.
+> **Примечание.** Невозможно изменить тип продукта после сохранения этой страницы для создания надстройки. Если вы выбрали неверный тип продукта, вы всегда сможете удалить текущую надстройку и начать заново, создав новую.
 
-If the product can be purchased, used (consumed), and then purchased again, you'll want to select one of the **consumable** proudct types. Consumable add-ons are often used for things like in-game currency (gold, coins, etc.) which can be purchased in set amounts and then used up by the customer. For more info on including consumable add-ons in your app, see [Enable consumable add-on purchases](../monetize/enable-consumable-add-on-purchases.md).
+Если продукт можно приобрести, использовать (потребить), а затем приобрести еще раз, необходимо будет выбрать один из **потребляемых** типов продукта. Потребляемые надстройки часто используются для таких вещей, как игровая валюта (золото, монеты и т. д.), которая может приобретаться определенными суммами, а затем использоваться пользователем. Дополнительные сведения о включении потребляемых надстроек в ваше приложение см. в разделе [Поддержка приобретения потребляемых надстроек](../monetize/enable-consumable-add-on-purchases.md).
 
-There are two types of consumable add-ons that you can select:
+Существует два типа потребляемых надстроек, которые можно выбрать:
 
-- **Developer-managed consumable**: Supported on all OS versions. Balance and fulfillment must be managed within your app. 
-- **Store-managed consumable:** Balance will be tracked by Microsoft across all of the customer’s devices running Windows 10, version 1607 or later; not supported on any earlier OS versions. To use this option, the parent product must be compiled using Windows 10 SDK version 14393 or later. Also note that you cannot submit a Store-managed consumable add-on to the Store until the parent product has been published (though you can create the submission in your dashboard and begin working on it at any time). You'll need to enter the quantity for your Store-managed consumable add-on in the **Properties** page.
+- **Управляемые разработчиком потребляемые надстройки**: поддерживаются во всех версиях ОС. Управление балансом и выполнением осуществляется в приложении. 
+- **Управляемые разработчиком потребляемые надстройки**: баланс отслеживается Microsoft для всех устройств клиента, работающих под управлением Windows 10 версии 1607 или выше; не поддерживается в более ранних версиях ОС. Чтобы использовать этот вариант, родительский продукт должен быть скомпилирован с помощью Windows 10 SDK версии 14393 или выше. Обратите внимание, что невозможно отправить управляемую Магазином потребляемую надстройку в Магазин до тех пор, пока родительский продукт не опубликован (хотя можно создать отправку на информационной панели и в любой момент начать работать с ней). Потребуется ввести количество для управляемой Магазином потребляемой надстройки на странице **Свойства**.
 
-You should select **Durable** if your product can be purchased only once. Durable add-ons are often used to unlock additional functionality in an app. Durable add-ons are not consumed, but you can set the **Product lifetime** so that they expire after a set duration (with options from 1-365 days). The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. You can change this to a different duration in the [Add-on properties](enter-add-on-properties.md) step of the add-on submission process.
+Необходимо выбрать значение **Длительного пользования**, если продукт можно приобрести однократно. Надстройки длительного пользования часто используются для разблокировки дополнительных функциональных возможностей приложения. Надстройки длительного пользования не потребляются, поэтому вы можете задать **Срок службы продукта**, чтобы он становился негодным через определенный промежуток времени (доступен выбор от 1 до 365 дней). Для надстройки длительного пользования **Срок службы продукта** по умолчанию имеет значение **Всегда**, то есть срок службы надстройки никогда не заканчивается. Вы можете выбрать другую длительность на этапе [Свойства надстройки](enter-add-on-properties.md) процесса отправки надстройки.
 
-## Product ID
+## Код продукта
 
-Enter a unique product ID for your add-on. This is the same identifier that you will need to reference in [your app's code to call the add-on](https://msdn.microsoft.com/library/windows/apps/mt219684).
+Введите уникальный код продукта для надстройки. Этот тот же идентификатор, который понадобится для указания [в коде приложения с целью вызова надстройки](https://msdn.microsoft.com/library/windows/apps/mt219684).
 
-Here are a few things to keep in mind when choosing a product ID:
+Вот несколько вещей, которые следует помнить при выборе кода продукта:
 
--   Customers won't see this product ID. (Later, you can enter a [title and description](create-add-on-descriptions.md) to be displayed to customers.)
--   You can’t change or delete an add-on's product ID after it's been published.
--   A product ID can't be more than 100 characters in length.
--   A product ID cannot include any of the following characters: **&lt; &gt; \* % & : \\ ? + ,**
--   To offer your add-on on all devices, you must only use alphanumeric characters, periods, and/or underscores. If you use any other types of characters, the add-on will not be available for purchase to customers running Windows Phone 8.1 or earlier.
--   A product ID doesn't have to be unique within the Windows Store, but it must be unique to your developer account.
- 
+-   Клиенты не будут видеть этот код продукта. (Позже можно ввести [заголовок и описание](create-add-on-descriptions.md) для отображения пользователям).
+-   Вы не сможете изменять или удалять код продукта надстройки после публикации.
+-   Длина кода продукта не может быть больше 100 символов.
+-   Код продукта может включать любые из следующих символов: **&lt; &gt; \* % & : \\ ? + ,**
+-   Чтобы предложить надстройку на всех устройствах, необходимо использовать только буквенно-цифровые символы, точки и знаки подчеркивания. Если вы используете любые другие типы символов, надстройка не будет доступна для покупки клиентам, использующим Windows Phone 8.1 или более ранние версии.
+-   Код продукта не должен быть уникальным в Магазине Windows, однако он должен быть уникальным для вашей учетной записи разработчика.
+ 
 
 
+
+
+
+
+
+<!--HONumber=Aug16_HO5-->
 
 

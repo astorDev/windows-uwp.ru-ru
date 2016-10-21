@@ -1,17 +1,17 @@
 ---
 author: drewbatgit
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
-description: "В этой статье объясняется, как загрузить и сохранить файлы изображений с помощью BitmapDecoder и BitmapEncoder, а также как использовать объект SoftwareBitmap для представления точечных рисунков."
-title: "Обработка изображений"
+description: "В этой статье объясняется, как загружать и сохранять файлы изображений с помощью BitmapDecoder и BitmapEncoder, а также как использовать объект SoftwareBitmap для представления точечных рисунков."
+title: "Создание, редактирование и сохранение точечных рисунков"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
+ms.sourcegitcommit: c61bad4b4a5440531c0177247c425addaf452920
+ms.openlocfilehash: ff6bff692c4e0e73b2c99e06b46e8a3050ba12c4
 
 ---
 
-# Обработка изображений
+# Создание, редактирование и сохранение точечных рисунков
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье объясняется, как загрузить и сохранить файлы изображений с помощью [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) и [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206), а также как использовать объект [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) для представления точечных рисунков.
@@ -44,7 +44,7 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 
 [!code-cs[PickOuputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
 
-Вызовите метод [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) объекта **StorageFile**, чтобы получить поток произвольного доступа, в который будет записано изображение. Вызовите статический метод [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211), чтобы получить экземпляр класса [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) для указанного потока. Первый параметр **CreateAsync**— это идентификатор GUID, представляющий кодек, который необходимо использовать для кодирования изображения. **BitmapEncoder**— класс, который предоставляет свойство, содержащее идентификатор для каждого кодека, поддерживаемого кодировщиком, например [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).
+Вызовите метод [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) объекта **StorageFile**, чтобы получить поток произвольного доступа, в который будет записано изображение. Вызовите статический метод [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211), чтобы получить экземпляр класса [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) для указанного потока. Первый параметр **CreateAsync**— это идентификатор GUID, представляющий кодек, который необходимо использовать для кодирования изображения. **BitmapEncoder** — класс, который предоставляет свойство, содержащее идентификатор для каждого кодека, поддерживаемого кодировщиком, например [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).
 
 Используйте метод [**SetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887337), чтобы задать изображение для кодирования. Вы можете задать значения свойства [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) для применения основных преобразований изображения во время кодирования. Свойство [**IsThumbnailGenerated**](https://msdn.microsoft.com/library/windows/apps/br226225) определяет, создал ли кодировщик эскиз. Обратите внимание, что не все форматы файлов поддерживают эскизы, поэтому при использовании этой функции может возникнуть ошибка о недопустимой операции, если эскизы не поддерживаются.
 
@@ -61,6 +61,8 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 Чтобы отобразить изображение на странице XAML с помощью элемента управления [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752), сначала найдите элемент управления **Image** на своей странице XAML.
 
 [!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
+
+В настоящее время элемент управления **Image** поддерживает только изображения с кодированием BGRA8 и альфа-каналом с предварительным умножением (или без альфа-канала). Перед попыткой отображения изображения убедитесь, что оно имеет правильный формат; если формат неправильный, используйте статический метод [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) объекта **SoftwareBitmap**, чтобы преобразовать изображение в поддерживаемый формат.
 
 Создайте новый объект [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854). Задайте содержимое исходного объекта, вызвав [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856), передающий **SoftwareBitmap**. Затем вы можете задать свойство [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) элемента управления **Image** для созданного **SoftwareBitmapSource**.
 
@@ -130,6 +132,6 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

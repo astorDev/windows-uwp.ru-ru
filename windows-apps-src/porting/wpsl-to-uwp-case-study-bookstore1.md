@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
 description: "В этом разделе представлен практический пример переноса очень простого приложенияWindows Phone Silverlight в приложение UWP для Windows10."
 title: "Пример переноса Windows Phone Silverlight в UWP, Bookstore1"
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dbffb4245efece2d39b4eba8979e323fd71626d0
+ms.openlocfilehash: 86cccfd462717483720c412c1de9eaf6bbc1c5cd
 
 ---
 
@@ -18,16 +19,13 @@ ms.openlocfilehash: dbffb4245efece2d39b4eba8979e323fd71626d0
 
 Предыдущая тема в этом разделе описывает различия между платформами. Это описание содержит подробные сведения и руководство по переносу различных элементов приложения из разметки XAML через привязку к модели представления и далее к доступу к данным. Цель этого практического примера — дополнить это руководство, показывая его в действии на реальном примере. Предполагается, что вы ознакомились с этим руководством, которое в данных примерах не повторяется.
 
-
-            **Примечание.**   Если при открытии Bookstore1Universal\_10 в Visual Studio отображается сообщение "Требуется обновление Visual Studio", следуйте инструкциям из [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md#targetplatformversion).
+**Примечание.**   Если при открытии Bookstore1Universal\_10 в Visual Studio отображается сообщение "Требуется обновление Visual Studio", следуйте инструкциям из [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md#targetplatformversion).
 
 ## Загрузки
 
+[Скачать приложение Bookstore1WPSL8 для Windows Phone Silverlight](http://go.microsoft.com/fwlink/?linkid=517053).
 
-            [Скачать приложение Bookstore1WPSL8 для Windows Phone Silverlight](http://go.microsoft.com/fwlink/?linkid=517053).
-
-
-            [Скачать приложение Bookstore1Universal\_10 для Windows10](http://go.microsoft.com/fwlink/?linkid=532950).
+[Скачать приложение Bookstore1Universal\_10 для Windows10](http://go.microsoft.com/fwlink/?linkid=532950).
 
 ## Приложение WindowsPhone Silverlight
 
@@ -138,6 +136,6 @@ ms.openlocfilehash: dbffb4245efece2d39b4eba8979e323fd71626d0
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

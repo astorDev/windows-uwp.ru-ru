@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: "Файлы, папки и библиотеки"
 description: "Узнайте о параметрах приложения для чтения и записи, о средствах выбора файлов и папок, а также о специальных расположениях песочниц, например о библиотеках видео и музыки."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: ea52cafab084f202705282d63f4a37ec0d65bd03
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 32c6e33f9506abc1876075f6ca11656241921005
 
 ---
  # Файлы, папки и библиотеки
@@ -21,8 +21,6 @@ API в пространствах имен [Windows.Storage](https://msdn.micros
 | [Получение свойств файла](quickstart-getting-file-properties.md) | Получите свойства–верхнего уровня, базовые и расширенные–для файла, представленного объектом [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171). |
 | [Открытие файлов и папок с помощью средства выбора](quickstart-using-file-and-folder-pickers.md) | Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Для получения доступа к папкам можно использовать класс [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881). |
 | [Сохранение файла с помощью средства выбора](quickstart-save-a-file-with-a-picker.md) | Чтобы дать пользователям возможность задать имя и расположение, в которое приложение должно сохранить файл, воспользуйтесь средством [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871). |
-| [Использование защиты корпоративных данных (EDP) для защиты файлов](protect-your-enterprise-data-with-edp.md) | В этом разделе представлены примеры задач по созданию кода для наиболее распространенных сценариев защиты корпоративных данных (EDP) на уровне файлов. |
-| [Использование защиты корпоративных данных (EDP) для защиты потоков и буферов](use-edp-to-protect-streams-and-buffers.md) | В этом разделе представлены примеры задач по созданию кода для наиболее распространенных сценариев защиты корпоративных данных (EDP) на уровне потоков и буферов. |
 | [Доступ к содержимому домашней группы](quickstart-accessing-homegroup-content.md) | Получите доступ к содержимому в папке домашней группы пользователя, включая изображения, музыку и видео. |
 | [Определение доступности файлов MicrosoftOneDrive](quickstart-determining-availability-of-microsoft-onedrive-files.md) | Определите доступность файла MicrosoftOneDrive с помощью свойства [StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx). |
 | [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | Добавьте существующие папки музыки, изображений или видео в соответствующие библиотеки. Можно также удалить папки из библиотек, получить список папок в библиотеке и найти сохраненные фотографии, музыку и видео. |
@@ -42,10 +40,6 @@ API в пространствах имен [Windows.Storage](https://msdn.micros
 
 
 
-
-
-
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

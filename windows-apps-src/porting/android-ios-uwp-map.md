@@ -4,8 +4,8 @@ Description: "Сравнение возможностей платформ iOS, 
 Search.Product: eADQiWindows 10XVcnh
 title: "Сопоставление концепций приложений для Windows для разработчиков iOS и Android"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
+ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
+ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 
 ---
 
@@ -120,19 +120,19 @@ ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
 <td align="left">XAML предоставляет гибкую систему макетов, состоящую из <strong>классов панелей макета</strong>, таких как <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.canvas.aspx">Canvas</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx">Grid</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.relativepanel.aspx">RelativePanel</a></strong> и <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx">StackPanel</a></strong> для создания статических и гибких макетов. <strong><a href="https://msdn.microsoft.com/library/ms171352.aspx">Свойства</a></strong> используются для управления размером и положением элементов.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx">Определение макетов с помощью XAML</a><br/></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Навигация между одноранговыми элементами.</strong> <br><br>Представление пользователю методов навигации между страницами, находящимися на одном уровне иерархии.</td>
+<td align="left"><strong>Навигация по одноранговым элементам.</strong> <br><br>Представление пользователю методов навигации между страницами, находящимися на одном уровне иерархии.</td>
 <td align="left"><strong>Вкладки</strong>, <strong>представления прокрутки</strong> и <strong>навигационные секции</strong> служат для <strong>боковой навигации</strong>.</td>
 <td align="left"><strong>Контроллеры панели вкладок</strong>, <strong>контроллеры разделенного представления</strong> и <strong>контроллеры представления страниц</strong> обеспечивают навигацию между представлениями одного уровня иерархии.</td>
-<td align="left">С помощью <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">вкладок и сводок</a></strong> можно отобразить постоянный список ссылок или вкладок над содержимым. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">Панель навигации и комбинированный режим</a></strong> позволяют отображать список ссылок рядом с содержимым.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">Навигация</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt465735.aspx">Одноранговая навигация между двумя страницами</a></td>
+<td align="left">С помощью <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">вкладок и сводок</a></strong> можно отобразить постоянный список ссылок или вкладок над содержимым. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">Панель навигации и комбинированный режим</a></strong> позволяют отображать список ссылок рядом с содержимым.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Навигация</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Навигация между двумя страницами</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Иерархическая навигация.</strong> <br><br>Навигация между родительскими и дочерними страницами иерархии.</td>
 <td align="left"><strong>Списки</strong>, <strong>сетки</strong>, <strong>кнопки</strong> и другие элементы управления обеспечивают <strong>нисходящую навигацию</strong> при использовании объектов <strong>Intent</strong> для загрузки других классов <strong>Activity</strong>.</td>
 <td align="left"><strong>Контроллеры навигации</strong> позволяют пользователям выполнять переход между уровнями иерархии.</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">Главные разделы</a></strong> позволяют показать пользователю краткий обзор содержимого, который можно выбрать для перехода на дочерние страницы. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">Шаблон основных и подробных данных</a></strong> дает возможность выбирать из списка сводок элементов, отображаемых рядом с соответствующим разделом сведений.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">Навигация</a></td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">Главные разделы</a></strong> позволяют показать пользователю краткий обзор содержимого, который можно выбрать для перехода на дочерние страницы. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">Шаблон основных и подробных данных</a></strong> дает возможность выбирать из списка сводок элементов, отображаемых рядом с соответствующим разделом сведений.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Навигация</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Навигация между двумя страницами</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Навигация кнопки "Назад".</strong> <br><br>Переход назад в приложении.</td>
+<td align="left"><strong>Навигация с помощью кнопки "Назад".</strong> <br><br>Переход назад в приложении.</td>
 <td align="left">Кнопки <strong>Назад</strong> и <strong>Вверх</strong> в панели действий обеспечивают <strong>наследуемую</strong> и <strong>временную</strong> навигацию с использованием <strong>обратного стека</strong>.</td>
 <td align="left">В <strong>контроллер навигации</strong> можно добавить кнопку перехода назад.<br/></td>
 <td align="left">Вы можете легко обрабатывать нажатия аппаратной или программной кнопки "Назад" с помощью <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.backstack.aspx">свойства обратного стека</a></strong>, которое позволяет пользователям перемещаться по <strong>журналу навигации</strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt465734.aspx">Навигация с помощью кнопки "Назад"</a></td>
@@ -665,6 +665,6 @@ ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

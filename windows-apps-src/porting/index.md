@@ -5,7 +5,7 @@ description: "В этом разделе описано, как перенест
 title: "Перенос приложений в Windows10"
 translationtype: Human Translation
 ms.sourcegitcommit: 5b7b5f985eccf905698d7995d1574967bbec176f
-ms.openlocfilehash: fd7f2dc0d83ef8c4d075e25d3e2fa453d9ce849d
+ms.openlocfilehash: 777542dd6a105b432e25db082cb0e1b7b87101f2
 
 ---
 
@@ -37,6 +37,6 @@ ms.openlocfilehash: fd7f2dc0d83ef8c4d075e25d3e2fa453d9ce849d
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

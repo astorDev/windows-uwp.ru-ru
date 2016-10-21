@@ -5,8 +5,9 @@ title: "Работа с входными данными указателя"
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 2204e8f3ddce067cf2cbc24ce89cbdcea5b361bf
+ms.openlocfilehash: 2053062f6a5f850da8983bce2465cd10cdc01d56
 
 ---
 
@@ -64,7 +65,7 @@ ms.openlocfilehash: 2204e8f3ddce067cf2cbc24ce89cbdcea5b361bf
 <td align="left"><p>Происходит, когда указатель отменяется платформой.</p>
 <ul>
 <li>Указатели касания отменяются в том случае, если перо обнаруживается в пределах поверхности ввода.</li>
-<li>Активный контакт не обнаруживается дольше 100 мс.</li>
+<li>Активный контакт не обнаруживается дольше 100мс.</li>
 <li>Изменены настройки монитора/дисплея (разрешение, параметры, конфигурация с несколькими мониторами).</li>
 <li>Рабочий стол заблокирован или пользователь вышел из системы.</li>
 <li>Количество одновременных контактов превысило значение, поддерживаемое устройством.</li>
@@ -249,10 +250,7 @@ ms.openlocfilehash: 2204e8f3ddce067cf2cbc24ce89cbdcea5b361bf
 
 -   Этот обработчик управляет событием [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971). Мы добавляем это событие в журнал событий, добавляем указатель в массив указателей, используемый для отслеживания интересующих нас указателей, и отображаем данные указателя.
 
-    **Примечание.**
-            [
-              **События PointerPressed**
-            ](https://msdn.microsoft.com/library/windows/apps/br208971) и [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) не всегда возникают парами. Приложение должно ожидать и обрабатывать любые события, которые могут содержать действие указателя "вниз" (например, [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969), [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964) и [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)).
+    **Примечание.** События [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) и [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) не всегда возникают парами. Приложение должно ожидать и обрабатывать любые события, которые могут содержать действие указателя "вниз" (например, [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969), [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964) и [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)).
 
      
 
@@ -522,10 +520,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 
 -   Этот обработчик управляет событием [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965). Мы добавляем это событие в журнал событий, удаляем указатель из массива указателей и обновляем данные указателя.
 
-    **Примечание.**
-            [
-              **Событие PointerCaptureLost**
-            ](https://msdn.microsoft.com/library/windows/apps/br208965) может произойти вместо события [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972). Захват указателя может быть потерян по разным причинам.
+    **Примечание.** Событие [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) может произойти вместо события [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972). Захват указателя может быть потерян по разным причинам.
 
      
 
@@ -659,7 +654,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 
 ### Полный пример
 
-Ниже приводится код C\# для этого примера. Ссылки на более сложные примеры см. в разделе "Связанные статьи" в нижней части страницы.
+Ниже приводится код C\# для этого примера. Ссылки на более сложные примеры см. в разделе "Связанные разделы" в нижней части страницы.
 
 ```CSharp
 using System;
@@ -1111,6 +1106,6 @@ namespace PointerInput
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

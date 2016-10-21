@@ -3,8 +3,9 @@ author: DBirtolo
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
 title: "Epson ESC/POS с форматированием"
 description: "Узнайте, как использовать командный язык ESC/POS для форматирования текста (например, изменения начертания на полужирное или увеличения размера символов в два раза) для принтера точки обслуживания."
+translationtype: Human Translation
 ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 33231abb1e573d837193daeee21713f09c7d8448
+ms.openlocfilehash: b645e41d7456f1dff664e3f61721a3564d554202
 
 ---
 # Epson ESC/POS с форматированием
@@ -60,6 +61,6 @@ printJob.ExecuteAsync();
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

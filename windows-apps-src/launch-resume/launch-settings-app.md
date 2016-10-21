@@ -1,10 +1,11 @@
 ---
 author: TylerMSFT
-title: "Запуск приложения \"Параметры\" для Windows"
-description: "Узнайте, как запустить приложение \"Параметры\" для Windows из вашего приложения. В этом разделе приводится описание схемы URI ms-settings. Используйте эту схему URI для запуска приложения \"Параметры\" для Windows на определенных страницах параметров."
+title: "Запуск приложения &quot;Параметры&quot; для Windows"
+description: "Узнайте, как запустить приложение &quot;Параметры&quot; для Windows из вашего приложения. В этом разделе приводится описание схемы URI ms-settings. Используйте эту схему URI для запуска приложения &quot;Параметры&quot; для Windows на определенных страницах параметров."
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.sourcegitcommit: 3cf9dd4ab83139a2b4b0f44a36c2e57a92900903
-ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
+translationtype: Human Translation
+ms.sourcegitcommit: f90ba930db60f338ee0ebcc80934281363de01ee
+ms.openlocfilehash: 249e485f74364475ff96a8256ee88bdb79749259
 
 ---
 
@@ -24,12 +25,9 @@ ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
 
 Запуск приложения «Параметры» — важная составляющая создания приложения, учитывающего требования конфиденциальности. Если ваше приложение не может получить доступ к конфиденциальному ресурсу, рекомендуется предоставить пользователю удобную ссылку на параметры конфиденциальности для этого ресурса. Дополнительные сведения см. в статье [Руководство по приложениям, учитывающим конфиденциальность](https://msdn.microsoft.com/library/windows/apps/hh768223).
 
-## Запуск приложения «Параметры» 
+## Запуск приложения «Параметры»
 
-
-Если параметры конфиденциальности не позволяют вашему приложению получить доступ к конфиденциальному ресурсу, рекомендуется предоставить пользователю удобную ссылку на параметры конфиденциальности в приложении **Параметры**. Это поможет пользователям изменить параметры.
-
-Для запуска непосредственно в приложении **Параметры** используйте схему URI `ms-settings:`, как показано в следующих примерах.
+Для запуска приложения **Параметры** используйте схему URI `ms-settings:`, как показано в следующих примерах.
 
 В этом примере элемент управления XAML с гиперссылкой используется для запуска страницы параметров конфиденциальности для микрофона с помощью URI `ms-settings:privacy-microphone`.
 
@@ -45,7 +43,7 @@ ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
 </TextBlock>
 ```
 
-Либо ваше приложение может вызвать метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476), чтобы запустить приложение **Параметры** из кода.
+Либо ваше приложение может вызвать метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476), чтобы запустить приложение **Параметры** из кода. В этом примере показано, как запустить страницу параметров конфиденциальности для камеры с помощью URI `ms-settings:privacy-webcam`.
 
 ```cs
 using Windows.System;
@@ -53,9 +51,11 @@ using Windows.System;
 bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
 ```
 
-В этом примере показано, как запустить страницу параметров конфиденциальности для камеры с помощью URI `ms-settings:privacy-webcam`.
+Приведенный выше код запускает страницу параметров конфиденциальности для камеры:
 
 ![Параметры конфиденциальности камеры.](images/privacyawarenesssettingsapp.png)
+
+
 
 Дополнительные сведения о запуске URI см. в разделе [Запуск приложения по умолчанию для URI](launch-default-app.md).
 
@@ -71,9 +71,9 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 |                    | Уведомления и действия                | То и другое           | ms-settings:notifications                 |
 |                    | Телефон                                  | Только на мобильных    | ms-settings:phone                         |
 |                    | Сообщения                              | Только на мобильных    | ms-settings:messaging                     |
-|                    | Экономия заряда аккумулятора                          | В мобильной и настольной версиях на устройствах с батареей, таких как планшет    | ms-settings:batterysaver                  |
+|                    | Экономия заряда аккумулятора                          | В мобильной и настольной версиях на устройствах с батареей, таких как планшет | ms-settings:batterysaver                  |
 |                    | Экономия заряда аккумулятора и параметры экономии | В мобильной и настольной версиях на устройствах с батареей, таких как планшет | ms-settings:batterysaver-settings         |
-|                    | Экономия и использование заряда аккумулятора            | В мобильной и настольной версиях на устройствах с батареей, таких как планшет    | ms-settings:batterysaver-usagedetails     |
+|                    | Экономия и использование заряда аккумулятора            | В мобильной и настольной версиях на устройствах с батареей, таких как планшет | ms-settings:batterysaver-usagedetails     |
 |                    | Питание и спящий режим                          | Только на ПК   | ms-settings:powersleep                    |
 |                    | ПК: описание                         | То и другое           | ms-settings:deviceencryption              |
 |                    |                                        |                |                                           |
@@ -90,14 +90,19 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 |                    | Передача данных и SIM                         | То и другое           | ms-settings:network-cellular              |
 |                    | Мобильный хот-спот                         | То и другое           | ms-settings:network-mobilehotspot         |
 |                    | Прокси-сервер                                  | То и другое           | ms-settings:network-proxy                 |
+|                    | Состояние                                 | Только на ПК   | ms-settings:network-status                |
 | Персонализация    | Персонализация (категория)             | То и другое           | ms-settings:personalization               |
 |                    | Фон                             | Только на ПК   | ms-settings:personalization-background    |
 |                    | Цвета                                 | То и другое           | ms-settings:personalization-colors        |
 |                    | Звуки                                 | Только на мобильных    | ms-settings:sounds                        |
 |                    | Экран блокировки                            | То и другое           | ms-settings:lockscreen                    |
-| Учетные записи           | Электронная почта и учетные записи                | То и другое           | ms-settings:emailandaccounts              |
-|                    | Рабочий доступ                            | То и другое           | ms-settings:workplace                     |
+| Учетные записи           | Доступ на рабочем месте или в учебном учреждении                  | То и другое           | ms-settings:workplace                     |
+|                    | Учетные записи электронной почты и приложений                   | То и другое           | ms-settings:emailandaccounts              |
+|                    | Семья и другие пользователи                  | То и другое           | ms-settings:otherusers                    |
+|                    | Параметры входа                        | То и другое           | ms-settings:signinoptions                 |
 |                    | Синхронизация параметров                     | То и другое           | ms-settings:sync                          |
+|                    | Другие пользователи                           | То и другое           | ms-settings:otherusers                    |
+|                    | Сведения                              | То и другое           | ms-settings:yourinfo                      |
 | Время и язык  | Дата и время                            | То и другое           | ms-settings:dateandtime                   |
 |                    | Язык и региональные стандарты                      | Только на ПК   | ms-settings:regionlanguage                |
 | Специальные возможности     | Экранный диктор                               | То и другое           | ms-settings:easeofaccess-narrator         |
@@ -127,6 +132,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO4-->
 
 

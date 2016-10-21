@@ -1,10 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: "Перечисление и запрос файлов и папок"
 description: "Доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения также можно создавать запросы файлов и папок."
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
+translationtype: Human Translation
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 
 ---
 # Перечисление и запрос файлов и папок
@@ -14,7 +15,6 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 
 
 Доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения также можно создавать запросы файлов и папок.
-
 
 **Примечание.** См. также раздел [Пример перечисления папок](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
@@ -31,13 +31,12 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 
 ## Перечисление файлов и папок в расположении
 
-> 
-            **Примечание.** Не забудьте объявить возможность **picturesLibrary**.
+> **Примечание.** Не забудьте объявить возможность **picturesLibrary**.
 
 В этом примере мы сначала используем метод [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276), чтобы получить все файлы в корневой папке [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (не во вложенных папках) и перечислить имена всех файлов. Далее мы используем метод [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280), чтобы получить все папки в **PicturesLibrary** и перечислить имена всех вложенных папок.
 
 <!--BUGBUG: IAsyncOperation<IVectorView<StorageFolder^>^>^  causes build to flake out-->
-> [!div class="tabbedCodeSnippets"] 
+> [!div class="tabbedCodeSnippets"]
 > ```cpp
 > //#include <ppltasks.h>
 > //#include <string>
@@ -46,19 +45,19 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 > using namespace Platform::Collections;
 > using namespace concurrency;
 > using namespace std;
-> 
+>
 > // Be sure to specify the Pictures Folder capability in the appxmanifext file.
 > StorageFolder^ picturesFolder = KnownFolders::PicturesLibrary;
-> 
+>
 > // Use a shared_ptr so that the string stays in memory
 > // until the last task is complete.
 > auto outputString = make_shared<wstring>();
 > *outputString += L"Files:\n";
-> 
+>
 > // Get a read-only vector of the file objects
-> // and pass it to the continuation. 
+> // and pass it to the continuation.
 > create_task(picturesFolder->GetFilesAsync())        
->    // outputString is captured by value, which creates a copy 
+>    // outputString is captured by value, which creates a copy
 >    // of the shared_ptr and increments its reference count.
 >    .then ([outputString] (IVectorView\<StorageFile^>^ files)
 >    {        
@@ -68,9 +67,9 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 >            *outputString += L"\n";
 >       }
 >    })
->    // We need to explicitly state the return type 
+>    // We need to explicitly state the return type
 >    // here: -> IAsyncOperation<...>
->    .then([picturesFolder]() -> IAsyncOperation\<IVectorView\<StorageFolder^>^>^ 
+>    .then([picturesFolder]() -> IAsyncOperation\<IVectorView\<StorageFolder^>^>^
 >    {
 >        return picturesFolder->GetFoldersAsync();
 >    })
@@ -78,13 +77,13 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 >    .then([this, outputString](IVectorView\<StorageFolder^>^ folders)
 >    {        
 >        *outputString += L"Folders:\n";
-> 
+>
 >        for ( unsigned int i = 0; i < folders->Size; i++)
 >        {
 >           *outputString += folders->GetAt(i)->Name->Data();
 >           *outputString += L"\n";
 >        }
-> 
+>
 >        // Assume m_OutputTextBlock is a TextBlock defined in the XAML.
 >        m_OutputTextBlock->Text = ref new String((*outputString).c_str());
 >     });
@@ -92,17 +91,17 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 > ```cs
 > StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
 > StringBuilder outputText = new StringBuilder();
-> 
-> IReadOnlyList<StorageFile> fileList = 
+>
+> IReadOnlyList<StorageFile> fileList =
 >     await picturesFolder.GetFilesAsync();
-> 
+>
 > outputText.AppendLine("Files:");
 > foreach (StorageFile file in fileList)
 > {
 >     outputText.Append(file.Name + "\n");
 > }
-> 
-> IReadOnlyList<StorageFolder> folderList = 
+>
+> IReadOnlyList<StorageFolder> folderList =
 >     await picturesFolder.GetFoldersAsync();
 >            
 > outputText.AppendLine("Folders:");
@@ -114,41 +113,40 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 > ```vb
 > Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
 > Dim outputText As New StringBuilder
-> 
+>
 > Dim fileList As IReadOnlyList(Of StorageFile) =
 >     Await picturesFolder.GetFilesAsync()
-> 
+>
 > outputText.AppendLine("Files:")
 > For Each file As StorageFile In fileList
-> 
+>
 >     outputText.Append(file.Name & vbLf)
-> 
+>
 > Next file
-> 
+>
 > Dim folderList As IReadOnlyList(Of StorageFolder) =
 >     Await picturesFolder.GetFoldersAsync()
-> 
+>
 > outputText.AppendLine("Folders:")
 > For Each folder As StorageFolder In folderList
-> 
+>
 >     outputText.Append(folder.DisplayName & vbLf)
-> 
+>
 > Next folder
 > ```
 
 
-> [!div class="tabbedCodeSnippets"]
+> **Примечание.** В языках C# или Visual Basic обязательно вставляйте ключевое слово **async** в объявления всех методов, в которых используется оператор **await**.
  
 
+Также вы можете использовать метод [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286), чтобы получить все элементы (как файлы, так и вложенные папки) в определенном расположении. В следующем примере используется метод **GetItemsAsync** для получения всех файлов и вложенных папок в корневой папке [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (не во вложенных папках). Затем в примере перечисляются имена всех файлов и вложенных папок. Если элемент является вложенной папкой, в примере к имени добавляется `"folder"`.
 
-            **Примечание.** В языках C# или Visual Basic обязательно вставляйте ключевое слово **async** в объявления всех методов, в которых используется оператор **await**. Также вы можете использовать метод [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286), чтобы получить все элементы (как файлы, так и вложенные папки) в определенном расположении. В следующем примере используется метод **GetItemsAsync** для получения всех файлов и вложенных папок в корневой папке [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (не во вложенных папках). Затем в примере перечисляются имена всех файлов и вложенных папок.
-
-> [!div class="tabbedCodeSnippets"] 
+> [!div class="tabbedCodeSnippets"]
 > ```cpp
 > // See previous example for comments, namespace and #include info.
 > StorageFolder^ picturesFolder = KnownFolders::PicturesLibrary;
 > auto outputString = make_shared<wstring>();
-> 
+>
 > create_task(picturesFolder->GetItemsAsync())        
 >     .then ([this, outputString] (IVectorView<IStorageItem^>^ items)
 > {        
@@ -170,53 +168,53 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 > ```cs
 > StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
 > StringBuilder outputText = new StringBuilder();
-> 
-> IReadOnlyList<IStorageItem> itemsList = 
+>
+> IReadOnlyList<IStorageItem> itemsList =
 >     await picturesFolder.GetItemsAsync();
-> 
+>
 > foreach (var item in itemsList)
 > {
 >     if (item is StorageFolder)
 >     {
 >         outputText.Append(item.Name + " folder\n");
-> 
+>
 >     }
 >     else
 >     {
 >         outputText.Append(item.Name + "\n");
-> 
+>
 >     }
 > }
 > ```
 > ```vb
 > Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
 > Dim outputText As New StringBuilder
-> 
+>
 > Dim itemsList As IReadOnlyList(Of IStorageItem) =
 >     Await picturesFolder.GetItemsAsync()
-> 
+>
 > For Each item In itemsList
-> 
+>
 >     If TypeOf item Is StorageFolder Then
-> 
+>
 >         outputText.Append(item.Name & " folder" & vbLf)
-> 
+>
 >     Else
-> 
+>
 >         outputText.Append(item.Name & vbLf)
-> 
+>
 >     End If
-> 
+>
 > Next item
 > ```
 
-## Если элемент является вложенной папкой, в примере к имени добавляется `"folder"`.
+## Запрос файлов в расположении и перечисление соответствующих файлов
 
-[!div class="tabbedCodeSnippets"] Запрос файлов в расположении и перечисление соответствующих файлов В этом примере мы запрашиваем все файлы в [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156), сгруппированные по месяцам, и в этот раз пример выполняет рекурсию во вложенные папки.
+В этом примере мы запрашиваем все файлы в [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156), сгруппированные по месяцам, и в этот раз пример выполняет рекурсию во вложенные папки. Сначала мы вызываем [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) и передаем значение [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) в метод. Благодаря этому получаем объект [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066).
 
-Сначала мы вызываем [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) и передаем значение [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) в метод. Благодаря этому получаем объект [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066).
+Затем мы вызываем [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074), который возвращает объекты класса [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), представляющие виртуальные папки. В этом случае мы группируем по месяцам, поэтому каждая виртуальная папка представляет группу файлов с одинаковым месяцем.
 
-> [!div class="tabbedCodeSnippets"] 
+> [!div class="tabbedCodeSnippets"]
 > ```cpp
 > //#include <ppltasks.h>
 > //#include <string>
@@ -227,17 +225,17 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 > using namespace Platform::Collections;
 > using namespace Windows::Foundation::Collections;
 > using namespace std;
-> 
+>
 > StorageFolder^ picturesFolder = KnownFolders::PicturesLibrary;
-> 
-> StorageFolderQueryResult^ queryResult = 
+>
+> StorageFolderQueryResult^ queryResult =
 >     picturesFolder->CreateFolderQuery(CommonFolderQuery::GroupByMonth);
-> 
+>
 > // Use shared_ptr so that outputString remains in memory
 > // until the task completes, which is after the function goes out of scope.
 > auto outputString = std::make_shared<wstring>();
-> 
-> create_task( queryResult->GetFoldersAsync()).then([this, outputString] (IVectorView<StorageFolder^>^ view) 
+>
+> create_task( queryResult->GetFoldersAsync()).then([this, outputString] (IVectorView<StorageFolder^>^ view)
 > {        
 >     for ( unsigned int i = 0; i < view->Size; i++)
 >     {
@@ -262,22 +260,22 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 > ```
 > ```cs
 > StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
-> 
-> StorageFolderQueryResult queryResult = 
+>
+> StorageFolderQueryResult queryResult =
 >     picturesFolder.CreateFolderQuery(CommonFolderQuery.GroupByMonth);
 >         
-> IReadOnlyList<StorageFolder> folderList = 
+> IReadOnlyList<StorageFolder> folderList =
 >     await queryResult.GetFoldersAsync();
-> 
+>
 > StringBuilder outputText = new StringBuilder();
-> 
+>
 > foreach (StorageFolder folder in folderList)
 > {
 >     IReadOnlyList<StorageFile> fileList = await folder.GetFilesAsync();
-> 
+>
 >     // Print the month and number of files in this group.
 >     outputText.AppendLine(folder.Name + " (" + fileList.Count + ")");
-> 
+>
 >     foreach (StorageFile file in fileList)
 >     {
 >         // Print the name of the file.
@@ -288,32 +286,32 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 > ```vb
 > Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
 > Dim outputText As New StringBuilder
-> 
+>
 > Dim queryResult As StorageFolderQueryResult =
 >     picturesFolder.CreateFolderQuery(CommonFolderQuery.GroupByMonth)
-> 
+>
 > Dim folderList As IReadOnlyList(Of StorageFolder) =
 >     Await queryResult.GetFoldersAsync()
-> 
+>
 > For Each folder As StorageFolder In folderList
-> 
+>
 >     Dim fileList As IReadOnlyList(Of StorageFile) =
 >         Await folder.GetFilesAsync()
-> 
+>
 >     ' Print the month and number of files in this group.
 >     outputText.AppendLine(folder.Name & " (" & fileList.Count & ")")
-> 
+>
 >     For Each file As StorageFile In fileList
-> 
+>
 >         ' Print the name of the file.
 >         outputText.AppendLine("   " & file.Name)
-> 
+>
 >     Next file
-> 
+>
 > Next folder
 > ```
 
-Затем мы вызываем [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074), который возвращает объекты класса [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), представляющие виртуальные папки.
+Результат работы программы выглядит примерно так:
 
 ``` syntax
 July ‎2015 (2)
@@ -326,7 +324,6 @@ July ‎2015 (2)
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

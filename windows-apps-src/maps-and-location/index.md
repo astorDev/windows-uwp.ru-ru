@@ -3,8 +3,9 @@ author: msatranjr
 title: "Обзор карт и расположения"
 description: "В этом разделе объясняется, как можно отображать карты с помощью служб карт, выполнять поиск расположения и настраивать геозоны в приложении. Также в этом разделе показано, как запускать приложение Карты Windows для определенной карты, маршрута или набора пошаговых маршрутов."
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
+translationtype: Human Translation
 ms.sourcegitcommit: a3240047ec77ada0c5f6b5586eee2404353889f6
-ms.openlocfilehash: 829a8d7eb4da810e2353593c03cd5aa4e047173a
+ms.openlocfilehash: 327185d655d8495901cfa9fa0a99c0af3a8cdae0
 
 ---
 
@@ -16,8 +17,7 @@ ms.openlocfilehash: 829a8d7eb4da810e2353593c03cd5aa4e047173a
 
 В этом разделе объясняется, как можно отображать карты с помощью служб карт, выполнять поиск расположения и настраивать геозоны в приложении. Также в этом разделе показано, как запускать приложение Карты Windows для определенной карты, маршрута или набора пошаговых маршрутов.
 
-> 
-            **Подсказка.** Чтобы узнать больше об использовании карт и расположения в приложении, скачайте следующие примеры из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub:
+> **Совет.** Чтобы узнать больше об использовании карт и расположения в приложении, скачайте следующие примеры из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub:
 -   [Примеры карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 -   [Пример определения географического положения UWP](http://go.microsoft.com/fwlink/p/?linkid=533278)
 
@@ -68,7 +68,7 @@ ms.openlocfilehash: 829a8d7eb4da810e2353593c03cd5aa4e047173a
 
 ![Пример приложения Карты Windows.](images/mapnyc.png)
 
-## Связанные темы
+## Связанные разделы
 
 * [Пример карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Пример определения географического положения UWP](http://go.microsoft.com/fwlink/p/?linkid=533278)
@@ -85,6 +85,6 @@ ms.openlocfilehash: 829a8d7eb4da810e2353593c03cd5aa4e047173a
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO5-->
 
 

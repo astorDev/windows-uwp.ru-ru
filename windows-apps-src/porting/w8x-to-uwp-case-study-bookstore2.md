@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: "Этот пример, в котором используются данные из примера Bookstore1, начинается с универсального приложения для версии 8.1, отображающего сгруппированные данные в элементе управления SemanticZoom."
 title: "Пример переноса среды выполнения Windows 8.x в UWP Bookstore2"
+translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 97682b2b914707874dcac998f7db5f2029ad433e
+ms.openlocfilehash: 2d142ddb5522daf5467ce5690b3fe8e7a356ac0a
 
 ---
 
@@ -14,16 +15,13 @@ ms.openlocfilehash: 97682b2b914707874dcac998f7db5f2029ad433e
 
 Этот пример, в котором используются данные из примера [Bookstore1](w8x-to-uwp-case-study-bookstore1.md), начинается с универсального приложения для версии 8.1, отображающего сгруппированные данные в элементе управления [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601). В модели представления каждый экземпляр класса **Author** представляет группу книг одного автора, а в классе **SemanticZoom** мы можем просмотреть список книг, сгруппированных по автору, или уменьшить представление, чтобы просмотреть список переходов по авторам. Список переходов — это гораздо более быстрый способ навигации, чем прокрутка списка книг. Рассмотрим шаги переноса приложения в приложение Windows10 универсальной платформы Windows (UWP).
 
-
-            **Примечание.**   Если при открытии Bookstore2Universal\_10 в Visual Studio отображается сообщение "Требуется обновление Visual Studio", следуйте инструкциям из [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
+**Примечание.**   Если при открытии Bookstore2Universal\_10 в Visual Studio отображается сообщение "Требуется обновление Visual Studio", следуйте инструкциям из [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
 
 ## Скачиваемые файлы
 
+[Скачать универсальное приложение Bookstore2\_81 для версии 8.1](http://go.microsoft.com/fwlink/?linkid=532951).
 
-            [Скачать универсальное приложение Bookstore2\_81 для версии 8.1](http://go.microsoft.com/fwlink/?linkid=532951).
-
-
-            [Скачать приложение Bookstore2Universal\_10 для Windows10](http://go.microsoft.com/fwlink/?linkid=532952).
+[Скачать приложение Bookstore2Universal\_10 для Windows10](http://go.microsoft.com/fwlink/?linkid=532952).
 
 ## Универсальное приложение для версии 8.1
 
@@ -176,6 +174,6 @@ Bookstore2\_81 в WindowsPhone в уменьшенном масштабе
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

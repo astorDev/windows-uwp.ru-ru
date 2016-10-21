@@ -4,15 +4,15 @@ ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "Используйте этот метод, чтобы обновить ключ Магазина Windows."
 title: "Обновление ключа идентификатора Магазина Windows"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: a3cef13e84c5bb06be4f3e3d4b2db4e02650df62
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 1a2cb625f95a5ad8e94911ead2402cb2589e209a
 
 ---
 
 # Обновление ключа идентификатора Магазина Windows
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 Используйте этот метод, чтобы обновить ключ Магазина Windows. При генерации ключа идентификатора Магазина Windows с помощью метода [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) и [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) срок его действия составляет 90дней. После истечения срока действия ключа его можно использовать для создания нового ключа с помощью данного метода.
 
@@ -119,6 +119,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

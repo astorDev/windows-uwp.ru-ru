@@ -3,8 +3,9 @@ author: mtoepke
 title: "Полный код класса DDSTextureLoader"
 description: "Полный код класса и метода для загрузки из памяти текстуры DDS."
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
+translationtype: Human Translation
 ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: 9a842c773ce16e1093a158426b89caf239858f05
+ms.openlocfilehash: edcddb162d58b5f05248c7cd94b6079207e4a318
 
 ---
 
@@ -29,17 +30,13 @@ ms.openlocfilehash: 9a842c773ce16e1093a158426b89caf239858f05
 
 ## Технологии
 
-
-            **Языки программирования** — C++    
-
-            **Модели программирования** — среда выполнения Windows
+**Языки программирования** — C++    
+**Модели программирования** — среда выполнения Windows
 
 ## Требования
 
-
-            **Минимальная версия клиента** — Windows 10                               
-
-            **Минимальная версия сервера** — Windows Server 2016 Technical Preview
+**Минимальная версия клиента** — Windows 10                               
+**Минимальная версия сервера** — Windows Server 2016 Technical Preview
 
 
 
@@ -1229,6 +1226,6 @@ void CreateDDSTextureFromMemory(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

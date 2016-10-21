@@ -1,54 +1,58 @@
 ---
 author: Jwmsft
-Description: Learn how to navigate in a basic two-page Universal Windows Platform (UWP) app.
-title: Navigate between two pages
+Description: "Узнайте, как перемещаться в простом приложении универсальной платформы Windows (UWP) с двумя страницами."
+title: "Навигация между двумя страницами"
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Navigate between two pages
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 0cf689ae9d74735f33baa85b3a8791a68a4467d4
+ms.openlocfilehash: d5ff0dfcb10c6977bb93f28cbf8631b9b5dfb83f
+
 ---
 
-# Navigate between two pages
+# Навигация между двумя страницами
 
-Learn how to navigate in a basic two-page Universal Windows Platform (UWP) app.
+Узнайте, как перемещаться в простом приложении универсальной платформы Windows (UWP) с двумя страницами.
 
-![two-page navigation example](images/nav-peertopeer-2page.png)
+![пример навигации в двухстраничной программе](images/nav-peertopeer-2page.png)
 
 
-**Important APIs**
+**Важные API**
 
 -   [**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)
 -   [**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503)
 -   [**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)
 
 
-## Create the blank app
+## Создание пустого приложения
 
 
-1.  On the Microsoft Visual Studio menu, choose **File &gt; New Project**.
-2.  In the left pane of the **New Project** dialog box, choose the **Visual C# -&gt; Windows -&gt; Universal** or the **Visual C++ -&gt; Windows -&gt; Universal** node.
-3.  In the center pane, choose **Blank App**.
-4.  In the **Name** box, enter **NavApp1**, and then choose the **OK** button.
+1.  В меню Microsoft Visual Studio выберите **Файл&gt; Создать проект**.
+2.  На левой панели диалогового окна **Новый проект** выберите узел **Visual C# &gt; Windows &gt; Universal** или **Visual C++ &gt; Windows &gt; Universal**.
+3.  На центральной панели выберите **Пустое приложение**.
+4.  В поле **Имя** введите **NavApp1**, а затем нажмите кнопку **ОК**.
 
-    The solution is created and the project files appear in **Solution Explorer**.
+    Решение создано, и файлы проекта отображаются в **обозревателе решений**.
 
-5.  To run the program, choose **Debug** &gt; **Start Debugging** from the menu, or press F5.
+5.  Чтобы запустить программу, выберите **Отладка** &gt; **Начать отладку** в меню или нажмите клавишу F5.
 
-    A blank page is displayed.
+    Отобразится пустая страница.
 
-6.  Press Shift+F5 to stop debugging and return to Visual Studio.
+6.  Нажмите клавиши SHIFT+F5, чтобы остановить отладку и вернуться в Visual Studio.
 
-## Add basic pages
+## Добавление простых страниц
 
-Next, add two content pages to the project.
+Далее добавьте в проект две страницы с содержимым.
 
-Do the following steps two times to add two pages to navigate between.
+Выполните следующие действия дважды, чтобы добавить две страницы для перемещения между ними.
 
-1.  In **Solution Explorer**, right-click the **BlankApp** project node to open the shortcut menu.
-2.  Choose **Add** &gt; **New Item** from the shortcut menu.
-3.  In the **Add New Item** dialog box, choose **Blank Page** in the middle pane.
-4.  In the **Name** box, enter **Page1** (or **Page2**) and press the **Add** button.
+1.  В **обозревателе решений** щелкните правой кнопкой мыши узел проекта **BlankApp**, чтобы открыть контекстное меню.
+2.  В контекстном меню выберите **Добавить** &gt; **Новый элемент**.
+3.  В диалоговом окне **Добавление нового элемента** на центральной панели выберите пункт **Пустая страница**.
+4.  В поле **Имя** введите **Page1** (или **Page2**) и нажмите кнопку **Добавить**.
 
-These files should now be listed as part of your NavApp1 project.
+Эти файлы теперь должны быть указаны в проекте NavApp1.
 
 <table>
 <colgroup>
@@ -77,28 +81,28 @@ These files should now be listed as part of your NavApp1 project.
 <li>Page2.xaml.cpp</li>
 <li>Page2.xaml.h
 <div class="alert">
-<strong>Note</strong>  
-<p>Functions are declared in the header (.h) file and implemented in the code-behind file (.cpp).</p>
+<strong>Примечание.</strong>  
+<p>Функции объявляются в файле заголовка (.h) и реализуются в файле кода программной части (.cpp).</p>
 </div>
 <div>
- 
+ 
 </div></li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
-Add the following content to the UI of Page1.xaml.
+Добавьте следующее содержимое в пользовательский интерфейс Page1.xaml.
 
--   Add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element named `pageTitle` as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). Change the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) property to `Page 1`.
+-   Добавьте элемент [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) с именем `pageTitle` в качестве дочернего элемента корневого элемента [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). Измените значение свойства [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676), указав `Page 1`.
 
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   Add the following [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) element as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) and after the `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element.
+-   Добавьте следующий элемент [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) в качестве дочернего элемента корневого элемента [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) и после элемента `pageTitle`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
 
 
 ```xaml
@@ -107,7 +111,7 @@ Add the following content to the UI of Page1.xaml.
                  HorizontalAlignment="Center"/>
 ```
 
-Add the following code to the `Page1` class in the Page1.xaml code-behind file to handle the `Click` event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) you added previously. Here, we navigate to Page2.xaml.
+Добавьте следующий код в класс `Page1` в файле кода программной части Page1.xaml для обработки события `Click` для [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), добавленного ранее. Здесь мы переходим на страницу Page2.xaml.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -123,15 +127,15 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
-Make the following changes to the UI of Page2.xaml.
+Измените пользовательский интерфейс страницы Page2.xaml следующим образом.
 
--   Add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element named `pageTitle` as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). Change the value of the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) property to `Page 2`.
+-   Добавьте элемент [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) с именем `pageTitle` в качестве дочернего элемента корневого элемента [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). Измените значение свойства [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) на `Page 2`.
 
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   Add the following [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) element as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) and after the `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element.
+-   Добавьте следующий элемент [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) в качестве дочернего элемента корневого элемента [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) и после элемента `pageTitle`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
 
 ```xaml
 <HyperlinkButton Content="Click to go to page 1"
@@ -139,10 +143,10 @@ Make the following changes to the UI of Page2.xaml.
                  HorizontalAlignment="Center"/>
 ```
 
-Add the following code to the `Page2` class in the Page2.xaml code-behind file to handle the `Click` event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) you added previously. Here, we navigate to Page1.xaml.
+Добавьте следующий код в класс `Page2` в файле кода программной части Page2.xaml для обработки события `Click` для [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), добавленного ранее. Здесь мы переходим на страницу Page1.xaml.
 
-**Note**  
-For C++ projects, you must add a `#include` directive in the header file of each page that references another page. For the inter-page navigation example presented here, page1.xaml.h file contains `#include "Page2.xaml.h"`, in turn, page2.xaml.h contains `#include "Page1.xaml.h"`.
+**Примечание.**  
+Для проектов C++ необходимо добавить директиву `#include` в файл заголовка каждой страницы, которая ссылается на другую страницу. В целях представленного здесь примера навигации между страницами файл page1.xaml.h содержит `#include "Page2.xaml.h"`, файл page2.xaml.h, в свою очередь, содержит `#include "Page1.xaml.h"`.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -158,11 +162,11 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
-Now that we've prepared the content pages, we need to make Page1.xaml display when the app starts.
+Теперь, когда мы подготовили страницы с содержимым, нужно сделать так, чтобы при запуске приложения появлялся элемент Page1.xaml.
 
-Open the app.xaml code-behind file and change the `OnLaunched` handler.
+Откройте файл кода программной части app.xaml и измените обработчик `OnLaunched`.
 
-Here, we specify `Page1` in the call to [**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) instead of `MainPage`.
+Здесь мы определяем `Page1` в вызове [**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) вместо `MainPage`.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -238,29 +242,29 @@ Here, we specify `Page1` in the call to [**Frame.Navigate**](https://msdn.micros
 > }
 > ```
 
-**Note**  The code here uses the return value of [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) to throw an app exception if the navigation to the app's initial window frame fails. When **Navigate** returns **true**, the navigation happens.
+**Примечание.** В этом коде используется возвращаемое значение [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694), чтобы вызвать исключение приложения, если при переходе в начальный фрейм приложения происходит сбой. Если **Navigate** возвращает значение **true**, выполняется переход.
 
-Now, build and run the app. Click the link that says "Click to go to page 2". The second page that says "Page 2" at the top should be loaded and displayed in the frame.
+Теперь выполните сборку и запустите приложение. Щелкните ссылку «Click to go to page 2» (Нажмите, чтобы перейти к странице 2). Вторая страница с надписью «Page 2» (Страница 2) в верхней части загрузится и появится в фрейме.
 
-## Frame and Page classes
+## Классы Frame и Page
 
-Before we add more functionality to our app, let's look at how the pages we added provide navigation support for the app.
+Прежде чем расширить функциональные возможности приложения, посмотрим, как добавленные нами страницы обеспечивают поддержку навигации в приложении.
 
-First, a [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`) is created for the app in the `App.OnLaunched` method of the App.xaml code-behind file. The [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class supports various navigation methods such as [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694), [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568), and [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), and properties such as [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543), [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547), and [**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995). The [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) method is used to display content in this **Frame**.
- 
-In our example, `Page1` is passed to the [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) method. This method sets the content of the app's current window to the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) and loads the content of the page you specify into the **Frame** (Page1.xaml in our example, or MainPage.xaml, by default).
+Сначала для приложения создается [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`) в методе `App.OnLaunched` файла кода программной части App.xaml. Класс [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) поддерживает различные методы навигации, например [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694), [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) и [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), а также свойства, такие как [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543), [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) и [**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995). Метод [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) используется для отображения содержимого в этом **Frame**.
+ 
+В нашем примере `Page1` передается методу [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694). Этот метод назначает содержимое текущего окна приложения классу [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) и загружает содержимое страницы, указанной в **Frame** (в нашем примере это Page1.xaml, по умолчанию — MainPage.xaml).
 
-`Page1` is a subclass of the [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) class. The **Page** class has a read-only [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) property that gets the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) containing the **Page**. When the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event handler of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) calls` Frame.Navigate(typeof(Page2))`, the **Frame** in the app's window displays the content of Page2.xaml.
+`Page1` является подклассом класса [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503). Класс **Page** имеет свойство только для чтения [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504), которое получает [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682), содержащий **Page**. Когда обработчик событий [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) элемента [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) вызывает ` Frame.Navigate(typeof(Page2))`, элемент **Frame** в окне приложения отображает содержимое Page2.xaml.
 
-Whenever a page is loaded into the frame, that page is added as a [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) to the [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) or [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) of the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504).
+При загрузке страницы в фрейм эта страница добавляется как [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) в параметр [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) или [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) объекта [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504).
 
-## Pass information between pages
+## Передача информации между страницами
 
-Our app navigates between two pages, but it really doesn't do anything interesting yet. Often, when an app has multiple pages, the pages need to share information. Let's pass some information from the first page to the second page.
+Наше приложение переключается между страницами, но пока не умеет делать ничего интересного. Часто, если в приложении есть несколько страниц, необходим общий доступ к информации. Давайте передадим какую-нибудь информацию с первой страницы на вторую.
 
-In Page1.xaml, replace the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) you added earlier with the following [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
+В Page1.xaml замените элемент [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), добавленный вами ранее, следующим [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
 
-Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) label and a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (`name`) for entering a text string.
+Теперь добавим метку [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) и [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (`name`) для ввода текстовой строки.
 
 ```xaml
 <StackPanel>
@@ -272,7 +276,7 @@ Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/b
 </StackPanel>
 ```
 
-In the `HyperlinkButton_Click` event handler of the Page1.xaml code-behind file, add a parameter referencing the `Text` property of the `name` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) to the `Navigate` method.
+В обработчике событий `HyperlinkButton_Click` для файла кода программной части Page1.xaml добавьте параметр, ссылающийся на свойство `Text` `name` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683), в метод `Navigate`.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -288,9 +292,9 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
-In Page2.xaml, replace the  [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) you added earlier with the following [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
+В Page2.xaml замените элемент [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), добавленный вами ранее, следующим [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
 
-Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) that will display the text provided by input from the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) on Page1.
+Добавим элемент [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652), который будет отображать текст, введенный в поле [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) на странице Page1.
 
 ```XAML
 <StackPanel>
@@ -299,7 +303,7 @@ Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/b
 </StackPanel>
 ```
 
-In the Page2.xaml code-behind file, override the `OnNavigatedTo` method with the following:
+В файле кода программной части Page2.xaml перезапишите метод `OnNavigatedTo` следующими данными:
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -331,19 +335,19 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-Run the app, type your name in the text box, and then click the link that says **Click to go to page 2**. When you called `this.Frame.Navigate(typeof(Page2), tb1.Text)` in the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), the `name.Text` property was passed to `Page2` and the value from the event data is used for the message displayed on the page.
+Запустите приложение, введите ваше имя в текстовое поле, а затем щелкните ссылку **Click to go to page 2** (Нажмите, чтобы перейти к странице 2). Когда вы вызвали метод `this.Frame.Navigate(typeof(Page2), tb1.Text)` в событии [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), свойство `name.Text` было передано `Page2`, а значение из данных события использовалось для сообщения, показанного на странице.
 
-## Cache a page
+## Кэширование страницы
 
-Page content and state is not cached by default, you must enable it in each page of your app.
+Содержимое и состояние страницы не кэшируются по умолчанию, поэтому кэширование нужно включать для каждой страницы приложения.
 
-In this basic example, there is no back button (we demonstrate back navigation in [Back button navigation](navigation-history-and-backwards-navigation.md)), but if you did click a back button on `Page2`, the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (and any other field) on `Page1` would be set to its default state. One way to work around this is to use the [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) property to specify that a page be added to the frame's page cache.
+В нашем простом примере кнопки возврата нет (мы покажем возможности обратной навигации в разделе [Навигация кнопки "Назад"](navigation-history-and-backwards-navigation.md)), но если вы нажали кнопку возврата на `Page2`, [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (и любое другое поле) на `Page1` будет установлено в состояние по умолчанию. Один способов обойти эту проблему— использовать свойство [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506), чтобы указать, что страница будет добавлена в кэш страницы фрейма.
 
-In the constructor of `Page1`, set [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) to [**Enabled**](https://msdn.microsoft.com/library/windows/apps/br243284). This retains all content and state values for the page until the page cache for the frame is exceeded.
+В конструкторе страницы `Page1` установите для [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) значение [**Enabled**](https://msdn.microsoft.com/library/windows/apps/br243284). При этом все содержимое и значения состояния страницы сохраняются, пока не будет превышен размер кэша страницы для фрейма.
 
-Set [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) to [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284) if you want to ignore cache size limits for the frame. However, cache size limits might be crucial, depending on the memory limits of a device.
+Установите для [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) значение [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284), чтобы игнорировать ограничения размера кэша для фрейма. Однако ограничения размера кэша могут быть критическими в зависимости от ограничений памяти устройства.
 
-**Note**  The [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) property specifies the number of pages in the navigation history that can be cached for the frame.
+**Примечание.** Свойство [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) определяет число страниц в журнале навигации, которые могут быть помещены в кэш фрейма.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -361,11 +365,17 @@ Page1::Page1()
 }
 ```
 
-## Related articles
+## Связанные разделы
 
-* [Navigation design basics for UWP apps](https://msdn.microsoft.com/library/windows/apps/dn958438)
-* [Guidelines for tabs and pivots](https://msdn.microsoft.com/library/windows/apps/dn997788)
-* [Guidelines for navigation panes](https://msdn.microsoft.com/library/windows/apps/dn997766)
- 
+* [Основы проектирования навигации для приложений UWP](https://msdn.microsoft.com/library/windows/apps/dn958438)
+* [Руководство по элементам управления «Сводка» и вкладкам](https://msdn.microsoft.com/library/windows/apps/dn997788)
+* [Руководство по панелям навигации](https://msdn.microsoft.com/library/windows/apps/dn997766)
+ 
 
- 
+ 
+
+
+
+<!--HONumber=Sep16_HO2-->
+
+

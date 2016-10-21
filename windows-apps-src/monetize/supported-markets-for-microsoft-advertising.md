@@ -3,15 +3,16 @@ author: mcleanbyron
 ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
 description: "Сведения о странах и регионах, поддерживаемых промежуточную рекламу и рекламные баннеры."
 title: "Поддерживаемые рынки для Microsoft Advertising"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 2d17a3936a4932b0aa30c80a38bb492f3f21fb37
+translationtype: Human Translation
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 
 ---
 
 # Поддерживаемые рынки для Microsoft Advertising
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 Промежуточная реклама и рекламные баннеры поддерживаются в следующих странах и регионах.
 
@@ -314,6 +315,6 @@ ms.openlocfilehash: 2d17a3936a4932b0aa30c80a38bb492f3f21fb37
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

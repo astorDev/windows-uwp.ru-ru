@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
 title: "Производительность"
 description: "Пользователи ожидают от приложений постоянного отклика и естественной реакции без расходования заряда батареи."
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 68f9080cedcc2840fb1e92b81e2fb6bc0b53bee8
+ms.openlocfilehash: f4589b187d05ae122839fab74d8086779847b120
 
 ---
 # Производительность
@@ -35,6 +36,6 @@ ms.openlocfilehash: 68f9080cedcc2840fb1e92b81e2fb6bc0b53bee8
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

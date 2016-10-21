@@ -1,21 +1,16 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: "Создание первого приложения"
 description: "Создать приложение для Windows10 на базе универсальной платформы Windows (UWP) проще, чем кажется."
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d
+translationtype: Human Translation
+ms.sourcegitcommit: b57a461cf9859be26ed69d12b08259d15201403a
+ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
 
 ---
 # Создание первого приложения
 
-Создать приложение для Windows10 на базе универсальной платформы Windows (UWP) проще, чем кажется. Вам не нужно изучать для этого новый язык — вы можете воспользоваться теми знаниями, которые у вас уже есть:
-
--   C# или Visual Basic и XAML
--   C++ и XAML
--   JavaScript и HTML/CSS
-
-Эти учебники помогут вам создать ваше первое приложение UWP на удобном для вас языке. В этом разделе вы научитесь выполнять следующие действия.
+Добро пожаловать. Эти учебники помогут вам создать ваше первое приложение UWP на удобном для вас языке. В этом разделе вы научитесь выполнять следующие действия.
 
 -   Создавать проект приложения UWP в Microsoft Visual Studio.
 -   Добавлять в проект элементы пользовательского интерфейса и код.
@@ -23,56 +18,86 @@ ms.openlocfilehash: e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d
 
 Чтобы начать, выберите удобный для вас язык.
 
-## Учебники по C#/Visual Basic и XAML
 
-Воспользуйтесь своими навыками работы с .NET, WPF или Silverlight и создайте приложение на XAML и C# или Visual Basic.
+<!--
 
-[Создание приложения «Hello, world» на XAML и C# или VB](create-a-hello-world-app-xaml-universal.md)
+<table Width="100%">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<Col width="33%" />
+</colgroup>
 
-Предполагается, что вы хорошо знакомы с XAML и либо C#, либо Visual Basic. Если вы хотите узнать или освежить в памяти основные принципы, воспользуйтесь этими курсами в [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/).
 
--   [Основы C# для абсолютных новичков](http://www.microsoftvirtualacademy.com/training-courses/c-fundamentals-for-absolute-beginners)
--   [Основы VB для абсолютных новичков](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
--   [Расширенное изучение XAML для приложений Windows и Windows Phone — вводный курс](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
+<tbody>
 
-## Учебники по расширениям компонентов Visual C++ (C++/CX) и языку XAML
+<tr style="background-color: #f2f2f2">
+<td align="left"><strong style="color: #8888ff">C# and XAML</strong><p><ul><li>Hello World, with C#</li><li>Link to docs</li></ul></p></td>
+<td align="left"><strong style="color: #8888ff">C++ and XAML</strong><p><ul><li><a href="http://go.microsoft.com/fwlink/p/?LinkId=533896">C++</a>Hello World, C++</a></li><li>Link to docs</li></ul></p></td>
+<td align="left"><strong style="color: #8888ff">JS and HTML</strong><p><ul><li>Hello World, with C#</li><li>Link to docs</li></ul></p></td>
+
+
+</tr>
+
+
+
+</table>
+
+-->
+
+
+### Учебник по C# и XAML
+
+Воспользуйтесь своими навыками работы с .NET, WPF или Silverlight и создайте приложение на XAML и C#.
+
+* [Создание приложения Hello, world на XAML и C#](create-a-hello-world-app-xaml-universal.md)
+
+Предполагается, что вы хорошо знакомы с XAML и С#. Если вы хотите узнать или освежить в памяти основные принципы, воспользуйтесь этими курсами в [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/).
+
+* [Основы C# для абсолютных новичков](https://mva.microsoft.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169)
+* [Основы VB для абсолютных новичков](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
+* [Руководство разработчика по Windows10](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
+
+### Учебник по расширениям компонентов Visual C++ (C++/CX) и языку XAML
 
 Воспользуйтесь своим опытом программирования на С++ и создайте приложения с помощью расширений компонентов VisualC++ (C++/CX) в XAML.
 
-[Создание приложения Hello, world на XAML и C++/CX](create-a-basic-windows-10-app-in-cpp.md)
+* [Создание приложения Hello, world на XAML и C++/CX](create-a-basic-windows-10-app-in-cpp.md)
 
 Предполагается, что вы хорошо знакомы с XAML и C++. Если вы хотите узнать или освежить в памяти основные принципы, воспользуйтесь этими курсами в [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
 
--   [C++: язык и библиотека общего назначения — вводный курс](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
--   [Расширенное изучение XAML для приложений Windows и Windows Phone — вводный курс](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
+* [C++: язык и библиотека общего назначения — вводный курс](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
 
-## Учебники по JavaScript и HTML
+### Учебник по JavaScript и HTML
 
 Воспользуйтесь своими навыками веб-программирования и создайте приложения с использованием HTML5, каскадных таблиц стилей уровня 3 (CSS3) и JavaScript.
 
-[Создание приложения «Hello, world» на HTML и JavaScript](create-a-hello-world-app-js-universal.md)
+* [Создание приложения «Hello, world» на HTML и JavaScript](create-a-hello-world-app-js-universal.md)
 
 Предполагается, что вы хорошо знакомы с HTML5, CSS3 и JavaScript. Если вы хотите узнать или освежить в памяти основные принципы, воспользуйтесь этими курсами в [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
 
--   [Основы JavaScript для абсолютных новичков](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
--   [Основы HTML5 и CSS3 для абсолютных новичков](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
+* [Основы JavaScript для абсолютных новичков](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
+* [Основы HTML5 и CSS3 для абсолютных новичков](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
 
-## Другие ресурсы
+### Objective-C
 
-Если вы хотите разрабатывать игры с помощью C++ и Microsoft DirectX, см. раздел [Разработка игр в Windows 10](https://dev.windows.com/games).
+Вы являетесь разработчиком iOS? 
 
-Уже есть опыт работы с iOS или Android? Раздел [Перенос приложений в Windows10](https://msdn.microsoft.com/library/windows/apps/Mt238321) содержит ресурсы, которые помогут вам приступить к работе.
+* Используйте [мост Windows для iOS](https://developer.microsoft.com/windows/bridges/ios), чтобы преобразовывать существующий код в приложение UWP, и продолжайте разработку на Objective-C.
 
-# Ссылки по теме
 
+## Связанные статьи
+
+* [Практические руководства по разработке приложений UWP](https://developer.microsoft.com/windows/develop)
+* [Примеры кода для разработчиков UWP](https://developer.microsoft.com/windows/samples)
 * [Что такое универсальное приложение для Windows?](whats-a-uwp.md)
 * [Подготовка](get-set-up.md)
 * [Регистрация](sign-up.md)
- 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Sep16_HO2-->
 
 

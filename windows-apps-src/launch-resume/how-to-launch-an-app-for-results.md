@@ -3,8 +3,9 @@ author: TylerMSFT
 title: "Запуск приложения для результатов"
 description: "Узнайте, как запустить приложение из другого приложения и обмениваться данными между двумя приложениями. Эта процедура называется запуском приложения для результатов."
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
+translationtype: Human Translation
 ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
+ms.openlocfilehash: d8d7f73e06d627eaa53deaf26f778c122113a9d6
 
 ---
 
@@ -32,12 +33,9 @@ ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
 
 Атрибут **ReturnResults** в расширении протокола принимает одно из указанных ниже значений.
 
--   
-           **optional** — приложение может запускаться для результатов с помощью метода [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) или не для результатов с помощью метода [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). Если вы используете ключевое слово **optional**, то запущенное приложение должно определить, было ли оно запущено для результатов. Это можно сделать путем проверки аргумента события [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330). Если свойство аргумента [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) возвращает перечисление [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) или тип аргумента события равен [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742), то приложение было запущено с помощью метода **LaunchUriForResultsAsync**.
--   
-            **always**— приложение может быть запущено только для результатов, то есть оно может реагировать только на метод [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686).
--   
-            **none**— приложение не может быть запущено для результатов, то есть оно может реагировать только на метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476).
+-   **optional** — приложение может запускаться для результатов с помощью метода [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) или не для результатов с помощью метода [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). Если вы используете ключевое слово **optional**, то запущенное приложение должно определить, было ли оно запущено для результатов. Это можно сделать путем проверки аргумента события [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330). Если свойство аргумента [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) возвращает перечисление [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) или тип аргумента события равен [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742), то приложение было запущено с помощью метода **LaunchUriForResultsAsync**.
+-   **always** — приложение может быть запущено только для результатов, то есть оно может реагировать только на метод [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686).
+-   **none** — приложение не может быть запущено для результатов, то есть оно может реагировать только на метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476).
 
 В этом примере расширения протокола приложение можно запустить только для результатов. Это упрощает логику в методе **OnActivated**, описанном ниже, так как нам придется обрабатывать только случай запуска для результатов, а не другие возможные способы активации приложения.
 
@@ -206,6 +204,6 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

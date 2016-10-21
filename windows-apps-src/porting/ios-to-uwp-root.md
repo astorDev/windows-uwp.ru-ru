@@ -4,8 +4,9 @@ description: "Переход с iOS на UWP"
 Search.SourceType: Video
 title: "Переход с iOS на UWP"
 ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7f6160d651a4264d81ac1a1c9a011e32f53778b0
+ms.openlocfilehash: fd7eaa4dea5e4fcc4f9096199178f341b97879b6
 
 ---
 
@@ -30,7 +31,7 @@ ms.openlocfilehash: 7f6160d651a4264d81ac1a1c9a011e32f53778b0
 | [Знакомство с UWP для разработчиков iOS](getting-started-with-uwp-for-ios-developers.md) | Если вы являетесь разработчиком приложений iOS и планируете разрабатывать приложения для Windows10, то данные документы послужат отличной отправной точкой. |
 | [Настройка Mac с Windows10](setting-up-your-mac-with-windows-10.md) | Используйте ваш компьютер Mac для разработки приложений для Windows. |
 
-## Связанные темы
+## Связанные разделы
 
 **Для проектировщиков и разработчиков**
 * [Разработка универсальных приложений для всех устройств с ОС Windows](http://go.microsoft.com/fwlink/p/?LinkID=397871)
@@ -39,6 +40,6 @@ ms.openlocfilehash: 7f6160d651a4264d81ac1a1c9a011e32f53778b0
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

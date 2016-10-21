@@ -4,8 +4,8 @@ title: "Создание игр со специальными возможнос
 description: "Узнайте, как сделать игры доступными всем пользователям без исключения. Принцип инклюзивного дизайна поможет вам реализовать в своей игре необходимые специальные возможности."
 ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
 translationtype: Human Translation
-ms.sourcegitcommit: 2492ff5c8b3ba0331e831234943a1db124f8fa4f
-ms.openlocfilehash: 2b78d767a7ac75e27f759c0eb06953e6158fb88b
+ms.sourcegitcommit: d61b834adb50e71ba67ea32662069f257c33a676
+ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 
 ---
 #  Создание игр со специальными возможностями
@@ -217,6 +217,6 @@ ms.openlocfilehash: 2b78d767a7ac75e27f759c0eb06953e6158fb88b
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

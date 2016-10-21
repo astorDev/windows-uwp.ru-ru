@@ -1,10 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "Файлы и папки в библиотеках музыки, изображений и видео"
 description: "Добавьте существующие папки музыки, изображений или видео в соответствующие библиотеки. Можно также удалить папки из библиотек, получить список папок в библиотеке и найти сохраненные фотографии, музыку и видео."
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
+translationtype: Human Translation
+ms.sourcegitcommit: affe6002e22bd10e714dc4782a60ef528c31a407
+ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
 ---
 
@@ -38,8 +39,7 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
 ## Получение ссылок на библиотеку
 
 
-
-            **Примечание.** Не забудьте объявить соответствующую возможность.
+**Примечание.** Не забудьте объявить соответствующую возможность.
  
 
 Чтобы получить ссылку на библиотеку музыки, изображений или видео, вызовите метод [**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725). Предоставьте соответствующее значение из перечисления [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399).
@@ -62,7 +62,7 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
     using Windows.Foundation.Collections;
 
     // ...
-            
+
     IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
 
@@ -122,25 +122,47 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 Используются следующие расположения.
 
--   
-            Папка **Изображения**. Содержит изображения.
+-   Папка **Изображения**. Содержит изображения.
 
-    -   
-            Папка **Пленка**. Содержит фотографии и видео со встроенной камеры.
+    -   Папка **Пленка**. Содержит фотографии и видео со встроенной камеры.
 
-    -   
-            Папка **Сохраненные изображения**. Содержит изображения, сохраненные пользователем из других приложений.
+    -   Папка **Сохраненные изображения**. Содержит изображения, сохраненные пользователем из других приложений.
 
--   
-            Папка **Музыка**. Содержит композиции, подкасты и аудиокниги.
+-   Папка **Музыка**. Содержит композиции, подкасты и аудиокниги.
 
--   
-            Папка **Видео**. Содержит видео.
+-   Папка **Видео**. Содержит видео.
 
 Пользователи или приложения также могут хранить файлы мультимедиа за пределами папок библиотек на SD-карте. Чтобы наверняка найти файл мультимедиа на SD-карте, просканируйте содержимое SD-карты или попросите пользователя выбрать файл с помощью средства выбора файлов. Дополнительные сведения см. в разделе [Доступ к SD-карте](access-the-sd-card.md).
 
 ## Запрос в библиотеки мультимедиа
 
+Чтобы получить коллекцию файлов, укажите библиотеку и нужный тип файлов.
+
+```cs
+...
+using Windows.Storage;
+using Windows.Storage.Search;
+...
+
+private async void getSongs()
+{
+    QueryOptions queryOption = new QueryOptions
+        (CommonFileQuery.OrderByTitle, new string[] { ".mp3", ".mp4", ".wma" });
+
+    queryOption.FolderDepth = FolderDepth.Deep
+
+    Queue<IStorageFolder> folders = new Queue<IStorageFolder>();
+
+    var files = await KnownFolders.MusicLibrary.CreateFileQueryWithOptions
+      (queryOption).GetFilesAsync();
+
+    foreach (var file in files)
+    {
+        // do something with the music files.
+    }
+
+}
+```
 
 ### Результаты запроса включают внутренние хранилища и съемные носители
 
@@ -154,138 +176,33 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 Если вы запросите содержимое библиотеки изображений, вызвав `await KnownFolders.PicturesLibrary.GetFilesAsync()`, результаты будут включать как internalPic.jpg, так и SDPic.jpg.
 
-### Глубокие запросы
 
-Глубокие запросы позволяют быстро перечислить все содержимое библиотеки мультимедиа.
+## Работа с фотографиями
 
-Глубокие запросы возвращают только файлы мультимедиа указанного типа. Например, если вы обратились с помощью такого запроса к библиотеке музыки, в результаты не будут включены файлы изображений, найденные в папке «Музыка».
 
 На устройствах, на которых камера сохраняет каждое изображение и в низком, и в высоком разрешении, глубокий запрос вернет только изображения с низким разрешением.
 
 Папки «Пленка» и «Сохраненные изображения» не поддерживают глубокие запросы.
 
-Доступны следующие глубокие запросы.
+**Открытие фотографии в приложении, с помощью которого она снята**
 
-**Библиотека изображений**
-
--   `GetFilesAsync(CommonFileQuery.OrderByDate)`
-
-**Библиотека музыки**
-
--   `GetFilesAsync(CommonFileQuery.OrderByName)`
--   `GetFoldersAsync(CommonFolderQuery.GroupByArtist)`
--   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbum)`
--   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbumArtist)`
--   `GetFoldersAsync(CommonFolderQuery.GroupByGenre)`
-
-**Видеотека**
-
--   `GetFilesAsync(CommonFileQuery.OrderByDate)`
-
-### Плоские запросы
-
-Чтобы получить полный список всех файлов и папок в библиотеке, вызовите `GetFilesAsync(CommonFileQuery.DefaultQuery)`. Этот метод возвращает все файлы библиотеки вне зависимости от их типа. Это плоский запрос, поэтому, если пользователь создал такие папки в библиотеке, вам придется перечислить содержимое вложенных папок рекурсивно.
-
-Плоские запросы позволяют получить файлы мультимедиа тех типов, которые не распознаются встроенными запросами, или все файлы библиотеки, включая файлы других типов, кроме указанного. Например, если вы обратились с помощью такого запроса к библиотеке музыки, в результаты будут включены также и все файлы изображений, найденные в папке «Музыка».
-
-### Примеры запросов
-
-Предположим, что на устройстве и дополнительной SD-карте хранятся папки и файлы, представленные на следующем изображении.
-
-![Файлы на ](images/phone-media-queries.png)
-
-Вот несколько примеров запросов и результаты, которые вернут такие запросы.
-
-| Запрос | Результаты |
-|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| KnownFolders.PicturesLibrary.GetItemsAsync();  | - Папка «Пленка» во внутреннем хранилище <br>- Папка «Пленка» на SD-карте <br>- Папка «Сохраненные изображения» во внутреннем хранилище <br>- Папка «Сохраненные изображения» на SD-карте <br><br>Это плоский запрос, поэтому возвращаются только непосредственные дочерние объекты папки «Изображения». |
-| KnownFolders.PicturesLibrary.GetFilesAsync();  | Нет результатов. <br><br>Это плоский запрос, а папка «Изображения» не содержит файлов, представляющих собой ее непосредственные дочерние объекты. |
-| KnownFolders.PicturesLibrary.GetFilesAsync(CommonFileQuery.OrderByDate); | - Файл 4-3-2012.jpg с SD-карты <br>- Файл 1-1-2014.jpg из внутреннего хранилища <br>- Файл 1-2-2014.jpg из внутреннего хранилища <br>- Файл 1-6-2014.jpg с SD-карты <br><br>Это глубокий запрос, поэтому возвращается содержимое папки «Изображения» и ее дочерних папок. |
-| KnownFolders.CameraRoll.GetFilesAsync(); | - Файл 1-1-2014.jpg из внутреннего хранилища <br>- Файл 4-3-2012.jpg с SD-карты <br><br>Это плоский запрос. Упорядочение результатов не гарантируется. |
-
- 
-## Возможности библиотеки мультимедиа и типы файлов
-
-
-Ниже перечислены возможности, которые вы можете указать в файле манифеста приложения для доступа к файлам мультимедиа в приложении.
-
--   
-            **Музыка**. Укажите возможность **Библиотека музыки** в файле манифеста приложения, чтобы приложение могло видеть файлы следующих типов и получать доступ к ним.
-
-    -   QCP
-    -   WAV
-    -   MP3
-    -   M4R
-    -   M4A
-    -   AAC
-    -   AMR
-    -   WMA
-    -   3G2 -   3GP -   MP4 -   WM -   ASF -  3GPP -   3GP2 -   MPA -   ADT -   ADTS -   PYA -   **Фотографии**.
-    -   Укажите возможность **Библиотека изображений** в файле манифеста приложения, чтобы приложение могло видеть файлы следующих типов и получать доступ к ним.
-    -   -   JPEG -   JPE -   JPG -   GIF -   TIFF -   TIF -   PNG -   BMP -   WDP -   JXR -   HDP -   **Видео**.
-    -   Укажите возможность **Video Library** в файле манифеста приложения, чтобы приложение могло видеть файлы следующих типов и получать доступ к ним.
-    -   -   WM -   M4V -   WMV -   ASF -   MOV -   MP4 -   3G2 -   3GP -   MP4V -   AVI -   PYV -   3GPP -   3GP2
-    -   Работа с фотографиями
-    -   На устройствах, на которых камера сохраняет каждое изображение и в низком, и в высоком разрешении, глубокий запрос вернет только изображения с низким разрешением.
-    -   Папки «Пленка» и «Сохраненные изображения» не поддерживают глубокие запросы.
-    -   Открытие фотографии в приложении, с помощью которого она снята
-    -   Если вы хотите предоставить пользователю возможность открыть фотографию позже в том приложении, с помощью которого она снята, вы можете сохранить **CreatorAppId** с метаданными фотографии с помощью кода, похожего на приведенный в следующем примере.
-    -   В этом примере **testPhoto** представляет объект [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
--   Использование потоковых методов для добавления файла в библиотеку мультимедиа Когда вы получаете доступ к библиотеке мультимедиа с помощью известной папки, такой как **KnownFolders.PictureLibrary**, и используете потоковые методы для добавления в библиотеку файла, вам обязательно следует закрыть все потоки, которые открыл ваш код.
-
-    -   В противном случае эти методы не смогут добавить файл в библиотеку мультимедиа ожидаемым образом, так как минимум один поток будет по-прежнему обрабатывать файл.
-    -   Например, при выполнении следующего кода файл не добавляется в библиотеку мультимедиа.
-    -   В строке кода `using (var destinationStream = (await destinationFile.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))` методы **OpenAsync** и **GetOutputStreamAt** открывают поток.
-    -   Однако только поток, открытый методом **GetOutputStreamAt**, ликвидируется в результате выполнения оператора **using**.
-    -   Другой поток остается открытым и не позволяет сохранить файл.
-    -   Чтобы успешно использовать потоковые методы для добавления файлов в библиотеку мультимедиа, обязательно закрывайте все потоки, открытые кодом, как в следующем примере.
-    -   .png
-    -   .bmp
-    -   .wdp
-    -   .jxr
-    -   .hdp
--   <bpt id="p1">**</bpt>Videos<ept id="p1">**</ept>. Specify the <bpt id="p1">**</bpt>Video Library<ept id="p1">**</ept> capability in the app manifest file to let your app see and access files of the following file types:
-
-    -   .wm
-    -   .m4v
-    -   .wmv
-    -   .asf
-    -   .mov
-    -   .mp4
-    -   .3g2
-    -   .3gp
-    -   .mp4v
-    -   .avi
-    -   .pyv
-    -   .3gpp
-    -   .3gp2
-
-## Working with photos
-
-
-On devices where the camera saves both a low-resolution image and a high-resolution image of every picture, the deep queries return only the low-resolution image.
-
-The Camera Roll and the Saved Pictures folder do not support the deep queries.
-
-**Opening a photo in the app that captured it**
-
-If you want to let the user open a photo again later in the app that captured it, you can save the <bpt id="p1">**</bpt>CreatorAppId<ept id="p1">**</ept> with the photo's metadata by using code similar to the following example. In this example, <bpt id="p1">**</bpt>testPhoto<ept id="p1">**</ept> is a <bpt id="p2">[</bpt><bpt id="p3">**</bpt>StorageFile<ept id="p3">**</ept><ept id="p2">](https://msdn.microsoft.com/library/windows/apps/br227171)</ept>.
+Если вы хотите предоставить пользователю возможность открыть фотографию позже в том приложении, с помощью которого она снята, вы можете сохранить **CreatorAppId** с метаданными фотографии с помощью кода, похожего на приведенный в следующем примере. В этом примере **testPhoto** представляет объект [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
 
 ```CSharp
   IDictionary<string, object> propertiesToSave = new Dictionary<string, object>();
 
   propertiesToSave.Add("System.CreatorOpenWithUIOptions", 1);
   propertiesToSave.Add("System.CreatorAppId", appId);
- 
+
   testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
 ```
 
-## Using stream methods to add a file to a media library
+## Использование потоковых методов для добавления файла в библиотеку мультимедиа
 
 
-When you access a media library by using a known folder such as <bpt id="p1">**</bpt>KnownFolders.PictureLibrary<ept id="p1">**</ept>, and you use stream methods to add a file to the media library, you have to make sure to close all the streams that your code opens. Otherwise these methods fail to add the file to the media library as expected because at least one stream still has a handle to the file.
+Когда вы получаете доступ к библиотеке мультимедиа с помощью известной папки, такой как **KnownFolders.PictureLibrary**, и используете потоковые методы для добавления в библиотеку файла, вам обязательно следует закрыть все потоки, которые открыл ваш код. В противном случае эти методы не смогут добавить файл в библиотеку мультимедиа ожидаемым образом, так как минимум один поток будет по-прежнему обрабатывать файл.
 
-For example, when you run the following code, the file is not added to the media library. In the line of code, <ph id="ph1">`using (var destinationStream = (await destinationFile.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))`</ph>, both the <bpt id="p1">**</bpt>OpenAsync<ept id="p1">**</ept> method and the <bpt id="p2">**</bpt>GetOutputStreamAt<ept id="p2">**</ept> method open a stream. However only the stream opened by the <bpt id="p1">**</bpt>GetOutputStreamAt<ept id="p1">**</ept> method is disposed as a result of the <bpt id="p2">**</bpt>using<ept id="p2">**</ept> statement. The other stream remains open and prevents saving the file.
+Например, при выполнении следующего кода файл не добавляется в библиотеку мультимедиа. В строке кода `using (var destinationStream = (await destinationFile.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))` методы **OpenAsync** и **GetOutputStreamAt** открывают поток. Однако только поток, открытый методом **GetOutputStreamAt**, ликвидируется в результате выполнения оператора **using**. Другой поток остается открытым и не позволяет сохранить файл.
 
 ```CSharp
 StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\test");
@@ -301,7 +218,7 @@ using (var sourceStream = (await sourceFile.OpenReadAsync()).GetInputStreamAt(0)
 
 ```
 
-To use stream methods successfully to add a file to the media library, make sure to close all the streams that your code opens, as shown in the following example.
+Чтобы успешно использовать потоковые методы для добавления файлов в библиотеку мультимедиа, обязательно закрывайте все потоки, открытые кодом, как в следующем примере.
 
 ```CSharp
 StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\test");
@@ -329,10 +246,6 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

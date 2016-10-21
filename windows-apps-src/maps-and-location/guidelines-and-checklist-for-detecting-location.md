@@ -4,8 +4,8 @@ Description: "В этом разделе содержатся рекоменда
 title: "Рекомендации относительно приложений с определением расположения"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: bbdd4d5a54deba11161c1865cd8f6f2fb47bcad4
+ms.sourcegitcommit: 7159aea3feef96781575825d019a379e0eadc603
+ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
 ---
 
@@ -100,7 +100,8 @@ ms.openlocfilehash: bbdd4d5a54deba11161c1865cd8f6f2fb47bcad4
 
     API среды выполнения Windows могут обращаться к любому из этих датчиков, кроме магнитометра. Датчики объединенных данных работают более точно и стабильно по сравнению с датчиками необработанных данных, но потребляют больше энергии. Для каждой цели следует использовать подходящие датчики. Подробнее см. в разделе [Датчики](https://msdn.microsoft.com/library/windows/apps/mt187358).
 
-**Режим ожидания с подключением: **объекты [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) могут создаваться и в то время, когда компьютер находится в режиме ожидания с подключением. Однако объект **Geolocator** не сможет обнаружить датчики, которые можно объединить, и поэтому вызовы метода [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) завершатся тайм-аутом по истечении 7секунд, прослушиватели событий [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) никогда не будут вызваны, а прослушиватели событий [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) будут вызваны один раз с состоянием **NoData**.
+**Режим ожидания с подключением** 
+- Объекты [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) могут создаваться и в то время, когда компьютер находится в режиме ожидания с подключением. Однако объект **Geolocator** не сможет обнаружить датчики, которые можно объединить, и поэтому вызовы метода [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) завершатся тайм-аутом по истечении 7секунд, прослушиватели событий [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) никогда не будут вызваны, а прослушиватели событий [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) будут вызваны один раз с состоянием **NoData**.
 
 ## Дополнительные рекомендации по использованию
 
@@ -172,6 +173,6 @@ ms.openlocfilehash: bbdd4d5a54deba11161c1865cd8f6f2fb47bcad4
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Sep16_HO3-->
 
 

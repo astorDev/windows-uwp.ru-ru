@@ -5,7 +5,7 @@ title: Bluetooth RFCOMM
 description: "В этой статье приводится обзор протокола Bluetooth RFCOMM в приложениях на базе универсальной платформы Windows (UWP), а также пример кода для отправки и получения файла."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a4d7b0c9e51f3d118c5ed9ac83af2cc6d502d6b3
+ms.openlocfilehash: 97b5128f8543ea8eab24be5aa8c6a71811e97896
 
 ---
 # Bluetooth RFCOMM
@@ -368,6 +368,6 @@ void OnConnectionReceived(
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

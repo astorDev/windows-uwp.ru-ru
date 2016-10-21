@@ -1,42 +1,52 @@
-﻿---
+---
 author: jnHs
-Description: When submitting an add-on, the info you provide in the Store listings step will be displayed to your customers.
-title: Create add-on Store listings
+Description: "При отправке надстройки сведения, указанные на этапе &quot;Описания в Магазине&quot;, будут демонстрироваться вашим пользователям."
+title: "Создание описания надстройки в Магазине"
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
+translationtype: Human Translation
+ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
+ms.openlocfilehash: 607dab75b8e446109cbb60c6c149732501f5b43c
+
 ---
 
-# Create add-on Store listings
+# Создание описания надстройки в Магазине
 
 
-When submitting an add-on, the info you provide in the **Store listings** step will be displayed to your customers when they see the option to acquire your add-on. Make sure to consider the Store listing info carefully in order to represent your add-on accurately in a way that makes it appealing to customers. You can provide customized Store listings for different languages.
+При отправке надстройки сведения, указываемые на этапе **Описание в Магазине** будут отображаться для пользователей, когда они видят кнопку покупки вашей надстройки. Тщательно подберите описание в Магазине, чтобы правильно и выгодно представить пользователям вашу надстройку. Вы можете добавить настраиваемые описания в Магазине для различных языков.
 
-## Languages
-
-
-Before you can enter Store listing info, you need to specify one or more [languages](supported-languages.md). We recommend providing Store listings for every language your app supports.
-
-Under the **Store listing** section of your add-on's submission, click **Manage Store listing languages**, then click **Manage languages** on the next page. Check the boxes for the languages that you’d like to add, then click **Update**. The languages that you’ve selected will be displayed in the **Store listing languages** section of the page. To remove one or more of these languages, click **Remove** (or click **Manage languages** and uncheck the box for languages you’d like to remove). Click **Save** when you're happy with the list of languages.
-
-> **Tip** To add and remove additional languages, click **Manage Store listing languages** from the add-on submission overview.
-
-To edit a Store listing, click the language name on the add-on submission overview. The info you can enter for each language is described below.
-
-## Title
-
-You must provide a title here, which is the name your customers will see for this add-on. Your title can be up to 100 characters.
-
-## Description
-
-If you'd like to display more info than just a title, you can enter up to 200 characters here. This field is optional.
-
-## Icon
-
-You also have the option to provide an image that may be displayed to the customer. This icon must be a .png file that measures exactly 300 x 300 pixels.
-
- 
-
- 
+## Языки
 
 
+Перед вводом описания в Магазине необходимо указать один или несколько [языков](supported-languages.md). Рекомендуется указывать описания в Магазине для каждого языка, поддерживаемого вашим приложением.
+
+В разделе **Описание в Магазине** вашей отправки для надстройки нажмите **Управление языками описания в Магазине**, а затем выберите **Управление языками** на следующей странице. Установите флажки для языков, которые требуется добавить, и нажмите **Обновить**. Выбранные языки будут отображаться в разделе **Языки описания в Магазине** этой страницы. Чтобы удалить один или несколько из этих языков, нажмите **Удалить** (или нажмите **Управление языками** и снимите флажки для языков, которые требуется удалить). После создания списка с необходимыми языками нажмите кнопку **Сохранить**.
+
+> **Совет.** Чтобы добавить или удалить дополнительные языки, выберите пункт **Управление языками описания в Магазине** на странице общих сведений об отправке надстройки.
+
+Чтобы изменить описание в Магазине, щелкните название языка на странице общих сведений об отправке надстройки. Сведения, которые можно указать для каждого языка, приведены ниже.
+
+## Заголовок
+
+В этом поле необходимо указать заголовок, который будет являться именем надстройки, отображающимся для пользователей. Заголовок может содержать не более 100 символов.
+
+## Описание
+
+Если необходимо отобразить сведения помимо заголовка, можно ввести в этом поле до 200 символов. Это поле является необязательным.
+
+## Значок
+
+Вы также можете предоставить изображение, которое будет отображаться для пользователя. Этот значок должен представлять собой PNG-файл размером 300x300 пикселей.
+
+ 
+
+ 
+
+
+
+
+
+
+
+<!--HONumber=Aug16_HO5-->
 
 

@@ -1,92 +1,102 @@
 ---
 author: mcleanbyron
 ms.assetid: 1A69A388-B1CC-4D2C-886B-EA07E6E60252
-description: Use this method in the Windows Store submission API to delete an existing package flight submission.
-title: Delete a package flight submission using the Windows Store submission API
+description: "Используйте этот метод в API отправки Магазина Windows для удаления существующей отправки тестового пакета."
+title: "Удаление отправки тестового пакета с помощью API отправки Магазина Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 9712f0ef68cc3614c9961183dba8b67a71c0ec39
+
 ---
 
-# Delete a package flight submission using the Windows Store submission API
+# Удаление отправки тестового пакета с помощью API отправки Магазина Windows
 
 
 
 
-Use this method in the Windows Store submission API to delete an existing package flight submission.
+Используйте этот метод в API отправки Магазина Windows для удаления существующей отправки тестового пакета.
 
-## Prerequisites
+## Необходимые условия
 
-To use this method, you need to first do the following:
+Для использования этого метода необходимо выполнить следующие действия:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+* Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия. После истечения срока действия маркера можно получить новый маркер.
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
-## Request
+## Запрос
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+У этого метода следующий синтаксис. Примеры использования и описание заголовка и тела запроса приведены в следующих разделах.
 
-| Method | Request URI                                                      |
+| Способ | Универсальный код ресурса (URI) запроса                                                      |
 |--------|------------------------------------------------------------------|
-| DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/flights/{flightId}/submissions/{submissionId}``` |
+| DELETE (УДАЛЕНИЕ)    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/flights/{flightId}/submissions/{submissionId}``` |
 
 <span/>
- 
+ 
 
-### Request header
+### Заголовок запроса
 
-| Header        | Type   | Description                                                                 |
+| Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Авторизация | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
-### Request parameters
+### Параметры запроса
 
-| Name        | Type   | Description                                                                 |
+| Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app that contains the package flight submission you want to delete. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| flightId | string | Required. The ID of the package flight that contains the submission to delete. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
-| submissionId | string | Required. The ID of the submission to delete. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight submission](create-a-flight-submission.md).  |
+| applicationId | string | Обязательный. Код продукта в Магазине, принадлежащий приложению, которое содержит отправку тестового пакета для удаления. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| flightId | string | Обязательный. Идентификатор тестового пакета, содержащего отправку, которую необходимо удалить. Этот идентификатор отображается на информационной панели Центра разработки, а также добавляется в данные ответов для запросов на [создание тестового пакета](create-a-flight.md) и [получение тестовых пакетов для приложения](get-flights-for-an-app.md).  |
+| submissionId | string | Обязательный. Идентификатор отправки для удаления. Этот идентификатор отображается на информационной панели Центра разработки, а также добавляется в данные ответов для запросов на [создание отправки тестового пакета](create-a-flight-submission.md).  |
 
 <span/>
 
-### Request body
+### Тело запроса
 
-Do not provide a request body for this method.
+Предоставлять тело запроса для этого метода не требуется.
 
 <span/>
 
-### Request example
+### Пример запроса
 
-The following example demonstrates how to delete a submission for a package flight.
+В следующем примере показано, как удалить отправку тестового пакета.
 
 ```
 DELETE https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## Ответ
 
-If successful, this method returns an empty response body.
+В случае успеха этот метод возвращает пустой ответ.
 
-## Error codes
+## Коды ошибок
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+Если запрос не удается выполнить, ответ будет содержать один из следующих кодов ошибок HTTP.
 
-| Error code |  Description   |
+| Код ошибки |  Описание   |
 |--------|------------------|
-| 400  | The request parameters are invalid. |
-| 404  | The specified submission could not be found. |
-| 409  | The specified submission was found but it could not be deleted in its current state, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
+| 400  | Недопустимые параметры запроса. |
+| 404  | Не удалось найти указанную отправку. |
+| 419  | Указанная отправка найдена, однако ее не удалось удалить в текущем состоянии или приложение использует функцию панели мониторинга Центра разработки, которую [в настоящее время API отправки Магазина Windows не поддерживает](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
 
 <span/>
 
-## Related topics
+## Связанные разделы
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage package flight submissions](manage-flight-submissions.md)
-* [Get a package flight submission](get-a-flight-submission.md)
-* [Create a package flight submission](create-a-flight-submission.md)
-* [Commit a package flight submission](commit-a-flight-submission.md)
-* [Update a package flight submission](update-a-flight-submission.md)
-* [Get the status of a package flight submission](get-status-for-a-flight-submission.md)
+* [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
+* [Управление отправками тестового пакета](manage-flight-submissions.md)
+* [Получение отправки тестового пакета](get-a-flight-submission.md)
+* [Создание отправки тестового пакета](create-a-flight-submission.md)
+* [Подтверждение отправки тестового пакета](commit-a-flight-submission.md)
+* [Обновление отправки тестового пакета](update-a-flight-submission.md)
+* [Получение состояния отправки тестового пакета](get-status-for-a-flight-submission.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

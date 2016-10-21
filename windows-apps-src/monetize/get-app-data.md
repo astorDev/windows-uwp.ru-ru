@@ -1,37 +1,41 @@
 ---
 author: mcleanbyron
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: Use these methods in the Windows Store submission API to retrieve data for apps that are registered to your Windows Dev Center account.
-title: Get app data using the Windows Store submission API
+description: "Используйте эти методы в API отправки Магазина Windows для получения данных о приложениях, которые зарегистрированы в вашей учетной записи Центра разработки для Windows."
+title: "Получение данных приложения с помощью API отправки Магазина Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 99d609decc8c38952961deac5bb8ec6926d91c88
+
 ---
 
-# Get app data using the Windows Store submission API
+# Получение данных приложения с помощью API отправки Магазина Windows
 
-Use the following methods in the Windows Store submission API to get data for apps that are registered to your Windows Dev Center account. For an introduction to the Windows Store submission API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+Используйте указанные ниже методы в API отправки Магазина Windows для получения данных о приложениях, которые зарегистрированы в вашей учетной записи Центра разработки для Windows. Введение в API отправки Магазина Windows см. в разделе [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md).
 
->**Note**&nbsp;&nbsp;These methods can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled. These methods can only be used to get data for apps. To create or manage submissions for apps, see the methods in [Manage app submissions](manage-app-submissions.md).
+>**Примечание.**&nbsp;&nbsp;Эти методы могут применяться только для учетных записей Центра разработки для Windows, у которых имеется разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей. Эти методы могут использоваться только для получения данных для приложений. Для создания отправок для приложений и управления ими см. описания методов в разделе [Управление отправками приложений](manage-app-submissions.md).
 
-| Method        | URI    | Description                                                                 |
+| Метод        | URI    | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` | Retrieves data for all the apps that are registered to your Windows Dev Center account. For more information, see [Get all apps](get-all-apps.md). |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}``` | Retrieves data about a specific app that is registered to your Windows Dev Center account. For more information, see [Get an app](get-an-app.md). |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts``` | Lists the add-ons (also known as in-app products or IAPs) for an app that is registered to your Windows Dev Center account. For more information, see [Get add-ons for an app](get-add-ons-for-an-app.md). |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights``` | Lists the package flights for an app that is registered to your Windows Dev Center account. For more information, see [Get package flights for an app](get-flights-for-an-app.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` | Получает данные для всех приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows. Дополнительную информацию см. в разделе [Получение всех приложений](get-all-apps.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}``` | Получение данных о конкретном приложении, которое зарегистрировано в вашей учетной записи Центра разработки для Windows. Дополнительную информацию см. в разделе [Получение приложения](get-an-app.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts``` | Получение списка надстроек (также называемых внутренними продуктами приложения или IAP) для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows. Дополнительную информацию см. в разделе [Получение надстроек для приложения](get-add-ons-for-an-app.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights``` | Получение списка тестовых пакетов для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows. Дополнительные сведения см. в разделе [Получение тестовых пакетов для приложения](get-flights-for-an-app.md). |
 
 <span/>
 
-## Prerequisites
+## Необходимые условия
 
-If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API before trying to use any of these methods.
+Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows, прежде чем использовать любой из этих методов.
 
-## Resources
+## Ресурсы
 
-These methods use the following resources to format data.
+В этих методах для форматирования данных используются указанные ниже ресурсы.
 
 <span id="application_object" />
-### Application
+### Приложение
 
-This resource represents an app that is registered to your account. The following example demonstrates the format of this resource.
+Этот ресурс представляет приложение, зарегистрированное в вашей учетной записи. В следующем примере показан формат этого ресурса.
 
 ```json
 {
@@ -52,24 +56,24 @@ This resource represents an app that is registered to your account. The followin
 }
 ```
 
-This resource has the following values.
+Этот ресурс содержит следующие значения.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Значение           | Тип    | Описание                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | string  | The Store ID of the app. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
-| primaryName   | string  | The primary name of the app.                                                                                                                                                   |
-| packageFamilyName | string  | The package family name of the app.                                                                                                                                                                                                         |
-| packageIdentityName          | string  | The package identity name of the app.                                                                                                                                                              |
-| publisherName       | string  | The Windows publisher ID that is associated with the app. This corresponds to the **Package/Identity/Publisher** value that appears on the [App identity](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) page for the app in the Windows Dev Center dashboard.                                                                                             |
-| firstPublishedDate      | string  | The date the app was first published, in ISO 8601 format.                                                                                         |
-| lastPublishedApplicationSubmission       | object | An object that provides information about the last published submission for the app. For more information, see the [Submission](#submission_object) section below.                                                                                                                                                          |
-| pendingApplicationSubmission        | object  |  An object that provides information about the current pending submission for the app. For more information, see the [Submission](#submission_object) section below.  |   |
+| id            | string  | Код продукта в Магазине для приложения. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
+| primaryName   | string  | Основное имя приложения.                                                                                                                                                   |
+| packageFamilyName | string  | Имя семейства пакетов для приложения.                                                                                                                                                                                                         |
+| packageIdentityName          | string  | Имя идентификации пакета для приложения.                                                                                                                                                              |
+| publisherName       | string  | Идентификатор издателя Windows, который связан с приложением. Этот параметр соответствует значению **Пакет/идентификатор/издатель**, которое отображается на странице [Удостоверение приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) для приложения на информационной панели Центра разработки для Windows.                                                                                             |
+| firstPublishedDate      | string  | Дата первой публикации приложения в формате ISO 8601.                                                                                         |
+| lastPublishedApplicationSubmission       | object | Объект, который предоставляет сведения о последней опубликованной отправке для приложения. Дополнительные сведения см. ниже в разделе [Отправка](#submission_object).                                                                                                                                                          |
+| pendingApplicationSubmission        | object  |  Объект, который предоставляет сведения о текущей ожидающей отправке для приложения. Дополнительные сведения см. ниже в разделе [Отправка](#submission_object).  |   |
 
 
 <span id="add-on-object" />
-### Add-on
+### Надстройка
 
-This resource provides information about an add-on. The following example demonstrates the format of this resource.
+Этот ресурс содержит сведения о надстройке. В следующем примере показан формат этого ресурса.
 
 ```json
 {
@@ -77,17 +81,17 @@ This resource provides information about an add-on. The following example demons
 }
 ```
 
-This resource has the following values.
+Этот ресурс содержит следующие значения.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Значение           | Тип    | Описание                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| inAppProductId            | string  | The Store ID of the add-on. This value is supplied by the Store. An example Store ID is 9NBLGGH4TNMP.   |
+| inAppProductId            | string  | Код продукта в Магазине для этой надстройки. Это значение предоставляется Магазином. Пример кода продукта в Магазине: 9NBLGGH4TNMP.   |
 
 
 <span id="flight-object" />
-### Flight
+### Тестируемая возможность
 
-This resource provides information about a package flight for an app. The following example demonstrates the format of this resource.
+Этот ресурс содержит сведения о тестовом пакете для приложения. В следующем примере показан формат этого ресурса.
 
 ```json
 {
@@ -108,22 +112,22 @@ This resource provides information about a package flight for an app. The follow
 }
 ```
 
-This resource has the following values.
+Этот ресурс содержит следующие значения.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Значение           | Тип    | Описание                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | string  | The ID for the package flight. This value is supplied by Dev Center.  |
-| friendlyName           | string  | The name of the package flight, as specified by the developer.   |
-| lastPublishedFlightSubmission       | object | An object that provides information about the last published submission for the package flight. For more information, see the [Submission](#submission_object) section below.  |
-| pendingFlightSubmission        | object  |  An object that provides information about the current pending submission for the package flight. For more information, see the [Submission](#submission_object) section below.  |    
-| groupIds           | array  | An array of strings that contain the IDs of the flight groups that are associated with the package flight. For more information about flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
-| rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight. For more information about ranking flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
+| flightId            | string  | Идентификатор для тестового пакета. Это значение предоставляется Центром разработки.  |
+| friendlyName           | string  | Имя тестового пакета, указанное разработчиком.   |
+| lastPublishedFlightSubmission       | object | Объект, который предоставляет сведения о последней опубликованной отправке для тестового пакета. Дополнительные сведения см. ниже в разделе [Отправка](#submission_object).  |
+| pendingFlightSubmission        | object  |  Объект, который предоставляет сведения о текущей ожидающей отправке для тестового пакета. Дополнительные сведения см. ниже в разделе [Отправка](#submission_object).  |    
+| groupIds           | array  | Массив строк, содержащий идентификаторы тестовых групп, которые связаны с тестовым пакетом. Дополнительные сведения о тестовых группах см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
+| rankHigherThan           | string  | Понятное имя тестового пакета, приоритет которого на единицу ниже приоритета текущего тестового пакета. Дополнительные сведения о задании приоритетов тестовых групп см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
 
 
 <span id="submission_object" />
-### Submission
+### Отправка
 
-This resource provides information about a submission. The following example demonstrates the format of this resource.
+Этот ресурс содержит сведения об отправке. В следующем примере показан формат этого ресурса.
 
 ```json
 {
@@ -134,20 +138,26 @@ This resource provides information about a submission. The following example dem
 }
 ```
 
-This resource has the following values.
+Этот ресурс содержит следующие значения.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Значение           | Тип    | Описание                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | string  | The ID of the submission.    |
-| resourceLocation   | string  | A relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to retrieve the complete data for the submission.                                                                                                                                               |
- 
+| id            | string  | Идентификатор отправки.    |
+| resourceLocation   | string  | Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для отправки.                                                                                                                                               |
+ 
 <span/>
 
-## Related topics
+## Связанные разделы
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage app submissions using the Windows Store submission API](manage-app-submissions.md)
-* [Get all apps](get-all-apps.md)
-* [Get an app](get-an-app.md)
-* [Get add-ons for an app](get-add-ons-for-an-app.md)
-* [Get package flights for an app](get-flights-for-an-app.md)
+* [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
+* [Управление отправками приложений с помощью API отправки Магазина Windows](manage-app-submissions.md)
+* [Получение всех приложений](get-all-apps.md)
+* [Получение приложения](get-an-app.md)
+* [Получение надстроек для приложения](get-add-ons-for-an-app.md)
+* [Получение тестовых пакетов для приложения](get-flights-for-an-app.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

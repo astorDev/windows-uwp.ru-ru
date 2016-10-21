@@ -1,268 +1,271 @@
 ---
 author: TylerMSFT
-Description: The JavaScript API for the Microsoft Take a Test app allows you to do secure assessments. Take a Test provides a secure browser that prevents students from using other computer or internet resources during a test.
-title: Microsoft Take a Test JavaScript API.
+Description: "API JavaScript для приложения Microsoft «Тестирование» позволяет проводить безопасное тестирование. «Тестирование» предоставляет защищенный браузер, не позволяющий учащимся использовать другие ресурсы компьютера или интернет-ресурсы во время теста."
+title: "API JavaScript для приложения Microsoft «Тестирование»"
+translationtype: Human Translation
+ms.sourcegitcommit: f2838d95da66eda32d9cea725a33fc4084d32359
+ms.openlocfilehash: d7f185e83e81583fd6d7920e5412f76f3a97edd0
+
 ---
 
-# Microsoft Take a Test JavaScript API
+# API JavaScript для приложения Microsoft «Тестирование»
 
-**Take a Test** is a browser-based app that renders locked down online assessments for high-stakes testing. It supports the SBAC browser API standard for high stakes common core testing and allows you to focus on the assessment content rather than how to lock down Windows.
+**Тестирование** — это браузерное приложение, отображающие защищенные онлайн-тесты для проведения важных тестирований. Оно поддерживает стандарт API браузера SBAC для проведения важных тестов по основным предметам и позволяет сосредоточиться на содержимом теста, а не на поиске способов заблокировать доступ в Windows.
 
-**Take a Test**, powered by Microsoft's Edge browser, provides a JavaScript API that Web applications can use to provide a locked down experience for taking tests.
+Приложение **Тестирование** основано на браузере Microsoft Edge и предоставляет API-интерфейс JavaScript, который веб-приложения могут использовать для ограничения взаимодействия при прохождении тестов.
 
-The API (based on the [Common Core SBAC API](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)) provides text to speech and the capability to query if the device is locked down, what the running user and system running processes are, and more.
+Этот API-интерфейс (основанный на API [Common Core SBAC](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)) содержит возможности преобразования текста в речь, а также возможность определить, заблокировано ли устройство, список выполняемых пользовательских и системных процессов и многое другое.
 
-See the [Take a Test app technical reference](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) for information about the app itself.
+Дополнительные сведения о самом приложении см. в [техническом справочнике по приложению «Тестирование»](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396).
 
-**Important**
+**Важно.**
 
-The APIs do not work in a remote session.  
-Take a Test does not handle HTTP new window requests.
+API не работают в удаленном сеансе.  
+Приложение «Тестирование» не обрабатывает HTTP-запросы на открытие нового окна.
 
-For troubleshooting help, see [Troubleshoot Microsoft Take a Test with the event viewer](troubleshooting.md).
+Справку по устранению неполадок см. в разделе [Устранение неполадок приложения «Тестирование» с помощью средства просмотра событий](troubleshooting.md).
 
-**The Take a Test API consists of the following namespaces:**  
+**API-интерфейс приложения «Тестирование» содержит следующие пространства имен.**  
 
-| Namespace | Description |
+| Пространство имен | Описание |
 |-----------|-------------|
-|[security namespace](#security-namespace)| Text to speech functionality|
-|[tts namespace](#tts-namespace)|Enables you to lock down the device|
+|[Пространство имен security](#security-namespace)| Возможность преобразования текста в речь|
+|[Пространство имен tts](#tts-namespace)|Позволяет блокировать устройство|
 
 
- ## security namespace
+ ## Пространство имен security
 
-Enables you to lock down the device, check the list of user and system processes, obtain MAC and IP addresses, and clear cached web resources.
+Позволяет заблокировать устройство, проверить список процессов пользователя и системы, получить MAC- и IP-адреса и очистить кэшированные веб-ресурсы.
 
-| Method | Description   |
+| Метод | Описание   |
 |--------|---------------|
-|[clearCache](#clearCache) | Clears cached web resources |
-|[close](#close) | Closes the browser and unlocks the device |
-|[enableLockDown](#enableLockDown) | Locks down the device. Also used to unlock the device |
-|[getIPAddressList](#getIPAddressList) | Gets the list of IP addresses for the device |
-|[getMACAddress](#getMACAddress)|Gets the list of MAC addresses for the device|
-|[getProcessList](#getProcessList)|Gets the list of running user and system processes|
-|[isEnvironmentSecure](#isEnvironmentSecure)|Determines whether the lockdown context is still applied to the device|
+|[clearCache](#clearCache) | Очищает кэшированные веб-ресурсы |
+|[close](#close) | Закрывает браузер и разблокирует устройство |
+|[enableLockDown](#enableLockDown) | Блокирует устройство. Также используется, чтобы разблокировать устройство. |
+|[getIPAddressList](#getIPAddressList) | Получает список IP-адресов устройства. |
+|[getMACAddress](#getMACAddress)|Получает список MAC-адресов устройства.|
+|[getProcessList](#getProcessList)|Получает список выполняемых процессов пользователя и системы|
+|[isEnvironmentSecure](#isEnvironmentSecure)|Определяет, применяется ли по-прежнему на устройстве контекст блокировки.|
 
 <span id="clearCache" />
 ### void clearCache()
-Clear cached web resources.
+Очищает кэшированные веб-ресурсы.
 
-**Syntax**  
+**Синтаксис**  
 `browser.security.clearCache();`
 
-**Parameters**  
+**Параметры**  
 `None`
 
-**Return value**  
+**Возвращаемое значение**  
 `None`
 
-**Requirements**  
-Windows 10, version 1607
+**Требования**  
+Windows 10 версии 1607
 
 ---
 
 <span id="close"/>
 ### close(boolean restart)
-Closes the browser and unlocks the device.
+Закрывает браузер и разблокирует устройство.
 
-**Syntax**  
+**Синтаксис**  
 `browser.security.close(false);`
 
-**Parameters**  
-`restart` - this parameter is ignored but must be provided.
+**Параметры**  
+`restart` — этот параметр не учитывается но должен быть задан.
 
-**Return value**  
+**Возвращаемое значение**  
 `None`
 
-**Requirements**  
-Windows 10, version 1607
+**Требования**  
+Windows10 версии 1607
 
 ---
 
 <span id="enableLockDown"/>
 ### enableLockdown(boolean lockdown)
-Locks down the device. Also used to unlock the device.
+Блокирует устройство. Также используется, чтобы разблокировать устройство.
 
-**Syntax**  
+**Синтаксис**  
 `browser.security.enableLockDown(true|false);`
 
-**Parameters**  
-`lockdown` - `true` to run the Take-a-Test app above the lock screen and apply policies discussed in this [document](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). `False` stops running Take-a-Test above the lock screen and closes it unless the app is not locked down; in which case there is no effect.
+**Параметры**  
+`lockdown` - `true` используется для запуска приложения «Тестирование» на экране блокировки и применения политик, описанных в данном [документе](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). `False` останавливает выполняемое на экране блокировки приложение «Тестирование» и закрывает его, если приложение не заблокировано. В противном случае ничего не происходит.
 
-**Return value**  
+**Возвращаемое значение**  
 `None`
 
-**Requirements**  
-Windows 10, version 1607
+**Требования**  
+Windows10 версии 1607
 
 ---
 
 <span id="getIPAddressList"/>
 ### string[] getIPAddressList()
-Gets the list of IP addresses for the device.
+Получает список IP-адресов устройства.
 
-**Syntax**  
+**Синтаксис**  
 `browser.security.getIPAddressList();`
 
-**Parameters**  
+**Параметры**  
 `None`
 
-**Return value**  
+**Возвращаемое значение**  
 `An array of IP addresses.`
 
 <span id="getMACAddress" />
 ### string[] getMACAddress()
-Gets the list of MAC addresses for the device.
+Получает список MAC-адресов устройства.
 
-**Syntax**  
+**Синтаксис**  
 `browser.security.getMACAddress();`
 
-**Parameters**  
+**Параметры**  
 `None`
 
-**Return value**  
+**Возвращаемое значение**  
 `An array of MAC addresses.`
 
-**Requirements**  
-Windows 10, version 1607
+**Требования**  
+Windows 10 версии 1607
 
 ---
 
 <span id="getProcessList" />
 ### string[] getProcessList()
-Gets the list the user’s running processes.
+Получает список выполняемых процессов пользователя.
 
-**Syntax**  
+**Синтаксис**  
 `browser.security.getProcessList();`
 
-**Parameters**  
+**Параметры**  
 `None`
 
-**Return value**  
+**Возвращаемое значение**  
 `An array of running process names.`
 
-**Remarks**
-The list does not include system processes.
+**Примечание.** Список не включает системные процессы.
 
-**Requirements**  
-Windows 10, version 1607
+**Требования**  
+Windows 10 версии 1607
 
 ---
 
 <span id="isEnvironmentSecure" />
 ### boolean isEnvironmentSecure()
-Determines whether the lockdown context is still applied to the device.
+Определяет, применяется ли по-прежнему на устройстве контекст блокировки.
 
-**Syntax**  
+**Синтаксис**  
 `browser.security.isEnvironmentSecure();`
 
-**Parameters**  
+**Параметры**  
 `None`
 
-**Return value**  
+**Возвращаемое значение**  
 `True indicates that the lockdown context is applied to the device; otherwise false.`
 
-**Requirements**  
-Windows 10, version 1607
+**Требования**  
+Windows 10 версии 1607
 
 ---
 
-## tts namespace
-| Method | Description |
+## Пространство имен tts
+| Метод | Описание |
 |--------|-------------|
-|[getStatus](#getStatus) | Gets the speech playback status|
-|[getVoices](#getVoices) | Gets a list of available voice packs|
-|[pause](#pause)|Pauses speech synthesis|
-|[resume](#resume)|Resume paused speech synthesis|
-|[speak](#speak)|Client-side text to speech synthesis|
-|[stop](#stop)|Stops speech synthesis|
+|[getStatus](#getStatus) | Получает состояние воспроизведения речи.|
+|[getVoices](#getVoices) | Получает список доступных голосовых пакетов.|
+|[pause](#pause)|Приостанавливает синтез речи.|
+|[resume](#resume)|Возобновляет приостановленный синтез речи.|
+|[speak](#speak)|Синтез речи на стороне клиента при преобразовании текста в речь|
+|[stop](#stop)|Останавливает синтез речи|
 
 > [!Tip]
-> The [Microsoft Edge Speech Synthesis API](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/) is an implementation of the [W3C Speech Api](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html) and we recommend that developers use that API when possible.
+> [API синтеза речи Microsoft Edge](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/) является реализацией [API голосовых функций W3C](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html). Разработчикам рекомендуется использовать данный API- интерфейс, когда это возможно.
 
 <span id="getStatus" />
 ### string getStatus()
-Gets the speech playback status.
+Получает состояние воспроизведения речи.
 
-**Syntax**  
+**Синтаксис**  
 `browser.tts.getStatus();`
 
-**Parameters**  
+**Параметры**  
 `None`
 
-**Return value**  
+**Возвращаемое значение**  
 `The speech playback status. Possible values are: “available”, “idle”, “paused”, and “speaking”.`
 
-**Requirements**  
-Windows 10, version 1607
+**Требования**  
+Windows 10 версии 1607
 
 ---
 
 <span id="getVoices" />
 ### string[] getVoices()
-Gets a list of available voice packs.
+Получает список доступных голосовых пакетов.
 
-**Syntax**  
+**Синтаксис**  
 `browser.tts.getVoices();`
 
-**Parameters**  
+**Параметры**  
 `None`
 
-**Return value**  
+**Возвращаемое значение**  
 `The available voice packs. For example: “Microsoft Zira Mobile”, “Microsoft Mark Mobile”`
 
-**Requirements**  
-Windows 10, version 1607
+**Требования**  
+Windows 10 версии 1607
 
 ---
 
 <span id="pause" />
 ### void pause()
 
-Pauses speech synthesis.
+Приостанавливает синтез речи.
 
-**Syntax**  
+**Синтаксис**  
 `browser.tts.pause();`
 
-**Parameters**
+**Параметры**
 
 `None`
 
-**Return value**
+**Возвращаемое значение**
 
 `None`
 
-**Requirements**  
-Windows 10, version 1607
+**Требования**  
+Windows 10 версии 1607
 
 ---
 
 <span id="resume" />
 ### void resume()
-Resume paused speech synthesis.
+Возобновляет приостановленный синтез речи.
 
-**Syntax**  
+**Синтаксис**  
 `browser.tts.resume();`
 
-**Parameters**
+**Параметры**
 `None`
 
-**Return value**
+**Возвращаемое значение**
 `None`
 
-**Requirements**  
-Windows 10, version 1607
+**Требования**  
+Windows 10 версии 1607
 
 ---
 
 <span id="speak" />
 ### void speak(string text, object options, function callback)
-Client-side text to speech synthesis.
+Синтез речи на стороне клиента при преобразовании текста в речь.
 
-**Syntax**  
+**Синтаксис**  
 `void browser.tts.speak(“Hello world”, options, callback);`
 
-**Parameters**  
+**Параметры**  
 `Speech options such as gender, pitch, rate, volume. For example:`  
 ```
 var options = {
@@ -275,31 +278,36 @@ var options = {
 };
 ```
 
-**Return value**  
+**Возвращаемое значение**  
 `None`
 
-**Remarks**
-Option variables must be lowercase. The gender, language, and voice parameters take strings.
-Volume, pitch, and rate must be marked up within the speech synthesis markup language file (SSML), not within the options object.
+**Примечание.** Переменные параметров задаются срочными буквами. Параметры gender (пол), language (язык) и voice (голос) принимают строки.
+Volume (громкость), pitch (высота) и rate (скорость) указываются в файл языка SSML, а не в объекте параметров.
 
-The options object must follow the order, naming, and casing shown in the example above.
+В объекте параметров необходимо соблюдать порядок следования, именование и регистр, представленные в примере выше.
 
-**Requirements**  
-Windows 10, version 1607
+**Требования**  
+Windows 10 версии 1607
 
 ---
 <span id="stop" />
 ### void stop()
-Stops speech synthesis.
+Останавливает синтез речи.
 
-**Syntax**  
+**Синтаксис**  
 `void browser.tts.speak(“Hello world”, options, callback);`
 
-**Parameters**  
+**Параметры**  
 `None`
 
-**Return value**  
+**Возвращаемое значение**  
 `None`
 
-**Requirements**  
-Windows 10, version 1607
+**Требования**  
+Windows 10 версии 1607
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

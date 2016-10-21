@@ -1,19 +1,17 @@
 ---
 author: TylerMSFT
-title: "Создание и регистрация фоновой задачи"
+title: "Создание и регистрация фоновой задачи, которая запускается в отдельном процессе"
 description: "Создайте класс фоновой задачи и зарегистрируйте его выполнение, когда приложение не работает на переднем плане."
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 translationtype: Human Translation
-ms.sourcegitcommit: 579547b7bd2ee76390b8cac66855be4a9dce008e
-ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
+ms.sourcegitcommit: 95c34f70e9610907897cfe9a2bf82aaac408e486
+ms.openlocfilehash: 4eb67f8f63134ab33df79b0b98b252b2b27b2dda
 
 ---
 
-# Создание и регистрация фоновой задачи
+# Создание и регистрация фоновой задачи, которая запускается в отдельном процессе
 
-
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+\[ Обновлено для приложений UWP в Windows10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -21,10 +19,12 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-Создайте класс фоновой задачи и зарегистрируйте его выполнение, когда приложение не работает на переднем плане.
+Создайте класс фоновой задачи и зарегистрируйте его выполнение, когда приложение не работает на переднем плане. В этом разделе рассказывается, как создать и зарегистрировать фоновую задачу, которая будет запускаться в отдельном процессе, а не в процессе переднего плана. Руководство по реализации выполнения фоновой задачи непосредственно в приложении переднего плана см. в разделе [Создание и регистрация фоновой задачи, которая запускается в одном процессе](create-and-register-a-singleprocess-background-task.md).
+
+> [!Note]
+> Если фоновая задача используется для воспроизведения мультимедиа в фоновом режиме, см. раздел [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio), где приведены сведения об улучшениях в Windows 10 версии 1607, которые значительно упрощают работу.
 
 ## Создание класса фоновой задачи
-
 
 Для выполнения кода в фоновом режиме можно создавать классы, в которых реализован интерфейс [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Этот код будет запускаться при активации определенного события, например при помощи [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) или [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517).
 
@@ -110,9 +110,10 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
-    >     BackgroundTaskDeferral _deferral = taskInstance.GetDeferral(); // Note: define at class scope
+    >     BackgroundTaskDeferral _deferral; // Note: defined at class scope so we can mark it complete inside the OnCancel() callback if we choose to support cancellation
     >     public async void Run(IBackgroundTaskInstance taskInstance)
     >     {
+    >         _deferral = taskInstance.GetDeferral()
     >         //
     >         // TODO: Insert code to start one or more asynchronous methods using the
     >         //       await keyword, for example:
@@ -124,7 +125,7 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
     >     }
     > ```
     > ```cpp
-    >     BackgroundTaskDeferral^ deferral = taskInstance->GetDeferral(); // Note: define at class scope
+    >     BackgroundTaskDeferral^ deferral = taskInstance->GetDeferral(); // Note: defined at class scope so we can mark it complete inside the OnCancel() callback if we choose to support cancellation
     >     void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
     >     {
     >         //
@@ -150,7 +151,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
 > [!NOTE]
 > Вы также можете создать функцию для регистрации фоновых задач — см. раздел [Регистрация фоновой задачи](register-a-background-task.md). В этом случае вместо выполнения следующих трех шагов вы можете просто создать триггер и назначить его функции регистрации, указав имя задачи, точку входа задачи и (не обязательно) условие.
-
 
 ## Регистрация фоновой задачи для запуска
 
@@ -242,10 +242,11 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 > [!NOTE]
 > Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
 
-Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем— метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Подробнее см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
+Чтобы универсальное приложение для Windows продолжало корректно работать после выпуска обновления, необходимо использовать триггер **ServicingComplete** (см. раздел [SystemTriggerType](https://msdn.microsoft.com/library/windows/apps/br224839)), чтобы внести любые изменения в конфигурацию после обновления, такие как перенос базы данных приложения и регистрация фоновых задач. В настоящий момент рекомендуется отменить регистрацию фоновых задач, связанных с предыдущей версией приложения (см. раздел [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)), и регистрировать фоновые задачи для новой версии приложения (см. раздел [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)).
+
+Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
 
 ## Обработка завершения фоновой задачи с помощью обработчиков событий
-
 
 Следует зарегистрировать метод с помощью [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781), чтобы ваше приложение могло получить результаты от фоновой задачи. При запуске или возобновлении приложения будет вызван метод mark, если фоновая задача завершилась с момента последней работы приложения на переднем плане. (Метод OnCompleted будет вызван немедленно, если фоновая задача завершается во время работы приложения на переднем плане в настоящее время.)
 
@@ -275,7 +276,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
     > [!NOTE]
     > Обновления пользовательского интерфейса должны выполняться асинхронно, чтобы избежать остановки потока пользовательского интерфейса. Пример см. в методе UpdateUI в [образце фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666).
-
 
 
 2.  Вернитесь к тому месту, где вы регистрировали фоновую задачу. После этой строки кода добавьте новый объект [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781). Предоставьте свой метод OnCompleted в качестве параметра для конструктора **BackgroundTaskCompletedEventHandler**.
@@ -315,7 +315,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
 ## Сводка и дальнейшие действия
 
-
 Теперь вы понимаете, как создавать класс фоновой задачи, как регистрировать фоновую задачу из приложения и как сделать так, чтобы приложение распознавало ее завершение. Вы также знаете, как обновить манифест приложения, чтобы приложение могло успешно регистрировать фоновые задачи.
 
 > [!NOTE]
@@ -337,6 +336,8 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 * [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
 * [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
 * [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
+* [Создание и регистрация фоновой задачи, которая запускается в одном процессе](create-and-register-a-singleprocess-background-task.md).
+[Преобразование фоновой задачи с несколькими процессами в фоновую задачу с одним процессом](convert-multiple-process-background-task.md)  
 
 **Руководство по фоновым задачам**
 
@@ -350,6 +351,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

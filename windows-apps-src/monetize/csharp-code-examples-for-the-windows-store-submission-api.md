@@ -1,33 +1,37 @@
 ---
 author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
-description: Use the C# code examples in this section to learn more about using the Windows Store submission API.
-title: C# code examples for the Windows Store submission API
+description: "Используйте примеры кода на C#, приведенные в этом разделе, чтобы подробнее ознакомиться с работой API отправки Магазина Windows."
+title: "Примеры кода C# для API отправки Магазина Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: 1f577f33563d6acd7d2f791a48176f9a6164d287
+ms.openlocfilehash: 9ae200699027f908cfc4b59dfc5035dcb09e93f6
+
 ---
 
-# C\# code examples for the Windows Store submission API
+# Примеры кода C\# для API отправки Магазина Windows
 
-This article provides C# code examples for using the *Windows Store submission API*. For more information about this API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+В этой статье представлены примеры кода C# для использования *API отправки Магазина Windows*. Дополнительные сведения об этом API-интерфейсе см. в разделе [Создание отправок и управление ими с помощью служб МагазинаWindows](create-and-manage-submissions-using-windows-store-services.md).
 
-These code examples demonstrate the following tasks:
+В этих примерах кода демонстрируются следующие задачи:
 
-* [Update an app submission](csharp-code-examples-for-the-windows-store-submission-api.md#update-app-submission).
-* [Create and commit an add-on submission](csharp-code-examples-for-the-windows-store-submission-api.md#create-and-commit-add-on-submission).
-* [Update an add-on submission](csharp-code-examples-for-the-windows-store-submission-api.md#update-add-on-submission).
-* [Update a package flight submission](csharp-code-examples-for-the-windows-store-submission-api.md#update-flight-submission).
+* [Обновление отправки приложения](csharp-code-examples-for-the-windows-store-submission-api.md#update-app-submission).
+* [Создание и сохранение отправки надстройки](csharp-code-examples-for-the-windows-store-submission-api.md#create-and-commit-add-on-submission).
+* [Обновление отправки надстройки](csharp-code-examples-for-the-windows-store-submission-api.md#update-add-on-submission).
+* [Обновление отправки тестового пакета](csharp-code-examples-for-the-windows-store-submission-api.md#update-flight-submission).
 
-You can review each example to learn more about the task it demonstrates, or you can build all the code examples in this article into a console application. To build the examples, create a C# console application named **DeveloperApiCSharpSample** in Visual Studio, copy each example to a separate code file in the project, and build the project.
+Вы можете ознакомиться с каждым примером, чтобы подробнее узнать о демонстрируемой в нем задаче, либо вы можете собрать все примеры кода в этой статье в консольное приложение. Для сборки примеров создайте консольное приложение C# с именем **DeveloperApiCSharpSample** в Visual Studio, скопируйте каждый пример в отдельный файл с кодом в проекте и соберите проект.
 
-## Prerequisites
+## Необходимые условия
 
-These examples use the following libraries:
+В этих примерах используются следующие библиотеки:
 
-* Microsoft.WindowsAzure.Storage.dll. This library is available in the [Azure SDK for .NET](https://azure.microsoft.com/downloads/), or you can obtain it by installing the [WindowsAzure.Storage NuGet package](https://www.nuget.org/packages/WindowsAzure.Storage).
-* [Json.NET](http://www.newtonsoft.com/json) from Newtonsoft.
+* Microsoft.WindowsAzure.Storage.dll. Эта библиотека доступна в [Пакете SDK Azure для .NET](https://azure.microsoft.com/downloads/). Ее также можно получить путем установки [пакета NuGet WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage).
+* [Json.NET](http://www.newtonsoft.com/json) от Newtonsoft.
 
-## Main program
+## Основная программа
 
-The following example implements a command line program that calls the other example methods in this article to demonstrate different ways to use the Windows Store submission API.
+В следующем примере реализуется программа командной строки, вызывающая другие методы из примеров в этой статье для демонстрации различных вариантов использования API отправки Магазина Windows.
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -60,14 +64,14 @@ namespace DeveloperApiCSharpSample
 }
 ```
 
-## Helper classes
+## Вспомогательные классы
 
-This section provides helper classes that are used by the Windows Store submission API examples in this article.
+Этот раздел содержит вспомогательные классы, используемые в примерах API отправки Магазина Windows в этой статье.
 
 <span id="clientconfiguration" />
-### ClientConfiguration helper class
+### Вспомогательный класс ClientConfiguration
 
-The following example defines a ```ClientConfiguration``` class that is used to pass data to each of the other example methods that use the Windows Store submission API.
+В следующем примере определяется класс ```ClientConfiguration```, используемый для передачи данных остальным методам из примеров, в которых используется API отправки Магазина Windows.
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -134,9 +138,9 @@ namespace DeveloperApiCSharpSample
 ```
 
 <span id="ingestionclient" />
-### IngestionClient helper class
+### Вспомогательный класс IngestionClient
 
-The following example defines an ```IngestionClient``` class that provides helper methods for some key tasks involving the Windows Store submission API.
+В следующем примере определяется класс ```IngestionClient```, который предоставляет вспомогательные методы для некоторых основных задач с использованием API отправки Магазина Windows.
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -415,9 +419,9 @@ namespace DeveloperApiCSharpSample
 ```
 
 <span id="update-app-submission" />
-## Update an app submission
+## Обновление отправки приложения
 
-The following example demonstrates how to [update an app submission](manage-app-submissions.md). This example uses the [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) and [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient) helper classes that are described above.
+В следующем примере показано, как [обновить отправку приложения](manage-app-submissions.md). В этом примере используются вспомогательные классы [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) и [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient), описанные выше.
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -645,9 +649,9 @@ namespace DeveloperApiCSharpSample
 ```
 
 <span id="create-and-commit-add-on-submission" />
-## Create and commit an add-on submission
+## Создание и сохранение отправки надстройки
 
-The following example demonstrates how to [create and commit a new add-on submission](manage-add-on-submissions.md) (add-ons are also known as in-app products or IAPs). This example uses the [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) and [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient) helper classes that are described above.
+В следующем примере показано, как [создать и сохранить новую отправку надстройки](manage-add-on-submissions.md) (надстройки также известны как внутренние продукты приложений или IAP). В этом примере используются вспомогательные классы [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) и [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient), описанные выше.
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -822,9 +826,9 @@ namespace DeveloperApiCSharpSample
 ```
 
 <span id="update-add-on-submission" />
-## Update an add-on submission
+## Обновление отправки надстройки
 
-The following example demonstrates how to [update an add-on submission](manage-add-on-submissions.md) (add-ons are also known as in-app products or IAPs). This example uses the [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) and [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient) helper classes that are described above.
+В следующем примере показано, как [обновить отправку надстройки](manage-add-on-submissions.md) (надстройки также известны как внутренние продукты приложений или IAP). В этом примере используются вспомогательные классы [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) и [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient), описанные выше.
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -1003,9 +1007,9 @@ namespace DeveloperApiCSharpSample
 ```
 
 <span id="update-flight-submission" />
-## Update a package flight submission
+## Обновление отправки тестового пакета
 
-The following example demonstrates how to [update a new package flight submission](manage-flight-submissions.md). This example uses the [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) and [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient) helper classes that are described above.
+В следующем примере показано, как [обновить новую отправку тестового пакета](manage-flight-submissions.md). В этом примере используются вспомогательные классы [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) и [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient), описанные выше.
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -1198,6 +1202,12 @@ namespace DeveloperApiCSharpSample
 }
 ```
 
-## Related topics
+## Связанные статьи
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

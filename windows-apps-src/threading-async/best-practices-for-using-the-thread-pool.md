@@ -3,8 +3,9 @@ author: TylerMSFT
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: "Рекомендации по использованию пула потоков"
 description: "Этот раздел содержит рекомендации по работе с пулом потоков."
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53f7460be63fa9bd440ed6999ac9cca7cdca0174
+ms.openlocfilehash: 796625fe5c1892ac99195a4920dbc7e539aebf76
 
 ---
 # Рекомендации по использованию пула потоков
@@ -56,6 +57,6 @@ ms.openlocfilehash: 53f7460be63fa9bd440ed6999ac9cca7cdca0174
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

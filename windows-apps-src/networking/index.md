@@ -4,8 +4,8 @@ ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: "Технологии для получения доступа к сетевым и веб-службам."
 title: "Сеть и веб-службы"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b4e291c0948a7734b8ba188bc060dfba2e9a83d1
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 03a5ce2b8d5f501d4254cbe0ee3d47f575775f7a
 
 ---
 
@@ -25,10 +25,9 @@ ms.openlocfilehash: b4e291c0948a7734b8ba188bc060dfba2e9a83d1
 | [HttpClient](httpclient.md)                                                             | Для отправки и получения данных по протоколам HTTP 2.0 и HTTP 1.1. используйте API пространства имен [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692).             |
 | [Каналы RSS и Atom](web-feeds.md)                                                          | Получайте или создавайте самое свежее и популярное веб-содержимое с помощью сводных веб-каналов, созданных по стандартам RSS и Atom с помощью компонентов в пространстве имен [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632).                   |
 | [Фоновая передача данных](background-transfers.md)                                         | Используйте фоновую передачу данных API, чтобы надежно копировать файлы по сети.           |
-| [Пометка сетевых подключений идентификатором EDP](tagging_network_connections_with_edp_identity.md) | В этом разделе показано создание защищенного контекста беседы перед созданием сетевых подключений в сценарии с защитой корпоративных данных (EDP). |
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

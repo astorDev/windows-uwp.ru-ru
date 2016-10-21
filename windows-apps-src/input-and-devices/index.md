@@ -2,16 +2,15 @@
 description: "Оптимизируйте свое приложение UWP для различных методов ввода и устройств. Воспользуйтесь преимуществами сенсорного ввода и голосовых команд. Запускайте приложения на Xbox, телефоне и даже на телевизоре."
 title: "Проектирование приложений UWP для различных методов ввода и устройств — разработка приложений для Windows"
 author: mijacobs
-keywords: device primer, app inputs, customize UWP application
+keywords: "азбука устройств, входные данные приложения, настройка приложения UWP"
 translationtype: Human Translation
-ms.sourcegitcommit: 350de23331f7fe951304ba877c40e07feb424adc
-ms.openlocfilehash: 2d3f0588b56b26e125652c12eeca3028bfe6573e
+ms.sourcegitcommit: 5a6666d4e706d4d49d646b5bb2e43b82394eb215
+ms.openlocfilehash: 85bcd15d4b9262188f0821642faf0d3d0cb7dbad
 
 ---
+# Методы ввода и устройства
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-# Методы ввода и устройства
 
 Приложения UWP автоматически обрабатывают различные методы ввода и поддерживаются на различных устройствах — от вас ничего не требуется, чтобы использовать сенсорный ввод или запустить приложение, например, на телефоне. 
 
@@ -169,6 +168,6 @@ ms.openlocfilehash: 2d3f0588b56b26e125652c12eeca3028bfe6573e
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

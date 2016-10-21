@@ -3,8 +3,9 @@ description: "В данной статье рассказывается, как 
 title: "Получение данных"
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: awkoren
-ms.sourcegitcommit: 7069e55b92e69a0af9ba23a0a737b61d427c615c
-ms.openlocfilehash: 806bcb591ec3b7c786f8aa98d854863539d723e2
+translationtype: Human Translation
+ms.sourcegitcommit: b8d627da82da463b87ace2a2ef6e739b1caafaa2
+ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
 
 ---
 
@@ -33,13 +34,13 @@ ms.openlocfilehash: 806bcb591ec3b7c786f8aa98d854863539d723e2
 
 1.  Откройте файл манифеста. У него должно быть примерно следующее имя: **package.appxmanifest**.
 2.  В разделе **Поддерживаемые типы файлов** страницы **Объявления** нажмите кнопку **Добавить**.
-3.  Введите расширение имени файла, которое вы хотите поддерживать. Например, .docx. Введите точку. Если вы хотите поддерживать все типы файлов, установите флажок **SupportsAnyFileType**.
+3.  Введите расширение имени файла, которое вы хотите поддерживать, например ".docx". Введите точку. Если вы хотите поддерживать все типы файлов, установите флажок **SupportsAnyFileType**.
 
 Чтобы задать необходимые форматы данных, выполните указанные ниже действия.
 
 1.  Откройте файл манифеста.
 2.  В разделе **Форматы данных** страницы **Объявления** нажмите кнопку **Добавить**.
-3.  Введите имя поддерживаемого формата данных. Пример: Text.
+3.  Введите имя поддерживаемого формата данных, например "Текст".
 
 ## Обработка активации общего доступа
 
@@ -95,7 +96,7 @@ shareOperation.ReportError("Could not reach the server! Try again later.");
 shareOperation.ReportCompleted();
 ```
 
-Если вы используете эти методы, в обыкновенных ситуациях применяйте их в указанном выше порядке и не вызывайте их больше одного раза. Бывают случаи, когда приложение — получатель данных может вызывать [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved) до [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted). Например, приложение может получать данные в рамках задачи обработчика события активации, но не вызывать **ReportStarted**, пока пользователь не нажмет кнопку «Общий доступ».
+Если вы используете эти методы, в обыкновенных ситуациях применяйте их в указанном выше порядке и не вызывайте их больше одного раза. Бывают случаи, когда приложение — получатель данных может вызывать [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved) до [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted). Например, приложение может получать данные в рамках задачи обработчика события активации, но не вызывать **ReportStarted**, пока пользователь не щелкнет **Общий доступ**.
 
 ## Возвращение QuickLink в случае успешного выполнения общего доступа
 
@@ -129,6 +130,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 
 ## См. также 
 
+* [Связь между приложениями](index.md)
 * [Предоставление общего доступа к данным](share-data.md)
 * [OnShareTargetActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onsharetargetactivated.aspx)
 * [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
@@ -140,6 +142,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 * [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

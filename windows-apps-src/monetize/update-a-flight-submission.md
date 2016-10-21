@@ -1,72 +1,76 @@
 ---
 author: mcleanbyron
 ms.assetid: 24C5F796-5FB8-4B5D-B428-C3154B3098BD
-description: Use this method in the Windows Store submission API to update an existing package flight submission.
-title: Update a package flight submission using the Windows Store submission API
+description: "Используйте этот метод в API отправки Магазина Windows для обновления существующей отправки тестового пакета."
+title: "Обновление отправки тестового пакета с помощью API отправки Магазина Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 9dfad9c0cc6b6e03a2196946ac578ca3170fccc5
+
 ---
 
-# Update a package flight submission using the Windows Store submission API
+# Обновление отправки тестового пакета с помощью API отправки Магазина Windows
 
 
-Use this method in the Windows Store submission API to update an existing package flight submission. After you successfully update a submission by using this method, you must [commit the submission](commit-a-flight-submission.md) for ingestion and publishing.
+Используйте этот метод в API отправки Магазина Windows для обновления существующей отправки тестового пакета. После успешного обновления отправки с помощью этого метода необходимо [зафиксировать отправку](commit-a-flight-submission.md) для проверки и публикации.
 
-For more information about how this method fits into the process of creating a package flight submission by using the Windows Store submission API, see [Manage package flight submissions](manage-flight-submissions.md).
+Дополнительные сведения об использовании этого метода в процессе создания отправки тестового пакета с помощью API отправки Магазина Windows см. в разделе [Управление отправками тестовых пакетов](manage-flight-submissions.md).
 
-## Prerequisites
+## Необходимые условия
 
-To use this method, you need to first do the following:
+Для использования этого метода необходимо выполнить следующие действия:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Create a package flight submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [create a package flight submission](create-a-flight-submission.md) method.
+* Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
+* Создайте отправку тестового пакета для приложения в учетной записи центра разработки. Это можно сделать на информационной панели центра разработки или с помощью метода [создания отправки тестового пакета](create-a-flight-submission.md).
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
-## Request
+## Запрос
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+У этого метода следующий синтаксис. Примеры использования и описание текста заголовка и запроса приведены в следующих разделах.
 
-| Method | Request URI                                                      |
+| Метод | URI запроса                                                      |
 |--------|------------------------------------------------------------------|
 | PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions{submissionId}``` |
 
 <span/>
- 
+ 
 
-### Request header
+### Заголовок запроса
 
-| Header        | Type   | Description                                                                 |
+| Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
-### Request parameters
+### Параметры запроса
 
-| Name        | Type   | Description                                                                 |
+| Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app for which you want to update a package flight submission. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| flightId | string | Required. The ID of the package flight for which you want to update a submission. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
-| submissionId | string | Required. The ID of the submission to update. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight submission](create-a-flight-submission.md).  |
+| applicationId | строка | Обязательный. Код продукта в Магазине для приложения, отправку тестового пакета которого необходимо обновить. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| flightId | строка | Обязательный. Идентификатор тестового пакета, отправку которого необходимо обновить. Этот идентификатор отображается на панели мониторинга Центра разработки, а также добавляется в данные ответов для запросов на [создание тестового пакета](create-a-flight.md) и [получение тестовых пакетов для приложения](get-flights-for-an-app.md).  |
+| submissionId | строка | Обязательный. Идентификатор отправки для обновления. Этот идентификатор отображается на панели мониторинга Центра разработки, а также добавляется в данные ответов для запросов на [создание отправки тестового пакета](create-a-flight-submission.md).  |
 
 <span/>
 
-### Request body
+### Тело запроса
 
-The request body has the following parameters.
+Тело запроса содержит следующие параметры.
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Значение      | Тип   | Описание                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightPackages           | array  | Contains objects that provide details about each package in the submission. For more details about the values in the response body, see [Flight package resource](manage-flight-submissions.md#flight-package-object). When calling this method to update an app submission, only the *fileName*, *fileStatus*, *minimumDirectXVersion*, and *minimumSystemRam* values of these objects are required in the request body. The other values are populated by Dev Center. |
-| targetPublishMode           | string  | The publish mode for the submission. This can be one of the following values: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | string  | The publish date for the submission in in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |
-| notesForCertification           | string  |  Provides additional info for the certification testers, such as test account credentials and steps to access and verify features. For more information, see [Notes for certification](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification). |
+| flightPackages           | массив  | Содержит объекты, предоставляющие сведения о каждом пакете в отправке. Дополнительные сведения о значениях в тексте ответа см. в разделе [Ресурс тестового пакета](manage-flight-submissions.md#flight-package-object). При вызове этого метода для обновления отправки приложения необходимыми значениями данных объектов в теле запроса являются только *fileName*, *fileStatus*, *minimumDirectXVersion* и *minimumSystemRam*. Остальные значения заполняются Центром разработки. |
+| targetPublishMode           | строка  | Режим публикации для отправки. Может принимать одно из следующих значений. <ul><li>Immediate (Незамедлительно)</li><li>Manual (Вручную)</li><li>SpecificDate (Указанная дата)</li></ul> |
+| targetPublishDate           | строка  | Дата публикации отправки в формате ISO 8601, если для *targetPublishMode* задано значение SpecificDate.  |
+| notesForCertification           | строка  |  Предоставляет дополнительные сведения для тест-инженеров сертификации, такие как учетные данные тестовой учетной записи и действия, которые требуется выполнить для доступа к функциям их проверки. Дополнительные сведения см. в разделе [Заметки по сертификации](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification). |
 
 <span/>
 
-### Request example
+### Пример запроса
 
-The following example demonstrates how to update a package flight submission for an app.
+В следующем примере показано, как обновить отправку тестового пакета для приложения.
 
 ```json
 PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649 HTTP/1.1
@@ -87,9 +91,9 @@ Content-Type: application/json
 }
 ```
 
-## Response
+## Ответ
 
-The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the updated submission. For more details about the values in the response body, see [Package flight submission resource](manage-flight-submissions.md#flight-submission-object).
+В следующем примере представлен текст ответа JSON в случае успешного вызова этого метода. В теле ответа содержатся сведения об обновленной отправке. Дополнительные сведения о значениях в тексте ответа см. в разделе [Ресурс отправки тестового пакета](manage-flight-submissions.md#flight-submission-object).
 
 ```json
 {
@@ -120,24 +124,30 @@ The following example demonstrates the JSON response body for a successful call 
 }
 ```
 
-## Error codes
+## Коды ошибок
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+Если запрос не удается выполнить, ответ будет содержать один из следующих кодов ошибок HTTP.
 
-| Error code |  Description   |
+| Код ошибки |  Описание   |
 |--------|------------------|
-| 400  | The package flight submission could not be updated because the request is invalid. |
-| 409  | The package flight submission could not be updated because of the current state of the app, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 400  | Не удалось обновить отправку тестового пакета. Недопустимый запрос. |
+| 419  | Не удалось обновить отправку тестового пакета из-за текущего состояния приложения или в связи с тем, что приложение использует компонент информационной панели Центра разработки, [который в настоящее время не поддерживается API отправки Магазина Windows](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 <span/>
 
 
-## Related topics
+## Связанные разделы
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage package flight submissions](manage-flight-submissions.md)
-* [Get a package flight submission](get-a-flight-submission.md)
-* [Create a package flight submission](create-a-flight-submission.md)
-* [Commit a package flight submission](commit-a-flight-submission.md)
-* [Delete a package flight submission](delete-a-flight-submission.md)
-* [Get the status of a package flight submission](get-status-for-a-flight-submission.md)
+* [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
+* [Управление отправками тестового пакета](manage-flight-submissions.md)
+* [Получение отправки тестового пакета](get-a-flight-submission.md)
+* [Создание отправки тестового пакета](create-a-flight-submission.md)
+* [Подтверждение отправки тестового пакета](commit-a-flight-submission.md)
+* [Удаление отправки тестового пакета](delete-a-flight-submission.md)
+* [Получение состояния отправки тестового пакета](get-status-for-a-flight-submission.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

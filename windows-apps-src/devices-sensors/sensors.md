@@ -5,7 +5,7 @@ title: "Датчики"
 description: "Датчики позволяют приложению получить информацию о взаимодействии устройства с физическим миром, который его окружает. Датчики могут сообщить приложению о направлении движения, положении в пространстве и перемещении устройства."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 15f9fbdc48d43feb02f46313cea4001392d7f0fe
+ms.openlocfilehash: 73ee42a275d0c0f0a08ddf19ddde4eabd21a7191
 
 ---
 # Датчики
@@ -129,6 +129,6 @@ ms.openlocfilehash: 15f9fbdc48d43feb02f46313cea4001392d7f0fe
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

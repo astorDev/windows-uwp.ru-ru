@@ -1,54 +1,64 @@
 ---
-title: Respond to customer feedback
-description: You can respond directly to feedback that your customers leave in Feedback Hub.
+title: "Реакция на отзывы пользователей"
+description: "Можно отвечать непосредственно на отзывы, которые клиенты оставляют в Центре отзывов."
 author: JnHs
+translationtype: Human Translation
+ms.sourcegitcommit: b96053bb6aff04350a1cfd6b74a5d4a2424cc329
+ms.openlocfilehash: c3088c2498a94c988359dd08c6c900ad9a6c4f95
+
 ---
 
-# Respond to customer feedback
+# Реакция на отзывы пользователей
 
-You can use the [Feedback report](feedback-report.md) to review the feedback that your Windows 10 customers have left about your app in Feedback Hub, and then respond directly to that feedback. You can post your responses in Feedback Hub for everyone to see (either as individual comments, or by updating the status of a piece of feedback and adding a description) to tell customers about new features or bug fixes, or to ask for more specific feedback on how to improve your app. You can also send your response as an email directly to the customer who left the feedback.
+Вы можете использовать [Отчет об отзывах](feedback-report.md), чтобы просмотреть отзывы пользователей Windows 10 о вашем приложении, которые они оставляют в Центре отзывов, и ответить непосредственно на эти отзывы. В Центре отзывов можно публиковать ответы так, чтобы они были доступны всем (в виде отдельных комментариев или обновляя статус отзыва и добавляя к нему описание). Это позволит рассказать клиентам о новых функциях или исправленных ошибках, а также попросить клиентов предоставить более детальный отзыв о том, как можно улучшить приложение. Кроме того, ответ можно отправить электронным сообщением непосредственно клиенту, оставившему отзыв.
 
-> **Tip** You can encourage customers to leave feedback by using the Feedback API in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) to add a control that lets customers directly [launch Feedback Hub from your UWP app](../monetize/launch-feedback-hub-from-your-app.md). Keep in mind that any customer who has downloaded your app on a Windows 10 device that supports Feedback Hub has the ability to leave feedback for it directly through the Feedback Hub app. Because of this, you may see customer feedback in this report, even if you have not specifically requested feedback from within your app.
+> **Подсказка**. Попросите клиентов оставлять отзывы с помощью API-интерфейса отзывов в [Microsoft Store Services SDK](http://aka.ms/store-em-sdk), добавив элемент управления, с помощью которого клиенты смогут непосредственно [запускать Центр отзывов из приложения UWP](../monetize/launch-feedback-hub-from-your-app.md). Помните, что любой пользователь, который загрузил приложение на устройство Windows 10, поддерживающее Центр отзывов, поддерживает возможность предоставления отзыва непосредственно с помощью приложения Центр отзывов. В связи с этим вы сможете увидеть в этом отчете отзывы клиентов, даже если не запрашивали отзыв в своем приложении.
 
-To provide a response to any piece of feedback, click the **Respond to feedback** link that appears by the piece of feedback in your **Feedback report**.
+Чтобы ответить на какой-либо отзыв, щелкните ссылку **Реагировать на отзывы**, которая отображается рядом с отзывом в **Отчете об отзывах**.
 
-Windows Dev Center supports three options for responding to customers who provide feedback about your app. Regardless of which option you choose, keep in mind that there is a 1000-character limit for each response.
+Центр разработки для Windows поддерживает три типа реагирования на отзывы клиентов о вашем приложении. Независимо от выбранного варианта помните, что для каждого ответа действует ограничение: 1000 символов.
 
-## Public comments in Feedback Hub
+## Общедоступные комментарии в Центре отзывов
 
-By default, the radio button for **Comment** is selected after you click **Respond to feedback**. To post a public response to the customer’s feedback, leave this button selected. Enter your comment in the box, and then click **Submit**.
+По умолчанию переключатель **Комментарий** установлен после нажатия кнопки **Реагировать на отзывы**. Чтобы опубликовать общедоступный ответ на отзыв клиента, оставьте этот переключатель установленным. Введите примечание в поле и нажмите кнопку **Отправить**.
 
-The comment you entered will be displayed as a comment in the Feedback Hub, along with the comments submitted by other customers. Your publisher name and app name will be displayed with your comment to identify you as the developer. There is no limit on the number of comments you can write for a piece of feedback, but note that you can’t edit or delete comments after you submit them. The five most recent comments to a piece of feedback will be shown in your **Feedback report** (as well as in Feedback Hub). When there are more than five comments, you can click **Show all comments** to see all of them in Feedback Hub.
+Введенный комментарий будет отображаться как комментарий в Центре отзывов вместе с комментариями других клиентов. Имя издателя и имя приложения будет отображаться вместе с комментарием, чтобы идентифицировать вас как разработчика. Количество комментариев к отзыву не ограничено, но после отправки изменять и удалять комментарии невозможно. Пять самых последних комментариев к отзыву будут показаны в **Отчете об отзывах** (а также в Центре отзывов). Если комментариев больше пяти, можно щелкнуть **Показать все комментарии** и просмотреть их все в Центре отзывов.
 
-## Private responses via email
+## Частные ответы по электронной почте
 
-If you’d prefer not to post a public response, you can check the **Send comment as email** box to send a private response directly to the customer (if they have provided an email address and haven’t opted out of receiving responses via email). When you do so, Microsoft sends an email to the customer on your behalf. The email will contain their original feedback as well as the response you write.
+Если вы не хотите публиковать общедоступный ответ, можно щелкнуть поле **Отправить комментарий по электронной почте** и отправить частный ответ непосредственно клиенту (если тот указал адрес электронной почты и не отказался от получения ответов по электронной почте). В этом случае корпорация Майкрософт отправляет электронное сообщение клиенту от вашего имени. Сообщение электронной почты содержит исходный отзыв и ваш ответ.
 
-After you check the **Send comment as email** box, enter your comment and then click **Submit**. Note that you must provide an email address in the **Support contact email** field when using this option. By default, we use the email address that you provided in your account contact info. If you prefer to use a different email address, you can update the **Support contact email** field to use a different one. The customer who receives your response will be able to reply directly to this email address.
+Щелкнув в поле **Отправить комментарий по электронной почте**, введите комментарий и щелкните **Отправить**. Обратите внимание, что при использовании этого варианта необходимо указать адрес электронной почты в поле **Контактный адрес электронной почты для поддержки**. По умолчанию мы используем адрес электронной почты, который вы указали в контактных данных учетной записи. Если вы предпочитаете использовать другой адрес электронной почты, можно обновить значение в поле **Контактный адрес электронной почты для поддержки**. Клиент, получивший ваш отзыв, сможет ответить непосредственно на этот адрес электронной почты.
 
-## Public status updates and descriptions in Feedback Hub
+## Обновления и описания общедоступного статуса в Центре отзывов
 
-A third option for a public response is to set the status on a piece of feedback to let your customers that you’re working on the issue, or have fixed it. When you update the status of a piece of feedback, it is displayed along with the feedback in the Feedback Hub.
+Третий вариант создания общедоступного ответа— указание состояния для отзыва, сообщающее клиенту о том, что вы работаете над проблемой или устранили ее. При обновлении статуса вашего отзыва он отображается в Центре отзывов вместе с вашим отзывом.
 
-To use this option, select the **Update status** radio button. Then select one of the following options:
+Для использования этого варианта установите переключатель **Обновить статус**. Выберите один из следующих вариантов:
 
-- **Investigating**: You’re aware of an issue and you’re looking into it.
-- **Working on it**: You’re in the process of fixing a problem or adding a requested feature.
-- **Completed**: You’ve published an update to fix the issue or add the requested feature.
+- **Исследование**: вы в курсе проблемы и работаете над ее решением.
+- **Мы работаем над проблемой**: вы ищете решение проблемы или добавляете запрошенный компонент.
+- **Завершено**: вы опубликовали обновление, решающее данную проблему или добавляющее запрошенный компонент.
 
-Along with updating the status, you can enter a comment to provide more info, such as an estimate for when you think it a problem will be fixed, or more info about the latest changes. This description will be displayed at the top of the list of comments (and the Feedback report will display the current status and description).
+Вместе с обновлением статуса можно добавить комментарий, предоставляющий дополнительную информацию, например сведения о предполагаемом времени решения проблемы или дополнительные сведения об актуальных изменениях. Это описание будет отображаться вверху списка комментариев (а в отчете об отзывах будет отображаться текущее состояние и описание).
 
-Using the **Update status** option allows you to change the status whenever you want (along with providing updated descriptions for each status change). Whenever you change the status of a piece of feedback, the status will be updated in Feedback Hub so that customers viewing your response will see the latest status.
+Функция **Обновить состояние** позволяет изменить состояние в любой момент (и добавить обновленное описание для каждого изменения состояния). Всякий раз когда состояние отзыва меняется, обновляется и состояние в Центре отзывов, чтобы клиенты, просматривающие ваш ответ, могли видеть актуальное состояние отзыва.
 
-## Guidelines for responses
-No matter which method you use to respond to a customer’s feedback, you must follow these guidelines for all responses.
-- Responses must be no longer than 1000 characters.
-- You may not offer any type of compensation, including digital app items, to users for their public comments.
-- Don’t include any marketing content or ads in your response. Remember, the person who left feedback is already your customer.
-- Don’t promote other apps or services in your response.
-- Your response should be directly related to the specific app and feedback.
-- Don’t include any profane, aggressive, personal, or malicious comments in your response. Always be polite and keep in mind that happy customers will likely be your app’s biggest promoters.
+## Руководство по ответам
+Независимо от выбранного метода ответов на отзыв пользователя необходимо следовать рекомендациям ниже.
+- Ответы не должны быть длиннее 1000 символов.
+- Вы не можете предлагать пользователям компенсацию любого типа, в том числе цифровые элементы приложений, для общедоступных комментариев.
+- Не включайте в свой ответ какое-либо маркетинговое содержимое или объявления. Помните, что человек, оставивший отзыв, уже является вашим клиентом.
+- Не рекламируйте другие приложения или службы в ответе.
+- Ответ должен быть напрямую связан с конкретным приложением и отзывом.
+- Не добавляйте ругательства, агрессивные, личные или оскорбительные комментарии в свой ответ. Всегда будьте вежливы и помните, что довольные клиенты станут лучшей рекламой для вашего приложения.
 
-> **Note** Customers can report a developer to Microsoft if they receive an inappropriate feedback response. They can also opt out of receiving feedback responses by email.
+> **Примечание.** Пользователи могут сообщить о недопустимом ответе разработчика на отзыв сотрудникам корпорации Майкрософт. Они могут также отказаться от получения ответов на отзывы по электронной почте.
 
-Your relationship with your customers is your own. Microsoft doesn’t get involved in disputes between developers and customers. However, if you think that the content of a customer’s feedback on your product is inappropriate, please submit a [support ticket](http://go.microsoft.com/fwlink/p/?LinkID=401178).
+Вы управляете отношениями с клиентами самостоятельно. Корпорация Майкрософт не участвует в спорах между разработчиками и клиентами. Однако если вы считаете, что содержание отзыва клиента о вашем продукте является недопустимым, отправьте [обращение в службу поддержки](http://go.microsoft.com/fwlink/p/?LinkID=401178).
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

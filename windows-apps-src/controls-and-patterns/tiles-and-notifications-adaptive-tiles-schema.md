@@ -6,19 +6,20 @@ ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 
 ---
-
 # Шаблоны адаптивных плиток - схема и руководство
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Ниже приводится список элементов и атрибутов, используемых для создания этих плиток. Дополнительные сведения и примеры см. в разделе [Создание адаптивных плиток](tiles-and-notifications-create-adaptive-tiles.md).
 
-## <span id="tile_element"></span><span id="TILE_ELEMENT"></span>элемент плитки
+## элемент плитки
 
 
-``` syntax
+``` xml
 <tile>
   
   <!-- Child elements -->
@@ -27,10 +28,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 </tile>
 ```
 
-## <span id="visual_element"></span><span id="VISUAL_ELEMENT"></span>визуальный элемент
+## визуальный элемент
 
 
-``` syntax
+``` xml
 <visual
   version? = integer
   lang? = string
@@ -46,10 +47,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 </visual>
 ```
 
-## <span id="binding_element"></span><span id="BINDING_ELEMENT"></span>элемент привязки
+## элемент привязки
 
 
-``` syntax
+``` xml
 <binding
   template = tileTemplateNameV3
   fallback? = tileTemplateNameV1
@@ -71,10 +72,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 </binding>
 ```
 
-## <span id="image_element"></span><span id="IMAGE_ELEMENT"></span>элемент изображения
+## элемент изображения
 
 
-``` syntax
+``` xml
 <image
   src = string
   placement? = "inline" | "background" | "peek"
@@ -85,10 +86,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## <span id="text_element"></span><span id="TEXT_ELEMENT"></span>текстовый элемент
+## текстовый элемент
 
 
-``` syntax
+``` xml
 <text
   lang? = string
   hint-style? = textStyle
@@ -104,10 +105,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 
 Значения textStyle: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
 
-## <span id="group_element"></span><span id="GROUP_ELEMENT"></span>элемент группы
+## элемент группы
 
 
-``` syntax
+``` xml
 <group>
 
   <!-- Child elements -->
@@ -116,10 +117,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 </group>
 ```
 
-## <span id="subgroup_element"></span><span id="SUBGROUP_ELEMENT"></span>элемент вложенной группы
+## элемент вложенной группы
 
 
-``` syntax
+``` xml
 <subgroup
   hint-weight? = [0-100]
   hint-textStacking? = "top" | "center" | "bottom" >
@@ -132,7 +133,7 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 </subgroup>
 ```
 
-## <span id="related_topics"></span>Связанные разделы
+## Связанные разделы
 
 
 * [Создание адаптивных плиток](tiles-and-notifications-create-adaptive-tiles.md)
@@ -146,6 +147,6 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,27 +1,30 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: "Изучите известные проблемы текущего выпуска библиотек Microsoft Advertising в пакете SDK Microsoft Store Engagement and Monetization."
+description: "Узнайте об известных проблемах текущего выпуска библиотек Microsoft Advertising в пакете Microsoft Store Services SDK."
 title: "Известные проблемы для библиотек Microsoft Advertising"
-ms.sourcegitcommit: 5b6d3e034b73e6ae693fbeab3ecd3b2b81f38bb1
-ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
+translationtype: Human Translation
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
 
 ---
 
 # Известные проблемы для библиотек Microsoft Advertising
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этом разделе перечислены известные проблемы текущего выпуска библиотек Microsoft Advertising в пакете SDK Microsoft Store Engagement and Monetization.
 
-## Установка требует инструментов Visual Studio для универсальных приложений для Windows
+В этом разделе содержится список известных проблем в текущем выпуске библиотек Microsoft Advertising в Microsoft Store Services SDK (для приложений UWP) и Microsoft Advertising SDK для Windows и Windows Phone 8.x (для приложений Windows 8.1 и Windows Phone 8.x).
 
-Для установки пакета [SDK Microsoft Store Engagement and Monetization](http://aka.ms/store-em-sdk) с помощью VisualStudio2015 должны быть установлены инструментыVisualStudio для универсальных приложений для Windows версии 1.1 или более поздней. Дополнительные сведения см. в [примечаниях к выпуску](http://go.microsoft.com/fwlink/?LinkID=624516) Visual Studio.
+## Для установки пакета Microsoft Store Services SDK требуются инструменты Visual Studio для универсальных приложений для Windows.
+
+Для установки пакета [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) с помощью Visual Studio 2015 должны быть установлены инструменты Visual Studio для универсальных приложений для Windows версии 1.1 или более поздней. Дополнительные сведения см. в [примечаниях к выпуску](http://go.microsoft.com/fwlink/?LinkID=624516) Visual Studio.
 
 ## Проекты Silverlight в Windows Phone 8.x
 
-Чтобы получить сборки Microsoft Advertising для проектов Silverlight в Windows Phone 8.x, установите пакет [SDK Microsoft Store Engagement and Monetization](http://aka.ms/store-em-sdk), откройте проект в Visual Studio и последовательно щелкните **Проект** > **Добавить подключенную службу** > **Рекламный посредник**, чтобы автоматически загрузить сборки. После этого можно удалить ссылки на рекламный посредник из вашего проекта, если в дальнейшем вы не планируете использовать рекламное посредничество. Дополнительные сведения см. в разделе [AdControl в Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
+Набор Microsoft Advertising SDK для Windows и Windows Phone 8.x имеет ограниченную поддержку проектов Silverlight в Windows Phone 8.x. Дополнительные сведения см. в статье [Показ рекламы в приложениях](display-ads-in-your-app.md#silverlight_support).
+
+Чтобы получить сборки Microsoft Advertising для проектов Silverlight в Windows Phone 8.x, установите пакет [Microsoft Advertising SDK для Windows и Windows Phone 8.x](http://aka.ms/store-8-sdk), откройте проект в Visual Studio и последовательно щелкните **Проект** > **Добавить подключенную службу** > **Рекламный посредник**, чтобы автоматически загрузить сборки. После этого можно удалить ссылки на рекламный посредник из вашего проекта, если в дальнейшем вы не планируете использовать рекламное посредничество. Дополнительные сведения см. в разделе [AdControl в Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
 
 ## Интерфейс AdControl неизвестен в XAML
 
@@ -116,6 +119,6 @@ ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

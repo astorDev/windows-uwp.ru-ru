@@ -3,8 +3,9 @@ author: mtoepke
 title: "Сравнение конвейера шейдеров OpenGL ES2.0 с Direct3D"
 description: "Концептуально конвейер шейдеров Direct3D 11 очень похож на таковой в OpenGL ES 2.0."
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: bc13df5e7f2648897be31b5cda634d23ffae8b6b
+ms.openlocfilehash: 144e3374c16118418872f6c473c5f39101fbfce0
 
 ---
 
@@ -29,36 +30,19 @@ ms.openlocfilehash: bc13df5e7f2648897be31b5cda634d23ffae8b6b
 
 Конвейер графики Direct3D11, который управляется экземплярами интерфейса [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598), имеет следующие стадии.
 
--   
-            [Стадия сборщика входных данных](https://msdn.microsoft.com/library/windows/desktop/bb205116). На стадии сборщика входных данных конвейеру поставляются данные (треугольники, линии и точки). 
-            Методы [
-              **ID3D11DeviceContext1**
-            ](https://msdn.microsoft.com/library/windows/desktop/hh404598), поддерживающие эту стадию, имеют префикс "IA".
--   
-            [Стадия вершинного шейдера](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage). На стадии вершинного шейдера обрабатываются вершины, обычно с выполнением таких операций, как преобразования, скиннинг и освещение. Вершинный шейдер всегда принимает одну входную вершину и создает одну выходную вершину. 
-            Методы [
-              **ID3D11DeviceContext1**
-            ](https://msdn.microsoft.com/library/windows/desktop/hh404598), поддерживающие эту стадию, имеют префикс "VS".
--   
-            [Стадия потокового вывода](https://msdn.microsoft.com/library/windows/desktop/bb205121). На стадии потокового вывода поток данных примитивов из конвейера направляется в память на своем пути к средству прорисовки. Поток данных может быть выходным или передаваться в средство программной прорисовки. Поток данных, выведенный в память, можно снова вернуть в конвейер как входные данные или обратно считать из ЦП. 
-            Методы [
-              **ID3D11DeviceContext1**
-            ](https://msdn.microsoft.com/library/windows/desktop/hh404598), поддерживающие эту стадию, имеют префикс "SO".
--   
-            [Стадия средства программной прорисовки](https://msdn.microsoft.com/library/windows/desktop/bb205125). Средство программной прорисовки обрезает примитивы, готовит их для построителя текстуры и определяет, как вызывать построители текстуры. Вы можете отключить растеризацию, указав конвейеру, что построитель текстуры отсутствует (задайте для построителя текстуры значение NULL с помощью [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472)), и отключив проверку глубины и набора элементов (задайте для DepthEnable и StencilEnable значение FALSE в [**D3D11\_DEPTH\_STENCIL\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476110)). После отключения не будут обновляться связанные с растеризацией счетчики конвейера.
--   
-            [Стадия построителя текстуры](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage). На стадии построителя текстуры принимаются интерполированные данные для примитива и генерируются данные для пикселей, такие как цвет. 
-            Методы [
-              **ID3D11DeviceContext1**
-            ](https://msdn.microsoft.com/library/windows/desktop/hh404598), поддерживающие эту стадию, имеют префикс "PS".
--   
-            [Стадия слияния вывода](https://msdn.microsoft.com/library/windows/desktop/bb205120). На стадии слияния вывода выходные данные различных типов (значения построителя текстуры, информация о глубине и наборе элементов) объединяются с содержимым целевого объекта отрисовки и буферов глубины и набора элементов для создания окончательного результата конвейера. 
-            Методы [
-              **ID3D11DeviceContext1**
-            ](https://msdn.microsoft.com/library/windows/desktop/hh404598), поддерживающие эту стадию, имеют префикс "OM".
+-   [Стадия сборщика входных данных](https://msdn.microsoft.com/library/windows/desktop/bb205116) На стадии сборщика входных данных конвейеру поставляются данные (треугольники, линии и точки). [
+              Методы **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598), поддерживающие эту стадию, имеют префикс "IA".
+-   [Стадия вершинного шейдера](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage). На стадии вершинного шейдера обрабатываются вершины, обычно с выполнением таких операций, как преобразования, скиннинг и освещение. Вершинный шейдер всегда принимает одну входную вершину и создает одну выходную вершину. [
+              Методы **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598), поддерживающие эту стадию, имеют префикс "VS".
+-   [Стадия потокового вывода](https://msdn.microsoft.com/library/windows/desktop/bb205121). На стадии потокового вывода поток данных примитивов из конвейера направляется в память на своем пути к средству прорисовки. Поток данных может быть выходным или передаваться в средство программной прорисовки. Поток данных, выведенный в память, можно снова вернуть в конвейер как входные данные или обратно считать из ЦП. [
+              Методы **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598), поддерживающие эту стадию, имеют префикс "SO".
+-   [Стадия средства программной прорисовки](https://msdn.microsoft.com/library/windows/desktop/bb205125). Средство программной прорисовки обрезает примитивы, готовит их для построителя текстуры и определяет, как вызывать построители текстуры. Вы можете отключить растеризацию, указав конвейеру, что построитель текстуры отсутствует (задайте для построителя текстуры значение NULL с помощью [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472)), и отключив проверку глубины и набора элементов (задайте для DepthEnable и StencilEnable значение FALSE в [**D3D11\_DEPTH\_STENCIL\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476110)). После отключения не будут обновляться связанные с растеризацией счетчики конвейера.
+-   [Стадия построителя текстуры](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage). На стадии построителя текстуры принимаются интерполированные данные для примитива и генерируются данные для пикселей, такие как цвет. [
+              Методы **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598), поддерживающие эту стадию, имеют префикс "PS".
+-   [Стадия слияния вывода](https://msdn.microsoft.com/library/windows/desktop/bb205120). На стадии слияния вывода выходные данные различных типов (значения построителя текстуры, информация о глубине и наборе элементов) объединяются с содержимым целевого объекта отрисовки и буферов глубины и набора элементов для создания окончательного результата конвейера. [
+              Методы **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598), поддерживающие эту стадию, имеют префикс "OM".
 
-(Существуют также стадии для шейдеров геометрии, шейдеров поверхности, тесселяторов и шейдеров областей, но так как у них нет аналогов в OpenGL ES 2.0, поэтому здесь мы их обсуждать не будем.) Полный перечень методов для этих стадий см. на справочных страницах [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) и [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). 
-            **ID3D11DeviceContext1** является расширением **ID3D11DeviceContext** для Direct3D 11.
+(Существуют также стадии для шейдеров геометрии, шейдеров поверхности, тесселяторов и шейдеров областей, но так как у них нет аналогов в OpenGL ES 2.0, поэтому здесь мы их обсуждать не будем.) Полный перечень методов для этих стадий см. на справочных страницах [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) и [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). **ID3D11DeviceContext1** является расширением **ID3D11DeviceContext** для Direct3D 11.
 
 ## Создание шейдера
 
@@ -149,10 +133,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0 | Direct3D11                                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| glViewport    | 
-            [
-              **CD3D11\_VIEWPORT**
-            ](https://msdn.microsoft.com/library/windows/desktop/jj151722), [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
+| glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
 
  
 
@@ -165,10 +146,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | glAttachShader                   | [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524)                       |
 | glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::VSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476489)                       |
-| glGetUniformfv, glGetUniformiv   | 
-            [
-              **ID3D11DeviceContext1::VSGetConstantBuffers1**
-            ](https://msdn.microsoft.com/library/windows/desktop/hh446793). |
+| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::VSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446793). |
 
  
 
@@ -181,10 +159,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | glAttachShader                   | [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)                         |
 | glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476468)                       |
-| glGetUniformfv, glGetUniformiv   | 
-            [
-              **ID3D11DeviceContext1::PSGetConstantBuffers1**
-            ](https://msdn.microsoft.com/library/windows/desktop/hh404645). |
+| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645). |
 
  
 
@@ -195,10 +170,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                         |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glDrawElements | 
-            [
-              **ID3D11DeviceContext1::Draw**
-            ](https://msdn.microsoft.com/library/windows/desktop/ff476407), [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (или другие методы Draw\* в [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385)). |
+| glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407), [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (или другие методы Draw\* в [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385)). |
 | eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797)                                                                                                                                                                              |
 
  
@@ -283,6 +255,6 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

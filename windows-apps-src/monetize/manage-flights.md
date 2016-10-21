@@ -1,31 +1,41 @@
 ---
 author: mcleanbyron
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
-description: Use these methods in the Windows Store submission API to manage package flights for apps that are registered to your Windows Dev Center account.
-title: Manage package flights using the Windows Store submission API
+description: "Используйте эти методы в API отправки Магазина Windows для управления тестовыми пакетами для приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows."
+title: "Управление тестовыми пакетами с помощью API отправки Магазина Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: de1c23d721cee67d813520e3a23eb553cd90b7e9
+
 ---
 
-# Manage package flights using the Windows Store submission API
+# Управление тестовыми пакетами с помощью API отправки Магазина Windows
 
 
 
 
-Use the following methods in the Windows Store submission API to manage package flights for apps that are registered to your Windows Dev Center account. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+Используйте указанные ниже методы в API отправки Магазина Windows для управления тестовыми пакетами для приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows. Введение в API отправки Магазина Windows, включая необходимые условия для использования этого API, см. в разделе [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md).
 
->**Note**&nbsp;&nbsp;These methods can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled. These methods can only be used to get, create, or delete package flights. To create submissions for package flights, see the methods in [Manage package flight submissions](manage-flight-submissions.md).
+>**Примечание.**&nbsp;&nbsp;Эти методы могут применяться только для учетных записей Центра разработки для Windows, у которых имеется разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей. Эти методы можно использовать только для получения, создания или удаления тестовых пакетов. Руководство по созданию отправок для тестовых пакетов см. в описании методов в разделе [Управление отправками тестовых пакетов](manage-flight-submissions.md).
 
-| Method        | URI    | Description                                                                 |
+| Метод        | URI    | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` | Gets data for a package flight for an app that is registered to your Windows Dev Center account. For more information, see [Get a package flight](get-a-flight.md). |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights``` | Creates a new package flight. For more information, see [Create a package flight](create-a-flight.md).|
-| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` | Deletes a package flight. For more information, see [Delete a package flight](delete-a-flight.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` | Получение данных для тестового пакета приложения, которое зарегистрировано для учетной записи Центра разработки для Windows. Дополнительные сведения см. в разделе [Получение тестового пакета](get-a-flight.md). |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights``` | Создание нового тестового пакета. Дополнительные сведения см. в разделе [Создание тестового пакета](create-a-flight.md).|
+| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` | Удаление тестового пакета. Дополнительные сведения см. в разделе [Удаление тестового пакета](delete-a-flight.md). |
 
 
-## Prerequisites
+## Необходимые условия
 
-If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API before trying to use any of these methods.
+Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows, прежде чем использовать любой из этих методов.
 
-## Related topics
+## Связанные разделы
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage package flight submissions](manage-flight-submissions.md)
+* [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
+* [Управление отправкой тестового пакета](manage-flight-submissions.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

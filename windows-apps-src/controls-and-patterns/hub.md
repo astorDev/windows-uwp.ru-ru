@@ -1,16 +1,18 @@
 ---
 author: Jwmsft
-Description: "Элемент управления \"Главный раздел\" использует шаблон иерархической навигации для поддержки приложений с реляционной информационной архитектурой."
-title: "Элементы управления \"Главный раздел\""
+Description: "Элемент управления &quot;Главный раздел&quot; использует шаблон иерархической навигации для поддержки приложений с реляционной информационной архитектурой."
+title: "Элементы управления &quot;Главный раздел&quot;"
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: fdff043aa92842adb6ac2d572794bf02fdd5c6b3
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 6c27d9b968dfca6d0c1db37eb7779d9ff3744f41
 
 ---
 # Шаблон/элемент управления "Главный раздел"
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 Элемент управления "Главный раздел" позволяет организовывать содержимое приложения в отдельные, но связанные между собой разделы или категории. Разделы в главном разделе предназначены для перемещения в предпочтительной последовательности и могут служить исходной точкой для более детализированного взаимодействия.
@@ -19,9 +21,19 @@ ms.openlocfilehash: fdff043aa92842adb6ac2d572794bf02fdd5c6b3
 
 Содержимое в главном разделе может отображаться панорамно, что акцентирует внимание пользователей на новых, доступных и релевантных элементах. В главных разделах обычно есть заголовок страницы, а разделы содержимого получают заголовки разделов.
 
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn251843"><strong>Класс Hub</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn251845"><strong>Класс HubSection</strong></a></li>
+</ul>
 
--   [**Класс "Главный раздел"**](https://msdn.microsoft.com/library/windows/apps/dn251843)
--   [**Класс HubSection**](https://msdn.microsoft.com/library/windows/apps/dn251845)
+</div>
+</div>
+
+
+
+
 
 ## Выбор правильного элемента управления
 
@@ -103,15 +115,15 @@ ms.openlocfilehash: fdff043aa92842adb6ac2d572794bf02fdd5c6b3
 
 
 
-## Связанные статьи
+## Связанные разделы
 
-- [Класс "Главный раздел"](https://msdn.microsoft.com/library/windows/apps/dn251843)
+- [Класс Hub](https://msdn.microsoft.com/library/windows/apps/dn251843)
 - [Основы навигации](../layout/navigation-basics.md)
 - [Использование главного раздела](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
 - [Пример элемента управления "Главный раздел" на языке XAML](http://go.microsoft.com/fwlink/p/?LinkID=310072)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

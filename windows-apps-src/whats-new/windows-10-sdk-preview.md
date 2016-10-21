@@ -1,21 +1,21 @@
 ---
 author: QuinnRadich
-title: "Что нового в Windows 10"
-description: "Предварительная сборка пакета Anniversary SDK для Windows 10 и новые средства разработчика предоставляют инструменты, функции и возможности на основе новой универсальной платформы Windows."
+title: "Что нового в предварительной версии Windows 10 (версия 1607)"
+description: "Windows 10 предварительной версии (версия 1607) и новые средства разработчика обеспечивают доступ к средствам, компонентам и возможностям универсальной платформы Windows."
+keywords: "новые возможности, что нового, обновление, обновления, компоненты, новые, Windows 10, предварительная версия 1607"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 9623e10b15dbc5f9480d1cd9bd740fa8e914b3c6
+ms.sourcegitcommit: 5646bf7681b5b028031eab02f8dd5c352d4b9cc1
+ms.openlocfilehash: 33c1888620d4e3c2d95cbf701e9128ce006961da
 
 ---
 
 # Что нового в Windows
 
-В предварительной сборке 14295 пакета Anniversary SDK для Windows 10 и обновленных средствах разработчика мы, как и прежде, предоставляем полезные инструменты, функции и возможности на основе универсальной платформы Windows. 
-              [Установив средства и пакет SDK](https://developer.microsoft.com/windows/downloads#_blank) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](https://msdn.microsoft.com/library/windows/apps/bg124288), либо к использованию [существующего кода приложения в ОС Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
+Windows 10 предварительной версии (версия 1607) и обновления средств разработчика Windows обеспечивают доступ к средствам, компонентам и возможностям универсальной платформы Windows. [Установив средства и пакет SDK](http://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](https://msdn.microsoft.com/library/windows/apps/bg124288), либо к использованию [существующего кода приложения в ОС Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
 
-## Предварительная сборка 12295 пакета Anniversary SDK для Windows 10
+## Windows 10 предварительной версии 1607
 
-Возможность | Описание
+Компонент | Описание
  :---- | :----
 Сеть | Теперь вы можете реализовать собственную настраиваемую проверку серверных сертификатов SSL/TLS, подписавшись на событие [HttpBaseProtocolFilter.ServerCustomValidationRequest](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx#_blank). Вы также можете полностью отключить чтение ответов HTTP из кэша, задав в HTTP-запросе значение перечисления [HttpCacheReadBehavior.NoCache](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpcachereadbehavior.aspx#_blank). Теперь можно очистить учетные данные проверки подлинности для выхода из система с помощью метода [HttpBaseProtocolFilter.ClearAuthenticationCache](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx#_blank).
 Расширения | Теперь в Microsoft Edge можно использовать расширения. С их помощью пользователи могут расширить возможности Microsoft Edge, предоставляя специализированные функции для определенной целевой аудитории. Подробнее см. в [документации для расширений](https://developer.microsoft.com/microsoft-edge/platform/documentation/extensions/#_blank).
@@ -30,6 +30,6 @@ API карт | Теперь [MapControl](https://msdn.microsoft.com/library/wind
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

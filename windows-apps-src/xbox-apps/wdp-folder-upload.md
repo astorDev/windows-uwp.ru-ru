@@ -2,8 +2,9 @@
 author: WilliamsJason
 title: "Портал устройств - отправка папки, справочник по API"
 description: "Узнайте, как получить доступ к API отправки папок программными средствами."
+translationtype: Human Translation
 ms.sourcegitcommit: fdc25fa4bd7bd5bfa598b993f23cd0ae9783dd0e
-ms.openlocfilehash: 942ddc13b0deba382ad7758bc30bd9a5b0cceb11
+ms.openlocfilehash: 6c3eeccdbb2bca315dc84293a36d0923f46e746d
 
 ---
 
@@ -53,6 +54,6 @@ destinationFolder (обязательный) | Имя конечной папк�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

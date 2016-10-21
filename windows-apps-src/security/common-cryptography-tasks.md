@@ -3,8 +3,9 @@ title: "Общие задачи шифрования"
 description: "В этих статьях показан пример кода для типичных задач шифрования универсальной платформы Windows (UWP), включая создание случайных значений, сравнение буферов, преобразование между строками и двоичными данными, копирование в массив байтов и из него, а также кодирование и декодирование данных."
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 38d0af2cdbf4137cbd0e005fcb750ed2f0b2c87c
+ms.openlocfilehash: 5122c7d9750a9f37582b27752926da1c9f44b321
 
 ---
 
@@ -27,6 +28,6 @@ ms.openlocfilehash: 38d0af2cdbf4137cbd0e005fcb750ed2f0b2c87c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

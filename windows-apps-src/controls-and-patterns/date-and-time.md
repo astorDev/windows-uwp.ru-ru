@@ -5,21 +5,33 @@ title: "Рекомендации по элементам управления д
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: e9d8d73c35e2e600e89330fbd54aea57a815aebf
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 ---
-
 # Элементы управления календарем, датой и временем
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Элементы управления датой и временем предоставляют пользователю стандартный локализованный способ просмотра и установки даты и времени в приложении. Эта статья содержит рекомендации по проектированию и помогает выбрать соответствующий элемент управления.
 
-<span class="sidebar_heading" style="font-weight: bold;">Важные API</span>
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx"><strong>Класс CalendarView</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx"><strong>Класс CalendarDatePicker</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx"><strong>Класс DatePicker</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx"><strong>Класс TimePicker</strong></a></li>
+</ul>
 
--   [**Класс CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)
--   [**Класс CalendarDatePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)
--   [**Класс DatePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)
--   [**Класс TimePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
+</div>
+</div>
+
+
+
+
+
 
 ## Какой элемент управления датой и временем следует использовать?
 
@@ -36,8 +48,7 @@ ms.openlocfilehash: e9d8d73c35e2e600e89330fbd54aea57a815aebf
 
 ### Представление календаря
 
-
-            **CalendarView** позволяет пользователю просматривать календарь и взаимодействовать с ним, перемещаясь по месяцам, годам и десятилетиям. Пользователь может выбрать отдельную дату или диапазон дат. Не имеет поверхности выбора, и календарь всегда виден.
+**CalendarView** позволяет пользователю просматривать календарь и взаимодействовать с ним, перемещаясь по месяцам, годам и десятилетиям. Пользователь может выбрать отдельную дату или диапазон дат. Не имеет поверхности выбора, и календарь всегда виден.
 
 Представление календаря состоит из 3 отдельных представлений: представление месяца, представление года и представление десятилетия. По умолчанию он отображается с открытым представлением месяца, но в качестве начального представления можно задать любое из его представлений.
 
@@ -48,8 +59,7 @@ ms.openlocfilehash: e9d8d73c35e2e600e89330fbd54aea57a815aebf
 
 ### Элемент выбора даты в календаре
 
-
-            **CalendarDatePicker** — это раскрывающийся элемент управления, оптимизированный для выбора отдельной даты из CalendarView, когда важен контекст, например день недели или заполненность календаря. Вы можете изменить календарь таким образом, чтобы обеспечить дополнительный контекст или ограничить доступные даты.
+**CalendarDatePicker** — это раскрывающийся элемент управления, оптимизированный для выбора отдельной даты из представления календаря, когда важен контекст, например день недели или заполненность календаря. Вы можете изменить календарь таким образом, чтобы обеспечить дополнительный контекст или ограничить доступные даты.
 
 Точка входа отображает замещающий текст, если дата не была установлена; в противном случае отображается выбранная дата. Когда пользователь выбирает точку входа, представление календаря развертывается, чтобы пользователь мог выбрать дату. Представление календаря перекрывает другие элементы пользовательского интерфейса, но не вытесняет их.
 
@@ -103,9 +113,7 @@ ms.openlocfilehash: e9d8d73c35e2e600e89330fbd54aea57a815aebf
 
 .NET также поддерживает тип под названием [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx), который неявно преобразуется в [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx). Вы могли видеть тип DateTime, который используется в коде .NET для задания значений, которые на самом деле имеют тип DateTimeOffset. Подробнее о различиях между типами DateTime и DateTimeOffset см. в разделе примечаний в описании класса [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx).
 
-> 
-            **Примечание.**
-            &nbsp;&nbsp;Свойствам, которые принимают в качестве значений объекты даты, нельзя присвоить строку атрибута XAML, поскольку анализатор XAML среды выполнения Windows не содержит логику преобразования строк в даты в виде объектов DateTime или DateTimeOffset. Эти значения обычно задаются в коде. Также можно использовать другой способ — определить дату, которая доступна как объект данных, или дату, доступную в контексте данных. Затем необходимо задать свойство как атрибут XAML, ссылающийся на выражение расширения разметки [\{Binding\}](../xaml-platform/binding-markup-extension.md), которое может получать доступ к дате как к данным.
+> **Примечание.**&nbsp;&nbsp;Свойствам, принимающим в качестве значений объекты даты, нельзя присвоить строку атрибута XAML, поскольку анализатор XAML среды выполнения Windows не содержит логику преобразования строк в даты в виде объектов DateTime или DateTimeOffset. Эти значения обычно задаются в коде. Также можно использовать другой способ — определить дату, которая доступна как объект данных, или дату, доступную в контексте данных. Затем необходимо задать свойство как атрибут XAML, ссылающийся на выражение расширения разметки [\{Binding\}](../xaml-platform/binding-markup-extension.md), которое может получать доступ к дате как к данным.
 
 
 ## Ссылки по теме
@@ -118,6 +126,6 @@ ms.openlocfilehash: e9d8d73c35e2e600e89330fbd54aea57a815aebf
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

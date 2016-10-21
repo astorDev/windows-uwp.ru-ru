@@ -3,50 +3,15 @@ author: mcleanbyron
 ms.assetid: 9165f709-71d7-42cf-9b30-3190fe029fb4
 description: "Сведения о различиях между классом AdControl в библиотеках Microsoft advertising и классом AdMediatorControl в библиотеках рекламного посредника."
 title: "В чем различие — AdMediatorControl или AdControl"
-ms.sourcegitcommit: 8a5b02dbc40f3f0cd9be32aa7d5184e60a3b2707
-ms.openlocfilehash: 291e1c4d707e8987d29ae5840248918543d7d12a
+redirect_url: https://msdn.microsoft.com/windows/uwp/monetize/display-ads-in-your-app
+translationtype: Human Translation
+ms.sourcegitcommit: c6e0cf98c6eb2cdc656d5b4555d794ff6a94d2bc
+ms.openlocfilehash: 4f7879f1df73498b551633fec3f33d8e7b8c706c
 
 ---
 
-# В чем различие: AdMediatorControl или AdControl
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-Используйте в приложении библиотеки Microsoft Advertising для XAML и JavaScript, если вам необходимо отображать рекламные баннеры или промежуточную рекламу от Майкрософт. Эти библиотеки отличаются от библиотек рекламного посредника, используемых для показа рекламы от нескольких рекламных сетей. Используйте эту документацию для библиотек Microsoft advertising (XAML и JavaScript) в следующих случаях:
-
-* В приложении XAML или JavaScript используется объект [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) или [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), а не объект **AdMediatorControl**.
-* Вам необходима справочная информация по базовому API **AdControl**, используемому рекламным посредником.
-
-Библиотеки Microsoft advertising и библиотеки рекламного посредника входят в пакет SDK Microsoft Store Engagement and Monetization. Дополнительные сведения об установке этого пакета SDK и включенных в него библиотеках Microsoft advertising см. в статье [Установка библиотек Microsoft Advertising](install-the-microsoft-advertising-libraries.md).
-
->
-            **Примечание.**  Для отображения промежуточной рекламы используйте элемент управления **InterstitialAd**. Элементы **AdControl** и **AdMediatorControl** не подходят для отображения промежуточной рекламы. Дополнительные сведения см. в разделе [Промежуточная видеореклама](interstitial-ads.md).
-
- 
-
-## Рекламный посредник
-
-
-Рекомендуется отображать рекламные баннеры от Майкрософт (но не промежуточную рекламу), используя в приложении объект **AdMediatorControl**. **AdMediatorControl** отображает рекламные баннеры от нескольких рекламных сетей.
-
-При использовании в проекте объекта **AdMediatorControl** необходимо выбрать рекламные сети с помощью функции **Подключенные службы** в Visual Studio. Visual Studio VisualStudio попытается получить необходимые сборки для некоторых рекламных сетей программным способом. Если какую-либо сборку не удается получить автоматически, ее необходимо установить для рекламной сети. Дополнительные сведения о рекламном посреднике см. в разделе [Использование рекламного посредника для повышения дохода](use-ad-mediation-to-maximize-revenue.md).
-
-**AdMediatorControl** не требует использования идентификаторов рекламных блоков и идентификаторов приложения. Эти идентификаторы управляются **AdMediatorControl** в соответствии с вашими настройками рекламного посредника на информационной панели Центра разработки для Windows. Дополнительные сведения см. в разделе [Отправка приложения и настройка рекламного посредника](submit-your-app-and-configure-ad-mediation.md).
-
-**AdMediatorControl** поддерживает API для каждой из рекламных служб, для которых осуществляется посредничество, с помощью собственных атрибутов и синтаксиса. Дополнительные сведения см. в разделе [Добавление и использование элемента управления рекламного посредника](add-and-use-the-ad-mediator-control.md).
-
-## AdControl
-
-
-Если вам необходимо отображать только рекламные баннеры от Майкрософт (без других рекламных сетей), вы можете использовать в приложениях XAML и JavaScript элемент **AdControl**. Во время тестирования приложения, в котором применяется **AdControl**, используйте [значения тестового режима](test-mode-values.md) для идентификатора приложения и идентификаторов рекламных блоков. После завершения тестирования приложения и перед отправкой его в Центр разработки для Windows получите значения ИД приложения и ИД рекламных блоков из информационной панели Центра разработки для Windows и внесите изменения в код для использования этих значений в рабочем приложении. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md).
-
- 
-
- 
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

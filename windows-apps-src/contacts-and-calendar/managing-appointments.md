@@ -3,14 +3,15 @@ author: Xansky
 description: "Пространство имен Windows.ApplicationModel.Appointments позволяет создавать встречи в приложении календаря пользователя и управлять ими."
 title: "Управление встречами"
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
+translationtype: Human Translation
 ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 020b020d90a52d45fa989e0f630320b4630b955e
+ms.openlocfilehash: ae7fe9075a4c49c99a572087bf4b7b176555caef
 
 ---
 
 # Управление встречами
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Пространство имен [**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) позволяет создавать встречи в приложении календаря пользователя и управлять ими. Здесь мы покажем, как создать встречу, добавить ее в приложение календаря, заменить и удалить из него. Кроме того, вы узнаете, как отобразить интервал времени в календаре и создать объект повторяющейся встречи.
@@ -503,9 +504,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## Добавление новой редактируемой встречи
 
-Метод [
-              **ShowEditNewAppointmentAsync**
-            ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) работает так же, как [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync), но диалоговое окно для добавления встречи редактируется, так что пользователь может изменить данные встречи перед ее сохранением.
+Метод [**ShowEditNewAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) работает так же, как [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync), но диалоговое окно для добавления встречи редактируется, так что пользователь может изменить данные встречи перед ее сохранением.
 
 ``` cs
 private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
@@ -540,9 +539,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 
 ## Просмотр информации о встрече
 
-Метод [
-              **ShowAppointmentDetailsAsync**
-            ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) приводит к отображению информации об определенной встрече в системе. Приложение, которое реализует календари приложения, может выбрать активацию для отображения информации для встреч в календарях, которыми оно владеет. В противном случае информацию о встрече будет показывать система. Перегрузка метода, который принимает аргумент даты начала, предоставляется, чтобы показать информацию о встрече для экземпляра повторяющейся встречи.
+Метод [**ShowAppointmentDetailsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) приводит к отображению информации об определенной встрече в системе. Приложение, которое реализует календари приложения, может выбрать активацию для отображения информации для встреч в календарях, которыми оно владеет. В противном случае информацию о встрече будет показывать система. Перегрузка метода, который принимает аргумент даты начала, предоставляется, чтобы показать информацию о встрече для экземпляра повторяющейся встречи.
 
 ```cs
 private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e)
@@ -567,7 +564,7 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 Теперь вы имеете общее представление об управлении встречами. Скачайте [Примеры универсальных приложений для Windows](http://go.microsoft.com/fwlink/p/?linkid=619979) с GitHub, чтобы просмотреть дополнительные примеры управления встречами.
 
-## Ссылки по теме
+## Связанные разделы
 
 * [Пример API встреч](http://go.microsoft.com/fwlink/p/?linkid=309836)
  
@@ -576,6 +573,6 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

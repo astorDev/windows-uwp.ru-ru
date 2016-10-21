@@ -7,12 +7,10 @@ label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
 translationtype: Human Translation
-ms.sourcegitcommit: 2e7515efa04f6335929e23d31da7d76cb64b9cc9
-ms.openlocfilehash: 54da89e33b81fc8c5439786f8a5133360dbd186c
+ms.sourcegitcommit: 96a35ded526b09dd1ce1cb8528bb4a99e3511b32
+ms.openlocfilehash: 734a0f0574ac7698dd6bd963bf3e20225b26d401
 
 ---
-
-> \[В этой статье описывается еще не доступная функциональная возможность. Эта функциональная возможность может быть значительно изменена до коммерческого выпуска. Майкрософт не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
 
 # Проектирование для Xbox и телевизора
 
@@ -109,7 +107,7 @@ UWP автоматически сопоставляет существующее
 | Ввод                 | Кнопка A / выбор                       |
 | Escape                | Кнопка B / назад*                        |
 
-\* Если ни событие [KeyDown](https://msdn.microsoft.com/library/windows/apps/br208941), ни событие [KeyUp](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.keyup.aspx) кнопки «B» не обрабатываются приложением, запускается событие [SystemNavigationManager.BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx), которое ведет к обратной навигации в приложении. Однако это необходимо реализовывать самостоятельно, как показано в следующем фрагменте кода.
+\* Если ни событие [KeyDown](https://msdn.microsoft.com/library/windows/apps/br208941), ни событие [KeyUp](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.keyup.aspx) кнопки «B» не обрабатываются приложением, запускается событие [SystemNavigationManager.BackRequested](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx), которое ведет к обратной навигации в приложении. Однако это необходимо реализовывать самостоятельно, как показано в следующем фрагменте кода.
 
 ```csharp
 // This code goes in the MainPage class
@@ -163,10 +161,8 @@ private bool BackRequested()
 
 | Тип взаимодействия   | Клавиатура   | Геймпад      | Встроенная функция для  | Рекомендуется для |
 |---------------|------------|--------------|----------------|------------------|
-| Страница вверх/вниз  | Страница вверх/вниз | Левый и правый триггеры | 
-              [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Представления, поддерживающие вертикальную прокрутку
-| Страница влево/вправо | Нет | Левый и правый бамперы | 
-              [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Представления, поддерживающие горизонтальную прокрутку
+| Страница вверх/вниз  | Страница вверх/вниз | Левый и правый триггеры | [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Представления, поддерживающие вертикальную прокрутку
+| Страница влево/вправо | Нет | Левый и правый бамперы | [Pivot](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.pivot.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Представления, поддерживающие горизонтальную прокрутку
 | Увеличение/уменьшение масштаба        | Ctrl +/- | Левый и правый триггеры | Нет | `ScrollViewer`, представления, поддерживающие увеличение и уменьшение масштаба |
 | Открыть/закрыть панель навигации | Нет | Кнопка "Просмотр" | Нет | Панели навигации
 
@@ -275,17 +271,17 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ### Путь с наименьшим количеством нажатий
 
-Попробуйте свести к минимуму количество нажатий, необходимое для выполнения наиболее распространенных задач. В следующем примере [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) располагается между кнопкой **воспроизведения** (которая изначально имеет фокус) и часто используемым элементом, так что между приоритетными задачами размещается лишний элемент.
+Попробуйте свести к минимуму количество нажатий, необходимое для выполнения наиболее распространенных задач. В следующем примере [TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) располагается между кнопкой **воспроизведения** (которая изначально имеет фокус) и часто используемым элементом, так что между приоритетными задачами размещается лишний элемент.
 
 ![Рекомендации по обеспечению пути навигации с наименьшим количеством нажатий](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks.png)
 
-В следующем примере [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) расположен над кнопкой **воспроизведения**. Простая реорганизация пользовательского интерфейса, при которой ненужные элементы не размещаются между приоритетными задачами, значительно повысит удобство использования приложения.
+В следующем примере [TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) расположен над кнопкой **воспроизведения**. Простая реорганизация пользовательского интерфейса, при которой ненужные элементы не размещаются между приоритетными задачами, значительно повысит удобство использования приложения.
 
 ![TextBlock находится над кнопкой воспроизведения и больше не располагается между приоритетными задачами](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks-2.png)
 
 ### CommandBar и ContextFlyout
 
-При использовании [CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) следует помнить, что имеется проблема прокрутки списка, которая была упомянута в разделе [Проблема: элементы пользовательского интерфейса, размещенные после длинного списка/сетки](#problem-ui-elements-located-after-long-scrolling-list-grid). На следующем рисунке показан макет пользовательского интерфейса с `CommandBar` под списком/сеткой. Пользователю нужно полностью прокрутить список/сетку, чтобы достичь `CommandBar`.
+При использовании [CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) следует помнить, что имеется проблема прокрутки списка, которая была упомянута в разделе [Проблема: элементы пользовательского интерфейса, размещенные после длинного списка/сетки](#problem-ui-elements-located-after-long-scrolling-list-grid). На следующем рисунке показан макет пользовательского интерфейса с `CommandBar` под списком/сеткой. Пользователю нужно полностью прокрутить список/сетку, чтобы достичь `CommandBar`.
 
 ![CommandBar под списком/сеткой](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
@@ -357,7 +353,7 @@ private void MyButton_ContextRequested(UIElement sender, ContextRequestedEventAr
 
 #### Проблема: элементы пользовательского интерфейса, размещенные после длинного списка/сетки <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
-Объект [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), приведенный на следующем рисунке, является очень длинным списком прокрутки. Если [включение](#focus-engagement) *не* является обязательным для `ListView`, то при переходе пользователя к списку фокус переводится на первый элемент списка. Чтобы пользователь перешел к кнопке **Назад** или **Далее**, ему необходимо перебрать все элементы в списке. В таких случаях, когда пользователю необходимо перебирать все элементы списка (список недостаточно короткий) и когда пользовательский интерфейс становится неудобным, возможно, следует использовать другие варианты.
+Объект [ListView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.listview.aspx), приведенный на следующем рисунке, является очень длинным списком прокрутки. Если [включение](#focus-engagement) *не* является обязательным для `ListView`, то при переходе пользователя к списку фокус переводится на первый элемент списка. Чтобы пользователь перешел к кнопке **Назад** или **Далее**, ему необходимо перебрать все элементы в списке. В таких случаях, когда пользователю необходимо перебирать все элементы списка (список недостаточно короткий) и когда пользовательский интерфейс становится неудобным, возможно, следует использовать другие варианты.
 
 ![Приложение для покупки недвижимости: чтобы добраться до кнопок под списком из 50элементов, необходимо 51нажатие](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
 
@@ -377,7 +373,7 @@ private void MyButton_ContextRequested(UIElement sender, ContextRequestedEventAr
 
 #### Проблема: ScrollViewer без доступных для фокусировки элементов
 
-Поскольку перемещение фокуса по оси X и Y основано на переходе к одному доступному для фокусировки элементу за раз, объект [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), который не содержит каких-либо доступных элементов (например, объект только с текстом, как в этом примере), может привести к тому, что пользователь не сможет просмотреть все содержимое `ScrollViewer`. Решения для этого и других похожих сценариев приведены в разделе [Включение фокуса](#focus-engagement).
+Поскольку перемещение фокуса по оси X и Y основано на переходе к одному доступному для фокусировки элементу за раз, объект [ScrollViewer](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), который не содержит каких-либо доступных элементов (например, объект только с текстом, как в этом примере), может привести к тому, что пользователь не сможет просмотреть все содержимое `ScrollViewer`. Решения для этого и других похожих сценариев приведены в разделе [Включение фокуса](#focus-engagement).
 
 ![Приложение для покупки недвижимости: ScrollViewer только с текстом](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
 
@@ -389,7 +385,7 @@ private void MyButton_ContextRequested(UIElement sender, ContextRequestedEventAr
 
 ## Режим мыши
 
-Как описано в разделе [Перемещение фокуса по оси X и Y и взаимодействие](#xy-focus-navigation-and-interaction), на Xbox One фокус перемещается по оси X и Y, позволяя пользователю переходить от одного элемента управления к другому в обоих направлениях по вертикали и горизонтали. Однако некоторые элементы управления, такие как [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) и [MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx), требуют взаимодействия, аналогичного работе с мышью, когда пользователи могут свободно перемещать указатель внутри границ элемента управления. Имеются также приложения, в которых пользователю было бы разумно иметь возможность перемещать указатель по всей странице с помощью геймпада / пульта ДУ, как при работе с мышью на ПК.
+Как описано в разделе [Перемещение фокуса по оси X и Y и взаимодействие](#xy-focus-navigation-and-interaction), на Xbox One фокус перемещается по оси X и Y, позволяя пользователю переходить от одного элемента управления к другому в обоих направлениях по вертикали и горизонтали. Однако некоторые элементы управления, такие как [WebView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.webview.aspx) и [MapControl](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx), требуют взаимодействия, аналогичного работе с мышью, когда пользователи могут свободно перемещать указатель внутри границ элемента управления. Имеются также приложения, в которых пользователю было бы разумно иметь возможность перемещать указатель по всей странице с помощью геймпада / пульта ДУ, как при работе с мышью на ПК.
 
 В этих сценариях следует обеспечить работу указателя (режим мыши) на всей странице или в границах элемента управления. Например, ваше приложение может содержать страницу с элементом управления `WebView`, который использует режим мыши только внутри этого элемента и перемещение фокуса по оси X и Y во всех остальных областях экрана. Чтобы запросить указатель, следует определить, когда его требуется использовать: **при взаимодействии с элементом управления или страницей** либо **при перемещении фокуса на страницу**.
 
@@ -461,7 +457,7 @@ navigator.gamepadInputEmulation = "keyboard";
 ```
 
 > [!NOTE]
-> Значение `WhenFocused` поддерживается только для объектов [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx). Если попытаться задать это значение для элемента управления, возникнет исключение.
+> Значение `WhenFocused` поддерживается только для объектов [Page](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.aspx). Если попытаться задать это значение для элемента управления, возникнет исключение.
 
 ### Отключение режима мыши для полноэкранного содержимого
 
@@ -512,7 +508,7 @@ navigator.gamepadInputEmulation = "keyboard";
 > [!NOTE]
 > Настройка включения фокуса не влияет на работу клавиатуры и другие устройства ввода.
 
-Если свойство `IsFocusEngagementEnabled` в объекте [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) имеет значение `True`, элемент управления помечается как требующий включения фокуса. Это означает, что пользователь должен нажать кнопку **A/выбор**, чтобы включить элемент управления и начать с ним взаимодействовать. После завершения работы можно нажать кнопку **B/Назад**, чтобы отключить элемент управления и перейти к другому.
+Если свойство `IsFocusEngagementEnabled` в объекте [FrameworkElement](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) имеет значение `True`, элемент управления помечается как требующий включения фокуса. Это означает, что пользователь должен нажать кнопку **A/выбор**, чтобы включить элемент управления и начать с ним взаимодействовать. После завершения работы можно нажать кнопку **B/Назад**, чтобы отключить элемент управления и перейти к другому.
 
 > [!NOTE]
 > `IsFocusEngagementEnabled` — это новый, еще не задокументированный API.
@@ -525,7 +521,7 @@ navigator.gamepadInputEmulation = "keyboard";
 
 ![Кнопки слева и справа от горизонтального ползунка](images/designing-for-tv/focus-engagement-focus-trapping.png)
 
-Если пользователь хочет перейти от левой кнопки к правой, логично предположить, что для этого нужно только дважды нажать «Вправо» на крестовине или два раза передвинуть левый джойстик. Однако если ползунок [Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx) не требует включения, произойдет следующее: если пользователь нажмет «Вправо» в первый раз, фокус сместится на `Slider`, а повторное нажатие приведет к перемещению указателя ползунка `Slider`. Пользователь продолжит перемещать маркер вправо и не сможет достичь кнопки.
+Если пользователь хочет перейти от левой кнопки к правой, логично предположить, что для этого нужно только дважды нажать «Вправо» на крестовине или два раза передвинуть левый джойстик. Однако если ползунок [Slider](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.slider.aspx) не требует включения, произойдет следующее: если пользователь нажмет «Вправо» в первый раз, фокус сместится на `Slider`, а повторное нажатие приведет к перемещению указателя ползунка `Slider`. Пользователь продолжит перемещать маркер вправо и не сможет достичь кнопки.
 
 Данную проблему можно обойти двумя способами. Первый — это создание другого макета, аналогичного примеру приложения для покупки недвижимости в разделе [Перемещение фокуса по оси X и Y и взаимодействие](#xy-focus-navigation-and-interaction), где мы переместили кнопки **Назад** и **Далее** над объектом `ListView`. Размещение элементов управления вертикально, а не горизонтально, как показано на следующем изображении, позволит решить эту проблему.
 
@@ -541,12 +537,12 @@ navigator.gamepadInputEmulation = "keyboard";
 
 ### Элементы управления
 
-Помимо элемента управления [Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx), существуют другие элементы управления, для которых может потребоваться включения фокуса, например:
+Помимо элемента управления [Slider](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.slider.aspx), существуют другие элементы управления, для которых может потребоваться включения фокуса, например:
 
-- [ListBox;](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)
-- [ListView;](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
-- [GridView;](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
-- [FlipView.](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview)
+- [ListBox;](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)
+- [ListView;](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
+- [GridView;](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+- [FlipView.](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.flipview)
 
 В отличие от элемента управления `Slider`, они не захватывают фокус. Однако если они содержат большой объем данных, эти элементы управления могут привести к проблемам, связанным с удобством использования. Ниже приведен пример элемента `ListView`, содержащего большой объем данных.
 
@@ -560,7 +556,7 @@ navigator.gamepadInputEmulation = "keyboard";
 
 #### ScrollViewer
 
-От этих элементов управления несколько отличается объект [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx). Он так же имеет собственные особенности, которые необходимо учитывать. Если у вас есть `ScrollViewer` с доступным для фокусировки содержимым, по умолчанию переход к `ScrollViewer` приведет к перемещению между его элементами. Как и в случае с `ListView`, необходимо перебрать все элементы `ScrollViewer`, чтобы выйти из этого элемента. 
+От этих элементов управления несколько отличается объект [ScrollViewer](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx). Он так же имеет собственные особенности, которые необходимо учитывать. Если у вас есть `ScrollViewer` с доступным для фокусировки содержимым, по умолчанию переход к `ScrollViewer` приведет к перемещению между его элементами. Как и в случае с `ListView`, необходимо перебрать все элементы `ScrollViewer`, чтобы выйти из этого элемента. 
 
 Если `ScrollViewer` *не* имеет содержимого, доступного для фокусировки&mdash; например, содержит только текст&mdash; можно установить значение `IsFocusEngagementEnabled="True"`, чтобы пользователь мог включить объект `ScrollViewer` с помощью кнопки **A/выбор**. После включения элемента пользователь может прокрутить текст с помощью **крестовины / левого джойстика** и нажать кнопку **B/назад**, чтобы отключить фокус элемента.
 
@@ -589,12 +585,11 @@ navigator.gamepadInputEmulation = "keyboard";
 
 ### Коэффициент масштабирования и адаптивный макет
 
-
-              **Коэффициент масштабирования** обеспечивает отображение правильного размера элементов пользовательского интерфейса на том устройстве, на котором работает приложение. На компьютере этот параметр регулируется с помощью ползунка и находится в следующем расположении: **Параметры > Система > Экран**. Этот же параметр используется и на телефоне, если устройство поддерживает его.
+**Коэффициент масштабирования** обеспечивает отображение правильного размера элементов пользовательского интерфейса на том устройстве, на котором работает приложение. На компьютере этот параметр регулируется с помощью ползунка и находится в следующем расположении: **Параметры > Система > Экран**. Этот же параметр используется и на телефоне, если устройство поддерживает его.
 
 ![Изменение размера текста, приложений и прочих элементов](images/designing-for-tv/ui-scaling.png) 
 
-На Xbox One такого системного параметра нет, однако чтобы элементы пользовательского интерфейса UWP отображались на экране телевизора в правильном размере, они масштабируются со значением по умолчанию **200 %**. Если элементы пользовательского интерфейса имеют правильные размеры на других устройствах, они будут правильно отображаться и на экране телевизора. Xbox One отображает приложение в разрешении 1080p (1920 x 1080 пикселей). Поэтому при переносе приложения с других устройств, например ПК, убедитесь, что пользовательский интерфейс хорошо выглядит при разрешении 960 x 540 пикселей и масштабе 100%, воспользовавшись [специальными возможностями](https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
+На Xbox One такого системного параметра нет, однако чтобы элементы пользовательского интерфейса UWP отображались на экране телевизора в правильном размере, они масштабируются со значением по умолчанию **200 %**. Если элементы пользовательского интерфейса имеют правильные размеры на других устройствах, они будут правильно отображаться и на экране телевизора. Xbox One отображает приложение в разрешении 1080p (1920 x 1080 пикселей). Поэтому при переносе приложения с других устройств, например ПК, убедитесь, что пользовательский интерфейс хорошо выглядит при разрешении 960 x 540 пикселей и масштабе 100%, воспользовавшись [специальными возможностями](https://msdn.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
 Проектирование для Xbox несколько отличается от проектирования для ПК, так как необходимо работать только с одним разрешением — 1920 x 1080. Неважно, если разрешение телевизора выше&mdash;приложения UWP всегда будут масштабироваться до 1080p.
 
@@ -671,7 +666,7 @@ bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayo
 
 ### Отрисовка пользовательского интерфейса до краев
 
-Мы рекомендуем использовать определенные элементы пользовательского интерфейса для расширения до краев экрана. Это усилит эффект погружения. Сюда входят средства прокрутки [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), [навигационные панели](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane) и панели команд [CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx).
+Мы рекомендуем использовать определенные элементы пользовательского интерфейса для расширения до краев экрана. Это усилит эффект погружения. Сюда входят средства прокрутки [ScrollViewer](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), [навигационные панели](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/nav-pane) и панели команд [CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx).
 
 С другой стороны, также важно, чтобы интерактивные элементы и текст никогда не доходили до краев экрана. Это позволит избежать их обрезки на некоторых телевизорах. Мы рекомендуем использовать в 5 % области вдоль краев экрана только некритичное визуальное оформление. Как уже упоминалось в разделе [Размер элементов пользовательского интерфейса](#ui-element-sizing), приложение UWP использующее коэффициент масштабирования Xbox One по умолчанию (200 %), будет использовать область 960 x 540 эффективных пикселей. Поэтому следует избегать размещения критически важных элементов пользовательского интерфейса в следующих областях:
 
@@ -691,7 +686,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
     (Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
 ```
 
-Благодаря этой строке кода окно приложения будет расширено до границ экрана, поэтому вам придется переместить все интерактивные и важные элементы пользовательского интерфейса в безопасную область телеэкрана, которая была описана выше. Прозрачный пользовательский интерфейс, например контекстные меню, открытые поля со списком [ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), автоматически будут оставаться в пределах безопасной области телевизионного экрана.
+Благодаря этой строке кода окно приложения будет расширено до границ экрана, поэтому вам придется переместить все интерактивные и важные элементы пользовательского интерфейса в безопасную область телеэкрана, которая была описана выше. Прозрачный пользовательский интерфейс, например контекстные меню, открытые поля со списком [ComboBox](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), автоматически будут оставаться в пределах безопасной области телевизионного экрана.
 
 ![Границы основного окна](images/designing-for-tv/core-window-bounds.png)
 
@@ -699,7 +694,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 Как правило, панели навигации помещаются вдоль границ экрана, поэтому фоновое изображение должно выходить за границы безопасной области. Это позволит избежать появления странных пропусков. Это можно сделать путем простого изменения цвета фона панели навигации на цвет фона приложения.
 
-Использование границ основного окна, как описано выше, позволяет отрисовывать пользовательский интерфейс до краев экрана, однако после этого следует использовать положительные поля для содержимого [SplitView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.splitview.aspx), чтобы оно оставалось в безопасной области телевизионного экрана.
+Использование границ основного окна, как описано выше, позволяет отрисовывать пользовательский интерфейс до краев экрана, однако после этого следует использовать положительные поля для содержимого [SplitView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.splitview.aspx), чтобы оно оставалось в безопасной области телевизионного экрана.
 
 ![Панель навигации, расширенная до краев экрана](images/designing-for-tv/tv-safe-areas-2.png)
 
@@ -724,11 +719,9 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 </SplitView>
 ```
 
+[CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) — еще один пример панели, которая, как правило, располагается рядом с одним или несколькими краями приложения, поэтому на телеэкране фон этой панели должен достигать краев экрана. Кроме того, здесь, как правило, имеется кнопка **Дополнительно** в виде многоточия (...), на правой стороне экрана, которая должна оставаться в безопасной области. Ниже приведены несколько различных способов, позволяющих добиться нужного взаимодействия и визуальных эффектов.
 
-              [CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) — еще один пример панели, которая, как правило, располагается рядом с одним или несколькими краями приложения, поэтому на телеэкране фон этой панели должен достигать краев экрана. Кроме того, здесь, как правило, имеется кнопка **Дополнительно** в виде многоточия (...), на правой стороне экрана, которая должна оставаться в безопасной области. Ниже приведены несколько различных способов, позволяющих добиться нужного взаимодействия и визуальных эффектов.
-
-
-              **Вариант 1**. Сделайте фоновый цвет `CommandBar` прозрачным, или замените его на цвет, идентичный фоновому цвету страницы.
+**Вариант 1**. Сделайте фоновый цвет `CommandBar` прозрачным, или замените его на цвет, идентичный фоновому цвету страницы.
 
 ```xml
 <CommandBar x:Name="topbar" 
@@ -739,8 +732,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 Этот приведет к тому, что визуально `CommandBar` будет располагаться на том же фоне, что и вся остальная страница. Таким образом фон будет непрерывно простираться до края экрана.
 
-
-              **Вариант 2**. Добавьте фоновый прямоугольник, заполненный тем же цветом, что и фон `CommandBar` так, чтобы он размещался под `CommandBar` и на остальной части страницы.
+**Вариант 2**. Добавьте фоновый прямоугольник, заполненный тем же цветом, что и фон `CommandBar`, так, чтобы он размещался под `CommandBar` и на остальной части страницы.
 
 ```xml
 <Rectangle VerticalAlignment="Top" 
@@ -768,7 +760,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 ![Фокус прокручиваемой сетки должен оставаться в пределах безопасной области экрана](images/designing-for-tv/scrolling-grid-focus.png)
 
-Функциональные возможности платформы UWP позволяют удерживать визуальный элемент фокуса внутри видимых границ [VisibleBounds](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.applicationview.visiblebounds.aspx), однако необходимо увеличить расстояние до края, чтобы элементы списка/сетки можно было прокручивать в безопасной области. В частности, следует добавить положительное поле для [ItemsPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) объектов [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) или [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), как показано в следующем фрагменте кода.
+Функциональные возможности платформы UWP позволяют удерживать визуальный элемент фокуса внутри видимых границ [VisibleBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.viewmanagement.applicationview.visiblebounds.aspx), однако необходимо увеличить расстояние до края, чтобы элементы списка/сетки можно было прокручивать в безопасной области. В частности, следует добавить положительное поле для [ItemsPresenter](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) объектов [ListView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.listview.aspx) или [GridView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), как показано в следующем фрагменте кода.
 
 ```xml
 <Style x:Key="TitleSafeListViewStyle" 
@@ -819,7 +811,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 ```
 
 > [!NOTE]
-> Этот фрагмент кода предназначен специально для стиля `ListView`. Для стиля `GridView` задайте атрибут [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) для [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) и [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) равным `GridView`.
+> Этот фрагмент кода предназначен специально для стиля `ListView`. Для стиля `GridView` задайте атрибут [TargetType](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) для [ControlTemplate](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) и [Style](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.style.aspx) равным `GridView`.
 
 ## Цвета
 
@@ -839,7 +831,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 Кроме того, следует обратить внимание на то, что набор пользовательских цветов на устройстве Xbox One отличается от цветов на ПК, телефонах и других устройствах. Частично это связано с тем, что данные цвета выбираются вручную для оптимизации просмотра на Xbox One на большом расстоянии с использованием тех же методов и стратегий, которые объясняются в этой статье.
 
-Пока в вашем приложении используется ресурс кисти, например **SystemControlForegroundAccentBrush**, или ресурс цвета (**SystemAccentColor**), или же если цвета элементов вызываются напрямую через API [UIColorType.Accent*](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx), эти цвета заменяются на цвета элементов, подходящие для телевизора. Цвета кистей высокой контрастности также берутся из системы, как на ПК и телефоне, однако при этом используются подходящие для телевизора цвета.
+Пока в вашем приложении используется ресурс кисти, например **SystemControlForegroundAccentBrush**, или ресурс цвета (**SystemAccentColor**), или же если цвета элементов вызываются напрямую через API [UIColorType.Accent*](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx), эти цвета заменяются на цвета элементов, подходящие для телевизора. Цвета кистей высокой контрастности также берутся из системы, как на ПК и телефоне, однако при этом используются подходящие для телевизора цвета.
 
 Дополнительные сведения о цветах элементов в целом, см. в разделе [Цвет элементов](../style/color.md#accent-color).
 
@@ -871,8 +863,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 ### Пример цвета UWP
 
-
-              [Цветовые темы UWP](../style/color.md#color-themes) разработаны на основе фона приложения, который может быть или **черным** для темной темы, или **белым** для светлой темы. Так как ни черный, ни белый не являются безопасными для телевизионного экрана цветами, их необходимо исправить с помощью *закрепления*. После их исправления все остальные цвета необходимо скорректировать с помощью *масштабирования* для сохранения необходимой контрастности.
+[Цветовые темы UWP](../style/color.md#color-themes) разработаны на основе фона приложения, который может быть или **черным** для темной темы, или **белым** для светлой темы. Так как ни черный, ни белый не являются безопасными для телевизионного экрана цветами, их необходимо исправить с помощью *закрепления*. После их исправления все остальные цвета необходимо скорректировать с помощью *масштабирования* для сохранения необходимой контрастности.
 
 <!--[v-lcap to eliot]why is the above paragraph in the past tense?-->
 <!--[elcowle] Because this is something that Microsoft had to do to the UWP color themes to accommodate TV-safe colors for Xbox. These themes are then provided in the below code sample.-->
@@ -973,7 +964,7 @@ if (IsTenFoot)
 
 ### Элемент управления Pivot
 
-Элемент управления [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx) обеспечивает возможность быстрого перемещения между представлениями в приложении путем выбора различных заголовков и вкладок. Элемент управления подчеркивает все заголовки с фокусом, что позволяет проще понять, какой заголовок в данный момент выбран при использовании геймпада/пульта ДУ. 
+Элемент управления [Pivot](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.pivot.aspx) обеспечивает возможность быстрого перемещения между представлениями в приложении путем выбора различных заголовков и вкладок. Элемент управления подчеркивает все заголовки с фокусом, что позволяет проще понять, какой заголовок в данный момент выбран при использовании геймпада/пульта ДУ. 
 
 ![Подчеркивание с помощью элемента управления Pivot](images/designing-for-tv/pivot-underline.png)
 
@@ -995,7 +986,7 @@ if (IsTenFoot)
 
 ### Подписи CommandBar
 
-Подписи полезно размещать справа от значков на панели [CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) для уменьшения ее высоты и сохранения согласованности ее структуры. Это можно сделать, задав свойству [CommandBar.DefaultLabelPosition](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx) значение `CommandBarDefaultLabelPosition.Right`.
+Подписи полезно размещать справа от значков на панели [CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) для уменьшения ее высоты и сохранения согласованности ее структуры. Это можно сделать, задав свойству [CommandBar.DefaultLabelPosition](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx) значение `CommandBarDefaultLabelPosition.Right`.
 
 ![Панель CommandBar с подписями, расположенными справа от значков](images/designing-for-tv/commandbar.png)
 
@@ -1007,7 +998,7 @@ if (IsTenFoot)
 
 ### Всплывающая подсказка
 
-Элемент управления [Tooltip](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltip.aspx) предоставляет дополнительные сведения об элементе пользовательского интерфейса при наведении на него указателя мыши или при его нажатии и удержании. При использовании геймпада и пульта ДУ элемент `Tooltip` отображается после получения элементом фокуса, остается на экране в течение краткого времени, а затем исчезает. Это поведение может отвлекать, если используется слишком много элементов `Tooltip`. Пытайтесь избегать использования `Tooltip` при проектировании приложений для телевизора.
+Элемент управления [Tooltip](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.tooltip.aspx) предоставляет дополнительные сведения об элементе пользовательского интерфейса при наведении на него указателя мыши или при его нажатии и удержании. При использовании геймпада и пульта ДУ элемент `Tooltip` отображается после получения элементом фокуса, остается на экране в течение краткого времени, а затем исчезает. Это поведение может отвлекать, если используется слишком много элементов `Tooltip`. Пытайтесь избегать использования `Tooltip` при проектировании приложений для телевизора.
 
 ### Стили кнопок
 
@@ -1015,13 +1006,11 @@ if (IsTenFoot)
 
 ### Вложенные элементы пользовательского интерфейса
 
-Если элементы пользовательского интерфейса вложены в другие элементы, по умолчанию пользователь не сможет получить к ним доступ.
+Вложенные элементы пользовательского интерфейса предоставляет вложенные активные элементы, заключенные в контейнерном элементе пользовательского интерфейса. При этом вложенный элемент и контейнер могут принимать фокус независимо друг от друга.
 
-Один из основных сценариев — отображение элемента при наведении указателя мыши на вложенный элемент пользовательского интерфейса, который в противном случае не отображается.
+Вложенные элементы пользовательского интерфейса подходят для некоторых методов ввода, но не всегда удобны при использовании геймпада и пульта ДУ, где фокус перемещается по осям X и Y. Следуйте рекомендациям в этой статье, чтобы оптимизировать ваш пользовательский интерфейс для просмотра на большом расстоянии и обеспечить пользователю удобство доступа ко всем активным элементам. Одно из распространенных решений заключается в размещении вложенных элементов пользовательского интерфейса в `ContextFlyout` (см. раздел [CommandBar и ContextFlyout](#commandbar-and-contextflyout)).
 
-![Элементы пользовательского интерфейса, которые отображаются при наведении на них указателя мыши](images/designing-for-tv/2d-navigation-best-practices-ui-elements-display-on-mouse-hover.png)
-
-Рекомендуемый способ обработки данного сценария при вводе с геймпада/пульта ДУ — размещение этих элементов пользовательского интерфейса в `ContextFlyout` (см. раздел [CommandBar и ContextFlyout](#commandbar-and-contextflyout)).
+Подробнее о вложенных элементах пользовательского интерфейса см. в разделе [Вложенные элементы пользовательского интерфейса в элементах списка](../controls-and-patterns/nested-ui.md).
 
 ### MediaTransportControls
 
@@ -1116,6 +1105,6 @@ bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily 
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

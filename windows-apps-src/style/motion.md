@@ -5,8 +5,9 @@ title: "Движение и анимация в приложениях UWP"
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
+translationtype: Human Translation
+ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
+ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
 
 ---
 
@@ -14,7 +15,7 @@ ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
 
 Целенаправленная, хорошо спроектированная анимация оживляет приложение и делает взаимодействие приятным и удобным. Помогите пользователям сориентироваться в изменениях контекста, применяя визуальные переходы.
 
-## <span id="Benefits_of_animation"></span><span id="benefits_of_animation"></span><span id="BENEFITS_OF_ANIMATION"></span>Преимущества анимации
+## Преимущества анимации
 
 
 Анимация — это не просто движущиеся объекты. Анимация — это средство создания физической экосистемы для пользователя, в которую он сможет полностью погрузиться и которой он сможет управлять при помощи сенсорного взаимодействия. Качество взаимодействия зависит от того, насколько хорошо приложение реагирует на действия пользователя, и от того, с кем оно взаимодействует.
@@ -61,7 +62,7 @@ ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
         </td>
         <td>Анимации списка позволяют вставлять или удалять один или несколько элементов коллекции, например в фотоальбоме или результатах поиска.
         </td>
-    </tr> 
+    </tr>
     <tr>
         <td>[Перетаскивание](motion-dragdrop.md)
         </td>
@@ -110,10 +111,6 @@ ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

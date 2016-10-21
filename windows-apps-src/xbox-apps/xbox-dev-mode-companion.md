@@ -1,38 +1,48 @@
 ---
 author: payzer
-title: Xbox Dev Mode Companion
-description: Provides information about the Xbox Dev Mode Companion app.
+title: "Компаньон режима разработчика Xbox"
+description: "Содержит сведения о приложении Компаньон режима разработчика Xbox."
+translationtype: Human Translation
+ms.sourcegitcommit: 87ebc9ec01b349af033984b17d150e56d7a8cb2f
+ms.openlocfilehash: 036a581481888373249857ee21fe339819779dd0
+
 ---
 
-# Xbox Dev Mode Companion
+# Компаньон режима разработчика Xbox
 
-Xbox Dev Mode Companion allows you to remotely connect to an Xbox One console and control it. This tool was created for developers using Xbox Developer Mode.
+Приложение Компаньон режима разработчика Xbox позволяет удаленно подключаться к консоли Xbox One и управлять ею. Это средство создано для разработчиков, использующих режим разработчика Xbox.
 
-## How to get the app  
-Download the [Xbox Dev Mode Companion (Preview)](https://www.microsoft.com/store/p/xbox-dev-mode-companion/9nblggh519cp).
+## Как получить приложение  
+Скачайте приложение [Компаньон режима разработчика Xbox (предварительная версия)](https://www.microsoft.com/store/p/xbox-dev-mode-companion/9nblggh519cp).
 
-## How to connect   
-To connect to your console:
+## Как подключиться   
+Для подключения к консоли выполните следующие действия.
 
-1. Launch the app.   
-2. If you don't see your console listed in the connection dialog, type your console's IP address in the text box at the bottom of the dialog, and then select **Connect**.
+1. Запустите приложение.   
+2. Если консоль не отображается в диалоговом окне подключения, введите IP-адрес консоли в текстовое поле в нижней части диалогового окна и нажмите кнопку **Подключиться**.
 
-## Streaming controls
-After you have connected, you can access the streaming controls by hovering over the streaming area with your mouse. These controls allow you to:
-* Toggle between full screen and windowed mode.
-* Launch the Windows Device Portal.
-* Turn the console on and off.
-* Disconnect.
+## Элементы управления потоковой передачей
+После подключения можно получить доступ к элементам управления потоковой передачей при наведении указателя мыши на область потоковой передачи. Эти элементы управления позволяют выполнять следующие действия.
+* Переключаться между полноэкранным и оконным режимом.
+* Запускать портал устройств Windows.
+* Включать и выключать консоль.
+* Производить отключение.
 
-## Input
-To send input to your console through the app, you can plug in an Xbox One controller to your PC.   
+## Ввод
+Чтобы отправлять через приложение на консоль команды ввода, можно подключить к компьютеру контроллер Xbox One.   
     
-You can also use the arrow, enter, and escape keys on the keyboard to navigate console UI and apps that support keyboard navigation. The Help page has a full keyboard mapping.   
+Также можно использовать клавиши ВВОД, ESCAPE и клавиши со стрелками на клавиатуре для навигации по интерфейсу консоли и в приложениях, поддерживающих навигацию с помощью клавиатуры. Полное сопоставление клавиатуры представлено на странице справки.   
    
-Finally, in text boxes, you can type on your keyboard to send text to the console.   
+Наконец, для отправки текста на консоль можно вводить его с помощью клавиатуры в текстовых полях.   
 
-## Help
-You can view the help page by clicking the ? icon on either the connect dialog or the command bar.
+## Справка
+Страницу справки можно открыть, щелкнув значок «?» в диалоговом окне подключения или панели команд.
 
-## See also
-- [UWP on Xbox One](index.md)
+## См. также
+- [Приложения UWP для Xbox One](index.md)
+
+
+
+<!--HONumber=Sep16_HO1-->
+
+

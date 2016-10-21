@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 05b10814-4548-4dd4-bf71-72157a50986c
 description: "Сведения о решении распространенных проблем разработки, связанных с библиотеками Microsoft Advertising."
 title: "Руководства по устранению неполадок"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 4a006cbd1a1f38e2410098d074a35df4a2468963
+translationtype: Human Translation
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 4a8b43ac0b6752b78e998ac16776b84e9ddda09f
 
 
 ---
@@ -12,7 +13,7 @@ ms.openlocfilehash: 4a006cbd1a1f38e2410098d074a35df4a2468963
 # Руководства по устранению неполадок
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 В этом разделе описаны решения распространенных проблем разработки, связанных с библиотеками Microsoft Advertising.
 
@@ -28,6 +29,6 @@ ms.openlocfilehash: 4a006cbd1a1f38e2410098d074a35df4a2468963
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

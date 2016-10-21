@@ -1,21 +1,25 @@
 ---
 author: mijacobs
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
-title: Dialogs and flyouts
+Description: "Диалоговые окна и всплывающие элементы используются для временного отображения элементов пользовательского интерфейса по запросу пользователя, либо если происходит нечто, требующее уведомления или подтверждения."
+title: "Диалоговые окна и всплывающие элементы"
 label: Dialogs
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: ff9940c06276165dc139e120c4e9cdeb005ff125
+
 ---
+# Диалоговые окна и всплывающие элементы
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Dialogs and flyouts
-
-Dialogs and flyouts are transient UI elements that appear when something happens that requires notification, approval, or additional information from the user.
+Диалоговые окна и всплывающие элементыиспользуются для временного отображения элементов пользовательского интерфейса, если происходит нечто, требующее уведомления, подтверждения или дополнительных сведений от пользователя.
 
 <div class="important-apis" >
-<b>Important APIs</b><br/>
+<b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">ContentDialog class</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Flyout class</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">Класс ContentDialog</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Класс Flyout</a></li>
 </ul>
 
 </div>
@@ -43,40 +47,40 @@ Dialogs and flyouts are transient UI elements that appear when something happens
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>Dialogs</b> <br/><br/>
-   ![Example of a full-button dialog](images/controls_dialog_twobutton.png)</p>
-<p>Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.   
+   <p><b>Диалоговые окна</b> <br/><br/>
+   ![Пример полнокнопочного диалогового окна](images/controls_dialog_twobutton.png)</p>
+<p>Диалоговые окна — это модальные наложения пользовательского интерфейса, которые предоставляют контекстную информацию о приложении. Диалоговые окна блокируют взаимодействие с окном приложения, пока пользователь явно не закроет окно. Они часто требуют от пользователя совершения каких-либо действий.   
 </p><br/>
 
   </div>
   <div class="side-by-side-content-right">
-   <p><b>Flyouts</b> <br/><br/>
-   ![Example of a flyout](images/flyout-example.png)</p>
-<p>A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a hidden control, show more detail about an item, or ask the user to confirm an action. 
-</p><p>Unlike a dialog, a flyout can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
+   <p><b>Всплывающие элементы</b> <br/><br/>
+   ![Пример всплывающего элемента](images/flyout-example.png)</p>
+<p>Всплывающий элемент — это облегченное всплывающее контекстно-зависимое окно, отображающее элемент пользовательского интерфейса в зависимости от действий пользователя. Расположение и размер всплывающего элемента подчиняются определенным правилам. Он позволяет обнаружить скрытый элемент управления, отобразить дополнительные сведения об элементе либо запросить у пользователя подтверждение действия. 
+</p><p>В отличие от диалогового окна, всплывающий элемент можно быстро закрыть нажатием или щелчком за его пределами, нажатием клавиши Escape или кнопки "Назад", изменением размера окна приложения или ориентации устройства.
 </p><br/>
 
   </div>
 </div>
 </div>
 
-## Is this the right control?
+## Выбор правильного элемента управления
 
-* Use dialogs and flyouts to notify users of important information or to request confirmation or additional info before an action can be completed. 
-* Don't use a flyout instead of [tooltip](tooltips.md) or [context menu](menus.md). Use a tooltip to show a short description that hides after a specified time. Use a context menu for contextual actions related to a UI element, such as copy and paste.  
-
-
-Dialogs and flyouts make sure that users are aware of important information, but they also disrupt the user experience. Because dialogs are modal (blocking), they interupt users, preventing them from doing anything else until they interact with the dialog. Flyouts provide a less jarring experience, but displaying too many flyouts can be distracting. 
-
-Consider the importance of the information you want to share: is it important enough to interupt the user? Also consider how frequently the information needs to be shown; if you're showing a dialog or notification every few minutes, you might want to allocate space for this info in the primary UI instead. For example, in a chat client, rather than showing a flyout every time a friend logs in, you might display a list of friends who are online at the moment and highlight friends as they log on. 
-
-Flyouts and dialogs are frequently used to confirm an action (such as deleting a file) before executing it. If you expect the user to perform a particular action frequently, consider providing a way for the user to undo the action if it was a mistake, rather than forcing users to confirm the action every time. 
+* Диалоговые окна и всплывающие элементы используются для уведомления пользователей о важной информации или запроса подтверждения либо дополнительных сведений перед совершением действия. 
+* Не используйте всплывающий элемент вместо [подсказки](tooltips.md) или [контекстного меню](menus.md). Используйте подсказку, чтобы вывести краткое описание, которое исчезает через определенное время. Для контекстных действий, связанных с элементом пользовательского интерфейса, например копированием или вставкой, используйте контекстное меню.  
 
 
+Диалоговые окна и всплывающие элементы позволяют пользователям быть в курсе важной информации, но также мешают взаимодействию с пользователем. Поскольку диалоговые окна модальны (приводят к блокировке), они прерывают работу пользователей и мешают им выполнять дальнейшие действия, пока не произойдет взаимодействие с диалоговым окном. Всплывающие элементы в меньшей степени мешают взаимодействию с пользователем, но отображение слишком большого числа всплывающих элементов может отвлекать. 
 
-## Dialogs vs. flyouts
+Учитывайте важность информации, которую требуется отобразить: важна ли она настолько, чтобы прерывать пользователя? Также учтите частоту отображения информации. Если диалоговое окно или уведомление отображается каждые несколько минут, возможно, следует выделить для этой информации место в основном пользовательском интерфейсе. Возьмем, к примеру, клиент чата. Вместо того чтобы отображать всплывающий элемент каждый раз, когда друг выполняет вход, можно отображать список друзей, находящихся на данный момент в сети, и выделять друзей, выполняющих вход. 
 
-Once you've determined that you want to use a dialog or flyout, you need to choose which one to use. 
+Всплывающие элементы и диалоговые окна часто используются для подтверждения действия (например, удаления файла) перед его выполнением. Если ожидается, что пользователь будет часто выполнять определенное действие, вы можете предоставить пользователю возможность отменить ошибочное действие, чем запрашивать его подтверждение каждый раз. 
+
+
+
+## Диалоговые окна и всплывающие элементы
+
+Определив, собираетесь ли вы использовать диалоговое окно или всплывающий элемент, необходимо выбрать один из этих вариантов. 
 
 <!--
 Dialogs are modal, which means they block all interaction with the app until the user selects a dialog button. To visually reinforce their modal behavior, dialogs draw an overlay layer which partially obscures the temporarily unreachable app UI.
@@ -91,34 +95,34 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 
 -->
 
-Given that dialogs block interactions and flyouts do not, dialogs should be reserved for situations where you want the user to drop everything to focus on a specific bit of information or answer a question. Flyouts, on the other hand, can be used when you want to call attention to something, but it's ok if the user wants to ignore it. 
+Учитывая то, что, в отличие от всплывающих элементов, диалоговые окна блокируют взаимодействие, последние следует использовать в тех случаях, когда пользователь должен уделить все внимание определенной информации или ответить на вопрос. С другой стороны, всплывающие элементы можно использовать для привлечения внимания к определенной информации, которую пользователь вполне может проигнорировать. 
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>Use a dialog for...</b> <br/>
+   <p><b>Используйте диалоговое окно в следующих целях.</b> <br/>
 <ul>
-<li>Expressing important information that the user **must** read and acknowledge before proceeding. Examples include:
+<li>Чтобы сообщить важную информацию, которую пользователь **должен** прочитать и осознать перед продолжением работы. Ниже перечислены примеры таких данных.
 <ul>
-  <li>When the user's security might be compromised</li>
-  <li>When the user is about to permanently alter a valuable asset</li>
-  <li>When the user is about to delete a valuable asset</li>
-  <li>To confirm an in-app purchase</li>
+  <li>угроза безопасности пользователя;</li>
+  <li>намерение изменить ценные данные без возможности отмены действия;</li>
+  <li>намерение удалить ценные данные;</li>
+  <li>подтверждение покупки из приложения;</li>
 </ul>
 
 </li>
-<li>Error messages that apply to the overall app context, such as a connectivity error.</li>
-<li>Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf. A blocking question can't be ignored or postponed, and should offer the user well-defined choices.</li>
+<li>Сообщения об ошибках, которые относятся к приложению в целом, например ошибка подключения.</li>
+<li>Вопросы, если приложению нужно задать пользователю блокирующий вопрос, например, если приложение не может сделать выбор от имени пользователя. Блокирующий вопрос нельзя проигнорировать или отложить. У пользователя должны быть понятные варианты выбора.</li>
 </ul> 
 </p>
   </div>
   <div class="side-by-side-content-right">
-   <p><b>Use a flyout for...</b> <br/>
+   <p><b>Используйте всплывающий элемент в следующих целях.</b> <br/>
 <ul>
-<li>Collecting additional information needed before an action can be completed.</li>
-<li>Displaying info that's only relevent some of the time. For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.</li>
-<li>Warnings and confirmations, including ones related to potentially destructive actions.</li>
-<li>Displaying more information, such as details or longer descriptions of an item on the page.</li>
+<li>сбор дополнительных сведений для завершения действия;</li>
+<li>отображение временно актуальных сведений; например, когда пользователь щелкает эскиз изображения в приложении фотоальбома, можно использовать всплывающий элемент для отображения увеличенного варианта этого изображения;</li>
+<li>предупреждения и подтверждения, в том числе связанные с потенциально деструктивными действиями;</li>
+<li>отображение дополнительной информации, например подробных сведений или более длинных описаний элемента на странице.</li>
 </ul></p>
   </div>
 </div>
@@ -126,24 +130,24 @@ Given that dialogs block interactions and flyouts do not, dialogs should be rese
 
 
 
-## Dialog usage guidelines
+## Инструкции по использованию диалоговых окон
 
--   Clearly identify the issue or the user's objective in the first line of the dialog's text.
--   The dialog title is the main instruction and is optional.
-    -   Use a short title to explain what people need to do with the dialog. Long titles do not wrap and are truncated.
-    -   If you're using the dialog to deliver a simple message, error or question, you can optionally omit the title. Rely on the content text to deliver that core information.
-    -   Make sure that the title relates directly to the button choices.
--   The dialog content contains the descriptive text and is required.
-    -   Present the message, error, or blocking question as simply as possible.
-    -   If a dialog title is used, use the content area to provide more detail or define terminology. Don't repeat the title with slightly different wording.
--   At least one dialog button must appear.
-    -   Buttons are the only mechanism for users to dismiss the dialog.
-    -   Use buttons with text that identifies specific responses to the main instruction or content. An example is, "Do you want to allow AppName to access your location?", followed by "Allow" and "Block" buttons. Specific responses can be understood more quickly, resulting in efficient decision making.
--   Error dialogs display the error message in the dialog box, along with any pertinent information. The only button used in an error dialog should be “Close” or a similar action.
--   Don't use dialogs for errors that are contextual to a specific place on the page, such as validation errors (in password fields, for example), use the app's canvas itself to show inline errors.
+-   В первой строке диалогового сообщения явно изложите, в чем проблема или что требуется от пользователя.
+-   Заголовок диалогового окна — это основная инструкция. Он необязателен.
+    -   Используйте краткий заголовок для пояснений, что пользователям следует сделать в диалоговом окне. Длинные заголовки не переносятся по строкам и будут усечены.
+    -   Если вы используете диалоговое окно для простого сообщения, указания на ошибку или вопроса, заголовок можно опустить. Ключевую информацию должен передавать текст сообщения.
+    -   Убедитесь, что заголовок соответствует предлагаемому выбору кнопок.
+-   Содержимое диалогового окна включает текст описания. Оно обязательно.
+    -   Изложите сообщение, ошибку или блокирующий вопрос как можно проще.
+    -   Если имеется заголовок диалогового окна, используйте область содержимого для более подробных сведений или пояснения терминологии. Не повторяйте заголовок в немного измененной формулировке.
+-   Должна иметься по крайней мере одна диалоговая кнопка.
+    -   Кнопки — это единственный механизм, позволяющий пользователям закрыть диалоговое окно.
+    -   Используйте кнопки с текстом, которые определяют конкретные варианты ответа на основную инструкцию или содержание. Например: "Разрешить приложению AppName доступ к вашему расположению?", после которого следуют кнопки "Разрешить" и "Запретить". Конкретные варианты ответа воспринимаются быстрее, что помогает эффективно принимать решения.
+-   Диалоговые окна ошибки отображают сообщение об ошибке в диалоговом окне, а также любые сопутствующие сведения. На единственной кнопке, используемой в диалоговом окне ошибки, должно быть написано «Закрыть» или аналогичное действие.
+-   Не используйте диалоговые окна при возникновении контекстно-зависимых от определенной области на странице ошибок, таких как ошибки при проверке (например, в полях для ввода паролей). Используйте непосредственно элемент Canvas приложения для отображения внутренних ошибок.
 
-## Create a dialog
-To create a dialog, you use the [ContentDialog class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx). You can create a dialog in code or markup. Although its usually easier to define UI elements in XAML, in the case of a simple dialog, it's actually easier to just use code. This example creates a dialog to notify the user that there's no WiFi connection, and then uses the [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method to display it.
+## Создание диалогового окна
+Для создания диалогового окна используется [класс ContentDialog](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx). Диалоговое окно можно создать в виде кода или разметки. Хотя обычно проще определять элементы пользовательского интерфейса в XAML, при создании простого диалогового окна удобнее использовать обычный код. В этом примере показано создание диалогового окна для уведомления пользователя об отсутствии подключения к сети WiFi, а для отображения диалогового окна используется метод [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx).
 
 ```csharp
 private async void displayNoWifiDialog()
@@ -159,9 +163,9 @@ private async void displayNoWifiDialog()
 }
 ```
 
-When the user clicks a dialog button, the [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method returns a [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) to let you know which button the user clicks. 
+Когда пользователь нажимает кнопку диалогового кона, метод [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) возвращает [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx), чтобы сообщить вам, какую кнопку нажал пользователь. 
 
-The dialog in this example asks a question and uses the returned [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) to determine the user's response. 
+В этом примере в диалоговом окне задается вопрос и используется возвращенный [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx), чтобы определить ответ пользователя. 
 
 ```csharp
 private async void displayDeleteFileDialog()
@@ -186,13 +190,13 @@ private async void displayDeleteFileDialog()
 ```
 
 
-##  Create a flyout
+##  Создание всплывающего элемента
 
-A flyout is an open-ended container that can show arbitrary UI as its content.  
+Всплывающий элемент— это контейнер с открытым окончанием, который показывает в качестве своего содержимого произвольный пользовательский интерфейс.  
 
-Flyouts are attached to specific controls. You can use the [Placement](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.placement.aspx) property to specify where flyout appears: Top, Left, Bottom, Right, or Full. If you select the [Full placement mode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutplacementmode.aspx), the app stretches the flyout and centers it inside the app window. When visible, they should be anchored to the invoking object and specify their preferred relative position to the object: Top, Left, Bottom, or Right. Flyout also has a Full placement mode which attempts to stretch the flyout and center it inside the app window. Some controls, such as [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx), provide a [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) property that you can use to associate a flyout. 
+Всплывающие элементы связаны с определенными элементами управления. Вы можете использовать свойство [Placement](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.placement.aspx) для указания места отображения всплывающего элемента: вверху, слева, внизу, справа или в центре. Если выбрать [полный режим размещения](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutplacementmode.aspx), приложение растягивает всплывающий элемент или размещает его в центре окна приложения. Если они видны, их необходимо прикрепить к вызывающему объекту и указать их предпочтительное расположение относительно объекта: сверху, слева, снизу или справа. Всплывающий элемент также имеет полный режим размещения, при котором всплывающий элемент растягивается на весь экран и выравнивается по центру внутри окна приложения. Некоторые элементы управления, например [Кнопка](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx), содержат свойство [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx), которое можно использовать для привязки всплывающего элемента. 
 
-This example creates a simple flyout that displays some text when the button is pressed. 
+В этом примере создается простой всплывающий элемент, в котором отображается текст при нажатии кнопки. 
 ````xaml
 <Button Content="Click me">
   <Button.Flyout>
@@ -203,9 +207,9 @@ This example creates a simple flyout that displays some text when the button is 
 </Button>
 ````
 
-If the control doesn't have a flyout property, you can use the [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) attached property instead. When you do this, you also need to call the [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) method to show the flyout. 
+Если элемент управления лишен свойства "Flyout", вы можете использовать присоединенное свойство [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx). При этом также следует вызвать метод [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) для отображения всплывающего элемента. 
 
-This example adds a simple flyout to an image. When the user taps the image, the app shows the flyout. 
+В этом примере к изображению добавляется простой всплывающий элемент. Когда пользователь нажимает на изображение, приложение отображает всплывающий элемент. 
 
 ````xaml
 <Image Source="Assets/cliff.jpg" Width="50" Height="50" 
@@ -225,7 +229,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-The previous examples defined their flyouts inline. You can also define a flyout as a static resource and then use it with multiple elements. This example creates a more complicated flyout that displays a larger version of an image when its thumbnail is tapped. 
+В предыдущих примерах всплывающие элементы определялись внутренне. Вы также можете определить всплывающий элемент как статический ресурс и использовать его с несколькими элементами. В этом примере показано создание более сложного всплывающего элемента, в котором отображается увеличенный вариант изображения при нажатии его эскиза. 
 
 ````xaml
 <!-- Declare the shared flyout as a resource. -->
@@ -274,8 +278,8 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-## Style a flyout
-To style a Flyout, modify its [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx). This example shows a paragraph of wrapping text and makes the text block accessible to a screen reader.
+## Стилизация всплывающего элемента
+Для стилизации всплывающего элемента изменяется его свойство [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx). В этом примере показан абзац создания программы-оболочки текста и делает блок текста доступным для программ чтения с экрана.
 
 ````xaml
 <Flyout>
@@ -292,12 +296,18 @@ To style a Flyout, modify its [FlyoutPresenterStyle](https://msdn.microsoft.com/
 </Flyout>
 ````
 
-## Get the samples
-*   [XAML UI basics](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
-    See all of the XAML controls in an interactive format.
+## Получение примеров
+*   [Основы создания пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    Ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## Related articles
-- [Tooltips](tooltips.md)
-- [Menus and context menu](menus.md)
-- [**Flyout class**](https://msdn.microsoft.com/library/windows/apps/dn279496)
-- [**ContentDialog class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
+## Связанные разделы
+- [Подсказки](tooltips.md)
+- [Меню и контекстное меню](menus.md)
+- [**Класс Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496)
+- [**Класс ContentDialog**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

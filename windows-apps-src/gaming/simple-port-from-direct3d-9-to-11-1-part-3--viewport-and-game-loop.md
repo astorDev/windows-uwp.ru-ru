@@ -3,8 +3,9 @@ author: mtoepke
 title: "Портирование игрового цикла"
 description: "Здесь показано, как реализовать окно для игрового приложения UWP и перенести игровой цикл, включая создание интерфейса IFrameworkView для управления полноэкранным CoreWindow."
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3c2369a2fdc48aed14f7ad363df8792e0ed5d795
+ms.openlocfilehash: 8d843d8b22623dfbba3a76eb7ef19a82cc07f04f
 
 ---
 
@@ -29,8 +30,7 @@ ms.openlocfilehash: 3c2369a2fdc48aed14f7ad363df8792e0ed5d795
 
 В приложениях UWP все гораздо проще. Вместо того чтобы создавать традиционное окно, в игровом приложении Магазина Windows на базе DirectX реализуется интерфейс [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). Этот интерфейс предназначен для того, чтобы выполнять игры и приложения на базе DirectX непосредственно в объекте [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) внутри контейнера приложения.
 
-> 
-            **Примечание.**   Windows предоставляет управляемые указатели на ресурсы, такие как объект приложения-источника и [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). См. [**Оператор дескриптора объекта (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
+> **Примечание.** Windows предоставляет управляемые указатели на ресурсы, такие как объект приложения-источника и [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). См. [**Оператор дескриптора объекта (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
 
  
 
@@ -144,6 +144,6 @@ while (true)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

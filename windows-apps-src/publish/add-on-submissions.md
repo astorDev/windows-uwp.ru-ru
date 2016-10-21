@@ -1,76 +1,86 @@
 ---
 author: jnHs
-Description: Add-ons are published through the Windows Dev Center dashboard.
-title: Add-on submissions
+Description: "Надстройки публикуются на панели мониторинга Центра разработки для Windows."
+title: "Отправка надстроек"
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
+translationtype: Human Translation
+ms.sourcegitcommit: d67931b4ab23d2b6aef945e839d193e140240cf9
+ms.openlocfilehash: 400c2e2ee65e408c996193230b05c68264830f0d
+
 ---
 
-# Add-on submissions
+# Отправка надстроек
 
-Add-ons (also sometimes referred to as in-app products) are supplementary items for your app that can be purchased by customers. An add-on can be a fun new add-on feature, a new game level, or anything else you think will keep users engaged. Not only are add-ons a great way to make money, but they help to drive customer interaction and engagement.
+Надстройки (или продукты в приложении) — это дополнительный элементы для приложения, которые пользователи могут приобретать. Надстройка может представлять собой новый дополнительный компонент, новый уровень игры или любой другой компонент, который, по вашему мнению, сможет поддержать заинтересованность пользователей. Надстройки — это не только хороший способ для получения доходов, но и для взаимодействие с клиентами.
 
-Add-ons are published through the Windows Dev Center dashboard. You'll also need to [enable the add-ons](../monetize/in-app-purchases-and-trials.md) in your app's code.
+Надстройки публикуются на панели мониторинга Центра разработки для Windows. Вам также необходимо [включить надстройки](../monetize/in-app-purchases-and-trials.md) в коде приложения.
 
-The first step in the add-on submission process is to create the add-on in the dashboard by [defining its product type and product ID](set-your-add-on-product-id.md). After that, you can create a submission so that your add-on can be purchased via the Windows Store. You can submit an add-on at the same time you [submit your app](app-submissions.md), or you can work on it independently. And you can make [updates](#updating-an-add-on-after-submission) to add-ons after the app is in the Store without having to resubmit the app again.
+Первый шаг в процессе отправки надстройки — создание надстройки на информационной панели путем [определения типа и кода продукта](set-your-add-on-product-id.md). После этого можно создать отправку, чтобы надстройку можно было приобрести в Магазине Windows. Вы можете отправить надстройку одновременно с [самим приложением](app-submissions.md) или работать над ней независимо. Вы также можете выпускать [обновления](#updating-an-add-on-after-submission) надстройки после публикации приложения в Магазине. В этом случае приложение не надо будет отправлять повторно.
 
-> **Note**&nbsp;&nbsp;This section of the documentation describes how to create an add-on submission on the Dev Center dashboard. Alternatively, you can use the [Windows Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate add-on submissions.
+> **Примечание.**&nbsp;&nbsp;В этом разделе документации описывается, как создать отправку надстройки в информационной панели Центра разработки. Кроме того, с помощью [API отправки в Магазин Windows](../monetize/create-and-manage-submissions-using-windows-store-services.md) можно автоматизировать отправку надстроек.
 
-## Checklist for submitting an add-on
+## Контрольный список для отправки надстройки
 
-Here's a list of the info that you provide when creating your add-on submission. The items that you are required to provide are noted below. Some of these are optional, or have default values already provided that you can change as desired.
+Ниже приведен список сведений, которые предоставляются при создании отправки надстройки. Элементы, которые следует предоставить в обязательном порядке, приведены ниже. Некоторые из этих элементов являются необязательными или в них уже подставлены значения по умолчанию, которые можно изменить по своему выбору.
 
-### Create a new add-on page
-| Field name                    | Notes                            |
+### Создание страницы надстройки
+| Имя поля                    | Примечания                            |
 |-------------------------------|----------------------------------|
-| [**Product type**](set-your-add-on-product-id.md#product-type)      | Required. If **Durable**, a **Product lifetime** is required. |  
-| [**Product ID**](set-your-add-on-product-id.md#product-id)          | Required |        
+| [**Тип продукта**](set-your-add-on-product-id.md#product-type)      | Обязательный. Если указан параметр **Длительного пользования**, следует указать параметр **Срок действия продукта**. |  
+| [**Код продукта**](set-your-add-on-product-id.md#product-id)          | Обязательно |        
 
 <span/>
 
-### Properties page
-| Field name                    | Notes                              |   
+### Страница свойств
+| Имя поля                    | Примечания                              |   
 |-------------------------------|------------------------------------|
-| [**Product lifetime**](enter-add-on-properties.md#product-lifetime)  | Required if the product type is **Durable**. Not applicable to other product types. |
-| [**Quantity**](enter-add-on-properties.md#quantity)  | Required if the product type is **Store-managed consumable**. Not applicable to other product types.
-| [**Content type**](enter-add-on-properties.md#content-type)          | Required       |               
-| [**Keywords**](enter-add-on-properties.md#keywords)                  | Optional (up to 10 keywords, 30 character limit each) |
-| [**Custom developer data**](enter-add-on-properties.md#custom-developer-data)                               | Optional (3000 character limit)             |
+| [**Срок действия продукта**](enter-add-on-properties.md#product-lifetime)  | Обязательно, если указан тип продукта **Длительного пользования**. Не применимо к другим типам продуктов. |
+| [**Quantity**](enter-add-on-properties.md#quantity)  | Обязательно, если указан тип продукта **Потребляемые надстройки, управляемые Магазином**. Не применимо к другим типам продуктов.
+| [**Тип содержимого**](enter-add-on-properties.md#content-type)          | Требуется       |               
+| [**Ключевые слова**](enter-add-on-properties.md#keywords)                  | Необязательно (до 10 ключевых слов, 30 символов на каждое) |
+| [**Пользовательские данные, определенные разработчиком**](enter-add-on-properties.md#custom-developer-data)                               | Необязательно (ограничение в 3000 символов)             |
 
 <span/>
 
-### Pricing and availability page
-| Field name                    | Notes                                       |
+### Страница сведений о стоимости и доступности
+| Имя поля                    | Примечания                                       |
 |-------------------------------|---------------------------------------------|
-| [**Base price**](set-add-on-pricing-and-availability.md#base-price)                | Required                                    |
-| [**Markets and custom pricing**](set-add-on-pricing-and-availability.md#markets-and-custom-prices)  | Default: available in all possible markets |
-| [**Sale pricing**](put-apps-and-add-ons-on-sale.md)               | Optional                             |
-| [**Distribution and visibility**](set-add-on-pricing-and-availability.md#distribution-and-visibility)   | Default: add-on can be found by customers browsing or searching the Store |
-| [**Publish date**](set-add-on-pricing-and-availability.md#publish-date)                | Default: Publish as soon as the add-on passes certification |
+| [**Базовая цена**](set-add-on-pricing-and-availability.md#base-price)                | Обязательно                                    |
+| [**Рынки и особые цены**](set-add-on-pricing-and-availability.md#markets-and-custom-prices)  | По умолчанию: доступно на всех возможных рынках |
+| [**Цена продажи**](put-apps-and-add-ons-on-sale.md)               | Необязательно                             |
+| [**Распространение и видимость**](set-add-on-pricing-and-availability.md#distribution-and-visibility)   | По умолчанию: пользователи могут найти надстройку при просмотре или поиске в Магазине |
+| [**Дата публикации**](set-add-on-pricing-and-availability.md#publish-date)                | По умолчанию: сразу после прохождения надстройкой сертификации |
 
 <span/>
 
-### Store listings
-One Store listing required. We recommend providing Store listings for every [language](create-add-on-descriptions.md#languages) your app supports.
+### Описания в Магазине
+Требуется одно описание в Магазине. Рекомендуется указывать описания в Магазине для каждого [языка](create-add-on-descriptions.md#languages), поддерживаемого вашим приложением.
 
-| Field name                    | Notes                                       |
+| Имя поля                    | Примечания                                       |
 |-------------------------------|---------------------------------------------|
-| [**Title**](create-add-on-store-listings.md#title)                    | Required (100 character limit)              |
-| [**Description**](create-add-on-store-listings.md#description)       | Optional (200 character limit)              |
-| [**Icon**](create-add-on-store-listings.md#icon)                    | Optional (.png, 300x300 pixels)             |
+| [**Title**](create-add-on-store-listings.md#title)                    | Обязательно (ограничение 100 символов)              |
+| [**Описание**](create-add-on-store-listings.md#description)       | Необязательно (ограничение в 200 символов)              |
+| [**Значок**](create-add-on-store-listings.md#icon)                    | Необязательно (PNG, 300x300 пикселей)             |
 
 <span/>
 
-When you've finished entering this info, click **Submit to the Store**. In most cases, the certification process takes about an hour. After that, your add-on will be published to the Store and ready for customers to purchase.
+После ввода этих данных щелкните **Отправить в Магазин**. В большинстве случаев процесс сертификации занимает около часа. После этого ваша надстройка будет опубликована в Магазине и станет доступна пользователям для покупки.
 
-**Note**  The add-on must also be implemented in your app's code. For more info, see [Enable in-app product purchases](../monetize/enable-in-app-product-purchases.md).
+**Примечание.** Надстройка также должна быть реализована в коде приложения. Дополнительные сведения см. в разделе [Поддержка покупок внутренних продуктов приложения](../monetize/enable-in-app-product-purchases.md).
 
 
-## Updating an add-on after publication
+## Обновление надстройки после публикации
 
-You can make changes to a published add-on at any time. add-on changes are submitted and published independently of your app, so you generally don't need to update the entire app in order to make changes to an add-on such as updating its price or description.
+Вы в любое время можете внести изменения в опубликованную надстройку. Изменения надстройки отправляются и публикуются независимо от вашего приложения, поэтому в большинстве случаев не требуется обновлять все приложение, чтобы внести изменения в надстройку (например, обновить цену или описание).
 
-> **Important**  If your app is available to customers on Windows 8.x, you will need to create and publish a new app submission in order to make the add-on updates visible to those customers. Similarly, if you add new add-ons to an app targeting Windows 8.x after the app has been published, you'll need to update your app's code to reference those add-ons, then resubmit the app. Otherwise, the new add-ons won't be visible to customers on Windows 8.x.
+> **Важно!** Если ваше приложение доступно для пользователей в Windows8.x, необходимо создать и опубликовать новую отправку приложения, чтобы обновления надстройки отобразились для этих пользователей. Аналогичным образом, если вы добавите новые надстройки в ориентированное на Windows 8.x приложение после его публикации, вам понадобится обновить код приложения, чтобы указать ссылки на эти надстройки, а затем повторно отправить приложение. В противном случае новые надстройки не будут видны пользователям в Windows 8.x.
 
-To submit updates, go to the add-on's page in your dashboard and click **Update**. This will create a new submission for the add-on using the info from your previous submission as a starting point. Change the info you'd like, and then click **Submit to the Store**.
+Чтобы отправить обновления, перейдите на страницу надстройки на информационной панели и щелкните **Обновить**. Это приведет к созданию новой отправки для надстройки с использованием в качестве начальной точки сведений из предыдущей отправки. При необходимости измените сведения и щелкните **Отправить в Магазин**.
 
-If you'd like to remove an add-on you've previously offered, you can do this by creating a new submission and changing the [Distribution and visibility](set-add-on-pricing-and-availability.md) option to **No longer available for purchase. Not displayed in your app's listing**. Be sure to update your app's code as needed to also remove references to the add-on.
+Если необходимо удалить ранее предложенную надстройку, можно создать новую отправку и изменить значение [Распространение и видимость](set-add-on-pricing-and-availability.md) на **Больше не доступен для покупки. Не отображается вместе с приложением**. Не забудьте обновить код приложения по мере необходимости, чтобы также удалять ссылки на надстройку.
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

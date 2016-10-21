@@ -6,25 +6,36 @@ ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
 
 ---
 # Элементы управления текстом
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 Элементы управления текстом состоят из текстовых полей ввода, полей паролей, полей автозаполнения и блоков текста. Инфраструктура XAML предоставляет несколько элементов управления отображением, вводом и редактированием текста, а также набор свойств для его форматирования.
 
 - Для отображения текста, доступного только для чтения, применяются элементы управления [TextBlock](text-block.md) и [RichTextBlock](rich-text-block.md).
 - Элементы управления для ввода и редактирования текста: [TextBox](text-box.md), [AutoSuggestBox](auto-suggest-box.md), [PasswordBox](password-box.md) и [RichEditBox](rich-edit-box.md).
 
 
-**Важные API**
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx"><strong>Класс AutoSuggestBox</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx"><strong>Класс PasswordBox</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx"><strong>Класс RichEditBox</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx"><strong>Класс RichTextBlock</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx"><strong>Класс TextBlock</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx"><strong>Класс TextBox</strong></a></li>
+</ul>
 
--   [**Класс AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
--   [**Класс PasswordBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
--   [**Класс RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)
--   [**Класс RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)
--   [**Класс TextBlock**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)
--   [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
+</div>
+</div>
+
+
+
 
 ## Выбор правильного элемента управления
 
@@ -103,8 +114,7 @@ ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
 ## Выбор подходящей клавиатуры для элемента управления текстом
 
-
-            **Применимо к:** TextBox, PasswordBox RichEditBox
+**Применимо к:** TextBox, PasswordBox RichEditBox
 
 Чтобы упростить пользователям ввод данных с помощью сенсорной клавиатуры или панели функционального ввода, можно настроить тип вводимых данных элемента управления текстом, чтобы он соответствовал типу данных, которые должен вводить пользователь.
 
@@ -121,8 +131,7 @@ ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
 ## Шрифты цвета
 
-
-            **Применимо к:** TextBlock, RichTextBlock, TextBox, RichEditBox
+**Применимо к:** TextBlock, RichTextBlock, TextBox, RichEditBox
 
 В Windows шрифты могут включать в себя несколько цветных слоев для каждого глифа. Например, шрифт Segoe UI Emoji определяет версии цветов смайликов и прочих символов-смайликов.
 
@@ -140,8 +149,7 @@ ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
 ## Инструкции по разделителям строк и абзацев
 
-
-            **Применимо к:** TextBlock, RichTextBlock, многострочному TextBox, RichEditBox
+**Применимо к:** TextBlock, RichTextBlock, многострочному TextBox, RichEditBox
 
 Используйте символ знак разделителя в виде линии (0x2028) и символ разделения абзацев (0x2029) для разделения обычного текста. Новая строка начинается после каждого разделителя в виде линии. Новый абзац начинается после каждого разделителя абзаца.
 
@@ -153,8 +161,7 @@ ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
 ## Руководство по проверке орфографии
 
-
-            **Применимо к:** TextBox, RichEditBox
+**Применимо к:** TextBox, RichEditBox
 
 Во время ввода и редактирования текста проверка орфографии сообщает пользователю об ошибке в написании слова, подчеркивая его красной волнистой линией и давая пользователю возможность исправить ошибку.
 
@@ -192,6 +199,6 @@ ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

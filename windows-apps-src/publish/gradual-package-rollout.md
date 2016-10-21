@@ -1,35 +1,45 @@
 ---
 author: JnHs
-Description: If your app uses an AdMediatorControl or AdControl to display banner ads, you could increase your ad fill rate and revenue by showing Microsoft affiliate ads in your app.
-title: Gradual package rollout
+Description: "Если ваше приложение использует AdMediatorControl или AdControl для показа рекламных баннеров, вы можете повысить прибыль и отношение числа показов рекламы к числу попыток за счет показа в приложении рекламы от аффилированных лиц Майкрософт."
+title: "Постепенный выпуск пакета"
+translationtype: Human Translation
+ms.sourcegitcommit: ac9eed95edba99cdba914ff21b25383f35a20012
+ms.openlocfilehash: 3ec642ef0a21d06b20cabb12a47d2abcfd19fe59
+
 ---
 
-# Gradual package rollout
+# Постепенный выпуск пакета
 
-When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission. 
+При публикации обновления отправки можно выбрать постепенное развертывание обновленных пакетов для некоторой процентной доли пользователей вашего приложения в Windows 10. Это позволяет контролировать отзывы и аналитические данные для конкретных пакетов, чтобы вы могли убедиться в правильности обновления до его более широкого распространения. Увеличить процент (или остановить обновление) можно в любое время без необходимости создания новой отправки. 
 
-> **Important** Your rollout selections apply to all of your packages, but will only apply to your customers running OS versions that support package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later, and Xbox), including any customers who get the app via [Store-managed (online) licensing](organizational-licensing.md) via the [Windows Store for Business](https://www.microsoft.com/business-store). When using gradual package rollout, customers on earlier OS versions will not get packages from the latest submission until you finalize the package rollout as described below.
+> **Важно!** Выбранные параметры выпуска применяются ко всем пакетам, но относятся только к пользователям, использующим версии ОС, которые поддерживают тестовые пакеты (Windows.Desktop, сборка 10586 или более поздней версии; Windows.Mobile, сборка 10586.63 или более поздней версии; и Xbox), включая всех пользователей, получающих приложение путем [лицензирования от Магазина (в режиме онлайн)](organizational-licensing.md) через [Магазин Windows для бизнеса](https://www.microsoft.com/business-store). При использовании постепенного выпуска пакета пользователи более ранних версий ОС не получат пакеты из последней отправки до окончательного выпуска пакета, как описано ниже.
 
-Note that all of your customers will see the Store listing details that you entered with your latest submission. The rollout settings only apply to the packages that customers receive, both for new acquisitions and for updates to existing customers.
+Обратите внимание, что все пользователи будут видеть сведения из описания в Магазине, которые были введены при последней отправке. Параметры выпуска применяются только к получаемым пользователями пакетам, как для новых приобретений, так и для обновления существующих пользователей.
 
-> **Tip** Package rollout distributes packages to a random selection of customers in the percentages that you specify. To distribute specific packages to selected customers that you specify, you can use package flights.  You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
+> **Совет.** При выпуске пакеты распространяются для указанной процентной части пользователей, которые выбираются случайным образом. Для распространения конкретных пакетов выбранным вами пользователям можно использовать тестовые пакеты.  Можно также объединить выпуск с тестовыми пакетами, если требуется постепенно распространять обновление в одной из тестовых групп.
 
-## Setting the rollout percentage
+## Задание процентного отношения для выпуска
 
-You can select to roll out your update on the **Packages** page of an updated submission. To do so, check the box that says **Roll out update gradually after this submission is published (to Windows 10 customers only)**. Then enter the percentage of customers who should get the update when the submission is first published. For example, you might enter 5 if you want to start by rolling the update out to only a small percentage of your app’s customers.
+Выпуск обновления можно выбрать на странице **Пакеты** обновленной отправки. Для этого установите флажок **Выпускать обновления постепенно после публикации отправки (только для пользователей Windows 10)**. Затем введите процент пользователей, которые должны получить обновление при первой публикации отправки. Например, можно ввести значение 5, если вы хотите начать выпуск обновления только для небольшого процента пользователей вашего приложения.
 
-Click **Update** to save your selections. After your app completes the certification process, the packages will be distributed to customers according to the percentage that you specified, both for new acquisitions and for updates to existing customers.
+Нажмите кнопку **Обновить**, чтобы сохранить выбранные параметры. После завершения процесса сертификации вашего приложения пакеты будет распространяться для пользователей в соответствии с указанным процентным отношением, как для новых приобретений, так и для обновления существующих пользователей.
 
-## Adjusting the rollout after the submission is published
+## Настройка выпуска после публикации отправки
 
-To adjust the rollout after the submission has been published, go to your app’s Overview page. You can drag the selector to change the percentage of customers getting the packages from your newest submission. Click **Update** to save your selections. The packages will then start to be distributed to customers according to the percentage that you specified, both for new acquisitions and for updates to existing customers.
+Чтобы настроить выпуск после публикации отправки, перейдите на страницу "Обзор" приложения. Перетаскивая селектор, можно изменить процент пользователей, которые получают пакеты из новейшей отправки. Нажмите кнопку **Обновить**, чтобы сохранить выбранные параметры. Пакеты будет распространяться пользователям в соответствии с указанным процентным отношением, как для новых приобретений, так и для обновления существующих пользователей.
 
-## Completing the rollout
+## Завершение выпуска
 
-Before you can create a new submission, you'll need to complete the package rollout. You can **finalize** the rollout and distribute the latest packages to all of your customers, or **halt** the rollout to stop distributing the latest packages.
+Перед созданием новой отправки необходимо завершить выпуск пакета. Можно **завершить** выпуск и распространить новейшие пакеты для всех пользователей, или **остановить** выпуск, чтобы прекратить распространение новейших пакетов.
 
-If you have confidence in the update and would like to make it available to all of your customers, click **Finalize package rollout** to distribute the newest packages to all of your customers.
+Если вы уверены в обновлении и хотите сделать его доступным всем пользователям, щелкните **Finalize package rollout**, чтобы новейшие пакеты распространялись для всех пользователей.
 
-> **Tip** Changing the rollout percentage to 100% does not ensure that all of your customers will get the packages from the latest submissions, because some customers may be on OS versions that don’t support rollout. You must finalize the rollout in order to stop distributing the older packages and update all existing customers to the newer ones.
+> **Совет** Изменение процента выпуска на 100% не гарантирует, что все пользователи получат пакеты из последних отправок, поскольку версии ОС некоторых пользователей могут не поддерживать выпуск. Необходимо завершить выпуск, чтобы прекратить распространение старых пакетов и обновить всех существующих пользователей с использованием новых пакетов.
 
-If you find that there are problems with the update and you don’t want to distribute it any further, you can click **Halt package rollout** to stop distributing packages from the latest submission. Once you halt a package rollout, those packages will no longer be distributed to any customers; only the packages from the previous submission will be used for any new or updating customers. However, any customers who already had the newer packages will keep those packages; they won’t be rolled back to the previous version. To provide an update to these customers, you’ll need to create a new submission with the packages you’d like them to get. Note that if you use a gradual rollout in your next submission, customers who had the package you halted will be offered the new update in the same order they were offered the halted package. The new rollout will be between your last finalized submission and your newest submission; once you halt a package rollout, those packages will no longer be distributed to any customers.
+Если возникли проблемы с обновлением и вы больше не хотите распространять его, можно щелкнуть **Halt package rollout**, чтобы прекратить распространение пакетов из последней отправки. После остановки выпуска пакета такие пакеты больше не будут распространяться никаким пользователям; для новых и обновляемых пользователей будут использоваться только пакеты из предыдущей отправки. Однако у всех пользователей, которые уже получили новые пакеты, эти пакеты сохранятся; для них не будет выполнен откат к предыдущей версии. Для обновления этих пользователей необходимо создать новую отправку с пакетами, которые они должны получить. Обратите внимание, что при использовании постепенного выпуска при следующей отправке пользователям, получившим пакет, распространение которого было остановлено, новое обновление будет предлагаться в том же порядке, в котором им предлагался остановленный пакет. Новый выпуск будет находиться между последней завершенной отправкой и вашей новейшей отправкой; после остановки выпуска пакета эти пакеты больше не распространяются пользователям.
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

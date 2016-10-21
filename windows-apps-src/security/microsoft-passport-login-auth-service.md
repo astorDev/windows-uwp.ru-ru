@@ -3,8 +3,9 @@ title: "Создание службы входа Microsoft Passport"
 description: "Это вторая часть полного пошагового руководства по использованию Microsoft Passport в качестве альтернативы традиционным системам проверки подлинности с помощью имени пользователя и пароля в приложениях универсальной платформы Windows 10 (UWP)."
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 6fe013a69bad964dafa788efb4e26ba521b3d621
+ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 
 ---
 
@@ -1180,6 +1181,6 @@ ms.openlocfilehash: 6fe013a69bad964dafa788efb4e26ba521b3d621
 * [Приложение для входа с использованием Microsoft Passport](microsoft-passport-login.md)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

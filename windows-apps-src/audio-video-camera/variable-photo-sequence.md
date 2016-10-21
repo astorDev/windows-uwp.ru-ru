@@ -3,8 +3,9 @@ author: drewbatgit
 ms.assetid: 7DBEE5E2-C3EC-4305-823D-9095C761A1CD
 description: "В данной статье рассказывается, как захватить переменную последовательность фотографий (то есть несколько снимков, быстро идущих один за другим) и настроить для каждого снимка различные параметры фокусировки, вспышки, ISO, экспозиции и коррекции экспозиции."
 title: "Переменная последовательность фотографий"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c6be6c0ea255c38bba65550ae44c7f88c140ca0f
+translationtype: Human Translation
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: b4f9bc3ad0340a893474360a542f35315ef01712
 
 ---
 
@@ -17,8 +18,8 @@ ms.openlocfilehash: c6be6c0ea255c38bba65550ae44c7f88c140ca0f
 
 Если вам необходимо захватывать изображения с использованием технологии HDR, но вы не хотите создавать собственный алгоритм обработки, вы можете применять API [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386), чтобы использовать встроенные в ОСWindows возможности HDR. Дополнительные сведения см. в статье [Захват фотографий с использованием технологии High Dynamic Range (HDR)](high-dynamic-range-hdr-photo-capture.md).
 
-**Примечание.**  
-В этой статье используются понятия и код из статьи [Фото- и видеозахват с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md), в которой описаны этапы реализации основных принципов фото- и видеозахвата. Мы рекомендуем ознакомиться с базовым шаблоном захвата мультимедиа в этой статье, прежде чем перейти к более сложным сценариям захвата. Код в этой статье подразумевает, что ваше приложение уже содержит экземпляр MediaCapture, инициализированный надлежащим образом.
+> [!NOTE] 
+> В этой статье используются понятия и код из статьи [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), в которой описаны этапы реализации основных принципов фото- и видеозахвата. Мы рекомендуем ознакомиться с базовым шаблоном захвата мультимедиа в этой статье, прежде чем перейти к более сложным сценариям захвата. Код в этой статье подразумевает, что ваше приложение уже содержит экземпляр MediaCapture, инициализированный надлежащим образом.
 
 ## Настройка приложения для захвата переменной последовательности фотографий
 
@@ -87,9 +88,10 @@ ms.openlocfilehash: c6be6c0ea255c38bba65550ae44c7f88c140ca0f
 
 [!code-cs[CleanUpVPS](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVPS)]
 
-## Ссылки по теме
+## Связанные статьи
 
-* [Захват фотографий и видео с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [Камера](camera.md)
+* [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -100,6 +102,6 @@ ms.openlocfilehash: c6be6c0ea255c38bba65550ae44c7f88c140ca0f
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: mtoepke
 title: "Запуск и возобновление работы приложений (DirectX и C++)"
 description: "Узнайте о запуске, приостановке и возобновлении работы приложений универсальной платформы Windows (UWP), использующих DirectX."
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: cc9468e278d651729740147cb21c70d53b43800f
+ms.openlocfilehash: 9a0a1314aa0b174bfb1c44e5280455ab668a42b7
 
 ---
 
@@ -32,6 +33,6 @@ ms.openlocfilehash: cc9468e278d651729740147cb21c70d53b43800f
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
 title: "Оптимизация пользовательского интерфейса ListView и GridView"
 description: "Повысить производительность и время запуска ListView и GridView можно с помощью виртуализации пользовательского интерфейса, сокращения элементов и прогрессивного обновления элементов."
+translationtype: Human Translation
 ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 362fbb6b733e855a2126196f12c650bdf2a7665d
+ms.openlocfilehash: 1aba484afcb704b0b28ceee6027f5ae05d8e420d
 
 ---
 # Оптимизация пользовательского интерфейса ListView и GridView
@@ -26,10 +27,7 @@ ms.openlocfilehash: 362fbb6b733e855a2126196f12c650bdf2a7665d
 
 ## Виртуализация пользовательского интерфейса
 
-Виртуализация пользовательского интерфейса — это самое важное улучшение, которое можно сделать. Это означает, что элементы пользовательского интерфейса, представляющие элементы, создаются по запросу. Для элемента управления элементами, привязанного к коллекции из 1000 элементов, создание пользовательского интерфейса одновременно для всех элементов было бы напрасной тратой ресурсов, поскольку они не могут отображаться одновременно. 
-            [
-              **ListView**
-            ](https://msdn.microsoft.com/library/windows/apps/BR242878) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) (и другие стандартные элементы управления, производные от [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803)) выполняют виртуализацию пользовательского интерфейса за вас. Если элементы близки к появлению на экране (за несколько страниц), платформа создает пользовательский интерфейс для таких элементов и помещает их в кэш. Если повторное появление элементов маловероятно, платформа освобождает память.
+Виртуализация пользовательского интерфейса — это самое важное улучшение, которое можно сделать. Это означает, что элементы пользовательского интерфейса, представляющие элементы, создаются по запросу. Для элемента управления элементами, привязанного к коллекции из 1000 элементов, создание пользовательского интерфейса одновременно для всех элементов было бы напрасной тратой ресурсов, поскольку они не могут отображаться одновременно. [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) (и другие стандартные элементы управления, производные от [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803)) выполняют виртуализацию пользовательского интерфейса за вас. Если элементы близки к появлению на экране (за несколько страниц), платформа создает пользовательский интерфейс для таких элементов и помещает их в кэш. Если повторное появление элементов маловероятно, платформа освобождает память.
 
 Если вы задали пользовательский шаблон панели элементов (см. [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)), следует использовать панель виртуализации, например [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) или [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795). Если вы используете [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651), [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717) или [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), то виртуализация не будет выполнена. Кроме того, следующие события [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) вызываются только при использовании элементов [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) или [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795): [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer), [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) и [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging).
 
@@ -247,14 +245,7 @@ namespace LotsOfItems
 
 **Событие ChoosingItemContainer**
 
-
-            [
-              **ChoosingItemContainer**
-            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer)— это событие, которое позволит предоставить элемент (**ListViewItem**/**GridViewItem**) для [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) при необходимости создания элемента в ходе запуска или повторного использования. Вы можете создать контейнер в зависимости от типа элемента данных, который этот контейнер будет отображать (как в примере ниже). 
-            **ChoosingItemContainer** — это более производительный способ использования разных шаблонов данных для разных элементов. Кэширование контейнера можно обеспечить при помощи **ChoosingItemContainer**. Например, если вы используете пять разных шаблонов и один из них — на порядок чаще других, ChoosingItemContainer позволяет не только создавать элементы в нужных соотношениях, но и сохранять нужное количество помещенных в кэш и доступных для повторного использования элементов. 
-            [
-              **ChoosingGroupHeaderContainer**
-            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer) обеспечивает такую же функциональность для заголовков групп.
+[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer)— это событие, которое позволит предоставить элемент (**ListViewItem**/**GridViewItem**) для [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) при необходимости создания элемента в ходе запуска или повторного использования. Вы можете создать контейнер в зависимости от типа элемента данных, который этот контейнер будет отображать (как в примере ниже). **ChoosingItemContainer** — это более производительный способ использования разных шаблонов данных для разных элементов. Кэширование контейнера можно обеспечить при помощи **ChoosingItemContainer**. Например, если вы используете пять разных шаблонов и один из них — на порядок чаще других, ChoosingItemContainer позволяет не только создавать элементы в нужных соотношениях, но и сохранять нужное количество помещенных в кэш и доступных для повторного использования элементов. [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer) обеспечивает такую же функциональность для заголовков групп.
 
 ```csharp
 // Example shows how to use ChoosingItemContainer to return the correct
@@ -329,6 +320,6 @@ private void lst-ChoosingItemContainer
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

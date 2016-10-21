@@ -8,10 +8,12 @@ title: "Ресурсы темы XAML"
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: fa0d0881eee0f87b549a7d053e75882ffd2afa6e
+translationtype: Human Translation
+ms.sourcegitcommit: 32b6685dfd04994d13dc8805c5205e87a20b10f1
+ms.openlocfilehash: 092b183ead828ae411ff64d37e581bbbb59a1f5b
 
 ---
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 # Ресурсы темы XAML
 
@@ -34,9 +36,7 @@ ms.openlocfilehash: fa0d0881eee0f87b549a7d053e75882ffd2afa6e
 
 Каждый ресурс темы является частью XAML-файла themeresources.xaml. Для целей проектирования файл themeresources.xaml находится в папке \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic, созданной при установке пакета средств разработки программного обеспечения для Windows (SDK). Словари ресурсов в themeresources.xaml также воспроизведены в generic.xaml в том же каталоге.
 
-> 
-            **Примечание.**
-            &nbsp;&nbsp;Среда выполнения Windows не использует эти физические файлы для поиска во время выполнения. Поэтому они специально находятся в папке DesignTime и не копируются в приложения по умолчанию. Вместо этого такие словари ресурсов существуют в памяти как часть самой среды выполнения Windows, и ссылки на ресурсы XAML приложения—на ресурсы темы (или системные ресурсы)—разрешаются там во время выполнения.
+> **Примечание.**&nbsp;&nbsp;Среда выполнения Windows не использует эти физические файлы для поиска во время выполнения. Поэтому они специально находятся в папке DesignTime и не копируются в приложения по умолчанию. Вместо этого такие словари ресурсов существуют в памяти как часть самой среды выполнения Windows, и ссылки на ресурсы XAML приложения—на ресурсы темы (или системные ресурсы)—разрешаются там во время выполнения.
 
  ## Рекомендации по использованию ресурсов темы
 
@@ -53,8 +53,7 @@ ms.openlocfilehash: fa0d0881eee0f87b549a7d053e75882ffd2afa6e
 
     ИСКЛЮЧЕНИЕ. Можно использовать [расширение разметки {ThemeResource}](../xaml-platform/themeresource-markup-extension.md) для ссылки на ресурсы, которые не зависят от темы приложения в словарях [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Примерами таких ресурсов являются ресурсы цветов элементов, такие как `SystemAccentColor`, или ресурсы системных цветов, которые обычно имеют префиксы SystemColor, такие как `SystemColorButtonFaceColor`.
 
-
-            **Внимание!** В случае несоблюдения этих рекомендаций вы можете столкнуться с непредвиденным поведением, связанным с темами в приложении. Дополнительные сведения см. в разделе [Устранение неполадок с ресурсами тем](#troubleshooting_theme_resources).
+**Внимание!** В случае несоблюдения этих рекомендаций вы можете столкнуться с непредвиденным поведением, связанным с темами в приложении. Дополнительные сведения см. в разделе [Устранение неполадок с ресурсами тем](#troubleshooting_theme_resources).
  
 
 ## Кисти, зависимые от темы, и линейно изменяющийся цветовой шаблон XAML
@@ -103,15 +102,11 @@ ms.openlocfilehash: fa0d0881eee0f87b549a7d053e75882ffd2afa6e
 
 | Раздел                           | Имя специальной возможности            | Простое имя HighContrast | Первоначальное стандартное значение |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
-| SystemColorButtonFaceColor    | 
-            **Текст на кнопке** (фон)   | Фон               | \#FFF0F0F0      |
-| SystemColorButtonTextColor    | 
-            **Текст на кнопке** (передний план)   | Передний план               | \#FF000000      |
+| SystemColorButtonFaceColor    | **Текст на кнопке** (фон)   | Фон               | \#FFF0F0F0      |
+| SystemColorButtonTextColor    | **Текст на кнопке** (передний план)   | Передний план               | \#FF000000      |
 | SystemColorGrayTextColor      | **Отключенный текст**              | Отключено                 | \#FF6D6D6D      |
-| SystemColorHighlightColor     | 
-            **Выделенный текст** (фон) | Выделить                | \#FF3399FF      |
-| SystemColorHighlightTextColor | 
-            **Выделенный текст** (передний план) | HighlightAlt             | \#FFFFFFFF      |
+| SystemColorHighlightColor     | **Выделенный текст** (фон) | Выделить                | \#FF3399FF      |
+| SystemColorHighlightTextColor | **Выделенный текст** (передний план) | HighlightAlt             | \#FFFFFFFF      |
 | SystemColorHotlightColor      | **Гиперссылки**                 | Гиперссылка                | \#FF0066CC      |
 | SystemColorWindowColor        | **Фон**                 | PageBackground           | \#FFFFFFFF      |
 | SystemColorWindowTextColor    | **Текст**                       | PageText                 | \#FF000000      |
@@ -127,9 +122,7 @@ Windows предоставляет разные тем с высокой кон�
 
 В дополнение к цветам тем с высокой контрастностью цветовая тема системы предоставляется в форме особого ресурса цвета с использованием раздела `SystemAccentColor`. Во время выполнения этот ресурс получает цвет, который пользователь выбрал в качестве цветовой схемы в параметрах персонализации Windows.
 
-> 
-            **Примечание.**
-            &nbsp;&nbsp;Можно переопределить ресурсы системных цветов для использования высококонтрастного цвета и цветовой схемы, создав ресурс с таким же именем, но рекомендуется придерживаться заданных пользователем вариантов использования цвета, особенно для параметров высокой контрастности.
+> **Примечание.**&nbsp;&nbsp;Можно переопределить ресурсы системных цветов для использования высококонтрастного цвета и цветовой схемы, создав ресурс с таким же именем, но рекомендуется придерживаться заданных пользователем вариантов использования цвета, особенно для параметров высокой контрастности.
 
 ### Кисти, зависимые от темы
 
@@ -157,9 +150,7 @@ Windows предоставляет разные тем с высокой кон�
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> 
-            **Примечание.**
-            &nbsp;&nbsp;Не все сочетания \[*Простого имени HighContrast*\]\[*Простого имени Light/Dark\*] предоставляются как ресурсы кисти.
+> **Примечание.**&nbsp;&nbsp;Не все сочетания \[*Простого имени HighContrast*\]\[*Простого имени Light/Dark\*] предоставляются как ресурсы кисти.
 
 ## Набор шрифтов XAML
 
@@ -173,14 +164,13 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ### BaseTextBlockStyle
 
-
-            **TargetType**: [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
+**TargetType**: [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 Предоставляет общие свойства для всех других стилей контейнеров [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Base" Style="{ThemeResource BaseTextBlockStyle}"/>
+<TextBlock Text="Base" Style="{StaticResource BaseTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
@@ -198,7 +188,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Header" Style="{ThemeResource HeaderTextBlockStyle}"/>
+<TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock"
@@ -213,7 +203,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="SubHeader" Style="{ThemeResource SubheaderTextBlockStyle}"/>
+<TextBlock Text="SubHeader" Style="{StaticResource SubheaderTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="SubheaderTextBlockStyle" TargetType="TextBlock" 
@@ -258,7 +248,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Body" Style="{ThemeResource BodyTextBlockStyle}"/>
+<TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="BodyTextBlockStyle" TargetType="TextBlock" 
@@ -272,7 +262,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Caption" Style="{ThemeResource CaptionTextBlockStyle}"/>
+<TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="CaptionTextBlockStyle" TargetType="TextBlock" 
@@ -284,14 +274,13 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ### BaseRichTextBlockStyle
 
-
-            **TargetType**: [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)
+**TargetType**: [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)
 
 Предоставляет общие свойства для всех других стилей контейнеров [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565).
 
 ```XAML
 <!-- Usage -->
-<RichTextBlock Style="{ThemeResource BaseRichTextBlockStyle}">
+<RichTextBlock Style="{StaticResource BaseRichTextBlockStyle}">
     <Paragraph>Rich text.</Paragraph>
 </RichTextBlock>
 
@@ -312,7 +301,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ```XAML
 <!-- Usage -->
-<RichTextBlock Style="{ThemeResource BodyRichTextBlockStyle}">
+<RichTextBlock Style="{StaticResource BodyRichTextBlockStyle}">
     <Paragraph>Rich text.</Paragraph>
 </RichTextBlock>
 
@@ -322,9 +311,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 </Style>
 ```
 
-> 
-            **Примечание.**
-            &nbsp;&nbsp;  Стили [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) не содержат всех стилей таблицы шрифтов, которые содержит стиль [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652), главным образом потому, что блочная объектная модель документа для **RichTextBlock** упрощает настройку атрибутов в отдельных элементах текста. Кроме того, параметр [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676), использующий свойство XAML-содержимого, описывает ситуацию, где отсутствуют элементы текста, к которым нужно применить стиль, поэтому стиль необходимо применить к контейнеру. Это не является проблемой для **RichTextBlock**, так как его текстовое содержимое всегда должно находиться в определенных элементах текста, таких как [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503). Именно в них вы можете применить стили XAML для заголовка страницы, подзаголовка страницы и аналогичных определений из таблицы шрифтов.
+> **Примечание.**&nbsp;&nbsp;  Стили [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) не содержат всех стилей таблицы шрифтов, которые содержит стиль [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652), главным образом потому, что блочная объектная модель документа для **RichTextBlock** упрощает настройку атрибутов в отдельных элементах текста. Кроме того, параметр [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676), использующий свойство XAML-содержимого, описывает ситуацию, где отсутствуют элементы текста, к которым нужно применить стиль, поэтому стиль необходимо применить к контейнеру. Это не является проблемой для **RichTextBlock**, так как его текстовое содержимое всегда должно находиться в определенных элементах текста, таких как [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503). Именно в них вы можете применить стили XAML для заголовка страницы, подзаголовка страницы и аналогичных определений из таблицы шрифтов.
 
 ## Различные именованные стили
 
@@ -332,8 +319,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ### TextBlockButtonStyle
 
-
-            **TargetType**: [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)
+**TargetType**: [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)
 
 Примените этот стиль к [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), если необходимо отобразить текст, который должен нажать пользователь для выполнения действия. Стиль текста будет соответствовать цветовой схеме и выделять его как интерактивный элемент. Кроме того, для удобной работы текстом будут доступны прямоугольники фокуса. В отличие от неявного стиля [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), при использовании **TextBlockButtonStyle** текст не подчеркивается.
 
@@ -342,7 +328,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 Вот пример кнопки [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) с примененным к ней ресурсом **TextBlockButtonStyle**.
 
 ```XAML
-<Button Content="Clickable text" Style="{ThemeResource TextBlockButtonStyle}" 
+<Button Content="Clickable text" Style="{StaticResource TextBlockButtonStyle}" 
         Click="Button_Click"/>
 ```
 
@@ -352,15 +338,14 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ### NavigationBackButtonNormalStyle
 
-
-            **TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
 Этот стиль [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) предоставляет полный шаблон для элемента управления [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), который может использоваться как кнопка навигации "Назад" для приложения навигации. Он содержит ссылки на ресурсы темы, которые применяют к этой кнопке символьный шрифт Segoe MDL2 Assets, поэтому в качестве содержимого следует использовать значение [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842), а не текст. Размер по умолчанию:40x40 пикселей. Для настройки стиля можно либо явным образом задать [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751), [**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406) и другие свойства кнопки **Button**, либо создать производный стиль, используя [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852).
 
 Вот пример кнопки [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) с примененным к ней ресурсом **NavigationBackButtonNormalStyle**.
 
 ```XAML
-<Button Content="&amp;#xE830;" Style="{ThemeResource NavigationBackButtonNormalStyle}" 
+<Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonNormalStyle}" 
         Click="Button_Click"/>
 ```
 
@@ -370,15 +355,14 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ### NavigationBackButtonSmallStyle
 
-
-            **TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
 Этот стиль [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) предоставляет полный шаблон для элемента управления [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), который может использоваться как кнопка навигации "Назад" для приложения навигации. Он похож на стиль **NavigationBackButtonNormalStyle**, но его размер составляет 30x30 пикселей.
 
 Вот пример кнопки [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) с примененным к ней ресурсом **NavigationBackButtonSmallStyle**.
 
 ```XAML
-<Button Content="&amp;#xE830;" Style="{ThemeResource NavigationBackButtonSmallStyle}" 
+<Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonSmallStyle}" 
         Click="Button_Click"/>
 ```
 
@@ -460,6 +444,6 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

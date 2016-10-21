@@ -3,8 +3,9 @@ author: mcleblanc
 description: "Мы настоятельно рекомендуем прочитать до конца это руководство по переносу, но мы также понимаем, что вы жаждете двигаться вперед и добраться до этапа, на котором выполняется построение и запуск вашего проекта."
 title: "Устранение неполадок при переносе среды выполнения Windows 8.x в UWP"
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
+translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: e5758472d303f4baaf80d45d6b23b54f2a21e002
+ms.openlocfilehash: a6901946f873b751515cb5d9805158e4b78b92bb
 
 ---
 
@@ -53,6 +54,6 @@ ms.openlocfilehash: e5758472d303f4baaf80d45d6b23b54f2a21e002
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

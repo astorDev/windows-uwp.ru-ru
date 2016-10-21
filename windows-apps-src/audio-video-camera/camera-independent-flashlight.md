@@ -3,8 +3,9 @@ author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
 description: "В этой статье можно найти информацию о том, как получить доступ к фонарику устройства (при наличии) и использовать его. Управление фонариком осуществляется отдельно от управления камерой и вспышкой устройства."
 title: "Независимый от камеры фонарик"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
+translationtype: Human Translation
+ms.sourcegitcommit: 1b32633abc9365bf88137dff7c36ba0f2ad05d72
+ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 ---
 
@@ -69,7 +70,8 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 
- 
+## Связанные статьи
+- [Воспроизведение мультимедиа](media-playback.md)
 
  
 
@@ -79,6 +81,6 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

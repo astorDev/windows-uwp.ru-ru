@@ -1,10 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
-description: "Получите общую информацию для разработчиков о библиотеках Microsoft Advertising, входящих в состав пакета SDK Microsoft Store Engagement and Monetization."
+description: "Получите общую информацию для разработчиков о библиотеках Microsoft Advertising, входящих в состав Microsoft Store Services SDK."
 title: "Информация для разработчиков о библиотеках Microsoft Advertising"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
+translationtype: Human Translation
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 70692d09c037d9e5802734bc5de6a6c79799bffb
 
 
 ---
@@ -12,16 +13,14 @@ ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
 # Информация для разработчиков о библиотеках Microsoft Advertising
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В темах этого раздела представлена полезная информация для разработчиков о библиотеках Microsoft Advertising, входящих в состав пакета SDK Microsoft Store Engagement and Monetization.
 
-  > 
-            **Важно!** Библиотеки Microsoft Advertising представляют собой другой набор расширений из библиотек рекламного посредника. Используйте классы [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) и [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) из библиотек Microsoft Advertising, если требуется показать баннерную или промежуточную видеорекламу от Майкрософт в приложении XAML или JavaScript. Используйте класс **AdMediatorControl** из библиотек рекламного посредника, если в приложении XAML требуется показать рекламные баннеры из различных рекламных сетей. Дополнительные сведения см. в разделе [Отличия класса AdMediatorControl от класса AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md).
+Темы в этом разделе содержат полезные сведения для разработчиков о библиотеках Microsoft Advertising в Microsoft Store Services SDK (для приложений UWP) и Microsoft Advertising SDK для Windows и Windows Phone 8.x (для приложений Windows 8.1 и Windows Phone 8.x).
+
 
 ## В этом разделе
 
-| Тема                                                                                                       | Описание                 |
+| Раздел                                                                                                       | Описание                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
 | [Рекомендации по взаимодействию с пользователем и работе с пользовательским интерфейсом](ui-and-user-experience-guidelines.md) |  Представлены рекомендации по взаимодействию с пользователем и работе с пользовательским интерфейсом для показа рекламы в приложениях.  |
 | [Значения тестового режима](test-mode-values.md)        |  Представлены сведения об идентификаторе тестового приложения и идентификаторе рекламного блока, которые необходимо использовать в процессе тестирования приложения.   |
@@ -39,6 +38,6 @@ ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

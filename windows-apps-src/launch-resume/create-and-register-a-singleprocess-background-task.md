@@ -1,33 +1,36 @@
 ---
 author: TylerMSFT
-title: Create and register a single-process background task
-description: Create and register a single-process task that runs in the same process as your foreground app.
+title: "Создание и регистрация фоновой задачи, которая запускается в одном процессе"
+description: "Создание и регистрация задачи с одним процессом, которая запускается в том же процессе, что и приложение переднего плана."
+translationtype: Human Translation
+ms.sourcegitcommit: 9e959a8ae6bf9496b658ddfae3abccf4716957a3
+ms.openlocfilehash: 5a2461d00114ba71ced7cca64c197f253f33690d
+
 ---
 
-# Create and register a single-process background task
+# Создание и регистрация фоновой задачи, которая запускается в одном процессе
 
-**Important APIs**
+**Важные API**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-This topic demonstrates how to create and register a background task that runs in the same process as your app.
+В этом разделе рассказывается, как создать и зарегистрировать фоновую задачу, которая будет выполняться в том же процессе, что и ваше приложение.
 
-Single-process background tasks have the advantage of greater simplicity when compared with running your background work in a separate process. However, they are less resilient. If the code running in the background crashes, it will take down your app. Also note that [DeviceUseTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) and **IoTStartupTask** cannot be used with the single process model. Activating a VoIP background task within your application is also not possible. These triggers and tasks are still supported using the multiple-process background task model.
+Фоновые задачи с одним процессом проще внедрять, чем фоновые задачи, которые выполняются в отдельном процессе. Однако они менее устойчивы. Сбой выполнения кода в фоновом режиме затронет работу вашего приложения. Также обратите внимание, что триггеры [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) и **IoTStartupTask** нельзя использовать в рамках модели с одним процессом. Запуск фоновой задачи VoIP в приложении также невозможен. Использование этих триггеров и задач все еще поддерживается в рамках модели фоновой задачи с несколькими процессами.
 
-Be aware that background activity can be terminated even when running inside the app's foreground process if it runs past execution time limits. For some purposes the resiliency of separating work into a background task that runs in a separate process is still useful. Keeping background work as a task separate from the foreground application may be the best option for work that does not require communication with the foreground application.
+Имейте в виду, что фоновые задачи можно остановить (даже внутри фонового процесса приложения), если время их выполнения выходит за заданные пределы. Для некоторых целей обеспечение устойчивости при выделении работы в фоновую задачу, выполняющуюся в отдельном процессе, по-прежнему является целесообразным. Выделение фоновой работы в задачу, не связанную с приложением переднего плана, может быть лучшим решением, когда работе не требуется обмениваться данными с приложением переднего плана.
 
-## Fundamentals
+## Основы
 
-The single process model enhances the application lifecycle with improved notifications for when your app is in the foreground or in the background. Two new events are available from the Application object for these transitions: [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) and [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). These events fit into the application lifecycle based on the visibility state of your application
-Read more about these events and how they affect the application lifecycle at [App lifecycle](app-lifecycle.md).
+Модель с одним процессом оптимизирует жизненный цикл приложения с помощью улучшенных уведомлений, когда приложение работает на переднем плане или в фоновом режиме. Для этих переходов между режимами работы приложения доступно два новых события из объекта Application: [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) и [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Эти события встраиваются в жизненный цикл приложения на основании состояния видимости вашего приложения. Дополнительные сведения об этих событиях и об их влиянии на жизненный цикл приложения см. в разделе [Жизненный цикл приложения](app-lifecycle.md).
 
-At a high level, you will handle the **EnteredBackground** event to run your code that will execute while your app is running in the background, and handle **LeavingBackground** to know when your app has moved to the foreground.
+На высоком уровне вы будете управлять событием **EnteredBackground** для запуска вашего кода, который будет выполняться одновременно с выполнением вашего приложения в фоновом режиме, и событием **LeavingBackground**, чтобы знать, когда приложение перемещается на передний план.
 
-## Register your background task trigger
+## Регистрация триггера фоновой задачи
 
-Single-process background activity is registered much the same as multiple-process background activity. All background triggers start with registration using the [BackgroundTaskBuilder](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396). The builder makes it easy to register a background task by setting all required values in one place:
+Регистрация фонового действия с одним процессом выполняется практически так же, как и регистрация фонового действия с несколькими процессами. Регистрация всех фоновых триггеров выполняется с помощью класса [BackgroundTaskBuilder](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396). Построитель упрощает процесс регистрации фоновой задачи путем установки всех необходимых значений в одном месте.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -40,16 +43,16 @@ Single-process background activity is registered much the same as multiple-proce
 > ```
 
 > [!NOTE]
-> Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
-> To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
+> Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
+> Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем— метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
 
-For single-process background activities you do not set `TaskEntryPoint.` Leaving it blank enables the default entry point, a new protected method on the Application object called `OnBackgroundActivated()`.
+Для фоновых действий с одним процессом установка значения свойства `TaskEntryPoint.` не выполняется. За счет того, что значение для него не задается появляется возможность использовать точку входа по умолчанию— новый защищенный метод в объекте Application под названием [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).
 
-Once a trigger is registered, it will fire based on the type of trigger set in the `SetTrigger` method. In the example above a `TimeTrigger` is used, which will fire fifteen minutes from the time it was registered.
+После регистрации триггера он будет запущен с учетом типа триггера, указанного в методе [SetTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.settrigger.aspx). В примере кода, приведенном выше, используется триггер [TimeTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.timetrigger.aspx), который будет срабатывать через 15 минут после его регистрации.
 
-## Add a condition to control when your task will run (optional)
+## Добавление условия, которое будет контролировать время запуска задачи (необязательно)
 
-You can add a condition to control when your task will run after the trigger event occurs. For example, if you don't want the task to run until the user is present, use the condition **UserPresent**. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+Вы можете добавить условие, чтобы контролировать, в какой момент времени после возникновения события триггера запустится ваша задача. Например, если вы не хотите, чтобы задача запускалась в отсутствие пользователя, используйте условие **UserPresent**. Список возможных условий см. в статье [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
     The following sample code assigns a condition requiring the user to be present:
 
@@ -58,50 +61,56 @@ You can add a condition to control when your task will run after the trigger eve
     >     builder.AddCondition(new SystemCondition(SystemConditionType.UserPresent));
     > ```
 
-## Place your background activity code in OnBackgroundActivated()
+## Размещение кода фонового действия в методе OnBackgroundActivated()
 
-Put your background activity code in `OnBackgroundActivated` to respond to your background trigger when it fires. `OnBackgroundActivated` can be treated just like [IBackgroundTask.Run](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). The method has a  BackgroundActivatedEventArgs parameter, which contains everything that the Run method delivers.
+Поместите код фонового действия в метод [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)**, чтобы оно реагировало на фоновый триггер при его срабатывании. С методом **OnBackgroundActivated** можно работать так же, как и с методом [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). В этом методе есть параметр [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx), который содержит те же компоненты, что и метод Run.
 
-## Handle background task progress and completion
+## Обработка хода выполнения и завершения фоновых задач
 
-Task progress and completion can be monitored the same way as for multi-process background tasks (See [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)) but you will likely find that you can more easily track them by using variables to track progress or completion status in your app. This is one of the advantages of having your background activity code running in the same process as your app.
+Ход выполнения и завершения задачи можно отслеживать так же, как и аналогичные состояния фоновых задач с несколькими процессами (см. раздел [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)), однако, скорее всего, вы обнаружите, что эти состояния выполнения и завершения проще отслеживать, используя соответствующие переменные из вашего приложения. Это преимущество обеспечивается за счет выполнения кода фонового действия в рамках того же процесса, в котором работает приложение.
 
-## Handle background task cancellation
+## Обработка отмены фоновых задач
 
-Single-process background tasks are cancelled the same way as multi-process background tasks are (see [Handle a cancelled background task](handle-a-cancelled-background-task.md)).  But be aware that your **BackgroundActivated** event handler must exit before the cancellation occurs, or the whole process will be terminated. If your foreground app closes unexpectedly when you cancel the background task, verify that your handler exited before the cancellation occured.
+Отмена фоновых задач с одним процессом выполняется так же, как и отмена фоновых задач с несколькими процессами (см. раздел [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)). Имейте в виду, что обработчик события **BackgroundActivated** должен выйти из процесса, перед тем как произойдет отмена. В противном случае будет завершен весь процесс. В случае непредвиденного закрытия фонового приложения при отмене фоновой задачи убедитесь, что обработчик вышел из процесса до отмены задачи.
 
-## The manifest
+## Манифест
 
-Unlike multiple-process background tasks, you are not required to add background task information to the package manifest in order to run single-process background tasks.
+В отличие от фоновых задач с несколькими процессами добавлять сведения о фоновой задаче в манифест пакета, чтобы обеспечить выполнение фоновых задач с одним процессом, не требуется
 
-## Summary and next steps
+## Сводка и дальнейшие действия
 
-You should now understand the basics of how to write a single-process background task.
+Теперь вы знакомы с основами написания фоновой задачи с одним процессом.
 
-See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
+В статьях ниже можно найти справочник по API, концептуальное руководство по фоновым задачам и подробные инструкции по созданию приложений, использующих фоновые задачи.
 
-## Related topics
+## Связанные разделы
 
-**Detailed background task instructional topics**
+**Учебные статьи с подробными сведениями о фоновых задачах**
 
-* [Convert a multi-process background task to a single-process background task](convert-multiple-process-background-task.md)
-* [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md)
-* [Play media in the background](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Register a background task](register-a-background-task.md)
-* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
-* [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md).  
+* [Преобразование фоновой задачи с несколькими процессами в фоновую задачу с одним процессом](convert-multiple-process-background-task.md)
+* [Создание и регистрация фоновой задачи, которая запускается в отдельном процессе](create-and-register-a-background-task.md)
+* [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
+* [Регистрация фоновой задачи](register-a-background-task.md)
+* [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
+* [Использование триггера обслуживания](use-a-maintenance-trigger.md)
+* [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
+* [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
+* [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
+* [Создание и регистрация фоновой задачи, которая запускается в одном процессе](create-and-register-a-singleprocess-background-task.md).  
 
-**Background task guidance**
+**Руководство по фоновым задачам**
 
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
+* [Отладка фоновой задачи](debug-a-background-task.md)
+* [Активация событий приостановки, возобновления и перевода в фоновый режим приложений Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
-**Background Task API Reference**
+**Справочник по API для фоновых задач**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

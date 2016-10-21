@@ -1,24 +1,34 @@
 ---
 author: mcleanbyron
 ms.assetid: 14C23FE6-3EAF-445E-85C1-DF188A7822CA
-description: Use the code examples in this section to learn more about using the Windows Store submission API.
-title: Code examples for the Windows Store submission API
+description: "Используйте примеры кода, приведенные в этом разделе, чтобы более подробно ознакомиться с работой API отправки Магазина Windows."
+title: "Примеры кода для API отправки Магазина Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: 841a6aeaf0a7ecfd49cda0f519ba2c297f91af92
+ms.openlocfilehash: df29d34b7e1b4b4e2ee715ecc013758df65fc9c3
+
 ---
 
-# Code examples for the Windows Store submission API
+# Примеры кода для API отправки Магазина Windows
 
-This section provides code examples for using the *Windows Store submission API* in several different programming languages. 
+В этом разделе приведены примеры кода для работы с *API отправки Магазина Windows* на нескольких разных языках программирования. 
 
-Use the Windows Store submission API to programmatically query and create submissions for apps, add-ons and package flights for your or your organization's Windows Dev Center account. This API is useful if your account manages many apps or add-ons, and you want to automate and optimize the submission process for these assets. For more information about this API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+Используйте API отправки Магазина Windows, чтобы программировать запросы и создавать отправки для приложений, надстроек и тестовых пакетов для вашей учетной записи Центра разработки для Windows или учетной записи Центра разработки для Windows вашей организации. Этот API-интерфейс удобно использовать, если под вашей учетной записью выполняется управление большим количеством приложений или надстроек и вам необходимо оптимизировать процесс отправки для этих ресурсов. Дополнительные сведения об этом API-интерфейсе см. в разделе [Создание отправок и управление ими с помощью служб МагазинаWindows](create-and-manage-submissions-using-windows-store-services.md).
 
-## In this section
+## В этом разделе
 
-| Topic                                                                                                       | Description                 |
+| Раздел                                                                                                       | Описание                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [C# code examples](csharp-code-examples-for-the-windows-store-submission-api.md) | Use the C# code examples in this section to learn more about using the Windows Store submission API. |
-| [Java code examples](java-code-examples-for-the-windows-store-submission-api.md) | Use the Java code examples in this section to learn more about using the Windows Store submission API. |
-| [Python code examples](python-code-examples-for-the-windows-store-submission-api.md)  | Use the Python code examples in this section to learn more about using the Windows Store submission API.  |
+| [Примеры кода на C#](csharp-code-examples-for-the-windows-store-submission-api.md) | Используйте примеры кода на языке C#, приведенные в этом разделе, чтобы более подробно ознакомиться с работой API отправки Магазина Windows. |
+| [Примеры кода на Java](java-code-examples-for-the-windows-store-submission-api.md) | Используйте примеры кода на языке Java, приведенные в этом разделе, чтобы более подробно ознакомиться с работой API отправки Магазина Windows. |
+| [Примеры кода на Python](python-code-examples-for-the-windows-store-submission-api.md)  | Используйте примеры кода на языке Python, приведенные в этом разделе, чтобы более подробно ознакомиться с работой API отправки Магазина Windows.  |
 
-## Related topics
+## Связанные разделы
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

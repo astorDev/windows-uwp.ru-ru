@@ -1,24 +1,28 @@
 ---
 author: TylerMSFT
-title: ms-tonepicker scheme
-description: This topic describes the ms-tonepicker URI scheme and how to use it to display a tone picker to select a tone, save a tone, and get the friendly name for a tone.
+title: "Схема ms-tonepicker"
+description: "В этом разделе описывается схема URI ms-tonepicker и порядок ее использования для отображения средства выбора звуковых сигналов с целью выбора звукового сигнала, сохранения звукового сигнала и получения понятного имени звукового сигнала."
+translationtype: Human Translation
+ms.sourcegitcommit: 4c7037cc91603af97a64285fd6610445de0523d6
+ms.openlocfilehash: ef605f9d749148240ecee5e0ecfd473f8440ca25
+
 ---
 
-# Choose and save tones using the ms-tonepicker URI scheme
+# Выбор и сохранение звуковых сигналов с помощью схемы URI ms-tonepicker
 
-This topic describes how to use the **ms-tonepicker:** URI scheme. This URI scheme can be used to:
-- Determine if the tone picker is available on the device.
-- Display the tone picker to list available ringtones, system sounds, text tones, and alarm sounds; and get a tone token which represents the sound the user selected.
-- Display the tone saver, which takes a sound file token as input and saves it to the device. Saved tones are then available via the tone picker. Users can also give the tone a friendly name.
-- Convert a tone token to its friendly name.
+В этом разделе описывается, как использовать схему URI **ms tonepicker:**. Эту схему URI можно использовать для указанных ниже целей.
+- Определение доступности средства выбора звуковых сигналов на устройстве.
+- Отображение средства выбора звуковых сигналов для вывода доступных мелодий звонка, системных звуков, мелодий SMS и звуковых сигналов, а также для получения маркера звукового сигнала, который представляет выбранный пользователем звук.
+- Отображение средства сохранения звукового сигнала, которое в качестве входных данных получает маркер звукового файла и сохраняет его на устройстве. Сохраненные звуковые сигналы становятся доступными через средство выбора звуковых сигналов. Пользователи могут также присвоить звуковому сигналу понятное имя.
+- Преобразование маркера звукового сигнала в его понятное имя.
 
-## ms-tonepicker: URI scheme reference
+## Справка по схеме URI ms-tonepicker:
 
-This URI scheme does not pass arguments via the URI scheme string, but instead passes arguments via a [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx). All strings are case-sensitive.
+Эта схема URI не передает аргументы через строку схемы URI; вместо этого аргументы передаются через [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx). Во всех строках учитывается регистр.
 
-The sections below indicate which arguments should be passed to accomplish the specified task.
+В приведенных ниже разделах указано, какие аргументы должны передаваться для выполнения указанной задачи.
 
-## Task: Determine if the tone picker is available on the device
+## Задача: определение доступности средства выбора звуковых сигналов на устройстве
 ```cs
 var status = await Launcher.QueryUriSupportAsync(new Uri("ms-tonepicker:"),     
                                      LaunchQuerySupportType.UriForResults,
@@ -30,25 +34,25 @@ if (status != LaunchQuerySupportStatus.Available)
 }
 ```
 
-## Task: Display the tone picker
+## Задача: отображение средства выбора звукового сигнала
 
-The arguments you can pass to display the tone picker are as follows:
+Ниже перечислены аргументы, которые можно передавать для отображения средства выбора звуковых сигналов.
 
-| Parameter | Type | Required | Possible values | Description |
+| Параметр | Тип | Обязательный | Возможные значения | Описание |
 |-----------|------|----------|-------|-------------|
-| Action | string | yes | "PickRingtone" | Opens the tone picker. |
-| CurrentToneFilePath | string | no | An existing tone token. | The tone to show as the current tone in the tone picker. If this value is not set, the first tone on the list is selected by default.<br>This is not, strictly speaking, a file path. You can get a suitable value for `CurrenttoneFilePath` from the `ToneToken` value returned from the tone picker.  |
-| TypeFilter | string | no | "Ringtones", "Notifications", "Alarms", "None" | Selects which tones to add to the picker. If no filter is specified then all tones are displayed. |
+| Action | string | да | "PickRingtone" | Открытие средства выбора звуковых сигналов. |
+| CurrentToneFilePath | string | нет | Маркер существующего звукового сигнала. | Звуковой сигнал, который должен отображаться как текущий в средстве выбора звуковых сигналов. Если это значение не задано, по умолчанию выбирается первый звуковой сигнал в списке.<br>Строго говоря, это не является путем к файлу. Подходящее значение для параметра `CurrenttoneFilePath` можно получить из значения `ToneToken`, возвращаемого средством выбора звуковых сигналов.  |
+| TypeFilter | string | нет | "Ringtones", "Notifications", "Alarms", "None" | Выбор звуковых сигналов, добавляемых в средство выбора. Если никакой фильтр не задан, отображаются все звуковые сигналы. |
 
-<br>The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
+<br>Значения, возвращаемые в [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
 
-| Return values | Type | Possible values | Description |
+| Возвращаемые значения | Тип | Возможные значения | Описание |
 |--------------|------|-------|-------------|
-| Result | Int32 | 0-success. <br> 1-cancelled. <br> 7-invalid parameters. <br> 8 - no tones match the filter criteria. <br> 255 - specified action is not implemented. | The result of the picker operation. |
-| ToneToken | string | The selected tone's token. <br> The string is empty if the user selects **default** in the picker. | This token can be used in a toast notification payload, or can be assigned as a contact’s ringtone or text tone. The parameter is returned in the ValueSet only if **Result** is 0. |
-| DisplayName | string | The specified tone’s friendly name. | A string that can be shown to the user to represent the selected tone. The parameter is returned in the ValueSet only if **Result** is 0. |
+| Result | Int32 | 0 – успех. <br> 1 – отменено. <br> 7 – недопустимые параметры. <br> 8 – нет звуковых сигналов, удовлетворяющих условиям фильтра. <br> 255 – указанное действие не реализовано. | Результат операции в средстве выбора. |
+| ToneToken | string | Маркер выбранного звукового сигнала. <br> Эта строка будет пустой, если пользователь выбирает в средстве выбора значение **по умолчанию**. | Этот маркер может использоваться в полезных данных всплывающего уведомления, или его можно назначить мелодии звонка или мелодию SMS контакта. Этот параметр возвращается в ValueSet только в случае, если **Result** равен 0. |
+| DisplayName | string | Понятное имя указанного звукового сигнала. | Строка, которая может отображаться пользователю для представления выбранного звукового сигнала. Этот параметр возвращается в ValueSet только в случае, если **Result** равен 0. |
 <br>
-**Example: Open the tone picker so that the user can select a tone**
+**Пример. Открытие средства выбора, чтобы пользователь мог выбрать звуковой сигнал**
 
 ``` cs
 LauncherOptions options = new LauncherOptions();
@@ -76,23 +80,23 @@ if (result.Status == LaunchUriStatus.Success)
 }
 ```
 
-## Task: Display the tone saver
+## Задача: отображение средства сохранения звуковых сигналов
 
-The arguments you can pass to display the tone saver are as follows:
+Ниже перечислены аргументы, которые можно передавать для отображения средства сохранения звуковых сигналов.
 
-| Parameter | Type | Required | Possible values | Description |
+| Параметр | Тип | Обязательный | Возможные значения | Описание |
 |-----------|------|----------|-------|-------------|
-| Action | string | yes | "SaveRingtone" | Opens the picker to save a ringtone. |
-| ToneFileSharingToken | string | yes | [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) file sharing token for the ringtone file to save. | Saves a specific sound file as a ringtone. The supported content types for the file are mpeg audio and x-ms-wma audio. |
-| DisplayName | string | no | The specified tone’s friendly name. | Sets the display name to use when saving the specified ringtone. |
+| Action | string | да | "SaveRingtone" | Открытие средства выбора для сохранения мелодии звонка. |
+| ToneFileSharingToken | string | да | Метка [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) для общего доступа к сохраняемому файлу мелодии звонка. | Сохранение определенного файла звукового сигнала в качестве мелодии звонка. Поддерживаемые типы содержимого для файла: звук mpeg и x-ms-wma. |
+| DisplayName | string | нет | Понятное имя указанного звукового сигнала. | Задает отображаемое имя для использования при сохранении указанной мелодии звонка. |
 
-<br>The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
+<br>Значения, возвращаемые в [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
 
-| Return values | Type | Possible values | Description |
+| Возвращаемые значения | Тип | Возможные значения | Описание |
 |--------------|------|-------|-------------|
-| Result | Int32 | 0-success.<br>1-cancelled by user.<br>2-Invalid file.<br>3-Invalid file content type.<br>4-file exceeds maximum ringtone size (1MB in Windows 10).<br>5-File exceeds 40 second length limit.<br>6-File is protected by digital rights management.<br>7-invalid  parameters. | The result of the picker operation. |
+| Result | Int32 | 0 – успех.<br>1 – отменено пользователем.<br>2 – недопустимый файл.<br>3 – недопустимый тип содержимого файла.<br>4 – размер файла превышает максимальный размер мелодии звонка (1 МБ в Windows 10).<br>5 – длительность воспроизведения файла превышает макс. 40 с.<br>6 – файл защищен системой управления цифровыми правами.<br>7 – недопустимые параметры. | Результат операции в средстве выбора. |
 <br>
-**Example: Save a local music file as a ringtone**
+**Пример: сохранение локального музыкального файла в качестве мелодии звонка**
 
 ``` cs
 LauncherOptions options = new LauncherOptions();
@@ -140,23 +144,23 @@ if (result.Status == LaunchUriStatus.Success)
  }
 ```
 
-## Task: Convert a tone token to its friendly name
+## Задача: преобразование маркера звукового сигнала в его понятное имя
 
-The arguments you can pass to get the friendly name of a tone are as follows:
+Ниже перечислены аргументы, которые можно передавать для получения понятного имени звукового сигнала:
 
-| Parameter | Type | Required | Possible values | Description |
+| Параметр | Тип | Обязательный | Возможные значения | Описание |
 |-----------|------|----------|-------|-------------|
-| Action | string | yes | "GetToneName" | Indicates that you want to get the friendly name of a tone. |
-| ToneToken | string | yes | The tone token | The tone token from which to obtain a display name. |
+| Action | string | да | "GetToneName" | Указывает, что требуется получить понятное имя звукового сигнала. |
+| ToneToken | string | да | Маркер звукового сигнала | Маркер звукового сигнала, для которого требуется получить отображаемое имя. |
 
-<br>The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
+<br>Значения, возвращаемые в [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
 
-| Return value | Type | Possible values | Description |
+| Возвращаемое значение | Тип | Возможные значения | Описание |
 |--------------|------|-------|-------------|
-| Result | Int32 | 0-The picker operation succeeded.<br>7-Incorrect parameter (for example, no ToneToken provided).<br>9-Error reading the name for the specified token.<br>10-Unable to find specified tone token. | The result of the picker operation.
-| DisplayName | string | The tone's friendly name. | Returns the selected tone's display name. This parameter is only returned in the ValueSet if **Result** is 0. |
+| Result | Int32 | 0 – операция средства выбора выполнена успешно.<br>7 – неправильный параметр (например, не указан ToneToken).<br>9 – ошибка чтения имени для указанного маркера.<br>10 – не удалось найти указанный маркер звукового сигнала. | Результат операции в средстве выбора.
+| DisplayName | string | Понятное имя звукового сигнала. | Возвращает отображаемое имя выбранного звукового сигнала. Этот параметр возвращается в ValueSet только в случае, если **Result** равен 0. |
 <br>
-**Example: Retrieve a tone token from Contact.RingToneToken and display its friendly name in the contact card.**
+**Пример: получение маркера звукового сигнала из Contact.RingToneToken и отображение понятного имени этого сигнала в карточке контакта.**
 
 ```cs
 using (var connection = new AppServiceConnection())
@@ -190,3 +194,9 @@ using (var connection = new AppServiceConnection())
     }
 }
 ```
+
+
+
+<!--HONumber=Aug16_HO4-->
+
+

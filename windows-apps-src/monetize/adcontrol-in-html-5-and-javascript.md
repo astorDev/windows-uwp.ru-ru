@@ -3,27 +3,28 @@ author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: "Узнайте, как использовать класс AdControl для показа баннерной рекламы в приложении на JavaScript или HTML для Windows 10 (UWP), Windows 8.1 или Windows Phone 8.1."
 title: "AdControl в HTML 5 и JavaScript"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
+translationtype: Human Translation
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 501edf178ecccf8a6b62d4602837dbbdf820d744
 
 ---
 
 # AdControl в HTML 5 и JavaScript
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 В этом пошаговом руководстве рассказывается, как использовать класс [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) для показа баннерной рекламы в приложении на JavaScript или HTML для Windows 10 (UWP), Windows 8.1 или Windows Phone 8.1. В этом руководстве не используется **AdMediatorControl** и рекламный посредник.
 
 Полный пример с проектом, демонстрирующим способы добавления баннерной рекламы в приложение на JavaScript и HTML, см. в разделе [примеров рекламы на GitHub](http://aka.ms/githubads).
 
-## Необходимые условия
+## Необходимые компоненты
 
 
-* Установите [пакет SDK Microsoft Store Engagement and Monetization](http://aka.ms/store-em-sdk) для Visual Studio 2015 или Visual Studio 2013.
+* Для приложений UWP: установите [пакет SDK служб Microsoft Store](http://aka.ms/store-em-sdk) с Visual Studio 2015.
+* Для приложений для Windows 8.1 и Windows Phone 8.1 установите [пакет Microsoft Advertising SDK для Windows и Windows Phone 8.x](http://aka.ms/store-8-sdk) с Visual Studio 2015 или Visual Studio 2013.
 
-> 
-            **Примечание** Если вы установили предварительную сборку Windows 10 Anniversary SDK 14295 или более позднюю версию в Visual Studio 2015, вам также потребуется установить библиотеку WinJS. Эта библиотека ранее включалась в предыдущие версии Windows SDK для Windows 10, но, начиная с предварительной сборки Windows 10 Anniversary SDK 14295, ее необходимо устанавливать отдельно. Сведения по установке WinJS см. в разделе [Скачать WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> **Примечание.** Если вы установили предварительную сборку Windows 10 Anniversary SDK 14295 или более позднюю версию в Visual Studio 2015, вам также потребуется установить библиотеку WinJS. Эта библиотека ранее включалась в предыдущие версии Windows SDK для Windows 10, но, начиная с предварительной сборки Windows 10 Anniversary SDK 14295, ее необходимо устанавливать отдельно. Сведения по установке WinJS см. в разделе [Скачать WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
 ## Написание кода
 
@@ -43,8 +44,7 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 
     ![javascriptaddreference](images/13-f7f6d6a6-161e-4f17-995d-1236d0b5d9f2.png)
 
-    > 
-            **Примечание**  Это изображение относится к Visual Studio 2015, где создается проект UWP для Windows 10. Если выполняется сборка приложения для Windows 8.1 или Windows Phone 8.1 либо с использованием Visual Studio 2013, экран будет выглядеть иначе.
+    > **Примечание**. Это изображение относится к Visual Studio 2015, где создается проект UWP для Windows 10. Если выполняется сборка приложения для Windows 8.1 или Windows Phone 8.1 либо с использованием Visual Studio 2013, экран будет выглядеть иначе.
 
 5.  В **Диспетчере ссылок** нажмите "ОК".
 
@@ -66,13 +66,11 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
     <script src="/MSAdvertisingJS/ads/ad.js"></script>
     ```
 
-    > 
-            **Примечание**   Эта строка должна располагаться в разделе **&lt;head&gt;** после включения default.js; в противном случае будет выдано сообщение об ошибке при сборке проекта.
+    > **Примечание.**&nbsp;&nbsp;Эта строка должна располагаться в разделе **&lt;head&gt;** после включения default.js; в противном случае будет выдано сообщение об ошибке при сборке проекта.
 
 8.  Измените раздел **&lt;body&gt;** в файле default.html (или другом html-файле, если это необходимо для вашего проекта), включив в него элемент div для **AdControl**. Задайте свойства **applicationId** и **adUnitId** в **AdControl**, чтобы проверить значения, предоставляемые в разделе [Значения тестового режима](test-mode-values.md), и измените высоту и ширину этого элемента управления, чтобы он соответствовал одному из [поддерживаемых размеров баннерной рекламы](supported-ad-sizes-for-banner-ads.md).
 
-    > **Примечание**  
-    Перед отправкой приложения на проверку необходимо будет заменить тестовые значения **applicationId** и **adUnitId** действительными значениями.
+    > **Примечание.**&nbsp;&nbsp;Перед отправкой приложения на проверку необходимо будет заменить тестовые значения **applicationId** и **adUnitId** действительными значениями.
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
@@ -86,12 +84,11 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 ## Выпуск приложения с динамической рекламой с помощью Центра разработки для Windows
 
 
-1.  На информационной панели Центра разработки для Windows, перейдите на страницу **Получение дохода**&gt;**Получение дохода с помощью рекламы** вашего приложения и [создайте автономный блок Microsoft Advertising](../publish/monetize-with-ads.md). В качестве типа рекламного блока укажите **Баннер**. Запишите и идентификатор рекламного блока, и идентификатор приложения.
+1.  На информационной панели Центра разработки, перейдите на страницу **Получение дохода** &gt; **Получение дохода с помощью рекламы** вашего приложения и [создайте автономный блок Microsoft Advertising](../publish/monetize-with-ads.md). В качестве типа рекламного блока укажите **Баннер**. Запишите и идентификатор рекламного блока, и идентификатор приложения.
 
 2.  В своем коде замените тестовые значения (**applicationId** и **adUnitId**) рекламного блока действительными значениями, сгенерированными в Центре разработки.
 
-3.  
-            [Отправьте приложение](../publish/app-submissions.md) в Магазин с помощью информационной панели в Центре разработки.
+3.  [Отправьте приложение](../publish/app-submissions.md) в Магазин с помощью информационной панели в Центре разработки.
 
 4.  Изучите [отчеты по показателям рекламы](../publish/advertising-performance-report.md) на информационной панели Центра разработки.
 
@@ -136,6 +133,6 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

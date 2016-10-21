@@ -1,79 +1,83 @@
 ---
 author: mcleanbyron
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
-description: Use this method in the Windows Store submission API to retrieve all add-on data for all the apps that are registered to your Windows Dev Center account.
-title: Get all add-ons using the Windows Store submission API
+description: "Используйте этот метод в API отправки Магазина Windows для получения всех данных надстроек для всех приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows."
+title: "Получение всех надстроек с помощью API отправки Магазина Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 64d40badaa4664e4f516900e82d290f60a499149
+
 ---
 
-# Get all add-ons using the Windows Store submission API
+# Получение всех надстроек с помощью API отправки Магазина Windows
 
 
 
 
-Use this method in the Windows Store submission API to retrieve data for all add-ons (also known as in-app products or IAPs) for all the apps that are registered to your Windows Dev Center account.
+Используйте этот метод в API отправки Магазина Windows для получения данных для всех надстроек (также называемых внутренними продуктами приложения или IAP) для всех приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows.
 
-## Prerequisites
+## Необходимые условия
 
-To use this method, you need to first do the following:
+Для использования этого метода необходимо выполнить следующие действия:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+* Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
-## Request
+## Запрос
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+У этого метода следующий синтаксис. Примеры использования и описание заголовка и тела запроса приведены в следующих разделах.
 
-| Method | Request URI                                                      |
+| Метод | URI запроса                                                      |
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
 
 <span/>
- 
+ 
 
-### Request header
+### Заголовок запроса
 
-| Header        | Type   | Description                                                                 |
+| Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
-### Request parameters
+### Параметры запроса
 
-All request parameters are optional for this method. If you call this method without parameters, the response contains data for all add-ons for all apps that are registered to your account.
- 
-|  Parameter  |  Type  |  Description  |  Required  |
+Для данного метода все параметры запроса являются необязательными. При вызове этого метода без параметров ответ содержит данные для всех надстроек для всех приложений, которые зарегистрированы в вашей учетной записи.
+ 
+|  Параметр  |  Тип  |  Описание  |  Обязательный  |
 |------|------|------|------|
-|  top  |  int  |  The number of items to return in the request (that is, the number of add-ons to return). If your account has more add-ons than the value you specify in the query, the response body includes a relative URI path that you can append to the method URI to request the next page of data.  |  No  |
-|  skip  |  int  |  The number of items to bypass in the query before returning the remaining items. Use this parameter to page through data sets. For example, top=10 and skip=0 retrieves items 1 through 10, top=10 and skip=10 retrieves items 11 through 20, and so on.  |  No  |
+|  top  |  int  |  Число элементов, возвращаемых в запросе (т. е., количество возвращаемых надстроек). Если количество надстроек в вашей учетной записи больше значения, указанного в запросе, текст ответа будет содержать относительный путь URI, который можно добавить в URI метода, чтобы запросить следующую страницу данных.  |  Нет  |
+|  skip  |  int  |  Число элементов, которые требуется пропустить в запросе перед возвратом оставшихся элементов. Используйте этот параметр для постраничного перемещения по наборам данных. Например, если задано top = 10 и skip = 0, извлекаются элементы с 1 по 10; если задано top = 10 и skip = 10, извлекаются элементы с 11 по 20 и т. д.  |  Нет  |
 
 <span/>
 
-### Request body
+### Тело запроса
 
-Do not provide a request body for this method.
+Предоставлять тело запроса для этого метода не требуется.
 
-### Request examples
+### Примеры запросов
 
-The following example demonstrates how to retrieve all add-on data for all the apps that are registered to your account.
+В следующем примере демонстрируется способ извлечения данных всех надстроек для всех приложений, которые зарегистрированы в вашей учетной записи.
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-The following example demonstrates how to retrieve the first 10 add-ons only.
+В следующем примере демонстрируется способ извлечения только первых 10 надстроек.
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## Ответ
 
-The following example demonstrates the JSON response body returned by a successful request for the first 5 add-ons that are registered to a developer account with 1072 total add-ons. For brevity, this example only shows the data for the first two add-ons returned by the request. For more details about the values in the response body, see the following section.
+В следующем примере показано тело ответа JSON, возвращаемое успешным запросом первых 5 надстроек, которые зарегистрированы в учетной записи разработчика, содержащей всего 1072 надстройки. Для краткости в этом примере показаны данные только первых двух надстроек, возвращенных в запросе. Дополнительные сведения о значениях, которые могут содержаться в теле ответа, см. в следующем разделе.
 
 ```json
 {
@@ -130,31 +134,37 @@ The following example demonstrates the JSON response body returned by a successf
 }
 ```
 
-### Response body
+### Тело ответа
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Значение      | Тип   | Описание                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | string | If there are additional pages of data, this string contains a relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to request the next page of data. For example, if the *top* parameter of the initial request body is set to 10 but there are 100 add-ons registered to your account, the response body will include a @nextLink value of ```inappproducts?skip=10&top=10```, which indicates that you can call ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` to request the next 10 add-ons. |
-| value            | array  |  An array that contains objects that provide information about each add-on. For more information, see [add-on resource](manage-add-ons.md#add-on-object).   |
-| totalCount   | int  | The number of app objects in the *value* array of the response body.                                                                                                                                                 |
+| @nextLink  | string | При наличии дополнительных страниц данных эта строка содержит относительный путь, который можно добавить к базовому URI ```https://manage.devcenter.microsoft.com/v1.0/my/``` запроса, чтобы запросить следующую страницу данных. Например, если для параметра *top* в тексте исходного запроса задано значение 10, но в учетной записи зарегистрировано 100 надстроек, тело ответа будет содержать значение @nextLink ```inappproducts?skip=10&top=10```, которое указывает, что можно вызвать ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` для запроса следующих 10 надстроек. |
+| value            | array  |  Массив, содержащий объекты, которые предоставляют сведения о каждой надстройке. Дополнительные сведения см. в разделе [Ресурс надстройки](manage-add-ons.md#add-on-object).   |
+| totalCount   | int  | Количество объектов приложения в массиве *value* тела ответа.                                                                                                                                                 |
 
 
 
-## Error codes
+## Коды ошибок
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+Если запрос не удается выполнить, ответ будет содержать один из следующих кодов ошибок HTTP.
 
-| Error code |  Description   |
+| Код ошибки |  Описание   |
 |--------|------------------|
-| 404  | No add-ons were found. |
-| 409  | The apps or add-ons use Dev Center dashboard features that are [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 404  | Надстройки не найдены. |
+| 419  | Приложения или надстройки используют функции информационной панели Центра разработки, которые [в настоящее время не поддерживаются API отправки Магазина Windows](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 <span/>
 
-## Related topics
+## Связанные разделы
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage add-on submissions](manage-add-on-submissions.md)
-* [Get an add-on](get-an-add-on.md)
-* [Create an add-on](create-an-add-on.md)
-* [Delete an add-on](delete-an-add-on.md)
+* [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
+* [Управление отправками надстроек](manage-add-on-submissions.md)
+* [Получение надстройки](get-an-add-on.md)
+* [Создание надстройки](create-an-add-on.md)
+* [Удаление надстройки](delete-an-add-on.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

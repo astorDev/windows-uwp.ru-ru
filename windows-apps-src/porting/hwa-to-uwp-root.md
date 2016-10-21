@@ -3,8 +3,8 @@ title: "Размещенные веб-приложения. Преобразов
 description: "Создание приложения универсальной платформы Windows (UWP) из URL-адреса веб-сайта. Получение доступа к собственным функциям устройства под управлением Windows 10 из кода веб-приложения. Мосты Microsoft Windows для размещенных веб-приложений (ранее — Project Westminster) упрощают и ускоряют процесс размещения веб-приложений в Магазине Windows."
 author: seksenov
 translationtype: Human Translation
-ms.sourcegitcommit: 765789ef83f9b6a845ab79505b1b9ecbfd987126
-ms.openlocfilehash: 491665558f713dcbaae7ea20739ed72c61a12cd2
+ms.sourcegitcommit: 7fe6e240e4ef221b49f9b103cf30192449ce4502
+ms.openlocfilehash: 95d50aa37f349f494f260ea3af97211a085623a9
 
 ---
 
@@ -35,8 +35,7 @@ ms.openlocfilehash: 491665558f713dcbaae7ea20739ed72c61a12cd2
 
 ## Преобразование существующего приложения Chrome
 
-Мы облегчили процесс [преобразования имеющихся размещенных приложений Chrome](hwa-chrome-conversion.md) в размещенные веб-приложения для Windows. 
-            [ManifoldJS](http://manifoldjs.com/) теперь принимает манифесты Chrome в качестве одной из форм ввода. Мы также разработали [средство командной строки](https://github.com/MicrosoftEdge/hwa-cli), которое создает пакет `.appx` из существующих файлов `.zip` или `.crx`.
+Мы облегчили процесс [преобразования имеющихся размещенных приложений Chrome](hwa-chrome-conversion.md) в размещенные веб-приложения для Windows. [ManifoldJS](http://manifoldjs.com/) теперь принимает манифесты Chrome в качестве одной из форм ввода. Мы также разработали [средство командной строки](https://github.com/MicrosoftEdge/hwa-cli), которое создает пакет `.appx` из существующих файлов `.zip` или `.crx`.
 
 ## Демонстрационные примеры
 
@@ -46,6 +45,6 @@ ms.openlocfilehash: 491665558f713dcbaae7ea20739ed72c61a12cd2
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

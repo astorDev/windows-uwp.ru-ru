@@ -1,25 +1,37 @@
 ---
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
-description: Learn how to enable in-app purchases and trials in UWP apps that target releases before Windows 10, version 1607.
-title: In-app purchases and trials using the Windows.ApplicationModel.Store namespace
+description: "Узнайте, как включить покупки из приложения и пробные версии в приложениях UWP, предназначенных для выпусков Windows 10 до версии 1607."
+title: "Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 649d082cddcf301fe602a5ab99637ad7bea67d49
+
 ---
 
-# In-app purchases and trials using the Windows.ApplicationModel.Store namespace
+# Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store
 
-The Windows SDK provides members in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace that you can use to add in-app purchases and trial functionality to your Universal Windows Platform (UWP) app to help monetize your app and add new functionality. These APIs also provide access to the license info for your app.
+Пакет Windows SDK содержит члены в пространстве имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), которые можно использовать для добавления функциональности покупок из приложения и пробной версии в ваше приложение для универсальной платформы Windows (UWP), чтобы получать доход от приложения и добавлять новые функции. Эти API также предоставляют доступ к лицензионной информации вашего приложения.
 
->**Note** If your app targets Windows 10, version 1607 or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace instead of the **Windows.ApplicationModel.Store** namespace. The **Windows.Services.Store** namespace supports the latest add-on types, such as Store-managed consumable add-ons, and is designed to be compatible with future types of products and features supported by Windows Dev Center and the Store. The **Windows.Services.Store** namespace is also designed to have better performance. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
+>**Примечание.**&nbsp;&nbsp;Если ваше приложение предназначено для Windows 10 версии 1607 или более поздней, для управления покупками из приложения рекомендуется использовать элементы, входящие в пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), а не **Windows.ApplicationModel.Store**. Пространство имен **Windows.Services.Store** поддерживает новейшие типы надстроек, включая потребляемые надстройки, управляемые Магазином, а его архитектура обеспечивает совместимость с будущими продуктами и компонентами, которые поддерживаются Центром разработки для Windows и Магазином. Пространство имен **Windows.Services.Store** также обеспечивает более высокую производительность. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
 
-The articles in this section provide in-depth guidance and code examples for using the members in members in the **Windows.ApplicationModel.Store** namespace for several common scenarios. For an overview of concepts related to in-app purchases in UWP apps, see [In-app purchases and trials](in-app-purchases-and-trials.md).
+Статьи в этом разделе содержат подробные руководства и примеры кода для использования членов, входящих в члены пространства имен **Windows.ApplicationModel.Store**, для нескольких распространенных сценариев. Обзор концепций, связанных с покупками из приложения в приложениях UWP, см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
 
-## In this section
+Полный пример, в котором показана реализация пробных версий и покупок из приложения с использованием пространства имен **Windows.ApplicationModel.Store**, доступен в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
+
+## В этом разделе
 
 
-| Topic                                                                                                       | Description                 |
+| Раздел                                                                                                       | Описание                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [Enable in-app product purchases](enable-in-app-product-purchases.md)      |  Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.  |
-| [Enable consumable in-app product purchases](enable-consumable-in-app-product-purchases.md)      | Offer consumable in-app products—items that can be purchased, used, and purchased again—through the Store commerce platform to provide your customers with a purchase experience that is both robust and reliable. This is especially useful for things like in-game currency (gold, coins, etc.) that can be purchased and then used to purchase specific power-ups. |
-| [Exclude or limit features in a trial version](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | If you enable customers to use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period. |
-| [Manage a large catalog of in-app products](manage-a-large-catalog-of-in-app-products.md)      |   If your app offers a large in-app product catalog, you can optionally follow the process described in this topic to help manage your catalog.    |
-| [Use receipts to verify product purchases](use-receipts-to-verify-product-purchases.md)      |   Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt that provides information about the listed product and monetary cost to the customer. Having access to this information supports scenarios where your app needs to verify that a user purchased your app, or has made in-app product purchases from the Windows Store. |
+| [Поддержка покупки продуктов из приложения](enable-in-app-product-purchases.md)      |  Независимо от того, является ли ваше приложение бесплатным или нет, вы можете продавать содержимое, другие приложения или новые функциональные возможности (например, разблокирование следующего уровня игры) прямо из приложения. В этом разделе рассказывается о том, как предоставить возможность совершать такие покупки.  |
+| [Поддержка покупок потребляемых внутренних продуктов приложения](enable-consumable-in-app-product-purchases.md)      | Предоставьте пользователям возможность покупки из приложения потребляемых внутренних продуктов приложения (товаров, которые можно покупать, использовать и покупать снова) через Магазин. Покупка из приложения — удобный и надежный способ приобрести товар. Это особенно удобно при покупке виртуальной валюты для игр (например, золота или монет), которую можно потом использовать в процессе игры. |
+| [Исключение или ограничение функций в пробной версии](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | Если вы разрешите пользователям бесплатно пользоваться вашим приложением в течение испытательного срока, можно привлечь их к обновлению до полной версии приложения путем удаления или ограничения некоторых функций в течение пробного периода. |
+| [Управление большим каталогом внутренних продуктов приложения](manage-a-large-catalog-of-in-app-products.md)      |   Если ваше приложение предлагает большой каталог внутренних продуктов приложения, то для облегчения управления каталогом вы можете выполнить действия, описанные в этом разделе.    |
+| [Проверка покупок продуктов с помощью квитанций](use-receipts-to-verify-product-purchases.md)      |   Каждая транзакция Магазина Windows, которая заканчивается успешной покупкой продукта, может дополнительно возвращать пользователю квитанцию транзакции с информацией об указанном продукте и денежных расходах. Доступ к этой информации поддерживает сценарии, в которых ваше приложение должно проверить покупку пользователем приложения или продуктов из приложения в Магазине Windows. |
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

@@ -3,8 +3,9 @@ author: mtoepke
 title: "Инструкции - перенос простого обработчика OpenGL ES 2.0 в Direct3D 11"
 description: "В качестве первого упражнения в переносе начнем с основ - с переноса простого обработчика для вращающегося куба с затенением по вершинам из OpenGL ES 2.0 в Direct3D, чтобы он соответствовал шаблону «Приложение DirectX 11 (универсальные приложения для Windows)» из Visual Studio 2015."
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
+translationtype: Human Translation
 ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: f70d4ec46743d930f8cb45084e55cce2e60e2460
+ms.openlocfilehash: 307b611eece3de6288d67e1e340368763f26fa2e
 
 ---
 
@@ -76,8 +77,7 @@ typedef struct
 
 У этой структуры имеется один экземпляр, и он содержит все необходимые компоненты для прорисовки очень простой сетки с затенением по вершинам.
 
-> 
-            **Примечание.**  Весь код OpenGL ES 2.0 в этой теме основан на реализации API Windows, предоставленной Khronos Group, и использует синтаксис программирования Windows C.
+> **Примечание.**  Весь код OpenGL ES 2.0 в этой теме основан на реализации API Windows, предоставленной Khronos Group, и использует синтаксис программирования Windows C.
 
  
 
@@ -146,6 +146,6 @@ typedef struct
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

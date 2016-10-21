@@ -1,11 +1,10 @@
 ---
 author: payzer
 title: "Отключение масштабирования"
-description: 
-area: Xbox
+description: "Инструкции по отключению коэффициента масштабирования по умолчанию."
 translationtype: Human Translation
-ms.sourcegitcommit: 192de32bf3afd11cd375655ad92d194ccb09dae1
-ms.openlocfilehash: 307606bc290e9c5268fc5a37b72770d6b1ada4da
+ms.sourcegitcommit: 582f5677c15f7cd62c398103b48743ba4bea6c5b
+ms.openlocfilehash: 8079be9685558277565766fa8d0ebbfd4a555904
 
 ---
 
@@ -15,7 +14,9 @@ ms.openlocfilehash: 307606bc290e9c5268fc5a37b72770d6b1ada4da
 ## HTML   
 Вы можете отказаться от коэффициента масштабирования, воспользовавшись следующим фрагментом кода. 
    
-`var result = Windows.UI.ViewManagement.ApplicationViewScaling.trySetDisableLayoutScaling(true);` 
+```
+var result = Windows.UI.ViewManagement.ApplicationViewScaling.trySetDisableLayoutScaling(true);
+```
 
 Также можно использовать подходящий для веб-страниц метод:   
 
@@ -30,13 +31,19 @@ ms.openlocfilehash: 307606bc290e9c5268fc5a37b72770d6b1ada4da
 ## XAML
 Вы можете отказаться от коэффициента масштабирования, воспользовавшись следующим фрагментом кода.   
    
-`bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);`   
+```
+bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
+```
    
 ## DirectX/C++   
-Приложения на DirectX/C++ не масштабируются. Автоматическое масштабирование распространяется только на HTML- и XAML-приложения.   
+Приложения на DirectX/C++ не масштабируются. Автоматическое масштабирование распространяется только на HTML- и XAML-приложения.  
+
+## См. также
+- [Рекомендации для Xbox](tailoring-for-xbox.md)
+- [Приложения UWP для Xbox One](index.md)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

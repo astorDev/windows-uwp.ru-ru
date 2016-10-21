@@ -1,48 +1,58 @@
-﻿---
+---
 author: jnHs
-Description: Managing your add-ons in bulk allows you to make changes to multiple add-ons at once rather than submitting each update individually.
-title: Manage add-ons in bulk
+Description: "Пакетное управление надстройками позволяет изменять сразу несколько надстроек, вместо того чтобы отправлять каждое обновление отдельно."
+title: "Пакетное управление надстройками"
+translationtype: Human Translation
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 9d387cf3a7850301660a672e3255a762ecd3bd4a
+
 
 ---
 
-# Manage add-ons in bulk
+# Пакетное управление надстройками
 
-> **Important** This feature is currently only available to developer accounts which have joined the [Dev Center Insider Program](dev-center-insider-program.md). The implementation of this feature may change before it becomes available to all developers. This preliminary documentation provides some basic info about how the feature works.
+> **Важно!** В настоящее время эта функция доступна только для учетных записей разработчиков, участвующих в [Программе предварительной оценки для Центра разработки](dev-center-insider-program.md). Реализация этой функции может измениться, прежде чем она станет доступна всем разработчикам. Эта предварительная документация предоставляет некоторые основные сведения о работе функции.
 
-Managing your add-ons in bulk allows you to make changes to multiple add-ons at once rather than submitting each update individually. You can access this functionality from your app’s overview page by clicking **Manage add-ons in bulk**.
+Пакетное управление надстройками позволяет изменять сразу несколько надстроек, вместо того чтобы отправлять каждое обновление отдельно. Вы можете получить доступ к этой функции со страницы обзора приложения, нажав **Пакетное управление надстройками**.
 
-## Export current add-on info
+## Экспорт текущих сведений о надстройках
 
-To get started, you’ll first need to download a .csv template file. If you’ve already created add-ons, this file will include info about them. If not, it will be a blank file that you can use to enter info for new add-ons.
+Для начала вам потребуется скачать CSV-файл шаблона. Если вы уже создавали надстройки, этот файл будет содержать сведения о них. В противном случае это будет пустой файл, в который можно вводить сведения для новых надстроек.
 
-To generate and download this template file, click **Export add-ons** and save the .csv file to your computer.
+Чтобы создать и скачать этот файл шаблона, нажмите **Экспорт надстроек** и сохраните CSV-файл на компьютере.
 
-The .csv file contains the following columns. 
+CSV-файл содержит следующие столбцы. 
 
-| Column name               | Description                            | Required?      |
+| Имя столбца               | Описание                            | Обязательный?      |
 |---------------------------|----------------------------------|----------------------|
-| Product ID	|  The unique [product ID](set-your-add-on-product-id.md#product-id) of the add-on.  | Yes. Can’t be changed after the add-on is published. |
-| Action |The action you want to apply when you import the template. Supported values are **Submit** (to submit a new add-on or update a previously-published add-on) and **CreateDraft** (to save the changes without submitting them to the Store). |	 Yes |
-| Product type	| The [product type](set-your-add-on-product-id.md#product-type) of the add-on. Supported values are **Consumable** or **Durable**. |	Yes. Can’t be changed after add-on is published. |
-| Product lifetime	| For a Durable add-on, this is either **Forever** (for a product that never expires) or a set duration. Acceptable duration values are: **1day, 3days, 5days, 7days, 14days, 30days, 60days, 90days, 180days, 365days**	| Yes (if Product type is Durable) |
-| Content type	| The [content type](enter-add-on-properties.md#content-type) of the add-on. For most add-ons. this should be **ElectronicSoftwareDownload**. Other acceptable values are: **ElectronicBooks, ElectronicMagazineSingleIssue, ElectronicNewspaperSingleIssue, MusicDownload, MusicStreaming, OnlineDataStorageServices, VideoDownload, VideoStreaming, SoftwareAsAService** |	Yes |
-| Tag	| Optional [Tag](enter-add-on-properties.md#custom-developer-data) (also known as **Custom developer data**) info used in your app’s implementation. | No |
-| Base price	| The [price tier](set-add-on-pricing-and-availability.md#base-price) at which you want to offer the add-on. Must either be **Free** or a valid price tier in the format **0.99USD**. |	Yes |
-| Release date	| The date at which you want to publish the add-on. Acceptable values are **Immediate**, **Manual**, or a date string that complies with the [ISO 8601 standard](http://go.microsoft.com/fwlink/p/?LinkId=817237). | Yes |
-| Titles	| The name that customers will see for the add-on, preceded by the language code and a semicolon. For example, to use the title “Example Title” in English/United States, you would *enter en-us;Example Title*. Additional titles for other languages can be separated by semicolons. Each title must be 100 characters or fewer. 	| Yes |
-|Descriptions	| Optional additional info to display to customers, preceded by the language-locale code and a semicolon. For example, to use the description “This is an example” in English/United States, you would enter *en-us;This is an example*. Additional titles for other languages can be separated by semicolons. Each description must be 200 characters or fewer.	| No |
-| Markets |	One or more [markets](define-pricing-and-market-selection.md#windows-store-consumer-markets) in which you want to offer the add-on. Separate each market by a semicolon. |	Yes |
-|Keywords |	Optional [keywords](enter-add-on-properties.md#keywords) used in your app’s implementation. | No |
+| Код продукта    |  Уникальный [код продукта](set-your-add-on-product-id.md#product-id) надстройки.  | Да. Изменение после публикации надстройки невозможно. |
+| Действие |Действие, которое требуется выполнить при импорте шаблона. Поддерживаются значения **Submit** (для отправки новой надстройки или обновления ранее опубликованной надстройки) и **CreateDraft** (для сохранения изменений без их отправки в Магазин). |  Да |
+| Тип продукта  | [Тип продукта](set-your-add-on-product-id.md#product-type) этой надстройки. Поддерживаются значения **Consumable** и **Durable**. |   Да. Изменение после публикации надстройки невозможно. |
+| Срок действия продукта  | Для надстроек с типом "Durable" это либо **Forever** (для продукта с неограниченным сроком действия), либо определенный срок. Приемлемы следующие значения длительности: **1day, 3days, 5days, 7days, 14days, 30days, 60days, 90days, 180days, 365days**    | Да (если тип продукта — "Durable") |
+| Тип содержимого  | [Тип содержимого](enter-add-on-properties.md#content-type) этой надстройки. Для большинства надстроек. должен быть **ElectronicSoftwareDownload**. Другие допустимые значения: **ElectronicBooks, ElectronicMagazineSingleIssue, ElectronicNewspaperSingleIssue, MusicDownload, MusicStreaming, OnlineDataStorageServices, VideoDownload, VideoStreaming, SoftwareAsAService** |    Да |
+| Тег   | Необязательные данные [тега](enter-add-on-properties.md#custom-developer-data) (также известные как **пользовательские данные разработчика**), используемые при реализации приложения. | Нет |
+| Базовая цена    | [Ценовая категория](set-add-on-pricing-and-availability.md#base-price), в которой вы собираетесь предлагать надстройку. Значением должно быть либо **Free**, либо допустимая ценовая категория в формате **0.99USD**. | Да |
+| Дата выпуска  | Дата, когда вы собираетесь опубликовать надстройку. Приемлемы значения **Immediate**, **Manual** или строка даты, соответствующая [стандарту ISO 8601](http://go.microsoft.com/fwlink/p/?LinkId=817237). | Да |
+| Заголовки    | Название надстройки, которое будут видеть пользователи, с предшествующим кодом языка и точкой с запятой. Например, чтобы использовать заголовок "Example Title" на английском (США), нужно ввести *en-us;Example Title*. Дополнительные заголовки для других языков можно разделять точкой с запятой. Каждый заголовок должен быть не длиннее 100 символов.  | Да |
+|Описания   | Необязательные дополнительные сведения, отображаемые для клиентов, с предшествующим кодом языка и языкового стандарта и точкой с запятой. Например, чтобы использовать описание "This is an example" на английском/в США, нужно ввести *en-us;This is an example*. Дополнительные заголовки для других языков можно разделять точкой с запятой. Каждое описание должно быть не длиннее 200 символов.    | Нет |
+| Рынки | Один или несколько [рынков](define-pricing-and-market-selection.md#windows-store-consumer-markets), на которых вы собираетесь предлагать надстройку. Каждый рынок отделяется точкой с запятой. |  Да |
+|Ключевые слова | Необязательные [ключевые слова](enter-add-on-properties.md#keywords), используемые при реализации приложения. | Нет |
 
-## Import add-ons
+## Импорт надстроек
 
-Before you can import changes, you’ll need to update the downloaded .csv file with the changes you’d like to make.
+Перед импортом изменений вам потребуется обновить скачанный CSV-файл, внеся в него требуемые изменения.
 
-To make changes to add-ons that you’ve already published, update the values you wish to change in your copy of the spreadsheet. You can remove any rows for add-ons that you don’t want to update, or leave them as is. Note that if there is already a submission in progress for that add-on, you won’t be able to make changes using the .csv file.
+Чтобы изменить уже опубликованные надстройки, обновите значения, которые требуется изменить, в вашей копии электронной таблицы. Вы можете удалить любые строки надстроек, которые не собираетесь обновлять, или оставить их как есть. Обратите внимание, что если уже выполняется отправка этой надстройки, вы не сможете внести изменения с помощью CSV-файла.
 
-> **Important** When submitting updates to add-ons that you’ve already published, you can’t change the **Product ID** and **Product type** fields.
+> **Важно!** При отправке обновлений для уже опубликованных надстроек вы не можете изменять поля **Код продукта** и **Тип продукта**.
 
-To submit a new add-on, add a new row and enter the info for your new add-on. Be sure to enter all of the required info. 
+Чтобы отправить новую надстройку, добавьте новую строку и введите сведения для новой надстройки. Обязательно введите все необходимые сведения. 
 
-When you have made all of the changes, save the .csv file (with the same filename), then upload the file by dragging it to the specified field (or click **Browse your files**). A summary of your changes will be shown, along with any errors that must be fixed before submitting. After you’ve verified that the info is correct, you can click **Submit to the Store**. Each add-on will go through the submission process using the info that you’ve provided.
+Внеся все изменения, сохраните CSV-файл с тем же именем и отправьте его путем перетаскивания в указанное поле (или нажмите **Просмотр файлов**). Отобразится сводка изменений, а также все ошибки, которые необходимо исправить перед отправкой. Убедившись в правильности сведений, нажмите **Отправить в Магазин**. Каждая надстройка пройдет процесс отправки с использованием предоставленных вами сведений.
+
+
+
+
+<!--HONumber=Aug16_HO3-->
+
 

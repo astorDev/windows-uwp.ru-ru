@@ -1,72 +1,76 @@
 ---
 author: mcleanbyron
 ms.assetid: A0DFF26B-FE06-459B-ABDC-3EA4FEB7A21E
-description: Use this method in the Windows Store submission API to get data for an existing package flight submission.
-title: Get a package flight submission using the Windows Store submission API
+description: "Используйте этот метод в API отправки Магазина Windows для получения данных для существующей отправки тестового пакета."
+title: "Получение отправки тестового пакета с помощью API отправки Магазина Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: d9b445361f9931a4745f5c0b17222637b5d83c4d
+
 ---
 
-# Get a package flight submission using the Windows Store submission API
+# Получение отправки тестового пакета с помощью API отправки Магазина Windows
 
 
 
 
-Use this method in the Windows Store submission API to get data for an existing package flight submission. For more information about the process of process of creating a package flight submission by using the Windows Store submission API, see [Manage package flight submissions](manage-flight-submissions.md).
+Используйте этот метод в API отправки Магазина Windows для получения данных для существующей отправки тестового пакета. Дополнительные сведения о процессе создания отправки тестового пакета с помощью API отправки Магазина Windows см. в разделе [Управление отправкой тестового пакета](manage-flight-submissions.md).
 
-## Prerequisites
+## Необходимые условия
 
-To use this method, you need to first do the following:
+Для использования этого метода необходимо выполнить следующие действия:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Create a package flight submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [create a package flight submission](create-a-flight-submission.md) method.
+* Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
+* Создайте отправку тестового пакета для приложения в учетной записи Центра разработки. Это можно сделать на информационной панели Центра разработки или с помощью метода [создания отправки тестового пакета](create-a-flight-submission.md).
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
-## Request
+## Запрос
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+У этого метода следующий синтаксис. Примеры использования и описание заголовка и тела запроса приведены в следующих разделах.
 
-| Method | Request URI                                                      |
+| Метод | URI запроса                                                      |
 |--------|------------------------------------------------------------------|
 | GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions{submissionId}``` |
 
 <span/>
- 
+ 
 
-### Request header
+### Заголовок запроса
 
-| Header        | Type   | Description                                                                 |
+| Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
-### Request parameters
+### Параметры запроса
 
-| Name        | Type   | Description                                                                 |
+| Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app that contains the package flight submission you want to get. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| flightId | string | Required. The ID of the package flight that contains the submission you want to get. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
-| submissionId | string | Required. The ID of the submission to get. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight submission](create-a-flight-submission.md).  |
+| applicationId | string | Обязательный. Код продукта в Магазине, принадлежащий приложению, содержащему отправку тестового пакета, который требуется получить. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| flightId | string | Обязательный. Идентификатор тестового пакета, содержащего отправку, которую требуется получить. Этот идентификатор отображается на информационной панели Центра обработки, а также добавляется в данные ответов для запросов на [создание тестового пакета](create-a-flight.md) и [получение тестовых пакетов для приложения](get-flights-for-an-app.md).  |
+| submissionId | string | Обязательный. Идентификатор отправки, которую требуется получить. Этот идентификатор отображается на информационной панели Центра обработки, а также добавляется в данные ответов для запросов на [создание отправки тестового пакета](create-a-flight-submission.md).  |
 
 <span/>
 
-### Request body
+### Тело запроса
 
-Do not provide a request body for this method.
+Предоставлять тело запроса для этого метода не требуется.
 
-### Request example
+### Пример запроса
 
-The following example demonstrates how to get a package flight submission for an app that has the Store ID 9WZDNCRD91MD.
+В приведенном ниже примере показано, как получить отправку тестового пакета для приложения с кодом продукта в Магазине 9WZDNCRD91MD.
 
 ```
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## Ответ
 
-The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the specified submission. For more details about the values in the response body, see [Package flight submission resource](manage-flight-submissions.md#flight-submission-object).
+В следующем примере представлено тело ответа JSON в случае успешного вызова этого метода. В теле ответа содержатся сведения об указанной отправке. Дополнительные сведения о значениях в теле ответа см. в разделе [Ресурс отправки тестового пакета](manage-flight-submissions.md#flight-submission-object).
 
 ```json
 {
@@ -97,23 +101,29 @@ The following example demonstrates the JSON response body for a successful call 
 }
 ```
 
-## Error codes
+## Коды ошибок
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+Если запрос не удается выполнить, ответ будет содержать один из следующих кодов ошибок HTTP.
 
-| Error code |  Description   |
+| Код ошибки |  Описание   |
 |--------|------------------|
-| 404  | The package flight submission could not be found. |
-| 409  | The package flight submission does not belong to the specified package flight, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 404  | Не удалось найти отправку тестового пакета. |
+| 419  | Отправка тестового пакета не принадлежит указанному тестовому пакету, или приложение использует функцию информационной панели Центра разработки, которая [в настоящее время не поддерживается API отправки Магазина Windows](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 <span/>
 
 
-## Related topics
+## Связанные разделы
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage package flight submissions](manage-flight-submissions.md)
-* [Create a package flight submission](create-a-flight-submission.md)
-* [Commit a package flight submission](commit-a-flight-submission.md)
-* [Update a package flight submission](update-a-flight-submission.md)
-* [Delete a package flight submission](delete-a-flight-submission.md)
+* [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
+* [Управление отправкой тестового пакета](manage-flight-submissions.md)
+* [Создание отправки тестового пакета](create-a-flight-submission.md)
+* [Подтверждение отправки тестового пакета](commit-a-flight-submission.md)
+* [Обновление отправки тестового пакета](update-a-flight-submission.md)
+* [Удаление отправки тестового пакета](delete-a-flight-submission.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

@@ -1,16 +1,17 @@
 ---
 author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
-description: "Используйте этот метод в API аналитики Магазина Windows для получения отзывов о приложении в заданном диапазоне дат или с учетом других дополнительных фильтров."
+description: "Используйте этот метод в API аналитики для Магазина Windows для получения отзывов о приложении в заданном диапазоне дат или с учетом других дополнительных фильтров."
 title: "Получение отзывов о приложении"
-redirect_url: https://msdn.microsoft.com/en-us/windows/uwp/monetize/get-error-reporting-data
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3d885322181fa8b932dd248c8c71e7d6d747bb06
+redirect_url: https://msdn.microsoft.com/windows/uwp/monetize/get-error-reporting-data
+translationtype: Human Translation
+ms.sourcegitcommit: 87d737638b9f43f4ebaddeae829889e0dabdb9b2
+ms.openlocfilehash: 15db76c03f5880955bc4e609ea004f659a3495bd
 
 ---
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: jwmsft
 description: "В разметке XAML для свойства задается значение null."
 title: "Расширение разметки x:Null"
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 96ec27fa36d5a30d6bcf3b3c4ad4a330bf799a09
+ms.openlocfilehash: c81acb985c54a8dc799df5ad9c811577777dbf9b
 
 ---
 
@@ -22,8 +23,7 @@ ms.openlocfilehash: 96ec27fa36d5a30d6bcf3b3c4ad4a330bf799a09
 
 ## Комментарии
 
-
-            **null** представляет собой ключевое слово пустой ссылки для C# и C++. Ключевым словом Microsoft Visual Basic для пустой ссылки является **Nothing**.
+**null** представляет собой ключевое слово пустой ссылки для C# и C++. Ключевым словом Microsoft Visual Basic для пустой ссылки является **Nothing**.
 
 Исходное значение по умолчанию может отличаться у различных свойств зависимостей, и это не обязательно будет значение **null**. Кроме того, многие свойства зависимостей не будут принимать **null** в качестве значения (ни через разметку, ни через код) из-за своей внутренней реализации. В таких случаях установка значения атрибута XAML при помощи **{x:Null}** может привести к исключению средства синтаксического анализа.
 
@@ -38,6 +38,6 @@ ms.openlocfilehash: 96ec27fa36d5a30d6bcf3b3c4ad4a330bf799a09
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

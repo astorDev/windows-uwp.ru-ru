@@ -3,8 +3,9 @@ author: mtoepke
 title: "Активация приложения (DirectX и C++)"
 description: "В этом разделе показано, как определить процесс активации для приложения универсальной платформы Windows (UWP), использующего DirectX."
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 14859d03c7af45a17772c76f8c79b3c1bc56272c
+ms.openlocfilehash: 0b13604d2b0349817881a5c1c56c311931c90759
 
 ---
 
@@ -38,8 +39,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 ## Активация экземпляра CoreWindow для приложения
 
 
-При запуске приложения необходимо получить ссылку на [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) для приложения. 
-            **CoreWindow** содержит диспетчер сообщений о событиях окон, который ваше приложение использует для обработки событий окон. Получите ссылку с помощью обратного вызова для события активации приложения. Для этого необходимо вызвать [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589). Получив ссылку, активируйте главное окно приложения, вызвав [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254).
+При запуске приложения необходимо получить ссылку на [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) для приложения. **CoreWindow** содержит диспетчер сообщений о событиях окон, который ваше приложение использует для обработки событий окон. Получите ссылку с помощью обратного вызова для события активации приложения. Для этого необходимо вызвать [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589). Получив ссылку, активируйте главное окно приложения, вызвав [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254).
 
 ```cpp
 void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^ args)
@@ -95,6 +95,6 @@ void App::Run()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

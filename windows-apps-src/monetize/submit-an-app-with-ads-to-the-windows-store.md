@@ -4,8 +4,8 @@ ms.assetid: b307fc7d-0424-459d-8c20-e37e5cfec0d0
 description: "Сведения о требованиях, которым должны отвечать приложения, использующие библиотеки Microsoft advertising, для публикации в Магазине."
 title: "Отправка приложения с рекламой в Магазин Windows"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 24a4608692c0a996c86d8b74aee38f931fdaf557
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: cf9cc2d9ed59e80d5e9a5222d17c277aa79c7814
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: 24a4608692c0a996c86d8b74aee38f931fdaf557
 # Отправка приложения с рекламой в Магазин Windows
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 Завершив разрабатывать приложение с рекламой, вы можете опубликовать его в информационной панели Центра разработки для Windows, чтобы приложение стало доступно в Магазине Windows. Подробнее об этой процедуре см. в разделе [Публикация приложений для Windows](https://developer.microsoft.com/windows/publish).
 
@@ -30,6 +30,6 @@ ms.openlocfilehash: 24a4608692c0a996c86d8b74aee38f931fdaf557
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,14 +5,13 @@ description: "С помощью удаленного сценария JavaScript
 kw: Hosted Web Apps, Accessing Windows 10 features from remote JavaScript, Building a Win10 Web Application, Windows JavaScript Apps, Microsoft Web Apps, HTML5 app for PC, ACUR URI Rules for Windows App, Call Live Tiles with web app, Use Cortana with web app, Access Cortana from website, msapplication-cortanavcd
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a7f7dccb9c7461e482bd43c8f370a2a7244eb735
+ms.openlocfilehash: fb74bfc40750941860dae0a8f811fde4a614e403
 
 ---
 
 # Доступ к функциям универсальной платформы Windows (UWP)
 
-Ваше веб-приложение может получать полный доступ к универсальной платформе Windows (UWP), активировать собственные функции устройств с Windows, [использовать преимущества средств обеспечения безопасности Windows](#keep-your-app-secure-setting-application-content-uri-rules-acurs), [вызывать API среды выполнения Windows](#call-windows-runtime-apis) непосредственно из размещенного на сервере сценария, использовать [интеграцию с Кортаной](#integrate-cortana-voice-commands), а также работать с [поставщиком проверки подлинности в Интернете](#web-authentication-broker). 
-              Также поддерживаются [гибридные приложения](#create-hybrid-apps-packaged-web-apps-vs-hosted-web-apps). Вы можете включить локальный код, который будет вызываться из размещенного сценария, и управлять навигацией по приложению на удаленных и локальных страницах.
+Ваше веб-приложение может получать полный доступ к универсальной платформе Windows (UWP), активировать собственные функции устройств с Windows, [использовать преимущества средств обеспечения безопасности Windows](#keep-your-app-secure-setting-application-content-uri-rules-acurs), [вызывать API среды выполнения Windows](#call-windows-runtime-apis) непосредственно из размещенного на сервере сценария, использовать [интеграцию с Кортаной](#integrate-cortana-voice-commands), а также работать с [поставщиком проверки подлинности в Интернете](#web-authentication-broker). Также поддерживаются [гибридные приложения](#create-hybrid-apps-packaged-web-apps-vs-hosted-web-apps). Вы можете включить локальный код, который будет вызываться из размещенного сценария, и управлять навигацией по приложению на удаленных и локальных страницах.
 
 ## Обеспечение безопасности приложения. Настройка правил универсального кода ресурса (URI) для содержимого приложения (ACUR)
 
@@ -154,6 +153,6 @@ function updateTile(message, imgUrl, imgAlt) {
 - [Объявления возможностей приложения](https://msdn.microsoft.com/ibrary/windows/apps/hh464936.aspx)
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

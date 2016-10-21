@@ -1,68 +1,78 @@
-﻿---
+---
 author: jnHs
-Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
-title: Enter add-on properties
+Description: "При отправке надстройки параметры на странице «Свойства» позволяют определить поведение надстройки, когда она предлагается пользователям."
+title: "Ввод свойств надстройки"
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
+translationtype: Human Translation
+ms.sourcegitcommit: e3bc74fab0ae75c35581e33323100376ad755e9c
+ms.openlocfilehash: 1c030f7d79de37e20620cf56a30b1c1570e9b90b
+
 ---
 
-# Enter add-on properties
+# Ввод свойств надстройки
 
 
-When submitting an add-on, the options on the **Properties** page help determine the behavior of your add-on when offered to customers.
+При отправке надстройки параметры на странице **Свойства** позволяют определить поведение надстройки, когда она предлагается пользователям.
 
-## Product type
+## Тип продукта
 
-Your product type is selected when you first [create the add-on](set-your-add-on-product-id.md). The product type you selected is displayed here, but you can't change it.
+Тип продукта выбирается при первом [создании надстройки](set-your-add-on-product-id.md). Здесь отображается тип выбранного продукта, но изменить его невозможно.
 
-> **Note**  If you haven't published the add-on. you can delete the submission and start again if you need to choose a different product type. 
+> **Примечание** Если надстройка не была опубликована и требуется выбрать другой тип продукта, можно удалить отправку и начать все снова. 
 
-Depending on the product type you selected, you may see one of the following fields:
+В зависимости от выбранного типа продукта может отображаться одно из следующих полей:
 
-### Product lifetime
-If you selected **Durable** for your product type, the **Product lifetime** is shown here. The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. If you prefer, you can set the **Product lifetime** so that the add-on expires after a set duration (with options from 1-365 days). 
+### Срок действия продукта
+Если выбран тип продукта **Длительного пользования**, здесь отображается **Срок службы продукта**. Для надстройки длительного пользования **Срок службы продукта** по умолчанию имеет значение **Всегда**, то есть срок службы надстройки никогда не заканчивается. При желании можно установить такой **Срок службы продукта**, чтобы срок службы надстройки истекал через определенное время (в диапазоне от 1 до 365 дней). 
 
-### Quantity
-If you selected **Store-managed consumable** for your product type, the **Quantity** is shown here. You'll need to enter a number between 1 and 1000000. This quantity will be granted to the customer when they acquire your add-on, and the Store will track the balance as the app reports the customer’s consumption of the add-on.
+### Количество
+Если выбран тип продукта **Потребляемый элемент, управляемый Магазином**, здесь отображается **Количество**. Необходимо ввести число от 1 до 1000000. Это количество предоставляется пользователю, когда он приобретает надстройку, и Магазин будет отслеживать баланс, когда приложение сообщает о потреблении клиентом надстройки.
 
-## Content type
+## Тип содержимого
 
-Regardless of your add-on's product type, you'll also need to indicate the type of content you're offering. For most add-ons, the content type should be **Electronic software download**. If another option from the list seems to describe your add-on better (for example, if you are offering a music download or an e-book), select that option instead. 
+Независимо от типа надстройки также может понадобиться указать тип предоставляемого содержимого. Для большинства надстроек тип содержимого должен быть **Загрузка электронного программного обеспечения**. Если вам кажется, что другой параметр из списка лучше подходит для вашей надстройки (например, если вы предлагаете скачать музыку или электронную книгу), выберите его. 
 
-These are the possible options for an add-on's content type:
+Возможные параметры для типа содержимого надстройки перечислены ниже.
 
--   Electronic software download
--   Electronic books
--   Electronic magazine single issue
--   Electronic newspaper single issue
--   Music download
--   Music streaming
--   Online data storage/services
--   Video download
--   Video streaming
--   Software as a service
+-   Загрузка электронного программного обеспечения
+-   Электронные книги
+-   Один номер электронного журнала
+-   Один номер электронной газеты
+-   Загрузка музыки
+-   Потоковая передача музыки
+-   Хранение данных в сети и сетевые службы
+-   Загрузка видео
+-   Потоковая передача видео
+-   Программное обеспечение как услуга
 
-## Keywords
+## Ключевые слова
 
-You have the option to provide up to ten keywords of up to 30 characters each for each add-on you submit. Your app can then query for add-ons that match these words. This feature lets you build screens in your app that can load add-ons without you having to directly specify the product ID in your app's code. You can then change the add-on's keywords anytime, without having to make code changes in your app or submit the app again.
+Для каждой надстройки можно предоставить до десяти ключевых слов длиной не более 30 символов. После этого приложение сможет запрашивать надстройки, соответствующие этим ключевым словам. Эта функция позволяет создавать экраны в приложении, которые смогут загружать надстройки без непосредственного указания с вашей стороны кода продукта в коде самого приложения. В любое время можно изменить ключевые слова надстройки без необходимости внесения изменений в код вашего приложения или повторной отправки этого приложения.
 
-> **Note**  Keywords are not available for use in packages targeting Windows 8 and Windows 8.1.
+> **Примечание.** Ключевые слова недоступны для использования в пакетах для Windows 8 и Windows 8.1.
 
-## Custom developer data
+## Пользовательские данные, определенные разработчиком
 
-You can enter up to 3000 characters into the **Custom developer data** field to provide extra context for your in-app product.
+Можно ввести до 3000 символов в поле **Пользовательские данные, определенные разработчиком**, чтобы предоставить дополнительный контекст для внутреннего продукта приложения.
 
-> **Note** This field was formerly called **Tag**.
+> **Примечание.** Это поле раньше называлось **Тег**.
 
-For example, let’s say you have a game, and you’re selling a bag of gold coins as an add-on. Using the **Custom developer data** field, the app can query for this bag of gold. You can adjust the value at any time (in this case, the number of coins in your bag) by updating the info in the add-on's **Custom developer data** field, without having to make code changes in your app or submit the app again.
+Например, у вас есть игра, и вы продаете мешок золотых монет в качестве надстройки. Используя поле **Пользовательские данные, определенные разработчиком**, приложение может сделать запрос для этого мешка золота. Вы можете в любой момент изменить значение (в данном случае — количество монет в мешке), обновив сведения в поле **Пользовательские данные, определенные разработчиком** для надстройки, без изменения кода вашего приложения или повторной отправки приложения.
 
-> **Note**  The **Custom developer data** field is not available for use in packages targeting Windows 8 and Windows 8.1.
+> **Примечание.** Поле **Пользовательские данные, определенные разработчиком** недоступно для использования в пакетах для Windows 8 и Windows 8.1.
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+
+<!--HONumber=Aug16_HO5-->
 
 

@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
 title: "Оптимизация времени приостановки и возобновления работы"
 description: "Создавайте приложения универсальной платформы Windows (UWP), которые упростят использование системы жизненных циклов процессов для эффективного восстановления после приостановки или завершения."
+translationtype: Human Translation
 ms.sourcegitcommit: e0f04c4242891b25db460d4852ab8cc070d82260
-ms.openlocfilehash: 9fee4ab9c55c1243c04c2ed5f007412751528037
+ms.openlocfilehash: 312c0a64308a42d74a52fe6587dae10de7c838a3
 
 ---
 # Оптимизация времени приостановки и возобновления работы
@@ -59,10 +60,7 @@ ms.openlocfilehash: 9fee4ab9c55c1243c04c2ed5f007412751528037
 
 С точки зрения производительности рекомендуется использование класса [**XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx). **XmlSerializer** требует минимальных времени сериализации и десериализации и используемого объема памяти. **XmlSerializer** мало зависит от .NET Framework. Это означает, что для использования **XmlSerializer** потребуется загружать меньшее (по сравнению с другими технологиями сериализации) количество модулей в ваше приложение.
 
-
-            [
-              **DataContractSerializer**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) легко выполнять сериализацию пользовательских классов, хотя он менее эффективен в плане производительности, чем класс **XmlSerializer**. Перейти на использование последнего класса стоит, если вам нужна оптимальная производительность. Вообще не стоит использовать больше одного класса сериализации и лучше всего использовать класс **XmlSerializer**, если вам не нужны возможности других классов сериализации.
+[**DataContractSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) легко выполнять сериализацию пользовательских классов, хотя он менее эффективен в плане производительности, чем класс **XmlSerializer**. Перейти на использование последнего класса стоит, если вам нужна оптимальная производительность. Вообще не стоит использовать больше одного класса сериализации и лучше всего использовать класс **XmlSerializer**, если вам не нужны возможности других классов сериализации.
 
 ### Уменьшение используемого объема памяти
 
@@ -94,6 +92,6 @@ ms.openlocfilehash: 9fee4ab9c55c1243c04c2ed5f007412751528037
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,8 +5,9 @@ title: "Взаимодействия с сенсорной панелью"
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
+ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
 ---
 
@@ -149,16 +150,12 @@ ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
 
 * [Работа с данными указателя](handle-pointer-input.md)
 * [Определение устройств ввода](identify-input-devices.md)
-            
-          
-            **Примеры**
+**Примеры**
 * [Пример базового ввода](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Пример ввода с малой задержкой](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Пример режима взаимодействия с пользователем](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [Пример визуальных элементов фокуса](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-            
-          
-            **Примеры из архива**
+**Примеры из архива**
 * [Ввод: пример возможностей устройства](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Ввод: пример событий пользовательского ввода на XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Пример прокрутки, сдвига и масштабирования на XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -170,6 +167,6 @@ ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

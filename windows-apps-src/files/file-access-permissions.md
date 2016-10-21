@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: "Разрешения на доступ к файлам"
 description: "Приложения могут иметь доступ к определенным расположениям в файловой системе по умолчанию. Приложения также могут получить доступ к дополнительным расположениям через средство выбора файлов или с помощью объявления возможностей."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
+ms.sourcegitcommit: ef8d0e7ad9063fa57a9db7c3cbdcb6846d3b1133
+ms.openlocfilehash: e58cdce7f803cd15b66371e3b03c4405cbdeb3ff
 
 ---
 # Разрешения на доступ к файлам
@@ -19,8 +19,7 @@ ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
 
 Создавая новое приложение, вы по умолчанию получаете доступ к следующим расположениям в файловой системе:
 
--   
-              **Папка установки приложения**. Папка, в которую устанавливается ваше приложение в системе пользователя.
+-   **Папка установки приложения**. Папка, в которую устанавливается ваше приложение в системе пользователя.
 
     Существуют два основных способа получения доступа к файлам и папкам в папке установки вашего приложения.
 
@@ -48,7 +47,7 @@ ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
             }
         );
         ```
-        
+
         После завершения метод [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) возвращает класс [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171), соответствующий файлу *file.txt* в папке установки приложения (`file` в примере).
 
         Префикс «ms-appx:///» в универсальном коде ресурса относится к папке установки приложения. Дополнительные сведения об использовании универсальных кодов ресурсов: [Добавление ссылок на содержимое с помощью URI](https://msdn.microsoft.com/library/windows/apps/hh781215).
@@ -72,7 +71,7 @@ ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
         ```javascript
         var localFolder = Windows.Storage.ApplicationData.current.localFolder;
         ```
- 
+
         Если вы хотите получить доступ к перемещаемой или временной папке вашего приложения, вместо этого используйте свойство [**RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) или [**TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629).
 
         Загрузив класс [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), соответствующий расположению данных приложения, вы получите доступ к файлам и папкам этого расположения с помощью методов **StorageFolder**. В примере эти объекты **StorageFolder** хранятся в переменной `localFolder`. Больше об использовании расположений данных приложения можно узнать из статьи [Управление данными приложения](https://msdn.microsoft.com/library/windows/apps/hh465109), а также скачав [Пример данных приложения](http://go.microsoft.com/fwlink/p/?linkid=231478) для Windows8.1 и использовав исходный код из него в приложении для Windows10.
@@ -81,7 +80,7 @@ ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
-        StorageFile file = await StorageFile.GetFileFromApplicationUriAsync("ms-appdata:///local/file.txt");
+        StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///file.txt"));
         ```
         ```javascript
         Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appdata:///local/file.txt").done(
@@ -103,8 +102,7 @@ ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
 
     Конечно, вы также можете получить доступ к файлам и папкам на съемном устройстве, вызвав средство выбора файлов (с помощью [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) и [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) и позволив пользователю выбирать файлы или папки, предоставляя приложению доступ к ним. Сведения об использовании средства выбора файлов см. в статье [Открытие файлов и папок с помощью средства выбора](quickstart-using-file-and-folder-pickers.md).
 
-    
-              **Примечание.**  Подробнее о доступе к SD-карте из мобильного приложения см. в статье [Доступ к SD-карте](access-the-sd-card.md).
+    **Примечание.** Подробнее о доступе к SD-карте из мобильного приложения см. в статье [Доступ к SD-карте](access-the-sd-card.md).
 
      
 
@@ -127,10 +125,8 @@ ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
             }
         );
         ```
- 
-        
-              [
-              **DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) перегружен таким образом, чтобы вы могли указать системе алгоритм действий, если в папке загружаемых файлов уже существует файл с таким же именем. После завершения эти методы возвращают класс [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171), соответствующий созданному файлу. В примере этот файл назван `newFile`.
+
+        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) перегружен таким образом, чтобы вы могли указать системе алгоритм действий, если в папке загружаемых файлов уже существует файл с таким же именем. После завершения эти методы возвращают класс [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171), соответствующий созданному файлу. В примере этот файл назван `newFile`.
 
     -   Вы можете создать вложенную папку в папке скачиваемых файлов пользователя следующим образом:
         > [!div class="tabbedCodeSnippets"]
@@ -145,10 +141,8 @@ ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
             }
         );
         ```
- 
-        
-              [
-              **DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) перегружен таким образом, чтобы вы могли указать системе алгоритм действий, если в папке загружаемых файлов уже существует вложенная папка с таким же именем. После завершения эти методы возвращают класс [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), соответствующий созданной вложенной папке. В примере этот файл назван `newFolder`.
+
+        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) перегружен таким образом, чтобы вы могли указать системе алгоритм действий, если в папке загружаемых файлов уже существует вложенная папка с таким же именем. После завершения эти методы возвращают класс [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), соответствующий созданной вложенной папке. В примере этот файл назван `newFolder`.
 
     Если вы создаете файл или папку в папке скачиваемых файлов, мы рекомендуем добавить этот элемент в [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) вашего приложения, чтобы в дальнейшем оно могло быстро получать доступ к этому элементу.
 
@@ -166,12 +160,11 @@ ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
 | Видео    | VideosLibrary<br>См. также статью [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
 | Съемные устройства  | RemovableDevices <br><br>Примечание. Необходимо добавить сопоставления типов файлов в манифест приложения, в котором указаны конкретные типы файлов, доступные приложению в этом расположении. <br><br>См. также статью [Получение доступа к SD-карте](access-the-sd-card.md) | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
 | Библиотеки домашней группы  | Требуется по меньшей мере одна из следующих возможностей: <br>- MusicLibrary, <br>- PicturesLibrary, <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
-| Устройства сервера мультимедиа (DLNA) | Требуется по меньшей мере одна из следующих возможностей: <br>- MusicLibrary, <br>- PicturesLibrary, <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) | 
+| Устройства сервера мультимедиа (DLNA) | Требуется по меньшей мере одна из следующих возможностей: <br>- MusicLibrary, <br>- PicturesLibrary, <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) |
 | Папки UNC | Требуется комбинация следующих возможностей: <br><br>Возможность домашней и рабочей сетей: <br>- PrivateNetworkClientServer. <br><br>Добавьте по меньшей мере одну возможность общедоступных сетей и Интернета: <br>- InternetClient, <br>- InternetClientServer. <br><br>Если применимо, добавьте возможность учетных данных домена:<br>- EnterpriseAuthentication. <br><br>Примечание. Необходимо добавить сопоставления типов файлов в манифест приложения, в котором указаны конкретные типы файлов, доступные приложению в этом расположении | Получение папки с помощью: <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>Получение файла с помощью: <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
 
 
 
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

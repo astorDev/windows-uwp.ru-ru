@@ -3,8 +3,9 @@ author: mtoepke
 title: "Справочные материалы по переносу с GLSL на HLSL"
 description: "Вы переносите код с GLSL на HLSL, когда портируете графическую архитектуру с OpenGL ES2.0 на Direct3D11, чтобы создавать игры для универсальной платформы Windows (UWP)."
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
+translationtype: Human Translation
 ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 02a3ba1768b6fa7b09b6c9f637a72d88c0cef604
+ms.openlocfilehash: 1be2c49dc88dcaecfa1d349f9dda7a9cc0619b92
 
 ---
 
@@ -68,8 +69,7 @@ GLSL и HLSL отличаются в следующем.
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left">
-            Модификаторы хранилищ [переменных](#variables)</td>
+<td align="left">Модификаторы хранилищ [переменных](#variables)</td>
 <td align="left">Буферы констант и передачи данных через объявления входных макетов</td>
 </tr>
 <tr class="even">
@@ -81,13 +81,11 @@ GLSL и HLSL отличаются в следующем.
 </tr>
 <tr class="odd">
 <td align="left">texture2D [функция]</td>
-<td align="left">
-            [texture.Sample](https://msdn.microsoft.com/library/windows/desktop/bb509695) [тип_данных.функция]</td>
+<td align="left">[texture.Sample](https://msdn.microsoft.com/library/windows/desktop/bb509695) [тип_данных.функция]</td>
 </tr>
 <tr class="even">
 <td align="left">sampler2D [тип_данных]</td>
-<td align="left">
-            [Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) [тип_данных]</td>
+<td align="left">[Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) [тип_данных]</td>
 </tr>
 <tr class="odd">
 <td align="left">Развернутые по строкам матрицы (по умолчанию)</td>
@@ -108,7 +106,7 @@ GLSL и HLSL отличаются в следующем.
 
  
 
->             **Примечание.** В HLSL текстуры и дискретизаторы являются двумя отдельными объектами. В GLSL, как в Direct3D9, привязка текстуры является частью состояния дискретизатора.
+> **Примечание.** В HLSL текстуры и дискретизаторы являются двумя отдельными объектами. В GLSL, как в Direct3D9, привязка текстуры является частью состояния дискретизатора.
 
  
 
@@ -573,6 +571,6 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,10 +1,11 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
 title: "Вы готовы зарегистрироваться?"
 description: "Зарегистрируйте учетную запись разработчика, чтобы размещать свои приложения в Магазине Windows и принимать участие в других программах Майкрософт."
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53d23b3f8502e1f182c728b9f787fbbc4b694d42
+translationtype: Human Translation
+ms.sourcegitcommit: 43214b9e2c786a007b8d9cdef7700e275101aba5
+ms.openlocfilehash: ddba8a7fe517ecb538a5632355fcb73a17fe54f7
 
 ---
 # Вы готовы зарегистрироваться?
@@ -24,6 +25,6 @@ ms.openlocfilehash: 53d23b3f8502e1f182c728b9f787fbbc4b694d42
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

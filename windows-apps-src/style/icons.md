@@ -5,8 +5,9 @@ title: "Значки"
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
+ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 
 ---
 
@@ -24,10 +25,10 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
         <td>48×48 пкс</td>
     </tr>
     <tr> 
-        <td>![Icons at 16x16 effective pixels](images/icons-16x16.png)</td>
-        <td>![Icons at 24x24 effective pixels](images/icons-24x24.png)</td>
-        <td>![Icons at 32x32 effective pixels](images/icons-32x32.png)</td>
-        <td>![Icons at 48x48 effective pixels](images/icons-48x48.png)</td>
+        <td>![Значки 16x16 эффективных пикселей](images/icons-16x16.png)</td>
+        <td>![Значки 24x24 эффективных пикселя](images/icons-24x24.png)</td>
+        <td>![Значки 32x32 эффективных пикселя](images/icons-32x32.png)</td>
+        <td>![Значки 48x48 эффективных пикселей](images/icons-48x48.png)</td>
     </tr>
 </table>
 
@@ -37,7 +38,7 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
 
 ![Сетка 32×32 пкс](images/icons-common-shapes.png)
 
-Используйте фигуру, которая соответствует ориентации значка, и учитывайте в разработке следующие базовые параметры. Значки не обязательно должны полностью соответствовать очертаниям фигуры— при необходимости их можно корректировать для достижения оптимального равновесия. 
+Используйте фигуру, которая соответствует ориентации значка, и учитывайте в разработке следующие базовые параметры. Значки не обязательно должны полностью соответствовать очертаниям фигуры — при необходимости их можно корректировать для достижения оптимального равновесия. 
 
 <table>
     <tr>
@@ -46,17 +47,17 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
         <td>Треугольник</td>
     </tr>
     <tr>
-        <td>![A circle](images/icons-common-shapes-examples-1.png)<td>
-        <td>![A square](images/icons-common-shapes-examples-2.png)</td>
-        <td>![A triangle ](images/icons-common-shapes-examples-3.png)</td>
+        <td>![Круг](images/icons-common-shapes-examples-1.png)<td>
+        <td>![Квадрат](images/icons-common-shapes-examples-2.png)</td>
+        <td>![Треугольник ](images/icons-common-shapes-examples-3.png)</td>
     </tr>
         <tr>
         <td>Горизонтальный прямоугольник<td>
         <td colspan="2">Вертикальный прямоугольник</td>        
         </tr>
     <tr>
-        <td>![A horizontal rectangle](images/icons-common-shapes-examples-4.png)<td>
-        <td colspan="2">![A vertical rectangle](images/icons-common-shapes-examples-5.png)</td>
+        <td>![Горизонтальный прямоугольник](images/icons-common-shapes-examples-4.png)<td>
+        <td colspan="2">![Вертикальный прямоугольник](images/icons-common-shapes-examples-5.png)</td>
          
     </tr>
 
@@ -90,10 +91,10 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
 
 <table>
     <tr>
-        <td>![A 1:1 angle example](images/icons-angles-examples-1.png)</td>
-        <td>![A 1:2 angle example](images/icons-angles-examples-2.png)</td>
-        <td>![A 1:3 angle example](images/icons-angles-examples-3.png)</td>
-        <td>![A 1:4 angle example](images/icons-angles-examples-4.png)</td>
+        <td>![Пример угла 1:1](images/icons-angles-examples-1.png)</td>
+        <td>![Пример угла 1:2](images/icons-angles-examples-2.png)</td>
+        <td>![Пример угла 1:3](images/icons-angles-examples-3.png)</td>
+        <td>![Пример угла 1:4](images/icons-angles-examples-4.png)</td>
     </tr>
 </table>
 
@@ -107,12 +108,12 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
         <td>1/8 круга</td>
     </tr>
     <tr>
-        <td>![1/4 circle](images/icons-curves-14circle.png)</td>
-        <td>![1/8 circle](images/icons-curves-18circle.png)</td>
+        <td>![1/4 круга](images/icons-curves-14circle.png)</td>
+        <td>![1/8 круга](images/icons-curves-18circle.png)</td>
     </tr>
     <tr>
-        <td>![1/4 cirlce example](images/icons-curves-examples-1.png)</td>
-        <td>![1/8 circle example](images/icons-curves-examples-2.png)</td>
+        <td>![Пример 1/4 круга](images/icons-curves-examples-1.png)</td>
+        <td>![Пример 1/8 круга](images/icons-curves-examples-2.png)</td>
     </tr>    
 </table>
 
@@ -144,8 +145,8 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
     <td>Стандартные индикаторы действий</td>
 </tr>
 <tr>
-    <td>![Status badge ](images/icons-badge-common-states-1.png)</td>
-    <td>![Action badge ](images/icons-badge-common-states-2.png)</td>
+    <td>![Индикатор событий состояния ](images/icons-badge-common-states-1.png)</td>
+    <td>![Индикатор действий ](images/icons-badge-common-states-2.png)</td>
 </tr>
 </table>
 <p></p>
@@ -157,25 +158,25 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
 <table>
 <tr><td>Зеленый— #128B44</td><td>Синий— #2C71B9</td><td>Желтый— #FDC214</td></tr>
 <tr><td>Положительное: выполнено, завершено </td><td>Нейтральное: справка, уведомление </td><td>Предупреждающие: оповещение, предупреждение </td></tr>
-<tr><td>![Green status](images/icons-color-inbadging-1.png)</td><td>![Blue status](images/icons-color-inbadging-2.png)</td>
-<td>![Yellow status](images/icons-color-inbadging-3.png)</td></tr>
+<tr><td>![Зеленое состояние](images/icons-color-inbadging-1.png)</td><td>![Синее состояние](images/icons-color-inbadging-2.png)</td>
+<td>![Желтое состояние](images/icons-color-inbadging-3.png)</td></tr>
 </table>
 <p></p>
 
 ### Положение индикатора событий
 
-Положение по умолчанию для любого индикатора событий состояния или действия— внизу справа. Располагать индикаторы иначе следует только при отсутствии технической возможности расположить их указанным способом. 
+Положение по умолчанию для любого индикатора событий состояния или действия — внизу справа. Располагать индикаторы иначе следует только при отсутствии технической возможности расположить их указанным способом. 
 
 ### Размер индикатора событий
 
 Индикаторы событий должны иметь размер 10–18 пкс в сетке 32×32 пкс. 
 
-## Статьи по теме
+## Связанные разделы
 
 * [Руководство по работе с ресурсами плиток и значков](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

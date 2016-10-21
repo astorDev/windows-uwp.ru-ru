@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: d074e9d5-b3e0-4f16-b1e4-02b32ac99b2c
 description: "Сведения об установке значений свойств **AdControl**."
 title: "Пример свойств XAML"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 43d579d2d0a92a8f03f17efa2ec42707357e99f9
+translationtype: Human Translation
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: fb0533aa0ea760bca686276f886f0afcb21bf6f7
 
 
 ---
@@ -12,7 +13,7 @@ ms.openlocfilehash: 43d579d2d0a92a8f03f17efa2ec42707357e99f9
 # Пример свойств XAML
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 В следующем примере XAML показано, как установить значения свойств [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx). Если значение свойства не задано, **AdControl** использует значения по умолчанию, обеспечивающие согласованность рекламного объявления с процессом взаимодействия пользователя с приложением.
 
@@ -37,6 +38,6 @@ IsEngagedChanged="OnAdEngagedChanged"
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

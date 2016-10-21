@@ -1,21 +1,23 @@
 ---
 author: mcleanbyron
-Description: "Если вы разрешите пользователям бесплатно пользоваться вашим приложением в течение испытательного срока, можно привлечь их к обновлению до полной версии приложения путем удаления или ограничения некоторых функций в течение пробного периода."
+Description: "Если вы разрешаете пользователям бесплатно пользоваться вашим приложением в течение испытательного срока, можно привлечь их к обновлению до полной версии приложения путем удаления или ограничения некоторых функций в течение пробного периода."
 title: "Исключение или ограничение функций в пробной версии"
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
-keywords: free trial code sample
+keywords: "образец приложения с испытательным сроком"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9c38784325f4dc51052f70a819012508f2a0bdbb
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: fdca95a6e925ca2238fdcd8791ade2ed4ea5a310
 
 ---
 
 # Исключение или ограничение функций в пробной версии
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Если вы разрешаете пользователям бесплатно пользоваться вашим приложением в течение пробного периода, можно побудить их приобрести полную версию приложения путем исключения или ограничения некоторых функций в течение пробного периода. До начала программирования решите, какие функции лучше ограничить, и сделайте так, чтобы они были доступны только после покупки полной лицензии. Вы можете также включить такие компоненты, как баннеры или водяные знаки, которые будут отображаться только во время пробного периода, до того как пользователь купит приложение.
+
+>**Примечание.**&nbsp;&nbsp;В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Если ваше приложение предназначено для Windows 10 версии 1607 или более поздней версии, для реализации пробной версии рекомендуется использовать члены пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) вместо пространства имен **Windows.ApplicationModel.Store**. Дополнительные сведения см. в разделе [Реализация пробной версии приложения](implement-a-trial-version-of-your-app.md).
+
+Если вы разрешаете пользователям бесплатно пользоваться вашим приложением в течение испытательного срока, можно привлечь их к обновлению до полной версии приложения путем удаления или ограничения некоторых функций в течение пробного периода. До начала программирования решите, какие функции лучше ограничить, и сделайте так, чтобы они были доступны только после покупки полной лицензии. Вы можете также включить такие компоненты, как баннеры или водяные знаки, которые будут отображаться только во время пробного периода, до того как пользователь купит приложение.
 
 Посмотрим, как добавить такие возможности в приложение.
 
@@ -73,7 +75,7 @@ void initializeLicense()
     // Initialize the license info for testing.
     // comment the next line for release
     licenseInformation = CurrentAppSimulator.LicenseInformation;
-      
+
 }
 ```
 
@@ -144,8 +146,8 @@ void DisplayTrialVersionExpirationTime()
         if (licenseInformation.IsTrial)
         {
             var longDateFormat = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("longdate");
-                                                
-            // Display the expiration date using the DateTimeFormatter. 
+
+            // Display the expiration date using the DateTimeFormatter.
             // For example, longDateFormat.Format(licenseInformation.ExpirationDate)
 
             var daysRemaining = (licenseInformation.ExpirationDate - DateTime.Now).Days;
@@ -168,9 +170,7 @@ void DisplayTrialVersionExpirationTime()
 
 Теперь можно протестировать ваше приложение, используя имитацию обращения к серверу лицензирования. В приложениях, написанных на JavaScript, C#, Visual Basic или Visual C++, замените все ссылки на [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) в коде инициализации элементом [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766).
 
-[
-              **CurrentAppSimulator**
-            ](https://msdn.microsoft.com/library/windows/apps/hh779766) получает тестовую информацию о лицензии из XML-файла WindowsStoreProxy.xml, расположенного в папке %userprofile%\\AppData\\local\\packages\\&lt;название_пакета&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. Если этот путь и файл не существуют, их нужно создать во время установки или выполнения приложения. Если файл WindowsStoreProxy.xml отсутствует в указанном выше расположении, при попытке обратиться к свойству [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) возникнет ошибка.
+[**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) получает информацию о лицензии для пробной версии из XML-файла WindowsStoreProxy.xml, расположенного в папке %userprofile%\\AppData\\local\\packages\\&lt;название_пакета&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. Если этот путь и файл не существуют, их нужно создать во время установки или выполнения приложения. Если файл WindowsStoreProxy.xml отсутствует в указанном выше расположении, при попытке обратиться к свойству [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) возникнет ошибка.
 
 В следующем примере показано, как можно добавить код в ваше приложение и проверить его работу в различных состояниях лицензирования.
 
@@ -224,7 +224,7 @@ void appInit()
 
 ## Связанные разделы
 
-* [Пример для Магазина (демонстрация пробных версий и покупок из приложения)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
+* [Пример для Магазина (демонстрация пробных версий и покупок из приложения)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [Настройки цен и доступности приложений](https://msdn.microsoft.com/library/windows/apps/mt148548)
 * [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
 * [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
@@ -234,10 +234,6 @@ void appInit()
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

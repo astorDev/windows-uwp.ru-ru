@@ -3,8 +3,9 @@ author: DBirtolo
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
 title: "Использование датчика освещенности"
 description: "Узнайте, как использовать датчик освещенности, чтобы обнаруживать изменения уровня освещенности."
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 289d50ff4f45147c46bd66c526cf109d8fdf6d32
+ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
 
 ---
 # Использование датчика освещенности
@@ -171,6 +172,6 @@ LightSensorReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,22 +5,36 @@ title: "Руководство по элементам управления Radi
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 317df548e72f9aff475ba0959668b6441ac29d3d
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 435a2a6f1b9707d1f64587a693bd9a60d587ca83
 
 ---
 # Переключатели
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 Переключатели типа Radio Button позволяют пользователю выбрать один параметр из двух или более предлагаемых вариантов. Каждый параметр представлен одним переключателем, пользователь может выбрать только один переключатель из группы.
 
 (Если вам интересно, откуда взялось название этого переключателя на английском (Radio Button) — оно происходит от названия кнопок настройки каналов на радиоприемниках.)
 
 ![Переключатели](images/controls/radio-button.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">Важные API</span>
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br227544"><strong>Класс RadioButton</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Событие Checked</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>Свойство IsChecked</strong></a></li>
+</ul>
 
--   [**Класс RadioButton**](https://msdn.microsoft.com/library/windows/apps/br227544)
--   [**Событие Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
--   [**Свойство IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+</div>
+</div>
+
+
+
+
+
 
 ## Выбор правильного элемента управления
 
@@ -57,9 +71,7 @@ ms.openlocfilehash: 317df548e72f9aff475ba0959668b6441ac29d3d
 - Размещение в одном родительском контейнере.
 - Установка одинакового значения свойства [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) для всех переключателей.
 
-> 
-            **Примечание.**
-            &nbsp;&nbsp;При доступе с клавиатуры группа переключателей ведет себя как единый элемент управления. Выделение переключателя выполняется только с помощью клавиши TAB, но пользователи могут по циклу переходить по всей группе при помощи клавиш со стрелками.
+> **Примечание.**&nbsp;&nbsp;При доступе с клавиатуры группа переключателей ведет себя как единый элемент управления. Выделение переключателя выполняется только с помощью клавиши TAB, но пользователи могут по циклу переходить по всей группе при помощи клавиш со стрелками.
 
 В этом примере первая группа переключателей неявно группируется путем размещения в одной панели стека. Вторая группа разделена между двумя панелями стека, поэтому они явно группируются с помощью свойства GroupName.
 
@@ -186,6 +198,6 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

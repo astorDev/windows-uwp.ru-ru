@@ -3,8 +3,9 @@ author: mcleblanc
 title: "Пример переноса среды выполнения Windows 8.x в UWP, Bookstore1"
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
 description: "В этом разделе рассматривается пример переноса очень простого универсального приложения для версии 8.1 в приложение Windows10 универсальной платформы Windows (UWP)."
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 43536aacb37a79b3e8507896474be67423a0b9fe
+ms.openlocfilehash: fdb5414a0831d6bff607cc8cec9188d3861651fb
 
 ---
 
@@ -18,16 +19,13 @@ ms.openlocfilehash: 43536aacb37a79b3e8507896474be67423a0b9fe
 
 Предыдущая тема в этом разделе описывает различия между платформами. Это описание содержит подробные сведения и руководство по переносу различных элементов приложения из разметки XAML через привязку к модели представления и далее к доступу к данным. Цель этого практического примера — дополнить это руководство, показывая его в действии на реальном примере. Предполагается, что вы ознакомились с этим руководством, которое в данных примерах не повторяется.
 
-
-            **Примечание.**   Если при открытии Bookstore1Universal\_10 в Visual Studio отображается сообщение "Требуется обновление Visual Studio", следуйте инструкциям из [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
+**Примечание.**   Если при открытии Bookstore1Universal\_10 в Visual Studio отображается сообщение "Требуется обновление Visual Studio", следуйте инструкциям из [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
 
 ## Скачиваемые файлы
 
+[Скачать универсальное приложение Bookstore1\_81 для версии 8.1](http://go.microsoft.com/fwlink/?linkid=532946).
 
-            [Скачать универсальное приложение Bookstore1\_81 для версии 8.1](http://go.microsoft.com/fwlink/?linkid=532946).
-
-
-            [Скачать приложение Bookstore1Universal\_10 для Windows10](http://go.microsoft.com/fwlink/?linkid=532950).
+[Скачать приложение Bookstore1Universal\_10 для Windows10](http://go.microsoft.com/fwlink/?linkid=532950).
 
 ## Универсальное приложение для версии 8.1
 
@@ -131,6 +129,6 @@ Bookstore1\_81 в Windows Phone
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

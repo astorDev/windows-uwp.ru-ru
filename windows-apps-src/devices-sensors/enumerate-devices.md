@@ -4,18 +4,27 @@ ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: "Перечисление устройств"
 description: "Пространство имен перечисления позволяет обнаружить устройства, которые подключены к системе изнутри, внешним образом или могут быть обнаружены по протоколам проводной или беспроводной сети."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
+ms.sourcegitcommit: 23a600fdcf972fcb291653e8aac447e035c12c6d
+ms.openlocfilehash: 2aa1a86a2cb0b413fae5fbcd87599a9f1a822324
 
 ---
 # Перечисление устройств
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+## Примеры
 
-** Важные API **
+Самый простой способ перечисления всех доступных устройств — это сделать снимок с помощью команды [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) (описание приведено в разделе ниже).
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+```CSharp
+async void enumerateSnapshot(){
+  DeviceInformationCollection collection = await DeviceInformation.FindAllAsync();
+}
+```
+
+Чтобы скачать пример, показывающий более сложное применение API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), перейдите [по этой ссылке](http://go.microsoft.com/fwlink/?LinkID=620536).
+
+## Интерфейсы API перечисления
 
 Пространство имен перечисления позволяет обнаружить устройства, которые подключены к системе изнутри, внешним образом или могут быть обнаружены по протоколам проводной или беспроводной сети. Для перечисления возможных устройств используются API пространства имен [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459). Ниже приводятся некоторые случаи, в которых следует использовать эти API.
 
@@ -69,8 +78,7 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 При отображении элемента [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) произойдет автоматическое обновление содержимого пользовательского интерфейса, если устройства добавляются, удаляются или обновляются.
 
-
-              **Примечание.**  Указать [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) с помощью [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) невозможно. Если вам необходимы устройства определенного вида **DeviceInformationKind**, вам понадобится создать объект [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) и предоставить собственный пользовательский интерфейс.
+**Примечание.** Указать [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) с помощью [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) невозможно. Если вам необходимы устройства определенного вида **DeviceInformationKind**, вам понадобится создать объект [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) и предоставить собственный пользовательский интерфейс.
 
  
 
@@ -83,7 +91,13 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 Чтобы выполнить перечисление посредством снимка устройств, используйте метод [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx). Этот метод ждет, пока весь процесс перечисления не будет завершен, и возвращает все результаты как один объект [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcollection.aspx). Этот метод также перегружен и имеет несколько параметров для фильтрации результатов и выделения из них только нужных устройств. Для этого нужно предоставить значение [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) или передать средство выбора устройств. Средство выбора устройств — это строка AQS, определяющая устройства для перечисления. Подробнее: [Создание средства выбора устройств](build-a-device-selector.md).
 
-Помимо ограничения результатов, вы также можете задать свойства устройств, которые требуется получить. В этом случае указанные свойства будут доступны в контейнере свойств для каждого из объектов [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393), возвращаемых в коллекцию. Важно помнить, что не все свойства доступны для всех видов устройств. Чтобы узнать, какие свойства доступны для тех или иных типов устройств, изучите раздел [Свойства сведений об устройстве](device-information-properties.md).
+Ниже приводится пример снимка перечисления устройств:
+
+
+
+Помимо ограничения результатов, также можно указать, какие свойства устройств необходимо получить. В этом случае указанные свойства будут доступны в контейнере свойств для каждого из объектов [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393), возвращаемых в коллекцию. Важно помнить, что не все свойства доступны для всех видов устройств. Чтобы узнать, какие свойства доступны для тех или иных типов устройств, изучите раздел [Свойства сведений об устройстве](device-information-properties.md).
+
+
 
 ## Перечисление и отслеживание устройств
 
@@ -105,8 +119,7 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 Отслеживание устройств в фоновой задаче очень похоже на создание [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), рассмотренное выше. К слову, вам все равно придется сначала создать обычный объект **DeviceWatcher**, как описано в предыдущем разделе. После его создания вызовите [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) вместо [**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start). При вызове метода **GetBackgroundTrigger** необходимо определить, какие из уведомлений вас интересуют: уведомления о добавлении, удалении или обновлении. Невозможно запросить обновление или удаление, не запросив также и добавление. После регистрации триггера объект **DeviceWatcher** сразу же начнет свою работу в фоновом режиме. С этого момента при получении нового уведомления для вашего приложения, которое соответствует заданным условиям, активируется фоновая задача, которая предоставит вам последние изменения с момента последней активации вашего приложения.
 
-
-              **Важно!**  В первый раз [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) активирует ваше приложение, когда наблюдатель переходит в состояние **EnumerationCompleted**. Это означает, что он будет содержать все исходные результаты. При последующей активации приложения он будет содержать только уведомления о добавлении, обновлении и удалении, полученные с момента последней активации. Это немного отличается от объекта переднего плана [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), так как исходные результаты поступают не по одному, а только пакетом после перехода в состояние **EnumerationCompleted**.
+**Важно!** В первый раз [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) активирует ваше приложение, когда наблюдатель переходит в состояние **EnumerationCompleted**. Это означает, что он будет содержать все исходные результаты. При последующей активации приложения он будет содержать только уведомления о добавлении, обновлении и удалении, полученные с момента последней активации. Это немного отличается от объекта переднего плана [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), так как исходные результаты поступают не по одному, а только пакетом после перехода в состояние **EnumerationCompleted**.
 
  
 
@@ -131,18 +144,13 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 Важно отметить, что свойства, доступные в контейнере свойств объекта [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393), могут отличаться в зависимости от значения [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) устройства. Некоторые свойства доступны только для определенных видов. Подробнее о том, какие свойства доступны для каких видов, см. в разделе [Свойства сведений об устройстве](device-information-properties.md). Следовательно, в примере выше поиск родительского элемента **Device** даст доступ к дополнительным сведениям, которые не были доступны из объекта устройства **DeviceInterface**. Поэтому когда вы создаете строки фильтра AQS, запрошенные свойства должны быть доступны для перечисляемых объектов **DeviceInformationKind**. Подробнее о создании фильтра: [Создание средства выбора устройств](build-a-device-selector.md).
 
-Перечисление объектов **AssociationEndpoint**, **AssociationEndpointContainer** или **AssociationEndpointService** происходит по сетевому или беспроводному протоколу. В таких случаях вместо [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) рекомендуется использовать [**CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx). Дело в том, что при поиске по сети время ожидания операций поиска может достигать 10 и более секунд, прежде чем будет получено событие [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx). 
-              **FindAllAsync** будет работать до тех пор, пока не активируется событие **EnumerationCompleted**. Если вы используете [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), вы получите результаты, которые будут ближе к реальному времени, вне зависимости от того, когда вызывается событие **EnumerationCompleted**.
+Перечисление объектов **AssociationEndpoint**, **AssociationEndpointContainer** или **AssociationEndpointService** происходит по сетевому или беспроводному протоколу. В таких случаях вместо [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) рекомендуется использовать [**CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx). Дело в том, что при поиске по сети время ожидания операций поиска может достигать 10 и более секунд, прежде чем будет получено событие [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx). **FindAllAsync** будет работать до тех пор, пока не активируется событие **EnumerationCompleted**. Если вы используете [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), вы получите результаты, которые будут ближе к реальному времени, вне зависимости от того, когда вызывается событие **EnumerationCompleted**.
 
 ## Сохранение устройства для использования в будущем
 
 
 Любой объект [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) однозначно определяется сочетанием двух параметров: [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) и [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx). Если сохранить эти два значения, то можно будет воссоздать утерянный объект **DeviceInformation**, передав их в метод [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx). В этом случае вы сможете сохранить настройки пользователя для устройства, которое интегрируется с вашим приложением.
 
-## Пример
-
-
-Чтобы скачать пример использования API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), перейдите [по этой ссылке](http://go.microsoft.com/fwlink/?LinkID=620536).
 
  
 
@@ -154,6 +162,6 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

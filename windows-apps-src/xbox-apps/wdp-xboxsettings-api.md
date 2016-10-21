@@ -3,8 +3,8 @@ author: payzer
 title: "Портал устройства Xbox - справочник по параметрам API для разработчиков"
 description: "Узнайте, как получить доступ к параметрам разработчика Xbox."
 translationtype: Human Translation
-ms.sourcegitcommit: a9a2b6e58dfa0d1e77164a59f204deabf8f5c3e0
-ms.openlocfilehash: e3637f5a8481c0800af42c011fb811b908b946b1
+ms.sourcegitcommit: c51eff41e63d815f6298b4fc46a9b11314bc8bc9
+ms.openlocfilehash: 5a983714cda9b5a5f45e555e2cb6f980f082a003
 
 ---
 
@@ -60,19 +60,19 @@ Category (String) — категория параметра.
 
 Метод      | URI запроса
 :------     | :-----
-GET | /ext/settings/<setting name>
+GET | /ext/settings/\<имя параметра\>
 <br />
 **Параметры URI**
 
-- Нет
+- None (Нет)
 
 **Заголовки запроса**
 
-- Нет
+- None (Нет)
 
 **Тело запроса**
 
-- Нет
+- None (Нет)
 
 **Ответ**   
 Ответ — это объект JSON со следующими полями.   
@@ -101,15 +101,15 @@ Category (String) — категория параметра.
 
 Метод      | URI запроса
 :------     | :-----
-PUT | /ext/settings/<setting name>
+PUT | /ext/settings/\<имя параметра\>
 <br />
 **Параметры URI**
 
-- Нет
+- None (Нет)
 
 **Заголовки запроса**
 
-- Нет
+- None (Нет)
 
 **Тело запроса**   
 Текст запроса — это объект JSON, содержащий следующие поля.   
@@ -137,6 +137,6 @@ Value (String) — новое значение параметра.
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

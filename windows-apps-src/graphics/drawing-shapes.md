@@ -5,7 +5,7 @@ title: "Рисование фигур"
 description: "Узнайте, как рисовать фигуры— эллипсы, прямоугольники, многоугольники и пути. При помощи класса Path в пользовательском интерфейсе XAML можно применять довольно сложный язык для рисования на основе векторов, например рисовать кривые Безье."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 3add60b9067f40c5d330bd66a84eea41b465e8d7
+ms.openlocfilehash: 2fd20e07c9b7e54559baeeb8324f11065a25444c
 
 ---
 # Рисование фигур
@@ -25,15 +25,13 @@ ms.openlocfilehash: 3add60b9067f40c5d330bd66a84eea41b465e8d7
 
 Область пространства в пользовательском интерфейсе XAML определяется двумя наборами классов: [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) и [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041). Главное различие между этими классами заключается в том, что у класса **Shape** имеется связанная с ним кисть, и он может быть отрисован на экране, а класс **Geometry** просто определяет область и не отрисовывается на экране, если не содержит сведений для другого свойства пользовательского интерфейса. Объект **Shape** можно представить как элемент [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), граница которого определена объектом **Geometry**. В этом разделе содержатся в основном сведения о классах **Shape**.
 
-Классы [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377): [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345), [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343), [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371), [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359), [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) и [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355). 
-              Класс **Path** интересен тем, что с его помощью можно описать произвольное геометрическое тело, а класс [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) используется для того, чтобы определить части класса **Path**.
+Классы [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377): [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345), [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343), [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371), [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359), [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) и [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355). Класс **Path** интересен тем, что с его помощью можно описать произвольное геометрическое тело, а класс [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) используется для того, чтобы определить части класса **Path**.
 
 ## Функции Fill (заливка) и Stroke (росчерк) для фигур
 
 Чтобы объект [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) можно было отрисовать на холсте приложения, необходимо сопоставить с ним класс [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). Установите для свойства [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) объекта **Shape** нужное значение **Brush**. Подробнее о кистях см. в статье [Использование кистей](using-brushes.md).
 
-Кроме того, объект [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) также может иметь свойство [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke), представляющее собой линию, нарисованную по периметру фигуры. Для свойства **Stroke** также необходим класс [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076), определяющий его внешний вид, а свойству [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) необходимо присвоить ненулевое значение. 
-              **StrokeThickness** — это свойство, которое определяет толщину периметра, ограничивающего фигуру. Если значение **Brush** для свойства **Stroke** не задано или задано нулевое значение **StrokeThickness**, граница вокруг фигуры не будет нарисована.
+Кроме того, объект [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) также может иметь свойство [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke), представляющее собой линию, нарисованную по периметру фигуры. Для свойства **Stroke** также необходим класс [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076), определяющий его внешний вид, а свойству [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) необходимо присвоить ненулевое значение. **StrokeThickness** — это свойство, которое определяет толщину периметра, ограничивающего фигуру. Если значение **Brush** для свойства **Stroke** не задано или задано нулевое значение **StrokeThickness**, граница вокруг фигуры не будет нарисована.
 
 ## Эллипс
 
@@ -100,8 +98,7 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 
 ![Обработанный многоугольник.](images/shapes-polygon.jpg)
 
-
-              **Совет.**  Значение [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) часто используется в качестве типа в XAML для сценариев, в которых не объявляются вершины фигур. Например, **Point** входит в состав данных событий сенсорного ввода, что позволяет точно определить, где в системе координат произошло действие касания. Подробнее о параметре **Point** и его использовании в XAML или коде см. в справочных статьях по API для [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870).
+**Совет.**  Значение [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) часто используется в качестве типа в XAML для сценариев, в которых не объявляются вершины фигур. Например, **Point** входит в состав данных событий сенсорного ввода, что позволяет точно определить, где в системе координат произошло действие касания. Подробнее о параметре **Point** и его использовании в XAML или коде см. в справочных статьях по API для [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870).
 
  
 
@@ -115,8 +112,7 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 
 Фигура [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) похожа на фигуру [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) тем, что ее граница также определяется набором точек, но последняя точка в **Polyline** не соединяется с первой.
 
-
-              **Примечание.**   Вы можете задать в явном виде одну и ту же точку в качестве начальной и конечной точки в наборе [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) для получения фигуры [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365), но лучше для этого использовать объект [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359).
+**Примечание.**   Вы можете задать в явном виде одну и ту же точку в качестве начальной и конечной точки в наборе [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) для получения фигуры [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365), но лучше для этого использовать объект [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359).
 
  
 
@@ -204,6 +200,6 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

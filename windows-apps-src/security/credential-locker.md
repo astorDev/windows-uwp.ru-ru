@@ -3,8 +3,9 @@ title: "Хранилище учетных данных"
 description: "В этой статье описано, как приложения универсальной платформы Windows (UWP) могут использовать хранилище учетных данных для безопасного хранения и получения учетных данных пользователя и их перемещения между устройствами с помощью учетной записи Майкрософт пользователя."
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: ba3f4fc8584108fefe25de146ae7fc84ee7c9e2c
+ms.openlocfilehash: 2d5e1fada82e0c39ad0dce31c779ac80005aff17
 
 ---
 
@@ -131,6 +132,6 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
 Не храните учетные данные в виде обычного текста с помощью данных приложения или параметров перемещения.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

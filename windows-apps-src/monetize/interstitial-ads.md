@@ -1,21 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
-description: "Узнайте, как включить промежуточную рекламу в Windows 10, Windows 8.1 или Windows Phone 8.1 с помощью библиотек Microsoft Advertising в составе пакета SDK Microsoft Store Engagement and Monetization."
-title: "Промежуточная реклама"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
+description: "Узнайте, как включить промежуточную рекламу в Windows 10, Windows 8.1 или Windows Phone 8.1 с помощью библиотек Microsoft Advertising в составе пакета Microsoft Store Services SDK."
+title: "Промежуточная видеореклама"
+translationtype: Human Translation
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 
 ---
 
-# Промежуточная реклама
+# Промежуточная видеореклама
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этом пошаговом руководстве показано, как включить промежуточную рекламу в Windows 10, Windows 8.1 или Windows Phone 8.1 с помощью библиотек Microsoft Advertising в составе пакета SDK Microsoft Store Engagement and Monetization.
 
-Полные примеры проектов, демонстрирующие способы добавления промежуточной рекламы в приложения на JavaScript/HTML, а также в приложения на XAML с помощью языков C# and C++, см. в [примерах рекламы на GitHub](http://aka.ms/githubads).
+В этом пошаговом руководстве показано, как включить промежуточную рекламу в Windows 10, Windows 8.1 или Windows Phone 8.1 с помощью библиотек Microsoft Advertising в составе пакета Microsoft Store Services SDK.
+
+Полные примеры проектов, демонстрирующие способы добавления промежуточной рекламы в приложения на JavaScript/HTML, а также в приложения на XAML с помощью языков C# и C++, см. в [примерах рекламы на GitHub](http://aka.ms/githubads).
 
 <span id="whatareinterstitialads10"/>
 ## Что такое промежуточная реклама?
@@ -33,25 +34,21 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 ## Создание приложения с промежуточной рекламой
 
 
-### Предварительные требования
+### Необходимые условия
 
-1.  Установите [пакет SDK Microsoft Store Engagement and Monetization](http://aka.ms/store-em-sdk) для Visual Studio2015 или Visual Studio2013.
-
-2.  В Visual Studio откройте свой проект либо создайте новый.
+* Для приложений UWP: установите [пакет Microsoft Store Services SDK](http://aka.ms/store-em-sdk) с Visual Studio 2015.
+* Для приложений для Windows 8.1 и Windows Phone 8.1 установите [пакет Microsoft Advertising SDK для Windows и Windows Phone 8.x](http://aka.ms/store-8-sdk) с Visual Studio 2015 или Visual Studio 2013.
 
 ### Написание кода
 
 * [Действия для приложения XAML/.NET](#interstitialadsxaml10)
-
-* [Действие для приложений HTML/JavaScript](#interstitialadshtml10)
-
+* [Действия для приложений HTML/JavaScript](#interstitialadshtml10)
 * [Действия для C++ (межпрограммное взаимодействие DirectX)](#interstitialadsdirectx10)
 
 <span id="interstitialadsxaml10"/>
 ### Промежуточная реклама (XAML/.NET)
 
-> 
-            **Примечание**. В этом разделе приводятся примеры на C#, однако Visual Basic и C++ также поддерживаются.
+> **Примечание**. В этом разделе приводятся примеры на C#, однако Visual Basic и C++ также поддерживаются.
  
 1. Откройте проект в Visual Studio.
 2. В **Диспетчере ссылок** выберите одну из следующих ссылок в зависимости от типа проекта.
@@ -83,8 +80,7 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 #endif
     ```
 
-    > 
-            **Примечание**. Перед отправкой приложения замените тестовые значения действительными.
+    > **Примечание**. Перед отправкой приложения замените тестовые значения действительными.
 
 5.  Создайте экземпляр [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), привяжите к нему все обработчики событий и запросите объявление.
 
@@ -242,8 +238,7 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 
 В этом примере предполагается, что вы создали проект универсального приложения для XAML в Visual Studio 2015 и для определенной архитектуры ЦП.
 
-> 
-            **Важно!** Этот код написан на языке C++ в соответствии с требованиями DirectX.
+> **Важно!** Этот код написан на языке C++ в соответствии с требованиями DirectX.
 
  
 1. Откройте проект в Visual Studio.
@@ -356,12 +351,11 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 
 ### Выпуск приложения с динамической рекламой с помощью Центра разработки для Windows
 
-1.  На информационной панели Центра разработки, перейдите на страницу **Получение дохода**&gt;**Получение дохода с помощью рекламы** вашего приложения и [создайте автономный блок Microsoft Advertising](../publish/monetize-with-ads.md). Для типа единицы рекламы укажите **Промежуточная видеореклама**. Запишите и идентификатор рекламного блока, и идентификатор приложения.
+1.  На информационной панели Центра разработки перейдите на страницу **Монетизация** &gt; **Монетизировать с помощью рекламы** вашего приложения и [создайте автономный блок Microsoft Advertising](../publish/monetize-with-ads.md). Для типа единицы рекламы укажите **Промежуточная видеореклама**. Запишите и идентификатор рекламного блока, и идентификатор приложения.
 
 2.  В своем коде замените тестовые значения и значения единиц фактическими, созданными в Центре разработки.
 
-3.  
-            [Отправьте приложение](../publish/app-submissions.md) в Магазин с помощью информационной панели в Центре разработки Windows.
+3.  [Отправьте приложение](../publish/app-submissions.md) в Магазин с помощью информационной панели в Центре разработки для Windows.
 
 4.  Изучите [отчеты по показателям рекламы](../publish/advertising-performance-report.md) на информационной панели Центра разработки.
 
@@ -390,6 +384,6 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

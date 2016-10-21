@@ -5,19 +5,30 @@ title: "Метки"
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: fbb186b6f8b7bfba47fb05155a227224a1bd595e
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: aa605b3862c33633904822bb88de7e647a2b3d5b
 
 ---
-
 # Метки
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Метка— это имя или название элемента управления или группы связанных элементов.
 
-**Важные API**
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>Свойство Header</li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br209652"><strong>Класс TextBlock</strong></a></li>
+</ul>
 
--   Свойство Header
--   [**Класс TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
+</div>
+</div>
+
+
+
+
 
 
 В XAML встроенное свойство заголовка, с помощью которого задаются метки, доступно во многих элементах управления. Для элементов управления, не имеющих свойства заголовка, а также для того чтобы присвоить метку группе элементов управления, можно использовать [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
@@ -28,14 +39,14 @@ ms.openlocfilehash: fbb186b6f8b7bfba47fb05155a227224a1bd595e
 
 ![Снимок экрана, иллюстрирующий стандартный элемент управления «Метка»](images/label-standard.png)
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Рекомендации
+## Рекомендации
 
 
 -   Используйте метку, чтобы показать пользователю, что он должен ввести в данный элемент управления. Также можно присвоить метку группе связанных элементов управления или показать текст рекомендации рядом с группой связанных элементов управления.
 -   Когда вы присваиваете метку элементам управления, пишите ее в виде существительного или краткой именной конструкции, а не в виде предложения или текста рекомендации. Избегайте двоеточия и других знаков препинания.
 -   При наличии текста рекомендаций в метке можно не волноваться по поводу длины текстовой строки и использовать пунктуацию.
 
-## <span id="related_topics"></span>Ссылки по теме
+## Связанные разделы
 * [Элементы управления текстом](text-controls.md)
 
 **Для разработчиков**
@@ -59,6 +70,6 @@ ms.openlocfilehash: fbb186b6f8b7bfba47fb05155a227224a1bd595e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

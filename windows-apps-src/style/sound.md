@@ -6,11 +6,10 @@ title: "Звук"
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 translationtype: Human Translation
-ms.sourcegitcommit: 7bb23094d569bb29c7227ccd628abd0989b575a4
-ms.openlocfilehash: e6dab48935cd5345ee734e6fda7e6fd4d333bb90
+ms.sourcegitcommit: e240197b4cc233b9fc1ecaa4a1835c4a4dcd3bf8
+ms.openlocfilehash: 91021d76b180e2bc26c0d502098e0a0b21f0219f
 
 ---
-[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Корпорация Майкрософт не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.] *В этой статье приведен обзор функций, которые еще не доступны.*
 
 # Звук
 
@@ -24,7 +23,7 @@ ms.openlocfilehash: e6dab48935cd5345ee734e6fda7e6fd4d333bb90
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
-**ElementSoundPlayer** имеет три различных состояния: **On**, **Off** и **Auto**.
+**ElementSoundPlayer** имеет три различных состояния: **On** **Off** и **Auto**.
 
 Если задано значение **Off**, звук воспроизводиться не будет, независимо от того, где запущено приложение. Если задано значение **On**, звуки для вашего приложения будут воспроизводиться на всех платформах.
 
@@ -148,6 +147,6 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,61 +1,71 @@
-﻿---
+---
 author: jnHs
-Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
-title: Add-on acquisitions report
+Description: "Отчет о получении надстроек на информационной панели Центра разработки для Windows позволяет узнать, сколько надстроек вы продали и просмотреть демографические сведения и данные о платформе."
+title: "Отчет о получении надстроек"
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
+translationtype: Human Translation
+ms.sourcegitcommit: 0edf45e997f36a82a8bfcb92c1d8fd2c79242461
+ms.openlocfilehash: 144a8400acf0333fcd50e698b333c02942081ef3
+
 ---
 
-# Add-on acquisitions report
+# Отчет о получении надстроек
 
 
-The **Add-on acquisitions** report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+**Отчет о получении надстроек** на информационной панели Центра разработки для Windows позволяет узнать, сколько надстроек вы продали и просмотреть демографические сведения и данные о платформе. Эти сведения можно просмотреть на информационной панели или [скачать отчет](download-analytic-reports.md) для просмотра данных в автономном режиме. Кроме того, вы можете получить эти данные программным способом с помощью [analytics REST API Магазина Windows](../monetize/access-analytics-data-using-windows-store-services.md).
 
-In this report, an add-on acquisition means a customer has purchased an add-on from you. Multiple purchases of the same consumable add-on by the same customer are counted as separate add-on acquisitions.
+В этом отчете получение надстройки означает приобретение у вас пользователем надстройки. Несколько покупок одной и той же надстройки одним и тем же пользователем считаются отдельными получениями надстройки.
 
-> **Important**  The **Add-on acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](payout-summary.md). In the **Reserved** section, click the **Download reserved transactions** link.
+> **Важно**. Отчет **о получении надстроек** не включает данные о возвратах денежных средств, реверсировании, обратных платежах и т. п. Чтобы оценить доходы от приложения, обратитесь к [Сводке о выплатах](payout-summary.md). В разделе **Зарезервировано** перейдите по ссылке **Скачать зарезервированные транзакции**.
 
-## Apply filters
-
-
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by device type. You can also filter to show only data for a specific add-on.
-
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
--   **Add-on**: The default filter is **All add-ons**. If you want to show acquisition data for only one of your add-ons, you can choose a specific one here.
--   **Device type**: The default setting is **All devices**. If you want to show data for add-on acquisitions from a certain device type only, you can choose a specific one here.
-
-The info in the charts listed below will reflect the period of time selected in the **Apply filters** section.
-
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section. By default this will include data for all device types, unless you've used **Apply filters** to choose only one.
-
-## Add-on acquisitions
+## Применение фильтров
 
 
-The **Add-on acquisitions** chart shows the number of daily or weekly acquisitions of your add-ons over the selected period of time. (When you use **Apply filters** to filter the data over a longer duration, the data will be grouped by week.)
+В верхней части страницы можно развернуть раздел **Применить фильтры**, чтобы отфильтровать все данные на этой странице по диапазону дат или типу устройства. Вы также можете отфильтровать данные по определенной надстройке.
 
-You can also see the lifetime number of acquisitions for your add-ons. This shows the cumulative total of all acquisitions, starting from when your app was first published.
+-   **Дата**: по умолчанию используется фильтр **Последние 30 дней**, однако можно развернуть список до значения **Последние 12 месяцев**.
+-   **Надстройка**: фильтр по умолчанию — **Все надстройки**. Если должны отображаться данные о приобретения только для одной из надстроек, вы можете выбрать его здесь.
+-   **Тип устройства**: по умолчанию используется фильтр **Все устройства**. Если вам необходимо отобразить данные о приобретениях надстроек только с определенного типа устройств, вы можете выбрать его здесь.
 
-The chart also shows the price that a customer paid to acquire the add-on.
+Сведения на приведенных ниже диаграммах соответствуют периоду времени, выбранному в разделе **Применить фильтры**.
 
-You can optionally filter the results by market and/or by OS version.
+Сведения на всех приведенных ниже диаграммах соответствуют периоду времени, выбранному в разделе **Применить фильтры**. По умолчанию сюда включены данные по всем типам устройств, если только вы не выбрали определенный тип в разделе **Применить фильтры**.
 
-## Top add-ons
+## Приобретение надстроек
 
-The **Top add-ons** chart shows the total number of acquisitions for each of your add-ons over the selected period of time by market. By default, we show you the add-on which had the most acquisitions on top and continue downward from there. You can reverse this order by toggling the arrow in the **Acquisitions** column of this chart.
 
-## Markets
+На диаграмме **Приобретение надстроек** отображается количество ежедневных или еженедельных приобретений надстроек за выбранный период времени. (При использовании команды **Применить фильтры** для фильтрации данных за длительный период данные будут сгруппированы по неделям.)
 
-The **Markets** chart shows the total number of add-on acquisitions over the selected period of time by market. By default, we show you the market which had the most acquisitions on top and continue downward from there. You can reverse this order by toggling the arrow in the **Acquisitions** column of this chart.
+Вы также можете количество покупок надстроек за весь жизненный цикл. При этом отображается совокупное общее количество покупок с момента первой публикации приложения.
 
-## Customer demographic
+На диаграмме также приводится цена, оплаченная пользователем за надстройку.
 
-The **Customer demographic** chart shows demographic info about the people who acquired your add-on. You can see how many acquisitions (over the selected period of time) were made by people in a certain age group and by which gender.
+Вы можете дополнительно отфильтровать результаты по рынкам или по версиям ОС.
 
-> **Note**  Some customers have opted not to share this info. If we were unable to determine the age group or gender, the acquisition is categorized as **Unknown**.
+## Лучшие надстройки
 
-## OS version
+На диаграмме **Лучшие надстройки** отображается общее число получений каждой надстройки за выбранный период времени по рынку. По умолчанию отображается надстройка с наибольшим количеством приобретений в самом верху, а затем идем по убывающей. Можно изменить этот порядок на обратный, переключив стрелку в столбце **Получения** на этой диаграмме.
 
-The **OS version** chart shows the total number of acquisitions based on the customer's operating system (or via [volume acquisition by organizations](organizational-licensing.md)). In some cases we may not be able to determine this info. In that case, the OS version will be listed as **Unknown**.
+## Рынки
 
- 
+Диаграмма **Рынки** показывает общее количество приобретений надстроек в течение определенного периода времени на определенном рынке. По умолчанию мы отображаем рынок с наибольшим количеством получений в самом верху, а затем идем по убывающей. Можно изменить этот порядок на обратный, переключив стрелку в столбце **Получения** на этой диаграмме.
 
- 
+## Демографические сведения о пользователях
+
+Диаграмма **Демографические сведения о пользователях** содержит демографические сведения о людях, которые получили надстройку. Вы можете просмотреть, сколько было получений (в течение выбранного периода времени) по определенной возрастной группе и по определенному полу.
+
+> **Примечание**. Некоторые пользователи запретили предоставлять эти сведения. Если мы не можем определить возрастную группу или пол, получение попадает в категорию **Неизвестно**.
+
+## Версия ОС
+
+На диаграмме **Версия ОС** отображается общее количество приобретений с разбивкой по операционным системам пользователей (или по [корпоративным лицензиям организаций](organizational-licensing.md)). В некоторых случаях определить эти сведения не удается. Тогда версия ОС будет отображаться как **Неизвестно**.
+
+ 
+
+ 
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

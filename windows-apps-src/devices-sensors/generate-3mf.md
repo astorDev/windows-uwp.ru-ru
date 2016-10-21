@@ -5,8 +5,9 @@ MS-HAID: dev\_devices\_sensors.generate\_3mf
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Создание пакета 3MF"
-ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
+translationtype: Human Translation
+ms.sourcegitcommit: c790d57e72a75ec28e376722f8d87c2655b18c42
+ms.openlocfilehash: 1d291173cc68d4eedcbc2918f308be1489105a08
 
 ---
 
@@ -22,13 +23,13 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 \[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Microsoft не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
 
-Описание структуры типа файлов формате создания 3D и способов их создания и обработки с помощью [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API.
+В этом руководстве приводится описание структуры документа формата создания 3D и способов его создания и обработки с помощью API [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx).
 
 ## Что такое 3MF?
 
 Формат создания 3D — это набор соглашений об использовании XML для описания вида и структуры трехмерных моделей для производства (трехмерной печати). Он определяет набор компонентов (обязательных и необязательных) и их связи для предоставления всех необходимых сведений устройству для трехмерной печати. Набор данных, соответствующий формату создания 3D, можно сохранять как файл с расширением .3mf.
 
-В Windows 10 класс [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) в пространстве имен **Windows.Graphics.Printing3D** аналогичен одному 3MF-файлу, а другие классы соответствуют определенным элементам XML в файле. В этом руководстве описывается, как создать и настроить основные части документа 3MF программными средствами, как использовать расширение 3MF Materials и как преобразовать объект **Printing3D3MFPackage** в C# и сохранить в виде 3MF-файла. Подробнее о стандартах 3MF и расширении 3MF Materials см. в разделе [3MF Specification](http://3mf.io/what-is-3mf/3mf-specification/).
+В Windows 10 класс [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) в пространстве имен **Windows.Graphics.Printing3D** аналогичен одному 3MF-файлу, а другие классы соответствуют определенным элементам XML в файле. В этом руководстве описывается, как создать и настроить основные части документа 3MF программными средствами, как использовать расширение 3MF Materials и как преобразовать объект **Printing3D3MFPackage** и сохранить его в виде 3MF-файла. Подробнее о стандартах 3MF и расширении 3MF Materials см. в разделе [3MF Specification](http://3mf.io/what-is-3mf/3mf-specification/).
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -59,8 +60,8 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 [!code-cs[TriangleIndices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTriangleIndices)]
 
-> 
-            **Примечание.** Индексы всех треугольников должны быть определены против часовой стрелки (при просмотре треугольника за пределами объекта сетки), чтобы их векторы-нормали к граням были направлены наружу.
+> [!NOTE]
+> Индексы всех треугольников должны быть определены против часовой стрелки (при просмотре треугольника за пределами объекта сетки), чтобы их векторы-нормали к граням были направлены наружу.
 
 Когда объект Printing3DMesh будет содержать допустимые наборы вершин и треугольников, его можно добавить в свойство **Meshes** модели. Все объекты **Printing3DMesh** в пакете должны храниться в свойстве **Meshes** класса **Printing3DModel**.
 
@@ -82,20 +83,18 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
-
-            **Примечание.** Устройство трехмерной печати определит, какие доступные физические материалы соответствуют виртуальным материалам в 3MF. Сопоставление материалов не должно быть однозначным: если в трехмерном принтере используется только один материал, он напечатает всю модель из этого материала независимо от того, какие объекты или грани были назначены различным материалам.
+> [!NOTE]
+> Устройство трехмерной печати определит, какие доступные физические материалы соответствуют виртуальным материалам в 3MF. Сопоставление материалов не должно быть однозначным: если в трехмерном принтере используется только один материал, он напечатает всю модель из этого материала независимо от того, какие объекты или грани были назначены различным материалам.
 
 ### Цветные материалы
 
-
-            **Цветные материалы** аналогичны **базовым**, но у них нет имени. Таким образом они не предоставляют никаких инструкции о типе материала, который будет использовать устройство. Они содержат только данные о цветах и позволяют принтеру выбрать тип материала (устройство также может предложить пользователю выбрать). В коде ниже объекты `colrMat` из предыдущего метода используются самостоятельно.
+**Цветные материалы** аналогичны **базовым**, но у них нет имени. Таким образом они не предоставляют никаких инструкции о типе материала, который будет использовать устройство. Они содержат только данные о цветах и позволяют принтеру выбрать тип материала (устройство также может предложить пользователю выбрать). В коде ниже объекты `colrMat` из предыдущего метода используются самостоятельно.
 
 [!code-cs[ColorMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetColorMaterialGroup)]
 
 ### Композитные материалы
 
-
-            **Композитные материалы** указывают устройству, что необходимо использовать согласованную смесь разных **базовых материалов**. Каждая **группа композитных материалов** должна ссылать строго на одну **группу базовых материалов**, из которой берутся ингредиенты. Кроме того, **базовые материалы** в этой группе, которые необходимо сделать доступными, должны быть указаны в списке **индексов материалов**, на которые будет ссылаться каждый **композитный материал** при указании коэффициентов (каждый **композитный материал** — это просто отношение **базовых материалов**).
+**Композитные материалы** указывают устройству, что необходимо использовать согласованную смесь разных **базовых материалов**. Каждая **группа композитных материалов** должна ссылать строго на одну **группу базовых материалов**, из которой берутся ингредиенты. Кроме того, **базовые материалы** в этой группе, которые необходимо сделать доступными, должны быть указаны в списке **индексов материалов**, на которые будет ссылаться каждый **композитный материал** при указании коэффициентов (каждый **композитный материал** — это просто отношение **базовых материалов**).
 
 [!code-cs[CompositeMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetCompositeMaterialGroup)]
 
@@ -105,8 +104,8 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 [!code-cs[TextureResource](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTextureResource)]
 
-
-            **Примечание.** Данные текстуру относятся к самому пакету 3MF, а не части модели в пакете.
+> [!NOTE]
+> Данные текстуры относятся к самому пакету 3MF, а не к части модели в пакете.
 
 Далее нам необходимо заполнить **материалы Texture3Coord**. Каждый из них ссылается на ресурс текстуры и указывает определенную точку на изображении (в координатах UV).
 
@@ -120,8 +119,7 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 ## Компоненты и сборка
 
-Структура компонента позволяет пользователю разместить несколько объектов сетки в печатаемой трехмерной модели. Объект [**Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) содержит одну сетку и список ссылок на другие компоненты. Фактически это список объектов [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx). 
-            Каждый объект **Printing3DComponentWithMatrix** содержит **Printing3DComponent** и, что важно, матрицу преобразования, которая применяется к сетке и компонентам **Printing3DComponent**.
+Структура компонента позволяет пользователю разместить несколько объектов сетки в печатаемой трехмерной модели. Объект [**Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) содержит одну сетку и список ссылок на другие компоненты. Фактически это список объектов [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx). Каждый объект **Printing3DComponentWithMatrix** содержит **Printing3DComponent** и, что важно, матрицу преобразования, которая применяется к сетке и компонентам **Printing3DComponent**.
 
 Например, модель автомобиля может состоять из кузова **Printing3DComponent**, который содержит сетку кузова автомобиля. Компонент Body может содержать ссылки на четыре разных объекта **Printing3DComponentWithMatrix**, которые ссылаются на один объект **Printing3DComponent** с сеткой Wheel и содержат четыре разных матрицы преобразования (сопоставляющие колеса с различными позициями на кузове автомобиля). В этом сценарии сетку Body и сетку Wheel необходимо сохранить только один раз, хотя конечный продукт в итоге будет содержать пять сеток.
 
@@ -142,14 +140,16 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 ## Связанные разделы
 
-[Трехмерная печать из приложения](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)
-
+[Трехмерная печать из приложения](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
+[Пример трехмерной печати UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO4-->
 
 

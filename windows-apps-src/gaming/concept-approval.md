@@ -1,20 +1,29 @@
 ---
 author: eliotcowley
-title: Concept approval
-description: Learn how to submit your product for concept approval, which you will need if your product runs on Xbox or uses Xbox Live.
+title: "Утверждение концепций"
+description: "Узнайте, как отправить ваш продукт для утверждения его концепции, которое требуется выполнить, если ваш продукт предназначен для запуска на консоли Xbox или использует Xbox Live."
 ms.assetid: 
+translationtype: Human Translation
+ms.sourcegitcommit: fbd08666fa70af2806f2a0afa2f1823005ce8801
+ms.openlocfilehash: e9915282da1c611037402d149555246819becf89
+
 ---
 
-# Concept approval
+# Утверждение концепций
 
-When you begin creating a game that will run on Xbox, you will need to submit a proposal concerning that game to Microsoft for *concept approval* before you can publish it. This up-front, high-level submission benefits both Microsoft and you by identifying at the very beginning of the process any likely difficulties or drawbacks in the overall plan for the game. Try to make sure that your content isn't overly vulgar, offensive, or objectionable, and that it feels at home on the target platform. Once you submit your proposal, Microsoft will review it and then notify you of the result.
+Когда вы приступите к созданию игры, которая будет предназначена для запуска на консоли Xbox, перед тем как вы сможете опубликовать игру, вам будет необходимо отправить запрос в Майкрософт для *утверждения концепции* игры. Подобное предварительное требование является выгодным как для Майкрософт, так и для вас лично, так как позволяет выявить на первом этапе процесса одобрения вашей игры все возможные неполадки или недостатки в общей структуре игры. Убедитесь, что содержимое вашей игры не является слишком грубым, оскорбительным или неприемлемым, и что она корректно работает на целевой платформе. После отправки запроса специалисты Майкрософт ознакомятся с ним и уведомят вас о результате проверки.
 
-If you are developing a Universal Windows Platform (UWP) game, you only need concept approval if you want to allow customers to download it on Xbox devices. If you only want to make your UWP game available to Windows desktop or mobile devices (or if you're publishing a UWP app that's *not* a game, targeting any device), all you need is a [developer account](https://go.microsoft.com/fwlink/?LinkId=817223), and you can freely configure and submit your app to the Store through the dashboard.
+Если вы разрабатываете игру для универсальной платформы Windows (UWP), вам потребуется только утвердить ее концепцию, чтобы пользователи смогли скачивать ее на устройства Xbox. Если вы хотите, чтобы игра была доступна для запуска только на компьютере с Windows или мобильных устройствах (или если вы публикуете приложение UWP, *не* являющееся игрой, предназначенной для любых устройств), вам понадобится только [учетная запись разработчика](https://go.microsoft.com/fwlink/?LinkId=817223), с помощью которой вы сможете настроить и отправить свое приложение в Магазин через панель мониторинга.
 
-## Submit your concept for approval
+## Отправка концепции на утверждение
 
-If you are an independent game developer or publisher, you can submit your concept for approval through the ID@Xbox program. Learn more about ID@Xbox and apply [here](http://www.xbox.com/en-US/Developers/id).
+Если вы являетесь независимым разработчиком игр или издателем, вы можете отправить свою концепцию на утверждение через программу ID@Xbox. Дополнительные сведения о программе ID@Xbox и инструкции по регистрации в ней см. [здесь](http://www.xbox.com/en-US/Developers/id).
 
-If you are already an ID@Xbox developer, you should have been sent a link to the Game Information Form (GIF) where you can submit your game concept. If you have questions, contact [idgames@xbox.com](mailto:idgames@xbox.com).
+Если вы уже являетесь разработчиком ID@Xbox, у вас должна быть ссылка на "Форму сведений об игре" (GIF), с помощью которой вы можете отправить свою игровую концепцию. Если у вас возникли вопросы, пришлите письмо на адрес [idgames@xbox.com](mailto:idgames@xbox.com).
 
-If you have an existing license agreement with Microsoft, contact your Microsoft account team for information on submitting your concept.
+Если у вас есть действующее лицензионное соглашение с корпорацией Майкрософт, обратитесь в службу технической поддержки учетных записей Майкрософт, чтобы получить инструкции по отправке концепции.
+
+
+<!--HONumber=Aug16_HO5-->
+
+

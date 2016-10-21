@@ -2,7 +2,11 @@
 
 В этой статье описывается процедура подписывания классического приложения, преобразованного в приложение для универсальной платформы Windows (UWP). Прежде чем вы сможете развернуть пакет .appx, его необходимо подписать с помощью сертификата.
 
-## Подписывание пакета .appx
+## Автоматическое подписывание с помощью Desktop App Converter (DAC)
+
+Используйте флаг ```-Sign``` при запуске DAC для автоматического подписывания пакета .appx. Подробнее см. в разделе [Предварительная версия Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md).
+
+## Ручное подписывание с помощью SignTool.exe
 
 Сначала создайте сертификат с помощью средства MakeCert.exe. При отображении запроса на ввод пароля выберите "Нет". 
 
@@ -21,11 +25,35 @@ C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ``` 
 
-Дополнительные сведения см. в разделе [Подписывание пакета приложения с помощью SignTool](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835835(v=vs.85).aspx). 
+Дополнительные сведения см. в разделе [Подписывание пакета приложения с помощью SignTool](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx). 
 
 Все три упомянутые выше средства входят в состав Microsoft Windows 10 SDK. Чтобы вызвать их напрямую, вызовите из командной строки сценарий ```C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat```.
 
 ## Распространенные ошибки
+
+### Несоответствие издателя и сертификата приводит к ошибке Signtool "Error: SignerSign() Failed" (-2147024885/0x8007000b)
+
+Запись издателя в манифесте appx должна соответствовать субъекту сертификата, с помощью которого выполняется подписывание.  Вы можете использовать любой из следующих методов для просмотра субъекта сертификата. 
+
+**Вариант 1: Powershell**
+
+Выполните следующую команду PowerShell: В качестве файла сертификата можно использовать как .cer, так и .pfx, так как они содержат идентичные сведения об издателе.
+
+```ps
+(Get-PfxCertificate <cert_file>).Subject
+```
+
+**Вариант 2: проводник**
+
+Дважды щелкните сертификат в проводнике, выберите вкладку *Сведения*, а затем выберите поле *Субъект* в списке. Скопируйте его содержимое. 
+
+**Вариант 3: CertUtil**
+
+Запустите **certutil** через командную строку в файле PFX и скопируйте поле *Субъект* в выходных данных. 
+
+```cmd
+certutil -dump <cert_file.pfx>
+```
 
 ### Поврежденные или деформированные подписи Authenticode
 
@@ -40,7 +68,7 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 - Размер записи **WIN_CERTIFICATE** должен быть положительным.
 - Запись **WIN_CERTIFICATE** должна начинаться после структуры **IMAGE_NT_HEADERS32** для 32-разрядных исполняемых файлов и после структуры IMAGE_NT_HEADERS64 для 64-разрядных исполняемых файлов.
 
-Дополнительные сведения см. в спецификациях [Формат подписи Authenticode Portal Executable](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx) и [Формат файла PE](https://msdn.microsoft.com/en-us/windows/hardware/gg463119.aspx). 
+Дополнительные сведения см. в спецификациях [Формат подписи Authenticode Portal Executable](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx) и [Формат файла PE](https://msdn.microsoft.com/windows/hardware/gg463119.aspx). 
 
 Обратите внимание, что при попытке подписывания пакета AppX средство SignTool.exe может выводить информацию о поврежденных или деформированных двоичных файлах. Чтобы это сделать, включите регистрацию подробных сведений в журнале, задав переменной среды APPXSIP_LOG значение 1 (например, ```set APPXSIP_LOG=1``` ) и перезапустите средство SignTool.exe.
 
@@ -48,10 +76,10 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 ## См. также
 
-- [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx)
-- [SignTool.exe (инструмент подписывания)](https://msdn.microsoft.com/library/8s9b9yaz(v=vs.110).aspx)
-- [Подписание пакета приложения с помощью SignTool](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835835(v=vs.85).aspx)
+- [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
+- [SignTool.exe (инструмент подписывания)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
+- [Подписание пакета приложения с помощью SignTool](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO2-->
 
 

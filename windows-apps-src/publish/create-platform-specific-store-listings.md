@@ -1,45 +1,55 @@
-﻿---
+---
 author: jnHs
-Description: If you've provided packages targeting different operating systems, you have the option to customize parts of your Store listing for different targeted operating systems.
-title: Create platform-specific Store listings
+Description: "Если вы предоставили пакеты, предназначенные для различных операционных систем, у вас есть возможность настроить отдельные части описания в Магазине для каждой целевой операционной системы."
+title: "Создание описаний в Магазине для определенной платформы"
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
+translationtype: Human Translation
+ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
+ms.openlocfilehash: 8d9b026cf09d076cd7f7dc8a72d611e68ddd61c7
+
 ---
 
-# Create platform-specific Store listings
+# Создание описаний в Магазине для определенной платформы
 
 
-If you've provided packages targeting different operating systems, you have the option to customize parts of your Store listing for different targeted operating systems. You will not see this option unless you have already uploaded packages, and include packages for earlier OS versions (Windows 8.x or earlier and/or Windows Phone 8.x or earlier).
+Если вы предоставили пакеты, предназначенные для различных операционных систем, у вас есть возможность настроить отдельные части описания в Магазине для каждой целевой операционной системы. У вас не будет этой возможности, если вы не отправите пакеты и не добавите пакеты для более ранних версий ОС (Windows 8.x или более ранних версий и/или Windows Phone 8.x или более ранних версий).
 
-> **Important**  Customers on Windows 10 will always see your default Store listing.
+> **Важно!**  Пользователи Windows 10 всегда будут видеть ваше стандартное описание в Магазине.
 
-Platform-specific Store listings can be useful if you want to mention features that appear only in one OS version, or want to provide screenshots that are specific to a particular OS (independent of device type), rather than having all customers see the same Store listing.
+Описания в Магазине для определенных платформ могут быть полезными, если необходимо рассказать о функциональных возможностях, которые отображаются только в одной версии ОС, или если необходимо предоставить снимки экрана, которые относятся к определенной ОС (независимо от типа устройства), вместо того чтобы демонстрировать одинаковое описание в Магазине всем пользователям.
 
-> **Note**  Creating a platform-specific Store listing in one language does not create a platform-specific Store listing in other languages that your app supports, even if you have [entered Store listing info](create-app-store-listings.md) for those languages. You'll need to create the platform-specific Store listing separately for each language.
+> **Примечание.**  При создании описания в Магазине для определенной платформы на одном языке не создается описание в Магазине для определенной платформы на других языках, которые поддерживает ваше приложение, даже если вы [указали описание в Магазине](create-app-store-listings.md) для этих языков. Вам потребуется создать описание в Магазине для конкретной платформы отдельно для каждого языка.
 
-## Creating a platform-specific Store listing
+## Создание описаний в Магазине для определенной платформы
 
-Near the top of your **Store listing** page, you'll see a link to **create a platform-specific app Store listing** if you have uploaded packages that support earlier OS versions ((Windows 8.x or earlier and/or Windows Phone 8.x or earlier).
+В верхней части страницы **Описание в Магазине** будет отображаться ссылка на **создание описания приложения в Магазине для определенной платформы**, если вы отправили пакеты, которые поддерживают более ранние версии ОС (Windows 8.x или более ранних версий и/или Windows Phone 8.x или более ранних версий).
 
-> **Tip** You can't create platform-specific Store listings until after you've uploaded packages.
+> **Совет.** Создавать описания в Магазине для определенной платформы можно только после отправки пакетов.
 
-When you click the link to **create a platform-specific app Store listing**, a popup will appear asking you to choose from your supported targeted operating systems. Windows 10 is not included in the list of choices, because customers on Windows 10 will always see the app's default Store listing.
+При переходе по ссылке для **создания описания приложения в Магазине для определенной платформы** отображается всплывающее окно с запросом на выбор поддерживаемых целевых операционных систем. Операционная система Windows10 не включена в список вариантов выбора, так как пользователи Windows10 всегда видят стандартное описание приложения в Магазине.
 
-> **Note**  If you've already created platform-specific Store listings for all of the OS versions your app targets, you won't be able to make a selection.
+> **Примечание.**  Если вы уже создали описания в Магазине для определенных платформ и для всех версий ОС, для которых предназначено ваше приложение, вы не сможете выбрать здесь какое-либо значение.
 
-You can use your default Store listing as a starting point, which will bring over all of the text and images you've entered for your default Store listing; you'll then be able to make any changes you'd like before saving. You can also start from a completely blank Store listing if you prefer.
+В качестве отправной точки можно использовать стандартное описание в Магазине, что приведет к отображению всего текста и всех изображений, добавленных в стандартное описание в Магазине; после этого можно внести любые изменения и сохранить их. Если необходимо, можно также начать работу с пустого описания в Магазине.
 
-After you click **Continue**, your **Store listing** page will now include a section for the platform-specific Store listing you've just created (underneath the [Default Store listing](create-app-store-listings.md#default-store-listing-fields) section). This section will include its own set of fields for **Description** (required), **Release notes**, **Screenshots**, **App tile icon**, **App features**, and **Additional system requirements**. Make sure to enter info into each field where you want to display info in the custom Store listing, even if it's the same info as in your default Store listing. If you leave any of these fields blank, no info will appear for that field in the custom Store listing.
+После выбора пункта **Продолжить** страница **Описание в Магазине** будет содержать раздел для только что созданного описания в Магазине, ориентированного на определенную платформу (в разделе [Стандартное описание в Магазине](create-app-store-listings.md#default-store-listing-fields)). В этом разделе будет содержаться собственный набор полей: **Описание** (обязательно), **Заметки к выпуску**, **Снимки экрана**, **Значок плитки приложения**, **Функции приложения** и **Дополнительные системные требования**. Следует указать данные во всех полях, в которых должны отображаться сведения настраиваемого описания в Магазине, даже если это те же самые сведения, которые отображаются в стандартном описании в Магазине. Если оставить эти поля пустыми, никакая информация не будет отображаться для этого поля в настраиваемом описании в Магазине.
 
-> **Note**  Not all fields of your app's Store listing can be customized for a specific targeted OS. For more info, see [Shared fields](create-app-store-listings.md#shared-fields).
+> **Примечание.**  Не все поля вашего описания приложения в Магазине можно настроить для определенной целевой ОС. Дополнительные сведения см. в разделе [Общие поля](create-app-store-listings.md#shared-fields).
 
-## Removing a platform-specific Store listing
+## Удаление описания в Магазине для определенной платформы
 
-If you create a platform-specific Store listing and later decide you'd rather show your default Store listing to customers on that operating system, click the **Delete** link. After confirming that you'd like to show those customers your default Store listing, click **OK**. The platform-specific Store listing will be removed. If you decide you want it back later, you can always create a new platform-specific Store listing for that operating system by following the steps listed above.
+Если вы создали описание в Магазине для определенной платформы, а затем решили показывать пользователям определенной операционной системы только стандартное описание в Магазине, перейдите по ссылке **Удалить**. После подтверждения того, что для пользователей будет отображаться только стандартное описание в Магазине, нажмите кнопку **ОК**. Описание в Магазине для определенной платформы будет удалено. Если вы позже решите вернуть его, всегда можно создать новое описание в Магазине для этой операционной системы, выполнив указанные выше действия.
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+
+<!--HONumber=Aug16_HO5-->
 
 

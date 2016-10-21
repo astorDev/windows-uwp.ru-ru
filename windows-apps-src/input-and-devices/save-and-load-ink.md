@@ -1,20 +1,21 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Приложения UWP с поддержкой Windows Ink могут сериализовать и десериализовать росчерки пера в файл ISF. Файл ISF — это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала."
+Description: "Приложения UWP с поддержкой Windows Ink могут сериализовать и десериализовать росчерки пера в файл ISF. Файл ISF— это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала."
 title: "Хранение и извлечение данных движения пера Windows Ink"
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: cdef00304e1835532eceb8e51fecc8045f2ff300
+translationtype: Human Translation
+ms.sourcegitcommit: 75e93920422b5ad8ad0e9399bccc403ea69e7feb
+ms.openlocfilehash: 8ba48ed9aa7589ddee6009c5a8cb8ec1091d51ef
 
 ---
 
 # Хранение и извлечение данных движения пера Windows Ink
 
 
-Приложения UWP с поддержкой Windows Ink могут сериализовать и десериализовать росчерки пера в файл ISF. Файл ISF — это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала.
+Приложения UWP с поддержкой Windows Ink могут сериализовать и десериализовать росчерки пера в файл ISF. Файл ISF— это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала.
 
 
 **Важные API**
@@ -24,8 +25,8 @@ ms.openlocfilehash: cdef00304e1835532eceb8e51fecc8045f2ff300
 
 
 
-**Примечание.**  
-Формат ISF — наиболее компактное постоянное представление рукописного ввода. Он может быть встроен в двоичный формат документа, например GIF-файл, или помещен непосредственно в буфер обмена.
+> [!NOTE]
+> Формат ISF — наиболее компактное постоянное представление рукописного ввода. Он может быть встроен в двоичный формат документа, например GIF-файл, или помещен непосредственно в буфер обмена.
 
  
 
@@ -88,8 +89,7 @@ public MainPage()
 
 3.  Наконец, мы сохраняем рукописный ввод в обработчике событий нажатия кнопки **Сохранить**.
 
-    [
-            **FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) позволяет пользователю выбрать и файл, и расположение, где будут сохраняться данные рукописного ввода.
+    [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) позволяет пользователю выбрать и файл, и расположение, где будут сохраняться данные рукописного ввода.
 
     После выбора файла мы открываем поток [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731), для которого установлено значение [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635).
 
@@ -157,13 +157,10 @@ public MainPage()
     }
 ```
 
-[!NOTE]  
-GIF — единственный поддерживаемый формат для сохранения данных рукописного ввода. Однако метод [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) (демонстрируемый в следующем разделе) поддерживает и дополнительные форматы для обратной совместимости.
-
- 
+> [!NOTE]  
+> GIF — единственный поддерживаемый формат файла для сохранения данных рукописного ввода. Однако метод [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) (демонстрируемый в следующем разделе) поддерживает и дополнительные форматы для обратной совместимости.
 
 ## Загрузка росчерков пера из файла
-
 
 Здесь мы покажем, как загрузить росчерки пера из файла и отобразить их в элементе управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
@@ -221,12 +218,15 @@ public MainPage()
 
 3.  Наконец, мы загружаем рукописный ввод в обработчике событий нажатия кнопки **Загрузить**.
 
-    [
-            **FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) позволяет пользователю выбрать и файл, и расположение, откуда будут извлекаться сохраненные данные рукописного ввода.
+    [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) позволяет пользователю выбрать и файл, и расположение, откуда будут извлекаться сохраненные данные рукописного ввода.
 
     После выбора файла мы открываем поток [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731), для которого установлено значение [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635).
 
     Затем мы вызываем [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) для чтения, десериализации и загрузки сохраненных росчерков пера в элемент [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Загрузка росчерков в элемент **InkStrokeContainer** приводит к тому, что [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) немедленно выводит их на [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+
+    > [!NOTE]
+    > Все существующие штрихи в InkStrokeContainer удаляются перед загрузкой новых.
+
 ``` csharp
 // Load ink data from a file.
 private async void btnLoad_Click(object sender, RoutedEventArgs e)
@@ -248,7 +248,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
         // Read from file.
         using (var inputStream = stream.GetInputStreamAt(0))
         {
-            await inkCanvas.InkPresenter.StrokeContainer.LoadAsync(stream);
+            await inkCanvas.InkPresenter.StrokeContainer.LoadAsync(inputStream);
         }
         stream.Dispose();
     }
@@ -260,8 +260,8 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Примечание.**  
-GIF — единственный поддерживаемый формат для сохранения данных рукописного ввода. Тем не менее, метод [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) поддерживает и дополнительные форматы для обратной совместимости.
+> [!NOTE]
+> GIF — единственный поддерживаемый формат файла для сохранения данных рукописного ввода. Тем не менее, метод [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) поддерживает и дополнительные форматы для обратной совместимости.
 
 | Формат                    | Описание |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -446,6 +446,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

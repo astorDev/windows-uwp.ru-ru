@@ -3,17 +3,18 @@ author: mcleanbyron
 ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
 description: "Получите дополнительные примеры, демонстрирующие способы использования свойств, методов и событий классов AdControl и InterstitialAd в библиотеках Microsoft Advertising."
 title: "Примеры кода"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
+translationtype: Human Translation
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0a852a4bf8404d7ab0d8a2a169a16451c0388122
 
 ---
 
 # Примеры кода
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Этот раздел содержит примеры, демонстрирующие способы использования свойств, методов и событий классов [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) и [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)  в библиотеках Microsoft Advertising для выбора целевых пользователей, ручного обновления объявления и обработки событий. Вводные руководства, демонстрирующие способы добавления этих элементов управления в приложение, см. в разделе [Пошаговые руководства для разработчиков](developer-walkthroughs.md).
+
+Этот раздел содержит примеры, демонстрирующие способы использования свойств, методов и событий классов [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) и [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) в библиотеках Microsoft Advertising для выбора целевых пользователей, ручного обновления объявлений и обработки событий. Вводные руководства, демонстрирующие способы добавления этих элементов управления в приложение, см. в разделе [Пошаговые руководства для разработчиков](developer-walkthroughs.md).
 
 Полный пример с проектом, демонстрирующим способы добавления баннеров и промежуточной видеорекламы в приложения на JavaScript/HTML, а также в приложения на XAML с помощью языков C# and C++, см. в разделе [примеров рекламы на GitHub](http://aka.ms/githubads).
 
@@ -40,6 +41,6 @@ ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

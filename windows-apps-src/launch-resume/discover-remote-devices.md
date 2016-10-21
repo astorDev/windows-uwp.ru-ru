@@ -1,45 +1,55 @@
 ---
 author: PatrickFarley
-title: Discover remote devices
-description: Learn how to discover remote devices from your app using Project "Rome".
+title: "Обнаружение удаленных устройств"
+description: "Узнайте, как обнаруживать удаленные устройства из приложения с помощью проекта &quot;Рим&quot;."
+translationtype: Human Translation
+ms.sourcegitcommit: ff8e16d0e376d502157ae42b9cdae11875008554
+ms.openlocfilehash: cb1f9cf6915378203919fdf63bcebc935af74a30
+
 ---
 
-# Discover remote devices
-Your app can use the wireless network, Bluetooth, and a cloud connection to discover Windows-based devices that are signed on with the same Microsoft account as the discovering device. Communal devices that can accept anonymous connections, such as the Surface Hub and Xbox One, are also discoverable. The remote devices do not need to have any special software installed in order to be discoverable.
+# Обнаружение удаленных устройств
+Ваше приложение может использовать беспроводную сеть, Bluetooth и облачное подключение для обнаружения устройств, работающих под управлением Windows, вход с которых выполнен с той же учетной записью Майкрософт, что и у обнаруживающего устройства. Устройства общего пользования, которые могут принимать анонимные подключения (например Surface Hub и Xbox One), также поддерживают обнаружение. Обнаружение удаленных устройств возможно без установки на них какого-либо специального программного обеспечения.
 
 > [!NOTE]
-> This guide assumes you have already been granted access to the Remote Systems feature by following the steps in [Launch a remote app](launch-a-remote-app.md).
+> В этом руководстве предполагается, что вы уже получили доступ к функции удаленных систем, выполнив шаги раздела [Запуск удаленного приложения](launch-a-remote-app.md).
 
-## Filter the set of discoverable devices
-You can narrow down the set of discoverable devices by using a [**RemoteSystemWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher) with filters. Filters can detect the discovery type (local network vs. cloud connection), device type (desktop, mobile device, Xbox, Hub, and Holographic), and availability status (the status of a device's availability to use Remote System features).
+## Фильтрация набора устройств, доступных для обнаружения
+Набор доступных для обнаружения устройств можно ограничить, используя [**RemoteSystemWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher) с фильтрами. Фильтры могут определять тип обнаружения (локальная сеть или облачное подключение), типа устройства (компьютер, мобильное устройство, Xbox, Hub и Holographic) и состояние доступности (состояние доступности устройства для использования функций удаленной системы).
 
-Filter objects must be constructed before the **RemoteSystemWatcher** object is initialized, because they are passed as a parameter into its constructor. The following code creates a filter of each type available and then adds them to a list.
+Объекты фильтра должны быть созданы до инициализации объекта **RemoteSystemWatcher**, поскольку они передаются как параметры в его конструктор. Следующий код создает фильтры каждого доступного типа, затем добавляет их в список.
 
 > [!NOTE]
-> The code in these examples assumes that you have a `using Windows.System.RemoteSystems` statement in your file.
+> В коде из этих примеров предполагается, что в вашем файле имеется оператор `using Windows.System.RemoteSystems`.
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
+[!code-cs[Основной блок](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
 
-Once a list of [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter) objects is created, it can be passed into the constructor of a **RemoteSystemWatcher**.
+После создания списка объектов [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter) его можно передать в конструктор объекта **RemoteSystemWatcher**.
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetCreateWatcher)]
+[!code-cs[Основной блок](./code/DiscoverDevices/MainPage.xaml.cs#SnippetCreateWatcher)]
 
-When this watcher's [**Start**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.Start) method is called, it will raise the [**RemoteSystemAdded**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.RemoteSystemAdded) event only if a device is detected that meets all of the following criteria:
-* It is discoverable by proximal connection
-* It is a desktop or phone
-* It is classified as available
+При вызове метода [**Start**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.Start) этого наблюдателя он инициирует событие [**RemoteSystemAdded**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.RemoteSystemAdded) только в случае обнаружения устройства, которое соответствует всем указанным ниже критериям.
+* Оно может быть обнаружено с помощью подключения близкого радиуса действия
+* Это компьютер или телефон
+* Оно классифицируется как доступное
 
-From there, the procedure for handling events, retrieving [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) objects, and connecting to remote devices is exactly the same as in [Launch a remote app](launch-a-remote-app.md). In short, the **RemoteSystem** objects are stored as properties of [**RemoteSystemAddedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs) objects, which are parameters of each **RemoteSystemAdded** event.
+С этого момента процедура обработки событий, извлечения объектов [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) и подключения к удаленным устройствам полностью совпадает с процедурой из раздела [Запуск удаленного приложения](launch-a-remote-app.md). Если коротко, объекты **RemoteSystem** хранятся в виде свойств объектов [**RemoteSystemAddedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs), которые являются параметрами каждого из событий **RemoteSystemAdded**.
 
-## Discover devices by address input
-Some devices may not be associated with a user or discoverable with a scan, but they can still be reached if the discovering app uses a direct address. The [**HostName**](https://msdn.microsoft.com/library/windows/apps/windows.networking.hostname.aspx) class is used to represent the address of a remote device. This is often stored in the form of an IP address, but several other formats are allowed (see the [**HostName constructor**](https://msdn.microsoft.com/library/windows/apps/br207118.aspx) for details).
+## Обнаружение устройств путем ввода адреса
+Некоторые устройства могут быть не связаны с пользователем или могут не обнаруживаться сканированием, но с ними все равно можно установить связь, если обнаруживающее приложение использует прямой адрес. Класс [**HostName**](https://msdn.microsoft.com/library/windows/apps/windows.networking.hostname.aspx) используется для представления адреса удаленного устройства. Он часто хранится в виде IP-адреса, но допускается также ряд других форматов (см. раздел [**Конструктор HostName**](https://msdn.microsoft.com/library/windows/apps/br207118.aspx)).
 
-A **RemoteSystem** object is retrieved if a valid **HostName** object is provided. If the address data is invalid, a `null` object reference is returned.
+Объект **RemoteSystem** извлекается, если указан действительный объект **HostName**. Если сведения об адресе неправильные, возвращается ссылка на объект `null`.
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetFindByHostName)]
+[!code-cs[Основной блок](./code/DiscoverDevices/MainPage.xaml.cs#SnippetFindByHostName)]
 
-## Related topics
-[Connected apps and devices (Project "Rome")](connected-apps-and-devices.md)  
-[Launch a remote app](launch-a-remote-app.md)  
-[Remote Systems API reference](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
-[Remote Systems sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems ) demonstrates how to discover a remote system, launch an app on a remote system, and use app services to send messages between apps running on two systems.
+## Связанные разделы
+[Подключенные приложения и устройства (проект «Рим»)](connected-apps-and-devices.md)  
+[Запуск удаленного приложения](launch-a-remote-app.md)  
+[Справочник по API удаленных систем](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[Пример удаленных систем](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems ) демонстрирует, как обнаружить удаленную систему, запустить приложение в удаленной системе и использовать службы приложений для передачи сообщений между приложениями, работающими в двух системах.
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

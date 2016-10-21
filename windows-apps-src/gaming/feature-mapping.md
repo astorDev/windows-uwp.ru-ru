@@ -3,8 +3,9 @@ author: mtoepke
 title: "Сопоставление компонентов DirectX9 и API DirectX11"
 description: "Прочитав этот раздел, вы поймете, как компоненты, которые использует ваша игра с Direct3D9, будут перенесены в Direct3D11 и на универсальную платформу Windows (UWP)."
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3a9e9c32ed2d892674592f32d0f067fed668d9d1
+ms.openlocfilehash: 6ab76921f1e8b613010f99eba6a141daca128ea5
 
 ---
 
@@ -25,8 +26,7 @@ ms.openlocfilehash: 3a9e9c32ed2d892674592f32d0f067fed668d9d1
 ## Сопоставление Direct3D9 и API DirectX11
 
 
-
-            [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) по-прежнему является основой графики DirectX, но после DirectX 9 изменились API.
+[Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) по-прежнему является основой графики DirectX, но после DirectX 9 изменились API.
 
 -   Для установки графических адаптеров используется Microsoft DirectX Graphics Infrastructure (DXGI). Используйте [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534) для выбора форматов буферов, создания цепочек буферов, представления кадров и создания общих ресурсов. См. общие сведения о [DXGI](https://msdn.microsoft.com/library/windows/desktop/bb205075).
 -   Контекст устройства Direct3D используется для установки состояния конвейера и генерирования команд отрисовки. Во многих наших примерах используется немедленный контекст для прямой отрисовки на устройстве. Direct3D11 также поддерживает многопотоковую отрисовку, в этом случае используются отложенные контексты. См. раздел [Введение в устройство в Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476880).
@@ -37,8 +37,7 @@ ms.openlocfilehash: 3a9e9c32ed2d892674592f32d0f067fed668d9d1
 ## Переход с Direct2D9 на Direct2D11
 
 
-
-            [Direct2D (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd370990) по-прежнему является важной частью графики DirectX и Windows. Вы все еще можете использовать Direct2D для отрисовки двухмерных игр и наложений (HUD) на Direct3D.
+[Direct2D (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd370990) по-прежнему является важной частью графики DirectX и Windows. Вы все еще можете использовать Direct2D для отрисовки двухмерных игр и наложений (HUD) на Direct3D.
 
 Direct2D работает на базе Direct3D; двухмерные игры можно реализовать с помощью любого API. Например, при реализации двухмерной игры с помощью Direct3D можно использовать ортогональную проекцию, установить значения Z для управления порядком отрисовки примитивов и использовать построитель текстуры для добавления специальных эффектов.
 
@@ -92,8 +91,7 @@ DirectInput не поддерживается для UWP:
 ## Использование Microsoft Media Foundation вместо DirectShow
 
 
-DirectShow больше не является частью API DirectX (или API Windows). 
-            [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) предоставляет видеосодержимое интерфейсу Direct3D посредством общих поверхностей. См. раздел [API видео Direct3D11](https://msdn.microsoft.com/library/windows/desktop/hh447677).
+DirectShow больше не является частью API DirectX (или API Windows). [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) предоставляет видеосодержимое интерфейсу Direct3D посредством общих поверхностей. См. раздел [API видео Direct3D11](https://msdn.microsoft.com/library/windows/desktop/hh447677).
 
 ## Замена DirectPlay на сетевой код
 
@@ -676,6 +674,6 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,8 +6,9 @@ ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
 label: History and backwards navigation
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
+translationtype: Human Translation
+ms.sourcegitcommit: 75e8c342775f7d6c564cb1014519f8e4707a0632
+ms.openlocfilehash: f18fc0806313cc1656860b0fd8b5ae692fa3d4c6
 
 ---
 
@@ -25,11 +26,11 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
 <table>
     <tr>
         <td colspan="2">Устройства</td>
-        <td>Поведение кнопки «Назад»</td>
+        <td>Поведение кнопки "Назад"</td>
      </tr>
     <tr>
         <td>Телефон</td>
-        <td>![system back on a phone](images/back-systemback-phone.png)</td>
+        <td>![системная кнопка возврата на телефоне](images/back-systemback-phone.png)</td>
         <td>
         <ul>
 <li>Всегда присутствует.</li>
@@ -40,7 +41,7 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
      </tr>
      <tr>
         <td>Планшет</td>
-        <td>![system back on a tablet (in tablet mode)](images/back-systemback-tablet.png)</td>
+        <td>![системная кнопка "Назад" на планшете (в режиме планшета)](images/back-systemback-tablet.png)</td>
         <td>
 <ul>
 <li>Всегда присутствует в режиме планшета.
@@ -55,7 +56,7 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
      </tr>
     <tr>
         <td>ПК, ноутбук, планшет</td>
-        <td>![system back on a pc or laptop](images/back-systemback-pc.png)</td>
+        <td>![системная кнопка возврата на ПК или ноутбуке](images/back-systemback-pc.png)</td>
         <td>
 <ul>
 <li>Дополнительная функция в режиме настольного компьютера.
@@ -72,7 +73,7 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
      </tr>
     <tr>
         <td>Surface Hub</td>
-        <td>![system back on a surface hub](images/nav/nav-back-surfacehub.png)</td>
+        <td>![системная кнопка возврата на surface hub.](images/nav/nav-back-surfacehub.png)</td>
         <td>
 <ul>
 <li>Необязательно.</li>
@@ -89,74 +90,75 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
 
 <table>
 <tr><td colspan="3">Устройства ввода</td></tr>
-<tr><td>Клавиатура</td><td>![keyboard](images/keyboard-wireframe.png)</td><td>Клавиша Windows + Backspace</td></tr>
-<tr><td>Кортана</td><td>![speech](images/speech-wireframe.png)</td><td>Скажите: «Привет, Кортана! Назад».</td></tr>
+<tr><td>Клавиатура</td><td>![клавиатура](images/keyboard-wireframe.png)</td><td>Клавиша Windows + Backspace</td></tr>
+<tr><td>Кортана</td><td>![Голосовые функции](images/speech-wireframe.png)</td><td>Скажите: "Привет, Кортана! Назад".</td></tr>
 </table>
  
 
-При запуске приложения на телефоне, планшете, ПК или ноутбуке, на которых системная кнопка возврата включена, система сообщает ему о нажатии кнопки «Назад». Пользователь ожидает что кнопка «Назад» позволит ему перейти на предыдущую страницу истории навигации приложения. Именно вы решаете, какие действия навигации добавлять в журнал навигации и как реагировать на нажатие кнопки «Назад».
+При запуске приложения на телефоне, планшете, ПК или ноутбуке, на которых системная кнопка возврата включена, система сообщает ему о нажатии кнопки "Назад". Пользователь ожидает что кнопка «Назад» позволит ему перейти на предыдущую страницу истории навигации приложения. Именно вы решаете, какие действия навигации добавлять в журнал навигации и как реагировать на нажатие кнопки «Назад».
 
 
-## <span id="Enable_system_back_navigation_support"></span><span id="enable_system_back_navigation_support"></span><span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"></span>Включение поддержки системной обратной навигации
+## Включение поддержки системной обратной навигации
 
 
 Приложения должны включить обратную навигацию для всех аппаратных и программных системных кнопок «Назад». Для этого зарегистрируйте прослушиватель для события [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) и определите соответствующий обработчик.
 
 Здесь мы регистрируем глобальный прослушиватель для события [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) в файле кода программной части App.xaml. Вы можете зарегистрировать это событие на каждой странице, которую нужно исключить из обратной навигации, или выполнить код на уровне страницы перед отображением страницы.
 
-```CSharp
+> [!div class="tabbedCodeSnippets"]
+```csharp
+Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += 
+    App_BackRequested;
+```
+```cpp
 Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
     BackRequested += ref new Windows::Foundation::EventHandler<
     Windows::UI::Core::BackRequestedEventArgs^>(
         this, &amp;App::App_BackRequested);
 ```
 
-```CSharp
-Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += 
-    App_BackRequested;
-```
-
 Вот соответствующий обработчик событий [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596), который вызывает [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) в корневом кадре приложения.
 
 Этот обработчик вызывается в глобальном событии возврата. Если стек переходов назад приложения пуст, система может перейти к предыдущему приложению в стеке приложений или на начальный экран. Стека переходов назад в настольном режиме нет, и пользователь остается в приложении, даже если стек переходов назад в приложении исчерпан.
 
-```CSharp
-void App::App_BackRequested(
-    Platform::Object^ sender, 
-    Windows::UI::Core::BackRequestedEventArgs^ e)
-{
-    Frame^ rootFrame = dynamic_cast<Frame^>(Window::Current->Content);
-    if (rootFrame == nullptr)
-        return;
-
-    // Navigate back if possible, and if the event has not
-    // already been handled.
-    if (rootFrame->CanGoBack &amp;&amp; e->Handled == false)
-    {
-        e->Handled = true;
-        rootFrame->GoBack();
-    }
-}
+> [!div class="tabbedCodeSnippets"]
+```csharp
+>private void App_BackRequested(object sender, 
+>    Windows.UI.Core.BackRequestedEventArgs e)
+>{
+>    Frame rootFrame = Window.Current.Content as Frame;
+>    if (rootFrame == null)
+>        return;
+>
+>    // Navigate back if possible, and if the event has not 
+>    // already been handled .
+>    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
+>    {
+>        e.Handled = true;
+>        rootFrame.GoBack();
+>    }
+>}
+```
+```cpp
+>void App::App_BackRequested(
+>    Platform::Object^ sender, 
+>    Windows::UI::Core::BackRequestedEventArgs^ e)
+>{
+>    Frame^ rootFrame = dynamic_cast<Frame^>(Window::Current->Content);
+>    if (rootFrame == nullptr)
+>        return;
+>
+>    // Navigate back if possible, and if the event has not
+>    // already been handled.
+>    if (rootFrame->CanGoBack && e->Handled == false)
+>    {
+>        e->Handled = true;
+>        rootFrame->GoBack();
+>    }
+>}
 ```
 
-```CSharp
-private void App_BackRequested(object sender, 
-    Windows.UI.Core.BackRequestedEventArgs e)
-{
-    Frame rootFrame = Window.Current.Content as Frame;
-    if (rootFrame == null)
-        return;
-
-    // Navigate back if possible, and if the event has not 
-    // already been handled .
-    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
-    {
-        e.Handled = true;
-        rootFrame.GoBack();
-    }
-}
-```
-## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>Включение кнопки "Назад" в строке заголовка
+## Включение кнопки "Назад" в строке заголовка
 
 
 Устройства, поддерживающие настольный режим (обычно это настольные компьютеры и ноутбуки, а также некоторые планшеты), с включенным параметром (**Параметры &gt; Система &gt; Режим планшета**) не предоставляют глобальную панель навигации с системной кнопкой "Назад".
@@ -165,8 +167,7 @@ private void App_BackRequested(object sender,
 
 Такая кнопка доступна только в приложениях, работающих на устройствах в настольном режиме, и поддерживает только журнал навигации в приложении, но не журнал навигации между приложениями.
 
-
-            **Важно!** Кнопка возврата в строке заголовка по умолчанию не отображается. Ее необходимо включить.
+**Важно!** Кнопка возврата в строке заголовка по умолчанию не отображается. Ее необходимо включить.
 
  
 
@@ -181,63 +182,64 @@ private void App_BackRequested(object sender,
 
 Для этого примера мы укажем все страницы в стеке переходов назад и включим кнопку возврата, если свойство кадра [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/br242685) имеет значение **true**.
 
-```ManagedCPlusPlus
-void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
-{
-    auto rootFrame = dynamic_cast<Windows::UI::Xaml::Controls::Frame^>(Window::Current->Content);
+> [!div class="tabbedCodeSnippets"]
+>```csharp
+>protected override void OnNavigatedTo(NavigationEventArgs e)
+>{
+>    Frame rootFrame = Window.Current.Content as Frame;
+>
+>    string myPages = "";
+>    foreach (PageStackEntry page in rootFrame.BackStack)
+>    {
+>        myPages += page.SourcePageType.ToString() + "\n";
+>    }
+>    stackCount.Text = myPages;
+>
+>    if (rootFrame.CanGoBack)
+>    {
+>        // Show UI in title bar if opted-in and in-app backstack is not empty.
+>        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
+>            AppViewBackButtonVisibility.Visible;
+>    }
+>    else
+>    {
+>        // Remove the UI from the title bar if in-app back stack is empty.
+>        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
+>            AppViewBackButtonVisibility.Collapsed;
+>    }
+>}
+>```
+>```cpp
+>void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
+>{
+>    auto rootFrame = dynamic_cast<Windows::UI::Xaml::Controls::Frame^>(Window::Current->Content);
+>
+>    Platform::String^ myPages = "";
+>
+>    if (rootFrame == nullptr)
+>        return;
+>
+>    for each (PageStackEntry^ page in rootFrame->BackStack)
+>    {
+>        myPages += page->SourcePageType.ToString() + "\n";
+>    }
+>    stackCount->Text = myPages;
+>
+>    if (rootFrame->CanGoBack)
+>    {
+>        // If we have pages in our in-app backstack and have opted in to showing back, do so
+>        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
+>            Windows::UI::Core::AppViewBackButtonVisibility::Visible;
+>    }
+>    else
+>    {
+>        // Remove the UI from the title bar if there are no pages in our in-app back stack
+>        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
+>            Windows::UI::Core::AppViewBackButtonVisibility::Collapsed;
+>    }
+>}
+>```
 
-    Platform::String^ myPages = "";
-
-    if (rootFrame == nullptr)
-        return;
-
-    for each (PageStackEntry^ page in rootFrame->BackStack)
-    {
-        myPages += page->SourcePageType.ToString() + "\n";
-    }
-    stackCount->Text = myPages;
-
-    if (rootFrame->CanGoBack)
-    {
-        // If we have pages in our in-app backstack and have opted in to showing back, do so
-        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
-            Windows::UI::Core::AppViewBackButtonVisibility::Visible;
-    }
-    else
-    {
-        // Remove the UI from the title bar if there are no pages in our in-app back stack
-        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
-            Windows::UI::Core::AppViewBackButtonVisibility::Collapsed;
-    }
-}
-```
-
-```CSharp
-protected override void OnNavigatedTo(NavigationEventArgs e)
-{
-    Frame rootFrame = Window.Current.Content as Frame;
-
-    string myPages = "";
-    foreach (PageStackEntry page in rootFrame.BackStack)
-    {
-        myPages += page.SourcePageType.ToString() + "\n";
-    }
-    stackCount.Text = myPages;
-
-    if (rootFrame.CanGoBack)
-    {
-        // Show UI in title bar if opted-in and in-app backstack is not empty.
-        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
-            AppViewBackButtonVisibility.Visible;
-    }
-    else
-    {
-        // Remove the UI from the title bar if in-app back stack is empty.
-        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
-            AppViewBackButtonVisibility.Collapsed;
-    }
-}
-```
 
 ### Рекомендации по пользовательской настройке обратной навигации
 
@@ -295,14 +297,17 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 </table>
 
 
-### <span id="Resuming"></span><span id="resuming"></span><span id="RESUMING"></span>Возобновление
+### Возобновление
 
 Если пользователь переходит к другому приложению, а затем возвращается к вашему приложению, мы рекомендуем открывать при этом последнюю страницу в журнале навигации.
 
 
+## Получение примеров
+*   [Пример кнопки "Назад"](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackButton)<br/>
+    Показана настройка обработчика событий для события кнопки "Назад"и включение кнопки "Назад" в строке заголовка для приложения в развернутом оконном режиме "Рабочий стол".
 
-
-
+## Связанные статьи
+* [Основы навигации](navigation-basics.md)
 
  
 
@@ -312,6 +317,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

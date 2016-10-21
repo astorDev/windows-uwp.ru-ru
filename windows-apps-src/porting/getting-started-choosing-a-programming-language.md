@@ -3,8 +3,9 @@ author: mcleblanc
 title: "Выбор языка программирования"
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: "Выбор языка программирования"
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 10fa4a349621c8e7b248c7daf4d7cdf967e25255
+ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
 
 ---
 
@@ -26,8 +27,7 @@ ms.openlocfilehash: 10fa4a349621c8e7b248c7daf4d7cdf967e25255
 -   [Создание первого приложения Магазина Windows Phone на C# или Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=397877)
 -   [WinJS в Windows Phone 8.1](http://go.microsoft.com/fwlink/p/?LinkID=397879)
 
-
-            **Примечание.** Для приложений, использующих трехмерную графику: стандарты OpenGL и OpenGL ES, по умолчанию не являются доступными для приложений UWP. Если вы не желаете переписывать код OpenGL ES в Microsoft DirectX, возможно, вам будет интересно узнать о проекте **Angle**. Angle — это текущий проект, предназначенный для преобразования OpenGL в DirectX путем перевода вызовов API OpenGL в вызовы API DirectX. Подробнее см. в следующих разделах:
+**Примечание.** Для приложений, использующих трехмерную графику: стандарты OpenGL и OpenGL ES, по умолчанию не являются доступными для приложений UWP. Если вы не желаете переписывать код OpenGL ES в Microsoft DirectX, возможно, вам будет интересно узнать о проекте **Angle**. Angle — это текущий проект, предназначенный для преобразования OpenGL в DirectX путем перевода вызовов API OpenGL в вызовы API DirectX. Подробнее см. в следующих разделах:
 -   [Angle](https://code.google.com/p/angleproject/)
 -   [Создание первого приложения Магазина Windows с поддержкой DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
 -   [Образцы приложений Магазина Windows, использующих DirectX](http://go.microsoft.com/fwlink/p/?LinkId=263603)
@@ -145,6 +145,6 @@ C# — это простой язык для выбора. Он содержит
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

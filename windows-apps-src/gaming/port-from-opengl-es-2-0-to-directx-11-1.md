@@ -3,8 +3,9 @@ author: mtoepke
 title: "Перенос из OpenGL ES2.0 в Direct3D11"
 description: "Включает статьи, обзоры и пошаговые руководства по переносу графического конвейера из OpenGL ES 2.0 в Direct3D 11 и среду выполнения Windows."
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
+translationtype: Human Translation
 ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: 40380582a9210cb705a5e7e591d4a8f37c42f8dd
+ms.openlocfilehash: aab0c3e9f3816e0657dfb6fec4917d62f2be5280
 
 ---
 
@@ -15,8 +16,7 @@ ms.openlocfilehash: 40380582a9210cb705a5e7e591d4a8f37c42f8dd
 
 Включает статьи, обзоры и пошаговые руководства по переносу графического конвейера из OpenGL ES 2.0 в Direct3D 11 и среду выполнения Windows.
 
-> 
-            **Примечание.** В качестве промежуточного действия при переносе проекта OpenGLES2.0 можно использовать ANGLE для Магазина Windows. ANGLE позволяет запускать содержимое OpenGLES в Windows путем преобразования вызовов API OpenGLES в вызовы API DirectX11. Дополнительные сведения об ANGLE см. в [вики об ANGLE для МагазинаWindows](http://go.microsoft.com/fwlink/p/?linkid=618387).
+> **Примечание.** В качестве промежуточного действия при переносе проекта OpenGLES2.0 можно использовать ANGLE для Магазина Windows. ANGLE позволяет запускать содержимое OpenGLES в Windows путем преобразования вызовов API OpenGLES в вызовы API DirectX11. Дополнительные сведения об ANGLE см. в [вики об ANGLE для МагазинаWindows](http://go.microsoft.com/fwlink/p/?linkid=618387).
 
  
 
@@ -64,6 +64,6 @@ ms.openlocfilehash: 40380582a9210cb705a5e7e591d4a8f37c42f8dd
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

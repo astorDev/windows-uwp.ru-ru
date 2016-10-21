@@ -3,8 +3,9 @@ author: drewbatgit
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
 description: "В этом разделе объясняется, как использовать FaceDetector для обнаружения лиц на изображении. Инструмент FaceTracker оптимизирован для отслеживания лиц с течением времени в последовательности видеокадров."
 title: "Обнаружение лиц на изображениях или в видео"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
+translationtype: Human Translation
+ms.sourcegitcommit: 7526d5ddfbaa6f5128ef5775bc75cc48768f647d
+ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 ---
 
@@ -45,8 +46,7 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 
 [!code-cs[Формат](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
-Создайте экземпляр объекта **FaceDetector**, вызвав [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132), а затем вызовите [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), передав точечный рисунок, который был масштабирован до оптимального размера и преобразован в поддерживаемый формат пикселей. Этот метод возвращает список объектов [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123). 
-            **ShowDetectedFaces**— это вспомогательный метод, показанный ниже, который рисует квадраты вокруг лиц на изображении.
+Создайте экземпляр объекта **FaceDetector**, вызвав [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132), а затем вызовите [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), передав точечный рисунок, который был масштабирован до оптимального размера и преобразован в поддерживаемый формат пикселей. Этот метод возвращает список объектов [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123). **ShowDetectedFaces**— это вспомогательный метод, показанный ниже, который рисует квадраты вокруг лиц на изображении.
 
 [!code-cs[Обнаружение](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 
@@ -97,10 +97,12 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 * [Анализ сцен для захвата мультимедиа](scene-analysis-for-media-capture.md)
 * [Пример базового обнаружения лиц](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
 * [Пример базового отслеживания лиц](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
-* [Фото- и видеозахват с помощью MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [Камера](camera.md)
+* [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Воспроизведение мультимедиа](media-playback.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

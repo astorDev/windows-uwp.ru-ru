@@ -3,8 +3,9 @@ author: mtoepke
 title: "Ресурсы по программированию игр"
 description: "Следующие ресурсы содержат дополнительную информацию о программировании игр для Windows."
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 598d5d1afffd394b66aa7af23f22e7a13af48208
+ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
 
 ---
 
@@ -32,8 +33,7 @@ ms.openlocfilehash: 598d5d1afffd394b66aa7af23f22e7a13af48208
 
 -   [Записи блога, посвященные играм для Windows и DirectX SDK]( http://go.microsoft.com/fwlink/p/?LinkID=288873)
 -   [Блог разработчиков DirectX]( http://go.microsoft.com/fwlink/p/?LinkID=288874)
--   
-            [Блог Шона Харгривза]( http://go.microsoft.com/fwlink/p/?LinkID=288872) (сведения об играх на платформе XNA).
+-   [Блог Шона Харгривза]( http://go.microsoft.com/fwlink/p/?LinkID=288872) (сведения об играх на платформе XNA).
 
 ## Наборы инструментов
 
@@ -41,50 +41,32 @@ ms.openlocfilehash: 598d5d1afffd394b66aa7af23f22e7a13af48208
 -   [Набор инструментов DirectX](  http://go.microsoft.com/fwlink/p/?LinkID=248929)
 -   [Библиотеки обработки текстур DirectXTex](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
 -   [Диагностика графики](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx) в MicrosoftVisualStudio
--   
-            [Win2D](https://github.com/Microsoft/Win2D) — простой в использовании API среды выполнения Windows для отрисовки двумерной графики в непосредственном режиме с ускорением GPU.
--   
-            [ANGLE для Магазина Windows](http://go.microsoft.com/fwlink/p/?linkid=618387) — запуск содержимого OpenGL ES в Windows путем преобразования вызовов API OpenGL ES в вызовы API DirectX 11.
+-   [Win2D](https://github.com/Microsoft/Win2D) — простой в использовании API среды выполнения Windows для отрисовки двумерной графики в непосредственном режиме с ускорением GPU.
+-   [ANGLE для Магазина Windows](http://go.microsoft.com/fwlink/p/?linkid=618387) — запуск содержимого OpenGL ES в Windows путем преобразования вызовов API OpenGL ES в вызовы API DirectX 11.
 
 ## Видеоролики о разработке игр GDC 2015
 
 
--   
-            [Будущее игр в экосистеме Майкрософт](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) — Фил Спенсер (Phil Spencer)
--   
-            [Разработка игр для Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10) — Крис Тектор (Chris Tector), Дон Иксбокс (Don Xbox)
--   
-            [Улучшенная графика и производительность DirectX 12](http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) — Макс Макмаллен (Max McMullen)
--   
-            [Игровое взаимодействие с пользователем в Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) — Билл Шифельбайн (Bill Schiefelbein)
--   
-            [Новые возможности для независимых разработчиков](http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) — Крис Чарла (Chris Charla)
--   
-            [Разработка с Xbox LIVE для Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) — Виджай Гадджала (Vijay Gajjala), Брайан Тайлер (Brian Tyler)
--   
-            [Многопользовательский режим Xbox Live: знакомство со службой кросс-платформенного проведения матчей и игр](http://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay) — Фердинанд Шобер (Ferdinand Schober)
--   
-            [Fable Legends: многопользовательские игры на разных устройствах с Xbox Live](http://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live) — Рэймонд Арифьянто (Raymond Arifianto), Джулиан Дэвис (Julian Davis)
--   
-            [Рекомендации по использованию облачной статистики и достижений пользователя в Xbox Live](http://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live) — Сьерра Макдоналд (Cierra McDonald)
--   
-            [Решение сложных проблем с игровой графикой при помощи средств DirectX](http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools) — Рудольф Балаж (Rudolph Balaz), Жун Лу (Rong Lu), Джейсон Страйер (Jason Strayer)
--   
-            [Выше мощность — выше производительность: ваша игра на DirectX 12](http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12) — Беннет Сорбо (Bennett Sorbo)
--   
-            [Стабильная производительность игры на многоядерных мобильных устройствах](http://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices) — Джулиан Калинов (Julian Calinov)
--   
-            [Разработка игр мира Windows Core](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) — Тодд Уильямс (Todd Williams), Шай Хиниц (Shai Hinitz)
--   
-            [Компьютерные игры для Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10) — Чак Валборн (Chuck Walbourn)
+-   [Будущее игр в экосистеме Майкрософт](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) — Фил Спенсер (Phil Spencer)
+-   [Разработка игр для Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10) — Крис Тектор (Chris Tector), Дон Иксбокс (Don Xbox)
+-   [Улучшенная графика и производительность DirectX 12](http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) — Макс Макмаллен (Max McMullen)
+-   [Игровое взаимодействие с пользователем в Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) — Билл Шифельбайн (Bill Schiefelbein)
+-   [Новые возможности для независимых разработчиков](http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) — Крис Чарла (Chris Charla)
+-   [Разработка с Xbox LIVE для Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) — Виджай Гадджала (Vijay Gajjala), Брайан Тайлер (Brian Tyler)
+-   [Многопользовательский режим Xbox Live: знакомство со службой кросс-платформенного проведения матчей и игр](http://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay) — Фердинанд Шобер (Ferdinand Schober)
+-   [Fable Legends: многопользовательские игры на разных устройствах с Xbox Live](http://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live) — Рэймонд Арифьянто (Raymond Arifianto), Джулиан Дэвис (Julian Davis)
+-   [Рекомендации по использованию облачной статистики и достижений пользователя в Xbox Live](http://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live) — Сьерра Макдоналд (Cierra McDonald)
+-   [Решение сложных проблем с игровой графикой при помощи средств DirectX](http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools) — Рудольф Балаж (Rudolph Balaz), Жун Лу (Rong Lu), Джейсон Страйер (Jason Strayer)
+-   [Выше мощность — выше производительность: ваша игра на DirectX 12](http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12) — Беннет Сорбо (Bennett Sorbo)
+-   [Стабильная производительность игры на многоядерных мобильных устройствах](http://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices) — Джулиан Калинов (Julian Calinov)
+-   [Разработка игр мира Windows Core](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) — Тодд Уильямс (Todd Williams), Шай Хиниц (Shai Hinitz)
+-   [Компьютерные игры для Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10) — Чак Валборн (Chuck Walbourn)
 
 ## Видеозаписи мероприятий //Build 2015
 
 
--   
-            [Введение в Win2D: рисование с помощью DirectX в C#](https://channel9.msdn.com/Events/Build/2015/2-631)— Simon Tao (Саймон Тао)
--   
-            [ANGLE: выполнение графического кода OpenGL ES 2.0 в Windows](https://channel9.msdn.com/Events/Build/2015/3-686)— Tony Balogh (Тони Балог)
+-   [Введение в Win2D: рисование с помощью DirectX в C#](https://channel9.msdn.com/Events/Build/2015/2-631)— Simon Tao (Саймон Тао)
+-   [ANGLE: выполнение графического кода OpenGL ES 2.0 в Windows](https://channel9.msdn.com/Events/Build/2015/3-686)— Tony Balogh (Тони Балог)
 -   [Улучшенная графика и производительность DirectX12](https://channel9.msdn.com/Events/Build/2015/3-673)— Макс Макмаллен (Max McMullen)
 
 ## Другие ресурсы
@@ -103,6 +85,6 @@ ms.openlocfilehash: 598d5d1afffd394b66aa7af23f22e7a13af48208
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

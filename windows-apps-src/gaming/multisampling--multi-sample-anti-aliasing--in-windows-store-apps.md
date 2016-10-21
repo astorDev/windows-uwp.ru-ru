@@ -3,8 +3,9 @@ author: mtoepke
 title: "Использование множественной выборки сглаживания в приложениях универсальной платформы Windows (UWP)"
 description: "Вы научитесь использовать множественную дискретизацию в приложениях универсальной платформы Windows (UWP), созданных с помощью Direct3D."
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7b240de9ab3c7b53877d38eb9097dde25b2a40be
+ms.openlocfilehash: cf82c34e23a1c66bfc2d59f9ea3b4ebce99ab52e
 
 ---
 
@@ -26,8 +27,7 @@ ms.openlocfilehash: 7b240de9ab3c7b53877d38eb9097dde25b2a40be
 
 1.  Вызовите [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497), чтобы узнать, какие форматы DXGI можно использовать с множественной дискретизацией. Предоставьте форматы однобуферной прорисовки, которые может использовать ваша игра. Целевой объект прорисовки и разрешенный целевой объект должны использовать один и тот же формат, поэтому проверьте и [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476134), и **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**.
 
-    
-            **Уровень компонентов 9: **устройства уровня компонентов9 [обеспечивают поддержку форматов целевого объекта прорисовки с множественной дискретизацией,](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget) однако поддержка не гарантирована для разрешенных целевых объектов с множественной дискретизацией. Поэтому необходимо выполнить эту проверку перед использованием техники множественной дискретизации, описанной в этом разделе.
+    **Уровень компонентов 9: **устройства уровня компонентов9 [обеспечивают поддержку форматов целевого объекта прорисовки с множественной дискретизацией,](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget) однако поддержка не гарантирована для разрешенных целевых объектов с множественной дискретизацией. Поэтому необходимо выполнить эту проверку перед использованием техники множественной дискретизации, описанной в этом разделе.
 
     Следующий код проверяет поддержку множественной дискретизации для всех значений DXGI\_FORMAT:
 
@@ -79,8 +79,7 @@ ms.openlocfilehash: 7b240de9ab3c7b53877d38eb9097dde25b2a40be
     }
     ```
 
-    > 
-            **Примечание.** Если нужно проверить буферы с динамическим перераспределением ресурсов, используйте вместо него [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494).
+    > **Примечание.** Если нужно проверить буферы с динамическим перераспределением ресурсов, используйте вместо него [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494).
 
      
 
@@ -211,6 +210,6 @@ ms.openlocfilehash: 7b240de9ab3c7b53877d38eb9097dde25b2a40be
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

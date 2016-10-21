@@ -3,8 +3,9 @@ title: "Копирование в массивы байтов и из них"
 description: "В этом примере кода показано, как копировать в массивы байтов и из них в приложении универсальной платформы Windows (UWP)."
 ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: db1691421cf4e540c9593efb4bbf2a608426c0ed
+ms.openlocfilehash: f700d3d9c09424ef8fffd73a08e12563acbbc497
 
 ---
 
@@ -34,6 +35,6 @@ public void ByteArrayCopy()
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

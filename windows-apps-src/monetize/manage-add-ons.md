@@ -1,38 +1,42 @@
 ---
 author: mcleanbyron
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
-description: Use these methods in the Windows Store submission API to manage add-ons for apps that are registered to your Windows Dev Center account.
-title: Manage add-ons using the Windows Store submission API
+description: "Используйте эти методы в API отправки Магазина Windows для управления надстройками для приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows."
+title: "Управление надстройками с помощью API отправки Магазина Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 75548ee4689fd31d734c570f8e3eca5d33a6181f
+
 ---
 
-# Manage add-ons using the Windows Store submission API
+# Управление надстройками с помощью API отправки Магазина Windows
 
 
 
 
-Use the following methods in the Windows Store submission API to manage add-ons (also known as in-app products or IAPs) for apps that are registered to your Windows Dev Center account. For an introduction to the Windows Store submission API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+Используйте следующие методы в API отправки Магазина Windows для управления надстройками (также называются внутренними продуктами приложения или IAP) для приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows. Введение в API отправки Магазина Windows см. в разделе [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md).
 
->**Note**&nbsp;&nbsp;These methods can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled. These methods can only be used to get, create, or delete add-ons. To create submissions for add-ons, see the methods in [Manage add-on submissions](manage-add-on-submissions.md).
+>**Примечание.**&nbsp;&nbsp;Эти методы могут применяться только для учетных записей Центра разработки для Windows, у которых имеется разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей. Эти методы можно использовать только для получения, создания или удаления надстроек. Руководство по созданию отправок для надстроек см. в описании методов в разделе [Управление отправками надстроек](manage-add-on-submissions.md).
 
-| Method        | URI    | Description                                                                 |
+| Метод        | URI    | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` | Gets data for all add-ons for all the apps that are registered to your Windows Dev Center account. For more information, see [Get all add-ons](get-all-add-ons.md). |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId} ``` | Gets data for a specific add-on. For more information, see [Get an add-on](get-an-add-on.md). |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` | Creates a new add-on. For more information, see [Create an add-on](create-an-add-on.md).  |
-| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}``` | Deletes an add-on. For more information, see [Delete an add-on](delete-an-add-on.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` | Получение данных для всех надстроек для всех приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows. Дополнительные сведения см. в разделе [Получение всех надстроек](get-all-add-ons.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId} ``` | Получение данных для конкретной надстройки. Дополнительные сведения см. в разделе [Получение надстройки](get-an-add-on.md). |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` | Создание новый надстройки. Дополнительные сведения см. в разделе [Создание надстройки](create-an-add-on.md).  |
+| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}``` | Удаление надстройки. Дополнительные сведения см. в разделе [Удаление надстройки](delete-an-add-on.md). |
 
-## Prerequisites
+## Необходимые условия
 
-If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API before trying to use any of these methods.
+Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows, прежде чем использовать любой из этих методов.
 
-## Resources
+## Ресурсы
 
-These methods use the following resources to format data.
+В этих методах для форматирования данных используются указанные ниже ресурсы.
 
 <span id="add-on-object" />
-### Add-on
+### Надстройка
 
-This resource represents an add-on. The following example demonstrates the format of this resource.
+Данный ресурс представляет надстройку. В следующем примере показан формат этого ресурса.
 
 ```json
 {
@@ -59,21 +63,21 @@ This resource represents an add-on. The following example demonstrates the forma
 }
 ```
 
-This resource has the following values.
+Этот ресурс содержит следующие значения.
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Значение      | Тип   | Описание                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| applications      | array  | An array that contains an object that represents the app that this add-on is associated with. For more information about the data in this object, see the [Application object](#application-object) section below. Only one item is supported in this array.  |
-| id | string  | The Store ID of the add-on. This value is supplied by the Store. An example Store ID is 9NBLGGH4TNMP.  |
-| productId | string  | The product ID of the add-on. This is the ID that was provided by the developer when the add-on was created. For more information, see [Set your product type and product ID](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id). |
-| productType | string  | The product type of the add-on. The following values are supported: **Durable** and **Consumable**.  |
-| lastPublishedInAppProductSubmission       | object | An object that provides information about the last published submission for the add-on. For more information, see the [Submission](#submission-object) section below.                                                                                                                                                          |
-| pendingInAppProductSubmission        | object  |  An object that provides information about the current pending submission for the add-on. For more information, see the [Submission](#submission-object) section below.  |   |
+| applications      | array  | Массив, содержащий объект, который представляет приложение, с которым связана данная надстройка. Дополнительные сведения о данных в этом объекте см. далее в разделе [Объект приложения](#application-object). Этот массив поддерживает только один элемент.  |
+| id | string  | Код продукта в Магазине для этой надстройки. Это значение предоставляется Магазином. Пример кода продукта в Магазине: 9NBLGGH4TNMP.  |
+| productId | string  | Код продукта этой надстройки. Это идентификатор, предоставленный разработчиком при создании надстройки. Дополнительные сведения см. в разделе [Установка типа и кода продукта](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id). |
+| productType | string  | Тип продукта этой надстройки. Поддерживаются следующие значения: **Durable** и **Consumable**.  |
+| lastPublishedInAppProductSubmission       | object | Объект, который предоставляет сведения о последней опубликованной отправке для надстройки. Дополнительные сведения см. ниже в разделе [Отправка](#submission-object).                                                                                                                                                          |
+| pendingInAppProductSubmission        | object  |  Объект, который предоставляет сведения о текущей ожидающей отправке для надстройки. Дополнительные сведения см. ниже в разделе [Отправка](#submission-object).  |   |
 
 <span id="application-object" />
-### Application
+### Приложение
 
-This resource represents an app that an add-on is associated with. The following example demonstrates the format of this resource.
+Данный ресурс представляет приложение, с которым связана надстройка. В следующем примере показан формат этого ресурса.
 
 ```json
 {
@@ -89,17 +93,17 @@ This resource represents an app that an add-on is associated with. The following
 }
 ```
 
-This resource has the following values.
+Этот ресурс содержит следующие значения.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Значение           | Тип    | Описание                                                                                                                                                                                                                          |
 |-----------------|---------|-----------|
-| value            | object  |  An object that contains the following values: <br/><br/> <ul><li>*id*. The Store ID of the app. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</li><li>*resourceLocation*. A relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to retrieve the complete data for the app.</li></ul>   |
-| totalCount   | int  | The number of app objects in the *applications* array of the response body.                                                                                                                                                 |
+| value            | object  |  Объект, содержащий следующие значения: <br/><br/> <ul><li>*id*. Код продукта в Магазине для приложения. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</li><li>*resourceLocation*. Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для приложения.</li></ul>   |
+| totalCount   | int  | Количество объектов приложения в массиве *applications* тела ответа.                                                                                                                                                 |
 
 <span id="submission-object" />
-### Submission
+### Отправка
 
-This resource provides information about a submission for an add-on. The following example demonstrates the format of this resource.
+Данный ресурс содержит сведения об отправке для надстройки. В следующем примере показан формат этого ресурса.
 
 ```json
 {
@@ -110,20 +114,26 @@ This resource provides information about a submission for an add-on. The followi
 }
 ```
 
-This resource has the following values.
+Этот ресурс содержит следующие значения.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Значение           | Тип    | Описание                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | string  | The ID of the submission.    |
-| resourceLocation   | string  | A relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to retrieve the complete data for the submission.                                                                                                                                               |
- 
+| id            | string  | Идентификатор отправки.    |
+| resourceLocation   | string  | Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для отправки.                                                                                                                                               |
+ 
 <span/>
 
-## Related topics
+## Связанные разделы
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage add-on submissions using the Windows Store submission API](manage-add-on-submissions.md)
-* [Get all add-ons](get-all-add-ons.md)
-* [Get an add-on](get-an-add-on.md)
-* [Create an add-on](create-an-add-on.md)
-* [Delete an add-on](delete-an-add-on.md)
+* [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
+* [Управление отправками надстроек с помощью API отправки Магазина Windows](manage-add-on-submissions.md)
+* [Получение всех надстроек](get-all-add-ons.md)
+* [Получение надстройки](get-an-add-on.md)
+* [Создание надстройки](create-an-add-on.md)
+* [Удаление надстройки](delete-an-add-on.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

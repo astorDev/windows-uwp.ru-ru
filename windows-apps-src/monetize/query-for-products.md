@@ -4,15 +4,15 @@ ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: "Используйте этот метод в API коллекции Магазина Windows для получения всех продуктов, принадлежащих пользователю, для приложений, связанных с вашим идентификатором клиента Azure AD. Вы можете ограничить запрос определенным продуктом или использовать другие фильтры."
 title: "Запрос продуктов"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: 93ed2b850de22d562b16f3f10f4ca409054910d3
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: ea517d66dbb6f373b191937de8c1cbe42c74846f
 
 ---
 
 # Запрос продуктов
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 Используйте этот метод в API коллекции Магазина Windows для получения всех продуктов, принадлежащих пользователю, для приложений, связанных с вашим идентификатором клиента Azure AD. Вы можете ограничить запрос определенным продуктом или использовать другие фильтры.
 
@@ -42,7 +42,7 @@ ms.openlocfilehash: 93ed2b850de22d562b16f3f10f4ca409054910d3
 
 | Заголовок         | Тип   | Описание                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | Строка | Обязательный. Маркер доступа Azure AD в форме**Bearer**&lt;*token*&gt;.                           |
+| Authorization  | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;.                           |
 | Host           | Строка | Должен иметь значение **collections.mp.microsoft.com**.                                            |
 | Content-Length | Число | Длина тела запроса.                                                                       |
 | Content-Type   | Строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
@@ -57,7 +57,7 @@ ms.openlocfilehash: 93ed2b850de22d562b16f3f10f4ca409054910d3
 | continuationToken | Строка       | Если имеется несколько наборов продуктов, то по достижении лимита для страницы тело ответа возвращает маркер продолжения. Укажите здесь этот маркер продолжения, чтобы в последующих вызовах получить информацию об оставшихся продуктах.                                                      | Нет       |
 | maxPageSize       | Число       | Максимальное количество продуктов, возвращаемых в одном ответе. Стандартное и максимальное значение — 100.                                                                                                                                                                      | Нет       |
 | modifiedAfter     | Дата и время     | Если параметр указан, служба возвращает только продукты, которые были изменены после этой даты.                                                                                                                                                                             | Нет       |
-| parentProductId   | Строка       | Если параметр указан, служба возвращает только IAP, которые соответствуют указанному приложению.                                                                                                                                                                                    | Нет       |
+| parentProductId   | string       | Если параметр указан, служба возвращает только надстройки, которые соответствуют указанному приложению.                                                                                                                                                                                    | Нет       |
 | productSkuIds     | ProductSkuId | Если параметр указан, служба возвращает только продукты, соответствующие предоставленным парам «продукт — SKU».                                                                                                                                                                        | Нет       |
 | productTypes      | Строка       | Если параметр указан, служба возвращает только продукты, соответствующие указанным типам продуктов. Поддерживаемые типы продуктов: **Application**, **Durable** и **UnmanagedConsumable**.                                                                                       | Нет       |
 | validityType      | Строка       | Если выбрано значение **All**, возвращаются все продукты пользователя, в том числе продукты с истекшим сроком. Если выбрано значение **Valid**, возвращаются только продукты, действительные на данный момент (то есть в активном состоянии, с датой начала &lt; ранее текущего момента и датой окончания &gt; позднее текущего момента). | Нет       |
@@ -93,25 +93,25 @@ Content-Length: 2531
 Content-Type: application/json
 
 {
-    "maxPageSize": 100,
-    "beneficiaries": [
-            {
-                "localTicketReference": "1055521810674918",
-                "identityValue": "eyJ0eXAiOiJ……",
-                "identityType": "b2b"
-            }
-        ],
-    "modifiedAfter": "\/Date(-62135568000000)\/",
-    "productSkuIds": [
-            {
-                "productId": "9NBLGGH5WVP6",
-                "skuId": "0010"
-            }
-        ],
-    "productTypes": [
-            "UnmanagedConsumable"
-        ],
-    "validityType": "All"
+  "maxPageSize": 100,
+  "beneficiaries": [
+    {
+      "localTicketReference": "1055521810674918",
+      "identityValue": "eyJ0eXAiOiJ……",
+      "identityType": "b2b"
+    }
+  ],
+  "modifiedAfter": "\/Date(-62135568000000)\/",
+  "productSkuIds": [
+    {
+      "productId": "9NBLGGH5WVP6",
+      "skuId": "0010"
+    }
+  ],
+  "productTypes": [
+    "UnmanagedConsumable"
+  ],
+  "validityType": "All"
 }
 ```
 
@@ -147,13 +147,13 @@ Content-Type: application/json
 | productType          | Строка             | Один из следующих типов продукта: **Application**, **Durable** и **UnmanagedConsumable**.                                                     | Да      |
 | purchasedCountry     | Строка             | Н/д.                                                                                                                                               | Нет       |
 | purchaser            | IdentityContractV6 | Если он указан, означает удостоверение покупателя элемента. Сведения для этого объекта см. ниже.                                      | Нет       |
-| Quantity             | Число             | Количество экземпляров элемента. На данный момент это значение всегда составляет 1.                                                                                        | Нет       |
+| quantity             | number             | Количество экземпляров элемента. На данный момент это значение всегда составляет 1.                                                                                        | Нет       |
 | skuId                | Строка             | Код SKU из каталога Магазина Windows. Пример команды кода SKU: 0010.                                                                            | Да      |
 | skuType              | Строка             | Тип SKU. Возможные значения включают **Trial**, **Full** и **Rental**.                                                                      | Да      |
-| startDate            | Дата и время           | Дата, начиная с которой элемент действителен.                                                                                                         | Да      |
-| Состояние               | Строка             | Состояние элемента. Возможные значения включают **Active**, **Expired**, **Revoked** и **Banned**.                                              | Да      |
-| Tags                 | Строка             | Н/д                                                                                                                                                | Да      |
-| transactionId        | Guid               | Идентификатор транзакции в результате покупки элемента. Может использоваться для объявления элемента в качестве выполненного.                                       | Да      |
+| startDate            | datetime           | Дата, начиная с которой элемент действителен.                                                                                                         | Да      |
+| status               | string             | Состояние элемента. Возможные значения включают **Active**, **Expired**, **Revoked** и **Banned**.                                              | Да      |
+| tags                 | string             | Н/Д                                                                                                                                                | Да      |
+| transactionId        | guid               | Идентификатор транзакции в результате покупки элемента. Может использоваться для объявления элемента в качестве выполненного.                                       | Да      |
 
 <span/> 
 
@@ -179,32 +179,32 @@ MS-ServerId: 020022359
 Date: Tue, 22 Sep 2015 20:28:18 GMT
 
 {
-    "items" : [
-        {
-            "acquiredDate" : "2015-09-22T19:22:51.2068724+00:00",
-            "devOfferId" : "f9587c53-540a-498b-a281-8a349491ed47",
-            "endDate" : "9999-12-31T23:59:59.9999999+00:00",
-            "fulfillmentData" : [],
-            "inAppOfferToken" : "consumable2",
-            "itemId" : "4b8fbb13127a41f299270ea668681c1d",
-            "localTicketReference" : "1055521810674918",
-            "modifiedDate" : "2015-09-22T19:22:51.2513155+00:00",
-            "orderId" : "4ba5960d-4ec6-4a81-ac20-aafce02ddf31",
-            "ownershipType" : "OwnedByBeneficiary",
-            "productId" : "9NBLGGH5WVP6",
-            "productType" : "UnmanagedConsumable",
-            "purchaser" : {
-                "identityType" : "pub",
-                "identityValue" : "user123"
-            },
-            "skuId" : "0010",
-            "skuType" : "Full",
-            "startDate" : "2015-09-22T19:22:51.2068724+00:00",
-            "status" : "Active",
-            "tags" : [],
-            "transactionId" : "4ba5960d-4ec6-4a81-ac20-aafce02ddf31"
-        }
-    ]
+  "items" : [
+    {
+      "acquiredDate" : "2015-09-22T19:22:51.2068724+00:00",
+      "devOfferId" : "f9587c53-540a-498b-a281-8a349491ed47",
+      "endDate" : "9999-12-31T23:59:59.9999999+00:00",
+      "fulfillmentData" : [],
+      "inAppOfferToken" : "consumable2",
+      "itemId" : "4b8fbb13127a41f299270ea668681c1d",
+      "localTicketReference" : "1055521810674918",
+      "modifiedDate" : "2015-09-22T19:22:51.2513155+00:00",
+      "orderId" : "4ba5960d-4ec6-4a81-ac20-aafce02ddf31",
+      "ownershipType" : "OwnedByBeneficiary",
+      "productId" : "9NBLGGH5WVP6",
+      "productType" : "UnmanagedConsumable",
+      "purchaser" : {
+        "identityType" : "pub",
+        "identityValue" : "user123"
+      },
+      "skuId" : "0010",
+      "skuType" : "Full",
+      "startDate" : "2015-09-22T19:22:51.2068724+00:00",
+      "status" : "Active",
+      "tags" : [],
+      "transactionId" : "4ba5960d-4ec6-4a81-ac20-aafce02ddf31"
+    }
+  ]
 }
 ```
 
@@ -217,6 +217,6 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

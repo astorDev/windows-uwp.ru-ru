@@ -3,14 +3,15 @@ author: jwmsft
 description: "Информация о командах перемещения и рисования (мини-языке), которые вы можете использовать для указания геометрии путей в качестве значения атрибута XAML."
 title: "Синтаксис команд перемещения и рисования"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
+translationtype: Human Translation
 ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
+ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
 
 ---
 
 # Синтаксис команд перемещения и рисования
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Информация о командах перемещения и рисования (мини-языке), которые вы можете использовать для указания геометрии путей в качестве значения атрибута XAML. Команды перемещения и рисования используются многими средствами разработки и графическими инструментами, умеющими выводить векторную графику или фигуру как формат сериализации и обмена.
 
@@ -25,9 +26,7 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[
-              **PathGeometry.Figures**
-            ](https://msdn.microsoft.com/library/windows/apps/br210169) также может использовать команды перемещения и рисования. Теоретически объект [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168), использующий команды перемещения и рисования, можно объединить с другими типами [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) в объекте [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057), который затем можно использовать как значение для [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). Но это применяется намного реже, чем использование команд перемещения и рисования для данных с определенным атрибутом.
+[**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) также может использовать команды перемещения и рисования. Теоретически объект [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168), использующий команды перемещения и рисования, можно объединить с другими типами [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) в объекте [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057), который затем можно использовать как значение для [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). Но это применяется намного реже, чем использование команд перемещения и рисования для данных с определенным атрибутом.
 
 ## Использование команд перемещения и рисования в сравнении с использованием **PathGeometry**
 
@@ -49,17 +48,7 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 -   Обычно после каждой команды, кроме команды закрытия, идет одно или несколько чисел.
 -   Если после команды идет несколько чисел, разделите их запятыми или пробелами.
 
-**\[**
-            _fillRule_
-            **\]**
-            _moveCommand_
-            _drawCommand_
-            **\[**
-            _drawCommand_
-            **\*\]**
-            **\[**
-            _closeCommand_
-            **\]**
+**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
 
 Многие команды рисования используют точки, при этом вы предоставляете значение _x,y_. Когда вы видите заполнитель \*_points_, вы можете предположить, что предоставляете два десятичных значения для значения _x,y_ точки.
 
@@ -111,7 +100,7 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 **Команда горизонтальной линии**
 
-Создает горизонтальную линию между текущей точкой и указанной х-координатой. `H 90` — пример допустимой команды горизонтальной линии.
+Создает горизонтальную линию между текущей точкой и указанной х-координатой. `H 90`  — пример допустимой команды горизонтальной линии.
 
 | Синтаксис |
 |--------|
@@ -123,7 +112,7 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 **Команда вертикальной линии**
 
-Создает вертикальную линию между текущей точкой и указанной y-координатой. `v 90` — пример допустимой команды вертикальной линии.
+Создает вертикальную линию между текущей точкой и указанной y-координатой. `v 90`  — пример допустимой команды вертикальной линии.
 
 | Синтаксис |
 |--------|
@@ -135,15 +124,11 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 **Команда кривой Безье третьего порядка**
 
-Создает кривую Безье третьего порядка между текущей точкой и указанной конечной точкой при помощи двух указанных контрольных точек (*controlPoint1* и *controlPoint2*). `C 100,200 200,400 300,200` — пример допустимой команды кривой. Определяет эквивалент объекта [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) с объектом [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068).
+Создает кривую Безье третьего порядка между текущей точкой и указанной конечной точкой при помощи двух указанных контрольных точек (*controlPoint1* и *controlPoint2*). `C 100,200 200,400 300,200`  — пример допустимой команды кривой. Определяет эквивалент объекта [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) с объектом [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068).
 
 | Синтаксис |
 |--------|
-| `C ` *controlPoint1*
-            *controlPoint2*
-            *endPoint* <br/> - или - <br/> `c ` *controlPoint1*
-            *controlPoint2*
-            *endPoint* |
+| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - или - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
 
 | Термин | Описание |
 |------|-------------|
@@ -153,7 +138,7 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 **Команда кривой Безье второго порядка**
 
-Создает кривую Безье второго порядка между текущей точкой и указанной конечной точкой при помощи указанной контрольной точки (*controlPoint*). `q 100,200 300,200` — пример допустимой команды кривой Безье второго порядка. Определяет эквивалент объекта [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) с объектом [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249).
+Создает кривую Безье второго порядка между текущей точкой и указанной конечной точкой при помощи указанной контрольной точки (*controlPoint*). `q 100,200 300,200`  — пример допустимой команды кривой Безье второго порядка. Определяет эквивалент объекта [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) с объектом [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249).
 
 | Синтаксис |
 |--------|
@@ -170,8 +155,7 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 | Синтаксис |
 |--------|
-| `S` *controlPoint2*
-            *endPoint* <br/> - или - <br/>`s` *controlPoint2 endPoint* |
+| `S` *controlPoint2* *endPoint* <br/> - или - <br/>`s` *controlPoint2 endPoint* |
 
 | Термин | Описание |
 |------|-------------|
@@ -184,9 +168,7 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 | Синтаксис |
 |--------|
-| `T` *controlPoint*
-            *endPoint* <br/> - или - <br/> `t` *controlPoint*
-            *endPoint* |
+| `T` *controlPoint* *endPoint* <br/> - или - <br/> `t` *controlPoint* *endPoint* |
 
 | Термин | Описание |
 |------|-------------|
@@ -199,11 +181,7 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 | Синтаксис |
 |--------|
-| `A ` *size*
-            *rotationAngle*
-            *isLargeArcFlag*
-            *sweepDirectionFlag*
-            *endPoint* <br/> - или - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - или - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
 | Термин | Описание |
 |------|-------------|
@@ -227,8 +205,7 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 | Синтаксис |
 |--------|
-| *x*,*y*<br/> - или - <br/>*x*
-            *y* |
+| *x*,*y*<br/> - или - <br/>*x* *y* |
 
 | Термин | Описание |
 |------|-------------|
@@ -247,7 +224,7 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 ## Средства проектирования, создающие команды перемещения и рисования
 
-**Перо** и другие инструменты рисования в Blend для Microsoft Visual Studio 2015 обычно создают объект [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) с использованием команд перемещения и рисования.
+**Перо** и другие инструменты рисования в Blend для Microsoft Visual Studio2015 обычно создают объект [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) с использованием команд перемещения и рисования.
 
 Вы можете увидеть существующие данные команд перемещения и рисования в некоторых частях элемента управления, определенных в стандартных XAML-шаблонах для элементов управления в среде выполнения Windows. Например, некоторые элементы управления используют [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722), который содержит данные, определенные как команды перемещения и рисования.
 
@@ -263,6 +240,6 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

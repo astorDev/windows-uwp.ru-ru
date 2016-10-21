@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 76776b0f-3163-48c9-835b-3f4213968079
 title: "Доступ к данным"
 description: "В этом разделе описывается хранение данных на устройстве в частной базе данных и использование объектно-реляционного отображения в приложениях универсальной платформы Windows (UWP)."
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 007e07d05f4f89771f6a0b93fb4279783ca170f6
+ms.openlocfilehash: f67efa8a00439de719219f750f0244a17cc26182
 
 ---
 # Доступ к данным
@@ -23,6 +24,6 @@ ms.openlocfilehash: 007e07d05f4f89771f6a0b93fb4279783ca170f6
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

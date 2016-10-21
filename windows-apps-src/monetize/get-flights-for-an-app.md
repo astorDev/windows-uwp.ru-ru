@@ -1,77 +1,81 @@
 ---
 author: mcleanbyron
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
-description: Use this method in the Windows Store submission API to retrieve package flight information for an app that is registered to your Windows Dev Center account.
-title: Get package flights for an app using the Windows Store submission API
+description: "Используйте этот метод в API отправки Магазина Windows для получения информации о тестовых пакетах для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows."
+title: "Получение тестовых пакетов для приложения с помощью API отправки Магазина Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: a49e4f2cf7110e12dd33a5baa37e328a39bae348
+
 ---
 
-# Get package flights for an app using the Windows Store submission API
+# Получение тестовых пакетов для приложения с помощью API отправки Магазина Windows
 
 
 
 
-Use this method in the Windows Store submission API to list the package flights for an app that is registered to your Windows Dev Center account. For more information about package flights, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
+Используйте этот метод в API отправки Магазина Windows для получения списка тестовых пакетов для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows. Дополнительные сведения о тестовых пакетах см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
 
-## Prerequisites
+## Необходимые условия
 
-To use this method, you need to first do the following:
+Для использования этого метода необходимо выполнить следующие действия:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+* Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
-## Request
+## Запрос
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+У этого метода следующий синтаксис. Примеры использования и описание заголовка и тела запроса приведены в следующих разделах.
 
-| Method | Request URI                                                      |
+| Метод | URI запроса                                                      |
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights``` |
 
 <span/>
- 
-### Request header
+ 
+### Заголовок запроса
 
-| Header        | Type   | Description                                                                 |
+| Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
-### Request parameters
+### Параметры запроса
 
-| Name        | Type   | Description  |  Required  |    
+| Имя        | Тип   | Описание  |  Обязательно  |    
 |---------------|--------|----------------------------------|
-| applicationId | string | Required. The Store ID of the app for which you want to retrieve the package flights. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |  Yes  |
-|  top  |  int  |  The number of items to return in the request (that is, the number of package flights to return). If the app has more package flights than the value you specify in the query, the response body includes a relative URI path that you can append to the method URI to request the next page of data.  |  No  |
-|  skip  |  int  |  The number of items to bypass in the query before returning the remaining items. Use this parameter to page through data sets. For example, top=10 and skip=0 retrieves items 1 through 10, top=10 and skip=10 retrieves items 11 through 20, and so on.  |  No  |
+| applicationId | string | Обязательный. Код продукта в Магазине для приложения, по которому требуется получить данные о тестовых пакетах. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |  Да  |
+|  top  |  int  |  Число элементов, возвращаемых в запросе (т. е., количество возвращаемых тестовых пакетов). Если количество тестовых пакетов у приложения больше значения, указанного в запросе, текст ответа будет содержать относительный путь URI, который можно добавить в URI метода, чтобы запросить следующую страницу данных.  |  Нет  |
+|  skip  |  int  |  Число элементов, которые требуется пропустить в запросе перед возвратом оставшихся элементов. Используйте этот параметр для постраничного перемещения по наборам данных. Например, если задано top = 10 и skip = 0, извлекаются элементы с 1 по 10; если задано top = 10 и skip = 10, извлекаются элементы с 11 по 20 и т. д.  |  Нет  |
 
 <span/>
 
-### Request body
+### Тело запроса
 
-Do not provide a request body for this method.
+Предоставлять тело запроса для этого метода не требуется.
 
-### Request examples
+### Примеры запросов
 
-The following example demonstrates how to list all the package flights for an app.
+В следующем примере показано, как получить список всех тестовых пакетов для приложения.
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listflights HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-The following example demonstrates how to list the first package flight for an app.
+В следующем примере показано, как получить список, содержащий первый тестовый пакет для приложения.
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listflights?top=1 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## Ответ
 
-The following example demonstrates the JSON response body returned by a successful request for the first package flight for an app with three total package flights. For more details about the values in the response body, see the following section.
+В следующем примере показано тело ответа JSON, возвращаемое успешным запросом первого тестового пакета для приложения, содержащего три тестовых пакета. Дополнительные сведения о значениях, которые могут содержаться в теле ответа, см. в следующем разделе.
 
 ```json
 {
@@ -97,30 +101,36 @@ The following example demonstrates the JSON response body returned by a successf
 }
 ```
 
-### Response body
+### Тело ответа
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Значение      | Тип   | Описание                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | string | If there are additional pages of data, this string contains a relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to request the next page of data. For example, if the *top* parameter of the initial request body is set to 2 but there are 4 package flights for the app, the response body will include a @nextLink value of ```applications/{applicationid}/listflights/?skip=2&top=2```, which indicates that you can call ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2``` to request the next 2 package flights. |
-| value      | array  | An array of objects that provide information about package flights for the specified app. For more information about the data in each object, see [Flight resource](get-app-data.md#flight-object).                                                                                                                           |
-| totalCount | int    | The total number of rows in the data result for the query (that is, the total number of package flights for the specified app).                                                                                                                                                                                                                             |
+| @nextLink  | string | При наличии дополнительных страниц данных эта строка содержит относительный путь, который можно добавить к базовому URI ```https://manage.devcenter.microsoft.com/v1.0/my/``` запроса, чтобы запросить следующую страницу данных. Например, если для параметра *top* в тексте исходного запроса задано значение 2, но приложение содержит 4 тестовых пакета, тело ответа будет содержать значение @nextLink ```applications/{applicationid}/listflights/?skip=2&top=2```, которое указывает, что можно вызвать ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2``` для запроса следующих 2 тестовых пакетов. |
+| value      | array  | Массив объектов, которые предоставляют сведения о тестовых пакетах для указанного приложения. Дополнительные сведения о данных в каждом объекте см. в разделе [Ресурс тестируемой возможности](get-app-data.md#flight-object).                                                                                                                           |
+| totalCount | int    | Общее количество строк в данных результата запроса (т. е., общее количество тестовых пакетов для указанного приложения).                                                                                                                                                                                                                             |
 
 <span/>
 
-## Error codes
+## Коды ошибок
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+Если запрос не удается выполнить, ответ будет содержать один из следующих кодов ошибок HTTP.
 
-| Error code |  Description   |
+| Код ошибки |  Описание   |
 |--------|------------------|
-| 404  | No package flights were found. |
-| 409  | The app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 404  | Тестовые пакеты не найдены. |
+| 419  | Приложение использует функцию информационной панели Центра разработки, которая [в настоящее время не поддерживается API отправки Магазина Windows](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 <span/>
 
-## Related topics
+## Связанные разделы
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Get all apps](get-all-apps.md)
-* [Get an app](get-an-app.md)
-* [Get add-ons for an app](get-add-ons-for-an-app.md)
+* [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
+* [Получение всех приложений](get-all-apps.md)
+* [Получение приложения](get-an-app.md)
+* [Получение надстроек для приложения](get-add-ons-for-an-app.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

@@ -3,8 +3,9 @@ author: mtoepke
 title: "Руководства по портированию игр"
 description: "Содержит инструкции по переносу существующих игр на Direct3D 11, универсальную платформу Windows (UWP) и Windows 10."
 ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0cf7f4e6679d362691cea8ccbd45786176715cad
+ms.openlocfilehash: 3cfc483052d12b89cf2707e7b9ebd666e5c49e3d
 
 ---
 
@@ -40,8 +41,7 @@ ms.openlocfilehash: 0cf7f4e6679d362691cea8ccbd45786176715cad
 
  
 
-> 
-            **Примечание.**  Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -55,6 +55,6 @@ ms.openlocfilehash: 0cf7f4e6679d362691cea8ccbd45786176715cad
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

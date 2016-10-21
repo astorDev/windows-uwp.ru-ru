@@ -7,7 +7,7 @@ label: Layout panels
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a8abaf9e272af3e9563ddb48a1a53993a762c675
+ms.openlocfilehash: 58187f34de283b407278a75f1b7b6de61908387f
 
 ---
 # Панели макета
@@ -35,8 +35,7 @@ ms.openlocfilehash: a8abaf9e272af3e9563ddb48a1a53993a762c675
 
 Подробнее о подключенных свойствах см. в разделе [Общие сведения о подключенных свойствах](../xaml-platform/attached-properties-overview.md).
 
-> 
-              **Примечание.**&nbsp;&nbsp;Присоединенное свойство является концепцией языка XAML, требующего специального синтаксиса для получения или настройки из кода. Сведения об использовании прикрепленных свойств в коде см. в разделе *Присоединенные свойства в коде* статьи *Общие сведения о присоединенных свойствах*.
+> **Примечание.**&nbsp;&nbsp;Присоединенное свойство является концепцией языка XAML, требующего специального синтаксиса для получения или настройки из кода. Сведения об использовании прикрепленных свойств в коде см. в разделе *Присоединенные свойства в коде* статьи *Общие сведения о присоединенных свойствах*.
 
 **Границы панели**
 
@@ -56,9 +55,7 @@ ms.openlocfilehash: a8abaf9e272af3e9563ddb48a1a53993a762c675
 
 ## RelativePanel
 
-
-              [
-              **RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) позволяет создать макет элементов пользовательского интерфейса путем указания их расположения относительно других элементов и панели. По умолчанию элемент располагается в левом верхнем углу панели. Можно использовать RelativePanel с [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) и [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) для переупорядочивания пользовательского интерфейса для разных размеров окон.
+[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) позволяет создать макет элементов пользовательского интерфейса путем указания их расположения относительно других элементов и панели. По умолчанию элемент располагается в левом верхнем углу панели. Можно использовать RelativePanel с [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) и [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) для переупорядочивания пользовательского интерфейса для разных размеров окон.
 
 В этой таблице показаны присоединенные свойства, которые можно использовать для выравнивания элемента по краю или центру панели, а также выравнивания и расположения относительно других элементов.
 
@@ -105,9 +102,7 @@ ms.openlocfilehash: a8abaf9e272af3e9563ddb48a1a53993a762c675
 
 ## StackPanel
 
-
-              [
-              **StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) — это простая панель макета, позволяющая разместить дочерние элементы в одной строке (горизонтально) или в одном столбце (вертикально). Элементы управления StackPanel обычно используются в сценариях, обеспечивающих размещение на странице небольших подразделов пользовательского интерфейса.
+[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) — это простая панель макета, позволяющая разместить дочерние элементы в одной строке (горизонтально) или в одном столбце (вертикально). Элементы управления StackPanel обычно используются в сценариях, обеспечивающих размещение на странице небольших подразделов пользовательского интерфейса.
 
 Для указания направления дочерних элементов можно использовать свойство [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.orientation.aspx). Ориентация по умолчанию — [**Vertical**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.orientation.aspx).
 
@@ -168,9 +163,7 @@ ms.openlocfilehash: a8abaf9e272af3e9563ddb48a1a53993a762c675
 
 ## VariableSizedWrapGrid
 
-
-              [
-              **Элемент VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) создает панель макета в виде сетки, в которой элементы упорядочены по строкам и столбцам с автоматическим переносом на новую строку или в новый столбец при достижении значения [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx). 
+[**Элемент VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) создает панель макета в виде сетки, в которой элементы упорядочены по строкам и столбцам с автоматическим переносом на новую строку или в новый столбец при достижении значения [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx). 
 
 Свойство [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.orientation.aspx) указывает, добавляет ли сетка свои элементы или столбцы перед переносом. Ориентация по умолчанию — **Vertical**. Это означает, что сетка добавляет элементы сверху вниз до заполнения столбца, а затем переносит данные в новый столбец. Если выбрано значение **Horizontal**, сетка добавляет элементы слева направо, а затем переносит данные в новую строку.
 
@@ -232,6 +225,6 @@ ms.openlocfilehash: a8abaf9e272af3e9563ddb48a1a53993a762c675
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

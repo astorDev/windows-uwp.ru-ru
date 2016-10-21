@@ -2,9 +2,10 @@
 author: mcleblanc
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
 title: "Привязка к иерархическим данным и создание представления основных и подробных данных"
-description: "Создать многоуровневое представление основных и подробных иерархических данных (также известное как \"список/подробности\") можно с помощью привязки элементов управления к экземплярам CollectionViewSource, связанным друг с другом в цепочку."
+description: "Создать многоуровневое представление основных и подробных иерархических данных (также известное как &quot;список/подробности&quot;) можно с помощью привязки элементов управления к экземплярам CollectionViewSource, связанным друг с другом в цепочку."
+translationtype: Human Translation
 ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 2ff66a1d6a80bb085f54dec8e35371ba0c9e6b27
+ms.openlocfilehash: 91786a785eece1448a36ebf48b8c8ef5c131e609
 
 ---
 # Привязка к иерархическим данным и создание представления основных и подробных данных
@@ -12,8 +13,7 @@ ms.openlocfilehash: 2ff66a1d6a80bb085f54dec8e35371ba0c9e6b27
 \[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-> 
-            **Примечание.** См. также [Пример основных и подробных данных](http://go.microsoft.com/fwlink/p/?linkid=619991).
+> **Примечание.** См. также [Пример основных и подробных данных](http://go.microsoft.com/fwlink/p/?linkid=619991).
 
 Вы можете создать многоуровневое представление основных и подробных иерархических данных (также известное как "список/подробности") с помощью привязки элементов управления к экземплярам [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), связанным друг с другом в цепочку. В этом разделе мы используем [расширение разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) где возможно, и более гибкое (но менее производительное) [расширение разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) там, где необходимо.
 
@@ -225,6 +225,6 @@ namespace MasterDetailsBinding
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

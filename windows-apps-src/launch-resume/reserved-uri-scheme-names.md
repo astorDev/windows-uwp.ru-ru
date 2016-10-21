@@ -3,8 +3,9 @@ author: TylerMSFT
 title: "Зарезервированные имена файлов и схем URI"
 description: "Вы можете использовать сопоставления URI для автоматического запуска своего приложения, когда другое приложение запускает определенную схему URI."
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 2736267bf72b1cadd2c635b15daf6975a70937df
+ms.openlocfilehash: 2d3d647985701a7bbccc606fd485ad9f6361f9e7
 
 ---
 # Зарезервированные имена файлов и схем URI
@@ -127,6 +128,6 @@ ms.openlocfilehash: 2736267bf72b1cadd2c635b15daf6975a70937df
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

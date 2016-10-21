@@ -3,8 +3,9 @@ author: mtoepke
 title: "Вопросы и ответы по переносу на DirectX11"
 description: "Ответы на часто встречающиеся вопросы о переносе игр на универсальную платформу Windows (UWP)."
 ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dc98f15d80fb70fb6e106555659d699c41fbfa0b
+ms.openlocfilehash: 908da9d15a49291f6a1c2467858b525c2f3dc7da
 
 ---
 
@@ -29,10 +30,7 @@ Direct3D11 значительно обновлен по сравнению с Di
 ##  Нужно ли обновлять таймер игры для UWP?
 
 
-
-            [
-              **QueryPerformanceCounter**
-            ](https://msdn.microsoft.com/library/windows/desktop/ms644904) вместе с [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905) по-прежнему являются наиболее эффективным способом реализации таймера игры для UWP.
+[**QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904) вместе с [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905) по-прежнему являются наиболее эффективным способом реализации таймера игры для UWP.
 
 Помните о нюансе относительно таймеров и жизненного цикла приложения UWP. Приостановка и возобновление отличаются от перезапуска классического приложения, так как игра возобновляется с того момента, на котором была приостановлена. Если прошло длительное время, например несколько недель, некоторые реализации таймеров могут работать некорректно. Вы можете использовать события жизненного цикла приложения, чтобы сбросить таймер при возобновлении игры.
 
@@ -142,6 +140,6 @@ Microsoft Visual Studio2015 включает средства диагности
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

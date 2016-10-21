@@ -5,7 +5,7 @@ title: "Асинхронное программирование"
 description: "В этом разделе описывается асинхронное программирование на универсальной платформе Windows (UWP), а также его представление в C#, Microsoft Visual Basic .NET, расширениях компонентов Visual C\\+\\+ (C\\+\\+/CX) и JavaScript."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 36300453bbffd06c675ff63e6e9cb4cafe3a56f5
+ms.openlocfilehash: c033c1d985b9373d9cbadf38463610aa1922163e
 
 ---
 # Асинхронное программирование
@@ -45,12 +45,9 @@ ms.openlocfilehash: 36300453bbffd06c675ff63e6e9cb4cafe3a56f5
 
 | Язык программирования | Асинхронное представление           |
 |----------------------|---------------------------------------|
-| C#                  | 
-              ключевое слово **async**, оператор **await** |
-| Visual Basic         | 
-              ключевое слово **Async**, оператор **Await** |
-| C++/CX               | 
-              класс **task**, метод **.then**      |
+| C#                  | ключевое слово **async**, оператор **await** |
+| Visual Basic         | ключевое слово **Async**, оператор **Await** |
+| C++/CX               | класс **task**, метод **.then**      |
 | JavaScript           | объект Promise, функция **then**     |
 
  
@@ -84,6 +81,6 @@ ms.openlocfilehash: 36300453bbffd06c675ff63e6e9cb4cafe3a56f5
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

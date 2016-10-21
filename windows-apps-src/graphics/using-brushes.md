@@ -5,7 +5,7 @@ title: "Использование кистей"
 description: "Объекты Brush используются для окраски внутренних областей или контуров фигур, текста и частей элементов управления, чтобы окрашиваемый объект отображался в пользовательском интерфейсе."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
+ms.openlocfilehash: cc16b07931cf3f7740957c222e8c8821ddbab08a
 
 ---
 # Использование кистей
@@ -17,9 +17,7 @@ ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
 
 -   [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
 
-
-              Объекты [
-              **Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) используются для окраски внутренних областей или контуров фигур, текста и частей элементов управления, чтобы окрашиваемый объект отображался в пользовательском интерфейсе. Так какие же кисти доступны и как ими пользоваться?
+Объекты [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) используются для окраски внутренних областей или контуров фигур, текста и частей элементов управления, чтобы окрашиваемый объект отображался в пользовательском интерфейсе. Так какие же кисти доступны и как ими пользоваться?
 
 ## Знакомство с кистями
 
@@ -131,9 +129,7 @@ ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
 
 ![Отображение ImageBrush.](images/brushes-imagebrush.jpg)
 
-
-              [
-              **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) и [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) ссылаются на исходный файл изображения по универсальному коду ресурса (URI). Для этого файла допустимы несколько графических форматов. Такие исходные файлы изображений указываются в виде URI. Подробнее об указании источников изображений, их возможных форматах и упаковке в приложении можно узнать в разделе [Классы Image и ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382).
+[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) и [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) ссылаются на исходный файл изображения по универсальному коду ресурса (URI). Для этого файла допустимы несколько графических форматов. Такие исходные файлы изображений указываются в виде URI. Подробнее об указании источников изображений, их возможных форматах и упаковке в приложении можно узнать в разделе [Классы Image и ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382).
 
 ## Кисти и текст
 
@@ -143,8 +139,7 @@ ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
 
 ## WebViewBrush
 
-Объект [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) — это специальный тип кисти, которому доступно содержимое, обычно просматриваемое в элементе управления [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702). Вместо отрисовки содержимого в прямоугольной области элемента управления **WebView** объект **WebViewBrush** выводит это содержимое поверх другого элемента со свойством типа [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) для поверхности отрисовки. 
-              **WebViewBrush** подходит не для каждого сценария использования кисти, но полезен при переходах **WebView**. Дополнительные сведения см. в разделе **WebViewBrush**.
+Объект [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) — это специальный тип кисти, которому доступно содержимое, обычно просматриваемое в элементе управления [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702). Вместо отрисовки содержимого в прямоугольной области элемента управления **WebView** объект **WebViewBrush** выводит это содержимое поверх другого элемента со свойством типа [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) для поверхности отрисовки. **WebViewBrush** подходит не для каждого сценария использования кисти, но полезен при переходах **WebView**. Дополнительные сведения см. в разделе **WebViewBrush**.
 
 ## Кисти как ресурсы XAML
 
@@ -170,9 +165,7 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 Для [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) и [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) используйте конструктор по умолчанию. Затем, до попытки использовать эту кисть для свойства пользовательского интерфейса, вызывайте другие API.
 
--   
-              Для [
-              **ImageSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) требуется [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) (не URI) при определении [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) с помощью кода. Если источником является поток, для инициализации значения используйте метод [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522). Если источником является URI, который включает содержимое в ваше приложение, использующее схемы **ms-appx** или **ms-resource**, используйте конструктор [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/br243238.aspx), который применяет URI. Также можно рассмотреть вариант обработки события [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx), если существуют некоторые временные проблемы с получением или декодированием источника изображения, при которых может понадобиться отображать альтернативное содержимое до тех пор, пока источник изображения не станет доступным.
+-   Для [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) требуется [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) (не URI) при определении [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) с помощью кода. Если источником является поток, для инициализации значения используйте метод [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522). Если источником является URI, который включает содержимое в ваше приложение, использующее схемы **ms-appx** или **ms-resource**, используйте конструктор [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/br243238.aspx), который применяет URI. Также можно рассмотреть вариант обработки события [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx), если существуют некоторые временные проблемы с получением или декодированием источника изображения, при которых может понадобиться отображать альтернативное содержимое до тех пор, пока источник изображения не станет доступным.
 -   Для [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) вам может понадобиться вызов [**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx), если вы недавно сбросили свойство [**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) или если содержимое [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) также было изменено с помощью кода.
 
 Примеры кода см. на справочных страницах для [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) и [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101).
@@ -186,6 +179,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

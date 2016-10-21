@@ -3,8 +3,9 @@ author: mcleblanc
 description: "В приложениях для Windows используется общий вид и стиль на всех компьютерах, мобильных устройствах и множестве других устройств. Пользовательский интерфейс, ввод и шаблоны взаимодействия очень похожи, и пользователь, использующий приложения на разных устройствах, оценит это."
 title: "Перенос Windows Phone Silverlight в UWP для форм-фактора и взаимодействия с пользователем"
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7d5f1fa969e4ddf4a695a3ca77072a0f9c21316f
+ms.openlocfilehash: d25a10db622980e2e93b5953a695d0ab6b0b027b
 
 ---
 
@@ -71,6 +72,6 @@ ms.openlocfilehash: 7d5f1fa969e4ddf4a695a3ca77072a0f9c21316f
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: mtoepke
 title: "Наложения и масштабирование цепочки буферов"
 description: "Узнайте, как создавать масштабируемые цепочки буферов для более быстрой отрисовки на мобильных устройствах и как использовать наложения цепочки буферов (если они есть) для повышения качества визуального восприятия."
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
+translationtype: Human Translation
 ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 3380c5156072a9853261ec6b706a612b42e7ba10
+ms.openlocfilehash: 1eea87b2175872e5a3bc7c41e82cda47bb555f82
 
 ---
 
@@ -144,8 +145,7 @@ Direct3D 11.2 также предлагает новую возможность 
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
     ```
     
-    > 
-            **Примечание.** Если адаптер DXGI поддерживает наложения, переходите к следующему шагу. Если устройство не поддерживает наложения, отрисовки с несколькими цепочками буферов будет недостаточно. Вместо этого отрисуйте пользовательский интерфейс с более низким разрешением в той же цепочке буферов, что и содержимое игры в реальном времени.
+    > **Примечание.** Если адаптер DXGI поддерживает наложения, переходите к следующему шагу. Если устройство не поддерживает наложения, отрисовки с несколькими цепочками буферов будет недостаточно. Вместо этого отрисуйте пользовательский интерфейс с более низким разрешением в той же цепочке буферов, что и содержимое игры в реальном времени.
 
      
 
@@ -161,8 +161,7 @@ Direct3D 11.2 также предлагает новую возможность 
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > 
-            **Примечание.** Устанавливайте [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) при каждом изменении размера цепочки буферов.
+    > **Примечание.** Устанавливайте [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) при каждом изменении размера цепочки буферов.
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -330,6 +329,6 @@ Direct3D 11.2 также предлагает новую возможность 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,99 +1,109 @@
 ---
 author: TylerMSFT
-ms.assetid:
-description: This article shows you how to reduce memory when your app moves to the background.
-title: Reduce memory usage when your app moves to the background state
+ms.assetid: 
+description: "В этой статье рассказывается о том, как уменьшить потребление памяти, когда приложение переходит в фоновый режим."
+title: "Уменьшение потребления памяти при переходе приложения в фоновый режим"
+translationtype: Human Translation
+ms.sourcegitcommit: bf0cb8f072a2a6974ab582329d8b482add37f1d9
+ms.openlocfilehash: 80e89e24236903ab90f7c4fe326782a0a7e5272f
+
 ---
 
-# Free memory when your app moves to the background
+# Освобождение памяти при переходе приложения в фоновый режим
 
-This article shows you how to reduce the amount of memory that your app uses when it moves to the background state so that it won't be suspended and possibly terminated.
+В этой статье рассказывается о том, как уменьшить потребление приложением, когда оно переходит в фоновое состояние, чтобы приложение не было приостановлено или, возможно, завершено.
 
-## New background events
+## Новые фоновые события
 
-Windows 10, version 1607, introduces two new application lifecycle events, [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) and [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). These events let your app know when it is entering and leaving the background.
+В Windows 10 версии 1607 впервые представлены два новых события жизненного цикла приложений: [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) и [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Эти события позволяют приложению определить, когда оно входит в фоновый режим и выходит из него.
 
-When your app moves into the background, the memory constraints enforced by the system may change. Use these events to check your current memory consumption and free resources in order to stay below the limit so that your app won't be suspended and possibly terminated while it is in the background.
+Когда приложение переходит в фоновый режим, принудительные системные ограничения памяти могут измениться. Используйте эти события, чтобы проверить текущее потребление памяти и свободные ресурсы и не превысить лимит. В случае превышения лимита работа вашего приложения будет приостановлена и, возможно, завершена, пока оно находится в фоновом режиме.
 
-### Events for controlling your app's memory usage
+### События для контроля использования памяти приложения
 
-[MemoryManager.AppMemoryUsageLimitChanging](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusagelimitchanging.aspx) is raised just before the limit of total memory the app can use is changed. For example, when the app moves into the background and on the Xbox the memory limit changes from 1024MB to 128MB.  
-This is the most important event to handle to keep the platform from suspending or terminating the app.
+[MemoryManager.AppMemoryUsageLimitChanging](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusagelimitchanging.aspx) создается сразу перед тем, как поменяется лимит общей памяти, доступной приложению. Например, если приложение переходит в фоновый режим и выполняется на Xbox, лимит памяти меняется с 1024МБ до 128МБ.  
+Очень важно правильно обработать это событие, чтобы платформа не приостановила и не завершила работу приложения.
 
-[MemoryManager.AppMemoryUsageIncreased](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusageincreased.aspx) is raised when the app's memory consumption has increased to a higher value in the [AppMemoryUsageLevel](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.appmemoryusagelevel.aspx) enumeration. For example, from **Low** to **Medium**. Handling this event is optional but recommended because the application is still responsible for staying under the limit.
+[MemoryManager.AppMemoryUsageIncreased](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusageincreased.aspx) создается, если потребление памяти приложением выросло до более высокого значения в перечислении [AppMemoryUsageLevel](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.appmemoryusagelevel.aspx). Например, с **Low** на **Medium**. Обрабатывать это событие не обязательно, но рекомендуется, поскольку приложение по-прежнему не должно превышать лимит.
 
-[MemoryManager.AppMemoryUsageDecreased](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusagedecreased.aspx) is raised when the app's memory consumption has decreased to a lower value in the **AppMemoryUsageLevel** enumeration. For example, from **High** to **Low**. Handling this event is optional but indicates the application may be able to allocate additional memory if needed.
+[MemoryManager.AppMemoryUsageDecreased](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusagedecreased.aspx) создается, если потребление памяти приложением снизилось до более низкого значения в перечислении **AppMemoryUsageLevel**. Например, с **High** до **Low**. Обрабатывать это событие необязательно, однако оно указывает на то, что приложение при необходимости может иметь возможность выделить дополнительную память.
 
-## Handle the transition between foreground and background
+## Обработка перехода между передним планом и фоновым режимом
 
-When your app moves from the foreground to the background, the [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) event is raised. When your app returns to the foreground, the [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) event is raised. You can register handlers for these events when your app is created. In the default project template, this is done in the **App** class constructor in App.xaml.cs.
+Когда приложение переходит с переднего плана в фоновый режим, создается событие [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground). Когда приложение возвращается на передний план, вызывается событие [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Во время создания приложения можно регистрировать обработчики для этих событий. Для этого в шаблоне проекта по умолчанию это выполняется в конструкторе классов **приложений** в файле App.xaml.cs.
 
-Because running in the background will reduce the memory resources your app is allowed to retain, you should also register for the [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) and [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) events which you can use to check your app's current memory usage and the current limit. The handlers for these events are shown in the following examples. For more information on the application lifecycle for UWP apps, see [App lifecycle](../\launch-resume\app-lifecycle.md).
+Так как работа в фоновом режиме уменьшает объем памяти, доступный приложению, вам также следует зарегистрировать события [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased)и [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging), которые можно использовать, чтобы проверять текущий объем используемой памяти и текущее ограничение. Обработчики этих событий показаны в следующих примерах. Дополнительные сведения о жизненном цикле приложений UWP см. в разделе [Жизненный цикл приложения](../\launch-resume\app-lifecycle.md).
 
 [!code-cs[RegisterEvents](./code/ReduceMemory/cs/App.xaml.cs#SnippetRegisterEvents)]
 
-When the [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) event is raised, set the tracking variable to indicate that you are currently running in the background. This will be useful when you write the code for reducing memory usage.
+Когда вызывается событие [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground), задайте переменной отслеживания значение, чтобы указать, что сейчас приложение работает в фоновом режиме. Это полезно, когда вы создаете код для уменьшения использования памяти.
 
 [!code-cs[EnteredBackground](./code/ReduceMemory/cs/App.xaml.cs#SnippetEnteredBackground)]
 
-When your app transitions to the background, the system reduces the memory limit for the app to ensure that the current foreground app has sufficient resources to provide a responsive user experience
+Когда приложение переходит в фоновый режим, система снижает ограничение доступной ему памяти, чтобы у приложения на переднем плане было достаточно ресурсов.
 
-The [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) event handler lets your app know that its allotted memory has been reduced and provides the new limit in the event arguments passed into the handler. Compare the [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsage) property, which provides your app's current usage, to the [**NewLimit**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLimitChangingEventArgs.NewLimit) property of the event arguments, which specifies the new limit. If your memory usage exceeds the limit, you need to reduce your memory usage.
+Обработчик события [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) позволяет приложению узнать, что объем доступной памяти уменьшен, а также предоставляет новое ограничение в аргументах события, переданных в обработчик. Сравните свойство [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsage), которое предоставляет сведения о текущем используемом объеме памяти приложения, и свойство [**NewLimit**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLimitChangingEventArgs.NewLimit) аргументов события, которое определяет новое ограничение. Если вы превышаете ограничение, необходимо сократить потребление памяти.
 
-In this example, this is done in the helper method **ReduceMemoryUsage**, which is defined later in this article.
+В данном примере это делается во вспомогательном методе **ReduceMemoryUsage**, определенного ниже в этой статье.
 
 [!code-cs[MemoryUsageLimitChanging](./code/ReduceMemory/cs/App.xaml.cs#SnippetMemoryUsageLimitChanging)]
 
 > [!NOTE]
-> Some device configurations will allow an application to continue running over the new memory limit until the system experiences resource pressure, and some will not. On Xbox, in particular, apps will be suspended or terminated if they do not reduce memory to under the new limits within 2 seconds. This means that you can deliver the best experience across the broadest range of devices by using this event to reduce resource usage below the limit within 2 seconds of the event being raised.
+> В некоторых конфигурациях устройства приложение может работать при превышении нового ограничения памяти, пока система не столкнется с дефицитом ресурсов, а в других конфигурациях это невозможно. Так, на консолях Xbox приложения будут приостановлены или закрыты, если они не уменьшат объем используемой памяти в течение 2 секунд. Это значит, что для оптимальной работы на самом широком спектре устройств используйте это событие, чтобы снизить объем используемых ресурсов в течение двух секунд после возникновения события.
 
-It is possible that although your app's memory usage is currently under the memory limit for background apps when it first transitions to the background, it may increase its memory consumption over time and begin to approach the limit. The handler the [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) provides an opportunity to check your current usage when it increases and, if necessary, free memory.
+Бывает так, что использование ресурсов памяти приложением в настоящее время, после первого перехода в фоновый режим, находится в допустимых пределах памяти для фоновых приложений, впоследствии расходование памяти увеличивается и начинает приближаться к лимиту. Обработчик события [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) позволяет проверить ваше текущий объем используемых ресурсов и, при необходимости, освободить память.
 
-Check to see if the [**AppMemoryUsageLevel**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLevel) is **High** or **OverLimit**, and if so, reduce your memory usage. In this example this is handled by the helper method, **ReduceMemoryUsage**. You can also subscribe to the [**AppMemoryUsageDecreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageDecreased) event, check to see if your app is under the limit, and if so then you know you can allocate additional resources.
+Если значение [**AppMemoryUsageLevel**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLevel) равно **High** или **OverLimit**, уменьшите объем используемой памяти. В этом примере процесс реализуется вспомогательным методом **ReduceMemoryUsage**. Вы также можете подписаться события [**AppMemoryUsageDecreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageDecreased), чтобы убедиться, что ваше приложение не превышает ограничение, и при необходимости выделить дополнительные ресурсы.
 
 [!code-cs[MemoryUsageIncreased](./code/ReduceMemory/cs/App.xaml.cs#SnippetMemoryUsageIncreased)]
 
-**ReduceMemoryUsage** is a helper method that you can implement to release memory when your app is over the usage limit while running in the background. How you release memory depends on the specifics of your app, but one recommended way to free up memory is to dispose of your UI and the other resources associated with your app view. To do so, ensure that you are running in the background state then set the [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) property of your app's window to `null` and unregister your UI event handlers and remove any other references you may have to the page. Failing to unregister your UI event handlers and clearing any other references you may have to the page will prevent the page resources from being released. Then call **GC.Collect** to reclaim the freed up memory immediately.
+**ReduceMemoryUsage** — это вспомогательный метод , который вы можете реализовать, чтобы освободить память, когда приложение превышает ограничение для приложений, работающих в фоновом режиме. Способ освобождения памяти зависит от конкретного приложения, но в общем случае рекомендуется освобождать ресурсы пользовательского интерфейса и другие ресурсы, связанные с визуализацией. Для этого убедитесь, что работаете в фоновом режиме, затем задайте для свойства [**Содержимое**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) окна вашего приложения значение `null` и отмените регистрацию обработчиков событий ИП, а затем удалите любые существующие ссылки на страницу. Если вы не отмените регистрацию своих обработчиков событий пользовательского интерфейса и не удалите все ссылки на страницу, ресурсы страницы освобождены не будут. Затем вызовите метод **GC.Collect**, чтобы немедленно воспользоваться освободившейся памятью.
 
 [!code-cs[UnloadViewContent](./code/ReduceMemory/cs/App.xaml.cs#SnippetUnloadViewContent)]
 
-When the window content is collected, each Frame begins its disconnection process. If there are Pages in the visual object tree under the window content, these will begin firing their Unloaded event. Pages cannot be completely cleared from memory unless all references to them are removed. In the Unloaded callback, do the following to ensure that memory is quickly freed:
-* Clear and set any large data structures in your Page to `null`.
-* Unregister all event handlers that have callback methods within the Page. Make sure to register those callbacks during the Loaded event handler for the Page. The Loaded event is raised when the UI has been reconstituted and the Page has been added to the visual object tree.
-* Call `GC.Collect` at the end of the Unloaded callback to quickly garbage collect any of the large data structures you have just set to `null`.
+Если содержимое окна собираются, каждый кадр начинает процесс отключения. Если в визуальном дереве объектов в разделе содержимого окна есть страницы, будут вызываться события Unloaded. Страницы невозможно полностью удалить из памяти, если не удалить все ссылки на них. В обратном вызове Unloaded выполните следующие действия, чтобы быстро освободить память.
+* Очистите все крупные структуры данных на странице и присвойте им значение `null`.
+* Отмените регистрацию всех обработчиков событий, в которых есть методы обратного вызова на странице. Зарегистрируйте эти обратные вызовы в обработчике события Loaded для страницы. Событие Loaded наступает, когда пользовательский интерфейс восстанавливается, а страница добавляется в визуальное дерево объектов.
+* Вызовите метод `GC.Collect` в конце обратного вызова Unloaded, чтобы быстро собрать мусор всех крупных структур данных, которым вы присвоили значение `null`.
 
 [!code-cs[MainPageUnloaded](./code/ReduceMemory/cs/App.xaml.cs#SnippetMainPageUnloaded)]
 
-In the [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) event handler, set the tracking variable (`isInBackgroundMode`) to indicate that your app is no longer running in the background. Next, check to see if the [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) of the current window is `null`-- which it will be if you disposed of your app views in order to clear up memory while you were running in the background. If the window content is `null`, rebuild your app view. In this example, the window content is created in the helper method **CreateRootFrame**.
+В обработчике событий [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) следует задать переменную отслеживания (`isInBackgroundMode`), чтобы указать, что приложение больше не работает в фоновом режиме. Затем проверьте, не присвоено ли свойству [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) текущего окна значение `null`, что происходит, если вы удалили представления приложения, чтобы очистить память в фоновом режиме. Если содержимого окна имеет значение `null`, перестройте представление приложения. В этом примере содержимое окна создано во вспомогательном методе **CreateRootFrame**.
 
 [!code-cs[LeavingBackground](./code/ReduceMemory/cs/App.xaml.cs#SnippetLeavingBackground)]
 
-The **CreateRootFrame** helper method recreates the view content for your app. The code in this method is nearly identical to the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) handler code provided in the default project template. The one difference is that the **Launching** handler determines the previous execution state from the [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs.PreviousExecutionState) property of the [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) and the **CreateRootFrame** method simply gets the previous execution state passed in as an argument. To minimize duplicated code, you can refactor the default **Launching** event handler code to call **CreateRootFrame**.
+Вспомогательный метод **CreateRootFrame** воссоздает содержимое представления приложения. Код в этом методе почти идентичен коду обработчика [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), представленного в шаблоне проекта. Единственное отличие состоит в том, что обработчик **Launching** определяет предыдущее состояние выполнения на основе свойства [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs.PreviousExecutionState) объекта [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs), а метод **CreateRootFrame** просто получает предыдущее состояние, переданное в качестве аргумента. Чтобы не дублировать код, можно выполнить рефакторинг кода обработчика событий **Launching** по умолчанию, чтобы вызывать **CreateRootFrame**.
 
 [!code-cs[CreateRootFrame](./code/ReduceMemory/cs/App.xaml.cs#SnippetCreateRootFrame)]
 
-## Guidelines
+## Требования
 
-### Moving from the foreground to the background
+### Переход с переднего плана в фоновый режим
 
-When an app moves from the foreground to the background, the system does work on behalf of the app to free up resources that are not needed in the background. For example, the UI frameworks flush cached textures and the video subsystem frees memory allocated on behalf of the app. However, an app will still need to carefully monitor its memory usage to avoid being suspended or terminated by the system.
+При перемещении приложения с переднего плана в фоновый режим система действует от имени приложения, чтобы освободить ресурсы, которые не требуются в фоновом режиме. Например, платформы ИП удаляют кэшированные текстуры, а подсистема видео освобождает память, выделенную от имени приложения. Однако приложению по-прежнему необходимо тщательно отслеживать использование памяти, чтобы его работа не была приостановлена или прекращена системой.
 
-When an app moves from the foreground to the background it will first get an **EnteredBackground** event and then a **AppMemoryUsageLimitChanging** event.
+Когда приложения перемещается с переднего плана в фоновый режим, оно сначала получает событие **EnteredBackground**, а затем— **AppMemoryUsageLimitChanging**.
 
-- **Do** use the **EnteredBackground** event to free up UI resources that you know your app does not need while running in the background. For example, you could free the cover art image for a song.
-- **Do** use the **AppMemoryUsageLimitChanging** event to ensure that your app is using less memory than the new background limit. Make sure that you free up resources if not. If you do not, your app may be suspended or terminated according to device specific policy.
-- **Do** manually invoke the garbage collector if your app is over the new memory limit when the **AppMemoryUsageLimitChanging** event is raised.
-- **Do** use the **AppMemoryUsageIncreased** event to continue to monitor your app’s memory usage while running in the background if you expect it to change. If the **AppMemoryUsageLevel** is **High** or **OverLimit** make sure that you free up resources.
-- **Consider** freeing UI resources in the **AppMemoryUsageLimitChanging** event handler instead of in the **EnteredBackground** handler as a performance optimization. Use a boolean value set in the **EnteredBackground/LeavingBackground** event handlers to track whether the app is in the background or foreground. Then in the **AppMemoryUsageLimitChanging** event handler, if **AppMemoryUsage** is over the limit and the app is in the background (based on the Boolean value) you can free UI resources.
-- **Do not** perform long running operations in the **EnteredBackground** event because you can cause the transition between applications to appear slow to the user.
+- **Используйте** событие **EnteredBackground**,чтобы освободить ресурсы ИП, которые, насколько вам известно, не нужны приложению в фоновом режиме. Например, можно освободить изображение обложки для композиции.
+- **Используйте** событие **AppMemoryUsageLimitChanging**, чтобы убедиться, что приложение потребляет меньше памяти, чем указано в лимите для фонового режима. В противном случае не забудьте освободить ресурсы. Если этого не сделать, работа приложения может быть приостановлена или прекращена в соответствии с политикой для конкретного устройства.
+- **Вызывайте** сборщик мусора вручную, если приложение превышает лимит использования памяти, когда создается событие **AppMemoryUsageLimitChanging**.
+- **Используйте** событие **AppMemoryUsageIncreased**, чтобы продолжить мониторинг использования памяти приложения, работая в фоновом режиме, если вы допускаете, что этот показатель может измениться. Если **AppMemoryUsageLevel** имеет значение **High** или **OverLimit**, не забудьте освободить ресурсы.
+- **Оцените целесообразность** освобождения ресурсов ИП в обработчике событий **AppMemoryUsageLimitChanging** вместо **EnteredBackground** в качестве средства оптимизации производительности. Используйте логическое значение, заданное в обработчиках событий **EnteredBackground/LeavingBackground**, чтобы отследить, работает ли приложение в фоновом режиме или на переднем плане. Затем в обработчике событий **AppMemoryUsageLimitChanging** можно освободить ресурсы ИП, если **AppMemoryUsage** превышает лимит и приложение работает в фоновом режиме (на основе логического значения).
+- **Не** выполняйте длительные операции в событии **EnteredBackground**, поскольку в этом случае переключение между приложениями может казаться пользователю медленнее.
 
-### Moving from the background to the foreground
+### Переход с фонового режима на передний план
 
-When an app moves from the background to the foreground, the app will first get an **AppMemoryUsageLimitChanging** event and then a **LeavingBackground** event.
+Когда приложения перемещаются с фонового режима на передний план, приложение сначала получит событие **AppMemoryUsageLimitChanging**, а затем— **LeavingBackground**.
 
-- **Do** use the **LeavingBackground** event to recreate UI resources that your app discarded when moving into the background.
+- **Используйте** событие **LeavingBackground**, чтобы восстановить ресурсы ИП, освобожденные приложением при переходе в фоновый режим.
 
-## Related topics
+## Связанные статьи
 
-* [Background media playback sample](http://go.microsoft.com/fwlink/p/?LinkId=800141) - shows how to free memory when your app moves to the background state.
-* [Diagnostic Tools](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/) - use the diagnostic tools to observe garbage collection events and validate that your app is releasing memory the way you expect it to.
+* [Пример воспроизведения мультимедиа в фоновом режиме](http://go.microsoft.com/fwlink/p/?LinkId=800141)— показывает, как освободить память при переходе приложения в фоновый режим.
+* [Диагностические инструменты](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/)— используйте диагностические инструменты, чтобы наблюдать за событиями сбора мусора и убедиться, что приложение освобождает память ожидаемым образом.
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

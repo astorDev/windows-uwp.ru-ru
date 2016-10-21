@@ -3,8 +3,9 @@ author: mtoepke
 title: "Сравнение кода EGL с DXGI и Direct3D"
 description: "Программный интерфейс DirectX для работы с графикой (DXGI) и несколько API Direct3D выполняют ту же роль, что и EGL. Этот раздел помогает разобраться в DXGI и Direct3D 11 с точки зрения EGL."
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 461983b646148c21aba7da2adb703510d95b0343
+ms.openlocfilehash: 599196300a393352540abf1154d1508af7b4caa1
 
 ---
 
@@ -24,8 +25,7 @@ ms.openlocfilehash: 461983b646148c21aba7da2adb703510d95b0343
 
 DXGI и Direct3D, подобно EGL, предоставляют методы для настройки графических ресурсов, получения контекста отрисовки, в котором будут рисовать шейдеры, и отображения результатов в окне. Но у DXGI и Direct3D есть целый ряд дополнительных возможностей, и они требуют дополнительных усилий для правильной настройки при переносе с EGL.
 
-> 
-            **Примечание.** Это руководство построено на открытой спецификации Khronos Group для EGL 1.4, которую можно найти тут: [Графический интерфейс собственной платформы Khronos (версия EGL 1.4, 6 апреля 2011г.) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Различия в синтаксисе, касающиеся других платформ и языков разработки, не охвачены в этом руководстве.
+> **Примечание.** Это руководство построено на открытой спецификации Khronos Group для EGL 1.4, которую можно найти тут: [Графический интерфейс собственной платформы Khronos (версия EGL 1.4, 6 апреля 2011г.) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Различия в синтаксисе, касающиеся других платформ и языков разработки, не охвачены в этом руководстве.
 
  
 
@@ -69,8 +69,7 @@ DXGI и Direct3D, подобно EGL, предоставляют методы д
 6.  После выполнения конвейера и перехода кадра в задний буфер представьте его на экране с помощью метода [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
 
 Этот процесс подробно описан в разделе [Начало работы с графикой DirectX](https://msdn.microsoft.com/library/windows/desktop/hh309467). Далее в статье описываются многие распространенные действия по базовой настройке графического конвейера и по управлению конвейером.
-> 
-            **Примечание.** У классических приложений Windows имеются различные API для получения цепочки буферов Direct3D, такие как [**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083), и они не используют объект [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225).
+> **Примечание.** У классических приложений Windows имеются различные API для получения цепочки буферов Direct3D, такие как [**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083), и они не используют объект [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225).
 
  
 
@@ -417,6 +416,6 @@ EGLBoolean eglTerminate(eglDisplay);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

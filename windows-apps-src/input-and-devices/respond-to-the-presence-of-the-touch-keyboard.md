@@ -5,8 +5,9 @@ title: "Реакция на наличие сенсорной клавиатур
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 417668a24c4a2ba28671b6fb0a4da74c0cfab341
+ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
 
 ---
 
@@ -38,7 +39,7 @@ ms.openlocfilehash: 417668a24c4a2ba28671b6fb0a4da74c0cfab341
 
 Для работы со статьей необходимо иметь базовое представление о стандартных взаимодействиях клавиатуры, обработке событий клавиатуры и данных, вводимых с клавиатуры, а также о модели автоматизации пользовательского интерфейса.
 
-Если вы — начинающий разработчик приложений универсальной платформы для Windows (UWP), прочитайте указанные ниже статьи, чтобы ознакомиться с описанными здесь технологиями.
+Если вы— начинающий разработчик приложений универсальной платформы для Windows (UWP), прочитайте указанные ниже статьи, чтобы ознакомиться с описанными здесь технологиями.
 
 -   [Создание первого приложения](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   Дополнительную информацию о событиях см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/mt185584).
@@ -145,6 +146,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

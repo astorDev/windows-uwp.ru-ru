@@ -3,8 +3,9 @@ author: jwmsft
 description: "Предоставляет способ указания источника привязки в терминах относительной связи внутри графа объекта среды выполнения."
 title: "Расширение разметки RelativeSource"
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
+translationtype: Human Translation
 ms.sourcegitcommit: ec4c9b87655425e82a1cb792d0acc6bee265e9d2
-ms.openlocfilehash: 9f0bb49e701806f8635d93fa495cdab6486a4ea3
+ms.openlocfilehash: b6af0ce865713ed0da39a87aa63799d3f89b7e89
 
 ---
 
@@ -41,8 +42,7 @@ ms.openlocfilehash: 9f0bb49e701806f8635d93fa495cdab6486a4ea3
 
 Класс [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) может задать [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) как атрибут элемента объекта **Binding** или как компонент в расширении разметки [{Binding}](binding-markup-extension.md). Именно по этой причине отображаются два различных синтаксиса XAML.
 
-
-            **RelativeSource** аналогичен [расширению разметки {Binding}](binding-markup-extension.md).  Схожесть заключается в том, что расширение разметки может возвращать свои экземпляры, поддерживая конструкцию на основе строки, которая, таким образом, передает аргумент конструктору. В этом случае передаваемый аргумент — это значение [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209915).
+**RelativeSource** аналогичен [расширению разметки {Binding}](binding-markup-extension.md).  Схожесть заключается в том, что расширение разметки может возвращать свои экземпляры, поддерживая конструкцию на основе строки, которая, таким образом, передает аргумент конструктору. В этом случае передаваемый аргумент — это значение [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209915).
 
 Режим **Self** полезен для привязки одного свойства элемента к другому свойству того же элемента; это вариант привязки [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828), не требующей именования элемента и установки для него ссылки на себя самого. Если нужно привязать одно свойство элемента к другому свойству того же элемента, эти свойства либо должны быть одного типа, либо на их привязке необходимо использовать [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) для преобразования значений. Например, можно использовать [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) как источник для [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) без преобразования, но чтобы использовать [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) в качестве источника для [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006), понадобится преобразователь.
 
@@ -57,8 +57,7 @@ ms.openlocfilehash: 9f0bb49e701806f8635d93fa495cdab6486a4ea3
 
 Также `RelativeSource={RelativeSource Self}` можно использовать, чтобы задать для свойства [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) объекта самого себя.  Например, это можно увидеть в некоторых примерах SDK, где класс [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) дополнен настраиваемым свойством, которое уже предоставляет готовую модель представления для собственной привязки данных, например: `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-
-            **Примечание.** Использование XAML для **RelativeSource** показывает только изначально предполагаемый способ использования: задание значения [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) в XAML как части выражения привязки. Теоретически возможны и другие способы задания свойства, значением которого является [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
+**Примечание.** Использование XAML для **RelativeSource** показывает только изначально предполагаемый способ использования: задание значения [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) в XAML как части выражения привязки. Теоретически возможны и другие способы задания свойства, значением которого является [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
 
 ## Связанные разделы
 
@@ -71,6 +70,6 @@ ms.openlocfilehash: 9f0bb49e701806f8635d93fa495cdab6486a4ea3
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

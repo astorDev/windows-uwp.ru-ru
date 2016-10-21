@@ -1,70 +1,74 @@
 ---
 author: mcleanbyron
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
-description: Use this method in the Windows Store submission API to create a package flight for an app that is registered to your Windows Dev Center account.
-title: Create a package flight using the Windows Store submission API
+description: "Используйте этот метод в API отправки Магазина Windows для создания тестового пакета для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows."
+title: "Создание тестового пакета с помощью API отправки Магазина Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 35823bd1fd0c059ebc9b2107c31400a7ad788a1e
+
 ---
 
-# Create a package flight using the Windows Store submission API
+# Создание тестового пакета с помощью API отправки Магазина Windows
 
 
 
 
-Use this method in the Windows Store submission API to create a package flight for an app that is registered to your Windows Dev Center account.
+Используйте этот метод в API отправки Магазина Windows для создания тестового пакета для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows.
 
->**Note**&nbsp;&nbsp;This method creates a package flight without any submissions. To create a submission for package flight, see the methods in [Manage package flight submissions](manage-flight-submissions.md).
+>**Примечание.**&nbsp;&nbsp;При использовании этого метода выполняется создание тестового пакета без отправок. Руководство по созданию отправки для тестового пакета см. в описании методов в разделе [Управление отправками тестовых пакетов](manage-flight-submissions.md).
 
-## Prerequisites
+## Необходимые условия
 
-To use this method, you need to first do the following:
+Для использования этого метода необходимо выполнить следующие действия:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+* Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия. После истечения срока действия маркера можно получить новый маркер.
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
-## Request
+## Запрос
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+У этого метода следующий синтаксис. Примеры использования и описание текста заголовка и запроса приведены в следующих разделах.
 
-| Method | Request URI                                                      |
+| Метод | URI запроса                                                      |
 |--------|------------------------------------------------------------------|
 | POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights``` |
 
 <span/>
- 
+ 
 
-### Request header
+### Заголовок запроса
 
-| Header        | Type   | Description                                                                 |
+| Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
-### Request parameters
+### Параметры запроса
 
-| Name        | Type   | Description                                                                 |
+| Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app for which you want to create a package flight. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | Строка | Обязательный. Код продукта в Магазине для приложения, для которого требуется создать тестовый пакет. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 
 <span/>
 
-### Request body
+### Текст запроса
 
-The request body has the following parameters.
- 
-|  Parameter  |  Type  |  Description  |  Required  |
+Текст запроса содержит следующие параметры.
+ 
+|  Параметр  |  Тип  |  Описание  |  Обязательный.  |
 |------|------|------|------|
-|  friendlyName  |  string  |  The name of the package flight, as specified by the developer.  |  No  |
-|  groupIds  |  array  |  An array of strings that contain the IDs of the flight groups that are associated with the package flight. For more information about flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |  No  |
-|  rankHigherThan  |  string  |  The friendly name of the package flight that is ranked immediately lower than the current package flight. If you do not set this parameter, the new package flight will have the highest rank of all package flights. For more information about ranking flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).    |  No  |
+|  friendlyName  |  Строка  |  Имя тестового пакета, указанное разработчиком.  |  Нет  |
+|  groupIds  |  Массив  |  Массив строк, содержащий идентификаторы тестовых групп, которые связаны с тестовым пакетом. Дополнительные сведения о тестовых группах см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |  Нет  |
+|  rankHigherThan  |  Строка  |  Понятное имя тестового пакета, приоритет которого на единицу ниже приоритета текущего тестового пакета. Если не настроить этот параметр, новый тестовый пакет будет иметь самый высокий приоритет среди всех тестовых пакетов. Дополнительные сведения о задании приоритетов тестовых групп см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).    |  Нет  |
 
 <span/>
 
-### Request example
+### Пример запроса
 
-The following example demonstrates how to create a new package flight for an app that has the Store ID 9WZDNCRD911W.
+В примере кода ниже показано, как создать новый тестовый пакет приложения с кодом продукта 9WZDNCRD911W в Магазине.
 
 ```syntax
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights HTTP/1.1
@@ -80,9 +84,9 @@ Content-Type: application/json
 
 ```
 
-## Response
+## Ответ
 
-The following example demonstrates the JSON response body for a successful call to this method. For more details about the values in the response body, see the following sections.
+В следующем примере представлен текст ответа JSON, обеспечивающий успешный вызов этого метода. Дополнительные сведения о значениях, которые могут содержаться в тексте ответа, см. в следующих разделах.
 
 ```json
 {
@@ -95,29 +99,35 @@ The following example demonstrates the JSON response body for a successful call 
 }
 ```
 
-### Response body
+### Текст ответа
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Значение      | Тип   | Описание                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | string  | The ID for the package flight. This value is supplied by Dev Center.  |
-| friendlyName           | string  | The name of the package flight, as specified in the request.   |  
-| groupIds           | array  | An array of strings that contain the IDs of the flight groups that are associated with the package flight, as specified in the request. For more information about flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
-| rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight, as specified in the request. For more information about ranking flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
+| flightId            | Строка  | Идентификатор для тестового пакета. Это значение предоставляется Центром разработки.  |
+| friendlyName           | Строка  | Имя тестового пакета, как указано в запросе.   |  
+| groupIds           | Массив  | Массив строк, содержащий идентификаторы тестовых групп, которые связаны с тестовым пакетом, как указано в запросе. Дополнительные сведения о тестовых группах см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
+| rankHigherThan           | Строка  | Понятное имя тестового пакета, приоритет которого на единицу ниже приоритета текущего тестового пакета, как указано в запросе. Дополнительные сведения о задании приоритетов тестовых групп см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
 
 <span/>
 
-## Error codes
+## Коды ошибок
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+Если запрос не удается выполнить, ответ будет содержать один из следующих кодов ошибок HTTP.
 
-| Error code |  Description   |
+| Код ошибки |  Описание   |
 |--------|------------------|
-| 400  | The request is invalid. |
-| 409  | The package flight could not be created because of its current state, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 400  | Недопустимый запрос. |
+| 419  | Не удалось создать тестовый пакет из-за его текущего состояния или в связи с тем, что приложение использует компонент панели мониторинга Центра разработки, [который в настоящее время не поддерживается API отправки Магазина Windows](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 <span/>
 
-## Related topics
+## Связанные разделы
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Get a package flight](get-a-flight.md)
-* [Delete a package flight](delete-a-flight.md)
+* [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
+* [Получение тестового пакета](get-a-flight.md)
+* [Удаление тестового пакета](delete-a-flight.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

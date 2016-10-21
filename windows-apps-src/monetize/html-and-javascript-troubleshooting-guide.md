@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: "Сведения о решениях распространенных проблем разработки, связанными с библиотеками Microsoft Advertising в приложениях JavaScript и HTML."
 title: "Руководство по устранению неполадок для HTML и JavaScript"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
+translationtype: Human Translation
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
 
 ---
@@ -12,9 +13,9 @@ ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
 # Руководство по устранению неполадок для HTML и JavaScript
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этом разделе содержится описание решений распространенных проблем разработки, связанных с библиотеками Microsoft Advertising в приложениях JavaScript и HTML.
+
+В этом разделе содержится описание решений для распространенных проблем разработки, связанных с библиотеками Microsoft Advertising в приложениях JavaScript и HTML.
 
 -   [HTML](#html)
 
@@ -382,6 +383,6 @@ ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

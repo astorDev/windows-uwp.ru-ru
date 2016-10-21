@@ -6,20 +6,30 @@ ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 ---
 # Гиперссылки
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Гиперссылки используются для перехода в другую часть приложения, в другое приложение либо по указанному универсальному коду ресурса (URI) в отдельном приложении браузера. Существует два способа добавления гиперссылки в приложение XAML: текстовый элемент **гиперссылки** и элемент управления **HyperlinkButton**.
 
 ![Кнопка с гиперссылкой](images/controls/hyperlink-button.png)
 
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279356"><strong>Текстовый элемент гиперссылки</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br242739"><strong>Элемент управления HyperlinkButton</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
--   [**Текстовый элемент гиперссылки**](https://msdn.microsoft.com/library/windows/apps/dn279356)
--   [**Элемент управления HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)
+
 
 ## Выбор правильного элемента управления
 
@@ -54,9 +64,7 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 ![Пример гиперссылки в виде текстового элемента](images/controls_hyperlink-element.png) 
 
-> 
-            **Подсказка.**
-            &nbsp;&nbsp;При использовании гиперссылки в текстовом элементе управления в XAML разместите содержимое в контейнере [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) и примените атрибут `xml:space="preserve"` к Span для сохранения пробела между гиперссылкой и другими элементами.
+> **Совет.**&nbsp;&nbsp;При использовании гиперссылки в текстовом элементе управления в XAML разместите содержимое в контейнере [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) и примените атрибут `xml:space="preserve"` к Span для сохранения пробела между гиперссылкой и другими элементами.
 
 ## Создание HyperlinkButton
 
@@ -87,9 +95,7 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 Чтобы использовать гиперссылку для перехода к URI, задайте свойство NavigateUri. Когда пользователь нажимает на гиперссылку, указанный URI открывается в браузере по умолчанию. Браузер по умолчанию запускается в виде отдельного процесса из приложения.
 
-> 
-            **Примечание.**
-            &nbsp;&nbsp;Использовать схемы http: или https: не обязательно. Можно использовать такие схемы, как ms-appx:, ms-appdata: или ms-resources:, если содержимое ресурса в этих расположениях подходит для загрузки в браузере. Однако, схема file:, в частности, блокируется. Подробнее см. в разделе [Схемы URI](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
+> **Примечание.**&nbsp;&nbsp;Использовать схемы http: или https: не обязательно. Можно использовать такие схемы, как ms-appx:, ms-appdata: или ms-resources:, если содержимое ресурса в этих расположениях подходит для загрузки в браузере. Однако, схема file:, в частности, блокируется. Подробнее см. в разделе [Схемы URI](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
 
 > Когда пользователь нажимает на гиперссылку, значение свойства NavigateUri передается в обработчик системы для получения типов и схем URI. После этого система запускает приложение, которое зарегистрировано для схемы URI, предоставляемой для NavigateUri.
 
@@ -131,8 +137,7 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 **Содержимое**
 
-Гиперссылка имеет ограничения относительно содержимого, которое существует в его коллекции [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx). В частности, гиперссылка разрешает только [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) и другие типы [Span](), которые не являются другим элементом Hyperlink. 
-            [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) не может находиться в коллекции Inlines гиперссылки. Попытка добавления содержимого с ограничениями вызовет исключение недопустимого аргумента или исключение анализа XAML.
+Гиперссылка имеет ограничения относительно содержимого, которое существует в его коллекции [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx). В частности, гиперссылка разрешает только [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) и другие типы [Span](), которые не являются другим элементом Hyperlink. [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) не может находиться в коллекции Inlines гиперссылки. Попытка добавления содержимого с ограничениями вызовет исключение недопустимого аргумента или исключение анализа XAML.
 
 **Гиперссылка и поведение темы/стиля**
 
@@ -151,7 +156,7 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 ## Связанные разделы
 
-- [Элементы управления текстом](text-controls.md)
+- [Текстовые элементы управления](text-controls.md)
 - [Руководство по всплывающим подсказкам](tooltips.md)
 
 **Для разработчиков (XAML)**
@@ -160,6 +165,6 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

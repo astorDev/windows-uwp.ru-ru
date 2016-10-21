@@ -3,8 +3,9 @@ author: DBirtolo
 ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
 title: "Создание средства выбора устройств"
 description: "Создание средства выбора устройства позволяет ограничить количество устройств, по которым выполняется поиск при перечислении."
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
+ms.openlocfilehash: 091767d6f223ce2b4538dafb1c81595015589013
 
 ---
 # Создание средства выбора устройств
@@ -31,8 +32,7 @@ ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
 
 API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) используют канонический синтаксис AQS, но не все операторы поддерживаются. Список доступных при построении строки фильтра свойств см. в разделе [Свойства сведений об устройстве](device-information-properties.md).
 
-
-            **Внимание**  Настраиваемые свойства, определенные в формате `{GUID} PID`, не могут использоваться при построении строки фильтра AQS. Это вызвано тем, что данный тип свойства образован на основе имени известного свойства.
+**Внимание**. Настраиваемые свойства, определенные в формате `{GUID} PID`, не могут использоваться при построении строки фильтра AQS. Это вызвано тем, что данный тип свойства образован на основе имени известного свойства.
 
  
 
@@ -56,11 +56,9 @@ API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows
 | **COP\_APPLICATION\_SPECIFIC** | Не поддерживается                                                               |
 
 
-> 
-            **Совет**  Можно задать значение **NULL** для **COP\_EQUAL** или **COP\_NOTEQUAL**. Это означает свойство без значения или несуществующее значение. В AQS для указания **NULL** используются пустые скобки \[\].
+> **Совет**. Можно задать значение **NULL** для **COP\_EQUAL** или **COP\_NOTEQUAL**. Это означает свойство без значения или несуществующее значение. В AQS для указания **NULL** используются пустые скобки \[\].
 
-> 
-            **Важно**  Операторы **COP\_VALUE\_CONTAINS** и **COP\_VALUE\_NOTCONTAINS** ведут себя по-разному со строками и строковыми массивами. В случае со строками система выполняет поиск без учета регистра, чтобы определить, содержит ли устройство указанную строку в качестве подстроки. В случае со строковыми массивами поиск по подстрокам не выполняется. В таком случае поиск выполняется по массиву, чтобы определить, содержит ли он указанную строку полностью. Выполнить поиск массива строк, чтобы определить, содержат ли элементы массива подстроку, невозможно.
+> **Важно**. Операторы **COP\_VALUE\_CONTAINS** и **COP\_VALUE\_NOTCONTAINS** ведут себя по-разному со строками и строковыми массивами. В случае со строками система выполняет поиск без учета регистра, чтобы определить, содержит ли устройство указанную строку в качестве подстроки. В случае со строковыми массивами поиск по подстрокам не выполняется. В таком случае поиск выполняется по массиву, чтобы определить, содержит ли он указанную строку полностью. Выполнить поиск массива строк, чтобы определить, содержат ли элементы массива подстроку, невозможно.
 
 Если вы не можете создать одну строку фильтра AQS, которая будет определять область результатов соответствующим образом, вы можете отфильтровать результаты после их получения. Но если вы выберете этот вариант, мы рекомендуем максимально ограничить результаты из начальной строки AQS фильтра при ее предоставлении интерфейсам API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459). Это повысит производительность вашего приложения.
 
@@ -68,9 +66,7 @@ API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows
 
 В следующих примерах показано, как можно использовать синтаксис AQS для ограничения количества устройств, которые нужно перечислить. Все эти строки фильтров используются вместе с [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991), чтобы создать полный фильтр. Помните, что если тип не указан, по умолчанию используется тип **DeviceInterface**.
 
-Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **DeviceInterface**, он перечисляет все объекты, которые сейчас включены и в которых содержится класс интерфейса Audio Capture. 
-            **
-              =
+Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **DeviceInterface**, он перечисляет все объекты, которые сейчас включены и в которых содержится класс интерфейса Audio Capture. **=
             ** преобразуется в **COP\_EQUALS**.
 
 ``` syntax
@@ -78,43 +74,34 @@ System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **Device**, он перечисляет все объекты, в которых имеется не менее одного аппаратного идентификатора GenCdRom. 
-            **
-              ~~
+Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **Device**, он перечисляет все объекты, в которых имеется не менее одного аппаратного идентификатора GenCdRom. **~~
             ** преобразуется в **COP\_VALUE\_CONTAINS**.
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **DeviceContainer**, он перечисляет все объекты с названием модели с подстрокой Microsoft. 
-            **
-              ~~
+Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **DeviceContainer**, он перечисляет все объекты с названием модели с подстрокой Microsoft. **~~
             ** преобразуется в **COP\_VALUE\_CONTAINS**.
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **DeviceInterface**, он перечисляет все объекты с названием модели, которое начинается с подстроки Microsoft. 
-            **
-              ~&lt;
-            ** преобразуется в **COP\_STARTSWITH**.
+Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **DeviceInterface**, он перечисляет все объекты с названием модели, которое начинается с подстроки Microsoft. **~&lt;
+              ** преобразуется в **COP\_STARTSWITH**.
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **Device**, он перечисляет все объекты, для которых задан параметр **System.Devices.IpAddress**. 
-            **
-              &lt;&gt;\[\]** преобразуется в **COP\_NOTEQUALS** в сочетании со значением **NULL**.
+Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **Device**, он перечисляет все объекты, для которых задан параметр **System.Devices.IpAddress**. **&lt;&gt;\[\]** преобразуется в **COP\_NOTEQUALS** в сочетании со значением **NULL**.
 
 ``` syntax
 System.Devices.IpAddress:<>[]
 ```
 
-Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **Device**, он перечисляет все объекты, для которых не задан параметр **System.Devices.IpAddress**. 
-            **=\[\]** преобразуется в **COP\_EQUALS** в сочетании со значением **NULL**.
+Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **Device**, он перечисляет все объекты, для которых не задан параметр **System.Devices.IpAddress**. **=\[\]** преобразуется в **COP\_EQUALS** в сочетании со значением **NULL**.
 
 ``` syntax
 System.Devices.IpAddress:=[]
@@ -130,6 +117,6 @@ System.Devices.IpAddress:=[]
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

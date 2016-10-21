@@ -1,34 +1,32 @@
 ---
 author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
-description: "Изучите заметки о выпуске библиотек Microsoft Advertising в пакете SDK Microsoft Store Engagement and Monetization."
+description: "Изучите заметки о выпуске библиотек Microsoft Advertising в пакете SDK Microsoft Store Services."
 title: "Заметки о выпуске библиотек Microsoft Advertising"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
+translationtype: Human Translation
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: b82c4385b0e7089bdddbe094f47f0766f90aa21b
 
 ---
 
 # Заметки о выпуске библиотек Microsoft Advertising
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Этот раздел содержит заметки о текущем выпуске библиотек Microsoft Advertising в пакете SDK Microsoft Store Engagement and Monetization. Библиотеки поддерживают приложения XAML и JavaScript/HTML для Windows 10, Windows 8.1, Windows Phone 8.1 и Windows Phone 8.
+
+Этот раздел содержит заметки о текущем выпуске библиотек Microsoft Advertising в Microsoft Store Services SDK (для приложений UWP) и Microsoft Advertising SDK для Windows и Windows Phone 8.x (для приложений Windows 8.1 и Windows Phone 8.x). Библиотеки поддерживают приложения XAML и JavaScript/HTML для Windows 10, Windows 8.1, Windows Phone 8.1 и Windows Phone 8.
 
 ## Установка
 
 
-Библиотеки Microsoft Advertising доступны в составе пакета [SDK Microsoft Store Engagement and Monetization](http://aka.ms/store-em-sdk). Для всех других типов проектов, отличных от Windows Phone 8.x Silverlight, сборки Microsoft Advertising, которые распространялись в более ранних отдельных выпусках SDK Microsoft Universal Ad Client и Microsoft Advertising, теперь устанавливаются вместе с SDK Microsoft Store Engagement and Monetization. Дополнительные сведения об установке SDK и библиотек в его составе см. в разделе [Установка библиотек Microsoft Advertising](install-the-microsoft-advertising-libraries.md).
+Библиотеки Microsoft Advertising доступны в составе пакета [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (для приложений UWP) и [Microsoft Advertising SDK для Windows и Windows Phone 8.x](http://aka.ms/store-8-sdk) (для приложений Windows 8.1 и Windows Phone 8.x). Дополнительные сведения об установке SDKs и библиотек в его составе см. в разделе [Установка библиотек Microsoft Advertising](install-the-microsoft-advertising-libraries.md).
 
-Чтобы получить сборки Microsoft Advertising для проектов Silverlight в Windows Phone 8.x, установите пакет [SDK Microsoft Store Engagement and Monetization](http://aka.ms/store-em-sdk), откройте проект в Visual Studio и последовательно щелкните **Проект** > **Добавить подключенную службу** > **Рекламный посредник**, чтобы автоматически загрузить сборки. После этого можно удалить ссылки на рекламный посредник из вашего проекта, если в дальнейшем вы не планируете использовать рекламное посредничество. Дополнительные сведения см. в разделе [AdControl в Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
+Чтобы получить сборки Microsoft Advertising для проектов Silverlight в Windows Phone 8.x, установите пакет [Microsoft Advertising SDK для Windows и Windows Phone 8.x](http://aka.ms/store-8-sdk), откройте проект в Visual Studio и последовательно щелкните **Проект** > **Добавить подключенную службу** > **Рекламный посредник**, чтобы автоматически загрузить сборки. После этого можно удалить ссылки на рекламный посредник из вашего проекта, если в дальнейшем вы не планируете использовать рекламное посредничество. Дополнительные сведения см. в разделе [AdControl в Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
 
-## Различие между библиотеками Microsoft Advertising и рекламным посредником
-
-Несмотря на то что оба инструмента предоставляются SDK Microsoft Store Engagement and Monetization, они служат разным целям. Используйте классы [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) и [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) из библиотек Microsoft Advertising, если требуется показать баннерную или промежуточную видеорекламу от Майкрософт в приложении XAML или JavaScript. Используйте класс **AdMediatorControl** в библиотеках рекламного посредника, если требуется отображать в приложении XAML рекламные баннеры из нескольких рекламных сетей (рекламный посредник не поддерживается приложениями JavaScript/HTML). Дополнительные сведения см. в разделе [Отличия класса AdMediatorControl от класса AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md).
 
 ## Удаление предыдущих версий
 
-Перед установкой SDK Microsoft Store Engagement and Monetization настоятельно рекомендуется удалить все предыдущие экземпляры SDK Microsoft Universal Ad Client и Microsoft Advertising.
+Перед установкой пакета Microsoft Store Services SDK (для приложений UWP) или Microsoft Advertising SDK для Windows и Windows Phone 8.x (для приложений Windows 8.1 и Windows Phone 8.x) настоятельно рекомендуется удалить все предыдущие экземпляры Microsoft Universal Ad Client SDK или Microsoft Advertising SDK.
 
 ## Сборки для определенных архитектур
 
@@ -40,7 +38,7 @@ ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
 
 ## Отсутствие элемента управления на панели инструментов
 
-В текущем выпуске библиотек Microsoft Advertising в пакете SDK Microsoft Store Engagement and Monetization отсутствует элемент управления для перетаскивания классов **AdControl** или **InterstitialAd** на поверхность проектирования приложения. Инструкции о добавлении этих элементов управления в разметку и код см. в разделе [Пошаговые руководства для разработчиков](developer-walkthroughs.md).
+В текущем выпуске библиотек Microsoft Advertising в Microsoft Store Services SDK или Microsoft Advertising SDK для Windows и Windows Phone 8.x на панели инструментов отсутствует элемент управления для перетаскивания **AdControl** или **InterstitialAd** в рабочую область конструирования в вашем приложении. Инструкции о добавлении этих элементов управления в разметку и код см. в разделе [Пошаговые руководства для разработчиков](developer-walkthroughs.md).
 
 ## Свойства широты и долготы более недоступны
 
@@ -56,6 +54,6 @@ ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

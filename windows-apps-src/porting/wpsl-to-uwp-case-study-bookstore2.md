@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: "Этот пример, в котором используются данные из примера Bookstore, начинается с приложения Windows Phone Silverlight, отображающего сгруппированные данные в классе LongListSelector."
 title: "Пример переноса Windows Phone Silverlight в UWP, Bookstore2"
+translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
+ms.openlocfilehash: f421b42798d9472cd97ec9ed51036bd312c3e79e
 
 ---
 
@@ -14,16 +15,13 @@ ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
 
 Этот пример, в котором используются данные из примера [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), начинается с приложения Windows Phone Silverlight, отображающего сгруппированные данные в классе **LongListSelector**. В модели представления каждый экземпляр класса **Author** представляет группу книг одного автора, а в классе **LongListSelector** мы можем просмотреть список книг, сгруппированных по автору, или уменьшить представление, чтобы просмотреть список переходов по авторам. Список переходов — это гораздо более быстрый способ навигации, чем прокрутка списка книг. Рассмотрим шаги переноса приложения в приложение Windows10 универсальной платформы Windows (UWP).
 
-
-            **Примечание.**   Если при открытии Bookstore2Universal\_10 в Visual Studio отображается сообщение "Требуется обновление Visual Studio", следуйте инструкциям из [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
+**Примечание.**   Если при открытии Bookstore2Universal\_10 в Visual Studio отображается сообщение "Требуется обновление Visual Studio", следуйте инструкциям из [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
 
 ## Загрузки
 
+[Скачать приложение Bookstore2WPSL8 Windows Phone Silverlight](http://go.microsoft.com/fwlink/p/?linkid=522601)
 
-            [Скачать приложение Bookstore2WPSL8 Windows Phone Silverlight](http://go.microsoft.com/fwlink/p/?linkid=522601)
-
-
-            [Скачать приложение Bookstore2Universal\_10 для Windows10](http://go.microsoft.com/fwlink/?linkid=532952).
+[Скачать приложение Bookstore2Universal\_10 для Windows10](http://go.microsoft.com/fwlink/?linkid=532952).
 
 ##  Приложение WindowsPhone Silverlight
 
@@ -304,6 +302,6 @@ ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

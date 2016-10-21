@@ -1,18 +1,22 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: "Подготовка"
 description: "Подготовка на самом деле проще, чем может показаться. Ознакомьтесь с этими инструкциями и начните создание приложений универсальной платформы Windows (UWP) для Windows 10."
 translationtype: Human Translation
-ms.sourcegitcommit: a47dc36129daaed02cb181dde625d440fa4cf6e4
-ms.openlocfilehash: f20707cab08998d86142f7d657b51faa78d9a777
+ms.sourcegitcommit: 75c036fc934a8071f17a8690a22a03e10c4fe1d4
+ms.openlocfilehash: 729c71fbe0db202bd4f5ce15bea87caa973adf80
 
 ---
 # Подготовка
 
 Подготовка на самом деле проще, чем может показаться. Ознакомьтесь с этими инструкциями и начните создание приложений универсальной платформы Windows (UWP) для Windows 10.
 
-## 1. Получите Windows10
+> [!NOTE]
+> Вы используете Mac? Или просто еще не хотите ничего устанавливать на свой компьютер? Попробуйте [размещенные в интернете виртуальные машины, настроенные для задач программирования Build2016](https://developer.microsoft.com/windows/projects/events/build2016/all/codingchallenges).
+
+
+## 1. Получите Windows 10
 
 Для разработки приложений UWP вам понадобится последняя версия Windows.
 
@@ -21,6 +25,8 @@ ms.openlocfilehash: f20707cab08998d86142f7d657b51faa78d9a777
 Вы — подписчик MSDN? Вы можете скачать ISO здесь:
 
 -   Скачайте Windows10 [на веб-сайте скачиваемых файлов для подписчиков MSDN](http://go.microsoft.com/fwlink/p/?LinkId=266384)
+
+
 
 ## 2. Скачайте или обновите Visual Studio
 
@@ -50,8 +56,7 @@ Microsoft Visual Studio2015 помогает в проектировании, п
 
 После установки инструментов и получения лицензии разработчика или учетной записи разработчика создайте свое первое приложение с помощью наших учебников:
 
--   
-            Учебники [Создание первого приложения](your-first-app.md)
+-   Учебники [Создание первого приложения](your-first-app.md)
 
 ## Нужны дополнительные инструменты и скачиваемые файлы?
 
@@ -60,7 +65,6 @@ Microsoft Visual Studio2015 помогает в проектировании, п
 
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

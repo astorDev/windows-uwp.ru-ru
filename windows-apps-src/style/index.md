@@ -1,19 +1,16 @@
 ---
 description: "Научитесь использовать цвета, шрифтовое оформление и движение для индивидуализации приложения UWP с помощью руководства по стилю Центра разработки для Windows UWP."
-keywords: uwp style guide, design guidance, typography, motion, sound, motion, app development
+keywords: "руководство по стилю uwp, руководство по проектированию, шрифтовое оформление, движение, звук, движение, разработка приложений"
 title: "Руководство по стилю UWP — разработка приложений для Windows"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 0a7f655a6f122787873adac76ac4dec9d775a154
-ms.openlocfilehash: d55aab04696441dbbcba0cbda61fd599fdacec67
+ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
+ms.openlocfilehash: 4a96db626f6f3682248e7e720c956fa343186b4a
 
 ---
+# Руководство по стилю UWP
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-<div class="uwpd-banner">
-<h1 class="uwpd-ruledheader">Руководство по стилю UWP</h1>
-</div>
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -77,6 +74,6 @@ ms.openlocfilehash: d55aab04696441dbbcba0cbda61fd599fdacec67
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

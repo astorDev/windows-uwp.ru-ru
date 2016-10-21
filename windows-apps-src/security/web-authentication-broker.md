@@ -3,8 +3,9 @@ title: "Брокер веб-проверки подлинности"
 description: "В этой статье описывается, как подключить ваше приложение универсальной платформы Windows (UWP) к поставщику сетевых удостоверений, использующему такие протоколы проверки подлинности, как OpenID или OAuth, например, Facebook, Twitter, Flickr, Instagram, и т. д."
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 96ca8d019fe6cbf742c98edf0b8bf04b35f71dfd
+ms.openlocfilehash: ea3d3e1df07c8cf9701e7bd39af006cd681ef1fe
 
 ---
 
@@ -16,8 +17,7 @@ ms.openlocfilehash: 96ca8d019fe6cbf742c98edf0b8bf04b35f71dfd
 
 В этой статье описывается, как подключить ваше приложение универсальной платформы Windows (UWP) к поставщику сетевых удостоверений, использующему такие протоколы проверки подлинности, как OpenID или OAuth, например, Facebook, Twitter, Flickr, Instagram, и т. д. Метод [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) отправляет запрос поставщику сетевых удостоверений и получает маркер доступа, описывающий ресурсы поставщика, к которым имеет доступ приложение.
 
-
-            **Примечание.**  Чтобы получить полный рабочий примера кода, клонируйте [репозиторий WebAuthenticationBroker на GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622).
+**Примечание.**  Чтобы получить полный рабочий примера кода, клонируйте [репозиторий WebAuthenticationBroker на GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622).
 
  
 
@@ -152,22 +152,7 @@ catch (Exception ex)
 
 1.  Так как AuthHost работает в собственном контейнере приложения, чтобы предоставить ему возможность частной сети, необходимо настроить раздел реестра: редактор реестра Windows версии 5.00
 
-    
-            **HKEY\_LOCAL\_MACHINE**
-            \\
-            **SOFTWARE**
-            \\
-            **Microsoft**
-            \\
-            **Windows NT**
-            \\
-            **CurrentVersion**
-            \\
-            **Image File Execution Options**
-            \\
-            **authhost.exe**
-            \\
-            **EnablePrivateNetwork** = 00000001
+    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 
                          Data type  
                          DWORD
@@ -193,6 +178,6 @@ catch (Exception ex)
 3.  Добавьте правило брандмауэра для входящего трафика в Fiddler.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

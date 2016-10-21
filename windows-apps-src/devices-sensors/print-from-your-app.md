@@ -4,8 +4,8 @@ ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
 title: "Печать из приложения"
 description: "Узнайте, как печатать документы из универсального приложения для Windows. В этом разделе также показано, как печатать отдельные страницы."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: effb04f4bd8acdf9dfcc7847341c4a4fcc543bb5
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 334b6d5faad641bbce67f7267be43700cd540569
 
 ---
 # Печать из приложения
@@ -21,15 +21,13 @@ ms.openlocfilehash: effb04f4bd8acdf9dfcc7847341c4a4fcc543bb5
 
 Узнайте, как печатать документы из универсального приложения для Windows. В этом разделе также показано, как печатать отдельные страницы. Сведения о дополнительных изменениях в пользовательском интерфейсе предварительного просмотра см. в разделе [Настройка пользовательского интерфейса предварительного просмотра](customize-the-print-preview-ui.md).
 
-
-              **Подсказка**. Большинство примеров в этой статье основаны на примере печати. Чтобы увидеть полный код, скачайте [пример печати с использованием универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619984) из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на GitHub.
+**Подсказка**. Большинство примеров в этой статье основаны на примере печати. Чтобы увидеть полный код, скачайте [пример печати с использованием универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619984) из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на GitHub.
 
 ## Регистрация для печати
 
 Первый шаг добавления возможностей печати в ваше приложение — регистрация контракта "Печать". Ваше приложение должно выполнять это на каждом экране, на котором вы хотите предоставить пользователю возможность печати. Для печати можно зарегистрировать только экран, отображаемый для пользователя. Если один экран приложения зарегистрирован для печати, при уходе с этого экрана необходимо отменить его регистрацию для печати. Если экран заменяется другим экраном, при открытии следующего экрана для него необходимо зарегистрировать новый контракт «Печать».
 
-
-              **Подсказка**. Если необходимо поддерживать в приложении вывод на печать более одной страницы, вы можете вставить этот код печати в общий вспомогательный класс и позволить страницам приложения использовать его повторно. Пример того, как это сделать, см. в классе `PrintHelper` в [примере печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984).
+**Подсказка**. Если необходимо поддерживать в приложении вывод на печать более одной страницы, вы можете вставить этот код печати в общий вспомогательный класс и позволить страницам приложения использовать его повторно. Пример того, как это сделать, см. в классе `PrintHelper` в [примере печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984).
 
 Сначала объявите [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) и [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314). Тип **PrintManager** содержится в пространстве имен [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489) наряду с типами для поддержки других возможностей печати Windows. Тип **PrintDocument** содержится в пространстве имен [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325) наряду с другими типами, поддерживающими подготовку содержимого на XAML для печати. Вы можете упростить создание кода печати, добавив на страницу операторы **using** или **Imports**.
 
@@ -92,25 +90,37 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
 <Button x:Name="InvokePrintingButton" Content="Print" Click="OnPrintButtonClick"/>
 ```
 
-Далее добавьте обработчик событий в код приложения для обработки события нажатия кнопки. Используйте метод [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printmanager.showprintuiasync), чтобы начать печать из приложения. 
-              **ShowPrintUIAsync** — асинхронный метод, который отображает соответствующее окно печати. Если печать невозможна в это время, то метод создаст исключение. Рекомендуется перехватывать такие исключения, позволяя пользователю узнать, когда выполнение печати невозможно, как показано ниже.
+Далее добавьте обработчик событий в код приложения для обработки события нажатия кнопки. Используйте метод [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printmanager.showprintuiasync), чтобы начать печать из приложения. **ShowPrintUIAsync** — асинхронный метод, который отображает соответствующее окно печати. Рекомендуется сначала вызвать метод [**IsSupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Printing.PrintManager.IsSupported), чтобы проверить, что приложение выполняется на устройстве, которое поддерживает печать (и принять меры, если это не так). Если по какой-либо причине выполнить печать в это время невозможно, **ShowPrintUIAsync** создаст исключение. Рекомендуется перехватывать такие исключения, позволяя пользователю узнать, когда выполнение печати невозможно.
 
 ```csharp
 async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 {
-    try
+    if (Windows.Graphics.Printing.PrintManager.IsSupported())
     {
-        // Show print UI
-        await Windows.Graphics.Printing.PrintManager.ShowPrintUIAsync();
+        try
+        {
+            // Show print UI
+            await Windows.Graphics.Printing.PrintManager.ShowPrintUIAsync();
 
+        }
+        catch
+        {
+            // Printing cannot proceed at this time
+            ContentDialog noPrintingDialog = new ContentDialog()
+            {
+                Title = "Printing error",
+                Content = "\nSorry, printing can' t proceed at this time.", PrimaryButtonText = "OK"
+            };
+            await noPrintingDialog.ShowAsync();
+        }
     }
-    catch
+    else
     {
-        // Printing cannot proceed at this time
+        // Printing is not supported on this device
         ContentDialog noPrintingDialog = new ContentDialog()
         {
-            Title = "Printing error",
-            Content = "\nSorry, printing can' t proceed at this time.", PrimaryButtonText = "OK"
+            Title = "Printing not supported",
+            Content = "\nSorry, printing is not supported on this device.",PrimaryButtonText = "OK"
         };
         await noPrintingDialog.ShowAsync();
     }
@@ -151,8 +161,7 @@ protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequeste
 
 После создания задания печати событие [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) запрашивает коллекцию печатаемых страниц для отображения в пользовательском интерфейсе предварительного просмотра и создает событие [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate). Это соотносится с методом **Paginate** интерфейса **IPrintPreviewPageCollection**. Созданный при регистрации обработчик событий будет вызываться в это время.
 
-
-              **Важно!** При изменении пользователем параметров печати будет повторно вызван обработчик событий разделения на страницы, что позволит вам переформатировать содержимое. Для лучшего взаимодействия с пользователем рекомендуется проверять параметры, прежде чем переформатировать содержимое, и избегать повторной инициализации разбитого на страницы содержимого, если в этом нет необходимости.
+**Важно!** При изменении пользователем параметров печати будет повторно вызван обработчик событий разделения на страницы, что позволит вам переформатировать содержимое. Для лучшего взаимодействия с пользователем рекомендуется проверять параметры, прежде чем переформатировать содержимое, и избегать повторной инициализации разбитого на страницы содержимого, если в этом нет необходимости.
 
 В обработчике событий [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) (метод `CreatePrintPreviewPages` в [примере печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)) создайте страницы для отображения в пользовательском интерфейсе предварительного просмотра и отправки на принтер. Код, используемый для подготовки содержимого вашего приложения к печати, зависит от вашего приложения и печатаемого содержимого. Чтобы увидеть, как приложение форматирует содержимое для печати, см. исходный код в [примере печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984).
 
@@ -250,8 +259,7 @@ PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrin
 
 Очистите список параметров, отображающихся в пользовательском интерфейсе предварительного просмотра печати, и добавьте параметры, которые вы хотите показывать, когда пользователь начинает печать из приложения.
 
-
-              **Примечание.** Эти параметры появляются в пользовательском интерфейсе предварительного просмотра печати в порядке их добавления— первый параметр отображается вверху окна.
+**Примечание.** Эти параметры появляются в пользовательском интерфейсе предварительного просмотра печати в порядке их добавления— первый параметр отображается вверху окна.
 
 ```csharp
 IList<string> displayedOptions = printDetailedOptions.DisplayedOptions;
@@ -367,8 +375,7 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 }
 ```
 
-
-              **Подсказка.**  Дополнительные сведения об анализе диапазона страниц, которые пользователь вводит в текстовом поле «Диапазон», см. в методе `GetPagesInRange` в [примере печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984).
+**Подсказка.**  Дополнительные сведения об анализе диапазона страниц, которые пользователь вводит в текстовом поле "Диапазон", см. в методе `GetPagesInRange` в [примере печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984).
 
 ## Предварительный просмотр выбранных страниц
 
@@ -389,6 +396,6 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
 description: "EntityFramework (EF)— это объектно-реляционный модуль сопоставления, позволяющий разработчикам работать с реляционными данными с помощью объектов, специализированных для доменов."
 title: "EntityFramework7 с SQLite для приложений C#"
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4c9b674445e901a370f9822f8f11acdeba6061b6
+ms.openlocfilehash: b453a2a6c3ab0b9418122ae27bf6a3a1c56e5873
 
 ---
 
@@ -28,6 +29,6 @@ Entity Framework (EF)— это объектно-реляционный моду
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

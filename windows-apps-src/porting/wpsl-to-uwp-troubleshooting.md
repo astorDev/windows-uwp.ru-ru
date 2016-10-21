@@ -3,8 +3,9 @@ author: mcleblanc
 description: "Мы настоятельно рекомендуем прочитать до конца это руководство по переносу, но мы также понимаем, что вы жаждете двигаться вперед и добраться до этапа, на котором выполняется построение и запуск вашего проекта."
 title: "Устранение неполадок при переносе Windows Phone Silverlight в UWP"
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
+translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 0e7c4ba00ab513c1ea9da94f1a3f69b5921c2dc1
+ms.openlocfilehash: 070e4a00cada6f6cf7b6c1d027d2391eecb8facd
 
 ---
 
@@ -61,6 +62,6 @@ ms.openlocfilehash: 0e7c4ba00ab513c1ea9da94f1a3f69b5921c2dc1
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

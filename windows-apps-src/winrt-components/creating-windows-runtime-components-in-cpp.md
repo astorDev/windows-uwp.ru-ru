@@ -3,8 +3,9 @@ author: msatranjr
 title: "Создание компонентов среды выполнения Windows на C++"
 description: "В этой статье описывается использование C++ для создания компонента среды выполнения Windows, представляющего собой библиотеку DLL, которую можно вызывать из универсального приложения для Windows, созданного с помощью JavaScript, C#, VisualBasic или C++."
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 1497175723738cc23ec21b280c9639b216a33ddd
+ms.openlocfilehash: 65114d476da1a7f9113987ebccc8bdbaca6381a7
 
 ---
 
@@ -597,6 +598,6 @@ Direction[curDirection];
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "Портал устройств для мобильных устройств"
 description: "Узнайте, как Портал устройства с Windows позволит удаленно настраивать и управлять мобильными устройствами."
+translationtype: Human Translation
 ms.sourcegitcommit: df6d42d6a91b8721e905fe9bc3a339dc33408459
-ms.openlocfilehash: eeeb8f98d97468544cc30e3d9884cce15cb913a9
+ms.openlocfilehash: 802030f12f2ca3e29eec053d89ab806298974dc7
 
 ---
 # Портал устройств для мобильных устройств
@@ -76,6 +77,6 @@ ms.openlocfilehash: eeeb8f98d97468544cc30e3d9884cce15cb913a9
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

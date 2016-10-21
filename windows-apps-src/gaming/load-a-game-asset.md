@@ -3,8 +3,9 @@ author: mtoepke
 title: "Загрузка ресурсов в игре DirectX"
 description: "В большинстве игр в определенный момент выполняется загрузка ресурсов (например, шейдеров, текстур, ранее созданных mesh-объектов или других графических данных) из локального хранилища данных или другого потока данных."
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: fd4d2162e9a0007df34b465f570820843b326d72
+ms.openlocfilehash: 09221cb853b3d327b5cb60cacec109032135eabc
 
 ---
 
@@ -235,8 +236,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-
-            **CreateMesh** интерпретирует байтовые данные, загружаемые из файла, и создает буфер вершины и буфер индексов для mesh-объекта путем передачи списков вершин и индексов методу [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) с определением параметра D3D11\_BIND\_VERTEX\_BUFFER или D3D11\_BIND\_INDEX\_BUFFER. Код, который использовался в **BasicLoader**:
+**CreateMesh** интерпретирует байтовые данные, загружаемые из файла, и создает буфер вершины и буфер индексов для mesh-объекта путем передачи списков вершин и индексов методу [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) с определением параметра D3D11\_BIND\_VERTEX\_BUFFER или D3D11\_BIND\_INDEX\_BUFFER. Код, который использовался в **BasicLoader**:
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -317,9 +317,7 @@ DDS-файл — это двоичный файл, который содержи
 
 -   Описание данных, содержащихся в файле.
 
-    Данные описываются в описании заголовка с помощью структуры [**DDS\_HEADER**](https://msdn.microsoft.com/library/windows/desktop/bb943982); формат пикселей определяется с помощью структуры [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984). Обратите внимание: структуры **DDS\_HEADER** и **DDS\_PIXELFORMAT** заменяют устаревшие структуры DirectDraw 7 DDSURFACEDESC2, DDSCAPS2 и DDPIXELFORMAT 
-            **DDS\_HEADER** является двоичным эквивалентом структур DDSURFACEDESC2 и DDSCAPS2. 
-            **DDS\_PIXELFORMAT** является двоичным эквивалентом структуры DDPIXELFORMAT.
+    Данные описываются в описании заголовка с помощью структуры [**DDS\_HEADER**](https://msdn.microsoft.com/library/windows/desktop/bb943982); формат пикселей определяется с помощью структуры [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984). Обратите внимание: структуры **DDS\_HEADER** и **DDS\_PIXELFORMAT** заменяют устаревшие структуры DirectDraw 7 DDSURFACEDESC2, DDSCAPS2 и DDPIXELFORMAT **DDS\_HEADER** является двоичным эквивалентом структур DDSURFACEDESC2 и DDSCAPS2. **DDS\_PIXELFORMAT** является двоичным эквивалентом структуры DDPIXELFORMAT.
 
     ```cpp
     DWORD               dwMagic;
@@ -695,7 +693,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 На данном этапе вы должны понимать и уметь создавать или изменять методы для асинхронной загрузки таких распространенных игровых ресурсов, как mesh-объекты, текстуры и скомпилированные шейдеры.
 
-## Ссылки по теме
+## Связанные разделы
 
 * [Образец загрузки ресурсов Direct3D]( http://go.microsoft.com/fwlink/p/?LinkID=265132)
 * [Полный код для BasicLoader](complete-code-for-basicloader.md)
@@ -712,6 +710,6 @@ task<void> BasicLoader::LoadShaderAsync(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

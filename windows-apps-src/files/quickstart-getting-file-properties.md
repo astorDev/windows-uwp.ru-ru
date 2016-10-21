@@ -1,10 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: "Получение свойств файла"
 description: "Получите свойства&\\#8212;верхнего уровня, базовые и расширенные&\\#8212;для файла, представленного объектом StorageFile."
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 56b83d2f05189b4cbb5bbc015987a4ffce8d86fd
+translationtype: Human Translation
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: 78fdc200b134525fc0445af64e73b184b49ef2a3
 
 ---
 # Получение свойств файла
@@ -20,8 +21,7 @@ ms.openlocfilehash: 56b83d2f05189b4cbb5bbc015987a4ffce8d86fd
 
 Получите свойства — верхнего уровня, базовые и расширенные — для файла, представленного объектом [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
 
-
-            **Примечание.** См. также [пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
+**Примечание.** См. также [пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
  
 
@@ -40,8 +40,7 @@ ms.openlocfilehash: 56b83d2f05189b4cbb5bbc015987a4ffce8d86fd
 
 Доступ ко многим свойствам файла верхнего уровня можно получить как к членам класса [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). К таким свойствам относятся атрибуты файлов, тип содержимого, дата создания, отображаемое имя, тип файла и т. д.
 
-
-            **Примечание.** Не забудьте объявить возможность **picturesLibrary**.
+**Примечание.** Не забудьте объявить возможность **picturesLibrary**.
 
  
 
@@ -80,14 +79,14 @@ foreach (Windows.Storage.StorageFile file in files)
     StringBuilder fileProperties = new StringBuilder();
 
     // Get file's basic properties.
-    Windows.Storage.FileProperties.BasicProperties basicProperties = 
+    Windows.Storage.FileProperties.BasicProperties basicProperties =
         await file.GetBasicPropertiesAsync();
     string fileSize = string.Format("{0:n0}", basicProperties.Size);
     fileProperties.AppendLine("File size: " + fileSize + " bytes");
     fileProperties.AppendLine("Date modified: " + basicProperties.DateModified);
 }
  ```
- 
+
 ## Получение расширенных свойств файла
 
 Помимо свойств верхнего уровня и базовых свойств, существует много свойств, связанных с содержимым файла. Доступ к этим расширенным свойствам можно получить, вызвав метод [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124). (Объект [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) получают, вызывая свойство [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225).) Доступ к свойствам верхнего уровня и базовым свойствам файла можно получить, обратившись к ним как к свойствам класса ([**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) и **BasicProperties** соответственно). Однако расширенные свойства получают, передавая коллекцию [IEnumerable](http://go.microsoft.com/fwlink/p/?LinkID=313091) объектов [String](http://go.microsoft.com/fwlink/p/?LinkID=325032), представляющих имена свойств, которые должны быть получены методом **BasicProperties.RetrievePropertiesAsync**. Затем этот метод возвращает коллекцию [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238). После этого каждое расширенное свойство извлекается из коллекции по имени или индексу.
@@ -113,7 +112,7 @@ foreach (Windows.Storage.StorageFile file in files)
     propertyNames.Add(fileOwnerProperty);
 
     // Get extended properties.
-    IDictionary<string, object> extraProperties = 
+    IDictionary<string, object> extraProperties =
         await file.Properties.RetrievePropertiesAsync(propertyNames);
 
     // Get date-accessed property.
@@ -138,10 +137,6 @@ foreach (Windows.Storage.StorageFile file in files)
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,27 +1,31 @@
 ---
 author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
-description: Use the Python code examples in this section to learn more about using the Windows Store submission API.
-title: Python code examples for the Windows Store submission API
+description: "Используйте примеры кода на языке Python, приведенные в этом разделе, чтобы более подробно ознакомиться с работой API отправки Магазина Windows."
+title: "Примеры кода Python для API отправки Магазина Windows"
+translationtype: Human Translation
+ms.sourcegitcommit: bd8c8cbf6ed10a583d2008e8b01a499b4d400c11
+ms.openlocfilehash: 52fd41ca41628d41140c8c24047e2a50ea72bf40
+
 ---
 
-# Python code examples for the Windows Store submission API
+# Примеры кода Python для API отправки Магазина Windows
 
-This article provides Python code examples for using the *Windows Store submission API*. For more information about this API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+В этой статье представлены примеры кода Python для использования *API отправки Магазина Windows*. Дополнительные сведения об этом API-интерфейсе см. в разделе [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md).
 
-These code examples demonstrate the following tasks:
+В этих примерах кода демонстрируются следующие задачи:
 
-* [Obtain an Azure AD access token](python-code-examples-for-the-windows-store-submission-api.md#token).
-* [Create an add-on](python-code-examples-for-the-windows-store-submission-api.md#create-add-on).
-* [Create a package flight](python-code-examples-for-the-windows-store-submission-api.md#create-package-flight).
-* [Create and commit an app submission](python-code-examples-for-the-windows-store-submission-api.md#create-app-submission).
-* [Create and commit an add-on submission](python-code-examples-for-the-windows-store-submission-api.md#create-add-on-submission).
-* [Create and commit a package flight submission](python-code-examples-for-the-windows-store-submission-api.md#create-flight-submission).
+* [Получение маркера доступа Azure AD](python-code-examples-for-the-windows-store-submission-api.md#token).
+* [Создание надстройки](python-code-examples-for-the-windows-store-submission-api.md#create-add-on).
+* [Создание тестового пакета](python-code-examples-for-the-windows-store-submission-api.md#create-package-flight).
+* [Создание и подтверждение отправки приложения](python-code-examples-for-the-windows-store-submission-api.md#create-app-submission).
+* [Создание и подтверждение отправки надстройки](python-code-examples-for-the-windows-store-submission-api.md#create-add-on-submission).
+* [Создание и подтверждение отправки тестового пакета](python-code-examples-for-the-windows-store-submission-api.md#create-flight-submission).
 
 <span id="token" />
-## Obtain an Azure AD access token
+## Получение токена доступа Azure AD
 
-The following example demonstrates how to [obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token).
+В следующем примере показано, как [получить маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token).
 
 ```python
 import http.client, json
@@ -47,9 +51,9 @@ tokenConnection.close()
 ```
 
 <span id="create-add-on" />
-## Create an add-on
+## Создание надстройки
 
-The following example demonstrates how to [create a new add-on](manage-add-ons.md) (add-ons are also known as in-app products or IAPs).
+В следующем примере показано, как [создать и подтвердить новую надстройку](manage-add-ons.md) (надстройки также известны как внутренние продукты приложений или IAP).
 
 ```python
 import http.client, json
@@ -82,9 +86,9 @@ ingestionConnection.close()
 ```
 
 <span id="create-package-flight" />
-## Create a package flight
+## Создание тестового пакета
 
-The following example demonstrates how to [create a new package flight](manage-flights.md).
+В следующем примере показано, как [создать новый тестовый пакет](manage-flights.md).
 
 ```python
 import http.client, json, requests, time
@@ -121,9 +125,9 @@ ingestionConnection.close()
 ```
 
 <span id="create-app-submission" />
-## Create and commit an app submission
+## Создание и подтверждение отправки приложения
 
-The following example demonstrates how to [create and commit a new app submission](manage-app-submissions.md).
+В следующем примере показано, как [создать и подтвердить новую отправку приложения](manage-app-submissions.md).
 
 ```python
 import http.client, json, requests, time
@@ -204,9 +208,9 @@ ingestionConnection.close()
 ```
 
 <span id="create-add-on-submission" />
-## Create and commit an add-on submission
+## Создание и подтверждение отправки надстройки
 
-The following example demonstrates how to [create and commit a new add-on submission](manage-add-on-submissions.md) (add-ons are also known as in-app products or IAPs).
+В следующем примере показано, как [создать и подтвердить новую отправку надстройки](manage-add-on-submissions.md) (надстройки также известны как внутренние продукты приложений или IAP).
 
 ```python
 import http.client, json, requests, time
@@ -286,9 +290,9 @@ ingestionConnection.close()
 ```
 
 <span id="create-flight-submission" />
-## Create and commit a package flight submission
+## Создание и подтверждение отправки тестового пакета
 
-The following example demonstrates how to [create and commit a new package flight submission](manage-flight-submissions.md).
+В следующем примере показано, как [создать и подтвердить новую отправку тестового пакета](manage-flight-submissions.md).
 
 ```python
 import http.client, json, requests, time, zipfile
@@ -369,6 +373,12 @@ print(submissionJsonObject)
 ingestionConnection.close()
 ```
 
-## Related topics
+## Связанные статьи
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

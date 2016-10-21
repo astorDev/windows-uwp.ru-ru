@@ -4,8 +4,8 @@ Description: "Магазин Windows предлагает выставление
 title: "Биллинг мобильного оператора"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: 80a20f4f87ce2ef40ce4ff7c6551d74ac375da1c
-ms.openlocfilehash: bd70a3c5990909351f04ca4200f4ea522989d1e9
+ms.sourcegitcommit: 3afac16fb79262dd6a75cd44804747d173e60edf
+ms.openlocfilehash: 114783cb93d1d49eb1b2cd0d5218a35318a02df0
 
 ---
 
@@ -14,8 +14,7 @@ ms.openlocfilehash: bd70a3c5990909351f04ca4200f4ea522989d1e9
 
 Магазин Windows предлагает выставление счетов оператором мобильной связи в качестве метода оплаты для операторов мобильной связи, которые поддерживают эту возможность. Если оператор мобильной связи клиента поддерживает эту возможность, клиент может осуществлять приобретения в Магазине с помощью своей мобильной учетной записи.
 
-> 
-            **Примечание.** Если мобильный оператор клиента предлагает выставление счетов мобильным оператором, но клиент не видит этот параметр на своем устройстве, ознакомьтесь с этими [действиями по устранению неполадок](http://go.microsoft.com/fwlink/p/?LinkId=523993).
+> **Примечание.** Если мобильный оператор клиента предлагает выставление счетов мобильным оператором, но клиент не видит этот параметр на своем устройстве, ознакомьтесь с этими [действиями по устранению неполадок](http://go.microsoft.com/fwlink/p/?LinkId=523993).
 
  
 
@@ -28,14 +27,16 @@ ms.openlocfilehash: bd70a3c5990909351f04ca4200f4ea522989d1e9
 
 Реализация Windows 10 выставления счетов оператором мобильной связи в настоящее время поддерживается перечисленными ниже операторами мобильной связи.
 
-| Страна или регион | Операторы мобильной связи |
-|----------------|------------------|
-| Финляндия        | DNA, Elisa       |
-| Германия        | O2               |
-| Италия          | Wind             |
-| Норвегия         | Telenor          |
-| Швейцария    | Swisscom         |
-| США  | Sprint           |
+| Страна или регион  | Мобильные операторы |
+|-----------------|------------------|
+| Финляндия         | DNA, Elisa       |
+| Германия         | O2               |
+| Венгрия         | Telenor          |
+| Италия           | Wind             |
+| Норвегия          | Telenor          |
+| Швейцария     | Swisscom         |
+| Соединенные Штаты Америки   | Sprint           |
+| Великобритания  | O2               |
 
  
 
@@ -51,10 +52,10 @@ ms.openlocfilehash: bd70a3c5990909351f04ca4200f4ea522989d1e9
 | Австралия            | Telstra                                                            |
 | Австрия              | A1 Telekom, T-Mobile                                               |
 | Бахрейн              | Zain, VIVA                                                         |
-| Бельгия              | BASE, Mobistar, Proximus                                                     |
+| Бельгия              | BASE, Mobistar, Proximus                                           |
 | Бразилия               | Claro                                                              |
 | Болгария             | Telenor                                                            |
-| Канада               | Fido, Rogers, Telus                                                |
+| Канада               | Fido, Rogers                                                       |
 | Чили                | Claro                                                              |
 | Китай                | China Mobile                                                       |
 | Колумбия             | Claro, Movistar                                                    |
@@ -71,26 +72,25 @@ ms.openlocfilehash: bd70a3c5990909351f04ca4200f4ea522989d1e9
 | Гватемала            | Claro                                                              |
 | Венгрия              | Telenor, T-Mobile                                                  |
 | Индия                | Idea                                                               |
-| Индонезия            | Indosat, Telkomsel, XL Axiata, AXIS                                |
-| Ирландия              | O2, Vodafone, Three                                                      |
+| Индонезия            | Indosat, Telkomsel, XL Axiata, Hutchinson CP Telecommunications (HCPT)     |
+| Ирландия              | O2, Vodafone, Three                                                |
 | Италия                | Telecom Italia, Vodafone, Wind, 3 Italia                           |
 | Иордания               | Zain, Umniah                                                       |
 | Кения                | Safaricom                                                          |
-| Кувейт               | Zain, Viva                                                         |
+| Кувейт               | Zain, Viva, Ooredoo                                                |
 | Латвия               | Tele2                                                              |
 | Литва            | Tele2                                                              |
 | Малайзия             | DiGi                                                               |
-| Мексика               | Iusacell, Telcel, Unefon, Movistar                                 |
+| Мексика               | Iusacell, Telcel, Movistar                                         |
 | Нидерланды          | T-Mobile, Vodafone                                                 |
 | Норвегия               | Telenor                                                            |
 | Оман                 | Ooredoo                                                            |
 | Пакистан             | Telenor                                                            |
 | Перу                 | Claro                                                              |
-| Филиппины          | Земной шар, Вс                                                         |
-| Польша               | T-Mobile, Orange, Polkomtel (Plus)                                 |
-| Пуэрто-Рико          | Claro                                                              |
+| Филиппины          | Globe, Sun, Smart Communications                                   |
+| Польша               | T-Mobile, Orange, Polkomtel (Plus), Play                           |
 | Румыния              | Orange, Vodafone                                                   |
-| Россия               | Билайн, МТС                                                          |
+| Россия               | Билайн, МТС                                                       |
 | Саудовская Аравия         | Zain                                                               |
 | Сингапур            | M1, SingTel, StarHub                                               |
 | Словакия             | T-Mobile                                                           |
@@ -99,7 +99,6 @@ ms.openlocfilehash: bd70a3c5990909351f04ca4200f4ea522989d1e9
 | Испания                | Movistar, Vodafone, Orange                                         |
 | Швеция               | Telenor, Tele2                                                     |
 | Швейцария          | Swisscom                                                           |
-| Таиланд             | DTAC                                                               |
 | Объединенные Арабские Эмираты | Etisalat, Du                                                       |
 | Великобритания       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
 | США        | AT&T, Sprint, T-Mobile, Verizon                                    |
@@ -119,6 +118,6 @@ ms.openlocfilehash: bd70a3c5990909351f04ca4200f4ea522989d1e9
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO2-->
 
 

@@ -1,10 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: "Доступ к содержимому домашней группы"
 description: "Получайте доступ к содержимому в папке домашней группы пользователя, включая изображения, музыку и видео."
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
+translationtype: Human Translation
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
 ---
 # Доступ к содержимому домашней группы
@@ -28,8 +29,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
     Для получения доступа к содержимому домашней группы на компьютере пользователя должна быть настроена домашняя группа, а ваше приложение должно поддерживать по крайней мере одну из следующих возможностей: **picturesLibrary**, **musicLibrary** или **videosLibrary**. Получив доступ к папке домашней группы, ваше приложение будет видеть только те библиотеки, которые соответствуют характеристикам, объявленным в манифесте приложения. Дополнительную информацию см. в разделе [Разрешения на доступ к файлам](file-access-permissions.md).
 
-    
-            **Примечание.** Содержимое библиотеки документов домашней группы невидимо для вашего приложения независимо от характеристик, объявленных в манифесте, и настроек общего доступа пользователя.
+    **Примечание.** Содержимое библиотеки документов домашней группы невидимо для вашего приложения независимо от характеристик, объявленных в манифесте, и настроек общего доступа пользователя.
 
      
 
@@ -57,7 +57,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
     picker.FileTypeFilter.Clear();
     picker.FileTypeFilter.Add("*");
     ```
-  
+
 2.  **Отобразите средство выбора файлов и обработайте выбранный файл.**
 
     После создания и настройки средства выбора файлов пользователь может выбрать один файл, вызвав [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275), или несколько файлов, вызвав [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851).
@@ -93,11 +93,11 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
     Этот пример задает параметры запроса, которые сортируют результаты поиска по релевантности, а затем по дате изменения. Фильтр поиска — это термин запроса, который пользователь ввел на предыдущем этапе:
     ```csharp
-    Windows.Storage.Search.QueryOptions queryOptions = 
+    Windows.Storage.Search.QueryOptions queryOptions =
             new Windows.Storage.Search.QueryOptions
                 (Windows.Storage.Search.CommonFileQuery.OrderBySearchRank, null);
     queryOptions.UserSearchFilter = queryTerm.Text;
-    Windows.Storage.Search.StorageFileQueryResult queryResults = 
+    Windows.Storage.Search.StorageFileQueryResult queryResults =
             Windows.Storage.KnownFolders.HomeGroup.CreateFileQueryWithOptions(queryOptions);    
     ```
 
@@ -105,7 +105,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
     Следующий пример запускает запрос поиска в домашней группе и сохраняет имена всех соответствующих файлов в виде списка строк.
     ```csharp
-    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFile> files = 
+    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFile> files =
         await queryResults.GetFilesAsync();
 
     if (files.Count > 0)
@@ -127,7 +127,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
     Каждая из папок первого уровня в домашней группе представляет отдельного пользователя домашней группы. Поэтому, чтобы получить коллекцию пользователей домашней группы, вызовите [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) и получите папки домашней группы верхнего уровня.
     ```csharp
-    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders = 
+    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders =
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
     ```
 
@@ -142,7 +142,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
         {
             // Found the target user's folder, now find all files in the folder.
             userFound = true;
-            Windows.Storage.Search.QueryOptions queryOptions = 
+            Windows.Storage.Search.QueryOptions queryOptions =
                 new Windows.Storage.Search.QueryOptions
                     (Windows.Storage.Search.CommonFileQuery.OrderBySearchRank, null);
             queryOptions.UserSearchFilter = "*";
@@ -190,11 +190,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  
-            **Откройте доступ на чтение для файла, выбранного пользователем, и задайте поток файла в качестве источника для**
-            [
-              **MediaElement**
-            ](https://msdn.microsoft.com/library/windows/apps/br242926), а затем воспроизведите файл.
+3.  **Откройте доступ на чтение для файла, выбранного пользователем, и задайте поток файла в качестве источника для** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), а затем воспроизведите файл.
     ```csharp
     if (file != null)
     {
@@ -215,10 +211,6 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

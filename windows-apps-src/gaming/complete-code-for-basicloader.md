@@ -3,8 +3,9 @@ author: mtoepke
 title: "Полный код для BasicLoader"
 description: "Полный код класса и методов для преобразования и загрузки общих графических ресурсов, таких как сетки, текстуры и различные объекты шейдера."
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
+translationtype: Human Translation
 ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: 355e5a65a16e5e2df9bb039383f68dda16ff23a2
+ms.openlocfilehash: ab16033c05273a0cd483fdc7a5302a3ff461e4b1
 
 ---
 
@@ -29,17 +30,13 @@ ms.openlocfilehash: 355e5a65a16e5e2df9bb039383f68dda16ff23a2
 
 ## Технологии
 
-
-            **Языки программирования** — C++  
-
-            **Модели программирования** — среда выполнения Windows
+**Языки программирования** — C++  
+**Модели программирования** — среда выполнения Windows
 
 ## Требования
 
-
-            **Минимальная версия клиента** — Windows 10                              
-
-            **Минимальная версия сервера** — Windows Server 2016 Technical Preview 
+**Минимальная версия клиента** — Windows 10                              
+**Минимальная версия сервера** — Windows Server 2016 Technical Preview 
 
 
 ## Просмотреть код (C++)
@@ -1114,6 +1111,6 @@ task<void> BasicLoader::LoadMeshAsync(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

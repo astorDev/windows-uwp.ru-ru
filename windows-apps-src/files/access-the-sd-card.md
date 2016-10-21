@@ -1,10 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: "Доступ к SD-карте"
 description: "Не очень важные данные можно хранить на дополнительной карте microSD и там же осуществлять доступ к ним, это особенно актуально на недорогих мобильных устройствах с ограниченным объемом внутренней памяти."
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c515d36c76a8363861a72cb58229ff857e1bb2b8
+translationtype: Human Translation
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: c3ce9103f78a78e95214239e41a302ccd0e59796
 
 ---
 # Доступ к SD-карте
@@ -147,10 +148,6 @@ using Windows.Storage;
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
