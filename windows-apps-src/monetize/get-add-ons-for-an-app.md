@@ -113,7 +113,7 @@ Authorization: Bearer <your access token>
 | Код ошибки |  Описание   |
 |--------|------------------|
 | 404  | Надстройки не найдены. |
-| 419  | Надстройки используют функции информационной панели Центра разработки, которые [в настоящее время не поддерживаются API отправки Магазина Windows](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | Надстройки используют функции информационной панели Центра разработки, которые [в настоящее время не поддерживаются API отправки Магазина Windows](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 <span/>
 
