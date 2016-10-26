@@ -1,10 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: "Отслеживание недавно использовавшихся файлов и папок"
 description: "Отслеживайте файлы, к которым часто обращается пользователь, добавляя их в список недавно использованных файлов (MRU)."
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
+translationtype: Human Translation
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
 
 ---
 # Отслеживание недавно использовавшихся файлов и папок
@@ -21,8 +22,7 @@ ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
 
 Список MRU вашего приложения представлен классом [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475), полученным из статического свойства [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458). Элементы MRU хранятся в виде объектов [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129). Поэтому в список можно добавлять и объекты [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (то есть файлы), и объекты [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) (то есть папки).
 
-
-            **Примечание.** См. также [пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994) и [пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
+**Примечание.** См. также [пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994) и [пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
  
 
@@ -46,20 +46,16 @@ ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
 
     ```CSharp
     ...
-    
+
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
 
     var mru = Windows.Storage.AccessCache.StorageApplicationPermissions.MostRecentlyUsedList;
     string mruToken = mru.Add(file, "profile pic");
     ```
-    
-    
-            [
-              **StorageItemMostRecentlyUsedList.Add**
-            ](https://msdn.microsoft.com/library/windows/apps/br207476) перегружается. В примере используется [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481), поэтому можно сопоставить метаданные с файлом. Указание метаданных позволяет записать назначение элемента, например "изображение профиля". Кроме того, вы можете добавить файл в список MRU и без метаданных, вызвав метод [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). При добавлении элемента в список MRU метод возвращает уникальную идентификационную строку, так называемый маркер, который используется для извлечения элемента.
 
-    
-            **Подсказка.** Чтобы извлечь элемент из списка MRU, вам потребуется маркер, поэтому сохраните его. Подробные сведения о данных приложения см. в статье [Управление данными приложения](https://msdn.microsoft.com/library/windows/apps/hh465109).
+    [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) перегружается. В примере используется [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481), поэтому можно сопоставить метаданные с файлом. Указание метаданных позволяет записать назначение элемента, например "изображение профиля". Кроме того, вы можете добавить файл в список MRU и без метаданных, вызвав метод [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). При добавлении элемента в список MRU метод возвращает уникальную идентификационную строку, так называемый маркер, который используется для извлечения элемента.
+
+    **Совет.** Чтобы извлечь элемент из списка MRU, вам потребуется маркер, поэтому сохраните его. Подробные сведения о данных приложения см. в статье [Управление данными приложения](https://msdn.microsoft.com/library/windows/apps/hh465109).
 
      
 
@@ -110,10 +106,6 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
