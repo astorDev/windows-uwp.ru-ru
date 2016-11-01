@@ -1,47 +1,29 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\controls-and-patterns\listview-and-gridview.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/8f9d85f0cb15c9fe4ceec9c397e23a134a442d3f?path=windows-apps-src%2Fcontrols-and-patterns%2Flistview-and-gridview.md&_a=contents) | HandedOffSuccess | [Details](#8a14fa69089f6d796a803c1c1ff9bb678af3c9133163)
- [windows-apps-src\input-and-devices\keyboard-interactions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/667228e10456ffbc64b7d0782d5a8bdc02f2f203?path=windows-apps-src%2Finput-and-devices%2Fkeyboard-interactions.md&_a=contents) | HandedOffSuccess | [Details](#5ab84def6e73329f59d8ae6ef8be335d66ef43344644)
+ [windows-apps-src\xaml-platform\binding-markup-extension.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3ad7dd8261ceb549de6bd9a5ae513e6f6fdb8d49?path=windows-apps-src%2Fxaml-platform%2Fbinding-markup-extension.md&_a=contents) | HandedOffSuccess | [Details](#a6431aed9941079bd05c623229f4ae3236a1b3278421)
 
 ## Item Details
-##### <a name='8a14fa69089f6d796a803c1c1ff9bb678af3c9133163'></a> Source: [windows-apps-src\controls-and-patterns\listview-and-gridview.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/8f9d85f0cb15c9fe4ceec9c397e23a134a442d3f?path=windows-apps-src%2Fcontrols-and-patterns%2Flistview-and-gridview.md&_a=contents)
+##### <a name='a6431aed9941079bd05c623229f4ae3236a1b3278421'></a> Source: [windows-apps-src\xaml-platform\binding-markup-extension.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3ad7dd8261ceb549de6bd9a5ae513e6f6fdb8d49?path=windows-apps-src%2Fxaml-platform%2Fbinding-markup-extension.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [listview-and-gridview.7757d74397dd2eae577ac2003eeb27120b54f483.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/84dabeb31fd421c959773672da781428dbc1093c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Flistview-and-gridview.7757d74397dd2eae577ac2003eeb27120b54f483.ru-ru.xlf&_a=contents)
-* Handoff Datetime: 2016-11-01 21:04:06
+* Handoff File: [binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/b6cb29e62d926d115238792a3371eff0526833ec?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fbinding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2016-11-01 23:06:24
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\controls-and-patterns\listview-and-gridview.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Fcontrols-and-patterns%2Flistview-and-gridview.md&_a=contents)
-* Current Handback File: [listview-and-gridview.7757d74397dd2eae577ac2003eeb27120b54f483.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Flistview-and-gridview.7757d74397dd2eae577ac2003eeb27120b54f483.ru-ru.xlf&_a=contents)
+* Current Target File: [windows-apps-src\xaml-platform\binding-markup-extension.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Fxaml-platform%2Fbinding-markup-extension.md&_a=contents)
+* Current Handback File: [binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fbinding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ru-ru.xlf&_a=contents)
 * Current Handback Datetime: 2016-10-21 15:49:51
-* Bilingual File: [listview-and-gridview.7757d74397dd2eae577ac2003eeb27120b54f483.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Flistview-and-gridview.7757d74397dd2eae577ac2003eeb27120b54f483.ru-ru.xlf&_a=contents)
+* Bilingual File: [binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fbinding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ru-ru.xlf&_a=contents)
 * Bilingual Datetime: 2016-10-24 15:47:43
-* [Back to Top](#report-top)
-
-##### <a name='5ab84def6e73329f59d8ae6ef8be335d66ef43344644'></a> Source: [windows-apps-src\input-and-devices\keyboard-interactions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/667228e10456ffbc64b7d0782d5a8bdc02f2f203?path=windows-apps-src%2Finput-and-devices%2Fkeyboard-interactions.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [keyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/84dabeb31fd421c959773672da781428dbc1093c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fkeyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.ru-ru.xlf&_a=contents)
-* Handoff Datetime: 2016-11-01 21:04:06
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\input-and-devices\keyboard-interactions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/37078e140af4614762ed5a02264a03e08731293e?path=windows-apps-src%2Finput-and-devices%2Fkeyboard-interactions.md&_a=contents)
-* Current Handback File: [keyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/aceea397bec7837e796fa6c71709869d54341d84?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fkeyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.ru-ru.xlf&_a=contents)
-* Current Handback Datetime: 2016-09-26 13:02:59
-* Bilingual File: [keyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/aceea397bec7837e796fa6c71709869d54341d84?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fkeyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.ru-ru.xlf&_a=contents)
-* Bilingual Datetime: 2016-10-18 13:34:37
 * [Back to Top](#report-top)
 
 
