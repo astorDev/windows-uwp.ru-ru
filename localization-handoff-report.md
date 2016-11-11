@@ -6,23 +6,23 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0be48e7825a28a416df93161b2ad11fb967945fb?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents) | HandedOffSuccess | [Details](#dc8b4ee0048c7c9ac3dfe019aab48f50382558e13978)
+ [windows-apps-src\graphics\animations-overview.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2a08d1def7c4d2fde0ae08eb26076526058e8aae?path=windows-apps-src%2Fgraphics%2Fanimations-overview.md&_a=contents) | HandedOffSuccess | [Details](#e3e21c55ea8ddeab0969e304080394b940da010d4286)
 
 ## Item Details
-##### <a name='dc8b4ee0048c7c9ac3dfe019aab48f50382558e13978'></a> Source: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0be48e7825a28a416df93161b2ad11fb967945fb?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
+##### <a name='e3e21c55ea8ddeab0969e304080394b940da010d4286'></a> Source: [windows-apps-src\graphics\animations-overview.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2a08d1def7c4d2fde0ae08eb26076526058e8aae?path=windows-apps-src%2Fgraphics%2Fanimations-overview.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/e897afd3f0a1cc55da75faa32fde9786c26355f9?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf&_a=contents)
-* Handoff Datetime: 2016-11-11 18:08:51
+* Handoff File: [animations-overview.8197a9a05a89d0ee53785570dab956f1fd01116a.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/cbdc72b27db88560913b7a965eaca333987d7fa1?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fanimations-overview.8197a9a05a89d0ee53785570dab956f1fd01116a.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2016-11-11 21:37:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
-* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf&_a=contents)
+* Current Target File: [windows-apps-src\graphics\animations-overview.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Fgraphics%2Fanimations-overview.md&_a=contents)
+* Current Handback File: [animations-overview.8197a9a05a89d0ee53785570dab956f1fd01116a.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fanimations-overview.8197a9a05a89d0ee53785570dab956f1fd01116a.ru-ru.xlf&_a=contents)
 * Current Handback Datetime: 2016-10-21 15:49:51
-* Bilingual File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf&_a=contents)
+* Bilingual File: [animations-overview.8197a9a05a89d0ee53785570dab956f1fd01116a.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fanimations-overview.8197a9a05a89d0ee53785570dab956f1fd01116a.ru-ru.xlf&_a=contents)
 * Bilingual Datetime: 2016-10-24 15:47:43
 * [Back to Top](#report-top)
 
