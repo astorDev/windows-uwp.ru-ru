@@ -1,83 +1,155 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 4
+ Total Files | 8
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ec316d08bffc6b9c5829f831b66c8a5e4dabb86f?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents) | HandedOffSuccess | [Details](#90c7fe1a31586f5aa39e61b584a258b1bbed3a503987)
- [windows-apps-src\security\intro-to-secure-windows-app-development.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a70a59283fe664bef9ddab56df57a9fc46c91033?path=windows-apps-src%2Fsecurity%2Fintro-to-secure-windows-app-development.md&_a=contents) | HandedOffSuccess | [Details](#2ac9edf074ceb91d5cfea17228f0a39fef200b745604)
- [windows-apps-src\security\microsoft-passport-login.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a70a59283fe664bef9ddab56df57a9fc46c91033?path=windows-apps-src%2Fsecurity%2Fmicrosoft-passport-login.md&_a=contents) | HandedOffSuccess | [Details](#04311e9c3242bdaf6588c8102a06ae658e6637e25607)
- [windows-apps-src\security\microsoft-passport-login-auth-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a70a59283fe664bef9ddab56df57a9fc46c91033?path=windows-apps-src%2Fsecurity%2Fmicrosoft-passport-login-auth-service.md&_a=contents) | HandedOffSuccess | [Details](#d02c2029121927192430ce030684200de16564185606)
+ [windows-apps-src\audio-video-camera\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/77f47bce2a4be3f7c5ee3d320ff6c68e8c7ce6b0?path=windows-apps-src%2Faudio-video-camera%2Findex.md&_a=contents) | HandedOffSuccess | [Details](#d1aad0800bfe4982a316aa5da719db005b687fa11641)
+ [windows-apps-src\launch-resume\register-a-background-task.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2f46f5cd26656b2d6b7d14c0d85aa7a0a6950fb8?path=windows-apps-src%2Flaunch-resume%2Fregister-a-background-task.md&_a=contents) | HandedOffSuccess | [Details](#809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca4779)
+ [windows-apps-src\monetize\get-app-acquisitions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7d05c8953f1f50be0b388a044fe996f345d45006?path=windows-apps-src%2Fmonetize%2Fget-app-acquisitions.md&_a=contents) | HandedOffSuccess | [Details](#b82136348936d436a374cfef42d5e349ed0d0f365146)
+ [windows-apps-src\monetize\get-app-ratings.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7d05c8953f1f50be0b388a044fe996f345d45006?path=windows-apps-src%2Fmonetize%2Fget-app-ratings.md&_a=contents) | HandedOffSuccess | [Details](#86685984256459e0bb125340daa1616b099824295149)
+ [windows-apps-src\monetize\get-app-reviews.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7d05c8953f1f50be0b388a044fe996f345d45006?path=windows-apps-src%2Fmonetize%2Fget-app-reviews.md&_a=contents) | HandedOffSuccess | [Details](#49d3f3cb608f3207306af443c67b684a0ae9f3195150)
+ [windows-apps-src\monetize\get-error-reporting-data.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7d05c8953f1f50be0b388a044fe996f345d45006?path=windows-apps-src%2Fmonetize%2Fget-error-reporting-data.md&_a=contents) | HandedOffSuccess | [Details](#37f332806d0efbf3df3040a6fa718e0b75bc8a3f5151)
+ [windows-apps-src\monetize\get-in-app-acquisitions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7d05c8953f1f50be0b388a044fe996f345d45006?path=windows-apps-src%2Fmonetize%2Fget-in-app-acquisitions.md&_a=contents) | HandedOffSuccess | [Details](#a79cd324d57151318445df0dedd35a98d9c9f9155153)
+ [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/77f47bce2a4be3f7c5ee3d320ff6c68e8c7ce6b0?path=windows-apps-src%2FTOC.md&_a=contents) | HandedOffSuccess | [Details](#215c37464f0105c7ea8eae1e6df7c0f8c9a376178407)
 
 ## Item Details
-##### <a name='90c7fe1a31586f5aa39e61b584a258b1bbed3a503987'></a> Source: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ec316d08bffc6b9c5829f831b66c8a5e4dabb86f?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
+##### <a name='d1aad0800bfe4982a316aa5da719db005b687fa11641'></a> Source: [windows-apps-src\audio-video-camera\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/77f47bce2a4be3f7c5ee3d320ff6c68e8c7ce6b0?path=windows-apps-src%2Faudio-video-camera%2Findex.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/36722e09d0c006d70a273f14a5342f9bace7175c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf&_a=contents)
-* Handoff Datetime: 2016-11-21 20:50:40
+* Handoff File: [index.1af33ca226923082600a63b53881b7dd68963b62.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/6518f3fd1cb0ebe3b142adfca790ed5a9e0367c2?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Findex.1af33ca226923082600a63b53881b7dd68963b62.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2016-11-22 00:49:23
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
-* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf&_a=contents)
+* Current Target File: [windows-apps-src\audio-video-camera\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Faudio-video-camera%2Findex.md&_a=contents)
+* Current Handback File: [index.1af33ca226923082600a63b53881b7dd68963b62.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Findex.1af33ca226923082600a63b53881b7dd68963b62.ru-ru.xlf&_a=contents)
 * Current Handback Datetime: 2016-10-21 15:49:51
-* Bilingual File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ru-ru.xlf&_a=contents)
+* Bilingual File: [index.1af33ca226923082600a63b53881b7dd68963b62.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Findex.1af33ca226923082600a63b53881b7dd68963b62.ru-ru.xlf&_a=contents)
 * Bilingual Datetime: 2016-10-24 15:47:43
 * [Back to Top](#report-top)
 
-##### <a name='2ac9edf074ceb91d5cfea17228f0a39fef200b745604'></a> Source: [windows-apps-src\security\intro-to-secure-windows-app-development.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a70a59283fe664bef9ddab56df57a9fc46c91033?path=windows-apps-src%2Fsecurity%2Fintro-to-secure-windows-app-development.md&_a=contents)
+##### <a name='809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca4779'></a> Source: [windows-apps-src\launch-resume\register-a-background-task.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2f46f5cd26656b2d6b7d14c0d85aa7a0a6950fb8?path=windows-apps-src%2Flaunch-resume%2Fregister-a-background-task.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [intro-to-secure-windows-app-development.2fe2c6dd4ed60ea75b1c7cbdf2040625baa52ddc.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/36722e09d0c006d70a273f14a5342f9bace7175c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fintro-to-secure-windows-app-development.2fe2c6dd4ed60ea75b1c7cbdf2040625baa52ddc.ru-ru.xlf&_a=contents)
-* Handoff Datetime: 2016-11-21 20:50:40
+* Handoff File: [register-a-background-task.de6ecd8dcd89a719c4112c7a9b18a165526ef916.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/6518f3fd1cb0ebe3b142adfca790ed5a9e0367c2?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fregister-a-background-task.de6ecd8dcd89a719c4112c7a9b18a165526ef916.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2016-11-22 00:49:23
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\security\intro-to-secure-windows-app-development.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/37078e140af4614762ed5a02264a03e08731293e?path=windows-apps-src%2Fsecurity%2Fintro-to-secure-windows-app-development.md&_a=contents)
-* Current Handback File: [intro-to-secure-windows-app-development.2fe2c6dd4ed60ea75b1c7cbdf2040625baa52ddc.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/aceea397bec7837e796fa6c71709869d54341d84?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fintro-to-secure-windows-app-development.2fe2c6dd4ed60ea75b1c7cbdf2040625baa52ddc.ru-ru.xlf&_a=contents)
-* Current Handback Datetime: 2016-09-26 13:02:59
-* Bilingual File: [intro-to-secure-windows-app-development.2fe2c6dd4ed60ea75b1c7cbdf2040625baa52ddc.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/aceea397bec7837e796fa6c71709869d54341d84?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fintro-to-secure-windows-app-development.2fe2c6dd4ed60ea75b1c7cbdf2040625baa52ddc.ru-ru.xlf&_a=contents)
+* Current Target File: [windows-apps-src\launch-resume\register-a-background-task.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Flaunch-resume%2Fregister-a-background-task.md&_a=contents)
+* Current Handback File: [register-a-background-task.de6ecd8dcd89a719c4112c7a9b18a165526ef916.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fregister-a-background-task.de6ecd8dcd89a719c4112c7a9b18a165526ef916.ru-ru.xlf&_a=contents)
+* Current Handback Datetime: 2016-10-21 15:49:51
+* Bilingual File: [register-a-background-task.de6ecd8dcd89a719c4112c7a9b18a165526ef916.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fregister-a-background-task.de6ecd8dcd89a719c4112c7a9b18a165526ef916.ru-ru.xlf&_a=contents)
+* Bilingual Datetime: 2016-10-24 15:47:43
+* [Back to Top](#report-top)
+
+##### <a name='b82136348936d436a374cfef42d5e349ed0d0f365146'></a> Source: [windows-apps-src\monetize\get-app-acquisitions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7d05c8953f1f50be0b388a044fe996f345d45006?path=windows-apps-src%2Fmonetize%2Fget-app-acquisitions.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [get-app-acquisitions.f14b6d2a411a11089761ab93454ca2bd46c9fee7.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/6518f3fd1cb0ebe3b142adfca790ed5a9e0367c2?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fget-app-acquisitions.f14b6d2a411a11089761ab93454ca2bd46c9fee7.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2016-11-22 00:49:23
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\monetize\get-app-acquisitions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Fmonetize%2Fget-app-acquisitions.md&_a=contents)
+* Current Handback File: [get-app-acquisitions.f14b6d2a411a11089761ab93454ca2bd46c9fee7.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fget-app-acquisitions.f14b6d2a411a11089761ab93454ca2bd46c9fee7.ru-ru.xlf&_a=contents)
+* Current Handback Datetime: 2016-10-21 15:49:51
+* Bilingual File: [get-app-acquisitions.f14b6d2a411a11089761ab93454ca2bd46c9fee7.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fget-app-acquisitions.f14b6d2a411a11089761ab93454ca2bd46c9fee7.ru-ru.xlf&_a=contents)
+* Bilingual Datetime: 2016-10-24 15:47:43
+* [Back to Top](#report-top)
+
+##### <a name='86685984256459e0bb125340daa1616b099824295149'></a> Source: [windows-apps-src\monetize\get-app-ratings.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7d05c8953f1f50be0b388a044fe996f345d45006?path=windows-apps-src%2Fmonetize%2Fget-app-ratings.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [get-app-ratings.6d54049db0a56dc7967b6a7d76fb6de1ca1034a1.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/6518f3fd1cb0ebe3b142adfca790ed5a9e0367c2?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fget-app-ratings.6d54049db0a56dc7967b6a7d76fb6de1ca1034a1.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2016-11-22 00:49:23
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\monetize\get-app-ratings.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Fmonetize%2Fget-app-ratings.md&_a=contents)
+* Current Handback File: [get-app-ratings.6d54049db0a56dc7967b6a7d76fb6de1ca1034a1.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fget-app-ratings.6d54049db0a56dc7967b6a7d76fb6de1ca1034a1.ru-ru.xlf&_a=contents)
+* Current Handback Datetime: 2016-10-21 15:49:51
+* Bilingual File: [get-app-ratings.6d54049db0a56dc7967b6a7d76fb6de1ca1034a1.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fget-app-ratings.6d54049db0a56dc7967b6a7d76fb6de1ca1034a1.ru-ru.xlf&_a=contents)
+* Bilingual Datetime: 2016-10-24 15:47:43
+* [Back to Top](#report-top)
+
+##### <a name='49d3f3cb608f3207306af443c67b684a0ae9f3195150'></a> Source: [windows-apps-src\monetize\get-app-reviews.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7d05c8953f1f50be0b388a044fe996f345d45006?path=windows-apps-src%2Fmonetize%2Fget-app-reviews.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [get-app-reviews.aa07f186e9d0e663a6f8e9963ebc5a00c31a4b37.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/6518f3fd1cb0ebe3b142adfca790ed5a9e0367c2?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fget-app-reviews.aa07f186e9d0e663a6f8e9963ebc5a00c31a4b37.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2016-11-22 00:49:23
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\monetize\get-app-reviews.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Fmonetize%2Fget-app-reviews.md&_a=contents)
+* Current Handback File: [get-app-reviews.aa07f186e9d0e663a6f8e9963ebc5a00c31a4b37.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fget-app-reviews.aa07f186e9d0e663a6f8e9963ebc5a00c31a4b37.ru-ru.xlf&_a=contents)
+* Current Handback Datetime: 2016-10-21 15:49:51
+* Bilingual File: [get-app-reviews.aa07f186e9d0e663a6f8e9963ebc5a00c31a4b37.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fget-app-reviews.aa07f186e9d0e663a6f8e9963ebc5a00c31a4b37.ru-ru.xlf&_a=contents)
+* Bilingual Datetime: 2016-10-24 15:47:43
+* [Back to Top](#report-top)
+
+##### <a name='37f332806d0efbf3df3040a6fa718e0b75bc8a3f5151'></a> Source: [windows-apps-src\monetize\get-error-reporting-data.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7d05c8953f1f50be0b388a044fe996f345d45006?path=windows-apps-src%2Fmonetize%2Fget-error-reporting-data.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [get-error-reporting-data.63a456478a0dce2251d9adb48f2372706ef3aaeb.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/6518f3fd1cb0ebe3b142adfca790ed5a9e0367c2?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fget-error-reporting-data.63a456478a0dce2251d9adb48f2372706ef3aaeb.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2016-11-22 00:49:23
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\monetize\get-error-reporting-data.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Fmonetize%2Fget-error-reporting-data.md&_a=contents)
+* Current Handback File: [get-error-reporting-data.63a456478a0dce2251d9adb48f2372706ef3aaeb.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fget-error-reporting-data.63a456478a0dce2251d9adb48f2372706ef3aaeb.ru-ru.xlf&_a=contents)
+* Current Handback Datetime: 2016-10-21 15:49:51
+* Bilingual File: [get-error-reporting-data.63a456478a0dce2251d9adb48f2372706ef3aaeb.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fget-error-reporting-data.63a456478a0dce2251d9adb48f2372706ef3aaeb.ru-ru.xlf&_a=contents)
+* Bilingual Datetime: 2016-10-24 15:47:43
+* [Back to Top](#report-top)
+
+##### <a name='a79cd324d57151318445df0dedd35a98d9c9f9155153'></a> Source: [windows-apps-src\monetize\get-in-app-acquisitions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7d05c8953f1f50be0b388a044fe996f345d45006?path=windows-apps-src%2Fmonetize%2Fget-in-app-acquisitions.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [get-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/6518f3fd1cb0ebe3b142adfca790ed5a9e0367c2?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fget-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2016-11-22 00:49:23
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\monetize\get-in-app-acquisitions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Fmonetize%2Fget-in-app-acquisitions.md&_a=contents)
+* Current Handback File: [get-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fget-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.ru-ru.xlf&_a=contents)
+* Current Handback Datetime: 2016-10-21 15:49:51
+* Bilingual File: [get-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fget-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.ru-ru.xlf&_a=contents)
+* Bilingual Datetime: 2016-10-24 15:47:43
+* [Back to Top](#report-top)
+
+##### <a name='215c37464f0105c7ea8eae1e6df7c0f8c9a376178407'></a> Source: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/77f47bce2a4be3f7c5ee3d320ff6c68e8c7ce6b0?path=windows-apps-src%2FTOC.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/6518f3fd1cb0ebe3b142adfca790ed5a9e0367c2?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2016-11-22 00:49:23
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/7f30aa9acbb8aadbdbf23ff10955422c33617266?path=windows-apps-src%2FTOC.md&_a=contents)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/2125f89e1a722fa59113b2328eb089658740f75f?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf&_a=contents)
+* Current Handback Datetime: 2016-09-22 15:23:15
+* Bilingual File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/2125f89e1a722fa59113b2328eb089658740f75f?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ru-ru.xlf&_a=contents)
 * Bilingual Datetime: 2016-10-18 13:34:37
-* [Back to Top](#report-top)
-
-##### <a name='04311e9c3242bdaf6588c8102a06ae658e6637e25607'></a> Source: [windows-apps-src\security\microsoft-passport-login.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a70a59283fe664bef9ddab56df57a9fc46c91033?path=windows-apps-src%2Fsecurity%2Fmicrosoft-passport-login.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [microsoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/36722e09d0c006d70a273f14a5342f9bace7175c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fmicrosoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.ru-ru.xlf&_a=contents)
-* Handoff Datetime: 2016-11-21 20:50:40
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\security\microsoft-passport-login.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Fsecurity%2Fmicrosoft-passport-login.md&_a=contents)
-* Current Handback File: [microsoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fmicrosoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.ru-ru.xlf&_a=contents)
-* Current Handback Datetime: 2016-10-21 15:49:51
-* Bilingual File: [microsoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fmicrosoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.ru-ru.xlf&_a=contents)
-* Bilingual Datetime: 2016-10-24 15:47:43
-* [Back to Top](#report-top)
-
-##### <a name='d02c2029121927192430ce030684200de16564185606'></a> Source: [windows-apps-src\security\microsoft-passport-login-auth-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a70a59283fe664bef9ddab56df57a9fc46c91033?path=windows-apps-src%2Fsecurity%2Fmicrosoft-passport-login-auth-service.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [microsoft-passport-login-auth-service.4868d33f5776e21e4fe8a0a98a5e2ec2ee22d669.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/36722e09d0c006d70a273f14a5342f9bace7175c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fmicrosoft-passport-login-auth-service.4868d33f5776e21e4fe8a0a98a5e2ec2ee22d669.ru-ru.xlf&_a=contents)
-* Handoff Datetime: 2016-11-21 20:50:40
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\security\microsoft-passport-login-auth-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Fsecurity%2Fmicrosoft-passport-login-auth-service.md&_a=contents)
-* Current Handback File: [microsoft-passport-login-auth-service.4868d33f5776e21e4fe8a0a98a5e2ec2ee22d669.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fmicrosoft-passport-login-auth-service.4868d33f5776e21e4fe8a0a98a5e2ec2ee22d669.ru-ru.xlf&_a=contents)
-* Current Handback Datetime: 2016-10-21 15:49:51
-* Bilingual File: [microsoft-passport-login-auth-service.4868d33f5776e21e4fe8a0a98a5e2ec2ee22d669.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fmicrosoft-passport-login-auth-service.4868d33f5776e21e4fe8a0a98a5e2ec2ee22d669.ru-ru.xlf&_a=contents)
-* Bilingual Datetime: 2016-10-24 15:47:43
 * [Back to Top](#report-top)
 
 
