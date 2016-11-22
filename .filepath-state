@@ -170,9 +170,6 @@
   "4c4c6fdb1ea2d42d5bda1034df082bf836d8b803": [
     "windows-apps-src\\audio-video-camera\\media-playback-with-mediasource.md"
   ],
-  "bb49af7a386356647000e268bcc6983351eaf4b8": [
-    "windows-apps-src\\audio-video-camera\\media-playback-with-mediasource.md"
-  ],
   "cc3553aff7c30a2e84b527dc9e108f7c45b7b21f": [
     "windows-apps-src\\audio-video-camera\\midi.md"
   ],
@@ -1238,9 +1235,6 @@
   "d168c358a3dd68f05b5d0962edb1fb62dfe0570e": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
   ],
-  "734a0f0574ac7698dd6bd963bf3e20225b26d401": [
-    "windows-apps-src\\input-and-devices\\designing-for-tv.md"
-  ],
   "8821af9bc160dc2636871c3a3b2a558987707766": [
     "windows-apps-src\\input-and-devices\\device-primer.md"
   ],
@@ -1380,9 +1374,6 @@
     "windows-apps-src\\launch-resume\\add-a-splash-screen.md"
   ],
   "6e7b92e81aa0a00e579e0ca89234a90e68c253f1": [
-    "windows-apps-src\\launch-resume\\app-lifecycle.md"
-  ],
-  "86e0f10e45445df82585bd58b0f2583c07a19cb7": [
     "windows-apps-src\\launch-resume\\app-lifecycle.md"
   ],
   "2c7dc2ad19867c9f721f7f4cc51c8a7096bc9501": [
@@ -2474,9 +2465,6 @@
   "483630b23eaaa2ff81883f4f828dd46ecd448f9b": [
     "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
   ],
-  "3efc5a575a7ed81b4dfb8e2349e252e61355cfc2": [
-    "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
-  ],
   "07b3631ccc875222b8d2ea30a2b69e2995a09e23": [
     "windows-apps-src\\publish\\the-app-certification-process.md"
   ],
@@ -3140,9 +3128,6 @@
   "9d931ef590f895406e9d516110e6d200789558c7": [
     "windows-apps-src\\contacts-and-calendar\\integrating-social-feeds-into-contact-cards.md"
   ],
-  "c5b9666d8654a4065bc0e4e400d3e47de4773b8b": [
-    "windows-apps-src\\contacts-and-calendar\\integrating-social-feeds-into-contact-cards.md"
-  ],
   "034dc2b7be69763416192014abe24b9bf924c443": [
     "windows-apps-src\\contacts-and-calendar\\integrating-with-contacts.md"
   ],
@@ -3276,9 +3261,6 @@
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
   "7ab2c9f1054509f816ef9647f340e61b6a281d8a": [
-    "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
-  ],
-  "e897c68c97b4cdeb5cdf2a4df454d40d774cbc90": [
     "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
   ],
   "b035e81776039fba60f239b18efef8fe5b43b2f6": [

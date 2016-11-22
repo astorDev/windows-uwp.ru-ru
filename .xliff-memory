@@ -167,8 +167,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\7ab2c9f1054509f816ef9647f340e61b6a281d8a.6b501bcc5a3c1e6e4e0e36ab61b7f841df69d725.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\windows-10-version-1607-api-diff.3f27db6e828e403f589951962a160d763082dafe.ru-ru.xlf",
+      "LocXliffCommit": "669d44483ed7a2c075d8475c87c1ceb8602e3ef0"
     },
     "windows-apps-src\\publish\\acquisitions-report.md.454b5a712e92ad65943de7362879fb3dd62d3cf6.HT": {
       "SourceFilename": "windows-apps-src\\publish\\acquisitions-report.md",
@@ -1087,8 +1087,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\483630b23eaaa2ff81883f4f828dd46ecd448f9b.9a86218e4d9faf26df26bd04b91be29c9f00521e.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\tax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.ru-ru.xlf",
+      "LocXliffCommit": "669d44483ed7a2c075d8475c87c1ceb8602e3ef0"
     },
     "windows-apps-src\\publish\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md.2f6a36cbc26b36776efc4f2731ad274b32b600dd.HT": {
       "SourceFilename": "windows-apps-src\\publish\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md",
@@ -2137,8 +2137,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\d168c358a3dd68f05b5d0962edb1fb62dfe0570e.f302069ed67dd3c2b78afd03de81cdc56bb4beac.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ru-ru.xlf",
+      "LocXliffCommit": "669d44483ed7a2c075d8475c87c1ceb8602e3ef0"
     },
     "windows-apps-src\\graphics-concepts\\primitive-topologies.md.465e63b6b60a433c5b421db31273baf0c88e4797.HT": {
       "SourceFilename": "windows-apps-src\\graphics-concepts\\primitive-topologies.md",
@@ -2287,8 +2287,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\9d931ef590f895406e9d516110e6d200789558c7.59a610ff98a67b4031a1e2e377e112df22b61517.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\integrating-social-feeds-into-contact-cards.da122ef61a6b3eb3376ef78d2bd1a3894fa9bd10.ru-ru.xlf",
+      "LocXliffCommit": "669d44483ed7a2c075d8475c87c1ceb8602e3ef0"
     },
     "windows-apps-src\\graphics-concepts\\pipeline-access-to-streaming-resources.md.fb4d6c119cf336fe016e168de02ab93e0e18cff4.HT": {
       "SourceFilename": "windows-apps-src\\graphics-concepts\\pipeline-access-to-streaming-resources.md",
@@ -2827,8 +2827,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\4c4c6fdb1ea2d42d5bda1034df082bf836d8b803.9e4c10971632819a2493bbaebcaf11a962e37c8e.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\media-playback-with-mediasource.94662fa9799ba564cb9365c51437eed265fb9453.ru-ru.xlf",
+      "LocXliffCommit": "669d44483ed7a2c075d8475c87c1ceb8602e3ef0"
     },
     "windows-apps-src\\publish\\age-ratings.md.c5699523deb4bd24fba06a12c6b1b1a46dc99134.HT": {
       "SourceFilename": "windows-apps-src\\publish\\age-ratings.md",
@@ -3107,8 +3107,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\6e7b92e81aa0a00e579e0ca89234a90e68c253f1.ed177c31851b72cbf6eaeb6bc671b591eec2cd43.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\app-lifecycle.ccef52258bdc75288e41f9726d49569048ea6c50.ru-ru.xlf",
+      "LocXliffCommit": "669d44483ed7a2c075d8475c87c1ceb8602e3ef0"
     },
     "windows-apps-src\\monetize\\interstitial-ads.md.4cc9e7a5d49afd718af9d40b63726ea3f98d18d0.HT": {
       "SourceFilename": "windows-apps-src\\monetize\\interstitial-ads.md",
