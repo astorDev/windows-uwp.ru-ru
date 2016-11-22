@@ -7,8 +7,8 @@ label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
 translationtype: Human Translation
-ms.sourcegitcommit: 96a35ded526b09dd1ce1cb8528bb4a99e3511b32
-ms.openlocfilehash: 734a0f0574ac7698dd6bd963bf3e20225b26d401
+ms.sourcegitcommit: 8bf3a4384d97d59d2844614b981a2e837ccb493d
+ms.openlocfilehash: d168c358a3dd68f05b5d0962edb1fb62dfe0570e
 
 ---
 
@@ -164,9 +164,10 @@ private bool BackRequested()
 | Страница вверх/вниз  | Страница вверх/вниз | Левый и правый триггеры | [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Представления, поддерживающие вертикальную прокрутку
 | Страница влево/вправо | Нет | Левый и правый бамперы | [Pivot](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.pivot.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Представления, поддерживающие горизонтальную прокрутку
 | Увеличение/уменьшение масштаба        | Ctrl +/- | Левый и правый триггеры | Нет | `ScrollViewer`, представления, поддерживающие увеличение и уменьшение масштаба |
-| Открыть/закрыть панель навигации | Нет | Кнопка "Просмотр" | Нет | Панели навигации
+| Открыть/закрыть панель навигации | Нет | Просмотр | Нет | Панели навигации |
+| [Поиск](#search-experience) | Нет | Кнопка Y | Нет | Ярлык для функции основного поиска в приложении |
 
-## Перемещение фокуса по оси X и Y и взаимодействие
+## Перемещение фокуса по осям X и Y и взаимодействие
 
 Если ваше приложение поддерживает корректное перемещение фокуса с помощью клавиатуры, оно будет поддерживать геймпад и пульт ДУ. Навигация с помощью клавиш со стрелками соответствует использованию **крестовины** (в том числе **левого мини-джойстика** на геймпаде), а взаимодействие с элементами управления пользовательского интерфейса — использованию клавиши **Ввод/Выбор** (см. раздел [Геймпад и пульт ДУ](#gamepad-and-remote-control)) 
 
@@ -1030,6 +1031,16 @@ if (IsTenFoot)
 
 > ![ПРИМЕЧАНИЕ] Элемент `MediaPlayerElement` доступен только в Windows 10 версии 1607 и более поздних. При разработке приложения для более ранней версии Windows 10 нужно использовать [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926). Приведенные выше рекомендации применяются также к `MediaElement`. Доступ к свойству `TransportControls` осуществляется таким же образом.
 
+### Параметры поиска
+
+Поиск содержимого является одной из наиболее часто используемых на большом расстоянии функций. Если ваше приложение поддерживает возможности поиска, полезно предоставлять пользователю быстрый доступ к этой функции с использованием кнопки **Y** на геймпаде для ускоренного перехода к ней.
+
+Большинство пользователей, скорее всего, уже знают об этой возможности быстрого перехода, но при желании вы можете добавить иконку **Y** в пользовательский интерфейс, чтобы указать, что пользователи могут нажимать эту кнопку для доступа к функции поиска. При добавлении этой подсказки следует использовать символ из шрифта **Segoe Xbox Symbol MDL2** (E426) для обеспечения единообразия оболочки Xbox и других приложений.
+
+Поскольку кнопка **Y** доступна только на геймпаде, не забудьте предоставить другие методы доступа к функции поиска, например кнопки в пользовательском интерфейсе. Иначе некоторые пользователи не смогут получать доступ к этой функции.
+
+При работе на большом расстоянии пользователям зачастую удобнее работать с полноэкранным интерфейсом поиска из-за ограниченного места на экране. Независимо от того, применяете ли вы полноэкранную или занимающую часть экрана функцию поиска, рекомендуется сразу же открывать экранную клавиатуру, когда пользователь обращается к поиску, чтобы она была доступна для ввода поисковых запросов.
+
 ## Пользовательский триггер визуального состояния для Xbox
 
 Чтобы адаптировать приложение UWP для просмотра на большом расстоянии, рекомендуется изменять макет, если приложение определяет, что оно было запущено на консоли Xbox. Например, это можно сделать с помощью пользовательского *триггера визуального состояния*. Триггеры визуального состояния полезнее всего использовать при выполнении редактирования в **Blend для Visual Studio**. В следующем фрагменте кода показано, как создать триггер визуального состояния для Xbox.
@@ -1105,6 +1116,6 @@ bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

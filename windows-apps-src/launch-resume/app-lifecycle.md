@@ -5,8 +5,8 @@ description: "В этой статье описывается жизненный
 keywords: "жизненный цикл приложения приостановка возобновление запуск активация"
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 translationtype: Human Translation
-ms.sourcegitcommit: 79d0b4c7208d2fa79ceb7f5e212255ff94d6fe3a
-ms.openlocfilehash: 86e0f10e45445df82585bd58b0f2583c07a19cb7
+ms.sourcegitcommit: df297d442a4c636fac886b113ada8a01aa37a015
+ms.openlocfilehash: 6e7b92e81aa0a00e579e0ca89234a90e68c253f1
 
 ---
 
@@ -86,7 +86,7 @@ ms.openlocfilehash: 86e0f10e45445df82585bd58b0f2583c07a19cb7
 
 ## Выполнение в фоновом режиме ##
 
-В Windows 10 версии 1607 появилась возможность выполнять код в фоновом режиме в рамках одного процесса. Подробнее об этом см. в статье [Фоновое действие с одним процессом](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99). В этой статье мы не рассматриваем фоновую обработку с одним процессом, но следует отметить, что в жизненный цикл приложения добавлены два новых события, связанные с фоновым выполнением приложения. Это события [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) и [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground).
+Начиная с Windows 10 версии 1607 приложения могут выполнять фоновые задачи в том же процессе, в котором работает само приложение. Подробнее об этом см. в статье [Модель фонового действия с одним процессом](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99). В этой статье мы не рассматриваем фоновую обработку с одним процессом, но следует отметить, что в жизненный цикл приложения добавлены два новых события, связанные с фоновым выполнением приложения. Это события [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) и [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground).
 
 Они также отражают, может ли пользователь видеть интерфейс приложения.
 
@@ -100,8 +100,7 @@ ms.openlocfilehash: 86e0f10e45445df82585bd58b0f2583c07a19cb7
 
 Ранее лучшим местом для загрузки ресурсов интерфейса были обработчики событий **Activated** и **Resuming**. Теперь же обработчик события **LeavingBackground** — лучший способ проверить готовность вашего интерфейса.
 
-Важно убедиться, что визуальные ресурсы готовы к этому моменту, поскольку это последняя возможность выполнить необходимые задачи, прежде чем пользователь увидит приложение. Все действия с пользовательским интерфейсом в этом обработчике событий нужно выполнить быстро, так как это влияет на время запуска и возобновления приложения. 
-              Событие **LeavingBackground** дает время подготовить первый кадр интерфейса. Затем длительные вызовы хранилища или сети должны обрабатываться асинхронно, чтобы обработчик событий мог снова активироваться.
+Важно убедиться, что визуальные ресурсы готовы к этому моменту, поскольку это последняя возможность выполнить необходимые задачи, прежде чем пользователь увидит приложение. Все действия с пользовательским интерфейсом в этом обработчике событий нужно выполнить быстро, так как это влияет на время запуска и возобновления приложения. Событие **LeavingBackground** дает время подготовить первый кадр интерфейса. Затем длительные вызовы хранилища или сети должны обрабатываться асинхронно, чтобы обработчик событий мог снова активироваться.
 
 Когда пользователь переключается на другую задачу, ваше приложение снова переходит в фоновое состояние.
 
@@ -227,7 +226,6 @@ ms.openlocfilehash: 86e0f10e45445df82585bd58b0f2583c07a19cb7
 * [Обработка активации приложения](activate-an-app.md)
 * [Обработка приостановки работы приложения](suspend-an-app.md)
 * [Обработка возобновления работы приложения](resume-an-app.md)
-* [Обработка предварительного запуска приложения](handle-app-prelaunch.md)
 * [Модель фонового действия с одним процессом](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
 
@@ -237,6 +235,6 @@ ms.openlocfilehash: 86e0f10e45445df82585bd58b0f2583c07a19cb7
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

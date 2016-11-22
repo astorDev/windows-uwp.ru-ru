@@ -4,8 +4,8 @@ ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: "В этой статье показано, как использовать класс MediaSource, предоставляющий универсальный способ обращения к данным мультимедиа и их воспроизведения из различных источников (например, из локальных или удаленных файлов) и универсальную модель получения доступа к данным мультимедиа независимо от их формата."
 title: "Элементы, списки воспроизведения и звуковые дорожки мультимедиа"
 translationtype: Human Translation
-ms.sourcegitcommit: c2e337e88f9dda3380dd62c32ca6e5d942366636
-ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
+ms.sourcegitcommit: 9999805c8a3bf946aa323b921cea6d63f9a48789
+ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
 
 ---
 
@@ -129,7 +129,7 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 [!code-cs[OpenFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetOpenFailed)]
 
 ## Задание свойств отображения, используемых системными элементами управления транспортировкой мультимедиа
-Начиная с Windows 10 версии 1607 мультимедиа, воспроизводимые в классе [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer), автоматически интегрируются в системные элементы управления транспортировкой мультимедиа (SMTC) по умолчанию. Можно задать метаданные, которые будут отображаться в SMTC, обновив свойства воспроизведения для класса **MediaPlaybackItem**. Получите объект, представляющий свойства отображения для элемента, вызвав метод [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties). Укажите, относится ли элемент воспроизведения к музыке или видео, задав свойство [**Тип**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type). Затем задайте значения свойств объекта [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) или [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties). Вызовите метод [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923), чтобы задать для обновления свойств элемента предоставленные вами значения. Обычно приложение извлекает значения отображения из веб-службы динамически, но в следующем примере показано извлечение со значениями, заданными в коде.
+Начиная с Windows 10 версии 1607 мультимедиа, воспроизводимые в классе [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer), автоматически интегрируются в системные элементы управления транспортировкой мультимедиа (SMTC) по умолчанию. Можно задать метаданные, которые будут отображаться в SMTC, обновив свойства воспроизведения для класса **MediaPlaybackItem**. Получите объект, представляющий свойства отображения для элемента, вызвав метод [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties). Укажите, относится ли элемент воспроизведения к музыке или видео, задав свойство [**Тип**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type). Затем задайте значения свойств объекта [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) или [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties). Вызовите метод [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) для обновления свойств элемента согласно предоставленным вами значениям. Обычно приложение извлекает значения отображения из веб-службы динамически, но в следующем примере показано извлечение со значениями, заданными в коде.
 
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
@@ -227,6 +227,6 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 
