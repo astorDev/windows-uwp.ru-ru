@@ -4,8 +4,8 @@ title: "Использование триггера обслуживания"
 description: "Узнайте, как использовать класс MaintenanceTrigger для выполнения облегченного кода в фоновом режиме, когда устройство подключено к сети."
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 1181605c097f876af49e8055e245a2c445fc30d3
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: 2f459156ac8bc52c79b9b6d3b902882693120028
 
 ---
 
@@ -25,9 +25,9 @@ ms.openlocfilehash: 1181605c097f876af49e8055e245a2c445fc30d3
 
 Для изучения этого примера необходим облегченный код, который можно выполнить в фоновом режиме для усовершенствования вашего приложения, когда устройство подключено к сети. В этом разделе рассматривается класс [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517), который похож на [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
 
-Дополнительные сведения о создании класса фоновой задачи см. в разделе [Создание и регистрация фоновой задачи, которая запускается в одном процессе](create-and-register-a-singleprocess-background-task.md) и [Создание и регистрация фоновой задачи, которая запускается в отдельном процессе](create-and-register-a-background-task.md).
+Подробнее о написании класса фоновой задачи см. в статьях [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md) и [Создание и регистрация внепроцессной фоновой задачи](create-and-register-an-outofproc-background-task.md).
 
-Создайте новый объект [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Второй параметр— *OneShot*— указывает, будет ли задача обслуживания выполняться однократно или периодически. Если *OneShot* имеет значение True, первый параметр (*FreshnessTime*) задает число минут ожидания перед планированием фоновой задачи. Если *OneShot* имеет значение False, частоту выполнения фоновой задачи определяет *FreshnessTime*.
+Создайте новый объект [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Второй параметр— *OneShot*— указывает, однократно или периодически будет выполняться задача обслуживания. Если *OneShot* имеет значение True, первый параметр (*FreshnessTime*) задает число минут ожидания перед планированием фоновой задачи. Если *OneShot* имеет значение False, частоту выполнения фоновой задачи определяет *FreshnessTime*.
 
 > **Примечание.**  Если параметру *FreshnessTime* задано значение меньше 15минут, при попытке зарегистрировать фоновую задачу появляется исключение.
 
@@ -90,14 +90,14 @@ ms.openlocfilehash: 1181605c097f876af49e8055e245a2c445fc30d3
     > **Примечание.**  Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации оказываются недопустимыми, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
 
 
-> **Примечание.** Эта статья адресована разработчикам приложений для Windows10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows8.x или Windows Phone8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Примечание.** Эта статья адресована разработчикам приложений для Windows10 на базе универсальной платформы Windows (UWP). Если вы разрабатываете приложения для Windows8.x или Windows Phone8.x, обратитесь к [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## Связанные разделы
+## Статьи по теме
 
 ****
 
-* [Создание и регистрация фоновой задачи, которая запускается в одном процессе](create-and-register-a-singleprocess-background-task.md).
-* [Создание и регистрация фоновой задачи, которая запускается в отдельном процессе](create-and-register-a-background-task.md)
+* [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
+* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-an-outofproc-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
 * [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
@@ -107,14 +107,11 @@ ms.openlocfilehash: 1181605c097f876af49e8055e245a2c445fc30d3
 * [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)
 * [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-
-****
-
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Вызов событий приостановки, возобновления и фоновых событий в приложениях Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

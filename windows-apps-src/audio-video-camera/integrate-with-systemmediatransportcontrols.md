@@ -4,8 +4,8 @@ ms.assetid:
 description: "В этой статье показано, как взаимодействовать с системными элементами управления транспортировкой мультимедиа."
 title: "Интеграция с системными элементами управления транспортировкой мультимедиа"
 translationtype: Human Translation
-ms.sourcegitcommit: 53b1cb94f90cd697a96bca49c5f2109d4749dbd1
-ms.openlocfilehash: c490ea43a6f49e09828cb6b07a6fbf1920acca74
+ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
+ms.openlocfilehash: 702d5911f6e76d6c047fcc97c1117456ae04c3e5
 
 ---
 
@@ -70,6 +70,7 @@ ms.openlocfilehash: c490ea43a6f49e09828cb6b07a6fbf1920acca74
 Как уже упоминалось в этой статье, SMTC автоматически обнаруживает и отображает сведения для каждого экземпляра **MediaPlayer**, созданного приложением. Если вам требуется использовать несколько экземпляров **MediaPlayer**, но чтобы SMTC при этом предоставлял одну запись для приложения, необходимо вручную управлять поведением SMTC, не полагаясь на автоматическую интеграцию. Кроме того, если вы используете класс [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) для управления одним или несколькими проигрывателями мультимедиа, вам потребуется использовать ручную интеграцию SMTC. Помимо этого, если для воспроизведения мультимедиа в вашем приложении используется API, отличный от **MediaPlayer**, например класс [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph), вам потребуется реализовать ручную интеграцию SMTC, чтобы пользователь мог управлять вашим приложением с помощью SMTC. Сведения о ручном управлении SMTC см. в разделе [Ручное управление системными элементами управления транспортировкой мультимедиа](system-media-transport-controls.md).
 
 
+
 ## Связанные статьи
 * [Воспроизведение мультимедиа](media-playback.md)
 * [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md)
@@ -85,6 +86,6 @@ ms.openlocfilehash: c490ea43a6f49e09828cb6b07a6fbf1920acca74
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

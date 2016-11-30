@@ -4,8 +4,8 @@ ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: "Узнайте, как включить покупки из приложения и пробные версии в приложениях UWP, предназначенных для выпусков Windows 10 до версии 1607."
 title: "Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 649d082cddcf301fe602a5ab99637ad7bea67d49
+ms.sourcegitcommit: 812fa1789c5c86657b8e73e45a851c7a58a1c84e
+ms.openlocfilehash: 5a4f943357660a22217351f04d735c14cab828ff
 
 ---
 
@@ -13,11 +13,15 @@ ms.openlocfilehash: 649d082cddcf301fe602a5ab99637ad7bea67d49
 
 Пакет Windows SDK содержит члены в пространстве имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), которые можно использовать для добавления функциональности покупок из приложения и пробной версии в ваше приложение для универсальной платформы Windows (UWP), чтобы получать доход от приложения и добавлять новые функции. Эти API также предоставляют доступ к лицензионной информации вашего приложения.
 
->**Примечание.**&nbsp;&nbsp;Если ваше приложение предназначено для Windows 10 версии 1607 или более поздней, для управления покупками из приложения рекомендуется использовать элементы, входящие в пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), а не **Windows.ApplicationModel.Store**. Пространство имен **Windows.Services.Store** поддерживает новейшие типы надстроек, включая потребляемые надстройки, управляемые Магазином, а его архитектура обеспечивает совместимость с будущими продуктами и компонентами, которые поддерживаются Центром разработки для Windows и Магазином. Пространство имен **Windows.Services.Store** также обеспечивает более высокую производительность. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
-
 Статьи в этом разделе содержат подробные руководства и примеры кода для использования членов, входящих в члены пространства имен **Windows.ApplicationModel.Store**, для нескольких распространенных сценариев. Обзор концепций, связанных с покупками из приложения в приложениях UWP, см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
 
-Полный пример, в котором показана реализация пробных версий и покупок из приложения с использованием пространства имен **Windows.ApplicationModel.Store**, доступен в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
+Полный пример, в котором показано внедрение пробных версий и покупок из приложения с использованием пространства имен **Windows.ApplicationModel.Store**, доступен в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
+
+>**Примечания**&nbsp;&nbsp;
+>
+> * Если ваше приложение предназначено для Windows 10 версии 1607 или более поздней, для управления покупками из приложения рекомендуется использовать элементы, входящие в пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), а не **Windows.ApplicationModel.Store**. Пространство имен **Windows.Services.Store** поддерживает новейшие типы надстроек, включая потребляемые надстройки, управляемые Магазином, а его архитектура обеспечивает совместимость с будущими продуктами и компонентами, которые поддерживаются Центром разработки для Windows и Магазином. Пространство имен **Windows.Services.Store** также обеспечивает более высокую производительность. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
+<br/><br/>
+> * Пространство имен **Windows.ApplicationModel.Store** не поддерживается в классических приложениях Windows, использующих [мост для настольных ПК](https://developer.microsoft.com/windows/bridges/desktop). Эти приложения должны использовать для реализации покупок из приложения и пробных версий пространство имен **Windows.Services.Store**.
 
 ## В этом разделе
 
@@ -32,6 +36,6 @@ ms.openlocfilehash: 649d082cddcf301fe602a5ab99637ad7bea67d49
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "Используйте интерфейс analytics API Магазина Windows для программного извлечения аналитических данных по приложениям, зарегистрированным на вашу учетную запись или учетную запись вашей организации в Центре разработки для Windows."
 title: "Доступ к аналитическим данным с помощью служб Магазина Windows"
 translationtype: Human Translation
-ms.sourcegitcommit: 47e0ac11178af98589e75cc562631c6904b40da4
-ms.openlocfilehash: 1293bb5beb927425928d832f887129263db5a895
+ms.sourcegitcommit: 67845c76448ed13fd458cb3ee9eb2b75430faade
+ms.openlocfilehash: 468be96b70d07567163b2caccebaa8e2f6ecd592
 
 ---
 
@@ -70,8 +70,10 @@ grant_type=client_credentials
 -   [Сведения о покупках приложения](get-app-acquisitions.md)
 -   [Получение сведений о покупках надстройки](get-in-app-acquisitions.md)
 -   [Получение данных отчетов об ошибках](get-error-reporting-data.md)
--   [Сведения об оценках приложения](get-app-ratings.md)
+-   [Получение сведений об оценках приложения](get-app-ratings.md)
 -   [Получение отзывов о приложении](get-app-reviews.md)
+-   [Получение данных об эффективности рекламы](get-ad-performance-data.md)
+-   [Получение данных об эффективности рекламной кампании](get-ad-campaign-performance-data.md)
 
 ## Пример кода
 
@@ -231,12 +233,14 @@ namespace TestAnalyticsAPI
 * [Сведения о покупках приложения](get-app-acquisitions.md)
 * [Получение сведений о покупках надстройки](get-in-app-acquisitions.md)
 * [Получение данных отчетов об ошибках](get-error-reporting-data.md)
-* [Сведения об оценках приложения](get-app-ratings.md)
+* [Получение сведений об оценках приложения](get-app-ratings.md)
 * [Получение отзывов о приложении](get-app-reviews.md)
+* [Получение данных об эффективности рекламы](get-ad-performance-data.md)
+* [Получение данных об эффективности рекламной кампании](get-ad-campaign-performance-data.md)
  
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Nov16_HO1-->
 
 

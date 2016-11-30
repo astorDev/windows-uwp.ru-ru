@@ -4,17 +4,17 @@ ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "В этой статье перечисляются аудио- и видеокодеки и форматы, поддерживаемые в приложениях UWP."
 title: "Поддерживаемые кодеки"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
+ms.sourcegitcommit: 7bd0002d62519757cf582d6070a22890a0e1837e
+ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
 ---
 
 # Поддерживаемые кодеки
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-В этой статье перечисляются аудио- и видеокодеки и форматы, поддерживаемые для приложений UWP.
+В этой статье перечисляются аудио-, видеокодеки, кодеки изображений и форматы, поддерживаемые в приложениях UWP.
 
 В следующих таблицах буква "D" указывает на поддержку декодера, а буква "E" — на поддержку кодировщика.
 
@@ -2685,18 +2685,80 @@ ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
 </tbody>
 </table>
 
- 
+## Поддержка кодеков и форматов изображений 
 
- 
+<table>
+<colgroup>
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Кодек</th>
+<th align="left">Рабочий стол</th>
+<th align="left">Другие семейства устройств</th>
+</tr>
+</thead>
+<tr class="odd">
+<td align="left">BMP</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">DDS</td>
+<td align="left">D/E<sup>1</sup></td>
+<td align="left">D/E<sup>1</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">DNG</td>
+<td align="left">D<sup>2</sup></td>
+<td align="left">D<sup>2</sup></td>
+</tr>
+<tr class="even">
+<td align="left">GIF</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">ICO</td>
+<td align="left">D</td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">JPEG</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">JPEG-XR</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">PNG</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">TIFF</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">Camera RAW</td>
+<td align="left">D<sup>3</sup></td>
+<td align="left">Нет</td>
+</tr>
+</table>
 
- 
+<sup>1</sup> Поддерживаются изображения DDS, использующие сжатие с BC1 по BC5.  
+<sup>2</sup> Поддерживаются изображения DNG с встроенным предварительным просмотром, отличным от формата RAW.  
+<sup>3</sup> Поддерживаются только некоторые форматы camera RAW.  
+
+Дополнительные сведения о кодеках изображений см. в разделе [Собственные кодеки WIC](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx).
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

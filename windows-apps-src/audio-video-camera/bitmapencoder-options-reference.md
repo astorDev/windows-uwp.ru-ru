@@ -1,11 +1,11 @@
 ---
-author: drewbatgit
+author: laurenhughes
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
 description: "В этой статье перечисляются параметры кодирования, которые можно использовать с BitmapEncoder."
 title: "Справочник по параметрам BitmapEncoder"
 translationtype: Human Translation
-ms.sourcegitcommit: de54d389488d8298ea1341b0a6f27a476d38584e
-ms.openlocfilehash: 0ccaf55215cb82633313e145a126db92aa6d16e6
+ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
+ms.openlocfilehash: 4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd
 
 ---
 
@@ -31,19 +31,19 @@ ms.openlocfilehash: 0ccaf55215cb82633313e145a126db92aa6d16e6
 
  
 
-## Связанные статьи
+## Статьи по теме
 
-* [Создание, редактирование и сохраните точечных рисунков](imaging.md)
+* [Создание, редактирование и сохранение точечных рисунков](imaging.md)
+* [Поддерживаемые кодеки](supported-codecs.md)
+
  
 
- 
 
 
 
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

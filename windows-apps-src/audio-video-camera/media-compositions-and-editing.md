@@ -4,8 +4,8 @@ ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
 description: "API-интерфейсы в пространстве имен Windows.Media.Editing позволяют быстро разрабатывать приложения, которые дают пользователям возможность создавать композиции мультимедиа из исходных аудио- и видеофайлов."
 title: "Создание и редактирование композиций мультимедиа"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
+ms.sourcegitcommit: 018d7c85aae007a1fd887de0daf6625ccce37a64
+ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 ---
 
@@ -21,6 +21,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 Класс [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) — это контейнер для всех клипов мультимедиа, входящих в композицию, который отвечает за окончательную композицию, загрузку с диска и сохранение на диск и предоставляет возможность выполнения предварительной потоковой передачи композиции для ее просмотра в пользовательском интерфейсе. Чтобы использовать **MediaComposition** в своем приложении, добавьте пространство имен [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565), а также [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962), предоставляющее связанные API-интерфейсы, которые могут вам понадобиться.
 
 [!code-cs[Пространство имен 1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
+
 
 Получить доступ к объекту **MediaComposition** можно из нескольких точек вашего кода, поэтому вы будете объявлять переменную-член, где он хранится.
 
@@ -54,7 +55,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 ## Предварительный просмотр композиции в MediaElement
 
-Чтобы пользователь мог просматривать композицию мультимедиа, добавьте класс [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) в XAML-файл, определяющий ваш пользовательский интерфейс.
+Чтобы пользователь мог просматривать композицию мультимедиа, добавьте класс [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) в XAML-файл, определяющий ваш пользовательский интерфейс.
 
 [!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
 
@@ -63,16 +64,16 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 [!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
 
-Вызовите метод [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) объекта **MediaComposition**, чтобы создать объект **MediaStreamSource** для композиции, а затем вызовите метод [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) объекта **MediaElement**. Теперь композицию можно просматривать в пользовательском интерфейсе.
+Вызовите метод [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) объекта **MediaComposition** для создания **MediaStreamSource** для композиции. Создайте объект [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource), вызвав фабричный метод [**CreateFromMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn930907), и назначьте его свойству [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.Source) элемента **MediaPlayerElement**. Теперь композицию можно просматривать в пользовательском интерфейсе.
 
 
 [!code-cs[UpdateMediaElementSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetUpdateMediaElementSource)]
 
 -   Перед вызовом [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) член **MediaComposition** должен содержать по крайней мере один клип мультимедиа, иначе возвращенный объект будет пустым.
 
--   Временная шкала **MediaElement**, отражающая изменения в композиции, автоматически не обновляется. Рекомендуется вызывать **GeneratePreviewMediaStreamSource** и **SetMediaStreamSource** каждый раз, когда в композицию вносится набор изменений и необходимо обновить пользовательский интерфейс.
+-   Временная шкала **MediaElement**, отражающая изменения в композиции, автоматически не обновляется. Рекомендуется вызывать **GeneratePreviewMediaStreamSource** и задавать свойство **Source** для **MediaPlayerElement** каждый раз, когда в композицию вносится набор изменений и необходимо обновить пользовательский интерфейс.
 
-Когда пользователь покидает страницу, рекомендуется присвоить объекту **MediaStreamSource** и свойству [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) объекта **MediaElement** значение NULL, чтобы освободить связанные ресурсы.
+Когда пользователь покидает страницу, рекомендуется присвоить объекту **MediaStreamSource** и свойству [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) элемента **MediaPlayerElement** значение NULL, чтобы освободить связанные ресурсы.
 
 [!code-cs[OnNavigatedFrom](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
@@ -94,7 +95,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 [!code-cs[TrimClipBeforeCurrentPosition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetTrimClipBeforeCurrentPosition)]
 
--   Пользователь может указать значения точек начала и конца обрезки в любом пользовательском интерфейсе. В примере, приведенном выше, используется свойство [**Position**](https://msdn.microsoft.com/library/windows/apps/br227407) члена **MediaElement** для определения объекта MediaClip, воспроизводимого в композиции в текущей позиции с помощью проверки [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) и [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618). Затем свойства **Position** и **StartTimeInComposition** используются повторно для вычисления времени обрезки с начала клипа. **FirstOrDefault** — это расширенный метод из пространства имен **System.Linq**, который упрощает код для операции выбора элементов из списка.
+-   Пользователь может указать значения точек начала и конца обрезки в любом пользовательском интерфейсе. В примере, приведенном выше, используется свойство [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.Position) члена [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession), связанного с **MediaPlayerElement** для определения объекта **MediaClip**, воспроизводимого в композиции в текущей позиции с помощью проверки [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) и [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618). Затем свойства **Position** и **StartTimeInComposition** используются повторно для вычисления времени обрезки с начала клипа. **FirstOrDefault** — это расширенный метод из пространства имен **System.Linq**, который упрощает код для операции выбора элементов из списка.
 -   Свойство [**OriginalDuration**](https://msdn.microsoft.com/library/windows/apps/dn652625) объекта **MediaClip** позволяет узнать длительность клипа мультимедиа без применения обрезки.
 -   Свойство [**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) позволяет узнать длительность клипа мультимедиа после применения обрезки.
 -   Указание значения обрезки, которое превышает исходную длительность клипа, не приводит к возникновению ошибки. Однако если композиция содержит только один клип, который обрезается до нулевой длины вследствие того, что указано большое значение обрезки, последующий вызов [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) вернет значение NULL, как если бы композиция не содержала ни одного клипа.
@@ -127,7 +128,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 ## Добавление эффектов в клип мультимедиа
 
-У каждого объекта **MediaClip** в композиции есть список аудио- и видеоэффектов, в который можно добавить несколько эффектов. Эффекты должны реализовывать [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) и [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047) соответственно. Следующий пример использует текущее положение элемента мультимедиа для выбора просматриваемого в настоящее время объекта **MediaClip**, а затем создает новый экземпляр [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) и добавляет его в список [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) клипа мультимедиа.
+У каждого объекта **MediaClip** в композиции есть список аудио- и видеоэффектов, в который можно добавить несколько эффектов. Эффекты должны реализовывать [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) и [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047), соответственно. Следующий пример использует текущее положение **MediaPlayerElement** для выбора просматриваемого в настоящее время объекта **MediaClip**, а затем создает новый экземпляр [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) и добавляет его в список [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) клипа мультимедиа.
 
 [!code-cs[AddVideoEffect](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
 
@@ -155,6 +156,6 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

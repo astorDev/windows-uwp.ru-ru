@@ -5,8 +5,8 @@ title: "Диалоговые окна и всплывающие элементы
 label: Dialogs
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: ff9940c06276165dc139e120c4e9cdeb005ff125
+ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
+ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 
 ---
 # Диалоговые окна и всплывающие элементы
@@ -48,7 +48,7 @@ ms.openlocfilehash: ff9940c06276165dc139e120c4e9cdeb005ff125
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>Диалоговые окна</b> <br/><br/>
-   ![Пример полнокнопочного диалогового окна](images/controls_dialog_twobutton.png)</p>
+    ![Пример диалогового окна](images/dialogs/dialog-delete-file-example.png)</p>
 <p>Диалоговые окна — это модальные наложения пользовательского интерфейса, которые предоставляют контекстную информацию о приложении. Диалоговые окна блокируют взаимодействие с окном приложения, пока пользователь явно не закроет окно. Они часто требуют от пользователя совершения каких-либо действий.   
 </p><br/>
 
@@ -130,7 +130,8 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 
 
 
-## Инструкции по использованию диалоговых окон
+## Диалоговые окна
+### Общие рекомендации
 
 -   В первой строке диалогового сообщения явно изложите, в чем проблема или что требуется от пользователя.
 -   Заголовок диалогового окна — это основная инструкция. Он необязателен.
@@ -146,7 +147,23 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 -   Диалоговые окна ошибки отображают сообщение об ошибке в диалоговом окне, а также любые сопутствующие сведения. На единственной кнопке, используемой в диалоговом окне ошибки, должно быть написано «Закрыть» или аналогичное действие.
 -   Не используйте диалоговые окна при возникновении контекстно-зависимых от определенной области на странице ошибок, таких как ошибки при проверке (например, в полях для ввода паролей). Используйте непосредственно элемент Canvas приложения для отображения внутренних ошибок.
 
-## Создание диалогового окна
+### Диалоговые окна подтверждения ("ОК" и "Отмена")
+Диалоговое окно подтверждения позволяет пользователям подтвердить действие. Они могут подтвердить выполнение действия или отменить его.  
+Типичное диалоговое окно подтверждения обычно содержит две кнопки: подтверждения ("ОК") и отмены.  
+
+<ul>
+    <li>
+        <p>В целом кнопка подтверждения должна быть слева (основная кнопка), а кнопка отмены (вспомогательная) — справа.</p>
+         ![Диалоговое окно с кнопками "ОК" или "Отмена"](images/dialogs/dialog-delete-file-example.png)
+        
+    </li>
+    <li>Как указано в разделе "Общие рекомендации", используйте кнопки с текстом, который описывает конкретные варианты ответа на основную инструкцию или содержимое.
+    </li>
+</ul>
+
+> На некоторых платформах кнопка подтверждения размещена справа, а не слева. Так почему рекомендуется поместить ее слева?  Если предполагается, что большинство пользователей — правши и держат телефон в правой руке, им будет удобнее нажимать кнопку подтверждения слева, так как более вероятно, что она будет расположена в пределах досягаемости больших пальцев пользователя. Чтобы нажать кнопки в правой части экрана, пользователю необходимо переместить большой палец в менее удобное положение.
+
+### Создание диалогового окна
 Для создания диалогового окна используется [класс ContentDialog](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx). Диалоговое окно можно создать в виде кода или разметки. Хотя обычно проще определять элементы пользовательского интерфейса в XAML, при создании простого диалогового окна удобнее использовать обычный код. В этом примере показано создание диалогового окна для уведомления пользователя об отсутствии подключения к сети WiFi, а для отображения диалогового окна используется метод [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx).
 
 ```csharp
@@ -174,23 +191,23 @@ private async void displayDeleteFileDialog()
     {
         Title = "Delete file permanently?",
         Content = "If you delete this file, you won't be able to recover it. Do you want to delete it?",
-        PrimaryButtonText = "Cancel",
-        SecondaryButtonText = "Delete file permanently"
+        PrimaryButtonText = "Delete",
+        SecondaryButtonText = "Cancel"
     };
 
     ContentDialogResult result = await deleteFileDialog.ShowAsync();
     
-    // Delete the file if the user clicked the second button. 
+    // Delete the file if the user clicked the primary button. 
     /// Otherwise, do nothing. 
-    if (result == ContentDialogResult.Secondary)
+    if (result == ContentDialogResult.Primary)
     {
         // Delete the file. 
     }
 }
 ```
 
-
-##  Создание всплывающего элемента
+## Всплывающие элементы
+###  Создание всплывающего элемента
 
 Всплывающий элемент— это контейнер с открытым окончанием, который показывает в качестве своего содержимого произвольный пользовательский интерфейс.  
 
@@ -278,7 +295,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-## Стилизация всплывающего элемента
+### Стилизация всплывающего элемента
 Для стилизации всплывающего элемента изменяется его свойство [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx). В этом примере показан абзац создания программы-оболочки текста и делает блок текста доступным для программ чтения с экрана.
 
 ````xaml
@@ -308,6 +325,6 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

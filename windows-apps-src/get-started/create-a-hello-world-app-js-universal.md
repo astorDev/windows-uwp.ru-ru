@@ -1,11 +1,11 @@
 ---
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: "Создание приложения Hello, world (JS)"
-description: "В этом учебнике описано, как с помощью JavaScript и HTML создать простое приложение «Hello, world», предназначенное для универсальной платформы Windows (UWP) в Windows 10."
+title: Create a "Hello, world" app (JS)
+description: "В этом учебнике описано, как с помощью JavaScript и HTML создать простое приложение &\\#0034;Hello, world&\\#0034;, предназначенное для универсальной платформы Windows (UWP) в Windows 10."
 translationtype: Human Translation
-ms.sourcegitcommit: 2e0965f964f6f2e10b895d99244b66458eb15903
-ms.openlocfilehash: 6c81b24f7fa9abe036d4ccd22ee8fa24c011fe77
+ms.sourcegitcommit: 7b4676e5c5a66450b321ab6f5f8670f9491b7a9d
+ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
 
 ---
 # Создание приложения «Hello, world» (JS)
@@ -338,7 +338,7 @@ Visual Studio запускает выбранный эмулятор и зате
 
 1.  В файле index.html добавьте элементы управления [label](https://msdn.microsoft.com/library/windows/apps/Hh453321) и [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) после `greetingOutput` **div**.
 
-    ```html
+```html
     <body class="win-type-body">
         <h1>Hello, world!</h1>
         <p>What's your name?</p>
@@ -351,7 +351,7 @@ Visual Studio запускает выбранный эмулятор и зате
         <div id="ratingControlDiv" data-win-control="WinJS.UI.Rating">
         </div>
     </body>
-    ```
+```
 
 2.  Запустите приложение на локальном компьютере. Обратите внимание на новый элемент управления [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895).
 
@@ -376,8 +376,7 @@ Visual Studio запускает выбранный эмулятор и зате
 
 Как и все асинхронные методы WinJS, **WinJS.UI.processAll** возвращает объект **Promise**. Объект **Promise** «обещает», что какое-то действие будет выполнено в будущем. Когда это действие будет выполнено, **Promise** завершит работу.
 
-
-              Объекты [Promise](https://msdn.microsoft.com/library/windows/apps/BR211867) содержат метод [then](https://msdn.microsoft.com/library/windows/apps/BR229728), который принимает функцию «completed» в качестве параметра. **Promise** вызывает эту функцию по ее завершении.
+Объекты [Promise](https://msdn.microsoft.com/library/windows/apps/BR211867) содержат метод [then](https://msdn.microsoft.com/library/windows/apps/BR229728), который принимает функцию «completed» в качестве параметра. **Promise** вызывает эту функцию по ее завершении.
 
 Добавив код к функции «completed» и передав ее в метод **then** объекта **Promise**, вы можете быть уверены, что ваш код будет выполнен после завершения **WinJS.UI.processAll**.
 
@@ -385,7 +384,7 @@ Visual Studio запускает выбранный эмулятор и зате
 
 1.  В файле index.html создайте элемент [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) для отображения значения оценки и присвойте его идентификатору **id** значение «ratingOutput».
 
-    ```html
+```html
         <body class="win-type-body">
         <h1>Hello, world!</h1>
         <p>What's your name?</p>
@@ -403,7 +402,7 @@ Visual Studio запускает выбранный эмулятор и зате
 
 2.  В файле main.js создайте для элемента управления **Rating** обработчик события [change](https://msdn.microsoft.com/library/windows/apps/BR211891) с именем `ratingChanged`. Параметр [eventInfo](https://msdn.microsoft.com/library/windows/apps/Hh465776) содержит свойство **detail.tentativeRating**, которое предоставляет новую оценку пользователя. Извлеките это значение и отобразите его в выходном элементе **div**.
 
-    ```javascript
+```javascript
         function ratingChanged(eventInfo) {
 
             var ratingOutput = document.getElementById("ratingOutput");
@@ -413,7 +412,7 @@ Visual Studio запускает выбранный эмулятор и зате
 
 3.  Обновите код в обработчике событий [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679), который вызывает [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975), добавив вызов метода [then](https://msdn.microsoft.com/library/windows/apps/BR229728) и передав ему функцию `completed`. Из функции `completed` извлеките элемент `ratingControlDiv`, который содержит элемент управления [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895). Затем используйте свойство [winControl](https://msdn.microsoft.com/library/windows/apps/Hh770814), чтобы извлечь фактический элемент управления **Rating**. (В данном примере определяется встроенная функция `completed` .)
 
-    ```javascript
+```javascript
            args.setPromise(WinJS.UI.processAll().then(function completed() {
 
                     // Retrieve the div that hosts the Rating control.
@@ -432,7 +431,7 @@ Visual Studio запускает выбранный эмулятор и зате
 
     Вот обновленный обработчик событий [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679):
 
-    ```javascript
+```javascript
     (function () {
     "use strict";
 
@@ -485,18 +484,18 @@ Visual Studio запускает выбранный эмулятор и зате
         isFirstActivation = false;
     };
 
-    ```        
+```        
 
-    Запустите приложение. Когда вы выбираете значение оценки, приложение выводит числовое значение под элементом управления [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895).
+    Run the app. When you select a rating value, it outputs the numeric value below the [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control.
 
 ![Готовое приложение «Hello world» на компьютере](images/helloworld-5-winjs.png)
 
-## Резюме
+## Сводка
 
 Поздравляем! Вы создали свое первое приложение для Windows 10 и платформы UWP на языках JavaScript и HTML.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

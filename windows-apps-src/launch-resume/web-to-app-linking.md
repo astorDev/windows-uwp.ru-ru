@@ -4,8 +4,8 @@ title: "Поддержка привязки приложений к Интерн
 description: "Повышайте интерес пользователей к вашему приложению с помощью обработчиков URI приложения"
 keywords: "Глубокие связи Windows"
 translationtype: Human Translation
-ms.sourcegitcommit: 9ef86dcd4ae3d922b713d585543f1def48fcb645
-ms.openlocfilehash: c9833f29d6080509c849e9d624f2bfcd0b0af04c
+ms.sourcegitcommit: cb3dbf7fd55c92339c77124bd22b3484fa389285
+ms.openlocfilehash: d7ce1dbfdf8ce0069b4d882323de8fd6f1b242f7
 
 ---
 
@@ -53,7 +53,7 @@ ms.openlocfilehash: c9833f29d6080509c849e9d624f2bfcd0b0af04c
 [{
   "packageFamilyName": "YourAppsPFN",
   "paths": [ "*" ],
-  "excludePaths" : [ "/news/*, /blog/*" ]
+  "excludePaths" : [ "/news/*", "/blog/*" ]
  }]
 ```
 
@@ -68,7 +68,7 @@ Windows установит https-соединение с вашим сайтом
 | *****       | Представляет любую подстроку      |
 | **?**        | Представляет единичный символ |
 
-Например, при использовании приведенного в примере выше кода `"excludePaths" : [ "/news/*, /blog/*" ]` ваше приложение будет поддерживать все пути, начинающиеся с адреса вашего сайта (например, msn.com) **кроме** адресов в разделах `/news/` и `/blog/`. **msn.com/weather.html** будет поддерживаться, а ****msn.com/news/topnews.html**** — нет.
+Например, при использовании приведенного в примере выше кода `"excludePaths" : [ "/news/*", "/blog/*" ]` ваше приложение будет поддерживать все пути, начинающиеся с адреса вашего сайта (например, msn.com) **кроме** адресов в разделах `/news/` и `/blog/`. **msn.com/weather.html** будет поддерживаться, а ****msn.com/news/topnews.html**** — нет.
 
 
 ### Несколько приложений
@@ -79,11 +79,11 @@ Windows установит https-соединение с вашим сайтом
 [{
   "packageFamilyName": "YourAppsPFN",
   "paths": [ "*" ],
-  "excludedPaths" : [ "/news/*, /blog/*" ]
+  "excludePaths" : [ "/news/*", "/blog/*" ]
  },
  {
   "packageFamilyName": "Your2ndAppsPFN",
-  "paths": [ "/example/*, /links/*" ]
+  "paths": [ "/example/*", "/links/*" ]
  }]
 ```
 
@@ -195,6 +195,6 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 

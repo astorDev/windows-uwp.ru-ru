@@ -4,8 +4,8 @@ ms.assetid:
 description: "В этой статье рассказывается, как воспроизводить мультимедиа в универсальном приложении для Windows с помощью MediaPlayer."
 title: "Воспроизведение аудио и видео с помощью MediaPlayer"
 translationtype: Human Translation
-ms.sourcegitcommit: 3d6f79ea55718d988415557bc4ac9a1f746f9053
-ms.openlocfilehash: 32df2810710e78eeb8c257548c39c0d5d978e888
+ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
+ms.openlocfilehash: 66240809d47247312d9d4c49c7bf36ff70295559
 
 ---
 
@@ -36,11 +36,14 @@ ms.openlocfilehash: 32df2810710e78eeb8c257548c39c0d5d978e888
 
 [!code-cs[SetMediaPlayer](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetMediaPlayer)]
 
-Вы можете также задать источник воспроизведения **MediaPlayerElement**, и этот элемент автоматически создаст новый экземпляр **MediaPlayer**, к которому можно получить доступ с помощью свойства [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.MediaPlayer).
+Вы можете также задать источник воспроизведения в **MediaPlayerElement**, и этот элемент автоматически создаст новый экземпляр **MediaPlayer**, получить доступ к которому можно с помощью свойства [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.MediaPlayer).
 
 [!code-cs[GetPlayerFromElement](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetGetPlayerFromElement)]
 
-##Общие задачи MediaPlayer
+> [!NOTE] 
+> Если вы отключите [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) в объекте [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer), установив для свойства [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) значение false, это нарушит связь между свойством [**TransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.TransportControls) объекта **MediaPlayer**, предоставляемым классом **MediaPlayerElement**, поэтому встроенные элементы управления транспортом больше не будут автоматически управлять воспроизведением мультимедиа. Вместо этого вам нужно будет реализовать собственные элементы управления для управления воспроизведением **MediaPlayer**.
+
+##Типичные задачи, связанные с MediaPlayer
 В этом разделе рассказывается, как использовать некоторые функции **MediaPlayer**.
 
 ###Задание категории аудио
@@ -174,6 +177,6 @@ ms.openlocfilehash: 32df2810710e78eeb8c257548c39c0d5d978e888
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ title: "Руководство по разработке игр для Windows10
 description: "Комплексное руководство по ресурсам и сведения о разработке игр для универсальной платформы Windows (UWP)."
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 translationtype: Human Translation
-ms.sourcegitcommit: 1c3f222b4b3ddb14a48cef138984b07ac58cc66b
-ms.openlocfilehash: 7bc6694f94eeeb6188470fee00d432b2d71e52e6
+ms.sourcegitcommit: 2584a08e0a869ab3c5f11c192f0a5a6eeb223d61
+ms.openlocfilehash: af9252d172bab96ce50eb7ff12d8f0503f010d15
 
 ---
 
@@ -63,6 +63,10 @@ ms.openlocfilehash: 7bc6694f94eeeb6188470fee00d432b2d71e52e6
     <tr>
         <td>Справочник и обзоры по DirectX</td>
         <td>[Графика и игры на основе DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)</td>
+    </tr>
+    <tr>
+        <td>Azure для игр</td>
+        <td>[Создание и масштабирования игр с помощью Azure](https://azure.microsoft.com/solutions/gaming/)</td>
     </tr>
     <tr>
         <td>Приложения UWP для Xbox One</td>
@@ -653,6 +657,30 @@ Unity 5 — это следующее поколение удостоенной 
     </tr>
 </table>
  
+
+#### MonoGame
+
+MonoGame —это кроссплатформенное решение с открытым исходным кодом для разработки игр, основанное на Microsoft XNA Framework 4.0. Monogame в настоящее время поддерживает Windows, Windows Phone и Xbox, а также Linux, macOS, iOS, Android и несколько других платформ.
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>MonoGame</td>
+        <td>[Веб-сайт MonoGame](http://www.monogame.net)</td>
+    </tr>
+    <tr>
+        <td>Документация по MonoGame</td>
+        <td>[Документация MonoGame (последняя)](http://www.monogame.net/documentation/)</td>
+    </tr>
+    <tr>
+        <td>Скачиваемые файлы Monogame</td>
+        <td>[Скачайте выпуски, сборки для разработчиков и исходный код](http://www.monogame.net/downloads/) с веб-сайта MonoGame или [получите последний выпуск через NuGet](https://www.nuget.org/profiles/MonoGame).
+    </tr>
+</table>
+
 
 #### Cocos2d
 
@@ -1506,6 +1534,6 @@ IAP (внутренний продукт приложения) — это доп
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

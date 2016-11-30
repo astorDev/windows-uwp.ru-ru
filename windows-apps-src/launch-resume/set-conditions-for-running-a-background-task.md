@@ -4,8 +4,8 @@ title: "Задание условий выполнения фоновой зад
 description: "Узнайте, как задать условия, которые управляют запуском выполнения фоновой задачи."
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 0d90511c9fcfd722dfcc51a8ff8e5163e31e9fdf
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 
 ---
 
@@ -29,9 +29,9 @@ ms.openlocfilehash: 0d90511c9fcfd722dfcc51a8ff8e5163e31e9fdf
 
 ## Создание объекта SystemCondition
 
-Для работы с этим разделом вы должны иметь связанную с приложением фоновую задачу, а ваше приложение должно содержать код, который создает объект [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) с именем **taskBuilder**.  Если сначала нужно создать фоновую задачу, выполните инструкции из раздела [Создание и регистрация фоновой задачи, которая запускается в одном процессе](create-and-register-a-singleprocess-background-task.md) или [Создание и регистрация фоновой задачи, которая запускается в отдельном процессе](create-and-register-a-background-task.md).
+Для работы с этим разделом вы должны иметь связанную с приложением фоновую задачу, а ваше приложение должно содержать код, который создает объект [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) с именем **taskBuilder**.  Если сначала нужно создать фоновую задачу, выполните инструкции из раздела [Создание и регистрация фоновой задачи, выполняемой в процессе](create-and-register-an-inproc-background-task.md) или [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-an-outofproc-background-task.md).
 
-Этот раздел применяется к фоновым задачам, которые выполняются в отдельном или том же процессе, что и приложение переднего плана.
+Этот раздел применяется к фоновым задачам, которые выполняются вне процесса или в том же процессе, что и приложение переднего плана.
 
 Прежде чем добавлять само условие, создайте объект [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) для представления условия, которое должно соблюдаться для запуска задачи. Задайте в конструкторе необходимое для выполнения условие, указав значение перечисления [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
@@ -155,14 +155,14 @@ ms.openlocfilehash: 0d90511c9fcfd722dfcc51a8ff8e5163e31e9fdf
 
 > **Примечание.** Выберите такие условия для фоновой задачи, чтобы она запускалась только при необходимости и никогда не выполнялась, когда не будет работать. Обзор различных условий выполнения фоновых задач см. в разделе [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). Если вы разрабатываете приложения для Windows8.x или Windows Phone8.x, изучите раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). Если вы разрабатываете приложения для Windows8.x или Windows Phone8.x, обратитесь к [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Связанные статьи
 
 ****
 
-* [Создание и регистрация фоновой задачи, которая запускается в отдельном процессе](create-and-register-a-background-task.md)
-* [Создание и регистрация фоновой задачи, которая запускается в одном процессе](create-and-register-a-singleprocess-background-task.md)
+* [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-an-outofproc-background-task.md)
+* [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
 * [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
@@ -172,9 +172,6 @@ ms.openlocfilehash: 0d90511c9fcfd722dfcc51a8ff8e5163e31e9fdf
 * [Использование триггера обслуживания](use-a-maintenance-trigger.md)
 * [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-
-****
-
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Вызов событий приостановки, возобновления и фоновых событий в приложениях Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
@@ -184,6 +181,6 @@ ms.openlocfilehash: 0d90511c9fcfd722dfcc51a8ff8e5163e31e9fdf
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

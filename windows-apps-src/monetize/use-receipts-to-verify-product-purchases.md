@@ -4,17 +4,15 @@ ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: "Каждая транзакция Магазина Windows, которая заканчивается успешной сделкой, может дополнительно возвращать квитанцию транзакции."
 title: "Проверка покупок продуктов с помощью квитанций"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 01b75d25c385d8dd856af79581fb4a346064c400
+ms.sourcegitcommit: 18d5c2ecf7d438355c3103ad2aae32dc84fc89ed
+ms.openlocfilehash: ea79a33a52bc45a9c8609e12bfac953c3f92db09
 
 ---
 
 # Проверка покупок продуктов с помощью квитанций
 
 
-
-
->**Примечание.**&nbsp;&nbsp;Примеры в этой статье входят в пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Если ваше приложение предназначено для Windows 10 версии 1607 или более поздней, для управления покупками из приложения рекомендуется использовать элементы, входящие в пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), а не Windows.ApplicationModel.Store. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
+>**Примечание.**&nbsp;&nbsp;Примеры в этой статье входят в пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Если ваше приложение предназначено для Windows 10 версии 1607 или более поздней, для управления покупками из приложения рекомендуется использовать члены пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), а не **Windows.ApplicationModel.Store**. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
 
 **Важные API**
 
@@ -242,6 +240,6 @@ namespace ReceiptVerificationSample
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -3,16 +3,16 @@ author: mcleanbyron
 ms.assetid: 571697B7-6064-4C50-9A68-1374F2C3F931
 description: "Узнайте, как использовать пространство имен Windows.Services.Store для предоставления пользователям пробной версии приложения."
 title: "Реализация пробной версии приложения"
-keywords: "образец бесплатной пробной версии приложения"
+keywords: "пример кода бесплатной пробной версии"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 22f355c23f4cc87932563e9885f390e9a5ac4130
+ms.sourcegitcommit: 18d5c2ecf7d438355c3103ad2aae32dc84fc89ed
+ms.openlocfilehash: 8858c9f7f9b40e2bca30054b99ab47c7388aef57
 
 ---
 
-# Реализация пробной версии приложения
+# Внедрение пробной версии приложения
 
-Если вы разрешите пользователям бесплатно пользоваться вашим приложением в течение испытательного срока, можно привлечь их к обновлению до полной версии приложения путем удаления или ограничения некоторых функций в течение пробного периода. До начала программирования решите, какие функции лучше ограничить, и сделайте так, чтобы они были доступны только после покупки полной лицензии. Вы можете также включить такие компоненты, как баннеры или водяные знаки, которые будут отображаться только во время испытательного срока, пока пользователь не купит приложение.
+Если приложение настроено на [информационной панели Центра разработки для Windows в качестве бесплатной пробной версии](../publish/set-app-pricing-and-availability.md#free-trial) (то есть клиенты могут пользоваться им бесплатно в течение пробного периода), можно убедить клиентов выполнить обновление до полной версии приложения, исключив или ограничив определенные функции в течение пробного периода. До начала программирования решите, какие функции лучше ограничить, и сделайте так, чтобы они были доступны только после покупки полной лицензии. Вы можете также включить такие компоненты, как баннеры или водяные знаки, которые будут отображаться только во время испытательного срока, пока пользователь не купит приложение.
 
 Приложения, предназначенные для Windows 10 версии 1607 или старше, могут использовать члены класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), чтобы определять, есть ли у пользователя лицензия на пробную версию приложения, и получать уведомления в случае изменения состояния лицензии во время работы приложения.
 
@@ -62,7 +62,9 @@ ms.openlocfilehash: 22f355c23f4cc87932563e9885f390e9a5ac4130
 В коде из этого примера предполагается следующее:
 * Код выполняется в контексте страницы [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx), которая содержит [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) с именем ```workingProgressRing``` и [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) с именем ```textBlock```. Эти объекты используются для индикации выполнения асинхронной операции и отображения выводимых сообщений, соответственно.
 * Файл кода содержит оператор **using** для пространства имен **Windows.Services.Store**.
-* Приложение является однопользовательским и выполняется только в контексте пользователя, запустившего его. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md#api_intro).
+* Приложение — однопользовательское и выполняется только в контексте пользователя, запустившего его. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md#api_intro).
+
+>**Примечание.**&nbsp;&nbsp;Если у вас есть классическое приложение, которое использует [мост для настольных ПК](https://developer.microsoft.com/windows/bridges/desktop), вам может потребоваться добавить дополнительный код, не показанный в этом примере, для настройки объекта [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Дополнительные сведения см. в разделе [Использование класса StoreContext в классическом приложение, в котором применяется мост для настольных компьютеров](in-app-purchases-and-trials.md#desktop).
 
 ## Пример кода
 
@@ -81,6 +83,9 @@ private async void InitializeLicense()
     if (context == null)
     {
         context = StoreContext.GetDefault();
+        // If your app is a desktop app that uses the Desktop Bridge, you
+        // may need additional code to configure the StoreContext object.
+        // For more info, see https://aka.ms/storecontext-for-desktop.
     }
 
     workingProgressRing.IsActive = true;
@@ -127,6 +132,6 @@ private async void context_OfflineLicensesChanged(StoreContext sender, object ar
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

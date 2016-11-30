@@ -4,8 +4,8 @@ description: "Использование контактов и сведений 
 title: "Контакты и календарь"
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 translationtype: Human Translation
-ms.sourcegitcommit: 5c0f6ef1f1a346a66ca554a415d9f24c8a314ae1
-ms.openlocfilehash: da73790ca9aec3fa16295eac4880c7b80db033ab
+ms.sourcegitcommit: c21a5f0f859e3a80d01786caaf6941c3d0b11c18
+ms.openlocfilehash: 0b93ab3f5e0a622fb924a752ec581bbb9df32936
 
 ---
 
@@ -24,21 +24,19 @@ ms.openlocfilehash: da73790ca9aec3fa16295eac4880c7b80db033ab
 | [Отправка SMS-сообщения](sending-an-sms-message.md) | В данной статье рассказывается, как запустить диалоговое окно составления SMS, с помощью которого пользователь может отправить SMS-сообщение. Перед отображением диалогового окна вы можете заполнить поля SMS-сообщения значениями по умолчанию. Сообщение не будет отправлено до тех пор, пока пользователь не нажмет кнопку отправки. |
 | [Управление встречами](managing-appointments.md) | Пространство имен [<strong>Windows.ApplicationModel.Appointments</strong>](https://msdn.microsoft.com/library/windows/apps/Dn263359) позволяет создавать встречи в приложении календаря пользователя и управлять ими. Здесь мы покажем, как создать встречу, добавить ее в приложение календаря, заменить и удалить из него. Кроме того, вы узнаете, как отобразить интервал времени в календаре и создать объект повторяющейся встречи. |
 | [Подключение приложения к действиям в карточках контактов](integrating-with-contacts.md) | Показано, как сделать так, чтобы приложение отображалось рядом с действиями на карточке контакта или свернутой карточке контакта. Пользователи могут выбрать действие, выполняемое вашим приложением, например открытие страницы профиля, совершение вызова или отправку сообщения. |
-| [Реализация социальных веб-каналов в приложении "Люди"](integrating-social-feeds-into-contact-cards.md) | Интеграция данных социальных веб-каналов из базы данных с приложением "Люди". Данные ваших веб-каналов появятся на страницах <strong>Что нового</strong> в приложении "Люди" или на странице <strong>Профиль</strong> контакта. |
 
  
 
-## Связанные разделы
+## Статьи по теме
 
 * [Пример API встреч](http://go.microsoft.com/fwlink/p/?linkid=309836)
 * [Пример API диспетчера контактов](http://go.microsoft.com/fwlink/p/?LinkID=310079)
 * [Образец приложения "Окно выбора контактов"](http://go.microsoft.com/fwlink/p/?linkid=231575)
-* [Пример обработки действий в контактами](http://go.microsoft.com/fwlink/p/?LinkID=320151)
+* [Пример обработки действий с контактами](http://go.microsoft.com/fwlink/p/?LinkID=320151)
 * [Пример интеграции карточки контакта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)
-* [Пример сведений из социальных сетей](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: "Узнайте о том, как устанавливать библиотеки Microsoft Advertising."
 title: "Установка библиотек Microsoft Advertising"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
+ms.sourcegitcommit: 126fee708d82f64fd2a49b844306c53bb3d4cc86
+ms.openlocfilehash: c717fa693c6edf8757c3eef79d60193434104bd8
 
 
 ---
@@ -15,9 +15,9 @@ ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
 
 
 
-Для приложений универсальной платформы Windows (UWP) для Windows 10 библиотеки Microsoft Advertising включены в пакет [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). Этот пакет SDK является расширением Visual Studio 2015. Дополнительные сведения об этом пакете SDK см. [в этом разделе](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk).
+Для приложений универсальной платформы Windows (UWP) для Windows 10 библиотеки Microsoft Advertising включены в пакет [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). Этот пакет SDK является расширением Visual Studio 2015 и последующих версий. Дополнительные сведения об установке этого пакета SDK см. [в этом разделе](microsoft-store-services-sdk.md).
 
-> **Примечание.**&nbsp;&nbsp;Если вы установили пакет SDK Windows 10 (14393) или более новой версии, необходимо также установить библиотеку WinJS, если требуется добавлять рекламу в приложения UWP на JavaScript/HTML. Эта библиотека ранее включалась в предыдущие версии SDK для Windows 10, но начиная с пакета SDK для Windows 10 (14393) ее необходимо устанавливать отдельно. Сведения по установке WinJS см. в разделе [Скачать WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> **Примечание.**&nbsp;&nbsp;Если вы установили пакет SDK Windows 10 (14393) или более новой версии, необходимо также установить библиотеку WinJS, если требуется добавлять рекламу на JavaScript/HTML в приложения UWP. Эта библиотека ранее включалась в предыдущие версии SDK для Windows 10, но начиная с пакета SDK для Windows 10 (14393) ее необходимо устанавливать отдельно. Сведения по установке WinJS см. в разделе [Скачать WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
 Для приложений XAML и JavaScript/HTML для Windows 8.1 и Windows Phone 8.x библиотеки Microsoft Advertising входят в пакет [Microsoft Advertising SDK для Windows и Windows Phone 8.x](http://aka.ms/store-8-sdk). Этот пакет SDK является расширением Visual Studio 2015 или Visual Studio 2013.
 
@@ -103,6 +103,6 @@ ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

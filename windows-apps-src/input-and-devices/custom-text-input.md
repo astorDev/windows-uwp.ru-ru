@@ -6,8 +6,8 @@ ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 614c1b8f319ea1925cd15c5ad1a3093b2bce54d3
+ms.sourcegitcommit: 62ac7e8f49f4413d9423c027047341f9adcca6f9
+ms.openlocfilehash: 136e9ce1cede3fc09ebd31841e9d1b0be251837a
 
 ---
 
@@ -60,8 +60,7 @@ API основного текста в пространстве имен [**Wind
 
  
 
-Например, в диапазоне текста, показанном ранее, диапазон \[0, 5\] обозначает слово Hello. 
-              Значение **StartCaretPosition** должно быть меньше или равно **EndCaretPosition**. Диапазон \[5, 0\] является недопустимым.
+Например, в диапазоне текста, показанном ранее, диапазон \[0, 5\] обозначает слово Hello. Значение **StartCaretPosition** должно быть меньше или равно **EndCaretPosition**. Диапазон \[5, 0\] является недопустимым.
 
 ### Точка вставки
 
@@ -151,21 +150,18 @@ API основного текста в пространстве имен [**Wind
 
 Иногда [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958227) в [**CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958221) определяет диапазон, который ваш элемент управления редактированием не может вставить «как есть». Например, **Range** больше, чем размер элемента управления редактированием в момент события [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175), или конец **Range** выходит за рамки. В таких случаях вы должны вернуть любой разумный диапазон. Обычно это подмножество запрашиваемого диапазона.
 
-## Связанные статьи
+## Статьи по теме
 
-
+**Примеры**
+* [Пример пользовательского элемента управления для редактирования](https://go.microsoft.com/fwlink/?linkid=831024)
+ 
 **Примеры архива**
-* [Пример редактирования текста XAML](http://go.microsoft.com/fwlink/p/?LinkID=251417)
- 
-
- 
+* [Пример редактирования текста на XAML](http://go.microsoft.com/fwlink/p/?LinkID=251417)
 
 
 
 
 
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

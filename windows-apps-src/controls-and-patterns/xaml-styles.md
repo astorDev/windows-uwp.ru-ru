@@ -9,13 +9,13 @@ ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: XAML styles
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 3aad0049bdd43935fa61b6146b81030494ff5bdb
+ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
+ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 
 ---
 # Стили XAML
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 
 
@@ -143,6 +143,63 @@ ms.openlocfilehash: 3aad0049bdd43935fa61b6146b81030494ff5bdb
 
 Чтобы быстро применить стили к элементу управления, щелкните его правой кнопкой мыши в рабочей области конструирования XAML в Microsoft Visual Studio и выберите команду **Изменить стиль** или **Изменить шаблон** (в зависимости от элемента управления). Затем можно применить существующий стиль, выбрав команду **Применить ресурс**, или определить новый стиль командой **Создать пустой**. При создании пустого стиля можно определить его на странице, в файле App.xaml или в отдельном словаре ресурсов.
 
+## Облегченное определение стиля
+
+Переопределение системных кистей обычно выполняется на уровне страницы или приложения, и в обоих случаях переопределение цвета влияет на все элементы управления, ссылающиеся на эту кисть, а в XAML многие элементы управления могут ссылаться на одну и ту же системную кисть.
+
+![Кнопки со стилем](images/LightweightStyling_ButtonStatesExample.png)
+
+```XAML
+<Page.Resources>
+    <ResourceDictionary>
+        <ResourceDictionary.ThemeDictionaries>
+            <ResourceDictionary x:Key="Light">
+                 <SolidColorBrush x:Key="ButtonBackground" Color="Transparent"/>
+                 <SolidColorBrush x:Key="ButtonForeground" Color="MediumSlateBlue"/>
+                 <SolidColorBrush x:Key="ButtonBorderBrush" Color="MediumSlateBlue"/>
+            </ResourceDictionary>
+        </ResourceDictionary.ThemeDictionaries>
+    </ResourceDictionary>
+</Page.Resources>
+```
+
+Для состояний наподобие PointerOver (наведение мыши на кнопку), **PointerPressed** (кнопка вызвана), или Disabled (кнопка не активна). Эти окончания добавляются к исходным именам облегченного оформления: **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled**и т. д. Изменение и этих кистей гарантирует, что ваши элементы управления раскрашены в соответствии с темой приложения.
+
+Размещение переопределений этих кистей на уровне **App.Resources** изменяет все кнопки в пределах всего приложения, а не на одной странице.
+
+### Настройка стиля для элементов управления по отдельности
+
+В других случаях необходимо изменение одного элемента управления на одной странице определенным образом без изменения других версий этого элемента управления:
+
+![Кнопки со стилем](images/LightweightStyling_CheckboxExample.png)
+
+```XAML
+<CheckBox Content="Normal CheckBox" Margin="5"/>
+    <CheckBox Content="Special CheckBox" Margin="5">
+        <CheckBox.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.ThemeDictionaries>
+                    <ResourceDictionary x:Key="Light">
+                        <SolidColorBrush x:Key="CheckBoxForegroundUnchecked"
+                            Color="Purple"/>
+                        <SolidColorBrush x:Key="CheckBoxForegroundChecked"
+                            Color="Purple"/>
+                        <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked"
+                            Color="White"/>
+                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked"  
+                            Color="Purple"/>
+                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked"
+                            Color="Purple"/>
+                    </ResourceDictionary>
+                </ResourceDictionary.ThemeDictionaries>
+            </ResourceDictionary>
+        </CheckBox.Resources>
+    </CheckBox>
+<CheckBox Content="Normal CheckBox" Margin="5"/>
+```
+
+Это повлияет только на тот единственный Special CheckBox на странице, где этот элемент управления расположен.
+
 ## Изменение системных стилей, используемых по умолчанию
 
 По возможности следует использовать стили из ресурсов XAML среды выполнения Windows, используемых по умолчанию. Если вам нужно определить собственные стили, старайтесь создавать их на базе стилей по умолчанию (используйте базовые стили, как описано выше, или измените копию исходного стиля по умолчанию).
@@ -153,6 +210,6 @@ ms.openlocfilehash: 3aad0049bdd43935fa61b6146b81030494ff5bdb
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

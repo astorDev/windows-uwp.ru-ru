@@ -5,8 +5,8 @@ title: "Дальнейшие действия"
 description: "Создав свое первое приложение, ознакомьтесь с другими разделами Центра разработки. Здесь представлен обзор содержащихся в нем разделов."
 keywords: "Центр разработки для Windows, начало работы"
 translationtype: Human Translation
-ms.sourcegitcommit: 743a3649613d39083520f8d79f4c0daf97336568
-ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
+ms.sourcegitcommit: 1c059edde92a48af610af1033c3b18ca729410aa
+ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
 
 ---
 
@@ -18,10 +18,9 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
 
 Рекомендуется ознакомиться с разделами, посвященными UWP, чтобы получить представление об этой платформе, а затем изучить создание пользовательского интерфейса с использованием элементов управления XAML и их последующей настройкой. Основное достоинство языка XAML — это использование *привязки данных* для связывания элементов управления с информацией, которую требуется отображать приложению; если вы не знакомы с платформой Windows, будет важно понять эту концепцию.
 
-Вам также может понравиться сайт [Набор средств разработчика](https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox), на котором в одном месте собрано много информации по началу работы.
+Если вы хотите изучать новейшие методы программирования для Windows 10, такие как добавление анимации и эффектов в приложения, ознакомьтесь с [Блогом разработчиков Windows](https://blogs.windows.com/buildingapps).
 
 <table class="wdg-noborder">
-
 <tr>
  <td width=60><img src="images/icon3.png" width=64></td>
     <td><h2>UWP и жизненный цикл приложения UWP</h2><p>Как запускается приложение, что происходит при запуске другого приложения? Информация приведена ниже.</p> <ul>
@@ -40,6 +39,7 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
       <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro">Введение в работу с элементами управления и шаблонами</a></li>
      <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/styling-controls">Настройка стиля элементов управления</a></li>
       <li><a href="https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Размеры экрана и точки прерывания для обеспечения отзывчивого дизайна</a></li>
+      <li><a href="https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox">Использование набора средств сообщества UWP для выбора встроенных элементов управления и шаблонов</a></li>
     </ul></td>  
 </tr>
  
@@ -162,6 +162,6 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

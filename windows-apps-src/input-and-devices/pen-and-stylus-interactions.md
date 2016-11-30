@@ -7,8 +7,8 @@ label: Pen interactions and Windows Ink in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
 translationtype: Human Translation
-ms.sourcegitcommit: 8bc5612c0fc9273d32ccbfcd5b4334566d24b017
-ms.openlocfilehash: 67149f51cc16fee6f5ba818915432b18d2c1a549
+ms.sourcegitcommit: f7bc2ccbdd34bec671864323df53ab7bdda25a87
+ms.openlocfilehash: 4c87dea0387b2da055d07df5bab14c4ad61638d7
 
 ---
 
@@ -304,7 +304,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
     ![Лассо выбора](images/ink-unprocessed-3-small.png)
 
       ```csharp
-        // Handle unprocessed pointer events from modifed input.
+        // Handle unprocessed pointer events from modified input.
         // The input is used to provide selection functionality.
         // Selection UI is drawn on a canvas under the InkCanvas.
         private void UnprocessedInput_PointerPressed(
@@ -435,12 +435,15 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 Вызывая [**ActivateCustomDrying**](https://msdn.microsoft.com/library/windows/apps/dn922012) (до загрузки элемента [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)), приложение создает объект [**InkSynchronizer**](https://msdn.microsoft.com/library/windows/apps/dn903979), чтобы настроить отображение росчерка пера сухим в [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) или [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050). Например, росчерк пера можно преобразовать в растровый формат и интегрировать в содержимое приложения вместо отдельного слоя **InkCanvas**.
 
-Полный пример этой функции см. в разделе [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314).
+Полный пример этой функциональности см. в статье [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314).
 
+> [!NOTE]
+> Пользовательская сушка и [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
+> Если ваше приложение переопределяет поведение по умолчанию для отрисовки рукописных данных объекта [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) пользовательской реализацией сушки, отрисованные росчерки пера более недоступны для InkToolbar, а встроенные команды стирания InkToolbar не работают должным образом. Для реализации функции стирания необходимо обрабатывать все события указателя, выполнять проверку нажатия для каждого штриха и переопределить встроенную команду «Удалить все рукописные данные».
 
 ## Другие статьи в этом разделе
 
-| Раздел | Описание |
+| Статья | Описание |
 | --- | --- |
 | [Распознавание росчерков пера](convert-ink-to-text.md) | Преобразуйте росчерки пера в текст с помощью распознавания рукописного ввода или в фигуры с помощью настраиваемого распознавания. |
 | [Хранение и извлечение росчерков пера](save-and-load-ink.md) | Храните данные росчерка пера в GIF-файле, используя встроенные метаданные формата Ink Serialized Format (ISF). |
@@ -471,6 +474,6 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

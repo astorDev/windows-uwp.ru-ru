@@ -4,8 +4,8 @@ ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: "Узнайте, как включить промежуточную рекламу в Windows 10, Windows 8.1 или Windows Phone 8.1 с помощью библиотек Microsoft Advertising в составе пакета Microsoft Store Services SDK."
 title: "Промежуточная видеореклама"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
+ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
+ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 
 ---
 
@@ -360,10 +360,10 @@ ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 4.  Изучите [отчеты по показателям рекламы](../publish/advertising-performance-report.md) на информационной панели Центра разработки.
 
 <span id="interstitialbestpractices10"/>
-## Рекомендации для промежуточной рекламы
+## Рекомендации и правила для промежуточной рекламы
 
 
-Дополнительные сведения о том, как эффективно использовать промежуточную рекламу, см. в разделе [Рекомендации по созданию пользовательского интерфейса](ui-and-user-experience-guidelines.md).
+Дополнительные сведения о том, как эффективно использовать промежуточную рекламу, и о действующих правилах, которые необходимо выполнять, см. в разделе [Рекомендации и правила для промежуточной рекламы](ui-and-user-experience-guidelines.md#interstitialbestpractices10).
 
 <span id="targetplatform10"/>
 ## Удалите ошибки ссылок: ориентируйтесь на конкретную платформу ЦП (XAML или HTML)
@@ -384,6 +384,6 @@ ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

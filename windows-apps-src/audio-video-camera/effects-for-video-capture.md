@@ -1,22 +1,42 @@
 ---
 author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
-description: "В этом разделе показано, как использовать эффект стабилизации видеоизображения."
+description: "В этом разделе показано, как применять эффекты к предварительному просмотру камеры и потокам видеозаписи, а также как использовать эффект стабилизации видео."
 title: "Эффекты для видеозахвата"
 translationtype: Human Translation
-ms.sourcegitcommit: 367ab34663d66d8c454ff305c829be66834e4ebe
-ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
+ms.sourcegitcommit: 25212fede7640c12ea4f1484a9f3c540bf4a0c12
+ms.openlocfilehash: ec7c285df48f37842fe757ef619da3a0d76cd690
 
 ---
 
 # Эффекты для видеозахвата
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этом разделе показано, как использовать эффект стабилизации видеоизображения.
+В этом разделе показано, как применять эффекты к предварительному просмотру камеры и потокам видеозаписи, а также как использовать эффект стабилизации видео.
 
 > [!NOTE] 
 > В этой статье используются понятия и код из статьи [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), в которой описаны этапы реализации основных принципов фото- и видеозахвата. Мы рекомендуем ознакомиться с базовым шаблоном захвата мультимедиа в этой статье, прежде чем перейти к более сложным сценариям захвата. Код в этой статье подразумевает, что ваше приложение уже содержит экземпляр MediaCapture, инициализированный надлежащим образом.
+
+## Добавление и удаление эффектов из видеопотока камеры
+Для записи или предварительно просмотра видео с камеры устройства используйте объект [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture), как описано в статье [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md). После инициализации объекта **MediaCapture** можно добавить один или несколько видеоэффектов в поток предварительного просмотра или захвата, вызвав метод [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) и передав объект [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IVideoEffectDefinition), представляющий нужный эффект, и член перечисления [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaStreamType), указывающий, следует ли добавить эффект в потока предварительного просмотра или записи камеры.
+
+> [!NOTE]
+> На некоторых устройствах поток предварительного просмотра и поток захвата совпадают, т. е. если указать **MediaStreamType.VideoPreview** или **MediaStreamType.VideoRecord** при вызове **AddVideoEffectAsync**, эффект будет применен к обоим потокам. Вы можете определить, совпадают ли потоки предварительного просмотра и записи на текущем устройстве, проверив свойство [**VideoDeviceCharacteristic**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings.VideoDeviceCharacteristic) в [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.MediaCaptureSettings) для объекта **MediaCapture**. Если значение этого свойства равно **VideoDeviceCharacteristic.AllStreamsIdentical** или **VideoDeviceCharacteristic.PreviewRecordStreamsIdentical**, то потоки одинаковые, и все эффекты будут применяться к обоим потокам.
+
+В следующем примере эффект добавляется в потоки предварительного просмотра и записи камеры. В примере показано, как проверить, совпадают ли потоки предварительного просмотра и записи.
+
+[!code-cs[BasicAddEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetBasicAddEffect)]
+
+Обратите внимание, что **AddVideoEffectAsync** возвращает объект, реализующий расширение [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.IMediaExtension), которое представляет добавленный видеоэффект. Некоторые эффекты позволяют изменить свои параметры, передав [**PropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet) методу [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986).
+
+Начиная с Windows 10 версии 1607 можно также использовать объект, возвращенный **AddVideoEffectAsync**, чтобы удалить эффект из видеоконвейера, передав его в [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957). Метод **RemoveEffectAsync** автоматически определяет, был ли параметр объекта эффекта добавлен в поток предварительного просмотра или записи, чтобы вам не нужно было указывать тип потока при вызове.
+
+[!code-cs[RemoveOneEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetRemoveOneEffect)]
+
+Вы также можете удалить все эффекты из потока предварительного просмотра или записи, вызвав метод [**ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592) и указав поток, из которого необходимо удалить все эффекты.
+
+[!code-cs[ClearAllEffects](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetClearAllEffects)]
 
 ## Эффект стабилизации видео
 
@@ -28,15 +48,15 @@ ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 Помимо пространства имен, необходимого для основного захвата мультимедиа, для использования эффекта стабилизации видео нужно следующее пространство имен.
 
-[!code-cs[VideoStabilizationEffectUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEffectUsing)]
+[!code-cs[VideoStabilizationEffectUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetVideoStabilizationEffectUsing)]
 
 Объявите переменную-член для хранения объекта [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760). В рамках реализации эффекта измените свойства кодирования, применяемые для кодирования захваченного видео. Объявите две переменные для хранения резервной копии исходных свойств кодирования входного и выходного потока, чтобы их можно было восстановить после отключения эффекта. Наконец объявите переменную-член типа [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026), поскольку этот объект будет доступен из разных мест кода.
 
-[!code-cs[DeclareVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
+[!code-cs[DeclareVideoStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
 
 Для этого сценария следует назначать объект профиля кодирования мультимедиа переменной-члену, чтобы можно было получить к нему доступ позже.
 
-[!code-cs[EncodingProfileMember](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEncodingProfileMember)]
+[!code-cs[EncodingProfileMember](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetEncodingProfileMember)]
 
 ### Инициализация эффекта стабилизации видео
 
@@ -44,7 +64,7 @@ ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 Зарегистрируйте обработчик для события [**EnabledChanged**](https://msdn.microsoft.com/library/windows/apps/dn948982) и вызовите вспомогательный метод **SetUpVideoStabilizationRecommendationAsync**, которые рассматриваются ниже в этой статье. В заключение установите для свойства [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926775) значение true, чтобы включить эффект.
 
-[!code-cs[CreateVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateVideoStabilizationEffect)]
+[!code-cs[CreateVideoStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetCreateVideoStabilizationEffect)]
 
 ### Использование рекомендуемых свойств кодирования
 
@@ -60,7 +80,7 @@ ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 Задайте свойство [**Video**](https://msdn.microsoft.com/library/windows/apps/hh701124) объекта **MediaEncodingProfile**. Перед установкой новых свойств используйте переменную-член для хранения исходных свойств кодирования, чтобы иметь возможность вернуть настройки при отключении эффекта.
 
-[!code-cs[SetUpVideoStabilizationRecommendationAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetUpVideoStabilizationRecommendationAsync)]
+[!code-cs[SetUpVideoStabilizationRecommendationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetSetUpVideoStabilizationRecommendationAsync)]
 
 ### Обработка отключения эффекта стабилизации видео
 
@@ -68,13 +88,13 @@ ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 Как правило, это событие используется для того, чтобы настроить в пользовательском интерфейсе приложения отображение текущего состояния стабилизации видео.
 
-[!code-cs[VideoStabilizationEnabledChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEnabledChanged)]
+[!code-cs[VideoStabilizationEnabledChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetVideoStabilizationEnabledChanged)]
 
 ### Удаление эффекта стабилизации видео
 
-Для удаления эффекта стабилизации видео вызовите [**ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592), чтобы удалить все эффекты из видеоконвейера. Если значения переменных-членов, содержащих начальные свойства кодирования, не равны null, используйте их для восстановления свойств кодирования. Наконец удалите обработчик событий **EnabledChanged** и установите для эффекта значение null.
+Для удаления эффекта стабилизации видео вызовите [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957), чтобы удалить эффект из видеоконвейера. Если значения переменных-членов, содержащих начальные свойства кодирования, не равны null, используйте их для восстановления свойств кодирования. Наконец удалите обработчик событий **EnabledChanged** и установите для эффекта значение null.
 
-[!code-cs[CleanUpVisualStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVisualStabilizationEffect)]
+[!code-cs[CleanUpVisualStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetCleanUpVisualStabilizationEffect)]
 
 ## Связанные разделы
 
@@ -90,6 +110,6 @@ ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

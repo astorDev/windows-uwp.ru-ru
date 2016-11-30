@@ -4,8 +4,8 @@ title: "Регистрация фоновой задачи"
 description: "Сведения о создании функции, которую можно многократно использовать для безопасной регистрации большинства фоновых задач."
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
+ms.sourcegitcommit: 0f1bf88b1470cc5205f2e98ef15300da705203b1
+ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 
 Сведения о создании функции, которую можно многократно использовать для безопасной регистрации большинства фоновых задач.
 
-Этот раздел актуален как для фоновых задач, выполняемых в одном процессе, так и фоновых задач, выполняемых отдельным процессом. В этом разделе предполагается, что вы уже создали фоновую задачу, которую нужно зарегистрировать. (См. сведения о записи фоновой задачи в разделе [Создание и регистрация фоновой задачи, которая выполняется отдельным процессом](create-and-register-a-background-task.md) или [Создание и регистрация фоновой задачи, которая выполняется в одном процессе](create-and-register-a-singleprocess-background-task.md)).
+Эта статья относится как к внутрипроцессным, так и к внепроцессным фоновым задачам. В этой статье предполагается, что у вас уже есть фоновая задача, которую нужно зарегистрировать. (О том, как написать фоновую задачу, см. в статье [Создание и регистрация внепроцессной фоновой задачи](create-and-register-an-outofproc-background-task.md) или [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)).
 
 Этот раздел содержит краткий обзор служебной функции, которая регистрирует фоновые задачи. Прежде чем несколько раз зарегистрировать задачу, эта служебная функция проверяет наличие существующих регистраций, чтобы избежать проблем, связанных с многократными регистрациями. Она может также применять условие системы к фоновой задаче. Этот обзор включает полный рабочий пример данной служебной функции.
 
@@ -36,8 +36,8 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 Этот метод принимает точку входа задачи, имя задачи, предварительно построенный триггер фоновой задачи и (необязательно) условие [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) для фоновой задачи. Этот метод возвращает объект [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).
 
 > [!Important]
-> `taskEntryPoint` - для фоновых задач, которые выполняются в отдельном процессе, этот объект необходимо спроектировать как имя пространства имен ('.') и имя класса, содержащего ваш класс фоновых задач. Строка обрабатывается с учетом регистра.  Например, если имеется пространство имен "MyBackgroundTasks" и класс "BackgroundTask1", содержащий код вашего класса фоновой задачи, строка для `taskEntryPoint` имела бы вид "MyBackgroundTasks.BackgruondTask1".
-> Если фоновая задача выполняется в том же процессе, что и приложение (фоновая задача в одном процессе), `taskEntryPoint` задавать не требуется.
+> `taskEntryPoint` - для фоновых задач, которые выполняются вне процесса, эта строка должна состоять из имени пространства имен, точки ('.') и имени класса, содержащего ваш фоновый класс. Строка обрабатывается с учетом регистра.  Например, если имеется пространство имен "MyBackgroundTasks" и класс "BackgroundTask1", содержащий код вашего класса фоновой задачи, строка для `taskEntryPoint` имела бы вид "MyBackgroundTasks.BackgruondTask1".
+> Если фоновая задача выполняется в том же процессе, что и приложение (т.е. представляет собой внутрипроцессную фоновую задачу), `taskEntryPoint` задавать не нужно.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -182,7 +182,7 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 >
 >     builder.Name = name;
 >
->     // single-process background tasks don't set TaskEntryPoint
+>     // in-process background tasks don't set TaskEntryPoint
 >     if ( taskEntryPoint != null && taskEntryPoint != String.Empty)
 >     {
 >         builder.TaskEntryPoint = taskEntryPoint;
@@ -371,14 +371,14 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 > }
 > ```
 
-> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). Если вы разрабатываете приложения для Windows8.x или Windows Phone8.x, изучите раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). Если вы разрабатываете приложения для Windows8.x или Windows Phone8.x, обратитесь к [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## Связанные статьи
+## Статьи по теме
 
 ****
 
-* [Создание и регистрация фоновой задачи, которая запускается в отдельном процессе](create-and-register-a-background-task.md)
-* [Создание и регистрация фоновой задачи, которая запускается в одном процессе](create-and-register-a-singleprocess-background-task.md)
+* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-an-outofproc-background-task.md)
+* [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
 * [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
@@ -388,9 +388,6 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 * [Использование триггера обслуживания](use-a-maintenance-trigger.md)
 * [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-
-****
-
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Вызов событий приостановки, возобновления и фоновых событий в приложениях Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
@@ -400,6 +397,6 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,17 +4,14 @@ ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: "Используйте этот метод в API аналитики для Магазина Windows для получения сводных данных об оценках приложения в заданном диапазоне дат или с учетом других дополнительных фильтров."
 title: "Получение сведений об оценках приложения"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
+ms.sourcegitcommit: 67845c76448ed13fd458cb3ee9eb2b75430faade
+ms.openlocfilehash: 45df3a1296ba06551e08705e9d72a693ad3d33e5
 
 ---
 
 # Получение сведений об оценках приложения
 
-
-
-
-Используйте этот метод в API аналитики для Магазина Windows для получения сводных данных об оценках приложения в заданном диапазоне дат или с учетом других дополнительных фильтров. Этот метод возвращает данные в формате JSON.
+Используйте этот метод в API аналитики для Магазина Windows для получения сводных данных об оценках в формате JSON в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете об оценках](../publish/ratings-report.md) на информационной панели Центра разработки для Windows.
 
 ## Необходимые условия
 
@@ -118,6 +115,31 @@ ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
 <p>Параметр <em>order</em> является необязательным и может принимать значения <strong>asc</strong> или <strong>desc</strong>, которые указывают, соответственно, порядок сортировки по возрастанию или по убыванию для каждого поля. Значение по умолчанию — <strong>asc</strong>.</p>
 <p>Пример: строка <em>orderby</em>: <em>orderby=date,market</em></p></td>
 <td align="left">Нет</td>
+</tr>
+<tr class="odd">
+<td align="left">groupby</td>
+<td align="left">строка</td>
+<td align="left"><p>Оператор, который применяет агрегирование данных только к указанным полям. Можно указать следующие поля:</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationName</strong></li>
+<li><strong>market</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>isRevised</strong></li>
+</ul>
+<p>Возвращенные строки данных будут содержать поля, указанные в параметре <em>groupby</em>, а также:</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationId</strong></li>
+<li><strong>fiveStars</strong></li>
+<li><strong>fourStars</strong></li>
+<li><strong>threeStars</strong></li>
+<li><strong>twoStars</strong></li>
+<li><strong>oneStar</strong></li>
+</ul>
+<p>Параметр <em>groupby</em> можно использовать вместе с параметром <em>aggregationLevel</em>. Например: <em>&amp;groupby=osVersion,market&amp;aggregationLevel=week</em></p></td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
@@ -259,8 +281,9 @@ Authorization: Bearer <your access token>
 
 ```
 
-## Связанные разделы
+## Связанные статьи
 
+* [Отчет "Оценки"](../publish/ratings-report.md)
 * [Доступ к аналитическим данным с помощью служб Магазина Windows](access-analytics-data-using-windows-store-services.md)
 * [Получение сведений о покупках приложения](get-app-acquisitions.md)
 * [Получение сведений о покупках надстройки](get-in-app-acquisitions.md)
@@ -269,6 +292,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

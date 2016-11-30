@@ -4,8 +4,8 @@ ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
 description: "В этой статье описывается, как быстро вывести поток предварительного просмотра камеры на странице XAML в приложении универсальной платформы Windows (UWP)."
 title: "Отображение просмотра камеры"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 8330ee43089207faab5f6f72e2ac7b32aada72ce
+ms.sourcegitcommit: 6aacd5ef8043c9c89116a1d287174210f02f7d62
+ms.openlocfilehash: 5eb53d1527f2cd002dfb66110f1f1f3618458b3a
 
 ---
 
@@ -65,8 +65,8 @@ ms.openlocfilehash: 8330ee43089207faab5f6f72e2ac7b32aada72ce
 Каждый раз, закончив использование потока предварительного просмотра, необходимо завершить поток и очистить ресурсы захвата, чтобы камера была доступна для использования другим приложениям на устройстве. Для завершения потока предварительного просмотра необходимо выполнить следующие действия.
 
 -   Если в данный момент камера обеспечивает предварительный просмотр, вызовите [**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622), чтобы завершить поток предварительного просмотра. Если вызов **StopPreviewAsync** производится, когда предварительная версия не работает, возникнет исключение.
--   Установите для свойства [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) класса **CaptureElement** значение null. Используйте [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority,Windows.UI.Core.DispatchedHandler), чтобы обеспечить выполнение этого вызова в потоке пользовательского интерфейса.
--   Вызовите метод [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) объекта **MediaCapture**, чтобы освободить ресурсы объекта. Снова используйте [**CoreDispatcher.RunAsync**] (https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority,Windows.UI.Core.DispatchedHandler), чтобы обеспечить выполнение этого вызова в потоке пользовательского интерфейса.
+-   Установите для свойства [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) класса **CaptureElement** значение null. Используйте метод [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx), чтобы убедиться, что этот вызов выполняется в потоке пользовательского интерфейса.
+-   Вызовите метод [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) объекта **MediaCapture**, чтобы освободить ресурсы объекта. Снова используйте метод [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx), чтобы убедиться, что этот вызов выполняется в потоке пользовательского интерфейса.
 -   Присвойте переменной-члену **MediaCapture** значение null.
 -   Вызовите [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestRelease), чтобы разрешить отключение экрана в отсутствие активности.
 
@@ -93,6 +93,6 @@ ms.openlocfilehash: 8330ee43089207faab5f6f72e2ac7b32aada72ce
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

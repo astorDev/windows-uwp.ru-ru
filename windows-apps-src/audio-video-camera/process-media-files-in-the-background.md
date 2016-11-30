@@ -4,8 +4,8 @@ ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
 description: "В данной статье показано, как использовать MediaProcessingTrigger и фоновую задачу для обработки файлов мультимедиа в фоновом режиме."
 title: "Обработка файлов мультимедиа в фоновом режиме"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
+ms.sourcegitcommit: fb0e8a535ff4e27530fa45aca80b21f17a523c7b
+ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
 
 ---
 
@@ -74,9 +74,13 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 [!code-cs[Progress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
 
-Вспомогательный метод **SendToastNotification** создает новое всплывающее уведомление, получая для него XML-документ шаблона, который содержит только текстовое содержимое. Задается текстовый элемент XML-кода всплывающего уведомления, а затем создается новый объект [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) из XML-документа. Наконец всплывающее уведомление отображается пользователю путем вызова [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659).
+Вспомогательный метод **SendToastNotification** создает новое всплывающее уведомление, получая для него XML-документ шаблона, который содержит только текстовое содержимое. Задается текстовый элемент XML-кода всплывающего уведомления, а затем создается новый объект [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) из XML-документа. И наконец, всплывающее уведомление отображается пользователю путем вызова метода [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659).
 
 [!code-cs[SendToastNotification](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
+
+В обработчике события [**Canceled**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.IBackgroundTaskInstance.Canceled), который вызывается, когда система отменяет фоновую задачу, можно записать ошибку в журнал в целях телеметрии.
+
+[!code-cs[OnCanceled](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetOnCanceled)]
 
 ## Регистрация и запуск фоновой задачи
 
@@ -140,6 +144,6 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

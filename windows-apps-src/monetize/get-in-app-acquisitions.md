@@ -4,8 +4,8 @@ ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
 description: "Используйте этот метод в API аналитики для Магазина Windows для получения сводных данных о покупках надстройки в заданном диапазоне дат или с учетом других дополнительных фильтров."
 title: "Получение сведений о покупках надстройки"
 translationtype: Human Translation
-ms.sourcegitcommit: ecb0f5263b7f7f470484e9bd579b7bdb6efcdfa4
-ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 642bcab934a18631477e3709dcdeab0a9289844e
 
 ---
 
@@ -14,7 +14,7 @@ ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
 
 
 
-Используйте этот метод в API аналитики для Магазина Windows для получения сводных данных о покупках надстроек (также называемых внутренними продуктами приложения или IAP) в заданном диапазоне дат или с учетом других дополнительных фильтров. Этот метод возвращает данные в формате JSON.
+Используйте этот метод в API аналитики для Магазина Windows для получения сводных данных о покупках надстроек (также называемых внутренними продуктами приложения или IAP) в вашем приложении в формате JSON в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете о приобретениях надстроек](../publish/add-on-acquisitions-report.md) на информационной панели Центра разработки для Windows.
 
 ## Необходимые условия
 
@@ -129,6 +129,33 @@ ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
 <p>Параметр <em>order</em> является необязательным и может принимать значения <strong>asc</strong> или <strong>desc</strong>, которые указывают, соответственно, порядок сортировки по возрастанию или по убыванию для каждого поля. Значение по умолчанию — <strong>asc</strong>.</p>
 <p>Пример: строка <em>orderby</em>: <em>orderby=date,market</em></p></td>
 <td align="left">Нет</td>
+</tr>
+<tr class="even">
+<td align="left">groupby</td>
+<td align="left">строка</td>
+<td align="left"><p>Оператор, который применяет агрегирование данных только к указанным полям. Можно указать следующие поля:</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationName</strong></li>
+<li><strong>inAppProductName</strong></li>
+<li><strong>acquisitionType</strong></li>
+<li><strong>ageGroup</strong></li>
+<li><strong>storeClient</strong></li>
+<li><strong>gender</strong></li>
+<li><strong>market</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>orderName</strong></li>
+</ul>
+<p>Возвращенные строки данных будут содержать поля, указанные в параметре <em>groupby</em>, а также:</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationId</strong></li>
+<li><strong>inAppProductId</strong></li>
+<li><strong>acquisitionQuantity</strong></li>
+</ul>
+<p>Параметр <em>groupby</em> можно использовать вместе с параметром <em>aggregationLevel</em>. Например: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p></td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
@@ -279,8 +306,8 @@ Authorization: Bearer <your access token>
 |---------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date                | string  | Первая дата в диапазоне дат, для которого требуется получить данные о покупках. Если в запросе указан один день, это значение равно соответствующей дате. Если запрос указывает неделю, месяц или другой диапазон дат, это значение равно первой дате в этом диапазоне дат |
 | inAppProductId      | string  | Код продукта в Магазине для надстройки, по которой запрашиваются данные о покупках.                                                                                                                                                                 |
-| inAppProductName    | string  | Отображаемое имя надстройки.                                                                                                                                                                                                             |
-| applicationId       | string  | Код продукта в Магазине для приложения, по которому требуется получить данные о покупках надстройки.                                                                                                                                                           |
+| inAppProductName    | строка  | Отображаемое имя надстройки. Это значение отображается в данных ответа только в том случае, если для параметра *aggregationLevel* задано значение **day**. Исключение составляют случаи, когда указано значение для поля **inAppProductName** параметра *groupby*.                                                                                                                                                                                                            |
+| applicationId       | строка  | Код продукта в Магазине для приложения, по которому требуется получить данные о покупках надстройки.                                                                                                                                                           |
 | applicationName     | string  | Отображаемое имя приложения.                                                                                                                                                                                                             |
 | deviceType          | string  | Тип устройства, на котором совершена покупка. Список поддерживаемых строк см. выше в разделе [Поля фильтра](#filter-fields)                                                                                                  |
 | orderName           | string  | Имя заказа                                                                                                                                                                                                                   |
@@ -323,8 +350,9 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## Связанные разделы
+## Связанные статьи
 
+* [Отчет о приобретении надстроек](../publish/add-on-acquisitions-report.md)
 * [Доступ к аналитическим данным с помощью служб Магазина Windows](access-analytics-data-using-windows-store-services.md)
 * [Получение сведений о покупках приложения](get-app-acquisitions.md)
 * [Получение данных отчетов об ошибках](get-error-reporting-data.md)
@@ -337,6 +365,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

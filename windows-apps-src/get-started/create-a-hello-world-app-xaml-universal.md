@@ -4,8 +4,8 @@ ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "Создание приложения Hello, world (XAML)"
 description: "В этом учебнике описано, как использовать XAML с C# для создания простого приложения Hello, world, предназначенного для универсальной платформы Windows (UWP) в ОС Windows 10."
 translationtype: Human Translation
-ms.sourcegitcommit: 275c5cf8f8960f2be7cd9566e59eeb3bf4ee8f46
-ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
+ms.sourcegitcommit: 344ffda398c789f82973b5f08a0e3b791fc5ad10
+ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 
 ---
 
@@ -109,21 +109,21 @@ ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
 
     Если вы посмотрите на окно кода XAML, то увидите, что "Кнопка (Button)" была добавлена и туда.
 
-    ```XAML
+ ```XAML
 <Button x:name="button" Content="Button" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
-```
+ ```
 
 4.  Измените текст кнопки.
 
     Установите курсор в представлении кода XAML и задайте свойству "Содержимое (Content)" значение "Hello, world!" вместо значения "Кнопка (Button)".
 
-    ```XAML
+```XAML
 <Button x:name="button" Content="Hello, world!" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
 ```
 
-    Обратите внимание, что текст кнопки на полотне проектирования обновится.
+Обратите внимание, что текст кнопки на полотне проектирования обновится.
 
-    ![Окно "Обозреватель решений"](images/win10-cs-07.png)
+![Окно "Обозреватель решений"](images/win10-cs-07.png)
 
 ## Шаг 3. Запуск приложения
 
@@ -253,10 +253,10 @@ private async void button_Click(object sender, RoutedEventArgs e)
 ## Резюме
 
 
-Поздравляем! Вы создали свое первое приложение для Windows 10 и платформы UWP.
+Поздравляем! Вы создали свое первое приложение для Windows 10 и платформы UWP. Готовы к [следующему шагу](learn-more.md)?
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Nov16_HO1-->
 
 

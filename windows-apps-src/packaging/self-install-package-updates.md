@@ -4,8 +4,8 @@ ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: "Скачивание и установка обновлений пакетов для приложения"
 description: "Узнайте, как пометить пакеты как обязательные на информационной панели Центра разработки и написать код в приложении для загрузки и установки обновлений пакетов."
 translationtype: Human Translation
-ms.sourcegitcommit: 7df130e13685b519d5cc1353c8d64878ecc3d213
-ms.openlocfilehash: adb9b999c88649fc2c8ade838dfa0dabc407c075
+ms.sourcegitcommit: b96d4074a8960db314313c612955900c6a05dc48
+ms.openlocfilehash: 4da8ffe72435501876a1e859d10a16cf19eb11fd
 
 ---
 # Скачивание и установка обновлений пакетов для приложения
@@ -16,30 +16,38 @@ ms.openlocfilehash: adb9b999c88649fc2c8ade838dfa0dabc407c075
 
 Эти функции помогают автоматически поддерживать базу пользователей в актуальном состоянии, используя последние версии приложения и сопутствующих услуг.
 
-## Скачивание и установка обновлений пакетов в приложении
+## Обзор языка API
 
-Приложения, предназначенные для Windows 10 версии 1607 или более поздней, могут использовать следующие методы класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) для загрузки и установки обновлений пакетов.
+Приложения, предназначенные для Windows 10 версии 1607 или более поздней, могут использовать следующие методы класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) для скачивания и установки обновлений пакетов.
 
-* Используйте [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx), чтобы определить, какие обновления пакета доступны.
-* Используйте [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx), чтобы загрузить (но не устанавливать) обновления пакета.
-* Используйте [RequestDownloadAndInstallStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706585.aspx) для загрузки и установки пакета обновления. Если вы уже загрузили обновления пакета, вызвав метод [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx), этот метод пропускает процесс загрузки и только устанавливает обновления.
+|  Метод  |  Описание  |
+|----------|---------------|
+| [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) | Вызовите этот метод, чтобы получить список доступных обновлений пакетов.<br/><br/>**Важно!**&nbsp;&nbsp;Между временем, когда пакет проходит процедуру сертификации, и временем, когда метод [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) распознает, что приложению доступно обновление пакета, существует задержка до одного дня. |
+| [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx) | Вызовите этот метод, чтобы скачать (но не устанавливать) доступные обновления пакета. Эта операционная система отображает диалоговое окно с запросом разрешения пользователя на скачивание обновлений. |
+| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706585.aspx) | Вызовите этот метод, чтобы скачать и установить доступные обновления пакета. Операционная система отображает диалоговые окна с запросом разрешения пользователя на скачивание и установку обновлений. Если вы уже скачали обновления пакета, вызвав метод [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx), этот метод пропускает процесс скачивания и только устанавливает обновления.  |
 
-Класс [StorePackageUpdate](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.aspx) представляет доступный пакет обновлений:
-* Используйте свойство [Mandatory](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.mandatory.aspx), чтобы определить, помечен ли пакет как обязательный на панели мониторинга Центра разработки.
-* Используйте свойство [Package](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.package.aspx), чтобы получить доступ к другим данным для пакета.
+<span/>
 
->**Примечание**. Между временем, когда пакет проходит процедуру сертификации, и временем, когда метод [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) распознает, что приложению доступно обновление пакета, существует задержка до одного дня.
+Эти методы используют объекты [StorePackageUpdate](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.aspx) для представления доступных пакетов обновления. Используйте следующие свойства [StorePackageUpdate](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.aspx) для получения сведений о пакете обновления.
 
+|  Свойство  |  Описание  |
+|----------|---------------|
+| [Обязательное](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.mandatory.aspx) | Используйте это свойство, чтобы определить, помечен ли пакет как обязательный на панели мониторинга Центра разработки. |
+| [Package](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.package.aspx) | Используйте этой свойство, чтобы получить доступ к базовым данным пакета. |
 
-### Примеры кода
+<span/>
 
-В следующем примере кода показано, как загрузить и установить пакет обновления в приложении. В этом примере предполагается следующее:
+## Примеры кода
+
+В следующем примере кода показано, как скачать и установить пакет обновления в приложении. В этом примере предполагается следующее:
 * Код выполняется в контексте [страницы](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx).
 * **Страница** содержит панель [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) с именем ```downloadProgressBar``` для предоставления состояния операции загрузки.
 * Файл кода содержит оператор **using** для пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx).
 * Приложение является однопользовательским и выполняется только в контексте пользователя, запустившего его. Для [многопользовательского приложения](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) используйте метод [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx), чтобы получить объект [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx), а не метод [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx).
 
-#### Скачивание и установка всех обновлений пакетов
+<span/>
+
+### Скачивание и установка всех обновлений пакетов
 
 В следующем примере кода показано, как загрузить и установить все доступные обновления пакета.  
 
@@ -90,7 +98,7 @@ public async Task DownloadAndInstallAllUpdatesAsync()
 }
 ```
 
-#### Обработка обязательных обновлений пакета
+### Обработка обязательных обновлений пакета
 
 Следующий пример кода основан на предыдущем примере и показывает, как определить, были ли пакты обновлений [помечены как обязательные на информационной панели Центра разработки для Windows](#mandatory-dashboard). Как правило, если обязательное обновление пакета не скачивается или не устанавливается успешно, необходимо правильно понизить версию приложения для пользователя.
 
@@ -209,7 +217,7 @@ private void HandleMandatoryPackageError()
 
 При создании отправки пакета для приложения, которое предназначено для Windows 10 версии 1607 или выше, можно пометить пакет как обязательный и указать дату и время, когда он становится обязательным. Если это свойство задано и приложение обнаружит, что обновление пакета доступно, используя API-интерфейс, описанный ранее в этой статье, приложение может определить, является ли пакет обновлений одинаковым, и изменить его поведение до тех пор, пока обновление не будет установлено (например, приложение может отключить те или иные компоненты).
 
->**Примечание**. Обязательный статус пакета не устанавливается Microsoft принудительно. Разработчики должны использовать обязательную настройку, чтобы принудительно реализовать обязательные обновления в своем коде.
+>**Примечание**&nbsp;&nbsp;Обязательный статус обновления пакета не реализуется Майкрософт принудительно, и ОС не предоставляет пользовательский интерфейс, указывающий пользователям, что обязательное обновление приложения необходимо установить. Разработчики должны использовать обязательную настройку, чтобы принудительно реализовать обязательные обновления приложений в своем коде.  
 
 Чтобы пометить отправку пакета как обязательную, выполните следующие действия:
 
@@ -219,10 +227,10 @@ private void HandleMandatoryPackageError()
 
 Дополнительные сведения о настройке пакетов на информационной панели Центра разработки см. в разделе [Отправка пакетов приложения](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages).
 
-  >**Примечание**. Если создается [тестовый пакет](https://msdn.microsoft.com/windows/uwp/publish/package-flights), можно пометить пакеты как обязательные, воспользовавшись аналогичным элементом пользовательского интерфейса на странице **Пакеты** тестируемой возможности. В этом случае обязательное обновление пакета применяется только к клиентам, которые являются частью тестовой группы.
+  >**Примечание**&nbsp;&nbsp;. Если создается [тестовый пакет](https://msdn.microsoft.com/windows/uwp/publish/package-flights), можно пометить пакеты как обязательные, воспользовавшись аналогичным элементом пользовательского интерфейса на странице **Пакеты** тестируемой возможности. В этом случае обязательное обновление пакета применяется только к клиентам, которые являются частью тестовой группы.
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

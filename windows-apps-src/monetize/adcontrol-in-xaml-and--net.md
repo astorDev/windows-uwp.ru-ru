@@ -4,8 +4,8 @@ ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: "Узнайте, как использовать класс AdControl для показа баннерной рекламы в приложении на XAML для Windows 10 (UWP), Windows 8.1 или Windows Phone 8.1."
 title: "AdControl в XAML и .NET"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: e3cc04e2c039223729a1e24224ddd19d6485d434
+ms.sourcegitcommit: 35f07c73a72e5242d59c6b45e6d5b4ac62f40741
+ms.openlocfilehash: 0652bd1c3e52c9026b26e14b2475a4b34997ac91
 
 ---
 
@@ -145,13 +145,13 @@ ms.openlocfilehash: e3cc04e2c039223729a1e24224ddd19d6485d434
 
 ## Примечания
 
-C#: см. [пример свойств XAML](xaml-properties-example.md), чтобы ознакомиться со способами назначения обработчиков событиям **AdControl**. Затем ознакомьтесь с примером кода [событий AdControl в C#](adcontrol-events-in-c.md), где приводятся обработчики событий, написанные C#.
+* C#: см. [пример свойств XAML](xaml-properties-example.md), чтобы ознакомиться со способами назначения обработчиков событиям **AdControl**. Затем ознакомьтесь с примером кода [событий AdControl в C#](adcontrol-events-in-c.md), где приводятся обработчики событий, написанные на C#.
 
-Visual Basic: см. [пример свойств XAML](xaml-properties-example.md), чтобы ознакомиться со способами назначения обработчиков событиям **AdControl**.
+* C++: текущий выпуск библиотек Microsoft Advertising поддерживает C++. Класс **AdControl** реализован в неуправляемом C++ и не загружает .NET CLR. Примеры кода, демонстрирующие использование **AdControl** на языке C++, см. в [примерах рекламы на GitHub](http://aka.ms/githubads).
 
-C++: текущий выпуск библиотек Microsoft Advertising поддерживает C++. **AdControl** загружает CLR и использует управляемый C++.
+* Visual Basic: см. [пример свойств XAML](xaml-properties-example.md), чтобы ознакомиться со способами назначения обработчиков событиям **AdControl**.
 
-Обработка ошибок. Чтобы узнать, как обрабатывать ошибки, см. раздел [обработка ошибок AdControl](adcontrol-error-handling.md).
+* Обработка ошибок. Чтобы узнать, как обрабатывать ошибки, см. раздел [обработка ошибок AdControl](adcontrol-error-handling.md).
 
 ## Ссылки по теме
 
@@ -161,6 +161,6 @@ C++: текущий выпуск библиотек Microsoft Advertising под
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

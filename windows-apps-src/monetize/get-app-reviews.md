@@ -4,8 +4,8 @@ ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: "Используйте этот метод в API аналитики для Магазина Windows для получения отзывов о приложении в заданном диапазоне дат или с учетом других дополнительных фильтров."
 title: "Получение отзывов о приложении"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 4190012c08e22f4efb086c711183332b23ccee38
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 581532b56851d486f7804364d1d555b81829c1d1
 
 ---
 
@@ -14,7 +14,7 @@ ms.openlocfilehash: 4190012c08e22f4efb086c711183332b23ccee38
 
 
 
-Используйте этот метод в API аналитики для Магазина Windows для получения отзывов о приложении в заданном диапазоне дат или с учетом других дополнительных фильтров. Этот метод возвращает данные в формате JSON.
+Используйте этот метод в API аналитики для Магазина Windows для получения рецензий в формате JSON в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете о рецензиях](../publish/reviews-report.md) на информационной панели Центра разработки для Windows.
 
 ## Необходимые условия
 
@@ -376,8 +376,9 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## Связанные разделы
+## Связанные статьи
 
+* [Отчет "Рецензии"](../publish/reviews-report.md)
 * [Доступ к аналитическим данным с помощью служб Магазина Windows](access-analytics-data-using-windows-store-services.md)
 * [Получение сведений о покупках приложения](get-app-acquisitions.md)
 * [Получение сведений о покупках надстройки](get-in-app-acquisitions.md)
@@ -386,6 +387,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -6,8 +6,8 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 435a2a6f1b9707d1f64587a693bd9a60d587ca83
+ms.sourcegitcommit: f26b042bb7efb6599993b8fd7cee6ee35e1765fd
+ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
 
 ---
 # Переключатели
@@ -155,11 +155,11 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-Группы переключателей выглядят следующим образом.
+Так группы переключателей выглядят после того, как пользователь выбрал синий фон и зеленую границу.
 
 ![Переключатели в двух группах](images/radio-button-groups.png)
 
-Переключатель может иметь два состояния: *selected* или *cleared*. Если переключатель выбран, его свойство [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) имеет значение **true**. Если переключатель не выбран, его свойство **IsChecked** имеет значение **false**. Выбор переключателя можно отменить, выбрав другой переключатель в той же группе, но нельзя отменить выбор, щелкнув переключатель еще раз. Однако можно отменить выбор переключателя программным способом, установив для свойства IsChecked значение **false**.
+Возможных состояния у переключателя два: *выбран* или *не выбран*. Если переключатель выбран, его свойство [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) имеет значение **true**. Если переключатель не выбран, его свойство **IsChecked** имеет значение **false**. Выбор переключателя можно отменить, выбрав другой переключатель в той же группе, но нельзя отменить выбор, щелкнув переключатель еще раз. Однако можно отменить выбор переключателя программным способом, установив для свойства IsChecked значение **false**.
 
 ## Рекомендации
 
@@ -181,7 +181,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 На этой иллюстрации показано, как правильно расположить переключатели.
 
 ![Набор переключателей](images/radiobutton_layout1.png)
-## Связанные разделы
+## Статьи по теме
 
 **Проектировщикам**
 - [Руководство по кнопкам](buttons.md)
@@ -198,6 +198,6 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

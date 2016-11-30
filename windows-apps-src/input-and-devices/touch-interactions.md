@@ -6,8 +6,8 @@ ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: ca4ab33a58391f36e376323ca29d27961a2a7404
+ms.sourcegitcommit: 526493614666424089199063013b5fc72d9bc5d8
+ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
 ---
 
@@ -620,13 +620,17 @@ End Sub
 ## Статьи по теме
 
 * [Работа с данными указателя](handle-pointer-input.md)
-* [Определение устройств ввода](identify-input-devices.md)
+* [Распознавание устройств ввода](identify-input-devices.md)
+
 **Примеры**
+
 * [Пример базового ввода](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Пример ввода с малой задержкой](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Пример режима взаимодействия с пользователем](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [Пример визуальных элементов фокуса](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Примеры из архива**
+
+**Примеры архивов**
+
 * [Ввод: пример возможностей устройства](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Ввод: пример событий пользовательского ввода на XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Пример прокрутки, сдвига и масштабирования на XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -641,6 +645,6 @@ End Sub
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 
