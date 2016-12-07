@@ -1,29 +1,47 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\hls-tag-support.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/61feba54418ad7ba8f089737ebf52d12c466b7a7?path=windows-apps-src%2Faudio-video-camera%2Fhls-tag-support.md&_a=contents) | HandedOffSuccess | [Details](#5575a56838eae98c0d79dff61e1afaa8cf87ee861634)
+ [windows-apps-src\controls-and-patterns\app-bars.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a652189d0595bb6dffbc5228a91a68261eb7e5ef?path=windows-apps-src%2Fcontrols-and-patterns%2Fapp-bars.md&_a=contents) | HandedOffSuccess | [Details](#c6d295a21825d1e89eaafcba59ca3a1b85669da91680)
+ [windows-apps-src\controls-and-patterns\tabs-pivot.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a652189d0595bb6dffbc5228a91a68261eb7e5ef?path=windows-apps-src%2Fcontrols-and-patterns%2Ftabs-pivot.md&_a=contents) | HandedOffSuccess | [Details](#865969a7c965a502acd9fe24df28128399efd3803194)
 
 ## Item Details
-##### <a name='5575a56838eae98c0d79dff61e1afaa8cf87ee861634'></a> Source: [windows-apps-src\audio-video-camera\hls-tag-support.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/61feba54418ad7ba8f089737ebf52d12c466b7a7?path=windows-apps-src%2Faudio-video-camera%2Fhls-tag-support.md&_a=contents)
+##### <a name='c6d295a21825d1e89eaafcba59ca3a1b85669da91680'></a> Source: [windows-apps-src\controls-and-patterns\app-bars.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a652189d0595bb6dffbc5228a91a68261eb7e5ef?path=windows-apps-src%2Fcontrols-and-patterns%2Fapp-bars.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [hls-tag-support.f390bbd9420842ebbfa56218fccf66bd79649e6d.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/5f21bbea06742fcbeafd7f264be0f3a00a99aeed?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fhls-tag-support.f390bbd9420842ebbfa56218fccf66bd79649e6d.ru-ru.xlf&_a=contents)
-* Handoff Datetime: 2016-12-07 21:23:05
+* Handoff File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/4d9216fb4d5dcc49d38ed34534567faa27806bc4?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fapp-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2016-12-07 23:24:26
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\hls-tag-support.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/2f1ac4a1c1d944102739e9b403fc5aad0446f631?path=windows-apps-src%2Faudio-video-camera%2Fhls-tag-support.md&_a=contents)
-* Current Handback File: [hls-tag-support.f390bbd9420842ebbfa56218fccf66bd79649e6d.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4f4d3f9c88983440830197093d5122e9353c13d4?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fhls-tag-support.f390bbd9420842ebbfa56218fccf66bd79649e6d.ru-ru.xlf&_a=contents)
-* Current Handback Datetime: 2016-11-30 15:19:56
-* Bilingual File: [hls-tag-support.f390bbd9420842ebbfa56218fccf66bd79649e6d.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4f4d3f9c88983440830197093d5122e9353c13d4?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fhls-tag-support.f390bbd9420842ebbfa56218fccf66bd79649e6d.ru-ru.xlf&_a=contents)
-* Bilingual Datetime: 2016-11-30 15:25:20
+* Current Target File: [windows-apps-src\controls-and-patterns\app-bars.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/37078e140af4614762ed5a02264a03e08731293e?path=windows-apps-src%2Fcontrols-and-patterns%2Fapp-bars.md&_a=contents)
+* Current Handback File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/aceea397bec7837e796fa6c71709869d54341d84?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fapp-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ru-ru.xlf&_a=contents)
+* Current Handback Datetime: 2016-09-26 13:02:59
+* Bilingual File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/aceea397bec7837e796fa6c71709869d54341d84?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Fapp-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ru-ru.xlf&_a=contents)
+* Bilingual Datetime: 2016-10-18 13:34:37
+* [Back to Top](#report-top)
+
+##### <a name='865969a7c965a502acd9fe24df28128399efd3803194'></a> Source: [windows-apps-src\controls-and-patterns\tabs-pivot.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a652189d0595bb6dffbc5228a91a68261eb7e5ef?path=windows-apps-src%2Fcontrols-and-patterns%2Ftabs-pivot.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/4d9216fb4d5dcc49d38ed34534567faa27806bc4?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Ftabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2016-12-07 23:24:26
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\controls-and-patterns\tabs-pivot.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/770b99fbf4006c1e626cc36481e67099273a0469?path=windows-apps-src%2Fcontrols-and-patterns%2Ftabs-pivot.md&_a=contents)
+* Current Handback File: [tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Ftabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.ru-ru.xlf&_a=contents)
+* Current Handback Datetime: 2016-10-21 15:49:51
+* Bilingual File: [tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/7ab4bc81cd0244f26fc04ae860edc91a369fe117?path=ol-handback%2FMicrosoft%2Fwindows-apps.ru-ru%2Fmaster%2Ftabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.ru-ru.xlf&_a=contents)
+* Bilingual Datetime: 2016-10-24 15:47:43
 * [Back to Top](#report-top)
 
 
