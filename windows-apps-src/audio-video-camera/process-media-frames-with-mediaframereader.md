@@ -143,8 +143,7 @@ ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 
 Вспомогательный класс **FrameRenderer** реализует следующие методы.
 
-* 
-              Конструктор **FrameRenderer** — конструктор инициализирует вспомогательный класс для использования элемента XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Image), который вы передаете для отображения кадров мультимедиа.
+* Конструктор **FrameRenderer** — конструктор инициализирует вспомогательный класс для использования элемента XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Image), который вы передаете для отображения кадров мультимедиа.
 * **ProcessFrame** — этот метод отображает кадр мультимедиа, представленный [**MediaFrameReference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference), в элементе **Image**, переданном конструктору. Обычно этот метод необходимо вызывать из обработчика событий [**FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived), передавая кадр, возвращенный [**TryAcquireLatestFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.TryAcquireLatestFrame).
 * **ConvertToDisplayableImage** — этот метод проверяет формат кадра мультимедиа и при необходимости преобразовывает его в пригодный для отображения формат. Для цветных изображений это означает обеспечение формата цвета BGRA8 и предварительное умножение для режима альфа-канала точечного рисунка. Для кадров с камер с эффектом глубины или инфракрасных камер каждая растровая строка обрабатывается для преобразования значений глубины или инфракрасных значений в градиентный псевдоцвет с помощью класса **PsuedoColorHelper**, который также включен в пример и приведен ниже.
 
