@@ -1,15 +1,15 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "Открытие файлов и папок с помощью средства выбора"
 description: "Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Можно использовать классы FileOpenPicker и FileSavePicker для получения доступа к файлам, а также FolderPicker — для получения доступа к папкам."
 translationtype: Human Translation
-ms.sourcegitcommit: 232008b7f80aceab201d5bedd744eedfe995648e
-ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: e7884f140915d66b4a9f95a4197e717d63b0f25f
 
 ---
 
-# Открытие файлов и папок с помощью средства выбора
+# <a name="open-files-and-folders-with-a-picker"></a>Открытие файлов и папок с помощью средства выбора
 
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -21,13 +21,13 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 -   [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)
 -   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
 
-Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Для получения доступа к файлам можно использовать классы [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) и [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), а для получения доступа к папкам— класс [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881).
+Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Для получения доступа к файлам можно использовать классы [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) и [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), а для получения доступа к папкам — класс [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881).
 
 **Примечание**  Полный пример кода см. в [примере кода средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
  
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 
 -   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)**
@@ -38,7 +38,7 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
     См. раздел [Разрешения на доступ к файлам](file-access-permissions.md).
 
-## Пользовательский интерфейс средства выбора файлов
+## <a name="file-picker-ui"></a>Пользовательский интерфейс средства выбора файлов
 
 
 В средстве выбора файлов отображаются сведения, позволяющие сориентировать пользователей и обеспечить им привычное взаимодействие с системой при открытии и сохранении файлов.
@@ -53,7 +53,7 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
 ![Средство выбора файлов, в котором выбрано два файла для открытия.](images/picker-multifile-600px.png)
 
-## Как работают средства выбора
+## <a name="how-pickers-work"></a>Как работают средства выбора
 
 
 Используя средство выбора, ваше приложение может получать доступ к файлам и папкам в системе пользователя, просматривать и сохранять их. Ваше приложение получает эти выбранные элементы в виде объектов [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) и [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), с которыми потом можно работать.
@@ -64,7 +64,7 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
 ![Схема, на которой одно приложение получает файл для открытия из другого приложения с помощью средства выбора файлов, играющего роль интерфейса между двумя приложениями.](images/app-to-app-diagram-600px.png)
 
-## Выбор одного файла: полный код
+## <a name="pick-a-single-file-complete-code-listing"></a>Выбор одного файла: полный код
 
 
 ```CSharp
@@ -88,7 +88,7 @@ else
 }
 ```
 
-## Выбор одного файла: пошаговые инструкции
+## <a name="pick-a-single-file-step-by-step"></a>Выбор одного файла: пошаговые инструкции
 
 
 Использование средства выбора файлов включает создание и настройку объекта «средство выбора файлов» и отображение средства выбора файлов, чтобы дать пользователю возможность выбрать один или несколько элементов.
@@ -153,7 +153,7 @@ var files = await picker.PickMultipleFilesAsync();
         }
 ```
 
-## Выбор папки: полный код
+## <a name="pick-a-folder-complete-code-listing"></a>Выбор папки: полный код
 
 
 ```CSharp
@@ -185,6 +185,6 @@ else
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

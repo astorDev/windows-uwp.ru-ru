@@ -1,25 +1,27 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: "Перечисление и запрос файлов и папок"
 description: "Доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения также можно создавать запросы файлов и папок."
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
 
 ---
-# Перечисление и запрос файлов и папок
+# <a name="enumerate-and-query-files-and-folders"></a>Перечисление и запрос файлов и папок
 
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения также можно создавать запросы файлов и папок.
+Доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения вы также можете создавать запросы файлов и папок.
+
+Подробные рекомендации по сохранению данных приложения универсальной платформы Windows см. в классе [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx).
 
 **Примечание.** См. также раздел [Пример перечисления папок](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
  
-## Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
 -   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)**
 
@@ -29,7 +31,7 @@ ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 
     Например, коду в этих примерах требуется возможность **picturesLibrary**. Для вашего расположения может потребоваться другая возможность либо вообще не потребоваться никаких возможностей. Дополнительную информацию см. в разделе [Разрешения на доступ к файлам](file-access-permissions.md).
 
-## Перечисление файлов и папок в расположении
+## <a name="enumerate-files-and-folders-in-a-location"></a>Перечисление файлов и папок в расположении
 
 > **Примечание.** Не забудьте объявить возможность **picturesLibrary**.
 
@@ -208,7 +210,7 @@ ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 > Next item
 > ```
 
-## Запрос файлов в расположении и перечисление соответствующих файлов
+## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>Запрос файлов в расположении и перечисление соответствующих файлов
 
 В этом примере мы запрашиваем все файлы в [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156), сгруппированные по месяцам, и в этот раз пример выполняет рекурсию во вложенные папки. Сначала мы вызываем [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) и передаем значение [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) в метод. Благодаря этому получаем объект [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066).
 
@@ -324,6 +326,6 @@ July ‎2015 (2)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

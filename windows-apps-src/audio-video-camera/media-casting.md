@@ -4,19 +4,19 @@ ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
 description: "В этой статье показано, как транслировать мультимедиа в удаленные устройства из универсального приложения для Windows."
 title: "Трансляция мультимедиа"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
+ms.sourcegitcommit: ebcd2f2b28a7cd2a8a9dad16c30239b06e147ec3
+ms.openlocfilehash: fc69e3b5bb814752480fa0151c36ae0a8c783c4e
 
 ---
 
-# Трансляция мультимедиа
+# <a name="media-casting"></a>Трансляция мультимедиа
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье показано, как транслировать мультимедиа в удаленные устройства из универсального приложения для Windows.
 
-## Встроенная трансляция мультимедиа с помощью MediaElement
+## <a name="built-in-media-casting-with-mediaplayerelement"></a>Встроенная трансляция мультимедиа с помощью MediaPlayerElement
 
 Самый простой способ трансляции мультимедиа из универсального приложения для Windows — использование возможностей встроенной трансляции элемента управления [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement).
 
@@ -45,7 +45,7 @@ ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
 > [!NOTE] 
 > Начиная с Windows 10 версии 1607 рекомендуется использовать класс **MediaPlayer**, чтобы воспроизводить элементы мультимедиа. **MediaPlayerElement** — это облегченный элемент управления XAML, который используется для отображения содержимого **MediaPlayer** на странице XAML. Элемент управления **MediaElement** продолжает поддерживаться для обратной совместимости. Дополнительные сведения об использовании объектов **MediaPlayer** и **MediaPlayerElement** для воспроизведения мультимедиа см. в разделе [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md). Сведения об использовании **MediaSource** и связанных API для работы с мультимедиа см. в разделе [Элементы, списки воспроизведения и звуковые дорожки мультимедиа](media-playback-with-mediasource.md).
 
-## Трансляция мультимедиа с помощью CastingDevicePicker
+## <a name="media-casting-with-the-castingdevicepicker"></a>Трансляция мультимедиа с помощью CastingDevicePicker
 
 Второй способ трансляции мультимедиа на устройство заключается в использовании [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525). Чтобы воспользоваться этим классом, включите в свой проект пространство имен [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568).
 
@@ -67,7 +67,7 @@ ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
 
 [!code-cs[CastPickerButtonClick](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastPickerButtonClick)]
 
-В обработчике события **CastingDeviceSelected** вызовите метод [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) свойства [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) аргументов события, которое обозначает выбранное пользователем транслирующее устройство. Зарегистрируйте обработчики для событий [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) и [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523). Вызовите метод [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520), чтобы начать трансляцию, передавая результат методу [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) объекта **MediaPlayer** элемента управления **MediaPlayerElement**, чтобы указать, что транслируемое мультимедиа— это содержимое объекта **MediaPlayer**, связанного с объектом **MediaPlayerElement**.
+В обработчике события **CastingDeviceSelected** вызовите метод [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) свойства [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) аргументов события, которое обозначает выбранное пользователем транслирующее устройство. Зарегистрируйте обработчики для событий [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) и [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523). Вызовите метод [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520), чтобы начать трансляцию, передавая результат методу [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) объекта **MediaPlayer** элемента управления **MediaPlayerElement**, чтобы указать, что транслируемое мультимедиа — это содержимое объекта **MediaPlayer**, связанного с объектом **MediaPlayerElement**.
 
 > [!NOTE] 
 > Подключение к трансляции должно быть инициировано в потоке пользовательского интерфейса. Так как поток пользовательского интерфейса не вызывает **CastingDeviceSelected**, вам необходимо разместить эти вызовы внутри вызова [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317), который вызовет их в потоке пользовательского интерфейса.
@@ -78,7 +78,7 @@ ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
 
 [!code-cs[EmptyStateHandlers](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
-## Трансляция мультимедиа с помощью настраиваемого средства выбора устройства
+## <a name="media-casting-with-a-custom-device-picker"></a>Трансляция мультимедиа с помощью настраиваемого средства выбора устройства
 
 В следующем разделе описывается, как создать собственный пользовательский интерфейс для средства выбора транслирующего устройства с помощью перечисления транслирующих устройств и инициации подключения из своего кода.
 
@@ -160,6 +160,6 @@ ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

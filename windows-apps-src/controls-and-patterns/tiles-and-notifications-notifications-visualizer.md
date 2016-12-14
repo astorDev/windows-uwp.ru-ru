@@ -6,18 +6,18 @@ ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a954404ccc2e986c1603402315c8497f802ad254
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: 20e73c2de82bcc76c94fff38163dddac7ef9d8a9
 
 ---
-# Визуализатор уведомлений
+# <a name="notifications-visualizer"></a>Визуализатор уведомлений
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 Визуализатор уведомлений — это новое приложение универсальной платформы Windows (UWP) в [Магазине](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1), которое помогает разработчикам создавать адаптивные живые плитки для Windows 10.
 
-## Описание
+## <a name="overview"></a>Описание
 
 
 Визуализатор уведомлений позволяет быстро просматривать плитки при их изменении, как представление редактора и конструирования XAML в Visual Studio. Приложение также проверяет полезные данные плиток на наличие ошибок.
@@ -34,7 +34,7 @@ ms.openlocfilehash: a954404ccc2e986c1603402315c8497f802ad254
 
  
 
-## Возможности
+## <a name="features"></a>Возможности
 
 
 Визуализатор уведомлений поставляется с рядом примеров полезных данных для демонстрации возможностей адаптивных живых плиток, что позволит вам быстро приступить к работе. Вы можете поэкспериментировать с различными параметрами текста, группами и вложенными группами, фоновыми изображениями, а также увидеть, как плитка адаптируется к разным устройствам и экранам. Внеся изменения, вы можете сохранить обновленные полезные данные в файл для использования в будущем.
@@ -49,24 +49,15 @@ ms.openlocfilehash: a954404ccc2e986c1603402315c8497f802ad254
 
  
 
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 
 * [Скачайте визуализатор уведомлений в Магазине](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
 * [Создание адаптивных плиток](tiles-and-notifications-create-adaptive-tiles.md)
 * [Шаблоны адаптивных плиток: схема и документация](tiles-and-notifications-adaptive-tiles-schema.md)
 * [Плитки и всплывающие уведомления (блог MSDN)](http://blogs.msdn.com/b/tiles_and_toasts/)
-* [Библиотека NotificationsExtensions (блог MSDN)](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)
- 
-
- 
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

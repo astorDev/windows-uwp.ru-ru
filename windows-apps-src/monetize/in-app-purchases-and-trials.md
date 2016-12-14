@@ -4,12 +4,12 @@ ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
 description: "Узнайте, как включить покупки из приложения и пробные версии в приложениях UWP."
 title: "Покупки из приложения и пробные версии"
 translationtype: Human Translation
-ms.sourcegitcommit: 09a123de7b3c31e2de6a3e43d44c648e7cc94da4
-ms.openlocfilehash: ef0764aaf772fc36c6a6266e103cb35cafa841c5
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: 7783b6017a314ddb24509c55db8134a4c214430f
 
 ---
 
-# Покупки из приложения и пробные версии
+# <a name="in-app-purchases-and-trials"></a>Покупки из приложения и пробные версии
 
 Пакет Windows SDK предоставляет API, которые можно использовать для реализации следующих функций, позволяющих получать прибыль от своего приложения универсальной платформы Windows (UWP):
 
@@ -20,7 +20,7 @@ ms.openlocfilehash: ef0764aaf772fc36c6a6266e103cb35cafa841c5
 Эта статья содержит обзорные сведения о том, как в приложениях UWP работают покупки из приложения и пробные версии.
 
 <span id="choose-namespace" />
-## Выбор пространства имен
+## <a name="choose-which-namespace-to-use"></a>Выбор пространства имен
 
 Существует два разных пространствах имен, которые можно использовать для добавления функций покупок из приложения и пробной версии в приложениях UWP в зависимости от того, для какой версии Windows 10 предназначены ваши приложения. Несмотря на то что API в этих пространствах имен служат тем же целям, они различаются принципами разработки и имеют несовместимый код.
 
@@ -29,7 +29,7 @@ ms.openlocfilehash: ef0764aaf772fc36c6a6266e103cb35cafa841c5
 * **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;Все версии Windows 10 также поддерживают устаревший API для покупок из приложения и пробных версий в этом пространстве имен. Несмотря на то что любое приложение UWP для Windows 10 может использовать это пространство имен, его невозможно обновить для поддержки новых типов продуктов и функций в Центре разработки или Магазине в будущем. Сведения об этом пространстве имен см. в разделе [Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
 <span id="concepts" />
-## Основные понятия
+## <a name="basic-concepts"></a>Основные понятия
 
 В этом разделе рассматриваются основные принципы покупки из приложения и пробных версий в приложениях UWP. Большая часть сказанного здесь актуальна для обоих пространств имен: **Windows.Services.Store** и **Windows.ApplicationModel.Store**, если не указано иное.
 
@@ -52,28 +52,31 @@ ms.openlocfilehash: ef0764aaf772fc36c6a6266e103cb35cafa841c5
 >**Примечание.**&nbsp;&nbsp;Другие типы надстроек, например надстройки длительного пользования с пакетами (также известны как "загружаемое содержимое" или DLC), доступны ограниченному кругу разработчиков и не освещаются в этой документации.
 
 <span id="api_intro" />
-## Использование пространства имен Windows.Services.Store
+## <a name="using-the-windowsservicesstore-namespace"></a>Использование пространства имен Windows.Services.Store
 
 Далее в этой статье описана реализация покупок из приложения и пробных версий с использованием пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Это пространство имен доступно только для приложений, предназначенных для Windows 10 версии 1607 или выше, и мы рекомендуем использовать это пространство имен вместо [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), если возможно.
 
 Сведения об использовании элементов пространства имен **Windows.ApplicationModel.Store** см. в разделе [Внутренние покупки приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-### Начало работы с классом StoreContext
+### <a name="get-started-with-the-storecontext-class"></a>Начало работы с классом StoreContext
 
 Главной точкой входа в пространство имен **Windows.Services.Store** является класс [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Этот класс предоставляет методы, которые можно использовать, чтобы получить сведения о текущем приложении и его доступных надстройках, получить лицензионные сведения о текущем приложении или его надстройках, приобрести приложение или надстройку для текущего пользователя и решить другие задачи. Чтобы получить объект [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx), выполните одно из следующих действий.
 
-* В однопользовательском приложении (то есть приложении, которое работает только в контексте пользователя, который запустил это приложение) воспользуйтесь методом [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx), чтобы получить объект **StoreContext**, который можно использовать для доступа к актуальным для пользователя данным, связанным с Магазином Windows, и управлять ими. Большинство приложений UWP— это однопользовательские приложения.
+* В однопользовательском приложении (то есть приложении, которое работает только в контексте пользователя, который запустил это приложение) воспользуйтесь методом [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx), чтобы получить объект **StoreContext**, который можно использовать для доступа к актуальным для пользователя данным, связанным с Магазином Windows, и управлять ими. Большинство приложений UWP — это однопользовательские приложения.
 
+  > [!div class="tabbedCodeSnippets"]
   ```csharp
   Windows.Services.Store.StoreContext context = StoreContext.GetDefault();
   ```
 
 * В [многопользовательском](../xbox-apps/multi-user-applications.md) приложении используйте метод [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx), чтобы получить объект **StoreContext**, который можно использовать для доступа к данным, связанным с Магазином Windows, и управлять ими. Речь идет о данных для конкретного пользователя, который при работе с приложением выполнил вход с учетной записью Майкрософт. В следующем примере мы получим объект **StoreContext** для первого доступного пользователя.
 
+  > [!div class="tabbedCodeSnippets"]
   ```csharp
   var users = await Windows.System.User.FindAllAsync();
   Windows.Services.Store.StoreContext context = StoreContext.GetForUser(users[0]);
   ```
+
 >**Примечание**&nbsp;&nbsp;Классические приложения для Windows, использующие [мост для настольных компьютеров](https://developer.microsoft.com/windows/bridges/desktop), должны выполнить дополнительные действия для настройки объекта [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx), чтобы его можно было использовать. Дополнительные сведения см. в разделе [Использование класса StoreContext в классическом приложение, в котором применяется мост для настольных компьютеров](#desktop).
 
 Получив объект [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx), можно начать вызывать методы для получения сведений о продукте из Магазина для текущего приложения и его надстроек, получать сведения о лицензии для текущего приложения и его надстроек, приобретать приложение или надстройку для текущего пользователя и выполнять другие задачи. Дополнительные сведения об общих задачах, которые можно выполнять с помощью этого пространства имен, см. в следующих статьях:
@@ -87,7 +90,7 @@ ms.openlocfilehash: ef0764aaf772fc36c6a6266e103cb35cafa841c5
 Пример приложения, в котором показано, как использовать пространство имен **Windows.Services.Store**, см. в разделе [Образец из Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
 <span id="implement-iap" />
-### Реализация покупок из приложения
+### <a name="implement-in-app-purchases"></a>Реализация покупок из приложения
 
 Чтобы предложить покупки из приложения пользователям вашего приложения, используя пространство имен **Windows.Services.Store**, выполните следующие действия:
 
@@ -100,7 +103,7 @@ ms.openlocfilehash: ef0764aaf772fc36c6a6266e103cb35cafa841c5
 4. Проверьте внедрение, следуя [руководству по тестированию](#testing) в этой статье.
 
 <span id="implement-trial" />
-### Реализации функциональности пробной версии
+### <a name="implement-trial-functionality"></a>Реализации функциональности пробной версии
 
 Чтобы исключить или ограничить функции в пробной версии приложения с помощью пространства имен **Windows.Services.Store**, выполните следующие действия:
 
@@ -113,7 +116,7 @@ ms.openlocfilehash: ef0764aaf772fc36c6a6266e103cb35cafa841c5
 4. Проверьте внедрение, следуя [руководству по тестированию](#testing) в этой статье.
 
 <span id="testing" />
-### Проверка внедрения
+### <a name="test-your-implementation"></a>Проверка внедрения
 
 Пространство имен **Windows.Services.Store** не предоставляет класс, который можно использовать для имитации лицензионных сведений во время тестирования. Вместо этого необходимо опубликовать приложение в Магазине и скачать его на свое устройство разработки, чтобы использовать его лицензию для тестирования. В приложениях, использующих пространство имен **Windows.ApplicationModel.Store**, действует несколько другой принцип, поскольку эти приложения могут использовать класс [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) для моделирования лицензионных сведений во время тестирования.
 
@@ -138,14 +141,14 @@ ms.openlocfilehash: ef0764aaf772fc36c6a6266e103cb35cafa841c5
 5. Запустите свой проект или начните его отладку в Visual Studio. Код должен извлечь данные приложения и надстройки из приложения Магазина, которое вы связали с локальным проектом. В ответ на предложение переустановить приложение выполните инструкции, а затем запустите свой проект или начните его отладку.
 
 <span id="receipts" />
-### Чеки для покупок из приложения
+### <a name="receipts-for-in-app-purchases"></a>Чеки для покупок из приложения
 
 Пространство имен **Windows.Services.Store** не предоставляет API, который можно использовать для получения чека об успешном совершении покупки, в коде приложения. Это отличается от приложений, использующих пространство имен **Windows.ApplicationModel.Store**, которое может использовать [клиентский API для извлечения чека о выполнении транзакции](use-receipts-to-verify-product-purchases.md).
 
 Если функция покупок из приложения реализована с использованием пространства имен **Windows.Services.Store** и требуется поверить, приобрел ли этот клиент приложение или надстройку, можно воспользоваться [запросом метода продуктов ](query-for-products.md) в [API REST коллекции Магазина Windows](view-and-grant-products-from-a-service.md). Возвращаемые этим методом данные подтверждают, имеет ли указанный клиент право на использование этого продукта, и предоставляют информацию для транзакции, в которой пользователь приобрел этот продукт. API коллекции Магазина Windows использует для извлечения этой информации аутентификацию Azure AD.
 
 <span id="desktop" />
-### Использование класса StoreContext в приложении, где используется мост для настольных компьютеров
+### <a name="using-the-storecontext-class-in-an-app-that-uses-the-desktop-bridge"></a>Использование класса StoreContext в приложении, где используется мост для настольных компьютеров
 
 Классические приложения, использующие [мост для настольных компьютеров](https://developer.microsoft.com/windows/bridges/desktop), могут реализовать покупки из приложения и пробную версию с помощью класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Тем не менее если у вас есть классические приложения Win32 или классическое приложение, которое содержит дескриптор окна (HWND), связанный со структурой визуализации (например, приложение WPF), приложение должно настроить объект **StoreContext** так, чтобы указать, какое окно приложения является окном-владельцем модальных диалоговых окон, отображаемых объектом.
 
@@ -155,6 +158,7 @@ ms.openlocfilehash: ef0764aaf772fc36c6a6266e103cb35cafa841c5
 
   1. Если приложение написано на управляемом языке, например C# или Visual Basic, объявите интерфейс [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) в коде приложения с атрибутом [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx), как показано в следующем примере. В этом примере предполагается, что файл кода имеет оператор **using** для пространства имен **System.Runtime.InteropServices**.
 
+    > [!div class="tabbedCodeSnippets"]
     ```csharp
     [ComImport]
     [Guid("3E68D4BD-7135-4D10-8018-9FB6D9F33FA1")]
@@ -169,6 +173,7 @@ ms.openlocfilehash: ef0764aaf772fc36c6a6266e103cb35cafa841c5
 
   2. Используйте метод [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) (или [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx)), чтобы получить объект [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx), как описано ранее в этой статье, и привести этот объект к объекту [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx). Затем вызовите метод [Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx) и передайте дескриптор окна, которое вы хотите сделать владельцем любых модальных диалоговых окон, которые отображаются методами **StoreContext**. В следующем примере показана передача дескриптора главного окна приложения методу.
 
+    > [!div class="tabbedCodeSnippets"]
     ```csharp
     StoreContext context = StoreContext.GetDefault();
     IInitializeWithWindow initWindow = (IInitializeWithWindow)(object)context;
@@ -176,28 +181,28 @@ ms.openlocfilehash: ef0764aaf772fc36c6a6266e103cb35cafa841c5
     ```
 
 <span id="products-skus" />
-### Продукты, SKU и доступность
+### <a name="products-skus-and-availabilities"></a>Продукты, SKU и доступность
 
-Каждый продукт в Магазине имеет по меньшей мере одну *SKU*, а каждая SKU— по меньшей мере одну *доступность*. Разработчики избавлены от необходимости работать с этими абстрактными концепциями на информационной панели Центра разработки для Windows, и большинство разработчиков никогда не определяют SKU или доступности для своих приложений или надстроек. Поскольку объектная модель для продуктов из Магазина в пространстве имен **Windows.Services.Store** все же содержит SKU и доступности, общие сведения об этих понятиях будут вам полезны.
+Каждый продукт в Магазине имеет по меньшей мере одну *SKU*, а каждая SKU — по меньшей мере одну *доступность*. Разработчики избавлены от необходимости работать с этими абстрактными концепциями на информационной панели Центра разработки для Windows, и большинство разработчиков никогда не определяют SKU или доступности для своих приложений или надстроек. Поскольку объектная модель для продуктов из Магазина в пространстве имен **Windows.Services.Store** все же содержит SKU и доступности, общие сведения об этих понятиях будут вам полезны.
 
 | Тип объекта |  Описание  |
 |---------|-------------------|
 | [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx)  |  Этот класс представляет любой тип продукта, который доступен в Магазине, включая приложение или надстройку. Этот класс предоставляет свойства, которые можно использовать для получения доступа к данным, таким как код продукта в Магазине, изображения и видео для описания в Магазине и сведения о ценах. Кроме того, класс предоставляет методы, которые можно использовать для приобретения продукта. |
-| [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) |  Этот класс представляет *SKU* для продукта. SKU— это конкретная версия продукта с уникальным описанием, ценой и прочими сведениями. У каждого приложения или надстройки имеется SKU по умолчанию. Единственный случай, когда разработчик может иметь несколько SKU для приложения, это если публикуется и полная, и пробная версии приложения (в каталоге Магазина каждая из этих версий будет иметь свою SKU одного и того же приложения). <p/><p/> Некоторые издатели могут определять собственные SKU. Например, крупный издатель игр может выпустить игру с одной SKU для стран, где показывать кровь красным запрещено и, следовательно, нужно показать ее зеленым цветом, а другую SKU— чтобы показывать кровь красной в любых странах. Кроме того, издатель, продающий цифровое видеосодержимое, может опубликовать две SKU для видео: одну— для версии высокой четкости, а другую— для версии стандартной четкости. <p/><p/> Каждый продукт имеет свойство [Skus](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.skus.aspx), которое можно использовать для доступа к SKU. |
-| [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx)  |  Этот класс представляет *доступность* для SKU. Доступность— это конкретная версия SKU с уникальной ценовой информацией. Каждая SKU имеет доступность по умолчанию. Некоторые издатели имеют возможность определять собственные доступности, предлагая разные ценовые варианты для данной SKU. <p/><p/> Каждая SKU имеет свойство [Availabilities](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.availabilities.aspx), которое можно использовать для доступа к доступности. Для большинства разработчиков каждая SKU имеет одну доступность по умолчанию.  |
+| [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) |  Этот класс представляет *SKU* для продукта. SKU — это конкретная версия продукта с уникальным описанием, ценой и прочими сведениями. У каждого приложения или надстройки имеется SKU по умолчанию. Единственный случай, когда разработчик может иметь несколько SKU для приложения, это если публикуется и полная, и пробная версии приложения (в каталоге Магазина каждая из этих версий будет иметь свою SKU одного и того же приложения). <p/><p/> Некоторые издатели могут определять собственные SKU. Например, крупный издатель игр может выпустить игру с одной SKU для стран, где показывать кровь красным запрещено и, следовательно, нужно показать ее зеленым цветом, а другую SKU — чтобы показывать кровь красной в любых странах. Кроме того, издатель, продающий цифровое видеосодержимое, может опубликовать две SKU для видео: одну — для версии высокой четкости, а другую — для версии стандартной четкости. <p/><p/> Каждый продукт имеет свойство [Skus](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.skus.aspx), которое можно использовать для доступа к SKU. |
+| [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx)  |  Этот класс представляет *доступность* для SKU. Доступность — это конкретная версия SKU с уникальной ценовой информацией. Каждая SKU имеет доступность по умолчанию. Некоторые издатели имеют возможность определять собственные доступности, предлагая разные ценовые варианты для данной SKU. <p/><p/> Каждая SKU имеет свойство [Availabilities](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.availabilities.aspx), которое можно использовать для доступа к доступности. Для большинства разработчиков каждая SKU имеет одну доступность по умолчанию.  |
 
 <span id="store_ids" />
-### Коды продукта в Магазине
+### <a name="store-ids"></a>Коды продукта в Магазине
 
 С каждым приложением и каждой надстройкой в Магазине связан специальный **код продукта в Магазине**. Многие API в пространстве имен **Windows.Services.Store** требуют указания кода продукта в Магазине для выполнения операции с приложением или надстройкой. Продукты, SKU и доступности имеют код продукта в Магазине разных форматов.
 
 | Тип объекта |  Формат кода продукта в Магазине  |
 |---------|-------------------|
-| [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx)  |  Код любого продукта в Магазине— это буквенно-цифровая строка, состоящая из 12 символов, например ```9NBLGGH4R315```. Код приложения или надстройки в Магазине доступен на информационной панели Центра разработки для Windows и возвращается объектом [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.storeid.aspx) свойства [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx). Этот идентификатор иногда называется *кодом продукта в Магазине*. |
-| [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) |  Код SKU в Магазине имеет формат ```<product Store ID>/xxxx```, где ```xxxx```— это буквенно-цифровая строка из 4 символов, идентифицирующая SKU для продукта. Например, ```9NBLGGH4R315/000N```. Этот идентификатор возвращается свойством [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.storeid.aspx) объекта [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) и иногда называется *кодом SKU в Магазине*. |
-| [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx)  |  Код доступности в Магазине имеет формат ```<product Store ID>/xxxx/yyyyyyyyyyyy```, где ```xxxx```— это буквенно-цифровая строка из 4 символов, которая определяет SKU для продукта, а ```yyyyyyyyyyyy```— это буквенно-цифровая строка из 12 символов, которая определяет доступность для SKU. Например, ```9NBLGGH4R315/000N/4KW6QZD2VN6X```. Этот идентификатор возвращается свойством [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.storeid.aspx) объекта [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) и иногда называется *кодом доступности в Магазине*.  |
+| [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx)  |  Код любого продукта в Магазине — это буквенно-цифровая строка, состоящая из 12 символов, например ```9NBLGGH4R315```. Код приложения или надстройки в Магазине доступен на информационной панели Центра разработки для Windows и возвращается объектом [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.storeid.aspx) свойства [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx). Этот идентификатор иногда называется *кодом продукта в Магазине*. |
+| [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) |  Код SKU в Магазине имеет формат ```<product Store ID>/xxxx```, где ```xxxx``` — это буквенно-цифровая строка из 4 символов, идентифицирующая SKU для продукта. Например, ```9NBLGGH4R315/000N```. Этот идентификатор возвращается свойством [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.storeid.aspx) объекта [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) и иногда называется *кодом SKU в Магазине*. |
+| [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx)  |  Код доступности в Магазине имеет формат ```<product Store ID>/xxxx/yyyyyyyyyyyy```, где ```xxxx``` — это буквенно-цифровая строка из 4 символов, которая определяет SKU для продукта, а ```yyyyyyyyyyyy``` — это буквенно-цифровая строка из 12 символов, которая определяет доступность для SKU. Например, ```9NBLGGH4R315/000N/4KW6QZD2VN6X```. Этот идентификатор возвращается свойством [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.storeid.aspx) объекта [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) и иногда называется *кодом доступности в Магазине*.  |
 
-## Связанные статьи
+## <a name="related-topics"></a>Связанные статьи
 
 * [Получение информации о продукте для приложений и надстроек](get-product-info-for-apps-and-add-ons.md)
 * [Получение информации о лицензии для приложений и надстроек](get-license-info-for-apps-and-add-ons.md)
@@ -208,6 +213,6 @@ ms.openlocfilehash: ef0764aaf772fc36c6a6266e103cb35cafa841c5
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

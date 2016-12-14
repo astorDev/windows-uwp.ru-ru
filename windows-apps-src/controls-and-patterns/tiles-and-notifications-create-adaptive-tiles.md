@@ -1,39 +1,45 @@
 ---
 author: mijacobs
-Description: "Шаблоны адаптивных плиток —это новая возможность в Windows 10, которая позволяет создавать собственные уведомления плиток с помощью простого и гибкого языка разметки, который адаптируется к различной плотности экрана."
+Description: "Шаблоны адаптивных плиток — это новая возможность в Windows 10, которая позволяет создавать собственные уведомления плиток с помощью простого и гибкого языка разметки, который адаптируется к различной плотности экрана."
 title: "Создание адаптивных плиток"
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 38ee8ae177898e20d45545c1cfd51a0dd24f7858
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: a00796da398d6e0246caac43b18fb688a9e03fce
 
 ---
-# Создание адаптивных плиток
+# <a name="create-adaptive-tiles"></a>Создание адаптивных плиток
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-Шаблоны адаптивных плиток —это новая возможность в Windows 10, которая позволяет создавать собственные уведомления плиток с помощью простого и гибкого языка разметки, который адаптируется к различной плотности экрана. В этой статье рассказывается, как создать адаптивные живые плитки для вашего приложения универсальной платформы Windows (UWP). Полный список адаптивных элементов и атрибутов см. в разделе [Схема адаптивных плиток](tiles-and-notifications-adaptive-tiles-schema.md).
+Шаблоны адаптивных плиток — это новая возможность в Windows 10, которая позволяет создавать собственные уведомления плиток с помощью простого и гибкого языка разметки, который адаптируется к различной плотности экрана. В этой статье рассказывается, как создать адаптивные живые плитки для вашего приложения универсальной платформы Windows (UWP). Полный список адаптивных элементов и атрибутов см. в разделе [Схема адаптивных плиток](tiles-and-notifications-adaptive-tiles-schema.md).
 
 (При желании вы можете по-прежнему использовать стандартные шаблоны из [каталога шаблонов плиток Windows 8](https://msdn.microsoft.com/library/windows/apps/hh761491) при создании уведомлений для Windows 10.)
 
-## Начало работы
 
+## <a name="getting-started"></a>Начало работы
 
-**Установите NotificationsExtensions.** Если вы хотите использовать C# вместо XML для создания уведомлений, установите пакет NuGet с именем [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki). В примерах на C#, приведенных в этой статье, используется пакет NotificationsExtensions.
+**Установите библиотеку уведомлений.** Если вы хотите использовать C# вместо XML для создания уведомлений, установите пакет NuGet с именем [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (выполните поиск по критерию "notifications uwp"). В примерах с C# в этой статье используется версия 1.0.0 пакета NuGet.
 
 **Установите Визуализатор уведомлений.** Это бесплатное приложение UWP помогает проектировать адаптивные живые плитки, мгновенно отображая плитку при ее изменении, как в представлении редактора или конструирования XAML в Visual Studio. Ознакомьтесь с [этой записью блога](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx), чтобы узнать больше. Скачать приложение Notifications Visualizer можно [здесь](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
-## Руководство по использованию
+
+## <a name="how-to-send-a-tile-notification"></a>Отправка уведомления на плитке
+
+Ознакомьтесь с нашим [Кратким руководством по отправке локальных уведомлений на плитке](tiles-and-notifications-create-adaptive-tiles.md). В документации на этой странице рассказывается обо всех возможностях создания визуального пользовательского интерфейса, доступных при работе с адаптивными плитками.
+
+
+## <a name="usage-guidance"></a>Руководство по использованию
 
 
 Адаптивные шаблоны предназначены для работы с различными форм-факторами устройств и типами уведомлений. Такие элементы, как группы и подгруппы, связывают содержимое и не подразумевают определенного самостоятельного визуального поведения. Окончательный вид уведомления должен зависеть от конкретного устройства, на котором оно появляется, будь то телефон, планшет, настольный компьютер или другое устройство.
 
 Подсказки — это дополнительные атрибуты, которые можно добавлять к элементам, чтобы добиться определенного визуального поведения. Подсказки могут зависеть от устройства или уведомления.
 
-## Базовый пример
+## <a name="a-basic-example"></a>Базовый пример
 
 
 В этом примере показано, чего можно добиться с помощью шаблонов адаптивных плиток.
@@ -73,22 +79,22 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = "Jennifer Parker",
-                        Style = TileTextStyle.Subtitle
+                        HintStyle = AdaptiveTextStyle.Subtitle
                     },
   
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = "Photos from our trip",
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     },
   
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = "Check out these awesome photos I took while in New Zealand!",
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     }
                 }
             }
@@ -103,7 +109,7 @@ TileContent content = new TileContent()
 
 ![краткий пример плитки](images/adaptive-tiles-quicksample.png)
 
-## Размеры плиток
+## <a name="tile-sizes"></a>Размеры плиток
 
 
 Содержимое для плитки каждого размера указывается в отдельных элементах [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) в полезных данных XML. Выберите целевой размер, задав для атрибута шаблона одно из следующих значений:
@@ -150,7 +156,7 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText() { Text = "Small" }
+                    new AdaptiveText() { Text = "Small" }
                 }
             }
         },
@@ -161,7 +167,7 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText() { Text = "Medium" }
+                    new AdaptiveText() { Text = "Medium" }
                 }
             }
         },
@@ -172,7 +178,7 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText() { Text = "Wide" }
+                    new AdaptiveText() { Text = "Wide" }
                 }
             }
         },
@@ -183,7 +189,7 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText() { Text = "Large" }
+                    new AdaptiveText() { Text = "Large" }
                 }
             }
         }
@@ -195,7 +201,7 @@ TileContent content = new TileContent()
 
 ![размеры адаптивной плитки: маленькая, средняя, широкая и большая](images/adaptive-tiles-sizes.png)
 
-## Branding
+## <a name="branding"></a>Branding
 
 
 Вы можете контролировать фирменную символику в нижней части живой плитки (отображаемое имя и угловой логотип) с помощью атрибута branding в полезных данных уведомления. Доступные значения: none (нет), name (только имя), logo (только логотип) или nameAndLogo (имя и логотип).
@@ -211,12 +217,6 @@ TileContent content = new TileContent()
 ```
 
 ```CSharp
-new TileVisual()
-{
-    Branding = TileBranding.Logo,
-    ...
-}
-
 new TileVisual()
 {
     Branding = TileBranding.Logo,
@@ -256,13 +256,13 @@ TileContent content = new TileContent()
     Visual = new TileVisual()
     {
         Branding = TileBranding.NameAndLogo,
- 
+
         TileMedium = new TileBinding()
         {
             Branding = TileBranding.Logo,
             ...
         },
- 
+
         // Inherits branding from Visual
         TileWide = new TileBinding()
         {
@@ -282,7 +282,7 @@ TileContent content = new TileContent()
 
  
 
-## Отображаемое имя
+## <a name="display-name"></a>Отображаемое имя
 
 
 Вы можете переопределить отображаемое имя уведомления, введя собственную текстовую строку в атрибуте **displayName**. Как и для фирменной символики, вы можете указать это в элементе [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md), который влияет на все полезные данные уведомления, или в элементе [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md), который затрагивает только отдельные плитки.
@@ -313,13 +313,13 @@ TileContent content = new TileContent()
     {
         Branding = TileBranding.NameAndLogo,
         DisplayName = "Wednesday 22",
- 
+
         TileMedium = new TileBinding()
         {
             DisplayName = "Wed. 22",
             ...
         },
- 
+
         // Inherits DisplayName from Visual
         TileWide = new TileBinding()
         {
@@ -333,31 +333,18 @@ TileContent content = new TileContent()
 
 ![отображаемое имя адаптивной плитки](images/adaptive-tiles-displayname.png)
 
-## Текст
+## <a name="text"></a>Текст
 
 
 Элемент [&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) используется для отображения текста. Можно использовать подсказки, чтобы изменить способ отображения текста.
 
 ```XML
-<text>This is a line of text</text></code></pre></td>
-</tr>
-</tbody>
-</table>
+<text>This is a line of text</text>
 ```
 
 
 ```CSharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-new TileText()
+new AdaptiveText()
 {
     Text = "This is a line of text"
 };
@@ -367,34 +354,21 @@ new TileText()
 
 ![текст адаптивной плитки](images/adaptive-tiles-text.png)
 
-## Обтекание текстом
+## <a name="text-wrapping"></a>Обтекание текстом
 
 
 По умолчанию текст не переносится и продолжается после края плитки. Используйте **hint-wrap** для настройки обтекания текстом для текстового элемента. Вы также можете задать минимальное и максимальное число строк с помощью атрибутов **hint-minLines** и **hint-maxLines**, которые принимают положительные целые числа.
 
 ```XML
-<text hint-wrap="true">This is a line of wrapping text</text></code></pre></td>
-</tr>
-</tbody>
-</table>
+<text hint-wrap="true">This is a line of wrapping text</text>
 ```
 
 
 ```CSharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-new TileText()
+new AdaptiveText()
 {
     Text = "This is a line of wrapping text",
-    Wrap = true
+    HintWrap = true
 };
 ```
 
@@ -402,10 +376,10 @@ new TileText()
 
 ![адаптивная плитка с обтеканием текстом](images/adaptive-tiles-textwrapping.png)
 
-## Стили текста
+## <a name="text-styles"></a>Стили текста
 
 
-Стили определяют размер и цвет шрифта, а также насыщенность текстовых элементов. Доступно несколько стилей, включая «утонченную» версию каждого стиля с прозрачностью 60%, отчего цвет текста обычно становится светло-серым.
+Стили определяют размер и цвет шрифта, а также насыщенность текстовых элементов. Доступно несколько стилей, включая «утонченную» версию каждого стиля с прозрачностью 60 %, отчего цвет текста обычно становится светло-серым.
 
 ```XML
 <text hint-style="base">Header content</text>
@@ -413,16 +387,16 @@ new TileText()
 ```
 
 ```CSharp
-new TileText()
+new AdaptiveText()
 {
     Text = "Header content",
-    Style = TileTextStyle.Base
+    HintStyle = AdaptiveTextStyle.Base
 },
- 
-new TileText()
+
+new AdaptiveText()
 {
     Text = "Subheader content",
-    Style = TileTextStyle.CaptionSubtle
+    HintStyle = AdaptiveTextStyle.CaptionSubtle
 }
 ```
 
@@ -463,7 +437,7 @@ new TileText()
 
 **Утонченные варианты стилей текста**
 
-У каждого стиля есть утонченный вариант с прозрачностью текста 60%, из-за чего цвет текста обычно становится светло-серым.
+У каждого стиля есть утонченный вариант с прозрачностью текста 60 %, из-за чего цвет текста обычно становится светло-серым.
 
 |                        |
 |------------------------|
@@ -480,34 +454,21 @@ new TileText()
 
  
 
-## Выравнивание текста
+## <a name="text-alignment"></a>Выравнивание текста
 
 
 Текст может быть выровнен по левому краю, центру или правому краю. В языках с написанием слева направо языках, таких как английский, по умолчанию текст выравнивается по левому краю. В языках с написанием справа налево, таких как арабский, по умолчанию текст выравнивается по правому краю. Можно вручную задать выравнивание с помощью атрибута элементов **hint-align**.
 
 ```XML
-<text hint-align="center">Hello</text></code></pre></td>
-</tr>
-</tbody>
-</table>
+<text hint-align="center">Hello</text>
 ```
 
 
 ```CSharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-new TileText()
+new AdaptiveText()
 {
     Text = "Hello",
-    Align = TileTextAlign.Center
+    HintAlign = AdaptiveTextAlign.Center
 };
 ```
 
@@ -515,7 +476,7 @@ new TileText()
 
 ![выравнивание текста адаптивных плиток](images/adaptive-tiles-textalignment.png)
 
-## Группы и подгруппы
+## <a name="groups-and-subgroups"></a>Группы и подгруппы
 
 
 Группы позволяют семантически объявить, что содержимое в группе взаимосвязано и должно отображаться согласованно. Например, у вас может быть два текстовых элемента, заголовок и подзаголовок, поэтому не имеет смысла отображать только заголовок. Если объединить эти элементы в подгруппу, они или будут отображаться все вместе (если помещаются), или не будут отображаться вовсе (если не помещаются).
@@ -527,7 +488,6 @@ new TileText()
  
 
 ```XML
-...
 <binding template="TileWide" branding="nameAndLogo">
   <group>
     <subgroup>
@@ -547,12 +507,9 @@ new TileText()
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileWide = new TileBinding()
 {
     Branding = TileBranding.NameAndLogo,
@@ -564,10 +521,10 @@ TileWide = new TileBinding()
                 from: "Jennifer Parker",
                 subject: "Photos from our trip",
                 body: "Check out these awesome photos I took while in New Zealand!"),
- 
+
             // For spacing
-            new TileText(),
- 
+            new AdaptiveText(),
+
             CreateGroup(
                 from: "Steve Bosniak",
                 subject: "Build 2015 Dinner",
@@ -575,36 +532,33 @@ TileWide = new TileBinding()
         }
     }
 }
- 
+
 ...
- 
- 
-private static TileGroup CreateGroup(string from, string subject, string body)
+
+private static AdaptiveGroup CreateGroup(string from, string subject, string body)
 {
-    return new TileGroup()
+    return new AdaptiveGroup()
     {
         Children =
         {
-            new TileSubgroup()
+            new AdaptiveSubgroup()
             {
                 Children =
                 {
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = from,
-                        Style = TileTextStyle.Subtitle
+                        HintStyle = AdaptiveTextStyle.Subtitle
                     },
- 
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = subject,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     },
- 
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = body,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     }
                 }
             }
@@ -617,7 +571,7 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 
 ![группы и подгруппы адаптивных плиток](images/adaptive-tiles-groups-subgroups.png)
 
-## Подгруппы (столбцы)
+## <a name="subgroups-columns"></a>Подгруппы (столбцы)
 
 
 Подгруппы также позволяют разбить данные на семантические разделы в группе. Для живых плиток визуально это соответствует столбцам.
@@ -732,7 +686,6 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 Вот пример кода для плитки погоды, в котором показано, как получить плитку с пятью одинаковыми столбцами.
 
 ```XML
-...
 <binding template="TileWide" displayName="Seattle" branding="name">
   <group>
     <subgroup hint-weight="1">
@@ -767,11 +720,9 @@ private static TileGroup CreateGroup(string from, string subject, string body)
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileWide = new TileBinding()
 {
     DisplayName = "Seattle",
@@ -780,58 +731,50 @@ TileWide = new TileBinding()
     {
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
                     CreateSubgroup("Mon", "Mostly Cloudy.png", "63°", "42°"),
- 
                     CreateSubgroup("Tue", "Cloudy.png", "57°", "38°"),
- 
                     CreateSubgroup("Wed", "Sunny.png", "59°", "43°"),
- 
                     CreateSubgroup("Thu", "Sunny.png", "62°", "42°"),
- 
                     CreateSubgroup("Fri", "Sunny.png", "71°", "66°")
                 }
             }
         }
     }
 }
+
 ...
- 
- 
-private static TileSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
+
+private static AdaptiveSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
 {
-    return new TileSubgroup()
+    return new AdaptiveSubgroup()
     {
-        Weight = 1,
- 
+        HintWeight = 1,
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = day,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/Weather/" + image),
-                RemoveMargin = true
+                Source = "Assets/Weather/" + image,
+                HintRemoveMargin = true
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = highTemp,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = lowTemp,
-                Align = TileTextAlign.Center,
-                Style = TileTextStyle.CaptionSubtle
+                HintAlign = AdaptiveTextAlign.Center,
+                HintStyle = AdaptiveTextStyle.CaptionSubtle
             }
         }
     };
@@ -842,7 +785,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![пример плитки погоды](images/adaptive-tiles-weathertile.png)
 
-## Изображения
+## <a name="images"></a>Изображения
 
 
 Элемент &lt;image&gt; используется для показа изображений на уведомлении плитки. Изображения можно разместить вместе с содержимым плитки (по умолчанию), как фоновое изображение за содержимым или как всплывающее изображение, которое анимируется в верхней части уведомления.
@@ -854,7 +797,6 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 Если дополнительные аспекты поведения не определены, изображения будут равномерно сжиматься или увеличиваться для заполнения доступной ширины. В примере ниже показана плитка, использующая два столбца и встроенные изображения. Встроенные изображения растягивается, заполняя всю ширину столбца.
 
 ```XML
-...
 <binding template="TileMedium" displayName="Seattle" branding="name">
   <group>
     <subgroup>
@@ -871,11 +813,9 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileMedium = new TileBinding()
 {
     DisplayName = "Seattle",
@@ -884,12 +824,11 @@ TileMedium = new TileBinding()
     {
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
                     CreateSubgroup("Mon", "Mostly Cloudy.png", "63°", "42°"),
- 
                     CreateSubgroup("Tue", "Cloudy.png", "57°", "38°")
                 }
             }
@@ -897,37 +836,32 @@ TileMedium = new TileBinding()
     }
 }
 ...
- 
- 
-private static TileSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
+private static AdaptiveSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
 {
-    return new TileSubgroup()
+    return new AdaptiveSubgroup()
     {
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = day,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/Weather/" + image),
-                RemoveMargin = true
+                Source = "Assets/Weather/" + image,
+                HintRemoveMargin = true
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = highTemp,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = lowTemp,
-                Align = TileTextAlign.Center,
-                Style = TileTextStyle.CaptionSubtle
+                HintAlign = AdaptiveTextAlign.Center,
+                HintStyle = AdaptiveTextStyle.CaptionSubtle
             }
         }
     };
@@ -940,47 +874,42 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 Изображения, размещенные в корневом элементе &lt;binding&gt; или в первой группе, также растягиваются по всей доступной высоте.
 
-### Выравнивание изображений
+### <a name="image-alignment"></a>Выравнивание изображений
 
 Изображения можно выравнивать по левому краю, центру или правому краю с помощью атрибута **hint-align**. Также при этом изображения будут показываться в исходном разрешении, а не растягиваться на всю ширину.
 
 ```XML
-...
 <binding template="TileLarge">
   <image src="Assets/fable.jpg" hint-align="center"/>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileLarge = new TileBinding()
 {
     Content = new TileBindingContentAdaptive()
     {
         Children =
         {
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/fable.jpg"),
-                Align = TileImageAlign.Center
+                Source = "Assets/fable.jpg",
+                HintAlign = AdaptiveImageAlign.Center
             }
         }
     }
 }
-...
 ```
 
 **Результат:**
 
 ![пример выравнивания изображения (по левому краю, по центру, по правому краю)](images/adaptive-tiles-imagealignment.png)
 
-### Поля изображений
+### <a name="image-margins"></a>Поля изображений
 
 По умолчанию для встроенных изображений применяется поле в 8 пикселей между любым содержимым над или под изображением. Это поле можно удалить с помощью атрибута изображения **hint-removeMargin**. Однако для изображений всегда сохраняется 8-пиксельное поле от края плитки, а для подгрупп (столбцов) всегда сохраняется 8-пиксельная отбивка между столбцами.
 
 ```XML
-...
 <binding template="TileMedium" branding="none">
   <group>
     <subgroup>
@@ -997,12 +926,9 @@ TileLarge = new TileBinding()
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileMedium = new TileBinding()
 {
     Branding = TileBranding.None,
@@ -1010,53 +936,47 @@ TileMedium = new TileBinding()
     {
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
                     CreateSubgroup("Mon", "4.jpg", "63°", "42°"),
- 
                     CreateSubgroup("Tue", "3.jpg", "57°", "38°")
                 }
             }
         }
     }
 }
- 
+
 ...
- 
- 
-private static TileSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
+
+private static AdaptiveSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
 {
-    return new TileSubgroup()
+    return new AdaptiveSubgroup()
     {
-        Weight = 1,
- 
+        HintWeight = 1,
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = day,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/Numbers/" + image),
-                RemoveMargin = true
+                Source = "Assets/Numbers/" + image,
+                HintRemoveMargin = true
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = highTemp,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = lowTemp,
-                Align = TileTextAlign.Center,
-                Style = TileTextStyle.CaptionSubtle
+                HintAlign = AdaptiveTextAlign.Center,
+                HintStyle = AdaptiveTextStyle.CaptionSubtle
             }
         }
     };
@@ -1065,12 +985,11 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![пример удаления поля подсказки](images/adaptive-tiles-removemargin.png)
 
-### Кадрирование изображений
+### <a name="image-cropping"></a>Кадрирование изображений
 
 Изображения можно обрезать в форме круга с помощью атрибута **hint-crop**, который в настоящий момент поддерживает только значения "none" (по умолчанию) или "circle".
 
 ```XML
-...
 <binding template="TileLarge" hint-textStacking="center">
   <group>
     <subgroup hint-weight="1"/>
@@ -1083,72 +1002,62 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
   <text hint-style="title" hint-align="center">Hi,</text>
   <text hint-style="subtitleSubtle" hint-align="center">MasterHip</text>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileLarge = new TileBinding()
 {
     Content = new TileBindingContentAdaptive()
     {
         TextStacking = TileTextStacking.Center,
- 
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
-                    new TileSubgroup() { Weight = 1 },
- 
-                    new TileSubgroup()
+                    new AdaptiveSubgroup() { HintWeight = 1 },
+                    new AdaptiveSubgroup()
                     {
-                        Weight = 2,
+                        HintWeight = 2,
                         Children =
                         {
-                            new TileImage()
+                            new AdaptiveImage()
                             {
-                                Source = new TileImageSource("Assets/Apps/Hipstame/hipster.jpg"),
-                                Crop = TileImageCrop.Circle
+                                Source = "Assets/Apps/Hipstame/hipster.jpg",
+                                HintCrop = AdaptiveImageCrop.Circle
                             }
                         }
                     },
- 
-                    new TileSubgroup() { Weight = 1 }
+                    new AdaptiveSubgroup() { HintWeight = 1 }
                 }
             },
- 
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "Hi,",
-                Style = TileTextStyle.Title,
-                Align = TileTextAlign.Center
+                HintStyle = AdaptiveTextStyle.Title,
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "MasterHip",
-                Style = TileTextStyle.SubtitleSubtle,
-                Align = TileTextAlign.Center
+                HintStyle = AdaptiveTextStyle.SubtitleSubtle,
+                HintAlign = AdaptiveTextAlign.Center
             }
         }
     }
 }
-...
 ```
 
 **Результат:**
 
 ![пример обрезки изображения](images/adaptive-tiles-imagecropping.png)
 
-### Фоновое изображение
+### <a name="background-image"></a>Фоновое изображение
 
 Чтобы задать фоновое изображение, разместите элемент изображения в корневом элементе &lt;binding&gt; и задайте для атрибута placement значение background.
 
 ```XML
-...
 <binding template="TileWide">
   <image src="Assets\Mostly Cloudy-Background.jpg" placement="background"/>
   <group>
@@ -1161,23 +1070,21 @@ TileLarge = new TileBinding()
     ...
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileWide = new TileBinding()
 {
     Content = new TileBindingContentAdaptive()
     {
         BackgroundImage = new TileBackgroundImage()
         {
-            Source = new TileImageSource("Assets/Mostly Cloudy-Background.jpg")
+            Source = "Assets/Mostly Cloudy-Background.jpg"
         },
- 
+
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
@@ -1188,40 +1095,36 @@ TileWide = new TileBinding()
         }
     }
 }
+
 ...
- 
- 
-private static TileSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
+
+private static AdaptiveSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
 {
-    return new TileSubgroup()
+    return new AdaptiveSubgroup()
     {
-        Weight = 1,
- 
+        HintWeight = 1,
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = day,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/Weather/" + image),
-                RemoveMargin = true
+                Source = "Assets/Weather/" + image,
+                HintRemoveMargin = true
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = highTemp,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = lowTemp,
-                Align = TileTextAlign.Center,
-                Style = TileTextStyle.CaptionSubtle
+                HintAlign = AdaptiveTextAlign.Center,
+                HintStyle = AdaptiveTextStyle.CaptionSubtle
             }
         }
     };
@@ -1232,96 +1135,62 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![пример фонового изображения](images/adaptive-tiles-backgroundimage.png)
 
-Кроме того, можно включить черное наложение на фоновое изображение с помощью атрибута **hint-overlay**, который принимает целые числа от 0 до 100, где 0 означает отсутствие наложения, а 100 — полное наложение черного цвета. Значение по умолчанию — 20.
+### <a name="peek-image"></a>Всплывающее изображение
+
+Вы можете указать изображение, которое "выглядывает" из-за верхней границы плитки. Такое изображение использует анимацию для скольжения вниз и вверх в верхней части плитки, отображаясь полностью и затем скрываясь, чтобы показать основное содержимое плитки. Чтобы задать всплывающее изображение, разместите элемент изображения в корневом элементе &lt;binding&gt; и задайте для атрибута placement значение peek.
 
 ```XML
-...
-<binding template="TileWide" hint-overlay="60">
-  <image src="Assets\Mostly Cloudy-Background.jpg" placement="background"/>
-  ...
-</binding>
-...
-```
-
-```CSharp
-...
- 
-TileWide = new TileBinding()
-{
-    Content = new TileBindingContentAdaptive()
-    {
-        BackgroundImage = new TileBackgroundImage()
-        {
-            Source = new TileImageSource("Assets/Mostly Cloudy-Background.jpg"),
-            Overlay = 60
-        },
- 
-        ...
-    }
-}
- 
-...
-```
-
-**Результат hint-overlay:**
-
-![пример наложения подсказки изображения](images/adaptive-tiles-image-hintoverlay.png)
-
-### Всплывающее изображение
-
-Вы можете указать изображение, которое «выглядывает» из-за верхней границы плитки. Такое изображение использует анимацию для скольжения вниз и вверх в верхней части плитки, отображаясь полностью и затем скрываясь, чтобы показать основное содержимое плитки. Чтобы задать всплывающее изображение, разместите элемент изображения в корневом элементе &lt;binding&gt; и задайте для атрибута placement значение peek.
-
-```XML
-...
 <binding template="TileMedium" branding="name">
   <image placement="peek" src="Assets/Apps/Hipstame/hipster.jpg"/>
   <text>New Message</text>
   <text hint-style="captionsubtle" hint-wrap="true">Hey, have you tried Windows 10 yet?</text>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileWide = new TileBinding()
 {
     Branding = TileBranding.Name,
- 
     Content = new TileBindingContentAdaptive()
     {
         PeekImage = new TilePeekImage()
         {
-            Source = new TileImageSource("Assets/Apps/Hipstame/hipster.jpg")
+            Source = "Assets/Apps/Hipstame/hipster.jpg"
         },
- 
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "New Message"
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "Hey, have you tried Windows 10 yet?",
-                Style = TileTextStyle.CaptionSubtle,
-                Wrap = true
+                HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                HintWrap = true
             }
         }
     }
 }
- 
-...
 ```
 
 ![примеры всплывающих изображений](images/adaptive-tiles-imagepeeking.png)
 
 **Обрезка по кругу для обзорных и фоновых изображений**
 
-Используйте следующий атрибут на обзорных и фоновых изображениях для выполнения обрезки по кругу:
+Используйте атрибут hint-crop на обзорных и фоновых изображениях для выполнения обрезки по кругу:
 
-hint-crop="circle"
+```XML
+<image placement="peek" hint-crop="circle" src="Assets/Apps/Hipstame/hipster.jpg"/>
+```
+
+```CSharp
+new TilePeekImage()
+{
+    HintCrop = TilePeekImageCrop.Circle,
+    Source = "Assets/Apps/Hipstame/hipster.jpg"
+}
+```
 
 Результат будет выглядеть так:
 
@@ -1335,75 +1204,122 @@ hint-crop="circle"
 
 ![обзорное и фоновое изображения, используемые вместе](images/peekandbackground.png)
 
+
+### <a name="peek-and-background-image-overlays"></a>Наложения обзорных и фоновых изображений
+
+Можно включить черное наложение на фоновые и обзорные изображения с помощью атрибута **hint-overlay**, который принимает целые числа от 0 до 100, где 0 означает отсутствие наложения, а 100 — полное наложение черного цвета. Наложение помогает обеспечить удобство чтения текста на плитке.
+
+**Использование наложения подсказки на фоновом изображении**
+
+Для фонового изображения по умолчанию используется наложение 20 % при условии наличия текстовых элементов в полезных данных (в противном случае используется наложение 0 %).
+
+```XML
+<binding template="TileWide">
+  <image placement="background" hint-overlay="60" src="Assets\Mostly Cloudy-Background.jpg"/>
+  ...
+</binding>
+```
+
+```CSharp
+TileWide = new TileBinding()
+{
+    Content = new TileBindingContentAdaptive()
+    {
+        BackgroundImage = new TileBackgroundImage()
+        {
+            Source = "Assets/Mostly Cloudy-Background.jpg",
+            HintOverlay = 60
+        },
+
+        ...
+    }
+}
+```
+
+**Результат hint-overlay:**
+
+![пример наложения подсказки изображения](images/adaptive-tiles-image-hintoverlay.png)
+
 **Использование наложения подсказки на обзорном изображении**
 
-Вы можете использовать **hint-overlay** на обзорном изображении для добавления непрозрачности и повышения удобства чтения отображаемого имени плитки. Если указать **hint-overlay** на элементе &lt;binding&gt;, наложение будет применяться к фоновому и обзорному изображениям.
+В версии 1511 Windows 10 также поддерживается наложение обзорного изображения точно так же, как фонового. Укажите наложение подсказки на элемент обзорного изображения в виде целого числа от 0 до 100. По умолчанию для обзорных изображений используется наложение 0 (без наложения).
 
-Вы можете также применить **hint-overlay** к элементу &lt;image&gt;, которое имеет значение placement="peek" или placement="background", чтобы получить разные уровни непрозрачности для каждого изображения. Если вы не укажите наложение, непрозрачность фонового изображения будет по умолчанию иметь значение 20%, а непрозрачность обзорного изображения — значение 0%.
+```XML
+<binding template="TileMedium">
+  <image hint-overlay="20" src="Assets\Map.jpg" placement="peek"/>
+  ...
+</binding>
+```
 
-В этом примере показано фоновое изображение с уровнем непрозрачности 20% (слева) и с непрозрачностью 0% (справа):
+```CSharp
+TileMedium = new TileBinding()
+{
+    Content = new TileBindingContentAdaptive()
+    {
+        PeekImage = new TilePeekImage()
+        {
+            Source = "Assets/Map.jpg",
+            HintOverlay = 20
+        },
+        ...
+    }
+}
+```
+
+В этом примере показано обзорное изображение с уровнем непрозрачности 20 % (слева) и с непрозрачностью 0 % (справа):
 
 ![наложение подсказки на обзорном изображении](images/hintoverlay.png)
 
-## Вертикальное выравнивание (размещение текста)
+## <a name="vertical-alignment-text-stacking"></a>Вертикальное выравнивание (размещение текста)
 
 
 Вы можете контролировать вертикальное выравнивание содержимого на плитке с помощью атрибута **hint-textStacking** в элементе [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) и элементе [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md). По умолчанию все содержимое вертикально выравнивается по верхней границе, но также можно выравнивать его по нижней границе или центру.
 
-### Размещение текста в элементе binding
+### <a name="text-stacking-on-binding-element"></a>Размещение текста в элементе binding
 
 Если размещение текста применяется на уровне элемента [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md), вертикальное выравнивание задается для содержимого уведомления в целом, при этом используется доступное вертикальное пространство над областью фирменной символики или индикатора событий.
 
 ```XML
-...
 <binding template="TileMedium" hint-textStacking="center" branding="logo">
   <text hint-style="base" hint-align="center">Hi,</text>
   <text hint-style="captionSubtle" hint-align="center">MasterHip</text>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileMedium = new TileBinding()
 {
     Branding = TileBranding.Logo,
- 
     Content = new TileBindingContentAdaptive()
     {
         TextStacking = TileTextStacking.Center,
- 
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "Hi,",
-                Style = TileTextStyle.Base,
-                Align = TileTextAlign.Center
+                HintStyle = AdaptiveTextStyle.Base,
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+
+            new AdaptiveText()
             {
                 Text = "MasterHip",
-                Style = TileTextStyle.CaptionSubtle,
-                Align = TileTextAlign.Center
+                HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                HintAlign = AdaptiveTextAlign.Center
             }
         }
     }
 }
- 
-...
 ```
 
 ![размещение текста в элементе binding](images/adaptive-tiles-textstack-bindingelement.png)
 
-### Размещение текста в элементе subgroup
+### <a name="text-stacking-on-subgroup-element"></a>Размещение текста в элементе subgroup
 
 Если размещение текста применяется на уровне элемента [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md), вертикальное выравнивание задается для содержимого подгруппы (столбца) с использованием доступного вертикального пространства всей группы.
 
 ```XML
-...
 <binding template="TileWide" branding="nameAndLogo">
   <group>
     <subgroup hint-weight="33">
@@ -1415,56 +1331,51 @@ TileMedium = new TileBinding()
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileWide = new TileBinding()
 {
     Branding = TileBranding.NameAndLogo,
- 
     Content = new TileBindingContentAdaptive()
     {
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
                     // Image column
-                    new TileSubgroup()
+                    new AdaptiveSubgroup()
                     {
-                        Weight = 33,
+                        HintWeight = 33,
                         Children =
                         {
-                            new TileImage()
+                            new AdaptiveImage()
                             {
-                                Source = new TileImageSource("Assets/Apps/Hipstame/hipster.jpg"),
-                                Crop = TileImageCrop.Circle
+                                Source = "Assets/Apps/Hipstame/hipster.jpg",
+                                HintCrop = AdaptiveImageCrop.Circle
                             }
                         }
                     },
- 
+
                     // Text column
-                    new TileSubgroup()
+                    new AdaptiveSubgroup()
                     {
                         // Vertical align its contents
                         TextStacking = TileTextStacking.Center,
- 
                         Children =
                         {
-                            new TileText()
+                            new AdaptiveText()
                             {
                                 Text = "Hi,",
-                                Style = TileTextStyle.Subtitle
+                                HintStyle = AdaptiveTextStyle.Subtitle
                             },
- 
-                            new TileText()
+
+                            new AdaptiveText()
                             {
                                 Text = "MasterHip",
-                                Style = TileTextStyle.BodySubtle
+                                HintStyle = AdaptiveTextStyle.BodySubtle
                             }
                         }
                     }
@@ -1473,15 +1384,14 @@ TileWide = new TileBinding()
         }
     }
 }
- 
-...
 ```
 
-## Связанные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 
 * [Схема адаптивных плиток](tiles-and-notifications-adaptive-tiles-schema.md)
-* [NotificationsExtensions на GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [Краткое руководство: отправка локального уведомления на плитке](tiles-and-notifications-create-adaptive-tiles.md)
+* [Библиотека уведомлений на GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 * [Каталог специальных шаблонов плиток](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
@@ -1493,6 +1403,6 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

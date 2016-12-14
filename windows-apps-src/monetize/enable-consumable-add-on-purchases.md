@@ -5,18 +5,18 @@ description: "Узнайте, как использовать пространс
 title: "Поддержка покупок потребляемых надстроек внутри приложения"
 keywords: "Пример кода продажи из приложения"
 translationtype: Human Translation
-ms.sourcegitcommit: 962bee0cae8c50407fe1509b8000dc9cf9e847f8
-ms.openlocfilehash: eb188ed8e69f90727c5b57af1c407fac07eaf87d
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: 12191a946ec080c8e386191363617a9c437671c5
 
 ---
 
-# Поддержка покупок потребляемых надстроек внутри приложения
+# <a name="enable-consumable-add-on-purchases"></a>Поддержка покупок потребляемых надстроек внутри приложения
 
 Приложения, предназначенные для Windows 10 версии 1607 и выше, могут использовать методы класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) для управления покупкой пользователями потребляемых надстроек в приложениях UWP (надстройки также называются внутренними продуктами приложения или IAP). Используйте потребляемые надстройки для элементов, которые можно приобретать, использовать и снова приобретать. Это особенно удобно при покупке виртуальной валюты для игр (например, золота или монет), которую можно потом использовать в процессе игры.
 
 >**Примечание.**&nbsp;&nbsp;Эта статья относится к приложениям, предназначенным для Windows 10 версии 1607 и старше. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Подробнее см. в разделе [Внутренние покупки приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-## Обзор потребляемых надстроек
+## <a name="overview-of-consumable-add-ons"></a>Обзор потребляемых надстроек
 
 Приложения, предназначенные для Windows 10 версии 1607 и выше, могут предлагать два типа потребляемых надстроек, которые отличаются способом управления покупками:
 
@@ -37,7 +37,7 @@ ms.openlocfilehash: eb188ed8e69f90727c5b57af1c407fac07eaf87d
 
 В любой момент можно также [получить оставшийся баланс](enable-consumable-add-on-purchases.md#get_balance) для потребляемого элемента, управляемого Магазином.
 
-## Предварительные условия и необходимые компоненты
+## <a name="prerequisites"></a>Предварительные условия и необходимые компоненты
 
 Для этих примеров необходимо выполнение следующих предварительных условий:
 * Создан проект Visual Studio для приложения универсальной платформы Windows (UWP), предназначенный для Windows 10 версии 1607 и выше.
@@ -53,7 +53,7 @@ ms.openlocfilehash: eb188ed8e69f90727c5b57af1c407fac07eaf87d
 >**Примечание.**&nbsp;&nbsp;Если у вас есть классическое приложение, которое использует [мост для настольных ПК](https://developer.microsoft.com/windows/bridges/desktop), вам может потребоваться добавить дополнительный код, не показанный в этих примерах, для настройки объекта [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Дополнительные сведения см. в разделе [Использование класса StoreContext в классическом приложение, в котором применяется мост для настольных компьютеров](in-app-purchases-and-trials.md#desktop).
 
 <span id="report_fulfilled" />
-## Сообщение о том, что потребляемая надстройка израсходована
+## <a name="report-a-consumable-add-on-as-fulfilled"></a>Сообщение о том, что потребляемая надстройка израсходована
 
 После того как пользователь [приобрел надстройку](enable-in-app-purchases-of-apps-and-add-ons.md) из приложения и израсходовал ее, приложение должно сообщить об израсходовании надстройки, вызвав метод [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.reportconsumablefulfillmentasync.aspx) класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Этому методу необходимо передать следующую информацию:
 
@@ -65,119 +65,18 @@ ms.openlocfilehash: eb188ed8e69f90727c5b57af1c407fac07eaf87d
 
 Этот пример показывает, как сообщить об израсходовании потребляемого элемента, управляемого Магазином.
 
-```csharp
-private StoreContext context = null;
-
-public async void ConsumeAddOn(string storeId)
-{
-    if (context == null)
-    {
-        context = StoreContext.GetDefault();
-        // If your app is a desktop app that uses the Desktop Bridge, you
-        // may need additional code to configure the StoreContext object.
-        // For more info, see https://aka.ms/storecontext-for-desktop.
-    }
-
-    // This is an example for a Store-managed consumable, where you specify the actual number
-    // of units that you want to report as consumed so the Store can update the remaining
-    // balance. For a developer-managed consumable where you maintain the balance, specify 1
-    // to just report the add-on as fulfilled to the Store.
-    uint quantity = 10;
-    string addOnStoreId = "9NBLGGH4TNNR";
-    Guid trackingId = Guid.NewGuid();
-
-    workingProgressRing.IsActive = true;
-    StoreConsumableResult result = await context.ReportConsumableFulfillmentAsync(
-        addOnStoreId, quantity, trackingId);
-    workingProgressRing.IsActive = false;
-
-    if (result.ExtendedError != null)
-    {
-        // The user may be offline or there might be some other server failure.
-        textBlock.Text = $"ExtendedError: {result.ExtendedError.Message}";
-        return;
-    }
-
-    switch (result.Status)
-    {
-        case StoreConsumableStatus.Succeeded:
-            textBlock.Text = "The fulfillment was successful. Remaining balance: " +
-                result.BalanceRemaining;
-            break;
-
-        case StoreConsumableStatus.InsufficentQuantity:
-            textBlock.Text = "The fulfillment was unsuccessful because the user " +
-            "doesn't have enough remaining balance." + result.BalanceRemaining;
-            break;
-
-        case StoreConsumableStatus.NetworkError:
-            textBlock.Text = "The fulfillment was unsuccessful due to a network error.";
-            break;
-
-        case StoreConsumableStatus.ServerError:
-            textBlock.Text = "The fulfillment was unsuccessful due to a server error.";
-            break;
-
-        default:
-            textBlock.Text = "The fulfillment was unsuccessful due to an unknown error.";
-            break;
-    }
-}
-```
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs#ConsumeAddOn)]
 
 <span id="get_balance" />
-## Получение оставшегося баланса для потребляемого элемента, управляемого Магазином
+## <a name="get-the-remaining-balance-for-a-store-managed-consumable"></a>Получение оставшегося баланса для потребляемого элемента, управляемого Магазином
 
 Этот пример демонстрирует использование метода [GetConsumableBalanceRemainingAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getconsumablebalanceremainingasync.aspx) класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) для получения оставшегося баланса потребляемой надстройки, управляемой Магазином.
 
-```csharp
-private StoreContext context = null;
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs#GetRemainingAddOnBalance)]
 
-public async void GetRemainingBalance(string storeId)
-{
-    if (context == null)
-    {
-        context = StoreContext.GetDefault();
-        // If your app is a desktop app that uses the Desktop Bridge, you
-        // may need additional code to configure the StoreContext object.
-        // For more info, see https://aka.ms/storecontext-for-desktop.
-    }
-
-    string addOnStoreId = "9NBLGGH4TNNR";
-
-    workingProgressRing.IsActive = true;
-    StoreConsumableResult result = await context.GetConsumableBalanceRemainingAsync(addOnStoreId);
-    workingProgressRing.IsActive = false;
-
-    if (result.ExtendedError != null)
-    {
-        // The user may be offline or there might be some other server failure.
-        textBlock.Text = $"ExtendedError: {result.ExtendedError.Message}";
-        return;
-    }
-
-    switch (result.Status)
-    {
-        case StoreConsumableStatus.Succeeded:
-            textBlock.Text = "Remaining balance: " + result.BalanceRemaining;
-            break;
-
-        case StoreConsumableStatus.NetworkError:
-            textBlock.Text = "Could not retrieve balance due to a network error.";
-            break;
-
-        case StoreConsumableStatus.ServerError:
-            textBlock.Text = "Could not retrieve balance due to a server error.";
-            break;
-
-        default:
-            textBlock.Text = "Could not retrieve balance due to an unknown error.";
-            break;
-    }
-}
-```
-
-## Связанные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 * [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
 * [Получение информации о продукте для приложений и надстроек](get-product-info-for-apps-and-add-ons.md)
@@ -188,6 +87,6 @@ public async void GetRemainingBalance(string storeId)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,15 +1,15 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "Файлы и папки в библиотеках музыки, изображений и видео"
 description: "Добавьте существующие папки музыки, изображений или видео в соответствующие библиотеки. Можно также удалить папки из библиотек, получить список папок в библиотеке и найти сохраненные фотографии, музыку и видео."
 translationtype: Human Translation
-ms.sourcegitcommit: affe6002e22bd10e714dc4782a60ef528c31a407
-ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 4e2b7d10e1d24427aede21ccae176d7cd55f9de8
 
 ---
 
-# Файлы и папки в библиотеках музыки, изображений и видео
+# <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>Файлы и папки в библиотеках музыки, изображений и видео
 
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -19,7 +19,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
 Библиотека — это виртуальная коллекция папок, которая содержит известную папку по умолчанию и все другие папки, добавленные пользователем в библиотеку с помощью вашего приложения или одного из встроенных приложений. Например, библиотека изображений содержит известную папку изображений по умолчанию. Пользователь может добавлять папки в библиотеку изображений или удалить их из нее с помощью вашего приложения или встроенного приложения "Фотографии".
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 
 -   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)**
@@ -36,7 +36,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
     Дополнительную информацию см. в разделе [Разрешения на доступ к файлам](file-access-permissions.md).
 
-## Получение ссылок на библиотеку
+## <a name="get-a-reference-to-a-library"></a>Получение ссылок на библиотеку
 
 
 **Примечание.** Не забудьте объявить соответствующую возможность.
@@ -53,7 +53,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
         (Windows.Storage.KnownLibraryId.Pictures);
 ```
 
-## Получение списка папок в библиотеке
+## <a name="get-the-list-of-folders-in-a-library"></a>Получение списка папок в библиотеке
 
 
 Чтобы получить список папок, получите значение свойства [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724).
@@ -66,7 +66,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
 
-## Получение папки в библиотеке, в котором новые файлы сохраняются по умолчанию
+## <a name="get-the-folder-in-a-library-where-new-files-are-saved-by-default"></a>Получение папки в библиотеке, в котором новые файлы сохраняются по умолчанию
 
 
 Чтобы получить папку в библиотеке, в которую по умолчанию сохраняются новые файлы, получите значение свойства [**StorageLibrary.SaveFolder**](https://msdn.microsoft.com/library/windows/apps/dn251728).
@@ -75,7 +75,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 ```
 
-## Добавление существующей папки в библиотеку
+## <a name="add-an-existing-folder-to-a-library"></a>Добавление существующей папки в библиотеку
 
 
 Чтобы добавить папку в библиотеку, вызовите [**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726). Рассмотрим в качестве примера библиотеку изображений. Вызов этого метода отображает для пользователя средство выбора папок с кнопкой **Добавить эту папку в библиотеку изображений**. Если пользователь выбирает папку, то она остается в исходном расположении на диске и становится элементом в свойстве [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) (и во встроенном приложении «Фотографии»), но папка не отображается как дочерний элемент папки «Изображения» в проводнике.
@@ -85,7 +85,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync();
 ```
 
-## Удаление папки из библиотеки
+## <a name="remove-a-folder-from-a-library"></a>Удаление папки из библиотеки
 
 
 Чтобы удалить папку из библиотеки, вызовите метод [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) и укажите папку, которую нужно удалить. Можно использовать элемент управления [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) и [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) (или подобный ему), чтобы пользователь мог выбрать папку для удаления.
@@ -99,7 +99,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ```
 
-## Получение уведомлений об изменениях списка папок в библиотеке
+## <a name="get-notified-of-changes-to-the-list-of-folders-in-a-library"></a>Получение уведомлений об изменениях списка папок в библиотеке
 
 
 Для получения уведомлений об изменениях в списке папок в библиотеке зарегистрируйте обработчик для события [**StorageLibrary.DefinitionChanged**](https://msdn.microsoft.com/library/windows/apps/dn251723) библиотеки.
@@ -115,7 +115,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 }
 ```
 
-## Папки библиотеки мультимедиа
+## <a name="media-library-folders"></a>Папки библиотеки мультимедиа
 
 
 В устройстве предусмотрено пять стандартных расположений для хранения файлов мультимедиа пользователей и приложений. Встроенные приложения хранят в этих расположениях как созданные пользователями, так и загруженные файлы мультимедиа.
@@ -134,7 +134,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 Пользователи или приложения также могут хранить файлы мультимедиа за пределами папок библиотек на SD-карте. Чтобы наверняка найти файл мультимедиа на SD-карте, просканируйте содержимое SD-карты или попросите пользователя выбрать файл с помощью средства выбора файлов. Дополнительные сведения см. в разделе [Доступ к SD-карте](access-the-sd-card.md).
 
-## Запрос в библиотеки мультимедиа
+## <a name="querying-the-media-libraries"></a>Запрос в библиотеки мультимедиа
 
 Чтобы получить коллекцию файлов, укажите библиотеку и нужный тип файлов.
 
@@ -164,7 +164,7 @@ private async void getSongs()
 }
 ```
 
-### Результаты запроса включают внутренние хранилища и съемные носители
+### <a name="query-results-include-both-internal-and-removable-storage"></a>Результаты запроса включают внутренние хранилища и съемные носители
 
 Пользователи могут выбрать хранение файлов на дополнительной SD-карте по умолчанию. Приложения же могут запретить хранение файлов на SD-карте. В результате библиотеки мультимедиа могут храниться и во внутреннем хранилище устройства, и на SD-карте.
 
@@ -177,7 +177,7 @@ private async void getSongs()
 Если вы запросите содержимое библиотеки изображений, вызвав `await KnownFolders.PicturesLibrary.GetFilesAsync()`, результаты будут включать как internalPic.jpg, так и SDPic.jpg.
 
 
-## Работа с фотографиями
+## <a name="working-with-photos"></a>Работа с фотографиями
 
 
 На устройствах, на которых камера сохраняет каждое изображение и в низком, и в высоком разрешении, глубокий запрос вернет только изображения с низким разрешением.
@@ -197,7 +197,7 @@ private async void getSongs()
   testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
 ```
 
-## Использование потоковых методов для добавления файла в библиотеку мультимедиа
+## <a name="using-stream-methods-to-add-a-file-to-a-media-library"></a>Использование потоковых методов для добавления файла в библиотеку мультимедиа
 
 
 Когда вы получаете доступ к библиотеке мультимедиа с помощью известной папки, такой как **KnownFolders.PictureLibrary**, и используете потоковые методы для добавления в библиотеку файла, вам обязательно следует закрыть все потоки, которые открыл ваш код. В противном случае эти методы не смогут добавить файл в библиотеку мультимедиа ожидаемым образом, так как минимум один поток будет по-прежнему обрабатывать файл.
@@ -246,6 +246,6 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 
