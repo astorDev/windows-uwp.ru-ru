@@ -1,16 +1,16 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
 title: "Определение доступности файлов Microsoft OneDrive"
-description: "Определите доступность файла MicrosoftOneDrive с помощью свойства StorageFile.IsAvailable."
+description: "Определите доступность файла Microsoft OneDrive с помощью свойства StorageFile.IsAvailable."
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: 2ed00b525fd2b7af51da00ad0464e37f1cabd889
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 2289b85a8b26e1827446709e1db97c447b3b7964
 
 ---
-# Определение доступности файлов MicrosoftOneDrive
+# <a name="determining-availability-of-microsoft-onedrive-files"></a>Определение доступности файлов Microsoft OneDrive
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** Важные API **
@@ -21,7 +21,7 @@ ms.openlocfilehash: 2ed00b525fd2b7af51da00ad0464e37f1cabd889
 
 Определите доступность файла Microsoft OneDrive с помощью свойства [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx).
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 -   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)**
 
@@ -31,7 +31,7 @@ ms.openlocfilehash: 2ed00b525fd2b7af51da00ad0464e37f1cabd889
 
     См. раздел [Разрешения на доступ к файлам](file-access-permissions.md).
 
-## Использование свойства StorageFile.IsAvailable
+## <a name="using-the-storagefileisavailable-property"></a>Использование свойства StorageFile.IsAvailable
 
 Пользователи могут отмечать файлы OneDrive как "доступные автономно" (по умолчанию) и как "только в сети". Благодаря этому пользователи могут перемещать большие файлы (например, изображения или видео) в свое хранилище OneDrive, отмечать их как «только в сети» и тем самым экономить место на диске. (На локальном диске будет храниться только файл, содержащий метаданные.)
 
@@ -92,6 +92,6 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

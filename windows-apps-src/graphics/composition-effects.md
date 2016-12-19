@@ -4,13 +4,13 @@ ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: "Эффекты композиции"
 description: "API эффектов позволяют разработчикам настраивать отрисовку пользовательского интерфейса."
 translationtype: Human Translation
-ms.sourcegitcommit: 7f8660eae59219f15a083b41c581e427c140d299
-ms.openlocfilehash: 23d28144de3d051b4b569cf633f9eee30c13368d
+ms.sourcegitcommit: 7330af081021788a17bf6ec320267b4ea2fc3115
+ms.openlocfilehash: 197a4b32afc82724803fb93949b288b38de52cc4
 
 ---
-# Эффекты композиции
+# <a name="composition-effects"></a>Эффекты композиции
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 API [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT позволяет применять эффекты в режиме реального времени к изображениям и пользовательскому интерфейсу, поддерживающему свойства анимации эффектов. В этом обзоре мы рассмотрим доступные функциональные возможности, позволяющие применять эффекты к визуальным элементам композиции.
 
@@ -20,15 +20,15 @@ API [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps
 
 Кисти эффектов используются с визуальными элементами дерева композиции, содержимое которых поступает от диаграммы эффекта. Эффекты могут ссылаться на имеющиеся поверхности или текстуры, но не данные, получаемые от других деревьев композиции.
 
-## Функции эффекта
+## <a name="effect-features"></a>Функции эффекта
 
 -   [Библиотека эффектов](./composition-effects.md#effect-library)
 -   [Создание цепочки эффектов](./composition-effects.md#chaining-effects)
 -   [Поддержка анимации](./composition-effects.md#animation-support)
--   [Свойства эффекта: постоянные и анимированные](./composition-effects.md#effect-properties-constant-vs-animated)
--   [Несколько экземпляров эффектов с независимыми свойствами.](./composition-effects.md#multiple-effect-instances-with-independent-properties)
+-   [Постоянные и анимированные свойства эффекта](./composition-effects.md#constant-vs-animated-effect-properties)
+-   [Несколько экземпляров эффектов с независимыми свойствами](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
-### Библиотека эффектов
+### <a name="effect-library"></a>Библиотека эффектов
 
 В данный момент композиция поддерживает следующие эффекты.
 
@@ -53,7 +53,7 @@ API [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps
 
 Более подробные сведения см. в разделе, посвященном пространству имен [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) Win2D. Эффекты не поддерживаемые композицией помечены как \[NoComposition\].
 
-### Создание цепочки эффектов
+### <a name="chaining-effects"></a>Создание цепочки эффектов
 
 Эффекты можно объединять в цепочку, позволяя приложению применять к изображению сразу несколько эффектов. Диаграммы эффекта способны поддерживать несколько ссылающихся друг на друга эффектов. При описании эффекта просто добавьте его в качестве входного параметра.
 
@@ -77,11 +77,11 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
 
 В примере выше описан эффект арифметического композитного, который имеет два набора входных данных. Второй набор входных данных включает эффект насыщенности со свойством насыщенности 0,5.
 
-### Поддержка анимации
+### <a name="animation-support"></a>Поддержка анимации
 
 Свойства эффекта поддерживают анимацию. Во время компиляции эффекта можно указать, какие свойства эффекта будут анимированы, а какие — использованы в качестве постоянных. Анимируемые свойства можно указать с помощью строк формы (effect name.property name). Эти свойства можно анимировать независимо для нескольких экземпляров эффекта.
 
-### Свойства эффекта: постоянные и анимированные
+### <a name="constant-vs-animated-effect-properties"></a>Постоянные и анимированные свойства эффекта 
 
 Во время компиляции эффекта можно указать динамические свойства эффекта и свойства, которые будут использованы в качестве постоянных. Динамические свойства можно указать с помощью строк формы “<effect name>.<property name>”. Для динамических свойств можно задать конкретное значение, либо же их можно анимировать при помощи системы анимации композиции.
 
@@ -123,11 +123,11 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 
 Сведения о свойствах эффекта, анимированных при помощи ключевых кадров, см. в примере [Уменьшение насыщенности — анимация](http://go.microsoft.com/fwlink/?LinkId=785342), а сведения об использовании эффектов и выражений — в [примере альфа-маски](http://go.microsoft.com/fwlink/?LinkId=785343).
 
-### Несколько экземпляров эффектов с независимыми свойствами.
+### <a name="multiple-effect-instances-with-independent-properties"></a>Несколько экземпляров эффектов с независимыми свойствами.
 
 Если во время компиляции указать, что параметр должен быть динамическим, его можно будет изменять для каждого экземпляра эффекта. Это позволит двум визуальным элементам использовать один и тот же эффект. При этом визуальные эффекты будут отрисовываться с использованием различных свойств эффекта. Для получения более подробных сведений см. [пример](http://go.microsoft.com/fwlink/?LinkId=785344) источника цвета и смешивания.
 
-## Начало работы с эффектами композиции
+## <a name="getting-started-with-composition-effects"></a>Начало работы с эффектами композиции
 
 В данном руководстве по быстрому началу работы приводится информация об использовании некоторых основных возможностей эффектов.
 
@@ -136,13 +136,13 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 -   [Установка Win2D](./composition-effects.md#installing-win2d)
 -   [Настройка основных параметров композиции](./composition-effects.md#setting-your-composition-basics)
 -   [Создание кисти CompositionSurface](./composition-effects.md#creating-a-compositionsurface-brush)
--   [Создание, компиляция и применение эффектов](./composition-effects.md#creating,-compiling-and-applying-effects)
+-   [Создание, компиляция и применение эффектов](./composition-effects.md#creating-compiling-and-applying-effects)
 
-### Установка Visual Studio
+### <a name="installing-visual-studio"></a>Установка Visual Studio
 
 -   Если у вас еще не установлена поддерживаемая версия Visual Studio, перейдите на страницу [загрузки](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
 
-### Создание нового проекта
+### <a name="creating-a-new-project"></a>Создание нового проекта
 
 -   Выберите команду «Файл» -> «Создать» -> «Проект»
 -   Выберите «Visual C#»
@@ -150,7 +150,7 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 -   Введите выбранное название проекта
 -   Нажмите кнопку OК
 
-### Установка Win2D
+### <a name="installing-win2d"></a>Установка Win2D
 
 Win2D выпускается в виде пакета Nuget.org. Прежде чем использовать эффекты, необходимо установить этот пакет.
 
@@ -164,7 +164,7 @@ Win2D выпускается в виде пакета Nuget.org. Прежде ч
 На следующих этапах нам потребуется использовать API-интерфейсы композиции, чтобы применить эффект и установить минимальное значение насыщенности для данного изображения с котом. В данном сценарии эффект сначала создается, а затем применяется к изображению.
 
 ![Исходное изображение](images/composition-cat-source.png)
-### Настройка основных параметров композиции
+### <a name="setting-your-composition-basics"></a>Настройка основных параметров композиции
 
 См. [пример визуального дерева композиции](http://go.microsoft.com/fwlink/?LinkId=785345) на нашей странице на GitHub. Этот пример показывает, как настроить конструктор Windows.UI.Composition и корневой элемент ContainerVisual и связать их с основным окном.
 
@@ -177,14 +177,14 @@ _imageFactory = new CompositionImageFactory(_compositor)
 Desaturate();
 ```
 
-### Создание кисти CompositionSurface
+### <a name="creating-a-compositionsurface-brush"></a>Создание кисти CompositionSurface
 
 ```cs
 CompositionSurfaceBrush surfaceBrush = _compositor.CreateSurfaceBrush();
 LoadImage(surfaceBrush); 
 ```
 
-### Создание, компиляция и применение эффектов
+### <a name="creating-compiling-and-applying-effects"></a>Создание, компиляция и применение эффектов
 
 1.) Создайте графический эффект
 ```cs
@@ -227,7 +227,7 @@ brush.Surface = imageSource.Surface;
 6.) Запустите приложение. В результате вы должны получить изображение с минимальным уровнем насыщенности.
 
 ![Изображение с минимальным уровнем насыщенности](images/composition-cat-desaturated.png)
-## Дополнительные сведения
+## <a name="more-information"></a>Дополнительные сведения
 
 -   [Страница Microsoft на веб-сайте GitHub, посвященная композиции](https://github.com/Microsoft/composition)
 -   [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
@@ -248,6 +248,6 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -4,12 +4,12 @@ ms.assetid:
 description: "В этой статье рассказывается, как использовать класс MediaFrameReader с MediaCapture для получения кадров мультимедиа из одного или нескольких доступных источников, включая цветные камеры, камеры с эффектом глубины, инфракрасные камеры, звуковые устройства и даже специальные источники кадров, например создающие скелетные кадры отслеживания."
 title: "Обработка кадров мультимедиа с помощью MediaFrameReader"
 translationtype: Human Translation
-ms.sourcegitcommit: 21433f812915a2b4da6b4d68151bbc922a97a7a7
-ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
+ms.sourcegitcommit: 881f806a61d247c6c4f73aa770ba4c5dab91af00
+ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 
 ---
 
-# Обработка кадров мультимедиа с помощью MediaFrameReader
+# <a name="process-media-frames-with-mediaframereader"></a>Обработка кадров мультимедиа с помощью MediaFrameReader
 
 В этой статье рассказывается, как использовать класс [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) с [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) для получения кадров мультимедиа из одного или нескольких доступных источников, включая цветные камеры, камеры с эффектом глубины, инфракрасные камеры, звуковые устройства и даже специальные источники кадров, например создающие скелетные кадры отслеживания. Эта возможность предназначена для использования приложениями, которые выполняют обработку кадров мультимедиа в режиме реального времени, например приложениями дополненной реальности или камеры с эффектом глубины.
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 > [!NOTE] 
 > Существует пример универсального приложения для Windows, который демонстрирует использование **MediaFrameReader** для отображения кадров из разных источников, включая цветные и инфракрасные камеры и камеры с эффектом глубины. Дополнительные сведения см. в разделе [Пример кадров камеры](http://go.microsoft.com/fwlink/?LinkId=823230).
 
-## Настройка проекта
+## <a name="setting-up-your-project"></a>Настройка проекта
 Как и в любом приложении, использующем **MediaCapture**, перед попыткой получить доступ к камере вам необходимо объявить, что ваше приложение использует возможность *webcam*. Если ваше приложение получает данные от звукового устройства, рекомендуется также объявить возможность устройства *microphone*. 
 
 **Добавление возможностей в манифест приложения**
@@ -35,7 +35,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
-## Выбор источников кадров и групп источников кадров
+## <a name="select-frame-sources-and-frame-source-groups"></a>Выбор источников кадров и групп источников кадров
 Многим приложениям, обрабатывающим кадры мультимедиа, требуется получать кадры из нескольких источников одновременно, например от цветных камер и камер с эффектом глубины. Объект [**MediaFrameSourceGroup**] (https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) представляет набор источников кадров мультимедиа, которые могут использоваться одновременно. Вызовите статический метод [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync), чтобы получить список всех групп источников кадров, поддерживаемых данным устройством.
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
@@ -60,7 +60,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[ColorInfraredDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetColorInfraredDepth)]
 
-## Инициализация объекта MediaCapture для использования выбранной группы источников кадров
+## <a name="initialize-the-mediacapture-object-to-use-the-selected-frame-source-group"></a>Инициализация объекта MediaCapture для использования выбранной группы источников кадров
 Далее нужно инициализировать объект **MediaCapture** для использования выбранной на предыдущем этапе группы источников кадров.
 
 Объект **MediaCapture** обычно используется из разных расположений внутри приложения, поэтому следует объявить переменную-член класса, чтобы хранить его.
@@ -78,14 +78,14 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[InitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
-## Установка предпочтительного формата для источника кадров
+## <a name="set-the-preferred-format-for-the-frame-source"></a>Установка предпочтительного формата для источника кадров
 Для установки предпочтительного формата для источника кадров необходимо получить объект [**MediaFrameSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource), представляющий этот источник. Этот объект можно получить путем доступа к словарю [**Frames**](https://msdn.microsoft.com/library/windows/apps/Windows.Phone.Media.Capture.CameraCaptureSequence.Frames) инициализированного объекта **MediaCapture**, указав идентификатор источника кадров, который вы хотите использовать. Поэтому мы сохранили объект [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) при выборе группы источников кадров.
 
 Свойство [**MediaFrameSource.SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats) содержит список объектов [**MediaFrameFormat**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameFormat), описывающих поддерживаемые источником кадров форматы. Используйте метод расширения Linq **Where** для выбора формата на основе требуемых свойств. В этом примере выбран формат с шириной 1080 пикселей, позволяющий получать кадры в 32-разрядном формате RGB. Метод расширения **FirstOrDefault** выбирает первый элемент в списке. Если выбранный формат — null, запрошенный формат не поддерживается источником кадров. Если формат поддерживается, вы можете запросить использование источником этого формата путем вызова [**SetFormatAsync**](https://msdn.microsoft.com/library/windows/apps/).
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
-## Создание ридера кадров для источника кадров
+## <a name="create-a-frame-reader-for-the-frame-source"></a>Создание ридера кадров для источника кадров
 Для получения кадров от источника кадров мультимедиа используйте [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader).
 
 [!code-cs[DeclareMediaFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaFrameReader)]
@@ -98,7 +98,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[CreateFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateFrameReader)]
 
-## Обработка события поступления кадра
+## <a name="handle-the-frame-arrived-event"></a>Обработка события поступления кадра
 Событие [**MediaFrameReader.FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived) создается при поступлении каждого нового кадра. Вы можете решить обрабатывать каждый поступающий кадр или использовать кадры, только когда они вам нужны. Поскольку ридер кадров создает событие в своем собственном потоке, возможно, вам потребуется реализовать дополнительную логику синхронизации, чтобы предотвратить попытки доступа к тем же данным из нескольких потоков. В этом разделе рассказывается, как синхронизировать рисование цветных кадров с элементом управления изображением на странице XAML. В этом сценарии рассматривается дополнительное ограничение по синхронизации, требующее выполнение всех обновлений для элементов управления XAML в потоке пользовательского интерфейса.
 
 Первым шагом при отображении кадров в XAML является создание элемента управления "Изображение". 
@@ -125,22 +125,25 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 В заключение переменная *_taskRunning* снова получает значение false, чтобы задачу можно было запустить снова при следующем вызове обработчика.
 
+> [!NOTE] 
+> Если вы осуществляете доступ к объектам [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.SoftwareBitmap) или [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.Direct3DSurface), предоставляемым свойством [**VideoMediaFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.VideoMediaFrame) класса [**MediaFrameReference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference), система создает строгую ссылку на эти объекты, что означает, что они не будут удален при вызове метода [**Dispose**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.Close) в содержащем классе **MediaFrameReference**. Необходимо явно вызвать метод **Dispose** класса **SoftwareBitmap** или **Direct3DSurface** непосредственно для объектов, чтобы немедленно удалить их. В противном случае сборщик мусора в конечном итоге освободит память для этих объектов, однако узнать, когда это произойдет, невозможно, и если количество выделенных растровых изображений или поверхностей превышает максимальное количество, разрешенное системой, поток новых кадров будет остановлен.
+
+
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFrameArrived)]
 
-## Высвобождение ресурсов
+## <a name="cleanup-resources"></a>Высвобождение ресурсов
 По завершении чтения кадров не забудьте остановить ридер кадров мультимедиа путем вызова [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.StopAsync), отмены регистрации обработчика **FrameArrived** и удаления объекта **MediaCapture**.
 
 [!code-cs[Очистка](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCleanup)]
 
 Подробные сведения об удалении объектов захвата мультимедиа при приостановке вашего приложения см. в разделе [**Отображение просмотра камеры**](simple-camera-preview-access.md).
 
-## Вспомогательный класс FrameRenderer
+## <a name="the-framerenderer-helper-class"></a>Вспомогательный класс FrameRenderer
 [Пример кадров камеры](http://go.microsoft.com/fwlink/?LinkId=823230) для универсальной платформы Windows содержит вспомогательный класс, который упрощает показ кадров, полученных от цветных и инфракрасных камер, а также источников с эффектом глубины в вашем приложении. Обычно данные с камеры с эффектом глубины или инфракрасной камеры подвергаются дополнительной обработке, а не просто отображаются на экране, но этот вспомогательный класс представляет собой полезное средство для демонстрации функции ридера кадров и для отладки собственной реализации ридера кадров.
 
 Вспомогательный класс **FrameRenderer** реализует следующие методы.
 
-* 
-              Конструктор **FrameRenderer** — конструктор инициализирует вспомогательный класс для использования элемента XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Image), который вы передаете для отображения кадров мультимедиа.
+* Конструктор **FrameRenderer** — конструктор инициализирует вспомогательный класс для использования элемента XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Image), который вы передаете для отображения кадров мультимедиа.
 * **ProcessFrame** — этот метод отображает кадр мультимедиа, представленный [**MediaFrameReference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference), в элементе **Image**, переданном конструктору. Обычно этот метод необходимо вызывать из обработчика событий [**FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived), передавая кадр, возвращенный [**TryAcquireLatestFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.TryAcquireLatestFrame).
 * **ConvertToDisplayableImage** — этот метод проверяет формат кадра мультимедиа и при необходимости преобразовывает его в пригодный для отображения формат. Для цветных изображений это означает обеспечение формата цвета BGRA8 и предварительное умножение для режима альфа-канала точечного рисунка. Для кадров с камер с эффектом глубины или инфракрасных камер каждая растровая строка обрабатывается для преобразования значений глубины или инфракрасных значений в градиентный псевдоцвет с помощью класса **PsuedoColorHelper**, который также включен в пример и приведен ниже.
 
@@ -149,7 +152,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
 
-## Статьи по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -164,6 +167,6 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

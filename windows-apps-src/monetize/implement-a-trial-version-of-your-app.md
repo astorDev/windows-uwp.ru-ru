@@ -5,12 +5,12 @@ description: "Узнайте, как использовать пространс
 title: "Реализация пробной версии приложения"
 keywords: "пример кода бесплатной пробной версии"
 translationtype: Human Translation
-ms.sourcegitcommit: 18d5c2ecf7d438355c3103ad2aae32dc84fc89ed
-ms.openlocfilehash: 8858c9f7f9b40e2bca30054b99ab47c7388aef57
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: ea4c5637a970a63938da2b1bea9f11fd39de9cc8
 
 ---
 
-# Внедрение пробной версии приложения
+# <a name="implement-a-trial-version-of-your-app"></a>Внедрение пробной версии приложения
 
 Если приложение настроено на [информационной панели Центра разработки для Windows в качестве бесплатной пробной версии](../publish/set-app-pricing-and-availability.md#free-trial) (то есть клиенты могут пользоваться им бесплатно в течение пробного периода), можно убедить клиентов выполнить обновление до полной версии приложения, исключив или ограничив определенные функции в течение пробного периода. До начала программирования решите, какие функции лучше ограничить, и сделайте так, чтобы они были доступны только после покупки полной лицензии. Вы можете также включить такие компоненты, как баннеры или водяные знаки, которые будут отображаться только во время испытательного срока, пока пользователь не купит приложение.
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 8858c9f7f9b40e2bca30054b99ab47c7388aef57
 
 >**Примечание.**&nbsp;&nbsp;Эта статья относится к приложениям, предназначенным для Windows 10 версии 1607 и старше. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Подробнее см. в разделе [Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-## Рекомендации по реализации пробной версии
+## <a name="guidelines-for-implementing-a-trial-version"></a>Рекомендации по реализации пробной версии
 
 Текущее состояние лицензии приложения хранится в свойствах класса [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx). Обычно функции, которые зависят от состояния лицензии, помещают в условный блок. Как это сделать, будет показано на следующем этапе. Разрабатывая эти функции, убедитесь, что они будут работать во всех состояниях лицензии.
 
@@ -53,7 +53,7 @@ ms.openlocfilehash: 8858c9f7f9b40e2bca30054b99ab47c7388aef57
 
 Не забудьте объяснить, как будет работать ваше приложение во время и после бесплатного испытательного срока, чтобы поведение приложения не стало неожиданностью для клиентов. Дополнительные сведения об описании приложения см. в разделе [Создание описаний приложений](https://msdn.microsoft.com/library/windows/apps/mt148529).
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 Для этого примера необходимо выполнение следующих предварительных условий:
 * Создан проект Visual Studio для приложения универсальной платформы Windows (UWP), предназначенный для Windows 10 версии 1607 и выше.
@@ -66,62 +66,18 @@ ms.openlocfilehash: 8858c9f7f9b40e2bca30054b99ab47c7388aef57
 
 >**Примечание.**&nbsp;&nbsp;Если у вас есть классическое приложение, которое использует [мост для настольных ПК](https://developer.microsoft.com/windows/bridges/desktop), вам может потребоваться добавить дополнительный код, не показанный в этом примере, для настройки объекта [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Дополнительные сведения см. в разделе [Использование класса StoreContext в классическом приложение, в котором применяется мост для настольных компьютеров](in-app-purchases-and-trials.md#desktop).
 
-## Пример кода
+## <a name="code-example"></a>Пример кода
 
 При инициализации приложения получите для приложения объект [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) и обрабатывайте событие [OfflineLicensesChanged](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.offlinelicenseschanged.aspx) для получения уведомлений об изменении лицензии во время работы приложения. Например, лицензия приложения может измениться, если закончился пробный период или пользователь приобрел приложение в Магазине. При изменении лицензии получите новую лицензию и соответственно включите или отключите функции приложения.
 
 Если пользователь купил приложение, рекомендуется сообщить ему об изменении состояния лицензирования. При необходимости попросите пользователя перезапустить приложение. Перевод приложения в новое состояние лицензирования должен быть максимально комфортным для пользователя.
 
-
-```csharp
-private StoreContext context = null;
-private StoreAppLicense appLicense = null;
-
-// Call this while your app is initializing.
-private async void InitializeLicense()
-{
-    if (context == null)
-    {
-        context = StoreContext.GetDefault();
-        // If your app is a desktop app that uses the Desktop Bridge, you
-        // may need additional code to configure the StoreContext object.
-        // For more info, see https://aka.ms/storecontext-for-desktop.
-    }
-
-    workingProgressRing.IsActive = true;
-    appLicense = await context.GetAppLicenseAsync();
-    workingProgressRing.IsActive = false;
-
-    // Register for the licenced changed event.
-    context.OfflineLicensesChanged += context_OfflineLicensesChanged;
-}
-
-private async void context_OfflineLicensesChanged(StoreContext sender, object args)
-{
-    // Reload the license.
-    workingProgressRing.IsActive = true;
-    appLicense = await context.GetAppLicenseAsync();
-    workingProgressRing.IsActive = false;
-
-    if (appLicense.IsActive)
-    {
-        if (appLicense.IsTrial)
-        {
-            textBlock.Text = $"This is the trial version. Expiration date: {appLicense.ExpirationDate}";
-
-            // Show the features that are available during trial only.
-        }
-        else
-        {
-            // Show the features that are available only with a full license.
-        }
-    }
-}
-```
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[ImplementTrial](./code/InAppPurchasesAndLicenses_RS1/cs/ImplementTrialPage.xaml.cs#ImplementTrial)]
 
 Полный пример приложения см. в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
-## Связанные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 * [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
 * [Получение информации о продукте для приложений и надстроек](get-product-info-for-apps-and-add-ons.md)
@@ -132,6 +88,6 @@ private async void context_OfflineLicensesChanged(StoreContext sender, object ar
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

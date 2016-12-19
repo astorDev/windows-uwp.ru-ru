@@ -4,29 +4,29 @@ title: "Размещенные веб-приложения. Преобразов
 description: "Веб-сайт можно превратить в приложение UWP для Windows 10 с помощью Visual Studio"
 kw: Hosted Web Apps tutorial, Porting to Windows 10 with Visual Studio, How to convert website to Windows, How to add website to Windows Store, Packaging web application for Microsoft Store, Test Windows 10 native features and runtime APIs with CodePen, How to use Windows Cortana Live Tiles Built-in Camera on my Website with remote JavaScript
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: e6dfda4a0f4f8b5760f08cfeb3562d9e42ba8a10
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: 1cb4757896c9fecf05224a26949cd6e2ddffdb45
 
 ---
 
-# Преобразование веб-приложения в приложение универсальной платформы Windows (UWP)
+# <a name="convert-your-web-application-to-a-universal-windows-platform-uwp-app"></a>Преобразование веб-приложения в приложение универсальной платформы Windows (UWP)
 
 Узнайте, как быстро создать приложение UWP для Windows 10, имея только URL-адрес веб-сайта. 
 
 > [!NOTE]
 > Следующие инструкции рассчитаны на применение на платформе разработки для Windows. Пользователям компьютеров Mac следует ознакомиться с разделом [Инструкции по использованию платформы разработки для Mac](/hwa-create-mac.md).
 
-## Необходимые инструменты для разработки на Windows
+## <a name="what-you-need-to-develop-on-windows"></a>Необходимые инструменты для разработки на Windows
 
 - [Visual Studio 2015.](https://www.visualstudio.com/) Бесплатная полнофункциональная среда Visual Studio Community 2015 включает в себя средства разработчика для Windows 10, шаблоны универсальных приложений, редактор кода, мощный отладчик, эмуляторы Windows Mobile. Также поддерживается большое число языков и множество других функций, готовых для использования в рабочей среде.
 - (Необязательно) [Изолированный пакет Windows SDK для Windows 10.](https://dev.windows.com/downloads/windows-10-sdk) Если в качестве среды разработки используется не Visual Studio 2015, можно загрузить установщик изолированного пакета SDK для Windows 10. Обратите внимание, что вам не нужно устанавливать пакет SDK, если вы используете среду Visual Studio 2015, так как этот пакет уже входит в нее.
 
-## Шаг 1. Выберите URL-адрес веб-сайта
+## <a name="step-1-pick-a-website-url"></a>Шаг 1. Выберите URL-адрес веб-сайта
 Выберите существующий веб-сайт, который будет отлично работать в качестве одностраничного приложения. Крайне желательно, чтобы вы были владельцем или разработчиком сайта — тогда вы сможете вносить любые необходимые изменения. Если не можете подобрать подходящий URL-адрес, используйте в качестве веб-сайта вот этот [пример Codepen](http://codepen.io/seksenov/pen/wBbVyb/?editors=101). Скопируйте URL-адрес вашего сайта или URL-адрес примера Codepen, чтобы использовать его в ходе работы с этим руководством. 
 
 ![Шаг 1. Выберите URL-адрес веб-сайта](images/hwa-to-uwp/windows_step1.png)
 
-## Шаг 2. Создайте пустое приложение JavaScript.
+## <a name="step-2-create-a-blank-javascript-app"></a>Шаг 2. Создайте пустое приложение JavaScript.
 
 Запустите Visual Studio.
 1. Щелкните пункт **Файл**.
@@ -35,13 +35,13 @@ ms.openlocfilehash: e6dfda4a0f4f8b5760f08cfeb3562d9e42ba8a10
 
 ![Шаг 2. Создайте пустое приложение JavaScript.](images/hwa-to-uwp/windows_step2.png)
 
-## Шаг 3. Удалите весь пакетный код
+## <a name="step-3-delete-any-packaged-code"></a>Шаг 3. Удалите весь пакетный код
 
 Так как это размещенное веб-приложение, содержимое которого предоставляется удаленным сервером, вам не потребуется большая часть локальных файлов приложения, которые присутствуют в составе шаблона JavaScript по умолчанию. Удалите все локальные HTML-, JavaScript- или CSS-ресурсы. Все, что должно остаться, — это файл `package.appxmanifest`, с помощью которого настраивается приложение, и ресурсы изображений.
 
 ![Шаг 3. Удалите весь пакетный код](images/hwa-to-uwp/windows_step3.png)
 
-## Шаг 4. Задайте URL-адрес начальной страницы
+## <a name="step-4-set-the-start-page-url"></a>Шаг 4. Задайте URL-адрес начальной страницы
 
 1. Откройте файл `package.appxmanifest`.
 2. На вкладке **Приложение** найдите текстовое поле **Начальная страница**.
@@ -49,9 +49,9 @@ ms.openlocfilehash: e6dfda4a0f4f8b5760f08cfeb3562d9e42ba8a10
 
 ![Шаг 4. Задайте URL-адрес начальной страницы](images/hwa-to-uwp/windows_step4.png)
 
-## Шаг 5. Определите границы веб-приложения
+## <a name="step-5-define-the-boundaries-of-your-web-app"></a>Шаг 5. Определите границы веб-приложения
 
-Правила универсального кода ресурса для содержимого приложения (ACUR) определяют, каким удаленным URL-адресам разрешен доступ к вашему приложению и универсальным API для Windows. Правила ACUR потребуется добавить как минимум для начальной страницы и всех ресурсов, используемых этой страницей. Дополнительные сведения об ACUR [см. здесь](./hwa-access-features.md#keep-your-app-secure-setting-application-content-uri-rules-acurs).
+Правила универсального кода ресурса для содержимого приложения (ACUR) определяют, каким удаленным URL-адресам разрешен доступ к вашему приложению и универсальным API для Windows. Правила ACUR потребуется добавить как минимум для начальной страницы и всех ресурсов, используемых этой страницей. Дополнительные сведения об ACUR [см. здесь](./hwa-access-features.md).
 1. Откройте файл `package.appxmanifest`.
 2. Выберите вкладку **URI содержимого**.
 3. Добавьте все необходимые URI для начальной страницы.
@@ -65,7 +65,7 @@ ms.openlocfilehash: e6dfda4a0f4f8b5760f08cfeb3562d9e42ba8a10
 
 ![Шаг 5. Определите границы веб-приложения](images/hwa-to-uwp/windows_step5.png)
 
-## Шаг 6. Запустите приложение
+## <a name="step-6-run-your-app"></a>Шаг 6. Запустите приложение
 
 Теперь у вас есть полнофункциональное приложение для Windows 10, имеющее доступ к универсальным API для Windows.
 
@@ -73,7 +73,7 @@ ms.openlocfilehash: e6dfda4a0f4f8b5760f08cfeb3562d9e42ba8a10
 
 ![Шаг 6. Запустите приложение](images/hwa-to-uwp/windows_step6.png)
 
-## Дополнительно: добавление захвата с камеры
+## <a name="bonus-add-camera-capture"></a>Дополнительно: добавление захвата с камеры
 
 Чтобы включить захват с камеры, скопируйте и вставьте приведенный ниже код на JavaScript. Если вы используете собственный веб-сайт, создайте кнопку для вызова метода `cameraCapture()`. Если вы используете пример Codepen, кнопка уже присутствует в коде HTML. Нажмите кнопку и сделайте снимок.
 
@@ -91,7 +91,7 @@ function cameraCapture() {
 }
 ```
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 - [Улучшение веб-приложения путем обращения к функциям универсальной платформы Windows (UWP)](hwa-access-features.md)
 - [Руководство по работе с приложениями универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkID=397871)
@@ -99,6 +99,6 @@ function cameraCapture() {
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

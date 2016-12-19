@@ -4,31 +4,33 @@ ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: "Каждая транзакция Магазина Windows, которая заканчивается успешной сделкой, может дополнительно возвращать квитанцию транзакции."
 title: "Проверка покупок продуктов с помощью квитанций"
 translationtype: Human Translation
-ms.sourcegitcommit: 18d5c2ecf7d438355c3103ad2aae32dc84fc89ed
-ms.openlocfilehash: ea79a33a52bc45a9c8609e12bfac953c3f92db09
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: 55631d364ca6f2d76d214eca6d00fbdd969c0e15
 
 ---
 
-# Проверка покупок продуктов с помощью квитанций
+# <a name="use-receipts-to-verify-product-purchases"></a>Проверка покупок продуктов с помощью квитанций
 
 
->**Примечание.**&nbsp;&nbsp;Примеры в этой статье входят в пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Если ваше приложение предназначено для Windows 10 версии 1607 или более поздней, для управления покупками из приложения рекомендуется использовать члены пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), а не **Windows.ApplicationModel.Store**. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
+>**Примечание**&nbsp;&nbsp;В этой статье показано, как использовать элементы пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) для получения и проверки квитанции о покупке из приложения. Если для покупок в приложении используется альтернативное пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) (впервые представлено в Windows 10 версии 1607), это пространство имен не предоставляет API для получения квитанций о покупках из приложения. Тем не менее для получения данных о транзакции покупки можно использовать метод REST в API коллекции Магазина Windows. Дополнительные сведения см. в разделе [Квитанции для покупок из приложения](in-app-purchases-and-trials.md#receipts).
 
-**Важные API**
-
--   [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
--   [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
 
 Каждая транзакция Магазина Windows, которая заканчивается успешной сделкой, может дополнительно возвращать квитанцию транзакции. Эта квитанция предоставляет клиенту сведения об указанном продукте и денежных расходах.
 
-Доступ к этой информации поддерживает сценарии, в которых ваше приложение должно проверить покупку пользователем приложения или продуктов из приложения в Магазине Windows. Например, представим игру, предлагающую загруженное содержимое. Если пользователь, который приобрел игровое содержимое, захочет поиграть в эту игру на другом устройстве, то вам нужно будет проверить, действительно ли этот пользователь купил данное содержимое. Вот как это сделать.
+Доступ к этой информации поддерживает сценарии, в которых ваше приложение должно проверить покупку пользователем приложения или надстройки (продукта из приложения или IAP) в Магазине Windows. Например, представим игру, предлагающую загруженное содержимое. Если пользователь, который приобрел игровое содержимое, захочет поиграть в эту игру на другом устройстве, то вам нужно будет проверить, действительно ли этот пользователь купил данное содержимое. Вот как это сделать.
 
-## Запрос квитанции
+## <a name="requesting-a-receipt"></a>Запрос квитанции
 
 
-Пространство имен **Windows.ApplicationModel.Store** поддерживает два способа получения квитанции — вызовом метода [**CurrentApp.RequestProductPurchaseAsync | requestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) или [**CurrentApp.RequestAppPurchaseAsync | requestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) с использованием параметра *includeReceipt* либо вызовом метода [**CurrentApp.GetAppReceiptAsync | getAppReceiptAsync**](https://msdn.microsoft.com/library/windows/apps/hh967811). Квитанция приложения выглядит так.
+Пространство имен **Windows.ApplicationModel.Store** поддерживает несколько способов получения квитанции:
 
-```XML
+* Когда вы совершаете покупку, используя метод [CurrentApp.RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) или [CurrentApp.RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh779780.aspx) (или одну из других перегрузок этого метода), возвращаемое значение содержит квитанцию.
+* Можно вызвать метод [CurrentApp.GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811), чтобы получить актуальные сведения о квитанциях для приложения и любых надстроек в нем.
+
+Квитанция приложения выглядит так.
+
+> [!div class="tabbedCodeSnippets"]
+```xml
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:10:05Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
     <AppReceipt Id="8ffa256d-eca8-712a-7cf8-cbf5522df24b" AppId="55428GreenlakeApps.CurrentAppSimulatorEventTest_z7q3q7z11crfr" PurchaseDate="2012-06-04T23:07:24Z" LicenseType="Full" />
     <ProductReceipt Id="6bbf4366-6fb2-8be8-7947-92fd5f683530" ProductId="Product1" PurchaseDate="2012-08-30T23:08:52Z" ExpirationDate="2012-09-02T23:08:49Z" ProductType="Durable" AppId="55428GreenlakeApps.CurrentAppSimulatorEventTest_z7q3q7z11crfr" />
@@ -51,7 +53,8 @@ ms.openlocfilehash: ea79a33a52bc45a9c8609e12bfac953c3f92db09
 
 Квитанция продукта выглядит так.
 
-```XML
+> [!div class="tabbedCodeSnippets"]
+```xml
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:08:52Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
     <ProductReceipt Id="6bbf4366-6fb2-8be8-7947-92fd5f683530" ProductId="Product1" PurchaseDate="2012-08-30T23:08:52Z" ExpirationDate="2012-09-02T23:08:49Z" ProductType="Durable" AppId="55428GreenlakeApps.CurrentAppSimulatorEventTest_z7q3q7z11crfr" />
     <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
@@ -71,168 +74,69 @@ ms.openlocfilehash: ea79a33a52bc45a9c8609e12bfac953c3f92db09
 </Receipt>
 ```
 
-Для подтверждения кода проверки можно использовать любой из этих примеров квитанций.
+Для подтверждения кода проверки можно использовать любой из этих примеров квитанций. Дополнительные сведения о содержимом квитанции см. в разделе [Описания элементов и атрибутов](#receipt-descriptions).
 
-## Проверка квитанции
+## <a name="validating-a-receipt"></a>Проверка квитанции
 
+Для проверки подлинности квитанции серверная система (веб-служба или аналогичный объект) должна проверить подпись на квитанции с помощью открытого сертификата. Чтобы получить этот сертификат, используйте URL-адрес ```https://go.microsoft.com/fwlink/p/?linkid=246509&cid=CertificateId```, где ```CertificateId``` — значение **CertificateId** в квитанции.
 
-После получения квитанции ваша серверная система (веб-служба или что-то ей подобное) должна проверить ее. Вот пример процесса проверки для .NET Framework.
+Пример процедуры валидации приведен ниже. Этот код выполняется в консольном приложении .NET Framework, которое содержит ссылку на сборку **System.Security**.
 
-```CSharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using System.Xml;
-using System.IO;
-using System.Security.Cryptography.Xml;
-using System.Net;
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
 
-namespace ReceiptVerificationSample
-{
-        public sealed class RSAPKCS1SHA256SignatureDescription : SignatureDescription
-        {
-            public RSAPKCS1SHA256SignatureDescription()
-            {
-                base.KeyAlgorithm = typeof(RSACryptoServiceProvider).FullName;
-                base.DigestAlgorithm = typeof(SHA256Managed).FullName;
-                base.FormatterAlgorithm = typeof(RSAPKCS1SignatureFormatter).FullName;
-                base.DeformatterAlgorithm = typeof(RSAPKCS1SignatureDeformatter).FullName;
-            }
+<span id="receipt-descriptions" />
+## <a name="element-and-attribute-descriptions-for-a-receipt"></a>Описания элементов и атрибутов для квитанции
 
-            public override AsymmetricSignatureDeformatter CreateDeformatter(AsymmetricAlgorithm key)
-            {
-                if (key == null)
-                {
-                    throw new ArgumentNullException("key");
-                }
+В этом разделе описаны элементы и атрибуты в квитанции.
 
-                RSAPKCS1SignatureDeformatter deformatter = new RSAPKCS1SignatureDeformatter(key);
-                deformatter.SetHashAlgorithm("SHA256");
-                return deformatter;
-            }
+### <a name="receipt-element"></a>Элемент квитанции
 
-            public override AsymmetricSignatureFormatter CreateFormatter(AsymmetricAlgorithm key)
-            {
-                if (key == null)
-                {
-                    throw new ArgumentNullException("key");
-                }
+Корневой элемент этого файла — это элемент **Receipt**, который содержит сведения о приложении и покупках из приложения. Этот элемент содержит следующие дочерние элементы.
 
-                RSAPKCS1SignatureFormatter formatter = new RSAPKCS1SignatureFormatter(key);
-                formatter.SetHashAlgorithm("SHA256");
-                return formatter;
-            }
+|  Элемент  |  Обязательный  |  Количество  |  Описание   |
+|-------------|------------|--------|--------|
+|  [AppReceipt](#appreceipt)  |    Нет        |  0 или 1  |  Содержит информацию о покупках для текущего приложения.            |
+|  [ProductReceipt](#productreceipt)  |     Нет       |  0 или более    |   Содержит сведения о покупке из приложения для текущего приложения.     |
+|  Signature  |      Да      |  1   |   Этот элемент — стандартная [конструкция XML-DSIG](http://go.microsoft.com/fwlink/p/?linkid=251093). Он содержит элемент **SignatureValue** с подписью, который можно использовать для проверки квитанции, а также элемент **SignedInfo**.      |
 
-        }
+**Receipt** содержит следующие атрибуты.
 
-        class Program
-        {
+|  Атрибут  |  Описание   |
+|-------------|-------------------|
+|  **Version**  |    Номер версии квитанции.            |
+|  **CertificateId**  |     Отпечаток сертификата, который используется для добавления подписи на квитанцию.          |
+|  **ReceiptDate**  |    Дата подписания и загрузки квитанции.           |  
+|  **ReceiptDeviceId**  |   Определяет устройство, используемое для запроса этой квитанции.         |  |
 
-            // Utility function to read the bytes from an HTTP response
-            private static int ReadResponseBytes(byte[] responseBuffer, Stream resStream)
-            {
-                int count = 0;
+<span id="appreceipt" />
+### <a name="appreceipt-element"></a>Элемент AppReceipt
 
-                int numBytesRead = 0;
-                int numBytesToRead = responseBuffer.Length;
+Этот элемент содержит информацию о покупках для текущего приложения.
 
-                do
-                {
-                    count = resStream.Read(responseBuffer, numBytesRead, numBytesToRead);
+**AppReceipt** содержит следующие атрибуты.
 
-                    numBytesRead += count;
-                    numBytesToRead -= count;
+|  Атрибут  |  Описание   |
+|-------------|-------------------|
+|  **Id**  |    Идентифицирует покупку.           |
+|  **AppId**  |     Значение имени семейства пакетов, используемое ОС для приложения.           |
+|  **LicenseType**  |    **Полная**, если пользователь приобрел полную версию приложения. **Пробная**, если пользователь загрузил пробную версию приложения.           |  
+|  **PurchaseDate**  |    Дата приобретения приложения.          |  |
 
-                } while (count > 0);
+<span id="productreceipt" />
+### <a name="productreceipt-element"></a>Элемент ProductReceipt
 
-                return numBytesRead;
-            }
+Этот элемент содержит сведения о покупке из приложения для текущего приложения.
 
-            public static X509Certificate2 RetrieveCertificate(string certificateId)
-            {
-                const int MaxCertificateSize = 10000;
+**ProductReceipt** содержит следующие атрибуты.
 
-                // We are attempting to retrieve the following url. The getAppReceiptAsync website at
-                // http://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.getappreceiptasync.aspx
-                // lists the following format for the certificate url.
-                String certificateUrl = String.Format("https://go.microsoft.com/fwlink/?LinkId=246509&cid={0}", certificateId);
-
-                // Make an HTTP GET request for the certificate
-                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(certificateUrl);
-                request.Method = "GET";
-
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-                // Retrieve the certificate out of the response stream
-                byte[] responseBuffer = new byte[MaxCertificateSize];
-                Stream resStream = response.GetResponseStream();
-                int bytesRead = ReadResponseBytes(responseBuffer, resStream);
-
-                if (bytesRead < 1)
-                {
-                    //TODO: Handle error here
-                }
-
-                return new X509Certificate2(responseBuffer);
-            }
-
-            static bool ValidateXml(XmlDocument receipt, X509Certificate2 certificate)
-            {
-                // Create the signed XML object.
-                SignedXml sxml = new SignedXml(receipt);
-
-                // Get the XML Signature node and load it into the signed XML object.
-                XmlNode dsig = receipt.GetElementsByTagName("Signature", SignedXml.XmlDsigNamespaceUrl)[0];
-                if (dsig == null)
-                {
-                    // If signature is not found return false
-                    System.Console.WriteLine("Signature not found.");
-                    return false;
-                }
-
-                sxml.LoadXml((XmlElement)dsig);
-
-                // Check the signature
-                bool isValid = sxml.CheckSignature(certificate, true);
-
-                return isValid;
-            }
-
-            static void Main(string[] args)
-            {
-                // .NET does not support SHA256-RSA2048 signature verification by default, so register this algorithm for verification
-                CryptoConfig.AddAlgorithm(typeof(RSAPKCS1SHA256SignatureDescription), "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256");
-
-                // Load the receipt that needs to be verified as an XML document
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load("..\\..\\receipt.xml");
-
-                // The certificateId attribute is present in the document root, retrieve it
-                XmlNode node = xmlDoc.DocumentElement;
-                string certificateId = node.Attributes["CertificateId"].Value;
-
-                // Retrieve the certificate from the official site.
-                // NOTE: For sake of performance, you would want to cache this certificate locally.
-                //       Otherwise, every single call will incur the delay of certificate retrieval.
-                X509Certificate2 verificationCertificate = RetrieveCertificate(certificateId);
-
-                try
-                {
-                    // Validate the receipt with the certificate retrieved earlier
-                    bool isValid = ValidateXml(xmlDoc, verificationCertificate);
-                    System.Console.WriteLine("Certificate valid: " + isValid);
-                }
-                catch (Exception ex)
-                {
-                    System.Console.WriteLine(ex.ToString());
-                }
-            }
-        }
-}
-```
+|  Атрибут  |  Описание   |
+|-------------|-------------------|
+|  **Id**  |    Идентифицирует покупку.           |
+|  **AppId**  |     Определяет приложение, через которое пользователь совершил покупку.           |
+|  **ProductId**  |     Определяет приобретенный продукт.           |
+|  **ProductType**  |    Определяет тип продукта. В настоящее время поддерживает только значение **Durable**.          |  
+|  **PurchaseDate**  |    Дата покупки.          |  |
 
  
 
@@ -240,6 +144,6 @@ namespace ReceiptVerificationSample
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

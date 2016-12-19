@@ -4,14 +4,14 @@ title: "Регистрация фоновой задачи"
 description: "Сведения о создании функции, которую можно многократно использовать для безопасной регистрации большинства фоновых задач."
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 translationtype: Human Translation
-ms.sourcegitcommit: 0f1bf88b1470cc5205f2e98ef15300da705203b1
-ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
+ms.sourcegitcommit: 2f46f5cd26656b2d6b7d14c0d85aa7a0a6950fb8
+ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 ---
 
-# Регистрация фоновой задачи
+# <a name="register-a-background-task"></a>Регистрация фоновой задачи
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -29,18 +29,18 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 
 Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
 
-Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем— метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Подробнее см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
+Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем — метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Подробнее см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
 
-## Определение подписи и типа возвращаемых данных метода
+## <a name="define-the-method-signature-and-return-type"></a>Определение подписи и типа возвращаемых данных метода
 
 Этот метод принимает точку входа задачи, имя задачи, предварительно построенный триггер фоновой задачи и (необязательно) условие [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) для фоновой задачи. Этот метод возвращает объект [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).
 
 > [!Important]
 > `taskEntryPoint` - для фоновых задач, которые выполняются вне процесса, эта строка должна состоять из имени пространства имен, точки ('.') и имени класса, содержащего ваш фоновый класс. Строка обрабатывается с учетом регистра.  Например, если имеется пространство имен "MyBackgroundTasks" и класс "BackgroundTask1", содержащий код вашего класса фоновой задачи, строка для `taskEntryPoint` имела бы вид "MyBackgroundTasks.BackgruondTask1".
-> Если фоновая задача выполняется в том же процессе, что и приложение (т.е. представляет собой внутрипроцессную фоновую задачу), `taskEntryPoint` задавать не нужно.
+> Если фоновая задача выполняется в том же процессе, что и приложение (т. е. представляет собой внутрипроцессную фоновую задачу), `taskEntryPoint` задавать не нужно.
 
 > [!div class="tabbedCodeSnippets"]
-> ```cs
+> ``` csharp
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
 >                                                 string taskEntryPoint,
 >                                                 string name,
@@ -52,7 +52,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 >
 > }
 > ```
-> ```cpp
+> ``` cpp
 > BackgroundTaskRegistration^ MainPage::RegisterBackgroundTask(
 >                                              Platform::String ^ taskEntryPoint,
 >                                              Platform::String ^ taskName,
@@ -65,7 +65,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 > }
 > ```
 
-## Проверка наличия существующих регистраций
+## <a name="check-for-existing-registrations"></a>Проверка наличия существующих регистраций
 
 Проверьте, не зарегистрирована ли уже задача. Это важно проверить, потому что при многократной регистрации задачи она будет выполняться несколько раз при каждом срабатывании триггера, что может привести к избыточному потреблению ресурсов ЦП и непредсказуемому поведению.
 
@@ -76,7 +76,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 Следующий код регистрирует фоновую задачу с использованием триггера [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838), который мы создали в последнем шаге:
 
 > [!div class="tabbedCodeSnippets"]
-> ```cs
+> ``` csharp
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
 >                                                 string taskEntryPoint,
 >                                                 string name,
@@ -103,7 +103,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 >     // We'll register the task in the next step.
 > }
 > ```
-> ```cpp
+> ``` cpp
 > BackgroundTaskRegistration^ MainPage::RegisterBackgroundTask(
 >                                              Platform::String ^ taskEntryPoint,
 >                                              Platform::String ^ taskName,
@@ -137,7 +137,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 > }
 > ```
 
-## Регистрация фоновой задачи (или возврат существующей регистрации)
+## <a name="register-the-background-task-or-return-the-existing-registration"></a>Регистрация фоновой задачи (или возврат существующей регистрации)
 
 
 Проверьте, не найдена ли задача в списке существующих регистраций фоновых задач. Если да, верните этот экземпляр задачи.
@@ -150,7 +150,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 В следующем примере выполняется либо возврат существующей задачи, либо добавление кода, регистрирующего фоновую задачу (включая дополнительное условие системы, если оно есть):
 
 > [!div class="tabbedCodeSnippets"]
-> ```cs
+> ``` csharp
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
 >                                                 string taskEntryPoint,
 >                                                 string name,
@@ -199,7 +199,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 >     return task;
 > }
 > ```
-> ```cpp
+> ``` cpp
 > BackgroundTaskRegistration^ MainPage::RegisterBackgroundTask(
 >                                              Platform::String ^ taskEntryPoint,
 >                                              Platform::String ^ taskName,
@@ -251,13 +251,13 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 > }
 > ```
 
-## Полная служебная функция регистрации фоновой задачи
+## <a name="complete-background-task-registration-utility-function"></a>Полная служебная функция регистрации фоновой задачи
 
 
 Этот пример демонстрирует полную функцию регистрации фоновой задачи. Эту функцию можно использовать для регистрации большинства фоновых задач, за исключением сетевых.
 
 > [!div class="tabbedCodeSnippets"]
-> ```cs
+> ``` csharp
 > //
 > // Register a background task with the specified taskEntryPoint, name, trigger,
 > // and condition (optional).
@@ -310,7 +310,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 >     return task;
 > }
 > ```
-> ```cpp
+> ``` cpp
 > //
 > // Register a background task with the specified taskEntryPoint, name, trigger,
 > // and condition (optional).
@@ -371,14 +371,14 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 > }
 > ```
 
-> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). Если вы разрабатываете приложения для Windows8.x или Windows Phone8.x, обратитесь к [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). Если вы разрабатываете приложения для Windows 8.x или Windows Phone 8.x, обратитесь к [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## Статьи по теме
+## <a name="related-topics"></a>Связанные статьи
 
 ****
 
-* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-an-outofproc-background-task.md)
-* [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
+* [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-an-outofproc-background-task.md)
+* [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
 * [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
@@ -397,6 +397,6 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

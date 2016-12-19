@@ -1,3378 +1,4169 @@
-﻿
 ---
 author: jnHs
-Description: The estimated time to transfer payments, applicable payment threshold(s), and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type. This topic outlines the thresholds and payment methods supported in each country/region.
-
-title: Payment thresholds, methods, and timeframes
+Description: "Примерное время для переноса платежей, применимые пороговые значения выплат и ресурсы Microsoft Marketplace, откуда можно получать платежи, варьируются в зависимости от страны или региона и типа счета для выплат."
+title: "Пороговые значения, методы и сроки оплаты"
+translationtype: Human Translation
+ms.sourcegitcommit: d5ec64bbd1e8b10c17ff5c43d89e6652eadb2367
+ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
 
 ---
 
 
-# Payment thresholds, methods, and timeframes
+# <a name="payment-thresholds-methods-and-timeframes"></a>Пороговые значения, методы и сроки оплаты
 
-The estimated time to transfer payments, applicable payment threshold(s), and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type. This topic outlines the payment thresholds and payment methods supported in each country/region.
+Примерное время для переноса платежей, применимые пороговые значения выплат и ресурсы Microsoft Marketplace, откуда можно получать платежи, варьируются в зависимости от страны или региона и типа счета для выплат. В этом разделе описаны пороговые значения и способы оплаты, поддерживаемые в каждой стране или регионе.
 
-For any given country/region, we will either use ACH/SEPA or wire transfer to deliver our payments. Additionally, some countries/regions support PayPal as a payment method.
+Во всех странах и регионах для доставки платежей мы используем либо систему ACH/SEPA, либо банковский перевод. Кроме того, в некоторых странах и регионах в качестве метода оплаты поддерживается PayPal.
 
-## Number of days for payments to reach payout account
+## <a name="number-of-days-for-payments-to-reach-payout-account"></a>Количество дней до поступления платежа на счет для выплат
 
-We'll typically send any payment due in a given month by the 15th day of that month, but it will take additional time for the payment to reach your account. The amount of days will vary depending on the payment method we use for your account, as described below. 
+Как правило, мы отправляем любой платеж, срок выплаты которого наступает в текущем месяце, до 15-го числа этого месяца, однако до поступления средств на счет должно пройти какое-то время. Это время зависит от используемого для вашего счета метода оплаты. 
 
-> **Note** The days shown below are approximate; any given payout may take a longer or shorter amount of time.
+> **Примечание**. Количество дней ниже указано приблизительно, до поступления средств на счет может пройти больше или меньше времени.
 
 
-| Payment method | Number of days to reach payout account |
+| Метод оплаты | Количество дней до поступления на счет для выплат |
 |--------------------|--------------------------------------------|
-| PayPal | 1 business day |	
-| ACH/SEPA |2-3 business days |
-| Wire Transfer | 7-10 business days |
+| PayPal | 1 рабочий день | 
+| ACH/SEPA |2‑3 рабочих дня |
+| Банковский перевод | 7‑10 рабочих дней |
 
 &nbsp;
 
-To see the countries/regions in which these payment methods are used for each marketplace, see the tables below.
+Список стран и регионов с указанием используемого для конкретного рынка способа оплаты см. в таблицах ниже.
 
-## Payment thresholds and methods
+## <a name="payment-thresholds-and-methods"></a>Пороговые значения и методы оплаты
 
-> **Note** Payment thresholds are listed in USD. In some markets, the equivalent in local currency is used. 
+> **Примечание**. Пороговые значения оплаты указаны в долларах США. В некоторых странах используется эквивалент в местной валюте. 
 
-### Windows Store 
+### <a name="windows-store"></a>Магазин Windows 
 
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Payout account = Bank account</th>
-    <th colspan="2">Payout account = PayPal</th>
+    <th colspan="2">Счет для выплат = банковский счет</th>
+    <th colspan="2">Счет для выплат = PayPal</th>
   </tr>
   <tr>
-    <td><strong>Country/region</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
+    <td><strong>Страна или регион</strong></td>
+    <td><strong>Порог оплаты</strong></td>
+    <td><strong>Метод оплаты</strong></td>
+    <td><strong>Порог оплаты</strong></td>
+    <td><strong>Метод оплаты</strong></td>
   </tr>
   <tr>
-    <td>Afghanistan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Афганистан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Albania</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Албания</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Algeria</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Алжир</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Angola</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Ангола</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Antigua and Barbuda</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Антигуа и Барбуда</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Argentina</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Аргентина</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Armenia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Армения</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Australia</td>
-    <td>25 USD</td>
+    <td>Австралия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Austria</td>
-    <td>25 USD</td>
+    <td>Австрия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Azerbaijan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Азербайджан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bahrain</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бахрейн</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bangladesh</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бангладеш</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Belarus</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Беларусь</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Belgium</td>
-    <td>25 USD</td>
+    <td>Бельгия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Benin</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бенин</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bolivia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Боливия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bosnia and Herzegovina</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Босния и Герцеговина</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Botswana</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Ботсвана</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Brazil</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бразилия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bulgaria</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Болгария</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Burkina Faso</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Буркина-Фасо</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Burundi</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бурунди</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Cambodia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Камбоджа</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Cameroon</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Камерун</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Canada</td>
-    <td>25 USD</td>
+    <td>Канада</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Central African Republic</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Центральная Африканская Республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Chad</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Чад</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Chile</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Чили</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>China</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Китай</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Colombia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Колумбия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Comoros</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Коморы</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Congo</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Республика Конго</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Congo (DRC)</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Конго (ДРК)</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Costa Rica</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Коста-Рика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Côte d'Ivoire</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Кот-д'Ивуар</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Croatia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Хорватия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Cyprus</td>
-    <td>25 USD</td>
+    <td>Кипр</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Czech Republic</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Чешская республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Denmark</td>
-    <td>25 USD</td>
+    <td>Дания</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Dominica</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Доминика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Dominican Republic</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Доминиканская республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Ecuador</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Эквадор</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Egypt</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Египет</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>El Salvador</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сальвадор</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Eritrea</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Эритрея</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Estonia</td>
-    <td>25 USD</td>
+    <td>Эстония</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Ethiopia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Эфиопия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Fiji</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Фиджи</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Finland</td>
-    <td>25 USD</td>
+    <td>Финляндия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>France</td>
-    <td>25 USD</td>
+    <td>Франция</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Georgia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Грузия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Germany</td>
-    <td>25 USD</td>
+    <td>Германия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Ghana</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гана</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Greece</td>
-    <td>25 USD</td>
+    <td>Греция</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Guatemala</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гватемала</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Guinea</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гвинея</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Haiti</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гаити</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Honduras</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гондурас</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Hong Kong SAR</td>
-    <td>25 USD</td>
+    <td>Специальный административный район Гонконг</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Hungary</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Венгрия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Iceland</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Исландия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>India</td>
-    <td>25 USD</td>
+    <td>Индия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Indonesia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Индонезия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Iraq</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Ирак</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Ireland</td>
-    <td>25 USD</td>
+    <td>Ирландия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Israel</td>
-    <td>25 USD</td>
+    <td>Израиль</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Italy</td>
-    <td>25 USD</td>
+    <td>Италия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jamaica</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Ямайка</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Japan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Япония</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jordan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Иордания</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Kazakhstan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Казахстан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Kenya</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Кения</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Korea</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Корея, Республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Kuwait</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Кувейт</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Laos</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Лаос</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Latvia</td>
-    <td>25 USD</td>
+    <td>Латвия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Lebanon</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Ливан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Liberia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Либерия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Liechtenstein</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Лихтенштейн</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Lithuania</td>
-    <td>25 USD</td>
+    <td>Литва</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Luxembourg</td>
-    <td>25 USD</td>
+    <td>Люксембург</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macedonia (FYROM)</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Македония, бывшая Югославская Республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Madagascar</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Мадагаскар</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Malawi</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Малави</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Malaysia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Малайзия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Mali</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Мали</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Malta</td>
-    <td>25 USD</td>
+    <td>Мальта</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Mauritius</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Маврикий</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Mexico</td>
-    <td>25 USD</td>
+    <td>Мексика</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Monaco</td>
-    <td>25 USD</td>
+    <td>Монако</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Mongolia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Монголия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Montenegro</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Черногория</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Morocco</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Марокко</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Mozambique</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Мозамбик</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Nepal</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Непал</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Netherlands</td>
-    <td>25 USD</td>
+    <td>Нидерланды</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>New Zealand</td>
-    <td>25 USD</td>
+    <td>Новая Зеландия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Nicaragua</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Никарагуа</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Niger</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Нигер</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Nigeria</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Нигерия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Norway</td>
-    <td>25 USD</td>
+    <td>Норвегия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Oman</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Оман</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Pakistan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Пакистан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Panama</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Панама</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Paraguay</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Парагвай</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Peru</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Перу</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Philippines</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Филиппины</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Poland</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Польша</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Portugal</td>
-    <td>25 USD</td>
+    <td>Португалия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Qatar</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Катар</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Romania</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Румыния</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Russia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Россия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Rwanda</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Руанда</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Saint Vincent and the Grenadines</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сент-Винсент и Гренадины</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Saudi Arabia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Саудовская Аравия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Senegal</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сенегал</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Serbia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сербия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Sierra Leone</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сьерра-Леоне</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Singapore</td>
-    <td>25 USD</td>
+    <td>Сингапур</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovakia</td>
-    <td>25 USD</td>
+    <td>Словакия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovenia</td>
-    <td>25 USD</td>
+    <td>Словения</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Somalia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сомали</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>South Africa</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Южно-Африканская республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Spain</td>
-    <td>25 USD</td>
+    <td>Испания</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Sri Lanka</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Шри-Ланка</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Sweden</td>
-    <td>25 USD</td>
+    <td>Швеция</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Switzerland</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Швейцария</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Тайвань</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Tajikistan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Таджикистан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Tanzania</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Объединенная Республика Танзании</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Thailand</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Таиланд</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Timor-Leste</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Тимор-Лесте</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Togo</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Того</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Tonga</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Тонга</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Trinidad and Tobago</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Тринидад и Тобаго</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Tunisia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Тунис</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Turkey</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Турция</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Turkmenistan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Туркменистан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Uganda</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Уганда</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Ukraine</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Украина</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>United Arab Emirates</td>
-    <td>25 USD</td>
+    <td>Объединенные Арабские Эмираты</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United Kingdom</td>
-    <td>25 USD</td>
+    <td>Великобритания</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United States</td>
-    <td>25 USD</td>
+    <td>Соединенные Штаты Америки</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Uruguay</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Уругвай</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Uzbekistan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Узбекистан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Venezuela</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Венесуэла</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Vietnam</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Вьетнам</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Zambia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Замбия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Zimbabwe</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Зимбабве</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
 </table>
 
 &nbsp;
 
-### Microsoft Advertising 
+### <a name="microsoft-advertising"></a>Microsoft Advertising 
 
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Payout account = Bank account</th>
-    <th colspan="2">Payout account = PayPal</th>
+    <th colspan="2">Счет для выплат = банковский счет</th>
+    <th colspan="2">Счет для выплат = PayPal</th>
   </tr>
   <tr>
-    <td><strong>Country/region</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
+    <td><strong>Страна или регион</strong></td>
+    <td><strong>Порог оплаты</strong></td>
+    <td><strong>Метод оплаты</strong></td>
+    <td><strong>Порог оплаты</strong></td>
+    <td><strong>Метод оплаты</strong></td>
   </tr>
   <tr>
-    <td>Afghanistan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Афганистан</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Albania</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Албания</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Algeria</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Алжир</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Angola</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Ангола</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Antigua and Barbuda</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Антигуа и Барбуда</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Argentina</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Аргентина</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Armenia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Армения</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Australia</td>
-    <td>50 USD</td>
+    <td>Австралия</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Austria</td>
-    <td>50 USD</td>
+    <td>Австрия</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Azerbaijan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Азербайджан</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bahrain</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бахрейн</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bangladesh</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бангладеш</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Belarus</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Беларусь</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Belgium</td>
-    <td>50 USD</td>
+    <td>Бельгия</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Benin</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бенин</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bolivia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Боливия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bosnia and Herzegovina</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Босния и Герцеговина</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Botswana</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Ботсвана</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Brazil</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бразилия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bulgaria</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Болгария</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Burkina Faso</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Буркина-Фасо</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Burundi</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бурунди</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Cambodia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Камбоджа</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Cameroon</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Камерун</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Canada</td>
-    <td>50 USD</td>
+    <td>Канада</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Central African Republic</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Центральная Африканская Республика</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Chad</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Чад</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Chile</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Чили</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>China</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
+    <td>Китай</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Colombia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Колумбия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Comoros</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Коморы</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Congo</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Республика Конго</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Congo (DRC)</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Конго (ДРК)</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Costa Rica</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Коста-Рика</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Côte d'Ivoire</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Кот-д'Ивуар</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Croatia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Хорватия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Cyprus</td>
-    <td>50 USD</td>
+    <td>Кипр</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Czech Republic</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
+    <td>Чешская республика</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Denmark</td>
-    <td>50 USD</td>
+    <td>Дания</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Dominica</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Доминика</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Dominican Republic</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Доминиканская республика</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Ecuador</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Эквадор</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Egypt</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Египет</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>El Salvador</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сальвадор</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Eritrea</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Эритрея</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Estonia</td>
-    <td>50 USD</td>
+    <td>Эстония</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Ethiopia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Эфиопия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Fiji</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Фиджи</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Finland</td>
-    <td>50 USD</td>
+    <td>Финляндия</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>France</td>
-    <td>50 USD</td>
+    <td>Франция</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Georgia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Грузия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Germany</td>
-    <td>50 USD</td>
+    <td>Германия</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Ghana</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гана</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Greece</td>
-    <td>50 USD</td>
+    <td>Греция</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Guatemala</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гватемала</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Guinea</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гвинея</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Haiti</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гаити</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Honduras</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гондурас</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Hong Kong SAR</td>
-    <td>50 USD</td>
+    <td>Специальный административный район Гонконг</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Hungary</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
+    <td>Венгрия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Iceland</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Исландия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>India</td>
-    <td>50 USD</td>
+    <td>Индия</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Indonesia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Индонезия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Iraq</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Ирак</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Ireland</td>
-    <td>50 USD</td>
+    <td>Ирландия</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Israel</td>
-    <td>50 USD</td>
+    <td>Израиль</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Italy</td>
-    <td>50 USD</td>
+    <td>Италия</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jamaica</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Ямайка</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Japan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
+    <td>Япония</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jordan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Иордания</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Kazakhstan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Казахстан</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Kenya</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Кения</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Korea</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Корея, Республика</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Kuwait</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Кувейт</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Laos</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Лаос</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Latvia</td>
-    <td>50 USD</td>
+    <td>Латвия</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Lebanon</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Ливан</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Liberia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Либерия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Liechtenstein</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
+    <td>Лихтенштейн</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Lithuania</td>
-    <td>50 USD</td>
+    <td>Литва</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Luxembourg</td>
-    <td>50 USD</td>
+    <td>Люксембург</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macedonia (FYROM)</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Македония, бывшая Югославская Республика</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Madagascar</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Мадагаскар</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Malawi</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Малави</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Malaysia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Малайзия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Mali</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Мали</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Malta</td>
-    <td>50 USD</td>
+    <td>Мальта</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Mauritius</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Маврикий</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Mexico</td>
-    <td>50 USD</td>
+    <td>Мексика</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Monaco</td>
-    <td>50 USD</td>
+    <td>Монако</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Mongolia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Монголия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Montenegro</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Черногория</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Morocco</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Марокко</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Mozambique</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Мозамбик</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Nepal</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Непал</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Netherlands</td>
-    <td>50 USD</td>
+    <td>Нидерланды</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>New Zealand</td>
-    <td>50 USD</td>
+    <td>Новая Зеландия</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Nicaragua</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Никарагуа</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Niger</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Нигер</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Nigeria</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Нигерия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Norway</td>
-    <td>50 USD</td>
+    <td>Норвегия</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Oman</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Оман</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Pakistan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Пакистан</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Panama</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Панама</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Paraguay</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Парагвай</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Peru</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Перу</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Philippines</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
+    <td>Филиппины</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Poland</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
+    <td>Польша</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Portugal</td>
-    <td>50 USD</td>
+    <td>Португалия</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Qatar</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Катар</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Romania</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Румыния</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Russia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
+    <td>Россия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Rwanda</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Руанда</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Saint Vincent and the Grenadines</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сент-Винсент и Гренадины</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Saudi Arabia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Саудовская Аравия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Senegal</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сенегал</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Serbia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сербия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Sierra Leone</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сьерра-Леоне</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Singapore</td>
-    <td>50 USD</td>
+    <td>Сингапур</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovakia</td>
-    <td>50 USD</td>
+    <td>Словакия</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovenia</td>
-    <td>50 USD</td>
+    <td>Словения</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Somalia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сомали</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>South Africa</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Южно-Африканская республика</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Spain</td>
-    <td>50 USD</td>
+    <td>Испания</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Sri Lanka</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Шри-Ланка</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Sweden</td>
-    <td>50 USD</td>
+    <td>Швеция</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Switzerland</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
+    <td>Швейцария</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
+    <td>Тайвань</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Tajikistan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Таджикистан</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Tanzania</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Объединенная Республика Танзании</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Thailand</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
+    <td>Таиланд</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Timor-Leste</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Тимор-Лесте</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Togo</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Того</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Tonga</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Тонга</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Trinidad and Tobago</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Тринидад и Тобаго</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Tunisia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Тунис</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Turkey</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Турция</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Turkmenistan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Туркменистан</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Uganda</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Уганда</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Ukraine</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Украина</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>United Arab Emirates</td>
-    <td>50 USD</td>
+    <td>Объединенные Арабские Эмираты</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United Kingdom</td>
-    <td>50 USD</td>
+    <td>Великобритания</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United States</td>
-    <td>50 USD</td>
+    <td>Соединенные Штаты Америки</td>
+    <td>50 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>50 USD</td>
+    <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Uruguay</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Уругвай</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Uzbekistan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Узбекистан</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Venezuela</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Венесуэла</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Vietnam</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Вьетнам</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Zambia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Замбия</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Zimbabwe</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Зимбабве</td>
+    <td>50 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
 </table>
 
 &nbsp;
 
-### Azure Marketplace
+### <a name="azure-marketplace"></a>Azure Marketplace
 
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Payout account = Bank account</th>
-    <th colspan="2">Payout account = PayPal</th>
+    <th colspan="2">Счет для выплат = банковский счет</th>
+    <th colspan="2">Счет для выплат = PayPal</th>
   </tr>
   <tr>
-    <td><strong>Country/region</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
+    <td><strong>Страна или регион</strong></td>
+    <td><strong>Порог оплаты</strong></td>
+    <td><strong>Метод оплаты</strong></td>
+    <td><strong>Порог оплаты</strong></td>
+    <td><strong>Метод оплаты</strong></td>
+  </tr>
+  <tr>
+    <td>Афганистан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Албания</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Алжир</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Ангола</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+<tr>
+    <td>Антигуа и Барбуда</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+ <tr>
+    <td>Аргентина</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Армения</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Австралия</td>
+    <td>25 долл. США</td>
+    <td>ACH/SEPA</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
   </tr>
     <tr>
-    <td>Austria</td>
-    <td>25 USD</td>
+    <td>Австрия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
+<tr>
+    <td>Азербайджан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
   <tr>
-    <td>Belgium</td>
-    <td>25 USD</td>
+    <td>Бахрейн</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Бангладеш</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Беларусь</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+    <tr>
+    <td>Бельгия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Bulgaria</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+ <tr>
+    <td>Бенин</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Canada</td>
-    <td>25 USD</td>
+    <td>Боливия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Босния и Герцеговина</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Ботсвана</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Бразилия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+   <tr>
+    <td>Болгария</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+<tr>
+    <td>Буркина-Фасо</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Бурунди</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Камбоджа</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Камерун</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+    <tr>
+    <td>Канада</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Croatia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+<tr>
+    <td>Центральная Африканская Республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Cyprus</td>
-    <td>25 USD</td>
+    <td>Чад</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Чили</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Колумбия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Коморы</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Республика Конго</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Конго (ДРК)</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Коста-Рика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Кот-д'Ивуар</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Хорватия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Кипр</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Czech Republic</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Чешская республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Denmark</td>
-    <td>25 USD</td>
+    <td>Дания</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Estonia</td>
-    <td>25 USD</td>
+    <td>Доминика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Доминиканская республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Эквадор</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Египет</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Сальвадор</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Эритрея</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Эстония</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Finland</td>
-    <td>25 USD</td>
+    <td>Эфиопия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Фиджи</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Финляндия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>France</td>
-    <td>25 USD</td>
+    <td>Франция</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Germany</td>
-    <td>25 USD</td>
+   <tr>
+    <td>Грузия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+ <tr>
+    <td>Германия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Greece</td>
-    <td>25 USD</td>
+   <tr>
+    <td>Гана</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+ <tr>
+    <td>Греция</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
+ <tr>
+    <td>Гватемала</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
   <tr>
-    <td>Hong Kong SAR</td>
-    <td>25 USD</td>
+    <td>Гвинея</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Гаити</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Гондурас</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+   <tr>
+    <td>Специальный административный район Гонконг</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Hungary</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Венгрия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Ireland</td>
-    <td>25 USD</td>
+    <td>Исландия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Индия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Italy</td>
-    <td>25 USD</td>
+    <td>Индонезия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Ирак</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Ирландия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Japan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Latvia</td>
-    <td>25 USD</td>
+ <tr>
+    <td>Израиль</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Liechtenstein</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Lithuania</td>
-    <td>25 USD</td>
+   <tr>
+    <td>Италия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>Ямайка</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+ <tr>
+    <td>Япония</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Иордания</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Luxembourg</td>
-    <td>25 USD</td>
+    <td>Казахстан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Кения</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Корея, Республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Кувейт</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Лаос</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+   <tr>
+    <td>Латвия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Ливан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Либерия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Лихтенштейн</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Malta</td>
-    <td>25 USD</td>
+    <td>Литва</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Netherlands</td>
-    <td>25 USD</td>
+    <td>Люксембург</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
+ <tr>
+    <td>Македония, бывшая Югославская Республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
   <tr>
-    <td>Norway</td>
-    <td>25 USD</td>
+    <td>Мадагаскар</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Малави</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Малайзия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Мали</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+   <tr>
+    <td>Мальта</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Poland</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
+ <tr>
+    <td>Маврикий</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Portugal</td>
-    <td>25 USD</td>
+    <td>Мексика</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Romania</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Slovakia</td>
-    <td>25 USD</td>
+    <td>Монако</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Slovenia</td>
-    <td>25 USD</td>
+    <td>Монголия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Черногория</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Марокко</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Мозамбик</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Непал</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+   <tr>
+    <td>Нидерланды</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
+ <tr>
+    <td>Никарагуа</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
   <tr>
-    <td>Spain</td>
-    <td>25 USD</td>
+    <td>Нигер</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Нигерия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+   <tr>
+    <td>Норвегия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Оман</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Пакистан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Панама</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Парагвай</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Перу</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Филиппины</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>Польша</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Sweden</td>
-    <td>25 USD</td>
+    <td>Португалия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Switzerland</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Катар</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Румыния</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+ <tr>
+    <td>Россия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United Kingdom</td>
-    <td>25 USD</td>
+    <td>Руанда</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Сент-Винсент и Гренадины</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Саудовская Аравия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Сенегал</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Сербия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Сьерра-Леоне</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Сингапур</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>Словакия</td>
+    <td>25 долл. США</td>
+    <td>ACH/SEPA</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United States</td>
-    <td>25 USD</td>
+    <td>Словения</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
-</table>
+ <tr>
+    <td>Сомали</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Южно-Африканская республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+   <tr>
+    <td>Испания</td>
+    <td>25 долл. США</td>
+    <td>ACH/SEPA</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>Шри-Ланка</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Швеция</td>
+    <td>25 долл. США</td>
+    <td>ACH/SEPA</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>Швейцария</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Тайвань</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>Таджикистан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Объединенная Республика Танзании</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Таиланд</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Тимор-Лесте</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Того</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Тонга</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Тринидад и Тобаго</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Тунис</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Турция</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Туркменистан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Уганда</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Украина</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Объединенные Арабские Эмираты</td>
+    <td>25 долл. США</td>
+    <td>ACH/SEPA</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
+  </tr>
+    <tr>
+    <td>Великобритания</td>
+    <td>25 долл. США</td>
+    <td>ACH/SEPA</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>Соединенные Штаты Америки</td>
+    <td>25 долл. США</td>
+    <td>ACH/SEPA</td>
+    <td>25 долл. США</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Уругвай</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Узбекистан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Венесуэла</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Вьетнам</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Замбия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+  <tr>
+    <td>Зимбабве</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
+  </tr>
+ </table>
 
 &nbsp;
 
-### Office Store
+### <a name="office-store"></a>Магазин Office
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Payout account = Bank account</th>
-    <th colspan="2">Payout account = PayPal</th>
+    <th colspan="2">Счет для выплат = банковский счет</th>
+    <th colspan="2">Счет для выплат = PayPal</th>
   </tr>
   <tr>
-    <td><strong>Country/region</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
+    <td><strong>Страна или регион</strong></td>
+    <td><strong>Порог оплаты</strong></td>
+    <td><strong>Метод оплаты</strong></td>
+    <td><strong>Порог оплаты</strong></td>
+    <td><strong>Метод оплаты</strong></td>
   </tr>
   <tr>
-    <td>Albania</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Албания</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Algeria</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Алжир</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Andorra</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Андорра</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Angola</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Ангола</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Argentina</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Аргентина</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Australia</td>
-    <td>25 USD</td>
+    <td>Австралия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Austria</td>
-    <td>25 USD</td>
+    <td>Австрия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Azerbaijan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Азербайджан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bahrain</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бахрейн</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bangladesh</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бангладеш</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Belarus</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Беларусь</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Belgium</td>
-    <td>25 USD</td>
+    <td>Бельгия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Benin</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бенин</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bolivia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Боливия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bosnia and Herzegovina</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Босния и Герцеговина</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Brazil</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бразилия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Bulgaria</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Болгария</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Burkina Faso</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Буркина-Фасо</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Burundi</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Бурунди</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Cambodia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Камбоджа</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Cameroon</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Камерун</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Canada</td>
-    <td>25 USD</td>
+    <td>Канада</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Central African Republic</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Центральная Африканская Республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Chad</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Чад</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Chile</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Чили</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>China</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Китай</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Colombia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Колумбия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Congo</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Республика Конго</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Congo (DRC)</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Конго (ДРК)</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Costa Rica</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Коста-Рика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Côte d'Ivoire</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Кот-д'Ивуар</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Croatia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Хорватия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Cyprus</td>
-    <td>25 USD</td>
+    <td>Кипр</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Czech Republic</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Чешская республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Denmark</td>
-    <td>25 USD</td>
+    <td>Дания</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Dominican Republic</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Доминиканская республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Ecuador</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Эквадор</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Egypt</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Египет</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>El Salvador</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сальвадор</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Eritrea</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Эритрея</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Estonia</td>
-    <td>25 USD</td>
+    <td>Эстония</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Ethiopia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Эфиопия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Finland</td>
-    <td>25 USD</td>
+    <td>Финляндия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>France</td>
-    <td>25 USD</td>
+    <td>Франция</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Georgia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Грузия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Germany</td>
-    <td>25 USD</td>
+    <td>Германия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Ghana</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гана</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Greece</td>
-    <td>25 USD</td>
+    <td>Греция</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Guatemala</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гватемала</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Guinea</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гвинея</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Haiti</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гаити</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Honduras</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Гондурас</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Hong Kong SAR</td>
-    <td>25 USD</td>
+    <td>Специальный административный район Гонконг</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Hungary</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Венгрия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Iceland</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Исландия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>India</td>
-    <td>25 USD</td>
+    <td>Индия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Indonesia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Индонезия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Ireland</td>
-    <td>25 USD</td>
+    <td>Ирландия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Israel</td>
-    <td>25 USD</td>
+    <td>Израиль</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Italy</td>
-    <td>25 USD</td>
+    <td>Италия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jamaica</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Ямайка</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Japan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Япония</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jordan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Иордания</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Kazakhstan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Казахстан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Kenya</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Кения</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Korea</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Корея, Республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Kuwait</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Кувейт</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Kyrgyzstan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Киргизия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Laos</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Лаос</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Latvia</td>
-    <td>25 USD</td>
+    <td>Латвия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Liberia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Либерия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Liechtenstein</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Лихтенштейн</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Lithuania</td>
-    <td>25 USD</td>
+    <td>Литва</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Luxembourg</td>
-    <td>25 USD</td>
+    <td>Люксембург</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macedonia (FYROM)</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Македония, бывшая Югославская Республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Madagascar</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Мадагаскар</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Malawi</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Малави</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Malaysia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Малайзия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Mali</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Мали</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Malta</td>
-    <td>25 USD</td>
+    <td>Мальта</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Mexico</td>
-    <td>25 USD</td>
+    <td>Мексика</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Mongolia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Монголия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Montenegro</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Черногория</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Morocco</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Марокко</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Mozambique</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Мозамбик</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Nepal</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Непал</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Netherlands</td>
-    <td>25 USD</td>
+    <td>Нидерланды</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>New Zealand</td>
-    <td>25 USD</td>
+    <td>Новая Зеландия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Nicaragua</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Никарагуа</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Niger</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Нигер</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Nigeria</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Нигерия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Norway</td>
-    <td>25 USD</td>
+    <td>Норвегия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Oman</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Оман</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Pakistan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Пакистан</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Panama</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Панама</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Paraguay</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Парагвай</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Peru</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Перу</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Philippines</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Филиппины</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Poland</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Польша</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Portugal</td>
-    <td>25 USD</td>
+    <td>Португалия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Puerto Rico</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Пуэрто-Рико</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Qatar</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Катар</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Romania</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Румыния</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Rwanda</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Руанда</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Saudi Arabia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Саудовская Аравия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Senegal</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сенегал</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Serbia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сербия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Sierra Leone</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сьерра-Леоне</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Singapore</td>
-    <td>25 USD</td>
+    <td>Сингапур</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovakia</td>
-    <td>25 USD</td>
+    <td>Словакия</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovenia</td>
-    <td>25 USD</td>
+    <td>Словения</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Somalia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Сомали</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>South Africa</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Южно-Африканская республика</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Spain</td>
-    <td>25 USD</td>
+    <td>Испания</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Sri Lanka</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Шри-Ланка</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Sweden</td>
-    <td>25 USD</td>
+    <td>Швеция</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Switzerland</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Швейцария</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Тайвань</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Tanzania</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Объединенная Республика Танзании</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Thailand</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
+    <td>Таиланд</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Timor-Leste</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Тимор-Лесте</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Togo</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Того</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Trinidad and Tobago</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Тринидад и Тобаго</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Tunisia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Тунис</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Turkey</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Турция</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Uganda</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Уганда</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>United Arab Emirates</td>
-    <td>25 USD</td>
+    <td>Объединенные Арабские Эмираты</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United Kingdom</td>
-    <td>25 USD</td>
+    <td>Великобритания</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United States</td>
-    <td>25 USD</td>
+    <td>Соединенные Штаты Америки</td>
+    <td>25 долл. США</td>
     <td>ACH/SEPA</td>
-    <td>25 USD</td>
+    <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Uruguay</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Уругвай</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Venezuela</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Венесуэла</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Vietnam</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Вьетнам</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Zambia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Замбия</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Zimbabwe</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>Зимбабве</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
+    <td>Н/Д</td>
+    <td>Н/Д</td>
   </tr>
 </table>
+
+
+
+<!--HONumber=Dec16_HO1-->
+
+

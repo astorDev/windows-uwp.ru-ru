@@ -3,12 +3,12 @@ author: Mtoepke
 title: "Деактивация режима разработчика Xbox One"
 description: "Сведения о выключении режима разработчика."
 translationtype: Human Translation
-ms.sourcegitcommit: c80849904eccae1ef0e0740bb4e882f7f0f37cc8
-ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
+ms.sourcegitcommit: 0eee645f068614d2368623859dec4e16f3190169
+ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
 
 ---
 
-# Деактивация режима разработчика Xbox One
+# <a name="xbox-one-developer-mode-deactivation"></a>Деактивация режима разработчика Xbox One
 
 * [Переключение в коммерческий режим](#switch-to-retail-mode)
 * [Деактивация консоли с помощью приложения Dev Mode Activation](#deactivate-your-console-using-the-dev-mode-activation-app)  
@@ -17,17 +17,17 @@ ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
 
 Если вы решили, что больше не будете использовать консоль для разработки, выполните следующие действия для деактивации режима разработчика.
 
-## Переключение в коммерческий режим
+## <a name="switch-to-retail-mode"></a>Переключение в коммерческий режим
 Сначала верните консоль Xbox One в коммерческий режим.
 
 1. Откройте **главную страницу разработчика**.
 2. Щелкните **Выйти из режима разработчика**.  Консоль перезапустится в коммерческом режиме.  
 
-   ![](images/deactivation-leave-dev-mode.png)
+   ![Выход из режима разработчика](images/deactivation-leave-dev-mode.png)
 
 Теперь деактивируйте консоль, используя один из следующих методов.
 
-## Деактивация консоли с помощью приложения Dev Mode Activation
+## <a name="deactivate-your-console-using-the-dev-mode-activation-app"></a>Деактивация консоли с помощью приложения Dev Mode Activation
 
 Предпочитаемый метод деактивации режима разработчика на консоли – это использование приложения Dev Mode Activation. 
 
@@ -40,7 +40,7 @@ ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
   
 ![Деактивация консоли](images/deactivation-app.png)
 
-## Сброс контроллера
+## <a name="reset-your-console"></a>Сброс контроллера
 
 Режим разработчика можно также деактивировать, сбросив настройки вашей консоли.  
 
@@ -64,7 +64,7 @@ ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
    
     ![Сброс параметров и удаление всего](images/deactivation-reset-remove.png)
 
-## Деактивация консоли с помощью Центра разработки для Windows
+## <a name="deactivate-your-console-using-windows-dev-center"></a>Деактивация консоли с помощью Центра разработки для Windows
 
 Если не удается получить доступ к консоли по какой-либо причине, вы также можете отключить режим разработчика с помощью Центра разработки для Windows.
 
@@ -82,12 +82,12 @@ ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
 
 ![Активация. Шаг 13](images/deactivation-leave-dev-mode.png)
 
-## См. также следующие разделы.
+## <a name="see-also"></a>См. также следующие разделы.
 - [Активация режима разработчика Xbox One](devkit-activation.md)
 - [UWP на Xbox One](index.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

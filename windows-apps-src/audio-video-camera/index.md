@@ -4,14 +4,14 @@ ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: "В этом разделе содержатся сведения о создании приложений для универсальной платформы Windows (UWP), которые записывают, воспроизводят или редактируют фотографии, видео или аудио."
 title: "Звук, видео и камера"
 translationtype: Human Translation
-ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
-ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
+ms.sourcegitcommit: 77f47bce2a4be3f7c5ee3d320ff6c68e8c7ce6b0
+ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
 
 ---
 
-# Звук, видео и камера
+# <a name="audio-video-and-camera"></a>Звук, видео и камера
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе содержатся сведения о создании приложений для универсальной платформы Windows (UWP), которые записывают, воспроизводят или редактируют фотографии, видео или аудио.
  
@@ -22,6 +22,7 @@ ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 | [Обнаружение лиц на изображениях или в видео](detect-and-track-faces-in-an-image.md) | Объясняется, как использовать [FaceTracker](https://msdn.microsoft.com/library/windows/apps/dn974150) для отслеживания лиц с течением времени в последовательности видеокадров. |
 | [Создание и редактирование композиций мультимедиа](media-compositions-and-editing.md) | Описывается, как использовать API-интерфейсы в пространстве имен [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) для быстрой разработки приложений, которые дают пользователям возможность создавать композиции мультимедиа из исходных аудио- и видеофайлов. |
 | [Пользовательские видеоэффекты](custom-video-effects.md) | Описано, как создать компонент среды выполнения Windows, реализующий интерфейс **IBasicVideoEffect**, который позволяет создавать пользовательские эффекты для видеопотоков. |
+| [Пользовательские звуковые эффекты](custom-audio-effects.md) | Описано, как создать компонент среды выполнения Windows, реализующий интерфейс **IBasicAudioEffect**, который позволяет создавать пользовательские эффекты для звуковых потоков. |
 | [Создание, редактирование и сохранение точечных рисунков](imaging.md) | Объясняется, как загрузить и сохранить файлы изображений с помощью объекта [SoftwareBitmap](https://msdn.microsoft.com/library/windows/apps/dn887358) для представления точечных рисунков.  |
 | [Свойства сведений о звуковых устройствах](audio-device-information-properties.md)  | Перечисляются свойства сведений об устройствах, связанные со звуковыми устройствами. |
 | [Перекодирование файлов мультимедиа](transcode-media-files.md) | Показано, как использовать API-интерфейсы [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) для перекодирования видеофайлов из одного формата в другой. |
@@ -33,7 +34,7 @@ ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 | [Поддерживаемые кодеки](supported-codecs.md) | Перечисляются кодеки и форматы аудио, видео и изображений, поддерживаемые в приложениях UWP. |
 
 
-## См. также
+## <a name="see-also"></a>См. также
 - [Разработка приложений UWP](https://developer.microsoft.com/en-us/windows/develop)
 
  
@@ -48,6 +49,6 @@ ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

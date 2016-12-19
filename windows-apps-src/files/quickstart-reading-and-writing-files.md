@@ -1,15 +1,15 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: "Создание, запись и чтение файла"
 description: "Считайте и запишите файл с помощью объекта StorageFile."
 translationtype: Human Translation
-ms.sourcegitcommit: 24f50f2c4ac7fcfe931759d42ba73e758d77f6e8
-ms.openlocfilehash: 2a9f5de71712e657bc9a0a39b668085c399ce9fb
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 0709d9c9126dc4523eae58d5db8d9037a2fb618e
 
 ---
 
-# Создание, запись и чтение файла
+# <a name="create-write-and-read-a-file"></a>Создание, запись и чтение файла
 
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -25,7 +25,7 @@ ms.openlocfilehash: 2a9f5de71712e657bc9a0a39b668085c399ce9fb
 
 > **Примечание.** См. также [пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 -   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)**
 
@@ -35,7 +35,7 @@ ms.openlocfilehash: 2a9f5de71712e657bc9a0a39b668085c399ce9fb
 
     Сведения о вызове файла с помощью средства выбора файлов см. в разделе [Открытие файлов и папок с помощью средства выбора](quickstart-using-file-and-folder-pickers.md).
 
-## Создание файла
+## <a name="creating-a-file"></a>Создание файла
 
 Ниже приведен порядок создания файла в локальной папке приложения. Заменим его, если он уже существует.
 > [!div class="tabbedCodeSnippets"]
@@ -53,7 +53,7 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.CreateFileAsync("sample.txt", CreationCollisionOption.ReplaceExisting)
 ```
 
-## Запись в файл
+## <a name="writing-to-a-file"></a>Запись в файл
 
 
 Ниже приведен порядок записи в доступный для записи файл на диске с помощью класса [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). Первое действие для каждого из способов записи в файл (если запись в файл происходит не сразу же после его создания) — это получение файла с помощью [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
@@ -153,7 +153,7 @@ using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
         Await outputStream.FlushAsync()
 ```
 
-## Чтение из файла
+## <a name="reading-from-a-file"></a>Чтение из файла
 
 
 Ниже приведен порядок чтения из файла на диске с помощью класса [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). Первое действие для каждого из способов чтения из файла — это получение файла с помощью [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
@@ -259,6 +259,6 @@ Dim dataReader As New DataReader(inputStream)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

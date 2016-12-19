@@ -4,23 +4,24 @@ ms.assetid:
 description: "В этой статье описан самый простой способ записи фотографий и видео с помощью класса MediaCapture."
 title: "Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture"
 translationtype: Human Translation
-ms.sourcegitcommit: 0c7355d442cd650f110042d5e01f51becbb51d0e
-ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
+ms.sourcegitcommit: 9cbe7948767ba45e8ef495a9349621969957ab04
+ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
 
 ---
 
-# Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture
+# <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этой статье описан самый простой способ записи фотографий и видео с помощью класса [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture). Класс **MediaCapture** предоставляет широкий набор API, которые обеспечивают низкоуровневое управление конвейером захвата и поддерживают расширенные сценарии захвата, но цель этой статьи— помочь быстро и просто добавлять в приложение основные функции захвата мультимедиа. Дополнительные сведения о возможностях класса **MediaCapture** см. в разделе [**Камера**](camera.md).
+В этой статье описан самый простой способ записи фотографий и видео с помощью класса [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture). Класс **MediaCapture** предоставляет широкий набор API, которые обеспечивают низкоуровневое управление конвейером захвата и поддерживают расширенные сценарии захвата, но цель этой статьи — помочь быстро и просто добавлять в приложение основные функции захвата мультимедиа. Дополнительные сведения о возможностях класса **MediaCapture** см. в разделе [**Камера**](camera.md).
 
-Если вы хотите просто захватить фотографию или видео и не планируете добавлять дополнительные возможности захвата мультимедиа или не хотите создать собственный пользовательский интерфейс камеры, можно использовать класс [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI), который позволяет просто запустить встроенное приложение камеры Windows и получить созданную фотографию или видео. Дополнительные сведения см. в разделе [**Фото- и видеосъемка с помощью с использованием встроенного пользовательского интерфейса камеры в Windows**](capture-photos-and-video-with-cameracaptureui.md).
+Если вы хотите просто захватить фотографию или видео и не планируете добавлять дополнительные возможности захвата мультимедиа или не хотите создать собственный пользовательский интерфейс камеры, можно использовать класс [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI), который позволяет просто запустить встроенное приложение камеры Windows и получить созданную фотографию или видео. Дополнительные сведения см. в разделе [**Фото- и видеосъемка с помощью встроенного пользовательского интерфейса камеры в Windows**](capture-photos-and-video-with-cameracaptureui.md).
 
+В этой статье используется код, адаптированный из примера [**Начальный набор камеры**](https://go.microsoft.com/fwlink/?linkid=619479). Вы можете скачать этот пример, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки собственного приложения.
 
-## Добавление объявлений возможностей в манифест приложения
+## <a name="add-capability-declarations-to-the-app-manifest"></a>Добавление объявлений возможностей в манифест приложения
 
-Чтобы ваше приложение получило доступ к камере устройства, необходимо объявить, что оно использует возможности устройства *веб-камеры* и *микрофона*. Если нужно сохранить захваченные фотографии и видео в библиотеке изображений или видео пользователя, следует также объявить возможности *picturesLibrary* и *videosLibrary*.
+Чтобы ваше приложение получило доступ к камере устройства, необходимо объявить, что оно использует возможности устройства *webcam* и *microphone*. Если нужно сохранить захваченные фотографии и видео в библиотеке изображений или видео пользователя, следует также объявить возможности *picturesLibrary* и *videosLibrary*.
 
 **Добавление возможностей в манифест приложения**
 
@@ -30,17 +31,17 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 4.  Для доступа к библиотеке изображений и видео установите флажки **Библиотека изображений** и **Библиотека видео**.
 
 
-## Инициализация объекта MediaCapture
+## <a name="initialize-the-mediacapture-object"></a>Инициализация объекта MediaCapture
 Для всех методов захвата, описанных в этой статье, сначала требуется инициализировать объект [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture), вызвав конструктор и затем — [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.InitializeAsync). Так как доступ к объекту **MediaCapture** будет осуществляться из различных областей приложения, объявите переменную класса для размещения объекта.  Реализуйте обработчик для свойства [**Failed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.Failed) объекта **MediaCapture**, чтобы получить уведомление, если операция захвата завершится ошибкой.
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
 [!code-cs[InitMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
-## Настройка просмотра камеры
+## <a name="set-up-the-camera-preview"></a>Настройка просмотра камеры
 Можно захватывать фотографии, видео и звук с помощью **MediaCapture** без показа изображения камеры, но обычно это необходимо, чтобы пользователь видел, что именно записывается. Кроме того, для использования некоторых функций **MediaCapture**, таких как автоматическая фокусировка, экспозиция и регулировка баланса белого, необходим поток предварительного просмотра. Сведения о настройке предварительного просмотра камеры см. в разделе [**Отображение просмотра камеры**](simple-camera-preview-access.md).
 
-## Захват фотографии в классе SoftwareBitmap
+## <a name="capture-a-photo-to-a-softwarebitmap"></a>Захват фотографии в классе SoftwareBitmap
 Класс [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) появился в Windows 10 и используется в качестве общего представления изображений для многих функций. Если вы хотите записать фотографию, а затем сразу использовать полученное изображение в приложение, например показать его в коде XAML, вместо записи в файл следует записать его в класс **SoftwareBitmap**. Вы по-прежнему сможете сохранить изображение на диск позднее.
 
 После инициализации объекта **MediaCapture** вы можете записать фотографию в **SoftwareBitmap** с помощью класса [**LowLagPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoCapture). Получите экземпляр класса, вызвав метод [**PrepareLowLagPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagPhotoCaptureAsync) и передав объект [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties), указывающий нужный формат изображения. [**CreateUncompressed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties.CreateUncompressed) создает несжатую кодировку с заданным форматом пикселя. Чтобы захватить фотографию, вызовите метод [**CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoCapture.CaptureAsync), который возвращает объект [**CapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedPhoto). Получите объект **SoftwareBitmap** с помощью свойств [**Frame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedPhoto.Frame) и [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame.SoftwareBitmap).
@@ -51,7 +52,7 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 Сведения о работе с объектом **SoftwareBitmap**, в том числе о его отображении на XAML-странице, см. в разделе [**Создание, редактирование и сохраните точечных рисунков**](imaging.md).
 
-## Фотозахват в файл
+## <a name="capture-a-photo-to-a-file"></a>Фотозахват в файл
 Типичное фотоприложение сохраняет полученные фотографии на диск или в облачное хранилище, а также добавляет метаданные, например сведения об ориентации фотографии, в файл. В следующем примере показано, как записать фотографию в файл. Вы по-прежнему сможете создать объект **SoftwareBitmap** на основе изображения позже. 
 
 Способ, показанный в этом примере, позволяет получить фотографию в поток в памяти и преобразовать фотографию из потока в файл на диске. В этом примере используется метод [**GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.GetLibraryAsync), чтобы получить библиотеку изображений пользователя, а затем свойство [**SaveFolder**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.SaveFolder), чтобы получить папку для сохранения по умолчанию. Не забывайте добавить возможность **Библиотека изображений** в манифест приложения для доступа к этой папке. [**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFolder.CreateFileAsync) создает объект [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile), в котором будет сохранена фотография.
@@ -66,7 +67,7 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 Дополнительные сведения о работе с файлами и папками см. в разделе [**Файлы, папки и библиотеки**](https://msdn.microsoft.com/windows/uwp/files/index).
 
-## Видеозахват
+## <a name="capture-a-video"></a>Видеозахват
 Вы можете быстро реализовать возможности видеозахвата в свое приложение с помощью класса [**LowLagMediaRecording**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording). Сначала объявите переменную класса для объекта.
 
 [!code-cs[LowLagMediaRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetLowLagMediaRecording)]
@@ -91,7 +92,7 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 [!code-cs[RecordLimitationExceededHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceededHandler)]
 
-## Приостановка и возобновление видеозаписи
+## <a name="pause-and-resume-video-recording"></a>Приостановка и возобновление видеозаписи
 Вы можете приостановить видеозапись, а затем продолжить ее, не создавая отдельный выходной файл, вызвав метод [**PauseAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.PauseAsync), а затем — [**ResumeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.ResumeAsync).
 
 [!code-cs[PauseRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetPauseRecordingSimple)]
@@ -100,8 +101,7 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 Начиная с Windows 10 версии 1607 вы можете приостановить видеозапись и получить последний кадр, записанный до приостановки. Затем можно накладывать этот кадр в режиме предварительного просмотра камеры пользователь мог, чтобы выровнять камеру с приостановлено кадра, прежде чем возобновлять запись. Метод [**PauseWithResultAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.PauseWithResultAsync) возвращает объект [**MediaCapturePauseResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapturePauseResult). Свойство [**LastFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapturePauseResult.LastFrame) — это объект [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.VideoFrame), представляющий последний кадр. Чтобы показать кадр в XAML, получите представление кадра в форме класса **SoftwareBitmap**. В данный момент поддерживаются только изображения в формате BGRA8 с предварительно умноженным или пустым альфа-каналом, поэтому вызовите метод [**Convert**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap.Covert) при необходимости, чтобы получить правильный формат.  Создайте объект [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) и вызовите метод [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource.SetBitmapAsync), чтобы инициализировать его. Наконец настройте свойство **Source** XAML-элемента управления [**Image**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Image), чтобы показать изображения. Чтобы это сработало, изображение должно быть выровнено с элементом управления **CaptureElement**, а значение непрозрачности должно быть меньше одного. Не забывайте, что изменить интерфейс можно только в потоке пользовательского интерфейса, поэтому этот вызов следует выполнить в пределах [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher.RunAsync).
 
-
-              Метод **PauseWithResultAsync** также возвращает длительность записанного в предыдущем сегменте видео, если вам нужно отслеживать общее время записи.
+Метод **PauseWithResultAsync** также возвращает длительность записанного в предыдущем сегменте видео, если вам нужно отслеживать общее время записи.
 
 [!code-cs[PauseCaptureWithResult](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetPauseCaptureWithResult)]
 
@@ -112,7 +112,7 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 Обратите внимание, что вы также можете получить стоп-кадр после остановки видео с помощью метода [**StopWithResultAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StopWithResultAsync).
 
 
-## Запись звука 
+## <a name="capture-audio"></a>Запись звука 
 Вы можете быстро добавить в приложение возможности записи звука, используя способ захвата видео, описанный выше. В примере ниже создается объект **StorageFile** создается в папке данных приложения. Вызовите метод [**PrepareLowLagRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagRecordToStorageFileAsync), чтобы инициализировать сеанс захвата, передав файл и объект [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile), который в этом примере создается статическим методом [**CreateMp3**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp3). Чтобы начать запись, вызовите метод [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StartAsync).
 
 [!code-cs[StartAudioCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartAudioCapture)]
@@ -126,7 +126,7 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
-## Связанные статьи
+## <a name="related-topics"></a>Связанные статьи
 
 * [Камера](camera.md)
 * [Фото- и видеосъемка с помощью с использованием встроенного пользовательского интерфейса камеры в Windows](capture-photos-and-video-with-cameracaptureui.md)
@@ -137,6 +137,6 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

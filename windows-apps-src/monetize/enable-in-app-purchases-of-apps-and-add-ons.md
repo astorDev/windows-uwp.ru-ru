@@ -5,12 +5,12 @@ description: "Узнайте, как использовать пространс
 title: "Поддержка покупок приложений и надстроек из приложения"
 keywords: "Пример кода продажи из приложения"
 translationtype: Human Translation
-ms.sourcegitcommit: 962bee0cae8c50407fe1509b8000dc9cf9e847f8
-ms.openlocfilehash: a28982e05e88b542a0b20bf481e3121d6ac8a247
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: 05a93f3124324d7308f5494ad14a15bfd6a4e698
 
 ---
 
-# Поддержка покупок приложений и надстроек из приложения
+# <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>Поддержка покупок приложений и надстроек из приложения
 
 Приложения, предназначенные для Windows 10 версии 1607 и выше, могут использовать члены из пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) для запроса приобретения для пользователя текущего приложения или одной из его надстроек (также называемых внутренними продуктами приложения или IAP). Например, если пользователь в данный момент имеет пробную версию приложения, можно использовать этот процесс, чтобы приобрести для пользователя полную лицензию. Кроме того, этот процесс можно использовать для покупки для пользователя надстройки, например нового уровня игры.
 
@@ -22,7 +22,7 @@ ms.openlocfilehash: a28982e05e88b542a0b20bf481e3121d6ac8a247
 
 >**Примечание.**&nbsp;&nbsp;Эта статья относится к приложениям, предназначенным для Windows 10 версии 1607 и старше. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Подробнее см. в разделе [Внутренние покупки приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-## Предварительные условия и необходимые компоненты
+## <a name="prerequisites"></a>Предварительные условия и необходимые компоненты
 
 Для этого примера необходимо выполнение следующих предварительных условий:
 * Создан проект Visual Studio для приложения универсальной платформы Windows (UWP), предназначенный для Windows 10 версии 1607 и выше.
@@ -35,67 +35,16 @@ ms.openlocfilehash: a28982e05e88b542a0b20bf481e3121d6ac8a247
 
 >**Примечание.**&nbsp;&nbsp;Если у вас есть классическое приложение, которое использует [мост для настольных ПК](https://developer.microsoft.com/windows/bridges/desktop), вам может потребоваться добавить дополнительный код, не показанный в этом примере, для настройки объекта [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Дополнительные сведения см. в разделе [Использование класса StoreContext в классическом приложение, в котором применяется мост для настольных компьютеров](in-app-purchases-and-trials.md#desktop).
 
-## Пример кода
+## <a name="code-example"></a>Пример кода
 
 В этом примере показано, как использовать метод [RequestPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.requestpurchaseasync.aspx) класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) для приобретения приложения или надстройки с известным [кодом продукта в Магазине](in-app-purchases-and-trials.md#store_ids).
 
-```csharp
-private StoreContext context = null;
-
-public async void PurchaseAddOn(string storeId)
-{
-    if (context == null)
-    {
-        context = StoreContext.GetDefault();
-        // If your app is a desktop app that uses the Desktop Bridge, you
-        // may need additional code to configure the StoreContext object.
-        // For more info, see https://aka.ms/storecontext-for-desktop.
-    }
-
-    workingProgressRing.IsActive = true;
-    StorePurchaseResult result = await context.RequestPurchaseAsync(storeId);
-    workingProgressRing.IsActive = false;
-
-    if (result.ExtendedError != null)
-    {
-        // The user may be offline or there might be some other server failure.
-        textBlock.Text = $"ExtendedError: {result.ExtendedError.Message}";
-        return;
-    }
-
-    switch (result.Status)
-    {
-        case StorePurchaseStatus.AlreadyPurchased:
-            textBlock.Text = "The user has already purchased the product.";
-            break;
-
-        case StorePurchaseStatus.Succeeded:
-            textBlock.Text = "The purchase was successful.";
-            break;
-
-        case StorePurchaseStatus.NotPurchased:
-            textBlock.Text = "The purchase did not complete. " +
-                "The user may have cancelled the purchase.";
-            break;
-
-        case StorePurchaseStatus.NetworkError:
-            textBlock.Text = "The purchase was unsuccessful due to a network error.";
-            break;
-
-        case StorePurchaseStatus.ServerError:
-            textBlock.Text = "The purchase was unsuccessful due to a server error.";
-            break;
-
-        default:
-            textBlock.Text = "The purchase was unsuccessful due to an unknown error.";
-            break;
-    }
-}
-```
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[EnablePurchases](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs#PurchaseAddOn)]
 
 Полный пример приложения см. в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
-## Связанные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 * [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
 * [Получение информации о продукте для приложений и надстроек](get-product-info-for-apps-and-add-ons.md)
@@ -106,6 +55,6 @@ public async void PurchaseAddOn(string storeId)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

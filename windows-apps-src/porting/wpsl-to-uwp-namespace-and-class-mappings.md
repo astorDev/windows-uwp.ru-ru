@@ -1,28 +1,28 @@
 ---
 author: mcleblanc
-description: "В этом разделе подробно описывается сопоставление API WindowsPhoneSilverlight с их аналогами для универсальной платформы Windows (UWP)."
+description: "В этом разделе подробно описывается сопоставление API Windows Phone Silverlight с их аналогами для универсальной платформы Windows (UWP)."
 title: "Сопоставление пространств имен и классов Windows Phone Silverlight и UWP"
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: dcdf17263dadd71572c942bff5e795928e855c03
 
 ---
 
-# Сопоставление пространств имен и классов Windows Phone Silverlight и UWP
+# <a name="windows-phone-silverlight-to-uwp-namespace-and-class-mappings"></a>Сопоставление пространств имен и классов Windows Phone Silverlight и UWP
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этом разделе подробно описывается сопоставление API WindowsPhoneSilverlight с их аналогами для универсальной платформы Windows (UWP). Обычно не существует полных функциональных аналогов, так как одна платформа может иметь большую или меньшую функциональность по сравнению с ее аналогом в пространстве имен или классе.
+В этом разделе подробно описывается сопоставление API Windows Phone Silverlight с их аналогами для универсальной платформы Windows (UWP). Обычно не существует полных функциональных аналогов, так как одна платформа может иметь большую или меньшую функциональность по сравнению с ее аналогом в пространстве имен или классе.
 
 Эта таблица сопоставления поможет при работе в проекте UWP и повторном использовании исходного кода из проекта Windows Phone Silverlight. Между двумя платформами есть различия в именах пространств имен и классов (в том числе в элементах управления пользовательского интерфейса). В большинстве случаев нужно лишь изменить имя пространства имен, и код будет успешно работать. Иногда изменяется не только имя пространства имен, но и имя класса или API. Иногда сопоставление требует многих усилий, а в некоторых случаях требуется изменить подход.
 
 **Использование таблицы. ** Сначала найдите имя используемого класса. Классы указываются, когда для сопоставления требуются более сложные действия, чем просто изменение имени пространства имен. Если класс не указан, тогда сопоставление заключается лишь в изменении пространства имен. Найдите имя пространства имен класса, и таким образом вы получите соответствующее имя пространства имен в UWP. Ваш класс будет указан в этом пространстве имен. Если вашего пространства имен нет в списке, это значит, что его имя не изменялось.
 
-**Примечание.** Windows 10 поддерживает значительно большую часть .NET Framework, чем приложение Магазина Windows Phone. Например, Windows10 имеет несколько пространств имен System.ServiceModel.\*, а также System.Net, System.Net.NetworkInformation и System.Net.Sockets.
-Кроме того, в приложении для Windows10 вы сможете воспользоваться возможностями .NET Native. Это современная технология компиляции, которая преобразует MSIL во встроенный готовый к запуску машинный код. Приложения .NET Native запускаются быстрее, используют меньше памяти и меньше заряда батареи, чем аналоги MSIL.
+**Примечание.** Windows 10 поддерживает значительно большую часть .NET Framework, чем приложение Магазина Windows Phone. Например, Windows 10 имеет несколько пространств имен System.ServiceModel.\*, а также System.Net, System.Net.NetworkInformation и System.Net.Sockets.
+Кроме того, в приложении для Windows 10 вы сможете воспользоваться возможностями .NET Native. Это современная технология компиляции, которая преобразует MSIL во встроенный готовый к запуску машинный код. Приложения .NET Native запускаются быстрее, используют меньше памяти и меньше заряда батареи, чем аналоги MSIL.
 
-| WindowsPhoneSilverlight | Среда выполнения Windows |
+| Windows Phone Silverlight | Среда выполнения Windows |
 |---------------------------|-----------------|
 | Реклама | |
 | Класс **Microsoft.Advertising.Mobile.UI.AdControl** | Класс [AdControl](http://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) |
@@ -62,7 +62,7 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 | (MPU = **Microsoft.Phone.UserData**) <br/> Класс **MPU.Appointments** | Класс [**AppointmentCalendar**](https://msdn.microsoft.com/library/windows/apps/dn596134) |
 | (MPU = **Microsoft.Phone.UserData**) <br/> Класс **MPU.Contacts** | Класс [**ContactStore**](https://msdn.microsoft.com/library/windows/apps/dn624859) |
 | Элементы управления и инфраструктура пользовательского интерфейса | |
-| Класс **ControlTiltEffect.TiltEffect** | Анимации из библиотеки анимации среды выполнения Windows встроены в стили стандартных элементов управления по умолчанию. См. раздел [Анимация](wpsl-to-uwp-porting-xaml-and-ui.md#animation). |
+| Класс **ControlTiltEffect.TiltEffect** | Анимации из библиотеки анимации среды выполнения Windows встроены в стили стандартных элементов управления по умолчанию. См. раздел [Анимация](wpsl-to-uwp-porting-xaml-and-ui.md). |
 | Пространство имен **Microsoft.Phone.Controls** | Пространство имен [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) |
 | (MPC = **Microsoft.Phone.Controls**) <br/> Класс **MPC.ContextMenu** | Класс [**PopupMenu**](https://msdn.microsoft.com/library/windows/apps/br208693) |
 | (MPC = **Microsoft.Phone.Controls**) <br/>Класс **MPC.DatePickerPage** | Класс [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) |
@@ -80,7 +80,7 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 | (MPD = **Microsoft.Phone.Data**) <br/>Пространство имен **MPD.Linq** | Нет прямого эквивалента | 
 | (MPD = **Microsoft.Phone.Data**) <br/>Пространство имен **MPD.Linq.Mapping** | Нет прямого эквивалента |
 | Пространство имен **Microsoft.Phone.Globalization** | Нет прямого эквивалента | 
-| (MPI = **Microsoft.Phone.Info**) <br/>Классы **MPI.DeviceExtendedProperties**, **DeviceStatus** | Классы [**EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390), [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831). Дополнительные сведения см. в разделе [Состояние устройства](wpsl-to-uwp-input-and-sensors.md#device-status). | 
+| (MPI = **Microsoft.Phone.Info**) <br/>Классы **MPI.DeviceExtendedProperties**, **DeviceStatus** | Классы [**EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390), [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831). Дополнительные сведения см. в разделе [Состояние устройства](wpsl-to-uwp-input-and-sensors.md). | 
 | (MPI = **Microsoft.Phone.Info**) <br/>Класс **MPI.MediaCapabilities** | Нет прямого эквивалента | 
 | (MPI = **Microsoft.Phone.Info**) <br/>Класс **MPI.UserExtendedProperties** | Класс [**AdvertisingManager**](https://msdn.microsoft.com/library/windows/apps/dn363391) | 
 | Пространство имен **System.Windows** | Пространство имен [**Windows.UI.Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) | 
@@ -129,7 +129,7 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 | Класс **Microsoft.Xna.Framework.Media.MediaQueue** | Класс [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) |
 | Класс **Microsoft.Xna.Framework.Media.Playlist** | Класс [**BackgroundMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652527) |
 | Пространство имен **System.Windows.Media** | Пространство имен [**Windows.UI.Xaml.Media**](https://msdn.microsoft.com/library/windows/apps/br243045) |
-| Класс **System.Windows.Media.RadialGradientBrush** | Нет прямого эквивалента. См. раздел [Мультимедиа и графика](wpsl-to-uwp-porting-xaml-and-ui.md#media). |
+| Класс **System.Windows.Media.RadialGradientBrush** | Нет прямого эквивалента. См. раздел [Мультимедиа и графика](wpsl-to-uwp-porting-xaml-and-ui.md). |
 | Пространство имен **System.Windows.Media.Animation** | Пространство имен [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/br243232) |
 | Пространство имен **System.Windows.Media.Effects** | Нет прямого эквивалента | 
 | Пространство имен **System.Windows.Media.Imaging** | Пространство имен [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) |
@@ -179,7 +179,7 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 | Класс **System.Net.DownloadProgressChangedEventArgs** и похожие классы, связанные с **System.Net.WebClient** | Класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). Производные от [System.Net.Http.StreamContent](https://msdn.microsoft.com/library/system.net.http.streamcontent.aspx) для измерения хода выполнения. |
 | Классы **System.Net.DnsEndPoint**, **IPAddress** | Эти классы все еще поддерживаются, но некоторые свойства отсутствуют. Можно также перенести в класс [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113). |
 | Класс **System.Net.HttpUtility** | Класс [**HtmlFormatHelper**](https://msdn.microsoft.com/library/windows/apps/hh738437) |
-| Класс **System.Net.HttpWebRequest** | Частичная поддержка, при этом рекомендованнойперспективной альтернативой является класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). Эти API-интерфейсы используют [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) для представления запроса HTTP. |
+| Класс **System.Net.HttpWebRequest** | Частичная поддержка, при этом рекомендованной перспективной альтернативой является класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). Эти API-интерфейсы используют [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) для представления запроса HTTP. |
 | Класс **System.Net.HttpWebResponse** | По-прежнему поддерживается, но вместо Close() используйте Dispose(). Рекомендуемой перспективной альтернативой является класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). Эти API используют [System.Net.Http.HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx) для представления ответа HTTP. |
 | (SNN = **System.Net.NetworkInformation**) <br/> Класс **SNN.NetworkChange** | По-прежнему поддерживается за исключением конструктора. |
 | Класс **System.Net.OpenReadCompletedEventArgs** и похожие классы, связанные с **System.Net.WebClient** | Класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)) |
@@ -188,7 +188,7 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 | Классы **System.Net.Sockets.UdpAnySourceMulticastClient**, **UdpSingleSourceMulticastClient** | Классы [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) | 
 | Класс **System.Net.UploadProgressChangedEventArgs** и похожие классы, связанные с **System.Net.WebClient** | Класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx))
 | Класс **System.Net.WebClient** | Класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx))
-| Класс **System.Net.WebRequest** | Частичная поддержка (другой набор свойств), при этом рекомендованная перспективная альтернатива— класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). Эти API-интерфейсы используют [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) для представления запроса HTTP.
+| Класс **System.Net.WebRequest** | Частичная поддержка (другой набор свойств), при этом рекомендованная перспективная альтернатива — класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). Эти API-интерфейсы используют [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) для представления запроса HTTP.
 | Класс **System.Net.WebResponse** | По-прежнему поддерживается, но вместо Close() используйте Dispose(). Рекомендуемой перспективной альтернативой является класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). Эти API используют [System.Net.Http.HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx) для представления ответа HTTP.
 | (SN = **System.Net**) <br/> Класс **SN.WriteStreamClosedEventArgs** | Класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx))
 | (SN = **System.Net**) <br/> Класс **SN.WriteStreamClosedEventHandler** | Класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx))
@@ -249,6 +249,6 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,16 +1,16 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: "Отслеживание недавно использовавшихся файлов и папок"
 description: "Отслеживайте файлы, к которым часто обращается пользователь, добавляя их в список недавно использованных файлов (MRU)."
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
 
 ---
-# Отслеживание недавно использовавшихся файлов и папок
+# <a name="track-recently-used-files-and-folders"></a>Отслеживание недавно использовавшихся файлов и папок
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** Важные API **
@@ -26,7 +26,7 @@ ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
 
  
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 -   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)**
 
@@ -40,7 +40,7 @@ ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
 
     К выбранным файлам часто принадлежат файлы, к которым пользователь возвращается снова и снова.
 
- ## Добавление выбранного файла в список MRU
+ ## <a name="add-a-picked-file-to-the-mru"></a>Добавление выбранного файла в список MRU
 
 -   К файлам, которые выбирает пользователь, часто принадлежат файлы, к которым он постоянно возвращается. Поэтому рекомендуется добавить выбранные файлы в список MRU вашего приложения сразу после их выбора. Вот как это сделать.
 
@@ -59,7 +59,7 @@ ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
 
      
 
-## Использование маркера для извлечения элемента из списка MRU
+## <a name="use-a-token-to-retrieve-an-item-from-the-mru"></a>Использование маркера для извлечения элемента из списка MRU
 
 Для извлечения элемента используйте наиболее подходящий метод.
 
@@ -73,7 +73,7 @@ ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
 StorageFile retrievedFile = await mru.GetFileAsync(mruToken);
 ```
 
-Вот как выполнить итерацию всех записей, чтобы получить маркеры, а затем— элементы:
+Вот как выполнить итерацию всех записей, чтобы получить маркеры, а затем — элементы:
 
 ```csharp
 foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
@@ -85,13 +85,13 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 }
 ```
 
-Класс [**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) позволяет выполнять итерацию записей в MRU. Эти записи— структуры [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348), которые содержат маркер и метаданные элемента.
+Класс [**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) позволяет выполнять итерацию записей в MRU. Эти записи — структуры [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348), которые содержат маркер и метаданные элемента.
 
-## Удаление элементов из списка MRU при его заполнении
+## <a name="removing-items-from-the-mru-when-its-full"></a>Удаление элементов из списка MRU при его заполнении
 
 Если достигнуто ограничение списка в 25 элементов, и вы пытаетесь добавить новый элемент, то элемент, к которому не обращались самое продолжительное время, автоматически удаляется. Поэтому нет необходимости удалять элемент перед добавлением нового.
 
-## Список дальнейшего доступа
+## <a name="future-access-list"></a>Список дальнейшего доступа
 
 Помимо списка MRU ваше приложение также имеет список дальнейшего доступа. Выбирая файлы и папки, пользователь предоставляет вашему приложению разрешение на доступ к элементам, к которым невозможно получить доступ иным способом. Когда вы добавляете эти элементы в список дальнейшего доступа, то сохраняете разрешение на случай, когда приложению понадобится получить доступ к элементам позже. Список дальнейшего доступа приложения представлен классом [**StorageItemAccessList**](https://msdn.microsoft.com/library/windows/apps/br207459), полученным из статического свойства [**StorageApplicationPermissions.FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457).
 
@@ -106,6 +106,6 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

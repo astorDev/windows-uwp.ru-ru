@@ -6,12 +6,12 @@ ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
-ms.openlocfilehash: a4f654b286db44d4054be296e76114024616f632
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: 8fc2fc007d14bd9c5d08ca4eb7e61a2dfdf04d3b
 
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# Отправка локального уведомления на плитке
+# <a name="send-a-local-tile-notification"></a>Отправка локального уведомления на плитке
 
 
 
@@ -25,31 +25,31 @@ ms.openlocfilehash: a4f654b286db44d4054be296e76114024616f632
 
  
 
-## Установка пакета NuGet
+## <a name="install-the-nuget-package"></a>Установка пакета NuGet
 
 
-Мы рекомендуем устанавливать [пакет NuGet NotificationsExtensions](https://www.nuget.org/packages/NotificationsExtensions.Win10/), который упрощает процесс за счет создания полезных данных плитки с объектами вместо необработанных XML-данных.
+Мы рекомендуем устанавливать [пакет библиотеки уведомлений NuGet](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), который упрощает процесс за счет создания полезных данных плитки с объектами вместо необработанных XML-данных.
 
-Примеры встроенного кода в этой статье приведены для языка C# с установленным пакетом [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet. (Описание процесса создания собственного кода XML с его примерами без [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) см. в конце статьи).
+Примеры встроенного кода в этой статье предназначены для C# с использованием библиотеки уведомлений. (Описание процесса создания собственного кода XML с его примерами без библиотеки уведомлений см. в конце статьи).
 
-## Добавление объявлений пространств имен
+## <a name="add-namespace-declarations"></a>Добавление объявлений пространств имен
 
 
-Чтобы получить доступ к API для работы с плитками, добавьте пространство имен [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661). Мы также рекомендуем добавлять пространство имен **NotificationsExtensions.Tiles**, чтобы можно было использовать вспомогательные API для работы с плитками (чтобы получить доступ к этим API, необходимо установить пакет NuGet [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)).
+Чтобы получить доступ к API для работы с плитками, добавьте пространство имен [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661). Мы также рекомендуем добавлять пространство имен **NotificationsExtensions.Tiles**, чтобы можно было использовать вспомогательные API для работы с плитками (чтобы получить доступ к этим API, необходимо установить пакет NuGet [Библиотеки уведомлений](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)).
 
-```
+```CSharp
 using Windows.UI.Notifications;
-using NotificationsExtensions.Tiles; // NotificationsExtensions.Win10
+using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ```
 
-## Создание содержимого уведомления
+## <a name="create-the-notification-content"></a>Создание содержимого уведомления
 
 
 В Windows 10 полезные данные плитки определяются с помощью шаблонов адаптивных плиток, которые позволяют создавать собственные визуальные макеты для уведомлений. (Дополнительные сведения об операциях, которые можно выполнять с адаптивными плитками, см. в статьях [Создание адаптивных плиток](tiles-and-notifications-create-adaptive-tiles.md) и [Шаблоны адаптивных плиток](tiles-and-notifications-adaptive-tiles-schema.md)).
 
 В этом примере кода создается содержимое адаптивной плитки для средних и широких плиток.
 
-```
+```CSharp
 // In a real app, these would be initialized with actual data
 string from = "Jennifer Parker";
 string subject = "Photos from our trip";
@@ -67,48 +67,48 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = from
                     },
- 
-                    new TileText()
+
+                    new AdaptiveText()
                     {
                         Text = subject,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     },
- 
-                    new TileText()
+
+                    new AdaptiveText()
                     {
                         Text = body,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     }
                 }
             }
         },
- 
+
         TileWide = new TileBinding()
         {
             Content = new TileBindingContentAdaptive()
             {
                 Children =
                 {
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = from,
-                        Style = TileTextStyle.Subtitle
+                        HintStyle = AdaptiveTextStyle.Subtitle
                     },
- 
-                    new TileText()
+
+                    new AdaptiveText()
                     {
                         Text = subject,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     },
- 
-                    new TileText()
+
+                    new AdaptiveText()
                     {
                         Text = body,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     }
                 }
             }
@@ -121,33 +121,30 @@ TileContent content = new TileContent()
 
 ![содержимое уведомления на средней плитке](images/sending-local-tile-02.png)
 
-## Создание уведомления на плитке
+## <a name="create-the-notification"></a>Создание уведомления на плитке
 
 
-После создания содержимого уведомления необходимо создать новое уведомление [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616). Конструктор **TileNotification** принимает объект [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) среды выполнения Windows, который можно получить из метода **TileContent.GetXml** с использованием [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki).
+После создания содержимого уведомления необходимо создать новое уведомление [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616). Конструктор **TileNotification** принимает объект [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) среды выполнения Windows, который можно получить из метода **TileContent.GetXml** с использованием [Библиотеки уведомлений](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/).
 
 В этом примере кода создается уведомление для новой плитки.
 
-```
+```CSharp
 // Create the tile notification
 var notification = new TileNotification(content.GetXml());
 ```
 
-## Задание времени окончания срока действия уведомления (необязательно)
+## <a name="set-an-expiration-time-for-the-notification-optional"></a>Задание времени окончания срока действия уведомления (необязательно)
 
 
 По умолчанию локальные уведомления на плитках и индикаторах событий не истекают, тогда как запланированные, периодические и push-уведомления истекают через три дня. Так как содержание плитки не должно сохраняться дольше, чем нужно, рекомендуется установить срок действия на все уведомления на плитках и индикаторах событий, используя время, значимое для вашего приложения.
 
 В этом примере кода создается уведомление, срок действия которого истекает через десять минут, после чего оно удаляется из плитки.
 
-```
-tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></pre></td>
-</tr>
-</tbody>
-</table>
+```CSharp
+tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);
 ```
 
-## Отправка уведомления
+## <a name="send-the-notification"></a>Отправка уведомления
 
 
 Несмотря на то, что локальная отправка уведомления плитки является простым процессом, отправка уведомления на основную или вспомогательную плитку выполняется несколько иначе.
@@ -159,13 +156,8 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></
 В этом примере кода уведомление отправляется на основную плитку.
 
 
-```
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-// And send the notification
+```CSharp
+// Send the notification to the primary tile
 TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 ```
 
@@ -175,7 +167,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 
 В этом примере кода уведомление отправляется на вспомогательную плитку.
 
-```
+```CSharp
 // If the secondary tile is pinned
 if (SecondaryTile.Exists("MySecondaryTile"))
 {
@@ -189,18 +181,15 @@ if (SecondaryTile.Exists("MySecondaryTile"))
 
 ![стандартная плитка и плитка с уведомлением](images/sending-local-tile-01.png)
 
-## Очистка уведомлений на плитке (необязательно)
+## <a name="clear-notifications-on-the-tile-optional"></a>Очистка уведомлений на плитке (необязательно)
 
 
 В большинстве случаев после взаимодействия пользователя с этим содержимым уведомление необходимо очистить. Например, когда пользователь запускает ваше приложение, может потребоваться удалить все уведомления с плитки. Если уведомления зависят от времени, рекомендуется задать время окончания срока действия уведомления, а не выполнять непосредственно очистку уведомления.
 
-В этом примере кода выполняется очистка уведомления плитки.
+В этом примере кода выполняется очистка уведомления плитки для основной плитки. То же самое можно сделать для дополнительных плиток, создав для них средство обновления плитки.
 
-```
-TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
-</tr>
-</tbody>
-</table>
+```CSharp
+TileUpdateManager.CreateTileUpdaterForApplication().Clear();
 ```
 
 Если для плитки включена очередь уведомлений, в которой имеются элементы, вызов метода Clear приводит к очистке очереди. Тем не менее уведомление нельзя очистить с помощью сервера приложений; уведомления может очищать только локальный код приложения.
@@ -209,7 +198,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
 
 ![плитка с уведомлением и плитка после ее очищения](images/sending-local-tile-03.png)
 
-## Следующие этапы
+## <a name="next-steps"></a>Следующие этапы
 
 
 **Использование очереди уведомлений**
@@ -222,15 +211,10 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
 
 **Метод доставки XmlEncode**
 
-Если вы не используете [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki), этот метод доставки уведомлений является альтернативным решением.
+Если вы не используете [Библиотеку уведомлений](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), этот метод доставки уведомлений является альтернативным решением.
 
 
-```
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
+```CSharp
 public string XmlEncode(string text)
 {
     StringBuilder builder = new StringBuilder();
@@ -243,21 +227,21 @@ public string XmlEncode(string text)
 }
 ```
 
-## Примеры кода без NotificationsExtensions
+## <a name="code-examples-without-notifications-library"></a>Примеры кода без библиотеки уведомлений
 
 
-Если вы предпочитаете работать с необработанным кодом XML, а не с пакетом NuGet [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki), вместо первых трех примеров кода, приведенных в этой статье, используйте следующие альтернативные примеры кода. Остальные примеры кода можно использовать с [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) или с необработанным кодом XML.
+Если вы предпочитаете работать с необработанным кодом XML, а не с пакетом NuGet [Библиотеки уведомлений](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), вместо первых трех примеров кода, приведенных в этой статье, используйте следующие альтернативные примеры кода. Остальные примеры кода можно использовать с [Библиотекой уведомлений](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) или с необработанным кодом XML.
 
 Добавление объявлений пространств имен
 
-```
+```CSharp
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 ```
 
 Создание содержимого уведомления
 
-```
+```CSharp
 // In a real app, these would be initialized with actual data
 string from = "Jennifer Parker";
 string subject = "Photos from our trip";
@@ -272,16 +256,16 @@ string content = $@"
 <tile>
     <visual>
  
-        <binding template=&#39;TileMedium&#39;>
+        <binding template='TileMedium'>
             <text>{from}</text>
-            <text hint-style=&#39;captionSubtle&#39;>{subject}</text>
-            <text hint-style=&#39;captionSubtle&#39;>{body}</text>
+            <text hint-style='captionSubtle'>{subject}</text>
+            <text hint-style='captionSubtle'>{body}</text>
         </binding>
  
-        <binding template=&#39;TileWide&#39;>
-            <text hint-style=&#39;subtitle&#39;>{from}</text>
-            <text hint-style=&#39;captionSubtle&#39;>{subject}</text>
-            <text hint-style=&#39;captionSubtle&#39;>{body}</text>
+        <binding template='TileWide'>
+            <text hint-style='subtitle'>{from}</text>
+            <text hint-style='captionSubtle'>{subject}</text>
+            <text hint-style='captionSubtle'>{body}</text>
         </binding>
  
     </visual>
@@ -290,7 +274,7 @@ string content = $@"
 
 Создание уведомления на плитке
 
-```
+```CSharp
 // Load the string into an XmlDocument
 XmlDocument doc = new XmlDocument();
 doc.LoadXml(content);
@@ -299,13 +283,12 @@ doc.LoadXml(content);
 var notification = new TileNotification(doc);
 ```
 
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 
 * [Создание адаптивных плиток](tiles-and-notifications-create-adaptive-tiles.md)
 * [Шаблоны адаптивных плиток: схема и документация](tiles-and-notifications-adaptive-tiles-schema.md)
-* [NotificationsExtensions.Win10 (пакет NuGet)](https://www.nuget.org/packages/NotificationsExtensions.Win10/)
-* [NotificationsExtensions на GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [Библиотека уведомлений](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [Полный пример кода на GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Пространство имен Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661)
 * [Использование очереди уведомлений (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
@@ -320,6 +303,6 @@ var notification = new TileNotification(doc);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,16 +1,16 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: "Получение свойств файла"
 description: "Получите свойства&\\#8212;верхнего уровня, базовые и расширенные&\\#8212;для файла, представленного объектом StorageFile."
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 78fdc200b134525fc0445af64e73b184b49ef2a3
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 464548664f8065e4dba45d23ccbb71a68d0b6b17
 
 ---
-# Получение свойств файла
+# <a name="get-file-properties"></a>Получение свойств файла
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** Важные API **
@@ -26,7 +26,7 @@ ms.openlocfilehash: 78fdc200b134525fc0445af64e73b184b49ef2a3
  
 
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 -   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)**
 
@@ -36,7 +36,7 @@ ms.openlocfilehash: 78fdc200b134525fc0445af64e73b184b49ef2a3
 
     Например, коду в этих примерах требуется возможность **picturesLibrary**. Для вашего расположения может потребоваться другая возможность либо вообще не потребоваться никаких возможностей. Дополнительную информацию см. в разделе [Разрешения на доступ к файлам](file-access-permissions.md).
 
-## Получение свойств файла верхнего уровня
+## <a name="getting-a-files-top-level-properties"></a>Получение свойств файла верхнего уровня
 
 Доступ ко многим свойствам файла верхнего уровня можно получить как к членам класса [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). К таким свойствам относятся атрибуты файлов, тип содержимого, дата создания, отображаемое имя, тип файла и т. д.
 
@@ -62,7 +62,7 @@ foreach (Windows.Storage.StorageFile file in files)
 }
 ```
 
-## Получение базовых свойств файла
+## <a name="getting-a-files-basic-properties"></a>Получение базовых свойств файла
 
 Многие базовые свойства файла можно получить, вызвав сначала метод [**StorageFile.GetBasicPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh701737). Этот метод возвращает объект [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113), который определяет свойства размера элемента (файл или папка) и дату его последнего изменения.
 
@@ -87,7 +87,7 @@ foreach (Windows.Storage.StorageFile file in files)
 }
  ```
 
-## Получение расширенных свойств файла
+## <a name="getting-a-files-extended-properties"></a>Получение расширенных свойств файла
 
 Помимо свойств верхнего уровня и базовых свойств, существует много свойств, связанных с содержимым файла. Доступ к этим расширенным свойствам можно получить, вызвав метод [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124). (Объект [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) получают, вызывая свойство [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225).) Доступ к свойствам верхнего уровня и базовым свойствам файла можно получить, обратившись к ним как к свойствам класса ([**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) и **BasicProperties** соответственно). Однако расширенные свойства получают, передавая коллекцию [IEnumerable](http://go.microsoft.com/fwlink/p/?LinkID=313091) объектов [String](http://go.microsoft.com/fwlink/p/?LinkID=325032), представляющих имена свойств, которые должны быть получены методом **BasicProperties.RetrievePropertiesAsync**. Затем этот метод возвращает коллекцию [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238). После этого каждое расширенное свойство извлекается из коллекции по имени или индексу.
 
@@ -137,6 +137,6 @@ foreach (Windows.Storage.StorageFile file in files)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

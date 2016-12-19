@@ -4,12 +4,12 @@ Description: "Магазин Windows предлагает выставление
 title: "Биллинг мобильного оператора"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: ac4cf2fd0514fba5446f11f07719f62bec75d960
-ms.openlocfilehash: 827a07f45c64722eaf8be25c4f3eb3fb03780494
+ms.sourcegitcommit: e829808a8e521f2308454e05e8911579b22be807
+ms.openlocfilehash: fe11b56430a07e1326f78b59579ffd9e733ed1b0
 
 ---
 
-# Биллинг мобильного оператора
+# <a name="mobile-operator-billing"></a>Биллинг мобильного оператора
 
 
 Магазин Windows предлагает выставление счетов оператором мобильной связи в качестве метода оплаты для операторов мобильной связи, которые поддерживают эту возможность. Если оператор мобильной связи клиента поддерживает эту возможность, клиент может осуществлять приобретения в Магазине с помощью своей мобильной учетной записи.
@@ -18,7 +18,7 @@ ms.openlocfilehash: 827a07f45c64722eaf8be25c4f3eb3fb03780494
 
 Мы регулярно работаем с операторами мобильной связи, чтобы обеспечивать доступность этого способа оплаты. Если вы хотите предложить оператора мобильной связи, который отсутствует в списке поддерживаемых операторов, обратитесь к оператору мобильной связи.
 
-## Выставление счетов оператором мобильной связи для устройств под управлением Windows 10 и Xbox One
+## <a name="mobile-operator-billing-for-windows-10-and-xbox-one-devices"></a>Выставление счетов оператором мобильной связи для устройств под управлением Windows 10 и Xbox One
 
 В Windows 10 представлена новая реализация выставления счетов оператором мобильной связи. Эта реализация доступна для всех устройств под управлением Windows 10, для телефонов под управлением Windows 10 Mobile и консолей Xbox One. На этих устройствах пользователи могут добавить выставление счетов мобильным оператором в качестве метода оплаты и использовать его для совершения покупок. 
 
@@ -40,65 +40,42 @@ ms.openlocfilehash: 827a07f45c64722eaf8be25c4f3eb3fb03780494
 
  
 
-## Выставление счетов оператором мобильной связи для устройств Windows Phone 8.x и Windows 10 Mobile
+## <a name="mobile-operator-billing-for-windows-phone-8x-and-windows-10-mobile-devices"></a>Выставление счетов оператором мобильной связи для устройств Windows Phone 8.x и Windows 10 Mobile
 
 
-Традиционная реализация выставления счетов оператором мобильной связи доступна для устройств Windows Phone 8.x. Некоторые операторы мобильной связи могут выбрать включение данной реализации на телефонах, разработанных для Windows10 Mobile. На устройствах, включающих эту реализацию, выставление счетов оператором мобильной связи предлагается пользователям автоматически как способ оплаты.
+Традиционная реализация выставления счетов оператором мобильной связи доступна для устройств Windows Phone 8.x. Некоторые операторы мобильной связи могут выбрать включение данной реализации на телефонах, разработанных для Windows 10 Mobile. На устройствах, включающих эту реализацию, выставление счетов оператором мобильной связи предлагается пользователям автоматически как способ оплаты.
 
 Традиционная реализация выставления счетов оператором мобильной связи поддерживается перечисленными ниже операторами мобильной связи.
 
-| Страна или регион       | Операторы мобильной связи                                                   |
+| Страна или регион       | Мобильные операторы                                                   |
 |----------------------|--------------------------------------------------------------------|
 | Австралия            | Telstra                                                            |
 | Австрия              | A1 Telekom, T-Mobile                                               |
-| Бахрейн              | Zain, VIVA                                                         |
 | Бельгия              | BASE, Mobistar, Proximus                                           |
 | Бразилия               | Claro                                                              |
-| Болгария             | Telenor                                                            |
 | Канада               | Fido, Rogers                                                       |
-| Чили                | Claro                                                              |
 | Китай                | China Mobile                                                       |
-| Колумбия             | Claro, Movistar                                                    |
-| Коста-Рика           | Claro                                                              |
-| Хорватия              | Tomato, VIPnet, Tele2                                              |
+| Колумбия             | Movistar                                                           |
 | Чешская республика       | T-Mobile, Vodafone, O2                                             |
 | Эквадор              | Claro                                                              |
-| Египет                | Mobinil                                                            |
-| Эстония              | EMT, Tele2                                                         |
 | Финляндия              | Elisa, TeliaSonera, DNA                                            |
-| Франция               | Orange, Orange Réunion (La Réunion), SFR, Bouygues                 |
+| Франция               | Orange, SFR, Bouygues                                              |
 | Германия              | Telefonica, Telekom Deutschland, Vodafone                          |
 | Греция               | Vodafone                                                           |
-| Гватемала            | Claro                                                              |
 | Венгрия              | Telenor, T-Mobile                                                  |
 | Индия                | Idea                                                               |
-| Индонезия            | Indosat, Telkomsel, XL Axiata, Hutchinson CP Telecommunications (HCPT)     |
+| Индонезия            | Indosat, Telkomsel, Hutchinson CP Telecommunications (HCPT)        |
 | Ирландия              | O2, Vodafone, Three                                                |
 | Италия                | Telecom Italia, Vodafone, Wind, 3 Italia                           |
-| Иордания               | Zain, Umniah                                                       |
-| Кения                | Safaricom                                                          |
-| Кувейт               | Zain, Viva, Ooredoo                                                |
-| Латвия               | Tele2                                                              |
-| Литва            | Tele2                                                              |
-| Малайзия             | DiGi                                                               |
+| Иордания               | Umniah                                                             |
 | Мексика               | Iusacell, Telcel, Movistar                                         |
 | Нидерланды          | T-Mobile, Vodafone                                                 |
-| Норвегия               | Telenor                                                            |
-| Оман                 | Ooredoo                                                            |
-| Пакистан             | Telenor                                                            |
-| Перу                 | Claro                                                              |
-| Филиппины          | Globe, Sun, Smart Communications                                   |
 | Польша               | T-Mobile, Orange, Polkomtel (Plus), Play                           |
 | Румыния              | Orange, Vodafone                                                   |
 | Россия               | Билайн, МТС                                                       |
-| Саудовская Аравия         | Zain                                                               |
-| Сингапур            | M1, SingTel, StarHub                                               |
 | Словакия             | T-Mobile                                                           |
-| Словения             | Si.mobil                                                           |
-| Южная Африка         | Vodacom                                                            |
+| Южно-Африканская Республика         | Vodacom                                                            |
 | Испания                | Movistar, Vodafone, Orange                                         |
-| Швеция               | Telenor, Tele2                                                     |
-| Объединенные Арабские Эмираты | Etisalat, Du                                                       |
 | Великобритания       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
 | США        | AT&T, Sprint, T-Mobile, Verizon                                    |
 | Вьетнам              | Viettel, Vietnamobile, Vinaphone, Mobifone                         |
@@ -117,6 +94,6 @@ ms.openlocfilehash: 827a07f45c64722eaf8be25c4f3eb3fb03780494
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

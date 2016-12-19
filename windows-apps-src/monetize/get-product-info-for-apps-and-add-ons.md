@@ -4,18 +4,18 @@ ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: "Узнайте, как использовать пространство имен Windows.Services.Store, чтобы получить связанные с Магазином сведения о продукте для текущего приложения или одной из его надстроек."
 title: "Получение информации о продукте для приложений и надстроек"
 translationtype: Human Translation
-ms.sourcegitcommit: 962bee0cae8c50407fe1509b8000dc9cf9e847f8
-ms.openlocfilehash: 8471dfd24b189ff6ca4f50c4461b72ac5d81659d
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: dd58103d22314081985cd5ce0f98f2f25e1e7287
 
 ---
 
-# Получение информации о продукте для приложений и надстроек
+# <a name="get-product-info-for-apps-and-add-ons"></a>Получение информации о продукте для приложений и надстроек
 
 Приложения, предназначенные для Windows 10 версии 1607 и выше, могут использовать методы класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) из пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) для доступа к связанной с Магазином информации для текущего приложения или одной из его надстроек (также известных как внутренние продукты приложения или IAP). В следующих примерах в этой статье показано, как это сделать для различных сценариев. Полный пример см. в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
 >**Примечание.**&nbsp;&nbsp;Эта статья относится к приложениям, предназначенным для Windows 10 версии 1607 и старше. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Подробнее см. в разделе [Внутренние покупки приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-## Предварительные условия и необходимые компоненты
+## <a name="prerequisites"></a>Предварительные условия и необходимые компоненты
 
 Для этих примеров необходимо выполнение следующих предварительных условий:
 * Создан проект Visual Studio для приложения универсальной платформы Windows (UWP), предназначенный для Windows 10 версии 1607 и выше.
@@ -30,189 +30,46 @@ ms.openlocfilehash: 8471dfd24b189ff6ca4f50c4461b72ac5d81659d
 
 >**Примечание.**&nbsp;&nbsp;Если у вас есть классическое приложение, которое использует [мост для настольных ПК](https://developer.microsoft.com/windows/bridges/desktop), вам может потребоваться добавить дополнительный код, не показанный в этих примерах, для настройки объекта [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Дополнительные сведения см. в разделе [Использование класса StoreContext в классическом приложение, в котором применяется мост для настольных компьютеров](in-app-purchases-and-trials.md#desktop).
 
-## Получение информации для текущего приложения
+## <a name="get-info-for-the-current-app"></a>Получение информации для текущего приложения
 
 Чтобы получить информацию о продукте Магазина для текущего приложения, используйте метод [GetStoreProductForCurrentAppAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getstoreproductforcurrentappasync.aspx). Этот асинхронный метод возвращает объект [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx), который можно использовать для получения такой информации, как цена.
 
-```csharp
-private StoreContext context = null;
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs#GetAppInfo)]
 
-public async void GetAppInfo()
-{
-    if (context == null)
-    {
-        context = StoreContext.GetDefault();
-        // If your app is a desktop app that uses the Desktop Bridge, you
-        // may need additional code to configure the StoreContext object.
-        // For more info, see https://aka.ms/storecontext-for-desktop.
-    }
-
-    // Get app store product details. Because this might take several moments,   
-    // display a ProgressRing during the operation.
-    workingProgressRing.IsActive = true;
-    StoreProductResult queryResult = await context.GetStoreProductForCurrentAppAsync();
-    workingProgressRing.IsActive = false;
-
-    if (queryResult.ExtendedError != null)
-    {
-        // The user may be offline or there might be some other server failure.
-        textBlock.Text = $"ExtendedError: {queryResult.ExtendedError.Message}";
-        return;
-    }
-
-    if (queryResult.Product == null)
-    {
-        // The Store catalog returned an unexpected result.
-        textBlock.Text = "Something went wrong, the product was not returned.";
-        return;
-    }
-
-    // Display the price of the app.
-    textBlock.Text = $"The price of this app is: {queryResult.Product.Price.FormattedBasePrice}";
-}
-```
-
-## Получение информации для продуктов с известными кодами продукта в Магазине
+## <a name="get-info-for-products-with-known-store-ids"></a>Получение информации для продуктов с известными кодами продукта в Магазине
 
 Чтобы получить информацию о продукте Магазина для приложений или надстроек с уже известными [кодами продукта в Магазине](in-app-purchases-and-trials.md#store_ids), используйте метод [GetStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706579.aspx). Этот асинхронный метод возвращает коллекцию объектов [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx), которые представляют каждое из приложений или надстроек. Помимо кодов продукта в Магазине, этому методу необходимо передать список строк, которые определяют типы надстроек. Список поддерживаемых строковых значений см. в описании свойства [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx).
 
-Следующий пример извлекает информацию для постоянных надстроек с заданными кодами продукта в Магазине.
+В следующем примере извлекается информация для постоянных надстроек с заданными кодами продукта в Магазине.
 
-```csharp
-private StoreContext context = null;
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs#GetProductInfo)]
 
-public async void GetProductInfo()
-{
-    if (context == null)
-    {
-        context = StoreContext.GetDefault();
-        // If your app is a desktop app that uses the Desktop Bridge, you
-        // may need additional code to configure the StoreContext object.
-        // For more info, see https://aka.ms/storecontext-for-desktop.
-    }
-
-    // Specify the kinds of add-ons to retrieve.
-    string[] productKinds = { "Durable" };
-    List<String> filterList = new List<string>(productKinds);
-
-    // Specify the Store IDs of the products to retrieve.
-    string[] storeIds = new string[] { "9NBLGGH4TNMP", "9NBLGGH4TNMN" };
-
-    workingProgressRing.IsActive = true;
-    StoreProductQueryResult queryResult =
-        await context.GetStoreProductsAsync(filterList, storeIds);
-    workingProgressRing.IsActive = false;
-
-    if (queryResult.ExtendedError != null)
-    {
-        // The user may be offline or there might be some other server failure.
-        textBlock.Text = $"ExtendedError: {queryResult.ExtendedError.Message}";
-        return;
-    }
-
-    foreach (KeyValuePair<string, StoreProduct> item in queryResult.Products)
-    {
-        // Access the Store info for the product.
-        StoreProduct product = item.Value;
-
-        // Use members of the product object to access info for the product...
-    }
-}
-```
-
-## Получение информацию для надстроек, доступных для текущего приложения
+## <a name="get-info-for-add-ons-that-are-available-for-the-current-app"></a>Получение информации для надстроек, доступных для текущего приложения
 
 Чтобы получить информацию о продукте Магазина для надстроек, которые доступны для текущего приложения, используйте метод [GetAssociatedStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706571.aspx). Этот асинхронный метод возвращает коллекцию объектов [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx), которые представляют каждую из доступных надстроек. Этому методу необходимо передать список строк, определяющих типы надстроек, которые требуется извлечь. Список поддерживаемых строковых значений см. в описании свойства [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx).
 
-Следующий пример извлекает информацию для всех постоянных надстроек, потребляемых надстроек, управляемых Магазином, и потребляемых надстроек, управляемых разработчиком.
-
-```csharp
-private StoreContext context = null;
-
-public async void GetAddOnInfo()
-{
-    if (context == null)
-    {
-        context = StoreContext.GetDefault();
-        // If your app is a desktop app that uses the Desktop Bridge, you
-        // may need additional code to configure the StoreContext object.
-        // For more info, see https://aka.ms/storecontext-for-desktop.
-    }
-
-    // Specify the kinds of add-ons to retrieve.
-    string[] productKinds = { "Durable", "Consumable", "UnmanagedConsumable" };
-    List<String> filterList = new List<string>(productKinds);
-
-    workingProgressRing.IsActive = true;
-    StoreProductQueryResult queryResult = await context.GetAssociatedStoreProductsAsync(filterList);
-    workingProgressRing.IsActive = false;
-
-    if (queryResult.ExtendedError != null)
-    {
-        // The user may be offline or there might be some other server failure.
-        textBlock.Text = $"ExtendedError: {queryResult.ExtendedError.Message}";
-        return;
-    }
-
-    foreach (KeyValuePair<string, StoreProduct> item in queryResult.Products)
-    {
-        // Access the Store product info for the add-on.
-        StoreProduct product = item.Value;
-
-        // Use members of the product object to access listing info for the add-on...
-    }
-}
-```
-
 >**Примечание.**&nbsp;&nbsp;Если приложение содержит много надстроек, можно также использовать метод [GetAssociatedStoreProductsWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706572.aspx), чтобы разбивать возвращаемые результаты для надстроек на страницы.
 
+В следующем примере извлекается информации для всех постоянных надстроек, потребляемых надстроек, управляемых Магазином, и потребляемых надстроек, управляемых разработчиком.
 
-## Получение информации о надстройках для текущего приложения, которые может использовать текущий пользователь
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
+
+
+## <a name="get-info-for-add-ons-for-the-current-app-that-the-current-user-is-entitled-to-use"></a>Получение информации о надстройках для текущего приложения, которые может использовать текущий пользователь
 
 Чтобы получить информацию о продукте Магазина для надстроек, которые доступны текущему пользователю, используйте метод [GetUserCollectionAsync](https://msdn.microsoft.com/library/windows/apps/mt706580.aspx). Этот асинхронный метод возвращает коллекцию объектов [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx), которые представляют каждую из надстроек. Этому методу необходимо передать список строк, определяющих типы надстроек, которые требуется извлечь. Список поддерживаемых строковых значений см. в описании свойства [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx).
 
-Следующий пример извлекает информацию для постоянных надстроек с заданными кодами продукта в Магазине.
-
-```csharp
-private StoreContext context = null;
-
-public async void GetUserCollection()
-{
-    if (context == null)
-    {
-        context = StoreContext.GetDefault();
-        // If your app is a desktop app that uses the Desktop Bridge, you
-        // may need additional code to configure the StoreContext object.
-        // For more info, see https://aka.ms/storecontext-for-desktop.
-    }
-
-    // Specify the kinds of add-ons to retrieve.
-    string[] productKinds = { "Durable" };
-    List<String> filterList = new List<string>(productKinds);
-
-    workingProgressRing.IsActive = true;
-    StoreProductQueryResult queryResult = await context.GetUserCollectionAsync(filterList);
-    workingProgressRing.IsActive = false;
-
-    if (queryResult.ExtendedError != null)
-    {
-        // The user may be offline or there might be some other server failure.
-        textBlock.Text = $"ExtendedError: {queryResult.ExtendedError.Message}";
-        return;
-    }
-
-    foreach (KeyValuePair<string, StoreProduct> item in queryResult.Products)
-    {
-        StoreProduct product = item.Value;
-
-        // Use members of the product object to access info for the product...
-    }
-}
-```
-
 >**Примечание.**&nbsp;&nbsp;Если приложение содержит много надстроек, можно также использовать метод [GetUserCollectionWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706581.aspx), чтобы разбивать возвращаемые результаты для надстроек на страницы.
 
-## Связанные разделы
+В следующем примере извлекается информация для постоянных надстроек с заданными кодами продукта в Магазине.
+
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs#GetUserCollection)]
+
+## <a name="related-topics"></a>Статьи по теме
 
 * [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
 * [Получение информации о лицензии для приложений и надстроек](get-license-info-for-apps-and-add-ons.md)
@@ -223,6 +80,6 @@ public async void GetUserCollection()
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

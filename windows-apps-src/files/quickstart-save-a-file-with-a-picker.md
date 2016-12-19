@@ -1,15 +1,15 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: "Сохранение файла с помощью средства выбора"
 description: "Чтобы дать пользователям возможность задать имя и расположение, в которое приложение должно сохранить файл, воспользуйтесь средством FileSavePicker."
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 8e65131a913f5ea69438ff986151da11d3126314
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: ae6a9806e982a866834371a60788f7a788b04e47
 
 ---
 
-# Сохранение файла с помощью средства выбора
+# <a name="save-a-file-with-a-picker"></a>Сохранение файла с помощью средства выбора
 
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -26,7 +26,7 @@ ms.openlocfilehash: 8e65131a913f5ea69438ff986151da11d3126314
 
  
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 
 -   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)**
@@ -37,7 +37,7 @@ ms.openlocfilehash: 8e65131a913f5ea69438ff986151da11d3126314
 
     См. раздел [Разрешения на доступ к файлам](file-access-permissions.md).
 
-## Пошаговое руководство по FileSavePicker
+## <a name="filesavepicker-step-by-step"></a>Пошаговое руководство по FileSavePicker
 
 
 Чтобы позволить пользователям задавать имя, тип файла и расположение для сохранения файла, используйте класс [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871). Создайте, настройте и отобразите объект средства выбора файлов, а затем сохраните данные с помощью возвращенного объекта [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171), представляющего выбранный файл.
@@ -114,6 +114,6 @@ Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

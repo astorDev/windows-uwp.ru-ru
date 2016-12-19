@@ -3,23 +3,22 @@ author: GrantMeStrength
 ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676
 title: "Дальнейшие действия"
 description: "Создав свое первое приложение, ознакомьтесь с другими разделами Центра разработки. Здесь представлен обзор содержащихся в нем разделов."
-keywords: "Центр разработки для Windows, начало работы"
+keywords: "Центр разработки, начало работы"
 translationtype: Human Translation
-ms.sourcegitcommit: 1c059edde92a48af610af1033c3b18ca729410aa
-ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
+ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
+ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
 
 ---
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-# Дальнейшие действия
+# <a name="whats-next"></a>Дальнейшие действия
 
-Итак, вы хотите создать приложение. С чего начать? Ниже приведены некоторые разделы Центра разработки, помогающие приступить к работе. Если вы не знакомы с платформой UWP, посмотрите видеоматериалы на сайте <a href="https://channel9.msdn.com/">Channel 9</a> и пройдите курсы <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a>. Если вы уже знакомы с XAML и C#, можете приступать к чтению приведенных ниже разделов.
+Итак, с чего начать, если вы хотите создать приложение и опубликовать его в Магазине Windows? Если вы не знакомы с платформой UWP, посмотрите видеоматериалы на сайте <a href="https://channel9.msdn.com/">Channel 9</a> и пройдите курсы <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a>. Если вы уже знакомы с XAML и C#, ознакомьтесь с разделами ниже или перейдите непосредственно к [загрузке примеров](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
-Рекомендуется ознакомиться с разделами, посвященными UWP, чтобы получить представление об этой платформе, а затем изучить создание пользовательского интерфейса с использованием элементов управления XAML и их последующей настройкой. Основное достоинство языка XAML — это использование *привязки данных* для связывания элементов управления с информацией, которую требуется отображать приложению; если вы не знакомы с платформой Windows, будет важно понять эту концепцию.
+Существует много средств и платформ, которые помогут вам в создании приложений; многие из них поддерживают межплатформенную разработку. Например, если требуется создать игры 2D, имеет смысл изучить раздел <a href="http://www.monogame.net">MonoGame</a>. Для разработчиков игр 3D окажется полезным раздел <a href="http://www.unity3d.com">Unity</a>, а для разработчиков приложений для мобильных устройств — <a href="http://www.xamarin.com">Xamarin</a>.
 
-Если вы хотите изучать новейшие методы программирования для Windows 10, такие как добавление анимации и эффектов в приложения, ознакомьтесь с [Блогом разработчиков Windows](https://blogs.windows.com/buildingapps).
-
+Если вы приступаете к работе, рекомендуется ознакомиться с разделами, посвященными UWP, чтобы получить представление об этой платформе, а затем изучить создание пользовательского интерфейса с использованием элементов управления XAML и их последующей настройкой. Для создания макета приложения вы будете использовать XAML (руководство с пошаговыми инструкциями доступно [здесь](../layout/grid-tutorial.md)), однако основным преимуществом XAML является использование *привязок данных*, объединяющих элементы управления и информацию, которую требуется отобразить в вашем приложении: если вы только начинаете работать с платформой Windows, очень важно понять этот материал. 
 <table class="wdg-noborder">
 <tr>
  <td width=60><img src="images/icon3.png" width=64></td>
@@ -28,8 +27,6 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
     <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">Жизненный цикл приложения UWP</a></li>
     <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Потрясающие возможности Windows 10</a></ul></td>  
 </tr>
- 
- 
 <tr>
  <td width=60><img src="images/icon7.png" width=64></td>
     <td><h2>Взаимодействие с пользователем и пользовательский интерфейс</h2><p>Какие элементы управления есть в вашем распоряжении и как их можно использовать? В этих разделах объясняется совместная работа элементов управления и кода, а также настройка элементов управления в соответствии с внешним видом приложения.</p> <ul>
@@ -42,8 +39,6 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
       <li><a href="https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox">Использование набора средств сообщества UWP для выбора встроенных элементов управления и шаблонов</a></li>
     </ul></td>  
 </tr>
- 
- 
 <tr>
  <td width=60><img src="images/icon6.png" width=64></td>
     <td><h2>Данные и службы</h2><p>Познакомьтесь с привязкой данных, которая позволяет коду автоматически заполнять списки и сетки. Узнайте, как задавать ссылки на внешние ресурсы для получения данных в приложениях.</p> <ul>
@@ -52,8 +47,6 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
      <li><a href="https://msdn.microsoft.com/windows/uwp/data-access/index">Доступ к данным</a></li>
     </ul></td>  
 </tr>
- 
-
 <tr>
  <td width=60><img src="images/icon4.png" width=64></td>
     <td><h2>Публикация</h2><p>Сообщите миру о своей работе, получите прибыль. Мы предоставим пошаговые инструкции, как разместить приложение в Магазине.</p> <ul>
@@ -61,7 +54,6 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
     <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">Создание пакетов приложений</a></li>
     </ul></td>  
 </tr>
- 
 <tr>
  <td width=60><img src="images/icon2.png" width=64></td>
     <td><h2>Другие ресурсы</h2><p>Примеры, учебные пособия, видео, другие средства и пакеты SDK. Переходите на следующий уровень.</p>
@@ -78,14 +70,24 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
     </ul>
     </td>  
 </tr>
- 
-
-
 </table>
 
 <hr>
 
-## Поиск справки в Центре разработки
+## <a name="windows-developer-blog"></a>Блог разработчиков Windows
+
+В [блоге разработчиков Windows](https://blogs.windows.com/buildingapps) вы найдете регулярные публикации об актуальных технологиях кодирования, идеи для создания проектов и многочисленные инструменты. Ниже перечисленные некоторые материалы, которые окажутся полезными для разработчиков приложений для Windows.
+
+* [Анимации с использованием визуального уровня](https://blogs.windows.com/buildingapps/2016/09/16/animations-with-the-visual-layer/#JM2XkQcL7MRSXe3X.97)
+* [Взаимодействие между XAML и визуальным уровнем](https://blogs.windows.com/buildingapps/2016/08/26/interop-between-xaml-and-the-visual-layer/#ue6O7MWpqrVFE81K.97)
+* [Создание красивых эффектов для UWP](https://blogs.windows.com/buildingapps/2016/09/12/creating-beautiful-effects-for-uwp/#85jsfw6PFXX825rR.97)
+* [Windows.UI позволяет легко создавать красивые приложения](https://blogs.windows.com/buildingapps/2016/08/23/beautiful-apps-made-possible-and-easy-with-windows-ui/#GBREkRSBwsRvi2uL.97)
+* [Совершенствование приложений с использованием анимации и аудиоподсказок](https://blogs.windows.com/buildingapps/2016/08/09/polishing-your-app-with-animations-and-audio-cues/#hziKxt2xPwUE1oqU.97) 
+* [Добавление цвета в макет](https://blogs.windows.com/buildingapps/2016/07/28/adding-color-to-your-design/#HcPqMlfPsuKETOIo.97)
+
+<hr>
+
+## <a name="finding-help-in-the-dev-center"></a>Поиск справки в Центре разработки
 
 [Центр разработки Microsoft](http://devcenter.microsoft.com) содержит обширнейшую документацию для различных средств, инфраструктуры и платформ. При поиске тем и примеров обязательно убедитесь, что содержимое относится к UWP. Как убедиться, что вы читаете нужное содержимое?
 В URL-адресе раздела концептуального содержимого (т. е. содержимого, не относящегося к справочным материалам по API) присутствуют буквы UWP. В пути содержимого по API присутствует строка «Windows Runtime APIs» (API среды выполнения Windows). 
@@ -100,7 +102,7 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
 <hr>
 
 
-## Важные разделы Центра разработки
+## <a name="important-dev-center-topics"></a>Важные разделы Центра разработки
 
 Ниже приведен список ключевых разделов содержимого в Центре разработки. 
 
@@ -162,6 +164,10 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
 
 
 
-<!--HONumber=Nov16_HO1-->
+
+
+
+
+<!--HONumber=Dec16_HO1-->
 
 
