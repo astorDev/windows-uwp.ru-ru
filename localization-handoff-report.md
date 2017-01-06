@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/dccfc9b5ba9681af24cd8a1794346b1aa3951ab0?path=windows-apps-src%2Finput-and-devices%2Findex.md&_a=contents) | HandedOffSuccess | [Details](#f50c04f769cfb75d90d4276abcbfbfb5ec38da444684)
+ [windows-apps-src\monetize\view-and-grant-products-from-a-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0479a1a212f7bf083ae74115ac41dd5bfcd603f4?path=windows-apps-src%2Fmonetize%2Fview-and-grant-products-from-a-service.md&_a=contents) | HandedOffSuccess | [Details](#41cdfb499195ba8f9cbd8378130700b163d313c65512)
 
 ## Item Details
-##### <a name='f50c04f769cfb75d90d4276abcbfbfb5ec38da444684'></a> Source: [windows-apps-src\input-and-devices\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/dccfc9b5ba9681af24cd8a1794346b1aa3951ab0?path=windows-apps-src%2Finput-and-devices%2Findex.md&_a=contents)
+##### <a name='41cdfb499195ba8f9cbd8378130700b163d313c65512'></a> Source: [windows-apps-src\monetize\view-and-grant-products-from-a-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0479a1a212f7bf083ae74115ac41dd5bfcd603f4?path=windows-apps-src%2Fmonetize%2Fview-and-grant-products-from-a-service.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [index.2fdb039b9798a6e880a403bb237c054940ed7561.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/25b35df81037d407cf2b3dd4d4152d68db69d2da?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Findex.2fdb039b9798a6e880a403bb237c054940ed7561.ru-ru.xlf&_a=contents)
-* Handoff Datetime: 2017-01-06 18:15:53
+* Handoff File: [view-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/7b54c80965b756396737e8614f6721cf9769228c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fview-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2017-01-06 22:13:58
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\input-and-devices\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/2f1ac4a1c1d944102739e9b403fc5aad0446f631?path=windows-apps-src%2Finput-and-devices%2Findex.md&_a=contents)
-* Current Handback File: [index.2fdb039b9798a6e880a403bb237c054940ed7561.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4f4d3f9c88983440830197093d5122e9353c13d4?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Findex.2fdb039b9798a6e880a403bb237c054940ed7561.ru-ru.xlf&_a=contents)
+* Current Target File: [windows-apps-src\monetize\view-and-grant-products-from-a-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/2f1ac4a1c1d944102739e9b403fc5aad0446f631?path=windows-apps-src%2Fmonetize%2Fview-and-grant-products-from-a-service.md&_a=contents)
+* Current Handback File: [view-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4f4d3f9c88983440830197093d5122e9353c13d4?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fview-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ru-ru.xlf&_a=contents)
 * Current Handback Datetime: 2016-11-30 15:19:56
-* Bilingual File: [index.2fdb039b9798a6e880a403bb237c054940ed7561.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4f4d3f9c88983440830197093d5122e9353c13d4?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Findex.2fdb039b9798a6e880a403bb237c054940ed7561.ru-ru.xlf&_a=contents)
+* Bilingual File: [view-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4f4d3f9c88983440830197093d5122e9353c13d4?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fview-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ru-ru.xlf&_a=contents)
 * Bilingual Datetime: 2016-11-30 15:25:20
 * [Back to Top](#report-top)
 
