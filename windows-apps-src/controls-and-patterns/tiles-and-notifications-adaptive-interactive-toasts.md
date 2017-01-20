@@ -6,8 +6,8 @@ ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2ac3a4a1efa85a3422d8964ad4ee62db28bc975f
-ms.openlocfilehash: cfbbf110ed6df1b7e81e0505dcf55a63ba8739aa
+ms.sourcegitcommit: 76a7a6dd3f0e0026e54483fa0ee5f82376ca0c99
+ms.openlocfilehash: 4420ecac17c41858aac7379b4dfaaa43b853318d
 
 ---
 # <a name="adaptive-and-interactive-toast-notifications"></a>Адаптивные и интерактивные всплывающие уведомления
@@ -112,16 +112,30 @@ ToastContent content = new ToastContent()
 };
 ```
 
-Затем можно использовать этот код для создания и отправки всплывающего уведомления:
+<<<<<<< HEAD Затем необходимо преобразовать всплывающее уведомление в объект [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx). Если вы определили всплывающее уведомление в XML-файле (здесь он называется content.xml), используйте следующий код:
 
 ```CSharp
-ToastNotification notification = new ToastNotification(content.GetXml());
+string xmlText = File.ReadAllText("content.xml");
+XmlDocument xmlContent = new XmlDocument();
+xmlContent.LoadXml(xmlText);
+```
+
+Или если вы определили шаблон всплывающего уведомления в C#, используйте следующий код:
+
+```CSharp
+XmlDocument xmlContent = content.GetXml();
+```
+
+Независимо от того как вы создаете файл XMLDocument, этот код затем можно использовать для создания и отправки всплывающего уведомления:
+
+```CSharp
+ToastNotification notification = new ToastNotification(xmlContent);
 ToastNotificationManager.CreateToastNotifier().Show(notification);
 ```
 
-Полное рабочее приложение, демонстрирующее всплывающие уведомления в действии см. в [Кратком руководстве по отправке локальных всплывающих уведомлений](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10).
+Полное приложение, демонстрирующее всплывающие уведомления в действии, см. в [Кратком руководстве по отправке локальных всплывающих уведомлений](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10).
 
-И визуальное представление структуры:
+Здесь приводится визуальное представление структуры:
 
 ![структура всплывающего уведомления](images/adaptivetoasts-structure.jpg)
 
@@ -249,9 +263,9 @@ ToastContent content = new ToastContent()
 
  
 
-**Уведомление с действиями, пример 1**
+**Уведомление с действиями**
 
-В этом примере показано...
+В этом примере создается уведомление с двумя возможными ответными действиями.
 
 ```XML
 <toast launch="app-defined-string">
@@ -309,73 +323,11 @@ ToastContent content = new ToastContent()
 
 ![уведомление с действиями, пример 1](images/adaptivetoasts-xmlsample02.jpg)
 
- 
 
-**Уведомление с действиями, пример 2**
-
-В этом примере показано...
-
-```XML
-<toast launch="app-defined-string">
-  <visual>
-    <binding template="ToastGeneric">
-      <text>Restaurant suggestion...</text>
-      <text>We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?</text>
-    </binding>
-  </visual>
-  <actions>
-    <action activationType="foreground" content="Reviews" arguments="reviews" />
-    <action activationType="protocol" content="Show map" arguments="bingmaps:?q=sushi" />
-  </actions>
-</toast>
-```
-
-```CSharp
-ToastContent content = new ToastContent()
-{
-    Launch = "app-defined-string",
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Restaurant suggestion..."
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?"
-                }
-            }
-        }
-    },
- 
-    Actions = new ToastActionsCustom()
-    {
-        Buttons =
-        {
-            new ToastButton("Reviews", "reviews"),
- 
-            new ToastButton("Show map", "bingmaps:?q=sushi")
-            {
-                ActivationType = ToastActivationType.Protocol
-            }
-        }
-    }
-};
-```
-
-![уведомление с действиями, пример 2](images/adaptivetoasts-xmlsample03.jpg)
-
- 
 
 **Уведомление с текстовым полем для ввода и действиями, пример 1**
 
-В этом примере показано...
+В этом примере создается уведомление, которое принимает ввод текста, а также два ответных действия.
 
 ```XML
 <toast launch="developer-defined-string">
@@ -450,13 +402,13 @@ ToastContent content = new ToastContent()
 };
 ```
 
-![уведомление с текстовым полем для ввода и действиями](images/adaptivetoasts-xmlsample04.jpg)
+![уведомление с текстом и действиями ввода](images/adaptivetoasts-xmlsample04.jpg)
 
  
 
 **Уведомление с текстовым полем для ввода и действиями, пример 2**
 
-В этом примере показано...
+В этом примере создается уведомление, которое принимает ввод текста и одно действие.
 
 ```XML
 <toast launch="developer-defined-string">
@@ -527,13 +479,13 @@ ToastContent content = new ToastContent()
 };
 ```
 
-![уведомление с текстом и действиями для ввода](images/adaptivetoasts-xmlsample05.jpg)
+![уведомление с текстовым полем для ввода и действиями](images/adaptivetoasts-xmlsample05.jpg)
 
  
 
 **Уведомление с вводом выбора и действиями**
 
-В этом примере показано...
+В этом примере создается уведомление с раскрывающемся меню для выбора и двумя возможными действиями.
 
 ```XML
 <toast launch="developer-defined-string">
@@ -615,9 +567,9 @@ ToastContent content = new ToastContent()
 
  
 
-**Напоминание**
+**Уведомление с напоминанием**
 
-В этом примере показано...
+Используя меню выбора и два действия, как в предыдущем примере, можно создать уведомление с напоминанием:
 
 ```XML
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
@@ -710,7 +662,7 @@ ToastContent content = new ToastContent()
 };
 ```
 
-![напоминание](images/adaptivetoasts-xmlsample07.jpg)
+![уведомление с напоминанием](images/adaptivetoasts-xmlsample07.jpg)
 
  
 
@@ -1162,6 +1114,6 @@ ToastContent content = new ToastContent()
 * [Библиотека уведомлений на GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

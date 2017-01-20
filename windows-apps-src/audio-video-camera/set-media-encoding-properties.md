@@ -2,16 +2,16 @@
 author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
 description: "В этой статье рассказывается, как с помощью интерфейса IMediaEncodingProperties задать разрешение и частоту кадров потока предварительного просмотра камеры, а также снятых фотографий и видео."
-title: "Настройка свойств кодирования мультимедиа для MediaCapture"
+title: "Установка формата, разрешения и частоты кадров для MediaCapture"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
+ms.sourcegitcommit: 6c3ed4ab773fe821acaee7d5b8c70fdc8770de81
+ms.openlocfilehash: 828cbddd9568bd4e9d0a571880a867afff293e34
 
 ---
 
-# Настройка свойств кодирования мультимедиа для MediaCapture
+# <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>Установка формата, разрешения и частоты кадров для MediaCapture
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье рассказывается, как с помощью интерфейса [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) задать разрешение и частоту кадров потока предварительного просмотра камеры, а также снятых фотографий и видео. Кроме того, здесь рассказывается, как обеспечить соответствие пропорций потока предварительного просмотра пропорциям записи мультимедиа.
@@ -23,7 +23,7 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 > [!NOTE] 
 > В этой статье используются понятия и код из статьи [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), в которой описаны этапы реализации основных принципов фото- и видеозахвата. Мы рекомендуем ознакомиться с базовым шаблоном захвата мультимедиа в этой статье, прежде чем перейти к более сложным сценариям захвата. Код в этой статье подразумевает, что ваше приложение уже содержит экземпляр MediaCapture, инициализированный надлежащим образом.
 
-## Вспомогательный класс свойств кодирования мультимедиа
+## <a name="a-media-encoding-properties-helper-class"></a>Вспомогательный класс свойств кодирования мультимедиа
 
 Если создать простой вспомогательный класс, включающий функции интерфейса [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011), будет удобнее выбирать набор свойств кодирования, которые отвечают конкретным критериям. Этот вспомогательный класс особенно полезен для следующего поведения свойств кодирования.
 
@@ -38,13 +38,13 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 
 [!code-cs[StreamPropertiesHelper](./code/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs#SnippetStreamPropertiesHelper)]
 
-## Определение независимости потоков предварительного просмотра и захвата
+## <a name="determine-if-the-preview-and-capture-streams-are-independent"></a>Определение независимости потоков предварительного просмотра и захвата
 
 На некоторых устройствах один и тот же контакт оборудования используется как для потока предварительного просмотра, так и для потока захвата. На таких устройствах при задании свойств кодирования для одного потока свойства задаются и для другого потока. На устройствах, на которых для захвата и предварительного просмотра используются разные контакты, свойства можно задать для каждого потока независимо. Используйте следующий код, чтобы определить, независимы ли потоки предварительного просмотра и захвата. Необходимо настроить пользовательский интерфейс, чтобы он включал и отключал параметр потоков независимо на основе результата этой проверки.
 
 [!code-cs[CheckIfStreamsAreIdentical](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCheckIfStreamsAreIdentical)]
 
-## Получение списка доступных свойств потока
+## <a name="get-a-list-of-available-stream-properties"></a>Получение списка доступных свойств потока
 
 Чтобы получить список доступных свойств потока для устройства захвата, получите [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) для объекта [MediaCapture](capture-photos-and-video-with-mediacapture.md) своего приложения, а затем вызовите [**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) и передайте одно из значений [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640), **VideoPreview**, **VideoRecord** или **Photo**. В этом примере синтаксис Linq используется для создания списка объектов **StreamPropertiesHelper**, определенных ранее в этой статье, для каждого из значений [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011), которые возвращаются функцией **GetAvailableMediaStreamProperties**. В этом примере методы расширения Linq сначала используются для расстановки возвращаемых свойств сперва на основе разрешения, а потом уже на основе частоты кадров.
 
@@ -52,7 +52,7 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 
 [!code-cs[PopulateStreamPropertiesUI](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPopulateStreamPropertiesUI)]
 
-## Установка необходимых свойств потока
+## <a name="set-the-desired-stream-properties"></a>Установка необходимых свойств потока
 
 Чтобы контроллер видеоустройств использовал нужные свойства кодирования, вызовите [**SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895) и передайте значение **MediaStreamType**, определяющее, нужно ли задавать свойства фотографии, видео или предварительного просмотра. В этом примере задаются запрашиваемые свойства кодирования, когда пользователь выбирает элемент в одном из объектов **ComboBox**, которые заполняются вспомогательным методом **PopulateStreamPropertiesUI**.
 
@@ -62,7 +62,7 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 
 [!code-cs[VideoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
 
-## Сопоставление пропорций потоков предварительного просмотра и захвата
+## <a name="match-the-aspect-ratio-of-the-preview-and-capture-streams"></a>Сопоставление пропорций потоков предварительного просмотра и захвата
 
 Типичное приложение камеры предоставляет пользовательский интерфейс для выбора разрешения захвата видео или фото, но разрешение предварительного просмотра устанавливает программным способом. Существуют несколько стратегий выбора наилучшего разрешения потока предварительного просмотра для вашего приложения.
 
@@ -90,6 +90,6 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

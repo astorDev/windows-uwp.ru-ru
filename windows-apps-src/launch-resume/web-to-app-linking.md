@@ -3,9 +3,14 @@ author: TylerMSFT
 title: "Поддержка привязки приложений к Интернету с помощью обработчиков URI приложения"
 description: "Повышайте интерес пользователей к вашему приложению с помощью обработчиков URI приложения."
 keywords: "Глубокие связи Windows"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3e57ca2cf0e7c788f5a8be12ebaf3e6b05a4fe51
-ms.openlocfilehash: e5c815ef0c776954e5b0d7f1cb9bd5e32e10356c
+ms.sourcegitcommit: ffa6ad17ee865dda5349565094c38e09dc42e0e3
+ms.openlocfilehash: 524a0897b6b8a8d17bb7493dc4d9e4357d8c1456
 
 ---
 
@@ -65,7 +70,7 @@ Windows установит https-соединение с вашим сайтом
 
 | **Подстановочный символ** | **Описание**               |
 |--------------|-------------------------------|
-| *****       | Представляет любую подстроку      |
+| **\***       | Представляет любую подстроку      |
 | **?**        | Представляет единичный символ |
 
 Например, при использовании приведенного в примере выше кода `"excludePaths" : [ "/news/*", "/blog/*" ]` ваше приложение будет поддерживать все пути, начинающиеся с адреса вашего сайта (например, msn.com) **кроме** адресов в разделах `/news/` и `/blog/`. **msn.com/weather.html** будет поддерживаться, а ****msn.com/news/topnews.html**** — нет.
@@ -163,7 +168,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 Убедитесь, что ваше приложение закрыто. Нажмите **клавишу Windows + R**, чтобы открыть диалоговое окно **Выполнить**, и вставьте ссылку в этом окне. Вместо браузера должно запуститься ваше приложение.
 
-Кроме того, можно протестировать приложение, запустив его из другого приложения с помощью API [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx). Можно также использовать этот API для тестирования на телефонах.
+Кроме того, можно протестировать приложение, запустив его из другого приложения с помощью API [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx). Можно также использовать этот API для тестирования на телефонах.
 
 Если вы хотите отслеживать логику активации протокола, установите точку останова в обработчике событий **OnActivated**.
 
@@ -183,18 +188,18 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 - Все неопубликованные приложения с AppUriHandlers будут иметь проверенные ссылки для данного узла при установке. Для проверки функциональности не требуется передавать JSON-файл на сайт.
 
-- Эта функция работает во всех случаях, когда ваше приложение является приложением UWP и запускается с помощью [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) или является приложением для настольной версии Windows и запускается с помощью [ShellExecuteEx](https://msdn.microsoft.com/en-us/library/windows/desktop/bb762154(v=vs.85).aspx). Если URL-адрес совпадает с зарегистрированным обработчиком URI приложения, вместо браузера будет запущено приложение.
+- Эта функция работает во всех случаях, когда ваше приложение является приложением UWP и запускается с помощью [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) или является приложением для настольной версии Windows и запускается с помощью [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). Если URL-адрес совпадает с зарегистрированным обработчиком URI приложения, вместо браузера будет запущено приложение.
 
 ## <a name="see-also"></a>См. также
 
-[Регистрация windows.protocol](https://msdn.microsoft.com/en-us/library/windows/apps/br211458.aspx)
+[Регистрация windows.protocol](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
 
-[Активация обработки URI](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
+[Активация обработки URI](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 
 [Пример запуска по сопоставлению](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) демонстрирует использование API LaunchUriAsync().
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

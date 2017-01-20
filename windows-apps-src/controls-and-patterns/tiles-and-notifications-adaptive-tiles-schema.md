@@ -6,17 +6,17 @@ ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 70c06949ee9ac8f9a3f914fc4e020de0460124fa
 
 ---
-# Шаблоны адаптивных плиток - схема и руководство
+# <a name="adaptive-tile-templates-schema-and-guidance"></a>Шаблоны адаптивных плиток - схема и руководство
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Ниже приводится список элементов и атрибутов, используемых для создания этих плиток. Дополнительные сведения и примеры см. в разделе [Создание адаптивных плиток](tiles-and-notifications-create-adaptive-tiles.md).
 
-## элемент плитки
+## <a name="tile-element"></a>элемент плитки
 
 
 ``` xml
@@ -28,7 +28,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </tile>
 ```
 
-## визуальный элемент
+## <a name="visual-element"></a>визуальный элемент
 
 
 ``` xml
@@ -47,7 +47,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </visual>
 ```
 
-## элемент привязки
+## <a name="binding-element"></a>элемент привязки
 
 
 ``` xml
@@ -72,7 +72,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </binding>
 ```
 
-## элемент изображения
+## <a name="image-element"></a>элемент изображения
 
 
 ``` xml
@@ -86,7 +86,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## текстовый элемент
+## <a name="text-element"></a>текстовый элемент
 
 
 ``` xml
@@ -103,9 +103,9 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </text>
 ```
 
-Значения textStyle: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
+Значения textStyle: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumeral
 
-## элемент группы
+## <a name="group-element"></a>элемент группы
 
 
 ``` xml
@@ -117,7 +117,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </group>
 ```
 
-## элемент вложенной группы
+## <a name="subgroup-element"></a>элемент вложенной группы
 
 
 ``` xml
@@ -133,7 +133,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </subgroup>
 ```
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные статьи
 
 
 * [Создание адаптивных плиток](tiles-and-notifications-create-adaptive-tiles.md)
@@ -147,6 +147,6 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

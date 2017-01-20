@@ -4,55 +4,46 @@ ms.assetid: 48a1ef86-8514-4af8-9c93-81e869d36de7
 description: "Узнайте, как программным способом создавать **AdControl** на JavaScript."
 title: "Создание AdControl на Javascript"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 68bc124aea079bc60fa22e1e6a038caf95fe765c
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: d7ecb5205d9668f83d2619869baafd569b581078
 
 
 ---
 
-# Создание AdControl на Javascript
+# <a name="create-an-adcontrol-in-javascript"></a>Создание AdControl на Javascript
 
 
 
 
-В этом примере показано, как программным способом создавать [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) на JavaScript.
+В примерах в данной статье показано, как программным способом создать [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) на JavaScript. В этой статье предполагается, что вы уже добавили в свой проект ссылки, необходимые для использования **AdControl**. Дополнительные сведения, включая подробное пошаговое руководство по созданию и инициализации **AdControl** в разметке HTML вместо JavaScript, см. в разделе [AdControl в HTML 5 и JavaScript](adcontrol-in-html-5-and-javascript.md).
 
-## HTML div для AdControl
+## <a name="html-div-for-an-adcontrol"></a>Элемент div разметки HTML для AdControl
 
 **AdControl** требует наличия элемента **div** на html-странице, где будет показываться объявление. Ниже приводится код с примером такого элемента **div**.
 
-``` syntax
+> [!div class="tabbedCodeSnippets"]
+``` html
 <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
     data-win-control="MicrosoftNSJS.Advertising.AdControl">
 </div>
 ```
 
-## JavaScript для создания AdControl
+## <a name="javascript-for-creating-an-adcontrol"></a>JavaScript для создания AdControl
 
 В следующем примере предполагается, что вы используете существующий элемент **div** в html-коде с идентификатором **myAd**.
 
 Создайте экземпляр **AdControl** в функции **app.onactivated**.
 
-``` syntax
-// TODO: This application has been newly launched. Initialize
-// your application here.
-var adDiv = document.getElementById("myAd");
-var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv,
-    {
-        applicationId: "3f83fe91-d6be-434d-a0ae-7351c5a997f1",
-        adUnitId: "10865270"
-    });
-myAdControl.isAutoRefreshEnabled = false;
-myAdControl.onErrorOccurred = myAdError;
-myAdControl.onAdRefreshed = myAdRefreshed;
-myAdControl.onEngagedChanged = myAdEngagedChanged;
-```
+> [!div class="tabbedCodeSnippets"]
+[!code-javascript[AdControl](./code/AdvertisingSamples/AdControlSamples/js/main.js#DeclareAdControl)]
 
-Эти значения являются примерами. В своем коде вы зададите значения для этих функций и свойств, подходящие для вашего приложения.
+В этом примере предполагается, что вы уже объявили методы обработчика событий с названиями **myAdError**, **myAdRefreshed** и **myAdEngagedChanged**.
+
+>**Примечание.**&nbsp;&nbsp;Значения *applicationId* и *adUnitId*, приведенные в данном примере, являются [значениями тестового режима](test-mode-values.md). Перед отправкой приложения необходимо [заменить эти тестовые значения действительными значениями](set-up-ad-units-in-your-app.md) из Центра разработки для Windows.
 
 Если вы используете этот код и не видите рекламу, попробуйте задать атрибут **position:relative** в элементе **div**, содержащем **AdControl**. Это переопределяет параметр по умолчанию для **IFrame**. Объявления будут отображаться правильно, если их отображение не отключено значением этого атрибута. Обратите внимание, что новые рекламные блоки, могут быть недоступны до 30 минут.
 
-## Ссылки по теме
+## <a name="related-topics"></a>Связанные разделы
 
 * [Примеры рекламы на GitHub](http://aka.ms/githubads)
 
@@ -62,6 +53,6 @@ myAdControl.onEngagedChanged = myAdEngagedChanged;
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -3,12 +3,12 @@ author: TylerMSFT
 title: "Создание и регистрация фоновой задачи, выполняемой внутри процесса"
 description: "Создание и регистрация внутренней задачи процесса, которая выполняется в том же процессе, что и приложение переднего плана."
 translationtype: Human Translation
-ms.sourcegitcommit: d64527e36d995187936d4a0dbb94d973976d40ea
-ms.openlocfilehash: f4bf682c27f856402ae8d1b5fd85bc998921efac
+ms.sourcegitcommit: b9acb35645ee4f069f2ddb999865c3fd087fb792
+ms.openlocfilehash: 2ab02b8edda9aeadc9962464a63e08f1fb407777
 
 ---
 
-# Создание и регистрация фоновой задачи, выполняемой внутри процесса
+# <a name="create-and-register-an-in-process-background-task"></a>Создание и регистрация фоновой задачи, выполняемой внутри процесса
 
 **Важные API**
 
@@ -22,13 +22,13 @@ ms.openlocfilehash: f4bf682c27f856402ae8d1b5fd85bc998921efac
 
 Имейте в виду, что фоновые задачи можно остановить (даже внутри фонового процесса приложения), если время их выполнения выходит за заданные пределы. Для некоторых целей обеспечение устойчивости при выделении работы в фоновую задачу, выполняющуюся в отдельном процессе, по-прежнему является целесообразным. Выделение фоновой работы в задачу, не связанную с приложением переднего плана, может быть лучшим решением, когда для работы не требуется обмен данными с приложением переднего плана.
 
-## Основы
+## <a name="fundamentals"></a>Основы
 
 Модель с выполнением внутри процесса оптимизирует жизненный цикл приложения с помощью улучшенных уведомлений, когда приложение работает на переднем плане или в фоновом режиме. Для этих переходов между режимами работы приложения доступно два новых события из объекта Application: [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) и [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Эти события встраиваются в жизненный цикл приложения на основании состояния видимости вашего приложения. Дополнительные сведения об этих событиях и об их влиянии на жизненный цикл приложения см. в разделе [Жизненный цикл приложения](app-lifecycle.md).
 
 На высоком уровне вы будете управлять событием **EnteredBackground** для запуска вашего кода, который будет выполняться одновременно с выполнением вашего приложения в фоновом режиме, и событием **LeavingBackground**, чтобы знать, когда приложение перемещается на передний план.
 
-## Регистрация триггера фоновой задачи
+## <a name="register-your-background-task-trigger"></a>Регистрация триггера фоновой задачи
 
 Регистрация фонового действия внутри процесса выполняется практически так же, как и регистрация фонового действия вне процесса. Регистрация всех фоновых триггеров выполняется с помощью класса [BackgroundTaskBuilder](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396). Построитель упрощает процесс регистрации фоновой задачи путем установки всех необходимых значений в одном месте.
 
@@ -44,51 +44,51 @@ ms.openlocfilehash: f4bf682c27f856402ae8d1b5fd85bc998921efac
 
 > [!NOTE]
 > Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
-> Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем— метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
+> Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем — метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
 
 Для фоновых действий внутри процесса установка значения свойства `TaskEntryPoint.` не выполняется. За счет того, что значение для него не задается, появляется возможность использовать точку входа по умолчанию — новый защищенный метод в объекте Application под названием [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).
 
 После регистрации триггера он будет запущен с учетом типа триггера, указанного в методе [SetTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.settrigger.aspx). В примере кода, приведенном выше, используется триггер [TimeTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.timetrigger.aspx), который будет срабатывать через 15 минут после его регистрации.
 
-## Добавление условия, которое будет контролировать время запуска задачи (необязательно)
+## <a name="add-a-condition-to-control-when-your-task-will-run-optional"></a>Добавление условия, которое будет контролировать время запуска задачи (необязательно)
 
 Вы можете добавить условие, чтобы контролировать, в какой момент времени после возникновения события триггера запустится ваша задача. Например, если вы не хотите, чтобы задача запускалась в отсутствие пользователя, используйте условие **UserPresent**. Список возможных условий см. в статье [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-    The following sample code assigns a condition requiring the user to be present:
+Следующий пример кода назначает условие, при котором необходимо присутствие пользователя:
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    >     builder.AddCondition(new SystemCondition(SystemConditionType.UserPresent));
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> builder.AddCondition(new SystemCondition(SystemConditionType.UserPresent));
+> ```
 
-## Размещение кода фонового действия в методе OnBackgroundActivated()
+## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>Размещение кода фонового действия в методе OnBackgroundActivated()
 
 Поместите код фонового действия в метод [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)**, чтобы оно реагировало на фоновый триггер при его срабатывании. С методом **OnBackgroundActivated** можно работать так же, как и с методом [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). В этом методе есть параметр [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx), который содержит те же компоненты, что и метод Run.
 
-## Обработка хода выполнения и завершения фоновых задач
+## <a name="handle-background-task-progress-and-completion"></a>Обработка хода выполнения и завершения фоновых задач
 
 Ход выполнения и завершения задачи можно отслеживать так же, как и аналогичные состояния фоновых задач с несколькими процессами (см. раздел [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)), однако, скорее всего, вы обнаружите, что эти состояния выполнения и завершения проще отслеживать, используя соответствующие переменные из вашего приложения. Это преимущество обеспечивается за счет выполнения кода фонового действия в рамках того же процесса, в котором работает приложение.
 
-## Обработка отмены фоновых задач
+## <a name="handle-background-task-cancellation"></a>Обработка отмены фоновых задач
 
 Отмена фоновых задач внутри процесса выполняется так же, как и отмена фоновых задач, выполняемых вне процесса (см. раздел [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)). Имейте в виду, что обработчик события **BackgroundActivated** должен выйти из процесса, перед тем как произойдет отмена. В противном случае будет завершен весь процесс. В случае непредвиденного закрытия фонового приложения при отмене фоновой задачи убедитесь, что обработчик вышел из процесса до отмены задачи.
 
-## Манифест
+## <a name="the-manifest"></a>Манифест
 
 В отличие от фоновых задач, выполняемых вне процесса, добавлять сведения о фоновой задаче в манифест пакета, чтобы обеспечить выполнение фоновых задач внутри процесса, не требуется.
 
-## Краткая сводка и дальнейшие действия
+## <a name="summary-and-next-steps"></a>Краткая сводка и дальнейшие действия
 
 Теперь вы знакомы с основами написания фоновой задачи, выполняемой внутри процесса.
 
 В статьях ниже можно найти справочник по API, концептуальное руководство по фоновым задачам и подробные инструкции по созданию приложений, использующих фоновые задачи.
 
-## Статьи по теме
+## <a name="related-topics"></a>Связанные разделы
 
 **Учебные статьи с подробными сведениями о фоновых задачах**
 
 * [Преобразование фоновой задачи, выполняемой вне процесса, в фоновую задачу внутри процесса](convert-out-of-process-background-task.md)
-* [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-an-outofproc-background-task.md)
+* [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-a-background-task.md)
 * [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
 * [Регистрация фоновой задачи](register-a-background-task.md)
@@ -110,6 +110,6 @@ ms.openlocfilehash: f4bf682c27f856402ae8d1b5fd85bc998921efac
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Jan17_HO1-->
 
 

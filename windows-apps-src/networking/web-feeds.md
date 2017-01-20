@@ -4,14 +4,14 @@ description: "Получайте или создавайте самое свеж
 title: "Каналы RSS и Atom"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: b20eb8a241d3cb7800904c26331ac39da93f4d44
+ms.sourcegitcommit: a30b58737befaae10a1dbb30416f338d8eb1cbb1
+ms.openlocfilehash: 623c11eba097a072b456738b84750eb4b2d888bb
 
 ---
 
-# Каналы RSS и Atom
+# <a name="rssatom-feeds"></a>Каналы RSS и Atom
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -21,19 +21,19 @@ ms.openlocfilehash: b20eb8a241d3cb7800904c26331ac39da93f4d44
 
 Получайте или создавайте самое свежее и популярное веб-содержимое с помощью сводных веб-каналов, созданных по стандартам RSS и Atom с помощью компонентов в пространстве имен [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632).
 
-## Что такое веб-канал?
+## <a name="what-is-a-feed"></a>Что такое веб-канал?
 
 Веб-канал – это документ, содержащий любое количество отдельных записей, состоящих из текста, ссылок и изображений. Обновления вносятся в веб-канал в виде новых записей, используемых для показа самого свежего содержимого в Интернете. Потребители содержимого могут использовать приложение для чтения веб-каналов, чтобы собирать и отслеживать каналы любого количества отдельных авторов содержимого, быстро и удобно получая доступ к самой свежей информации.
 
-## Какие версии форматов веб-каналов поддерживаются?
+## <a name="which-feed-format-standards-are-supported"></a>Какие версии форматов веб-каналов поддерживаются?
 
 Универсальная платформа Windows (UWP) поддерживает извлечение веб-каналов формата RSS версий 0.91–2.0 и формата Atom версий 0.3–1.0. Классы в пространстве имен [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) могут определять веб-каналы и их элементы, способные представлять элементы RSS и Atom.
 
-Кроме того, в форматах Atom1.0 и RSS2.0 документы веб-каналов могут содержать элементы или атрибуты, не определенные в официальных спецификациях. Со временем эти особые элементы стали способом определения информации домена, потребляемой другими форматами данных веб-служб, например GData и OData. Чтобы обеспечить поддержку нового компонента, класс [**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) представляет универсальные XML-элементы. Использование **SyndicationNode** с классами в пространстве имен [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) позволяет приложениям получать доступ к атрибутам, расширениям и любому содержимому, которое они могут включать.
+Кроме того, в форматах Atom 1.0 и RSS 2.0 документы веб-каналов могут содержать элементы или атрибуты, не определенные в официальных спецификациях. Со временем эти особые элементы стали способом определения информации домена, потребляемой другими форматами данных веб-служб, например GData и OData. Чтобы обеспечить поддержку нового компонента, класс [**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) представляет универсальные XML-элементы. Использование **SyndicationNode** с классами в пространстве имен [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) позволяет приложениям получать доступ к атрибутам, расширениям и любому содержимому, которое они могут включать.
 
 Обратите внимание, что для публикации сводного содержимого реализация протокола Atom Publication ([**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)) платформы UWP поддерживает только операции с содержимым веб-каналов согласно стандартам Atom и Atom Publication.
 
-## Использование сводного содержимого вместе с сетевой изоляцией
+## <a name="using-syndicated-content-with-network-isolation"></a>Использование сводного содержимого вместе с сетевой изоляцией
 
 Функция сетевой изоляции в UWP позволяет разработчику управлять доступом приложения UWP к сети и ограничивать его. Доступ к сети может требоваться не всем приложениям. Но для приложений, которым он необходим, платформа UWP предоставляет разные уровни доступа к сети, которые обеспечиваются выбором подходящих возможностей.
 
@@ -45,7 +45,7 @@ ms.openlocfilehash: b20eb8a241d3cb7800904c26331ac39da93f4d44
 
 Дополнительные сведения о сетевой изоляции и сетевых возможностях см. в разделе "Возможности" темы [Основы работы с сетями](networking-basics.md).
 
-## Доступ к веб-каналу
+## <a name="how-to-access-a-web-feed"></a>Доступ к веб-каналу
 
 В этом разделе объясняется, как извлечь и отобразить веб-канал с помощью классов в пространстве имен [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) в приложении UWP, написанном на языке C# или Javascript.
 
@@ -63,13 +63,10 @@ ms.openlocfilehash: b20eb8a241d3cb7800904c26331ac39da93f4d44
 ```csharp
 Windows.Web.Syndication.SyndicationClient client = new Windows.Web.Syndication.SyndicationClient();
 Windows.Web.Syndication.SyndicationFeed feed;
-
 // The URI is validated by catching exceptions thrown by the Uri constructor.
 Uri uri = null;
-
 // Use your own uriString for the feed you are connecting to.
 string uriString = "";
-
 try
 {
     uri = new Uri(uriString);
@@ -82,9 +79,7 @@ catch (Exception ex)
 ```javascript
 var currentFeed = null;
 var currentItemIndex = 0;
-        
 var client = new Windows.Web.Syndication.SyndicationClient();
-
 // The URI is validated by catching exceptions thrown by the Uri constructor.
 var uri = null;
 try {
@@ -111,12 +106,9 @@ try
     // others will reject the request or return a different response if this header is missing.
     // Use the setRequestHeader() method to add custom headers.
     client.SetRequestHeader("User-Agent", "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)");
-
     feed = await client.RetrieveFeedAsync(uri);
-
     // Retrieve the title of the feed and store it in a string.
     string title = feed.Title.Text;
-
     // Iterate through each feed item.
     foreach (Windows.Web.Syndication.SyndicationItem item in feed.Items)
     {
@@ -131,7 +123,6 @@ catch (Exception ex)
 ```javascript
 function onError(err) {
     WinJS.log && WinJS.log(err, "sample", "error");
-
     // Match error number with a ErrorStatus value.
     // Use Windows.Web.WebErrorStatus.getStatus() to retrieve HTTP error status codes.
     var errorStatus = Windows.Web.Syndication.SyndicationError.getStatus(err.number);
@@ -139,31 +130,24 @@ function onError(err) {
         displayLog("An invalid XML exception was thrown. Please make sure to use a URI that points to a RSS or Atom feed.");
     }
 }
-
 // Retrieve and display feed at given feed address.
 function retreiveFeed(uri) {
-
     // Although most HTTP servers do not require User-Agent header, 
     // others will reject the request or return a different response if this header is missing.
     // Use the setRequestHeader() method to add custom headers.
     client.setRequestHeader("User-Agent", "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)");
-
     client.retrieveFeedAsync(uri).done(function (feed) {
         currentFeed = feed;
-
         WinJS.log && WinJS.log("Feed download complete.", "sample", "status");
-
         var title = "(no title)";
         if (currentFeed.title) {
             title = currentFeed.title.text;
         }
         document.getElementById("CurrentFeedTitle").innerText = title;
-
         currentItemIndex = 0;
         if (currentFeed.items.size > 0) {
             displayCurrentItem();
         }
-
         // List the items.
         displayLog("Items: " + currentFeed.items.size);
      }, onError);
@@ -180,32 +164,26 @@ private void displayCurrentItem(Windows.Web.Syndication.SyndicationItem item)
     string itemLink = item.Links == null ? "No link" : item.Links.FirstOrDefault().ToString();
     string itemContent = item.Content == null ? "No content" : item.Content.Text;
     //displayCurrentItem is continued below.
-
 ```
 ```javascript
 function displayCurrentItem() {
     var item = currentFeed.items[currentItemIndex];
-
     // Display item number.
     document.getElementById("Index").innerText = (currentItemIndex + 1) + " of " + currentFeed.items.size;
-
     // Display title.
     var title = "(no title)";
     if (item.title) {
         title = item.title.text;
     }
     document.getElementById("ItemTitle").innerText = title;
-
     // Display the main link.
     var link = "";
     if (item.links.size > 0) {
         link = item.links[0].uri.absoluteUri;
     }
-
     var link = document.getElementById("Link");
     link.innerText = link;
     link.href = link;
-
     // Display the body as HTML.
     var content = "(no content)";
     if (item.content) {
@@ -224,16 +202,13 @@ function displayCurrentItem() {
 ```csharp
     //displayCurrentItem continued.
     string extensions = "";
-
     foreach (Windows.Web.Syndication.SyndicationNode node in item.ElementExtensions)
     {
         string nodeName = node.NodeName;
         string nodeNamespace = node.NodeNamespace;
         string nodeValue = node.NodeValue;
-
         extensions += nodeName + "\n" + nodeNamespace + "\n" + nodeValue + "\n";
     }
-
     this.listView.Items.Add(itemTitle + "\n" + itemLink + "\n" + itemContent + "\n" + extensions);
 }
 ```
@@ -248,19 +223,16 @@ function displayCurrentItem() {
         };
         bindableNodes.push(bindableNode);
     }
-
     var dataList = new WinJS.Binding.List(bindableNodes);
     var listView = document.getElementById("extensionsListView").winControl;
     WinJS.UI.setOptions(listView, {
         itemDataSource: dataList.dataSource
-
     });
 }
 ```
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

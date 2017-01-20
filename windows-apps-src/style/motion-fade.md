@@ -6,35 +6,39 @@ ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 9999c353bfc7a72f04ba8ae0052212f9f2166703
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: cbe1a4ca77f0d6e15b3d12b2b3a0f2f8363530ae
 
 ---
 
-# Анимации исчезания
+# <a name="fade-animations"></a>Анимации исчезания
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Анимация угасания используется для ввода элементов в поле зрения и вывода из него. Двумя распространенными анимациями исчезания являются плавное увеличение и плавное уменьшение.
 
-**Важные API**
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**Класс FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298)</li>
+<li>[**Класс FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210302)</li>
+</ul>
+</div>
 
--   [**Класс FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298)
--   [**Класс FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
-
-## Возможности и ограничения
+## <a name="dos-and-donts"></a>Возможности и ограничения
 
 
 -   При переходе приложения между несвязанными элементами или элементами, содержащими большой объем текста, используйте исчезание с последующим появлением. Это позволит исходящему объекту полностью исчезнуть, прежде чем входящий объект станет видимым.
 -   Отобразите входящий элемент или элементы поверх исходящих элементов, если размер элементов остается постоянным и требуется сделать так, чтобы пользователь думал, что смотрит на один и тот же элемент. После завершения прорисовки входящего элемента исходящий элемент можно удалить. Этот вариант работает, только если исходящий элемент полностью закрывается входящим элементом.
 -   Избегайте анимации исчезания для добавления или удаления элементов в списке. Вместо этого используйте анимации списка, созданные для этой цели.
 -   Избегайте анимации исчезания для изменения всего содержимого страницы. Вместо этого используйте анимации перехода страницы, созданные для этой цели.
--   Исчезание — это тонкий способ удалить элемент.
-## Статьи по теме
+-   Исчезание — это тонкий способ удалить элемент.
+## <a name="related-articles"></a>Связанные разделы
 
-**Разработчикам (XAML)**
 * [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Анимация появления или исчезания](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [Краткое руководство: анимация пользовательского интерфейса](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Краткое руководство: анимация пользовательского интерфейса с помощью анимаций библиотеки](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Класс FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298)
 * [**Класс FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
@@ -48,6 +52,6 @@ ms.openlocfilehash: 9999c353bfc7a72f04ba8ae0052212f9f2166703
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

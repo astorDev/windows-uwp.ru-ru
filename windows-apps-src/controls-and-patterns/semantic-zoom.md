@@ -6,11 +6,11 @@ ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 125cb6e45defe3213af3f5cd20f524a5311241af
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: b3ca48b678fb4e1ddb4b26ad7add723474527591
 
 ---
-# Контекстное масштабирование
+# <a name="semantic-zoom"></a>Контекстное масштабирование
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -24,18 +24,11 @@ ms.openlocfilehash: 125cb6e45defe3213af3f5cd20f524a5311241af
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/hh702601"><strong>Класс SemanticZoom</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx"><strong>Класс ListView</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx"><strong>Класс GridView</strong></a></li>
+<li>[**Класс SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601)</li>
+<li>[**Класс ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)</li>
+<li>[**Класс GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)</li>
 </ul>
-
 </div>
-</div>
-
-
-
-
-
 
 **Возможности**:
 
@@ -43,13 +36,13 @@ ms.openlocfilehash: 125cb6e45defe3213af3f5cd20f524a5311241af
 -   Касание заголовка группы переключает представления. Как способ переключения между представлениями можно включить сжатие.
 -   Активные заголовки переключаются между представлениями.
 
-## Выбор правильного элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте элемент управления **SemanticZoom**, если необходимо отображать набор сгруппированных данных, который настолько большой, что его не возможно полностью показать на одной или двух страницах.
 
 Не путайте контекстное масштабирование с оптическим масштабированием. Хотя обе технологии используют одни и те же механизмы взаимодействия и базовое поведение (отображение более или менее детализированного представления с учетом коэффициента масштабирования), оптическим масштабированием называется настройка увеличения какой-либо области содержимого или объекта, например фотографии.  Подробнее об элементах управления для визуального масштабирования см. в разделе об элементе управления [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx).
 
-## Примеры
+## <a name="examples"></a>Примеры
 
 **Приложение "Фотографии"**
 
@@ -63,7 +56,7 @@ ms.openlocfilehash: 125cb6e45defe3213af3f5cd20f524a5311241af
 
 ![Пример контекстного масштабирования, используемого в списке контактов](images/semanticzoom-win10.png)
 
-## Создание контекстного масштабирования
+## <a name="create-a-semantic-zoom"></a>Создание контекстного масштабирования
 
 Элемент управления **SemanticZoom** не имеет собственного визуального представления. Это размещающий элемент управления, который управляет переходами между двумя другими элементами управления, позволяющими просматривать содержимое. Как правило, это элементы **ListView** или **GridView**.  Для элементов управления просмотром необходимо задать свойства [**ZoomedInView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedinview.aspx) и [**ZoomedOutView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedoutview.aspx) объекта SemanticZoom.
 
@@ -91,7 +84,7 @@ ms.openlocfilehash: 125cb6e45defe3213af3f5cd20f524a5311241af
 </SemanticZoom>
  ```
  
-Приведенные здесь примеры взяты со страницы SemanticZoom [Пример базовых характеристик пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992). Чтобы просмотреть код полностью, включая источник данных, нужно загрузить этот пример. Это контекстное масштабирование использует класс GridView для представления увеличенного представления, а класс ListView— для уменьшенного представления.
+Приведенные здесь примеры взяты со страницы SemanticZoom [Пример базовых характеристик пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992). Чтобы просмотреть код полностью, включая источник данных, нужно загрузить этот пример. Это контекстное масштабирование использует класс GridView для представления увеличенного представления, а класс ListView — для уменьшенного представления.
   
 **Определение увеличенного представления**
 
@@ -182,7 +175,7 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 }
 ```
 
-## Рекомендации
+## <a name="recommendations"></a>Рекомендации
 
 -   При использовании контекстного масштабирования в приложении убедитесь, что макет элемента и направление сдвига не зависят от уровня масштабирования. Макеты и сдвиг в обоих режимах масштабирования должны быть последовательными и предсказуемыми.
 -   Контекстное масштабирование позволяет пользователю быстро переходить к необходимому содержимому, поэтому ограничьте число страниц или экранов в режиме масштабирования до трех. Необходимость выполнения большого количества сдвигов снижает практическую ценность контекстного масштабирования.
@@ -191,17 +184,18 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 -   Используйте групповые названия для элементов, объединенных в коллекцию.
 -   Применяйте упорядочение для коллекции несгруппированных, но упорядоченных элементов (например, хронологический порядок для дат и алфавитный порядок для списка имен).
 
-## Связанные статьи
+
+## <a name="get-the-sample-code"></a>Получить пример кода
+
+- [Основы создания пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992)
+
+
+## <a name="related-articles"></a>Связанные разделы
 
 - [Основы проектирования навигации](../layout/navigation-basics.md)
 - [Представления списка и сетки](listview-and-gridview.md)
 - [Шаблоны элементов представления списка](listview-item-templates.md)
 
-**Примеры**
-
-- [Пример базовых характеристик пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992)
-
- 
 
 
 
@@ -209,6 +203,6 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

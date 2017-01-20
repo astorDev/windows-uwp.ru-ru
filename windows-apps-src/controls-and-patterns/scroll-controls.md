@@ -6,11 +6,11 @@ ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scroll bars
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 8ead56e84e21aaf5005530ed0509efa9440bce59
 
 ---
-# Полосы прокрутки
+# <a name="scroll-bars"></a>Полосы прокрутки
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -20,31 +20,28 @@ ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
 
 **Примечание**. В Windows различают два режима отображения сдвига в зависимости от используемого пользователем режима ввода: индикаторы сдвиг при использовании сенсорного ввода или геймпада; и интерактивные полосы прокрутки для других устройств ввода, включая мышь, клавиатуру и ручку.
 
-![Пример внешнего вида стандартных элементов управления “Полоса прокрутки” и “Индикатор сдвига”](images/SCROLLBAR.png)
+![Пример внешнего вида стандартных элементов управления "Полоса прокрутки" и "Индикатор сдвига"](images/SCROLLBAR.png)
 
+<div class="microsoft-internal-note">
+Полный список красных линий см. в [Центре ресурсов разработки](http://designdepot/DesignDepot.FrontEnd/#/ML/Dashboard/1805)
+</div>
 
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209527"><strong>Класс ScrollViewer</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx"><strong>Класс ScrollBar</strong></a></li>
+<li>[**Класс ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)</li>
+<li>[**Класс ScrollBar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## Примеры
+## <a name="examples"></a>Примеры
 
 Объект [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) позволяет отображать содержимое на пространстве меньше его фактического размера. Если содержимое видно не полностью, средство прокрутки отображает полосы прокрутки, которые пользователь может использовать для перемещения видимой области содержимого. Область, которая включает все содержимое средства прокрутки, называется *экстент*. Видимая область содержимого называется *окно просмотра*.
 
 ![Снимок экрана, иллюстрирующий стандартный элемент управления “Полоса прокрутки”](images/ScrollBar_Standard.jpg)
 
-## Создание средства прокрутки
+## <a name="create-a-scroll-viewer"></a>Создание средства прокрутки
 Для добавления на страницу вертикальной прокрутки создайте для содержимого страницы оболочку в средстве просмотра прокрутки.
 
 ```xaml
@@ -72,7 +69,7 @@ ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
 </ScrollViewer>
 ```
 
-## ScrollViewer в шаблоне элемента управления
+## <a name="scrollviewer-in-a-control-template"></a>ScrollViewer в шаблоне элемента управления
 
 Обычно элемент управления ScrollViewer является составной частью других элементов управления. Объект ScrollViewer с классом поддержки [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) будет отображать окно просмотра вместе с полосами прокрутки только тогда, когда пространство макета основного элемента управления имеет меньший размер, чем размер развернутого содержимого. Такая ситуация часто возникает со списками, поэтому шаблоны [**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) всегда содержат ScrollViewer. Шаблоны [**TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) и [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) также включают ScrollViewer.
 
@@ -108,9 +105,9 @@ ScrollViewer определяет следующие подключенные с
 В случаях, когда ScrollViewer подразумевается в вашем XAML, как показано в примере кода, вам не нужно использовать синтаксис подключенных свойств. Просто используйте синтаксис атрибута, например `<ScrollViewer VerticalScrollBarVisibility="Visible"/>`.
 
 
-## Рекомендации
+## <a name="dos-and-donts"></a>Возможности и ограничения
 
--   По возможности используйте вертикальную, но не горизонтальную прокрутку.
+-   По возможности используйте вертикальную, а не горизонтальную прокрутку.
 -   Применяйте сдвиг вдоль одной оси для областей содержимого, выходящих за одну из границ окна просмотра (вертикальную или горизонтальную). Применяйте сдвиг по двум осям для областей содержимого, которые выходят за обе границы окна просмотра (вертикальную и горизонтальную).
 -   Используйте встроенную функцию прокрутки в представлении списка, представлении сетки, поле со списком, списке, поле текстового ввода и элементах управления "Главный раздел". Если элементов слишком много и невозможно отобразить их сразу, с помощью этих элементов управления пользователь может прокручивать список элементов по горизонтали или по вертикали.
 -   Если вы хотите, чтобы пользователь мог применять сдвиг в обоих направлениях на довольно большой области и, возможно, также масштабирование, например если вы даете пользователю возможность сдвигать и масштабировать полноразмерное изображение (а не изображение по размеру экрана), то поместите это изображение в средство прокрутки.
@@ -118,13 +115,13 @@ ScrollViewer определяет следующие подключенные с
 -   Средство прокрутки должно содержать только один объект. Имейте в виду, что один объект может являться панелью макета, в свою очередь содержащей любое количество собственных объектов.
 -   Не помещайте элемент управления [Сведение](tabs-pivot.md) внутрь средства просмотра прокрутки, чтобы избежать конфликтов с логикой прокрутки этого элемента управления.
 
-## Связанные статьи
+## <a name="related-topics"></a>Связанные статьи
 
 **Для разработчиков (XAML)**
 * [**Класс ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

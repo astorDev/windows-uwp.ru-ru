@@ -4,381 +4,93 @@ ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: "Используйте примеры кода на языке Python, приведенные в этом разделе, чтобы более подробно ознакомиться с работой API отправки Магазина Windows."
 title: "Примеры кода Python для API отправки Магазина Windows"
 translationtype: Human Translation
-ms.sourcegitcommit: bd8c8cbf6ed10a583d2008e8b01a499b4d400c11
-ms.openlocfilehash: 52fd41ca41628d41140c8c24047e2a50ea72bf40
+ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
+ms.openlocfilehash: 1f8d415744d53120191f02a17aed4b7b04fa2f57
 
 ---
 
-# Примеры кода Python для API отправки Магазина Windows
+# <a name="python-code-examples-for-the-windows-store-submission-api"></a>Примеры кода Python для API отправки Магазина Windows
 
 В этой статье представлены примеры кода Python для использования *API отправки Магазина Windows*. Дополнительные сведения об этом API-интерфейсе см. в разделе [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md).
 
 В этих примерах кода демонстрируются следующие задачи:
 
-* [Получение маркера доступа Azure AD](python-code-examples-for-the-windows-store-submission-api.md#token).
-* [Создание надстройки](python-code-examples-for-the-windows-store-submission-api.md#create-add-on).
-* [Создание тестового пакета](python-code-examples-for-the-windows-store-submission-api.md#create-package-flight).
-* [Создание и подтверждение отправки приложения](python-code-examples-for-the-windows-store-submission-api.md#create-app-submission).
-* [Создание и подтверждение отправки надстройки](python-code-examples-for-the-windows-store-submission-api.md#create-add-on-submission).
-* [Создание и подтверждение отправки тестового пакета](python-code-examples-for-the-windows-store-submission-api.md#create-flight-submission).
+* [Получение токена доступа Azure AD](#token)
+* [Создание надстройки](#create-add-on)
+* [Создание тестового пакета](#create-package-flight)
+* [Создание отправки приложения](#create-app-submission)
+* [Создание отправки надстройки](#create-add-on-submission)
+* [Создание отправки тестового пакета](#create-flight-submission)
 
 <span id="token" />
-## Получение токена доступа Azure AD
+## <a name="obtain-an-azure-ad-access-token"></a>Получение токена доступа Azure AD
 
-В следующем примере показано, как [получить маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token).
+В следующем примере показано, как [получить маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который можно использовать для вызова методов в API отправки Магазина Windows. После получения маркера доступа у вас будет 60 минут, чтобы использовать его в вызовах к API отправки Магазина Windows до окончания срока действия маркера. После истечения срока действия маркера можно сформировать новый маркер.
 
-```python
-import http.client, json
-
-tenantId = ""  # Your tenant ID
-clientId = ""  # Your client ID
-clientSecret = ""  # Your client secret
-
-tokenEndpoint = "https://login.microsoftonline.com/{0}/oauth2/token"
-tokenResource = "https://manage.devcenter.microsoft.com"
-
-tokenRequestBody = "grant_type=client_credentials&client_id={0}&client_secret={1}&resource={2}".format(clientId, clientSecret, tokenResource)
-headers = {"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"}
-tokenConnection = http.client.HTTPSConnection("login.microsoftonline.com")
-tokenConnection.request("POST", "/{0}/oauth2/token".format(tenantId), tokenRequestBody, headers=headers)
-
-tokenResponse = tokenConnection.getresponse()
-print(tokenResponse.status)
-tokenJson = json.loads(tokenResponse.read().decode())
-print(tokenJson["access_token"])
-
-tokenConnection.close()
-```
+[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
 
 <span id="create-add-on" />
-## Создание надстройки
+## <a name="create-an-add-on"></a>Создание надстройки
 
-В следующем примере показано, как [создать и подтвердить новую надстройку](manage-add-ons.md) (надстройки также известны как внутренние продукты приложений или IAP).
+В следующем примере показано, как [создать](create-an-add-on.md), а затем [удалить](delete-an-add-on.md) надстройку (надстройки также известны как внутренние продукты приложений или IAP).
 
-```python
-import http.client, json
-
-accessToken = ""  # Your access token
-iapRequestJson = ""  # Your in-app-product request JSON
-
-headers = {"Authorization": "Bearer " + accessToken,
-           "Content-type": "application/json",
-           "User-Agent": "Python"}
-ingestionConnection = http.client.HTTPSConnection("manage.devcenter.microsoft.com")
-
-# Create a new in-app-product
-ingestionConnection.request("POST", "/v1.0/my/inappproducts", iapRequestJson, headers)
-createIapResponse = ingestionConnection.getresponse()
-print(createIapResponse.status)
-print(createIapResponse.reason)
-print(createIapResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-iapJsonObject = json.loads(createIapResponse.read().decode())
-inAppProductId = iapJsonObject["id"]
-
-# Delete created in-app-product
-ingestionConnection.request("DELETE", "/v1.0/my/inappproducts/" + inAppProductId, "", headers)
-deleteIapResponse = ingestionConnection.getresponse()
-print(deleteIapResponse.status)
-print(deleteIapResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-ingestionConnection.close()
-```
+[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 
 <span id="create-package-flight" />
-## Создание тестового пакета
+## <a name="create-a-package-flight"></a>Создание тестового пакета
 
-В следующем примере показано, как [создать новый тестовый пакет](manage-flights.md).
+В следующем примере показано, как [создать](create-a-flight.md), а затем [удалить](delete-a-flight.md) тестовый пакет.
 
-```python
-import http.client, json, requests, time
-
-accessToken = ""  # Your access token
-applicationId = ""  # Your application ID
-flightRequestJson = ""  # Your flight request JSON
-
-headers = {"Authorization": "Bearer " + accessToken,
-           "Content-type": "application/json",
-           "User-Agent": "Python"}
-ingestionConnection = http.client.HTTPSConnection("manage.devcenter.microsoft.com")
-
-# Create a new flight, a flight submission will be created together with the flight
-
-```python
-ingestionConnection.request("POST", "/v1.0/my/applications/{0}/flights".format(applicationId), flightRequestJson, headers)
-createFlightResponse = ingestionConnection.getresponse()
-print(createFlightResponse.status)
-print(createFlightResponse.reason)
-print(createFlightResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-flightJsonObject = json.loads(createFlightResponse.read().decode())
-flightId = flightJsonObject["flightId"]
-submissionId = flightJsonObject["pendingFlightSubmission"]["id"]
-
-# Delete created flight
-ingestionConnection.request("DELETE", "/v1.0/my/applications/{0}/flights/{1}".format(applicationId, flightId), "", headers)
-deleteFlightResponse = ingestionConnection.getresponse()
-print(deleteFlightResponse.status)
-print(deleteFlightResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-ingestionConnection.close()
-```
+[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L58-L87)]
 
 <span id="create-app-submission" />
-## Создание и подтверждение отправки приложения
+## <a name="create-an-app-submission"></a>Создание отправки приложения
 
-В следующем примере показано, как [создать и подтвердить новую отправку приложения](manage-app-submissions.md).
+В следующем примере показано, как использовать несколько методов в API отправки Магазина Windows для создания отправки приложения. Чтобы это сделать, код создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в Центре разработки для Windows. В частности, в примере этого кода выполняются следующие задачи:
 
-```python
-import http.client, json, requests, time
+1. Сначала код [получает данные для указанного приложения](get-an-app.md).
+2. Затем он [удаляет ожидающую отправку для приложения](delete-an-app-submission.md), если она существует.
+3. После этого [выполняется создание новой отправки для приложения](create-an-app-submission.md) (новая отправка — это копия последней опубликованной отправки).
+4. Код изменяет некоторые сведения о новой отправке и отправляет новый пакет отправки в хранилище BLOB-объектов Azure.
+5. Затем он [обновляет](update-an-app-submission.md) и [фиксирует](commit-an-app-submission.md) новую отправку в Центре разработки для Windows.
+6. Наконец, он периодически [проверяет состояние новой отправки](get-status-for-an-app-submission.md), пока она не будет успешно зафиксирована.
 
-accessToken = ""  # Your access token
-applicationId = ""  # Your application ID
-appSubmissionRequestJson = "";  # Your submission request JSON
-zipFilePath = r'*.zip'  # Your zip file path
-
-headers = {"Authorization": "Bearer " + accessToken,
-           "Content-type": "application/json",
-           "User-Agent": "Python"}
-ingestionConnection = http.client.HTTPSConnection("manage.devcenter.microsoft.com")
-
-# Get application
-ingestionConnection.request("GET", "/v1.0/my/applications/{0}".format(applicationId), "", headers)
-appResponse = ingestionConnection.getresponse()
-print(appResponse.status)
-print(appResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-# Delete existing in-progress submission
-appJsonObject = json.loads(appResponse.read().decode())
-if "pendingApplicationSubmission" in appJsonObject :
-    submissionToRemove = appJsonObject["pendingApplicationSubmission"]["id"]
-    ingestionConnection.request("DELETE", "/v1.0/my/applications/{0}/submissions/{1}".format(applicationId, submissionToRemove), "", headers)
-    deleteSubmissionResponse = ingestionConnection.getresponse()
-    print(deleteSubmissionResponse.status)
-    print(deleteSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-    deleteSubmissionResponse.read()
-
-# Create submission
-ingestionConnection.request("POST", "/v1.0/my/applications/{0}/submissions".format(applicationId), "", headers)
-createSubmissionResponse = ingestionConnection.getresponse()
-print(createSubmissionResponse.status)
-print(createSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-submissionJsonObject = json.loads(createSubmissionResponse.read().decode())
-submissionId = submissionJsonObject["id"]
-fileUploadUrl = submissionJsonObject["fileUploadUrl"]
-print(submissionId)
-print(fileUploadUrl)
-
-# Update submission
-ingestionConnection.request("PUT", "/v1.0/my/applications/{0}/submissions/{1}".format(applicationId, submissionId), appSubmissionRequestJson, headers)
-updateSubmissionResponse = ingestionConnection.getresponse()
-print(updateSubmissionResponse.status)
-print(updateSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-updateSubmissionResponse.read()
-
-# Upload images and packages in a zip file. Note that large file might need to be handled differently
-f = open(zipFilePath, 'rb')
-uploadResponse = requests.put(fileUploadUrl.replace("+", "%2B"), f, headers={"x-ms-blob-type": "BlockBlob"})
-print(uploadResponse.status_code)
-
-
-# Commit submission
-ingestionConnection.request("POST", "/v1.0/my/applications/{0}/submissions/{1}/commit".format(applicationId, submissionId), "", headers)
-commitResponse = ingestionConnection.getresponse()
-print(commitResponse.status)
-print(commitResponse.headers["MS-CorrelationId"])  # Log correlation ID
-print(commitResponse.read())
-
-# Pull submission status until commit process is completed
-ingestionConnection.request("GET", "/v1.0/my/applications/{0}/submissions/{1}/status".format(applicationId, submissionId), "", headers)
-getSubmissionStatusResponse = ingestionConnection.getresponse()
-submissionJsonObject = json.loads(getSubmissionStatusResponse.read().decode())
-while submissionJsonObject["status"] == "CommitStarted":
-    time.sleep(60)
-    ingestionConnection.request("GET", "/v1.0/my/applications/{0}/submissions/{1}/status".format(applicationId, submissionId), "", headers)
-    getSubmissionStatusResponse = ingestionConnection.getresponse()
-    submissionJsonObject = json.loads(getSubmissionStatusResponse.read().decode())
-    print(submissionJsonObject["status"])
-
-print(submissionJsonObject["status"])
-print(submissionJsonObject)
-
-ingestionConnection.close()
-```
+[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
 
 <span id="create-add-on-submission" />
-## Создание и подтверждение отправки надстройки
+## <a name="create-an-add-on-submission"></a>Создание отправки надстройки
 
-В следующем примере показано, как [создать и подтвердить новую отправку надстройки](manage-add-on-submissions.md) (надстройки также известны как внутренние продукты приложений или IAP).
+В следующем примере показано, как использовать несколько методов в API отправки Магазина Windows для создания отправки надстройки. Чтобы это сделать, код создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в Центре разработки для Windows. В частности, в примере этого кода выполняются следующие задачи:
 
-```python
-import http.client, json, requests, time
+1. Сначала код [получает данные для указанной надстройки](get-an-add-on.md).
+2. Затем он [удаляет ожидающую отправку для надстройки](delete-an-add-on-submission.md), если она существует.
+3. После этого [выполняется создание новой отправки для надстройки](create-an-add-on-submission.md) (новая отправка — это копия последней опубликованной отправки).
+4. Код передает ZIP-архив, содержащий значки для отправки, в хранилище BLOB-объектов Azure. Дополнительные сведения приведены в соответствующих инструкциях о передаче ZIP-архива в хранилище BLOB-объектов Azure в разделе [Создание отправки надстройки](manage-add-on-submissions.md#create-an-add-on-submission).
+5. Затем он [обновляет](update-an-add-on-submission.md) и [фиксирует](commit-an-add-on-submission.md) новую отправку в Центре разработки для Windows.
+6. Наконец, он периодически [проверяет состояние новой отправки](get-status-for-an-add-on-submission.md), пока она не будет успешно зафиксирована.
 
-accessToken = ""  # Your access token
-inAppProductId = ""  # Your in-app-product ID
-updateSubmissionRequestBody = "";  # Your in-app-product submission request JSON
-zipFilePath = r'*.zip'  # Your zip file path
-
-headers = {"Authorization": "Bearer " + accessToken,
-           "Content-type": "application/json",
-           "User-Agent": "Python"}
-ingestionConnection = http.client.HTTPSConnection("manage.devcenter.microsoft.com")
-
-# Get in-app-product
-ingestionConnection.request("GET", "/v1.0/my/inappproducts/{0}".format(inAppProductId), "", headers)
-iapResponse = ingestionConnection.getresponse()
-print(iapResponse.status)
-print(iapResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-# Delete existing in-progress submission
-iapJsonObject = json.loads(iapResponse.read().decode())
-if "pendingInAppProductSubmission" in iapJsonObject :
-    submissionToRemove = iapJsonObject["pendingInAppProductSubmission"]["id"]
-    ingestionConnection.request("DELETE", "/v1.0/my/inappproducts/{0}/submissions/{1}".format(inAppProductId, submissionToRemove), "", headers)
-    deleteSubmissionResponse = ingestionConnection.getresponse()
-    print(deleteSubmissionResponse.status)
-    print(deleteSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-    deleteSubmissionResponse.read()
-
-# Create submission
-ingestionConnection.request("POST", "/v1.0/my/inappproducts/{0}/submissions".format(inAppProductId), "", headers)
-createSubmissionResponse = ingestionConnection.getresponse()
-print(createSubmissionResponse.status)
-print(createSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-submissionJsonObject = json.loads(createSubmissionResponse.read().decode())
-submissionId = submissionJsonObject["id"]
-fileUploadUrl = submissionJsonObject["fileUploadUrl"]
-print(submissionId)
-print(fileUploadUrl)
-
-# Update submission
-ingestionConnection.request("PUT", "/v1.0/my/inappproducts/{0}/submissions/{1}".format(inAppProductId, submissionId), updateSubmissionRequestBody, headers)
-updateSubmissionResponse = ingestionConnection.getresponse()
-print(updateSubmissionResponse.status)
-print(updateSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-updateSubmissionResponse.read()
-
-# Upload images and packages in a zip file. Note that large file might need to be handled differently
-f = open(zipFilePath, 'rb')
-uploadResponse = requests.put(fileUploadUrl.replace("+", "%2B"), f, headers={"x-ms-blob-type": "BlockBlob"})
-print(uploadResponse.status_code)
-
-# Commit submission
-ingestionConnection.request("POST", "/v1.0/my/inappproducts/{0}/submissions/{1}/commit".format(inAppProductId, submissionId), "", headers)
-commitResponse = ingestionConnection.getresponse()
-print(commitResponse.status)
-print(commitResponse.headers["MS-CorrelationId"])  # Log correlation ID
-print(commitResponse.read())
-
-# Pull submission status until commit process is completed
-ingestionConnection.request("GET", "/v1.0/my/inappproducts/{0}/submissions/{1}/status".format(inAppProductId, submissionId), "", headers)
-getSubmissionStatusResponse = ingestionConnection.getresponse()
-submissionJsonObject = json.loads(getSubmissionStatusResponse.read().decode())
-while submissionJsonObject["status"] == "CommitStarted":
-    time.sleep(60)
-    ingestionConnection.request("GET", "/v1.0/my/inappproducts/{0}/submissions/{1}/status".format(inAppProductId, submissionId), "", headers)
-    getSubmissionStatusResponse = ingestionConnection.getresponse()
-    submissionJsonObject = json.loads(getSubmissionStatusResponse.read().decode())
-    print(submissionJsonObject["status"])
-
-print(submissionJsonObject["status"])
-print(submissionJsonObject)
-
-ingestionConnection.close()
-```
+[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
 
 <span id="create-flight-submission" />
-## Создание и подтверждение отправки тестового пакета
+## <a name="create-a-package-flight-submission"></a>Создание отправки тестового пакета
 
-В следующем примере показано, как [создать и подтвердить новую отправку тестового пакета](manage-flight-submissions.md).
+В следующем примере показано, как использовать несколько методов в API отправки Магазина Windows для создания отправки тестового пакета. Чтобы это сделать, код создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в Центре разработки для Windows. В частности, в примере этого кода выполняются следующие задачи:
 
-```python
-import http.client, json, requests, time, zipfile
+1. Сначала код [получает данные для указанного тестового пакета](get-a-flight.md).
+2. Затем он [удаляет ожидающую отправку для тестового пакета](delete-a-flight-submission.md), если она существует.
+3. После этого [выполняется создание новой отправки для тестового пакета](create-a-flight-submission.md) (новая отправка — это копия последней опубликованной отправки).
+4. Код передает новый пакет для отправки в хранилище BLOB-объектов Azure. Дополнительные сведения приведены в соответствующих инструкциях о передаче ZIP-архива в хранилище BLOB-объектов Azure в разделе [Создание отправки тестового пакета](manage-flight-submissions.md#create-a-package-flight-submission).
+5. Затем он [обновляет](update-a-flight-submission.md) и [фиксирует](commit-a-flight-submission.md) новую отправку в Центре разработки для Windows.
+6. Наконец, он периодически [проверяет состояние новой отправки](get-status-for-a-flight-submission.md), пока она не будет успешно зафиксирована.
 
-accessToken = ""  # Your access token
-applicationId = ""  # Your application ID
-flightId = ""  # Your flight ID
-flightSubmissionRequestJson = ""  # Your submission request JSON
-zipFilePath = r'*.zip'  # Your zip file path
+[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]
 
-headers = {"Authorization": "Bearer " + accessToken,
-           "Content-type": "application/json",
-           "User-Agent": "Python"}
-ingestionConnection = http.client.HTTPSConnection("manage.devcenter.microsoft.com")
-
-# Get flight
-ingestionConnection.request("GET", "/v1.0/my/applications/{0}/flights/{1}".format(applicationId, flightId), "", headers)
-flightResponse = ingestionConnection.getresponse()
-print(flightResponse.status)
-print(flightResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-# Delete existing in-progress submission
-flightJsonObject = json.loads(flightResponse.read().decode())
-if "pendingFlightSubmission" in flightJsonObject :
-    submissionToRemove = flightJsonObject["pendingFlightSubmission"]["id"]
-    ingestionConnection.request("DELETE", "/v1.0/my/applications/{0}/flights/{1}/submissions/{2}".format(applicationId, flightId, submissionToRemove), "", headers)
-    deleteSubmissionResponse = ingestionConnection.getresponse()
-    print(deleteSubmissionResponse.status)
-    print(deleteSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-    deleteSubmissionResponse.read()
-
-# Create submission
-ingestionConnection.request("POST", "/v1.0/my/applications/{0}/flights/{1}/submissions".format(applicationId, flightId), "", headers)
-createSubmissionResponse = ingestionConnection.getresponse()
-print(createSubmissionResponse.status)
-print(createSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-submissionJsonObject = json.loads(createSubmissionResponse.read().decode())
-submissionId = submissionJsonObject["id"]
-fileUploadUrl = submissionJsonObject["fileUploadUrl"]
-print(submissionId)
-print(fileUploadUrl)
-
-# Update submission
-ingestionConnection.request("PUT", "/v1.0/my/applications/{0}/flights/{1}/submissions/{2}".format(applicationId, flightId, submissionId), flightSubmissionRequestJson, headers)
-updateSubmissionResponse = ingestionConnection.getresponse()
-print(updateSubmissionResponse.status)
-print(updateSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-updateSubmissionResponse.read()
-
-# Upload images and packages in a zip file. Note that large file might need to be handled differently
-f = open(zipFilePath, 'rb')
-uploadResponse = requests.put(fileUploadUrl.replace("+", "%2B"), f, headers={"x-ms-blob-type": "BlockBlob"})
-print(uploadResponse.status_code)
-
-
-# Commit submission
-ingestionConnection.request("POST", "/v1.0/my/applications/{0}/flights/{1}/submissions/{2}/commit".format(applicationId, flightId, submissionId), "", headers)
-commitResponse = ingestionConnection.getresponse()
-print(commitResponse.status)
-print(commitResponse.headers["MS-CorrelationId"])  # Log correlation ID
-print(commitResponse.read())
-
-# Pull submission status until commit process is completed
-ingestionConnection.request("GET", "/v1.0/my/applications/{0}/flights/{1}/submissions/{2}/status".format(applicationId, flightId, submissionId), "", headers)
-getSubmissionStatusResponse = ingestionConnection.getresponse()
-submissionJsonObject = json.loads(getSubmissionStatusResponse.read().decode())
-while submissionJsonObject["status"] == "CommitStarted":
-    time.sleep(60)
-    ingestionConnection.request("GET", "/v1.0/my/applications/{0}/flights/{1}/submissions/{2}/status".format(applicationId, flightId, submissionId), "", headers)
-    getSubmissionStatusResponse = ingestionConnection.getresponse()
-    submissionJsonObject = json.loads(getSubmissionStatusResponse.read().decode())
-    print(submissionJsonObject["status"])
-
-print(submissionJsonObject["status"])
-print(submissionJsonObject)
-
-ingestionConnection.close()
-```
-
-## Связанные статьи
+## <a name="related-topics"></a>Статьи по теме
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO3-->
 
 

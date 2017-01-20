@@ -7,15 +7,13 @@ ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: a34b682cc903555b9d6f64636c3d1cf7bee75b5d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 3149eb8275cc74c61ff0e35963f3fd1dbdc4e833
 
 ---
 
-# Глобализация и локализация
-
-
-
+# <a name="globalization-and-localization"></a>Глобализация и локализация
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Windows используется во всем мире пользователями с разной культурой, живущими в разных регионах и говорящими на разных языках. Пользователь может говорить на любом языке или даже на нескольких языках. Пользователь может находиться в любой точке мира и может выбрать любой язык в любой точке света. Вы можете расширить потенциальный рынок для вашего приложения, используя *глобализацию* и *локализацию* для быстрой адаптации к любому региону.
 
@@ -36,7 +34,7 @@ Windows используется во всем мире пользователя
 
 Просмотрите это видео, чтобы узнать, как подготовить приложение для использования в любой стране мира: [Введение в глобализацию и локализацию](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
 
-## Статьи
+## <a name="articles"></a>Статьи
 <table>
 <colgroup>
 <col width="50%" />
@@ -82,7 +80,7 @@ Windows используется во всем мире пользователя
 
  
 
-Также см. исходную документацию для Windows8.x, которая применима к приложениям универсальной платформы Windows (UWP) и Windows10.
+Также см. исходную документацию для Windows 8.x, которая применима к приложениям универсальной платформы Windows (UWP) и Windows 10.
 
 -   [Глобализация приложения](https://msdn.microsoft.com/library/windows/apps/xaml/hh965328)
 -   [Сопоставление языков](https://msdn.microsoft.com/library/windows/apps/xaml/jj673578.aspx)
@@ -99,6 +97,6 @@ Windows используется во всем мире пользователя
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

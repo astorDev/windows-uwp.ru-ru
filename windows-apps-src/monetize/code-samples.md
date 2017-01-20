@@ -4,26 +4,26 @@ ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
 description: "Получите дополнительные примеры, демонстрирующие способы использования свойств, методов и событий классов AdControl и InterstitialAd в библиотеках Microsoft Advertising."
 title: "Примеры кода"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 0a852a4bf8404d7ab0d8a2a169a16451c0388122
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: a8f18048915927f9e93d4469e7288e5a06a69070
 
 ---
 
-# Примеры кода
+# <a name="code-samples"></a>Примеры кода
 
 
 
 
 Этот раздел содержит примеры, демонстрирующие способы использования свойств, методов и событий классов [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) и [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) в библиотеках Microsoft Advertising для выбора целевых пользователей, ручного обновления объявлений и обработки событий. Вводные руководства, демонстрирующие способы добавления этих элементов управления в приложение, см. в разделе [Пошаговые руководства для разработчиков](developer-walkthroughs.md).
 
-Полный пример с проектом, демонстрирующим способы добавления баннеров и промежуточной видеорекламы в приложения на JavaScript/HTML, а также в приложения на XAML с помощью языков C# and C++, см. в разделе [примеров рекламы на GitHub](http://aka.ms/githubads).
+Полные примеры проектов, демонстрирующие способы добавления баннеров и промежуточной видеорекламы в приложения JavaScript/HTML, а также в приложения XAML с помощью языков C# и C++, см. в [примерах рекламы на GitHub](http://aka.ms/githubads).
 
-## В этом разделе
+## <a name="in-this-section"></a>В этом разделе
 
-|  Раздел    | Описание |               
+|  Статья    | Описание |               
 |----------|-------|
-| [Пример свойств HTML](html-properties-example.md)     | Показывает **AdControl** со всеми атрибутами в HTML.        |
-| [Пример свойств XAML](xaml-properties-example.md)     | Показывает **AdControl** со всеми атрибутами в XAML.        |
+| [Пример назначения свойств AdControl в HTML](html-properties-example.md)     | Показывает **AdControl** со всеми атрибутами в HTML.        |
+| [Пример назначения свойств AdControl в XAML](xaml-properties-example.md)     | Показывает **AdControl** со всеми атрибутами в XAML.        |
 | [Создание AdControl на JavaScript](create-an-adcontrol-in-javascript.md)     | Показывает, как создать **AdControl** на JavaScript.        |
 | [События AdControl в JavaScript](adcontrol-events-in-javascript.md)     | Показывает, как обрабатывать события **AdControl** в JavaScript.       |
 | [События AdControl в C#](adcontrol-events-in-c.md)     | Показывает, как обрабатывать события **AdControl** в C#.       |
@@ -41,6 +41,6 @@ ms.openlocfilehash: 0a852a4bf8404d7ab0d8a2a169a16451c0388122
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

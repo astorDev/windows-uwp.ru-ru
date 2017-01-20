@@ -6,24 +6,28 @@ ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 925826f2702474a0003f2ca2dee6ff10992f5f25
 
 ---
 
-# Элементы анимации пользовательского интерфейса с использованием края
+# <a name="edge-based-ui-animations"></a>Элементы анимации пользовательского интерфейса с использованием края
 
 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 
 Анимации с использованием края показывают или скрывают элементы пользовательского интерфейса, которые возникают у края экрана. Действия отображения и скрытия могут вызываться либо пользователем, либо приложением. Пользовательский интерфейс может перекрывать приложение либо становиться частью основной поверхности приложения. Если пользовательский интерфейс становится частью поверхности приложения, возможно, потребуется соответствующим образом изменить размер остальной части приложения.
 
-**Важные API**
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**Класс EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)</li>
+</ul>
+</div>
 
--   [**Класс EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
-
-## Возможности и ограничения
+## <a name="dos-and-donts"></a>Возможности и ограничения
 
 
 -   Используйте анимации, привязанные к границам экрана, чтобы отобразить или скрыть панель настраиваемых сообщений или ошибок, которая занимает немного места на экране.
@@ -38,13 +42,13 @@ ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
 
     ![Демонстрирует, где следует использовать анимации, привязанные к границам экрана, или анимации панелей, а где необходимо использовать изменение положения.](images/edgevsreposition.png)
 
-## Статьи по теме
+## <a name="related-articles"></a>Связанные разделы
 
 
-**Разработчикам (XAML)**
+**Для разработчиков**
 * [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Анимация пользовательского интерфейса по краям экрана](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [Краткое руководство: анимация пользовательского интерфейса](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Краткое руководство: анимация пользовательского интерфейса с помощью анимаций библиотеки](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Класс EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 * [**Класс PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh969160)
 * [Анимация появления или исчезания](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
@@ -60,6 +64,6 @@ ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

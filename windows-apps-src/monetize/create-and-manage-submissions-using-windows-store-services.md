@@ -4,8 +4,8 @@ ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "Используйте API отправки Магазина Windows, чтобы программным образом создавать и администрировать отправки для приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows."
 title: "Создание отправок и управление ими с помощью служб Магазина Windows"
 translationtype: Human Translation
-ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
-ms.openlocfilehash: 1172be1072f0c539828a08655236be467c6c9fba
+ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
+ms.openlocfilehash: 8467cddd5eec2348cd35f4f5dc1564b47813a6ca
 
 ---
 
@@ -73,7 +73,7 @@ ms.openlocfilehash: 1172be1072f0c539828a08655236be467c6c9fba
 Для получения маркера доступа следуйте инструкциям в разделе [Вызовы между службами с помощью учетных данных клиентов](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/), чтобы отправить HTTP-запрос POST в конечную точку ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Ниже приведен пример запроса.
 
 ```
-POST https://login.microsoftonline.com/<your_tenant_id>/oauth2/token HTTP/1.1
+POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
 
@@ -83,9 +83,11 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-Для параметров *tenant\_id*, *client\_id* и *client\_secret* укажите идентификатор владельца, идентификатор клиента и ключ вашего приложения, которые вы получили из Центра разработки после выполнения инструкций в предыдущем разделе. Для параметра *resource* укажите следующий универсальный код ресурса (URI): ```https://manage.devcenter.microsoft.com```.
+Для значения *tenant\_id* в POST URI и параметров *client\_id* и *client\_secret* укажите идентификатор владельца, идентификатор клиента и ключ вашего приложения, который был получен в Центре разработки, как описано в предыдущем разделе. Для параметра *resource* укажите ```https://manage.devcenter.microsoft.com```.
 
 После истечения срока действия маркера доступа вы можете обновить его, следуя инструкциям, приведенным [здесь](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
+
+Примеры, демонстрирующие, как получить маркер доступа с помощью кода C#, Java или Python, см. в [примерах кода](#code-examples) API для отправки в Магазин Windows.
 
 <span id="call-the-windows-store-submission-api">
 ## <a name="step-3-use-the-windows-store-submission-api"></a>Шаг 3. Использование API отправки Магазина Windows
@@ -100,8 +102,7 @@ grant_type=client_credentials
 | Надстройки | Получайте, создавайте или удаляйте надстройки для ваших приложений, а затем получайте, создавайте или удаляйте отправки для надстроек. Дополнительные сведения об этих методах см. в следующих статьях. <ul><li>[Управление надстройками](manage-add-ons.md)</li><li>[Управление отправками надстроек](manage-add-on-submissions.md)</li></ul> |
 | Тестовые пакеты | Получайте, создавайте или удаляйте тестовые пакеты для ваших приложений, а затем получайте, создавайте или удаляйте отправки для тестовых пакетов. Дополнительные сведения об этих методах см. в следующих статьях. <ul><li>[Управление тестовыми пакетами](manage-flights.md)</li><li>[Управление отправками тестового пакета](manage-flight-submissions.md)</li></ul> |
 
-<span />
-
+<span id="code-samples"/>
 ## <a name="code-examples"></a>Примеры кода
 
 Следующие статьи содержат подробные примеры кода на нескольких разных языках программирования, демонстрирующие способы использования API отправки Магазина Windows.
@@ -135,6 +136,6 @@ grant_type=client_credentials
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

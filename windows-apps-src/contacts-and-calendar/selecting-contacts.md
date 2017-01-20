@@ -3,21 +3,26 @@ author: Xansky
 description: "Пространство имен Windows.ApplicationModel.Contacts позволяет выбирать контакты несколькими способами."
 title: "Выбор контактов"
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
-keywords: "контакт, выбор определенных полей"
+keywords: "контакты, выбор, выбор одного контакта, выбор нескольких контактов, контакты, выбор нескольких, выбор определенных, контактные данные, контакт, выбор определенных контактных данных, выбор определенных полей"
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 70abebb53f96b7d9d818f3542c33ed477ff0c8a4
+ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
+ms.openlocfilehash: 7181a51a91997124b2c5c8ba184261de63de9caf
 
 ---
 
-# Выбор контактов
+# <a name="select-contacts"></a>Выбор контактов
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Пространство имен [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) позволяет выбирать контакты несколькими способами. В этой статье описано, как выбрать один или несколько контактов, и показано, как настроить окно выбора контактов, чтобы получать только необходимые вашему приложению сведения о контактах.
 
-## Настройка окна выбора контактов
+## <a name="set-up-the-contact-picker"></a>Настройка окна выбора контактов
 
 Создайте экземпляр [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) и назначьте его переменной.
 
@@ -25,7 +30,7 @@ ms.openlocfilehash: 70abebb53f96b7d9d818f3542c33ed477ff0c8a4
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ```
 
-## Настройка режима выбора (необязательно)
+## <a name="set-the-selection-mode-optional"></a>Настройка режима выбора (необязательно)
 
 По умолчанию окно выбора контактов извлекает все доступные данные о контактах, выбранных пользователем. Свойство [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) позволяет настроить окно выбора контактов так, чтобы получать только поля данных, необходимые вашему приложению. Этот способ использования окна выбора контактов более эффективен, если нужна только часть доступных сведений контакта.
 
@@ -41,7 +46,7 @@ contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelection
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
 ```
 
-## Запуск окна выбора контактов
+## <a name="launch-the-picker"></a>Запуск окна выбора контактов
 
 ```cs
 Contact contact = await contactPicker.PickContactAsync();
@@ -54,7 +59,7 @@ public IList<Contact> contacts;
 contacts = await contactPicker.PickContactsAsync();
 ```
 
-## Обработка контактов
+## <a name="process-the-contacts"></a>Обработка контактов
 
 Когда окно выбора возвращает данные, проверьте, выбрал ли пользователь какие-либо контакты. Если да, обработайте сведения о контактах.
 
@@ -83,7 +88,7 @@ if (contacts != null && contacts.Count > 0)
 }
 ```
 
-## Полный пример (один контакт)
+## <a name="complete-example-single-contact"></a>Полный пример (один контакт)
 
 В данном примере окно выбора контактов извлекает имя, а также адрес электронной почты, расположение или номер телефона одного контакта.
 
@@ -163,7 +168,7 @@ private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 }
 ```
 
-## Полный пример (несколько контактов)
+## <a name="complete-example-multiple-contacts"></a>Полный пример (несколько контактов)
 
 В данном примере окно выбора контактов получает несколько контактов, а затем добавляет контакты в элемент управления [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) с именем `OutputContacts`.
 
@@ -226,12 +231,12 @@ public class ContactItemAdapter
 }
 ```
 
-## Сводка и дальнейшие действия
+## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
 
 Теперь вы имеете представление об использовании окна выбора контактов для получения контактных данных. Скачайте [Примеры универсальных приложений для Windows](http://go.microsoft.com/fwlink/p/?linkid=619979) из GitHub, чтобы ознакомиться с другими примерами использования контактов и окна выбора контактов.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

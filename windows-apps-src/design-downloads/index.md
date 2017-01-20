@@ -3,21 +3,23 @@ description: "Получите новейшие загружаемые файл�
 keywords: "макет приложения uwp, пользовательский интерфейс, макеты пользовательского интерфейса, загрузки, инструменты uwp"
 title: "Загружаемые файлы макетов для приложений UWP — разработка приложений для Windows"
 author: mijacobs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: f1ea979f5179cce0bb059534b064c2ecf805ce89
-ms.openlocfilehash: da21817eea3a26ffd162bd19c8eb69345ac1d726
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: d18696de51451552aef14c55d2a1b62c6037fb59
 
 ---
-
+# <a name="design-downloads-for-uwp-apps"></a>Загружаемые файлы макетов для приложений UWP
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-# Загружаемые файлы макетов для приложений UWP
-
 
 Этот раздел содержит скачиваемые файлы для приложений UWP, связанные с пользовательским интерфейсом и проектированием. Дополнительные средства, такие как Visual Studio, можно найти [на главной странице скачиваемых файлов](https://developer.microsoft.com/downloads). 
 
 
-## Шаблоны оформления
+## <a name="design-templates"></a>Шаблоны оформления
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -55,13 +57,13 @@ ms.openlocfilehash: da21817eea3a26ffd162bd19c8eb69345ac1d726
 </div>
 </div>
 
-## Средства
+## <a name="tools"></a>Средства
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>Генератор плиток и значков для Adobe Photoshop</b><br/>
-Этот набор действий для Adobe Photoshop позволяет сгенерировать 68 рекомендуемых ресурсов плиток и значков всего из семи файлов. <br/>[Скачать генератор плиток и значков](http://go.microsoft.com/fwlink/p/?LinkId=760394)</p>    
+Этот набор действий для Adobe Photoshop позволяет сгенерировать 68 рекомендуемых ресурсов плиток и значков всего из семи файлов. <br/>[Скачать генератор плиток и значков](http://go.microsoft.com/fwlink/p/?LinkId=760394)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator" /></a>
@@ -69,19 +71,8 @@ ms.openlocfilehash: da21817eea3a26ffd162bd19c8eb69345ac1d726
 </div>
 </div>
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-            <p><b>Средство красной линии для Adobe Illustrator</b><br/>
-Удобное создание красных линий на основе прототипов Illustrator (Требуется Adobe Illustrator CC или более новая версия.)<br/>[Скачать средство красной линии для Adobe Illustrator](https://go.microsoft.com/fwlink/p/?LinkId=534641)</p>  
-  </div>
-  <div class="side-by-side-content-right">
-<a href="https://go.microsoft.com/fwlink/p/?LinkId=534641"><img src="images/redliner-tool.png" alt="Download the Redliner tool for Adobe Illustrator" /></a>
-  </div>
-</div>
-</div>
 
-## Примеры
+## <a name="samples"></a>Примеры
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -109,6 +100,6 @@ ms.openlocfilehash: da21817eea3a26ffd162bd19c8eb69345ac1d726
 <b>Вам нужно больше примеров кода?</b> Полный список всех наших примеров приложений UWP вы можете найти на странице примеров Windows. [Перейти на портал примеров](https://developer.microsoft.com/samples)
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

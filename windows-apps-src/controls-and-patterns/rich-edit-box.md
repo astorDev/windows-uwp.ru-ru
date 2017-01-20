@@ -6,11 +6,11 @@ ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: a8e8e42c87809eb08685fb137a242b1177b824b4
 
 ---
-# Блок форматируемого текста
+# <a name="rich-edit-box"></a>Блок форматируемого текста
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,21 +19,14 @@ ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx"><strong>Класс RichEditBox</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx"><strong>Свойство Document</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx"><strong>Свойство IsReadOnly</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx"><strong>Свойство IsSpellCheckEnabled</strong></a></li>
+<li>[**Класс RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
+<li>[**Свойство Document**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)</li>
+<li>[**Свойство IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)</li>
+<li>[**Свойство IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-## Выбор правильного элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 **RichEditBox** служит для отображения и правки текстовых файлов. RichEditBox не используется для получения пользовательского ввода в приложении, как в случае других стандартных текстовых полей. Он используется для работы с текстовыми файлами отдельно от вашего приложения. Обычно текст, введенный в элемент RichEditBox, сохраняется в RTF-файле.
 -   Если основное назначение многострочного поля — создание документов (например, записей блога или сообщений электронной почты), которые требуют форматирования, используйте поле с форматом.
@@ -43,17 +36,17 @@ ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
 
 Дополнительные сведения о выборе подходящего элемента управления текстом см. в статье [Элементы управления текстом](text-controls.md).
 
-## Примеры
+## <a name="examples"></a>Примеры
 
 В этом поле с форматом открыт документ RTF. Кнопки форматирования и файла не являются частью поля с форматом, но необходимо предоставить по крайней мере минимальный набор кнопок оформления и реализовать их действия.
 
 ![Поле с форматом с открытым в нем документом](images/rich-edit-box.png)
 
-## Создание поля с форматом
+## <a name="create-a-rich-edit-box"></a>Создание поля с форматом
 
 По умолчанию элемент управления RichEditBox поддерживает проверку орфографии. Чтобы отключить функцию проверки орфографии, задайте для свойства [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) значение **false**. Более подробные сведения см. в статье [Инструкции по проверке орфографии](spell-checking-and-prediction.md).
 
-Свойство [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) элемента RichEditBox используется для получения его содержимого. Содержимое RichEditBox — это объект [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx), в отличие от элемента управления RichTextBlock, использующего объекты [Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) в качестве своего содержимого. С помощью интерфейса ITextDocument можно загрузить и сохранить документ в потоке, получить фрагменты текста, выделить текст, отменить и повторить изменения, задать атрибуты форматирования по умолчанию и т.д.
+Свойство [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) элемента RichEditBox используется для получения его содержимого. Содержимое RichEditBox — это объект [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx), в отличие от элемента управления RichTextBlock, использующего объекты [Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) в качестве своего содержимого. С помощью интерфейса ITextDocument можно загрузить и сохранить документ в потоке, получить фрагменты текста, выделить текст, отменить и повторить изменения, задать атрибуты форматирования по умолчанию и т. д.
 
 В этом примере показано, как редактировать, загружать и сохранять файл в формате RTF в элементе управления RichEditBox.
 
@@ -194,15 +187,15 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Выбор подходящей клавиатуры для элемента управления текстом
+## <a name="choose-the-right-keyboard-for-your-text-control"></a>Выбор подходящей клавиатуры для элемента управления текстом
 
 Чтобы упростить пользователям ввод данных с помощью сенсорной клавиатуры или панели функционального ввода, можно настроить тип вводимых данных элемента управления для ввода текста, чтобы он соответствовал типу данных, которые должен вводить пользователь. Раскладка клавиатуры по умолчанию обычно подходит для работы с документами RTF.
 
 Дополнительные сведения об использовании типов вводимых данных см. в разделе [Использование типа вводимых данных для изменения сенсорной клавиатуры](https://msdn.microsoft.com/library/windows/apps/mt280229).
 
-## Рекомендации
+## <a name="dos-and-donts"></a>Возможности и ограничения
 
--   При создании поля с форматом следует предусмотреть кнопки стиля и реализовать их действия.
+-   При создании текстового поля в формате RTF следует предусмотреть кнопки стиля и реализовать их действия.
 -   Используйте шрифт, соответствующий стилю вашего приложения.
 -   Высота элемента управления должна быть достаточной для ввода стандартных записей.
 -   При вводе пользователем текста элементы управления не должны увеличиваться по высоте.
@@ -210,24 +203,17 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 -   Не используйте поле с форматом там, где достаточно элемента управления обычного текста.
 
 
+## <a name="related-articles"></a>Связанные разделы
 
-
-
-## Статьи по теме
-
-[Элементы управления текстом](text-controls.md)
-
-**Проектировщикам**
+* [Элементы управления текстом](text-controls.md)
 - [Руководство по проверке орфографии](spell-checking-and-prediction.md)
 - [Добавление поиска](search.md)
 - [Руководство по текстовому вводу](text-controls.md)
-
-**Разработчикам (XAML)**
 - [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Класс Windows.UI.Xaml.Controls PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

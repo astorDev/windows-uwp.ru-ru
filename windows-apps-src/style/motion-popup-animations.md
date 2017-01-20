@@ -6,38 +6,38 @@ ms.assetid: 4E9025CE-FC90-4d4c-9DE6-EC6B6F2AD9DF
 label: Motion--Pop-up animations
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 45219532db704e76e8e85e2926ea9190fba3c7a4
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: cb5d70784e758b4e18092b75df9e0d77243af7fc
 
 ---
 
-# Анимации всплывающих элементов пользовательского интерфейса
+# <a name="pop-up-ui-animations"></a>Анимации всплывающих элементов пользовательского интерфейса
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Используйте анимацию всплывающих элементов, чтобы отобразить или скрыть всплывающий пользовательский интерфейс для всплывающих элементов или для настраиваемых всплывающих элементов пользовательского интерфейса. Всплывающие элементы представляют собой контейнеры, появляющиеся над содержимым приложения и закрывающиеся, если пользователь нажимает на область вне всплывающего элемента или щелкает ее.
 
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**Класс PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210383)</li>
+<li>[**Класс PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh969172)</li>
+</ul>
+</div>
 
 
-
-**Важные API**
-
--   [**Класс PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210383)
--   [**Класс PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh969172)
-
-
-
-## Возможности и ограничения
+## <a name="dos-and-donts"></a>Возможности и ограничения
 
 
 -   Используйте анимации всплывающих элементов для отображения или скрытия настраиваемых всплывающих элементов пользовательского интерфейса, не включенных в саму страницу приложения. В стандартные элементы управления, предоставляемые Windows, уже встроены анимации.
 -   Не используйте анимации всплывающих элементов для всплывающих подсказок или диалоговых окон.
 -   Не используйте анимации всплывающих элементов для отображения или скрытия пользовательского интерфейса в основном содержимом вашего приложения; используйте только анимации всплывающих элементов для отображения или скрытия всплывающего контейнера, который отображается поверх основного содержимого приложения.
 
-## Статьи по теме
+## <a name="related-articles"></a>Связанные разделы
 
-**Разработчикам (XAML)**
 * [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Анимация всплывающего пользовательского интерфейса](https://msdn.microsoft.com/library/windows/apps/xaml/jj649433)
-* [Краткое руководство: анимация пользовательского интерфейса](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Краткое руководство: анимация пользовательского интерфейса с помощью анимаций библиотеки](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Класс PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210383)
 * [**Класс PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210391)
 * [**Класс PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh969172)
@@ -52,6 +52,6 @@ ms.openlocfilehash: 45219532db704e76e8e85e2926ea9190fba3c7a4
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

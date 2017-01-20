@@ -4,8 +4,8 @@ ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "Подробно о привязке данных"
 description: "Привязка данных обеспечивает отображение данных в пользовательском интерфейсе приложения и (дополнительно) синхронизацию с этими данными."
 translationtype: Human Translation
-ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
-ms.openlocfilehash: 48db13fec4ce9c6a9a998c84ddaaba30f7a24d83
+ms.sourcegitcommit: fa3a3cf6194f04a05301ae4dfb75a7a21ff22e73
+ms.openlocfilehash: fca2c9a795e38983f439d6df5c5a7394c29c1217
 
 ---
 # <a name="data-binding-in-depth"></a>Подробно о привязке данных
@@ -36,7 +36,7 @@ ms.openlocfilehash: 48db13fec4ce9c6a9a998c84ddaaba30f7a24d83
 
 -   [Пример {x:Bind}](http://go.microsoft.com/fwlink/p/?linkid=619989).
 -   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame).
--   [Пример базовых характеристик пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?linkid=619992).
+-   [Пример основных элементов пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?linkid=619992).
 
 **Примеры приложений с расширением разметки {Binding}**
 
@@ -129,7 +129,7 @@ public class HostViewModel : BindableBase
 }
 ```
 
-Вызов события **PropertyChanged** с аргументом [**String.Empty**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.empty.aspx) или значением **null** указывает, что не все свойства индексатора в объекте необходимо считать еще раз. Это событие можно вызвать для указания того, что свойства индексатора в объекте изменены, с помощью аргумента «Item\[*indexer*\]» для конкретных индексаторов (где *indexer* — это значение индекса) или значения «Item\[\]» для всех индексаторов.
+Вызов события **PropertyChanged** с аргументом [**String.Empty**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.empty.aspx) или значением **null** указывает, что не все свойства индексатора в объекте необходимо считать еще раз. Это событие можно вызвать для указания того, что свойства индексатора в объекте изменены, с помощью аргумента "Item\[*indexer*\]" для конкретных индексаторов (где *indexer* — это значение индекса) или значения "Item\[\]" для всех индексаторов.
 
 Источник привязки может рассматриваться как единичный объект, свойства которого содержат данные, или как коллекция объектов. В коде C# и Visual Basic вы можете выполнить единовременную привязку к объекту, реализующему класс [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx), чтобы отобразить коллекцию, которая не изменяется во время выполнения. Если используется отслеживаемая коллекция (которая поддерживает отслеживание добавления и удаления ее элементов), следует выполнить одностороннюю привязку к классу [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx). В коде C++ вы можете выполнить привязку к классу [**Vector&lt;T&gt;**](https://msdn.microsoft.com/library/dn858385.aspx) как для отслеживаемых, так и для неотслеживаемых коллекций. Чтобы выполнить привязку к собственным классам коллекции, используйте рекомендации из следующей таблицы.
 
@@ -371,7 +371,7 @@ End Class
 
 ## <a name="function-binding-in-xbind"></a>Привязка функций в {x:Bind}
 
-{x:Bind} позволяет использовать функцию на последнем этапе привязки. Этим можно пользоваться для выполнения преобразований, а также привязок, зависящих от нескольких свойств. См. раздел [**Расширение разметки {x:Bind}**](https://msdn.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension)
+{x:Bind} позволяет использовать функцию на последнем этапе привязки. Этим можно пользоваться для выполнения преобразований, а также привязок, зависящих от нескольких свойств. См. раздел [**Расширение разметки {x:Bind}**](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
 
 <span id="resource-dictionaries-with-x-bind"/>
 ## <a name="resource-dictionaries-with-xbind"></a>Использование расширения разметки {x:Bind} в словарях ресурсов
@@ -653,6 +653,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

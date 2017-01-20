@@ -4,12 +4,12 @@ ms.assetid:
 description: "В этой статье перечисляются теги протокола HTTP Live Streaming (HLS), поддерживаемые для приложений UWP."
 title: "Поддержка тегов протокола HTTP Live Streaming (HLS)"
 translationtype: Human Translation
-ms.sourcegitcommit: 3d61f5272e4d11acfb7e0a85436ca60ba458dcae
-ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
+ms.sourcegitcommit: 61feba54418ad7ba8f089737ebf52d12c466b7a7
+ms.openlocfilehash: 5575a56838eae98c0d79dff61e1afaa8cf87ee86
 
 ---
 
-# Поддержка тегов протокола HTTP Live Streaming (HLS)
+# <a name="http-live-streaming-hls-tag-support"></a>Поддержка тегов протокола HTTP Live Streaming (HLS)
 В следующей таблице перечислены теги HLS, которые поддерживаются для приложений UWP.
 
 > [!NOTE] 
@@ -68,11 +68,15 @@ ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
 | 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|НЕОБЯЗАТЕЛЬНО|Не поддерживается|Не поддерживается|Не поддерживается|
 | 4.3.4.4.  EXT-X-SESSION-DATA  |7|14|НЕОБЯЗАТЕЛЬНО|Не поддерживается|Не поддерживается|Не поддерживается|
 | 4.3.4.5.  EXT-X-SESSION-KEY |7|17|НЕОБЯЗАТЕЛЬНО|Не поддерживается|Не поддерживается|Не поддерживается|
+|4.3.5.  Теги мультимедиа или основного списка воспроизведения                  |             |                   |         |             |     |    |
+| 4.3.5.1.  EXT-X-INDEPENDENT-SEGMENTS |6|13|НЕОБЯЗАТЕЛЬНО|Не поддерживается|Поддерживается|Поддерживается|
+| 4.3.5.2.  EXT-X-START  |6|12|НЕОБЯЗАТЕЛЬНО|Не поддерживается|Частично поддерживается|Частично поддерживается|
+|&nbsp;&nbsp;&nbsp;  TIME-OFFSET|6|12|Атрибут|Не поддерживается|Поддерживается|Поддерживается|
+|&nbsp;&nbsp;&nbsp;  PRECISE|6|12|Атрибут|Не поддерживается|Не поддерживается (по умолчанию)|Не поддерживается (по умолчанию)|
 
 
 
-
-## Связанные статьи
+## <a name="related-topics"></a>Статьи по теме
 
 * [Воспроизведение мультимедиа](media-playback.md)
 * [Адаптивная потоковая передача](adaptive-streaming.md)
@@ -86,6 +90,6 @@ ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

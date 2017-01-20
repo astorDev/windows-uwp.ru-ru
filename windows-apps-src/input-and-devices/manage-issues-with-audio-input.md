@@ -5,26 +5,35 @@ title: "Решение проблем голосового ввода"
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
 template: detail.hbs
+keywords: "речь, голос, распознавание речи, естественный язык, диктовка, ввод, взаимодействие с пользователем"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 12f46dd0ec375977cc33efeb73757c5ec75077bd
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: a6f6e4c04f608898d2871113f38fe647b62bf8a5
 
 ---
 
-# Решение проблем голосового ввода
+# <a name="manage-issues-with-audio-input"></a>Решение проблем голосового ввода
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Узнайте, как решать проблемы с точностью распознавания речи, связанные с качеством голосового ввода.
 
-**Важные API**
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)</li>
+<li>[**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)</li>
+<li>[**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)</li>
 
--   [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)
--   [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)
--   [**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
+</ul>
+</div>
 
 
-
-
-## Оценка качества голосового ввода
+## <a name="assess-audio-input-quality"></a>Оценка качества голосового ввода
 
 
 Если распознавание речи включено, используйте событие [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) в распознавателе речи, чтобы определить, могут ли одна или несколько звуковых проблем мешать речевому вводу. Аргумент события ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) предоставляет свойство [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431), в котором описываются обнаруженные проблемы голосового ввода.
@@ -63,7 +72,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Управление распознаванием речи
+## <a name="manage-the-speech-recognition-experience"></a>Управление распознаванием речи
 
 
 Используйте описание, предоставленное свойством [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431), чтобы обеспечить улучшенные условия для распознавания.
@@ -103,7 +112,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 }
 ```
 
-## Связанные разделы
+## <a name="related-articles"></a>Связанные разделы
 
 
 * [Взаимодействия с помощью голосовых функций](speech-interactions.md)
@@ -120,6 +129,6 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

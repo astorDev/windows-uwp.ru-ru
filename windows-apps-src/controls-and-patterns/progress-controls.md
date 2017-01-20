@@ -6,11 +6,11 @@ ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 5679c2bb8e8b3fff205f8071fcf52a52e0c939cd
 
 ---
-# Элементы управления "Ход выполнения"
+# <a name="progress-controls"></a>Элементы управления "Ход выполнения"
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,21 +19,14 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx"><strong>Класс ProgressBar</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx"><strong>Свойство IsIndeterminate</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx"><strong>Класс ProgressRing</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx"><strong>Свойство IsActive</strong></a></li>
+<li>[**Класс ProgressBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)</li>
+<li>[**Свойство IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)</li>
+<li>[**Класс ProgressRing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)</li>
+<li>[**Свойство IsActive**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-## Типы хода выполнения
+## <a name="types-of-progress"></a>Типы хода выполнения
 
 Существуют два элемента управления, предназначенных для индикации того, что операция выполняется, — ProgressBar и ProgressRing.
 
@@ -51,11 +44,11 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
 
 *Неопределенное состояние ProgressRing*
 
-## Когда использовать каждый элемент управления
+## <a name="when-to-use-each-control"></a>Когда использовать каждый элемент управления
 
 Не всегда очевидно, какой элемент управления или какое его состояние (определенное или неопределенное) следует использовать для индикации выполнения какой-либо операции. Иногда задача достаточно очевидна и совсем не требует индикации выполнения, но иногда даже при использовании индикатора выполнения требуется еще и текстовая строка для объяснения того, какая операция выполняется.
 
-### ProgressBar
+### <a name="progressbar"></a>ProgressBar
 -   **Обладает ли элемент управления определенной продолжительностью или можно ли спрогнозировать завершение операции?**
 
     В таких случаях используйте определенное состояние ProgressBar и соответствующим образом обновляйте процент или другое значение хода выполнения.
@@ -72,7 +65,7 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
     - *Получение*
     - *Обработка...*
 
-### ProgressRing
+### <a name="progressring"></a>ProgressRing
 
 -   **Вынуждает ли операция пользователя ждать ее завершения, чтобы продолжить?**
 
@@ -90,7 +83,7 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
     - *Вход...*
     - *Подключение...*
 
-### Индикация хода выполнения не требуется
+### <a name="no-progress-indication-necessary"></a>Индикация хода выполнения не требуется
 -   **Нужно ли пользователю знать информацию о выполняемых действиях?**
 
     Например, если приложение скачивает что-либо в фоновом режиме, а пользователь не начинал скачивание, то ему необязательно знать о нем.
@@ -103,7 +96,7 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
 
     Иногда лучше показать уведомление только после выполнения операции или сразу же предоставить визуальное указание, что операция выполнена, а завершающие действия выполнить в фоновом режиме.
 
-## Рекомендации по использованию индикаторов хода выполнения
+## <a name="progress-controls-best-practices"></a>Рекомендации по использованию индикаторов хода выполнения
 
 Иногда лучше увидеть визуальные примеры того, где и когда следует использовать различные индикаторы хода выполнения:
 
@@ -129,7 +122,7 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
 
 Неопределенное состояние ProgressRing используется, когда любое дальнейшее взаимодействия пользователя с приложением прекращается или приложение ожидает ввода пользователя для продолжения работы. Приведенный выше пример "Вход..." является идеальным сценарием для использования ProgressRing; пользователь не может продолжить использование приложения, пока вход не выполнен.
 
-## Настройка индикатора хода выполнения
+## <a name="customizing-a-progress-control"></a>Настройка индикатора хода выполнения
 
 Оба индикатора выполнения довольно простые, но возможность изменения некоторых визуальных особенностей элементов управления не очевидна.
 
@@ -171,7 +164,7 @@ progressRing.IsActive = true;
 Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Wait, 10);
 ```
 
-## Статьи по теме
+## <a name="related-articles"></a>Статьи по теме
 
 
 - [**Класс ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529)
@@ -183,6 +176,6 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

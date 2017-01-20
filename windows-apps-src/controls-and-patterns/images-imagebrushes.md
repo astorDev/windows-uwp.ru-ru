@@ -1,16 +1,16 @@
 ---
 author: Jwmsft
-Description: "Узнайте, как интегрировать изображения в приложение, в том числе как использовать API двух основных классов XAML— Image и ImageBrush."
+Description: "Узнайте, как интегрировать изображения в приложение, в том числе как использовать API двух основных классов XAML — Image и ImageBrush."
 title: "Изображения и кисти изображений"
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
+ms.sourcegitcommit: 98b3a9739b1906b7abb529cea1e7d433118cbcdd
+ms.openlocfilehash: 6adb5c106ccbe7d5dccda405b301daf8ce4e69f4
 
 ---
-# Изображения и кисти изображений
+# <a name="images-and-image-brushes"></a>Изображения и кисти изображений
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,29 +19,23 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx"><strong>Класс Image</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx"><strong>Свойство Source</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx"><strong>Класс ImageBrush</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx"><strong>Свойство ImageSource</strong></a></li>
+<li>[**Класс Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)</li>
+<li>[**Свойство Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)</li>
+<li>[**Класс ImageBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)</li>
+<li>[**Свойство ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## Эти элементы правильные?
+## <a name="are-these-the-right-elements"></a>Эти элементы правильные?
 Используйте элемент **Image** для отображения отдельного изображения в приложении.
 
-Используйте **ImageBrush** для применения изображения к другому объекту. Способы использования ImageBrush включают декоративные эффекты для текста или мозаичные фоны для элементов управления или контейнеров макета. Вы можете задать растяжение, выравнивание и замощение изображения, а также создать шаблоны и другие эффекты. 
+Используйте **ImageBrush** для применения изображения к другому объекту. К способам использования ImageBrush относятся декоративные эффекты для текста или фоны для элементов управления или контейнеров макета.
 
 
-## Создание изображения
+## <a name="create-an-image"></a>Создание изображения
 
-### Image
+### <a name="image"></a>Изображение
 В этом примере показано, как создать изображение с помощью объекта [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx).
 
 
@@ -55,7 +49,7 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 В этом примере свойство [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) определяет расположение изображения, которое следует отобразить. В свойстве Source можно указать абсолютный URL-адрес (например, http://contoso.com/myPicture.jpg) или URL-адрес, который соответствует составу и структуре упаковки вашего приложения. В нашем примере мы помещаем файл изображения "licorice.jpg" в корневую папку проекта и объявляем параметры проекта, которые содержат этот файл.
 
-### ImageBrush
+### <a name="imagebrush"></a>ImageBrush
 
 Объект [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx) позволяет использовать изображение для рисования области, где применяется объект [**Brush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx). Например, вы можете использовать ImageBrush в качестве значения свойства [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) класса [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.ellipse.aspx) или свойства [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) класса [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx).
 
@@ -73,7 +67,7 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 ![Фигура Ellipse, закрашенная с помощью ImageBrush.](images/Image_ImageBrush_Ellipse.jpg)
 
-### Растяжение изображения
+### <a name="stretch-an-image"></a>Растяжение изображения
 
 Если не указать значения [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) или [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) для **Image**, то изображение отображается с размерами, задаваемыми **Source**. Определяя значения **Width** и **Height**, вы создаете удерживающую прямоугольную область, в пределах которой отображается изображение. Вы можете выбрать, каким образом изображение будет заполнять удерживающую область, с помощью свойства [**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.stretch.aspx). Свойство Stretch может принимать следующие значения, определенные в перечислении [**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx):
 
@@ -84,11 +78,11 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 ![Пример параметров растяжения.](images/Image_Stretch.jpg)
 
-### Обрезка изображения
+### <a name="crop-an-image"></a>Обрезка изображения
 
 С помощью свойства [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) можно вырезать область отображаемого изображения. Вы задаете свойство Clip в [**Geometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.geometry.aspx). Вырезание областей непрямоугольной формы в настоящее время не поддерживается.
 
-В следующем примере показано, как можно использовать класс [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) для вырезания области изображения. В этом примере мы определяем объект **Image** со значением высоты 200. Объект **RectangleGeometry** определяет прямоугольную область для отображаемого изображения. Для свойства [**Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) задано значение "25,25,100,150", которое определяет начало прямоугольника в точке "25,25" с шириной100 и высотой150. Отображается только та часть изображения, которая попадает в область прямоугольника.
+В следующем примере показано, как можно использовать класс [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) для вырезания области изображения. В этом примере мы определяем объект **Image** со значением высоты 200. Объект **RectangleGeometry** определяет прямоугольную область для отображаемого изображения. Для свойства [**Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) задано значение "25,25,100,150", которое определяет начало прямоугольника в точке "25,25" с шириной 100 и высотой 150. Отображается только та часть изображения, которая попадает в область прямоугольника.
 
 ```xaml
 <Image Source="licorice.jpg" Height="200">
@@ -102,9 +96,9 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 ![Объект Image, обрезанный с помощью RectangleGeometry.](images/Image_Cropped.jpg)
 
-### Применение непрозрачности
+### <a name="apply-an-opacity"></a>Применение непрозрачности
 
-Вы можете применить к изображению свойство [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx), что позволяет отрисовать его полупрозрачным. Значения непрозрачности варьируют от 0,0 до 1,0, где 1,0— полная непрозрачность, а 0,0— полная прозрачность. В этом примере показано, как можно применить непрозрачность 0,5 к объекту Image.
+Вы можете применить к изображению свойство [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx), что позволяет отрисовать его полупрозрачным. Значения непрозрачности варьируют от 0,0 до 1,0, где 1,0 — полная непрозрачность, а 0,0 — полная прозрачность. В этом примере показано, как можно применить непрозрачность 0,5 к объекту Image.
 
 ```xaml
 <Image Height="200" Source="licorice.jpg" Opacity="0.5" />
@@ -114,7 +108,7 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 ![Объект Image с непрозрачностью 0,5.](images/Image_Opacity.jpg)
 
-### Форматы файлов изображений
+### <a name="image-file-formats"></a>Форматы файлов изображений
 
 **Image** и **ImageBrush** могут отображать следующие форматы файлов изображений:
 
@@ -126,7 +120,7 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 -   JPEG XR
 -   значки (ICO)
 
-API для [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx), [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) и [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) не включают специальные методы для кодирования и декодирования форматов мультимедиа. Все операции кодирования и декодирования— встроенные, и только некоторые аспекты кодирования и декодирования могут быть включены в данные для событий загрузки. Если приложение выполняет преобразования изображений или манипуляции с ними, вам следует использовать API, доступные в пространстве имен [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.graphics.imaging.aspx), при выполнении каких-либо действий по кодированию или декодированию изображений. Кроме того, эти API поддерживаются компонентом обработки изображений Windows (WIC) в Windows.
+API для [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx), [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) и [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) не включают специальные методы для кодирования и декодирования форматов мультимедиа. Все операции кодирования и декодирования — встроенные, и только некоторые аспекты кодирования и декодирования могут быть включены в данные для событий загрузки. Если приложение выполняет преобразования изображений или манипуляции с ними, вам следует использовать API, доступные в пространстве имен [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.graphics.imaging.aspx), при выполнении каких-либо действий по кодированию или декодированию изображений. Кроме того, эти API поддерживаются компонентом обработки изображений Windows (WIC) в Windows.
 
 Начиная с Windows 10 версии 1607, элемент **Image** поддерживает анимационные GIF-изображения. При использовании объекта **BitmapImage** в качестве изображения **Source** можно обращаться к API-интерфейсам BitmapImage для управления воспроизведением анимационных GIF-изображений. Дополнительные сведения см. в разделе "Примечания" на странице класса [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx).
 
@@ -134,35 +128,36 @@ API для [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/wind
 
 Дополнительные сведения о ресурсах приложения и о том, как запаковать исходные изображения в приложение, см. в разделе [Определение ресурсов приложения](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321).
 
-### WriteableBitmap
+### <a name="writeablebitmap"></a>WriteableBitmap
 
 [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx) предоставляет [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx), который может быть изменен и который не использует основное декодирование файлов компонента WIC. Можно динамически изменять изображения и заново обрабатывать обновленные изображения. Для определения содержимого буфера **WriteableBitmap** используйте свойство [**PixelBuffer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer.aspx), чтобы получить доступ к буферу, и потоковый или языковой тип буфера для его наполнения. Пример кода см. в разделе [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx).
 
-### RenderTargetBitmap
+### <a name="rendertargetbitmap"></a>RenderTargetBitmap
 
 Класс [**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) позволяет захватывать дерево пользовательского интерфейса XAML в работающем приложении, а затем представляет источник точечного рисунка. После захвата источник изображения можно применить к другим частям приложения, сохранить в качестве ресурса или данных приложения или использовать для других сценариев. Одним из наиболее полезных сценариев является создание динамического эскиза XAML-страницы для схемы навигации, например предоставление ссылки на изображение из элемента управления [**Hub**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx). В **RenderTargetBitmap** существуют некоторые ограничения в отношении содержимого, которое появляется в захваченном изображении. Дополнительные сведения см. в справочнике по API в разделе [**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx).
 
-### Исходные изображения и масштабирование
+### <a name="image-sources-and-scaling"></a>Исходные изображения и масштабирование
 
 Создайте исходные изображения в нескольких рекомендуемых размерах, чтобы ваше приложение хорошо выглядело при масштабировании операционной системой Windows. Указывая **Source** для **Image**, вы можете использовать соглашение об именовании, которое будет автоматически ссылаться на правильный ресурс для текущего масштабирования. Особенности контекста именования и дополнительные сведения см. в разделе [Краткое руководство: использование файловых и графических ресурсов](https://msdn.microsoft.com/library/windows/apps/xaml/hh965325).
 
 Дополнительные сведения о проектировании масштабирования см. в документе [Руководство по взаимодействию с пользователями — макеты и масштабирование](https://msdn.microsoft.com/library/windows/apps/dn611863).
 
-### Image и ImageBrush в коде
+### <a name="image-and-imagebrush-in-code"></a>Image и ImageBrush в коде
 
 Обычно для определения элементов Image и ImageBrush используется XAML, а не код. Это происходит потому, что данные элементы часто являются выходными элементами средств разработки в рамках определения пользовательского интерфейса XAML.
 
 При определении Image или ImageBrush с помощью кода используйте конструкторы по умолчанию, а затем задайте соответствующее свойство источника ([**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) или [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)). При задании свойства источника с помощью кода потребуется [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (а не URI). Если источником является поток, для инициализации значения используйте метод [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx). Если источником является URI, который включает содержимое в ваше приложение, использующее схемы **ms-appx** или **ms-resource**, используйте конструктор [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx), который применяет URI. Также можно рассмотреть вариант обработки события [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx), если существуют некоторые временные проблемы с получением или декодированием источника изображения, при которых может понадобиться отображать альтернативное содержимое до тех пор, пока источник изображения не станет доступным. Пример кода см. в разделе [Пример использования изображений на основе XAML](http://go.microsoft.com/fwlink/p/?linkid=238575).
 
-> **Примечание.**&nbsp;&nbsp;Если вы установили изображения с помощью кода, вы можете использовать автоматическую обработку для получения доступа к неквалифицированным ресурсам с текущими квалификаторами масштаба и языка, либо вы можете использовать [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) и [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) с квалификаторами масштаба и языка для непосредственного получения ресурсов. Подробнее см. в разделе [Система управления ресурсами](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx).
+> [!NOTE]
+> Если вы установили изображения с помощью кода, вы можете использовать автоматическую обработку для получения доступа к неквалифицированным ресурсам с текущими квалификаторами масштаба и языка либо вы можете использовать [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) и [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) с квалификаторами масштаба и языка для непосредственного получения ресурсов. Подробнее см. в разделе [Система управления ресурсами](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx).
 
-## Связанные разделы
+## <a name="related-articles"></a>Связанные разделы
 
 -   [Звук, видео и камера](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
 -   [**Класс Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
 -   [**Класс ImageBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

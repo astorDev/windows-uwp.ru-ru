@@ -4,29 +4,26 @@ ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: "Узнайте, как использовать класс AdControl для показа баннерной рекламы в приложении на JavaScript или HTML для Windows 10 (UWP), Windows 8.1 или Windows Phone 8.1."
 title: "AdControl в HTML 5 и JavaScript"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 501edf178ecccf8a6b62d4602837dbbdf820d744
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: 509cfe00050c5b5b3997af0e2906676f946d9278
 
 ---
 
-# AdControl в HTML 5 и JavaScript
-
-
-
+# <a name="adcontrol-in-html-5-and-javascript"></a>AdControl в HTML 5 и JavaScript
 
 В этом пошаговом руководстве рассказывается, как использовать класс [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) для показа баннерной рекламы в приложении на JavaScript или HTML для Windows 10 (UWP), Windows 8.1 или Windows Phone 8.1. В этом руководстве не используется **AdMediatorControl** и рекламный посредник.
 
 Полный пример с проектом, демонстрирующим способы добавления баннерной рекламы в приложение на JavaScript и HTML, см. в разделе [примеров рекламы на GitHub](http://aka.ms/githubads).
 
-## Необходимые компоненты
+## <a name="prerequisites"></a>Необходимые компоненты
 
 
 * Для приложений UWP: установите [пакет SDK служб Microsoft Store](http://aka.ms/store-em-sdk) с Visual Studio 2015.
 * Для приложений для Windows 8.1 и Windows Phone 8.1 установите [пакет Microsoft Advertising SDK для Windows и Windows Phone 8.x](http://aka.ms/store-8-sdk) с Visual Studio 2015 или Visual Studio 2013.
 
-> **Примечание.** Если вы установили предварительную сборку Windows 10 Anniversary SDK 14295 или более позднюю версию в Visual Studio 2015, вам также потребуется установить библиотеку WinJS. Эта библиотека ранее включалась в предыдущие версии Windows SDK для Windows 10, но, начиная с предварительной сборки Windows 10 Anniversary SDK 14295, ее необходимо устанавливать отдельно. Сведения по установке WinJS см. в разделе [Скачать WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> **Примечание.**&nbsp;&nbsp;Если вы установили предварительную сборку Windows 10 Anniversary SDK 14295 или более позднюю версию в Visual Studio 2015, вам также потребуется установить библиотеку WinJS. Эта библиотека ранее включалась в предыдущие версии Windows SDK для Windows 10, но, начиная с предварительной сборки Windows 10 Anniversary SDK 14295, ее необходимо устанавливать отдельно. Сведения по установке WinJS см. в разделе [Скачать WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
-## Написание кода
+## <a name="code-development"></a>Написание кода
 
 1. В Visual Studio откройте свой проект либо создайте новый.
 
@@ -44,44 +41,48 @@ ms.openlocfilehash: 501edf178ecccf8a6b62d4602837dbbdf820d744
 
     ![javascriptaddreference](images/13-f7f6d6a6-161e-4f17-995d-1236d0b5d9f2.png)
 
-    > **Примечание**. Это изображение относится к Visual Studio 2015, где создается проект UWP для Windows 10. Если выполняется сборка приложения для Windows 8.1 или Windows Phone 8.1 либо с использованием Visual Studio 2013, экран будет выглядеть иначе.
+    > **Примечание.**&nbsp;&nbsp;Это изображение относится к Visual Studio 2015, где создается проект UWP для Windows 10. Если выполняется сборка приложения для Windows 8.1 или Windows Phone 8.1 либо с использованием Visual Studio 2013, экран будет выглядеть иначе.
 
-5.  В **Диспетчере ссылок** нажмите "ОК".
+5.  В **диспетчере ссылок** нажмите "ОК".
 
-6.  Откройте файл default.html (или другой html-файл, если это необходимо для вашего проекта).
+6.  Откройте файл index.html (или другой html-файл, если это необходимо для вашего проекта).
 
-7.  В разделе **&lt;head&gt;** после ссылок на JavaScript проекта из default.css и default.js добавьте ссылку на ad.js.
+7.  В разделе **&lt;head&gt;** после ссылок на JavaScript проекта из default.css и main.js добавьте ссылку на ad.js.
 
-    В проекте UWP добавьте следующий код.
+  В проекте UWP добавьте следующий код.
 
-    ``` syntax
-    <!-- Microsoft advertising required references -->
-    <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` html
+  <!-- Microsoft advertising required references -->
+  <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
+  ```
 
-    В проекте для Windows 8.1 или Windows Phone 8.1 добавьте следующий код.
+  В проекте для Windows 8.1 или Windows Phone 8.1 добавьте следующий код.
 
-    ``` syntax
-    <!-- Microsoft advertising required references -->
-    <script src="/MSAdvertisingJS/ads/ad.js"></script>
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` html
+  <!-- Microsoft advertising required references -->
+  <script src="/MSAdvertisingJS/ads/ad.js"></script>
+  ```
 
-    > **Примечание.**&nbsp;&nbsp;Эта строка должна располагаться в разделе **&lt;head&gt;** после включения default.js; в противном случае будет выдано сообщение об ошибке при сборке проекта.
+  <span/>
+  >**Примечание.**&nbsp;&nbsp;Эта строка должна располагаться в разделе **&lt;head&gt;** после включения main.js; в противном случае будет выдано сообщение об ошибке при сборке проекта. Если ваш проект ориентирован на Windows 8.1 или Windows Phone 8.1, файл HTML по умолчанию в вашем проекте называется default.html, а не index.html, а файл по умолчанию JavaScript в вашем проекте — default.js, а не main.js.
 
 8.  Измените раздел **&lt;body&gt;** в файле default.html (или другом html-файле, если это необходимо для вашего проекта), включив в него элемент div для **AdControl**. Задайте свойства **applicationId** и **adUnitId** в **AdControl**, чтобы проверить значения, предоставляемые в разделе [Значения тестового режима](test-mode-values.md), и измените высоту и ширину этого элемента управления, чтобы он соответствовал одному из [поддерживаемых размеров баннерной рекламы](supported-ad-sizes-for-banner-ads.md).
 
-    > **Примечание.**&nbsp;&nbsp;Перед отправкой приложения на проверку необходимо будет заменить тестовые значения **applicationId** и **adUnitId** действительными значениями.
+  > **Примечание.**&nbsp;&nbsp;Перед отправкой приложения на проверку необходимо будет заменить тестовые значения **applicationId** и **adUnitId** действительными значениями.
 
-    ``` syntax
-    <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
-          data-win-control="MicrosoftNSJS.Advertising.AdControl"
-          data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: '10865270'}">
-    </div>
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` html
+  <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
+        data-win-control="MicrosoftNSJS.Advertising.AdControl"
+        data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: '10865270'}">
+  </div>
+  ```
 
 9.  Скомпилируйте и запустите приложение, чтобы увидеть его с объявлением.
 
-## Выпуск приложения с динамической рекламой с помощью Центра разработки для Windows
+## <a name="release-your-app-with-live-ads-using-windows-dev-center"></a>Выпуск приложения с динамической рекламой с помощью Центра разработки для Windows
 
 
 1.  На информационной панели Центра разработки, перейдите на страницу **Получение дохода** &gt; **Получение дохода с помощью рекламы** вашего приложения и [создайте автономный блок Microsoft Advertising](../publish/monetize-with-ads.md). В качестве типа рекламного блока укажите **Баннер**. Запишите и идентификатор рекламного блока, и идентификатор приложения.
@@ -92,26 +93,23 @@ ms.openlocfilehash: 501edf178ecccf8a6b62d4602837dbbdf820d744
 
 4.  Изучите [отчеты по показателям рекламы](../publish/advertising-performance-report.md) на информационной панели Центра разработки.
 
-## Полный код default.html для примера проекта UWP
+## <a name="complete-indexhtml-for-a-sample-uwp-project"></a>Полный код index.html для примера проекта UWP
 
-
-``` syntax
+> [!div class="tabbedCodeSnippets"]
+``` html
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>My_Windows_10_Ad_Funded_JavaScript_App</title>
-
+    <title>AdControlExampleApp</title>
     <!-- WinJS references -->
-    <link href="//Microsoft.WinJS.2.0.Preview/css/ui-dark.css" rel="stylesheet" />
-    <script src="//Microsoft.WinJS.2.0.Preview/js/base.js"></script>
-    <script src="//Microsoft.WinJS.2.0.Preview/js/ui.js"></script>
-
-    <!-- My_Windows_10_Ad_Funded_JavaScript_App references -->
-    <link href="/css/default.css" rel="stylesheet" />
-    <script src="/js/default.js"></script>
-
-    <!-- Microsoft advertising required references -->
+    <link href="lib/winjs-4.0.1/css/ui-light.css" rel="stylesheet" />
+    <script src="lib/winjs-4.0.1/js/base.js"></script>
+    <script src="lib/winjs-4.0.1/js/ui.js"></script>
+    <!-- AdControlExampleApp references -->
+    <link href="css/default.css" rel="stylesheet" />
+    <script src="js/main.js"></script>
+    <!-- Required reference for AdControl -->
     <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
 </head>
 <body>
@@ -124,7 +122,7 @@ ms.openlocfilehash: 501edf178ecccf8a6b62d4602837dbbdf820d744
 </html>
 ```
 
-## Ссылки по теме
+## <a name="related-topics"></a>Связанные статьи
 
 * [Примеры рекламы на GitHub](http://aka.ms/githubads)
  
@@ -133,6 +131,6 @@ ms.openlocfilehash: 501edf178ecccf8a6b62d4602837dbbdf820d744
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Dec16_HO2-->
 
 

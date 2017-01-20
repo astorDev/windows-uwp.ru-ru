@@ -6,11 +6,11 @@ ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 04f8e82f05c46d41657dae0b30e04f49341bb5db
 
 ---
-# Элементы управления текстом
+# <a name="text-controls"></a>Элементы управления текстом
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,29 +19,23 @@ ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
 - Для отображения текста, доступного только для чтения, применяются элементы управления [TextBlock](text-block.md) и [RichTextBlock](rich-text-block.md).
 - Элементы управления для ввода и редактирования текста: [TextBox](text-box.md), [AutoSuggestBox](auto-suggest-box.md), [PasswordBox](password-box.md) и [RichEditBox](rich-edit-box.md).
 
-
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx"><strong>Класс AutoSuggestBox</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx"><strong>Класс PasswordBox</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx"><strong>Класс RichEditBox</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx"><strong>Класс RichTextBlock</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx"><strong>Класс TextBlock</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx"><strong>Класс TextBox</strong></a></li>
+<li>[**Класс AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</li>
+<li>[**Класс PasswordBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</li>
+<li>[**Класс RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
+<li>[**Класс RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
+<li> [**Класс TextBlock**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)</li>
+<li>[**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## Выбор правильного элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Конкретный используемый элемент управления текстом зависит от сценария. Эта информация поможет выбрать нужный элемент управления текстом для вашего приложения.
 
-### Отрисовка текста, доступного только для чтения
+### <a name="render-read-only-text"></a>Отрисовка текста, доступного только для чтения
 
 Для отображения в приложении текста «только для чтения», как правило, используется **TextBlock**. Его можно использовать для отображения однострочного или многострочного текста, строковых гиперссылок и текста с полужирным шрифтом, курсивом или подчеркиванием.
 
@@ -53,7 +47,7 @@ ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
 
 Свойство содержимого RichTextBlock представляет собой свойство [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx), которое поддерживает текст на основе абзаца с помощью элемента [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx). У него нет свойства **Text**, которое можно использовать для удобного доступа к текстовому содержимому элементов управления в приложении.  
 
-### Текстовый ввод
+### <a name="text-input"></a>Текстовый ввод
 
 Используйте элемент управления **TextBox**, чтобы позволить пользователю вводить и редактировать неформатированный текст, в частности, в форме. С помощью свойства [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) можно получить и задать текст в элементе управления TextBox.
 
@@ -80,7 +74,7 @@ ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
     -   **Требуется ли пользователю мгновенная обратная связь при изменении значения параметра?** Если да, используйте элемент управления [ползунок](slider.md), возможно, вместе с сопутствующими элементами управления.
     -   **Вероятна ли корректировка введенного значения после наблюдения результата, например в случае установки громкости или яркости?** Если да, используйте элемент управления [ползунок](slider.md).
 
-## Примеры.
+## <a name="examples"></a>Примеры.
 
 Текстовое поле
 
@@ -94,7 +88,7 @@ ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
 
 ![Состояние фокуса поля ввода пароля при вводе текста](images/passwordbox-focus-typing.png)
 
-## Создание элемента управления текстом
+## <a name="create-a-text-control"></a>Создание элемента управления текстом
 
 Сведения и примеры, связанные с каждым элементом управления текстом, см. в следующих статьях.
 
@@ -105,14 +99,14 @@ ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
 -   [**TextBlock**](text-block.md)
 -   [**TextBox**](text-box.md)
 
-## Инструкции по использованию шрифтов и стиля
+## <a name="font-and-style-guidelines"></a>Инструкции по использованию шрифтов и стиля
 Инструкции по использованию шрифтов и стиля см. в этих статьях:
 
 - [**Шрифт, руководство**](fonts.md)
 - [**Список значков Segoe MDL2 и руководства**](segoe-ui-symbol-font.md)
 
 
-## Выбор подходящей клавиатуры для элемента управления текстом
+## <a name="choose-the-right-keyboard-for-your-text-control"></a>Выбор подходящей клавиатуры для элемента управления текстом
 
 **Применимо к:** TextBox, PasswordBox RichEditBox
 
@@ -129,7 +123,7 @@ ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
 
 Дополнительные сведения можно найти в статье [Использование типа вводимых данных для изменения сенсорной клавиатуры](https://msdn.microsoft.com/library/windows/apps/mt280229).
 
-## Шрифты цвета
+## <a name="color-fonts"></a>Шрифты цвета
 
 **Применимо к:** TextBlock, RichTextBlock, TextBox, RichEditBox
 
@@ -147,7 +141,7 @@ ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
 
 Подробные сведения см. в свойстве [**IsColorFontEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx).
 
-## Инструкции по разделителям строк и абзацев
+## <a name="guidelines-for-line-and-paragraph-separators"></a>Инструкции по разделителям строк и абзацев
 
 **Применимо к:** TextBlock, RichTextBlock, многострочному TextBox, RichEditBox
 
@@ -159,7 +153,7 @@ ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
 
 Приложение сможет вставить разделитель абзаца между абзацами текста. Использование этого разделителя разрешит создание файлов обычного текста, которые можно форматировать с помощью области строки в различных операционных системах. Целевая система может игнорировать разделители в виде линии и разделить абзацы только в разделителях абзаца.
 
-## Руководство по проверке орфографии
+## <a name="guidelines-for-spell-checking"></a>Руководство по проверке орфографии
 
 **Применимо к:** TextBox, RichEditBox
 
@@ -185,7 +179,7 @@ ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
 
 Для элементов управления TextBox и RichEditBox проверка орфографии включена по умолчанию. Ее можно выключить, задав для свойства **IsSpellCheckEnabled** значение **false**.
 
-## Связанные разделы
+## <a name="related-articles"></a>Связанные разделы
 
 **Проектировщикам**
 - [**Шрифт, руководство**](fonts.md)
@@ -199,6 +193,6 @@ ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

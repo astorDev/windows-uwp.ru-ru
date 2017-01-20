@@ -4,26 +4,26 @@ title: "Планирование переноса DirectX"
 description: "Спланируйте свой проект переноса игры с DirectX 9 на DirectX 11 и универсальную платформу Windows (UWP) - обновление кода графики и помещение игры в среду выполнения Windows."
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
+ms.sourcegitcommit: 115377ed3e5a13668481d1122f354610b3077763
+ms.openlocfilehash: f5f66f5da79eb62e3a81f4fe0d7398fed689d378
 
 ---
 
-# Планирование портирования приложений на DirectX
+# <a name="plan-your-directx-port"></a>Планирование портирования приложений на DirectX
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Резюме**
 
 -   Планирование переноса приложений на DirectX
--   [Важные изменения в Direct3D11 по сравнению с Direct3D9](understand-direct3d-11-1-concepts.md)
+-   [Важные изменения в Direct3D 11 по сравнению с Direct3D 9](understand-direct3d-11-1-concepts.md)
 -   [Сопоставление компонентов](feature-mapping.md)
 
 
 Спланируйте свой проект переноса игры с DirectX 9 на DirectX 11 и универсальную платформу Windows (UWP): обновление кода графики и помещение игры в среду выполнения Windows.
 
-## Планирование переноса кода графики
+## <a name="plan-to-port-graphics-code"></a>Планирование переноса кода графики
 
 
 Перед переносом игры на платформу UWP важно убедиться, что в игре нет остатков кода Direct3D 8. Убедитесь, что из игры полностью удален фиксированный конвейер функций. Полный список устаревших возможностей, включая функции фиксированного конвейера, можно найти в разделе [Устаревшие возможности](https://msdn.microsoft.com/library/windows/desktop/cc308047).
@@ -40,7 +40,7 @@ ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
 
 Познакомьтесь с различными [уровнями возможностей Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476876). Уровни возможностей классифицируют широкий спектр видеооборудования за счет определения наборов известных функций. Каждый из наборов примерно соответствует версии Direct3D, от 9.1 до 11.2. Все уровни возможностей используют API DirectX 11.
 
-## Планирование портирования кода пользовательского интерфейса Win32 в CoreWindow
+## <a name="plan-to-port-win32-ui-code-to-corewindow"></a>Планирование портирования кода пользовательского интерфейса Win32 в CoreWindow
 
 
 Приложения UWP работают в окне, созданном для контейнера приложения и именуемом [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Ваша игра контролирует окно, наследуя от [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478), что требует меньших подробностей реализации, чем окно рабочего стола. Основной цикл вашей игры будет находиться в методе [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505).
@@ -55,7 +55,7 @@ ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
 
 Есть две концепции, которые придется использовать часто.
 
--   Управляемые ссылки ([**^**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx) и [**управляемые классы**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (классы ссылок) являются фундаментальной частью среды выполнения Windows. Классы управляемых ссылок будет необходимо использовать для взаимодействия с компонентами среды выполнения Windows, например [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (подробнее см. в пошаговом руководстве).
+-   Управляемые ссылки ([**оператор ^**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)) и [**управляемые классы**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (классы ссылок) являются фундаментальной частью среды выполнения Windows. Классы управляемых ссылок будет необходимо использовать для взаимодействия с компонентами среды выполнения Windows, например [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (подробнее см. в пошаговом руководстве).
 -   При работе с интерфейсами COM Direct3D 11 используйте тип шаблона [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx), чтобы упростить применение указателей СОМ.
 
  
@@ -68,6 +68,6 @@ ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

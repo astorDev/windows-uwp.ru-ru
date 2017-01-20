@@ -6,34 +6,28 @@ ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
 label: Fonts
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: b79a6f3ee32494f04fa472c0531c06aa0a60098b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 0b25dc91a5ec82a83ae24a41854e9eeab8990128
 
 ---
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Шрифты для приложений UWP
+# <a name="fonts-for-uwp-apps"></a>Шрифты для приложений UWP
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 В этой статье перечисляются шрифты, рекомендованные для приложений UWP. Эти шрифты будут гарантировано доступны в выпусках Windows 10, поддерживающих приложения UWP.
 
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209655"><strong>Свойство FontFamily</strong></a></li>
+<li>[**Свойство FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209655)</li>
 </ul>
-
 </div>
-</div>
-
-
 
 В [руководстве по шрифтовому оформлению UWP](typography.md) рекомендуется использовать в приложениях шрифт Segoe UI; но хотя шрифт Segoe UI хорошо подходит для большинства приложений, не обязательно ограничиваться только им. Можно использовать другие шрифты в таких сценариях, как чтение или отображение текста на некоторых языках, отличных от английского. 
-
-
-
  
-## Рубленые шрифты (без засечек)
+## <a name="sans-serif-fonts"></a>Рубленые шрифты (без засечек)
 
 Рубленые шрифты хорошо подходят для заголовков и элементов пользовательского интерфейса. 
 
@@ -94,7 +88,7 @@ ms.openlocfilehash: b79a6f3ee32494f04fa472c0531c06aa0a60098b
 </table>
 
 
-## Шрифты с засечками
+## <a name="serif-fonts"></a>Шрифты с засечками
 
 Шрифты с засечками хорошо подходят для представления больших объемов текста. 
 
@@ -133,7 +127,7 @@ ms.openlocfilehash: b79a6f3ee32494f04fa472c0531c06aa0a60098b
 </tbody>
 </table>
 
-## Символы и значки
+## <a name="symbols-and-icons"></a>Символы и значки
 
 
 <table>
@@ -165,7 +159,7 @@ ms.openlocfilehash: b79a6f3ee32494f04fa472c0531c06aa0a60098b
 
 
 
-## Шрифты для языков, не использующих латинский алфавит
+## <a name="fonts-for-non-latin-languages"></a>Шрифты для языков, не использующих латинский алфавит
 
 Однако многие из этих шрифтов содержат символы латиницы.
 
@@ -294,21 +288,17 @@ ms.openlocfilehash: b79a6f3ee32494f04fa472c0531c06aa0a60098b
 </table>
 
 
-## Шрифты для глобализации и локализации
-Используйте [API сопоставления шрифтов LanguageFont](https://msdn.microsoft.com/library/windows/apps/br206864) для программного доступа к рекомендуемому семейству, размеру, насыщенности и стилю шрифта определенного языка. Объект LanguageFont предоставляет доступ к нужной информации о шрифте для различных категорий содержимого, включая заголовки, уведомления, текст пользовательского интерфейса и шрифты доступных для редактирования текстов. Дополнительные сведения см. в разделе [Настройка макета и шрифтов для поддержки глобализации](https://msdn.microsoft.com/windows/uwp/globalizing/adjust-layout-and-fonts--and-support-rtl).
+## <a name="globalizinglocalizing-fonts"></a>Шрифты для глобализации и локализации
+Используйте [API сопоставления шрифтов LanguageFont](https://msdn.microsoft.com/library/windows/apps/br206864) для программного доступа к рекомендуемому семейству, размеру, насыщенности и стилю шрифта определенного языка. Объект LanguageFont предоставляет доступ к нужной информации о шрифте для различных категорий содержимого, включая заголовки, уведомления, текст и шрифты доступных для редактирования текстов пользовательского интерфейса. Дополнительные сведения см. в разделе [Настройка макета и шрифтов для поддержки глобализации](https://msdn.microsoft.com/windows/uwp/globalizing/adjust-layout-and-fonts--and-support-rtl).
 
-<!--
-## Triggering a font download
-If you use a font that's not listed in this article, your app might trigger an automatic download of the font data from a Microsoft service. This can have performance and other impacts that may be a concern, particularly for mobile devices. In particular, note that this might consume some of a user's mobile data plan or result in mobile data usage costs. UWP apps that will available on mobile devices should never use fonts for UI content other than fonts in this list.
--->
 
-## Получение примеров
+## <a name="get-the-samples"></a>Получение примеров
 
 * [Пример шрифтов, доступных для скачивания](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlCloudFontIntegration)
 * [Пример базовых характеристик пользовательского интерфейса](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [Пример междустрочного интервала с DirectWrite](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DWriteLineSpacingModes) 
 
-## Связанные разделы
+## <a name="related-articles"></a>Связанные разделы
 
 * [Настройка макета и шрифтов для поддержки глобализации](https://msdn.microsoft.com/windows/uwp/globalizing/adjust-layout-and-fonts--and-support-rtl)
 * [Segoe MDL2](segoe-ui-symbol-font.md)
@@ -325,6 +315,6 @@ If you use a font that's not listed in this article, your app might trigger an a
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

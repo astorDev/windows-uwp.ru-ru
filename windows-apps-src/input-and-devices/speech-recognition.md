@@ -5,27 +5,34 @@ title: "Распознавание речи"
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
 template: detail.hbs
+keywords: "речь, голос, распознавание речи, естественный язык, диктовка, ввод, взаимодействие с пользователем"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 59cebc2235b8ae4214156a4140b0b003c717375d
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2
 
 ---
 
-# Распознавание речи
-
+# <a name="speech-recognition"></a>Распознавание речи
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 С помощью функции распознавания речи можно вводить данные, указывать действия или команды и выполнять задачи.
 
-**Важные API**
-
--   [**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
-
-
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)</li>
+</ul>
+</div>
 
 Для распознавания речи используется специальная среда выполнения, API распознавания для программирования среды выполнения, готовые грамматики для диктовки и веб-поиска, а также системный пользовательский интерфейс по умолчанию, который помогает пользователям обнаруживать и использовать функции распознавания речи.
 
 
-## Настройка аудиоканала
+## <a name="set-up-the-audio-feed"></a>Настройка аудиоканала
 
 
 Убедитесь, что ваше устройство оснащено микрофоном или эквивалентным оборудованием.
@@ -34,7 +41,7 @@ ms.openlocfilehash: 59cebc2235b8ae4214156a4140b0b003c717375d
 
 Дополнительные сведения: [Объявление характеристик приложения](https://msdn.microsoft.com/library/windows/apps/mt270968).
 
-## Распознавание речевого ввода
+## <a name="recognize-speech-input"></a>Распознавание речевого ввода
 
 
 В *ограничении* определяются слова и фразы (словарь), которые приложение распознает в речевом вводе. Ограничения являются основой распознавания речи и дают вашему приложению возможность управлять точностью распознавания.
@@ -53,7 +60,7 @@ ms.openlocfilehash: 59cebc2235b8ae4214156a4140b0b003c717375d
 
      
 
-    Эти предопределенные грамматики можно использовать для распознавания до ввода речи продолжительностью до 10секунд, и для этого не потребуется никаких доработок с вашей стороны. Однако потребуется подключение к сети.
+    Эти предопределенные грамматики можно использовать для распознавания до ввода речи продолжительностью до 10 секунд, и для этого не потребуется никаких доработок с вашей стороны. Однако потребуется подключение к сети.
 
     Чтобы использовать ограничения веб-службы, в меню **Параметры** необходимо включить поддержку речевого ввода и диктовки в разделе "Познакомьтесь со мной" на странице Параметры -&gt; Конфиденциальность -&gt; Голосовые функции, рукописный ввод и ввод с клавиатуры.
 
@@ -110,7 +117,7 @@ catch (Exception exception)
 
 3.  **Грамматики SRGS** ([**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)).
 
-    Грамматика SRGS–это статический документ, который, в отличие от программного ограничения-списка, использует формат XML, определенный в спецификации [SRGS Version1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). Грамматика SRGS предоставляет больший контроль над распознаванием речи и позволяет создавать несколько семантических значений в одном распознавании.
+    Грамматика SRGS – это статический документ, который, в отличие от программного ограничения-списка, использует формат XML, определенный в спецификации [SRGS Version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). Грамматика SRGS предоставляет больший контроль над распознаванием речи и позволяет создавать несколько семантических значений в одном распознавании.
 
 4.  **Ограничения голосовых команд** ([**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220))
 
@@ -147,7 +154,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Настройка пользовательского интерфейса распознавания
+## <a name="customize-the-recognition-ui"></a>Настройка пользовательского интерфейса распознавания
 
 
 Когда ваше приложение пытается распознать речь при помощи вызова [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245), отображаются несколько экранов в следующем порядке.
@@ -204,7 +211,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Статьи по теме
+## <a name="related-articles"></a>Статьи по теме
 
 
 **Разработчикам**
@@ -223,6 +230,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

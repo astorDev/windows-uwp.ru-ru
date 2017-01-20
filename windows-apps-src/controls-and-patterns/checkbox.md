@@ -6,11 +6,11 @@ ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 874d1a7200359ecc46b26b306b208946c7a6f273
 
 ---
-# Флажки
+# <a name="check-boxes"></a>Флажки
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,20 +21,14 @@ ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209316"><strong>Класс CheckBox</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Событие Checked</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>Свойство IsChecked</strong></a> </li>
+<li>[**Класс CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316)</li>
+<li>[**Событие Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
+<li>[**Свойство IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) </li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## Выбор правильного элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте **один флажок** для выбора из двух вариантов "да"/"нет", например в сценарии входа с запросом "Запомнить меня" или при подтверждении условий соглашения на обслуживание.
 
@@ -54,7 +48,7 @@ ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
 
 С помощью элементов управления **флажок** и **переключатель** пользователь может выбирать варианты из списка. Флажки позволяют пользователю выбирать сочетание вариантов. В отличие от них, при помощи переключателей пользователь может выбрать один из взаимоисключающих вариантов. Если есть несколько вариантов, но выбрать можно только один из них, используйте переключатель.
 
-## Примеры
+## <a name="examples"></a>Примеры
 
 Флажок в диалоговом окне в браузере Microsoft Edge.
 
@@ -64,7 +58,7 @@ ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
 
 ![Флажки в приложении "Будильники и часы" в Windows](images/control-examples/check-box-alarm.png)
 
-## Создание флажка
+## <a name="create-a-checkbox"></a>Создание флажка
 
 Чтобы присвоить флажку метку, установите свойство [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx). Метка отображается рядом с флажком.
 
@@ -82,7 +76,7 @@ CheckBox checkBox1 = new CheckBox();
 checkBox1.Content = "I agree to the terms of service.";
 ```
 
-### Привязка к свойству IsChecked
+### <a name="bind-to-ischecked"></a>Привязка к свойству IsChecked
 
 Используйте свойство [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx), чтобы определять, установлен флажок или снят. Вы можете привязать значение свойства IsChecked к другому двоичному значению. Однако из-за того, что свойство IsChecked имеет логическое значение, [допускающее значение null](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx), для его привязки к логическому значению вам потребуется преобразователь величин.
 
@@ -127,7 +121,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 }
 ```
 
-### Обработка событий Click и Checked
+### <a name="handle-click-and-checked-events"></a>Обработка событий Click и Checked
 
 Чтобы выполнять действие при изменении состояния флажка, вы можете обрабатывать событие [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) или события [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) и [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx). 
 
@@ -180,7 +174,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### Использование неопределенного состояния
+### <a name="use-the-indeterminate-state"></a>Использование неопределенного состояния
 
 Элемент управления CheckBox наследует от [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) и может иметь три состояния: 
 
@@ -276,16 +270,16 @@ private void SetCheckedState()
 }
 ```
 
-## Рекомендации
+## <a name="dos-and-donts"></a>Рекомендации
 
 -   Убедитесь, что цель применения флажка и его текущее состояние понятны.
 -   Длина текстового содержимого, связанного с флажком, не должна превышать двух строк
--   Формулируйте подпись к флажку как инструкцию, для которой установка флажка соответствует значению «истина», а снятие флажка обозначает «ложь».
+-   Формулируйте подпись к флажку как инструкцию, для которой установка флажка соответствует значению "истина", а снятие флажка обозначает "ложь".
 -   Используйте шрифт по умолчанию, если правила вашего фирменного стиля не предписывают иное.
 -   Если применяется динамическое текстовое содержимое, подумайте, как будет изменяться размер элемента управления и что будет происходить с окружающими его визуальными элементами.
 -   Если выбирать нужно из двух или более взаимоисключающих вариантов, обдумайте использование [переключателей](radio-button.md).
 -   Не следует размещать две группы флажков рядом друг с другом. Используйте метки групп, чтобы разделить группы.
--   Для элемента управления типа «включено-выключено» используйте переключатель, а не флажок.
+-   Для элемента управления типа "включено-выключено" используйте переключатель, а не флажок.
 -   Не используйте флажок для отображения других элементов управления, например диалоговых окон.
 -   Используйте неопределенное состояние, чтобы показать, что выбранный вариант задан не для всех дочерних элементов.
 -   При использовании неопределенного состояния применяйте подчиненные флажки, чтобы показать, какие варианты выбраны, а какие нет. Разрабатывайте пользовательский интерфейс так, чтобы пользователь мог видеть доступные для выбора дочерние элементы.
@@ -298,7 +292,7 @@ private void SetCheckedState()
     ![Переключатель с тремя вариантами: "Без специй", "Со специями" и "Много специй".](images/spicyoptions.png)
 
 
-## Связанные разделы
+## <a name="related-articles"></a>Связанные разделы
 
 -   [**Класс CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 
 -   [Переключатели](radio-button.md)
@@ -308,6 +302,6 @@ private void SetCheckedState()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

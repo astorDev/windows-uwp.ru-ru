@@ -4,8 +4,8 @@ Description: "Магазин Windows предлагает выставление
 title: "Биллинг мобильного оператора"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: e829808a8e521f2308454e05e8911579b22be807
-ms.openlocfilehash: fe11b56430a07e1326f78b59579ffd9e733ed1b0
+ms.sourcegitcommit: 694c3223278c8666bfb47bf9898ac7c02ac981f4
+ms.openlocfilehash: 831e3fbd1524ce452a4346b6c52f3f1c76385d68
 
 ---
 
@@ -27,6 +27,7 @@ ms.openlocfilehash: fe11b56430a07e1326f78b59579ffd9e733ed1b0
 | Страна или регион  | Мобильные операторы |
 |-----------------|------------------|
 | Финляндия         | DNA, Elisa       |
+| Франция          | Orange           |
 | Германия         | O2               |
 | Венгрия         | Telenor          |
 | Италия           | Wind             |
@@ -77,7 +78,7 @@ ms.openlocfilehash: fe11b56430a07e1326f78b59579ffd9e733ed1b0
 | Южно-Африканская Республика         | Vodacom                                                            |
 | Испания                | Movistar, Vodafone, Orange                                         |
 | Великобритания       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
-| США        | AT&T, Sprint, T-Mobile, Verizon                                    |
+| США        | AT&T, T-Mobile, Verizon                                    |
 | Вьетнам              | Viettel, Vietnamobile, Vinaphone, Mobifone                         |
 
  
@@ -94,6 +95,6 @@ ms.openlocfilehash: fe11b56430a07e1326f78b59579ffd9e733ed1b0
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

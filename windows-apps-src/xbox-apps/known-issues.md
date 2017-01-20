@@ -3,8 +3,8 @@ author: Mtoepke
 title: "Известные проблемы с программой для разработчиков UWP для Xbox One"
 description: 
 translationtype: Human Translation
-ms.sourcegitcommit: 20ac6fb738de1c8aaf10f46c359842f31714dbbf
-ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
+ms.sourcegitcommit: 3f0647bb76340ccbd538e9e4fefe173924d6baf4
+ms.openlocfilehash: 18c8d1fcd696f336601dc6c531424fe8bfb78304
 
 ---
 
@@ -18,16 +18,22 @@ ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
 
 **Мы хотим услышать ваши отзывы**, поэтому сообщайте о любых возникающих проблемах на форуме [Разработка приложений для универсальной платформы Windows](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop). 
 
-Если ваша проблема не решена, прочитайте информацию в этом разделе и обратитесь к разделу [Вопросы и ответы](frequently-asked-questions.md) и на форумы, чтобы получить помощь.
+Если ваша проблема не решена, прочитайте информацию в этом разделе и обратитесь к разделу [Вопросы и ответы](frequently-asked-questions.md), а также используйте форумы, чтобы получить помощь.
 
 
 <!--## Developing games-->
+
+## <a name="issue-when-leaving-dev-mode"></a>Проблема при выходе из режима разработчика
+Иногда может случиться, что вы не сможете выйти из режима разработчика ни с помощью средства DevHome, ни с помощью параметров разработчика.
+Существует два способа устранения этой проблемы. 
+1. Снимите флажок **Удалять неопубликованные игры и приложения** при выходе из режима разработчика.
+2. Перейдите в раздел "Мои игры и приложения" и удалите все установленные на консоли приложения разработчика.
  
-## <a name="memory-limits-for-background-apps-are-partially-enforced"></a>Ограничения памяти для фоновых приложений действуют лишь частично
+<!--## Memory limits for background apps are partially enforced
  
-Максимальный объем памяти для приложений, работающих в фоновом режиме, составляет 128 МБ. В текущей версии UWP на Xbox One приложение будет приостановлено, если оно превышает это ограничение, когда переходит в фоновый режим. В настоящее время это ограничение не применяется, если приложение превышает ограничение, когда он уже работает в фоновом режиме; это означает, что если ваше приложение занимает более 128 МБ при работе в фоновом режиме, он по-прежнему сможет выделять память.
+The maximum memory footprint for apps running in the background is 128 megabytes. In the current version of UWP on Xbox One, your app will be suspended if it is above this limit when it is moved to the background. This limit is not currently enforced if your app exceeds the limit while it is already running in the background—this means that if your app exceeds 128 MB while running in the background, it will still be able to allocate memory.
  
-В настоящее время решения этой проблемы нет. Приложения должны соответствующим образом контролировать использование памяти и не выходить за рамки 128 МБ при работе в фоновом режиме.
+There is currently no workaround for this issue. Apps should govern their memory usage accordingly and continue to stay under the 128 MB limit while running in the background.-->
  
 ## <a name="deploying-from-vs-fails-with-parental-controls-turned-on"></a>Развертывание из VS не выполняется при включенном родительском контроле
 
@@ -93,7 +99,7 @@ Developers can still use HTTP and WebSockets.
 
 ## <a name="blocked-networking-ports-on-xbox-one"></a>Заблокированные сетевые порты на Xbox One
 
-Приложения для универсальной платформы Windows (UWP) на устройствах с Xbox One не могут выполнять привязку к портам в диапазоне [49152, 65535]. Хотя во время выполнения кажется, что привязка к таким портам выполнена успешно, сетевой трафик отбрасывается прежде, чем достигнет вашего приложения. По возможности ваше приложение должно осуществлять привязку к порту 0, что позволяет системе выбрать локальный порт. Если требуется использовать определенный порт, номер порта должен лежать в диапазоне [1025, 49151] и необходимо проверять и избегать возможных конфликтов с реестром IANA. Дополнительные сведения см. в разделе [Имя службы и реестр номера порта транспортного протокола](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
+Приложения для универсальной платформы Windows (UWP) на устройствах Xbox One не могут выполнять привязку к портам в диапазоне [57344, 65535]. Несмотря на то, что во время выполнения кажется, что привязка к таким портам выполнена успешно, сетевой трафик отбрасывается прежде, чем достигнет вашего приложения. По возможности ваше приложение должно осуществлять привязку к порту 0, что позволяет системе выбрать локальный порт. Если требуется использовать определенный порт, номер порта должен лежать в диапазоне [1025, 49151] и необходимо проверять и избегать возможных конфликтов с реестром IANA. Дополнительные сведения см. в разделе [Имя службы и реестр номера порта транспортного протокола](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
 
 ## <a name="uwp-api-coverage"></a>Охват API платформы UWP
 
@@ -177,6 +183,6 @@ This is caused by a failure in the WDP infrastructure on the console and can be 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

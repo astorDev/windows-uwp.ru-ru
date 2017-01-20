@@ -4,13 +4,13 @@ ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
 description: "Узнайте, как перехватывать ошибки AdControl в приложении."
 title: "Пошаговое руководство по обработке ошибок в JavaScript"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: e7ce3cd96286454aaa987483ed4df1cefbee5b57
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: ad177c964f2a01640d33fc09f1789fc857801792
 
 
 ---
 
-# Пошаговое руководство по обработке ошибок в JavaScript
+# <a name="error-handling-in-javascript-walkthrough"></a>Пошаговое руководство по обработке ошибок в JavaScript
 
 
 
@@ -21,65 +21,61 @@ ms.openlocfilehash: e7ce3cd96286454aaa987483ed4df1cefbee5b57
 
 1.  В файле default.html file добавьте значение для события **onErrorOccurred**, где свойство **data-win-options**для элемента **AdControl** определяется в **div**. Найдите следующий код в файле default.html.
 
-    ``` syntax
-    <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
-         data-win-control="MicrosoftNSJS.Advertising.AdControl"
-         data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: '10865270'}">
-    </div>
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` html
+  <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
+      data-win-control="MicrosoftNSJS.Advertising.AdControl"
+      data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: '10865270'}">
+  </div>
+  ```
 
-    После **adUnitId** добавьте значение для события **onErrorOccurred**.
+  После атрибута **adUnitId** добавьте значение для события **onErrorOccurred**.
 
-    ``` syntax
-    onErrorOccurred: errorLogger
-    ```
-
-    Ниже приведен полный код для **div**.
-
-    ``` syntax
-    <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
-         data-win-control="MicrosoftNSJS.Advertising.AdControl"
-         data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: '10865270', onErrorOccurred: errorLogger}">
-    </div>
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` html
+  <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
+      data-win-control="MicrosoftNSJS.Advertising.AdControl"
+      data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: '10865270', onErrorOccurred: errorLogger}">
+  </div>
+  ```
 
 2.  Создайте **div**, который будет отображать текст, чтобы можно было просматривать создаваемые сообщения. Для этого добавьте следующий код для **myAd** после **div**.
 
-    ``` syntax
-    <div style="position:absolute; width:100%; height:130px; top:300px; left:0px">
-        <b>Ad Events</b><br />
-        <div id="adEvents" style="width:100%; height:110px; overflow:auto"></div>
-    </div>
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` html
+  <div style="position:absolute; width:100%; height:130px; top:300px; left:0px">
+      <b>Ad Events</b><br />
+      <div id="adEvents" style="width:100%; height:110px; overflow:auto"></div>
+  </div>
+  ```
 
 3.  Создайте элемент **AdControl**, который инициирует событие ошибки. Для всех объектов **AdControl** в приложении можно использовать только один ИД приложения, поэтому создание дополнительного элемента управления с другим ИД приложения вызовет ошибку во время выполнения. Для этого после предыдущих добавленных разделов **div** добавьте следующий код в основную часть страницы default.html.
 
-    ``` syntax
-    <!-- since only one applicationId can be used, the following ad control will fire an error event -->
-    <div id="liveAd" style="position: absolute; top:500px; left:0px; width:480px; height:80px"
-        data-win-control="MicrosoftNSJS.Advertising.AdControl"
-        data-win-options="{applicationId: '00000000-0000-0000-0000-000000000000',
-        adUnitId: '10865270', onErrorOccurred: errorLogger }" >
-    </div>
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` html
+  <!-- Because only one applicationId can be used, the following ad control will fire an error event. -->
+  <div id="liveAd" style="position: absolute; top:500px; left:0px; width:480px; height:80px"
+      data-win-control="MicrosoftNSJS.Advertising.AdControl"
+      data-win-options="{applicationId: '00000000-0000-0000-0000-000000000000', adUnitId: '10865270', onErrorOccurred: errorLogger }" >
+  </div>
+  ```
 
 4.  В файле default.js проекта после функции инициализации по умолчанию будет добавлен обработчик событий для **errorLogger**. Прокрутите до конца файла и вставьте следующий код после последней точкой с запятой.
 
-    ``` syntax
-    WinJS.Utilities.markSupportedForProcessing(
-    window.errorLogger = function (sender, evt) {
+  > [!div class="tabbedCodeSnippets"]
+  ``` javascript
+  WinJS.Utilities.markSupportedForProcessing(
+  window.errorLogger = function (sender, evt) {
         adEvents.innerHTML = (new Date()).toLocaleTimeString() + ": " +
         sender.element.id + " error: " + evt.errorMessage + " error code: " +
         evt.errorCode + "<br>" + adEvents.innerHTML;
         console.log("errorhandler hit. \n");
-    });
-    ```
+  });
+  ```
 
-5.  Сборка и запуск файла.
+5.  Сборка и запуск файла. Вы увидите первоначальное рекламное объявление из созданного ранее примера приложения и текст под этим объявлением с описанием ошибки. Вы не увидите рекламное объявление с идентификатором **liveAd**.
 
-Вы увидите первоначальное рекламное объявление из созданного ранее примера приложения и текст под этим объявлением с описанием ошибки. Вы не увидите рекламное объявление с идентификатором **liveAd**.
-
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Примеры рекламы на GitHub](http://aka.ms/githubads)
 
@@ -87,6 +83,6 @@ ms.openlocfilehash: e7ce3cd96286454aaa987483ed4df1cefbee5b57
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 
