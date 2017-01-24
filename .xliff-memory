@@ -168,7 +168,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\09447ad4545f3839d39a4b9191b51718455e7c00.becc56c8b2ff924bd3bac939d85080de7d92049d.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\show-multiple-views.2d939f4f8c3043c2ce07e4630f0ed1e36ca6d908.ru-ru.xlf",
-      "LocXliffCommit": "9c754f24cd1c17b245df73d43e1742b4088fb6ce"
+      "LocXliffCommit": "1cd204a3af67f6ce1de6dac0094e6ef0822d9633"
     },
     "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-cameracaptureui.md.d31e3670c23d34fa331df5226bf10be63ae1c696.HT": {
       "SourceFilename": "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-cameracaptureui.md",
@@ -448,7 +448,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\868fb7f1285ddd4f3e5120779ccf81a9ba55f8db.7aad830a2632f77e04cf5c7a3cf17f773e072511.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\create-and-register-a-background-task.01f0ee74be60336ec8767af43d9f081f567f6796.ru-ru.xlf",
-      "LocXliffCommit": "9c754f24cd1c17b245df73d43e1742b4088fb6ce"
+      "LocXliffCommit": "1cd204a3af67f6ce1de6dac0094e6ef0822d9633"
     },
     "windows-apps-src\\launch-resume\\support-your-app-with-background-tasks.md.4bbe03ced241403a1cb8746c47609e49178bc3bf.HT": {
       "SourceFilename": "windows-apps-src\\launch-resume\\support-your-app-with-background-tasks.md",
@@ -1878,7 +1878,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\324bdcd8ae61826a2be765f6a6a93441036d6984.5ada6d917d21ba4bb6aad1d0218e05371d33187b.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\navigate-between-two-pages.0eaa4a02028eb8b6983afe39f2dc1ff3a363051b.ru-ru.xlf",
-      "LocXliffCommit": "9c754f24cd1c17b245df73d43e1742b4088fb6ce"
+      "LocXliffCommit": "1cd204a3af67f6ce1de6dac0094e6ef0822d9633"
     },
     "windows-apps-src\\style\\motion-popup-animations.md.93a6888f5e852b55782cdcf3e7c60e492eced878.HT": {
       "SourceFilename": "windows-apps-src\\style\\motion-popup-animations.md",
@@ -1968,7 +1968,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\9fa226beed09e79ef3e5a294e36f615fa179c470.9f01b0d9cf0ee7cc1dcf58165e45d0b422a17dae.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\web-view.fe722393fe097ca27e81b2dfcc9f30a11736e713.ru-ru.xlf",
-      "LocXliffCommit": "9c754f24cd1c17b245df73d43e1742b4088fb6ce"
+      "LocXliffCommit": "1cd204a3af67f6ce1de6dac0094e6ef0822d9633"
     },
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-badges.md.1cb6beada0b0f0387e5f4e4e45802b898af22570.HT": {
       "SourceFilename": "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-badges.md",
