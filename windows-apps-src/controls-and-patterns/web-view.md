@@ -81,7 +81,7 @@ webView1.Navigate("http://www.contoso.com");
 webView1.Navigate("ms-appdata:///local/intro/welcome.html");
 ```
 
-Для загрузки содержимого из пакета приложения используйте метод **Navigate** с **Uri**, который использует [** схему ms-appx-web**](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web). 
+Для загрузки содержимого из пакета приложения используйте метод **Navigate** с **Uri**, который использует [**схему ms-appx-web**](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web). 
 
 ```csharp
 webView1.Navigate("ms-appx-web:///help/about.html");

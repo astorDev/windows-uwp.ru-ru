@@ -85,7 +85,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
     В XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) обычно добавляется к свойству [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041), а затем выполняется переход **Frame** к [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503), где определено содержимое приложения. Подробнее см. в разделе [Одноранговая навигация между двумя страницами](navigate-between-two-pages.md).
 
-    После заполнения нового [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) необходимо вызвать метод [**Activate**](https://msdn.microsoft.com/library/windows/apps/br209046) **Window** для отображения **Window** позднее. Результаты влияют на поток нового представления, так что активируется новое **Window**.
+    После заполнения нового [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) необходимо вызвать метод [**Activate**](https://msdn.microsoft.com/library/windows/apps/br209046)&nbsp;**Window** для отображения **Window** позднее. Результаты влияют на поток нового представления, так что активируется новое **Window**.
 
     Наконец, скачайте [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281120) нового используемого представления для его отображения позже. Результаты также влияют на поток нового представления, поэтому [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672) получает **Id** нового представления.
 

@@ -325,7 +325,7 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-Запустите приложение, введите ваше имя в текстовое поле, а затем щелкните ссылку **Click to go to page 2** (Нажмите, чтобы перейти к странице 2). Когда вы вызвали метод `this.Frame.Navigate(typeof(Page2), tb1.Text)` в событии [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), свойство `name.Text` было передано `Page2`, а значение из данных события использовалось для сообщения, показанного на странице.
+Запустите приложение, введите ваше имя в текстовое поле, а затем щелкните ссылку **Click to go to page 2** (Нажмите, чтобы перейти к странице 2). Когда вы вызвали метод `this.Frame.Navigate(typeof(Page2), tb1.Text)` в событии [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737)&nbsp;[**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), свойство `name.Text` было передано `Page2`, а значение из данных события использовалось для сообщения, показанного на странице.
 
 ## <a name="cache-a-page"></a>Кэширование страницы
 

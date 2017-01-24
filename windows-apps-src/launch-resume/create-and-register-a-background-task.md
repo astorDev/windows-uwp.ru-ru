@@ -227,7 +227,7 @@ ms.openlocfilehash: 868fb7f1285ddd4f3e5120779ccf81a9ba55f8db
     >     builder->AddCondition(ref new SystemCondition(SystemConditionType::UserPresent));
     > ```
 
-4.  Зарегистрируйте фоновую задачу, вызвав метод Register в объекте [**BackgroundTaskBuilder **](https://msdn.microsoft.com/library/windows/apps/br224768). Сохраните результат выполнения [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786), чтобы использовать его в следующем шаге.
+4.  Зарегистрируйте фоновую задачу, вызвав метод Register в объекте [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Сохраните результат выполнения [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786), чтобы использовать его в следующем шаге.
 
     Следующий код регистрирует фоновую задачу и сохраняет результат.
 
