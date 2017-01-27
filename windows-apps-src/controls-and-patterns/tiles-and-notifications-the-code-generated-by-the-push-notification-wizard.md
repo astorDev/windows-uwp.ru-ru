@@ -6,19 +6,17 @@ ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
-ms.openlocfilehash: e61c887cc474504cc283de1d433180eb3cfe72a0
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 5329c72034b1be540f7b0fdd7f7d1ddfb2fa6a0d
 
 ---
+
+# <a name="code-generated-by-the-push-notification-wizard"></a>Код, генерируемый мастером push-уведомлений
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# Код, генерируемый мастером push-уведомлений
-
-
-
 
 С помощью мастера Visual Studio можно формировать push-уведомления из мобильной службы, созданной средствами мобильных служб Windows Azure. Мастер Visual Studio формирует код, облегчая начало работы. В этом разделе объясняется, как мастер изменяет ваш проект, что делает сформированный код, как его использовать и что надо сделать дальше для максимально полного использования преимуществ push-уведомлений. См. [общую информацию о службах push-уведомлений Windows (WNS)](tiles-and-notifications-windows-push-notification-services--wns--overview.md).
 
-## Изменения, вносимые мастером в ваш проект
+## <a name="how-the-wizard-modifies-your-project"></a>Изменения, вносимые мастером в ваш проект
 
 
 Мастер push-уведомлений изменяет ваш проект следующим образом.
@@ -38,7 +36,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
                 "<your client secret>");
 ```
 
-## Регистрация для push-уведомлений
+## <a name="registration-for-push-notifications"></a>Регистрация для push-уведомлений
 
 
 В файле push.register.\* метод UploadChannel регистрирует устройство для получения push-уведомлений. Магазин отслеживает установленные экземпляры вашего приложения и обеспечивает канал для push-уведомлений. См. [**PushNotificationChannelManager**](https://msdn.microsoft.com/library/windows/apps/br241284).
@@ -170,7 +168,7 @@ void mymobileservice1234Push::HandleExceptionsComingFromTheServer()
 
 Теги push-уведомлений предоставляют способ ограничить уведомления до подмножества клиентов. Можно использовать для метода registerNative (или RegisterNativeAsync), чтобы зарегистрироваться на все push-уведомления без указания тегов, или можно зарегистрироваться с тегами, предоставив второй аргумент — массив тегов. При регистрации с одним или несколькими тегами вы получите только уведомления, соответствующие этим тегам.
 
-## Серверные сценарии (только внутренний сервер JavaScript)
+## <a name="server-side-scripts-javascript-backend-only"></a>Серверные сценарии (только внутренний сервер JavaScript)
 
 
 Для мобильных служб, которые используют внутренний сервер JavaScript, серверные сценарии выполняются только при удалении, вставке, чтении или обновлении. Сценарии не осуществляют эти операции, но выполняются после того, как соответствующие события активируются вызовом API REST в Windows Mobile со стороны клиента. После этого сценарии передают управление самим операциям, вызывая request.execute или request.respond, чтобы обеспечить ответ на контекст вызова. См. [Справочник по REST API для мобильных служб Azure](http://go.microsoft.com/fwlink/p/?linkid=511139).
@@ -210,7 +208,7 @@ function sendNotifications(request) {
 
  
 
-## Типы push-уведомлений
+## <a name="push-notification-types"></a>Типы push-уведомлений
 
 
 Windows поддерживает уведомления, которые не относятся к push-уведомлениям. Общие сведения об уведомлениях см. в разделе [Доставка запланированных, периодических и push-уведомлений](https://msdn.microsoft.com/library/windows/apps/hh761484).
@@ -223,10 +221,10 @@ Push-уведомления следует использовать соглас
 
 В случае обновления живых плиток с помощью push-уведомлений рекомендуется также следовать указаниям в [руководстве и контрольном списке по плиткам и индикаторам событий](https://msdn.microsoft.com/library/windows/apps/hh465403).
 
-## Следующие действия
+## <a name="next-steps"></a>Следующие действия
 
 
-### Использование служб push-уведомлений Windows (WNS)
+### <a name="using-the-windows-push-notification-services-wns"></a>Использование служб push-уведомлений Windows (WNS)
 
 Службы push-уведомлений Windows (WNS) можно вызывать напрямую, если мобильные службы не обеспечивают достаточную гибкость, если вы хотите написать код для сервера на C# или Visual Basic либо если у вас уже есть облачная служба и вы хотите отправлять push-уведомления из нее. Вызывая WNS напрямую, можно отправлять push-уведомления из собственной облачной службы — например, из рабочей роли, которая контролирует данные, поступающие из базы данных или от другой веб-службы. Чтобы отправлять push-уведомления в приложения, ваша облачная служба должна пройти проверку подлинности WNS. См. раздел [Проверка подлинности с помощью службы push-уведомлений Windows (JavaScript)](https://msdn.microsoft.com/library/windows/apps/hh465407) или [(C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868206).
 
@@ -236,7 +234,7 @@ Push-уведомления следует использовать соглас
 
  
 
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 
 * [Обзор служб push-уведомлений Windows (WNS)](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
@@ -254,6 +252,6 @@ Push-уведомления следует использовать соглас
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

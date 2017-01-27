@@ -5,36 +5,47 @@ title: "Определение настраиваемых ограничений
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
+keywords: "речь, голос, распознавание речи, естественный язык, диктовка, ввод, взаимодействие с пользователем"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: d619cd6b3c9f5d62ca7d68f555e4c051abaf9bad
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: c75ee725ce4bc9fc33d9ea13e4ab92ed60bfb04d
 
 ---
 
-# Определение настраиваемых ограничений распознавания
+# <a name="define-custom-recognition-constraints"></a>Определение настраиваемых ограничений распознавания
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Из этой статьи вы узнаете, как определять и использовать настраиваемые ограничения для распознавания речи.
 
-**Важные API**
-
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)</li>
+<li>[**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)</li>
+<li>[**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)</li>
+</ul>
+</div>
 
 
 Для распознавания речи требуется по крайней мере одно ограничение, чтобы определить распознаваемый словарь. Если не задано ни одно ограничение, будет использоваться предопределенная грамматика речевого ввода универсальных приложений для Windows. См. [Распознавание речи](speech-recognition.md).
 
 
-## Добавление ограничений
+## <a name="add-constraints"></a>Добавление ограничений
 
 
 Для добавления ограничений в распознаватель речи используйте свойство [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241).
 
 Здесь мы рассмотрим три вида ограничений распознавания речи, используемых в пределах приложения. (Сведения об ограничениях голосовых команд см. в разделе [Запуск приложения переднего плана с помощью голосовых команд в Кортане](launch-a-foreground-app-with-voice-commands-in-cortana.md).)
 
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)— ограничение на базе предварительно заданной грамматики (диктовки или веб-поиска).
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)— ограничение на базе списка слов или фраз.
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)— ограничение, определенное в файле грамматики SRGS.
+-   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) — ограничение на базе предварительно заданной грамматики (диктовки или веб-поиска).
+-   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) — ограничение на базе списка слов или фраз.
+-   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) — ограничение, определенное в файле грамматики SRGS.
 
 Распознаватель речи может иметь одну коллекцию ограничений. Только эти комбинации ограничений являются допустимыми:
 
@@ -43,7 +54,7 @@ ms.openlocfilehash: d619cd6b3c9f5d62ca7d68f555e4c051abaf9bad
 
 **Помните: **перед запуском процесса распознавания необходимо вызвать метод [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) для компиляции ограничений.
 
-## Задание грамматики веб-поиска (SpeechRecognitionTopicConstraint)
+## <a name="specify-a-web-search-grammar-speechrecognitiontopicconstraint"></a>Задание грамматики веб-поиска (SpeechRecognitionTopicConstraint)
 
 
 Ограничения по теме (грамматика диктовки или веб-поиска) необходимо добавить к коллекции ограничений распознавателя речи.
@@ -80,7 +91,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Задание программного ограничения на базе списка (SpeechRecognitionListConstraint)
+## <a name="specify-a-programmatic-list-constraint-speechrecognitionlistconstraint"></a>Задание программного ограничения на базе списка (SpeechRecognitionListConstraint)
 
 
 Ограничения на базе списка необходимо добавить к коллекции ограничений распознавателя речи.
@@ -120,7 +131,7 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Задание ограничения на базе грамматики SRGS (SpeechRecognitionGrammarFileConstraint)
+## <a name="specify-an-srgs-grammar-constraint-speechrecognitiongrammarfileconstraint"></a>Задание ограничения на базе грамматики SRGS (SpeechRecognitionGrammarFileConstraint)
 
 
 Файлы грамматики SRGS необходимо добавить к коллекции ограничений распознавателя речи.
@@ -211,7 +222,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 </grammar>
 ```
 
-## Управление ограничениями
+## <a name="manage-constraints"></a>Управление ограничениями
 
 
 После загрузки коллекции ограничений для распознавания ваше приложение может управлять тем, какие ограничения нужно включать для операций распознавания, установив для свойства ограничения [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) значение **true** или **false**. Значение по умолчанию — **true**.
@@ -224,7 +235,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 Чтобы предложить пользователю, что сказать, используйте свойства [**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) и [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236), которые задаются с помощью свойства [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254). Информирование пользователей о том, что они могут сказать во время операции распознавания, повышает вероятность произнесения фразы, которая может быть сочтена удовлетворяющей активному ограничению.
 
-## Связанные статьи
+## <a name="related-articles"></a>Связанные разделы
 
 
 * [Взаимодействия с помощью голосовых функций](speech-interactions.md)
@@ -241,6 +252,6 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

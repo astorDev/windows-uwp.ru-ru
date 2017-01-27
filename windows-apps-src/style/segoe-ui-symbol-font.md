@@ -7,46 +7,36 @@ ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: a779d4ff5d404c2eca658cee836c5d45c42f14d8
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 1e7914c0641d2897efbcbe5c9479a2ecc1a8dd2d
 
 ---
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# <a name="segoe-mdl2-icons"></a>Значки Segoe MDL2
 
-# Значки Segoe MDL2
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 В этой статье перечислены значки, доступные в шрифте Segoe MDL2 Assets. 
 
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn252842"><strong>Перечисление Symbol (XAML)</strong></a></li>
+<li>[**Перечисление Symbol (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)</li>
 </ul>
-
-</div>
 </div>
 
 
+## <a name="about-segoe-mdl2-assets"></a>Сведения о шрифте Segoe MDL2 Assets
 
-## Как получить этот шрифт
-Чтобы получить шрифт Segoe MDL2 Assets, нужно установить Windows 10. 
+С выходом Windows 10 шрифт Segoe MDL2 Assets бал заменен шрифтом значков Windows 8/8.1 Segoe UI Symbol. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> ( **Segoe UI Symbol** будет по-прежнему доступен как "устаревший ресурс", но рекомендуется обновить свое приложение и использовать новый шрифт **Segoe MDL2 Assets**.)
 
-## О шрифте Segoe MDL2 Assets
-
-Шрифт Segoe MDL2 Assets. Шрифт значков Segoe UI Symbol из Windows 8/8.1 был заменен шрифтом Segoe MDL2 Assets, который стал применяться с выходом Windows 10. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> **Segoe UI Symbol** будет по-прежнему доступен как "устаревший ресурс", но рекомендуется обновить свое приложение и использовать новый шрифт **Segoe MDL2 Assets**.
-
-> **Примечание.**
->
-> **Em** — это единица измерения шрифта. 1 Em шрифта равно 100% от указанного значения точки при 72 ppi. Например, 16pt равно 16px при 72ppi (или коэффициенте масштабирования 100 %). Новые шрифты MDL2 спроектированы таким образом, что значок занимает квадрат со стороной Em. Поэтому если указать в коде ширину и высоту 16px, вы получите область значка 16×16 px. Это не всегда означает, что значок будет занимать всю область.
-
-Большинство значков и элементов управления пользовательского интерфейса, включенных в шрифт **Segoe MDL2 Assets**, сопоставлены с областью личных символов Юникода. Область личных символов позволяет разработчикам шрифтов присваивать личные значения Юникода глифам, которые не сопоставлены с существующими кодовыми точками. Это полезно при создании символьного шрифта, но вызывает проблемы с взаимодействием. Если шрифт недоступен, глифы не отображаются. Используйте эти глифы, только если можете задать шрифт **Segoe MDL2 Assets** .
+Большинство значков и элементов управления пользовательского интерфейса, включенных в шрифт **Segoe MDL2 Assets**, сопоставлены с областью личных символов Юникода (PUA). Область личных символов позволяет разработчикам шрифтов присваивать личные значения Юникода глифам, которые не сопоставлены с существующими кодовыми точками. Это полезно при создании символьного шрифта, но вызывает проблемы с взаимодействием. Если шрифт недоступен, глифы не отображаются. Используйте эти глифы, только если можете задать шрифт **Segoe MDL2 Assets** .
 
 Используйте эти глифы, только если вы можете явно задать шрифт **Segoe MDL2 Assets**. Если вы работаете с плитками, использовать эти глифы нельзя, так как вы не можете задать шрифт для плитки и к глифам области личных символов невозможно получить доступ путем перехода на резервный вариант шрифта.
 
 В отличие от **Segoe UI Symbol**, значки в шрифте **Segoe MDL2 Assets** не предназначены для использования в строке вместе с текстом. Это означает, что некоторые старые приемы, например стрелки поэтапного представления информации, больше не работают. Кроме того, поскольку размер и положение всех новых значков совпадают, они не должны быть нулевой ширины. Мы убедились, что они работают вместе как набор. В идеале можно наложить два значка, разработанных как набор, и они станут на свои места. Это можно использовать для колоризации в коде. Например, U+EA3A и U+EA3B созданы для состояния индикатора событий начальной плитки. Поскольку они уже отцентрованы, цвет круга можно менять в зависимости от состояния.
 
-## Наложения и зеркальное отображение
+## <a name="layering-and-mirroring"></a>Наложения и зеркальное отображение
 
 Все глифы в **Segoe MDL2 Assets** имеют одинаковую фиксированную ширину с соответствующей высотой и левой исходной точкой, поэтому эффектов наложения и колоризации можно добиваться, рисуя глифы непосредственно друг над другом. В этом примере показан черный контур поверх красного сердца нулевой ширины.
 
@@ -54,14 +44,17 @@ ms.openlocfilehash: a779d4ff5d404c2eca658cee836c5d45c42f14d8
 
 Для многих значков также доступны зеркальные формы для использования в языках с направлением письма справа налево, таких как арабский, фарси и иврит.
 
-## Перечисление Symbol
+## <a name="symbol-enumeration"></a>Перечисление Symbol
 При разработке приложения на языке C#/VB/C++ и XAML можно с помощью [**перечисления Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) использовать значки шрифта Segoe MDL2 Assets. 
+
+## <a name="how-do-i-get-this-font"></a>Как получить этот шрифт?
+Чтобы получить шрифт Segoe MDL2 Assets, нужно установить Windows 10. 
 
 <!--
 Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of these are intended for specialized purposed and are not typically used anywhere else.
 -->
 
-## Список значков
+## <a name="icon-list"></a>Список значков
 
 <table>
 
@@ -5143,10 +5136,7 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
 
 
-
-
-
-## Связанные статьи
+## <a name="related-articles"></a>Связанные статьи
 
 * [Рекомендации по шрифтам](fonts.md)
 * [**Перечисление Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842)
@@ -5160,6 +5150,6 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -4,15 +4,15 @@ title: "Отслеживание хода выполнения и заверше
 description: "Узнайте, как ваше приложение распознает события выполнения и завершения, сообщаемые фоновой задачей."
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: c7b6062a624b194b2806788c5f498d87aaa209a2
 
 ---
 
-# Отслеживание хода выполнения и завершения фоновых задач
+# <a name="monitor-background-task-progress-and-completion"></a>Отслеживание хода выполнения и завершения фоновых задач
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -25,9 +25,9 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
 
  Код приложения может отслеживать ход выполнения и завершение фоновой задачи. Для этого приложение подписывается на события фоновых задач, которые оно зарегистрировало в системе.
 
--   В этом разделе предполагается, что у вас есть приложение, которое зарегистрировало фоновые задачи. Чтобы приступить к быстрому созданию фоновой задачи, выполните инструкции из раздела [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md) или [Создание и регистрация фоновой задачи, которая выполняется вне процесса](create-and-register-an-outofproc-background-task.md). Более углубленно с условиями и триггерами можно ознакомиться в разделе [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
+-   В этом разделе предполагается, что у вас есть приложение, которое зарегистрировало фоновые задачи. Чтобы приступить к быстрому созданию фоновой задачи, выполните инструкции из раздела [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md) или [Создание и регистрация фоновой задачи, которая выполняется вне процесса](create-and-register-a-background-task.md). Более углубленно с условиями и триггерами можно ознакомиться в разделе [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
 
-## Создание обработчика событий для обработки завершенных фоновых задач
+## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>Создание обработчика событий для обработки завершенных фоновых задач
 
 1.  Создайте функцию обработчика событий для обработки завершенных фоновых задач. В этом коде необходимо использовать отдельный объем памяти, которая принимает объект [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) и объект [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778).
 
@@ -65,7 +65,7 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
     >     };
     > ```
 
-## Создание функции обработчика событий для обработки хода выполнения фоновых задач
+## <a name="create-an-event-handler-function-to-handle-background-task-progress"></a>Создание функции обработчика событий для обработки хода выполнения фоновых задач
 
 1.  Создайте функцию обработчика событий для обработки завершенных фоновых задач. В этом коде необходимо использовать отдельный объем памяти, которая принимает объект [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) и объект [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782):
 
@@ -109,7 +109,7 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
     >     };
     > ```
 
-## Регистрация функций обработчика событий в новых и существующих фоновых задачах
+## <a name="register-the-event-handler-functions-with-new-and-existing-background-tasks"></a>Регистрация функций обработчика событий в новых и существующих фоновых задачах
 
 
 1.  Когда приложение регистрирует фоновую задачу впервые, оно должно выполнить регистрацию, чтобы получить обновления выполнения и завершения для задачи, в случае если задача выполняется в то время, когда приложение еще работает на переднем плане.
@@ -195,10 +195,10 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
     >     }
     > ```
 
-## Статьи по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md).
-* [Создание и регистрация фоновой задачи, которая выполняется вне процесса](create-and-register-an-outofproc-background-task.md)
+* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
 * [Регистрация фоновой задачи](register-a-background-task.md)
@@ -213,6 +213,6 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

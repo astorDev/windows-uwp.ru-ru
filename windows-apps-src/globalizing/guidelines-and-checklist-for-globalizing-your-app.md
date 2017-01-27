@@ -7,30 +7,30 @@ ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 72849c304d2150fd7fe6768181a504f94ef98d5f
 
 ---
 
-# Рекомендации по глобализации и локализации
+# <a name="globalization-and-localization-dos-and-donts"></a>Рекомендации по глобализации и локализации
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
+Придерживайтесь описанных здесь рекомендаций по глобализации приложения для более широкой аудитории и локализации для определенного рынка.
+
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**Глобализация**](https://msdn.microsoft.com/library/windows/apps/br206813)</li>
+<li>[**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)</li>
+<li>[**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
+<li>[**Ресурсы**](https://msdn.microsoft.com/library/windows/apps/br206022)</li>
+<li>[**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)</li>
+</ul>
+</div>
 
 
 
-
-
-**Важные API**
-
--   [**Глобализация**](https://msdn.microsoft.com/library/windows/apps/br206813)
--   [**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
--   [**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**Ресурсы**](https://msdn.microsoft.com/library/windows/apps/br206022)
--   [**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)
-
-Придерживайтесь описанных здесь рекомендаций по глобализации вашего приложения для более широкой аудитории и локализации его для определенного рынка.
-
-
-
-## <span id="guidelines_for_internationalization"></span><span id="GUIDELINES_FOR_INTERNATIONALIZATION"></span>Глобализация
+## <a name="globalization"></a>Глобализация
 
 Подготовьте ваше приложение к адаптации в условиях различных рынков. Выбирайте для интерфейса общепринятые во всем мире термины и изображения, используя API [**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) для форматирования данных приложения. Избегайте допущений, основанных на конкретном расположении и языке.
 
@@ -106,7 +106,7 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 
  
 
-## <span id="guidelines_for_localization"></span><span id="GUIDELINES_FOR_LOCALIZATION"></span>Локализация
+## <a name="localization"></a>Локализация
 
 <table>
 <colgroup>
@@ -145,7 +145,7 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 </tr>
 <tr class="even">
 <td align="left"><p>Размер текста должен подлежать увеличению.</p></td>
-<td align="left"><p>Выделяйте динамические текстовые буферы, так как при переводе размер текста может увеличиться. Если необходимо использовать статические буферы, делайте их очень большими (в два раза больше длины строки на английском языке), чтобы хватило места при переводе. Размер пользовательского интерфейса также может быть ограниченным. В целях локализации убедитесь, что строка примерно на 40% длиннее, чем необходимо для английского языка. Очень короткие строки, например слова, могут потребовать на 300% больше места. К тому же включение многострочной поддержки и обтекания текстом в элементах управления позволяет отвести больше места для отображения каждой строки.</p></td>
+<td align="left"><p>Выделяйте динамические текстовые буферы, так как при переводе размер текста может увеличиться. Если необходимо использовать статические буферы, делайте их очень большими (в два раза больше длины строки на английском языке), чтобы хватило места при переводе. Размер пользовательского интерфейса также может быть ограниченным. В целях локализации убедитесь, что строка примерно на 40 % длиннее, чем необходимо для английского языка. Очень короткие строки, например слова, могут потребовать на 300 % больше места. К тому же включение многострочной поддержки и обтекания текстом в элементах управления позволяет отвести больше места для отображения каждой строки.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Обеспечьте поддержку зеркального отображения.</p></td>
@@ -178,7 +178,7 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 
  
 
-## <span id="related_topics"></span>Связанные разделы
+## <a name="related-articles"></a>Связанные разделы
 
 
 **Примеры**
@@ -193,6 +193,6 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

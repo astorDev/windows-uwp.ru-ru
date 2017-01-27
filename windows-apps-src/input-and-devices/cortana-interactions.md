@@ -5,17 +5,23 @@ title: "Взаимодействие с Кортаной"
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
 template: detail.hbs
+keywords: "Кортана, полотно Кортаны, проектирование Кортаны, пользовательский интерфейс, голосовые команды, VCD"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 75e93920422b5ad8ad0e9399bccc403ea69e7feb
-ms.openlocfilehash: 8e853962cdea36a6738c094851d461c700aafd73
+ms.sourcegitcommit: 76b012ab4cf737f00fc986c81c88fd48339867fc
+ms.openlocfilehash: 8dcf45951723c0bf2302b59ef475f3b0fa973d5e
 
 ---
 
-# Взаимодействие с Кортаной в приложениях UWP
+# <a name="cortana-interactions-in-uwp-apps"></a>Взаимодействие с Кортаной в приложениях UWP
 
 Кортана предоставляет надежную и комплексную платформу расширения, которая позволяет без труда встраивать функции вашего приложения или службы в интерфейс Кортаны.
 
-## Содержимое этого раздела было перемещено
+## <a name="weve-moved"></a>Содержимое этого раздела было перемещено
 
 Вся документация для разработчиков по функциям и службам Кортаны теперь доступна в [Центре разработки для Кортаны](https://developer.microsoft.com/en-us/cortana).
 
@@ -23,7 +29,7 @@ ms.openlocfilehash: 8e853962cdea36a6738c094851d461c700aafd73
 
 Руководство по расширению возможностей Кортаны за счет функций приложения UWP с помощью голосовых команд см. в разделе [Голосовые команды Кортаны](https://developer.microsoft.com/en-us/cortana). 
 
-## Связанные разделы
+## <a name="related-articles"></a>Связанные разделы
 
 * [**Элементы и атрибуты в VCD-файле, версия 1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
@@ -43,6 +49,6 @@ ms.openlocfilehash: 8e853962cdea36a6738c094851d461c700aafd73
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

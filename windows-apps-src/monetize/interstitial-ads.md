@@ -4,22 +4,19 @@ ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: "Узнайте, как включить промежуточную рекламу в Windows 10, Windows 8.1 или Windows Phone 8.1 с помощью библиотек Microsoft Advertising в составе пакета Microsoft Store Services SDK."
 title: "Промежуточная видеореклама"
 translationtype: Human Translation
-ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
-ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
+ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
+ms.openlocfilehash: fae0fc57eca3477bf46a6f3ac43ec35781241a6e
 
 ---
 
-# Промежуточная видеореклама
-
-
-
+# <a name="interstitial-ads"></a>Промежуточная видеореклама
 
 В этом пошаговом руководстве показано, как включить промежуточную рекламу в Windows 10, Windows 8.1 или Windows Phone 8.1 с помощью библиотек Microsoft Advertising в составе пакета Microsoft Store Services SDK.
 
 Полные примеры проектов, демонстрирующие способы добавления промежуточной рекламы в приложения на JavaScript/HTML, а также в приложения на XAML с помощью языков C# и C++, см. в [примерах рекламы на GitHub](http://aka.ms/githubads).
 
 <span id="whatareinterstitialads10"/>
-## Что такое промежуточная реклама?
+## <a name="what-are-interstitial-ads"></a>Что такое промежуточная реклама?
 
 В отличие от рекламных баннеров, промежуточная реклама (или *промежуточные рекламные ролики*) отображаются во весь экран приложения. В играх, в основном, используются две основные формы такой рекламы.
 
@@ -31,327 +28,179 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 
     Важно отметить, что этот пакет SDK не обрабатывает никакие элементы пользовательского интерфейса, кроме как во время воспроизведения. См. [передовые практики размещения промежуточной рекламы](ui-and-user-experience-guidelines.md#interstitialbestpractices10), чтобы получить информацию о рекомендуемых и нерекомендуемых действиях при добавлении промежуточной рекламы в приложение.
 
-## Создание приложения с промежуточной рекламой
+## <a name="build-an-app-with-interstitial-ads"></a>Создание приложения с промежуточной рекламой
 
+Чтобы реализовать отображение промежуточной рекламы в вашем приложении, следуйте инструкциям для конкретного типа проекта:
 
-### Необходимые условия
+* [XAML/.NET](#interstitialadsxaml10)
+* [HTML/JavaScript](#interstitialadshtml10)
+* [C++ (межпрограммное взаимодействие DirectX)](#interstitialadsdirectx10)
+
+<span/>
+### <a name="prerequisites"></a>Необходимые условия
 
 * Для приложений UWP: установите [пакет Microsoft Store Services SDK](http://aka.ms/store-em-sdk) с Visual Studio 2015.
-* Для приложений для Windows 8.1 и Windows Phone 8.1 установите [пакет Microsoft Advertising SDK для Windows и Windows Phone 8.x](http://aka.ms/store-8-sdk) с Visual Studio 2015 или Visual Studio 2013.
-
-### Написание кода
-
-* [Действия для приложения XAML/.NET](#interstitialadsxaml10)
-* [Действия для приложений HTML/JavaScript](#interstitialadshtml10)
-* [Действия для C++ (межпрограммное взаимодействие DirectX)](#interstitialadsdirectx10)
+* При работе с приложениями для Windows 8.1 и Windows Phone 8.1 установите [пакет Microsoft Advertising SDK для Windows и Windows Phone 8.x](http://aka.ms/store-8-sdk) с Visual Studio 2015 или Visual Studio 2013.
 
 <span id="interstitialadsxaml10"/>
-### Промежуточная реклама (XAML/.NET)
+###<a name="xamlnet"></a>XAML/.NET
 
-> **Примечание**. В этом разделе приводятся примеры на C#, однако Visual Basic и C++ также поддерживаются.
- 
+В этом разделе приводятся примеры кода на C#, однако Visual Basic и C++ также поддерживаются для создания проектов XAML/.NET. Полный пример кода на C# см. в разделе [Пример кода промежуточной рекламы в C#](interstitial-ad-sample-code-in-c.md).
+
 1. Откройте проект в Visual Studio.
+
 2. В **Диспетчере ссылок** выберите одну из следующих ссылок в зависимости от типа проекта.
 
-    -   Для проекта универсальной платформы Windows (UWP): разверните **Универсальные для Windows**, щелкните **Расширения**, а затем установите флажок **Microsoft Advertising SDK для XAML** (версия 10.0).
+  * Для проекта универсальной платформы Windows (UWP): разверните **Универсальные для Windows**, щелкните **Расширения**, а затем установите флажок **Microsoft Advertising SDK для XAML** (версия 10.0).
 
-    -   Для проекта Windows 8.1: разверните **Windows 8.1**, нажмите **Расширения**, а затем установите флажок **Ad Mediator SDK для XAML в Windows 8.1**. Этот параметр добавляет библиотеки и Microsoft Advertising, и Ad Mediator в проект, но вы можете не обращать внимания на библиотеки Ad Mediator.
+  * Для проекта Windows 8.1: разверните **Windows 8.1**, нажмите **Расширения**, а затем установите флажок **Ad Mediator SDK для XAML в Windows 8.1**. Этот параметр добавляет библиотеки и Microsoft Advertising, и Ad Mediator в проект, но вы можете не обращать внимания на библиотеки Ad Mediator.
 
-    -   Для проекта Windows Phone 8.1: разверните **Windows Phone 8.1**, нажмите **Расширения**, затем установите флажок **Ad Mediator SDK для XAML в Windows Phone 8.1**. Этот параметр добавляет библиотеки и Microsoft Advertising, и Ad Mediator в проект, но вы можете не обращать внимания на библиотеки Ad Mediator.
+  * Для проекта Windows Phone 8.1: разверните **Windows Phone 8.1**, нажмите **Расширения**, затем установите флажок **Ad Mediator SDK для XAML в Windows Phone 8.1**. Этот параметр добавляет библиотеки Microsoft Advertising и Ad Mediator в проект, но вы можете не обращать внимания на библиотеки Ad Mediator.
 
-3.  В коде приложения добавьте следующую ссылку на пространство имен.
+3.  В соответствующий файл с кодом в вашем приложении (например, в файл MainPage.xaml.cs или в файл с кодом для другой страницы) добавьте следующую ссылку на пространство имен.
 
-    ``` syntax
-    using Microsoft.Advertising.WinRT.UI;
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
 
-4.  Объявите свойства `MyAppId` и `MyAdUnitId`.
+4.  В соответствующем месте вашего приложения (например, в ```MainPage``` или на другой странице) объявите объект [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) и несколько строковых полей, которые будут представлять собой идентификатор приложения и идентификатор рекламного блока вашей промежуточной рекламы. Следующий код присваивает поля `myAppId` и `myAdUnitId` тестовым значениям, представленным в разделе [Значения тестового режима](test-mode-values.md). Эти значения используются только для тестирования. Их необходимо заменить на фактические значения из Центра разработки для Windows перед публикацией приложения.
 
-    ``` syntax
-    var MyAppId = "<your app id for windows>";
-    var MyAdUnitId = "<your adunit for windows";
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
 
-    // if your code is in a universal solution and resides in the shared project
-    // you can opt to use #if WINDOWS_APP or WINDOWS_PHONE_APP to override with different
-    // identifiers for each
-#if WINDOWS_PHONE_APP
-    MyAppId = "<your app id for phone>";
-    MyAdUnitId = "<your adunit for phone>";
-#endif
-    ```
+5.  В коде, который выполняется при запуске (например, в конструкторе для страницы), создайте объект **InterstitialAd** и привяжите обработчики событий к событиям этого объекта.
 
-    > **Примечание**. Перед отправкой приложения замените тестовые значения действительными.
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
 
-5.  Создайте экземпляр [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), привяжите к нему все обработчики событий и запросите объявление.
+6.  Приблизительно за 30–60 секунд до того, как должна будет отобразиться промежуточная реклама, используйте метод [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx), чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения.
 
-    ``` syntax
-    // instantiate an InterstitialAd
-    InterstitialAd MyVideoAd = new InterstitialAd();
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
 
-    // wire up all 4 events, see below for function templates
-    MyVideoAd.AdReady += MyVideoAd_AdReady;
-    MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccurred;
-    MyVideoAd.Completed += MyVideoAd_Completed;
-    MyVideoAd.Cancelled += MyVideoAd_Cancelled;
+6.  Проверьте то место вашего когда, в котором должна отображаться ваша реклама, на предмет того, что реклама **InterstitialAd** готова к отображению, а затем отобразите ее, используя метод [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).
 
-    // pre-fetch an ad 30-60 seconds before you need it
-    MyVideoAd.RequestAd(AdType.Video, MyAppId, MyAdUnitId);
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
 
-6.  Покажите объявление в точке кода, где оно должно отображаться, предварительно убедившись в готовности рекламы.
+7.  Определите обработчики событий для объекта **InterstitialAd**.
 
-    ``` syntax
-    if ((InterstitialAdState.Ready) == (MyVideoAd.State))
-    {
-      MyVideoAd.Show();
-    }
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
 
-7.  Определите события и создайте для них код.
-
-    ``` syntax
-    void MyVideoAd_AdReady(object sender, object e)
-    {
-      // code
-    }
-
-    void MyVideoAd_ErrorOccurred(object sender, AdErrorEventArgs e)
-    {
-      // code
-    }
-
-    void MyVideoAd_Completed(object sender, object e)
-    {  
-      // code
-    }
-
-    void MyVideoAd_Cancelled(object sender, object e)
-    {
-      // code
-    }
-    ```
-
-8.  Назначьте для свойства `MyAppId` тестовое значение, указанное в разделе [Значения тестового режима](test-mode-values.md). Это значение используется только для тестирования; перед публикацией приложения его необходимо заменить реальным значением.
-
-    ``` syntax
-    var MyAppId = "d25517cb-12d4-4699-8bdc-52040c712cab";
-    ```
-
-9.  Назначьте для свойства `MyAdUnitId` тестовое значение, указанное в разделе [Значения тестового режима](test-mode-values.md). Это значение используется только для тестирования; перед публикацией приложения его необходимо заменить реальным значением.
-
-    ``` syntax
-    var MyAdUnitId = "11389925";
-    ```
-
-10.  Создайте и протестируйте приложение, чтобы убедиться, что в нем отображается реклама.
+8.  Создайте и протестируйте приложение, чтобы убедиться, что в нем отображается реклама.
 
 <span id="interstitialadshtml10"/>
-### Промежуточная реклама (HTML/JavaScript)
+###<a name="htmljavascript"></a>HTML/JavaScript
 
-В этом примере предполагается, что вы создали проект универсального приложения для JavaScript в Visual Studio 2015 и для конкретного процессора.
+В приведенных ниже инструкциях подразумевается, что вы уже создали проект универсального приложения для JavaScript в Visual Studio 2015 и для конкретного процессора. Полный пример кода см. в разделе [Пример кода промежуточной рекламы в JavaScript](interstitial-ad-sample-code-in-javascript.md).
 
 1. Откройте проект в Visual Studio.
+
 2.  В **Диспетчере ссылок** выберите одну из следующих ссылок в зависимости от типа проекта.
 
-    -   Для проекта универсальной платформы Windows (UWP): разверните **Универсальные для Windows**, щелкните **Расширения**, а затем установите флажок **Microsoft Advertising SDK для JavaScript** (версия 10.0).
+  * Для проекта универсальной платформы Windows (UWP): разверните **Универсальные для Windows**, щелкните **Расширения**, а затем установите флажок **Microsoft Advertising SDK для JavaScript** (версия 10.0).
 
-    -   Для проекта Windows 8.1: разверните **Windows 8.1**, щелкните **Расширения**, а затем установите флажок **Собственный Microsoft Advertising SDK для Windows 8.1 (JS)**.
+  * Для проекта Windows 8.1: разверните **Windows 8.1**, щелкните **Расширения**, а затем установите флажок **Собственный Microsoft Advertising SDK для Windows 8.1 (JS)**.
 
-    -   Для проекта Windows 8.1: разверните **Windows Phone 8.1**, щелкните **Расширения**, а затем установите флажок **Собственный Microsoft Advertising SDK для Windows Phone 8.1 (JS)**.
+  * Для проекта Windows 8.1: разверните **Windows Phone 8.1**, щелкните **Расширения**, а затем установите флажок **Собственный Microsoft Advertising SDK для Windows Phone 8.1 (JS)**.
 
-3.  В HTML добавьте следующую ссылки на сценарии.
+3.  В разделе **&lt;head&gt;** HTML-файла в проекте после ссылок на JavaScript проекта из файлов default.css и default.js добавьте ссылку на файл ad.js. В проекте UWP добавьте следующую ссылку.
 
-    ``` syntax
-    <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` html
+  <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
+  ```
 
-4.  Объявите свойства `myAppId` и `myAdUnitId`.
+  В проекте для Windows 8.1 или Windows Phone 8.1 добавьте следующую ссылку.
 
-    ``` syntax
-    <script>
-      var myAppId = "<your app id>";
-      var myAdUnitId = "<your adunit id>";
-    </script>
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` html
+  <script src="/MSAdvertisingJS/ads/ad.js"></script>
+  ```
 
-5.  Создайте экземпляр **InterstitialAd**, привяжите к нему все обработчики событий и запросите объявление.
+4.  В файле JS проекта объявите объект [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), а также несколько полей, которые будут содержать идентификатор приложения и идентификатор рекламного блока вашей промежуточной рекламы. Следующий код присваивает поля `applicationId` и `adUnitId` тестовым значениям, представленным в разделе [Значения тестового режима](test-mode-values.md). Эти значения используются только для тестирования. Их необходимо заменить на фактические значения из Центра разработки для Windows перед публикацией приложения.
 
-    ``` syntax
-    // instantiate an InterstitialAd
-    window.interstitialAd = new MicrosoftNSJS.Advertising.InterstitialAd();
+  > [!div class="tabbedCodeSnippets"]
+  [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet1)]
 
-    // wire up all 4 events, see below for function templates
-    window.interstitialAd.onAdReady = readyHandler;
-    window.interstitialAd.onErrorOccurred = errorHandler;
-    window.interstitialAd.onCompleted = completeHandler;
-    window.interstitialAd.onCancelled = cancelHandler;
+5.  В коде, который выполняется при запуске (например, в конструкторе для страницы), создайте объект **InterstitialAd** и привяжите обработчики событий к событиям этого объекта.
 
-    // pre-fetch an ad 30-60 seconds before you need it
-    var myAdType = MicrosoftNSJS.Advertising.InterstitialAdType.video;
-    window.interstitialAd.requestAd(myAdType, myAppId, myAdUnitId);
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet2)]
 
-6.  Покажите объявление в точке кода, где оно должно отображаться, предварительно убедившись в готовности рекламы.
+5. Приблизительно за 30–60 секунд до того, как должна будет отобразиться промежуточная реклама, используйте метод [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx), чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения.
 
-    ``` syntax
-    if ((MicrosoftNSJS.Advertising.InterstitialAdState.ready) == (window.interstitialAd.state)) {
-             window.interstitialAd.show();
-    }
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet3)]
 
-7.  Определите события и создайте для них код.
+6.  Проверьте то место вашего когда, в котором должна отображаться ваша реклама, на предмет того, что реклама **InterstitialAd** готова к отображению, а затем отобразите ее, используя метод [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).
 
-    ``` syntax
-    function readyHandler(sender) {
-      // code
-    }
+  > [!div class="tabbedCodeSnippets"]
+  [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/samples.js#Snippet4)]
 
-    function errorHandler(sender, args) {
-      // code
-    }
+7.  Определите обработчики событий для объекта **InterstitialAd**.
 
-    function completeHandler(sender) {
-      // code
-    }
-
-    function cancelHandler(sender) {
-      // code
-    }
-    ```
-
-7.  Назначьте для свойства `MyAppId` тестовое значение, указанное в разделе [Значения тестового режима](test-mode-values.md). Это значение используется только для тестирования; перед публикацией приложения его необходимо заменить реальным значением.
-
-    ``` syntax
-    var MyAppId = "d25517cb-12d4-4699-8bdc-52040c712cab";
-    ```
-
-8.  Назначьте для свойства `MyAdUnitId` тестовое значение, указанное в разделе [Значения тестового режима](test-mode-values.md). Это значение используется только для тестирования; перед публикацией приложения его необходимо заменить реальным значением.
-
-    ``` syntax
-    var MyAdUnitId = "11389925";
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/samples.js#Snippet5)]
 
 9.  Создайте и протестируйте приложение, чтобы убедиться, что в нем отображается реклама.
 
 <span id="interstitialadsdirectx10"/>
-### Промежуточная реклама (C++ и DirectX с межпрограммным взаимодействием XAML)
+###<a name="c-directx-interop"></a>C++ (межпрограммное взаимодействие DirectX)
 
-В этом примере предполагается, что вы создали проект универсального приложения для XAML в Visual Studio 2015 и для определенной архитектуры ЦП.
-
-> **Важно!** Этот код написан на языке C++ в соответствии с требованиями DirectX.
-
+В этом примере предполагается, что вы уже создали проект **приложения DirectX и XAML (универсальное приложение для Windows)** на C++ в Visual Studio 2015 и для определенной архитектуры ЦП.
  
 1. Откройте проект в Visual Studio.
+
 1.  В **Диспетчере ссылок** выберите одну из следующих ссылок в зависимости от типа проекта.
 
-    -   Для проекта универсальной платформы Windows (UWP): разверните **Универсальные для Windows**, щелкните **Расширения**, а затем установите флажок **Microsoft Advertising SDK для XAML** (версия 10.0).
+  * Для проекта универсальной платформы Windows (UWP): разверните **Универсальные для Windows**, щелкните **Расширения**, а затем установите флажок **Microsoft Advertising SDK для XAML** (версия 10.0).
 
-    -   Для проекта Windows 8.1: разверните **Windows 8.1**, нажмите **Расширения**, а затем установите флажок **Ad Mediator SDK для XAML в Windows 8.1**. Этот параметр добавляет библиотеки и Microsoft Advertising, и Ad Mediator в проект, но вы можете не обращать внимания на библиотеки Ad Mediator.
+  * Для проекта Windows 8.1: разверните **Windows 8.1**, нажмите **Расширения**, а затем установите флажок **Ad Mediator SDK для XAML в Windows 8.1**. Этот параметр добавляет библиотеки и Microsoft Advertising, и Ad Mediator в проект, но вы можете не обращать внимания на библиотеки Ad Mediator.
 
-    -   Для проекта Windows Phone 8.1: разверните **Windows Phone 8.1**, нажмите **Расширения**, затем установите флажок **Ad Mediator SDK для XAML в Windows Phone 8.1**. Этот параметр добавляет библиотеки и Microsoft Advertising, и Ad Mediator в проект, но вы можете не обращать внимания на библиотеки Ad Mediator.
+  * Для проекта Windows Phone 8.1: разверните **Windows Phone 8.1**, нажмите **Расширения**, затем установите флажок **Ad Mediator SDK для XAML в Windows Phone 8.1**. Этот параметр добавляет библиотеки Microsoft Advertising и Ad Mediator в проект, но вы можете не обращать внимания на библиотеки Ad Mediator.
 
-2.  В соответствующем файле заголовка для приложения объявите объект промежуточной рекламы и соответствующие свойства и методы.
+2.  В соответствующем файле заголовка для приложения (например, в файле DirectXPage.xaml.h) объявите объект [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) и соответствующие методы обработчика событий.  
 
-    ``` syntax
-    Microsoft::Advertising::WinRT::UI::InterstitialAd^ m_ia;
-    void OnAdReady(Object^ sender, Object^ args);
-    void OnAdCompleted(Object^ sender, Object^ args);
-    void OnAdCancelled(Object^ sender, Object^ args);
-    void OnAdError (Object^ sender,  Microsoft::Advertising::WinRT::UI::AdErrorEventArgs^ args);
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet1)]
 
-3.  Объявите свойства `AppId` и `AdUnitId`.
+3.  В этом же файле заголовка объявите несколько строковых полей, которые будут представлять собой идентификатор приложения и идентификатор рекламного блока вашей промежуточной рекламы. Следующий код присваивает поля `myAppId` и `myAdUnitId` тестовым значениям, представленным в разделе [Значения тестового режима](test-mode-values.md). Эти значения используются только для тестирования. Их необходимо заменить на фактические значения из Центра разработки для Windows перед публикацией приложения.
 
-    ``` syntax
-    #if WINDOWS_PHONE_APP
-    static Platform::String^ IA_APPID = L"<your app id for phone>";
-    static Platform::String^ IA_ADUNITID = L"<your ad unit for phone>";
-    #endif
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet2)]
 
-    #if WINDOWS_APP
-    static Platform::String^ IA_APPID = L"<your app id for windows>";
-    static Platform::String^ IA_ADUNITID = L"<your ad unit for windows>";
-    #endif
-    ```
+4.  В файле CPP, в который вы хотите добавить код для отображения промежуточной рекламы, добавьте следующую ссылку на пространство имен. В следующих примерах кода предполагается, что вы добавляете код в файл DirectXPage.xaml.cpp вашего приложения.
 
-4.  В CPP-файле добавьте ссылки на пространства имен.
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet3)]
 
-    ``` syntax
-    using namespace Microsoft::Advertising::WinRT::UI;
-    ```
+6.  В коде, который выполняется при запуске (например, в конструкторе для страницы), создайте объект **InterstitialAd** и привяжите обработчики событий к событиям этого объекта. В следующем примере кода ```InterstitialAdSamplesCpp``` представляет собой пространство имен для вашего проекта. Измените это имя с учетом содержания вашего кода.
 
-5.  Создайте экземпляр **InterstitialAd**, привяжите к нему все обработчики событий и запросите объявление.
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet4)]
 
-    ``` syntax
-    // Instantiate an InterstitialAd.
-    m_ia = ref new InterstitialAd();
+7. Приблизительно за 30–60 секунд до того, как должна будет отобразиться промежуточная реклама, используйте метод [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx), чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения.
 
-    // Wire up all 4 events, see below for function templates.            
-    m_ia->AdReady += ref new Windows::Foundation::EventHandler<Platform::Object ^>
-        (this, &Simple3DGameXaml::DirectXPage::OnAdReady);
-    m_ia->Completed += ref new Windows::Foundation::EventHandler<Platform::Object ^>
-        (this, &Simple3DGameXaml::DirectXPage::OnAdCompleted);
-    m_ia->Cancelled += ref new Windows::Foundation::EventHandler<Platform::Object ^>
-        (this, &Simple3DGameXaml::DirectXPage::OnAdCancelled);
-    m_ia->ErrorOccurred += ref new
-        Windows::Foundation::EventHandler<Microsoft::Advertising::WinRT::UI::AdErrorEventArgs ^>
-            (this, &Simple3DGameXaml::DirectXPage::OnAdError);
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet5)]
 
-    // Pre-fetch an ad 30-60 seconds before you need it.
-    m_ia->RequestAd(AdType::Video, IA_APPID, IA_ADUNITID);
-    ```
+7.  Проверьте то место вашего когда, в котором должна отображаться ваша реклама, на предмет того, что реклама **InterstitialAd** готова к отображению, а затем отобразите ее, используя метод [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).
 
-6.  Покажите объявление в точке кода, где оно должно отображаться, предварительно убедившись в готовности рекламы.
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet6)]
 
-    ``` syntax
-    if ((InterstitialAdState::Ready == m_ia->State))
-    {
-        m_ia->Show();
-    }
-    ```
+8.  Определите обработчики событий для объекта **InterstitialAd**.
 
-7.  Определите события и создайте для них код.
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet7)]
 
-    ``` syntax
-    void DirectXPage::OnAdReady(Object^ sender, Object^ args)
-    {
-      // code
-    }
+9. Создайте и протестируйте приложение, чтобы убедиться, что в нем отображается реклама.
 
-    void DirectXPage::OnAdCompleted(Object^ sender, Object^ args)
-    {
-      // code
-    }
+<span/>
+### <a name="release-your-app-with-live-ads-using-windows-dev-center"></a>Выпуск приложения с динамической рекламой с помощью Центра разработки для Windows
 
-    void DirectXPage::OnAdCancelled(Object^ sender, Object^ args)
-    {
-      // code
-    }
-
-    void DirectXPage::OnAdError
-      (Object^ sender, Microsoft::Advertising::WinRT::UI::AdErrorEventArgs^ args)
-    {
-      // code
-    }
-    ```
-
-8.  Назначьте для свойства `AppId` тестовое значение, указанное в разделе [Значения тестового режима](test-mode-values.md). Это значение используется только для тестирования; перед публикацией приложения его необходимо заменить реальным значением.
-
-    ``` syntax
-    static Platform::String^ IA_APPID = L"d25517cb-12d4-4699-8bdc-52040c712cab";
-    ```
-
-9.  Назначьте для свойства `AdUnitId` тестовое значение, указанное в разделе [Значения тестового режима](test-mode-values.md). Это значение используется только для тестирования; перед публикацией приложения его необходимо заменить реальным значением.
-
-    ``` syntax
-    static Platform::String^ IA_ADUNITID = L"11389925";
-    ```
-
-10. Создайте и протестируйте приложение, чтобы убедиться, что в нем отображается реклама.
-
-### Выпуск приложения с динамической рекламой с помощью Центра разработки для Windows
-
-1.  На информационной панели Центра разработки перейдите на страницу **Монетизация** &gt; **Монетизировать с помощью рекламы** вашего приложения и [создайте автономный блок Microsoft Advertising](../publish/monetize-with-ads.md). Для типа единицы рекламы укажите **Промежуточная видеореклама**. Запишите и идентификатор рекламного блока, и идентификатор приложения.
+1.  На информационной панели Центра разработки перейдите на страницу **Монетизация** &gt; **Монетизировать с помощью рекламы** вашего приложения и [создайте рекламный блок](../publish/monetize-with-ads.md). Для типа единицы рекламы укажите **Промежуточная видеореклама**. Запишите идентификатор рекламного блока и идентификатор приложения.
 
 2.  В своем коде замените тестовые значения и значения единиц фактическими, созданными в Центре разработки.
 
@@ -360,18 +209,18 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 4.  Изучите [отчеты по показателям рекламы](../publish/advertising-performance-report.md) на информационной панели Центра разработки.
 
 <span id="interstitialbestpractices10"/>
-## Рекомендации и правила для промежуточной рекламы
+## <a name="interstitial-best-practices-and-policies"></a>Рекомендации и правила для промежуточной рекламы
 
 
 Дополнительные сведения о том, как эффективно использовать промежуточную рекламу, и о действующих правилах, которые необходимо выполнять, см. в разделе [Рекомендации и правила для промежуточной рекламы](ui-and-user-experience-guidelines.md#interstitialbestpractices10).
 
 <span id="targetplatform10"/>
-## Удалите ошибки ссылок: ориентируйтесь на конкретную платформу ЦП (XAML или HTML)
+## <a name="remove-reference-errors-target-a-specific-cpu-platform-xaml-and-html"></a>Удалите ошибки ссылок: ориентируйтесь на конкретную платформу ЦП (XAML или HTML)
 
 
 При использовании библиотек Microsoft Libraries невозможно ориентироваться в проекте на **Любой ЦП**. Если проект ориентирован на платформу **Любой ЦП**, может отобразиться предупреждение после добавления ссылки в библиотеки Microsoft Advertising. Чтобы убрать это предупреждение, обновите проект, чтобы использовать сборку определенной архитектуры (например, **x86**). Подробнее см. в статье [Известные проблемы](known-issues-for-the-advertising-libraries.md).
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 
 * [Пример кода промежуточной рекламы в C#](interstitial-ad-sample-code-in-c.md)
@@ -384,6 +233,6 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

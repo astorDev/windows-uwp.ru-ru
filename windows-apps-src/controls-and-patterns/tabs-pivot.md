@@ -6,11 +6,11 @@ ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 2a652e7bd8223a128fbd77d986c446fa7c74a34c
+ms.sourcegitcommit: a652189d0595bb6dffbc5228a91a68261eb7e5ef
+ms.openlocfilehash: 865969a7c965a502acd9fe24df28128399efd380
 
 ---
-# Вкладки и сводки
+# <a name="pivot-and-tabs"></a>Вкладки и сводки
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -20,11 +20,15 @@ ms.openlocfilehash: 2a652e7bd8223a128fbd77d986c446fa7c74a34c
 
 Вкладки — это визуальный вариант сводки, в котором сочетание значков и текста или только значки используются для подчеркивания контента раздела. Вкладки создаются с помощью элемента управления [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx). В [**примере Pivot**](http://go.microsoft.com/fwlink/p/?LinkId=619903) показано, как настроить элемент управления "Сводка" с использованием шаблона вкладок.
 
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**Класс Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241)</li>
+</ul>
+</div>
 
 
--   [**Класс Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241)
-
-## Шаблон сводки
+## <a name="the-pivot-pattern"></a>Шаблон сводки
 
 При создании приложения со сводкой необходимо учитывать несколько ключевых аспектов.
 
@@ -35,7 +39,7 @@ ms.openlocfilehash: 2a652e7bd8223a128fbd77d986c446fa7c74a34c
     1. Касание заголовка вкладки или сводки для перехода.
     2. Прокрутка влево или вправо по области содержимого для перехода к смежной категории.
 
-## Примеры
+## <a name="examples"></a>Примеры
 
 Элемент управления "Сводка" на телефоне.
 
@@ -45,7 +49,7 @@ ms.openlocfilehash: 2a652e7bd8223a128fbd77d986c446fa7c74a34c
 
 ![Пример шаблона вкладок в приложении "Будильник и часы"](images/tabs_alarms-and-clock.png)
 
-## Создание элемента управления "Cводка"
+## <a name="create-a-pivot-control"></a>Создание элемента управления "Cводка"
 
 Элемент управления [**Сводка**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) предоставляет базовые возможности, описанные в этом разделе.
 
@@ -68,17 +72,17 @@ ms.openlocfilehash: 2a652e7bd8223a128fbd77d986c446fa7c74a34c
 </Pivot>
 ```
 
-### Элементы Pivot
+### <a name="pivot-items"></a>Элементы Pivot
 
 Pivot представляет собой [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx), поэтому может содержать коллекцию элементов любого типа. Любой элемент, который добавляется в элемент управления "Сводка" и явно не является [**PivotItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx), явно упаковывается в элемент PivotItem. Поскольку "Сводка" часто используется для перемещения между страницами содержимого, коллекцию [**Элементы**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) можно заполнить непосредственно элементами пользовательского интерфейса XAML. Или же можно задать свойство [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) для источника данных. Элементы, связанные в ItemsSource, могут быть любого типа, но если они явно являются PivotItems, необходимо определить параметры [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) и [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx), чтобы указать способ отображения элементов.
 
 Чтобы получить или настроить активный элемент Pivot, можно использовать свойство [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx). Чтобы получить или указать индекс активного элемента, используйте свойство [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx).
 
-### Заголовки Pivot
+### <a name="pivot-headers"></a>Заголовки Pivot
 
 Чтобы добавить другие элементы управления в заголовок Pivot, можно использовать свойства [**LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) и [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx).
 
-### Взаимодействие Pivot
+### <a name="pivot-interaction"></a>Взаимодействие Pivot
 
 Элемент управления поддерживает следующие сенсорные жесты:
 
@@ -94,6 +98,9 @@ Pivot представляет собой [**ItemsControl**](https://msdn.micros
 -   Сводки неподвижны, если все заголовки сводок вписываются в доступное пространство.
 -   Касание метки сводки приводит к переходу на соответствующую страницу, но сама сводка не перемещается. Активная сводка выделена.
 
+<div class="microsoft-internal-note">
+Мы не рекомендуем использовать прокрутку элементов для устройств с большим экраном. Присвойте свойству `IsHeaderItemsCarouselEnabled` значение false, если приложение выполняется на консоли Xbox.
+</div>
 
 **Карусель**
 
@@ -101,24 +108,37 @@ Pivot представляет собой [**ItemsControl**](https://msdn.micros
 -   Касание метки сводки приводит к переходу на соответствующую страницу, а метка активной сводки перемещается на первую позицию.
 -   Элементы сводки в цикле карусели сменяются от последнего к первому разделу сводки.
 
+<div class="microsoft-internal-note">
+### Фокус сводки
 
-## Рекомендации
+По умолчанию фокус клавиатуры на заголовке сводки представлен подчеркиванием.
+
+![Фокус по умолчанию подчеркивает выбранный заголовок](images/pivot_focus_selectedHeader.png)
+
+Приложения с настроенной сводкой, которые применяют подчеркивание в визуальных элементах выбора заголовка, могут использовать новое свойство `HeaderFocusVisualPlacement`, чтобы изменить поведение по умолчанию. Если `HeaderFocusVisualPlacement=\"ItemHeaders\"`, фокус будет вокруг всей панели заголовков.
+
+![Параметр ItemsHeader рисует прямоугольник фокуса вокруг всех заголовков сводки](images/pivot_focus_headers.png)
+</div>
+
+## <a name="recommendations"></a>Рекомендации
 
 -   Определяйте выравнивание заголовков вкладок и сводок в зависимости от размера экрана. Для ширины экрана меньше 720 epx обычно лучше всего подходит выравнивание по центру, а выравнивание по левому краю рекомендуется в большинстве случаев для ширины экрана более 720 epx.
 -   Не используйте более пяти заголовков в режиме карусели, так как это может запутать пользователя.
 -   Используйте шаблон вкладок, только если элементы сводки имеют отдельные значки.
 -   Включайте текст в заголовки элементов сводки, чтобы помочь пользователям понять значение каждого раздела сводки. Значки могут быть понятны не всем пользователям.
 
+## <a name="get-the-sample-code"></a>Получить пример кода
+- [Пример элемента управления "Сводка"](http://go.microsoft.com/fwlink/p/?LinkId=619903)<br/>
+    Узнайте, как настроить элемент управления Pivot в шаблоне вкладок.
+- [Пример с основами пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    Ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-
-## Связанные разделы
-
+## <a name="related-topics"></a>Связанные статьи
 - [Основы проектирования навигации](../layout/navigation-basics.md)
-
 - [**Пример элемента управления "Сводка"**](http://go.microsoft.com/fwlink/p/?LinkId=619903)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

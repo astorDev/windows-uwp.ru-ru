@@ -3,18 +3,25 @@ description: "Научитесь проектировать и писать ко
 title: "Проектирование макета приложения UWP — разработка приложений для Windows"
 author: mijacobs
 keywords: "макет приложения uwp, универсальная платформа Windows, проектирование приложений, интерфейс"
+label: Layout
+template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: 72c4b957c98956965c773b4c2182796880f59a1d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e643b7029d5bc417437f7a1b8586424ac4345c3b
 
 ---
-# Макет для приложений UWP
+# <a name="layout-for-uwp-apps"></a>Макет для приложений UWP
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 Структура приложения, макет страницы и навигация — это основа взаимодействия вашего приложения с пользователем. Статьи в этом разделе помогут вам создать стильное приложение, с которым легко работать на различных устройствах и на экранах разного размера.
 
-## Введение
+## <a name="intro"></a>Введение
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -28,7 +35,7 @@ ms.openlocfilehash: 72c4b957c98956965c773b4c2182796880f59a1d
 </div>
 </div>
 
-## Макет и структура приложения
+## <a name="app-layout-and-structure"></a>Макет и структура приложения
 Изучите эти рекомендации, чтобы структурировать свое приложение и использовать три типа элементов пользовательского интерфейса: навигацию, команды и содержимое.
 
 <div class="side-by-side">
@@ -50,7 +57,7 @@ ms.openlocfilehash: 72c4b957c98956965c773b4c2182796880f59a1d
 </div>
 </div>
 
-## Макет страницы 
+## <a name="page-layout"></a>Макет страницы 
 Эти статьи помогут вам создать гибкий пользовательский интерфейс, который превосходно смотрится на экранах и в окнах разного размера, в различном разрешении и при любой ориентации. 
 
 
@@ -83,6 +90,6 @@ ms.openlocfilehash: 72c4b957c98956965c773b4c2182796880f59a1d
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

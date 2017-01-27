@@ -5,20 +5,22 @@ title: "Выравнивание, поля и отбивка для прилож
 ms.assetid: 9412ABD4-3674-4865-B07D-64C7C26E4842
 label: Alignment, margin, and padding
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: f6c8665c935380078efd2e8ea9d225967cf45eba
 
 ---
-# Выравнивание, поля и отбивка
+# <a name="alignment-margin-and-padding"></a>Выравнивание, поля и отбивка
 
-Помимо свойств измерения (ширина, высота и ограничения) элементы также обладают свойствами выравнивания, полей и отбивки, влияющими на поведение макета при прохождении элемента через разметку и отрисовку в пользовательском интерфейсе. Между свойствами выравнивания, полей и отбивки со стандартной логикой выполнения, при которой объект [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) установлен в заданное положение, существуют такие отношения, что значения могут использоваться или игнорироваться в зависимости от обстоятельств.
+Помимо свойств размеров (ширины, высоты и ограничений) элементы также могут обладать свойствами выравнивания, полей и отбивки, влияющими на поведение макета при прохождении элемента через разметку и его отрисовке в пользовательском интерфейсе. Между свойствами выравнивания, полей и отбивки со стандартной логикой выполнения, при которой объект [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) установлен в заданное положение, существуют такие отношения, что значения могут использоваться или игнорироваться в зависимости от обстоятельств.
 
-## Свойства выравнивания
+## <a name="alignment-properties"></a>Свойства выравнивания
 
-Свойства [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) и [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749) описывают, каким образом дочерний элемент должен быть расположен в выделенном пространстве макета родительского элемента. Используя оба свойства одновременно, логика макета для контейнера может расположить дочерние элементы внутри контейнера (как панель, так и элемент управления). Свойства выравнивания предназначены, чтобы подсказать желаемый макет контейнеру адаптивных макетов, поэтому обычно они заданы в дочерних элементах [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) и интерпретируются родительским элементом другого контейнера **FrameworkElement**. Значения выравнивания могут указывать, выравнивается ли элемент по одному из краев ориентации или по центру. Значением по умолчанию для обоих свойств выравнивания, тем не менее, является **По ширине**. При выравнивании **По ширине** элементы занимают все предоставленное в макете место. **Stretch**— это значение по умолчанию, поэтому в случаях, когда явные измерения отсутствуют или нет значения [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921), которое получается на этапе измерения макета, легче использовать методы адаптивного макета. Если оставлять значение по умолчанию, то явная высота/ширина обязательно поместится в контейнер и не будет обрезаться, а значит, вам не придется менять размер каждого контейнера.
+Свойства [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) и [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749) описывают, каким образом дочерний элемент должен быть расположен в выделенном пространстве макета родительского элемента. Используя оба свойства одновременно, логика макета для контейнера может расположить дочерние элементы внутри контейнера (как панель, так и элемент управления). Свойства выравнивания предназначены, чтобы подсказать желаемый макет контейнеру адаптивных макетов, поэтому обычно они заданы в дочерних элементах [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) и интерпретируются родительским элементом другого контейнера **FrameworkElement**. Значения выравнивания могут указывать, выравнивается ли элемент по одному из краев ориентации или по центру. Значением по умолчанию для обоих свойств выравнивания, тем не менее, является **По ширине**. При выравнивании **По ширине** элементы занимают все предоставленное в макете место. **Stretch** — это значение по умолчанию, поэтому в случаях, когда явные измерения отсутствуют или нет значения [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921), которое получается на этапе измерения макета, легче использовать методы адаптивного макета. Если оставлять значение по умолчанию, то явная высота/ширина обязательно поместится в контейнер и не будет обрезаться, а значит, вам не придется менять размер каждого контейнера.
 
-> **Примечание.**&nbsp;&nbsp;Согласно принципу общей раскладки лучше всего применять измерения только к ключевым элементам, а для других элементов использовать адаптивное поведение макета. Таким образом достигается гибкость макета в случаях, когда пользователь изменяет размер верхнего окна приложения, что возможно сделать в любое время.
+> [!NOTE]
+> Согласно принципу общей раскладки, лучше всего применять измерения только к ключевым элементам, а для других элементов использовать адаптивное поведение макета. Таким образом достигается гибкость макета в случаях, когда пользователь изменяет размер верхнего окна приложения, что возможно сделать в любое время.
 
  
 Если в адаптивном контейнере присутствуют значения [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) и [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) или происходит обрезка, даже если **По ширине** задано как значение выравнивания, макет управляется поведением его контейнера. На панелях значение **По ширине**, исключенное параметрами **Height** и **Width**, функционирует как значение **По центру**.
@@ -33,13 +35,13 @@ ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
 
 Свойства выравнивания подходят только для случаев, когда в измерении контейнера родительского макета есть свободное место. Если контейнер макета уже обрезает содержимое, выравнивание может отрицательно повлиять на область обрезки элемента. Например, если вы задали `HorizontalAlignment="Left"`, настоящий размер элемента обрезается.
 
-## Поля
+## <a name="margin"></a>Поля
 
 Свойство [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) описывает расстояние между элементами в ситуации макета, а также расстояние между элементом и областью содержимого контейнера, в котором содержится данный элемент. Если представить элементы в виде ограничивающих прямоугольников, измерениями которых являются параметры [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) и [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709), макет **Margin** применяется снаружи этого прямоугольника и не добавляет пикселей параметрам **ActualHeight** и **ActualWidth**. Поле также не считается частью элемента для проведения проверок и событий ввода источников.
 
-В общем поведении макета компоненты значения [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) ограничиваются последними и только после того, как параметры [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) и [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) уже будут ограничены до0. Поэтому будьте осторожны с полями, когда контейнер уже обрезает или ограничивает элемент, иначе поле может стать причиной того, что элемент не будет поддаваться отрисовке (поскольку одно из его измерений было ограничено до0 после применения поля).
+В общем поведении макета компоненты значения [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) ограничиваются последними и только после того, как параметры [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) и [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) уже будут ограничены до 0. Поэтому будьте осторожны с полями, когда контейнер уже обрезает или ограничивает элемент, иначе поле может стать причиной того, что элемент не будет поддаваться отрисовке (поскольку одно из его измерений было ограничено до 0 после применения поля).
 
-Значения поля могут быть универсальными при использовании такого синтаксиса, как `Margin="20"`. С помощью этого синтаксиса к элементу будет применено универсальное поле в 20пикселей, то есть ширина поля слева, сверху, справа и снизу составит 20пикселей. Значения поля могут принимать вид четырех определенных значений, каждое значение описывает определенную ширину поля слева, сверху, справа и снизу (в указанном порядке). Например, `Margin="0,10,5,25"`. Базовым типом для свойства [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) является структура [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864), свойства которой включают значения [**Left**](https://msdn.microsoft.com/library/windows/apps/hh673893), [**Top**](https://msdn.microsoft.com/library/windows/apps/hh673840), [**Right**](https://msdn.microsoft.com/library/windows/apps/hh673881) и [**Bottom**](https://msdn.microsoft.com/library/windows/apps/hh673775) в качестве отдельных значений **Double**.
+Значения поля могут быть универсальными при использовании такого синтаксиса, как `Margin="20"`. С помощью этого синтаксиса к элементу будет применено универсальное поле в 20 пикселей, то есть ширина поля слева, сверху, справа и снизу составит 20 пикселей. Значения поля могут принимать вид четырех определенных значений, каждое значение описывает определенную ширину поля слева, сверху, справа и снизу (в указанном порядке). Например, `Margin="0,10,5,25"`. Базовым типом для свойства [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) является структура [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864), свойства которой включают значения [**Left**](https://msdn.microsoft.com/library/windows/apps/hh673893), [**Top**](https://msdn.microsoft.com/library/windows/apps/hh673840), [**Right**](https://msdn.microsoft.com/library/windows/apps/hh673881) и [**Bottom**](https://msdn.microsoft.com/library/windows/apps/hh673775) в качестве отдельных значений **Double**.
 
 Поля можно добавить. Например, если каждый из двух элементов определяет ширину поля в 10 пикселей, и они расположены по соседству в любой ориентации, то расстояние между элементами составит 20 пикселей.
 
@@ -49,7 +51,7 @@ ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
 
 Класс [**Block**](https://msdn.microsoft.com/library/windows/apps/br244379), являющийся базовым классом для [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503), также обладает свойством [**Margin**](https://msdn.microsoft.com/library/windows/apps/jj191725). Он таким же образом влияет на положение **Paragraph** в родительском контейнере, который обычно представляет собой объект [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) или [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548), а также на положение одного параграфа относительно других одноранговых объектов **Block** из коллекции [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347).
 
-## Отбивка
+## <a name="padding"></a>Отбивка
 
 Свойство **Padding** описывает расстояние между элементом и дочерними элементами или его содержимым. Содержимое рассматривается как единый ограничивающий прямоугольник, в котором находится все содержимое, если этот элемент допускает наличие более одного дочернего элемента. Например, если [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) содержит два элемента, вокруг ограничивающего прямоугольника, содержащего эти элементы, применяется [**Padding**](https://msdn.microsoft.com/library/windows/apps/br209459). **Padding** вычитается из доступного размера при расчете этапов измерения и расположения для этого контейнера и является частью необходимых значений размера, если сам контейнер проходит этап разметки для того, что может его содержать. В отличие от параметра [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) параметр **Padding**не является свойством [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706); фактически существует несколько классов, определяющих собственное свойство **Padding**:
 
@@ -60,28 +62,23 @@ ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
 
 В каждом из этих случаев один и тот же элемент также имеет свойство **Margin**. Если одновременно используются и поля, и заполнение, они дополняют друг друга в том смысле, что очевидное расстояние между внешним контейнером и внутренним содержимым складывается из ширины поля и заполнения. Если к содержимому, элементу или контейнеру применяются различные фоновые значения, точка, в которой заканчивается поле и начинается заполнение, потенциально видна при отрисовке.
 
-## Измерения (высота, ширина)
+## <a name="dimensions-height-width"></a>Измерения (высота, ширина)
 
-Свойства [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) и [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) элемента [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) часто влияют на то, как изменяются свойства выравнивания, поля и заполнения на этапе разметки. В частности, реальное числовое значение **Height** и **Width** отменяет выравнивания **по ширине**, а также преобразуется в возможные компоненты значения [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921), устанавливаемого на этапе измерения макета. **Height** и **Width** содержат ограничивающие свойства: значение **Height** может ограничиваться пределами [**MinHeight**](https://msdn.microsoft.com/library/windows/apps/br208731) и [**MaxHeight**](https://msdn.microsoft.com/library/windows/apps/br208726), а значение **Width**— пределами [**MinWidth**](https://msdn.microsoft.com/library/windows/apps/br208733) и [**MaxWidth**](https://msdn.microsoft.com/library/windows/apps/br208728). Также рассчитываются доступные только для чтения свойства [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) и [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707), которые содержат только действительные значения после завершения этапа разметки. Подробнее об измерениях и ограничениях или взаимозависимости расчетных свойств см. в примечаниях к параметрам [**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718) и [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751).
+Свойства [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) и [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) элемента [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) часто влияют на то, как изменяются свойства выравнивания, поля и заполнения на этапе разметки. В частности, реальное числовое значение **Height** и **Width** отменяет выравнивания **по ширине**, а также преобразуется в возможные компоненты значения [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921), устанавливаемого на этапе измерения макета. **Height** и **Width** содержат ограничивающие свойства: значение **Height** может ограничиваться пределами [**MinHeight**](https://msdn.microsoft.com/library/windows/apps/br208731) и [**MaxHeight**](https://msdn.microsoft.com/library/windows/apps/br208726), а значение **Width** — пределами [**MinWidth**](https://msdn.microsoft.com/library/windows/apps/br208733) и [**MaxWidth**](https://msdn.microsoft.com/library/windows/apps/br208728). Также рассчитываются доступные только для чтения свойства [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) и [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707), которые содержат только действительные значения после завершения этапа разметки. Подробнее об измерениях и ограничениях или взаимозависимости расчетных свойств см. в примечаниях к параметрам [**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718) и [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751).
 
-## Связанные темы
+## <a name="related-topics"></a>Связанные разделы
 
 **Справка**
 
-[**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718)
-
-[**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
-
-[**FrameworkElement.HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720)
-
-[**FrameworkElement.VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
-
-[**FrameworkElement.Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
-
-[**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
+* [**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718)
+* [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
+* [**FrameworkElement.HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720)
+* [**FrameworkElement.VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
+* [**FrameworkElement.Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
+* [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

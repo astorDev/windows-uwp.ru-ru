@@ -6,11 +6,11 @@ description: "Элемент управления &quot;Комбинирован
 label: Split view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 7fae1477b997508ade92a5bbb977c1d6530a181f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 61ada7839f76df92041b606066f5cbd54448cd93
 
 ---
-# Элемент управления "Комбинированный режим"
+# <a name="split-view-control"></a>Элемент управления "Комбинированный режим"
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,17 +19,16 @@ ms.openlocfilehash: 7fae1477b997508ade92a5bbb977c1d6530a181f
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn864360"><strong>Класс SplitView (XAML)</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn919970"><strong>Объект SplitView (HTML)</strong></a></li>
+<li>[**Класс SplitView**](https://msdn.microsoft.com/library/windows/apps/dn864360)</li>
 </ul>
-
-</div>
 </div>
 
+Вот пример использования SplitView в Microsoft Edge для отображения Центра.
+
+![Пример использования комбинированного режима в Microsoft Edge](images/split_view_Edge.png)
 
 
-
- Область содержимого комбинированного режима всегда является видимой. Панель можно развернуть или свернуть либо оставить открытой, ее можно расположить в левой или правой части окна приложения. Панель можно использовать в четырех режимах.
+ Область содержимого комбинированного режима всегда является видимой. Панель можно развернуть или свернуть либо оставить открытой; ее можно расположить в левой или правой части окна приложения. Панель можно использовать в четырех режимах.
 
 -   **Наложение**
 
@@ -47,31 +46,46 @@ ms.openlocfilehash: 7fae1477b997508ade92a5bbb977c1d6530a181f
 
     В этом режиме отображается узкая часть панели, ширины которой хватает лишь для отображения значков. Ширина закрытой панели по умолчанию составляет 48 пикселей и может быть изменена с помощью свойства `CompactPaneLength`. Когда панель открыта, уменьшается пространство, доступное для содержимого, так как панель занимает его место.
 
-## Выбор правильного элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Элемент управления "Комбинированный режим" можно использовать для создания [панели навигации](nav-pane.md). Для создания такого шаблона необходимо добавить кнопку развертывания и свертывания ("кнопку-гамбургер") и представление списка для элементов навигации.
 
 Элемент управления "Комбинированный режим" можно также использовать для создания взаимодействия типа "секция", позволяющего пользователям открывать и закрывать дополнительную панель.
 
-## Примеры
+## <a name="create-a-split-view"></a>Создание комбинированного режима
 
-Элемент управления "Комбинированный режим" по умолчанию представляет собой базовый контейнер. Вот пример использования SplitView в Microsoft Edge для отображения Центра.
+Здесь представлен элемент управления SplitView вместе с открытой панелью (Pane), отображающейся рядом с содержимым (Content).
+```xaml
+<SplitView IsPaneOpen="True"
+           DisplayMode="Inline"
+           OpenPaneLength="296">
+    <SplitView.Pane>
+        <TextBlock Text="Pane"
+                   FontSize="24"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+    </SplitView.Pane>
 
-![Пример использования комбинированного режима в Microsoft Edge](images/split_view_Edge.png)
+    <Grid>
+        <TextBlock Text="Content"
+                   FontSize="24"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+    </Grid>
+</SplitView>
+```
 
 
 
-## Ссылки по теме
-
-
+## <a name="related-topics"></a>Статьи по теме
 * [Шаблон панели навигации](nav-pane.md)
-* [Представление в виде списка](lists.md)
+* [Представление списка](lists.md)
  
 
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

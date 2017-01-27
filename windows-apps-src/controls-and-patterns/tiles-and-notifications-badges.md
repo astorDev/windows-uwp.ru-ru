@@ -6,11 +6,11 @@ ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 465c75ccb2af9b162202a79025aa292fbd626a58
 
 ---
-# Уведомления на индикаторах событий для приложений UWP
+# <a name="badge-notifications-for-uwp-apps"></a>Уведомления на индикаторах событий для приложений UWP
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,9 +21,11 @@ ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
 
 Уведомления на индикаторах событий появляются на значке вашего приложения в панели задач и в правом нижнем углу его запускающей плитки независимо от того, запущено оно или нет. Индикаторы событий могут отображаться на плитках любого размера.  
 
-**Примечание.**&nbsp;&nbsp;Вы не можете предоставить собственное изображение индикатора. Использовать можно только изображения, предоставленные системой.
+> [!NOTE]
+> Вы не можете предоставить собственное изображение индикатора. Использовать можно только изображения, предоставленные системой.
 
-## Числовые индикаторы событий
+
+## <a name="numeric-badges"></a>Числовые индикаторы событий
 
 <table>
     <tr>
@@ -43,7 +45,7 @@ ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
     </tr>    
 </table>
 
-## Индикаторы событий с глифами состояния
+## <a name="glyph-badges"></a>Индикаторы событий с глифами состояния
 Вместо числа индикатор событий может отображать один из нерасширяемых наборов глифов состояния. 
 
 <table>
@@ -119,11 +121,11 @@ ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
 </tr>
 </table>
 
-## Создание индикатора событий
+## <a name="create-a-badge"></a>Создание индикатора событий
 
 Эти примеры демонстрируют способ создания обновления индикатора событий.
 
-### Создание числового индикатора событий
+### <a name="create-a-numeric-badge"></a>Создание числового индикатора событий
 
 ````csharp
 private void setBadgeNumber(int num)
@@ -150,7 +152,7 @@ private void setBadgeNumber(int num)
 }
 ````
 
-### Создание индикатора событий с глифом
+### <a name="create-a-glyph-badge"></a>Создание индикатора событий с глифом
 ````csharp
 private void updateBadgeGlyph()
 {
@@ -178,7 +180,7 @@ private void updateBadgeGlyph()
 }
 ````
 
-### Очистка индикатора событий
+### <a name="clear-a-badge"></a>Очистка индикатора событий
 
 ````csharp
 private void clearBadge()
@@ -187,17 +189,17 @@ private void clearBadge()
 }
 ````
 
-## Получение примеров
+## <a name="get-the-sample-code"></a>Получить пример кода
 
-* [Пример уведомлений](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Демонстрирует, как создавать живые плитки, отправлять обновления индикатора событий и отображать всплывающие уведомления. 
+* [Пример уведомлений](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Демонстрирует, как создавать интерактивные плитки, отправлять обновления индикатора событий и отображать всплывающие уведомления. 
 
-## Статьи по теме
+## <a name="related-articles"></a>Статьи по теме
 
 * [Адаптивные и интерактивные всплывающие уведомления](tiles-and-notifications-adaptive-interactive-toasts.md)
 * [Создание плиток](tiles-and-notifications-creating-tiles.md)
 * [Создание адаптивных плиток](tiles-and-notifications-create-adaptive-tiles.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

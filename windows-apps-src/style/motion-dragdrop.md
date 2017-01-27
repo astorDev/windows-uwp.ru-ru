@@ -6,24 +6,27 @@ ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e71b936be1649f8ede394b019369176c7e3ca631
 
 ---
 
-# Анимации перетаскивания
+# <a name="drag-animations"></a>Анимации перетаскивания
 
 
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Используйте анимацию перетаскивания, когда пользователь перемещает объекты, например передвигает элемент в списке или размещает один элемент выше другого.
 
-**Важные API**
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**Класс DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)</li>
+</ul>
+</div>
 
--   [**Класс DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
-
-## Возможности и ограничения
+## <a name="dos-and-donts"></a>Возможности и ограничения
 
 
 **Анимация начала перетаскивания**
@@ -52,12 +55,12 @@ ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
 -   Не используйте анимацию извлечения из области между объектами, если сначала не использовалась анимация размещения между объектами.
 
 
-## Статьи по теме
+## <a name="related-articles"></a>Связанные разделы
 
-**Разработчикам (XAML)**
+**Для разработчиков**
 * [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Анимация этапов перетаскивания](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
-* [Краткое руководство: анимация пользовательского интерфейса](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Краткое руководство: анимация пользовательского интерфейса с помощью анимаций библиотеки](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Класс DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
 * [**Класс DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243186)
 * [**Класс DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243180)
@@ -71,6 +74,6 @@ ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

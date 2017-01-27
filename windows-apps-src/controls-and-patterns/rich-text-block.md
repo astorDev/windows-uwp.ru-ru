@@ -6,11 +6,11 @@ ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 82c7e80afde143d7d12bbf4fe49aa2c52f244f6f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: a5a4c96723bd5c4cabdc7dd6dfc114b7af4d10f8
 
 ---
-# Блок форматированного текста
+# <a name="rich-text-block"></a>Блок форматированного текста
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,22 +19,14 @@ ms.openlocfilehash: 82c7e80afde143d7d12bbf4fe49aa2c52f244f6f
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx"><strong>Класс RichTextBlock</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx"><strong>Класс RichTextBlockOverflow</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx"><strong>Класс Paragraph</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx"><strong>Класс Typography</strong></a></li>
+<li>[**Класс RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
+<li>[**Класс RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)</li>
+<li>[**Класс Paragraph**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)</li>
+<li> [**Класс Typography**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-
-## Выбор правильного элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте **RichTextBlock**, если вам требуется поддержка нескольких абзацев, разметка с несколькими столбцами или другие сложные текстовые макеты либо встроенные элементы пользовательского интерфейса, например изображения.
 
@@ -42,10 +34,7 @@ ms.openlocfilehash: 82c7e80afde143d7d12bbf4fe49aa2c52f244f6f
 
 Дополнительные сведения о выборе подходящего элемента управления текстом см. в статье [Элементы управления текстом](text-controls.md).
 
-## Примеры
-
-
-## Создание блока форматированного текста
+## <a name="create-a-rich-text-block"></a>Создание блока форматированного текста
 
 Свойство содержимого RichTextBlock представляет собой свойство [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx), которое поддерживает текст на основе абзаца с помощью элемента [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx). У него нет свойства **Text**, которое можно использовать для удобного доступа к текстовому содержимому элементов управления в приложении. Однако RichTextBlock предлагает несколько уникальных функций, которые недоступны в элементе TextBlock. 
 
@@ -54,7 +43,7 @@ RichTextBlock поддерживает следующие функции.
 - Строковые элементы пользовательского интерфейса. Используйте [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx), чтобы отобразить элементы пользовательского интерфейса, например изображения, встроенными в текст.
 - Контейнеры переполнения. Используйте элементы [RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx), чтобы создать текстовые макеты с несколькими столбцами.
 
-### Абзацы
+### <a name="paragraphs"></a>Абзацы
 
 Элементы [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) используются для определения текстовых блоков, которые будут отображаться внутри элемента управления RichTextBlock. Каждый элемент RichTextBlock должен включать хотя бы один элемент Paragraph. 
 
@@ -68,9 +57,9 @@ RichTextBlock поддерживает следующие функции.
 </RichTextBlock>
 ```
 
-### Строковые элементы пользовательского интерфейса
+### <a name="inline-ui-elements"></a>Строковые элементы пользовательского интерфейса
 
-Класс [**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) позволяет встроить в текст любой элемент UIElement. Распространенный сценарий— вставка элемента Image в текст, но можно использовать и интерактивные элементы, такие как Button или CheckBox.
+Класс [**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) позволяет встроить в текст любой элемент UIElement. Распространенный сценарий — вставка элемента Image в текст, но можно использовать и интерактивные элементы, такие как Button или CheckBox.
 
 Если в одно и то же место нужно встроить несколько элементов, используйте панель в качестве отдельного дочернего элемента InlineUIContainer, а затем поместите несколько элементов на эту панель.
 
@@ -88,7 +77,7 @@ RichTextBlock поддерживает следующие функции.
 </RichTextBlock>
 ```
 
-## Контейнеры переполнения
+## <a name="overflow-containers"></a>Контейнеры переполнения
 
 Вы можете использовать RichTextBlock с элементами [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx), чтобы создать многостолбцовые или другие сложные макеты страниц. Содержимое элемента RichTextBlockOverflow всегда берется из элемента RichTextBlock. Элементы RichTextBlockOverflow связываются путем их настройки как OverflowContentTarget объекта RichTextBlock или другого элемента RichTextBlockOverflow.
 
@@ -110,15 +99,15 @@ RichTextBlock поддерживает следующие функции.
 </Grid>
 ```
 
-## Форматирование текста
+## <a name="formatting-text"></a>Форматирование текста
 
 Хотя RichTextBlock содержит обычный текст, для настройки отрисовки текста в приложении можно применять различные параметры форматирования. Можно задать стандартные свойства элемента управления, например FontFamily, FontSize, FontStyle, Foreground и CharacterSpacing, чтобы изменить внешний вид текста. Для форматирования текста также можно использовать строковые текстовые элементы и подключенные свойства Typography. Эти параметры влияют только на то, как RichTextBlock отображает текст локально, поэтому если, например, скопировать и вставить текст в поле с форматом, форматирование не будет применено.
 
-### Строковые элементы
+### <a name="inline-elements"></a>Строковые элементы
 
-Пространство имен [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) предоставляет разнообразные строковые элементы, которые можно использовать для форматирования текста, например Bold, Italic, Run, Span и LineBreak. Типичный способ применить форматирование к отдельным частям текста— это поместить текст в элемент Run или Span и задать свойства этого элемента.
+Пространство имен [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) предоставляет разнообразные строковые элементы, которые можно использовать для форматирования текста, например Bold, Italic, Run, Span и LineBreak. Типичный способ применить форматирование к отдельным частям текста — это поместить текст в элемент Run или Span и задать свойства этого элемента.
 
-Вот элемент Paragraph, первая фраза которого отображается полужирным шрифтом 16пт в синем цвете.
+Вот элемент Paragraph, первая фраза которого отображается полужирным шрифтом 16 пт в синем цвете.
 
 ```xaml
 <Paragraph>
@@ -127,7 +116,7 @@ RichTextBlock поддерживает следующие функции.
 </Paragraph>
 ```
 
-### Оформление текста
+### <a name="typography"></a>Оформление текста
 
 Подключенные свойства класса [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) предоставляют доступ к набору типографских свойств Microsoft OpenType. Эти подключенные свойства можно задать либо в объекте RichTextBlock, либо в отдельных строковых текстовых элементах, как показано здесь.
 
@@ -140,13 +129,13 @@ RichTextBlock поддерживает следующие функции.
 </RichTextBlock>
 ```
 
-## Рекомендации
+## <a name="recommendations"></a>Рекомендации
 
 См. руководство по типографии и шрифтам.
 
 
 
-## Связанные разделы
+## <a name="related-articles"></a>Связанные разделы
 
 [Элементы управления текстом](text-controls.md)
 
@@ -165,6 +154,6 @@ RichTextBlock поддерживает следующие функции.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

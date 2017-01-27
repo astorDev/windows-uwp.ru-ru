@@ -3,26 +3,27 @@ author: mijacobs
 Description: "Анимация переходов содержимого используется для изменения содержимого области экрана, при котором фон или контейнер остаются неизменными. Появляется новое содержимое. Если существует содержимое, которое необходимо заменить, оно исчезает."
 title: "Руководство по анимациям перехода содержимого"
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
+template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: ed2d580568b73e787ad7b980981e025652232a83
 
 ---
 
-# Анимации переходов содержимого
+# <a name="content-transition-animations"></a>Анимации переходов содержимого
 
-
-
-
-
-**Важные API**
-
--   [**Класс ContentThemeTransition (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
--   [**Функция enterContent (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh701582)
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Анимация переходов содержимого используется для изменения содержимого области экрана, при котором фон или контейнер остаются неизменными. Появляется новое содержимое. Если существует содержимое, которое необходимо заменить, оно исчезает.
 
-## Рекомендации
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**Класс ContentThemeTransition (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)</li>
+</ul>
+</div>
+
+## <a name="dos-and-donts"></a>Рекомендации
 
 
 -   Используйте анимационный эффект открытия, когда необходимо ввести набор новых элементов в пустой контейнер. Например, после начальной загрузки приложения часть содержимого приложения может быть недоступна для немедленного отображения. Когда эта часть содержимого будет готова для отображения, используйте анимацию перехода содержимого, чтобы отобразить это появившееся с опозданием содержимое.
@@ -35,7 +36,7 @@ ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
 
 
 
-## Статьи по теме
+## <a name="related-articles"></a>Связанные разделы
 
 **Для разработчиков (XAML)**
 * [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350)
@@ -53,6 +54,6 @@ ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

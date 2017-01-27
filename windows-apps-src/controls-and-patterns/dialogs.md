@@ -5,44 +5,24 @@ title: "Диалоговые окна и всплывающие элементы
 label: Dialogs
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
-ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: bc428b42324cd584dfaee1db3c9eb834d30cd69d
 
 ---
-# Диалоговые окна и всплывающие элементы
+# <a name="dialogs-and-flyouts"></a>Диалоговые окна и всплывающие элементы
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Диалоговые окна и всплывающие элементыиспользуются для временного отображения элементов пользовательского интерфейса, если происходит нечто, требующее уведомления, подтверждения или дополнительных сведений от пользователя.
+Диалоговые окна и всплывающие элементы используются для временного отображения элементов пользовательского интерфейса, если происходит нечто, требующее уведомления, подтверждения или дополнительных сведений от пользователя.
 
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">Класс ContentDialog</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Класс Flyout</a></li>
+<li>[Класс ContentDialog](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)</li>
+<li>[Класс Flyout](https://msdn.microsoft.com/library/windows/apps/dn279496)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-<!--
-<table>
-<tr>
-<th>Dialogs</th><th>Flyouts</th>
-</tr>
-<tr>
-<td>![Example of a full-button dialog](images/controls_dialog_twobutton.png)</td>
-<td>![Example of a flyout](images/flyout-example.png)</td>
-</tr>
-<tr>
-<td>Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.  </td>
-<td>A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a hidden control, show more detail about an item, or ask the user to confirm an action. Flyouts can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
-</td>
-</tr>
-</table>
--->
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -64,7 +44,7 @@ ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 </div>
 </div>
 
-## Выбор правильного элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 * Диалоговые окна и всплывающие элементы используются для уведомления пользователей о важной информации или запроса подтверждения либо дополнительных сведений перед совершением действия. 
 * Не используйте всплывающий элемент вместо [подсказки](tooltips.md) или [контекстного меню](menus.md). Используйте подсказку, чтобы вывести краткое описание, которое исчезает через определенное время. Для контекстных действий, связанных с элементом пользовательского интерфейса, например копированием или вставкой, используйте контекстное меню.  
@@ -78,22 +58,9 @@ ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 
 
 
-## Диалоговые окна и всплывающие элементы
+## <a name="dialogs-vs-flyouts"></a>Диалоговые окна и всплывающие элементы
 
 Определив, собираетесь ли вы использовать диалоговое окно или всплывающий элемент, необходимо выбрать один из этих вариантов. 
-
-<!--
-Dialogs are modal, which means they block all interaction with the app until the user selects a dialog button. To visually reinforce their modal behavior, dialogs draw an overlay layer which partially obscures the temporarily unreachable app UI.
-
-A flyout is a light dismiss control, meaning that users can choose from a variety of actions to quickly dismiss it. These interactions are intended to be lightweight and non-blocking. Light dismiss actions include
-
-* Clicking or tap outside the transient UI
-* Pressing the Escape key
-* Pressing the Back button
-* Resizing the app window
-* Changing device orientation
-
--->
 
 Учитывая то, что, в отличие от всплывающих элементов, диалоговые окна блокируют взаимодействие, последние следует использовать в тех случаях, когда пользователь должен уделить все внимание определенной информации или ответить на вопрос. С другой стороны, всплывающие элементы можно использовать для привлечения внимания к определенной информации, которую пользователь вполне может проигнорировать. 
 
@@ -128,10 +95,16 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 </div>
 </div>
 
+<div class="microsoft-internal-note">
+Элементы управления с исчезновением захватывают фокус клавиатуры или геймпада внутри промежуточного пользовательского интерфейса, пока не будут закрыты. Для предоставления визуальной подсказки по этому поведению элементы управления с исчезновением на Xbox отображают наложение, затемняющее видимость вне области действия пользовательского интерфейса. Это поведение можно изменить с помощью нового свойства `LightDismissOverlayMode`. По умолчанию промежуточные элементы пользовательского интерфейса отображают наложение с исчезновением на Xbox, но не на других семействах устройств, хотя приложения могут принудительно устанавливать наложению постоянное значение **Вкл.** или **Выкл.**.
 
+```xaml
+<MenuFlyout LightDismissOverlayMode=\"Off\">
+```
+</div>
 
-## Диалоговые окна
-### Общие рекомендации
+## <a name="dialogs"></a>Диалоговые окна
+### <a name="general-guidelines"></a>Общие рекомендации
 
 -   В первой строке диалогового сообщения явно изложите, в чем проблема или что требуется от пользователя.
 -   Заголовок диалогового окна — это основная инструкция. Он необязателен.
@@ -144,10 +117,17 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 -   Должна иметься по крайней мере одна диалоговая кнопка.
     -   Кнопки — это единственный механизм, позволяющий пользователям закрыть диалоговое окно.
     -   Используйте кнопки с текстом, которые определяют конкретные варианты ответа на основную инструкцию или содержание. Например: "Разрешить приложению AppName доступ к вашему расположению?", после которого следуют кнопки "Разрешить" и "Запретить". Конкретные варианты ответа воспринимаются быстрее, что помогает эффективно принимать решения.
+    - Располагайте кнопки фиксации в указанном порядке: 
+        -   ОК/[Выполнить]/Да
+        -   [Не выполнять]/Нет
+        -   Отмена
+        
+        (Где [Выполнить] и [Не выполнять] — конкретные варианты ответа на основную инструкцию.)
+   
 -   Диалоговые окна ошибки отображают сообщение об ошибке в диалоговом окне, а также любые сопутствующие сведения. На единственной кнопке, используемой в диалоговом окне ошибки, должно быть написано «Закрыть» или аналогичное действие.
 -   Не используйте диалоговые окна при возникновении контекстно-зависимых от определенной области на странице ошибок, таких как ошибки при проверке (например, в полях для ввода паролей). Используйте непосредственно элемент Canvas приложения для отображения внутренних ошибок.
 
-### Диалоговые окна подтверждения ("ОК" и "Отмена")
+### <a name="confirmation-dialogs-okcancel"></a>Диалоговые окна подтверждения ("ОК" и "Отмена")
 Диалоговое окно подтверждения позволяет пользователям подтвердить действие. Они могут подтвердить выполнение действия или отменить его.  
 Типичное диалоговое окно подтверждения обычно содержит две кнопки: подтверждения ("ОК") и отмены.  
 
@@ -163,7 +143,7 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 
 > На некоторых платформах кнопка подтверждения размещена справа, а не слева. Так почему рекомендуется поместить ее слева?  Если предполагается, что большинство пользователей — правши и держат телефон в правой руке, им будет удобнее нажимать кнопку подтверждения слева, так как более вероятно, что она будет расположена в пределах досягаемости больших пальцев пользователя. Чтобы нажать кнопки в правой части экрана, пользователю необходимо переместить большой палец в менее удобное положение.
 
-### Создание диалогового окна
+### <a name="create-a-dialog"></a>Создание диалогового окна
 Для создания диалогового окна используется [класс ContentDialog](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx). Диалоговое окно можно создать в виде кода или разметки. Хотя обычно проще определять элементы пользовательского интерфейса в XAML, при создании простого диалогового окна удобнее использовать обычный код. В этом примере показано создание диалогового окна для уведомления пользователя об отсутствии подключения к сети WiFi, а для отображения диалогового окна используется метод [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx).
 
 ```csharp
@@ -206,10 +186,14 @@ private async void displayDeleteFileDialog()
 }
 ```
 
-## Всплывающие элементы
-###  Создание всплывающего элемента
+## <a name="flyouts"></a>Всплывающие элементы
+###  <a name="create-a-flyout"></a>Создание всплывающего элемента
 
-Всплывающий элемент— это контейнер с открытым окончанием, который показывает в качестве своего содержимого произвольный пользовательский интерфейс.  
+Всплывающий элемент — это контейнер с открытым окончанием, который показывает в качестве своего содержимого произвольный пользовательский интерфейс. 
+
+<div class="microsoft-internal-note">
+Сюда входят всплывающие элементы и контекстные меню, которые могут быть вложены в другие всплывающие элементы.
+</div>
 
 Всплывающие элементы связаны с определенными элементами управления. Вы можете использовать свойство [Placement](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.placement.aspx) для указания места отображения всплывающего элемента: вверху, слева, внизу, справа или в центре. Если выбрать [полный режим размещения](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutplacementmode.aspx), приложение растягивает всплывающий элемент или размещает его в центре окна приложения. Если они видны, их необходимо прикрепить к вызывающему объекту и указать их предпочтительное расположение относительно объекта: сверху, слева, снизу или справа. Всплывающий элемент также имеет полный режим размещения, при котором всплывающий элемент растягивается на весь экран и выравнивается по центру внутри окна приложения. Некоторые элементы управления, например [Кнопка](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx), содержат свойство [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx), которое можно использовать для привязки всплывающего элемента. 
 
@@ -295,7 +279,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-### Стилизация всплывающего элемента
+### <a name="style-a-flyout"></a>Стилизация всплывающего элемента
 Для стилизации всплывающего элемента изменяется его свойство [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx). В этом примере показан абзац создания программы-оболочки текста и делает блок текста доступным для программ чтения с экрана.
 
 ````xaml
@@ -313,11 +297,11 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 </Flyout>
 ````
 
-## Получение примеров
+## <a name="get-the-samples"></a>Получение примеров
 *   [Основы создания пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
     Ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## Связанные разделы
+## <a name="related-articles"></a>Связанные разделы
 - [Подсказки](tooltips.md)
 - [Меню и контекстное меню](menus.md)
 - [**Класс Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496)
@@ -325,6 +309,6 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

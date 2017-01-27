@@ -1,28 +1,37 @@
 ---
 author: Karl-Bridge-Microsoft
 Description: "Определение устройств ввода, подключенных к устройству с универсальной платформой Windows (UWP), а также их возможностей и атрибутов."
-title: "Распознавание устройств ввода"
+title: "Определение устройств ввода"
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
+keywords: "устройство, дигитайзер, ввод, взаимодействие"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: df416821ad67a8eaf8a8a31879b6a1d39526df14
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: 20230362a38d4541fbed25ac822c96032f7b6d8f
 
 ---
 
-# Распознавание устройств ввода
+# <a name="identify-input-devices"></a>Определение устройств ввода
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Определение устройств ввода, подключенных к устройству с универсальной платформой Windows (UWP), а также их возможностей и атрибутов.
 
-**Важные API**
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+</ul>
+</div>
 
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
-
-
-## Получение свойств мыши
+## <a name="retrieve-mouse-properties"></a>Получение свойств мыши
 
 
 В пространстве имен [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) содержится класс [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626), который используется для получения свойств одной подключенной мыши или нескольких. Просто создайте новый объект **MouseCapabilities** и получите необходимые вам свойства.
@@ -45,7 +54,7 @@ private void GetMouseProperties()
 }
 ```
 
-## Получение свойств клавиатуры
+## <a name="retrieve-keyboard-properties"></a>Получение свойств клавиатуры
 
 
 В пространстве имен [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) содержится класс [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623), используемый для загрузки данных о том, подключена ли клавиатура. Просто создайте новый объект **KeyboardCapabilities** и получите свойство [**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625).
@@ -60,7 +69,7 @@ private void GetKeyboardProperties()
 }
 ```
 
-## Получение свойств устройства сенсорного ввода
+## <a name="retrieve-touch-properties"></a>Получение свойств устройства сенсорного ввода
 
 
 В пространстве имен [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) содержится класс [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644), используемый для получения данных о том, подключены ли сенсорные дигитайзеры. Просто создайте новый объект **TouchCapabilities** и получите необходимые вам свойства.
@@ -80,7 +89,7 @@ private void GetTouchProperties()
 }
 ```
 
-## Получение свойств указателя
+## <a name="retrieve-pointer-properties"></a>Получение свойств указателя
 
 
 В пространстве имен [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) содержится класс [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633), используемый для получения данных о том, поддерживают ли какие-либо из обнаруженных устройств ввод указателем (устройство сенсорного ввода, сенсорная панель, мышь или перо). Просто создайте новый объект **PointerDevice** и получите необходимые вам свойства.
@@ -176,7 +185,7 @@ private void GetPointerDevices()
     }
 ```
 
-## Связанные разделы
+## <a name="related-articles"></a>Связанные разделы
 
 
 **Примеры**
@@ -196,6 +205,6 @@ private void GetPointerDevices()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

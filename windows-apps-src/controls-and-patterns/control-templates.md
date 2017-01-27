@@ -9,31 +9,25 @@ ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 4c6ee696dff8d8e0ddc3a9b62d0309e999762dc6
 
 ---
-# Шаблоны элементов управления
+# <a name="control-templates"></a>Шаблоны элементов управления
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+Вы можете настроить визуальную структуру и визуальное поведение элемента управления, создав шаблон элемента управления в среде XAML. У элементов управления много свойств, таких как [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395), [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) и [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404), которые можно задать, чтобы указать различные аспекты вида элемента управления. Однако настройка этих свойств позволяет вносить ограниченные изменения. Вы можете указать дополнительные настройки, создав шаблон с помощью класса [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). Здесь мы покажем, как создать **ControlTemplate** для настройки вида элемента управления [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316).
 
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209391"><strong>Класс ControlTemplate</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx"><strong>Свойство Control.Template</strong></a></li>
+<li>[**Класс ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)</li>
+<li>[**Свойство Control.Template**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-Вы можете настроить визуальную структуру и визуальное поведение элемента управления, создав шаблон элемента управления в среде XAML. У элементов управления много свойств, таких как [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395), [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) и [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404), которые можно задать, чтобы указать различные аспекты вида элемента управления. Однако настройка этих свойств позволяет вносить ограниченные изменения. Вы можете указать дополнительные настройки, создав шаблон с помощью класса [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). Здесь мы покажем, как создать **ControlTemplate** для настройки вида элемента управления [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316).
-
-## Пример пользовательского шаблона элемента управления
+## <a name="custom-control-template-example"></a>Пример пользовательского шаблона элемента управления
 
 
 По умолчанию элемент управления [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) помещает свое содержимое (строку или объект рядом с **CheckBox**) справа от поля выбора, а флажок указывает, что пользователь выбрал **CheckBox**. Эти характеристики представляют визуальную структуру и визуальное поведение **CheckBox**.
@@ -54,7 +48,7 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 
 ![Пользовательский шаблон CheckBox](images/templates-checkbox-states.png)
 
-## Указание визуальной структуры элемента управления
+## <a name="specify-the-visual-structure-of-a-control"></a>Указание визуальной структуры элемента управления
 
 
 При создании [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) мы объединяем объекты [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), чтобы создать единый элемент управления. У **ControlTemplate** должен быть только один **FrameworkElement** в качестве корневого элемента. Корневой элемент обычно содержит другие объекты **FrameworkElement**. Такое сочетание объектов формирует визуальную структуру элемента управления.
@@ -95,7 +89,7 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 </ControlTemplate>
 ```
 
-## Указание визуального поведения элемента управления
+## <a name="specify-the-visual-behavior-of-a-control"></a>Указание визуального поведения элемента управления
 
 
 Визуальное поведение описывает внешний вид элемента управления в определенных состояниях. У элемента управления [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) есть три состояния выставления: `Checked`, `Unchecked` и `Indeterminate`. Значение свойства [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/br209798) определяет состояние **CheckBox**, а состояние последнего определяет, что появляется в поле.
@@ -113,7 +107,7 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 
 Для указания представления элемента управления, когда он находится в определенном состоянии, используйте объекты [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007). Объект **VisualState** содержит класс [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) или [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053), меняющий представление элементов в классе [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). Когда элемент управления переходит в состояние, указанное в свойстве [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031), применяются изменения свойств в **Setter** или [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490). Когда элемент управления выходит из этого состояния, изменения удаляются. Мы добавляем объекты **VisualState** к объектам [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014). Мы добавляем объекты **VisualStateGroup** к подключенному свойству [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505), установленному на корневом элементе [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) шаблона **ControlTemplate**.
 
-Приведенный XAML-код показывает объекты [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) для состояний `Checked`, `Unchecked` и `Indeterminate`. Данный пример задает присоединенное свойство [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) для [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250), который является корневым элементом [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). `Checked` **VisualState** указывает, что значение [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) у [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355)  с именем `CheckGlyph` (показанного в предыдущем примере) равно1. `Indeterminate` **VisualState** указывает, что значение **Opacity** у [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) с именем `IndeterminateGlyph` равно1. У `Unchecked` **VisualState** нет [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) или [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490), поэтому класс [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) возвращается к своему внешнему виду по умолчанию.
+Приведенный XAML-код показывает объекты [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) для состояний `Checked`, `Unchecked` и `Indeterminate`. Данный пример задает присоединенное свойство [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) для [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250), который является корневым элементом [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). `Checked` **VisualState** указывает, что значение [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) у [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355)  с именем `CheckGlyph` (показанного в предыдущем примере) равно 1. `Indeterminate` **VisualState** указывает, что значение **Opacity** у [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) с именем `IndeterminateGlyph` равно 1. У `Unchecked` **VisualState** нет [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) или [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490), поэтому класс [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) возвращается к своему внешнему виду по умолчанию.
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -181,18 +175,18 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 |                                      |                                                                                                                                                                                                                                                                                                                                                |                                                   |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
 | Смена состояния                     | Что происходит                                                                                                                                                                                                                                                                                                                                   | Представление CheckBox по завершении смены состояния |
-| С `Unchecked` на `Checked`.       | Применяется значение [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) `Checked`[**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), поэтому [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962)`CheckGlyph` равно 1.                                                                                                                                                         | Отображается X.                                |
-| С `Checked` на `Indeterminate`.   | Применяется значение [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) `Indeterminate`[**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), поэтому [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962)`IndeterminateGlyph` равно 1. Значение **Setter** `Checked` **VisualState** удаляется, поэтому [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) `CheckGlyph`равно 0. | Отображается круг.                            |
+| С `Unchecked` на `Checked`.       | Применяется значение [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) `Checked` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), поэтому [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) `CheckGlyph` равно 1.                                                                                                                                                         | Отображается X.                                |
+| С `Checked` на `Indeterminate`.   | Применяется значение [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), поэтому [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) `IndeterminateGlyph` равно 1. Значение **Setter** `Checked` **VisualState** удаляется, поэтому [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) `CheckGlyph`равно 0. | Отображается круг.                            |
 | С `Indeterminate` на `Unchecked`. | Значение [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) удаляется, поэтому [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) `IndeterminateGlyph` равно 0.                                                                                                                                           | Не отображается ничего.                             |
 
  
 Подробнее о том, как создавать визуальные состояния элементов управления, в частности о том, как использовать класс [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) и типы анимации см. в разделе [Раскадрованные анимации для визуальных состояний](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808).
 
-## Используйте средства для упрощения работы с темами
+## <a name="use-tools-to-work-with-themes-easily"></a>Используйте средства для упрощения работы с темами
 
 Чтобы быстро применить темы к своим элементам управления, щелкните элемент управления правой кнопкой мыши в **структуре документа** Microsoft Visual Studio XAML и выберите команду **Изменить тему** или **Изменить стиль** (в зависимости от элемента управления). Затем можно применить существующую тему, выбрав команду **Применить ресурс**, или определить новую командой **Создать пустой**.
 
-## Элементы управления и специальные возможности
+## <a name="controls-and-accessibility"></a>Элементы управления и специальные возможности
 
 При создании нового шаблона для элемента управления помимо возможного изменения его поведения и внешнего вида вы, вероятно, также измените то, как элемент управления заявляет о себе платформам специальных возможностей. Универсальная платформа Windows (UWP) поддерживает специальные возможности для инфраструктуры автоматизации пользовательского интерфейса Майкрософт. Все элементы управления по умолчанию и их шаблоны поддерживают общие типы и схемы элементов управления автоматизацией пользовательского интерфейса, соответствующие назначению и функции элемента управления. Эти типы и схемы элементов управления интерпретируются такими клиентами автоматизации пользовательского интерфейса, как клиенты специальных возможностей. И это обеспечивает доступ к элементу управления в составе более масштабного доступного пользовательского интерфейса приложения.
 
@@ -200,28 +194,25 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 
 Когда вы создаете совершенно новый пользовательский элемент управления, порой бывает необходимо создать помимо этого новый одноранговый элемент автоматизации. Дополнительную информацию см. в разделе [Настраиваемые одноранговые элементы автоматизации](../accessibility/custom-automation-peers.md).
 
-## Дополнительные сведения о стандартном шаблоне элемента управления
+## <a name="learn-more-about-a-controls-default-template"></a>Дополнительные сведения о стандартном шаблоне элемента управления
 
 Разделы, описывающие стили и шаблоны для элементов управления XAML, показывают выдержки из аналогичных разделов краткого руководства по XAML, которые вы бы увидели, если бы использовали команды **Изменить тему** или **Изменить стиль**, описанные ранее. Каждый раздел перечисляет имена визуальных состояний, использованные ресурсы тем, а также полный код XAML для стиля, содержащего шаблон. Разделы могут стать полезным руководством, если вы уже начали изменение шаблона и хотите посмотреть, как выглядит первоначальный шаблон, либо хотите проверить, имеет ли новый шаблон все необходимые именованные визуальные состояния.
 
-## Ресурсы тем в шаблонах элементов управления
+## <a name="theme-resources-in-control-templates"></a>Ресурсы тем в шаблонах элементов управления
 
 В некоторых атрибутах в примерах кода XAML вы могли заметить ссылки на ресурсы, которые используют [расширение разметки {ThemeResource}](../xaml-platform/themeresource-markup-extension.md). Данная технология позволяет одному шаблону элемента управления использовать разнообразные ресурсы в зависимости от того, какая из тем активна на текущий момент. Это особенно важно для кистей и цветов, поскольку основная цель тем — предоставить пользователям возможность выбора темной или светлой темы либо темы "Высокая контрастность" в применении к системе в целом. Приложения, которые используют систему на базе ресурсов XAML, могут использовать набор ресурсов, соответствующий определенной теме. Выбор темы в пользовательском интерфейсе приложения будет отражать выбор пользователем темы для всей системы в целом.
 
-**Примечание**  
-Эта статья адресована разработчикам приложений UWP для Windows10. В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+ ## <a name="get-the-sample-code"></a>Получить пример кода
+* [Пример основных элементов пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [Пример пользовательского элемента управления для редактирования текста](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
 
  
 
- 
-
- 
 
 
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

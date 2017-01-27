@@ -6,11 +6,11 @@ ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 685ef17e17fb17fa620eea84335ce6688a5cfb3e
 
 ---
-# Тумблеры
+# <a name="toggle-switches"></a>Тумблеры
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
@@ -19,18 +19,13 @@ ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx"><strong>ToggleSwitch class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx"><strong>Свойство IsOn</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx"><strong>Событие Toggled</strong></a></li>
+<li>[**ToggleSwitch class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx)</li>
+<li>[**Свойство IsOn**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx)</li>
+<li>[**Событие Toggled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## Выбор правильного элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте переключатель для бинарных операций, выполняющихся сразу после изменения состояния переключателя. Например, используйте переключатель, чтобы включать или отключать службы или компоненты оборудования, например Wi-Fi.
 
@@ -40,7 +35,7 @@ ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
 
 Когда пользователь изменяет положение переключателя, рекомендуется немедленно выполнить соответствующее действие.
 
-### Выбор между переключателем и флажком
+### <a name="choosing-between-toggle-switch-and-check-box"></a>Выбор между переключателем и флажком
 
 Для некоторых действий можно использовать и переключатель, и флажок. Чтобы выбрать наиболее подходящий элемент управления, следуйте указанным ниже советам.
 
@@ -58,7 +53,7 @@ ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
 
     ![Флажок для выбора нескольких элементов](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
 
-## Примеры.
+## <a name="examples"></a>Примеры.
 
 Тумблеры в общих параметрах новостного приложения.
 
@@ -68,7 +63,7 @@ ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
 
 ![Тумблеры в параметрах меню "Пуск" в Windows.](images/control-examples/toggle-switch-start-settings.png)
 
-## Создание тумблера
+## <a name="create-a-toggle-switch"></a>Создание тумблера
 
 Ниже описано, как создать простой тумблер. Этот код XAML создает тумблер для функции Wi-Fi, показанный выше.
 
@@ -85,7 +80,7 @@ wiFiToggle.Header = "WiFi";
 stackPanel1.Children.Add(wiFiToggle);
 ```
 
-### IsOn
+### <a name="ison"></a>IsOn
 
 Переключатель может быть в состоянии "включено" или "выключено". Используйте свойство [**IsOn**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx) для определения состояния переключателя. Если переключатель используется для управления другим двоичным свойством, можно использовать привязку, как показано ниже.
 
@@ -96,7 +91,7 @@ stackPanel1.Children.Add(wiFiToggle);
 </StackPanel>
 ```
 
-### Toggled
+### <a name="toggled"></a>Toggled
 
 В других случаях можно обработать событие [**Toggled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx), чтобы оно реагировало на изменения в состоянии.
 
@@ -140,7 +135,7 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 }
 ```
 
-### Метки "Вкл."/"Выкл."
+### <a name="onoff-labels"></a>Метки "Вкл."/"Выкл."
 
 По умолчанию тумблер включает буквальные метки "Вкл."/"Выкл.", которые локализуются автоматически. Вы можете изменить эти метки, установив свойства [**OnContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontent.aspx) и [**OffContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontent.aspx).
 
@@ -154,24 +149,20 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 
 Вы также можете использовать более сложное содержимое, установив свойства [**OnContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontenttemplate.aspx) и [**OffContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontenttemplate.aspx).
 
-## Рекомендации
+## <a name="recommendations"></a>Рекомендации
 
 -   Заменяйте метки "Вкл." и "Выкл.", если есть более подходящие метки для параметра. Если есть короткие (3-4 символа) метки, представляющие противоположные состояния, которые больше подходят для конкретного параметра, используйте их. Например, можно использовать метки "Показать"/"Скрыть", если создается тумблер для параметра "Показать изображения". Используйте более конкретные метки. Это помогает при локализации пользовательского интерфейса.
 -   Не заменяйте метки "Вкл." и "Выкл." без необходимости; оставьте метки по умолчанию, если ситуация не требует пользовательских меток.
 -   Метки должны быть не длиннее 4 символов.
 
-## Связанные статьи
+## <a name="related-articles"></a>Связанные статьи
 
-[**ToggleSwitch**](https://msdn.microsoft.com/library/windows/apps/hh701411)
+- [**Класс ToggleSwitch**](https://msdn.microsoft.com/library/windows/apps/hh701411)
 - [Переключатели](radio-button.md)
 - [Тумблеры](toggles.md)
 - [Флажки](checkbox.md)
 
-**Для разработчиков (XAML)**
-- [**ToggleSwitch class**](https://msdn.microsoft.com/library/windows/apps/br209712)
 
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

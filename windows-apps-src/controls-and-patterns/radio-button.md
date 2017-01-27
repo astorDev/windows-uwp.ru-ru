@@ -6,11 +6,11 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: f26b042bb7efb6599993b8fd7cee6ee35e1765fd
-ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 95ddb1ddd1dfd318a5c491504c95f7833f98115e
 
 ---
-# Переключатели
+# <a name="radio-buttons"></a>Переключатели
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -23,20 +23,14 @@ ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227544"><strong>Класс RadioButton</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Событие Checked</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>Свойство IsChecked</strong></a></li>
+<li>[**Класс RadioButton**](https://msdn.microsoft.com/library/windows/apps/br227544)</li>
+<li>[**Событие Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
+<li>[**Свойство IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## Выбор правильного элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте кнопки переключателей, чтобы предлагать пользователям два или более взаимоисключающих параметра, как показано здесь.
 
@@ -60,12 +54,12 @@ ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
 
 Если доступные варианты основаны на текущем контексте приложения или могут динамически варьироваться по другим причинам, используйте [простой список](lists.md).
 
-## Пример
+## <a name="example"></a>Пример
 Переключатели в параметрах браузера Microsoft Edge.
 
 ![Переключатели в параметрах браузера Microsoft Edge](images/control-examples/radio-buttons-edge.png)
 
-## Создание переключателя
+## <a name="create-a-radio-button"></a>Создание переключателя
 
 Переключатели работают в группах. Существует два способа группировки переключателей.
 - Размещение в одном родительском контейнере.
@@ -155,13 +149,13 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-Так группы переключателей выглядят после того, как пользователь выбрал синий фон и зеленую границу.
+Группы переключателей выглядят следующим образом.
 
 ![Переключатели в двух группах](images/radio-button-groups.png)
 
-Возможных состояния у переключателя два: *выбран* или *не выбран*. Если переключатель выбран, его свойство [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) имеет значение **true**. Если переключатель не выбран, его свойство **IsChecked** имеет значение **false**. Выбор переключателя можно отменить, выбрав другой переключатель в той же группе, но нельзя отменить выбор, щелкнув переключатель еще раз. Однако можно отменить выбор переключателя программным способом, установив для свойства IsChecked значение **false**.
+Переключатель может иметь два состояния: *selected* или *cleared*. Если переключатель выбран, его свойство [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) имеет значение **true**. Если переключатель не выбран, его свойство **IsChecked** имеет значение **false**. Выбор переключателя можно отменить, выбрав другой переключатель в той же группе, но нельзя отменить выбор, щелкнув переключатель еще раз. Однако можно отменить выбор переключателя программным способом, установив для свойства IsChecked значение **false**.
 
-## Рекомендации
+## <a name="recommendations"></a>Рекомендации
 
 -   Убедитесь, что назначение и текущее состояние набора переключателей ясны и понятны.
 -   Нажатие переключателя пользователем всегда должно давать видимую реакцию.
@@ -176,12 +170,12 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 -   Не включайте в группу переключателей более 8 вариантов. При наличии большего числа вариантов используйте [раскрывающийся список](lists.md), [список](lists.md)или [представление списка](lists.md).
 -   Не следует размещать две группы переключателей рядом друг с другом. Когда две группы переключателей находятся рядом, сложно определить, какой переключатель принадлежит к какой группе. Используйте метки групп, чтобы разделить их.
 
-## Дополнительные рекомендации по использованию
+## <a name="additional-usage-guidance"></a>Дополнительные рекомендации по использованию
 
 На этой иллюстрации показано, как правильно расположить переключатели.
 
 ![Набор переключателей](images/radiobutton_layout1.png)
-## Статьи по теме
+## <a name="related-topics"></a>Статьи по теме
 
 **Проектировщикам**
 - [Руководство по кнопкам](buttons.md)
@@ -198,6 +192,6 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

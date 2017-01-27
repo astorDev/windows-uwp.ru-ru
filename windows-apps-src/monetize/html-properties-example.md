@@ -2,18 +2,14 @@
 author: mcleanbyron
 ms.assetid: 5fa16a27-fdc0-43b2-84cd-8547fd4915de
 description: "Узнайте, как назначать свойства ** AdControl ** в HTML."
-title: "Пример свойств HTML"
+title: "Пример назначения свойств AdControl в HTML"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 1898ed2ccad74ac33c5130c627363e0a9daebceb
-
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: 741cf19ee0310c84d1a85f4a1e82b353d88d1b9e
 
 ---
 
-# Пример свойств HTML
-
-
-
+# <a name="adcontrol-html-properties-example"></a>Пример назначения свойств AdControl в HTML
 
 В следующем примере показано, как назначать свойства [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) в HTML. **applicationId** и **adUnitId** являются обязательными свойствами. Другие свойства и события являются дополнительными. Если вы не зададите значения для дополнительных свойств, элемент управления будет использовать значения по умолчанию, обеспечивающие согласованность рекламного объявления с процессом взаимодействия пользователя с приложением.
 
@@ -21,26 +17,29 @@ ms.openlocfilehash: 1898ed2ccad74ac33c5130c627363e0a9daebceb
 
 Эти значения являются примерами. В своем коде вы зададите значения для этих функций и свойств таким образом, чтобы они подходили для вашего приложения.
 
-``` syntax
-data-win-control="MicrosoftNSJS.Advertising.AdControl"
-data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1',
-                    adUnitId: '10865270',
-                    isAutoRefreshEnabled: false,
-                    onAdRefreshed: myAdRefreshed,
-                    onErrorOccurred: myAdError,
-                    onEngagedChanged: myAdEngagedChanged,
-                    onPointerDown: myPointerDown,
-                    onPointerUp: myPointerUp }"
+> [!div class="tabbedCodeSnippets"]
+``` html
+<div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
+    data-win-control="MicrosoftNSJS.Advertising.AdControl"
+    data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1',
+                       adUnitId: '10865270',
+                       isAutoRefreshEnabled: false,
+                       onAdRefreshed: myAdRefreshed,
+                       onErrorOccurred: myAdError,
+                       onEngagedChanged: myAdEngagedChanged,
+                       onPointerDown: myPointerDown,
+                       onPointerUp: myPointerUp }" />
 ```
 
-## Связанные разделы
+## <a name="related-topics"></a>Статьи по теме
 
+* [AdControl в HTML 5 и JavaScript](adcontrol-in-html-5-and-javascript.md)
 * [Примеры рекламы на GitHub](http://aka.ms/githubads)
 
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

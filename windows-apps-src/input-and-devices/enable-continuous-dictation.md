@@ -5,24 +5,31 @@ title: "Включение непрерывной диктовки"
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
+keywords: "речь, голос, распознавание речи, естественный язык, диктовка, ввод, взаимодействие с пользователем"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 1f074b210d42b1c40817e88b5d73921652fa7d05
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: f4353807c83cbf91c385b31acfd481abb6ea5aed
 
 ---
 
-# Непрерывная диктовка
+# <a name="continuous-dictation"></a>Непрерывная диктовка
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Узнайте, как записать и распознать длительный непрерывный речевой ввод.
 
-**Важные API**
-
--   [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)
--   [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
-
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)</li>
+<li>[**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)</li>
+</ul>
+</div>
 
 В разделе [Распознавание речи](speech-recognition.md) вы узнали, как записать и распознать относительно короткий речевой ввод с помощью методов [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) или [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) объекта [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), например при составлении сообщения SMS или вопроса.
 
@@ -30,7 +37,7 @@ ms.openlocfilehash: 1f074b210d42b1c40817e88b5d73921652fa7d05
 
 
 
-## Настройка
+## <a name="set-up"></a>Настройка
 
 
 Для управления непрерывным сеансом диктовки вашему приложению понадобятся несколько объектов:
@@ -64,7 +71,7 @@ private CoreDispatcher dispatcher;
 private StringBuilder dictatedTextBuilder;
 ```
 
-## Инициализация
+## <a name="initialization"></a>Инициализация
 
 
 Во время инициализации непрерывного распознавания речи необходимо выполнить следующие действия.
@@ -99,7 +106,7 @@ SpeechRecognitionCompilationResult result =
       await speechRecognizer.CompileConstraintsAsync();
 ```
 
-## Обработка событий распознавания
+## <a name="handle-recognition-events"></a>Обработка событий распознавания
 
 
 Можно записать отдельную краткую реплику или фразу путем вызова [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) или [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245). 
@@ -204,7 +211,7 @@ private async void ContinuousRecognitionSession_Completed(
       }
 ```
 
-## Отображение реакции в процессе распознавания
+## <a name="provide-ongoing-recognition-feedback"></a>Отображение реакции в процессе распознавания
 
 
 Когда люди беседуют, они, как правило, полагаются на контекст, чтобы полностью понять произносимое. Аналогичным образом распознаватель речи часто нуждается в контексте, чтобы обеспечить высокодостоверные результаты распознавания. Например, сами по себе слова «кот» и «код» неразличимы, пока за счет других слов в предложении или фразе не будет понятен контекст. Пока распознаватель не получит определенной степени уверенности, что слово или слова были распознаны надлежащим образом, событие [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) не будет создано.
@@ -232,7 +239,7 @@ private async void SpeechRecognizer_HypothesisGenerated(
   }
 ```
 
-## Запуск и остановка распознавания
+## <a name="start-and-stop-recognition"></a>Запуск и остановка распознавания
 
 
 Перед запуском сеанса распознавания проверьте значение свойства [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) распознавателя речи. Распознаватель речи должен находиться в состоянии [**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227).
@@ -267,7 +274,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
  
 
-## Связанные статьи
+## <a name="related-articles"></a>Связанные разделы
 
 
 * [Взаимодействие с помощью голосовых функций](speech-interactions.md)
@@ -284,6 +291,6 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

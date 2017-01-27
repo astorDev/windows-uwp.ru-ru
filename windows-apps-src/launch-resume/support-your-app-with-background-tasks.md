@@ -4,8 +4,8 @@ title: "Поддержка приложения с помощью фоновых
 description: "В темах этого раздела показано, как обеспечить выполнение облегченного кода в фоновом режиме в ответ на триггеры."
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 translationtype: Human Translation
-ms.sourcegitcommit: 7208ca16fe7eee2ec4039f3c4bc6305dceac96f3
-ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
 
 ---
 
@@ -31,7 +31,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 Чтобы быстро приступить к работе с фоновыми задачами, выполняемыми внутри процесса, следуйте инструкциям из раздела [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md).
 
-Чтобы быстро приступить к работе с фоновыми задачами, выполняемыми вне процесса, следуйте инструкциям из раздела [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-an-outofproc-background-task.md).
+Чтобы быстро приступить к работе с фоновыми задачами, выполняемыми вне процесса, следуйте инструкциям из раздела [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-a-background-task.md).
 
 > [!TIP]
 > Начиная c Windows 10, помещать приложение на экран блокировки, чтобы зарегистрировать фоновую задачу для него, больше не нужно.
@@ -165,7 +165,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 * [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
 * [Доступ к датчикам и устройствам из фоновой задачи](access-sensors-and-devices-from-a-background-task.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-an-outofproc-background-task.md)
+* [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-a-background-task.md)
 * [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
@@ -182,6 +182,6 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

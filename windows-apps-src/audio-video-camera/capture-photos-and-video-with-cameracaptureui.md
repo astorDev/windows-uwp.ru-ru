@@ -4,27 +4,31 @@ ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
 description: "В этой статье описано, как использовать класс CameraCaptureUI, чтобы фотографировать и снимать видео с помощью пользовательского интерфейса камеры, встроенного в Windows."
 title: "Фото- и видеосъемка с использованием встроенного пользовательского интерфейса камеры в Windows"
 translationtype: Human Translation
-ms.sourcegitcommit: b4bf4d74ae291186100a553a90fd93f890b8ece4
-ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
+ms.sourcegitcommit: 65508d32995f57672f94dffa4866a86d57903d00
+ms.openlocfilehash: 10ac3f53f0f8128985c39154f74a9348a40641b5
 
 ---
 
-# Фото- и видеосъемка с использованием встроенного пользовательского интерфейса камеры в Windows
+# <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Фото- и видеосъемка с использованием встроенного пользовательского интерфейса камеры в Windows
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье описано, как использовать класс CameraCaptureUI, чтобы фотографировать и снимать видео с помощью пользовательского интерфейса камеры, встроенного в Windows. Эта функция проста в использовании и позволяет приложению получать захваченные пользователем фотографии и видео с помощью всего нескольких строк кода.
 
 Если вы хотите предоставить собственный пользовательский интерфейс камеры или вам требуется более надежное низкоуровневое управление операцией захвата, необходимо использовать объект [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) и внедрить собственный способ захвата. Подробнее см. в статье [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md).
 
-## Захват фотографий с помощью CameraCaptureUI
+> [!NOTE]
+> Не следует указывать в файле манифеста вашего приложения возможность использования **веб-камеры** или **микрофона**, если используется CameraCaptureUI. Если вы это сделаете, ваше приложение будет отображаться в параметрах конфиденциальности камеры устройства, но даже если пользователь запретит приложению доступ к камере, это не помешает CameraCaptureUI захватывать мультимедиа. Это обусловлено тем, что встроенное приложение камеры Windows является доверенным основным приложением, которое требует, чтобы пользователь инициировал захват фото, звука и видео нажатием кнопки. Ваше приложение может не пройти сертификацию WACK (Комплекта сертификации Windows-приложений) при отправке в Магазин, если указать возможность использования веб-камеры или микрофона при использовании CameraCaptureUI.
+> Вы должны указать в файле манифеста вашего приложения возможность использования веб-камеры или микрофона, если для программного захвата звука, фото или видео используется MediaCapture.
+
+## <a name="capture-a-photo-with-cameracaptureui"></a>Захват фотографий с помощью CameraCaptureUI
 
 Чтобы применять пользовательский интерфейс захвата с камеры, добавьте в свой проект пространство имен [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738). Чтобы выполнять файловые операции с возвращенными файлами изображений, включите в проект пространство имен [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346).
 
 [!code-cs[UsingCaptureUI](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingCaptureUI)]
 
-Чтобы захватить фотографию, создайте новый объект [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). С помощью свойства [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) объекта можно указать параметры возвращенной фотографии, например ее формат. По умолчанию пользовательский интерфейс захвата с камеры позволяет обрезать фотографии перед их возвращением. Эту функцию можно отключить с помощью свойства [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042). В этом примере свойство [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) используется для возвращения изображений с разрешением 200x200 пикселей.
+Чтобы захватить фотографию, создайте новый объект [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). С помощью свойства [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) объекта можно указать параметры возвращенной фотографии, например ее формат. По умолчанию пользовательский интерфейс захвата с камеры позволяет обрезать фотографии перед их возвращением. Эту функцию можно отключить с помощью свойства [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042). В этом примере свойство [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) используется для возвращения изображений с разрешением 200 x 200 пикселей.
 
 > [!NOTE]
 > Обрезка изображения в **CameraCaptureUI** не поддерживается для устройств из семейства мобильных устройств. Значение свойства [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) игнорируется, если приложение выполняется на этих устройствах.
@@ -59,7 +63,7 @@ ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
 [!code-cs[SetImageSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetImageSource)]
 
-## Видеозахват с помощью CameraCaptureUI
+## <a name="capture-a-video-with-cameracaptureui"></a>Видеозахват с помощью CameraCaptureUI
 
 Чтобы захватить видео, создайте новый объект [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). С помощью свойства [**VideoSettings**](https://msdn.microsoft.com/library/windows/apps/br241059) объекта можно указать параметры возвращенного видео, например его формат.
 
@@ -103,7 +107,7 @@ ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
  
 
-## Связанные статьи
+## <a name="related-topics"></a>Связанные разделы
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -118,6 +122,6 @@ ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

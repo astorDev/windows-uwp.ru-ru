@@ -4,8 +4,8 @@ description: "Это первая часть полного пошагового
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
-ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
+ms.sourcegitcommit: 126811b615117c0204e3ac4326d810c986a51e55
+ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
 
 ---
 
@@ -624,7 +624,7 @@ ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
 
 -   Выполните сборку и запустите приложение. Введите имя пользователя «sampleUsername» и нажмите кнопку «login» (вход). Введите ПИН-код, после чего вы перейдете на экран приветствия. Нажмите кнопку «forget user» (забыть пользователя) и убедитесь, что пользователь был удален в окне вывода. Обратите внимание, что после удаления пользователя вы остаетесь на странице приветствия. Вам потребуется создать страницу выбора пользователя, на которую приложение сможет перейти.
 
-    !passport welcome screen](images/passport-login-9.png)
+    ![Экран приветствия Passport](images/passport-login-9.png)
 
 -   В папке Views создайте пустую страницу UserSelection.xaml и добавьте следующий код XAML для определения пользовательского интерфейса. Она будет содержать элемент [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878), отображающий всех пользователей в локальном списке учетных записей, и кнопку, которая позволяет перейти на страницу входа и добавить другую учетную запись.
 
@@ -973,6 +973,6 @@ ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
 * [Служба входа Microsoft Passport](microsoft-passport-login-auth-service.md)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

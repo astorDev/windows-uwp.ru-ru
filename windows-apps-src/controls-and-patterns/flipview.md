@@ -6,11 +6,11 @@ ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
+ms.sourcegitcommit: 92c523c100a021808e01dffe4cd9b5c47c21b58a
+ms.openlocfilehash: 3ad89682248462efa5022467ceb330da03843de4
 
 ---
-# Представление пролистывания
+# <a name="flip-view"></a>Представление пролистывания
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,25 +19,18 @@ ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx"><strong>Класс FlipView</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx"><strong>Свойство ItemsSource</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx"><strong>Свойство ItemTemplate</strong></a></li>
+<li>[**Класс FlipView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)</li>
+<li> [**Свойство ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)</li>
+<li>[**Свойство ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)</li>
+
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-
-## Выбор правильного элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Представление пролистывания лучше всего подходит для просмотра содержимого маленьких и средних коллекций (примерно до 25 элементов). К таким коллекциям относятся элементы страниц, содержащих сведения о продукте, или фотографии в фотоальбоме. Хотя мы не рекомендуем использовать элемент пролистывания для больших коллекций, он используется для просмотра отдельных изображений в фотоальбоме.
 
-## Примеры.
+## <a name="examples"></a>Примеры.
 
 Горизонтальный просмотр, начиная с крайнего левого элемента, и переключение справа является стандартным макетом представления отражения. Этот макет хорошо работает как в книжной, так и в альбомной ориентации на всех устройствах:
 
@@ -47,13 +40,13 @@ ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
 
 ![Пример вертикального представления пролистывания](images/controls_flipview_vertical.jpg)
 
-## Создание представления пролистывания
+## <a name="create-a-flip-view"></a>Создание представления пролистывания
 
 FlipView представляет собой [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx), поэтому может содержать коллекцию элементов любого типа. Для добавления элементов в представление заполните коллекцию [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) или свяжите свойство [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) с источником данных.
 
 По умолчанию элемент данных отображается в представлении пролистывания в виде строки, представляющей объект данных, к которому он привязан. Чтобы точно определить, как должны отображаться элементы в представлении пролистывания, следует создать [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.datatemplate.aspx), чтобы задать макет элементов управления, используемых для отображения отдельного элемента. Элементы управления в макете могут быть привязаны к свойствам объекта данных или иметь содержимое, задаваемое внутри кода. Вы назначаете DataTemplate свойству [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) представления FlipView.
 
-### Добавление элементов в коллекцию Items
+### <a name="add-items-to-the-items-collection"></a>Добавление элементов в коллекцию Items
 
 Добавить элементы в коллекцию [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) можно с помощью XAML или кода программы. Обычно так добавляют небольшое количество неизменяемых элементов, которые легко задать с помощью XAML, либо в случае, если элементы создаются на этапе выполнения кода. Здесь приведено представление пролистывания с внутренне определяемыми элементами.
 
@@ -80,7 +73,7 @@ stackPanel1.Children.Add(flipView1);
 
 Если элементы определяются в коде XAML, они также автоматически добавляются в коллекцию Items.
 
-### Установка источника элементов
+### <a name="set-the-items-source"></a>Установка источника элементов
 
 Обычно представление пролистывания используется для отображения данных из таких источников, как база данных или Интернет. Чтобы заполнить представление пролистывания из источника данных, задайте его свойству [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) коллекцию элементов данных.
 
@@ -120,7 +113,7 @@ stackPanel1.Children.Add(flipView1);
 
 >**Примечание.**&nbsp;&nbsp;Заполнить представление пролистывания можно либо путем добавления элементов в его коллекцию Items, либо установкой свойства ItemsSource, но нельзя использовать оба эти способа одновременно. Если задано значение для свойства ItemsSource и при этом добавляется элемент в коде XAML, этот элемент игнорируется. Если задано значение для свойства ItemsSource и при этом в коде программы добавляется элемент в коллекцию Items, возникает исключение.
 
-### Указание вида элементов
+### <a name="specify-the-look-of-the-items"></a>Указание вида элементов
 
 По умолчанию элемент данных отображается в представлении пролистывания в виде строки, представляющей объект данных, к которому он привязан. Как правило, хочется показать более сложно оформленное представление данных. Чтобы точно определить, как должны отображаться элементы в представлении пролистывания, вы создаете [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx). В DataTemplate с помощью языка XAML задается макет и внешний вид элементов управления, используемых для отображения отдельного элемента. Элементы управления в макете могут быть привязаны к свойствам объекта данных или иметь содержимое, задаваемое внутри кода. DataTemplate назначается свойству [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) элемента управления FlipView.
 
@@ -149,7 +142,7 @@ stackPanel1.Children.Add(flipView1);
 
 Шаблон представлении пролистывания данных.
 
-### Задание ориентации представления пролистывания
+### <a name="set-the-orientation-of-the-flip-view"></a>Задание ориентации представления пролистывания
 
 По умолчанию пролистывание в представлении пролистывания происходит в горизонтальном направлении. Для вертикального пролистывания используйте панель стека с вертикальной ориентацией в качестве [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) представления пролистывания.
 
@@ -186,7 +179,7 @@ stackPanel1.Children.Add(flipView1);
 
 ![Пример вертикального представления пролистывания](images/controls_flipview_vertical.jpg)
 
-## Добавление индикатора контекста
+## <a name="adding-a-context-indicator"></a>Добавление индикатора контекста
 
 Индикатор контекста в представлении пролистывания предоставляет собой полезную точку отсчета. Точки в стандартном индикаторе контекста не интерактивны. Как показано в этом примере, оптимальным расположением обычно является расположение по центру и ниже галереи:
 
@@ -196,7 +189,9 @@ stackPanel1.Children.Add(flipView1);
 
 ![Пример индикатора контекста](images/controls_contextindicator.jpg)
 
-## Возможности и ограничения
+Пример кода, показывающий, как добавить индикатор контекста в FlipView, см. в разделе [Пример XAML FlipView](http://go.microsoft.com/fwlink/p/?LinkID=311760).
+
+## <a name="dos-and-donts"></a>Рекомендации
 
 -   Представления пролистывания лучше всего подходят для коллекций до 25 элементов.
 -   Не используйте элемент пролистывания в более крупных коллекциях, поскольку непрерывное перелистывание элементов может быть утомительным. Исключение можно сделать для фотоальбомов, в которых могут содержаться сотни или тысячи изображений. Фотоальбомы почти всегда переключаются в режим пролистывания, после того как на сетке была выбрана фотография. Для других больших коллекций используйте [Представление списка или представление сетки](lists.md).
@@ -206,7 +201,7 @@ stackPanel1.Children.Add(flipView1);
     -   Выделенная точка указывает текущий элемент. Обычно выделенная точка имеет белый цвет, а остальные точки — серый.
     -   Число точек может отличаться, но не следует допускать их большое количество, так как пользователю может быть сложно найти свое место. Обычно максимальное количество точек для отображения — 10.
 
-## Глобализация и локализация: контрольный список
+## <a name="globalization-and-localization-checklist"></a>Глобализация и локализация: контрольный список
 
 <table>
 <tr>
@@ -215,14 +210,17 @@ stackPanel1.Children.Add(flipView1);
 
 </table>
 
+## <a name="get-the-sample-code"></a>Получить пример кода
+* [Пример основных элементов пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## Связанные разделы
+
+## <a name="related-articles"></a>Связанные разделы
 
 - [Руководство по спискам](lists.md)
 - [**Класс FlipView**](https://msdn.microsoft.com/library/windows/apps/br242678)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

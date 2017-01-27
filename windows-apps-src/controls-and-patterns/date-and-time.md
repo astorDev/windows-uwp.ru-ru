@@ -6,11 +6,11 @@ ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: bb881fb0120401047c77a2d1e64a1e1555a9ced0
 
 ---
-# Элементы управления календарем, датой и временем
+# <a name="calendar-date-and-time-controls"></a>Элементы управления календарем, датой и временем
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,21 +19,15 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx"><strong>Класс CalendarView</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx"><strong>Класс CalendarDatePicker</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx"><strong>Класс DatePicker</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx"><strong>Класс TimePicker</strong></a></li>
+<li>[**Класс CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
+<li>[**Класс CalendarDatePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)</li>
+<li>[**Класс DatePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</li>
+<li>[**Класс TimePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## Какой элемент управления датой и временем следует использовать?
+## <a name="which-date-or-time-control-should-you-use"></a>Какой элемент управления датой и временем следует использовать?
 
 Существует четыре элемента управления датой и временем. Выбор нужного элемента управления зависит от сценария использования вашего приложения. Эта информация поможет выбрать нужный элемент управления для вашего приложения.
 
@@ -41,12 +35,12 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 --------------------|-------|-------------------------------------------------------------------------------------------------------------------------------
 Представление календаря       |![Пример представления календаря](images/controls_calendar_monthview_small.png)|Используется для выбора одной даты или диапазона дат в календаре, который всегда виден.                   
 Элемент выбора даты в календаре|![Пример элемента выбора даты в календаре](images/calendar-date-picker-closed.png)|Используется для выбора одной даты с использованием контекстного календаря. 
-Элемент выбора даты         |![Пример элемента выбора даты](images/date-picker-closed.png)|Используется для выбора одной даты, когда контекстно-зависимая информация не важна.
+Управляющий элемент выбора даты         |![Пример элемента выбора даты](images/date-picker-closed.png)|Используется для выбора одной даты, когда контекстно-зависимая информация не важна.
 Элемент выбора времени         |![Пример элемента выбора времени](images/time-picker-closed.png)|Используется для выбора одного значения времени.                                        
 
 <!-- This table seems redundant, not sure it's needed.-->
 
-### Представление календаря
+### <a name="calendar-view"></a>Представление календаря
 
 **CalendarView** позволяет пользователю просматривать календарь и взаимодействовать с ним, перемещаясь по месяцам, годам и десятилетиям. Пользователь может выбрать отдельную дату или диапазон дат. Не имеет поверхности выбора, и календарь всегда виден.
 
@@ -57,7 +51,7 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 - Если необходимо предоставить пользователю возможность выбора нескольких дат, следует использовать **CalendarView**.
 - Если необходимо предоставить пользователю возможность выбора одной даты и при этом не нужно, чтобы календарь был виден всегда, рекомендуется использовать элементы управления **CalendarDatePicker** или **DatePicker**.
 
-### Элемент выбора даты в календаре
+### <a name="calendar-date-picker"></a>Элемент выбора даты в календаре
 
 **CalendarDatePicker** — это раскрывающийся элемент управления, оптимизированный для выбора отдельной даты из представления календаря, когда важен контекст, например день недели или заполненность календаря. Вы можете изменить календарь таким образом, чтобы обеспечить дополнительный контекст или ограничить доступные даты.
 
@@ -67,7 +61,7 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 - Используйте элемент выбора даты в календаре для таких действий, как выбор даты встречи или отъезда. 
 
-### Элемент выбора даты
+### <a name="date-picker"></a>Управляющий элемент выбора даты
 
 Элемент управления **DatePicker** представляет собой стандартизированное средство выбора нужной даты. 
 
@@ -77,7 +71,7 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 - Используйте элемент выбора даты, чтобы пользователь мог выбрать известную дату, например дату рождения, если контекст календаря не важен.
 
-### Элемент выбора времени
+### <a name="time-picker"></a>Элемент выбора времени
 
 Элемент управления **TimePicker** используется для выбора одного значения времени (например, времени встречи или времени отъезда). Это статический отображаемый элемент, задаваемый пользователем или посредством программного кода. Он не обновляется для отображения текущего времени. 
 
@@ -87,23 +81,23 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 - Используйте элемент выбора времени, чтобы пользователь мог выбрать одно значение времени.
 
-## Создание элемента управления датой и временем
+## <a name="create-a-date-or-time-control"></a>Создание элемента управления датой и временем
 
 Сведения и примеры, связанные с каждым элементом управления датой и временем см. в следующих статьях.
 
 - [**Представление календаря**](calendar-view.md)
 - [**Элемент выбора даты в календаре**](calendar-date-picker.md)
-- [**Элемент выбора даты**](date-picker.md)
+- [**Управляющий элемент выбора даты**](date-picker.md)
 - [**Элемент выбора времени**](time-picker.md)
 
-### Глобализация
+### <a name="globalization"></a>Глобализация
 
 Элементы управления датами XAML поддерживает все календарные системы, поддерживаемые Windows. Эти календари определены в классе [**Windows.Globalization.CalendarIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx). Каждый элемент управления использует календарь, соответствующий языку по умолчанию, используемому в приложении. Кроме того, вы можете задать значение свойства **CalendarIdentifier**, чтобы использовать конкретную календарную систему.
 
-Элемент управления «Выбор времени» поддерживает все системы часов, определенные в классе [**Windows.Globalization.ClockIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx). Вы можете задать значение свойства [**ClockIdentifier**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx), чтобы использовать 12- либо 24-часовой формат отображения времени. Значение свойства имеет строковый тип, но следует использовать значения, соответствующие статическим строковым свойствам класса ClockIdentifiers. А именно: TwelveHour (строка 12HourClock) и TwentyFourHour (строка 24HourClock). По умолчанию используется значение 12HourClock.
+Элемент управления "Выбор времени" поддерживает все системы часов, определенные в классе [**Windows.Globalization.ClockIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx). Вы можете задать значение свойства [**ClockIdentifier**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx), чтобы использовать 12- либо 24-часовой формат отображения времени. Значение свойства имеет строковый тип, но следует использовать значения, соответствующие статическим строковым свойствам класса ClockIdentifiers. А именно: TwelveHour (строка 12HourClock) и TwentyFourHour (строка 24HourClock). По умолчанию используется значение 12HourClock.
 
 
-### Значения DateTime и Calendar
+### <a name="datetime-and-calendar-values"></a>Значения DateTime и Calendar
 
 Объекты даты, используемые в элементах управления выбором даты и времени в XAML, имеют другое представление в зависимости от применяемого вами языка программирования. 
 - Языки C# и Visual Basic используют структуру [**System.DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx), которая входит в платформу .NET. 
@@ -115,10 +109,13 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 > **Примечание.**&nbsp;&nbsp;Свойствам, принимающим в качестве значений объекты даты, нельзя присвоить строку атрибута XAML, поскольку анализатор XAML среды выполнения Windows не содержит логику преобразования строк в даты в виде объектов DateTime или DateTimeOffset. Эти значения обычно задаются в коде. Также можно использовать другой способ — определить дату, которая доступна как объект данных, или дату, доступную в контексте данных. Затем необходимо задать свойство как атрибут XAML, ссылающийся на выражение расширения разметки [\{Binding\}](../xaml-platform/binding-markup-extension.md), которое может получать доступ к дате как к данным.
 
+## <a name="get-the-sample-code"></a>Получить пример кода
+* [Пример основных элементов пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## Ссылки по теме
 
-**Разработчикам (XAML)**
+## <a name="related-topics"></a>Связанные разделы
+
+**Для разработчиков (XAML)**
 - [**Класс CalendarView**](https://msdn.microsoft.com/library/windows/apps/dn890052)
 - [**Класс CalendarDatePicker**](https://msdn.microsoft.com/library/windows/apps/dn950083)
 - [**Класс DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)
@@ -126,6 +123,6 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

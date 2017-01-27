@@ -6,20 +6,23 @@ ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 7db7c360c1e6e3cadf6423d888240bb2f0f4651a
 
 ---
 
-# Реакция на наличие сенсорной клавиатуры
+# <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Реакция на наличие сенсорной клавиатуры
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Узнайте, как адаптировать пользовательский интерфейс приложения при отображении или скрытии сенсорной клавиатуры.
 
-
-**Важные API**
-
--   [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)
--   [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)</li>
+<li>[**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)</li>
+</ul>
+</div> 
 
 
 
@@ -39,7 +42,7 @@ ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
 
 Для работы со статьей необходимо иметь базовое представление о стандартных взаимодействиях клавиатуры, обработке событий клавиатуры и данных, вводимых с клавиатуры, а также о модели автоматизации пользовательского интерфейса.
 
-Если вы— начинающий разработчик приложений универсальной платформы для Windows (UWP), прочитайте указанные ниже статьи, чтобы ознакомиться с описанными здесь технологиями.
+Если вы — начинающий разработчик приложений универсальной платформы для Windows (UWP), прочитайте указанные ниже статьи, чтобы ознакомиться с описанными здесь технологиями.
 
 -   [Создание первого приложения](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   Дополнительную информацию о событиях см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/mt185584).
@@ -48,7 +51,7 @@ ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
 
 Полезные советы по разработке удобных и привлекательных приложений, оптимизированных для ввода данных с клавиатуры, см. в разделе [Руководство по сенсорной клавиатуре](https://msdn.microsoft.com/library/windows/apps/hh972345).
 
-## Сенсорная клавиатура и настраиваемый пользовательский интерфейс
+## <a name="touch-keyboard-and-a-custom-ui"></a>Сенсорная клавиатура и настраиваемый пользовательский интерфейс
 
 
 Ниже перечислены несколько основных рекомендаций для пользовательских элементов управления для ввода текста.
@@ -71,7 +74,7 @@ ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
 
     ![Форма, содержащая области, которые всегда должны быть в поле зрения](images/touch-keyboard-pan2.png)
 
-## Обработка событий отображения и скрытия
+## <a name="handling-the-showing-and-hiding-events"></a>Обработка событий отображения и скрытия
 
 
 В примере ниже показано, как прикрепить обработчики событий [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) и [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) сенсорной клавиатуры.
@@ -124,7 +127,7 @@ public class MyApplication
 }
 ```
 
-## Связанные разделы
+## <a name="related-articles"></a>Связанные разделы
 
 * [Взаимодействие с помощью клавиатуры](keyboard-interactions.md)
 * [Специальные возможности клавиатуры](https://msdn.microsoft.com/library/windows/apps/mt244347)
@@ -146,6 +149,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

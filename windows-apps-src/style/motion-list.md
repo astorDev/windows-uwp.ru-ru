@@ -6,24 +6,26 @@ ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: b6c57d1ceadd0785a51c518bc51f93892aa472d5
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e1fc86e5110da8926194e20947552337216d4a72
 
 ---
 
-# Анимации добавления и удаления
+# <a name="add-and-delete-animations"></a>Анимации добавления и удаления
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Анимации списка позволяют вставлять или удалять один или несколько элементов коллекции, например в фотоальбоме или результатах поиска.
 
-**Важные API**
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**Класс AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)</li>
+</ul>
+</div>
 
--   [**Класс AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
-
-## Возможности и ограничения
+## <a name="dos-and-donts"></a>Возможности и ограничения
 
 
 -   Используйте анимацию списка при добавлении нового элемента к существующему набору элементов. Используйте ее, например, когда приходит новое электронное сообщение или когда новое фото импортируется в существующую коллекцию.
@@ -35,13 +37,11 @@ ms.openlocfilehash: b6c57d1ceadd0785a51c518bc51f93892aa472d5
 
 
 
-## Связанные разделы
+## <a name="related-articles"></a>Связанные разделы
 
-
-**Для разработчиков (XAML)**
 * [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Анимация добавления и удаления элементов списка](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
-* [Краткое руководство: анимация пользовательского интерфейса](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Краткое руководство: анимация пользовательского интерфейса с помощью анимаций библиотеки](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Класс AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
  
@@ -54,6 +54,6 @@ ms.openlocfilehash: b6c57d1ceadd0785a51c518bc51f93892aa472d5
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

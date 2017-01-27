@@ -6,26 +6,28 @@ ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: f49af17ada36ceb2e5898d80047c2d616b1d0c6e
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 564062173544ab368d8dd7fc8fe2c35e9d518444
 
 ---
 
-# Использование шаблонов для форматирования даты и времени
+# <a name="use-patterns-to-format-dates-and-times"></a>Использование шаблонов для форматирования даты и времени
 
-
-
-
-
-**Важные API**
-
--   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828)
--   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Для отображения даты и времени в желаемом формате можно использовать API [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) с пользовательскими шаблонами.
 
-## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>Введение
+<div class="important-apis" >
+<b>Важные API</b><br/>
+<ul>
+<li>[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
+<li>[**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828)</li>
+<li>[**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)</li>
+</ul>
+</div>
+
+
+## <a name="introduction"></a>Введение
 
 
 [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) предоставляет различные способы форматирования даты и времени в соответствии с языковыми и региональными стандартами, применяемыми во всем мире. Вы можете использовать стандартные форматы для года, месяца, дня и т. д. или использовать стандартные шаблоны строки, такие как "longdate" или "month day".
@@ -36,7 +38,7 @@ ms.openlocfilehash: f49af17ada36ceb2e5898d80047c2d616b1d0c6e
 
  
 
-## <span id="What_you_need_to_know"></span><span id="what_you_need_to_know"></span><span id="WHAT_YOU_NEED_TO_KNOW"></span>Что необходимо знать
+## <a name="what-you-need-to-know"></a>Что необходимо знать
 
 
 Важно отметить, что при использовании шаблонов вы создаете пользовательский формат, который может подходить не для всех культур. Например, рассмотрим шаблон "month day" ("месяц день"):
@@ -50,7 +52,7 @@ var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("mo
 var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
 ```
 
-В результате создается модуль форматирования на основе языка и региона в текущем контексте. Следовательно, месяц и день будут всегда отображаться вместе в подходящем глобальном формате. Например, для английского языка (США) будет показываться "January1", для французского языка (Франция) — "1janvier", а для японского — "1月1日". Это достигается благодаря тому, что шаблон строится на основе строки, учитывающей особенности культуры, причем доступ к ней можно получить с помощью свойства шаблона:
+В результате создается модуль форматирования на основе языка и региона в текущем контексте. Следовательно, месяц и день будут всегда отображаться вместе в подходящем глобальном формате. Например, для английского языка (США) будет показываться "January 1", для французского языка (Франция) — "1 janvier", а для японского — "1月1日". Это достигается благодаря тому, что шаблон строится на основе строки, учитывающей особенности культуры, причем доступ к ней можно получить с помощью свойства шаблона:
 
 **C#**
 ```CSharp
@@ -111,7 +113,7 @@ Ja-JP: 1月1 (inappropriate for Japan; the day symbol is missing)
 -   Не гарантируется соответствие культуре.
 -   Может быть задана любая комбинация составляющих в любом порядке.
 
-## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>Задачи
+## <a name="tasks"></a>Задачи
 
 
 Предположим, что требуется отобразить текущие месяц и день вместе с текущим временем в определенном формате. Например, вы хотите, чтобы пользователи с английским языком (США) увидели данные в следующем формате:
@@ -120,7 +122,7 @@ Ja-JP: 1月1 (inappropriate for Japan; the day symbol is missing)
 June 25 | 1:38 PM
 ```
 
-Компонент даты соответствует шаблону "month day" ("месяц день"), а компонент времени— шаблону "hour minute" ("час минута"). Поэтому вы можете создать пользовательский формат, объединяющий эти шаблоны.
+Компонент даты соответствует шаблону "month day" ("месяц день"), а компонент времени — шаблону "hour minute" ("час минута"). Поэтому вы можете создать пользовательский формат, объединяющий эти шаблоны.
 
 Сначала получите модули форматирования для нужных шаблонов даты и времени, а затем получите образцы этих шаблонов:
 
@@ -177,7 +179,7 @@ var mydateplustimefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFor
 var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 ```
 
-## <span id="related_topics"></span>Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 
 * [Пример форматирования даты и времени](http://go.microsoft.com/fwlink/p/?LinkId=231618)
@@ -192,6 +194,6 @@ var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

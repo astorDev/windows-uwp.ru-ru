@@ -4,11 +4,11 @@ ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
 label: Text box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f9750e87516d38b16a589e5271de25d9f241e97b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 3cbfa4a2896e5e7453d9fe1793f422d2f7b60c79
 
 ---
-# Текстовое поле
+# <a name="text-box"></a>Текстовое поле
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,17 +19,13 @@ ms.openlocfilehash: f9750e87516d38b16a589e5271de25d9f241e97b
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx"><strong>Класс TextBox</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx"><strong>Свойство Text</strong></a></li>
+<li>[**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
+<li>[**Свойство Text**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-## Выбор правильного элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте элемент управления **TextBox**, чтобы позволить пользователю вводить и редактировать неформатированный текст, в частности, в форме. С помощью свойства [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) можно получить и задать текст в элементе управления TextBox.
 
@@ -43,11 +39,11 @@ ms.openlocfilehash: f9750e87516d38b16a589e5271de25d9f241e97b
 
 Дополнительные сведения о выборе подходящего элемента управления текстом см. в статье [Элементы управления текстом](text-controls.md).
 
-## Примеры
+## <a name="examples"></a>Примеры
 
 ![Текстовое поле](images/text-box.png)
 
-## Создание текстового поля
+## <a name="create-a-text-box"></a>Создание текстового поля
 
 Вот XAML для простого текстового поля с заголовком и замещающим текстом.
 
@@ -68,7 +64,7 @@ rootGrid.Children.Add(textBox);
 
 ![Простое текстовое поле](images/text-box-ex1.png)
 
-### Использование текстового поля для ввода данных в форму
+### <a name="use-a-text-box-for-data-input-in-a-form"></a>Использование текстового поля для ввода данных в форму
 
 Текстовое поле часто используется для принятия ввода данных в форму и использования свойства [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) для получения полной текстовой строки из текстового поля. Обычно вы используете событие, например, нажатие кнопки "Отправить", для получения доступа к свойству Text, но вы можете обрабатывать событие [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) или [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx), если необходимо выполнить какие-либо действия в случае изменения текста.
 
@@ -87,7 +83,7 @@ rootGrid.Children.Add(textBox);
 - Параметр **AcceptsReturn** имеет значение **true**
 - **TextWrap** имеет значение, отличное от **NoWrap**
 
-### Текст, предназначенный только для чтения
+### <a name="make-a-text-box-read-only"></a>Текст, предназначенный только для чтения
 
 Текстовое поле можно сделать доступным только для чтения, если присвоить свойству [IsReadOnly](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isreadonly.aspx) значение **true**. Обычно вы переключаете это свойство в приложении, исходя из условий в приложении. Если вам нужен текст, который всегда предназначен для чтения, воспользуйтесь элементом TextBlock.
 
@@ -98,7 +94,7 @@ rootGrid.Children.Add(textBox);
 IsEnabled
 
 
-### Включение многострочного ввода
+### <a name="enable-multi-line-input"></a>Включение многострочного ввода
 
 Есть два свойства, которые позволяют управлять отображением текста на нескольких строках в текстовом поле. Обычно настраиваются два свойства, чтобы сделать текстовое поле многострочным.
 - Чтобы позволить текстовому полю разрешать и отображать символы новой строки или возврата, установите для свойства [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) значение **true**.
@@ -130,7 +126,7 @@ ScrollViewer.SetVerticalScrollBarVisibility(textBox, ScrollBarVisibility.Auto);
 
 ![Поле многострочного текста](images/text-box-multi-line.png)
 
-### Форматирование отображаемого текста
+### <a name="format-the-text-display"></a>Форматирование отображаемого текста
 
 Используйте свойство [TextAlignment]() для выравнивания текста в текстовом поле. Чтобы выровнять текстовое поле в рамках макета страницы, используйте свойства [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) и [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx).
 
@@ -166,7 +162,7 @@ rootGrid.Children.Add(textBox);
 
 ![Форматированное текстовое поле](images/text-box-formatted.png)
 
-### Изменение контекстного меню
+### <a name="modify-the-context-menu"></a>Изменение контекстного меню
 
 По умолчанию команды, отображаемые в контекстном меню текстового поля, зависят от состояния текстового поля. Например, если текстовое поле является редактируемым, отображаются следующие команды.
 
@@ -180,7 +176,7 @@ rootGrid.Children.Add(textBox);
 
 Чтобы изменить команды, отображаемые в контекстном меню, обработайте событие [ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx). Пример см. в сценарии 2 элемента [ContextMenu sample](http://go.microsoft.com/fwlink/p/?linkid=234891). Сведения о проектировании см. в Руководстве по контекстным меню.
 
-### Выделение, копирование и вставка
+### <a name="select-copy-and-paste"></a>Выделение, копирование и вставка
 
 Получить выбранный текст из текстового поля или задать его можно с помощью свойства [SelectedText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectedtext.aspx). Чтобы управлять выделением текста, используйте свойства [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) и [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx), а также методы [Select](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.select.aspx) и [SelectAll](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectall.aspx). Событие [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx) позволяет выполнять действия, пока пользователь выбирает или отменяет выбор текста. Вы можете изменить цвет, используемый для выделения выбранного текста, настроив свойство [SelectionHighlightColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionhighlightcolor.aspx).
 
@@ -214,7 +210,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 ![Выбранный текст в текстовом поле](images/text-box-selection.png)
 
-## Выбор подходящей клавиатуры для элемента управления текстом
+## <a name="choose-the-right-keyboard-for-your-text-control"></a>Выбор подходящей клавиатуры для элемента управления текстом
 
 Чтобы упростить пользователям ввод данных с помощью сенсорной клавиатуры или панели функционального ввода, можно настроить тип вводимых данных элемента управления текстом, чтобы он соответствовал типу данных, которые должен вводить пользователь.
 
@@ -228,7 +224,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 Дополнительные сведения и примеры см. в разделе [Использование типа вводимых данных для изменения сенсорной клавиатуры](https://msdn.microsoft.com/library/windows/apps/mt280229) и документацию свойства.
 
-## Рекомендации
+## <a name="recommendations"></a>Рекомендации
 
 -   Используйте метку или подстановочный текст, если назначение текстового поля не очевидно. Метка отображается независимо от того, указано ли значение в поле ввода. Подстановочный текст отображается внутри поля ввода текста и пропадает после ввода значения.
 -   Задайте для текстового поля достаточную ширину, чтобы можно было ввести ряд значений. Длина слов различается в зависимости от языков, поэтому если вы собираетесь выводить свое приложение на международный уровень, следует учитывать особенности локализации.
@@ -273,25 +269,18 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 
 
-## Статьи по теме
+## <a name="related-articles"></a>Связанные статьи
 
-[Элементы управления текстом](text-controls.md)
-
-**Проектировщикам**
+- [Текстовые элементы управления](text-controls.md)
 - [Руководство по проверке орфографии](spell-checking-and-prediction.md)
 - [Добавление поиска](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [Руководство по текстовому вводу](text-controls.md)
-
-**Разработчикам (XAML)**
 - [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Класс Windows.UI.Xaml.Controls PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519)
-
-
-**Разработчикам (прочее)**
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

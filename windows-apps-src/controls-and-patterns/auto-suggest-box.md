@@ -7,11 +7,11 @@ dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 9406f9b826dfb7d2603a0812f209dfb38cf639ae
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 6b41c8b1888b61c82aa3d54244151b08d963658d
 
 ---
-# Поле автозаполнения
+# <a name="auto-suggest-box"></a>Поле автозаполнения
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Используйте AutoSuggestBox, чтобы предоставить список предложений, из которых пользователь может выбрать нужное по мере набора.
@@ -21,41 +21,36 @@ ms.openlocfilehash: 9406f9b826dfb7d2603a0812f209dfb38cf639ae
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx"><strong>Класс AutoSuggestBox</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx"><strong>Событие TextChanged</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx"><strong>Событие SuggestionChose</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx"><strong>Событие QuerySubmitted</strong></a></li>
+<li>[**Класс AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</li>
+<li>[**Событие TextChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)</li>
+<li>[**Событие SuggestionChose**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx)</li>
+<li>[**Событие QuerySubmitted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-## Выбор правильного элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Если вам нужен простой настраиваемый элемент управления, который обеспечивает текстовый поиск со списком предложений, выберите поле автозаполнения.
 
 Дополнительные сведения о выборе подходящего элемента управления текстом можно найти в статье [Элементы управления текстом](text-controls.md).
 
-## Примеры
+## <a name="examples"></a>Примеры
 
 Поле автозаполнения в приложении "Музыка Groove".
 
 ![Поле автозаполнения в приложении "Музыка Groove"](images/control-examples/auto-suggest-box-groove.png)
 
-## Структура
+## <a name="anatomy"></a>Структура
 Точка входа для поля автозаполнения состоит из необязательного заголовка и текстового поля с необязательной подсказкой:
 
 ![Пример точки входа для элемента управления автозаполнения](images/controls_autosuggest_entrypoint.png)
 
-Список результатов автозаполнения заполняется автоматически, как только пользователь начинает вводить текст. Список результатов может отображаться над текстовым полем или под ним. Появляется кнопка «Очистить все».
+Список результатов автозаполнения заполняется автоматически, как только пользователь начинает вводить текст. Список результатов может отображаться над текстовым полем или под ним. Появляется кнопка "Очистить все".
 
 ![Пример развернутого элемента управления автозаполнения](images/controls_autosuggest_expanded01.png)
 
-## Создайте поле автозаполнения
+## <a name="create-an-auto-suggest-box"></a>Создайте поле автозаполнения
 
 Для использования AutoSuggestBox необходимо ответить на 3 действия пользователя.
 
@@ -63,7 +58,7 @@ ms.openlocfilehash: 9406f9b826dfb7d2603a0812f209dfb38cf639ae
 - Выбор предложения — обновите текстовое поле при выборе пользователем предложения из списка вариантов.
 - Отправка запроса — отобразите результаты запроса при отправке запроса пользователем.
 
-### Изменение текста
+### <a name="text-changed"></a>Изменение текста
 
 Событие [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx) возникает, когда обновляется содержимое текстового поля. Используйте свойство [Причина](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason.aspx) аргументов события, чтобы определить, было ли изменение внесено пользователем. Если причиной изменения является **UserInput**, отфильтруйте данные на основе введенных данных. После этого установите отфильтрованные данные как свойство [ItemsSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) элемента AutoSuggestBox для обновления списка предложений.
 
@@ -72,7 +67,7 @@ ms.openlocfilehash: 9406f9b826dfb7d2603a0812f209dfb38cf639ae
 - Для отображения текста одного свойства элемента данных задайте свойство DisplayMemberPath, чтобы выбрать, какое свойство объекта отображать в списке предложений.
 - Для определения пользовательского вида каждого элемента в списке используйте свойство ItemTemplate.
 
-### Выбор предложения
+### <a name="suggestion-chosen"></a>Выбор предложения
 
 Когда пользователь переходит с помощью клавиатуры по списку предложений, необходимо обновлять текст в текстовом поле соответствующим образом.
 
@@ -80,17 +75,17 @@ ms.openlocfilehash: 9406f9b826dfb7d2603a0812f209dfb38cf639ae
 
 Если нужно отобразить нечто большее, чем простое свойство, обработайте событие [SuggestionChosen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx), чтобы заполнить текстовое поле пользовательским текстом на основе выбранного элемента.
 
-### Отправка запроса
+### <a name="query-submitted"></a>Отправка запроса
 
 Обработайте событие [QuerySubmitted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx), чтобы выполнить соответствующий приложению запрос и показать пользователю результат.
 
 Событие QuerySubmitted происходит, когда пользователь отправляет строку запроса. Пользователь может отправить запрос одним из следующих способов.
-- Нажать клавишу ВВОД или щелкнуть значок запроса, в то время как фокус находится в текстовом поле. Свойство аргумента события [ChosenSuggestion](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion.aspx)— **null**.
+- Нажать клавишу ВВОД или щелкнуть значок запроса, в то время как фокус находится в текстовом поле. Свойство аргумента события [ChosenSuggestion](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion.aspx) — **null**.
 - Нажать клавишу ВВОД, щелкнуть или нажать элемент, в то время как фокус находится в списке предложений. Свойство аргумента события ChosenSuggestion содержит элемент, который был выбран в списке.
 
 Во всех случаях свойство аргумента [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) содержит текст из текстового поля.
 
-## Использование AutoSuggestBox для поиска
+## <a name="use-autosuggestbox-for-search"></a>Использование AutoSuggestBox для поиска
 
 Используйте AutoSuggestBox, чтобы предоставить список предложений, из которых пользователь по мере ввода текста может выбрать нужное.
 
@@ -104,9 +99,9 @@ ms.openlocfilehash: 9406f9b826dfb7d2603a0812f209dfb38cf639ae
 
 ![Пример точки входа для элемента управления автозаполнения](images/controls_autosuggest_entrypoint.png)
 
-## Примеры
+## <a name="get-the-sample-code"></a>Получить пример кода 
 
-Полные рабочие примеры AutoSuggestBox см. в статьях [Пример переноса AutoSuggestBox](http://go.microsoft.com/fwlink/p/?LinkId=619996) и [Пример базовых характеристик пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992).
+Полные рабочие примеры AutoSuggestBox см. в статьях [Пример AutoSuggestBox](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlAutoSuggestBox) и [Пример основных элементов пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992).
 
 Вот простой класс AutoSuggestBox с необходимыми обработчиками событий.
 
@@ -150,24 +145,37 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 }
 ```
 
-## Рекомендации
+## <a name="dos-and-donts"></a>Рекомендации
 
--   Если используется поле автозаполнения и для введенного текста поиск не дает результатов, выводите вместо результатов строку сообщения "Результатов нет", чтобы пользователь знал, что поисковый запрос был выполнен.
+-   При использовании поля автозаполнения, если для введенного текста поиск не дает результатов, выводите вместо результатов строку сообщения "Результатов нет", чтобы пользователь знал, что поисковый запрос был выполнен.
 
     ![Пример поля автозаполнения без результатов поиска](images/controls_autosuggest_noresults.png)
 
+<div class="microsoft-internal-note">
+**Глобализация и локализация: контрольный список**
 
-## Связанные статьи
+<table>
+<tr>
+<th>Вертикальный интервал</th><td>Используйте для вертикального интервала символы, не входящие в латинский алфавит, чтобы символы других алфавитов (включая цифры) правильно отображались.</td>
+</tr>
+<tr>
+<th>Прокрутка</th><td>При выборе текста автозаполнения пользователь должен иметь возможность прокрутить его до конца строки.</td>
+</tr>
+</table>
+</div>
 
-- [Элементы управления текстом](text-controls.md)
+
+## <a name="related-articles"></a>Связанные разделы
+
+- [Текстовые элементы управления](text-controls.md)
 - [Проверка правописания](spell-checking-and-prediction.md)
 - [Поиск](search.md)
 - [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Класс Windows.UI.Xaml.Controls PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+- [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length.aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

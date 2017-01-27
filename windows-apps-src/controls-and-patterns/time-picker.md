@@ -6,11 +6,11 @@ ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 69f682b0edddbcf88515af537c33b3d8297f91f0
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: cfe38564f54f61b2d48918f5dd5bf41e7c57b965
 
 ---
-# Управляющий элемент выбора времени
+# <a name="time-picker"></a>Управляющий элемент выбора времени
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Применение элемента управления "Выбор времени" — это стандартизованный способ дать пользователям возможность выбирать значение времени с помощью сенсорного ввода, мыши или клавиатуры. 
@@ -18,28 +18,23 @@ ms.openlocfilehash: 69f682b0edddbcf88515af537c33b3d8297f91f0
 <div class="important-apis" >
 <b>Важные API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx"><strong>Класс TimePicker</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx"><strong>Свойство Time</strong></a></li>
+<li>[**Класс TimePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)</li>
+<li>[**Свойство Time**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## Выбор правильного элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 Используйте элемент выбора времени, чтобы пользователь мог выбрать одно значение времени.
 
 Дополнительные сведения о выборе правильного элемента см. в статье [Элементы управления датой и временем](date-and-time.md).
 
-## Примеры:
+## <a name="examples"></a>Примеры:
 
 Точка входа отображает выбранное время, и при выборе пользователем точки входа поверхность выбора разворачивается вертикально из середины, чтобы пользователь мог сделать выбор. Элемент выбора времени перекрывает другие элементы пользовательского интерфейса, но не вытесняет их.
 
 ![Пример разворачивания элемента выбора времени](images/controls_timepicker_expand.png)
 
-## Создание элемента выбора времени
+## <a name="create-a-time-picker"></a>Создание элемента выбора времени
 
 Этот пример демонстрирует, как создать простой элемент выбора времени с заголовком.
 
@@ -56,11 +51,12 @@ arrivalTimePicker.Header = "Arrival time";
 
 ![Пример элемента выбора времени](images/time-picker-closed.png)
 
-> **Примечание.**&nbsp;&nbsp;Важные сведения о значениях даты и времени см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи *«Элементы управления датой и временем»*.
+> [!NOTE]
+> Важные сведения о значениях даты и времени см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи *Элементы управления датой и временем*.
 
 
 
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 - [Элементы управления датой и временем](date-and-time.md)
 - [Управляющий элемент выбора даты в календаре](calendar-date-picker.md)
@@ -69,6 +65,6 @@ arrivalTimePicker.Header = "Arrival time";
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 
