@@ -2698,7 +2698,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\9fd90cbb8be3a0b2d234eff8a13a98b7f406aadf.7864cc54f9cd0fcf867ce113de60a9587a1faf17.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\arcade-stick.200e739cfeb542969eeec4e2a850119fbbeffe16.ru-ru.xlf",
-      "LocXliffCommit": "9c754f24cd1c17b245df73d43e1742b4088fb6ce"
+      "LocXliffCommit": "501a8d16cb4ec75a116023003a077f6980105ad6"
     },
     "windows-apps-src\\gaming\\input-for-games.md.8ce4c4d310de84ab79e317afd0717ae692c775ae.HT": {
       "SourceFilename": "windows-apps-src\\gaming\\input-for-games.md",
@@ -2728,7 +2728,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\5306ef31bf20b25a5f2a24dee8bd8b55de2773da.8a0c5d4738fdb7214a1705ad2e37c8e6e61b40d0.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\headset.4a461e6c1e6f0d799e154ce271ac7d4bffa92cc1.ru-ru.xlf",
-      "LocXliffCommit": "9c754f24cd1c17b245df73d43e1742b4088fb6ce"
+      "LocXliffCommit": "501a8d16cb4ec75a116023003a077f6980105ad6"
     },
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md.09ae01926464f8f9e337e43a329d9ace28955450.HT": {
       "SourceFilename": "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md",
@@ -2878,7 +2878,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\ea2c1f359424f042b9563e2723c1eb34ee8ddff0.dc9b850658d7512f52ed52d5f716a79b96a05142.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\racing-wheel-and-force-feedback.ec7c3e4f0bea6d931780c3a45b896cc8a333a6f8.ru-ru.xlf",
-      "LocXliffCommit": "9c754f24cd1c17b245df73d43e1742b4088fb6ce"
+      "LocXliffCommit": "501a8d16cb4ec75a116023003a077f6980105ad6"
     },
     "windows-apps-src\\gaming\\gamepad-and-vibration.md.ce86a09f75feda733e5a65e9aab78025f0cb0972.HT": {
       "SourceFilename": "windows-apps-src\\gaming\\gamepad-and-vibration.md",
@@ -2888,7 +2888,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\5d64c463b572dfc6da5ed453308c56a05d0a4410.329ecd0921d569f7b5ee2e3581e7d388066d66e6.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\gamepad-and-vibration.6a6269dedaedce25fd795ce66da6ac84fa346a39.ru-ru.xlf",
-      "LocXliffCommit": "9c754f24cd1c17b245df73d43e1742b4088fb6ce"
+      "LocXliffCommit": "501a8d16cb4ec75a116023003a077f6980105ad6"
     },
     "windows-apps-src\\monetize\\in-app-purchases-and-trials.md.3aa53a54f3c075217ff1e5ae0e6d2db5ccd27f8b.HT": {
       "SourceFilename": "windows-apps-src\\monetize\\in-app-purchases-and-trials.md",
