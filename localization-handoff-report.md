@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xaml-platform\binding-markup-extension.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/993511baef4e3b167d2c1bcb02da6434e83ed3de?path=windows-apps-src%2Fxaml-platform%2Fbinding-markup-extension.md&_a=contents) | HandedOffSuccess | [Details](#0358443abbfb753ace9276f1cca8dfa0a47455087834)
+ [windows-apps-src\get-started\get-started-tutorial-game-js2d.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/9d25fe22e134aaa7d3c39f0e9fc80adce6cd247d?path=windows-apps-src%2Fget-started%2Fget-started-tutorial-game-js2d.md&_a=contents) | HandedOffSuccess | [Details](#a83f7b37ee84d87bae0285a987628d14cfab1d692674)
 
 ## Item Details
-##### <a name='0358443abbfb753ace9276f1cca8dfa0a47455087834'></a> Source: [windows-apps-src\xaml-platform\binding-markup-extension.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/993511baef4e3b167d2c1bcb02da6434e83ed3de?path=windows-apps-src%2Fxaml-platform%2Fbinding-markup-extension.md&_a=contents)
+##### <a name='a83f7b37ee84d87bae0285a987628d14cfab1d692674'></a> Source: [windows-apps-src\get-started\get-started-tutorial-game-js2d.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/9d25fe22e134aaa7d3c39f0e9fc80adce6cd247d?path=windows-apps-src%2Fget-started%2Fget-started-tutorial-game-js2d.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/680d6d7dce7b00e16f4b9adcbbb9f650fbf4fddf?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fbinding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ru-ru.xlf&_a=contents)
-* Handoff Datetime: 2017-02-09 18:37:16
+* Handoff File: [get-started-tutorial-game-js2d.18b228bd0b0e5df38f6490299b439e7ee77d1a8b.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/5c9534a31fa2b9272a1505cc82516ef30c0016b6?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fget-started-tutorial-game-js2d.18b228bd0b0e5df38f6490299b439e7ee77d1a8b.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2017-02-09 22:37:26
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,11 +21,6 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\xaml-platform\binding-markup-extension.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/2f1ac4a1c1d944102739e9b403fc5aad0446f631?path=windows-apps-src%2Fxaml-platform%2Fbinding-markup-extension.md&_a=contents)
-* Current Handback File: [binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4f4d3f9c88983440830197093d5122e9353c13d4?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fbinding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ru-ru.xlf&_a=contents)
-* Current Handback Datetime: 2016-11-30 15:19:56
-* Bilingual File: [binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4f4d3f9c88983440830197093d5122e9353c13d4?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fbinding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ru-ru.xlf&_a=contents)
-* Bilingual Datetime: 2016-11-30 15:25:20
 * [Back to Top](#report-top)
 
 
