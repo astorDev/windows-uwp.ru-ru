@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: "Используйте этот метод в API отправки Магазина Windows для обновления существующей отправки приложения."
 title: "Обновление отправки приложения с помощью API отправки Магазина Windows"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API отправки Магазина Windows, отправка приложения, обновление"
 translationtype: Human Translation
-ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
-ms.openlocfilehash: ec533c5a021d006787a7d217fa7f5eb98835fdd3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: df52b5de7751d8428a92bd3892f91159c5fdd518
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -280,7 +287,7 @@ Content-Type: application/json
 <span/>
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные разделы
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
 * [Получение отправки приложения](get-an-app-submission.md)
@@ -288,9 +295,4 @@ Content-Type: application/json
 * [Подтверждение отправки приложения](commit-an-app-submission.md)
 * [Удаление отправки приложения](delete-an-app-submission.md)
 * [Получение состояния отправки приложения](get-status-for-an-app-submission.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

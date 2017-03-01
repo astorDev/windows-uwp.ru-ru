@@ -1,21 +1,28 @@
 ---
 author: Jwmsft
-Description: "Элемент выбора даты — это стандартизованный способ, позволяющий пользователям выбирать локализованное значение даты с помощью сенсорного ввода, мыши или клавиатуры."
+Description: "Управляющий элемент выбора даты — это стандартизованный способ, позволяющий пользователям выбирать локализованное значение даты с помощью сенсорного ввода, мыши или клавиатуры."
 title: "Управляющий элемент выбора даты"
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 76d5cd756f462ebaad5a200cf4bcf7f4076e4652
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 19551174cebd33785ac21910b52adf31e354373b
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="date-picker"></a>Управляющий элемент выбора даты
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Элемент выбора даты — это стандартизованный способ, позволяющий пользователям выбирать локализованное значение даты с помощью сенсорного ввода, мыши или клавиатуры. 
+Управляющий элемент выбора даты — это стандартизованный способ, позволяющий пользователям выбирать локализованное значение даты с помощью сенсорного ввода, мыши или клавиатуры. 
 
 <div class="important-apis" >
 <b>Важные API</b><br/>
@@ -65,9 +72,4 @@ birthDatePicker.Header = "Date of birth";
 - [Элемент выбора даты в календаре](calendar-date-picker.md)
 - [Представление календаря](calendar-view.md)
 - [Элемент выбора времени](time-picker.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

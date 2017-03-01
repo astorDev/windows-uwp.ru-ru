@@ -5,13 +5,20 @@ ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: "Требования к специальным возможностям отображения текста"
 label: Accessible text requirements
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: f36c6a8c191f48c6fb04820c19a98891e46ecf9d
-ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c1decefe507ccebbaee1055426fbde06eb9670e7
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Требования к специальным возможностям отображения текста  
+# <a name="accessible-text-requirements"></a>Требования к специальным возможностям отображения текста  
 
 
 
@@ -20,10 +27,10 @@ ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>
-## Коэффициенты контрастности  
+## <a name="contrast-ratios"></a>Коэффициенты контрастности  
 Хотя у пользователей всегда есть возможность переключиться в режим высокой контрастности, с точки зрения дизайна текста в вашем приложении её стоит рассматривать как крайний шаг. Имеет смысл удостовериться, что текст вашего приложения соответствует рекомендациям по уровню контрастности между текстом и фоном. Оценка уровня контрастности основана на детерминированных методах, которые не учитывают оттенок цвета. Например, если у вас имеется красный текст на зеленом фоне, то этот текст может оказаться нечитабельным для людей, страдающих дальтонизмом. Проверка и исправление коэффициента контрастности поможет избежать подобных проблем.
 
-За основу приведенных здесь рекомендаций по контрастности текста взяты стандарты специальных возможностей в Интернете [G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](http://go.microsoft.com/fwlink/p/?linkid=221823). Данное руководство приведено в спецификации консорциума W3C *Методики для WCAG2.0*.
+За основу приведенных здесь рекомендаций по контрастности текста взяты стандарты специальных возможностей в Интернете [G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](http://go.microsoft.com/fwlink/p/?linkid=221823). Данное руководство приведено в спецификации консорциума W3C *Методики для WCAG 2.0*.
 
 Чтобы видимый текст соответствовал требованиям специальных возможностей, коэффициент его контрастности должен составлять не менее 4,5:1 по отношению к фону. В число исключений входят логотипы и несущественный текст, например текст, являющийся частью неактивного компонента пользовательского интерфейса.
 
@@ -32,17 +39,17 @@ ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
 Проверьте допустимость контрастности видимого текста с помощью средств измерения цветового контраста. Сведения о средствах измерения коэффициента контрастности см. в разделе [Методики WCAG 2.0 G18 (Раздел ресурсов)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
 
 > [!NOTE]
-> Некоторые средства, перечисленные в методиках для WCAG2.0 G18, нельзя интерактивно использовать с приложениями UWP. Вам может понадобиться вручную ввести значения цвета фона и переднего плана в средство или же сделать снимки экрана для пользовательского интерфейса вашего приложения и применить к ним средство измерения коэффициента контрастности.
+> Некоторые средства, перечисленные в методиках для WCAG 2.0 G18, нельзя интерактивно использовать с приложениями UWP. Вам может понадобиться вручную ввести значения цвета фона и переднего плана в средство или же сделать снимки экрана для пользовательского интерфейса вашего приложения и применить к ним средство измерения коэффициента контрастности.
 
 <span id="Text_element_roles"/>
 <span id="text_element_roles"/>
 <span id="TEXT_ELEMENT_ROLES"/>
-## Роли текстового элемента  
+## <a name="text-element-roles"></a>Роли текстового элемента  
 Приложение UWP может использовать следующие элементы по умолчанию (обычно они называются *текстовыми элементами* или *элементами управления Textedit*):
 
-* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652): роль— [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652): роль — [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 * [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683): роль — [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) (и класс переполнения [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)): роль— [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) (и класс переполнения [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)): роль — [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 * [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548): роль — [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 
 Когда элемент управления сообщает, что имеет роль [**Правка**](https://msdn.microsoft.com/library/windows/apps/BR209182), специальные возможности предполагают наличие у пользователей способов изменения этих значений. Поэтому если вы поместите статический текст в элемент [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), вы неправильно сообщите пользователю специальных возможностей о роли (а значит, и о структуре) вашего приложения.
@@ -52,7 +59,7 @@ ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
 <span id="Auto-suggest_accessibility"/>
 <span id="auto-suggest_accessibility"/>
 <span id="AUTO-SUGGEST_ACCESSIBILITY"/>
-## Доступность автозаполнения  
+## <a name="auto-suggest-accessibility"></a>Доступность автозаполнения  
 Если пользователь вводит данные в поле и появляется список предложений, это называется автозаполнением. Такая функция используется для поля **Кому:** сообщения, поля поиска Кортаны в Windows, поля ввода URL-адреса в Microsoft Edge, поля ввода расположения в приложении "Погода" и т. д. Если вы используете XAML-элемент [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) или встроенные элементы управления HTML, эта функция уже реализована по умолчанию. Чтобы предоставить доступ к этой функции, необходимо связать поле ввода и список. Это описано в разделе [Реализация автозаполнения](#implementing_auto-suggest).
 
 Экранный диктор был обновлен, чтобы использовать эту функцию со специальным режимом предложений. Если поле и список правильно связаны, пользователи:
@@ -69,7 +76,7 @@ _Пример списка вариантов_
 <span id="Implementing_auto-suggest"/>
 <span id="implementing_auto-suggest"/>
 <span id="IMPLEMENTING_AUTO-SUGGEST"/>
-### Реализация автозаполнения  
+### <a name="implementing-auto-suggest"></a>Реализация автозаполнения  
 Чтобы предоставить доступ к этой функции, необходимо связать поле ввода и список в дереве автоматизации пользовательского интерфейса (UIA). Это происходит с помощью свойства [UIA_ControllerForPropertyId](https://msdn.microsoft.com/windows/desktop/ee684017) для классических приложений или свойства [ControlledPeers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) для приложений UWP.
 
 На высоком уровне существует два типа автозаполнения.
@@ -86,10 +93,10 @@ _Пример с выделением по умолчанию_
 ![Список без выделения по умолчанию](images/autosuggest-no-default-selection.png)<br/>
 _Пример без выделения по умолчанию_
 
-### Реализация XAML  
+### <a name="xaml-implementation"></a>Реализация XAML  
 Если вы используете XAML-элемент [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) по умолчанию, то все уже реализовано. Если вы реализуете собственную функцию автозаполнения с помощью [**TextBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox) и списка, необходимо настроить его как [**AutomationProperties.ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) в элементе **TextBox**. Необходимо вызывать событие **AutomationPropertyChanged** свойства [**ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) при каждом добавлении и удалении этого свойства, а также вызывать собственные события [**SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) или [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) в зависимости от типа сценария, описанного ранее.
 
-### Реализация HTML  
+### <a name="html-implementation"></a>Реализация HTML  
 Если вы применяете встроенные элементы управления в HTML, то модель автоматизации пользовательского интерфейса уже реализована. Ниже приведен пример автоматической реализации.
 
 ``` HTML
@@ -105,13 +112,13 @@ _Пример без выделения по умолчанию_
 <span id="Text_in_graphics"/>
 <span id="text_in_graphics"/>
 <span id="TEXT_IN_GRAPHICS"/>
-## Текст в графике  
+## <a name="text-in-graphics"></a>Текст в графике  
 По возможности избегайте включения текста в графику. Например, любой текст, помещаемый в файл источника изображения, который воспроизводится в приложении в качестве элемента [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752), не является автоматически доступным (или доступным для чтения) для специальных возможностей. Если обязательно использовать текст в графике, убедитесь, что значение [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770), которое вы предоставляете как эквивалент замещающему тексту, содержит нужный текст или краткую сводку о смысле текста. Те же принципы актуальны при создании текстовых символов из векторов как часть [**пути**](https://msdn.microsoft.com/library/windows/apps/BR243355) или с использованием [**глифов**](https://msdn.microsoft.com/library/windows/apps/BR209921).
 
 <span id="Text_font_size"/>
 <span id="text_font_size"/>
 <span id="TEXT_FONT_SIZE"/>
-## Размер шрифта  
+## <a name="text-font-size"></a>Размер шрифта  
 У большинства читателей сложности при чтении текста в приложении возникают просто потому, что размер шрифта в тексте слишком мал. Эту проблему можно решить простым увеличением размера шрифта в элементах пользовательского интерфейса. Кроме того, в Windows существуют специальные возможности, с помощью которых пользователи могут изменять размеры представления приложений или размер отображения вообще.
 
 * Один из параметров специальных возможностей позволяет пользователям изменять значение количества точек на дюйм на основном дисплее. Этот параметр доступен в разделе **Увеличение изображений на экране** страницы **Специальные возможности**, который перенаправляет вас в пользовательский интерфейс **панели управления** в раздел **Оформление и персонализация** / **Экран**. Набор доступных вариантов размера может быть разным, так как он зависит от возможностей устройства отображения.
@@ -120,8 +127,8 @@ _Пример без выделения по умолчанию_
 <span id="Text_scale_factor"/>
 <span id="text_scale_factor"/>
 <span id="TEXT_SCALE_FACTOR"/>
-## Коэффициент масштабирования текста  
-Разные текстовые элементы и элементы управления имеют свойство [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled). По умолчанию оно имеет значение **true**. Если значение свойства— **true**, настройка **Масштабирование текста** на телефоне (в разделе **Параметры &gt; Специальные возможности**) позволяет увеличить размер текста в этом элементе. Масштабирование применяется к тексту с малым значением **FontSize** в большей степени, чем к тексту с большим значением **FontSize**. Чтобы отключить автоматическое увеличение шрифта, присвойте свойству **IsTextScaleFactorEnabled** элемента значение **false**. Попробуйте эту разметку, измените параметр телефона **Размер текста** и посмотрите, как изменятся элементы **TextBlock**.
+## <a name="text-scale-factor"></a>Коэффициент масштабирования текста  
+Разные текстовые элементы и элементы управления имеют свойство [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled). По умолчанию оно имеет значение **true**. Если значение свойства — **true**, настройка **Масштабирование текста** на телефоне (в разделе **Параметры &gt; Специальные возможности**) позволяет увеличить размер текста в этом элементе. Масштабирование применяется к тексту с малым значением **FontSize** в большей степени, чем к тексту с большим значением **FontSize**. Чтобы отключить автоматическое увеличение шрифта, присвойте свойству **IsTextScaleFactorEnabled** элемента значение **false**. Попробуйте эту разметку, измените параметр телефона **Размер текста** и посмотрите, как изменятся элементы **TextBlock**.
 
 XAML
 ```xml
@@ -163,15 +170,10 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [**TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) и производные классы
 
 <span id="related_topics"/>
-## Связанные темы  
+## <a name="related-topics"></a>Связанные темы  
 * [Специальные возможности](accessibility.md)
 * [Основные сведения о специальных возможностях](basic-accessibility-information.md)
 * [Пример отображения текста XAML](http://go.microsoft.com/fwlink/p/?linkid=238579)
 * [Образец редактирования текста XAML](http://go.microsoft.com/fwlink/p/?linkid=251417)
 * [Пример реализации специальных возможностей в XAML](http://go.microsoft.com/fwlink/p/?linkid=238570) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

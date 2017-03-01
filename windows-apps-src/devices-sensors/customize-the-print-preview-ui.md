@@ -3,17 +3,24 @@ author: DBirtolo
 ms.assetid: 88132B6F-FB50-4B03-BC21-233988746230
 title: "Настройка пользовательского интерфейса предварительного просмотра"
 description: "В этом разделе описывается настройка параметров печати в пользовательском интерфейсе предварительного просмотра."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: dd64266c2015e1bb640cf159b0836b9819cf7845
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fa1a8c487d3fef2b0caa322d81c0ebdbdfe3865f
+ms.lasthandoff: 02/07/2017
 
 ---
-# Настройка пользовательского интерфейса предварительного просмотра
+# <a name="customize-the-print-preview-ui"></a>Настройка пользовательского интерфейса предварительного просмотра
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Важные API **
+**Важные API**
 
 -   [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489)
 -   [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325)
@@ -25,7 +32,7 @@ ms.openlocfilehash: dd64266c2015e1bb640cf159b0836b9819cf7845
 
  
 
-## Настройка параметров печати
+## <a name="customize-print-options"></a>Настройка параметров печати
 
 По умолчанию в пользовательском интерфейсе предварительного просмотра отображаются параметры печати [**ColorMode**](https://msdn.microsoft.com/library/windows/apps/BR226478), [**Copies**](https://msdn.microsoft.com/library/windows/apps/BR226479) и [**Orientation**](https://msdn.microsoft.com/library/windows/apps/BR226486). Кроме них существует несколько других распространенных параметров принтера, которые можно добавить в пользовательский интерфейс предварительного просмотра:
 
@@ -48,7 +55,7 @@ ms.openlocfilehash: dd64266c2015e1bb640cf159b0836b9819cf7845
 
  
 
-### Определение параметров для отображения
+### <a name="define-the-options-to-display"></a>Определение параметров для отображения
 
 При загрузке экрана приложения выполняется регистрация для контракта «Печать». Часть этой регистрации включает в себя определение обработчика событий [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597). Код для настройки параметров, отображаемых в пользовательском интерфейсе предварительного просмотра, добавляется в обработчик событий **PrintTaskRequested**.
 
@@ -94,7 +101,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 
 **Важно!** Вызов метода [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() удаляет все параметры печати из пользовательского интерфейса предварительного просмотра, включая ссылку **Дополнительные параметры**. Не забудьте добавить параметры, которые требуется показывать в пользовательском интерфейсе предварительного просмотра.
 
-### Определение параметров по умолчанию
+### <a name="specify-default-options"></a>Определение параметров по умолчанию
 
 Можно также задать значения по умолчанию для параметров в пользовательском интерфейсе предварительного просмотра. В следующей строке кода из предыдущего примера устанавливается значение по умолчанию для параметра [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483):
 
@@ -103,7 +110,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
          printTask.Options.MediaSize = PrintMediaSize.NorthAmericaLegal;
 ```         
 
-## Добавление новых параметров печати
+## <a name="add-new-print-options"></a>Добавление новых параметров печати
 
 В этом разделе показано, как создать новый параметр печати, определить список значений, поддерживаемых параметром, а затем добавить параметр к пользовательскому интерфейсу предварительного просмотра. Добавьте новый параметр печати в обработчик событий [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597), как и в предыдущем разделе.
 
@@ -155,7 +162,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-Эти параметры появляются в пользовательском интерфейсе предварительного просмотра в порядке их добавления— первый параметр отображается вверху окна. В данном примере настраиваемый параметр добавляется последним, поэтому он отображается в нижней части списка параметров. Однако его можно поместить в любое место списка; необязательно добавлять настраиваемые параметры печати последними.
+Эти параметры появляются в пользовательском интерфейсе предварительного просмотра в порядке их добавления — первый параметр отображается вверху окна. В данном примере настраиваемый параметр добавляется последним, поэтому он отображается в нижней части списка параметров. Однако его можно поместить в любое место списка; необязательно добавлять настраиваемые параметры печати последними.
 
 Когда пользователь изменяет выбранную настройку в вашем настраиваемом параметре, нужно обновить изображение предварительного просмотра. Вызовите метод [**InvalidatePreview**](https://msdn.microsoft.com/library/windows/apps/Hh702146) для перерисовки изображения в пользовательском интерфейсе предварительного просмотра, как показано ниже.
 
@@ -179,15 +186,9 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 }
 ```
 
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 * [Руководство по проектированию печати](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Видео c конференции Build 2015: разработка приложений для печати в Windows10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [//Видео c конференции Build 2015: разработка приложений для печати в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [Пример печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

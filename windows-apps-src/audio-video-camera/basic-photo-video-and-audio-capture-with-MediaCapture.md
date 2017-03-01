@@ -1,11 +1,18 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: 66d0c3dc-81f6-4d9a-904b-281f8a334dd0
 description: "В этой статье описан самый простой способ записи фотографий и видео с помощью класса MediaCapture."
 title: "Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9cbe7948767ba45e8ef495a9349621969957ab04
-ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8918b120394def3ba12d5932dc66cb38279cc124
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -59,7 +66,7 @@ ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
 
 Создайте объект [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.InMemoryRandomAccessStream) и вызовите метод [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CapturePhotoToStreamAsync), чтобы записать фотографию в поток, передав методу поток и объект [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties), указывающий формат изображения. Вы можете создавать пользовательские свойства кодирования, инициализируя объект самостоятельно, но класс предоставляет статические методы, такие как [**ImageEncodingProperties.CreateJpeg**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties.CreateJpeg), для распространенных форматов кодирования. Затем создайте файловый поток для выходного файла, вызвав метод [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile.OpenAsync). Создайте объект [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder) для декодирования изображения из потока в памяти, а затем создайте [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder) для кодировки изображения в файл, вызвав метод [**CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.CreateForTranscodingAsync).
 
-Вы также можете создать объект [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapPropertySet) и затем вызвать метод [**SetPropertiesAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/br226252.aspx) кодировщика изображения, чтобы добавить метаданные фотографии в файл изображения. Подробнее о свойствах кодирования см. в разделе [**Метаданные изображения**](image-metadata.md). Для большинства приложений важно правильно определять ориентацию приложения. Подробнее: [**Обработка ориентации устройства и экрана с помощью MediaCapture**](handle-device-orientation-with-mediacapture.md).
+Вы также можете создать объект [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapPropertySet) и затем вызвать метод [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252.aspx) кодировщика изображения, чтобы добавить метаданные фотографии в файл изображения. Подробнее о свойствах кодирования см. в разделе [**Метаданные изображения**](image-metadata.md). Для большинства приложений важно правильно определять ориентацию приложения. Подробнее: [**Обработка ориентации устройства и экрана с помощью MediaCapture**](handle-device-orientation-with-mediacapture.md).
 
 Наконец, вызовите метод [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.FlushAsync) объекта кодировщика, чтобы перекодировать фотографию из потока в памяти в файл.
 
@@ -133,10 +140,5 @@ ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
 * [Обработка ориентации устройства с помощью MediaCapture](handle-device-orientation-with-mediacapture.md)
 * [Создание, редактирование и сохраните точечных рисунков](imaging.md)
 * [Файлы, папки и библиотеки](https://msdn.microsoft.com/windows/uwp/files/index)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

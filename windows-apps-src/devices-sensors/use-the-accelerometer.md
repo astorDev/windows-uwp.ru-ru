@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: "Использование акселерометра"
 description: "Узнайте, как использовать акселерометр для реагирования на движения пользователя."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8f8236a68fd7628f1f53eebc13731a72414e3217
+ms.lasthandoff: 02/07/2017
 
 ---
-# Использование акселерометра
+# <a name="use-the-accelerometer"></a>Использование акселерометра
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Важные API **
+**Важные API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Accelerometer (акселерометр)**](https://msdn.microsoft.com/library/windows/apps/BR225687)
@@ -23,17 +30,17 @@ ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
 
 Простое игровое приложение может использовать в качестве устройства ввода единственный датчик, например акселерометр. Такие приложения обычно используют входные данные только по одной или двум осям, но могут также использовать событие встряхивания как дополнительный источник входных данных.
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 Вы должны быть знакомы с языком XAML, Microsoft Visual C# и событиями.
 
 Используемые вами устройство или эмулятор должны поддерживать акселерометр.
 
-## Создание простого приложения акселерометра
+## <a name="create-a-simple-accelerometer-app"></a>Создание простого приложения акселерометра
 
 Данный раздел состоит из двух подразделов. В первом подразделе описаны необходимые этапы создания простого приложения акселерометра с нуля. В следующем подразделе описано приложение, которое вы только что создали.
 
-### Инструкции
+### <a name="instructions"></a>Инструкции
 
 -   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#**.
 
@@ -67,7 +74,7 @@ ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
             // Sensor and dispatcher variables
             private Accelerometer _accelerometer;
 
-            // This event handler writes the current accelerometer reading to 
+            // This event handler writes the current accelerometer reading to
             // the three acceleration text blocks on the app' s main page.
 
             private async void ReadingChanged(object sender, AccelerometerReadingChangedEventArgs e)
@@ -136,7 +143,7 @@ ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
 
 -   Остановите приложение, вернувшись в Visual Studio и нажав клавиши Shift+F5 или выбрав **Отладка** &gt; **Остановить отладку**.
 
-### Объяснение
+### <a name="explanation"></a>Объяснение
 
 Из предыдущего примера видно, какой небольшой объем кода требуется написать, чтобы включить в ваше приложение обработку входных данных акселерометра.
 
@@ -146,7 +153,7 @@ ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
 _accelerometer = Accelerometer.GetDefault();
 ```
 
-Приложение устанавливает интервал передачи данных в методе **MainPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16миллисекунд (что приблизительно соответствует частоте обновления 60Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
+Приложение устанавливает интервал передачи данных в методе **MainPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16 миллисекунд (что приблизительно соответствует частоте обновления 60 Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
 
 ```csharp
 uint minReportInterval = _accelerometer.MinimumReportInterval;
@@ -157,7 +164,7 @@ _accelerometer.ReportInterval = reportInterval;
 Новые данные от акселерометра принимаются в методе **ReadingChanged**. Каждый раз, когда драйвер датчика получает от датчика новые данные, он передает их вашему приложению с помощью этого обработчика событий. Приложение регистрирует этот обработчик событий в следующей строке:
 
 ```csharp
-_accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer, 
+_accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer,
 AccelerometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -168,13 +175,7 @@ AccelerometerReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="15" Margin="70,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFF2EEEE"/>
  <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="15" Margin="70,80,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFFFF8F8"/>
 ```
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Пример работы с акселерометром](http://go.microsoft.com/fwlink/p/?linkid=241377)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

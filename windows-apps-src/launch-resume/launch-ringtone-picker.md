@@ -2,13 +2,21 @@
 author: TylerMSFT
 title: "Схема ms-tonepicker"
 description: "В этом разделе описывается схема URI ms-tonepicker и порядок ее использования для отображения средства выбора звуковых сигналов с целью выбора звукового сигнала, сохранения звукового сигнала и получения понятного имени звукового сигнала."
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 0c17e4fb-7241-4da9-b457-d6d3a7aefccb
 translationtype: Human Translation
-ms.sourcegitcommit: 4c7037cc91603af97a64285fd6610445de0523d6
-ms.openlocfilehash: ef605f9d749148240ecee5e0ecfd473f8440ca25
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: bc3a34d16f8245ef2e932c46e76ce965ce8755b7
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Выбор и сохранение звуковых сигналов с помощью схемы URI ms-tonepicker
+# <a name="choose-and-save-tones-using-the-ms-tonepicker-uri-scheme"></a>Выбор и сохранение звуковых сигналов с помощью схемы URI ms-tonepicker
 
 В этом разделе описывается, как использовать схему URI **ms tonepicker:**. Эту схему URI можно использовать для указанных ниже целей.
 - Определение доступности средства выбора звуковых сигналов на устройстве.
@@ -16,13 +24,13 @@ ms.openlocfilehash: ef605f9d749148240ecee5e0ecfd473f8440ca25
 - Отображение средства сохранения звукового сигнала, которое в качестве входных данных получает маркер звукового файла и сохраняет его на устройстве. Сохраненные звуковые сигналы становятся доступными через средство выбора звуковых сигналов. Пользователи могут также присвоить звуковому сигналу понятное имя.
 - Преобразование маркера звукового сигнала в его понятное имя.
 
-## Справка по схеме URI ms-tonepicker:
+## <a name="ms-tonepicker-uri-scheme-reference"></a>Справка по схеме URI ms-tonepicker:
 
 Эта схема URI не передает аргументы через строку схемы URI; вместо этого аргументы передаются через [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx). Во всех строках учитывается регистр.
 
 В приведенных ниже разделах указано, какие аргументы должны передаваться для выполнения указанной задачи.
 
-## Задача: определение доступности средства выбора звуковых сигналов на устройстве
+## <a name="task-determine-if-the-tone-picker-is-available-on-the-device"></a>Задача: определение доступности средства выбора звуковых сигналов на устройстве
 ```cs
 var status = await Launcher.QueryUriSupportAsync(new Uri("ms-tonepicker:"),     
                                      LaunchQuerySupportType.UriForResults,
@@ -34,7 +42,7 @@ if (status != LaunchQuerySupportStatus.Available)
 }
 ```
 
-## Задача: отображение средства выбора звукового сигнала
+## <a name="task-display-the-tone-picker"></a>Задача: отображение средства выбора звукового сигнала
 
 Ниже перечислены аргументы, которые можно передавать для отображения средства выбора звуковых сигналов.
 
@@ -44,7 +52,7 @@ if (status != LaunchQuerySupportStatus.Available)
 | CurrentToneFilePath | string | нет | Маркер существующего звукового сигнала. | Звуковой сигнал, который должен отображаться как текущий в средстве выбора звуковых сигналов. Если это значение не задано, по умолчанию выбирается первый звуковой сигнал в списке.<br>Строго говоря, это не является путем к файлу. Подходящее значение для параметра `CurrenttoneFilePath` можно получить из значения `ToneToken`, возвращаемого средством выбора звуковых сигналов.  |
 | TypeFilter | string | нет | "Ringtones", "Notifications", "Alarms", "None" | Выбор звуковых сигналов, добавляемых в средство выбора. Если никакой фильтр не задан, отображаются все звуковые сигналы. |
 
-<br>Значения, возвращаемые в [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
+<br>Значения, возвращаемые в [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx):
 
 | Возвращаемые значения | Тип | Возможные значения | Описание |
 |--------------|------|-------|-------------|
@@ -80,7 +88,7 @@ if (result.Status == LaunchUriStatus.Success)
 }
 ```
 
-## Задача: отображение средства сохранения звуковых сигналов
+## <a name="task-display-the-tone-saver"></a>Задача: отображение средства сохранения звуковых сигналов
 
 Ниже перечислены аргументы, которые можно передавать для отображения средства сохранения звуковых сигналов.
 
@@ -90,7 +98,7 @@ if (result.Status == LaunchUriStatus.Success)
 | ToneFileSharingToken | string | да | Метка [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) для общего доступа к сохраняемому файлу мелодии звонка. | Сохранение определенного файла звукового сигнала в качестве мелодии звонка. Поддерживаемые типы содержимого для файла: звук mpeg и x-ms-wma. |
 | DisplayName | string | нет | Понятное имя указанного звукового сигнала. | Задает отображаемое имя для использования при сохранении указанной мелодии звонка. |
 
-<br>Значения, возвращаемые в [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
+<br>Значения, возвращаемые в [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx):
 
 | Возвращаемые значения | Тип | Возможные значения | Описание |
 |--------------|------|-------|-------------|
@@ -144,7 +152,7 @@ if (result.Status == LaunchUriStatus.Success)
  }
 ```
 
-## Задача: преобразование маркера звукового сигнала в его понятное имя
+## <a name="task-convert-a-tone-token-to-its-friendly-name"></a>Задача: преобразование маркера звукового сигнала в его понятное имя
 
 Ниже перечислены аргументы, которые можно передавать для получения понятного имени звукового сигнала:
 
@@ -153,7 +161,7 @@ if (result.Status == LaunchUriStatus.Success)
 | Action | string | да | "GetToneName" | Указывает, что требуется получить понятное имя звукового сигнала. |
 | ToneToken | string | да | Маркер звукового сигнала | Маркер звукового сигнала, для которого требуется получить отображаемое имя. |
 
-<br>Значения, возвращаемые в [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
+<br>Значения, возвращаемые в [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx):
 
 | Возвращаемое значение | Тип | Возможные значения | Описание |
 |--------------|------|-------|-------------|
@@ -194,9 +202,4 @@ using (var connection = new AppServiceConnection())
     }
 }
 ```
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

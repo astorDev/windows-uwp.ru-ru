@@ -1,15 +1,22 @@
 ---
 author: mcleblanc
 description: "В приложениях для Windows используется общий вид и стиль на всех компьютерах, мобильных устройствах и множестве других устройств. Пользовательский интерфейс, ввод и шаблоны взаимодействия очень похожи, и пользователь, использующий приложения на разных устройствах, оценит это."
-title: "Перенос Windows Phone Silverlight в UWP для форм-фактора и взаимодействия с пользователем"
+title: "Перенос с Windows Phone Silverlight на UWP для форм-фактора и взаимодействия с пользователем"
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 71e762410b1c7dbf416e3bb81310d74115938102
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 301f1b55644842225f1b8d040d5b02a035d1940b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  <a name="porting-windows-phone-silverlight-to-uwp-for-form-factor-and-ux"></a>Перенос Windows Phone Silverlight в UWP для форм-фактора и взаимодействия с пользователем
+#  <a name="porting-windows-phone-silverlight-to-uwp-for-form-factor-and-ux"></a>Перенос с Windows Phone Silverlight на UWP для форм-фактора и взаимодействия с пользователем
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -68,10 +75,5 @@ ms.openlocfilehash: 71e762410b1c7dbf416e3bb81310d74115938102
 ## <a name="related-topics"></a>Связанные разделы
 
 * [Сопоставление пространства имен и класса](wpsl-to-uwp-namespace-and-class-mappings.md)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -3,19 +3,26 @@ description: "В этой статье объясняется, как обесп
 title: "Предоставление общего доступа к данным"
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 554a2cd1db0f950b8a04a5d562f6a6ba43f1be23
-ms.openlocfilehash: 8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 59039fbd2cc54c757acabba7f0c981059ef95c56
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Предоставление общего доступа к данным
+# <a name="share-data"></a>Предоставление общего доступа к данным
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этой статье объясняется, как обеспечить поддержку контракта отправки данных в приложении универсальной платформы Windows (UWP). Контракт отправки данных— это простой способ, которым приложения могут быстро предоставлять друг другу общий доступ к данным, например к тексту, ссылкам, фотографиям и видео. Например, пользователю может быть необходимо поделиться со своими друзьями ссылкой на веб-страницу в приложении социальной сети или сохранить ее в приложении для заметок, чтобы вернуться к ней позже.
+В этой статье объясняется, как обеспечить поддержку контракта отправки данных в приложении универсальной платформы Windows (UWP). Контракт отправки данных — это простой способ, которым приложения могут быстро предоставлять друг другу общий доступ к данным, например к тексту, ссылкам, фотографиям и видео. Например, пользователю может быть необходимо поделиться со своими друзьями ссылкой на веб-страницу в приложении социальной сети или сохранить ее в приложении для заметок, чтобы вернуться к ней позже.
 
-## Настройка обработчика событий
+## <a name="set-up-an-event-handler"></a>Настройка обработчика событий
 
 Добавьте обработчик событий [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested), который будет срабатывать при каждом вызове функции общего доступа пользователем. Это может происходить, когда пользователь касается элемента управления в приложении (например, кнопки или команды на панели приложения), или автоматически в определенном сценарии (если, например, пользователь заканчивает уровень и получает рекордный результат).
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: 8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f
 
 [!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
-## Выбор данных
+## <a name="choose-data"></a>Выбор данных
 
 Можно делиться разными типами данных, включая:
 
@@ -42,7 +49,7 @@ ms.openlocfilehash: 8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f
 
 [!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
-## Задание свойств
+## <a name="set-properties"></a>Задание свойств
 
 При подготовке данных пакета к совместному использованию можно установить ряд свойств, дающих дополнительную информацию о содержимом, предназначенном для общего доступа. Благодаря этим свойствам конечное приложение может улучшить взаимодействие с пользователем. Например, предоставление описания может быть полезным, если пользователь предоставляет общий доступ более чем одному приложению. Добавление эскиза при совместном использовании рисунка или ссылки на веб-страницу устанавливает визуальную связь с пользователем. Подробнее об этом см. в разделе [**DataPackagePropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackagePropertySet).
 
@@ -50,21 +57,21 @@ ms.openlocfilehash: 8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f
 
 [!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
-## Запуск пользовательского интерфейса общего доступа
+## <a name="launch-the-share-ui"></a>Запуск пользовательского интерфейса общего доступа
 
 Пользовательский интерфейс для общего доступа предоставляется системой. Чтобы запустить его, вызовите метод [**ShowShareUI**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI).
 
 [!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
-## Обработка ошибок
+## <a name="handle-errors"></a>Обработка ошибок
 
-В большинстве случаев предоставление общего доступа к содержимому—линейный процесс. Тем не менее всегда существует вероятность непредвиденных событий. Например, приложению может потребоваться, чтобы пользователь выбрал содержимое для общего доступа, но при этом пользователь ничего не выбирает. Для обработки таких ситуаций используйте метод [**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String)), который отобразит соответствующее сообщение для пользователя, если что-то пойдет не так.
+В большинстве случаев предоставление общего доступа к содержимому — линейный процесс. Тем не менее всегда существует вероятность непредвиденных событий. Например, приложению может потребоваться, чтобы пользователь выбрал содержимое для общего доступа, но при этом пользователь ничего не выбирает. Для обработки таких ситуаций используйте метод [**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String)), который отобразит соответствующее сообщение для пользователя, если что-то пойдет не так.
 
-## Задержка общего доступа с помощью делегатов
+## <a name="delay-share-with-delegates"></a>Задержка общего доступа с помощью делегатов
 
 Готовить данные для общего доступа сразу не всегда целесообразно. Например, если ваше приложение поддерживает отправку большого файла изображения в нескольких различных графических форматах, то создавать все эти изображения до того, как пользователь сделает свой выбор, малоэффективно.
 
-Чтобы решить эту проблему, [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) может содержать делегат–функцию, которая вызывается, когда принимающее приложение запрашивает данные. Рекомендуется использовать делегат, когда пользователь хочет предоставить общий доступ к ресурсоемким данным.
+Чтобы решить эту проблему, [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) может содержать делегат – функцию, которая вызывается, когда принимающее приложение запрашивает данные. Рекомендуется использовать делегат, когда пользователь хочет предоставить общий доступ к ресурсоемким данным.
 
 <!-- For some reason, this snippet was inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -91,7 +98,7 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 }
 ```
 
-## См. также 
+## <a name="see-also"></a>См. также 
 
 * [Связь между приложениями](index.md)
 * [Получение данных](receive-data.md)
@@ -102,10 +109,5 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 * [FailWithDisplayText](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext.aspx)
 * [ShowShareUi](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.showshareui.aspx)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

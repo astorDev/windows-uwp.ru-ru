@@ -1,22 +1,29 @@
 ---
 author: drewbatgit
-ms.assetid: 
-description: "В данной статье показано, как создавать и планировать мультимедийные вставки, а также управлять ими в приложении воспроизведения мультимедиа."
-title: "Создание и планирование мультимедийных вставок и управление ими"
+ms.assetid: 0309c7a1-8e4c-4326-813a-cbd9f8b8300d
+description: "В этой статье показано, как создавать и планировать мультимедийные вставки, а также управлять ими в приложении воспроизведения мультимедиа."
+title: "Создание, планирование мультимедийных вставок и управление ими"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2e969e53a29a98223f26353a5444ca9d9ebe2641
-ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8d4e9a87009b50538adac2357badc0a7dfe8f88c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Создание и планирование мультимедийных вставок и управление ими
+# <a name="create-schedule-and-manage-media-breaks"></a>Создание, планирование и управление мультимедийными вставками
 
-В данной статье показано, как создавать и планировать мультимедийные вставки, а также управлять ими в приложении воспроизведения мультимедиа. Мультимедийные вставки обычно используются для вставки аудио- или видеорекламы в мультимедийное содержимое. Начиная с Windows 10 версии 1607 можно использовать класс [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager), чтобы легко и быстро добавлять мультимедийные вставки в любой элемент [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem), воспроизводимый с помощью [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer).
+В этой статье показано, как создавать и планировать мультимедийные вставки, а также управлять ими в приложении воспроизведения мультимедиа. Мультимедийные вставки обычно используются для вставки аудио- или видеорекламы в мультимедийное содержимое. Начиная с Windows 10 версии 1607 можно использовать класс [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager), чтобы легко и быстро добавлять мультимедийные вставки в любой элемент [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem), воспроизводимый с помощью [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer).
 
 
 Когда запланирована одна или несколько мультимедийных вставок, система автоматически воспроизводит ваше мультимедийное содержимое в указанный момент во время воспроизведения. **MediaBreakManager** предоставляет события, чтобы приложение могло реагировать на начало и завершение мультимедийных вставок при воспроизведении мультимедиа, а также на случаи, когда вставки пропускаются пользователем. Можно также получить доступ к объекту [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) для ваших мультимедийных вставок, чтобы контролировать такие события, как обновление хода выполнения загрузки и буферизации.
 
-## Планирование мультимедийных вставок
+## <a name="schedule-media-breaks"></a>Планирование мультимедийных вставок
 Каждый объект **MediaPlaybackItem** имеет собственный объект [**MediaBreakSchedule**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule), используемый для настройки мультимедийных вставок, которые будут воспроизводиться при воспроизведении элемента. В первую очередь для использования мультимедийных вставок в своем приложении следует создать объект [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) для основного содержимого воспроизведения. 
 
 [!code-cs[MoviePlaybackItem](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMoviePlaybackItem)]
@@ -51,12 +58,12 @@ ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
 
 [!code-cs[MidrollBreak2](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMidrollBreak2)]
 
-## Пропуск мультимедийных вставок
+## <a name="skip-media-breaks"></a>Пропуск мультимедийных вставок
 Как указано ранее в этой статье, можно задать свойство [**CanSkip**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.CanSkip) объекта **MediaPlaybackItem**, чтобы запретить пользователям пропускать содержимое с помощью встроенных элементов управления. Однако можно в любой момент вызвать из кода метод [**SkipCurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.SkipCurrentBreak), чтобы пропустить текущую вставку.
 
 [!code-cs[SkipButtonClick](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetSkipButtonClick)]
 
-## Обработка событий MediaBreak
+## <a name="handle-mediabreak-events"></a>Обработка событий MediaBreak
 
 Имеется несколько событий, связанных с мультимедийными вставками, которые можно зарегистрировать для выполнения действий на основе изменения состояния мультимедийных вставок.
 
@@ -82,12 +89,12 @@ ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
 
 [!code-cs[BreakSeekedOver](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSeekedOver)]
 
-## Получение информации о текущей мультимедийной вставке
+## <a name="get-information-about-the-current-media-break"></a>Получение информации о текущей мультимедийной вставке
 Как упоминалось ранее в этой статье, свойство [**CurrentItemIndex**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.CurrentItemIndex) можно использовать для определения текущего воспроизводимого элемента мультимедиа из мультимедийной вставки. Можно периодически проверять текущий воспроизводимый элемент для обновления пользовательского интерфейса. Обязательно сначала проверяйте, не имеет ли свойство [**CurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.CurrentBreak) значение NULL. Если свойство имеет значение NULL, в настоящее время никакая мультимедийная вставка не воспроизводится.
 
 [!code-cs[GetCurrentBreakItemIndex](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetGetCurrentBreakItemIndex)]
 
-## Доступ к текущему сеансу воспроизведения
+## <a name="access-the-current-playback-session"></a>Доступ к текущему сеансу воспроизведения
 Объект [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) использует класс **MediaPlayer** для предоставления данных и событий, связанных с текущим воспроизводимым мультимедийным содержимым. [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) также имеет объект **MediaPlaybackSession**, к которому можно обращаться для получения данных и событий, связанных с конкретным воспроизводимым содержимым мультимедийной вставки. Сведения, которые можно получить из сеанса воспроизведения, включают в себя текущее состояние воспроизведения (воспроизводится или приостановлено) и текущее положение воспроизведения в рамках содержимого. Свойства [**NaturalVideoWidth**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoWidth) и [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoHeight), а также [**NaturalVideoSizeChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoSizeChanged) можно использовать для настройки пользовательского интерфейса видео, если мультимедийная вставка и основное содержимое имеют разное соотношение сторон. Можно также получать такие события, как [**BufferingStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingStarted), [**BufferingEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingEnded) и [**DownloadProgressChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.DownloadProgressChanged), которые предоставляют ценную телеметрии о производительности приложения.
 
 В следующем примере регистрируется обработчик **события BufferingProgressChanged**; в обработчике события пользовательский интерфейс обновляется для отображения текущего хода выполнения буферизации.
@@ -96,7 +103,7 @@ ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
 
 [!code-cs[BufferingProgressChanged](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBufferingProgressChanged)]
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 * [Воспроизведение мультимедиа](media-playback.md)
 * [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Ручное управление системными элементами управления воспроизведением мультимедиа](system-media-transport-controls.md)
@@ -107,10 +114,5 @@ ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: "Используйте примеры кода на языке Python, приведенные в этом разделе, чтобы более подробно ознакомиться с работой API отправки Магазина Windows."
 title: "Примеры кода Python для API отправки Магазина Windows"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API отправки Магазина Windows, примеры кода"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: 1f8d415744d53120191f02a17aed4b7b04fa2f57
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f787fd042982e4e5a965c9bb77ef72a8dabb6ae9
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -88,9 +95,4 @@ ms.openlocfilehash: 1f8d415744d53120191f02a17aed4b7b04fa2f57
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

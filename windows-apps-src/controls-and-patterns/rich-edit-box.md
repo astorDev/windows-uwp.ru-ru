@@ -1,13 +1,20 @@
 ---
 author: Jwmsft
-Description: "Элемент управления RichEditBox можно использовать для ввода и правки документов в формате RTF, содержащих форматированный текст, изображения и гиперссылки. Элемент управления RichEditBox можно сделать доступным только для чтения, задав для его свойства IsReadOnly значение true."
+Description: "Элемент управления RichEditBox можно использовать для ввода и правки документов в формате RTF, содержащих форматированный текст, изображения и гиперссылки. Элемент управления RichEditBox можно сделать доступным только для чтения, задав его свойству IsReadOnly значение true."
 title: "Элемент управления RichEditBox"
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: a8e8e42c87809eb08685fb137a242b1177b824b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ae0fab5d09779ccfcc1c9b15e29921c07f0f6c6d
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="rich-edit-box"></a>Блок форматируемого текста
@@ -203,17 +210,12 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 -   Не используйте поле с форматом там, где достаточно элемента управления обычного текста.
 
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Связанные статьи
 
-* [Элементы управления текстом](text-controls.md)
+* [Текстовые элементы управления](text-controls.md)
 - [Руководство по проверке орфографии](spell-checking-and-prediction.md)
 - [Добавление поиска](search.md)
 - [Руководство по текстовому вводу](text-controls.md)
 - [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Класс Windows.UI.Xaml.Controls PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

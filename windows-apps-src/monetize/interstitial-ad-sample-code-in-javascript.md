@@ -1,12 +1,18 @@
 ---
 author: mcleanbyron
 ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
-description: "Узнайте, как запускать промежуточную рекламу с помощью JavaScript И HTML."
+description: "Узнайте, как запускать промежуточную рекламу с помощью JavaScript и HTML."
 title: "Пример кода промежуточной рекламы в JavaScript"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, реклама, рекламные объявления, промежуточная, javascript, пример кода"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: 5d7f81e16f3ecdc73fba5010cfbc6082a19cd24c
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 91a54bdd2e41b3e7df0ee0aad32448ab9ed66ac0
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -47,9 +53,4 @@ ms.openlocfilehash: 5d7f81e16f3ecdc73fba5010cfbc6082a19cd24c
 * [Примеры рекламы на GitHub](http://aka.ms/githubads)
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

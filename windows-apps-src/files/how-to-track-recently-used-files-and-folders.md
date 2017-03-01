@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: "Отслеживание недавно использовавшихся файлов и папок"
 description: "Отслеживайте файлы, к которым часто обращается пользователь, добавляя их в список недавно использованных файлов (MRU)."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c8f8cd6681b4e00e8430d7ddfacdd8fad395365c
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="track-recently-used-files-and-folders"></a>Отслеживание недавно использовавшихся файлов и папок
@@ -13,7 +20,7 @@ ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Важные API **
+**Важные API**
 
 - [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458)
 - [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369)
@@ -103,9 +110,4 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,46 +3,53 @@ author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: "Узнайте об известных проблемах текущего выпуска библиотек Microsoft Advertising в пакете Microsoft Store Services SDK."
 title: "Известные проблемы для библиотек Microsoft Advertising"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, реклама, рекламные объявления, известные проблемы"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 54e3361ce9fdfc67495d41903b8b291931b7ee9f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Известные проблемы для библиотек Microsoft Advertising
+# <a name="known-issues-for-the-microsoft-advertising-libraries"></a>Известные проблемы для библиотек Microsoft Advertising
 
 
 
 
 В этом разделе содержится список известных проблем в текущем выпуске библиотек Microsoft Advertising в Microsoft Store Services SDK (для приложений UWP) и Microsoft Advertising SDK для Windows и Windows Phone 8.x (для приложений Windows 8.1 и Windows Phone 8.x).
 
-## Для установки пакета Microsoft Store Services SDK требуются инструменты Visual Studio для универсальных приложений для Windows.
+## <a name="installation-of-microsoft-store-services-sdk-requires-visual-studio-tools-for-universal-windows-apps"></a>Для установки пакета Microsoft Store Services SDK требуются инструменты Visual Studio для универсальных приложений для Windows.
 
 Для установки пакета [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) с помощью Visual Studio 2015 должны быть установлены инструменты Visual Studio для универсальных приложений для Windows версии 1.1 или более поздней. Дополнительные сведения см. в [примечаниях к выпуску](http://go.microsoft.com/fwlink/?LinkID=624516) Visual Studio.
 
-## Проекты Silverlight в Windows Phone 8.x
+## <a name="windows-phone-8x-silverlight-projects"></a>Проекты Silverlight в Windows Phone 8.x
 
 Набор Microsoft Advertising SDK для Windows и Windows Phone 8.x имеет ограниченную поддержку проектов Silverlight в Windows Phone 8.x. Дополнительные сведения см. в статье [Показ рекламы в приложениях](display-ads-in-your-app.md#silverlight_support).
 
 Чтобы получить сборки Microsoft Advertising для проектов Silverlight в Windows Phone 8.x, установите пакет [Microsoft Advertising SDK для Windows и Windows Phone 8.x](http://aka.ms/store-8-sdk), откройте проект в Visual Studio и последовательно щелкните **Проект** > **Добавить подключенную службу** > **Рекламный посредник**, чтобы автоматически загрузить сборки. После этого можно удалить ссылки на рекламный посредник из вашего проекта, если в дальнейшем вы не планируете использовать рекламное посредничество. Дополнительные сведения см. в разделе [AdControl в Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
 
-## Интерфейс AdControl неизвестен в XAML
+## <a name="adcontrol-interface-unknown-in-xaml"></a>Интерфейс AdControl неизвестен в XAML
 
 В разметке XAML для элемента [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) может некорректно отображаться синяя курсивная строка, обозначая, что интерфейс неизвестен. Это происходит только в системах x86, ошибку можно игнорировать.
 
-## lastError из предыдущего запроса рекламного объявления
+## <a name="lasterror-from-previous-ad-request"></a>lastError из предыдущего запроса рекламного объявления
 
 Если с прошлого запроса рекламного объявления осталась ошибка **lastError**, событие может быть запущено дважды во время следующего вызова объявления. Несмотря на то что новый запрос объявления будет обработан и в результате даже может быть получено действительное рекламное объявление, такое поведение может вызывать путаницу.
 
-## Промежуточные рекламы и кнопки навигации на телефонах
+## <a name="interstitial-ads-and-navigation-buttons-on-phones"></a>Промежуточные рекламы и кнопки навигации на телефонах
 
 На телефонах (или эмуляторах) с программными кнопками **Назад**, **Пуск** и **Поиск** вместо аппаратных таймер отсчета и кнопки прокрутки промежуточной видеорекламы могут не отображаться.
 
-## Недавно созданные объявления не отображаются в приложении
+## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>Недавно созданные объявления не отображаются в приложении
 
 Если вы опубликовали объявление недавно (менее дня), то оно может быть еще недоступно. Если объявление утверждено для редакционного содержимого, то оно отобразится после того, как будет обработано сервером рекламы и станет доступно в числе рекламных объявлений.
 
-## В приложении не отображается реклама
+## <a name="no-ads-are-shown-in-your-app"></a>В приложении не отображается реклама
 
 Существует несколько причин этой проблемы, включая ошибки сети. Другие возможные причины:
 
@@ -56,7 +63,7 @@ ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
 
 Можно также опубликовать вопрос на [форуме](http://go.microsoft.com/fwlink/p/?LinkId=401266).
 
-## В приложении отображается тестовая реклама, а не реальные объявления
+## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>В приложении отображается тестовая реклама, а не реальные объявления
 
 Тестовая реклама может отображаться, даже если вы рассчитываете увидеть настоящую рекламу. Это происходит в следующих случаях.
 
@@ -64,9 +71,9 @@ ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
 
 * Неопубликованные приложения или приложения, работающие в эмуляторе, не отображают актуальные объявления.
 
-Если реальная рекламная единица показывает тестовые объявления,статус рекламной единицы в Центре разработки Windows— **Активная и показывает тестовые объявления**. В настоящее время это неактуально для телефонных приложений.
+Если реальная рекламная единица показывает тестовые объявления,статус рекламной единицы в Центре разработки Windows — **Активная и показывает тестовые объявления**. В настоящее время это неактуально для телефонных приложений.
 
-## Устаревшие тестовые значения для ИД рекламной единицы и ИД приложения более не работают
+## <a name="obsolete-test-values-for-ad-unit-id-and-application-id-no-longer-working"></a>Устаревшие тестовые значения для ИД рекламной единицы и ИД приложения более не работают
 
 Следующие тестовые значения для приложений Windows Phone Silverlight устарели и не работают. Если у вас есть существующий проект, который использует эти тестовые значения, обновите его и используйте значения из раздела [Значения тестового режима](test-mode-values.md).
 
@@ -78,7 +85,7 @@ ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
 | test_client     |  Image480_80   |
 
 <span id="reference_errors"/>
-## Ошибки ссылок, вызванные ориентацией проекта на любой ЦП
+## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>Ошибки ссылок, вызванные ориентацией проекта на любой ЦП
 
 При использовании библиотек Microsoft Libraries невозможно ориентироваться в проекте на **Любой ЦП**. Если проект ориентирован на платформу **Любой ЦП**, после добавления ссылки (см. пример ниже) может отобразиться предупреждение.
 
@@ -94,21 +101,21 @@ ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
 
 ![createapppackages](images/13-16280cb1-a838-42b9-9256-eac7f33f5603.png)
 
-## Z-порядок в приложениях JavaScript и HTML
+## <a name="z-order-in-javascripthtml-apps"></a>Z-порядок в приложениях JavaScript и HTML
 
-Приложения JavaScript/HTML не должны помещать элементы в зарезервированный диапазон MAX-10 z-порядка. Единственное исключение— это наложение прерывания, например уведомление о входящем вызове в Skype.
+Приложения JavaScript/HTML не должны помещать элементы в зарезервированный диапазон MAX-10 z-порядка. Единственное исключение — это наложение прерывания, например уведомление о входящем вызове в Skype.
 
 <span id="bkmk-ui"/>
-## Не используйте границы
+## <a name="do-not-use-borders"></a>Не используйте границы
 
 Использование свойств для границ, унаследованных **AdControl** от родительского класса, может стать причиной неверного размещения рекламы.
 
-## Дополнительные сведения
+## <a name="more-information"></a>Дополнительные сведения
 
 
 Дополнительные сведения об актуальных известных ошибках и публикации вопросов, связанных с библиотеками Microsoft Advertising, см. на [форуме](http://go.microsoft.com/fwlink/p/?LinkId=401266).
 
-## Поддержка
+## <a name="support"></a>Поддержка
 
 
 Чтобы обратиться в службу поддержки продуктов с проблемой, связанной с библиотеками Microsoft Advertising, посетите [страницу поддержки](https://go.microsoft.com/fwlink/p/?LinkId=331508) и выберите **Реклама в приложении**.
@@ -116,9 +123,4 @@ ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
  
 
  
-
-
-
-<!--HONumber=Sep16_HO2-->
-
 

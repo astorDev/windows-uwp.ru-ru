@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: "Используйте этот метод в API отправки Магазина Windows для получения данных для существующей отправки приложения."
 title: "Получение отправки приложения с помощью API отправки Магазина Windows"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API отправки Магазина Windows, API отправки, отправка приложения"
 translationtype: Human Translation
-ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
-ms.openlocfilehash: b092658a22b76f044000fb6accc90382dc3bd360
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: 1763ba9ebf95c37afbbb219244010f0d6e7cfee4
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -77,7 +84,8 @@ Authorization: Bearer <your access token>
     "trialPeriod": "FifteenDays",
     "marketSpecificPricings": {},
     "sales": [],
-    "priceId": "Tier2"
+    "priceId": "Tier2",
+    "isAdvancedPricingModel": "true"
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -181,7 +189,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные разделы
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
 * [Создание отправки приложения](create-an-app-submission.md)
@@ -189,9 +197,4 @@ Authorization: Bearer <your access token>
 * [Обновление отправки приложения](update-an-app-submission.md)
 * [Удаление отправки приложения](delete-an-app-submission.md)
 * [Получение состояния отправки приложения](get-status-for-an-app-submission.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

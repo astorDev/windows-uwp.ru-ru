@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
 description: "В этом разделе объясняется, как получить один кадр предварительного просмотра из потока предварительного просмотра захвата мультимедийного содержимого."
 title: "Получение кадра предварительного просмотра"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: e19fa2a574e6824941c89db1db1e7e69f9e38ae9
-ms.openlocfilehash: d8d5780672592b1888a9c894dcc3ed58ebc2be36
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 420f9b8c3bb6573fbc12bc974ef2382b9ba6ec03
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Получение кадра предварительного просмотра
+# <a name="get-a-preview-frame"></a>Получение кадра предварительного просмотра
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе объясняется, как получить один кадр предварительного просмотра из потока предварительного просмотра захвата мультимедийного содержимого.
 
@@ -51,7 +58,7 @@ ms.openlocfilehash: d8d5780672592b1888a9c894dcc3ed58ebc2be36
 
 [!code-cs[CleanUpPreviewFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpPreviewFrame)]
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -61,10 +68,5 @@ ms.openlocfilehash: d8d5780672592b1888a9c894dcc3ed58ebc2be36
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

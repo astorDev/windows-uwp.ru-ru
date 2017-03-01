@@ -3,16 +3,23 @@ author: laurenhughes
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "Открытие файлов и папок с помощью средства выбора"
 description: "Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Можно использовать классы FileOpenPicker и FileSavePicker для получения доступа к файлам, а также FolderPicker — для получения доступа к папкам."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 99a21818fc3b8552de18792f408da860bf6dea22
-ms.openlocfilehash: 08782286228fa25dc492b0e7ccc90958bdec5a7f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 96a1cdbf5420978ae8889c86eeafd7825d568261
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="open-files-and-folders-with-a-picker"></a>Открытие файлов и папок с помощью средства выбора
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -175,8 +182,3 @@ else
 ```
 
 **Совет**  Каждый раз, когда ваше приложение получает доступ к файлу или папке через средство выбора, добавляйте этот файл или папку в свойство [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) или [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) приложения для отслеживания. Подробнее об использовании этих списков см. в разделе [Отслеживание последних использованных файлов и папок](how-to-track-recently-used-files-and-folders.md).
-
-
-<!--HONumber=Jan17_HO1-->
-
-

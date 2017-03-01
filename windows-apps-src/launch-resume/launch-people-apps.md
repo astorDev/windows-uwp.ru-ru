@@ -3,21 +3,28 @@ author: TylerMSFT
 title: "Запуск приложения &quot;Люди&quot;"
 description: "В этом разделе приводится описание схемы URI ms-people. Ваше приложение может использовать эту схему URI для запуска приложения &quot;Люди&quot; для конкретных действий."
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 25abea87eaf374a1a8b5432c522d51bd7bbc1c1e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Запуск приложения "Люди"
+# <a name="launch-the-people-app"></a>Запуск приложения "Люди"
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этом разделе приводится описание схемы URI **ms-people:**. Ваше приложение может использовать эту схему URI для запуска приложения «Люди» для конкретных действий.
 
-## Справка по схеме URI ms-people:
+## <a name="ms-people-uri-scheme-reference"></a>Справка по схеме URI ms-people:
 
 
 <table>
@@ -82,7 +89,7 @@ ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
 
  
 
-## Справка по параметру ms-people:search:
+## <a name="ms-peoplesearch-parameter-reference"></a>Справка по параметру ms-people:search:
 
 
 <table>
@@ -111,7 +118,7 @@ ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
 
  
 
-## Справка по параметру ms-people:viewcontact:
+## <a name="ms-peopleviewcontact-parameter-reference"></a>Справка по параметру ms-people:viewcontact:
 
 
 <table>
@@ -163,7 +170,7 @@ ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
 
  
 
-## Справка по параметру ms-people:savetocontact:
+## <a name="ms-peoplesavetocontact-parameter-reference"></a>Справка по параметру ms-people:savetocontact:
 
 
 <table>
@@ -206,9 +213,4 @@ ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

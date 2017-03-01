@@ -1,40 +1,47 @@
 ---
 author: mtoepke
-title: "Сопоставление компонентов DirectX9 и API DirectX11"
-description: "Прочитав этот раздел, вы поймете, как компоненты, которые использует ваша игра с Direct3D9, будут перенесены в Direct3D11 и на универсальную платформу Windows (UWP)."
+title: "Сопоставление компонентов DirectX 9 и API DirectX 11"
+description: "Прочитав этот раздел, вы поймете, как компоненты, которые использует ваша игра с Direct3D 9, будут перенесены в Direct3D 11 и на универсальную платформу Windows (UWP)."
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, directx 9, directx 11, перенос"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6ab76921f1e8b613010f99eba6a141daca128ea5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 58847adcb94f7e730bcdcd98767282811d555016
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Сопоставление компонентов DirectX9 и API DirectX11
+# <a name="map-directx-9-features-to-directx-11-apis"></a>Сопоставление компонентов DirectX 9 и API DirectX 11
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Резюме**
 
 -   [Планирование переноса приложений на DirectX](plan-your-directx-port.md)
--   [Важные изменения в Direct3D11 по сравнению с Direct3D9](understand-direct3d-11-1-concepts.md)
+-   [Важные изменения в Direct3D 11 по сравнению с Direct3D 9](understand-direct3d-11-1-concepts.md)
 -   Сопоставление компонентов
 
 
-Прочитав этот раздел, вы поймете, как компоненты, которые использует ваша игра с Direct3D9, будут перенесены в Direct3D11 и на универсальную платформу Windows (UWP).
+Прочитав этот раздел, вы поймете, как компоненты, которые использует ваша игра с Direct3D 9, будут перенесены в Direct3D 11 и на универсальную платформу Windows (UWP).
 
-## Сопоставление Direct3D9 и API DirectX11
+## <a name="mapping-direct3d-9-to-directx-11-apis"></a>Сопоставление Direct3D 9 и API DirectX 11
 
 
 [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) по-прежнему является основой графики DirectX, но после DirectX 9 изменились API.
 
 -   Для установки графических адаптеров используется Microsoft DirectX Graphics Infrastructure (DXGI). Используйте [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534) для выбора форматов буферов, создания цепочек буферов, представления кадров и создания общих ресурсов. См. общие сведения о [DXGI](https://msdn.microsoft.com/library/windows/desktop/bb205075).
--   Контекст устройства Direct3D используется для установки состояния конвейера и генерирования команд отрисовки. Во многих наших примерах используется немедленный контекст для прямой отрисовки на устройстве. Direct3D11 также поддерживает многопотоковую отрисовку, в этом случае используются отложенные контексты. См. раздел [Введение в устройство в Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476880).
+-   Контекст устройства Direct3D используется для установки состояния конвейера и генерирования команд отрисовки. Во многих наших примерах используется немедленный контекст для прямой отрисовки на устройстве. Direct3D 11 также поддерживает многопотоковую отрисовку, в этом случае используются отложенные контексты. См. раздел [Введение в устройство в Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476880).
 -   Некоторые компоненты устарели, наиболее заметно усовершенствован функциональный конвейер. См. раздел [Устаревшие компоненты](https://msdn.microsoft.com/library/windows/desktop/cc308047).
 
-Полный список компонентов Direct3D11: [Компоненты Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476342) и [Компоненты Direct3D11](https://msdn.microsoft.com/library/windows/desktop/hh404562).
+Полный список компонентов Direct3D 11: [Компоненты Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476342) и [Компоненты Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404562).
 
-## Переход с Direct2D9 на Direct2D11
+## <a name="moving-from-direct2d-9-to-direct2d-11"></a>Переход с Direct2D 9 на Direct2D 11
 
 
 [Direct2D (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd370990) по-прежнему является важной частью графики DirectX и Windows. Вы все еще можете использовать Direct2D для отрисовки двухмерных игр и наложений (HUD) на Direct3D.
@@ -45,55 +52,55 @@ Direct2D работает на базе Direct3D; двухмерные игры 
 
 API [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) добавляет поддержку отформатированного текста с помощью Direct2D. См. раздел [Введение в DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd371554).
 
-## Замена устаревших вспомогательных библиотек
+## <a name="replace-deprecated-helper-libraries"></a>Замена устаревших вспомогательных библиотек
 
 
 D3DX и DXUT являются нерекомендуемыми и не могут использоваться играми UWP. Эти вспомогательные библиотеки предоставляли ресурсы для таких задач, как загрузка текстуры и сетки.
 
--   В пошаговом руководстве [Простой перенос из Direct3D9 на UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) показано, как настроить окно, инициализировать Direct3D и выполнить базовую трехмерную отрисовку.
+-   В пошаговом руководстве [Простой перенос из Direct3D 9 на UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) показано, как настроить окно, инициализировать Direct3D и выполнить базовую трехмерную отрисовку.
 -   В пошаговом руководстве [Простая игра UWP с использованием DirectX](tutorial--create-your-first-metro-style-directx-game.md) демонстрируются стандартные задачи, возникающие при программировании игры, включая графику, загрузку файлов, пользовательский интерфейс, элементы управления и звук.
--   Сообщество [DirectX Tool Kit](http://go.microsoft.com/fwlink/p/?LinkID=248929) (Набор инструментов DirectX) предлагает вспомогательные классы для использования с Direct3D11 и приложениями UWP.
+-   Сообщество [DirectX Tool Kit](http://go.microsoft.com/fwlink/p/?LinkID=248929) (Набор инструментов DirectX) предлагает вспомогательные классы для использования с Direct3D 11 и приложениями UWP.
 
-## Перенос программ-шейдеров с FX на HLSL
+## <a name="move-shader-programs-from-fx-to-hlsl"></a>Перенос программ-шейдеров с FX на HLSL
 
 
-Мы не рекомендуем использовать библиотеку подпрограмм D3DX (D3DX9, D3DX10 и D3DX11), включая эффекты, для UWP. Все игры UWP с DirectX реализует графический конвейер с помощью [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561) без эффектов.
+Мы не рекомендуем использовать библиотеку подпрограмм D3DX (D3DX 9, D3DX 10 и D3DX 11), включая эффекты, для UWP. Все игры UWP с DirectX реализует графический конвейер с помощью [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561) без эффектов.
 
 Visual Studio по-прежнему использует FXC для компиляции объектов шейдера. Шейдеры игр UWP компилируются заранее. Байт-код загружается во время выполнения, затем каждый ресурс шейдера привязывается к графическому конвейеру во время соответствующего этапа отрисовки. Шейдеры необходимо переместить в их собственные HLSL-файлы, а методы отрисовки следует реализовать в коде C++.
 
-Чтобы взглянуть на загрузку ресурсов шейдера, см. раздел [Простое портирование с Direct3D9 на UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
+Чтобы взглянуть на загрузку ресурсов шейдера, см. раздел [Простое портирование с Direct3D 9 на UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
-В Direct3D11 введена модель шейдера5, которая требует уровня компонентов Direct3D11\_0 (или выше). См. раздел [Компоненты модели5 шейдера HLSL для Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff471419).
+В Direct3D 11 введена модель шейдера 5, которая требует уровня компонентов Direct3D 11\_0 (или выше). См. раздел [Компоненты модели 5 шейдера HLSL для Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff471419).
 
-## Замена XNAMath и D3DXMath
+## <a name="replace-xnamath-and-d3dxmath"></a>Замена XNAMath и D3DXMath
 
 
 Код, использующий XNAMath (или D3DXMath), необходимо перенести на [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833). DirectXMath включает типы, переносимые на x86, x64 и ARM. См. раздел [Перенос кода из библиотеки XNA Math](https://msdn.microsoft.com/library/windows/desktop/ee418730).
 
 Обратите внимание, что типы чисел с плавающей точкой DirectXMath удобно использовать с шейдерами. Например, [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) и [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) обеспечивают удобное выравнивание данных для буферов констант.
 
-## Замена DirectSound на XAudio2 (и фоновый звук)
+## <a name="replace-directsound-with-xaudio2-and-background-audio"></a>Замена DirectSound на XAudio2 (и фоновый звук)
 
 
 DirectSound не поддерживается для UWP:
 
 -   Используйте [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049), чтобы добавить в игру звуковые эффекты.
 
-##  Замена DirectInput на API XInput и UWP
+##  <a name="replace-directinput-with-xinput-and-uwp-apis"></a>Замена DirectInput на API XInput и UWP
 
 
 DirectInput не поддерживается для UWP:
 
 -   Используйте обратные вызовы событий ввода [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) для мыши, клавиатуры и сенсорного ввода.
--   Используйте [XInput](https://msdn.microsoft.com/library/windows/desktop/ee417001)1.4 для поддержки игрового устройства управления (и его гарнитуры). Если вы используете общую базу кода для рабочего стола и UWP, вы найдете сведения об обратной совместимости в разделе о [версиях XInput](https://msdn.microsoft.com/library/windows/desktop/hh405051).
+-   Используйте [XInput](https://msdn.microsoft.com/library/windows/desktop/ee417001) 1.4 для поддержки игрового устройства управления (и его гарнитуры). Если вы используете общую базу кода для рабочего стола и UWP, вы найдете сведения об обратной совместимости в разделе о [версиях XInput](https://msdn.microsoft.com/library/windows/desktop/hh405051).
 -   Подпишитесь на события [**EdgeGesture**](https://msdn.microsoft.com/library/windows/apps/hh701600), если вашей игре нужно использовать панель приложения.
 
-## Использование Microsoft Media Foundation вместо DirectShow
+## <a name="use-microsoft-media-foundation-instead-of-directshow"></a>Использование Microsoft Media Foundation вместо DirectShow
 
 
-DirectShow больше не является частью API DirectX (или API Windows). [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) предоставляет видеосодержимое интерфейсу Direct3D посредством общих поверхностей. См. раздел [API видео Direct3D11](https://msdn.microsoft.com/library/windows/desktop/hh447677).
+DirectShow больше не является частью API DirectX (или API Windows). [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) предоставляет видеосодержимое интерфейсу Direct3D посредством общих поверхностей. См. раздел [API видео Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh447677).
 
-## Замена DirectPlay на сетевой код
+## <a name="replace-directplay-with-networking-code"></a>Замена DirectPlay на сетевой код
 
 
 Microsoft DirectPlay устарел. Если ваша игра использует сетевые службы, вам нужно предоставить сетевой код, соответствующий требованиям сертификации UWP. Используйте следующие API:
@@ -113,10 +120,10 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 
 Обратите внимание, что все приложения UWP (включая игры) используют специфические типы фоновых задач для поддержки подключения, когда приложение приостановлено. Если вашей игре необходимо поддерживать подключенное состояние во время приостановки, см. раздел [Основы работы в сети](https://msdn.microsoft.com/library/windows/apps/mt280233).
 
-## Сопоставление функций
+## <a name="function-mapping"></a>Сопоставление функций
 
 
-Используйте следующую таблицу, чтобы преобразовать код из Direct3D9 в Direct3D11. Это также поможет понять разницу между устройством и контекстом устройства.
+Используйте следующую таблицу, чтобы преобразовать код из Direct3D 9 в Direct3D 11. Это также поможет понять разницу между устройством и контекстом устройства.
 
 <table>
 <colgroup>
@@ -126,7 +133,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <thead>
 <tr class="header">
 <th align="left">Direct3D9</th>
-<th align="left">Эквивалент в Direct3D11</th>
+<th align="left">Эквивалент в Direct3D 11</th>
 </tr>
 </thead>
 <tbody>
@@ -235,10 +242,10 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 
  
 
-## Сопоставление форматов поверхностей
+## <a name="surface-format-mapping"></a>Сопоставление форматов поверхностей
 
 
-Используйте следующую таблицу, чтобы преобразовать форматы Direct3D9 в форматы DXGI.
+Используйте следующую таблицу, чтобы преобразовать форматы Direct3D 9 в форматы DXGI.
 
 <table>
 <colgroup>
@@ -339,7 +346,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong></strong>Примечание. Используйте преобразование ссылок при перемещении данных с внешнего устройства .r в шейдере, чтобы дублировать красный цвет в другие компоненты и задавать поведение Direct3D9.
+<strong></strong>Примечание. Используйте преобразование ссылок при перемещении данных с внешнего устройства .r в шейдере, чтобы дублировать красный цвет в другие компоненты и задавать поведение Direct3D 9.
 </div>
 <div>
  
@@ -349,7 +356,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong></strong>Примечание. Используйте преобразование ссылок при перемещении данных с внешнего устройства .rrrg в шейдере, чтобы дублировать красный цвет, переместить зеленый цвет в альфа-компоненты и задавать поведение Direct3D9.
+<strong></strong>Примечание. Используйте преобразование ссылок при перемещении данных с внешнего устройства .rrrg в шейдере, чтобы дублировать красный цвет, переместить зеленый цвет в альфа-компоненты и задавать поведение Direct3D 9.
 </div>
 <div>
  
@@ -395,7 +402,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong></strong>Примечание. В Direct3D9 данные увеличивались в 255.0f раз, но это может быть обработано шейдером.
+<strong></strong>Примечание. В Direct3D 9 данные увеличивались в 255.0f раз, но это может быть обработано шейдером.
 </div>
 <div>
  
@@ -409,7 +416,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong></strong>Примечание. В Direct3D9 данные увеличивались в 255.0f раз, но это может быть обработано шейдером.
+<strong></strong>Примечание. В Direct3D 9 данные увеличивались в 255.0f раз, но это может быть обработано шейдером.
 </div>
 <div>
  
@@ -423,7 +430,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM & DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong></strong>Примечание. DXT1 и DXT2— одно и то же с точки зрения API и оборудования. Единственная разница заключается в том, использовалось ли предварительно умноженное альфа-значение, которое может отследить приложение и которому не требуется отдельный формат.
+<strong></strong>Примечание. DXT1 и DXT2 — одно и то же с точки зрения API и оборудования. Единственная разница заключается в том, использовалось ли предварительно умноженное альфа-значение, которое может отследить приложение и которому не требуется отдельный формат.
 </div>
 <div>
  
@@ -437,7 +444,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM & DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong></strong>Примечание. DXT3 и DXT4— одно и то же с точки зрения API и оборудования. Единственная разница заключается в том, использовалось ли предварительно умноженное альфа-значение, которое может отследить приложение и которому не требуется отдельный формат.
+<strong></strong>Примечание. DXT3 и DXT4 — одно и то же с точки зрения API и оборудования. Единственная разница заключается в том, использовалось ли предварительно умноженное альфа-значение, которое может отследить приложение и которому не требуется отдельный формат.
 </div>
 <div>
  
@@ -577,7 +584,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong></strong>Примечание. Шейдер получает значения UINT, но если нужны целые числа с плавающей точкой в стиле Direct3D9 (0.0f, 1.0f... 255.f), UINT можно просто преобразовать в тип float32 в шейдере.
+<strong></strong>Примечание. Шейдер получает значения UINT, но если нужны целые числа с плавающей точкой в стиле Direct3D 9 (0.0f, 1.0f... 255.f), UINT можно просто преобразовать в тип float32 в шейдере.
 </div>
 <div>
  
@@ -587,7 +594,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong></strong>Примечание. Шейдер получает значения SINT, но если нужны целые числа с плавающей точкой в стиле Direct3D9, SINT можно просто преобразовать в тип float32 в шейдере.
+<strong></strong>Примечание. Шейдер получает значения SINT, но если нужны целые числа с плавающей точкой в стиле Direct3D 9, SINT можно просто преобразовать в тип float32 в шейдере.
 </div>
 <div>
  
@@ -597,7 +604,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong></strong>Примечание. Шейдер получает значения SINT, но если нужны целые числа с плавающей точкой в стиле Direct3D9, SINT можно просто преобразовать в тип float32 в шейдере.
+<strong></strong>Примечание. Шейдер получает значения SINT, но если нужны целые числа с плавающей точкой в стиле Direct3D 9, SINT можно просто преобразовать в тип float32 в шейдере.
 </div>
 <div>
  
@@ -670,10 +677,5 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

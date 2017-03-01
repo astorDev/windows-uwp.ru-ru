@@ -10,9 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: e530c8fab64c160737ccc06faf676d1d113896c4
+ms.sourcegitcommit: 412a3f70861c6cd1bbf003fe0bd78c8547a5f3f8
+ms.openlocfilehash: 7b525267c8f4d24af95f6d41d46d33a3adf10f8f
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>Элементы управления и шаблоны для приложений UWP
@@ -174,8 +176,10 @@ ms.openlocfilehash: e530c8fab64c160737ccc06faf676d1d113896c4
 </ul>
 </div>
 
+## <a name="additional-controls-options"></a>Параметры дополнительных элементов управления
 
+Дополнительные элементы управления для разработки UWP предлагаются такими компаниями, как [Telerik](http://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/products/uwp), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](http://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) и [ActiPro](http://www.actiprosoftware.com/products/controls/universal). Эти элементы управления обеспечивают дополнительную поддержку для предприятий и разработчиков .NET путем дополнения стандартных системных элементов управления пользовательскими элементами управления и службами.  
 
-<!--HONumber=Dec16_HO2-->
+Если вы хотите подробнее узнать об этих элементах управления, ознакомьтесь с примером кода [Базы данных заказов клиентов](https://github.com/Microsoft/Windows-appsample-customers-orders-database) на сайте GitHub. В этом примере используется элемент управления сеткой данных и выполняется проверка вводимых данных средствами Telerik, которые являются частью пользовательского интерфейса для набора UWP. Пользовательский интерфейс для набора UWP — это коллекция из более чем 20 элементов управления, доступная в качестве проекта с открытым исходным кодом в фонде .NET.
 
-
+![Изображение из базы данных заказов клиентов](images/customerOrdersDataGrid.png)

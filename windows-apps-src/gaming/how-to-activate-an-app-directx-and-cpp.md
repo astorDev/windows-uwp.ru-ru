@@ -3,20 +3,27 @@ author: mtoepke
 title: "Активация приложения (DirectX и C++)"
 description: "В этом разделе показано, как определить процесс активации для приложения универсальной платформы Windows (UWP), использующего DirectX."
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, directx, активация"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0b13604d2b0349817881a5c1c56c311931c90759
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4d3585e28ca4a3665a881df4f16a3cc3f82fcc52
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Активация приложения (DirectX и C++)
+# <a name="how-to-activate-an-app-directx-and-c"></a>Активация приложения (DirectX и C++)
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе показано, как определить процесс активации для приложения универсальной платформы Windows (UWP), использующего DirectX.
 
-## Регистрация обработчика события активации приложения
+## <a name="register-the-app-activation-event-handler"></a>Регистрация обработчика события активации приложения
 
 
 Сначала зарегистрируйтесь для обработки события [**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), которое возникает при запуске и инициализации приложения операционной системой.
@@ -36,7 +43,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## Активация экземпляра CoreWindow для приложения
+## <a name="activate-the-corewindow-instance-for-the-app"></a>Активация экземпляра CoreWindow для приложения
 
 
 При запуске приложения необходимо получить ссылку на [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) для приложения. **CoreWindow** содержит диспетчер сообщений о событиях окон, который ваше приложение использует для обработки событий окон. Получите ссылку с помощью обратного вызова для события активации приложения. Для этого необходимо вызвать [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589). Получив ссылку, активируйте главное окно приложения, вызвав [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254).
@@ -49,7 +56,7 @@ void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^
 }
 ```
 
-## Запуск обработки сообщения о событии для главного окна приложения
+## <a name="start-processing-event-message-for-the-main-app-window"></a>Запуск обработки сообщения о событии для главного окна приложения
 
 
 Обратные вызовы происходят при обработке сообщений о событии диспетчером [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) для окна приложения [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Обратный вызов не будет запущен, если вы не вызовете [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) из основного цикла вашего приложения (реализованного в методе поставщика представлений [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)).
@@ -79,7 +86,7 @@ void App::Run()
 }
 ```
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 
 * [Приостановка работы приложения (DirectX и C++)](how-to-suspend-an-app-directx-and-cpp.md)
@@ -91,10 +98,5 @@ void App::Run()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

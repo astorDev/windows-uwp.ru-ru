@@ -2,15 +2,22 @@
 author: laurenhughes
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: "Установка приложений с помощью средства WinAppDeployCmd.exe"
-description: "Windows Application Deployment (WinAppDeployCmd.exe) — это средство командной строки, которое используется для развертывания приложения универсальной платформы Windows (UWP) с компьютера под управлением Windows 10 на любом устройстве с операционной системой Windows 10."
+description: "Windows Application Deployment (WinAppDeployCmd.exe) — это средство командной строки, которое используется для развертывания приложения универсальной платформы Windows (UWP) с компьютера под управлением Windows 10 на любом устройстве с операционной системой Windows 10."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: f467bd83c2f700d94a232c99a06f86f1f1b1a0ac
-ms.openlocfilehash: 37028e1e119f27a8c82bc024e52f939a89243244
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9148a26b813d99ca04ae2e5a050bbc9b590d5f6e
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Установка приложений с помощью средства WinAppDeployCmd.exe
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Windows Application Deployment (WinAppDeployCmd.exe) — это средство командной строки, которое используется для развертывания приложения универсальной платформы Windows (UWP) с компьютера под управлением Windows 10 на любом устройстве с операционной системой Windows 10. Это средство можно использовать для развертывания пакета .appx, если устройство с операционной системой Windows 10 подключено через USB или доступно в той же подсети, без необходимости использования Microsoft Visual Studio или отдельного решения для данного приложения. Вы также можете развернуть приложение без его предварительной упаковки на удаленном компьютере или консоли Xbox One. В этой статье описывается, как устанавливать приложения UWP с помощью этого средства.
 
@@ -149,9 +156,4 @@ WinAppDeployCmd registerfiles -ip <Xbox One IP> -remotedeploydir <location of ap
 
 ex. WinAppDeployCmd register files -ip 192.168.0.1 -remotedeploydir \\driveA\myAppLocation -username admin -password A1B2C3
 ```
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

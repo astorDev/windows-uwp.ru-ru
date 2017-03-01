@@ -3,16 +3,23 @@ author: IvorB
 ms.assetid: E9ADC88F-BD4F-4721-8893-0E19EA94C8BA
 title: "Внеполосное связывание"
 description: "Внеполосное связывание позволяет приложениям подключаться к периферийным устройствам точки обслуживания (POS) без необходимости обнаружения."
+ms.author: ivorb
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 283f0a0cfc7b3827e70ea79490818bc259d98ad1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc0bad7d8625817cfffcc84f89afeed96a07a21f
+ms.lasthandoff: 02/07/2017
 
 ---
-# Внеполосное связывание
+# <a name="out-of-band-pairing"></a>Внеполосное связывание
 
 Внеполосное связывание позволяет приложениям подключаться к периферийным устройствам точки обслуживания (POS) без необходимости обнаружения. Приложения должны использовать пространство имен [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) и передавать особым образом форматированную строку (внеполосной большой двоичный объект) соответствующему методу **FromIdAsync** для нужного периферийного устройства. При выполнении **FromIdAsync** главное устройство связывается с периферийным устройством и подключается к нему, прежде чем операция возвращается вызывающей стороне.
 
-## Формат внеполосных больших двоичных объектов
+## <a name="out-of-band-blob-format"></a>Формат внеполосных больших двоичных объектов
 
 ```json
     "connectionKind":"Network",
@@ -60,7 +67,7 @@ ms.openlocfilehash: 283f0a0cfc7b3827e70ea79490818bc259d98ad1
 | Кассовый аппарат | CashDrawerProtocolProvider.dll |
 | Сканер | BarcodeScannerProtocolProvider.dll |
 
-## Пример использования: сетевой принтер
+## <a name="usage-example-network-printer"></a>Пример использования: сетевой принтер
 
 ```csharp
 String oobBlobNetworkPrinter =
@@ -74,7 +81,7 @@ String oobBlobNetworkPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobNetworkPrinter);
 ```
 
-## Пример использования: принтер Bluetooth
+## <a name="usage-example-bluetooth-printer"></a>Пример использования: принтер Bluetooth
 
 ```csharp
 string oobBlobBTPrinter =
@@ -87,9 +94,4 @@ string oobBlobBTPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobBTPrinter);
 
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

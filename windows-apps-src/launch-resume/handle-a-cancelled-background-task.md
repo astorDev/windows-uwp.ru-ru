@@ -3,9 +3,16 @@ author: TylerMSFT
 title: "Обработка отмененной фоновой задачи"
 description: "Узнайте, как создать фоновую задачу, которая распознает запросы на отмену, прекращает работу и сообщает приложению об отмене, используя постоянное хранилище."
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: ba40aefe83a02d29150dd25e1303ec15bb032b8c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7211ba08f1b697fb79cfca767300c92e6e41fb68
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -344,9 +351,4 @@ ms.openlocfilehash: ba40aefe83a02d29150dd25e1303ec15bb032b8c
 * [Использование триггера обслуживания](use-a-maintenance-trigger.md)
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Вызов событий приостановки, возобновления и фоновых событий в приложениях Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,23 +3,30 @@ author: TylerMSFT
 ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
 title: "Асинхронное программирование"
 description: "В этом разделе описывается асинхронное программирование на универсальной платформе Windows (UWP), а также его представление в C#, Microsoft Visual Basic .NET, расширениях компонентов Visual C\\+\\+ (C\\+\\+/CX) и JavaScript."
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, асинхронный"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: c033c1d985b9373d9cbadf38463610aa1922163e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1f157db0dc9124ce839f608e5f1a2325c1ce922f
+ms.lasthandoff: 02/07/2017
 
 ---
-# Асинхронное программирование
+# <a name="asynchronous-programming"></a>Асинхронное программирование
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-В этом разделе описывается асинхронное программирование в универсальной платформе для Windows (UWP), а также его представление в C#, Microsoft Visual Basic.NET, расширениях компонентов Visual C++ (C++/CX) и JavaScript.
+В этом разделе описывается асинхронное программирование в универсальной платформе для Windows (UWP), а также его представление в C#, Microsoft Visual Basic .NET, расширениях компонентов Visual C++ (C++/CX) и JavaScript.
 
 Использование асинхронного программирования позволит вашему приложению отвечать на запросы во время выполнения длительных операций. Например, приложение, скачивающее содержимое из Интернета, может ожидать получения данных несколько секунд. Если для получения содержимого вы использовали синхронный метод в потоке пользовательского интерфейса, приложение блокируется до момента возврата из метода. Приложение при этом не будет отвечать на действия пользователя и будет казаться зависшим, что может вызвать раздражение пользователя. В такой ситуации гораздо эффективнее использовать асинхронное программирование, которое позволит приложению работать и отвечать на запросы пользовательского интерфейса, одновременно ожидая завершения операции.
 
 Для методов, выполняющихся в течение длительного времени, применение асинхронного программирования является нормой, и в этом смысле UWP — не исключение. JavaScript, C#, Visual Basic, C++/CX — во всех этих языках есть поддержка асинхронных методов.
 
-## Асинхронное программирование в UWP
+## <a name="asynchronous-programming-in-the-uwp"></a>Асинхронное программирование в UWP
 
 Многие компоненты UWP, такие как API [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/BR241124) и [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171), представлены в виде асинхронных API. По правилам имена асинхронных API заканчиваются словом «Async» для обозначения того, что они могут частично выполняться после вызова API.
 
@@ -52,19 +59,19 @@ ms.openlocfilehash: c033c1d985b9373d9cbadf38463610aa1922163e
 
  
 
-## Асинхронные шаблоны в UWP на C# и Visual Basic
+## <a name="asynchronous-patterns-in-uwp-using-c-and-visual-basic"></a>Асинхронные шаблоны в UWP на C# и Visual Basic
 
 
 Обычно код, написанный на C# или Visual Basic, выполняется синхронно, то есть выполнение кода предыдущей строки завершается перед началом выполнения следующей. Для асинхронного выполнения кода использовались прошлые модели программирования Microsoft .NET, но большая часть результирующего кода была посвящена реализации асинхронности, а не задаче, которая решалась с помощью этого кода. В UWP, .NET Framework и компиляторах C# и Visual Basic существуют дополнительные компоненты, которые выделяют из кода асинхронные механизмы. Для .NET и UWP вы можете написать асинхронный код, ориентированный на задачу, а не на способ или время ее выполнения. Асинхронный код в целом схож с синхронным. Подробнее см. в разделе [Вызов асинхронных API в C# и Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md).
 
-## Асинхронные шаблоны в UWP на C++
+## <a name="asynchronous-patterns-in-uwp-with-c"></a>Асинхронные шаблоны в UWP на C++
 
 
 В C++/CX асинхронное программирование основано на классе [**task class**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx) и относящемся к нему методе [**then method**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx). Синтаксис похож на синтаксис объектов Promise в JavaScript. Класс **task class** и связанные с ним типы также предоставляют возможности отмены и управления контекстом потока. Подробнее: [Асинхронное программирование на языке C++](asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
 
 Функция [**create\_async function**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750102.aspx) обеспечивает поддержку создания асинхронных API, которые можно использовать в JavaScript или других языках, поддерживающих UWP. Подробнее см. в разделе о [создании асинхронных операций на C++](https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx).
 
-## Асинхронные шаблоны в UWP на JavaScript
+## <a name="asynchronous-patterns-in-uwp-using-javascript"></a>Асинхронные шаблоны в UWP на JavaScript
 
 В JavaScript асинхронное программирование следует предложенному стандарту [Common JS Promises/A](http://wiki.commonjs.org/wiki/Promises/A), в соответствии с которым асинхронные методы возвращают объекты Promise. Объекты Promise используются в UWP и в библиотеке Windows для JavaScript.
 
@@ -72,15 +79,9 @@ ms.openlocfilehash: c033c1d985b9373d9cbadf38463610aa1922163e
 
 Во многих случаях вызов асинхронной функции так же прост, как и вызов обычной функции. Различие в том, что вам нужно использовать метод [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) или [**done**](https://msdn.microsoft.com/library/windows/apps/Hh701079), чтобы назначить обработчики для формирования результата, обработки ошибок и запуска операции.
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Вызов асинхронных API в C# и Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [Асинхронное программирование с использованием Async и Await (C# и Visual Basic)](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
 * [Особенности сценариев для образца Reversi: асинхронный код](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

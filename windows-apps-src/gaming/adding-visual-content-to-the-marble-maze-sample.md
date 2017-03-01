@@ -3,16 +3,23 @@ author: mtoepke
 title: "Добавление визуального содержимого в образец Marble Maze"
 description: "В этом документе показано, как игра Marble Maze использует Direct3D и Direct2D в среде приложения универсальной платформы Windows (UWP). Вы освоите приемы программирования и сможете адаптировать их для работы со своей игрой."
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, пример, directx, графика"
 translationtype: Human Translation
-ms.sourcegitcommit: eb0115bf83627a9ba8209cce6bdd9edecc165ddf
-ms.openlocfilehash: 6b7880703d40d6ef5ed5f42f3e09bc5573170e1f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b8ee07dc45e53f2ea73f87111fa9eb155854f10a
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="adding-visual-content-to-the-marble-maze-sample"></a>Добавление визуального содержимого в пример Marble Maze
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этом документе показано, как игра Marble Maze использует Direct3D и Direct2D в среде приложения универсальной платформы Windows (UWP). Вы освоите приемы программирования и сможете адаптировать их для работы со своей игрой. Чтобы узнать, как визуальные компоненты игры вписываются в общую структуру приложения Marble Maze, ознакомьтесь с разделом [Структура приложения Marble Maze](marble-maze-application-structure.md).
@@ -446,7 +453,7 @@ sPSInput main(sVSInput input)
 
 Дополнительные сведения см. в статьях о [стадии сборщика входных данных](https://msdn.microsoft.com/library/windows/desktop/bb205116) и [начале работы на стадии сборщика входных данных](https://msdn.microsoft.com/library/windows/desktop/bb205117).
 
-Процесс использования вершинных шейдеров и построителей текстуры для отрисовки сцены описан в разделе [Отрисовка сцены](#rendering_the_scene) ниже в этом документе.
+Процесс использования вершинных шейдеров и построителей текстуры для отрисовки сцены описан в разделе [Отрисовка сцены](#rendering-the-scene) ниже в этом документе.
 
 ### <a name="creating-the-constant-buffer"></a>Создание буферов констант
 
@@ -735,7 +742,7 @@ m_d3dContext->ClearDepthStencilView(
 
  
 
-В разделе [Загрузка шейдеров](#loading_shaders) в этом документе описано, как создается входной макет при создании вершинного шейдера. В следующем примере показано, как метод **MarbleMaze::Render** использует метод [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454), чтобы задать данный макет в качестве текущего.
+В разделе [Загрузка шейдеров](#loading-shaders) в этом документе описано, как создается входной макет при создании вершинного шейдера. В следующем примере показано, как метод **MarbleMaze::Render** использует метод [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454), чтобы задать данный макет в качестве текущего.
 
 ```cpp
 m_d3dContext->IASetInputLayout(m_inputLayout.Get());
@@ -864,7 +871,7 @@ parameters.pScrollOffset = nullptr;
 HRESULT hr = m_swapChain->Present1(1, 0, &parameters);
 ```
 
-В этом примере **m\_swapChain** является объектом [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631). Инициализация этого объекта описана в разделе [Инициализация Direct3D и Direct2D](#initializing) в настоящем документе.
+В этом примере **m\_swapChain** является объектом [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631). Инициализация этого объекта описана в разделе [Инициализация Direct3D и Direct2D](#initializing-direct3d-and-direct2d) в настоящем документе.
 
 Первый параметр метода [**IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) (*SyncInterval*) задает число пробелов по вертикали перед выводом кадра. Marble Maze указывает 1, т. е. ожидание до следующего пробела по вертикали. Пробел по вертикали представляет время между завершением рисования на мониторе одного кадра и началом рисования следующего кадра.
 
@@ -901,10 +908,5 @@ else
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

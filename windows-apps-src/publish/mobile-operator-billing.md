@@ -1,15 +1,22 @@
 ---
 author: jnHs
 Description: "Магазин Windows предлагает выставление счетов оператором мобильной связи в качестве метода оплаты для операторов мобильной связи, которые поддерживают эту возможность."
-title: "Биллинг мобильного оператора"
+title: "Выставление счетов мобильным оператором"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 694c3223278c8666bfb47bf9898ac7c02ac981f4
-ms.openlocfilehash: 831e3fbd1524ce452a4346b6c52f3f1c76385d68
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cbf519d5755adb13f6a41845b4771ac459d880cc
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="mobile-operator-billing"></a>Биллинг мобильного оператора
+# <a name="mobile-operator-billing"></a>Выставление счетов мобильным оператором
 
 
 Магазин Windows предлагает выставление счетов оператором мобильной связи в качестве метода оплаты для операторов мобильной связи, которые поддерживают эту возможность. Если оператор мобильной связи клиента поддерживает эту возможность, клиент может осуществлять приобретения в Магазине с помощью своей мобильной учетной записи.
@@ -26,6 +33,7 @@ ms.openlocfilehash: 831e3fbd1524ce452a4346b6c52f3f1c76385d68
 
 | Страна или регион  | Мобильные операторы |
 |-----------------|------------------|
+| Австрия         | Hutchison 3G Austria |
 | Финляндия         | DNA, Elisa       |
 | Франция          | Orange           |
 | Германия         | O2               |
@@ -36,8 +44,8 @@ ms.openlocfilehash: 831e3fbd1524ce452a4346b6c52f3f1c76385d68
 | Россия          | Билайн          |
 | Швеция          | Telenor          |
 | Швейцария     | Swisscom         |
-| США   | Sprint           |
-| Великобритания  | O2               |
+| Соединенные Штаты   | Sprint           |
+| Великобритания  | O2, 3 UK         |
 
  
 
@@ -55,11 +63,8 @@ ms.openlocfilehash: 831e3fbd1524ce452a4346b6c52f3f1c76385d68
 | Бельгия              | BASE, Mobistar, Proximus                                           |
 | Бразилия               | Claro                                                              |
 | Канада               | Fido, Rogers                                                       |
-| Китай                | China Mobile                                                       |
-| Колумбия             | Movistar                                                           |
 | Чешская республика       | T-Mobile, Vodafone, O2                                             |
-| Эквадор              | Claro                                                              |
-| Финляндия              | Elisa, TeliaSonera, DNA                                            |
+| Финляндия              | TeliaSonera, DNA                                            |
 | Франция               | Orange, SFR, Bouygues                                              |
 | Германия              | Telefonica, Telekom Deutschland, Vodafone                          |
 | Греция               | Vodafone                                                           |
@@ -68,7 +73,6 @@ ms.openlocfilehash: 831e3fbd1524ce452a4346b6c52f3f1c76385d68
 | Индонезия            | Indosat, Telkomsel, Hutchinson CP Telecommunications (HCPT)        |
 | Ирландия              | O2, Vodafone, Three                                                |
 | Италия                | Telecom Italia, Vodafone, Wind, 3 Italia                           |
-| Иордания               | Umniah                                                             |
 | Мексика               | Iusacell, Telcel, Movistar                                         |
 | Нидерланды          | T-Mobile, Vodafone                                                 |
 | Польша               | T-Mobile, Orange, Polkomtel (Plus), Play                           |
@@ -91,10 +95,5 @@ ms.openlocfilehash: 831e3fbd1524ce452a4346b6c52f3f1c76385d68
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

@@ -6,13 +6,20 @@ ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
 label: Screen sizes and break points
 template: detail.hbs
 op-migration-status: ready
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 7189987209e894d81b2574aff576c64fb5f7a97a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7c992aa651069f6876aa920da88ada659480132e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  <a name="screen-sizes-and-break-points-for-responsive-design"></a>Размеры экрана и точки прерывания для обеспечения отзывчивого дизайна
+#  <a name="screen-sizes-and-break-points-for-responsive-design"></a>Размеры экрана и точки прерывания для реализации отзывчивого дизайна
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -100,9 +107,4 @@ ms.openlocfilehash: 7189987209e894d81b2574aff576c64fb5f7a97a
 
 С помощью [**Continuum для телефонов**](http://go.microsoft.com/fwlink/p/?LinkID=699431), нового интерфейса для совместимых мобильных устройств с Windows 10, пользователи могут подключать к своим телефонам монитор, мышь и клавиатуру, превращая телефон в ноутбук. Помните об этой новой возможности при разработке приложений для конкретных точек прерывания — мобильный телефон не всегда относится к классу небольших размеров.
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

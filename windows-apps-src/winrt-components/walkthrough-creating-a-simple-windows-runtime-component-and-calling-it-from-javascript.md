@@ -3,9 +3,16 @@ author: msatranjr
 title: "Создание простого компонента среды выполнения Windows и его вызов из JavaScript"
 description: "В этом пошаговом руководстве описан процесс использования платформы .NET Framework с Visual Basic или C# для создания собственных типов среды выполнения Windows, упакованных в компонент среды выполнения Windows, а также процедура вызова компонента из универсального приложения для Windows, собранного для Windows с использованием JavaScript."
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 56fbc32ee9b75688aa3dec498eb51e8bd533a4ee
-ms.openlocfilehash: 16502dbda2495333d512d9d7a3e0a7f8a8f98562
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6f1bfc96416febdf531dec52c14bcaee13de9f14
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -735,9 +742,4 @@ btnCancel.addEventListener("click", asyncCancel, false);
 * [Общие сведения о платформе .NET для приложений Магазина Windows](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [Платформа .NET для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [Пошаговое руководство. Создание простого компонента среды выполнения Windows и его вызов из кода JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-
-
-
-<!--HONumber=Dec16_HO4-->
-
 

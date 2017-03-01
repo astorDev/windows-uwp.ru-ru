@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: "Сведения о решениях распространенных проблем разработки, связанными с библиотеками Microsoft Advertising в приложениях JavaScript и HTML."
 title: "Руководство по устранению неполадок для HTML и JavaScript"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, рекламные объявления, реклама, AdControl, устранение неполадок, HTML, javascript"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: 4bb959174ec158e7852cd447d9cd164ec2cd5bff
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fe06749583dc42ec84dc4acd876ea96c70c916db
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -340,9 +347,9 @@ ms.openlocfilehash: 4bb959174ec158e7852cd447d9cd164ec2cd5bff
 <span id="js-adsnotrefreshing"/>
 ### <a name="ads-not-refreshing"></a>Реклама не обновляется
 
-1.  Убедитесь, что свойству [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) вашего класса **AdControl** задано значение "false". По умолчанию этому необязательному свойству задано значение **true**. Если установлено значение **false**, для извлечения другой рекламы необходимо использовать метод **Refresh**.
+1.  Проверьте, задано ли для свойства [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) вашего элемента **AdControl** значение false. По умолчанию этому необязательному свойство задано значение **true**. Если установлено значение **false**, для извлечения другой рекламы необходимо использовать метод **Refresh**.
 
-2.  Проверьте работоспособность вызовов метода [Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx). При использовании автоматического обновления (значением **IsAutoRefreshEnabled** является **true**) применять метод **Refresh** для извлечения другой рекламы нельзя. При обновлении вручную (значением **IsAutoRefreshEnabled** является **false**) метод **Refresh** следует вызывать только по истечении не менее 30–60 секунд в зависимости от текущего типа подключения для передачи данных, настроенного на устройстве.
+2.  Проверьте работоспособность вызовов метода [Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx). При использовании автоматического обновления (для свойства **IsAutoRefreshEnabled** задано значение **true**) применять метод **Refresh** для извлечения другой рекламы нельзя. При обновлении вручную (значением **IsAutoRefreshEnabled** является **false**) метод **Refresh** следует вызывать только по истечении не менее 30–60 секунд в зависимости от текущего типа подключения для передачи данных, настроенного на устройстве.
 
     В этом примере показано, как создать класс **div** для элемента **AdControl**.
 
@@ -380,9 +387,4 @@ ms.openlocfilehash: 4bb959174ec158e7852cd447d9cd164ec2cd5bff
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: "Используйте примеры кода на языке Java, приведенные в этом разделе, чтобы более подробно ознакомиться с работой API отправки Магазина Windows."
 title: "Примеры кода Java для API отправки Магазина Windows"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API отправки Магазина Windows, примеры кода"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: 7f7de7c7d9fa9131d38da48e13ce449f4440962d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9bf6885129176a75265d073c3f92b9f899bc265d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -13,9 +20,9 @@ ms.openlocfilehash: 7f7de7c7d9fa9131d38da48e13ce449f4440962d
 
 В этой статье представлены примеры кода Java для использования *API отправки Магазина Windows*. Дополнительные сведения об этом API-интерфейсе см. в разделе [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md).
 
-В этих примерах кода демонстрируется выполнение следующих задач.
+В этих примерах кода демонстрируются следующие задачи:
 
-* [Получение маркера доступа Azure AD](#token)
+* [Получение токена доступа Azure AD](#token)
 * [Создание надстройки](#create-add-on)
 * [Создание тестового пакета](#create-package-flight)
 * [Создание отправки приложения](#create-app-submission)
@@ -121,9 +128,4 @@ ms.openlocfilehash: 7f7de7c7d9fa9131d38da48e13ce449f4440962d
 ## <a name="related-topics"></a>Связанные разделы
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

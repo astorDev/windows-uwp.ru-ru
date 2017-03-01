@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 2fba38c4-11be-4058-bfa3-5f979390791c
 description: "Узнайте, как обрабатывать события класса AdControl."
 title: "События AdControl в C#"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, рекламы, реклама, AdControl, события"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: e25e0f915c0b9b6ec2423d2a95386b45b4502253
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cf285ebb4207b9a9a215bfb4a739b0bc6a2d934b
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -30,9 +37,4 @@ ms.openlocfilehash: e25e0f915c0b9b6ec2423d2a95386b45b4502253
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -5,9 +5,16 @@ title: "Элементы управления &quot;Главный раздел&
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: ad5a8dfab77c78b1c53762f5de868819e0b37d6f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 32a558866457c4a9e9a359f12d43af317fc0f84a
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="hub-controlpattern"></a>Шаблон/элемент управления "Главный раздел"
@@ -120,9 +127,4 @@ ms.openlocfilehash: ad5a8dfab77c78b1c53762f5de868819e0b37d6f
 - [Основы навигации](../layout/navigation-basics.md)
 - [Использование главного раздела](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
 - [Пример элемента управления "Главный раздел" на языке XAML](http://go.microsoft.com/fwlink/p/?LinkID=310072)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

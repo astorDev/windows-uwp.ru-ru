@@ -1,15 +1,22 @@
 ---
 author: mcleblanc
 description: "Код, интегрирующийся с устройством и его датчиками, включает ввод от пользователя и вывод к нему."
-title: "Перенос среды выполнения Windows 8.x в UWP для ввода-вывода, устройств и модели приложений"
+title: "Перенос со среды выполнения Windows 8.x на UWP для ввода-вывода, устройств и модели приложений"
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: c3fb6a76800198c15ef05da9ba198ac5e73b35a8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 69fdeed812eb6add3eeacb0e776e7477e061979f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>Перенос среды выполнения Windows 8.x в UWP для ввода-вывода, устройств и модели приложений
+# <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>Перенос со среды выполнения Windows 8.x на UWP для ввода-вывода, устройств и модели приложений
 
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -74,10 +81,5 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

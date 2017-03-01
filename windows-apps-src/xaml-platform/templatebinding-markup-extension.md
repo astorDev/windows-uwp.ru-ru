@@ -3,38 +3,45 @@ author: jwmsft
 description: "Связывает значение свойства в шаблоне элемента управления и значение какого-либо другого предоставленного свойства элемента управления-шаблона. TemplateBinding может использоваться только в пределах определения ControlTemplate в XAML."
 title: "Расширение разметки TemplateBinding"
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4242bb606f29a6b70213dc8cde818ed86c3dda8d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7f279590cc1351efee2552e237ab095674768463
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Расширение разметки {TemplateBinding}
+# <a name="templatebinding-markup-extension"></a>Расширение разметки {TemplateBinding}
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Связывает значение свойства в шаблоне элемента управления и значение какого-либо другого предоставленного свойства элемента управления-шаблона. **TemplateBinding** может использоваться только в пределах определения [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) в XAML.
 
-## Использование атрибутов XAML
+## <a name="xaml-attribute-usage"></a>Использование атрибутов XAML
 
 ``` syntax
 <object propertyName="{TemplateBinding sourceProperty}" .../>
 ```
 
-## Использование атрибута XAML (для свойства Setter в шаблоне или стиле)
+## <a name="xaml-attribute-usage-for-setter-property-in-template-or-style"></a>Использование атрибута XAML (для свойства Setter в шаблоне или стиле)
 
 ``` syntax
 <Setter Property="propertyName" Value="{TemplateBinding sourceProperty}" .../>
 ```
 
-## Значения XAML
+## <a name="xaml-values"></a>Значения XAML
 
 | Термин | Описание |
 |------|-------------|
 | propertyName | Имя свойства, задаваемого в синтаксисе метода присваивания. Это свойство должно быть свойством зависимостей. |
 | sourceProperty | Имя другого свойства зависимостей, которое существует в типе, по которому создается шаблон. |
 
-## Комментарии
+## <a name="remarks"></a>Комментарии
 
 Использование **TemplateBinding** — фундаментальная часть процесса определения шаблона элемента управления независимо от того, создаете ли вы пользовательский элемент управления или заменяете шаблон для уже существующих элементов управления. Подробнее см. в разделе [Краткое руководство: шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
 
@@ -52,7 +59,7 @@ ms.openlocfilehash: 4242bb606f29a6b70213dc8cde818ed86c3dda8d
 
 **Примечание**. В реализации процессора XAML в среде выполнения Windows отсутствует представление класса резервирования для функций **TemplateBinding**. Расширение **TemplateBinding** предназначено исключительно для использования в разметке XAML. Не существует простого способа для воспроизведения этого поведения в коде.
 
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 * [Краткое руководство: шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946)
@@ -60,10 +67,5 @@ ms.openlocfilehash: 4242bb606f29a6b70213dc8cde818ed86c3dda8d
 * [Обзор языка XAML](xaml-overview.md)
 * [Общие сведения о свойствах зависимостей](dependency-properties-overview.md)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,13 +1,22 @@
 ---
+author: JordanEllis6809
 title: "Перенос существующих игр на Xbox"
 description: "Перенос существующих игр на Xbox с помощью UWP."
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 9ac96766-df89-4403-89f2-200549436921
 translationtype: Human Translation
-ms.sourcegitcommit: eec992d19d63778a46f97b76f3c8dea252a6a87b
-ms.openlocfilehash: 383e0f77ff9b810d5e5627b8df9ca09b03f4d0ae
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e82eacae06141c873690cccde04c3d871ae9d0eb
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Перенос существующих игр на Xbox
+# <a name="bringing-existing-games-to-xbox"></a>Перенос существующих игр на Xbox
 
 
 В зависимости от технологии, лежащей в основе вашей игры, мы можем предоставить вам пошаговые инструкции по ускорению процесса переноса вашей игры на Xbox с помощью UWP.
@@ -21,12 +30,7 @@ ms.openlocfilehash: 383e0f77ff9b810d5e5627b8df9ca09b03f4d0ae
 |[Unity](development-lanes-unity.md)| Учебник, который поможет перенести существующие игры из Unity на Xbox. |
 |[HTML/JS](development-lanes-html.md)| Сведения о разработке игр HTML на Xbox. |
 
-## См. также
+## <a name="see-also"></a>См. также
 
 - [Приложения UWP для Xbox One](index.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

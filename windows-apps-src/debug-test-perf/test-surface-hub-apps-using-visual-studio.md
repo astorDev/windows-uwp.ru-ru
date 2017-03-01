@@ -3,18 +3,25 @@ author: mcleblanc
 ms.assetid: A5320094-DF53-42FC-A6BA-A958F8E9210B
 title: "Проверка приложений Surface Hub с использованием Visual Studio"
 description: "Имитатор Visual Studio обеспечивает среду для проектирования, разработки, отладки и тестирования приложений UWP, в том числе приложений, созданных для Surface Hub."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 1939508e8ace2fe3ed9210d6969d1c68843c32a9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 426670f9b8d24a770f74aa0bdfaa5abb043c39ef
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Проверка приложений Surface Hub с использованием Visual Studio
+# <a name="test-surface-hub-apps-using-visual-studio"></a>Проверка приложений Surface Hub с использованием Visual Studio
 Имитатор Visual Studio предоставляет среду для проектирования, разработки, отладки и тестирования приложений универсальной платформы Windows (UWP), включая приложения, созданные для Microsoft Surface Hub. Имитатор не использует тот же пользовательский интерфейс, что и Surface Hub, но полезен для тестирования внешнего вида и поведения приложения в среде с тем же размером экрана и разрешением, что и Surface Hub.
 
 Дополнительные сведения см. в разделе [Запуск приложений Магазина Windows в симуляторе](https://msdn.microsoft.com/library/hh441475.aspx).
 
-## Добавление разрешений Surface Hub в имитатор
+## <a name="add-surface-hub-resolutions-to-the-simulator"></a>Добавление разрешений Surface Hub в имитатор
 Чтобы добавить разрешения Surface Hub в имитатор, выполните указанные ниже действия.
 
 1. Создайте конфигурацию для 55-дюймового Surface Hub, сохранив следующий элемент XML в файл с названием **HardwareConfigurations-SurfaceHub55.xml**.  
@@ -65,10 +72,10 @@ ms.openlocfilehash: 1939508e8ace2fe3ed9210d6969d1c68843c32a9
 
    > **Совет**&nbsp;&nbsp;[Включите режим планшета](http://windows.microsoft.com/windows-10/getstarted-like-a-tablet), чтобы лучше имитировать изображение на Surface Hub.
 
-## Развертывание приложений в Surface Hub из Visual Studio
+## <a name="deploy-apps-to-a-surface-hub-from-visual-studio"></a>Развертывание приложений в Surface Hub из Visual Studio
 Развертывание приложения вручную является простым процессом.
 
-### Включение режима разработчика
+### <a name="enable-developer-mode"></a>Включение режима разработчика
 По умолчанию Surface Hub устанавливает только приложения из Магазина Windows. Для установки приложений, подписанных другими источниками, необходимо включить режим разработчика.
 
 > **Примечание**.&nbsp;&nbsp;После включения режима разработчика необходимо будет сбросить Surface Hub для его повторного выключения. Сброс устройства удаляет все локальные файлы пользователя и конфигурации, а затем переустанавливает Windows.
@@ -81,7 +88,7 @@ ms.openlocfilehash: 1939508e8ace2fe3ed9210d6969d1c68843c32a9
 
 3. Выберите пункт **Режим разработчика** и примите подсказку.
 
-### Развертывание приложения из Visual Studio
+### <a name="deploy-your-app-from-visual-studio"></a>Развертывание приложения из Visual Studio
 Дополнительные сведения см. в разделе [Развертывание и отладка приложений универсальной платформы Windows (UWP)](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
 
    > **Примечание.**&nbsp;&nbsp;Для этой функции требуется как минимум **Visual Studio 2015 с обновлением 1**.
@@ -99,9 +106,4 @@ ms.openlocfilehash: 1939508e8ace2fe3ed9210d6969d1c68843c32a9
 3. Выберите элемент **Начать отладку (F5)**, чтобы развернуть приложение и выполнить его отладку на Surface Hub или нажмите сочетание клавиш Ctrl+F5, чтобы просто развернуть приложение.
 
    > **Совет**.&nbsp;&nbsp;Если Surface Hub находится на экране приветствия, закройте его, нажав любую кнопку.
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

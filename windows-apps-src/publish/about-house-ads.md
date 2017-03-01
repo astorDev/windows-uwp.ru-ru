@@ -3,13 +3,20 @@ author: jnHs
 Description: "Вы можете бесплатно создать рекламу, чтобы продвигать одно из своих приложений в других своих приложениях. Мы называем такую рекламу собственной."
 title: "О собственной рекламе"
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6d0c9aa276a624966b6294db2be8e08a716d42c2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8c4f6597ecb262bf93efa02b695221606521a754
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# О собственной рекламе
+# <a name="about-house-ads"></a>О собственной рекламе
 
 
 Вы можете бесплатно создать рекламу, чтобы продвигать одно из своих приложений в других своих приложениях. Мы называем такую рекламу *собственной*.
@@ -25,7 +32,7 @@ ms.openlocfilehash: 6d0c9aa276a624966b6294db2be8e08a716d42c2
 
  
 
-## Связанные темы
+## <a name="related-topics"></a>Связанные темы
 
 
 * [Создание рекламной кампании для вашего приложения](create-an-ad-campaign-for-your-app.md)
@@ -33,10 +40,5 @@ ms.openlocfilehash: 6d0c9aa276a624966b6294db2be8e08a716d42c2
 * [Отчет о рекламных объявлениях, которые привели к установке приложений](app-install-ads-reports.md)
 * [Общие вопросы](common-questions.md)
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

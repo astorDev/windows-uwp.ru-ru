@@ -2,36 +2,43 @@
 author: DBirtolo
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
 title: "Использование датчика освещенности"
-description: "Узнайте, как использовать датчик освещенности, чтобы обнаруживать изменения уровня освещенности."
+description: "Узнайте, как использовать датчик освещенности для обнаружения изменений уровня освещенности."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f3ebf555d943e302ed5f505a91659bf1d9489e17
+ms.lasthandoff: 02/07/2017
 
 ---
-# Использование датчика освещенности
+# <a name="use-the-light-sensor"></a>Использование датчика освещенности
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Важные API **
+**Важные API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
 
 Узнайте, как использовать датчик освещенности, чтобы обнаруживать изменения уровня освещенности.
 
-Датчик освещенности— это один из типов датчиков, которые позволяют приложению реагировать на изменение условий окружающей пользователя среды.
+Датчик освещенности — это один из типов датчиков, которые позволяют приложению реагировать на изменение условий окружающей пользователя среды.
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 Вы должны быть знакомы с языком XAML, Microsoft Visual C# и событиями.
 
 Используемые вами устройство или эмулятор должны поддерживать датчик освещенности.
 
-## Создание простого приложения датчика освещенности
+## <a name="create-a-simple-light-sensor-app"></a>Создание простого приложения датчика освещенности
 
 Данный раздел состоит из двух подразделов. В первом подразделе описаны необходимые этапы создания простого приложения датчика освещения с нуля. В следующем подразделе описано приложение, которое вы только что создали.
 
-###  Инструкции
+###  <a name="instructions"></a>Инструкции
 
 -   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#**.
 
@@ -65,8 +72,8 @@ ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
         public sealed partial class BlankPage : Page
         {
             private LightSensor _lightsensor; // Our app' s lightsensor object
-           
-            // This event handler writes the current light-sensor reading to 
+
+            // This event handler writes the current light-sensor reading to
             // the textbox named "txtLUX" on the app' s main page.
 
             private void ReadingChanged(object sender, LightSensorReadingChangedEventArgs e)
@@ -133,7 +140,7 @@ ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
 
 -   Остановите приложение, вернувшись в Visual Studio и нажав клавиши Shift+F5 или выбрав **Отладка** > **Остановить отладку**.
 
-###  Объяснение
+###  <a name="explanation"></a>Объяснение
 
 Из предыдущего примера видно, какой небольшой объем кода требуется написать, чтобы включить в ваше приложение обработку входных данных датчика освещения.
 
@@ -143,7 +150,7 @@ ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
 _lightsensor = LightSensor.GetDefault(); // Get the default light sensor object
 ```
 
-Приложение устанавливает интервал передачи данных в методе **BlankPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16миллисекунд (что приблизительно соответствует частоте обновления 60Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
+Приложение устанавливает интервал передачи данных в методе **BlankPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16 миллисекунд (что приблизительно соответствует частоте обновления 60 Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
 
 ```csharp
 uint minReportInterval = _lightsensor.MinimumReportInterval;
@@ -153,7 +160,7 @@ _lightsensor.ReportInterval = reportInterval;
 Новые данные от датчика освещения принимаются в методе **ReadingChanged**. Каждый раз, когда драйвер датчика получает от датчика новые данные, он передает их вашему приложению с помощью этого обработчика событий. Приложение регистрирует этот обработчик событий в следующей строке:
 
 ```csharp
-_lightsensor.ReadingChanged += new TypedEventHandler<LightSensor, 
+_lightsensor.ReadingChanged += new TypedEventHandler<LightSensor,
 LightSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -164,14 +171,8 @@ LightSensorReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtLuxValue" HorizontalAlignment="Left" Height="44" Margin="224,38,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="217"/>
 ```
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Пример работы с LightSensor](http://go.microsoft.com/fwlink/p/?linkid=241381)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

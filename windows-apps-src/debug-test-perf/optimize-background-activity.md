@@ -3,9 +3,16 @@ author: PatrickFarley
 ms.assetid: 24351dad-2ee3-462a-ae78-2752bb3374c2
 title: "Использование функции экономии заряда аккумулятора"
 description: "Создавайте приложения UWP, которые взаимодействуют с системой с целью повышения эффективности энергопотребления фоновых задач."
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 73b19e54b863693aece045e5b653bc0583a676bb
-ms.openlocfilehash: 854ec43d075f8adc1f875d3b9e5e2d818434edb9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 045dfeb4696a4854b114d88da2a2cbb75d621a58
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -13,7 +20,7 @@ ms.openlocfilehash: 854ec43d075f8adc1f875d3b9e5e2d818434edb9
 
 Универсальные приложения для Windows должны демонстрировать стабильную производительность на всех семействах устройств. На устройствах с аккумулятором энергопотребление является ключевым фактором, влияющим на удобство взаимодействия пользователя с вашим приложением. Все пользователи хотят, чтобы уровня заряда устройства хватало на целый день, однако для этого требуется эффективная работа всех программ, установленных на устройстве, включая вашу. 
 
-Поведение фоновых задач, несомненно, является основным фактором, определяющим энергозатратность приложения. Фоновая задача — это любая программная активность, зарегистрированная в системе для выполнения без открытого приложения. Дополнительные сведения см. в разделе [Создание и регистрация фоновой задачи вне процесса](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task).
+Поведение фоновых задач, несомненно, является основным фактором, определяющим энергозатратность приложения. Фоновая задача — это любая программная активность, зарегистрированная в системе для выполнения без открытого приложения. Дополнительные сведения см. в разделе [Создание и регистрация фоновой задачи вне процесса](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task).
 
 ## <a name="background-activity-allowance"></a>Предельный объем фоновой активности
 
@@ -47,12 +54,7 @@ ms.openlocfilehash: 854ec43d075f8adc1f875d3b9e5e2d818434edb9
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Создание и регистрация внепроцессной фоновой задачи](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task)  
+* [Создание и регистрация внепроцессной фоновой задачи](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [Планирование производительности](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

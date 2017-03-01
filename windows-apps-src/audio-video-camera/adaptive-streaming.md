@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
 description: "В этой статье описано, как добавить функцию воспроизведения мультимедийного содержимого адаптивной потоковой передачи в приложения универсальной платформы Windows (UWP). В настоящее время эта функция поддерживает воспроизведение содержимого Http Live Streaming (HLS) и Dynamic Adaptive Streaming over HTTP (DASH)."
 title: "Адаптивная потоковая передача"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: d0941887ebc17f3665302fae6c7b0a124dfb5a0b
-ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3afd0440d8e552ebc3459c5fe30dd766db3ae8b9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Адаптивная потоковая передача
+# <a name="adaptive-streaming"></a>Адаптивная потоковая передача
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этой статье описано, как добавить функцию воспроизведения мультимедийного содержимого адаптивной потоковой передачи в приложения универсальной платформы Windows (UWP). В настоящее время эта функция поддерживает воспроизведение содержимого Http Live Streaming (HLS) и Dynamic Adaptive Streaming over HTTP (DASH).
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
 > [!NOTE] 
 > В этой статье используется код, адаптированный из [примера адаптивной потоковой передачи](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/AdaptiveStreaming).
 
-## Простая адаптивная потоковая передача с использованием MediaPlayer и MediaPlayerElement
+## <a name="simple-adaptive-streaming-with-mediaplayer-and-mediaplayerelement"></a>Простая адаптивная потоковая передача с использованием MediaPlayer и MediaPlayerElement
 
 Для потокового воспроизведения адаптивного мультимедиа в приложении UWP создайте объект **Uri**, указывающий на файл манифеста DASH или HLS. Создайте экземпляр класса [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer). Вызовите [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912), чтобы создать объект **MediaSource**, и задайте его в качестве значения свойства [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) объекта **MediaPlayer**. Вызовите [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play), чтобы начать воспроизведение мультимедиа.
 
@@ -39,7 +46,7 @@ ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
 > [!NOTE] 
 > Начиная с Windows 10 версии 1607 рекомендуется использовать класс **MediaPlayer**, чтобы воспроизводить элементы мультимедиа. **MediaPlayerElement** — это облегченный элемент управления XAML, который используется для отображения содержимого **MediaPlayer** на странице XAML. Элемент управления **MediaElement** продолжает поддерживаться для обратной совместимости. Дополнительные сведения об использовании **MediaPlayer** и **MediaPlayerElement** для воспроизведения мультимедиа см. в разделе [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md). Сведения об использовании **MediaSource** и связанных API для работы с мультимедиа см. в разделе [Элементы, списки воспроизведения и звуковые дорожки мультимедиа](media-playback-with-mediasource.md).
 
-## Адаптивная потоковая передача с помощью AdaptiveMediaSource
+## <a name="adaptive-streaming-with-adaptivemediasource"></a>Адаптивная потоковая передача с помощью AdaptiveMediaSource
 
 Если вашему приложению требуются более сложные функции адаптивной потоковой передачи (например, предоставление настраиваемых заголовков HTTP, контроль текущей скорости скачивания и воспроизведения или настройка коэффициентов, которые определяют, когда система переключает скорости передачи адаптивного потока), используйте объект [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912).
 
@@ -67,7 +74,7 @@ ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
 
 [!code-cs[AMSBitrateEvents](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSBitrateEvents)]
 
-## Связанные статьи
+## <a name="related-topics"></a>Связанные статьи
 * [Воспроизведение мультимедиа](media-playback.md)
 * [Поддержка тега HLS](hls-tag-support.md) 
 * [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md)
@@ -76,10 +83,5 @@ ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

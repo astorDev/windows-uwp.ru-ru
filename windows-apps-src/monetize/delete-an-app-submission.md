@@ -3,29 +3,36 @@ author: mcleanbyron
 ms.assetid: 96C090C1-88F8-42E7-AED1-AFA9031E952B
 description: "Используйте этот метод в API отправки Магазина Windows для удаления существующей отправки приложения."
 title: "Удаление отправки приложения с помощью API отправки Магазина Windows"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API отправки Магазина Windows, отправка приложения, удаление"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 4109414e684fc38f461f9e97af38839cb83330fc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fe85515d9baaaf0d36cdcdce12a0e81561bb6787
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Удаление отправки приложения с помощью API отправки Магазина Windows
+# <a name="delete-an-app-submission-using-the-windows-store-submission-api"></a>Удаление отправки приложения с помощью API отправки Магазина Windows
 
 
 
 
 Используйте этот метод в API отправки Магазина Windows для удаления существующей отправки приложения.
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 Для использования этого метода необходимо выполнить следующие действия:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
-* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия. После истечения срока действия маркера можно получить новый маркер.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
 
 >**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
-## Запрос
+## <a name="request"></a>Запрос
 
 У этого метода следующий синтаксис. Примеры использования и описание заголовка и тела запроса приведены в следующих разделах.
 
@@ -36,7 +43,7 @@ ms.openlocfilehash: 4109414e684fc38f461f9e97af38839cb83330fc
 <span/>
  
 
-### Заголовок запроса
+### <a name="request-header"></a>Заголовок запроса
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -44,22 +51,22 @@ ms.openlocfilehash: 4109414e684fc38f461f9e97af38839cb83330fc
 
 <span/>
 
-### Параметры запроса
+### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Обязательный. Код продукта в Магазине приложения, содержащего отправку, которую требуется удалить. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | строка | Обязательный. Код продукта в Магазине приложения, содержащего отправку, которую требуется удалить. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | submissionId | string | Обязательный. Идентификатор отправки для удаления. Этот идентификатор отображается на информационной панели Центра разработки, а также добавляется в данные ответов для запросов на [Создание отправки приложения](create-an-app-submission.md).  |
 
 <span/>
 
-### Тело запроса
+### <a name="request-body"></a>Тело запроса
 
 Предоставлять тело запроса для этого метода не требуется.
 
 <span/>
 
-### Пример запроса
+### <a name="request-example"></a>Пример запроса
 
 В следующем примере показано, как удалить отправку приложения.
 
@@ -68,11 +75,11 @@ DELETE https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/
 Authorization: Bearer <your access token>
 ```
 
-## Ответ
+## <a name="response"></a>Ответ
 
 В случае успеха этот метод возвращает пустой ответ.
 
-## Коды ошибок
+## <a name="error-codes"></a>Коды ошибок
 
 Если запрос не удается выполнить, ответ будет содержать один из следующих кодов ошибок HTTP.
 
@@ -85,7 +92,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
 * [Получение отправки приложения](get-an-app-submission.md)
@@ -93,9 +100,4 @@ Authorization: Bearer <your access token>
 * [Подтверждение отправки приложения](commit-an-app-submission.md)
 * [Обновление отправки приложения](update-an-app-submission.md)
 * [Получение состояния отправки приложения](get-status-for-an-app-submission.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

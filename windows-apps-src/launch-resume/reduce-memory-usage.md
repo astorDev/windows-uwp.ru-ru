@@ -1,34 +1,41 @@
 ---
 author: TylerMSFT
-ms.assetid: 
+ms.assetid: 3a3ea86e-fa47-46ee-9e2e-f59644c0d1db
 description: "В этой статье рассказывается о том, как уменьшить потребление памяти, когда приложение переходит в фоновый режим."
 title: "Уменьшение потребления памяти при переходе приложения в фоновый режим"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: bf0cb8f072a2a6974ab582329d8b482add37f1d9
-ms.openlocfilehash: 80e89e24236903ab90f7c4fe326782a0a7e5272f
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ef4527f72898c8c5a6ad9c56d975966402894b2c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Освобождение памяти при переходе приложения в фоновый режим
+# <a name="free-memory-when-your-app-moves-to-the-background"></a>Освобождение памяти при переходе приложения в фоновый режим
 
-В этой статье рассказывается о том, как уменьшить потребление приложением, когда оно переходит в фоновое состояние, чтобы приложение не было приостановлено или, возможно, завершено.
+В этой статье рассказывается о том, как уменьшить потребление памяти приложением, когда оно переходит в фоновое состояние, чтобы приложение не было приостановлено или, возможно, завершено.
 
-## Новые фоновые события
+## <a name="new-background-events"></a>Новые фоновые события
 
 В Windows 10 версии 1607 впервые представлены два новых события жизненного цикла приложений: [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) и [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Эти события позволяют приложению определить, когда оно входит в фоновый режим и выходит из него.
 
 Когда приложение переходит в фоновый режим, принудительные системные ограничения памяти могут измениться. Используйте эти события, чтобы проверить текущее потребление памяти и свободные ресурсы и не превысить лимит. В случае превышения лимита работа вашего приложения будет приостановлена и, возможно, завершена, пока оно находится в фоновом режиме.
 
-### События для контроля использования памяти приложения
+### <a name="events-for-controlling-your-apps-memory-usage"></a>События для контроля использования памяти приложения
 
-[MemoryManager.AppMemoryUsageLimitChanging](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusagelimitchanging.aspx) создается сразу перед тем, как поменяется лимит общей памяти, доступной приложению. Например, если приложение переходит в фоновый режим и выполняется на Xbox, лимит памяти меняется с 1024МБ до 128МБ.  
+[MemoryManager.AppMemoryUsageLimitChanging](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusagelimitchanging.aspx) создается сразу перед тем, как поменяется лимит общей памяти, доступной приложению. Например, если приложение переходит в фоновый режим и выполняется на Xbox, лимит памяти меняется с 1024 МБ до 128 МБ.  
 Очень важно правильно обработать это событие, чтобы платформа не приостановила и не завершила работу приложения.
 
-[MemoryManager.AppMemoryUsageIncreased](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusageincreased.aspx) создается, если потребление памяти приложением выросло до более высокого значения в перечислении [AppMemoryUsageLevel](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.appmemoryusagelevel.aspx). Например, с **Low** на **Medium**. Обрабатывать это событие не обязательно, но рекомендуется, поскольку приложение по-прежнему не должно превышать лимит.
+[MemoryManager.AppMemoryUsageIncreased](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusageincreased.aspx) создается, если потребление памяти приложением выросло до более высокого значения в перечислении [AppMemoryUsageLevel](https://msdn.microsoft.com/library/windows/apps/windows.system.appmemoryusagelevel.aspx). Например, с **Low** на **Medium**. Обрабатывать это событие не обязательно, но рекомендуется, поскольку приложение по-прежнему не должно превышать лимит.
 
-[MemoryManager.AppMemoryUsageDecreased](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusagedecreased.aspx) создается, если потребление памяти приложением снизилось до более низкого значения в перечислении **AppMemoryUsageLevel**. Например, с **High** до **Low**. Обрабатывать это событие необязательно, однако оно указывает на то, что приложение при необходимости может иметь возможность выделить дополнительную память.
+[MemoryManager.AppMemoryUsageDecreased](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusagedecreased.aspx) создается, если потребление памяти приложением снизилось до более низкого значения в перечислении **AppMemoryUsageLevel**. Например, с **High** до **Low**. Обрабатывать это событие необязательно, однако оно указывает на то, что приложение при необходимости может иметь возможность выделить дополнительную память.
 
-## Обработка перехода между передним планом и фоновым режимом
+## <a name="handle-the-transition-between-foreground-and-background"></a>Обработка перехода между передним планом и фоновым режимом
 
 Когда приложение переходит с переднего плана в фоновый режим, создается событие [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground). Когда приложение возвращается на передний план, вызывается событие [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Во время создания приложения можно регистрировать обработчики для этих событий. Для этого в шаблоне проекта по умолчанию это выполняется в конструкторе классов **приложений** в файле App.xaml.cs.
 
@@ -76,13 +83,13 @@ ms.openlocfilehash: 80e89e24236903ab90f7c4fe326782a0a7e5272f
 
 [!code-cs[CreateRootFrame](./code/ReduceMemory/cs/App.xaml.cs#SnippetCreateRootFrame)]
 
-## Требования
+## <a name="guidelines"></a>Требования
 
-### Переход с переднего плана в фоновый режим
+### <a name="moving-from-the-foreground-to-the-background"></a>Переход с переднего плана в фоновый режим
 
 При перемещении приложения с переднего плана в фоновый режим система действует от имени приложения, чтобы освободить ресурсы, которые не требуются в фоновом режиме. Например, платформы ИП удаляют кэшированные текстуры, а подсистема видео освобождает память, выделенную от имени приложения. Однако приложению по-прежнему необходимо тщательно отслеживать использование памяти, чтобы его работа не была приостановлена или прекращена системой.
 
-Когда приложения перемещается с переднего плана в фоновый режим, оно сначала получает событие **EnteredBackground**, а затем— **AppMemoryUsageLimitChanging**.
+Когда приложения перемещается с переднего плана в фоновый режим, оно сначала получает событие **EnteredBackground**, а затем — **AppMemoryUsageLimitChanging**.
 
 - **Используйте** событие **EnteredBackground**,чтобы освободить ресурсы ИП, которые, насколько вам известно, не нужны приложению в фоновом режиме. Например, можно освободить изображение обложки для композиции.
 - **Используйте** событие **AppMemoryUsageLimitChanging**, чтобы убедиться, что приложение потребляет меньше памяти, чем указано в лимите для фонового режима. В противном случае не забудьте освободить ресурсы. Если этого не сделать, работа приложения может быть приостановлена или прекращена в соответствии с политикой для конкретного устройства.
@@ -91,19 +98,14 @@ ms.openlocfilehash: 80e89e24236903ab90f7c4fe326782a0a7e5272f
 - **Оцените целесообразность** освобождения ресурсов ИП в обработчике событий **AppMemoryUsageLimitChanging** вместо **EnteredBackground** в качестве средства оптимизации производительности. Используйте логическое значение, заданное в обработчиках событий **EnteredBackground/LeavingBackground**, чтобы отследить, работает ли приложение в фоновом режиме или на переднем плане. Затем в обработчике событий **AppMemoryUsageLimitChanging** можно освободить ресурсы ИП, если **AppMemoryUsage** превышает лимит и приложение работает в фоновом режиме (на основе логического значения).
 - **Не** выполняйте длительные операции в событии **EnteredBackground**, поскольку в этом случае переключение между приложениями может казаться пользователю медленнее.
 
-### Переход с фонового режима на передний план
+### <a name="moving-from-the-background-to-the-foreground"></a>Переход с фонового режима на передний план
 
-Когда приложения перемещаются с фонового режима на передний план, приложение сначала получит событие **AppMemoryUsageLimitChanging**, а затем— **LeavingBackground**.
+Когда приложения перемещаются с фонового режима на передний план, приложение сначала получит событие **AppMemoryUsageLimitChanging**, а затем — **LeavingBackground**.
 
 - **Используйте** событие **LeavingBackground**, чтобы восстановить ресурсы ИП, освобожденные приложением при переходе в фоновый режим.
 
-## Связанные статьи
+## <a name="related-topics"></a>Связанные статьи
 
-* [Пример воспроизведения мультимедиа в фоновом режиме](http://go.microsoft.com/fwlink/p/?LinkId=800141)— показывает, как освободить память при переходе приложения в фоновый режим.
-* [Диагностические инструменты](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/)— используйте диагностические инструменты, чтобы наблюдать за событиями сбора мусора и убедиться, что приложение освобождает память ожидаемым образом.
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+* [Пример воспроизведения мультимедиа в фоновом режиме](http://go.microsoft.com/fwlink/p/?LinkId=800141) — показывает, как освободить память при переходе приложения в фоновый режим.
+* [Диагностические инструменты](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/) — используйте диагностические инструменты, чтобы наблюдать за событиями сбора мусора и убедиться, что приложение освобождает память ожидаемым образом.
 

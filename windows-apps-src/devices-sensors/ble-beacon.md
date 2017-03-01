@@ -2,9 +2,17 @@
 author: msatranjr
 title: "Объявления Bluetooth"
 description: "Этот раздел содержит статьи о том, как интегрировать объявления Bluetooth с низким энергопотреблением (LE) c приложениями универсальной платформы Windows (UWP) при помощи пользователя API AdvertisementWatcher и AdvertisementPublisher."
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 translationtype: Human Translation
-ms.sourcegitcommit: b454e08015ea9bd6240c836563b1fec78e38dc2c
-ms.openlocfilehash: e21567bf2ffa5b05861cf96099290e1bb66dbf03
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: bfdb1b218676503699674c97fc962ad8161769dd
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -85,7 +93,7 @@ publisher.Start();
 BluetoothLEAdvertisementWatcher watcher = new BluetoothLEAdvertisementWatcher();
 watcher.Received += OnAdvertisementReceived;
 watcher.Start();
-``` 
+```    
 
 ```csharp
 private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
@@ -153,8 +161,3 @@ private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watch
 Этот показатель можно примерно перевести в расстояние, но его не следует использовать для измерения фактического расстояния, так как каждое радио уникально. Расстояние может быть сложно измерить в силу различных факторов окружающей среды (таких как стены, корпус вокруг радио или даже влажность воздуха).
 
 Вместо определения фактического расстояния можно определять "сегменты". Как правило, уровень сигнала находится в диапазоне от 0 до -50 дБм, если радио находится близко, от -50 до -90 дБм, если радио находится на среднем расстоянии, и ниже -90 дБм, если радио находится далеко. Лучше всего определить оптимальные сегменты для конкретного приложения методом проб и ошибок.
-
-
-<!--HONumber=Dec16_HO3-->
-
-

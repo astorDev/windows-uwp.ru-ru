@@ -3,35 +3,42 @@ author: DBirtolo
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: "Использование инклинометра"
 description: "Узнайте, как использовать инклинометр для определения поворотов относительно поперечной, продольной и вертикальной осей."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b8ebfaf4c294fccf61534203bce0326f9dbec977
+ms.lasthandoff: 02/07/2017
 
 ---
-# Использование инклинометра
+# <a name="use-the-inclinometer"></a>Использование инклинометра
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Важные API **
+**Важные API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Инклинометр**](https://msdn.microsoft.com/library/windows/apps/BR225766)
 
 Узнайте, как использовать инклинометр для определения поворотов относительно поперечной, продольной и вертикальной осей.
 
-В некоторых трехмерных играх инклинометр используется в качестве устройства ввода. Простой пример— авиационный тренажер, в котором три оси инклинометра (X, Y и Z) сопоставлены командам управления рулем высоты, элероном и рулем направления самолета.
+В некоторых трехмерных играх инклинометр используется в качестве устройства ввода. Простой пример — авиационный тренажер, в котором три оси инклинометра (X, Y и Z) сопоставлены командам управления рулем высоты, элероном и рулем направления самолета.
 
- ## Необходимые условия
+ ## <a name="prerequisites"></a>Необходимые условия
 
 Вы должны быть знакомы с языком XAML, Microsoft Visual C# и событиями.
 
 Используемые вами устройство или эмулятор должны поддерживать инклинометр.
 
- ## Создание простого приложения инклинометра
+ ## <a name="create-a-simple-inclinometer-app"></a>Создание простого приложения инклинометра
 
 Данный раздел состоит из двух подразделов. В первом подразделе описаны необходимые этапы создания простого приложения инклинометра с нуля. В следующем подразделе описано приложение, которое вы только что создали.
 
-###  Инструкции
+###  <a name="instructions"></a>Инструкции
 
 -   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#**.
 
@@ -65,7 +72,7 @@ ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
         {
             private Inclinometer _inclinometer;
 
-            // This event handler writes the current inclinometer reading to 
+            // This event handler writes the current inclinometer reading to
             // the three text blocks on the app' s main page.
 
             private async void ReadingChanged(object sender, InclinometerReadingChangedEventArgs e)
@@ -83,7 +90,7 @@ ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
             {
                 this.InitializeComponent();
                 _inclinometer = Inclinometer.GetDefault();
-     
+
 
                 if (_inclinometer != null)
                 {
@@ -134,7 +141,7 @@ ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
 
 -   Остановите приложение, вернувшись в Visual Studio и нажав клавиши Shift+F5 или выбрав **Отладка** > **Остановить отладку**, чтобы остановить приложение.
 
-###  Объяснение
+###  <a name="explanation"></a>Объяснение
 
 Из предыдущего примера видно, какой небольшой объем кода требуется написать, чтобы включить в ваше приложение обработку входных данных инклинометра.
 
@@ -144,7 +151,7 @@ ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
 _inclinometer = Inclinometer.GetDefault();
 ```
 
-Приложение устанавливает интервал передачи данных в методе **MainPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16миллисекунд (что приблизительно соответствует частоте обновления 60Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
+Приложение устанавливает интервал передачи данных в методе **MainPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16 миллисекунд (что приблизительно соответствует частоте обновления 60 Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
 
 ```csharp
 uint minReportInterval = _inclinometer.MinimumReportInterval;
@@ -155,7 +162,7 @@ _inclinometer.ReportInterval = reportInterval;
 Новые данные от инклинометра принимаются в методе **ReadingChanged**. Каждый раз, когда драйвер датчика получает от датчика новые данные, он передает их вашему приложению с помощью этого обработчика событий. Приложение регистрирует этот обработчик событий в следующей строке:
 
 ```csharp
-_inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer, 
+_inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer,
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -170,13 +177,7 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
 
- ## Связанные разделы
+ ## <a name="related-topics"></a>Связанные разделы
 
 * [Пример работы с инклинометром](http://go.microsoft.com/fwlink/p/?linkid=241380)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

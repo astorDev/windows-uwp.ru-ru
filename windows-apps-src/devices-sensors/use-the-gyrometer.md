@@ -2,17 +2,24 @@
 author: DBirtolo
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: "Использование гирометра"
-description: "Узнайте, как использовать гирометр для отслеживания изменений в движениях пользователя."
+description: "Узнайте, как использовать гирометр для отслеживания изменений в движении пользователя."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c5e02bcd4912a5db5d691f4172baeff2378433e4
+ms.lasthandoff: 02/07/2017
 
 ---
-# Использование гирометра
+# <a name="use-the-gyrometer"></a>Использование гирометра
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Важные API **
+**Важные API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Gyrometer (гирометр)**](https://msdn.microsoft.com/library/windows/apps/BR225718)
@@ -23,17 +30,17 @@ ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
 
 Гирометры используются как игровые контроллеры в дополнение к акселерометрам. Акселерометр измеряет линейное перемещение, тогда как гирометр измеряет угловую скорость или вращательное движение.
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 Вы должны быть знакомы с языком XAML, Microsoft Visual C# и событиями.
 
 Используемые вами устройство или эмулятор должны поддерживать гирометр.
 
-## Создание простого приложения гирометра
+## <a name="create-a-simple-gyrometer-app"></a>Создание простого приложения гирометра
 
 Данный раздел состоит из двух подразделов. В первом подразделе описаны необходимые этапы создания простого приложения гирометра с нуля. В следующем подразделе описано приложение, которое вы только что создали.
 
-###  Инструкции
+###  <a name="instructions"></a>Инструкции
 
 -   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#**.
 
@@ -66,8 +73,8 @@ ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
         public sealed partial class MainPage : Page
         {
             private Gyrometer _gyrometer; // Our app' s gyrometer object
-     
-            // This event handler writes the current gyrometer reading to 
+
+            // This event handler writes the current gyrometer reading to
             // the three textblocks on the app' s main page.
 
             private async void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
@@ -85,7 +92,7 @@ ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
             {
                 this.InitializeComponent();
                 _gyrometer = Gyrometer.GetDefault(); // Get the default gyrometer sensor object
-                
+
                 if (_gyrometer != null)
                 {
                     // Establish the report interval for all scenarios
@@ -106,7 +113,7 @@ ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
 
 -   Откройте файл MainPage.xaml и замените исходное содержимое следующим XML-кодом.
 
-```xml 
+```xml
         <Page
         x:Class="App1.MainPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -136,7 +143,7 @@ ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
 
 -   Остановите приложение, вернувшись в Visual Studio и нажав клавиши Shift+F5 или выбрав **Отладка** > **Остановить отладку**, чтобы остановить приложение.
 
-###  Объяснение
+###  <a name="explanation"></a>Объяснение
 
 Из предыдущего примера видно, какой небольшой объем кода требуется написать, чтобы включить в ваше приложение обработку входных данных гирометра.
 
@@ -146,7 +153,7 @@ ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
 _gyrometer = Gyrometer.GetDefault(); // Get the default gyrometer sensor object
 ```
 
-Приложение устанавливает интервал передачи данных в методе **MainPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16миллисекунд (что приблизительно соответствует частоте обновления 60Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
+Приложение устанавливает интервал передачи данных в методе **MainPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16 миллисекунд (что приблизительно соответствует частоте обновления 60 Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
 
 ```csharp
 uint minReportInterval = _gyrometer.MinimumReportInterval;
@@ -157,7 +164,7 @@ _gyrometer.ReportInterval = reportInterval;
 Новые данные от гирометра принимаются в методе **ReadingChanged**. Каждый раз, когда драйвер датчика получает от датчика новые данные, он передает их вашему приложению с помощью этого обработчика событий. Приложение регистрирует этот обработчик событий в следующей строке:
 
 ```csharp
-_gyrometer.ReadingChanged += new TypedEventHandler<Gyrometer, 
+_gyrometer.ReadingChanged += new TypedEventHandler<Gyrometer,
 GyrometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -172,13 +179,7 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
         <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/>
 ```
 
- ## Связанные разделы
+ ## <a name="related-topics"></a>Связанные разделы
 
 * [Пример работы с гирометром](http://go.microsoft.com/fwlink/p/?linkid=241379)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

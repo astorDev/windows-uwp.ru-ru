@@ -2,16 +2,24 @@
 author: msatranjr
 title: "Вопросы и ответы для Bluetooth-разработчиков"
 description: "Эта статья содержит ответы на часто задаваемые вопросы, связанные с API-интерфейсами UWP для работы с Bluetooth."
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 translationtype: Human Translation
-ms.sourcegitcommit: e4c95448262c6c62956fcb50581c98d8c34d6dc0
-ms.openlocfilehash: 2afc1250aa9d7a6cf6c9c8cb45dd2379b9d36984
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 7394d211b580ad82689a79e7cbe4eb4dbf545f46
+ms.lasthandoff: 02/08/2017
 
 ---
-# Вопросы и ответы для Bluetooth-разработчиков
+# <a name="bluetooth-developer-faq"></a>Вопросы и ответы для Bluetooth-разработчиков
 
 Эта статья содержит ответы на часто задаваемые вопросы об API-интерфейсах UWP для работы с Bluetooth.
 
-## Почему мое устройство Bluetooth LE перестает отвечать после отключения?
+## <a name="why-does-my-bluetooth-le-device-stop-responding-after-a-disconnect"></a>Почему мое устройство Bluetooth LE перестает отвечать после отключения?
 
 Чаще всего это происходит, потому что удаленное устройство потеряло сведения о связывании. Множество устройств Bluetooth ранних моделей не требуют проверки подлинности. Чтобы защитить пользователя, для всех процессов связывания, которые выполняются в приложении "Параметры", требуется проверка подлинности, а некоторые устройства не поддерживают этот процесс. 
 
@@ -34,15 +42,10 @@ ms.openlocfilehash: 2afc1250aa9d7a6cf6c9c8cb45dd2379b9d36984
     DevicePairingResult result = await customPairing.PairAsync(ceremonySelected, protectionLevel);
 ```
 
-## Требуется ли привязать устройства Bluetooth для их использования?
+## <a name="do-i-have-to-pair-bluetooth-devices-before-using-them"></a>Требуется ли привязать устройства Bluetooth для их использования?
 
 Это не требуется для классических устройств Bluetooth RFCOMM. Начиная с выпуска 1607 Windows 10 вы можете просто запросить ближайшие устройства и подключиться к ним. Эта функция показана в обновленном [примере чата RFCOMM](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat). 
 
 Эта функция недоступна для устройств Bluetooth Low Energy (клиент GATT), поэтому вам по-прежнему потребуется связать устройство на странице параметров или с помощью API-интерфейсов [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx), чтобы получить доступ к ним.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,15 +3,22 @@ author: DelfCo
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: "Технологии для получения доступа к сетевым и веб-службам."
 title: "Сеть и веб-службы"
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: 03a5ce2b8d5f501d4254cbe0ee3d47f575775f7a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1bb0e25e9368a6e2f7568ac51620c7a064a01ce3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Сеть и веб-службы
+# <a name="networking-and-web-services"></a>Сеть и веб-службы
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Для разработчиков, использующих универсальную платформу Windows (UWP), доступны следующие технологии сетевых и веб-служб.
 
@@ -25,9 +32,4 @@ ms.openlocfilehash: 03a5ce2b8d5f501d4254cbe0ee3d47f575775f7a
 | [HttpClient](httpclient.md)                                                             | Для отправки и получения данных по протоколам HTTP 2.0 и HTTP 1.1. используйте API пространства имен [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692).             |
 | [Каналы RSS и Atom](web-feeds.md)                                                          | Получайте или создавайте самое свежее и популярное веб-содержимое с помощью сводных веб-каналов, созданных по стандартам RSS и Atom с помощью компонентов в пространстве имен [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632).                   |
 | [Фоновая передача данных](background-transfers.md)                                         | Используйте фоновую передачу данных API, чтобы надежно копировать файлы по сети.           |
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

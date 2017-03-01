@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
 description: "В этой статье перечислены свойства DeviceInformation, связанные со звуковыми устройствами"
 title: "Свойства сведений о звуковых устройствах"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0745e96715ba49582ab762d4b25f1b8e681116f5
-ms.openlocfilehash: 08ebb37679d1dd93458a3ffe846d8bd33574635d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 647a0228299e90026307fdd516ac71da2473ff0d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Свойства сведений о звуковых устройствах
+# <a name="audio-device-information-properties"></a>Свойства сведений о звуковых устройствах
 
 В этой статье перечислены свойства сведений об устройствах, связанные со звуковыми устройствами. В Windows с каждым аппаратным устройством связаны свойства [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393), содержащие подробные сведения об устройстве. Вы можете использовать их для получения определенной информации об устройстве или при создании средства выбора устройств. Общие сведения о перечислении устройств в Windows можно найти в разделах [Перечисление устройств](../devices-sensors/enumerate-devices.md) и [Свойства сведений об устройствах](../devices-sensors/device-information-properties.md).
 
@@ -22,7 +29,7 @@ ms.openlocfilehash: 08ebb37679d1dd93458a3ffe846d8bd33574635d
 |**System.Devices.AudioDevice.RawProcessingSupported**|Логическое|Указывает, поддерживает ли звуковое устройство обработку необработанных данных.|
 |**System.Devices.MicrophoneArray.Geometry**|неподписанный символ[]|Геометрические данные для набора микрофонов.|
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Перечисление устройств](../devices-sensors/enumerate-devices.md)
 * [Свойства сведений об устройствах](../devices-sensors/device-information-properties.md)
@@ -31,10 +38,5 @@ ms.openlocfilehash: 08ebb37679d1dd93458a3ffe846d8bd33574635d
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

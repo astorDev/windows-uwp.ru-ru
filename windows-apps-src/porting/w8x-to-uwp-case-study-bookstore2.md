@@ -2,14 +2,21 @@
 author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: "Этот пример, в котором используются данные из примера Bookstore1, начинается с универсального приложения для версии 8.1, отображающего сгруппированные данные в элементе управления SemanticZoom."
-title: "Пример переноса среды выполнения Windows 8.x в UWP Bookstore2"
+title: "Пример переноса со среды выполнения Windows 8.x на UWP, Bookstore2"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 34762d74ba34ed3c5cee4da4809c2c509f3932e9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 401ab153ec737a0a82825dc3b2065156b50d4589
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="windows-runtime-8x-to-uwp-case-study-bookstore2"></a>Пример переноса среды выполнения Windows 8.x в UWP: Bookstore2
+# <a name="windows-runtime-8x-to-uwp-case-study-bookstore2"></a>Пример переноса со среды выполнения Windows 8.x на UWP: Bookstore2
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -171,9 +178,4 @@ Bookstore2\_81 в Windows Phone в уменьшенном масштабе
 В этом примере представлен более амбициозный пользовательский интерфейс, чем в предыдущем примере. Как и в предыдущем примере, для этой конкретной модели представления не потребовалось выполнять много работы, и все наши усилия были преимущественно потрачены на рефакторинг пользовательского интерфейса. Некоторые изменения потребовались в результате группирования двух проектов и для обеспечения поддержки большого количества форм-факторов (на самом деле намного большего количества, чем когда-либо ранее). И некоторые изменения были связаны с изменениями, которые были применены к платформе.
 
 Следующий пример — [QuizGame](w8x-to-uwp-case-study-quizgame.md), где мы рассмотрим доступ к сгруппированным данным и их и отображение.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

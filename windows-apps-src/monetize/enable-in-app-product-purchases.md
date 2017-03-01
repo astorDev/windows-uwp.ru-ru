@@ -1,16 +1,22 @@
 ---
 author: mcleanbyron
-Description: "Независимо от того, является ли ваше приложение бесплатным или нет, вы можете продавать содержимое, другие приложения или новые функциональные возможности (например, разблокирование следующего уровня игры) прямо из приложения. В этом разделе рассказывается о том, как разрешить такие покупки."
-title: "Поддержка покупок внутренних продуктов приложения"
+Description: "Независимо от того, является ли ваше приложение бесплатным или нет, вы можете продавать содержимое, другие приложения или новые функциональные возможности (например, разблокирование следующего уровня игры) прямо из приложения. В этом разделе мы рассказываем о том, как предоставить возможность совершать такие покупки."
+title: "Поддержка покупки продуктов из приложения"
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
-keywords: "Пример кода продажи из приложения"
+keywords: "uwp, надстройки, покупки из приложения, IAP, Windows.ApplicationModel.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 1cd748cd1b6ca7e85cfb86daba367540af25db88
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b7cd3f5d2c566958aaf83b8f633418ce444a2eaa
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="enable-in-app-product-purchases"></a>Поддержка покупок внутренних продуктов приложения
+# <a name="enable-in-app-product-purchases"></a>Поддержка покупки продуктов из приложения
 
 >**Примечание.**&nbsp;&nbsp;В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Если приложение предназначено для Windows 10 версии 1607 или более поздней, для управления надстройками (также называемыми внутренними продуктами приложения или IAP) рекомендуется использовать члены пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), а не пространство имен **Windows.ApplicationModel.Store**. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
 
@@ -86,9 +92,4 @@ ms.openlocfilehash: 1cd748cd1b6ca7e85cfb86daba367540af25db88
 * [Управление большим каталогом внутренних продуктов приложения](manage-a-large-catalog-of-in-app-products.md)
 * [Проверка покупок продуктов с помощью квитанций](use-receipts-to-verify-product-purchases.md)
 * [Пример для Магазина (демонстрация пробных версий и покупок из приложения)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

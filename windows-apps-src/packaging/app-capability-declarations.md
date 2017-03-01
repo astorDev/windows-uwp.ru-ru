@@ -3,14 +3,21 @@ author: msatranjr
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: "Объявления возможностей приложения"
 description: "Возможности должны быть заявлены в манифесте пакета приложения универсальной платформы Windows (UWP) для получения доступа к определенным API или ресурсам, например, изображениям, музыке или устройствам, в частности, камере или микрофону."
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ece16df809e7f030c3cbb7a6ab5e727ae77614e3
-ms.openlocfilehash: 5b1052c8b20908cef431a4d1d144d5e8fe1a0eac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 29aa2aefda5eebfade2da6b3e2b1e8b71361889f
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="app-capability-declarations"></a>Объявления возможностей приложения
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Возможности должны быть заявлены в [манифесте пакета](https://msdn.microsoft.com/library/windows/apps/BR211474) приложения UWP для получения доступа к определенным API или ресурсам, например, изображениям, музыке или устройствам, в частности, камере или микрофону.
 
@@ -175,9 +182,4 @@ ms.openlocfilehash: 5b1052c8b20908cef431a4d1d144d5e8fe1a0eac
 * [Указание возможностей в манифесте пакета](https://msdn.microsoft.com/library/windows/apps/BR211477)
 * [Указание возможностей устройства в манифесте пакета](https://msdn.microsoft.com/library/windows/apps/Dn263092)
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

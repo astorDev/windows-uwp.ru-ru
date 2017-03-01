@@ -2,14 +2,21 @@
 author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: "Узнайте, как включить промежуточную рекламу в Windows 10, Windows 8.1 или Windows Phone 8.1 с помощью библиотек Microsoft Advertising в составе пакета Microsoft Store Services SDK."
-title: "Промежуточная видеореклама"
+title: "Промежуточная реклама"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, реклама, рекламные объявления, промежуточная"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: fae0fc57eca3477bf46a6f3ac43ec35781241a6e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb1cdd018ed496b59290825ee84d10ac70a0e46d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="interstitial-ads"></a>Промежуточная видеореклама
+# <a name="interstitial-ads"></a>Промежуточная реклама
 
 В этом пошаговом руководстве показано, как включить промежуточную рекламу в Windows 10, Windows 8.1 или Windows Phone 8.1 с помощью библиотек Microsoft Advertising в составе пакета Microsoft Store Services SDK.
 
@@ -230,9 +237,4 @@ ms.openlocfilehash: fae0fc57eca3477bf46a6f3ac43ec35781241a6e
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,13 +3,20 @@ author: mtoepke
 title: "Планирование переноса DirectX"
 description: "Спланируйте свой проект переноса игры с DirectX 9 на DirectX 11 и универсальную платформу Windows (UWP) - обновление кода графики и помещение игры в среду выполнения Windows."
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, directx, перенос"
 translationtype: Human Translation
-ms.sourcegitcommit: 115377ed3e5a13668481d1122f354610b3077763
-ms.openlocfilehash: f5f66f5da79eb62e3a81f4fe0d7398fed689d378
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e255bceae44ace0722a2df0c53d60ec0f8fa35fe
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="plan-your-directx-port"></a>Планирование портирования приложений на DirectX
+# <a name="plan-your-directx-port"></a>Планирование переноса DirectX
 
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -64,10 +71,5 @@ ms.openlocfilehash: f5f66f5da79eb62e3a81f4fe0d7398fed689d378
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

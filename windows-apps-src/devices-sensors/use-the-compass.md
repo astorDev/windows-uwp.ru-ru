@@ -2,17 +2,24 @@
 author: DBirtolo
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: "Использование компаса"
-description: "Узнайте, как с помощью компаса можно определить текущее направление движения."
+description: "Узнайте, как использовать компас для определения текущего направления движения."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 05c13ff71e1c6dcfb84d46e37445c1699211951a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 07c6447a2f28c087c18e37e0036b43e7d7b312e5
+ms.lasthandoff: 02/07/2017
 
 ---
-# Использование компаса
+# <a name="use-the-compass"></a>Использование компаса
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Важные API **
+**Важные API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Compass (компас)**](https://msdn.microsoft.com/library/windows/apps/BR225705)
@@ -23,17 +30,17 @@ ms.openlocfilehash: 05c13ff71e1c6dcfb84d46e37445c1699211951a
 
 Текущее направление определяется по отношению к магнитному (истинному) северу. Навигационные приложения используют компас, чтобы определить, в каком направлении обращено устройство, а затем поворачивают карту соответствующим образом.
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 Вы должны быть знакомы с языком XAML, Microsoft Visual C# и событиями.
 
 Используемые вами устройство или эмулятор должны поддерживать компас.
 
-## Создание простого приложения компаса
+## <a name="create-a-simple-compass-app"></a>Создание простого приложения компаса
 
 Данный раздел состоит из двух подразделов. В первом подразделе описаны необходимые этапы создания простого приложения компаса с нуля. В следующем подразделе описано приложение, которое вы только что создали.
 
-### Инструкции
+### <a name="instructions"></a>Инструкции
 
 -   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#**.
 
@@ -66,8 +73,8 @@ ms.openlocfilehash: 05c13ff71e1c6dcfb84d46e37445c1699211951a
         public sealed partial class MainPage : Page
         {
             private Compass _compass; // Our app' s compass object
-     
-            // This event handler writes the current compass reading to 
+
+            // This event handler writes the current compass reading to
             // the textblocks on the app' s main page.
 
             private async void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
@@ -134,7 +141,7 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 -   Остановите приложение, вернувшись в Visual Studio и нажав клавиши Shift+F5 или выбрав **Отладка** > **Остановить отладку**.
 
-### Объяснение
+### <a name="explanation"></a>Объяснение
 
 Из предыдущего примера видно, какой небольшой объем кода требуется написать, чтобы включить в ваше приложение обработку входных данных компаса.
 
@@ -144,7 +151,7 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 _compass = Compass.GetDefault(); // Get the default compass object
 ```
 
-Приложение устанавливает интервал передачи данных в методе **MainPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16миллисекунд (что приблизительно соответствует частоте обновления 60Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
+Приложение устанавливает интервал передачи данных в методе **MainPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16 миллисекунд (что приблизительно соответствует частоте обновления 60 Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
 
 ```csharp
 uint minReportInterval = _compass.MinimumReportInterval;
@@ -155,7 +162,7 @@ _compass.ReportInterval = reportInterval;
 Новые данные от компаса принимаются в методе **ReadingChanged**. Каждый раз, когда драйвер датчика получает от датчика новые данные, он передает их вашему приложению с помощью этого обработчика событий. Приложение регистрирует этот обработчик событий в следующей строке:
 
 ```csharp
-_compass.ReadingChanged += new TypedEventHandler<Compass, 
+_compass.ReadingChanged += new TypedEventHandler<Compass,
 CompassReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -164,23 +171,14 @@ CompassReadingChangedEventArgs>(ReadingChanged);
 ```xml
  <TextBlock HorizontalAlignment="Left" Height="22" Margin="8,18,0,0" TextWrapping="Wrap" Text="Magnetic Heading:" VerticalAlignment="Top" Width="104" Foreground="#FFFBF9F9"/>
  <TextBlock HorizontalAlignment="Left" Height="18" Margin="8,58,0,0" TextWrapping="Wrap" Text="True North Heading:" VerticalAlignment="Top" Width="104" Foreground="#FFF3F3F3"/>
- <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/> 
+ <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/>
  <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
 ```
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Пример работы с компасом](http://go.microsoft.com/fwlink/p/?linkid=241378)
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

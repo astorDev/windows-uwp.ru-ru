@@ -3,14 +3,21 @@ author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: "Эффекты композиции"
 description: "API эффектов позволяют разработчикам настраивать отрисовку пользовательского интерфейса."
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7330af081021788a17bf6ec320267b4ea2fc3115
-ms.openlocfilehash: 197a4b32afc82724803fb93949b288b38de52cc4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ecf1c8a35838c1a05fabb5d76a2d0574c90a98db
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="composition-effects"></a>Эффекты композиции
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 API [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT позволяет применять эффекты в режиме реального времени к изображениям и пользовательскому интерфейсу, поддерживающему свойства анимации эффектов. В этом обзоре мы рассмотрим доступные функциональные возможности, позволяющие применять эффекты к визуальным элементам композиции.
 
@@ -244,10 +251,5 @@ brush.Surface = imageSource.Surface;
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

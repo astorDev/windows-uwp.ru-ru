@@ -1,15 +1,22 @@
 ---
 author: mcleblanc
 description: "Практика определения пользовательского интерфейса в форме декларативной разметки XAML очень хорошо преобразуется из Windows Phone Silverlight в приложения универсальной платформы Windows (UWP)."
-title: "Перенос Windows Phone Silverlight XAML и пользовательского интерфейса в UWP"
+title: "Перенос XAML и пользовательского интерфейса с Windows Phone Silverlight на UWP"
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 3aa68943724c008e18df63d8b0ae20f448146303
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1ec72aec1e94ff92ef30fcc206456c7614107c98
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  <a name="porting-windows-phone-silverlight-xaml-and-ui-to-uwp"></a>Перенос Windows Phone Silverlight XAML и пользовательского интерфейса в UWP
+#  <a name="porting-windows-phone-silverlight-xaml-and-ui-to-uwp"></a>Перенос XAML и пользовательского интерфейса с Windows Phone Silverlight на UWP
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -238,7 +245,7 @@ Windows Phone Silverlight имеет свойство **System.Windows.UIElemen
     <BitmapIcon UriSource="Assets/winrt_check.png" Width="21" Height="21"/>
 ```
 
-В данном примере winrt\_check.png — альфа-маска в формате растрового изображения, как и wpsl\_check.png. Причем это вполне может быть один и тот же файл. Но вам может понадобиться создать несколько разных размеров winrt\_check.png, используемых для различных коэффициентов масштабирования. Дополнительные сведения об этом и описание изменений в значениях **Width** и **Height** см. в пункте [Пиксели представления/эффективные пиксели, расстояние от экрана и коэффициенты масштабирование](#view-effective-pixels-viewing-distance-and-scale-factors) в этом разделе.
+В данном примере winrt\_check.png — альфа-маска в формате растрового изображения, как и wpsl\_check.png. Причем это вполне может быть один и тот же файл. Но вам может понадобиться создать несколько разных размеров winrt\_check.png, используемых для различных коэффициентов масштабирования. Дополнительные сведения об этом и описание изменений в значениях **Width** и **Height** см. в подразделе [Пиксели представления или эффективные пиксели, расстояние от экрана и коэффициенты масштабирование](#view-or-effective-pixels-viewing-distance-and-scale-factors) в этом разделе.
 
 Более общим способом, который подходит в случае различия между оформлением растрового изображения в светлой и темной теме, является использование двух ресурсов изображений — одного с темным передним планом (для светлой темы) и второго со светлым передним планом (для темной темы). Дополнительные сведения о присвоении имени этому набору ресурсов растровых изображений см. в разделе [Присвоение имен ресурсам с помощью квалификаторов](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324). После присвоения правильного имени набору файлов изображений вы можете ссылаться на них в общем с помощью их имени корневого элемента, например:
 
@@ -355,7 +362,7 @@ Windows Phone Silverlight имеет свойство **System.Windows.UIElemen
 
 См. раздел [Работа с плитками, индикаторами событий и всплывающими уведомлениями](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
 
-## <a name="vieweffective-pixels-viewing-distance-and-scale-factors"></a>Эффективные пиксели и пиксели просмотра, расстояние от экрана и коэффициенты масштабирования
+## <a name="view-or-effective-pixels-viewing-distance-and-scale-factors"></a>Пиксели представления или эффективные пиксели, расстояние от экрана и коэффициенты масштабирование
 
 Приложения Windows Phone Silverlight и приложения для Windows 10 отличаются тем, как они абстрагируют размер и расположение элементов пользовательского интерфейса от физических размеров и разрешения устройств. Приложение Windows Phone Silverlight использует пиксели представления для этого. В Windows 10 принцип пикселей представления был доработан до эффективных пикселей. Вот описание этого термина, его значения и преимуществ.
 
@@ -391,10 +398,5 @@ Windows Phone Silverlight имеет свойство **System.Windows.UIElemen
 ## <a name="related-topics"></a>Связанные разделы
 
 * [Сопоставление пространства имен и класса](wpsl-to-uwp-namespace-and-class-mappings.md)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -2,13 +2,21 @@
 author: Mtoepke
 title: "Приложения UWP для Xbox One"
 description: "Вы узнаете, как создавать приложения универсальной платформы Windows (UWP) для Xbox One."
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 translationtype: Human Translation
-ms.sourcegitcommit: 7a53a7a9e786ebe04963a827bdfbc5beb69819eb
-ms.openlocfilehash: d46add99bccd41b4d278e58f79b356714fa4a038
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 36d19f660bc3c03377f864b1d659a19396917130
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Приложения UWP для Xbox One
+# <a name="uwp-on-xbox-one"></a>Приложения UWP для Xbox One
 
 Приступите к созданию приложений универсальной платформы Windows (UWP) для Xbox One.
 
@@ -34,14 +42,9 @@ ms.openlocfilehash: d46add99bccd41b4d278e58f79b356714fa4a038
 |[Отключение режима разработчика в Xbox One](devkit-deactivation.md)| В разделе содержатся сведения о выключении режима разработчика в Xbox One. |
 |[Функции UWP, которые еще не поддерживаются в Xbox One](http://go.microsoft.com/fwlink/p/?LinkId=760755)|  В этом разделе описаны функциональные области UWP, которые еще не полностью реализованы в Xbox One.|  
 
-## См. также
+## <a name="see-also"></a>См. также
 - [Обзор приложений UWP для Xbox One](http://go.microsoft.com/fwlink/p/?LinkId=780786) 
 - [Автоматизация запуска приложений UWP для Windows 10](automate-launching-uwp-apps.md)
 - [CPUSets для разработки игр](cpusets-games.md)
   
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

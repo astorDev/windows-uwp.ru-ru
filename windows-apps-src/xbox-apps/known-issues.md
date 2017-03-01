@@ -2,9 +2,17 @@
 author: Mtoepke
 title: "Известные проблемы с программой для разработчиков UWP для Xbox One"
 description: 
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 translationtype: Human Translation
-ms.sourcegitcommit: 3f0647bb76340ccbd538e9e4fefe173924d6baf4
-ms.openlocfilehash: 18c8d1fcd696f336601dc6c531424fe8bfb78304
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 4b13b9bbbc75de47ed69112680894d5e3f34d8a1
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -177,12 +185,52 @@ Sometimes this is resolved by sorting a column on the table.-->
 Occasionally, selecting the “Manage Windows Device Portal” option in Dev Home will cause Dev Home to silently exit to the Home screen. 
 This is caused by a failure in the WDP infrastructure on the console and can be resolved by restarting the console.-->
 
+## <a name="knownfoldersmediaserverdevices-caveat-on-xbox"></a>Пояснение для KnownFolders.MediaServerDevices на Xbox
+
+На рабочем столе серверы мультимедиа «связываются» с ПК, а служба сопоставления устройств постоянно отслеживает, какие серверы сейчас активны, поэтому первоначальный запрос файловой системы может немедленно вернуть список связанных серверов, активных в настоящее время.
+
+На Xbox не предусмотрены элементы пользовательского интерфейса для добавления или удаления серверов, поэтому первоначальный запрос файловой системы всегда будет возвращаться пустым. Необходимо создать запрос и подписаться на событие ContentsChanged, а затем обновлять запрос при каждом получении уведомления. Серверы будут постепенно добавляться, и большинство из них будут обнаружены в течение 3 секунд.
+
+Простой пример кода:
+
+```
+namespace TestDNLA {
+
+    public sealed partial class MainPage : Page {
+        public MainPage() {
+            this.InitializeComponent();
+        }
+
+        private async void FindFiles_Click(object sender, RoutedEventArgs e) {
+            try {
+                StorageFolder library = KnownFolders.MediaServerDevices;
+                var folderQuery = library.CreateFolderQuery();
+                folderQuery.ContentsChanged += FolderQuery_ContentsChanged;
+                IReadOnlyList<StorageFolder> rootFolders = await folderQuery.GetFoldersAsync();
+                if (rootFolders.Count == 0) {
+                    Debug.WriteLine("No Folders found");
+                } else {
+                    Debug.WriteLine("Folders found");
+                }
+            } catch (Exception ex) {
+                Debug.WriteLine("Error: " + ex.Message);
+            } finally {
+                Debug.WriteLine("Done");
+            }
+        }
+
+        private async void FolderQuery_ContentsChanged(Windows.Storage.Search.IStorageQueryResultBase sender, object args) {
+            Debug.WriteLine("Folder added " + sender.Folder.Name);
+            IReadOnlyList<StorageFolder> topLevelFolders = await sender.Folder.GetFoldersAsync();
+            foreach (StorageFolder topLevelFolder in topLevelFolders) {
+                Debug.WriteLine(topLevelFolder.Name);
+            }
+        }
+    }
+}
+```
+
 ## <a name="see-also"></a>См. также
 - [Вопросы и ответы](frequently-asked-questions.md)
 - [Приложения UWP для Xbox One](index.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -1,17 +1,24 @@
 ---
 author: mithom
 title: "Геймпад и вибрация"
-description: "Используйте API-интерфейсы Windows.Gaming.Input геймпада для определения, считывания и отправки команд вибрации и импульсов на геймпады."
+description: "Используйте API Windows.Gaming.Input геймпада для определения, считывания и отправки команд вибрации и импульсов на геймпады."
 ms.assetid: BB03BB8E-255F-4AE8-AC43-1E519CA860FE
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, геймпад, вибрация"
 translationtype: Human Translation
-ms.sourcegitcommit: d0cfc41e5ae79844f3948ed2c326bf9913c066a4
-ms.openlocfilehash: 5d64c463b572dfc6da5ed453308c56a05d0a4410
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b92ddbaadd7fd09b252d5c8842ed89daf53a6982
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="gamepad-and-vibration"></a>Геймпад и вибрация
 
-На этой странице приведены основные принципы программирования для геймпадов Xbox One с помощью [Windows.Gaming.Input.Gamepad][gamepad] и связанных API-интерфейсов для универсальной платформы Windows (UWP).
+На этой странице приведены основные принципы программирования для геймпадов Xbox One с помощью [Windows.Gaming.Input.Gamepad][gamepad] и связанных API для универсальной платформы Windows (UWP).
 
 Изучив информацию на этой странице, вы узнаете:
 * как составить список подключенных геймпадов и их пользователей;
@@ -314,9 +321,4 @@ gamepad.Vibration = vibration;
 [gamepadreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadreading.aspx
 [gamepadbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadbuttons.aspx
 [gamepadvibration]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadvibration.aspx
-
-
-
-<!--HONumber=Dec16_HO4-->
-
 

@@ -1,22 +1,29 @@
 ---
 author: jnHs
-Description: "Вы можете размещать в Магазине Windows приложения более чем на 100языках."
+Description: "Вы можете размещать в Магазине Windows приложения более чем на 100 языках."
 title: "Поддерживаемые языки"
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3d14f1d11290942a90498f7aff4dc324daa3a84e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b9d0720ee56430320cfc4ca2725fb3e0ac8049e5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Поддерживаемые языки
+# <a name="supported-languages"></a>Поддерживаемые языки
 
 
-Вы можете размещать в Магазине Windows приложения более чем на 100языках.
+Вы можете размещать в Магазине Windows приложения более чем на 100 языках.
 
 Дополнительные сведения о настройке языков в приложениях см. в разделах [Глобализация и локализация](../globalizing/globalizing-portal.md) и [Управление языковыми и региональными параметрами](../globalizing/manage-language-and-region.md). [Набор средств для многоязычных приложений](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370) также поможет вам в создании приложений, поддерживающих несколько языков.
 
-## Поддерживаемые языки
+## <a name="supported-languages"></a>Поддерживаемые языки
 
 
 Ниже перечислены языки, которые поддерживаются в Магазине Windows. Ваше приложение должно поддерживать хотя бы один из этих языков и не должно содержать любых кодов языков, которые здесь отсутствуют.
@@ -135,10 +142,5 @@ ms.openlocfilehash: 3d14f1d11290942a90498f7aff4dc324daa3a84e
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

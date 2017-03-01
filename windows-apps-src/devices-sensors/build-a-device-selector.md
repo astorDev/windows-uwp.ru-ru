@@ -3,23 +3,30 @@ author: DBirtolo
 ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
 title: "Создание средства выбора устройств"
 description: "Создание средства выбора устройства позволяет ограничить количество устройств, по которым выполняется поиск при перечислении."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 091767d6f223ce2b4538dafb1c81595015589013
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e4e3cecc0618d81554dbaae80c3bb4d907c79d31
+ms.lasthandoff: 02/07/2017
 
 ---
-# Создание средства выбора устройств
+# <a name="build-a-device-selector"></a>Создание средства выбора устройств
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Важные API **
+**Важные API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 Создание средства выбора устройства позволяет ограничить количество устройств, по которым выполняется поиск при перечислении. Благодаря этому вы не только будете получать подходящие результаты, но и улучшите производительность системы. В большинстве случаев вы получаете средство выбора устройств из его стека. Например, для устройств, которые обнаруживаются по USB, можно использовать команду [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Dn264015). Эти средства выбора устройств возвращают строку расширенного синтаксиса запросов (AQS). Если вы не знакомы с форматом AQS, подробнее о нем можно узнать в статье [Программное использование дополнительного синтаксиса запроса](https://msdn.microsoft.com/library/windows/desktop/Bb266512).
 
-## Формирование строки фильтра
+## <a name="building-the-filter-string"></a>Формирование строки фильтра
 
 В ряде случаев предоставленное средство выбора устройств недоступно для сценария, когда требуется перечислить устройства. Средство выбора устройств — это строка фильтра AQS, которая содержит следующие сведения. Прежде чем создать строку фильтрации, необходимо знать некоторые ключевые сведения об устройствах, которые вы хотите перечислить.
 
@@ -62,7 +69,7 @@ API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows
 
 Если вы не можете создать одну строку фильтра AQS, которая будет определять область результатов соответствующим образом, вы можете отфильтровать результаты после их получения. Но если вы выберете этот вариант, мы рекомендуем максимально ограничить результаты из начальной строки AQS фильтра при ее предоставлении интерфейсам API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459). Это повысит производительность вашего приложения.
 
-## Примеры строк AQS
+## <a name="aqs-string-examples"></a>Примеры строк AQS
 
 В следующих примерах показано, как можно использовать синтаксис AQS для ограничения количества устройств, которые нужно перечислить. Все эти строки фильтров используются вместе с [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991), чтобы создать полный фильтр. Помните, что если тип не указан, по умолчанию используется тип **DeviceInterface**.
 
@@ -70,7 +77,7 @@ API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows
             ** преобразуется в **COP\_EQUALS**.
 
 ``` syntax
-System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND 
+System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
@@ -110,13 +117,4 @@ System.Devices.IpAddress:=[]
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

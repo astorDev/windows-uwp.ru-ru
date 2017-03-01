@@ -3,20 +3,27 @@ description: "В данной статье рассказывается, как 
 title: "Получение данных"
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b8d627da82da463b87ace2a2ef6e739b1caafaa2
-ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1d15bfb6bfed16d1b71313fd5a5f29ceeef3bd3e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Получение данных
+# <a name="receive-data"></a>Получение данных
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В данной статье рассказывается, как в приложении универсальной платформы Windows (UWP) получить содержимое, общий доступ к которому предоставлен из другого приложения с помощью контракта отправки данных. Контракт отправки данных позволяет предлагать ваше приложение как вариант, когда пользователь вызывает функцию общего доступа.
 
-## Объявление приложения получателем данных
+## <a name="declare-your-app-as-a-share-target"></a>Объявление приложения получателем данных
 
 Система показывает список возможных конечных приложений для получения данных, когда пользователь вызывает функцию общего доступа. Для отображения в списке ваше приложения должно объявить поддержку контракта отправки данных. Это сообщает системе, что приложение может получать содержимое.
 
@@ -24,7 +31,7 @@ ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
 2.  Откройте вкладку **Объявления**.
 3.  В списке **Доступные объявления** выберите **получателя данных** и нажмите кнопку **Добавить**.
 
-## Выбор форматов и типов файлов
+## <a name="choose-file-types-and-formats"></a>Выбор форматов и типов файлов
 
 Затем укажите поддерживаемые типы файлов и форматы данных. API общего доступа поддерживают несколько стандартных форматов, таких как текст, HTML и растровые изображения. Вы также можете задать пользовательские типы файлов и форматы данных. При этом помните: приложения-источники должны распознавать эти типы и форматы, иначе приложения не смогут использовать их для общего доступа к данным.
 
@@ -42,7 +49,7 @@ ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
 2.  В разделе **Форматы данных** страницы **Объявления** нажмите кнопку **Добавить**.
 3.  Введите имя поддерживаемого формата данных, например "Текст".
 
-## Обработка активации общего доступа
+## <a name="handle-share-activation"></a>Обработка активации общего доступа
 
 Когда пользователь выбирает ваше приложение (обычно из списка доступных приложений-получателей данных в пользовательском интерфейсе общего ресурса), создается событие [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)). Ваше приложение должно обработать это событие, чтобы принять данные, к которым пользователь хочет предоставить общий доступ.
 
@@ -68,7 +75,7 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
 } 
 ```
 
-## Отчет о состоянии общего доступа
+## <a name="report-sharing-status"></a>Отчет о состоянии общего доступа
 
 В некоторых случаях вашей программе может потребоваться время на обработку данных, предназначенных для общего доступа. Примером является предоставление пользователями общего доступа к коллекциям своих файлов или изображений. Размер этих элементов превышает размер простой текстовой строки, поэтому их обработка занимает больше времени.
 
@@ -98,7 +105,7 @@ shareOperation.ReportCompleted();
 
 Если вы используете эти методы, в обыкновенных ситуациях применяйте их в указанном выше порядке и не вызывайте их больше одного раза. Бывают случаи, когда приложение — получатель данных может вызывать [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved) до [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted). Например, приложение может получать данные в рамках задачи обработчика события активации, но не вызывать **ReportStarted**, пока пользователь не щелкнет **Общий доступ**.
 
-## Возвращение QuickLink в случае успешного выполнения общего доступа
+## <a name="return-a-quicklink-if-sharing-was-successful"></a>Возвращение QuickLink в случае успешного выполнения общего доступа
 
 Если пользователь выбирает ваше приложение для получения содержимого, рекомендуется создать объект [**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink). Объект **QuickLink** является своеобразным ярлыком, который облегчает для пользователей отправку данных вашему приложению. Например, можно создать объект **QuickLink**, открывающий новое сообщение электронной почты, в котором уже указан адрес электронной почты друга.
 
@@ -128,7 +135,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 }
 ```
 
-## См. также 
+## <a name="see-also"></a>См. также 
 
 * [Связь между приложениями](index.md)
 * [Предоставление общего доступа к данным](share-data.md)
@@ -140,9 +147,4 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 * [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
 * [QuickLink](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.aspx)
 * [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,20 +3,27 @@ author: laurenhughes
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: "В этой статье объясняется, как загружать и сохранять файлы изображений с помощью BitmapDecoder и BitmapEncoder, а также как использовать объект SoftwareBitmap для представления точечных рисунков."
 title: "Создание, редактирование и сохранение точечных рисунков"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
-ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8aa20d434b4ea89d972712e48131e9a965476d1d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Создание, редактирование и сохранение точечных рисунков
+# <a name="create-edit-and-save-bitmap-images"></a>Создание, редактирование и сохранение точечных рисунков
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье объясняется, как загрузить и сохранить файлы изображений с помощью [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) и [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206), а также как использовать объект [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) для представления точечных рисунков.
 
-Класс **SoftwareBitmap**— это универсальный API, который можно создать из нескольких источников, включая файлы изображений, объекты [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259), поверхности Direct3D и код. **SoftwareBitmap** позволяет легко преобразовывать различные форматы пикселей в режимы альфа-канала и наоборот, а также получить доступ на низком уровне к пиксельным данным. Кроме того, **SoftwareBitmap**— это распространенный интерфейс, который используется различными функциями Windows, включая следующие.
+Класс **SoftwareBitmap** — это универсальный API, который можно создать из нескольких источников, включая файлы изображений, объекты [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259), поверхности Direct3D и код. **SoftwareBitmap** позволяет легко преобразовывать различные форматы пикселей в режимы альфа-канала и наоборот, а также получить доступ на низком уровне к пиксельным данным. Кроме того, **SoftwareBitmap** — это распространенный интерфейс, который используется различными функциями Windows, включая следующие.
 
 -   [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) позволяет получить кадры, захваченные с камеры в виде **SoftwareBitmap**.
 
@@ -28,7 +35,7 @@ ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
 
 [!code-cs[Пространства имен](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
 
-## Создание SoftwareBitmap из файла изображения с помощью BitmapDecoder
+## <a name="create-a-softwarebitmap-from-an-image-file-with-bitmapdecoder"></a>Создание SoftwareBitmap из файла изображения с помощью BitmapDecoder
 
 Чтобы создать [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) из файла, получите экземпляр [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171), содержащий данные изображения. В этом примере используется [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), что позволяет пользователю выбирать файл изображения.
 
@@ -38,13 +45,13 @@ ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
 
 [!code-cs[CreateSoftwareBitmapFromFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromFile)]
 
-## Сохранение SoftwareBitmap в файл с помощью BitmapEncoder
+## <a name="save-a-softwarebitmap-to-a-file-with-bitmapencoder"></a>Сохранение SoftwareBitmap в файл с помощью BitmapEncoder
 
 Чтобы сохранить **SoftwareBitmap** в файл, получите экземпляр **StorageFile**, в котором будет сохранено изображение. В этом примере используется [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), что позволяет пользователю выбирать выходной файл.
 
 [!code-cs[PickOuputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
 
-Вызовите метод [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) объекта **StorageFile**, чтобы получить поток произвольного доступа, в который будет записано изображение. Вызовите статический метод [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211), чтобы получить экземпляр класса [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) для указанного потока. Первый параметр **CreateAsync**— это идентификатор GUID, представляющий кодек, который необходимо использовать для кодирования изображения. **BitmapEncoder** — класс, который предоставляет свойство, содержащее идентификатор для каждого кодека, поддерживаемого кодировщиком, например [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).
+Вызовите метод [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) объекта **StorageFile**, чтобы получить поток произвольного доступа, в который будет записано изображение. Вызовите статический метод [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211), чтобы получить экземпляр класса [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) для указанного потока. Первый параметр **CreateAsync** — это идентификатор GUID, представляющий кодек, который необходимо использовать для кодирования изображения. **BitmapEncoder** — класс, который предоставляет свойство, содержащее идентификатор для каждого кодека, поддерживаемого кодировщиком, например [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).
 
 Используйте метод [**SetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887337), чтобы задать изображение для кодирования. Вы можете задать значения свойства [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) для применения основных преобразований изображения во время кодирования. Свойство [**IsThumbnailGenerated**](https://msdn.microsoft.com/library/windows/apps/br226225) определяет, создал ли кодировщик эскиз. Обратите внимание, что не все форматы файлов поддерживают эскизы, поэтому при использовании этой функции может возникнуть ошибка о недопустимой операции, если эскизы не поддерживаются.
 
@@ -56,7 +63,7 @@ ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
 
 [!code-cs[UseEncodingOptions](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetUseEncodingOptions)]
 
-## Использование SoftwareBitmap с элементом управления изображением XAML
+## <a name="use-softwarebitmap-with-a-xaml-image-control"></a>Использование SoftwareBitmap с элементом управления изображением XAML
 
 Чтобы отобразить изображение на странице XAML с помощью элемента управления [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752), сначала найдите элемент управления **Image** на своей странице XAML.
 
@@ -70,13 +77,13 @@ ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
 
 Также можно использовать **SoftwareBitmapSource**, чтобы задать **SoftwareBitmap** в качестве [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/br210105) для [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101).
 
-## Создание SoftwareBitmap из WriteableBitmap
+## <a name="create-a-softwarebitmap-from-a-writeablebitmap"></a>Создание SoftwareBitmap из WriteableBitmap
 
 Можно создать **SoftwareBitmap** из существующего **WriteableBitmap**. Для этого вызовите метод [**SoftwareBitmap.CreateCopyFromBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887370) и укажите свойство **PixelBuffer** объекта **WriteableBitmap**, чтобы задать пиксельные данные. Второй аргумент позволяет запрашивать формат пикселей для созданного **WriteableBitmap**. Можно использовать свойства [**PixelWidth**](https://msdn.microsoft.com/library/windows/apps/br243253) и [**PixelHeight**](https://msdn.microsoft.com/library/windows/apps/br243251) элемента **WriteableBitmap**, чтобы указать размеры нового изображения.
 
 [!code-cs[WriteableBitmapToSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteableBitmapToSoftwareBitmap)]
 
-## Программное создание или изменение SoftwareBitmap
+## <a name="create-or-edit-a-softwarebitmap-programmatically"></a>Программное создание или изменение SoftwareBitmap
 
 До сих пор в этом разделе рассматривалась работа с файлами изображений. Однако вы также можете создать **SoftwareBitmap** с помощью программного кода и использовать этот же способ для получения доступа к пиксельным данным **SoftwareBitmap** и для их изменения.
 
@@ -96,7 +103,7 @@ ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
 
 Поскольку этот метод получает доступ к необработанному буферу, который лежит в основе типов среды выполнения Windows, его необходимо объявить с помощью ключевого слова **unsafe**. Необходимо также настроить проект в Microsoft Visual Studio, чтобы разрешить компиляцию небезопасного кода. Для этого откройте страницу проекта **Свойства**, щелкните страницу свойств **Сборка** и установите флажок **Разрешить небезопасный код**.
 
-## Создание SoftwareBitmap с поверхности Direct3D
+## <a name="create-a-softwarebitmap-from-a-direct3d-surface"></a>Создание SoftwareBitmap с поверхности Direct3D
 
 Для создания объекта **SoftwareBitmap** с поверхности Direct3D необходимо включить в проект пространство имен [**Windows.Graphics.DirectX.Direct3D11**](https://msdn.microsoft.com/library/windows/apps/dn895104).
 
@@ -106,19 +113,19 @@ ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
 
 [!code-cs[CreateSoftwareBitmapFromSurface](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromSurface)]
 
-## Преобразование SoftwareBitmap в другой формат пикселей
+## <a name="convert-a-softwarebitmap-to-a-different-pixel-format"></a>Преобразование SoftwareBitmap в другой формат пикселей
 
 Класс **SoftwareBitmap** предоставляет статический метод [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362), который позволяет легко создать **SoftwareBitmap**, использующий формат пикселей и режим альфа-канала, указанные вами в существующем **SoftwareBitmap**. Обратите внимание, что созданный точечный рисунок содержит отдельную копию данных изображения. Изменения нового точечного рисунка не будут влиять на исходный файл.
 
 [!code-cs[Преобразование](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 
-## Перекодирование файла изображения
+## <a name="transcode-an-image-file"></a>Перекодирование файла изображения
 
 Вы можете перекодировать файл изображения непосредственно из [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) в [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Создайте [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) из файла для перекодирования. Создайте **BitmapDecoder** из входного потока. Создайте [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) для записи кодировщиком и вызовите метод [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214), передав поток в памяти и объект декодера. Задайте необходимые свойства кодирования. Все свойства в файле изображения, специально не заданные в кодировщике, будут записаны в выходной файл без изменений. Вызовите метод [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216), чтобы кодировщик выполнил кодирование в поток в памяти. Наконец, обратите поток файла и поток в памяти в начало и вызовите метод [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827), чтобы записать поток в памяти за пределами потока файла.
 
 [!code-cs[TranscodeImageFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Справочник по параметрам BitmapEncoder](bitmapencoder-options-reference.md)
 * [Метаданные изображения](image-metadata.md)
@@ -128,10 +135,5 @@ ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

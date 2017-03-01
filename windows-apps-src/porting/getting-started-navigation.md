@@ -1,19 +1,26 @@
 ---
 author: mcleblanc
-title: "Приступая к работе - навигация"
-description: "Приступая к работе - навигация"
+title: "Начало работы: навигация"
+description: "Начало работы: навигация"
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: daf56299b3a5e81bb756bc9fcb8112da044b00f3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: febafd9a36f021bdbf06692a34c8691d1008018f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Приступая к работе - навигация
+# <a name="getting-started-navigation"></a>Начало работы: навигация
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Добавление навигации
+## <a name="adding-navigation"></a>Добавление навигации
 
 iOS предоставляет класс **UINavigationController**, чтобы помочь в создании навигации в приложении: вы можете использовать представления push и pop для создания иерархии **UIViewControllers**, определяющей ваше приложение.
 
@@ -80,13 +87,8 @@ public BlankPage()
 
 **Примечание.** Дополнительные сведения о навигации для приложений Магазина Windows на JavaScript и HTML см. в разделе [Краткое руководство: использование одностраничной навигации](https://msdn.microsoft.com/library/windows/apps/hh452768).
  
-### Следующие шаги
+### <a name="next-step"></a>Следующие шаги
 
 [Приступая к работе: анимация](getting-started-animation.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

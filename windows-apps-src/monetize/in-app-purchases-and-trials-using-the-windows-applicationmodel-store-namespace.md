@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: "Узнайте, как включить покупки из приложения и пробные версии в приложениях UWP, предназначенных для выпусков Windows 10 до версии 1607."
 title: "Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "uwp, покупки из приложения, IAP, надстройки, пробные версии, Windows.ApplicationModel.Store"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: ee2a52a54be8510b962f1ef5c40570f3836d28c3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 787007b870675749d96afa59a6e9cb5f3be68991
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -537,9 +544,4 @@ ms.openlocfilehash: ee2a52a54be8510b962f1ef5c40570f3836d28c3
 |  **TransactionId**  |     Да       |   Содержит GUID (в виде строки), с помощью которого приложение отслеживает транзакцию покупки потребляемого продукта посредством процесса исполнения. См. раздел [Поддержка покупки потребляемых внутренних продуктов приложений](enable-consumable-in-app-product-purchases.md).            |
 |  **Status**  |      Да      |  Содержит строку, с помощью которой приложение указывает состояние исполнения потребляемого продукта. Допустимые значения: **Active**, **PurchaseReverted**, **PurchasePending** или **ServerError**.             |
 |  **OfferId**  |     Нет       |    Содержит строку, с помощью которой приложение определяет категорию, к которой относится потребляемый продукт. Это обеспечивает поддержку больших каталогов элементов, как описано в разделе [Управление большим каталогом внутренних продуктов приложения](manage-a-large-catalog-of-in-app-products.md).           |
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: "Используйте этот метод в API аналитики для Магазина Windows для получения отзывов о приложении в заданном диапазоне дат или с учетом других дополнительных фильтров."
 title: "Получение отзывов о приложении"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, службы Магазина, API аналитики для Магазина Windows, отзывы"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 68ad995341d0d4bedbe566e8a491a80b9b0a8ed2
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -14,9 +21,11 @@ ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
 
 Используйте этот метод в API аналитики для Магазина Windows для получения рецензий в формате JSON в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете о рецензиях](../publish/reviews-report.md) на информационной панели Центра разработки для Windows.
 
-## <a name="prerequisites"></a>Необходимые условия
+После получения отзывов вы можете использовать методы [получения сведений об ответах на отзывы о приложении](get-response-info-for-app-reviews.md) и [отправки ответов на отзывы о приложении](submit-responses-to-app-reviews.md) в API отзывов Магазина Windows, чтобы программно отвечать на отзывы.
 
-Для использования этого метода необходимо выполнить следующие действия:
+## <a name="prerequisites"></a>Предварительные условия
+
+Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](access-analytics-data-using-windows-store-services.md#prerequisites) для API аналитики для Магазина Windows.
 * [Получите маркер доступа Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
@@ -82,7 +91,7 @@ ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
 | notHelpfulCount  | eq, ne  | Количество оценок отзыва как бесполезного.  |
 | responseDate  | eq, ne  | Дата отправки ответа.  |
 | responseText  | eq, ne, contains  | Текстовое содержимое ответа.  |
-
+| id  | eq, ne  | ИД отзыва (это GUID).        |
 
 <span/> 
 
@@ -139,6 +148,7 @@ Authorization: Bearer <your access token>
 | notHelpfulCount        | число  | Количество оценок отзыва как бесполезного.               |
 | responseDate           | строка  | Дата отправки ответа.                 |
 | responseText           | строка  | Текстовое содержимое ответа.        |
+| id                     | строка  | ИД отзыва (это GUID). Вы можете использовать этот ИД в методах [получения сведений об ответах на отзывы о приложении](get-response-info-for-app-reviews.md) и [отправки ответов на отзывы о приложении](submit-responses-to-app-reviews.md).       |
 
 <span/> 
 
@@ -171,7 +181,8 @@ Authorization: Bearer <your access token>
       "helpfulCount": 0,
       "notHelpfulCount": 0,
       "responseDate": "2015-08-07T01:50:22.9874488Z",
-      "responseText": "1"
+      "responseText": "1",
+      "id": "6be543ff-1c9c-4534-aced-af8b4fbe0316"
     }
   ],
   "@nextLink": null,
@@ -181,15 +192,12 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>Связанные статьи
 
-* [Отчет "Рецензии"](../publish/reviews-report.md)
+* [Отчет об отзывах](../publish/reviews-report.md)
 * [Доступ к аналитическим данным с помощью служб Магазина Windows](access-analytics-data-using-windows-store-services.md)
-* [Получение сведений о покупках приложения](get-app-acquisitions.md)
+* [Получение сведений об ответах на отзывы о приложении](get-response-info-for-app-reviews.md)
+* [Отправка ответов на отзывы о приложении](submit-responses-to-app-reviews.md)
+* [Получение сведений о приобретениях приложения](get-app-acquisitions.md)
 * [Получение сведений о покупках надстройки](get-in-app-acquisitions.md)
 * [Получение данных отчетов об ошибках](get-error-reporting-data.md)
 * [Получение сведений об оценках приложения](get-app-ratings.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

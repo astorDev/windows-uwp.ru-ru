@@ -2,20 +2,27 @@
 author: DBirtolo
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
 title: "Включение возможностей устройств"
-description: "В этом руководстве описано, как объявлять возможности устройств в Microsoft Visual Studio. Это позволяет вашему приложению использовать камеры, микрофоны, датчики местоположения и другие устройства."
+description: "В этом руководстве описано, как объявлять возможности устройств в Microsoft Visual Studio. Это позволяет вашему приложению использовать камеры, микрофоны, датчики расположения и другие устройства."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b36dd4d77821a65b1f435d755f7bb415b2e386ee
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 15b12bfafea71705a9c18464461a73e3e2f05563
+ms.lasthandoff: 02/07/2017
 
 ---
-# Включение возможностей устройств
+# <a name="enable-device-capabilities"></a>Включение возможностей устройств
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этом руководстве описано, как объявлять возможности устройств в Microsoft Visual Studio. Это позволяет вашему приложению использовать камеры, микрофоны, датчики местоположения и другие устройства.
 
-## Указание возможностей устройств, которые будет использовать приложение
+## <a name="specify-the-device-capabilities-your-app-will-use"></a>Указание возможностей устройств, которые будет использовать приложение
 
 
 Приложения для Windows требуют, чтобы в манифесте пакета приложения было указано, что используются определенные типы устройств. Большинство возможностей можно объявить в Visual Studio с помощью [конструктора манифеста](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx) или добавить вручную, как описано в разделе об [определении возможностей устройств в манифесте пакета вручную](https://msdn.microsoft.com/library/windows/apps/Dn263092). В этом учебнике предполагается, что вы пользуетесь конструктором манифеста.
@@ -56,7 +63,7 @@ ms.openlocfilehash: b36dd4d77821a65b1f435d755f7bb415b2e386ee
 | Bluetooth RFCOMM |  | Предоставляет доступ к API, поддерживающим транспорт BR/EDR, а также позволяет приложению Магазина Windows пользоваться устройством, в котором реализован профиль SPP. Для этой возможности необходимы дочерние элементы. Подробнее: [Определение возможностей устройств для Bluetooth](https://msdn.microsoft.com/library/windows/apps/Dn263090). |
 | pointOfService |  | Предоставляет доступ к сканерам штрихкодов и считывателям магнитных карт в POS-терминалах. Эта возможность не поддерживается в Windows Phone. | 
 
-## Используйте API среды выполнения Windows для связи со своим устройством
+## <a name="use-the-windows-runtime-api-for-communicating-with-your-device"></a>Используйте API среды выполнения Windows для связи со своим устройством
 
 В таблице ниже описаны некоторые возможности, доступные с помощью API среды выполнения Windows.
 
@@ -73,10 +80,5 @@ ms.openlocfilehash: b36dd4d77821a65b1f435d755f7bb415b2e386ee
 | Bluetooth GATT           | [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) | 
 | Bluetooth RFCOMM         | [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) | 
 | POS-терминал   | [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) |
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

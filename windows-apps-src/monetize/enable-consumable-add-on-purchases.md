@@ -2,15 +2,21 @@
 author: mcleanbyron
 ms.assetid: FD381669-F962-465E-940B-AED9C8D19C90
 description: "Узнайте, как использовать пространство имен Windows.Services.Store для работы с потребляемыми надстройками."
-title: "Поддержка покупок потребляемых надстроек внутри приложения"
-keywords: "Пример кода продажи из приложения"
+title: "Поддержка покупок потребляемых надстроек"
+keywords: "windows 10, uwp, потребляемые, надстройки, покупки из приложения, IAP, Windows.Services.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 12191a946ec080c8e386191363617a9c437671c5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d4cc4d526dfbfb2a120bc0a214b5b9287ec1acb3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="enable-consumable-add-on-purchases"></a>Поддержка покупок потребляемых надстроек внутри приложения
+# <a name="enable-consumable-add-on-purchases"></a>Поддержка покупок потребляемых надстроек
 
 Приложения, предназначенные для Windows 10 версии 1607 и выше, могут использовать методы класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) для управления покупкой пользователями потребляемых надстроек в приложениях UWP (надстройки также называются внутренними продуктами приложения или IAP). Используйте потребляемые надстройки для элементов, которые можно приобретать, использовать и снова приобретать. Это особенно удобно при покупке виртуальной валюты для игр (например, золота или монет), которую можно потом использовать в процессе игры.
 
@@ -84,9 +90,4 @@ ms.openlocfilehash: 12191a946ec080c8e386191363617a9c437671c5
 * [Поддержка покупок приложений и надстроек внутри приложения](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [Реализация пробной версии приложения](implement-a-trial-version-of-your-app.md)
 * [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -6,12 +6,19 @@ ms.assetid: 9412ABD4-3674-4865-B07D-64C7C26E4842
 label: Alignment, margin, and padding
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: f6c8665c935380078efd2e8ea9d225967cf45eba
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: aba82e911a0641378378bee66d0b07e665ac4b5a
+ms.lasthandoff: 02/07/2017
 
 ---
-# <a name="alignment-margin-and-padding"></a>Выравнивание, поля и отбивка
+# <a name="alignment-margin-and-padding"></a>Выравнивание, поле и отбивка
 
 Помимо свойств размеров (ширины, высоты и ограничений) элементы также могут обладать свойствами выравнивания, полей и отбивки, влияющими на поведение макета при прохождении элемента через разметку и его отрисовке в пользовательском интерфейсе. Между свойствами выравнивания, полей и отбивки со стандартной логикой выполнения, при которой объект [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) установлен в заданное положение, существуют такие отношения, что значения могут использоваться или игнорироваться в зависимости от обстоятельств.
 
@@ -76,9 +83,4 @@ ms.openlocfilehash: f6c8665c935380078efd2e8ea9d225967cf45eba
 * [**FrameworkElement.VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
 * [**FrameworkElement.Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
 * [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

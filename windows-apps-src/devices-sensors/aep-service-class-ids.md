@@ -3,27 +3,34 @@ author: DBirtolo
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
 title: "Идентификаторы класса службы AEP"
 description: "Службы конечной точки связи (AEP) предоставляют программный контракт для служб, поддерживаемых устройством по определенному протоколу. У некоторых из этих служб имеются установленные идентификаторы, которые следует использовать при обращении к ним."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 61d8891a97403057fe34c66dbecc6962b05e087e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d2259c82acf700d21f4c3f51a367180bb976f636
+ms.lasthandoff: 02/07/2017
 
 ---
-# Идентификаторы класса службы AEP
+# <a name="aep-service-class-ids"></a>Идентификаторы класса службы AEP
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-<span class="sidebar_heading" style="font-weight: bold;">Важные API</span>
+**Важные API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 Службы конечной точки связи (AEP) предоставляют программный контракт для служб, поддерживаемых устройством по определенному протоколу. У некоторых из этих служб имеются установленные идентификаторы, которые следует использовать при обращении к ним. Эти контракты определяются с помощью свойства **System.Devices.AepService.ServiceClassId**. В этом разделе перечислены некоторые распространенные идентификаторы класса службы AEP. Идентификаторы класса службы AEP также можно применять к протоколам с настраиваемыми идентификаторами класса.
 
 Разработчикам приложений следует использовать фильтры расширенного синтаксиса запросов (AQS) на основе идентификатора класса, чтобы ограничить количество запросов к службам AEP, которые они планируют использовать. Таким образом, результаты запросов будут поступать только от необходимых служб, что значительно увеличит производительность, время работы от батареи и качество обслуживания устройства. Например, приложение может применять эти идентификаторы класса службы, чтобы использовать устройство в качестве обработчика синхронизации Miracast или мультимедиа DLNA. Дополнительные сведения о взаимодействии устройств и служб см. в разделе [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991).
 
-## Bluetooth и службы Bluetooth с низким энергопотреблением
+## <a name="bluetooth-and-bluetooth-le-services"></a>Bluetooth и службы Bluetooth с низким энергопотреблением
 
-Службы Bluetooth используют один из двух протоколов— Bluetooth или Bluetooth с низким энергопотреблением. Эти протоколы имеют такие идентификаторы:
+Службы Bluetooth используют один из двух протоколов — Bluetooth или Bluetooth с низким энергопотреблением. Эти протоколы имеют такие идентификаторы:
 
 -   Идентификатор протокола Bluetooth: {e0cbf06c-cd8b-4647-bb8a263b43f0f974}.
 -   Идентификатор протокола Bluetooth с низким энергопотреблением: {bb7bb05e-5972-42b5-94fc76eaa7084d49}.
@@ -70,13 +77,13 @@ ms.openlocfilehash: 61d8891a97403057fe34c66dbecc6962b05e087e
 
 Более полный список доступных служб Bluetooth см. на страницах о протоколе и службах Bluetooth [здесь](http://go.microsoft.com/fwlink/p/?LinkID=619586) и [здесь](http://go.microsoft.com/fwlink/p/?LinkID=619587). Вы также можете использовать API [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571), чтобы получить доступ к некоторым распространенным службам GATT.
 
-## Настраиваемые службы Bluetooth с низким энергопотреблением
+## <a name="custom-bluetooth-le-services"></a>Настраиваемые службы Bluetooth с низким энергопотреблением
 
 Настраиваемые службы Bluetooth с низким энергопотреблением используют идентификатор протокола {bb7bb05e-5972-42b5-94fc76eaa7084d49}.
 
 Настраиваемые профили имеют собственные идентификаторы GUID. Этот пользовательский GUID следует использовать для идентификатора **System.Devices.AepService.ServiceClassId**.
 
-## Службы UPnP
+## <a name="upnp-services"></a>Службы UPnP
 
 Службы UPnP используют идентификатор протокола {0e261de4-12f0-46e6-91ba428607ccef64}.
 
@@ -99,7 +106,7 @@ ms.openlocfilehash: 61d8891a97403057fe34c66dbecc6962b05e087e
 
  
 
-## WSD services (Службы WSD)
+## <a name="wsd-services"></a>WSD services (Службы WSD)
 
 Службы WSD используют идентификатор протокола {782232aa-a2f9-4993-971baedc551346b0}.
 
@@ -112,25 +119,16 @@ ms.openlocfilehash: 61d8891a97403057fe34c66dbecc6962b05e087e
 
  
 
-## Пример AQS
+## <a name="aqs-sample"></a>Пример AQS
 
 Этот код AQS фильтрует все UPnP-объекты **AssociationEndpointService**, которые поддерживают DIAL. В этом случае свойству [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) присваивается значение **AsssociationEndpointService**.
 
 ``` syntax
-System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND 
+System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND
 System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}"
 ```
 
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

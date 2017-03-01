@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: "Используйте этот метод в API отправки Магазина Windows для получения данных для существующей отправки надстройки."
 title: "Получение отправки надстройки с помощью API отправки Магазина Windows"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API отправки Магазина Windows, отправка надстройки, внутренний продукт приложения, IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
-ms.openlocfilehash: 887615bfc07549d82a295bae99dd31f722546341
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: 2f6211c1ec399c5b6234ee4181dd319130c606b4
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -100,7 +107,8 @@ Authorization: Bearer <your access token>
       "US": "Tier4",
     },
     "sales": [],
-    "priceId": "Free"
+    "priceId": "Free",
+    "isAdvancedPricingModel": "true"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -143,7 +151,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные разделы
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
 * [Создание отправки надстройки](create-an-add-on-submission.md)
@@ -151,9 +159,4 @@ Authorization: Bearer <your access token>
 * [Обновление отправки надстройки](update-an-add-on-submission.md)
 * [Удаление отправки надстройки](delete-an-add-on-submission.md)
 * [Получение состоянии отправки надстройки](get-status-for-an-add-on-submission.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

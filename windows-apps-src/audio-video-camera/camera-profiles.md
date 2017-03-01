@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
 description: "В этой статье рассказывается, как использовать профили камеры для обнаружения возможностей различных устройств видеозахвата и управления ими. Сюда входят такие задачи, как выбор профилей, которые поддерживают определенные значения разрешения и частоты кадров, профилей, которые поддерживают одновременный доступ к нескольким камерам, и профилей, которые поддерживают HDR."
 title: "Обнаружение и выбор возможностей камеры с помощью профилей камеры"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 625cf715a88837cb920433fa34e47a1e1828a4c8
-ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4e37c2e3bd2ed8738ebba88c55ceaf795e6ca084
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Обнаружение и выбор возможностей камеры с помощью профилей камеры
+# <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>Обнаружение и выбор возможностей камеры с помощью профилей камеры
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье рассказывается, как использовать профили камеры для обнаружения возможностей различных устройств видеозахвата и управления ими. Сюда входят такие задачи, как выбор профилей, которые поддерживают определенные значения разрешения и частоты кадров, профилей, которые поддерживают одновременный доступ к нескольким камерам, и профилей, которые поддерживают HDR.
@@ -21,7 +28,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
  
 
-## О профилях камеры
+## <a name="about-camera-profiles"></a>О профилях камеры
 
 Камеры на различных устройствах поддерживают разные возможности, в том числе позволяют использовать набор поддерживаемых разрешений захвата, определять частоту кадров видеозахвата, а также применять функцию HDR и видеозахвата с переменной частотой кадров (при наличии). С помощью инфраструктуры для захвата мультимедиа универсальной платформы Windows (UWP) этот набор возможностей сохраняется в профиле [**MediaCaptureVideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695). Профиль камеры, представленный объектом [**MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694), содержит три коллекции описания мультимедиа: для захвата фотографий, для видеозахвата и для предварительного просмотра видео.
 
@@ -31,7 +38,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 Примеры кода в этой статье заменяют эту минимальную инициализацию функцией обнаружения профилей камеры с поддержкой нескольких возможностей, которые затем используются для инициализации устройства захвата мультимедиа.
 
-## Как найти видеоустройство с поддержкой профилей камеры
+## <a name="find-a-video-device-that-supports-camera-profiles"></a>Как найти видеоустройство с поддержкой профилей камеры
 
 Прежде чем выполнять поиск поддерживаемых профилей камеры, необходимо найти устройство захвата, которое поддерживает их использование. В приведенном ниже примере вспомогательный метод **GetVideoProfileSupportedDeviceIdAsync** предусматривает использование метода [**DeviceInformaion.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) для извлечения списка всех доступных устройств видеозахвата. Он перебирает все устройства в списке и с помощью статического метода [**IsVideoProfileSupported**](https://msdn.microsoft.com/library/windows/apps/dn926714) проверяет каждое устройство, чтобы определить, поддерживает ли оно профили видео. Кроме того, свойство [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) позволяет указать, какую камеру необходимо выбрать на каждом устройстве: переднюю или заднюю.
 
@@ -43,7 +50,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 [!code-cs[GetDeviceWithProfileSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetDeviceWithProfileSupport)]
 
-## Как выбрать профиль в зависимости от поддерживаемого разрешения и частоты кадров
+## <a name="select-a-profile-based-on-supported-resolution-and-frame-rate"></a>Как выбрать профиль в зависимости от поддерживаемого разрешения и частоты кадров
 
 Чтобы выбрать профиль с определенными функциями, например с возможностью достичь выбранного разрешения и частоты кадров, необходимо сначала вызвать указанный выше вспомогательный метод и с его помощью получить идентификатор устройства захвата с поддержкой профилей камеры.
 
@@ -57,7 +64,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 [!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
 
-## Выбор профиля с поддержкой синхронного захвата
+## <a name="select-a-profile-that-supports-concurrence"></a>Выбор профиля с поддержкой синхронного захвата
 
 Профили камеры можно использовать для того, чтобы определить, поддерживает ли устройство видеозахват одновременно с нескольких камер. В этом сценарии необходимо создать два набора объектов захвата: для передней и задней камеры. Для каждой камеры создайте **MediaCapture**, **MediaCaptureInitializationSettings** и строку для идентификатора устройства захвата. Кроме того, добавьте логическую переменную, которая будет отслеживать, поддерживается ли синхронный захват.
 
@@ -71,7 +78,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 [!code-cs[InitConcurrentMediaCaptures](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
 
-## Как найти профиль с поддержкой видео HDR с помощью известных профилей
+## <a name="use-known-profiles-to-find-a-profile-that-supports-hdr-video"></a>Как найти профиль с поддержкой видео HDR с помощью известных профилей
 
 Выбор профиля, который поддерживает HDR, начинается так же, как и другие сценарии. Создайте **MediaCaptureInitializationSettings** и строку для идентификатора устройства захвата. Добавьте логическую переменную, которая будет отслеживать, поддерживается ли видео HDR.
 
@@ -87,7 +94,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 [!code-cs[FindHDRProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindHDRProfile)]
 
-## Как определить, поддерживает ли устройство синхронный фото- и видеозахват
+## <a name="determine-if-a-device-supports-simultaneous-photo-and-video-capture"></a>Как определить, поддерживает ли устройство синхронный фото- и видеозахват
 
 Многие устройства поддерживают одновременный захват фотографий и видео. Чтобы определить, поддерживает ли устройство захвата эту функцию, вызовите метод [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708), чтобы получить все профили камеры, поддерживаемые устройством. Используйте запрос ссылки, чтобы найти профиль, который содержит по крайней мере по одной записи для [**SupportedPhotoMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926703) и [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705). Если это так, профиль поддерживает синхронный захват.
 
@@ -95,7 +102,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 Этот запрос можно уточнить для поиска профилей, которые кроме одновременной записи видео поддерживают определенные разрешения или другие возможности. Вы также можете использовать для получения профилей, поддерживающих синхронный захват, метод [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) и значение [**BalancedVideoAndPhoto**](https://msdn.microsoft.com/library/windows/apps/dn948843). Однако обратите внимание, что при отправке запросов всем профилям можно получить более полные результаты.
 
-## Связанные статьи
+## <a name="related-topics"></a>Связанные статьи
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -105,10 +112,5 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

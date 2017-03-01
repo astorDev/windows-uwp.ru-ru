@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 2383296e-c3d7-4b49-bcd2-621391228fdb
 description: "Узнайте, как обрабатывать события класса AdControl."
 title: "События AdControl в JavaScript"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, рекламы, реклама, AdControl, события, javascript"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: e652fe6b5f295c0f4b4808e5a4605c13fdcfea68
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 17d087b8174b057501795d76c5dc29d5f91b1050
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -29,9 +36,4 @@ ms.openlocfilehash: e652fe6b5f295c0f4b4808e5a4605c13fdcfea68
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

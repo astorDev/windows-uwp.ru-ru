@@ -2,9 +2,17 @@
 author: TylerMSFT
 title: "Создание и регистрация фоновой задачи, выполняемой внутри процесса"
 description: "Создание и регистрация внутренней задачи процесса, которая выполняется в том же процессе, что и приложение переднего плана."
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 translationtype: Human Translation
-ms.sourcegitcommit: b9acb35645ee4f069f2ddb999865c3fd087fb792
-ms.openlocfilehash: 2ab02b8edda9aeadc9962464a63e08f1fb407777
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 1955f4981f09c2632fe2236ebd6a772e7b0ed8a1
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -18,7 +26,7 @@ ms.openlocfilehash: 2ab02b8edda9aeadc9962464a63e08f1fb407777
 
 В этом разделе рассказывается, как создать и зарегистрировать фоновую задачу, которая будет выполняться в том же процессе, что и ваше приложение.
 
-Выполняемые внутри процесса фоновые задачи проще реализовать, чем фоновые задачи, выполняемые вне процесса. Однако они менее устойчивы. Сбой выполнения кода в фоновой задаче внутри процесса затронет работу вашего приложения. Также обратите внимание, что триггеры [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) и **IoTStartupTask** нельзя использовать в рамках модели внутри процесса. Запуск фоновой задачи VoIP в приложении также невозможен. Использование этих триггеров и задач все еще поддерживается в рамках модели фоновой задачи, выполняемой вне процесса.
+Выполняемые внутри процесса фоновые задачи проще реализовать, чем фоновые задачи, выполняемые вне процесса. Однако они менее устойчивы. Сбой выполнения кода в фоновой задаче внутри процесса затронет работу вашего приложения. Также обратите внимание, что триггеры [DeviceUseTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx), [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) и **IoTStartupTask** нельзя использовать в рамках модели внутри процесса. Запуск фоновой задачи VoIP в приложении также невозможен. Использование этих триггеров и задач все еще поддерживается в рамках модели фоновой задачи, выполняемой вне процесса.
 
 Имейте в виду, что фоновые задачи можно остановить (даже внутри фонового процесса приложения), если время их выполнения выходит за заданные пределы. Для некоторых целей обеспечение устойчивости при выделении работы в фоновую задачу, выполняющуюся в отдельном процессе, по-прежнему является целесообразным. Выделение фоновой работы в задачу, не связанную с приложением переднего плана, может быть лучшим решением, когда для работы не требуется обмен данными с приложением переднего плана.
 
@@ -107,9 +115,4 @@ ms.openlocfilehash: 2ab02b8edda9aeadc9962464a63e08f1fb407777
 **Справочник по API для фоновых задач**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

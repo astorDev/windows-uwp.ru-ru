@@ -2,13 +2,20 @@
 author: GrantMeStrength
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: "Создание первого приложения"
-description: "Создать приложение для Windows10 на базе универсальной платформы Windows (UWP) проще, чем кажется."
+description: "Создать приложение для Windows 10 на базе универсальной платформы Windows (UWP) проще, чем кажется."
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b57a461cf9859be26ed69d12b08259d15201403a
-ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1dc003c4683445718de1f14ed3c659fb579482a0
+ms.lasthandoff: 02/07/2017
 
 ---
-# Создание первого приложения
+# <a name="create-your-first-app"></a>Создание первого приложения
 
 Добро пожаловать. Эти учебники помогут вам создать ваше первое приложение UWP на удобном для вас языке. В этом разделе вы научитесь выполнять следующие действия.
 
@@ -46,7 +53,7 @@ ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
 -->
 
 
-### Учебник по C# и XAML
+### <a name="c-and-xaml-tutorial"></a>Учебник по C# и XAML
 
 Воспользуйтесь своими навыками работы с .NET, WPF или Silverlight и создайте приложение на XAML и C#.
 
@@ -56,11 +63,11 @@ ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
 
 * [Основы C# для абсолютных новичков](https://mva.microsoft.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169)
 * [Основы VB для абсолютных новичков](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
-* [Руководство разработчика по Windows10](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
+* [Руководство разработчика по Windows 10](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
 
-### Учебник по расширениям компонентов Visual C++ (C++/CX) и языку XAML
+### <a name="visual-c-component-extensions-ccx-and-xaml-tutorial"></a>Учебник по расширениям компонентов Visual C++ (C++/CX) и языку XAML
 
-Воспользуйтесь своим опытом программирования на С++ и создайте приложения с помощью расширений компонентов VisualC++ (C++/CX) в XAML.
+Воспользуйтесь своим опытом программирования на С++ и создайте приложения с помощью расширений компонентов Visual C++ (C++/CX) в XAML.
 
 * [Создание приложения Hello, world на XAML и C++/CX](create-a-basic-windows-10-app-in-cpp.md)
 
@@ -68,7 +75,7 @@ ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
 
 * [C++: язык и библиотека общего назначения — вводный курс](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
 
-### Учебник по JavaScript и HTML
+### <a name="javascript-and-html-tutorial"></a>Учебник по JavaScript и HTML
 
 Воспользуйтесь своими навыками веб-программирования и создайте приложения с использованием HTML5, каскадных таблиц стилей уровня 3 (CSS3) и JavaScript.
 
@@ -79,25 +86,24 @@ ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
 * [Основы JavaScript для абсолютных новичков](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
 * [Основы HTML5 и CSS3 для абсолютных новичков](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
 
-### Objective-C
+### <a name="objective-c"></a>Objective-C
 
 Вы являетесь разработчиком iOS? 
 
-* Используйте [мост Windows для iOS](https://developer.microsoft.com/windows/bridges/ios), чтобы преобразовывать существующий код в приложение UWP, и продолжайте разработку на Objective-C.
+* Используйте [мост Windows для iOS](https://developer.microsoft.com/windows/bridges/ios), чтобы преобразовать существующий код в приложение UWP, и продолжайте разработку на Objective-C.
 
 
-## Связанные статьи
+### <a name="cross-platform-and-mobile-development"></a>Кроссплатформенная разработка и разработка для мобильных устройств
 
-* [Практические руководства по разработке приложений UWP](https://developer.microsoft.com/windows/develop)
+* Нужно разрабатывать приложения для Android и iOS? Познакомьтесь с [Xamarin](https://www.xamarin.com).
+
+## <a name="related-topics"></a>Статьи по теме
+
+* [Практические руководства по разработке приложений UWP](https://developer.microsoft.com/windows/apps/develop)
 * [Примеры кода для разработчиков UWP](https://developer.microsoft.com/windows/samples)
 * [Что такое универсальное приложение для Windows?](whats-a-uwp.md)
 * [Подготовка](get-set-up.md)
 * [Регистрация](sign-up.md)
 
-
-
-
-
-<!--HONumber=Sep16_HO2-->
 
 

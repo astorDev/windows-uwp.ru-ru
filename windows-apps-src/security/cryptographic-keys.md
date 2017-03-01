@@ -3,21 +3,28 @@ title: "Криптографические ключи"
 description: "В этой статье описано, как использовать стандартные функции формирования производных ключей и шифровать содержимое с помощью симметричных и асимметричных ключей."
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: e7fba930c108744815f261e7d01d198626d7e7c9
-ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1396382c90b370aa9d610749a92dd256c92dedab
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Криптографические ключи
+# <a name="cryptographic-keys"></a>Криптографические ключи
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье описано, как использовать стандартные функции формирования производных ключей и шифровать содержимое с помощью симметричных и асимметричных ключей. 
 
-## Симметричные ключи
+## <a name="symmetric-keys"></a>Симметричные ключи
 
 
 При шифровании с симметричным ключом (известном также как симметричное шифрование) ключ, используемый для шифрования, должен также применяться для расшифровки. Вы можете использовать класс [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) для указания алгоритма симметричного шифрования и для создания или импорта ключа. Для шифрования и расшифровки данных с помощью алгоритма и ключа можно использовать статические методы класса [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490).
@@ -42,7 +49,7 @@ ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
 
 В следующем примере показано, как использовать класс [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537), чтобы создать симметричный ключ и применить его для шифрования и расшифровки данных.
 
-## Асимметричные ключи
+## <a name="asymmetric-keys"></a>Асимметричные ключи
 
 
 При асимметричном шифровании, известном также как шифрование с открытым ключом, для шифрования и расшифровки используются открытый и закрытый ключи. Эти ключи различны, но связаны математически. Как правило, закрытый ключ хранится в тайне и используется для расшифровки данных, в то время как открытый ключ распространяется заинтересованным сторонам и применяется для шифрования. Асимметричное шифрование также используется для подписывания данных.
@@ -61,21 +68,16 @@ ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
 
 С помощью объекта [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) можно указать асимметричный алгоритм или алгоритм подписи, создать или импортировать временную пару ключей или импортировать открытый ключ пары.
 
-## Формирование производных ключей
+## <a name="deriving-keys"></a>Формирование производных ключей
 
 
 Часто возникает потребность в формировании дополнительных производных ключей из общего секрета. Для формирования производных ключей можно использовать класс [**KeyDerivationAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241518) и один из следующих специализированных методов класса [**KeyDerivationParameters**](https://msdn.microsoft.com/library/windows/apps/br241524).
 
 | Объект                                                                            | Описание                                                                                                                                |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | Создает объект KeyDerivationParameters, который используется функцией формирования ключа при помощи пароля2 (PBKDF2).                                 |
+| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | Создает объект KeyDerivationParameters, который используется функцией формирования ключа при помощи пароля 2 (PBKDF2).                                 |
 | [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | Создает объект KeyDerivationParameters для использования в режиме счетчика функцией формирования ключа при помощи хэш-кода проверки подлинности сообщения (HMAC). |
 | [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | Создает объект KeyDerivationParameters, который используется функцией формирования ключа при помощи SP800-56A.                                                 |
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

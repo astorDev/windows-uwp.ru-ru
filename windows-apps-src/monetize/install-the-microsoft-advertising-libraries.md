@@ -3,14 +3,20 @@ author: mcleanbyron
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: "Узнайте о том, как устанавливать библиотеки Microsoft Advertising."
 title: "Установка библиотек Microsoft Advertising"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, реклама, рекламные объявления, установка, SDK, библиотеки"
 translationtype: Human Translation
-ms.sourcegitcommit: 126fee708d82f64fd2a49b844306c53bb3d4cc86
-ms.openlocfilehash: c717fa693c6edf8757c3eef79d60193434104bd8
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 034b597c945f9f12700ac442e4b3014b0bc84c78
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Установка библиотек Microsoft Advertising
+# <a name="install-the-microsoft-advertising-libraries"></a>Установка библиотек Microsoft Advertising
 
 
 
@@ -23,7 +29,7 @@ ms.openlocfilehash: c717fa693c6edf8757c3eef79d60193434104bd8
 
 Для приложений Windows Phone Silverlight 8.x библиотеки Microsoft Advertising доступны в пакете NuGet, который можно загрузить и установить в проект. Дополнительные сведения см. в разделе [AdControl в Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
 
-## Имена библиотек для рекламы
+## <a name="library-names-for-advertising"></a>Имена библиотек для рекламы
 
 
 Существует несколько различных рекламных библиотек в пакетах Microsoft Store Services SDK и Microsoft Advertising SDK для Windows и Windows Phone 8.x:
@@ -72,7 +78,7 @@ ms.openlocfilehash: c717fa693c6edf8757c3eef79d60193434104bd8
             <td>8.5</td>
         </tr>
         <tr>
-            <td>Windows Phone8.1</td>
+            <td>Windows Phone 8.1</td>
             <td>SDK Microsoft Advertising для Windows Phone 8.1 Native (JS)</td>
             <td>8.5</td>
         </tr>
@@ -88,7 +94,7 @@ ms.openlocfilehash: c717fa693c6edf8757c3eef79d60193434104bd8
             <td>1.0</td>
         </tr>
         <tr>
-            <td>Windows Phone8.1</td>
+            <td>Windows Phone 8.1</td>
             <td>SDK Ad Mediator для XAML Windows Phone 8.1</td>
             <td>1.0</td>
         </tr>
@@ -100,9 +106,4 @@ ms.openlocfilehash: c717fa693c6edf8757c3eef79d60193434104bd8
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -3,27 +3,34 @@ author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: "Визуальное дерево композиции"
 description: "В композиции объекты класса Visual составляют визуальную древовидную структуру, которую используют и на которую опираются другие функции API композиции. API позволяет разработчикам определить и создать один или несколько объектов класса Visual, каждый из которых представляет отдельный узел визуального дерева."
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e6e40d60708189235c02a21df7e232d52ecfbfe4
+ms.lasthandoff: 02/07/2017
 
 ---
-# Визуальное дерево композиции
+# <a name="composition-visual-tree"></a>Визуальное дерево композиции
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В композиции объекты класса Visual составляют визуальную древовидную структуру, которую используют и на которую опираются другие функции API композиции. API позволяет разработчикам определить и создать один или несколько объектов класса Visual, каждый из которых представляет отдельный узел визуального дерева.
 
-## Объекты класса Visual
+## <a name="visuals"></a>Объекты класса Visual
 
 Визуальная древовидная структура включает три типа объектов класса Visual, а также базовый класс кисти с несколькими подклассами, которые влияют на содержимое визуального объекта.
 
--   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)— базовый объект, обладающий большей частью свойств, которые наследуют другие объекты класса Visual.
--   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)— является производным от класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) и добавляет возможность создавать дочерние объекты.
--   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)— класс, производный от класса [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810), в котором добавляется возможность подключения кисти. Это позволяет визуальному объекту отрисовывать пиксели, в том числе изображения, эффекты или заполнение сплошным цветом.
--   [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398)— позволяет применять эффекты к содержимому объекта класса Visual. Существует несколько подклассов CompositionBrush.
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) — базовый объект, обладающий большей частью свойств, которые наследуют другие объекты класса Visual.
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) — является производным от класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) и добавляет возможность создавать дочерние объекты.
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) — класс, производный от класса [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810), в котором добавляется возможность подключения кисти. Это позволяет визуальному объекту отрисовывать пиксели, в том числе изображения, эффекты или заполнение сплошным цветом.
+-   [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) — позволяет применять эффекты к содержимому объекта класса Visual. Существует несколько подклассов CompositionBrush.
 
-## Пример CompositionVisual
+## <a name="the-compositionvisual-sample"></a>Пример CompositionVisual
 
 В примере отображается несколько заполненных сплошным цветом квадратов, которые можно нажимать и перетаскивать по экрану. Если щелкнуть на квадрате, он переместится на передний план, повернется на 45 градусов и станет непрозрачным при перетаскивании.
 
@@ -38,13 +45,13 @@ ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
 
 В примере также используются три различных объекта класса Visual.
 
--   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)— базовый объект, обладающий большей частью свойств, которые наследуют другие объекты класса Visual.
--   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)— класс, производный от класса Visual, в котором добавляется возможность создавать дочерние объекты.
--   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)— класс, производный от класса Visual, в котором добавляется возможность подключения кисти. Это позволяет визуальному объекту отрисовывать пиксели, в том числе изображения, эффекты или заполнение сплошным цветом.
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) — базовый объект, обладающий большей частью свойств, которые наследуют другие объекты класса Visual.
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) — класс, производный от класса Visual, в котором добавляется возможность создавать дочерние объекты.
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) — класс, производный от класса Visual, в котором добавляется возможность подключения кисти. Это позволяет визуальному объекту отрисовывать пиксели, в том числе изображения, эффекты или заполнение сплошным цветом.
 
 Этот пример не охватывает такие понятия как анимация или более сложные эффекты, но он содержит стандартные элементы, которые используются всеми этими системами.
 
-## Создание компоновщика
+## <a name="creating-a-compositor"></a>Создание компоновщика
 
 Вы можете с легкостью создать объект [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) и сохранить его в переменной для использования в качестве фабрики. В следующем фрагменте кода показано создание нового объекта **Compositor**.
 
@@ -52,7 +59,7 @@ ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
 _compositor = new Compositor();
 ```
 
-## Создание объектов SpriteVisual и ColorBrush
+## <a name="creating-a-spritevisual-and-colorbrush"></a>Создание объектов SpriteVisual и ColorBrush
 
 С помощью компоновщика [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) можно при необходимости с легкостью создавать такие объекты, как [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) и [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399).
 
@@ -63,7 +70,7 @@ visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xF
 
 Это всего лишь несколько строчек кода, но они демонстрируют всю мощь концепции. Основой системы эффектов являются объекты [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433). **SpriteVisual** обеспечивает гибкость при использовании и комбинировании цветов, изображений и создаваемых эффектов. **SpriteVisual** является единственным типом визуального объекта, с помощью которого можно заполнить двумерный прямоугольник содержимым кисти, в данном случае — сплошным цветом.
 
-## Обрезка объекта класса Visual
+## <a name="clipping-a-visual"></a>Обрезка объекта класса Visual
 
 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) также можно использовать для обрезки объектов класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858). Ниже приведен фрагмент примера, в котором [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) используется для усечения каждой стороны визуального объекта.
 
@@ -78,7 +85,7 @@ _currentVisual.Clip = clip;
 
 Примечание. Как и другие объекты в API, объект [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) позволяет анимировать свои свойства.
 
-## <span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Поворот клипа
+## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Поворот клипа
 
 К объекту класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) можно применить поворот. Обратите внимание, что свойство [**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) поддерживает значения как в радианах, так и в градусах. По умолчанию используются значения в радианах, но их можно указать и в градусах, как показано в следующем фрагменте кода.
 
@@ -88,7 +95,7 @@ child.RotationAngleInDegrees = 45.0f;
 
 Rotation (Поворот) — это лишь один из компонентов преобразования, которые предоставляет данный API для упрощения таких задач. Сюда также относятся Offset (Смещение), Scale (Масштабирование), Orientation (Ориентация), RotationAxis (Ось поворота) и 4x4 TransformMatrix (Матрица преобразования 4 x 4).
 
-## Настройка уровня прозрачности
+## <a name="setting-opacity"></a>Настройка уровня прозрачности
 
 Установка уровня прозрачности визуального объекта — это простая операция, использующая значения с плавающей точкой. Например, в этом примере начальный уровень прозрачности всех квадратов равен 0,8.
 
@@ -98,7 +105,7 @@ visual.Opacity = 0.8f;
 
 Как и поворот, свойство [**Opacity**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.opacity) может быть анимировано.
 
-## Изменение положения объекта класса Visual в коллекции
+## <a name="changing-the-visuals-position-in-the-collection"></a>Изменение положения объекта класса Visual в коллекции
 
 API композиции позволяет изменять положение объекта класса Visual в коллекции [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection) различными способами: его можно разместить выше других объекта класса Visual с помощью метода [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertabove), разместить ниже с помощью метода [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertbelow), переместить вверх с помощью метода [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertattop) или вниз с помощью метода [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertatbottom).
 
@@ -108,7 +115,7 @@ API композиции позволяет изменять положение 
 parent.Children.InsertAtTop(_currentVisual);
 ```
 
-## Полный пример
+## <a name="full-example"></a>Полный пример
 
 В полном примере все описанные выше принципы используются совместно для построения и просмотра простого дерева объектов класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) для изменения уровня прозрачности без использования XAML, WWA или DirectX. В следующем примере показано, как создаются и добавляются дочерние объекты класса **Visual** и как меняются свойства.
 
@@ -504,10 +511,5 @@ namespace compositionvisual
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

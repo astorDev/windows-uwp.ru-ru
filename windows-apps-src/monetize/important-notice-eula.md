@@ -2,14 +2,21 @@
 author: mcleanbyron
 ms.assetid: 5efb4f40-a021-4dd2-82b4-7c95c3849485
 description: "Полностью прочитайте лицензионное соглашение с пользователем (EULA), чтобы узнать важные сведения."
-title: "Важное примечание — EULA"
+title: "Важное примечание: лицензионное соглашение"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, рекламные объявления, реклама, лицензионное соглашение"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 1482450a8e5039ffd61a90f7cd38738115c5f2f0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c2c9998eccd470f574cc34314635de4c62f3f171
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Важное примечание — EULA
+# <a name="important-notice---eula"></a>Важное примечание: лицензионное соглашение
 
 
 
@@ -20,16 +27,11 @@ ms.openlocfilehash: 1482450a8e5039ffd61a90f7cd38738115c5f2f0
 
 Лицензионное соглашение с пользователем содержится в папке, в которой находятся ваши пакеты SDK расширений. Папка может быть другой в зависимости от параметров, выбранных при установке. По умолчанию используется путь установки C:\\Program Files (x86)\\Microsoft SDKs\\Windows Kits\\10\\ExtensionSDKs\\Microsoft.AdMediator.Universal\\1.0.
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 [Отправьте приложение с рекламными объявлениями в Магазин Windows](submit-an-app-with-ads-to-the-windows-store.md)
 
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,20 +3,27 @@ author: msatranjr
 title: "Пользовательские события и методы доступа к событиям в компонентах среды выполнения Windows"
 description: "Поддержка платформы .NET Framework для компонентов среды выполнения Windows позволяет без труда объявлять компоненты событий, скрывая различия между шаблонами событий универсальной платформы Windows (UWP) и платформы .NET Framework."
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: c1beff6cbfefdfd3c11c9b16e18519c02c201930
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6bac2575b3855357076d4272a423c9c689118b2b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Пользовательские события и методы доступа к событиям в компонентах среды выполнения Windows
+# <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Пользовательские события и методы доступа к событиям в компонентах среды выполнения Windows
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Поддержка платформы .NET Framework для компонентов среды выполнения Windows позволяет без труда объявлять компоненты событий, скрывая различия между шаблонами событий универсальной платформы Windows (UWP) и платформы .NET Framework. Однако при объявлении пользовательских методов доступа к событиям в компоненте среды выполнения Windows необходимо следовать шаблону, используемому в UWP.
 
-## Регистрация событий
+## <a name="registering-events"></a>Регистрация событий
 
 
 При регистрации обработки события в UWP метод доступа add возвращает маркер. Для отмены регистрации передайте этот маркер в метод доступа remove. Это означает, что подписи методов доступа add и remove для событий UWP отличаются от подписей привычных методов доступа.
@@ -117,16 +124,11 @@ ms.openlocfilehash: c1beff6cbfefdfd3c11c9b16e18519c02c201930
 
 Для пользователей Visual Basic: на платформе .NET Framework событие является лишь многоадресным делегатом, представляющим все зарегистрированные обработчики событий. Порождение события означает лишь вызов делегата. Синтаксис Visual Basic обычно скрывает взаимодействия с делегатом, а компилятор копирует делегат перед его вызовом, как сказано в примечании о потокобезопасности. При создании пользовательского события в компоненте среды выполнения Windows необходимо работать с делегатом напрямую. Это также означает, что вы можете, например, с помощью метода [MulticastDelegate.GetInvocationList](https://msdn.microsoft.com/library/system.multicastdelegate.getinvocationlist.aspx) получать массив, содержащий отдельный делегат для каждого обработчика событий, если требуется вызывать обработчики отдельно.
 
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 * [События (Visual Basic)](https://msdn.microsoft.com/library/ms172877.aspx)
 * [События (руководство по программированию в C#)](https://msdn.microsoft.com/library/awbftdfh.aspx)
 * [Общие сведения о платформе .NET для приложений Магазина Windows](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [Платформа .NET для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [Пошаговое руководство. Создание простого компонента среды выполнения Windows и его вызов из кода JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

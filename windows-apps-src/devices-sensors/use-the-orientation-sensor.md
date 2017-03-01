@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
 title: "Использование датчика положения в пространстве"
 description: "Узнайте, как использовать датчики положения в пространстве для определения ориентации устройства."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1265697f03e0de74444fc936a3041d1e88147e77
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 349a28f1980b863091cedd4515737a48de51b390
+ms.lasthandoff: 02/07/2017
 
 ---
-# Использование датчика положения в пространстве
+# <a name="use-the-orientation-sensor"></a>Использование датчика положения в пространстве
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Важные API **
+**Важные API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
@@ -24,7 +31,7 @@ ms.openlocfilehash: 1265697f03e0de74444fc936a3041d1e88147e77
 
 API [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) используется трехмерными приложениями, в которых есть кватернион и матрица поворота. Кватернион проще всего описать как поворот точки \[x,y,z\] относительно произвольной оси (в отличие от матрицы поворота, описывающей вращение вокруг трех осей). Математика кватернионов довольно экзотична, так как использует геометрические свойства комплексных чисел и математические свойства мнимых чисел, но работать с ними просто, и их поддерживают различные программные платформы, например DirectX. Сложное трехмерное приложение может использовать датчик положения в пространстве для выравнивания перспективы пользователя. Этот датчик группирует данные от акселерометра, гирометра и компаса.
 
-API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) используется, чтобы определять текущую ориентацию устройства относительно таких определений, как книжная вверх, книжная вниз, альбомная влево и альбомная вправо. Он также может обнаружить поворот устройства лицевой стороной вниз или вверх. Вместо свойств типа «книжная вверх или «альбомная влево» этот датчик возвращает значение поворота: Not rotated (Не повернуто), Rotated90DegreesCounterclockwise (Повернуто на 90градусов против часовой стрелки) ит.д. В следующей таблице представлены свойства ориентации и соответствующие им показания датчика.
+API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) используется, чтобы определять текущую ориентацию устройства относительно таких определений, как книжная вверх, книжная вниз, альбомная влево и альбомная вправо. Он также может обнаружить поворот устройства лицевой стороной вниз или вверх. Вместо свойств типа «книжная вверх или «альбомная влево» этот датчик возвращает значение поворота: Not rotated (Не повернуто), Rotated90DegreesCounterclockwise (Повернуто на 90 градусов против часовой стрелки) и т. д. В следующей таблице представлены свойства ориентации и соответствующие им показания датчика.
 
 | Ориентация     | Соответствующие показания датчика      |
 |-----------------|-----------------------------------|
@@ -33,17 +40,17 @@ API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR20
 | Книжная вниз   | Rotated180DegreesCounterclockwise |
 | Альбомная вправо | Rotated270DegreesCounterclockwise |
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 Вы должны быть знакомы с языком XAML, Microsoft Visual C# и событиями.
 
 Используемые вами устройство или эмулятор должны поддерживать датчик положения в пространстве.
 
-## Создание приложения OrientationSensor
+## <a name="create-an-orientationsensor-app"></a>Создание приложения OrientationSensor
 
 Данный раздел состоит из двух подразделов. В первом подразделе описаны необходимые этапы создания приложения ориентации с нуля. В следующем подразделе описано приложение, которое вы только что создали.
 
-###  Инструкции
+###  <a name="instructions"></a>Инструкции
 
 -   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#**.
 
@@ -107,7 +114,7 @@ API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR20
             {
                 this.InitializeComponent();
                 _sensor = OrientationSensor.GetDefault();
-     
+
                 // Establish the report interval for all scenarios
                 uint minReportInterval = _sensor.MinimumReportInterval;
                 uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
@@ -174,7 +181,7 @@ API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR20
 
 -   Остановите приложение, вернувшись в Visual Studio и нажав клавиши Shift+F5 или выбрав **Отладка** > **Остановить отладку**.
 
-###  Объяснение
+###  <a name="explanation"></a>Объяснение
 
 Из предыдущего примера видно, какой небольшой объем кода требуется написать, чтобы включить в ваше приложение обработку входных данных датчика положения в пространстве.
 
@@ -184,7 +191,7 @@ API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR20
 _sensor = OrientationSensor.GetDefault();
 ```
 
-Приложение устанавливает интервал передачи данных в методе **MainPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16миллисекунд (что приблизительно соответствует частоте обновления 60Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
+Приложение устанавливает интервал передачи данных в методе **MainPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16 миллисекунд (что приблизительно соответствует частоте обновления 60 Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
 
 ```csharp
 uint minReportInterval = _sensor.MinimumReportInterval;
@@ -195,17 +202,17 @@ _sensor.ReportInterval = reportInterval;
 Новые данные от датчика принимаются в методе **ReadingChanged**. Каждый раз, когда драйвер датчика получает от датчика новые данные, он передает их вашему приложению с помощью этого обработчика событий. Приложение регистрирует этот обработчик событий в следующей строке:
 
 ```csharp
-_sensor.ReadingChanged += new TypedEventHandler<OrientationSensor, 
+_sensor.ReadingChanged += new TypedEventHandler<OrientationSensor,
 OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
 Новые значения записываются в элементы TextBlock в XAML-коде проекта.
 
-## Создание простого приложения ориентации
+## <a name="create-a-simpleorientation-app"></a>Создание простого приложения ориентации
 
 Данный раздел состоит из двух подразделов. В первом подразделе описаны необходимые этапы создания простого приложения ориентации с нуля. В следующем подразделе описано приложение, которое вы только что создали.
 
-### Инструкции
+### <a name="instructions"></a>Инструкции
 
 -   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#**.
 
@@ -240,7 +247,7 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
             // Sensor and dispatcher variables
             private SimpleOrientationSensor _simpleorientation;
 
-            // This event handler writes the current sensor reading to 
+            // This event handler writes the current sensor reading to
             // a text block on the app' s main page.
 
             private async void OrientationChanged(object sender, SimpleOrientationSensorOrientationChangedEventArgs e)
@@ -320,7 +327,7 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 
 -   Остановите приложение, вернувшись в Visual Studio и нажав клавиши Shift+F5 или выбрав **Отладка** > **Остановить отладку**.
 
-### Объяснение
+### <a name="explanation"></a>Объяснение
 
 Из предыдущего примера видно, какой небольшой объем кода требуется написать, чтобы включить в ваше приложение обработку входных данных простого датчика положения в пространстве.
 
@@ -333,7 +340,7 @@ _simpleorientation = SimpleOrientationSensor.GetDefault();
 Новые данные от датчика принимаются в методе **OrientationChanged**. Каждый раз, когда драйвер датчика получает от датчика новые данные, он передает их вашему приложению с помощью этого обработчика событий. Приложение регистрирует этот обработчик событий в следующей строке.
 
 ```csharp
-_simpleorientation.OrientationChanged += new TypedEventHandler<SimpleOrientationSensor, 
+_simpleorientation.OrientationChanged += new TypedEventHandler<SimpleOrientationSensor,
 SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 ```
 
@@ -344,15 +351,9 @@ SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
  <TextBlock x:Name="txtOrientation" HorizontalAlignment="Left" Height="24" Margin="118,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="175" Foreground="#FFFEFAFA"/>
 ```
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Пример работы с OrientationSensor](http://go.microsoft.com/fwlink/p/?linkid=241382)
 * [Пример работы с датчиком SimpleOrientation](http://go.microsoft.com/fwlink/p/?linkid=241383)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

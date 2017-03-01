@@ -3,9 +3,16 @@ author: msatranjr
 title: "Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside"
 description: "Отображайте настраиваемые карты в приложении, используя класс MapControl. В этой статье также рассказывается о трехмерных воздушных представлениях и представлениях Streetside."
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, карта, расположение, элемент управления картой, представления карты"
 translationtype: Human Translation
-ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
-ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
+ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
+ms.openlocfilehash: 7a1687ceb188fdd28943f807b877b28e93ae6937
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -26,7 +33,7 @@ ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
 
 Карту можно отображать на странице XAML, добавив класс [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Для использования **MapControl** необходимо объявить пространство имен [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) на странице XAML или в коде. Если перетащить элемент управления с панели элементов, объявление пространства имен будет добавлено автоматически. Если вы добавляете **MapControl** на страницу XAML вручную, придется вручную добавить и объявление пространства имен в верхнюю часть страницы.
 
-В примере ниже показано, как отобразить базовый элемент управления картой и настроить карту для отображения элементов управления масштабом и наклоном в дополнение к функции приема сенсорного ввода. Дополнительные сведения о настройке внешнего вида карты см. в статье [Настройка карты](#mapconfig).
+В примере ниже показано, как отобразить базовый элемент управления картой и настроить карту для отображения элементов управления масштабом и наклоном в дополнение к функции приема сенсорного ввода. Дополнительные сведения о настройке внешнего вида карты см. в статье [Настройка карты](#configure-the-map).
 
 ```xml
 <Page
@@ -46,7 +53,7 @@ ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
        ZoomInteractionMode="GestureAndControl"
        TiltInteractionMode="GestureAndControl"   
        MapServiceToken="EnterYourAuthenticationKeyHere"/>
-  
+
  </Grid>
 </Page>
 ```
@@ -137,7 +144,7 @@ switch (accessStatus)
 
 Чтобы изменить местоположение, отображаемое на двумерной карте, вызовите одну из перегрузок метода [**TrySetViewAsync**](https://msdn.microsoft.com/library/windows/apps/dn637060). Используйте этот метод для определения новых значений для [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005), [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068), [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019), и [**Pitch**](https://msdn.microsoft.com/library/windows/apps/dn637044). Кроме того, можно настроить использование дополнительной анимации при изменениях представления с помощью константы из перечисления [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002).
 
-Чтобы изменить местоположение трехмерной карты, используйте метод [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296). Дополнительные сведения см. в статье [Отображение трехмерных представлений](#display3d).
+Чтобы изменить местоположение трехмерной карты, используйте метод [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296). Дополнительные сведения см. в статье [Отображение трехмерных представлений](#display-aerial-3d-views).
 
 Вызовите метод [**TrySetViewBoundsAsync**](https://msdn.microsoft.com/library/windows/apps/dn637065), чтобы отобразить содержимое [**GeoboundingBox**](https://msdn.microsoft.com/library/windows/apps/dn607949) на карте. Например, с помощью этого метода можно отобразить на карте маршрут или часть маршрута. Подробности см. в разделе [Отображение маршрутов и направлений на карте](routes-and-directions.md).
 
@@ -320,11 +327,4 @@ private async void display3DLocation()
 * [Видео c конференции Build 2015: использование карт и местоположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Пример приложения UWP для работы с картами](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)
-
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

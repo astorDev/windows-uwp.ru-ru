@@ -3,23 +3,30 @@ author: msatranjr
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: Bluetooth RFCOMM
 description: "В этой статье приводится обзор протокола Bluetooth RFCOMM в приложениях на базе универсальной платформы Windows (UWP), а также пример кода для отправки и получения файла."
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 97b5128f8543ea8eab24be5aa8c6a71811e97896
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8342d53c5d53e06f6793ce1d125c26f0e3880c07
+ms.lasthandoff: 02/07/2017
 
 ---
-# Bluetooth RFCOMM
+# <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Важные API **
+**Важные API**
 
 -   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
 -   [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529)
 
 В этой статье приводится обзор протокола Bluetooth RFCOMM в приложениях на базе универсальной платформы Windows (UWP), а также пример кода для отправки и получения файла.
 
-## Описание
+## <a name="overview"></a>Описание
 
 API в пространстве имен [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) основываются на существующих шаблонах для Windows.Devices, включая [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) и [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654). Возможности чтения и записи данных позволяют использовать [**установленные шаблоны потоков данных**](https://msdn.microsoft.com/library/windows/apps/BR208119) и объекты в [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791). Атрибуты протокола обнаружения сервисов (SDP) имеют значение и ожидаемый тип. Однако в некоторых распространенных устройствах атрибуты SDP реализованы неправильно, и значение не соответствует ожидаемому типу. Кроме того, во многих случаях использования RFCOMM дополнительные атрибуты SDP вовсе не требуются. Поэтому этот API предоставляет доступ к данным SDP до синтаксического анализа, из которых разработчики могут получить необходимую информацию.
 
@@ -28,7 +35,7 @@ API в пространстве имен [**Windows.Devices.Bluetooth.Rfcomm**](
 Приложения могут выполнять многоэтапные операции с устройством в фоновой задаче, поэтому они могут продолжать свою работу до завершения, даже когда приложение переходит в фоновый режим и приостанавливается. Это позволяет надежно выполнять операции обслуживания устройства, например внесение изменений в постоянные параметры или встроенное ПО и синхронизацию содержимого. При этом пользователь может заниматься чем-то еще, а не следить за индикатором выполнения. Используйте [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297315) для обслуживания устройства и [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297337) для синхронизации содержимого. Обратите внимание, что такие фоновые задачи ограничивают продолжительность выполнения приложения в фоновом режиме и не рассчитаны на неопределенно долгую работу или неограниченную по времени синхронизацию.
 
 Полный пример кода, демонстрирующий работу RFCOMM, см. в [**Образце чата Bluetooth Rfcomm**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat) на Github.  
-## Отправка файла в качестве клиента
+## <a name="send-a-file-as-a-client"></a>Отправка файла в качестве клиента
 
 Основной сценарий при отправке файла — подключение к парному устройству на базе нужной службы. Этот сценарий включает в себя следующие шаги:
 
@@ -49,7 +56,7 @@ async void Initialize()
             RfcommDeviceService.GetDeviceSelector(
                 RfcommServiceId.ObexObjectPush));
 
-    if (services.Count > 0) 
+    if (services.Count > 0)
     {
         // Initialize the target Bluetooth BR device
         auto service = await RfcommDeviceService.FromIdAsync(services[0].Id);
@@ -143,7 +150,7 @@ void Initialize()
                 RfcommServiceId::ObexObjectPush)))
     .then([](DeviceInformationCollection^ services)
     {
-        if (services->Size > 0) 
+        if (services->Size > 0)
         {
             // Initialize the target Bluetooth BR device
             create_task(RfcommDeviceService::FromIdAsync(services[0]->Id))
@@ -232,7 +239,7 @@ bool IsCompatibleVersion(RfcommDeviceService^ service)
 }
 ```
 
-## Получение файла в качестве сервера
+## <a name="receive-file-as-a-server"></a>Получение файла в качестве сервера
 
 Еще один распространенный сценарий для приложений RFCOMM — это размещение службы на компьютере и предоставление доступа к ней другим устройствам.
 
@@ -277,7 +284,7 @@ void InitializeServiceSdpAttributes(RfcommServiceProvider provider)
     writer.WriteByte(SERVICE_VERSION_ATTRIBUTE_TYPE)
     // Then write the data
     writer.WriteUint32(SERVICE_VERSION);
-    
+
     auto data = writer.DetachBuffer();
     provider.SdpRawAttributes.Add(SERVICE_VERSION_ATTRIBUTE_ID, data);
 }
@@ -340,7 +347,7 @@ void InitializeServiceSdpAttributes(RfcommServiceProvider^ provider)
     writer->WriteByte(SERVICE_VERSION_ATTRIBUTE_TYPE)
     // Then write the data
     writer->WriteUint32(SERVICE_VERSION);
-    
+
     auto data = writer->DetachBuffer();
     provider->SdpRawAttributes->Add(SERVICE_VERSION_ATTRIBUTE_ID, data);
 }
@@ -364,10 +371,4 @@ void OnConnectionReceived(
     });
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

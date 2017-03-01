@@ -3,26 +3,33 @@ author: msatranjr
 title: "Диагностика состояний ошибки компонентов среды выполнения Windows"
 description: "В этой статье приведены дополнительные сведения об ограничениях, которые применяются к компонентам среды выполнения Windows, написанным с использованием управляемого кода."
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: da02ed10336ea2381213fd5fada153db4cc06ab1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Диагностика состояний ошибки компонентов среды выполнения Windows
+# <a name="diagnosing-windows-runtime-component-error-conditions"></a>Диагностика состояний ошибки компонентов среды выполнения Windows
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье приведены дополнительные сведения об ограничениях, которые применяются к компонентам среды выполнения Windows, написанным с использованием управляемого кода. Эти сведения расширяют информацию, которая предоставляется в сообщениях об ошибке, отправляемых средством [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx), и дополняют сведения об ограничениях, представленные в разделе [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 Эта статья не охватывает все ошибки. Описанные здесь ошибки группируются по общим категориям, а каждая категория содержит таблицу связанных сообщений об ошибках. Выполняйте поиск текста сообщения (опустив конкретные значения, заменяемые заполнителями) или номера сообщения. Если вам не удается найти здесь необходимую информацию, помогите нам улучшить качество документации, отправив отзыв с помощью кнопки в конце этой статьи. Включите в отзыв сообщение об ошибке. Кроме того, вы можете зарегистрировать ошибку на веб-сайте Microsoft Connect.
 
-## При реализации асинхронного интерфейса сообщение об ошибке содержит неверный тип
+## <a name="error-message-for-implementing-async-interface-provides-incorrect-type"></a>При реализации асинхронного интерфейса сообщение об ошибке содержит неверный тип
 
 
-Управляемые компоненты среды выполнения Windows не могут реализовывать интерфейсы универсальной платформы Windows (UWP), представляющие асинхронные действия или операции ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) или [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). Вместо этого в .NET Framework есть класс [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) для создания асинхронных операций в компонентах среды выполнения Windows. В сообщении об ошибке, отображаемом в Winmdexp.exe при попытке реализовать асинхронный интерфейс, по ошибке указывается прежнее имя класса— AsyncInfoFactory. Платформа .NET Framework больше не содержит класс AsyncInfoFactory.
+Управляемые компоненты среды выполнения Windows не могут реализовывать интерфейсы универсальной платформы Windows (UWP), представляющие асинхронные действия или операции ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) или [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). Вместо этого в .NET Framework есть класс [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) для создания асинхронных операций в компонентах среды выполнения Windows. В сообщении об ошибке, отображаемом в Winmdexp.exe при попытке реализовать асинхронный интерфейс, по ошибке указывается прежнее имя класса — AsyncInfoFactory. Платформа .NET Framework больше не содержит класс AsyncInfoFactory.
 
 | Номер ошибки | Текст сообщения                                                                                                                                                                                                                                                          |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -34,10 +41,10 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## Отсутствуют ссылки на библиотеки mscorlib.dll или System.Runtime.dll
+## <a name="missing-references-to-mscorlibdll-or-systemruntimedll"></a>Отсутствуют ссылки на библиотеки mscorlib.dll или System.Runtime.dll
 
 
-Эта проблема возникает только при использовании средства Winmdexp.exe через командную строку. Мы рекомендуем использовать параметр /reference, чтобы включить ссылки на обе библиотеки— mscorlib.dll и System.Runtime.dll— из основных ссылочных сборок .NET Framework, расположенных в папке %ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5 (%ProgramFiles%\\... на 32-разрядном компьютере).
+Эта проблема возникает только при использовании средства Winmdexp.exe через командную строку. Мы рекомендуем использовать параметр /reference, чтобы включить ссылки на обе библиотеки — mscorlib.dll и System.Runtime.dll — из основных ссылочных сборок .NET Framework, расположенных в папке %ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5 (%ProgramFiles%\\... на 32-разрядном компьютере).
 
 | Номер ошибки | Текст сообщения                                                                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -46,12 +53,12 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## Перегрузка операторов не разрешена
+## <a name="operator-overloading-is-not-allowed"></a>Перегрузка операторов не разрешена
 
 
 В компоненте среды выполнения Windows, написанном с использованием управляемого кода, нельзя предоставлять перегруженные операторы открытых типов.
 
-> **Примечание.** В сообщении об ошибке оператор определяется по имени метаданных, например op\_Addition, op\_Multiply, op\_ExclusiveOr, op\_Implicit (неявное преобразование) и т.д.
+> **Примечание.** В сообщении об ошибке оператор определяется по имени метаданных, например op\_Addition, op\_Multiply, op\_ExclusiveOr, op\_Implicit (неявное преобразование) и т. д.
 
  
 
@@ -61,7 +68,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## Конструкторы класса имеют одинаковое число параметров
+## <a name="constructors-on-a-class-have-the-same-number-of-parameters"></a>Конструкторы класса имеют одинаковое число параметров
 
 
 В UWP у класса может быть только один конструктор с заданным количеством параметров; например, нельзя иметь один конструктор с одним параметром типа **String** и другой с одним параметром типа **int** (**Integer** в Visual Basic). Единственное решение — использовать разное число параметров для каждого конструктора.
@@ -72,7 +79,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## Необходимо указать значение по умолчанию для перегрузок с одинаковым числом параметров
+## <a name="must-specify-a-default-for-overloads-that-have-the-same-number-of-parameters"></a>Необходимо указать значение по умолчанию для перегрузок с одинаковым числом параметров
 
 
 В UWP перегруженные методы могут иметь одинаковое число параметров, только если одна перегрузка определена как перегрузка по умолчанию. Ознакомьтесь с разделом "Перегруженные методы" в статье [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
@@ -84,7 +91,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## Ошибки пространства имен и недопустимое имя выходного файла
+## <a name="namespace-errors-and-invalid-names-for-the-output-file"></a>Ошибки пространства имен и недопустимое имя выходного файла
 
 
 На универсальной платформе Windows все открытые типы из файла метаданных Windows (.winmd) должны находиться в пространстве имен, совместно использующем имя файла .winmd, или во вложенных пространствах имен имени файла. Например, если проект Visual Studio называется A.B (т. е. компонент среды выполнения Windows — это файл A.B.winmd), он может содержать открытые классы A.B.Class1 и A.B.C.Class2, но не классы A.Class3 (WME0006) или D.Class4 (WME1044).
@@ -118,7 +125,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## Экспорт типов, не являющихся допустимыми типами универсальной платформы Windows
+## <a name="exporting-types-that-arent-valid-universal-windows-platform-types"></a>Экспорт типов, не являющихся допустимыми типами универсальной платформы Windows
 
 
 Открытый интерфейс компонента должен предоставлять только типы UWP. Однако платформа .NET Framework предоставляет сопоставления для нескольких часто используемых типов, незначительно отличающихся в .NET Framework и UWP. Это позволяет разработчикам .NET Framework работать со знакомыми типами вместо изучения новых. Вы можете использовать эти сопоставленные типы .NET Framework в открытом интерфейсе компонента. Ознакомьтесь с подразделами «Объявление типов в компонентах среды выполнения Windows» и «Передача типов универсальной платформы Windows в управляемый код» в разделах [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)и [Сопоставление типов .NET Framework с типами среды выполнения Windows](net-framework-mappings-of-windows-runtime-types.md).
@@ -168,7 +175,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## Структуры, содержащие поля неразрешенных типов
+## <a name="structures-that-contain-fields-of-disallowed-types"></a>Структуры, содержащие поля неразрешенных типов
 
 
 В UWP структура может содержать только поля, и только структуры могут содержать поля. Эти поля должны быть открытыми. Допустимые типы полей включают перечисления, структуры и типы-примитивы.
@@ -179,7 +186,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## Ограничения на массивы в сигнатурах членов
+## <a name="restrictions-on-arrays-in-member-signatures"></a>Ограничения на массивы в сигнатурах членов
 
 
 В UWP массивы в сигнатурах членов должны быть одномерными с нижней границей, равной 0 (нулю). Вложенные типы массивов, такие как `myArray[][]` (`myArray()()` в Visual Basic), не допускаются.
@@ -196,7 +203,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## Параметры массива должны определять, доступно ли содержимое массива для чтения или записи
+## <a name="array-parameters-must-specify-whether-array-contents-are-readable-or-writable"></a>Параметры массива должны определять, доступно ли содержимое массива для чтения или записи
 
 
 В UWP параметры должны быть доступны только для чтения или только для записи. Параметры нельзя пометить модификатором **ref** (**ByRef** без атрибута [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) в Visual Basic). Это относится к содержимому массивов, поэтому параметры массивов должны указывать, доступно ли содержимое массива только для чтения или только для записи. Направление четко определено для параметров **out** (параметр **ByRef** с атрибутом OutAttribute в Visual Basic), но параметры массивов, передаваемые по значению (ByVal в Visual Basic), должны быть помечены. Ознакомьтесь с разделом [Передача массивов в компонент среды выполнения Windows](passing-arrays-to-a-windows-runtime-component.md).
@@ -211,7 +218,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 | WME1106      | У метода "{0}" есть параметр "{1}", являющийся массивом. В среде выполнения Windows содержимое параметров-массивов должно быть доступным для чтения или записи. Примените к "{1}" {2} или {3}.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 
-## Член с параметром value
+## <a name="member-with-a-parameter-named-value"></a>Член с параметром value
 
 
 В UWP возвращаемые значения считаются выходными параметрами, а имена параметров должны быть уникальными. По умолчанию Winmdexp.exe присваивает возвращаемому значению имя value. Если у метода есть параметр с именем value, возникнет ошибка WME1092. Эту проблему можно устранить двумя способами.
@@ -245,13 +252,8 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 | WME1092 | У метода "{0}" есть параметр с именем "{1}", которое совпадает с именем возвращаемого значения по умолчанию. Попробуйте использовать другое имя параметра или с помощью атрибута System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute явно укажите имя возвращаемого значения.<br/>**Примечание.** returnValue является именем по умолчанию только для методов доступа к свойствам, а для всех других методов по умолчанию используется имя value. |
  
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
-* [Создание компонентов среды выполнения Windows на C# и VisualBasic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Создание компонентов среды выполнения Windows на C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 * [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,12 +1,20 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Описанные инструменты для рукописного ввода"
+Description: "Рассматриваемые инструменты для рукописного ввода"
 title: "Элементы управления рукописным вводом"
 label: Inking Controls
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 translationtype: Human Translation
-ms.sourcegitcommit: 8a040033f99d6e8cac04b44dcec58c6b306eda54
-ms.openlocfilehash: e2ffb7bfb7bb602fdc3462da84f60f4ae12d9da8
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 541f7e8c45190cfd597869ad1040801d368b77e8
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="inking-controls"></a>Элементы управления рукописным вводом
@@ -162,9 +170,4 @@ InkCanvas позволяет включить в приложении базов
 - [Взаимодействие с помощью пера в приложениях UWP](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)
 - [Распознавание росчерков пера](http://windowsstyleguide/input-and-devices/convert-ink-to-text/)
 - [Хранение и извлечение росчерков пера](http://windowsstyleguide/input-and-devices/save-and-load-ink/)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

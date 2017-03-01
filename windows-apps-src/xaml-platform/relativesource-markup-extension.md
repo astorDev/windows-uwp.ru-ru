@@ -3,19 +3,26 @@ author: jwmsft
 description: "Предоставляет способ указания источника привязки в терминах относительной связи внутри графа объекта среды выполнения."
 title: "Расширение разметки RelativeSource"
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ec4c9b87655425e82a1cb792d0acc6bee265e9d2
-ms.openlocfilehash: b6af0ce865713ed0da39a87aa63799d3f89b7e89
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 46b48e8e1ef1efbff7248ddf54c22e5a8bc29deb
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Расширение разметки {RelativeSource}
+# <a name="relativesource-markup-extension"></a>Расширение разметки {RelativeSource}
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Предоставляет способ указания источника привязки в терминах относительной связи внутри графа объекта среды выполнения.
 
-## Использование атрибута языка XAML (режим Self)
+## <a name="xaml-attribute-usage-self-mode"></a>Использование атрибута языка XAML (режим Self)
 
 ``` syntax
 <Binding RelativeSource="{RelativeSource Self}" .../>
@@ -23,7 +30,7 @@ ms.openlocfilehash: b6af0ce865713ed0da39a87aa63799d3f89b7e89
 <object property="{Binding RelativeSource={RelativeSource Self} ...}" .../>
 ```
 
-## Использование атрибута языка XAML (узел TemplatedParent)
+## <a name="xaml-attribute-usage-templatedparent-mode"></a>Использование атрибута языка XAML (узел TemplatedParent)
 
 ``` syntax
 <Binding RelativeSource="{RelativeSource TemplatedParent}" .../>
@@ -31,14 +38,14 @@ ms.openlocfilehash: b6af0ce865713ed0da39a87aa63799d3f89b7e89
 <object property="{Binding RelativeSource={RelativeSource TemplatedParent} ...}" .../>
 ```
 
-## Значения XAML
+## <a name="xaml-values"></a>Значения XAML
 
 | Термин | Описание |
 |------|-------------|
 | {RelativeSource Self} | Создает значение [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) для <strong>Self</strong>. В качестве источника этой привязки следует использовать целевой элемент. Это полезно для привязки одного из свойств элемента к другому свойству того же элемента. |
 | {RelativeSource TemplatedParent} | Создает элемент [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391), который служит источником этой привязки. Это полезно для применения информации времени выполнения к привязкам на уровне шаблонов. | 
 
-## Комментарии
+## <a name="remarks"></a>Комментарии
 
 Класс [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) может задать [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) как атрибут элемента объекта **Binding** или как компонент в расширении разметки [{Binding}](binding-markup-extension.md). Именно по этой причине отображаются два различных синтаксиса XAML.
 
@@ -59,17 +66,12 @@ ms.openlocfilehash: b6af0ce865713ed0da39a87aa63799d3f89b7e89
 
 **Примечание.** Использование XAML для **RelativeSource** показывает только изначально предполагаемый способ использования: задание значения [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) в XAML как части выражения привязки. Теоретически возможны и другие способы задания свойства, значением которого является [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Обзор языка XAML](xaml-overview.md)
 * [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [Расширение разметки {Binding}](binding-markup-extension.md)
 * [**Привязка**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

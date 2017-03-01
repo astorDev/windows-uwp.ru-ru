@@ -3,17 +3,24 @@ author: mcleblanc
 description: "Введение в Visual Studio"
 title: "Введение в Visual Studio"
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3f23745d161965d08a35abbef31b8e4342cf1ff6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 57341e52ad51e446e6828e5b4ba6228094152d7f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Приступая к работе: введение в Visual Studio
+# <a name="getting-started-getting-around-in-visual-studio"></a>Начало работы: введение в Visual Studio
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Знакомство с Microsoft Visual Studio
+## <a name="getting-around-in-microsoft-visual-studio"></a>Знакомство с Microsoft Visual Studio
 
 Вернемся в проект, созданный ранее, и рассмотрим возможности реализации интегрированной среды разработки (IDE) Microsoft Visual Studio.
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: 3f23745d161965d08a35abbef31b8e4342cf1ff6
 
 Если для вас это незнакомо, вам будет приятно узнать, что вы можете изменить расположение областей в Visual Studio: разместить исходные файлы в левой части экрана, а набор инструментов — в правой. На самом деле, вы можете перетащить строку заголовка любой области для изменения ее положения, и Visual Studio отобразит общее поле, в котором будет указано, где оно будет закреплено после выпуска. В большинстве панелей также имеется небольшой значок закрепления рисования в заголовке окна. Это позволяет закреплять панель как есть, блокируя ее на месте. Открепите панель, и ее можно свернуть для сохранения пространства: это полезно, если монитор находится на меньшей части. Если вы все перемешаете (не волнуйтесь, все можно исправить). Для этого выберите элемент **Сброс макета окон** в меню **Окно**, чтобы восстановить порядок.
 
-## Добавление элементов управления, задание их свойств и обработка событий
+## <a name="adding-controls-setting-their-properties-and-responding-to-events"></a>Добавление элементов управления, задание их свойств и обработка событий
 
 Теперь давайте добавим некоторые элементы управления в ваш проект. Затем изменим некоторые свойства и напишем код для ответа на одно из событий элемента управления.
 
@@ -119,13 +126,8 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 
 Чтобы выйти из приложения, вернитесь в Visual Studio, а затем либо выберите в меню **Debug** (Отладка) пункт **Stop Debugging** (Остановить отладку), либо просто нажмите клавиши SHIFT+F5. Обратите внимание, что Visual Studio позволяет опробовать приложение во многих различных устройствах, чтобы проверить, как оно работает в каждом.
 
-## Следующий шаг
+## <a name="next-step"></a>Следующий шаг
 
 [Приступая к работе: общие элементы управления](getting-started-common-controls.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

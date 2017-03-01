@@ -3,9 +3,16 @@ author: TylerMSFT
 title: "Поддержка приложения с помощью фоновых задач"
 description: "В темах этого раздела показано, как обеспечить выполнение облегченного кода в фоновом режиме в ответ на триггеры."
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a9ac85483c3d7e252f24147088b928de6e781dc6
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -17,7 +24,7 @@ ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
 
 ## <a name="playing-media-in-the-background"></a>Воспроизведение мультимедиа в фоновом режиме
 
-Начиная c Windows 10 версии 1607, воспроизведение звука в фоновом режиме стало значительно проще. См. дополнительные сведения в разделе [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio).
+Начиная c Windows 10 версии 1607, воспроизведение звука в фоновом режиме стало значительно проще. См. дополнительные сведения в разделе [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio).
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>Фоновые задачи внутри и вне процесса
 
@@ -162,7 +169,7 @@ ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
 
 **Руководство по фоновым задачам**
 
-* [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
+* [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Доступ к датчикам и устройствам из фоновой задачи](access-sensors-and-devices-from-a-background-task.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 * [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-a-background-task.md)
@@ -179,9 +186,4 @@ ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
 * [Использование триггера обслуживания](use-a-maintenance-trigger.md)
 * [Активация событий приостановки, возобновления и перевода в фоновый режим приложений Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 * [Синхронизация и обновление устройства с приложениями Магазина Windows для устройств](http://go.microsoft.com/fwlink/p/?LinkId=306619)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

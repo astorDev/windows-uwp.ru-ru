@@ -3,9 +3,17 @@ author: seksenov
 title: "Размещенные веб-приложения - преобразование приложения Chrome в приложение универсальной платформы Windows"
 description: "Приложение Chrome или расширение Chrome можно преобразовать в приложение универсальной платформы Windows (UWP) для Магазина Windows."
 kw: Package Chrome Extension for Windows Store tutorial, Port Chrome Extension to Windows 10, How to convert Chrome App to Windows, How to add Chrome Extension to Windows Store, hwa-cli, Hosted Web Apps Command Line Interface CLI Tool, Install Chrome Extension on Windows 10 Device, convert .crx to .AppX
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Расширения Chrome для Windows, приложения Chrome для Windows, hwa-cli, преобразование .crx в .AppX"
+ms.assetid: 04f37333-48ba-441b-875e-246fbc3e1a4d
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 84cdd12e2a38aafeb989c0f33b1212077dc1d98e
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 84d8875cc7b1c8540f54fec78cd675bd96919fd2
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -45,10 +53,11 @@ ms.openlocfilehash: 84cdd12e2a38aafeb989c0f33b1212077dc1d98e
 
     During the conversion process, you will be prompted for an Identity Name, Publisher Identity, and Publisher Display Name. To retrieve these values, visit the Dashboard in the [Windows Dev Center](https://developer.microsoft.com/windows).
     - Click on "[Create a new app](https://developer.microsoft.com/dashboard/Application/New)" and reserve your app name.
-![Резервирование имени в информационной панели Центра разработки для Windows](images/hwa-to-uwp/reserve_a_name.png)
-    - Далее щелкните пункт «Удостоверение приложения» в меню слева в разделе «Управление приложениями».
-    ![Удостоверение приложения в информационной панели Центра разработки для Windows](images/hwa-to-uwp/app_identity.png)
-    - На странице вам будет предложено указать три значения: 1. Имя удостоверения: `Package/Identity/Name`
+![Резервирование имени на информационной панели Центра разработки для Windows](images/hwa-to-uwp/reserve_a_name.png)
+    - Затем нажмите "Удостоверение приложения" в меню слева под разделом "Управление приложениями".
+    ![Информационная панель Центра разработки для Windows: удостоверение приложения](images/hwa-to-uwp/app_identity.png)
+    - На странице должны быть указаны три запрашиваемых значения: 
+        1. Имя удостоверения: `Package/Identity/Name`
         2. Удостоверение издателя: `Package/Identity/Publisher`
         3. Отображаемое имя издателя: `Package/Properties/PublisherDisplayName`
 
@@ -59,13 +68,13 @@ ms.openlocfilehash: 84cdd12e2a38aafeb989c0f33b1212077dc1d98e
 
 ### <a name="application-content-uri-rules"></a>Правила универсального кода ресурса для содержимого приложения
 
-[Правила универсального кода ресурса для содержимого приложения (ACUR)](/hwa-access-features.md) или URI содержимого определяют область использования размещенного веб-приложения посредством списка разрешенных URL-адресов в манифесте пакета приложения. Для контроля входящих и исходящих соединений с удаленным содержимым необходимо указать, какие URL-адреса следует включить в этот список, а какие — исключить из него. Если пользователь переходит на URL-адрес, который явно не включен в список, Windows открывает целевой путь в браузере по умолчанию. Также с помощью ACUR для URL-адресов можно предоставить доступ к [универсальным API для Windows](https://msdn.microsoft.com/library/windows/apps/br211377.aspx).
+[Правила универсального кода ресурса для содержимого приложения (ACUR)](./hwa-access-features.md) или URI содержимого определяют область использования размещенного веб-приложения посредством списка разрешенных URL-адресов в манифесте пакета приложения. Для контроля входящих и исходящих соединений с удаленным содержимым необходимо указать, какие URL-адреса следует включить в этот список, а какие — исключить из него. Если пользователь переходит на URL-адрес, который явно не включен в список, Windows открывает целевой путь в браузере по умолчанию. Также с помощью ACUR для URL-адресов можно предоставить доступ к [универсальным API для Windows](https://msdn.microsoft.com/library/windows/apps/br211377.aspx).
 
 Как минимум, ваши правила должны включить в список начальную страницу вашего приложения. Средство преобразования автоматически создаст для вас набор правил ACUR с учетом начальной страницы и ее домена. Однако если имеются любые программные перенаправления, как на стороне сервера, так и на стороне клиента, целевые адреса необходимо будет добавить в список разрешений.
 
 *Примечание. ACUR применяются только к навигации по страницам. Эти ограничения не затрагивают изображения, библиотеки JavaScript и другие подобные ресурсы.*
 
-Многие приложения используют сторонние сайты для организации процедуры входа, например Facebook и Google. Средство преобразования автоматически создаст для вас набор правил ACUR на основе наиболее популярных сайтов. Если ваш метод проверки подлинности отсутствует в этом списке и использует процедуру перенаправления, необходимо добавить его путь (или пути) в качестве правил ACUR. Вы также можете попробовать использовать [брокер веб-проверки подлинности](/hwa-access-features.md).
+Многие приложения используют сторонние сайты для организации процедуры входа, например Facebook и Google. Средство преобразования автоматически создаст для вас набор правил ACUR на основе наиболее популярных сайтов. Если ваш метод проверки подлинности отсутствует в этом списке и использует процедуру перенаправления, необходимо добавить его путь (или пути) в качестве правил ACUR. Вы также можете попробовать использовать [брокер веб-проверки подлинности](./hwa-access-features.md).
 
 ### <a name="flash"></a>Flash
 
@@ -95,12 +104,7 @@ Chrome предоставляет приложениям [специализир
 
 ## <a name="related-topics"></a>Связанные разделы
 
-- [Улучшение веб-приложения путем обращения к функциям универсальной платформы Windows (UWP)](/hwa-access-features.md)
+- [Улучшение веб-приложения путем обращения к функциям универсальной платформы Windows (UWP)](./hwa-access-features.md)
 - [Руководство по работе с приложениями универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [Загружаемые ресурсы проектирования для приложений Магазина Windows](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

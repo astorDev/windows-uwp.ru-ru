@@ -2,15 +2,22 @@
 author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: "Рисование фигур"
-description: "Узнайте, как рисовать фигуры— эллипсы, прямоугольники, многоугольники и пути. При помощи класса Path в пользовательском интерфейсе XAML можно применять довольно сложный язык для рисования на основе векторов, например рисовать кривые Безье."
+description: "Узнайте, как рисовать фигуры — эллипсы, прямоугольники, многоугольники и пути. При помощи класса Path в пользовательском интерфейсе XAML можно применять довольно сложный язык для рисования на основе векторов, например рисовать кривые Безье."
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: f5934600cc185c952acc57ae38e0b190466e0dfa
-ms.openlocfilehash: 1d3c0f50487aa6204f758303e0e5b05b9087eae5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ed405a14f1059f374432a587a24611f16d042a9c
+ms.lasthandoff: 02/07/2017
 
 ---
-# Рисование фигур
+# <a name="draw-shapes"></a>Рисование фигур
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -19,23 +26,23 @@ ms.openlocfilehash: 1d3c0f50487aa6204f758303e0e5b05b9087eae5
 -   [**Пространство имен Windows.UI.Xaml.Shapes**](https://msdn.microsoft.com/library/windows/apps/BR243401)
 -   [**Пространство имен Windows.UI.Xaml.Media**](https://msdn.microsoft.com/library/windows/apps/BR243045)
 
-Узнайте, как рисовать фигуры— эллипсы, прямоугольники, многоугольники и пути. При помощи класса [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) в пользовательском интерфейсе XAML можно применять довольно сложный язык для рисования на основе векторов, например рисовать кривые Безье.
+Узнайте, как рисовать фигуры — эллипсы, прямоугольники, многоугольники и пути. При помощи класса [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) в пользовательском интерфейсе XAML можно применять довольно сложный язык для рисования на основе векторов, например рисовать кривые Безье.
 
-## Введение
+## <a name="introduction"></a>Введение
 
 Область пространства в пользовательском интерфейсе XAML определяется двумя наборами классов: [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) и [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041). Главное различие между этими классами заключается в том, что у класса **Shape** имеется связанная с ним кисть, и он может быть отрисован на экране, а класс **Geometry** просто определяет область и не отрисовывается на экране, если не содержит сведений для другого свойства пользовательского интерфейса. Объект **Shape** можно представить как элемент [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), граница которого определена объектом **Geometry**. В этом разделе содержатся в основном сведения о классах **Shape**.
 
 Классы [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377): [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345), [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343), [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371), [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359), [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) и [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355). Класс **Path** интересен тем, что с его помощью можно описать произвольное геометрическое тело, а класс [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) используется для того, чтобы определить части класса **Path**.
 
-## Функции Fill (заливка) и Stroke (росчерк) для фигур
+## <a name="fill-and-stroke-for-shapes"></a>Функции Fill (заливка) и Stroke (росчерк) для фигур
 
 Чтобы объект [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) можно было отрисовать на холсте приложения, необходимо сопоставить с ним класс [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). Установите для свойства [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) объекта **Shape** нужное значение **Brush**. Подробнее о кистях см. в статье [Использование кистей](using-brushes.md).
 
 Кроме того, объект [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) также может иметь свойство [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke), представляющее собой линию, нарисованную по периметру фигуры. Для свойства **Stroke** также необходим класс [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076), определяющий его внешний вид, а свойству [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) необходимо присвоить ненулевое значение. **StrokeThickness** — это свойство, которое определяет толщину периметра, ограничивающего фигуру. Если значение **Brush** для свойства **Stroke** не задано или задано нулевое значение **StrokeThickness**, граница вокруг фигуры не будет нарисована.
 
-## Эллипс
+## <a name="ellipse"></a>Эллипс
 
-[**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) (эллипс)— это фигура с закругленным периметром. Чтобы создать обычную фигуру **Ellipse**, укажите значения [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751), [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) и [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) для [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
+[**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) (эллипс) — это фигура с закругленным периметром. Чтобы создать обычную фигуру **Ellipse**, укажите значения [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751), [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) и [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) для [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
 
 В следующем примере создается фигура [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) со значением [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751), равным 200, и [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718), также равным 200, а также используются значения [**SteelBlue**](https://msdn.microsoft.com/library/windows/apps/Hh748056) и [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) для заливки ([**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)).
 
@@ -62,13 +69,13 @@ layoutRoot.Children.Add(ellipse1);
 
 Набор из 6 элементов [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) входит в состав шаблона элемента управления [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538), а 2 концентрических элемента **Ellipse** являются частью [**RadioButton**](https://msdn.microsoft.com/library/windows/apps/BR227544).
 
-## <span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>Rectangle
+## <a name="span-idrectanglespanspan-idrectanglespanspan-idrectanglespanrectangle"></a><span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>Rectangle
 
-[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) (прямоугольник)— это фигура с четырьмя сторонами, противоположные стороны которой равны. Чтобы создать обычную фигуру **Rectangle**, укажите значения [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751), [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) и [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
+[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) (прямоугольник) — это фигура с четырьмя сторонами, противоположные стороны которой равны. Чтобы создать обычную фигуру **Rectangle**, укажите значения [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751), [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) и [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
 
 Углы [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) можно скруглить. Чтобы создать скругленные углы, задайте значения для свойств [**RadiusX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) и [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy). Эти свойства указывают оси x и y эллипса, определяющего скругление углов. Максимально допустимое значение свойства **RadiusX** — это значение [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751), разделенное на два, а максимально возможное значение **RadiusY** — это значение [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718), разделенное на два.
 
-В следующем примере создается фигура [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371), у которой значение [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) равно 200, а [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) — 100. Она использует значение [**Blue**](https://msdn.microsoft.com/library/windows/apps/Hh747837) свойства [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) для своего свойства [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) и значение [**Black**](https://msdn.microsoft.com/library/windows/apps/Hh747833) свойства **SolidColorBrush** для своего свойства [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke). Мы задаем для свойства [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) значение3. Задаем для свойства [**RadiusX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) значение 50, а для свойства [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy)— значение10, что определяет для фигуры **Rectangle** скругленные углы.
+В следующем примере создается фигура [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371), у которой значение [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) равно 200, а [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) — 100. Она использует значение [**Blue**](https://msdn.microsoft.com/library/windows/apps/Hh747837) свойства [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) для своего свойства [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) и значение [**Black**](https://msdn.microsoft.com/library/windows/apps/Hh747833) свойства **SolidColorBrush** для своего свойства [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke). Мы задаем для свойства [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) значение 3. Задаем для свойства [**RadiusX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) значение 50, а для свойства [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) — значение 10, что определяет для фигуры **Rectangle** скругленные углы.
 
 ```xml
 <Rectangle Fill="Blue"
@@ -104,7 +111,7 @@ layoutRoot.Children.Add(rectangle1);
 
 С другой стороны, объект [**Прямоугольник**](https://msdn.microsoft.com/library/windows/apps/BR243371) , вероятно, представляет собой лучший вариант для компоновки элементов управления. Фигура **Rectangle** отображается во множестве шаблонов элементов управления, так как она используется как часть "FocusVisual" для фокусируемых элементов управления. Каждый раз, когда элемент управления находится в визуальном состоянии с фокусом ввода, этот прямоугольник становится видимым, в других состояниях он скрыт.
 
-## Многоугольник
+## <a name="polygon"></a>Многоугольник
 
 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) — это фигура, имеющая границу, определяемую произвольным числом точек. Граница создается путем проведения линии от одной точки к другой и соединения последней точки с первой. Свойство [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polygon.points.aspx) определяет коллекцию точек, образующих границу. В языке XAML точки определяются с помощью списка с разделителями-запятыми. В коде программной части мы используем для определения точек объект [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220), где каждая точка добавляется в коллекцию как значение [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870).
 
@@ -137,7 +144,7 @@ layoutRoot.Children.Add(polygon1);
 
 **Совет.** Значение [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) часто используется в качестве типа в XAML для сценариев, в которых не объявляются вершины фигур. Например, **Point** входит в состав данных событий сенсорного ввода, что позволяет точно определить, где в системе координат произошло действие касания. Подробнее о параметре **Point** и его использовании в XAML или коде см. в справочных статьях по API для [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870).
 
-## Линия
+## <a name="line"></a>Линия
 
 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) (линия) — это линия, проведенная между двумя точками в координатном пространстве. Объект **Line** игнорирует значение параметра [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill), так как не имеет внутреннего пространства. Для объекта **Line** нужно задать значения свойств [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) и [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness), так как в противном случае объект **Line** не будет отрисован.
 
@@ -156,7 +163,7 @@ layoutRoot.Children.Add(line1);
 
 ```
 
-## <span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Ломаная линия
+## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Ломаная линия
 
 Фигура [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) похожа на фигуру [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) тем, что ее граница также определяется набором точек, но последняя точка в **Polyline** не соединяется с первой.
 
@@ -167,7 +174,7 @@ layoutRoot.Children.Add(line1);
 
 Как и в случае фигуры [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359), свойство [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) определяет коллекцию точек, образующих границу. В языке XAML точки определяются с помощью списка с разделителями-запятыми. В коде программной части мы используем [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) для определения точек, а затем добавляем каждую отдельную точку в коллекцию как структуру [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870).
 
-В этом примере создается фигура [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) по четырем точкам, заданным координатами `(10,200)`, `(60,140)`, `(130,140)` и `(180,200)`. Свойство [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) определено, а [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)— нет.
+В этом примере создается фигура [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) по четырем точкам, заданным координатами `(10,200)`, `(60,140)`, `(130,140)` и `(180,200)`. Свойство [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) определено, а [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) — нет.
 
 ```xml
 <Polyline Stroke="Black"
@@ -194,7 +201,7 @@ layoutRoot.Children.Add(polyline1);
 
 ![Обработанная ломаная линия.](images/shapes-polyline.jpg)
 
-## Путь
+## <a name="path"></a>Путь
 
 Фигура [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) (путь) является наиболее универсальной из всех фигур [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377). С ее помощью можно создать произвольную геометрию. Но эта универсальность порождает сложность. Давайте посмотрим, как создать простую фигуру **Path** на языке XAML.
 
@@ -311,10 +318,5 @@ layoutRoot.Children.Add(path1);
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

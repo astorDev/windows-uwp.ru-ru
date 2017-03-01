@@ -2,24 +2,31 @@
 author: Jwmsft
 title: "Анимации по ключевым кадрам и на основе функций для реалистичной анимации"
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
-description: "Линейные анимации по ключевым кадрам, анимации по ключевым кадрам со значением KeySpline и функции для реалистичной анимации—это три различные методики реализации приблизительно одного и того же сценария."
+description: "Линейные анимации по ключевым кадрам, анимации по ключевым кадрам со значением KeySpline и функции для реалистичной анимации —это три различные методики реализации приблизительно одного и того же сценария."
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7b4676e5c5a66450b321ab6f5f8670f9491b7a9d
-ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2eb40a8787479e6abd03ef2f0adb2d7462bfef16
+ms.lasthandoff: 02/07/2017
 
 ---
-# Анимации по ключевым кадрам и на основе функций для реалистичной анимации
+# <a name="key-frame-animations-and-easing-function-animations"></a>Анимации по ключевым кадрам и на основе функций для реалистичной анимации
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Линейные анимации по ключевым кадрам, анимации по ключевым кадрам со значением **KeySpline** или функции для реалистичной анимации–это три различных методики реализации приблизительно одного и того же сценария: создания анимации раскадровки, которая является немного более сложной и использует поведение нелинейной анимации из начального состояния в конечное состояние.
+Линейные анимации по ключевым кадрам, анимации по ключевым кадрам со значением **KeySpline** или функции для реалистичной анимации – это три различных методики реализации приблизительно одного и того же сценария: создания анимации раскадровки, которая является немного более сложной и использует поведение нелинейной анимации из начального состояния в конечное состояние.
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
-Обязательно ознакомьтесь с разделом [Анимации раскадровки](storyboarded-animations.md). Данный раздел основан на понятиях анимации, которые объясняются в разделе [Анимации раскадровки](storyboarded-animations.md) и не будут описаны здесь. Например, в разделе [Анимации раскадровки](storyboarded-animations.md) приводится описание нацеливания на анимации, раскадровок как ресурсов, значений свойства [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517), например [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration), [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior) и т.д.
+Обязательно ознакомьтесь с разделом [Анимации раскадровки](storyboarded-animations.md). Данный раздел основан на понятиях анимации, которые объясняются в разделе [Анимации раскадровки](storyboarded-animations.md) и не будут описаны здесь. Например, в разделе [Анимации раскадровки](storyboarded-animations.md) приводится описание нацеливания на анимации, раскадровок как ресурсов, значений свойства [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517), например [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration), [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior) и т. д.
 
-## Анимация по ключевым кадрам
+## <a name="animating-using-key-frame-animations"></a>Анимация по ключевым кадрам
 
 Анимации по ключевым кадрам допускают несколько целевых значений, которые достигаются в определенный момент по временной шкале анимации. Другими словами, каждый ключевой кадр может указывать различное промежуточное значение, последний достигнутый ключевой кадр является конечным значением анимации. Указав несколько значений для анимирования, вы можете создавать более сложные анимации. Кроме того, анимации по ключевым кадрам включают различную логику интерполяции, каждая из которых реализуется как отдельный подкласс **KeyFrame** в каждом типе анимации. В частности, каждый тип анимации по ключевым кадрам имеет вариант **Discrete**, **Linear**, **Spline** и **Easing** класса **KeyFrame** для указания ключевых кадров. Например, чтобы указать анимацию, которая нацеливается на [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) и использует ключевые кадры, можно объявить ключевые кадры с помощью [**DiscreteDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243130), [**LinearDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210316), [**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446) и [**EasingDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210269). Вы можете использовать один или все эти типы в одной коллекции **KeyFrames**, чтобы изменять интерполяцию при каждом достижении нового ключевого кадра.
 
@@ -40,7 +47,7 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
     -   Если задано значение [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377), временная шкала повторяется, пока не будет достигнуто это значение времени. Это может привести к усечению анимации во время последовательности ключевых кадров, если значение не является целым множителем значения неявной продолжительности временной шкалы.
 -   [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) (не является широко используемым)
 
-### Линейные ключевые кадры
+### <a name="linear-key-frames"></a>Линейные ключевые кадры
 
 Линейные ключевые кадры приводят к простой линейной интерполяции значения, пока не будет достигнуто значение **KeyTime** кадра. Это поведение интерполяции очень похоже на более простые анимации **From**/**To**/**By**, описанные в разделе [Анимации раскадровки](storyboarded-animations.md).
 
@@ -62,17 +69,17 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 </StackPanel>
 ```
 
-### Дискретные ключевые кадры
+### <a name="discrete-key-frames"></a>Дискретные ключевые кадры
 
 Дискретные ключевые кадры не используют интерполяцию вовсе. По достижении значения **KeyTime** просто применяется новое значение **Value**. В зависимости от того, какое свойство пользовательского интерфейса анимируется, это часто приводит к тому, что кажется, будто анимация "прыгает". Убедитесь, что это именно то поведение, которое вам нужно. Вы можете свести к минимуму видимые прыжки, увеличив количество объявляемых ключевых кадров, но если вам требуется плавная анимация, рекомендуется использовать линейные или сплайновые ключевые кадры.
 
-**Примечание.** Дискретные ключевые кадры— это единственный способ анимировать значение, которое не относится к типам [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) и [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723), с помощью [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132). Более подробное описание процесса приводится далее в этом разделе.
+**Примечание.** Дискретные ключевые кадры — это единственный способ анимировать значение, которое не относится к типам [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) и [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723), с помощью [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132). Более подробное описание процесса приводится далее в этом разделе.
 
  
 
-### Сплайновые ключевые кадры
+### <a name="spline-key-frames"></a>Сплайновые ключевые кадры
 
-Сплайновые ключевые кадры создают изменяемый переход между значениями в соответствии со значением свойства **KeySpline**. Это свойство указывает первую и вторую контрольные точки кривой Безье, которая описывает ускорение анимации. По существу, [**KeySpline**](https://msdn.microsoft.com/library/windows/apps/BR210307) определяет отношение функции и времени, где график зависимости функции от времени является формой этой кривой Безье. Обычно указывается значение **KeySpline** в строке собирательного атрибута XAML, содержащей четыре значения [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), разделенные пробелами или запятыми. Эти значения являются парами "X,Y" двух контрольных точек кривой Безье. "X"–это время, а "Y"–модификатор функции в зависимости от значения. Каждое значение всегда должно находиться в диапазоне от 0 до 1 включительно. Без модификации контрольной точки в соответствии со значением **KeySpline** прямая линия в диапазоне от (0;0) до (1;1) является представлением функции во времени для линейной интерполяции. Контрольные точки изменяют форму этой кривой и, следовательно, поведение функции во времени для сплайновой анимации. Возможно, визуально это лучше рассматривать как график. Вы можете выполнить [образец визуализатора ключ-сплайн Silverlight](http://samples.msdn.microsoft.com/Silverlight/SampleBrowser/index.htm#/?sref=KeySplineExample) в браузере, чтобы просмотреть, как контрольные точки изменяют кривую и как выполняется анимация примера при использовании его в качестве значения **KeySpline**.
+Сплайновые ключевые кадры создают изменяемый переход между значениями в соответствии со значением свойства **KeySpline**. Это свойство указывает первую и вторую контрольные точки кривой Безье, которая описывает ускорение анимации. По существу, [**KeySpline**](https://msdn.microsoft.com/library/windows/apps/BR210307) определяет отношение функции и времени, где график зависимости функции от времени является формой этой кривой Безье. Обычно указывается значение **KeySpline** в строке собирательного атрибута XAML, содержащей четыре значения [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), разделенные пробелами или запятыми. Эти значения являются парами "X,Y" двух контрольных точек кривой Безье. "X" – это время, а "Y" – модификатор функции в зависимости от значения. Каждое значение всегда должно находиться в диапазоне от 0 до 1 включительно. Без модификации контрольной точки в соответствии со значением **KeySpline** прямая линия в диапазоне от (0;0) до (1;1) является представлением функции во времени для линейной интерполяции. Контрольные точки изменяют форму этой кривой и, следовательно, поведение функции во времени для сплайновой анимации. Возможно, визуально это лучше рассматривать как график. Вы можете выполнить [образец визуализатора ключ-сплайн Silverlight](http://samples.msdn.microsoft.com/Silverlight/SampleBrowser/index.htm#/?sref=KeySplineExample) в браузере, чтобы просмотреть, как контрольные точки изменяют кривую и как выполняется анимация примера при использовании его в качестве значения **KeySpline**.
 
 В следующем примере показано три различных ключевых кадра, применяемых к анимации, которая является ключевой сплайновой анимацией для значения [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) ([**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446)). Обратите внимание на строку "0.6,0.0 0.9,0.00", применяемую к **KeySpline**. В результате создается кривая, в которой анимация сначала выполняется медленно, а затем быстро достигает этого значения незадолго до достижения **KeyTime**.
 
@@ -104,7 +111,7 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 </Storyboard>
 ```
 
-### Ключевые кадры для реалистичной анимации
+### <a name="easing-key-frames"></a>Ключевые кадры для реалистичной анимации
 
 Ключевой кадр для реалистичной анимации — это ключевой кадр, в котором применяется интерполяция, а управление зависимостью функции от времени интерполяции осуществляется с помощью нескольких предопределенных математических формул. Фактически, используя типы функции для реалистичной анимации, вы можете получить почти такой же результат, что и при использовании сплайнового ключевого кадра, однако существуют некоторые функции для реалистичной анимации, например [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049), которые невозможно воспроизвести с помощью сплайна.
 
@@ -139,7 +146,7 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 
 Это всего лишь один из примеров функции для реалистичной анимации. Подробнее о них вы узнаете в следующем разделе.
 
-## Функции для реалистичной анимации
+## <a name="easing-functions"></a>Функции для реалистичной анимации
 
 Функции для реалистичной анимации позволяют применять настраиваемые математические формулы к анимациям. Математические операции часто полезны для создания анимаций, которые имитируют реальную физику в двухмерной системе координат. Например, вы хотите, чтобы объект реалистично отскакивал или вел себя так, будто закреплен на пружине. Вы могли бы использовать анимацию по ключевым кадрам или даже анимацию **From**/**To**/**By**, чтобы приблизиться к таким эффектам, но это потребовало бы значительного объема работы, а результат все равно был бы менее точным, чем в случае применения математической формулы.
 
@@ -154,13 +161,13 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 -   [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049): объект немного отводится в противоположную сторону, прежде чем начинает двигаться по заданному пути.
 -   [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057): создается эффект отскакивания.
 -   [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063): создается анимация, которая ускоряется или замедляется на основании круговой функции.
--   [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126): создается анимация, которая ускоряется или замедляется на основании формулы f(t)=t3.
+-   [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126): создается анимация, которая ускоряется или замедляется на основании формулы f(t) = t3.
 -   [**ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282): создается анимация, напоминающая колебания пружины взад и вперед до полной остановки.
 -   [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294): создается анимация, которая ускоряется или замедляется на основании экспоненциальной формулы.
 -   [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399): создается анимация, которая ускоряется или замедляется на основании формулы f(t) = tp, где p равно свойству [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power).
--   [**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403): создается анимация, которая ускоряется или замедляется на основании формулы f(t)=t2.
--   [**QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405): создается анимация, которая ускоряется или замедляется на основании формулы f(t)=t4.
--   [**QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407): создается анимация, которая ускоряется или замедляется на основании формулы f(t)=t5.
+-   [**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403): создается анимация, которая ускоряется или замедляется на основании формулы f(t) = t2.
+-   [**QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405): создается анимация, которая ускоряется или замедляется на основании формулы f(t) = t4.
+-   [**QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407): создается анимация, которая ускоряется или замедляется на основании формулы f(t) = t5.
 -   [**SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439): создается анимация, которая ускоряется или замедляется на основании синусоидальной функции.
 
 Некоторые из функций для реалистичной анимации имеют собственные свойства. Например, [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) имеет два свойства [**Bounces**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) и [**Bounciness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx), которые изменяют поведение функции во времени данной конкретной функции **BounceEase**. Другие функции для реалистичной анимации, такие как [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126), не имеют иных свойств, кроме свойства [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275), общего для всех функций для реалистичной анимации, и всегда создают одинаковое поведение функции во времени.
@@ -191,7 +198,7 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 
 Когда функция для реалистичной анимации применяется к анимации **From**/**To**/**By**, она изменяет характеристики функции во времени, связанные с тем, как значение интерполируется между значениями **From** и **To** во время ([**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration)) анимации. Без функции для реалистичной анимации это была бы линейная интерполяция.
 
-## <span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>Дискретные анимации значений объектов
+## <a name="span-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspandiscrete-object-value-animations"></a><span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>Дискретные анимации значений объектов
 
 Один тип анимации заслуживает особого внимания, поскольку это единственный способ применения анимированного значения к свойствам, не принадлежащим к типу [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) или [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Это анимация по ключевым кадрам [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320). Анимирование с помощью значений [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) отличается, поскольку возможность интерполяции значений между кадрами отсутствует. По достижении значения [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) кадра анимированное значение незамедлительно становится равным значению, указанному в **Value** ключевого кадра. Поскольку интерполяции нет, существует только один ключевой кадр, который можно использовать в коллекции ключевых кадров **ObjectAnimationUsingKeyFrames**: [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132).
 
@@ -264,14 +271,9 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 
 Можно использовать несколько [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) для набора кадров [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320). Анимирование значения [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) может быть интересным способом создания анимации слайд-шоу, поскольку пример сценария с несколькими значениями объекта может оказаться полезен.
 
- ## Связанные разделы
+ ## <a name="related-topics"></a>Связанные разделы
 
 * [Синтаксис PropertyPath](https://msdn.microsoft.com/library/windows/apps/Mt185586)
 * [Общие сведения о свойствах зависимостей](https://msdn.microsoft.com/library/windows/apps/Mt185583)
 * [**Раскадровка**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.targetpropertyproperty)
-
-
-<!--HONumber=Nov16_HO1-->
-
-

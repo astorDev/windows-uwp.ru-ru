@@ -3,21 +3,28 @@ author: TylerMSFT
 title: "Обработка активации приложения"
 description: "Узнайте, как обрабатывать активацию приложения путем переопределения метода OnLaunched."
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a1bb0d5d24291fad1acab41c149dd9d763610907
-ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b6d41cc48ccf43e343aba9c844c2d74b49b1496e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Обработка активации приложения
+# <a name="handle-app-activation"></a>Обработка активации приложения
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Узнайте, как обрабатывать активацию приложения путем переопределения метода [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
-## Переопределение обработчика запуска
+## <a name="override-the-launch-handler"></a>Переопределение обработчика запуска
 
 Если приложение о какой-либо причине активируется, система отправляет событие [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018). Список типов активации см. в перечислении [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693).
 
@@ -97,10 +104,10 @@ ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
 > }
 > ```
 
-## Восстановление данных приложения, если его работа была приостановлена, а затем завершена
+## <a name="restore-application-data-if-app-was-suspended-then-terminated"></a>Восстановление данных приложения, если его работа была приостановлена, а затем завершена
 
 
-Когда пользователь переключается на приложение, которое завершило работу, система отправляет событие [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), свойству [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) которого задано значение **Launch**, а свойству [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729)— значение **Terminated** или **ClosedByUser**. Приложение должно загрузить свои сохраненные данные и обновить отображаемое содержимое.
+Когда пользователь переключается на приложение, которое завершило работу, система отправляет событие [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), свойству [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) которого задано значение **Launch**, а свойству [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) — значение **Terminated** или **ClosedByUser**. Приложение должно загрузить свои сохраненные данные и обновить отображаемое содержимое.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -157,11 +164,11 @@ ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
 
 Если для свойства [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) задано значение **NotRunning**, это означает, что приложению не удалось успешно сохранить свои данные и поэтому оно вынуждено начать работу с состояния первоначального запуска.
 
-## Примечания
+## <a name="remarks"></a>Примечания
 
 > **Примечание**. Для приложений Магазина Windows Phone за событием [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) всегда следует событие [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), даже если работа приложения в настоящее время приостановлена и пользователь повторно запускает приложение с основной плитки или из списка приложений. Приложения могут пропустить инициализацию, если содержимое уже задано в текущем окне. Можно проверить свойство [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736), чтобы определить, было ли приложение запущено с основной или вспомогательной плитки, и на основе этих данных решить, нужно ли запускать приложение заново или можно возобновить его.
 
-## Связанные темы
+## <a name="related-topics"></a>Связанные темы
 
 * [Обработка приостановки работы приложения](suspend-an-app.md)
 * [Обработка возобновления работы приложения](resume-an-app.md)
@@ -176,9 +183,4 @@ ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

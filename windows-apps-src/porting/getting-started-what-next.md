@@ -2,18 +2,25 @@
 author: mcleblanc
 title: "Начало работы - что дальше?"
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
-description: "С помощью этих базовых сведений теперь вы можете начать писать более интересные приложения для платформы UWP."
+description: "С помощью этих базовых сведений теперь вы можете начать писать более интересные приложения универсальной платформы Windows (UWP)."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d71c0026c8658e8aa88827915b8f2d815f10c6ef
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2ca600085c14c43d9d9d37e80efbae30bae650ef
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Начало работы - что дальше?
+# <a name="getting-started-what-next"></a>Начало работы: что дальше?
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этих базовых сведений теперь вы можете начать писать более интересные приложения для платформы UWP. Дальнейшие действия описаны в рассматриваемых ниже разделах. После ознакомления с ними включите Microsoft Visual Studio и начните писать код!
 
@@ -24,20 +31,15 @@ ms.openlocfilehash: d71c0026c8658e8aa88827915b8f2d815f10c6ef
 -   [Создание первого приложения среды выполнения Windows на C# или Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=394138): раздел о разработке для Windows Phone.
 -   [Видео для разработчиков iOS и Android](https://msdn.microsoft.com/library/windows/apps/dn393982): дополнительная справка в визуальном формате.
 
-Кроме того, ознакомьтесь с [ресурсами сообщества](http://go.microsoft.com/fwlink/p/?LinkId=263513), чтобы узнать, как получить справку и дополнительные сведения с помощью форумов и блогов, а также как принять участие в семинарах разработчиков и мероприятиях Майкрософт.
+Кроме того, ознакомьтесь с [ресурсами сообщества](https://developer.microsoft.com/en-us/windows/support), чтобы узнать, как получить справку и дополнительные сведения с помощью форумов и блогов, а также как принять участие в семинарах разработчиков и мероприятиях Майкрософт.
 
-Мы надеемся, что Windows10 откроет для вас новые возможности разработки приложений. С нетерпением ждем воплощения ваших замыслов!
+Мы надеемся, что Windows 10 откроет для вас новые возможности разработки приложений. С нетерпением ждем воплощения ваших замыслов!
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 **Разделы для разработчиков iOS**
 * [Ресурсы для разработчиков iOS](https://msdn.microsoft.com/library/windows/apps/jj945493)
 * [Элементы управления Windows для разработчиков iOS](https://msdn.microsoft.com/library/windows/apps/dn263255)
 * [Руководство по Windows для разработчиков приложений для iOS](https://msdn.microsoft.com/library/windows/apps/dn263256)
 * [Блог "Создание приложений для Windows"](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

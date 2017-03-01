@@ -3,16 +3,23 @@ author: mtoepke
 title: "Создание шейдеров и примитивов рисования"
 description: "В этом разделе мы покажем, как использовать исходные HLSL-файлы для компиляции и создания шейдеров, при помощи которых впоследствии можно отрисовывать на экране примитивы."
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, шейдеры, примитивы, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 62f4b9b641a3c365659e44893a8a7801f2c1f6c0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Создание шейдеров и примитивов рисования
+# <a name="create-shaders-and-drawing-primitives"></a>Создание шейдеров и примитивов рисования
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе мы покажем, как использовать исходные HLSL-файлы для компиляции и создания шейдеров, при помощи которых впоследствии можно отрисовывать на экране примитивы.
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
 
 **Цель.** Создание шейдеров и рисование примитивов.
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 
 Предполагается, что вы знакомы с C++. Также вы должны быть знакомы с основными принципами программирования графики.
@@ -29,9 +36,9 @@ ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
 
 **Время выполнения:** 20 минут.
 
-## Инструкции
+## <a name="instructions"></a>Инструкции
 
-### 1. Компиляция исходных HLSL-файлов
+### <a name="1-compiling-hlsl-source-files"></a>1. Компиляция исходных HLSL-файлов
 
 Microsoft Visual Studio использует компилятор кода HLSL [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) для компиляции исходных HLSL-файлов (SimpleVertexShader.hlsl и SimplePixelShader.hlsl) в двоичные объектные CSO-файлы шейдеров (SimpleVertexShader.cso и SimplePixelShader.cso). Подробнее о компиляторе кода HLSL см. в разделе, посвященном средству компиляции эффектов. Подробнее о компиляции кода шейдера см. в разделе о [компиляции шейдеров](https://msdn.microsoft.com/library/windows/desktop/bb509633).
 
@@ -74,11 +81,11 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-### 2. Чтение данных с диска
+### <a name="2-reading-data-from-disk"></a>2. Чтение данных с диска
 
-Мы используем функцию DX::ReadDataAsync из DirectXHelper.h в шаблоне приложения DirectX11 (универсальное приложение Windows) для асинхронного чтения данных из файла на диске.
+Мы используем функцию DX::ReadDataAsync из DirectXHelper.h в шаблоне приложения DirectX 11 (универсальное приложение Windows) для асинхронного чтения данных из файла на диске.
 
-### 3. Создание вершинных и пискельных шейдеров
+### <a name="3-creating-vertex-and-pixel-shaders"></a>3. Создание вершинных и пискельных шейдеров
 
 Считываем данные из файла SimpleVertexShader.cso и назначаем данные массиву байтов *vertexShaderBytecode*. Вызываем [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) с массивом байтов, чтобы создать вершинный шейдер ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)). Чтобы обеспечить отрисовку треугольника, мы задаем для параметра vertex depth в исходном файле SimpleVertexShader.hlsl значение 0,5. Далее необходимо заполнить массив структур [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180), чтобы описать структуру кода вершинного шейдера, а затем создать эту структуру при помощи вызова метода [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512). Массив содержит один элемент структуры, определяющий расположение вершины. Считываем данные из файла SimplePixelShader.cso и назначаем их массиву байтов *pixelShaderBytecode*. Вызываем [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) с массивом байтов, чтобы создать пиксельный шейдер ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)). Чтобы наш треугольник стал желтым, мы задаем для параметра pixel value в исходном файле SimplePixelShader.hlsl значение «1,1,1,1». Изменяя это значение, можно изменять цвет примитива.
 
@@ -197,7 +204,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 Чтобы нарисовать желтый треугольник, мы используем вершинные и пиксельные шейдеры, структуру вершинного шейдера, а также буферы вершин и индексов.
 
-### 4. Рисование треугольника и представление обработанного изображения
+### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a>4. Рисование треугольника и представление обработанного изображения
 
 Для непрерывной обработки и вывода сцены на экран мы воспользуемся бесконечным циклом. Вызываем [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464), чтобы указать однобуферную прорисовку в качестве цели вывода. Вызываем [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) с параметрами { 0.071f, 0.04f, 0.561f, 1.0f } для очистки однобуферной прорисовки до сплошного синего цвета.
 
@@ -277,7 +284,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
                 );
 ```
 
-## Сводка и дальнейшие действия
+## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
 
 
 Мы создаем и рисуем желтый треугольник при помощи построителя текстур и вершинного шейдера.
@@ -292,10 +299,5 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

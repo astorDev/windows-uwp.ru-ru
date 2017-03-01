@@ -3,10 +3,16 @@ author: mcleanbyron
 ms.assetid: B356C442-998F-4B2C-B550-70070C5E4487
 description: "Узнайте, как использовать пространство имен Windows.Services.Store для покупки приложения или одной из его надстроек."
 title: "Поддержка покупок приложений и надстроек из приложения"
-keywords: "Пример кода продажи из приложения"
+keywords: "windows 10, uwp, надстройки, покупки из приложения, IAP, Windows.Services.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 05a93f3124324d7308f5494ad14a15bfd6a4e698
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4b45d8b34bed361471c1fc95594ad6fd28e41fa6
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -52,9 +58,4 @@ ms.openlocfilehash: 05a93f3124324d7308f5494ad14a15bfd6a4e698
 * [Поддержка покупок потребляемых надстроек](enable-consumable-add-on-purchases.md)
 * [Реализация пробной версии приложения](implement-a-trial-version-of-your-app.md)
 * [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

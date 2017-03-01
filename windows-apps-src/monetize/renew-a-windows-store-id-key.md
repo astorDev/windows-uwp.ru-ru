@@ -3,18 +3,25 @@ author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "Используйте этот метод, чтобы обновить ключ Магазина Windows."
 title: "Обновление ключа идентификатора Магазина Windows"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API коллекции Магазина Windows, API покупок Магазина Windows, ключ Магазина Windows, обновление"
 translationtype: Human Translation
-ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
-ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b740cf431607f1748a8513a02746a70560d09da2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Обновление ключа идентификатора Магазина Windows
+# <a name="renew-a-windows-store-id-key"></a>Обновление ключа идентификатора Магазина Windows
 
 
 Используйте этот метод, чтобы обновить ключ Магазина Windows. При [генерации ключа идентификатора Магазина Windows](view-and-grant-products-from-a-service.md#step-4) ключ действителен в течение 90 дней. После истечения срока действия ключа его можно использовать для создания нового ключа с помощью данного метода.
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 
 Для использования этого метода вам понадобится:
@@ -22,11 +29,11 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 * маркер доступа Azure AD, созданный с помощью URI аудитории `https://onestore.microsoft.com`;
 * ключ идентификатора Магазина Windows с истекшим сроком действия, [сгенерированный из клиентского кода вашего приложения](view-and-grant-products-from-a-service.md#step-4).
 
-Подробнее см. в статье [Просмотр и предоставление продуктов из службы](view-and-grant-products-from-a-service.md).
+Дополнительные сведения см. в разделе [Управление правами на продукты из службы](view-and-grant-products-from-a-service.md).
 
-## Запрос
+## <a name="request"></a>Запрос
 
-### Синтаксис запроса
+### <a name="request-syntax"></a>Синтаксис запроса
 
 | Тип ключа    | Метод | URI запроса                                              |
 |-------------|--------|----------------------------------------------------------|
@@ -35,7 +42,7 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 <span/>
 
-### Заголовок запроса
+### <a name="request-header"></a>Заголовок запроса
 
 | Заголовок         | Тип   | Описание                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
@@ -45,7 +52,7 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 <span/>
 
-### Текст запроса
+### <a name="request-body"></a>Текст запроса
 
 | Параметр     | Тип   | Описание                       | Обязательный |
 |---------------|--------|-----------------------------------|----------|
@@ -54,7 +61,7 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 <span/> 
 
-### Пример запроса
+### <a name="request-example"></a>Пример запроса
 
 ```syntax
 POST https://collections.mp.microsoft.com/v6.0/b2b/keys/renew HTTP/1.1
@@ -68,10 +75,10 @@ Host: collections.mp.microsoft.com
 }
 ```
 
-## Ответ
+## <a name="response"></a>Ответ
 
 
-### Тело ответа
+### <a name="response-body"></a>Тело ответа
 
 | Параметр | Тип   | Описание                                                                                                            | Обязательный |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
@@ -79,7 +86,7 @@ Host: collections.mp.microsoft.com
 
 <span/>
 
-### Пример ответа
+### <a name="response-example"></a>Пример ответа
 
 ```syntax
 HTTP/1.1 200 OK
@@ -96,7 +103,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 }
 ```
 
-## Коды ошибок
+## <a name="error-codes"></a>Коды ошибок
 
 
 | Код | Ошибка        | Внутренний код ошибки           | Описание                                                                                                                                                                           |
@@ -106,16 +113,11 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 <span/>
 
-## Статьи по теме
+## <a name="related-topics"></a>Статьи по теме
 
 
-* [Просмотр и предоставление продуктов из службы](view-and-grant-products-from-a-service.md)
+* [Управление правами на продукты из службы](view-and-grant-products-from-a-service.md)
 * [Запрос продуктов](query-for-products.md)
 * [Объявление потребляемого продукта в качестве выполненного](report-consumable-products-as-fulfilled.md)
 * [Предоставление бесплатных продуктов](grant-free-products.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

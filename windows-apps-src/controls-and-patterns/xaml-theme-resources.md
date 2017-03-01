@@ -8,9 +8,16 @@ title: "Ресурсы темы XAML"
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 9ee42532cb7f13d611e2365d7c9cf8f0532dd1c5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 51e5a3dac6ab8682cd9d10efafb7e1e38f9d53d4
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="xaml-theme-resources"></a>Ресурсы темы XAML
@@ -440,10 +447,5 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 Обратите внимание, что [расширение разметки {ThemeResource}](../xaml-platform/themeresource-markup-extension.md) по-прежнему используется в словаре HighContrast вместо [расширения разметки {StaticResource}](../xaml-platform/staticresource-markup-extension.md). Данная ситуация относится к исключению, которое было описано выше в этих рекомендациях. Большинство значений кистей в теме HighContrast используют варианты цветов, которые глобально контролируются системой, но представляются в XAML в виде специально именованных ресурсов (с префиксом SystemColor в имени). Система предоставляет пользователю возможность задать определенные цвета, которые будут использоваться для настройки схем высокой контрастности в Центре специальных возможностей. Эти варианты цвета применяются к специально именованным ресурсам. Платформа XAML использует одно и то же событие изменения темы, чтобы также обновить кисти, если обнаружится, что они были изменены на системном уровне. Поэтому здесь используется расширение разметки {ThemeResource}.
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

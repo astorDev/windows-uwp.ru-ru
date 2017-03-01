@@ -3,9 +3,16 @@ author: DelfCo
 description: "Приложения используют фоновые задачи и два основных механизма для поддержания связи, когда они не находятся на переднем плане."
 title: "Передача данных по сети в фоновом режиме"
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a6d297ca8510267d21656bd2e22bb3958a4a4b52
-ms.openlocfilehash: ea979eceb20c13d4025ec94ec8ed05b484a7eb27
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3f0e52780788eafe9e53bba491b8d54208dcc761
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -586,10 +593,5 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 -   Приложению может потребоваться выполнить предварительный запрос [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) для проверки и правильной настройки транспорта, прежде чем оно создаст транспорт для использования с [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). После того как приложение подтвердит правильную настройку транспорта, можно настроить объект [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) в качестве транспортного объекта для использования с **ControlChannelTrigger**. Цель этой процедуры — предотвратить сценарии разрыва подключения, установленного по транспорту. Если используется SSL с проверкой сертификата, возможно, приложение должно будет вывести диалоговое окно для ввода ПИН-кода или выбора сертификата, если в системе их несколько. Возможно, возникнет необходимость в проверке подлинности прокси-сервера и сервера. По истечении срока действия кэшированных учетных данных прокси-сервера или сервера подключение может быть разорвано. Один из способов предотвратить проблемы, связанные с истечением срока действия кэшированных учетных данных, — это установка таймера. При необходимости перенаправления HTTP не гарантируется, что второе подключение будет установлено надежно. Предварительный тестовый запрос поможет убедиться в том, что приложение может использовать актуальный URL-адрес перенаправления, до использования объекта **IXMLHTTPRequest2** в качестве транспорта для объекта **ControlChannelTrigger**.
 
 Подробнее об использовании [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) с [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) см. в [Примере ControlChannelTrigger с IXMLHTTPRequest2](http://go.microsoft.com/fwlink/p/?linkid=258538).
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -3,9 +3,16 @@ author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: "Создание учетной записи разработчика"
 description: "В этом разделе описывается регистрация учетной записи разработчика для Магазина Windows и других программ Майкрософт, чтобы помочь вам понять процесс настройки учетной записи."
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 323577311d328da6ad1e7bf0a976d3cea099816a
-ms.openlocfilehash: 19096e3f1f94fb4eb98646163c6542a94f8612d4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 26329304df64689ea7938d4fc838bd730696e4a2
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="opening-a-developer-account"></a>Создание учетной записи разработчика
@@ -84,10 +91,5 @@ ms.openlocfilehash: 19096e3f1f94fb4eb98646163c6542a94f8612d4
 -   Название вашего приложения станет доступным для использования другими разработчиками.
 -   Если вам причитается какая-то сумма по итогам продаж приложения за прошедшие периоды, вы можете потребовать эту оплату, даже если она не соответствует обычному порогу оплаты.
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

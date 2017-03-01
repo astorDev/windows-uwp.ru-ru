@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: 76776b0f-3163-48c9-835b-3f4213968079
 title: "Доступ к данным"
 description: "В этом разделе описывается хранение данных на устройстве в частной базе данных и использование объектно-реляционного отображения в приложениях универсальной платформы Windows (UWP)."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, данные, база данных, реляционная, таблицы, sqlite"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f67efa8a00439de719219f750f0244a17cc26182
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0f7aff1c9e7354fcf92d24ed8acb88b41a23d377
+ms.lasthandoff: 02/07/2017
 
 ---
-# Доступ к данным
+# <a name="data-access"></a>Доступ к данным
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе описывается хранение данных на устройстве в частной базе данных и использование объектно-реляционного отображения в приложениях универсальной платформы Windows (UWP).
 
@@ -18,12 +25,6 @@ ms.openlocfilehash: f67efa8a00439de719219f750f0244a17cc26182
 
 | Topic | Description|
 |-------|------------|
-| [EntityFramework7 с SQLite для приложений C#](entity-framework-7-with-sqlite-for-csharp-apps.md) | EntityFramework (EF)–это объектно-реляционный модуль сопоставления, позволяющий разработчикам .NET работать с реляционными данными с помощью объектов, специализированных для доменов. В этой статье объясняется, как использовать EntityFramework7 с базой данных SQLite в универсальном приложении для Windows. |
-| [Базы данных SQLite](sqlite-databases.md) | SQLite–это бессерверное встраиваемое ядро СУБД. В этой статье описано, как использовать библиотеку SQLite, входящую в состав пакета SDK, а также как упаковывать собственную библиотеку SQLite в универсальном приложении для Windows или выполнять ее сборку из источника. |
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
+| [Entity Framework 7 с SQLite для приложений C#](entity-framework-7-with-sqlite-for-csharp-apps.md) | Entity Framework (EF) – это объектно-реляционный модуль сопоставления, позволяющий разработчикам .NET работать с реляционными данными с помощью объектов, специализированных для доменов. В этой статье объясняется, как использовать Entity Framework 7 с базой данных SQLite в универсальном приложении для Windows. |
+| [Базы данных SQLite](sqlite-databases.md) | SQLite – это бессерверное встраиваемое ядро СУБД. В этой статье описано, как использовать библиотеку SQLite, входящую в состав пакета SDK, а также как упаковывать собственную библиотеку SQLite в универсальном приложении для Windows или выполнять ее сборку из источника. |
 

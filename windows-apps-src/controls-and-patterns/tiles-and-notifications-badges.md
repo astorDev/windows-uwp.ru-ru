@@ -5,9 +5,16 @@ title: "Плитки, индикаторы событий и уведомлен�
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 465c75ccb2af9b162202a79025aa292fbd626a58
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9ee0379b394aaa40535cd204664f6c3626428321
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>Уведомления на индикаторах событий для приложений UWP
@@ -198,8 +205,3 @@ private void clearBadge()
 * [Адаптивные и интерактивные всплывающие уведомления](tiles-and-notifications-adaptive-interactive-toasts.md)
 * [Создание плиток](tiles-and-notifications-creating-tiles.md)
 * [Создание адаптивных плиток](tiles-and-notifications-create-adaptive-tiles.md)
-
-
-<!--HONumber=Dec16_HO2-->
-
-

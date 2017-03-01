@@ -3,16 +3,23 @@ author: msatranjr
 title: "Запрос ключа проверки подлинности карт"
 description: "Ваше универсальное приложение для Windows должно пройти проверку подлинности, прежде чем оно сможет использовать MapControl и службы карт в пространстве имен Windows.Services.Maps."
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, ключ проверки подлинности карт, элемент управления картой"
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: 4cbc0142e7d76795bb147ce4cc98b3da48715b85
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 841a3bf42faaaa12df94ad9be2ffc9eb3a833ae5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Запрос ключа проверки подлинности карт
+# <a name="request-a-maps-authentication-key"></a>Запрос ключа проверки подлинности карт
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Ваше [приложение Universal Windows](https://msdn.microsoft.com/library/windows/apps/dn894631) должно пройти проверку подлинности, прежде чем оно сможет использовать [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) и службы карт в пространстве имен [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979). Для проверки подлинности приложения необходимо указать ключ проверки подлинности карт. В этом разделе описано, как запросить ключ проверки подлинности карт из [центра разработки Карт Bing](https://www.bingmapsportal.com/) и добавить его в приложение.
@@ -21,7 +28,7 @@ ms.openlocfilehash: 4cbc0142e7d76795bb147ce4cc98b3da48715b85
 
 -   [Примеры карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## Получение ключа
+## <a name="get-a-key"></a>Получение ключа
 
 
 Создавайте ключи проверки подлинности карт для своих универсальных приложений для Windows и управляйте ими с помощью [центра разработки Карт Bing](https://www.bingmapsportal.com/).
@@ -53,12 +60,12 @@ ms.openlocfilehash: 4cbc0142e7d76795bb147ce4cc98b3da48715b85
 
 8.  После нажатия кнопки **Создать** под формой **Создание ключа** появится новый ключ. Скопируйте его в безопасное место или сразу добавьте в свое приложение, как описано в следующем шаге.
 
-## Добавление ключа в приложение
+## <a name="add-the-key-to-your-app"></a>Добавление ключа в приложение
 
 
 Ключ проверки подлинности карт требуется для использования [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) и служб карт ([**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979)) в универсальном приложении для Windows. Добавляйте его в объекты элемента управления картой и служб карт по обстоятельствам.
 
-### Вот как добавить ключ в элемент управления картой
+### <a name="to-add-the-key-to-a-map-control"></a>Вот как добавить ключ в элемент управления картой
 
 Для проверки подлинности [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) установите свойство [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) для значения ключа проверки подлинности. Это свойство можно задать в коде или в разметке XAML, в зависимости от ваших предпочтений. Дополнительные сведения об использовании **MapControl** см. в статье [Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside](display-maps.md).
 
@@ -74,7 +81,7 @@ ms.openlocfilehash: 4cbc0142e7d76795bb147ce4cc98b3da48715b85
     <Maps:MapControl x:Name="MapControl1" MapServiceToken="abcdef-abcdefghijklmno"/>
     ```
 
-### Вот как добавить ключ в службы карт
+### <a name="to-add-the-key-to-map-services"></a>Вот как добавить ключ в службы карт
 
 Для использования служб в пространстве имен [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) установите для свойства [**ServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn636977) значение ключа проверки подлинности. Дополнительные сведения об использовании служб карт см.: в разделах [Отображение дорог и направлений](routes-and-directions.md) и [Выполнение геокодирования и обратного геокодирования](geocoding.md).
 
@@ -84,18 +91,11 @@ ms.openlocfilehash: 4cbc0142e7d76795bb147ce4cc98b3da48715b85
     MapService.ServiceToken = "abcdef-abcdefghijklmno";
     ```
 
-## Связанные темы
+## <a name="related-topics"></a>Связанные темы
 
 * [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
 * [Пример карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Видео Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Пример приложения UWP для работы с картами](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -4,9 +4,15 @@ title: "Создание и использование службы прилож
 description: "Узнайте, как написать приложение универсальной платформы Windows (UWP), которое может предоставлять службы другим приложениям UWP, и как использовать эти службы."
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 keywords: "связь между приложениями, межпроцессная связь, межпроцессное взаимодействие, фоновые сообщения, фоновая связь, от приложения к приложению"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: fadfab2f03d5cfda46d5c9f29c28ad561e6ab2db
-ms.openlocfilehash: 81786f6bf76d1d3840d5cd8c6191550b98a248b2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3dcf6a8191553deac5821346718a202bc362c7ff
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -377,9 +383,4 @@ namespace MyAppService
 
 * [Преобразование службы приложения для ее запуска в одном процессе с ведущим приложением](convert-app-service-in-process.md)
 * [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

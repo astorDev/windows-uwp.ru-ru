@@ -3,16 +3,23 @@ author: mtoepke
 title: "Преобразование инфраструктуры отрисовки"
 description: "Здесь показано, как перенести простую инфраструктуру отрисовки с Direct3D 9 на Direct3D 11, включая перенос геометрических буферов, компиляцию и загрузку программ-шейдеров на языке HLSL, а также реализацию цепочки отрисовки в Direct3D 11."
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, платформа визуализации, преобразование, direct3d 9, direct3d 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c5cdddbf2bf75da761f4439ef2d890170c6681c5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d33a694cf835ba3d997a7c4a111349c117e2493e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Преобразование инфраструктуры отрисовки
+# <a name="convert-the-rendering-framework"></a>Преобразование платформа визуализации
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Резюме**
 
@@ -21,9 +28,9 @@ ms.openlocfilehash: c5cdddbf2bf75da761f4439ef2d890170c6681c5
 -   [Часть 3. Перенос игрового цикла](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
-Здесь показано, как перенести простую инфраструктуру отрисовки с Direct3D 9 на Direct3D 11, включая перенос геометрических буферов, компиляцию и загрузку программ-шейдеров на языке HLSL, а также реализацию цепочки отрисовки в Direct3D 11. [Пошаговое руководство: портирование простого приложения с Direct3D9 на DirectX11 и на универсальную платформу для Windows (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md), часть 2.
+Здесь показано, как перенести простую инфраструктуру отрисовки с Direct3D 9 на Direct3D 11, включая перенос геометрических буферов, компиляцию и загрузку программ-шейдеров на языке HLSL, а также реализацию цепочки отрисовки в Direct3D 11. [Пошаговое руководство: портирование простого приложения с Direct3D 9 на DirectX 11 и на универсальную платформу для Windows (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md), часть 2.
 
-## Преобразование эффектов в HLSL-шейдеры
+## <a name="convert-effects-to-hlsl-shaders"></a>Преобразование эффектов в HLSL-шейдеры
 
 
 Ниже приведен простой пример использования D3DX для аппаратного преобразования вершин и пропускания цветов, написанный с применением традиционного API эффектов.
@@ -180,7 +187,7 @@ PS_OUTPUT main(PS_INPUT In)
 }
 ```
 
-## Компиляция и загрузка шейдеров
+## <a name="compile-and-load-shaders"></a>Компиляция и загрузка шейдеров
 
 
 В играх на платформе Direct3D 9 часто используется библиотека эффектов как удобный способ реализации программируемых конвейеров. Эффекты могли компилироваться во время выполнения с использованием метода [**D3DXCreateEffectFromFile function**](https://msdn.microsoft.com/library/windows/desktop/bb172768).
@@ -263,7 +270,7 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 };
 ```
 
-## Создание геометрических макетов
+## <a name="create-geometry-resources"></a>Создание геометрических макетов
 
 
 В Direct3D 9 мы хранили геометрические ресурсы в устройстве Direct3D, блокируя память и копируя данные из памяти центрального процессора в память графического процессора.
@@ -316,7 +323,7 @@ m_d3dDevice->CreateBuffer(
     );
 ```
 
-## Реализация цепочки отрисовки
+## <a name="implement-the-rendering-chain"></a>Реализация цепочки отрисовки
 
 
 В играх на платформе Direct3D 9 часто используется цепочка отрисовки на основе эффектов. В цепочке этого типа создается объект эффекта, ему предоставляются необходимые ресурсы, а затем он отрисовывает каждый проход.
@@ -490,10 +497,5 @@ m_swapChain->Present(1, 0);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

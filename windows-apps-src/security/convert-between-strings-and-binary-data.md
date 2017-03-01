@@ -3,16 +3,23 @@ title: "Преобразования между строками и двоичн
 description: "В этом примере кода показано, как выполнять преобразование между строками и двоичными данными в приложении универсальной платформы Windows (UWP)."
 ms.assetid: AED4C74F-E63B-4980-BB4D-28ACCC1AB58B
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 06c035e336039fd08cc5f3b9bcbb7d2783cff089
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e1a1768734bb220fdfa292ff28ff6ef19f22ad41
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Преобразование между строками и двоичными данными
+# <a name="convert-between-strings-and-binary-data"></a>Преобразование между строками и двоичными данными
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом примере кода показано, как выполнять преобразование между строками и двоичными данными в приложении универсальной платформы Windows (UWP).
 
@@ -32,8 +39,3 @@ public void ConvertData()
     IBuffer buffUTF8 = CryptographicBuffer.ConvertStringToBinary(strIn, BinaryStringEncoding.Utf8);
 }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

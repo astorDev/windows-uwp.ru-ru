@@ -3,14 +3,21 @@ author: laurenhughes
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: "Файлы, папки и библиотеки"
 description: "Узнайте о параметрах приложения для чтения и записи, о средствах выбора файлов и папок, а также о специальных расположениях песочниц, например о библиотеках видео и музыки."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: e248a0898772f1fde38e312b1cbd24da5b2946a7
+ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
+ms.openlocfilehash: 0baa58915bfac91d618a6da84f37174e41f7377f
+ms.lasthandoff: 01/19/2017
 
 ---
  # <a name="files-folders-and-libraries"></a>Файлы, папки и библиотеки
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 API в пространствах имен [Windows.Storage](https://msdn.microsoft.com/library/windows/apps/br227346), [Windows.Storage.Streams](https://msdn.microsoft.com/library/windows/apps/br241791) и [Windows.Storage.Pickers](https://msdn.microsoft.com/library/windows/apps/br207928) можно использовать для считывания текста и данных других форматов из файлов и их записи в файлы, а также для управления файлами и папками. Этот раздел также содержит сведения о параметрах приложения для чтения и записи, о средствах выбора файлов и папок, а также о специальных расположениях песочниц, например о библиотеках видео и музыки.
 
@@ -37,9 +44,4 @@ API в пространствах имен [Windows.Storage](https://msdn.micros
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,14 +3,21 @@ author: TylerMSFT
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
 title: "Потоки и асинхронное программирование"
 description: "Потоки и асинхронное программирование позволяют приложению выполнять задачи асинхронно параллельными потоками."
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, асинхронные, потоки, использование потоков"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8962e24e393f0b7961f618f90cd38ead9e54dda4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb249a1c7a562cb4b1eb7ff8590e8525c00c64f2
+ms.lasthandoff: 02/07/2017
 
 ---
-# Потоки и асинхронное программирование
+# <a name="threading-and-async-programming"></a>Потоки и асинхронное программирование
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Потоки и асинхронное программирование позволяют приложению выполнять задачи асинхронно параллельными потоками.
 
@@ -28,20 +35,11 @@ ms.openlocfilehash: 8962e24e393f0b7961f618f90cd38ead9e54dda4
 
 | Topic                                                                                                          | Description                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
-| [Асинхронное программирование (приложения UWP)](asynchronous-programming-universal-windows-platform-apps.md)              | В этом разделе описывается асинхронное программирование на универсальной платформе Windows (UWP), а также его представление в C#, MicrosoftVisualBasic.NET, расширениях компонентов VisualC++ (C++/CX) и JavaScript. |
+| [Асинхронное программирование (приложения UWP)](asynchronous-programming-universal-windows-platform-apps.md)              | В этом разделе описывается асинхронное программирование на универсальной платформе Windows (UWP), а также его представление в C#, Microsoft Visual Basic .NET, расширениях компонентов Visual C++ (C++/CX) и JavaScript. |
 | [Асинхронное программирование на языке C++ (приложения UWP)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| В статье описываются рекомендации по использованию асинхронных методов в C++/CX с помощью класса <code>task</code><code>concurrency</code>, определенного в пространстве имен  файла ppltasks.h. |
 | [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)                         | Этот раздел содержит рекомендации по работе с пулом потоков. |
-| [Вызов асинхронных API в C# и VisualBasic](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | Универсальная платформа Windows (UWP) включает много асинхронных API, позволяющих вашему приложению сохранить способность отвечать, когда выполняется работа, требующая много времени. В этом разделе описывается применение асинхронных методов UWP при программировании на языках C# или MicrosoftVisualBasic. |
+| [Вызов асинхронных API в C# и Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | Универсальная платформа Windows (UWP) включает много асинхронных API, позволяющих вашему приложению сохранить способность отвечать, когда выполняется работа, требующая много времени. В этом разделе описывается применение асинхронных методов UWP при программировании на языках C# или Microsoft Visual Basic. |
 | [Создание периодического рабочего элемента](create-a-periodic-work-item.md)                                                   | Узнайте, как создать периодически повторяющийся рабочий элемент. |
 | [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)                               | Узнайте, как выполнить работу в отдельном потоке, отправив рабочий элемент в пул потоков. |
 | [Отправка рабочего элемента по таймеру](use-a-timer-to-submit-a-work-item.md)                                       | Узнайте, как создать рабочий элемент, который выполняется после истечения времени таймера. |
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

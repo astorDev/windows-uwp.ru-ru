@@ -3,16 +3,23 @@ title: "Защита данных"
 description: "В этой статье описано, как использовать класс DataProtectionProvider в пространстве имен Windows.Security.Cryptography.DataProtection для шифрования и расшифровки цифровых данных в приложении UWP."
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 2a3be202f6754c452185aecbae3b259e09bd3fd3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b023cdc0671195f7c32d2e65568d5f947ecf4144
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Защита данных
+# <a name="data-protection"></a>Защита данных
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этой статье описано, как использовать класс [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) в пространстве имен [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) для шифрования и расшифровки цифровых данных в приложении UWP.
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: 2a3be202f6754c452185aecbae3b259e09bd3fd3
 
 Чтобы защитить данные при создании объекта [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559), нужно указать дескриптор защиты, прежде чем вызывать [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) или [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564). В следующем примере показаны возможные дескрипторы защиты.
 
-## Защита статических данных
+## <a name="protecting-static-data"></a>Защита статических данных
 
 
 В примере ниже показано, как использовать методы [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) и [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) для асинхронной защиты статических данных в идентификаторе безопасности текущего пользователя.
@@ -110,7 +117,7 @@ namespace SampleProtectAsync
 }
 ```
 
-## Защита потоковых данных
+## <a name="protecting-stream-data"></a>Защита потоковых данных
 
 
 В примере ниже показано, как использовать методы [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) и [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) для асинхронной защиты потоковых данных в идентификаторе безопасности текущего пользователя.
@@ -262,8 +269,3 @@ namespace SampleProtectStreamAsync
     }
 }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

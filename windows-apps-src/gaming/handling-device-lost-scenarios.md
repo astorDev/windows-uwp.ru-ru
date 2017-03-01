@@ -3,9 +3,16 @@ author: mtoepke
 title: "Обработка сценариев удаления устройства в Direct3D 11"
 description: "В этом разделе объясняется, как повторно создать цепочку интерфейса устройства Direct3D и DXGI при удалении или повторной инициализации графического адаптера."
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, directx 11, потеря устройства"
 translationtype: Human Translation
-ms.sourcegitcommit: 5ed3815397b076ab3ee14fd3c22b235b46da5f09
-ms.openlocfilehash: b88d85c78ba5d08718b7e2c844f94beb71e5134a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2202d8ea4584f7755464fd3035829d348cfbff8d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -173,10 +180,5 @@ if (m_deviceNotify != nullptr)
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

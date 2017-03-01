@@ -3,14 +3,20 @@ author: mcleanbyron
 ms.assetid: ae45490f-3eb1-4b7f-8e18-bf82f0ca5d6d
 description: "Получите сведения, необходимые для начала работы с использованием библиотек Microsoft Advertising для добавления рекламных баннеров и промежуточной видеорекламы в приложения."
 title: "Начало работы с библиотеками Microsoft Advertising"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, рекламные объявления, реклама, начало работы"
 translationtype: Human Translation
-ms.sourcegitcommit: 65f8c2b8be053565a903cec4b8d9ccc277cfd41e
-ms.openlocfilehash: b5fe116ea850e93b5208b829e4ed6cec2bc42de0
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 81392a218165d4e0c2b954bdc6cb7789f7aa63f1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Начало работы с библиотеками Microsoft Advertising
+# <a name="get-started-with-the-microsoft-advertising-libraries"></a>Начало работы с библиотеками Microsoft Advertising
 
 
 
@@ -21,7 +27,7 @@ ms.openlocfilehash: b5fe116ea850e93b5208b829e4ed6cec2bc42de0
 
  
 
-## В этом разделе
+## <a name="in-this-section"></a>В этом разделе
 
 | Тема                                                                                                       | Описание                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
@@ -32,15 +38,10 @@ ms.openlocfilehash: b5fe116ea850e93b5208b829e4ed6cec2bc42de0
 | [Заметки о выпуске](release-notes-for-the-advertising-libraries.md)         |  Содержит заметки о текущем выпуске библиотек Microsoft Advertising в Microsoft Store Services SDK (для приложений UWP) и Microsoft Advertising SDK для Windows и Windows Phone 8.x (для приложений Windows 8.1 и Windows Phone 8.x).   |
 | [Известные проблемы](known-issues-for-the-advertising-libraries.md)      |  Содержит список известных проблем в текущем выпуске библиотек Microsoft Advertising в Microsoft Store Services SDK (для приложений UWP) и Microsoft Advertising SDK для Windows и Windows Phone 8.x (для приложений Windows 8.1 и Windows Phone 8.x).   |
 | [Дополнительная справка](additional-help.md)                                    |   Предоставляет ссылки на дополнительные ресурсы о разработке приложений с рекламой.  |
-| [Важное примечание— EULA](important-notice-eula.md)                                    |   Предоставляет подробные сведения о лицензионном соглашении с конечным пользователем (EULA) для библиотек Microsoft Advertising.   |
+| [Важное примечание — EULA](important-notice-eula.md)                                    |   Предоставляет подробные сведения о лицензионном соглашении с конечным пользователем (EULA) для библиотек Microsoft Advertising.   |
 
 
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

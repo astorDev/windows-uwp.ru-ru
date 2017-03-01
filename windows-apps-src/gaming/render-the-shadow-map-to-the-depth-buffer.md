@@ -3,21 +3,28 @@ author: mtoepke
 title: "Прорисовка карты теней в буфер глубины"
 description: "Выполняя прорисовку с точки зрения освещения, вы можете создать двумерную карту глубин, представляющую объемную тень."
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, отрисовка, карта теней, буфер глубины, direct3d"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 337aa63ee30b05da51d5b224cb0013519e11504d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 27b7c9a5fb69a19eed5941bf06068d5237ec101e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Прорисовка карты теней в буфере глубины
+# <a name="render-the-shadow-map-to-the-depth-buffer"></a>Прорисовка карты теней в буфере глубины
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Выполняя прорисовку с точки зрения освещения, вы можете создать двумерную карту глубин, представляющую объемную тень. Карта глубин маскирует пространство, которое будет прорисовано с затенением. [Пошаговое руководство. Реализация теневых объемов с помощью буферов глубины в Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md), часть 2.
 
-## Очистка буфера глубины
+## <a name="clear-the-depth-buffer"></a>Очистка буфера глубины
 
 
 Всегда очищайте буфер глубины перед прорисовкой в него.
@@ -27,7 +34,7 @@ context->ClearRenderTargetView(m_deviceResources->GetBackBufferRenderTargetView(
 context->ClearDepthStencilView(m_shadowDepthView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 ```
 
-## Прорисовка карты теней в буфер глубины
+## <a name="render-the-shadow-map-to-the-depth-buffer"></a>Прорисовка карты теней в буфер глубины
 
 
 Для прохода прорисовки теней задайте буфер глубины, но не указывайте цель прорисовки.
@@ -122,12 +129,12 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**Оптимизация усеченного визуального конуса:** позаботьтесь о том, чтобы реализация вычисляла компактный усеченный визуальный конус— так буфер глубины будет обеспечивать наибольшую точность. Другие советы по работе с тенями см. в разделе о [распространенных методиках улучшения карт глубин теней](https://msdn.microsoft.com/library/windows/desktop/ee416324).
+**Оптимизация усеченного визуального конуса:** позаботьтесь о том, чтобы реализация вычисляла компактный усеченный визуальный конус — так буфер глубины будет обеспечивать наибольшую точность. Другие советы по работе с тенями см. в разделе о [распространенных методиках улучшения карт глубин теней](https://msdn.microsoft.com/library/windows/desktop/ee416324).
 
-## Шейдер вершин для прохода прорисовки теней
+## <a name="vertex-shader-for-shadow-pass"></a>Шейдер вершин для прохода прорисовки теней
 
 
-Используйте упрощенную версию шейдера вершин, чтобы прорисовать только положение вершины в световом пространстве. Не включайте в него световые нормали, вторичные преобразования и т.д.
+Используйте упрощенную версию шейдера вершин, чтобы прорисовать только положение вершины в световом пространстве. Не включайте в него световые нормали, вторичные преобразования и т. д.
 
 ```cpp
 PixelShaderInput main(VertexShaderInput input)
@@ -153,10 +160,5 @@ PixelShaderInput main(VertexShaderInput input)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

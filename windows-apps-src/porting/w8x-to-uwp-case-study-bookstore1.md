@@ -1,15 +1,22 @@
 ---
 author: mcleblanc
-title: "Пример переноса среды выполнения Windows 8.x в UWP, Bookstore1"
+title: "Пример переноса со среды выполнения Windows 8.x на UWP, Bookstore1"
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
 description: "В этом разделе рассматривается пример переноса очень простого универсального приложения для версии 8.1 в приложение Windows 10 универсальной платформы Windows (UWP)."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 348012b4a23e60e24d2185baf71cbe147e30053a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7299138cb45e9eb5e0e1b7eb349a68034e66ee3b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Пример переноса среды выполнения Windows 8.x в UWP: Bookstore1
+# <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Пример переноса со среды выполнения Windows 8.x на UWP: Bookstore1
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -126,9 +133,4 @@ Bookstore1\_81 в Windows Phone
 Мы также убедились в том, что перенос моделей представления обычно происходит без затруднений. Пользовательский интерфейс и поддержка форм-факторов — это те аспекты, которые наиболее вероятно потребуют нашего внимания при переносе.
 
 Следующий пример — [Bookstore2](w8x-to-uwp-case-study-bookstore2.md), где мы рассмотрим доступ к сгруппированным данным и их и отображение.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

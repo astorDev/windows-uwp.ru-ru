@@ -3,15 +3,22 @@ author: jwmsft
 description: "Расширение разметки Binding преобразовывается во время загрузки XAML в экземпляр класса Binding."
 title: "Расширение разметки Binding&quot;"
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3ad7dd8261ceb549de6bd9a5ae513e6f6fdb8d49
-ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c2d6590d21607cec7718617a0657e28ba56c072e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Расширение разметки {Binding}
+# <a name="binding-markup-extension"></a>Расширение разметки {Binding}
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows8.x см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Примечание**. Новый механизм привязки доступен для Windows 10. Он оптимизирован для повышения быстродействия и производительности и разработчика. См. раздел [Расширение разметки: {x:Bind}](x-bind-markup-extension.md).
 
@@ -21,7 +28,7 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 
 **{Binding}** имеет одинаковый с локальным значением приоритет свойства зависимостей, и настройка локального значения в императивном коде удаляет эффект любой привязки **{Binding}**, настроенной в разметке.
 
-## Использование атрибутов XAML
+## <a name="xaml-attribute-usage"></a>Использование атрибутов XAML
 
 
 ``` syntax
@@ -41,7 +48,7 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 | *propName* | Имя строки свойства для установки в объекте [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Например, "Converter". |
 | *value* | Значение, которое следует задать для свойства. Синтаксис аргумента зависит от свойства раздела [Свойства класса Binding, которые можно задать в {Binding}](#properties-of-binding) ниже |
 
-## Путь свойства
+## <a name="property-path"></a>Путь свойства
 
 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) описывает свойство, к которому осуществляется привязка (исходное свойство). Path — это позиционный параметр, то есть вы можете использовать имя параметра явным образом (`{Binding Path=EmployeeID}`) или можете указать его в качестве первого параметра без имени (`{Binding EmployeeID}`).
 
@@ -57,7 +64,7 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 
 Дополнительную информацию о синтаксисе строки для пути свойства, о путях свойств в областях анимации и о построении объекта [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) см. в разделе [Синтаксис Property-path](property-path-syntax.md).
 
-## Свойства класса привязок, которые можно задать с помощью {Binding}
+## <a name="properties-of-the-binding-class-that-can-be-set-with-binding"></a>Свойства класса привязок, которые можно задать с помощью {Binding}
 
 
 **{Binding}** демонстрируется с помощью замещающего синтаксиса *bindingProperties* поскольку есть несколько свойств, доступных для чтения и записи [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820), которые можно задавать в данном случае использования расширения разметки. Свойства можно задавать в любом порядке с парами *propName*=*value*, разделенными запятыми. Для некоторых свойств требуются типы, не предусматривающие преобразования; им необходимы их собственные расширения разметки, вложенные в **{Binding}**.
@@ -87,7 +94,7 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 
 **Совет**. Если для значения необходимо указать одни фигурные скобки, как, например, в [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) или [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), затем поставьте перед ними обратную косую черту: `\{`. Также можно включить всю строку, содержащую скобки, которые нужно преобразовать, в дополнительный набор кавычек, например: `ConverterParameter='{Mix}'`.
 
-## Примеры.
+## <a name="examples"></a>Примеры.
 
 ```XML
 <!-- binding a UI element to a view model -->    
@@ -118,14 +125,9 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 
 Обратите внимание, что значение свойства [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) использует другое расширение разметки, [расширение разметки StaticResource](staticresource-markup-extension.md), поэтому здесь показано использование двух вложенных расширений разметки. Первой оценивается внутренняя разметка, поэтому как только ресурс получен, привязка может использовать действительный [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) (пользовательский класс, созданный элементом `local:S2Formatter` в ресурсах).
 
-## Поддержка средств
+## <a name="tools-support"></a>Поддержка средств
 
 Компонент Microsoft IntelliSense в Microsoft Visual Studio отображает свойства контекста данных при создании **{Binding}** в редакторе разметки XAML. Как только вы введете "{Binding", в раскрывающемся списке отобразятся свойства контекста данных, соответствующие [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830). IntelliSense также помогает с другими свойствами [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Для того, чтобы это работало, необходимо иметь или контекст данных, или контекст данных времени разработки, установленные на странице разметки. Команда **Перейти к определению** (клавиша F12) также работает с **{Binding}**. Кроме того, вы можете использовать диалоговое окно привязки данных.
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

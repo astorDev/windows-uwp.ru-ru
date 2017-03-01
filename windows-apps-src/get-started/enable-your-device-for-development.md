@@ -10,13 +10,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
-ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc1bf476c93ef9843c20244f24a199c7888eb4a5
+ms.lasthandoff: 02/07/2017
 
 ---
+
 # <a name="enable-your-device-for-development"></a>Подготовка устройства к разработке
 
-Перед тем как создавать приложения, необходимо включить режим разработчика как на компьютере для разработки, так и на всех устройствах, на которых будет тестироваться код.
+Перед тем как создавать приложения, необходимо включить режим разработчика как на компьютере для разработки, так и на всех устройствах, на которых будет тестироваться код. 
+
+![Подготовка устройств к разработке](images/developer-poster.png)
 
 ## <a name="use-developer-features"></a>Использование возможностей для разработчиков
 
@@ -77,7 +81,7 @@ ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 
 Конкретные инструкции по настройке устройства см. в следующих разделах:
 - [Портал устройств для ПК](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [Портал устройств для HoloLens](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [Портал устройств для HoloLens](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
 - [Портал устройств для IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Портал устройств для мобильных устройств](../debug-test-perf/device-portal-mobile.md)
 - [Портал устройств для Xbox](../debug-test-perf/device-portal-xbox.md)
@@ -215,9 +219,4 @@ ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 После этого необходимо включить на устройстве режим разработчика, как описано в данной статье, чтобы можно было продолжить разработку на этом устройстве. Если не сделать этого, может возникнуть ошибка при отладке вашего приложения или при создании пакета для него. Ниже указан пример такой ошибки.
 
 Ошибка DEP0700: не удалось зарегистрировать приложение.
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

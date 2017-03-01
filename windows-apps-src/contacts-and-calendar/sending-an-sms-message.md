@@ -4,20 +4,26 @@ description: "В данной статье рассказывается, как 
 title: "Отправка SMS-сообщения"
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
 keywords: "контакты, SMS, отправка"
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: e00d2e9a701a2a23b5a98f2275abd55da12fa791
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3e609ccaae3806a47b458a3e313c275278985d95
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Отправка SMS-сообщения
+# <a name="send-an-sms-message"></a>Отправка SMS-сообщения
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В данной статье рассказывается, как запустить диалоговое окно составления SMS, с помощью которого пользователь может отправить SMS-сообщение. Перед отображением диалогового окна вы можете заполнить поля SMS-сообщения значениями по умолчанию. Сообщение не будет отправлено до тех пор, пока пользователь не нажмет кнопку отправки.
 
-## Запуск диалогового окна составления SMS
+## <a name="launch-the-compose-sms-dialog"></a>Запуск диалогового окна составления SMS
 
 Создайте объект [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessage) и укажите данные, которые необходимо предварительно внести в поля диалогового окна составления электронного письма. Чтобы отобразить диалоговое окно, вызовите метод [**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync).
 
@@ -50,16 +56,11 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
 }
 ```
 
-## Сводка и дальнейшие действия
+## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
 
 В этой статье рассказано, как запустить диалоговое окно составления SMS. Сведения о том, как выбрать контакты-получатели SMS-сообщения, см. в статье [Выбор контактов](selecting-contacts.md). Скачайте [Примеры универсальных приложений для Windows](http://go.microsoft.com/fwlink/p/?linkid=619979) из GitHub, чтобы просмотреть дополнительные примеры отправки и получения SMS с помощью фоновой задачи.
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Выбор контактов](selecting-contacts.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

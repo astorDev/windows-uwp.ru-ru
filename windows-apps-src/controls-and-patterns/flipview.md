@@ -5,9 +5,16 @@ title: "Руководство по элементам пролистывани�
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 92c523c100a021808e01dffe4cd9b5c47c21b58a
-ms.openlocfilehash: 3ad89682248462efa5022467ceb330da03843de4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5266c1aaeeb2ecd009b8ee4dac6218fcb8b2f31b
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="flip-view"></a>Представление пролистывания
@@ -218,9 +225,4 @@ stackPanel1.Children.Add(flipView1);
 
 - [Руководство по спискам](lists.md)
 - [**Класс FlipView**](https://msdn.microsoft.com/library/windows/apps/br242678)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

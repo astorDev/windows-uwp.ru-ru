@@ -4,9 +4,17 @@ Description: "Всплывающий элемент — это облегчен�
 title: "Меню и контекстные меню"
 label: Menus and context menus
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
 translationtype: Human Translation
-ms.sourcegitcommit: 5f50e490caa5d1d88c2f8315dc47e15b0ae22a05
-ms.openlocfilehash: badb03c97ae0f2350e5d7592f10168bb7d6e7d1a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 515c63d5612358cf90684427f8f747e19384c6ff
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="menus-and-context-menus"></a>Меню и контекстные меню
@@ -153,7 +161,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 > Элементы управления с исчезновением, такие как меню, контекстные меню и другие всплывающие элементы, захватывают фокус клавиатуры или геймпада внутри промежуточного пользовательского интерфейса, пока не будут закрыты. Для предоставления визуальной подсказки по этому поведению элементы управления с исчезновением на Xbox отображают наложение, затемняющее видимость вне области действия пользовательского интерфейса. Это поведение можно изменить с помощью нового свойства [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx). По умолчанию промежуточные элементы пользовательского интерфейса отображают наложение с исчезновением на Xbox, но не на других семействах устройств, хотя приложения могут принудительно устанавливать наложению постоянное значение **Вкл.** или **Выкл.**.
 
 > ```xaml
-> <MenuFlyout LightDismissOverlayMode="Off">
+> <MenuFlyout LightDismissOverlayMode=\"Off\">
 > ```
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
@@ -163,9 +171,4 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ## <a name="related-articles"></a>Связанные разделы
 
 - [**Класс MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

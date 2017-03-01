@@ -1,16 +1,23 @@
 ---
 author: Jwmsft
 Description: "Поиск — это один из лучших способов обнаружения содержимого в вашем приложении. Рекомендации в этой статье охватывают элементы работы поиска, области поиска, реализацию и примеры поиска в контексте."
-title: "Поиск и функция &quot;найти на странице&quot;"
+title: "Поиск и функция «найти на странице»"
 ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: af8ee5679fe9bb152718b57bd198238bf9a3f6cd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0a92a3962a6e46f6086b07e548ea39887a780c21
+ms.lasthandoff: 02/07/2017
 
 ---
-# <a name="search-and-find-in-page"></a>Поиск и функция "найти на странице"
+# <a name="search-and-find-in-page"></a>Поиск и функция «найти на странице»
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -226,9 +233,4 @@ ms.openlocfilehash: af8ee5679fe9bb152718b57bd198238bf9a3f6cd
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

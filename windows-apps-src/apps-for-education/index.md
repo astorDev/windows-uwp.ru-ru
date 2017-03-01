@@ -2,22 +2,33 @@
 author: TylerMSFT
 title: "Разработка приложений для образовательных учреждений."
 description: "В этом разделе перечислены ресурсы по универсальным приложениям для Windows, которые помогут вам в создании образовательных приложений для платформы Windows 10."
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 translationtype: Human Translation
-ms.sourcegitcommit: 48fcfe2b033614b445a1be6d757a8d208c7b1292
-ms.openlocfilehash: bb401b73432c072d551814dec9504a7d1742b7d4
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: abeadc4fe27858afcdddfeff08362fff69ce713b
+ms.lasthandoff: 02/08/2017
 
 ---
-# Разработка образовательных универсальных приложений для Windows
+
+# <a name="develop-universal-windows-apps-for-education"></a>Разработка образовательных универсальных приложений для Windows
+![снимок экрана приложения для тестирования](images/take-a-test-screen-small.png)
+
 Следующие ресурсы помогут в написании образовательного универсального приложения для Windows.
 
-### Accessibility (Специальные возможности)
+### <a name="accessibility"></a>Accessibility (Специальные возможности)
 Образовательные приложения должны быть доступны. Дополнительные сведения см. в разделе [Разработка приложений со специальными возможностями](https://developer.microsoft.com/windows/accessible-apps).
 
 
-### Надежный контроль
+### <a name="secure-assessments"></a>Надежный контроль
 Приложения для контроля и тестирования часто требуют создания *закрытой* среды для предотвращения использования учащимися других компьютеров или Интернет-ресурсов во время тестирования. Эта функция доступна через [API тестирования](take-a-test-api.md). Посмотрите веб-приложение [Тестирование](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) в центре ИТ Windows в качестве примера тестовой среды с заблокированным доступом к сети для проведения важного тестирования.
 
-### Пользовательский ввод
+### <a name="user-input"></a>Пользовательский ввод
 Пользовательский ввод является важной частью образовательных приложений. Элементы управления пользовательского интерфейса должны быть отзывчивыми и интуитивно понятными, чтобы не отвлекать внимание пользователей. Общие сведения о доступных вариантах средств ввода данных, доступных в универсальных приложения для Windows, см. в разделе [Азбука методов ввода](https://msdn.microsoft.com/windows/uwp/input-and-devices/input-primer) и его подразделах в части «Оформление и пользовательский интерфейс». Кроме того, следующие примеры приложений демонстрируют базовые методы обработки пользовательского интерфейса для универсальной платформы Windows.
 - [Пример базового ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput) показывает, как обрабатывать ввод в универсальных приложениях для Windows.
 - [Пример режима взаимодействия с пользователем](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode) показывает, как устанавливать режим взаимодействия с пользователем и реагировать на него.
@@ -29,14 +40,9 @@ ms.openlocfilehash: bb401b73432c072d551814dec9504a7d1742b7d4
 - [Сложный пример рукописного ввода](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) показывает, как использовать расширенную функциональность InkPresenter для соединения рукописного ввода с другими объектами, выбора рукописного ввода, копирования, вставки и обработки других событий. Функциональность основана на универсальной платформе Windows в C++ и может работать как на настольных, так и на мобильных SKU Windows 10.
 
 
-### Магазин Windows
+### <a name="windows-store"></a>Магазин Windows
 Довольно часто образовательные приложения выпускаются для определенной организации с особыми условиями. Сведения об этом можно найти в разделе [Распространение бизнес-приложений для предприятий](https://msdn.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises).
 
-## Статьи по теме
+## <a name="related-topics"></a>Статьи по теме
 - [Windows 10 для образовательных учреждений](https://technet.microsoft.com/edu/windows/index) в ИТ-центре Windows
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

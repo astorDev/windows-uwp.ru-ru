@@ -1,14 +1,21 @@
 ---
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: Create a "Hello, world" app (JS)
+title: "Создание приложения Hello, world (JS)"
 description: "В этом учебнике описано, как с помощью JavaScript и HTML создать простое приложение &\\#0034;Hello, world&\\#0034;, предназначенное для универсальной платформы Windows (UWP) в Windows 10."
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4aea3d31bad97fa0933e1274c037a4bb8d81bb
-ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 915f77e308d6384aa539f78cc307842dd51cd9f4
+ms.lasthandoff: 02/07/2017
 
 ---
-# <a name="create-a-hello-world-app-js"></a>Создание приложения «Hello, world» (JS)
+# <a name="create-a-hello-world-app-js"></a>Создание приложения "Hello, world" (JS)
 
 В этом учебнике описано, как с помощью JavaScript и HTML создать простое приложение «Hello, world», предназначенное для универсальной платформы Windows (UWP) в Windows 10. С помощью единственного проекта в Microsoft Visual Studio вы можете создать приложение, работающее на любом устройстве с Windows 10.
 
@@ -493,10 +500,5 @@ Visual Studio запускает выбранный эмулятор и зате
 
 Поздравляем! Вы создали свое первое приложение для Windows 10 и платформы UWP с помощью JavaScript и HTML!
 
-Дальнейшие действия Документация по [WinJS](https://developer.microsoft.com/en-us/windows/develop/winjs) поможет вам разобраться в библиотеке Windows для JavaScript.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
+Дальнейшие действия Документы по [WinJS](https://developer.microsoft.com/windows/develop/winjs) помогут приступить к работе с библиотекой Windows для JavaScript, либо можно сразу перейти к [следующим шагам](learn-more.md).
 

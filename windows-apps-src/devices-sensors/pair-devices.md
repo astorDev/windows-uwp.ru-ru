@@ -3,14 +3,21 @@ author: DBirtolo
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: "Связывание устройств"
 description: "Некоторые устройства необходимо связать, прежде чем их можно будет использовать. Пространство имен Windows.Devices.Enumeration поддерживает три разных способа связывания устройств."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 502a1a650d327e914ffef049278581851ad4ec3b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7349188a9b735ac887c1afbc09c572f598407471
+ms.lasthandoff: 02/07/2017
 
 ---
-# Связывание устройств
+# <a name="pair-devices"></a>Связывание устройств
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** Важные API **
@@ -27,23 +34,23 @@ ms.openlocfilehash: 502a1a650d327e914ffef049278581851ad4ec3b
 
  
 
-## Автоматическое связывание
+## <a name="automatic-pairing"></a>Автоматическое связывание
 
 
 Иногда вам необходимо использовать устройство в своем приложении, но вас не интересует, связано ли это устройство. Вы просто хотите иметь возможность использовать функцию, связанную с устройством. Например, если вашему приложению нужно просто сделать снимок веб-камерой, вы не обязательно заинтересованы в самом устройстве. Вас интересует только съемка. При наличии API устройства, доступных для интересующего вас устройства, этот сценарий относится к автоматическому связыванию.
 
 В этом случае вы просто используете API, связанные с устройством, осуществляя вызовы по мере необходимости и доверяя системе обработку каждого связывания, которое может потребоваться. Некоторые устройства не нужно связывать, чтобы использовать их функции. Если устройство не требует связывания, API устройства незаметно обработают действие связывания. Следовательно, вам не нужно интегрировать эту функцию в свое приложение. Вашему приложению не будет известно о том, связано ли данное устройство или требуется ли это действие вообще, но вы сможете получать доступ к устройству и использовать его функции.
 
-## Базовое связывание
+## <a name="basic-pairing"></a>Базовое связывание
 
 
 Базовое связывание происходит, когда ваше приложение использует API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), чтобы попытаться связать устройство. В этом сценарии вы предоставляете Windows контроль над процессом связывания и его обработкой. При необходимости взаимодействия с пользователем таковое будет обработано Windows. Вам можете использовать базовое связывание при необходимости связывания с устройством в отсутствие релевантного API устройства, который будет предпринимать попытку автоматического связывания. Вы просто хотите иметь возможность использовать устройство, а для этого необходимо выполнить связывание.
 
 Чтобы попытаться выполнить базовое связывание, сначала необходимо получить объект [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) для устройства, которое вас интересует. Получив этот объект, вы сможете взаимодействовать со свойством [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx), являющимся объектом [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx). Чтобы выполнить связывание, просто вызовите [**DeviceInformationPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/mt608800). Вам необходимо будет **подождать** результат, чтобы предоставить приложению время попытаться завершить действие связывания. Будет возвращен результат действия связывания, и при отсутствии ошибок устройство будет связано.
 
-В случае использования базового связывания вы также получаете доступ к дополнительной информации о состоянии связывания устройства. Например, вы знаете состояние связывания ([**IsPaired**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_ispaired)) и вам известно о возможности связывания устройства ([**CanPair**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_canpair)). Эти показатели являются свойствами объекта [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx). При использовании автоматического связывания у вас может не быть доступа к этим сведениям, если вы не получите релевантные объекты [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393).
+В случае использования базового связывания вы также получаете доступ к дополнительной информации о состоянии связывания устройства. Например, вы знаете состояние связывания ([**IsPaired**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.ispaired.aspx)) и вам известно о возможности связывания устройства ([**CanPair**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.canpair.aspx)). Эти показатели являются свойствами объекта [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx). При использовании автоматического связывания у вас может не быть доступа к этим сведениям, если вы не получите релевантные объекты [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393).
 
-## Пользовательское связывание
+## <a name="custom-pairing"></a>Пользовательское связывание
 
 
 Пользовательское связывание позволяет приложению участвовать в процессе связывания. Это позволяет вашему приложению указать [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808), поддерживаемые для процесса связывания. На вас также ляжет ответственность за создание собственного пользовательского интерфейса для взаимодействия с пользователем при необходимости. Используйте пользовательское связывание, если необходимо, чтобы приложение имело несколько больше влияния на ход процесса связывания, или для отображения собственного пользовательского интерфейса связывания.
@@ -54,14 +61,14 @@ ms.openlocfilehash: 502a1a650d327e914ffef049278581851ad4ec3b
 
 Важно помнить о том, что пользовательское связывание всегда является операцией на уровне системы. Из-за этого при работе на настольном компьютере или в Windows Phone перед началом связывания на экране всегда будет отображаться диалоговое окно системы. Это связано с тем, что для обеих этих платформ требуется согласие пользователя. Поскольку это диалоговое окно создается автоматически, вам не нужно будет создавать собственное диалоговое окно при выборе [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) **ConfirmOnly** во время работы на этих платформах. Для другого **DevicePairingKinds** необходимо будет выполнить специальную обработку в зависимости от конкретного значения **DevicePairingKinds**. См. пример обработки пользовательского связывания для разных значений **DevicePairingKinds**.
 
-## Отмена связывания
+## <a name="unpairing"></a>Отмена связывания
 
 
 Отмена связывания уместна только в сценариях базового или пользовательского связывания, описанных выше. При использовании автоматического связывания нет необходимости в отмене связывания, так как приложение не учитывает состояние связывания устройства. Процесс отмены связывания устройства является одинаковым для базового и пользовательского связывания. Это обусловлено тем, что нет необходимости предоставлять дополнительные сведения или участвовать в отмене связывания.
 
 Первым шагом при отмене связывания является получение объекта [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) для устройства, связывание которого необходимо отменить. Затем необходимо получить свойство [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) и вызвать [**DeviceInformationPairing.UnpairAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.unpairasync). Как и при связывании, нужно будет **подождать** результат. Будет возвращен результат действия отмены связывания, и при отсутствии ошибок связывание устройства будет отменено.
 
-## Пример
+## <a name="sample"></a>Пример
 
 
 Чтобы скачать пример использования API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), перейдите [по этой ссылке](http://go.microsoft.com/fwlink/?LinkID=620536).
@@ -72,10 +79,5 @@ ms.openlocfilehash: 502a1a650d327e914ffef049278581851ad4ec3b
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

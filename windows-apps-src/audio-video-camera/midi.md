@@ -3,20 +3,27 @@ author: drewbatgit
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
 description: "В этой статье показано, как перечислять MIDI-устройства (Musical Instrument Digital Interface), а также отправлять и получать сообщения MIDI из универсального приложения для Windows."
 title: MIDI
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: bd494a814155d72642bb721a939fcc8c50668a2d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# MIDI
+# <a name="midi"></a>MIDI
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье показано, как перечислять MIDI-устройства (Musical Instrument Digital Interface), а также отправлять и получать сообщения MIDI из универсального приложения для Windows.
 
-## Перечисление MIDI-устройств
+## <a name="enumerate-midi-devices"></a>Перечисление MIDI-устройств
 
 Перед перечислением и использованием MIDI-устройств добавьте в свой проект следующие пространства имен.
 
@@ -34,7 +41,7 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 [!code-cs[EnumerateMidiOutputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiOutputDevices)]
 
-## Создание вспомогательного класса для наблюдателя устройств
+## <a name="create-a-device-watcher-helper-class"></a>Создание вспомогательного класса для наблюдателя устройств
 
 Пространство имен [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) предоставляет объект [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446), который может уведомлять ваше приложение о добавлении устройства в систему или об удалении его из системы, либо об обновлении информации устройства. Поскольку приложениям с поддержкой MIDI обычно требуются как устройства ввода, так и устройства вывода, в этом примере создается вспомогательный класс, реализующий шаблон **DeviceWatcher**, а для устройств ввода и вывода MIDI можно использовать один и тот же код, не прибегая к дублированию.
 
@@ -84,7 +91,7 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 [!code-cs[WatcherDestructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherDestructor)]
 
-## Создание портов MIDI для отправки и получения сообщений
+## <a name="create-midi-ports-to-send-and-receive-messages"></a>Создание портов MIDI для отправки и получения сообщений
 
 В коде программной части для своей страницы объявите переменные-члены для хранения двух экземпляров вспомогательного класса **MyMidiDeviceWatcher**: один для устройств ввода, а другой для устройств вывода.
 
@@ -122,7 +129,7 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 [!code-cs[CleanUp](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetCleanUp)]
 
-## Использование встроенного в Windows синтезатора General MIDI
+## <a name="using-the-built-in-windows-general-midi-synth"></a>Использование встроенного в Windows синтезатора General MIDI
 
 При перечислении устройств вывода MIDI, используя описанный выше способ, ваше приложение обнаружит MIDI-устройство «Microsoft GS Wavetable Synth». Это встроенный синтезатор General MIDI, который можно использовать в приложении. Однако если попытаться создать выходной порт MIDI для этого устройства, возникнет ошибка, если вы не включили расширение SDK для встроенного синтезатора в свой проект.
 
@@ -141,10 +148,5 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

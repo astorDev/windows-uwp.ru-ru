@@ -3,9 +3,16 @@ author: mcleblanc
 description: "Практика определения пользовательского интерфейса в форме декларативной разметки XAML очень хорошо подходит не только для универсальных приложений для версии 8.1, но и для приложений универсальной платформы Windows (UWP)."
 title: "Перенос XAML среды выполнения Windows 8.x и пользовательского интерфейса в UWP"
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 19a6ef29265c22d1bb02464a76ab20e487c67ce4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -81,9 +88,9 @@ ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
 
 Вам не нужно изменять код, интегрируемый с чудо-кнопками, но необходимо добавить в приложение некоторые элементы пользовательского интерфейса, которые заменят на данный момент отсутствующие в оболочке Windows 10 чудо-кнопки. Универсальное приложение версии 8.1, работающее в Windows 10, применяет собственный пользовательский интерфейс, предоставляемый системой, в заголовке окна приложения.
 
-## <a name="controls-and-control-stylestemplates"></a>Элементы управления, стили и шаблоны элементов управления
+## <a name="controls-and-control-styles-and-templates"></a>Элементы управления, стили и шаблоны элементов управления
 
-Универсальное приложение версии 8.1, работающее в Windows 10, сохраняет внешний вид и принципы работы элементов управления версии 8.1. Однако в случае переноса такого приложения в приложение Windows 10 некоторые отличия внешнего вида и принципов работы всё же будут присутствовать. Они описаны далее. Архитектура и оформление элементов управления приложений Windows 10 существенно не изменятся. Основные изменения коснутся [языка дизайна](#design-language), упрощений и улучшения удобства использования.
+Универсальное приложение версии 8.1, работающее в Windows 10, сохраняет внешний вид и принципы работы элементов управления версии 8.1. Однако в случае переноса такого приложения в приложение Windows 10 некоторые отличия внешнего вида и принципов работы всё же будут присутствовать. Они описаны далее. Архитектура и оформление элементов управления приложений Windows 10 существенно не изменятся. Основные изменения коснутся [языка дизайна](#design-language-in-windows-10), упрощений и улучшения удобства использования.
 
 **Примечание.** Визуальное состояние PointerOver используется для пользовательских стилей и шаблонов в приложениях Windows 10 и в приложениях Магазина Windows, но не в приложениях Магазина Windows Phone. Поэтому (из-за ключей и системных ресурсов, которые поддерживаются для приложений Windows 10) мы рекомендуем повторно использовать пользовательские стили или шаблоны из приложений Магазина Windows при переносе приложения в Windows 10.
 Если вы хотите быть уверены, что ваши пользовательские стили или шаблоны используют последний набор визуальных состояний, и в них максимально применяются улучшения производительности, внесенные в стили или шаблоны по умолчанию, тогда отредактируйте копию нового шаблона Windows 10 по умолчанию и повторно примените свои настройки к ней. Одним из примеров улучшения производительности является то, что были удалены все элементы **Border**, ранее содержащие в себе **ContentPresenter** или панель, и теперь дочерний элемент отображает границу.
@@ -99,16 +106,16 @@ ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
 | [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | В приложении для Windows 10 элемент [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) не обрабатывает [**EdgeGesture.Completed**](https://msdn.microsoft.com/library/windows/apps/hh701622) и события [**UIElement.RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984). Он также не реагирует на касание и проведение пальцем вверх. Вы по-прежнему можете обрабатывать эти события и настроить [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/hh701939). |
 | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584), [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | Посмотрите, как будет выглядеть ваше приложение с визуальными изменениями [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) и [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280). Для приложения Windows 10, запущенного на мобильном устройстве, эти элементы управления более не служат для перехода на страницу выбора, вместо этого используется всплывающее окно исчезновения. |
 | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584), [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | В приложении для Windows 10 невозможно разместить [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) или [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) внутри всплывающего элемента. Если вы хотите, чтобы эти элементы управления отображались во всплывающем элементе управления, можете воспользоваться [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) и [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313). |
-| **GridView**, **ListView** | Сведения о **GridView**/**ListView** см. в разделе [Изменения GridView/ListView](#gridview). |
-| [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | В приложении Магазина Windows Phone элемент управления [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) создает оболочку от последнего раздела к первому. В приложении Магазина Windows и приложении для Windows 10 главные разделы не создают оболочку. |
+| **GridView**, **ListView** | Сведения о **GridView**/**ListView** см. в разделе [Изменения GridView в и ListView](#gridview-and-listview-changes). |
+| [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | В приложении Магазина Windows Phone элемент управления [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) прокручивается от последнего раздела к первому. В приложении Магазина Windows и приложении для Windows 10 главные разделы не создают оболочку. |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | В приложении Магазина Windows Phone фоновое изображение элемента управления [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) перемещается в параллаксе относительно главных разделов. В приложении Магазина Windows и в приложении для Windows 10 параллакс не используется. |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | В универсальном приложении версии 8.1 из-за свойства [**HubSection.IsHeaderInteractive**](https://msdn.microsoft.com/library/windows/apps/dn251917) заголовок раздела и глиф шеврона, отображаемый рядом с ним, становятся интерактивными. В приложении для Windows 10 кроме заголовка существует интерактивная возможность "Подробнее", но сам заголовок не является интерактивным. **IsHeaderInteractive** по-прежнему определяет, вызывает ли взаимодействие событие [**Hub.SectionHeaderClick**](https://msdn.microsoft.com/library/windows/apps/dn251953). |
 | **MessageDialog** | Рекомендуется вместо **MessageDialog** использовать более гибкий [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972). См. также пример [Основы создания пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?linkid=619992). |
 | **ListPickerFlyout**, **PickerFlyout**  | **ListPickerFlyout** и **PickerFlyout** не рекомендуются для приложений для Windows 10. Для простого всплывающего элемента используйте [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030). Для более сложных элементов используйте [**Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496). |
 | [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | Свойство [**PasswordBox.IsPasswordRevealButtonEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702579) устарело для приложения для Windows 10. Его настройка не будет иметь никакого эффекта. Вместо этого используйте элемент [**PasswordBox.PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/dn890867) со значением по умолчанию **Peek** (в котором отображается глиф глаза, как в приложении Магазина Windows). См. также раздел [Руководство по полям паролей](https://msdn.microsoft.com/library/windows/apps/dn596103). |
 | [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) | Элемент управления [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) теперь универсален, его использование больше не ограничивается мобильными устройствами. |
-| [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | Хотя [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) реализуется во всех семействах устройств, он не полностью использует свои функции в мобильных устройствах См. раздел [SearchBox заменен на AutoSuggestBox](#searchbox). |
-| **SemanticZoom** | Сведения о **SemanticZoom** см. в разделе [Изменения SemanticZoom](#semantic-zoom). |
+| [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | Хотя [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) реализуется во всех семействах устройств, он не полностью использует свои функции в мобильных устройствах См. раздел [SearchBox заменен на AutoSuggestBox](#searchbox-deprecated-in-favor-of-autosuggestbox). |
+| **SemanticZoom** | Сведения о **SemanticZoom** см. в разделе [Изменения SemanticZoom](#semanticzoom-changes). |
 | [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)  | Некоторые свойства [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) по умолчанию изменились. [**HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) равно **Auto**, [**VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) — **Auto** и [**ZoomMode**](https://msdn.microsoft.com/library/windows/apps/br209601) — **Отключено**. Если новые значения по умолчанию не подходят для вашего приложения, вы можете изменить их в стиле и как локальные значения в самом элементе управления.  |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | В приложении Магазина Windows проверка правописания для [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) выключена по умолчанию. В приложении Магазина Windows Phone и приложении для Windows 10 она включена по умолчанию. |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | Размер шрифта по умолчанию для [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) изменен с 11 на 15. |
@@ -139,7 +146,7 @@ ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
 
 Вы можете повторно использовать разметку XAML из приложения Магазина Windows, если значения литеральных измерений используются в этой разметке (например, фигуры размеров или другие элементы, возможно, для типографии). Но в некоторых случаях на устройстве в приложении для Windows 10 используется более крупный коэффициент масштабирования, чем для универсальных приложений версии 8.1 (например, 150 % используется вместо 140 %, а 200 % используется вместо 180 %). Поэтому, если литеральные значения окажутся в Windows 10 слишком большими, попробуйте умножить их на 0,8. Подробнее см. в разделе [Адаптивный дизайн 101 для приложений UWP](https://msdn.microsoft.com/library/windows/apps/dn958435).
 
-## <a name="gridviewlistview-changes"></a>Изменения GridView/ListView
+## <a name="gridview-and-listview-changes"></a>Изменения GridView в и ListView
 
 В методы задания стилей [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) по умолчанию были внесены некоторые изменения для реализации вертикальной прокрутки этого элемента управления (вместо горизонтальной прокрутки, которая раньше использовалась по умолчанию). Если копия стиля по умолчанию в вашем проекте была изменена, то в вашей копии изменения применены не будут, и вам придется вносить их вручную. Ниже представлен список этих изменений.
 
@@ -457,7 +464,7 @@ ListViewItemPresenter с наложенным флажком
 
 В приложениях Магазина Windows и Магазина Windows Phone языком по умолчанию для текста является язык сборки или en-US. В приложении для Windows 10 языком по умолчанию является язык главного приложения (резервный вариант шрифта). Вы можете явно установить [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066), но вам будет удобнее использовать резервный вариант шрифта, если вы не установите значение для этого свойства.
 
-Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) и [Оформление приложений UWP](http://go.microsoft.com/fwlink/p/?LinkID=533896). Сведения об изменениях элементов управления текстом также см. в разделе [Элементы управления](#controls) выше.
+Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) и [Оформление приложений UWP](http://go.microsoft.com/fwlink/p/?LinkID=533896). Сведения об изменениях элементов управления текстом также см. в разделе [Элементы управления](#controls-and-control-styles-and-templates) выше.
 
 ## <a name="theme-changes"></a>Изменения тем
 
@@ -481,10 +488,5 @@ ListViewItemPresenter с наложенным флажком
 ```
 
 Следующий раздел называется [Перенос для ввода-вывода, устройств и моделей приложений](w8x-to-uwp-input-and-sensors.md).
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

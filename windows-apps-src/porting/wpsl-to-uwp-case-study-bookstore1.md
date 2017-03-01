@@ -1,15 +1,22 @@
 ---
 author: mcleblanc
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: "В этом разделе представлен практический пример переноса очень простого приложения Windows Phone Silverlight в приложение UWP для Windows 10."
-title: "Пример переноса Windows Phone Silverlight в UWP, Bookstore1"
+description: "В этом разделе представлен пример переноса очень простого приложения Windows Phone Silverlight в приложение универсальной платформы Windows (UWP) для Windows 10."
+title: "Пример переноса с Windows Phone Silverlight на UWP, Bookstore1"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 14003238ead3af2d796bab4f96dadfb050f7d595
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore1"></a>Пример переноса Windows Phone Silverlight в UWP: Bookstore1
+# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore1"></a>Пример переноса с Windows Phone Silverlight на UWP: Bookstore1
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -133,9 +140,4 @@ ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
 В этом примере показан процесс переноса очень простого приложения, вероятно, нереально простого. Например, список элементов управления можно использовать для выбора или задания контекста для навигации; приложение переходит на страницу с дополнительной информацией об элементе, которого коснулся пользователь. Данное приложение не выполняет никаких действий с выбором пользователя и не поддерживает ни навигацию. Но даже в этом случае данный пример помог вам познакомиться с процессом портирования и продемонстрировал важные методики, которые вы можете использовать с реальными приложениями UWP.
 
 Следующий пример — [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md), где мы рассмотрим доступ к сгруппированным данным и их и отображение.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

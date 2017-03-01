@@ -3,15 +3,22 @@ author: Xansky
 description: "Использование контактов и сведений календаря в приложении UWP."
 title: "Контакты и календарь"
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, контакты, календарь, встречи, сообщения электронной почты"
 translationtype: Human Translation
-ms.sourcegitcommit: c21a5f0f859e3a80d01786caaf6941c3d0b11c18
-ms.openlocfilehash: 0b93ab3f5e0a622fb924a752ec581bbb9df32936
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f0e61f5c586ccd1225fb9e4edf5ab93580cfd043
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Контакты и календарь
+# <a name="contacts-and-calendar"></a>Контакты и календарь
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Вы можете предоставить пользователям доступ к их контактам и встречам, возможность обмениваться содержимым, сведениями календаря, электронными и мгновенными сообщениями, а также использовать другие реализованные вами функции.
 
@@ -27,16 +34,11 @@ ms.openlocfilehash: 0b93ab3f5e0a622fb924a752ec581bbb9df32936
 
  
 
-## Статьи по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Пример API встреч](http://go.microsoft.com/fwlink/p/?linkid=309836)
 * [Пример API диспетчера контактов](http://go.microsoft.com/fwlink/p/?LinkID=310079)
 * [Образец приложения "Окно выбора контактов"](http://go.microsoft.com/fwlink/p/?linkid=231575)
 * [Пример обработки действий с контактами](http://go.microsoft.com/fwlink/p/?LinkID=320151)
 * [Пример интеграции карточки контакта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -3,14 +3,21 @@ author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: "Обзор анимаций"
 description: "Используйте анимации из библиотеки среды выполнения Windows, чтобы ваше приложение соответствовало внешнему виду Windows."
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2a08d1def7c4d2fde0ae08eb26076526058e8aae
-ms.openlocfilehash: e3e21c55ea8ddeab0969e304080394b940da010d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8f7e56f1bca5ecea6078dd70840d083eab6e30dd
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="animations-overview"></a>Обзор анимаций
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Анимации в среде выполнения Windows могут улучшить ваше приложение, сделав его более динамичным и интерактивным. Воспользовавшись анимациями из библиотеки среды выполнения Windows, вы можете легко привести внешний вид своего приложения в соответствие с внешним видом Windows. В этой статье представлена сводка таких анимаций и даны примеры типичных сценариев использования каждой из них.
@@ -380,10 +387,5 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

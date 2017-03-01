@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: "Используйте этот метод в API аналитики для Магазина Windows для получения сводных данных об оценках приложения в заданном диапазоне дат или с учетом других дополнительных фильтров."
 title: "Получение сведений об оценках приложения"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, службы Магазина, API аналитики для Магазина Windows, оценки"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: 86685984256459e0bb125340daa1616b09982429
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 25f057eba5827be34b4fcf9d31a6e0ae71dc9893
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -156,9 +163,4 @@ Authorization: Bearer <your access token>
 * [Получение сведений о покупках надстройки](get-in-app-acquisitions.md)
 * [Получение данных отчетов об ошибках](get-error-reporting-data.md)
 * [Получение отзывов о приложении](get-app-reviews.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

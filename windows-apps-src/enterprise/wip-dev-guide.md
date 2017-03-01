@@ -4,13 +4,21 @@ Description: "Это руководство поможет обучить сво
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Создание грамотного приложения, принимающего и корпоративные, и персональные данные"
+ms.author: normesta
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, wip, Windows Information Protection, корпоративные данные, защита корпоративных данных, edp, грамотные приложения"
+ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 translationtype: Human Translation
-ms.sourcegitcommit: bf1c47e9cca45b626a45ca664bf2bb4be9c529e0
-ms.openlocfilehash: 82b674c72126c66aff34b0396a2c32f88023dd25
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 5bad765ff182fcd2fb573c3aa766fdaaaef1e2a3
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Создание грамотного приложения, принимающего и корпоративные, и персональные данные
+# <a name="build-an-enlightened-app-that-consumes-both-enterprise-data-and-personal-data"></a>Создание грамотного приложения, принимающего и корпоративные, и персональные данные
 
 __Примечание.__ Политика Windows Information Protection (WIP) может применяться в Windows 10 версии 1607.
 
@@ -24,7 +32,7 @@ __Примечание.__ Политика Windows Information Protection (WIP) 
 
 Если вы готовы пройти все задачи, приступим.
 
-## Во-первых, соберите все, что вам понадобится
+## <a name="first-gather-what-you-need"></a>Во-первых, соберите все, что вам понадобится
 
 Необходимые ресурсы указаны ниже.
 
@@ -32,7 +40,7 @@ __Примечание.__ Политика Windows Information Protection (WIP) 
 
 * Компьютер для разработки под управлением Windows 10 версии 1607. Это может быть тестовая ВМ, если на ней установлена Visual Studio.
 
-## Настройка вашей среды разработки
+## <a name="setup-your-development-environment"></a>Настройка вашей среды разработки
 
 Необходимо выполнить следующие действия.
 
@@ -110,7 +118,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.Data.Xml.Dom;
 ```
 
-## Определение того, поддерживает ли WIP та операционная система, в которой выполняется ваше приложение
+## <a name="determine-whether-the-operating-system-that-runs-your-app-supports-wip"></a>Определение того, поддерживает ли WIP та операционная система, в которой выполняется ваше приложение
 
 Для этого используйте функцию [**IsApiContractPresent**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.metadata.apiinformation.isapicontractpresent.aspx).
 
@@ -129,7 +137,7 @@ else
 
 Windows Information Protection теперь поддерживается в Windows 10 версии 1607.
 
-## Чтение корпоративных данных
+## <a name="read-enterprise-data"></a>Чтение корпоративных данных
 
 Файл, конечные точки сети, данные буфера обмена и данные, которые вы принимаете по контракту отправки данных, — все они имеют корпоративный идентификатор.
 
@@ -137,7 +145,7 @@ Windows Information Protection теперь поддерживается в Wind
 
 Начнем с файлов.
 
-### Чтение данных из файла
+### <a name="read-data-from-a-file"></a>Чтение данных из файла
 
 **Шаг 1. Получите дескриптор файла**
 
@@ -194,7 +202,7 @@ var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(file);
 ```
 
-### Чтение данных из конечной точки сети
+### <a name="read-data-from-a-network-endpoint"></a>Чтение данных из конечной точки сети
 
 Создайте защищенный контекст потока для чтения из корпоративной конечной точки.
 
@@ -328,7 +336,7 @@ public static async Task<IBuffer> getDataFromNetworkResource(Uri resourceURI)
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
-### Чтение данных из буфера обмена
+### <a name="read-data-from-the-clipboard"></a>Чтение данных из буфера обмена
 
 **Получите разрешение на использование данных из буфера обмена**
 
@@ -425,7 +433,7 @@ private async void PasteText(bool isNewEmptyDocument)
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
 
-### Чтение данных из контракта отправки данных
+### <a name="read-data-from-a-share-contract"></a>Чтение данных из контракта отправки данных
 
 Когда сотрудники выбирают ваше приложение для обеспечения общего доступа к их данным, ваше приложение откроет новый элемент, в котором будет находиться данное содержимое.
 
@@ -479,11 +487,11 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 [ProtectionPolicyEvaluationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyevaluationresult.aspx)<br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
-## Защита корпоративных данных
+## <a name="protect-enterprise-data"></a>Защита корпоративных данных
 
 Защищайте корпоративные данные, покидающие ваше приложение. Данные, покидающие ваше приложение при их отображении на странице, сохранении в файл или конечную точку сети или с помощью контракта отправки данных.
 
-### <a id="display-data"></a>Защита данных, отображаемых на страницах
+### <a name="a-iddisplay-dataaprotect-data-that-appears-in-pages"></a><a id="display-data"></a>Защита данных, отображаемых на страницах
 
 При отображении данных на странице сообщите Windows, к какому типу относятся эти данные (персональные или корпоративные). Для этого *присвойте метку* текущему представлению приложения или всему процессу приложения.
 
@@ -529,7 +537,7 @@ bool result =
 > **Интерфейсы API** <br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
-### Защита данных в файле
+### <a name="protect-data-to-a-file"></a>Защита данных в файле
 
 Создайте защищенный файла и выполните запись в него.
 
@@ -600,7 +608,7 @@ FileProtectionInfo fileProtectionInfo =
 
 
 
-### Защита данных в файле в виде фонового процесса
+### <a name="protect-data-to-a-file-as-a-background-process"></a>Защита данных в файле в виде фонового процесса
 
 Этот код может выполняться, когда экран устройства заблокирован. Если администратор настроил безопасную политику "Защита данных в режиме блокировки" (DPL), Windows удаляет ключи шифрования, необходимые для получения доступа к защищенным ресурсам из памяти устройства. Это предотвращает утечки данных при потере устройства. Эта же функция также удаляет ключи, связанные с защищенными файлами, при закрытии их дескрипторов.
 
@@ -664,7 +672,7 @@ else if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 [ProtectedFileCreateResult.Stream](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedfilecreateresult.stream.aspx)<br>
 
-### Защита части файла
+### <a name="protect-part-of-a-file"></a>Защита части файла
 
 В большинстве случаев безопаснее хранить корпоративные и персональные данные раздельно, но при необходимости можно сохранить их в один файл. Например, Microsoft Outlook может хранить корпоративные почтовые сообщения вместе с персональными в одном архивном файле.
 
@@ -740,7 +748,7 @@ await Windows.Storage.FileIO.WriteTextAsync
     "'></EnterpriseDataMarker>");
 ```
 
-### Чтение защищенной части файла
+### <a name="read-the-protected-part-of-a-file"></a>Чтение защищенной части файла
 
 Вот как следует выполнять чтение корпоративных данных из этого файла.
 
@@ -820,7 +828,7 @@ else if (dataProtectionInfo.Status == DataProtectionStatus.Revoked)
 [DataProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.getstreamprotectioninfoasync.aspx)<br>
 
 
-### Защита данных в папке
+### <a name="protect-data-to-a-folder"></a>Защита данных в папке
 
 Вы можете создать папку и защитить ее. Таким образом все элементы, которые вы добавите в эту папку, будут автоматически защищены.
 
@@ -855,7 +863,7 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
 [FileProtectionInfo.Status](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.status.aspx)
 
 
-### Защита данных в конечной точке сети
+### <a name="protect-data-to-a-network-end-point"></a>Защита данных в конечной точке сети
 
 Создайте защищенный контекст потока для отправки данных в корпоративную конечную точку.  
 
@@ -907,7 +915,7 @@ else
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)<br>
 [ProtectionPolicyManager.CreateCurrentThreadNetworkContext](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)
 
-### Защита данных, которыми ваше приложение делится с помощью контракта на отправку данных
+### <a name="protect-data-that-your-app-shares-through-a-share-contract"></a>Защита данных, которыми ваше приложение делится с помощью контракта на отправку данных
 
 Если необходимо, чтобы пользователи могли совместно использовать содержимое из вашего приложения, вам потребуется реализовать контракт на отправку данных и обработать событие [**DataTransferManager.DataRequested**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested).
 
@@ -939,7 +947,7 @@ private void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs 
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
 
-### Защита файлов, копируемых в другое расположение
+### <a name="protect-files-that-you-copy-to-another-location"></a>Защита файлов, копируемых в другое расположение
 
 ```csharp
 private async void CopyProtectionFromOneFileToAnother
@@ -961,7 +969,7 @@ private async void CopyProtectionFromOneFileToAnother
 [FileProtectionManager.CopyProtectionAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.copyprotectionasync.aspx)<br>
 
 
-### Защита корпоративных данных при блокировке экрана устройства
+### <a name="protect-enterprise-data-when-the-screen-of-the-device-is-locked"></a>Защита корпоративных данных при блокировке экрана устройства
 
 Удалите все конфиденциальные данные из памяти, когда устройство блокируется. Когда пользователь разблокирует устройство, ваше приложение может без проблем снова добавить эти данные.
 
@@ -969,7 +977,7 @@ private async void CopyProtectionFromOneFileToAnother
 
 Обработайте событие [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx), чтобы ваше приложение понимало, когда экран разблокируется. Это событие инициируется независимо от того, настроил ли администратор надежную защиту данных в политике блокировки.
 
-#### Удаление конфиденциальных данных из памяти при блокировке экрана
+#### <a name="remove-sensitive-data-in-memory-when-the-screen-is-locked"></a>Удаление конфиденциальных данных из памяти при блокировке экрана
 
 Обеспечьте защиту конфиденциальных данных и закройте все файловые потоки, которые ваше приложение открывало на защищенных файлах, чтобы помочь предотвратить кэширование конфиденциальных данных системой в памяти.
 
@@ -1015,7 +1023,7 @@ private async void ProtectionPolicyManager_ProtectedAccessSuspending(object send
 [ProtectedAccessSuspendingEventArgs.GetDeferral](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedaccesssuspendingeventargs.getdeferral.aspx)<br>
 [Deferral.Complete](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx)<br>
 
-#### Добавление конфиденциальных данных после разблокировки устройства
+#### <a name="add-back-sensitive-data-when-the-device-is-unlocked"></a>Добавление конфиденциальных данных после разблокировки устройства
 
 [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx) инициируется, когда устройство разблокируется, и ключи снова становятся доступны на нем.
 
@@ -1050,7 +1058,7 @@ private async void ProtectionPolicyManager_ProtectedAccessResumed(object sender,
 [DataProtectionManager.UnprotectAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.unprotectasync.aspx)<br>
 [BufferProtectUnprotectResult.Status](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.bufferprotectunprotectresult.aspx)<br>
 
-## Обработка корпоративных данных, когда право доступа к защищенному содержимому отзывается
+## <a name="handle-enterprise-data-when-protected-content-is-revoked"></a>Обработка корпоративных данных, когда право доступа к защищенному содержимому отзывается
 
 Если вы хотите, чтобы ваше приложение получало уведомление о том, что для устройства отменена регистрация в MDM, или что администратор явно отозвал права доступа к корпоративным данным, обработайте событие [**ProtectionPolicyManager_ProtectedContentRevoked**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked.aspx).
 
@@ -1081,15 +1089,10 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 > **Интерфейсы API** <br>
 [ProtectionPolicyManager_ProtectedContentRevoked](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked.aspx)<br>
 
-## Статьи по теме
+## <a name="related-topics"></a>Статьи по теме
 
 [Пример Windows Information Protection (WIP)](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 
