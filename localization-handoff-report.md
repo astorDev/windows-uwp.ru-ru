@@ -1,19 +1,20 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [hub\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/24a1269621ecb502c15132277bc21e6e9b3181a2?path=hub%2Findex.md&_a=contents) | HandedOffSuccess | [Details](#491d5a849d2073cebd142d7e1d3470cf6a2e34647)
+ [windows-apps-src\porting\desktop-to-uwp-prepare.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0760d9decd10476defcef4ffa276245151a97cb7?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-prepare.md&_a=contents) | HandedOffSuccess | [Details](#c735555afce1cb9045b7ab0e0cfaa436aeff4d974663)
+ [windows-apps-src\security\web-account-manager.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/4ee5c3d841b7e87e3e55c3cd5f18951422a37eb6?path=windows-apps-src%2Fsecurity%2Fweb-account-manager.md&_a=contents) | HandedOffSuccess | [Details](#e5e4f615ae66b3e551456258270f316df8f3c0d14989)
 
 ## Item Details
-##### <a name='491d5a849d2073cebd142d7e1d3470cf6a2e34647'></a> Source: [hub\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/24a1269621ecb502c15132277bc21e6e9b3181a2?path=hub%2Findex.md&_a=contents)
+##### <a name='c735555afce1cb9045b7ab0e0cfaa436aeff4d974663'></a> Source: [windows-apps-src\porting\desktop-to-uwp-prepare.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0760d9decd10476defcef4ffa276245151a97cb7?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-prepare.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [index.4766fa26638f9b0551308e465fe8b8cfeda3c32c.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/97729a5185e929f318bb26d09b8b390aef62ca92?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Findex.4766fa26638f9b0551308e465fe8b8cfeda3c32c.ru-ru.xlf&_a=contents)
-* Handoff Datetime: 2017-03-01 23:56:43
+* Handoff File: [desktop-to-uwp-prepare.a31bd12222af5bf05286bba552b84847905a06ca.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/d3eeea6f5f5286f24173f07bd330046dfed175b6?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fdesktop-to-uwp-prepare.a31bd12222af5bf05286bba552b84847905a06ca.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2017-03-02 20:18:55
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +22,29 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [hub\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/528a3a1a1ac9765ce42a4f8f5273f0c3638e3dbd?path=hub%2Findex.md&_a=contents)
-* Current Handback File: [index.4766fa26638f9b0551308e465fe8b8cfeda3c32c.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e16d81768f018a427011933a35960acea37232b6?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Findex.4766fa26638f9b0551308e465fe8b8cfeda3c32c.ru-ru.xlf&_a=contents)
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-prepare.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/528a3a1a1ac9765ce42a4f8f5273f0c3638e3dbd?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-prepare.md&_a=contents)
+* Current Handback File: [desktop-to-uwp-prepare.a31bd12222af5bf05286bba552b84847905a06ca.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e16d81768f018a427011933a35960acea37232b6?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fdesktop-to-uwp-prepare.a31bd12222af5bf05286bba552b84847905a06ca.ru-ru.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 16:12:15
-* Bilingual File: [index.4766fa26638f9b0551308e465fe8b8cfeda3c32c.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e16d81768f018a427011933a35960acea37232b6?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Findex.4766fa26638f9b0551308e465fe8b8cfeda3c32c.ru-ru.xlf&_a=contents)
+* Bilingual File: [desktop-to-uwp-prepare.a31bd12222af5bf05286bba552b84847905a06ca.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e16d81768f018a427011933a35960acea37232b6?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fdesktop-to-uwp-prepare.a31bd12222af5bf05286bba552b84847905a06ca.ru-ru.xlf&_a=contents)
+* Bilingual Datetime: 2017-03-01 16:25:26
+* [Back to Top](#report-top)
+
+##### <a name='e5e4f615ae66b3e551456258270f316df8f3c0d14989'></a> Source: [windows-apps-src\security\web-account-manager.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/4ee5c3d841b7e87e3e55c3cd5f18951422a37eb6?path=windows-apps-src%2Fsecurity%2Fweb-account-manager.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/d3eeea6f5f5286f24173f07bd330046dfed175b6?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fweb-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.ru-ru.xlf&_a=contents)
+* Handoff Datetime: 2017-03-02 20:18:55
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
+* Current Target File: [windows-apps-src\security\web-account-manager.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/528a3a1a1ac9765ce42a4f8f5273f0c3638e3dbd?path=windows-apps-src%2Fsecurity%2Fweb-account-manager.md&_a=contents)
+* Current Handback File: [web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e16d81768f018a427011933a35960acea37232b6?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fweb-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.ru-ru.xlf&_a=contents)
+* Current Handback Datetime: 2017-03-01 16:12:15
+* Bilingual File: [web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e16d81768f018a427011933a35960acea37232b6?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fweb-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.ru-ru.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 16:25:26
 * [Back to Top](#report-top)
 
