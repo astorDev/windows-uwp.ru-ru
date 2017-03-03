@@ -13177,8 +13177,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ru-ru\\master\\91b488dce85ed173584fdb9873884f9f36689858.e990df13df22ce60e515ce59dfa366dae25b0c51.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ru-ru\\master\\windowed-vs--full-screen-mode.5337db9cf214b541c48d2d8e7f442946dc3494da.ru-ru.xlf",
+      "LocXliffCommit": "3508cb19a761c2fefdbe1c3a68c0cac1a6a56c0d"
     },
     "windows-apps-src\\graphics-concepts\\resource-types.md.45dc6df5142c0a021a58ce974387a9e4c0d40b2c.HT": {
       "SourceFilename": "windows-apps-src\\graphics-concepts\\resource-types.md",
