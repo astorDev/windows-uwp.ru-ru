@@ -1,30 +1,11 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\graphics-concepts\windowed-vs--full-screen-mode.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/586492ffce0f7efc0d1c6c9d384ab54542ff598a?path=windows-apps-src%2Fgraphics-concepts%2Fwindowed-vs--full-screen-mode.md&_a=contents) | InSyncHandedBackSuccess | [Details](#91b488dce85ed173584fdb9873884f9f366898583385)
 
 ## Item Details
-##### <a name='91b488dce85ed173584fdb9873884f9f366898583385'></a> Source: [windows-apps-src\graphics-concepts\windowed-vs--full-screen-mode.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/586492ffce0f7efc0d1c6c9d384ab54542ff598a?path=windows-apps-src%2Fgraphics-concepts%2Fwindowed-vs--full-screen-mode.md&_a=contents)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\graphics-concepts\windowed-vs--full-screen-mode.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ru-ru/commit/8b0a20b568e87e0db39333c3b46bee3196e23090?path=windows-apps-src%2Fgraphics-concepts%2Fwindowed-vs--full-screen-mode.md&_a=contents)
-* Handoff File: [windowed-vs--full-screen-mode.5337db9cf214b541c48d2d8e7f442946dc3494da.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/4a35b85494cf81c29da02593b4107e9d921bcb2e?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fwindowed-vs--full-screen-mode.5337db9cf214b541c48d2d8e7f442946dc3494da.ru-ru.xlf&_a=contents)
-* Handoff Datetime: 2017-02-13 23:51:22
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [windowed-vs--full-screen-mode.5337db9cf214b541c48d2d8e7f442946dc3494da.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3508cb19a761c2fefdbe1c3a68c0cac1a6a56c0d?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fwindowed-vs--full-screen-mode.5337db9cf214b541c48d2d8e7f442946dc3494da.ru-ru.xlf&_a=contents)
-* Handback Datetime: 2017-03-03 17:50:29
-* Handback Name: 
-* Bilingual File: [windowed-vs--full-screen-mode.5337db9cf214b541c48d2d8e7f442946dc3494da.ru-ru.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3508cb19a761c2fefdbe1c3a68c0cac1a6a56c0d?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ru-ru%2Fmaster%2Fwindowed-vs--full-screen-mode.5337db9cf214b541c48d2d8e7f442946dc3494da.ru-ru.xlf&_a=contents)
-* Bilingual Datetime: 2017-03-03 17:53:59
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
