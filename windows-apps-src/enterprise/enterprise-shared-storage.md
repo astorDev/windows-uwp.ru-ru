@@ -3,12 +3,19 @@ author: mcleblanc
 ms.assetid: B48E21AB-0EA5-444B-8333-393DD8D1B76D
 title: "Общее корпоративное хранилище"
 description: "Общее корпоративное хранилище определяет местоположение локальных данных для бизнес-приложений в целях совместного их использования."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: bd4663b25c351551cd2f4e1e780a76431d1c3a19
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6a6ad55a134a45bf3feb7092cdad78d9f6ee196b
+ms.lasthandoff: 02/07/2017
 
 ---
-# Общее корпоративное хранилище
+# <a name="enterprise-shared-storage"></a>Общее корпоративное хранилище
 
 Общее хранилище состоит из двух местоположений, в которых приложения с ограниченной возможностью **enterpriseDeviceLockdown** и корпоративный сертификат имеют полный доступ на чтение и запись. Обратите внимание, что возможность **enterpriseDeviceLockdown** позволяет приложениям использовать API блокировки устройства и предоставляет им доступ к корпоративным папкам общего хранилища. Дополнительные сведения об интерфейсе API можно получить, ознакомившись с информацией о пространстве имен [**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331).  
 
@@ -16,7 +23,7 @@ ms.openlocfilehash: bd4663b25c351551cd2f4e1e780a76431d1c3a19
 - \Data\SharedData\Enterprise\Persistent
 - \Data\SharedData\Enterprise\Non-Persistent
 
-## Сценарии
+## <a name="scenarios"></a>Сценарии
 
 Общее корпоративное хранилище поддерживает следующие сценарии.
 
@@ -24,7 +31,7 @@ ms.openlocfilehash: bd4663b25c351551cd2f4e1e780a76431d1c3a19
 - Вы можете сохранить данные на локальном жестком диске в папке \Data\SharedData\Enterprise\Persistent, которые сохранятся даже после перезагрузки устройства.
 - Управление файлами, включая чтение, запись и удаление файлов на устройстве через службу управления мобильными устройствами (MDM). Дополнительные сведения о том, как использовать общее корпоративное хранилище через службу MDM см. в разделе [EnterpriseExtFileSystem CSP](http://go.microsoft.com/fwlink/?LinkId=699333).
 
-## Доступ к общему корпоративному хранилищу
+## <a name="access-enterprise-shared-storage"></a>Доступ к общему корпоративному хранилищу
 
 В следующем примере показано, как объявить возможность доступа к общему корпоративному хранилищу в манифесте пакета, а также как получить доступ к папкам общего хранилища с помощью класса Windows.Storage.StorageFolder.
 
@@ -70,10 +77,5 @@ IReadOnlyList<StorageFile> sortedItems =
 foreach (StorageFile file in sortedItems)
     Debug.WriteLine(file.Name + ", " + file.DateCreated);
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

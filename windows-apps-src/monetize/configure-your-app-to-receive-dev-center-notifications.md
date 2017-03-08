@@ -2,9 +2,17 @@
 author: mcleanbyron
 Description: "Узнайте, как зарегистрировать приложение UWP для получения push-уведомлений, отправляемых из Центра разработки для Windows."
 title: "Настройка приложения для получения push-уведомлений Центра разработки"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Microsoft Store Services SDK, целевые push-уведомления, Центр разработки"
+ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: d840fbe66e5ccb439148c7849e44b923a5586740
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: a7a4c9800d5053e4b20cea578ff03a970179c7bf
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -44,7 +52,7 @@ ms.openlocfilehash: d840fbe66e5ccb439148c7849e44b923a5586740
     <span/>
     >**Важно.**&nbsp;&nbsp;Если ваше приложение также вызывает [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) для создания канала уведомлений для WNS, убедитесь, что ваш код не вызывает [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) и перегрузку [RegisterNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) одновременно. Если необходимо вызвать оба этих метода, проследите за тем, чтобы они вызывались последовательно и дожидались возврата из одного метода перед вызовом второго.
 
-  * Если вы хотите указать URI канала, чтобы использовать целевые push-уведомления из Центра разработки, вызовите перегрузку [RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://msdn.microsoft.com/library/windows/apps/mt771191.aspx). Например, это может потребоваться, если ваше приложение уже использует службы push-уведомлений Windows (WNS) и вы хотите использовать один и тот же URI канала. Сначала необходимо создать объект [StoreServicesNotificationChannelParameters](https://msdns.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.aspx) и назначить свойство [CustomNotificationChannelUri](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri.aspx) вашему универсальному коду ресурса (URI) канала.
+  * Если вы хотите указать URI канала, чтобы использовать целевые push-уведомления из Центра разработки, вызовите перегрузку [RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://msdn.microsoft.com/library/windows/apps/mt771191.aspx). Например, это может потребоваться, если ваше приложение уже использует службы push-уведомлений Windows (WNS) и вы хотите использовать один и тот же URI канала. Сначала необходимо создать объект [StoreServicesNotificationChannelParameters](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.aspx) и назначить свойство [CustomNotificationChannelUri](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri.aspx) вашему универсальному коду ресурса (URI) канала.
 
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
@@ -90,11 +98,6 @@ ms.openlocfilehash: d840fbe66e5ccb439148c7849e44b923a5586740
 
 * [Отправка push-уведомлений пользователям вашего приложения](../publish/send-push-notifications-to-your-apps-customers.md)
 * [Обзор служб push-уведомлений Windows (WNS)](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
-* [Запрос, создание и сохранение канала уведомлений](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868221)
+* [Запрос, создание и сохранение канала уведомлений](https://msdn.microsoft.com/library/windows/apps/xaml/hh868221)
 * [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,23 +3,30 @@ author: DBirtolo
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
 title: "Epson ESC/POS с форматированием"
 description: "Узнайте, как использовать командный язык ESC/POS для форматирования текста (например, изменения начертания на полужирное или увеличения размера символов в два раза) для принтера точки обслуживания."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: b645e41d7456f1dff664e3f61721a3564d554202
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 70b737625f5301d3147f4570b4e6f7216c2212c7
+ms.lasthandoff: 02/07/2017
 
 ---
-# Epson ESC/POS с форматированием
+# <a name="epson-escpos-with-formatting"></a>Epson ESC/POS с форматированием
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Важные API **
+**Важные API**
 
--   [Принтер PointofService](https://msdn.microsoft.com/library/windows/apps/Mt426652)
+-   [**Принтер PointofService**](https://msdn.microsoft.com/library/windows/apps/Mt426652)
 -   [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
 
 Узнайте, как использовать командный язык ESC/POS для форматирования текста (например, изменения начертания на полужирное или увеличения размера символов в два раза) для принтера точки обслуживания.
 
-## Использование ESC/POS
+## <a name="escpos-usage"></a>Использование ESC/POS
 
 Точка обслуживания Windows обеспечивает использование различных принтеров, включая несколько принтеров серии TM марки Epson (полный список поддерживаемых принтеров см. на странице [Принтер PointofService](https://msdn.microsoft.com/library/windows/apps/Mt426652)). Windows поддерживает печать с помощью командного языка принтера ESC/POS, который предоставляет эффективные и функциональные команды для взаимодействия с вашим принтером.
 
@@ -29,14 +36,14 @@ ESC/POS — это система управления, созданная Epson
 
 В [**Windows PointOfService API**](https://msdn.microsoft.com/library/windows/apps/Dn298071) большинство этих функций используется с помощью метода **Print()** или **PrintLine()**. Но для получения определенного форматирования или отправки определенных команд необходимо воспользоваться командами ESC/POS, созданными в виде строки и отправленными на принтер.
 
-## Пример использования полужирных символов и символов двойного размера
+## <a name="example-using-bold-and-double-size-characters"></a>Пример использования полужирных символов и символов двойного размера
 
 В примере ниже показано использование команд ESC/POS для печати полужирных символов и символов двойного размера. Обратите внимание, что каждая команда создается в виде строки, а затем вставляется в вызовы заданий печати.
 
 ```csharp
 // … prior plumbing code removed for brevity
 // this code assumed you've already created a receipt print job (printJob)
-// and also that you've already checked the PosPrinter Capabilities to 
+// and also that you've already checked the PosPrinter Capabilities to
 // verify that the printer supports Bold and DoubleHighDoubleWide print modes
 
 const string ESC = "\u001B";
@@ -56,11 +63,4 @@ printJob.ExecuteAsync();
 ```
 
 Подробнее об ESC/POS, в том числе о доступных командах, см. в разделе [Epson ESC/POS — вопросы и ответы](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). Подробнее о [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) и всех доступных функциях см. в статье [Принтер PointofService](https://msdn.microsoft.com/library/windows/apps/Mt426652) на сайте MSDN.
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

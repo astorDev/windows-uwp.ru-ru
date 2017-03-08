@@ -3,16 +3,23 @@ author: mtoepke
 title: "Полный код класса BasicReaderWriter"
 description: "Полный код класса и методов для чтения и записи двоичных файлов данных без ограничений."
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, basicreaderwriter"
 translationtype: Human Translation
-ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: de6ab2687cfbe7b485e51bc90811b1988e29fb7e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1dc7ba0b25ceeb5b27bc718bed1db0e2db39b6c0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Полный код класса BasicReaderWriter
+# <a name="complete-code-for-basicreaderwriter"></a>Полный код класса BasicReaderWriter
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Полный код класса и методов для чтения и записи двоичных файлов данных без ограничений. Используется классом [BasicLoader](complete-code-for-basicloader.md).
 
@@ -20,29 +27,29 @@ ms.openlocfilehash: de6ab2687cfbe7b485e51bc90811b1988e29fb7e
 
 -   [Технологии](#technologies)
 -   [Требования](#requirements)
--   [Просмотреть код (C++)](#view-the-code-c-)
+-   [Просмотреть код (C++)](#view-the-code-c)
 
 
-## Папка для загрузки
+## <a name="download-location"></a>Папка для загрузки
 
 Этот пример недоступен для загрузки.
 
 
-## Технологии
+## <a name="technologies"></a>Технологии
 
 **Языки программирования** — C++  
 **Модели программирования** — среда выполнения Windows
 
 
-## Требования
+## <a name="requirements"></a>Требования
 
  **Минимальная версия клиента** — Windows 10       
  **Минимальная версия сервера** — Windows Server 2016 Technical Preview 
 
-## Просмотреть код (C++)
+## <a name="view-the-code-c"></a>Просмотреть код (C++)
 
 
-## BasicReaderWriter.h
+## <a name="basicreaderwriterh"></a>BasicReaderWriter.h
 
 
 ```cpp
@@ -91,7 +98,7 @@ internal:
 };
 ```
 
-## BasicReaderWriter.cpp
+## <a name="basicreaderwritercpp"></a>BasicReaderWriter.cpp
 
 
 ```cpp
@@ -262,10 +269,5 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -5,21 +5,29 @@ MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Пользовательские видеоэффекты"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 translationtype: Human Translation
-ms.sourcegitcommit: 26ed53934ab9237731deda544b8830a26e5ad914
-ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 60ab406a5908b1a21c7a0f579664b7632722dd4e
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Пользовательские видеоэффекты
+# <a name="custom-video-effects"></a>Пользовательские видеоэффекты
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье описано, как создать компонент среды выполнения Windows, реализующий интерфейс [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) для создания пользовательских эффектов для видеопотоков. Пользовательские эффекты можно использовать с несколькими различными API среды выполнения Windows, включая [[MediaCapture]](https://msdn.microsoft.com/library/windows/apps/br241124), который предоставляет доступ к камере устройства, и [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), который позволяет создавать сложные композиции из мультимедийных клипов.
 
-## Добавление пользовательского эффекта в приложение
+## <a name="add-a-custom-effect-to-your-app"></a>Добавление пользовательского эффекта в приложение
 
 
 Пользовательский видеоэффект определяется в классе, реализующем интерфейс [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788). Этот класс невозможно включить непосредственно в проект приложения. Вместо этого необходимо использовать компонент среды выполнения Windows для размещения вашего класса видеоэффекта.
@@ -42,19 +50,19 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[EffectUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetEffectUsing)]
 
 
-## Реализация интерфейса IBasicVideoEffect путем программной обработки
+## <a name="implement-the-ibasicvideoeffect-interface-using-software-processing"></a>Реализация интерфейса IBasicVideoEffect путем программной обработки
 
 
 Ваш видеоэффект должен реализовывать все методы и свойства интерфейса [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788). Этот раздел содержит простую пошаговую реализацию этого интерфейса, для которой используется программная обработка.
 
-### Метод Close
+### <a name="close-method"></a>Метод Close
 
 Система вызывает метод [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) для вашего класса, когда соответствующий эффект должен будет завершить работу. Этот метод следует использовать для утилизации всех созданных вами ресурсов. Аргументом этого метода является [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason), и он позволяет узнать, был ли эффект закрыт в нормальном режиме либо произошла ошибка, либо эффект не поддерживает необходимый формат кодирования.
 
 [!code-cs[Close](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetClose)]
 
 
-### Метод DiscardQueuedFrames
+### <a name="discardqueuedframes-method"></a>Метод DiscardQueuedFrames
 
 Метод [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) вызывается, когда ваш эффект необходимо сбросить. Типовой сценарий такой ситуации — ваш эффект хранит ранее обработанные кадры для использования в обработке текущего кадра. При вызове этого метода необходимо утилизировать набор предыдущих сохраненных вами кадров. Этот метод можно использовать для сброса любого состояния, связанного с предыдущими кадрами, а не только с накопленными видеокадрами.
 
@@ -63,7 +71,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
 
 
-### Свойство IsReadOnly
+### <a name="isreadonly-property"></a>Свойство IsReadOnly
 
 Свойство [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) позволяет системе узнать, будет ли ваш эффект записывать данные в выходной поток эффекта. Если ваше приложение не изменяет видеокадры, например применяется эффект, который только анализирует видеокадры, этому свойству следует задать значение true, и это позволит системе эффективно копировать поток ввода кадров в поток вывода кадров за вас.
 
@@ -73,14 +81,14 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)] 
 
 
-### Метод SetEncodingProperties
+### <a name="setencodingproperties-method"></a>Метод SetEncodingProperties
 
 Система вызывает [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) на эффекте, чтобы предоставить вам информацию о свойствах кодирования для видеопотока, на котором работает эффект. Этот метод также предоставляет ссылку на устройство Direct3D, используемое для аппаратной отрисовки. Использование такого устройства показано в примере аппаратной обработки ниже в этой статье.
 
 [!code-cs[SetEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetEncodingProperties)]
 
 
-### Свойство SupportedEncodingProperties
+### <a name="supportedencodingproperties-property"></a>Свойство SupportedEncodingProperties
 
 Система проверяет свойство [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799), чтобы определить, какие свойства кодирования поддерживаются вашим эффектом. Обратите внимание, что если потребитель вашего эффекта не может кодировать видео с использованием указанных вами свойств, он вызовет метод [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) на вашем эффекте и удалит этот эффект из видеоконвейера.
 
@@ -93,7 +101,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
  
 
-### Свойство SupportedMemoryTypes
+### <a name="supportedmemorytypes-property"></a>Свойство SupportedMemoryTypes
 
 Система проверяет свойство [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801), чтобы определить, будет ли ваш эффект получать доступ к видеокадрам в программной памяти или в аппаратной памяти (GPU). Если вы вернете [**MediaMemoryTypes.Cpu**](https://msdn.microsoft.com/library/windows/apps/dn764822), вашему эффекту будут передаваться кадры ввода и вывода, содержащие данные изображений в объектах [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358). Если вы вернете **MediaMemoryTypes.Gpu**, вашему эффекту будут передаваться кадры ввода и вывода, содержащие данные изображений в объектах [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505).
 
@@ -105,13 +113,13 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
  
 
-### Свойство TimeIndependent
+### <a name="timeindependent-property"></a>Свойство TimeIndependent
 
 Свойство [**TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) позволяет системе узнать, не требуется ли вашему эффекту однородная синхронизация. Если установлено значение true, система может использовать оптимизации, которые улучшают работу эффекта.
 
 [!code-cs[TimeIndependent](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetTimeIndependent)]
 
-### Метод SetProperties
+### <a name="setproperties-method"></a>Метод SetProperties
 
 Метод [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) позволяет использующему ваш эффект приложению настраивать параметры эффекта. Свойства передаются в виде сопоставления имен свойств и значений [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054).
 
@@ -124,7 +132,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[FadeValue](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetFadeValue)]
 
 
-### Метод ProcessFrame
+### <a name="processframe-method"></a>Метод ProcessFrame
 
 Именно в методе [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) ваш эффект изменяет данные изображения видеопотока. Метод вызывается один раз на кадр, и ему передается объект [**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826). Этот объект содержит входной объект [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917), содержащий входящий кадр, который требуется обработать, и выходной объект **VideoFrame**, в который вы записываете данные изображения, которые затем будут переданы остальным компонентам видеоконвейера. Каждый из этих объектов **VideoFrame** объектов имеет свойство [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) и свойство [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920), но то, какое из этих двух свойств можно использовать, определяется значением, возвращаемым из свойства [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801).
 
@@ -155,19 +163,19 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[ProcessFrameSoftwareBitmap](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetProcessFrameSoftwareBitmap)]
 
 
-## Реализация интерфейса IBasicVideoEffect путем аппаратной обработки
+## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>Реализация интерфейса IBasicVideoEffect путем аппаратной обработки
 
 
 Создание пользовательского видеоэффекта с помощью аппаратной (GPU) обработки выполняется практически так же, как с использованием программной обработки, описанной выше. В этом разделе показаны несколько отличий в эффекте, использующем аппаратную обработку. В этом примере используется API среды выполнения Windows Win2D. Подробную информацию об использовании Win2D см. в [документации по Win2D](http://go.microsoft.com/fwlink/?LinkId=519078).
 
-Выполните следующие действия, чтобы добавить пакет Win2D NuGet в проект, созданный согласно описанию в разделе [Добавление пользовательского эффекта в приложение](#addacustomeffect) в начале этой статьи.
+Выполните следующие действия, чтобы добавить пакет Win2D NuGet в проект, созданный согласно описанию в разделе **Добавление пользовательского эффекта в приложение** в начале этой статьи.
 
 **Добавление пакета Win2D NuGet в проект эффекта**
 
 1.  В **обозревателе решений** щелкните правой кнопкой мыши по проекту **VideoEffectComponent** и выберите **Управление пакетами NuGet**.
 2.  В верхней части окна выберите вкладку **Обзор**.
 3.  В поле поиска введите **Win2D**.
-4.  Выберите **Win2D.uwp**, а затем— **Установить** в области справа.
+4.  Выберите **Win2D.uwp**, а затем — **Установить** в области справа.
 5.  В диалоговом окне **Просмотр изменений** отобразится назначенный для установки пакет. Нажмите кнопку **ОК**.
 6.  Примите условия лицензии пакета.
 
@@ -205,7 +213,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[ProcessFrameWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetProcessFrameWin2D)]
 
 
-## Добавление пользовательского эффекта в приложение
+## <a name="adding-your-custom-effect-to-your-app"></a>Добавление пользовательского эффекта в приложение
 
 
 Для использования вашего видеоэффекта из приложения необходимо добавить ссылку на проект эффекта в приложение.
@@ -214,7 +222,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 2.  Разверните вкладку **Проекты**, выберите **Решение** и установите флажок для имени вашего проекта эффекта. В этом примере используется имя *VideoEffectComponent*.
 3.  Нажмите кнопку **ОК**.
 
-### Добавьте ваш пользовательский эффект к потоку видеокамеры
+### <a name="add-your-custom-effect-to-a-camera-video-stream"></a>Добавьте ваш пользовательский эффект к потоку видеокамеры
 
 Выполнив инструкции из статьи [Удобный доступ к предварительному просмотру на камере](simple-camera-preview-access.md), можно настроить простой поток предварительного просмотра с камеры. Выполнение этих шагов позволит создать инициализированный объект [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124), который используется для доступа к видеопотоку камеры.
 
@@ -226,7 +234,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
 
 
-### Добавление настраиваемого эффекта в клип с помощью MediaComposition
+### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>Добавление настраиваемого эффекта в клип с помощью MediaComposition
 
 Общие инструкции по созданию мультимедийных композиций из видеоклипов см. в разделе [Мультимедийные композиции и редактирование](media-compositions-and-editing.md). В следующем фрагменте кода показано создание простой мультимедийной композиции с использованием настраиваемого видеоэффекта. Объект [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) создается вызовом метода [**CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607), который передает видеофайл, созданный пользователем с помощью средства [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), а клип добавляется в новый объект [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646). Затем создается новый объект [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055), который передает пространство имен и имя класса вашего эффекта конструктору. Наконец. определение эффекта добавляется в коллекцию [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) объекта **MediaClip**.
 
@@ -234,7 +242,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
 
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 * [Простой доступ к просмотру камеры](simple-camera-preview-access.md)
 * [Создание и редактирование композиций мультимедиа](media-compositions-and-editing.md)
 * [Документация по Win2D](http://go.microsoft.com/fwlink/p/?LinkId=519078)
@@ -243,10 +251,5 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
  
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

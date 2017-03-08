@@ -1,10 +1,18 @@
 ---
 author: PatrickFarley
-title: "Обмен данными с удаленной службой приложений"
-description: Exchange messages with an app service running on a remote device using Project "Rome".
+title: "Обмен данными с удаленной службой приложения"
+description: "Обмен сообщениями со службой приложения на удаленном устройстве с помощью проекта «Рим»."
+ms.assetid: a0261e7a-5706-4f9a-b79c-46a3c81b136f
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 1e0b9d2b13cbfeff2ca7cb81a82a1fb2f5a1dd9b
-ms.openlocfilehash: c6a094c1939c3f34926f998a8206b0e2d7ea6aa0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0cac219625fbc7b6526c81cf11f010589d2bf000
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -86,9 +94,4 @@ ms.openlocfilehash: c6a094c1939c3f34926f998a8206b0e2d7ea6aa0
 [Создание и использование службы приложений](how-to-create-and-consume-an-app-service.md)  
 [Справочник по API удаленных систем](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [Пример удаленных систем](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

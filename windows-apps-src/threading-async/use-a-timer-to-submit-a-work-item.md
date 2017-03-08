@@ -3,14 +3,21 @@ author: TylerMSFT
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: "Отправка рабочего элемента по таймеру"
 description: "Узнайте, как создать рабочий элемент, который выполняется после истечения времени таймера."
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, таймер, потоки"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 984571c0b059a989477d99c4f823ed839dd8bff4
+ms.lasthandoff: 02/07/2017
 
 ---
-# Отправка рабочего элемента по таймеру
+# <a name="use-a-timer-to-submit-a-work-item"></a>Отправка рабочего элемента по таймеру
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 
 Узнайте, как создать рабочий элемент, который выполняется после истечения времени таймера.
 
-## Создание однократного таймера
+## <a name="create-a-single-shot-timer"></a>Создание однократного таймера
 
 Чтобы создать таймер для рабочего элемента, используйте метод [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921). Определите лямбда-выражение, соответствующее заданию, и используйте параметр *delay*, чтобы указать, как долго пулу потоков нужно ждать, прежде чем назначить рабочий элемент доступному потоку. Задержка определена с использованием структуры [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996).
 
@@ -34,54 +41,54 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 > ThreadPoolTimer DelayTimer = ThreadPoolTimer.CreateTimer(
 >     (source) =>
 >     {
->         // 
+>         //
 >         // TODO: Work
->         // 
+>         //
 >         
->         // 
+>         //
 >         // Update the UI thread by using the UI core dispatcher.
->         // 
+>         //
 >         Dispatcher.RunAsync(
 >             CoreDispatcherPriority.High,
 >             () =>
 >             {
->                 // 
+>                 //
 >                 // UI components can be accessed within this scope.
->                 // 
-> 
+>                 //
+>
 >             });
-> 
+>
 >     }, delay);
 > ```
 > ``` cpp
 > TimeSpan delay;
 > delay.Duration = 3 * 60 * 10000000; // 10,000,000 ticks per second
-> 
+>
 > ThreadPoolTimer ^ DelayTimer = ThreadPoolTimer::CreateTimer(
 >         ref new TimerElapsedHandler([this](ThreadPoolTimer^ source)
 >         {
->             // 
+>             //
 >             // TODO: Work
->             // 
+>             //
 >             
->             // 
+>             //
 >             // Update the UI thread by using the UI core dispatcher.
->             // 
+>             //
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
 >                 ref new DispatchedHandler([this]()
 >                 {
->                     // 
+>                     //
 >                     // UI components can be accessed within this scope.
->                     // 
-> 
+>                     //
+>
 >                     ExampleUIUpdateMethod("Timer completed.");
-> 
+>
 >                 }));
-> 
+>
 >         }), delay);
 > ```
 
-## Предоставление обработчика завершения
+## <a name="provide-a-completion-handler"></a>Предоставление обработчика завершения
 
 Если требуется, обрабатывайте отмену и завершение рабочего элемента с помощью обработчика [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Чтобы указать дополнительное лямбда-выражение, используйте перегрузку [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921). Это выполняется, когда таймер отменяется или когда рабочий элемент завершается.
 
@@ -92,48 +99,48 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 > TimeSpan delay = TimeSpan.FromMinutes(3);
 >             
 > bool completed = false;
-> 
+>
 > ThreadPoolTimer DelayTimer = ThreadPoolTimer.CreateTimer(
 >     (source) =>
 >     {
->         // 
+>         //
 >         // TODO: Work
->         // 
-> 
->         // 
+>         //
+>
+>         //
 >         // Update the UI thread by using the UI core dispatcher.
->         // 
+>         //
 >         Dispatcher.RunAsync(
 >                 CoreDispatcherPriority.High,
 >                 () =>
 >                 {
->                     // 
+>                     //
 >                     // UI components can be accessed within this scope.
->                     // 
-> 
+>                     //
+>
 >                 });
-> 
+>
 >         completed = true;
 >     },
 >     delay,
 >     (source) =>
 >     {
->         // 
+>         //
 >         // TODO: Handle work cancellation/completion.
->         // 
-> 
-> 
->         // 
+>         //
+>
+>
+>         //
 >         // Update the UI thread by using the UI core dispatcher.
->         // 
+>         //
 >         Dispatcher.RunAsync(
 >             CoreDispatcherPriority.High,
 >             () =>
 >             {
->                 // 
+>                 //
 >                 // UI components can be accessed within this scope.
->                 // 
-> 
+>                 //
+>
 >                 if (completed)
 >                 {
 >                     // Timer completed.
@@ -142,52 +149,52 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 >                 {
 >                     // Timer cancelled.
 >                 }
-> 
+>
 >             });
 >     });
 > ```
 > ``` cpp
 > TimeSpan delay;
 > delay.Duration = 3 * 60 * 10000000; // 10,000,000 ticks per second
-> 
+>
 > completed = false;
-> 
+>
 > ThreadPoolTimer ^ DelayTimer = ThreadPoolTimer::CreateTimer(
 >         ref new TimerElapsedHandler([&](ThreadPoolTimer ^ source)
 >         {
->             // 
+>             //
 >             // TODO: Work
->             // 
-> 
->             // 
+>             //
+>
+>             //
 >             // Update the UI thread by using the UI core dispatcher.
->             // 
+>             //
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
 >                 ref new DispatchedHandler([&]()
 >                 {
->                     // 
+>                     //
 >                     // UI components can be accessed within this scope.
->                     // 
-> 
+>                     //
+>
 >                 }));
-> 
+>
 >             completed = true;
-> 
+>
 >         }),
 >         delay,
 >         ref new TimerDestroyedHandler([&](ThreadPoolTimer ^ source)
 >         {
->             // 
+>             //
 >             // TODO: Handle work cancellation/completion.
->             // 
-> 
+>             //
+>
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
 >                 ref new DispatchedHandler([&]()
 >                 {
->                     // 
+>                     //
 >                     // Update the UI thread by using the UI core dispatcher.
->                     // 
-> 
+>                     //
+>
 >                     if (completed)
 >                     {
 >                         // Timer completed.
@@ -196,12 +203,12 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 >                     {
 >                         // Timer cancelled.
 >                     }
-> 
+>
 >                 }));
 >         }));
 > ```
 
-## Отмена таймера
+## <a name="cancel-the-timer"></a>Отмена таймера
 
 Если таймер еще отсчитывает время, а рабочий элемент больше не нужен, вызовите [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588). Таймер отменяется, и рабочий элемент не отправляется в пул потоков.
 
@@ -213,15 +220,15 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 > DelayTimer->Cancel();
 > ```
 
-## Комментарии
+## <a name="remarks"></a>Комментарии
 
 Приложения универсальной платформы Windows (UWP) не могут использовать **Thread.Sleep**, поскольку это может привести к блокированию потока пользовательского интерфейса. Вместо этого для создания рабочего элемента вы можете использовать метод [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587); в результате задача, выполняемая рабочим элементом, будет отложена без блокировки потока пользовательского интерфейса.
 
-Полный образец кода, демонстрирующего рабочие элементы, рабочие элементы таймеров и периодические рабочие элементы, см. на странице [образца пула потоков](http://go.microsoft.com/fwlink/p/?linkid=255387). Пример кода изначально написан для Windows 8.1, но код можно использовать и в Windows10.
+Полный образец кода, демонстрирующего рабочие элементы, рабочие элементы таймеров и периодические рабочие элементы, см. на странице [образца пула потоков](http://go.microsoft.com/fwlink/p/?linkid=255387). Пример кода изначально написан для Windows 8.1, но код можно использовать и в Windows 10.
 
 Дополнительные сведения о повторяющихся таймерах см. в разделе [Создание периодического рабочего элемента](create-a-periodic-work-item.md).
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)
@@ -229,10 +236,4 @@ ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
  
 
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

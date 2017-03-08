@@ -1,15 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
-description: "Пакет Windows SDK, пакет Microsoft Store Services SDK и Магазин Windows предоставляют множество функций, позволяющих извлекать финансовую прибыль из своих приложений и получать клиентов в процессе взаимодействия с пользователями."
-title: "Монетизация, взаимодействие с пользователем и службы Магазина"
+description: "Пакет Windows SDK, пакет Microsoft Store Services SDK и Магазин Windows предоставляют множество функций, позволяющих извлекать финансовую прибыль из своих приложений и привлекать клиентов в процессе взаимодействия с пользователями."
+title: "Монетизация, привлечение пользователей и службы Магазина"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, монетизация, привлечение, продвижение, службы Магазина"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: e8a4c40dbc715d82d6f41fef8a49df5bfdfa79ae
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5a3497d5aa1c8a4415b7b4fb9f7888448ae74f9f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="monetization-customer-engagement-and-store-services"></a>Монетизация, взаимодействие с пользователем и службы Магазина
+# <a name="monetization-customer-engagement-and-store-services"></a>Монетизация, привлечение пользователей и службы Магазина
 
 Пакет Windows SDK, пакет Microsoft Store Services SDK и Магазин Windows предоставляют функции, позволяющие извлекать финансовую прибыль из своих приложений и получать клиентов в процессе взаимодействия с пользователями. В этом разделе показано, как реализовать эти функции в приложении.
 
@@ -35,9 +42,4 @@ ms.openlocfilehash: e8a4c40dbc715d82d6f41fef8a49df5bfdfa79ae
 * [Создание сегментов пользователей](../publish/create-customer-segments.md)
 * [Отчет об отзывах](../publish/feedback-report.md)
 * [Отчет об использовании](../publish/usage-report.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

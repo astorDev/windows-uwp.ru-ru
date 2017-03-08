@@ -2,11 +2,17 @@
 author: mcleanbyron
 ms.assetid: 571697B7-6064-4C50-9A68-1374F2C3F931
 description: "Узнайте, как использовать пространство имен Windows.Services.Store для предоставления пользователям пробной версии приложения."
-title: "Реализация пробной версии приложения"
-keywords: "пример кода бесплатной пробной версии"
+title: "Внедрение пробной версии приложения"
+keywords: "windows 10, uwp, пробная версия, покупки из приложения, IAP, Windows.Services.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: ea4c5637a970a63938da2b1bea9f11fd39de9cc8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc5e67823521db455e12fa4b16d8204c20bff621
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -85,9 +91,4 @@ ms.openlocfilehash: ea4c5637a970a63938da2b1bea9f11fd39de9cc8
 * [Поддержка покупок приложений и надстроек из приложения](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [Поддержка покупок потребляемых надстроек](enable-consumable-add-on-purchases.md)
 * [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

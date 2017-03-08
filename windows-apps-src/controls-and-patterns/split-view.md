@@ -5,12 +5,19 @@ ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
 description: "Элемент управления &quot;Комбинированный режим&quot; содержит разворачиваемую и сворачиваемую панель, а также область содержимого."
 label: Split view
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 61ada7839f76df92041b606066f5cbd54448cd93
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b4f0c84c4fdf273e7ddf2c16e3323ad0c4e52359
+ms.lasthandoff: 02/07/2017
 
 ---
-# <a name="split-view-control"></a>Элемент управления "Комбинированный режим"
+# <a name="split-view-control"></a>Элемент управления «Комбинированный режим»
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -83,9 +90,4 @@ ms.openlocfilehash: 61ada7839f76df92041b606066f5cbd54448cd93
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

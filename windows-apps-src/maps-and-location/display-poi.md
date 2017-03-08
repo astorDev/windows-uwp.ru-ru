@@ -3,9 +3,16 @@ author: msatranjr
 title: "Отображение объектов на карте"
 description: "Добавляйте объекты на карту, используя вешки, изображения, фигуры и элементы пользовательского интерфейса XAML."
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, карта, расположение, вешки"
 translationtype: Human Translation
-ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
-ms.openlocfilehash: 8afdb41d6790bb9647a6b89086c4b86872940c51
+ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
+ms.openlocfilehash: c8fdc16b99a9d2d57f71e32e008fa668c3404835
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -27,10 +34,10 @@ ms.openlocfilehash: 8afdb41d6790bb9647a6b89086c4b86872940c51
 
 Краткие сведения.
 
--   [Добавление объекта MapIcon на карту](#mapicon) для отображения изображения, например вешки с необязательным текстом.
--   [Добавление объекта MapPolygon на карту](#mappolygon) для отображения многоточечной фигуры.
--   [Добавление объекта MapPolyline на карту](#mappolyline) для отображения линий на карте.
--   [Добавление кода XAML на карту](#mapxaml) для отображения настраиваемых элементов пользовательского интерфейса.
+-   [Добавление объекта MapIcon на карту](#add-a-mapicon) для отображения изображения, например вешки с необязательным текстом.
+-   [Добавление объекта MapPolygon на карту](#add-a-mappolygon) для отображения многоточечной фигуры.
+-   [Добавление объекта MapPolyline на карту](#add-a-mappolyline) для отображения линий на карте.
+-   [Добавление кода XAML на карту](#add-xaml) для отображения настраиваемых элементов пользовательского интерфейса.
 
 Если необходимо разместить на карте большое количество элементов, можно [наложить на нее динамически перераспределяемые изображения](overlay-tiled-images.md). Сведения о том, как отобразить дороги на карте, см. в статье [Отображение дорог и направлений](routes-and-directions.md).
 
@@ -104,7 +111,7 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
          new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
 
    });
-           
+
    mapPolygon.ZIndex = 1;
    mapPolygon.FillColor = Colors.Red;
    mapPolygon.StrokeColor = Colors.Blue;
@@ -129,7 +136,7 @@ private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEve
          new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },                
          new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
    });
-              
+
    mapPolyline.StrokeColor = Colors.Black;
    mapPolyline.StrokeThickness = 3;
    mapPolyline.StrokeDashed = true;
@@ -226,11 +233,4 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)
-
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

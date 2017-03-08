@@ -3,14 +3,21 @@ author: laurenhughes
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: "Разрешения на доступ к файлам"
 description: "Приложения могут иметь доступ к определенным расположениям в файловой системе по умолчанию. Приложения также могут получить доступ к дополнительным расположениям через средство выбора файлов или с помощью объявления возможностей."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: d6cb8bd32766157b1edf886621bdc605ca160db5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3a5069620fa665d4508af70df5543a2d42744210
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="file-access-permissions"></a>Разрешения на доступ к файлам
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Приложения могут иметь доступ к определенным расположениям в файловой системе по умолчанию. Приложения также могут получить доступ к дополнительным расположениям через средство выбора файлов или с помощью объявления возможностей.
@@ -162,9 +169,4 @@ ms.openlocfilehash: d6cb8bd32766157b1edf886621bdc605ca160db5
 | Библиотеки домашней группы  | Требуется по меньшей мере одна из следующих возможностей: <br>- MusicLibrary, <br>- PicturesLibrary, <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
 | Устройства сервера мультимедиа (DLNA) | Требуется по меньшей мере одна из следующих возможностей: <br>- MusicLibrary, <br>- PicturesLibrary, <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) |
 | Папки UNC | Требуется комбинация следующих возможностей: <br><br>Возможность домашней и рабочей сетей: <br>- PrivateNetworkClientServer. <br><br>Добавьте по меньшей мере одну возможность общедоступных сетей и Интернета: <br>- InternetClient, <br>- InternetClientServer. <br><br>Если применимо, добавьте возможность учетных данных домена:<br>- EnterpriseAuthentication. <br><br>Примечание. Необходимо добавить сопоставления типов файлов в манифест приложения, в котором указаны конкретные типы файлов, доступные приложению в этом расположении | Получение папки с помощью: <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>Получение файла с помощью: <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

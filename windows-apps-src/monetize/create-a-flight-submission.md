@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: "Используйте этот метод в API отправки Магазина Windows для создания новой отправки тестового пакета для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows."
 title: "Создание отправки тестового пакета с помощью API отправки Магазина Windows"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API отправки Магазина Windows, создание отправки тестируемой возможности"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: 2ca6824039077d5d3ceba2c643d52a62c77104e4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d3e3c74d8afcd3b9055b64a0d06f207b1e02d598
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -131,9 +138,4 @@ Authorization: Bearer <your access token>
 * [Обновление отправки тестового пакета](update-a-flight-submission.md)
 * [Удаление отправки тестового пакета](delete-a-flight-submission.md)
 * [Получение состояния отправки тестового пакета](get-status-for-a-flight-submission.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

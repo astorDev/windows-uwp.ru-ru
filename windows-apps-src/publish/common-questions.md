@@ -1,11 +1,18 @@
 ---
-author: jnHs
+author: shawjohn
 Description: "Общие вопросы о рекламных кампаниях"
 title: "Общие вопросы о рекламных кампаниях"
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
+ms.author: johnshaw
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 584407ea0e0fee4ec74dac0b656db59b7f694391
-ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 20a05337052392446d733af7da180f9466fef05f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -33,7 +40,7 @@ ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
 
 ## <a name="where-will-my-ad-appear"></a>Когда мое рекламное объявление начнет отображаться?
 
-Ваше объявление будет отображаться в приложениях, соответствующих возрастной категории и версии ОС вашего приложения. Вы определяете эти свойства при публикации приложения в Магазине Windows.
+Ваше объявление будет отображаться в приложениях, соответствующих возрастной категории и версии ОС вашего приложения. Вы определяете эти свойства при публикации приложения в Магазине Windows. Если компания "Универсальная", ваши рекламы будут также отображаться в MSN.com, Outlook.com, Skype и других ресурсах Microsoft премиум-уровня.
 
 Рекламные кампании в настоящее время поддерживаются в перечисленных ниже странах и регионах.
 
@@ -64,9 +71,4 @@ ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
 * [О собственной рекламе](about-house-ads.md)
 * [О рекламе от сообщества](about-community-ads.md)
 * [Отчет о рекламных объявлениях, которые привели к установке приложений](app-install-ads-reports.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

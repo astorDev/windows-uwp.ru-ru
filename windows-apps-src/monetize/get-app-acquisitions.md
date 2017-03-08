@@ -2,17 +2,24 @@
 author: mcleanbyron
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: "Используйте этот метод в API аналитики для Магазина Windows для получения сводных данных о покупках приложения в заданном диапазоне дат или с учетом других дополнительных фильтров."
-title: "Получение сведений о покупках приложения"
+title: "Получение сведений о приобретениях приложения"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, службы Магазина, API аналитики для Магазина Windows, приобретения приложения"
 translationtype: Human Translation
-ms.sourcegitcommit: ce6535508136f8f7bfc8e0da599eea10a936908d
-ms.openlocfilehash: 2e35da3b3033ecbad8c48184d831ca9465142322
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9a716acb00b7a86429c444555c491b48cbc2c4b0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="get-app-acquisitions"></a>Получение сведений о покупках приложения
+# <a name="get-app-acquisitions"></a>Получение сведений о приобретениях приложения
 
 
-Используйте этот метод в API аналитики Магазина Windows для получения сводных данных в формате JSON для приложения в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете о приобретениях](../publish/acquisitions-report.md) на информационной панели Центра разработки для Windows.
+Используйте этот метод в API аналитики для Магазина Windows для получения сводных данных в формате JSON для приложения в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете о приобретениях](../publish/acquisitions-report.md) на информационной панели Центра разработки для Windows.
 
 ## <a name="prerequisites"></a>Необходимые условия
 
@@ -160,9 +167,4 @@ Authorization: Bearer <your access token>
 * [Получение данных отчетов об ошибках](get-error-reporting-data.md)
 * [Получение сведений об оценках приложения](get-app-ratings.md)
 * [Получение отзывов о приложении](get-app-reviews.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -1,16 +1,23 @@
 ---
 author: Jwmsft
-Description: "Подумайте, как часто в повседневной жизни мы сталкиваемся с текстом - электронная почта, книги, дорожные знаки, цены в меню, обозначение давления в шинах, объявления на столбах..."
-title: "Элементы управления текстом"
+Description: "Подумайте, как часто в повседневной жизни мы сталкиваемся с текстом — электронная почта, книги, дорожные знаки, цены в меню, обозначение давления в шинах, объявления на столбах..."
+title: "Текстовые элементы управления"
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 04f8e82f05c46d41657dae0b30e04f49341bb5db
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 41c5b771440a3ad88b3c1fcc2aec57b2e080741b
+ms.lasthandoff: 02/07/2017
 
 ---
-# <a name="text-controls"></a>Элементы управления текстом
+# <a name="text-controls"></a>Текстовые элементы управления
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -190,9 +197,4 @@ ms.openlocfilehash: 04f8e82f05c46d41657dae0b30e04f49341bb5db
 - [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Класс Windows.UI.Xaml.Controls PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length.aspx)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

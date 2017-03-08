@@ -3,20 +3,27 @@ author: mtoepke
 title: "Объект приложения и DirectX"
 description: "В играх универсальной платформы Windows (UWP) с DirectX используется мало элементов и объектов интерфейса Windows."
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, directx, объект приложения"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7d3290633ead698a6c42c3accdbd2012ccfd7065
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Объект приложения и DirectX
+# <a name="the-app-object-and-directx"></a>Объект приложения и DirectX
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В играх универсальной платформы Windows (UWP) с DirectX используется мало элементов и объектов интерфейса Windows. Поскольку они выполняются на более низком уровне в стеке среды выполнения Windows, они должны взаимодействовать со структурой пользовательского интерфейса более фундаментальным способом: напрямую получая доступ и взаимодействуя с объектом приложения. Узнайте, когда и как происходит такое взаимодействие и как вы, как разработчик DirectX, можете эффективно использовать эту модель при разработке приложений UWP.
 
-## Важные основные пространства имен пользовательского интерфейса
+## <a name="the-important-core-user-interface-namespaces"></a>Важные основные пространства имен пользовательского интерфейса
 
 
 Сначала отметим пространства имен среды выполнения Windows, которые необходимо включить (с помощью ключевого слова **using**) в приложение UWP. Рассмотрим подробнее.
@@ -31,7 +38,7 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
  
 
-## Объект приложения среды выполнения Windows
+## <a name="the-windows-runtime-app-object"></a>Объект приложения среды выполнения Windows
 
 
 В приложении UWP необходимо получить поставщик окон или представлений, чтобы можно было получить представление и подключить собственную цепочку буферов (ваши буферы отображения). Такое представление также можно привязать к событиям окон для вашего запущенного приложения. Чтобы получить родительское окно для объекта приложения, определяемого типом [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), создайте тип, реализующий интерфейс [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482), как это было сделано в предыдущем фрагменте кода.
@@ -58,7 +65,7 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 Учитывая эти основы, рассмотрим другие возможности, на которые требуется распространить этот подход.
 
-## Основные типы пользовательского интерфейса
+## <a name="core-user-interface-types"></a>Основные типы пользовательского интерфейса
 
 
 Здесь рассматриваются другие основные типы пользовательского интерфейса в среде выполнения Windows, которые могут быть полезны.
@@ -79,12 +86,12 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 Итак, объект приложения предоставляет фабрику поставщиков представлений. Для приложения он создает поставщик представлений и экземпляр родительского окна. Поставщик представлений определяет представление для родительского окна приложения. Теперь обсудим особенности данного представления и родительского окна.
 
-## Поведение и свойства класса CoreApplicationView
+## <a name="coreapplicationview-behaviors-and-properties"></a>Поведение и свойства класса CoreApplicationView
 
 
 [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) представляет текущее представление приложения. Во время инициализации singleton-объект приложения создает представление приложения, ожидающее своей активации. Класс [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), отображающий это представление, можно получить, обратившись к его свойству [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019), а события активации и деактивации для этого представления можно обработать, зарегистрировав делегаты с помощью события [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018).
 
-## Поведение и свойства класса CoreWindow
+## <a name="corewindow-behaviors-and-properties"></a>Поведение и свойства класса CoreWindow
 
 
 Родительское окно (экземпляр класса [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)) создается и передается поставщику представлений при инициализации объекта приложения. Если у приложения есть окно для отображения, оно его отображает; в противном случае просто инициализирует данное представление.
@@ -93,7 +100,7 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 Для данного окна также можно получить диспетчер событий, обратившись к свойству [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264), предоставляющему экземпляр класса [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211).
 
-## Поведение и свойства класса CoreDispatcher
+## <a name="coredispatcher-behaviors-and-properties"></a>Поведение и свойства класса CoreDispatcher
 
 
 Для окна с типом класса [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) можно определить поведение потоков отправки событий. Для этого типа есть один особенно важный метод: метод [**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215), запускающий обработку событий окна. Вызов этого метода с неправильным параметром для приложения может привести к неожиданному поведению обработки событий любого рода.
@@ -109,7 +116,7 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 В приложениях UWP, использующих DirectX, следует использовать параметр [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217), чтобы предотвратить срабатывание правил блокировки, которая может прервать обновление графики.
 
-## Соображения относительно однопотокового подразделения приложения для разработчиков, использующих DirectX
+## <a name="asta-considerations-for-directx-devs"></a>Соображения относительно однопотокового подразделения приложения для разработчиков, использующих DirectX
 
 
 Чтобы разместить представления пользовательского интерфейса, объект приложения, определяющий состояние вашего приложения UWP и DirectX во время выполнения, использует потоковую модель, которая называется однопотоковым подразделением приложения (ASTA). Если вы разрабатываете приложение UWP и DirectX, вы уже знакомы со свойствами однопотокового подразделения приложения, потому что любой поток, обрабатываемый из вашего приложения UWP и DirectX, должен использовать либо API [**Windows::System::Threading**](https://msdn.microsoft.com/library/windows/apps/br229642), либо [**CoreWindow::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211). (Можно получить объект [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) для однопотокового подразделения приложения, вызвав [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) из своего приложения.)
@@ -152,10 +159,5 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

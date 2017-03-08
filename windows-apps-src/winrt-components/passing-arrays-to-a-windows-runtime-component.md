@@ -3,16 +3,23 @@ author: msatranjr
 title: "Передача массивов компоненту среды выполнения Windows"
 description: "В универсальной платформе Windows (UWP) параметры используются для ввода или вывода, но не для того и другого. Это значит, что содержимое массива, который передается методу, а также сам массив предназначены только для ввода или только для вывода."
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 8ced5e6a4411554fcf82a54b57de64562a305619
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 04ecb16faf39e5dfc2f8ad8c5049c696615a449a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Передача массивов компоненту среды выполнения Windows
+# <a name="passing-arrays-to-a-windows-runtime-component"></a>Передача массивов компоненту среды выполнения Windows
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В универсальной платформе Windows (UWP) параметры используются для ввода или вывода, но не для того и другого. Это значит, что содержимое массива, который передается методу, а также сам массив предназначены только для ввода или только для вывода. Если содержимое массива используется для ввода, метод считывает данные из массива, но не записывает их в него. Если содержимое массива используется для вывода, метод записывает данные в массив, но не читает их из него. Это представляет проблему для параметров массива, поскольку массивы в .NET Framework — это ссылочные типы, а содержимое массива не изменяется, даже если ссылка на массив передается значением (**ByVal** в Visual Basic). В [средстве экспорта метаданных среды выполнения Windows (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) необходимо указать цель использования массива, если она не очевидна из контекста, с помощью атрибута ReadOnlyArrayAttribute или WriteOnlyArrayAttribute для параметра. Использование массива определяется следующим образом.
@@ -47,7 +54,7 @@ ms.openlocfilehash: 8ced5e6a4411554fcf82a54b57de64562a305619
 
 Мы рекомендуем сразу создать копию входного массива и работать с его копией. Это гарантирует, что метод работает одинаково независимо от того, вызывается ли компонент кодом .NET Framework.
 
-## Использование компонентов из управляемого и неуправляемого кода
+## <a name="using-components-from-managed-and-unmanaged-code"></a>Использование компонентов из управляемого и неуправляемого кода
 
 
 Параметры с атрибутом ReadOnlyArrayAttribute или WriteOnlyArrayAttribute ведут себя по-разному в зависимости от того, написан ли вызывающий объект на управляемом или неуправляемом коде. Если вызывающий объект написан на неуправляемом коде (расширения компонентов JavaScript или Visual C++), содержимое массива обрабатывается следующим образом.
@@ -57,14 +64,9 @@ ms.openlocfilehash: 8ced5e6a4411554fcf82a54b57de64562a305619
 
 Если вызывающий объект написан на управляемом коде, исходный массив доступен вызывающему методу, как и любой вызов метода на платформе .NET Framework. Содержимое массива не изменяется в коде .NET Framework, поэтому изменения, вносимые методом в массиве, видны вызывающей стороне. Необходимо помнить об этой особенности, поскольку она влияет на модульные тесты, создаваемые для компонента среды выполнения Windows. Если тесты написаны на неуправляемом коде, содержимое массива не будет изменяться во время тестирования.
 
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 * [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
 * [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
-* [Создание компонентов среды выполнения Windows на C# и VisualBasic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+* [Создание компонентов среды выполнения Windows на C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 

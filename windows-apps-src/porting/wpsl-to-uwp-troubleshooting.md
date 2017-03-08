@@ -1,15 +1,22 @@
 ---
 author: mcleblanc
 description: "Мы настоятельно рекомендуем прочитать до конца это руководство по переносу, но мы также понимаем, что вы жаждете двигаться вперед и добраться до этапа, на котором выполняется построение и запуск вашего проекта."
-title: "Устранение неполадок при переносе Windows Phone Silverlight в UWP"
+title: "Устранение неполадок при переносе с Windows Phone Silverlight на UWP"
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 3b7e68803a0391ea850b513014aa56a380df4d5c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ae120cedbf0ab42fcb091ba5b01b58e8796d6a4a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  <a name="troubleshooting-porting-windows-phone-silverlight-to-uwp"></a>Устранение неполадок при переносе Windows Phone Silverlight в UWP
+#  <a name="troubleshooting-porting-windows-phone-silverlight-to-uwp"></a>Устранение неполадок при переносе с Windows Phone Silverlight на UWP
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -58,10 +65,5 @@ ms.openlocfilehash: 3b7e68803a0391ea850b513014aa56a380df4d5c
 | При вызове метода InitializeComponent в файле xaml.cs создается исключение System.InvalidCastException. | Это может случиться, если несколько XAML-файлов (по крайней мере один из которых MRT-совместимый) совместно используют один файл xaml.cs, а элементы имеют атрибуты x:Name, не совместимые между двумя XAML-файлами. Попробуйте добавить одно имя одинаковым элементам в обоих XAML-файлах или не используйте имена вовсе. | 
 
 Следующий раздел называется [Перенос XAML и пользовательского интерфейса](wpsl-to-uwp-porting-xaml-and-ui.md).
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

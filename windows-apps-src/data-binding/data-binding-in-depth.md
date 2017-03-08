@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "Подробно о привязке данных"
 description: "Привязка данных обеспечивает отображение данных в пользовательском интерфейсе приложения и (дополнительно) синхронизацию с этими данными."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: fa3a3cf6194f04a05301ae4dfb75a7a21ff22e73
-ms.openlocfilehash: fca2c9a795e38983f439d6df5c5a7394c29c1217
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d96565479d970bca724614768361ba390ab9d668
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="data-binding-in-depth"></a>Подробно о привязке данных
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -649,10 +656,5 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | Режим | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | "Режим" может иметь значение OneTime, OneWay или TwoWay. В расширении разметки {x:Bind} по умолчанию используется значение OneTime, а в расширении разметки {Binding} — значение OneWay. | 
 | UpdateSourceTrigger | Не поддерживается. | `<Binding UpdateSourceTrigger="Default [or] PropertyChanged [or] Explicit"/>` | В расширении разметки {x:Bind} поведение PropertyChanged используется во всех случаях, кроме TextBox.Text, где ожидается потеря фокуса, чтобы обновился источник. | 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

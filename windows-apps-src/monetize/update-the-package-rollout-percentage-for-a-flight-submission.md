@@ -2,29 +2,37 @@
 author: mcleanbyron
 description: "Используйте этот метод в API отправки Магазина Windows для изменения процента выпуска пакета для отправки тестового пакета."
 title: "Изменение процента выпуска пакета для отправки тестового пакета с помощью API отправки Магазина Windows"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API отправки Магазина Windows, выпуск пакета, отправка тестового пакета, обновление, процент"
+ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
 translationtype: Human Translation
-ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
-ms.openlocfilehash: 2822390c60818baeb8d98789fdcf04bd7cd2daba
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: bb09e5ff3c60a56a69c5a52d47e3c791b206a84c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Изменение процента выпуска пакета для отправки тестового пакета с помощью API отправки Магазина Windows
+# <a name="update-the-package-rollout-percentage-for-a-package-flight-submission-using-the-windows-store-submission-api"></a>Изменение процента выпуска пакета для отправки тестового пакета с помощью API отправки Магазина Windows
 
 
 Используйте этот метод в API отправки Магазина Windows для [изменения процента выпуска](../publish/gradual-package-rollout.md#setting-the-rollout-percentage) для отправки тестового пакета. Подробнее о процессе создания отправки тестового пакета с помощью API отправки Магазина Windows см. в разделе [Управление отправкой тестового пакета](manage-flight-submissions.md).
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
-* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
 * Создайте отправку для приложения в учетной записи Центра разработки. Это можно сделать на информационной панели Центра разработки или с помощью метода [Создание отправки приложения](create-an-app-submission.md).
 * Включите постепенный выпуск пакета для отправки. Это можно сделать на [информационной панели Центра разработки](../publish/gradual-package-rollout.md) или [с помощью API отправки Магазина Windows](manage-flight-submissions.md#manage-gradual-package-rollout).
 
 >**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
-## Запрос
+## <a name="request"></a>Запрос
 
 У этого метода следующий синтаксис. Примеры использования и описание заголовка и параметров запроса приведены в следующих разделах.
 
@@ -35,7 +43,7 @@ ms.openlocfilehash: 2822390c60818baeb8d98789fdcf04bd7cd2daba
 <span/>
  
 
-### Заголовок запроса
+### <a name="request-header"></a>Заголовок запроса
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -43,7 +51,7 @@ ms.openlocfilehash: 2822390c60818baeb8d98789fdcf04bd7cd2daba
 
 <span/>
 
-### Параметры запроса
+### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -54,11 +62,11 @@ ms.openlocfilehash: 2822390c60818baeb8d98789fdcf04bd7cd2daba
 
 <span/>
 
-### Текст запроса
+### <a name="request-body"></a>Текст запроса
 
 Предоставлять текст запроса для этого метода не требуется.
 
-### Пример запроса
+### <a name="request-example"></a>Пример запроса
 
 В следующем примере показано, как изменить процент выпуска пакета для отправки тестового пакета.
 
@@ -67,7 +75,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/fl
 Authorization: Bearer <your access token>
 ```
 
-## Ответ
+## <a name="response"></a>Ответ
 
 В следующем примере представлен текст ответа JSON в случае успешного вызова этого метода. Подробнее о значениях в тексте ответа см. в описании [ресурса «Выпуск пакета»](manage-flight-submissions.md#package-rollout-object).
 
@@ -80,7 +88,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## Коды ошибок
+## <a name="error-codes"></a>Коды ошибок
 
 Если запрос не удается выполнить, ответ будет содержать один из следующих кодов ошибок HTTP.
 
@@ -92,14 +100,9 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## Статьи по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Постепенный выпуск пакета](../publish/gradual-package-rollout.md)
 * [Управление отправками тестовых пакетов с помощью API отправки Магазина Windows](manage-flight-submissions.md)
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

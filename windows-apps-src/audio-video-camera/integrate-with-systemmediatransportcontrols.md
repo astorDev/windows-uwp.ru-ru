@@ -1,21 +1,28 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: eb690f2b-3bf8-4a65-99a4-2a3a8c7760b7
 description: "В этой статье показано, как взаимодействовать с системными элементами управления транспортировкой мультимедиа."
 title: "Интеграция с системными элементами управления транспортировкой мультимедиа"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
-ms.openlocfilehash: 702d5911f6e76d6c047fcc97c1117456ae04c3e5
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 166e63659d138db2c4a6c49f11a2277eae790529
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Интеграция с системными элементами управления транспортировкой мультимедиа
+# <a name="integrate-with-the-system-media-transport-controls"></a>Интеграция с системными элементами управления транспортировкой мультимедиа
 
-В этой статье показано, как взаимодействовать с системными элементами управления транспортировкой мультимедиа (SMTC). SMTC— это набор элементов управления, общих для всех устройств с Windows 10 и предоставляющих пользователям единый способ управления воспроизведением мультимедиа во всех выполняемых приложениях, использующих [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) для воспроизведения.
+В этой статье показано, как взаимодействовать с системными элементами управления транспортировкой мультимедиа (SMTC). SMTC — это набор элементов управления, общих для всех устройств с Windows 10 и предоставляющих пользователям единый способ управления воспроизведением мультимедиа во всех выполняемых приложениях, использующих [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) для воспроизведения.
 
 Полный пример интеграции с SMTC см. в [примере системных элементов управления транспортировкой мультимедиа на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls).
                     
-##Автоматическая интеграция с SMTC
+##<a name="automatic-integration-with-smtc"></a>Автоматическая интеграция с SMTC
 Начиная с Windows 10 версии 1607 приложения UWP, использующие класс [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) для воспроизведения мультимедиа, автоматически интегрируются с SMTC по умолчанию. Просто создайте новый экземпляр **MediaPlayer** и назначьте класс [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource), [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) или [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList) свойству [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) проигрывателя, после чего пользователь увидит имя вашего приложения в SMTC и сможет начинать и приостанавливать воспроизведение, а также перемещаться по спискам воспроизведения с помощью элементов управления SMTC. 
 
 Ваше приложение может создавать и использовать несколько объектов **MediaPlayer** одновременно. В SMTC создается отдельная вкладка для каждого активного экземпляра **MediaPlayer** в приложении, поэтому пользователь может переключаться между активными проигрывателями мультимедиа вашего и других выполняемых приложений. Действия элементов управления применяются к проигрывателю мультимедиа, выбранному в SMTC.
@@ -24,14 +31,14 @@ ms.openlocfilehash: 702d5911f6e76d6c047fcc97c1117456ae04c3e5
 
 Дополнительные сведения об использовании классов **MediaSource**, **MediaPlaybackItem** и **MediaPlaybackList** см. в разделе [Элементы, списки воспроизведения и звуковые дорожки мультимедиа](media-playback-with-mediasource.md).
 
-##Добавление метаданных для отображения в SMTC
+##<a name="add-metadata-to-be-displayed-by-the-smtc"></a>Добавление метаданных для отображения в SMTC
 Если вам требуется добавить или изменить метаданные, отображаемые для элементов мультимедиа в SMTC, например видео или название песни, обновите свойства отображения класса **MediaPlaybackItem**, представляющего элемент мультимедиа. В первую очередь, получите ссылку на объект [**MediaItemDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties), вызвав метод [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties). Затем установите тип мультимедиа (музыка или видео) для элемента с помощью свойства [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type). После этого вы можете заполнить поля свойств [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) или [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) в зависимости от указанного типа мультимедиа. Наконец, обновите метаданные для элемента мультимедиа, вызвав метод [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923).
 
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
 [!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
 
-##Использование CommandManager для изменения или переопределения команд по умолчанию SMTC
+##<a name="use-commandmanager-to-modify-or-override-the-default-smtc-commands"></a>Использование CommandManager для изменения или переопределения команд по умолчанию SMTC
 Ваше приложение может изменять или полностью переопределять поведение элементов управления SMTC с помощью класса [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager). Для каждого экземпляра класса **MediaPlayer** можно получить экземпляр диспетчера команд путем доступа к свойству [**CommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.CommandManager).
 
 Для каждой команды, например команды *Next*, которая по умолчанию переходит к следующему элементу в **MediaPlaybackList**, диспетчер команд предоставляет полученное событие, например [**NextReceived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.NextReceived), и объект, управляющий поведением команды, например [**NextBehavior**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.NextBehavior). 
@@ -65,13 +72,13 @@ ms.openlocfilehash: 702d5911f6e76d6c047fcc97c1117456ae04c3e5
 Наконец, для объекта отсрочки вызывается метод [**Complete**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral.Complete), чтобы дать системе понять, что вы завершили обработку команды.
 
 [!code-cs[PreviousReceived](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetPreviousReceived)]
-                
-##Ручное управление SMTC
+                 
+##<a name="manual-control-of-the-smtc"></a>Ручное управление SMTC
 Как уже упоминалось в этой статье, SMTC автоматически обнаруживает и отображает сведения для каждого экземпляра **MediaPlayer**, созданного приложением. Если вам требуется использовать несколько экземпляров **MediaPlayer**, но чтобы SMTC при этом предоставлял одну запись для приложения, необходимо вручную управлять поведением SMTC, не полагаясь на автоматическую интеграцию. Кроме того, если вы используете класс [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) для управления одним или несколькими проигрывателями мультимедиа, вам потребуется использовать ручную интеграцию SMTC. Помимо этого, если для воспроизведения мультимедиа в вашем приложении используется API, отличный от **MediaPlayer**, например класс [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph), вам потребуется реализовать ручную интеграцию SMTC, чтобы пользователь мог управлять вашим приложением с помощью SMTC. Сведения о ручном управлении SMTC см. в разделе [Ручное управление системными элементами управления транспортировкой мультимедиа](system-media-transport-controls.md).
 
 
 
-## Связанные статьи
+## <a name="related-topics"></a>Связанные статьи
 * [Воспроизведение мультимедиа](media-playback.md)
 * [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Ручное управление системными элементами управления транспортировкой мультимедиа](system-media-transport-controls.md)
@@ -82,10 +89,5 @@ ms.openlocfilehash: 702d5911f6e76d6c047fcc97c1117456ae04c3e5
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

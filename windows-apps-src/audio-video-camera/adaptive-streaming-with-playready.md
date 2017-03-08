@@ -3,15 +3,22 @@ author: eliotcowley
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
 description: "В этой статье описывается, как добавить возможности адаптивной потоковой передачи мультимедийного содержимого с защитой Microsoft PlayReady в приложение универсальной платформы Windows (UWP)."
 title: "Адаптивная потоковая передача с защитой PlayReady"
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 8534598b1f3cf49b15a73d03f6f19e67877b25d0
-ms.openlocfilehash: 22e430fd6dafe49fb3bf599fec91a9ab3dbd6b95
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 861ec2823080192a5b2d9b557af14ca5e3ab43fb
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Адаптивная потоковая передача с защитой PlayReady
+# <a name="adaptive-streaming-with-playready"></a>Адаптивная потоковая передача с защитой PlayReady
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этой статье описывается, как добавить возможности адаптивной потоковой передачи мультимедийного содержимого с защитой Microsoft PlayReady в приложение универсальной платформы Windows (UWP). 
 
@@ -58,7 +65,7 @@ private string playReadyChallengeCustomData = "";
 private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
 ```
 
-## Настройка MediaProtectionManager
+## <a name="setting-up-the-mediaprotectionmanager"></a>Настройка MediaProtectionManager
 
 Чтобы добавить защиту содержимого PlayReady в приложение UWP, необходимо настроить объект [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040). Для этого нужно инициализировать объект [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912).
 
@@ -136,7 +143,7 @@ private async void ProtectionManager_ServiceRequested(
 }
 ```
 
-## Запросы на обслуживание индивидуализации
+## <a name="individualization-service-requests"></a>Запросы на обслуживание индивидуализации
 
 Следующий код реактивно отправляет запрос на обслуживание индивидуализации PlayReady. Мы передаем запрос в качестве параметра функции. Вызов помещаем в блок try/catch, и если исключений нет, говорим, что запрос выполнен успешно:
 
@@ -187,7 +194,7 @@ async void ProActiveIndivRequest()
 }
 ```
 
-## Запросы на обслуживание для получения лицензии
+## <a name="license-acquisition-service-requests"></a>Запросы на обслуживание для получения лицензии
 
 Если запросом был [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285), мы вызываем списке функцию ниже, чтобы запросить и получить лицензию PlayReady. Мы сообщаем объекту **MediaProtectionServiceCompletion**, который мы передали, был ли запрос выполнен успешно или нет, и завершаем запрос:
 
@@ -269,7 +276,7 @@ async void LicenseAcquisitionRequest(
 }
 ```
 
-## Инициализация AdaptiveMediaSource
+## <a name="initializing-the-adaptivemediasource"></a>Инициализация AdaptiveMediaSource
 
 Наконец, вам потребуется функция для инициализации объекта [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/dn946912), созданного на основе заданных [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) и [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926). **Uri** — это ссылка на файл мультимедиа (HLS или DASH), а элемент **MediaElement** должен быть определен в коде XAML.
 
@@ -292,15 +299,10 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 Можно вызвать эту функцию в любом событии, которое обрабатывает начало адаптивной потоковой передачи, например в событии нажатия кнопки.
 
-## См. также
+## <a name="see-also"></a>См. также
 - [PlayReady DRM](playready-client-sdk.md)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

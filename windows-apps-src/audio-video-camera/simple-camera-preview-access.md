@@ -2,22 +2,29 @@
 author: drewbatgit
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
 description: "В этой статье описывается, как быстро вывести поток предварительного просмотра камеры на странице XAML в приложении универсальной платформы Windows (UWP)."
-title: "Отображение просмотра камеры"
+title: "Отображение предварительного изображения с камеры"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6aacd5ef8043c9c89116a1d287174210f02f7d62
-ms.openlocfilehash: 5eb53d1527f2cd002dfb66110f1f1f3618458b3a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d65d09349850f580d8bcee2d3875b38b8ed189f1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Отображение просмотра камеры
+# <a name="display-the-camera-preview"></a>Отображение предварительного изображения с камеры
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этой статье описывается, как быстро вывести поток предварительного просмотра камеры на странице XAML в приложении универсальной платформы Windows (UWP). Для создания приложения, захватывающего фотографии и видео с камеры, необходимо выполнить такие задачи, как обработка положения устройства и ориентации камеры и настройка параметров кодирования записанного файла. Для некоторых сценариев приложения может потребоваться просто отобразить поток предварительного просмотра камеры, не беспокоясь о других вопросах. В данной статье показано, как это сделать с применением минимального количества кода. Обратите внимание, что необходимо всегда надлежащим образом завершать поток предварительного просмотра после окончания работы с ним, выполняя приведенные ниже действия.
 
 Подробнее о создании приложения для захвата фотографий и видео с камеры, см. [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md).
 
-## Добавление объявлений возможностей в манифест приложения
+## <a name="add-capability-declarations-to-the-app-manifest"></a>Добавление объявлений возможностей в манифест приложения
 
 Чтобы ваше приложение получило доступ к камере устройства, необходимо объявить, что оно использует возможности устройства *webcam* и *microphone*. 
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: 5eb53d1527f2cd002dfb66110f1f1f3618458b3a
 2.  Перейдите на вкладку **Возможности**.
 3.  Выставьте флажок для пункта **Веб-камера** и поле для параметра **Микрофон**.
 
-## Добавление объекта CaptureElement на страницу
+## <a name="add-a-captureelement-to-your-page"></a>Добавление объекта CaptureElement на страницу
 
 Используйте объект [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) для отображения потока предварительного просмотра на странице XAML.
 
@@ -35,7 +42,7 @@ ms.openlocfilehash: 5eb53d1527f2cd002dfb66110f1f1f3618458b3a
 
 
 
-## Использование объекта MediaCapture для запуска потока предварительного просмотра
+## <a name="use-mediacapture-to-start-the-preview-stream"></a>Использование объекта MediaCapture для запуска потока предварительного просмотра
 
 Объект [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) — это интерфейс приложения для взаимодействия с камерой устройства. Этот класс входит в пространство имен Windows.Media.Capture. В описанном в этой статье примере используются API из пространств имен [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) и [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) в дополнение ко включенным в шаблон проекта по умолчанию.
 
@@ -60,13 +67,13 @@ ms.openlocfilehash: 5eb53d1527f2cd002dfb66110f1f1f3618458b3a
 [!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
 
-## Завершение потока предварительного просмотра
+## <a name="shut-down-the-preview-stream"></a>Завершение потока предварительного просмотра
 
 Каждый раз, закончив использование потока предварительного просмотра, необходимо завершить поток и очистить ресурсы захвата, чтобы камера была доступна для использования другим приложениям на устройстве. Для завершения потока предварительного просмотра необходимо выполнить следующие действия.
 
 -   Если в данный момент камера обеспечивает предварительный просмотр, вызовите [**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622), чтобы завершить поток предварительного просмотра. Если вызов **StopPreviewAsync** производится, когда предварительная версия не работает, возникнет исключение.
--   Установите для свойства [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) класса **CaptureElement** значение null. Используйте метод [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx), чтобы убедиться, что этот вызов выполняется в потоке пользовательского интерфейса.
--   Вызовите метод [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) объекта **MediaCapture**, чтобы освободить ресурсы объекта. Снова используйте метод [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx), чтобы убедиться, что этот вызов выполняется в потоке пользовательского интерфейса.
+-   Установите для свойства [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) класса **CaptureElement** значение null. Используйте метод [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx), чтобы убедиться, что этот вызов выполняется в потоке пользовательского интерфейса.
+-   Вызовите метод [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) объекта **MediaCapture**, чтобы освободить ресурсы объекта. Снова используйте метод [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx), чтобы убедиться, что этот вызов выполняется в потоке пользовательского интерфейса.
 -   Присвойте переменной-члену **MediaCapture** значение null.
 -   Вызовите [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestRelease), чтобы разрешить отключение экрана в отсутствие активности.
 
@@ -85,14 +92,9 @@ ms.openlocfilehash: 5eb53d1527f2cd002dfb66110f1f1f3618458b3a
 [!code-cs[SuspendingHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSuspendingHandler)]
 
 
-## Статьи по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Получение кадра предварительного просмотра](get-a-preview-frame.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

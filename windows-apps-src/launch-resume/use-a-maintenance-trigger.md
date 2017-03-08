@@ -1,11 +1,18 @@
 ---
 author: TylerMSFT
 title: "Использование триггера обслуживания"
-description: "Узнайте, как использовать класс MaintenanceTrigger для выполнения облегченного кода в фоновом режиме, когда устройство подключено к сети."
+description: "Узнайте, как использовать класс MaintenanceTrigger для выполнения облегченного кода в фоновом режиме, когда устройство подключено к сети питания."
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 8ca0255be671d0a2900bb7be3a66d4df4e793725
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e8e955f9449d48a6586c9648b70f9565c5278a16
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -19,11 +26,11 @@ ms.openlocfilehash: 8ca0255be671d0a2900bb7be3a66d4df4e793725
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
 
-Узнайте, как использовать класс [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) для выполнения облегченного кода в фоновом режиме, когда устройство подключено к сети.
+Узнайте, как использовать класс [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) для выполнения облегченного кода в фоновом режиме, когда устройство подключено к сети питания.
 
 ## <a name="create-a-maintenance-trigger-object"></a>Создание объекта триггера обслуживания
 
-Для изучения этого примера необходим облегченный код, который можно выполнить в фоновом режиме для усовершенствования вашего приложения, когда устройство подключено к сети. В этом разделе рассматривается класс [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517), который похож на [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
+Для изучения этого примера необходим облегченный код, который можно выполнить в фоновом режиме для усовершенствования вашего приложения, когда устройство подключено к сети питания. В этом разделе рассматривается класс [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517), который похож на [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
 
 Подробнее о написании класса фоновой задачи см. в статьях [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md) и [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md).
 
@@ -109,9 +116,4 @@ ms.openlocfilehash: 8ca0255be671d0a2900bb7be3a66d4df4e793725
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Вызов событий приостановки, возобновления и фоновых событий в приложениях Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

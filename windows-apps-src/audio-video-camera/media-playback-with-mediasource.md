@@ -3,21 +3,28 @@ author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: "В этой статье показано, как использовать класс MediaSource, предоставляющий универсальный способ обращения к данным мультимедиа и их воспроизведения из различных источников (например, из локальных или удаленных файлов) и универсальную модель получения доступа к данным мультимедиа независимо от их формата."
 title: "Элементы, списки воспроизведения и звуковые дорожки мультимедиа"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9999805c8a3bf946aa323b921cea6d63f9a48789
-ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1bab50aba53c96907151351c3b0fa81749ff2f88
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Элементы, списки воспроизведения и звуковые дорожки мультимедиа
+# <a name="media-items-playlists-and-tracks"></a>Элементы, списки воспроизведения и звуковые дорожки мультимедиа
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
  В этой статье показано, как использовать класс [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource), предоставляющий универсальный способ обращения к данным мультимедиа и их воспроизведения из различных источников (например, из локальных или удаленных файлов) и универсальную модель получения доступа к данным мультимедиа независимо от их формата. Класс [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) расширяет функциональные возможности класса **MediaSource**. Он позволяет выбирать необходимые дорожки звука, видео и метаданных в файле мультимедиа и управлять ими. [
               Класс **MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) позволяет создавать списки воспроизведения из одного или нескольких элементов воспроизведения мультимедиа.
 
 
-## Создание и воспроизведение MediaSource
+## <a name="create-and-play-a-mediasource"></a>Создание и воспроизведение MediaSource
 
 Создайте новый экземпляр **MediaSource**, вызвав один из фабричных методов, которые предоставляются следующими классами:
 
@@ -30,7 +37,7 @@ ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
 -   [**CreateFromStreamReference**](https://msdn.microsoft.com/library/windows/apps/dn930911)
 -   [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912)
 
-Созданный экземпляр **MediaSource** можно воспроизводить с помощью класса [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535), задав свойство [**Источник**](https://msdn.microsoft.com/library/windows/apps/dn987010). Начиная c Windows10 версии 1607, можно назначить класс **MediaPlayer** классу [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement), вызвав метод [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764), чтобы отобразить содержимое проигрывателя мультимедиа на странице XAML. Этот метод является предпочтительным по сравнению с использованием класса **MediaElement**. Дополнительные сведения об использовании класса **MediaPlayer** см. в разделе [**Воспроизведение аудио и видео с помощью класса MediaPlayer**](play-audio-and-video-with-mediaplayer.md).
+Созданный экземпляр **MediaSource** можно воспроизводить с помощью класса [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535), задав свойство [**Источник**](https://msdn.microsoft.com/library/windows/apps/dn987010). Начиная c Windows 10 версии 1607, можно назначить класс **MediaPlayer** классу [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement), вызвав метод [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764), чтобы отобразить содержимое проигрывателя мультимедиа на странице XAML. Этот метод является предпочтительным по сравнению с использованием класса **MediaElement**. Дополнительные сведения об использовании класса **MediaPlayer** см. в разделе [**Воспроизведение аудио и видео с помощью класса MediaPlayer**](play-audio-and-video-with-mediaplayer.md).
 
 В следующем примере показано, как воспроизвести выбранный пользователем файл мультимедиа в классе **MediaPlayer** с помощью **MediaSource**.
 
@@ -60,7 +67,7 @@ ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
 
 [!code-cs[Автозапуск](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAutoPlay)]
 
-## Обработка нескольких дорожек звука, видео и метаданных с помощью MediaPlaybackItem
+## <a name="handle-multiple-audio-video-and-metadata-tracks-with-mediaplaybackitem"></a>Обработка нескольких дорожек звука, видео и метаданных с помощью MediaPlaybackItem
 
 Класс [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) удобно использовать для воспроизведения, поскольку он предоставляет универсальный способ воспроизведения мультимедиа из различных источников, однако класс [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939), созданный на основе класса **MediaSource**, предоставляет более широкие возможности. К ним относится доступ к различным дорожкам звука, видео и данных в элементе мультимедиа и управление ими.
 
@@ -115,8 +122,8 @@ ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
 
 При обработке дорожек метаданных можно получить доступ к набору подсказок, находящихся в дорожке, с помощью свойств [**Cues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.Cues) или [**ActiveCues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.ActiveCues). Это можно сделать, чтобы обновить ваш пользовательский интерфейс и отображать в нем расположения подсказок для элемента мультимедиа.
 
-## Обработка неподдерживаемых кодеков и неизвестных ошибок при открытии элементов мультимедиа
-Начиная c Windows10 версии 1607, можно проверить, поддерживается ли кодек, необходимый для воспроизведения элемента мультимедиа, полностью или частично на устройстве, на котором выполняется приложение. Если речь идет об обработчике событий изменения дорожек **MediaPlaybackItem**, таких как [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged), сначала проверьте, не является ли изменение дорожки вставкой новой дорожки. В этом случае можно получить ссылку на дорожку, вставляемую с использованием индекса, который передается в параметре **IVectorChangedEventArgs.Index** с соответствующей коллекцией дорожек параметра **MediaPlaybackItem**, например коллекцией [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks).
+## <a name="handle-unsupported-codecs-and-unknown-errors-when-opening-media-items"></a>Обработка неподдерживаемых кодеков и неизвестных ошибок при открытии элементов мультимедиа
+Начиная c Windows 10 версии 1607, можно проверить, поддерживается ли кодек, необходимый для воспроизведения элемента мультимедиа, полностью или частично на устройстве, на котором выполняется приложение. Если речь идет об обработчике событий изменения дорожек **MediaPlaybackItem**, таких как [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged), сначала проверьте, не является ли изменение дорожки вставкой новой дорожки. В этом случае можно получить ссылку на дорожку, вставляемую с использованием индекса, который передается в параметре **IVectorChangedEventArgs.Index** с соответствующей коллекцией дорожек параметра **MediaPlaybackItem**, например коллекцией [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks).
 
 Получив ссылку на вставляемую дорожку, проверьте значение [**DecoderStatus**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrackSupportInfo.DecoderStatus) свойства [**SupportInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.SupportInfo) дорожки. Если установлено значение [**FullySupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), то соответствующий кодек, необходимый для воспроизведения дорожки, присутствует на устройстве. Если установлено значение [**Degraded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), дорожку можно воспроизвести в системе, однако качество воспроизведения так или иначе ухудшится. Например, звуковая дорожка 5.1 может воспроизводиться как 2-канальное стерео. В этом случае имеет смысл обновить свой пользовательский интерфейс, чтобы оповестить пользователя об ухудшении качества воспроизведения. Если установлено значение [**UnsupportedSubtype**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) или [**UnsupportedEncoderProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), то с установленными на устройстве кодеками воспроизвести дорожку невозможно. Возможно, следует предупредить пользователя и пропустить воспроизведение элемента или внедрить пользовательский интерфейс, позволяющий загрузить нужный кодек. Метод [**GetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.GetEncodingProperties) дорожки можно использовать для определения требуемого кодека для воспроизведения.
 
@@ -128,14 +135,14 @@ ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
 
 [!code-cs[OpenFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetOpenFailed)]
 
-## Задание свойств отображения, используемых системными элементами управления транспортировкой мультимедиа
+## <a name="set-display-properties-used-by-the-system-media-transport-controls"></a>Задание свойств отображения, используемых системными элементами управления транспортировкой мультимедиа
 Начиная с Windows 10 версии 1607 мультимедиа, воспроизводимые в классе [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer), автоматически интегрируются в системные элементы управления транспортировкой мультимедиа (SMTC) по умолчанию. Можно задать метаданные, которые будут отображаться в SMTC, обновив свойства воспроизведения для класса **MediaPlaybackItem**. Получите объект, представляющий свойства отображения для элемента, вызвав метод [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties). Укажите, относится ли элемент воспроизведения к музыке или видео, задав свойство [**Тип**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type). Затем задайте значения свойств объекта [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) или [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties). Вызовите метод [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) для обновления свойств элемента согласно предоставленным вами значениям. Обычно приложение извлекает значения отображения из веб-службы динамически, но в следующем примере показано извлечение со значениями, заданными в коде.
 
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
 [!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
 
-## Добавление внешнего синхронизированного текста с помощью класса TimedTextSource
+## <a name="add-external-timed-text-with-timedtextsource"></a>Добавление внешнего синхронизированного текста с помощью класса TimedTextSource
 
 В некоторых случаях у вас могут быть внешние файлы, содержащие синхронизированный текст, который связан с элементом мультимедиа (например, отдельные файлы с субтитрами на разных языках). Для загрузки внешних файлов с синхронизированным текстом из потока или URI используйте класс [**TimedTextSource**](https://msdn.microsoft.com/library/windows/apps/dn956679).
 
@@ -153,7 +160,7 @@ ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
 
 [!code-cs[TimedTextSourceResolved](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSourceResolved)]
 
-## Добавление дополнительных дорожек метаданных
+## <a name="add-additional-metadata-tracks"></a>Добавление дополнительных дорожек метаданных
 
 Вы можете динамически создавать пользовательские дорожки метаданных в коде и привязывать их к источнику мультимедиа. Создаваемые дорожки могут содержать текст субтитров или надписей либо специальные данные приложения.
 
@@ -173,7 +180,7 @@ ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
 
 [!code-cs[TextCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTextCueEntered)]
 
-## Воспроизведение списка элементов мультимедиа с помощью MediaPlaybackList
+## <a name="play-a-list-of-media-items-with-mediaplaybacklist"></a>Воспроизведение списка элементов мультимедиа с помощью MediaPlaybackList
 
 Класс [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) позволяет создать список воспроизведения элементов мультимедиа, которые представлены объектами **MediaPlaybackItem**.
 
@@ -213,20 +220,15 @@ ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
 [!code-cs[RepeatButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetRepeatButton)]
 
 
-###Обработка сбоев элементов мультимедиа в списке воспроизведения
+###<a name="handle-the-failure-of-media-items-in-a-playback-list"></a>Обработка сбоев элементов мультимедиа в списке воспроизведения
 Событие [**ItemFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.ItemFailed) возникает, если не удается открыть элемент в списке. Свойство [**ErrorCode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError.ErrorCode) объекта [**MediaPlaybackItemError**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError), переданное в обработчик, по возможности перечисляет конкретные причины сбоя, включая сетевые ошибки, ошибки декодирования и шифрования.
 
 [!code-cs[ItemFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetItemFailed)]
 
-## Связанные статьи
+## <a name="related-topics"></a>Связанные статьи
 * [Воспроизведение мультимедиа](media-playback.md)
 * [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Интеграция с системными элементами управления транспортировкой мультимедиа](integrate-with-systemmediatransportcontrols.md)
 * [Воспроизведение мультимедиа в фоновом режиме](background-audio.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

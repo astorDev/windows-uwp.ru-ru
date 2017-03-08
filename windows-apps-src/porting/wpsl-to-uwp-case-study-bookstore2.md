@@ -2,14 +2,21 @@
 author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: "Этот пример, в котором используются данные из примера Bookstore, начинается с приложения Windows Phone Silverlight, отображающего сгруппированные данные в классе LongListSelector."
-title: "Пример переноса Windows Phone Silverlight в UWP, Bookstore2"
+title: "Пример переноса с Windows Phone Silverlight на UWP, Bookstore2"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: c85473d8c3267e4f0ccd6018fe5ee349fdf39284
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7fbe63cba4a825641ea96b39c39d5845758051cb
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore2"></a>Пример переноса Windows Phone Silverlight в UWP: Bookstore2
+# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore2"></a>Пример переноса с Windows Phone Silverlight на UWP: Bookstore2
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -299,9 +306,4 @@ ms.openlocfilehash: c85473d8c3267e4f0ccd6018fe5ee349fdf39284
 ## <a name="conclusion"></a>Заключение
 
 В этом примере представлен более амбициозный пользовательский интерфейс, чем в предыдущем примере. Все средства и концепции Windows Phone Silverlight **LongListSelector** (и не только) оказались доступными для приложения UWP в виде **SemanticZoom**, **ListView**, **GridView** и **CollectionViewSource**. Мы показали, как многократно использовать или копировать и изменять императивный код и разметку в приложении UWP, чтобы расширить его возможности, пользовательский интерфейс и взаимодействие согласно самым узким и самым широким форм-факторам Windows и всем размерам.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

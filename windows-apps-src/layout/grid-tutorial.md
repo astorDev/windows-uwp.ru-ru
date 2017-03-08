@@ -2,9 +2,17 @@
 author: mukin
 Description: "В данной учебной статье приводится пошаговое руководство по созданию пользовательского интерфейса базового приложения. В ней поясняется и демонстрируется использование двух наиболее распространенных элементов XAML — Grid и StackPanel."
 title: "Создание простого погодного приложения с помощью Grid и StackPanel"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 translationtype: Human Translation
-ms.sourcegitcommit: c30aed9681d7c091e9831df3f53d8779dfacce38
-ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 87947b5bd1c1db008a21828c3940475c2b53fd6d
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -14,7 +22,7 @@ ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
 
 ## <a name="prerequisites"></a>Предварительные условия
 - Windows 10 и Microsoft Visual Studio 2015. [Щелкните здесь, чтобы узнать, как подготовиться к работе с Visual Studio](../get-started/get-set-up.md).
-- Сведения о том, как создать базовое приложение "Hello World" с помощью XAML и C#. [Щелкните здесь, чтобы узнать, как создать приложение "Hellow World"](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal), если у вас его еще нет.
+- Сведения о том, как создать базовое приложение "Hello World" с помощью XAML и C#. [Щелкните здесь, чтобы узнать, как создать приложение "Hello World"](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal), если у вас его еще нет.
 
 ## <a name="step-1-create-a-blank-app"></a>Шаг 1. Создайте пустое приложение
 1. В меню Visual Studio выберите **Файл** > **Новый проект**.
@@ -115,9 +123,4 @@ ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
 Введение в проектирование макетов приложений UWP см. в разделе [Введение в проектирование приложений UWP](https://msdn.microsoft.com/windows/uwp/layout/design-and-ui-intro)
 
 Сведения о создании гибких макетов, адаптирующихся к разным размерам экрана, см. в разделе [Определение макетов страниц с помощью XAML](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

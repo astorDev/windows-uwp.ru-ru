@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
 description: "Используйте этот метод в API аналитики для Магазина Windows для получения сводных данных о покупках надстройки в заданном диапазоне дат или с учетом других дополнительных фильтров."
 title: "Получение сведений о покупках надстройки"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, службы Магазина, API аналитики для Магазина Windows, покупки надстройки"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: a79cd324d57151318445df0dedd35a98d9c9f915
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: be69a45586f4b7d66740d141dcc350eafd16bb53
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -177,9 +184,4 @@ Authorization: Bearer <your access token>
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

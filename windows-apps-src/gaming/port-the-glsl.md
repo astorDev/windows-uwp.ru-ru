@@ -3,16 +3,23 @@ author: mtoepke
 title: "Перенос GLSL"
 description: "После переноса кода, который создает и настраивает буферы и объекты шейдеров, следует перенести внутренний код шейдеров из версии GLSL (GL Shader Language) для OpenGL ES 2.0 в HLSL (High-level Shader Language) для Direct3D 11."
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, игры, glsl, перенос"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 883f4423f72f044435ffc0ee9eccdcd5b0d63bfa
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7416a4dafe24f86243a3a9962d01db1dc7b61031
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Перенос GLSL
+# <a name="port-the-glsl"></a>Перенос GLSL
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -53,10 +60,10 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 
 Здесь буфер констант использует регистр b0 для сохранения упакованного буфера. Ссылки на все регистры имеют вид «b\#». Дополнительные сведения о реализации буферов констант, регистров и упаковке данных в HLSL см. в разделе [Константы шейдера (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581).
 
-Инструкции
+<a name="instructions"></a>Инструкции
 ------------
 
-### Шаг1. Перенос вершинного шейдера
+### <a name="step-1-port-the-vertex-shader"></a>Шаг1. Перенос вершинного шейдера
 
 В нашем простом примере OpenGL ES 2.0 вершинный шейдер имеет три входных параметра: постоянная матрица модель-представление-проекция 4×4 и два вектора с 4 координатами. Эти два вектора содержат позицию вершины и ее цвет. Шейдер преобразует вектор позиции в координаты перспективы и назначает их встроенному элементу gl\_Position для растеризации. Цвет вершины также копируется в изменяющуюся переменную для интерполяции при растеризации.
 
@@ -115,7 +122,7 @@ PixelShaderInput main(VertexShaderInput input)
 
 Выходной тип данных PixelShaderInput заполняется при растеризации и предоставляется шейдеру фрагментов (пиксельному шейдеру).
 
-### Шаг 2. Перенос шейдера фрагментов
+### <a name="step-2-port-the-fragment-shader"></a>Шаг 2. Перенос шейдера фрагментов
 
 Наш пример шейдера фрагментов на GLSL весьма прост: предоставляется встроенный элемент gl\_FragColor с интерполированным значением цвета. OpenGL ES 2.0 запишет его в целевой объект отрисовки по умолчанию.
 
@@ -150,7 +157,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 Цвет пикселя для позиции записывается в целевой объект отрисовки. Теперь посмотрим, как отобразить содержимое целевого объекта отрисовки, в разделе [Рисование на экране](draw-to-the-screen.md).
 
-## Предыдущий шаг
+## <a name="previous-step"></a>Предыдущий шаг
 
 
 [Перенос буферов вершин и данных](port-the-vertex-buffers-and-data-config.md) Следующий шаг
@@ -168,7 +175,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 -   Убедитесь, что вы понимаете, для какого уровня компонентов Direct3D вы разрабатываете каждый свой шейдер. Семантика для уровня компонентов 9\_\* отличается от семантики для уровня 11\_1.
 -   Семантика SV\_POSITION сопоставляет соответствующие данные позиции после интерполяции со значениями координат, где x имеет значение от 0 до ширины объекта отрисовки, y — от 0 до высоты объекта отрисовки, z делится на исходное значение однородной координаты w (z/w), а w равняется частному деления 1 на исходное значение w (1/w).
 
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 
 [Инструкции: перенос простого обработчика OpenGL ES 2.0 в Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
@@ -185,10 +192,5 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,19 +3,26 @@ author: TylerMSFT
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: "Рекомендации по использованию пула потоков"
 description: "Этот раздел содержит рекомендации по работе с пулом потоков."
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, поток, пул потоков"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 796625fe5c1892ac99195a4920dbc7e539aebf76
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d3b45da6a11bab926812682c209207bbbb436bf1
+ms.lasthandoff: 02/07/2017
 
 ---
-# Рекомендации по использованию пула потоков
+# <a name="best-practices-for-using-the-thread-pool"></a>Рекомендации по использованию пула потоков
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Этот раздел содержит рекомендации по работе с пулом потоков.
 
-## Следует:
+## <a name="dos"></a>Следует:
 
 
 -   Использовать пул потоков для выполнения параллельных операций в приложении.
@@ -34,7 +41,7 @@ ms.openlocfilehash: 796625fe5c1892ac99195a4920dbc7e539aebf76
 
 -   Использовать предварительно выделенные рабочие элементы, когда нельзя допустить сбой выделения ресурса во время использования.
 
-## Не следует
+## <a name="donts"></a>Не следует
 
 
 -   Создавать периодические таймеры, используя значение *period* &lt;1 мс (включая 0). Иначе рабочий элемент будет действовать как однократный таймер.
@@ -47,16 +54,10 @@ ms.openlocfilehash: 796625fe5c1892ac99195a4920dbc7e539aebf76
 
 -   Выполнять предварительно выделенный рабочий элемент более одного раза без повторной инициализации. [Создание периодического рабочего элемента](create-a-periodic-work-item.md)
 
-## Связанные темы
+## <a name="related-topics"></a>Связанные темы
 
 
 * [Создание периодического рабочего элемента](create-a-periodic-work-item.md)
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Отправка рабочего элемента по таймеру](use-a-timer-to-submit-a-work-item.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

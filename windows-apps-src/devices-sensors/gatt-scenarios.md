@@ -2,15 +2,22 @@
 author: msatranjr
 ms.assetid: 28B30708-FE08-4BE9-AE11-5429F963C330
 title: Bluetooth GATT
-description: "В этой статье представлен обзор Bluetooth Generic Attribute Profile (GATT) для приложений UWP, а также пример кода для трех распространенных сценариев GATT."
+description: "В этой статье представлен обзор Bluetooth Generic Attribute Profile (GATT) для приложений универсальной платформы Windows (UWP), а также пример кода для трех распространенных сценариев GATT."
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c6187f4bfe6f2940b8dbfea0e6441f2fa9ac2c66
+ms.lasthandoff: 02/07/2017
 
 ---
-# Bluetooth GATT
+# <a name="bluetooth-gatt"></a>Bluetooth GATT
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
 
 В этой статье представлен обзор Bluetooth Generic Attribute Profile (GATT) для приложений универсальной платформы Windows (UWP), а также пример кода для трех распространенных сценариев GATT: получение данных Bluetooth, управление термометром Bluetooth с низким энергопотреблением и управление представлением данных устройства Bluetooth с низким энергопотреблением.
 
-## Описание
+## <a name="overview"></a>Описание
 
 С помощью интерфейсов API в пространстве имен [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) разработчики получают доступ к службам, дескрипторам и характеристикам Bluetooth с низким энергопотреблением. Функции устройств Bluetooth с низким энергопотреблением доступны через набор:
 
@@ -44,11 +51,11 @@ API Bluetooth GATT упрощают разработку, взаимодейст
 
 Для удобства Bluetooth SIG ведет [список доступных общих профилей](http://go.microsoft.com/fwlink/p/?LinkID=317977).
 
-## Получение данных Bluetooth
+## <a name="retrieve-bluetooth-data"></a>Получение данных Bluetooth
 
 В этом примере приложение принимает температурные показатели от устройства Bluetooth, в котором реализована служба Bluetooth Health Thermometer Service (Медицинский термометр). Программа указывает, что хочет получать уведомление при наличии нового значения температурного показателя. При помощи регистрации обработчика событий для события изменения значения характеристики термометра приложение будет получать уведомления об этом событии во время работы на переднем плане.
 
-Обратите внимание, что в случае приостановки приложение должно освободить все ресурсы устройства, а после возобновления— снова выполнить его перечисление и инициализацию. Если взаимодействие устройств в фоновом режим является желательным, воспользуйтесь [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx) или [GattCharacteristicNotificationTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.gattcharacteristicnotificationtrigger.aspx). DeviceUseTrigger лучше использовать для событий, происходящих более регулярно, в то время как GattCharacteristicNotificationTrigger подходит для обработки нерегулярных событий.  
+Обратите внимание, что в случае приостановки приложение должно освободить все ресурсы устройства, а после возобновления — снова выполнить его перечисление и инициализацию. Если взаимодействие устройств в фоновом режим является желательным, воспользуйтесь [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx) или [GattCharacteristicNotificationTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.gattcharacteristicnotificationtrigger.aspx). DeviceUseTrigger лучше использовать для событий, происходящих более регулярно, в то время как GattCharacteristicNotificationTrigger подходит для обработки нерегулярных событий.  
 
 ```csharp
 double convertTemperatureData(byte[] temperatureData)
@@ -165,7 +172,7 @@ void MainPage::TemperatureMeasurementChanged(
 }
 ```
 
-## Управление термометром Bluetooth с низким энергопотреблением
+## <a name="control-a-bluetooth-le-thermometer-device"></a>Управление термометром Bluetooth с низким энергопотреблением
 
 В этом примере приложение UWP работает как контроллер для вымышленного термометра Bluetooth с низким энергопотреблением. Устройство также объявляет характеристику формата, которая позволит пользователям получать значение в градусах Цельсия или Фаренгейта в добавление к стандартным характеристикам профиля [**HealthThermometer**](https://msdn.microsoft.com/library/windows/apps/Dn297603). Приложение использует надежные транзакции записи, чтобы убедиться, что формат и интервал измерений задаются как одно значение.
 
@@ -285,7 +292,7 @@ void MainPage::Initialize()
 
 ```
 
-## Управление представлением данных устройства Bluetooth с низким энергопотреблением
+## <a name="control-the-presentation-of-bluetooth-le-device-data"></a>Управление представлением данных устройства Bluetooth с низким энергопотреблением
 
 Устройства Bluetooth с низким энергопотреблением могут предоставлять службу батареи, которая показывает пользователю текущий уровень заряда батареи. Служба батареи включает в себя необязательный дескриптор [**PresentationFormats**](https://msdn.microsoft.com/library/windows/apps/Dn263742), обеспечивающий определенную гибкость при интерпретации данных об уровне заряда батареи. Этот сценарий предоставляет пример приложения, работающего с таким устройством и использующего свойство **PresentationFormats**, чтобы форматировать значение характеристики, перед тем как показать его пользователю.
 
@@ -397,10 +404,5 @@ void MainPage::BatteryLevelChanged(
 ```
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

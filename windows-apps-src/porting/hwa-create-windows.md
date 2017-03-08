@@ -1,11 +1,19 @@
 ---
 author: seksenov
 title: "Размещенные веб-приложения. Преобразование веб-приложения в приложение для Windows с помощью Visual Studio"
-description: "Веб-сайт можно превратить в приложение UWP для Windows 10 с помощью Visual Studio"
+description: "Веб-сайт можно превратить в приложение универсальной платформы Windows (UWP) для Windows 10 с помощью Visual Studio"
 kw: Hosted Web Apps tutorial, Porting to Windows 10 with Visual Studio, How to convert website to Windows, How to add website to Windows Store, Packaging web application for Microsoft Store, Test Windows 10 native features and runtime APIs with CodePen, How to use Windows Cortana Live Tiles Built-in Camera on my Website with remote JavaScript
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Размещенные веб-приложения, портирование веб-приложений в Windows 10, преобразование веб-сайта в приложение Windows, упаковка веб-приложений для Магазина Windows"
+ms.assetid: a58d2c67-77f8-4d01-bea3-a6ebce2d73b9
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 1cb4757896c9fecf05224a26949cd6e2ddffdb45
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b6781883a3e48d35a558798f369e91c4a7ea3bec
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -14,7 +22,7 @@ ms.openlocfilehash: 1cb4757896c9fecf05224a26949cd6e2ddffdb45
 Узнайте, как быстро создать приложение UWP для Windows 10, имея только URL-адрес веб-сайта. 
 
 > [!NOTE]
-> Следующие инструкции рассчитаны на применение на платформе разработки для Windows. Пользователям компьютеров Mac следует ознакомиться с разделом [Инструкции по использованию платформы разработки для Mac](/hwa-create-mac.md).
+> Следующие инструкции рассчитаны на применение на платформе разработки для Windows. Пользователям компьютеров Mac следует ознакомиться с разделом [Инструкции по использованию платформы разработки для Mac](./hwa-create-mac.md).
 
 ## <a name="what-you-need-to-develop-on-windows"></a>Необходимые инструменты для разработки на Windows
 
@@ -96,9 +104,4 @@ function cameraCapture() {
 - [Улучшение веб-приложения путем обращения к функциям универсальной платформы Windows (UWP)](hwa-access-features.md)
 - [Руководство по работе с приложениями универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [Загружаемые ресурсы проектирования для приложений Магазина Windows](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

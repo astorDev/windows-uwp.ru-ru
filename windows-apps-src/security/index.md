@@ -1,18 +1,25 @@
 ---
 title: "Безопасность"
-description: "В этом разделе содержатся статьи о создании безопасных приложений универсальной платформы Windows (UWP) для Windows 10."
+description: "В этом разделе содержатся статьи о создании безопасных приложений универсальной платформы Windows (UWP) для Windows 10."
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 82f6e2decde2d332bd08b0b9798350b973860f21
-ms.openlocfilehash: b30492c3c74b19d5ce306829302be17ff303723f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e769a9aa7d381a527c1e1504efc52c2ead031c70
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="security"></a>Безопасность
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе содержатся статьи о создании безопасных приложений универсальной платформы Windows (UWP) для Windows 10.
 
@@ -51,9 +58,4 @@ ms.openlocfilehash: b30492c3c74b19d5ce306829302be17ff303723f
 | [Коды проверки подлинности сообщений, хэши и подписи](macs-hashes-and-signatures.md)               | В этой статье описано выявление в приложениях несанкционированных изменений сообщений с помощью кодов проверки подлинности сообщения (MAC), хэшей и подписей.                                                                                                                                                                                                                                                                                                                                                                                |
 | [Ограничения на экспорт, связанные со средствами шифрования](export-restrictions-on-cryptography.md) | В данной статье рассказывается, как определить, используются ли в вашем приложении средства шифрования, из-за которых вам может быть отказано в публикации приложения в .                                                                                                                                                                                                                                                                                                                                                                                                     |
 | [Общие задачи шифрования](common-cryptography-tasks.md)                     | В этих статьях приводится пример кода для типичных задач шифрования, включая создание случайных значений, сравнение буферов, преобразование между строками и двоичными данными, копирование в массив байтов и из него, а также кодирование и декодирование данных.                                                                                                                                                                                                                                                                                    |
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

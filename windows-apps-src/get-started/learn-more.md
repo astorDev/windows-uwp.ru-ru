@@ -10,8 +10,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
-ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0bf7959be6278577cc8fe93011591e4523bee623
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -19,9 +20,9 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 
 # <a name="whats-next"></a>Дальнейшие действия
 
-Итак, с чего начать, если вы хотите создать приложение и опубликовать его в Магазине Windows? Если вы не знакомы с платформой UWP, посмотрите видеоматериалы на сайте <a href="https://channel9.msdn.com/">Channel 9</a> и пройдите курсы <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a>. Если вы уже знакомы с XAML и C#, ознакомьтесь с разделами ниже или перейдите непосредственно к [загрузке примеров](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
+Итак, с чего начать, если вы хотите создать приложение и опубликовать его в Магазине Windows? Если вы не знакомы с платформой UWP, посмотрите видеоматериалы на сайте <a href="https://channel9.msdn.com/">Channel 9</a> и пройдите курсы <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a>. Если вы уже знакомы с XAML и C#, ознакомьтесь с разделами ниже или перейдите непосредственно к [загрузке примеров](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
-Существует много средств и платформ, которые помогут вам в создании приложений; многие из них поддерживают межплатформенную разработку. Например, если требуется создать игры 2D, имеет смысл изучить раздел <a href="http://www.monogame.net">MonoGame</a>. Для разработчиков игр 3D окажется полезным раздел <a href="http://www.unity3d.com">Unity</a>, а для разработчиков приложений для мобильных устройств — <a href="http://www.xamarin.com">Xamarin</a>.
+Существует много средств и платформ, которые помогут вам в создании приложений; многие из них поддерживают межплатформенную разработку. Например, если вы хотите писать двумерные игры, возможно, вас заинтересует <a href="http://www.monogame.net">Monogame</a> или некоторые из множества [платформ JavaScript и HTML](https://html5gameengine.com/). Для разработчиков трехмерных игр окажется полезным раздел <a href="http://www.unity3d.com">Unity</a>, а для разработчиков приложений для мобильных устройств — <a href="http://www.xamarin.com">Xamarin</a>.
 
 Если вы приступаете к работе, рекомендуется ознакомиться с разделами, посвященными UWP, чтобы получить представление об этой платформе, а затем изучить создание пользовательского интерфейса с использованием элементов управления XAML и их последующей настройкой. Для создания макета приложения вы будете использовать XAML (руководство с пошаговыми инструкциями доступно [здесь](../layout/grid-tutorial.md)), однако основным преимуществом XAML является использование *привязок данных*, объединяющих элементы управления и информацию, которую требуется отобразить в вашем приложении: если вы только начинаете работать с платформой Windows, очень важно понять этот материал. 
 <table class="wdg-noborder">
@@ -94,7 +95,7 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 
 ## <a name="finding-help-in-the-dev-center"></a>Поиск справки в Центре разработки
 
-[Центр разработки Microsoft](http://devcenter.microsoft.com) содержит обширнейшую документацию для различных средств, инфраструктуры и платформ. При поиске тем и примеров обязательно убедитесь, что содержимое относится к UWP. Как убедиться, что вы читаете нужное содержимое?
+[Центр разработки Microsoft](http://developer.microsoft.com) содержит обширнейшую документацию для различных средств, инфраструктуры и платформ. При поиске тем и примеров обязательно убедитесь, что содержимое относится к UWP. Как убедиться, что вы читаете нужное содержимое?
 В URL-адресе раздела концептуального содержимого (т. е. содержимого, не относящегося к справочным материалам по API) присутствуют буквы UWP. В пути содержимого по API присутствует строка «Windows Runtime APIs» (API среды выполнения Windows). 
 
 ![Пример концептуального раздела UWP](images/devcenter-topic2.png)
@@ -147,7 +148,7 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 <td align="left"><strong>Перенос</strong></td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/Mt238321">Использование навыков разработки для Android и iOS для быстрого создания приложений UWP.</a></td>
 </tr>
-<tr class="odd" style="background-color: #f2f2f2">
+<tr class="even" style="background-color: #f2f2f2">
 <td align="left"><strong>Мосты Windows</strong></td>
 <td align="left"><a href="https://developer.microsoft.com/windows/bridges">Средства для обновления старых приложений и приложений iOS до приложений UWP.</a></td>
 </tr>
@@ -155,13 +156,17 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 <td align="left"><strong>Xamarin</strong></td>
 <td align="left"><a href="https://www.xamarin.com">Использование C# для создания приложений для iOS, Android и Windows 10.</a></td>
 </tr>
-<tr class="odd" style="background-color: #ffffff">
+<tr class="even" style="background-color: #f2f2f2">
 <td align="left"><strong>Фрагменты задач</strong></td>
 <td align="left"><a href="https://github.com/Microsoft/Windows-task-snippets">Готовый код, выполняющий небольшие, но полезные задачи.</a></td>
 </tr>
-<tr class="odd" style="background-color: #f2f2f2">
+<tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>Пошаговые руководства</strong></td>
 <td align="left"><a href="https://developer.microsoft.com/windows/develop">Примеры кода для определенных функций UWP.</a></td>
+</tr>
+<tr class="even" style="background-color: #f2f2f2">
+<td align="left"><strong>Оборудование</strong></td>
+<td align="left"><a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Developer/categoryID.69418300?icid=en_US_Store_UH_BusEd_Dev">Оборудование для разработчиков в Магазине Майкрософт.</a></td>
 </tr>
 </table>
 
@@ -169,10 +174,5 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

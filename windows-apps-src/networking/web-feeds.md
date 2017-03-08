@@ -1,17 +1,24 @@
 ---
 author: DelfCo
-description: "Получайте или создавайте самое свежее и популярное веб-содержимое с помощью сводных веб-каналов, созданных по стандартам RSS и Atom с помощью компонентов в пространстве имен Windows.Web.Syndication."
+description: "Получайте или создавайте самое свежее и популярное веб-содержимое с помощью сводных веб-каналов, созданных по стандартам RSS и Atom с использованием компонентов в пространстве имен Windows.Web.Syndication."
 title: "Каналы RSS и Atom"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a30b58737befaae10a1dbb30416f338d8eb1cbb1
-ms.openlocfilehash: 623c11eba097a072b456738b84750eb4b2d888bb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: da28caa7703a04b1d11254d9c894cf02b044ab64
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="rssatom-feeds"></a>Каналы RSS и Atom
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -230,9 +237,4 @@ function displayCurrentItem() {
     });
 }
 ```
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

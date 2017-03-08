@@ -2,14 +2,22 @@
 author: JordanEllis6809
 title: "Разработка игр для Xbox на HTML"
 description: "Разработка игр UWP для Xbox на HTML."
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 translationtype: Human Translation
-ms.sourcegitcommit: c20aaad74acde12cdf2b7db342dac2c8c376560b
-ms.openlocfilehash: 992182f69fe65967771b8bf75b1cb9883da3633a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 9f7a70bb726fc6eb6f7465068cf33acb7aa33a39
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Перенос игр на HTML для Xbox на UWP
-Xbox One— превосходная платформа для игр на HTML5. Игры на HTML5 работают на браузерном движке [Microsoft Edge](https://developer.microsoft.com/microsoft-edge/). Edge отличается высокой скоростью работы и полностью поддерживает такие возможности HTML5 и CSS 3, как WebGL и холст.
+# <a name="bringing-html-games-to-uwp-on-xbox"></a>Перенос игр на HTML для Xbox на UWP
+Xbox One — превосходная платформа для игр на HTML5. Игры на HTML5 работают на браузерном движке [Microsoft Edge](https://developer.microsoft.com/microsoft-edge/). Edge отличается высокой скоростью работы и полностью поддерживает такие возможности HTML5 и CSS 3, как WebGL и холст.
 
 В популярных игровых движках, например [Construct 2](https://www.scirra.com/blog/176/announcing-xbox-one-export-beta), реализована поддержка Xbox One. Мы не проводили тестирование всех платформ и движков HTML, однако, судя по нашему опыту работы с некоторыми из них, мы считаем, что большинство этих платформ будет совместимо с Xbox One.
 
@@ -19,12 +27,7 @@ Xbox One работает на универсальной платформе Win
 
 Чтобы начать работу, скачайте необходимый вам движок и найдите инструкции по его использованию для разработки приложений для Windows 10. Также ознакомьтесь с [руководством по началу работы](getting-started.md), в котором содержатся инструкции по превращению вашей консоли в пакет средств разработки ПО, а также развертыванию приложений из Visual Studio.
 
-## См. также
+## <a name="see-also"></a>См. также
 - [Перенос существующих игр на Xbox](development-lanes-landing.md)
 - [Приложения UWP для Xbox One](index.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

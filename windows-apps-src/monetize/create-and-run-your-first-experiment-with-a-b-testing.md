@@ -3,9 +3,16 @@ author: mcleanbyron
 Description: "В этом пошаговом руководстве вы сможете создать, запустить и администрировать свой первый эксперимент с использованием A/B-тестирования."
 title: "Создание и запуск первого эксперимента с использованием A/B-тестирования"
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, Microsoft Store Services SDK, A/B-тесты, эксперименты"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 65785e53b2e5ba788dbda533373737e193e1c792
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb9e93747fa77031fe906d9ab7463fc41b73cdeb
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -103,9 +110,4 @@ ms.openlocfilehash: 65785e53b2e5ba788dbda533373737e193e1c792
 * [Определение эксперимента на панели мониторинга Центра разработки](define-your-experiment-in-the-dev-center-dashboard.md)
 * [Управление экспериментом на панели мониторинга Центра разработки](manage-your-experiment.md)
 * [Выполнение экспериментов в приложении с использованием A/B-тестирования](run-app-experiments-with-a-b-testing.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,23 +3,30 @@ description: "В этой статье объясняется, как обесп
 title: "Копирование и вставка"
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0dceeb53737cc790e1c3810b0487e0a839968bef
-ms.openlocfilehash: 2655dc67b14ba665deabc879f13340202d97c494
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c9cef41c5c4671d85854f3daf79cb7d6fd51a6f8
+ms.lasthandoff: 02/07/2017
 
 ---
-#Копирование и вставка
+#<a name="copy-and-paste"></a>Копирование и вставка
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows8.x можно найти в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье объясняется, как обеспечить поддержку копирования и вставки в приложениях универсальной платформы Windows (UWP) с помощью буфера обмена. Копирование и вставка — классический способ обмена данными между приложениями или внутри одного приложения. Почти каждое приложение в той или иной степени поддерживает операции буфера обмена.
 
-## Проверка встроенной поддержки буфера обмена
+## <a name="check-for-built-in-clipboard-support"></a>Проверка встроенной поддержки буфера обмена
 
 Во многих случаях вам не потребуется писать какой-либо код для поддержки операций буфера обмена. Многие элементы управления XAML, которые вы по умолчанию можете использовать для создания приложений, поддерживают операции буфера обмена. 
 
-## Подготовка
+## <a name="get-set-up"></a>Подготовка
 
 Сначала добавьте в приложение пространство имен [**Windows.ApplicationModel.DataTransfer**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer). Затем добавьте экземпляр объекта [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage). Этот объект содержит данные, которые пользователь хочет скопировать, и все свойства (например описание), которые вы захотите в него включить.
 
@@ -30,7 +37,7 @@ DataPackage dataPackage = new DataPackage();
 
 <!-- AuthenticateAsync-->
 
-## Копирование и вырезание
+## <a name="copy-and-cut"></a>Копирование и вырезание
 
 Копирование и вырезание (или по-другому *перемещение*) работают практически так же. Выберите необходимую операцию с помощью свойства [**RequestedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage.RequestedOperation).
 
@@ -40,7 +47,7 @@ dataPackage.RequestedOperation = DataPackageOperation.Copy;
 // or cut
 dataPackage.RequestedOperation = DataPackageOperation.Move;
 ```
-## Перетаскивание
+## <a name="drag-and-drop"></a>Перетаскивание
 
 Затем вы можете добавить выбранные пользователем данные в объект [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage). Если класс **DataPackage** поддерживает эти данные, вы можете использовать один из соответствующих методов в объекте **DataPackage**. Вот как добавить текст:
 
@@ -53,7 +60,7 @@ dataPackage.SetText("Hello World!");
 ```cs
 Clipboard.SetContent(dataPackage);
 ```
-## Вставка
+## <a name="paste"></a>Вставка
 
 Чтобы получить содержимое буфера обмена, вызовите статический метод [**GetContent**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.GetContent). Этот метод возвращает объект [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView) с содержимым. Этот объект практически идентичен объекту [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage), но его содержимое доступно только для чтения. Чтобы определить доступные форматы данных, вы можете использовать метод [**AvailableFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.AvailableFormats) или [**Contains**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.Contains(System.String)) этого объекта. Затем вы можете вызвать соответствующий метод [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView), чтобы получить эти данные.
 
@@ -67,7 +74,7 @@ if (dataPackageView.Contains(StandardDataFormats.Text))
 }
 ```
 
-## Отслеживание изменений в буфере обмена
+## <a name="track-changes-to-the-clipboard"></a>Отслеживание изменений в буфере обмена
 
 В дополнение к командам копирования и вставки вам также может потребоваться отслеживать изменения в буфере обмена. Это можно сделать путем обработки события [**ContentChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.ContentChanged) буфера обмена.
 
@@ -84,7 +91,7 @@ Clipboard.ContentChanged += (s, e) =>
 }
 ```
 
-## См. также
+## <a name="see-also"></a>См. также
 
 * [Связь между приложениями](index.md)
 * [DataTransfer](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.aspx)
@@ -102,10 +109,5 @@ Clipboard.ContentChanged += (s, e) =>
 * [AvailableFormats](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.availableformats.aspx)
 * [Contains](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.contains.aspx)
 * [ContentChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.contentchanged.aspx)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

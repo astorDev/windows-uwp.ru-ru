@@ -1,15 +1,22 @@
 ---
 author: mcleblanc
 description: "Мы настоятельно рекомендуем прочитать до конца это руководство по переносу, но мы также понимаем, что вы жаждете двигаться вперед и добраться до этапа, на котором выполняется построение и запуск вашего проекта."
-title: "Устранение неполадок при переносе среды выполнения Windows 8.x в UWP"
+title: "Устранение неполадок при переносе со среды выполнения Windows 8.x на UWP"
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 6bb6035757c2629c5cbcc3e773703b4f659c5237
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6c10376854656abe276c53a9b6778665c1d47a4b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a>Устранение неполадок при переносе среды выполнения Windows 8.x в UWP
+# <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a>Устранение неполадок при переносе со среды выполнения Windows 8.x на UWP
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -50,10 +57,5 @@ ms.openlocfilehash: 6bb6035757c2629c5cbcc3e773703b4f659c5237
 | Компилятор C# выдает ошибку "*Тип или имя пространства имен "<name>" не может быть найдено \[...\]*" или "*Тип или имя пространства имен "<name>" не существует в пространстве имен \[...\]*" или "*Тип или имя пространства имен "<name>" не существует в текущем контексте*". | Скорее всего, это значит, что данный тип реализован в SDK расширения (хотя иногда устранить проблему не так просто). Используйте справку по [API-интерфейсам Windows](https://msdn.microsoft.com/library/windows/apps/bg124285), чтобы определить, в каком SDK расширения реализован API, а затем используйте команду Visual Studio **Добавить**  > **Ссылку**, чтобы добавить ссылку на SDK в проект. Если приложение предназначено для набора API-интерфейсов, известного как семейство универсальных устройств, очень важно использовать класс [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) для тестирования присутствия SDK расширения перед их вызовом (это называется адаптивным кодом). Если существует универсальный API-интерфейс, тогда желательно всегда его использовать вместо API-интерфейса в SDK расширения. Подробнее см. в разделе [SDK расширения](w8x-to-uwp-porting-to-a-uwp-project.md). |
 
 Следующий раздел называется [Перенос XAML и пользовательского интерфейса](w8x-to-uwp-porting-xaml-and-ui.md).
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

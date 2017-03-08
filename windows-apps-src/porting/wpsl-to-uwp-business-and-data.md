@@ -1,15 +1,22 @@
 ---
 author: mcleblanc
 description: "За вашим пользовательским интерфейсом расположены уровни бизнеса и данных."
-title: "Перенос уровней бизнеса и данных для Windows Phone Silverlight в UWP"
+title: "Перенос уровней бизнеса и данных c Windows Phone Silverlight на UWP"
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 6e6cea49064f49a15b557aad037c5baaa1e9b57b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 40b3d2b5b4bafac25726e27fd19a2cd5d71c4fa3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  <a name="porting-windows-phone-silverlight-business-and-data-layers-to-uwp"></a>Перенос уровней бизнеса и данных для Windows Phone Silverlight в UWP
+#  <a name="porting-windows-phone-silverlight-business-and-data-layers-to-uwp"></a>Перенос уровней бизнеса и данных c Windows Phone Silverlight на UWP
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -138,10 +145,5 @@ UWP частично поддерживает класс **System.Net.HttpWebReq
 
 * [Сопоставление пространства имен и класса](wpsl-to-uwp-namespace-and-class-mappings.md)
  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

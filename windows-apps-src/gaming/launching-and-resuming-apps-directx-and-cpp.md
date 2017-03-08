@@ -3,16 +3,23 @@ author: mtoepke
 title: "Запуск и возобновление работы приложений (DirectX и C++)"
 description: "Узнайте о запуске, приостановке и возобновлении работы приложений универсальной платформы Windows (UWP), использующих DirectX."
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, directx, запуск, возобновление"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9a0a1314aa0b174bfb1c44e5280455ab668a42b7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c3557a11f8f18262f0b5e0c6ad6cac88d5274f73
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Запуск и возобновление работы приложений (DirectX и C++)
+# <a name="launching-and-resuming-apps-directx-and-c"></a>Запуск и возобновление работы приложений (DirectX и C++)
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Узнайте о запуске, приостановке и возобновлении работы приложений универсальной платформы Windows (UWP), использующих DirectX.
 
@@ -29,10 +36,5 @@ ms.openlocfilehash: 9a0a1314aa0b174bfb1c44e5280455ab668a42b7
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

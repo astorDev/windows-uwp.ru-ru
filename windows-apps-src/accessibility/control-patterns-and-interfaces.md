@@ -5,13 +5,20 @@ ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
 title: "Шаблоны и интерфейсы элементов управления"
 label: Control patterns and interfaces
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 74e5af4c3eb5a2e17c95afce156474b613e966c5
-ms.openlocfilehash: d2ae98f95538c014ef256f5d4a400aabb36c3118
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: bec52abfca19634948e3ad2a1959b51b1df3eced
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Шаблоны и интерфейсы элементов управления  
+# <a name="control-patterns-and-interfaces"></a>Шаблоны и интерфейсы элементов управления  
 
 
 
@@ -64,12 +71,7 @@ ms.openlocfilehash: d2ae98f95538c014ef256f5d4a400aabb36c3118
 > Приложения Магазина Windows Phone поддерживают не все перечисленные здесь шаблоны элементов управления модели автоматизации пользовательского интерфейса. Примеры неподдерживаемых шаблонов: **Annotation**, **Dock**, **Drag**, **DropTarget**, **ObjectModel**.
 
 <span id="related_topics"/>
-## Связанные темы  
+## <a name="related-topics"></a>Связанные темы  
 * [Настраиваемые одноранговые элементы автоматизации](custom-automation-peers.md)
 * [Специальные возможности](accessibility.md) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

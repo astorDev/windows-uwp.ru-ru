@@ -3,16 +3,23 @@ author: laurenhughes
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: "Создание, запись и чтение файла"
 description: "Считайте и запишите файл с помощью объекта StorageFile."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 0709d9c9126dc4523eae58d5db8d9037a2fb618e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ae2754f543a3bc799b3d5af4c5c3c46f654c1ed7
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="create-write-and-read-a-file"></a>Создание, запись и чтение файла
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -256,9 +263,4 @@ Dim dataReader As New DataReader(inputStream)
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

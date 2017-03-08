@@ -3,20 +3,27 @@ author: TylerMSFT
 title: "Запуск приложения Магазина Windows"
 description: "В этом разделе описывается схема URI ms-windows-store. Ваше приложение может использовать эту схему URI для запуска приложения Магазина Windows на определенных страница в Магазине."
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: b66ae37adec1b68653c0fe7d552a84f61d57acd9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d80055e8c8ca1e8586cb8f2a54612206301282a1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Запуск приложения Магазина Windows
+# <a name="launch-the-windows-store-app"></a>Запуск приложения Магазина Windows
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе описывается схема URI **ms-windows-store:**. Ваше приложение может использовать эту схему URI для запуска приложения Магазина Windows на определенных страницах в Магазине.
 
-## Справка по схеме URI ms-windows-store:
+## <a name="ms-windows-store-uri-scheme-reference"></a>Справка по схеме URI ms-windows-store:
 
 <table>
 <tr><th>описание</th><th></th><th>Схема URI</th></tr>
@@ -129,9 +136,4 @@ ms.openlocfilehash: b66ae37adec1b68653c0fe7d552a84f61d57acd9
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

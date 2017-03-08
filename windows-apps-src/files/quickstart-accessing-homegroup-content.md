@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: "Доступ к содержимому домашней группы"
 description: "Получайте доступ к содержимому в папке домашней группы пользователя, включая изображения, музыку и видео."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: d55908186e5e0687c7dbd22fee9d2f7b70ba1707
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 04d34aa8f1cff2460462fff8100ab345a04d9000
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="accessing-homegroup-content"></a>Доступ к содержимому домашней группы
@@ -13,7 +20,7 @@ ms.openlocfilehash: d55908186e5e0687c7dbd22fee9d2f7b70ba1707
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Важные API **
+**Важные API**
 
 -   [**Класс Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151)
 
@@ -208,9 +215,4 @@ ms.openlocfilehash: d55908186e5e0687c7dbd22fee9d2f7b70ba1707
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

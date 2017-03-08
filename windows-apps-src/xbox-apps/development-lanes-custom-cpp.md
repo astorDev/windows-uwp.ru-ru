@@ -2,12 +2,20 @@
 author: JordanEllis6809
 title: "Разработка игр на C++ для Xbox с использованием универсальной платформы Windows (UWP)"
 description: "Разработка игр на C++ для Xbox с использованием UWP."
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 translationtype: Human Translation
-ms.sourcegitcommit: 1902dd7e47d6d257a90313014ba85d9ae3880493
-ms.openlocfilehash: 585f8a38cec698110f5ba7e23fa6c0f14d19d5bb
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ff4686aeefbce41330a0fb3bf112a30ffe2b504e
+ms.lasthandoff: 02/08/2017
 
 ---
-# Перенос пользовательских игр на C++ для Xbox на UWP
+# <a name="bringing-custom-c-games-to-uwp-on-xbox"></a>Перенос пользовательских игр на C++ для Xbox на UWP
 
 Если вы создаете пользовательскую версию средств разработки C++, Xbox One обеспечивает полную поддержку C++. 
 
@@ -21,13 +29,8 @@ ms.openlocfilehash: 585f8a38cec698110f5ba7e23fa6c0f14d19d5bb
 > В настоящий момент Xbox One не поддерживает DirectX 12.
 
 
-## См. также
+## <a name="see-also"></a>См. также
 - [Перенос существующих игр на Xbox](development-lanes-landing.md)
 - [Приложения UWP для Xbox One](index.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

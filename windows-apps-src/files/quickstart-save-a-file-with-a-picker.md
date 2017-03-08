@@ -3,16 +3,23 @@ author: laurenhughes
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: "Сохранение файла с помощью средства выбора"
 description: "Чтобы дать пользователям возможность задать имя и расположение, в которое приложение должно сохранить файл, воспользуйтесь средством FileSavePicker."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: ae6a9806e982a866834371a60788f7a788b04e47
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 46f79b34762eeb3424b887662418105e2e8a3ec2
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="save-a-file-with-a-picker"></a>Сохранение файла с помощью средства выбора
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -111,9 +118,4 @@ Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

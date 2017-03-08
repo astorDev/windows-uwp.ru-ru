@@ -1,19 +1,26 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: c43d4af3-9a1a-4eae-a137-1267c293c1b5
 description: "В этой статье показано, как использовать особенные элементы пользовательского интерфейса камеры, которые присутствуют только на мобильных устройствах."
 title: "Функции пользовательского интерфейса камеры для мобильных устройств"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 77d1709cd42253c229b01df21ae3416e57c1c2ab
-ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ab74d720369bd95c10c8804836be1cc747d57931
+ms.lasthandoff: 02/08/2017
 
 ---
 
-#Функции пользовательского интерфейса камеры для мобильных устройств
+#<a name="camera-ui-features-for-mobile-devices"></a>Функции пользовательского интерфейса камеры для мобильных устройств
 
 В этой статье показано, как использовать особенные элементы пользовательского интерфейса камеры, которые присутствуют только на мобильных устройствах. 
 
-## Добавление в проект расширения для мобильных устройств 
+## <a name="add-the-mobile-extension-to-your-project"></a>Добавление в проект расширения для мобильных устройств 
 
 Чтобы использовать эти функции, добавьте в проект ссылку на Microsoft Mobile Extension SDK для универсальной платформы приложений.
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
 
 3.  Установите флажок **Microsoft Desktop Extension SDK для универсальной платформы приложений**.
 
-## Скрытие строки состояния
+## <a name="hide-the-status-bar"></a>Скрытие строки состояния
 
 На мобильных устройствах доступен элемент управления [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864), который предоставляет пользователю сведения о состоянии устройства. Этот элемент занимает место на экране, что может повлиять на возможности пользовательского интерфейса для захвата мультимедиа. Строку строка состояния можно скрыть с помощью метода [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339), однако его следует вызывать из условного блока, в котором метод [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) определяет доступность API. Этот метод возвратит значение true только на мобильных устройствах, которые поддерживают строку состояния. Строку состояния необходимо скрывать при запуске приложения и во время предварительного просмотра с камеры.
 
@@ -35,7 +42,7 @@ ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
 
 [!code-cs[ShowStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
 
-## Использование аппаратной кнопки камеры
+## <a name="use-the-hardware-camera-button"></a>Использование аппаратной кнопки камеры
 
 На некоторых мобильных устройствах есть специальная кнопка камеры, которую некоторые пользователи применяют вместо элемента управления на экране. Чтобы получать уведомления о нажатии кнопки камеры, зарегистрируйте обработчик события [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805). Поскольку этот API доступен только на мобильных устройствах, перед попыткой получить к нему доступ необходимо снова использовать **IsTypePresent**, чтобы убедиться, что API поддерживается на текущем устройстве.
 
@@ -52,9 +59,9 @@ ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
 [!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
 > [!NOTE]
-> Эта статья адресована разработчикам приложений для Windows10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).                                                                                   |
+> Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).                                                                                   |
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -62,10 +69,5 @@ ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

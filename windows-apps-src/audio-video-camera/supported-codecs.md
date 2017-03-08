@@ -3,22 +3,29 @@ author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "В этой статье перечисляются аудио- и видеокодеки и форматы, поддерживаемые в приложениях UWP."
 title: "Поддерживаемые кодеки"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7bd0002d62519757cf582d6070a22890a0e1837e
-ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2c477e9dc0cc86534a179edb8e3a9415f4872d93
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Поддерживаемые кодеки
+# <a name="supported-codecs"></a>Поддерживаемые кодеки
 
-\[ Обновлено для приложений UWP в Windows10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье перечисляются аудио-, видеокодеки, кодеки изображений и форматы, поддерживаемые в приложениях UWP.
 
 В следующих таблицах буква "D" указывает на поддержку декодера, а буква "E" — на поддержку кодировщика.
 
-## Поддержка аудиокодеков и форматов
+## <a name="audio-codec--format-support"></a>Поддержка аудиокодеков и форматов
 
 В следующих таблицах указана поддержка аудиокодеков и форматов для каждого семейства устройств.
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### Настольные ПК
+### <a name="desktop"></a>Настольные ПК
 
 <table>
 <colgroup>
@@ -338,7 +345,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### Мобильные устройства
+### <a name="mobile"></a>Мобильные устройства
 
 <table>
 <colgroup>
@@ -649,7 +656,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT Core (x86)
+### <a name="iot-core-x86"></a>IoT Core (x86)
 
 <table>
 <colgroup>
@@ -960,7 +967,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT Core (ARM)
+### <a name="iot-core-arm"></a>IoT Core (ARM)
 
 <table>
 <colgroup>
@@ -1271,7 +1278,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### XBox
+### <a name="xbox"></a>XBox
 
 <table>
 <colgroup>
@@ -1582,7 +1589,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-## Поддержка видеокодеков и форматов
+## <a name="video-codec--format-support"></a>Поддержка видеокодеков и форматов
 
 В следующих таблицах указана поддержка видеокодеков и форматов для каждого семейства устройств.
 
@@ -1592,7 +1599,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### Настольные ПК
+### <a name="desktop"></a>Настольные ПК
 
 <table>
 <colgroup>
@@ -1811,7 +1818,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### Мобильные устройства
+### <a name="mobile"></a>Мобильные устройства
 
 <table>
 <colgroup>
@@ -2030,7 +2037,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT Core (x86)
+### <a name="iot-core-x86"></a>IoT Core (x86)
 
 <table>
 <colgroup>
@@ -2249,7 +2256,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT (ARM)
+### <a name="iot-arm"></a>IoT (ARM)
 
 <table>
 <colgroup>
@@ -2468,7 +2475,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### XBox
+### <a name="xbox"></a>XBox
 
 <table>
 <colgroup>
@@ -2685,7 +2692,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 </tbody>
 </table>
 
-## Поддержка кодеков и форматов изображений 
+## <a name="image-codec--format-support"></a>Поддержка кодеков и форматов изображений 
 
 <table>
 <colgroup>
@@ -2757,8 +2764,3 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 <sup>3</sup> Поддерживаются только некоторые форматы camera RAW.  
 
 Дополнительные сведения о кодеках изображений см. в разделе [Собственные кодеки WIC](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx).
-
-
-<!--HONumber=Nov16_HO1-->
-
-

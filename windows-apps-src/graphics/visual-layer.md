@@ -2,15 +2,22 @@
 author: scottmill
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: "Визуальный уровень"
-description: "API-интерфейс Windows.UI.Composition предоставляет доступ к уровню композиции, находящемуся между уровнем платформы (XAML) и уровнем графики (DirectX)."
+description: "API Windows.UI.Composition предоставляет доступ к уровню композиции, находящемуся между уровнем платформы (XAML) и уровнем графики (DirectX)."
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9ea05f7ba76c7813b200a4c8cd021613f980355d
-ms.openlocfilehash: de6fe0688bec196fc90433ab9274f2e4c4fd9b90
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d1c676808b8b63f42b89a22862eaab63ddc94141
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="visual-layer"></a>Визуальный уровень
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В Windows 10 была проведена значительная работа по созданию нового единого компоновщика и модуля отрисовки для всех Windows-приложений, как классических, так и мобильных. Результатом этой работы стало создание единого API композиции WinRT под названием Windows.UI.Composition, который предоставляет доступ к новым облегченным объектам композиции, а также к новым видам анимации и эффектов, управляемым с помощью компоновщика.
 
@@ -30,7 +37,7 @@ Windows.UI.Composition — это декларативный API [абстрак
 -   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) — базовый объект. Обладает большей частью свойств, которые наследуются другими объектами класса Visual.
 -   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) является потомком объекта класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) и позволяет добавлять дочерние визуальные объекты.
 -   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) является потомком объекта класса [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) и включает содержимое в виде изображений, эффектов и цепочек переключений.
--   [**LayerVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.layervisual.aspx) — ContainerVisual, потомки которого преобразованы в один уровень.  
+-   [**LayerVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.layervisual.aspx) — ContainerVisual, потомки которого преобразованы в один уровень.  
 -   [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) — фабрика объектов, которая управляет взаимодействием между приложением и процессом компоновщика системы.
 
 Компоновщик также является фабрикой для ряда других объектов композиции, используемых для обрезки или преобразования визуальных объектов дерева, а также богатого набора анимаций и эффектов.
@@ -66,7 +73,7 @@ Windows.UI.Composition — это декларативный API [абстрак
 -   Ознакомьтесь со статьей Кенни Керра (Kenny Kerr) на MSDN, которая посвящена этому API: [Graphics and Animation — Windows Composition Turns 10](https://msdn.microsoft.com/magazine/mt590968) (Графика и анимация — композиция в Windows 10)
 -   Расширенные примеры пользовательского интерфейса и композиции в [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs).
 -   [**Полная справочная документация для API**](https://msdn.microsoft.com/library/windows/apps/Dn706878).
--   [Известные проблемы](http://go.microsoft.com/fwlink/?LinkId=823237).
+
 
  
 
@@ -74,10 +81,5 @@ Windows.UI.Composition — это декларативный API [абстрак
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

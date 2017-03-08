@@ -2,16 +2,24 @@
 author: WilliamsJason
 title: "Справочник по API Fiddler для портала устройств"
 description: "Узнайте о том, как программно включить или отключить трассировку Fiddler."
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 translationtype: Human Translation
-ms.sourcegitcommit: 3cc2a4bd1859e46a73f3e806489eac7381fa6c17
-ms.openlocfilehash: bd215058c71118d8b3e5ce81e2302ce8b151c3f6
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 24e966f953928d238f9197359e0b539b8a3e5c3c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Справочник по API параметров Fiddler   
+# <a name="fiddler-settings-api-reference"></a>Справочник по API параметров Fiddler   
 В комплекте средств разработки можно включать и отключать трассировку сети Fiddler с помощью API REST.
 
-## Включение трассировки Fiddler
+## <a name="enable-fiddler-tracing"></a>Включение трассировки Fiddler
 
 **Запрос**
 
@@ -54,7 +62,7 @@ POST | /ext/fiddler
 4XX | Коды ошибок
 5XX | Коды ошибок
 
-## Отключение трассировки Fiddler в комплекте средств разработки
+## <a name="disable-fiddler-tracing-on-the-devkit"></a>Отключение трассировки Fiddler в комплекте средств разработки
 
 **Запрос**
 
@@ -95,12 +103,7 @@ DELETE | /ext/fiddler
 
 * Windows Xbox
 
-## См. также
+## <a name="see-also"></a>См. также
 - [Настройка Fiddler для UWP в Xbox](uwp-fiddler.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

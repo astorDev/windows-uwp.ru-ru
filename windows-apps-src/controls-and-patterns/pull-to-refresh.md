@@ -4,12 +4,20 @@ Description: "Используйте модель с обновлением пу
 title: "Обновление путем оттягивания"
 label: Pull-to-refresh
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
 translationtype: Human Translation
-ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
-ms.openlocfilehash: ef5773f9885a5286ac7ca7c256e6a83167316389
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e062ed2910e20ba187b8a0726a0061f0dd4b07f8
+ms.lasthandoff: 02/08/2017
 
 ---
-# Обновление путем оттягивания
+# <a name="pull-to-refresh"></a>Обновление путем оттягивания
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,11 +27,11 @@ ms.openlocfilehash: ef5773f9885a5286ac7ca7c256e6a83167316389
 
 ![Пример обновления путем оттягивания](images/ptr-phone-1.png)
 
-## Выбор правильного шаблона
+## <a name="is-this-the-right-pattern"></a>Выбор правильного шаблона
 
 Используйте модель с обновлением путем оттягивания при работе со списком или сеткой с данными, которые пользователю может потребоваться регулярно обновлять, и если ваше приложение предназначено для работы на мобильных устройствах с преимущественным сенсорным вводом.
 
-## Реализация обновления путем оттягивания
+## <a name="implement-pull-to-refresh"></a>Реализация обновления путем оттягивания
 
 Для реализации обновления путем оттягивания необходимо обрабатывать события манипуляций, чтобы получать сведения о том, что пользователь оттянул список вниз, отображать визуальную обратную связь и обновлять данные. Здесь мы рассмотрим, как это делается в [примере обновления путем оттягивания](http://go.microsoft.com/fwlink/p/?LinkId=620635). Здесь приводится не весь код, поэтому вам следует либо скачать пример, либо просмотреть код на GitHub.
 
@@ -35,7 +43,7 @@ RefreshableListView предоставляет режим автоматичес
 
 > **Примечание.**&nbsp;&nbsp;Код в примере также подходит для [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). Для изменения GridView создайте производный класс от GridView, а не от ListView и измените шаблон GridView по умолчанию.
 
-## Добавление индикатора обновления
+## <a name="add-a-refresh-indicator"></a>Добавление индикатора обновления
 
 Важно предоставлять пользователю визуальную обратную связь, чтобы он понимал, что ваше приложение поддерживает обновление путем оттягивания. RefreshableListView имеет свойство `RefreshIndicatorContent`, которое позволяет задать визуальный индикатор в XAML. Здесь также включается текстовый индикатор по умолчанию, который используется, если свойство `RefreshIndicatorContent` не задано.
 
@@ -134,7 +142,7 @@ RefreshableListView предоставляет режим автоматичес
 </Storyboard>
 ```
 
-## Обработка событий манипуляции средством прокрутки
+## <a name="handle-scroll-viewer-manipulation-events"></a>Обработка событий манипуляции средством прокрутки
 
 Шаблон элемента управления listview включает в себя встроенный компонент [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), позволяющий пользователю прокручивать элементы списка. Для реализации обновления путем оттягивания необходимо обрабатывать события манипуляции на встроенном средстве прокрутки, а также ряд связанных событий. Подробные сведения о событиях манипуляции см. в разделе [Сенсорное управление](../input-and-devices/touch-interactions.md).
 
@@ -192,7 +200,7 @@ if (this.RefreshRequested != null)
 
 Обновление путем оттягивания происходит, только когда список оттягивается вниз сенсорным жестом. В обработчике событий PointerPressed код проверяет, какой указатель вызвал событие, и устанавливает переменную (`m_pointerPressed`) для указания, был ли это указатель касания. Эта переменная используется в обработчике DirectManipulationStarted. Если указатель не является указателем касания, обработчик DirectManipulationStarted возвращает управление, не выполняя никаких действий.
 
-## Добавление событий обновления путем оттягивания
+## <a name="add-pull-and-refresh-events"></a>Добавление событий обновления путем оттягивания
 
 RefreshableListView добавляет 2 события, которые можно обрабатывать в приложении для обновления данных и управления индикатором обновления.
 
@@ -224,21 +232,16 @@ private async void listView_RefreshRequested(object sender, RefreshableListView.
 
 В примере содержимое для индикатора обновления предоставляется и управляется приложением. Событие PullProgressChanged уведомляет ваше приложение, когда пользователь оттягивает список, чтобы вы могли запустить, остановить и сбросить индикатор обновления. 
 
-## Анимации композиции
+## <a name="composition-animations"></a>Анимации композиции
 
 По умолчанию содержимое в средстве прокрутки останавливается, когда полоса прокрутки достигает верхней точки. Чтобы пользователь мог продолжить оттягивать список вниз, вам необходимо получить доступ в визуальному уровню и анимировать содержимое списка. В примере для этого используются [анимации композиции](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation), в частности, [анимации с помощью выражений](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations).
 
 В примере эта работа выполняется преимущественно в обработчике событий `CompositionTarget_Rendering` и методе `UpdateCompositionAnimations`.
 
-## Статьи по теме
+## <a name="related-articles"></a>Статьи по теме
 
 - [Настройка стиля элементов управления](styling-controls.md)
 - [Взаимодействие с помощью сенсорного экрана](../input-and-devices/touch-interactions.md)
 - [Представление списка и сетки](listview-and-gridview.md)
 - [Шаблоны элементов представления списка](listview-item-templates.md)
 - [Анимация с помощью выражений](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)
-
-
-<!--HONumber=Aug16_HO3-->
-
-

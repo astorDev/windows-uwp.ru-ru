@@ -3,20 +3,27 @@ author: mcleanbyron
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
 description: "Используйте этот метод в API отправки Магазина Windows для получения информации о конкретном приложении, которое зарегистрировано в вашей учетной записи Центра разработки для Windows."
 title: "Получение приложения с помощью API отправки Магазина Windows"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API отправки Магазина Windows, приложение"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: ef0c9ff463b89854c9aaa7ee2c8307f4af30fadf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 176e3b584137e503c4adfe2eb612d9329226baac
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Получение приложения с помощью API отправки Магазина Windows
+# <a name="get-an-app-using-the-windows-store-submission-api"></a>Получение приложения с помощью API отправки Магазина Windows
 
 
 
 
 Используйте этот метод в API отправки Магазина Windows для получения информации о конкретном приложении, которое зарегистрировано в вашей учетной записи Центра разработки для Windows.
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 Для использования этого метода необходимо выполнить следующие действия:
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: ef0c9ff463b89854c9aaa7ee2c8307f4af30fadf
 
 >**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
-## Запрос
+## <a name="request"></a>Запрос
 
 У этого метода следующий синтаксис. Примеры использования и описание заголовка и тела запроса приведены в следующих разделах.
 
@@ -36,7 +43,7 @@ ms.openlocfilehash: ef0c9ff463b89854c9aaa7ee2c8307f4af30fadf
 <span/>
  
 
-### Заголовок запроса
+### <a name="request-header"></a>Заголовок запроса
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -44,7 +51,7 @@ ms.openlocfilehash: ef0c9ff463b89854c9aaa7ee2c8307f4af30fadf
 
 <span/>
 
-### Параметры запроса
+### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -52,13 +59,13 @@ ms.openlocfilehash: ef0c9ff463b89854c9aaa7ee2c8307f4af30fadf
 
 <span/>
 
-### Тело запроса
+### <a name="request-body"></a>Тело запроса
 
 Предоставлять тело запроса для этого метода не требуется.
 
 <span/>
 
-### Пример запроса
+### <a name="request-example"></a>Пример запроса
 
 В следующем примере показано, как получить сведения о приложении с кодом продукта в Магазине 9WZDNCRD91MD.
 
@@ -67,7 +74,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315 HTT
 Authorization: Bearer <your access token>
 ```
 
-## Ответ
+## <a name="response"></a>Ответ
 
 В следующем примере представлено тело ответа JSON в случае успешного вызова этого метода. Дополнительные сведения о значениях в теле ответа см. в разделе [Ресурс приложения](get-app-data.md#application_object).
 
@@ -90,7 +97,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## Коды ошибок
+## <a name="error-codes"></a>Коды ошибок
 
 Если запрос не удается выполнить, ответ будет содержать один из следующих кодов ошибок HTTP.
 
@@ -101,15 +108,10 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
 * [Получение всех приложений](get-all-apps.md)
 * [Получение тестовых пакетов для приложения](get-flights-for-an-app.md)
 * [Получение надстроек для приложения](get-add-ons-for-an-app.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

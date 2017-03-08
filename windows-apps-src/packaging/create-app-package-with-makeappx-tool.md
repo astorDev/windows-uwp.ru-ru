@@ -2,9 +2,17 @@
 author: laurenhughes
 title: "Создание пакета приложений с помощью средства MakeAppx.exe"
 description: "MakeAppx.exe создает, шифрует, расшифровывает и извлекает файлы из пакетов приложения и пакетов приложений."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 translationtype: Human Translation
-ms.sourcegitcommit: 28cd2b2a922a20e0b9ffc4d1ca65f6a55e92aa8f
-ms.openlocfilehash: c99c76fac9303e174b5d804c2f1b99856be25006
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 616340bcc5159dce12d3b888697ac4f60d30f175
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -269,8 +277,3 @@ MakeAppx.exe decrypt p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile
 - приложение не регистрирует запрещенный протокол из этого списка: SMB, FILE, MS-WWA-WEB, MS-WWA. 
 
 Это не полноценная семантическая проверка, так как она позволяет выявлять только распространенные ошибки. Готовность к установке пакетов, созданных с помощью **MakeAppx.exe**, не гарантируется.
-
-
-<!--HONumber=Dec16_HO1-->
-
-

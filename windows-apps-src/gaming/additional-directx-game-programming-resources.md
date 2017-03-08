@@ -3,48 +3,55 @@ author: mtoepke
 title: "Ресурсы по программированию игр"
 description: "Следующие ресурсы содержат дополнительную информацию о программировании игр для Windows."
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, программирование"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 736f5f5864edc9c7a976e8e0f062779ddd1f86c5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Ресурсы по программированию игр
+# <a name="game-programming-resources"></a>Ресурсы по программированию игр
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Следующие ресурсы содержат дополнительную информацию о программировании игр для Windows.
 
-## Справочные материалы по программированию игр
+## <a name="game-programming-reference"></a>Справочные материалы по программированию игр
 
 
 -   [Графика и игры](https://msdn.microsoft.com/library/windows/desktop/ee663279)
 -   [Справочные сведения об OpenGL](http://go.microsoft.com/fwlink/p/?LinkID=288875)
 
-## Руководства по проектированию игр
+## <a name="game-design-guidance"></a>Руководства по проектированию игр
 
 
 -   [Указатель рекомендаций по взаимодействию с пользователем для приложений Магазина Windows](https://msdn.microsoft.com/library/windows/apps/hh465424)
 
-## Блоги
+## <a name="blogs"></a>Блоги
 
 
 -   [Записи блога, посвященные играм для Windows и DirectX SDK]( http://go.microsoft.com/fwlink/p/?LinkID=288873)
 -   [Блог разработчиков DirectX]( http://go.microsoft.com/fwlink/p/?LinkID=288874)
 -   [Блог Шона Харгривза]( http://go.microsoft.com/fwlink/p/?LinkID=288872) (сведения об играх на платформе XNA).
 
-## Наборы инструментов
+## <a name="toolkits"></a>Наборы инструментов
 
 
 -   [Набор инструментов DirectX](  http://go.microsoft.com/fwlink/p/?LinkID=248929)
 -   [Библиотеки обработки текстур DirectXTex](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
--   [Диагностика графики](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx) в MicrosoftVisualStudio
+-   [Диагностика графики](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx) в Microsoft Visual Studio
 -   [Win2D](https://github.com/Microsoft/Win2D) — простой в использовании API среды выполнения Windows для отрисовки двумерной графики в непосредственном режиме с ускорением GPU.
 -   [ANGLE для Магазина Windows](http://go.microsoft.com/fwlink/p/?linkid=618387) — запуск содержимого OpenGL ES в Windows путем преобразования вызовов API OpenGL ES в вызовы API DirectX 11.
 
-## Видеоролики о разработке игр GDC 2015
+## <a name="gdc-2015-game-dev-session-videos"></a>Видеоролики о разработке игр GDC 2015
 
 
 -   [Будущее игр в экосистеме Майкрософт](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) — Фил Спенсер (Phil Spencer)
@@ -62,14 +69,14 @@ ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
 -   [Разработка игр мира Windows Core](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) — Тодд Уильямс (Todd Williams), Шай Хиниц (Shai Hinitz)
 -   [Компьютерные игры для Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10) — Чак Валборн (Chuck Walbourn)
 
-## Видеозаписи мероприятий //Build 2015
+## <a name="build-2015-session-videos"></a>Видеозаписи мероприятий //Build 2015
 
 
--   [Введение в Win2D: рисование с помощью DirectX в C#](https://channel9.msdn.com/Events/Build/2015/2-631)— Simon Tao (Саймон Тао)
--   [ANGLE: выполнение графического кода OpenGL ES 2.0 в Windows](https://channel9.msdn.com/Events/Build/2015/3-686)— Tony Balogh (Тони Балог)
--   [Улучшенная графика и производительность DirectX12](https://channel9.msdn.com/Events/Build/2015/3-673)— Макс Макмаллен (Max McMullen)
+-   [Введение в Win2D: рисование с помощью DirectX в C#](https://channel9.msdn.com/Events/Build/2015/2-631) — Simon Tao (Саймон Тао)
+-   [ANGLE: выполнение графического кода OpenGL ES 2.0 в Windows](https://channel9.msdn.com/Events/Build/2015/3-686) — Tony Balogh (Тони Балог)
+-   [Улучшенная графика и производительность DirectX12](https://channel9.msdn.com/Events/Build/2015/3-673) — Макс Макмаллен (Max McMullen)
 
-## Другие ресурсы
+## <a name="other-resources"></a>Другие ресурсы
 
 
 -   [CodePlex](http://go.microsoft.com/fwlink/p/?LinkID=76627)
@@ -81,10 +88,5 @@ ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

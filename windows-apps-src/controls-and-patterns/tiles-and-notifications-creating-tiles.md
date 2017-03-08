@@ -5,18 +5,25 @@ title: "Плитки"
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 37de1a413ac9b5e74c905c140899ec7577a6fae5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 11640527ffdb6883885345646310e5e4b786ad2b
+ms.lasthandoff: 02/07/2017
 
 ---
-# Плитки для приложений UWP
+# <a name="tiles-for-uwp-apps"></a>Плитки для приложений UWP
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 *Плитки* используются для представления приложений в меню "Пуск". У каждого приложения имеется плитка. Когда вы создаете новый проект приложения универсальной платформы Windows (UWP) в Microsoft Visual Studio, он включает стандартную плитку, показывающую название и логотип приложения. Windows отображает эту плитку при первой установке приложения. После установки приложения вы можете изменить содержимое плиток с помощью уведомлений, например, вы можете изменить плитку для передачи новой информации пользователю, например, заголовков новостей или темы последнего непрочитанного сообщения.
 
-## Настройка плитки по умолчанию
+## <a name="configure-the-default-tile"></a>Настройка плитки по умолчанию
 
 
 При создании нового проекта в Visual Studio создается простая стандартная плитка, которая отображает имя и логотип приложения.
@@ -76,7 +83,7 @@ ms.openlocfilehash: 37de1a413ac9b5e74c905c140899ec7577a6fae5
       </Applications>
 ```
 
-## Использование уведомлений для настройки плитки
+## <a name="use-notifications-to-customize-your-tile"></a>Использование уведомлений для настройки плитки
 
 
 После установки приложения можно с помощью уведомлений настроить плитку. Вы можете сделать это при первом запуске приложения или в ответ на какое-то событие, например, push-уведомление.
@@ -100,10 +107,5 @@ ms.openlocfilehash: 37de1a413ac9b5e74c905c140899ec7577a6fae5
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

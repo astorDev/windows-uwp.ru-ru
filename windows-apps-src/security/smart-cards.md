@@ -3,26 +3,33 @@ title: "Смарт-карты"
 description: "В этом разделе объясняется, каким образом приложения универсальной платформы для Windows (UWP) могут использовать смарт-карты для подключения пользователей к защищенным сетевым службам, включая получение доступа к физическим устройствам чтения смарт-карт, создание виртуальных смарт-карт, связь со смарт-картами, проверку подлинности пользователей, сброс ПИН-кодов пользователей и удаление или отключение смарт-карт."
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea21aeee5dd93bb44de3a1793b352d2046b3839
-ms.openlocfilehash: d0646aca9863f3f326df9b3a86adb2481fdcda70
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 42062dc9dcc11e3db6ddbb761e158d75e1259950
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Смарт-карты
+# <a name="smart-cards"></a>Смарт-карты
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этом разделе объясняется, каким образом приложения универсальной платформы для Windows (UWP) могут использовать смарт-карты для подключения пользователей к защищенным сетевым службам, включая получение доступа к физическим устройствам чтения смарт-карт, создание виртуальных смарт-карт, связь со смарт-картами, проверку подлинности пользователей, сброс ПИН-кодов пользователей и удаление или отключение смарт-карт. 
 
-## Настройка манифеста приложения
+## <a name="configure-the-app-manifest"></a>Настройка манифеста приложения
 
 
 Перед проверкой подлинности пользователей с помощью смарт-карт или виртуальных смарт-карт необходимо задать в файле проекта Package.appxmanifest возможность **Общие сертификаты пользователей**.
 
-## Доступ к подключенным устройствам чтения карт и смарт-картам
+## <a name="access-connected-card-readers-and-smart-cards"></a>Доступ к подключенным устройствам чтения карт и смарт-картам
 
 
 Вы можете запросить наличие устройств чтения и подключенных смарт-карт, передав код устройства (заданный в [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393)) методу [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890). Для доступа к смарт-картам, подключенным к возвращенному устройству чтения, вызовите метод [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887).
@@ -56,7 +63,7 @@ private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
 
 Затем каждый возвращенный объект [**SmartCard**](https://msdn.microsoft.com/library/windows/apps/dn297565) можно передать в объект [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) для доступа к методам, которые позволяют приложению обращаться к карте и настраивать ее конфигурацию.
 
-## Создание виртуальной смарт-карты
+## <a name="create-a-virtual-smart-card"></a>Создание виртуальной смарт-карты
 
 
 Перед созданием виртуальной смарт-карты с помощью [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) приложение должно указать понятное имя, ключ администратора и экземпляр [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642). Понятное имя обычно вводится в приложение, а само приложение должно предоставить ключ администратора и создать экземпляр текущей версии **SmartCardPinPolicy**, а затем передать все три значения в [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830).
@@ -80,7 +87,7 @@ SmartCardProvisioning provisioning = await
 
 Когда метод [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) вернет связанный объект [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801), виртуальная смарт-карта будет создана и готова к использованию.
 
-## Обработка запросов проверки подлинности
+## <a name="handle-authentication-challenges"></a>Обработка запросов проверки подлинности
 
 
 Для проверки подлинности со смарт-картами или виртуальными смарт-картами ваше приложение должно выполнять запросы на проверку по данным о ключе администратора, хранящимся на карте, и данным о ключе администратора, хранящимся на сервере проверки подлинности или в средстве управления.
@@ -107,7 +114,7 @@ static class ChallengeResponseAlgorithm
 
 Ссылки на код будут встречаться в остальной части раздела, когда мы будем изучать выполнение действия проверки подлинности и внесение изменений в информацию на смарт-карте и виртуальной смарт-карте.
 
-## Проверка ответа при проверке подлинности с помощью смарт-карты или виртуальной смарт-карты
+## <a name="verify-smart-card-or-virtual-smart-card-authentication-response"></a>Проверка ответа при проверке подлинности с помощью смарт-карты или виртуальной смарт-карты
 
 
 Мы определили логику для запросов проверки подлинности и можем связаться с устройством чтения для доступа к смарт-карте или получить доступ к виртуальной смарт-карте для проверки подлинности.
@@ -136,7 +143,7 @@ using (SmartCardChallengeContext context =
 }
 ```
 
-## Изменение или сброс ПИН-кода пользователя
+## <a name="change-or-reset-a-user-pin"></a>Изменение или сброс ПИН-кода пользователя
 
 
 Чтобы изменить ПИН-код, связанный со смарт-картой, сделайте следующее.
@@ -185,7 +192,7 @@ bool result = await provisioning.RequestPinResetAsync(
 }
 ```
 
-## Удаление смарт-карты или виртуальной смарт-карты
+## <a name="remove-a-smart-card-or-virtual-smart-card"></a>Удаление смарт-карты или виртуальной смарт-карты
 
 
 При удалении физической смарт-карты создается событие [**CardRemoved**](https://msdn.microsoft.com/library/windows/apps/dn263875).
@@ -203,8 +210,3 @@ reader.CardRemoved += HandleCardRemoved;
 bool result = await SmartCardProvisioning
     .RequestVirtualSmartCardDeletionAsync(card);
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

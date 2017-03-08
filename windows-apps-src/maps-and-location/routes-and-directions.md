@@ -1,18 +1,25 @@
 ---
 author: msatranjr
 title: "Отображение маршрутов и направлений на карте"
-description: "Запрос маршрутов и направлений и их отображение в вашем приложении."
+description: "Запрос маршрутов и направлений и их отображение в приложении."
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, маршрут, карта, расположение, направления"
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: eb3596236e7de29473635b26f48f0c7e4fa1d49f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 11519df0c6655d663b31759e9064337a706bbc53
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Отображение маршрутов и направлений на карте
+# <a name="display-routes-and-directions-on-a-map"></a>Отображение маршрутов и направлений на карте
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Запрос маршрутов и направлений и их отображение в вашем приложении.
@@ -25,7 +32,7 @@ ms.openlocfilehash: eb3596236e7de29473635b26f48f0c7e4fa1d49f
 
  
 
-## Общие сведения о результатах MapRouteFinder
+## <a name="an-intro-to-maproutefinder-results"></a>Общие сведения о результатах MapRouteFinder
 
 
 Классы маршрутов и направлений связаны следующим образом.
@@ -36,7 +43,7 @@ ms.openlocfilehash: eb3596236e7de29473635b26f48f0c7e4fa1d49f
 -   [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) содержит коллекцию объектов [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955). Получите доступ к этой коллекции с помощью свойства [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) класса **MapRoute**.
 -   Каждый [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) содержит коллекцию объектов [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961). Получите доступ к этой коллекции с помощью свойства [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) класса **MapRouteLeg**.
 
-## Отображение направлений
+## <a name="display-directions"></a>Отображение направлений
 
 
 Получите маршрут и направления, чтобы добраться до места пешком или на машине, вызвав методы класса [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938), например [**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943) или [**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953). В объекте [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) содержится объект [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937), доступ к которому можно получить с помощью свойства [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940).
@@ -126,7 +133,7 @@ Turn right onto James St.
 You have reached your destination.
 ```
 
-## Отображение маршрутов
+## <a name="display-routes"></a>Отображение маршрутов
 
 
 Чтобы отобразить [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) в [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), постройте [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) с **MapRoute**. Затем добавьте **MapRouteView** в коллекцию [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) элемента **MapControl**.
@@ -184,17 +191,11 @@ private async void ShowRouteOnMap()
 
 ![map control with route displayed.](images/routeonmap.png)
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
 * [Пример карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Видео Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Пример приложения UWP для работы с картами](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

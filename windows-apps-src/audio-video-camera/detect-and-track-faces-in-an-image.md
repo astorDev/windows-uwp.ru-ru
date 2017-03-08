@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
 description: "В этом разделе объясняется, как использовать FaceDetector для обнаружения лиц на изображении. Инструмент FaceTracker оптимизирован для отслеживания лиц с течением времени в последовательности видеокадров."
 title: "Обнаружение лиц на изображениях или в видео"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7526d5ddfbaa6f5128ef5775bc75cc48768f647d
-ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 72e5804ea592dc2a9478cba766decaadf611e88e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Обнаружение лиц на изображениях или в видео
+# <a name="detect-faces-in-images-or-videos"></a>Обнаружение лиц на изображениях или в видео
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 \[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
@@ -22,7 +29,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 В этой статье используется код, адаптированный из примеров [Базовое обнаружение лиц](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) и [Базовое отслеживание лиц](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409). Вы можете скачать эти примеры, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки вашего приложения.
 
-## Обнаружение лиц на одном изображении
+## <a name="detect-faces-in-a-single-image"></a>Обнаружение лиц на одном изображении
 
 Класс [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) позволяет обнаружить одно или несколько лиц на неподвижном изображении.
 
@@ -46,7 +53,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 [!code-cs[Формат](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
-Создайте экземпляр объекта **FaceDetector**, вызвав [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132), а затем вызовите [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), передав точечный рисунок, который был масштабирован до оптимального размера и преобразован в поддерживаемый формат пикселей. Этот метод возвращает список объектов [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123). **ShowDetectedFaces**— это вспомогательный метод, показанный ниже, который рисует квадраты вокруг лиц на изображении.
+Создайте экземпляр объекта **FaceDetector**, вызвав [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132), а затем вызовите [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), передав точечный рисунок, который был масштабирован до оптимального размера и преобразован в поддерживаемый формат пикселей. Этот метод возвращает список объектов [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123). **ShowDetectedFaces** — это вспомогательный метод, показанный ниже, который рисует квадраты вокруг лиц на изображении.
 
 [!code-cs[Обнаружение](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 
@@ -68,7 +75,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 [!code-cs[ShowDetectedFaces](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetShowDetectedFaces)]
 
-## Отслеживание лиц в последовательности кадров
+## <a name="track-faces-in-a-sequence-of-frames"></a>Отслеживание лиц в последовательности кадров
 
 Если вы хотите обнаружить лица в видео, эффективней использовать класс [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) вместо класса [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129), хотя действия по реализации очень похожи. **FaceTracker** использует сведения о ранее обработанных кадрах для оптимизации процесса обнаружения.
 
@@ -92,7 +99,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Анализ сцен для захвата мультимедиа](scene-analysis-for-media-capture.md)
 * [Пример базового обнаружения лиц](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
@@ -100,9 +107,4 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Воспроизведение мультимедиа](media-playback.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

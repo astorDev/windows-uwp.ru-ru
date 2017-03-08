@@ -2,14 +2,21 @@
 author: mcleblanc
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
 description: "В этом разделе приведен пример переноса функционирующего однорангового приложения — игры-опроса — для WinRT 8.1 в приложение Windows 10 универсальной платформы Windows (UWP)."
-title: "Пример переноса среды выполнения Windows 8.x в UWP - образец однорангового приложения QuizGame"
+title: "Пример переноса со среды выполнения Windows 8.x на UWP: одноранговое приложение QuizGame"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 62d747a06f26bd2d069d2f23f36f48249fd11e95
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2756fc75b7a780ae0361671127423dcb898cae4b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="windows-runtime-8x-to-uwp-case-study-quizgame-peer-to-peer-sample-app"></a>Пример переноса среды выполнения Windows 8.x в UWP - образец однорангового приложения QuizGame
+# <a name="windows-runtime-8x-to-uwp-case-study-quizgame-peer-to-peer-sample-app"></a>Пример переноса со среды выполнения Windows 8.x на UWP: одноранговое приложение QuizGame
 
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -193,9 +200,4 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ## <a name="conclusion"></a>Заключение
 
 Приложение, которое мы переносили в данном примере, было относительно сложным, поскольку включало несколько проектов, библиотеку классов и достаточно большой объем кода и пользовательского интерфейса. Даже так, перенос его был достаточно простым. Частично простоту переноса обеспечило сходство между платформой разработки Windows 10 и платформами Windows 8.1 и Windows Phone 8.1. А частично — это заслуга способа разработки начального приложения, который обеспечил возможность отделения моделей, моделей представлений и представлений.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

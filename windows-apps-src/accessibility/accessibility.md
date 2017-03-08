@@ -5,13 +5,20 @@ ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
 title: "Специальные возможности"
 label: Accessibility
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 13894c199a95060395886635ebb7c294f18c9d6b
-ms.openlocfilehash: 8974ea067e033796c491781997067aafea773d96
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c7275475e245d8fd68eb2979c16d0afe6ddc4a4c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Специальные возможности  
+# <a name="accessibility"></a>Специальные возможности  
 
 
 
@@ -39,11 +46,6 @@ ms.openlocfilehash: 8974ea067e033796c491781997067aafea773d96
 | [Шаблоны и интерфейсы элементов управления](control-patterns-and-interfaces.md) | Здесь перечислены шаблоны элементов управления модели автоматизации пользовательского интерфейса Майкрософт, классы, которыми пользуются клиенты для доступа к ним, и интерфейсы, которыми пользуются поставщики для их реализации. |
 
 <span id="related_topics"/>
-## Связанные темы  
+## <a name="related-topics"></a>Связанные темы  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

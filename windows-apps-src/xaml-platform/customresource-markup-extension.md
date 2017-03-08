@@ -3,31 +3,38 @@ author: jwmsft
 description: "Предоставляет значение для любого атрибута языка XAML путем оценки ссылки на ресурс, которая берется из пользовательской реализации поиска ресурсов. Поиск ресурсов выполняется реализацией класса CustomXamlResourceLoader."
 title: "Расширение разметки CustomResource"
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a0a4edc8d59219aea3a47a18ea991e4267782026
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1203987a3003c9f78bbed52b00a81cc3832a1abe
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Расширение разметки {CustomResource}
+# <a name="customresource-markup-extension"></a>Расширение разметки {CustomResource}
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Предоставляет значение для любого атрибута языка XAML с помощью анализа ссылки на ресурс, которая берется из пользовательской реализации поиска ресурсов. Поиск ресурсов выполняется посредством реализации класса [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327).
 
-## Использование атрибутов XAML
+## <a name="xaml-attribute-usage"></a>Использование атрибутов XAML
 
 ``` syntax
 <object property="{CustomResource key}" .../>
 ```
 
-## Значения XAML
+## <a name="xaml-values"></a>Значения XAML
 
 | Термин | Описание |
 |------|-------------|
 | key | Ключ для запрашиваемого ресурса. Способ первоначального назначения ключа определяется в зависимости от реализации класса [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327), который в данный момент зарегистрирован для использования. |
 
-## Примечания.
+## <a name="remarks"></a>Примечания.
 
 **CustomResource** — это способ получения значений, которые определены где-либо в пользовательском репозитории ресурсов. Этот метод является относительно сложным, и он не используется в большинстве сценариев приложений среды выполнения Windows.
 
@@ -41,17 +48,12 @@ ms.openlocfilehash: a0a4edc8d59219aea3a47a18ea991e4267782026
 2.  Задайте свойство [**CustomXamlResourceLoader.Current**](https://msdn.microsoft.com/library/windows/apps/br243328) для ссылки на класс в логике инициализации. Это необходимо сделать до загрузки XAML-кода уровня страницы, который включает использование расширения `{CustomResource}`. Например, **CustomXamlResourceLoader.Current** можно задать в конструкторе подкласса [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324), который создается в шаблонах кода программной части App.xaml.
 3.  Теперь вы можете использовать расширения `{CustomResource}` в коде XAML, который приложение загружает как страницы, либо в словарях ресурсов XAML.
 
-**CustomResource**— это расширение разметки. Расширения разметки обычно реализуются, если необходимо, чтобы значения атрибутов являлись буквенными значениями или именами обработчиков, и это требование является более глобальным, чем простая настройка преобразователей типов для определенных типов или свойств. Для всех расширений разметки в XAML в синтаксисе атрибутов используются символы «\{» и «\}». Это соответствует соглашению, по которому процессор XAML распознает, что расширение разметки должно обработать атрибут.
+**CustomResource** — это расширение разметки. Расширения разметки обычно реализуются, если необходимо, чтобы значения атрибутов являлись буквенными значениями или именами обработчиков, и это требование является более глобальным, чем простая настройка преобразователей типов для определенных типов или свойств. Для всех расширений разметки в XAML в синтаксисе атрибутов используются символы «\{» и «\}». Это соответствует соглашению, по которому процессор XAML распознает, что расширение разметки должно обработать атрибут.
 
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 * [Ссылки на ресурсы ResourceDictionary и XAML](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)
 * [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

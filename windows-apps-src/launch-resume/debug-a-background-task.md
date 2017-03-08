@@ -3,9 +3,16 @@ author: TylerMSFT
 title: "Отладка фоновой задачи"
 description: "Узнайте, как отладить фоновую задачу, выполнив в том числе активацию фоновой задачи и трассировку отладки в журнале событий Windows."
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6200a8363c8a638f2ee44bdad6902748fb9adf45
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -42,7 +49,7 @@ ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
     Для того чтобы это работало, фоновая задача должна быть уже зарегистрирована и ожидать запуска. Например, если фоновая задача была зарегистрирована с одноразовым триггером времени TimeTrigger, который уже был активирован, запуск задачи через Visual Studio не сработает.
 
 > [!Note]
-> Таким способом невозможно запустить фоновые задачи, использующие следующие триггеры: [**ApplicationTrigger**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx), [**MediaProcessingTrigger**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx), [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) и фоновые задачи, использующие [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) с типом триггера [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839).  
+> Таким способом невозможно запустить фоновые задачи, использующие следующие триггеры: [**ApplicationTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx), [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx), [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) и фоновые задачи, использующие [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) с типом триггера [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839).  
 > **ApplicationTrigger** и **MediaProcessingTrigger** можно установить в коде вручную с помощью `trigger.RequestAsync()`.     
 
     ![debugging background tasks](images/debugging-activation.png)
@@ -113,9 +120,4 @@ ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

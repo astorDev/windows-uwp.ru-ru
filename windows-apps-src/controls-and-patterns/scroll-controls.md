@@ -1,20 +1,27 @@
 ---
 author: Jwmsft
-Description: "Сдвиг и прокрутка дают пользователям возможность получить доступ к содержимому, находящемуся за пределами экрана."
+Description: "Функции сдвига и прокрутки дают пользователям возможность получить доступ к содержимому, находящемуся за пределами экрана."
 title: "Руководство по полосам прокрутки"
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scroll bars
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 8ead56e84e21aaf5005530ed0509efa9440bce59
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ffa13b2bfc89a94370beee7fa47372f948c3f700
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="scroll-bars"></a>Полосы прокрутки
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Сдвиг и прокрутка дают пользователям возможность получить доступ к содержимому, находящемуся за пределами экрана.
+Функции сдвига и прокрутки дают пользователям возможность получить доступ к содержимому, находящемуся за пределами экрана.
 
 Элемент управления "Средство прокрутки" состоит из такого объема содержимого, который помещается в окно просмотра, и одной или двух полос прокрутки. Сенсорные жесты можно использовать для сдвигания и масштабирования (полосы прокрутки затемняются только во время управления), а для прокрутки можно использовать указатель. Быстрое движение пальца заставит содержимое прокручиваться по инерции.
 
@@ -119,9 +126,4 @@ ScrollViewer определяет следующие подключенные с
 
 **Для разработчиков (XAML)**
 * [**Класс ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

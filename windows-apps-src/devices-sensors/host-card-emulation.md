@@ -2,15 +2,22 @@
 author: msatranjr
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
 title: "Создание приложения для смарт-карты NFC"
-description: "ОС Windows Phone 8.1 поддерживала приложения эмуляции для карты NFC с помощью защищенного элемента на основе SIM-карты, но для этой модели требовалось, чтобы приложения для безопасной оплаты были тесно связаны с операторами мобильных сетей (ОМС)."
+description: "ОС Windows Phone 8.1 поддерживала приложения эмуляции для карты NFC с помощью защищенного элемента на основе SIM-карты, но для этой модели требовалось, чтобы приложения для безопасной оплаты были тесно связаны с операторами мобильных сетей (ОМС)."
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
-ms.openlocfilehash: c5a7293874bd71b50aa31d6af9a687d289d07ce5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ee62e0d1ddd41ce1cce61bc854168f0cac6ad038
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="create-an-nfc-smart-card-app"></a>Создание приложения для смарт-карты NFC
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важно!** Этот раздел относится только к Windows 10 Mobile.
 
@@ -36,7 +43,7 @@ Windows 10 поддерживает эмуляцию смарт-карт, ос�
 
 Функция эмуляции карты работает только на устройствах под управлением Windows 10 Mobile. Эмуляция карты на основе SIM-карты и HCE недоступна в других версиях Windows 10.
 
-Архитектура для эмуляции карты на основе SIM-карты и HCE показана на схеме ниже. 
+Архитектура для эмуляции карты на основе SIM-карты и HCE показана на схеме ниже.
 
 ![Архитектура для эмуляции карты на основе SIM-карты и HCE](./images/nfc-architecture.png)
 
@@ -220,7 +227,7 @@ public static byte[] AID_PPSE =
         };
 
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_PPSE.AsBuffer()},
                                 SmartCardEmulationCategory.Payment,
                                 SmartCardEmulationType.Host);
@@ -237,7 +244,7 @@ public static byte[] AID_OTHER =
         };
 
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_OTHER.AsBuffer()},
                                 SmartCardEmulationCategory.Other,
                                 SmartCardEmulationType.Host);
@@ -296,7 +303,7 @@ public static byte[] AID_Foreground =
         {};
 
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_Foreground.AsBuffer()},
                                 SmartCardEmulationCategory.Other,
                                 SmartCardEmulationType.Host);
@@ -341,15 +348,15 @@ case Never:
 // you can take the user to the NFC settings to turn "tap and pay" on
 await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings-nfctransactions:"));
 break;
- 
- case Always: 
+
+ case Always:
 return "Card emulation always on";
 
  case ScreenOn:
  return "Card emulation on only when screen is on";
 
  case ScreenUnlocked:
- return "Card emulation on only when screen unlocked"; 
+ return "Card emulation on only when screen unlocked";
 }
 ```
 
@@ -363,7 +370,7 @@ return "Card emulation always on";
         {
             // Launch above the lock with some arguments
             var result = await eventDetails.TryLaunchSelfAsync("app-specific arguments", SmartCardLaunchBehavior.AboveLock);
-        } 
+        }
 ```
 
 ## <a name="aid-registration-and-other-updates-for-sim-based-apps"></a>Регистрация AID и другие обновления для приложений на основе SIM-карты
@@ -372,7 +379,7 @@ return "Card emulation always on";
 
 ```csharp
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_PPSE.AsBuffer()},
                                 SmartCardEmulationCategory.Payment,
                                 SmartCardEmulationType.Uicc);
@@ -380,12 +387,4 @@ var appletIdGroup = new SmartCardAppletIdGroup(
 
 ** Важно! **  
 Поддержка традиционного двоичного перехвата SMS в Windows Phone 8.1 была удалена и заменена новой, более широкой поддержкой SMS в Windows 10 Mobile, но любые традиционные приложения для Windows Phone 8.1, основанные на этом, необходимо обновить для использования новых API SMS Windows 10 Mobile.
-
-
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -5,9 +5,16 @@ title: "Управляющий элемент выбора даты в кале�
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 0c565c036b8bcb7c26ad860231ee649b73c636c3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 801e9192f3da2f72803dcb95168b1f8dfded6695
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="calendar-date-picker"></a>Управляющий элемент выбора даты в календаре
@@ -97,9 +104,4 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 - [Представление календаря](calendar-view.md)
 - [Управляющий элемент выбора даты](date-picker.md)
 - [Управляющий элемент выбора времени](time-picker.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

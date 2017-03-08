@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: c0450f7b-5c81-4d8c-92ef-2b1190d18af7
 description: "Узнайте, как использовать класс AdControl для показа баннерной рекламы в приложения Silverlight для Windows Phone 8.1 или Windows Phone 8.0."
 title: "AdControl в Windows Phone Silverlight"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, рекламы, реклама, AdControl, Silverlight, Windows Phone"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: f4b519b56e8f656f75405a946c646e9f7b89ba99
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1f4606f5bb5446d8749f80e2bf4772a0b6db48b3
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -128,9 +135,4 @@ ms.openlocfilehash: f4b519b56e8f656f75405a946c646e9f7b89ba99
 
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

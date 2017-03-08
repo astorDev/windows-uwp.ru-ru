@@ -3,23 +3,30 @@ author: DBirtolo
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
 title: "Перечисление устройств по сети"
 description: "Помимо обнаружения локально подключенных устройств вы можете использовать интерфейсы API Windows.Devices.Enumeration для перечисления устройств по беспроводным и сетевым протоколам."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6eca7156c8f81a9a89e006c09a232a255f3a8725
-ms.openlocfilehash: 5f62063a7b9c80b8c3715b539a9ebe2505dc9ae0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 70362ebd77f62aea3bba694b9f6592771d4ad273
+ms.lasthandoff: 02/07/2017
 
 ---
-# Перечисление устройств по сети
+# <a name="enumerate-devices-over-a-network"></a>Перечисление устройств по сети
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Важные API **
+**Важные API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 Помимо обнаружения локально подключенных устройств вы можете использовать интерфейсы API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) для перечисления устройств по беспроводным и сетевым протоколам.
 
-## Перечисление устройств по сетевым или беспроводным протоколам
+## <a name="enumerating-devices-over-networked-or-wireless-protocols"></a>Перечисление устройств по сетевым или беспроводным протоколам
 
 Иногда вам необходимо перечислить устройства, которые не подключены локально и могут быть обнаружены только по протоколам проводной или беспроводной сети. Для этого у API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) есть три различных типа объектов устройства: **AssociationEndpoint** (AEP), **AssociationEndpointContainer** (контейнер AEP) и **AssociationEndpointService** (служба AEP). Вместе данные типы называют объектами AEP.
 
@@ -45,7 +52,7 @@ ms.openlocfilehash: 5f62063a7b9c80b8c3715b539a9ebe2505dc9ae0
 
  
 
-## Примеры AQS
+## <a name="aqs-examples"></a>Примеры AQS
 
 У каждого типа AEP есть свойство, которое можно использовать, чтобы ограничить перечисление определенным протоколом. Не забудьте, что в AQS-фильтре можно использовать оператор OR, чтобы сгруппировать несколько протоколов. Ниже приведено несколько примеров строк AQS-фильтра, показывающих, как запросить наличие устройств AEP.
 
@@ -58,7 +65,7 @@ System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 Эта AQS-строка запрашивает все UPnP-объекты и WSD-объекты **AssociationEndpoint**, когда [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) имеет значение **AsssociationEndpoint**.
 
 ``` syntax
-System.Devices.Aep.ProtocolId:="{782232aa-a2f9-4993-971b-aedc551346b0}" OR 
+System.Devices.Aep.ProtocolId:="{782232aa-a2f9-4993-971b-aedc551346b0}" OR
 System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
 
@@ -77,13 +84,4 @@ System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

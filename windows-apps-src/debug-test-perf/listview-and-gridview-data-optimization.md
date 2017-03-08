@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
 title: "Виртуализация данных ListView и GridView"
 description: "Улучшите производительность и время запуска ListView и GridView с помощью виртуализации данных."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: e44dd5c2c3c9fb252062af3a6a9f409e1777a878
-ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0b1dfaeb098ac4b73c89f4d1a51ec658312aee4e
+ms.lasthandoff: 02/07/2017
 
 ---
-# Виртуализация данных ListView и GridView
+# <a name="listview-and-gridview-data-virtualization"></a>Виртуализация данных ListView и GridView
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Примечание.** Для получения дополнительных сведений см. мероприятие //build/ [Резкое повышение производительности при взаимодействии пользователей с большим объемом данных в GridView и ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
 
@@ -27,9 +34,9 @@ ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
 
 Ниже приведены подробные сведения о методах добавочной виртуализации данных и виртуализации данных прямого доступа.
 
-## Инкрементная виртуализация данных
+## <a name="incremental-data-virtualization"></a>Инкрементная виртуализация данных
 
-Инкрементная виртуализация данных загружает данные последовательно. [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878), использующий инкрементную виртуализацию данных, можно использовать для просмотра коллекции миллиона элементов, но изначально загружаются только 50элементов. Следующие 50 загружаются, когда пользователь прокручивает страницу. По мере загрузки элементов бегунок полосы прокрутки уменьшается в размере. Для этого типа виртуализации данных записывается класс источника данных, применяющий эти интерфейсы.
+Инкрементная виртуализация данных загружает данные последовательно. [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878), использующий инкрементную виртуализацию данных, можно использовать для просмотра коллекции миллиона элементов, но изначально загружаются только 50 элементов. Следующие 50 загружаются, когда пользователь прокручивает страницу. По мере загрузки элементов бегунок полосы прокрутки уменьшается в размере. Для этого типа виртуализации данных записывается класс источника данных, применяющий эти интерфейсы.
 
 -   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
 -   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) или [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
@@ -37,11 +44,11 @@ ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
 
 Подобный источник данных — это хранящийся в памяти список, который можно постоянно расширять. Элемент управления элементами запрашивает элементы, используя стандартный индексатор [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) и свойства подсчета. Подсчет должен представлять число элементов локально, а не фактический размер набора данных.
 
-Когда элемент управления элементами подходит к концу существующих данных, он вызывает [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems). Если возвратить **true**, он вызовет [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync), передавая рекомендованное число элементов для загрузки. В зависимости от того, откуда загружаются данные (из локального диска, сети или облака), можно указать другое число элементов для загрузки, отличающееся от рекомендованного. Например, если ваша служба поддерживает пакеты из 50 элементов, но элемент управления элементами запрашивает только 10, то вы можете загрузить 50. Загрузите данные из серверной части, добавьте их в список и вызовите уведомление об изменениях с помощью [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) или [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052), чтобы элемент управления элементами получил сведения о новых элементах. Следует также возвратить число фактически загруженных элементов. Если вы загружаете меньше элементов, чем рекомендовано, или элемент управления элементами прокручивается дальше на промежуточных этапах, то источник данных вызывается снова для большего числа элементов и цикл продолжается. Дополнительные сведения можно получить, скачав [образец привязки данных в XAML](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5) для Windows8.1, а затем повторно использовав исходный код в приложениидля Windows 10.
+Когда элемент управления элементами подходит к концу существующих данных, он вызывает [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems). Если возвратить **true**, он вызовет [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync), передавая рекомендованное число элементов для загрузки. В зависимости от того, откуда загружаются данные (из локального диска, сети или облака), можно указать другое число элементов для загрузки, отличающееся от рекомендованного. Например, если ваша служба поддерживает пакеты из 50 элементов, но элемент управления элементами запрашивает только 10, то вы можете загрузить 50. Загрузите данные из серверной части, добавьте их в список и вызовите уведомление об изменениях с помощью [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) или [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052), чтобы элемент управления элементами получил сведения о новых элементах. Следует также возвратить число фактически загруженных элементов. Если вы загружаете меньше элементов, чем рекомендовано, или элемент управления элементами прокручивается дальше на промежуточных этапах, то источник данных вызывается снова для большего числа элементов и цикл продолжается. Дополнительные сведения можно получить, скачав [образец привязки данных в XAML](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5) для Windows 8.1, а затем повторно использовав исходный код в приложении для Windows 10.
 
-## Виртуализация данных прямого доступа
+## <a name="random-access-data-virtualization"></a>Виртуализация данных прямого доступа
 
-Виртуализация данных прямого доступа позволяет загружать данные из произвольного места в наборе данных. [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878), использующий виртуализацию данных прямого доступа, применяется для просмотра коллекции из миллиона элементов и может загружать элементы 100000–100050. Если пользователь затем перейдет к началу списка, элемент управления загрузит элементы 1–50. Бегунок полосы прокрутки всегда указывает, что **ListView** содержит миллион элементов. Положение бегунка полосы прокрутки зависит от того, где в полном наборе данных коллекции расположены видимые элементы. Этот тип виртуализации данных может значительно сократить требования к памяти и время загрузки для коллекции. Чтобы включить его, необходимо создать класс источника данных, который будет извлекать данные по запросу, управлять локальным кэшем и реализовывать указанные интерфейсы.
+Виртуализация данных прямого доступа позволяет загружать данные из произвольного места в наборе данных. [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878), использующий виртуализацию данных прямого доступа, применяется для просмотра коллекции из миллиона элементов и может загружать элементы 100 000–100 050. Если пользователь затем перейдет к началу списка, элемент управления загрузит элементы 1–50. Бегунок полосы прокрутки всегда указывает, что **ListView** содержит миллион элементов. Положение бегунка полосы прокрутки зависит от того, где в полном наборе данных коллекции расположены видимые элементы. Этот тип виртуализации данных может значительно сократить требования к памяти и время загрузки для коллекции. Чтобы включить его, необходимо создать класс источника данных, который будет извлекать данные по запросу, управлять локальным кэшем и реализовывать указанные интерфейсы.
 
 -   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
 -   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) или [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
@@ -79,10 +86,5 @@ ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO4-->
 
 

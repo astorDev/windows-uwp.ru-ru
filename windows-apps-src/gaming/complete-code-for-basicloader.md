@@ -3,16 +3,23 @@ author: mtoepke
 title: "Полный код для BasicLoader"
 description: "Полный код класса и методов для преобразования и загрузки общих графических ресурсов, таких как сетки, текстуры и различные объекты шейдера."
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, basicloader"
 translationtype: Human Translation
-ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: ab16033c05273a0cd483fdc7a5302a3ff461e4b1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d6714030031a4986c8a5495fc02a5c68fb0aa4d8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Полный код для BasicLoader
+# <a name="complete-code-for-basicloader"></a>Полный код для BasicLoader
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Полный код класса и методов для преобразования и загрузки общих графических ресурсов, таких как сетки, текстуры и различные объекты шейдера.
 
@@ -20,28 +27,28 @@ ms.openlocfilehash: ab16033c05273a0cd483fdc7a5302a3ff461e4b1
 
 -   [Технологии](#technologies)
 -   [Требования](#requirements)
--   [Просмотреть код (C++)](#view-the-code-c-)
+-   [Просмотреть код (C++)](#view-the-code-c)
 
 <span id="download_locations"></span>
-## Папка для загрузки
+## <a name="download-location"></a>Папка для загрузки
 
 
 Этот пример недоступен для загрузки.
 
-## Технологии
+## <a name="technologies"></a>Технологии
 
 **Языки программирования** — C++  
 **Модели программирования** — среда выполнения Windows
 
-## Требования
+## <a name="requirements"></a>Требования
 
 **Минимальная версия клиента** — Windows 10                              
 **Минимальная версия сервера** — Windows Server 2016 Technical Preview 
 
 
-## Просмотреть код (C++)
+## <a name="view-the-code-c"></a>Просмотреть код (C++)
 
-## BasicLoader.h
+## <a name="basicloaderh"></a>BasicLoader.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -222,7 +229,7 @@ private:
 };
 ```
 
-## BasicLoader.cpp
+## <a name="basicloadercpp"></a>BasicLoader.cpp
 
 
 ```cpp
@@ -1107,10 +1114,5 @@ task<void> BasicLoader::LoadMeshAsync(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

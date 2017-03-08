@@ -2,16 +2,24 @@
 author: payzer
 title: "Портал устройства Xbox - справочник по параметрам API для разработчиков"
 description: "Узнайте, как получить доступ к параметрам разработчика Xbox."
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 translationtype: Human Translation
-ms.sourcegitcommit: c51eff41e63d815f6298b4fc46a9b11314bc8bc9
-ms.openlocfilehash: 5a983714cda9b5a5f45e555e2cb6f980f082a003
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: a17a489944fdc2d78831549c1afdc2bd87deabdf
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Справочник по параметрам API для разработчика   
+# <a name="developer-settings-api-reference"></a>Справочник по параметрам API для разработчика   
 Вы можете получить доступ к параметрам Xbox One, которые будут полезны при разработке с помощью этого API.
 
-## Получение всех параметров разработчика одновременно
+## <a name="get-all-developer-settings-at-once"></a>Получение всех параметров разработчика одновременно
 
 **Запрос**
 
@@ -51,7 +59,7 @@ Category (String) — категория параметра.
 4XX | Коды ошибок
 5XX | Коды ошибок
 
-## Получение параметров по одному
+## <a name="get-settings-one-at-a-time"></a>Получение параметров по одному
 Параметры можно также получить по отдельности.
 
 **Запрос**
@@ -92,7 +100,7 @@ Category (String) — категория параметра.
 4XX | Коды ошибок
 5XX | Коды ошибок
 
-## Установка значения параметра
+## <a name="set-the-value-of-a-setting"></a>Установка значения параметра
 Вы можете установить значение параметра.
 
 **Запрос**
@@ -133,10 +141,5 @@ Value (String) — новое значение параметра.
 **Доступные семейства устройств**
 
 * Windows Xbox
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

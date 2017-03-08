@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
 description: "Узнайте, как включить покупки из приложения и пробные версии в приложениях UWP."
 title: "Покупки из приложения и пробные версии"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, покупки из приложения, IAP, надстройки, пробные версии, потребляемые, длительного пользования"
 translationtype: Human Translation
-ms.sourcegitcommit: ebac7d8edf9787ad810b84f3855fe23ae3007dcf
-ms.openlocfilehash: 33004b5229167bedd4cbafe5279709f1225ed02c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ade314f79edf73527f29e937f8eab987c902802f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -218,9 +225,4 @@ ms.openlocfilehash: 33004b5229167bedd4cbafe5279709f1225ed02c
 * [Поддержка покупок потребляемых расширений внутри приложения](enable-consumable-add-on-purchases.md)
 * [Реализация пробной версии приложения](implement-a-trial-version-of-your-app.md)
 * [Внутренние покупки приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
-
-
-
-<!--HONumber=Dec16_HO4-->
-
 

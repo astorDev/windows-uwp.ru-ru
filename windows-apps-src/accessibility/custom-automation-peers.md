@@ -5,13 +5,20 @@ ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
 title: "Настраиваемые одноранговые элементы автоматизации"
 label: Custom automation peers
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9e1a458fa7ec51d621156e3ec6ed97b0361a6217
-ms.openlocfilehash: be53632455fe2fa847cc77c82ed0c2e2edff6685
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cd196547f78e896c25ee11c955146868cefd5f96
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Настраиваемые одноранговые элементы автоматизации  
+# <a name="custom-automation-peers"></a>Настраиваемые одноранговые элементы автоматизации  
 
 Описывает концепцию одноранговых элементов автоматизации для модели автоматизации пользовательского интерфейса Microsoft, а также способы обеспечения поддержки автоматизации для вашего собственного настраиваемого класса пользовательского интерфейса.
 
@@ -33,7 +40,7 @@ ms.openlocfilehash: be53632455fe2fa847cc77c82ed0c2e2edff6685
 <span id="Determining_the_existing_state_of_UI_Automation_support_for_your_custom_UI_class"/>
 <span id="determining_the_existing_state_of_ui_automation_support_for_your_custom_ui_class"/>
 <span id="DETERMINING_THE_EXISTING_STATE_OF_UI_AUTOMATION_SUPPORT_FOR_YOUR_CUSTOM_UI_CLASS"/>
-## Определение существующего состояния поддержки модели автоматизации пользовательского интерфейса для настраиваемого класса пользовательского интерфейса  
+## <a name="determining-the-existing-state-of-ui-automation-support-for-your-custom-ui-class"></a>Определение существующего состояния поддержки модели автоматизации пользовательского интерфейса для настраиваемого класса пользовательского интерфейса  
 Прежде чем пытаться реализовать одноранговый элемент автоматизации для пользовательского элемента управления, следует проверить, не обеспечивают ли уже базовый класс и его одноранговый элемент автоматизации необходимые специальные возможности или поддержку автоматизации. Во многих случаях сочетание реализаций [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472), конкретных одноранговых элементов и шаблонов, которые они реализуют, может обеспечить базовые, но приемлемые специальные возможности. Истинность данного утверждения зависит от того, сколько изменений внесено в степень воздействия элемента управления на модель объекта по сравнению с базовым классом. Кроме того, это зависит от соответствия ваших дополнений к функциям базового класса новым элементам пользовательского интерфейса в шаблоне контракта или внешнему виду элемента управления. В некоторых случаях ваши изменения могут ввести новые аспекты взаимодействия с пользователем, которые требуют дополнительной поддержки специальных возможностей.
 
 Даже если при использовании текущего базового однорангового класса обеспечивается базовая поддержка специальных возможностей, рекомендуется определить одноранговый элемент таким образом, чтобы можно было сообщать точные сведения о **ClassName** модели автоматизации пользовательского интерфейса для сценариев автоматической проверки. Это особенно важно, если вы создаете элемент управления для стороннего потребления.
@@ -41,7 +48,7 @@ ms.openlocfilehash: be53632455fe2fa847cc77c82ed0c2e2edff6685
 <span id="Automation_peer_classes__"/>
 <span id="automation_peer_classes__"/>
 <span id="AUTOMATION_PEER_CLASSES__"/>
-## Классы одноранговых элементов автоматизации  
+## <a name="automation-peer-classes"></a>Классы одноранговых элементов автоматизации  
 UWP основывается на существующих методах автоматизации пользовательского интерфейса и соглашениях, используемых в предыдущих инфраструктурах пользовательского интерфейса с управляемым кодом, например Windows Forms, Windows Presentation Foundation (WPF) и Microsoft Silverlight. Многие классы элементов управления, их функции и цели также происходят из предыдущей инфраструктуры пользовательского интерфейса.
 
 По традиции имена одноранговых классов начинаются с имени класса элемента управления и заканчиваются «AutomationPeer». Например, [**ButtonAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242458) — это одноранговый класс для класса элемента управления [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265).
@@ -52,7 +59,7 @@ UWP основывается на существующих методах авт
 <span id="Peers__patterns_and_control_types"/>
 <span id="peers__patterns_and_control_types"/>
 <span id="PEERS__PATTERNS_AND_CONTROL_TYPES"/>
-## Одноранговые элементы, шаблоны и типы элементов управления  
+## <a name="peers-patterns-and-control-types"></a>Одноранговые элементы, шаблоны и типы элементов управления  
 *Шаблон элемента управления* представляет собой реализацию интерфейса, который предоставляет конкретный аспект функциональности элемента управления для клиентов автоматизации пользовательского интерфейса. Клиенты автоматизации пользовательского интерфейса используют свойства и методы, предоставляемые через шаблон элемента управления, для получения сведений о возможностях элемента управления или для манипулирования реакцией элемента управления на события во время выполнения.
 
 Шаблоны элемента управления обеспечивают способ классификации и предоставления функциональности элемента управления вне зависимости от его типа или внешнего вида. Например, элемент управления, который представляет табличный интерфейс, использует шаблон элемента управления **Grid** для отображения количества строк и столбцов в таблице и для включения клиента модели автоматизации пользовательского интерфейса с целью извлечения элементов из таблицы. Другой пример: клиент модели автоматизации пользовательского интерфейса может использовать шаблон элемента управления **Invoke** для элементов управления, которые могут быть вызваны (например, кнопок), и шаблон элемента управления **Scroll** для элементов управления, которые имеют полосы прокрутки, например списков, представлений списков или полей со списком. Каждый шаблон элемента управления представляет собой отдельный тип функциональности, поэтому шаблоны элементов управления можно объединить для описания полного набора функциональных возможностей, поддерживаемых определенным элементом управления.
@@ -77,7 +84,7 @@ UWP основывается на существующих методах авт
 <span id="Guidance_for_how_to_implement_control_patterns"/>
 <span id="guidance_for_how_to_implement_control_patterns"/>
 <span id="GUIDANCE_FOR_HOW_TO_IMPLEMENT_CONTROL_PATTERNS"/>
-### Рекомендации по реализации шаблонов элементов управления  
+### <a name="guidance-for-how-to-implement-control-patterns"></a>Рекомендации по реализации шаблонов элементов управления  
 Шаблоны элементов управления и их назначение входят в более масштабное определение инфраструктуры автоматизации пользовательского интерфейса и не относятся только к поддержке специальных возможностей в приложении Магазина Windows. Шаблон элемента управления следует реализовывать так, чтобы он соответствовал рекомендациям, описанным в документации MSDN и в спецификации по модели автоматизации пользовательского интерфейса. Обычно ресурсов MSDN оказывается достаточно, и нет необходимости обращаться к спецификации. Рекомендации по каждому шаблону приведены в разделе, посвященном [реализации шаблонов элементов управления для автоматизации пользовательского интерфейса](https://msdn.microsoft.com/library/windows/desktop/Ee671292). В каждом разделе этой области есть подразделы "Рекомендации и соглашения по реализации" и "Обязательные члены". В рекомендациях обычно упоминаются конкретные API соответствующего интерфейса шаблона элемента управления в справочнике [Интерфейсы шаблонов элементов управления для поставщиков](https://msdn.microsoft.com/library/windows/desktop/Ee671201). Это собственные интерфейсы или COM-интерфейсы (и в их API используется синтаксис в стиле COM). Для всех показанных элементов есть эквивалент в пространстве имен [**Windows.UI.Xaml.Automation.Provider**](https://msdn.microsoft.com/library/windows/apps/BR209225).
 
 Если вы используете одноранговые элементы автоматизации по умолчанию и расширяете их возможности, то эти элементы уже написаны в соответствии с рекомендациями по модели автоматизации пользовательского интерфейса. Если они поддерживают шаблоны элементов управления, то вы можете быть уверены, что эта поддержка соответствует рекомендациям из раздела, посвященного [реализации шаблонов элементов управления для автоматизации пользовательского интерфейса](https://msdn.microsoft.com/library/windows/desktop/Ee671292). Если одноранговый элемент для элемента управления сообщает, что он представляет тип элемента управления, определенный в модели автоматизации пользовательского интерфейса, то в этом одноранговом элементе соблюдаются рекомендации, описанные в разделе [Поддержка типов элементов управления для автоматизации пользовательского интерфейса](https://msdn.microsoft.com/library/windows/desktop/Ee671633).
@@ -89,19 +96,19 @@ UWP основывается на существующих методах авт
 <span id="Built-in_automation_peer_classes"/>
 <span id="built-in_automation_peer_classes"/>
 <span id="BUILT-IN_AUTOMATION_PEER_CLASSES"/>
-## Встроенные классы одноранговых элементов автоматизации  
+## <a name="built-in-automation-peer-classes"></a>Встроенные классы одноранговых элементов автоматизации  
 В целом элементы реализуют класс одноранговых элементов автоматизации, если они принимают действие пользовательского интерфейса от пользователя или если они содержат сведения, необходимые пользователям специальных возможностей, представляющих интерактивный или значимый пользовательский интерфейс приложения. Не все визуальные элементы UWP имеют одноранговые элементы автоматизации. Примерами классов, реализующих одноранговые элементы автоматизации, являются [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) и [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683). Примерами классов, не реализующих одноранговые элементы автоматизации, являются [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) и классы, основанные на [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511), например [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) и [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267). **Panel** не имеет однорангового элемента, поскольку обеспечивает только визуальные реакции макета. Для пользователя нет связанного со специальными возможностями способа взаимодействия с **Panel**. Вместо этого любые дочерние элементы **Panel** передаются в деревья автоматизации пользовательского интерфейса как дочерние элементы следующего доступного родителя в дереве, имеющего одноранговый элемент или представление элемента.
 
 <span id="UI_Automation_and_UWP_process_boundaries"/>
 <span id="ui_automation_and_uwp_process_boundaries"/>
 <span id="UI_AUTOMATION_AND_UWP_PROCESS_BOUNDARIES"/>
-## Ограничения процесса модели автоматизации пользовательского интерфейса и платформы UWP  
+## <a name="ui-automation-and-uwp-process-boundaries"></a>Ограничения процесса модели автоматизации пользовательского интерфейса и платформы UWP  
 Обычно код клиента автоматизации пользовательского интерфейса, который получает доступ к приложению UWP, запускается вне процесса. Инфраструктура автоматизации пользовательского интерфейса обеспечивает информацию для выхода за границу процесса. Более подробные сведения об этой концепции см. в разделе [Основы модели автоматизации пользовательского интерфейса](https://msdn.microsoft.com/library/windows/desktop/Ee684007).
 
 <span id="OnCreateAutomationPeer"/>
 <span id="oncreateautomationpeer"/>
 <span id="ONCREATEAUTOMATIONPEER"/>
-## OnCreateAutomationPeer  
+## <a name="oncreateautomationpeer"></a>OnCreateAutomationPeer  
 Все классы, производные от [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), содержат защищенный виртуальный метод [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer). Последовательность инициализации объекта для одноранговых элементов автоматизации вызывает **OnCreateAutomationPeer**, чтобы получить объект однорангового элемента автоматизации для каждого элемента управления и таким образом построить дерево автоматизации пользовательского интерфейса для выполнения во время использования. Код модели автоматизации пользовательского интерфейса может использовать одноранговый элемент для получения информации о характеристиках и функциях элемента управления и для имитации интерактивного использования с помощью своих шаблонов элементов управления. Пользовательский элемент управления, который поддерживает автоматизацию, должен переопределить **OnCreateAutomationPeer** и возвратить экземпляр класса, производного от [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185). Например, если пользовательский элемент управления является производным от класса [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/BR227736), то объект, возвращенный **OnCreateAutomationPeer**, должен быть производным от [**ButtonBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242460).
 
 Если вы пишете класс пользовательского элемента управления и собираетесь также предоставить новый одноранговый элемент автоматизации, вы должны переопределить метод [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer) для пользовательского элемента управления так, чтобы он возвращал новый экземпляр вашего однорангового элемента. Одноранговый класс должен непосредственно или косвенно быть производным от класса [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185).
@@ -161,7 +168,7 @@ protected:
 <span id="Choosing_the_correct_peer_base_class"/>
 <span id="choosing_the_correct_peer_base_class"/>
 <span id="CHOOSING_THE_CORRECT_PEER_BASE_CLASS"/>
-### Выбор верного базового класса однорангового элемента  
+### <a name="choosing-the-correct-peer-base-class"></a>Выбор верного базового класса однорангового элемента  
 Убедитесь, что ваш класс [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) является производным от базового класса, который лучше всего подходит для существующей логики одноранговых элементов класса элемента управления, от которого осуществляется наследование. В контексте предыдущего примера, поскольку `NumericUpDown` происходит от [**RangeBase**](https://msdn.microsoft.com/library/windows/apps/BR227863), доступен класс [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506), на основе которого следует создавать одноранговый элемент. Используя самый близкий подходящий одноранговый класс и одновременно отслеживая происхождение самого элемента управления, вы сможете избежать переопределения по крайней мере некоторых функций [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590), потому что базовый одноранговый класс уже реализует их.
 
 В базовом классе [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) нет соответствующего однорангового класса. Если требуется одноранговый класс, соответствующий пользовательскому элементу управления, производному от **Control**, следует наследовать пользовательский одноранговый класс от [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472).
@@ -174,7 +181,7 @@ protected:
 <span id="Initialization_of_a_custom_peer_class"/>
 <span id="initialization_of_a_custom_peer_class"/>
 <span id="INITIALIZATION_OF_A_CUSTOM_PEER_CLASS"/>
-## Инициализация пользовательского класса одноранговых элементов  
+## <a name="initialization-of-a-custom-peer-class"></a>Инициализация пользовательского класса одноранговых элементов  
 Одноранговый элемент автоматизации должен определять типобезопасный конструктор, который использует экземпляр элемента управления владельца для базовой инициализации. В следующем примере реализация передает значение *owner* на базу [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506), и в итоге именно [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) фактически использует *owner* для задания [**FrameworkElementAutomationPeer.Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner).
 
 C#
@@ -201,7 +208,7 @@ public:    NumericUpDownAutomationPeer(NumericUpDown^ owner);
 <span id="Core_methods_of_AutomationPeer"/>
 <span id="core_methods_of_automationpeer"/>
 <span id="CORE_METHODS_OF_AUTOMATIONPEER"/>
-## Основные методы AutomationPeer  
+## <a name="core-methods-of-automationpeer"></a>Основные методы AutomationPeer  
 В связи с особенностями инфраструктуры UWP переопределяемые методы одноранговых элементов автоматизации являются частью пары методов: метода с открытым доступом, который используется поставщиком модели автоматизации пользовательского интерфейса в качестве пункта пересылки для клиентов модели автоматизации пользовательского интерфейса, и защищенного метода настройки Core, который класс UWP может переопределить, чтобы изменить его поведение. Методы в этой паре объединяются по умолчанию так, чтобы при вызове метода доступа всегда вызывался параллельный метод Core, содержащий реализацию поставщика, или так, чтобы резервный метод вызывал реализацию по умолчанию из базовых классов.
 
 При реализации однорангового элемента для пользовательского элемента управления следует переопределить любой из методов Core базового однорангового класса автоматизации в тех случаях, когда от вашего пользовательского элемента управления требуется уникальное поведение. Код автоматизации пользовательского интерфейса получает информацию о вашем элементе управления путем вызова открытых методов однорангового класса. Чтобы предоставить сведения о вашем элементе управления, переопределите каждый метод с именем, оканчивающимся на «Core», когда реализация и дизайн вашего элемента управления создает сценарии специальных возможностей или другие сценарии модели автоматизации пользовательского интерфейса, отличные от поддерживаемых базовым одноранговым классом автоматизации.
@@ -241,7 +248,7 @@ protected override AutomationControlType GetAutomationControlTypeCore()
 <span id="GetPattern_and_GetPatternCore"/>
 <span id="getpattern_and_getpatterncore"/>
 <span id="GETPATTERN_AND_GETPATTERNCORE"/>
-### GetPattern и GetPatternCore  
+### <a name="getpattern-and-getpatterncore"></a>GetPattern и GetPatternCore  
 Реализация однорангового элемента [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) возвращает объект, который поддерживает шаблон, запрашиваемый в качестве входного параметра. В частности, клиент модели автоматизации пользовательского интерфейса вызывает метод, который передается методу [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpattern) поставщика и задает значение перечисления [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496), которое присваивает имя запрошенному шаблону. Переопределение **GetPatternCore** должно возвращать объект, который реализует указанный шаблон. Этот объект сам представляет собой одноранговый элемент, поскольку одноранговый элемент должен реализовывать соответствующий интерфейс шаблона всякий раз, когда сообщает, что шаблон поддерживается. Если у вашего однорангового элемента нет пользовательской реализации шаблона, но вы знаете, что базовый одноранговый элемент реализует шаблон, вы можете вызвать реализацию базового типа **GetPatternCore** из своего **GetPatternCore**. **GetPatternCore** однорангового элемента должен возвращать значение **null**, если одноранговый элемент не поддерживает шаблон. Однако, вместо того чтобы возвращать **null** непосредственно из реализации, обычно осуществляется вызов базовой реализации для возвращения **null** в случае любого неподдерживаемого шаблона.
 
 Если шаблон поддерживается, реализация [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) может возвращать **this** или **Me**. Ожидается, что клиент модели автоматизации пользовательского интерфейса должен приводить возвращаемое значение [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpattern) к интерфейсу запрошенного шаблона каждый раз, когда его значение отличается от **null**.
@@ -289,7 +296,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Forwarding_patterns_from_sub-elements"/>
 <span id="forwarding_patterns_from_sub-elements"/>
 <span id="FORWARDING_PATTERNS_FROM_sub-elementS"/>
-### Пересылка шаблонов из подэлементов  
+### <a name="forwarding-patterns-from-sub-elements"></a>Пересылка шаблонов из подэлементов  
 Реализация метода [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) может также указывать подэлемент или часть в качестве поставщика шаблона для своего основного элемента. В этом примере имитируется передача элементом [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) обработки шаблона прокрутки одноранговому элементу внутреннего элемента управления [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527). Чтобы указать подэлемент для обработки шаблона, этот код получает объект подэлемента, создает для подэлемента одноранговый элемент с помощью метода [**FrameworkElementAutomationPeer.CreatePeerForElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.createpeerforelement) и возвращает новый одноранговый элемент.
 
 C#
@@ -326,7 +333,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Other_Core_methods"/>
 <span id="other_core_methods"/>
 <span id="OTHER_CORE_METHODS"/>
-### Другие методы Core  
+### <a name="other-core-methods"></a>Другие методы Core  
 Элементу управления может потребоваться поддержка эквивалентов клавиатуры для основных сценариев. Подробнее о том, почему это может понадобиться, см. в статье [Специальные возможности клавиатуры](keyboard-accessibility.md). Реализация поддержки ключа является обязательной частью кода элемента управления, но не однорангового элемента, так как она является частью логики элемента управления, а класс однорангового элемента должен переопределить методы [**GetAcceleratorKeyCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getacceleratorkeycore) и [**GetAccessKeyCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getaccesskeycore), чтобы сообщить клиентам модели автоматизации пользовательского интерфейса, какие ключи используются. Представьте, что эти строки, содержащие ключевую информацию, потребуется локализовать и поэтому они должны происходить из ресурсов, а не из жестко заданных строк.
 
 Если вы предоставляете одноранговый элемент для класса, который поддерживает коллекцию, лучше наследовать от функциональных классов и одноранговых классов, которые уже имеют такого рода поддержку коллекции. Если вы не можете это сделать, возможно, потребуется, чтобы одноранговые элементы для элементов управления, которые поддерживают дочерние коллекции, переопределили одноранговый метод [**GetChildrenCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildrencore), относящийся к коллекции, чтобы должным образом передавать данные о родительско-дочерних отношениях в дерево автоматизации пользовательского интерфейса.
@@ -344,7 +351,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Base_implementation_in_FrameworkElementAutomationPeer"/>
 <span id="base_implementation_in_frameworkelementautomationpeer"/>
 <span id="BASE_IMPLEMENTATION_IN_FRAMEWORKELEMENTAUTOMATIONPEER"/>
-### Базовая реализация в FrameworkElementAutomationPeer  
+### <a name="base-implementation-in-frameworkelementautomationpeer"></a>Базовая реализация в FrameworkElementAutomationPeer  
 Базовая реализация [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) обеспечивает некоторые сведения модели автоматизации пользовательского интерфейса, которые можно интерпретировать посредством различных свойств макета и поведения, определенных на уровне платформы.
 
 * [**GetBoundingRectangleCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getboundingrectanglecore): возвращает структуру [**Rect**](https://msdn.microsoft.com/library/windows/apps/BR225994) на основании известных характеристик макета. Возвращает нулевое значение **Rect**, если [**IsOffscreen**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isoffscreen) имеет значение **true**.
@@ -352,7 +359,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 * [**GetNameCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getnamecore): более комплексное поведение, которое сложно описать здесь; см. раздел [**GetNameCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getnamecore). Метод, в сущности, делает попытку строкового преобразования любого известного содержимого [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) или связанных классов с содержимым. Кроме того, если у [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) есть значение, значение **Name** этого элемента используется как **Name**.
 * [**HasKeyboardFocusCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.haskeyboardfocuscore): оценивается на основании свойств [**FocusState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.focusstate) и [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled) владельца. Элементы, не являющиеся элементами управления, всегда возвращают **false**.
 * [**IsEnabledCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isenabledcore): оценивается на основании свойства [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled) владельца, если это [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390). Элементы, не являющиеся элементами управления, всегда возвращают **true**. Это не значит, что владелец активен в том смысле, что с ним можно взаимодействовать. Это значит, что одноранговый элемент активен несмотря на то, что владелец не имеет свойства **IsEnabled**.
-* [**IsKeyboardFocusableCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.iskeyboardfocusablecore): возвращает значение **true**, если владелец— [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390); в противном случае возвращает значение **false**.
+* [**IsKeyboardFocusableCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.iskeyboardfocusablecore): возвращает значение **true**, если владелец — [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390); в противном случае возвращает значение **false**.
 * [**IsOffscreenCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isoffscreencore): [**Visibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility) со значением [**Collapsed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visibility) в элементе владельца или любом из его родительских элементов приравнивается к значению **true** для [**IsOffscreen**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isoffscreen). Исключение: объект [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) может быть видимым, даже если родительские элементы его владельца скрыты.
 * [**SetFocusCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.setfocuscore): вызывает [**Focus**](https://msdn.microsoft.com/library/windows/apps/hh702161).
 * [**GetParent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getparent): вызывает [**FrameworkElement.Parent**](https://msdn.microsoft.com/library/windows/apps/BR208739) владельца и ищет подходящий одноранговый элемент. Эта пара не переопределяется с помощью метода Core, поэтому вы не сможете изменить ее поведение.
@@ -363,7 +370,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Peers_and_AutomationProperties"/>
 <span id="peers_and_automationproperties"/>
 <span id="PEERS_AND_AUTOMATIONPROPERTIES"/>
-## Одноранговые элементы и AutomationProperties  
+## <a name="peers-and-automationproperties"></a>Одноранговые элементы и AutomationProperties  
 Ваш одноранговый элемент автоматизации должен обеспечить соответствующие значения по умолчанию для информации о специальных возможностях элемента управления. Обратите внимание, что любой код приложения, который использует элемент управления, может переопределить некоторые аспекты этого поведения, включив значения присоединенных свойств [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) экземпляров элемента управления. Вызывающие объекты могут сделать это либо для элементов управления по умолчанию, либо для пользовательских элементов управления. Например, следующий XAML-код создает кнопку, которая имеет два настраиваемых свойства модели автоматизации пользовательского интерфейса:  `<Button AutomationProperties.Name="Special"      AutomationProperties.HelpText="This is a special button."/>`
 
 Подробнее о присоединенных свойствах [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) см. в статье [Основные сведения о специальных возможностях ](basic-accessibility-information.md).
@@ -373,7 +380,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Implementing_patterns"/>
 <span id="implementing_patterns"/>
 <span id="IMPLEMENTING_PATTERNS"/>
-## Реализация шаблонов  
+## <a name="implementing-patterns"></a>Реализация шаблонов  
 Рассмотрим, как написать одноранговый элемент для элемента управления, который реализует поведение свертывания и развертывания путем реализации соответствующего интерфейса шаблона элемента управления. Одноранговый элемент должен разрешать специальные возможности для поведения свертывания и развертывания, возвращая самого себя всякий раз, когда вызывается [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpattern) со значением [**PatternInterface.ExpandCollapse**](https://msdn.microsoft.com/library/windows/apps/BR242496). Одноранговый элемент должен также наследовать интерфейс поставщика для этого шаблона ([**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider)) и предоставлять реализации для каждого из элементов этого интерфейса поставщика. В этом случае интерфейс имеет три элемента для переопределения: [**Expand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.expand), [**Collapse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.collapse), [**ExpandCollapseState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.expandcollapsestate).
 
 Полезно заранее планировать специальные возможности в дизайне API самого класса. Всякий раз, когда имеется поведение, которое потенциально запрашивается либо в результате обычного взаимодействия с пользователем, работающим с пользовательским интерфейсом, либо с помощью шаблона поставщика автоматизации, следует предоставлять один метод, который может быть вызван реакцией пользовательского интерфейса или шаблоном автоматизации. Например, если в элементе управления есть кнопочные части с жестко заданными обработчиками событий, которые могут развернуть или свернуть элемент управления, а также клавиатурные эквиваленты для этих действий, сделайте так, чтобы эти обработчики событий вызывали тот же метод, который вы вызываете из тела реализаций [**Expand**](https://msdn.microsoft.com/library/windows/apps/BR242570) или [**Collapse**](https://msdn.microsoft.com/library/windows/apps/BR242569) для [**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/desktop/Ee671242) в одноранговом узле. Использование метода общей логики также может быть действенным способом для того, чтобы убедиться, что визуальные состояния элемента управления обновляются для отображения логических состояний единым образом, независимо от того, как было вызвано поведение.
@@ -396,7 +403,7 @@ public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCo
 <span id="UI_Automation_events"/>
 <span id="ui_automation_events"/>
 <span id="UI_AUTOMATION_EVENTS"/>
-## События модели автоматизации пользовательского интерфейса  
+## <a name="ui-automation-events"></a>События модели автоматизации пользовательского интерфейса  
 
 События модели автоматизации пользовательского интерфейса делятся на следующие категории.
 
@@ -410,13 +417,13 @@ public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCo
 <span id="AutomationEvents_identifiers"/>
 <span id="automationevents_identifiers"/>
 <span id="AUTOMATIONEVENTS_IDENTIFIERS"/>
-### Идентификаторы AutomationEvents  
+### <a name="automationevents-identifiers"></a>Идентификаторы AutomationEvents  
 События модели автоматизации пользовательского интерфейса идентифицируются значениями [**AutomationEvents**](https://msdn.microsoft.com/library/windows/apps/BR209183). Значения перечисления обеспечивают уникальную идентификацию видов событий.
 
 <span id="Raising_events"/>
 <span id="raising_events"/>
 <span id="RAISING_EVENTS"/>
-### Создание событий  
+### <a name="raising-events"></a>Создание событий  
 Клиенты автоматизации пользовательского интерфейса могут подписываться на события автоматизации. В модели одноранговых элементов автоматизации для пользовательских элементов управления должны сообщаться изменения в состоянии элемента управления, которые имеют отношение к специальным возможностям путем вызова метода [**RaiseAutomationEvent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.raiseautomationevent). Аналогично, при изменении ключевого значения свойства модели автоматизации пользовательского интерфейса одноранговые элементы пользовательского элемента управления должны вызывать метод [**RaisePropertyChangedEvent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.raisepropertychangedevent).
 
 Следующий образец кода показывает, как получить одноранговый объект из кода определения элемента управления и вызвать метод для создания события из этого однорангового элемента. В качестве оптимизации код определяет, есть ли какие-либо прослушиватели для данного типа события. Инициация события и создание объекта однорангового элемента только при наличии прослушивателей позволяет избежать лишних действий и обеспечивает готовность элемента управления к отклику.
@@ -440,13 +447,13 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 <span id="Peer_navigation"/>
 <span id="peer_navigation"/>
 <span id="PEER_NAVIGATION"/>
-## Навигация по одноранговым элементам  
+## <a name="peer-navigation"></a>Навигация по одноранговым элементам  
 После обнаружения однорангового элемента автоматизации клиент модели автоматизации пользовательского интерфейса может перемещаться по структуре одноранговых элементов приложения путем вызова методов [**GetChildren**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildren) и [**GetParent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getparent) однорангового объекта. Навигация между элементами пользовательского интерфейса в элементе управления поддерживается реализацией одноранговых элементов в методе [**GetChildrenCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildrencore). Система модели автоматизации пользовательского интерфейса вызывает этот метод для создания дерева подэлементов, содержащихся в элементе управления; например, элементов списка в поле со списком. Метод по умолчанию **GetChildrenCore** в [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) обходит визуальное дерево элементов для создания дерева одноранговых элементов автоматизации. Пользовательские элементы управления могут переопределять этот метод, чтобы предоставлять другое представление дочерних элементов клиентам автоматизации, возвращая одноранговые элементы автоматизации, которые передают информацию или разрешают взаимодействие с пользователем.
 
 <span id="Native_automation_support_for_text_patterns"/>
 <span id="native_automation_support_for_text_patterns"/>
 <span id="NATIVE_AUTOMATION_SUPPORT_FOR_TEXT_PATTERNS"/>
-## Встроенная поддержка автоматизации для текстовых шаблонов  
+## <a name="native-automation-support-for-text-patterns"></a>Встроенная поддержка автоматизации для текстовых шаблонов  
 Некоторые из стандартных одноранговых элементов автоматизации для приложений UWP предоставляют поддержку шаблонов элементов управления для текстовых шаблонов ([**PatternInterface.Text**](https://msdn.microsoft.com/library/windows/apps/BR242496)). Но они предоставляют эту поддержку посредством собственных методов, и затронутые одноранговые элементы не заметят интерфейс [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) в (управляемом) наследовании. Однако если управляемый или неуправляемый клиент модели автоматизации пользовательского интерфейса запрашивает у однорангового элемента шаблоны, он сообщит о поддержке текстового шаблона и предоставит поведение для частей шаблона, когда будут вызваны клиентские API.
 
 Если вы намерены использовать наследование от одного из текстовых элементов управления приложения UWP, а также создать собственный одноранговый элемент, наследующий от одного из связанных с текстом одноранговых элементов, загляните в разделы примечаний для однорангового элемента, чтобы получить дополнительные данные о встроенной поддержке шаблонов. Доступ к встроенному базовому поведению в своем одноранговом элементе можно получить, вызвав базовую реализацию из своих управляемых реализаций интерфейса поставщика, но действия базовой реализации сложно изменить, поскольку собственные интерфейсы как однорангового элемента, так и элемента управления владельца не предоставляются. В целом следует либо использовать базовую реализацию "как есть" (только для вызова базового элемента), либо полностью заменить функциональность на собственный управляемый код и не вызывать базовую реализацию. Последний случай относится к расширенным сценариям, и вам потребуется уверенное владение платформой текстовых служб, которая используется вашим элементом управления, чтобы выполнить требования поддержки специальных возможностей при работе с этой платформой.
@@ -454,7 +461,7 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 <span id="AutomationProperties.AccessibilityView"/>
 <span id="automationproperties.accessibilityview"/>
 <span id="AUTOMATIONPROPERTIES.ACCESSIBILITYVIEW"/>
-## Свойство AutomationProperties.AccessibilityView  
+## <a name="automationpropertiesaccessibilityview"></a>Свойство AutomationProperties.AccessibilityView  
 Помимо предоставления пользовательского однорангового класса вы можете настроить представление в виде дерева для любых экземпляров элемента управления, задав свойство [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.accessibilityview) в XAML. Это свойство не реализовано как часть однорангового класса, но мы приводим его здесь, так как оно связано с общей поддержкой специальных возможностей для пользовательских элементов управления или для настраиваемых вами шаблонов.
 
 Основной сценарий использования **AutomationProperties.AccessibilityView** заключается в намеренном пропуске определенных элементов управления в шаблоне из представлений модели автоматизации пользовательского интерфейса, так как они незначительно влияют на представление специальных возможностей элемента управления в целом. Для предотвращения этого установите для свойства **AutomationProperties.AccessibilityView** значение "Raw".
@@ -462,7 +469,7 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 <span id="Throwing_exceptions_from_automation_peers"/>
 <span id="throwing_exceptions_from_automation_peers"/>
 <span id="THROWING_EXCEPTIONS_FROM_AUTOMATION_PEERS"/>
-## Создание исключений в одноранговых элементах автоматизации  
+## <a name="throwing-exceptions-from-automation-peers"></a>Создание исключений в одноранговых элементах автоматизации  
 API-интерфейсы, реализуемые для поддержки одноранговых элементов автоматизации, могут создавать исключения. Ожидается, что все клиенты автоматизации пользовательского интерфейса, которые прослушивают исключения, достаточно устойчивы, чтобы после большинства создаваемых исключений продолжить работу. Скорее всего, такой прослушиватель просматривает полное дерево автоматизации, включающее не только ваши приложения. Недопустимо, чтобы весь клиент становился недоступным, если в какой-то области дерева возникает исключение однорангового элемента при вызове клиентом своих API.
 
 Для параметров, передаваемых в ваш одноранговый элемент, допустимо проверять входные данные и, например, создавать исключение [**ArgumentNullException**](https://msdn.microsoft.com/library/windows/apps/system.argumentnullexception), если передано значение **null**, которое считается недопустимым для реализации. Однако если одноранговый элемент выполняет дальнейшие операции, то учитывайте, что взаимодействие однорангового элемента с элементом управления, в котором он размещается, носит асинхронный характер. Действия, выполняемые одноранговым элементом, не обязательно блокируют поток пользовательского интерфейса в элементе управления (и, скорее всего, не должны его блокировать). Поэтому возможны ситуации, в которых объект был доступен или имел определенные свойства в момент создания однорангового элемента или в момент первого вызова метода однорангового элемента автоматизации, но затем состояние элемента управления изменилось. В таких случаях поставщик может создавать два специальных исключения.
@@ -473,16 +480,11 @@ API-интерфейсы, реализуемые для поддержки од�
 В прочих отношениях в одноранговых элементах следует соблюдать относительно традиционный подход к созданию исключений из поддерживаемых одноранговых элементов. Большинство клиентов не смогут обрабатывать исключения от одноранговых элементов и будут предоставлять пользователю возможность выбора действия при взаимодействии с клиентом. Поэтому иногда разумнее не создавать исключения каждый раз, когда не удается выполнить какое-либо действие в одноранговом элементе, а выполнять операцию и перехватывать исключения без повторного создания в реализации однорангового элемента. Также учитывайте, что большинство клиентов модели автоматизации пользовательского интерфейса написаны в неуправляемом коде. Большинство написаны в модели COM и просто проверяют значение **S\_OK** в **HRESULT** при каждом вызове метода клиента модели автоматизации пользовательского интерфейса, который в итоге обращается к одноранговому элементу.
 
 <span id="related_topics"/>
-## Ссылки по теме  
+## <a name="related-topics"></a>Ссылки по теме  
 * [Специальные возможности](accessibility.md)
 * [Пример XAML accessibility](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472)
 * [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185)
 * [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer)
 * [Шаблоны и интерфейсы элементов управления](control-patterns-and-interfaces.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

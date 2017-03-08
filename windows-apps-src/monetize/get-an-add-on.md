@@ -3,20 +3,27 @@ author: mcleanbyron
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
 description: "Используйте этот метод в API отправки Магазина Windows для получения информации о надстройке для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows."
 title: "Получение надстройки с помощью API отправки Магазина Windows"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API отправки Магазина Windows, надстройка, внутренний продукт приложения, IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 20da33d3e06ca97613f4bc317fe8e8fdc9bc73b6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e000c435b8a271085872bfb1ce42dd09352847c5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Получение надстройки с помощью API отправки Магазина Windows
+# <a name="get-an-add-on-using-the-windows-store-submission-api"></a>Получение надстройки с помощью API отправки Магазина Windows
 
 
 
 
 Используйте этот метод в API отправки Магазина Windows для получения сведений о надстройке (также называется внутренним продуктом приложения или IAP) для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows.
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 Для использования этого метода необходимо выполнить следующие действия:
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: 20da33d3e06ca97613f4bc317fe8e8fdc9bc73b6
 
 >**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
-## Запрос
+## <a name="request"></a>Запрос
 
 У этого метода следующий синтаксис. Примеры использования и описание заголовка и тела запроса приведены в следующих разделах.
 
@@ -36,7 +43,7 @@ ms.openlocfilehash: 20da33d3e06ca97613f4bc317fe8e8fdc9bc73b6
 <span/>
  
 
-### Заголовок запроса
+### <a name="request-header"></a>Заголовок запроса
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -44,7 +51,7 @@ ms.openlocfilehash: 20da33d3e06ca97613f4bc317fe8e8fdc9bc73b6
 
 <span/>
 
-### Параметры запроса
+### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -52,13 +59,13 @@ ms.openlocfilehash: 20da33d3e06ca97613f4bc317fe8e8fdc9bc73b6
 
 <span/>
 
-### Тело запроса
+### <a name="request-body"></a>Тело запроса
 
 Предоставлять тело запроса для этого метода не требуется.
 
 <span/>
 
-### Пример запроса
+### <a name="request-example"></a>Пример запроса
 
 В приведенном ниже примере показано, как получить информацию о надстройке.
 
@@ -67,7 +74,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP HT
 Authorization: Bearer <your access token>
 ```
 
-## Ответ
+## <a name="response"></a>Ответ
 
 В следующем примере представлено тело ответа JSON в случае успешного вызова этого метода. Дополнительные сведения о значениях в теле ответа см. в разделе [Ресурс надстройки](manage-add-ons.md#add-on-object).
 
@@ -96,7 +103,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## Коды ошибок
+## <a name="error-codes"></a>Коды ошибок
 
 Если запрос не удается выполнить, ответ будет содержать один из следующих кодов ошибок HTTP.
 
@@ -107,16 +114,11 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
 * [Управление отправками надстроек](manage-add-on-submissions.md)
 * [Получение всех надстроек](get-all-add-ons.md)
 * [Создание надстройки](create-an-add-on.md)
 * [Удаление надстройки](delete-an-add-on.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

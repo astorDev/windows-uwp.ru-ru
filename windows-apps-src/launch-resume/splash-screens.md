@@ -2,9 +2,17 @@
 author: PatrickFarley
 title: "Экраны-заставки"
 description: "В этом разделе описано, как установить и настроить экран-заставку вашего приложения."
+ms.assetid: 6b954bb3-e5b0-46d1-8afc-fb805536cf6d
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 023e37bb6f9b8d8d780bb0a536cb469c87a31ed4
-ms.openlocfilehash: bb0f3ff68b7dc15623e4f337e589989354e08b65
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 51add4631b807940e051a8f4cbaca92063e41d4a
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -28,8 +36,3 @@ ms.openlocfilehash: bb0f3ff68b7dc15623e4f337e589989354e08b65
 |-------|-------------|
 | [Добавление экрана-заставки](add-a-splash-screen.md) | Задайте изображение экрана-заставки и цвет фона вашего приложения. |
 | [Более продолжительное отображение экрана-заставки](create-a-customized-splash-screen.md) | Увеличьте длительность отображения экрана-заставки, создав и использовав расширенный экран-заставку для приложения. Этот расширенный экран имитирует экран-заставку, отображаемый при запуске приложения, и его можно настраивать. |
-
-
-<!--HONumber=Dec16_HO1-->
-
-

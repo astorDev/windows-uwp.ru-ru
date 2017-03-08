@@ -2,15 +2,23 @@
 author: Mtoepke
 title: "Вопросы и ответы"
 description: "Вопросы и ответы о UWP на консолях Xbox."
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 translationtype: Human Translation
-ms.sourcegitcommit: 1ee75d73cc42455677bc2c0df08b41f33fc4f7b0
-ms.openlocfilehash: a6d410e3a4873bb96fba46789b28185c392a7492
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 059fac41c0c0557dbc3d4739c1da78f794505839
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="frequently-asked-questions"></a>Вопросы и ответы
 
-Что-то работает не так, как вы ожидали? Прочитайте вопросы и ответы на этой странице. Также изучите раздел [Известные проблемы](known-issues.md) и посетите форум [разработки универсальных приложений для Windows](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop). 
+Что-то работает не так, как вы ожидали? Прочитайте вопросы и ответы на этой странице. Также изучите раздел [Известные проблемы](known-issues.md) и посетите форум [разработки универсальных приложений для Windows](https://go.microsoft.com/fwlink/?linkid=839446). 
 
 ### <a name="why-are-my-games-and-apps-not-working"></a>Почему игры и приложения не работают?
 
@@ -38,6 +46,9 @@ ms.openlocfilehash: a6d410e3a4873bb96fba46789b28185c392a7492
 ### <a name="will-my-games-and-apps-still-work-if-i-activate-developer-mode"></a>Будут ли игры и приложения по-прежнему работать, если включить режим разработчика?
 
 Да, вы можете переключиться из режима разработчика в коммерческий режим, чтобы играть в игры. Дополнительные сведения см. на странице [Активация режима разработчика Xbox One](devkit-activation.md). 
+
+### <a name="can-i-develop-and-publish-x86-apps-for-xbox"></a>Можно ли разрабатывать и публиковать приложения x86 для Xbox?
+Xbox больше не поддерживает разработку приложений x86 или их отправку в магазин. 
 
 ### <a name="will-i-lose-my-games-and-apps-or-saved-changes"></a>Потеряю ли я игры и приложения или сохраненные изменения?
 
@@ -131,9 +142,4 @@ TVHelpers — это набор примеров и библиотек JavaScrip
 ## <a name="see-also"></a>См. также
 - [Известные проблемы с UWP на Xbox One](known-issues.md)
 - [Приложения UWP для Xbox One](index.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

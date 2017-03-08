@@ -3,19 +3,27 @@ author: GrantMeStrength
 Description: "Сравнение возможностей платформ iOS, Android и Windows 10."
 Search.Product: eADQiWindows 10XVcnh
 title: "Сопоставление концепций приложений для Windows для разработчиков iOS и Android"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 translationtype: Human Translation
-ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
-ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e5cf0a75515458a558e94a9f8bb54913e7df4a14
+ms.lasthandoff: 02/08/2017
 
 ---
 
-#Сопоставление концепций приложений для Windows для разработчиков iOS и Android
+#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Сопоставление концепций приложений для Windows для разработчиков iOS и Android
 
 Если вы являетесь разработчиком с навыками разработки или готовым кодом для Android и iOS и хотите перейти на Windows 10 и универсальную платформу Windows (UWP), этот ресурс содержит всю необходимую информацию для сопоставления функций — и ваших знаний — между тремя платформами.
 
 См. также информацию по портированию в разделе [Переход от iOS к UWP](ios-to-uwp-root.md). Этот документ также доступен для [скачивания](https://www.microsoft.com/download/details.aspx?id=52041).
 
-## Пользовательский интерфейс
+## <a name="user-interface-ui"></a>Пользовательский интерфейс
 
 
 <table style="width:100%">
@@ -158,7 +166,7 @@ ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 <th align="left"><strong>Универсальное понятие</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows10 UWP</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -169,7 +177,7 @@ ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 <td align="left">Можно использовать API <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">распознавания речи</a></strong> для взаимодействия с приложением, выполняемым на переднем плане. Вы можете использовать голосовые <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">взаимодействия с Cortana</a></strong> для запуска приложений на переднем плане или в фоновом режиме, а также для взаимодействия с фоновыми приложениями.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">Взаимодействие с помощью голосовых функций</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Настраиваемых пользовательский ввод.</strong> <br><br>Обработка ввода с клавиатуры, мыши, пера и других средств ввода.</td>
+<td align="left"><strong>Настраиваемый пользовательский ввод.</strong> <br><br>Обработка ввода с клавиатуры, мыши, пера и других средств ввода.</td>
 <td align="left">Поддерживается взаимодействие с помощью <strong>касаний</strong>, <strong>сенсорной панели</strong>, <strong>пера</strong>, <strong>мыши</strong> и <strong>клавиатуры</strong>. Движение и ввод передается тем же способом, что и касание, но существует возможность получить дополнительные сведения об <strong>устройстве ввода</strong>.</td>
 <td align="left">Обеспечивается поддержка <strong>сенсорного ввода</strong>, <strong>Apple Pencil</strong> и ввода с аппаратной <strong>клавиатуры</strong>.</td>
 <td align="left">Поддерживается широкий набор взаимодействий, включая <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185617.aspx">сенсорный ввод</a></strong>, взаимодействие с помощью <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187313.aspx">сенсорной панели</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187311.aspx">пера</a></strong> с функцией рукописного ввода, <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187308.aspx">мыши</a></strong> и <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185607.aspx">клавиатуры</a></strong>. Ваши приложения могут обрабатывать данные, не зная, какое устройство ввода используется, а также при необходимости получать доступ к необработанным данным устройства ввода.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt404610.aspx">Работа с входными данными указателя</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185599.aspx">Настраиваемые взаимодействия с пользователем</a></td>
@@ -662,9 +670,4 @@ ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 </tr>
 </tbody>
 </table>
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

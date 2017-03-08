@@ -3,20 +3,27 @@ author: mcleanbyron
 ms.assetid: 386c1ee4-a31c-4561-b193-36268bc90446
 description: "Узнайте, как обрабатывать ошибки, связанные с AdControl в вашем приложении."
 title: "Обработка ошибок AdControl"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, рекламы, реклама, AdControl, обработка ошибок"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 4966e264f796ca04cf6e06e1574d6c2aa54cb376
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 49109b58aad7dc671fc29e7a5f12bb73e8a7d139
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Обработка ошибок AdControl
+# <a name="adcontrol-error-handling"></a>Обработка ошибок AdControl
 
 
 
 
 Данный раздел содержит пошаговые руководства, в которых рассказывается, как обрабатывать ошибки, связанные с классом [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) в вашем приложении.
 
-## В этом разделе
+## <a name="in-this-section"></a>В этом разделе
 
 
 * [Пошаговое руководство по обработке ошибок в JavaScript](error-handling-in-javascript-walkthrough.md)
@@ -25,9 +32,4 @@ ms.openlocfilehash: 4966e264f796ca04cf6e06e1574d6c2aa54cb376
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

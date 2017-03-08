@@ -2,9 +2,17 @@
 author: mcleanbyron
 Description: "Можно регистрировать пользовательские события из приложения UWP и просматривать эти события в отчете об использовании на информационной панели Центра разработки для Windows."
 title: "Регистрация пользовательских событий в журнале для Центра разработки"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Microsoft Store Services SDK, журналы событий"
+ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: e0012d586d9b79db77bdeded6f0e1d2ce848bbea
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 80cc3ec6aab90549c55ff8c8f78b54f5827f61ff
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -14,7 +22,9 @@ ms.openlocfilehash: e0012d586d9b79db77bdeded6f0e1d2ce848bbea
 
 Для регистрации пользовательского события из вашего приложения передайте строку пользовательского события методу [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx), предоставляемому пакетом Microsoft Store Services SDK. Можно просматривать общее число возникновений вашего пользовательского события в разделе **Пользовательские события** [Отчета об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report) на информационной панели Центра разработки.
 
-## <a name="prerequisites"></a>Необходимые компоненты
+>**Примечание.**&nbsp;&nbsp;Пользовательские события, регистрируемые в Центре разработки, не связаны с [событиями Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), и они не отображаются в **средстве просмотра событий**.
+
+## <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем вы сможете просматривать зарегистрированные пользовательские события в **Отчете об использовании** для вашего приложения на информационной панели, ваше приложение должно быть опубликовано в Магазине.
 
@@ -40,9 +50,4 @@ ms.openlocfilehash: e0012d586d9b79db77bdeded6f0e1d2ce848bbea
 * [Отчет об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report)
 * [Метод Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx)
 * [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

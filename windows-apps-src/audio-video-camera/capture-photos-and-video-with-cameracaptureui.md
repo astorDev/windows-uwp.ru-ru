@@ -1,11 +1,18 @@
 ---
 author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-description: "В этой статье описано, как использовать класс CameraCaptureUI, чтобы фотографировать и снимать видео с помощью пользовательского интерфейса камеры, встроенного в Windows."
+description: "В этой статье рассказывается, как использовать класс CameraCaptureUI, чтобы фотографировать и снимать видео с помощью пользовательского интерфейса камеры, встроенного в Windows."
 title: "Фото- и видеосъемка с использованием встроенного пользовательского интерфейса камеры в Windows"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 65508d32995f57672f94dffa4866a86d57903d00
-ms.openlocfilehash: 10ac3f53f0f8128985c39154f74a9348a40641b5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7ddd659bc32eb8328f993fba4bfd4f137ea99d0f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -118,10 +125,5 @@ ms.openlocfilehash: 10ac3f53f0f8128985c39154f74a9348a40641b5
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

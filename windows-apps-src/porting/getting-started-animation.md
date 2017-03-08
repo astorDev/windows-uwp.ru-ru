@@ -3,17 +3,24 @@ author: mcleblanc
 title: "Начало работы с анимацией"
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: "В этом проекте мы будем перемещать прямоугольник, применять к нему эффект угасания и затем снова отображать прямоугольник."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: ae08bb25d8ac56ca6e03a5c200e8a0d4e05fbfe3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9dcf81c0c0aee42d6278a3e1eeccc6dd4da61010
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Начало работы: анимация
+# <a name="getting-started-animation"></a>Начало работы: анимация
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Добавление анимаций
+## <a name="adding-animations"></a>Добавление анимаций
 
 В iOS эффекты анимации чаще всего создаются программно. Например, для создания анимации можно использовать методы **animateWithDuration**, предоставляемые классом блочного формирования изображений **UIView**, либо более старые методы неблочного формирования изображений. Кроме того, для анимации слоев вы можете использовать в явной форме класс **CALayer**. В приложениях для Windows анимацию можно создавать программно, но помимо этого ее можно определить с помощью объявления XAML. Вы можете использовать Microsoft Visual Studio, чтобы редактировать код XAML напрямую, но Visual Studio также предоставляется с инструментом под названием **Blend**, который создает код XAML во время работы с анимациями в конструкторе. Фактически Blend позволяет открывать, проектировать, создавать и запускать законченные проекты Visual Studio в графическом виде. Эти возможности можно опробовать в следующем пошаговом руководстве.
 
@@ -125,12 +132,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 **Примечание.** Подробнее об анимации для приложений Магазина Windows на JavaScript и HTML: [Анимация пользовательского интерфейса (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
 
-### Следующие шаги
+### <a name="next-step"></a>Следующие шаги
 
 [Приступая к работе: что дальше?](getting-started-what-next.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

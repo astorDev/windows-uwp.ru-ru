@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: "Узнайте, как использовать класс AdControl для показа баннерной рекламы в приложении на JavaScript или HTML для Windows 10 (UWP), Windows 8.1 или Windows Phone 8.1."
 title: "AdControl в HTML 5 и JavaScript"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, рекламы, реклама, AdControl, javascript, HTML"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: 509cfe00050c5b5b3997af0e2906676f946d9278
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cda74aaf6301f0cc04c5a9ae5c2aad5cf43d8b7e
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -128,9 +135,4 @@ ms.openlocfilehash: 509cfe00050c5b5b3997af0e2906676f946d9278
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

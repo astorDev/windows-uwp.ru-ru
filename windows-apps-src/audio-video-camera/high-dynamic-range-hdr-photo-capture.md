@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
 description: "В этой статье рассказывается, как использовать класс AdvancedPhotoCapture для фотозахвата с расширенным динамическим диапазоном (HDR) и в условиях низкой освещенности."
 title: "Фотозахват с расширенным динамическим диапазоном (HDR) и в условиях низкой освещенности"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: cd711c2a5eb718521e3bf04ea7d37929dec5fb05
-ms.openlocfilehash: 204e997ebb8484a7a661422b8060fe885bd561a2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e4ed8175e0f35733972474bbcc01cce9830f1e5b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Фотозахват с расширенным динамическим диапазоном (HDR) и в условиях низкой освещенности
+# <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>Фотозахват с расширенным динамическим диапазоном (HDR) и в условиях низкой освещенности
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье показано, как использовать класс [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) для фотозахвата с расширенным динамическим диапазоном (HDR). Кроме того, этот API дает возможность получить опорный кадр из захвата HDR, прежде чем завершить обработку окончательного изображения.
@@ -37,21 +44,21 @@ ms.openlocfilehash: 204e997ebb8484a7a661422b8060fe885bd561a2
 
 Существует универсальной пример Windows, демонстрирующий функциональность класса **AdvancedPhotoCapture**, с помощью которого можно увидеть API, используемые в контексте. Кроме того, этот класс может служить начальной точкой создания собственного приложения. Дополнительные сведения см. в разделе [Пример расширенной съемки на камеру](http://go.microsoft.com/fwlink/?LinkID=620517).
 
-## Пространства имен расширенного фотозахвата
+## <a name="advanced-photo-capture-namespaces"></a>Пространства имен расширенного фотозахвата
 
 В примерах кода в этой статье помимо пространств имен, необходимых для основного захвата мультимедиа, используются API в следующих пространствах имен.
 
 [!code-cs[HDRPhotoUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHDRPhotoUsing)]
 
-## Фотозахват HDR
+## <a name="hdr-photo-capture"></a>Фотозахват HDR
 
-### Определение возможности фотозахвата HDR на текущем устройстве
+### <a name="determine-if-hdr-photo-capture-is-supported-on-the-current-device"></a>Определение возможности фотозахвата HDR на текущем устройстве
 
 Описанный в этой статье способ захвата HDR выполняется с помощью объекта [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386). Не все устройства поддерживают фотозахват HDR с помощью **AdvancedPhotoCapture**. Определите, поддерживает ли этот метод устройство, на котором в настоящее время запущено приложение. Для этого необходимо получить свойство [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) объекта **MediaCapture**, а затем получить свойство [**AdvancedPhotoControl**](https://msdn.microsoft.com/library/windows/apps/mt147840). Просмотрите коллекцию контроллера видеоустройств [**SupportedModes**](https://msdn.microsoft.com/library/windows/apps/mt147844), чтобы узнать, включает ли она [**AdvancedPhotoMode.Hdr**](https://msdn.microsoft.com/library/windows/apps/mt147845). Если да, то захват HDR с использованием **AdvancedPhotoCapture** поддерживается.
 
 [!code-cs[HdrSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHdrSupported)]
 
-### Настройка и подготовка объекта AdvancedPhotoCapture
+### <a name="configure-and-prepare-the-advancedphotocapture-object"></a>Настройка и подготовка объекта AdvancedPhotoCapture
 
 Поскольку необходим доступ к экземпляру [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) из нескольких расположений в пределах вашего кода, нужно объявить переменную-член для удержания объекта.
 
@@ -65,7 +72,7 @@ ms.openlocfilehash: 204e997ebb8484a7a661422b8060fe885bd561a2
 
 [!code-cs[CreateAdvancedCaptureAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateAdvancedCaptureAsync)]
 
-### Захват фотографий с технологией HDR
+### <a name="capture-an-hdr-photo"></a>Захват фотографий с технологией HDR
 
 Чтобы захватить фотографию с расширенным динамическим диапазоном (HDR), вызовите метод [**CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181388) объекта [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386). Этот метод возвращает объект [**AdvancedCapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/mt181378), предоставляющий созданную фотографию в свойстве [**Frame**](https://msdn.microsoft.com/library/windows/apps/mt181382).
 
@@ -75,7 +82,7 @@ ms.openlocfilehash: 204e997ebb8484a7a661422b8060fe885bd561a2
 
 Вспомогательный метод **SaveCapturedFrameAsync**, который сохраняет изображение на диск, рассматривается далее в этой статье.
 
-### Получение дополнительного опорного кадра
+### <a name="get-optional-reference-frame"></a>Получение дополнительного опорного кадра
 
 При использовании технологии HDR захватывается несколько кадров. После захвата всех кадров из них составляется одно изображение. Вы можете получить доступ к кадру после его захвата, но до завершения обработки HDR, обработав событие [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392). Если вас интересует только конечный результат фотографии с расширенным динамическим диапазоном (HDR), этого делать не нужно.
 
@@ -94,20 +101,20 @@ ms.openlocfilehash: 204e997ebb8484a7a661422b8060fe885bd561a2
 
 [!code-cs[OptionalReferencePhotoCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOptionalReferencePhotoCaptured)]
 
-### Получение уведомления после захвата всех кадров
+### <a name="receive-a-notification-when-all-frames-have-been-captured"></a>Получение уведомления после захвата всех кадров
 
-Фотозахват с технологией HDR предполагает два шага. Сначала захватывается несколько кадров, а затем кадры обрабатываются и создается окончательное HDR-изображение. Инициировать другой захват во время захвата исходных кадров HDR нельзя. Однако это можно сделать после захвата всех кадров, но до завершающей обработки HDR. Событие [**AllPhotosCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181387) возникает после завершения захвата HDR, уведомляя вас о том, что вы можете инициировать другой захват. Обычный сценарий— отключить кнопку захвата пользовательского интерфейса в начале захвата с HDR, а затем снова включить ее при вызове **AllPhotosCaptured**.
+Фотозахват с технологией HDR предполагает два шага. Сначала захватывается несколько кадров, а затем кадры обрабатываются и создается окончательное HDR-изображение. Инициировать другой захват во время захвата исходных кадров HDR нельзя. Однако это можно сделать после захвата всех кадров, но до завершающей обработки HDR. Событие [**AllPhotosCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181387) возникает после завершения захвата HDR, уведомляя вас о том, что вы можете инициировать другой захват. Обычный сценарий — отключить кнопку захвата пользовательского интерфейса в начале захвата с HDR, а затем снова включить ее при вызове **AllPhotosCaptured**.
 
 [!code-cs[AllPhotosCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAllPhotosCaptured)]
 
-### Удаление объекта AdvancedPhotoCapture
+### <a name="clean-up-the-advancedphotocapture-object"></a>Удаление объекта AdvancedPhotoCapture
 
 Когда приложение завершит захват, прежде чем ликвидировать объект **MediaCapture**, необходимо завершить работу объекта [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386). Для этого вызовите [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/mt181391) и установите для переменной-члена значение Null.
 
 [!code-cs[CleanUpAdvancedPhotoCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpAdvancedPhotoCapture)]
 
 
-## Фотозахват при слабом освещении
+## <a name="low-light-photo-capture"></a>Фотозахват при слабом освещении
 При использовании функции съемки при низком освещении, предоставляемой классом [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture), система оценивает текущую сцену и при необходимости применяет алгоритм, компенсирующий условия низкой освещенности. Если система определяет, что этот алгоритм не нужен, выполняется обычный захват.
 
 Прежде чем использовать фотозахват в условиях низкой освещенности, определите, поддерживает ли этот метод устройство, на котором в настоящее время запущено приложение. Для этого необходимо получить свойство [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) объекта **MediaCapture**, а затем получить свойство [**AdvancedPhotoControl**](https://msdn.microsoft.com/library/windows/apps/mt147840). Просмотрите коллекцию контроллера видеоустройств [**SupportedModes**](https://msdn.microsoft.com/library/windows/apps/mt147844), чтобы узнать, включает ли она [**AdvancedPhotoMode.LowLight**](https://msdn.microsoft.com/library/windows/apps/mt147845). Если да, то захват в условиях низкого освещения с использованием **AdvancedPhotoCapture** поддерживается. 
@@ -137,21 +144,21 @@ ms.openlocfilehash: 204e997ebb8484a7a661422b8060fe885bd561a2
 
 [!code-cs[CleanUpAdvancedPhotoCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpAdvancedPhotoCapture)]
 
-## Работа с объектами AdvancedCapturedPhoto
+## <a name="working-with-advancedcapturedphoto-objects"></a>Работа с объектами AdvancedCapturedPhoto
 [**AdvancedPhotoCapture.CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture.CaptureAsync) возвращает объект [**AdvancedCapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedCapturedPhoto), представляющий сделанное фото. Этот объект предоставляет свойство [**Frame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedCapturedPhoto.Frame), которое возвращает объект [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame), представляющий изображение. Событие [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture.OptionalReferencePhotoCaptured) также предоставляет объект **CapturedFrame** в аргументах события. Получив объект этого типа, с ним можно выполнить несколько действий, включая создание [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) или сохранение изображения в файл. 
 
-## Получение объекта SoftwareBitmap из CapturedFrame
+## <a name="get-a-softwarebitmap-from-a-capturedframe"></a>Получение объекта SoftwareBitmap из CapturedFrame
 Чтобы получить **SoftwareBitmap** из объекта **CapturedFrame**, нужно всего лишь получить доступ к свойству [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame.SoftwareBitmap) объекта. Однако большинство форматов кодирования не поддерживают свойство **SoftwareBitmap** с **AdvancedPhotoCapture**, поэтому прежде необходимо проверить и убедиться, что это свойство не равно null.
 
 [!code-cs[SoftwareBitmapFromCapturedFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmapFromCapturedFrame)]
 
-Единственный формат кодирования, поддерживающий свойство **SoftwareBitmap** для **AdvancedPhotoCapture**, в этом выпуске— это несжатый NV12. Поэтому если требуется использовать эту функцию, необходимо задать эту кодировку при вызове метода [**PrepareAdvancedPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181403). 
+Единственный формат кодирования, поддерживающий свойство **SoftwareBitmap** для **AdvancedPhotoCapture**, в этом выпуске — это несжатый NV12. Поэтому если требуется использовать эту функцию, необходимо задать эту кодировку при вызове метода [**PrepareAdvancedPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181403). 
 
 [!code-cs[UncompressedNv12](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUncompressedNv12)]
 
 Конечно, всегда можно сохранить изображение в файл, а затем загрузить файл в **SoftwareBitmap** отдельным действием. Дополнительные сведения о работе с **SoftwareBitmap** см. в разделе [**Создание, редактирование и сохранение растровых изображений**](imaging.md).
 
-## Сохранение CapturedFrame в файл
+## <a name="save-a-capturedframe-to-a-file"></a>Сохранение CapturedFrame в файл
 Класс [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame) реализует интерфейс IInputStream, чтобы его можно было использовать в качестве ввода в [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder), после чего [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder) можно использовать для записи данных изображения на диск.
 
 В следующем примере создается новая папка в библиотеке изображений пользователя и в этой папке создается файл. Обратите внимание, что для получения доступа к этому каталогу файл манифеста вашего приложения должен включать функцию **Библиотека изображений**. Затем поток файлов открывается в заданном файле. После этого вызывается метод [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder.CreateAsync) для создания декодера из **CapturedFrame**. Затем [**CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) создает кодировщик из потока файлов и декодера.
@@ -162,13 +169,8 @@ ms.openlocfilehash: 204e997ebb8484a7a661422b8060fe885bd561a2
 
 [!code-cs[SaveCapturedFrameAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSaveCapturedFrameAsync)]
 
-## Связанные статьи
+## <a name="related-topics"></a>Связанные статьи
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

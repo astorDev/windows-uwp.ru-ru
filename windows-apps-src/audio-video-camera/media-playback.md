@@ -1,21 +1,28 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: 25553c4d-fa4f-4130-af9b-97f993fefd43
 description: "Этот раздел содержит сведения о создании универсальных приложений для Windows, которые воспроизводят аудио и видео."
 title: "Воспроизведение мультимедиа"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4349113e3503e0be4afede9bed70c71262435d09
-ms.openlocfilehash: 4dd961d508ccbdfa13dd99946ed03bb2d6e8705a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 58b41c9d0d8bd7cd07b5a1f4aecf5936422a4ee8
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Воспроизведение мультимедиа
+# <a name="media-playback"></a>Воспроизведение мультимедиа
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Этот раздел содержит сведения о создании универсальных приложений для Windows, которые воспроизводят аудио и видео. 
 
-## Возможности воспроизведения мультимедиа для разработчиков
+## <a name="media-playback-developer-features"></a>Возможности воспроизведения мультимедиа для разработчиков
 
 В следующей таблице приведены статьи с подробными инструкциями по добавлению функций воспроизведения мультимедиа в приложение.
  
@@ -32,7 +39,7 @@ ms.openlocfilehash: 4dd961d508ccbdfa13dd99946ed03bb2d6e8705a
 | [DRM PlayReady](playready-client-sdk.md)                                                          | В этой статье описано, как добавить мультимедийное содержимое, защищенное PlayReady, в приложение универсальной платформы Windows (UWP).                                                                                                                                                                                |
 | [Расширение зашифрованного мультимедиа PlayReady](playready-encrypted-media-extension.md)                     | В этом разделе рассказывается, как изменить веб-приложение PlayReady для поддержки изменений, появившихся в Windows 10, которых не было в Windows 8.1.                                                                                                                                       |
 
-## Примеры пакетов SDK для воспроизведения мультимедиа
+## <a name="media-playback-sdk-samples"></a>Примеры пакетов SDK для воспроизведения мультимедиа
 
 В следующих примерах пакетов SDK демонстрируются функции воспроизведения мультимедиа, доступные для приложений UWP в Windows 10. Используйте эти примеры для просмотра API воспроизведения мультимедиа в контексте или в качестве начальной точки для собственного приложения.
 
@@ -43,10 +50,5 @@ ms.openlocfilehash: 4dd961d508ccbdfa13dd99946ed03bb2d6e8705a
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

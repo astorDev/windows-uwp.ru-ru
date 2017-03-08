@@ -3,17 +3,24 @@ author: mcleblanc
 title: "Выбор языка программирования"
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: "Выбор языка программирования"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 440fb76aac128490366677278254a5f5b2e095ed
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Приступая к работе: выбор языка программирования
+# <a name="getting-started-choosing-a-programming-language"></a>Начало работы: выбор языка программирования
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Выбор языка программирования
+## <a name="choosing-a-programming-language"></a>Выбор языка программирования
 
 Прежде чем продолжить, необходимо узнать, какие языки программирования можно выбрать при создании приложений универсальной платформы Windows (UWP). В пошаговых руководствах этой статьи используется язык C#, однако для создания приложений UWP вы можете использовать один или несколько других языков программирования (см. [Языки, средства и платформы](https://msdn.microsoft.com/library/windows/apps/dn465799)).
 
@@ -33,7 +40,7 @@ ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
 -   [Образцы приложений Магазина Windows, использующих DirectX](http://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [Где находится пакет SDK для DirectX?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
-## Попробуйте C#
+## <a name="giving-c-a-go"></a>Попробуйте C#
 
 Как разработчик iOS, вы привыкли использовать Objective-C и Swift. Среди языков программирования Майкрософт наиболее близким к обеим является C#. Мы считаем, что для разработчиков наиболее простым в изучении и использовании является C#, поэтому для пошаговых руководств выбран именно этот язык. Подробнее о языке C#:
 
@@ -41,7 +48,7 @@ ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
 -   [Примеры приложений Магазина Windows, использующих C#](http://go.microsoft.com/fwlink/p/?LinkId=263453)
 -   [Visual C#](http://go.microsoft.com/fwlink/p/?LinkId=263450)
 
-Ниже приведен класс, написанный на языках Objective-C и C#. Вариант на Objective-C показан первым, а вариант на C#— вторым.
+Ниже приведен класс, написанный на языках Objective-C и C#. Вариант на Objective-C показан первым, а вариант на C# — вторым.
 
 ```obj-c
 // Objective-C header: SampleClass.h.
@@ -139,12 +146,7 @@ int result = mySampleClass.AddTwoNumbers(1, 2);
 
 C# — это простой язык для выбора. Он содержит много классов и платформ поддержки, составляющих .NET. Вы с радостью мгновенно приступите к написанию кода без квадратной скобки перед глазами!
 
-## Следующий шаг
+## <a name="next-step"></a>Следующий шаг
 
 [Приступая к работе: введение в Visual Studio](getting-started-getting-around-in-visual-studio.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

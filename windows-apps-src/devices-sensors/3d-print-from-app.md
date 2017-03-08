@@ -1,18 +1,25 @@
 ---
 author: PatrickFarley
 title: "Трехмерная печать из приложения"
-description: "Узнайте, как добавить функцию трехмерной печати в универсальное приложение для Windows. Эта статья содержит сведения о том, как вызвать диалоговое окно трехмерной печати, убедившись в том, что трехмерная модель поддается печати и создана в нужном формате."
+description: "Узнайте, как добавить функцию трехмерной печати в универсальное приложение для Windows. Эта статья содержит сведения о том, как вызвать диалоговое окно трехмерной печати, убедившись в том, что трехмерная модель пригодна для печати и представлена в нужном формате."
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: e2b88b0eb88d0a3d8d1a5fb944bd4d00a50012e0
-ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 89ab7a65df0a8415d508e5831a22b2c522308f95
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Трехмерная печать из приложения
+# <a name="3d-printing-from-your-app"></a>Трехмерная печать из приложения
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -24,7 +31,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 > [!NOTE]
 > В примерах кода в этом руководстве обработка ошибок и отчетность значительно упрощены.
 
-## Настройка класса
+## <a name="class-setup"></a>Настройка класса
 
 
 Добавьте пространство имен [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/dn998169) в класс, где требуется реализовать возможности трехмерной печати.
@@ -39,7 +46,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 [!code-cs[DeclareVars](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeclareVars)]
 
-## Создание простого пользовательского интерфейса
+## <a name="create-a-simple-ui"></a>Создание простого пользовательского интерфейса
 
 В этом примере используется три пользовательских элемента управления: кнопка загрузки (для переноса файла в память программы), кнопка исправления (для изменения файла согласно необходимости) и кнопка печати (для запуска задания печати). Следующий код позволяет создать эти кнопки (с соответствующими обработчиками события нажатия) в XAML-файле вашего класса.
 
@@ -51,7 +58,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 
 
-## Получение трехмерных данных
+## <a name="get-the-3d-data"></a>Получение трехмерных данных
 
 
 Методы, с помощью которых ваше приложение получает трехмерные геометрические данные, будут варьироваться. Ваше приложение может извлечь трехмерные данные из сканирования, скачать данные модели с веб-ресурса или создать трехмерную сетку программным способом с помощью формул или пользовательских данных. Для простоты в этом примере мы загрузим файл с трехмерными данными (любого из нескольких распространенных типов файлов) в память программы памяти устройства. [Библиотека моделей 3D Builder](https://developer.microsoft.com/windows/hardware/3d-builder-model-library) предоставляет разнообразные модели, которые легко можно загрузить на устройство.
@@ -60,7 +67,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 [!code-cs[FileLoad](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileLoad)]
 
-## Использование конструктора 3D Builder для преобразования в трехмерный производственный формат (.3mf)
+## <a name="use-3d-builder-to-convert-to-3d-manufacturing-format-3mf"></a>Использование конструктора 3D Builder для преобразования в трехмерный производственный формат (.3mf)
 
 На этом этапе можно загрузить файл данных 3D в памяти приложения. Однако геометрические данные 3D могут быть представлены в самых разных форматах, не все из которых подходят для трехмерной печати. В Windows 10 используется тип файла в формате создания 3D (.3mf) для всех задач трехмерной печати.
 
@@ -74,9 +81,9 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 [!code-cs[FileCheck](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileCheck)]
 
-## Восстановление данных модели для трехмерной печати
+## <a name="repair-model-data-for-3d-printing"></a>Восстановление данных модели для трехмерной печати
 
-Не все данные трехмерной модели можно напечатать, даже в 3MF-файле. Чтобы принтер мог правильно определить, какое пространство заполнять, а какое— оставлять пустым, печатаемые модели должны представлять собой цельную бесшовную структуру, иметь обращенные наружу нормали к поверхности и разностороннюю геометрию. В этих областях могут возникать проблемы разного характера, и обнаружить их в сложных формах весьма затруднительно. К счастью, современные программные решения отлично справляются с задачей преобразования необработанных геометрических данных в доступные для печати трехмерные фигуры. Этот процесс называется *восстановлением* модели и выполняется методом `OnFixClick`.
+Не все данные трехмерной модели можно напечатать, даже в 3MF-файле. Чтобы принтер мог правильно определить, какое пространство заполнять, а какое — оставлять пустым, печатаемые модели должны представлять собой цельную бесшовную структуру, иметь обращенные наружу нормали к поверхности и разностороннюю геометрию. В этих областях могут возникать проблемы разного характера, и обнаружить их в сложных формах весьма затруднительно. К счастью, современные программные решения отлично справляются с задачей преобразования необработанных геометрических данных в доступные для печати трехмерные фигуры. Этот процесс называется *восстановлением* модели и выполняется методом `OnFixClick`.
 
 Необходимо преобразовать файл трехмерных данных, чтобы реализовать интерфейс [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731), который затем можно использовать для создания объекта [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/mt203679).
 
@@ -86,7 +93,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 [!code-cs[SaveModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSaveModel)]
 
-## Выполнение задачи печати: создание обработчика TaskRequested
+## <a name="execute-printing-task-create-a-taskrequested-handler"></a>Выполнение задачи печати: создание обработчика TaskRequested
 
 
 В дальнейшем, когда пользователю отображается диалоговое окно трехмерной печати и пользователь решает начать печать, приложению потребуется передать нужные параметры в конвейер трехмерной печати. API трехмерной печати вызывает событие **TaskRequested**. Необходимо написать метод для правильной обработки этого события. Как всегда, тип метода обработчика должен совпадать с типом события: событие **TaskRequested** имеет параметры [**Print3DManager**](https://msdn.microsoft.com/library/windows/apps/dn998029) (ссылка на объект-отправитель) и объект [**Print3DTaskRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn998051), в котором хранится большая часть необходимой информации. Его возвращаемый тип: **void**.
@@ -97,7 +104,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 **CreateTask** имеет следующие входные параметры: **string** для имени задания печати, **string** для идентификатора используемого принтера и делегат [**Print3DTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedhandler.aspx). Делегат вызывается автоматически при создании события **3DTaskSourceRequested** (за это отвечает API). Важно отметить, что это делегат вызывается, когда инициируется задание печати, и отвечает за предоставление правильного пакета трехмерной печати.
 
-**Print3DTaskSourceRequestedHandler** принимает один параметр — объект [**Print3DTaskSourceRequestedArgs**](https://msdn.microsoft.com/library/windows/apps/dn998056), предоставляющий данные для отправки. Один открытый метод этого класса— [**SetSource**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedargs.setsource.aspx)— принимает печатаемый пакет. Реализуйте делегат **Print3DTaskSourceRequestedHandler** следующим образом.
+**Print3DTaskSourceRequestedHandler** принимает один параметр — объект [**Print3DTaskSourceRequestedArgs**](https://msdn.microsoft.com/library/windows/apps/dn998056), предоставляющий данные для отправки. Один открытый метод этого класса — [**SetSource**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedargs.setsource.aspx) — принимает печатаемый пакет. Реализуйте делегат **Print3DTaskSourceRequestedHandler** следующим образом.
 
 [!code-cs[SourceHandler](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSourceHandler)]
 
@@ -112,7 +119,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 > [!NOTE]  
 > Необходимо реализовать методы `Task_Submitting` и `Task_Completed`, если требуется зарегистрировать их для этих событий.
 
-## Выполнение задачи печати: открытие диалогового окна трехмерной печати
+## <a name="execute-printing-task-open-3d-print-dialog"></a>Выполнение задачи печати: открытие диалогового окна трехмерной печати
 
 
 Необходимо финальный фрагмент кода, который открывает диалоговое окно трехмерной печати. Как и в обычном диалоговом окне печати, здесь представлено несколько сделанных в последний момент настроек печати. Здесь же можно выбрать принтер для печати (подключенный через USB или по сети).
@@ -129,20 +136,11 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 [!code-cs[DeregisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeregisterMyTaskRequested)]
 
-## Связанные статьи
+## <a name="related-topics"></a>Связанные статьи
 
 [Создание пакета 3MF](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)  
 [Пример трехмерной печати UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

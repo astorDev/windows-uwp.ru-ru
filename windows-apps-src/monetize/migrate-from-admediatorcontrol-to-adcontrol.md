@@ -3,15 +3,22 @@ author: mcleanbyron
 ms.assetid: 9621641A-7462-425D-84CC-101877A738DA
 description: "Узнайте, как перейти с AdMediatorControl на AdControl в приложениях UWP."
 title: "Переход с AdMediatorControl на AdControl для приложений UWP"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, объявления, реклама, AdMediatorControl, AdControl, переход"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: 6e7e833327dce4b49e44b7485908c8a507b217ef
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 83235595a6a7f9e9b0b5d8de154d6e5d8a8db8ef
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="migrate-from-admediatorcontrol-to-adcontrol-for-uwp-apps"></a>Переход с AdMediatorControl на AdControl для приложений UWP
 
-Предыдущие выпуски пакетов SDK от Майкрософт позволили приложения универсальной платформы Windows (UWP) отображать рекламные баннеры с помощью класса **AdMediatorControl**, благодаря чему разработчики смогли оптимизировать свой доход от рекламы путем показа рекламных баннеров из наших партнерских сетей (AOL и AppNexus), а также AdDuplex. Пакет [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) больше не поддерживает класс **AdMediatorControl**. Если у вас есть приложение, в котором используется класс **AdMediatorControl** из предыдущего пакета SDK, и вы хотите перенести его в приложение UWP, в котором используется [Microsoft Store Services SDK](http://aka.ms/store-em-sdk), следуйте инструкциям в этой статье, чтобы обновить код для использования класса **AdControl** вместо **AdMediatorControl**. Вы также можете настроить приложение в качестве рекламного посредника для AdDuplex при помощи пропорционального или приоритетного подхода.
+Предыдущие выпуски пакетов SDK от Майкрософт позволили приложениям универсальной платформы Windows (UWP) отображать рекламные баннеры с помощью класса **AdMediatorControl**, благодаря чему разработчики смогли оптимизировать свой доход от рекламы путем показа рекламных баннеров из наших партнерских сетей (AOL и AppNexus), а также AdDuplex. Пакет [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) больше не поддерживает класс **AdMediatorControl**. Если у вас есть приложение, в котором используется класс **AdMediatorControl** из предыдущего пакета SDK, и вы хотите перенести его в приложение UWP, в котором используется [Microsoft Store Services SDK](http://aka.ms/store-em-sdk), следуйте инструкциям в этой статье, чтобы обновить код для использования класса **AdControl** вместо **AdMediatorControl**. Вы также можете настроить приложение в качестве рекламного посредника для AdDuplex при помощи пропорционального или приоритетного подхода.
 
 >**Примечание**.&nbsp;&nbsp;Примеры кода в этой статье предоставлены исключительно в демонстрационных целях. Вам может потребоваться внести изменения в примеры кода для их использования в вашем приложении.
 
@@ -158,9 +165,4 @@ ms.openlocfilehash: 6e7e833327dce4b49e44b7485908c8a507b217ef
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet5)]
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

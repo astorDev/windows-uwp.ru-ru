@@ -1,15 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
-description: "Сведения о странах и регионах, поддерживаемых промежуточную рекламу и рекламные баннеры."
+description: "Сведения о странах и регионах, поддерживающих промежуточную рекламу и рекламные баннеры."
 title: "Поддерживаемые рынки для Microsoft Advertising"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, реклама, объявления, рынки"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6150c885c4159911932bf8d7c3848b1e182b2f61
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Поддерживаемые рынки для Microsoft Advertising
+# <a name="supported-markets-for-microsoft-advertising"></a>Поддерживаемые рынки для Microsoft Advertising
 
 
 
@@ -17,7 +24,7 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 Промежуточная реклама и рекламные баннеры поддерживаются в следующих странах и регионах.
 
 <span id="interstitialads"/>
-## Промежуточная видеореклама
+## <a name="interstitial-ads"></a>Промежуточная видеореклама
 
 -   Австралия
 
@@ -40,7 +47,7 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 -   США
 
 <span id="bannerads"/>
-## Рекламные баннеры
+## <a name="banner-ads"></a>Рекламные баннеры
 
 
 -   Афганистан
@@ -312,9 +319,4 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

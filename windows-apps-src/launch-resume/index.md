@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "Запуск, возобновление и фоновые задачи"
 description: "В этом разделе описано, что происходит при запуске, приостановке, возобновлении и завершении работы приложения универсальной платформы Windows (UWP)."
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 32737991b31eaceb33fc2ecb5152def167c36fdd
-ms.openlocfilehash: 6b350ef65f381d18585c8b080c6259f7607c7bf9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 40400b8b17da9b010c0f03e9976201a1def025f8
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="launching-resuming-and-background-tasks"></a>Запуск, возобновление и фоновые задачи
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе содержатся сведения по следующим вопросам:
 
@@ -116,9 +123,4 @@ ms.openlocfilehash: 6b350ef65f381d18585c8b080c6259f7607c7bf9
 |-------|-------------|
 | [Добавление экрана-заставки](add-a-splash-screen.md) | Задайте изображение экрана-заставки и цвет фона вашего приложения. |
 | [Более продолжительное отображение экрана-заставки](create-a-customized-splash-screen.md) | Увеличьте длительность отображения экрана-заставки, создав и использовав расширенный экран-заставку для приложения. Этот расширенный экран имитирует экран-заставку, отображаемый при запуске приложения, и его можно настраивать. |
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

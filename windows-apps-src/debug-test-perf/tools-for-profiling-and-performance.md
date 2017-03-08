@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: EAC34672-5C12-402D-920B-6F2835EA5ACE
 title: "Инструменты для профилирования и производительности"
 description: "Майкрософт предоставляет несколько средств, с помощью которых можно повысить производительность приложения универсальной платформы Windows (UWP)."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 5bbd14fb53cae67bbb827f94e695b2703e07fc34
-ms.openlocfilehash: 3d0cf5f983efdee116bcf8b87398fe376efca3c6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 51304d873261466afc9014224b918b82603f00e8
+ms.lasthandoff: 02/07/2017
 
 ---
-# Инструменты для профилирования и производительности
+# <a name="tools-for-profiling-and-performance"></a>Инструменты для профилирования и производительности
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Майкрософт предоставляет несколько средств, с помощью которых можно повысить производительность приложения универсальной платформы Windows (UWP). Чтобы узнать об использовании этих средств, перейдите по указанным ниже ссылкам.
 
@@ -26,10 +33,5 @@ ms.openlocfilehash: 3d0cf5f983efdee116bcf8b87398fe376efca3c6
 | [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx) | Windows Performance Analyzer (WPA) входит в комплект средств для развертывания и оценки Windows (Windows ADK). Это средство предназначено для создания диаграмм и таблиц данных трассировки событий Windows (ETW), которые регистрируются с помощью средства Windows Performance Recorder (WPR), утилиты Xperf или платформы оценки. WPA может открыть для анализа любой файл журнала трассировки событий (ETL). |
 
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

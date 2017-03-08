@@ -3,20 +3,27 @@ author: msatranjr
 title: "Сопоставление типов .NET Framework с типами среды выполнения Windows"
 description: "В следующей таблице перечислены установленные в .NET Framework сопоставления между типами универсальной платформы Windows (UWP) и типами .NET Framework."
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 1367664cc4278bb555764cbfdf13ce6653f94920
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ab2c2307376f3fad8cd404f7ddf8056f1ef2e8d3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Сопоставление типов .NET Framework с типами среды выполнения Windows
+# <a name="net-framework-mappings-of-windows-runtime-types"></a>Сопоставление типов .NET Framework с типами среды выполнения Windows
 
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В следующей таблице перечислены установленные в .NET Framework сопоставления между типами универсальной платформы Windows (UWP) и типами .NET Framework. В универсальном приложении для Windows, написанном с использованием управляемого кода, IntelliSense отображает тип .NET Framework вместо типа UWP. Например, если метод среды выполнения Windows принимает параметр типа IVector&lt;string&gt;, IntelliSense отображает параметр типа IList&lt;string&gt;. Аналогичным образом в компоненте среды выполнения Windows, написанном с использованием управляемого кода, в сигнатурах членов используются типы .NET Framework. Когда [средство экспорта метаданных среды выполнения Windows (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) создает компонент среды выполнения Windows, тип .NET Framework становится соответствующим типом UWP.
 
-## Таблицы соответствия
+## <a name="mapping-tables"></a>Таблицы соответствия
 
 
 Большинство типов, имеющих одинаковые имена пространств имен и типов в UWP и .NET Framework, являются структурами (или типами, связанными со структурами, например перечислениями). В UWP структуры не имеют членов, кроме полей, и для них требуются вспомогательные типы, скрываемые платформой .NET Framework. Соответствующие структуры версии .NET Framework имеют свойства и методы, предоставляющие функциональность скрытых вспомогательных типов.
@@ -80,12 +87,7 @@ ms.openlocfilehash: 1367664cc4278bb555764cbfdf13ce6653f94920
 
  
 
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
-* [Создание компонентов среды выполнения Windows на C# и VisualBasic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+* [Создание компонентов среды выполнения Windows на C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 

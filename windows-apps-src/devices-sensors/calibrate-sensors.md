@@ -3,37 +3,36 @@ author: DBirtolo
 ms.assetid: ECE848C2-33DE-46B0-BAE7-647DB62779BB
 title: "Калибровка датчиков"
 description: "Датчикам устройства, которые работают на основе магнитометра (компас, датчик наклона и датчик ориентации), может потребоваться калибровка из-за воздействия на них факторов окружающей среды."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8b669d7f939da9ee93e5a49d2f6434d5573e23c0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8c02d9ed6e0612e0b89236b3fdb387e8ac3a5488
+ms.lasthandoff: 02/07/2017
 
 ---
-# Калибровка датчиков
+# <a name="calibrate-sensors"></a>Калибровка датчиков
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Важные API **
+**Важные API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
 
 Датчикам устройства, которые работают на основе магнитометра (компас, датчик наклона и датчик ориентации), может потребоваться калибровка из-за воздействия на них факторов окружающей среды. Перечисление [**MagnetometerAccuracy**](https://msdn.microsoft.com/library/windows/apps/Dn297552) может помочь определить необходимые действия, когда устройство требует калибровки.
 
-## Когда калибровать магнитометр
+## <a name="when-to-calibrate-the-magnetometer"></a>Когда калибровать магнитометр
 
-Перечисление [**MagnetometerAccuracy**](https://msdn.microsoft.com/library/windows/apps/Dn297552) включает четыре значения, которые помогают определить, нуждается ли в калибровке устройство, на котором работает ваше приложение. Если устройство нуждается в калибровке, необходимо дать пользователю знать об этом. Однако не следует напоминать о необходимости калибровки слишком часто. Мы рекомендуем делать это не чаще, чем раз в 10минут.
+Перечисление [**MagnetometerAccuracy**](https://msdn.microsoft.com/library/windows/apps/Dn297552) включает четыре значения, которые помогают определить, нуждается ли в калибровке устройство, на котором работает ваше приложение. Если устройство нуждается в калибровке, необходимо дать пользователю знать об этом. Однако не следует напоминать о необходимости калибровки слишком часто. Мы рекомендуем делать это не чаще, чем раз в 10 минут.
 
 | Значение           | Описание                                                                                                                                                      |-----------------|-------------------|                                                                                                                                              | **Неизвестно**     | Драйверу датчика не удалось сообщить текущую точность. Это необязательно означает, что устройство требует калибровки. Лучший порядок действий при возвращении значения **Неизвестно** определяется приложением. Если приложение полагается на точные показатели датчиков, стоит попросить пользователя выполнить калибровку. | | **Ненадежно**  | Показания магнитометра сейчас очень неточны. Приложениям следует всегда запрашивать калибровку при возвращении этого значения. | | **Приблизительно** | Данные достаточно точны для некоторых приложений. Приложения виртуальной реальности, которым достаточно лишь знать, не сдвинул ли пользователь устройство вверх-вниз или влево-вправо, могут работать и без калибровки. Приложения, которым нужен точный курс, например приложение навигации, которому необходимо знать, в каком направлении вы едете, чтобы предоставлять указания, должны запрашивать калибровку. | | **Высокая точность**        | Данные точны. Калибровка не требуется даже для приложений, которым необходим точный курс, таких как приложения дополненной реальности или навигации. |
 
-## Как откалибровать магнитометр
+## <a name="how-to-calibrate-the-magnetometer"></a>Как откалибровать магнитометр
 
-Это короткое видео содержит обзор калибровки магнитометра.<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/727bd0e3-9116-49c3-8af6-0b4339324b71/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">Блог One Dev Minute— калибровка датчика</iframe>
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+Это короткое видео содержит обзор калибровки магнитометра.<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/727bd0e3-9116-49c3-8af6-0b4339324b71/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">Блог One Dev Minute — калибровка датчика</iframe>
 

@@ -3,13 +3,21 @@ author: normesta
 description: "Инструкция по добавлению приложения рядом с действиями в карточке контакта"
 MSHAttr: PreferredLib:/library/windows/apps
 title: "Подключение приложения к действиям в карточках контактов"
+ms.author: normesta
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, контакты, карточка контакта, аннотация"
+ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 translationtype: Human Translation
-ms.sourcegitcommit: 5c0f6ef1f1a346a66ca554a415d9f24c8a314ae1
-ms.openlocfilehash: 034dc2b7be69763416192014abe24b9bf924c443
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: da64e23714035b6763104d48430371469272a939
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Подключение приложения к действиям в карточках контактов
+# <a name="connect-your-app-to-actions-on-a-contact-card"></a>Подключение приложения к действиям в карточках контактов
 
 Ваше приложение может отображаться рядом с действиями на карточке контакта или свернутой карточке контакта. Пользователи могут выбрать действие, выполняемое вашим приложением, например открытие страницы профиля, совершение вызова или отправку сообщения.
 
@@ -19,11 +27,11 @@ ms.openlocfilehash: 034dc2b7be69763416192014abe24b9bf924c443
 
 Более подробный пример см. в разделе [Пример интеграции с карточкой контакта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration).
 
-## Поиск и создание контакта
+## <a name="find-or-create-a-contact"></a>Поиск и создание контакта
 
 Если ваше приложение служит для общения, найдите контакты в Windows и добавьте к ним аннотации. Если ваше приложение управляет контактами, вы можете внести их в список контактов Windows, а затем добавить к ним аннотации.
 
-### Поиск контакта
+### <a name="find-a-contact"></a>Поиск контакта
 
 Найдите контакты по имени, адресу электронной почты или номеру телефона.
 
@@ -37,7 +45,7 @@ contacts = await contactStore.FindContactsAsync(emailAddress);
 Contact contact = contacts[0];
 ```
 
-### Создание контакта
+### <a name="create-a-contact"></a>Создание контакта
 
 Если ваше приложение больше напоминает адресную книгу, создайте контакты и добавьте их в список контактов.
 
@@ -71,7 +79,7 @@ await contactList.SaveContactAsync(contact);
 
 ```
 
-## Маркировка каждого контакта с помощью аннотаций
+## <a name="tag-each-contact-with-an-annotation"></a>Маркировка каждого контакта с помощью аннотаций
 
 Пометьте каждый контакт списком действий (операций), которые может выполнять приложение (например, видеовызовы и обмен сообщениями).
 
@@ -101,7 +109,7 @@ annotation.SupportedOperations = ContactAnnotationOperations.Message |
 await annotationList.TrySaveAnnotationAsync(annotation);
 ```
 
-## Регистрация каждой операции
+## <a name="register-for-each-operation"></a>Регистрация каждой операции
 
 В манифесте пакета зарегистрируйте каждую операцию, указанную в аннотации.
 
@@ -135,7 +143,7 @@ await annotationList.TrySaveAnnotationAsync(annotation);
 
 ![Вкладка объявлений конструктора манифестов](images/manifest-designer-protocols.png)
 
-## Поиск приложения рядом с действиями на карточке контакта
+## <a name="find-your-app-next-to-actions-in-a-contact-card"></a>Поиск приложения рядом с действиями на карточке контакта
 
 Откройте приложение "Люди". Ваше приложение отображается рядом с каждым действием (операцией), указанным в аннотации и манифесте пакета.
 
@@ -143,7 +151,7 @@ await annotationList.TrySaveAnnotationAsync(annotation);
 
 Если пользователь выбрал ваше приложение для выполнения действия, оно отобразится как приложение по умолчанию для этого действия, когда пользователь откроет карточку контакта в следующий раз.
 
-## Поиск приложения рядом с действиями на свернутой карточке контакта
+## <a name="find-your-app-next-to-actions-in-a-mini-contact-card"></a>Поиск приложения рядом с действиями на свернутой карточке контакта
 
 В свернутых карточках контакта ваше приложение появляется на вкладках, представляющих действия.
 
@@ -174,7 +182,7 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 Как и в случае с карточкой контакта, на каждой вкладке запоминается последнее использованное приложение, что упрощает возврат к приложению.
 
-## Выполнение операций при выборе приложения пользователем в карточке контакта
+## <a name="perform-operations-when-users-select-your-app-in-a-contact-card"></a>Выполнение операций при выборе приложения пользователем в карточке контакта
 
 Переопределите метод [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) в файле **App.cs** и переведите пользователя на страницу в приложении. В [примере интеграции с карточкой контакта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) показан один из способов сделать это.
 
@@ -208,10 +216,5 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Свойство ```args.uri.scheme``` содержит название операции, а свойство ```args.uri.Query```— идентификатор пользователя.
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+Свойство ```args.uri.scheme``` содержит название операции, а свойство ```args.uri.Query``` — идентификатор пользователя.
 

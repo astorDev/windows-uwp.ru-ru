@@ -1,16 +1,22 @@
 ---
 author: mcleanbyron
 Description: "Предоставьте пользователям возможность покупки из приложения потребляемых внутренних продуктов приложения (товаров, которые можно покупать, использовать и покупать снова) через Магазин. Покупка из приложения — удобный и надежный способ приобрести товар."
-title: "Поддержка покупок потребляемых внутренних продуктов приложения"
+title: "Поддержка покупки продуктов из приложения"
 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
-keywords: "Пример кода продажи из приложения"
+keywords: "uwp, потребляемые, надстройки, покупки из приложения, IAP, Windows.ApplicationModel.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7395cf28f96b2f7aa9bc6a1d4c461385d50fcbf6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="enable-consumable-in-app-product-purchases"></a>Поддержка покупок потребляемых внутренних продуктов приложения
+# <a name="enable-consumable-in-app-product-purchases"></a>Поддержка покупки продуктов из приложения
 
 
 >**Примечание.**&nbsp;&nbsp;В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Если приложение предназначено для Windows 10 версии 1607 или более поздней, для управления надстройками (также называемыми внутренними продуктами приложения или IAP) рекомендуется использовать члены пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), а не пространство имен **Windows.ApplicationModel.Store**. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
@@ -76,9 +82,4 @@ ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -1,14 +1,22 @@
 ---
 author: TylerMSFT
 title: "Преобразование службы приложения для ее запуска в одном процессе с основным приложением"
-description: "Преобразуйте код службы приложения, выполняемый в отдельном фоновом процессе, в код, выполняемый в одном процессе с поставщиком службы приложения."
+description: "Преобразуйте код службы приложений, выполняемый в отдельном фоновом процессе, в код, выполняемый в одном процессе с поставщиком службы приложений."
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: 80402d12a51ea970f5927dc50cae587be8809b87
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 1fea72237a9ac7d18fb415d5957f959542a833e8
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Преобразование службы приложения для ее запуска в одном процессе с основным приложением
+# <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>Преобразование службы приложений для ее запуска в одном процессе с ведущим приложением
 
 [AppServiceConnection](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceconnection.aspx) позволяет другому приложению выводить ваше приложение из фонового режима и устанавливать прямую линию связи с ним.
 
@@ -74,9 +82,4 @@ ms.openlocfilehash: 80402d12a51ea970f5927dc50cae587be8809b87
 Когда приложение получает запрос, оно считывает предоставленный [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) для проверки наличия строк `Key` и `Value`. Если они существуют, служба приложения возвращает пару строковых значений `Response` и `True` в приложение на другой стороне **AppServiceConnection**.
 
 Подробнее о подключении к другим приложением и обмене данными с ними см. в разделе [Создание и использование службы приложения](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service?f=255&MSPPError=-2147217396).
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

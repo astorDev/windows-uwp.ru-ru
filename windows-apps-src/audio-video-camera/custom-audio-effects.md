@@ -2,17 +2,25 @@
 author: drewbatgit
 Description: "В этой статье описано, как создать компонент среды выполнения Windows, реализующий интерфейс IBasicAudioEffect, который позволяет создавать пользовательские эффекты для аудиопотоков."
 title: "Пользовательские звуковые эффекты"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 translationtype: Human Translation
-ms.sourcegitcommit: ba9b78c5eafc949c6942acbcbf55620f60cc0d29
-ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 1d8ced4a3dfcf0994d969ad045550ea0cc44a2af
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Пользовательские звуковые эффекты
+# <a name="custom-audio-effects"></a>Пользовательские звуковые эффекты
 
 В этой статье описано, как создать компонент среды выполнения Windows, реализующий интерфейс [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect) для создания пользовательских эффектов для аудиопотоков. Пользовательские эффекты можно использовать с помощью нескольких различных API среды выполнения Windows, включая [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124), который предоставляет доступ к камере устройства, [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), который позволяет создавать сложные композиции из мультимедийных клипов, и [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph), который позволяет быстро собрать граф различных узлов звукового ввода, вывода и субмикширования.
 
-## Добавление пользовательского эффекта в приложение
+## <a name="add-a-custom-effect-to-your-app"></a>Добавление пользовательского эффекта в приложение
 
 
 Пользовательский аудиоэффект определяется в классе, реализующем интерфейс [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect). Этот класс невозможно включить непосредственно в проект приложения. Вместо этого необходимо использовать компонент среды выполнения Windows для размещения вашего класса аудиоэффекта.
@@ -34,17 +42,17 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 
 [!code-cs[EffectUsing](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetEffectUsing)]
 
-## Реализация интерфейса IBasicAudioEffect
+## <a name="implement-the-ibasicaudioeffect-interface"></a>Реализация интерфейса IBasicAudioEffect
 
 Ваш аудиоэффект должен реализовывать все методы и свойства интерфейса [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect). Этот раздел содержит простую пошаговую реализацию этого интерфейса для создания базового эффекта эха.
 
-### Свойство SupportedEncodingProperties
+### <a name="supportedencodingproperties-property"></a>Свойство SupportedEncodingProperties
 
 Система проверяет свойство [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect.SupportedEncodingProperties), чтобы определить, какие свойства кодирования поддерживаются вашим эффектом. Обратите внимание, что если потребитель вашего эффекта не может кодировать аудио с использованием указанных вами свойств, система вызовет метод [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782) на вашем эффекте и удалит этот эффект из аудиоконвейера. В этом примере объекты [**AudioEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.AudioEncodingProperties) создаются и добавляются в возвращенный список для поддержки кодирования со следующими параметрами: 44,1 кГц и 48 кГц, 32-разрядное число с плавающей точкой, моно.
 
 [!code-cs[SupportedEncodingProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSupportedEncodingProperties)]
 
-### Метод SetEncodingProperties
+### <a name="setencodingproperties-method"></a>Метод SetEncodingProperties
 
 Система вызывает [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) на эффекте, чтобы предоставить вам информацию о свойствах кодирования для аудиопотока, на котором работает эффект. Чтобы реализовать эффект эха, в этом примере используется буфер для хранения одной секунды звуковых данных. Этот метод также предоставляет возможность задать размер буфера в зависимости от количества отсчетов в одной секунде аудио, то есть в зависимости от частоты дискретизации, с которой закодирован звук. Эффект задержки также использует счетчик целых чисел для отслеживания текущей позиции в буфере задержки. Так как **SetEncodingProperties** вызывается каждый раз, когда эффект добавляется в звуковой конвейер, это будет подходящим моментом для инициализации этого значения с установкой на 0. Возможно, вам также потребуется сохранить объект **AudioEncodingProperties**, переданный в этот метод, чтобы использовать его в каком-либо другом месте в вашем эффекте.
 
@@ -52,7 +60,7 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 [!code-cs[SetEncodingProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetEncodingProperties)]
 
 
-### Метод SetProperties
+### <a name="setproperties-method"></a>Метод SetProperties
 
 Метод [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) позволяет использующему ваш эффект приложению настраивать параметры эффекта. Свойства передаются в виде сопоставления имен свойств и значений [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054).
 
@@ -62,7 +70,7 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 
 [!code-cs[MixProperty](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetMixProperty)]
 
-### Метод ProcessFrame
+### <a name="processframe-method"></a>Метод ProcessFrame
 
 Именно в методе [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) ваш эффект изменяет звуковые данные аудиопотока. Метод вызывается один раз на кадр, и ему передается объект [**ProcessAudioFrameContext**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.ProcessAudioFrameContext). Этот объект содержит входной объект [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioFrame), содержащий входящий кадр, который требуется обработать, и выходной объект **AudioFrame**, в который вы записываете звуковые данные, которые затем будут переданы остальным компонентам аудиоконвейера. Аудиокадр — это буфер звуковых отсчетов, представляющий короткий фрагмент звуковых данных.
 
@@ -86,32 +94,32 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 
 
 
-### Метод Close
+### <a name="close-method"></a>Метод Close
 
 Система вызывает метод [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782) [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782) для вашего класса, когда соответствующий эффект должен будет завершить работу. Этот метод следует использовать для утилизации всех созданных вами ресурсов. Аргументом этого метода является [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason), и он позволяет узнать, был ли эффект закрыт в нормальном режиме либо произошла ошибка, либо эффект не поддерживает необходимый формат кодирования.
 
 [!code-cs[Close](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetClose)]
 
-### Метод DiscardQueuedFrames
+### <a name="discardqueuedframes-method"></a>Метод DiscardQueuedFrames
 
 Метод [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) вызывается, когда ваш эффект необходимо сбросить. Типовой сценарий такой ситуации — ваш эффект хранит ранее обработанные кадры для использования в обработке текущего кадра. При вызове этого метода необходимо утилизировать набор предыдущих сохраненных вами кадров. Этот метод можно использовать для сброса любого состояния, связанного с предыдущими кадрами, а не только с накопленными аудиокадрами.
 
 [!code-cs[DiscardQueuedFrames](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetDiscardQueuedFrames)]
 
-### Свойство TimeIndependent
+### <a name="timeindependent-property"></a>Свойство TimeIndependent
 
 Свойство TimeIndependent [**TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) позволяет системе узнать, требуется ли вашему эффекту однородная синхронизация. Если установлено значение true, система может использовать оптимизации, которые улучшают работу эффекта.
 
 [!code-cs[TimeIndependent](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetTimeIndependent)]
 
-### Свойство UseInputFrameForOutput
+### <a name="useinputframeforoutput-property"></a>Свойство UseInputFrameForOutput
 
 Задайте свойству [**UseInputFrameForOutput**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect.UseInputFrameForOutput) значение **true**, чтобы сообщить системе, что ваш эффект будет записывать свой вывод в аудиобуфер [**InputFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.ProcessAudioFrameContext.InputFrame) контекста [**ProcessAudioFrameContext**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.ProcessAudioFrameContext), переданный в [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784), вместо записи в [**OutputFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.ProcessAudioFrameContext.OutputFrame). 
 
 [!code-cs[UseInputFrameForOutput](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetUseInputFrameForOutput)]
 
 
-## Добавление пользовательского эффекта в приложение
+## <a name="adding-your-custom-effect-to-your-app"></a>Добавление пользовательского эффекта в приложение
 
 
 Для использования вашего аудиоэффекта из приложения необходимо добавить ссылку на проект эффекта в приложение.
@@ -124,14 +132,14 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 
 [!code-cs[UsingAudioEffectComponent](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetUsingAudioEffectComponent)]
 
-### Добавьте ваш пользовательский эффект в узел AudioGraph
+### <a name="add-your-custom-effect-to-an-audiograph-node"></a>Добавьте ваш пользовательский эффект в узел AudioGraph
 Общие сведения об использовании звуковых графов см. в разделе [Звуковые графы](audio-graphs.md). В следующем фрагменте кода показано, как добавить созданный этой статье в качестве примера эффект эха в узел звукового графа. Во-первых, создается [**PropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet), и задается значение для свойства **Mix**, определяемое эффектом. Далее вызывается конструктор [**AudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.AudioEffectDefinition) с передачей полного имени класса типа пользовательского эффекта и набора свойств. Наконец, определение эффекта добавляется в свойство [**EffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioFileInputNode.EffectDefinitions) существующего узла [**FileInputNode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.CreateAudioFileInputNodeResult.FileInputNode), что приводит к обработке издаваемого звука пользовательским эффектом. 
 
 [!code-cs[AddCustomEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddCustomEffect)]
 
 После его добавления в узел пользовательский эффект можно отключить путем вызова [**DisableEffectsByDefinition**](https://msdn.microsoft.com/library/windows/apps/dn958480) и передачи объекта **AudioEffectDefinition**. Дополнительные сведения об использовании звуковых графов в приложении см. в разделе [AudioGraph](audio-graphs.md).
 
-### Добавление настраиваемого эффекта в клип с помощью MediaComposition
+### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>Добавление настраиваемого эффекта в клип с помощью MediaComposition
 
 В следующем фрагменте кода показано, как добавить пользовательский звуковой эффект в видеоклип и фоновую аудиодорожку в мультимедийной композиции. Общие инструкции по созданию мультимедийных композиций из видеоклипов и добавлению фоновых аудиодорожек см. в разделе [Мультимедийные композиции и редактирование](media-compositions-and-editing.md).
 
@@ -139,7 +147,7 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 
 
 
-## Статьи по теме
+## <a name="related-topics"></a>Статьи по теме
 * [Простой доступ к просмотру камеры](simple-camera-preview-access.md)
 * [Создание и редактирование мультимедийных композиций](media-compositions-and-editing.md)
 * [Документация по Win2D](http://go.microsoft.com/fwlink/p/?LinkId=519078)
@@ -148,10 +156,5 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
  
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

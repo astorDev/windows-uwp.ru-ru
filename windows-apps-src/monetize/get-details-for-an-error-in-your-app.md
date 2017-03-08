@@ -1,11 +1,18 @@
 ---
 author: mcleanbyron
-ms.assetid: 
+ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: "Используйте этот метод в API аналитики для Магазина Windows, чтобы получить подробные данные об определенной ошибке в вашем приложении."
 title: "Получение сведений об ошибке в приложении"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, службы Магазина, API аналитики для Магазина Windows, ошибки, подробные сведения"
 translationtype: Human Translation
-ms.sourcegitcommit: 767097f068630e5ec171415c05d6dc395c8b26b3
-ms.openlocfilehash: cd72e58ec252c556cf0f2e5ce071744e8fac6c9e
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 1aaf5b6864c678d26289270be6a9ad96f5b5e004
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -160,9 +167,4 @@ Authorization: Bearer <your access token>
 * [Доступ к аналитическим данным с помощью служб Магазина Windows](access-analytics-data-using-windows-store-services.md)
 * [Получение данных отчетов об ошибках](get-error-reporting-data.md)
 * [Получение трассировки стека при возникновении ошибки в приложении](get-the-stack-trace-for-an-error-in-your-app.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

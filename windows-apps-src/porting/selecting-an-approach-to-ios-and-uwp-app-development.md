@@ -3,23 +3,30 @@ author: mcleblanc
 description: "Какие варианты доступны при разработке кроссплатформенных приложений?"
 title: "Выбор подхода к разработке приложений iOS и UWP"
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53e6c50b7a1b4262f738cd798aa2bd02291512fe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9317ea8690d5696d4a9e55b3a88f1a2ff83d8bfd
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Выбор подхода к разработке приложений iOS и UWP
+# <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>Выбор подхода к разработке приложений iOS и UWP
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Какие варианты доступны при разработке кроссплатформенных приложений?
 
-## Какой вариант лучше всего поддерживает и iOS, и Windows?
+## <a name="whats-the-best-way-to-support-both-ios-and-windows"></a>Какой вариант лучше всего поддерживает и iOS, и Windows?
 
 Может показаться, что Windows и iOS очень сильно отличаются, но множество инструментов и методов, число которых растет, могут существенно упростить создание приложений, поддерживающих обе платформы (а также Android). Лучшее решение зависит от типа создаваемого приложения и от того, начинаете ли вы работу с нуля или портируете существующий проект.
 
-## Создание нового приложения
+## <a name="writing-a-new-app"></a>Создание нового приложения
 
 Если вы начинаете с чистого листа, в вашем распоряжении множество возможностей, в том числе:
 
@@ -29,7 +36,7 @@ ms.openlocfilehash: 53e6c50b7a1b4262f738cd798aa2bd02291512fe
 
 -   [Apache Cordova](http://go.microsoft.com/fwlink/p/?LinkID=400439)
 
-    Если вам больше по душе JavaScript и HTML, Apache Cordova (другое название— PhoneGap) поможет вам создать кроссплатформенные приложения для iOS, Windows и Android. Этот тип проекта также встроен в Visual Studio.
+    Если вам больше по душе JavaScript и HTML, Apache Cordova (другое название — PhoneGap) поможет вам создать кроссплатформенные приложения для iOS, Windows и Android. Этот тип проекта также встроен в Visual Studio.
 
 -   Игровые модули
 
@@ -39,7 +46,7 @@ ms.openlocfilehash: 53e6c50b7a1b4262f738cd798aa2bd02291512fe
 
     Это духовный правопреемник XNA. Теперь это платформа с открытым кодом для создания кроссплатформенных приложений, т. е. вы можете создавать приложения на C# для многочисленных платформ с поддержкой физического модуля, а также двухмерной и трехмерной графики.
 
-## Адаптация существующего приложения
+## <a name="adapting-an-existing-app"></a>Адаптация существующего приложения
 
 Если у вас есть существующее приложение для iOS, число вариантов немного меньше. Однако все далеко не потеряно.
 
@@ -51,11 +58,11 @@ ms.openlocfilehash: 53e6c50b7a1b4262f738cd798aa2bd02291512fe
 
     Если ваша основная бизнес-логика написана на C++, а не Objective-C или Swift, зачастую можно использовать этот код, внеся в проект незначительные изменения. Затем можно использовать XAML для определения пользовательского интерфейса, как и в других приложениях для Windows, и при необходимости вызывать код C++.
 
--   [Запуск OpenGLES в Windows с помощью ANGLE](http://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [Запуск OpenGL ES в Windows с помощью ANGLE](http://go.microsoft.com/fwlink/p/?linkid=618387)
 
-    В качестве промежуточного действия при портировании проекта OpenGLES2.0 можно использовать ANGLE. ANGLE позволяет запускать содержимое OpenGLES в Windows путем преобразования вызовов API OpenGLES в вызовы API DirectX11.
+    В качестве промежуточного действия при портировании проекта OpenGL ES 2.0 можно использовать ANGLE. ANGLE позволяет запускать содержимое OpenGL ES в Windows путем преобразования вызовов API OpenGL ES в вызовы API DirectX 11.
 
-## Другие средства разработки кроссплатформенных приложений
+## <a name="other-cross-platform-authoring-tools"></a>Другие средства разработки кроссплатформенных приложений
 
 -   [GameSalad](http://go.microsoft.com/fwlink/p/?LinkID=320480)
 
@@ -92,10 +99,5 @@ ms.openlocfilehash: 53e6c50b7a1b4262f738cd798aa2bd02291512fe
 -   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
 
     Средство разработки игр на базе HTML.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

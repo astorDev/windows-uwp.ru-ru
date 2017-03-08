@@ -3,17 +3,25 @@ author: awkoren
 Description: "Процедура ручного преобразования классического приложения для Windows (например, Win32, WPF и Windows Forms) в приложение универсальной платформы Windows (UWP)."
 Search.Product: eADQiWindows 10XVcnh
 title: "Ручное преобразование классического приложения для Windows в приложение универсальной платформы Windows (UWP)"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 translationtype: Human Translation
-ms.sourcegitcommit: b612b2c94de79f48a375ae3469c35dee6ce3939d
-ms.openlocfilehash: 73f30d564fcec1b748b4d59ff545e25b62b1c719
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 345296a3fa9faeb8daa8e03fbb633863380d2424
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>Ручное преобразование приложения в приложение UWP с помощью Desktop Bridge
+# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>Ручное преобразование приложения в приложение UWP с помощью моста для классических приложений
 
-[Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) — удобное автоматическое средство, пользоваться которым имеет смысл, если вы не знаете точно, что делает ваша программа установки. Но если установка приложения выполняется с помощью команды xcopy, или если вы знаете, какие изменения ваш установщик приложения вносит в систему, можно создать манифест пакета приложения вручную. В этой статье приведены шаги для начала работы. В ней также объясняется, как добавлять без основы в приложений, что недоступно в DAC. 
+[Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) — удобное автоматическое средство, пользоваться которым имеет смысл, если вы не знаете точно, что делает ваша программа установки. Но если установка приложения выполняется с помощью команды xcopy, или если вы знаете, какие изменения ваш установщик приложения вносит в систему, можно создать манифест пакета приложения вручную. В этой статье приведены шаги для начала работы. В ней также объясняется, как добавлять ресурсы без основы в приложения, что недоступно в DAC. 
 
-Порядок начала работы:
+Вот как начать ручное преобразование. Если у вас приложение .NET и вы используете Visual Studio, альтернативный вариант см. в статье [Руководство по упаковке классических приложений .NET с использованием моста для классических приложений с помощью Visual Studio](desktop-to-uwp-packaging-dot-net.md).  
 
 ## <a name="create-a-manifest-by-hand"></a>Создайте манифест вручную
 
@@ -107,17 +115,10 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 2. Создайте копию каждого изображения 44x44 в той же папке и добавьте *.targetsize-44_altform-unplated* к имени файла. Вам потребуются две копии каждого значка, каждый из которых должен быть назван особым образом. Например, после завершения процесса ваша папка ресурсов может содержать файлы *MYAPP_44x44.png* и *MYAPP_44x44.targetsize-44_altform-unplated.png* (обратите внимание, что первый файл — это значок, ссылка на который содержится в appxmanifest в атрибуте *Square44x44Logo* VisualElements). 
 
-3.  В AppXManifest установите атрибуту BackgroundColor для каждого значка, к которому применяется исправление, значение "transparent". Этот атрибут находится в элементе VisualElements для каждого приложения.
+3.    В AppXManifest установите атрибуту BackgroundColor для каждого значка, к которому применяется исправление, значение "transparent". Этот атрибут находится в элементе VisualElements для каждого приложения.
 
-4.  Откройте CMD, измените каталог на корневую папку пакета и создайте файл priconfig.xml с помощью команды ```makepri createconfig /cf priconfig.xml /dq en-US```.
+4.    Откройте CMD, измените каталог на корневую папку пакета и создайте файл priconfig.xml с помощью команды ```makepri createconfig /cf priconfig.xml /dq en-US```.
 
-5.  Оставаясь в корневой папке пакета, используйте CMD для создания одного или нескольких файлов resources.pri с помощью команды ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml```. Например, команда для вашего приложения может выглядеть так: ```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```. 
+5.    Оставаясь в корневой папке пакета, используйте CMD для создания одного или нескольких файлов resources.pri с помощью команды ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml```. Например, команда для вашего приложения может выглядеть так: ```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```. 
 
-6.  Упакуйте AppX, руководствуясь инструкциями в следующем шаге, чтобы увидеть результат.
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
-
+6.    Упакуйте AppX, руководствуясь инструкциями в следующем шаге, чтобы увидеть результат.

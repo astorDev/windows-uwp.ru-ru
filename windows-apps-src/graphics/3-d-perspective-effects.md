@@ -3,14 +3,21 @@ author: Jwmsft
 ms.assetid: 90F07341-01F4-4205-8161-92DD2EB49860
 title: "Трехмерные эффекты для пользовательского интерфейса XAML"
 description: "C помощью преобразований перспективы можно применять объемные эффекты к содержимому ваших приложений среды выполнения Windows. Например, можно создать иллюзию, что объект повернут к вам или отвернут от вас, как показано здесь."
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 54bcd19419f31563f910b705fce8128bca33825b
-ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b0855392c9e9e3f18d08a16cf39cdfa5c0910701
+ms.lasthandoff: 02/07/2017
 
 ---
-# Трехмерные эффекты для пользовательского интерфейса XAML
+# <a name="3-d-perspective-effects-for-xaml-ui"></a>Трехмерные эффекты для пользовательского интерфейса XAML
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 C помощью преобразований перспективы можно применять объемные эффекты к содержимому ваших приложений среды выполнения Windows. Например, можно создать иллюзию, что объект повернут к вам или отвернут от вас, как показано здесь.
 
@@ -43,7 +50,7 @@ C помощью преобразований перспективы можно 
 
 [Выполнить этот пример](http://go.microsoft.com/fwlink/p/?linkid=236112)
 
-## Класс PlaneProjection
+## <a name="planeprojection-class"></a>Класс PlaneProjection
 
 Можно применить трехмерные эффекты к любому элементу [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), задав значение свойства [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection) элемента UIElement с помощью [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192). **PlaneProjection** определяет, каким образом преобразование отображается в пространстве. В следующем примере рассмотрен простой случай.
 
@@ -85,7 +92,7 @@ C помощью преобразований перспективы можно 
 
 Свойствам вращения можно задать положительное или отрицательное значение, чтобы выполнить поворот в любом направлении. Абсолютное значение может превышать 360. В таком случае вращение объекта превысит один полный оборот. [Запустите этот пример](http://go.microsoft.com/fwlink/p/?linkid=236112), чтобы поэкспериментировать с разными значениями свойств [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx), [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) и [**RotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationz) и увидеть изменения.
 
-С помощью свойств [**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx), [**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) и [**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) можно переместить центр вращения. По умолчанию оси вращения проходят прямо через центр объекта, благодаря чему он вращается вокруг своего центра. Но если вы переместите центр вращения к внешнему краю объекта, он будет вращаться вокруг этого края. По умолчанию свойства **CenterOfRotationX** и **CenterOfRotationY** имеют значение 0,5, а значение по умолчанию для свойства **CenterOfRotationZ**— 0. Для свойств **CenterOfRotationX** и **CenterOfRotationY** значения от 0 до 1 устанавливают точку вращения в каком-либо месте в пределах объекта. Значение 0 обозначает один край объекта, а значение 1 — противоположный край. Значения вне данного диапазона разрешены и перемещают центр вращения соответственно. Так как ось Z, проходящая через центр вращения, проходит через плоскость объекта, можно переместить центр вращения за объект, используя отрицательное число, и разместить его перед объектом (по направлению к себе), используя положительное число.
+С помощью свойств [**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx), [**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) и [**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) можно переместить центр вращения. По умолчанию оси вращения проходят прямо через центр объекта, благодаря чему он вращается вокруг своего центра. Но если вы переместите центр вращения к внешнему краю объекта, он будет вращаться вокруг этого края. По умолчанию свойства **CenterOfRotationX** и **CenterOfRotationY** имеют значение 0,5, а значение по умолчанию для свойства **CenterOfRotationZ** — 0. Для свойств **CenterOfRotationX** и **CenterOfRotationY** значения от 0 до 1 устанавливают точку вращения в каком-либо месте в пределах объекта. Значение 0 обозначает один край объекта, а значение 1 — противоположный край. Значения вне данного диапазона разрешены и перемещают центр вращения соответственно. Так как ось Z, проходящая через центр вращения, проходит через плоскость объекта, можно переместить центр вращения за объект, используя отрицательное число, и разместить его перед объектом (по направлению к себе), используя положительное число.
 
 [**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx) смещает центр вращения вдоль оси X параллельно объекту, а [**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) смещает центр вращения вдоль оси Y объекта. На следующих иллюстрациях показано использование различных значений для **CenterOfRotationY**.
 
@@ -141,7 +148,7 @@ C помощью преобразований перспективы можно 
 
 [Запустите этот пример с ползунком](http://go.microsoft.com/fwlink/p/?linkid=236112), чтобы поэкспериментировать с вращением объекта вокруг центра вращения, расположенного в разных точках.
 
-## Размещение объекта
+## <a name="positioning-an-object"></a>Размещение объекта
 
 До этого момента вы учились вращать объект в пространстве. Используя следующие свойства, можно разместить повернутые объекты в пространстве относительно друг друга:
 
@@ -180,12 +187,7 @@ C помощью преобразований перспективы можно 
 
 Обратите внимание, что в этом примере объект не меняет курс во время вращения. Это происходит из-за того, что объект перемещается вдоль оси X экрана без учета вращения.
 
-## Размещение объекта
+## <a name="positioning-an-object"></a>Размещение объекта
 
 Можно воспользоваться типами [**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) и [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) для более сложных сценариев полуобъемных эффектов, чем те, которые реализуются с помощью [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192). **Matrix3DProjection** предоставляет вам матрицу полного объемного преобразования, применимую к любому объекту [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), так что можно применять матрицы произвольного преобразования модели и матрицы перспективы к элементам. Не забывайте, что эти API минимальны, поэтому при использовании их необходимо написать код, который правильно создает матрицы объемного преобразования. По этой причине в простых сценариях объемных эффектов легче использовать **PlaneProjection**.
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

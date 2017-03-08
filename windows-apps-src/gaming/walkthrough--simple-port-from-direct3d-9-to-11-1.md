@@ -1,20 +1,27 @@
 ---
 author: mtoepke
 title: "Пошаговое руководство. Перенос простого приложения Direct3D 9 в DirectX 11 и UWP"
-description: "Это упражнение по переносу научит вас переносить простую структуру прорисовки из Direct3D9 в Direct3D11 и универсальную платформу Windows (UWP)."
+description: "Это упражнение по переносу научит вас переносить простую структуру отрисовки из Direct3D 9 в Direct3D 11 и универсальную платформу Windows (UWP)."
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, directx, перенос, direct3d 9, direct3d 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53e0b3f5a69f133e74430b1a2e32a13180569f06
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1e3f9b7fbfaa110661ebb111c60d0089757dc885
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Пошаговое руководство: перенос простого приложения Direct3D 9 в DirectX 11 и UWP
+# <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>Пошаговое руководство: перенос простого приложения Direct3D 9 в DirectX 11 и UWP
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Это упражнение по переносу научит вас переносить простую структуру прорисовки из Direct3D9 в Direct3D11 и универсальную платформу Windows (UWP).
+Это упражнение по переносу научит вас переносить простую структуру прорисовки из Direct3D 9 в Direct3D 11 и универсальную платформу Windows (UWP).
 ## 
 <table>
 <colgroup>
@@ -53,7 +60,7 @@ ms.openlocfilehash: 53e0b3f5a69f133e74430b1a2e32a13180569f06
 4.  Реализация цепи отрисовки и отображение отрисованного куба на экране.
 5.  Создание окна, запуск основного цикла и обработка оконных сообщений.
 
-По завершении этого пошагового руководства вы получите представление о следующих основных различиях между Direct3D9 и Direct3D11:
+По завершении этого пошагового руководства вы получите представление о следующих основных различиях между Direct3D 9 и Direct3D 11:
 
 -   Разделение устройства, контекста устройства и графической инфраструктуры.
 -   Процесс компиляции шейдеров и загрузки их байт-кода во время выполнения.
@@ -62,36 +69,23 @@ ms.openlocfilehash: 53e0b3f5a69f133e74430b1a2e32a13180569f06
 
 Обратите внимание, что пошаговое руководство использует [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) для простоты и не описывает межпрограммное взаимодействие XAML.
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
 
 Вам нужно [подготовить среду для разработки игр UWP с использованием DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Шаблон пока не нужен, но потребуется Microsoft Visual Studio 2015, чтобы загрузить примеры кода для этого руководства.
 
-Чтобы лучше понять принципы программирования для DirectX11 и UWP, которые демонстрируются в этом руководстве, ознакомьтесь с разделом [Принципы и аспекты переноса](porting-considerations.md).
+Чтобы лучше понять принципы программирования для DirectX 11 и UWP, которые демонстрируются в этом руководстве, ознакомьтесь с разделом [Принципы и аспекты переноса](porting-considerations.md).
 
-## Связанные разделы
-
+## <a name="related-topics"></a>Статьи по теме
 
 **Direct3D**
-[Создание шейдеров HLSL в Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
 
-[Создание нового проекта DirectX11 для UWP](user-interface.md)
+* [Создание шейдеров HLSL в Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Шаблоны проектов игр DirectX](user-interface.md)
 
 **Магазин Windows**
-[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
 
-[**Оператор дескриптора объекта (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx
-
- 
-
- 
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+* [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+* [**Оператор дескриптора объекта (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
 
 

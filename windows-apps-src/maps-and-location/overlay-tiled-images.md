@@ -3,16 +3,23 @@ author: msatranjr
 title: "Наложение мозаичных изображений на карту"
 description: "Наложение сторонних или настраиваемых мозаичных изображений на карте с помощью источников мозаичных данных. Используйте источники плиточных данных для наложения специальных сведений, таких как данные о погоде, населении или сейсмической активности, а также для полной замены карты по умолчанию."
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, карта, расположение, изображения, наложение"
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: a00d3d27161310077a0690cef7e4d11a5209bee7
+ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
+ms.openlocfilehash: dd52df5f95b25e26ddb0fb8db50c9faf27df02ee
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Наложение плиточных изображений на карту
+# <a name="overlay-tiled-images-on-a-map"></a>Наложение плиточных изображений на карту
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Наложение сторонних или пользовательских плиточных изображений на карту с помощью источников плиточных данных. Используйте источники плиточных данных для наложения специальных сведений, таких как данные о погоде, населении или сейсмической активности, а также для полной замены карты по умолчанию.
@@ -21,10 +28,10 @@ ms.openlocfilehash: a00d3d27161310077a0690cef7e4d11a5209bee7
 
 -   [Пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## Общие сведения о мозаичном изображении
+## <a name="tiled-image-overview"></a>Общие сведения о мозаичном изображении
 
 
-Службы карт, например Карты Nokia и Карты Bing, нарезают карты на квадратные плитки для быстрого восстановления и отображения. Эти плитки имеют размер 256пикселей на 256пикселей и предварительно обрабатываются на нескольких уровнях детализации. Многие сторонние службы также предоставляют данные на основе карт, порезанные на плитки. Используйте источники плиточных данных для получения сторонних плиток или создания собственных пользовательских плиток и наложите их на карту, которая отображается в [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+Службы карт, например Карты Nokia и Карты Bing, нарезают карты на квадратные плитки для быстрого восстановления и отображения. Эти плитки имеют размер 256 пикселей на 256 пикселей и предварительно обрабатываются на нескольких уровнях детализации. Многие сторонние службы также предоставляют данные на основе карт, порезанные на плитки. Используйте источники плиточных данных для получения сторонних плиток или создания собственных пользовательских плиток и наложите их на карту, которая отображается в [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
 **Важно!**  
 При использовании источников плиточных данных не нужно писать код для запроса или размещения отдельных плиток. [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) запрашивает плитки по мере необходимости. Каждый запрос задает координаты X и Y и масштаб для отдельной плитки. Можно просто задать формат универсального кода ресурса (URI) или имя файла, которые будут использоваться для получения плиток, в свойстве **UriFormatString**. То есть, вы вставляете заменяемые параметры в базовый универсальный код ресурса (URI) или имя файла, чтобы указать, где нужно передать координаты X и Y, а также масштаб для каждой плитки.
@@ -41,7 +48,7 @@ ms.openlocfilehash: a00d3d27161310077a0690cef7e4d11a5209bee7
 
 Дополнительные сведения о системе плиток, использующейся службами карт, см. в разделе [Система плиток Карт Bing](http://go.microsoft.com/fwlink/p/?LinkId=626692).
 
-### Наложение плиток из источника плиточных данных
+### <a name="overlay-tiles-from-a-tile-source"></a>Наложение плиток из источника плиточных данных
 
 Наложите плиточные изображения из источника плиточных данных на карту с помощью [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
 
@@ -81,7 +88,7 @@ ms.openlocfilehash: a00d3d27161310077a0690cef7e4d11a5209bee7
          MapControl1.TileSources.Add(tileSource);
     ```
 
-## Наложение плиток из веб-службы
+## <a name="overlay-tiles-from-a-web-service"></a>Наложение плиток из веб-службы
 
 
 Наложите плиточные изображения из веб-службы с помощью [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
@@ -93,9 +100,9 @@ ms.openlocfilehash: a00d3d27161310077a0690cef7e4d11a5209bee7
         http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
-    Веб-служба должна поддерживать универсальный код ресурса (URI), который содержит заменяемые параметры {x}, {y} и {zoomlevel}. Большинство веб-служб (например, Nokia, Bing и Google) поддерживают URI такого формата. Если веб-служба требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993). Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#customuri) далее в данной статье.
+    Веб-служба должна поддерживать универсальный код ресурса (URI), который содержит заменяемые параметры {x}, {y} и {zoomlevel}. Большинство веб-служб (например, Nokia, Bing и Google) поддерживают URI такого формата. Если веб-служба требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993). Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#provide-a-custom-uri) далее в данной статье.
 
-3.  Затем выполните оставшиеся шаги, описанные ранее в разделе [Общие сведения о мозаичных изображениях](#tileintro).
+3.  Затем выполните оставшиеся шаги, описанные ранее в разделе [Общие сведения о мозаичных изображениях](#tiled-image-overview).
 
 В следующем примере показано наложение плиток из вымышленной веб-службы на карту Северной Америки. Значение для [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) указано в конструкторе [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). В этом примере плитки отображаются только внутри географических границ, заданных необязательным свойством [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147).
 
@@ -144,7 +151,7 @@ void MainPage::AddHttpMapTileSource()
 }
 ```
 
-## Наложение плиток из локального хранилища
+## <a name="overlay-tiles-from-local-storage"></a>Наложение плиток из локального хранилища
 
 
 Наложите плиточные изображения, хранящиеся как файлы в локальном хранилище, с помощью [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). Обычно такие файлы упаковываются и распространяются вместе с приложением.
@@ -156,9 +163,9 @@ void MainPage::AddHttpMapTileSource()
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    Если формат имен файлов требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001). Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#customuri) далее в данной статье.
+    Если формат имен файлов требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001). Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#provide-a-custom-uri) далее в данной статье.
 
-3.  Затем выполните оставшиеся шаги, описанные ранее в разделе [Общие сведения о мозаичных изображениях](#tileintro).
+3.  Затем выполните оставшиеся шаги, описанные ранее в разделе [Общие сведения о мозаичных изображениях](#tiled-image-overview).
 
 Для загрузки мозаичных данных из локального хранилища можно использовать следующие протоколы и адреса:
 
@@ -195,7 +202,7 @@ void MainPage::AddHttpMapTileSource()
         }
 ```
 
-## Указание пользовательского универсального кода ресурса (URI)
+## <a name="provide-a-custom-uri"></a>Указание пользовательского универсального кода ресурса (URI)
 
 
 Если заменяемых параметров, доступных со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) класса [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) или со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) класса [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994), недостаточно для получения плиток, следует создать пользовательский универсальный код ресурса (URI). Создайте и верните пользовательский универсальный код ресурса (URI), предоставив пользовательский обработчик для события **UriRequested**. Событие **UriRequested** вызывается для каждой отдельной плитки.
@@ -241,7 +248,7 @@ using System.Threading.Tasks;
         }
 ```
 
-## Наложение плиток из пользовательского источника
+## <a name="overlay-tiles-from-a-custom-source"></a>Наложение плиток из пользовательского источника
 
 
 Наложение пользовательских плиток с помощью [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983). Создайте плитки программным образом в памяти на лету или напишите собственный код для загрузки имеющихся плиток из другого источника.
@@ -317,16 +324,16 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
        int pixelHeight = 256;
        int pixelWidth = 256;
        int bpp = 4;
- 
+
        Array<byte>^ bytes = ref new Array<byte>(pixelHeight * pixelWidth * bpp);
-       
+
        for (int y = 0; y < pixelHeight; y++)
        {
               for (int x = 0; x < pixelWidth; x++)
               {
                      int pixelIndex = y * pixelWidth + x;
                      int byteIndex = pixelIndex * bpp;
- 
+
                      // Set the current pixel bytes.
                      bytes[byteIndex] = (byte)(std::rand() % 256);        // Red
                      bytes[byteIndex + 1] = (byte)(std::rand() % 256);    // Green
@@ -334,23 +341,23 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
                      bytes[byteIndex + 3] = (byte)((std::rand() % 56) + 200);    // Alpha (0xff = fully opaque)
               }
        }
- 
+
        // Create RandomAccessStream from byte array.
        InMemoryRandomAccessStream^ randomAccessStream = ref new InMemoryRandomAccessStream();
        IOutputStream^ outputStream = randomAccessStream->GetOutputStreamAt(0);
        DataWriter^ writer = ref new DataWriter(outputStream);
        writer->WriteBytes(bytes);
- 
+
        create_task(writer->StoreAsync()).then([writer](unsigned int)
        {
               create_task(writer->FlushAsync());
        });
- 
+
        return randomAccessStream;
 }
 ```
 
-## Замена карты по умолчанию
+## <a name="replace-the-default-map"></a>Замена карты по умолчанию
 
 
 Чтобы полностью заменить карту по умолчанию сторонними или пользовательскими плитками, выполните следующие действия.
@@ -358,17 +365,11 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 -   Укажите [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** в качестве значения свойства [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157) для [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
 -   Укажите [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** в качестве значения свойства [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) для [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 * [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
 * [Пример карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Видео Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Пример приложения UWP для работы с картами](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

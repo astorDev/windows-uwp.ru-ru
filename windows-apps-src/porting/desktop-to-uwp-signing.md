@@ -2,22 +2,30 @@
 author: awkoren
 Description: "В этой статье описывается процедура подписывания классического приложения, преобразованного в приложение универсальной платформы Windows (UWP)."
 Search.Product: eADQiWindows 10XVcnh
-title: "Подписывание приложения, преобразованного в приложение UWP с помощью Desktop Bridge."
+title: "Подписывание приложения, преобразованного в приложение UWP с помощью моста для классических приложений."
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 232c3012-71ff-4f76-a81e-b1758febb596
 translationtype: Human Translation
-ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
-ms.openlocfilehash: 2db978089a6334214c3b4c85dbde8d4a4e846092
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b5936030f09e52933053f2465659157083b9eec2
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Подписывание приложения, преобразованного с помощью Desktop Bridge
+# <a name="sign-an-app-converted-with-the-desktop-bridge"></a>Подписывание приложения, преобразованного с помощью моста для классических приложений
 
 В этой статье описывается процедура подписывания классического приложения, преобразованного в приложение универсальной платформы Windows (UWP). Прежде чем вы сможете развернуть пакет .appx, его необходимо подписать с помощью сертификата.
 
-## Автоматическое подписывание с помощью Desktop App Converter (DAC)
+## <a name="automatically-sign-using-the-desktop-app-converter-dac"></a>Автоматическое подписывание с помощью Desktop App Converter (DAC)
 
 Используйте флаг ```-Sign``` при запуске DAC для автоматического подписывания пакета .appx. Подробнее см. в разделе [Предварительная версия Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md).
 
-## Ручное подписывание с помощью SignTool.exe
+## <a name="manually-sign-using-signtoolexe"></a>Ручное подписывание с помощью SignTool.exe
 
 Сначала создайте сертификат с помощью средства MakeCert.exe. При отображении запроса на ввод пароля выберите "Нет". 
 
@@ -40,9 +48,9 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 Все три упомянутые выше средства входят в состав Microsoft Windows 10 SDK. Чтобы вызвать их напрямую, вызовите из командной строки сценарий ```C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat```.
 
-## Распространенные ошибки
+## <a name="common-errors"></a>Распространенные ошибки
 
-### Несоответствие издателя и сертификата приводит к ошибке Signtool "Error: SignerSign() Failed" (-2147024885/0x8007000b)
+### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>Несоответствие издателя и сертификата приводит к ошибке Signtool "Error: SignerSign() Failed" (-2147024885/0x8007000b)
 
 Запись издателя в манифесте appx должна соответствовать субъекту сертификата, с помощью которого выполняется подписывание.  Вы можете использовать любой из следующих методов для просмотра субъекта сертификата. 
 
@@ -66,9 +74,9 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 certutil -dump <cert_file.pfx>
 ```
 
-### Поврежденные или деформированные подписи Authenticode
+### <a name="corrupted-or-malformed-authenticode-signatures"></a>Поврежденные или деформированные подписи Authenticode
 
-Этот раздел содержит инструкции по выявлению проблем с переносными исполняемыми файлами (PE) в пакете AppX, который может содержать поврежденные или деформированные подписи Authenticode. Наличие неверных подписей Authenticode в файлах PE, которые могут иметь любой двоичный формат (например, .exe, .dll, .chm и т.д.), приведет к тому, что вы не сможете правильно подписать пакет и, таким образом, не сможете развернуть его из пакета AppX. 
+Этот раздел содержит инструкции по выявлению проблем с переносными исполняемыми файлами (PE) в пакете AppX, который может содержать поврежденные или деформированные подписи Authenticode. Наличие неверных подписей Authenticode в файлах PE, которые могут иметь любой двоичный формат (например, .exe, .dll, .chm и т. д.), приведет к тому, что вы не сможете правильно подписать пакет и, таким образом, не сможете развернуть его из пакета AppX. 
 
 Расположение подписи Authenticode файла PE определяется записью в таблице сертификатов в каталогах данных необязательных заголовков и соответствующей таблице сертификатов атрибутов. Во время проверки подписи сведения, указанные в этих местах, используются для поиска подписи на файле PE. При повреждении этих значений процесс подписывания файла может быть выполнен некорректно. 
 
@@ -85,13 +93,8 @@ certutil -dump <cert_file.pfx>
 
 Чтобы исправить эти деформированные двоичные файлы, убедитесь, что они соответствуют требованиям выше.
 
-## См. также
+## <a name="see-also"></a>См. также
 
 - [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
 - [SignTool.exe (инструмент подписывания)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
 - [Подписание пакета приложения с помощью SignTool](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)
-
-
-<!--HONumber=Nov16_HO1-->
-
-

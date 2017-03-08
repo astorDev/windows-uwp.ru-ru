@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
 description: "Используйте этот метод в API отправки Магазина Windows для создания новой отправки для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows."
 title: "Создание отправки приложения с помощью API отправки Магазина Windows"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API отправки Магазина Windows, создание отправки приложения"
 translationtype: Human Translation
-ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
-ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: ecc701016ff37e7cc7de0723793efdfe89118c48
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Создание отправки приложения с помощью API отправки Магазина Windows
+# <a name="create-an-app-submission-using-the-windows-store-submission-api"></a>Создание отправки приложения с помощью API отправки Магазина Windows
 
 
 
@@ -19,17 +26,17 @@ ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
 Дополнительные сведения об использовании этого метода в процессе создания отправки приложения с помощью API отправки Магазина Windows см. в разделе [Управление отправками приложений](manage-app-submissions.md).
 
 
-## Необходимые условия
+## <a name="prerequisites"></a>Необходимые условия
 
-Для использования этого метода необходимо выполнить следующие действия:
+Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
-* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия. После истечения срока действия маркера можно получить новый маркер.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия. После истечения срока действия маркера можно получить новый маркер.
 * Убедитесь, что приложение уже содержит не менее одной отправки, для которой указаны сведения [возрастной категории](https://msdn.microsoft.com/windows/uwp/publish/age-ratings).
 
 >**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
-## Запрос
+## <a name="request"></a>Запрос
 
 У этого метода следующий синтаксис. Примеры использования и описание текста заголовка и запроса приведены в следующих разделах.
 
@@ -40,15 +47,15 @@ ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
 <span/>
  
 
-### Заголовок запроса
+### <a name="request-header"></a>Заголовок запроса
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
-### Параметры запроса
+### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -56,11 +63,11 @@ ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
 
 <span/>
 
-### Тело запроса
+### <a name="request-body"></a>Тело запроса
 
 Предоставлять тело запроса для этого метода не требуется.
 
-### Пример запроса
+### <a name="request-example"></a>Пример запроса
 
 В следующем примере кода показано, как создать новую отправку для приложения.
 
@@ -69,7 +76,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/su
 Authorization: Bearer <your access token>
 ```
 
-## Ответ
+## <a name="response"></a>Ответ
 
 В следующем примере представлен текст ответа JSON, обеспечивающий успешный вызов этого метода. В тексте ответа содержатся сведения о новой отправке. Дополнительные сведения о значениях в тексте ответа см. в разделе [Ресурс отправки приложения](manage-app-submissions.md#app-submission-object).
 
@@ -81,7 +88,8 @@ Authorization: Bearer <your access token>
     "trialPeriod": "FifteenDays",
     "marketSpecificPricings": {},
     "sales": [],
-    "priceId": "Tier2"
+    "priceId": "Tier2",
+    "isAdvancedPricingModel": "true"
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -173,7 +181,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## Коды ошибок
+## <a name="error-codes"></a>Коды ошибок
 
 Если запрос не удается выполнить, ответ будет содержать один из следующих кодов ошибок HTTP.
 
@@ -185,7 +193,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
 * [Получение отправки приложения](get-an-app-submission.md)
@@ -193,9 +201,4 @@ Authorization: Bearer <your access token>
 * [Обновление отправки приложения](update-an-app-submission.md)
 * [Удаление отправки приложения](delete-an-app-submission.md)
 * [Получение состояния отправки приложения](get-status-for-an-app-submission.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

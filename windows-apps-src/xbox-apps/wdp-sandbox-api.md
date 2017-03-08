@@ -2,16 +2,24 @@
 author: payzer
 title: "Портал устройства - справочник по API-интерфейсу песочницы Xbox Live"
 description: "Узнайте, как получить доступ к песочнице Xbox Live программными средствами."
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 translationtype: Human Translation
-ms.sourcegitcommit: a857ba338a971e651653193ff2149f08b1665a36
-ms.openlocfilehash: 2a0bfa2eecffb2b0f5ed0bc691cb90bcd7191321
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 629e8c3d35c9b9730c07e9f810909298558ae700
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Справочник по API-интерфейсу песочницы Xbox Live   
+# <a name="xbox-live-sandbox-api-reference"></a>Справочник по API-интерфейсу песочницы Xbox Live   
 Вы можете получить и настроить песочницу Xbox Live с помощью этого API REST.
 
-## Получение песочницы Xbox Live
+## <a name="get-the-xbox-live-sandbox"></a>Получение песочницы Xbox Live
 
 **Запрос**
 
@@ -46,7 +54,7 @@ Sandbox (String) — текущая песочница устройства.
 4XX | Коды ошибок
 5XX | Коды ошибок
 
-## Установка песочницы Xbox Live
+## <a name="set-the-xbox-live-sandbox"></a>Установка песочницы Xbox Live
 Вы можете изменить песочницу Xbox Live для устройства с помощью следующего запроса. Обратите внимание, что консоли Xbox One необходимо перезагрузить, чтобы применить параметр.
 
 **Запрос**
@@ -86,10 +94,5 @@ Sandbox (String) — текущая песочница устройства.
 **Доступные семейства устройств**
 
 * Windows Xbox
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

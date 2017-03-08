@@ -3,19 +3,26 @@ author: jwmsft
 description: "Информация о командах перемещения и рисования (мини-языке), которые вы можете использовать для указания геометрии путей в качестве значения атрибута XAML."
 title: "Синтаксис команд перемещения и рисования"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ea01f8191190db0a9b13b8081bc6fef687369c13
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Синтаксис команд перемещения и рисования
+# <a name="move-and-draw-commands-syntax"></a>Синтаксис команд перемещения и рисования
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Информация о командах перемещения и рисования (мини-языке), которые вы можете использовать для указания геометрии путей в качестве значения атрибута XAML. Команды перемещения и рисования используются многими средствами разработки и графическими инструментами, умеющими выводить векторную графику или фигуру как формат сериализации и обмена.
 
-## Свойства, использующие строки команд перемещения и рисования
+## <a name="properties-that-use-move-and-draw-command-strings"></a>Свойства, использующие строки команд перемещения и рисования
 
 Синтаксис команд перемещения и рисования поддерживается конвертером внутренних типов для XAML, который анализирует команды и создает графическое представление времени выполнения. В сущности, это представление — конечный набор векторов, готовый для представления. Сами векторы не завершают подробности представления; вам еще нужно будет задать другие значения для элементов. Для объекта [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) вам также требуются значения для [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378), [**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383) и других свойств. Затем этот объект **Path** необходимо тем или иным образом подключить к визуальному дереву. Для объекта [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) задайте свойство [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974).
 
@@ -28,11 +35,11 @@ ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
 
 [**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) также может использовать команды перемещения и рисования. Теоретически объект [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168), использующий команды перемещения и рисования, можно объединить с другими типами [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) в объекте [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057), который затем можно использовать как значение для [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). Но это применяется намного реже, чем использование команд перемещения и рисования для данных с определенным атрибутом.
 
-## Использование команд перемещения и рисования в сравнении с использованием **PathGeometry**
+## <a name="using-move-and-draw-commands-versus-using-a-pathgeometry"></a>Использование команд перемещения и рисования в сравнении с использованием **PathGeometry**
 
 Для XAML среды выполнения Windows команды перемещения и рисования создают [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) с одним объектом [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/br210143) со значением свойства [**Figures**](https://msdn.microsoft.com/library/windows/apps/br210169). Каждая команда рисования создает производный класс [**PathSegment**](https://msdn.microsoft.com/library/windows/apps/br210174) в наборе [**Segments**](https://msdn.microsoft.com/library/windows/apps/br210164) этого одного **PathFigure**, команда перемещения изменяет [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/br210166), а при существовании команды закрытия для [**IsClosed**](https://msdn.microsoft.com/library/windows/apps/br210159) устанавливается значение **true**. По этой структуре можно перемещаться как по объектной модели, если вы проверяете значения **Data** во время выполнения.
 
-## Основной синтаксис
+## <a name="the-basic-syntax"></a>Основной синтаксис
 
 Синтаксис команд перемещения и рисования в основном можно представить так:
 
@@ -56,7 +63,7 @@ ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
 
 Не используйте запятые в качестве десятичных разделителей для дробных чисел. Строка команды интерпретируется языком XAML и не учитывает характерные для языка и региональных параметров соглашения о форматировании чисел, отличные от тех, что используются в языковом стандарте **en-us**.
 
-## Особенности синтаксиса
+## <a name="syntax-specifics"></a>Особенности синтаксиса
 
 **Правило заливки**
 
@@ -222,24 +229,19 @@ ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
 
 Вместо десятичных или целых чисел можно использовать экспоненциальное представление. Например, `+1.e17` — допустимое значение.
 
-## Средства проектирования, создающие команды перемещения и рисования
+## <a name="design-tools-that-produce-move-and-draw-commands"></a>Средства проектирования, создающие команды перемещения и рисования
 
-**Перо** и другие инструменты рисования в Blend для Microsoft Visual Studio2015 обычно создают объект [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) с использованием команд перемещения и рисования.
+**Перо** и другие инструменты рисования в Blend для Microsoft Visual Studio 2015 обычно создают объект [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) с использованием команд перемещения и рисования.
 
 Вы можете увидеть существующие данные команд перемещения и рисования в некоторых частях элемента управления, определенных в стандартных XAML-шаблонах для элементов управления в среде выполнения Windows. Например, некоторые элементы управления используют [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722), который содержит данные, определенные как команды перемещения и рисования.
 
 Существуют средства экспорта и подключаемые модули, доступные для других распространенных средств разработки, которые работают с векторной графикой и умеют выводить вектор в форме XAML. Они обычно создают объекты [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) в контейнере макета с помощью команд перемещения и рисования для [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). В XAML может быть несколько элементов **Path**, чтобы можно было применять разные кисти. Многие из этих средств экспорта и подключаемые модули были первоначально написаны для XAML вWindows Presentation Foundation (WPF) и Silverlight, но этот синтаксис пути XAML совпадает с XAML среды выполнения Windows. Чаще всего можно использовать блоки XAML из средства экспорта и вставлять их прямо в XAML-страницу среды выполнения Windows. (Но вы не сможете использовать элемент **RadialGradientBrush**, если он был частью преобразованного XAML, так как XAML среды выполнения Windows не поддерживает эту кисть.)
 
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 * [Рисование фигур](https://msdn.microsoft.com/library/windows/apps/mt280380)
 * [Использование кистей](https://msdn.microsoft.com/library/windows/apps/mt280383)
 * [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356)
 * [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

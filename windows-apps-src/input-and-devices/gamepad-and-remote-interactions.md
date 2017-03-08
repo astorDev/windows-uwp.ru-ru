@@ -6,13 +6,20 @@ ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
 isNew: true
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c353d649529eef8361c982ff6451371a4cebc4eb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b1ee5409cfca253b3bb084b95365d22526c66920
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Взаимодействие с помощью геймпада и пульта дистанционного управления
+# <a name="gamepad-and-remote-control-interactions"></a>Взаимодействие с помощью геймпада и пульта дистанционного управления
 
 Приложения универсальной платформы Windows (UWP) теперь поддерживают ввод с помощью геймпада и пульта дистанционного управления. Геймпады и пульты управления — это основные устройства ввода для Xbox и телевизоров. Приложения UWP следует оптимизировать для этих типов устройств ввода так же, как и для клавиатуры и мыши на компьютере или сенсорного ввода на телефоне или планшете. Проверка этих устройств ввода в приложении — самый важный этап его оптимизации для Xbox и телевизора.
 Теперь вы можете подключить и использовать геймпад с приложениями UWP на компьютере, что упростит их проверку.
@@ -27,9 +34,4 @@ ms.openlocfilehash: c353d649529eef8361c982ff6451371a4cebc4eb
 
 * [Режим мыши](designing-for-tv.md#mouse-mode) -
 Режим мыши позволяет приложению эмулировать использование мыши, если перемещения фокуса по оси X и Y недостаточно.
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

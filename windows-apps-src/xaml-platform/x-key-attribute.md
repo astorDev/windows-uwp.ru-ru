@@ -3,19 +3,26 @@ author: jwmsft
 description: "Присваивает уникальный идентификатор элементам, которые были созданы и отмечены как ресурсы и которые существуют в ResourceDictionary."
 title: "Атрибут xKey"
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ebda34ce4d9483ea72dec3bf620de41c98d7a9aa
-ms.openlocfilehash: 35d4e02ce477757e1a97a54fd9d200dd31675f4d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 67b2b3b60ab6faba5ca30bb585205aba007597ca
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Атрибут x:Key
+# <a name="xkey-attribute"></a>Атрибут x:Key
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Присваивает уникальный идентификатор элементам, которые были созданы и отмечены как ресурсы и которые существуют в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).
 
-## Использование атрибутов XAML
+## <a name="xaml-attribute-usage"></a>Использование атрибутов XAML
 
 ``` syntax
 <ResourceDictionary>
@@ -23,7 +30,7 @@ ms.openlocfilehash: 35d4e02ce477757e1a97a54fd9d200dd31675f4d
 </ResourceDictionary>
 ```
 
-## Использование атрибута языка XAML (неявный **ResourceDictionary**)
+## <a name="xaml-attribute-usage-implicit-resourcedictionary"></a>Использование атрибута языка XAML (неявный **ResourceDictionary**)
 
 ``` syntax
 <object.Resources>
@@ -31,14 +38,14 @@ ms.openlocfilehash: 35d4e02ce477757e1a97a54fd9d200dd31675f4d
 </object.Resources>
 ```
 
-## Значения XAML
+## <a name="xaml-values"></a>Значения XAML
 
 | Термин | Описание |
 |------|-------------|
 | object | Любой объект, к которому можно открыть общий доступ. См. раздел [Ссылки на ресурсы ResourceDictionary и XAML](https://msdn.microsoft.com/library/windows/apps/mt187273). |
 | stringKeyValue | Строка true используется в качестве ключа, который должен соответствовать грамматике _XamlName_. См. раздел "Грамматика XamlName" ниже. | 
 
-##  Грамматика XamlName
+##  <a name="xamlname-grammar"></a>Грамматика XamlName
 
 Ниже приведена нормативная грамматика для строки, используемой в качестве ключа в данной реализации XAML универсальной платформы для Windows (UWP).
 
@@ -55,7 +62,7 @@ CombiningCharacter::= none
 -   Диапазон символов Юникод не поддерживается.
 -   Имя не может начинаться с цифры.
 
-## Комментарии
+## <a name="remarks"></a>Комментарии
 
 Дочерние элементы [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) обычно содержат атрибут **x:Key**, который указывает уникальное значение ключа в этом словаре. Уникальность ключа требуется процессором XAML во время загрузки. Неуникальные значения **x:Key** приведут к исключениям синтаксического анализа XAML. Если этого требует [Расширение разметки {StaticResource}](staticresource-markup-extension.md), неразрешенный ключ также приведет к исключениям синтаксического анализа XAML.
 
@@ -66,10 +73,5 @@ CombiningCharacter::= none
 Эквивалентом назначения **x:Key** на уровне кода является любая операция, в которой используется ключ с базовым [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). Например, атрибут **x:Key**, примененный в разметке к ресурсу, эквивалентен значению параметра *key* для **Insert**, когда вы добавляете ресурс в **ResourceDictionary**.
 
 Элемент в словаре ресурсов может пропустить значение для **x:Key**, если оно является конечным объектом для [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) или [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). В каждом из этих вариантов неявный ключ элемента ресурса представляет собой значение **TargetType**, обрабатываемое как строка. Дополнительные сведения см. в разделах [Краткое руководство: стили элементов управления](https://msdn.microsoft.com/library/windows/apps/hh465498) и [Ссылки на ресурсы ResourceDictionary и XAML](https://msdn.microsoft.com/library/windows/apps/mt187273).
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

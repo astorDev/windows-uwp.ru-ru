@@ -3,21 +3,28 @@ title: "Биометрия отпечатков пальцев"
 description: "В этой статье рассказывается, как добавить биометрию отпечатков пальцев в приложение универсальной платформы Windows (UWP)."
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: d2dfbc6c69e8ee97a01bbf0d7ae82488ca62e3cb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 84e191df23f10f81a3588662f9ba1505cee12e21
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Биометрия отпечатков пальцев
+# <a name="fingerprint-biometrics"></a>Биометрия отпечатков пальцев
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье рассказывается, как добавить биометрию отпечатков пальцев в приложение универсальной платформы Windows (UWP). Включив запрос на биометрическую проверку подлинности (по отпечатку пальца), когда пользователь должен давать согласие на определенное действие, вы повысите безопасность своего приложения. Например, вы можете требовать проходить проверку подлинности по отпечатку пальца перед авторизацией покупки из приложения или перед открытием ресурсов с ограниченным доступом. Управление проверкой подлинности по отпечатку пальца осуществляет класс [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) в пространстве имен [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356).
 
-## Проверка наличия сканера отпечатков пальцев в устройстве
+## <a name="check-the-device-for-a-fingerprint-reader"></a>Проверка наличия сканера отпечатков пальцев в устройстве
 
 
 Чтобы узнать, оснащено ли устройство сканером отпечатков пальцев, вызовите метод [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138). Даже если устройство поддерживает проверку подлинности по отпечатку пальца, ваше приложение должно предоставлять пользователям возможность включать и выключать ее в разделе «Параметры».
@@ -64,7 +71,7 @@ public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
 }
 ```
 
-## Запрос согласия и возврат результатов
+## <a name="request-consent-and-return-results"></a>Запрос согласия и возврат результатов
 
 
 Чтобы запросить согласие пользователя на сканирование отпечатка пальца, вызовите метод [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139). Для проверки подлинности по отпечатку пальца пользователь должен добавить в базу данных отпечатков свою «подпись» в виде отпечатка.
@@ -123,8 +130,3 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
     return returnMessage;
 }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

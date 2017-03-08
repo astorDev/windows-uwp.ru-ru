@@ -3,19 +3,26 @@ author: DBirtolo
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: "Свойства сведений об устройстве"
 description: "У каждого устройства есть связанные свойства DeviceInformation, которые можно использовать, если вам нужны определенные данные или вы создаете средство выбора устройств."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dbe72dd476903083518dcf4b9d299b04e87f6e85
+ms.lasthandoff: 02/07/2017
 
 ---
-# Свойства сведений об устройстве
+# <a name="device-information-properties"></a>Свойства сведений об устройствах
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Важные API **
+**Важные API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 У каждого устройства есть связанные свойства [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393), которые можно использовать, если вам нужны определенные данные или вы создаете средство выбора устройств. Эти свойства можно указать с фильтром AQS, чтобы ограничить перечисляемые устройства и найти среди них соответствующие заданным признакам. Вы также можете использовать эти свойства, чтобы указать, какие данные необходимо получить для каждого устройства. Это позволяет задать сведения об устройстве, которые возвращаются в приложение.
 
@@ -23,17 +30,17 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
 Объект [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) состоит из удостоверения ([**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id)), вида ([**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)) и контейнера свойств ([**DeviceInformation.Properties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.properties.aspx)). Все другие свойства объекта **DeviceInformation** являются производными от контейнера свойств **Properties**. Например, свойство [**Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name) является производным от **System.ItemNameDisplay**. Это означает, что контейнер свойств всегда содержит сведения, необходимые для определения других свойств.
 
-## Запрос свойств
+## <a name="requesting-properties"></a>Запрос свойств
 
 У объекта [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) есть некоторые базовые свойства, такие как [**Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) и [**Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx), но большинство свойств хранится в разделе [**Properties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.properties.aspx) контейнера свойств. Поэтому контейнер свойств содержит свойства, которые используются для получения из него исходных свойств. Например, используйте [System.ItemNameDisplay](https://msdn.microsoft.com/library/windows/desktop/Bb760770) в качестве источника свойства [**Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name). Это известное свойство с понятным именем. Windows предоставляет несколько таких понятных имен, чтобы упростить запрос свойств.
 
 При запросе свойств вы не ограничены только общими свойствами с понятными именами. Вы можете использовать GUID и PID для запроса любого доступного свойства, в том числе настраиваемого свойства, предусмотренного конкретным устройством или драйвером. Формат указания настраиваемого свойства: «`{GUID} PID`». Например: «`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`».
 
-Некоторые свойства используются во многих объектах [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind), но большинство из них уникальны и предназначены только для определенного вида. В следующих разделах перечислены некоторые распространенные свойства, отсортированные по **DeviceInformationKind**. Подробнее о том, как разные виды связаны друг с другом, см. в статье **DeviceInformationKind**.
+Некоторые свойства используются во многих объектах [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind), но большинство из них уникальны и предназначены только для определенного вида. В следующих разделах перечислены некоторые распространенные свойства, отсортированные по **DeviceInformationKind**. Подробнее о том, как разные виды связаны друг с другом, см. в статье **DeviceInformationKind**.
 
-## Свойства DeviceInterface
+## <a name="deviceinterface-properties"></a>Свойства DeviceInterface
 
-**DeviceInterface** используется по умолчанию и является наиболее распространенным объектом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) из встречающихся в сценариях приложений. Вам следует использовать этот вид объекта. Исключение составляют случаи, когда API определяет иной конкретный **DeviceInformationKind**.
+**DeviceInterface** используется по умолчанию и является наиболее распространенным объектом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) из встречающихся в сценариях приложений. Вам следует использовать этот вид объекта. Исключение составляют случаи, когда API определяет иной конкретный **DeviceInformationKind**.
 
 | Имя                                  | Тип    | Описание                                                                                                                                                                                                                                                                                                                                                                                               |
 |---------------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,7 +55,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## Свойства устройства
+## <a name="device-properties"></a>Свойства устройства
 
 | Имя                                  | Тип       | Описание                                                                                                                                                                                                                                                                              |
 |---------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -66,7 +73,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## Свойства DeviceContainer
+## <a name="devicecontainer-properties"></a>Свойства DeviceContainer
 
 | Имя                              | Тип       | Описание                                                                                                                                                        |
 |-----------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -86,7 +93,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## Свойства DeviceInterfaceClass
+## <a name="deviceinterfaceclass-properties"></a>Свойства DeviceInterfaceClass
 
 | Имя                       | Тип   | Описание                            |
 |----------------------------|--------|----------------------------------------|
@@ -94,7 +101,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## Свойства AssociationEndpoint
+## <a name="associationendpoint-properties"></a>Свойства AssociationEndpoint
 
 | Имя                                  | Тип       | Описание                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -115,7 +122,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## Свойства AssociationEndpointContainer
+## <a name="associationendpointcontainer-properties"></a>Свойства AssociationEndpointContainer
 
 | Имя                                                | Тип       | Описание                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |-----------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -137,7 +144,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## Свойства AssociationEndpointService
+## <a name="associationendpointservice-properties"></a>Свойства AssociationEndpointService
 
 | Имя                                            | Тип    | Описание                                                                                                      |
 |-------------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------|
@@ -154,13 +161,4 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

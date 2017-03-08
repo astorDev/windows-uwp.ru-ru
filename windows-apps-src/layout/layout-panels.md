@@ -6,9 +6,16 @@ ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
 label: Layout panels
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 98b3a9739b1906b7abb529cea1e7d433118cbcdd
-ms.openlocfilehash: b1c3d5ca03a99e2fff1c37cfddfb7a00db45d251
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 329c4c507e94b08f948f4984dfbd96239eb3cd9d
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="layout-panels"></a>Панели макета
@@ -225,9 +232,4 @@ ms.openlocfilehash: b1c3d5ca03a99e2fff1c37cfddfb7a00db45d251
 ## <a name="panels-for-itemscontrol"></a>Панели для ItemsControl
 
 Существует несколько специальных панелей, которые можно использовать только в качестве [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) для отображения элементов в [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx). Это типы [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx), [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx), [**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx) и [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx). Эти панели невозможно использовать для общего макета пользовательского интерфейса.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -2,18 +2,25 @@
 author: mcleblanc
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: "Портал устройств для Xbox"
-description: "Узнайте, как включать портал устройства для Xbox One."
+description: "Узнайте, как включить портал устройств для Xbox One."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 77f542b2fed80271082e97437790b33ea7b54172
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4321e799e8633dc31cc0d73889a0b0b6056f6d3b
+ms.lasthandoff: 02/07/2017
 
 ---
-# Портал устройств для Xbox
+# <a name="device-portal-for-xbox"></a>Портал устройств для Xbox
 
 
-## Настройка портала устройства для Xbox
+## <a name="set-up-device-portal-on-xbox"></a>Настройка портала устройств для Xbox
 
-### Включение портала устройств
+### <a name="enable-device-portal"></a>Включение портала устройств
 
 **Включение портала устройств**
 
@@ -28,16 +35,11 @@ ms.openlocfilehash: 77f542b2fed80271082e97437790b33ea7b54172
 8. Появится оповещение о предоставленном сертификате, аналогичное приведенному на изображении ниже. Необходимо щелкнуть **Перейти к этому веб-сайту**, чтобы открыть предварительный просмотр портала устройств Windows.
 ![Ошибка сертификата Портала устройств](images/device-portal/xbox-certificate-error.png)
 
-## Страницы Портала устройств
+## <a name="device-portal-pages"></a>Страницы Портала устройств
 
 Портал устройств на Xbox предоставляет набор стандартных страниц. Подробные описания см. в разделе [Обзор портала устройств Windows](device-portal.md).
 
 - Приложения
 - Производительность
 - Сеть
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

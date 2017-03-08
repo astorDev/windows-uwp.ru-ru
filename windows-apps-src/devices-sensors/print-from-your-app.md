@@ -3,17 +3,24 @@ author: DBirtolo
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
 title: "Печать из приложения"
 description: "Узнайте, как печатать документы из универсального приложения для Windows. В этом разделе также показано, как печатать отдельные страницы."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: 334b6d5faad641bbce67f7267be43700cd540569
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 041a591cc3e53ee6f5e4b5d51e41a0e1032c6cac
+ms.lasthandoff: 02/07/2017
 
 ---
-# Печать из приложения
+# <a name="print-from-your-app"></a>Печать из приложения
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Важные API **
+**Важные API**
 
 -   [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489)
 -   [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325)
@@ -23,7 +30,7 @@ ms.openlocfilehash: 334b6d5faad641bbce67f7267be43700cd540569
 
 **Подсказка**. Большинство примеров в этой статье основаны на примере печати. Чтобы увидеть полный код, скачайте [пример печати с использованием универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619984) из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на GitHub.
 
-## Регистрация для печати
+## <a name="register-for-printing"></a>Регистрация для печати
 
 Первый шаг добавления возможностей печати в ваше приложение — регистрация контракта "Печать". Ваше приложение должно выполнять это на каждом экране, на котором вы хотите предоставить пользователю возможность печати. Для печати можно зарегистрировать только экран, отображаемый для пользователя. Если один экран приложения зарегистрирован для печати, при уходе с этого экрана необходимо отменить его регистрацию для печати. Если экран заменяется другим экраном, при открытии следующего экрана для него необходимо зарегистрировать новый контракт «Печать».
 
@@ -82,7 +89,7 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
    }
 }
 ```
-## Создание кнопки печати
+## <a name="create-a-print-button"></a>Создание кнопки печати
 
 Добавьте кнопку печати в нужное расположение на экране своего приложения. Убедитесь, что она не пересекается с содержимым, которое вы хотите напечатать.
 
@@ -129,7 +136,7 @@ async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 
 В этом примере окно печати отображается в обработчике событий для нажатия кнопки. Если метод вызывает исключение (поскольку выполнение печати в это время невозможно), то элемент управления [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/Dn633972) информирует пользователя о ситуации.
 
-## Форматирование содержимого приложения
+## <a name="format-your-apps-content"></a>Форматирование содержимого приложения
 
 При вызове **ShowPrintUIAsync** порождается событие [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597). Обработчик событий **PrintTaskRequested**, показанный на данном этапе, создает класс [**PrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436), вызывая метод [**PrintTaskRequest.CreatePrintTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtaskrequest.createprinttask.aspx), и передает заголовок страницы для печати и имя делегата [**PrintTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source). Обратите внимание, что в этом примере делегат **PrintTaskSourceRequestedHandler** определен как встроенный. Делегат **PrintTaskSourceRequestedHandler** предоставляет отформатированное содержимое для печати и описан далее.
 
@@ -239,16 +246,16 @@ protected virtual void AddPrintPages(object sender, AddPagesEventArgs e)
 }
 ```
 
-## Подготовка параметров печати
+## <a name="prepare-print-options"></a>Подготовка параметров печати
 
 Затем подготовьте параметры печати. В качестве примера в этом разделе описывается указание параметра диапазона страниц для печати определенных страниц. Сведения о дополнительных параметрах см. в разделе [Настройка пользовательского интерфейса предварительного просмотра](customize-the-print-preview-ui.md).
 
 На этом этапе создается новый параметр печати, определяется список значений, поддерживаемых параметром, а затем добавляется параметр к пользовательскому интерфейсу предварительного просмотра. Параметр диапазона страниц имеет следующие настройки.
 
-| Имя параметра          | Действие | 
+| Имя параметра          | Действие |
 |----------------------|--------|
 | **Печатать все**        | Печать всех страниц в документе. |
-| **Напечатать выделенный фрагмент**  | Печатать только содержимое, выбранное пользователем. | 
+| **Напечатать выделенный фрагмент**  | Печатать только содержимое, выбранное пользователем. |
 | **Диапазон печати**      | Отображение поля ввода, в которое пользователь может ввести страницы для печати. |
  
 Для начала измените обработчик событий [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597), добавив код для получения объекта [**PrintTaskOptionDetails**](https://msdn.microsoft.com/library/windows/apps/Hh701256).
@@ -259,7 +266,7 @@ PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrin
 
 Очистите список параметров, отображающихся в пользовательском интерфейсе предварительного просмотра печати, и добавьте параметры, которые вы хотите показывать, когда пользователь начинает печать из приложения.
 
-**Примечание.** Эти параметры появляются в пользовательском интерфейсе предварительного просмотра печати в порядке их добавления— первый параметр отображается вверху окна.
+**Примечание.** Эти параметры появляются в пользовательском интерфейсе предварительного просмотра печати в порядке их добавления — первый параметр отображается вверху окна.
 
 ```csharp
 IList<string> displayedOptions = printDetailedOptions.DisplayedOptions;
@@ -295,7 +302,7 @@ printDetailedOptions.OptionChanged += printDetailedOptions_OptionChanged;
 
 Метод [**CreateTextOption**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) создает текстовое поле **Диапазон**. В это текстовое поле пользователь вводит определенные страницы, которые необходимо распечатать при выборе параметра **Диапазон печати**.
 
-## Обработка изменений параметров печати
+## <a name="handle-print-option-changes"></a>Обработка изменений параметров печати
 
 Обработчик события **OptionChanged** выполняет две процедуры. Во-первых, он показывает и скрывает поле текстового ввода диапазона страниц в зависимости от параметра диапазона печати, выбранного пользователем. Во-вторых, он проверяет, является ли текст, введенный в поле диапазона страниц, допустимым диапазоном страниц для документа.
 
@@ -377,7 +384,7 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 **Подсказка.**  Дополнительные сведения об анализе диапазона страниц, которые пользователь вводит в текстовом поле "Диапазон", см. в методе `GetPagesInRange` в [примере печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984).
 
-## Предварительный просмотр выбранных страниц
+## <a name="preview-selected-pages"></a>Предварительный просмотр выбранных страниц
 
 Способ форматирования содержимого вашего приложения для печати зависит от характера приложения и его содержимого. В [примере печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984) используется вспомогательный класс печати, форматирующий содержимое для печати.
 
@@ -387,15 +394,9 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 -   Отобразите в предварительном просмотре только страницы выбранного пользователем диапазона, обновляя представление, если пользователь изменит диапазон страниц.
 -   Отобразите в предварительном просмотре все страницы, но сделайте неактивными те из них, которые не входят в выбранный пользователем диапазон страниц.
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Руководство по проектированию печати](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Видео c конференции Build 2015: разработка приложений для печати в Windows10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [//Видео c конференции Build 2015: разработка приложений для печати в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [Пример печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

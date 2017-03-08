@@ -3,9 +3,16 @@ author: mcleblanc
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
 title: "Оптимизация пользовательского интерфейса ListView и GridView"
 description: "Повысить производительность и время запуска ListView и GridView можно с помощью виртуализации пользовательского интерфейса, сокращения элементов и прогрессивного обновления элементов."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
-ms.openlocfilehash: dca6c9c2cde4240da4b2eff4f4786ec5b81051c6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 96902d7532aed1510d959b45528cc71e0e6dca70
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>Оптимизация пользовательского интерфейса ListView и GridView
@@ -317,10 +324,5 @@ private void lst-ChoosingItemContainer
 При неравномерном распределении элементов, использующих различные шаблоны элементов, вероятно, потребуется создать новые шаблоны элементов при сдвиге, что во многом сводит на нет выигрыш, полученный за счет виртуализации. Кроме того, селектор шаблонов элементов учитывает только пять вариантов при оценки возможности повторного использования конкретного контейнера для текущего элемента данных. Поэтому перед использованием селектора шаблонов элементов в приложении необходимо тщательно обдумать, подходят ли ваши данные для использования с таковым. Если ваша коллекция в основном однородна, то селектор возвращает один и тот же тип в большинстве случаев (возможно, во всех). Просто не забывайте о цене, которую вы платите за редкие исключения в этой однородности, и обдумайте, не лучше ли использовать [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) (или два элемента управления элементами).
 
  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

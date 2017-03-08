@@ -3,16 +3,23 @@ author: mtoepke
 title: "Перенос объектов шейдеров"
 description: "При переносе простого обработчика из OpenGL ES 2.0 прежде всего следует задать эквивалентные объекты вершинного шейдера и шейдера фрагментов в Direct3D 11 и убедиться, что основная программа может связываться с объектами шейдера после их компиляции."
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, порт, шейдер, direct3d, opengl"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 478b5615834ea946a6a327fc2cbf54651e21b695
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f683e8b6ad04b1350adae1c962da09e2f15f5cec
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Перенос объектов шейдеров
+# <a name="port-the-shader-objects"></a>Перенос объектов шейдеров
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -28,10 +35,10 @@ ms.openlocfilehash: 478b5615834ea946a6a327fc2cbf54651e21b695
 
 Как и в OpenGL ES 2.0, компилированные шейдеры в Direct3D должны быть связаны с контекстом рисования. Однако в Direct3D нет понятия объекта программы-шейдера как таковой. Вместо этого вы должны напрямую назначить шейдеры в [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385). Этот шаг следует за процессом создания и привязки объектов шейдера в OpenGL ES 2.0 и предоставляет вам возможности соответствующих API в Direct3D.
 
-Инструкции
+<a name="instructions"></a>Инструкции
 ------------
 
-### Шаг 1. Компиляция шейдеров
+### <a name="step-1-compile-the-shaders"></a>Шаг 1. Компиляция шейдеров
 
 В этом простом примере OpenGL ES 2.0 шейдеры сохраняются как текстовые файлы и загружаются как строковые данные для компиляции во время выполнения.
 
@@ -102,7 +109,7 @@ auto createPSTask = loadPSTask.then([this](Platform::Array<byte>^ fileData) {
 };
 ```
 
-### Шаг 2. Создание и загрузка вершинного шейдера и шейдера фрагментов (пиксельного шейдера)
+### <a name="step-2-create-and-load-the-vertex-and-fragment-pixel-shaders"></a>Шаг 2. Создание и загрузка вершинного шейдера и шейдера фрагментов (пиксельного шейдера)
 
 В OpenGL ES 2.0 имеется понятие «программы» шейдера, которая служит интерфейсом между основной программой, выполняющейся на ЦП, и шейдерами, которые выполняются на GPU. Шейдеры компилируются (или загружаются из компилированных источников) и связываются с программой, которая включает выполнение на GPU.
 
@@ -181,7 +188,7 @@ m_d3dContext->PSSetShader(
   0);
 ```
 
-### Шаг 3. Определение данных, передаваемых в шейдеры
+### <a name="step-3-define-the-data-to-supply-to-the-shaders"></a>Шаг 3. Определение данных, передаваемых в шейдеры
 
 В нашем примере OpenGL ES 2.0 имеется один **однородный элемент**, объявляемый для конвейера шейдера:
 
@@ -298,11 +305,11 @@ m_d3dContext->UpdateSubresource(
 
 Буфер вершин создается и обновляется аналогично, как обсуждается на следующем шаге, в разделе [Перенос буферов вершин и данных](port-the-vertex-buffers-and-data-config.md).
 
-Следующий шаг
+<a name="next-step"></a>Следующий шаг
 ---------
 
 [Перенос буферов вершин и данных](port-the-vertex-buffers-and-data-config.md)
-## Ссылки по теме
+## <a name="related-topics"></a>Ссылки по теме
 
 
 [Инструкции: перенос простого обработчика OpenGL ES 2.0 в Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
@@ -319,10 +326,5 @@ m_d3dContext->UpdateSubresource(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

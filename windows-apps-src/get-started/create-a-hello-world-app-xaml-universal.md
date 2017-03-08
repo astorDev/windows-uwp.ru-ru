@@ -2,10 +2,17 @@
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "Создание приложения Hello, world (XAML)"
-description: "В этом учебнике описано, как использовать XAML с C# для создания простого приложения Hello, world, предназначенного для универсальной платформы Windows (UWP) в ОС Windows 10."
+description: "В этом учебнике описано, как использовать XAML с C# для создания простого приложения &quot;Hello, world&quot;, предназначенного для универсальной платформы Windows (UWP) в ОС Windows 10."
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
-ms.openlocfilehash: e928b4bb116ad98ffe7c225ac1ef2306e56a13ea
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 16622dbd9914907f75c8392f8e4de6e1c10b049c
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -23,8 +30,7 @@ ms.openlocfilehash: e928b4bb116ad98ffe7c225ac1ef2306e56a13ea
 ## <a name="before-you-start"></a>Перед началом работы...
 
 -   [Что представляет собой универсальное приложение для Windows](whats-a-uwp.md)?
--   [Что нового в Windows 10](https://dev.windows.com/whats-new-windows-10-dev-preview)?
--   Для работы с этим учебником вам потребуются Windows 10 и Visual Studio 2015. [Подготовка](get-set-up.md).
+-   Для работы с этим учебником вам потребуются Windows 10 и Visual Studio 2015. [Подготовка](get-set-up.md).
 -   Мы также предполагаем, что в Visual Studio используется компоновка окна по умолчанию. Если макет по умолчанию изменен, его можно сбросить в меню **Window** (Окно), выбрав команду **Reset Window Layout** (Сбросить макет окна).
 
 
@@ -255,10 +261,5 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 Поздравляем! Вы создали свое первое приложение для Windows 10 и платформы UWP!
 
-Чтобы узнать, как использовать XAML для размещения элементов управления, которые будут использоваться в вашем приложении, изучите ([учебник по сетке](../layout/grid-tutorial.md) или сразу перейдите к [следующему шагу](learn-more.md).
-
-
-
-<!--HONumber=Dec16_HO1-->
-
+Чтобы узнать, как использовать XAML для размещения элементов управления, которые будут использоваться в вашем приложении, изучите [учебник по сетке](../layout/grid-tutorial.md) или сразу перейдите к [следующему шагу](learn-more.md).
 

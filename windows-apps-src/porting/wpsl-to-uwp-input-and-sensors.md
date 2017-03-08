@@ -1,15 +1,22 @@
 ---
 author: mcleblanc
 description: "Код, интегрирующийся с устройством и его датчиками, включает ввод от пользователя и вывод к нему."
-title: "Перенос Windows Phone Silverlight в UWP для ввода-вывода, устройства и модели приложения"
+title: "Перенос с Windows Phone Silverlight на UWP для ввода-вывода, устройства и модели приложения"
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: fedba87189e6ee5b6f8f81dfa06703b2011adf6a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 975f364fec4edfcf90ee65912f509741bd1f80dd
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  <a name="porting-windows-phone-silverlight-to-uwp-for-io-device-and-app-model"></a>Перенос Windows Phone Silverlight в UWP для ввода-вывода, устройства и модели приложения
+#  <a name="porting-windows-phone-silverlight-to-uwp-for-io-device-and-app-model"></a>Перенос с Windows Phone Silverlight на UWP для ввода-вывода, устройства и модели приложения
 
 \[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -93,10 +100,5 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 Рекомендуется разрабатывать такой пользовательский интерфейс приложения UWP, который будет иметь превосходный вид в любой ориентации и при любом размере экрана. Подробнее об этом см. в разделе [Перенос для форм-факторов и взаимодействия с пользователем](wpsl-to-uwp-form-factors-and-ux.md), который следует за следующим разделом.
 
 Следующий раздел посвящен [переносу уровней бизнеса и данных](wpsl-to-uwp-business-and-data.md).
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

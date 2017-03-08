@@ -3,16 +3,23 @@ title: "Общие задачи шифрования"
 description: "В этих статьях показан пример кода для типичных задач шифрования универсальной платформы Windows (UWP), включая создание случайных значений, сравнение буферов, преобразование между строками и двоичными данными, копирование в массив байтов и из него, а также кодирование и декодирование данных."
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 5122c7d9750a9f37582b27752926da1c9f44b321
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3ce185e4bdd247c8b0ac71401a2ff863c64f880a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Общие задачи шифрования
+# <a name="common-cryptography-tasks"></a>Общие задачи шифрования
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В данных статьях показан пример кода для типичных задач шифрования универсальной платформы Windows (UWP), включая создание случайных значений, сравнение буферов, преобразования между строками и двоичными данными, копирование в массив байтов и из него и кодирование и декодирование данных.
 
@@ -25,9 +32,4 @@ ms.openlocfilehash: 5122c7d9750a9f37582b27752926da1c9f44b321
 | [Копирование в массивы байтов и из них](copy-to-and-from-byte-arrays.md)                       | Этот образец кода показывает, как копировать в массив байтов и из него в приложении UWP.                             |
 | [Кодирование и декодирование данных](encode-and-decode-data.md)                                   | В этом примере кода показано, как кодировать и декодировать данные base64 и шестнадцатеричные данные в приложении UWP для Windows.            |
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

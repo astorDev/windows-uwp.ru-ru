@@ -3,13 +3,20 @@ author: QuinnRadich
 title: "Изменения API в Windows 10 версии 1607"
 description: "Разработчики могут использовать следующий список для определения новых или измененных пространств имен в Windows 10 версии 1607"
 keywords: "новые возможности, что нового, обновление, обновления, новые, Windows 10, 1607, api"
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 translationtype: Human Translation
-ms.sourcegitcommit: 8d7ea8adcff944a9be58f164e88623861e4cf8ad
-ms.openlocfilehash: 7ab2c9f1054509f816ef9647f340e61b6a281d8a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 18d4bac980592b41479e01b8644f9bb9bf291575
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Изменения API в Windows 10
+# <a name="windows-10-api-changes"></a>Изменения API в Windows 10
 
 Многие интерфейсы API среды выполнения добавлены или изменены в Windows 10 версии 1607. В этой таблице перечислены пространства имен, которые были добавлены или изменены в этом выпуске.
 
@@ -5153,10 +5160,5 @@ Windows.Services.Store.StoreSubscriptionInfo <br /> Windows.Services.Store.Store
 
 Windows.Services.Store.StoreVideo <br /> Windows.Services.Store.StoreVideo.Caption <br /> Windows.Services.Store.StoreVideo.Height <br /> Windows.Services.Store.StoreVideo.PreviewImage <br /> Windows.Services.Store.StoreVideo.Uri <br /> Windows.Services.Store.StoreVideo.VideoPurposeTag <br /> Windows.Services.Store.StoreVideo.Width
 <hr>
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

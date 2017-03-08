@@ -1,18 +1,25 @@
 ---
 author: mtoepke
 title: "Инструкции - перенос простого обработчика OpenGL ES 2.0 в Direct3D 11"
-description: "В качестве первого упражнения в переносе начнем с основ - с переноса простого обработчика для вращающегося куба с затенением по вершинам из OpenGL ES 2.0 в Direct3D, чтобы он соответствовал шаблону «Приложение DirectX 11 (универсальные приложения для Windows)» из Visual Studio 2015."
+description: "В качестве первого упражнения в переносе начнем с основ - с переноса простого обработчика для вращающегося куба с затенением по вершинам из OpenGL ES 2.0 в Direct3D, чтобы он соответствовал шаблону &quot;Приложение DirectX 11 (универсальные приложения для Windows)&quot; из Visual Studio 2015."
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, opengl, direct3d 11, перенос"
 translationtype: Human Translation
-ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: 307b611eece3de6288d67e1e340368763f26fa2e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 71b4b42d2665cbeb43cbdbe2dbab9119a8f68ce9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Инструкции - перенос простого обработчика OpenGL ES 2.0 в Direct3D 11
+# <a name="how-to-port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>Инструкции: перенос простого обработчика OpenGL ES 2.0 в Direct3D 11
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В качестве упражнения в переносе начнем с основ — с переноса простого обработчика для вращающегося куба с затенением по вершинам из OpenGL ES 2.0 в Direct3D, чтобы он соответствовал шаблону "Приложение DirectX 11 (универсальные приложения для Windows)" из Visual Studio 2015. Из разбора этого процесса переноса вы узнаете следующее:
 
@@ -81,19 +88,19 @@ typedef struct
 
  
 
-## Что необходимо знать
+## <a name="what-you-need-to-know"></a>Что необходимо знать
 
 
-### Технологии
+### <a name="technologies"></a>Технологии
 
 -   [Microsoft Visual C++](http://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
 -   OpenGL ES 2.0
 
-### Необходимые условия
+### <a name="prerequisites"></a>Необходимые условия
 
 -   Необязательно. Просмотрите раздел [Перенос кода EGL в DXGI и Direct3D](moving-from-egl-to-dxgi.md). Прочитайте этот раздел, чтобы лучше понять графический интерфейс, предоставляемый DirectX.
 
-## <span id="keylinks_steps_heading"></span>Этапы
+## <a name="span-idkeylinksstepsheadingspansteps"></a><span id="keylinks_steps_heading"></span>Этапы
 
 
 <table>
@@ -129,11 +136,11 @@ typedef struct
 
  
 
-## <span id="additional_resources"></span>Дополнительные ресурсы
+## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>Дополнительные ресурсы
 
 
 -   [Подготовьте свою среду разработки для создания игр DirectX для UWP](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
--   [Создание нового проекта DirectX11 для UWP](user-interface.md)
+-   [Создание нового проекта DirectX 11 для UWP](user-interface.md)
 -   [Сопоставьте концепции и инфраструктуру OpenGL ES 2.0 и Direct3D 11](map-concepts-and-infrastructure.md)
 
  
@@ -142,10 +149,5 @@ typedef struct
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

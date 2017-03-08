@@ -3,14 +3,20 @@ author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
 description: "Получите общую информацию для разработчиков о библиотеках Microsoft Advertising, входящих в состав Microsoft Store Services SDK."
 title: "Информация для разработчиков о библиотеках Microsoft Advertising"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, рекламные объявления, реклама"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 70692d09c037d9e5802734bc5de6a6c79799bffb
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 44b5266a104b2f706537cea2167b395487f275d2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Информация для разработчиков о библиотеках Microsoft Advertising
+# <a name="developer-information-about-the-microsoft-advertising-libraries"></a>Информация для разработчиков о библиотеках Microsoft Advertising
 
 
 
@@ -18,7 +24,7 @@ ms.openlocfilehash: 70692d09c037d9e5802734bc5de6a6c79799bffb
 Темы в этом разделе содержат полезные сведения для разработчиков о библиотеках Microsoft Advertising в Microsoft Store Services SDK (для приложений UWP) и Microsoft Advertising SDK для Windows и Windows Phone 8.x (для приложений Windows 8.1 и Windows Phone 8.x).
 
 
-## В этом разделе
+## <a name="in-this-section"></a>В этом разделе
 
 | Раздел                                                                                                       | Описание                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
@@ -35,9 +41,4 @@ ms.openlocfilehash: 70692d09c037d9e5802734bc5de6a6c79799bffb
  
 
  
-
-
-
-<!--HONumber=Sep16_HO2-->
-
 

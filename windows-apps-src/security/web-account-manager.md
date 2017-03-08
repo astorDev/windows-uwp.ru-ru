@@ -1,15 +1,23 @@
 ---
-title: "Подключение к поставщикам удостоверений с помощью диспетчера учетных записей в Интернете"
-description: "В этой статье описан метод использования AccountsSettingsPane для подключения приложения универсальной платформы Windows (UWP) к внешним поставщикам удостоверений, например Майкрософт или Facebook, с помощью новых API диспетчера учетных записей в Интернете для Windows 10."
+title: "Диспетчер учетных веб-записей"
+description: "В этой статье рассматривается, как использовать AccountsSettingsPane для подключения приложения универсальной платформы Windows (UWP) к внешним поставщикам удостоверений, например Майкрософт или Facebook, с помощью новых API диспетчера учетных записей в Интернете для Windows 10."
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 translationtype: Human Translation
-ms.sourcegitcommit: 0aef3cc9a3312a647197d8b2a7b815ed42d54fa3
-ms.openlocfilehash: 10851432b6e28934ab60041d23a5cf319671f704
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: c3d1cdab94fc8b4f693ef9294cbb12580a9e199b
+ms.lasthandoff: 02/08/2017
 
 ---
-# <a name="connect-to-identity-providers-with-web-account-manager"></a>Подключение к поставщикам удостоверений с помощью диспетчера учетных записей в Интернете
+# <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 
-В этой статье описан метод отображения AccountsSettingsPane и подключения приложения универсальной платформы Windows (UWP) к внешним поставщикам удостоверений, например Майкрософт или Facebook, с помощью новых API диспетчера учетных записей в Интернете для Windows 10. Вы узнаете, как запросить разрешение пользователя на использование учетной записи Майкрософт, получить маркер доступа и использовать его для выполнения базовых операций (например, для получения данных профиля или отправки файлов в OneDrive). Порядок действий при получении разрешения пользователя и доступа с помощью любого поставщика удостоверений, поддерживающего диспетчер учетных записей в Интернете, практически одинаков.
+В этой статье рассматривается, как отобразить AccountsSettingsPane и подключить приложение универсальной платформы Windows (UWP) к внешним поставщикам удостоверений, например Майкрософт или Facebook, с помощью новых API диспетчера учетных записей в Интернете для Windows 10. Вы узнаете, как запросить разрешение пользователя на использование учетной записи Майкрософт, получить маркер доступа и использовать его для выполнения базовых операций (например, для получения данных профиля или отправки файлов в OneDrive). Порядок действий при получении разрешения пользователя и доступа с помощью любого поставщика удостоверений, поддерживающего диспетчер учетных записей в Интернете, практически одинаков.
 
 > Примечание. Полный пример кода см. в [образце кода WebAccountManagement на GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620621).
 
@@ -33,7 +41,7 @@ ms.openlocfilehash: 10851432b6e28934ab60041d23a5cf319671f704
 
 ```C#
 private void LoginButton_Click(object sender, RoutedEventArgs e)
-{   
+{    
 }
 ```
 
@@ -328,7 +336,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
     var twitterProvider = new WebAccountProvider("twitter", "Twitter", new Uri(@"ms-appx:///Assets/twitter-auth-icon.png")); 
     var twitterCmd = new WebAccountProviderCommand(twitterProvider, GetTwitterTokenAsync);
-    e.WebAccountProviderCommands.Add(twitterCmd);   
+    e.WebAccountProviderCommands.Add(twitterCmd);    
     
     // other code here
 }
@@ -351,7 +359,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 {
     // other code here 
     
-    args.HeaderText = "MyAwesomeApp works best if you're signed in.";   
+    args.HeaderText = "MyAwesomeApp works best if you're signed in.";     
     
     // other code here
 }
@@ -398,9 +406,4 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 [Брокер веб-проверки подлинности](web-authentication-broker.md)
 
 [Пример WebAccountManagement](http://go.microsoft.com/fwlink/p/?LinkId=620621)
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

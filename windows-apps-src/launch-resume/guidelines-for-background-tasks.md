@@ -3,9 +3,16 @@ author: TylerMSFT
 title: "Руководство по работе с фоновыми задачами"
 description: "Убедитесь, что ваше приложение отвечает требованиям, необходимым для выполнения фоновых задач."
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 2d03c7f47461422fef7a0905df7e68b3e65c33f0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5e03fbb7971e5526d542d409bccb1c7fee6fd3ee
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: 2d03c7f47461422fef7a0905df7e68b3e65c33f0
 
 Рекомендуем использовать следующее руководство при разработке фоновой задачи и перед публикацией вашего приложения.
 
-Если фоновая задача используется для воспроизведения мультимедиа в фоновом режиме, см. раздел [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio), где приведены сведения об улучшениях в Windows 10 версии 1607, которые значительно упрощают работу.
+Если фоновая задача используется для воспроизведения мультимедиа в фоновом режиме, см. раздел [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio), где приведены сведения об улучшениях в Windows 10 версии 1607, которые значительно упрощают работу.
 
 **Фоновые задачи, выполняемые внутри или вне процесса:** в Windows 10 версии 1607 появились [фоновые задачи, выполняемые внутри процесса](create-and-register-an-inproc-background-task.md), которые позволяют выполнять фоновый код в том же процессе, что и основное приложение. При выборе фоновых задач внутри или вне процесса необходимо учитывать следующие факторы:
 
@@ -27,14 +34,14 @@ ms.openlocfilehash: 2d03c7f47461422fef7a0905df7e68b3e65c33f0
 |--------------|--------|
 |Устойчивость   | Если фоновый процесс выполняется в другом процессе, сбой в фоновом процессе не повлияет на работу приложения переднего плана. Кроме того, фоновую операцию можно завершить (даже из приложения), если время ее выполнения выходит за заданные пределы. Выделение фоновой работы в задачу, отдельную от приложения переднего плана, может быть лучшим выбором, когда не требуется обмениваться данными между процессом переднего плана и фоновым процессом (поскольку отсутствие необходимости во взаимодействии между процессами является одним из основных преимуществ фоновых задач, выполняющихся внутри процесса). |
 |Простота    | Фоновые задачи, выполняющиеся внутри процесса, не требуют взаимодействия между процессами и проще в разработке.  |
-|Доступные триггеры | Фоновые задачи внутри процесса не поддерживают следующие триггеры: [DeviceUseTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) и **IoTStartupTask**. |
+|Доступные триггеры | Фоновые задачи внутри процесса не поддерживают следующие триггеры: [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) и **IoTStartupTask**. |
 |VoIP | Фоновые задачи внутри процесса не поддерживают активации фоновой задачи VoIP в приложении. |  
 
 **Квоты ЦП:** фоновые задачи ограничены физическим временем использования, которое они получают в зависимости от типа триггера. Большинство триггеров ограничены 30 секундами использования, хотя некоторые могут выполняться до 10 минут для завершения сложных задач. Фоновые задачи должны быть облегченными, чтобы экономить время работы батареи и обеспечивать удобную работу с приложениями переднего плана. Сведения об ограничениях ресурсов для фоновых задач см. в статье [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
 
 **Управление фоновыми задачами:** ваше приложение должно получать список зарегистрированных фоновых задач, регистрировать обработчики выполнения и завершения и обрабатывать эти события соответствующим образом. Классы фоновой задачи должны сообщать о выполнении, отмене и завершении. Подробнее об этом см. в статьях [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md) и [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md).
 
-**Использование [BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499):** если класс вашей фоновой задачи выполняет асинхронный код, обязательно используйте отсрочки. В противном случае фоновая задача может быть преждевременно прервана, когда метод [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) (или метод [OnBackgroundActivated](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) в случае фоновых задач внутри процесса). Дополнительные сведения см. в разделе [Создание и регистрация фоновой задачи вне процесса](create-and-register-a-background-task.md).
+**Использование [BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499):** если класс вашей фоновой задачи выполняет асинхронный код, обязательно используйте отсрочки. В противном случае фоновая задача может быть преждевременно прервана, когда метод [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) (или метод [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) в случае фоновых задач внутри процесса). Дополнительные сведения см. в разделе [Создание и регистрация фоновой задачи вне процесса](create-and-register-a-background-task.md).
 
 Можно также запросить одну отсрочку и использовать **async/await**, чтобы завершить асинхронные вызовы метода. Закройте отсрочку после вызовов метода **await**.
 
@@ -93,7 +100,7 @@ ms.openlocfilehash: 2d03c7f47461422fef7a0905df7e68b3e65c33f0
 * [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
 * [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-a-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
-* [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
+* [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
 * [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
 * [Регистрация фоновой задачи](register-a-background-task.md)
@@ -108,9 +115,4 @@ ms.openlocfilehash: 2d03c7f47461422fef7a0905df7e68b3e65c33f0
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

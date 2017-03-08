@@ -3,14 +3,21 @@ author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: "Использование кистей"
 description: "Объекты Brush используются для окраски внутренних областей или контуров фигур, текста и частей элементов управления, чтобы окрашиваемый объект отображался в пользовательском интерфейсе."
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: f5934600cc185c952acc57ae38e0b190466e0dfa
-ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: bf3e4e169108f4cab98dcb460552daff8822c64c
+ms.lasthandoff: 02/07/2017
 
 ---
-# Использование кистей
+# <a name="use-brushes"></a>Использование кистей
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -19,15 +26,15 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 
 Объекты [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) используются для окраски внутренних областей или контуров фигур, текста и частей элементов управления, чтобы окрашиваемый объект отображался в пользовательском интерфейсе. Так какие же кисти доступны и как ими пользоваться?
 
-## Знакомство с кистями
+## <a name="introduction-to-brushes"></a>Знакомство с кистями
 
 Для окраски объекта, например [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) или частей [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390), отображаемого на полотне приложения, используется [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). Например, для свойства [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) объекта **Shape** или [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) и свойства [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) объекта **Control** устанавливается значение **Brush**, и этот объект **Brush** определяет, как элемент пользовательского интерфейса окрашивается или отрисовывается в пользовательском интерфейсе. Существуют различные типы кистей: [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962), [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108), [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) и [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703).
 
-## Одноцветные кисти
+## <a name="solid-color-brushes"></a>Одноцветные кисти
 
 Объект [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) закрашивает область одним цветом ([**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723)), например красным или синим. Это наиболее простая кисть. Объект **SolidColorBrush** и его сплошной цвет можно задать в XAML тремя способами: стандартным именем цвета, шестнадцатеричным значением цвета или в синтаксисе свойств.
 
-### Стандартные имена цветов
+### <a name="predefined-color-names"></a>Стандартные имена цветов
 
 Можно использовать стандартное имя цвета, например [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) или [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx). Доступно 256 цветов с именами. Средство синтаксического анализа XAML преобразует имя цвета в структуру [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) с правильными цветовыми каналами. 256 именованных цветов основаны на именах цветов *X11* из каскадных таблиц стилей версии 3 (CSS3). Если у вас есть опыт веб-разработки или создания дизайна, возможно, вы уже знакомы со списком именованных цветов.
 
@@ -43,7 +50,7 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 
 При определении [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) с помощью кода вместо XAML каждый именованный цвет доступен в виде статического значения свойства класса [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors). Например, чтобы объявить значение свойства [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) объекта **SolidColorBrush** для представления именованного цвета "Orchid", задайте в качестве значения **Color** статическое значение [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx).
 
-### Шестнадцатеричные значения цвета
+### <a name="hexadecimal-color-values"></a>Шестнадцатеричные значения цвета
 
 Можно использовать строку в шестнадцатеричном формате для объявления точных 24-битных значений цвета с 8-битным альфа-каналом для [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962). Два символа в диапазоне от 0 до F определяют значение каждого из компонентов. Порядок значений компонентов в шестнадцатеричной строке следующий: альфа-канал (непрозрачность), красный, зеленый и синий каналы (**ARGB**). Например, шестнадцатеричное значение "\#FFFF0000" задает полностью непрозрачный красный (альфа="FF", красный="FF", зеленый="00" и синий="00").
 
@@ -55,7 +62,7 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 </StackPanel>
 ```
 
-### <span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>Синтаксис свойств
+### <a name="span-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanproperty-element-syntax"></a><span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>Синтаксис свойств
 
 Объект [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) можно определить в синтаксисе элементов свойств. Он не так компактен, как предыдущие способы, но позволяет задавать дополнительные значения свойств для элемента, например [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx). Подробнее о синтаксисе XAML, включая синтаксис элементов свойств, можно узнать в статьях [Обзор языка XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595) и [Руководство по основам синтаксиса языка XAML](https://msdn.microsoft.com/library/windows/apps/Mt185596).
 
@@ -69,7 +76,7 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 </Rectangle>
 ```
 
-## <span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>Кисти линейного градиента
+## <a name="span-idlineargradientbrushesspanspan-idlineargradientbrushesspanspan-idlineargradientbrushesspanlinear-gradient-brushes"></a><span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>Кисти линейного градиента
 
 Объект [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) закрашивает область градиентом, который определяется вдоль линии. Эта линия называется *осью градиента*. Цвета градиента и их расположение по оси градиента задаются с помощью объектов [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078). По умолчанию ось градиента проходит из левого верхнего в правый нижний угол области, закрашиваемой кистью, в результате чего получается диагональное затенение.
 
@@ -97,9 +104,9 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 
 Цвет каждой точки между ограничениями градиента определяется линейной интерполяцией сочетания цветов, заданных соседними ограничениями градиента. На рисунке отмечены ограничения градиента из предыдущего примера. Положение ограничений градиента отмечено кружками, а ось градиента показана пунктирной линией.
 
-![Ограничения градиента](images/linear-gradients-stops.png) Можно изменить линию, по которой определяются позиции ограничений градиента, установив для свойств [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) и [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) значения, отличающиеся от принятых по умолчанию `(0,0)` и `(1,1)`. Изменяя значения координат **StartPoint** и **EndPoint**, можно создать горизонтальные и вертикальные градиенты, обратить направление градиента или сжать охват градиента, применив его к меньшему диапазону, чем полная закрашенная область. Чтобы сжать градиент, следует задать значения **StartPoint** и**EndPoint**, находящиеся между 0 и1. Например, если требуется горизонтальный градиент, где все затухание цвета происходит на левой половине кисти, а с правой стороны используется сплошной цвет последнего [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078), следует указать для **StartPoint** значение `(0,0)`, а для **EndPoint** — значение `(0.5,0)`.
+![Ограничения градиента](images/linear-gradients-stops.png) Можно изменить линию, по которой определяются позиции ограничений градиента, установив для свойств [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) и [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) значения, отличающиеся от принятых по умолчанию `(0,0)` и `(1,1)`. Изменяя значения координат **StartPoint** и **EndPoint**, можно создать горизонтальные и вертикальные градиенты, обратить направление градиента или сжать охват градиента, применив его к меньшему диапазону, чем полная закрашенная область. Чтобы сжать градиент, следует задать значения **StartPoint** и **EndPoint**, находящиеся между 0 и 1. Например, если требуется горизонтальный градиент, где все затухание цвета происходит на левой половине кисти, а с правой стороны используется сплошной цвет последнего [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078), следует указать для **StartPoint** значение `(0,0)`, а для **EndPoint** — значение `(0.5,0)`.
 
-### <span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>Использование средств для создания градиента
+### <a name="span-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanuse-tools-to-make-gradients"></a><span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>Использование средств для создания градиента
 
 Теперь, когда вы знаете, как работают линейные градиенты, вам будет легче создавать их с помощью Visual Studio или Blend. Чтобы создать градиент, выделите в рабочей области конструирования или в представлении XAML объект, к которому нужно применить градиент. Разверните **Кисть** и выберите вкладку **Линейный градиент** (см. снимок экрана ниже).
 
@@ -109,7 +116,7 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 
 ![Панель в нижней части окна свойств, управляющая ограничениями градиента.](images/tool-gradient-brush-2.png)
 
-## <span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>Кисти изображений
+## <a name="span-idimagebrushesspanspan-idimagebrushesspanspan-idimagebrushesspanimage-brushes"></a><span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>Кисти изображений
 
 Объект [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) заполняет область изображением, которое поступает из источника файла изображения. В свойстве [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) задается путь к загружаемому изображению. Обычно источник изображения поступает из элемента **Content**, являющегося частью ресурсов вашего приложения.
 
@@ -131,21 +138,21 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 
 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) и [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) ссылаются на исходный файл изображения по универсальному коду ресурса (URI). Для этого файла допустимы несколько графических форматов. Такие исходные файлы изображений указываются в виде URI. Подробнее об указании источников изображений, их возможных форматах и упаковке в приложении можно узнать в разделе [Классы Image и ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382).
 
-## Кисти и текст
+## <a name="brushes-and-text"></a>Кисти и текст
 
 С помощью кистей также можно применить характеристики отрисовки к текстовым элементам. Например, свойство [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) объекта [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) принимает значение [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). К тексту можно применить любую из описанных здесь кистей. Однако кисти к тексту следует применять с осторожностью, поскольку можно сделать текст нечитаемым при использовании кистей, сливающихся с фоном, поверх которого отображается текст, или отличающихся от контуров символов текста. Для обеспечения читаемости текстовых элементов в большинстве случаев используйте [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962), если только не нужно намеренно придать декоративность текстовому элементу.
 
 Даже при использовании сплошного цвета убедитесь, что выбранный цвет текста достаточно контрастирует с фоновым цветом контейнера макета текста. Уровень контрастности между основным цветом текста и фоном текстового контейнера влияет на доступность приложения для людей с ограниченными возможностями.
 
-## WebViewBrush
+## <a name="webviewbrush"></a>WebViewBrush
 
 Объект [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) — это специальный тип кисти, которому доступно содержимое, обычно просматриваемое в элементе управления [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702). Вместо отрисовки содержимого в прямоугольной области элемента управления **WebView** объект **WebViewBrush** выводит это содержимое поверх другого элемента со свойством типа [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) для поверхности отрисовки. **WebViewBrush** подходит не для каждого сценария использования кисти, но полезен при переходах **WebView**. Дополнительные сведения см. в разделе **WebViewBrush**.
 
-## Кисти как ресурсы XAML
+## <a name="brushes-as-xaml-resources"></a>Кисти как ресурсы XAML
 
 Любую кисть можно объявить ресурсом XAML с ключом в словаре ресурсов XAML. Это облегчает репликацию одинаковых значений кистей при применении ко многим элементам пользовательского интерфейса. Затем значения кистей предоставляются в общий доступ и применяются к любому случаю обращения к ресурсу кисти в виде [{StaticResource}](https://msdn.microsoft.com/library/windows/apps/Mt185588) в языке XAML. В том числе это может быть случай использования шаблона элемента управления XAML, ссылающегося на общую кисть, когда сам этот шаблон элемента управления является ресурсом XAML с ключом.
 
-## Определение кистей в коде
+## <a name="brushes-in-code"></a>Определение кистей в коде
 
 Обычно кисти указываются с помощью XAML, а не определяются с помощью кода. Это происходит потому, что кисти обычно определяются как ресурсы XAML, а значения кистей часто являются результатами работы инструментов проектирования либо частью определения пользовательского интерфейса XAML. Тем не менее иногда, когда вы хотите определить кисть с помощью кода, все типы [**Кисть**](https://msdn.microsoft.com/library/windows/apps/BR228076) доступны для создания кода.
 
@@ -175,10 +182,5 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

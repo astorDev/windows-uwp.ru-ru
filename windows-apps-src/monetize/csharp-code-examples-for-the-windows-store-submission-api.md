@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: "Используйте примеры кода на C#, приведенные в этом разделе, чтобы подробнее ознакомиться с работой API отправки Магазина Windows."
 title: "Примеры кода C# для API отправки Магазина Windows"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, API отправки Магазина Windows, примеры кода"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c71555eb854e5dcf6cbccf89e9b0b8ffe35ab0e4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -53,8 +60,8 @@ ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
 В следующем примере реализован класс, который использует несколько методов из API отправки Магазина Windows для обновления отправки приложения. Метод ```RunAppSubmissionUpdateSample``` в классе создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в Центре разработки для Windows. В частности, метод ```RunAppSubmissionUpdateSample``` выполняет следующие задачи:
 
 1. Сначала метод [получает данные для указанного приложения](get-an-app.md).
-2. Затем он [удаляет ожидающую отправку для приложения](delete-an-app-submission.md), если таковая существует.
-3. После этого [создается новая отправка для приложения](create-an-app-submission.md) (новая отправка — это копия последней опубликованной отправки).
+2. Затем он [удаляет ожидающую отправку для приложения](delete-an-app-submission.md), если она существует.
+3. После этого [выполняется создание новой отправки для приложения](create-an-app-submission.md) (новая отправка — это копия последней опубликованной отправки).
 4. Код изменяет некоторые сведения о новой отправке и отправляет новый пакет отправки в хранилище BLOB-объектов Azure.
 5. Затем он [обновляет](update-an-app-submission.md) и [фиксирует](commit-an-app-submission.md) новую отправку в Центре разработки для Windows.
 6. Наконец, он периодически [проверяет состояние новой отправки](get-status-for-an-app-submission.md), пока она не будет успешно зафиксирована.
@@ -96,7 +103,7 @@ ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
 В следующем примере реализован класс, который использует несколько методов в API отправки Магазина Windows для обновления отправки тестового пакета. Метод ```RunFlightSubmissionUpdateSample``` в классе создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в Центре разработки для Windows. В частности, метод ```RunFlightSubmissionUpdateSample``` выполняет следующие задачи:
 
 1. Сначала метод [получает данные для указанного тестового пакета](get-a-flight.md).
-2. Затем он [удаляет ожидающую отправку для тестового пакета](delete-a-flight-submission.md), если таковая существует.
+2. Затем он [удаляет ожидающую отправку для тестового пакета](delete-a-flight-submission.md), если она существует.
 3. После этого [выполняется создание новой отправки для тестового пакета](create-a-flight-submission.md) (новая отправка — это копия последней опубликованной отправки).
 4. Код передает новый пакет для отправки в хранилище BLOB-объектов Azure.
 5. Затем он [обновляет](update-a-flight-submission.md) и [фиксирует](commit-a-flight-submission.md) новую отправку в Центре разработки для Windows.
@@ -120,9 +127,4 @@ ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
 ## <a name="related-topics"></a>Связанные разделы
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

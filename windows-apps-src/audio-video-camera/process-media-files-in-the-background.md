@@ -1,17 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
-description: "В данной статье показано, как использовать MediaProcessingTrigger и фоновую задачу для обработки файлов мультимедиа в фоновом режиме."
+description: "В этой статье показано, как использовать MediaProcessingTrigger и фоновую задачу для обработки файлов мультимедиа в фоновом режиме."
 title: "Обработка файлов мультимедиа в фоновом режиме"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: fb0e8a535ff4e27530fa45aca80b21f17a523c7b
-ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c7f3262c30797c8ce447b3e97a5cb7dd6d2ea025
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Обработка файлов мультимедиа в фоновом режиме
+# <a name="process-media-files-in-the-background"></a>Обработка файлов мультимедиа в фоновом режиме
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В данной статье показано, как использовать [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) и фоновую задачу для обработки файлов мультимедиа в фоновом режиме.
@@ -24,7 +31,7 @@ ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
 -   [Запуск, возобновление и фоновые задачи](https://msdn.microsoft.com/library/windows/apps/mt227652)
 -   [Плитки, индикаторы событий и уведомления](https://msdn.microsoft.com/library/windows/apps/mt185606)
 
-## Создание фоновой задачи обработки мультимедиа
+## <a name="create-a-media-processing-background-task"></a>Создание фоновой задачи обработки мультимедиа
 
 Для добавления фоновой задачи в существующее решение в Microsoft Visual Studio, введите имя для вашего компьютера.
 
@@ -82,7 +89,7 @@ ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
 
 [!code-cs[OnCanceled](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetOnCanceled)]
 
-## Регистрация и запуск фоновой задачи
+## <a name="register-and-launch-the-background-task"></a>Регистрация и запуск фоновой задачи
 
 Прежде чем из приложения переднего плана можно будет запустить фоновую задачу, необходимо обновить файл Package.appmanifest приложения переднего плана, чтобы сообщить системе, что приложение использует фоновую задачу.
 
@@ -140,10 +147,5 @@ ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

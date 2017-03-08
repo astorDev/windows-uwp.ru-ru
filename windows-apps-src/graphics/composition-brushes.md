@@ -3,14 +3,21 @@ author: scottmill
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
 title: "Кисти композиции"
 description: "Кисть заполняет пространство объекта класса Visual своими выводимыми данными. Разные кисти имеют различные типы выводимых данных."
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 11989aafb86d280b93eed7c2e3f016b5914b15ab
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9affb4fab1931c7584d86bfb07797345788c28f9
+ms.lasthandoff: 02/07/2017
 
 ---
-# Кисти композиции
+# <a name="composition-brushes"></a>Кисти композиции
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Кисть заполняет пространство объекта класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) своими выводимыми данными. Разные кисти имеют различные типы выводимых данных. В API композиции представлены три типа кистей.
 
@@ -27,19 +34,19 @@ ms.openlocfilehash: 11989aafb86d280b93eed7c2e3f016b5914b15ab
 -   [Использование кисти поверхности](./composition-brushes.md#using-surface-brush)
 -   [Настройка растяжения и выравнивания](./composition-brushes.md#configuring-stretch-and-alignment)
 
-## Предварительные условия и необходимые компоненты
+## <a name="prerequisites"></a>Предварительные условия и необходимые компоненты
 
 Материал данного раздела предполагает, что вы знакомы со структурой базового приложения композиции, которая описана в разделе [Пользовательский интерфейс композиции](visual-layer.md).
 
-## Основные сведения о цвете
+## <a name="color-basics"></a>Основные сведения о цвете
 
 Перед тем, как начать рисовать с помощью [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399), необходимо выбрать цвета. Для представления цвета в композиции API используется структура Color среды выполнения Windows. В структуре Color используется кодирование sRGB. Кодирование sRGB делит цвета на четыре канала: альфа, красный, зеленый и синий. Каждый компонент представлен значением с плавающей запятой, которое имеет нормальный диапазон от 0,0 до 1,0. Значение 0,0 указывает на полное отсутствие данного цвета, а значение 1,0 указывает на его максимальное присутствие. Для альфа-компонента значение 0,0 означает полностью прозрачный цвет, а 1,0 — полностью непрозрачный цвет.
 
-### Режимы альфа-канала
+### <a name="alpha-modes"></a>Режимы альфа-канала
 
 Значения цвета в [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) всегда интерпретируются как прямые альфа-значения.
 
-## Использование цветной кисти
+## <a name="using-color-brush"></a>Использование цветной кисти
 
 Чтобы создать цветную кисть, вызовите метод Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx), который возвращает объект [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399). В **CompositionColorBrush** используется цвет по умолчанию с кодом \#00000000. Следующий рисунок и фрагмент кода демонстрируют небольшое визуальное дерево для создания прямоугольника, заштрихованного с помощью кисти черного цвета и заполненного с помощью кисти сплошного цвета с кодом 0x9ACD32.
 
@@ -68,7 +75,7 @@ Visual2.Offset = new Vector3(3, 3, 0);
 
 В отличие от других кистей, создание кисти [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) является относительно несложной операцией. Вы можете создавать объекты **CompositionColorBrush** каждый раз при выполнении отрисовки, практически не влияя на производительность.
 
-## Использование кисти поверхности
+## <a name="using-surface-brush"></a>Использование кисти поверхности
 
 Кисть [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) заполняет визуальный объект поверхностью композиции (представляемой объектом [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819)). На следующем рисунке показан квадратный визуальный объект, заполненный растровым изображением лакрицы, отрисованным на поверхности **ICompositionSurface** с помощью D2D.
 
@@ -92,7 +99,7 @@ LoadImage(_surfaceBrush, "ms-appx:///Assets/liqorice.png");
 visual.Brush = _surfaceBrush;
 ```
 
-## Настройка растяжения и выравнивания
+## <a name="configuring-stretch-and-alignment"></a>Настройка растяжения и выравнивания
 
 Иногда содержимое поверхности [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) для кисти [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) не полностью заполняет площадь обрабатываемого визуального объекта. В этом случае API композиции использует параметры режима [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx), [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) и [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch), чтобы определить, как заполнить оставшуюся область.
 
@@ -108,14 +115,10 @@ visual.Brush = _surfaceBrush;
 
  
 
- 
+## <a name="related-topics"></a>Статьи по теме
+[Собственное взаимодействие DirectX и Direct2D композиции с BeginDraw и EndDraw](composition-native-interop.md)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

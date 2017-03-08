@@ -1,21 +1,28 @@
 ---
 author: QuinnRadich
-title: "Новое в Windows 10 для разработчиков, средства и компоненты"
+title: "Что нового в Windows 10 для разработчиков"
 description: "Windows 10 (версия 1607) и новые средства разработчика обеспечивают доступ к средствам, компонентам и возможностям универсальной платформы Windows."
 keywords: "новые возможности, что нового, обновление, обновления, компоненты, новые, Windows 10, 1607, июль, новое"
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 translationtype: Human Translation
-ms.sourcegitcommit: 860019e351f6fc6ce1ff00646413d3727e48de9c
-ms.openlocfilehash: d292d48489fa5001d3cd8af95aa72019107836c1
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: fff2eb225bcadaefa6bead622d953dd8b8ed4a76
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Новое в Windows10 для разработчиков
+# <a name="whats-new-in-windows-version-1607"></a>Что нового в Windows (версия 1607)
 
 Windows 10 (версия 1607) и обновления средств разработчика Windows обеспечивают доступ к средствам, компонентам и возможностям универсальной платформы Windows. [Установив средства и пакет SDK](http://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](https://msdn.microsoft.com/library/windows/apps/bg124288), либо к использованию [существующего кода приложения в ОС Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
 
 Далее приводится перечень новых и улучшенных функций для разработчиков. Необработанный список новых пространств имен, добавленных в Windows SDK, см. в разделе [Изменения API в Windows 10 версии 1607](windows-10-version-1607-api-diff.md). Дополнительные сведения об основных функциях в этом обновлении см. в разделе [Потрясающие возможности Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181).
 
-## Windows 10 версии 1607 — июль 2016 г.
+## <a name="windows-10-version-1607---july-2016"></a>Windows 10 версии 1607 — июль 2016 г.
 
 Компонент | Описание
  :---- | :----
@@ -58,9 +65,4 @@ API Windows Information Protection (WIP) | [**WIP**](https://msdn.microsoft.com/
 Windows IOT Базовая | Windows IoT Базовая теперь полностью поддерживает Raspberry Pi 3, а также удаленный просмотр, благодаря чему пользователи могут удаленно просматривать приложения UWP, запущенные на устройстве IoT Core, и управлять ими.
 Разблокировка Windows с устройствами-компаньонами (IoT) | Устройство-компаньон — это устройство, которое может функционировать вместе с настольным компьютером Windows 10, повышая эффективность и комфортность процедуры проверки подлинности пользователей. При работе с [платформой сопутствующих устройств](https://msdn.microsoft.com/windows/uwp/security/companion-device-unlock) устройство-компаньон открывает широкие возможности использования Microsoft Passport, даже если возможность Windows Hello недоступна (например, на компьютере с Windows 10 отсутствует камера для проверки подлинности по лицу или устройство для считывания отпечатков пальцев).
 Winsock | Сокеты TCP теперь можно настроить с помощью [Winsock](https://tools.ietf.org/html/rfc7413) для использования [RFC 7413](https://tools.ietf.org/html/rfc7413) TCP Fast Open путем настройки параметра сокета TCP_FASTOPEN.
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

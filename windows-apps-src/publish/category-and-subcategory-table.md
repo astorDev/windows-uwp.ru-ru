@@ -3,13 +3,20 @@ author: jnHs
 Description: "Помещение приложения в правильную категорию и подкатегорию поможет пользователям находить его и получать о нем правильное представление."
 title: "Таблица категорий и подкатегорий"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b31e399d950a99f0cb6f1e912e391429b5463136
-ms.openlocfilehash: 40891ade1c3383f89eed99176b4e9cf979e1fb64
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a69521d9ff9adb682a370b421458269507e9befe
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Таблица категорий и подкатегорий
+# <a name="category-and-subcategory-table"></a>Таблица категорий и подкатегорий
 
 
 Помещение приложения в правильную категорию и подкатегорию поможет пользователям находить его и получать о нем правильное представление.
@@ -60,10 +67,5 @@ ms.openlocfilehash: 40891ade1c3383f89eed99176b4e9cf979e1fb64
  
 
 > **Примечание**. Дополнительные сведения о категориях, используемых в Магазине Windows для Windows 8.1 и более ранних версий, а также в Магазине Windows Phone, а также сведения о том, как они связаны в приведенным выше списком категорий см. в разделе [Представление приложения в Магазине для пользователей Windows 10](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes).
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

@@ -3,27 +3,34 @@ author: jwmsft
 title: "Атрибут xDeferLoadStrategy"
 description: "xDeferLoadStrategy задерживает создание элемента и его дочерних объектов, сокращая тем самым время запуска и немного увеличивая объем использования памяти. Каждый задействованный элемент прибавляет около 600 байт к объему использования памяти."
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4ccc18920a98b3c2258b4965e96fa063124d0546
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Атрибут x:DeferLoadStrategy
+# <a name="xdeferloadstrategy-attribute"></a>Атрибут x:DeferLoadStrategy
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **x:DeferLoadStrategy="Lazy"** можно использовать для оптимизации производительности сценариев запуска и создания дерева приложения XAML. **x:DeferLoadStrategy="Lazy"** задерживает создание элемента и его дочерних объектов, сокращая время запуска и объем использования памяти за счет отсутствия необходимости в создании элементов. Это полезно для уменьшения влияния на производительность элементов, потребность в которых возникает редко или при определенных условиях. Элемент будет реализован при обращении к нему из кода или VisualStateManager.
 
 При этом запись отложенных элементов прибавляет около 600 байт к объему использованию памяти для каждого элемента. Чем большее дерево элементов вы отложите, тем больше времени вы сэкономите при запуске, однако за счет увеличения потребления памяти. Поэтому можно злоупотребить этим атрибутом в степени, в которой уменьшается ваша производительность.
 
-## Использование атрибутов XAML
+## <a name="xaml-attribute-usage"></a>Использование атрибутов XAML
 
 ``` syntax
 <object x:DeferLoadStrategy="Lazy" .../>
 ```
 
-## Комментарии
+## <a name="remarks"></a>Комментарии
 
 Предусмотрены следующие ограничения по использованию **x:DeferLoadStrategy**:
 
@@ -59,7 +66,7 @@ ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
 
 Общая рекомендация заключается в том, что следует измерять приложения до и после выполнения операций, чтобы убедиться в наличии требуемой производительности.
 
-## Пример:
+## <a name="example"></a>Пример:
 
 ```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
@@ -86,10 +93,5 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
     this.FindName("DeferredGrid"); // This will realize the deferred grid
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

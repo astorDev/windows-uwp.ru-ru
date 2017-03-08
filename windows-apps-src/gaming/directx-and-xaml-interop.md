@@ -3,26 +3,33 @@ author: mtoepke
 title: "Межпрограммное взаимодействие DirectX и XAML"
 description: "Вы можете использовать одновременно и XAML, и Microsoft DirectX в своей игре универсальной платформы Windows (UWP)."
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, игры, directx, взаимодействие с xaml"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 167709c7ba3470c144924801cb8cf18ffa544c5d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6934ac8bfbff487e57d0097cb129faf853a3eb9f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Межпрограммное взаимодействие DirectX и XAML
+# <a name="directx-and-xaml-interop"></a>Взаимодействие DirectX и XAML
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Вы можете использовать одновременно и XAML, и Microsoft DirectX в своей игре или приложении универсальной платформы Windows (UWP). Сочетание XAML и DirectX позволяет создавать гибкие структуры пользовательского интерфейса, взаимодействующие с содержимым, обрабатываемым DirectX, что особенно удобно для приложений с интенсивным использованием графики. В этом разделе описывается структура приложения UWP, использующего DirectX, и вводятся важные типы, которые применяются при сборке приложения UWP для обеспечения работы с DirectX.
 
 Если в вашем приложении в основном используется двухмерная отрисовка, возможно, вам стоит применять библиотеку [**Win2D**](https://github.com/microsoft/win2d) среды выполнения Windows. Эта библиотека, поддерживаемая корпорацией Microsoft, создана на основе базовых технологий Direct2D. Она значительно упрощает использование двумерной графики и включает удобные абстракции для некоторых методов, описанных в данном документе. Для получения дополнительных сведений см. страницу проекта. В этом документе приводится руководство для разработчиков приложений, которые *не* используют Win2D.
 
-> **Примечание.** API DirectX не определены как типы среды выполнения Windows, поэтому для разработки компонентов приложений UWP на XAML, взаимодействующих с DirectX, обычно используются расширения компонентов VisualC++ (C++/CX). Кроме того, вы можете создавать приложения UWP, использующие DirectX, на C# и XAML, если инкорпорируете вызовы DirectX в отдельный файл метаданных среды выполнения Windows.
+> **Примечание.** API DirectX не определены как типы среды выполнения Windows, поэтому для разработки компонентов приложений UWP на XAML, взаимодействующих с DirectX, обычно используются расширения компонентов Visual C++ (C++/CX). Кроме того, вы можете создавать приложения UWP, использующие DirectX, на C# и XAML, если инкорпорируете вызовы DirectX в отдельный файл метаданных среды выполнения Windows.
 
  
 
-## XAML и DirectX
+## <a name="xaml-and-directx"></a>XAML и DirectX
 
 DirectX предоставляет две мощные библиотеки для двух- и трехмерной графики: Direct2D и Microsoft Direct3D. Хотя язык XAML поддерживает базовые двухмерные примитивы и эффекты, многим приложениям (например, приложениям для моделирования или играм) необходима поддержка более сложной графики. В этих случаях библиотеки Direct2D и Direct3D можно использовать для обработки части или всей графики, а язык XAML — для всего остального.
 
@@ -41,7 +48,7 @@ DirectX предоставляет две мощные библиотеки дл
 
 -   При использовании DirectX для представления графики, обновляемой в реальном времени, или в ситуации, когда обновления должны выполняться регулярно с низкой задержкой, используйте класс [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) для обновления графики без синхронизации с таймером обновления платформы XAML. Этот тип предоставляет прямой доступ к цепочке буферов графического устройства ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)) и слою XAML, наложенному на однобуферную прорисовку. Этот тип отлично подходит для игр и полноэкранных приложений DirectX, которым требуется пользовательский интерфейс на основе языка XAML. Чтобы использовать описанный подход, вы должны хорошо разбираться в DirectX, в том числе в технологиях Microsoft DirectX Graphics Infrastructure (DXGI), Direct2D и Direct3D. Дополнительные сведения см. в [Руководстве по программированию для Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345).
 
-## SurfaceImageSource
+## <a name="surfaceimagesource"></a>SurfaceImageSource
 
 
 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) предоставляет общие поверхности DirectX для рисования, а затем объединяет все биты в содержимое приложения.
@@ -124,7 +131,7 @@ DirectX предоставляет две мощные библиотеки дл
 
  
 
-## VirtualSurfaceImageSource
+## <a name="virtualsurfaceimagesource"></a>VirtualSurfaceImageSource
 
 
 
@@ -258,10 +265,10 @@ DirectX предоставляет две мощные библиотеки дл
 
     3.  Вызовите [**IVirtualSurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324). Результат — растровое изображение
 
-## SwapChainPanel и игры
+## <a name="swapchainpanel-and-gaming"></a>SwapChainPanel и игры
 
 
-[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)— это тип среды выполнения Windows для поддержки высокопроизводительных игр и графики, в котором вы управляете цепочкой буферов напрямую. В данном случае вы создаете собственную цепочку буферов DirectX и управляете представлением своего отображаемого содержимого.
+[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) — это тип среды выполнения Windows для поддержки высокопроизводительных игр и графики, в котором вы управляете цепочкой буферов напрямую. В данном случае вы создаете собственную цепочку буферов DirectX и управляете представлением своего отображаемого содержимого.
 
 Для обеспечения хорошей производительности у типа [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) есть определенные ограничения.
 
@@ -355,7 +362,7 @@ DirectX предоставляет две мощные библиотеки дл
 
     Элементы XAML обновляются, когда логика макета или отрисовки среды выполнения Windows сигнализирует об обновлении.
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [**Win2D**](http://microsoft.github.io/Win2D/html/Introduction.htm)
 * [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041)
@@ -370,10 +377,5 @@ DirectX предоставляет две мощные библиотеки дл
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

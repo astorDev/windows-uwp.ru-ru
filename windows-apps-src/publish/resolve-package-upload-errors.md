@@ -3,9 +3,16 @@ author: jnHs
 Description: "В случае возникновения ошибок во время загрузки пакетов приложений на этапе отправки приложения, необходимо устранить их, прежде чем отправлять приложение в Магазин."
 title: "Устранение ошибок, связанных с отправкой пакетов"
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2ff09d43cd39967028b39b4f602f4dfdf2cbcdcc
-ms.openlocfilehash: 4f7f9698d8b8b17654b6f2e0420c7cdc6031f018
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 92a46c556303b88f8d506f5315e23d4e2b2edf5f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -37,10 +44,5 @@ ms.openlocfilehash: 4f7f9698d8b8b17654b6f2e0420c7cdc6031f018
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -3,23 +3,30 @@ author: TylerMSFT
 title: "Обработка предварительного запуска приложения"
 description: "Узнайте, как обрабатывать предварительный запуск приложения путем переопределения метода OnLaunched и вызова метода CoreApplication.EnablePrelaunch (true)."
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ea9aa37e15dbb6c977b0c0be4f91f77f3879e622
-ms.openlocfilehash: cf7cb9f81207f4f25eb8e78283079df27f83d7dc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6107fe07fc8e98db7d197354246784a31a9c902c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Обработка предварительного запуска приложения
+# <a name="handle-app-prelaunch"></a>Обработка предварительного запуска приложения
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Обработка предварительного запуска приложения путем переопределения метода [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
-## Введение
+## <a name="introduction"></a>Введение
 
 Если доступные системные ресурсы позволяют, производительность запуска приложения Магазина Windows для семейства настольных устройств повышается с помощью заблаговременного запуска наиболее часто используемых пользователем приложений в фоновом режиме. Заблаговременно запущенное приложение переводится в приостановленное состояние вскоре после его запуска. Таким образом, когда пользователь вызывает приложение, его работа возобновляется путем перевода из состояния приостановки в состояние выполнения. Это быстрее, чем холодный запуск приложения. Пользователь просто видит, что приложение запустилось очень быстро.
 
-До Windows 10 приложения не использовали преимущества предварительного запуска автоматически. В Windows 10 версии 1511 все приложения универсальной платформы Windows (UWP) были кандидатами на предварительный запуск. В Windows 10 версии 1607 необходимо явно задать предварительный запуск, вызвав метод [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx). Рекомендуется размещать этот вызов в методе `OnLaunched()` рядом с местом, в котором выполняется проверка условия `if (e.PrelaunchActivated == false)`.
+До Windows 10 приложения не использовали преимущества предварительного запуска автоматически. В Windows 10 версии 1511 все приложения универсальной платформы Windows (UWP) были кандидатами на предварительный запуск. В Windows 10 версии 1607 необходимо явно задать предварительный запуск, вызвав метод [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx). Рекомендуется размещать этот вызов в методе `OnLaunched()` рядом с местом, в котором выполняется проверка условия `if (e.PrelaunchActivated == false)`.
 
 Будет ли приложение запущено предварительно или нет, зависит от системных ресурсов. Если в системе мало свободных ресурсов, предварительный запуск приложения не производится.
 
@@ -27,11 +34,11 @@ ms.openlocfilehash: cf7cb9f81207f4f25eb8e78283079df27f83d7dc
 
 Шаблоны по умолчанию для проектов XAML (C#, VB, C++) и WinJS в Visual Studio 2015 с обновлением 3 учитывают возможность предварительного запуска.
 
-## Предварительный запуск и жизненный цикл приложения
+## <a name="prelaunch-and-the-app-lifecycle"></a>Предварительный запуск и жизненный цикл приложения
 
 После предварительного запуска приложения оно переводится в приостановленное состояние. (См. раздел [Обработка приостановки работы приложения](suspend-an-app.md)).
 
-## Обнаружение и обработка предварительного запуска
+## <a name="detect-and-handle-prelaunch"></a>Обнаружение и обработка предварительного запуска
 
 Приложения получают флаг [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) во время активации. Используйте этот флаг для выполнения кода, который должен выполняться только в случае, когда пользователь явно запускает приложение, как показано в следующем отрывке из метода [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
@@ -78,7 +85,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 **Совет.** Если вы разрабатываете приложение для версии Windows 10 до 1607 и хотите явно отказаться от предварительного запуска, установите флажок [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740). Если он установлен, верните значение OnLaunched(), прежде чем выполнять какую-либо работу по созданию фрейма или активированию окна.
 
-## Использование события VisibilityChanged
+## <a name="use-the-visibilitychanged-event"></a>Использование события VisibilityChanged
 
 Приложения, запущенные с помощью предварительного запуска, не видны пользователю. Они отображаются, когда пользователь на них переключается. Возможно, вы захотите отложить определенные операции, пока основное окно приложения не будет отображаться. Например, если приложение отображает список новых элементов веб-канала, вы можете обновить этот список во время события [**VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458), а не использовать список, который был создан при предварительном запуске приложения, который может устареть к тому времени, когда пользователь активирует приложение. Следующий код обрабатывает событие **VisibilityChanged** для **MainPage**:
 
@@ -100,9 +107,9 @@ public sealed partial class MainPage : Page
 }
 ```
 
-## Рекомендации для игр DirectX
+## <a name="directx-games-guidance"></a>Рекомендации для игр DirectX
 
-Для игр DirectX обычно не следует включать предварительный запуск, поскольку многие игры DirectX выполняют инициализацию до обнаружения предварительного запуска. Начиная с юбилейного обновления Windows 1607, по умолчанию предварительный запуск игр не используется.  Если вы хотите использовать преимущества предварительного запуска для своей игры, вызовите метод [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx).
+Для игр DirectX обычно не следует включать предварительный запуск, поскольку многие игры DirectX выполняют инициализацию до обнаружения предварительного запуска. Начиная с юбилейного обновления Windows 1607, по умолчанию предварительный запуск игр не используется.  Если вы хотите использовать преимущества предварительного запуска для своей игры, вызовите метод [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx).
 
 Если игра предназначена для более ранней версии Windows 10, можно обрабатывать условие предварительного запуска для выхода из приложения.
 
@@ -122,9 +129,9 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
 }
 ```
 
-## Рекомендации для приложений WinJS
+## <a name="winjs-app-guidance"></a>Рекомендации для приложений WinJS
 
-Если приложение WinJS предназначено для более ранней версии Windows 10, условие предварительного запуска можно обрабатывать в обработчике [onactivated](https://msdn.microsoft.com/en-us/library/windows/apps/br212679.aspx):
+Если приложение WinJS предназначено для более ранней версии Windows 10, условие предварительного запуска можно обрабатывать в обработчике [onactivated](https://msdn.microsoft.com/library/windows/apps/br212679.aspx):
 
 ```js
     app.onactivated = function (args) {
@@ -137,7 +144,7 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
     }
 ```
 
-## Общие рекомендации
+## <a name="general-guidance"></a>Общие рекомендации
 
 -   Приложения не должны выполнять длительные операции во время предварительного запуска, поскольку приложение завершит работу, если его нельзя быстро приостановить.
 -   Приложения не должны начинать воспроизведение звука из [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), если приложение предварительно запущено, поскольку оно не будет видимым, и будет непонятно, почему воспроизводится звук.
@@ -149,13 +156,8 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
 -   Телеметрия вашего приложения должна различать обычную активацию плиток и активацию при предварительном запуске, чтобы упростить поиск сценария, если возникает неполадка.
 -   При наличии обновления 1 для Microsoft Visual Studio 2015 и версии 1511 Windows 10 вы можете имитировать предварительный запуск своего приложения в Visual Studio 2015, последовательно выбрав элементы **Отладка** &gt; **Другие цели отладки** &gt; **Отладка предварительного запуска универсального приложения для Windows**.
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Жизненный цикл приложения](app-lifecycle.md)
-* [CoreApplication.EnablePrelaunch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)
-
-
-
-<!--HONumber=Aug16_HO4-->
-
+* [CoreApplication.EnablePrelaunch](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)
 

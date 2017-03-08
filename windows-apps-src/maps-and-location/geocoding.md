@@ -3,19 +3,26 @@ author: PatrickFarley
 title: "Выполнение геокодирования и обратного геокодирования"
 description: "Вы можете преобразовывать адреса в географические расположения (выполнять геокодирование) и наоборот (выполнять обратное геокодирование), вызывая методы класса MapLocationFinder в пространстве имен Windows.Services.Maps."
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, геокодирование, карта, расположение"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d42708a82f99e345183b6cbcb87cfdd136b10e52
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 16be7bcafaf286a71e79fb4bca01511ddc7a1ae0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Выполнение геокодирования и обратного геокодирования
+# <a name="perform-geocoding-and-reverse-geocoding"></a>Выполнение геокодирования и обратного геокодирования
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Вы можете преобразовывать адреса в географические положения (выполнять геокодирование) и географические положения— в адреса (выполнять обратное геокодирование), вызывая методы класса [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) в пространстве имен [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979).
+Вы можете преобразовывать адреса в географические положения (выполнять геокодирование) и географические положения — в адреса (выполнять обратное геокодирование), вызывая методы класса [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) в пространстве имен [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979).
 
 **Совет.** Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте следующий пример из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
 
@@ -32,7 +39,7 @@ ms.openlocfilehash: d42708a82f99e345183b6cbcb87cfdd136b10e52
 
  
 
-## Получение сведений о местоположении (геокодирование)
+## <a name="get-a-location-geocode"></a>Получение сведений о местоположении (геокодирование)
 
 
 Вы можете преобразовать адрес или название места в географическое положение (выполнить геокодирование), последовательно выполнив следующие действия.
@@ -81,7 +88,7 @@ private async void geocodeButton_Click(object sender, RoutedEventArgs e)
 result = (47.6406099647284,-122.129339994863)
 ```
 
-## Получение адреса (обратное геокодирование)
+## <a name="get-an-address-reverse-geocode"></a>Получение адреса (обратное геокодирование)
 
 
 Вы можете преобразовать географическое положение в адрес (выполнить обратное геокодирование), последовательно выполнив следующие действия.
@@ -123,7 +130,7 @@ private async void reverseGeocodeButton_Click(object sender, RoutedEventArgs e)
 town = Redmond
 ```
 
-## Связанные разделы
+## <a name="related-topics"></a>Связанные разделы
 
 * [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
 * [Пример карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
@@ -133,11 +140,4 @@ town = Redmond
 * [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)
 * [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)
 * [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

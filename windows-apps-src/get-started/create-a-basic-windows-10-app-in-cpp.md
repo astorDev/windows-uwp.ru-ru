@@ -3,13 +3,20 @@ author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: "Создание приложения Hello World на C++ (Windows 10)"
 description: "В Microsoft Visual Studio 2015 вы можете использовать язык C++ для разработки приложения, которое работает в Windows 10, в том числе на телефонах под управлением Windows 10. Интерфейс пользователя в этих приложениях определен на языке XAML."
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 351feda6d9b12b44b0711fe7f4665e08e320580d
-ms.openlocfilehash: d6f90d8bcff80ef8fae5f85a572e1b1ab11f153d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 34a1d665bc98a5224ef7707994138ba40d70763b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="create-a-hello-world-app-in-c-windows-10"></a>Создание приложения «Hello World» на C++ (Windows 10)
+# <a name="create-a-hello-world-app-in-c-windows-10"></a>Создание приложения "Hello World" на C++ (Windows 10)
 
 В Microsoft Visual Studio 2015 вы можете использовать язык C++ для разработки приложения, которое работает в Windows 10, в том числе на телефонах под управлением Windows 10. Интерфейс пользователя в этих приложениях определен на языке XAML.
 
@@ -22,7 +29,6 @@ ms.openlocfilehash: d6f90d8bcff80ef8fae5f85a572e1b1ab11f153d
 ## <a name="before-you-start"></a>Перед началом работы...
 
 -   Для работы с этим учебником необходимо использовать Visual Studio 2015 Community или более поздней версии или одну из версий Visual Studio 2015, кроме Community, на компьютере под управлением Windows 10 или Windows 8.1. Для скачивания перейдите на страницу [Получение инструментов](http://go.microsoft.com/fwlink/p/?LinkId=532666).
--   Установите подходящий пакет [SDK](http://go.microsoft.com/fwlink/?LinkId=533049) для разработки приложений универсальной платформы Windows.
 -   Предполагается, что вы имеете общее представление о стандартном C++ и о XAML и владеете понятиями, описанными в разделе [Обзор языка XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 -   Также предполагается, что вы используете в Visual Studio макет окна по умолчанию. Чтобы вернуться к макету по умолчанию, выберите в строке меню пункт **Окно** > **Сброс макета окон**.
 
@@ -434,13 +440,8 @@ Visual Studio запускает выбранный эмулятор и зате
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если у вас есть проект универсального приложения для Windows, ориентированный на Windows 8.1 и (или) Windows Phone 8.1, вы можете перенести его в Windows 10. Для этого действия нет автоматического процесса, но его можно выполнить вручную без особых усилий. Начните новый проект универсального приложения для Windows, чтобы получить последнюю структуру системы и файлы манифеста проекта, скопируйте файлы кода в структуру каталогов проекта, добавьте элементы в проект и перепишите код XAML, используя [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) в соответствии с рекомендациями в этом разделе. Дополнительные сведения см. в разделах: [Перенос проекта среды выполнения Windows 8 в проект универсальной платформы Windows (UWP)](https://msdn.microsoft.com/library/windows/apps/Mt188203) и [Перенос на универсальную платформу Windows (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525).
+Если у вас есть проект универсального приложения для Windows, ориентированный на Windows 8.1 и (или) Windows Phone 8.1, вы можете перенести его в Windows 10. Для этого действия нет автоматического процесса, но его можно выполнить вручную. Начните новый проект универсального приложения для Windows, чтобы получить последнюю структуру системы и файлы манифеста проекта, скопируйте файлы кода в структуру каталогов проекта, добавьте элементы в проект и перепишите код XAML, используя [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) в соответствии с рекомендациями в этом разделе. Дополнительные сведения см. в разделах: [Перенос проекта среды выполнения Windows 8 в проект универсальной платформы Windows (UWP)](https://msdn.microsoft.com/library/windows/apps/Mt188203) и [Перенос на универсальную платформу Windows (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525).
 
 Если у вас есть код на C++, который вы хотите включить в приложение UWP, например для создания нового пользовательского интерфейса UWP для существующего приложения, см. раздел [Инструкции: использование существующего кода C++ в проекте универсального приложения для Windows](http://go.microsoft.com/fwlink/p/?LinkId=619623).
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 
