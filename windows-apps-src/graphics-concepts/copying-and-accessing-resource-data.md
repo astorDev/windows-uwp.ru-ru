@@ -2,21 +2,17 @@
 title: "Копирование данных ресурса и доступ к ним"
 description: "Флаги использования показывают, как приложение намерено использовать данные ресурсов, чтобы поместить ресурсы в наиболее производительную область памяти. Данные ресурса копируются из разных ресурсов, чтобы ЦП или графический процессор мог осуществлять к ним доступ без ущерба для производительности."
 ms.assetid: 6A09702D-0FF2-4EA6-A353-0F95A3EE34E2
-keywords:
-- "Копирование данных ресурса и доступ к ним"
+keywords: "Копирование данных ресурса и доступ к ним"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1dc6853a5675b6e22300650a5c44519436c391d0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e26e6abf4b15584f8c04a837dcc6bd23aad0f1d0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="copying-and-accessing-resource-data"></a>Копирование данных ресурса и доступ к ним
 
 
@@ -139,7 +135,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, рекламные объявления, реклама, AdControl, HTML, свойства"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a879944dc14ca161c3e52a49ffe4a8cebfa7d69f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: efc94b723b3bfe97b35484882ae784e9ef4d6807
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-html-properties-example"></a>Пример свойств HTML AdControl
 
 В следующем примере показано, как назначать свойства [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) в HTML. **applicationId** и **adUnitId** являются обязательными свойствами. Другие свойства и события являются дополнительными. Если вы не зададите значения для дополнительных свойств, элемент управления будет использовать значения по умолчанию, обеспечивающие согласованность рекламного объявления с процессом взаимодействия пользователя с приложением.
@@ -44,4 +41,3 @@ ms.lasthandoff: 02/07/2017
 * [Примеры рекламы на GitHub](http://aka.ms/githubads)
 
  
-

@@ -2,21 +2,17 @@
 title: "Вводные сведения о текстурах"
 description: "Текстурный ресурс — это структура данных для хранения текселей, представляющих собой наименьшие элементы текстуры, которые можно использовать для чтения или записи. При чтении текстуры шейдером ее можно фильтровать по дискретизаторам текстур."
 ms.assetid: 6F3C76A8-F762-4296-AE02-BFBD6476A5A8
-keywords:
-- "Вводные сведения о текстурах"
+keywords: "Вводные сведения о текстурах"
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ccdca1396673b0eed9ef74c5f0ce3a6f97e02b6d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d642668a9af1e62f232e13e411e51e6d850de7f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="introduction-to-textures"></a>Вводные сведения о текстурах
 
 
@@ -132,4 +128,3 @@ Direct3D также поддерживает массивы текстур. Ма
 
 
 [Текстуры](textures.md)
-

@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, игры, directx, графика"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 2ac11ce220bc1c62c81df12fbf9c2a41fda1d940
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="basic-3d-graphics-for-directx-games"></a>Простая трехмерная графика для игр DirectX
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Здесь мы покажем, как использовать программирование в DirectX для реализации базовых принципов трехмерной графики.
 
@@ -50,7 +47,7 @@ ms.lasthandoff: 02/07/2017
 -   удаление скрытых поверхностей;
 
 > **Примечание**  
-Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Эта статья адресована разработчикам приложений для Windows10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows8.x или Windows Phone8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -68,7 +65,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

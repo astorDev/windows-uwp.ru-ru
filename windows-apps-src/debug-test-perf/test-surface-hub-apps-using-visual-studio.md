@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 426670f9b8d24a770f74aa0bdfaa5abb043c39ef
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ed2f7dc63e478d3dde2eb58b502d373db3181501
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="test-surface-hub-apps-using-visual-studio"></a>Проверка приложений Surface Hub с использованием Visual Studio
 Имитатор Visual Studio предоставляет среду для проектирования, разработки, отладки и тестирования приложений универсальной платформы Windows (UWP), включая приложения, созданные для Microsoft Surface Hub. Имитатор не использует тот же пользовательский интерфейс, что и Surface Hub, но полезен для тестирования внешнего вида и поведения приложения в среде с тем же размером экрана и разрешением, что и Surface Hub.
 
@@ -106,4 +103,3 @@ ms.lasthandoff: 02/07/2017
 3. Выберите элемент **Начать отладку (F5)**, чтобы развернуть приложение и выполнить его отладку на Surface Hub или нажмите сочетание клавиш Ctrl+F5, чтобы просто развернуть приложение.
 
    > **Совет**.&nbsp;&nbsp;Если Surface Hub находится на экране приветствия, закройте его, нажав любую кнопку.
-

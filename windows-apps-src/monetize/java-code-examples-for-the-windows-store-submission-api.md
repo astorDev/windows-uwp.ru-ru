@@ -2,23 +2,20 @@
 author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: "Используйте примеры кода на языке Java, приведенные в этом разделе, чтобы более подробно ознакомиться с работой API отправки Магазина Windows."
-title: "Примеры кода Java для API отправки Магазина Windows"
+title: "Примеры кода на языке Java для API отправки"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API отправки Магазина Windows, примеры кода"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9bf6885129176a75265d073c3f92b9f899bc265d
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, uwp, API отправки Магазина Windows, примеры кода"
+ms.openlocfilehash: ff5e857e0f5ce110ab7afc64bd2faa28f7bea517
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="java-code-examples-for-the-submission-api"></a>Примеры кода на языке Java для API отправки
 
-# <a name="java-code-examples-for-the-windows-store-submission-api"></a>Примеры кода Java для API отправки Магазина Windows
-
-В этой статье представлены примеры кода Java для использования *API отправки Магазина Windows*. Дополнительные сведения об этом API-интерфейсе см. в разделе [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md).
+В этой статье представлены примеры кода на языке Java для использования *API отправки Магазина Windows*. Дополнительные сведения об этом API-интерфейсе см. в разделе [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md).
 
 В этих примерах кода демонстрируются следующие задачи:
 
@@ -48,7 +45,7 @@ ms.lasthandoff: 02/07/2017
 <span id="token" />
 ## <a name="obtain-an-azure-ad-access-token"></a>Получение токена доступа Azure AD
 
-В следующем примере показано, как [получить маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который можно использовать для вызова методов в API отправки Магазина Windows. После получения маркера доступа у вас будет 60 минут, чтобы использовать его в вызовах к API отправки Магазина Windows до окончания срока действия маркера. После истечения срока действия маркера можно сформировать новый маркер.
+В следующем примере показано, как [получить маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который можно использовать для вызова методов в API отправки Магазина Windows. После получения маркера доступа у вас будет 60минут, чтобы использовать его в вызовах к API отправки Магазина Windows до окончания срока действия маркера. После истечения срока действия маркера можно сформировать новый маркер.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L65-L95)]
 
@@ -73,7 +70,7 @@ ms.lasthandoff: 02/07/2017
 
 1. Сначала метод [получает данные для указанного приложения](get-an-app.md).
 2. Затем он [удаляет ожидающую отправку для приложения](delete-an-app-submission.md), если она существует.
-3. После этого [выполняется создание новой отправки для приложения](create-an-app-submission.md) (новая отправка — это копия последней опубликованной отправки).
+3. После этого [выполняется создание новой отправки для приложения](create-an-app-submission.md) (новая отправка— это копия последней опубликованной отправки).
 4. Код изменяет некоторые сведения о новой отправке и отправляет новый пакет отправки в хранилище BLOB-объектов Azure.
 5. Затем он [обновляет](update-an-app-submission.md) и [фиксирует](commit-an-app-submission.md) новую отправку в Центре разработки для Windows.
 6. Наконец, он периодически [проверяет состояние новой отправки](get-status-for-an-app-submission.md), пока она не будет успешно зафиксирована.
@@ -83,11 +80,11 @@ ms.lasthandoff: 02/07/2017
 <span id="create-add-on-submission" />
 ## <a name="create-an-add-on-submission"></a>Создание отправки надстройки
 
-В следующем примере показано, как использовать несколько методов в API отправки Магазина Windows для создания отправки надстройки. Чтобы это сделать, метод ```SubmitNewInAppProductSubmission``` создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в Центре разработки для Windows. В частности, метод ```SubmitNewInAppProductSubmission``` выполняет следующие задачи.
+В следующем примере показано, как использовать несколько методов в API отправки Магазина Windows для создания отправки надстройки. Чтобы это сделать, метод ```SubmitNewInAppProductSubmission``` создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в Центре разработки для Windows. В частности, метод ```SubmitNewInAppProductSubmission``` выполняет следующие задачи:
 
 1. Сначала метод [получает данные для указанной надстройки](get-an-add-on.md).
 2. Затем он [удаляет ожидающую отправку для надстройки](delete-an-add-on-submission.md), если она существует.
-3. После этого [выполняется создание новой отправки для надстройки](create-an-add-on-submission.md) (новая отправка — это копия последней опубликованной отправки).
+3. После этого [выполняется создание новой отправки для надстройки](create-an-add-on-submission.md) (новая отправка— это копия последней опубликованной отправки).
 4. Код передает ZIP-архив, содержащий значки для отправки, в хранилище BLOB-объектов Azure.
 5. Затем он [обновляет](update-an-add-on-submission.md) и [фиксирует](commit-an-add-on-submission.md) новую отправку в Центре разработки для Windows.
 6. Наконец, он периодически [проверяет состояние новой отправки](get-status-for-an-add-on-submission.md), пока она не будет успешно зафиксирована.
@@ -101,7 +98,7 @@ ms.lasthandoff: 02/07/2017
 
 1. Сначала метод [получает данные для указанного тестового пакета](get-a-flight.md).
 2. Затем он [удаляет ожидающую отправку для тестового пакета](delete-a-flight-submission.md), если она существует.
-3. После этого [выполняется создание новой отправки для тестового пакета](create-a-flight-submission.md) (новая отправка — это копия последней опубликованной отправки).
+3. После этого [выполняется создание новой отправки для тестового пакета](create-a-flight-submission.md) (новая отправка— это копия последней опубликованной отправки).
 4. Код передает новый пакет для отправки в хранилище BLOB-объектов Azure.
 5. Затем он [обновляет](update-a-flight-submission.md) и [фиксирует](commit-a-flight-submission.md) новую отправку в Центре разработки для Windows.
 6. Наконец, он периодически [проверяет состояние новой отправки](get-status-for-a-flight-submission.md), пока она не будет успешно зафиксирована.
@@ -128,4 +125,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>Связанные разделы
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
-

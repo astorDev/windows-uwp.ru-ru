@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, карта, расположение, функция определения местоположения"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fec870534c7e028ea85e8aa5242f09569e082b96
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 05fa3330f5346f69061cb60cf8b54de451845e06
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-the-users-location"></a>Получение местоположения пользователя
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Определение местоположения пользователя и реагирование на его изменение. Доступ к сведениям о местоположении пользователя управляется параметрами конфиденциальности в приложении «Параметры». В этой статье рассказывается, как проверить, имеется ли у вашего приложения разрешение на доступ к данным о местоположении пользователя.
@@ -98,7 +95,7 @@ switch (accessStatus)
 }
 ```
 
-### <a name="step-3-handle-changes-in-location-permissions"></a>Шаг 3. Обработка изменений в разрешениях, связанных с местоположением
+### <a name="step-3-handle-changes-in-location-permissions"></a>Шаг3. Обработка изменений в разрешениях, связанных с местоположением
 
 Объект [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) запускает событие [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) для указания того, что местоположение пользователя изменилось. Это событие передает данные о соответствующем состоянии через свойство аргумента **Status** (типа [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599)). Обратите внимание, что этот метод не вызывается из потока пользовательского интерфейса и объект [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) фактически вызывает изменения пользовательского интерфейса.
 
@@ -173,7 +170,7 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
 
 В этом разделе предполагается, что вы уже включили определение местоположения и вызвали [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) из потока пользовательского интерфейса вашего приложения, выполняющегося на переднем плане.
 
-### <a name="step-1-define-the-report-interval-and-register-for-location-updates"></a>Шаг 1. Задание интервала отчетов и регистрация для обновления данных о местоположении
+### <a name="step-1-define-the-report-interval-and-register-for-location-updates"></a>Шаг1. Задание интервала отчетов и регистрация для обновления данных о местоположении
 
 В этом примере оператор **switch** используется с **accessStatus** (из предыдущего примера), за счет чего действует, только когда доступ к сведениям о местоположении пользователя разрешен. Если доступ к местоположению пользователя разрешен, код создает объект [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534), указывающий тип отслеживания, и регистрируется для обновления данных о местоположении.
 
@@ -218,7 +215,7 @@ switch (accessStatus)
 }
 ```
 
-### <a name="step-2-handle-location-updates"></a>Шаг 2. Обработка обновлений данных о местоположении
+### <a name="step-2-handle-location-updates"></a>Шаг2. Обработка обновлений данных о местоположении
 
 Объект [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) инициирует событие [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) для указания, что местоположение пользователя изменилось или прошло время, в зависимости от настроек. Это событие передает данные о соответствующем местоположении через свойство аргумента **Position** (типа [**Geoposition**](https://msdn.microsoft.com/library/windows/apps/br225543)). В этом примере показано, что метод не вызывается из потока пользовательского интерфейса и объект [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) фактически вызывает изменения пользовательского интерфейса.
 
@@ -270,9 +267,8 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 -   Параметр **Местоположение** служб определения местоположения **включен**
 -   В разделе **Выберите приложения, которым будет разрешено использовать данные о вашем местоположении** для вашего приложения установлено значение **Вкл.**
 
-## <a name="related-topics"></a>Ссылки по теме
+## <a name="related-topics"></a>Связанные разделы
 
 * [Пример определения географического положения UWP](http://go.microsoft.com/fwlink/p/?linkid=533278)
 * [Рекомендации для разработчиков относительно создания геозон](https://msdn.microsoft.com/library/windows/apps/dn631756)
 * [Рекомендации по разработке приложений с определением местоположения](https://msdn.microsoft.com/library/windows/apps/hh465148)
-

@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e8b6d1db99d7076b6f46cc6a97db36bdff62562f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 93314c29de926b988d01da09a6ce7feb21fdcf20
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-speech-recognition-timeouts"></a>Установка времени ожидания распознавания речи
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -36,9 +33,9 @@ ms.lasthandoff: 02/07/2017
 
 Здесь мы указываем различные значения свойства [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253).
 
--   InitialSilenceTimeout — продолжительность периода времени, в течение которого объект SpeechRecognizer обнаруживает тишину (перед получением каких-либо результатов распознавания) и решает, что на вход не будут поступать никакие данные.
--   BabbleTimeout — продолжительность периода времени, в течение которого объект SpeechRecognizer продолжает "прослушивать" нераспознаваемые звуки (бормотание), прежде чем он решит, что речевой ввод закончен, и завершит операцию распознавания.
--   EndSilenceTimeout — продолжительность периода времени, в течение которого объект SpeechRecognizer обнаруживает тишину (после получения результатов распознавания) и решает, что речевой ввод закончен.
+-   InitialSilenceTimeout— продолжительность периода времени, в течение которого объект SpeechRecognizer обнаруживает тишину (перед получением каких-либо результатов распознавания) и решает, что на вход не будут поступать никакие данные.
+-   BabbleTimeout— продолжительность периода времени, в течение которого объект SpeechRecognizer продолжает "прослушивать" нераспознаваемые звуки (бормотание), прежде чем он решит, что речевой ввод закончен, и завершит операцию распознавания.
+-   EndSilenceTimeout— продолжительность периода времени, в течение которого объект SpeechRecognizer обнаруживает тишину (после получения результатов распознавания) и решает, что речевой ввод закончен.
 
 **Примечание.** Время ожидания можно задать отдельно для каждого распознавателя.
 
@@ -60,7 +57,6 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
  
 
  
-
 
 
 

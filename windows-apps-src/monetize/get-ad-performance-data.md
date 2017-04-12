@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, службы Магазина, API аналитики для Магазина Windows, реклама, эффективность"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a9d6226ebb06c1a9322ab44c3001a8b86aab1e5d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a4d907e60ddcd6a1ff093c9feccdefdda9551d09
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-ad-performance-data"></a>Получение данных об эффективности рекламы
 
 
@@ -26,10 +23,10 @@ ms.lasthandoff: 02/07/2017
 ## <a name="prerequisites"></a>Необходимые условия
 
 
-Для использования этого метода необходимо выполнить следующие действия:
+Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](access-analytics-data-using-windows-store-services.md#prerequisites) для API аналитики для Магазина Windows.
-* [Получите маркер доступа Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения токена доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия токена. После истечения срока действия токена можно получить новый токен.
+* [Получите маркер доступа Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия токена можно получить новый токен.
 
 Более подробную информацию см. в разделе [Доступ к аналитическим данным с помощью служб Магазина Windows](access-analytics-data-using-windows-store-services.md).
 
@@ -48,7 +45,7 @@ ms.lasthandoff: 02/07/2017
 
 | Заголовок        | Тип   | Описание           |
 |---------------|--------|--------------------------------|
-| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span />
 
@@ -63,8 +60,8 @@ ms.lasthandoff: 02/07/2017
 | endDate   | date    | Конечная дата в диапазоне дат извлекаемых данных об эффективности в формате ГГГГ/ММ/ДД. По умолчанию используется текущая дата минус один день. |    Нет      |
 | top   | целое число    | Количество строк данных, возвращаемых в запросе. Максимальное значение и значение по умолчанию (если параметр не указан) — 10 000. Если в запросе содержится больше строк, то тело ответа будет содержать ссылку «Далее», которую можно использовать для запроса следующей страницы данных |    Нет      |
 | skip   | int    | Количество строк, пропускаемых в запросе. Используйте этот параметр для постраничного перемещения по большим наборам данных. Например, при top=10000 и skip=0 извлекаются первые 10 000 строк данных; при top=10000 и skip=10000 извлекаются следующие 10 000 строк данных и т. д. |    Нет      |
-| filter   | string    | Один или несколько операторов для фильтрации строк в ответе. Дополнительные сведения см. далее в разделе [фильтрация полей](#filter-fields) |    Нет      |
-| aggregationLevel   | string    | Определяет диапазон времени, для которого требуется получить сводные данные. Можно использовать следующие строки: <strong>day</strong>, <strong>week</strong> или <strong>month</strong>. Если параметр не задан, значение по умолчанию — <strong>day</strong> |    Нет      |
+| filter   | строка    | Один или несколько операторов для фильтрации строк в ответе. Дополнительные сведения см. далее в разделе [фильтрация полей](#filter-fields) |    Нет      |
+| aggregationLevel   | строка    | Определяет диапазон времени, для которого требуется получить сводные данные. Можно использовать следующие строки: <strong>day</strong>, <strong>week</strong> или <strong>month</strong>. Если параметр не задан, значение по умолчанию — <strong>day</strong> |    Нет      |
 | orderby   | строка    | Оператор, который определяет порядок полученных значений данных. Используется следующий синтаксис: <em>orderby=field [порядк.],field [порядк.],...</em>. Параметр <em>field</em> может быть одной из следующих строк:<ul><li><strong>date</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>adUnitId</strong></li></ul><p>Параметр <em>order</em> является необязательным и может принимать значения <strong>asc</strong> или <strong>desc</strong>, которые указывают, соответственно, порядок сортировки по возрастанию или по убыванию для каждого поля. Значение по умолчанию — <strong>asc</strong>.</p><p>Пример: строка <em>orderby</em>: <em>orderby=date,market</em></p> |    Нет      |
 | groupby   | строка    | Оператор, который применяет агрегирование данных только к указанным полям. Можно указать следующие поля:</p><ul><li><strong>applicationId</strong></li><li><strong>applicationName</strong></li><li><strong>date</strong></li><li><strong>accountCurrencyCode</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>adUnitName</strong></li><li><strong>adUnitId</strong></li><li><strong>pubCenterAppName</strong></li><li><strong>adProvider</strong></li></ul><p>Параметр <em>groupby</em> можно использовать вместе с параметром <em>aggregationLevel</em>. Например: <em>&amp;groupby=applicationId&amp;aggregationLevel=week</em></p> |    Нет      |
 
@@ -183,4 +180,3 @@ Authorization: Bearer <your access token>
 
 * [Отчет об эффективности рекламы](../publish/advertising-performance-report.md)
 * [Доступ к аналитическим данным с помощью служб Магазина Windows](access-analytics-data-using-windows-store-services.md)
-

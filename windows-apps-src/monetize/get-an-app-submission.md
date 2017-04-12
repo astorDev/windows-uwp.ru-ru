@@ -1,39 +1,36 @@
 ---
 author: mcleanbyron
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
-description: "Используйте этот метод в API отправки Магазина Windows для получения данных для существующей отправки приложения."
-title: "Получение отправки приложения с помощью API отправки Магазина Windows"
+description: "Используйте этот метод в API отправки Магазина Windows, чтобы получить данные для существующей отправки приложения."
+title: "Получение отправки приложения"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API отправки Магазина Windows, API отправки, отправка приложения"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: 1763ba9ebf95c37afbbb219244010f0d6e7cfee4
-ms.lasthandoff: 02/08/2017
-
+keywords: "Windows 10, UWP, API отправки Магазина Windows, отправка приложения"
+ms.openlocfilehash: 2ecdb66818c020dc3bc608fbd65a97d43b8688ab
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="get-an-app-submission"></a>Получение отправки приложения
 
-# <a name="get-an-app-submission-using-the-windows-store-submission-api"></a>Получение отправки приложения с помощью API отправки Магазина Windows
 
-
-Используйте этот метод в API отправки Магазина Windows для получения данных для существующей отправки приложения. Дополнительные сведения о процессе создания отправки приложения с помощью API отправки Магазина Windows см. в разделе [Управление отправками приложений](manage-app-submissions.md).
+Используйте этот метод в API отправки Магазина Windows, чтобы получить данные для существующей отправки приложения. Дополнительные сведения о процессе создания отправки приложения с помощью API отправки Магазина Windows см. в разделе [Управление отправками приложений](manage-app-submissions.md).
 
 ## <a name="prerequisites"></a>Необходимые условия
 
 Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
-* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
 * Создайте отправку для приложения в учетной записи Центра разработки. Это можно сделать на информационной панели Центра разработки или с помощью метода [Создание отправки приложения](create-an-app-submission.md).
 
 >**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
 ## <a name="request"></a>Запрос
 
-У этого метода следующий синтаксис. Примеры использования и описание заголовка и тела запроса приведены в следующих разделах.
+У этого метода следующий синтаксис. Примеры использования и описание текста заголовка и запроса приведены в следующих разделах.
 
 | Метод | URI запроса                                                      |
 |--------|------------------------------------------------------------------|
@@ -46,7 +43,7 @@ ms.lasthandoff: 02/08/2017
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
@@ -54,14 +51,14 @@ ms.lasthandoff: 02/08/2017
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | строка | Обязательный. Код приложения в Магазине с отправкой, которую требуется получить. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | string | Обязательный. Идентификатор отправки, которую требуется получить. Этот идентификатор отображается на информационной панели Центра разработки, а также добавляется в данные ответов для запросов на [Создание отправки приложения](create-an-app-submission.md).  |
+| applicationId | Строка | Обязательный. Код приложения в Магазине с отправкой, которую требуется получить. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| submissionId | Строка | Обязательный. Идентификатор отправки, которую требуется получить. Этот идентификатор отображается на информационной панели Центра разработки, а также добавляется в данные ответов для запросов на [Создание отправки приложения](create-an-app-submission.md).  |
 
 <span/>
 
 ### <a name="request-body"></a>Тело запроса
 
-Предоставлять тело запроса для этого метода не требуется.
+Предоставлять текст запроса для этого метода не требуется.
 
 ### <a name="request-example"></a>Пример запроса
 
@@ -85,7 +82,7 @@ Authorization: Bearer <your access token>
     "marketSpecificPricings": {},
     "sales": [],
     "priceId": "Tier2",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -94,13 +91,17 @@ Authorization: Bearer <your access token>
     "en-us": {
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
-        "keywords": [],
+        "keywords": [
+           "epub"
+        ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
-        "features": [],
+        "features": [
+          "Free ebook reader"
+        ],
         "releaseNotes": "",
         "images": [
           {
@@ -111,9 +112,13 @@ Authorization: Bearer <your access token>
           }
         ],
         "recommendedHardware": [],
-        "title": "ApiTestApp For Devbox"
+        "title": "Contoso ebook reader"
       },
-      "platformOverrides": {}
+      "platformOverrides": {
+        "Windows81": {
+          "description": "Ebook reader for Windows 8.1"
+        }
+      }
     }
   },
   "hardwarePreferences": [
@@ -157,7 +162,7 @@ Authorization: Bearer <your access token>
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -189,7 +194,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
 * [Создание отправки приложения](create-an-app-submission.md)
@@ -197,4 +202,3 @@ Authorization: Bearer <your access token>
 * [Обновление отправки приложения](update-an-app-submission.md)
 * [Удаление отправки приложения](delete-an-app-submission.md)
 * [Получение состояния отправки приложения](get-status-for-an-app-submission.md)
-

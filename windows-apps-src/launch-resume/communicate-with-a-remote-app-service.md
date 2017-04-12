@@ -1,22 +1,19 @@
 ---
 author: PatrickFarley
 title: "Обмен данными с удаленной службой приложения"
-description: "Обмен сообщениями со службой приложения на удаленном устройстве с помощью проекта «Рим»."
+description: "Обмен сообщениями со службой приложения на удаленном устройстве с помощью Project Rome."
 ms.assetid: a0261e7a-5706-4f9a-b79c-46a3c81b136f
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0cac219625fbc7b6526c81cf11f010589d2bf000
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows 10, UWP
+ms.openlocfilehash: 3848ab99538ab198f92890ac06da733169084f6a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="communicate-with-a-remote-app-service"></a>Обмен данными с удаленной службой приложений
+# <a name="communicate-with-a-remote-app-service"></a>Обмен данными с удаленной службой приложения
 
 Помимо запуска приложения на удаленном устройстве с помощью универсального кода ресурса (URI), можно также запускать на удаленных устройствах *службы приложений* и обмениваться данными с этими службами. Любое устройство на основе Windows можно использовать как клиентское или главное устройство. Это дает практически неограниченное количество способов взаимодействия с подключенными устройствами без необходимости переноса приложения на передний план.
 
@@ -87,11 +84,10 @@ ms.lasthandoff: 02/07/2017
 
 Теперь вы подключены к службе приложений на целевом главном устройстве, выполнили операцию на этом устройстве и получили данные на клиентском устройстве в ответном сообщении.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные разделы
 
-[Обзор подключенных приложений и устройств (проект "Рим")](connected-apps-and-devices.md)  
+[Обзор подключенных приложений и устройств (Project Rome)](connected-apps-and-devices.md)  
 [Запуск удаленного приложения](launch-a-remote-app.md)  
 [Создание и использование службы приложений](how-to-create-and-consume-an-app-service.md)  
 [Справочник по API удаленных систем](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [Пример удаленных систем](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)
-

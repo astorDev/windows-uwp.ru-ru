@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, рекламы, реклама, AdControl, XAML, .net, пошаговое руководство"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: db84e03d0cefb4692689ed901f25930a064f9a31
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9db232709d3aa4ca1b7a6c6672cb2d1c1dea5049
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-in-xaml-and-net"></a>AdControl в XAML и .NET
 
 
@@ -155,4 +152,3 @@ ms.lasthandoff: 02/07/2017
 * [Примеры рекламы на GitHub](http://aka.ms/githubads)
 
  
-

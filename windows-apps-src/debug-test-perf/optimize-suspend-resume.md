@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2771d7dae6df171855297ab988bbd00ecfa55d1d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 491ce616f557d26ad7a5fdf1c068f1c9784bd046
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-suspendresume"></a>Оптимизация времени приостановки и возобновления работы
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Создавайте приложения универсальной платформы Windows (UWP), которые упростят использование системы жизненных циклов процессов для эффективного восстановления после приостановки или завершения.
 
@@ -92,7 +90,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

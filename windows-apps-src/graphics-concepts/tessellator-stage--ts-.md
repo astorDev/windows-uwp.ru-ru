@@ -2,21 +2,17 @@
 title: "Этап тесселятора (TS)"
 description: "Этап тесселятора (TS) создает шаблон выборки домена, который представляет преобразование геометрии и формирует набор меньших объектов (треугольников, точек и линий), которые соединяют эти выборки."
 ms.assetid: 2F006F3D-5A04-4B3F-8BC7-55567EFCFA6C
-keywords:
-- "Этап тесселятора (TS)"
+keywords: "Этап тесселятора (TS)"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b50139fe60bb36df06e8f50d7b529602f0e6d764
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0a18a2ba4172fb4c7aad1d4e8a071bf077afeead
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tessellator-ts-stage"></a>Этап тесселятора (TS)
 
 
@@ -99,7 +95,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

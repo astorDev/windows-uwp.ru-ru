@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, элемент управления картой, карты, расположение"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ad6267e0294e4a62c1e586c066ce9d0489940d7d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fb1bf78d247ca291ee40405d4143cbb6bc85230f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="map-control"></a>Элемент управления картой
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Элемент управления картой может отображать карты дорог и гибридный трехмерный вид, маршруты, результаты поиска и сведения о ситуации на дорогах. На карте можно показать положение пользователя, маршруты и интересные места. Карта может также показывать трехмерный гибридный вид, представления Streetside, предоставлять сведения о ситуации на дорогах и показывать сведения о местных организациях и заведениях.
@@ -74,4 +71,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

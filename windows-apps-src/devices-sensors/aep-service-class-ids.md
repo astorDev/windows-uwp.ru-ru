@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d2259c82acf700d21f4c3f51a367180bb976f636
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 354ed6c8d2a58bff68c798e66bfde0be03c5b140
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="aep-service-class-ids"></a>Идентификаторы класса службы AEP
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -30,7 +28,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="bluetooth-and-bluetooth-le-services"></a>Bluetooth и службы Bluetooth с низким энергопотреблением
 
-Службы Bluetooth используют один из двух протоколов — Bluetooth или Bluetooth с низким энергопотреблением. Эти протоколы имеют такие идентификаторы:
+Службы Bluetooth используют один из двух протоколов— Bluetooth или Bluetooth с низким энергопотреблением. Эти протоколы имеют такие идентификаторы:
 
 -   Идентификатор протокола Bluetooth: {e0cbf06c-cd8b-4647-bb8a263b43f0f974}.
 -   Идентификатор протокола Bluetooth с низким энергопотреблением: {bb7bb05e-5972-42b5-94fc76eaa7084d49}.
@@ -131,4 +129,3 @@ System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}
  
 
  
-

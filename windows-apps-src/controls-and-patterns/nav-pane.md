@@ -11,32 +11,20 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a5f15129c424c92ac537116458c8433f6c96fa87
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2d48a92d5af75f8543f7b69ac59865e51bd334ee
+ms.sourcegitcommit: d1d53f5100edffe3f3ee57b853dc8cd1568fe7a2
+translationtype: HT
 ---
 # <a name="nav-panes"></a>Панели навигации
-
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Панель навигации — это шаблон, который позволяет использовать множество элементов навигации верхнего уровня, сохраняя при этом свободное пространство экрана. Панель навигации широко используется в мобильных приложениях, но также подходит и для больших экранов. При использовании как наложение панель остается свернутой и не открывается, пока пользователь не нажмет кнопку, что удобно для маленьких экранов. При использовании в режиме стыковки панель остается открытой, что обеспечивает больше возможностей, если экранного пространства достаточно.
 
 ![Пример панели навигации](images/navHero.png)
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс SplitView**](https://msdn.microsoft.com/library/windows/apps/dn864360)</li>
-<li> </li>
-<li> </li>
-<li> </li>
-<li> </li>
-<li> </li>
-</ul>
-</div>
 
+**Важные API**
+
+* [**Класс SplitView**](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 ## <a name="is-this-the-right-pattern"></a>Выбор правильного шаблона
 
@@ -52,15 +40,12 @@ ms.lasthandoff: 02/07/2017
 
 Шаблон панели навигации состоит из панели для категорий навигации, области содержимого и необязательной кнопки для открытия и закрытия панели. Самый простой способ создать панель навигации — это использовать [элемент управления "Комбинированный режим"](split-view.md), который представляет собой пустую панель с всегда видимой областью содержимого.
 
-Чтобы опробовать код, реализующий этот шаблон, скачайте [Решение для навигации по XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlNavigation) из центра GitHub.
+Чтобы опробовать код, реализующий этот шаблон, загрузите [Решение для навигации по XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlNavigation) из центра GitHub.
 
-<div class="microsoft-internal-note">
-Красные указатели для панели навигации и кнопки-гамбургера доступны в [UNI](http://uni/DesignDepot.FrontEnd/#/Search?c=t&t=Windows%2BRS1%2BControls&f=NavPane_Hamburger).
-</div>
 
 ### <a name="pane"></a>Панель
 
-Заголовки для категорий навигации отображаются на панели. Точки входа для параметров приложения и управления учетной записью, если применимо, также входят в панель. Заголовки навигации — это, как правило, список доступных для выбора элементов.
+Заголовки для категорий навигации отображаются на панели. Точки входа для параметров приложения и управления учетной записью, если применимо, также входят в панель. Заголовки навигации— это, как правило, список доступных для выбора элементов.
 
 ![Пример панели на панели навигации](images/nav_pane_expanded.png)
 
@@ -124,7 +109,7 @@ ms.lasthandoff: 02/07/2017
 
 ![Пример элементов на адаптированной панели навигации](images/nav_item_states.png)
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [Элемент управления "Комбинированный режим"](split-view.md)
 * [Основные и подробные данные](master-details.md)
@@ -132,4 +117,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

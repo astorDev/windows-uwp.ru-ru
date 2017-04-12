@@ -1,35 +1,32 @@
 ---
 author: mcleanbyron
 ms.assetid: ae45490f-3eb1-4b7f-8e18-bf82f0ca5d6d
-description: "Получите сведения, необходимые для начала работы с использованием библиотек Microsoft Advertising для добавления рекламных баннеров и промежуточной видеорекламы в приложения."
+description: "Получите информацию по началу работы с использованием библиотек Microsoft Advertising для добавления рекламных баннеров и межстраничных объявлений в приложения."
 title: "Начало работы с библиотеками Microsoft Advertising"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, рекламные объявления, реклама, начало работы"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 81392a218165d4e0c2b954bdc6cb7789f7aa63f1
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, рекламные объявления, реклама, начало работы"
+ms.openlocfilehash: f506fa6145aede8e69aad8c5a7e76f11e5db66d4
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
-# <a name="get-started-with-the-microsoft-advertising-libraries"></a>Начало работы с библиотеками Microsoft Advertising
-
+# <a name="get-started-with-the-advertising-libraries"></a>Начало работы с библиотеками Microsoft Advertising
 
 
 
-Эта тема предоставляет сведения, необходимые для начала работы с библиотеками Microsoft Advertising для добавления рекламных баннеров и промежуточной видеорекламы в приложения. Ознакомившись с темами в этом разделе, приступайте к изучению [пошаговых руководств для разработчиков](developer-walkthroughs.md) с примерами написания кода для отображения рекламы в приложениях.
 
-Полные примеры проектов, демонстрирующие способы добавления баннеров и промежуточной видеорекламы в приложения на JavaScript/HTML, а также в приложения на XAML с помощью языков C# и C++, см. в [примерах рекламы на GitHub](http://aka.ms/githubads).
+В этой статье предоставлены сведения, необходимые для начала работы с библиотеками Microsoft Advertising для добавления рекламных баннеров и межстраничных объявлений в приложения. Ознакомившись с темами в этом разделе, приступайте к изучению [пошаговых руководств для разработчиков](developer-walkthroughs.md) с примерами написания кода для отображения рекламы в приложениях.
+
+Полные примеры проектов, демонстрирующие способы добавления баннеров и межстраничных объявлений в приложения JavaScript/HTML, а также в приложения XAML с помощью языков C# и C++, см. в [примерах рекламы на GitHub](http://aka.ms/githubads).
 
  
 
 ## <a name="in-this-section"></a>В этом разделе
 
-| Тема                                                                                                       | Описание                 |
+| Раздел                                                                                                       | Описание                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
 | [Установка библиотек Microsoft Advertising](install-the-microsoft-advertising-libraries.md) |  Предоставляет сведения об установке и перечисляет имена библиотек Microsoft Advertising и библиотек рекламного посредника в том виде, в котором они отображаются в диалоговом окне **Диспетчер ссылок** в Visual Studio.  |
 | [Процессы создания приложений с рекламой](workflows-for-creating-apps-with-ads.md)     |  Содержит общие инструкции по разработке и публикации приложения с рекламой.   |
@@ -38,10 +35,8 @@ ms.lasthandoff: 02/07/2017
 | [Заметки о выпуске](release-notes-for-the-advertising-libraries.md)         |  Содержит заметки о текущем выпуске библиотек Microsoft Advertising в Microsoft Store Services SDK (для приложений UWP) и Microsoft Advertising SDK для Windows и Windows Phone 8.x (для приложений Windows 8.1 и Windows Phone 8.x).   |
 | [Известные проблемы](known-issues-for-the-advertising-libraries.md)      |  Содержит список известных проблем в текущем выпуске библиотек Microsoft Advertising в Microsoft Store Services SDK (для приложений UWP) и Microsoft Advertising SDK для Windows и Windows Phone 8.x (для приложений Windows 8.1 и Windows Phone 8.x).   |
 | [Дополнительная справка](additional-help.md)                                    |   Предоставляет ссылки на дополнительные ресурсы о разработке приложений с рекламой.  |
-| [Важное примечание — EULA](important-notice-eula.md)                                    |   Предоставляет подробные сведения о лицензионном соглашении с конечным пользователем (EULA) для библиотек Microsoft Advertising.   |
 
 
  
 
  
-

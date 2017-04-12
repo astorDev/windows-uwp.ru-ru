@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f3ebf555d943e302ed5f505a91659bf1d9489e17
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4bfe0e3904695edd848ef4c9a7b960d8cc01d4c9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="use-the-light-sensor"></a>Использование датчика освещенности
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -26,7 +24,7 @@ ms.lasthandoff: 02/07/2017
 
 Узнайте, как использовать датчик освещенности, чтобы обнаруживать изменения уровня освещенности.
 
-Датчик освещенности — это один из типов датчиков, которые позволяют приложению реагировать на изменение условий окружающей пользователя среды.
+Датчик освещенности— это один из типов датчиков, которые позволяют приложению реагировать на изменение условий окружающей пользователя среды.
 
 ## <a name="prerequisites"></a>Необходимые условия
 
@@ -150,7 +148,7 @@ ms.lasthandoff: 02/07/2017
 _lightsensor = LightSensor.GetDefault(); // Get the default light sensor object
 ```
 
-Приложение устанавливает интервал передачи данных в методе **BlankPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16 миллисекунд (что приблизительно соответствует частоте обновления 60 Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
+Приложение устанавливает интервал передачи данных в методе **BlankPage**. Этот код позволяет получить значение минимально допустимого для данного устройства интервала и сравнить его с требуемым интервалом в 16миллисекунд (что приблизительно соответствует частоте обновления 60Гц). Если минимально допустимый интервал больше требуемого, то код задает значение интервала, равное минимальному. В противном случае задается значение интервала, равное необходимому.
 
 ```csharp
 uint minReportInterval = _lightsensor.MinimumReportInterval;
@@ -164,15 +162,14 @@ _lightsensor.ReadingChanged += new TypedEventHandler<LightSensor,
 LightSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
-Эти новые значения записываются в элемент TextBlock, который находится в XAML проекта.
+Эти новые значения записываются в элемент TextBlock в XAML-коде проекта.
 
 ```xml
 <TextBlock HorizontalAlignment="Left" Height="44" Margin="52,38,0,0" TextWrapping="Wrap" Text="LUX Reading" VerticalAlignment="Top" Width="150"/>
  <TextBlock x:Name="txtLuxValue" HorizontalAlignment="Left" Height="44" Margin="224,38,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="217"/>
 ```
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [Пример работы с LightSensor](http://go.microsoft.com/fwlink/p/?linkid=241381)
  
-

@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "Подумайте, как часто в повседневной жизни мы сталкиваемся с текстом — электронная почта, книги, дорожные знаки, цены в меню, обозначение давления в шинах, объявления на столбах..."
+Description: "Подумайте, как часто в повседневной жизни мы сталкиваемся с текстом - электронная почта, книги, дорожные знаки, цены в меню, обозначение давления в шинах, объявления на столбах..."
 title: "Текстовые элементы управления"
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 41c5b771440a3ad88b3c1fcc2aec57b2e080741b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8be1dac30047a647d7f80464b53fe2fc3527d2c3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="text-controls"></a>Текстовые элементы управления
 
@@ -186,7 +184,7 @@ ms.lasthandoff: 02/07/2017
 
 Для элементов управления TextBox и RichEditBox проверка орфографии включена по умолчанию. Ее можно выключить, задав для свойства **IsSpellCheckEnabled** значение **false**.
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 **Проектировщикам**
 - [**Шрифт, руководство**](fonts.md)
@@ -197,4 +195,3 @@ ms.lasthandoff: 02/07/2017
 - [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Класс Windows.UI.Xaml.Controls PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length.aspx)
-

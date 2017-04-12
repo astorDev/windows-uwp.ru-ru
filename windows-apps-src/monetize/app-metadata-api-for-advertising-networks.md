@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, рекламная сеть, метаданные приложения"
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8ee555d335007a09c61247a929705aa2fff2469d
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d377fe7e1eb71132ffa21dd1b11dddf9ca9bb084
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-metadata-api-for-advertising-networks"></a>API метаданных приложения для рекламных сетей
 
 Рекламные сети могут использовать *API метаданных приложения*, чтобы программно получать метаданные о приложениях в Магазине Windows, в том числе описание приложения, категорию описания в Магазине и сведения о возрастном рейтинге. Доступ к этому API есть только у разработчиков, которым корпорация Майкрософт предоставила разрешение для этого API.
@@ -135,4 +132,3 @@ Ocp-Apim-Subscription-Key: <subscription key>
  
 
  
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 30a84f9b36c8ce3ba339f6526ecb8f801f585492
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 79eabb1341d9a14ec924a1933917e92af797b65a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="play-audio-and-video-with-mediaplayer"></a>Воспроизведение аудио и видео с помощью MediaPlayer
 
 В этой статье рассказывается, как воспроизводить мультимедиа в универсальном приложении для Windows с помощью класса [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer). В Windows 10 версии 1607 внесены значительные улучшения в интерфейсы API воспроизведения мультимедиа, включая упрощенную состоящую из одного процесса методику фонового воспроизведения звука, автоматическую интеграцию с системными элементами управления транспортировкой мультимедиа (SMTC), возможность синхронизации нескольких проигрывателей мультимедиа, возможность использования поверхности Windows.UI.Composition и удобный интерфейс создания и планирования мультимедийных вставок в содержимое. Для реализации этих улучшений рекомендуется использовать класс **MediaPlayer** вместо **MediaElement** для воспроизведения мультимедийного содержимого. Добавлен облегченный элемент управления XAML [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement), предназначенный для отрисовки мультимедийного содержимого на странице XAML. Многие API состояния и управления воспроизведением, предоставляемые классом **MediaElement**, теперь доступны с помощью нового объекта [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession). **MediaElement** продолжает выполнять функцию поддержки обратной совместимости, но дополнительные возможности в этот класс добавляться не будут.
@@ -163,7 +160,7 @@ ms.lasthandoff: 02/08/2017
 
 Обратите внимание, что если значение смещения проигрывателя попадает на отрицательную позицию воспроизведения, содержимое останется в режиме паузы до достижения нулевого смещения, а затем начнется воспроизведение. Аналогичным образом, если значение смещения попадает на позицию воспроизведения, превышающую продолжительность элемента мультимедиа, будет отображаться последний кадр, как в случае достижения одним проигрывателем конца содержимого.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 * [Воспроизведение мультимедиа](media-playback.md)
 * [Элементы, плей-листы и звуковые дорожки мультимедиа](media-playback-with-mediasource.md)
 * [Интеграция с системными элементами управления транспортировкой мультимедиа](integrate-with-systemmediatransportcontrols.md)
@@ -177,7 +174,6 @@ ms.lasthandoff: 02/08/2017
  
 
  
-
 
 
 

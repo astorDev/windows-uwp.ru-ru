@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, игры, гарнитура"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 04baee2a3011cee63933fe1fdab759d1b6d29c89
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="headset"></a>Гарнитура
 
-На этой странице приведены основные принципы программирования для гарнитур с помощью API [Windows.Gaming.Input.Headset][гарнитуры] и связанных API для универсальной платформы Windows (UWP).
+На этой странице приведены основные принципы программирования для гарнитур с помощью API-интерфейсов [Windows.Gaming.Input.Headset][гарнитуры] и связанных API для универсальной платформы Windows (UWP).
 
 Прочитав эту страницу, вы узнаете:
 * Как получить доступ к гарнитуре, подключенной к устройству навигации или ввода.
@@ -27,7 +24,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="headset-overview"></a>Обзор гарнитуры
 
-Гарнитуры — это устройства захвата и воспроизведения звука, которые чаще всего используются для связи с другими игроками в онлайн-играх, однако некоторые модели могут также использоваться в игровом процессе или другим оригинальным образом. Поддержка гарнитур в приложениях UWP для Windows 10 и Xbox реализована с помощью пространства имен [Windows.Gaming.Input][].
+Гарнитуры— это устройства захвата и воспроизведения звука, которые чаще всего используются для связи с другими игроками в онлайн-играх, однако некоторые модели могут также использоваться в игровом процессе или другим оригинальным образом. Поддержка гарнитур в приложениях UWP для Windows 10 и Xbox реализована с помощью пространства имен [Windows.Gaming.Input][].
 
 
 ## <a name="detect-and-track-headsets"></a>Обнаружение и отслеживание гарнитур
@@ -66,7 +63,7 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 
 ## <a name="using-the-headset"></a>Использование гарнитуры
 
-Класс [Headset][] состоит из двух строк, представляющих идентификаторы конечной точки XAudio — один для записи звука (запись с микрофона гарнитуры) и другой для обработки звука (воспроизведения через наушник гарнитуры).
+Класс [Headset][] состоит из двух строк, представляющих идентификаторы конечной точки XAudio— один для записи звука (запись с микрофона гарнитуры) и другой для обработки звука (воспроизведения через наушник гарнитуры).
 
 Инструкции по работе с XAudio в этом разделе не приводятся. Дополнительные сведения см. в разделе [Руководство по программированию для XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415737.aspx) и [Справочник по API XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415899.aspx).
 
@@ -77,4 +74,3 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 [igamecontroller.headsetconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetconnected.aspx
 [igamecontroller.headsetdisconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetdisconnected.aspx
 [headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
-

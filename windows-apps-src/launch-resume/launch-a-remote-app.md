@@ -1,21 +1,18 @@
 ---
 author: TylerMSFT
 title: "Запуск приложения на удаленном устройстве"
-description: "Узнайте, как запустить приложение на удаленном устройстве с помощью проекта &quot;Рим&quot;."
+description: "Узнайте, как запустить приложение на удаленном устройстве с использованием платформы Project Rome."
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e3ef31ed9a90122ae0634274ac5794e67017bc2f
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 15ab4c39f4da1bb524f912d4e6ab6b3e6a5f34c6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-an-app-on-a-remote-device"></a>Запуск приложения на удаленном устройстве
 
 В этой статье объясняется, как запустить приложение для Windows на удаленном устройстве.
@@ -68,7 +65,6 @@ ms.lasthandoff: 02/08/2017
 ## <a name="related-topics"></a>Статьи по теме
 
 [Справочник по API удаленных систем](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
-[Обзор подключенных приложений и устройств (проект "Рим")](connected-apps-and-devices.md)  
+[Обзор подключенных приложений и устройств (Project Rome)](connected-apps-and-devices.md)  
 [Обнаружение удаленных устройств](discover-remote-devices.md)  
 [Пример удаленных систем](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) демонстрирует, как обнаружить удаленную систему, запустить приложение в удаленной системе и использовать службы приложений для передачи сообщений между приложениями, работающими в двух системах.
-

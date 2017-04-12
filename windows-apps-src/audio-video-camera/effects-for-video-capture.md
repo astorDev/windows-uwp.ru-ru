@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 60b3d3874ea90b7d626ff1a78c104348ff80dc09
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7e8d65576347308eea7dd2f445961ba366557fa3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="effects-for-video-capture"></a>Эффекты для видеозахвата
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе показано, как применять эффекты к предварительному просмотру камеры и потокам видеозаписи, а также как использовать эффект стабилизации видео.
 
@@ -103,14 +100,13 @@ ms.lasthandoff: 02/07/2017
 
 [!code-cs[CleanUpVisualStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetCleanUpVisualStabilizationEffect)]
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
-
 
 
 

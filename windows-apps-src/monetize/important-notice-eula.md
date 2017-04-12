@@ -3,35 +3,14 @@ author: mcleanbyron
 ms.assetid: 5efb4f40-a021-4dd2-82b4-7c95c3849485
 description: "Полностью прочитайте лицензионное соглашение с пользователем (EULA), чтобы узнать важные сведения."
 title: "Важное примечание: лицензионное соглашение"
+redirect_url: https://docs.microsoft.com/windows/uwp/monetize/display-ads-in-your-app
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, рекламные объявления, реклама, лицензионное соглашение"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c2c9998eccd470f574cc34314635de4c62f3f171
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, рекламные объявления, реклама, лицензионное соглашение"
+ms.openlocfilehash: a224e77274151e477d49ac139a6fcc57352bc82d
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
-# <a name="important-notice---eula"></a>Важное примечание: лицензионное соглашение
-
-
-
-
-Полностью прочитайте лицензионное соглашение с пользователем (EULA).
-
-Лицензионное соглашение с пользователем содержит важную информацию, **включая текст, использование которого должно регулироваться вашей собственной политикой конфиденциальности и/или заявлением об условиях использования**, если в вашем приложении используется реклама. Убедитесь, что ваше приложение соответствует всем разделам лицензионного соглашения с пользователем, в том числе разделам, связанным с **Требованиями о повторном распространении**, **Сбором данных**, а также **Использованием и дополнительными соглашениями**.
-
-Лицензионное соглашение с пользователем содержится в папке, в которой находятся ваши пакеты SDK расширений. Папка может быть другой в зависимости от параметров, выбранных при установке. По умолчанию используется путь установки C:\\Program Files (x86)\\Microsoft SDKs\\Windows Kits\\10\\ExtensionSDKs\\Microsoft.AdMediator.Universal\\1.0.
-
-## <a name="related-topics"></a>Связанные разделы
-
-[Отправьте приложение с рекламными объявлениями в Магазин Windows](submit-an-app-with-ads-to-the-windows-store.md)
-
- 
-
- 
-

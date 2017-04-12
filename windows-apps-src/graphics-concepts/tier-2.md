@@ -2,21 +2,17 @@
 title: "Уровень 2"
 description: "Поддержка второго уровня потоковых ресурсов добавляет новые возможности по сравнению с первым уровнем, например обеспечивает не упакованные MIP-карты текстур при размере, превышающем размер одной стандартной формы плитки; инструкции шейдеров для закрепления уровня детализации (LOD) и получения состояния операции шейдера; а также обработка значения, выбранного при чтении из плиток с сопоставлением NULL, в качестве нуля."
 ms.assetid: 111A28EA-661A-4D29-921A-F2E376A46DC5
-keywords:
-- "Уровень 2"
+keywords: "Уровень 2"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0416d6751a002f51310fe609e862b52fd35623a2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c8a1d1c830c201018c3384096d3eeae3b25962b4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tier-2"></a>Уровень 2
 
 
@@ -72,7 +68,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

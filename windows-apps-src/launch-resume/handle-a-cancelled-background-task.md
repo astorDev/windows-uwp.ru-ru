@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7211ba08f1b697fb79cfca767300c92e6e41fb68
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 41a089ca2cd5269204e3f67df8fed7081ce57ff9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-a-cancelled-background-task"></a>Обработка отмененной фоновой задачи
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -334,12 +331,12 @@ ms.lasthandoff: 02/07/2017
 > }
 > ```
 
-> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). Если вы разрабатываете приложения для Windows 8.x или Windows Phone 8.x, обратитесь к [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
-* [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-a-background-task.md)
+* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 * [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
@@ -351,4 +348,3 @@ ms.lasthandoff: 02/07/2017
 * [Использование триггера обслуживания](use-a-maintenance-trigger.md)
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Вызов событий приостановки, возобновления и фоновых событий в приложениях Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-

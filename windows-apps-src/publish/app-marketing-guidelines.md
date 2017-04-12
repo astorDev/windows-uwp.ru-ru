@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 518631e791746259dc4ee6f23184c8fc01ace427
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e7d327cbe8d99b6b10ae4ccdeb8c7a6f0ee2ac5e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-store-app-marketing-guidelines"></a>Рекомендации по продвижению приложений Магазина Windows
 
 Узнайте, как продвигать приложения и содержимое в Магазине Windows. В этих рекомендациях описано, как использовать доступные вам ресурсы и рекомендации для продвижения ваших приложений в печати, на ТВ, в социальных сетях и цифровой форме.
@@ -55,7 +52,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

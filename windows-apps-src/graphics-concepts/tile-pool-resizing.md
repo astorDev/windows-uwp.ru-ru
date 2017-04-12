@@ -2,21 +2,17 @@
 title: "Изменение размера пула плиток"
 description: "Увеличьте размер пула плиток, если приложению требуется более широкий рабочий набор для сопоставленных потоковых ресурсов, или уменьшите его, если требуется меньше места."
 ms.assetid: A54A06DC-BDDB-42DC-85E8-C64241100ED5
-keywords:
-- "Изменение размера пула плиток"
+keywords: "Изменение размера пула плиток"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 918b9e7ada2d6c368bb51ff42139504e41c01f15
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 57d2f919b2813e31345e057a515ed9184ae40cd9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tile-pool-resizing"></a>Изменение размера пула плиток
 
 
@@ -38,7 +34,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

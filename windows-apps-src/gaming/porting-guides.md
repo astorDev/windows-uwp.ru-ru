@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, игры, перенос, direct3d 11"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 5d5dd570dca35bc06c69ba18a986d240ee2a54a5
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="game-porting-guides"></a>Руководства по портированию игр
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Содержит инструкции по переносу существующих игр на Direct3D 11, универсальную платформу Windows (UWP) и Windows 10.
 
@@ -55,7 +52,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

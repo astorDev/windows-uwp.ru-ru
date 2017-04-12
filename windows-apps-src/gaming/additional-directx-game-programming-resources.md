@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, игры, программирование"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 736f5f5864edc9c7a976e8e0f062779ddd1f86c5
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="game-programming-resources"></a>Ресурсы по программированию игр
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Следующие ресурсы содержат дополнительную информацию о программировании игр для Windows.
@@ -47,7 +44,7 @@ ms.lasthandoff: 02/07/2017
 
 -   [Набор инструментов DirectX](  http://go.microsoft.com/fwlink/p/?LinkID=248929)
 -   [Библиотеки обработки текстур DirectXTex](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
--   [Диагностика графики](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx) в Microsoft Visual Studio
+-   [Диагностика графики](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx) в MicrosoftVisualStudio
 -   [Win2D](https://github.com/Microsoft/Win2D) — простой в использовании API среды выполнения Windows для отрисовки двумерной графики в непосредственном режиме с ускорением GPU.
 -   [ANGLE для Магазина Windows](http://go.microsoft.com/fwlink/p/?linkid=618387) — запуск содержимого OpenGL ES в Windows путем преобразования вызовов API OpenGL ES в вызовы API DirectX 11.
 
@@ -72,9 +69,9 @@ ms.lasthandoff: 02/07/2017
 ## <a name="build-2015-session-videos"></a>Видеозаписи мероприятий //Build 2015
 
 
--   [Введение в Win2D: рисование с помощью DirectX в C#](https://channel9.msdn.com/Events/Build/2015/2-631) — Simon Tao (Саймон Тао)
--   [ANGLE: выполнение графического кода OpenGL ES 2.0 в Windows](https://channel9.msdn.com/Events/Build/2015/3-686) — Tony Balogh (Тони Балог)
--   [Улучшенная графика и производительность DirectX12](https://channel9.msdn.com/Events/Build/2015/3-673) — Макс Макмаллен (Max McMullen)
+-   [Введение в Win2D: рисование с помощью DirectX в C#](https://channel9.msdn.com/Events/Build/2015/2-631)— Simon Tao (Саймон Тао)
+-   [ANGLE: выполнение графического кода OpenGL ES 2.0 в Windows](https://channel9.msdn.com/Events/Build/2015/3-686)— Tony Balogh (Тони Балог)
+-   [Улучшенная графика и производительность DirectX12](https://channel9.msdn.com/Events/Build/2015/3-673)— Макс Макмаллен (Max McMullen)
 
 ## <a name="other-resources"></a>Другие ресурсы
 
@@ -85,7 +82,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

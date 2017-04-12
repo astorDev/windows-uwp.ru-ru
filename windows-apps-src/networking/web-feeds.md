@@ -1,6 +1,6 @@
 ---
 author: DelfCo
-description: "Получайте или создавайте самое свежее и популярное веб-содержимое с помощью сводных веб-каналов, созданных по стандартам RSS и Atom с использованием компонентов в пространстве имен Windows.Web.Syndication."
+description: "Получайте или создавайте самое свежее и популярное веб-содержимое с помощью сводных веб-каналов, созданных по стандартам RSS и Atom с помощью компонентов в пространстве имен Windows.Web.Syndication."
 title: "Каналы RSS и Atom"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ms.author: bobdel
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: da28caa7703a04b1d11254d9c894cf02b044ab64
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: dff718fe6ea3516730079c7533b6a868b8f67280
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="rssatom-feeds"></a>Каналы RSS и Atom
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -36,7 +33,7 @@ ms.lasthandoff: 02/07/2017
 
 Универсальная платформа Windows (UWP) поддерживает извлечение веб-каналов формата RSS версий 0.91–2.0 и формата Atom версий 0.3–1.0. Классы в пространстве имен [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) могут определять веб-каналы и их элементы, способные представлять элементы RSS и Atom.
 
-Кроме того, в форматах Atom 1.0 и RSS 2.0 документы веб-каналов могут содержать элементы или атрибуты, не определенные в официальных спецификациях. Со временем эти особые элементы стали способом определения информации домена, потребляемой другими форматами данных веб-служб, например GData и OData. Чтобы обеспечить поддержку нового компонента, класс [**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) представляет универсальные XML-элементы. Использование **SyndicationNode** с классами в пространстве имен [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) позволяет приложениям получать доступ к атрибутам, расширениям и любому содержимому, которое они могут включать.
+Кроме того, в форматах Atom1.0 и RSS2.0 документы веб-каналов могут содержать элементы или атрибуты, не определенные в официальных спецификациях. Со временем эти особые элементы стали способом определения информации домена, потребляемой другими форматами данных веб-служб, например GData и OData. Чтобы обеспечить поддержку нового компонента, класс [**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) представляет универсальные XML-элементы. Использование **SyndicationNode** с классами в пространстве имен [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) позволяет приложениям получать доступ к атрибутам, расширениям и любому содержимому, которое они могут включать.
 
 Обратите внимание, что для публикации сводного содержимого реализация протокола Atom Publication ([**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)) платформы UWP поддерживает только операции с содержимым веб-каналов согласно стандартам Atom и Atom Publication.
 
@@ -237,4 +234,3 @@ function displayCurrentItem() {
     });
 }
 ```
-

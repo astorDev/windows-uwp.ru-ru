@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f8d6c28daea2a3d5be67ad2b5da5a05a46f736cc
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 4076bd9edf26108e896e3a7734c2108a00577cd0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="version-adaptive-code-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Адаптивный к версии код: используйте новые API, сохраняя совместимость с предыдущими версиями
 
 В каждом выпуске Windows 10 SDK добавляются новые возможности, которыми вы наверняка захотите воспользоваться. Однако не все ваши пользователи обновляют свои устройства до последней версии Windows 10 одновременно, при этом вам нужно, чтобы ваше приложение работала на максимальном количестве устройств. В этой статье мы покажем вам, как спроектировать приложение так, чтобы оно работало в предыдущих версиях Windows 10, но также могло использовать новые возможности, если оно запущено на устройстве с последним обновлением.
@@ -479,8 +476,7 @@ class IsEnumPresentTrigger : StateTriggerBase
     </VisualStateManager.VisualStateGroups>
 </Grid>
 ```
-## <a name="related-articles"></a>Статьи по теме
+## <a name="related-articles"></a>Еще по теме
 
 - [Руководство по приложениям UWP](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 - [Динамическое обнаружение компонентов с контрактами API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
-

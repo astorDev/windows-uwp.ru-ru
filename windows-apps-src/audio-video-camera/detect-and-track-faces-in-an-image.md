@@ -9,19 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 72e5804ea592dc2a9478cba766decaadf611e88e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3af1a18f7ceceb359c0545293f2b82ec9fd53c09
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="detect-faces-in-images-or-videos"></a>Обнаружение лиц на изображениях или в видео
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
+\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.\]
 
 В этом разделе объясняется, как использовать [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) для обнаружения лиц на изображении. Инструмент [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) оптимизирован для отслеживания лиц с течением времени в последовательности видеокадров.
 
@@ -53,7 +50,7 @@ ms.lasthandoff: 02/07/2017
 
 [!code-cs[Формат](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
-Создайте экземпляр объекта **FaceDetector**, вызвав [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132), а затем вызовите [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), передав точечный рисунок, который был масштабирован до оптимального размера и преобразован в поддерживаемый формат пикселей. Этот метод возвращает список объектов [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123). **ShowDetectedFaces** — это вспомогательный метод, показанный ниже, который рисует квадраты вокруг лиц на изображении.
+Создайте экземпляр объекта **FaceDetector**, вызвав [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132), а затем вызовите [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), передав точечный рисунок, который был масштабирован до оптимального размера и преобразован в поддерживаемый формат пикселей. Этот метод возвращает список объектов [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123). **ShowDetectedFaces**— это вспомогательный метод, показанный ниже, который рисует квадраты вокруг лиц на изображении.
 
 [!code-cs[Обнаружение](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 
@@ -99,7 +96,7 @@ ms.lasthandoff: 02/07/2017
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [Анализ сцен для захвата мультимедиа](scene-analysis-for-media-capture.md)
 * [Пример базового обнаружения лиц](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
@@ -107,4 +104,3 @@ ms.lasthandoff: 02/07/2017
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Воспроизведение мультимедиа](media-playback.md)
-

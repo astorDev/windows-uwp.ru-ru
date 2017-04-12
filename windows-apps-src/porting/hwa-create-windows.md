@@ -10,13 +10,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Размещенные веб-приложения, портирование веб-приложений в Windows 10, преобразование веб-сайта в приложение Windows, упаковка веб-приложений для Магазина Windows"
 ms.assetid: a58d2c67-77f8-4d01-bea3-a6ebce2d73b9
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: b6781883a3e48d35a558798f369e91c4a7ea3bec
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e135b63e2ba5f455dbbf6524e5519a33acd822b0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="convert-your-web-application-to-a-universal-windows-platform-uwp-app"></a>Преобразование веб-приложения в приложение универсальной платформы Windows (UWP)
 
 Узнайте, как быстро создать приложение UWP для Windows 10, имея только URL-адрес веб-сайта. 
@@ -99,9 +96,8 @@ function cameraCapture() {
 }
 ```
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 - [Улучшение веб-приложения путем обращения к функциям универсальной платформы Windows (UWP)](hwa-access-features.md)
 - [Руководство по работе с приложениями универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [Загружаемые ресурсы проектирования для приложений Магазина Windows](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-

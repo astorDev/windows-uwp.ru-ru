@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, игры, мыши, ввод"
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f207c1b7de4fd4a885c05c6988ecf685359d1d8b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dff08052af7f005366f9cb5154b307c13a316953
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="relative-mouse-movement-and-corewindow"></a>Относительное перемещение мыши и CoreWindow
 
 Распространенным средством управления в играх служит мышь, привычная пользователям и неотъемлемая в играх таких жанров, как "стрелялки" от первого и от третьего лица, стратегические игры в реальном времени и другие. Здесь мы рассмотрим реализацию относительных элементов управления для мыши, которые не используют системный курсор и не возвращают абсолютные экранные координаты, а отслеживают изменение значений пикселей при перемещении мыши.

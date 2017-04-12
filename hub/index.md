@@ -1,6 +1,6 @@
 ---
 layout: HubPage
-hide_bc: true
+hide_bc: True
 title: "Документация по Windows"
 description: "Найдите документацию для разработчиков, оборудования и ИТ-специалистов, которая поможет вам создавать и поддерживать решения для Windows."
 ms.assetid: 56bbc230-b855-426e-b849-4f65a747b944
@@ -8,11 +8,9 @@ ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: hub-page
 ms.prod: windows
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: cb15f417c4254776af4548a5b962392431c9a75b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: b04722c101d6647eca8d97ebb33ded7fb3ba8c3a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -108,6 +106,9 @@ ms.lasthandoff: 02/08/2017
                                             <p>
                                                 <a href="https://msdn.microsoft.com/windows/uwp/monetize/index">Монетизация</a>
                                             </p>
+                                            <p>
+                                                <a href="https://docs.microsoft.com/en-us/uwp/api/">Справочник по API</a>
+                                            <p>
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +124,7 @@ ms.lasthandoff: 02/08/2017
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Настольный компьютер</h3>
+                                            <h3>Рабочий стол</h3>
                                             <p>
                                                 <a href="https://developer.microsoft.com/windows/desktop/getstarted">Начало работы</a>
                                             </p>
@@ -187,7 +188,7 @@ ms.lasthandoff: 02/08/2017
                                                 <a href="https://developer.microsoft.com/windows/iot/Docs">Документы</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/Downloads">Файлы для загрузки</a>
+                                                <a href="https://developer.microsoft.com/windows/iot/Downloads">Скачиваемые файлы</a>
                                             </p>
                                             <p>
                                                 <a href="https://developer.microsoft.com/windows/iot/samples">Примеры</a>
@@ -213,18 +214,18 @@ ms.lasthandoff: 02/08/2017
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Holographic</h3>
+                                            <h3>Смешанная реальность</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/getting_started">Начало работы</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/academy">Академия</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/academy">Академия</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/development">Разработка</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/documentation">Документация</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/design">Оформление</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/community">Сообщество</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/community">Сообщество и поддержка</a>
                                             </p>
                                         </div>
                                     </div>
@@ -246,7 +247,7 @@ ms.lasthandoff: 02/08/2017
                                                 <a href="https://developer.microsoft.com/microsoft-edge/platform/documentation/">Документы для Microsoft Edge</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/microsoft-edge/tools/">Инструменты</a>
+                                                <a href="https://developer.microsoft.com/microsoft-edge/tools/">Средства</a>
                                             </p>
                                             <p>
                                                 <a href="https://developer.microsoft.com/microsoft-edge/testdrive/">Демонстрационные примеры</a>
@@ -515,7 +516,7 @@ ms.lasthandoff: 02/08/2017
                             </a>
                         </li> 
                         <li>
-                            <a href="https://technet.microsoft.com/en-us/library/mt267544.aspx">
+                            <a href="https://technet.microsoft.com/library/mt267544.aspx">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -539,4 +540,3 @@ ms.lasthandoff: 02/08/2017
         </li>
     </ul>
 </div>
-

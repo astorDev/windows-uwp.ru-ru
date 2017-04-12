@@ -9,20 +9,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dc5e67823521db455e12fa4b16d8204c20bff621
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7cc8ae05bdf496b9d3a9973f8ebd09a7d3f0210a
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
 # <a name="implement-a-trial-version-of-your-app"></a>Внедрение пробной версии приложения
 
 Если приложение настроено на [информационной панели Центра разработки для Windows в качестве бесплатной пробной версии](../publish/set-app-pricing-and-availability.md#free-trial) (то есть клиенты могут пользоваться им бесплатно в течение пробного периода), можно убедить клиентов выполнить обновление до полной версии приложения, исключив или ограничив определенные функции в течение пробного периода. До начала программирования решите, какие функции лучше ограничить, и сделайте так, чтобы они были доступны только после покупки полной лицензии. Вы можете также включить такие компоненты, как баннеры или водяные знаки, которые будут отображаться только во время испытательного срока, пока пользователь не купит приложение.
 
 Приложения, предназначенные для Windows 10 версии 1607 или старше, могут использовать члены класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), чтобы определять, есть ли у пользователя лицензия на пробную версию приложения, и получать уведомления в случае изменения состояния лицензии во время работы приложения.
 
->**Примечание.**&nbsp;&nbsp;Эта статья относится к приложениям, предназначенным для Windows 10 версии 1607 и старше. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Подробнее см. в разделе [Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+> [!NOTE]
+> Эта статья относится к приложениям, предназначенным для Windows10 версии 1607 или старше. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Подробнее см. в разделе [Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
 ## <a name="guidelines-for-implementing-a-trial-version"></a>Рекомендации по реализации пробной версии
 
@@ -68,9 +66,10 @@ ms.lasthandoff: 02/07/2017
 В коде из этого примера предполагается следующее:
 * Код выполняется в контексте страницы [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx), которая содержит [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) с именем ```workingProgressRing``` и [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) с именем ```textBlock```. Эти объекты используются для индикации выполнения асинхронной операции и отображения выводимых сообщений, соответственно.
 * Файл кода содержит оператор **using** для пространства имен **Windows.Services.Store**.
-* Приложение — однопользовательское и выполняется только в контексте пользователя, запустившего его. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md#api_intro).
+* Приложение является однопользовательским и выполняется только в контексте пользователя, запустившего его. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md#api_intro).
 
->**Примечание.**&nbsp;&nbsp;Если у вас есть классическое приложение, которое использует [мост для настольных ПК](https://developer.microsoft.com/windows/bridges/desktop), вам может потребоваться добавить дополнительный код, не показанный в этом примере, для настройки объекта [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Дополнительные сведения см. в разделе [Использование класса StoreContext в классическом приложение, в котором применяется мост для настольных компьютеров](in-app-purchases-and-trials.md#desktop).
+> [!NOTE]
+> Если у вас есть классическое приложение, которое использует [мост для классических приложений](https://developer.microsoft.com/windows/bridges/desktop), вам может потребоваться добавить дополнительный код, не показанный в этом примере, для настройки объекта [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Дополнительные сведения см. в разделе [Использование класса StoreContext в классическом приложение, в котором применяется мост для настольных компьютеров](in-app-purchases-and-trials.md#desktop).
 
 ## <a name="code-example"></a>Пример кода
 
@@ -88,7 +87,6 @@ ms.lasthandoff: 02/07/2017
 * [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
 * [Получение информации о продукте для приложений и надстроек](get-product-info-for-apps-and-add-ons.md)
 * [Получение информации о лицензии для приложений и надстроек](get-license-info-for-apps-and-add-ons.md)
-* [Поддержка покупок приложений и надстроек из приложения](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Поддержка покупок приложений и надстроек внутри приложения](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [Поддержка покупок потребляемых надстроек](enable-consumable-add-on-purchases.md)
 * [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-

@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, игры, шейдеры, примитивы, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 62f4b9b641a3c365659e44893a8a7801f2c1f6c0
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-shaders-and-drawing-primitives"></a>Создание шейдеров и примитивов рисования
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе мы покажем, как использовать исходные HLSL-файлы для компиляции и создания шейдеров, при помощи которых впоследствии можно отрисовывать на экране примитивы.
 
@@ -83,7 +80,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 ### <a name="2-reading-data-from-disk"></a>2. Чтение данных с диска
 
-Мы используем функцию DX::ReadDataAsync из DirectXHelper.h в шаблоне приложения DirectX 11 (универсальное приложение Windows) для асинхронного чтения данных из файла на диске.
+Мы используем функцию DX::ReadDataAsync из DirectXHelper.h в шаблоне приложения DirectX11 (универсальное приложение Windows) для асинхронного чтения данных из файла на диске.
 
 ### <a name="3-creating-vertex-and-pixel-shaders"></a>3. Создание вершинных и пискельных шейдеров
 
@@ -296,7 +293,6 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
  
 
  
-
 
 
 

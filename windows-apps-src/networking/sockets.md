@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0e9121dfc590a1a7f67be69b7dbce475e438dd08
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8933fb5c970203746fe1a00c71c0630fa264ebf6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="sockets"></a>Сокеты
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -203,7 +200,7 @@ private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSoc
 
 ## <a name="batched-sends"></a>Пакетные отправки
 
-Начиная с Windows 10, Windows.Networking.Sockets поддерживает пакетные отправки – способ отправки нескольких буферов с гораздо более низкими издержками, связанными с переключением контекста, чем при отправке каждого из буферов отдельно. Это особенно полезно, если ваше приложение выполняет VoIP, VPN или другие задачи, предполагающие максимально эффективное перемещение больших объемов данных.
+Начиная с Windows10, Windows.Networking.Sockets поддерживает пакетные отправки–способ отправки нескольких буферов с гораздо более низкими издержками, связанными с переключением контекста, чем при отправке каждого из буферов отдельно. Это особенно полезно, если ваше приложение выполняет VoIP, VPN или другие задачи, предполагающие максимально эффективное перемещение больших объемов данных.
 
 Каждый вызов WriteAsync на сокете активирует переход ядра к сетевому стеку. Если приложение записывает одновременно много буферов, при каждой операции записи происходит отдельный переход ядра, что приводит к значительным издержкам. Новый шаблон пакетных отправок оптимизирует частоту переходов ядра. Эта функция в настоящее время ограничена и включает только [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) и подключенные экземпляры [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319).
 
@@ -242,7 +239,7 @@ foreach (IBuffer packet in packetsToSend)
 await Task.WaitAll(pendingTasks);
 ```
 
-В этом примере показан еще один способ отправки большого количества буферов, совместимый с функцией пакетной отправки. А поскольку данный способ не предполагает использование функций, присущих C#, он может применяться для всех языков (хотя здесь он показан на примере C#). В данном случае используется измененное поведение в члене **OutputStream** классов [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) и [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), появившихся в Windows 10.
+В этом примере показан еще один способ отправки большого количества буферов, совместимый с функцией пакетной отправки. А поскольку данный способ не предполагает использование функций, присущих C#, он может применяться для всех языков (хотя здесь он показан на примере C#). В данном случае используется измененное поведение в члене **OutputStream** классов [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) и [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), появившихся в Windows10.
 
 ```csharp
 // More efficient way to send packets in Windows 10, using the new behavior of OutputStream.FlushAsync().
@@ -262,22 +259,22 @@ foreach (IBuffer packet in packetsToSend)
 await outputStream.FlushAsync();
 ```
 
-В предыдущих версиях Windows значение **FlushAsync** возвращалось немедленно; при этом некоторые операции в потоке могли быть еще не завершены. В Windows 10 поведение изменилось. Теперь **FlushAsync** гарантированно возвращается только после завершения всех операций выходного потока.
+В предыдущих версиях Windows значение **FlushAsync** возвращалось немедленно; при этом некоторые операции в потоке могли быть еще не завершены. В Windows10 поведение изменилось. Теперь **FlushAsync** гарантированно возвращается только после завершения всех операций выходного потока.
 
 Существуют некоторые важные ограничения, связанные с использованием пакетных записей в вашем коде.
 
 -   Вы не можете изменять содержимое экземпляров **IBuffer**, написанных до завершения асинхронной записи.
 -   Шаблон **FlushAsync** работает только на **StreamSocket.OutputStream** и **DatagramSocket.OutputStream**.
--   Шаблон **FlushAsync** работает только в Windows 10 и более поздних версиях.
+-   Шаблон **FlushAsync** работает только в Windows10 и более поздних версиях.
 -   В других случаях следует использовать **Task.WaitAll** вместо шаблона **FlushAsync**.
 
 ## <a name="port-sharing-for-datagramsocket"></a>Совместное использование порта для DatagramSocket
 
-Windows 10 представляет новое свойство [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190), [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368), позволяющее указывать, что рассматриваемый сокет **DatagramSocket** может сосуществовать с другими многоадресными сокетами Win32 или WinRT, привязанными к тому же адресу/порту.
+Windows10 представляет новое свойство [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190), [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368), позволяющее указывать, что рассматриваемый сокет **DatagramSocket** может сосуществовать с другими многоадресными сокетами Win32 или WinRT, привязанными к тому же адресу/порту.
 
 ## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>Предоставление сертификата клиента с классом StreamSocket
 
-Класс [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) поддерживает возможность использования протокола SSL/TLS для проверки подлинности сервера, к которому обращается приложение. В определенных случаях приложение также должно пройти проверку подлинности на сервере с помощью сертификата клиента TLS. В Windows 10 можно предоставить сертификат клиента на объект [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (необходимо задать перед началом подтверждения TLS). Если сервер запрашивает сертификат клиента, Windows ответит, воспользовавшись предоставленным сертификатом.
+Класс [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) поддерживает возможность использования протокола SSL/TLS для проверки подлинности сервера, к которому обращается приложение. В определенных случаях приложение также должно пройти проверку подлинности на сервере с помощью сертификата клиента TLS. В Windows10 можно предоставить сертификат клиента на объект [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (необходимо задать перед началом подтверждения TLS). Если сервер запрашивает сертификат клиента, Windows ответит, воспользовавшись предоставленным сертификатом.
 
 Фрагмент кода, демонстрирующий данную операцию:
 
@@ -303,6 +300,5 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ## <a name="the-winsock-api"></a>Winsock API
 
 Кроме того, в приложении UWP можно использовать [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673). Поддерживаемый Winsock API основывается на API Windows Phone 8.1 Microsoft Silverlight и продолжает поддерживать большую часть типов, свойств и методов (удалены некоторые API, которые считаются устаревшими). Дополнительную информацию о программировании Winsock можно найти [здесь](https://msdn.microsoft.com/library/windows/desktop/ms740673).
-
 
 

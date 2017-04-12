@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, игры, ввод"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 15d56a27ad914b258bb19b80b3498510d01105cd
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="input-practices-for-games"></a>Способы ввода данных в играх
 
 На этой странице приведены шаблоны и методики эффективного использования устройств ввода в играх универсальной платформы Windows (UWP).
@@ -101,7 +98,7 @@ if (GamepadButtons::None == (reading.Buttons & GamepadButtons::A))
 }
 ```
 
-Как видно, определить состояние одной кнопки просто, однако иногда может потребоваться определить, нажато ли или отпущено несколько кнопок либо узнать особое расположение ряда кнопок — некоторые кнопки нажаты, а некоторые отпущены. Проверка состояния нескольких кнопок является более сложной задачей, чем проверка состояния одной кнопки — особенно в тех случаях, когда существует вероятность, что состояние кнопок разное — однако существует простое правило выполнения этих проверок, равным образом применимое к проверке состояния как одной кнопки, так и нескольких.
+Как видно, определить состояние одной кнопки просто, однако иногда может потребоваться определить, нажато ли или отпущено несколько кнопок либо узнать особое расположение ряда кнопок— некоторые кнопки нажаты, а некоторые отпущены. Проверка состояния нескольких кнопок является более сложной задачей, чем проверка состояния одной кнопки— особенно в тех случаях, когда существует вероятность, что состояние кнопок разное— однако существует простое правило выполнения этих проверок, равным образом применимое к проверке состояния как одной кнопки, так и нескольких.
 
 В следующем примере кода определяется, нажаты ли обе кнопки геймпада "A" и "B".
 
@@ -153,4 +150,3 @@ if (buttonArrangement == buttonSelection)
 [igamecontroller.user]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.user.aspx
 [igamecontroller.userchanged]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.userchanged.aspx
 [gamepadbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadbuttons.aspx
-

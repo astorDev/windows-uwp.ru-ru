@@ -2,21 +2,17 @@
 title: "Ресурсы"
 description: "Ресурс — это область памяти, которая может быть доступна конвейеру Direct3D."
 ms.assetid: 2E68E5A8-83DA-4DC8-B7F3-B8988CF8090C
-keywords:
-- "Ресурсы"
+keywords: "Ресурсы"
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a95762696905bcb5e1ae900c96a47ee9fc5d1a73
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 361e5e1489e976776015ec9401f1473b9d3c8bdd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="resources"></a>Ресурсы
 
 
@@ -51,7 +47,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[Выбор ресурса](choosing-a-resource.md)</p></td>
-<td align="left"><p>Ресурс — это коллекция данных, используемых в 3D-конвейере. Создание ресурсов и определение их поведения — первый этап программирования приложения. В этом руководстве рассматриваются основные вопросы, связанные с выбором ресурсов, необходимых для приложения.</p></td>
+<td align="left"><p>Ресурс — это коллекция данных, используемых в 3D-конвейере. Создание ресурсов и определение их поведения — первый этап программирования вашего приложения. В этом руководстве рассматриваются основные вопросы, связанные с выбором ресурсов, необходимых для приложения.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Копирования данных ресурса и доступ к ним](copying-and-accessing-resource-data.md)</p></td>
@@ -76,4 +72,3 @@ ms.lasthandoff: 02/07/2017
 [Правила с плавающей запятой](floating-point-rules.md)
 
 [Преобразование типов данных](data-type-conversion.md)
-

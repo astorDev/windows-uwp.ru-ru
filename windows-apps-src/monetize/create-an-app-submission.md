@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
 description: "Используйте этот метод в API отправки Магазина Windows для создания новой отправки для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows."
-title: "Создание отправки приложения с помощью API отправки Магазина Windows"
+title: "Создание отправки приложения"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API отправки Магазина Windows, создание отправки приложения"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: ecc701016ff37e7cc7de0723793efdfe89118c48
-ms.lasthandoff: 02/08/2017
-
+keywords: "Windows 10, UWP, API отправки Магазина Windows, создание отправки приложения"
+ms.openlocfilehash: 13b1b1cc83b6a8659bf38f5a97caf8b2f50a3ee0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-an-app-submission-using-the-windows-store-submission-api"></a>Создание отправки приложения с помощью API отправки Магазина Windows
+# <a name="create-an-app-submission"></a>Создание отправки приложения
 
 
 
@@ -31,7 +28,7 @@ ms.lasthandoff: 02/08/2017
 Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
-* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия. После истечения срока действия маркера можно получить новый маркер.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
 * Убедитесь, что приложение уже содержит не менее одной отправки, для которой указаны сведения [возрастной категории](https://msdn.microsoft.com/windows/uwp/publish/age-ratings).
 
 >**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
@@ -51,7 +48,7 @@ ms.lasthandoff: 02/08/2017
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
@@ -65,7 +62,7 @@ ms.lasthandoff: 02/08/2017
 
 ### <a name="request-body"></a>Тело запроса
 
-Предоставлять тело запроса для этого метода не требуется.
+Предоставлять текст запроса для этого метода не требуется.
 
 ### <a name="request-example"></a>Пример запроса
 
@@ -89,7 +86,7 @@ Authorization: Bearer <your access token>
     "marketSpecificPricings": {},
     "sales": [],
     "priceId": "Tier2",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -98,13 +95,17 @@ Authorization: Bearer <your access token>
     "en-us": {
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
-        "keywords": [],
+        "keywords": [
+           "epub"
+        ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
-        "features": [],
+        "features": [
+          "Free ebook reader"
+        ],
         "releaseNotes": "",
         "images": [
           {
@@ -115,9 +116,13 @@ Authorization: Bearer <your access token>
           }
         ],
         "recommendedHardware": [],
-        "title": "ApiTestApp For Devbox"
+        "title": "Contoso ebook reader"
       },
-      "platformOverrides": {}
+      "platformOverrides": {
+        "Windows81": {
+          "description": "Ebook reader for Windows 8.1"
+        }
+      }
     }
   },
   "hardwarePreferences": [
@@ -161,7 +166,7 @@ Authorization: Bearer <your access token>
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -201,4 +206,3 @@ Authorization: Bearer <your access token>
 * [Обновление отправки приложения](update-an-app-submission.md)
 * [Удаление отправки приложения](delete-an-app-submission.md)
 * [Получение состояния отправки приложения](get-status-for-an-app-submission.md)
-

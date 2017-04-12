@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 51304d873261466afc9014224b918b82603f00e8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0a1a955d464fe875afdeef74d3ffa23a43e1406b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="tools-for-profiling-and-performance"></a>Инструменты для профилирования и производительности
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Майкрософт предоставляет несколько средств, с помощью которых можно повысить производительность приложения универсальной платформы Windows (UWP). Чтобы узнать об использовании этих средств, перейдите по указанным ниже ссылкам.
 
@@ -33,5 +31,4 @@ ms.lasthandoff: 02/07/2017
 | [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx) | Windows Performance Analyzer (WPA) входит в комплект средств для развертывания и оценки Windows (Windows ADK). Это средство предназначено для создания диаграмм и таблиц данных трассировки событий Windows (ETW), которые регистрируются с помощью средства Windows Performance Recorder (WPR), утилиты Xperf или платформы оценки. WPA может открыть для анализа любой файл журнала трассировки событий (ETL). |
 
  
-
 

@@ -12,17 +12,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 60ab406a5908b1a21c7a0f579664b7632722dd4e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 5a2e44448877ddc7906a8d4e41ec9c0b809f9a7e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-video-effects"></a>Пользовательские видеоэффекты
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье описано, как создать компонент среды выполнения Windows, реализующий интерфейс [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) для создания пользовательских эффектов для видеопотоков. Пользовательские эффекты можно использовать с несколькими различными API среды выполнения Windows, включая [[MediaCapture]](https://msdn.microsoft.com/library/windows/apps/br241124), который предоставляет доступ к камере устройства, и [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), который позволяет создавать сложные композиции из мультимедийных клипов.
@@ -175,7 +172,7 @@ ms.lasthandoff: 02/08/2017
 1.  В **обозревателе решений** щелкните правой кнопкой мыши по проекту **VideoEffectComponent** и выберите **Управление пакетами NuGet**.
 2.  В верхней части окна выберите вкладку **Обзор**.
 3.  В поле поиска введите **Win2D**.
-4.  Выберите **Win2D.uwp**, а затем — **Установить** в области справа.
+4.  Выберите **Win2D.uwp**, а затем— **Установить** в области справа.
 5.  В диалоговом окне **Просмотр изменений** отобразится назначенный для установки пакет. Нажмите кнопку **ОК**.
 6.  Примите условия лицензии пакета.
 
@@ -242,14 +239,13 @@ ms.lasthandoff: 02/08/2017
 [!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
 
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 * [Простой доступ к просмотру камеры](simple-camera-preview-access.md)
 * [Создание и редактирование композиций мультимедиа](media-compositions-and-editing.md)
 * [Документация по Win2D](http://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Воспроизведение мультимедиа](media-playback.md)
 
  
-
 
 
 

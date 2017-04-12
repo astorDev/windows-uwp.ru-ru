@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1955f4981f09c2632fe2236ebd6a772e7b0ed8a1
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f89537416b409642adab894ba9e3a413e4b0b828
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-and-register-an-in-process-background-task"></a>Создание и регистрация фоновой задачи, выполняемой внутри процесса
 
 **Важные API**
@@ -52,7 +49,7 @@ ms.lasthandoff: 02/08/2017
 
 > [!NOTE]
 > Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
-> Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем — метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
+> Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем— метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
 
 Для фоновых действий внутри процесса установка значения свойства `TaskEntryPoint.` не выполняется. За счет того, что значение для него не задается, появляется возможность использовать точку входа по умолчанию — новый защищенный метод в объекте Application под названием [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).
 
@@ -115,4 +112,3 @@ ms.lasthandoff: 02/08/2017
 **Справочник по API для фоновых задач**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
-

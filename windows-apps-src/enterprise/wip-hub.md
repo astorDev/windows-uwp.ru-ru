@@ -12,13 +12,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows Information Protection, корпоративные данные, защита корпоративных данных, edp, грамотные приложения"
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: b9bde047a70d31105680361d34cf71b33f708f93
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f624d20d33f560f151b40bd1a405711d697fd4cb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-information-protection-wip"></a>Windows Information Protection (WIP)
 
 __Примечание.__ Политика Windows Information Protection (WIP) может применяться в Windows 10 версии 1607.
@@ -66,11 +63,11 @@ WIP вместе с MDM предоставляет организации бол
 
 **Для приложений универсальной платформы Windows (UWP), создаваемых на C#**
 
-[Создание грамотного приложения, принимающего и корпоративные, и персональные данные](wip-dev-guide.md).
+[Руководство разработчика Windows Information Protection (WIP)](wip-dev-guide.md).
 
 **Для классических приложений, создаваемых на C++**
 
-[Создание поддерживающего корпоративную безопасность приложения, принимающего и корпоративные, и персональные данные (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).
+[Руководство разработчика Windows Information Protection (WIP) (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).
 
 
 ## <a name="create-non-enlightened-enterprise-app"></a>Создание корпоративного приложения, не поддерживающего корпоративную безопасность
@@ -100,4 +97,3 @@ END
 
 
  
-

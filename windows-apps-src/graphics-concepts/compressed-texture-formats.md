@@ -2,21 +2,17 @@
 title: "Форматы сжатых текстур"
 description: "Этот раздел содержит сведения о внутренней организации форматов сжатых текстур."
 ms.assetid: 24D17B9F-8CA7-4006-9E0F-178C6B3CAEC9
-keywords:
-- "Форматы сжатых текстур"
+keywords: "Форматы сжатых текстур"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4b7d76211c1db31979c3fa52be405a0e74927bb6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1bf94307093913c3b89b1d2a80e1e77d8dec81eb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="compressed-texture-formats"></a>Форматы сжатых текстур
 
 
@@ -38,7 +34,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

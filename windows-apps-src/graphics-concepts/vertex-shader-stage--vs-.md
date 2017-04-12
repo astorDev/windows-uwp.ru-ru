@@ -2,21 +2,17 @@
 title: "Этап шейдера вершин (VS)"
 description: "На этапе шейдера вершин (VS) происходит обработка вершин, обычно с выполнением таких операций, как преобразования, скиннинг и освещение. Шейдер вершин принимает одну входную вершину и создает одну выходную вершину."
 ms.assetid: 5133C4BB-B4E6-4697-9276-F718AD44869C
-keywords:
-- "Этап шейдера вершин (VS)"
+keywords: "Этап шейдера вершин (VS)"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6819826d829036c6b2cb2de4f2f42025820de9fe
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 761296a9897ad99ec57527f073a1ad1c2d792966
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="vertex-shader-vs-stage"></a>Этап шейдера вершин (VS)
 
 
@@ -62,7 +58,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

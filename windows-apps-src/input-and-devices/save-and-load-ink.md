@@ -1,6 +1,6 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Приложения UWP с поддержкой Windows Ink могут сериализовать и десериализовать росчерки пера в файл ISF. Файл ISF — это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала."
+Description: "Приложения UWP с поддержкой Windows Ink могут сериализовать и десериализовать росчерки пера в файл ISF. Файл ISF— это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала."
 title: "Хранение и извлечение данных движения пера Windows Ink"
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
@@ -11,17 +11,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7c4f0ac39decede933f10fc94ebeb09fa41415e4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 81d3a37103f1dcea6b68850d163fa5cc9aded5bc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>Хранение и извлечение данных о росчерках пера Windows Ink
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Приложения UWP с поддержкой Windows Ink могут сериализовать и десериализовать росчерки пера в файл ISF. Файл ISF — это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала.
+Приложения UWP с поддержкой Windows Ink могут сериализовать и десериализовать росчерки пера в файл ISF. Файл ISF— это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала.
 
 <div class="important-apis" >
 <b>Важные API</b><br/>
@@ -448,7 +445,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
  
-
 
 
 

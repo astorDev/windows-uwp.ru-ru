@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 79e40abde2265a8e6f760bd00768a18b06f69116
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 49cd1e7ac0fceff7e39679f337ea4c029fa98806
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="speech-recognition"></a>Распознавание речи
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -61,7 +58,7 @@ ms.lasthandoff: 02/07/2017
 
      
 
-    Эти предопределенные грамматики можно использовать для распознавания до ввода речи продолжительностью до 10 секунд, и для этого не потребуется никаких доработок с вашей стороны. Однако потребуется подключение к сети.
+    Эти предопределенные грамматики можно использовать для распознавания до ввода речи продолжительностью до 10секунд, и для этого не потребуется никаких доработок с вашей стороны. Однако потребуется подключение к сети.
 
     Чтобы использовать ограничения веб-службы, в меню **Параметры** необходимо включить поддержку речевого ввода и диктовки в разделе "Познакомьтесь со мной" на странице Параметры -&gt; Конфиденциальность -&gt; Голосовые функции, рукописный ввод и ввод с клавиатуры.
 
@@ -118,7 +115,7 @@ catch (Exception exception)
 
 3.  **Грамматики SRGS** ([**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)).
 
-    Грамматика SRGS – это статический документ, который, в отличие от программного ограничения-списка, использует формат XML, определенный в спецификации [SRGS Version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). Грамматика SRGS предоставляет больший контроль над распознаванием речи и позволяет создавать несколько семантических значений в одном распознавании.
+    Грамматика SRGS–это статический документ, который, в отличие от программного ограничения-списка, использует формат XML, определенный в спецификации [SRGS Version1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). Грамматика SRGS предоставляет больший контроль над распознаванием речи и позволяет создавать несколько семантических значений в одном распознавании.
 
 4.  **Ограничения голосовых команд** ([**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220))
 
@@ -224,7 +221,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
  
 
  
-
 
 
 

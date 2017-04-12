@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, рекламы, реклама, примеры кода"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae6e806f8aead387afe55dec2d70c04b7fc21284
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cb10a81c2fac1a14ae6e3a7eec20953d4267164d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="code-samples"></a>Примеры кода
 
 
@@ -23,11 +20,11 @@ ms.lasthandoff: 02/07/2017
 
 Этот раздел содержит примеры, демонстрирующие способы использования свойств, методов и событий классов [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) и [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) в библиотеках Microsoft Advertising для выбора целевых пользователей, ручного обновления объявлений и обработки событий. Вводные руководства, демонстрирующие способы добавления этих элементов управления в приложение, см. в разделе [Пошаговые руководства для разработчиков](developer-walkthroughs.md).
 
-Полные примеры проектов, демонстрирующие способы добавления баннеров и промежуточной видеорекламы в приложения JavaScript/HTML, а также в приложения XAML с помощью языков C# и C++, см. в [примерах рекламы на GitHub](http://aka.ms/githubads).
+Полные примеры проектов, демонстрирующие способы добавления баннеров и межстраничных объявлений в приложения JavaScript/HTML, а также в приложения XAML с помощью языков C# и C++, см. в [примерах рекламы на GitHub](http://aka.ms/githubads).
 
 ## <a name="in-this-section"></a>В этом разделе
 
-|  Статья    | Описание |               
+|  Раздел    | Описание |               
 |----------|-------|
 | [Пример назначения свойств AdControl в HTML](html-properties-example.md)     | Показывает **AdControl** со всеми атрибутами в HTML.        |
 | [Пример назначения свойств AdControl в XAML](xaml-properties-example.md)     | Показывает **AdControl** со всеми атрибутами в XAML.        |
@@ -45,4 +42,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

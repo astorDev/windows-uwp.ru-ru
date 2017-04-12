@@ -9,19 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 93dde6fe68275987c16562370ba277072e5467a9
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e576150cd06000405fa4754e147fbc1546cdf703
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #<a name="get-the-universal-windows-platform-uwp-samples-from-github"></a>Получение примеров универсальной платформы Windows (UWP) из GitHub
 Примеры приложений UWP доступны в репозиториях на GitHub. Если вы работаете с UWP, впервые, имеет смысл начать с репозитория [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository"), где вы найдете примеры всех функций UWP и шаблоны использования соответствующих API.  
 ![Репозиторий примеров UWP в GitHub](images/GitHubUWPSamplesPage.png) Дополнительные примеры доступны в разделе [Примеры](https://developer.microsoft.com/windows/samples "Dev Center samples") Центра разработки.  
 
 ##<a name="download-the-code"></a>Скачать код
-Чтобы скачать примеры, перейдите в [репозиторий](https://github.com/Microsoft/Windows-universal-samples "Репозиторий примеров приложений универсальной платформы Windows на GitHub") и выберите **Клонировать или скачать**, а затем — **Скачать ZIP-файл**. Или просто нажмите [здесь](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "Скачать ZIP-файл с примерами приложений универсальной платформы Windows").
+Чтобы скачать примеры, перейдите в [репозиторий](https://github.com/Microsoft/Windows-universal-samples "Репозиторий примеров приложений универсальной платформы Windows на GitHub") и выберите **Клонировать или скачать**, а затем— **Скачать ZIP-файл**. Или просто нажмите [здесь](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "Скачать ZIP-файл с примерами приложений универсальной платформы Windows").
 
 В этом ZIP-файле вы всегда найдете актуальные примеры. Учетная запись GitHub для скачивания не требуется. Если выпущено обновление SDK или необходимо получить только последние изменения и добавления, просто скачайте актуальный ZIP-файл.
 
@@ -54,4 +51,3 @@ ms.lasthandoff: 02/08/2017
 Если у вас возникают проблемы или вопросы, перейдите на вкладку "Проблемы" репозитория, чтобы создать новую проблему, и мы сделаем все возможное, чтобы помочь вам решить ее.
 
 ![Изображение раздела обратной связи](images/GitHubUWPSamplesFeedback.png)
-

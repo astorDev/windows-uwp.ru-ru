@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e05d6278472af75fb97f33eb840f6ecf28d33670
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b3081680c0d2324585fa5550aa7c6e8548673219
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="printing-and-scanning"></a>Печать и сканирование
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе описываются печать и сканирование из вашего универсального приложения для Windows.
 
@@ -31,8 +29,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>Ссылки по теме
 
 * [Руководство по проектированию печати](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Видео c конференции Build 2015: разработка приложений для печати в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [//Видео c конференции Build 2015: разработка приложений для печати в Windows10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [Пример печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)
  
-
 

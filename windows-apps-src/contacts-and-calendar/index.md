@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, контакты, календарь, встречи, сообщения электронной почты"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f0e61f5c586ccd1225fb9e4edf5ab93580cfd043
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 395b9fabd1481715e21ba65151d63f4b7f74a3bc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="contacts-and-calendar"></a>Контакты и календарь
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Вы можете предоставить пользователям доступ к их контактам и встречам, возможность обмениваться содержимым, сведениями календаря, электронными и мгновенными сообщениями, а также использовать другие реализованные вами функции.
 
@@ -34,11 +31,10 @@ ms.lasthandoff: 02/07/2017
 
  
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 
 * [Пример API встреч](http://go.microsoft.com/fwlink/p/?linkid=309836)
 * [Пример API диспетчера контактов](http://go.microsoft.com/fwlink/p/?LinkID=310079)
 * [Образец приложения "Окно выбора контактов"](http://go.microsoft.com/fwlink/p/?linkid=231575)
 * [Пример обработки действий с контактами](http://go.microsoft.com/fwlink/p/?LinkID=320151)
 * [Пример интеграции карточки контакта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)
-

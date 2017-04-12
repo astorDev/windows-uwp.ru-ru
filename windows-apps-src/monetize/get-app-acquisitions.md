@@ -9,25 +9,22 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, службы Магазина, API аналитики для Магазина Windows, приобретения приложения"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9a716acb00b7a86429c444555c491b48cbc2c4b0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b6ffd8300871e06d8b93682bed8d42546d1b88fc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-app-acquisitions"></a>Получение сведений о приобретениях приложения
 
 
-Используйте этот метод в API аналитики для Магазина Windows для получения сводных данных в формате JSON для приложения в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете о приобретениях](../publish/acquisitions-report.md) на информационной панели Центра разработки для Windows.
+Используйте этот метод в API аналитики Магазина Windows для получения сводных данных в формате JSON для приложения в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете о приобретениях](../publish/acquisitions-report.md) на информационной панели Центра разработки для Windows.
 
 ## <a name="prerequisites"></a>Необходимые условия
 
 
-Для использования этого метода необходимо выполнить следующие действия:
+Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](access-analytics-data-using-windows-store-services.md#prerequisites) для API аналитики для Магазина Windows.
-* [Получите маркер доступа Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
+* [Получите маркер доступа Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
 
 ## <a name="request"></a>Запрос
 
@@ -44,7 +41,7 @@ ms.lasthandoff: 02/07/2017
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/> 
 
@@ -55,12 +52,12 @@ ms.lasthandoff: 02/07/2017
 | applicationId | string | Код продукта в Магазине для приложения, по которому требуется получить данные о покупках. Код продукта в Магазине доступен на [странице удостоверения приложения](../publish/view-app-identity-details.md) информационной панели Центра разработки. Пример кода продукта в Магазине: 9WZDNCRFJ3Q8 |  Да  |
 | startDate | date | Начальная дата диапазона дат, для которого требуется получить данные о покупках. По умолчанию используется текущая дата |  Нет  |
 | endDate | date | Конечная дата диапазона дат, для которого требуется получить данные о покупках. По умолчанию используется текущая дата |  Нет  |
-| top | int | Количество строк данных, возвращаемых в запросе. Максимальное значение и значение по умолчанию (если параметр не указан) — 10 000. Если в запросе содержится больше строк, то тело ответа будет содержать ссылку «Далее», которую можно использовать для запроса следующей страницы данных |  Нет  |
+| top | целое число | Количество строк данных, возвращаемых в запросе. Максимальное значение и значение по умолчанию (если параметр не указан) — 10 000. Если в запросе содержится больше строк, то тело ответа будет содержать ссылку «Далее», которую можно использовать для запроса следующей страницы данных |  Нет  |
 | skip | int | Количество строк, пропускаемых в запросе. Используйте этот параметр для постраничного перемещения по большим наборам данных. Например, при top=10000 и skip=0 извлекаются первые 10 000 строк данных; при top=10000 и skip=10000 извлекаются следующие 10 000 строк данных и т. д. |  Нет  |
 | filter | string  | Один или несколько операторов для фильтрации строк в ответе. Дополнительные сведения см. далее в разделе [фильтрация полей](#filter-fields) | Нет   |
 | aggregationLevel | string | Определяет диапазон времени, для которого требуется получить сводные данные. Можно использовать следующие строки: <strong>day</strong>, <strong>week</strong> или <strong>month</strong>. Если параметр не задан, значение по умолчанию — <strong>day</strong> | Нет |
-| orderby | string | Оператор, который определяет порядок полученных значений данных для каждой покупки. Используется следующий синтаксис: <em>orderby=field [order],field [order],...</em>. Параметр <em>field</em> может быть одной из следующих строк:<ul><li><strong>date,</strong></li><li><strong>acquisitionType,</strong></li><li><strong>ageGroup,</strong></li><li><strong>storeClient,</strong></li><li><strong>gender,</strong></li><li><strong>market,</strong></li><li><strong>osVersion,</strong></li><li><strong>deviceType,</strong></li><li><strong>orderName.</strong></li></ul><p>Параметр <em>order</em> является необязательным и может принимать значения <strong>asc</strong> или <strong>desc</strong>, которые указывают, соответственно, порядок сортировки по возрастанию или по убыванию для каждого поля. Значение по умолчанию — <strong>asc</strong>.</p><p>Пример: строка <em>orderby</em>: <em>orderby=date,market</em></p> |  Нет  |
-| groupby | строка | Оператор, который применяет агрегирование данных только к указанным полям. Можно указать следующие поля:<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>Возвращенные строки данных будут содержать поля, указанные в параметре <em>groupby</em>, а также:</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p>Параметр <em>groupby</em> можно использовать вместе с параметром <em>aggregationLevel</em>. Например: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  Нет  |
+| orderby | string | Оператор, который определяет порядок полученных значений данных для каждой покупки. Используется следующий синтаксис: <em>orderby=field [order],field [order],...</em>. Параметр <em>field</em> может быть одной из следующих строк:<ul><li><strong>date,</strong></li><li><strong>acquisitionType,</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName.</strong></li></ul><p>Параметр <em>order</em> является необязательным и может принимать значения <strong>asc</strong> или <strong>desc</strong>, которые указывают, соответственно, порядок сортировки по возрастанию или по убыванию для каждого поля. Значение по умолчанию — <strong>asc</strong>.</p><p>Пример: строка <em>orderby</em>: <em>orderby=date,market</em></p> |  Нет  |
+| groupby | string | Оператор, который применяет агрегирование данных только к указанным полям. Можно указать следующие поля:<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>Возвращенные строки данных будут содержать поля, указанные в параметре <em>groupby</em>, а также:</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p>Параметр <em>groupby</em> можно использовать вместе с параметром <em>aggregationLevel</em>. Например: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  Нет  |
 
 <span/>
  
@@ -80,7 +77,7 @@ ms.lasthandoff: 02/07/2017
 | storeClient | Одна из следующих строк:<ul><li><strong>Windows Phone Store (client);</strong></li><li><strong>Windows Store (client);</strong></li><li><strong>Windows Store (web);</strong></li><li><strong>Volume purchase by organizations;</strong></li><li><strong>Other</strong></li></ul> |
 | gender | Одна из следующих строк:<ul><li><strong>m,</strong></li><li><strong>f,</strong></li><li><strong>Unknown</strong></li></ul> |
 | market | Строка, содержащая код страны по стандарту ISO 3166 для рынка, на котором произошла покупка |
-| osVersion | Одна из следующих строк:<ul><li><strong>Windows Phone 7.5;</strong></li><li><strong>Windows Phone 8;</strong></li><li><strong>Windows Phone 8.1;</strong></li><li><strong>Windows Phone 10;</strong></li><li><strong>Windows 8;</strong></li><li><strong>Windows 8.1;</strong></li><li><strong>Windows 10</strong></li><li><strong>Неизвестно</strong></li></ul> |
+| osVersion | Одна из следующих строк:<ul><li><strong>Windows Phone 7.5;</strong></li><li><strong>Windows Phone 8;</strong></li><li><strong>Windows Phone8.1;</strong></li><li><strong>Windows Phone 10;</strong></li><li><strong>Windows 8;</strong></li><li><strong>Windows 8.1;</strong></li><li><strong>Windows10</strong></li><li><strong>Неизвестно</strong></li></ul> |
 | deviceType | Одна из следующих строк:<ul><li><strong>Компьютер</strong></li><li><strong>Телефон</strong></li><li><strong>Консоль</strong></li><li><strong>Интернет вещей</strong></li><li><strong>Holographic</strong></li><li><strong>Неизвестно</strong></li></ul> |
 | orderName | Строка, содержащая имя заказа для рекламного кода, который использовался для приобретения приложения (применимо только в том случае, если пользователь приобрел приложение, активировав рекламный код) |
 
@@ -105,13 +102,13 @@ Authorization: Bearer <your access token>
 
 | Значение      | Тип   | Описание                  |
 |------------|--------|-------------------------------------------------------|
-| Value      | array  | Массив объектов, содержащий сводную информацию об оценках. Дополнительные сведения о данных в каждом объекте см. далее в разделе [Значения информации о покупках](#acquisition-values).                                                                                                                      |
+| Значение      | array  | Массив объектов, содержащий сводную информацию о покупках для данного приложения. Дополнительные сведения о данных в каждом объекте см. далее в разделе [Значения информации о покупках](#acquisition-values).                                                                                                                      |
 | @nextLink  | string | При наличии дополнительных страниц данных эта строка содержит URI-адрес, который можно использовать для запроса следующей страницы данных. Например, это значение возвращается в том случае, если параметр **top** запроса имеет значение 10 000, но для данного запроса имеется больше 10 000 строк с информацией о покупках |
 | TotalCount | int    | Общее количество строк в результирующих данных для запроса                                                                                                                                                                                                                             |
 
 <span/>
  
-### <a name="acquisition-values"></a>Значения в информации о покупках
+### <a name="acquisition-values"></a>Значения информации о покупках
 
 Элементы в массиве *Value* содержат следующие значения.
 
@@ -119,7 +116,7 @@ Authorization: Bearer <your access token>
 |---------------------|--------|-------------------------------------------|
 | date                | string | Первая дата в диапазоне дат, для которого требуется получить данные о покупках. Если в запросе указан один день, это значение равно соответствующей дате. Если запрос указывает неделю, месяц или другой диапазон дат, это значение равно первой дате в этом диапазоне дат |
 | applicationId       | string | Код продукта в Магазине для приложения, по которому запрашиваются данные о покупках.                                                                                                                                                                 |
-| applicationName     | string | Отображаемое имя приложения                                                                                                                                                                                                             |
+| applicationName     | string | Отображаемое имя приложения.                                                                                                                                                                                                             |
 | deviceType          | string | Тип устройства, на котором совершена покупка. Список поддерживаемых строк см. выше в разделе [Поля фильтра](#filter-fields)                                                                                                  |
 | orderName           | string | Имя заказа                                                                                                                                                                                                                   |
 | storeClient         | string | Версия Магазина, в котором произведена покупка. Список поддерживаемых строк см. выше в разделе [Поля фильтра](#filter-fields)                                                                                            |
@@ -167,4 +164,3 @@ Authorization: Bearer <your access token>
 * [Получение данных отчетов об ошибках](get-error-reporting-data.md)
 * [Получение сведений об оценках приложения](get-app-ratings.md)
 * [Получение отзывов о приложении](get-app-reviews.md)
-

@@ -5,16 +5,14 @@ title: "Руководство по скольжению по диагонали
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 label: Cross-slide
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="guidelines-for-cross-slide"></a>Руководство по скольжению по диагонали
 
-# Руководство по скольжению по диагонали
 
-
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -25,14 +23,14 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 Используйте скольжение по диагонали для поддержки выделения с помощью жеста прокрутки и перетаскивания (перемещения) с помощью жеста перетаскивания.
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Рекомендации
+## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Рекомендации
 
 
 -   Используйте скольжение по диагонали для списков и коллекций, которые прокручиваются в одном направлении.
 -   Используйте скольжение по диагонали для выбора элементов, когда взаимодействие в форме касания используется для другой цели.
 -   Не используйте скольжение по диагонали для добавления элементов в очередь.
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Дополнительное руководство по использованию
+## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Дополнительное руководство по использованию
 
 
 Выделение и перетаскивание возможны только в области содержимого, поддерживающей сдвиг в одном направлении (по вертикали или по горизонтали). Чтобы эти операции работали, необходимо заблокировать одно из направлений сдвига и выполнять жест в направлении, перпендикулярном направлению сдвига.
@@ -128,7 +126,7 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 Если нужно переместить несколько объектов, пользователь выбирает несколько элементов, а затем перетаскивает их за один раз.
 
-## <span id="related_topics"></span>Связанные разделы
+## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>Связанные разделы
 
 
 **Примеры**
@@ -150,11 +148,5 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
  
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

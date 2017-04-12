@@ -2,21 +2,17 @@
 title: "Поведение средства программной прорисовки с несопоставленными плитками"
 description: "В этом разделе описывается поведение растеризации несопоставленных плиток."
 ms.assetid: AC7B818D-E52B-4727-AEA2-39CFDC279CE7
-keywords:
-- "Поведение средства программной прорисовки с несопоставленными плитками"
+keywords: "Поведение средства программной прорисовки с несопоставленными плитками"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 80ea4a6d6183d753b31c04d6d5d77d064ba62646
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b4f85689af4d1f4d69c7f50f094fc8487e4b59e6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="span-iddirect3dconceptsrasterizerbehaviorwithnon-mappedtilesspanrasterizer-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>Поведение средства программной прорисовки с несопоставленными плитками
 
 
@@ -50,7 +46,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 63c0634905b14ca9f9546c9fcc678c05edb67780
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1a9647a9b915359f00ac22c88b715c9e938f6110
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="use-app-services"></a>Использование служб приложений
 
 В этом разделе описывается, как интегрировать службы приложений с приложением UWP, чтобы разрешить общий доступ к данным и функциям между приложениями.
@@ -26,4 +23,5 @@ ms.lasthandoff: 02/07/2017
 | [Преобразование службы приложений для ее запуска в одном процессе с ведущим приложением](convert-app-service-in-process.md) | Преобразуйте код службы приложений, выполняемый в отдельном фоновом процессе, в код, выполняемый в одном процессе с поставщиком службы приложений. |
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Обмен данными с удаленной службой приложений](communicate-with-a-remote-app-service.md)
+* [Обмен данными с удаленной службой приложения](communicate-with-a-remote-app-service.md)
+* [Примеры приложений универсальной платформы Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices) 

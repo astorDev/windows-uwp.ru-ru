@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 89ab7a65df0a8415d508e5831a22b2c522308f95
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 73423d32dc4e3d78d4281a5d86dcbdb4e33a741b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="3d-printing-from-your-app"></a>Трехмерная печать из приложения
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -83,7 +80,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="repair-model-data-for-3d-printing"></a>Восстановление данных модели для трехмерной печати
 
-Не все данные трехмерной модели можно напечатать, даже в 3MF-файле. Чтобы принтер мог правильно определить, какое пространство заполнять, а какое — оставлять пустым, печатаемые модели должны представлять собой цельную бесшовную структуру, иметь обращенные наружу нормали к поверхности и разностороннюю геометрию. В этих областях могут возникать проблемы разного характера, и обнаружить их в сложных формах весьма затруднительно. К счастью, современные программные решения отлично справляются с задачей преобразования необработанных геометрических данных в доступные для печати трехмерные фигуры. Этот процесс называется *восстановлением* модели и выполняется методом `OnFixClick`.
+Не все данные трехмерной модели можно напечатать, даже в 3MF-файле. Чтобы принтер мог правильно определить, какое пространство заполнять, а какое— оставлять пустым, печатаемые модели должны представлять собой цельную бесшовную структуру, иметь обращенные наружу нормали к поверхности и разностороннюю геометрию. В этих областях могут возникать проблемы разного характера, и обнаружить их в сложных формах весьма затруднительно. К счастью, современные программные решения отлично справляются с задачей преобразования необработанных геометрических данных в доступные для печати трехмерные фигуры. Этот процесс называется *восстановлением* модели и выполняется методом `OnFixClick`.
 
 Необходимо преобразовать файл трехмерных данных, чтобы реализовать интерфейс [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731), который затем можно использовать для создания объекта [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/mt203679).
 
@@ -104,7 +101,7 @@ ms.lasthandoff: 02/07/2017
 
 **CreateTask** имеет следующие входные параметры: **string** для имени задания печати, **string** для идентификатора используемого принтера и делегат [**Print3DTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedhandler.aspx). Делегат вызывается автоматически при создании события **3DTaskSourceRequested** (за это отвечает API). Важно отметить, что это делегат вызывается, когда инициируется задание печати, и отвечает за предоставление правильного пакета трехмерной печати.
 
-**Print3DTaskSourceRequestedHandler** принимает один параметр — объект [**Print3DTaskSourceRequestedArgs**](https://msdn.microsoft.com/library/windows/apps/dn998056), предоставляющий данные для отправки. Один открытый метод этого класса — [**SetSource**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedargs.setsource.aspx) — принимает печатаемый пакет. Реализуйте делегат **Print3DTaskSourceRequestedHandler** следующим образом.
+**Print3DTaskSourceRequestedHandler** принимает один параметр — объект [**Print3DTaskSourceRequestedArgs**](https://msdn.microsoft.com/library/windows/apps/dn998056), предоставляющий данные для отправки. Один открытый метод этого класса— [**SetSource**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedargs.setsource.aspx)— принимает печатаемый пакет. Реализуйте делегат **Print3DTaskSourceRequestedHandler** следующим образом.
 
 [!code-cs[SourceHandler](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSourceHandler)]
 
@@ -143,4 +140,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

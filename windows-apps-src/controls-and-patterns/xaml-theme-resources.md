@@ -14,11 +14,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 51e5a3dac6ab8682cd9d10efafb7e1e38f9d53d4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a591600ac31b1582d4ce133a6539884d4616639f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="xaml-theme-resources"></a>Ресурсы темы XAML
 
@@ -43,7 +41,7 @@ ms.lasthandoff: 02/07/2017
 
 Каждый ресурс темы является частью XAML-файла themeresources.xaml. Для целей проектирования файл themeresources.xaml находится в папке \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic, созданной при установке пакета средств разработки программного обеспечения для Windows (SDK). Словари ресурсов в themeresources.xaml также воспроизведены в generic.xaml в том же каталоге.
 
-> **Примечание.**&nbsp;&nbsp;Среда выполнения Windows не использует эти физические файлы для поиска во время выполнения. Поэтому они специально находятся в папке DesignTime и не копируются в приложения по умолчанию. Вместо этого такие словари ресурсов существуют в памяти как часть самой среды выполнения Windows, и ссылки на ресурсы XAML приложения — на ресурсы темы (или системные ресурсы) — разрешаются там во время выполнения.
+> **Примечание.**&nbsp;&nbsp;Среда выполнения Windows не использует эти физические файлы для поиска во время выполнения. Поэтому они специально находятся в папке DesignTime и не копируются в приложения по умолчанию. Вместо этого такие словари ресурсов существуют в памяти как часть самой среды выполнения Windows, и ссылки на ресурсы XAML приложения—на ресурсы темы (или системные ресурсы)—разрешаются там во время выполнения.
 
  ## <a name="guidelines-for-using-theme-resources"></a>Рекомендации по использованию ресурсов темы
 
@@ -347,7 +345,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 **TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-Этот стиль [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) предоставляет полный шаблон для элемента управления [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), который может использоваться как кнопка навигации "Назад" для приложения навигации. Он содержит ссылки на ресурсы темы, которые применяют к этой кнопке символьный шрифт Segoe MDL2 Assets, поэтому в качестве содержимого следует использовать значение [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842), а не текст. Размер по умолчанию: 40 x 40 пикселей. Для настройки стиля можно либо явным образом задать [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751), [**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406) и другие свойства кнопки **Button**, либо создать производный стиль, используя [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852).
+Этот стиль [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) предоставляет полный шаблон для элемента управления [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), который может использоваться как кнопка навигации "Назад" для приложения навигации. Он содержит ссылки на ресурсы темы, которые применяют к этой кнопке символьный шрифт Segoe MDL2 Assets, поэтому в качестве содержимого следует использовать значение [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842), а не текст. Размер по умолчанию:40x40 пикселей. Для настройки стиля можно либо явным образом задать [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751), [**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406) и другие свойства кнопки **Button**, либо создать производный стиль, используя [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852).
 
 Вот пример кнопки [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) с примененным к ней ресурсом **NavigationBackButtonNormalStyle**.
 
@@ -364,7 +362,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 **TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-Этот стиль [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) предоставляет полный шаблон для элемента управления [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), который может использоваться как кнопка навигации "Назад" для приложения навигации. Он похож на стиль **NavigationBackButtonNormalStyle**, но его размер составляет 30 x 30 пикселей.
+Этот стиль [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) предоставляет полный шаблон для элемента управления [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), который может использоваться как кнопка навигации "Назад" для приложения навигации. Он похож на стиль **NavigationBackButtonNormalStyle**, но его размер составляет 30x30 пикселей.
 
 Вот пример кнопки [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) с примененным к ней ресурсом **NavigationBackButtonSmallStyle**.
 
@@ -400,7 +398,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 Интуитивно всё выглядит правильно. Необходимо изменить цвет, на который указывает `myBrush`, при использовании высокой контрастности, но для случаев, когда высокая контрастность не используется, применяйте [расширение разметки {ThemeResource}](../xaml-platform/themeresource-markup-extension.md), чтобы убедиться, что точки `myBrush` используют правильный цвет темы. Если в приложении никогда не устанавливается [**FrameworkElement.RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/dn298515) для элементов в визуальном дереве темы, все должно работать правильно. Однако в приложении сразу возникнут проблемы, если вы начнете изменять темы различных частей визуального дерева.
 
-Проблема возникает, поскольку кисти являются общими ресурсами, в отличие от большинства других типов XAML. Если у вас есть 2 элемента в поддеревьях XAML с разными темами, но которые ссылаются на один и тот же ресурс кисти, то когда платформа проходит по каждому поддереву, чтобы обновить выражения [расширения разметки {ThemeResource}](../xaml-platform/themeresource-markup-extension.md), изменения, которые вы внесли в общий ресурс кисти, отображаются и в другом поддереве, хотя это не было запланированным результатом ваших действий.
+Проблема возникает, поскольку кисти являются общими ресурсами, в отличие от большинства других типов XAML. Если у вас есть 2элемента в поддеревьях XAML с разными темами, но которые ссылаются на один и тот же ресурс кисти, то когда платформа проходит по каждому поддереву, чтобы обновить выражения [расширения разметки {ThemeResource}](../xaml-platform/themeresource-markup-extension.md), изменения, которые вы внесли в общий ресурс кисти, отображаются и в другом поддереве, хотя это не было запланированным результатом ваших действий.
 
 Чтобы это исправить, замените словарь Default отдельными словарями для тем Light и Dark и используйте также HighContrast:
 
@@ -446,6 +444,5 @@ For many examples of how the brushes are used in the XAML control templates, see
 ```
 
 Обратите внимание, что [расширение разметки {ThemeResource}](../xaml-platform/themeresource-markup-extension.md) по-прежнему используется в словаре HighContrast вместо [расширения разметки {StaticResource}](../xaml-platform/staticresource-markup-extension.md). Данная ситуация относится к исключению, которое было описано выше в этих рекомендациях. Большинство значений кистей в теме HighContrast используют варианты цветов, которые глобально контролируются системой, но представляются в XAML в виде специально именованных ресурсов (с префиксом SystemColor в имени). Система предоставляет пользователю возможность задать определенные цвета, которые будут использоваться для настройки схем высокой контрастности в Центре специальных возможностей. Эти варианты цвета применяются к специально именованным ресурсам. Платформа XAML использует одно и то же событие изменения темы, чтобы также обновить кисти, если обнаружится, что они были изменены на системном уровне. Поэтому здесь используется расширение разметки {ThemeResource}.
-
 
 

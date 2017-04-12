@@ -1,6 +1,6 @@
 ---
 author: PatrickFarley
-Description: "Описание структуры типа файлов в трехмерном производственном формате и способов их создания и обработки с помощью API Windows.Graphics.Printing3D."
+Description: "Описание структуры типа файлов формате создания 3D и способов их создания и обработки с помощью Windows.Graphics.Printing3D API."
 MS-HAID: dev\_devices\_sensors.generate\_3mf
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -12,17 +12,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 2b1f15534e1388bfd61ba09faeb590464e44d8fd
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="generate-a-3mf-package"></a>Создание пакета 3MF
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -146,7 +143,7 @@ ms.lasthandoff: 02/07/2017
 
 [!code-cs[SaveTo3mf](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSaveTo3mf)]
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 [Трехмерная печать из приложения](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
 [Пример трехмерной печати UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
@@ -155,4 +152,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

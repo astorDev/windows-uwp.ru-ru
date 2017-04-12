@@ -3,23 +3,21 @@ author: mcleanbyron
 Description: "Если вы разрешаете пользователям бесплатно пользоваться вашим приложением в течение испытательного срока, можно привлечь их к обновлению до полной версии приложения путем удаления или ограничения некоторых функций в течение пробного периода."
 title: "Исключение или ограничение функций в пробной версии"
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
-keywords: "windows 10, uwp, пробная версия, покупка из приложения, IAP, Windows.ApplicationModel.Store"
+keywords: "Windows 10, UWP, пробная версия, покупка из приложения, IAP, Windows.ApplicationModel.Store"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8b55c837e63792e6da4e684602e79d99ad7cff1e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: badb14e5c915db68fb262002a8ee3321b62e2778
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Исключение или ограничение функций в пробной версии
 
 
->**Примечание.**&nbsp;&nbsp;В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Если ваше приложение предназначено для Windows 10 версии 1607 или более поздней версии, для реализации пробной версии рекомендуется использовать члены пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) вместо пространства имен **Windows.ApplicationModel.Store**. Дополнительные сведения см. в разделе [Реализация пробной версии приложения](implement-a-trial-version-of-your-app.md).
+> [!NOTE]
+> В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Если ваше приложение предназначено для Windows 10 версии 1607 или более поздней версии, для реализации пробной версии рекомендуется использовать члены пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) вместо пространства имен **Windows.ApplicationModel.Store**. Дополнительные сведения см. в разделе [Реализация пробной версии приложения](implement-a-trial-version-of-your-app.md).
 
 Если вы разрешаете пользователям бесплатно пользоваться вашим приложением в течение испытательного срока, можно привлечь их к обновлению до полной версии приложения путем удаления или ограничения некоторых функций в течение пробного периода. До начала программирования решите, какие функции лучше ограничить, и сделайте так, чтобы они были доступны только после покупки полной лицензии. Вы можете также включить такие компоненты, как баннеры или водяные знаки, которые будут отображаться только во время пробного периода, до того как пользователь купит приложение.
 
@@ -106,7 +104,8 @@ ms.lasthandoff: 02/07/2017
 
 После тестирования приложения с имитацией сервера лицензирования замените все **CurrentAppSimulator** элементами **CurrentApp**, как показано в следующем примере кода. После этого вы можете отправить приложение в Магазин для сертификации.
 
->**Важно!**&nbsp;&nbsp;Приложение, отправляемое в Магазин, должно использовать объект **CurrentApp**, иначе оно не пройдет сертификацию.
+> [!IMPORTANT]
+> Приложение, отправляемое в Магазин, должно использовать объект **CurrentApp**, иначе оно не пройдет сертификацию.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
@@ -126,4 +125,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

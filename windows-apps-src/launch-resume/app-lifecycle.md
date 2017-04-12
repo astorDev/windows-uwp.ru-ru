@@ -9,16 +9,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 75b7dde9ba658cc427845cb1c1d2cab9c2117d17
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d2dad86795fe97514ff08750fb90a884e93cea02
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Жизненный цикл приложения универсальной платформы Windows (UWP) для Windows 10
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этой статье рассказывается о жизненном цикле приложения универсальной платформы Windows (UWP) с момента его активации и до закрытия.
 
@@ -172,7 +169,7 @@ ms.lasthandoff: 02/07/2017
 
 Приложение может быть приостановлено на несколько часов или дней. Если ваше приложение работает с содержимым или сетевыми подключениями, которые могут устареть за это время, оно должно обновить их после возобновления работы. Если приложение зарегистрировало обработчик события [**Application.Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339), то он будет вызываться при возобновлении работы приложения после выхода из состояния **Suspended**. С помощью этого обработчика событий вы можете обновлять содержимое и данные приложения.
 
-Если приостановленное приложение активировано для участия в контракте приложений или расширении, оно получает сначала событие **Resuming**, а затем — событие **Activated**.
+Если приостановленное приложение активировано для участия в контракте приложений или расширении, оно получает сначала событие **Resuming**, а затем— событие **Activated**.
 
 Если работа приостановленное приложения была завершена, событие **Resuming** не срабатывает, а вызывается метод **OnLaunched()**, при этом параметру **ApplicationExecutionState** присвоено значение **Terminated**. Поскольку вы сохранили состояние во время приостановки приложения, вы можете восстановить его в методе **OnLaunched ()**, чтобы приложение выглядело так же, как и до приостановки.
 
@@ -222,7 +219,7 @@ ms.lasthandoff: 02/07/2017
               Класс **Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) (XAML)
 
 **Примечание.**  
-Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). Если вы разрабатываете приложения для Windows 8.x или Windows Phone 8.x, изучите раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Эта статья адресована разработчикам приложений для Windows10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Ссылки по теме
 
@@ -238,4 +235,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

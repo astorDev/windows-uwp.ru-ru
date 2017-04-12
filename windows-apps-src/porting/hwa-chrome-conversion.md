@@ -10,14 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Расширения Chrome для Windows, приложения Chrome для Windows, hwa-cli, преобразование .crx в .AppX"
 ms.assetid: 04f37333-48ba-441b-875e-246fbc3e1a4d
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 84d8875cc7b1c8540f54fec78cd675bd96919fd2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: b2168242d5464dbf41f12c777aa5672753a4ae6e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="convert-your-existing-chrome-app-to-a-universal-windows-platform-app"></a>Преобразование существующего приложения Chrome в приложение универсальной платформы Windows
+# <a name="convert-your-existing-chrome-app-to-a-uwp-app"></a>Преобразование существующего приложения Chrome в приложение UWP
 
 Мы облегчили процесс преобразования имеющихся размещенных приложений Chrome в приложения, работающие на универсальной платформе Windows (UWP). Существует два способа преобразования приложений Chrome.
 
@@ -80,7 +77,7 @@ ms.lasthandoff: 02/08/2017
 
 Использовать Flash в приложениях для Windows 10 запрещено. Необходимо убедиться, что его отсутствие не влияет на работу вашего приложения.
 
-Если вы показываете в приложении рекламу, необходимо убедиться, что ваш рекламодатель поддерживает применение HTML5. Вы можете использовать службы [Bing Ads](https://bingads.microsoft.com/) и [Реклама в приложениях](http://adsinapps.microsoft.com/).
+Если вы показываете в приложении рекламу, необходимо убедиться, что ваш рекламодатель поддерживает применение HTML5. Вы можете использовать службы [Bing Ads](https://bingads.microsoft.com/) и [библиотеки Microsoft Advertising](../monetize/display-ads-in-your-app.md). 
 
 Видео с YouTube должно по-прежнему работать, так как теперь [по умолчанию оно воспроизводится с помощью тега HTML5 `<video>`](http://youtube-eng.blogspot.com/2015/01/youtube-now-defaults-to-html5_27.html), если вы используете [метод внедрения `<iframe>`](https://developers.google.com/youtube/iframe_api_reference). Если ваше приложение все еще использует API Flash, вам следует перейти на указанный выше метод внедрения.
 
@@ -102,9 +99,8 @@ ms.lasthandoff: 02/08/2017
 
 Chrome предоставляет приложениям [специализированные API](https://developer.chrome.com/apps/api_index), которые могут выполняться в качестве фонового сценария. Они не поддерживаются. Вы можете найти эквивалентный функционал и другие возможности в [API среды выполнения Windows](https://msdn.microsoft.com/library/windows/apps/br211377.aspx).
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 - [Улучшение веб-приложения путем обращения к функциям универсальной платформы Windows (UWP)](./hwa-access-features.md)
 - [Руководство по работе с приложениями универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [Загружаемые ресурсы проектирования для приложений Магазина Windows](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-

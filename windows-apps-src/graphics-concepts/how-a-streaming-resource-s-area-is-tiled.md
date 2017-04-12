@@ -12,13 +12,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 699c9e3ce1477589f9331038ae3c7433b5dc1bde
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0718557245d9072adb0db608a7692dc7674ceca8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="how-a-streaming-resources-area-is-tiled"></a>Размещение плиток в области потокового ресурса
 
 
@@ -57,7 +54,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="odd">
 <td align="left"><p>[Плитки в буфере](buffer-tiling.md)</p></td>
-<td align="left"><p>[Буферный](introduction-to-buffers.md) ресурс разделен на плитки по 64 КБ. В последней плитке остается некоторое свободное пространство, если размер не кратен 64 КБ.</p></td>
+<td align="left"><p>[Буферный](introduction-to-buffers.md) ресурс разделен на плитки по 64КБ. В последней плитке остается некоторое свободное пространство, если размер не кратен 64КБ.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Упаковка MIP-карт](mipmap-packing.md)</p></td>
@@ -76,7 +73,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -1,29 +1,26 @@
 ---
 author: mcleanbyron
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
-description: "Узнайте, как использовать класс AdScheduler для добавления рекламы в видео."
-title: "Добавление рекламы в видеосодержимое в HTML 5 и JavaScript"
+description: "Узнайте, как использовать класс AdScheduler для добавления рекламы в видеоконтент."
+title: "Добавление рекламы в видеоконтент"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, рекламы, реклама, видео, планировщик, javascript"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b42b57f385857301bb74037dbb5c0c7200653316
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows 10, uwp, реклама, рекламные материалы, видео, планировщик, javascript"
+ms.openlocfilehash: 88e0bb4ceb9cba12d1eb5857761f5b59afaa15f2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="add-advertisements-to-video-content-in-html-5-and-javascript"></a>Добавление рекламы в видеосодержимое в HTML 5 и JavaScript
+# <a name="add-advertisements-to-video-content"></a>Добавление рекламы в видеоконтент
 
 
 В этом пошаговом руководстве показано, как использовать класс [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) для добавления рекламы в видеосодержимое в приложение универсальной платформы Windows (UWP), написанное с использованием JavaScript и HTML.
 
 >**Примечание.**&nbsp;&nbsp;Сейчас эта возможность поддерживается только для приложений UWP, написанных с использованием JavaScript и HTML.
 
-Класс [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx)работает с прогрессивным и потоковым мультимедиа и использует форматы полезной нагрузки VAST 2.0/3.0 и VMAP. Благодаря использованию стандартов [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) не зависит от рекламной службы, с которой он взаимодействует.
+Класс [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) работает с прогрессивным и потоковым мультимедиа и использует форматы полезной нагрузки VAST 2.0/3.0 и VMAP. Благодаря использованию стандартов [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) не зависит от рекламной службы, с которой он взаимодействует.
 
 Реклама для видеосодержимое зависит от того, превышает ли длительность программа 10 минут (длинная форма) или нет (короткая форма). Хотя в первом случае настроить службу немного сложнее, в написании клиентского кода различий фактически нет. Если [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) получает полезные данные VAST с одной рекламой вместо манифеста, они рассматриваются как манифест, который вызывается для одного предварительного рекламного ролика (один разрыв в 00:00).
 
@@ -103,4 +100,3 @@ ms.lasthandoff: 02/07/2017
 
   > [!div class="tabbedCodeSnippets"]
   [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
-

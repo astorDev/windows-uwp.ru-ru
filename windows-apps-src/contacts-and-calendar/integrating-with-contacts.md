@@ -10,13 +10,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, контакты, карточка контакта, аннотация"
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: da64e23714035b6763104d48430371469272a939
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e882566fcc81941669dd4844235bcbd899ea3079
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>Подключение приложения к действиям в карточках контактов
 
 Ваше приложение может отображаться рядом с действиями на карточке контакта или свернутой карточке контакта. Пользователи могут выбрать действие, выполняемое вашим приложением, например открытие страницы профиля, совершение вызова или отправку сообщения.
@@ -186,11 +183,11 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 Переопределите метод [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) в файле **App.cs** и переведите пользователя на страницу в приложении. В [примере интеграции с карточкой контакта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) показан один из способов сделать это.
 
-В коде файла страницы переопределите метод [Page.OnNavigatedTo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx). Карточка контакта передает этому методу название операции и идентификатор пользователя.
+В коде файла страницы переопределите метод [Page.OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx). Карточка контакта передает этому методу название операции и идентификатор пользователя.
 
 См. [пример с VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP), чтобы начать видеовызов или звонок. Полноценный API можно найти в пространстве имен [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
 
-Способ упрощения обмена сообщениями см. в пространстве имен [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.aspx).
+Способ упрощения обмена сообщениями см. в пространстве имен [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.aspx).
 
 Вы также можете запустить другое приложение. Вот что делает этот код.
 
@@ -216,5 +213,4 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Свойство ```args.uri.scheme``` содержит название операции, а свойство ```args.uri.Query``` — идентификатор пользователя.
-
+Свойство ```args.uri.scheme``` содержит название операции, а свойство ```args.uri.Query```— идентификатор пользователя.

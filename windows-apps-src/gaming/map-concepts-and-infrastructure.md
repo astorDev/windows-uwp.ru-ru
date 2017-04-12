@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, игры, opengl, direct3d, перенос"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 1298f165444b31c75ca9d98f04eb82a58be46e5b
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="map-opengl-es-20-to-direct3d-11"></a>Сопоставление OpenGL ES 2.0 с Direct3D 11
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Впервые приступая к процессу переноса графической архитектуры из OpenGL ES 2.0 в Direct3D, ознакомьтесь с ключевыми различиями между этими API. Темы данного раздела помогут вам спланировать стратегию переноса и изменения API, которые необходимо внести при переносе обработки графики в Direct3D.
 ## 
@@ -36,8 +33,8 @@ ms.lasthandoff: 02/07/2017
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Планирование переноса из OpenGL ES 2.0 в Direct3D](compare-opengl-es-2-0-api-design-to-directx.md)</p></td>
-<td align="left"><p>Если вы переносите игру с платформы iOS или Android, вам, вероятно, потребуется существенно углубиться в OpenGL ES 2.0. При подготовке к переносу базы кода вашего конвейера графики в Direct3D 11 и среду выполнения Windows необходимо перед началом работы решить несколько вопросов.</p></td>
+<td align="left"><p>[Планирование переноса из OpenGL ES2.0 в Direct3D](compare-opengl-es-2-0-api-design-to-directx.md)</p></td>
+<td align="left"><p>Если вы переносите игру с платформы iOS или Android, вам, вероятно, потребуется существенно углубиться в OpenGL ES2.0. При подготовке к переносу базы кода вашего конвейера графики в Direct3D11 и среду выполнения Windows необходимо перед началом работы решить несколько вопросов.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Сравнение кода EGL с DXGI и Direct3D](moving-from-egl-to-dxgi.md)</p></td>
@@ -48,8 +45,8 @@ ms.lasthandoff: 02/07/2017
 <td align="left"><p>В процессе переноса в Direct3D 11 из OpenGL ES 2.0 необходимо изменить синтаксис и поведение API для передачи данных между приложением и программами-шейдерами.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Сравнение конвейера шейдеров OpenGL ES 2.0 с Direct3D](change-your-shader-loading-code.md)</p></td>
-<td align="left"><p>Концептуально конвейер шейдеров Direct3D 11 очень похож на таковой в OpenGL ES 2.0. Однако в терминах проектного решения API главными компонентами для создания и управления стадиями шейдеров являются части двух основных интерфейсов, [<strong>ID3D11Device1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404575) и [<strong>ID3D11DeviceContext1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404598). В этом разделе делается попытка сопоставить общие шаблоны API конвейера шейдеров OpenGL ES 2.0 с их эквивалентами Direct3D 11 в этих интерфейсах.</p></td>
+<td align="left"><p>[Сравнение конвейера шейдеров OpenGL ES2.0 с Direct3D](change-your-shader-loading-code.md)</p></td>
+<td align="left"><p>Концептуально конвейер шейдеров Direct3D11 очень похож на таковой в OpenGL ES2.0. Однако в терминах проектного решения API главными компонентами для создания и управления стадиями шейдеров являются части двух основных интерфейсов, [<strong>ID3D11Device1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404575) и [<strong>ID3D11DeviceContext1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404598). В этом разделе делается попытка сопоставить общие шаблоны API конвейера шейдеров OpenGL ES2.0 с их эквивалентами Direct3D11 в этих интерфейсах.</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +61,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 515c63d5612358cf90684427f8f747e19384c6ff
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 3e194902b9fb166600ee58ec601993dc808a6853
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="menus-and-context-menus"></a>Меню и контекстные меню
 
@@ -43,13 +41,13 @@ ms.lasthandoff: 02/08/2017
 
 ## <a name="menus-vs-context-menus"></a>Сравнение меню и контекстных меню
 
-Меню и контекстные меню идентичны по внешнему виду и возможному содержимому. Фактически, для их создания вы используете один и тот же элемент управления — [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030). Единственное различие в том, как пользователь получает к ним доступ. 
+Меню и контекстные меню идентичны по внешнему виду и возможному содержимому. Фактически, для их создания вы используете один и тот же элемент управления— [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030). Единственное различие в том, как пользователь получает к ним доступ. 
 
 Когда следует использовать меню или контекстное меню?
 * Если главным элементом является кнопка или другой элемент команды, основная задача которого состоит в предоставлении дополнительных команд, используйте меню.
 * Если главным элементом является другой тип элемента с иной основной задачей (такой как представление текста или изображения), используйте контекстное меню. 
 
-Например, используйте меню для кнопки на панели навигации для предоставления дополнительных параметров навигации. В этом случае основное назначение элемента управления кнопки — предоставление доступа к меню. 
+Например, используйте меню для кнопки на панели навигации для предоставления дополнительных параметров навигации. В этом случае основное назначение элемента управления кнопки— предоставление доступа к меню. 
 
 Если вам требуется добавить команды (такие как "вырезать", "копировать" и "вставить") к элементу текста, используйте контекстное меню вместо обычного. В этом случае основная задача элемента текста заключается в представлении и редактировании текста. Дополнительные команды (такие как "вырезать", "копировать" и "вставить") второстепенны и относятся к контекстному меню. 
 
@@ -83,9 +81,9 @@ ms.lasthandoff: 02/08/2017
 ## <a name="create-a-menu-or-a-context-menu"></a>Создание меню или контекстного меню
 
 Для создания меню или контекстного меню используется [MenuFlyout class](https://msdn.microsoft.com/library/windows/apps/dn299030). Чтобы задать содержимое меню, необходимо добавить объекты [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) и [MenuFlyoutSeparator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) в элемент MenuFlyout. Эти объекты предназначены для:
-* [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx) — выполнения немедленного действия;
-* [ToggleMenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) — включения или отключения параметра;
-* [MenuFlyoutSeparator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) — визуального разделения элементов меню.
+* [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)— выполнения немедленного действия;
+* [ToggleMenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx)— включения или отключения параметра;
+* [MenuFlyoutSeparator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)— визуального разделения элементов меню.
 
 
 В этом примере создается [класс MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) и используется свойство [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx), доступное для большинства элементов управления, для отображения [MenuFlyout class](https://msdn.microsoft.com/library/windows/apps/dn299030) в качестве контекстного меню.
@@ -168,7 +166,6 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 *   [Основы создания пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
     Ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 - [**Класс MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030)
-

@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 189b15728fd5013a1f976803ffb0e55f57e95142
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1c2001e93fd06cc93fa5cfe9d2a10a029e13c82d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-on-acquisitions-report"></a>Отчет о приобретении надстроек
 
 
-**Отчет о получении надстроек** на информационной панели Центра разработки для Windows позволяет узнать, сколько надстроек вы продали, и просмотреть демографические сведения и данные о платформе. Эти сведения можно просмотреть на информационной панели или [скачать отчет](download-analytic-reports.md) для просмотра данных в автономном режиме. Кроме того, вы можете программно получить эти данные с помощью метода [получения сведений о покупках надстройки](../monetize/get-in-app-acquisitions.md) в [API REST аналитики Магазина Windows](../monetize/access-analytics-data-using-windows-store-services.md).
+**Отчет о получении надстроек** на информационной панели Центра разработки для Windows позволяет узнать, сколько надстроек вы продали и просмотреть демографические сведения и данные о платформе. Эти сведения можно просмотреть на информационной панели или [скачать отчет](download-analytic-reports.md) для просмотра данных в автономном режиме. Кроме того, вы можете программно получить эти данные с помощью метода [получения сведений о покупках надстройки](../monetize/get-in-app-acquisitions.md) в [API REST аналитики Магазина Windows](../monetize/access-analytics-data-using-windows-store-services.md).
 
 В этом отчете получение надстройки означает приобретение у вас пользователем надстройки. Несколько покупок одной и той же надстройки одним и тем же пользователем считаются отдельными получениями надстройки.
 
@@ -70,4 +67,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

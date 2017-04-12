@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f6df625d9eaab9db1bd3aed96d3f07160001ae70
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4c17bab575be207106abfac44104bb32bcffd6ac
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="lists"></a>Списки
 
@@ -139,7 +137,7 @@ ms.lasthandoff: 02/07/2017
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Представление списка и сетки](listview-and-gridview.md)</p></td>
+<td align="left"><p>[Представления списка и сетки](listview-and-gridview.md)</p></td>
 <td align="left"><p>Знакомство с основами использования представления списка или сетки в вашем приложении.</p></td>
 </tr>
 <tr class="even">
@@ -189,7 +187,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="list-boxes"></a>Окна со списками
 
-Окно со списком позволяет пользователю выбрать один или несколько элементов коллекции. Окна со списками аналогичны раскрывающимся спискам за исключением того, что они всегда открыты — у окна со списком нет компактного (не развернутого) состояния. Элементы списка можно прокручивать, если для отображения списка полностью не хватает места.
+Окно со списком позволяет пользователю выбрать один или несколько элементов коллекции. Окна со списками аналогичны раскрывающимся спискам за исключением того, что они всегда открыты— у окна со списком нет компактного (не развернутого) состояния. Элементы списка можно прокручивать, если для отображения списка полностью не хватает места.
 
 ### <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -250,7 +248,7 @@ ms.lasthandoff: 02/07/2017
 </table>
 
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 - [Главный раздел](hub.md)
 - [Основные и подробные данные](master-details.md)
@@ -263,4 +261,3 @@ ms.lasthandoff: 02/07/2017
 - [**Класс GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)
 - [**Класс ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)
 - [**Класс ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868)
-

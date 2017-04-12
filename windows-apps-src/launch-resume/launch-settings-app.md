@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e4cc17bf268ddb470c3c64dfe3e471053d8fca55
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e9d66feb6117fddfff62c217b55da813a63c4331
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-the-windows-settings-app"></a>Запуск приложения «Параметры» для Windows
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -383,4 +380,3 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
         <td>ms-settings:developers</td>
     </tr>
 </table><br/>
-

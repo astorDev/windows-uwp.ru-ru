@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "Использование RichTextBlock с элементами RichTextBlockOverflow для создания комплексных текстовых макетов."
+Description: "Использование RichTextBlock с элементами RichTextBlockOverflow позволяет создавать сложные текстовые макеты."
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f3eded52428f0432cbdecfbda7d8b53e9e89ed16
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 464a726f4429eb24ad04acae130c7fc812971b3b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="rich-text-block"></a>Блок форматированного текста
 
@@ -66,7 +64,7 @@ RichTextBlock поддерживает следующие функции.
 
 ### <a name="inline-ui-elements"></a>Строковые элементы пользовательского интерфейса
 
-Класс [**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) позволяет встроить в текст любой элемент UIElement. Распространенный сценарий — вставка элемента Image в текст, но можно использовать и интерактивные элементы, такие как Button или CheckBox.
+Класс [**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) позволяет встроить в текст любой элемент UIElement. Распространенный сценарий— вставка элемента Image в текст, но можно использовать и интерактивные элементы, такие как Button или CheckBox.
 
 Если в одно и то же место нужно встроить несколько элементов, используйте панель в качестве отдельного дочернего элемента InlineUIContainer, а затем поместите несколько элементов на эту панель.
 
@@ -112,9 +110,9 @@ RichTextBlock поддерживает следующие функции.
 
 ### <a name="inline-elements"></a>Строковые элементы
 
-Пространство имен [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) предоставляет разнообразные строковые элементы, которые можно использовать для форматирования текста, например Bold, Italic, Run, Span и LineBreak. Типичный способ применить форматирование к отдельным частям текста — это поместить текст в элемент Run или Span и задать свойства этого элемента.
+Пространство имен [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) предоставляет разнообразные строковые элементы, которые можно использовать для форматирования текста, например Bold, Italic, Run, Span и LineBreak. Типичный способ применить форматирование к отдельным частям текста— это поместить текст в элемент Run или Span и задать свойства этого элемента.
 
-Вот элемент Paragraph, первая фраза которого отображается полужирным шрифтом 16 пт в синем цвете.
+Вот элемент Paragraph, первая фраза которого отображается полужирным шрифтом 16пт в синем цвете.
 
 ```xaml
 <Paragraph>
@@ -142,7 +140,7 @@ RichTextBlock поддерживает следующие функции.
 
 
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 [Элементы управления текстом](text-controls.md)
 
@@ -158,4 +156,3 @@ RichTextBlock поддерживает следующие функции.
 
 **Разработчикам (прочее)**
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
-

@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 127bf79ebe17e6156a95d4aae168e42b7ff53aa1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5da40bb4c680416f0766cf0d1a171f95358ea63e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="calendar-date-and-time-controls"></a>Элементы управления календарем, датой и временем
 
@@ -117,14 +115,13 @@ ms.lasthandoff: 02/07/2017
 > **Примечание.**&nbsp;&nbsp;Свойствам, принимающим в качестве значений объекты даты, нельзя присвоить строку атрибута XAML, поскольку анализатор XAML среды выполнения Windows не содержит логику преобразования строк в даты в виде объектов DateTime или DateTimeOffset. Эти значения обычно задаются в коде. Также можно использовать другой способ — определить дату, которая доступна как объект данных, или дату, доступную в контексте данных. Затем необходимо задать свойство как атрибут XAML, ссылающийся на выражение расширения разметки [\{Binding\}](../xaml-platform/binding-markup-extension.md), которое может получать доступ к дате как к данным.
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
-* [Пример основных элементов пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [Основы создания пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 **Для разработчиков (XAML)**
 - [**Класс CalendarView**](https://msdn.microsoft.com/library/windows/apps/dn890052)
 - [**Класс CalendarDatePicker**](https://msdn.microsoft.com/library/windows/apps/dn950083)
 - [**Класс DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)
 - [**Класс TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280)
-

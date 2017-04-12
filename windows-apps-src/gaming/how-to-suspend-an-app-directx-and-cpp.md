@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, игры, приостановка, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 028350f3e4bf6bda5a72663c009e8117c9311b3e
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="how-to-suspend-an-app-directx-and-c"></a>Приостановка работы приложения (DirectX и C++)
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе показано, как сохранять важное состояние системы и данные приложения, когда система приостанавливает работу приложения универсальной платформы Windows (UWP), использующего DirectX.
 
@@ -101,7 +98,7 @@ void App::Run()
 ## <a name="call-trim"></a>Вызов Trim()
 
 
-Начиная с Windows 8.1, все приложения Магазина Windows, использующие DirectX, должны вызывать метод [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) при приостановке. Такой вызов сообщает графическому драйверу, что можно освободить все временные буферы, выделенные приложению. Это снижает вероятность завершения приложения для высвобождения памяти в приостановленном состоянии. Это требование необходимо для сертификации Windows 8.1.
+Начиная с Windows8.1, все приложения Магазина Windows, использующие DirectX, должны вызывать метод [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) при приостановке. Такой вызов сообщает графическому драйверу, что можно освободить все временные буферы, выделенные приложению. Это снижает вероятность завершения приложения для высвобождения памяти в приостановленном состоянии. Это требование необходимо для сертификации Windows8.1.
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -155,7 +152,6 @@ void DX::DeviceResources::Trim()
  
 
  
-
 
 
 

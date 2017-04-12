@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9ee0379b394aaa40535cd204664f6c3626428321
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: eea89ac8c4d7a02faee9277b0015d759340af6d6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>Уведомления на индикаторах событий для приложений UWP
 
@@ -200,7 +198,7 @@ private void clearBadge()
 
 * [Пример уведомлений](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Демонстрирует, как создавать интерактивные плитки, отправлять обновления индикатора событий и отображать всплывающие уведомления. 
 
-## <a name="related-articles"></a>Статьи по теме
+## <a name="related-articles"></a>Еще по теме
 
 * [Адаптивные и интерактивные всплывающие уведомления](tiles-and-notifications-adaptive-interactive-toasts.md)
 * [Создание плиток](tiles-and-notifications-creating-tiles.md)

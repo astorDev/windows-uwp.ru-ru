@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d80055e8c8ca1e8586cb8f2a54612206301282a1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 48ca3f21a114c54146065e6ba971ccb30bd33351
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-the-windows-store-app"></a>Запуск приложения Магазина Windows
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе описывается схема URI **ms-windows-store:**. Ваше приложение может использовать эту схему URI для запуска приложения Магазина Windows на определенных страницах в Магазине.
 
@@ -136,4 +133,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

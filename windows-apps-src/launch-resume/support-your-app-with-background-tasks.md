@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a9ac85483c3d7e252f24147088b928de6e781dc6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 38f5ecd06d257553a275fb6d5bb508fcd9fdb94d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="support-your-app-with-background-tasks"></a>Поддержка приложения с помощью фоновых задач
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В темах этого раздела показано, как обеспечить выполнение облегченного кода в фоновом режиме в ответ на триггеры. Фоновые задачи можно использовать для предоставления функциональных возможностей, когда приложение приостановлено или не выполняется. Фоновые задачи также можно использовать для приложений, обеспечивающих общение в реальном времени, например компьютерной телефонии, почты и обмена мгновенными сообщениями.
 
@@ -32,7 +29,7 @@ ms.lasthandoff: 02/07/2017
 
 Фоновые задачи, которые выполняются вне процесса, являются более устойчивыми, поскольку фоновый процесс не может прекратить работу приложения, если что-то пойдет не так. Однако за такую устойчивость приходится платить свою цену: такая архитектура усложняет управление взаимоотношениями между процессами.
 
-Выполняемые вне процесса фоновые задачи реализуются как облегченные классы, которые ОС выполняет в виде отдельного процесса (backgroundtaskhost.exe). Выполняемые вне процесса фоновые задачи — это классы, которые вы пишете и которые реализуют интерфейс [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Вы регистрируете фоновую задачу с помощью класса [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Имя класса используется для указания точки входа при регистрации фоновой задачи.
+Выполняемые вне процесса фоновые задачи реализуются как облегченные классы, которые ОС выполняет в виде отдельного процесса (backgroundtaskhost.exe). Выполняемые вне процесса фоновые задачи— это классы, которые вы пишете и которые реализуют интерфейс [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Вы регистрируете фоновую задачу с помощью класса [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Имя класса используется для указания точки входа при регистрации фоновой задачи.
 
 В Windows 10 версии 1607 можно включить фоновую активность, не создавая фоновой задачи. Вместо этого код фоновой задачи можно выполнять прямо внутри приложения переднего плана.
 
@@ -84,14 +81,14 @@ ms.lasthandoff: 02/07/2017
 | Триггер в реальном времени  | Описание |
 |--------------------|-------------|
 | **Канал управления** | Фоновые задачи могут поддерживать подключение и получать сообщения по каналу управления, используя класс [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Если приложение ожидает передачи данных из сокета, можно использовать посредник сокетов вместо **ControlChannelTrigger**. Узнать больше об использовании посредника сокетов можно в разделе [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). **ControlChannelTrigger** не поддерживается в Windows Phone. |
-| **Таймер** | Фоновые задачи могут выполняться через каждые 15 минут, и их можно настроить на выполнение в определенное время, используя [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). См. также: [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md). |
+| **Таймер** | Фоновые задачи могут выполняться через каждые 15минут, и их можно настроить на выполнение в определенное время, используя [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). См. также: [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md). |
 | **Push-уведомление** | Фоновые задачи реагируют на [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), чтобы получать необработанные push-уведомления. |
 
 **Примечание.**  
 
 Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
 
-Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем — метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
+Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем— метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
 
 ## <a name="system-event-triggers"></a>Триггеры системных событий
 
@@ -159,7 +156,7 @@ ms.lasthandoff: 02/07/2017
 [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
 
 **Примечание.**  
-Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Эта статья адресована разработчикам приложений для Windows10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  ## <a name="related-topics"></a>Ссылки по теме
 
@@ -172,7 +169,7 @@ ms.lasthandoff: 02/07/2017
 * [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Доступ к датчикам и устройствам из фоновой задачи](access-sensors-and-devices-from-a-background-task.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-a-background-task.md)
+* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
 * [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
@@ -186,4 +183,3 @@ ms.lasthandoff: 02/07/2017
 * [Использование триггера обслуживания](use-a-maintenance-trigger.md)
 * [Активация событий приостановки, возобновления и перевода в фоновый режим приложений Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 * [Синхронизация и обновление устройства с приложениями Магазина Windows для устройств](http://go.microsoft.com/fwlink/p/?LinkId=306619)
-

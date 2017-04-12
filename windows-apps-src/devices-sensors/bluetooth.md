@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a0ecd1e2802edef68053b291040d8a3d682eabfb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 47abe790cb7c02a0eff8b2912ac42512769ad7e9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="bluetooth"></a>Bluetooth
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Этот раздел содержит справочные статьи об интеграции Bluetooth в приложения универсальной платформы Windows (UWP), а также о том, как использовать RFCOMM, GATT и объявления о низком энергопотреблении (LE).
 
@@ -27,4 +25,3 @@ ms.lasthandoff: 02/07/2017
 | [GATT](gatt-scenarios.md) | В этой статье содержится обзор интерфейсов API универсального профиля атрибутов Bluetooth (GATT) в пространстве имен [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685), а также примеры кода для трех распространенных сценариев GATT: получение данных Bluetooth, управление термометром Bluetooth с низким энергопотреблением и представлением данных устройства Bluetooth с низким энергопотреблением. |
 | [Объявления о низком энергопотреблении (LE)](ble-beacon.md) | В этой статье рассказывается, как отправлять и получать объявления о Bluetooth с низким энергопотреблением с помощью интерфейсов API в пространстве имен [**Windows.Devices.Bluetooth.Advertisement**](https://msdn.microsoft.com/library/windows/apps/Dn894325).  | 
 | [Вопросы и ответы для Bluetooth-разработчиков](bluetooth-dev-faq.md) | В этой статье приведены ответы на часто задаваемые вопросов Bluetooth-разработчиков. 
-

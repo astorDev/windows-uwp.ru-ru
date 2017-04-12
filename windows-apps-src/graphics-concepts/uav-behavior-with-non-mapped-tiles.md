@@ -2,21 +2,17 @@
 title: "Поведение UAV с несопоставленными плитками"
 description: "Поведение операций чтения и записи представлений неупорядоченного доступа (UAV) зависит от уровня поддержки оборудования."
 ms.assetid: CDB224E2-CC07-4568-9AAC-C8DC74536561
-keywords:
-- "Поведение UAV с несопоставленными плитками"
+keywords: "Поведение UAV с несопоставленными плитками"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ecaeca63e6d3d9d9a7e40282b9c4c16b5d24a179
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c5e3b3be467a49839d530fd976c7f756421de218
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="span-iddirect3dconceptsuavbehaviorwithnon-mappedtilesspanuav-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.uav_behavior_with_non-mapped_tiles"></span>Поведение UAV с несопоставленными плитками
 
 
@@ -34,7 +30,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

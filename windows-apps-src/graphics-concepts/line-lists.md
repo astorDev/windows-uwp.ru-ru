@@ -2,21 +2,17 @@
 title: "Списки линий"
 description: "Список линий — это список изолированных прямых отрезков. Списки линий полезны для таких задач, как добавление дождя или ливня в трехмерную сцену. Приложения создают списки линий, заполняя массив вершин."
 ms.assetid: 42BF32A1-3535-42A3-82C5-3945CB309F2C
-keywords:
-- "Списки линий"
+keywords: "Списки линий"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 64ab9106986cd3fe5109b47710a7057ad6869c8d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8ebe6c67bd6b68023f59599cdcbd1f8f44f80e84
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="line-lists"></a>Списки линий
 
 
@@ -71,7 +67,6 @@ d3dDevice->DrawPrimitive( D3DPT_LINELIST, 0, 3 );
  
 
  
-
 
 
 

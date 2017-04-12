@@ -1,26 +1,24 @@
 ---
-author: awkoren
+author: normesta
 Description: "В этой статье описывается процедура подписывания классического приложения, преобразованного в приложение универсальной платформы Windows (UWP)."
 Search.Product: eADQiWindows 10XVcnh
-title: "Поддерживаемые API UWP для преобразованных классических приложений"
-ms.author: alkoren
-ms.date: 02/08/2017
+title: "Мост переноса классических приложений на UWP: поддерживаемые API UWP"
+ms.author: normesta
+ms.date: 03/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f5ee6f103fa9a7e5f13dc68eb9c6060e6b66e227
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 34b29f8e68c77acdb19a1b0005f039097c8d2cbb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# <a name="supported-uwp-apis-for-apps-converted-with-the-desktop-bridge"></a>Поддерживаемые API UWP для приложений, преобразованных с помощью моста для классических приложений
+# <a name="desktop-to-uwp-bridge-supported-uwp-apis"></a>Мост переноса классических приложений на UWP: поддерживаемые API UWP
 
-Преобразованные классические приложения могут использовать широкий спектр API универсальной платформы Windows (UWP), даже если они не полностью преобразованы в приложение UWP. В этой статье перечисляются доступные классы, которые может использовать ваше преобразованное приложение. 
+Преобразованные классические приложения могут использовать широкий спектр API универсальной платформы Windows (UWP), даже если они не полностью преобразованы в приложение UWP. В этой статье перечисляются доступные классы, которые может использовать ваше преобразованное приложение.
 
-Большинство API UWP хорошо работают с преобразованными классическими приложениями. Однако некоторые функциональные области пока еще не прошли полное тестирование или работают неправильно. 
+Большинство API UWP хорошо работают с преобразованными классическими приложениями. Однако некоторые функциональные области пока еще не прошли полное тестирование или работают неправильно.
 
 <table><tr><th>Область применения компонента</th><th>Сведения</th><tr>
 <tr><td>Встречи, контакты и сообщения электронной почты</td><td>В настоящее время не все API поддерживаются для преобразованных приложений.</td></tr>
@@ -42,15 +40,15 @@ ms.lasthandoff: 02/08/2017
 </table>
 
 
-Иногда API в этих областях могут работать правильно. Однако если API явно не указан в списке поддерживаемых, следует избегать его использования, так как возможны непредусмотренные побочные эффекты или поведение. Поддержка этих API может появиться в будущих выпусках. Пока же следует использовать в вашем приложении соответствующие API Win32 или .NET. 
+Иногда API в этих областях могут работать правильно. Однако если API явно не указан в списке поддерживаемых, следует избегать его использования, так как возможны непредусмотренные побочные эффекты или поведение. Поддержка этих API может появиться в будущих выпусках. Пока же следует использовать в вашем приложении соответствующие API Win32 или .NET.
 
 Некоторые API UWP, доступные для полностью классических приложений, не поддерживаются для преобразованных приложений. Если ваше классическое приложение использовало API UWP до преобразования, необходимо убедиться, что эти API по-прежнему поддерживаются. Подробнее см. в разделе [API среды выполнения Windows для классических приложений](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx).
 
 ## <a name="list-of-apis"></a>Список API
 
-Ниже приведен полный список API UWP, поддерживаемых в преобразованных приложениях. Можно просмотреть [API, поддерживаемые в новых преобразованных приложениях](#new) или [API, поддерживаемые как в преобразованных, так и в классических приложениях](#both). 
+Ниже приведен полный список API UWP, поддерживаемых в преобразованных приложениях. Можно просмотреть [API, поддерживаемые в новых преобразованных приложениях](#new) или [API, поддерживаемые как в преобразованных, так и в классических приложениях](#both).
 
-Примеры использования API WinRT см. в [примерах преобразования классических приложений в приложения UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) и [примерах приложений для универсальной платформы Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples) на GitHub. Вы также можете ознакомиться с записью блока "Разработка приложения для Windows" [Вызов API Windows 10 из классического приложения](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application). 
+Примеры использования API WinRT см. в [примерах преобразования классических приложений в приложения UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) и [примерах приложений для универсальной платформы Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples) на GitHub. Вы также можете ознакомиться с записью блока "Разработка приложения для Windows" [Вызов API Windows 10 из классического приложения](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
 
 <span id="new" />
 ### <a name="apis-supported-in-newly-converted-apps"></a>API, поддерживаемые в новых преобразованных приложениях
@@ -1045,4 +1043,3 @@ ms.lasthandoff: 02/08/2017
 * [Windows.Web.Syndication.SyndicationPerson](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationPerson)
 * [Windows.Web.Syndication.SyndicationText](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationText)
 * [Windows.Web.WebError](https://msdn.microsoft.com/library/windows/apps/Windows.Web.WebError)
-

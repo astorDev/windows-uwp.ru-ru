@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 57c29414deadcf4f1ba5c462b8fe81faa0b38d49
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 6f6edf982ffd329561b35c51ca19ee7a6fa92bf0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="design-downloads-for-uwp-apps"></a>Загружаемые файлы макетов для приложений UWP
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -65,7 +63,7 @@ ms.lasthandoff: 02/08/2017
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>Генератор плиток и значков для Adobe Photoshop</b><br/>
-Этот набор действий для Adobe Photoshop позволяет сгенерировать 68 рекомендуемых ресурсов плиток и значков всего из семи файлов. <br/>[Скачать генератор плиток и значков](http://go.microsoft.com/fwlink/p/?LinkId=760394)</p>    
+Этот набор действий для Adobe Photoshop позволяет сгенерировать 68рекомендуемых ресурсов плиток и значков всего из семи файлов. <br/>[Скачать генератор плиток и значков](http://go.microsoft.com/fwlink/p/?LinkId=760394)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator" /></a>

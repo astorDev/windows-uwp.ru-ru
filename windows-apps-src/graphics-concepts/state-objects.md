@@ -2,21 +2,17 @@
 title: "Объекты состояния"
 description: "Состояние устройства группируется в объекты состояния, что значительно сокращает затраты на смену состояний. Есть несколько объектов состояния и каждый из них разработан для инициализации набора состояний определенной стадии конвейера. Объекты состояния в различных версиях Direct3D разные."
 ms.assetid: D998745C-2B75-4E59-9923-AD1A17A92E05
-keywords:
-- "Объекты состояния"
+keywords: "Объекты состояния"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d3cdc8fda5062ea0b659029d8168a5df5be2fbe6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f046ab40ef4e05a8542f259330269e75ceb06f5f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="state-objects"></a>Объекты состояния
 
 
@@ -70,7 +66,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

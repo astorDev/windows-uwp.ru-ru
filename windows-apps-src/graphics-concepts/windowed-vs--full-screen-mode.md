@@ -2,21 +2,17 @@
 title: "Оконный или полноэкранный режим"
 description: "Приложения Direct3D могут работать в одном из двух режимов: оконном или полноэкранном."
 ms.assetid: EE8B9F87-822B-4576-A446-CA603E786862
-keywords:
-- "Оконный или полноэкранный режим"
+keywords: "Оконный или полноэкранный режим"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5c4e2cdb4fa001b66eec8556d02f307e7edcef42
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 91b488dce85ed173584fdb9873884f9f36689858
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="span-iddirect3dconceptswindowedvsfull-screenmodespanwindowed-vs-full-screen-mode"></a><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>Оконный или полноэкранный режим
 
 
@@ -34,7 +30,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -6,13 +6,11 @@ ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
 label: Touch design guidelines
 template: detail.hbs
 redirect_url: https://msdn.microsoft.com/windows/uwp/input-and-devices/touch-interactions
-translationtype: Human Translation
-ms.sourcegitcommit: 2db7aaccfd56b1bdfda099b197a695bad8a9cba1
 ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# Рекомендации по проектированию сенсорных функций
+# <a name="touch-design-guidelines"></a>Рекомендации по проектированию сенсорных функций
 
 
 
@@ -20,7 +18,7 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 
 Вы можете создавать приложения универсальной платформы Windows (UWP) с интуитивно понятным и четким взаимодействием с пользователем, которое оптимизировано для сенсорного ввода, но сохраняет функциональность при использовании других устройств ввода.
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Рекомендации
+## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Рекомендации
 
 
 -   Разрабатывайте приложения с учетом того, что сенсорное взаимодействие является приоритетным методом ввода.
@@ -31,7 +29,7 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 -   По возможности не используйте взаимодействие, зависимое от времени (пример правильного использования— касание и удержание).
 -   По возможности не используйте количество пальцев для различения манипуляций.
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Дополнительные рекомендации по использованию
+## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Дополнительные рекомендации по использованию
 
 
 Главное— проектировать приложение так, чтобы сенсорный ввод являлся главным методом ввода для пользователей. Если вы используете элементы управления платформы, то для поддержки сенсорной панели, мыши и пера не требуется дополнительное программирование, поскольку Windows8 предоставляет такую поддержку бесплатно.
@@ -163,7 +161,7 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 
 -   Подходящие описания и визуальные подсказки очень эффективны при использовании расширенных взаимодействий.
 
-## <span id="related_topics"></span>Связанные разделы
+## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>Связанные разделы
 
 **Разработчикам (XAML)**
 * [Взаимодействия с помощью сенсорного ввода](https://msdn.microsoft.com/library/windows/apps/mt185617)
@@ -173,11 +171,5 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
  
 
 
-
-
-
-
-
-<!--HONumber=Sep16_HO3-->
 
 

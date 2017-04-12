@@ -9,22 +9,19 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, directx, перенос"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: e255bceae44ace0722a2df0c53d60ec0f8fa35fe
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="plan-your-directx-port"></a>Планирование переноса DirectX
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Резюме**
 
 -   Планирование переноса приложений на DirectX
--   [Важные изменения в Direct3D 11 по сравнению с Direct3D 9](understand-direct3d-11-1-concepts.md)
+-   [Важные изменения в Direct3D11 по сравнению с Direct3D9](understand-direct3d-11-1-concepts.md)
 -   [Сопоставление компонентов](feature-mapping.md)
 
 
@@ -68,7 +65,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

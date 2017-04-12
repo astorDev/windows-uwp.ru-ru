@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6575ea6480b5c03836f9f44bdb19d8b17d78d16d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b35b8a9dcd6ea23b734de1041d829f620103fa6e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-file-activation"></a>Обработка активации файла
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -127,7 +124,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 Принимаемые вами файлы могут поступать из ненадежного источника. Мы рекомендуем проверять содержимое файла перед тем, как выполнять с ним какие-либо действия. Подробнее о проверке ввода см. в книге [Написание безопасного кода](http://go.microsoft.com/fwlink/p/?LinkID=142053).
 
-> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -158,4 +155,3 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
  
 
  
-

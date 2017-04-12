@@ -2,21 +2,17 @@
 title: "Буферы вершин и индексов"
 description: "Буферы вершин — это буферы памяти, которые содержат данные вершин; вершины в буфере вершин обрабатываются в целях выполнения преобразований, освещения и кадрирования."
 ms.assetid: 8A39CD23-85FB-4424-9AC3-37919704CD68
-keywords:
-- "Буферы вершин и индексов"
+keywords: "Буферы вершин и индексов"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: cdf65da6504114029c4937ee7db531a1339ed4c2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f06ee013f5c09522df387d69afa0096f7a3f7044
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="vertex-and-index-buffers"></a>Буферы вершин и индексов
 
 
@@ -47,7 +43,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[Буферы индексов](index-buffers.md)</p></td>
-<td align="left"><p><em>Буферы индексов</em> — это буферы памяти, содержащие данные индексов, представляющие собой целочисленные указатели для буферов вершин, которые используются для отрисовки примитивов.</p></td>
+<td align="left"><p><em>Буферы индексов</em>— это буферы памяти, содержащие данные индексов, представляющие собой целочисленные указатели для буферов вершин, которые используются для отрисовки примитивов.</p></td>
 </tr>
 </tbody>
 </table>
@@ -62,7 +58,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

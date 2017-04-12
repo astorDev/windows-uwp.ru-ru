@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, API рекламных акций Магазина Windows, uwp, рекламные кампании"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: bde9588176c1e52ccab169ad3f51ad15781e06ee
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: fe1eeb4e67917633997bdc4fbeabf87be497c3ad
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manage-ad-campaigns"></a>Управление рекламными кампаниями
 
 Используйте эти методы в [API рекламных акций Магазина Windows](run-ad-campaigns-using-windows-store-services.md) для создания, редактирования и получения рекламных кампаний для вашего приложения. Каждую создаваемую вами с помощью этого метода кампанию можно связать только с одним приложением.
@@ -32,8 +29,11 @@ ms.lasthandoff: 02/08/2017
 
 Для использования этих методов сначала необходимо сделать следующее.
 
-* Если вы еще не сделали этого, выполните все [необходимые условия](run-ad-campaigns-using-windows-store-services.md#prerequisites) для API рекламных акций Магазина Windows.
-* [Получите маркер доступа Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этих методов. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания его срока действия. После истечения срока действия маркера можно получить новый маркер.
+* Если вы еще не сделали этого, выполните все [предварительные условия](run-ad-campaigns-using-windows-store-services.md#prerequisites) для API рекламных акций Магазина Windows.
+
+  >**Примечание.**&nbsp;&nbsp;При проверке предварительных условий убедитесь, что вы [создали по крайней мере одну платную рекламную кампанию на информационной панели Центра разработки](../publish/create-an-ad-campaign-for-your-app.md) и добавили по крайней мере одно средство платежа для рекламной кампании. Строки поставки для рекламных кампаний, созданных с использованием этого API, будут автоматически выставлять счет на оплату платежному средству по умолчанию, выбранному на странице **Продвижение вашего приложения** на информационной панели.
+
+* [Получите маркер доступа Azure AD](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этих методов. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания его срока действия. После истечения срока действия маркера можно получить новый маркер.
 
 <span/> 
 ## <a name="request"></a>Запрос
@@ -52,7 +52,7 @@ ms.lasthandoff: 02/08/2017
 
 | Заголовок        | Тип   | Описание         |
 |---------------|--------|---------------------|
-| Authorization | строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 | Tracking ID   | Код GUID   | Необязательный параметр. Идентификатор, который отслеживает поток вызовов.                                  |
 
 <span id="parameters"/> 
@@ -65,8 +65,8 @@ ms.lasthandoff: 02/08/2017
 | skip  |  int   | Количество строк, пропускаемых в запросе. Используйте этот параметр для постраничного перемещения по наборам данных. Например, при fetch=10 и skip=0 извлекаются первые 10 строк данных; при top=10 и skip=10 извлекаются следующие 10 строк данных и т. д.    |       
 | fetch  |  int   | Количество строк данных, возвращаемых в запросе.    |       
 | campaignSetSortColumn  |  строка   | Заказывает объекты [Кампания](#campaign) в теле ответа с помощью указанного поля. Используется следующий синтаксис: <em>CampaignSetSortColumn = field</em>, где параметр <em>field</em> параметр может принимать одно из следующих строковых значений:</p><ul><li><strong>id</strong></li><li><strong>createdDateTime</strong></li></ul><p>Значение по умолчанию — **createdDateTime**.     |     
-| isDescending  |  Boolean (логическое)   | Сортирует объекты [Кампания](#campaign) в теле ответа в порядке убывания или возрастания.   |         
-| applicationId,  |  строка   | Используйте это значение для возвращения только тех рекламные кампаний, которые связаны с приложением с указанным [кодом продукта в Магазине](in-app-purchases-and-trials.md#store-ids). Пример кода продукта в Магазине — 9nblggh42cfd.   |         
+| isDescending  |  Boolean (логическое)   | Сортирует объекты [Campaign](#campaign) в теле ответа в порядке убывания или возрастания.   |         
+| storeProductId  |  string   | Используйте это значение, чтобы возвратить только те рекламные кампании, которые связаны с приложением по указанному [коду продукта в Магазине](in-app-purchases-and-trials.md#store-ids). Пример кода продукта в Магазине — 9nblggh42cfd.   |         
 | label  |  строка   | Используйте это значение для возвращения только тех рекламных кампаний, которые включают указанный параметр *label* в объект [Кампания](#campaign).    |       |    
 
 <span/>
@@ -85,7 +85,7 @@ Authorization: Bearer <your access token>
 
 {
     "name": "Contoso App Campaign",
-    "applicationId": "9nblggh42cfd",
+    "storeProductId": "9nblggh42cfd",
     "configuredStatus": "Active",
     "objective": "DriveInstalls",
     "type": "Community"
@@ -102,7 +102,7 @@ Authorization: Bearer <your access token>
 Ниже показано, как вызвать метод GET для запроса для набора рекламных кампаний, отсортированных по дате создания.
 
 ```json
-GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/campaign?applicationId=9nblggh42cfd&fetch=100&skip=0&campaignSetSortColumn=createdDateTime HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/campaign?storeProductId=9nblggh42cfd&fetch=100&skip=0&campaignSetSortColumn=createdDateTime HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -117,7 +117,7 @@ Authorization: Bearer <your access token>
         "id": 31043481,
         "name": "Contoso App Campaign",
         "createdDate": "2017-01-17T10:12:15Z",
-        "applicationId": "9nblggh42cfd",
+        "storeProductId": "9nblggh42cfd",
         "configuredStatus": "Active",
         "effectiveStatus": "Active",
         "effectiveStatusReasons": [
@@ -147,8 +147,8 @@ Authorization: Bearer <your access token>
 |  name   |  строка   |   Название рекламной кампании.    |    Нет   |      |  Да     |       
 |  configuredStatus   |  строка   |  Одно из следующих значений, которое указывает статус рекламной кампании, заданный разработчиком: <ul><li>**Активный**</li><li>**Неактивный**</li></ul>     |  Нет     |  Активный    |   Да    |       
 |  effectiveStatus   |  строка   |   Одно из следующих значений, определяющих действующий статус рекламной кампании, в зависимости от проверки системы: <ul><li>**Активный**</li><li>**Неактивный**</li><li>**Обработка**</li></ul>    |    Да   |      |   Нет      |       
-|  effectiveStatusReasons   |  массив   |  Одно или несколько из следующих значений, задающих причину нынешнего состояния рекламной кампании: <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>**Failed**</li></ul>      |  Да     |     |    Нет     |       
-|  applicationId   |  строка   |  [Код продукта в Магазине](in-app-purchases-and-trials.md#store-ids) для приложения, с которым связана эта рекламная кампания. Пример кода продукта в Магазине — 9nblggh42cfd.     |   Да    |      |  Да     |       
+|  effectiveStatusReasons   |  массив   |  Одно или несколько из следующих значений, задающих причину нынешнего состояния рекламной кампании: <ul><li>**AdCreativesInactive,**</li><li>**BillingFailed,**</li><li>**AdLinesInactive,**</li><li>**ValidationFailed,**</li><li>**Failed.**</li></ul>      |  Да     |     |    Нет     |       
+|  storeProductId   |  string   |  [Код продукта в Магазине](in-app-purchases-and-trials.md#store-ids) для приложения, с которым связана эта рекламная кампания. Пример кода продукта в Магазине — 9nblggh42cfd.     |   Да    |      |  Да     |       
 |  labels   |  массив   |   Одна или несколько строк, представляющих пользовательские метки для кампании. Эти метки могут использоваться для поиска и добавления тегов кампании.    |   Нет    |  null    |    Нет     |       
 |  type   | строка    |  Одно из следующих значений, указывающее тип кампании: <ul><li>**Paid**</li><li>**House**</li><li>**Community**</li></ul>      |   Да    |      |   Да    |       
 |  objective   |  строка   |  Одно из следующих значений, определяющих цель кампании: <ul><li>**DriveInstall**</li><li>**DriveReengagement**</li><li>**DriveInAppPurchase**</li></ul>     |   Нет    |  DriveInstall    |   Да    |       
@@ -160,6 +160,5 @@ Authorization: Bearer <your access token>
 * [Проведение рекламных кампаний с помощью служб Магазина Windows](run-ad-campaigns-using-windows-store-services.md)
 * [Управление линиями поставки для рекламных кампаний](manage-delivery-lines-for-ad-campaigns.md)
 * [Управление профилями таргетинга рекламных кампаний](manage-targeting-profiles-for-ad-campaigns.md)
-* [Управление рекламными средствами для рекламных кампаний](manage-creatives-for-ad-campaigns.md)
+* [Управление рекламными элементами для кампаний](manage-creatives-for-ad-campaigns.md)
 * [Получение данных об эффективности рекламной кампании](get-ad-campaign-performance-data.md)
-

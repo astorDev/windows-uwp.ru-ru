@@ -9,18 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, покупки из приложения, IAP, надстройки, Windows.Services.Store"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7e486c451174cd24429dc35cda07d22fe2b28745
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5ce47241bad229d0f44e14d3f9332603e6776f2f
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
 # <a name="get-product-info-for-apps-and-add-ons"></a>Получение информации о продукте для приложений и надстроек
 
 Приложения, предназначенные для Windows 10 версии 1607 и выше, могут использовать методы класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) из пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) для доступа к связанной с Магазином информации для текущего приложения или одной из его надстроек (также известных как внутренние продукты приложения или IAP). В следующих примерах в этой статье показано, как это сделать для различных сценариев. Полный пример см. в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
->**Примечание.**&nbsp;&nbsp;Эта статья относится к приложениям, предназначенным для Windows 10 версии 1607 и старше. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Подробнее см. в разделе [Внутренние покупки приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+> [!NOTE]
+> Эта статья относится к приложениям, предназначенным для Windows10 версии 1607 или старше. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Подробнее см. в разделе [Внутренние покупки приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
 ## <a name="prerequisites"></a>Предварительные условия и необходимые компоненты
 
@@ -35,7 +33,8 @@ ms.lasthandoff: 02/07/2017
 
 Полный пример приложения см. в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
->**Примечание.**&nbsp;&nbsp;Если у вас есть классическое приложение, которое использует [мост для настольных ПК](https://developer.microsoft.com/windows/bridges/desktop), вам может потребоваться добавить дополнительный код, не показанный в этих примерах, для настройки объекта [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Дополнительные сведения см. в разделе [Использование класса StoreContext в классическом приложение, в котором применяется мост для настольных компьютеров](in-app-purchases-and-trials.md#desktop).
+> [!NOTE]
+> Если у вас есть классическое приложение, которое использует [мост для классических приложений](https://developer.microsoft.com/windows/bridges/desktop), вам может потребоваться добавить дополнительный код, не показанный в этих примерах, для настройки объекта [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Дополнительные сведения см. в разделе [Использование класса StoreContext в классическом приложение, в котором применяется мост для настольных компьютеров](in-app-purchases-and-trials.md#desktop).
 
 ## <a name="get-info-for-the-current-app"></a>Получение информации для текущего приложения
 
@@ -57,7 +56,8 @@ ms.lasthandoff: 02/07/2017
 
 Чтобы получить информацию о продукте Магазина для надстроек, которые доступны для текущего приложения, используйте метод [GetAssociatedStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706571.aspx). Этот асинхронный метод возвращает коллекцию объектов [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx), которые представляют каждую из доступных надстроек. Этому методу необходимо передать список строк, определяющих типы надстроек, которые требуется извлечь. Список поддерживаемых строковых значений см. в описании свойства [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx).
 
->**Примечание.**&nbsp;&nbsp;Если приложение содержит много надстроек, можно также использовать метод [GetAssociatedStoreProductsWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706572.aspx), чтобы разбивать возвращаемые результаты для надстроек на страницы.
+> [!NOTE]
+> Если приложение содержит много надстроек, можно также использовать метод [GetAssociatedStoreProductsWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706572.aspx), чтобы разбивать возвращаемые результаты для надстроек на страницы.
 
 В следующем примере извлекается информации для всех постоянных надстроек, потребляемых надстроек, управляемых Магазином, и потребляемых надстроек, управляемых разработчиком.
 
@@ -69,7 +69,8 @@ ms.lasthandoff: 02/07/2017
 
 Чтобы получить информацию о продукте Магазина для надстроек, которые доступны текущему пользователю, используйте метод [GetUserCollectionAsync](https://msdn.microsoft.com/library/windows/apps/mt706580.aspx). Этот асинхронный метод возвращает коллекцию объектов [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx), которые представляют каждую из надстроек. Этому методу необходимо передать список строк, определяющих типы надстроек, которые требуется извлечь. Список поддерживаемых строковых значений см. в описании свойства [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx).
 
->**Примечание.**&nbsp;&nbsp;Если приложение содержит много надстроек, можно также использовать метод [GetUserCollectionWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706581.aspx), чтобы разбивать возвращаемые результаты для надстроек на страницы.
+> [!NOTE]
+> Если приложение содержит много надстроек, можно также использовать метод [GetUserCollectionWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706581.aspx), чтобы разбивать возвращаемые результаты для надстроек на страницы.
 
 В следующем примере извлекается информация для постоянных надстроек с заданными кодами продукта в Магазине.
 
@@ -84,4 +85,3 @@ ms.lasthandoff: 02/07/2017
 * [Поддержка покупок потребляемых надстроек внутри приложения](enable-consumable-add-on-purchases.md)
 * [Реализация пробной версии приложения](implement-a-trial-version-of-your-app.md)
 * [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-

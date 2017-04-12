@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, игры, сенсорный ввод, элементы управления, directx, ввод"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 44d5071ee0cd695351c77630d699a1a060f477d6
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="touch-controls-for-games"></a>Сенсорные элементы управления для игр
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Узнайте, как добавлять основные сенсорные элементы управления в игру универсальной платформы Windows (UWP) на языке C++ с поддержкой DirectX. Мы покажем, как добавлять сенсорные элементы управления для перемещения камеры, привязанной к фиксированной плоскости, в среде Direct3D, чтобы можно было изменять ракурс съемки перетаскиванием с помощью пальца или пера.
 
@@ -346,14 +343,13 @@ void CameraPanController::Update( CoreWindow ^window )
 Поздравляем! Вы реализовали простой набор сенсорных элементов управления для панорамирования камеры в вашей игре.
 
 > **Примечание.**  
-Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Эта статья адресована разработчикам приложений для Windows10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
 
  
-
 
 
 

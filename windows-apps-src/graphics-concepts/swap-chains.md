@@ -2,21 +2,17 @@
 title: "Цепочки буферов"
 description: "Цепочки буферов — это коллекция буферов, которая используется для отображения кадров пользователю."
 ms.assetid: A38E8BB7-1E77-4D93-B321-D3572A80D5DD
-keywords:
-- "Цепочки буферов"
+keywords: "Цепочки буферов"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8028c67e2ffb8f1b021ec486691251850de5fa8b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1598811ce05536c3396ef72bb9d1b06ddbba0fdc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="swap-chains"></a>Цепочки буферов
 
 
@@ -56,7 +52,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

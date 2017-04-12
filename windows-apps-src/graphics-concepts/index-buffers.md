@@ -2,21 +2,17 @@
 title: "Буферы индексов"
 description: "Буферы индексов — это буферы памяти, содержащие данные индексов, представляющие собой целочисленные указатели для буферов вершин, которые используются для отрисовки примитивов."
 ms.assetid: 14D3DEC5-CF74-488B-BE41-16BF5E3201BE
-keywords:
-- "Буферы индексов"
+keywords: "Буферы индексов"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6aa62a7506b37314b1952a6687920a2cdf3deca3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: aeb526032489cac2fdbbc436f98eac0cda59b643
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="index-buffers"></a>Буферы индексов
 
 
@@ -48,7 +44,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

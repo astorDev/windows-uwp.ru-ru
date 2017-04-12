@@ -2,21 +2,17 @@
 title: "Векторы, вершины и кватернионы"
 description: "В Direct3D вершины описывают положение и ориентацию. Каждая вершина в примитиве описывается вектором, который задает ее положение, цвет, координаты текстуры, а также вектором нормали, который задает ее ориентацию."
 ms.assetid: 94EC3D59-43FC-4509-A233-916E9FA8381E
-keywords:
-- "Векторы, вершины и кватернионы"
+keywords: "Векторы, вершины и кватернионы"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 61017fd2f0d91fb953543857741146bb607a36f3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7b0fa178db12c421f5964f0dec2b8c6391ee1973
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="vectors-vertices-and-quaternions"></a>Векторы, вершины и кватернионы
 
 
@@ -42,7 +38,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

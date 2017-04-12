@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
 description: "Используйте этот метод в API отправки Магазина Windows для создания надстройки для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows."
-title: "Создание надстройки с помощью API отправки Магазина Windows"
+title: "Создание надстройки"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API отправки Магазина Windows, создание надстройки, внутренний продукт приложения, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0492398872142aabd32d3a4d68d55b4e326f027e
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, API отправки Магазина Windows, создание надстройки, внутренний продукт приложения, IAP"
+ms.openlocfilehash: 903bbaf0ad515dcf23c4248744b428876805082e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-an-add-on-using-the-windows-store-submission-api"></a>Создание надстройки с помощью API отправки Магазина Windows
+# <a name="create-an-add-on"></a>Создание надстройки
 
 
 
@@ -27,10 +24,10 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="prerequisites"></a>Необходимые условия
 
-Для использования этого метода необходимо выполнить следующие действия:
+Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
-* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
 
 >**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
@@ -49,7 +46,7 @@ ms.lasthandoff: 02/07/2017
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
@@ -82,7 +79,7 @@ Content-Type: application/json
 
 ## <a name="response"></a>Ответ
 
-В следующем примере представлен текст ответа JSON, обеспечивающий успешный вызов этого метода. Дополнительные сведения о значениях в теле ответа см. в разделе [Ресурс надстройки](manage-add-ons.md#add-on-object).
+В следующем примере представлен текст ответа JSON, обеспечивающий успешный вызов этого метода. Дополнительные сведения о значениях в тексте ответа см. в разделе [Ресурс надстройки](manage-add-ons.md#add-on-object).
 
 ```json
 {
@@ -119,4 +116,3 @@ Content-Type: application/json
 * [Получение всех надстроек](get-all-add-ons.md)
 * [Получение надстройки](get-an-add-on.md)
 * [Удаление надстройки](delete-an-add-on.md)
-

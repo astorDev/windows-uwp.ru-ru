@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e4e3cecc0618d81554dbaae80c3bb4d907c79d31
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 88474544e0cc6ee91a1c50f65b327c339b9be170
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="build-a-device-selector"></a>Создание средства выбора устройств
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -73,30 +71,26 @@ API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows
 
 В следующих примерах показано, как можно использовать синтаксис AQS для ограничения количества устройств, которые нужно перечислить. Все эти строки фильтров используются вместе с [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991), чтобы создать полный фильтр. Помните, что если тип не указан, по умолчанию используется тип **DeviceInterface**.
 
-Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **DeviceInterface**, он перечисляет все объекты, которые сейчас включены и в которых содержится класс интерфейса Audio Capture. **=
-            ** преобразуется в **COP\_EQUALS**.
+Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **DeviceInterface**, он перечисляет все объекты, которые сейчас включены и в которых содержится класс интерфейса Audio Capture. **=** преобразуется в **COP\_EQUALS**.
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **Device**, он перечисляет все объекты, в которых имеется не менее одного аппаратного идентификатора GenCdRom. **~~
-            ** преобразуется в **COP\_VALUE\_CONTAINS**.
+Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **Device**, он перечисляет все объекты, в которых имеется не менее одного аппаратного идентификатора GenCdRom. **~~** преобразуется в **COP\_VALUE\_CONTAINS**.
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **DeviceContainer**, он перечисляет все объекты с названием модели с подстрокой Microsoft. **~~
-            ** преобразуется в **COP\_VALUE\_CONTAINS**.
+Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **DeviceContainer**, он перечисляет все объекты с названием модели с подстрокой Microsoft. **~~** преобразуется в **COP\_VALUE\_CONTAINS**.
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **DeviceInterface**, он перечисляет все объекты с названием модели, которое начинается с подстроки Microsoft. **~&lt;
-              ** преобразуется в **COP\_STARTSWITH**.
+Когда этот фильтр используется с типом [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) объекта **DeviceInterface**, он перечисляет все объекты с названием модели, которое начинается с подстроки Microsoft. **~&lt;** преобразуется в **COP\_STARTSWITH**.
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
@@ -117,4 +111,3 @@ System.Devices.IpAddress:=[]
  
 
  
-

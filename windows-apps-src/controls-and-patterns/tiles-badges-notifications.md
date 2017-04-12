@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f8b063f45afadda50fa9ea091bf6cba71a25e8c1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4a9a1b18984ed418fc31061ff2ee392230117609
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>Плитки, индикаторы событий и уведомления для приложений UWP
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -53,7 +51,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[Создание адаптивных плиток](tiles-and-notifications-create-adaptive-tiles.md)</p></td>
-<td align="left"><p>Шаблоны адаптивных плиток — это новая возможность в Windows 10, которая позволяет создавать собственные уведомления плиток с помощью простого и гибкого языка разметки, который адаптируется к различной плотности экрана. В этой статье рассказывается, как создать адаптивные живые плитки для вашего приложения универсальной платформы Windows (UWP).</p></td>
+<td align="left"><p>Шаблоны адаптивных плиток —это новая возможность в Windows 10, которая позволяет создавать собственные уведомления плиток с помощью простого и гибкого языка разметки, который адаптируется к различной плотности экрана. В этой статье рассказывается, как создать адаптивные живые плитки для вашего приложения универсальной платформы Windows (UWP).</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Схема адаптивных плиток](tiles-and-notifications-adaptive-tiles-schema.md)</p></td>
@@ -125,7 +123,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

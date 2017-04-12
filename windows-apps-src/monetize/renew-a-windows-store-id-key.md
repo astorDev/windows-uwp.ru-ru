@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, API коллекции Магазина Windows, API покупок Магазина Windows, ключ Магазина Windows, обновление"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b740cf431607f1748a8513a02746a70560d09da2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 22db5f1ae693c26ecf727c94a9f6746225325f74
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="renew-a-windows-store-id-key"></a>Обновление ключа идентификатора Магазина Windows
 
 
@@ -48,11 +45,11 @@ ms.lasthandoff: 02/07/2017
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
 | Host           | строка | Должен иметь значение **collections.mp.microsoft.com** или **purchase.mp.microsoft.com**.           |
 | Content-Length | Число | Длина текста запроса.                                                                       |
-| Content-Type   | строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
+| Content-Type   | Строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
 
 <span/>
 
-### <a name="request-body"></a>Текст запроса
+### <a name="request-body"></a>Тело запроса
 
 | Параметр     | Тип   | Описание                       | Обязательный |
 |---------------|--------|-----------------------------------|----------|
@@ -120,4 +117,3 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 * [Запрос продуктов](query-for-products.md)
 * [Объявление потребляемого продукта в качестве выполненного](report-consumable-products-as-fulfilled.md)
 * [Предоставление бесплатных продуктов](grant-free-products.md)
-

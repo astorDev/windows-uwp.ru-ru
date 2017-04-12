@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: "Используйте этот метод в API отправки Магазина Windows для создания новой отправки тестового пакета для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows."
-title: "Создание отправки тестового пакета с помощью API отправки Магазина Windows"
+title: "Создание отправки тестового пакета"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API отправки Магазина Windows, создание отправки тестируемой возможности"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d3e3c74d8afcd3b9055b64a0d06f207b1e02d598
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, API отправки Магазина Windows, создание отправки тестируемой возможности"
+ms.openlocfilehash: ff296cbdd5114641a469daab14b940042e9673d0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-a-package-flight-submission-using-the-windows-store-submission-api"></a>Создание отправки тестового пакета с помощью API отправки Магазина Windows
+# <a name="create-a-package-flight-submission"></a>Создание отправки тестового пакета
 
 Используйте этот метод в API отправки Магазина Windows для создания новой отправки тестового пакета для приложения. После успешного создания новой отправки с помощью этого метода [обновите отправку](update-a-flight-submission.md), чтобы внести любые необходимые изменения в данные отправки, а затем [зафиксируйте отправку](commit-a-flight-submission.md) для внедрения и публикации.
 
@@ -26,10 +23,10 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="prerequisites"></a>Необходимые условия
 
-Для использования этого метода необходимо выполнить следующие действия:
+Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
-* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
 * Создайте тестовый пакет для приложения в учетной записи Центра разработки. Это можно сделать на панели мониторинга Центра разработки или с помощью метода [создания тестового пакета](create-a-flight.md).
 
 >**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
@@ -49,7 +46,7 @@ ms.lasthandoff: 02/07/2017
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
@@ -64,7 +61,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-body"></a>Тело запроса
 
-Предоставлять тело запроса для этого метода не требуется.
+Предоставлять текст запроса для этого метода не требуется.
 
 ### <a name="request-example"></a>Пример запроса
 
@@ -104,7 +101,7 @@ Authorization: Bearer <your access token>
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -138,4 +135,3 @@ Authorization: Bearer <your access token>
 * [Обновление отправки тестового пакета](update-a-flight-submission.md)
 * [Удаление отправки тестового пакета](delete-a-flight-submission.md)
 * [Получение состояния отправки тестового пакета](get-status-for-a-flight-submission.md)
-

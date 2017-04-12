@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fa7757a8657abfc84ee905cb05b0b3addc59f64e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f46a48e6f93dc152a76ab5791d722dbe757a90b6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="globalization-and-localization"></a>Глобализация и локализация
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -87,7 +84,7 @@ Windows используется во всем мире пользователя
 
  
 
-Также см. исходную документацию для Windows 8.x, которая применима к приложениям универсальной платформы Windows (UWP) и Windows 10.
+Также см. исходную документацию для Windows8.x, которая применима к приложениям универсальной платформы Windows (UWP) и Windows10.
 
 -   [Глобализация приложения](https://msdn.microsoft.com/library/windows/apps/xaml/hh965328)
 -   [Сопоставление языков](https://msdn.microsoft.com/library/windows/apps/xaml/jj673578.aspx)
@@ -98,7 +95,6 @@ Windows используется во всем мире пользователя
  
 
  
-
 
 
 

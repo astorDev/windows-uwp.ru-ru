@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f78c828faded1d7efbd82bc41245052ce95862c7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b136c53cd39028c15ff55be803ae314c773a9be6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="get-battery-information"></a>Получение сведений об аккумуляторе
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -94,7 +92,7 @@ TextBlock txt6 = new TextBlock { Text = "Remaining energy capacity (mWh): " + re
 
 ## <a name="request-report-updates"></a>Запрос обновлений отчета
 
-При изменении заряда, емкости или состояния батареи объект [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) создает событие [**ReportUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated). Обычно это происходит немедленно при изменениях состояния и периодически — при всех других изменениях. В этом примере показано, как зарегистрироваться для получения обновлений отчета о батарее.
+При изменении заряда, емкости или состояния батареи объект [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) создает событие [**ReportUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated). Обычно это происходит немедленно при изменениях состояния и периодически— при всех других изменениях. В этом примере показано, как зарегистрироваться для получения обновлений отчета о батарее.
 
 ```csharp
 ...
@@ -135,7 +133,7 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 
 ## <a name="example-basic-battery-app"></a>Пример: основное приложение для работы с батареей
 
-Попробуйте использовать эти API, создав указанное ниже основное приложение батареи в Microsoft Visual Studio. На начальной странице Visual Studio щелкните **Новый проект**, а затем в разделе шаблонов **Visual C# &gt; Windows &gt; Universal** создайте приложение на базе шаблона **Пустое приложение**.
+Попробуйте использовать эти API, создав указанное ниже основное приложение батареи в MicrosoftVisualStudio. На начальной странице Visual Studio щелкните **Новый проект**, а затем в разделе шаблонов **Visual C# &gt; Windows &gt; Universal** создайте приложение на базе шаблона **Пустое приложение**.
 
 Затем откройте файл **MainPage.xaml** и скопируйте в него указанный ниже XML-код (заменив исходное содержимое файла).
 
@@ -342,5 +340,4 @@ namespace App1
 **Совет.** Чтобы получить числовые значения из объекта [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005), выполните отладку своего приложения на **локальном компьютере** или на внешнем **устройстве** (например, на Windows Phone). При отладке в эмуляторе устройства для свойств емкости и уровня заряда объект **BatteryReport** возвращает значение **null**.
 
  
-
 

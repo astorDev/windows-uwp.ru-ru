@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, встречи, календарь"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8fe8c0172d50cfe65bc8e695ffeb6899a228bdd2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2f220e8efadfca824a1ec4f41045f18dcc61ffb1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manage-appointments"></a>Управление встречами
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Пространство имен [**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) позволяет создавать встречи в приложении календаря пользователя и управлять ими. Здесь мы покажем, как создать встречу, добавить ее в приложение календаря, заменить и удалить из него. Кроме того, вы узнаете, как отобразить интервал времени в календаре и создать объект повторяющейся встречи.
@@ -571,10 +568,9 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 Теперь вы имеете общее представление об управлении встречами. Скачайте [Примеры универсальных приложений для Windows](http://go.microsoft.com/fwlink/p/?linkid=619979) с GitHub, чтобы просмотреть дополнительные примеры управления встречами.
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [Пример API встреч](http://go.microsoft.com/fwlink/p/?linkid=309836)
  
 
  
-

@@ -1,22 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
-description: "Изучите заметки о выпуске библиотек Microsoft Advertising в пакете SDK Microsoft Store Services."
+description: "Изучите заметки о выпуске библиотек Microsoft Advertising в пакете Microsoft Store Services SDK."
 title: "Заметки о выпуске библиотек Microsoft Advertising"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, рекламные объявления, реклама, заметки о выпуске"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 666071bccd562f2f95e8ae69f50797fdc464548b
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, рекламные объявления, реклама, заметки о выпуске"
+ms.openlocfilehash: f3d07df6e64c96e9070cb82bd7ac6e96b9cad1ee
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
-# <a name="release-notes-for-the-microsoft-advertising-libraries"></a>Заметки о выпуске библиотек Microsoft Advertising
+# <a name="release-notes-for-the-advertising-libraries"></a>Заметки о выпуске библиотек Microsoft Advertising
 
 
 
@@ -51,11 +48,7 @@ ms.lasthandoff: 02/07/2017
 
 Класс **AdControl** более не имеет свойств **Latitude** и **Longitude** для приложений UWP. Вместо этого код, встроенный в элемент управления рекламным объявлением, обнаруживает и отправляет эти значения на серверы рекламы от имени приложения.
 
-## <a name="important-notice"></a>Важное примечание
-
-Обязательно прочитайте лицензионное соглашение с конечным пользователем (EULA) полностью. См. раздел [Важное примечание — EULA](important-notice-eula.md).
 
  
 
  
-

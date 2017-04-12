@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54251b965f94da70614bcd81f70b9af53cb6168d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7777b1b3f72090667f1e75f3c9e23b6adcd9f2d5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="camera-independent-flashlight"></a>Независимый от камеры фонарик
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье можно найти информацию о том, как получить доступ к фонарику устройства (при наличии) и использовать его. Управление фонариком осуществляется отдельно от управления камерой и вспышкой устройства. Кроме информации о фонарике и его настройках, в этой статье приведены сведения о том, как правильно освободить ресурс фонарика, когда он не используется, а также как определить, доступен ли фонарик, если он используется другим приложением.
@@ -81,7 +78,6 @@ ms.lasthandoff: 02/07/2017
 - [Воспроизведение мультимедиа](media-playback.md)
 
  
-
 
 
 

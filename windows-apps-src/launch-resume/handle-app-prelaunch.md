@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6107fe07fc8e98db7d197354246784a31a9c902c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b8200f3dd345d2da63a9fa127db53201afefc92d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-app-prelaunch"></a>Обработка предварительного запуска приложения
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Обработка предварительного запуска приложения путем переопределения метода [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
@@ -160,4 +157,3 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
 
 * [Жизненный цикл приложения](app-lifecycle.md)
 * [CoreApplication.EnablePrelaunch](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)
-

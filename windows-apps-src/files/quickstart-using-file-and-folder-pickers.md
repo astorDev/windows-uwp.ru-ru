@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 96a1cdbf5420978ae8889c86eeafd7825d568261
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a0fc2e06dc4444a6c62b0e9a16cf6b970ab5caef
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="open-files-and-folders-with-a-picker"></a>Открытие файлов и папок с помощью средства выбора
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -28,7 +25,7 @@ ms.lasthandoff: 02/07/2017
 -   [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)
 -   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
 
-Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Для получения доступа к файлам можно использовать классы [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) и [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), а для получения доступа к папкам — класс [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881).
+Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Для получения доступа к файлам можно использовать классы [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) и [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), а для получения доступа к папкам— класс [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881).
 
 **Примечание**  Полный пример кода см. в [примере кода средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994).
 

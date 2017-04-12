@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f67d3ea2293e50a04bdbb4277fa4ad9e46834473
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 390e7255e381bdbb004bfe5e0e95f3ccbcbeb490
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="convert-an-out-of-process-background-task-to-an-in-process-background-task"></a>Преобразование фоновой задачи, выполняемой вне процесса, в фоновую задачу внутри процесса
 
 Самый простой способ преобразовать фоновую задачу, выполняемую вне процесса, в активность внутри процесса — это перенести код метода [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) внутрь вашего приложения и инициировать его из метода [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).
@@ -28,4 +25,3 @@ ms.lasthandoff: 02/08/2017
 
 * Фоновые задачи внутри процесса не поддерживают активацию фоновой задачи VoIP.
 * Фоновые задачи внутри процесса не поддерживают следующие триггеры: [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) и **IoTStartupTask**
-

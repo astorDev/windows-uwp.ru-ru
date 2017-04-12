@@ -12,11 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2131b6db9d9d72b574a0d0bed7c07aef7fcc4f37
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 51d8a53de21623516d6d582834cf9d854f2a5403
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="media-player"></a>Проигрыватель мультимедиа
 
@@ -48,7 +46,7 @@ ms.lasthandoff: 02/07/2017
 ![Элемент мультимедиа в приложении "Начало работы" для Windows 10.](images/control-examples/mtc_getstarted_example.png)
 
 ## <a name="create-a-media-player"></a>Создание проигрывателя мультимедиа
-Чтобы добавить мультимедиа в свое приложение, создайте объект [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) в XAML и задайте для параметра [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) значение [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx), указывающее на звуковой или видеофайл.
+Чтобы добавить мультимедиа в свое приложение, создайте объект [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) в XAML и задайте для параметра [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) значение [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx), указывающее на звуковой или видеофайл.
 
 Этот код XAML создает объект [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx), в свойство [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) которого записывается локальный относительно приложения URI видеофайла. Объект **MediaPlayerElement** начинает воспроизведение в момент загрузки страницы. Чтобы воспроизведение мультимедиа начиналось не сразу, можно установить для свойства [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.autoplay.aspx) значение **false**.
 
@@ -88,7 +86,7 @@ ms.lasthandoff: 02/07/2017
 
 
 ### <a name="set-the-media-source"></a>Задание источника мультимедиа
-Для воспроизведения файлов, находящихся в сети или входящих в состав приложения, достаточно указать в свойстве [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) значение [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) с путем к файлу.
+Для воспроизведения файлов, находящихся в сети или входящих в состав приложения, достаточно указать в свойстве [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) значение [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) с путем к файлу.
 
 **Подсказка.** Для открытия файлов в Интернете необходимо объявить возможность **Internet (Client)** в манифесте приложения (Package.appxmanifest). Подробнее об объявлении возможностей см. в разделе [Объявления возможностей приложения](https://msdn.microsoft.com/library/windows/apps/mt270968).
 
@@ -136,7 +134,7 @@ private void LoadMediaFromString(string path)
 }
 ```
 
-Чтобы задать файл, встроенный в приложение, в качестве источника мультимедиа, инициализируйте объект [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) с использованием пути, начинающегося с **ms-appx:///**, создайте объект [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) с этим Uri и задайте его в качестве объекта [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx). Например, для файла **video1.mp4**, расположенного во вложенной папке **Videos**, путь будет выглядеть так: **ms-appx:///Videos/video1.mp4**
+Чтобы задать файл, встроенный в приложение, в качестве источника мультимедиа, инициализируйте объект [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) с использованием пути, начинающегося с **ms-appx:///**, создайте объект [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) с этим Uri и задайте его в качестве объекта [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx). Например, для файла **video1.mp4**, расположенного во вложенной папке **Videos**, путь будет выглядеть так: **ms-appx:///Videos/video1.mp4**
 
 Этот код присваивает свойству [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) объекта [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx), заданного раньше в XAML, значение **ms-appx:///Videos/video1.mp4**.
 
@@ -172,9 +170,9 @@ private void LoadEmbeddedAppFile()
 
     Вызовите класс [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), чтобы выбрать файл мультимедиа. Задайте значение [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850), чтобы указать, какой тип файлов отображает **FileOpenPicker**. Вызовите метод [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275), чтобы открыть окно выбора файла и получить файл.
 
-2.  Используйте [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx), чтобы установить выбранный файл мультимедиа в качестве [**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx).
+2.  Используйте [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx), чтобы установить выбранный файл мультимедиа в качестве [**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx).
 
-    Чтобы использовать файл [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171), возвращенный объектом [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), потребуется вызвать метод [**CreateFromStorageFile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.createfromstoragefile.aspx) в [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) и задать его в качестве объекта [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) для [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx). После этого вы можете вызвать метод [**Play**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.play.aspx) для объекта [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx), чтобы запустить мультимедиа.
+    Чтобы использовать файл [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171), возвращенный объектом [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), потребуется вызвать метод [**CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.createfromstoragefile.aspx) в [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) и задать его в качестве объекта [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) для [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx). После этого вы можете вызвать метод [**Play**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.play.aspx) для объекта [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx), чтобы запустить мультимедиа.
 
 
 В этом примере продемонстрировано использование [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) для выбора файла и задания файла в качестве свойства [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) элемента [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx).
@@ -215,8 +213,8 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 ### <a name="set-the-poster-source"></a>Задание источника плаката
 Вы можете использовать свойство [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.PosterSource.aspx), чтобы дать элементу [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) визуальное представление до загрузки мультимедиа. **PosterSource** — это изображение, например снимок экрана или киноафиша, отображаемые вместо мультимедиа. **PosterSource** отображается в следующих случаях.
 
--   Если действительный источник не установлен. Например, [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) не установлен, для **Source** было установлено значение **NULL**, либо источник недопустим (как в случае возникновения события [**MediaFailed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediafailed.aspx)).
--   В ходе загрузки мультимедиа. Например, установлен действительный источник, но событие [**MediaOpened**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) еще не произошло.
+-   Если действительный источник не установлен. Например, [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) не установлен, для **Source** было установлено значение **NULL**, либо источник недопустим (как в случае возникновения события [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediafailed.aspx)).
+-   В ходе загрузки мультимедиа. Например, установлен действительный источник, но событие [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) еще не произошло.
 -   При потоковой передаче мультимедиа на другое устройство.
 -   Если мультимедиа — только звук.
 
@@ -251,7 +249,7 @@ private DisplayRequest appDisplayRequest = null;
 
 3.  Вызовите метод [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819), чтобы отменить запрос дисплея, если воспроизведение остановлено, приостановлено или прервано из-за ошибки воспроизведения. Если у вашего приложения больше нет активных запросов дисплея, Windows уменьшает яркость дисплея (и затем отключает его), чтобы увеличить время работы батареи, когда устройством не пользуются.
 
-    Каждый объект [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) имеет объект [**PlaybackSession**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) типа [**MediaPlaybackSession**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.aspx), который контролирует различные аспекты воспроизведения мультимедиа, такие как [**PlaybackRate**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx), [**PlaybackState**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstate.aspx) и [**Position**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx). Здесь используется событие [**PlaybackStateChanged**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstatechanged.aspx) в объекте [**MediaPlayer.PlaybackSession**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx), чтобы обнаруживать ситуации, когда нужно отменить запрос дисплея. Затем с помощью свойства [**NaturalVideoHeight**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.naturalvideoheight.aspx) определите тип воспроизводимого файла (аудио или видео) и поддерживайте экран активным, только если воспроизводится видео.
+    Каждый объект [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) имеет объект [**PlaybackSession**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) типа [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.aspx), который контролирует различные аспекты воспроизведения мультимедиа, такие как [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx), [**PlaybackState**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstate.aspx) и [**Position**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx). Здесь используется событие [**PlaybackStateChanged**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstatechanged.aspx) в объекте [**MediaPlayer.PlaybackSession**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx), чтобы обнаруживать ситуации, когда нужно отменить запрос дисплея. Затем с помощью свойства [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.naturalvideoheight.aspx) определите тип воспроизводимого файла (аудио или видео) и поддерживайте экран активным, только если воспроизводится видео.
     ```xaml
 <MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
     ```
@@ -292,10 +290,10 @@ private DisplayRequest appDisplayRequest = null;
     ```
 
 ### <a name="control-the-media-player-programmatically"></a>Управление проигрывателем мультимедиа программными средствами
-[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) через свойство [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) предоставляет многочисленные свойства, методы и события для управления воспроизведением звука и видео. Полный перечень свойств, методов и событий см. на странице справки по объекту [**MediaPlayer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.aspx).
+[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) через свойство [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) предоставляет многочисленные свойства, методы и события для управления воспроизведением звука и видео. Полный перечень свойств, методов и событий см. на странице справки по объекту [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx).
 
 ### <a name="advanced-media-playback-scenarios"></a>Расширенные сценарии воспроизведения мультимедиа
-Для более сложных сценариев воспроизведения мультимедиа, таких как воспроизведение списка воспроизведения, переключение между языками или создание пользовательских дорожек метаданных, задайте для объекта [**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) свойство [**MediaPlaybackItem**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) или [**MediaPlaybackList**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx). См. дополнительные сведения о включении различных расширенных функций мультимедиа на странице [**Воспроизведение мультимедиа**](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/media-playback-with-mediasource).
+Для более сложных сценариев воспроизведения мультимедиа, таких как воспроизведение списка воспроизведения, переключение между языками или создание пользовательских дорожек метаданных, задайте для объекта [**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) свойство [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) или [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx). См. дополнительные сведения о включении различных расширенных функций мультимедиа на странице [**Воспроизведение мультимедиа**](https://msdn.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource).
 
 ### <a name="enable-full-window-video-rendering"></a>Включение полнооконной прорисовки видео
 
@@ -318,15 +316,12 @@ private void FullWindow_Click(object sender, object e)
 
 ### <a name="resize-and-stretch-video"></a>Изменение размера и растяжение видео
 
-Свойство [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.stretch.aspx) позволяет изменить способ заполнения контейнера видеосодержимым и (или) [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.postersource.aspx). Видео меняет размер и растягивается в зависимости от значения [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968). Состояния свойства **Stretch** аналогичны параметрам размера картинки на многих телевизорах. Вы можете привязать это свойство к кнопке и дать пользователю возможность выбрать предпочтительный вариант.
+Свойство [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.stretch.aspx) позволяет изменить способ заполнения контейнера видеосодержимым и(или) [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.postersource.aspx). Видео меняет размер и растягивается в зависимости от значения [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968). Состояния свойства **Stretch** аналогичны параметрам размера картинки на многих телевизорах. Вы можете привязать это свойство к кнопке и дать пользователю возможность выбрать предпочтительный вариант.
 
--   [**None**](https://msdn.microsoft.com/library/windows/apps/br242968) — содержимое отображается в основном разрешении и исходном размере.
--   [**Uniform**
-            ](https://msdn.microsoft.com/library/windows/apps/br242968) — заполняется максимальное пространство с сохранением пропорций и без потери частей изображения. Это может привести к появлению горизонтальных или вертикальных черных полос по краям видео, как в широкоэкранных режимах.
--   [**UniformToFill**
-            ](https://msdn.microsoft.com/library/windows/apps/br242968) — заполняется все отведенное место, сохраняя пропорции. Это может привести к тому, что часть изображения будет обрезана, как в полноэкранных режимах.
--   [**Fill**
-            ](https://msdn.microsoft.com/library/windows/apps/br242968) — заполняется все отведенное место, но без сохранения пропорций. Изображение не обрезается, но может быть растянуто, как в режимах с растяжением.
+-   [**None**](https://msdn.microsoft.com/library/windows/apps/br242968)— содержимое отображается в основном разрешении и исходном размере.
+-   [**Uniform**](https://msdn.microsoft.com/library/windows/apps/br242968) — заполняется максимальное пространство с сохранением пропорций и без потери частей изображения. Это может привести к появлению горизонтальных или вертикальных черных полос по краям видео, как в широкоэкранных режимах.
+-   [**UniformToFill**](https://msdn.microsoft.com/library/windows/apps/br242968) — заполняется все отведенное место, сохраняя пропорции. Это может привести к тому, что часть изображения будет обрезана, как в полноэкранных режимах.
+-   [**Fill**](https://msdn.microsoft.com/library/windows/apps/br242968) — заполняется все отведенное место, но без сохранения пропорций. Изображение не обрезается, но может быть растянуто, как в режимах с растяжением.
 
 ![Различные значения свойства Stretch](images/Image_Stretch.jpg)
 
@@ -363,9 +358,9 @@ private void PictureSize_Click(object sender, RoutedEventArgs e)
 
 ### <a name="enable-low-latency-playback"></a>Активация воспроизведения с низкой задержкой
 
-Присвойте свойству [**RealTimePlayback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) значение **true** в элементе [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx), чтобы позволить элементу проигрывателя мультимедиа уменьшить первоначальную задержку для воспроизведения. Это имеет первостепенное значение для приложений двусторонней связи и может быть необходимо в некоторых игровых ситуациях. Помните, что этот режим требует больше ресурсов и расходует больше заряда батареи.
+Присвойте свойству [**RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) значение **true** в элементе [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx), чтобы позволить элементу проигрывателя мультимедиа уменьшить первоначальную задержку для воспроизведения. Это имеет первостепенное значение для приложений двусторонней связи и может быть необходимо в некоторых игровых ситуациях. Помните, что этот режим требует больше ресурсов и расходует больше заряда батареи.
 
-В этом примере создается объект [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx), а его атрибуту [**RealTimePlayback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) присваивается значение **true**.
+В этом примере создается объект [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx), а его атрибуту [**RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) присваивается значение **true**.
 
 
 ```csharp
@@ -389,4 +384,3 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 - [Основы проектирования команд в приложениях UWP](https://msdn.microsoft.com/library/windows/apps/dn958433)
 - [Основы проектирования содержимого для приложений UWP](https://msdn.microsoft.com/library/windows/apps/dn958434)
-

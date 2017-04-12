@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a733f3d87f2e6598e49d8926a7b10797e335c79c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 84e53b5093d2d288dbe95f51b0a3f9a8e5e06fe0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="use-global-ready-formats"></a>Использование форматов международного стандарта
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -47,7 +44,7 @@ ms.lasthandoff: 02/07/2017
 
 Если вы хотите предоставить пользователям возможность выбора даты или времени, используйте стандартные элементы управления для [выбора даты и времени](https://msdn.microsoft.com/library/windows/apps/hh465466). При этом будут автоматически использоваться форматы даты и времени, принятые для выбранного пользователем языка и страны.
 
-Если вы сами хотите отображать дату и время, используйте средства форматирования [**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) и [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136), чтобы автоматически отображать выбранный пользователем формат даты, времени и чисел. Приведенный ниже код преобразует заданный объект DateTime в формат предпочитаемого языка и региона. Например, текущая дата 3 июня 2012 года будет выглядеть как "6/3/2012", если пользователь использует язык "английский (США)", но примет вид "03.06.2012", если избранный язык пользователя — "немецкий (Германия)".
+Если вы сами хотите отображать дату и время, используйте средства форматирования [**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) и [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136), чтобы автоматически отображать выбранный пользователем формат даты, времени и чисел. Приведенный ниже код преобразует заданный объект DateTime в формат предпочитаемого языка и региона. Например, текущая дата 3июня 2012года будет выглядеть как "6/3/2012", если пользователь использует язык "английский (США)", но примет вид "03.06.2012", если избранный язык пользователя — "немецкий (Германия)".
 
 ```CSharp
     // Use the Windows.Globalization.DateTimeFormatting.DateTimeFormatter class
@@ -175,4 +172,3 @@ ms.lasthandoff: 02/07/2017
 * [Пример форматирования даты и времени](http://go.microsoft.com/fwlink/p/?linkid=231618)
 * [Пример настроек глобализации](http://go.microsoft.com/fwlink/p/?linkid=231608)
 * [Пример форматирования и разбора чисел](http://go.microsoft.com/fwlink/p/?linkid=231620)
-

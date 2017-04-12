@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, рекламные объявления, реклама, AdControl, XAML, свойства"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dbcc08b1373c7f73d5b9ebf541ec82bb01fd9df3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3c5dae93ab6ee58fac7d4593257d357f268c241a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-xaml-properties-example"></a>Пример свойств XAML AdControl
 
-В следующем примере XAML показано, как присвоить значения свойствам [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx). Если значение свойства не задано, **AdControl** использует значения по умолчанию, обеспечивающие согласованность рекламного объявления с процессом взаимодействия пользователя с приложением.
+В следующем примере XAML показано, как установить значения свойств [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx). Если значение свойства не задано, **AdControl** использует значения по умолчанию, обеспечивающие согласованность рекламного объявления с процессом взаимодействия пользователя с приложением.
 
 Эти значения являются примерами. В своем коде вы зададите значения для этих функций и свойств, подходящий для вашего приложения.
 
@@ -40,4 +37,3 @@ ms.lasthandoff: 02/07/2017
 * [Примеры рекламы на GitHub](http://aka.ms/githubads)
 
  
-

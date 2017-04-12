@@ -1,22 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
-description: "Узнайте, как обрабатывать ошибки, формируемые классом AdControl, в библиотеках Microsoft Advertising."
+description: "Узнайте, как обрабатывать ошибки, созданные классом AdControl в библиотеках Microsoft Advertising."
 title: "Обработка ошибок в библиотеках Microsoft Advertising"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, рекламные объявления, реклама, обработка ошибок, javascript, XAML, c#"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f979a250872f19a54c6b638d44624ff2e1840c91
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, рекламные объявления, реклама, обработка ошибок, javascript, XAML, c#"
+ms.openlocfilehash: 7c65f424341517072b06aaba30929f17303dcf1f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="error-handling-with-the-microsoft-advertising-libraries"></a>Обработка ошибок в библиотеках Microsoft Advertising
+# <a name="error-handling-with-the-advertising-libraries"></a>Обработка ошибок в библиотеках Microsoft Advertising
 
 В этом разделе содержатся основные сведения об обработке ошибок, созданных классом [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) в библиотеках Microsoft Advertising.
 
@@ -88,4 +85,3 @@ private void OnAdError(object sender, AdErrorEventArgs e)
  
 
  
-

@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, игры, directx, ресурсы, изображения"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 1aeb4ef581254ae914efae4bc38853611dbde488
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-up-directx-resources-and-display-an-image"></a>Настройка ресурсов DirectX и отображение изображения
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе мы покажем, как создать устройство Direct3D, цепочку буферов и представление целевого объекта обработки, а также как представить обработанное изображение для отображения.
 
@@ -53,7 +50,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="2-creating-the-direct3d-device"></a>2. Создание устройства Direct3D
 
-Чтобы использовать API Direct3D для обработки сцены, необходимо сначала создать устройство Direct3D, представляющее видеоадаптер. Чтобы создать устройство Direct3D, необходимо вызвать функцию [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082). Мы определяем уровни с 9.1 по 11.1 в массиве значений [**D3D\_FEATURE\_LEVEL**](https://msdn.microsoft.com/library/windows/desktop/ff476329). Direct3D по порядку проходит через массив и возвращает высший уровень поддерживаемого компонента. Таким образом, чтобы получить наивысший доступный уровень компонента, мы перечисляем записи массива **D3D\_FEATURE\_LEVEL** от высшего к низшему. Чтобы ресурсы Direct3D могли взаимодействовать с Direct2D, мы передаем флаг [**D3D11\_CREATE\_DEVICE\_BGRA\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_BGRA_SUPPORT) параметру *Флаги*. Если мы используем отладочную сборку, мы также передаем флаг [**D3D11\_CREATE\_DEVICE\_DEBUG**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_DEBUG). Дополнительные сведения о приложениях отладки см. в разделе [Отладка приложений с помощью уровня отладки](https://msdn.microsoft.com/library/windows/desktop/jj200584).
+Чтобы использовать API Direct3D для обработки сцены, необходимо сначала создать устройство Direct3D, представляющее видеоадаптер. Чтобы создать устройство Direct3D, необходимо вызвать функцию [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082). Мы определяем уровни с9.1 по11.1 в массиве значений [**D3D\_FEATURE\_LEVEL**](https://msdn.microsoft.com/library/windows/desktop/ff476329). Direct3D по порядку проходит через массив и возвращает высший уровень поддерживаемого компонента. Таким образом, чтобы получить наивысший доступный уровень компонента, мы перечисляем записи массива **D3D\_FEATURE\_LEVEL** от высшего к низшему. Чтобы ресурсы Direct3D могли взаимодействовать с Direct2D, мы передаем флаг [**D3D11\_CREATE\_DEVICE\_BGRA\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_BGRA_SUPPORT) параметру *Флаги*. Если мы используем отладочную сборку, мы также передаем флаг [**D3D11\_CREATE\_DEVICE\_DEBUG**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_DEBUG). Дополнительные сведения о приложениях отладки см. в разделе [Отладка приложений с помощью уровня отладки](https://msdn.microsoft.com/library/windows/desktop/jj200584).
 
 Мы получаем устройство Direct3D 11.1 ([**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)) и контекст устройства ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) с помощью запроса устройства Direct3D 11 и его контекста, возвращаемые [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082).
 
@@ -292,7 +289,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

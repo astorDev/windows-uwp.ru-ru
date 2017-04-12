@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 041a591cc3e53ee6f5e4b5d51e41a0e1032c6cac
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b9bf56e9f4fa4632623ae2d644a4e9958ee02443
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="print-from-your-app"></a>Печать из приложения
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -266,7 +264,7 @@ PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrin
 
 Очистите список параметров, отображающихся в пользовательском интерфейсе предварительного просмотра печати, и добавьте параметры, которые вы хотите показывать, когда пользователь начинает печать из приложения.
 
-**Примечание.** Эти параметры появляются в пользовательском интерфейсе предварительного просмотра печати в порядке их добавления — первый параметр отображается вверху окна.
+**Примечание.** Эти параметры появляются в пользовательском интерфейсе предварительного просмотра печати в порядке их добавления— первый параметр отображается вверху окна.
 
 ```csharp
 IList<string> displayedOptions = printDetailedOptions.DisplayedOptions;
@@ -394,9 +392,8 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 -   Отобразите в предварительном просмотре только страницы выбранного пользователем диапазона, обновляя представление, если пользователь изменит диапазон страниц.
 -   Отобразите в предварительном просмотре все страницы, но сделайте неактивными те из них, которые не входят в выбранный пользователем диапазон страниц.
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [Руководство по проектированию печати](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Видео c конференции Build 2015: разработка приложений для печати в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [//Видео c конференции Build 2015: разработка приложений для печати в Windows10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [Пример печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)
-

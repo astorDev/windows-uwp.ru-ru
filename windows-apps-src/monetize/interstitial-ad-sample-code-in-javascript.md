@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
-description: "Узнайте, как запускать промежуточную рекламу с помощью JavaScript и HTML."
+description: "Узнайте, как запускать промежуточную рекламу с помощью JavaScript И HTML."
 title: "Пример кода промежуточной рекламы в JavaScript"
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, реклама, рекламные объявления, промежуточная, javascript, пример кода"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 91a54bdd2e41b3e7df0ee0aad32448ab9ed66ac0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 192ea42e9d55bbafcd6c6dbd463681832ac28c86
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="interstitial-ad-sample-code-in-javascript"></a>Пример кода промежуточной рекламы в JavaScript
 
 В этом разделе представлен полный пример кода для простого приложения универсальной платформы Windows (UWP) на JavaScript и HTML, в котором отображается промежуточная реклама. Пошаговые инструкции по настройке проекта для использования этого кода см. в разделе [Промежуточная реклама](interstitial-ads.md). Полный пример с проектом см. в разделе [рекламы примеров на GitHub](http://aka.ms/githubads).
@@ -29,6 +26,8 @@ ms.lasthandoff: 02/07/2017
 >**Примечание для Windows 8.x и Windows Phone 8.1.**&nbsp;&nbsp;Если ваш проект ориентирован на Windows 8.1 или Windows Phone 8.1, именем HTML-файла по умолчанию в вашем проекте будет default.html вместо index.html, а именем JavaScript-файла по умолчанию в вашем проекте будет default.js вместо main.js.
 
 Замените значения переменных ```applicationId``` и ```adUnitId``` фактическими значениями из Центра разработки для Windows перед отправкой своего приложения в Магазин. Дополнительные сведения см. в разделе [Настройка рекламных блоков в приложении](set-up-ad-units-in-your-app.md).
+
+>**Примечание.**&nbsp;&nbsp;Чтобы изменить этот пример для отображения межстраничного баннера вместо межстраничной видеорекламы, передайте значение **InterstitialAdType.display** в качестве первого параметра для метода [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) вместо значения **InterstitialAdType.video**. Дополнительные сведения см. в разделе [Межстраничные объявления](interstitial-ads.md).
 
 ### <a name="indexhtml"></a>index.html
 
@@ -53,4 +52,3 @@ ms.lasthandoff: 02/07/2017
 * [Примеры рекламы на GitHub](http://aka.ms/githubads)
 
  
-

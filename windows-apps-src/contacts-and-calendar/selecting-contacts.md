@@ -9,16 +9,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5e53332ae3596341e4322bc16882cf678672083d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5a375851f5b9be63c9780b806dd45721b0f8291f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="select-contacts"></a>Выбор контактов
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Пространство имен [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) позволяет выбирать контакты несколькими способами. В этой статье описано, как выбрать один или несколько контактов, и показано, как настроить окно выбора контактов, чтобы получать только необходимые вашему приложению сведения о контактах.
@@ -235,4 +232,3 @@ public class ContactItemAdapter
 ## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
 
 Теперь вы имеете представление об использовании окна выбора контактов для получения контактных данных. Скачайте [Примеры универсальных приложений для Windows](http://go.microsoft.com/fwlink/p/?linkid=619979) из GitHub, чтобы ознакомиться с другими примерами использования контактов и окна выбора контактов.
-

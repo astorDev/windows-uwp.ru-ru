@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b8d695dbf3aa662a760f162b6fcb818d90f45c38
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0ea40ff57bf6923b8fea05de6d07863e13e5ad9c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # <a name="raw-notification-overview"></a>Общие сведения о необработанных уведомлениях
@@ -55,7 +53,7 @@ ms.lasthandoff: 02/07/2017
 
 -   Заголовок HTTP типа содержимого (Content-Type) должен иметь вид "application/octet-stream".
 -   Заголовок HTTP [X-WNS-Type](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_type) должен иметь вид "wns/raw".
--   Текст уведомления может содержать любые полезные данные в строке, если их объем не превышает 5 КБ.
+-   Текст уведомления может содержать любые полезные данные в строке, если их объем не превышает 5КБ.
 
 Необработанные уведомления создаются, чтобы побудить приложение совершить какое-либо действие, например связаться напрямую со службой для синхронизации большего количества данных или изменить локальное состояние на основе содержимого уведомления. Обратите внимание, что push-уведомления WNS доставляются не всегда, поэтому приложение и облачная служба должны учитывать вероятность того, что необработанное уведомление может не достичь клиента, например, когда клиент работает автономно.
 
@@ -117,7 +115,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="other-resources"></a>Другие ресурсы
 
 
-Для получения подробной информации скачайте  [Пример необработанных уведомлений](http://go.microsoft.com/fwlink/p/?linkid=241553) для Windows 8.1 и [Пример push-уведомлений и регулярных уведомлений](http://go.microsoft.com/fwlink/p/?LinkId=231476) для Windows 8.1 и используйте их исходный код в приложении для Windows 10.
+Для получения подробной информации скачайте  [Пример необработанных уведомлений](http://go.microsoft.com/fwlink/p/?linkid=241553) для Windows8.1 и [Пример push-уведомлений и регулярных уведомлений](http://go.microsoft.com/fwlink/p/?LinkId=231476) для Windows 8.1 и используйте их исходный код в приложениидля Windows 10.
 
 ## <a name="related-topics"></a>Ссылки по теме
 
@@ -129,7 +127,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

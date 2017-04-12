@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "Элемент управления RichEditBox можно использовать для ввода и правки документов в формате RTF, содержащих форматированный текст, изображения и гиперссылки. Элемент управления RichEditBox можно сделать доступным только для чтения, задав его свойству IsReadOnly значение true."
+Description: "Элемент управления RichEditBox можно использовать для ввода и правки документов в формате RTF, содержащих форматированный текст, изображения и гиперссылки. Элемент управления RichEditBox можно сделать доступным только для чтения, задав для его свойства IsReadOnly значение true."
 title: "Элемент управления RichEditBox"
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae0fab5d09779ccfcc1c9b15e29921c07f0f6c6d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b92febc902f293c4b6e5db8838a220a36becbf43
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="rich-edit-box"></a>Блок форматируемого текста
 
@@ -53,7 +51,7 @@ ms.lasthandoff: 02/07/2017
 
 По умолчанию элемент управления RichEditBox поддерживает проверку орфографии. Чтобы отключить функцию проверки орфографии, задайте для свойства [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) значение **false**. Более подробные сведения см. в статье [Инструкции по проверке орфографии](spell-checking-and-prediction.md).
 
-Свойство [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) элемента RichEditBox используется для получения его содержимого. Содержимое RichEditBox — это объект [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx), в отличие от элемента управления RichTextBlock, использующего объекты [Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) в качестве своего содержимого. С помощью интерфейса ITextDocument можно загрузить и сохранить документ в потоке, получить фрагменты текста, выделить текст, отменить и повторить изменения, задать атрибуты форматирования по умолчанию и т. д.
+Свойство [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) элемента RichEditBox используется для получения его содержимого. Содержимое RichEditBox — это объект [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx), в отличие от элемента управления RichTextBlock, использующего объекты [Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) в качестве своего содержимого. С помощью интерфейса ITextDocument можно загрузить и сохранить документ в потоке, получить фрагменты текста, выделить текст, отменить и повторить изменения, задать атрибуты форматирования по умолчанию и т.д.
 
 В этом примере показано, как редактировать, загружать и сохранять файл в формате RTF в элементе управления RichEditBox.
 
@@ -210,7 +208,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 -   Не используйте поле с форматом там, где достаточно элемента управления обычного текста.
 
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Еще по теме
 
 * [Текстовые элементы управления](text-controls.md)
 - [Руководство по проверке орфографии](spell-checking-and-prediction.md)
@@ -218,4 +216,3 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - [Руководство по текстовому вводу](text-controls.md)
 - [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Класс Windows.UI.Xaml.Controls PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519)
-

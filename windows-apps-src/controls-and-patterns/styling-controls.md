@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "С помощью стилей вы можете настраивать свойства элементов управления и многократно использовать эти параметры, чтобы придать единообразный внешний вид нескольким элементам управления."
+Description: "С помощью стилей можно настраивать свойства элементов управления и многократно использовать эти параметры, чтобы придать единообразный внешний вид нескольким элементам управления."
 MS-HAID: dev\_ctrl\_layout\_txt.styling\_controls
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -14,13 +14,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 60eb44ab45873b638181bb4b3194e443d21356bc
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b9bc1e68e26830a283ed49b753f63a8f7ae63637
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="styling-controls"></a>Настройка стиля элементов управления
 
 
@@ -38,7 +35,7 @@ ms.lasthandoff: 02/07/2017
 
 В определении [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) требуется атрибут [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) и коллекция одного или нескольких элементов [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817). Атрибут **TargetType** является строкой, задающей тип [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), к которому применяется стиль. Значение **TargetType** должно указывать производный от **FrameworkElement** тип, определенный средой выполнения Windows, или пользовательский тип, доступный в ссылаемой сборке. Если вы попытаетесь применить стиль к элементу управления, тип которого не соответствует атрибуту **TargetType** этого стиля, будет выдано исключение.
 
-Для каждого элемента [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) необходимы параметры [**Property**](https://msdn.microsoft.com/library/windows/apps/br208836) и [**Value**](https://msdn.microsoft.com/library/windows/apps/br208838). Эти параметры свойства показывают, к какому свойству элемента управления применяется параметр, а также значение, задаваемое для этого свойства. Параметр **Setter.Value** можно настроить с помощью синтаксиса атрибута или элемента свойства. В этом примере кода XAML показано, как применить стиль к показанным ранее кнопкам. В этом коде XAML для первых двух элементов **Setter** используется синтаксис атрибута, а в последнем элементе **Setter** (для свойства [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397)) – синтаксис элемента свойства. В примере не используется атрибут [x:Key](../xaml-platform/x-key-attribute.md), и поэтому стиль неявно применяется к кнопкам. Явное и неявное применение стилей поясняется в следующем разделе.
+Для каждого элемента [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) необходимы параметры [**Property**](https://msdn.microsoft.com/library/windows/apps/br208836) и [**Value**](https://msdn.microsoft.com/library/windows/apps/br208838). Эти параметры свойства показывают, к какому свойству элемента управления применяется параметр, а также значение, задаваемое для этого свойства. Параметр **Setter.Value** можно настроить с помощью синтаксиса атрибута или элемента свойства. В этом примере кода XAML показано, как применить стиль к показанным ранее кнопкам. В этом коде XAML для первых двух элементов **Setter** используется синтаксис атрибута, а в последнем элементе **Setter** (для свойства [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397))–синтаксис элемента свойства. В примере не используется атрибут [x:Key](../xaml-platform/x-key-attribute.md), и поэтому стиль неявно применяется к кнопкам. Явное и неявное применение стилей поясняется в следующем разделе.
 
 ```XAML
 <Page.Resources>
@@ -157,5 +154,4 @@ ms.lasthandoff: 02/07/2017
 ## <a name="the-template-property"></a>Свойство Template
 
 Вы можете использовать метод задания стиля для свойства [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) элемента [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390). По сути, сюда входит большинство типовых стилей XAML и ресурсов XAML приложения. Подробные сведения см. в статье [Шаблоны элементов управления](control-templates.md).
-
 

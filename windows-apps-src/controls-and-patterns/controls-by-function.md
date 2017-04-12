@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e665814f2d65affd89973879332ba0a2732e1509
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7082b8f81f45d5035cbe2d9b4bf482d0c985bb8f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="controls-by-function"></a>Элементы управления по функциям
 
@@ -25,7 +23,7 @@ ms.lasthandoff: 02/07/2017
 
 Чтобы просмотреть элементы управления интерфейса Windows в действии, скачайте [**пример основных элементов пользовательского интерфейса XAML**](http://go.microsoft.com/fwlink/p/?LinkId=619992). 
 
-Ниже перечислены сгруппированные по функциям типовые элементы управления XAML, которые можно использовать в приложении. 
+Ниже перечисленысгруппированные по функциям типовые элементы управления XAML, которые можно использовать в приложении. 
 
 ## <a name="appbars-and-commands"></a>Панели приложения и команды
 
@@ -422,7 +420,7 @@ ms.lasthandoff: 02/07/2017
 Справка: [RelativePanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)
 
 ### <a name="scroll-bar"></a>Полоса прокрутки
-См. "Средство прокрутки". (ScrollBar — это элемент ScrollViewer. Он обычно не используется в качестве изолированного элемента управления.)
+См. "Средство прокрутки". (ScrollBar— это элемент ScrollViewer. Он обычно не используется в качестве изолированного элемента управления.)
 
 Справка: [ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
  
@@ -855,4 +853,3 @@ ms.lasthandoff: 02/07/2017
 Справка: [ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx) 
 
 Проектирование и инструкции: [Руководство по элементам управления "Переключатель"](toggles.md) 
-

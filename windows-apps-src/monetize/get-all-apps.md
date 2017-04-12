@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
 description: "Используйте этот метод в API отправки Магазина Windows для получения информации о всех приложениях, которые зарегистрированы в вашей учетной записи Центра разработки для Windows."
-title: "Получение всех приложений с помощью API отправки Магазина Windows"
+title: "Получение всех приложений"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API отправки Магазина Windows, приложения"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 12466a50c6cabe5ceca907cdd2f0d600ec95121f
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, API отправки Магазина Windows, приложения"
+ms.openlocfilehash: 93e973eb20835160e6b580bc932ce559b47e0ce1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-all-apps-using-the-windows-store-submission-api"></a>Получение всех приложений с помощью API отправки Магазина Windows
+# <a name="get-all-apps"></a>Получение всех приложений
 
 
 
@@ -25,16 +22,16 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="prerequisites"></a>Необходимые условия
 
-Для использования этого метода необходимо выполнить следующие действия:
+Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
-* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
 
 >**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
 ## <a name="request"></a>Запрос
 
-У этого метода следующий синтаксис. Примеры использования и описание заголовка и тела запроса приведены в следующих разделах.
+У этого метода следующий синтаксис. Примеры использования и описание текста заголовка и запроса приведены в следующих разделах.
 
 | Метод | URI запроса                                                      |
 |--------|------------------------------------------------------------------|
@@ -47,7 +44,7 @@ ms.lasthandoff: 02/07/2017
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
@@ -147,4 +144,3 @@ Authorization: Bearer <your access token>
 * [Получение приложения](get-an-app.md)
 * [Получение тестовых пакетов для приложения](get-flights-for-an-app.md)
 * [Получение надстроек для приложения](get-add-ons-for-an-app.md)
-

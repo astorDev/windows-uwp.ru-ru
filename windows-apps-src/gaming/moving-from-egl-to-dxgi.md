@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, egl, dxgi, direct3d
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 7d7e4058eccd39911bd84d3967ef07b93b6ee89d
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>Сравнение кода EGL с DXGI и Direct3D
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -32,7 +29,7 @@ ms.lasthandoff: 02/07/2017
 
 DXGI и Direct3D, подобно EGL, предоставляют методы для настройки графических ресурсов, получения контекста отрисовки, в котором будут рисовать шейдеры, и отображения результатов в окне. Но у DXGI и Direct3D есть целый ряд дополнительных возможностей, и они требуют дополнительных усилий для правильной настройки при переносе с EGL.
 
-> **Примечание.** Это руководство построено на открытой спецификации Khronos Group для EGL 1.4, которую можно найти тут: [Графический интерфейс собственной платформы Khronos (версия EGL 1.4, 6 апреля 2011 г.) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Различия в синтаксисе, касающиеся других платформ и языков разработки, не охвачены в этом руководстве.
+> **Примечание.** Это руководство построено на открытой спецификации Khronos Group для EGL 1.4, которую можно найти тут: [Графический интерфейс собственной платформы Khronos (версия EGL 1.4, 6 апреля 2011г.) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Различия в синтаксисе, касающиеся других платформ и языков разработки, не охвачены в этом руководстве.
 
  
 
@@ -396,7 +393,7 @@ EGLBoolean eglTerminate(eglDisplay);
 | eglDestroySurface                | Н/д. Графические ресурсы очищаются, когда CoreWindow приложения UWP закрывается платформой.                                                                                                                                                                                                                                                                                                                                                                                                 |
 | eglGetCurrentDisplay             | Вызовите [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589), чтобы получить ссылку на текущее основное окно приложения.                                                                                                                                                                                                                                                                                                                                                         |
 | eglGetCurrentSurface             | Это текущий [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582). Обычно его область устанавливается на ваш объект обработчика.                                                                                                                                                                                                                                                                                                                                                         |
-| eglGetError                      | Ошибки получаются как результаты HRESULT, возвращаемые большинством методов интерфейсов DirectX. Если метод не возвращает HRESULT, вызовите [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360). Чтобы преобразовать системную ошибку в значение HRESULT, используйте макрос [**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746).                                                                                                                                                                                                  |
+| eglGetError                      | Ошибки получаются как результаты HRESULT, возвращаемые большинством методов интерфейсов DirectX. Если метод не возвращает HRESULT, вызовите [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360). Чтобы преобразовать системную ошибку в значениеHRESULT, используйтемакрос [**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746).                                                                                                                                                                                                  |
 | eglInitialize                    | Вызовите [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589), чтобы получить ссылку на текущее основное окно приложения.                                                                                                                                                                                                                                                                                                                                                         |
 | eglMakeCurrent                   | Установите однобуферную прорисовку для рисования в текущем контексте с помощью [**ID3D11DeviceContext1::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464).                                                                                                                                                                                                                                                                                                                                  |
 | eglQueryContext                  | Н/д. Однако однобуферные прорисовки, а также некоторые данные конфигурации можно получать из экземпляра [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575). (Список доступных методов см. по ссылке.)                                                                                                                                                                                                                                                                                           |
@@ -416,7 +413,6 @@ EGLBoolean eglTerminate(eglDisplay);
  
 
  
-
 
 
 

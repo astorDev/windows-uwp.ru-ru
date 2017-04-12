@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ec6e7879faf3c33edc97b26b2d0721808a02dfdc
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a9e7cda7794b3463ffa567bcf36ebec2d2d02687
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="command-design-basics-for-uwp-apps"></a>Основы проектирования команд в приложениях UWP
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -160,7 +157,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

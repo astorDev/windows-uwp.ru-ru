@@ -12,11 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 329c4c507e94b08f948f4984dfbd96239eb3cd9d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 45c7c541ab278da1f00899a16636337dcdc20d3f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="layout-panels"></a>Панели макета
 
@@ -35,7 +33,7 @@ ms.lasthandoff: 02/07/2017
 
 В большинстве панелей макета XAML используются присоединенные свойства, что позволяет их дочерним элементам сообщить родительской панели, как они должны быть расположены в пользовательском интерфейсе. Присоединенные свойства используют синтаксис *AttachedPropertyProvider.PropertyName*. При наличии панелей, вложенных в другие панели, присоединенные свойства элементов пользовательского интерфейса, которые описывают характеристики макета родительскому объекту, будут интерпретированы только ближайшей родительской панелью.
 
-Ниже приведен пример задания присоединенного свойства [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) в элементе управления «Кнопка» в XAML. Оно информирует родительский элемент Canvas о том, что кнопка Button должна располагаться в 50 эффективных пикселах от левого края Canvas.
+Ниже приведен пример задания присоединенного свойства [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) в элементе управления «Кнопка» в XAML. Оно информирует родительский элемент Canvas о том, что кнопка Button должна располагаться в 50эффективных пикселах от левого края Canvas.
 
 ```xaml
 <Canvas>
@@ -132,7 +130,7 @@ ms.lasthandoff: 02/07/2017
 
 ![Панель стека](images/layout-panel-stack-panel.png)
 
-В StackPanel, если размер дочернего элемента явным образом не задан, он растягивается на всю доступную ширину (или высоту, если ориентация — **Horizontal**). В этом примере ширина прямоугольников не задана. Прямоугольники растягиваются, заполняя всю ширину StackPanel.
+В StackPanel, если размер дочернего элемента явным образом не задан, он растягивается на всю доступную ширину (или высоту, если ориентация— **Horizontal**). В этом примере ширина прямоугольников не задана. Прямоугольники растягиваются, заполняя всю ширину StackPanel.
 
 ## <a name="grid"></a>Сетка
 
@@ -207,7 +205,7 @@ ms.lasthandoff: 02/07/2017
 
 Панель [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) располагает свои дочерние элементы с помощью фиксированных точек координат. Эти точки указываются в индивидуальных дочерних элементах заданием присоединенных свойств [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) и [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.top.aspx) для каждого элемента. В макете родительский объект Canvas считывает значения этих присоединенных свойств со своих дочерних элементов и берет эти значения во время этапа [Arrange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.arrange.aspx) макета.
 
-Объекты в Canvas могут перекрываться, когда один объект рисуется поверх другого. По умолчанию Canvas отображает дочерние объекты в порядке, в котором они объявляются. Таким образом, последний дочерний объект отображается сверху (каждый элемент имеет по умолчанию значение z-index, равное 0). То же самое справедливо и для других встроенных панелей. Однако Canvas также поддерживает присоединенное свойство [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx), которое можно задать на каждом из дочерних элементов. Вы можете задать это свойство в коде, чтобы изменять последовательность перекрытия элементов во время выполнения. Элемент с наиболее высоким значением Canvas.ZIndex соответствует последнему элементу, загораживающему все прочие элементы, которые используют то же пространство, или перекрывающему их. Обратите внимание, что учитывается альфа-фактор (прозрачность), поэтому даже если элементы перекрываются, содержимое в зонах перекрытия может смешиваться, если у верхнего элемента альфа-фактор не является максимальной величиной.
+Объекты в Canvas могут перекрываться, когда один объект рисуется поверх другого. По умолчанию Canvas отображает дочерние объекты в порядке, в котором они объявляются. Таким образом, последний дочерний объект отображается сверху (каждый элемент имеет по умолчанию значение z-index, равное0). То же самое справедливо и для других встроенных панелей. Однако Canvas также поддерживает присоединенное свойство [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx), которое можно задать на каждом из дочерних элементов. Вы можете задать это свойство в коде, чтобы изменять последовательность перекрытия элементов во время выполнения. Элемент с наиболее высоким значением Canvas.ZIndex соответствует последнему элементу, загораживающему все прочие элементы, которые используют то же пространство, или перекрывающему их. Обратите внимание, что учитывается альфа-фактор (прозрачность), поэтому даже если элементы перекрываются, содержимое в зонах перекрытия может смешиваться, если у верхнего элемента альфа-фактор не является максимальной величиной.
 
 Объект Canvas никак не изменяет размер своих дочерних элементов. Каждый элемент должен указывать свой размер.
 
@@ -232,4 +230,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="panels-for-itemscontrol"></a>Панели для ItemsControl
 
 Существует несколько специальных панелей, которые можно использовать только в качестве [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) для отображения элементов в [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx). Это типы [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx), [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx), [**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx) и [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx). Эти панели невозможно использовать для общего макета пользовательского интерфейса.
-

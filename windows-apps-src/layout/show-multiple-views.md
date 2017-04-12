@@ -12,18 +12,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 011a6e50c22a1ef245a9be11e3a5d7f9e270d5bc
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 87f3d5e75b361d1ba9d2c304e58542803da66cd4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="show-multiple-views-for-an-app"></a>Отображение нескольких представлений для приложения
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Вы можете помочь пользователям работать эффективнее, дав им возможность открывать несколько независимых компонентов приложения в отдельных окнах. Типичный пример — почтовое приложение, в главном интерфейсе которого отображается список адресов электронной почты и предварительный просмотр выбранной электронной почты. Однако пользователь может также открывать сообщения в отдельных окнах и просматривать их рядом.
+Вы можете помочь пользователям работать эффективнее, дав им возможность открывать несколько независимых компонентов приложения в отдельных окнах. Типичный пример— почтовое приложение, в главном интерфейсе которого отображается список адресов электронной почты и предварительный просмотр выбранной электронной почты. Однако пользователь может также открывать сообщения в отдельных окнах и просматривать их рядом.
 
 <div class="important-apis" >
 <b>Важные API</b><br/>
@@ -38,7 +35,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="what-is-a-view"></a>Что такое представление приложения?
 
 
-Представление приложения — это совокупность 1:1 потока и окна, которая используется приложением для отображения содержимого. Оно представляется объектом [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017).
+Представление приложения— это совокупность 1:1 потока и окна, которая используется приложением для отображения содержимого. Оно представляется объектом [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017).
 
 Представления управляются объектом [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016). Необходимо вызвать [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278), чтобы создать объект [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). **CoreApplicationView** объединяет [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) и [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) (которые хранятся в свойствах [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) и [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/dn433264)). **CoreApplicationView** можно считать объектом, который использует среда выполнения Windows для взаимодействия с основной системой Windows.
 
@@ -145,7 +142,6 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
  
 
  
-
 
 
 

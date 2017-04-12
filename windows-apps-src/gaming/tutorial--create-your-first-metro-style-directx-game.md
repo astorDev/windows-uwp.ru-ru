@@ -1,7 +1,7 @@
 ---
 author: mtoepke
-title: "Создание простой игры универсальной платформы Windows (UWP) с использованием DirectX"
-description: "Из данных учебников вы узнаете, как создать игру универсальной платформы Windows (UWP) с помощью DirectX и C++."
+title: "Создание игры универсальной платформы Windows (UWP) с использованием DirectX"
+description: "Из данных учебников вы узнаете, как создать простую игру универсальной платформы Windows (UWP) с помощью DirectX и C++."
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
 keywords:
 - "Образец игры DirectX"
@@ -12,17 +12,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3ffce29c3ad7088dd24b848cb159b85a4db158e3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8518a350f0c999d6110305c51f46fe12e5b590f0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>Создание простой игры универсальной платформы Windows (UWP) с использованием DirectX
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Из данных учебников вы узнаете, как создать игру универсальной платформы Windows (UWP) с помощью DirectX и C++. Мы расскажем обо всех основных частях игры, включая процессы загрузки таких активов, как графика и сетки, создание основного цикла игры, реализацию простого конвейера визуализации, а также добавление звуков и элементов управления.
 
@@ -38,7 +35,7 @@ ms.lasthandoff: 02/07/2017
 
 Прежде чем приступить к изучению руководства, необходимо знать следующее.
 
--   Microsoft C++ с расширениями компонентов (C++/CX). Это обновление Microsoft C++, в которое входит автоматический подсчет ссылок, является языком разработки игр UWP с помощью DirectX 11.1 или более поздних версий.
+-   Microsoft C++ с расширениями компонентов (C++/CX). Это обновление Microsoft C++, в которое входит автоматический подсчет ссылок, является языком разработки игр UWP с помощью DirectX11.1 или более поздних версий.
 -   Базовое знание линейной алгебры и ньютоновской физики.
 -   Базовое знание терминологии программирования графики.
 -   Базовое знание программирования в Windows.
@@ -77,7 +74,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

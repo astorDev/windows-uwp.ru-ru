@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1aaab8d122968265ff17b352a53b69081e84f01e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 48e48d1a350b01777c1d7e5ed4ab1f82b1d66d26
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-management-and-services"></a>Управление приложениями и службы
 
 На информационной панели Центра разработки для Windows можно просматривать сведения о приложениях и управлять ими, а также настраивать такие службы, как push-уведомления, служба A/B-тестирования и "Карты".
@@ -87,4 +84,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

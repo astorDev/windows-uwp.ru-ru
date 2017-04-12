@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3708a9b7768d4fb7fbb6af0e55836471a2ba29ed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6f834c91cd0c71f6d7687d9f69224ed747e45a6d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="run-a-background-task-on-a-timer"></a>Запуск фоновой задачи по таймеру
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -37,22 +34,22 @@ ms.lasthandoff: 02/07/2017
 
     Встроенный таймер для приложений UWP, предназначенных для настольных компьютеров или мобильных устройств, выполняет фоновые задачи с интервалом в 15 минут.
 
-    -   Если параметру *FreshnessTime* задано значение 15 минут, а параметру *OneShot* — значение true, задача будет запланирована для однократного выполнения через 15–30 минут с момента ее регистрации. Если задано значение "25 минут" и *OneShot* имеет значение true, задача будет запланирована для однократного выполнения через 25–40 минут с момента ее регистрации.
+    -   Если параметру *FreshnessTime* задано значение 15минут, а параметру *OneShot* — значение true, задача будет запланирована для однократного выполнения через 15–30минут с момента ее регистрации. Если задано значение "25 минут" и *OneShot* имеет значение true, задача будет запланирована для однократного выполнения через 25–40минут с момента ее регистрации.
 
-    -   Если параметру *FreshnessTime* задано значение 15 минут, а параметру *OneShot* — false, задача будет запланирована для выполнения каждые 15 минут через 15–30 минут с момента ее регистрации. Если задано значение "n минут" и *OneShot* имеет значение false, задача будет запланирована для выполнения каждые n минут, начиная с промежутка между n и n + 15 после регистрации.
+    -   Если параметру *FreshnessTime* задано значение 15 минут, а параметру *OneShot* — false, задача будет запланирована для выполнения каждые 15минут через 15–30минут с момента ее регистрации. Если задано значение "n минут" и *OneShot* имеет значение false, задача будет запланирована для выполнения каждые n минут, начиная с промежутка между n и n+15 после регистрации.
 
-    **Примечание.** Если параметру *FreshnessTime* задано значение меньше 15 минут, при попытке зарегистрировать фоновую задачу появляется исключение.
+    **Примечание.** Если параметру *FreshnessTime* задано значение меньше 15минут, при попытке зарегистрировать фоновую задачу появляется исключение.
  
 
     Например, данный триггер запускает выполнение фоновой задачи один раз в час:
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
-    > ```
-    > ```cpp
-    > TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
+> ```
+> ```cpp
+> TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
+> ```
 
 ## <a name="optional-add-a-condition"></a>Добавление условия (необязательно)
 
@@ -60,25 +57,25 @@ ms.lasthandoff: 02/07/2017
 
     В этом примере условию присвоено значение **UserPresent**, поэтому после срабатывания триггера задача выполняется, только если пользователь активен. Список возможных условий см. в статье [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > SystemCondition userCondition = new SystemCondition(SystemConditionType.UserPresent);
-    > ```
-    > ```cpp
-    > SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> SystemCondition userCondition = new SystemCondition(SystemConditionType.UserPresent);
+> ```
+> ```cpp
+> SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
+> ```
 
 ##  <a name="call-requestaccessasync"></a>Вызов RequestAccessAsync()
 
 -   Перед регистрацией фоновой задачи [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) вызовите [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494).
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > BackgroundExecutionManager.RequestAccessAsync();
-    > ```
-    > ```cpp
-    > BackgroundExecutionManager::RequestAccessAsync();
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> BackgroundExecutionManager.RequestAccessAsync();
+> ```
+> ```cpp
+> BackgroundExecutionManager::RequestAccessAsync();
+> ```
 
 ## <a name="register-the-background-task"></a>Регистрация фоновой задачи
 
@@ -89,28 +86,28 @@ ms.lasthandoff: 02/07/2017
 
     The following code registers a background task that runs out-of-process:
 
-    > > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
-    > string taskName   = "Example hourly background task";
-    >
-    > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
-    > ```
-    > ```cpp
-    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
-    > String ^ taskName   = "Example hourly background task";
-    >
-    > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> string entryPoint = "Tasks.ExampleBackgroundTaskClass";
+> string taskName   = "Example hourly background task";
+>
+> BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
+> ```
+> ```cpp
+> String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
+> String ^ taskName   = "Example hourly background task";
+>
+> BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
+> ```
 
-    > **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+> **Примечание.** Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации оказываются недопустимыми, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
 
 
 ## <a name="remarks"></a>Комментарии
 
-> **Примечание.** Начиная c Windows 10, пользователю больше не потребуется добавлять приложения на экран блокировки, чтобы использовать фоновые задачи. Руководство по таким типам триггеров фоновых задач см. в разделе [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
+> **Примечание.** Начиная c Windows10, пользователю больше не потребуется добавлять приложения на экран блокировки, чтобы использовать фоновые задачи. Руководство по таким типам триггеров фоновых задач см. в разделе [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
 
-> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). Если вы разрабатываете приложения для Windows 8.x или Windows Phone 8.x, обратитесь к [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Примечание.** Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Статьи по теме
 
@@ -127,4 +124,3 @@ ms.lasthandoff: 02/07/2017
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Вызов событий приостановки, возобновления и фоновых событий в приложениях Магазина Windows (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-

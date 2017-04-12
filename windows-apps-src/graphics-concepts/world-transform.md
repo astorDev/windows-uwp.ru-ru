@@ -2,21 +2,17 @@
 title: "Мировое преобразование"
 description: "Мировое преобразование переносит координаты из модельного пространства, где вершины определены относительно локального начала координат модели, в мировое пространство."
 ms.assetid: 767B032C-69D0-4583-8FEB-247F4C41E31D
-keywords:
-- "Мировое преобразование"
+keywords: "Мировое преобразование"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 45462cf0deb4e0bbf444fd4300a942cf05ad701c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6218747e0522235f1d71510a4ad4b6ce60def4a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="world-transform"></a>Мировое преобразование
 
 
@@ -46,7 +42,6 @@ Direct3D использует установленные вами мировую
  
 
  
-
 
 
 

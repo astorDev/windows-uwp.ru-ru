@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7f84b573a051bca38000d2d480368147110ea22c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a48a18fdb2c75f334a4ac9cb5916cab6b43d8c7e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="beta-testing"></a>Бета-тестирование
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 *Бета-тестирование* позволяет улучшить приложение на основе отзывов пользователей вне группы разработчиков, которые используют невыпущенные приложения на собственных устройствах.
@@ -50,7 +48,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

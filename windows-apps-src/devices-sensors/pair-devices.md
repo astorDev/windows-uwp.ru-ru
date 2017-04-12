@@ -9,20 +9,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7349188a9b735ac887c1afbc09c572f598407471
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8bde7d6b65ae6fd96c38e2748a4e7ea0f9821aa2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="pair-devices"></a>Связывание устройств
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Важные API **
+**Важные API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 Некоторые устройства необходимо связать, прежде чем их можно будет использовать. Пространство имен [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) поддерживает три разных способа связывания устройств.
 
@@ -48,7 +46,7 @@ ms.lasthandoff: 02/07/2017
 
 Чтобы попытаться выполнить базовое связывание, сначала необходимо получить объект [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) для устройства, которое вас интересует. Получив этот объект, вы сможете взаимодействовать со свойством [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx), являющимся объектом [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx). Чтобы выполнить связывание, просто вызовите [**DeviceInformationPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/mt608800). Вам необходимо будет **подождать** результат, чтобы предоставить приложению время попытаться завершить действие связывания. Будет возвращен результат действия связывания, и при отсутствии ошибок устройство будет связано.
 
-В случае использования базового связывания вы также получаете доступ к дополнительной информации о состоянии связывания устройства. Например, вы знаете состояние связывания ([**IsPaired**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.ispaired.aspx)) и вам известно о возможности связывания устройства ([**CanPair**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.canpair.aspx)). Эти показатели являются свойствами объекта [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx). При использовании автоматического связывания у вас может не быть доступа к этим сведениям, если вы не получите релевантные объекты [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393).
+В случае использования базового связывания вы также получаете доступ к дополнительной информации о состоянии связывания устройства. Например, вы знаете состояние связывания ([**IsPaired**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing#Windows_Devices_Enumeration_DeviceInformationPairing_IsPaired)) и вам известно о возможности связывания устройства ([**CanPair**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing#Windows_Devices_Enumeration_DeviceInformationPairing_CanPair)). Эти показатели являются свойствами объекта [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx). При использовании автоматического связывания у вас может не быть доступа к этим сведениям, если вы не получите релевантные объекты [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393).
 
 ## <a name="custom-pairing"></a>Пользовательское связывание
 
@@ -76,8 +74,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
-
-
-
-

@@ -9,20 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, игры, карты теней, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: e4cffcf1e9655d5bc5dacbfc17cb64b5671d7551
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a>Поддержка карт теней на различном оборудовании
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Более высокое качество отображения теней на быстрых устройствах и быстрое отображение на менее мощных устройствах. [Пошаговое руководство. Реализация теневых объемов с помощью буферов глубины в Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md), часть 4.
+Более высокое качество отображения теней на быстрых устройствах и быстрое отображение на менее мощных устройствах. [Пошаговое руководство. Реализация теневых объемов с помощью буферов глубины в Direct3D11](implementing-depth-buffers-for-shadow-mapping.md), часть4.
 
 ## <a name="comparison-filter-types"></a>Типы фильтров сравнения
 
@@ -179,7 +176,6 @@ return float4(input.color * (light + shadow), 1.f);
  
 
  
-
 
 
 

@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 52e38acbde0fe1b7a53c210e4988ab34c8aacd50
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f8af866b36cbc8748a878814ec9d46eec340dc5b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="define-custom-recognition-constraints"></a>Определение настраиваемых ограничений распознавания
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -44,9 +41,9 @@ ms.lasthandoff: 02/07/2017
 
 Здесь мы рассмотрим три вида ограничений распознавания речи, используемых в пределах приложения. (Сведения об ограничениях голосовых команд см. в разделе [Запуск приложения переднего плана с помощью голосовых команд в Кортане](launch-a-foreground-app-with-voice-commands-in-cortana.md).)
 
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) — ограничение на базе предварительно заданной грамматики (диктовки или веб-поиска).
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) — ограничение на базе списка слов или фраз.
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) — ограничение, определенное в файле грамматики SRGS.
+-   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)— ограничение на базе предварительно заданной грамматики (диктовки или веб-поиска).
+-   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)— ограничение на базе списка слов или фраз.
+-   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)— ограничение, определенное в файле грамматики SRGS.
 
 Распознаватель речи может иметь одну коллекцию ограничений. Только эти комбинации ограничений являются допустимыми:
 
@@ -239,14 +236,13 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 ## <a name="related-articles"></a>Связанные разделы
 
 
-* [Взаимодействия с помощью голосовых функций](speech-interactions.md)
+* [Взаимодействие с помощью голосовых функций](speech-interactions.md)
 
 **Примеры**
 * [Пример распознавания и синтеза речи](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
-
 
 
 

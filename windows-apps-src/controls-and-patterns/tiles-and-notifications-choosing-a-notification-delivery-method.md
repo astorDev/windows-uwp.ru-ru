@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 42cb565c9cb1592d90d9f46d2faf783117d0a8bd
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 39418d553eceb6b38d9b0cecc633c984f38465b9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="choose-a-notification-delivery-method"></a>Выбор способа доставки уведомлений
 
@@ -159,7 +157,7 @@ Push-уведомления идеально подходят для случа�
 -   [Примеры кода уведомлений универсальной платформы Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 
 
 * [Отправка локального уведомления на плитке](tiles-and-notifications-sending-a-local-tile-notification.md)
@@ -172,7 +170,6 @@ Push-уведомления идеально подходят для случа�
  
 
  
-
 
 
 

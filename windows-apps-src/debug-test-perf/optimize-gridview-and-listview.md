@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 96902d7532aed1510d959b45528cc71e0e6dca70
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3cd3695f6a7ec9c2d29fdd1826635973aab809a9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>Оптимизация пользовательского интерфейса ListView и GridView
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Примечание.**  
 Для получения дополнительных сведений см. мероприятие //build/ [Резкое повышение производительности при взаимодействии пользователей с большим объемом данных в GridView и ListView](https://channel9.msdn.com/events/build/2013/3-158).
@@ -253,7 +251,7 @@ namespace LotsOfItems
 
 **Событие ChoosingItemContainer**
 
-[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) — это событие, которое позволит предоставить элемент (**ListViewItem**/**GridViewItem**) для [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) при необходимости создания элемента в ходе запуска или повторного использования. Вы можете создать контейнер в зависимости от типа элемента данных, который этот контейнер будет отображать (как в примере ниже). **ChoosingItemContainer** — это более производительный способ использования разных шаблонов данных для разных элементов. Кэширование контейнера можно обеспечить при помощи **ChoosingItemContainer**. Например, если вы используете пять разных шаблонов и один из них — на порядок чаще других, ChoosingItemContainer позволяет не только создавать элементы в нужных соотношениях, но и сохранять нужное количество помещенных в кэш и доступных для повторного использования элементов. [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer) обеспечивает такую же функциональность для заголовков групп.
+[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer)— это событие, которое позволит предоставить элемент (**ListViewItem**/**GridViewItem**) для [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) при необходимости создания элемента в ходе запуска или повторного использования. Вы можете создать контейнер в зависимости от типа элемента данных, который этот контейнер будет отображать (как в примере ниже). **ChoosingItemContainer** — это более производительный способ использования разных шаблонов данных для разных элементов. Кэширование контейнера можно обеспечить при помощи **ChoosingItemContainer**. Например, если вы используете пять разных шаблонов и один из них — на порядок чаще других, ChoosingItemContainer позволяет не только создавать элементы в нужных соотношениях, но и сохранять нужное количество помещенных в кэш и доступных для повторного использования элементов. [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer) обеспечивает такую же функциональность для заголовков групп.
 
 ```csharp
 // Example shows how to use ChoosingItemContainer to return the correct
@@ -324,5 +322,4 @@ private void lst-ChoosingItemContainer
 При неравномерном распределении элементов, использующих различные шаблоны элементов, вероятно, потребуется создать новые шаблоны элементов при сдвиге, что во многом сводит на нет выигрыш, полученный за счет виртуализации. Кроме того, селектор шаблонов элементов учитывает только пять вариантов при оценки возможности повторного использования конкретного контейнера для текущего элемента данных. Поэтому перед использованием селектора шаблонов элементов в приложении необходимо тщательно обдумать, подходят ли ваши данные для использования с таковым. Если ваша коллекция в основном однородна, то селектор возвращает один и тот же тип в большинстве случаев (возможно, во всех). Просто не забывайте о цене, которую вы платите за редкие исключения в этой однородности, и обдумайте, не лучше ли использовать [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) (или два элемента управления элементами).
 
  
-
 

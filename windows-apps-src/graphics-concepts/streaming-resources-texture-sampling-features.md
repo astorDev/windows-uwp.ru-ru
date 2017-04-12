@@ -2,21 +2,17 @@
 title: "Функции выборки текстур потоковых ресурсов"
 description: "К функциям выборки текстур потоковых ресурсов относится следующее: получение ответа от шейдера о статусе сопоставленных областей, проверка сопоставлены ли в ресурсе все обрабатываемые данные, скрепление, чтобы помочь шейдерам обойти области в потоковых ресурсах с MIP-картой, которые не сопоставлены, вычисление, того каким будет отпечаток минимального уровня детализации, полностью сопоставленного с фильтром всей текстуры."
 ms.assetid: C2B2DD69-8354-417A-894D-6235A8B48B53
-keywords:
-- "Функции выборки текстур потоковых ресурсов"
+keywords: "Функции выборки текстур потоковых ресурсов"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8bcd4ec264dce2962b9057e1f04309d54f3bf3d6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7d03ba6eec780a3c05e4d15247c423852d7d75f6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="streaming-resources-texture-sampling-features"></a>Функции выборки текстур потоковых ресурсов
 
 
@@ -81,7 +77,6 @@ Min/max фильтрации сокращения — это режим диск
  
 
  
-
 
 
 

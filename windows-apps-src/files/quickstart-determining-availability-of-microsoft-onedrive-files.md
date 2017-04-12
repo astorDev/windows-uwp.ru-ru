@@ -2,22 +2,20 @@
 author: laurenhughes
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
 title: "Определение доступности файлов Microsoft OneDrive"
-description: "Определите доступность файла Microsoft OneDrive с помощью свойства StorageFile.IsAvailable."
+description: "Определите доступность файла MicrosoftOneDrive с помощью свойства StorageFile.IsAvailable."
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dcc1104fb50b926c76d2c9d28983f91dc76edef0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5c4a4d27e53229524414dd566386251f74577701
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>Определение доступности файлов Microsoft OneDrive
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -96,4 +94,3 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
  
 
  
-

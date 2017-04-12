@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a0c0b2cee4512bdd6dd888aceae53eec061dac72
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 98735ce2d102c1a0b7b054b9d70038fe5f9dc40c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>Зарезервированные имена файлов и схем URI
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Вы можете использовать сопоставления URI для автоматического запуска своего приложения, когда другое приложение запускает определенную схему URI. Но есть некоторые сопоставления, которые невозможно использовать, поскольку они зарезервированы. Если ваше приложение регистрируется для получения зарезервированного сопоставления, эта регистрация будет отклонена. В этом разделе перечислены зарезервированные имена файлов и схем URI, которые недоступны в приложении.
 
@@ -122,4 +120,3 @@ ms.lasthandoff: 02/07/2017
 <tr><td>inffile</td><td>ms-settings:network-dialup</td><td>scrfile</td><td></td></tr>
 <tr><td>insfile</td><td>ms-settings:network-ethernet</td><td>scriptletfile</td><td></td></tr>
 </table>
-

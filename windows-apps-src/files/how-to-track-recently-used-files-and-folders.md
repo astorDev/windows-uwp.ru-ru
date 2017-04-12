@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c8f8cd6681b4e00e8430d7ddfacdd8fad395365c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cdef86477570b33e9cd0c7adaaceb8fea12e3d40
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="track-recently-used-files-and-folders"></a>Отслеживание недавно использовавшихся файлов и папок
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -80,7 +78,7 @@ ms.lasthandoff: 02/07/2017
 StorageFile retrievedFile = await mru.GetFileAsync(mruToken);
 ```
 
-Вот как выполнить итерацию всех записей, чтобы получить маркеры, а затем — элементы:
+Вот как выполнить итерацию всех записей, чтобы получить маркеры, а затем— элементы:
 
 ```csharp
 foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
@@ -92,7 +90,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 }
 ```
 
-Класс [**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) позволяет выполнять итерацию записей в MRU. Эти записи — структуры [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348), которые содержат маркер и метаданные элемента.
+Класс [**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) позволяет выполнять итерацию записей в MRU. Эти записи— структуры [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348), которые содержат маркер и метаданные элемента.
 
 ## <a name="removing-items-from-the-mru-when-its-full"></a>Удаление элементов из списка MRU при его заполнении
 
@@ -110,4 +108,3 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
  
 
  
-

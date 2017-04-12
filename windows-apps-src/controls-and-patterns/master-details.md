@@ -11,17 +11,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 96f9f9855dba48203e4372cef88d1f6ab7d435f5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d5933eec7b2f34b2c5939bb083113dfd3a1f965d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="masterdetails-pattern"></a>Шаблон основных и подробных данных
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-В шаблоне основных и подробных данных есть главная панель (обычно с [представлением списка](lists.md)) и область сведений для содержимого. Если выбрать элемент в главном списке, область сведений обновляется. Этот шаблон часто используется для работы с электронной почтой и адресными книгами.
+В шаблоне основных и подробных есть главная панель (обычно с [представлением списка](lists.md)) и область сведений для содержимого. Если выбрать элемент в главном списке, область сведений обновляется. Этот шаблон часто используется для работы с электронной почтой и адресными книгами.
 
 ![Пример шаблона основных и подробных данных](images/HIGSecOne_MasterDetail.png)
 
@@ -53,7 +51,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="create-a-stacked-masterdetails-pattern"></a>Создание шаблона основных и подробных данных стопкой
 
-Один из способов создания шаблона основных и подробных данных заключается в использовании отдельных страниц для главной панели и области сведений. Разместите представление списка для главного списка на одной странице, а элемент содержимого для области сведений — на отдельной странице.
+Один из способов создания шаблона основных и подробных данных заключается в использовании отдельных страниц для главной панели и области сведений. Разместите представление списка для главного списка на одной странице, а элемент содержимого для области сведений— на отдельной странице.
 
 ![Части основного и подробного представления с расположением стопкой](images/patterns-md-stacked-parts.png)
 
@@ -89,10 +87,9 @@ ms.lasthandoff: 02/07/2017
 - [Пример ListView и GridView](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 - [Пример средства чтения RSS](https://github.com/Microsoft/Windows-appsample-rssreader)
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 - [Списки](lists.md)
 - [Поиск](search.md)
 - [Панель приложения и панель команд](app-bars.md)
 - [**Класс ListView (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
-

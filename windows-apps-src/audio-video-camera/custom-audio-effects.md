@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1d8ced4a3dfcf0994d969ad045550ea0cc44a2af
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f2754cea4442fd0333b620f82d1db92d8be1c578
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-audio-effects"></a>Пользовательские звуковые эффекты
 
 В этой статье описано, как создать компонент среды выполнения Windows, реализующий интерфейс [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect) для создания пользовательских эффектов для аудиопотоков. Пользовательские эффекты можно использовать с помощью нескольких различных API среды выполнения Windows, включая [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124), который предоставляет доступ к камере устройства, [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), который позволяет создавать сложные композиции из мультимедийных клипов, и [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph), который позволяет быстро собрать граф различных узлов звукового ввода, вывода и субмикширования.
@@ -147,14 +144,13 @@ ms.lasthandoff: 02/08/2017
 
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 * [Простой доступ к просмотру камеры](simple-camera-preview-access.md)
-* [Создание и редактирование мультимедийных композиций](media-compositions-and-editing.md)
+* [Создание и редактирование композиций мультимедиа](media-compositions-and-editing.md)
 * [Документация по Win2D](http://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Воспроизведение мультимедиа](media-playback.md)
 
  
-
 
 
 

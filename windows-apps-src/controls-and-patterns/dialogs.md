@@ -11,17 +11,15 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e76ae1e85f1512a939f2b7ee50ed205c0c55605b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ba29bd309b3fdaeeee5bfa143a0f74a58b8bd1c5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="dialogs-and-flyouts"></a>Диалоговые окна и всплывающие элементы
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Диалоговые окна и всплывающие элементы используются для временного отображения элементов пользовательского интерфейса, если происходит нечто, требующее уведомления, подтверждения или дополнительных сведений от пользователя.
+Диалоговые окна и всплывающие элементыиспользуются для временного отображения элементов пользовательского интерфейса, если происходит нечто, требующее уведомления, подтверждения или дополнительных сведений от пользователя.
 
 <div class="important-apis" >
 <b>Важные API</b><br/>
@@ -197,7 +195,7 @@ private async void displayDeleteFileDialog()
 ## <a name="flyouts"></a>Всплывающие элементы
 ###  <a name="create-a-flyout"></a>Создание всплывающего элемента
 
-Всплывающий элемент — это контейнер с открытым окончанием, который показывает в качестве своего содержимого произвольный пользовательский интерфейс. 
+Всплывающий элемент— это контейнер с открытым окончанием, который показывает в качестве своего содержимого произвольный пользовательский интерфейс. 
 
 <div class="microsoft-internal-note">
 Сюда входят всплывающие элементы и контекстные меню, которые могут быть вложены в другие всплывающие элементы.
@@ -309,9 +307,8 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 *   [Основы создания пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
     Ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 - [Подсказки](tooltips.md)
 - [Меню и контекстное меню](menus.md)
 - [**Класс Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496)
 - [**Класс ContentDialog**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
-

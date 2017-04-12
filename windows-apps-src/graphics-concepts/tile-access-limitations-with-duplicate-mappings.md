@@ -2,21 +2,17 @@
 title: "Ограничения доступа к плитке с повторяющимися сопоставлениями"
 description: "Существуют ограничения на доступ к плиткам с повторяющимися сопоставлениями, например при копировании потоковых ресурсов с перекрывающимися источником и назначением или при отрисовке общих плиток для области отрисовки."
 ms.assetid: 6E40B1DC-BCF1-4B09-82A8-7B2D9B209A61
-keywords:
-- "Ограничения доступа к плитке с повторяющимися сопоставлениями"
+keywords: "Ограничения доступа к плитке с повторяющимися сопоставлениями"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 863dba7a8c2fa37a1bef3f3babb8674cbc22424c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 13895acb5bb14cb1f0e5b91a2060e4eed9265a1c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tile-access-limitations-with-duplicate-mappings"></a>Ограничения доступа к плитке с повторяющимися сопоставлениями
 
 
@@ -87,7 +83,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

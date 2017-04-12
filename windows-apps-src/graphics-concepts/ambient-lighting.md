@@ -2,21 +2,17 @@
 title: "Внешнее освещение"
 description: "Внешнее освещение предоставляет постоянное освещение для сцены."
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
-keywords:
-- "Внешнее освещение"
+keywords: "Внешнее освещение"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 77865a483f226fba912c03e2f9abe17eaa7fbee0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c03e3a67af7da1326e254a687c77c9c0fd1d5403
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="ambient-lighting"></a>Внешнее освещение
 
 
@@ -53,9 +49,9 @@ ms.lasthandoff: 02/07/2017
 
 Чтобы использовать внешний цвет материала, используйте свойство SetMaterial, как показано в примере кода ниже.
 
-Gₐ — это глобальный внешний цвет. Он задается с помощью SetRenderState(D3DRS\_AMBIENT). В сцене Direct3D существует один глобальный внешний цвет. Этот параметр не связан с объектом света Direct3D.
+Gₐ— это глобальный внешний цвет. Он задается с помощью SetRenderState(D3DRS\_AMBIENT). В сцене Direct3D существует один глобальный внешний цвет. Этот параметр не связан с объектом света Direct3D.
 
-L<sub>ai</sub> — это внешний цвет света i в сцене. Каждый свет Direct3D имеет набор свойств, одно из которых — внешний цвет. Термин sum(L<sub>ai</sub>) представляет собой сумму всех внешних цветов в сцене.
+L<sub>ai</sub>— это внешний цвет света i в сцене. Каждый свет Direct3D имеет набор свойств, одно из которых— внешний цвет. Термин sum(L<sub>ai</sub>) представляет собой сумму всех внешних цветов в сцене.
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Пример.
 
@@ -71,7 +67,7 @@ Ambient.b = 0.0f;
 Ambient.a = 0.0f;
 ```
 
-Согласно уравнению, получившийся цвет для вершин объекта — это сочетание цвета материала и цвета света.
+Согласно уравнению, получившийся цвет для вершин объекта— это сочетание цвета материала и цвета света.
 
 На двух следующих рисунках показан цвет материала (серый) и цвет света (ярко-красный).
 
@@ -91,7 +87,6 @@ Ambient.a = 0.0f;
  
 
  
-
 
 
 

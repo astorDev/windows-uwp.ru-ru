@@ -1,9 +1,9 @@
 ---
 author: Jwmsft
-Description: "Управляющий элемент выбора даты — это стандартизованный способ, позволяющий пользователям выбирать локализованное значение даты с помощью сенсорного ввода, мыши или клавиатуры."
+Description: "Элемент выбора даты — это стандартизованный способ, позволяющий пользователям выбирать локализованное значение даты с помощью сенсорного ввода, мыши или клавиатуры."
 title: "Управляющий элемент выбора даты"
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
-isNew: true
+isNew: True
 label: Date picker
 template: detail.hbs
 ms.author: jimwalk
@@ -12,17 +12,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 19551174cebd33785ac21910b52adf31e354373b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 114e91276ee4f080ead825b655fc05fcf460bacb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="date-picker"></a>Управляющий элемент выбора даты
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Управляющий элемент выбора даты — это стандартизованный способ, позволяющий пользователям выбирать локализованное значение даты с помощью сенсорного ввода, мыши или клавиатуры. 
+Элемент выбора даты — это стандартизованный способ, позволяющий пользователям выбирать локализованное значение даты с помощью сенсорного ввода, мыши или клавиатуры. 
 
 <div class="important-apis" >
 <b>Важные API</b><br/>
@@ -66,10 +64,9 @@ birthDatePicker.Header = "Date of birth";
 
 
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 - [Элементы управления датой и временем](date-and-time.md)
-- [Элемент выбора даты в календаре](calendar-date-picker.md)
+- [Управляющий элемент выбора даты в календаре](calendar-date-picker.md)
 - [Представление календаря](calendar-view.md)
 - [Элемент выбора времени](time-picker.md)
-

@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: a5315534fc305c85dcf410b4808d2f8ebd844b3e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 14b8892790b2a2b486b2ddd3e8cb529545c327bd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>Средства тестирования и отладки для управления жизненным циклом процесса (PLM)
 
 Одно из основных отличий между приложениями UWP и классическими приложениями состоит в том, что приложения UWP располагаются в контейнере с управлением жизненным циклом процесса (PLM). Приложения UWP можно приостановить, возобновить и завершить на всех платформах с помощью службы брокера среды выполнения. Существуют специальные средства для применения этих операций при тестировании и отладке кода, который их обрабатывает.
@@ -86,7 +83,6 @@ plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwg
 
 Обратите внимание, что каждый вызов **/enableDebug** следует позже присоединить к другому вызову PLMDebug с помощью параметра **/disableDebug**. Кроме того, путь к отладчику должен быть абсолютным (относительные пути не поддерживаются).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 - [Развертывание и отладка приложений UWP](deploying-and-debugging-uwp-apps.md)
 - [Отладка, тестирование и производительность](index.md)
-

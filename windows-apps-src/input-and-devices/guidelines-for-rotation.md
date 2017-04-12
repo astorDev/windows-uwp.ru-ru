@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6b5d2e6a41c1566c7c03b61b91bf9c641f674cea
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 189358c20ce934a946e4f4c034dc058d904b05d3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="rotation"></a>Поворот
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -40,7 +37,7 @@ ms.lasthandoff: 02/07/2017
 
 **Обзор поворота**
 
-Поворот — это оптимизированная для касания техника, используемая в приложениях UWP, которая дает пользователям возможность повернуть объект по кругу (по часовой стрелке или против нее).
+Поворот— это оптимизированная для касания техника, используемая в приложениях UWP, которая дает пользователям возможность повернуть объект по кругу (по часовой стрелке или против нее).
 
 Способ выполнения поворота зависит от устройства ввода:
 
@@ -71,7 +68,7 @@ ms.lasthandoff: 02/07/2017
 
  
 
-Windows 8 поддерживает три типа поворота: свободный, ограниченный и комбинированный.
+Windows8 поддерживает три типа поворота: свободный, ограниченный и комбинированный.
 
 <table>
 <colgroup>
@@ -130,7 +127,6 @@ Windows 8 поддерживает три типа поворота: свобо
  
 
  
-
 
 
 

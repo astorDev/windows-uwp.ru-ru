@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fa1a8c487d3fef2b0caa322d81c0ebdbdfe3865f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 568c11a41552cb4e63d2e9b685ff5fc84abbe70b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="customize-the-print-preview-ui"></a>Настройка пользовательского интерфейса предварительного просмотра
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -162,7 +160,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-Эти параметры появляются в пользовательском интерфейсе предварительного просмотра в порядке их добавления — первый параметр отображается вверху окна. В данном примере настраиваемый параметр добавляется последним, поэтому он отображается в нижней части списка параметров. Однако его можно поместить в любое место списка; необязательно добавлять настраиваемые параметры печати последними.
+Эти параметры появляются в пользовательском интерфейсе предварительного просмотра в порядке их добавления— первый параметр отображается вверху окна. В данном примере настраиваемый параметр добавляется последним, поэтому он отображается в нижней части списка параметров. Однако его можно поместить в любое место списка; необязательно добавлять настраиваемые параметры печати последними.
 
 Когда пользователь изменяет выбранную настройку в вашем настраиваемом параметре, нужно обновить изображение предварительного просмотра. Вызовите метод [**InvalidatePreview**](https://msdn.microsoft.com/library/windows/apps/Hh702146) для перерисовки изображения в пользовательском интерфейсе предварительного просмотра, как показано ниже.
 
@@ -189,6 +187,5 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 ## <a name="related-topics"></a>Ссылки по теме
 
 * [Руководство по проектированию печати](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Видео c конференции Build 2015: разработка приложений для печати в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [//Видео c конференции Build 2015: разработка приложений для печати в Windows10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [Пример печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)
-

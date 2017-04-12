@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9dcf81c0c0aee42d6278a3e1eeccc6dd4da61010
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a45de584c4374afefe0fdca198eb7234351ac42d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-animation"></a>Начало работы: анимация
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="adding-animations"></a>Добавление анимаций
 
@@ -135,4 +132,3 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 ### <a name="next-step"></a>Следующие шаги
 
 [Приступая к работе: что дальше?](getting-started-what-next.md)
-

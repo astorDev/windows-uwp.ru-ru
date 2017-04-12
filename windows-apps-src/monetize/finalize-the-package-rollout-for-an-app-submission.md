@@ -1,32 +1,29 @@
 ---
 author: mcleanbyron
-description: "Используйте этот метод в API отправки Магазина Windows для завершения выпуска пакета для отправки приложения."
-title: "Завершение выпуска пакета для отправки приложения с помощью API отправки Магазина Windows"
+description: "Используйте этот метод в API отправки для Магазина Windows, чтобы завершить выпуск пакета для отправки приложения."
+title: "Завершение выпуска для отправки приложения"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API отправки Магазина Windows, выпуск пакета, отправка приложения, завершение"
+keywords: "Windows 10, UWP, API отправки для Магазина Windows, выпуск пакета, отправка приложения, завершение"
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6c7fa8fc509faf2c662732e7e6b998d355fcbd66
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 1f26b826595b439c20b1582265dbe690d314277e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="finalize-the-rollout-for-an-app-submission"></a>Завершение выпуска для отправки приложения
 
-# <a name="finalize-the-package-rollout-for-an-app-submission-using-the-windows-store-submission-api"></a>Завершение выпуска пакета для отправки приложения с помощью API отправки Магазина Windows
 
-
-Используйте этот метод в API отправки Магазина Windows для [завершения выпуска пакета](../publish/gradual-package-rollout.md#completing-the-rollout) для отправки приложения. Дополнительные сведения о процессе создания отправки приложения с помощью API отправки Магазина Windows см. в разделе [Управление отправками приложений](manage-app-submissions.md).
+Используйте этот метод в API отправки для Магазина Windows, чтобы [завершить выпуск пакета](../publish/gradual-package-rollout.md#completing-the-rollout) для отправки приложения. Дополнительные сведения о процессе создания отправки приложения с помощью API отправки Магазина Windows см. в разделе [Управление отправками приложений](manage-app-submissions.md).
 
 ## <a name="prerequisites"></a>Необходимые условия
 
 Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
-* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
 * Создайте отправку для приложения в учетной записи Центра разработки. Это можно сделать на информационной панели Центра разработки или с помощью метода [Создание отправки приложения](create-an-app-submission.md).
 * Включите постепенный выпуск пакета для отправки. Это можно сделать на [информационной панели Центра разработки](../publish/gradual-package-rollout.md) или [с помощью API отправки Магазина Windows](manage-app-submissions.md#manage-gradual-package-rollout).
 
@@ -47,7 +44,7 @@ ms.lasthandoff: 02/08/2017
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
@@ -55,14 +52,14 @@ ms.lasthandoff: 02/08/2017
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | строка | Обязательный. Код продукта в Магазине для приложения, содержащего отправку с выпуском пакета, который требуется завершить. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | строка | Обязательный. Идентификатор отправки с выпуском пакета, который необходимо завершить. Этот идентификатор отображается на информационной панели Центра разработки, а также добавляется в данные ответов для запросов на [Создание отправки приложения](create-an-app-submission.md).  |
+| applicationId | Строка | Обязательный. Код продукта в Магазине для приложения, содержащего отправку с выпуском пакета, который требуется завершить. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| submissionId | Строка | Обязательный. Идентификатор отправки с выпуском пакета, который необходимо завершить. Этот идентификатор отображается на информационной панели Центра разработки, а также добавляется в данные ответов для запросов на [Создание отправки приложения](create-an-app-submission.md).  |
 
 <span/>
 
 ### <a name="request-body"></a>Тело запроса
 
-Предоставлять тело запроса для этого метода не требуется.
+Предоставлять текст запроса для этого метода не требуется.
 
 ### <a name="request-example"></a>Пример запроса
 
@@ -80,7 +77,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 100,
+    "packageRolloutPercentage": 100.0,
     "packageRolloutStatus": "PackageRolloutComplete",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -104,4 +101,3 @@ Authorization: Bearer <your access token>
 * [Постепенный выпуск пакета](../publish/gradual-package-rollout.md)
 * [Управление отправками приложений с помощью API отправки Магазина Windows](manage-app-submissions.md)
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
-

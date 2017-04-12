@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d93583c4d6eeaa8e81bda4672d38386f07e7dcc5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5923b02d2d41a9d5311f39cb02f0bc58f5f6188c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-pointer-input"></a>Работа с входными данными указателя
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -73,7 +70,7 @@ ms.lasthandoff: 02/07/2017
 <td align="left"><p>Происходит, когда указатель отменяется платформой.</p>
 <ul>
 <li>Указатели касания отменяются в том случае, если перо обнаруживается в пределах поверхности ввода.</li>
-<li>Активный контакт не обнаруживается дольше 100 мс.</li>
+<li>Активный контакт не обнаруживается дольше 100мс.</li>
 <li>Изменены настройки монитора/дисплея (разрешение, параметры, конфигурация с несколькими мониторами).</li>
 <li>Рабочий стол заблокирован или пользователь вышел из системы.</li>
 <li>Количество одновременных контактов превысило значение, поддерживаемое устройством.</li>
@@ -1107,7 +1104,6 @@ namespace PointerInput
  
 
  
-
 
 
 

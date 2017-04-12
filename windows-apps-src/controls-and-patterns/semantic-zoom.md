@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "Элемент управления Semantic Zoom (контекстного масштабирования) дает пользователю возможность изменять масштаб, переходя от одного семантического представления одного и того же набора данных к другому."
+Description: "Элемент управления Semantic Zoom дает пользователю возможность изменять масштаб, переходя от одного семантического представления одного и того же набора данных к другому."
 title: "Контекстное масштабирование"
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 29c80f1120a503968e426325aad818dd7a62e87c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c5a34805941d72981f84a5d515e01d404fb30650
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="semantic-zoom"></a>Контекстное масштабирование
 
@@ -91,7 +89,7 @@ ms.lasthandoff: 02/07/2017
 </SemanticZoom>
  ```
  
-Приведенные здесь примеры взяты со страницы SemanticZoom [Пример базовых характеристик пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992). Чтобы просмотреть код полностью, включая источник данных, нужно загрузить этот пример. Это контекстное масштабирование использует класс GridView для представления увеличенного представления, а класс ListView — для уменьшенного представления.
+Приведенные здесь примеры взяты со страницы SemanticZoom [Пример базовых характеристик пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992). Чтобы просмотреть код полностью, включая источник данных, нужно загрузить этот пример. Это контекстное масштабирование использует класс GridView для представления увеличенного представления, а класс ListView— для уменьшенного представления.
   
 **Определение увеличенного представления**
 
@@ -197,12 +195,11 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 - [Основы создания пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992)
 
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 - [Основы проектирования навигации](../layout/navigation-basics.md)
 - [Представления списка и сетки](listview-and-gridview.md)
 - [Шаблоны элементов представления списка](listview-item-templates.md)
-
 
 
 

@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "Элемент управления представлением веб-страницы внедряет в приложение представление, которое отображает содержимое веб-страницы с помощью механизма визуализации Microsoft Edge. В элементе управления представлением веб-страницы также могут отображаться и работать гиперссылки."
+Description: "Элемент управления представлением веб-страницы внедряет в приложение представление, которое отображает содержимое веб-страницы с помощью механизма визуализации Microsoft Edge. В элементе управления представлением веб-страницы могут отображаться и работать гиперссылки."
 title: "Представление веб-страницы"
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9f7f786007a6e251a76fe5c4fcbad5c81b879c53
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 03b4832b64b044a4fb990fac3b64f61409f959bb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="web-view"></a>Представление веб-страницы
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -334,7 +332,6 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
  
 
  
-
 
 
 

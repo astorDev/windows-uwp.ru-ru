@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d24d1ff9408585246aae4c4849d3af5e8f4846be
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a2220b8c31877efdbef6a102efdb32158a709939
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="networking-basics"></a>Основы работы с сетями
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Ниже приведены действия, которые необходимо выполнить для любого приложения, подключаемого к сети.
 
@@ -64,7 +61,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="secured-connections"></a>Безопасные подключения
 
-SSL и его преемник TLS — это протоколы шифрования, разработанные для проверки подлинности и шифрования сетевых подключений. Они предназначены для предотвращения перехвата и незаконного изменения данных, отправляемых и получаемых по сети. Для обмена данными по этим протоколам используется модель клиент-сервер. Эти протоколы также используют цифровые сертификаты и центры сертификации для проверки подлинности сервера.
+SSL и его преемник TLS— это протоколы шифрования, разработанные для проверки подлинности и шифрования сетевых подключений. Они предназначены для предотвращения перехвата и незаконного изменения данных, отправляемых и получаемых по сети. Для обмена данными по этим протоколам используется модель клиент-сервер. Эти протоколы также используют цифровые сертификаты и центры сертификации для проверки подлинности сервера.
 
 ### <a name="creating-secure-socket-connections"></a>Создание защищенных соединений сокетов
 
@@ -360,7 +357,7 @@ using Windows::Storage::Streams;
 
 ### <a name="creating-secure-websocket-connections"></a>Создание защищенных соединений WebSocket
 
-Подобно традиционным соединениям сокетов, в Windows 8 для приложений Магазина Windows соединения WebSocket можно шифровать с помощью протоколов TLS/SSL при использовании компонентов [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) и [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842). В большинстве случаев необходимо использовать безопасное подключение WebSocket. Это увеличит шансы удачного подключения, поскольку многие прокси-серверы отклоняют незашифрованные подключения WebSocket.
+Подобно традиционным соединениям сокетов, в Windows8 для приложений Магазина Windows соединения WebSocket можно шифровать с помощью протоколов TLS/SSL при использовании компонентов [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) и [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842). В большинстве случаев необходимо использовать безопасное подключение WebSocket. Это увеличит шансы удачного подключения, поскольку многие прокси-серверы отклоняют незашифрованные подключения WebSocket.
 
 Примеры создания и обновления защищенных соединений сокетов до сетевых служб см. в разделе [Защита соединений WebSocket с помощью TLS/SSL](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399).
 
@@ -374,7 +371,7 @@ using Windows::Storage::Streams;
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>Предоставление сертификата клиента с классом StreamSocket
 
-Класс [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) поддерживает возможность использования протокола SSL/TLS для проверки подлинности сервера, к которому обращается приложение. В определенных случаях приложение также должно пройти проверку подлинности на сервере с помощью сертификата клиента TLS. В Windows 10 можно предоставить сертификат клиента на объект [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (необходимо задать перед началом подтверждения TLS). Если сервер запрашивает сертификат клиента, Windows ответит, воспользовавшись предоставленным сертификатом.
+Класс [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) поддерживает возможность использования протокола SSL/TLS для проверки подлинности сервера, к которому обращается приложение. В определенных случаях приложение также должно пройти проверку подлинности на сервере с помощью сертификата клиента TLS. В Windows10 можно предоставить сертификат клиента на объект [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (необходимо задать перед началом подтверждения TLS). Если сервер запрашивает сертификат клиента, Windows ответит, воспользовавшись предоставленным сертификатом.
 
 Фрагмент кода, демонстрирующий данную операцию:
 
@@ -394,16 +391,13 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 |  | [**MessageWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226847) |
 |  | [**StreamWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226928) |
 |  | [**StreamWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226927) |
-|  |  |
 | **Передача в фоновом режиме** | [**BackgroundDownloader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701076) |
 |  | [**BackgroundDownloader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701068) |
 |  | [**BackgroundUploader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701184) |
 |  | [**BackgroundUploader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701178) |
-|  |  |
 | **Синдикация** | [**SyndicationClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
 |  | [**SyndicationClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) |
 |  | [**SyndicationClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) |
-|  |  |
 | **AtomPub** | [**AtomPubClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702262) |
 |  | [**AtomPubClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243428) |
 |  | [**AtomPubClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243423) |
@@ -423,7 +417,6 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 ## <a name="related-topics"></a>Ссылки по теме
 
-* [Улучшения сетевых API в Windows 10](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
+* [Улучшения сетевых API в Windows10](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
  
-
 

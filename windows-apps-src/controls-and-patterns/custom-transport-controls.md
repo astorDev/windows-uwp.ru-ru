@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4dc1cd837b7ac7849125e0a1737873fec4a15cd3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 34c3aab3e9a04eb535014182c0dbc8c140670b89
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="create-custom-transport-controls"></a>Создание пользовательских элементов управления транспортировкой
 
@@ -269,7 +267,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 Навигация в MediaTransportControls обеспечивается элементом [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx). Один из способов его настройки — изменение точности навигации.
 
-По умолчанию ползунок поиска состоит из 100 частей, следовательно, поведение поиска ограничено данным количеством частей. Вы можете изменить точность навигации ползунка, получив элемент Slider из визуального дерева XAML в обработчике событий [**MediaOpened**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) в [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx). В этом примере показано, как использовать [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) для получения ссылки на элемент Slider, а затем изменить стандартный шаг перемещения ползунка с 1 % до 0,1 % (1000 шагов), если продолжительность мультимедиа превышает 120 минут. Элемент MediaPlayerElement имеет имя `MediaPlayerElement1`.
+По умолчанию ползунок поиска состоит из 100 частей, следовательно, поведение поиска ограничено данным количеством частей. Вы можете изменить точность навигации ползунка, получив элемент Slider из визуального дерева XAML в обработчике событий [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) в [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx). В этом примере показано, как использовать [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) для получения ссылки на элемент Slider, а затем изменить стандартный шаг перемещения ползунка с 1% до 0,1% (1000 шагов), если продолжительность мультимедиа превышает 120 минут. Элемент MediaPlayerElement имеет имя `MediaPlayerElement1`.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -289,7 +287,6 @@ private void MediaPlayerElement_MediaPlayer_MediaOpened(object sender, RoutedEve
   }
 }
 ```
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 - [Воспроизведение мультимедиа](media-playback.md)
-

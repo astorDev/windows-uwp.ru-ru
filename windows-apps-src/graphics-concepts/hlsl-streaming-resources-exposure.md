@@ -2,21 +2,17 @@
 title: "Экспозиция потоковых ресурсов HLSL"
 description: "Для поддержки потоковых ресурсов в модели шейдера 5 требуется определенный синтаксис HLSL."
 ms.assetid: 00A40D82-0565-43DC-82AB-0675B7E772E3
-keywords:
-- "Экспозиция потоковых ресурсов HLSL"
+keywords: "Экспозиция потоковых ресурсов HLSL"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4a6164c2a2dca3dd14998627ab7d9b4b62e02541
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 143e2379e64b38cc30384bd0fb4c983eeacb7f37
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="hlsl-streaming-resources-exposure"></a>Экспозиция потоковых ресурсов HLSL
 
 
@@ -26,13 +22,13 @@ ms.lasthandoff: 02/07/2017
 
 **Sample(sampler, location \[, offset \[, clamp \[, feedback\] \] \])**
 
-Пример метода **Sample** — [**Texture2D.Sample(S,float,int,float,uint)**](https://msdn.microsoft.com/library/windows/desktop/dn393787).
+Пример метода **Sample**— [**Texture2D.Sample(S,float,int,float,uint)**](https://msdn.microsoft.com/library/windows/desktop/dn393787).
 
 Параметры offset, clamp и feedback необязательны. Необходимо указать все необязательные параметры вплоть до требуемого в соответствии с правилами C++ касательно аргументов функций по умолчанию. Например, если требуется состояние feedback, необходимо явным образом предоставить параметры offset и clamp методу **Sample**, даже если логически они не нужны.
 
-Параметр clamp — скалярное значение с плавающей точкой. Литеральное значение clamp=0.0f указывает, что операция прикрепления не выполнена.
+Параметр clamp— скалярное значение с плавающей точкой. Литеральное значение clamp=0.0f указывает, что операция прикрепления не выполнена.
 
-Параметр feedback — это переменная **uint**, которую можно передать встроенной функции опроса доступа к памяти [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083). Значение параметра feedback нельзя изменять или интерпретировать. Но компилятор не предоставляет средств расширенного анализа и диагностики для обнаружения изменений значения.
+Параметр feedback— это переменная **uint**, которую можно передать встроенной функции опроса доступа к памяти [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083). Значение параметра feedback нельзя изменять или интерпретировать. Но компилятор не предоставляет средств расширенного анализа и диагностики для обнаружения изменений значения.
 
 Вот синтаксис [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083):
 
@@ -46,7 +42,7 @@ ms.lasthandoff: 02/07/2017
 
 Если параметру clamp присвоено значение 0.0f, прикрепление не выполнено. Компилятор драйвера может дополнительно настроить инструкцию под целевое оборудование. Если значением параметра feedback является регистр NULL в инструкции, параметр feedback не используется. Таким образом, компилятор драйвера может дополнительно настроить инструкцию под целевую архитектуру.
 
-Если компилятор HLSL делает логический вывод, что значение параметра clamp — 0.0f, а параметр feedback не используется, компилятор выдает соответствующую базовую инструкцию (например, `sample` вместо `sample_cl_s`).
+Если компилятор HLSL делает логический вывод, что значение параметра clamp— 0.0f, а параметр feedback не используется, компилятор выдает соответствующую базовую инструкцию (например, `sample` вместо `sample_cl_s`).
 
 Если доступ к потоковому ресурсу состоит из нескольких инструкций байт-кода, например для структурированных ресурсов, компилятор выполняет статистическое вычисление отдельных значений параметра feedback через операцию ИЛИ, чтобы получить окончательное значение параметра feedback. Таким образом, для такого сложного доступа вы получаете одно значение параметра feedback.
 
@@ -60,7 +56,7 @@ ms.lasthandoff: 02/07/2017
 <thead>
 <tr class="header">
 <th align="left">[Объекты HLSL](https://msdn.microsoft.com/library/windows/desktop/ff471359)</th>
-<th align="left">Встроенные методы с параметром feedback (*) — также с параметром clamp</th>
+<th align="left">Встроенные методы с параметром feedback (*)— также с параметром clamp</th>
 </tr>
 </thead>
 <tbody>
@@ -121,7 +117,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

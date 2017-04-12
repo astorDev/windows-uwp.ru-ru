@@ -9,20 +9,20 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 2332abe43732299dfb0f4bc265bf1b12877a17aa
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 47bd2d7db1517c7cb54b018ee014e3714e71cf3e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-a-certificate-for-package-signing"></a>Создание сертификата для подписывания пакета
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этой статье объясняется, как создать и экспортировать сертификат для подписывания пакета приложений с помощью инструментов PowerShell. Рекомендуется использовать Visual Studio для [упаковки приложений UWP](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps), однако готовые к публикации в Магазине приложения можно упаковать вручную, если для разработки этих приложений не использовалась среда Visual Studio.
+В этой статье объясняется, как создать и экспортировать сертификат для подписывания пакета приложений с помощью инструментов PowerShell. Рекомендуется использовать Visual Studio для [упаковки приложений UWP](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps), однако готовые к публикации в Магазине приложения можно упаковать вручную, если для их разработки не использовалась среда Visual Studio.
 
-## <a name="prerequisites"></a>Необходимые условия
+> [!IMPORTANT] 
+> Если для разработки приложения использовали Visual Studio, рекомендуется применить мастер Visual Studio, чтобы импортировать сертификат и подписать пакет приложения. Дополнительные сведения см. в разделе [Упаковка приложения UWP с помощью Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+
+## <a name="prerequisites"></a>Предварительные условия
 
 - **Упакованное или распакованное приложение**  
 Приложение, содержащее файл AppxManifest.xml. При создании сертификата, который будет использоваться для подписывания окончательного пакета приложений, потребуется сослаться на этот файл манифеста. Сведения о том, как вручную упаковать приложение, см. в разделе [Создание пакета приложений с помощью инструмента MakeAppx.exe](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).
@@ -45,7 +45,7 @@ ms.lasthandoff: 02/08/2017
     Publisher="CN=Contoso Software, O=Contoso Corporation, C=US"/>
 ```
 
-"Издатель" в данном случае — "CN=Contoso Software, O=Contoso Corporation, C=US", и именно его следует использовать для создания сертификата. 
+"Издатель" в данном случае— "CN=Contoso Software, O=Contoso Corporation, C=US", и именно его следует использовать для создания сертификата. 
 
 ### <a name="use-new-selfsignedcertificate-to-create-a-certificate"></a>Использование командлета **New-SelfSignedCertificate** для создания сертификата
 Используйте командлет PowerShell **New-SelfSignedCertificate** для создания самозаверяющего сертификата. Командлет **New-SelfSignedCertificate** имеет несколько параметров для настройки, однако в этой статье мы сконцентрируемся на создании простого сертификата, который будет работать вместе с **SignTool**. Дополнительные примеры и варианты использования этого командлета см. в статье [New-SelfSignedCertificate](https://technet.microsoft.com/library/hh848633.aspx).

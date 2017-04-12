@@ -9,32 +9,29 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0bf7959be6278577cc8fe93011591e4523bee623
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0c21257db05a058c2d92f32218b73d920cc7156c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 # <a name="whats-next"></a>Дальнейшие действия
 
-Итак, с чего начать, если вы хотите создать приложение и опубликовать его в Магазине Windows? Если вы не знакомы с платформой UWP, посмотрите видеоматериалы на сайте <a href="https://channel9.msdn.com/">Channel 9</a> и пройдите курсы <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a>. Если вы уже знакомы с XAML и C#, ознакомьтесь с разделами ниже или перейдите непосредственно к [загрузке примеров](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
+Итак, с чего начать, если вы хотите создать приложение и опубликовать его в Магазине Windows? Если вы не знакомы с платформой UWP, посмотрите видеоматериалы на сайте <a href="https://channel9.msdn.com/">Channel 9</a> и пройдите курсы <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a> и [LinkedIn Learning](https://www.linkedin.com/topic/windows-programming). Если вы уже знакомы с разработкой для Windows, ознакомьтесь с разделами ниже или перейдите непосредственно к [загрузке примеров](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
-Существует много средств и платформ, которые помогут вам в создании приложений; многие из них поддерживают межплатформенную разработку. Например, если вы хотите писать двумерные игры, возможно, вас заинтересует <a href="http://www.monogame.net">Monogame</a> или некоторые из множества [платформ JavaScript и HTML](https://html5gameengine.com/). Для разработчиков трехмерных игр окажется полезным раздел <a href="http://www.unity3d.com">Unity</a>, а для разработчиков приложений для мобильных устройств — <a href="http://www.xamarin.com">Xamarin</a>.
+Существует много средств и платформ, которые помогут вам в создании приложений; многие из них поддерживают межплатформенную разработку. Например, если вы хотите писать двумерные игры, возможно, вас заинтересует <a href="http://www.monogame.net">Monogame</a> или некоторые из множества [платформ JavaScript и HTML](https://html5gameengine.com/). Для разработчиков трехмерных игр окажется полезным раздел <a href="http://www.unity3d.com">Unity</a>, а для разработчиков приложений для мобильных устройств— <a href="http://www.xamarin.com">Xamarin</a>.
 
-Если вы приступаете к работе, рекомендуется ознакомиться с разделами, посвященными UWP, чтобы получить представление об этой платформе, а затем изучить создание пользовательского интерфейса с использованием элементов управления XAML и их последующей настройкой. Для создания макета приложения вы будете использовать XAML (руководство с пошаговыми инструкциями доступно [здесь](../layout/grid-tutorial.md)), однако основным преимуществом XAML является использование *привязок данных*, объединяющих элементы управления и информацию, которую требуется отобразить в вашем приложении: если вы только начинаете работать с платформой Windows, очень важно понять этот материал. 
+Если вы хотите начать писать не игру, а что-то другое, рекомендуется ознакомиться с разделами, посвященными UWP, чтобы получить представление об этой платформе, а затем изучить создание пользовательского интерфейса с использованием элементов управления XAML и их последующей настройкой. Для создания дизайна приложения вы будете использовать XAML (руководство с пошаговыми инструкциями доступно [здесь](../layout/grid-tutorial.md)), однако основным преимуществом XAML является использование *привязок данных*, объединяющих элементы управления и информацию, которую требуется отобразить в вашем приложении: если вы только начинаете работать с платформой Windows, очень важно понять этот материал. 
 <table class="wdg-noborder">
 <tr>
- <td width=60><img src="images/icon3.png" width=64></td>
+ <td width=60><img src="images/icon3.png" alt="Bullet point" width=64></td>
     <td><h2>UWP и жизненный цикл приложения UWP</h2><p>Как запускается приложение, что происходит при запуске другого приложения? Информация приведена ниже.</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Руководство по работе с приложениями универсальной платформы Windows (UWP)</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">Жизненный цикл приложения UWP</a></li>
     <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Потрясающие возможности Windows 10</a></ul></td>  
 </tr>
 <tr>
- <td width=60><img src="images/icon7.png" width=64></td>
+ <td width=60><img src="images/icon7.png" alt="Bullet point" width=64></td>
     <td><h2>Взаимодействие с пользователем и пользовательский интерфейс</h2><p>Какие элементы управления есть в вашем распоряжении и как их можно использовать? В этих разделах объясняется совместная работа элементов управления и кода, а также настройка элементов управления в соответствии с внешним видом приложения.</p> <ul>
     <li><a href="https://developer.microsoft.com/windows/design">Оформление и пользовательский интерфейс</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml">Определение макетов страниц с помощью XAML</a></li>
@@ -46,7 +43,7 @@ ms.lasthandoff: 02/07/2017
     </ul></td>  
 </tr>
 <tr>
- <td width=60><img src="images/icon6.png" width=64></td>
+ <td width=60><img src="images/icon6.png" alt="Bullet point" width=64></td>
     <td><h2>Данные и службы</h2><p>Познакомьтесь с привязкой данных, которая позволяет коду автоматически заполнять списки и сетки. Узнайте, как задавать ссылки на внешние ресурсы для получения данных в приложениях.</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/data-binding/index">Привязка данных</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/listview-and-gridview">Элемент ListView, элемент GridViews и привязка данных</a></li>
@@ -54,14 +51,14 @@ ms.lasthandoff: 02/07/2017
     </ul></td>  
 </tr>
 <tr>
- <td width=60><img src="images/icon4.png" width=64></td>
+ <td width=60><img src="images/icon4.png" alt="Bullet point" width=64></td>
     <td><h2>Публикация</h2><p>Сообщите миру о своей работе, получите прибыль. Мы предоставим пошаговые инструкции, как разместить приложение в Магазине.</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/publish/index">Публикация приложений для Windows</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">Создание пакетов приложений</a></li>
     </ul></td>  
 </tr>
 <tr>
- <td width=60><img src="images/icon2.png" width=64></td>
+ <td width=60><img src="images/icon2.png" alt="Bullet point" width=64></td>
     <td><h2>Другие ресурсы</h2><p>Примеры, учебные пособия, видео, другие средства и пакеты SDK. Переходите на следующий уровень.</p>
     <ul>
     <li><a href="https://developer.microsoft.com/windows/develop">Практические руководства</a></li>
@@ -95,12 +92,10 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="finding-help-in-the-dev-center"></a>Поиск справки в Центре разработки
 
-[Центр разработки Microsoft](http://developer.microsoft.com) содержит обширнейшую документацию для различных средств, инфраструктуры и платформ. При поиске тем и примеров обязательно убедитесь, что содержимое относится к UWP. Как убедиться, что вы читаете нужное содержимое?
-В URL-адресе раздела концептуального содержимого (т. е. содержимого, не относящегося к справочным материалам по API) присутствуют буквы UWP. В пути содержимого по API присутствует строка «Windows Runtime APIs» (API среды выполнения Windows). 
+Сайт [docs.microsoft.com](http://docs.microsoft.com) содержит обширнейшую документацию для различных средств, инфраструктуры и платформ. При просмотре тем и примеров обязательно убедитесь, что содержимое относится к UWP. Вы увидите, что ссылка на UWP начинается с [центра разработки для Windows](https://developer.microsoft.com/windows/apps), а нужный вам справочник по API находится в разделе [приложений разработки UWP](https://docs.microsoft.com/uwp/api/).
+При чтении содержимого, которое предназначено специально для UWP, URL-адрес и путь в верхней части страницы будут содержать **uwp**, как показано ниже:
 
-![Пример концептуального раздела UWP](images/devcenter-topic2.png)
-
-![Пример справочного раздела по UWP](images/devcenter-topic1.png)
+![Поиск документов UWP](images/UWP-docs.png)
 
 При использовании поисковой системы добавление строки «Разработка приложений для Windows» в строку поиска с большой вероятностью позволит найти содержимое UWP.
 
@@ -169,7 +164,6 @@ ms.lasthandoff: 02/07/2017
 <td align="left"><a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Developer/categoryID.69418300?icid=en_US_Store_UH_BusEd_Dev">Оборудование для разработчиков в Магазине Майкрософт.</a></td>
 </tr>
 </table>
-
 
 
 

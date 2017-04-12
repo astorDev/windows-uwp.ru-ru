@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ba9c5c1a59452295a07efd371ccfd632f290c837
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2492d8c50b6f2e35a137eae6e1a002af0f46afd1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-and-register-an-out-of-process-background-task"></a>Создание и регистрация внепроцессной фоновой задачи
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -37,14 +34,14 @@ ms.lasthandoff: 02/07/2017
 
 Далее будет показано, как создать новый класс, реализующий интерфейс [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Перед началом работы создайте в вашем решении новый проект для фоновых задач. Добавьте новый пустой класс для фоновой задачи и импортируйте пространство имен [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847).
 
-1.  Создайте новый проект для фоновых задач и добавьте его в решение. Для этого щелкните правой кнопкой мыши узел решений в **обозревателе решений** и выберите "Добавить"-&gt;"Новый проект". Затем выберите тип проекта **Компонент среды выполнения Windows (универсальные приложения для Windows)**, задайте имя проекта и нажмите кнопку "ОК".
+1.  Создайте новый проект для фоновых задач и добавьте его в решение. Для этого щелкните правой кнопкой мыши узел решений в **обозревателе решений** и выберите "Добавить"-&gt;"Новый проект". Затем выберите тип проекта **Компонент среды выполнения Windows (универсальные приложения для Windows)**, задайте имя проекта и нажмите кнопку «ОК».
 2.  Создайте ссылку на проект фоновых задач в проекте приложения UWP.
 
     В случае с приложением на C++ щелкните в проекте приложения правой кнопкой мыши и выберите **Свойства**. Перейдите в **Общие свойства** и выберите **Добавить новую ссылку**, установите флажок рядом с вашим проектом фоновых задач и нажмите **ОК** в обоих диалоговых окнах.
 
     В случае приложения на C# в проекте приложения щелкните правой кнопкой мыши элемент **Ссылки** и выберите **Добавить новую ссылку**. В разделе **Решение** выберите **Проекты**, затем выберите имя своего проекта фоновых задач и нажмите **ОК**.
 
-3.  Создайте новый класс, реализующий интерфейс [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Метод [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) — это обязательная точка входа, которая будет вызываться при активации указанного события. Этот метод необходим в каждой фоновой задаче.
+3.  Создайте новый класс, реализующий интерфейс [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Метод [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811)— это обязательная точка входа, которая будет вызываться при активации указанного события. Этот метод необходим в каждой фоновой задаче.
 
     > [!NOTE]
     > Класс фоновой задачи сам по себе и все остальные классы в фоновой задаче должны быть **открытыми** **запечатанными** классами.
@@ -234,7 +231,7 @@ ms.lasthandoff: 02/07/2017
     >     builder->AddCondition(ref new SystemCondition(SystemConditionType::UserPresent));
     > ```
 
-4.  Зарегистрируйте фоновую задачу, вызвав метод Register в объекте [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Сохраните результат выполнения [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786), чтобы использовать его в следующем шаге.
+4.  Зарегистрируйте фоновую задачу, вызвав метод Register в объекте [**BackgroundTaskBuilder **](https://msdn.microsoft.com/library/windows/apps/br224768). Сохраните результат выполнения [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786), чтобы использовать его в следующем шаге.
 
     Следующий код регистрирует фоновую задачу и сохраняет результат.
 
@@ -330,7 +327,7 @@ ms.lasthandoff: 02/07/2017
 В статьях ниже можно найти справочник по API, концептуальное руководство по фоновым задачам и подробные инструкции по созданию приложений, использующих фоновые задачи.
 
 > [!NOTE]
-> Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Связанные разделы
 
@@ -355,4 +352,3 @@ ms.lasthandoff: 02/07/2017
 **Справочник по API для фоновых задач**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
-

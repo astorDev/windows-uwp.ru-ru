@@ -5,20 +5,17 @@ title: "Проектирование для Xbox и телевизора"
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
 label: Designing for Xbox and TV
 template: detail.hbs
-isNew: true
+isNew: True
 keywords: "Xbox, телевизор, просмотр на большом расстоянии, геймпад, пульт дистанционного управления, ввод, взаимодействие"
 ms.author: elcowle
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 572073c2c577f3f6833b9cbee303875e378d6030
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="designing-for-xbox-and-tv"></a>Проектирование для Xbox и телевизора
 
 Разрабатывайте приложение для универсальной платформы Windows (UWP) таким образом, чтобы оно хорошо выглядело и функционировало на Xbox One и на экране телевизора.
@@ -362,11 +359,11 @@ private void MyButton_ContextRequested(UIElement sender, ContextRequestedEventAr
 
 ![Вымышленное приложение для покупки недвижимости](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app.png)
 
-#### <a name="problem-ui-elements-located-after-long-scrolling-listgrid-a-nameproblem-ui-elements-located-after-long-scrolling-list-grida"></a>Проблема: элементы пользовательского интерфейса, размещенные после длинного списка/сетки <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
+#### Проблема: элементы пользовательского интерфейса, размещенные после длинного списка/сетки <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
 Объект [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), приведенный на следующем рисунке, является очень длинным списком прокрутки. Если [включение](#focus-engagement) *не* является обязательным для `ListView`, то при переходе пользователя к списку фокус переводится на первый элемент списка. Чтобы пользователь перешел к кнопке **Назад** или **Далее**, ему необходимо перебрать все элементы в списке. В таких случаях, когда пользователю необходимо перебирать все элементы списка (список недостаточно короткий) и когда пользовательский интерфейс становится неудобным, возможно, следует использовать другие варианты.
 
-![Приложение для покупки недвижимости: чтобы добраться до кнопок под списком из 50 элементов, необходимо 51 нажатие](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
+![Приложение для покупки недвижимости: чтобы добраться до кнопок под списком из 50элементов, необходимо 51нажатие](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
 
 #### <a name="solutions"></a>Решения
 
@@ -565,9 +562,9 @@ public App()
 
 От этих элементов управления несколько отличается объект [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx). Он так же имеет собственные особенности, которые необходимо учитывать. Если у вас есть `ScrollViewer` с доступным для фокусировки содержимым, по умолчанию переход к `ScrollViewer` приведет к перемещению между его элементами. Как и в случае с `ListView`, необходимо перебрать все элементы `ScrollViewer`, чтобы выйти из этого элемента. 
 
-Если `ScrollViewer` *не* имеет содержимого, доступного для фокусировки &mdash; например, содержит только текст &mdash; можно установить значение `IsFocusEngagementEnabled="True"`, чтобы пользователь мог включить объект `ScrollViewer` с помощью кнопки **A/выбор**. После включения элемента пользователь может прокрутить текст с помощью **крестовины / левого джойстика** и нажать кнопку **B/назад**, чтобы отключить фокус элемента.
+Если `ScrollViewer` *не* имеет содержимого, доступного для фокусировки&mdash; например, содержит только текст&mdash; можно установить значение `IsFocusEngagementEnabled="True"`, чтобы пользователь мог включить объект `ScrollViewer` с помощью кнопки **A/выбор**. После включения элемента пользователь может прокрутить текст с помощью **крестовины / левого джойстика** и нажать кнопку **B/назад**, чтобы отключить фокус элемента.
 
-Другой способ — установить значение `IsTabStop="True"` для `ScrollViewer`. В результате пользователю не придется включать элемент управления &mdash; а только перевести на него фокус и прокрутить с помощью **крестовины/левого джойстика**, если `ScrollViewer` не содержит элементов, доступных для фокусировки.
+Другой способ— установить значение `IsTabStop="True"` для `ScrollViewer`. В результате пользователю не придется включать элемент управления&mdash; а только перевести на него фокус и прокрутить с помощью **крестовины/левого джойстика**, если `ScrollViewer` не содержит элементов, доступных для фокусировки.
 
 ### <a name="focus-engagement-defaults"></a>Значения по умолчанию для включения фокуса
 
@@ -1125,4 +1122,3 @@ bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily 
 - [Азбука устройств для приложений универсальной платформы Windows (UWP)](device-primer.md)
 - [Взаимодействие с помощью геймпада и пульта дистанционного управления](gamepad-and-remote-interactions.md)
 - [Звук в приложениях UWP](../style/sound.md)
-

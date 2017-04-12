@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5e03fbb7971e5526d542d409bccb1c7fee6fd3ee
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c9bf682e6818f7c9854604448e52aa0111605a05
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-background-tasks"></a>Руководство по работе с фоновыми задачами
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Убедитесь, что ваше приложение отвечает требованиям, необходимым для выполнения фоновых задач.
 
@@ -93,12 +90,12 @@ ms.lasthandoff: 02/07/2017
 -   Включите фоновую задачу, зарегистрированную с помощью [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) или [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843), и объявите ее в манифесте приложения. Убедитесь, что точка входа и типы триггеров указаны правильно. Это необходимо для сертификации и позволяет пользователю разместить приложение на экране блокировки.
 
 **Примечание.**  
-Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). Если вы разрабатываете приложения для Windows 8.x или Windows Phone 8.x, обратитесь к [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Эта статья адресована разработчикам приложений для Windows10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
-* [Создание и регистрация фоновой задачи, выполняемой вне процесса](create-and-register-a-background-task.md)
+* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
@@ -115,4 +112,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 225f0d2bd5d8a2434c3e548064960f44f1df530e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: df5d232cc997c0c888b3a2f092efeb937e991a85
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="support-web-to-app-linking-with-app-uri-handlers"></a>Поддержка привязки приложений к Интернету с помощью обработчиков URI приложения
 
 Узнайте, как повысить интерес пользователей к вашему приложению путем поддержки привязки приложений к Интернету. Привязка приложений к Интернету позволяет связать приложение с веб-сайтом. Когда пользователи открывают ссылку http или https на ваш сайт, вместо открытия браузера запускается ваше приложение. Если ваше приложение не установлено, предоставляется ссылка на ваш сайт в браузере. Пользователи могут доверять такому подходу, поскольку только проверенные владельцы содержимого могут зарегистрироваться для предоставления ссылки.
@@ -199,4 +196,3 @@ protected override void OnActivated(IActivatedEventArgs e)
 [Активация обработки URI](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 
 [Пример запуска по сопоставлению](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) демонстрирует использование API LaunchUriAsync().
-

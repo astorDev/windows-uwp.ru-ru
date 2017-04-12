@@ -1,7 +1,7 @@
 ---
 author: drewbatgit
 ms.assetid: 0309c7a1-8e4c-4326-813a-cbd9f8b8300d
-description: "В этой статье показано, как создавать и планировать мультимедийные вставки, а также управлять ими в приложении воспроизведения мультимедиа."
+description: "В данной статье показано, как создавать и планировать мультимедийные вставки, а также управлять ими в приложении воспроизведения мультимедиа."
 title: "Создание, планирование мультимедийных вставок и управление ими"
 ms.author: drewbat
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8d4e9a87009b50538adac2357badc0a7dfe8f88c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 439d39dab1b628ff484de587f47a3cf9129d639f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-schedule-and-manage-media-breaks"></a>Создание, планирование и управление мультимедийными вставками
 
-В этой статье показано, как создавать и планировать мультимедийные вставки, а также управлять ими в приложении воспроизведения мультимедиа. Мультимедийные вставки обычно используются для вставки аудио- или видеорекламы в мультимедийное содержимое. Начиная с Windows 10 версии 1607 можно использовать класс [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager), чтобы легко и быстро добавлять мультимедийные вставки в любой элемент [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem), воспроизводимый с помощью [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer).
+В данной статье показано, как создавать и планировать мультимедийные вставки, а также управлять ими в приложении воспроизведения мультимедиа. Мультимедийные вставки обычно используются для вставки аудио- или видеорекламы в мультимедийное содержимое. Начиная с Windows 10 версии 1607 можно использовать класс [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager), чтобы легко и быстро добавлять мультимедийные вставки в любой элемент [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem), воспроизводимый с помощью [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer).
 
 
 Когда запланирована одна или несколько мультимедийных вставок, система автоматически воспроизводит ваше мультимедийное содержимое в указанный момент во время воспроизведения. **MediaBreakManager** предоставляет события, чтобы приложение могло реагировать на начало и завершение мультимедийных вставок при воспроизведении мультимедиа, а также на случаи, когда вставки пропускаются пользователем. Можно также получить доступ к объекту [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) для ваших мультимедийных вставок, чтобы контролировать такие события, как обновление хода выполнения загрузки и буферизации.
@@ -73,8 +70,7 @@ ms.lasthandoff: 02/08/2017
 
 [!code-cs[BreakStarted](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakStarted)]
 
-
-              Событие [**BreakEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreakEnded) возникает после завершения воспроизведения всех элементов мультимедиа из вставки или после их пропуска. Обработчик этого события можно использовать для обновления пользовательского интерфейса, указывающего, что содержимое мультимедийной вставки больше не воспроизводится.
+Событие [**BreakEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreakEnded) возникает после завершения воспроизведения всех элементов мультимедиа из вставки или после их пропуска. Обработчик этого события можно использовать для обновления пользовательского интерфейса, указывающего, что содержимое мультимедийной вставки больше не воспроизводится.
 
 [!code-cs[BreakEnded](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakEnded)]
 
@@ -84,8 +80,7 @@ ms.lasthandoff: 02/08/2017
 
 [!code-cs[BreakSkipped](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSkipped)]
 
-
-              Событие [**BreaksSeekedOver**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreaksSeekedOver) возникает, когда при прокрутке положение воспроизведения основного элемента мультимедиа переходит через запланированное время для одной или нескольких мультимедийных вставок. В следующем примере проверяется, не произошел ли переход более чем через одну мультимедийную вставку при прокрутке положения воспроизведения вперед, а также не была ли выполнена прокрутка вперед менее чем на 10 минут. Если эти условия выполнены, первая вставка, через которую был выполнен переход (она получается из коллекции [**SeekedOverBreaks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSeekedOverEventArgs.SeekedOverBreaks), предоставленной аргументами события), немедленно воспроизводится с помощью вызова метода [**PlayBreak**](https://msdn.microsoft.com/library/windows/apps/mt670689) объекта **MediaPlayer.BreakManager**.
+Событие [**BreaksSeekedOver**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreaksSeekedOver) возникает, когда при прокрутке положение воспроизведения основного элемента мультимедиа переходит через запланированное время для одной или нескольких мультимедийных вставок. В следующем примере проверяется, не произошел ли переход более чем через одну мультимедийную вставку при прокрутке положения воспроизведения вперед, а также не была ли выполнена прокрутка вперед менее чем на 10 минут. Если эти условия выполнены, первая вставка, через которую был выполнен переход (она получается из коллекции [**SeekedOverBreaks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSeekedOverEventArgs.SeekedOverBreaks), предоставленной аргументами события), немедленно воспроизводится с помощью вызова метода [**PlayBreak**](https://msdn.microsoft.com/library/windows/apps/mt670689) объекта **MediaPlayer.BreakManager**.
 
 [!code-cs[BreakSeekedOver](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSeekedOver)]
 
@@ -103,7 +98,7 @@ ms.lasthandoff: 02/08/2017
 
 [!code-cs[BufferingProgressChanged](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBufferingProgressChanged)]
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 * [Воспроизведение мультимедиа](media-playback.md)
 * [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Ручное управление системными элементами управления воспроизведением мультимедиа](system-media-transport-controls.md)
@@ -111,7 +106,6 @@ ms.lasthandoff: 02/08/2017
  
 
  
-
 
 
 

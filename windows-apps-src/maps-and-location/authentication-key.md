@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, ключ проверки подлинности карт, элемент управления картой"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 841a3bf42faaaa12df94ad9be2ffc9eb3a833ae5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 42078becbc5853787ca057dcbfb58b8d8de7967d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="request-a-maps-authentication-key"></a>Запрос ключа проверки подлинности карт
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Ваше [приложение Universal Windows](https://msdn.microsoft.com/library/windows/apps/dn894631) должно пройти проверку подлинности, прежде чем оно сможет использовать [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) и службы карт в пространстве имен [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979). Для проверки подлинности приложения необходимо указать ключ проверки подлинности карт. В этом разделе описано, как запросить ключ проверки подлинности карт из [центра разработки Карт Bing](https://www.bingmapsportal.com/) и добавить его в приложение.
@@ -96,6 +93,5 @@ ms.lasthandoff: 02/07/2017
 * [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
 * [Пример карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Видео Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Видео c конференции Build 2015: использование карт и местоположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Пример приложения UWP для работы с картами](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-

@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: de1c06d67db78cdc4638c27220d25f769912308e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: af636e445d2cad70922b8f846140e0886cf7ef28
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="3d-printing"></a>3D Printing
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе описывается, как использовать [API трехмерной печати](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) для добавления возможностей трехмерной печати в универсальное приложение для Windows.  
 
@@ -37,4 +35,3 @@ ms.lasthandoff: 02/07/2017
 * [Пример трехмерной печати с помощью UWP из Unity](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
 
  
-

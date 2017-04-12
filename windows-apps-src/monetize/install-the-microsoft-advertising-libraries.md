@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, реклама, рекламные объявления, установка, SDK, библиотеки"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 034b597c945f9f12700ac442e4b3014b0bc84c78
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3304efd659a32176a44c33d9df4e8062b3bc7700
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="install-the-microsoft-advertising-libraries"></a>Установка библиотек Microsoft Advertising
 
 
@@ -38,9 +35,9 @@ ms.lasthandoff: 02/07/2017
 
 * В пакет Microsoft Advertising SDK для Windows и Windows Phone 8.x входят два набора рекламных библиотек: библиотеки для Microsoft Advertising (предоставляющие классы [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) и [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) для приложений XAML и JavaScript/HTML) и библиотеки для рекламного посредника (предоставляющие класс **AdMediatorControl**).
 
-В этом документе описано использование классов **AdControl** и **InterstitialAd** в библиотеках Microsoft Advertising для отображения рекламных баннеров или промежуточной видеорекламы. Сведения об использовании рекламного посредника для приложений Windows 8.1 и Windows Phone 8.x см. в разделе [Использование рекламного посредника для повышения дохода](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx).
+В этом документе описано использование классов **AdControl** и **InterstitialAd** в библиотеках Microsoft Advertising для отображения рекламных баннеров или межстраничных объявлений. Сведения об использовании рекламного посредника для приложений Windows 8.1 и Windows Phone 8.x см. в разделе [Использование рекламного посредника для повышения дохода](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx).
 
->**Примечание.**&nbsp;&nbsp;Рекламный посредник с использованием класса **AdMediatorControl** в настоящее время не поддерживается для приложений UWP для Windows 10. Посредники на стороне сервера для приложений UWP станут доступны в ближайшее время на основе тех же API-интерфейсов, что используются для баннеров (**AdControl**) и промежуточной видеорекламы (**InterstitialAd**).
+>**Примечание.**&nbsp;&nbsp;Рекламный посредник с использованием класса **AdMediatorControl** в настоящее время не поддерживается для приложений UWP для Windows 10. Посредники на стороне сервера для приложений UWP станут доступны в ближайшее время на основе тех же API-интерфейсов, что используются для баннеров (**AdControl**) и межстраничных объявлений (**InterstitialAd**).
 
 Прежде чем использовать какие-либо элементы управления рекламой в коде приложения, необходимо создать в проекте ссылку на нужную библиотеку. В следующих таблицах перечислены названия всех библиотек в том виде, в котором они отображаются в диалоговом окне **Диспетчер ссылок** в Visual Studio.
 
@@ -57,7 +54,7 @@ ms.lasthandoff: 02/07/2017
             <td>10.0</td>
         </tr>
         <tr>
-            <td>Windows 8.1</td>
+            <td>Windows 8.1;</td>
             <td>SDK Ad Mediator для XAML в Windows 8.1</td>
             <td>1.0</td>
         </tr>
@@ -78,7 +75,7 @@ ms.lasthandoff: 02/07/2017
             <td>8.5</td>
         </tr>
         <tr>
-            <td>Windows Phone 8.1</td>
+            <td>Windows Phone8.1</td>
             <td>SDK Microsoft Advertising для Windows Phone 8.1 Native (JS)</td>
             <td>8.5</td>
         </tr>
@@ -94,7 +91,7 @@ ms.lasthandoff: 02/07/2017
             <td>1.0</td>
         </tr>
         <tr>
-            <td>Windows Phone 8.1</td>
+            <td>Windows Phone 8.1</td>
             <td>SDK Ad Mediator для XAML Windows Phone 8.1</td>
             <td>1.0</td>
         </tr>
@@ -106,4 +103,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

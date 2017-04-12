@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d4eae4379fb74d36a97db9be9a100408825682a7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 226b2fd19777deb5135d1e1f059596883f95d3d3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-your-xaml-layout"></a>Оптимизация макета XAML
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -189,5 +187,4 @@ ms.lasthandoff: 02/07/2017
 Производительность, как правило, не учитывается при выборе панели. Этот выбор обычно делается на основании того, какая из панелей обеспечивает поведение макета, наиболее близкое к пользовательскому интерфейсу, который вы реализуете. Например, если выбирать между [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) и [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), следует отдать предпочтение той панели, которая обеспечивает наиболее точное сопоставление с задуманной вами моделью реализации.
 
 Каждая панель XAML оптимизирована для обеспечения высокой производительности, и все панели обеспечивают одинаковую производительность для аналогичных пользовательских интерфейсов.
-
 

@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8342d53c5d53e06f6793ce1d125c26f0e3880c07
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a05cc1d0da255eddb5c6659e7c9d44f3faf4101d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -371,4 +369,3 @@ void OnConnectionReceived(
     });
 }
 ```
-

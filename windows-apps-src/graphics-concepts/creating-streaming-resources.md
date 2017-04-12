@@ -2,21 +2,17 @@
 title: "Создание потоковых ресурсов"
 description: "Потоковые ресурсы создаются путем указания флага при создании ресурса. Этот флаг должен указывать на то, что ресурс является потоковым."
 ms.assetid: B3F3E43C-54D4-458C-9E16-E13CB382C83F
-keywords:
-- "Создание потоковых ресурсов"
+keywords: "Создание потоковых ресурсов"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 86f19b2afd580a16510fee8e97acfc2a388cad01
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0f42d34251ccd6d9add87808e502ab66dc830905
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="creating-streaming-resources"></a>Создание потоковых ресурсов
 
 
@@ -47,7 +43,7 @@ ms.lasthandoff: 02/07/2017
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Сопоставления в пуле плиток](mappings-are-into-a-tile-pool.md)</p></td>
-<td align="left"><p>При создании ресурса в качестве потокового плитки, составляющие этот ресурс, поступают из указаний на расположения в пуле плиток. Пул плиток — это пул памяти (в фоновом режиме которого выполняется одно или несколько выделений, которые не видны приложению).</p></td>
+<td align="left"><p>При создании ресурса в качестве потокового плитки, составляющие этот ресурс, поступают из указаний на расположения в пуле плиток. Пул плиток— это пул памяти (в фоновом режиме которого выполняется одно или несколько выделений, которые не видны приложению).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Параметры создания потоковых ресурсов](streaming-resource-creation-parameters.md)</p></td>
@@ -59,7 +55,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[Потоковые ресурсы: совместное использование процессов и устройств](streaming-resource-cross-process-and-device-sharing.md)</p></td>
-<td align="left"><p>Пулы могут совместно использоваться разными процессами — точно так же как традиционные ресурсы. Потоковые ресурсы, ссылающиеся на пулы плиток, невозможно совместно использовать на устройствах или в процессах.</p></td>
+<td align="left"><p>Пулы могут совместно использоваться разными процессами— точно так же как традиционные ресурсы. Потоковые ресурсы, ссылающиеся на пулы плиток, невозможно совместно использовать на устройствах или в процессах.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Доступные операции с потоковыми ресурсами](operations-available-on-streaming-resources.md)</p></td>
@@ -86,7 +82,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 84e144e612567a977a6c4e1502719dabbc488329
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7e1529d641920c93ce7914c39d38001c2cbdfd78
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="peer-to-peer-navigation-between-two-pages"></a>Одноранговая навигация между двумя страницами
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -41,7 +38,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="create-the-blank-app"></a>Создание пустого приложения
 
 
-1.  В меню Microsoft Visual Studio выберите **Файл &gt; Создать проект**.
+1.  В меню Microsoft Visual Studio выберите **Файл&gt; Создать проект**.
 2.  На левой панели диалогового окна **Новый проект** выберите узел **Visual C# &gt; Windows &gt; Universal** или **Visual C++ &gt; Windows &gt; Universal**.
 3.  На центральной панели выберите **Пустое приложение**.
 4.  В поле **Имя** введите **NavApp1**, а затем нажмите кнопку **ОК**.
@@ -338,7 +335,7 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 
 Содержимое и состояние страницы не кэшируются по умолчанию, поэтому кэширование нужно включать для каждой страницы приложения.
 
-В нашем простом примере кнопки возврата нет (мы покажем возможности обратной навигации в разделе [Навигация кнопки «Назад»](navigation-history-and-backwards-navigation.md)), но если вы нажали кнопку возврата на `Page2`, [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (и любое другое поле) на `Page1` будет установлено в состояние по умолчанию. Один способов обойти эту проблему — использовать свойство [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506), чтобы указать, что страница будет добавлена в кэш страницы фрейма.
+В нашем простом примере кнопки возврата нет (мы покажем возможности обратной навигации в разделе [Навигация кнопки «Назад»](navigation-history-and-backwards-navigation.md)), но если вы нажали кнопку возврата на `Page2`, [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (и любое другое поле) на `Page1` будет установлено в состояние по умолчанию. Один способов обойти эту проблему— использовать свойство [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506), чтобы указать, что страница будет добавлена в кэш страницы фрейма.
 
 В конструкторе страницы `Page1` установите для [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) значение [**Enabled**](https://msdn.microsoft.com/library/windows/apps/br243284). При этом все содержимое и значения состояния страницы сохраняются, пока не будет превышен размер кэша страницы для фрейма.
 
@@ -371,7 +368,6 @@ Page1::Page1()
  
 
  
-
 
 
 

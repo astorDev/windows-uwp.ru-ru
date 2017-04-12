@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, рекламные объявления, реклама, AdControl, устранение неполадок, XAML, c#"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0d5ba07f3a77f360dcb45c7139a7301cdb623dbb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c48b265ded1ef5030a1e038806751f0f3379679b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-and-c-troubleshooting-guide"></a>Руководство по устранению неполадок в XAML и C#
 
 В этом разделе содержится описание решений распространенных проблем разработки, связанных с библиотеками Microsoft Advertising, в приложениях XAML.
@@ -27,7 +24,7 @@ ms.lasthandoff: 02/07/2017
 
 * [C#](#csharp)
   * [Элемент AdControl не отображается](#csharp-adcontrolnotappearing)
-  * ["Черный ящик" моргает и исчезает](#csharp-blackboxblinksdisappears)
+  * [«Черный ящик» моргает и исчезает](#csharp-blackboxblinksdisappears)
   * [Реклама не обновляется](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
@@ -121,7 +118,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
-    Наиболее распространенная ошибка, в следствие которой появляется "черный ящик", это — "Реклама недоступна". Эта ошибка означает, что для возврата по запросу реклама недоступна.
+    Наиболее распространенная ошибка, в следствие которой появляется "черный ящик", это— "Реклама недоступна". Эта ошибка означает, что для возврата по запросу реклама недоступна.
 
 3.  Элемент [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) работает нормально.
 
@@ -256,7 +253,7 @@ ms.lasthandoff: 02/07/2017
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
 
-    Наиболее распространенная ошибка, в следствие которой появляется "черный ящик", это — "Реклама недоступна". Эта ошибка означает, что для возврата по запросу реклама недоступна.
+    Наиболее распространенная ошибка, в следствие которой появляется "черный ящик", это— "Реклама недоступна". Эта ошибка означает, что для возврата по запросу реклама недоступна.
 
 3.  Элемент **AdControl** работает нормально. Иногда одна и та же реклама может отображаться несколько раз подряд, в результате чего может показаться, что рекламные блоки не обновляются.
 
@@ -277,4 +274,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

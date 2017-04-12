@@ -9,18 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8918b120394def3ba12d5932dc66cb38279cc124
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dbdc65fb842c6f8d6439f0041a33d991e27bd6b6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этой статье описан самый простой способ записи фотографий и видео с помощью класса [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture). Класс **MediaCapture** предоставляет широкий набор API, которые обеспечивают низкоуровневое управление конвейером захвата и поддерживают расширенные сценарии захвата, но цель этой статьи — помочь быстро и просто добавлять в приложение основные функции захвата мультимедиа. Дополнительные сведения о возможностях класса **MediaCapture** см. в разделе [**Камера**](camera.md).
+В этой статье описан самый простой способ записи фотографий и видео с помощью класса [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture). Класс **MediaCapture** предоставляет широкий набор API, которые обеспечивают низкоуровневое управление конвейером захвата и поддерживают расширенные сценарии захвата, но цель этой статьи— помочь быстро и просто добавлять в приложение основные функции захвата мультимедиа. Дополнительные сведения о возможностях класса **MediaCapture** см. в разделе [**Камера**](camera.md).
 
 Если вы хотите просто захватить фотографию или видео и не планируете добавлять дополнительные возможности захвата мультимедиа или не хотите создать собственный пользовательский интерфейс камеры, можно использовать класс [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI), который позволяет просто запустить встроенное приложение камеры Windows и получить созданную фотографию или видео. Дополнительные сведения см. в разделе [**Фото- и видеосъемка с помощью встроенного пользовательского интерфейса камеры в Windows**](capture-photos-and-video-with-cameracaptureui.md).
 
@@ -140,5 +137,4 @@ ms.lasthandoff: 02/08/2017
 * [Обработка ориентации устройства с помощью MediaCapture](handle-device-orientation-with-mediacapture.md)
 * [Создание, редактирование и сохраните точечных рисунков](imaging.md)
 * [Файлы, папки и библиотеки](https://msdn.microsoft.com/windows/uwp/files/index)
-
 

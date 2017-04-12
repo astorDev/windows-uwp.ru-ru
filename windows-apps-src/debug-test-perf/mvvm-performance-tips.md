@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5833422a3074ddfa581011d91c8364bddb3c3088
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2c803083a9f7a279a6cfb70087c5cd1f0c3def1e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="mvvm-and-language-performance-tips"></a>Советы по MVVM и обеспечению производительности языка
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе рассматриваются некоторые вопросы производительности, связанные с выбором шаблонов проектирования программного обеспечения и языка программирования.
 
@@ -45,7 +43,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

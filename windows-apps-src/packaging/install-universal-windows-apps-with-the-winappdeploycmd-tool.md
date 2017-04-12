@@ -2,54 +2,54 @@
 author: laurenhughes
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: "Установка приложений с помощью средства WinAppDeployCmd.exe"
-description: "Windows Application Deployment (WinAppDeployCmd.exe) — это средство командной строки, которое используется для развертывания приложения универсальной платформы Windows (UWP) с компьютера под управлением Windows 10 на любом устройстве с операционной системой Windows 10."
+description: "WindowsApplicationDeployment (WinAppDeployCmd.exe)— это средство командной строки, которое используется для развертывания приложения универсальной платформы Windows (UWP) с компьютера под управлением Windows10 на любом устройстве с операционной системой Windows10."
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9148a26b813d99ca04ae2e5a050bbc9b590d5f6e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: eb4ad93f60c2e5062c2f5d99d852538484f965da
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Установка приложений с помощью средства WinAppDeployCmd.exe
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Windows Application Deployment (WinAppDeployCmd.exe) — это средство командной строки, которое используется для развертывания приложения универсальной платформы Windows (UWP) с компьютера под управлением Windows 10 на любом устройстве с операционной системой Windows 10. Это средство можно использовать для развертывания пакета .appx, если устройство с операционной системой Windows 10 подключено через USB или доступно в той же подсети, без необходимости использования Microsoft Visual Studio или отдельного решения для данного приложения. Вы также можете развернуть приложение без его предварительной упаковки на удаленном компьютере или консоли Xbox One. В этой статье описывается, как устанавливать приложения UWP с помощью этого средства.
+WindowsApplicationDeployment (WinAppDeployCmd.exe)— это средство командной строки, которое используется для развертывания приложения универсальной платформы Windows (UWP) с компьютера под управлением Windows10 на любом устройстве с операционной системой Windows10. Это средство можно использовать для развертывания пакета .appx, если устройство с операционной системой Windows10 подключено через USB или доступно в той же подсети, без необходимости использования MicrosoftVisualStudio или отдельного решения для данного приложения. Вы также можете развернуть приложение без его предварительной упаковки на удаленном компьютере или консоли Xbox One. В этой статье описывается, как устанавливать приложения UWP с помощью этого средства.
 
-Чтобы запустить средство WinAppDeployCmd из командной строки или файла сценария, нужен лишь установленный пакет SDK Windows 10. При установке приложения с помощью WinAppDeployCmd.exe для загрузки неопубликованного приложения на устройство с операционной системой Windows 10 используется файл .appx или AppxManifest (для свободных файлов). Эта команда не устанавливает сертификат, необходимый вашему приложению. Для запуска приложения устройство с операционной системой Windows 10 должно находиться в режиме разработчика или на нем уже должен быть установлен сертификат.
+Чтобы запустить средство WinAppDeployCmd из командной строки или файла сценария, нужен лишь установленный пакет SDK Windows10. При установке приложения с помощью WinAppDeployCmd.exe для загрузки неопубликованного приложения на устройство с операционной системой Windows10 используется файл .appx или AppxManifest (для свободных файлов). Эта команда не устанавливает сертификат, необходимый вашему приложению. Для запуска приложения устройство с операционной системой Windows10 должно находиться в режиме разработчика или на нем уже должен быть установлен сертификат.
 
 Для развертывания на мобильных устройствах необходимо сначала создать пакет. Дополнительные сведения см. [здесь](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-Средство **WinAppDeployCmd.exe** находится на компьютере под управлением Windows 10 здесь: **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** (зависит от пути для установки SDK). Сначала подключите устройство с операционной системой Windows 10 к той же подсети или непосредственно к компьютеру под управлением Windows 10 через USB. Затем используйте следующий синтаксис и примеры данной команды, описанные далее в этой статье, чтобы выполнить развертывание приложения UWP.
+Средство **WinAppDeployCmd.exe** находится на компьютере под управлением Windows10 здесь: **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** (зависит от пути для установки SDK). Сначала подключите устройство с операционной системой Windows10 к той же подсети или непосредственно к компьютеру под управлением Windows10 через USB. Затем используйте следующий синтаксис и примеры данной команды, описанные далее в этой статье, чтобы выполнить развертывание приложения UWP.
 
 ## <a name="winappdeploycmd-syntax-and-options"></a>Синтаксис и параметры WinAppDeployCmd
 
-Ниже приведены варианты синтаксиса, который можно использовать для **WinAppDeployCmd.exe**
+Это общий синтаксис, используемый для **WinAppDeployCmd.exe**:
+```syntax
+WinAppDeployCmd command -option <argument>
+```
 
-``` syntax
-WinAppDeployCmd command -option <argument> ...
-    WinAppDeployCmd devices
-    WinAppDeployCmd devices <x>
-    WinAppDeployCmd install -file <path> -ip <address>
-    WinAppDeployCmd install -file <path> -guid <address> -pin <p>
-    WinAppDeployCmd install -file <path> -ip <address> -dependency <a> <b> ...
-    WinAppDeployCmd install -file <path> -guid <address> -dependency <a> <b> ...
-    WinAppDeployCmd uninstall -file <path>
-    WinAppDeployCmd uninstall -package <name>
-    WinAppDeployCmd update -file <path>
-    WinAppDeployCmd list -ip <address>
-    WinAppDeployCmd list -guid <address>
-    WinAppDeployCmd deployfiles -file <path> -remotedeploydir <remoterelativepath> -ip <address>
-    WinAppDeployCmd registerfiles -remotedeploydir <remoterelativepath> -ip <address>
-    WinAppDeployCmd addcreds -credserver <server> -credusername <username> -credpassword <password> -ip <address>
-    WinAppDeployCmd getcreds -credserver <server> -ip <address>
-    WinAppDeployCmd deletecreds -credserver <server> -ip <address>
-
+Ниже приведено несколько дополнительных примеров синтаксиса для использования различных команд:
+```syntax
+WinAppDeployCmd devices
+WinAppDeployCmd devices <x>
+WinAppDeployCmd install -file <path> -ip <address>
+WinAppDeployCmd install -file <path> -guid <address> -pin <p>
+WinAppDeployCmd install -file <path> -ip <address> -dependency <a> <b> 
+WinAppDeployCmd install -file <path> -guid <address> -dependency <a> <b>
+WinAppDeployCmd uninstall -file <path>
+WinAppDeployCmd uninstall -package <name>
+WinAppDeployCmd update -file <path>
+WinAppDeployCmd list -ip <address>
+WinAppDeployCmd list -guid <address>
+WinAppDeployCmd deployfiles -file <path> -remotedeploydir <remoterelativepath> -ip <address>
+WinAppDeployCmd registerfiles -remotedeploydir <remoterelativepath> -ip <address>
+WinAppDeployCmd addcreds -credserver <server> -credusername <username> -credpassword <password> -ip <address>
+WinAppDeployCmd getcreds -credserver <server> -ip <address>
+WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 ```
 
 Можно установить или удалить приложение с целевого устройства, а также обновить уже установленное приложение. Для хранения данных или параметров, сохраненных уже установленным приложением, используйте параметры **обновления** вместо параметров **установки**.
@@ -110,13 +110,13 @@ WinAppDeployCmd command -option <argument> ...
 
 Вот несколько примеров развертывания из командной строки с помощью синтаксиса для **WinAppDeployCmd.exe**.
 
-Показывает устройства, которые доступны для развертывания. Время ожидания команды равно 3 секундам.
+Показывает устройства, которые доступны для развертывания. Время ожидания команды равно 3секундам.
 
 ``` syntax
 WinAppDeployCmd devices 3
 ```
 
-Устанавливает приложение из пакета MyApp.appx, который находится в папке компьютера «Загрузки», на устройство с операционной системой Windows 10 с IP-адресом 192.168.0.1 и PIN-кодом A1B2C3 для установки соединения с устройством.
+Устанавливает приложение из пакета MyApp.appx, который находится в папке компьютера «Загрузки», на устройство с операционной системой Windows10 с IP-адресом 192.168.0.1 и PIN-кодом A1B2C3 для установки соединения с устройством.
 
 ``` syntax
 WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
@@ -128,7 +128,7 @@ WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
 WinAppDeployCmd uninstall -package Company.MyApp_1.0.0.1_x64__qwertyuiop -ip 192.168.0.1
 ```
 
-Обновляет приложение, которое уже установлено на устройстве с операционной системой Windows 10 и IP-адресом 192.168.0.1, с помощью указанного пакета .appx.
+Обновляет приложение, которое уже установлено на устройстве с операционной системой Windows10 и IP-адресом 192.168.0.1, с помощью указанного пакета .appx.
 
 ``` syntax
 WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1
@@ -156,4 +156,3 @@ WinAppDeployCmd registerfiles -ip <Xbox One IP> -remotedeploydir <location of ap
 
 ex. WinAppDeployCmd register files -ip 192.168.0.1 -remotedeploydir \\driveA\myAppLocation -username admin -password A1B2C3
 ```
-

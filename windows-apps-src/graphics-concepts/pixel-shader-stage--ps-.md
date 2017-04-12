@@ -2,21 +2,17 @@
 title: "Этап шейдера пикселей (PS)"
 description: "На этапе шейдера пикселей (PS) принимаются интерполированные данные для примитива и генерируются данные для пикселей, такие как цвет."
 ms.assetid: 0AEBFDFB-0AD8-4633-AE4E-A44004B57745
-keywords:
-- "Этап шейдера пикселей (PS)"
+keywords: "Этап шейдера пикселей (PS)"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2048a92816de384de0c4be0400338abba9cb275f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 94a7d35605200b010210d16a8e0ddcc605db01e8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="pixel-shader-ps-stage"></a>Этап шейдера пикселей (PS)
 
 
@@ -58,7 +54,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

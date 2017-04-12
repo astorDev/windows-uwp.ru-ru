@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
 description: "Используйте эти методы в API отправки Магазина Windows для управления тестовыми пакетами для приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows."
-title: "Управление тестовыми пакетами с помощью API отправки Магазина Windows"
+title: "Управление тестовыми пакетами"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API отправки Магазина Windows, тесты"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 51d7481d0491c85bddcae906a846cb8773f33417
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, API отправки Магазина Windows, тестируемые возможности"
+ms.openlocfilehash: b560c2c12dc2fd7984287d039d20c121698aef85
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="manage-package-flights-using-the-windows-store-submission-api"></a>Управление тестовыми пакетами с помощью API отправки Магазина Windows
+# <a name="manage-package-flights"></a>Управление тестовыми пакетами
 
 Используйте указанные ниже методы в API отправки Магазина Windows для управления тестовыми пакетами для ваших приложений. Введение в API отправки Магазина Windows, включая необходимые условия для использования этого API, см. в разделе [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md).
 
@@ -63,5 +60,4 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>Связанные разделы
 
 * [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md)
-* [Управление отправкой тестового пакета](manage-flight-submissions.md)
-
+* [Управление отправками тестового пакета](manage-flight-submissions.md)

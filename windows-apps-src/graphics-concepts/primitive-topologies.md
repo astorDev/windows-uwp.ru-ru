@@ -2,21 +2,17 @@
 title: "Топологии примитивов"
 description: "Direct3D поддерживает несколько топологий примитивов, которые определяют, как вершины интерпретируются и рассматриваются конвейером; к ним относятся списки точек, списки линий, и полосы треугольников."
 ms.assetid: 7AA5A4A2-0B7C-431D-B597-684D58C02BA5
-keywords:
-- "Топологии примитивов"
+keywords: "Топологии примитивов"
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 487de51420cd6ce747d0257920429e9015bc1864
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d0d6bed3cbccd37fcd4fc835273099e8d26f671d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="primitive-topologies"></a>Топологии примитивов
 
 
@@ -28,9 +24,9 @@ Direct3D поддерживает несколько топологий прим
 Поддерживаются следующие базовые топологии примитивов (или типы примитивов):
 
 -   [списки точек;](point-lists.md)
--   [списки линий;](line-lists.md)
--   [ломаные;](line-strips.md)
--   [списки треугольников;](triangle-lists.md)
+-   [Списки линий](line-lists.md)
+-   [Ломаные](line-strips.md)
+-   [Списки треугольников](triangle-lists.md)
 -   [полосы треугольников.](triangle-strips.md)
 
 Сведения о визуализации каждого типа примитива см. на схеме ниже в разделе [Направление поворота и передние позиции вершин](#winding-direction-and-leading-vertex-positions).
@@ -88,7 +84,6 @@ Direct3D поддерживает несколько топологий прим
  
 
  
-
 
 
 

@@ -1,22 +1,19 @@
 ---
 author: mcleanbyron
 Description: "Прежде чем провести эксперимент в приложении универсальной платформы Windows (UWP) с использованием A/B-тестирования, необходимо создать проект и определить удаленные переменные на информационной панели Центра разработки."
-title: "Создание проекта и определение удаленных переменных на информационной панели Центра разработки"
+title: "Создание проекта эксперимента на информационной панели"
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, Microsoft Store Services SDK, A/B-тесты, эксперименты"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ad24e9a52458b826f3ce1bc7aba3dbdcf302f87d
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, Microsoft Store Services SDK, A/B-тесты, эксперименты"
+ms.openlocfilehash: bc38e5cc7438ff2dede5267b60bc925369defa51
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
-# <a name="create-a-project-and-define-remote-variables-in-the-dev-center-dashboard"></a>Создание проекта и определение удаленных переменных на информационной панели Центра разработки
+# <a name="create-an-experiment-project-in-the-dashboard"></a>Создание проекта эксперимента на информационной панели
 
 Для проведения эксперимента создайте [проект](run-app-experiments-with-a-b-testing.md#terms) эксперимента для приложения на информационной панели Центра разработки и укажите удаленные переменные, к которым приложение может иметь доступ.
 
@@ -35,7 +32,8 @@ ms.lasthandoff: 02/07/2017
   3. Закончив добавление переменных, нажмите кнопку **Сохранить**.
 3. В разделе **Интеграция SDK** посмотрите значение [идентификатора проекта](run-app-experiments-with-a-b-testing.md#terms). При [кодировании приложения для экспериментов](code-your-experiment-in-your-app.md) необходимо указывать этот идентификатор проекта в коде, чтобы получать переменные данные и регистрировать события просмотра и преобразования в Центре разработки.
 
->**Примечание**&nbsp;&nbsp;Удаленные переменные невозможно изменять, добавлять или удалять, если в проекте имеется активный эксперимент. Это ограничение гарантирует целостность данных контрольной группы для активного эксперимента.
+> [!NOTE]
+> Удаленные переменные невозможно изменять, добавлять или удалять, если в проекте имеется активный эксперимент. Это ограничение гарантирует целостность данных контрольной группы для активного эксперимента.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -45,8 +43,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>Связанные разделы
 
 * [Кодирование приложения для экспериментов](code-your-experiment-in-your-app.md)
-* [Определение эксперимента в информационной панели Центра разработки](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Управление экспериментом в информационной панели Центра разработки](manage-your-experiment.md)
+* [Определение эксперимента на панели мониторинга Центра разработки](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Управление экспериментом на панели мониторинга Центра разработки](manage-your-experiment.md)
 * [Создание и запуск первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [Выполнение экспериментов в приложении с использованием A/B-тестирования](run-app-experiments-with-a-b-testing.md)
-
