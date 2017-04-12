@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 5d1926655f44fb54b07e7222911c94ef0e526cd0
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 59ecdb1994ffe1fe80da9301cea5d91c7e4e3a8d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="register-an-app-in-a-loose-folder"></a>Регистрация приложения в свободной папке  
 
 **Запрос**
@@ -66,5 +63,4 @@ folder (обязательный) | Имя конечной папки паке�
 Второй способ — копирование отдельных файлов в нужную папку с помощью запроса POST к /api/filesystem/apps/file, где knownfolderid — DevelopmentFiles, packagefullname пуст, а имя и путь файла правильно указаны (путь должен начинаться с LooseApps).
 
 Третий способ — скопируйте всю папку одновременно в [/api/app/packagemanager/upload](wdp-folder-upload.md), где destinationFolder — имя папки, которую требуется разместить в каталоге d:\developmentfiles\looseapps, а полезная нагрузка — это несколько компонентов, из которых формируется HTTP-текст содержимого каталога.
-
 

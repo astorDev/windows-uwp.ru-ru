@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 43cd6db99001974283175cb611d2e06c5da2221c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 3ed4fff6cb7d85fe36a732cc10224ddfe3565d4f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="publish-windows-apps"></a>Публикация приложений для Windows
 
 Вы можете использовать информационную панель Центра разработки для Windows для публикации своих приложений в Магазине Windows. 
@@ -37,4 +34,3 @@ ms.lasthandoff: 02/08/2017
 | [Получение оплаты](getting-paid-apps.md) | Узнайте подробнее о получении прибыли от ваших приложений, надстроек и платформы Microsoft Advertising. |
 | [Политики Магазина и правила поведения](https://msdn.microsoft.com/library/windows/apps/dn764939.aspx) | В этот раздел включены [политики Магазина](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx) и критерии оценки [качества приложений](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx), которые применяются к приложениям и содержимому Windows, а также [правила поведения](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx), подлежащие выполнению разработчиками. |
  
-

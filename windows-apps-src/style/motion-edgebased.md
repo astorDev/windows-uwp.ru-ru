@@ -5,12 +5,10 @@ title: "Элементы анимации пользовательского и�
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: 925826f2702474a0003f2ca2dee6ff10992f5f25
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="edge-based-ui-animations"></a>Элементы анимации пользовательского интерфейса с использованием края
 
 
@@ -42,7 +40,7 @@ ms.openlocfilehash: 925826f2702474a0003f2ca2dee6ff10992f5f25
 
     ![Демонстрирует, где следует использовать анимации, привязанные к границам экрана, или анимации панелей, а где необходимо использовать изменение положения.](images/edgevsreposition.png)
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 
 **Для разработчиков**
@@ -59,11 +57,5 @@ ms.openlocfilehash: 925826f2702474a0003f2ca2dee6ff10992f5f25
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

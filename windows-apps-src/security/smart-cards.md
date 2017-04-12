@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 42062dc9dcc11e3db6ddbb761e158d75e1259950
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9eb45cd5e8f30e530cd88e05c7e7ed5f3d5ac1cd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="smart-cards"></a>Смарт-карты
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этом разделе объясняется, каким образом приложения универсальной платформы для Windows (UWP) могут использовать смарт-карты для подключения пользователей к защищенным сетевым службам, включая получение доступа к физическим устройствам чтения смарт-карт, создание виртуальных смарт-карт, связь со смарт-картами, проверку подлинности пользователей, сброс ПИН-кодов пользователей и удаление или отключение смарт-карт. 
@@ -123,8 +120,7 @@ static class ChallengeResponseAlgorithm
 
 2.  Затем передайте значение запроса карты и ключ администратора, предоставленный службой или средством управления, в **ChallengeResponseAlgorithm** , определенный в предыдущем примере.
 
-3.  
-              Если проверка подлинности проходит успешно, [**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) возвращает значение **true**.
+3.  Если проверка подлинности проходит успешно, [**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) возвращает значение **true**.
 
 ```cs
 bool verifyResult = false;

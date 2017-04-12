@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 84e191df23f10f81a3588662f9ba1505cee12e21
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f9168184e360661dd2e6e2808b193f1e4026c0f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="fingerprint-biometrics"></a>Биометрия отпечатков пальцев
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье рассказывается, как добавить биометрию отпечатков пальцев в приложение универсальной платформы Windows (UWP). Включив запрос на биометрическую проверку подлинности (по отпечатку пальца), когда пользователь должен давать согласие на определенное действие, вы повысите безопасность своего приложения. Например, вы можете требовать проходить проверку подлинности по отпечатку пальца перед авторизацией покупки из приложения или перед открытием ресурсов с ограниченным доступом. Управление проверкой подлинности по отпечатку пальца осуществляет класс [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) в пространстве имен [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356).

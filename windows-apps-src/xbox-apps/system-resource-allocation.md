@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8d6876ee6235546e74341609a55db995a77323d6
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 81a437807332ff60a1401c00abdcff78e41a7496
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>Системные ресурсы для приложений UWP и игр для Xbox One
 
 Приложения и игры UWP, запущенные в Xbox One, используют ресурсы совместно с системой и приложениями. Поэтому приложения и игры UWP будут иметь доступ к следующим ресурсам:
@@ -41,4 +38,3 @@ ms.lasthandoff: 02/08/2017
 
 ## <a name="see-also"></a>См. также
 - [Приложения UWP для Xbox One](index.md)
-

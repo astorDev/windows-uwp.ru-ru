@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ab2c2307376f3fad8cd404f7ddf8056f1ef2e8d3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a69ad9bdff70dc04f9bdf9eb4f5117a22a005969
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>Сопоставление типов .NET Framework с типами среды выполнения Windows
 
 
@@ -27,8 +24,6 @@ ms.lasthandoff: 02/07/2017
 
 
 Большинство типов, имеющих одинаковые имена пространств имен и типов в UWP и .NET Framework, являются структурами (или типами, связанными со структурами, например перечислениями). В UWP структуры не имеют членов, кроме полей, и для них требуются вспомогательные типы, скрываемые платформой .NET Framework. Соответствующие структуры версии .NET Framework имеют свойства и методы, предоставляющие функциональность скрытых вспомогательных типов.
-
-Для получения дополнительных сведений о том, как платформа .NET Framework использует метаданные Windows, чтобы упростить программирование с помощью среды выполнения Windows, скачайте технический документ [Среда CLR и среда выполнения Windows](http://download.microsoft.com/download/2/3/E/23E1E9BE-41AA-4716-A7B3-82040271394C/CLR%20and%20the%20Windows%20Runtime.docx) из Центра разработки для Windows.
 
 Таблица 1. Типы UWP, сопоставляемые с типами .NET Framework с другим именем или пространством имен.
 
@@ -89,5 +84,4 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="related-topics"></a>Ссылки по теме
 
-* [Создание компонентов среды выполнения Windows на C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-
+* [Создание компонентов среды выполнения Windows на C# и VisualBasic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

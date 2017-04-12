@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3ce185e4bdd247c8b0ac71401a2ff863c64f880a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3a4dfeb102d8db35a6ae032eb5001b4873456b82
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="common-cryptography-tasks"></a>Общие задачи шифрования
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows 8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В данных статьях показан пример кода для типичных задач шифрования универсальной платформы Windows (UWP), включая создание случайных значений, сравнение буферов, преобразования между строками и двоичными данными, копирование в массив байтов и из него и кодирование и декодирование данных.
 
@@ -32,4 +29,3 @@ ms.lasthandoff: 02/07/2017
 | [Копирование в массивы байтов и из них](copy-to-and-from-byte-arrays.md)                       | Этот образец кода показывает, как копировать в массив байтов и из него в приложении UWP.                             |
 | [Кодирование и декодирование данных](encode-and-decode-data.md)                                   | В этом примере кода показано, как кодировать и декодировать данные base64 и шестнадцатеричные данные в приложении UWP для Windows.            |
  
-

@@ -9,16 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 93319caaa16afe84a897dbc4bd6370a5cef3cdd1
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dcceab233f19696f11075fdc4e46fe4a3aa7e5b9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>Настройка среды разработки UWP для Xbox
 
-Универсальная платформа Windows (UWP) в среде разработки Xbox состоит из компьютера разработчика, подключенного к консоли Xbox по локальной сети.
+Универсальная платформа Windows (UWP) в среде разработки Xbox состоит из ПК разработчика, подключенного к консоли Xbox по локальной сети.
 На ПК разработчика должна быть установлена система Windows 10 и ПО Visual Studio 2015 с обновлением 2, предварительная версия Windows 10 SDK (сборка 14295), а также ряд вспомогательных средств.
 
 
@@ -26,7 +23,7 @@ ms.lasthandoff: 02/08/2017
 
 ## <a name="visual-studio-setup"></a>Настройка Visual Studio
 
-1. Установите Visual Studio 2015 с обновлением 2 или более новую версию. Дополнительные сведения и инструкции по установке доступны в разделе [Загрузки и средства для Windows 10](https://dev.windows.com/downloads).
+1. Установите Visual Studio2015 с обновлением2 или более новую версию. Дополнительные сведения и инструкции по установке доступны в разделе [Загрузки и средства для Windows 10](https://dev.windows.com/downloads).
 
 1. При установке Visual Studio 2015 с обновлением 2 убедитесь, что установлен флажок **Средства разработки универсальных приложений для Windows**.
 
@@ -119,4 +116,3 @@ ms.lasthandoff: 02/08/2017
 - [UWP на Xbox One](index.md)
 
 ----
-

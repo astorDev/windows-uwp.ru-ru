@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7f279590cc1351efee2552e237ab095674768463
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ca551ff53a0a91b5bc60263b6e282b95c32bf976
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="templatebinding-markup-extension"></a>Расширение разметки {TemplateBinding}
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Связывает значение свойства в шаблоне элемента управления и значение какого-либо другого предоставленного свойства элемента управления-шаблона. **TemplateBinding** может использоваться только в пределах определения [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) в XAML.
 
@@ -67,5 +64,4 @@ ms.lasthandoff: 02/07/2017
 * [Обзор языка XAML](xaml-overview.md)
 * [Общие сведения о свойствах зависимостей](dependency-properties-overview.md)
  
-
 

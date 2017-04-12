@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, периодический рабочий элемент, потоки, таймеры"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 66e8b283631e6a74aa1dabeb53bfc86c304a642c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 89c633f9ab6da23c4b8417a9a75f87c706a3546f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="create-a-periodic-work-item"></a>Создание периодического рабочего элемента
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -203,10 +201,9 @@ ms.lasthandoff: 02/07/2017
 
 Подробнее об одиночных таймерах см. в разделе [Отправка рабочего элемента по таймеру](use-a-timer-to-submit-a-work-item.md).
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)
 * [Отправка рабочего элемента по таймеру](use-a-timer-to-submit-a-work-item.md)
  
-

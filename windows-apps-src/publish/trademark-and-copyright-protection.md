@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9a56c00384d494bbd38d394c464b68c0ff080fb8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f8a74261c6982ec89509579d3856bea743fd8743
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="trademark-and-copyright-protection"></a>Защита товарных знаков и авторских прав
 
 
@@ -24,7 +21,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. Как сообщить о нарушении моих прав на интеллектуальную собственность в приложении для Windows?
 
 
-Используйте следующую [форму](http://go.microsoft.com/fwlink/p/?LinkId=273879), чтобы отправить жалобу о нарушении авторских прав, прав на товарные знаки или публичность в приложении для Windows. Жалобы о нарушении авторских прав, прав на товарные знаки или публичность в нескольких приложениях отправляйте по адресу mktlegal@microsoft.com. Дополнительные сведения о политике DMCA корпорации Microsoft см. по адресу: [https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976).
+Используйте следующую [форму](http://go.microsoft.com/fwlink/p/?LinkId=273879), чтобы отправить жалобу о нарушении авторских прав, прав на товарные знаки или публичность в приложении для Windows. Жалобы о нарушении авторских прав, прав на товарные знаки или публичность в нескольких приложениях отправляйте на адрес mktlegal@microsoft.com. Дополнительные сведения о политике DMCA корпорации Microsoft см. по адресу: [https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976).
 
 ## <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. Мое приложение создано для работы с продуктом или службой Microsoft. Можно ли использовать имя продукта или службы Microsoft в имени приложения?
 
@@ -69,7 +66,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

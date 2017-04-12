@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d9e7fbb560b7dc3e608c22494a44fce70621173b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0c5ca9146dd3b5bc04433ef9680af0c2d1009bf7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="web-authentication-broker"></a>Брокер веб-аутентификации
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье описывается, как подключить ваше приложение универсальной платформы Windows (UWP) к поставщику сетевых удостоверений, использующему такие протоколы проверки подлинности, как OpenID или OAuth, например, Facebook, Twitter, Flickr, Instagram, и т. д. Метод [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) отправляет запрос поставщику сетевых удостоверений и получает маркер доступа, описывающий ресурсы поставщика, к которым имеет доступ приложение.
@@ -53,7 +50,7 @@ System.Uri endURI = new System.Uri(endURL);
 ## <a name="connect-to-the-online-provider"></a>Подключение к поставщику
 
 
-Для подключения к поставщику сетевых удостоверений и получения маркера доступа вызывается метод [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066). В этом методе в качестве параметра *requestUri* берется URI, созданный на предыдущем шаге, а в качестве параметра *callbackUri* — URI, выбранный для перенаправления пользователя.
+Для подключения к поставщику сетевых удостоверений и получения маркера доступа вызывается метод [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066). В этом методе в качестве параметра *requestUri* берется URI, созданный на предыдущем шаге, а в качестве параметра *callbackUri*— URI, выбранный для перенаправления пользователя.
 
 ```cs
 string result;

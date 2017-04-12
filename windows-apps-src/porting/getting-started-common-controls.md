@@ -1,7 +1,7 @@
 ---
 author: mcleblanc
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
-description: "Начало работы с общими элементами управления"
+description: "Приступая к работе с общими элементами управления"
 title: "Начало работы с общими элементами управления"
 ms.author: markl
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 91ea875987d5e1659fff337f95f790ef59286d03
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4df9785b0d8ccea0561a780fa2b807201332cda8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-common-controls"></a>Начало работы: общие элементы управления
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="common-controls-list"></a>Список общих элементов управления
 
@@ -30,7 +27,7 @@ ms.lasthandoff: 02/07/2017
 |------------------------------|--------------------------------------|
 | Индикатор действий (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> См. также [Краткое руководство. Добавление элементов управления ходом выполнения](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
 | Представление баннера (**ADBannerView**) и делегат представления баннера (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> См. также [Показ рекламы в приложении](../monetize/display-ads-in-your-app.md) |
-| Кнопка (UIButton) | [Кнопка](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> См. также [Краткое руководство: добавление кнопок](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
+| Кнопка (UIButton) | [Button](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> См. также [Краткое руководство: добавление кнопок](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
 | Управляющий элемент выбора даты (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | Представление изображения (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> См. также статью [Image и ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | Подпись (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> См. также [Краткое руководство: отображение текста](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392). |
@@ -61,9 +58,8 @@ ms.lasthandoff: 02/07/2017
 
 [Приступая к работе: навигация](getting-started-navigation.md)
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [build 2014: как насчет пользовательского интерфейса XAML и элементов управления?](http://go.microsoft.com/fwlink/p/?LinkID=397897)
 * [build 2014: разработка приложений с помощью общей инфраструктуры пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkID=397898)
 * [build 2014: использование Visual Studio для создания универсальных приложений XAML](http://go.microsoft.com/fwlink/p/?LinkID=397876)
-

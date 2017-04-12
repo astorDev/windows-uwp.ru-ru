@@ -2,7 +2,7 @@
 author: GrantMeStrength
 Description: "Сравнение возможностей платформ iOS, Android и Windows 10."
 Search.Product: eADQiWindows 10XVcnh
-title: "Сопоставление концепций приложений для Windows для разработчиков iOS и Android"
+title: "Концепции Windows для разработчиков Android и iOS"
 ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
@@ -10,14 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e5cf0a75515458a558e94a9f8bb54913e7df4a14
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ce32bd7ebaca20827a637c456b2dbe82811817cb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Сопоставление концепций приложений для Windows для разработчиков iOS и Android
+#<a name="windows-concepts-for-android-and-ios-developers"></a>Концепции Windows для разработчиков Android и iOS
 
 Если вы являетесь разработчиком с навыками разработки или готовым кодом для Android и iOS и хотите перейти на Windows 10 и универсальную платформу Windows (UWP), этот ресурс содержит всю необходимую информацию для сопоставления функций — и ваших знаний — между тремя платформами.
 
@@ -44,9 +41,9 @@ ms.lasthandoff: 02/08/2017
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Язык дизайна.</strong><br><br>Набор соглашений, описывающих вид и работу приложений на платформе.</td>
-<td align="left"><strong>Руководство по Android Material Design</strong> содержит описание визуального языка для дизайнеров и разработчиков Android.</td>
-<td align="left"><strong>Human Interface Guidelines ("Руководство по пользовательскому интерфейсу")</strong> содержит рекомендации для дизайнеров и разработчиков iOS.</td>
-<td align="left"><a href="https://dev.windows.com/design"><strong>В разделе Проектирование приложений UWP для Windows</strong></a> показано, как создать приложение, которое превосходно выглядит на любых устройствах под управлением Windows 10. Здесь описаны основы проектирования пользовательского интерфейса, методы создания отзывчивого дизайна и представлен полный список подробных руководств.<br/></td>
+<td align="left">Руководство по <strong>Android Material Design</strong> содержит описание визуального языка для дизайнеров и разработчиков Android.</td>
+<td align="left"><strong>Human Interface Guidelines</strong> ("Руководство по пользовательскому интерфейсу") содержит рекомендации для дизайнеров и разработчиков iOS.</td>
+<td align="left">В разделе <a href="https://dev.windows.com/design"><strong>Проектирование приложений UWP для Windows</strong></a> показано, как создать приложение, которое превосходно выглядит на любых устройствах под управлением Windows 10. Здесь описаны основы проектирования пользовательского интерфейса, методы создания отзывчивого дизайна и представлен полный список подробных руководств.<br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Язык разметки пользовательского интерфейса.</strong> <br><br>Язык разметки, который отображает и описывает пользовательский интерфейс и его компоненты. Каждая платформа предоставляет программу как для визуального редактирования, так и для редактирования разметки.<br/></td>
@@ -69,7 +66,7 @@ ms.lasthandoff: 02/08/2017
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Привязка данных.</strong> <br><br>Шаблон проектирования программного обеспечения, который обеспечивает отображение данных в пользовательском интерфейсе приложения и (дополнительно) синхронизацию с этими данными.</td>
 <td align="left">Предоставляется <strong>библиотека привязки данных</strong> (все еще только в бета-версии).</td>
-<td align="left">В iOS отсутствует встроенная система привязки. <strong>Для привязки данных можно использовать механизм наблюдения за значениями по ключам (KVO)</strong> как с помощью сторонней библиотеки, так и путем написания дополнительного кода. Элементы управления используют для получения данных подход "делегат/обратный вызов".</td>
+<td align="left">В iOS отсутствует встроенная система привязки. Для привязки данных можно использовать механизм <strong>наблюдения за значениями по ключам (KVO)</strong> как с помощью сторонней библиотеки, так и путем написания дополнительного кода. Элементы управления используют для получения данных подход "делегат/обратный вызов".</td>
 <td align="left">Платформа UWP обрабатывает <strong>привязку данных</strong> за вас. Расширение разметки <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204783.aspx">{x:Bind}</a></strong> используется для высокопроизводительной привязки, а расширение разметки <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204782.aspx">{Binding}</a></strong> — для предоставления большего количества функций. После этого достаточно просто настроить привязку, выбрав использование <strong>односторонней привязки</strong> для отображения в пользовательском интерфейсе значений из источника данных, или <strong>двусторонней привязки</strong> для наблюдения за значениями и обновления интерфейса при их изменении.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">Привязка данных</a></td>
 </tr>
 <tr class="even">
@@ -86,7 +83,7 @@ ms.lasthandoff: 02/08/2017
 </tr>
 <tr class="even">
 <td align="left"><strong>Многократно используемые стили отображения.</strong> <br><br>Применение многократно используемых визуальных изменений к нескольким элементам управления.</td>
-<td align="left"><strong>Стили XML</strong> — это наборы свойств, применяемых к одному или нескольким элементам управления.</td>
+<td align="left"><strong>Стили XML</strong>— это наборы свойств, применяемых к одному или нескольким элементам управления.</td>
 <td align="left">iOS не имеет встроенной поддержки многократно используемых стилей отображения, однако протокол UIAppearance позволяет нескольким элементам управления иметь общие атрибуты.</td>
 <td align="left">Вы можете создавать многократно используемые <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx">стили</a></strong>, которые могут применяться к нескольким элементам управления и храниться в <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx">ResourceDictionary</a></strong> для повторного использования.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465381.aspx">Краткое руководство: настройка стиля элементов управления</a></td>
 </tr>
@@ -100,7 +97,7 @@ ms.lasthandoff: 02/08/2017
 <td align="left"><strong>Встроенные сенсорные жесты.</strong> <br><br>Предоставление настраиваемой поддержки сенсорного ввода путем обработки высокоуровневых абстрагированных событий жестов, таких как касание и двойное касание, в представлениях и элементах управления.</td>
 <td align="left"><strong>Детекторы жестов</strong> определяют основные сенсорные жесты, включая прокрутку, долгое нажатие, касание, двойное касание и смахивание.</td>
 <td align="left">Платформа UIKit предоставляет встроенные <strong>распознаватели жестов</strong> определяющие сенсорные жесты, включая касание, сжатие, сдвиг, прокрутку, поворот и долгое нажатие.</td>
-<td align="left"><strong>Элементы пользовательского интерфейса</strong> позволяют обрабатывать <strong>статические события жестов</strong>, включая касание, двойное касание, правое касание и удерживание, а также <strong>динамические события жестов</strong>, включая скольжение, прокрутку, вращение, сжатие и растяжение. События жестов являются <strong>перенаправленными событиями</strong> и могут обрабатываться родительскими объектами, содержащими дочерний элемент UIElement.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185617.aspx">Взаимодействие с помощью сенсорного экрана</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185599.aspx#gestures__manipulations__and_interactions">Настраиваемые взаимодействия с пользователем — жесты, манипуляции и взаимодействия</a></td>
+<td align="left"><strong>Элементы пользовательского интерфейса</strong> дают возможность обрабатывать <strong>статические события жестов</strong>, включая касание, двойное касание, правое касание и удерживание, а также <strong>динамические события жестов</strong>, включая скольжение, прокрутку, вращение, сжатие и растяжение. События жестов являются <strong>перенаправленными событиями</strong> и могут обрабатываться родительскими объектами, содержащими дочерний элемент UIElement.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185617.aspx">Взаимодействие с помощью сенсорного экрана</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185599.aspx#gestures__manipulations__and_interactions">Настраиваемые взаимодействия с пользователем — жесты, манипуляции и взаимодействия</a></td>
 </tr>
 </tbody>
 </table>
@@ -129,15 +126,15 @@ ms.lasthandoff: 02/08/2017
 </tr>
 <tr class="even">
 <td align="left"><strong>Навигация по одноранговым элементам.</strong> <br><br>Представление пользователю методов навигации между страницами, находящимися на одном уровне иерархии.</td>
-<td align="left"><strong>Вкладки</strong>, <strong>представления прокрутки</strong> и <strong>навигационные секции</strong> служат для <strong>боковой навигации</strong>.</td>
+<td align="left"><strong>Боковая навигация</strong> осуществляется с помощью <strong>вкладок</strong>, <strong>представлений прокрутки</strong> и <strong>навигационных секций</strong>.</td>
 <td align="left"><strong>Контроллеры панели вкладок</strong>, <strong>контроллеры разделенного представления</strong> и <strong>контроллеры представления страниц</strong> обеспечивают навигацию между представлениями одного уровня иерархии.</td>
 <td align="left">С помощью <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">вкладок и сводок</a></strong> можно отобразить постоянный список ссылок или вкладок над содержимым. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">Панель навигации и комбинированный режим</a></strong> позволяют отображать список ссылок рядом с содержимым.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Навигация</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Навигация между двумя страницами</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Иерархическая навигация.</strong> <br><br>Навигация между родительскими и дочерними страницами иерархии.</td>
 <td align="left"><strong>Списки</strong>, <strong>сетки</strong>, <strong>кнопки</strong> и другие элементы управления обеспечивают <strong>нисходящую навигацию</strong> при использовании объектов <strong>Intent</strong> для загрузки других классов <strong>Activity</strong>.</td>
-<td align="left"><strong>Контроллеры навигации</strong> позволяют пользователям выполнять переход между уровнями иерархии.</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">Главные разделы</a></strong> позволяют показать пользователю краткий обзор содержимого, который можно выбрать для перехода на дочерние страницы. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">Шаблон основных и подробных данных</a></strong> дает возможность выбирать из списка сводок элементов, отображаемых рядом с соответствующим разделом сведений.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Навигация</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Навигация между двумя страницами</a></td>
+<td align="left"><strong>Контроллеры навигации</strong> дают возможность пользователям выполнять переход между уровнями иерархии.</td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">Центры</a></strong> дают возможность предварительно показать пользователю содержимое, которое можно выбирать для перехода на дочерние страницы. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">Шаблон основных и подробных данных</a></strong> дает возможность пользователям выбирать из списка сводок элементов, отображаемых рядом с соответствующим разделом сведений.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Навигация</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Навигация между двумя страницами</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Навигация с помощью кнопки "Назад".</strong> <br><br>Переход назад в приложении.</td>
@@ -166,7 +163,7 @@ ms.lasthandoff: 02/08/2017
 <th align="left"><strong>Универсальное понятие</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Windows 10 UWP</strong></th>
+<th align="left"><strong>Windows10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -174,10 +171,10 @@ ms.lasthandoff: 02/08/2017
 <td align="left"><strong>Речь.</strong> <br><br>Распознавание речи для голосового ввода и дополнительные голосовые возможности.</td>
 <td align="left">Голосовой ввод может обеспечиваться любым приложением, в котором реализован класс <strong>RecognizerIntent</strong>, таким как <strong>Голосовой поиск Google</strong>. Класс <strong>SpeechRecognizer</strong> позволяет приложениям использовать API распознавания речи Google.</td>
 <td align="left">Встроенные API распознавания речи и речевого ввода отсутствуют.</td>
-<td align="left">Можно использовать API <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">распознавания речи</a></strong> для взаимодействия с приложением, выполняемым на переднем плане. Вы можете использовать голосовые <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">взаимодействия с Cortana</a></strong> для запуска приложений на переднем плане или в фоновом режиме, а также для взаимодействия с фоновыми приложениями.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">Взаимодействие с помощью голосовых функций</a></td>
+<td align="left">Можно использовать API <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">распознавания речи</a></strong> для взаимодействия с приложением, выполняемым на переднем плане. Вы можете использовать голосовые <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">взаимодействия с Кортаной</a></strong> для запуска приложений на переднем плане или в фоновом режиме, а также для взаимодействия с фоновыми приложениями.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">Взаимодействие с помощью голосовых функций</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Настраиваемый пользовательский ввод.</strong> <br><br>Обработка ввода с клавиатуры, мыши, пера и других средств ввода.</td>
+<td align="left"><strong>Настраиваемых пользовательский ввод.</strong> <br><br>Обработка ввода с клавиатуры, мыши, пера и других средств ввода.</td>
 <td align="left">Поддерживается взаимодействие с помощью <strong>касаний</strong>, <strong>сенсорной панели</strong>, <strong>пера</strong>, <strong>мыши</strong> и <strong>клавиатуры</strong>. Движение и ввод передается тем же способом, что и касание, но существует возможность получить дополнительные сведения об <strong>устройстве ввода</strong>.</td>
 <td align="left">Обеспечивается поддержка <strong>сенсорного ввода</strong>, <strong>Apple Pencil</strong> и ввода с аппаратной <strong>клавиатуры</strong>.</td>
 <td align="left">Поддерживается широкий набор взаимодействий, включая <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185617.aspx">сенсорный ввод</a></strong>, взаимодействие с помощью <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187313.aspx">сенсорной панели</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187311.aspx">пера</a></strong> с функцией рукописного ввода, <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187308.aspx">мыши</a></strong> и <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185607.aspx">клавиатуры</a></strong>. Ваши приложения могут обрабатывать данные, не зная, какое устройство ввода используется, а также при необходимости получать доступ к необработанным данным устройства ввода.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt404610.aspx">Работа с входными данными указателя</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185599.aspx">Настраиваемые взаимодействия с пользователем</a></td>
@@ -210,8 +207,8 @@ ms.lasthandoff: 02/08/2017
 <tr class="even">
 <td align="left"><strong>Сохранение в локальной базе данных.</strong> <br><br>Сохранение данных в реляционной базе данных с объектно-реляционными модулями сопоставления (ORM) (если применимо).</td>
 <td align="left">Предоставляется база данных <strong>SQLite</strong>. Встроенные ORM отсутствуют. Запросы SQL выполняются с помощью класса <strong>SQLiteDatabase</strong>.</td>
-<td align="left">Предоставляется база данных <strong>SQLite</strong>. <strong>CoreData</strong> — это встроенная платформа объектных графов, которая может использоваться с SQLite и предоставляет функции, сравнимые с ORM.</td>
-<td align="left">Данные можно хранить с помощью <strong>SQLite</strong>. <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592863.aspx">Entity Framework</a></strong> — это встроенный объектно-реляционный модуль сопоставления, устраняющий необходимость в написании большого количества кода для доступа к данным и позволяющий с легкостью обращаться к базе данных без написания кода SQL. Запросы SQL выполняются непосредственно в <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592864.aspx">библиотеке SQLite</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592862.aspx">Доступ к данным</a></td>
+<td align="left">Предоставляется база данных <strong>SQLite</strong>. <strong>CoreData</strong>— это встроенная платформа графов объектов, которая может использоваться с SQLite и предоставляет функции, сравнимые с ORM.</td>
+<td align="left">Данные можно хранить с помощью <strong>SQLite</strong>. <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592863.aspx">Entity Framework</a></strong>— это встроенный объектно-реляционный модуль сопоставления, устраняющий необходимость в написании большого объема кода для доступа к данным и позволяющий с легкостью обращаться к базе данных без написания кода SQL. Запросы SQL выполняются непосредственно в <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592864.aspx">библиотеке SQLite</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592862.aspx">Доступ к данным</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Библиотеки HTTP для доступа к REST.</strong> <br><br>Встроенные библиотеки, которые позволяют связываться с веб-службами и веб-серверами с использованием HTTP(S).<br/></td>
@@ -222,19 +219,19 @@ ms.lasthandoff: 02/08/2017
 <tr class="even">
 <td align="left"><strong>Облачные службы резервного копирования.</strong> <br><br>Предоставляемые платформой службы резервного копирования данных приложений.</td>
 <td align="left"><strong>Backup manager</strong> Android осуществляет резервное копирование данных приложений с помощью службы <strong>Android Backup Service</strong> .</td>
-<td align="left"><strong>Пользователи могут настроить резервное копирование iCloud</strong>, в том числе для данных приложений. Приложения используют совместимые с iCloud данные <strong>Core Data</strong> и хранилища <strong>iCloud key-value store</strong> и <strong>iCloud document storage</strong>.</td>
+<td align="left">Пользователи могут настроить <strong>резервное копирование iCloud</strong>, в том числе для данных приложений. Приложения используют совместимые с iCloud данные <strong>Core Data</strong> и хранилища <strong>iCloud key-value store</strong> и <strong>iCloud document storage</strong>.</td>
 <td align="left">Любые данные приложения, которые вы сохраняете с помощью API перемещаемых <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx">ApplicationData</a></strong> (включая <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingfolder.aspx">RoamingFolder</a></strong> и <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingsettings.aspx"><strong>RoamingSettings</strong></a>), автоматически синхронизируются с облаком, а также с остальными устройствами пользователя. Синхронизация выполняется через учетную запись Майкрософт пользователя.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/hh465094.aspx">Руководство по перемещаемым данным приложения</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Скачивание файлов по HTTP.</strong> <br><br>Скачивание больших и маленьких файлов по HTTP.</td>
-<td align="left"><strong>Для скачивания по протоколам HTTP и FTP используются URLConnection</strong> и <strong>HTTPURLConnection</strong>. Также можно использовать системный <strong>диспетчер загрузки</strong> для скачивания в фоновом режиме.</td>
-<td align="left"><strong>Для скачивания по протоколам HTTP и FTP можно использовать NSURLSession</strong> и <strong>NSURLConnection</strong>.</td>
+<td align="left">Для скачивания по протоколам HTTP и FTP используются <strong>URLConnection</strong> и <strong>HTTPURLConnection</strong>. Также можно использовать системный <strong>диспетчер загрузки</strong> для скачивания в фоновом режиме.</td>
+<td align="left">Для скачивания по протоколам HTTP и FTP можно использовать <strong>NSURLSession</strong> и <strong>NSURLConnection</strong>.</td>
 <td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.backgroundtransfer.aspx">API фоновой передачи данных</a></strong> позволяет надежно передавать данные по протоколам HTTP(S) и FTP с учетом приостановки приложения и потерь подключения, а также регулировкой в зависимости от типа подключения и уровня заряда батареи. Для файлов меньшего размера рекомендуется использовать <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.web.http.httpclient.aspx">HttpClient</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Какую сетевую технологию выбрать?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280377.aspx">Фоновая передача данных</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Сокеты.</strong> <br><br>Создание низкоуровневой датаграммы UDP и сокетов TCP для связи с другими устройствами с помощью собственного протокола.</td>
-<td align="left"><strong>Класс Socket</strong> class предоставляет сокеты TCP, а класс <strong>DatagramSocket</strong> — сокет UDP.</td>
-<td align="left"><strong>Классы NSStream</strong> и <strong>CFStream</strong> предоставляют сокеты TCP, а класс <strong>CFSocket</strong> — сокеты UDP.</td>
+<td align="left">Класс <strong>Socket</strong> предоставляет сокеты TCP, а класс <strong>DatagramSocket</strong> — сокет UDP.</td>
+<td align="left">Классы <strong>NSStream</strong> и <strong>CFStream</strong> предоставляют сокеты TCP, а класс <strong>CFSocket</strong>— сокеты UDP.</td>
 <td align="left">Вы можете использовать класс <strong><a href="https://msdn.microsoft.com/library/windows/apps/br241319">DatagramSocket</a></strong> для связи с использованием сокета датаграмм UDP и класс <strong><a href="https://msdn.microsoft.com/library/windows/apps/br226882">StreamSocket</a></strong> для связи по протоколу TCP или Bluetooth RFCOMM.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">Основы работы с сетями</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Какую сетевую технологию выбрать?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280234.aspx">Обзор сокетов</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
@@ -272,11 +269,11 @@ ms.lasthandoff: 02/08/2017
 <td align="left"><strong>Интегрированная среда разработки</strong> <br><br>Набор инструментов, используемый для создания приложения.</td>
 <td align="left"><strong>Android Studio</strong> и <strong>Eclipse</strong>. Google рекомендует разработчикам использовать Android Studio.</td>
 <td align="left"><strong>Xcode</strong></td>
-<td align="left"><strong><a href="https://www.visualstudio.com/features/universal-windows-platform-vs.aspx">В Visual Studio</a></strong> и <strong><a href="https://msdn.microsoft.com/library/jj171012.aspx">Blend для Visual Studio</a></strong> вы найдете все инструменты, необходимые для написания, проектирования, подключения, отладки, анализа, оптимизации и тестирования приложений UWP. Visual Studio также предоставляет <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt188754.aspx">эмуляторы</a></strong> устройств под управлением Windows 10, чтобы вы могли протестировать приложение на разнообразных эмулированных устройствах.<br/><br/><a href="https://dev.windows.com/downloads">Скачиваемые файлы и инструменты для UWP</a></td>
+<td align="left">В <strong><a href="https://www.visualstudio.com/features/universal-windows-platform-vs.aspx">Visual Studio</a></strong> и <strong><a href="https://msdn.microsoft.com/library/jj171012.aspx">Blend для Visual Studio</a></strong> вы найдете все инструменты, необходимые для написания, проектирования, подключения, отладки, анализа, оптимизации и тестирования приложений UWP. Visual Studio также предоставляет <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt188754.aspx">эмуляторы</a></strong> устройств под управлением Windows 10, чтобы вы могли протестировать приложение на разнообразных эмулированных устройствах.<br/><br/><a href="https://dev.windows.com/downloads">Скачиваемые файлы и инструменты для UWP</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Организация кода.</strong> <br><br>Базовая структура папок приложения, часто создаваемая из начального шаблона.</td>
-<td align="left"><strong>Файл AndroidManifest</strong>, папка <strong>java</strong> с исходными файлами, папка <strong>res</strong> с ресурсами, включая макеты и значения, сценарии сборки <strong>Gradle</strong> в Android Studio и сценарии сборки <strong>Ant</strong> в Eclipse.</td>
+<td align="left">Файл <strong>AndroidManifest</strong>, папка <strong>java</strong> с исходными файлами, папка <strong>res</strong> с ресурсами, включая макеты и значения, сценарии сборки <strong>Gradle</strong> в Android Studio и сценарии сборки <strong>Ant</strong> в Eclipse.</td>
 <td align="left">Исходные и <strong>вспомогательные файлы</strong>, файлы <strong>Info.plist</strong>, <strong>Main.storyboard</strong> и <strong>LaunchScreen.storyboard</strong>. Изображения хранятся <strong>библиотеках ресурсов</strong>.</td>
 <td align="left">Приложение UWP содержит файлы XAML и файлы кода для вашего приложения под названием Example.xaml и Example.xaml.cs, различные изображения в <strong>папке Assets</strong>, начальную страницу (например, <strong>MainPage.xaml</strong> и <strong>MainPage.xaml.cs</strong>) и манифест.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn765018.aspx">Создание приложения Hello, world</a></td>
 </tr>
@@ -301,7 +298,7 @@ ms.lasthandoff: 02/08/2017
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Жизненный цикл приложения.</strong> <br><br>Обработка событий при запуске, приостановке, возобновлении и закрытии приложения, обеспечивающая возможность сохранения и восстановления состояния приложения или выполнения других задач.</td>
-<td align="left">Каждая активность имеет собственный <strong>жизненный цикл активности</strong> с такими состояниями как <strong>возобновлено</strong>. <strong>Обратные вызовы жизненного цикла</strong>, такие как <strong>onResume</strong> реализуются в ваших <strong>классах активности</strong>.</td>
+<td align="left">Каждая активность имеет собственный <strong>жизненный цикл активности</strong> с такими состояниями как <strong>возобновлено</strong>. <strong>Обратные вызовы жизненного цикла</strong>, такие как <strong>onResume</strong>, реализуются в ваших <strong>классах активности</strong>.</td>
 <td align="left"><strong>Жизненный цикл приложения</strong> имеет такие состояния, как <strong>приостановлено</strong>. Такие методы, как <strong>applicationDidEnterBackground:</strong> реализуются в <strong>объекте делегата приложения</strong> для выполнения кода при изменении состояния.</td>
 <td align="left">Ваше приложение имеет <strong>состояния выполнения</strong> NotRunning, Activated, Running, Suspending, Suspended и Resuming.<br/><br/>Вы можете реализовать в приложении методы <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">класса Application</a></strong> OnLaunched, OnActivated, Suspending и Resuming для выполнения кода при изменении состояния.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">Жизненный цикл приложения</a></td>
 </tr>
@@ -381,7 +378,7 @@ ms.lasthandoff: 02/08/2017
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Покупки из приложения.</strong> <br><br>Возможности платформы, позволяющие пользователям совершать покупки в приложениях.</td>
-<td align="left"><strong>In-app Billing</strong> обеспечивается службами Google. Продукты добавляются в <strong>консоли разработчика Google Play</strong>. Покупки из приложения реализуются с помощью библиотеки <strong>Google Play Billing Library</strong>.</td>
+<td align="left">Службы Google предоставляют API <strong>In-app Billing</strong>. Продукты добавляются в <strong>консоли разработчика Google Play</strong>. Покупки из приложения реализуются с помощью библиотеки <strong>Google Play Billing Library</strong>.</td>
 <td align="left">Продукты добавляются в <strong>iTunes Connect</strong>. Покупки из приложения реализуются с помощью платформы <strong>StoreKit</strong>.<br/><br/>Покупка продуктов осуществляется посредством классов <strong>SKMutablePayment</strong> и <strong>SKPaymentQueue</strong>.</td>
 <td align="left">Внутренние продукты приложения создаются путем <a href="https://msdn.microsoft.com/library/windows/apps/mt148551.aspx">добавление их в приложение и отправки в Магазин</a>. <br/><br/>Для определения покупок из приложения используется <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx">класс CurrentApp</a></strong>. <br/><br/>Для отображения интерфейса, позволяющего пользователям приобретать продукты, используется класс <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.requestproductpurchaseasync.aspx">CurrentApp.RequestProductPurchaseAsync</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219684.aspx">Поддержка покупки продуктов внутри приложения</a></td>
 </tr>
@@ -394,7 +391,7 @@ ms.lasthandoff: 02/08/2017
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Тестирование внутренних покупок приложения.</strong> <br><br>Возможность протестировать код внутренней покупки приложения без отправки приложения в Магазин.</td>
 <td align="left">Для тестирования используется <strong>In-app Billing Sandbox</strong>.</td>
-<td align="left"><strong>Для тестирования используются учетные записи тестировщиков Sandbox</strong>.</td>
+<td align="left">Для тестирования используются <strong>учетные записи тестировщиков Sandbox</strong>.</td>
 <td align="left">Вы можете тестировать покупки внутри приложения, просто используя класс <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx">CurrentAppSimulator</a></strong> вместо класса CurrentApp.<br/><br/></td>
 </tr>
 <tr class="even">
@@ -473,7 +470,7 @@ ms.lasthandoff: 02/08/2017
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Плитки и индикаторы событий.</strong> <br><br>Предоставление пользователям обновлений на начальном экране.</td>
-<td align="left"><strong>Виджеты приложений</strong> — это представления вашего приложения, которые могут быть размещены на начальном экране и получать периодические обновления. <strong>Система индикаторов событий</strong> в Android отсутствует. Системы, аналогичной плиткам, не существует.</td>
+<td align="left"><strong>Мини-приложения приложений</strong>— это представления вашего приложения, которые могут быть размещены на начальном экране и получать периодические обновления. <strong>Система индикаторов событий</strong> в Android отсутствует. Системы, аналогичной плиткам, не существует.</td>
 <td align="left"><strong>Плитки и мини-приложения</strong> в iOS отсутствуют. К значку приложения можно добавить <strong>индикатор событий</strong> с номером, меняющимся при получении локального или удаленного уведомления.</td>
 <td align="left">Приложение имеет <strong>плитку</strong>, которую можно закрепить на начальном экране и использовать для отображения выбранного вами текста, изображений и <strong>индикатора событий</strong> с глифами и числами. Содержимое плитки можно обновлять из приложения через push-уведомления или по предопределенному расписанию. Плитки могут быть адаптивными и меняться в зависимости от места отображения.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185605.aspx">Создание плиток</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt590880.aspx">Создание адаптивных плиток</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187193.aspx">Выбор способа доставки уведомлений</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465403.aspx">Руководство по плиткам и индикаторам событий</a></td>
 </tr>
@@ -486,8 +483,8 @@ ms.lasthandoff: 02/08/2017
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Планирование локальных уведомлений.</strong> <br><br>Локальные уведомления, отправляемые приложением в запланированное время.</td>
 <td align="left">Уведомления и действия определяются с помощью класса <strong>NotificationCompat.Builder</strong> и могут быть запланированы и обрабатываться внутри приложения с использованием классов <strong>AlarmManager</strong> и <strong>BroadcastReceiver</strong>.</td>
-<td align="left">Локальные уведомления создаются с помощью класса <strong>UILocalNotification</strong> и могут быть запланированы, используя метод **UILocalNotification.scheduleLocalNotification:<strong>. | Запланировать всплывающее уведомление можно с помощью класса </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtoastnotification.aspx">ScheduledToastNotification</a><strong>. Можно отправить уведомление плитки из приложения с помощью </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.tilenotification.aspx"></a><strong>класса TileNotification или создать расписание уведомления плитки с помощью класса <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtilenotification.aspx">ScheduledTileNotification</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">Адаптивные и интерактивные всплывающие уведомления</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt593299.aspx">Отправка локального уведомления на плитке</a> | | </strong>Отправка push-уведомлений.** Уведомление, отправленное с сервера push-уведомлений и при необходимости обрабатываемое в приложении.</td>
-<td align="left"><strong>Google Cloud Messaging</strong> обеспечивает поддержку push-уведомлений в Android.</td>
+<td align="left">Локальные уведомления создаются с помощью <strong>UILocalNotification</strong> и могут быть запланированы с использованием **UILocalNotification.scheduleLocalNotification:<strong>. | Пользователь может запланировать всплывающее уведомление с помощью </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtoastnotification.aspx">ScheduledToastNotification</a><strong>. Пользователь может отправить уведомление на плитке из приложения с помощью </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.tilenotification.aspx">класса TileNotification</a><strong> или создать расписание уведомления на плитке с помощью <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtilenotification.aspx">ScheduledTileNotification</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">Адаптивные и интерактивные всплывающие уведомления</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt593299.aspx">Отправка локального уведомления на плитке</a> | | </strong>Отправка push-уведомлений**. Уведомление, отправленное с сервера push-уведомлений и при необходимости обрабатываемое в приложении.</td>
+<td align="left">Поддержку push-уведомлений в Android обеспечивает <strong>Google Cloud Messaging</strong>.</td>
 </tr>
 </tbody>
 </table>
@@ -510,7 +507,7 @@ ms.lasthandoff: 02/08/2017
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Захват мультимедиа.</strong> <br><br>Запись звука и визуального содержимого.</td>
-<td align="left">Используя такое <strong>намерение</strong>, как MediaStore.ACTION_VIDEO_CAPTURE можно производить захват мультимедиа с помощью встроенного приложения камеры. Использование <strong>android.hardware.camera2</strong> или библиотеки <strong>камеры</strong> позволяет реализовать пользовательский интерфейс камеры. <strong>API MediaRecorder</strong> можно использовать для записи звука.</td>
+<td align="left">Используя такое <strong>намерение</strong>, как MediaStore.ACTION_VIDEO_CAPTURE можно производить захват мультимедиа с помощью встроенного приложения камеры. Использование <strong>android.hardware.camera2</strong> или библиотеки <strong>камеры</strong> позволяет реализовать пользовательский интерфейс камеры. API <strong>MediaRecorder</strong> можно использовать для записи звука.</td>
 <td align="left"><strong>UIImagePickerController</strong> обеспечивает захват видео и фотографий с помощью системного интерфейса. Классы <strong>AVFoundation</strong>, такие как <strong>AVCaptureSession</strong> обеспечивают прямой доступ к камере. <br/>Класс <strong>AVAudioRecorder</strong> обеспечивает запись звука.</td>
 <td align="left">Можно захватывать фотографии и видео с использованием встроенного пользовательского интерфейса камеры с помощью <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.cameracaptureui.aspx">класса CameraCaptureUI</a></strong>. Вы можете взаимодействовать с камерой на низком уровне и записывать звук с помощью классов пространства имен <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.aspx">Windows.Media.Capture</a></strong>, таких как <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.mediacapture.aspx">MediaCapture API</a></strong>. <br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt282142.aspx">Фото- и видеосъемка с помощью CameraCaptureUI</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243896.aspx">Захват фотографий и видео с помощью MediaCapture</a></td>
 </tr>
@@ -579,7 +576,7 @@ ms.lasthandoff: 02/08/2017
 <tr class="even">
 <td align="left"><strong>Отображение карт.</strong> <br><br>Отображение <strong>интерактивной встроенной карты</strong> и добавление <strong>объектов на карту</strong>.</td>
 <td align="left">Классы <strong>GoogleMap</strong>, <strong>MapFragment</strong> и <strong>MapView</strong> в <strong>API Карт Google в Android</strong> позволяют встраивать карты в приложения. Объекты могут отображаться на карте с помощью <strong>маркеров</strong> и настраиваемого класса <strong>Marker</strong>.</td>
-<td align="left">Карты встраиваются в приложения iOS с помощью класса <strong>MKMapView</strong> <strong>платформы MapKit</strong>. <strong>К приложениям можно добавлять аннотации</strong> для отображения объектов на карте с помощью классов объектов, таких как <strong>MKPointAnnotation</strong>, и классов представлений, таких как <strong>MKPinAnnotationView</strong>.</td>
+<td align="left">Карты встраиваются в приложения iOS с помощью класса <strong>MKMapView</strong> <strong>платформы MapKit</strong>. К приложениям можно добавлять <strong>аннотации</strong> для отображения объектов на карте с помощью таких классов объектов, как <strong>MKPointAnnotation</strong>, и таких классов представлений, как <strong>MKPinAnnotationView</strong>.</td>
 <td align="left">Вы можете внедрить в свое приложение карты с помощью встроенного элемента управления XAML <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx">MapControl</a></strong>, обеспечивающего двумерные и трехмерные представления, а также представления Streetside. Можно добавлять объекты на карту с помощью вешек, изображений и фигур, используя классы <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapicon.aspx">MapIcon</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolygon.aspx">MapPolygon</a></strong> и <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolyline.aspx">MapPolyline</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219695.aspx">Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219696.aspx">Отображение объектов на карте</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
@@ -622,7 +619,7 @@ ms.lasthandoff: 02/08/2017
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Вызов другого приложения.</strong> <br><br>Запуск другого приложения и, при необходимости, общий доступ к данным (ссылкам, тексту, фотографиям, видео и файлам).</td>
 <td align="left">Для запуска другого приложения используется <strong>неявное намерение</strong> путем определения <strong>действия</strong> и необязательного определения данных в <strong>намерении</strong> и его вызова с помощью <strong>startActivityForResult</strong>.<br/></td>
-<td align="left"><strong>Для предоставления доступа к данным приложения другому приложению можно использовать расширения приложений</strong>. <strong>Схемы URL-адресов</strong> позволяют передавать URL-адреса в другое приложение.</td>
+<td align="left">Для предоставления доступа к данным приложения другому приложению можно использовать <strong>расширения приложений</strong>. <strong>Схемы URL-адресов</strong> дают возможность передавать URL-адрес в другое приложение.</td>
 <td align="left">Вы можете запустить приложение с зарегистрированной схемой URI с помощью <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchuriasync.aspx">Launcher.LaunchUriAsync</a></strong> или использовать <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchuriforresultsasync.aspx">Launcher.LaunchUriForResultsAsync</a></strong> для запуска приложения для результатов и получения данных из запущенного приложения. Для передачи файла для обработки в другое приложение можно использовать метод <strong><a href="https://msdn.microsoft.com/library/windows/apps/hh701471.aspx">Launcher.LaunchFileAsync</a></strong>.<br/><br/>Для легкого обмена данными между приложениями используются <strong>контракты отправки данных</strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228340.aspx">Запуск приложения по умолчанию для URI</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt269386.aspx">Запуск приложения для результатов</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299102.aspx">Запуск приложения по умолчанию для файла</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243293.aspx">Предоставление общего доступа к данным</a></td>
 </tr>
 <tr class="even">
@@ -665,9 +662,8 @@ ms.lasthandoff: 02/08/2017
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Шаблоны проектирования программного обеспечения.</strong> <br><br>Рекомендуемые для платформы шаблоны проектирования.</td>
 <td align="left">В Android отсутствуют рекомендованные или предоставленные формальные шаблоны, однако бета-версия платформы привязки данных может обеспечить более широкое использование шаблона <strong>Model-View-ViewModel (MVVM)</strong>. В ряде сторонних статей и платформ рекомендуется использовать подходы <strong>model-view-presenter (MVP)</strong> и <strong>MVVM</strong>.</td>
-<td align="left"><strong>Model-View-Controller (MVC)</strong> — распространенный шаблон, используемый в iOS и интегрированный в платформу.</td>
+<td align="left"><strong>Model-View-Controller (MVC)</strong>— распространенный шаблон, используемый в iOS и интегрированный в платформу.</td>
 <td align="left">При создании приложений UWP отсутствует ограничение по использованию определенного шаблона.<br/><br/>Вы можете использовать встроенный шаблон <a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">привязки данных</a> для обеспечения четкого разделения задач, связанных с данными, и функций пользовательского интерфейса. При этом отсутствует необходимость в создании кода обработчиков событий пользовательского интерфейса, обновляющих значения свойств.<br/><br/>Вы можете расширить привязку данных в соответствии с шаблоном <strong>Model-View-ViewModel (MVVM)</strong> с помощью сторонних библиотек MVVM, таких как <a href="https://mvvmlight.codeplex.com/">MVVM Light Toolkit</a>, либо самостоятельно, отделив логику от кода программной части.<br/><br/><a href="https://msdn.microsoft.com/library/hh848246.aspx">Шаблон MVVM</a><br/><br/><a href="https://github.com/Windows-XAML/Template10/wiki">Шаблоны проектов Visual Studio Template 10</a></td>
 </tr>
 </tbody>
 </table>
-

@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, потоки, пул потоков"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d5141467e474f26a8aa681b4478cf60c979ae83b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 00d354e531dca1e4b8a31d77ea09da20425b1512
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Отправка рабочего элемента в пул потоков
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -259,10 +257,9 @@ ms.lasthandoff: 02/07/2017
 
 Для получения дополнительной информации скачайте код из этого краткого руководства в [примере создания рабочего элемента ThreadPool](http://go.microsoft.com/fwlink/p/?LinkID=328569), созданного для Windows 8.1, и повторно используйте исходный код в приложении Windows 10 win\_unap.
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)
 * [Отправка рабочего элемента по таймеру](use-a-timer-to-submit-a-work-item.md)
  
-

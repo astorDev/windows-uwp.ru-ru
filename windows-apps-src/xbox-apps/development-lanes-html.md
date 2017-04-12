@@ -9,15 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 9f7a70bb726fc6eb6f7465068cf33acb7aa33a39
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: cb558b67647dfe065a01cfac1bd1c37f766881d0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="bringing-html-games-to-uwp-on-xbox"></a>Перенос игр на HTML для Xbox на UWP
-Xbox One — превосходная платформа для игр на HTML5. Игры на HTML5 работают на браузерном движке [Microsoft Edge](https://developer.microsoft.com/microsoft-edge/). Edge отличается высокой скоростью работы и полностью поддерживает такие возможности HTML5 и CSS 3, как WebGL и холст.
+Xbox One— превосходная платформа для игр на HTML5. Игры на HTML5 работают на браузерном движке [Microsoft Edge](https://developer.microsoft.com/microsoft-edge/). Edge отличается высокой скоростью работы и полностью поддерживает такие возможности HTML5 и CSS 3, как WebGL и холст.
 
 В популярных игровых движках, например [Construct 2](https://www.scirra.com/blog/176/announcing-xbox-one-export-beta), реализована поддержка Xbox One. Мы не проводили тестирование всех платформ и движков HTML, однако, судя по нашему опыту работы с некоторыми из них, мы считаем, что большинство этих платформ будет совместимо с Xbox One.
 
@@ -30,4 +27,3 @@ Xbox One работает на универсальной платформе Win
 ## <a name="see-also"></a>См. также
 - [Перенос существующих игр на Xbox](development-lanes-landing.md)
 - [Приложения UWP для Xbox One](index.md)
-

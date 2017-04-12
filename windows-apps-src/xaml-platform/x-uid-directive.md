@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3fa6cf80bf569703a7fbbc532c9114bee89c7403
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 21d73b60ba3856f81a6d93331982135e188e122e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xuid-directive"></a>Директива x:Uid
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Предоставляет уникальный идентификатор для элементов разметки. В языке XAML универсальной платформы Windows (UWP) этот уникальный идентификатор используется процессами и средствами локализации XAML, например при использовании ресурсов из файла ресурсов .resw.
 
@@ -53,5 +50,4 @@ ms.lasthandoff: 02/07/2017
 В некоторых случаях будет необходимо использовать путь к ресурсу вместо встроенной функциональности системы индекса ресурсов пакетов (PRI). Любая строка, которая используется в качестве значения **x:Uid**, определяет путь к ресурсу, который начинается с ms-resource:///Resources/ и включает строку **x:Uid**. Путь завершается именами свойств, указанных в файле ресурсов, или каким-либо иным способом.
 
 Не помещайте **x:Uid** в элементы свойства; это запрещено в XAML среды выполнения Windows.
-
 

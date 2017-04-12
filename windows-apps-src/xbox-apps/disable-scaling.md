@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6e68c1fc-a407-4c0b-b0f4-e445ccb72ff3
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 908620cd9f8bb3b1155b3e5d1fd777a91d254ef1
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 4361437c8b6d67431bf879f9eb1cfbf3c03e592e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="how-to-turn-off-scaling"></a>Отключение масштабирования   
 По умолчанию XAML-приложения масштабируются до 200%, а HTML-приложения — до 150%. Коэффициент масштабирования по умолчанию можно отключить. В результате приложение будет использовать фактические размеры устройства в пикселях (1910 x 1080 пикселей).   
    
@@ -49,4 +46,3 @@ bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayo
 ## <a name="see-also"></a>См. также
 - [Рекомендации для Xbox](tailoring-for-xbox.md)
 - [Приложения UWP для Xbox One](index.md)
-

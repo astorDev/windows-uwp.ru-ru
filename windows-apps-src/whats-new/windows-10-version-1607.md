@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: fff2eb225bcadaefa6bead622d953dd8b8ed4a76
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: bac2705bd57c0b6874c58eaac66b4ecb19ebb5af
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="whats-new-in-windows-version-1607"></a>Что нового в Windows (версия 1607)
 
 Windows 10 (версия 1607) и обновления средств разработчика Windows обеспечивают доступ к средствам, компонентам и возможностям универсальной платформы Windows. [Установив средства и пакет SDK](http://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](https://msdn.microsoft.com/library/windows/apps/bg124288), либо к использованию [существующего кода приложения в ОС Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
@@ -65,4 +62,3 @@ API Windows Information Protection (WIP) | [**WIP**](https://msdn.microsoft.com/
 Windows IOT Базовая | Windows IoT Базовая теперь полностью поддерживает Raspberry Pi 3, а также удаленный просмотр, благодаря чему пользователи могут удаленно просматривать приложения UWP, запущенные на устройстве IoT Core, и управлять ими.
 Разблокировка Windows с устройствами-компаньонами (IoT) | Устройство-компаньон — это устройство, которое может функционировать вместе с настольным компьютером Windows 10, повышая эффективность и комфортность процедуры проверки подлинности пользователей. При работе с [платформой сопутствующих устройств](https://msdn.microsoft.com/windows/uwp/security/companion-device-unlock) устройство-компаньон открывает широкие возможности использования Microsoft Passport, даже если возможность Windows Hello недоступна (например, на компьютере с Windows 10 отсутствует камера для проверки подлинности по лицу или устройство для считывания отпечатков пальцев).
 Winsock | Сокеты TCP теперь можно настроить с помощью [Winsock](https://tools.ietf.org/html/rfc7413) для использования [RFC 7413](https://tools.ietf.org/html/rfc7413) TCP Fast Open путем настройки параметра сокета TCP_FASTOPEN.
-

@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Отчет &quot;Оценки&quot; на информационной панели Центра разработки для Windows позволяет просматривать распределение оценок вашего приложения пользователями в Магазине Windows."
+Description: "Отчет Оценки на информационной панели Центра разработки для Windows позволяет просматривать распределение оценок вашего приложения пользователями в Магазине Windows."
 title: "Отчет &quot;Оценки&quot;"
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
 ms.author: wdg-dev-content
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 19364d7d3e8e29364f527c09f931ef637cbf03d9
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fa9d9fcb7f82a5dbe75e3b7249b32226552422ad
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="ratings-report"></a>Отчет "Оценки"
 
 
@@ -77,4 +74,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

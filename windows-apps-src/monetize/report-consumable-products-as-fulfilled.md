@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, API коллекции Магазина Windows, исполнение, потребляемый продукт"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 201e4fedc5f36202cba4c495ae9344d5a7975d62
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="report-consumable-products-as-fulfilled"></a>Объявление потребляемого продукта в качестве выполненного
 
 Используйте этот метод в API коллекции Магазина Windows, чтобы объявить потребляемый продукт в качестве выполненного для указанного покупателя. Перед повторной покупкой продукта пользователем ваше приложение или служба должны сообщить о нем как о выполненном для этого пользователя.
@@ -50,14 +47,14 @@ ms.lasthandoff: 02/07/2017
 
 | Заголовок         | Тип   | Описание                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;.                           |
-| Host           | строка | Должен иметь значение **collections.mp.microsoft.com**.                                            |
+| Authorization  | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;.                           |
+| Host           | Строка | Должен иметь значение **collections.mp.microsoft.com**.                                            |
 | Content-Length | Число | Длина текста запроса.                                                                       |
-| Content-Type   | строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
+| Content-Type   | Строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
 
 <span/>
 
-### <a name="request-body"></a>Текст запроса
+### <a name="request-body"></a>Тело запроса
 
 | Параметр     | Тип         | Описание         | Обязательный |
 |---------------|--------------|---------------------|----------|
@@ -76,7 +73,7 @@ ms.lasthandoff: 02/07/2017
 |----------------------|--------|-------------------|----------|
 | identityType         | строка | Укажите строковое значение **b2b**.    | Да      |
 | identityValue        | string | [Ключ идентификатора Магазина Windows](view-and-grant-products-from-a-service.md#step-4), представляющий удостоверение пользователя, для которого потребляемый продукт необходимо объявить в качестве выполненного.      | Да      |
-| localTicketReference | string | Запрошенный идентификатор для возвращаемого ответа. Рекомендуется использовать то же значение, что и в [утверждении](view-and-grant-products-from-a-service.md#claims-in-a-windows-store-id-key) *userId* в ключе идентификатора Магазина Windows. | Да      |
+| localTicketReference | строка | Запрошенный идентификатор для возвращаемого ответа. Рекомендуется использовать то же значение, что и в [утверждении](view-and-grant-products-from-a-service.md#claims-in-a-windows-store-id-key) *userId* в ключе идентификатора Магазина Windows. | Да      |
 
 <span/> 
 
@@ -156,4 +153,3 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 * [Запрос продуктов](query-for-products.md)
 * [Предоставление бесплатных продуктов](grant-free-products.md)
 * [Обновление ключа идентификатора Магазина Windows](renew-a-windows-store-id-key.md)
-

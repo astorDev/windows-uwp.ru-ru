@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 56f4ccfcba0fd378f8cef65debce52341f92a2e1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: abd46f788c8947da4c8704baf0f0ea802fff38ef
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="raising-events-in-windows-runtime-components"></a>Создание событий в компонентах среды выполнения Windows
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Если ваш компонент среды выполнения Windows вызывает событие типа делегата, определенного пользователем, в фоновом (рабочем) потоке и вы хотите, чтобы среда JavaScript могла получить его, можно реализовать и вызвать событие одним из следующих способов.
@@ -141,7 +138,7 @@ toastCompletedEventHandler: function (event) {
 
 ## <a name="to-create-the-windows-runtime-component"></a>Создание компонента среды выполнения Windows
 
-В Visual Studio в строке меню выберите **Файл &gt; Создать проект**. В диалоговом окне **Создание проекта** разверните узел **JavaScript &gt; Универсальное приложение для Windows** и выберите **Пустое приложение**. Назовите проект ToasterApplication и нажмите кнопку **ОК** .
+В Visual Studio в строке меню выберите **Файл &gt;Создатьпроект**. В диалоговом окне **Создание проекта** разверните узел **JavaScript &gt; Универсальное приложение для Windows** и выберите **Пустое приложение**. Назовите проект ToasterApplication и нажмите кнопку **ОК** .
 
 Добавьте компонент среды выполнения Windows на C# в решение: в обозревателе решений откройте контекстное меню для нужного решения и выберите **Добавить &gt; Новый проект**. Разверните узел **Visual C# &gt; Магазин Windows** и выберите пункт **Компонент среды выполнения Windows**. Назовите проект ToasterComponent и нажмите кнопку **ОК**. ToasterComponent будет корневым пространством имен для компонентов, которые вы создадите позднее.
 
@@ -433,4 +430,3 @@ The project should now build. Run the project and verify that you can make toast
 ## Related topics
 
 * [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md)
-

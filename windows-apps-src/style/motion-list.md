@@ -5,12 +5,10 @@ title: "Анимации добавления и удаления в прило�
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: e1fc86e5110da8926194e20947552337216d4a72
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-and-delete-animations"></a>Анимации добавления и удаления
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -37,7 +35,7 @@ ms.openlocfilehash: e1fc86e5110da8926194e20947552337216d4a72
 
 
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 * [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Анимация добавления и удаления элементов списка](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
@@ -49,11 +47,5 @@ ms.openlocfilehash: e1fc86e5110da8926194e20947552337216d4a72
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

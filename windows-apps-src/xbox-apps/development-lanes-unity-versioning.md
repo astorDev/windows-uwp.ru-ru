@@ -2,13 +2,11 @@
 author: JordanEllis6809
 title: "Unity: управление версиями проекта UWP"
 description: "Управление версиями проекта UWP."
-translationtype: Human Translation
-ms.sourcegitcommit: a1b759b00e35092323b8c4634907dd5c0fffa68c
 ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# Unity: управление версиями проекта UWP
+# <a name="unity-version-control-your-uwp-project"></a>Unity: управление версиями проекта UWP
 
 Еще не собирали игру на Unity для Xbox с помощью универсальной платформы Windows (UWP)?  Сначала ознакомьтесь с разделом [Перенос игр на Unity в UWP на Xbox](development-lanes-unity.md).
 
@@ -46,7 +44,7 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 
 ![Каталог сборки UWP](images/uwp-build-directory.png)  
 
-## Папки  
+## <a name="folders"></a>Папки  
 
 `Assets` | ***Включить*** | Содержит изображения для Магазина Windows.  
 `Data`   | ***Игнорировать*** | Расположение, в котором Unity компилирует ваш проект (сцены, шейдеры, сценарии, заготовки и т. д.).  
@@ -54,7 +52,7 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 `Properties` | ***Включить*** | Содержит дополнительные параметры, которые может изменять разработчик.  
 `Unprocessed` | ***Игнорировать*** | Содержит файлы `.dll` и `.pdb` игрового движка Unity.  
 
-## Файлы  
+## <a name="files"></a>Файлы  
 
 `App.cs` | ***Включить*** | Точка входа приложения UWP. Ее можно изменять и дополнять с помощью других исходных файлов.  
 `Package.appxmanifest` | ***Включить*** | Манифест пакета для AppX.  
@@ -62,7 +60,7 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 `ScrapyardPhoenix.csproj` | ***Включить*** | Описывает цель сборки UWP. Если вы добавили дополнительные зависимости в проект UWP, этот файл `*.csproj` будет содержать сведения об этом.  
 `ScrapyardPhoenix.csproj.user` | ***Игнорировать*** | Этот файл содержит сведения о локальном пользователе.
 
-## Конечный вид файла .gitignore
+## <a name="resulting-gitignore"></a>Конечный вид файла .gitignore
 
     ##################################################################
     # The original .gitignore file can be found at
@@ -88,7 +86,7 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 
 Другие примеры управления версиями папки UWP можно посмотреть [здесь](https://bitbucket.org/Unity-Technologies/windowsstoreappssamples/overview).
 
-## Добавление зависимостей в приложение UWP
+## <a name="adding-dependencies-to-your-uwp-app"></a>Добавление зависимостей в приложение UWP
 
 Добавьте зависимости в DLL и WINMD, разместив их в папке **Ресурсы Unity** внутри папки **Подключаемые модули**, а затем выберите их и установите их параметры целевой платформы соответствующим образом в инспекторе.
 
@@ -96,12 +94,6 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 
 ***ScrapyardPhoenix (универсальное приложение для Windows)*** — проект, к которому следует добавлять ссылки (например, Xbox Live SDK).
 
-## См. также
+## <a name="see-also"></a>См. также
 - [Перенос существующих игр на Xbox](development-lanes-landing.md)
 - [Приложения UWP для Xbox One](index.md)
-
-
-
-<!--HONumber=Aug16_HO4-->
-
-

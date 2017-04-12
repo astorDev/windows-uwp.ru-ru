@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Если в вашем приложении используется рекламный посредник или в нем отображается баннер или реклама внутри передачи от Microsoft Advertising, используйте страницу &quot;Монетизация&quot; &gt; &quot;Монетизация с помощью рекламы&quot; для контроля за использованием рекламы."
+Description: "Если в вашем приложении используется рекламный посредник или в нем отображается баннер или реклама внутри передачи от Microsoft Advertising, используйте страницу &quot;Монетизация&quot; &gt; &quot;Монетизация с помощью рекламы&quot; для контроля над использованием рекламы."
 title: "Монетизация с использованием рекламы"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e82431c9b39999af9fe19ac147a6c031b9a3edc3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6418fe1b47ac89e8decb135aa9a2108b3b95ef82
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="monetize-with-ads"></a>Монетизация с использованием рекламы
 
 
-Если ваше приложение использует элемент управления **AdMediatorControl**, **AdControl** или **InterstitialAd** для отображения баннеров или промежуточной видеорекламы, на странице **Монетизация** &gt; **Монетизация с помощью рекламы** вы сможете управлять использованием рекламных объявлений.
+Если ваше приложение использует элемент управления **AdMediatorControl**, **AdControl** или **InterstitialAd** для отображения баннеров или промежуточной рекламы, на странице **Монетизация**&gt;**Монетизация с помощью рекламы** вы сможете управлять использованием рекламных объявлений.
 
 ## <a name="windows-ad-mediation"></a>Рекламный посредник в ОС Windows
 
@@ -52,26 +49,25 @@ ms.lasthandoff: 02/07/2017
 
 Используйте этот раздел, чтобы создать рекламный блок Microsoft Advertising. Рекламные блоки необходимо создавать только при таких сценариях:
 
--   В вашем приложении отображается баннер от Microsoft Advertising с помощью объекта [AdControl](https://msdn.microsoft.com/library/mt313154.aspx).
--   В вашем приложении отображается реклама внутри передачи от Microsoft Advertising с помощью объекта [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx).
+-   В вашем приложении отображается баннер с помощью объекта [AdControl](https://msdn.microsoft.com/library/mt313154.aspx).
+-   Ваше приложение отображает промежуточную рекламу с помощью объекта [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx).
 
-Чтобы создать рекламный блок для этих сценариев, выполните следующее.
+Чтобы создать рекламный блок для этих сценариев:
 
 1.  Присвойте имя рекламному блоку.
-2.  Выберите тип рекламного блока (**Баннер** или **Реклама внутри передачи**).
+2.  Выберите тип группы объявлений (**Баннер**, **Промежуточное видео** или **Промежуточный баннер**).
 3.  Выберите тип устройства (**Мобильное устройство** или **Компьютер или планшет**).
 4.  Щелкните **Создать рекламный блок**.
 
 Ваши рекламные блоки показаны в таблице внизу этого раздела. Для каждого из рекламных блоков будет указан **Код приложения** и **Код рекламного блока**. Для отображения рекламы в вашем приложении вам потребуется использовать в коде следующие значения:
 
--   Если ваше приложение отображает баннеры, установите эти значения для свойств [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) и [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) вашего объекта [AdControl](https://msdn.microsoft.com/library/mt313154.aspx).
--   Если в вашем приложении содержится реклама внутри передачи, установите эти значения для метода [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) объекта [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx).
+-   Если ваше приложение отображает баннеры, установите эти значения для свойств [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) и [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) вашего объекта [AdControl](https://msdn.microsoft.com/library/mt313154.aspx). Дополнительные сведения см. в разделах [AdControl в XAML и .NET](../monetize/adcontrol-in-xaml-and--net.md) и [AdControl в HTML5 и JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
+-   Если в вашем приложении содержится межстраничное объявление, установите эти значения для метода [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) объекта [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx). Дополнительные сведения см. в разделе [Межстраничные объявления](../monetize/interstitial-ads.md).
 
-> **Примечание.** Если в вашем приложении используется рекламный посредник для отображения баннера от Microsoft Advertising (то есть, используется объект **AdMediatorControl**), вам не нужно запрашивать рекламные блоки. В этом сценарии рекламные блоки Microsoft Advertising автоматически создаются для вас.
-
- 
+> **Примечание.** Если в вашем приложении используется объект **AdMediatorControl** для показа баннерных объявлений от Microsoft Advertising, вам не нужно отправлять запрос на группы объявлений. В этом сценарии группы объявлений Microsoft Advertising автоматически создаются для вас.
 
  
 
  
 
+ 

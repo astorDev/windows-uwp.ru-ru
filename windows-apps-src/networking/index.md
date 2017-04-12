@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1bb0e25e9368a6e2f7568ac51620c7a064a01ce3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 597f78a4048a681dc75b610048a70f7161d0369c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="networking-and-web-services"></a>Сеть и веб-службы
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Для разработчиков, использующих универсальную платформу Windows (UWP), доступны следующие технологии сетевых и веб-служб.
 
@@ -32,4 +29,3 @@ ms.lasthandoff: 02/07/2017
 | [HttpClient](httpclient.md)                                                             | Для отправки и получения данных по протоколам HTTP 2.0 и HTTP 1.1. используйте API пространства имен [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692).             |
 | [Каналы RSS и Atom](web-feeds.md)                                                          | Получайте или создавайте самое свежее и популярное веб-содержимое с помощью сводных веб-каналов, созданных по стандартам RSS и Atom с помощью компонентов в пространстве имен [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632).                   |
 | [Фоновая передача данных](background-transfers.md)                                         | Используйте фоновую передачу данных API, чтобы надежно копировать файлы по сети.           |
-

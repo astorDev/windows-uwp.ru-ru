@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f76bdf6052228e5588ea7e34d95360f698525eb2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d05db2899fe2ad26eaf5e200ae2673b8efafddd0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="usability-for-uwp-apps"></a>Удобство использования приложений UWP
 
@@ -117,7 +115,7 @@ Windows используется во всем мире пользователя
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Рекомендации](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md)</b><br/>Придерживайтесь описанных здесь рекомендаций по глобализации приложения для более широкой аудитории и локализации для определенного рынка.</p>
+<p><b>[Рекомендации](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md)</b><br/>Придерживайтесь описанных здесь рекомендаций по глобализации вашего приложения для более широкой аудитории и локализации его для определенного рынка.</p>
   </div>
   <div class="side-by-side-content-right">
 <p><b>[Использование форматов международного стандарта](../globalizing/use-global-ready-formats.md)</b><br/>Чтобы приложение соответствовало международному стандарту, выбирайте при разработке правильные форматы дат, времени, чисел и валют.</p>
@@ -167,7 +165,7 @@ Windows используется во всем мире пользователя
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Руководства](../app-settings/guidelines-for-app-settings.md)</b><br/>Рекомендации по созданию и отображению параметров приложения.</p>
+<p><b>[Руководства](../app-settings/guidelines-for-app-settings.md)</b><br/>Рекомендации по созданию и отображению параметров приложения</p>
   </div>
   <div class="side-by-side-content-right">
 <p><b>[Сохранение и получение данных приложения](../app-settings/store-and-retrieve-app-data.md)</b><br/>Хранение и извлечение локальных, перемещаемых и временных данных приложений.</p>
@@ -200,4 +198,3 @@ Windows используется во всем мире пользователя
   </div>
 </div>
 </div>
-

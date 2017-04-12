@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 24e966f953928d238f9197359e0b539b8a3e5c3c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 02b1a056cd7e711b1fc4533c353570209153f9e8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="fiddler-settings-api-reference"></a>Справочник по API параметров Fiddler   
 В комплекте средств разработки можно включать и отключать трассировку сети Fiddler с помощью API REST.
 
@@ -105,5 +102,4 @@ DELETE | /ext/fiddler
 
 ## <a name="see-also"></a>См. также
 - [Настройка Fiddler для UWP в Xbox](uwp-fiddler.md)
-
 

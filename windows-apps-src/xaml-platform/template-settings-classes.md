@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 983158dfa258eeac6305a7aa000afba7311500d3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ff1b373e2038824c6349961b3b878f5570babceb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="template-settings-classes"></a>Классы параметров шаблона
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="prerequisites"></a>Необходимые условия
 
@@ -105,5 +102,4 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>Ссылки по теме
 
 * [Краткое руководство: шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, продвижение, приложение, кампания, отчеты, установки"
-translationtype: Human Translation
-ms.sourcegitcommit: b01924366a0bc2afabe2f381e72e45862f0dd682
-ms.openlocfilehash: af719bbb4cc9def4e9b202c8815320698c6148d0
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 25127b8f7214a712b10a1beda1e9b277370e6df2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="promote-your-app-report"></a>Отчет о продвижении приложения
 
 Отчет **Продвижение приложения** на информационной панели Центра разработки для Windows позволяет оценить эффективность ваших рекламных кампаний для приложения.
@@ -61,13 +58,12 @@ ms.lasthandoff: 02/08/2017
 
 Вы также можете скачать журнал выставления для вашей учетной записи в виде документа Microsoft Word, щелкнув ссылку **Скачать**.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 
-* [Создание рекламной кампании для своего приложения](create-an-ad-campaign-for-your-app.md)
+* [Создание рекламной кампании для вашего приложения](create-an-ad-campaign-for-your-app.md)
 * [Управление рекламной кампанией](managing-your-ad-campaign.md)
 * [Сведения о собственной рекламе](about-house-ads.md)
 * [Общие вопросы](common-questions.md)
  
 
  
-

@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 1f0eb76e-fe3e-4674-a27e-229beec7e63d
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: fc52bd3d326a20d0b561ad06b9f4245e7b557f82
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 1bc02780808d5b9fca09576165f428eca1cce715
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="developer-folder-api-reference"></a>Папка разработчика: справочник по API   
 Вы можете получить доступ к файлам, связанным с разработкой, на консоли Xbox One, используя стандартный проводник. Это позволяет легко просматривать и заменять файлы с компьютера на консоли.
 
@@ -60,4 +57,3 @@ Password — пароль, необходимый для доступа к об�
 **Доступные семейства устройств**
 
 * Windows Xbox
-

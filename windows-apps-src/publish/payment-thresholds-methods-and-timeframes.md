@@ -9,14 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 7da8727d3f901cfbab7c68d0b7f7362438d3fc65
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 2d2f586a1125f12c1034e002e2245e0fe155c1b4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
 # <a name="payment-thresholds-methods-and-timeframes"></a>Пороговые значения, методы и сроки оплаты
 
 Примерное время для переноса платежей, применимые пороговые значения выплат и ресурсы Microsoft Marketplace, откуда можно получать платежи, варьируются в зависимости от страны или региона и типа счета для выплат. В этом разделе описаны пороговые значения и способы оплаты, поддерживаемые в каждой стране или регионе.
@@ -43,6 +39,11 @@ ms.lasthandoff: 02/08/2017
 ## <a name="payment-thresholds-and-methods"></a>Пороговые значения и методы оплаты
 
 > **Примечание**. Пороговые значения оплаты указаны в долларах США. В некоторых странах используется эквивалент в местной валюте. 
+
+- [Магазин Windows](#windows-store)
+- [Microsoft Advertising](#microsoft-advertising)
+- [Azure Marketplace](#azure-marketplace)
+- [Магазин Office](#office-store)
 
 ### <a name="windows-store"></a>Магазин Windows 
 
@@ -4169,4 +4170,3 @@ ms.lasthandoff: 02/08/2017
     <td>Н/Д</td>
   </tr>
 </table>
-

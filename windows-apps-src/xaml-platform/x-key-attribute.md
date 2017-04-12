@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 67b2b3b60ab6faba5ca30bb585205aba007597ca
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4b76c16d276af295a1b2eed292ebeffc56b2e604
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xkey-attribute"></a>Атрибут x:Key
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Присваивает уникальный идентификатор элементам, которые были созданы и отмечены как ресурсы и которые существуют в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).
 
@@ -73,5 +70,4 @@ CombiningCharacter::= none
 Эквивалентом назначения **x:Key** на уровне кода является любая операция, в которой используется ключ с базовым [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). Например, атрибут **x:Key**, примененный в разметке к ресурсу, эквивалентен значению параметра *key* для **Insert**, когда вы добавляете ресурс в **ResourceDictionary**.
 
 Элемент в словаре ресурсов может пропустить значение для **x:Key**, если оно является конечным объектом для [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) или [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). В каждом из этих вариантов неявный ключ элемента ресурса представляет собой значение **TargetType**, обрабатываемое как строка. Дополнительные сведения см. в разделах [Краткое руководство: стили элементов управления](https://msdn.microsoft.com/library/windows/apps/hh465498) и [Ссылки на ресурсы ResourceDictionary и XAML](https://msdn.microsoft.com/library/windows/apps/mt187273).
-
 

@@ -9,18 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, потоки, синхронный, C++"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 112b5d58064ae6cd006d791a2c4534848baee259
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c74a2d18a0852d28cf33715a540356a61438ff48
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="asynchronous-programming-in-c"></a>Асинхронное программирование на языке C++
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x можно найти в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этой статье описываются рекомендации по использованию асинхронных методов в расширениях компонентов Visual C++ (C++/CX) с помощью класса `task`, определенного в пространстве имен `concurrency` файла ppltasks.h.
+В этой статье описываются рекомендации по использованию асинхронных методов в расширениях компонентов VisualC++ (C++/CX) с помощью класса `task`, определенного в пространстве имен `concurrency` файла ppltasks.h.
 
 ## <a name="universal-windows-platform-uwp-asynchronous-types"></a>Асинхронные типы универсальной платформы для Windows (UWP)
 
@@ -140,7 +137,7 @@ void App::DeleteWithTasks(String^ fileName)
 
 ## <a name="canceling-tasks"></a>Отмена задач
 
-Часто бывает нужно дать пользователю возможность отменить асинхронную операцию. А иногда возникает необходимость отменить асинхронную операцию программным путем извне цепочки задач. Хотя каждый возвращаемый функциями \***Async** объект имеет метод [**Cancel**][IAsyncInfoCancel], который наследуется от [**IAsyncInfo**][IAsyncInfo], предоставлять его для внешних функций — не лучшая идея. Для поддержки отмены в цепочке задач предпочтительно с помощью класса [**cancellation\_token\_source**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx) создать маркер [**cancellation\_token**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx), а затем передать этот маркер в конструктор исходной задачи. Если асинхронная задача создана с маркером отмены и вызывается метод [**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx), задача автоматически вызывает метод **Cancel** для операции **IAsync\*** и передает запрос на отмену дальше по цепочке задач-продолжений. Следующий псевдокод иллюстрирует этот подход.
+Часто бывает нужно дать пользователю возможность отменить асинхронную операцию. А иногда возникает необходимость отменить асинхронную операцию программным путем извне цепочки задач. Хотя каждый возвращаемый функциями \***Async** объект имеет метод [**Cancel**][IAsyncInfoCancel], который наследуется от [**IAsyncInfo**][IAsyncInfo], предоставлять его для внешних функций— не лучшая идея. Для поддержки отмены в цепочке задач предпочтительно с помощью класса [**cancellation\_token\_source**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx) создать маркер [**cancellation\_token**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx), а затем передать этот маркер в конструктор исходной задачи. Если асинхронная задача создана с маркером отмены и вызывается метод [**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx), задача автоматически вызывает метод **Cancel** для операции **IAsync\*** и передает запрос на отмену дальше по цепочке задач-продолжений. Следующий псевдокод иллюстрирует этот подход.
 
 ``` cpp
 //Class member:
@@ -299,7 +296,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 Методы, поддерживающие [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) или [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx), могут периодически передавать информацию о ходе выполнения операции. Эта информация передается независимо от состояния задач и задач-продолжений. Нужно просто указать делегат для свойства [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) объекта. Этот делегат обычно используется для обновления индикатора выполнения в пользовательском интерфейсе.
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [Создание асинхронных операций на языке C++ для приложений Магазина Windows][createAsyncCpp]
 * [Справочник по языку Visual C++](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
@@ -323,4 +320,3 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 [taskParallelism]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492427.aspx> "Параллельное выполнение задач"
 [taskThen]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx> "TaskThen"
 [useArbitrary]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
-

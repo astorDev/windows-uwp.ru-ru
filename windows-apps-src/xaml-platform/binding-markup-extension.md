@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c2d6590d21607cec7718617a0657e28ba56c072e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0358443abbfb753ace9276f1cca8dfa0a4745508
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="binding-markup-extension"></a>Расширение разметки {Binding}
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows8.x см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Примечание**. Новый механизм привязки доступен для Windows 10. Он оптимизирован для повышения быстродействия и производительности и разработчика. См. раздел [Расширение разметки: {x:Bind}](x-bind-markup-extension.md).
 
@@ -46,7 +43,7 @@ ms.lasthandoff: 02/07/2017
 | *propertyPath* | Строка, указывающая путь свойства для привязки. Подробную информацию см. в разделе [Путь свойства](#property-path) ниже. |
 | *bindingProperties* | *propName*=*value*\[, *propName*=*value*\]*<br/>Одна или несколько привязок свойств, указанных с помощью синтаксиса пары "имя/значение". |
 | *propName* | Имя строки свойства для установки в объекте [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Например, "Converter". |
-| *value* | Значение, которое следует задать для свойства. Синтаксис аргумента зависит от свойства раздела [Свойства класса Binding, которые можно задать в {Binding}](#properties-of-binding) ниже |
+| *value* | Значение, которое следует задать для свойства. Синтаксис аргумента зависит от свойства раздела [Свойства класса Binding, которые можно задать в {Binding}](#properties-of-the-binding-class-that-can-be-set-with-binding) ниже |
 
 ## <a name="property-path"></a>Путь свойства
 
@@ -130,4 +127,3 @@ ms.lasthandoff: 02/07/2017
 Компонент Microsoft IntelliSense в Microsoft Visual Studio отображает свойства контекста данных при создании **{Binding}** в редакторе разметки XAML. Как только вы введете "{Binding", в раскрывающемся списке отобразятся свойства контекста данных, соответствующие [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830). IntelliSense также помогает с другими свойствами [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Для того, чтобы это работало, необходимо иметь или контекст данных, или контекст данных времени разработки, установленные на странице разметки. Команда **Перейти к определению** (клавиша F12) также работает с **{Binding}**. Кроме того, вы можете использовать диалоговое окно привязки данных.
 
  
-

@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6e033ffa-502e-4daa-b5b2-6f853f68b66c
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 59090536600e3e45345832c6ca61baa3fe1f5b15
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 5b70e6376dbea0e3858a2a12542ff26dfe61ed20
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #<a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Начало разработки приложений UWP на Xbox One
 
 **Внимательно** выполните эти действия для успешной настройки компьютера и консоли Xbox One для разработки приложений универсальной платформы Windows (UWP). После настройки вы можете подробнее изучить режим разработчика на Xbox One и создание приложений UWP на странице [UWP для Xbox One](index.md). 
@@ -70,4 +67,3 @@ ms.lasthandoff: 02/08/2017
 - [Вопросы и ответы](frequently-asked-questions.md)  
 - [Известные проблемы](known-issues.md)
 - [Приложения UWP для Xbox One](index.md) 
-

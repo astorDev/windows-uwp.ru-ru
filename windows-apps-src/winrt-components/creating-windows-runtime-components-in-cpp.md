@@ -1,7 +1,7 @@
 ---
 author: msatranjr
 title: "Создание компонентов среды выполнения Windows на C++"
-description: "В этой статье описывается использование C++ для создания компонента среды выполнения Windows, представляющего собой библиотеку DLL, которую можно вызывать из универсального приложения для Windows, созданного с помощью JavaScript, C#, Visual Basic или C++."
+description: "В этой статье описывается использование C++ для создания компонента среды выполнения Windows, представляющего собой библиотеку DLL, которую можно вызывать из универсального приложения для Windows, созданного с помощью JavaScript, C#, VisualBasic или C++."
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ms.author: misatran
 ms.date: 02/08/2017
@@ -9,20 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 28d03486f6fb2f7a249af82d2c3be6006c9d80ed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2adebf94f016baf014788062f82d7fe933b7fb10
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
 # <a name="creating-windows-runtime-components-in-c"></a>Создание компонентов среды выполнения Windows на C++
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этой статье описывается использование C++ для создания компонента среды выполнения Windows, представляющего собой библиотеку DLL, которую можно вызывать из универсального приложения для Windows, созданного с помощью JavaScript, C#, Visual Basic или C++.
+В этой статье описывается использование C++ для создания компонента среды выполнения Windows, представляющего собой библиотеку DLL, которую можно вызывать из универсального приложения для Windows, созданного с помощью JavaScript, C#, VisualBasic или C++.
 
 Вот несколько причин для создания такого компонента.
 
@@ -602,4 +598,3 @@ Direction[curDirection];
 ## <a name="related-topics"></a>Ссылки по теме
 
 * [Пошаговое руководство: создание базового компонента среды выполнения Windows на C++ и его вызов из JavaScript или C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
-

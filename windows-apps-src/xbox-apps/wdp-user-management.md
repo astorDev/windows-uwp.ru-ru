@@ -1,14 +1,19 @@
----  
+---
 author: WilliamsJason
 title: "Управление тестовым пользователем Xbox Live - справочник по API"
 description: "Узнайте, как получить доступ к API управления пользователями программно."
-translationtype: Human Translation
-ms.sourcegitcommit: 67f158b1d3d5ece14c36483a2513a2db2f478660
-ms.openlocfilehash: 66fe038fdb54ac5cb9086bf9225d0a5d573b39c8
-
----  
-
-#Управление пользователями Xbox Live#
+ms.author: jaswill
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
+ms.openlocfilehash: c1a2517aa8716cff9201351a12a3c391110aafab
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
+---
+#<a name="xbox-live-user-management"></a>Управление пользователями Xbox Live#
 
 **Запрос**
 
@@ -41,7 +46,7 @@ ms.openlocfilehash: 66fe038fdb54ac5cb9086bf9225d0a5d573b39c8
   * SponsoredUser (необязательный): логический параметр, указывающий, следует ли добавить спонсированного пользователя.
   * Delete (необязательный): логический параметр, указывающий, следует ли удалить этого пользователя с консоли.
 
-###Ответ###
+###<a name="response"></a>Ответ###
 
 **Тело ответа**
 
@@ -67,11 +72,5 @@ ms.openlocfilehash: 66fe038fdb54ac5cb9086bf9225d0a5d573b39c8
 | 4XX                | Различные ошибки из-за недопустимых данных или формата запроса |
 | 5XX                | Коды ошибок для непредвиденных сбоев |
 <br>
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

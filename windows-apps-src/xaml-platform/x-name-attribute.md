@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a80a5cdeae5adc2af59072400aa42428eac28431
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9fa472869ed3b81a9f688652a487b1b93986b777
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xname-attribute"></a>Атрибут x:Name
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Служит уникальным идентификатором элементов объекта для доступа к созданному экземпляру объекта из кода программной части или общего кода. После применения к резервной модели программирования **x:Name** можно рассматривать как аналог переменной, содержащей ссылку на объект, возвращаемую конструктором.
 
@@ -69,10 +66,9 @@ CombiningCharacter::= none
 
 При доступности **Name** как настраиваемого свойства элемента **Name** и **x:Name** можно использовать взаимозаменяемо в XAML, однако если оба атрибута указать для одного элемента, возникнет ошибка. Также в некоторых случаях свойство **Name** может быть доступно только для чтения (например, [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031)). В этом случае **x:Name** всегда используется для именования этого элемента в XAML, и доступное только для чтения свойство **Name** существует для некоторых менее распространенных сценариев кода.
 
-**Примечание.** Обычно [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) не следует использовать для изменения значений, изначально заданных с помощью **x:Name**, хотя существуют сценарии, являющиеся исключениями из этого правила. В обычных сценариях создание и определение областей имен XAML — это операция обработчика XAML. Изменение **FrameworkElement.Name** во время выполнения может привести к непоследовательному согласованию имен частных полей и областей имен XAML, которое может быть сложно отслеживать в коде программной части.
+**Примечание.** Обычно [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) не следует использовать для изменения значений, изначально заданных с помощью **x:Name**, хотя существуют сценарии, являющиеся исключениями из этого правила. В обычных сценариях создание и определение областей имен XAML—это операция обработчика XAML. Изменение **FrameworkElement.Name** во время выполнения может привести к непоследовательному согласованию имен частных полей и областей имен XAML, которое может быть сложно отслеживать в коде программной части.
 
 ### <a name="xname-and-xkey"></a>x:Name и x:Key
 
 **x:Name** можно применить как атрибут к элементам в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) в качестве замены [атрибута x:Key](x-key-attribute.md). (По правилу все элементы в **ResourceDictionary** должны иметь атрибут x:Key или x:Name.) Это обычная ситуация для [раскадрованных анимаций](https://msdn.microsoft.com/library/windows/apps/mt187354). Дополнительные сведения см. в разделе [Ссылки на ресурсы ResourceDictionary и XAML](https://msdn.microsoft.com/library/windows/apps/mt187273).
-
 

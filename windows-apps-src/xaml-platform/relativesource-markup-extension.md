@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 46b48e8e1ef1efbff7248ddf54c22e5a8bc29deb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8827e579a595146b72fd71092609aebb90e3c211
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="relativesource-markup-extension"></a>Расширение разметки {RelativeSource}
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Предоставляет способ указания источника привязки в терминах относительной связи внутри графа объекта среды выполнения.
 
@@ -66,12 +63,11 @@ ms.lasthandoff: 02/07/2017
 
 **Примечание.** Использование XAML для **RelativeSource** показывает только изначально предполагаемый способ использования: задание значения [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) в XAML как части выражения привязки. Теоретически возможны и другие способы задания свойства, значением которого является [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [Обзор языка XAML](xaml-overview.md)
 * [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [Расширение разметки {Binding}](binding-markup-extension.md)
 * [**Привязка**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)
-
 

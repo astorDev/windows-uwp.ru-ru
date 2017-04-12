@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ea01f8191190db0a9b13b8081bc6fef687369c13
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e360869cd8406fac057046412fc135a42b3e0ccd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="move-and-draw-commands-syntax"></a>Синтаксис команд перемещения и рисования
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Информация о командах перемещения и рисования (мини-языке), которые вы можете использовать для указания геометрии путей в качестве значения атрибута XAML. Команды перемещения и рисования используются многими средствами разработки и графическими инструментами, умеющими выводить векторную графику или фигуру как формат сериализации и обмена.
 
@@ -231,7 +228,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>Средства проектирования, создающие команды перемещения и рисования
 
-**Перо** и другие инструменты рисования в Blend для Microsoft Visual Studio 2015 обычно создают объект [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) с использованием команд перемещения и рисования.
+**Перо** и другие инструменты рисования в Blend для Microsoft Visual Studio2015 обычно создают объект [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) с использованием команд перемещения и рисования.
 
 Вы можете увидеть существующие данные команд перемещения и рисования в некоторых частях элемента управления, определенных в стандартных XAML-шаблонах для элементов управления в среде выполнения Windows. Например, некоторые элементы управления используют [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722), который содержит данные, определенные как команды перемещения и рисования.
 
@@ -243,5 +240,4 @@ ms.lasthandoff: 02/07/2017
 * [Использование кистей](https://msdn.microsoft.com/library/windows/apps/mt280383)
 * [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356)
 * [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)
-
 

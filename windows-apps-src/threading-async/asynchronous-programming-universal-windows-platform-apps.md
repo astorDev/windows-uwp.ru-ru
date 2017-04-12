@@ -9,18 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, асинхронный"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1f157db0dc9124ce839f608e5f1a2325c1ce922f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 06eceae9c7736ce59bc0ab1b842425c3dc56d299
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="asynchronous-programming"></a>Асинхронное программирование
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-В этом разделе описывается асинхронное программирование в универсальной платформе для Windows (UWP), а также его представление в C#, Microsoft Visual Basic .NET, расширениях компонентов Visual C++ (C++/CX) и JavaScript.
+В этом разделе описывается асинхронное программирование в универсальной платформе для Windows (UWP), а также его представление в C#, Microsoft Visual Basic.NET, расширениях компонентов Visual C++ (C++/CX) и JavaScript.
 
 Использование асинхронного программирования позволит вашему приложению отвечать на запросы во время выполнения длительных операций. Например, приложение, скачивающее содержимое из Интернета, может ожидать получения данных несколько секунд. Если для получения содержимого вы использовали синхронный метод в потоке пользовательского интерфейса, приложение блокируется до момента возврата из метода. Приложение при этом не будет отвечать на действия пользователя и будет казаться зависшим, что может вызвать раздражение пользователя. В такой ситуации гораздо эффективнее использовать асинхронное программирование, которое позволит приложению работать и отвечать на запросы пользовательского интерфейса, одновременно ожидая завершения операции.
 
@@ -79,9 +77,8 @@ ms.lasthandoff: 02/07/2017
 
 Во многих случаях вызов асинхронной функции так же прост, как и вызов обычной функции. Различие в том, что вам нужно использовать метод [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) или [**done**](https://msdn.microsoft.com/library/windows/apps/Hh701079), чтобы назначить обработчики для формирования результата, обработки ошибок и запуска операции.
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [Вызов асинхронных API в C# и Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [Асинхронное программирование с использованием Async и Await (C# и Visual Basic)](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
 * [Особенности сценариев для образца Reversi: асинхронный код](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)
-

@@ -5,12 +5,10 @@ title: "Анимации щелчков указателя в приложени
 ms.assetid: EEB10A2C-629A-4705-8468-4D019D74DDFF
 label: Motion--Pointer animations
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: c208b67829e2053302ec0cc7c6da013b89cee8b3
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="pointer-click-animations"></a>Анимации щелчков указателя
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -31,7 +29,7 @@ ms.openlocfilehash: c208b67829e2053302ec0cc7c6da013b89cee8b3
 
 -   Если вы используете анимацию поднятия указателя, немедленно запустите анимацию после того, как пользователь отпустит указатель. Благодаря этому пользователь видит незамедлительную реакцию на свои действия, даже если ответ на действие, запускаемое касанием (например, переход на новую страницу), появляется медленнее.
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 * [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Анимация щелчков указателя](https://msdn.microsoft.com/library/windows/apps/xaml/jj649432)
@@ -44,11 +42,5 @@ ms.openlocfilehash: c208b67829e2053302ec0cc7c6da013b89cee8b3
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

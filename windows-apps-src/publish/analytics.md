@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, аналитика, отчеты, информационная панель, приложения"
-translationtype: Human Translation
-ms.sourcegitcommit: b01924366a0bc2afabe2f381e72e45862f0dd682
 ms.openlocfilehash: 13a37a4ae2cea67fdce843ed4e6189797d85b93e
-ms.lasthandoff: 02/08/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="analytics"></a>Аналитика
 
 Подробная аналитика по вашим приложениям доступна на панели мониторинга в Центре разработки для Windows. Статистика и диаграммы позволяют узнать, как работают ваши приложения, начиная от количества пользователей до использования ими того или иного приложения вместе с соответствующими отзывами. Можно также найти сведения о работоспособности приложения, использованию рекламных объявлений и многом другом. Просмотрите отчеты на информационной панели или [скачайте необходимые отчеты](download-analytic-reports.md) для анализа данных в автономном режиме. Мы также предлагаем несколько способов [получения доступа к аналитическим данным без использования панели мониторинга](#no-dashboard).
@@ -37,7 +34,7 @@ ms.lasthandoff: 02/08/2017
 -   [Отчет об использовании](usage-report.md)
 -   [Отчет о работоспособности](health-report.md)
 -   [Отчет "Оценки"](ratings-report.md)
--   [Отчет "Рецензии"](reviews-report.md)
+-   [Отчет "Отзывы"](reviews-report.md)
 -   [Отчет об отзывах](feedback-report.md)
 -   [Отчет о каналах и преобразованиях](channels-and-conversions-report.md)
 -   [Отчет "Рекламный посредник"](ad-mediation-report.md)
@@ -84,4 +81,3 @@ ms.lasthandoff: 02/08/2017
 
 ## <a name="related-topics"></a>Связанные статьи
 - [Публикация приложений для Windows](index.md)
-

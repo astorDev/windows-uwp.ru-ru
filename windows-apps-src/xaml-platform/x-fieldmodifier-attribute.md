@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2c1bf910303f0c26761a3c63c3e1159dd2d0c6bb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cad84be24836bc6a33a4ab08f1ca4fa2d9e97512
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xfieldmodifier-attribute"></a>Атрибут x:FieldModifier
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Изменяет поведение компиляции XAML таким образом, что поля для ссылок на именованный объект определяются с **открытым** доступом, а не с **закрытым** доступом по умолчанию.
 
@@ -34,12 +31,11 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="remarks"></a>Комментарии
 
-Значение атрибута **x:FieldModifier** зависит от языка программирования. Допустимые значения: **private**, **public**, **protected**, **internal** и **friend**. В языках C#, Microsoft Visual Basic и расширениях компонента Visual C++ (C++/CX) можно присвоить строковое значение public или Public. Средство синтаксического анализа не учитывает регистр для значения этого атрибута.
+Значение атрибута **x:FieldModifier** зависит от языка программирования. Допустимые значения: **private**, **public**, **protected**, **internal** и **friend**. В языках C#, Microsoft Visual Basic и расширениях компонента VisualC++ (C++/CX) можно присвоить строковое значение public или Public. Средство синтаксического анализа не учитывает регистр для значения этого атрибута.
 
 По умолчанию используется закрытый доступ (**Private**).
 
 **x:FieldModifier** имеет смысл только для элементов с [x:Name attribute](x-name-attribute.md), поскольку это имя используется для ссылки на поле, если оно общедоступно.
 
 **Примечание.** Язык XAML среды выполнения Windows не поддерживает **x:ClassModifier** или **x:Subclass**.
-
 

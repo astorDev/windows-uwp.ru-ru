@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 57341e52ad51e446e6828e5b4ba6228094152d7f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 30849b23e9fbdca38f8401afe0f6f7df4b498121
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-getting-around-in-visual-studio"></a>Начало работы: введение в Visual Studio
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="getting-around-in-microsoft-visual-studio"></a>Знакомство с Microsoft Visual Studio
 
@@ -129,5 +126,4 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 ## <a name="next-step"></a>Следующий шаг
 
 [Приступая к работе: общие элементы управления](getting-started-common-controls.md)
-
 

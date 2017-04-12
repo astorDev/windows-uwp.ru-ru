@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4ccc18920a98b3c2258b4965e96fa063124d0546
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0fd1e58549ba19397948864fe5fe0b31fcaf01d7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xdeferloadstrategy-attribute"></a>Атрибут x:DeferLoadStrategy
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **x:DeferLoadStrategy="Lazy"** можно использовать для оптимизации производительности сценариев запуска и создания дерева приложения XAML. **x:DeferLoadStrategy="Lazy"** задерживает создание элемента и его дочерних объектов, сокращая время запуска и объем использования памяти за счет отсутствия необходимости в создании элементов. Это полезно для уменьшения влияния на производительность элементов, потребность в которых возникает редко или при определенных условиях. Элемент будет реализован при обращении к нему из кода или VisualStateManager.
 
@@ -36,7 +33,7 @@ ms.lasthandoff: 02/07/2017
 
 -   Необходимо определить [x:Имя](x-name-attribute.md) , поскольку должна быть возможность найти этот элемент после.
 -   Только [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) можно пометить как отложенный, за исключением типов, полученных из [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
--   Корневые элементы нельзя откладывать в [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page), [**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol) и [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
+-   Корневые элементы нельзя откладывать в [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page), [**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) и [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
 -   Элементы в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) нельзя откладывать.
 -   Функция не поддерживает свободные страницы XAML, загружаемые с помощью [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048).
 -   Перемещение родительского элемента приведет к удалению всех элементов, которые не были реализованы.
@@ -93,5 +90,4 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
     this.FindName("DeferredGrid"); // This will realize the deferred grid
 }
 ```
-
 

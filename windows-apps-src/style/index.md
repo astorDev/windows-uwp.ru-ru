@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: dcd97e72520b4e814c665dc72b36c895cd8fe2b2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: cce852d20dfce74740163009d72c02cfb58cc523
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="uwp-style-guide"></a>Руководство по стилю UWP
 
@@ -27,7 +25,7 @@ ms.lasthandoff: 02/08/2017
   <p>Руководство по проектированию и примеры кода, с помощью которых вы научитесь индивидуализировать свои приложения UWP с помощью цвета, шрифтового оформления и движения.</p>
   </div>
   <div class="side-by-side-content-right">
-    ![Цвет, значок, движение, звук и шрифтовое оформление — руководства](images/style-header-v2.png)
+    ![Цвет, значок, движение, звук и шрифтовое оформление— руководства](images/style-header-v2.png)
   </div>
 </div>
 </div>
@@ -41,7 +39,7 @@ ms.lasthandoff: 02/08/2017
   </div>
   <div class="side-by-side-content-right">
    <p><b>[Значки](icons.md)</b><br/>
-Хорошие значки согласуются со шрифтовым оформлением и языком проектирования в целом. В них метафоры не смешиваются — они сообщают только то, что нужно, как можно скорее и проще.</p>
+Хорошие значки согласуются со шрифтовым оформлением и языком проектирования в целом. В них метафоры не смешиваются— они сообщают только то, что нужно, как можно скорее и проще.</p>
   </div>
 </div>
 </div>
@@ -79,5 +77,4 @@ ms.lasthandoff: 02/08/2017
   </div>
 </div>
 </div>
-
 

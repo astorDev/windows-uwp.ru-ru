@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 91ca9a29609cd52db24ddddecf60307e808cc064
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e861ce5d7c34098616fdc57c884402df4e4b0a7f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="feedback-report"></a>Отчет об отзывах
 
 **Отчет об отзывах** на информационной панели Центра разработки для Windows позволяет просматривать проблемы, предложения и голоса, которые были отправлены пользователями Windows 10 через Центр отзывов. Эти сведения можно просмотреть на информационной панели или экспортировать данные для просмотра данных в автономном режиме.
@@ -61,4 +58,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="launching-feedback-hub-directly-from-your-app"></a>Запуск Центра отзывов непосредственно из приложения
 
 Как указано выше, рекомендуется включить ссылку на Центр отзывов непосредственно в ваше приложение, чтобы побудить клиентов оставить отзыв. Дополнительные сведения см. в статье [Запуск Центра отзывов из приложения](../monetize/launch-feedback-hub-from-your-app.md).
-

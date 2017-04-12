@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Если при регистрации в Центре разработки вас просят указать номер плательщика НДС, эта статья поможет вам определиться, с чего начать."
+Description: "Если вы должны указать номер плательщика НДС при регистрации в Центре разработки, начните со следующего."
 title: "Сведения об НДС"
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a26cb43d230cd7dbb050254cceb70d3158c3af5d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c931b4d8d2241efb80a3a87ba4550a045ea3b675
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="vat-info"></a>Сведения об НДС
 
 
-Если при регистрации в Центре разработки вас просят указать номер плательщика НДС, эта статья поможет вам определиться, с чего начать.
+Если вы должны указать номер плательщика НДС при регистрации в Центре разработки, начните со следующего.
 
 ## <a name="understanding-vat-numbers"></a>Номера плательщиков НДС
 
@@ -251,7 +248,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

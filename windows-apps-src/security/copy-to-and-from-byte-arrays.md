@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9183ca237709100e16afd9ce2f8387ff464021ce
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6eee2c509956dcc38907334000a35fd9c9344a52
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="copy-to-and-from-byte-arrays"></a>Копирование в массивы байтов и из них
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом примере кода показано, как копировать в массивы байтов и из них в приложении универсальной платформы Windows (UWP).
 

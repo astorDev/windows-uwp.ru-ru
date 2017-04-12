@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: da02ed10336ea2381213fd5fada153db4cc06ab1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 55baba42a011197814a01d476fcb062fe6bf2ebf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>Диагностика состояний ошибки компонентов среды выполнения Windows
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье приведены дополнительные сведения об ограничениях, которые применяются к компонентам среды выполнения Windows, написанным с использованием управляемого кода. Эти сведения расширяют информацию, которая предоставляется в сообщениях об ошибке, отправляемых средством [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx), и дополняют сведения об ограничениях, представленные в разделе [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
@@ -29,7 +26,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="error-message-for-implementing-async-interface-provides-incorrect-type"></a>При реализации асинхронного интерфейса сообщение об ошибке содержит неверный тип
 
 
-Управляемые компоненты среды выполнения Windows не могут реализовывать интерфейсы универсальной платформы Windows (UWP), представляющие асинхронные действия или операции ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) или [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). Вместо этого в .NET Framework есть класс [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) для создания асинхронных операций в компонентах среды выполнения Windows. В сообщении об ошибке, отображаемом в Winmdexp.exe при попытке реализовать асинхронный интерфейс, по ошибке указывается прежнее имя класса — AsyncInfoFactory. Платформа .NET Framework больше не содержит класс AsyncInfoFactory.
+Управляемые компоненты среды выполнения Windows не могут реализовывать интерфейсы универсальной платформы Windows (UWP), представляющие асинхронные действия или операции ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) или [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). Вместо этого в .NET Framework есть класс [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) для создания асинхронных операций в компонентах среды выполнения Windows. В сообщении об ошибке, отображаемом в Winmdexp.exe при попытке реализовать асинхронный интерфейс, по ошибке указывается прежнее имя класса— AsyncInfoFactory. Платформа .NET Framework больше не содержит класс AsyncInfoFactory.
 
 | Номер ошибки | Текст сообщения                                                                                                                                                                                                                                                          |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -44,7 +41,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="missing-references-to-mscorlibdll-or-systemruntimedll"></a>Отсутствуют ссылки на библиотеки mscorlib.dll или System.Runtime.dll
 
 
-Эта проблема возникает только при использовании средства Winmdexp.exe через командную строку. Мы рекомендуем использовать параметр /reference, чтобы включить ссылки на обе библиотеки — mscorlib.dll и System.Runtime.dll — из основных ссылочных сборок .NET Framework, расположенных в папке %ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5 (%ProgramFiles%\\... на 32-разрядном компьютере).
+Эта проблема возникает только при использовании средства Winmdexp.exe через командную строку. Мы рекомендуем использовать параметр /reference, чтобы включить ссылки на обе библиотеки— mscorlib.dll и System.Runtime.dll— из основных ссылочных сборок .NET Framework, расположенных в папке %ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5 (%ProgramFiles%\\... на 32-разрядном компьютере).
 
 | Номер ошибки | Текст сообщения                                                                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -58,7 +55,7 @@ ms.lasthandoff: 02/07/2017
 
 В компоненте среды выполнения Windows, написанном с использованием управляемого кода, нельзя предоставлять перегруженные операторы открытых типов.
 
-> **Примечание.** В сообщении об ошибке оператор определяется по имени метаданных, например op\_Addition, op\_Multiply, op\_ExclusiveOr, op\_Implicit (неявное преобразование) и т. д.
+> **Примечание.** В сообщении об ошибке оператор определяется по имени метаданных, например op\_Addition, op\_Multiply, op\_ExclusiveOr, op\_Implicit (неявное преобразование) и т.д.
 
  
 
@@ -252,8 +249,7 @@ ms.lasthandoff: 02/07/2017
 | WME1092 | У метода "{0}" есть параметр с именем "{1}", которое совпадает с именем возвращаемого значения по умолчанию. Попробуйте использовать другое имя параметра или с помощью атрибута System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute явно укажите имя возвращаемого значения.<br/>**Примечание.** returnValue является именем по умолчанию только для методов доступа к свойствам, а для всех других методов по умолчанию используется имя value. |
  
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
-* [Создание компонентов среды выполнения Windows на C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Создание компонентов среды выполнения Windows на C# и VisualBasic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 * [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx)
-

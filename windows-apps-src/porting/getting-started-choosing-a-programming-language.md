@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 440fb76aac128490366677278254a5f5b2e095ed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b20066ffbd32984d20fdbdcc0915ef10332c6f12
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-choosing-a-programming-language"></a>Начало работы: выбор языка программирования
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="choosing-a-programming-language"></a>Выбор языка программирования
 
@@ -48,7 +45,7 @@ ms.lasthandoff: 02/07/2017
 -   [Примеры приложений Магазина Windows, использующих C#](http://go.microsoft.com/fwlink/p/?LinkId=263453)
 -   [Visual C#](http://go.microsoft.com/fwlink/p/?LinkId=263450)
 
-Ниже приведен класс, написанный на языках Objective-C и C#. Вариант на Objective-C показан первым, а вариант на C# — вторым.
+Ниже приведен класс, написанный на языках Objective-C и C#. Вариант на Objective-C показан первым, а вариант на C#— вторым.
 
 ```obj-c
 // Objective-C header: SampleClass.h.
@@ -149,4 +146,3 @@ C# — это простой язык для выбора. Он содержит
 ## <a name="next-step"></a>Следующий шаг
 
 [Приступая к работе: введение в Visual Studio](getting-started-getting-around-in-visual-studio.md)
-

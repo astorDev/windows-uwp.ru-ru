@@ -1,16 +1,9 @@
 ---
 redirect_url: https://msdn.microsoft.com/windows/uwp/publish/add-on-acquisitions-report
-translationtype: Human Translation
-ms.sourcegitcommit: 0edf45e997f36a82a8bfcb92c1d8fd2c79242461
-ms.openlocfilehash: 9b7c173cb62c9666238d61c26a6b34508b090100
-
+ms.openlocfilehash: 3b1076dab795bad999e720fd4efa8ad52a7a2d8e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# Отчет о приобретениях IAP
+# <a name="iap-acquisitions-report"></a>Отчет о приобретениях IAP
 
 Эта страница перенаправлена на статью «Отчет о получении надстроек»
-
-
-<!--HONumber=Aug16_HO3-->
-
-

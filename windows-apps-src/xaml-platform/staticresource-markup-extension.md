@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 539bc6b0a43491c9ef75701bc574c7e31d2c02e7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 234d90382fb62e6f0be9683dfb7b01d9fa80a185
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="staticresource-markup-extension"></a>Расширение разметки {StaticResource}
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Предоставляет значение для любого атрибута языка XAML путем оценки ссылки на уже определенный ресурс. Ресурсы определены в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), а использование **StaticResource** определяет ссылку на ключ ресурса в **ResourceDictionary**.
 
@@ -36,7 +33,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="remarks"></a>Примечания
 
-**StaticResource** — это метод получения для атрибута XAML значений, которые определены где-либо в словаре ресурсов XAML. Эти значения могут быть добавлены в словарь ресурсов, так как они предназначены для использования несколькими значениями свойств; либо потому, что словарь ресурсов XAML используется как упаковка языка XAML или как метод разложения на элементарные операции. Примером метода упаковки XAML является словарь тем для элемента управления. Другим примером являются объединенные словари ресурсов, применяемые для резервирования ресурсов.
+**StaticResource**— это метод получения для атрибута XAML значений, которые определены где-либо в словаре ресурсов XAML. Эти значения могут быть добавлены в словарь ресурсов, так как они предназначены для использования несколькими значениями свойств; либо потому, что словарь ресурсов XAML используется как упаковка языка XAML или как метод разложения на элементарные операции. Примером метода упаковки XAML является словарь тем для элемента управления. Другим примером являются объединенные словари ресурсов, применяемые для резервирования ресурсов.
 
 **StaticResource** принимает один аргумент, в котором задается ключ для запрашиваемого ресурса. Ключ ресурса всегда является строкой XAML в среде выполнения Windows. Дополнительные сведения о том, как изначально задается ключ ресурса, см. в разделе [Атрибут x:Key](x-key-attribute.md).
 
@@ -80,7 +77,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>Поддержка средств разработки для расширения разметки **{StaticResource}**
 
-Пакет Microsoft Visual Studio 2013 может содержать возможные значения ключей в раскрывающихся меню Microsoft IntelliSense при использовании расширения разметки **{StaticResource}** на XAML-странице. Например, когда вы вводите {StaticResource, в раскрывающемся списке IntelliSense появляются все ключи ресурса из текущей области подстановки. Помимо типичных ресурсов, присутствующих на уровне страницы ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) и уровне приложения ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)), также отображаются [ресурсы темы XAML](https://msdn.microsoft.com/library/windows/apps/mt187274) и ресурсы из всех расширений, используемых в проекте.
+Пакет Microsoft Visual Studio2013 может содержать возможные значения ключей в раскрывающихся меню Microsoft IntelliSense при использовании расширения разметки **{StaticResource}** на XAML-странице. Например, когда вы вводите {StaticResource, в раскрывающемся списке IntelliSense появляются все ключи ресурса из текущей области подстановки. Помимо типичных ресурсов, присутствующих на уровне страницы ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) и уровне приложения ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)), также отображаются [ресурсы темы XAML](https://msdn.microsoft.com/library/windows/apps/mt187274) и ресурсы из всех расширений, используемых в проекте.
 
 Если при использовании **{StaticResource}** обнаруживается ключ ресурса, функция **Перейти к определению** (F12) может разрешить ресурс и показать словарь, в котором он определен. Для ресурсов темы во время разработки эта функция ведет к файлу generic.xaml.
 
@@ -90,5 +87,4 @@ ms.lasthandoff: 02/07/2017
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [Атрибут x:Key](x-key-attribute.md)
 * [Расширение разметки {ThemeResource}](themeresource-markup-extension.md)
-
 

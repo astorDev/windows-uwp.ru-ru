@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: feacd96ca2fa0cc4cd3d1087a982f61bc18d4604
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d17fd77759911e11c2efeaf84058526d8819781f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-declarations"></a>Объявления приложений
 
 Можно предоставить дополнительные сведения о вашем приложении в разделе **Объявления приложений** на странице **Свойства приложения** во время [процесса отправки](app-submissions.md). Эти объявления могут обеспечить надлежащее отображение вашего приложения для необходимого круга пользователей, а также указать, как последние могут использовать ваше приложение.
@@ -67,7 +64,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

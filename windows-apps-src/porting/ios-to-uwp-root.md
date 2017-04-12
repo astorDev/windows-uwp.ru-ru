@@ -10,19 +10,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 984bafe92bf23f13bc206d6b438aa4f3b32bc3d5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 021a88fe80cc270082080ad55bd98b71097cea7e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="move-from-ios-to-uwp"></a>Переход с iOS на UWP
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Если вы являетесь разработчиком приложений iOS и желаете расширить свою базу пользователей, включив в нее пользователей Windows 10 и универсальной платформы Windows (UWP), для решения этой задачи можно использовать разнообразные инструменты. Подходы к решению этой задачи зависят от типа приложения, с которым вы работаете (игра, стиль жизни, корпоративные и т. д.) и стадии разработки. Так, готовая или почти готовая игра, в которой активно используются технологии OpenGL или Cocos2D, — это идеальный кандидат для [моста Windows для iOS](https://dev.windows.com/bridges/ios), в то время как в работе с кроссплатформенным приложением для малого бизнеса лучше использовать [Xamarin.Forms](https://www.xamarin.com/forms). Если для написания приложения вы использовали кроссплатформенное средство, например Unity, [опубликовать его в Windows](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) будет достаточно просто.
+Если вы являетесь разработчиком приложений iOS и желаете расширить свою базу пользователей, включив в нее пользователей Windows 10 и универсальной платформы Windows (UWP), для решения этой задачи можно использовать разнообразные инструменты. Подходы к решению этой задачи зависят от типа приложения, с которым вы работаете (игра, стиль жизни, корпоративные и т. д.) и стадии разработки. Так, готовая или почти готовая игра, в которой активно используются технологии OpenGL или Cocos2D,— это идеальный кандидат для [моста Windows для iOS](https://dev.windows.com/bridges/ios), в то время как в работе с кроссплатформенным приложением для малого бизнеса лучше использовать [Xamarin.Forms](https://www.xamarin.com/forms). Если для написания приложения вы использовали кроссплатформенное средство, например Unity, [опубликовать его в Windows](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) будет достаточно просто.
 
 ## <a name="why-windows"></a>Почему Windows?
 
@@ -35,13 +32,12 @@ ms.lasthandoff: 02/07/2017
 | Раздел | Описание |
 |-------|-------------|
 | [Выбор подхода к разработке приложений iOS и UWP](selecting-an-approach-to-ios-and-uwp-app-development.md) | Какие варианты доступны при разработке кроссплатформенных приложений? |
-| [Знакомство с UWP для разработчиков iOS](getting-started-with-uwp-for-ios-developers.md) | Если вы являетесь разработчиком приложений iOS и планируете разрабатывать приложения для Windows 10, то данные документы послужат отличной отправной точкой. |
-| [Настройка Mac с Windows 10](setting-up-your-mac-with-windows-10.md) | Используйте ваш компьютер Mac для разработки приложений для Windows. |
+| [Знакомство с UWP для разработчиков iOS](getting-started-with-uwp-for-ios-developers.md) | Если вы являетесь разработчиком приложений iOS и планируете разрабатывать приложения для Windows10, то данные документы послужат отличной отправной точкой. |
+| [Настройка Mac с Windows10](setting-up-your-mac-with-windows-10.md) | Используйте ваш компьютер Mac для разработки приложений для Windows. |
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 **Для проектировщиков и разработчиков**
 * [Разработка универсальных приложений для всех устройств с ОС Windows](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 * [Скачивание ресурсов проектирования для приложений Магазина Windows](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
  
-

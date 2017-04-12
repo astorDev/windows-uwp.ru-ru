@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6bac2575b3855357076d4272a423c9c689118b2b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8b759684d07c1fa8265ed958ac9c736aa12a488c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Пользовательские события и методы доступа к событиям в компонентах среды выполнения Windows
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Поддержка платформы .NET Framework для компонентов среды выполнения Windows позволяет без труда объявлять компоненты событий, скрывая различия между шаблонами событий универсальной платформы Windows (UWP) и платформы .NET Framework. Однако при объявлении пользовательских методов доступа к событиям в компоненте среды выполнения Windows необходимо следовать шаблону, используемому в UWP.
 
@@ -131,4 +128,3 @@ ms.lasthandoff: 02/07/2017
 * [Общие сведения о платформе .NET для приложений Магазина Windows](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [Платформа .NET для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [Пошаговое руководство. Создание простого компонента среды выполнения Windows и его вызов из кода JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-

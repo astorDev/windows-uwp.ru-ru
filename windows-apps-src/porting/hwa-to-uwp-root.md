@@ -8,13 +8,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Размещенные веб-приложения, преобразование веб-сайта в приложение для Windows, веб-приложения в Магазине Windows, приложения Chrome для Windows"
-translationtype: Human Translation
-ms.sourcegitcommit: 2e230e95be01f0b14fa6346be9fa836c66a812cf
 ms.openlocfilehash: c9239f3a3c14bf9da99e60cfef8154eefb4305b4
-ms.lasthandoff: 01/20/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="hosted-web-apps---access-windows-10-features-from-your-web-app"></a>Размещенные веб-приложения. Доступ к функциям Windows 10 из веб-приложения
 
 Размещенное веб-приложение может получить полный доступ к универсальной платформе Windows (UWP), в том числе может обращаться к API среды выполнения Windows непосредственно из сценария, размещенного на сервере, и использовать поставщика проверки подлинности в Интернете и интеграцию с Кортаной. Также поддерживаются гибридные приложения. Вы можете включить локальный код, который будет вызываться из размещенного сценария, и управлять навигацией по приложению на удаленных и локальных страницах.
@@ -48,5 +45,4 @@ ms.lasthandoff: 01/20/2017
 ## <a name="demos"></a>Демонстрационные примеры
 
 - [Приложение Contoso Travel](http://contosotravel.azurewebsites.net/)
-
 

@@ -10,13 +10,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a10d1b164513f9abce48c51bdfe5f6e4c3bdf79d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 92fd3ee66768fcf1c98d9760ecb44811c9b0f9b3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="typography"></a>Шрифтовое оформление
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -39,7 +36,7 @@ ms.lasthandoff: 02/07/2017
 
 ![Пример междустрочного интервала в 125%](images/line-spacing.png)
 
-Междустрочный интервал следует рассчитывать как 125 % от размера шрифта, при необходимости округляя до ближайшего значения, кратного четырем. Например, при размере шрифта Segoe UI, равном 15 пикселям, 125 % от 15 пикселей составит 18,75 пикселя. Рекомендуется округлить в большую сторону и установить значение высоты линии в 20 пикселей, чтобы остаться в сетке, кратной 4 пикселям. Это обеспечит хорошую читаемость и адекватное пространство для диакритических знаков. Конкретные примеры см. в разделе "Набор шрифтов".
+Междустрочный интервал следует рассчитывать как 125% от размера шрифта, при необходимости округляя до ближайшего значения, кратного четырем. Например, при размере шрифта Segoe UI, равном 15 пикселям, 125% от 15 пикселей составит 18,75 пикселя. Рекомендуется округлить в большую сторону и установить значение высоты линии в 20 пикселей, чтобы остаться в сетке, кратной 4 пикселям. Это обеспечит хорошую читаемость и адекватное пространство для диакритических знаков. Конкретные примеры см. в разделе "Набор шрифтов".
 
 При размещении более крупного шрифта над менее крупным шрифтом расстояние от последней строки более крупного шрифта до первой строки менее крупного шрифта должно быть равно высоте строки более крупного шрифта.
 
@@ -82,7 +79,7 @@ Segoe — это гуманистический шрифт с мягким, др
 
 Как и в случае с кернингом и уплотнением, для интервала между словами и межбуквенной разрядки используются специальные параметры, помогающие достичь оптимальной четкости и гуманистической целостности.
 
-Интервал между словами по умолчанию всегда составляет 100 %, а для межбуквенной разрядки необходимо установить значение "0".
+Интервал между словами по умолчанию всегда составляет 100%, а для межбуквенной разрядки необходимо установить значение "0".
   </div>
 </div>
 </div>
@@ -99,7 +96,7 @@ Segoe — это гуманистический шрифт с мягким, др
 
 
 >[!NOTE]
->В элементе управления текстом XAML используйте [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) для управления кернингом и [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) для управления отслеживанием. По умолчанию для Typography.Kerning установлено значение true, а для FontStretch — значение Normal (рекомендованные значения).
+>В элементе управления текстом XAML используйте [Typogrphy.Kerning](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) для управления кернингом и [FontStretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_FontStretch) для управления отслеживанием. По умолчанию для Typography.Kerning установлено значение true, а для FontStretch— значение Normal (рекомендованные значения).
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -182,7 +179,7 @@ SubtitleAlt, BaseAlt и CaptionAlt в настоящее время недост
 
 ## <a name="primary-and-secondary-text"></a>Основной и второстепенный текст
 
-Чтобы создать дополнительную иерархию, которая включала бы не только набор шрифтов, задайте второстепенному тексту прозрачность 60 %. В [цветовой палитре темы](color.md#color-theming) следует использовать BaseMedium. Для основного текста прозрачность всегда должна иметь значение 100% или BaseHigh.
+Чтобы создать дополнительную иерархию, которая включала бы не только набор шрифтов, задайте второстепенному тексту прозрачность 60%. В [цветовой палитре темы](color.md#color-theming) следует использовать BaseMedium. Для основного текста прозрачность всегда должна иметь значение 100% или BaseHigh.
 
 <!-- Need new images
 ![Two phone apps using SubtitleAlt](images/type-ramp-example-2.png)
@@ -218,4 +215,3 @@ Green shows where all caps should be used. Red shows where it should not.
 * [Текстовые элементы управления](../controls-and-patterns/text-controls.md)
 * [Шрифты](fonts.md)
 * [Значки Segoe MDL2](segoe-ui-symbol-font.md)
-

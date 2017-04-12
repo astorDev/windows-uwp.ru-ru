@@ -9,18 +9,15 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 36d19f660bc3c03377f864b1d659a19396917130
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 82c8fd0945ed49f8accf5e101acfbea151caa3a1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="uwp-on-xbox-one"></a>Приложения UWP для Xbox One
 
 Приступите к созданию приложений универсальной платформы Windows (UWP) для Xbox One.
 
-Платформа UWP на Xbox One поддерживает разработку как приложений, так и игр. Чтобы экспериментировать, создавать и тестировать игры или приложения для Xbox, регистрироваться в программе [ID@Xbox](http://www.xbox.com/Developers/id) необязательно. Зарегистрироваться в программе [ID@Xbox](http://www.xbox.com/Developers/id) следует, если вы планируете публиковать и продавать игры для Xbox One или использовать Xbox Live в Windows 10. Чтобы присоединиться к нашему сообществу независимых разработчиков и энтузиастов, зарегистрируйтесь в программе [ID@Xbox](http://www.xbox.com/Developers/id). 
+Платформа UWP на Xbox One поддерживает разработку как приложений, так и игр. Вам не нужно участвовать в программе для разработчиков, чтобы экспериментировать, создавать и тестировать игры или приложения для Xbox. Когда вы будете готовы публиковать и продавать игры для Xbox One или использовать Xbox Live в Windows 10, вам нужно будет присоединиться к [Xbox Live создателям программы](https://developer.microsoft.com/games/xbox/xboxlive/creator) или стать разработчиком [ID@Xbox](http://www.xbox.com/Developers/id). Дополнительные сведения см. в разделе [Обзор программы разработчика](https://developer.microsoft.com/games/xbox/docs/xboxlive/get-started/developer-program-overview.html).
 
 В этом разделе содержится пошаговая инструкция по настройке системы и процедуре аутентификации, информация об установке необходимых версий Visual Studio и средств Windows 10, а также пошаговая инструкция по созданию, запуску и отладке вашего первого простого приложения. 
 
@@ -47,4 +44,3 @@ ms.lasthandoff: 02/08/2017
 - [Автоматизация запуска приложений UWP для Windows 10](automate-launching-uwp-apps.md)
 - [CPUSets для разработки игр](cpusets-games.md)
   
-

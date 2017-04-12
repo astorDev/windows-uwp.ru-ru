@@ -1,26 +1,23 @@
 ---
 author: mcleanbyron
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
-description: "Сведения о поддерживаемых размеров рекламных баннеров."
+description: "Узнайте о поддерживаемых размерах рекламных баннеров."
 title: "Поддерживаемые размеры рекламных баннеров"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, объявления, реклама, размеры, баннеры"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0c0ae3dbb197b166993a71bad80a05b11c5d815f
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, объявления, реклама, размеры, баннеры"
+ms.openlocfilehash: 6f8e679a31da140911306110027e1fdc041df399
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="supported-ad-sizes-for-banner-ads"></a>Поддерживаемые размеры рекламных баннеров
-
+# <a name="supported-banner-ad-sizes"></a>Поддерживаемые размеры рекламных баннеров
 
 
-Microsoft Advertising поддерживает рекламные баннеры следующих размеров.
+
+Microsoft Advertising поддерживает рекламные баннеры представленных ниже размеров.
 
 ## <a name="windows-10-mobile-and-windows-phone-8x"></a>Windows 10 Mobile и Windows Phone 8.x
 
@@ -95,4 +92,3 @@ Microsoft Advertising поддерживает рекламные баннеры
  
 
  
-

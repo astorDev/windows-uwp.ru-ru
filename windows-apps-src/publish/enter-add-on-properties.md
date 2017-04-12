@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "При отправке надстройки параметры на странице &quot;Свойства&quot; позволяют определить поведение надстройки, когда она предлагается пользователям."
+Description: "При отправке надстройки параметры на странице «Свойства» позволяют определить поведение надстройки, когда она предлагается пользователям."
 title: "Ввод свойств надстройки"
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 186088f249c2e6fe116c970bd1969fcb59863ba6
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="enter-add-on-properties"></a>Ввод свойств надстройки
 
 
@@ -60,7 +57,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="custom-developer-data"></a>Пользовательские данные, определенные разработчиком
 
-Можно ввести до 3 000 символов в поле **Пользовательские данные, определенные разработчиком** (раньше это поле называлось **Тэг**), чтобы предоставить дополнительный контекст для внутреннего продукта приложения. Чаще всего используется форма строки XML, но вы можете ввести в это поле любые данные.
+Можно ввести до 3000 символов в поле **Пользовательские данные, определенные разработчиком** (раньше это поле называлось **Тэг**), чтобы предоставить дополнительный контекст для внутреннего продукта приложения. Чаще всего используется форма строки XML, но вы можете ввести в это поле любые данные.
 
 Для запроса этого поля используйте свойство [StoreSku.CustomDeveloperData](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.storesku.customdeveloperdata.aspx) в [пространстве имен Windows.Services.Store](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx). (Либо, если вы используете [пространство имен Windows.ApplicationModel.Store](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx), используйте свойство [ProductListing.Tag](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.productlisting.tag.aspx).)
 
@@ -73,7 +70,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

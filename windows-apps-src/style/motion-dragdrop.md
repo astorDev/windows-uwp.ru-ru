@@ -5,12 +5,10 @@ title: "Анимации перетаскивания в приложениях 
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: e71b936be1649f8ede394b019369176c7e3ca631
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="drag-animations"></a>Анимации перетаскивания
 
 
@@ -55,7 +53,7 @@ ms.openlocfilehash: e71b936be1649f8ede394b019369176c7e3ca631
 -   Не используйте анимацию извлечения из области между объектами, если сначала не использовалась анимация размещения между объектами.
 
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 **Для разработчиков**
 * [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350)
@@ -69,11 +67,5 @@ ms.openlocfilehash: e71b936be1649f8ede394b019369176c7e3ca631
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 
