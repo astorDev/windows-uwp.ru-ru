@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c1decefe507ccebbaee1055426fbde06eb9670e7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4f3bb71d1aef8917e14514521393ef1ba7c782d1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessible-text-requirements"></a>Требования к специальным возможностям отображения текста  
 
 
@@ -30,7 +27,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="contrast-ratios"></a>Коэффициенты контрастности  
 Хотя у пользователей всегда есть возможность переключиться в режим высокой контрастности, с точки зрения дизайна текста в вашем приложении её стоит рассматривать как крайний шаг. Имеет смысл удостовериться, что текст вашего приложения соответствует рекомендациям по уровню контрастности между текстом и фоном. Оценка уровня контрастности основана на детерминированных методах, которые не учитывают оттенок цвета. Например, если у вас имеется красный текст на зеленом фоне, то этот текст может оказаться нечитабельным для людей, страдающих дальтонизмом. Проверка и исправление коэффициента контрастности поможет избежать подобных проблем.
 
-За основу приведенных здесь рекомендаций по контрастности текста взяты стандарты специальных возможностей в Интернете [G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](http://go.microsoft.com/fwlink/p/?linkid=221823). Данное руководство приведено в спецификации консорциума W3C *Методики для WCAG 2.0*.
+За основу приведенных здесь рекомендаций по контрастности текста взяты стандарты специальных возможностей в Интернете [G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](http://go.microsoft.com/fwlink/p/?linkid=221823). Данное руководство приведено в спецификации консорциума W3C *Методики для WCAG2.0*.
 
 Чтобы видимый текст соответствовал требованиям специальных возможностей, коэффициент его контрастности должен составлять не менее 4,5:1 по отношению к фону. В число исключений входят логотипы и несущественный текст, например текст, являющийся частью неактивного компонента пользовательского интерфейса.
 
@@ -39,7 +36,7 @@ ms.lasthandoff: 02/07/2017
 Проверьте допустимость контрастности видимого текста с помощью средств измерения цветового контраста. Сведения о средствах измерения коэффициента контрастности см. в разделе [Методики WCAG 2.0 G18 (Раздел ресурсов)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
 
 > [!NOTE]
-> Некоторые средства, перечисленные в методиках для WCAG 2.0 G18, нельзя интерактивно использовать с приложениями UWP. Вам может понадобиться вручную ввести значения цвета фона и переднего плана в средство или же сделать снимки экрана для пользовательского интерфейса вашего приложения и применить к ним средство измерения коэффициента контрастности.
+> Некоторые средства, перечисленные в методиках для WCAG2.0 G18, нельзя интерактивно использовать с приложениями UWP. Вам может понадобиться вручную ввести значения цвета фона и переднего плана в средство или же сделать снимки экрана для пользовательского интерфейса вашего приложения и применить к ним средство измерения коэффициента контрастности.
 
 <span id="Text_element_roles"/>
 <span id="text_element_roles"/>
@@ -47,9 +44,9 @@ ms.lasthandoff: 02/07/2017
 ## <a name="text-element-roles"></a>Роли текстового элемента  
 Приложение UWP может использовать следующие элементы по умолчанию (обычно они называются *текстовыми элементами* или *элементами управления Textedit*):
 
-* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652): роль — [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652): роль— [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 * [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683): роль — [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) (и класс переполнения [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)): роль — [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) (и класс переполнения [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)): роль— [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 * [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548): роль — [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 
 Когда элемент управления сообщает, что имеет роль [**Правка**](https://msdn.microsoft.com/library/windows/apps/BR209182), специальные возможности предполагают наличие у пользователей способов изменения этих значений. Поэтому если вы поместите статический текст в элемент [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), вы неправильно сообщите пользователю специальных возможностей о роли (а значит, и о структуре) вашего приложения.
@@ -128,7 +125,7 @@ _Пример без выделения по умолчанию_
 <span id="text_scale_factor"/>
 <span id="TEXT_SCALE_FACTOR"/>
 ## <a name="text-scale-factor"></a>Коэффициент масштабирования текста  
-Разные текстовые элементы и элементы управления имеют свойство [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled). По умолчанию оно имеет значение **true**. Если значение свойства — **true**, настройка **Масштабирование текста** на телефоне (в разделе **Параметры &gt; Специальные возможности**) позволяет увеличить размер текста в этом элементе. Масштабирование применяется к тексту с малым значением **FontSize** в большей степени, чем к тексту с большим значением **FontSize**. Чтобы отключить автоматическое увеличение шрифта, присвойте свойству **IsTextScaleFactorEnabled** элемента значение **false**. Попробуйте эту разметку, измените параметр телефона **Размер текста** и посмотрите, как изменятся элементы **TextBlock**.
+Разные текстовые элементы и элементы управления имеют свойство [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled). По умолчанию оно имеет значение **true**. Если значение свойства— **true**, настройка **Масштабирование текста** на телефоне (в разделе **Параметры &gt; Специальные возможности**) позволяет увеличить размер текста в этом элементе. Масштабирование применяется к тексту с малым значением **FontSize** в большей степени, чем к тексту с большим значением **FontSize**. Чтобы отключить автоматическое увеличение шрифта, присвойте свойству **IsTextScaleFactorEnabled** элемента значение **false**. Попробуйте эту разметку, измените параметр телефона **Размер текста** и посмотрите, как изменятся элементы **TextBlock**.
 
 XAML
 ```xml
@@ -175,5 +172,4 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [Основные сведения о специальных возможностях](basic-accessibility-information.md)
 * [Пример отображения текста XAML](http://go.microsoft.com/fwlink/p/?linkid=238579)
 * [Образец редактирования текста XAML](http://go.microsoft.com/fwlink/p/?linkid=251417)
-* [Пример реализации специальных возможностей в XAML](http://go.microsoft.com/fwlink/p/?linkid=238570) 
-
+* [Пример реализации специальных возможностей на XAML](http://go.microsoft.com/fwlink/p/?linkid=238570) 

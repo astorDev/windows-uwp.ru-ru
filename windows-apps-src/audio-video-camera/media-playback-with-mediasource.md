@@ -9,19 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1bab50aba53c96907151351c3b0fa81749ff2f88
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 667e418e78af3a7030dfca4310be498403f4966b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="media-items-playlists-and-tracks"></a>Элементы, списки воспроизведения и звуковые дорожки мультимедиа
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
- В этой статье показано, как использовать класс [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource), предоставляющий универсальный способ обращения к данным мультимедиа и их воспроизведения из различных источников (например, из локальных или удаленных файлов) и универсальную модель получения доступа к данным мультимедиа независимо от их формата. Класс [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) расширяет функциональные возможности класса **MediaSource**. Он позволяет выбирать необходимые дорожки звука, видео и метаданных в файле мультимедиа и управлять ими. [
-              Класс **MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) позволяет создавать списки воспроизведения из одного или нескольких элементов воспроизведения мультимедиа.
+ В этой статье показано, как использовать класс [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource), предоставляющий универсальный способ обращения к данным мультимедиа и их воспроизведения из различных источников (например, из локальных или удаленных файлов) и универсальную модель получения доступа к данным мультимедиа независимо от их формата. Класс [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) расширяет функциональные возможности класса **MediaSource**. Он позволяет выбирать необходимые дорожки звука, видео и метаданных в файле мультимедиа и управлять ими. Класс [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) позволяет создавать списки воспроизведения из одного или нескольких элементов воспроизведения мультимедиа.
 
 
 ## <a name="create-and-play-a-mediasource"></a>Создание и воспроизведение MediaSource
@@ -37,7 +33,7 @@ ms.lasthandoff: 02/07/2017
 -   [**CreateFromStreamReference**](https://msdn.microsoft.com/library/windows/apps/dn930911)
 -   [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912)
 
-Созданный экземпляр **MediaSource** можно воспроизводить с помощью класса [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535), задав свойство [**Источник**](https://msdn.microsoft.com/library/windows/apps/dn987010). Начиная c Windows 10 версии 1607, можно назначить класс **MediaPlayer** классу [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement), вызвав метод [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764), чтобы отобразить содержимое проигрывателя мультимедиа на странице XAML. Этот метод является предпочтительным по сравнению с использованием класса **MediaElement**. Дополнительные сведения об использовании класса **MediaPlayer** см. в разделе [**Воспроизведение аудио и видео с помощью класса MediaPlayer**](play-audio-and-video-with-mediaplayer.md).
+Созданный экземпляр **MediaSource** можно воспроизводить с помощью класса [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535), задав свойство [**Источник**](https://msdn.microsoft.com/library/windows/apps/dn987010). Начиная c Windows10 версии 1607, можно назначить класс **MediaPlayer** классу [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement), вызвав метод [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764), чтобы отобразить содержимое проигрывателя мультимедиа на странице XAML. Этот метод является предпочтительным по сравнению с использованием класса **MediaElement**. Дополнительные сведения об использовании класса **MediaPlayer** см. в разделе [**Воспроизведение аудио и видео с помощью класса MediaPlayer**](play-audio-and-video-with-mediaplayer.md).
 
 В следующем примере показано, как воспроизвести выбранный пользователем файл мультимедиа в классе **MediaPlayer** с помощью **MediaSource**.
 
@@ -123,7 +119,7 @@ ms.lasthandoff: 02/07/2017
 При обработке дорожек метаданных можно получить доступ к набору подсказок, находящихся в дорожке, с помощью свойств [**Cues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.Cues) или [**ActiveCues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.ActiveCues). Это можно сделать, чтобы обновить ваш пользовательский интерфейс и отображать в нем расположения подсказок для элемента мультимедиа.
 
 ## <a name="handle-unsupported-codecs-and-unknown-errors-when-opening-media-items"></a>Обработка неподдерживаемых кодеков и неизвестных ошибок при открытии элементов мультимедиа
-Начиная c Windows 10 версии 1607, можно проверить, поддерживается ли кодек, необходимый для воспроизведения элемента мультимедиа, полностью или частично на устройстве, на котором выполняется приложение. Если речь идет об обработчике событий изменения дорожек **MediaPlaybackItem**, таких как [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged), сначала проверьте, не является ли изменение дорожки вставкой новой дорожки. В этом случае можно получить ссылку на дорожку, вставляемую с использованием индекса, который передается в параметре **IVectorChangedEventArgs.Index** с соответствующей коллекцией дорожек параметра **MediaPlaybackItem**, например коллекцией [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks).
+Начиная c Windows10 версии 1607, можно проверить, поддерживается ли кодек, необходимый для воспроизведения элемента мультимедиа, полностью или частично на устройстве, на котором выполняется приложение. Если речь идет об обработчике событий изменения дорожек **MediaPlaybackItem**, таких как [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged), сначала проверьте, не является ли изменение дорожки вставкой новой дорожки. В этом случае можно получить ссылку на дорожку, вставляемую с использованием индекса, который передается в параметре **IVectorChangedEventArgs.Index** с соответствующей коллекцией дорожек параметра **MediaPlaybackItem**, например коллекцией [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks).
 
 Получив ссылку на вставляемую дорожку, проверьте значение [**DecoderStatus**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrackSupportInfo.DecoderStatus) свойства [**SupportInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.SupportInfo) дорожки. Если установлено значение [**FullySupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), то соответствующий кодек, необходимый для воспроизведения дорожки, присутствует на устройстве. Если установлено значение [**Degraded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), дорожку можно воспроизвести в системе, однако качество воспроизведения так или иначе ухудшится. Например, звуковая дорожка 5.1 может воспроизводиться как 2-канальное стерео. В этом случае имеет смысл обновить свой пользовательский интерфейс, чтобы оповестить пользователя об ухудшении качества воспроизведения. Если установлено значение [**UnsupportedSubtype**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) или [**UnsupportedEncoderProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), то с установленными на устройстве кодеками воспроизвести дорожку невозможно. Возможно, следует предупредить пользователя и пропустить воспроизведение элемента или внедрить пользовательский интерфейс, позволяющий загрузить нужный кодек. Метод [**GetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.GetEncodingProperties) дорожки можно использовать для определения требуемого кодека для воспроизведения.
 
@@ -230,5 +226,4 @@ ms.lasthandoff: 02/07/2017
 * [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Интеграция с системными элементами управления транспортировкой мультимедиа](integrate-with-systemmediatransportcontrols.md)
 * [Воспроизведение мультимедиа в фоновом режиме](background-audio.md)
-
 

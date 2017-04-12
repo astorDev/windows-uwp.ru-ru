@@ -9,16 +9,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b14f1a0fc77a8b7df241afbb92f4db223545d81f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 67c2f808050547f5a56cbeb4e1087cdf3555727d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="send-email"></a>Отправка сообщения электронной почты
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В данной статье рассказывается, как запустить диалоговое окно составления электронного письма, с помощью которого пользователь может отправить электронное письмо. Перед отображением диалогового окна вы можете заполнить поля сообщения значениями по умолчанию. Сообщение не будет отправлено до тех пор, пока пользователь не нажмет кнопку отправки.
@@ -27,7 +24,7 @@ ms.lasthandoff: 02/07/2017
 
 -   [Запуск диалогового окна составления электронного письма](#launch-the-compose-email-dialog)
 -   [Сводка и дальнейшие действия](#summary-and-next-steps)
--   [Связанные разделы](#related-topics)
+-   [Еще по теме](#related-topics)
 
 ## <a name="launch-the-compose-email-dialog"></a>Запуск диалогового окна составления электронного письма
 
@@ -68,14 +65,13 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 
 В данной статье рассказано, как запустить диалоговое окно составления электронного письма. Сведения о том, как выбрать контакты-получатели электронного письма, см. в статье [Выбор контактов](selecting-contacts.md). См. [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) для выбора файла в качестве вложения в сообщение.
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [Выбор контактов](selecting-contacts.md)
 * [Как продолжить работу приложения для Windows Phone после вызова средства выбора файлов](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
  
 
  
-
 
 
 

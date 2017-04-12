@@ -9,19 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2c477e9dc0cc86534a179edb8e3a9415f4872d93
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0973195b8777a0154b733ba2625327bb9296bd6b
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="supported-codecs"></a>Поддерживаемые кодеки
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-В этой статье перечисляются аудио-, видеокодеки, кодеки изображений и форматы, поддерживаемые в приложениях UWP.
+В этой статье содержатся сведения о доступности кодеков и форматов аудио, видео и изображений для приложений UWP по умолчанию для каждого семейства устройств. Обратите внимание, что в этих таблицах перечислены кодеки, которые включены в установку Windows 10 для указанного семейства устройств. Пользователи и приложения могут устанавливать дополнительные кодеки, которые могут быть доступны для использования. Вы можете запросить в среде выполнения набор кодеков, которые в настоящее время доступны для конкретного устройства. Дополнительные сведения см. в разделе [Запрос кодеков, установленных на устройстве](codec-query.md).
 
 В следующих таблицах буква "D" указывает на поддержку декодера, а буква "E" — на поддержку кодировщика.
 
@@ -86,7 +83,7 @@ ms.lasthandoff: 02/07/2017
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1004,7 +1001,7 @@ ms.lasthandoff: 02/07/2017
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1019,7 +1016,7 @@ ms.lasthandoff: 02/07/2017
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2760,7 +2757,7 @@ ms.lasthandoff: 02/07/2017
 </table>
 
 <sup>1</sup> Поддерживаются изображения DDS, использующие сжатие с BC1 по BC5.  
-<sup>2</sup> Поддерживаются изображения DNG с встроенным предварительным просмотром, отличным от формата RAW.  
-<sup>3</sup> Поддерживаются только некоторые форматы camera RAW.  
+<sup>2</sup> Поддерживаются изображения DNG со встроенным предварительным просмотром, отличным от формата RAW.  
+<sup>3</sup> Поддерживаются только некоторые форматы RAW камер.  
 
 Дополнительные сведения о кодеках изображений см. в разделе [Собственные кодеки WIC](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx).

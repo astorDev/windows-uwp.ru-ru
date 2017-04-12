@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f399007426f5a973a06d473ef98a9eb7e24184dd
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8ba90e1538962fdb7ef1434698ea52845713c634
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="media-casting"></a>Трансляция мультимедиа
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи по Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье показано, как транслировать мультимедиа в удаленные устройства из универсального приложения для Windows.
@@ -74,7 +71,7 @@ ms.lasthandoff: 02/07/2017
 
 [!code-cs[CastPickerButtonClick](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastPickerButtonClick)]
 
-В обработчике события **CastingDeviceSelected** вызовите метод [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) свойства [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) аргументов события, которое обозначает выбранное пользователем транслирующее устройство. Зарегистрируйте обработчики для событий [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) и [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523). Вызовите метод [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520), чтобы начать трансляцию, передавая результат методу [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) объекта **MediaPlayer** элемента управления **MediaPlayerElement**, чтобы указать, что транслируемое мультимедиа — это содержимое объекта **MediaPlayer**, связанного с объектом **MediaPlayerElement**.
+В обработчике события **CastingDeviceSelected** вызовите метод [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) свойства [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) аргументов события, которое обозначает выбранное пользователем транслирующее устройство. Зарегистрируйте обработчики для событий [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) и [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523). Вызовите метод [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520), чтобы начать трансляцию, передавая результат методу [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) объекта **MediaPlayer** элемента управления **MediaPlayerElement**, чтобы указать, что транслируемое мультимедиа— это содержимое объекта **MediaPlayer**, связанного с объектом **MediaPlayerElement**.
 
 > [!NOTE] 
 > Подключение к трансляции должно быть инициировано в потоке пользовательского интерфейса. Так как поток пользовательского интерфейса не вызывает **CastingDeviceSelected**, вам необходимо разместить эти вызовы внутри вызова [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317), который вызовет их в потоке пользовательского интерфейса.
@@ -160,7 +157,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

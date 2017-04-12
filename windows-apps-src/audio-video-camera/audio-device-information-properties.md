@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 647a0228299e90026307fdd516ac71da2473ff0d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0992c0fc3c6fe9d70b7867275d28e6bba78171ab
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="audio-device-information-properties"></a>Свойства сведений о звуковых устройствах
 
 В этой статье перечислены свойства сведений об устройствах, связанные со звуковыми устройствами. В Windows с каждым аппаратным устройством связаны свойства [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393), содержащие подробные сведения об устройстве. Вы можете использовать их для получения определенной информации об устройстве или при создании средства выбора устройств. Общие сведения о перечислении устройств в Windows можно найти в разделах [Перечисление устройств](../devices-sensors/enumerate-devices.md) и [Свойства сведений об устройствах](../devices-sensors/device-information-properties.md).
@@ -29,13 +26,12 @@ ms.lasthandoff: 02/07/2017
 |**System.Devices.AudioDevice.RawProcessingSupported**|Логическое|Указывает, поддерживает ли звуковое устройство обработку необработанных данных.|
 |**System.Devices.MicrophoneArray.Geometry**|неподписанный символ[]|Геометрические данные для набора микрофонов.|
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Еще по теме
 
 * [Перечисление устройств](../devices-sensors/enumerate-devices.md)
 * [Свойства сведений об устройствах](../devices-sensors/device-information-properties.md)
 * [Создание средства выбора устройств](../devices-sensors/build-a-device-selector.md)
 * [Воспроизведение мультимедиа](media-playback.md)
-
 
 
 

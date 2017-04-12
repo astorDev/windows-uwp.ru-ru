@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ac1a9b38a9857ae536025e682f98d01135850a19
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e308280fcecf825061ddf503ce91f8607fcece72
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="take-a-test-javascript-api"></a>API JavaScript для приложения "Тестирование"
 
 [Тестирование](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) — это браузерное приложение, отображающие защищенные онлайн-тесты для проведения важных тестирований. Оно поддерживает стандарт API браузера SBAC для проведения важных тестов по основным предметам и позволяет сосредоточиться на содержимом теста, а не на поиске способов заблокировать доступ в Windows.
@@ -87,7 +84,7 @@ Windows 10 версии 1607
 `None`
 
 **Требования**  
-Windows 10 версии 1607
+Windows10 версии 1607
 
 ---
 
@@ -105,7 +102,7 @@ Windows 10 версии 1607
 `None`
 
 **Требования**  
-Windows 10 версии 1607
+Windows10 версии 1607
 
 ---
 
@@ -176,7 +173,7 @@ Windows 10 версии 1607
 `True indicates that the lockdown context is applied to the device; otherwise false.`
 
 **Требования**  
-Windows 10 версии 1607
+Windows10 версии 1607
 
 ---
 
@@ -320,4 +317,3 @@ Windows 10 версии 1607
 
 **Требования**  
 Windows 10 версии 1607
-

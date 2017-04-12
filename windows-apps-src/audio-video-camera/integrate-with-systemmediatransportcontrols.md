@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 166e63659d138db2c4a6c49f11a2277eae790529
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ca8910129ba0993597be905a24fb5b2c5c4061a4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="integrate-with-the-system-media-transport-controls"></a>Интеграция с системными элементами управления транспортировкой мультимедиа
 
-В этой статье показано, как взаимодействовать с системными элементами управления транспортировкой мультимедиа (SMTC). SMTC — это набор элементов управления, общих для всех устройств с Windows 10 и предоставляющих пользователям единый способ управления воспроизведением мультимедиа во всех выполняемых приложениях, использующих [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) для воспроизведения.
+В этой статье показано, как взаимодействовать с системными элементами управления транспортировкой мультимедиа (SMTC). SMTC— это набор элементов управления, общих для всех устройств с Windows 10 и предоставляющих пользователям единый способ управления воспроизведением мультимедиа во всех выполняемых приложениях, использующих [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) для воспроизведения.
 
 Полный пример интеграции с SMTC см. в [примере системных элементов управления транспортировкой мультимедиа на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls).
                     
@@ -86,7 +83,6 @@ ms.lasthandoff: 02/08/2017
  
 
  
-
 
 
 

@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "Поле ввода пароля — это текстовое поле, в котором вводимые символы скрыты в целях безопасности."
+Description: "Поле ввода пароля— это текстовое поле, в котором вводимые символы скрыты в целях безопасности."
 title: "Руководство по полям паролей"
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
@@ -12,17 +12,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1f4af88235615226954f5a8ca7fd038568d08012
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0dee750042edc3c80c993d29c2f6f29cf6b2a130
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="password-box"></a>Поле ввода пароля
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Поле ввода пароля — это текстовое поле, в котором вводимые символы скрыты в целях безопасности. Поле ввода пароля внешне похоже на текстовое поле с той разницей, что в нем вместо вводимого текста отображаются подстановочные символы. Вы можете выбрать необходимый знак заполнителя.
+Поле ввода пароля— это текстовое поле, в котором вводимые символы скрыты в целях безопасности. Поле ввода пароля внешне похоже на текстовое поле с той разницей, что в нем вместо вводимого текста отображаются подстановочные символы. Вы можете выбрать необходимый знак заполнителя.
 
 По умолчанию поле ввода пароля предоставляет пользователю возможность просмотреть свой пароль, удерживая кнопку показа. Можно отключить кнопку показа либо предоставить альтернативный механизм отображения пароля, например флажок.
 
@@ -186,9 +184,9 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
-[Элементы управления текстом](text-controls.md)
+[Текстовые элементы управления](text-controls.md)
 
 - [Руководство по проверке орфографии](spell-checking-and-prediction.md)
 - [Добавление поиска](https://msdn.microsoft.com/library/windows/apps/hh465231)
@@ -196,4 +194,3 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 - [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Класс Windows.UI.Xaml.Controls PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
-

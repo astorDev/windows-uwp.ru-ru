@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8c8defd41ea1b65ac78d159b52eea926c7252e9e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cf46cefc6491178444a13917a3ce2b0ffb73c19a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>Установка формата, разрешения и частоты кадров для MediaCapture
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье рассказывается, как с помощью интерфейса [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) задать разрешение и частоту кадров потока предварительного просмотра камеры, а также снятых фотографий и видео. Кроме того, здесь рассказывается, как обеспечить соответствие пропорций потока предварительного просмотра пропорциям записи мультимедиа.
@@ -90,7 +87,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

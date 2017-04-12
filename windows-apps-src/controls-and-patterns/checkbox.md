@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: aeac6f2326fa7a80f8d90f1c10333933fa562a00
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7e00ac2aa08033292ba8d3ce1cebe836fdc3808c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="check-boxes"></a>Флажки
 
@@ -299,11 +297,10 @@ private void SetCheckedState()
     ![Переключатель с тремя вариантами: "Без специй", "Со специями" и "Много специй".](images/spicyoptions.png)
 
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 -   [**Класс CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 
 -   [Переключатели](radio-button.md)
 -   [Тумблер](toggles.md)
-
 
 

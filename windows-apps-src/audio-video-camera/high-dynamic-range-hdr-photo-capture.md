@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e4ed8175e0f35733972474bbcc01cce9830f1e5b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 32badfb6cc2a069370623357ba96800cebd11c03
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>Фотозахват с расширенным динамическим диапазоном (HDR) и в условиях низкой освещенности
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье показано, как использовать класс [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) для фотозахвата с расширенным динамическим диапазоном (HDR). Кроме того, этот API дает возможность получить опорный кадр из захвата HDR, прежде чем завершить обработку окончательного изображения.
@@ -103,7 +100,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="receive-a-notification-when-all-frames-have-been-captured"></a>Получение уведомления после захвата всех кадров
 
-Фотозахват с технологией HDR предполагает два шага. Сначала захватывается несколько кадров, а затем кадры обрабатываются и создается окончательное HDR-изображение. Инициировать другой захват во время захвата исходных кадров HDR нельзя. Однако это можно сделать после захвата всех кадров, но до завершающей обработки HDR. Событие [**AllPhotosCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181387) возникает после завершения захвата HDR, уведомляя вас о том, что вы можете инициировать другой захват. Обычный сценарий — отключить кнопку захвата пользовательского интерфейса в начале захвата с HDR, а затем снова включить ее при вызове **AllPhotosCaptured**.
+Фотозахват с технологией HDR предполагает два шага. Сначала захватывается несколько кадров, а затем кадры обрабатываются и создается окончательное HDR-изображение. Инициировать другой захват во время захвата исходных кадров HDR нельзя. Однако это можно сделать после захвата всех кадров, но до завершающей обработки HDR. Событие [**AllPhotosCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181387) возникает после завершения захвата HDR, уведомляя вас о том, что вы можете инициировать другой захват. Обычный сценарий— отключить кнопку захвата пользовательского интерфейса в начале захвата с HDR, а затем снова включить ее при вызове **AllPhotosCaptured**.
 
 [!code-cs[AllPhotosCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAllPhotosCaptured)]
 
@@ -152,7 +149,7 @@ ms.lasthandoff: 02/07/2017
 
 [!code-cs[SoftwareBitmapFromCapturedFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmapFromCapturedFrame)]
 
-Единственный формат кодирования, поддерживающий свойство **SoftwareBitmap** для **AdvancedPhotoCapture**, в этом выпуске — это несжатый NV12. Поэтому если требуется использовать эту функцию, необходимо задать эту кодировку при вызове метода [**PrepareAdvancedPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181403). 
+Единственный формат кодирования, поддерживающий свойство **SoftwareBitmap** для **AdvancedPhotoCapture**, в этом выпуске— это несжатый NV12. Поэтому если требуется использовать эту функцию, необходимо задать эту кодировку при вызове метода [**PrepareAdvancedPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181403). 
 
 [!code-cs[UncompressedNv12](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUncompressedNv12)]
 
@@ -173,4 +170,3 @@ ms.lasthandoff: 02/07/2017
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-

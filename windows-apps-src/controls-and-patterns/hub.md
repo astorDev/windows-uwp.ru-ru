@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 32a558866457c4a9e9a359f12d43af317fc0f84a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: df2ed32801cbf1377e72b10aac0049575528408c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="hub-controlpattern"></a>Шаблон/элемент управления "Главный раздел"
 
@@ -64,7 +62,7 @@ ms.lasthandoff: 02/07/2017
 
     Если вы хотите сохранить плоскую архитектуру своего приложения, вы можете разместить все содержимое канала в сводке по главному разделу.
 
-Главный раздел — это только один из нескольких элементов навигации, которые можно использовать. Дополнительные сведения о шаблонах и других элементах навигации см. в статье [Основы проектирования навигации в приложениях универсальной платформы Windows (UWP)](../layout/navigation-basics.md).
+Главный раздел— это только один из нескольких элементов навигации, которые можно использовать. Дополнительные сведения о шаблонах и других элементах навигации см. в статье [Основы проектирования навигации в приложениях универсальной платформы Windows (UWP)](../layout/navigation-basics.md).
 
 ## <a name="hub-architecture"></a>Архитектура элемента управления "Главный раздел"
 
@@ -121,10 +119,9 @@ ms.lasthandoff: 02/07/2017
 * [Основы создания пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 - [Класс Hub](https://msdn.microsoft.com/library/windows/apps/dn251843)
 - [Основы навигации](../layout/navigation-basics.md)
 - [Использование главного раздела](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
 - [Пример элемента управления "Главный раздел" на языке XAML](http://go.microsoft.com/fwlink/p/?LinkID=310072)
-

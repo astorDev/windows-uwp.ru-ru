@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: abeadc4fe27858afcdddfeff08362fff69ce713b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 1750a75657affc0d7557afe393084f88630a7366
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="develop-universal-windows-apps-for-education"></a>Разработка образовательных универсальных приложений для Windows
 ![снимок экрана приложения для тестирования](images/take-a-test-screen-small.png)
 
@@ -43,6 +40,5 @@ ms.lasthandoff: 02/08/2017
 ### <a name="windows-store"></a>Магазин Windows
 Довольно часто образовательные приложения выпускаются для определенной организации с особыми условиями. Сведения об этом можно найти в разделе [Распространение бизнес-приложений для предприятий](https://msdn.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 - [Windows 10 для образовательных учреждений](https://technet.microsoft.com/edu/windows/index) в ИТ-центре Windows
-

@@ -12,11 +12,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: b14f83d9e834fcefbb3f9d1f9870f81686b44084
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 6dc3c9d15ebbda67dd055adb4b9d5548b6ac81e3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="app-bar-and-command-bar"></a>Панель приложения и панель команд
 
@@ -67,8 +65,7 @@ XAML одновременно поддерживает элементы упра
 ![Закрытая панель команд](images/commandbar_anatomy_open.png)
 
 Панель команд разделена на четыре основных области:
-- Кнопка "Дополнительно" (\[•••\]) отображается в правой части панели. Кнопка "Дополнительно" \[•••\] выполняет две функции: отображает подписи на кнопках основных команд и открывает меню переполнения, если присутствуют второстепенные команды. В последнем SDK эта кнопка не будет видна при отсутствии второстепенных команд и скрытых подписей. [
-              Свойство **OverflowButtonVisibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) позволяет приложениям изменять это предусмотренное по умолчанию поведение с автоматическим скрытием.
+- Кнопка "Дополнительно" (\[•••\]) отображается в правой части панели. Кнопка "Дополнительно" \[•••\] выполняет две функции: отображает подписи на кнопках основных команд и открывает меню переполнения, если присутствуют второстепенные команды. В последнем SDK эта кнопка не будет видна при отсутствии второстепенных команд и скрытых подписей. Свойство [**OverflowButtonVisibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) позволяет приложениям изменять это предусмотренное по умолчанию поведение с автоматическим скрытием.
 - Область содержимого находится в левой части панели. Она отображается, если заполнено значение свойства [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx).
 - Область главных команд выровнена по правому краю панели и расположена рядом с кнопкой "Дополнительно" (\[•••\]). Она отображается, если заполнено значение свойства [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx).  
 - Меню переполнения отображается, только когда панель команд открыта и заполнено значение свойства [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx). С новым поведением динамического переполнения основные команды будут автоматически перемещаться в область SecondaryCommands, если пространство ограничено.
@@ -114,7 +111,7 @@ XAML одновременно поддерживает элементы упра
 При необходимости можно перемещать команды между областями PrimaryCommands и SecondaryCommands программным путем. 
 
 <div class="microsoft-internal-note">
-Команды также могут автоматически перемещаться в область переполнения и из нее при изменении ширины панели команд, например, если пользователь меняет размер окна приложения. Динамическое переполнение включено по умолчанию, однако приложения могут отключать это поведение, изменяя значение свойства `IsDynamicOverflowEnabled`.
+Команды также могут автоматически перемещаться в область переполнения и из нее при изменении ширины панели команд,например, если пользователь меняет размер окна приложения. Динамическое переполнение включено по умолчанию, однако приложения могут отключать это поведение, изменяя значение свойства `IsDynamicOverflowEnabled`.
 </div>
 
 ### <a name="app-bar-buttons"></a>Кнопки панели приложения
@@ -305,8 +302,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 * [Пример команд](http://go.microsoft.com/fwlink/p/?LinkId=620019)
 * [Пример основных элементов пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 * [Основы проектирования команд в приложениях UWP](../layout/commanding-basics.md)
 * [**Класс CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
-

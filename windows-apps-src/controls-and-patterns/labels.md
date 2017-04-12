@@ -11,17 +11,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54610e29b0fcaa8b7e90cf00676098a2ea50b827
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b14c775896984095f580aed8cf41d010f408f67e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="labels"></a>Метки
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Метка — это имя или название элемента управления или группы связанных элементов.
+Метка— это имя или название элемента управления или группы связанных элементов.
 
 <div class="important-apis" >
 <b>Важные API</b><br/>
@@ -51,7 +49,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="get-the-sample-code"></a>Получить пример кода
 * [Основы создания пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 * [Элементы управления текстом](text-controls.md)
 
 **Для разработчиков**
@@ -68,7 +66,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

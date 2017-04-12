@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 7646cce8c8aafcb881e825be1ad134ad682c362a
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 8c41f85c7d49d9019a2dc3a94242271a6fa9eb9a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="process-media-frames-with-mediaframereader"></a>Обработка кадров мультимедиа с помощью MediaFrameReader
 
 В этой статье рассказывается, как использовать класс [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) с [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) для получения кадров мультимедиа из одного или нескольких доступных источников, включая цветные камеры, камеры с эффектом глубины, инфракрасные камеры, звуковые устройства и даже специальные источники кадров, например создающие скелетные кадры отслеживания. Эта возможность предназначена для использования приложениями, которые выполняют обработку кадров мультимедиа в режиме реального времени, например приложениями дополненной реальности или камеры с эффектом глубины.
@@ -159,7 +156,7 @@ ms.lasthandoff: 02/08/2017
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -167,7 +164,6 @@ ms.lasthandoff: 02/08/2017
  
 
  
-
 
 
 

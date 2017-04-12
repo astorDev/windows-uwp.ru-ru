@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a03953885179cf8e969e3b35a426aa958c528f54
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f0fd2e03c58ac5ffa575cf2381df4c652422efea
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility-overview"></a>Обзор специальных возможностей  
 
 
@@ -179,10 +176,9 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>Поддержка специальных возможностей в приложениях, поддерживающих межпрограммное взаимодействие XAML и Microsoft DirectX  
 Содержимое Microsoft DirectX, размещенное в пользовательском интерфейсе XAML (с помощью [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) или [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)), по умолчанию не поддерживает специальные возможности. [Образец межпрограммного взаимодействия XAML SwapChainPanel DirectX](http://go.microsoft.com/fwlink/p/?LinkID=309155) показывает, как создать одноранговые элементы автоматизации пользовательского интерфейса для содержимого DirectX. Этот метод обеспечивает доступ к такому содержимому для модели автоматизации пользовательского интерфейса.
 
-<span id="related_topics"/>
 ## <a name="related-topics"></a>Связанные темы  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 * [Рекомендации по специальным возможностям](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [Пример реализации специальных возможностей на XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Специальные возможности](accessibility.md)
-
+* [Начало работы с экранным диктором](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)

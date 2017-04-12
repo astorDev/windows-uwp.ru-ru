@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: aa53060a281a452d47461602866d1b67edc161aa
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 33a8b62a378e4a9abe20be04a49c94d886144cc5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="radio-buttons"></a>Переключатели
 
@@ -182,7 +180,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 На этой иллюстрации показано, как правильно расположить переключатели.
 
 ![Набор переключателей](images/radiobutton_layout1.png)
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 
 **Проектировщикам**
 - [Руководство по кнопкам](buttons.md)
@@ -196,4 +194,3 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 **Разработчикам (XAML)**
 - [**Класс переключателей Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227544)
-

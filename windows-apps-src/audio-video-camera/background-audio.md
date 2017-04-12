@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6251ff13e6cc751ad370a43950cfdbb9dca0ecc8
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 148bb77f9386864a1b127341aa875beb7123bae9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="play-media-in-the-background"></a>Воспроизведение мультимедиа в фоновом режиме
 В этой статье показано, как настроить приложение, чтобы воспроизведение мультимедиа продолжалось, когда приложение переходит в фоновый режим. Это значит, что даже после того, как пользователь свернет приложение, вернется на начальный экран или выйдет из приложения другим способом, ваше приложение продолжит воспроизводить звук. 
 
@@ -89,8 +86,7 @@ ms.lasthandoff: 02/08/2017
 Самая важная часть обработки перехода между фоном и передним планом — управление памятью, которую использует ваше приложение. Так как в фоновом режиме объем ресурсов памяти, доступных приложению, уменьшается, вы также должна зарегистрироваться для прослушивания событий [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) и [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging). Когда эти события возникают, следует сравнить текущий объем памяти, занимаемой приложением, с текущим ограничением и при необходимости уменьшить его. Сведения об уменьшении объема используемой памяти в фоновом режиме см. в разделе [Освобождение памяти при переходе приложения в фоновый режим](../launch-resume/reduce-memory-usage.md).
 
 ## <a name="network-availability-for-background-media-apps"></a>Доступность сети для мультимедиа-приложений в фоновом режиме
-Все источники мультимедиа, использующие сеть и не созданные из потока или файла, сохраняют активное подключение при получении удаленного содержимого, и отключают его в противном случае. [
-              В частности, **MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource) ждет, что приложение будет предоставлять буферизированный диапазон платформе с помощью [**SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762). После полной буферизации всего содержимого сеть больше не будет зарезервирована со стороны приложения.
+Все источники мультимедиа, использующие сеть и не созданные из потока или файла, сохраняют активное подключение при получении удаленного содержимого, и отключают его в противном случае. В частности, [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource) ждет, что приложение будет предоставлять буферизированный диапазон платформе с помощью [**SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762). После полной буферизации всего содержимого сеть больше не будет зарезервирована со стороны приложения.
 
 Если вам необходимо выполнить сетевые вызовы, которые будут происходить в фоновом режиме, когда мультимедиа не загружается, для них необходимо создать оболочку в соответствующей задаче, такой как [**ApplicationTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.ApplicationTrigger), [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) или [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger). Дополнительные сведения см. в разделе [Поддержка приложения с помощью фоновых задач](https://msdn.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
@@ -103,7 +99,6 @@ ms.lasthandoff: 02/08/2017
  
 
  
-
 
 
 

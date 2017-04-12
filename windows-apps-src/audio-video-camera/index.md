@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2d3b61b35307536bc54f19b5857acfe946a010ce
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4264912469d1da56d980b50575926ecf105e1f97
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="audio-video-and-camera"></a>Звук, видео и камера
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе содержатся сведения о создании приложений для универсальной платформы Windows (UWP), которые записывают, воспроизводят или редактируют фотографии, видео или аудио.
  
@@ -49,7 +46,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

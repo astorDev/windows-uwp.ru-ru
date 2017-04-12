@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 861ec2823080192a5b2d9b557af14ca5e3ab43fb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f7bd47c4c8ae7ce5515e3c53571655fd32d36e1a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adaptive-streaming-with-playready"></a>Адаптивная потоковая передача с защитой PlayReady
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этой статье описывается, как добавить возможности адаптивной потоковой передачи мультимедийного содержимого с защитой Microsoft PlayReady в приложение универсальной платформы Windows (UWP). 
 
@@ -301,7 +298,6 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 ## <a name="see-also"></a>См. также
 - [PlayReady DRM](playready-client-sdk.md)
-
 
 
 

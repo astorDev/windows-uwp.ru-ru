@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6ff820d49ef6fe788a44822d8f966ce54b2730ae
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ed43df4e1702064fbff0bd2f6fa4e4d736edc48c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="progress-controls"></a>Элементы управления "Ход выполнения"
 
@@ -171,7 +169,7 @@ progressRing.IsActive = true;
 Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Wait, 10);
 ```
 
-## <a name="related-articles"></a>Статьи по теме
+## <a name="related-articles"></a>Еще по теме
 
 
 - [**Класс ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529)
@@ -180,4 +178,3 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 **Для разработчиков (XAML)**
 - [Добавление индикаторов хода выполнения](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
 - [Как создать собственный неопределенный индикатор выполнения для Windows Phone](http://go.microsoft.com/fwlink/p/?LinkID=392426)
-

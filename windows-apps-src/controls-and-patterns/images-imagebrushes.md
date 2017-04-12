@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "Узнайте, как интегрировать изображения с приложением, в том числе как использовать API двух основных классов XAML — Image и ImageBrush."
+Description: "Узнайте, как интегрировать изображения в приложение, в том числе как использовать API двух основных классов XAML— Image и ImageBrush."
 title: "Изображения и кисти изображений"
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6bbde4da0b580c07ed189b96ec84ed50a77a5363
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c1f34e29c3d62f637933f0c1eb9bcbab9bd8edc9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="images-and-image-brushes"></a>Изображения и кисти изображений
 
@@ -89,7 +87,7 @@ ms.lasthandoff: 02/07/2017
 
 С помощью свойства [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) можно вырезать область отображаемого изображения. Вы задаете свойство Clip в [**Geometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.geometry.aspx). Вырезание областей непрямоугольной формы в настоящее время не поддерживается.
 
-В следующем примере показано, как можно использовать класс [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) для вырезания области изображения. В этом примере мы определяем объект **Image** со значением высоты 200. Объект **RectangleGeometry** определяет прямоугольную область для отображаемого изображения. Для свойства [**Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) задано значение "25,25,100,150", которое определяет начало прямоугольника в точке "25,25" с шириной 100 и высотой 150. Отображается только та часть изображения, которая попадает в область прямоугольника.
+В следующем примере показано, как можно использовать класс [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) для вырезания области изображения. В этом примере мы определяем объект **Image** со значением высоты 200. Объект **RectangleGeometry** определяет прямоугольную область для отображаемого изображения. Для свойства [**Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) задано значение "25,25,100,150", которое определяет начало прямоугольника в точке "25,25" с шириной100 и высотой150. Отображается только та часть изображения, которая попадает в область прямоугольника.
 
 ```xaml
 <Image Source="licorice.jpg" Height="200">
@@ -105,7 +103,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="apply-an-opacity"></a>Применение непрозрачности
 
-Вы можете применить к изображению свойство [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx), что позволяет отрисовать его полупрозрачным. Значения непрозрачности варьируют от 0,0 до 1,0, где 1,0 — полная непрозрачность, а 0,0 — полная прозрачность. В этом примере показано, как можно применить непрозрачность 0,5 к объекту Image.
+Вы можете применить к изображению свойство [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx), что позволяет отрисовать его полупрозрачным. Значения непрозрачности варьируют от 0,0 до 1,0, где 1,0— полная непрозрачность, а 0,0— полная прозрачность. В этом примере показано, как можно применить непрозрачность 0,5 к объекту Image.
 
 ```xaml
 <Image Height="200" Source="licorice.jpg" Opacity="0.5" />
@@ -127,7 +125,7 @@ ms.lasthandoff: 02/07/2017
 -   JPEG XR
 -   значки (ICO)
 
-API для [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx), [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) и [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) не включают специальные методы для кодирования и декодирования форматов мультимедиа. Все операции кодирования и декодирования — встроенные, и только некоторые аспекты кодирования и декодирования могут быть включены в данные для событий загрузки. Если приложение выполняет преобразования изображений или манипуляции с ними, вам следует использовать API, доступные в пространстве имен [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.graphics.imaging.aspx), при выполнении каких-либо действий по кодированию или декодированию изображений. Кроме того, эти API поддерживаются компонентом обработки изображений Windows (WIC) в Windows.
+API для [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx), [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) и [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) не включают специальные методы для кодирования и декодирования форматов мультимедиа. Все операции кодирования и декодирования— встроенные, и только некоторые аспекты кодирования и декодирования могут быть включены в данные для событий загрузки. Если приложение выполняет преобразования изображений или манипуляции с ними, вам следует использовать API, доступные в пространстве имен [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.graphics.imaging.aspx), при выполнении каких-либо действий по кодированию или декодированию изображений. Кроме того, эти API поддерживаются компонентом обработки изображений Windows (WIC) в Windows.
 
 Начиная с Windows 10 версии 1607, элемент **Image** поддерживает анимационные GIF-изображения. При использовании объекта **BitmapImage** в качестве изображения **Source** можно обращаться к API-интерфейсам BitmapImage для управления воспроизведением анимационных GIF-изображений. Дополнительные сведения см. в разделе "Примечания" на странице класса [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx).
 
@@ -158,7 +156,7 @@ API для [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/wind
 > [!NOTE]
 > Если вы установили изображения с помощью кода, вы можете использовать автоматическую обработку для получения доступа к неквалифицированным ресурсам с текущими квалификаторами масштаба и языка либо вы можете использовать [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) и [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) с квалификаторами масштаба и языка для непосредственного получения ресурсов. Подробнее см. в разделе [Система управления ресурсами](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx).
 
-## <a name="related-articles"></a>Связанные разделы
+## <a name="related-articles"></a>Еще по теме
 
 -   [Звук, видео и камера](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
 -   [**Класс Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)

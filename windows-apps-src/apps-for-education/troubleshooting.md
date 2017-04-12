@@ -2,13 +2,11 @@
 author: TylerMSFT
 Description: "Устранение неполадок событий и ошибок тестирования Microsoft с помощью средства просмотра событий."
 title: "Устранение неполадок тестирования Microsoft с помощью просмотра событий."
-translationtype: Human Translation
-ms.sourcegitcommit: f2838d95da66eda32d9cea725a33fc4084d32359
 ms.openlocfilehash: 1b99b959cfdde997f7995c1bdf40d51921b2f1d5
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# Устранение неполадок тестирования Microsoft с помощью просмотра событий
+# <a name="troubleshoot-microsoft-take-a-test-with-the-event-viewer"></a>Устранение неполадок тестирования Microsoft с помощью просмотра событий
 
 Можно использовать средство просмотра событий для просмотра событий и ошибок тестирования. Тестирование добавляет в журнал события, когда поступает запрос блокировки, успешно проходит регистрация устройства, успешно применяются политики блокировки и в других случаях.
 
@@ -20,9 +18,3 @@ ms.openlocfilehash: 1b99b959cfdde997f7995c1bdf40d51921b2f1d5
 Сохранение журналов событий.
 1. Щелкните правой кнопкой мыши `Operational`
 2. Нажмите `Save All Events As…`
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

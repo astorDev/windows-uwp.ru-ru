@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c7275475e245d8fd68eb2979c16d0afe6ddc4a4c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d8240af0a610541cea5352ed841a08eb7093db96
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility"></a>Специальные возможности  
 
 
@@ -45,7 +42,6 @@ ms.lasthandoff: 02/07/2017
 | [Настраиваемые одноранговые элементы автоматизации](custom-automation-peers.md) | Здесь описана концепция одноранговых элементов для модели автоматизации пользовательского интерфейса, а также способы реализации поддержки автоматизации для вашего собственного настраиваемого класса пользовательского интерфейса. |
 | [Шаблоны и интерфейсы элементов управления](control-patterns-and-interfaces.md) | Здесь перечислены шаблоны элементов управления модели автоматизации пользовательского интерфейса Майкрософт, классы, которыми пользуются клиенты для доступа к ним, и интерфейсы, которыми пользуются поставщики для их реализации. |
 
-<span id="related_topics"/>
 ## <a name="related-topics"></a>Связанные темы  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
-
+* [Начало работы с экранным диктором](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)

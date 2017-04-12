@@ -9,20 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 34bac5b7332bcc258c76f15a6005f82f545eef4d
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7bf47b166dfd05b906b37deded909d5a3b26ac6e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="http-live-streaming-hls-tag-support"></a>Поддержка тегов протокола HTTP Live Streaming (HLS)
 В следующей таблице перечислены теги HLS, которые поддерживаются для приложений UWP.
 
 > [!NOTE] 
 > К пользовательским тегам, которые начинаются с «X-», можно осуществлять доступ как к синхронизированным метаданным, как описано в статье [Элементы мультимедиа, списки воспроизведения и треки](media-playback-with-mediasource.md).
 
-|Тег |Версия протокола HLS, в которой он впервые представлен|Черновая версия документа протокола HLS|Требуется в клиенте|Июльский выпуск Windows 10|Windows 10 (версия 1511)|Windows 10 (версия 1606) |
+|Тег |Версия протокола HLS, в которой он впервые представлен|Черновая версия документа протокола HLS|Требуется в клиенте|Июльский выпуск Windows 10|Windows 10 (версия 1511)|Windows 10 (версия 1607) |
 |---------------------|-----------|--------------|---------|--------------|-----|-----|
 |4.3.1.  Основные теги                 |             |                   |         |             |     |    |
 | 4.3.1.1.  EXTM3U |1|0|ТРЕБУЕТСЯ|Поддерживается|Поддерживается|Поддерживается|
@@ -83,14 +80,13 @@ ms.lasthandoff: 02/08/2017
 
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 
 * [Воспроизведение мультимедиа](media-playback.md)
 * [Адаптивная потоковая передача](adaptive-streaming.md)
  
 
  
-
 
 
 
