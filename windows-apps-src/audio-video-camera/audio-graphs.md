@@ -9,8 +9,8 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 5d98b5366160ca52c02330a05e8b8d749e2296bd
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.openlocfilehash: 1b286a9fcfd71bb2dc219fb3c03a363a41d24346
+ms.sourcegitcommit: bccf9bcc39f0c4ee8801d90e2d7fcae3ad6e3b3e
 translationtype: HT
 ---
 # <a name="audio-graphs"></a>Звуковые графы
@@ -56,7 +56,8 @@ API звуковых графов среды выполнения Windows:
 [!code-cs[InitAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
 
 -   Звуковые узлы всех типов создаются с помощью методов Create\* класса **AudioGraph**.
--   Метод [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) позволяет начать обработку звуковых данных с помощью звукового графа. Метод [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) позволяет остановить звуковую обработку. Каждый узел графа можно запустить и остановить независимо от того, выполняется ли граф, однако при остановке графа все узлы отключаются. Метод [**ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) позволяет удалить из всех узлов графа любые данные, находящиеся в их звуковых буферах.
+-   Метод [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) позволяет начать обработку звуковых данных с помощью звукового графа. Метод [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) позволяет остановить звуковую обработку. Каждый узел графа можно запустить и остановить независимо от того, выполняется ли граф, однако при остановке графа все узлы отключаются. [
+              Метод **ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) позволяет удалить из всех узлов графа любые данные, находящиеся в их звуковых буферах.
 -   Событие [**QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn914241) возникает, когда граф приступает к обработке нового кванта времени звуковых данных. Событие [**QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) возникает, когда обработка кванта времени завершается.
 
 -   Единственное необходимое свойство [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185)— это [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724). Если задать это значение, система оптимизирует звуковой конвейер для указанной категории.
@@ -159,9 +160,12 @@ API звуковых графов среды выполнения Windows:
 
 [!code-cs[CreateFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
 
-Событие [**AudioGraph.QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) возникает, когда звуковой граф завершит обработку кванта времени звуковых данных. Вы можете получить доступ к звуковым данным в обработчике для этого события.
+Событие [**AudioGraph.QuantumStarted**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Audio.AudioGraph#Windows_Media_Audio_AudioGraph_QuantumStarted) возникает, когда звуковой граф начинает обработку кванта времени звуковых данных. Вы можете получить доступ к звуковым данным в обработчике для этого события. 
 
-[!code-cs[QuantumProcessed](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumProcessed)]
+> [!NOTE]  
+> Если вы хотите получать аудиокадры на регулярной основе в синхронизации со звуковым графом, вызовите [AudioFrameOutputNode.GetFrame](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeoutputnode#Windows_Media_Audio_AudioFrameOutputNode_GetFrame) из синхронного обработчика событий **QuantumStarted**. Событие **QuantumProcessed** возникает асинхронно после того, как обработчик звука завершает аудиообработку. Это означает, что событие может возникать нерегулярно. Таким образом, событие **QuantumProcessed** не следует использовать для синхронизированной обработки данных аудиокадров.
+
+[!code-cs[SnippetQuantumStartedFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStartedFrameOutput)]
 
 -   Вызовите метод [**GetFrame**](https://msdn.microsoft.com/library/windows/apps/dn914171), чтобы получить объект [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871), заполненный звуковыми данными из графа.
 -   Ниже приведен пример реализации вспомогательного метода **ProcessFrameOutput**.
