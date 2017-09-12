@@ -1,17 +1,19 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
 title: "Асинхронное программирование"
 description: "В этом разделе описывается асинхронное программирование на универсальной платформе Windows (UWP), а также его представление в C#, Microsoft Visual Basic .NET, расширениях компонентов Visual C\\+\\+ (C\\+\\+/CX) и JavaScript."
-ms.author: twhitney
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, асинхронный"
-ms.openlocfilehash: 06eceae9c7736ce59bc0ab1b842425c3dc56d299
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 042ebc335d0e0a401b3aeb761daed1ba00a43f59
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="asynchronous-programming"></a>Асинхронное программирование
 

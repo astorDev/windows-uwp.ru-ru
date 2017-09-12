@@ -1,17 +1,19 @@
 ---
-author: eliotcowley
+author: drewbatgit
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: "В данной статье описано, как добавить мультимедийное содержимое, защищенное PlayReady, в приложение универсальной платформы Windows (UWP)."
 title: PlayReady DRM
-ms.author: elcowle
+ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 161a048a4bfa9479821aec542db17ded8243d231
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 803070143a3d07bfbdbb4f3e1b7b70858b75e0f9
+ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/21/2017
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -470,6 +472,33 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
     videoPlayer.msSetMediaProtectionManager( mediaProtectionManager );
     ```
     
+## <a name="query-for-protection-capabilities"></a>Запрос о возможностях защиты
+Начиная с Windows 10, версии 1703, можно запрашивать аппаратные возможности DRM, такие как декодирование кодеков, работа с разрешением и защита вывода (HDCP). Запросы выполняются с помощью метода [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities#Windows_Media_Protection_ProtectionCapabilities_IsTypeSupported_System_String_System_String_), который принимает строку, представляющую возможности, запрос на поддержку которых отправляет пользователь, и строку, указывающую на ключевую систему, в которую подается запрос. Список поддерживаемых строковых значений см. на странице справочного материала об API, [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities#Windows_Media_Protection_ProtectionCapabilities_IsTypeSupported_System_String_System_String_). В следующем примере кода показано использование этого метода.  
+
+    ```cs
+    using namespace Windows::Media::Protection;
+
+    ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
+
+    ProtectionCapabilityResult result = sr->IsTypeSupported(
+    L"video/mp4; codecs=\"avc1.640028\"; features=\"decode-bpp=10,decode-fps=29.97,decode-res-x=1920,decode-res-y=1080\"",
+    L"com.microsoft.playready");
+
+    switch (result)
+    {
+        case ProtectionCapabilityResult::Probably:
+        // Queue up UHD HW DRM video
+        break;
+
+        case ProtectionCapabilityResult::Maybe:
+        // Check again after UI or poll for more info.
+        break;
+
+        case ProtectionCapabilityResult::NotSupported:
+        // Do not queue up UHD HW DRM video.
+        break;
+    }
+    ```
 ## <a name="add-secure-stop"></a>Добавление безопасной остановки
 
 В данном разделе рассказывается, как добавить безопасную остановку в приложение UWP.
@@ -508,6 +537,7 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
 * Реализовать логику, чтобы только определенные прошедшие проверку подлинности тестовые учетные записи могли получать лицензии SL150 на определенное содержимое.
 
 Используйте тот подход, который лучше всего подходит для вашего продукта.
+
 
 ## <a name="see-also"></a>См. также
 - [Воспроизведение мультимедиа](media-playback.md)

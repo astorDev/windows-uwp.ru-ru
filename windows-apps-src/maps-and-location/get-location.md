@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, карта, расположение, функция определения местоположения"
-ms.openlocfilehash: 05fa3330f5346f69061cb60cf8b54de451845e06
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f5af2815783568cb234f1196e065f18b145c7e68
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="get-the-users-location"></a>Получение местоположения пользователя
 
@@ -29,7 +31,7 @@ translationtype: HT
 
 
 1.  В **обозревателе решений** дважды щелкните файл **package.appxmanifest** и выберите вкладку **Возможности**.
-2.  В списке **Возможности** выберите вкладку **Возможности**. Возможность устройства `Location` будет добавлена к файлу манифеста пакета.
+2.  В списке **Возможности** установите флажок **Расположение**. Возможность устройства `location` будет добавлена к файлу манифеста пакета.
 
 ```XML
   <Capabilities>

@@ -1,5 +1,5 @@
 ---
-author: GrantMeStrength
+author: jken
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: "Создание первого приложения"
 description: "Создать приложение для Windows10 на базе универсальной платформы Windows (UWP) проще, чем кажется."
@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 54c80c7d1f4620f0270752167684dd4ce11b9c5c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: fca180db42fcd5b8b9c30bd67fe2bb890a817c78
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="create-your-first-app"></a>Создание первого приложения
 
@@ -19,10 +21,11 @@ translationtype: HT
 
 ![Построение приложения](images/build-your-app.png)
 
-Добро пожаловать на платформу UWP! Эти учебники помогут вам создать первое приложение UWP на удобном для вас языке. Вы научитесь выполнять следующие действия:
+Вас приветствует платформа UWP ([что такое UWP?](whats-a-uwp.md))! Эти учебники помогут вам создать первое приложение UWP на удобном для вас языке. Вы научитесь выполнять следующие действия:
 
 -   Создавать проекты UWP в Microsoft Visual Studio.
 -   Добавлять в проект элементы пользовательского интерфейса и код.
+-   Использовать рукописный ввод и Dial в ваших приложениях.
 -   Использовать сторонние библиотеки для добавления новых функций.
 -   Создавать и отлаживать приложение на локальном компьютере.
 
@@ -36,9 +39,9 @@ translationtype: HT
 
 Если вы хотите узнать основы или освежить память, рекомендуем следующие материалы:
 
-* [Основы C# для абсолютных новичков](https://mva.microsoft.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169?l=Lvld4EQIC_2706218949)
-* [Основы VB для абсолютных новичков](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
-* [Руководство разработчика по Windows10](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
+* [Основы C# для абсолютных новичков](https://go.microsoft.com/fwlink/?linkid=850801)
+* [Основы VB для абсолютных новичков](https://go.microsoft.com/fwlink/?linkid=850802)
+* [Руководство разработчика по Windows10](https://go.microsoft.com/fwlink/?linkid=850804)
 * [Виртуальная академия Майкрософт](http://www.microsoftvirtualacademy.com/)
 
 Если вы готовы попробовать что-нибудь повеселее, чем "Hello, World!", попробуйте этот учебник по C# и MonoGame:
@@ -52,6 +55,7 @@ translationtype: HT
 * [Создание приложения "Hello, world" на HTML и JavaScript](create-a-hello-world-app-js-uwp.md)
 * [Простая двумерная игра UWP для Магазина Windows, написанная на языках JavaScript и CreateJS](get-started-tutorial-game-js2d.md)
 * [Трехмерная игра UWP для Магазина Windows, написанная на JavaScript и threeJS](get-started-tutorial-game-js3d.md)
+* [Одностраничное веб-приложение с использованием API REST](get-started-tutorial-fullstack-web-app.md)
 
 Хотите освежить навыки веб-программирования?
 
@@ -69,6 +73,19 @@ translationtype: HT
 
 * [C++: язык и библиотека общего назначения — вводный курс](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
 * [Виртуальная академия Майкрософт](http://go.microsoft.com/fwlink/p/?LinkID=389916)
+
+## <a name="using-features-unique-to-windows-10"></a>Использование уникальных возможностей Windows 10
+
+Что делает операционную систему Windows 10 особенной? Среди прочего, это рукописный ввод и контроллер Surface Dial.
+
+* [Использование рукописного ввода в приложении UWP](ink-walkthrough.md)
+* [Поддержка Surface Dial](radialcontroller-walkthrough.md)
+
+## <a name="cutting-edge-ideas"></a>Передовые идеи
+
+Интересуетесь виртуальной реальностью?
+
+* [Добавление WebVR в игру Babylon.js](adding-webvr-to-a-babylonjs-game.md)
 
 ## <a name="objective-c"></a>Objective-C
 
@@ -89,5 +106,4 @@ translationtype: HT
 * [Что такое универсальное приложение для Windows?](whats-a-uwp.md)
 * [Подготовка](get-set-up.md)
 * [Регистрация учетной записи Windows](sign-up.md)
-
 

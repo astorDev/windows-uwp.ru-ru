@@ -1,39 +1,46 @@
 ---
-author: msatranjr
+author: normesta
 title: "Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside"
 description: "Отображайте настраиваемые карты в приложении, используя класс MapControl. В этой статье также рассказывается о трехмерных воздушных представлениях и представлениях Streetside."
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
-ms.author: misatran
-ms.date: 02/08/2017
+ms.author: normesta
+ms.date: 07/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, карта, расположение, элемент управления картой, представления карты"
-translationtype: Human Translation
-ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
-ms.openlocfilehash: 7a1687ceb188fdd28943f807b877b28e93ae6937
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a926188912cf0cd36e1bc787e7c0cbc32f8ae95b
+ms.sourcegitcommit: 0ebc8dca2fd9149ea163b7db9daa14520fc41db4
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/08/2017
 ---
-
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+Отображайте настраиваемые карты в приложении, используя класс [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004). В этой статье также рассказывается о трехмерных воздушных представлениях и представлениях Streetside.
 
-Отображайте настраиваемые карты в приложении, используя класс [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Кроме того, в данной статье рассказывается о трехмерных воздушных представлениях и представлениях Streetside.
+> [!NOTE]
+> Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте [пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-**Совет.** Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте следующий пример из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
+<span id="map-control" />
+## <a name="the-map-control"></a>Элемент управления картой
 
--   [Пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+Элемент управления картой может отображать карты дорог и гибридный трехмерный вид, маршруты, результаты поиска и сведения о ситуации на дорогах. На карте можно показать положение пользователя, маршруты и интересные места. Карта может также показывать трехмерный гибридный вид, представления Streetside, предоставлять сведения о ситуации на дорогах и показывать сведения о местных организациях и заведениях.
+
+Используйте элемент управления картой, если нужно показать карту в приложении, которое позволяет пользователям просматривать сведения, зависящие от приложения или общие географические сведения. Наличие элемента управления картой в вашем приложении означает, что пользователям не нужно выходить из вашего приложения для получения соответствующих сведений.
+
+> [!NOTE]
+>Если ничего опасного в выходе пользователей за пределы вашего приложения нет, рассмотрите возможность использования приложения Карты Windows для предоставления этих сведений. Ваше приложение может использовать приложение Карты Windows для отображения определенных карт, маршрутов и результатов поиска. Дополнительные сведения см. в разделе [Запуск приложения "Карты Windows"](https://msdn.microsoft.com/library/windows/apps/mt228341).
 
 ## <a name="add-the-map-control-to-your-app"></a>Добавление элемента управления картой в приложение
 
 
 Карту можно отображать на странице XAML, добавив класс [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Для использования **MapControl** необходимо объявить пространство имен [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) на странице XAML или в коде. Если перетащить элемент управления с панели элементов, объявление пространства имен будет добавлено автоматически. Если вы добавляете **MapControl** на страницу XAML вручную, придется вручную добавить и объявление пространства имен в верхнюю часть страницы.
 
-В примере ниже показано, как отобразить базовый элемент управления картой и настроить карту для отображения элементов управления масштабом и наклоном в дополнение к функции приема сенсорного ввода. Дополнительные сведения о настройке внешнего вида карты см. в статье [Настройка карты](#configure-the-map).
+В примере ниже показано, как отобразить базовый элемент управления картой и настроить карту для отображения элементов управления масштабом и наклоном в дополнение к функции приема сенсорного ввода. Дополнительные сведения о настройке внешнего вида карты см. в статье [Настройка карты](#mapconfig).
 
 ```xml
 <Page
@@ -82,10 +89,10 @@ pageGrid.Children.Add(MapControl2);
 
 Укажите местоположение для отображения на карте, задав свойство [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) класса [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) в коде или путем привязки свойства в разметке XAML. В примере ниже показано, как отобразить карту, в центре которой расположен город Сиэтл.
 
-**Совет.** Так как строку невозможно преобразовать в класс [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675), то, соответственно, невозможно задать значение для свойства [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) в разметке XAML, если вы не используете привязку данных. (Это ограничение также применяется к вложенному свойству [**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264).)
+> [!NOTE]
+> Так как строку невозможно преобразовать в класс [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675), то, соответственно, невозможно задать значение для свойства [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) в разметке XAML, если вы не используете привязку данных. (Это ограничение также применяется к вложенному свойству [**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264).)
 
  
-
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
@@ -103,7 +110,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 ![Пример элемента управления картой.](images/displaymapsexample1.png)
 
 ## <a name="set-the-current-location-of-the-map"></a>Настройте карту в соответствии с текущим местоположением
-
 
 Перед тем как приложение сможет получить доступ к сведениям о местоположении пользователя, оно должно вызвать метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152). В этот момент ваше приложение должно находиться на переднем плане, а из потока пользовательского интерфейса должен быть вызван метод **RequestAccessAsync**. До тех пор пока пользователь не предоставит вашему приложению разрешение на доступ к данным о местоположении, приложение не сможет использовать такие данные.
 
@@ -141,31 +147,92 @@ switch (accessStatus)
 
 ## <a name="change-the-location-of-the-map"></a>Изменение местоположения на карте
 
-
 Чтобы изменить местоположение, отображаемое на двумерной карте, вызовите одну из перегрузок метода [**TrySetViewAsync**](https://msdn.microsoft.com/library/windows/apps/dn637060). Используйте этот метод для определения новых значений для [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005), [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068), [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019), и [**Pitch**](https://msdn.microsoft.com/library/windows/apps/dn637044). Кроме того, можно настроить использование дополнительной анимации при изменениях представления с помощью константы из перечисления [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002).
 
-Чтобы изменить местоположение трехмерной карты, используйте метод [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296). Дополнительные сведения см. в статье [Отображение трехмерных представлений](#display-aerial-3d-views).
+Чтобы изменить местоположение трехмерной карты, используйте метод [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296). Дополнительные сведения см. в статье [Отображение трехмерных представлений](#display3d).
 
 Вызовите метод [**TrySetViewBoundsAsync**](https://msdn.microsoft.com/library/windows/apps/dn637065), чтобы отобразить содержимое [**GeoboundingBox**](https://msdn.microsoft.com/library/windows/apps/dn607949) на карте. Например, с помощью этого метода можно отобразить на карте маршрут или часть маршрута. Подробности см. в разделе [Отображение маршрутов и направлений на карте](routes-and-directions.md).
 
-## <a name="configure-the-map"></a>Настройка карты
+## <a name="customize-the-appearance-of-the-map"></a>Настройка внешнего вида карты
 
+Чтобы настроить внешний вид карты, задайте свойство [**StyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_StyleSheet) элемента управления картой любому из существующих объектов [**MapStyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet).
 
-Чтобы настроить карту и ее внешний вид, установите значения следующих свойств объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+```csharp
+myMap.StyleSheet = MapStyleSheet.RoadDark();
+```
 
-**Параметры карты**
+![Карта в темном стиле](images/style-dark.png)
 
--   Установите географическую точку как **центр** карты, присвоив значение свойству [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005).
+Можно также использовать JSON для определения пользовательских стилей и затем использовать этот JSON для создания объекта [**MapStyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet).
+
+```csharp
+myMap.StyleSheet = MapStyleSheet.ParseFromJson(@"
+    {
+        ""version"": ""1.0"",
+        ""settings"": {
+            ""landColor"": ""#FFFFFF"",
+            ""spaceColor"": ""#000000""
+        },
+        ""elements"": {
+            ""mapElement"": {
+                ""labelColor"": ""#000000"",
+                ""labelOutlineColor"": ""#FFFFFF""
+            },
+            ""water"": {
+                ""fillColor"": ""#DDDDDD""
+            },
+            ""area"": {
+                ""fillColor"": ""#EEEEEE""
+            },
+            ""political"": {
+                ""borderStrokeColor"": ""#CCCCCC"",
+                ""borderOutlineColor"": ""#00000000""
+            }
+        }
+    }
+");
+```
+
+![Карта в пользовательском стиле](images/style-custom.png)
+
+Полный справочник по JSON см. в разделе [Пример таблицы стилей карты](elements-of-map-style-sheet.md).
+
+Можно начать с существующего листа и затем использовать JSON для переопределения любых требуемых элементов. Этот пример начинается с существующего стиля и использует JSON для изменения цвета водоемов на карте.
+
+```csharp
+MapStyleSheet customSheet = MapStyleSheet.ParseFromJson(@"
+    {
+        ""version"": ""1.0"",
+        ""elements"": {
+            ""water"": {
+                ""fillColor"": ""#DDDDDD""
+            }
+        }
+    }
+");
+
+MapStyleSheet builtInSheet = MapStyleSheet.RoadDark();
+
+myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet, customSheet });
+```
+
+![Сочетание стилей карты](images/style-combined.png)
+
+>[!NOTE]
+>Стили, определенные во второй таблице стилей, обладают приоритетом перед стилями в первой таблице.
+
+## <a name="change-the-orientation-and-perspective-of-the-map"></a>Изменение ориентации и перспективы карты
+
+Приближение, отдаление, поворот и наклон камеры карты для получения именно того угла, который необходим для вашего эффекта. Попробуйте использовать следующие свойства.
+
+-   Установите **центр** карты в географическую точку, определив свойство [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005).
 -   Установите **масштаб карты**, присвоив значение свойству [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) от 1 до 20.
--   Установите **вращение** карты, задав свойство [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019), для которого 0 или 360 градусов обозначают север, 90 — восток, 180 — юг и 270 — запад.
+-   Установите **вращение** карты, задав свойство [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019), для которого 0 или 360 градусов обозначают север, 90— восток, 180— юг и 270— запад.
 -   Установите **наклон** карты, присвоив значение свойству [**DesiredPitch**](https://msdn.microsoft.com/library/windows/apps/dn637012) от 0 до 65 градусов.
 
-**Вид карты**
+## <a name="show-and-hide-map-features"></a>Показ и сокрытие элементов карты
 
--   Укажите **тип** карты (например, карта дорог или гибридный вид), присвоив свойству [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) одну из констант [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).
--   Вы можете задать светлую или темную **цветовую схему** карты, присвоив свойству [**ColorScheme**](https://msdn.microsoft.com/library/windows/apps/dn637010) значение одной из констант [**MapColorScheme**](https://msdn.microsoft.com/library/windows/apps/dn637003).
-
-Чтобы отобразить информацию на карте, установите значения указанных ниже свойств объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+Показывайте или скрывайте элементы карты, такие как дороги и ориентиры, путем установки значений следующих свойств объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
 -   Отобразите **здания и ориентиры** на карте, включив или отключив свойство [**LandmarksVisible**](https://msdn.microsoft.com/library/windows/apps/dn637023).
 -   Чтобы показать на карте **объекты для пешеходов**, например надземные переходы, включите или отключите свойство [**PedestrianFeaturesVisible**](https://msdn.microsoft.com/library/windows/apps/dn637042).
@@ -178,7 +245,7 @@ switch (accessStatus)
 ## <a name="display-streetside-views"></a>Отображение представлений Streetside
 
 
-Представление Streetside — это перспектива уровня улицы для местоположения, отображаемая в верхней части элемента управления картой.
+Представление Streetside— это перспектива уровня улицы для местоположения, отображаемая в верхней части элемента управления картой.
 
 ![Пример представления Streetside элемента управления картой.](images/onlystreetside-730width.png)
 
@@ -260,7 +327,7 @@ private async void display3DLocation()
       MapControl1.Style = MapStyle.Aerial3DWithRoads;
 
       // Specify the location.
-      BasicGeoposition hwGeoposition = new BasicGeoposition() { Latitude = 34.134, Longitude = -118.3216};
+      BasicGeoposition hwGeoposition = new BasicGeoposition() { Latitude = 43.773251, Longitude = 11.255474};
       Geopoint hwPoint = new Geopoint(hwGeoposition);
 
       // Create the map scene.
@@ -317,6 +384,14 @@ private async void display3DLocation()
 -   [**PitchChanged**](https://msdn.microsoft.com/library/windows/apps/dn637045)
 -   [**ZoomLevelChanged**](https://msdn.microsoft.com/library/windows/apps/dn637069)
 
+## <a name="best-practice-recommendations"></a>Рекомендации
+
+-   Используйте свободное место на экране (или весь экран) для отображения карты, чтобы пользователям не приходилось постоянно сдвигать и масштабировать карту для просмотра географических сведений.
+
+-   Если карта используется только для представления статического, информационного представления, то более подходящим будет использование карты меньшего размера. Если вы будете использовать статическую карту меньшего размера, задайте ее размеры на основании удобства использования. Используйте небольшой размер, чтобы сэкономить место на экране, но достаточный, чтобы отобразить нужную информацию.
+
+-   Укажите достопримечательности на карте, используя [**map elements**](https://msdn.microsoft.com/library/windows/apps/dn637034). Любые дополнительные сведения могут быть отображены в качестве прозрачного наложения пользовательского интерфейса на карту.
+
 ## <a name="related-topics"></a>Связанные разделы
 
 * [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
@@ -327,4 +402,3 @@ private async void display3DLocation()
 * [Видео c конференции Build 2015: использование карт и местоположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Пример приложения UWP для работы с картами](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)
-

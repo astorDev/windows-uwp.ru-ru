@@ -1,32 +1,30 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: "Узнайте об известных проблемах текущего выпуска библиотек Microsoft Advertising в пакете Microsoft Store Services SDK."
+description: "Изучите известные проблемы текущего выпуска библиотек Microsoft Advertising."
 title: "Известные проблемы для библиотек Microsoft Advertising"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, реклама, рекламные объявления, известные проблемы"
-ms.openlocfilehash: 33bf3c2db5db7e8ec07df3f4d13cc0ad074e99a3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b18c4568770afb70bcca991c79d59a9912981705
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/21/2017
 ---
 # <a name="known-issues-for-the-advertising-libraries"></a>Известные проблемы для библиотек Microsoft Advertising
 
 
 
 
-В этом разделе содержится список известных проблем в текущем выпуске библиотек Microsoft Advertising в Microsoft Store Services SDK (для приложений UWP) и Microsoft Advertising SDK для Windows и Windows Phone 8.x (для приложений Windows 8.1 и Windows Phone 8.x).
+В этом разделе содержится список известных проблем в текущем выпуске библиотек Microsoft Advertising в Microsoft Advertising SDK (для приложений UWP) и Microsoft Advertising SDK для Windows и Windows Phone 8.x (для приложений Windows 8.1 и Windows Phone 8.x).
 
-## <a name="installation-of-microsoft-store-services-sdk-requires-visual-studio-tools-for-universal-windows-apps"></a>Для установки пакета Microsoft Store Services SDK требуются инструменты Visual Studio для универсальных приложений для Windows.
+## <a name="windows-phone-8x-silverlight-projects"></a>Проекты Silverlight для Windows Phone 8.x
 
-Для установки пакета [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) с помощью Visual Studio 2015 должны быть установлены инструменты Visual Studio для универсальных приложений для Windows версии 1.1 или более поздней. Дополнительные сведения см. в [примечаниях к выпуску](http://go.microsoft.com/fwlink/?LinkID=624516) Visual Studio.
-
-## <a name="windows-phone-8x-silverlight-projects"></a>Проекты Silverlight в Windows Phone 8.x
-
-Набор Microsoft Advertising SDK для Windows и Windows Phone 8.x имеет ограниченную поддержку проектов Silverlight в Windows Phone 8.x. Дополнительные сведения см. в статье [Показ рекламы в приложениях](display-ads-in-your-app.md#silverlight_support).
+Microsoft Advertising SDK для Windows и Windows Phone 8.x имеет ограниченную поддержку проектов Silverlight в Windows Phone 8.x. Подробные сведения см. в разделе [Поддержка рекламы для проектов Windows Phone 8.x Silverlight](adcontrol-in-windows-phone-silverlight.md#silverlight_support).
 
 Чтобы получить сборки Microsoft Advertising для проектов Silverlight в Windows Phone 8.x, установите пакет [Microsoft Advertising SDK для Windows и Windows Phone 8.x](http://aka.ms/store-8-sdk), откройте проект в Visual Studio и последовательно щелкните **Проект** > **Добавить подключенную службу** > **Рекламный посредник**, чтобы автоматически загрузить сборки. После этого можно удалить ссылки на рекламный посредник из вашего проекта, если в дальнейшем вы не планируете использовать рекламное посредничество. Дополнительные сведения см. в разделе [AdControl в Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
 
@@ -62,9 +60,9 @@ translationtype: HT
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>В приложении отображается тестовая реклама, а не реальные объявления
 
-Тестовая реклама может отображаться, даже если вы рассчитываете увидеть настоящую рекламу. Это происходит в следующих случаях.
+Тестовая реклама может отображаться, даже если вы рассчитываете увидеть настоящую рекламу. Это происходит в следующих случаях:
 
-* Microsoft Advertising не может проверить или найти ИД настоящей рекламы в магазине приложений. В этом случае когда пользователь создает рекламную единицу, она сначала получает статус актуальной (нетестовой), а затем в течение 6 часов после первого рекламного запроса получает статус тестовой. При отсутствии запросов от тестовых приложений в течение 10 дней реклама снова перейдет в разряд актуальных.
+* Наша рекламная платформа не может проверить или найти ИД работающего приложения, используемый в Магазине. В этом случае когда пользователь создает рекламную единицу, она сначала получает статус актуальной (нетестовой), а затем в течение 6 часов после первого рекламного запроса получает статус тестовой. При отсутствии запросов от тестовых приложений в течение 10 дней реклама снова перейдет в разряд актуальных.
 
 * Неопубликованные приложения или приложения, работающие в эмуляторе, не отображают актуальные объявления.
 

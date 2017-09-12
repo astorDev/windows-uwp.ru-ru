@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: f1941a73937db19394e590026a16a023d025bba2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: efa83edaeb649ac5a321a4c1aae14a53f1175b6d
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="data-binding-in-depth"></a>Подробно о привязке данных
 
@@ -24,7 +26,8 @@ translationtype: HT
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-> **Примечание.**&nbsp;&nbsp;В этой статье подробно описаны средства привязки данных. Краткое практическое введение см. в [Обзоре привязки данных](data-binding-quickstart.md).
+> [!Note]
+> В этой статье подробно описаны средства привязки данных. Краткое практическое введение см. в [Обзоре привязки данных](data-binding-quickstart.md).
 
 
 Привязка данных обеспечивает отображение данных в пользовательском интерфейсе приложения и (дополнительно) синхронизацию с этими данными. Используя привязку данных, вы можете отделить вопросы обработки данных от вопросов, связанных с пользовательским интерфейсом. Это упрощает концептуальную модель, а также улучшает удобочитаемость, возможности тестирования и удобство поддержки приложения.

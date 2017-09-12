@@ -7,14 +7,16 @@ label: Layout panels
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 45c7c541ab278da1f00899a16636337dcdc20d3f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 55b7c431482b171e56e670cd5d2ce0fc9148a5f9
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="layout-panels"></a>Панели макета
 
@@ -91,7 +93,7 @@ translationtype: HT
                RelativePanel.Below="RedRect" 
                RelativePanel.AlignLeftWith="RedRect" 
                RelativePanel.AlignRightWith="BlueRect"/>
-    <Rectangle Fill="Yellow"
+    <Rectangle Fill="Orange"
                RelativePanel.Below="GreenRect" 
                RelativePanel.AlignLeftWith="BlueRect" 
                RelativePanel.AlignRightWithPanel="True"
@@ -106,7 +108,7 @@ translationtype: HT
 Вот несколько аспектов, которые нужно учитывать при определении размеров прямоугольников.
 - Для красного прямоугольника устанавливается точный размер 44x44. Он помещается в верхнем левом углу панели, что является положением по умолчанию.
 - Для зеленого прямоугольника устанавливается точная высота 44. Его левая сторона выравнивается с красным прямоугольником, а его правая сторона — с синим прямоугольником, который определяет его ширину.
-- Для желтого прямоугольника не устанавливается точный размер. Его левая сторона выравнивается с синим прямоугольником. Его правый и нижний края выравниваются с краем панели. Его размер определяется такими выравниваниями, и его размеры изменятся при изменении размеров панели.
+- Для оранжевого прямоугольника не устанавливается точный размер. Его левая сторона выравнивается с синим прямоугольником. Его правый и нижний края выравниваются с краем панели. Его размер определяется такими выравниваниями, и его размеры изменятся при изменении размеров панели.
 
 ## <a name="stackpanel"></a>StackPanel
 
@@ -121,7 +123,7 @@ translationtype: HT
     <Rectangle Fill="Red" Height="44"/>
     <Rectangle Fill="Blue" Height="44"/>
     <Rectangle Fill="Green" Height="44"/>
-    <Rectangle Fill="Yellow" Height="44"/>
+    <Rectangle Fill="Orange" Height="44"/>
 </StackPanel>
 ```
 
@@ -155,7 +157,7 @@ translationtype: HT
     <Rectangle Fill="Red" Width="44"/>
     <Rectangle Fill="Blue" Grid.Row="1"/>
     <Rectangle Fill="Green" Grid.Column="1"/>
-    <Rectangle Fill="Yellow" Grid.Row="1" Grid.Column="1"/>
+    <Rectangle Fill="Orange" Grid.Row="1" Grid.Column="1"/>
 </Grid>
 ```
 
@@ -188,7 +190,7 @@ translationtype: HT
                VariableSizedWrapGrid.RowSpan="2"/>
     <Rectangle Fill="Green" 
                VariableSizedWrapGrid.ColumnSpan="2"/>
-    <Rectangle Fill="Yellow" 
+    <Rectangle Fill="Orange" 
                VariableSizedWrapGrid.RowSpan="2" 
                VariableSizedWrapGrid.ColumnSpan="2"/>
 </VariableSizedWrapGrid>
@@ -216,7 +218,7 @@ translationtype: HT
     <Rectangle Fill="Red" Height="44" Width="44"/>
     <Rectangle Fill="Blue" Height="44" Width="44" Canvas.Left="20" Canvas.Top="20"/>
     <Rectangle Fill="Green" Height="44" Width="44" Canvas.Left="40" Canvas.Top="40"/>
-    <Rectangle Fill="Yellow" Height="44" Width="44" Canvas.Left="60" Canvas.Top="60"/>
+    <Rectangle Fill="Orange" Height="44" Width="44" Canvas.Left="60" Canvas.Top="60"/>
 </Canvas>
 ```
 

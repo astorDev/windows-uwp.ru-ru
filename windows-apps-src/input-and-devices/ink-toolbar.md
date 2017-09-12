@@ -1,8 +1,8 @@
 ---
 author: Karl-Bridge-Microsoft
 Description: "Добавьте InkToolbar по умолчанию в приложение универсальной платформы Windows (UWP) для рукописного ввода, добавьте кнопку специального пера в InkToolbar и привяжите кнопку специального пера к определению специального пера."
-title: "Добавление элемента управления InkToolbar в приложение рукописного ввода UWP"
-label: Add an InkToolbar to a Universal Windows Platform (UWP) inking app
+title: "Добавление InkToolbar в приложение универсальной платформы Windows (UWP)"
+label: Add an InkToolbar to a Universal Windows Platform (UWP) app
 template: detail.hbs
 keywords: "Windows Ink, рукописный ввод в Windows, DirectInk, InkPresenter, InkCanvas, InkToolbar, универсальная платформа Windows, UWP, взаимодействие с пользователем, ввод"
 ms.author: kbridge
@@ -11,11 +11,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
-ms.openlocfilehash: dd307bd6d7551c1e95de29360a8601484b37e742
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a4bff46c2ab0f0f1f9a689f2744c9a77ac90630d
+ms.sourcegitcommit: c519e3d34bef37f87bb44f02b295187849bb5eea
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/25/2017
 ---
-# <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-inking-app"></a>Добавление элемента управления InkToolbar в приложение рукописного ввода UWP
+# <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>Добавление InkToolbar в приложение универсальной платформы Windows (UWP)
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 
@@ -31,7 +33,7 @@ translationtype: HT
 
   API InkPresenter предоставляют широкие возможности пользовательской настройки рукописного ввода. Подробные сведения см. в разделе [Взаимодействие с помощью пера в приложениях UWP](pen-and-stylus-interactions.md).
 
-- Привяжите элемент управления [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) к элементу InkCanvas. По умолчанию InkToolbar предоставляет базовый пользовательский интерфейс для активации функций рукописного ввода и настройки параметров ввода, таких как размер росчерка, цвет чернил и форма кончика пера.
+- Привяжите элемент управления [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) к элементу InkCanvas. По умолчанию InkToolbar предоставляет настраиваемую и расширяемую коллекцию кнопок для активации функций рукописного ввода и настройки параметров ввода, таких как размер росчерка, цвет чернил и форма кончика пера.
 
   В этом разделе мы рассмотрим элемент управления InkToolbar.
 
@@ -47,16 +49,18 @@ translationtype: HT
 
 ## <a name="default-inktoolbar"></a>InkToolbar по умолчанию
 
-По умолчанию элемент управления InkToolbar содержит кнопки для рисования, стирания, выделения и отображения линейки. В зависимости от функции во всплывающем элементе могут отображаться другие параметры и команды, например цвет чернил, толщина росчерка и стирание всего написанного.
+По умолчанию элемент управления [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) содержит кнопки для рисования, стирания, выделения и отображения линейки или транспортира. В зависимости от функции во всплывающем элементе могут отображаться другие параметры и команды, например цвет чернил, толщина росчерка и стирание всего написанного.
 
 ![InkToolbar](.\images\ink\ink-tools-invoked-toolbar-small.png)  
 *Windows Ink toolbar по умолчанию*
 
-Чтобы добавить базовый элемент управления InkToolbar по умолчанию, выполните следующие действия.
+Чтобы добавить [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) по умолчанию в приложение рукописного ввода, просто поместите его на одной странице с вашим [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) и свяжите эти два элемента управления.
+
 1. В файле MainPage.xaml объявите объект-контейнер (в этом примере мы используем элемент управления «сетка») для поверхности рукописного ввода.
 2. Объявите объект InkCanvas в качестве дочернего элемента контейнера. (Размер элемента управления InkCanvas наследуется от контейнера.)
 3. Объявите элемент управления InkToolbar и используйте атрибут TargetInkCanvas, чтобы привязать этот элемент к InkCanvas.
-  Убедитесь, что элемент управления InkToolbar объявлен после InkCanvas. В противном случае наложение InkCanvas сделает InkToolbar недоступным.
+    > [!NOTE]  
+    > Убедитесь, что элемент управления InkToolbar объявлен после InkCanvas. В противном случае наложение InkCanvas сделает InkToolbar недоступным.
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -808,6 +812,10 @@ namespace Ink_Basic_InkToolbar
 * [Взаимодействие с помощью пера](pen-and-stylus-interactions.md)
 
 **Примеры**
-* [Пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Простой пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Простой пример рукописного ввода (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Сложный пример рукописного ввода (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Пример рукописного ввода (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Руководство по началу работы: поддержка рукописного ввода в приложении UWP](https://aka.ms/appsample-ink)
+* [Пример раскраски](https://aka.ms/cpubsample-coloringbook)
+* [Пример семейных заметок](https://aka.ms/cpubsample-familynotessample)
+

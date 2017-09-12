@@ -9,17 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 364edc93c52d3c7c8cbe5f1a85c8ca751eb44b35
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 65ee6cd32e1fdb6900c859725b8deb6b5031d297
+ms.sourcegitcommit: ba0d20f6fad75ce98c25ceead78aab6661250571
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/24/2017
 ---
-
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Объявление фоновых задач в манифесте приложения
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -62,8 +61,7 @@ ms.lasthandoff: 02/07/2017
  </Application>
 ```
 
-## <a name="add-a-background-task-extension"></a>Добавление расширения фоновой задачи
-
+## <a name="add-a-background-task-extension"></a>Добавление расширения фоновой задачи  
 
 Объявите свою первую фоновую задачу.
 
@@ -108,12 +106,11 @@ ms.lasthandoff: 02/07/2017
 </Extension>
 ```
 
-
-## <a name="add-additional-background-task-extensions"></a>Добавление дополнительных расширений фоновой задачи
+### <a name="add-multiple-background-task-extensions"></a>Добавление нескольких расширений фоновой задачи
 
 Повторите этап 2 для каждого дополнительного класса фоновой задачи, регистрируемого вашим приложением.
 
-В следующем примере демонстрируется полный элемент Application из [образца фоновой задачи]( http://go.microsoft.com/fwlink/p/?linkid=227509). Здесь показано использование двух классов фоновых задач с тремя типами триггеров. Чтобы объявить фоновые задачи в манифесте вашего приложения, скопируйте раздел Extensions из этого примера и измените его так, как вам необходимо.
+В следующем примере демонстрируется полный элемент Application из [образца фоновой задачи]( http://go.microsoft.com/fwlink/p/?linkid=227509). Здесь показано использование двухклассов фоновых задач с тремятипами триггеров. Чтобы объявить фоновые задачи в манифесте вашего приложения, скопируйте раздел Extensions из этого примера и измените его так, как вам необходимо.
 
 ```xml
 <Applications>
@@ -154,17 +151,22 @@ ms.lasthandoff: 02/07/2017
 </Applications>
 ```
 
-## <a name="declare-your-background-task-to-run-in-a-different-process"></a>Объявление фоновой задачи для выполнения в другом процессе
+## <a name="declare-where-your-background-task-will-run"></a>Объявление места выполнения фоновой задачи
 
-Новые возможности в Windows 10 версии 1507 позволяют выполнять фоновую задачу в процессе, отличном от BackgroundTaskHost.exe (процесс, в котором фоновые задачи выполняются по умолчанию).  Есть два пути: выполнение в том же процессе, что и приложение переднего плана, или выполнение в экземпляре BackgroundTaskHost.exe, отделенном от других экземпляров фоновых задач того же приложения.  
+Вы можете указать, где будет выполняться фоновая задача:
 
-### <a name="run-in-the-foreground-application"></a>Выполнение в приложении переднего плана
+* По умолчанию они выполняются в процессе BackgroundTaskHost.exe.
+* В том же процессе, что и ваше приложение переднего плана.
+* Используйте `ResourceGroup` для размещения нескольких фоновых задач в одном и том же процессе размещения или разделения их на различные процессы.
+* Используйте `SupportsMultipleInstances` для выполнения фонового процесса в новом процессе, который получает собственные ограничения на ресурсы (память, ЦП) каждый раз, когда активируется новый триггер.
 
-Вот пример XML, в котором объявляется фоновая задача, выполняемая в том же процессе, что и приложение переднего плана. Обратите внимание на атрибут `Executable`:
+### <a name="run-in-the-same-process-as-your-foreground-application"></a>Выполнение в том же процессе, что и ваше приложение переднего плана
+
+Вот пример XML, в котором объявляется фоновая задача, выполняемая в том же процессе, что и приложение переднего плана.
 
 ```xml
 <Extensions>
-    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask" Executable="$targetnametoken$.exe">
+    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask">
         <BackgroundTasks>
             <Task Type="systemEvent" />
         </BackgroundTasks>
@@ -172,10 +174,9 @@ ms.lasthandoff: 02/07/2017
 </Extensions>
 ```
 
-> [!Note]
-> Используйте элемент Executable только с теми фоновыми задачами, которым он требуется, например, [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).  
+Когда вы указываете **EntryPoint**, приложение получает обратный вызов для указанного метода, когда срабатывает триггер. Если вы не указываете **EntryPoint**, приложение получает обратный вызов через [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).  Дополнительные сведения см. в разделе [Создание и регистрация фоновой задачи в процессе](create-and-register-an-inproc-background-task.md).
 
-### <a name="run-in-a-different-background-host-process"></a>Выполнение в другом фоновом хост-процессе
+### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>Укажите, где фоновая задача выполняется, с помощью атрибута ResourceGroup.
 
 Вот пример XML, в котором объявляется фоновая задача, выполняемая в процессе BackgroundTaskHost.exe, отделенном от других экземпляров фоновых задач того же приложения. Обратите внимание на атрибут `ResourceGroup`, определяющий, какие фоновые задачи будут выполняться вместе.
 
@@ -209,11 +210,33 @@ ms.lasthandoff: 02/07/2017
 </Extensions>
 ```
 
+### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>Запуск в новом процессе каждый раз, когда активируется  триггер, с помощью атрибута SupportsMultipleInstances
 
-## <a name="related-topics"></a>Связанные статьи
+В этом примере объявляется, что фоновая задача, которая выполняется в новом процессе, который получает собственные ограничения на ресурсы (память и ЦП) каждый раз, когда активируется новый триггер. Обратите внимание на использование `SupportsMultipleInstances`, который обеспечивает это поведение. Для использования этого атрибута необходимо в качестве целевого SDK выбрать версию "10.0.15063" (Windows 10 Creator Update) или более позднюю версию.
 
+```xml
+<Package
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+    ...
+    <Applications>
+        <Application ...>
+            ...
+            <Extensions>
+                <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask">
+                    <BackgroundTasks uap4:SupportsMultipleInstances=“True”>
+                        <Task Type="timer" />
+                    </BackgroundTasks>
+                </Extension>
+            </Extensions>
+        </Application>
+    </Applications>
+```
+
+> [!NOTE]
+> Вы не можете задать `ResourceGroup` или `ServerName` в сочетании с `SupportsMultipleInstances`.
+
+## <a name="related-topics"></a>Статьи по теме
 
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Регистрация фоновой задачи](register-a-background-task.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-

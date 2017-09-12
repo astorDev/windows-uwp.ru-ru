@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: c9bf682e6818f7c9854604448e52aa0111605a05
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 457c31a0657839632cbc60db0c908dca2cc4fafd
+ms.sourcegitcommit: a61e9fc06f74dc54c36abf7acb85eeb606e475b8
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/15/2017
 ---
 # <a name="guidelines-for-background-tasks"></a>Руководство по работе с фоновыми задачами
 
@@ -34,6 +36,8 @@ translationtype: HT
 |Доступные триггеры | Фоновые задачи внутри процесса не поддерживают следующие триггеры: [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) и **IoTStartupTask**. |
 |VoIP | Фоновые задачи внутри процесса не поддерживают активации фоновой задачи VoIP в приложении. |  
 
+**Ограничения на количество экземпляров триггера:** существуют ограничения на количество экземпляров некоторых триггеров, которые может зарегистрировать приложение. Приложение может зарегистрировать триггеры [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) и [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396) только один раз на экземпляр приложения. Если приложение переходит за этот предел, регистрация вызовет исключение.
+
 **Квоты ЦП:** фоновые задачи ограничены физическим временем использования, которое они получают в зависимости от типа триггера. Большинство триггеров ограничены 30 секундами использования, хотя некоторые могут выполняться до 10 минут для завершения сложных задач. Фоновые задачи должны быть облегченными, чтобы экономить время работы батареи и обеспечивать удобную работу с приложениями переднего плана. Сведения об ограничениях ресурсов для фоновых задач см. в статье [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
 
 **Управление фоновыми задачами:** ваше приложение должно получать список зарегистрированных фоновых задач, регистрировать обработчики выполнения и завершения и обрабатывать эти события соответствующим образом. Классы фоновой задачи должны сообщать о выполнении, отмене и завершении. Подробнее об этом см. в статьях [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md) и [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md).
@@ -52,7 +56,7 @@ translationtype: HT
 
 > **Важно!** Начиная с Windows 10, для выполнения фоновых задач не требуется, чтобы приложение обязательно располагалось на экране блокировки.
 
-Приложения универсальной платформы Windows (UWP) могут выполнять все поддерживаемые типы задач без закрепления на экране блокировки. Но приложения должны вызвать метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией фоновой задачи любого типа. Этот метод возвратит [**BackgroundAccessStatus.Denied**](https://msdn.microsoft.com/library/windows/apps/hh700439), если пользователь в параметрах устройствах явно запретил разрешения на выполнение фоновых задач для вашего приложения.
+Приложения универсальной платформы Windows (UWP) могут выполнять все поддерживаемые типы задач без закрепления на экране блокировки. Но приложения должны вызвать метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией фоновой задачи любого типа. Этот метод возвратит [**BackgroundAccessStatus.DeniedByUser**](https://msdn.microsoft.com/library/windows/apps/hh700439), если пользователь в параметрах устройствах явно запретил разрешения на выполнение фоновых задач для вашего приложения. Дополнительные сведения о доступных пользователю настройках фоновых задач и экономии заряда см. в разделе [Оптимизация фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity). 
 ## <a name="background-task-checklist"></a>Контрольный список для фоновых задач
 
 *Относится к фоновым задачам, которые выполняются как внутри, так и вне процесса*
@@ -79,17 +83,7 @@ translationtype: HT
 -   Пишите кратковременные фоновые задачи. Фоновые задачи ограничены 30 секундами физического времени.
 -   Не используйте взаимодействие с пользователем в фоновых задачах.
 
-## <a name="windows-background-task-checklist-for-lock-screen-capable-apps"></a>Windows: контрольный список для фоновых задач для приложений, поддерживающих экран блокировки
-
-Следуйте этим рекомендациям при разработке фоновых задач для приложений, которые могут размещаться на экране блокировки. Следуйте рекомендациям в статье [Руководство и контрольный список для плиток на экране блокировки](https://msdn.microsoft.com/library/windows/apps/hh465403).
-
--   Убедитесь, что ваше приложение должно размещаться на экране блокировки, прежде чем разрабатывать его как приложение, поддерживающее экран блокировки. Подробнее см. в статье [Общие сведения об экране блокировки](https://msdn.microsoft.com/library/windows/apps/hh779720).
-
--   Убедитесь, что ваше приложение будет работать, если оно не будет размещено на экране блокировки.
-
--   Включите фоновую задачу, зарегистрированную с помощью [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) или [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843), и объявите ее в манифесте приложения. Убедитесь, что точка входа и типы триггеров указаны правильно. Это необходимо для сертификации и позволяет пользователю разместить приложение на экране блокировки.
-
-**Примечание.**  
+**Примечание**  
 Эта статья адресована разработчикам приложений для Windows10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Статьи по теме

@@ -6,14 +6,19 @@ title: "Текстовое поле"
 label: Text box
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 29ab04588088907a851700fcbd04a64bcea77d63
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: e3b39208db6cd0cb8954d773b704b68888cc5ff0
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="text-box"></a>Текстовое поле
 
@@ -23,26 +28,20 @@ translationtype: HT
 
 Элемент TextBox имеет несколько компонентов, которые могут упростить ввод текста. Он поставляется со знакомым, встроенным контекстным меню с поддержкой копирования и вставки текста. Кнопка "Очистить все" позволяет пользователю быстро удалить весь текст, который был введен. В нем также есть функции проверки правописания, встраиваемые и включаемые по умолчанию.
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
-<li>[**Свойство Text**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)</li>
-</ul>
-</div>
+> **Важные API-интерфейсы**: [класс TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [свойство Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте элемент управления **TextBox**, чтобы позволить пользователю вводить и редактировать неформатированный текст, в частности, в форме. С помощью свойства [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) можно получить и задать текст в элементе управления TextBox.
 
-Вы можете сделать элемент TextBox предназначенным только для чтения, но это должно быть временным, условным состоянием. Если текст не редактируется, попробуйте использовать элемент [**TextBlock**](text-block.md).
+Вы можете сделать элемент TextBox предназначенным только для чтения, но это должно быть временным, условным состоянием. Если текст не редактируется, попробуйте использовать элемент [TextBlock](text-block.md).
 
-Элемент управления [**PasswordBox**](password-box.md) может использоваться для сбора паролей или других конфиденциальных данных, например номеров карт социального страхования. Поле ввода пароля внешне похоже на поле текстового ввода с той разницей, что в нем вместо вводимого текста отображаются маркеры.
+Элемент управления [PasswordBox](password-box.md) может использоваться для сбора паролей или других конфиденциальных данных, например номеров карт социального страхования. Поле ввода пароля внешне похоже на поле текстового ввода с той разницей, что в нем вместо вводимого текста отображаются маркеры.
 
-Используйте элемент управления [**AutoSuggestBox**](auto-suggest-box.md), чтобы позволить пользователю искать термины или показать пользователю список рекомендаций для выбора во время ввода.
+Используйте элемент управления [AutoSuggestBox](auto-suggest-box.md), чтобы позволить пользователю искать термины или показать пользователю список рекомендаций для выбора во время ввода.
 
-Элемент [**RichEditBox**](rich-edit-box.md) служит для отображения и правки текстовых файлов.
+Элемент [RichEditBox](rich-edit-box.md) служит для отображения и правки текстовых файлов.
 
 Дополнительные сведения о выборе подходящего элемента управления текстом см. в статье [Элементы управления текстом](text-controls.md).
 
@@ -104,8 +103,8 @@ IsEnabled
 ### <a name="enable-multi-line-input"></a>Включение многострочного ввода
 
 Есть два свойства, которые позволяют управлять отображением текста на нескольких строках в текстовом поле. Обычно настраиваются два свойства, чтобы сделать текстовое поле многострочным.
-- Чтобы позволить текстовому полю разрешать и отображать символы новой строки или возврата, установите для свойства [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) значение **true**.
-- Чтобы включить обтекание текстом, установите для свойства [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) значение **Wrap**. В результате будет включено обтекание текстом, когда он будет достигать края текстового поля, независимо от символов разделителя строки.
+- Чтобы позволить текстовому полю разрешать и отображать символы новой строки или возврата, установите для свойства [AcceptsReturn](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) значение **true**.
+- Чтобы включить обтекание текстом, установите для свойства [TextWrapping](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) значение **Wrap**. В результате будет включено обтекание текстом, когда он будет достигать края текстового поля, независимо от символов разделителя строки.
 
 > **Примечание.**&nbsp;&nbsp;Элементы TextBox и RichEditBox не поддерживают значение **WrapWholeWords** для своих свойств TextWrapping. Если попытаться использовать WrapWholeWords в качестве значения для параметр TextBox.TextWrapping или RichEditBox.TextWrapping, отобразится исключение относительно недействительного аргумента.
 
@@ -282,6 +281,6 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [Руководство по проверке орфографии](spell-checking-and-prediction.md)
 - [Добавление поиска](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [Руководство по текстовому вводу](text-controls.md)
-- [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Класс Windows.UI.Xaml.Controls PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [Класс TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Класс Windows.UI.Xaml.Controls PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

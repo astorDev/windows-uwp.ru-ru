@@ -1,19 +1,21 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: "Тесты комплекта сертификации приложений для Windows"
 description: "Комплект сертификации приложений для Windows содержит ряд тестов, позволяющих убедиться, что ваше приложение готово к публикации в Магазине Windows."
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 2dab2719eae86487b93b9030b430b84aea7b2737
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 5e3ae74ba4392b5021159f9fcb825009137701d3
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/26/2017
 ---
-## <a name="windows-app-certification-kit-tests"></a>Тесты комплекта сертификации приложений для Windows
+# <a name="windows-app-certification-kit-tests"></a>Тесты комплекта сертификации приложений для Windows
 
 \[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -668,8 +670,8 @@ The AppContainerCheck проверяет, установлен ли бит **app
 
 > **Примечание.**  Эта статья адресована разработчикам приложений UWP для Windows10. В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- 
+## <a name="related-topics"></a>Еще по теме:
 
- 
-
+* [Тесты приложений моста для классических приложений](windows-desktop-bridge-app-tests.md)
+* [Политики Магазина Windows](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  

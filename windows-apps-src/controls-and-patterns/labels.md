@@ -6,14 +6,19 @@ ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: b14c775896984095f580aed8cf41d010f408f67e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 2a3f3d6795276df6e3436c5ae6eff42551d03478
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="labels"></a>Метки
 
@@ -21,20 +26,9 @@ translationtype: HT
 
 Метка— это имя или название элемента управления или группы связанных элементов.
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>Свойство Header</li>
-<li>[**Класс TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)</li>
-</ul>
-</div>
+> **Важные API-интерфейсы**: свойство Header, [класс TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
 
-
-В XAML встроенное свойство заголовка, с помощью которого задаются метки, доступно во многих элементах управления. Для элементов управления, не имеющих свойства заголовка, а также для того чтобы присвоить метку группе элементов управления, можно использовать [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
-
-
-## <a name="example"></a>Пример
-
+В XAML встроенное свойство заголовка, с помощью которого задаются метки, доступно во многих элементах управления. Для элементов управления, не имеющих свойства заголовка, а также для того, чтобы присвоить метку группе элементов управления, можно использовать [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652).
 
 ![Снимок экрана, иллюстрирующий стандартный элемент управления «Метка»](images/label-standard.png)
 
@@ -51,17 +45,15 @@ translationtype: HT
 
 ## <a name="related-topics"></a>Еще по теме
 * [Элементы управления текстом](text-controls.md)
-
-**Для разработчиков**
-* [**Свойство TextBox.Header**](https://msdn.microsoft.com/library/windows/apps/dn252861)
-* [**Свойство PasswordBox.Header**](https://msdn.microsoft.com/library/windows/apps/dn299051)
-* [**Свойство ToggleSwitch.Header**](https://msdn.microsoft.com/library/windows/apps/br209713)
-* [**Свойство DatePicker.Header**](https://msdn.microsoft.com/library/windows/apps/dn279460)
-* [**Свойство TimePicker.Header**](https://msdn.microsoft.com/library/windows/apps/dn299286)
-* [**Свойство Slider.Header**](https://msdn.microsoft.com/library/windows/apps/dn252829)
-* [**Свойство ComboBox.Header**](https://msdn.microsoft.com/library/windows/apps/dn279416)
-* [**Свойство RichEditBox.Header**](https://msdn.microsoft.com/library/windows/apps/dn252726)
-* [**Класс TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
+* [Свойство TextBox.Header](https://msdn.microsoft.com/library/windows/apps/dn252861)
+* [Свойство PasswordBox.Header](https://msdn.microsoft.com/library/windows/apps/dn299051)
+* [Свойство ToggleSwitch.Header](https://msdn.microsoft.com/library/windows/apps/br209713)
+* [Свойство DatePicker.Header](https://msdn.microsoft.com/library/windows/apps/dn279460)
+* [Свойство TimePicker.Header](https://msdn.microsoft.com/library/windows/apps/dn299286)
+* [Свойство Slider.Header](https://msdn.microsoft.com/library/windows/apps/dn252829)
+* [Свойство ComboBox.Header](https://msdn.microsoft.com/library/windows/apps/dn279416)
+* [Свойство RichEditBox.Header](https://msdn.microsoft.com/library/windows/apps/dn252726)
+* [Класс TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
 
  
 

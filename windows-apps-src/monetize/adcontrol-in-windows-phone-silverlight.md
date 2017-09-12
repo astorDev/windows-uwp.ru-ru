@@ -4,20 +4,30 @@ ms.assetid: c0450f7b-5c81-4d8c-92ef-2b1190d18af7
 description: "Узнайте, как использовать класс AdControl для показа баннерной рекламы в приложения Silverlight для Windows Phone 8.1 или Windows Phone 8.0."
 title: "AdControl в Windows Phone Silverlight"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, рекламы, реклама, AdControl, Silverlight, Windows Phone"
-ms.openlocfilehash: 743b9faccaa120f1904b592fc09a965dc7878e03
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f1582639757abfb6de156bf88ce8af71ba3eaacd
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/21/2017
 ---
 # <a name="adcontrol-in-windows-phone-silverlight"></a>AdControl в Windows Phone Silverlight
 
 В этом пошаговом руководстве рассказывается, как использовать класс [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) для показа баннерной рекламы в приложении Silverlight для Windows Phone 8.1 и Windows Phone 8.0.
 
-> **Примечание для Windows Phone Silverlight 8.0**&nbsp;&nbsp;Рекламные баннеры по-прежнему поддерживаются для существующих приложений Windows Phone 8.0 Silverlight, которые используют **AdControl** из предыдущего выпуска пакета Universal Ad Client SDK или Microsoft Advertising SDK, и уже доступны в Магазине. Однако баннеры больше не поддерживаются в новых проектах Windows Phone Silverlight 8.0. Кроме того, ряд сценариев отладки и тестирования ограничены в проектах Windows Phone 8.x Silverlight. Дополнительные сведения см. в статье [Показ рекламы в приложениях](display-ads-in-your-app.md#silverlight_support).
+<span id="silverlight_support"/>
+## <a name="advertising-support-for-windows-phone-8x-silverlight-projects"></a>Поддержка рекламы для проектов Windows Phone 8.x Silverlight
+
+Некоторые сценарии разработчиков больше не поддерживаются в проектах Windows Phone 8.x Silverlight. Дополнительные сведения см. в следующей таблице.
+
+|  Версия платформы  |  Существующие проекты    |   Новые проекты  |
+|-----------------|----------------|--------------|
+| Windows Phone 8.0 Silverlight     |  Если у вас есть существующий проект Windows Phone 8.0 Silverlight, в котором уже используются **AdControl** или **AdMediatorControl** из предыдущего выпуска пакета SDK Universal Ad Client или SDK Microsoft Advertising, и это приложение уже опубликовано в Магазине Windows, вы можете изменить и пересобрать проект, а также выполнить отладку или тестирование изменений на устройстве. Отладка или тестирование проекта в эмуляторе не поддерживается.  |  Не поддерживается.  |
+| Windows Phone 8.1 Silverlight    |  Если у вас есть существующий проект Windows Phone 8.1 Silverlight, в котором уже используются **AdControl** или **AdMediatorControl** из предыдущего пакета SDK, вы можете изменить и пересобрать его. Но для отладки или тестирования приложения необходимо запустить его в эмуляторе и использовать [значения тестового режима](test-mode-values.md) для идентификаторов приложения и рекламных блоков. Отладка или тестирование приложения на устройстве не поддерживается.  |   Вы можете добавить **AdControl** или **AdMediatorControl** в новый проект Windows Phone 8.1 Silverlight. Но для отладки или тестирования приложения необходимо запустить его в эмуляторе и использовать [значения тестового режима](test-mode-values.md) для идентификаторов приложения и рекламных блоков. Отладка или тестирование приложения на устройстве не поддерживается. |
 
 ## <a name="add-the-advertising-assemblies-to-your-project"></a>Добавление рекламных сборок в проект
 
@@ -31,14 +41,12 @@ translationtype: HT
 
   * Если проект предназначен для Windows Phone 8.0, введите следующую команду.
 
-      > [!div class="tabbedCodeSnippets"]
       ```syntax
       Install-Package Microsoft.Advertising.WindowsPhone.SL80 -Version 6.2.40501.1
       ```
 
   * Если проект предназначен для Windows Phone 8.1, введите следующую команду.
 
-      > [!div class="tabbedCodeSnippets"]
       ```syntax
       Install-Package Microsoft.Advertising.WindowsPhone.SL81 -Version 8.1.50112
       ```
@@ -50,7 +58,6 @@ translationtype: HT
 
 1.  Добавьте следующие возможности в узел **Возможности** в файле WMAppManifest.xml.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` syntax
   <Capability Name="ID_CAP_IDENTITY_USER"/>
   <Capability Name="ID_CAP_MEDIALIB_PHOTO"/>
@@ -59,7 +66,6 @@ translationtype: HT
 
   Для этого примера узел **Возможности** ** выглядит следующим образом.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` syntax
   <Capabilities>
       <Capability Name="ID_CAP_NETWORKING"/>
@@ -85,14 +91,12 @@ translationtype: HT
 
 5.  Внесите исправления в разметку Silverlight в файле MainPage.xaml для включения пространства имен **Microsoft.Advertising.Mobile.UI**.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
   ```
 
   В заголовке страницы будет расположен следующий код.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
@@ -103,7 +107,6 @@ translationtype: HT
 
   > **Примечание.**&nbsp;&nbsp;Перед отправкой приложения на проверку необходимо будет заменить тестовые значения **ApplicationId** и **AdUnitId** действительными значениями.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   <Grid x:Name="ContentPanel" Grid.Row="1">
       <UI:AdControl
@@ -122,7 +125,7 @@ translationtype: HT
 
 ## <a name="release-your-app-with-live-ads-using-dev-center"></a>Выпуск приложения с динамической рекламой с помощью Центра разработки
 
-1.  На информационной панели Центра разработки, перейдите на страницу **Получение дохода** &gt; **Получение дохода с помощью рекламы** вашего приложения и [создайте автономный блок Microsoft Advertising](../publish/monetize-with-ads.md). В качестве типа рекламного блока укажите **Баннер**. Запишите и идентификатор рекламного блока, и идентификатор приложения.
+1.  На информационной панели Центра разработки перейдите на страницу **Монетизация** &gt; **Монетизация с помощью рекламы** вашего приложения и [создайте автономную группу объявлений](../publish/monetize-with-ads.md). В качестве типа рекламного блока укажите **Баннер**. Запишите и идентификатор рекламного блока, и идентификатор приложения.
 
 2.  В своем коде замените тестовые значения (**applicationId** и **adUnitId**) рекламного блока действительными значениями, сгенерированными в Центре разработки.
 

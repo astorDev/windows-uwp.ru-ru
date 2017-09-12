@@ -4,14 +4,16 @@ ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: "Используйте этот метод в API аналитики для Магазина Windows, чтобы получить подробные данные об определенной ошибке в вашем приложении."
 title: "Получение сведений об ошибке в приложении"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, службы Магазина, API аналитики для Магазина Windows, ошибки, подробные сведения"
-ms.openlocfilehash: cfab1c8f5149d4c6d02a9fa94287a4e204a11a7f
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: b18a49fd1c035bf83ff7288efef8c71df8faef8f
+ms.sourcegitcommit: 7aabd2e59d45bbc5512dd4ddd9110ae62b79d552
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/19/2017
 ---
 # <a name="get-details-for-an-error-in-your-app"></a>Получение сведений об ошибке в приложении
 
@@ -164,3 +166,4 @@ Authorization: Bearer <your access token>
 * [Доступ к аналитическим данным с помощью служб Магазина Windows](access-analytics-data-using-windows-store-services.md)
 * [Получение данных отчетов об ошибках](get-error-reporting-data.md)
 * [Получение трассировки стека при возникновении ошибки в приложении](get-the-stack-trace-for-an-error-in-your-app.md)
+* [Скачивание CAB-файла для ошибки в приложении](download-the-cab-file-for-an-error-in-your-app.md)

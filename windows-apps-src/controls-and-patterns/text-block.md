@@ -6,30 +6,27 @@ title: "Блок текста"
 label: Text block
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 904f0982deb596783ae886c26fee03c180d51987
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 0ee72a3111fd64fc4cd17a9a0a4283255ce2d3ff
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="text-block"></a>Блок текста
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
  Блок текста — это основной элемент управления для отображения текста в режиме "только для чтения" в приложениях. Его можно использовать для отображения однострочного или многострочного текста, строковых гиперссылок и текста с полужирным шрифтом, курсивом или подчеркиванием.
-
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс TextBlock**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)</li>
-<li>[**Свойство Text**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx)</li>
-<li>[**Свойство Inlines**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx)</li>
-</ul>
-</div>
-
+ 
+ > **Важные API-интерфейсы**: [класс TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [свойство Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx), [свойство Inlines](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -76,14 +73,14 @@ textBlock1.Text = "Hello, world!";
 Для размещения текста XAML использует более эффективный программный путь, когда это возможно. Этот быстрый путь уменьшает общее потребление памяти и значительно уменьшает время, которое необходимо ЦП на измерение и размещение текста. Этот быстрый путь используется только для объекта TextBlock, поэтому по возможности следует использовать этот объект вместо объекта RichTextBlock.
 
 В некоторых условиях для отрисовки текста объекту TextBlock приходится использовать более функциональный программный путь, потребляющий больше ресурсов ЦП. Чтобы функция отрисовки текста всегда использовала быстрый путь, при настройке перечисленных здесь свойств соблюдайте указанные ниже рекомендации.
-- [**Text**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx): самое важное условие состоит в том, что быстрый путь используется только тогда, когда вы настраиваете свойство Text, явно указав свойство либо в XAML, либо в коде (как показано в предыдущих примерах). Если настроить текст с помощью коллекции Inlines объекта TextBlock (например, с помощью `<TextBlock>Inline text</TextBlock>`), это быстрый путь будет выключен из-за потенциальной сложности, вызванной использованием нескольких форматов.
-- [**CharacterSpacing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx): быстрому пути соответствует только значение0, используемое по умолчанию.
-- [**TextTrimming**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.texttrimming.aspx): только значения **None**, **CharacterEllipsis** и **WordEllipsis** соответствуют быстрому пути. Значение **Clip** выключает быстрый путь.
+- [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx): самое важное условие состоит в том, что быстрый путь используется только тогда, когда вы настраиваете свойство Text, явно указав свойство либо в XAML, либо в коде (как показано в предыдущих примерах). Если настроить текст с помощью коллекции Inlines объекта TextBlock (например, с помощью `<TextBlock>Inline text</TextBlock>`), это быстрый путь будет выключен из-за потенциальной сложности, вызванной использованием нескольких форматов.
+- [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx): быстрому пути соответствует только значение 0, используемое по умолчанию.
+- [TextTrimming](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.texttrimming.aspx): только значения **None**, **CharacterEllipsis** и **WordEllipsis** соответствуют быстрому пути. Значение **Clip** выключает быстрый путь.
 
 > **Примечание.**&nbsp;&nbsp;В версиях Windows, предшествующих Windows10 версии 1607, дополнительные свойства также влияют на быстрый путь. При запуске приложения в более ранней версии Windows эти условия также приведут к обработке текста по медленному пути. Дополнительные сведения о версиях см. в статье «Адаптивный к версии код».
-- [**Typography**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx): быстрому пути соответствуют только значения по умолчанию для различных свойств Typography.
-- [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.linestackingstrategy.aspx): если для параметра [LineHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.lineheight.aspx) не установлено значение 0, значения **BaselineToBaseline** и **MaxHeight** отключают быстрый путь.
-- [**IsTextSelectionEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.istextselectionenabled.aspx): только значение **false** соответствует быстрому пути. Если задать для этого свойства значение **true**, быстрый путь будет выключен.
+- [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx): быстрому пути соответствуют только значения по умолчанию для различных свойств Typography.
+- [LineStackingStrategy](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.linestackingstrategy.aspx): если для параметра [LineHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.lineheight.aspx) не установлено значение 0, значения **BaselineToBaseline** и **MaxHeight** отключают быстрый путь.
+- [IsTextSelectionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.istextselectionenabled.aspx): только значение **false** соответствует быстрому пути. Если задать для этого свойства значение **true**, быстрый путь будет выключен.
 
 Во время отладки для свойства [DebugSettings.IsTextPerformanceVisualizationEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled.aspx) можно задать значение **true**, чтобы определить, используется ли быстрый путь для отрисовки текста. Если для этого свойства задано значение true, то текст, отрисовываемый с использованием быстрого пути, будет отображаться ярко-зеленым цветом.
 
@@ -136,18 +133,18 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 Ниже показано, как определить несколько по-разному отформатированных текстовых строк в объекте TextBlock, используя объекты Run, разделенные элементами LineBreak.
 ```xaml
-<TextBlock FontFamily="Arial" Width="400" Text="Sample text formatting runs">
+<TextBlock FontFamily="Segoe UI" Width="400" Text="Sample text formatting runs">
     <LineBreak/>
-    <Run Foreground="Gray" FontFamily="Courier New" FontSize="24">
-        Courier New 24
+    <Run Foreground="Gray" FontFamily="Segoe UI Light" FontSize="24">
+        Segoe UI Light 24
     </Run>
     <LineBreak/>
-    <Run Foreground="Teal" FontFamily="Times New Roman" FontSize="18" FontStyle="Italic">
-        Times New Roman Italic 18
+    <Run Foreground="Teal" FontFamily="Georgia" FontSize="18" FontStyle="Italic">
+        Georgia Italic 18
     </Run>
     <LineBreak/>
-    <Run Foreground="SteelBlue" FontFamily="Verdana" FontSize="14" FontWeight="Bold">
-        Verdana Bold 14
+    <Run Foreground="Black" FontFamily="Arial" FontSize="14" FontWeight="Bold">
+        Arial Bold 14
     </Run>
 </TextBlock>
 ```
@@ -183,6 +180,6 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 - [Руководство по проверке орфографии](spell-checking-and-prediction.md)
 - [Добавление поиска](search.md)
 - [Руководство по текстовому вводу](text-controls.md)
-- [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Класс Windows.UI.Xaml.Controls PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [Класс TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Класс Windows.UI.Xaml.Controls PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

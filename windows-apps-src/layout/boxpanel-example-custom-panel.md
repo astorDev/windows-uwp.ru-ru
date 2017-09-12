@@ -10,18 +10,17 @@ label: BoxPanel, an example custom panel
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a46e26491e909d825ceaff04d008b8cb56c9aff3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4fbc5c2e7bea43c2f18cf9e247b0143795bdfc1a
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
-
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel, пример настраиваемой панели
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -51,7 +50,7 @@ ms.lasthandoff: 02/07/2017
 -   ограничения панели на собственное пространство;
 -   определение всех измерений, размещения, позиций и размеров в логике панели, которые в итоге приводят к обработке макета пользовательского интерфейса дочерних элементов.
 
-С учетом этого показанная здесь панель `BoxPanel` предназначена для определенного сценария. Чтобы код в этом примере оставался на первом плане, мы пока не будем объяснять сценарий подробно и вместо этого сосредоточимся на требуемых шагах и шаблонах кодирования. Если вы хотите сначала получить дополнительную информацию о сценарии, перейдите в раздел [Сценарий для `BoxPanel`](#scenario), а затем вернитесь к коду.
+С учетом этого показанная здесь панель `BoxPanel` предназначена для определенного сценария. Чтобы код в этом примере оставался на первом плане, мы пока не будем объяснять сценарий подробно и вместо этого сосредоточимся на требуемых шагах и шаблонах кодирования. Если вы хотите сначала получить дополнительную информацию о сценарии, перейдите в раздел [Сценарий для `BoxPanel`](#the-scenario-for-boxpanel), а затем вернитесь к коду.
 
 ## <a name="start-by-deriving-from-panel"></a>Начните с вывода из **Panel**
 
@@ -113,15 +112,15 @@ protected override Size MeasureOverride(Size availableSize)
     if (aspectratio > 1)
     {
         rowcount = maxrc;
-        colcount = (maxrc > 2 &amp;&amp; Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
+        colcount = (maxrc > 2 && Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
     } 
     else 
     {
-        rowcount = (maxrc > 2 &amp;&amp; Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
+        rowcount = (maxrc > 2 && Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
         colcount = maxrc;
     }
 
-    // Now that we have a column count, divide available horizontal, that&#39;s our cell width.
+    // Now that we have a column count, divide available horizontal, that's our cell width.
     cellwidth = (int)Math.Floor(availableSize.Width / colcount);
     // Next get a cell height, same logic of dividing available vertical by rowcount.
     cellheight = Double.IsInfinity(availableSize.Height) ? Double.PositiveInfinity : availableSize.Height / rowcount;
@@ -137,7 +136,7 @@ protected override Size MeasureOverride(Size availableSize)
 
 Необходимый шаблон реализации метода [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) представляет собой цикл с каждым элементом в свойстве [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514). Всегда вызывайте метод [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) в каждом из этих элементов. Для метода **Measure** предусмотрен параметр типа [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995). В нем передается размер, который ваша панель выделяет для этого конкретного дочернего элемента. Таким образом, перед выполнением цикла и вызовом метода **Measure** необходимо знать, сколько места может выделить каждая ячейка. В самом методе **MeasureOverride** предоставлено значение *availableSize*. Это размер, который родительский объект использовал при вызове метода **Measure**, что и привело изначально к вызову этого метода **MeasureOverride**. Таким образом, согласно обычной логике необходимо придумать схему, в которой каждый дочерний элемент разделяет место, равное общему доступному размеру панели *availableSize*. Затем каждое разделение размера передается методу **Measure** каждого дочернего элемента.
 
-Панель `BoxPanel` разбивает размер довольно просто: место делится на число прямоугольников, в основном зависящее от числа объектов. Размер прямоугольников зависит от числа строк и столбцов, а также от доступного размера. Иногда строка или столбец в квадрате не нужны; тогда они удаляются, и панель становится прямоугольной, а не квадратной с точки зрения соотношения строк и столбцов. Дополнительную информацию о выводе этой логики см. ниже в разделе ["Сценарий для BoxPanel"](#scenario).
+Панель `BoxPanel` разбивает размер довольно просто: место делится на число прямоугольников, в основном зависящее от числа объектов. Размер прямоугольников зависит от числа строк и столбцов, а также от доступного размера. Иногда строка или столбец в квадрате не нужны; тогда они удаляются, и панель становится прямоугольной, а не квадратной с точки зрения соотношения строк и столбцов. Дополнительную информацию о выводе этой логики см. ниже в разделе ["Сценарий для BoxPanel"](#the-scenario-for-boxpanel).
 
 Что же делает проход Measure? Он устанавливает значение свойства только для чтения [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) в каждом элементе, в котором был вызван метод [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952). Значение **DesiredSize** может быть важным, когда вы дойдете до прохода Arrange, так как **DesiredSize** передает размер, который может или должен быть при упорядочении и в окончательной отрисовке. Даже если вы не используете свойство **DesiredSize** в своей логике, оно необходимо системе.
 
@@ -230,11 +229,11 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 Возможно, у вас возникнет вопрос, почему панель не выбрала для 10 элементов прямоугольник 5×2, в который аккуратно вошло бы это число элементов. Однако на практике размер панелей настраивается как прямоугольник, который часто не имеет жестко ориентированной пропорции. Прием наименьшего квадрата представляет собой способ настроить логику для работы с обычными фигурами макета; размеры, в которых формы ячеек имеют нестандартные пропорции, не рекомендуются.
 
 > [!NOTE]
-> Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> Эта статья адресована разработчикам приложений для Windows10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Связанные разделы
 
-**Справочник**
+**Справочные материалы**
 
 * [**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
 * [**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
@@ -243,4 +242,3 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 **Понятия**
 
 * [Выравнивание, поле и заполнение](alignment-margin-padding.md)
-

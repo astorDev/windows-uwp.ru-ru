@@ -1,17 +1,19 @@
 ---
-author: msatranjr
+author: normesta
 title: "Запрос ключа проверки подлинности карт"
 description: "Ваше универсальное приложение для Windows должно пройти проверку подлинности, прежде чем оно сможет использовать MapControl и службы карт в пространстве имен Windows.Services.Maps."
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
-ms.author: misatran
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, ключ проверки подлинности карт, элемент управления картой"
-ms.openlocfilehash: 42078becbc5853787ca057dcbfb58b8d8de7967d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 7b964c19933db460b8f6b0cc7791165ad86adb6c
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="request-a-maps-authentication-key"></a>Запрос ключа проверки подлинности карт
 
@@ -40,9 +42,9 @@ translationtype: HT
 
 4.  Если у вас еще нет учетной записи Карт Bing, создайте новую учетную запись. Введите **Имя учетной записи**, **Имя контакта**, **Название организации**, **Адрес электронной почты** и **Номер телефона**. Приняв условия использования, щелкните **Создать**.
 
-5.  В меню **Моя учетная запись** выберите пункт **Создать или просмотреть ключи**.
+5.  В меню **Моя учетная запись** щелкните **Мои ключи**.
 
-6.  Щелкните ссылку для **создания ключа**.
+6.  Если у вас есть ранее созданный ключ, щелкните ссылку, чтобы создать новый ключ. В противном случае перейдите к форме "Создание ключа".
 
 7.  Заполните форму **Создание ключа**, а затем щелкните **Создать**.
 

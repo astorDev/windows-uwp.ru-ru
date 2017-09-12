@@ -7,14 +7,16 @@ label: Screen sizes and break points
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: cd6ba1378aeddb44aa66c53088f32286aff8d29f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b56cdeeb9a3c3d3ca89e19d8057e3d93241e6c3c
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 #  <a name="screen-sizes-and-break-points-for-responsive-design"></a>Размеры экрана и точки прерывания для реализации отзывчивого дизайна
 
@@ -78,7 +80,7 @@ translationtype: HT
 <li>Закрепите [панели приложения](../controls-and-patterns/app-bars.md) в нижней части окна для улучшения доступности.</li>
 <li>Используйте один столбец или регион за один раз.</li>
 <li>Для отображения поиска используйте значок (не используйте поле поиска).</li>
-<li>Включайте [область навигации](../controls-and-patterns/nav-pane.md) в режиме наложения, чтобы сэкономить экранное пространство.</li>
+<li>Включайте [область навигации](../controls-and-patterns/navigationview.md) в режиме наложения, чтобы сэкономить экранное пространство.</li>
 <li>Если вы применяете [шаблон основных и подробных данных](../controls-and-patterns/master-details.md), то для экономии пространства экрана используйте режим презентации стопкой.</li>
 </ul></td>
 <td style="vertical-align:top;"><ul>
@@ -87,7 +89,7 @@ translationtype: HT
 <li>Разместите командные элементы, такие как [панели приложения](../controls-and-patterns/app-bars.md), в верхней части окна приложения.</li>
 <li>До двух столбцов или регионов</li>
 <li>Отобразите поле поиска.</li>
-<li>Переведите [панель навигации](../controls-and-patterns/nav-pane.md) в режим полосы, чтобы всегда отображалась узкая полоска значков.</li>
+<li>Переведите [панель навигации](../controls-and-patterns/navigationview.md) в режим полосы, чтобы всегда отображалась узкая полоска значков.</li>
 <li>Рекомендуется дополнительно адаптировать [интерфейс для телевизоров](http://go.microsoft.com/fwlink/?LinkId=760736).</li>
 </ul></td>
 <td style="vertical-align:top;"><ul>
@@ -96,7 +98,7 @@ translationtype: HT
 <li>Разместите командные элементы, такие как [панели приложения](../controls-and-patterns/app-bars.md), в верхней части окна приложения.</li>
 <li>До трех столбцов или регионов</li>
 <li>Отобразите поле поиска.</li>
-<li>Переведите [панель навигации](../controls-and-patterns/nav-pane.md) в режим стыковки, чтобы она всегда отображалась.</li>
+<li>Переведите [панель навигации](../controls-and-patterns/navigationview.md) в режим стыковки, чтобы она всегда отображалась.</li>
 </ul></td>
 </tr>
 </tbody>

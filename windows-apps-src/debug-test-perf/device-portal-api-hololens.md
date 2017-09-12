@@ -1,11 +1,13 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
 title: "Справка по API Портала устройства для HoloLens"
 description: "Узнайте о портале устройств Windows для интерфейса HoloLens REST API. который можно использовать для доступа к данным и программного контроля вашего устройства."
-ms.openlocfilehash: 638ebca167b2ca56f00a83aab13b15c57b2dca2a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 3c000bc19c0bd45050e5be1ca73e5dc7b73d8103
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="device-portal-api-reference-for-hololens"></a>Справка по API Портала устройства для HoloLens
 

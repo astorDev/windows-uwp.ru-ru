@@ -6,14 +6,16 @@ ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 0d3b58b8ea03c3ba836078e507495beeebe74fb8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 54ad78d5799a96ddcec7b060704ee198e0bf8db5
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="guidelines-for-tile-and-icon-assets"></a>Руководство по работе с ресурсами плиток и значков
 
@@ -123,7 +125,7 @@ translationtype: HT
 
 ![соотношения размеров на широкой плитке](images/assetguidance11.png)
 
-Если плитка большая, то значок должен иметь такую ширину и высоту, чтобы его размер составлял не более 50% от размера плитки:
+Для крупных плиток ширина значка должна составлять 66%, а высота— 50% от размера плитки.
 
 ![соотношения размеров на широкой плитке](images/assetguidance12.png)
 
@@ -181,24 +183,6 @@ translationtype: HT
 
 ![target-based asset sizing at 100 % scale](images/assetguidance23.png)
 
-**Ресурсы приложения с шаблоном значка**
-
-C помощью шаблона значка (также называемого шаблоном IconWithBadge) можно отображать небольшое изображение в центре плитки. Windows10 поддерживает этот шаблон на телефонах, планшетах и настольных компьютерах. (Дополнительные сведения о создании шаблонов значков см. в разделе [Специальные шаблоны плиток](tiles-and-notifications-special-tile-templates-catalog.md).)
-
-В приложениях, в которых используется шаблон значков, например в приложениях Сообщения, Телефон и Магазин, предусмотрены специальные ресурсы, среди которых имеется индикатор событий (со счетчиком, работающем в режиме реального времени). Как и в случае с другими специальными ресурсами, заполнение не требуется. Ресурсы значков не являются частью манифеста приложений; они являются частью полезных данных живой плитки. Ресурсы масштабируются таким образом, чтобы они помещались по центру в контейнере с соотношением сторон 3:2.
-
-![размеры ресурсов с индикатором событий и без него](images/assetguidance24.png)
-
-Если ресурс квадратный, происходит его автоматическое выравнивание по центру в контейнере:
-
-![размеры квадратного ресурса с индикатором событий и без него](images/assetguidance25.png)
-
-Если ресурс не квадратный, происходит его автоматическое выравнивание по горизонтали/вертикали и привязка по ширине/высоте контейнера:
-
-![размеры неквадратного ресурса с индикатором событий и без него](images/assetguidance26a.png)
-
-![размеры неквадратного ресурса с индикатором событий и без него](images/assetguidance26b.png)
-
 ## <a name="splash-screen-assets"></a>Ресурсы экрана-заставки
 
 
@@ -233,38 +217,217 @@ C помощью шаблона значка (также называемого 
 
 Мы настоятельно рекомендуем предоставлять ресурсы с коэффициентами масштабирования 100, 200 и 400. Предоставление ресурсов для всех коэффициентов масштабирования обеспечит оптимальную работу пользователя.
 
-**Ресурсы на основе масштаба**
+<br/>
 
-| Категория             | Имя элемента      | При масштабе 100% | При масштабе 125% | При масштабе 150% | При масштабе 200% | При масштабе 400% |
-|----------------------|-------------------|---------------|---------------|---------------|---------------|---------------|
-| Маленький                | Square71x71Logo   | 71 x 71         | 89 x 89         | 107 x 107       | 142 x 142       | 284 x 284       |
-| Средний               | Square150x150Logo | 150 x 150       | 188 x 188       | 225 x 225       | 300 x 300       | 600 x 600       |
-| Широкий                 | Square310x150Logo | 310 x 150       | 388 x 188       | 465 x 225       | 620 x 300       | 1240 x 600      |
-| Большой (только для рабочего стола) | Square310x310Logo | 310 x 310       | 388 x 388       | 465 x 465       | 620 x 620       | 1240 x 1240     |
-| Список приложений (значок)      | Square44x44Logo   | 44 x 44         | 55 x 55         | 66 x 66         | 88 x 88         | 176 x 176       |
+<table>
+<thead>
+<tr><th colspan="3">Маленькая плитка (Square71x71Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">Масштаб 100%</td>
+    <td width="20%">71 x 71</td>
+    <td>Square71x71Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>Масштаб 125%</td>
+    <td>89 x 89</td>
+    <td>Square71x71Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>Масштаб 150%</td>
+    <td>107 x 107</td>
+    <td>Square71x71Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>Масштаб 200%</td>
+    <td>142 x 142</td>
+    <td>Square71x71Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>Масштаб 400%</td>
+    <td>284 x 284</td>
+    <td>Square71x71Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
- 
+<br/>
 
-**Примеры имен файлов для ресурсов на основе масштаба**
+<table>
+<thead>
+<tr><th colspan="3">Средняя Плитка (Square150x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">Масштаб 100%</td>
+    <td width="20%">150 x 150</td>
+    <td>Square150x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>Масштаб 125%</td>
+    <td>188 x 188</td>
+    <td>Square150x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>Масштаб 150%</td>
+    <td>225 x 225</td>
+    <td>Square150x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>Масштаб 200%</td>
+    <td>300 x 300</td>
+    <td>Square150x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>Масштаб 400%</td>
+    <td>600 x 600</td>
+    <td>Square150x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-| Категория             | Имя элемента      | При масштабе 100%                  | При масштабе 125%                  | При масштабе 150%                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|--------------------------------|
-| Маленький                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
-| Средний               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
-| Широкий                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
-| Большой (только для настольных устройств) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
-| Список приложений (значок)      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+<br/>
 
- 
+<table>
+<thead>
+<tr><th colspan="3">Широкая Плитка (Wide310x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">Масштаб 100%</td>
+    <td width="20%">310 x 150</td>
+    <td>Wide310x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>Масштаб 125%</td>
+    <td>388 x 188</td>
+    <td>Wide310x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>Масштаб 150%</td>
+    <td>465 x 225</td>
+    <td>Wide310x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>Масштаб 200%</td>
+    <td>620 x 300</td>
+    <td>Wide310x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>Масштаб 400%</td>
+    <td>1240 x 600</td>
+    <td>Wide310x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-| Категория             | Имя элемента      | При масштабе 200%                  | При масштабе 400%                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|
-| Маленький                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
-| Средний               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
-| Широкий                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
-| Большой (только для настольных устройств) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
-| Список приложений (значок)      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+<br/>
 
+<table>
+<thead>
+<tr><th colspan="3">Крупная плитка (Square310x310Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">Масштаб 100%</td>
+    <td width="20%">310 x 310</td>
+    <td>Square310x310Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>Масштаб 125%</td>
+    <td>388 x 388</td>
+    <td>Square310x310Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>Масштаб 150%</td>
+    <td>465 x 465</td>
+    <td>Square310x310Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>Масштаб 200%</td>
+    <td>620 x 620</td>
+    <td>Square310x310Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>Масштаб 400%</td>
+    <td>1240 x 1240</td>
+    <td>Square310x310Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">Значок списка приложений (Square44x44Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">Масштаб 100%</td>
+    <td width="20%">44 x 44</td>
+    <td>Square44x44Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>Масштаб 125%</td>
+    <td>55 x 55</td>
+    <td>Square44x44Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>Масштаб 150%</td>
+    <td>66 x 66</td>
+    <td>Square44x44Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>Масштаб 200%</td>
+    <td>88 x 88</td>
+    <td>Square44x44Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>Масштаб 400%</td>
+    <td>176 x 176</td>
+    <td>Square44x44Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">Экран-заставка (SplashScreen)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">Масштаб 100%</td>
+    <td width="20%">620 x 300</td>
+    <td>SplashScreen.scale-100.png</td>
+</tr>
+<tr>
+    <td>Масштаб 125%</td>
+    <td>775 x 375</td>
+    <td>SplashScreen.scale-125.png</td>
+</tr>
+<tr>
+    <td>Масштаб 150%</td>
+    <td>930 x 450</td>
+    <td>SplashScreen.scale-150.png</td>
+</tr>
+<tr>
+    <td>Масштаб 200%</td>
+    <td>1240 x 600</td>
+    <td>SplashScreen.scale-200.png</td>
+</tr>
+<tr>
+    <td>Масштаб 400%</td>
+    <td>2480 x 1200</td>
+    <td>SplashScreen.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
  
 
 **Специальные ресурсы**
@@ -275,22 +438,22 @@ C помощью шаблона значка (также называемого 
 
 В таблице ниже представлены все размеры специальных ресурсов и соответствующие примеры имен файлов:
 
-| Размер ресурса | Пример имени файла                 |
-|------------|-----------------------------------|
-| 16 x 16\*    | AppNameAppList.targetsize-16.png  |
-| 24 x 24\*    | AppNameAppList.targetsize-24.png  |
-| 32 x 32\*    | AppNameAppList.targetsize-32.png  |
-| 48 x 48\*    | AppNameAppList.targetsize-48.png  |
-| 256 x 256\*  | AppNameAppList.targetsize-256.png |
-| 20 x 20      | AppNameAppList.targetsize-20.png  |
-| 30 x 30      | AppNameAppList.targetsize-30.png  |
-| 36 x 36      | AppNameAppList.targetsize-36.png  |
-| 40 x 40      | AppNameAppList.targetsize-40.png  |
-| 60 x 60      | AppNameAppList.targetsize-60.png  |
-| 64 x 64      | AppNameAppList.targetsize-64.png  |
-| 72 x 72      | AppNameAppList.targetsize-72.png  |
-| 80 x 80      | AppNameAppList.targetsize-80.png  |
-| 96 x 96      | AppNameAppList.targetsize-96.png  |
+| Размер ресурса | Пример имени файла                  |
+|------------|------------------------------------|
+| 16 x 16\*    | Square44x44Logo.targetsize-16.png  |
+| 24 x 24\*    | Square44x44Logo.targetsize-24.png  |
+| 32 x 32\*    | Square44x44Logo.targetsize-32.png  |
+| 48 x 48\*    | Square44x44Logo.targetsize-48.png  |
+| 256 x 256\*  | Square44x44Logo.targetsize-256.png |
+| 20 x 20      | Square44x44Logo.targetsize-20.png  |
+| 30 x 30      | Square44x44Logo.targetsize-30.png  |
+| 36 x 36      | Square44x44Logo.targetsize-36.png  |
+| 40 x 40      | Square44x44Logo.targetsize-40.png  |
+| 60 x 60      | Square44x44Logo.targetsize-60.png  |
+| 64 x 64      | Square44x44Logo.targetsize-64.png  |
+| 72 x 72      | Square44x44Logo.targetsize-72.png  |
+| 80 x 80      | Square44x44Logo.targetsize-80.png  |
+| 96 x 96      | Square44x44Logo.targetsize-96.png  |
 
  
 
@@ -304,7 +467,7 @@ C помощью шаблона значка (также называемого 
 **Ресурсы плиток**
 
 -   Выровненные по центру ресурсы обычно используются на начальном экране, чтобы продемонстрировать ваше приложение.
--   Формат имени файла: \*Tile.scale-\*.PNG
+-   Формат имени файлов: [Square\Wide]\*x\*Logo.scale-\*.png
 -   Затронутые приложения: все приложения UWP
 -   Способы использования:
     -   плитки начального экрана по умолчанию (компьютеры и мобильные устройства)
@@ -317,7 +480,7 @@ C помощью шаблона значка (также называемого 
 **Масштабируемые ресурсы с основой**
 
 -   Эти ресурсы используются на поверхностях, где запрашиваются коэффициенты масштабирования. Система добавляет ресурсам основу, либо же они предоставляются с собственным цветом фона, если это предусмотрено приложением.
--   Формат имени файлов: \*AppList.scale-\*.PNG
+-   Формат имени файлов: Square44x44Logo.scale-\*.png
 -   Затронутые приложения: все приложения UWP
 -   Способы использования:
     -   список всех приложений в меню «Пуск» (компьютеры)
@@ -330,7 +493,7 @@ C помощью шаблона значка (также называемого 
 **Ресурсы списка целевых размеров с основой**
 
 -   Ниже представлены фиксированные размеры ресурсов, которые не масштабируются с основами. В основном используются для поддержки устаревших функций. Ресурсы проверяются системой.
--   Формат имени файлов: \*AppList.targetsize-\*.PNG
+-   Формат имени файлов: Square44x44Logo.targetsize-\*.png
 -   Затронутые приложения: все приложения UWP
 -   Способы использования:
     -   список переходов начального экрана (компьютеры)
@@ -341,7 +504,7 @@ C помощью шаблона значка (также называемого 
 **Ресурсы списка целевых размеров без основы**
 
 -   Это ресурсы, для которых система не добавляет основу и которые не масштабируются.
--   Формат имени файлов: \*AppList.targetsize-\*\_altform-unplated.PNG
+-   Формат имени файлов: Square44x44Logo.targetsize-\*\_altform-unplated.png
 -   Затронутые приложения: все приложения UWP
 -   Способы использования:
     -   Панель задач и эскиз панели задач (настольные устройства)
@@ -352,7 +515,7 @@ C помощью шаблона значка (также называемого 
 **Ресурсы расширений файлов**
 
 -   Это ресурсы, относящиеся к расширениям файлов. Они отображаются возле значков сопоставления файлов в формате Win32 в Проводнике и не должны зависеть от темы. Размеры отличаются для платформ для настольных компьютеров и мобильных платформ.
--   Формат имени файлов: \*LogoExtensions.targetsize-\*.PNG
+-   Формат имени файлов: \*LogoExtensions.targetsize-\*.png
 -   Затронутые приложения: Музыка, Видео, Фото, Microsoft Edge, Microsoft Office
 -   Способы использования:
     -   Проводник
@@ -362,30 +525,7 @@ C помощью шаблона значка (также называемого 
 **Экран-заставка**
 
 -   Ресурс, который отображается на экране-заставке приложения. Автоматическое масштабирование на платформе для персональных компьютеров и на мобильной платформе.
--   Формат имени файлов: \*SplashScreen.screen-100.PNG
+-   Формат имени файлов: SplashScreen.scale-*.png
 -   Затронутые приложения: все приложения UWP
 -   Способы использования:
     -   экран-заставка приложения
-
-**Ресурсы значков плиток**
-
--   Это ресурсы для приложений, использующих шаблон значков.
--   Формат имени файлов: неприменимо
--   Затронутые приложения: Сообщения, Телефон, Магазин и пр.
--   Способы использования:
-    -   пиктограммная плитка
-
-
-
-## <a name="related-topics"></a>Ссылки по теме
-
-
-
-* [Специальные шаблоны плиток](tiles-and-notifications-special-tile-templates-catalog.md)
- 
-
- 
-
-
-
-

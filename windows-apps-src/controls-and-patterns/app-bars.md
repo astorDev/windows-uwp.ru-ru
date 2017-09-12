@@ -1,38 +1,36 @@
 ---
 author: Jwmsft
 Description: "Панели команд предоставляют пользователям удобный доступ к самым распространенным задачам приложения."
-title: "Панель приложения и панель команд"
+title: "Панель команд"
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
-ms.openlocfilehash: 6dc3c9d15ebbda67dd055adb4b9d5548b6ac81e3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: yulikl
+design-contact: ksulliv
+dev-contact: niallm
+doc-status: Published
+ms.openlocfilehash: f880f6ea6438e4a2f41a50c358ca0be4239e88b4
+ms.sourcegitcommit: 45490bd85e6f8d247a041841d547ecac2ff48250
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/23/2017
 ---
-# <a name="app-bar-and-command-bar"></a>Панель приложения и панель команд
+# <a name="command-bar"></a>Панель команд
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Панели команд (также называемые "панели приложения") предоставляют пользователям удобный доступ к самым распространенным задачам приложения и могут использоваться для отображения команд или параметров, относящихся к пользовательскому контексту, например к выбору фотографий или режиму рисования. Кроме того, они могут служить для навигации по страницам или разделам приложения. Панели команд можно использовать с любым шаблоном навигации.
 
-![Пример панели команд со значками](images/controls_appbar_icons.png)
+> **Важные API-интерфейсы**: [класс CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx), [класс AppBarButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx), [класс AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx), [класс AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)</li>
-<li>[**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx) </li>
-<li> [**AppBarToggleButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)</li>
-<li>[**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx) </li>
-</ul>
-</div>
+![Пример панели команд со значками](images/controls_appbar_icons.png)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
@@ -65,10 +63,10 @@ XAML одновременно поддерживает элементы упра
 ![Закрытая панель команд](images/commandbar_anatomy_open.png)
 
 Панель команд разделена на четыре основных области:
-- Кнопка "Дополнительно" (\[•••\]) отображается в правой части панели. Кнопка "Дополнительно" \[•••\] выполняет две функции: отображает подписи на кнопках основных команд и открывает меню переполнения, если присутствуют второстепенные команды. В последнем SDK эта кнопка не будет видна при отсутствии второстепенных команд и скрытых подписей. Свойство [**OverflowButtonVisibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) позволяет приложениям изменять это предусмотренное по умолчанию поведение с автоматическим скрытием.
-- Область содержимого находится в левой части панели. Она отображается, если заполнено значение свойства [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx).
-- Область главных команд выровнена по правому краю панели и расположена рядом с кнопкой "Дополнительно" (\[•••\]). Она отображается, если заполнено значение свойства [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx).  
-- Меню переполнения отображается, только когда панель команд открыта и заполнено значение свойства [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx). С новым поведением динамического переполнения основные команды будут автоматически перемещаться в область SecondaryCommands, если пространство ограничено.
+- Кнопка "Дополнительно" (\[•••\]) отображается в правой части панели. Кнопка "Дополнительно" \[•••\] выполняет две функции: отображает подписи на кнопках основных команд и открывает меню переполнения, если присутствуют второстепенные команды. В последнем SDK эта кнопка не будет видна при отсутствии второстепенных команд и скрытых подписей. Свойство [OverflowButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) позволяет приложениям изменять это предусмотренное по умолчанию поведение с автоматическим скрытием.
+- Область содержимого находится в левой части панели. Она отображается, если заполнено значение свойства [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx).
+- Область главных команд выровнена по правому краю панели и расположена рядом с кнопкой "Дополнительно" (\[•••\]). Она отображается, если заполнено значение свойства [PrimaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx).  
+- Меню переполнения отображается, только когда панель команд открыта и заполнено значение свойства [SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx). С новым поведением динамического переполнения основные команды будут автоматически перемещаться в область SecondaryCommands, если пространство ограничено.
 
 Элементы макета отображаются в обратном порядке, когда для свойства [FlowDirection](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.flowdirection.aspx) указано значение **RightToLeft**.
 
@@ -97,7 +95,7 @@ XAML одновременно поддерживает элементы упра
 ```
 
 ## <a name="commands-and-content"></a>Команды и содержимое
-Элемент управления CommandBar имеет три свойства, которые можно использовать для добавления команд и содержимого: [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx), [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) и [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx).
+Элемент управления CommandBar имеет три свойства, которые можно использовать для добавления команд и содержимого: [PrimaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx), [SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) и [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx).
 
 
 ### <a name="primary-actions-and-overflow"></a>Основные действия и область переполнения
@@ -106,21 +104,23 @@ XAML одновременно поддерживает элементы упра
 
 Вы можете также добавлять команды в коллекцию **SecondaryCommands**, и эти элементы будут отображаться в области переполнения. Разместите менее важные команды в области переполнения.
 
-Стиль области переполнения отличается от стиля панели. Вы можете настроить оформление, установив свойство [**CommandBarOverflowPresenterStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.commandbaroverflowpresenterstyle.aspx) класса [Style](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) для [**CommandBarOverflowPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbaroverflowpresenter.aspx).
+Стиль области переполнения отличается от стиля панели. Вы можете настроить оформление, установив свойство [CommandBarOverflowPresenterStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.commandbaroverflowpresenterstyle.aspx) класса [Style](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) для [CommandBarOverflowPresenter](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbaroverflowpresenter.aspx).
 
-При необходимости можно перемещать команды между областями PrimaryCommands и SecondaryCommands программным путем. 
+При необходимости вы можете перемещать команды между PrimaryCommands и SecondaryCommands программным путем.
 
+<!-- 
 <div class="microsoft-internal-note">
-Команды также могут автоматически перемещаться в область переполнения и из нее при изменении ширины панели команд,например, если пользователь меняет размер окна приложения. Динамическое переполнение включено по умолчанию, однако приложения могут отключать это поведение, изменяя значение свойства `IsDynamicOverflowEnabled`.
+Commands can also automatically move in or out of the overflow as the command bar width changes, for example when users resize their app window. Dynamic overflow is on by default but apps can turn off this behavior by changing the value of `IsDynamicOverflowEnabled` property.
 </div>
+-->
 
 ### <a name="app-bar-buttons"></a>Кнопки панели приложения
 
-Свойствам PrimaryCommands и SecondaryCommands можно присвоить только значения [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [**AppBarToggleButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) и [**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx), соответствующие командным элементам. Эти элементы управления оптимизированы для использования на панели команд и меняют свой вид в зависимости от того, используется ли элемент управления в пространстве действий или в области переполнения.
+Свойствам PrimaryCommands и SecondaryCommands можно присвоить только значения [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) и [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx), соответствующие командным элементам. Эти элементы управления оптимизированы для использования на панели команд и меняют свой вид в зависимости от того, используется ли элемент управления в пространстве действий или в области переполнения.
 
-Кнопки панели приложения характеризуются значком и соответствующей меткой. Они имеют два размера: обычный и компактный. По умолчанию текстовая метка отображается. Если для свойства [**IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.iscompact.aspx) установлено значение **true**, текстовая метка скрывается. При использовании кнопки в элементе управления CommandBar, панель команд автоматически перезаписывает свойство IsCompact кнопки при открытии и закрытии панели команд.
+Кнопки панели приложения характеризуются значком и соответствующей меткой. Они имеют два размера: обычный и компактный. По умолчанию текстовая метка отображается. Если для свойства [IsCompact](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.iscompact.aspx) установлено значение **true**, текстовая метка скрывается. При использовании кнопки в элементе управления CommandBar, панель команд автоматически перезаписывает свойство IsCompact кнопки при открытии и закрытии панели команд.
 
-Для размещения подписей кнопок панели приложения справа от значков приложение может использовать новое свойство элемента управления CommandBar [**DefaultLabelPosition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx).
+Для размещения подписей кнопок панели приложения справа от значков приложение может использовать новое свойство [DefaultLabelPosition](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx) элемента управления CommandBar.
 
 ```xaml
 <CommandBar DefaultLabelPosition="Right">
@@ -133,7 +133,7 @@ XAML одновременно поддерживает элементы упра
 
 ![Панель команд с подписями справа](images/app-bar-labels-on-right.png)
 
-Переместить подписи отдельных кнопок панели приложения невозможно, это необходимо делать для панели команд в целом. Указать, что кнопка панели приложения никогда не должна отображаться, можно, установив для нового свойства [**LabelPosition**](https://msdn.microsoft.com/library/windows/apps/mt710920.aspx) значение **Collapsed**. Мы рекомендуем использовать это значение только для универсальных, легкораспознаваемых обозначений, таких как "+".
+Переместить подписи отдельных кнопок панели приложения невозможно, это необходимо делать для панели команд в целом. Указать, что кнопка панели приложения никогда не должна отображаться, можно, установив для нового свойства [LabelPosition](https://msdn.microsoft.com/library/windows/apps/mt710920.aspx) значение **Collapsed**. Мы рекомендуем использовать это значение только для универсальных, легкораспознаваемых обозначений, таких как "+".
 
 При размещении кнопки панели приложения в меню переполнения (SecondaryCommands) она отображается только в виде текста. Свойство **LabelPosition** кнопок панели приложения в меню переполнении игнорируется. Далее показан один и тот же переключатель на панели приложения, размещенный в пространстве действий в качестве основной команды (вверху) и в области переполнения в качестве второстепенной команды (внизу).
 
@@ -158,18 +158,21 @@ XAML одновременно поддерживает элементы упра
 
 Вы можете добавить в область содержимого любые элементы XAML, установив свойство **Content**. Если необходимо добавить более одного элемента, вам понадобится разместить элементы в контейнере панели и сделать панель единственным дочерним элементом свойства Content.
 
-При наличии и основных команд, и содержимого основные команды имеют приоритет, что может привести к обрезанию содержимого. 
-<div class="microsoft-internal-note">
-Содержимое не обрезается, если включено динамическое переполнение, поскольку основные команды перемещаются в меню переполнения, освобождая место под содержимое.
-</div>
+При одновременном наличии основных команд и содержимого основные команды имеют приоритет, что может привести к обрезанию содержимого.
 
-Если для свойства [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) установлено значение **Compact**, содержимое может обрезаться, если оно превышает компактный размер панели команд. Вы должны обрабатывать события [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) и [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx), чтобы отображать и скрывать части пользовательского интерфейса в области содержимого так, чтобы они не обрезались. Дополнительную информацию можно найти в разделе [Открытое и закрытое состояние](#open-and-closed-states).
+<!--
+<div class="microsoft-internal-note">
+Content will not clip when dynamic overflow is enabled because the primary commands would move into the overflow menu freeing up space for content.
+</div>
+-->
+
+Если для свойства [ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) установлено значение **Compact**, содержимое может обрезаться, если оно превышает компактный размер панели команд. Вы должны обрабатывать события [Opening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) и [Closed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx), чтобы отображать и скрывать части пользовательского интерфейса в области содержимого так, чтобы они не обрезались. Дополнительную информацию можно найти в разделе [Открытое и закрытое состояние](#open-and-closed-states).
 
 ## <a name="open-and-closed-states"></a>Открытое и закрытое состояние
 
-Панель команд может быть открыта или закрыта. Пользователь может переключиться между этими состояниями, выбрав кнопку "Дополнительно" \[•••\]. Вы можете переключаться между ними программным способом, установив свойство [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx). В открытом состоянии кнопки основных команд отображаются с текстовыми метками, а меню переполнения открыто, если присутствуют вспомогательные команды, как показано ранее.
+Панель команд может быть открыта или закрыта. Пользователь может переключиться между этими состояниями, выбрав кнопку "Дополнительно" \[•••\]. Вы можете переключаться между ними программным способом, установив свойство [IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx). В открытом состоянии кнопки основных команд отображаются с текстовыми метками, а меню переполнения открыто, если присутствуют вспомогательные команды, как показано ранее.
 
-События [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx), [**Opened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx), [**Closing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx) и [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) позволяют реагировать на открытие и закрытие панели команд.  
+События [Opening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx), [Opened](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx), [Closing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx) и [Closed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) позволяют реагировать на открытие и закрытие панели команд.  
 - События Opening и Closing возникают до начала анимации перехода.
 - События Opened и Closed возникают после завершения перехода.
 
@@ -202,7 +205,7 @@ private void CommandBar_Closing(object sender, object e)
 
 ### <a name="closeddisplaymode"></a>ClosedDisplayMode
 
-Вы можете управлять отображением панели в закрытом состоянии, установив свойство [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx). Вы можете выбрать один из трех режимов отображения:
+Вы можете управлять отображением панели в закрытом состоянии, установив свойство [ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx). Вы можете выбрать один из трех режимов отображения:
 - **Compact**: режим по умолчанию. Отображается содержимое, значки основных команд без меток и кнопка "Дополнительно" (\[•••\]).
 - **Minimal**: отображается только тонкая панель, действующая как кнопка "Дополнительно" (\[•••\]). Пользователь может открыть панель нажатием в любом месте панели.
 - **Hidden**: панель команд в закрытом состоянии не отображается. Это может быть полезно для отображения контекстно-зависимых команд с помощью встроенной панели команд. В этом случае следует открыть панель команд программным способом, установив свойство **IsOpen** или изменив значение свойства ClosedDisplayMode на **Minimal** или **Compact**.
@@ -242,7 +245,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ### <a name="issticky"></a>IsSticky
 
-Если пользователь взаимодействует с любой частью приложения за пределами панели команд после ее открытия, меню переполнения закрывается, а метки скрываются. Такое закрытие элемента управления называется *исчезновением*. Вы можете управлять исчезновением панели, установив свойство [**IsSticky**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx). Если панель закреплена (`IsSticky="true"`), она не закрывается жестом исчезновения. Панель остается открытой, пока пользователь не нажмет кнопку "Дополнительно" (\[•••\]) или не выберет элемент в меню переполнения. Мы рекомендуем избегать использования закрепленных панелей команд, так как они не соответствуют ожиданиям пользователей, связанным с жестами исчезновения.
+Если пользователь взаимодействует с любой частью приложения за пределами панели команд после ее открытия, меню переполнения закрывается, а метки скрываются. Такое закрытие элемента управления называется *исчезновением*. Вы можете управлять исчезновением панели, установив свойство [IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx). Если панель закреплена (`IsSticky="true"`), она не закрывается жестом исчезновения. Панель остается открытой, пока пользователь не нажмет кнопку "Дополнительно" (\[•••\]) или не выберет элемент в меню переполнения. Мы рекомендуем избегать использования закрепленных панелей команд, так как они не соответствуют ожиданиям пользователей, связанным с жестами исчезновения.
 
 ## <a name="dos-and-donts"></a>Рекомендации
 
@@ -254,7 +257,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 -   Для небольших наладонных устройств мы рекомендуем размещать панели команд в нижней части экрана для удобства доступа.
 -   В случае устройств с большими экранами, если вы размещаете только одну панель команд, мы рекомендуем поместить ее в верхней части окна.
-Используйте API [**DiagonalSizeInInches**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.diagonalsizeininches.aspx) для определения физических размеров экрана.
+Используйте API [DiagonalSizeInInches](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.diagonalsizeininches.aspx) для определения физических размеров экрана.
 
 Панели команд можно размещать в следующих областях экранов с одним представлением (пример слева) и с несколькими представлениями (пример справа). Встроенные панели команд можно размещать в любом месте пространства действий.
 
@@ -276,18 +279,21 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ### <a name="command-bar-flyouts"></a>Всплывающие элементы панели команд
 
-Используйте логическую группировку команд. Например, поместите команды "Ответить", "Ответить всем" и "Переслать" в меню "Ответ". Хотя обычно кнопка панели приложения активирует одну команду, ее можно использовать для отображения элемента [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx) или [**Flyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.aspx) с пользовательским содержимым.
+Используйте логическую группировку команд. Например, поместите команды "Ответить", "Ответить всем" и "Переслать" в меню "Ответ". Хотя обычно кнопка панели приложения активирует одну команду, ее можно использовать для отображения элемента [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx) или [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.aspx) с пользовательским содержимым.
 
 ![Пример всплывающих элементов на панели команд](images/AppbarGuidelines_Flyouts.png)
 
 ### <a name="overflow-menu"></a>Меню переполнения
 
-![Пример панели команд с областью "Дополнительно"](images/AppbarGuidelines_Illustration.png)
+![Пример панели команд с областью "Дополнительно" и значками](images/appbar_rs2_overflow_icons.png)
 
 -   Меню переполнения представлено кнопкой "Дополнительно" (\[•••\]), которая служит видимой точкой входа в меню. Оно расположено в правом конце панели инструментов рядом с основными действиями.
 -   Область переполнения выделена для действий, которые пользователь использует реже.
 -   Действия могут появляться и исчезать между основным пространством действий и меню переполнения в точках останова. Можно также указывать действия как всегда отображающиеся в основном пространстве действий независимо от размера экрана или окна приложения.
 -   Редко используемые действия могут оставаться в меню переполнения, даже если панель приложения развернута на больших экранах.
+- AppBarButtons в меню переполнения будет автоматически показывать их значки.
+
+> Размер значков в меню переполнения — 16x16 пикселей, что меньше, чем значки в области основных команд (20х20 пикселей). При использовании SymbolIcon, FontIcon или PathIcon, когда команда входит в область второстепенной команды, значок будет автоматически масштабироваться до правильного размера без потери качества.
 
 ## <a name="adaptability"></a>Адаптируемость
 
@@ -305,4 +311,4 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 ## <a name="related-articles"></a>Еще по теме
 
 * [Основы проектирования команд в приложениях UWP](../layout/commanding-basics.md)
-* [**Класс CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
+* [Класс CommandBar](https://msdn.microsoft.com/library/windows/apps/dn279427)

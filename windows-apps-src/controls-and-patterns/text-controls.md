@@ -6,14 +6,19 @@ ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 8be1dac30047a647d7f80464b53fe2fc3527d2c3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 16b019678e94e131ba1105bb92d7ea3ab301828c
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="text-controls"></a>Текстовые элементы управления
 
@@ -24,17 +29,8 @@ translationtype: HT
 - Для отображения текста, доступного только для чтения, применяются элементы управления [TextBlock](text-block.md) и [RichTextBlock](rich-text-block.md).
 - Элементы управления для ввода и редактирования текста: [TextBox](text-box.md), [AutoSuggestBox](auto-suggest-box.md), [PasswordBox](password-box.md) и [RichEditBox](rich-edit-box.md).
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</li>
-<li>[**Класс PasswordBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</li>
-<li>[**Класс RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
-<li>[**Класс RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
-<li> [**Класс TextBlock**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)</li>
-<li>[**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
-</ul>
-</div>
+> **Важные API-интерфейсы**: [класс AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [класс PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx), [класс RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [класс RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [класс TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [класс TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
+
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -73,7 +69,7 @@ translationtype: HT
 -   **Является ли практичным эффективное перечисление всех допустимых значений?** Если да, возможно, стоит использовать один из элементов управления выбора, например [флажок](checkbox.md), [раскрывающийся список](lists.md), поле со списком, [кнопку-переключатель](radio-button.md), [ползунок](slider.md), [переключатель](toggles.md), [средство выбора даты](date-and-time.md) или средство выбора времени.
 -   **Велик ли набор допустимых значений?** Если нет, возможно, следует использовать [раскрывающийся список](lists.md) или поле со списком (особенно если длина значений превышает несколько символов).
 -   **Имеют ли допустимые значения ограничения? Допустимые данные ограничиваются только форматом (например, количеством или типом символов)?** Если да, используйте элемент управления текстовым вводом. Вы можете ограничить число вводимых символов, а также проверить формат в коде приложения.
--   **Если значение представляет такой тип данных, который имеет особый общий элемент управления,** используйте этот элемент вместо элемента управления для ввода обычного текста. Например, чтобы принять ввод данных, вместо элемента управления текстовым вводом используйте [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681).
+-   **Если значение представляет такой тип данных, который имеет особый общий элемент управления,** используйте этот элемент вместо элемента управления для ввода обычного текста. Например, чтобы принять ввод данных, вместо элемента управления текстовым вводом используйте [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681).
 -   Для строго числовых данных:
     -   **Является ли введенное значение приблизительным и (или) относящемся к другому числу на той же странице?** Если да, используйте элемент управления [ползунок](slider.md).
     -   **Требуется ли пользователю мгновенная обратная связь при изменении значения параметра?** Если да, используйте элемент управления [ползунок](slider.md), возможно, вместе с сопутствующими элементами управления.
@@ -97,18 +93,18 @@ translationtype: HT
 
 Сведения и примеры, связанные с каждым элементом управления текстом, см. в следующих статьях.
 
--   [**Элемент управления AutoSuggestBox**](auto-suggest-box.md)
--   [**PasswordBox**](password-box.md)
--   [**Элемент управления RichEditBox**](rich-edit-box.md)
--   [**RichTextBlock**](rich-text-block.md)
--   [**TextBlock**](text-block.md)
--   [**TextBox**](text-box.md)
+-   [Элемент управления AutoSuggestBox](auto-suggest-box.md)
+-   [PasswordBox](password-box.md)
+-   [Элемент управления RichEditBox](rich-edit-box.md)
+-   [RichTextBlock](rich-text-block.md)
+-   [TextBlock](text-block.md)
+-   [TextBox](text-box.md)
 
 ## <a name="font-and-style-guidelines"></a>Инструкции по использованию шрифтов и стиля
 Инструкции по использованию шрифтов и стиля см. в этих статьях:
 
-- [**Шрифт, руководство**](fonts.md)
-- [**Список значков Segoe MDL2 и руководства**](segoe-ui-symbol-font.md)
+- [Шрифт, руководство](fonts.md)
+- [Список значков Segoe MDL2 и руководства](segoe-ui-symbol-font.md)
 
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>Выбор подходящей клавиатуры для элемента управления текстом
@@ -144,7 +140,7 @@ translationtype: HT
 
 ![Блок текста с цветным шрифтом](images/text-block-color-fonts.png)
 
-Подробные сведения см. в свойстве [**IsColorFontEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx).
+Подробные сведения см. в свойстве [IsColorFontEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx).
 
 ## <a name="guidelines-for-line-and-paragraph-separators"></a>Инструкции по разделителям строк и абзацев
 
@@ -187,11 +183,11 @@ translationtype: HT
 ## <a name="related-articles"></a>Еще по теме
 
 **Проектировщикам**
-- [**Шрифт, руководство**](fonts.md)
-- [**Список значков Segoe MDL2 и руководства**](segoe-ui-symbol-font.md)
+- [Шрифт, руководство](fonts.md)
+- [Список значков Segoe MDL2 и руководства](segoe-ui-symbol-font.md)
 - [Добавление поиска](https://msdn.microsoft.com/library/windows/apps/hh465231)
 
 **Для разработчиков (XAML)**
-- [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Класс Windows.UI.Xaml.Controls PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [Класс TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Класс Windows.UI.Xaml.Controls PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length.aspx)

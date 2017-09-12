@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: f0cf9d2928c8d6a0494092643daa19d9b437d3eb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8679dfd073a3b756e37059a5b0bf35cc6b000e6a
+ms.sourcegitcommit: bfa61aae632cca0c68dbfb0168424d38fd607f84
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/31/2017
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>Создание, редактирование и сохранение точечных рисунков
 
@@ -118,7 +120,7 @@ translationtype: HT
 
 ## <a name="transcode-an-image-file"></a>Перекодирование файла изображения
 
-Вы можете перекодировать файл изображения непосредственно из [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) в [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Создайте [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) из файла для перекодирования. Создайте **BitmapDecoder** из входного потока. Создайте [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) для записи кодировщиком и вызовите метод [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214), передав поток в памяти и объект декодера. Задайте необходимые свойства кодирования. Все свойства в файле изображения, специально не заданные в кодировщике, будут записаны в выходной файл без изменений. Вызовите метод [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216), чтобы кодировщик выполнил кодирование в поток в памяти. Наконец, обратите поток файла и поток в памяти в начало и вызовите метод [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827), чтобы записать поток в памяти за пределами потока файла.
+Вы можете перекодировать файл изображения непосредственно из [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) в [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Создайте [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) из файла для перекодирования. Создайте **BitmapDecoder** из входного потока. Создайте [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) для записи кодировщиком и вызовите метод [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214), передав поток в памяти и объект декодера. Возможности кодирования не поддерживаются при перекодировании; вместо этого необходимо использовать команду [**CreateAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.imaging.bitmapencoder#Windows_Graphics_Imaging_BitmapEncoder_CreateAsync_System_Guid_Windows_Storage_Streams_IRandomAccessStream_Windows_Foundation_Collections_IIterable_Windows_Foundation_Collections_IKeyValuePair_System_String_Windows_Graphics_Imaging_BitmapTypedValue___). Все свойства в файле изображения, специально не заданные в кодировщике, будут записаны в выходной файл без изменений. Вызовите метод [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216), чтобы кодировщик выполнил кодирование в поток в памяти. Наконец, обратите поток файла и поток в памяти в начало и вызовите метод [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827), чтобы записать поток в памяти за пределами потока файла.
 
 [!code-cs[TranscodeImageFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
 

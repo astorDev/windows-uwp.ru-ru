@@ -6,14 +6,16 @@ ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 34c3aab3e9a04eb535014182c0dbc8c140670b89
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f92791a1c98e87d41c26f8f80b31870aeffe2592
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="create-custom-transport-controls"></a>Создание пользовательских элементов управления транспортировкой
 
@@ -21,19 +23,12 @@ translationtype: HT
 
 Класс MediaPlayerElement обладает настраиваемыми элементами управления транспортировкой XAML, позволяющими контролировать элементы управления аудио- и видеосодержимым в приложении универсальной платформы Windows (UWP). Здесь мы покажем, как настроить шаблон MediaTransportControls. Мы покажем, как работать с меню переполнения, добавлять пользовательские кнопки и модифицировать ползунок.
 
+> **Важные API-интерфейсы**: [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx), [MediaPlayerElement.AreTransportControlsEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled.aspx), [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/dn278677)
+
 Перед началом необходимо ознакомиться с классами MediaPlayerElement и MediaTransportControls. Подробнее см. в руководстве по элементу управления MediaPlayerElement.
 
 > [!TIP]
 > Примеры в этом разделе основаны на [Примере элементов управления транспортировкой мультимедиа](http://go.microsoft.com/fwlink/p/?LinkId=620023). Вы можете скачать пример для просмотра и запуска полного кода.
-
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)</li>
-<li>[**MediaPlayerElement.AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled.aspx) </li>
-<li>[**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677)</li>
-</ul>
-</div>
 
 > [!NOTE]
 > **MediaPlayerElement** доступен только в Windows 10 версии 1607 или выше. При разработке приложения для более ранней версии Windows 10 потребуется использовать [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). Все примеры на этой странице также совместимы с **MediaElement**.
@@ -80,13 +75,16 @@ translationtype: HT
 **Настройка стандартного стиля и шаблона MediaTransportControls**
 1. Скопируйте стиль по умолчанию из раздела "Стили и шаблоны MediaTransportControls" в класс ResourceDictionary в своем проекте.
 2. Для определения стиля присвойте ему значение x:Key, как показано далее.
+
 ```xaml
 <Style TargetType="MediaTransportControls" x:Key="myTransportControlsStyle">
     <!-- Style content ... -->
 </Style>
 ```
+
 3. Добавьте MediaPlayerElement с MediaTransportControls в пользовательский интерфейс.
 4. Укажите для свойства Style элемента MediaTransportControls ваш пользовательский ресурс Style, как показано ниже.
+
 ```xaml
 <MediaPlayerElement AreTransportControlsEnabled="True">
     <MediaPlayerElement.TransportControls>
@@ -106,20 +104,25 @@ translationtype: HT
     - В Visual Studio выберите элементы Проект > Добавить класс. Откроется диалоговое окно Добавление нового элемента.
     - В диалоговом окне "Добавление нового элемента" введите имя файла класса и нажмите кнопку "Добавить". (В примере Media Transport Controls класс имеет имя `CustomMediaTransportControls`.)
 2. Измените код класса, чтобы он был производным от класса MediaTransportControls.
+
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
 {
 }
 ```
+
 3. Скопируйте стиль по умолчанию для [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) в класс [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx) вашего проекта. Это стиль и шаблон, которые вы изменяете.
 (В примере Media Transport Controls создается новая папка с именем Themes и в нее добавляется файл ResourceDictionary с именем generic.xaml.)
 4. Измените значение свойства [**TargetType**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.targettype.aspx) стиля на новый тип пользовательского элемента управления. (В примере значение TargetType меняется на `local:CustomMediaTransportControls`.)
+
 ```xaml
 xmlns:local="using:CustomMediaTransportControls">
 ...
 <Style TargetType="local:CustomMediaTransportControls">
 ```
+
 5. Задайте значение свойства [**DefaultStyleKey**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.defaultstylekey.aspx) своего пользовательского класса. Это указывает вашему пользовательскому классу использовать стиль со свойством TargetType, равным `local:CustomMediaTransportControls`.
+
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
 {
@@ -129,7 +132,9 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
     }
 }
 ```
+
 6. Добавьте [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) к разметке XAML, а затем добавьте к ней пользовательские элементы управления транспортировкой. Обратите внимание, что API для скрытия, отображения, отключения и включения кнопок по умолчанию по-прежнему работают с пользовательским шаблоном.
+
 ```xaml
 <MediaPlayerElement Name="MediaPlayerElement1" AreTransportControlsEnabled="True" Source="video.mp4">
     <MediaPlayerElement.TransportControls>
@@ -145,6 +150,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
     </MediaPlayerElement.TransportControls>
 </MediaPlayerElement>
 ```
+
 Теперь вы можете изменить стиль и шаблон элемента управления для обновления внешнего вида вашего пользовательского элемента управления и управляющего кода для обновления его поведения.
 
 ### <a name="working-with-the-overflow-menu"></a>Работа с меню переполнения
@@ -158,6 +164,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 **Перемещение команды в меню переполнения**
 1. В шаблоне элемента управления найдите элемент CommandBar с именем `MediaControlsCommandBar`.
 2. Добавьте раздел [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) к коду XAML элемента CommandBar. Поместите его после закрывающего тега для [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx).
+
 ```xaml
 <CommandBar x:Name="MediaControlsCommandBar" ... >  
   <CommandBar.PrimaryCommands>
@@ -178,10 +185,12 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
   </CommandBar.SecondaryCommands>
 </CommandBar>
 ```
+
 3. Для заполнения меню командами нужно вырезать и вставить XAML для нужных объектов [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) с PrimaryCommands в SecondaryCommands. В этом примере мы перемещаем `PlaybackRateButton` в меню переполнения.
 
 4. Добавьте подпись к кнопке и удалите информацию о стиле, как показано ниже.
 Поскольку меню переполнения состоит из кнопок текста, вы должны добавить текстовую подпись к кнопке, а также удалить стиль, который задает высоту и ширину кнопки. В противном случае она не будет правильно отображаться в меню переполнения.
+
 ```xaml
 <CommandBar.SecondaryCommands>
     <AppBarButton x:Name='PlaybackRateButton'
@@ -199,6 +208,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 **Добавление пользовательской кнопки команды**
 1. Создайте объект AppBarButton и добавьте его в CommandBar в шаблоне элемента управления.
+
 ```xaml
 <AppBarButton x:Name="LikeButton"
               Icon="Like"
@@ -206,11 +216,13 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
               MediaTransportControlsHelper.DropoutOrder="3"
               VerticalAlignment="Center" />
 ```
+
     You must add it to the CommandBar in the appropriate location. (For more info, see the Working with the overflow menu section.) How it's positioned in the UI is determined by where the button is in the markup. For example, if you want this button to appear as the last element in the primary commands, add it at the very end of the primary commands list.
 
     You can also customize the icon for the button. For more info, see the [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) reference.
 
 2. В переопределении метода [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) получите кнопку из шаблона и зарегистрируйте обработчик для события [**Click**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) этой кнопки. Этот код перейдет в класс `CustomMediaTransportControls`.
+
 ```csharp
 public sealed class CustomMediaTransportControls :  MediaTransportControls
 {
@@ -230,6 +242,7 @@ public sealed class CustomMediaTransportControls :  MediaTransportControls
 
 3. Добавьте код в обработчик события Click, который будет выполнять действия, происходящие при нажатии кнопки.
 Ниже приведен полный код класса.
+
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
 {

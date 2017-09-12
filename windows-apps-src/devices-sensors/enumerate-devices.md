@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: "Перечисление устройств"
 description: "Пространство имен перечисления позволяет обнаружить устройства, которые подключены к системе изнутри, внешним образом или могут быть обнаружены по протоколам проводной или беспроводной сети."
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 1bf6b8fc87061625b8bc206faf43da99a6b11bf5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: afd98ed5f522c4227ab199f2405c7976210478c3
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="enumerate-devices"></a>Перечисление устройств
 

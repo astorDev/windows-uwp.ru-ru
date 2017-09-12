@@ -9,15 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, покупки из приложения, IAP, надстройки, каталог, Windows.ApplicationModel.Store"
-ms.openlocfilehash: 69747b5700db9785d5e782cd71245ce60ee4150b
-ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
-translationtype: HT
+ms.openlocfilehash: 264db118c3d9f84cffcc966f017ddab4c14e28fb
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>Управление большим каталогом продуктов внутри приложения
 
 
 > [!NOTE]
-> В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Если приложение предназначено для Windows 10 версии 1607 или более поздней, для управления надстройками (также называемыми внутренними продуктами приложения или IAP) рекомендуется использовать члены пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), а не пространство имен **Windows.ApplicationModel.Store**. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
+> В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Если ваше приложение предназначено для Windows 10 версии 1607 или более поздней, для управления надстройками рекомендуется использовать члены пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), а не **Windows.ApplicationModel.Store**. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
 
 Если ваше приложение предлагает большой каталог продуктов внутри приложения, то для облегчения управления каталогом вы можете выполнить действия, описанные в этом разделе. В выпусках до Windows10 в Магазине действовало ограничение в 200 продуктов на одну учетную запись разработчика. Процесс, описанный в этом разделе, можно использовать для обхода этого ограничения. Начиная с Windows 10, количество продуктов на одну учетную запись разработчика в Магазине не ограничено, поэтому описанный в этой статье процесс не является обязательным.
 

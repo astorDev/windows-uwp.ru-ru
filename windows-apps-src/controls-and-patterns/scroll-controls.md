@@ -1,50 +1,58 @@
 ---
 author: Jwmsft
 Description: "Сдвиг и прокрутка дают пользователям возможность получить доступ к содержимому, находящемуся за пределами экрана."
-title: "Руководство по полосам прокрутки"
+title: "Элементы управления &quot;Средство прокрутки&quot;"
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
-label: Scroll bars
+label: Scrollbars
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 8e167fd07d589b8ad159fe3cb535dd884eeab0ef
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: Abarlow, pagildea
+design-contact: ksulliv
+dev-contact: regisb
+doc-status: Published
+ms.openlocfilehash: b60842d25c54c15c7c478e1e5183ecd3317bb82c
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
-# <a name="scroll-bars"></a>Полосы прокрутки
+# <a name="scroll-viewer-controls"></a>Элементы управления "Средство прокрутки"
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Сдвиг и прокрутка дают пользователям возможность получить доступ к содержимому, находящемуся за пределами экрана.
+При наличии большего содержимого пользовательского интерфейса, чем можно поместить в область, используйте средство прокрутки.
 
-Элемент управления "Средство прокрутки" состоит из такого объема содержимого, который помещается в окно просмотра, и одной или двух полос прокрутки. Сенсорные жесты можно использовать для сдвигания и масштабирования (полосы прокрутки затемняются только во время управления), а для прокрутки можно использовать указатель. Быстрое движение пальца заставит содержимое прокручиваться по инерции.
+> **Важные API-интерфейсы**: [класс ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527), [класс ScrollBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)
 
-**Примечание**. В Windows различают два режима отображения сдвига в зависимости от используемого пользователем режима ввода: индикаторы сдвиг при использовании сенсорного ввода или геймпада; и интерактивные полосы прокрутки для других устройств ввода, включая мышь, клавиатуру и ручку.
+Средства прокрутки позволяют содержимому выходить за пределы окна просмотра (видимой области). Пользователи могут добраться до этого содержимого, манипулируя средством прокрутки с помощью сенсорного ввода, колесика мыши, клавиатуры или игрового планшета или с помощью курсора мыши либо пера, для взаимодействия с полосой прокрутки средства прокрутки. На рисунке показано несколько примеров элементов управления средством прокрутки.
+
+![Снимок экрана, иллюстрирующий стандартный элемент управления “Полоса прокрутки”](images/ScrollBar_Standard.jpg)
+
+В зависимости от ситуации, полоса прокрутки средства прокрутки использует две различные визуализации, показанные на следующем рисунке: индикатор сдвига (слева) и традиционную полосу прокрутки (справа).
 
 ![Пример внешнего вида стандартных элементов управления "Полоса прокрутки" и "Индикатор сдвига"](images/SCROLLBAR.png)
 
+Средство прокрутки знает о методе ввода пользователя и использует его, чтобы определить, какие визуализации отображать.
+
+* При прокрутке области без непосредственного управления полосой прокрутки, например, сенсорным вводом, появится индикатор сдвига, указывающий текущую позицию прокрутки.
+* При перемещении курсора мыши или пера через индикатор сдвига он преобразуется в традиционную полосу прокрутки.  Перетаскиванием ползунка полосы прокрутки можно управлять областью прокрутки.
+
+<!--
 <div class="microsoft-internal-note">
-Полный список красных линий см. в [Центре ресурсов разработки](http://designdepot/DesignDepot.FrontEnd/#/ML/Dashboard/1805)
+See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/0/dv/?t=Windows|Controls|ScrollControls&f=RS2
 </div>
+-->
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)</li>
-<li>[**Класс ScrollBar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)</li>
-</ul>
-</div>
+![Полосы прокрутки в действии](images/conscious-scroll.gif)
 
+> [!NOTE]
+> Когда полоса прокрутки отображается, она накладывается на 16 пикселей поверх содержимого внутри ScrollViewer. Чтобы обеспечить качественное проектирование взаимодействия с пользователем, необходимо убедиться, что интерактивное содержимое не замещается перекрытием. Кроме того, если вы не хотите иметь перекрытие взаимодействия с пользователем, оставьте 16 пикселей заполнения границ окна просмотра, чтобы оставить место для полосы прокрутки.
 
-## <a name="examples"></a>Примеры
-
-Объект [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) позволяет отображать содержимое на пространстве меньше его фактического размера. Если содержимое видно не полностью, средство прокрутки отображает полосы прокрутки, которые пользователь может использовать для перемещения видимой области содержимого. Область, которая включает все содержимое средства прокрутки, называется *экстент*. Видимая область содержимого называется *окно просмотра*.
-
-![Снимок экрана, иллюстрирующий стандартный элемент управления “Полоса прокрутки”](images/ScrollBar_Standard.jpg)
 
 ## <a name="create-a-scroll-viewer"></a>Создание средства прокрутки
 Для добавления на страницу вертикальной прокрутки создайте для содержимого страницы оболочку в средстве просмотра прокрутки.
@@ -64,6 +72,7 @@ translationtype: HT
     </ScrollViewer>
 </Page>
 ```
+
 В этом примере XAML показано, как размещать изображение в средстве прокрутки и включать масштабирование.
 
 ```xaml
@@ -76,15 +85,16 @@ translationtype: HT
 
 ## <a name="scrollviewer-in-a-control-template"></a>ScrollViewer в шаблоне элемента управления
 
-Обычно элемент управления ScrollViewer является составной частью других элементов управления. Объект ScrollViewer с классом поддержки [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) будет отображать окно просмотра вместе с полосами прокрутки только тогда, когда пространство макета основного элемента управления имеет меньший размер, чем размер развернутого содержимого. Такая ситуация часто возникает со списками, поэтому шаблоны [**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) всегда содержат ScrollViewer. Шаблоны [**TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) и [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) также включают ScrollViewer.
+Обычно элемент управления ScrollViewer является составной частью других элементов управления. Объект ScrollViewer с классом поддержки [ScrollContentPresenter](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) будет отображать окно просмотра вместе с полосами прокрутки только тогда, когда пространство макета основного элемента управления имеет меньший размер, чем размер развернутого содержимого. Такая ситуация часто возникает со списками, поэтому шаблоны [ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) и [GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) всегда содержат ScrollViewer. Шаблоны [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) и [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) также включают ScrollViewer.
 
-Если в элементе управления имеется **ScrollViewer**, основной элемент управления зачастую имеет встроенную функцию обработки событий для определенных событий и манипуляций ввода, позволяющую прокручивать содержимое. Например, GridView интерпретирует жест прокрутки, что приводит к горизонтальной прокрутке содержимого. События и необработанные манипуляции ввода, получаемые основным элементом управления, считаются обработанными элементом управления, а события более низкого уровня, такие как [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx), не будут вызываться и не будут передаваться в какие-либо родительские контейнеры. Вы можете изменять некоторые параметры обработки встроенных элементов управления, переопределяя класс элементов управления и виртуальные методы **включения*** для событий или изменяя шаблон элемента управления. Но в любом случае не рекомендуется просто воспроизводить исходное поведение по умолчанию, которое обычно там присутствует, чтобы элемент управления мог расширенно реагировать на события и на выполняемые пользователем действия и жесты ввода. Поэтому необходимо подумать о том, нужно ли вам на самом деле, чтобы это событие ввода срабатывало. Вы можете проверить, имеются ли другие события ввода или жесты, которые не обрабатываются элементом управления, и использовать их в своем приложении или схеме взаимодействия элементов управления.
+Если в элементе управления имеется **ScrollViewer**, основной элемент управления зачастую имеет встроенную функцию обработки событий для определенных событий и манипуляций ввода, позволяющую прокручивать содержимое. Например, GridView интерпретирует жест прокрутки, что приводит к горизонтальной прокрутке содержимого. События и необработанные манипуляции ввода, получаемые основным элементом управления, считаются обработанными элементом управления, а события более низкого уровня, такие как [PointerPressed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx), не будут вызываться и не будут передаваться в какие-либо родительские контейнеры. Вы можете изменять некоторые параметры обработки встроенных элементов управления, переопределяя класс элементов управления и виртуальные методы **включения*** для событий или изменяя шаблон элемента управления. Но в любом случае не рекомендуется просто воспроизводить исходное поведение по умолчанию, которое обычно там присутствует, чтобы элемент управления мог расширенно реагировать на события и на выполняемые пользователем действия и жесты ввода. Поэтому необходимо подумать о том, нужно ли вам на самом деле, чтобы это событие ввода срабатывало. Вы можете проверить, имеются ли другие события ввода или жесты, которые не обрабатываются элементом управления, и использовать их в своем приложении или схеме взаимодействия элементов управления.
 
 Чтобы позволить элементам управления, имеющим в своем составе ScrollViewer, влиять на поведение и свойства, имеющие отношение к ScrollViewer, элемент ScrollViewer определяет несколько подключенных свойств XAML, которые можно настраивать в стилях и использовать в привязках шаблонов. Подробнее о подключенных свойствах см. в разделе [Общие сведения о подключенных свойствах](../xaml-platform/attached-properties-overview.md).
 
 **Подключенные свойства XAML для ScrollViewer**
 
 ScrollViewer определяет следующие подключенные свойства XAML:
+
 - [ScrollViewer.BringIntoViewOnFocusChange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx)
 - [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx)
 - [ScrollViewer.HorizontalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode.aspx)
@@ -103,6 +113,7 @@ ScrollViewer определяет следующие подключенные с
 Эти подключенные свойства XAML предназначены для случаев, когда применение ScrollViewer подразумевается, например когда ScrollViewer имеется в стандартном шаблоне для ListView или GridView, и вы хотите иметь возможность влиять на поведение элемента управления при прокрутке без осуществления доступа к частям шаблона.
 
 Например, вот как можно сделать вертикальные полосы прокрутки всегда видимыми во встроенном средстве прокрутки в ListView.
+
 ```xaml
 <ListView ScrollViewer.VerticalScrollBarVisibility="Visible"/>
 ```
@@ -123,4 +134,5 @@ ScrollViewer определяет следующие подключенные с
 ## <a name="related-topics"></a>Связанные статьи
 
 **Для разработчиков (XAML)**
-* [**Класс ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)
+
+* [Класс ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527)

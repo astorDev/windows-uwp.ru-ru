@@ -4,18 +4,18 @@ ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
 description: "Используйте этот метод в API отправки Магазина Windows для получения информации о конкретном приложении, которое зарегистрировано в вашей учетной записи Центра разработки для Windows."
 title: "Получение приложения"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, API отправки Магазина Windows, приложение"
-ms.openlocfilehash: 6087bf65ac297b12f92a9082db4e6a12e93130ef
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 71081cd4a42ecb085c82432d1a24a5cd2dd92715
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="get-an-app"></a>Получение приложения
-
-
 
 
 Используйте этот метод в API отправки Магазина Windows для получения информации о конкретном приложении, которое зарегистрировано в вашей учетной записи Центра разработки для Windows.
@@ -26,8 +26,6 @@ translationtype: HT
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
 * [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
-
->**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
 ## <a name="request"></a>Запрос
 
@@ -44,7 +42,7 @@ translationtype: HT
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
@@ -56,7 +54,7 @@ translationtype: HT
 
 <span/>
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Предоставлять текст запроса для этого метода не требуется.
 
@@ -90,7 +88,8 @@ Authorization: Bearer <your access token>
   "pendingApplicationSubmission": {
     "id": "1152921504621243487",
     "resourceLocation": "applications/9NBLGGH4R315/submissions/1152921504621243487"
-  }
+  },
+  "hasAdvancedListingPermission": false
 }
 ```
 

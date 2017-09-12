@@ -2,22 +2,27 @@
 author: mukin
 Description: "В данной учебной статье приводится пошаговое руководство по созданию пользовательского интерфейса базового приложения. В ней поясняется и демонстрируется использование двух наиболее распространенных элементов XAML— Grid и StackPanel."
 title: "Создание простого погодного приложения с помощью Grid и StackPanel"
-ms.author: wdg-dev-content
-ms.date: 02/08/2017
+template: detail.hbs
+ms.author: mukin
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
-ms.openlocfilehash: 094cabc642884f57af2dbeb5125a2a8b81365824
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 12a48ec9e907a65abbbd9ec1e9f9c60c3519fa20
+ms.sourcegitcommit: 2de58584a42e580dbc0d19bdecee12bfee7fd7e7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/23/2017
 ---
 # <a name="create-a-simple-weather-app-by-using-grid-and-stackpanel"></a>Создание простого погодного приложения с помощью Grid и StackPanel
 
 Используйте XAML для создания макетов простого погодного приложения с помощью элементов **Grid** и **StackPanel**. С помощью этих инструментов можно создать визуально привлекательные приложения, которые хорошо работают на любом устройстве с Windows10. Работа с этим учебным материалом занимает 10–20 минут.
 
-## <a name="prerequisites"></a>Предварительные условия
+> **Важные API**: [Класс Grid](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [Класс StackPanel](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+
+## <a name="prerequisites"></a>Предварительные требования
 - Windows10 и Microsoft Visual Studio2015. [Щелкните здесь, чтобы узнать, как подготовиться к работе с Visual Studio](../get-started/get-set-up.md).
 - Сведения о том, как создать базовое приложение "Hello World" с помощью XAML и C#. [Щелкните здесь, чтобы узнать, как создать приложение "Hello World"](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal), если у вас его еще нет.
 
@@ -46,7 +51,7 @@ translationtype: HT
 </Grid>
 ```
 
-Новый элемент **Grid** создает набор строк и столбцов, определяя таким образом макет интерфейса приложения. Параметр **Width** первого столбца имеет значение "3\*", а второго — "5\*". Таким образом, горизонтальное пространство между этими двумя столбцами разделяется в соотношении 3:5. Также и параметр **Height** двух строк имеет значение "3\*" и "\*" соответственно, поэтому элемент **Grid** назначает втрое больше места первой строке, чем второй ("\*" — это то же самое, что и "1\*"). Эти соотношения сохраняются даже при изменении размера окна или смене устройства.
+Новый элемент **Grid** создает набор строк и столбцов, определяя таким образом макет интерфейса приложения. Параметр **Width** первого столбца имеет значение "3\*", а второго — "5\*". Таким образом, горизонтальное пространство между этими двумя столбцами разделяется в соотношении 3:5. Также и параметр **Height** двух строк имеет значение "2\*" и "\*" соответственно, поэтому элемент **Grid** назначает вдвое больше места первой строке, чем второй ("\*" — это то же самое, что и "1\*"). Эти соотношения сохраняются даже при изменении размера окна или смене устройства.
 
 Узнать о других методах определения размера строк и столбцов можно узнать в разделе [Определение макетов с помощью XAML](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties).
 

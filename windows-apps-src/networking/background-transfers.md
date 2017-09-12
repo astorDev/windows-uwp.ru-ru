@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 8238076131d932900e8edfb53ab963de8c98402c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8b55968a93f09dae396353e73d72566feb188a89
+ms.sourcegitcommit: 77bbd060f9253f2b03f0b9d74954c187bceb4a30
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/11/2017
 ---
 # <a name="background-transfers"></a>Фоновая передача данных
 
@@ -36,6 +38,10 @@ translationtype: HT
 ### <a name="how-does-the-background-transfer-feature-work"></a>Как работает передача в фоновом режиме
 
 Когда приложение использует функцию фоновой передачи данных для запуска передачи данных, настройка и инициализация запроса производятся с помощью объектов класса [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) или [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140). Каждая операция передачи данных обрабатывается системой отдельно и независимо от вызывающего приложения. Если вы хотите отобразить состояние передачи данных в пользовательском интерфейсе приложения, можно использовать информацию о ходе выполнения, при этом приложение может приостанавливать, возобновлять, отменять передачу данных или даже считывать данные в процессе их передачи. Способ, которым система обрабатывает передачу данных, позволяет разумно использовать электроэнергию и предотвращать проблемы, которые могут возникнуть, когда работа подключенного приложения нарушается такими событиями, как приостановка или завершение работы либо внезапные изменения состояния сети.
+
+Кроме того, при фоновой передаче используются события брокера системных событий. Таким образом число загрузок ограничено числом событий, доступных в системе. По умолчанию это 500 событий, но эти события являются общими для всех процессов. Таким образом, одно приложение не должно создавать более 100 фоновых передач одновременно.
+
+При запуске приложением фоновой передачи данных это приложение должно вызвать [**AttachAsync**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation#methods_) на всех существующих объектах [**DownloadOperation**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation). Невыполнение этого требования может привести к утечке таких событий, что делает функцию фоновой передачи бесполезной.
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>Выполнение запросов файлов, которые прошли проверку подлинности, с помощью фоновой передачи данных
 
@@ -182,6 +188,8 @@ function uploadFiles() {
 
 Для небольших ресурсов, которые, скорее всего, скачаются быстро, вместо фоновой передачи данных следует использовать API [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639).
 
+В связи с ограниченностью ресурсов для каждого приложения приложение не должно создавать более 200 операций передачи (DownloadOperations + UploadOperations) в любой момент времени. Превышение этого количества может привести очередь передач этого приложения в состояние неустранимой ошибки.
+
 В следующих примерах будет показано, как создать и инициализировать простое скачивание, а также как перечислить и воспроизвести операции, сохраненные в предыдущем сеансе приложения.
 
 ### <a name="configure-and-start-a-background-transfer-file-download"></a>Настройка и запуск фонового скачивания файла
@@ -228,7 +236,7 @@ promise = download.startAsync().then(complete, error, progress);
 
 Начните фоновую передачу данных с постобработкой следующим образом.
 
-1.  Создайте объект [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209). Затем создайте объект [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Настройте свойство **Trigger** объекта построителя на объект группы завершения, и свойство **TaskEngtyPoint** построителя на входную точку фоновой задачи, которая должна выполняться при завершении передачи данных. И, наконец, вызовите метод [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772), чтобы зарегистрировать фоновую задачу. Обратите внимание, что многие группы завершения могут совместно использовать одну точку входа фоновой задачи, но вы можете использовать только одну группу завершения в регистрации фоновой задачи.
+1.  Создайте объект [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209). Затем создайте объект [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Настройте свойство **Trigger** объекта построителя на объект группы завершения, и свойство **TaskEntryPoint** построителя на входную точку фоновой задачи, которая должна выполняться при завершении передачи данных. И, наконец, вызовите метод [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772), чтобы зарегистрировать фоновую задачу. Обратите внимание, что многие группы завершения могут совместно использовать одну точку входа фоновой задачи, но вы можете использовать только одну группу завершения в регистрации фоновой задачи.
 
    ```csharp
     var completionGroup = new BackgroundTransferCompletionGroup();
@@ -306,7 +314,7 @@ promise = download.startAsync().then(complete, error, progress);
 
 Исключение создается, если конструктору объекта [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) передается неправильная строка для универсального кода ресурса (URI).
 
-**.NET:  **тип [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) отображается как [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) в C# и VB.
+**.NET: **Тип [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) отображается как [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) в C# и VB.
 
 В C# и Visual Basic можно избежать этой ошибки, используя класс [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) из платформы .NET 4.5 и один из методов [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx), чтобы перед составлением URI проверить строку, полученную от пользователя приложения.
 

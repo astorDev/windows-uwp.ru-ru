@@ -2,42 +2,42 @@
 author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: "Используйте приведенные в этом разделе примеры кода на C#, чтобы подробнее ознакомиться с работой API отправки Магазина Windows."
-title: "Примеры кода на C# для API отправки"
+title: "Пример на языке C#: отправки для приложений, надстроек и тестовых пакетов"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, API отправки Магазина Windows, примеры кода"
-ms.openlocfilehash: 59b9c0b2cc503a56e0a1c9a75ce5ef471983c699
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "windows 10, UWP, API отправки в Магазин Windows, примеры кода, C#"
+ms.openlocfilehash: 77c0f2ddbe0e76ede2580129d7d0a0ae118b3554
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/09/2017
 ---
-# <a name="c-code-examples-for-the-submission-api"></a>Примеры кода на C# для API отправки
+# <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>Пример на языке C\#: отправки для приложений, надстроек и тестовых пакетов
 
-В этой статье представлены примеры кода на C# для использования *API отправки Магазина Windows*. Дополнительные сведения об этом API-интерфейсе см. в разделе [Создание отправок и управление ими с помощью служб МагазинаWindows](create-and-manage-submissions-using-windows-store-services.md).
+В этой статье представлены примеры кода на C# по использованию [API отправки в Магазин Windows](create-and-manage-submissions-using-windows-store-services.md) для решения этих задач.
 
-В этих примерах кода демонстрируются следующие задачи:
-
-* [Обновление отправки приложения](#update-app-submission)
+* [Создание отправки приложения](#create-app-submission)
 * [Создание отправки надстройки](#create-add-on-submission)
 * [Обновление отправки надстройки](#update-add-on-submission)
-* [Обновление отправки тестового пакета](#update-flight-submission)
+* [Создание отправки тестового пакета](#create-flight-submission)
 
-Вы можете ознакомиться с каждым примером, чтобы подробнее узнать о демонстрируемой в нем задаче, либо можете собрать все примеры кода в этой статье в консольное приложение. Для сборки примеров создайте консольное приложение C# с именем **DeveloperApiCSharpSample** в Visual Studio, скопируйте каждый пример в отдельный файл с кодом в проекте и соберите проект.
+Вы можете ознакомиться с каждым примером, чтобы подробнее узнать о демонстрируемой в нем задаче, либо вы можете собрать все примеры кода в этой статье в консольное приложение. Для сборки примеров создайте консольное приложение C# с именем **DeveloperApiCSharpSample** в Visual Studio, скопируйте каждый пример в отдельный файл с кодом в проекте и соберите проект.
 
 ## <a name="prerequisites"></a>Необходимые условия
 
 В этих примерах используются следующие библиотеки:
 
 * Microsoft.WindowsAzure.Storage.dll. Эта библиотека доступна в [Пакете SDK Azure для .NET](https://azure.microsoft.com/downloads/). Ее также можно получить путем установки [пакета NuGet WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage).
-* [Json.NET](http://www.newtonsoft.com/json) от Newtonsoft.
+* Пакет NuGet [Newtonsoft.Json](http://www.newtonsoft.com/json) от Newtonsoft.
 
 ## <a name="main-program"></a>Основная программа
 
-В следующем примере реализуется программа командной строки, вызывающая другие методы из примеров в этой статье для демонстрации различных вариантов использования API отправки Магазина Windows. Адаптация программы для собственного использования
+В следующем примере реализуется программа командной строки, вызывающая другие методы из примеров в этой статье для демонстрации различных вариантов использования API отправки Магазина Windows. Адаптация программы для собственного использования.
 
-* Назначьте свойства ```ApplicationId```, ```InAppProductId``` и ```FlightId``` идентификатору приложения, надстройке (надстройки также известны как внутренние продукты приложений, или IAP) и тестовому пакету, которыми вы хотите управлять. Эти идентификаторы доступны на информационной панели Центра разработки.
+* Назначьте свойства ```ApplicationId```, ```InAppProductId``` и ```FlightId``` идентификатору приложения, надстройке и тестовому пакету, которыми вы хотите управлять.
 * Назначьте свойства ```ClientId``` и ```ClientSecret``` идентификатору клиента и ключу своего приложения и замените строку *tenantid* в URL-адресе ```TokenEndpoint``` идентификатором владельца для своего приложения. Дополнительные сведения см. в разделе [Привязка приложения Azure AD к учетной записи в Центре разработки для Windows](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account).
 
 > [!div class="tabbedCodeSnippets"]
@@ -51,10 +51,10 @@ translationtype: HT
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
 
-<span id="update-app-submission" />
-## <a name="update-an-app-submission"></a>Обновление отправки приложения
+<span id="create-app-submission" />
+## <a name="create-an-app-submission"></a>Создание отправки приложения
 
-В следующем примере реализован класс, который использует несколько методов из API отправки Магазина Windows для обновления отправки приложения. Метод ```RunAppSubmissionUpdateSample``` в классе создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в Центре разработки для Windows. В частности, метод ```RunAppSubmissionUpdateSample``` выполняет следующие задачи:
+В следующем примере реализован класс, который использует несколько методов из API отправки в Магазин Windows для обновления отправки приложения. Метод ```RunAppSubmissionUpdateSample``` в классе создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в Центре разработки для Windows. В частности, метод ```RunAppSubmissionUpdateSample``` выполняет следующие задачи:
 
 1. Сначала метод [получает данные для указанного приложения](get-an-app.md).
 2. Затем он [удаляет ожидающую отправку для приложения](delete-an-app-submission.md), если она существует.
@@ -67,9 +67,9 @@ translationtype: HT
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
 
 <span id="create-add-on-submission" />
-## <a name="create-a-new-add-on-submission"></a>Создание отправки надстройки
+## <a name="create-an-add-on-submission"></a>Создание отправки надстройки
 
-В следующем примере реализован класс, который использует несколько методов из API отправки Магазина Windows для создания новой отправки надстройки. Метод ```RunInAppProductSubmissionCreateSample``` в классе выполняет следующие задачи:
+В следующем примере реализован класс, который использует несколько методов из API отправки в Магазин Windows для создания новой отправки надстройки. Метод ```RunInAppProductSubmissionCreateSample``` в классе выполняет следующие задачи:
 
 1. Сначала метод [создает новую надстройку](create-an-add-on.md).
 2. Затем он [создает новую отправку для надстройки](create-an-add-on-submission.md).
@@ -94,10 +94,10 @@ translationtype: HT
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
 
-<span id="update-flight-submission" />
-## <a name="update-a-package-flight-submission"></a>Обновление отправки тестового пакета
+<span id="create-flight-submission" />
+## <a name="create-a-package-flight-submission"></a>Создание отправки тестового пакета
 
-В следующем примере реализован класс, который использует несколько методов в API отправки Магазина Windows для обновления отправки тестового пакета. Метод ```RunFlightSubmissionUpdateSample``` в классе создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в Центре разработки для Windows. В частности, метод ```RunFlightSubmissionUpdateSample``` выполняет следующие задачи:
+В следующем примере реализован класс, который использует несколько методов в API отправки в Магазин Windows для обновления отправки тестового пакета. Метод ```RunFlightSubmissionUpdateSample``` в классе создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в Центре разработки для Windows. В частности, метод ```RunFlightSubmissionUpdateSample``` выполняет следующие задачи:
 
 1. Сначала метод [получает данные для указанного тестового пакета](get-a-flight.md).
 2. Затем он [удаляет ожидающую отправку для тестового пакета](delete-a-flight-submission.md), если она существует.

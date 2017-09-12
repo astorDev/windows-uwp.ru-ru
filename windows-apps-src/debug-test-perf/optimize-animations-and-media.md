@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: DE5B084C-DAC1-430B-A15B-5B3D5FB698F7
 title: "Оптимизация анимаций, мультимедиа и изображений"
 description: "Создавайте приложения универсальной платформы Windows (UWP) с плавными анимациями, высокой частотой кадров, захватом и воспроизведением высокопроизводительных файлов мультимедиа."
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 29383c65d36b7bc9e5946e4c55298ac0e04107c6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 74f8b5a47a0ebee123ccad13bee2177870630a27
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="optimize-animations-media-and-images"></a>Оптимизация анимаций, мультимедиа и изображений
 
@@ -37,6 +39,7 @@ translationtype: HT
 -   Анимации для следующих свойств [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) при нацеливании на подсвойства данных типов возвращаемых значений:
 
     -   [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.rendertransform)
+    -   [**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d)
     -   [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
     -   [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 

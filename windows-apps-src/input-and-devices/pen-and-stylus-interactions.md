@@ -11,13 +11,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fd65e2ea02ea52425656e584b3fa495512030c76
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: af89a515e7d59c735bb4499c3602eef7570fe03a
+ms.sourcegitcommit: 11664964e548a2af30d6e176c515cdbf330934ac
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/28/2017
 ---
-
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Взаимодействие с пером и Windows Ink в приложениях UWP
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -31,7 +30,7 @@ ms.lasthandoff: 02/07/2017
 -->
 
 ![Ручка Surface](images/ink/hero-small.png)  
-*Ручка Surface* (доступна для приобретения в [Microsoft Store](https://aka.ms/purchasesurfacepen)).
+*Ручка Surface* (доступна для приобретения в [Магазине Microsoft](https://aka.ms/purchasesurfacepen)).
 
 ## <a name="overview"></a>Обзор
 
@@ -62,12 +61,12 @@ ms.lasthandoff: 02/07/2017
 | --- | --- |
 | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | Элемент управления платформы пользовательского интерфейса XAML, который по умолчанию получает и отображает все входные данные от пера как росчерк пера или росчерк стирания.<br/>Дополнительные сведения о том, как использовать InkCanvas, см. в разделах [Распознавание росчерков пера Windows Ink как текста](convert-ink-to-text.md) и [Хранение и извлечение данных движения пера Windows Ink](save-and-load-ink.md). |
 | [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | Объект кода программной части, создаваемый вместе с элементом управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (предоставляется свойством [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)). Этот объект обеспечивает все возможности рукописного ввода по умолчанию, предоставляемые элементом **InkCanvas**, вместе с полным набором API для дополнительной настройки и персонализации.<br/>Дополнительные сведения о том, как использовать InkPresenter, см. в разделах [Распознавание росчерков пера Windows Ink как текста](convert-ink-to-text.md) и [Хранение и извлечение данных движения пера Windows Ink](save-and-load-ink.md). |
-| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Добавьте InkToolbar по умолчанию в приложение универсальной платформы Windows (UWP) для рукописного ввода, добавьте кнопку специального пера в InkToolbar и привяжите кнопку специального пера к определению специального пера. Это элемент управления платформы интерфейса пользователя XAML, содержащий настраиваемую и расширяемую коллекцию кнопок, которые активируют функции рукописного ввода в соответствующем элементе InkCanvas.<br/>Дополнительные сведения о том, как использовать InkToolbar, см. в разделе [Добавление InkToolbar в приложение универсальной платформы Windows (UWP) для рукописного ввода](ink-toolbar.md). |
+| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Элемент управления платформы пользовательского интерфейса XAML, который содержит настраиваемую и расширяемую коллекцию кнопок, включающие связанные с рукописным вводом функции в связанном элементе управления [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas).<br/>Дополнительные сведения о том, как использовать InkToolbar, см. в разделе [Добавление InkToolbar в приложение универсальной платформы Windows (UWP) для рукописного ввода](ink-toolbar.md). |
 | [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | Позволяет преобразовать росчерки пера в специальный контекст устройства Direct2D универсального приложения для Windows вместо элемента управления по умолчанию [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535). Это делает возможным полную настройку рукописного ввода.<br/>Дополнительные сведения см. в разделе [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314). |
 
 ## <a name="basic-inking-with-inkcanvas"></a>Базовый рукописный ввод с использованием InkCanvas
 
-Для выполнения базовой функции рукописного ввода просто поместите [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) в любом месте страницы.
+Чтобы добавить базовую функцию рукописного ввода, просто поместите элемент управления платформы UWP [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) на соответствующую страницу в приложении.
 
 По умолчанию [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) поддерживает рукописный ввод только с помощью пера. Входные данные обрабатываются как росчерк пера с использованием параметров цвета и толщины по умолчанию (черная шариковая ручка с толщиной 2 пикселя) или трактуются как ластик для росчерков (когда ввод осуществляется кончиком ластика или кончиком пера, модифицированным при помощи кнопки стирания).
 
@@ -75,6 +74,9 @@ ms.lasthandoff: 02/07/2017
 > Если кнопка или кончик ластика отсутствуют, InkCanvas можно настроить для обработки ввода кончика пера как росчерка стирания.
 
 В этом примере [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) перекрывает фоновое изображение.
+
+> [!NOTE]
+> InkCanvas по умолчанию имеет значения свойств [**Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_Height) и [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_Width) равными нулю, если он не является дочерним элементом, который автоматически задает размеры своих дочерних элементов. 
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -109,12 +111,17 @@ ms.lasthandoff: 02/07/2017
 
 Объект [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) создается с каждым элементом управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
-Помимо всех реакций на рукописный ввод по умолчанию для соответствующего элемента управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) предоставляет полный набор API для дополнительной настройки росчерков. Это касается свойств росчерков, поддерживаемых типов устройств ввода и того, обрабатываются входные данные объектом или передаются приложению.
-
 > [!NOTE]
 > [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) нельзя создавать напрямую. Вместо этого доступ к нему осуществляется с помощью свойства [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) элемента [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535). 
 
-Здесь мы настраиваем [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) для интерпретации данных, вводимые пером или мышью, в качестве росчерков пера. Мы также задаем некоторые исходные атрибуты росчерка пера, используемые для вывода росчерков на [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+Помимо всех реакций на рукописный ввод по умолчанию для соответствующего элемента управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) предоставляет полный набор API для дополнительной настройки росчерков и более детализированного управления вводом с помощью пера (стандартного и измененного). Это касается свойств росчерков, поддерживаемых типов устройств ввода и того, обрабатываются входные данные объектом или передаются приложению для обработки.
+
+> [!NOTE]
+> Стандартный рукописный ввод (кончик пера или кнопка/кончик ластика) не изменены с помощью таких дополнительных возможностей, как кнопка пера, правая кнопка мыши или подобные механизмы. 
+
+По умолчанию рукописный ввод поддерживает только ввод с помощью пера. Здесь мы настраиваем [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) для интерпретации данных, вводимые пером или мышью, в качестве росчерков пера. Мы также задаем некоторые исходные атрибуты росчерка пера, используемые для вывода росчерков на [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+
+Чтобы включить рукописный ввод с помощью мыши и сенсорного ввода, задайте свойство [**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter#Windows_UI_Input_Inking_InkPresenter_InputDeviceTypes) [**InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter) для сочетания значений [**CoreInputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.core.coreinputdevicetypes), которые вам необходимы.
 
 ```csharp
 public MainPage()
@@ -429,7 +436,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
             stroke.Selected = false;
           }
           ClearDrawnBoundingRect();
-        }
+         }
 
         private void ClearDrawnBoundingRect()
         {
@@ -445,11 +452,11 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 По умолчанию рукописные данные обрабатываются в фоновом потоке с низкой задержкой и отображаются как «влажные» в процессе ввода. После завершения росчерка (когда пользователь поднял перо или палец либо отпустил кнопку мыши) росчерк обрабатывается в потоке пользовательского интерфейса и отображается «сухим» на слое [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (над содержимым приложения, вместо влажных рукописных данных).
 
-Платформа рукописного ввода позволяет переопределить это поведение и полностью настроить рукописный ввод за счет пользовательской сушки рукописных данных.
+Платформа рукописного ввода позволяет переопределить это поведение и полностью настроить рукописный ввод за счет пользовательской сушки рукописных данных и обеспечивает более эффективное управление крупными и сложными коллекциями росчерков пера. 
 
 Для пользовательской сушки требуется объект [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263), который управляет рукописными данными и преобразовывает их в контекст устройства Direct2D вашего универсального приложения для Windows, вместо элемента управления по умолчанию [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
-Вызывая [**ActivateCustomDrying**](https://msdn.microsoft.com/library/windows/apps/dn922012) (до загрузки элемента [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)), приложение создает объект [**InkSynchronizer**](https://msdn.microsoft.com/library/windows/apps/dn903979), чтобы настроить отображение росчерка пера сухим в [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) или [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050). Например, росчерк пера можно преобразовать в растровый формат и интегрировать в содержимое приложения вместо отдельного слоя **InkCanvas**.
+Вызывая [**ActivateCustomDrying**](https://msdn.microsoft.com/library/windows/apps/dn922012) (до загрузки элемента [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)), приложение создает объект [**InkSynchronizer**](https://msdn.microsoft.com/library/windows/apps/dn903979), чтобы настроить отображение росчерка пера сухим в [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) или [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050). Например, росчерк пера можно преобразовать в растровый формат и интегрировать в содержимое приложения вместо отдельного слоя **InkCanvas**. 
 
 Полный пример этой функциональности см. в статье [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314).
 
@@ -459,7 +466,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 ## <a name="other-articles-in-this-section"></a>Другие статьи в этом разделе
 
-| Статья | Описание |
+| Тема | Описание |
 | --- | --- |
 | [Распознавание росчерков пера](convert-ink-to-text.md) | Преобразуйте росчерки пера в текст с помощью распознавания рукописного ввода или в фигуры с помощью настраиваемого распознавания. |
 | [Хранение и извлечение росчерков пера](save-and-load-ink.md) | Храните данные росчерка пера в GIF-файле, используя встроенные метаданные формата Ink Serialized Format (ISF). |
@@ -467,6 +474,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 ## <a name="related-articles"></a>Статьи по теме
 
+* [Начало работы: поддержка рукописного ввода в приложении UWP](../get-started/ink-walkthrough.md)
 * [Работа с входными данными указателя](handle-pointer-input.md)
 * [Определение устройств ввода](identify-input-devices.md)
 
@@ -477,9 +485,10 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 * [**Windows.UI.Input.Inking.Core**](https://msdn.microsoft.com/library/windows/apps/dn958452)
 
 **Примеры**
-* [Пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Простой пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Руководство по началу работы: поддержка рукописного ввода в приложении UWP](https://aka.ms/appsample-ink)
+* [Простой пример рукописного ввода (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Сложный пример рукописного ввода (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Пример рукописного ввода (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [Пример раскраски](https://aka.ms/cpubsample-coloringbook)
 * [Пример семейных заметок](https://aka.ms/cpubsample-familynotessample)
 * [Пример базового ввода](http://go.microsoft.com/fwlink/p/?LinkID=620302)
@@ -492,7 +501,3 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 * [Ввод: пример событий пользовательского ввода на XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Пример прокрутки, сдвига и масштабирования на XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [Ввод: жесты и манипуляции с помощью GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
-
- 
-

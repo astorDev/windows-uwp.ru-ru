@@ -6,14 +6,19 @@ ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 464a726f4429eb24ad04acae130c7fc812971b3b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: af9a6883ac20d59c319c663c1f489247e2bb6f2e
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="rich-text-block"></a>Блок форматированного текста
 
@@ -21,15 +26,7 @@ translationtype: HT
 
 Блоки форматированного текста предоставляют ряд функций для создания расширенного текстового макета, который можно использовать, чтобы обеспечить поддержку абзацев, встроенных элементов пользовательского интерфейса или сложных текстовых макетов.
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
-<li>[**Класс RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)</li>
-<li>[**Класс Paragraph**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)</li>
-<li> [**Класс Typography**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)</li>
-</ul>
-</div>
+> **Важные API-интерфейсы**: [класс RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [класс RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx), [класс Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx), [класс Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -50,7 +47,7 @@ RichTextBlock поддерживает следующие функции.
 
 ### <a name="paragraphs"></a>Абзацы
 
-Элементы [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) используются для определения текстовых блоков, которые будут отображаться внутри элемента управления RichTextBlock. Каждый элемент RichTextBlock должен включать хотя бы один элемент Paragraph. 
+Элементы [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) используются для определения текстовых блоков, которые будут отображаться внутри элемента управления RichTextBlock. Каждый элемент RichTextBlock должен включать хотя бы один элемент Paragraph. 
 
 Можно установить отступ для всех абзацев в элементе RichTextBlock, задав свойство [RichTextBlock.TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.textindent.aspx). Этот параметр можно переопределить для конкретных абзацев в элементе RichTextBlock, задав для свойства [Paragraph.TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.textindent.aspx) другое значение.
 
@@ -64,7 +61,7 @@ RichTextBlock поддерживает следующие функции.
 
 ### <a name="inline-ui-elements"></a>Строковые элементы пользовательского интерфейса
 
-Класс [**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) позволяет встроить в текст любой элемент UIElement. Распространенный сценарий— вставка элемента Image в текст, но можно использовать и интерактивные элементы, такие как Button или CheckBox.
+Класс [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) позволяет встроить в текст любой элемент UIElement. Распространенный сценарий— вставка элемента Image в текст, но можно использовать и интерактивные элементы, такие как Button или CheckBox.
 
 Если в одно и то же место нужно встроить несколько элементов, используйте панель в качестве отдельного дочернего элемента InlineUIContainer, а затем поместите несколько элементов на эту панель.
 
@@ -84,7 +81,7 @@ RichTextBlock поддерживает следующие функции.
 
 ## <a name="overflow-containers"></a>Контейнеры переполнения
 
-Вы можете использовать RichTextBlock с элементами [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx), чтобы создать многостолбцовые или другие сложные макеты страниц. Содержимое элемента RichTextBlockOverflow всегда берется из элемента RichTextBlock. Элементы RichTextBlockOverflow связываются путем их настройки как OverflowContentTarget объекта RichTextBlock или другого элемента RichTextBlockOverflow.
+Вы можете использовать RichTextBlock с элементами [RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx), чтобы создать многостолбцовые или другие сложные макеты страниц. Содержимое элемента RichTextBlockOverflow всегда берется из элемента RichTextBlock. Элементы RichTextBlockOverflow связываются путем их настройки как OverflowContentTarget объекта RichTextBlock или другого элемента RichTextBlockOverflow.
 
 Вот простой пример, создающий макет с двумя столбцами. Более сложные примеры см. в разделе "Примеры".
 
@@ -150,8 +147,8 @@ RichTextBlock поддерживает следующие функции.
 - [Руководство по текстовому вводу](text-controls.md)
 
 **Разработчикам (XAML)**
-- [**Класс TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Класс Windows.UI.Xaml.Controls PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [Класс TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Класс Windows.UI.Xaml.Controls PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
 **Разработчикам (прочее)**

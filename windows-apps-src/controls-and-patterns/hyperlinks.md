@@ -6,14 +6,20 @@ ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: e2c04ea39eee88c225bfef277037363c084e8eff
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: stpete
+doc-status: Published
+ms.openlocfilehash: 5079d1782188b6d2e49fc14741a23a5651995c67
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="hyperlinks"></a>Гиперссылки
 
@@ -21,15 +27,9 @@ translationtype: HT
 
 Гиперссылки используются для перехода в другую часть приложения, в другое приложение либо по указанному универсальному коду ресурса (URI) в отдельном приложении браузера. Существует два способа добавления гиперссылки в приложение XAML: текстовый элемент **гиперссылки** и элемент управления **HyperlinkButton**.
 
-![Кнопка с гиперссылкой](images/controls/hyperlink-button.png)
+> **Важные API-интерфейсы**: [текстовый элемент гиперссылки](https://msdn.microsoft.com/library/windows/apps/dn279356), [элемент управления HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/br242739)
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Текстовый элемент гиперссылки**](https://msdn.microsoft.com/library/windows/apps/dn279356)</li>
-<li>[**Элемент управления HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)</li>
-</ul>
-</div>
+![Кнопка с гиперссылкой](images/controls/hyperlink-button.png)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
@@ -41,12 +41,6 @@ translationtype: HT
 -   Используйте текстовый элемент встроенной **гиперссылки** внутри элемента управления текстом. Элемент гиперссылки сочетается с другими текстовыми элементами, и его можно использовать в любом InlineCollection. Используйте текстовую гиперссылку, если нужно, чтобы обтекание текстом осуществлялось автоматически, и если нет необходимости в большом элементе управления. Текст гиперссылки может быть небольшим, и на него бывает трудно попасть, особенно на устройствах с сенсорным экраном.
 -   Для отдельных гиперссылок можно использовать **HyperlinkButton**. HyperlinkButton— это специализированный элемент управления "кнопка", который можно использовать везде, где вы бы добавили кнопку.
 -   Используйте элемент **HyperlinkButton** с [Image](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) в качестве содержимого этого элемента, чтобы создать гиперизображение.
-
-## <a name="examples"></a>Примеры
-
-Гиперссылки в приложении "Калькулятор"
-
-![Пример гиперссылки в приложении "Калькулятор"](images/control-examples/hyperlinks-calculator.png)
 
 ## <a name="create-a-hyperlink-text-element"></a>Создание текстового элемента гиперссылки
 
@@ -150,7 +144,7 @@ translationtype: HT
 ## <a name="recommendations"></a>Рекомендации
 
 -   Используйте гиперссылки только для навигации. Не используйте их для других действий.
--   Используйте стиль текста из набора шрифтов для гиперссылок на основе текста. Дополнительные сведения о [**шрифтах и наборе шрифтов Windows10**](fonts.md).
+-   Используйте стиль текста из набора шрифтов для гиперссылок на основе текста. Дополнительные сведения о [шрифтах и наборе шрифтов в Windows 10](fonts.md).
 -   Располагайте отдельные гиперссылки на значительном расстоянии друг от друга, чтобы пользователю было удобно отличать их и делать выбор между ними.
 -   Добавляйте к гиперссылкам подсказки, которые информируют о том, куда будет перенаправлен пользователь. Если пользователь будет перенаправляться на внешний сайт, включите в подсказку указание доменного имени верхнего уровня и выделите текст с помощью дополнительного цвета шрифта.
 
@@ -160,5 +154,5 @@ translationtype: HT
 - [Руководство по всплывающим подсказкам](tooltips.md)
 
 **Для разработчиков (XAML)**
-- [**Класс Windows.UI.Xaml.Documents.Hyperlink**](https://msdn.microsoft.com/library/windows/apps/dn279356)
-- [**Класс Windows.UI.Xaml.Controls.HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)
+- [Класс Windows.UI.Xaml.Documents.Hyperlink](https://msdn.microsoft.com/library/windows/apps/dn279356)
+- [Класс Windows.UI.Xaml.Controls.HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/br242739)

@@ -6,14 +6,18 @@ ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
 template: detail.hbs
 extraBodyClass: style-color
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 0d4266d1335198cffb74900b0d1eb2bb48cd1879
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+design-contact: rybick
+doc-status: Published
+ms.openlocfilehash: fd37d69c2e9b20b46c34e6071f302bd55bbbba26
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="color"></a>Цвет
 
@@ -132,13 +136,47 @@ translationtype: HT
       </tr>
   </table>
 
+Не используйте цвет элементов в качестве фона, особенно для текста и значков. Поскольку цвет элементов может меняться, если уж вам необходимо использовать его в качестве фона, нужно предпринять дополнительные действия, чтобы текст переднего плана легко читался. Например, если цвет текста белый, а цвет элементов— светло-серый, текст будет трудно различим из-за низкого коэффициента контрастности между белым и серым. Этого можно избежать, проверив цвет элементов и определив, является ли он темным:  
 
-<div class="microsoft-internal-note">
-Общее правило таково: если цвет элементов используется в качестве фона, размещайте поверх него текст белого цвета. Цвет элементов по умолчанию, который поставляется вместе с Windows, обеспечивает отличную контрастность с белым текстом. Пользователь может выбрать цвет элементов, имеющий низкую контрастность с белым, в соответствии со своими предпочтениями, это допустимо. Если ему станет трудно читать, он всегда может выбрать более темный цвет элементов.
-</div>
+С помощью приведенного ниже алгоритма можно определить, является ли цвет фона светлым или темным.
+
+```C#
+void accentColorUpdated(FrameworkElement elementWithText)
+{
+    var uiSettings = new Windows.UI.ViewManagement.UISettings();
+    Windows.UI.Color c = uiSettings.GetColorValue(UIColorType.Accent);
+
+    bool colorIsDark = (5 * c.G + 2 * c.R + c.B) <= 8 * 128;
+    if (colorIsDark)
+    {
+        elementWithText.RequestedTheme = ElementTheme.Light;
+    }
+    else
+    {
+        elementWithText.RequestedTheme = ElementTheme.Dark;
+    }
+}
+```
 
 
-Когда пользователи выбирают цвет элементов, он появляется в составе системной темы. Затрагиваются следующие области: меню "Пуск", панель задач, хром окон, определенные состояния взаимодействия и гиперссылки в [общих элементах управления](../controls-and-patterns/index.md). Цвет элементов может еще шире использоваться в каждом приложении за счет оформления, фонов и взаимодействий или переопределяться ради сохранения фирменной символики приложения.
+```JS
+function accentColorUpdated(elementWithText)
+{
+    var uiSettings = new Windows.UI.ViewManagement.UISettings();
+    Windows.UI.Color c = uiSettings.GetColorValue(UIColorType.Accent);
+    var colorIsDark (5 * c.g + 2 * c.r + c.b) <= 8 * 128;
+    if (colorIsDark)
+    {
+        elementWithText.RequestedTheme = ElementTheme.Light;
+    }
+    else
+    {
+        elementWithText.RequestedTheme = ElementTheme.Dark;
+    }     
+}
+```
+
+Определив, относится ли цвет элементов к светлым или темным, выберите соответствующий цвет переднего плана. Мы рекомендуем использовать SystemControlForegroundBaseHighBrush из светлой темы для темного фона и версию темной темы для светлого фона.
 
 ## <a name="color-palette-building-blocks"></a>Цвет на цвете
 
@@ -228,7 +266,7 @@ translationtype: HT
 </Application>
 ```
 
-При удалении свойства **RequestedTheme** будет применяться тема, заданная текущим режимом приложения пользователя, и пользователи смогут просматривать ваше приложение в двух цветовых темах: темной или светлой. 
+При удалении свойства **RequestedTheme** будет применяться тема, заданная текущим режимом приложения пользователя, и пользователи смогут просматривать ваше приложение в двух цветовых темах: темной или светлой.
 
 В ходе создания приложения уделите особое внимание настройке темы, так как от нее зависит внешний вид приложения.
 

@@ -4,14 +4,16 @@ ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: "Используйте этот метод в API отправки Магазина Windows для обновления существующей отправки приложения."
 title: "Обновление отправки приложения"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, API отправки Магазина Windows, отправка приложения, обновление"
-ms.openlocfilehash: a4b7816d0d6e47282864992044eea58eaaa05d1d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b3c071c0d4f070c1a0ac95d6f35c73fcbb4e0455
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="update-an-app-submission"></a>Обновление отправки приложения
 
@@ -26,8 +28,6 @@ translationtype: HT
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
 * [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
 * Создайте отправку для приложения в учетной записи Центра разработки. Это можно сделать на информационной панели Центра разработки или с помощью метода [Создание отправки приложения](create-an-app-submission.md).
-
->**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
 ## <a name="request"></a>Запрос
 
@@ -44,7 +44,7 @@ translationtype: HT
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
@@ -73,6 +73,7 @@ translationtype: HT
 | automaticBackupEnabled           |  логический  |   Указывает, может ли Windows включать данные этого приложения в автоматические резервные копии, записываемые в OneDrive. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).   |   
 | canInstallOnRemovableMedia           |  логический  |   Указывает, могут ли клиенты устанавливать приложение на съемный носитель. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | isGameDvrEnabled           |  логический |   Указывает, включена ли для приложения функция DVR для игр.    |   
+| gamingOptions           |  объект |   Массив, содержащий один [ресурс параметров игры](manage-app-submissions.md#gaming-options-object), который определяет относящиеся к игре параметры для приложения.<br/><br/>**Примечание**.&nbsp;&nbsp;Возможность настроить параметры игры с помощью этого API на данный момент доступна не всем учетным записям разработчиков. Если ваша учетная запись не имеет доступа к этому ресурсу, *gamingOptions* имеет значение null.     |   
 | hasExternalInAppProducts           |     логический          |   Указывает, позволяет ли приложение пользователям делать покупки без использования коммерческой системы Магазина Windows. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | meetAccessibilityGuidelines           |    логический           |  Указывает, проверено ли приложение на соответствие рекомендациям по специальным возможностям. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).      |   
 | notesForCertification           |  строка  |   Содержит [заметки по сертификации](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification) приложения.    |    
@@ -80,7 +81,8 @@ translationtype: HT
 | packageDeliveryOptions    | объект  | Содержит параметры постепенного выпуска пакета и обязательного обновления для отправки. Подробнее см. в разделе [Объект параметров доставки пакета](manage-app-submissions.md#package-delivery-options-object).  |
 | enterpriseLicensing           |  Строка  |  Одно из [значений, связанных с корпоративным лицензированием](manage-app-submissions.md#enterprise-licensing), задающих поведение приложения в отношении корпоративного лицензирования.  |    
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  логический   |  Указывает, разрешено ли Майкрософт [делать приложение доступным для будущих семействустройств Windows 10.](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
-| allowTargetFutureDeviceFamilies           | логический   |  Указывает, может ли приложение [быть предназначено для будущих семейств устройств Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).     |    
+| allowTargetFutureDeviceFamilies           | логический   |  Указывает, может ли приложение [быть предназначено для будущих семейств устройств Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).     |   
+| trailers           |  массив |   Массив, содержащий до [ресурсов трейлеров](manage-app-submissions.md#trailer-object), представляющие видеотрейлеры для описания приложения. <br/><br/>**Примечание**.&nbsp;&nbsp;Возможность отправить трейлер для отправки приложения с помощью этого API в настоящее время доступна не всем учетным записям разработчиков. Если ваша учетная запись не имеет доступа к этому ресурсу, *trailers* имеет значение null.  |   
 
 <span/>
 
@@ -108,16 +110,16 @@ Content-Type: application/json
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
         "keywords": [
-          "epub"
-        ],
+              "epub"
+            ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
         "features": [
-          "Free ebook reader"
-        ],
+              "Free ebook reader"
+            ],
         "releaseNotes": "",
         "images": [
           {
@@ -143,6 +145,7 @@ Content-Type: application/json
   "automaticBackupEnabled": false,
   "canInstallOnRemovableMedia": true,
   "isGameDvrEnabled": false,
+  "gamingOptions": [],
   "hasExternalInAppProducts": false,
   "meetAccessibilityGuidelines": true,
   "notesForCertification": "",
@@ -172,7 +175,8 @@ Content-Type: application/json
     "Holographic": true,
     "Xbox": false,
     "Team": true
-  }
+  },
+  "trailers": []
 }
 ```
 
@@ -233,6 +237,7 @@ Content-Type: application/json
   "automaticBackupEnabled": false,
   "canInstallOnRemovableMedia": true,
   "isGameDvrEnabled": false,
+  "gamingOptions": [],
   "hasExternalInAppProducts": false,
   "meetAccessibilityGuidelines": true,
   "notesForCertification": "",
@@ -284,7 +289,8 @@ Content-Type: application/json
     "Xbox": false,
     "Team": true
   },
-  "friendlyName": "Submission 2"
+  "friendlyName": "Submission 2",
+  "trailers": []
 }
 ```
 

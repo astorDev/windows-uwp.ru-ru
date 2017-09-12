@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 2492d8c50b6f2e35a137eae6e1a002af0f46afd1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 1974c90b89a34f3252face47b9f18786b638adf8
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/26/2017
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>Создание и регистрация внепроцессной фоновой задачи
 
@@ -26,7 +28,7 @@ translationtype: HT
 Создайте класс фоновой задачи и зарегистрируйте его выполнение, когда приложение не работает на переднем плане. В этом разделе рассказывается, как создать и зарегистрировать фоновую задачу, которая будет запускаться в отдельном процессе, а не в процессе вашего приложения. Руководство по реализации выполнения фоновой задачи непосредственно в приложении переднего плана см. в разделе [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md).
 
 > [!Note]
-> Если фоновая задача используется для воспроизведения мультимедиа в фоновом режиме, см. раздел [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio), где приведены сведения об улучшениях в Windows 10 версии 1607, которые значительно упрощают работу.
+> Если фоновая задача используется для воспроизведения мультимедиа в фоновом режиме, см. раздел [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio), где приведены сведения об улучшениях в Windows 10 версии 1607, которые значительно упрощают работу.
 
 ## <a name="create-the-background-task-class"></a>Создание класса фоновой задачи
 
@@ -238,7 +240,7 @@ translationtype: HT
     > [!div class="tabbedCodeSnippets"]
     > ```cs
     >     BackgroundTaskRegistration task = builder.Register();
-    >     ```
+    > ```
     > ```cpp
     >     BackgroundTaskRegistration^ task = builder->Register();
     > ```

@@ -6,14 +6,20 @@ ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 7e00ac2aa08033292ba8d3ce1cebe836fdc3808c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: 13ca87313835541abffe6190d8a3bc07e67b40f8
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="check-boxes"></a>Флажки
 
@@ -21,16 +27,9 @@ translationtype: HT
 
 Флажок используется для выбора или отмены выбора элементов действий. Его можно использовать для одного элемента или списка из нескольких элементов с возможностью выбора. Элемент управления предусматривает три состояния выделения: "не выбрано", "выбрано" и "не определено". Состояние "не определено" используется, когда в подсписке вариантов есть одновременно состояния "не выбрано" и "выбрано".
 
-![Пример состояний флажка](images/templates-checkbox-states-default.png)
+> **Важные API-интерфейсы**: [класс CheckBox](https://msdn.microsoft.com/library/windows/apps/br209316), [событие Checked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx), [свойство IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316)</li>
-<li>[**Событие Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
-<li>[**Свойство IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) </li>
-</ul>
-</div>
+![Пример состояний флажка](images/templates-checkbox-states-default.png)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
@@ -39,7 +38,7 @@ translationtype: HT
 
 ![Один флажок используется для отдельного выбора](images/checkbox1.png)
 
-Основное различие между **флажком** и [**переключателем**](toggles.md) при двоичном выборе состоит в том, что флажок предназначен для обозначения состояния, а переключатель — для обозначения действия. Действие по флажку можно отложить (например, как часть отправки формы), тогда как действие по переключателю требуется выполнить сразу. Кроме того, множественный выбор можно сделать только с помощью флажков.
+Основное различие между **флажком** и [переключателем](toggles.md) при двоичном выборе состоит в том, что флажок предназначен для обозначения состояния, а переключатель — для обозначения действия. Действие по флажку можно отложить (например, как часть отправки формы), тогда как действие по переключателю требуется выполнить сразу. Кроме того, множественный выбор можно сделать только с помощью флажков.
 
 Используйте **несколько флажков** в сценариях с множественным выбором, когда пользователь может выбрать один или несколько элементов группы, которые не исключают друг друга.
 
@@ -53,19 +52,10 @@ translationtype: HT
 
 С помощью элементов управления **флажок** и **переключатель** пользователь может выбирать варианты из списка. Флажки позволяют пользователю выбирать сочетание вариантов. В отличие от них, при помощи переключателей пользователь может выбрать один из взаимоисключающих вариантов. Если есть несколько вариантов, но выбрать можно только один из них, используйте переключатель.
 
-## <a name="examples"></a>Примеры
-
-Флажок в диалоговом окне в браузере Microsoft Edge.
-
-![Флажок в диалоговом окне в браузере Microsoft Edge](images/control-examples/check-box-edge.png)
-
-Флажки в приложении "Будильники и часы" в Windows.
-
-![Флажки в приложении "Будильники и часы" в Windows](images/control-examples/check-box-alarm.png)
 
 ## <a name="create-a-checkbox"></a>Создание флажка
 
-Чтобы присвоить флажку метку, установите свойство [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx). Метка отображается рядом с флажком.
+Чтобы присвоить флажку метку, установите свойство [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx). Метка отображается рядом с флажком.
 
 Этот код XAML позволяет создать один флажок, который используется для принятия условий соглашения перед отправкой формы. 
 
@@ -83,9 +73,9 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>Привязка к свойству IsChecked
 
-Используйте свойство [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx), чтобы определять, установлен флажок или снят. Вы можете привязать значение свойства IsChecked к другому двоичному значению. Однако из-за того, что свойство IsChecked имеет логическое значение, [допускающее значение null](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx), для его привязки к логическому значению вам потребуется преобразователь величин.
+Используйте свойство [IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx), чтобы определять, установлен флажок или снят. Вы можете привязать значение свойства IsChecked к другому двоичному значению. Однако из-за того, что свойство IsChecked имеет логическое значение, [допускающее значение null](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx), для его привязки к логическому значению вам потребуется преобразователь величин.
 
-В этом примере свойство **IsChecked** флажка для принятия условий соглашения привязано к свойству [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) кнопки "Отправить". Кнопка "Отправить" включена, только если пользователь принял условия соглашения.
+В этом примере свойство **IsChecked** флажка для принятия условий соглашения привязано к свойству [IsEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) кнопки "Отправить". Кнопка "Отправить" включена, только если пользователь принял условия соглашения.
 
 > Примечание&nbsp;&nbsp;Здесь приводится только относящийся к данному вопросу код. Дополнительные сведения о привязке данных и преобразователях величин можно найти в разделе [Общие сведения о привязке данных](../data-binding/data-binding-quickstart.md).
 
@@ -128,7 +118,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 ### <a name="handle-click-and-checked-events"></a>Обработка событий Click и Checked
 
-Чтобы выполнять действие при изменении состояния флажка, вы можете обрабатывать событие [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) или события [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) и [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx). 
+Чтобы выполнять действие при изменении состояния флажка, вы можете обрабатывать событие [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) или события [Checked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) и [Unchecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx). 
 
 Событие **Click** происходит при изменении состояния Checked При обработке события Click используйте свойство **IsChecked**, чтобы определить состояние флажка.
 
@@ -189,7 +179,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 снят | IsChecked | **false** 
 не определен | IsChecked | **null** 
 
-Чтобы флажок сообщал о неопределенном состоянии, установите для значения [**IsThreeState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) свойство **true**. 
+Чтобы флажок сообщал о неопределенном состоянии, установите для свойства [IsThreeState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) значение **true**. 
 
 Если варианты можно сгруппировать, вы можете использовать флажок с неопределенным состоянием для представления всей группы. Неопределенное состояние флажка используется, когда пользователь выбирает лишь некоторые (не все) подэлементы в группе.
 
@@ -299,7 +289,7 @@ private void SetCheckedState()
 
 ## <a name="related-articles"></a>Еще по теме
 
--   [**Класс CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 
+-   [Класс CheckBox](https://msdn.microsoft.com/library/windows/apps/br209316) 
 -   [Переключатели](radio-button.md)
 -   [Тумблер](toggles.md)
 

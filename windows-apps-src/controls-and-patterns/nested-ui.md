@@ -5,15 +5,20 @@ title: "Вложенные элементы интерфейса в элемен
 label: Nested UI in list items
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
-ms.openlocfilehash: b3b41e81f48f790c85377208816668ba302d3738
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: chigy
+design-contact: kimsea
+doc-status: Published
+ms.openlocfilehash: a8d7ac9ad5cad6d88c0fac0c1e7bba53eaf0045d
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="nested-ui-in-list-items"></a>Вложенные элементы интерфейса в элементах списка
 
@@ -22,6 +27,8 @@ translationtype: HT
 Вложенный элемент интерфейса предоставляет вложенные активные элементы управления, заключенные в контейнер, которые также могут брать на себя независимый фокус.
 
 Вложенные элементы интерфейса можно использовать для предоставления пользователю дополнительных параметров, ускоряющих выполнение важных действий. Однако чем больше действий предоставляется, тем сложнее становится пользовательский интерфейс. Выбирать этот шаблон пользовательского интерфейса следует с особым вниманием. В это статье представлены рекомендации, которые помогут вам составит лучший план действий для вашего пользовательского интерфейса.
+
+> **Важные API-интерфейсы**: [класс ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 В этой статье мы рассмотрим создание вложенных элементов пользовательского интерфейса в элементах [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) и [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). Хотя в этом разделе не рассматриваются другие варианты вложенных элементов интерфейса, данные концепции универсальны. Перед началом вам следует ознакомиться с общими рекомендациями по использованию элементов управления ListView или GridView в пользовательском интерфейсе. Эти рекомендации можно найти в статьях [Списки](lists.md) и [Представления списка и сетки](listview-and-gridview.md).
 

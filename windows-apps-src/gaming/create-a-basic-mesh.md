@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, игры, сетка, directx"
-ms.openlocfilehash: f7dc55c0a7653616a86f1cca41521c7b25c070f9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 264563d2db7d48ab6a18bb15c53b00e75fbd5943
+ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="create-and-display-a-basic-mesh"></a>Создание и отображение базовой сетки
 
@@ -37,6 +39,15 @@ translationtype: HT
 -   Шаблон Visual Studio 2015 Direct3D
 
 ## <a name="instructions"></a>Инструкции
+
+Далее показано, как создать простой куб сетки. 
+
+
+Если вы хотите подробнее узнать об этих принципах, посмотрите это видео.
+</br>
+</br>
+<iframe src="https://channel9.msdn.com/Series/Introduction-to-C-and-DirectX-Game-Development/03/player#time=7m39s:paused" width="600" height="338" allowFullScreen frameBorder="0"></iframe>
+
 
 ### <a name="step-1-construct-the-mesh-for-the-model"></a>Шаг 1. Построение сетки для модели
 

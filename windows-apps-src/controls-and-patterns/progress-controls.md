@@ -6,14 +6,20 @@ ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: ed43df4e1702064fbff0bd2f6fa4e4d736edc48c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: jeffarn
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: d85c32a1e0cbd826877fa22182647103bdc9eac9
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="progress-controls"></a>Элементы управления "Ход выполнения"
 
@@ -21,15 +27,7 @@ translationtype: HT
 
 Элемент управления "Ход выполнения" служит для уведомления пользователя о том, что выполняется длительная операция. Это может означать, что пользователь не сможет взаимодействовать с приложением, когда индикатор выполнения отображается. Также в зависимости от того, какой индикатор используется, он может отображать время ожидания.
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс ProgressBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)</li>
-<li>[**Свойство IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)</li>
-<li>[**Класс ProgressRing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)</li>
-<li>[**Свойство IsActive**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)</li>
-</ul>
-</div>
+> **Важные API-интерфейсы**: [класс ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx), [свойство IsIndeterminate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx), [класс ProgressRing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx), [свойство IsActive](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
 
 ## <a name="types-of-progress"></a>Типы хода выполнения
 
@@ -172,8 +170,8 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 ## <a name="related-articles"></a>Еще по теме
 
 
-- [**Класс ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529)
-- [**Класс ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538)
+- [Класс ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529)
+- [Класс ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538)
 
 **Для разработчиков (XAML)**
 - [Добавление индикаторов хода выполнения](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)

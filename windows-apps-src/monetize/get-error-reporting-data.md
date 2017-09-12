@@ -4,20 +4,22 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "Используйте этот метод в API аналитики для Магазина Windows для получения сводных данных отчетов об ошибках в заданном диапазоне дат или с учетом других дополнительных фильтров."
 title: "Получение данных отчетов об ошибках для вашего приложения"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, службы Магазина, API аналитики для Магазина Windows, ошибки"
-ms.openlocfilehash: dc5c4092368c0b395e42be122a9e0e7feec8f03e
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: 68e54c955d865669907c68d7cf1ef5a0f8986d8d
+ms.sourcegitcommit: 7aabd2e59d45bbc5512dd4ddd9110ae62b79d552
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/19/2017
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>Получение данных отчетов об ошибках для вашего приложения
 
 Используйте этот метод в API аналитики для Магазина Windows для получения сводных данных отчетов об ошибках для вашего приложения в формате JSON в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в разделе **Ошибки** [Отчета о работоспособности](../publish/health-report.md) на информационной панели Центра разработки для Windows.
 
-Вы можете получить дополнительные сведения об ошибках с помощью методов [получения подробных сведений об ошибке в приложении](get-details-for-an-error-in-your-app.md) и [получения трассировки стека ошибки в приложении](get-the-stack-trace-for-an-error-in-your-app.md).
+Вы можете получить дополнительные сведения об ошибках с помощью методов [получения сведений об ошибке](get-details-for-an-error-in-your-app.md), [получения трассировки стека](get-the-stack-trace-for-an-error-in-your-app.md) и [скачивания CAB-файла](download-the-cab-file-for-an-error-in-your-app.md).
 
 ## <a name="prerequisites"></a>Предварительные условия
 
@@ -168,6 +170,7 @@ Authorization: Bearer <your access token>
 * [Отчет о работоспособности](../publish/health-report.md)
 * [Получение сведений об ошибке в приложении](get-details-for-an-error-in-your-app.md)
 * [Получение трассировки стека при возникновении ошибки в приложении](get-the-stack-trace-for-an-error-in-your-app.md)
+* [Скачивание CAB-файла для ошибки в приложении](download-the-cab-file-for-an-error-in-your-app.md)
 * [Доступ к аналитическим данным с помощью служб Магазина Windows](access-analytics-data-using-windows-store-services.md)
 * [Получение сведений о покупках приложения](get-app-acquisitions.md)
 * [Получение сведений о покупках надстройки](get-in-app-acquisitions.md)

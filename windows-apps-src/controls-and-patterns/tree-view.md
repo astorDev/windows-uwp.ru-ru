@@ -4,18 +4,16 @@ Description: "Используйте пример кода для предста
 title: "Представление в виде дерева"
 label: Tree view
 template: detail.hbs
-ms.openlocfilehash: 88e3e79b7ebdf06c200f3525095d7685f7e3e6dc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c7ad99d20fe30ea4b94ad62de45b3832aae3805e
+ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/20/2017
 ---
 # <a name="hierarchical-layout-with-treeview"></a>Иерархический макет с TreeView
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-<div class="microsoft-internal-note">
-Красные указатели для TreeView находятся в центре ресурсов проектирования Design Depot: http://designdepotweb1/DesignDepot.FrontEnd/#/Dashboard/856
-</div>
-
-TreeView— это шаблон иерархического списка с разворачиваемыми и сворачиваемыми узлами, содержащими вложенные элементы. Вложенные элементы могут быть дополнительными узлами или рядовыми элементами списка. Вы можете использовать [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) для построения древовидного представления, чтобы показать структуру папок или дочерние связи в пользовательском интерфейсе.
+TreeView — шаблон иерархического списка с разворачиваемыми и сворачиваемыми узлами, содержащими вложенные элементы. Вложенные элементы могут быть дополнительными узлами или рядовыми элементами списка. Вы можете использовать [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) для построения древовидного представления, чтобы показать структуру папок или дочерние связи в пользовательском интерфейсе.
 
 [Пример TreeView](http://go.microsoft.com/fwlink/?LinkId=785018) — образцовая реализация, созданная с использованием **ListView**. Не является самостоятельным элементом управления. Элемент TreeView, который можно увидеть на панели избранного в браузере Microsoft Edge, основан на этой образцовой реализации.
 

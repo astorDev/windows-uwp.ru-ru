@@ -6,14 +6,16 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 35268ea199c139680c4a11c30744ecf54867e592
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 16c5092c8eb3c6d7460dd94c61c85522ef68a2fb
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Обзор служб push-уведомлений Windows (WNS)
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -154,7 +156,7 @@ WNS проверяет подлинность облачной службы и, 
 
 По умолчанию срок действия уведомлений на индикаторах событий и плитках истекает через три дня с момента их загрузки. После истечения срока действия уведомления содержимое удаляется из плитки или очереди и больше не показывается пользователю. Рекомендуется установить срок действия для всех уведомлений на плитках и индикаторах событий (используя время, значимое для вашего приложения), чтобы гарантировать, что содержимое вашей плитки не будет сохраняться дольше, чем нужно. Явное указание срока действия важно для содержимого с определенной продолжительностью существования. Это также гарантирует удаление устаревшего содержимого, если облачная служба перестала отправлять уведомления или если пользователь отключился от сети на продолжительное время.
 
-Ваша облачная служба может установить срок действия для каждого уведомления путем настройки заголовка HTTP X-WNS-Expires. Здесь указывается время (в секундах), в течение которого отправленное уведомление будет действовать. Подробнее см. [Запросы на обслуживание и заголовки ответа push-уведомлений](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl).
+Ваша служба облачного хранилища может установить срок действия для каждого уведомления путем настройки заголовка X-WNS-TTL HTTP. Здесь указывается время (в секундах), в течение которого отправленное уведомление будет действовать. Подробнее см. [Запросы на обслуживание и заголовки ответа push-уведомлений](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl).
 
 Например, во время торгового дня на бирже срок действия для обновлений курсов акций можно установить равным двойному интервалу отправки (допустим, через час после получения при отправке уведомлений, выполняемом каждые полчаса). Рассмотрим другой пример: для новостного приложения можно определить, что один день является подходящим временем для истечения срока действия обновлений плитки ежедневных новостей.
 
@@ -200,9 +202,9 @@ async public void CheckForEnergySaving()
       dontAskAgain = Convert.ToBoolean(dontAskSetting);
    }
    
-   // Check if battery saver is on and that it&#39;s okay to raise dialog
+   // Check if battery saver is on and that it's okay to raise dialog
    if ((PowerManager.EnergySaverStatus == EnergySaverStatus.On)
-         &amp;&amp; (dontAskAgain == false))
+         && (dontAskAgain == false))
    {
       // Check dialog results
       ContentDialogResult dialogResult = await saveEnergyDialog.ShowAsync();
@@ -214,7 +216,7 @@ async public void CheckForEnergySaving()
 
       // Save reminder preference
       if (dontAskAgainBox.IsChecked == true)
-      {  // Don&#39;t raise dialog again
+      {  // Don't raise dialog again
          localSettings.Values["dontAskAgainSetting"] = "true";
       }
    }

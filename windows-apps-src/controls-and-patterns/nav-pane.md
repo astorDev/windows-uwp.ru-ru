@@ -1,21 +1,26 @@
 ---
 author: Jwmsft
+redirect_url: https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview
 Description: "Обеспечивает навигацию верхнего уровня, сохраняя при этом пространство экрана."
 title: "Руководство по панелям навигации"
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
 label: Nav pane
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 2d48a92d5af75f8543f7b69ac59865e51bd334ee
-ms.sourcegitcommit: d1d53f5100edffe3f3ee57b853dc8cd1568fe7a2
-translationtype: HT
+ms.openlocfilehash: d5c838675eb8cb568f0dabd1c6b776a8a53d3bf4
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="nav-panes"></a>Панели навигации
+
+Эта статья перенесена сюда: [представление навигации](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview).
 
 Панель навигации — это шаблон, который позволяет использовать множество элементов навигации верхнего уровня, сохраняя при этом свободное пространство экрана. Панель навигации широко используется в мобильных приложениях, но также подходит и для больших экранов. При использовании как наложение панель остается свернутой и не открывается, пока пользователь не нажмет кнопку, что удобно для маленьких экранов. При использовании в режиме стыковки панель остается открытой, что обеспечивает больше возможностей, если экранного пространства достаточно.
 
@@ -24,7 +29,7 @@ translationtype: HT
 
 **Важные API**
 
-* [**Класс SplitView**](https://msdn.microsoft.com/library/windows/apps/dn864360)
+* [Класс SplitView](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 ## <a name="is-this-the-right-pattern"></a>Выбор правильного шаблона
 
@@ -114,6 +119,3 @@ translationtype: HT
 * [Элемент управления "Комбинированный режим"](split-view.md)
 * [Основные и подробные данные](master-details.md)
 * [Основы навигации](https://msdn.microsoft.com/library/windows/apps/dn958438)
- 
-
- 

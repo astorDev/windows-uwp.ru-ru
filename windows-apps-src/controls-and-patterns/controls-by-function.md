@@ -6,14 +6,16 @@ ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 7082b8f81f45d5035cbe2d9b4bf482d0c985bb8f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 32e2ba7bc3aebf2d1fae80632f0ea663a203d73c
+ms.sourcegitcommit: 00c3f5a1208bd0125f5b275f972cf2a82d8eb9b6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/13/2017
 ---
 # <a name="controls-by-function"></a>Элементы управления по функциям
 
@@ -21,7 +23,7 @@ translationtype: HT
 
 Инфраструктура пользовательского интерфейса XAML для Windows предоставляет обширную библиотеку элементов управления, поддерживающих разработку интерфейса. Часть элементов управления имеет визуальное представление, а остальные используются в качестве контейнеров для других элементов управления или содержимого — например, для изображений и мультимедиа. 
 
-Чтобы просмотреть элементы управления интерфейса Windows в действии, скачайте [**пример основных элементов пользовательского интерфейса XAML**](http://go.microsoft.com/fwlink/p/?LinkId=619992). 
+Чтобы просмотреть элементы управления интерфейса Windows в действии, скачайте [Пример основных элементов пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992). 
 
 Ниже перечисленысгруппированные по функциям типовые элементы управления XAML, которые можно использовать в приложении. 
 
@@ -140,7 +142,7 @@ translationtype: HT
 Проектирование и инструкции: [Руководство по элементам управления "Представление пролистывания"](flipview.md) 
 
 ### <a name="grid-view"></a>Представление в виде сетки
-Элемент управления, являющийся коллекцией элементов, которые расположены в строках и столбцах, с горизонтальной прокруткой.
+Элемент управления, являющийся коллекцией элементов, которые расположены в строках и столбцах, с вертикальной прокруткой.
 
 ```xaml
 <GridView x:Name="gridView1" SelectionChanged="GridView_SelectionChanged">
@@ -354,7 +356,7 @@ translationtype: HT
         Height="108" Width="64" 
         Padding="8" CornerRadius="4">
     <Canvas>
-        <Rectangle Fill="Yellow"/>
+        <Rectangle Fill="Orange"/>
         <Rectangle Fill="Green" Margin="0,44"/>
     </Canvas>
 </Border>
@@ -372,7 +374,7 @@ translationtype: HT
     <Rectangle Fill="Red"/>
     <Rectangle Fill="Blue" Canvas.Left="20" Canvas.Top="20"/>
     <Rectangle Fill="Green" Canvas.Left="40" Canvas.Top="40"/>
-    <Rectangle Fill="Yellow" Canvas.Left="60" Canvas.Top="60"/>
+    <Rectangle Fill="Orange" Canvas.Left="60" Canvas.Top="60"/>
 </Canvas>
 ```
 
@@ -396,7 +398,7 @@ translationtype: HT
     <Rectangle Fill="Red"/>
     <Rectangle Fill="Blue" Grid.Row="1"/>
     <Rectangle Fill="Green" Grid.Column="1"/>
-    <Rectangle Fill="Yellow" Grid.Row="1" Grid.Column="1"/>
+    <Rectangle Fill="Orange" Grid.Row="1" Grid.Column="1"/>
 </Grid>
 ```
 
@@ -452,7 +454,7 @@ translationtype: HT
     <Rectangle Fill="Red"/>
     <Rectangle Fill="Blue"/>
     <Rectangle Fill="Green"/>
-    <Rectangle Fill="Yellow"/>
+    <Rectangle Fill="Orange"/>
 </StackPanel>
 ```
 
@@ -470,7 +472,7 @@ translationtype: HT
                VariableSizedWrapGrid.RowSpan="2"/>
     <Rectangle Fill="Green" Width="80" 
                VariableSizedWrapGrid.ColumnSpan="2"/>
-    <Rectangle Fill="Yellow" Height="80" Width="80" 
+    <Rectangle Fill="Orange" Height="80" Width="80" 
                VariableSizedWrapGrid.RowSpan="2" 
                VariableSizedWrapGrid.ColumnSpan="2"/>
 </VariableSizedWrapGrid>

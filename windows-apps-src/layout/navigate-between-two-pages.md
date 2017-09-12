@@ -7,35 +7,30 @@ label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 7e1529d641920c93ce7914c39d38001c2cbdfd78
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e5d0b0303218415d529b60e2dcaf28a21a28e430
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
-# <a name="peer-to-peer-navigation-between-two-pages"></a>Одноранговая навигация между двумя страницами
+# <a name="implement-navigation-between-two-pages"></a>Реализация навигации между двумя страницами
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Узнайте, как перемещаться в простом одноранговом приложении универсальной платформы Windows (UWP) с двумя страницами.
+Узнайте, как использовать кадр и страницы, чтобы включить базовую навигацию в приложении. 
+<p></p>
+<table>
+    <tr>
+        <td>Важные API:</td><td>Класс [**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682), класс [**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503), пространство имен [**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)</td>
+    </tr>
+</table>
 
-![Пример одноранговой навигации между двумя страницами](images/nav-peertopeer-2page.png)
-
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)</li>
-<li>[**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503)</li>
-<li>[**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)</li>
-</ul>
-</div>
-
-
-
-## <a name="create-the-blank-app"></a>Создание пустого приложения
+## <a name="1-create-a-blank-app"></a>1. Создайте пустое приложение
 
 
 1.  В меню Microsoft Visual Studio выберите **Файл&gt; Создать проект**.
@@ -51,7 +46,7 @@ translationtype: HT
 
 6.  Нажмите клавиши SHIFT+F5, чтобы остановить отладку и вернуться в Visual Studio.
 
-## <a name="add-basic-pages"></a>Добавление простых страниц
+## <a name="2-add-basic-pages"></a>2. Добавьте простые страницы
 
 Далее добавьте в проект две страницы с содержимым.
 
@@ -195,7 +190,7 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 > 
 >     if (rootFrame.Content == null)
 >     {
->         // When the navigation stack isn&#39;t restored navigate to the first page,
+>         // When the navigation stack isn't restored navigate to the first page,
 >         // configuring the new page by passing required information as a navigation
 >         // parameter
 >         rootFrame.Navigate(typeof(Page1), e.Arguments);
@@ -219,7 +214,7 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 > 
 >         rootFrame->NavigationFailed += 
 >             ref new Windows::UI::Xaml::Navigation::NavigationFailedEventHandler(
->                 this, &amp;App::OnNavigationFailed);
+>                 this, &App::OnNavigationFailed);
 > 
 >         if (e->PreviousExecutionState == ApplicationExecutionState::Terminated)
 >         {
@@ -232,7 +227,7 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 > 
 >     if (rootFrame->Content == nullptr)
 >     {
->         // When the navigation stack isn&#39;t restored navigate to the first page,
+>         // When the navigation stack isn't restored navigate to the first page,
 >         // configuring the new page by passing required information as a navigation
 >         // parameter
 >         rootFrame->Navigate(Windows::UI::Xaml::Interop::TypeName(Page1::typeid), e->Arguments);
@@ -245,9 +240,9 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 
 **Примечание.** В этом коде используется возвращаемое значение [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694), чтобы вызвать исключение приложения, если при переходе в начальный фрейм приложения происходит сбой. Если **Navigate** возвращает значение **true**, выполняется переход.
 
-Теперь выполните сборку и запустите приложение. Щелкните ссылку «Click to go to page 2» (Нажмите, чтобы перейти к странице 2). Вторая страница с надписью «Page 2» (Страница 2) в верхней части загрузится и появится в фрейме.
+Теперь выполните сборку и запустите приложение. Щелкните ссылку «Click to go to page 2» (Нажмите, чтобы перейти к странице 2). Вторая страница с надписью "Page 2" (Страница 2) в верхней части загрузится и появится в фрейме.
 
-## <a name="frame-and-page-classes"></a>Классы Frame и Page
+## <a name="about-the-frame-and-page-classes"></a>О классах Frame и Page
 
 Прежде чем расширить функциональные возможности приложения, посмотрим, как добавленные нами страницы обеспечивают поддержку навигации в приложении.
 
@@ -263,7 +258,7 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 
 При загрузке страницы в фрейм эта страница добавляется как [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) в параметр [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) или [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) объекта [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504).
 
-## <a name="pass-information-between-pages"></a>Передача информации между страницами
+## <a name="3-pass-information-between-pages"></a>3. Передайте информацию между страницами
 
 Наше приложение переключается между страницами, но пока не умеет делать ничего интересного. Часто, если в приложении есть несколько страниц, необходим общий доступ к информации. Давайте передадим какую-нибудь информацию с первой страницы на вторую.
 
@@ -297,15 +292,28 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
+В Page2.xaml замените элемент [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), добавленный вами ранее, следующим [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
+
+Здесь мы добавляем элемент [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) для отображения текстовой строки, передаваемой из Page1.
+
+```xaml
+<StackPanel>
+    <TextBlock HorizontalAlignment="Center" Name="greeting"/>
+    <HyperlinkButton Content="Click to go to page 1" 
+                     Click="HyperlinkButton_Click"
+                     HorizontalAlignment="Center"/>
+</StackPanel>
+```
+
 В файле кода программной части Page2.xaml перезапишите метод `OnNavigatedTo` следующими данными:
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
-    if (e.Parameter is string)
+    if (e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
     {
-        greeting.Text = "Hi, " + e.Parameter.ToString();
+        greeting.Text = $"Hi, {e.Parameter.ToString()}";
     }
     else
     {
@@ -329,9 +337,9 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-Запустите приложение, введите ваше имя в текстовое поле, а затем щелкните ссылку **Click to go to page 2** (Нажмите, чтобы перейти к странице 2). Когда вы вызвали метод `this.Frame.Navigate(typeof(Page2), tb1.Text)` в событии [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737)&nbsp;[**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), свойство `name.Text` было передано `Page2`, а значение из данных события использовалось для сообщения, показанного на странице.
+Запустите приложение, введите ваше имя в текстовое поле, а затем щелкните ссылку **Click to go to page 2** (Нажмите, чтобы перейти к странице 2). Когда вы вызвали метод `this.Frame.Navigate(typeof(Page2), name.Text)` в событии [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737)&nbsp;[**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), свойство `name.Text` было передано `Page2`, а значение из данных события использовалось для сообщения, показанного на странице.
 
-## <a name="cache-a-page"></a>Кэширование страницы
+## <a name="4-cache-a-page"></a>4. Поместите страницу в кэш
 
 Содержимое и состояние страницы не кэшируются по умолчанию, поэтому кэширование нужно включать для каждой страницы приложения.
 

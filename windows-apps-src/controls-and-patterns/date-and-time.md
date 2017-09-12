@@ -6,14 +6,20 @@ ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 5da40bb4c680416f0766cf0d1a171f95358ea63e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: joyate
+doc-status: Published
+ms.openlocfilehash: f2ffe1fa42f3202ee3fce8850d151b40af2e486a
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="calendar-date-and-time-controls"></a>Элементы управления календарем, датой и временем
 
@@ -21,15 +27,7 @@ translationtype: HT
 
 Элементы управления датой и временем предоставляют пользователю стандартный локализованный способ просмотра и установки даты и времени в приложении. Эта статья содержит рекомендации по проектированию и помогает выбрать соответствующий элемент управления.
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
-<li>[**Класс CalendarDatePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)</li>
-<li>[**Класс DatePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</li>
-<li>[**Класс TimePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)</li>
-</ul>
-</div>
+> **Важные API-интерфейсы**: [класс CalendarView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx), [класс CalendarDatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx), [класс DatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx), [класс TimePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
 
 
 ## <a name="which-date-or-time-control-should-you-use"></a>Какой элемент управления датой и временем следует использовать?
@@ -90,27 +88,27 @@ translationtype: HT
 
 Сведения и примеры, связанные с каждым элементом управления датой и временем см. в следующих статьях.
 
-- [**Представление календаря**](calendar-view.md)
-- [**Элемент выбора даты в календаре**](calendar-date-picker.md)
-- [**Управляющий элемент выбора даты**](date-picker.md)
-- [**Элемент выбора времени**](time-picker.md)
+- [Представление календаря](calendar-view.md)
+- [Элемент выбора даты в календаре](calendar-date-picker.md)
+- [Управляющий элемент выбора даты](date-picker.md)
+- [Элемент выбора времени](time-picker.md)
 
 ### <a name="globalization"></a>Глобализация
 
-Элементы управления датами XAML поддерживает все календарные системы, поддерживаемые Windows. Эти календари определены в классе [**Windows.Globalization.CalendarIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx). Каждый элемент управления использует календарь, соответствующий языку по умолчанию, используемому в приложении. Кроме того, вы можете задать значение свойства **CalendarIdentifier**, чтобы использовать конкретную календарную систему.
+Элементы управления датами XAML поддерживает все календарные системы, поддерживаемые Windows. Эти календари определены в классе [Windows.Globalization.CalendarIdentifiers](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx). Каждый элемент управления использует календарь, соответствующий языку по умолчанию, используемому в приложении. Кроме того, вы можете задать значение свойства **CalendarIdentifier**, чтобы использовать конкретную календарную систему.
 
-Элемент управления "Выбор времени" поддерживает все системы часов, определенные в классе [**Windows.Globalization.ClockIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx). Вы можете задать значение свойства [**ClockIdentifier**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx), чтобы использовать 12- либо 24-часовой формат отображения времени. Значение свойства имеет строковый тип, но следует использовать значения, соответствующие статическим строковым свойствам класса ClockIdentifiers. А именно: TwelveHour (строка 12HourClock) и TwentyFourHour (строка 24HourClock). По умолчанию используется значение 12HourClock.
+Элемент управления "Выбор времени" поддерживает все системы часов, определенные в классе [Windows.Globalization.ClockIdentifiers](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx). Вы можете задать значение свойства [ClockIdentifier](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx), чтобы использовать 12- либо 24-часовой формат отображения времени. Значение свойства имеет строковый тип, но следует использовать значения, соответствующие статическим строковым свойствам класса ClockIdentifiers. А именно: TwelveHour (строка 12HourClock) и TwentyFourHour (строка 24HourClock). По умолчанию используется значение 12HourClock.
 
 
 ### <a name="datetime-and-calendar-values"></a>Значения DateTime и Calendar
 
 Объекты даты, используемые в элементах управления выбором даты и времени в XAML, имеют другое представление в зависимости от применяемого вами языка программирования. 
-- Языки C# и Visual Basic используют структуру [**System.DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx), которая входит в платформу .NET. 
-- Языки C++ и CX используют структуру [**Windows::Foundation::DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/br205770.aspx). 
+- Языки C# и Visual Basic используют структуру [System.DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx), которая входит в платформу .NET. 
+- Языки C++ и CX используют структуру [Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/br205770.aspx). 
 
-С этим также связан класс Calendar, который влияет на интерпретацию дат в контексте. Все приложения среды выполнения Windows могут использовать класс [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx). Приложения на C# и Visual Basic могут также использовать класс [**System.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx), который имеет очень похожий функционал. (Приложения среды выполнения Windows могут использовать базовый класс .NET Calendar, но не определенные реализации; например GregorianCalendar.)
+С этим также связан класс Calendar, который влияет на интерпретацию дат в контексте. Все приложения среды выполнения Windows могут использовать класс [Windows.Globalization.Calendar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx). Приложения на C# и Visual Basic могут также использовать класс [System.Globalization.Calendar](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx), который имеет очень похожий функционал. (Приложения среды выполнения Windows могут использовать базовый класс .NET Calendar, но не определенные реализации; например GregorianCalendar.)
 
-.NET также поддерживает тип под названием [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx), который неявно преобразуется в [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx). Вы могли видеть тип DateTime, который используется в коде .NET для задания значений, которые на самом деле имеют тип DateTimeOffset. Подробнее о различиях между типами DateTime и DateTimeOffset см. в разделе примечаний в описании класса [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx).
+.NET также поддерживает тип под названием [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx), который неявно преобразуется в [DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx). Вы могли видеть тип DateTime, который используется в коде .NET для задания значений, которые на самом деле имеют тип DateTimeOffset. Подробнее о различиях между типами DateTime и DateTimeOffset см. в разделе примечаний в описании класса [DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx).
 
 > **Примечание.**&nbsp;&nbsp;Свойствам, принимающим в качестве значений объекты даты, нельзя присвоить строку атрибута XAML, поскольку анализатор XAML среды выполнения Windows не содержит логику преобразования строк в даты в виде объектов DateTime или DateTimeOffset. Эти значения обычно задаются в коде. Также можно использовать другой способ — определить дату, которая доступна как объект данных, или дату, доступную в контексте данных. Затем необходимо задать свойство как атрибут XAML, ссылающийся на выражение расширения разметки [\{Binding\}](../xaml-platform/binding-markup-extension.md), которое может получать доступ к дате как к данным.
 
@@ -121,7 +119,7 @@ translationtype: HT
 ## <a name="related-topics"></a>Еще по теме
 
 **Для разработчиков (XAML)**
-- [**Класс CalendarView**](https://msdn.microsoft.com/library/windows/apps/dn890052)
-- [**Класс CalendarDatePicker**](https://msdn.microsoft.com/library/windows/apps/dn950083)
-- [**Класс DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)
-- [**Класс TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280)
+- [Класс CalendarView](https://msdn.microsoft.com/library/windows/apps/dn890052)
+- [Класс CalendarDatePicker](https://msdn.microsoft.com/library/windows/apps/dn950083)
+- [Класс DatePicker](https://msdn.microsoft.com/library/windows/apps/dn298584)
+- [Класс TimePicker](https://msdn.microsoft.com/library/windows/apps/dn299280)

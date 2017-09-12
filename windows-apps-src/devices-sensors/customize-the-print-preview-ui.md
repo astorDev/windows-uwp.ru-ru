@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: PatrickFarley
 ms.assetid: 88132B6F-FB50-4B03-BC21-233988746230
 title: "Настройка пользовательского интерфейса предварительного просмотра"
 description: "В этом разделе описывается настройка параметров печати в пользовательском интерфейсе предварительного просмотра."
-ms.author: dbirtolo
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 568c11a41552cb4e63d2e9b685ff5fc84abbe70b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 6a4088c24f801db3b25dc1d9740d261e12853d63
+ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/28/2017
 ---
 # <a name="customize-the-print-preview-ui"></a>Настройка пользовательского интерфейса предварительного просмотра
 

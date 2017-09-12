@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: f0fd2e03c58ac5ffa575cf2381df4c652422efea
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 230480343a3f63ece4935e34101b1d3ec5408b84
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/10/2017
 ---
 # <a name="accessibility-overview"></a>Обзор специальных возможностей  
 
@@ -22,11 +24,12 @@ translationtype: HT
 
 В этой статье содержится обзор понятий и технологий, связанных со сценариями использования специальных возможностей для приложений универсальной платформы Windows (UWP).
 
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
+
 <span id="Accessibility_and_your_app"/>
 <span id="accessibility_and_your_app"/>
 <span id="ACCESSIBILITY_AND_YOUR_APP"/>
-## <a name="accessibility-and-your-app"></a>Специальные возможности и ваше приложение  
-Пользователи могут иметь ограничения или нарушения, связанные с двигательными способностями, зрением, цветовым восприятием, слухом, речью, способностью восприятия информации и грамотностью. Ниже показано, как выполнить большую часть этих требований. К ним относятся:
+## Доступность и ваше приложение. Пользователи могут иметь ограничения или нарушения, связанные с двигательными способностями, зрением, цветовым восприятием, слухом, речью, способностью восприятия информации и грамотностью. Ниже показано, как выполнить большую часть этих требований. К ним относятся:
 
 * Поддержка управления с клавиатуры и программ для чтения с экрана.
 * Поддержка пользовательских настроек, таких как шрифт, масштаб (увеличение), цвет и параметры высокой контрастности.
@@ -181,4 +184,4 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 * [Рекомендации по специальным возможностям](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [Пример реализации специальных возможностей на XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Специальные возможности](accessibility.md)
-* [Начало работы с экранным диктором](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)
+* [Начало работы с экранным диктором](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

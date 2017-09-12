@@ -11,9 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 49cd1e7ac0fceff7e39679f337ea4c029fa98806
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 246db868cda1b1d6e61a33981fc756767ebdbd8d
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="speech-recognition"></a>Распознавание речи
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -54,48 +56,32 @@ translationtype: HT
 
     Грамматика веб-поиска, например грамматика диктовки, содержит большое количество слов и фраз, которые пользователь может произнести. Однако она оптимизирована для распознавания терминов, которыми люди обычно используются, выполняя поиск в Интернете.
 
-    **Примечание.** Поскольку предопределенные грамматики для диктовки и веб-поиска могут иметь большой размер и размещаются в сети (а не на устройстве), они могут уступать в производительности настраиваемым грамматикам, установленным на устройстве.
-
-     
+    **Примечание.** Поскольку предопределенные грамматики для диктовки и веб-поиска могут иметь большой размер и размещаются в сети (а не на устройстве), они могут уступать в производительности настраиваемым грамматикам, установленным на устройстве.     
 
     Эти предопределенные грамматики можно использовать для распознавания до ввода речи продолжительностью до 10секунд, и для этого не потребуется никаких доработок с вашей стороны. Однако потребуется подключение к сети.
 
-    Чтобы использовать ограничения веб-службы, в меню **Параметры** необходимо включить поддержку речевого ввода и диктовки в разделе "Познакомьтесь со мной" на странице Параметры -&gt; Конфиденциальность -&gt; Голосовые функции, рукописный ввод и ввод с клавиатуры.
+    Чтобы использовать ограничения веб-службы, в меню **Параметры** необходимо включить поддержку речевого ввода и диктовки в разделе "Познакомьтесь со мной" на странице "Параметры" -> "Конфиденциальность" -> "Голосовые функции, рукописный ввод и ввод с клавиатуры".
 
-    Здесь показано, как проверить, включен ли голосовой ввод, и если нет, как открыть страницу Параметры -&gt; Конфиденциальность -&gt; Голосовые функции, рукописный ввод и ввод с клавиатуры.
+    Здесь показано, как проверить, включен ли голосовой ввод, и если нет, как открыть страницу "Параметры" -> "Конфиденциальность" -> "Голосовые функции, рукописный ввод и ввод с клавиатуры".
 
     Сначала мы инициализируем глобальную переменную (HResultPrivacyStatementDeclined) до значения HResult 0x80045509. См. раздел [Обработка исключений в C\# или Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
 
-```    CSharp
-private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
-    </tr>
-    </tbody>
-    </table>
-```
+    ```csharp
+    private static uint HResultPrivacyStatementDeclined = 0x80045509;
+    ```
 
-    We then catch any standard exceptions during recogntion and test if the [**HResult**](https://msdn.microsoft.com/library/windows/apps/br206579) value is equal to the value of the HResultPrivacyStatementDeclined variable. If so, we display a warning and call `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` to open the Settings page.
-
+    Затем мы отберем все стандартные исключения во время распознавания и проверим, равно ли значение [**HResult**](https://msdn.microsoft.com/library/windows/apps/br206579) значению переменной HResultPrivacyStatementDeclined. При положительном результате мы отобразим предупреждение и вызовем `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));`, чтобы открыть страницу "Параметры".
     
-```    CSharp
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">C#</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-catch (Exception exception)
+    ```csharp
+    catch (Exception exception)
     {
       // Handle the speech privacy policy error.
       if ((uint)exception.HResult == HResultPrivacyStatementDeclined)
       {
         resultTextBlock.Visibility = Visibility.Visible;
-        resultTextBlock.Text = "The privacy statement was declined. 
-          Go to Settings -> Privacy -> Speech, inking and typing, and ensure you 
-          have viewed the privacy policy, and &#39;Get To Know You&#39; is enabled.";
+        resultTextBlock.Text = "The privacy statement was declined." + 
+          "Go to Settings -> Privacy -> Speech, inking and typing, and ensure you" +
+          "have viewed the privacy policy, and 'Get To Know You' is enabled.";
         // Open the privacy/speech, inking, and typing settings page.
         await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts")); 
       }
@@ -105,9 +91,9 @@ catch (Exception exception)
         await messageDialog.ShowAsync();
       }
     }
-```
+    ```
 
-2.  **Программные ограничения на базе списка** ([**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)).
+2.  **Программные ограничения на основе списка** ([**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)).
 
     Программные ограничения-списки представляют упрощенный подход к созданию простой грамматики с использованием списка слов или фраз. Для распознавания коротких четких фраз удобно использовать ограничения-списки. Явно указание всех слов в грамматике также повышается точность распознавания, так как подсистема распознавания речи должна обрабатывать голосовые данные только в рамках подтверждения соответствия. Список можно также обновлять программными средствами.
 
@@ -193,7 +179,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
     speechRecognizer.UIOptions.AudiblePrompt = "Say what you want to search for...";
-    speechRecognizer.UIOptions.ExampleText = @"Ex. &#39;weather for London&#39;";
+    speechRecognizer.UIOptions.ExampleText = @"Ex. 'weather for London'";
     speechRecognizer.Constraints.Add(webSearchGrammar);
 
     // Compile the constraint.

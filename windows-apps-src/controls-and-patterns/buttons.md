@@ -5,102 +5,107 @@ title: "Кнопки"
 label: Buttons
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
-ms.openlocfilehash: e5c8b5056581540abd5e0ddf75da7785648df1d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: 2cb15d21496c080002411849682278df7f927e41
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="buttons"></a>Кнопки
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Кнопка предоставляет пользователю возможность вызвать немедленное действие.
 
-![Примеры кнопок](images/controls/button.png)
+> **Важные API-интерфейсы**: [класс Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx), [класс RepeatButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx), [событие Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс Button**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)</li>
-<li>[**Класс RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)</li>
-<li>[**Событие Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)</li>
-</ul>
-</div>
+![Примеры кнопок](images/controls/button.png)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Кнопка позволяет пользователю немедленно начать действие, например отправить форму.
 
 Не используйте кнопку, когда вам нужно перейти на другую страницу — вместо нее используйте ссылку. Подробнее см. на странице [Гиперссылки](hyperlinks.md).
-    
+
 > Исключение: для навигации по мастеру используйте кнопки "Вперед" и "Назад". Для других видов навигации на уровень выше или ниже используйте кнопку "Назад".
 
 ## <a name="example"></a>Пример
 
-В этом примере используются две кнопки— "Закрыть все" и "Отмена"— в диалоговом окне в браузере Microsoft Edge. 
+В этом примере используются две кнопки "Разрешить" и "Блокировать" в диалоговом окне, запрашивающем расположение.
 
-![Пример кнопок, используемых в диалоговом окне](images/control-examples/buttons-edge.png)
+![Пример кнопок, используемых в диалоговом окне](images/dialogs/dialog_RS2_two_button.png)
 
 ## <a name="create-a-button"></a>Создание кнопки
 
-В этом примере рассматривается реакция кнопки на щелчок. 
+В этом примере рассматривается реакция кнопки на щелчок.
 
 Создайте кнопку в XAML.
 
 ```xaml
-<Button Content="Submit" Click="SubmitButton_Click"/>
+<Button Content="Subscribe" Click="SubscribeButton_Click"/>
 ```
 
 Либо создайте кнопку в коде.
 
 ```csharp
-Button submitButton = new Button();
-submitButton.Content = "Submit";
-submitButton.Click += SubmitButton_Click;
+Button subscribeButton = new Button();
+subscribeButton.Content = "Subscribe";
+subscribeButton.Click += SubscribeButton_Click;
 
 // Add the button to a parent container in the visual tree.
-stackPanel1.Children.Add(submitButton);
+stackPanel1.Children.Add(subscribeButton);
 ```
 
 Обработайте событие "Click".
 
 ```csharp
-private async void SubmitButton_Click(object sender, RoutedEventArgs e)
+private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 {
-    // Call app specific code to submit form. For example:
-    // form.Submit();
-    Windows.UI.Popups.MessageDialog messageDialog = 
-        new Windows.UI.Popups.MessageDialog("Thank you for your submission.");
-    await messageDialog.ShowAsync();
+    // Call app specific code to subscribe to the service. For example:
+    ContentDialog subscribeDialog = new ContentDialog
+    {
+        Title = "Subscribe to App Service?",
+        Content = "Listen, watch, and play in high definition for only $9.99/month. Free to try, cancel anytime.",
+        CloseButtonText = "Not Now",
+        PrimaryButtonText = "Subscribe",
+        SecondaryButtonText = "Try it"
+    };
+
+    ContentDialogResult result = await subscribeDialog.ShowAsync();
 }
 ```
 
 ### <a name="button-interaction"></a>Взаимодействие с кнопкой
 
-Если коснуться кнопки пальцем или стилусом либо навести на нее указатель и нажать левую кнопку мыши, кнопка вызывает событие [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx). Если для кнопки предусмотрен фокус клавиатуры, при нажатии клавиши ВВОД или ПРОБЕЛ также происходит вызов события "Click".
+Если коснуться кнопки пальцем или стилусом либо навести на нее указатель и нажать левую кнопку мыши, кнопка вызывает событие [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx). Если для кнопки предусмотрен фокус клавиатуры, при нажатии клавиши ВВОД или ПРОБЕЛ также происходит вызов события "Click".
 
-Как правило, нельзя обрабатывать низкоуровневые события [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) с помощью элемента "Button", поскольку для него предусмотрено поведение "Click". Дополнительные сведения см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx).
+Как правило, нельзя обрабатывать низкоуровневые события [PointerPressed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) с помощью элемента "Button", поскольку для него предусмотрено поведение "Click". Дополнительные сведения см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx).
 
-Можно выбирать порядок вызова кнопкой события "Click" путем изменения свойства [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx). Значением ClickMode по умолчанию является **Release**. Если для параметра ClickMode выбрано значение **Hover**, событие "Click" невозможно вызвать нажатием клавиши или касанием. 
+Можно выбирать порядок вызова кнопкой события "Click" путем изменения свойства [ClickMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx). Значением ClickMode по умолчанию является **Release**. Если для параметра ClickMode выбрано значение **Hover**, событие "Click" невозможно вызвать нажатием клавиши или касанием.
 
 
 ### <a name="button-content"></a>Содержимое кнопки
 
-Кнопка представляет собой [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Ее свойство содержимого XAML— [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), благодаря чему возможно использование подобного синтаксиса для: `<Button>A button's content</Button>`. В качестве содержимого кнопки можно задать любой объект. Если содержимым является класс [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), он обрабатывается для просмотра в кнопке. Если содержимым является другой тип объекта, в кнопке отображается его строковое представление.
+Кнопка представляет собой [ContentControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Ее свойство содержимого XAML — [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), благодаря чему возможно использование подобного синтаксиса для XAML: `<Button>A button's content</Button>`. В качестве содержимого кнопки можно задать любой объект. Если содержимым является класс [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), он обрабатывается для просмотра в кнопке. Если содержимым является другой тип объекта, в кнопке отображается его строковое представление.
 
 Здесь класс **StackPanel**, содержащий изображение апельсина и текст, задан в качестве содержимого кнопки.
 
 ```xaml
-<Button Click="Button_Click" 
-        Background="#FF0D6AA3" 
+<Button Click="Button_Click"
+        Background="LightGray"
         Height="100" Width="80">
     <StackPanel>
-        <Image Source="Assets/Slices.png" Height="62"/>
-        <TextBlock Text="Orange"  Foreground="White"
+        <Image Source="Assets/Photo.png" Height="62"/>
+        <TextBlock Text="Photos" Foreground="Black"
                    HorizontalAlignment="Center"/>
     </StackPanel>
 </Button>
@@ -112,7 +117,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-repeat-button"></a>Создание кнопки повтора
 
-[**RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)— это кнопка, при нажатии которой события [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) повторяются до тех пор, пока она не будет отпущена. Задайте свойство [**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx), чтобы указать время задержки после нажатия кнопки, по прошествии которого начнется повторение действия щелчка. Задайте свойство [**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx), чтобы указать время между повторениями действия щелчка. Время для обоих свойств указывается в миллисекундах.
+[RepeatButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) — это кнопка, при нажатии которой события [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) повторяются до тех пор, пока она не будет отпущена. Задайте свойство [Delay](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx), чтобы указать время задержки после нажатия кнопки, по прошествии которого начнется повторение действия щелчка. Задайте свойство [Interval](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx), чтобы указать время между повторениями действия щелчка. Время для обоих свойств указывается в миллисекундах.
 
 В следующем примере показаны два элемента управления RepeatButton, чьи соответствующие события "Click" используются для увеличения и уменьшения значения, приведенного в блоке текста.
 
@@ -146,7 +151,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 -   Сделайте так, чтобы назначение и состояние кнопки было понятно пользователю.
 -   Используйте краткий, конкретный, не требующий разъяснений текст, который четко описывает действие, выполняемое кнопкой. Обычно текст надписи на кнопке состоит из одного слова — как правило, глагола.
--   Если для одного решения предусмотрено несколько кнопок (например, в диалоговом окне подтверждения), расположите эти кнопки в следующем порядке: 
+-   Если для одного решения предусмотрено несколько кнопок (например, в диалоговом окне подтверждения), расположите эти кнопки в следующем порядке:
     -   ОК/[Выполнить]/Да
     -   [Не выполнять]/Нет
     -   Отмена
@@ -163,12 +168,27 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   При желании параметры кнопок можно изменить. По умолчанию кнопки имеют прямоугольную форму, однако визуальные элементы, создающие внешний вид кнопки, можно изменить. Содержимым кнопки обычно является текст, например, "Принять" или "Отклонить", но его можно заменить на значок или сочетание значка и текста.
 -   Сделайте так, чтобы при взаимодействии пользователя с кнопкой состояние и внешний вид кнопки менялись для отображения отклика на действия пользователя. Кнопка может быть, к примеру, в нормальном состоянии, нажатом или неактивном.
 -   Определите начало выполнения действия в момент, когда пользователь касается кнопки или нажимает ее. Обычно действие начинает выполняться при отпускании кнопки, но можно также определить начало выполнения действия в момент, когда палец первый раз нажимает кнопку.
--   Не используйте кнопки команд для задания состояния.
--   Не меняйте текст кнопки во время работы приложения. Например, не изменяйте текст кнопки "Далее" на "Продолжить".
 -   Не меняйте местами заданные по умолчанию стили "отправить", "сбросить" и "кнопка".
--   Не размещайте слишком много содержимого на одной кнопке. Содержимое должно быть кратким и понятным (только изображение и немного текста).
+-   Не размещайте слишком много содержимого на одной кнопке. Сделайте содержимое кратким и понятным.
+
+### <a name="recommended-single-button-layout"></a>Рекомендуется макет с одной кнопкой
+
+Если в макете требуется только одна кнопка, она должна быть выровнена либо по левому, либо по правому краю на основе контекста его контейнера.
+
+-   Диалоговые окна только с одной кнопкой должны выравнивать кнопку **по правому краю**. Если диалоговое окно содержит только одну кнопку, убедитесь, что кнопка выполняет безопасное, обратимое действие. Если вы используете [ContentDialog](dialogs.md) и укажете одну кнопку, она будет автоматически выровнена по правому краю.
+
+![Кнопка в диалоговом окне](images/pushbutton_doc_dialog.png)
+
+-   Если кнопка отображается внутри контейнера пользовательского интерфейса (например, во всплывающем уведомлении, всплывающем элементе или представлении элемента списка), следует выровнять кнопку в контейнере **по правому краю**.
+
+![Кнопка внутри контейнера](images/pushbutton_doc_container.png)
+
+-   На страницах, содержащих одну кнопку (например, кнопку "Применить" в нижней части страницы параметров), вы должны выровнять кнопку **по левому краю**. Это гарантирует, что кнопка соответствует остальной части содержимого страницы.
+
+![Кнопка на странице](images/pushbutton_doc_page.png)
 
 ## <a name="back-buttons"></a>Кнопки "Назад"
+
 Кнопка "Назад" — это предоставленный системой элемент пользовательского интерфейса для обратной навигации через обратный стек или журнал навигации пользователя. Вы не обязаны создавать собственную кнопку "Назад", но вы можете выполнить определенные действия, чтобы реализовать хорошие возможности обратной навигации. Дополнительные сведения см. в разделе [Журнал и навигация в обратном направлении](../layout/navigation-history-and-backwards-navigation.md)
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
@@ -181,6 +201,4 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 - [Переключатели](radio-button.md)
 - [Тумблеры](toggles.md)
 - [Флажки](checkbox.md)
-- [**Класс Button**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
-
-
+- [Класс Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)

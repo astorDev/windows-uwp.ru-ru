@@ -9,14 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, рекламные объявления, реклама, пошаговые руководства"
-ms.openlocfilehash: 17391bda754195d2cf66ddc2e5e22ed445a37ef0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 73f2c9b36d0b083a74f6b226a2eed95fe49b6f63
+ms.sourcegitcommit: 9d1ca16a7edcbbcae03fad50a4a10183a319c63a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/09/2017
 ---
 # <a name="developer-walkthroughs"></a>Пошаговые руководства для разработчиков
-
-
-
 
 В пошаговых руководствах этого раздела описывается процесс добавления рекламных баннеров и межстраничных объявлений в приложения с помощью библиотек Microsoft Advertising.
 
@@ -26,11 +25,12 @@ translationtype: HT
 
 |  Раздел    | Описание |               
 |----------|-------|
-| [Межстраничные объявления](interstitial-ads.md)    | Показ межстраничных объявлений в приложении.        |
+| [Межстраничные объявления](interstitial-ads.md)    | Добавление межстраничных объявлений в приложение.       |
+| [Собственные объявления](native-ads.md)       | Добавление собственного рекламного объявления в приложение UWP.  |
 | [AdControl в XAML и .NET](adcontrol-in-xaml-and--net.md)     | Добавление рекламного баннера в приложения XAML/.NET.        |
 | [AdControl в HTML 5 и JavaScript](adcontrol-in-html-5-and-javascript.md)     | Добавьте рекламного баннера в приложения HTML5/JavaScript.        |
-| [AdControl в Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md)       | Добавление рекламного баннера в приложение Windows Phone8.x Silverlight. |
-| [Добавление рекламы в видеосодержимое в HTML 5 и JavaScript](add-advertisements-to-video-content.md)     |  Добавление рекламы в видеосодержимое в приложениях универсальной платформы Windows (UWP), написанных при помощи JavaScript с HTML. |
+| [AdControl в Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md)       | Добавление рекламного баннера в приложение Windows Phone 8.x Silverlight. |
+| [Показ рекламы в видеосодержимом](add-advertisements-to-video-content.md)     |  Показ рекламы в видеосодержимом в приложениях универсальной платформы Windows (UWP), написанных с использованием JavaScript с HTML. |
 
 
 

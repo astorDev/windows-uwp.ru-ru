@@ -5,15 +5,17 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Руководство разработчика Windows Information Protection (WIP)"
 ms.author: normesta
-ms.date: 02/24/2017
+ms.date: 06/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, wip, Windows Information Protection, корпоративные данные, защита корпоративных данных, edp, грамотные приложения"
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
-ms.openlocfilehash: a2888b804e66e2630e4ae93b0be31974740d9f99
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 23604e4ca549bbb11885e681500f4f41531c2b6f
+ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/22/2017
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a>Руководство разработчика Windows Information Protection (WIP)
 
@@ -72,10 +74,9 @@ __Примечание.__ Это руководство поможет вам р
 
     ![Добавьте расширения UWP](images/extensions.png)
 
-3. Добавьте следующие возможности в файл манифеста пакета.
+3. Добавьте эту возможность в файл манифеста пакета:
 
     ```xml
-       <Capability Name="privateNetworkClientServer" />
        <rescap:Capability Name="enterpriseDataPolicy"/>
     ```
    >*Optional Reading*: префикс "rescap" означает *ограниченная возможность*. См. [Особые и ограниченные возможности](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).

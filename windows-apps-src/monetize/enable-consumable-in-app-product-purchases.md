@@ -9,15 +9,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: e2ecaf364c581e82406c76831dd3e33c82594601
-ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
-translationtype: HT
+ms.openlocfilehash: 9190000a2c5a35a0b7125429a19e4743b388d503
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>Поддержка покупки продуктов из приложения
 
 
 > [!NOTE]
-> В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Если приложение предназначено для Windows 10 версии 1607 или более поздней, для управления надстройками (также называемыми внутренними продуктами приложения или IAP) рекомендуется использовать члены пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), а не пространство имен **Windows.ApplicationModel.Store**. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
+> В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Если ваше приложение предназначено для Windows 10 версии 1607 или более поздней, для управления надстройками рекомендуется использовать члены пространства имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), а не **Windows.ApplicationModel.Store**. Дополнительные сведения см. в [этой статье](enable-consumable-add-on-purchases.md).
 
 Предоставьте пользователям возможность покупки из приложения потребляемых внутренних продуктов приложения (товаров, которые можно покупать, использовать и покупать снова) через Магазин. Покупка из приложения — удобный и надежный способ приобрести товар. Он особенно удобен при покупке виртуальной валюты для игр (например, золота или монет), которую можно потом использовать в процессе игры.
 

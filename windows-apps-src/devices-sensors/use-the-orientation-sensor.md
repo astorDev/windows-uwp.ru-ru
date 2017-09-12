@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
 title: "Использование датчика положения в пространстве"
 description: "Узнайте, как использовать датчики положения в пространстве для определения ориентации устройства."
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 435c2d7ca1bf2a256356c28a83d51e493d98e014
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 2a354d4e3f26d0a8ac3678d4f07d606c7cf88cc5
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="use-the-orientation-sensor"></a>Использование датчика положения в пространстве
 
@@ -22,6 +24,11 @@ translationtype: HT
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
 -   [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)
+
+**Примеры**
+
+-   [Пример с датчиком ориентации](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor)
+-   [Простой пример с датчиком ориентации](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor)
 
 Узнайте, как использовать датчики положения в пространстве для определения ориентации устройства.
 
@@ -348,9 +355,3 @@ SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 <TextBlock HorizontalAlignment="Left" Height="24" Margin="8,8,0,0" TextWrapping="Wrap" Text="Current Orientation:" VerticalAlignment="Top" Width="101" Foreground="#FFF8F7F7"/>
  <TextBlock x:Name="txtOrientation" HorizontalAlignment="Left" Height="24" Margin="118,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="175" Foreground="#FFFEFAFA"/>
 ```
-
-## <a name="related-topics"></a>Еще по теме
-
-* [Пример работы с OrientationSensor](http://go.microsoft.com/fwlink/p/?linkid=241382)
-* [Пример работы с датчиком SimpleOrientation](http://go.microsoft.com/fwlink/p/?linkid=241383)
- 

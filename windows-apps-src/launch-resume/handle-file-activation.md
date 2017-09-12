@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: b35b8a9dcd6ea23b734de1041d829f620103fa6e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e05cc939d4a836e2f385a20f63d6ffb2242696db
+ms.sourcegitcommit: 7f03e200ef34f7f24b6f8b6489ecb44aa2b870bc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/01/2017
 ---
 # <a name="handle-file-activation"></a>Обработка активации файла
 
@@ -80,8 +82,7 @@ translationtype: HT
 -   в средстве выбора файлов;
 -   в результатах поиска на начальном экране.
 
-Вместо того чтобы делать фон значка прозрачным, используйте для логотипа на плитке приложения цвет, который совпадает с цветом фона самого приложения. Растяните логотип до краев, не заполняя плитку. Проверьте, как выглядят значки на белом фоне. Примеры значков см. в [примере запуска с сопоставлением](http://go.microsoft.com/fwlink/p/?LinkID=620490).
-![Обозреватель решений с представлением файлов в папке изображений. Icon.targetsize и smallTile-sdk доступны в вариантах размером 16, 32, 48 и 256 пикселей.](images/seviewofimages.png)
+Добавьте в проект значок размером 44 x 44, чтобы ваш логотип отображался в этих расположениях. Вместо того чтобы делать фон значка прозрачным, используйте для логотипа на плитке приложения цвет, который совпадает с цветом фона самого приложения. Растяните логотип до краев, не заполняя плитку. Проверьте, как выглядят значки на белом фоне. Дополнительные сведения о значках см. в разделе [Руководство по работе с ресурсами плиток и значков](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets).
 
 ## <a name="step-3-handle-the-activated-event"></a>Шаг 3. Обработка события активации
 

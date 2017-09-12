@@ -1,17 +1,19 @@
 ---
-author: eliotcowley
+author: drewbatgit
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
 description: "В этом разделе рассказывается, как изменить веб-приложение PlayReady для поддержки изменений, появившихся в Windows 10, которых не было в Windows 8.1."
 title: "Расширение зашифрованного мультимедиа PlayReady"
-ms.author: elcowle
+ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 4c2664f214dca41ad5e7a5f82ca50af02cc45737
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a8cc35115b2805b2191424edca671c53c252c549
+ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/21/2017
 ---
 # <a name="playready-encrypted-media-extension"></a>Расширение зашифрованного мультимедиа PlayReady
 

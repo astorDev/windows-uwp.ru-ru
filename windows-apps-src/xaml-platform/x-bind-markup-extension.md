@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: ba08e426fea4c494276978d96cf0b36f6956bdb8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0adc0789c4e52e8b9943f774d786aea6efb60c91
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/21/2017
 ---
 # <a name="xbind-markup-extension"></a>Расширение разметки {x:Bind}
 
@@ -181,7 +183,8 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 | **FallbackValue** | Задает значение, которое отображается, когда не удается разрешить источник или путь. |
 | **Mode** | Указывает режим привязки как одну из этих строк: OneTime, OneWay или TwoWay. Значение по умолчанию—OneTime. Обратите внимание, что это поведение отличается от шаблона по умолчанию для привязки **{Binding}**, которая в большинстве случаев имеет значение OneWay. |
 | **TargetNullValue** | Задает значение, которое отображается, когда значение источника разрешается, но оно явно равно **null**. |
-| **BindBack** | Определяет функцию, используемую для обратного направления двусторонней привязки. | 
+| **BindBack** | Определяет функцию, используемую для обратного направления двусторонней привязки. |
+| **UpdateSourceTrigger** | Указывает, когда возвращать изменения в элементе управления модели в привязках TwoWay. Значение по умолчанию для всех свойств, кроме TextBox.Text— PropertyChanged, TextBox.Text имеет значение LostFocus.| 
 
 **Примечание.**  Если вы преобразуете разметку **{Binding}** в **{x:Bind}**, следует учитывать различия между значениями по умолчанию для свойства **Mode**.
  

@@ -4,20 +4,20 @@ ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: "Используйте эти методы в API отправки Магазина Windows, чтобы извлечь данные о приложениях, которые зарегистрированы в вашей учетной записи Центра разработки для Windows."
 title: "Получение данных приложения"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, API отправки Магазина Windows, данные приложения"
-ms.openlocfilehash: dc0aa91aa417689866aa6bd666f0446c0eb2e242
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0bb01250756c464113570ece433afe11506a5399
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="get-app-data"></a>Получение данных приложения
 
 Используйте указанные ниже методы в API отправки Магазина Windows, чтобы извлечь данные о существующих приложениях в вашей учетной записи Центра разработки для Windows. Введение в API отправки Магазина Windows, включая необходимые условия для использования этого API, см. в разделе [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md).
-
->**Примечание.**&nbsp;&nbsp;Эти методы могут применяться только для учетных записей Центра разработки для Windows, у которых имеется разрешение на использование API отправки Магазина Windows. Это разрешение предоставляется учетным записям разработчиков поэтапно. В настоящий момент это разрешение предоставлено не всем учетным записям. Чтобы запросить ранний доступ, войдите в панель мониторинга Центра разработки, щелкните **Обратная связь** в нижней части панели, выберите пункт **API отправки** в разделе обратной связи и отправьте запрос. Когда для вашей учетной записи будет предоставлено разрешение, вы получите уведомление по электронной почте.
 
 Для того чтобы вы могли использовать эти методы, приложение должно уже существовать в вашей учетной записи Центра разработки. Для создания отправок для приложений и управления ими см. описания методов в разделе [Управление отправками приложений](manage-app-submissions.md).
 
@@ -88,7 +88,8 @@ translationtype: HT
   "pendingApplicationSubmission": {
     "id": "1152921504621243487",
     "resourceLocation": "applications/9NBLGGH4R315/submissions/1152921504621243487"
-  }
+  },
+  "hasAdvancedListingPermission": false
 }
 ```
 
@@ -103,7 +104,8 @@ translationtype: HT
 | publisherName       | string  | Идентификатор издателя Windows, который связан с приложением. Этот параметр соответствует значению **Пакет/идентификатор/издатель**, которое отображается на странице [Удостоверение приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) для приложения на информационной панели Центра разработки для Windows.       |
 | firstPublishedDate      | string  | Дата первой публикации приложения в формате ISO 8601.   |
 | lastPublishedApplicationSubmission       | объект | [Ресурс отправки](#submission_object), который предоставляет сведения о последней опубликованной отправке для приложения.    |
-| pendingApplicationSubmission        | объект  |  [Ресурс отправки](#submission_object), который предоставляет сведения о текущей ожидающей отправке для приложения.   |   |
+| pendingApplicationSubmission        | объект  |  [Ресурс отправки](#submission_object), который предоставляет сведения о текущей ожидающей отправке для приложения.   |   
+| hasAdvancedListingPermission        | объект  |  Указывает, можно ли настроить [gamingOptions](manage-app-submissions.md#gaming-options-object) или [trailers](manage-app-submissions.md#trailer-object) для отправки для приложения. Дополнительные сведения см. в [этом разделе](manage-app-submissions.md#advanced-listings). |  |
 
 
 <span id="add-on-object" />

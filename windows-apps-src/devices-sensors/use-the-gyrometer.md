@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: "Использование гирометра"
 description: "Узнайте, как использовать гирометр для отслеживания изменений в движении пользователя."
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 6f50ad39420f3154c437a58d19971ed01e638528
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 7b4dc5be2c6e9cd2dfb0b1f8d6f83250430d2c8b
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="use-the-gyrometer"></a>Использование гирометра
 
@@ -21,6 +23,10 @@ translationtype: HT
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Gyrometer (гирометр)**](https://msdn.microsoft.com/library/windows/apps/BR225718)
+
+**Пример**
+
+-   Более полные сведения о внедрении см. в [примере с гирометром](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer).
 
 \[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.\]
 

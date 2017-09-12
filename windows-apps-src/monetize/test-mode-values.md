@@ -9,17 +9,19 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, объявления, реклама, тестирование"
-ms.openlocfilehash: ec5b1c1723a7f58b20234d703fc786647268a3b3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0c3e713d9a2bb7c10bda0d9517f5cb882d5e2e57
+ms.sourcegitcommit: 6b772d2a224f8a9c557dc517c6ec0592545e9a43
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/02/2017
 ---
 # <a name="test-mode-values"></a>Значения тестового режима
 
-При использовании [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) или [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) для отображения рекламных объявлений в приложении вы должны указать идентификатор приложения и идентификатор рекламного блока. Во время разработки приложения используйте тестовые значения идентификатора приложения и идентификатора рекламного блока из этой статьи, чтобы увидеть, как отображается реклама в вашем приложении во время тестирования.
+При использовании [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) или [](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) для отображения объявлений в приложении вы должны указать ИД группы объявлений и ИД приложения в свойствах **AdUnitId** и **ApplicationId**. Во время разработки приложения используйте тестовые значения идентификатора приложения и идентификатора рекламного блока из этой статьи, чтобы увидеть, как отображается реклама в вашем приложении во время тестирования.
 
 При использовании тестовых значений в опубликованном приложении оно не будет получать рекламу. Для получения рекламы в опубликованном приложении необходимо обновить его код, указав идентификатор приложения и идентификатор рекламного блока, предоставленный в информационной панели Центра разработки для Windows. Дополнительные сведения см. в разделе [Настройка групп объявлений в приложении](set-up-ad-units-in-your-app.md).
  
-Ниже приведены тестовые значения, который следует использовать для межстраничных объявлений и рекламных баннеров.
+Ниже приведены тестовые значения, который следует использовать для различных типов объявлений.
 
 * Для межстраничных объявлений:
 
@@ -33,7 +35,7 @@ translationtype: HT
     <tr class="header">
     <th align="left">Целевая ОС</th>
     <th align="left">AdUnitId</th>
-    <th align="left">AppId</th>
+    <th align="left">ApplicationId</th>
     </tr>
     </thead>
     <tbody>
@@ -63,7 +65,7 @@ translationtype: HT
     <tr class="header">
     <th align="left">Целевая ОС</th>
     <th align="left">AdUnitId</th>
-    <th align="left">AppId</th>
+    <th align="left">ApplicationId</th>
     </tr>
     </thead>
     <tbody>
@@ -80,8 +82,30 @@ translationtype: HT
     </tbody>
     </table>
 
+* Для собственных объявлений:
 
-> **Важно!**&nbsp;&nbsp;Размер актуального рекламного объявления для объекта **AdControl** определяется свойствами **Width** и **Height**. Для получения оптимального результата убедитесь, что значения свойств **Width** и **Height** в вашем коде соответствуют одному из [поддерживаемых размеров рекламных баннеров](supported-ad-sizes-for-banner-ads.md). Значения свойств **Width** и **Height** не меняются в зависимости от размера отображаемого рекламного объявления.
+    <table>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <thead>
+    <tr class="header">
+    <th align="left">Целевая ОС</th>
+    <th align="left">AdUnitId</th>
+    <th align="left">ApplicationId</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd">
+    <td align="left"><p>UWP (Windows 10)</p></td>
+    <td align="left"><p>test</p></td>
+    <td align="left"><p>d25517cb-12d4-4699-8bdc-52040c712cab</p></td>
+    </tbody>
+    </table>
+
+> [!IMPORTANT]
+> Размер актуального рекламного объявления для объекта **AdControl** определяется свойствами **Width** и **Height**. Для получения оптимального результата убедитесь, что значения свойств **Width** и **Height** в вашем коде соответствуют одному из [поддерживаемых размеров рекламных баннеров](supported-ad-sizes-for-banner-ads.md). Значения свойств **Width** и **Height** не меняются в зависимости от размера отображаемого рекламного объявления.
 
 
  

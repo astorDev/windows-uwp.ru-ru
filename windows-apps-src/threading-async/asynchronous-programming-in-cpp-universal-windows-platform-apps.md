@@ -1,17 +1,19 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: "В этой статье описываются рекомендации по использованию асинхронных методов в расширениях компонентов Visual C++ (C++/CX) с помощью класса task, определенного в пространстве имен concurrency файла ppltasks.h."
 title: "Асинхронное программирование на языке C++"
-ms.author: twhitney
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, потоки, синхронный, C++"
-ms.openlocfilehash: c74a2d18a0852d28cf33715a540356a61438ff48
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 180d660fedc58a49bd956d4e4eeda56093c0025e
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="asynchronous-programming-in-c"></a>Асинхронное программирование на языке C++
 

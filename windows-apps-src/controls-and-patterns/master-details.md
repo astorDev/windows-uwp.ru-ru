@@ -6,20 +6,24 @@ ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: d5933eec7b2f34b2c5939bb083113dfd3a1f965d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 49a586aac0c846cdad02f8448532238bd3eb8551
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="masterdetails-pattern"></a>Шаблон основных и подробных данных
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 В шаблоне основных и подробных есть главная панель (обычно с [представлением списка](lists.md)) и область сведений для содержимого. Если выбрать элемент в главном списке, область сведений обновляется. Этот шаблон часто используется для работы с электронной почтой и адресными книгами.
+
+> **Важные API-интерфейсы**: [класс ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [класс SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Пример шаблона основных и подробных данных](images/HIGSecOne_MasterDetail.png)
 
@@ -73,17 +77,11 @@ translationtype: HT
 
 В области сведений используйте элемент содержимого, который подходит лучше всего. Если имеется множество отдельных полей, можно использовать макет сетки для размещения элементов в форме.
 
-## <a name="examples"></a>Примеры.
+## <a name="get-the-code-samples"></a>Получить примеры кода
 
-Эта разработка приложения, которое следит за биржей, использует шаблон основных и подробных данных. В этом примере приложения (как оно выглядит на телефоне) главная панель или список располагается слева, а область сведений — справа.
+Пример кода, демонстрирующий шаблон основных и подробных данных, см. эти примеры. 
 
-![Пример приложения, использующего шаблон основных и подробных данных, на телефоне](images/uap-finance-phone-masterdetails-600.png)
-
-Эта разработка приложения, которое следит за биржей, использует шаблон основных и подробных данных. В этом примере приложения (как оно выглядит на компьютере) главная панель или список и область сведений видимы и отображаются на весь экран. На главной панели есть поле поиска вверху и панель команд внизу.
-
-![Пример приложения, использующего шаблон основных и подробных данных, на компьютере](images/uap-finance-desktop700.png)
-
-Пример кода, демонстрирующий шаблон основных и подробных данных, см. следующих разделах.
+- [Пример базы данных заказов клиента](https://github.com/Microsoft/Windows-appsample-customers-orders-database) 
 - [Пример ListView и GridView](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 - [Пример средства чтения RSS](https://github.com/Microsoft/Windows-appsample-rssreader)
 
@@ -92,4 +90,4 @@ translationtype: HT
 - [Списки](lists.md)
 - [Поиск](search.md)
 - [Панель приложения и панель команд](app-bars.md)
-- [**Класс ListView (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [Класс ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)

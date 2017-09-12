@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: F912161D-3767-4F35-88C0-E1ECDED692A2
 title: "Улучшение производительности сборки мусора"
 description: "Приложения универсальной платформы Windows (UWP) на C# и Visual Basic получают функции автоматического управления памятью от сборщика мусора .NET. В этой статье приведены основные рекомендации по настройке поведения и производительности сборщика мусора .NET в приложениях UWP."
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: fd469f2a037871b04e67227ad132261711a17511
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 3b7dfb274c5a6d55204a467fc894bac5fd044048
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="improve-garbage-collection-performance"></a>Улучшение производительности сборки мусора
 

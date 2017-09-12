@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: "Оптимизация макета XAML"
 description: "Макет может быть затратной частью приложения XAML как в плане загрузки ЦП, так и в плане использования памяти. Ниже приведены несколько простых действий, которые можно выполнить для повышения производительности макета приложения XAML."
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 226b2fd19777deb5135d1e1f059596883f95d3d3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 40afd15da7e225ea82814ab2fa680a3c95e00488
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="optimize-your-xaml-layout"></a>Оптимизация макета XAML
 

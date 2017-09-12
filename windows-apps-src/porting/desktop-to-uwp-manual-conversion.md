@@ -1,121 +1,213 @@
 ---
 author: normesta
-Description: "Процедура ручного преобразования классического приложения для Windows (например, Win32, WPF и Windows Forms) в приложение универсальной платформы Windows (UWP)."
+Description: "Процедура ручной упаковки классического приложения для Windows (например, Win32, WPF и Windows Forms) для Windows 10."
 Search.Product: eADQiWindows 10XVcnh
-title: "Мост переноса классических приложений на UWP: ручное преобразование"
+title: "Упаковка приложения вручную (мост для классических приложений)"
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
-ms.openlocfilehash: 8d09a0349620e071f5c4d680df18f716e3b10a8e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e8a09b6e362662b9bb207117d8a3fcc905da6ef4
+ms.sourcegitcommit: ae93435e1f9c010a054f55ed7d6bd2f268223957
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/10/2017
 ---
-# <a name="desktop-to-uwp-bridge-manual-conversion"></a>Мост переноса классических приложений на UWP: ручное преобразование
+# <a name="package-an-app-manually-desktop-bridge"></a>Упаковка приложения вручную (мост для классических приложений)
 
-[Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md)— удобное автоматическое средство, пользоваться которым имеет смысл, если вы не знаете точно, что делает ваша программа установки. Но если установка приложения выполняется с помощью команды xcopy, или если вы знаете, какие изменения ваш установщик приложения вносит в систему, можно создать манифест пакета приложения вручную. В этой статье приведены шаги для начала работы. В ней также объясняется, как добавлять ресурсы без основы в приложения, что недоступно в DAC.
+В этой статье описывается, как упаковать приложение без использования таких средств, как Visual Studio или Desktop App Converter (DAC).
 
-Вот как начать ручное преобразование. Если у вас приложение .NET и вы используете Visual Studio, альтернативный вариант см. в статье [Руководство по упаковке классических приложений .NET с использованием моста для классических приложений с помощью Visual Studio](desktop-to-uwp-packaging-dot-net.md).  
+<div style="float: left; padding: 10px">
+    ![ручная процедура](images/desktop-to-uwp/manual-flow.png)
+</div>
 
-## <a name="create-a-manifest-by-hand"></a>Создайте манифест вручную
+Чтобы упаковать приложение вручную, создайте файл манифеста пакета, а затем запустите программу командной строки для создания пакета приложения для Windows.
 
-В файле _appxmanifest.xml_ должно быть указанное ниже содержимое (как минимум). Измените заполнители формата \*\*\*THIS\*\*\* на фактические значения приложения.
+Используйте ручную упаковку, если вы устанавливаете приложение с помощью команды xcopy либо если вам известно, какие изменения вносит в систему ваш установщик приложения, и вы хотите более детально управлять этим процессом.
+
+Если вы не знаете точно, какие изменения вносит в систему ваш установщик, или если предпочитаете использовать автоматические средства для создания пакета манифеста, попробуйте воспользоваться любым из [этих](desktop-to-uwp-root.md#convert) параметров.
+
+## <a name="first-consider-how-youll-distribute-your-app"></a>Выбор способа распространения приложения
+Если вы планируете опубликовать свое приложение в [Магазине Windows](https://www.microsoft.com/store/apps), начните с заполнения [этой формы](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). После этого Майкрософт свяжется с вами, чтобы начать процесс публикации. В рамках этого процесса вы зарезервируете имя в Магазине и получите информацию, необходимую для упаковки приложения.
+
+## <a name="create-a-package-manifest"></a>Создание пакета манифеста
+
+Создайте файл, назовите его **appxmanifest.xml**, а затем добавьте в него XML-код, представленный ниже.
+
+Это базовый шаблон, который содержит элементы и атрибуты, требуемые для вашего пакета. Мы добавим для них значения в следующем разделе.
 
 ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <Package
-       xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-       xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-       xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
-      <Identity Name="***YOUR_PACKAGE_NAME_HERE***"
-        ProcessorArchitecture="x64"
-        Publisher="CN=***COMPANY_NAME***, O=***ORGANIZATION_NAME***, L=***CITY***, S=***STATE***, C=***COUNTRY***"
-        Version="***YOUR_PACKAGE_VERSION_HERE***" />
-      <Properties>
-        <DisplayName>***YOUR_PACKAGE_DISPLAY_NAME_HERE***</DisplayName>
-        <PublisherDisplayName>Reserved</PublisherDisplayName>
-        <Description>No description entered</Description>
-        <Logo>***YOUR_PACKAGE_RELATIVE_DISPLAY_LOGO_PATH_HERE***</Logo>
-      </Properties>
-      <Resources>
-        <Resource Language="en-us" />
-      </Resources>
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+  <Identity Name="" Version="" Publisher="" ProcessorArchitecture="" />
+    <Properties>
+       <DisplayName></DisplayName>
+       <PublisherDisplayName></PublisherDisplayName>
+             <Description></Description>
+      <Logo></Logo>
+    </Properties>
+    <Resources>
+      <Resource Language="" />
+    </Resources>
       <Dependencies>
-        <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.14316.0" />
+      <TargetDeviceFamily Name="Windows.Desktop" MinVersion="" MaxVersionTested="" />
       </Dependencies>
       <Capabilities>
         <rescap:Capability Name="runFullTrust"/>
       </Capabilities>
-      <Applications>
-        <Application Id="***YOUR_PRAID_HERE***" Executable="***YOUR_PACKAGE_RELATIVE_EXE_PATH_HERE***" EntryPoint="Windows.FullTrustApplication">
-          <uap:VisualElements
-           BackgroundColor="#464646"
-           DisplayName="***YOUR_APP_DISPLAY_NAME_HERE***"
-           Square150x150Logo="***YOUR_PACKAGE_RELATIVE_PNG_PATH_HERE***"
-           Square44x44Logo="***YOUR_PACKAGE_RELATIVE_PNG_PATH_HERE***"
-           Description="***YOUR_APP_DESCRIPTION_HERE***" />
-        </Application>
-      </Applications>
-    </Package>
+    <Applications>
+      <Application Id="" Executable="" EntryPoint="Windows.FullTrustApplication">
+        <uap:VisualElements DisplayName="" Description=""   Square150x150Logo=""
+                   Square44x44Logo=""   BackgroundColor="" />
+      </Application>
+     </Applications>
+  </Package>
 ```
 
-Есть ресурсы без основы, которые вы хотите добавить? Дополнительные сведения о том, как это сделать, см. в разделе о [ресурсах без основы](#unplated-assets) далее в этой статье.
+## <a name="fill-in-the-package-level-elements-of-your-file"></a>Заполнение элементов уровня пакета для файла
 
-## <a name="run-the-makeappx-tool"></a>Запустите средство MakeAppX.
+Заполните этот шаблон сведениями о вашем пакете.
 
-Используйте [упаковщик приложений (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx), чтобы создать пакет приложения для Windows для проекта. Файл MakeAppx.exe входит в пакет SDK для Windows 10.
+### <a name="identity-information"></a>Сведения об удостоверении
 
-Чтобы запустить средство MakeAppx, сначала убедитесь, что вы создали файл манифеста, как описано выше.
+Вот пример элемента **Identity** с замещающим текстом для атрибутов. Вы можете задать атрибуту ``ProcessorArchitecture`` значение ``x64`` или ``x86``.
 
-Затем создайте файл сопоставления. Файл должен начинаться с элемента **[Files]**, а под ним должен быть приведен список всех исходных файлов на диске с указанием конечного пути к ним в пакете. Пример.
-
+```XML
+<Identity Name="MyCompany.MySuite.MyApp"
+          Version="1.0.0.0"
+          Publisher="CN=MyCompany, O=MyCompany, L=MyCity, S=MyState, C=MyCountry"
+                ProcessorArchitecture="x64">
 ```
-[Files]
-"C:\MyApp\StartPage.htm"     "default.html"
-"C:\MyApp\readme.txt"        "doc\readme.txt"
-"\\MyServer\path\icon.png"   "icon.png"
-"MyCustomManifest.xml"       "AppxManifest.xml"
+> [!NOTE]
+> Если вы зарезервировали имя приложения в Магазине Windows, вы можете получить значения атрибутов Name (Имя) и Publisher (Издатель) с помощью информационной панели Центра разработки для Windows. Если планируется, что приложение будет загружено на другие системы в неопубликованном виде, вы можете указать для этих атрибутов собственные имена при условии, что имя издателя совпадает с именем, указанным в сертификате, который используется для подписания приложения.
+
+### <a name="properties"></a>Свойства
+
+Элемент [Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) имеет три обязательных дочерних элемента. Вот пример узла **Properties** с замещающим текстом для элементов. **DisplayName**— это имя приложения, которое вы резервируете в Магазине для отправляемых в этот Магазин приложений.
+
+```XML
+<Properties>
+  <DisplayName>MyApp</DisplayName>
+  <PublisherDisplayName>MyCompany</PublisherDisplayName>
+  <Logo>images\icon.png</Logo>
+</Properties>
 ```
 
-Затем выполните следующую команду:
+### <a name="resources"></a>Ресурсы
 
-```cmd
-MakeAppx.exe pack /f mapping_filepath /p filepath.appx
+Вот пример узла [Resources](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources).
+
+```XML
+<Resources>
+  <Resource Language="en-us" />
+</Resources>
+```
+### <a name="dependencies"></a>Зависимости
+
+Для приложений, перенесенных из классических приложений, всегда устанавливайте атрибуту ``Name`` значение ``Windows.Desktop``.
+
+```XML
+<Dependencies>
+<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.15063.0" />
+</Dependencies>
 ```
 
-## <a name="sign-your-appx-package"></a>Подписывание пакета AppX
+### <a name="capabilities"></a>Возможности
+Для приложений, перенесенных из классического приложения, необходимо добавить возможность ``runFullTrust``.
 
-Для командлета Add-AppxPackage необходимо, чтобы развертываемый пакет приложения (.appx) был подписан. Используйте файл [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), который входит в состав Microsoft Windows 10 SDK, чтобы подписать пакет приложения для Windows.
-
-Пример использования:
-
-```cmd
-C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
-C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
-C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
+```XML
+<Capabilities>
+  <rescap:Capability Name="runFullTrust"/>
+</Capabilities>
 ```
-При запуске файла MakeCert.exe, когда вам будет предложено ввести пароль, выберите **Нет**. Дополнительные сведения о сертификатах и процессе подписывания см. в следующих разделах:
+## <a name="fill-in-the-application-level-elements"></a>Заполните элементы уровня приложения
 
-- [Практическое руководство: создание временных сертификатов для использования во время разработки](https://msdn.microsoft.com/library/ms733813.aspx)
-- [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
-- [SignTool.exe (Sign Tool)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
+Заполните этот шаблон сведениями о вашем приложении.
 
-<span id="unplated-assets" />
-## <a name="add-unplated-assets"></a>Добавление ресурсов без основы
+### <a name="application-element"></a>Элемент приложения
 
-Вот как можно дополнительно настроить ресурсы 44x44, которые отображаются на панели задач, для приложения.
+Для приложений, перенесенных из классических приложений, атрибут ``EntryPoint`` элемента Application всегда имеет значение ``Windows.FullTrustApplication``.
 
-1. Получите верные изображения 44x44 и скопируйте их в папку с вашими изображениями (например, "Ресурсы").
+```XML
+<Applications>
+  <Application Id="MyApp"     
+        Executable="MyApp.exe" EntryPoint="Windows.FullTrustApplication">
+   </Application>
+</Applications>
+```
 
-2. Создайте копию каждого изображения 44x44 в той же папке и добавьте *.targetsize-44_altform-unplated* к имени файла. Вам потребуются две копии каждого значка, каждый из которых должен быть назван особым образом. Например, после завершения процесса ваша папка ресурсов может содержать файлы *MYAPP_44x44.png* и *MYAPP_44x44.targetsize-44_altform-unplated.png* (обратите внимание, что первый файл— это значок, ссылка на который содержится в appxmanifest в атрибуте *Square44x44Logo* VisualElements).
+### <a name="visual-elements"></a>Визуальные элементы
 
-3.    В AppXManifest установите атрибуту BackgroundColor для каждого значка, к которому применяется исправление, значение "transparent". Этот атрибут находится в элементе VisualElements для каждого приложения.
+Вот пример узла [VisualElements](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements).
 
-4.    Откройте CMD, измените каталог на корневую папку пакета и создайте файл priconfig.xml с помощью команды ```makepri createconfig /cf priconfig.xml /dq en-US```.
+```XML
+<uap:VisualElements
+    BackgroundColor="#464646"
+    DisplayName="My App"
+    Square150x150Logo="images\icon.png"
+    Square44x44Logo="images\small_icon.png"
+    Description="A useful description" />
+```
 
-5.    Оставаясь в корневой папке пакета, используйте CMD для создания одного или нескольких файлов resources.pri с помощью команды ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml```. Например, команда для вашего приложения может выглядеть так: ```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```.
+## <a name="optional-add-target-based-unplated-assets"></a>Добавление специальных ресурсов без покрытия (необязательно)
 
-6.    Упакуйте приложение для Windows, руководствуясь инструкциями в следующем шаге, чтобы увидеть результат.
+Специальные ресурсы предназначены для значков и плиток, которые отображаются на панели задач Windows, в представлении задач, в окне, вызываемом сочетанием клавиш ALT+TAB, в Snap Assist и в правом нижнем углу плиток начального экрана. Подробнее об этом см. [здесь](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets#target-based-assets).
+
+1. Получите правильные изображения 44x44 и скопируйте их в папку с изображениями (например, "Ресурсы").
+
+2. Создайте копию каждого изображения 44x44 в той же папке и добавьте **.targetsize-44_altform-unplated** к имени файла. Вам потребуются две копии каждого значка, каждый из которых должен быть назван особым образом. Например, после завершения процесса папка ресурсов может содержать файлы **MYAPP_44x44.png** и **MYAPP_44x44.targetsize 44_altform unplated.png**.
+
+   > [!NOTE]
+   > В этом примере значок **MYAPP_44x44.png**— это значок, который вы укажете в атрибуте логотипа ``Square44x44Logo`` вашего пакета приложения для Windows.
+
+3.  В пакете приложения для Windows задайте ``BackgroundColor`` для каждого значка, который должен быть прозрачным.
+
+4.  Откройте командную строку, измените каталог на корневую папку пакета, а затем создайте файл priconfig.xml с помощью команды ``makepri createconfig /cf priconfig.xml /dq en-US``.
+
+5.  Создайте файлы resources.pri с помощью команды ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``.
+
+    Например, команда для вашего приложения может выглядеть так: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
+
+6.  Запакуйте приложение для Windows, руководствуясь инструкциями в следующем шаге, чтобы увидеть результат.
+
+<span id="make-appx" />
+## <a name="generate-a-windows-app-package"></a>Создание пакета приложений для Windows
+
+Используйте **MakeAppx.exe**, чтобы создать пакет приложения для Windows для вашего проекта. Он входит в пакет Windows 10 SDK, и если у вас установлена Visual Studio, доступ к нему можно получить через командную строку разработчика для вашей версии Visual Studio.
+
+См. раздел [Создание пакета приложения с помощью средства MakeAppx.exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)
+
+## <a name="run-the-packaged-app"></a>Запуск упакованного приложения
+
+Чтобы запустить приложение для локальной проверки, не обязательно получать сертификат и подписывать его. Просто запустите этот командлет PowerShell:
+
+```Add-AppxPackage –Register AppxManifest.xml```
+
+Чтобы обновить файлы .exe или .dll приложения, замените существующие файлы в пакете новыми, повысьте номер версии в AppxManifest.xml, а затем выполните указанную выше команду повторно.
+
+> [!NOTE]
+> Упакованное приложение всегда выполняется от лица текущего пользователя, а диск, на который производится установка приложения, должен быть отформатирован в NTFS.
+
+## <a name="next-steps"></a>Следующие шаги
+
+**Пошаговое выполнение кода, поиск и устранение проблем**
+
+См. [Запуск, отладка и тестирование упакованного классического приложения (мост для классических приложений)](desktop-to-uwp-debug.md)
+
+**Подписание и распространение приложения**
+
+См. [Распространение упакованного классического приложения (мост для классических приложений)](desktop-to-uwp-distribute.md)
+
+**Поиск ответов на конкретные вопросы**
+
+Наша команда следит за этими [тегами StackOverflow](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+**Оставьте отзыв об этой статье**
+
+Используйте раздел комментариев ниже.

@@ -2,16 +2,18 @@
 description: "В данной статье рассказывается, как в приложении универсальной платформы Windows (UWP) получить содержимое, общий доступ к которому предоставлен из другого приложения с помощью контракта отправки данных. Контракт отправки данных позволяет предлагать ваше приложение как вариант, когда пользователь вызывает функцию общего доступа."
 title: "Получение данных"
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
-author: awkoren
-ms.author: alkoren
+author: msatranjr
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: b460a20dd88da1745008ea84fe252137df8a82d1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 9c3054d161e45bd614e8ef42ea6f21aeb937f582
+ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/19/2017
 ---
 # <a name="receive-data"></a>Получение данных
 

@@ -9,16 +9,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, API отправки Магазина Windows, надстройки, продукты внутри приложения, IAP"
-ms.openlocfilehash: bb31d8cbe60703aff179913648556f408ba65586
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 82d05e49f087dda903a0bc5c1010df98ae64c016
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="get-all-add-ons"></a>Получение всех надстроек
 
 
 
 
-Используйте этот метод в API отправки Магазина Windows для получения данных для всех надстроек (также называемых внутренними продуктами приложения или IAP) для всех приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows.
+Используйте этот метод в API отправки в Магазин Windows для получения данных по всем надстройкам для всех приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows.
 
 ## <a name="prerequisites"></a>Необходимые условия
 
@@ -26,8 +28,6 @@ translationtype: HT
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки Магазина Windows.
 * [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
-
->**Примечание.**&nbsp;&nbsp;Этот метод можно использовать только для учетных записей Центра разработки для Windows, у которых есть разрешение на использование API отправки Магазина Windows. Такое разрешение имеется не у всех учетных записей.
 
 ## <a name="request"></a>Запрос
 
@@ -44,7 +44,7 @@ translationtype: HT
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/>
 

@@ -6,18 +6,25 @@ ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 4c17bab575be207106abfac44104bb32bcffd6ac
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: ranjeshj
+doc-status: Published
+ms.openlocfilehash: 0249132942cbb15a009c85c929185bffcba23cd9
+ms.sourcegitcommit: 690320e6cbfc16ed9e935a136fecc44d68e95719
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/31/2017
 ---
 # <a name="lists"></a>Списки
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Списки отображают содержимое коллекций и обеспечивают взаимодействие с ним. В этой статье описаны четыре шаблона списка:
 
@@ -26,16 +33,15 @@ translationtype: HT
 -   раскрывающиеся списки, которые позволяют пользователю выбрать один элемент из развернутого списка;
 -   окна со списками, позволяющие пользователям выбрать один или несколько элементов в окне, содержимое которого можно прокрутить.
 
-В этой статье представлены рекомендации по проектированию, описаны возможности и приведены примеры каждого шаблона списка. В конце статьи приведены ссылки на другие статьи по данной теме и интерфейсы API.
+В этой статье представлены рекомендации по проектированию, описаны возможности и приведены примеры каждого шаблона списка.
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)</li>
-<li>[**Класс GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)</li>
-<li>[**Класс ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)</li>
-</ul>
-</div>
+> **Важные API-интерфейсы**: [класс ListView](https://msdn.microsoft.com/library/windows/apps/br242878), [класс GridView](https://msdn.microsoft.com/library/windows/apps/br242705), [класс ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348)
+
+> <div id="main">
+> <strong><span class="uwpd-prelease">Предварительная версия.</span> Осеннее обновление Creators Update (сборка Windows 10 Insider Preview 16215 и более поздних версий)— изменение поведения</strong>
+> </div>
+> По умолчанию вместо выбора активное перо теперь прокручивает или сдвигает список в приложениях UWP (как сенсорный экран, сенсорная панель и неактивное перо).
+> Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. Ссылка на справочник по API представлена в разделе [Класс ScrollViewer] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
 ## <a name="list-views"></a>Представления списка
 
@@ -180,10 +186,12 @@ translationtype: HT
 
 -   Ограничьте текстовое содержимое элементов полей со списком одной строкой.
 -   Сортируйте элементы в поле со списком в логическом порядке. Группируйте связанные параметры и размещайте часто используемые параметры в начале списка. Названия сортируйте в алфавитном порядке, числа — по возрастанию, даты — по хронологии.
+-   Чтобы создать поле с раскрытым списком, которое обновляется в режиме реального времени, пока пользователь использует клавиши со стрелками (например, раскрывающийся список выбора шрифта), задайте для параметра SelectionChangedTrigger значение "Always".  
 
 ### <a name="text-search"></a>Поиск по тексту
 
-Поля со списком автоматически поддерживают поиск в их коллекциях. По мере того, как пользователь вводит символы на физической клавиатуре, выбрав открытое или закрытое поле со списком, отображаются варианты, подходящие под строку пользователя. Эта функция особенно полезна при навигации по длинному списку. Например, при взаимодействии с раскрывающимся списком, содержащим список штатов, пользователь может нажать клавишу W, чтобы отобразить "Washington" для быстрого выбора. 
+Поля со списком автоматически поддерживают поиск в их коллекциях. По мере того, как пользователь вводит символы на физической клавиатуре, выбрав открытое или закрытое поле со списком, отображаются варианты, подходящие под строку пользователя. Эта функция особенно полезна при навигации по длинному списку. Например, при взаимодействии с раскрывающимся списком, содержащим список штатов, пользователь может нажать клавишу W, чтобы отобразить "Washington" для быстрого выбора.
+
 
 ## <a name="list-boxes"></a>Окна со списками
 
@@ -252,12 +260,12 @@ translationtype: HT
 
 - [Главный раздел](hub.md)
 - [Основные и подробные данные](master-details.md)
-- [Панель навигации](nav-pane.md)
+- [Панель навигации](navigationview.md)
 - [Контекстное масштабирование](semantic-zoom.md)
 - [Перетаскивание](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 
 **Для разработчиков**
-- [**Класс ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [**Класс GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [**Класс ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [**Класс ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868)
+- [Класс ListView](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [Класс GridView](https://msdn.microsoft.com/library/windows/apps/br242705)
+- [Класс ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348)
+- [Класс ListBox](https://msdn.microsoft.com/library/windows/apps/br242868)

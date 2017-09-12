@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: normesta
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
 description: "EntityFramework (EF)— это объектно-реляционный модуль сопоставления, позволяющий разработчикам работать с реляционными данными с помощью объектов, специализированных для доменов."
 title: "Entity framework Core с SQLite для приложений на C#"
-ms.author: markl
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, SQLite, C#, EF, entity framework
-ms.openlocfilehash: 015030774c7d148d3a9be757c80de827987347a9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 9d447b8a197ed7eaea0f991749064912dffb66d7
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="entity-framework-core-with-sqlite-for-c-apps"></a>Entity Framework Core с SQLite для приложений на C#
 

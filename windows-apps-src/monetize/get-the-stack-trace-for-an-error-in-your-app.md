@@ -4,14 +4,16 @@ ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: "Используйте этот метод в API аналитики для Магазина Windows, чтобы получить трассировку стека при возникновении ошибки в приложении."
 title: "Получение трассировки стека при возникновении ошибки в приложении"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, службы Магазина, API аналитики для Магазина Windows, трассировка стека, ошибка"
-ms.openlocfilehash: fb99c65e91e02e3e60b12258e30083183c213324
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: bec42609ee9441a872415bc270a97bcb21a858f7
+ms.sourcegitcommit: 7aabd2e59d45bbc5512dd4ddd9110ae62b79d552
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/19/2017
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>Получение трассировки стека при возникновении ошибки в приложении
 
@@ -129,3 +131,4 @@ Authorization: Bearer <your access token>
 * [Доступ к аналитическим данным с помощью служб Магазина Windows](access-analytics-data-using-windows-store-services.md)
 * [Получение данных отчетов об ошибках](get-error-reporting-data.md)
 * [Получение сведений об ошибке в приложении](get-details-for-an-error-in-your-app.md)
+* [Скачивание CAB-файла для ошибки в приложении](download-the-cab-file-for-an-error-in-your-app.md)

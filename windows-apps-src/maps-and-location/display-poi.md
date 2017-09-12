@@ -1,17 +1,19 @@
 ---
-author: msatranjr
+author: normesta
 title: "Отображение объектов на карте"
 description: "Добавляйте объекты на карту, используя вешки, изображения, фигуры и элементы пользовательского интерфейса XAML."
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
-ms.author: misatran
-ms.date: 02/08/2017
+ms.author: normesta
+ms.date: 08/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, карта, расположение, вешки"
-ms.openlocfilehash: c8fdc16b99a9d2d57f71e32e008fa668c3404835
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 280a651df949018dc9cf490e14d72d167fee0858
+ms.sourcegitcommit: 0ebc8dca2fd9149ea163b7db9daa14520fc41db4
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/08/2017
 ---
 # <a name="display-points-of-interest-poi-on-a-map"></a>Отображение объектов на карте
 
@@ -31,10 +33,10 @@ translationtype: HT
 
 Краткие сведения.
 
--   [Добавление объекта MapIcon на карту](#add-a-mapicon) для отображения изображения, например вешки с необязательным текстом.
--   [Добавление объекта MapPolygon на карту](#add-a-mappolygon) для отображения многоточечной фигуры.
--   [Добавление объекта MapPolyline на карту](#add-a-mappolyline) для отображения линий на карте.
--   [Добавление кода XAML на карту](#add-xaml) для отображения настраиваемых элементов пользовательского интерфейса.
+-   [Добавление объекта MapIcon на карту](#mapicon) для отображения изображения, например вешки с необязательным текстом.
+-   [Добавление объекта MapPolygon на карту](#mappolygon) для отображения многоточечной фигуры.
+-   [Добавление объекта MapPolyline на карту](#mappolyline) для отображения линий на карте.
+-   [Добавление кода XAML на карту](#mapxaml) для отображения настраиваемых элементов пользовательского интерфейса.
 
 Если необходимо разместить на карте большое количество элементов, можно [наложить на нее динамически перераспределяемые изображения](overlay-tiled-images.md). Сведения о том, как отобразить дороги на карте, см. в статье [Отображение дорог и направлений](routes-and-directions.md).
 
@@ -55,18 +57,20 @@ translationtype: HT
          Geopoint snPoint = new Geopoint(snPosition);
 
          // Create a MapIcon.
-         MapIcon mapIcon1 = new MapIcon();
-         mapIcon1.Location = snPoint;
-         mapIcon1.NormalizedAnchorPoint = new Point(0.5, 1.0);
-         mapIcon1.Title = "Space Needle";
-         mapIcon1.ZIndex = 0;
+         var mapIcon1 = new MapIcon
+         {
+             Location = snPoint,
+             NormalizedAnchorPoint = new Point(0.5, 1.0),
+             Title = "Space Needle",
+             ZIndex = 0,
+         };
 
          // Add the MapIcon to the map.
-         MapControl1.MapElements.Add(mapIcon1);
+         myMap.MapElements.Add(mapIcon1);
 
          // Center the map over the POI.
-         MapControl1.Center = snPoint;
-         MapControl1.ZoomLevel = 14;
+         myMap.Center = snPoint;
+         myMap.ZoomLevel = 14;
       }
 ```
 
@@ -90,31 +94,77 @@ translationtype: HT
 -   Отображение необязательного свойства [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) объекта [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) не гарантируется. Если текст не отображается, уменьшите масштаб, уменьшив значение свойства [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 -   При показе изображения [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077), которое указывает определенное местоположение на карте, например вешки или стрелки, попробуйте присвоить значению свойства [**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) приблизительное местоположение указателя на изображении. Если для свойства **NormalizedAnchorPoint** оставить значение по умолчанию (0,0), которое соответствует верхнему левому углу изображения, то в результате изменений свойства карты [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) изображение может указывать на другое местоположение.
 
-## <a name="add-a-mappolygon"></a>Добавление объекта MapPolygon
+## <a name="add-a-mapbillboard"></a>Добавление MapBillboard
 
+Показывайте большие изображения, связанные с расположениями на карте, например фотографии ресторана или ориентира. Когда пользователи отдаляют карту, изображение пропорционально уменьшается, чтобы пользователь мог видеть расширенный участок карты. Это немного отличается от элемента [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077), который помечает определенное расположение, обычно имеет небольшой размер и сохраняет свой размер, когда пользователь приближает и отдаляет карту.
+
+![Изображение MapBillboard](images/map-billboard.png)
+
+В следующем коде показан элемент [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard), представленный на рисунке выше.
+
+```csharp
+private void mapBillboardAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+{
+    RandomAccessStreamReference mapBillboardStreamReference =
+        RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/billboard.jpg"));
+
+        var mapBillboard = new MapBillboard(myMap.ActualCamera)
+        {
+            Location = myMap.Center,
+            NormalizedAnchorPoint = new Point(0.5, 1.0),
+            Image = mapBillboardStreamReference
+        };
+
+        myMap.MapElements.Add(mapBillboard);
+}
+```
+В этом коде есть три фрагмента, которые заслуживают более тщательного изучения: изображение, опорная камера и свойство [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_NormalizedAnchorPoint).
+
+### <a name="image"></a>Изображение
+
+В этом примере показано пользовательское изображение, сохраненное в папку проекта **Assets**. Свойство [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_Image) объекта [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) принимает значение с типом [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813). Этому типу требуется оператор **using** для пространства имен [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791).
+
+>[!NOTE]
+>Чтобы обеспечить максимальную производительность при использовании одного и того же изображения для нескольких значков карт, объявите объект [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) на уровне страницы или приложения.
+
+### <a name="reference-camera"></a>Опорная камера
+
+ Так как изображение [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) масштабируется при изменении свойства [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_ZoomLevel) карты, важно определить, при каком положении регулятора [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_ZoomLevel) изображение отображается в исходном масштабе. Это положение определяется в опорной камере [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard), и для его настройки необходимо передать объект [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) в конструктор [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard).
+
+ Вы можете определить требуемое положение в [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) и затем использовать эту точку [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) для создания объекта [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera).  Однако в этом примере мы просто используем объект [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera), возвращаемый свойством [**ActualCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_ActualCamera) элемента управления картой. Это внутренняя камера карты. Текущее положение этой камеры становится положением опорной камеры, то есть тем положением, в котором изображение [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) отображается в исходном масштабе.
+
+ Если ваше приложение предоставляет пользователям возможность уменьшить масштаб на карте, размер изображения уменьшается, поскольку внутренняя камера карты поднимается над землей, а изображение в его исходном размере остается неподвижным с привязкой к опорной камере.
+
+### <a name="normalizedanchorpoint"></a>NormalizedAnchorPoint
+
+[**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_NormalizedAnchorPoint) является точкой изображения, привязанной к свойству [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_Location) объекта [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard). Точка с координатами 0,5, 1 — центр нижнего края изображения. Поскольку мы присвоили свойству [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_Location) объекта [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) значение, соответствующее центру элемента управления картой, нижний край изображения будет привязан к центру элемента управления картой.
+
+## <a name="add-a-mappolygon"></a>Добавление объекта MapPolygon
 
 Для отображения многоточечной фигуры на карте используйте класс [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103). В показанном ниже фрагменте из [примера карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977) показано, как отобразить красное поле с синей рамкой на карте.
 
 ```csharp
 private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
 {
-   double centerLatitude = myMap.Center.Position.Latitude;
-   double centerLongitude = myMap.Center.Position.Longitude;
-   MapPolygon mapPolygon = new MapPolygon();
-   mapPolygon.Path = new Geopath(new List<BasicGeoposition>() {
-         new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude-0.001 },                
-         new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },                
-         new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude+0.001 },
-         new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
+    double centerLatitude = myMap.Center.Position.Latitude;
+    double centerLongitude = myMap.Center.Position.Longitude;
 
-   });
+    var mapPolygon = new MapPolygon()
+    {
+        Path = new Geopath(new List<BasicGeoposition>() {
+        new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude-0.001 },
+        new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },
+        new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude+0.001 },
+        new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
+        }),
+        ZIndex = 1,
+        FillColor = Colors.Red,
+        StrokeColor = Colors.Blue,
+        StrokeThickness = 3,
+        StrokeDashed = false,
+    };
 
-   mapPolygon.ZIndex = 1;
-   mapPolygon.FillColor = Colors.Red;
-   mapPolygon.StrokeColor = Colors.Blue;
-   mapPolygon.StrokeThickness = 3;
-   mapPolygon.StrokeDashed = false;
-   myMap.MapElements.Add(mapPolygon);
+    myMap.MapElements.Add(mapPolygon);
 }
 ```
 
@@ -126,23 +176,24 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
 ```csharp
 private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
 {
-   double centerLatitude = myMap.Center.Position.Latitude;
-   double centerLongitude = myMap.Center.Position.Longitude;
-   MapPolyline mapPolyline = new MapPolyline();
-   mapPolyline.Path = new Geopath(new List<BasicGeoposition>() {                
-         new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },                
-         new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
-   });
+    double centerLatitude = myMap.Center.Position.Latitude;
+    double centerLongitude = myMap.Center.Position.Longitude;
+    var mapPolyline = new MapPolyline
+    {
+        Path = new Geopath(new List<BasicGeoposition>() {
+            new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },
+            new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
+        }),
+        StrokeColor = Colors.Black,
+        StrokeThickness = 3,
+        StrokeDashed = true,
+    };
 
-   mapPolyline.StrokeColor = Colors.Black;
-   mapPolyline.StrokeThickness = 3;
-   mapPolyline.StrokeDashed = true;
-   myMap.MapElements.Add(mapPolyline);
+    myMap.MapElements.Add(mapPolyline);
 }
 ```
 
 ## <a name="add-xaml"></a>Добавление XAML
-
 
 Для отображения настраиваемых элементов пользовательского интерфейса на карте используйте XAML. Чтобы расположить XAML на карте, укажите расположение и нормализованную точку привязки XAML.
 

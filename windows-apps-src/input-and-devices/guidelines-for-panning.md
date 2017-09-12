@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: bf0abd41262704ccf634350ae53e8f428d412bf5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 288cca64cc93438c8f8c0000cfeba1fdda918733
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="guidelines-for-panning"></a>Руководство по функции сдвига
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -82,8 +84,13 @@ translationtype: HT
 
 ## <a name="additional-usage-guidance"></a>Дополнительные рекомендации по использованию
 
-
 При сенсорном взаимодействии сдвиг с помощью жеста прокрутки или скольжения одним или несколькими пальцами похож на прокрутку с помощью мыши. Сдвиг больше похож на поворот колесика мыши или перетаскивание ползунка полосы прокрутки, чем на щелчок в полосе прокрутки. Мы будем называть обе эти операции сдвигом, если они не различаются в API и их не требуется различать в специальном пользовательском интерфейсе Windows для конкретного устройства.
+
+> <div id="main">
+> <strong><span class="uwpd-prelease">Предварительная версия.</span> Осеннее обновление Creators Update (сборка Windows 10 Insider Preview 16215 и более поздних версий)— изменение поведения</strong>
+> </div>
+> По умолчанию вместо выбора текста активное перо теперь выполняет прокрутку и сдвиг в приложениях UWP (как сенсорный экран, сенсорная панель и неактивное перо).  
+> Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. Ссылка на справочник по API представлена в разделе [Класс ScrollViewer] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
 В зависимости от устройства ввода пользователь осуществляет сдвиг соответствующей области с помощью следующих элементов.
 

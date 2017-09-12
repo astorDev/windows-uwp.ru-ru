@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 4412ccd88c73854c193e24e0ac4e3f03730a9f39
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e564c44a99419f1900ab6c322af4ea6dedb195cb
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="get-file-properties"></a>Получение свойств файла
 
@@ -97,6 +99,8 @@ foreach (Windows.Storage.StorageFile file in files)
 Помимо свойств верхнего уровня и базовых свойств, существует много свойств, связанных с содержимым файла. Доступ к этим расширенным свойствам можно получить, вызвав метод [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124). (Объект [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) получают, вызывая свойство [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225).) Доступ к свойствам верхнего уровня и базовым свойствам файла можно получить, обратившись к ним как к свойствам класса ([**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) и **BasicProperties** соответственно). Однако расширенные свойства получают, передавая коллекцию [IEnumerable](http://go.microsoft.com/fwlink/p/?LinkID=313091) объектов [String](http://go.microsoft.com/fwlink/p/?LinkID=325032), представляющих имена свойств, которые должны быть получены методом **BasicProperties.RetrievePropertiesAsync**. Затем этот метод возвращает коллекцию [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238). После этого каждое расширенное свойство извлекается из коллекции по имени или индексу.
 
 Этот пример перечисляет все файлы библиотеки изображений, указывает имена нужных свойств (**DataAccessed** и **FileOwner**) в объекте [List](http://go.microsoft.com/fwlink/p/?LinkID=325246), передает объект [List](http://go.microsoft.com/fwlink/p/?LinkID=325246) в [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) для извлечения свойств и затем получает свойства по имени из возвращенного объекта [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238).
+
+В разделе [Основные свойства Windows](https://msdn.microsoft.com/library/windows/desktop/mt805470) представлен полный список расширенных свойств файла.
 
 ```csharp
 const string dateAccessedProperty = "System.DateAccessed";

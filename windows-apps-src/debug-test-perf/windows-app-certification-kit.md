@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: "Комплект сертификации приложений для Windows"
 description: "Чтобы максимально повысить шансы вашего приложения на публикацию в МагазинеWindows или получение статуса Сертифицировано для Windows, проверьте и протестируйте приложение локально, прежде чем отправлять его на сертификацию. В этой статье показано, как установить и запустить комплект сертификации приложений для Windows."
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 118d4643c3d4fcb8549549e9d58d4b64d64f0885
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: fb5303898bfb0d7021ba4c0aa48afd5038bcad4d
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="windows-app-certification-kit"></a>Комплект сертификации приложений для Windows
 
@@ -26,7 +28,7 @@ translationtype: HT
 
 -   Необходимо установить и запустить Windows 10.
 -   Необходимо установить [комплект сертификации приложений для Windows версии10]( http://go.microsoft.com/fwlink/p/?LinkID=309666). Он включен в пакет средств разработки программного обеспечения для Windows10.
--   На компьютере должна быть действующая лицензия разработчика. Узнайте, как ее получить, в разделе [Получение лицензии разработчика](https://msdn.microsoft.com/library/windows/apps/Hh974578).
+-   Необходимо [подготовить устройство к разработке](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
 -   Необходимо развернуть на компьютере приложение для Windows, которое вы хотите протестировать.
 
 **Примечание об обновлениях на месте**

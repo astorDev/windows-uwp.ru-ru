@@ -7,14 +7,16 @@ label: Command design basics
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: a9e7cda7794b3463ffa567bcf36ebec2d2d02687
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 868221cce04688ea2f7ab50e3062579932fbbd80
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 #  <a name="command-design-basics-for-uwp-apps"></a>Основы проектирования команд в приложениях UWP
 
@@ -22,8 +24,9 @@ translationtype: HT
 
 В универсальном приложении для Windows (UWP) *командные элементы* — это интерактивные элементы пользовательского интерфейса, которые позволяют пользователю выполнять действия, например отправлять электронное сообщение, удалять элемент или отправлять форму. В этой статье описаны командные элементы, такие как кнопки и флажки, взаимодействия, которые они поддерживают, и поверхности для команд (например, панели команд и контекстные меню) для их размещения.
 
-## <a name="provide-the-right-type-of-interactions"></a>Укажите правильный тип взаимодействий
+> **Важные API**: [Интерфейс ICommand](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.ICommand), [Класс Button](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Button), [Класс CommandBar](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.commandbar), [Класс MenuFlyout](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)
 
+## <a name="provide-the-right-type-of-interactions"></a>Укажите правильный тип взаимодействий
 
 При проектировании командного интерфейса самое важное решение — это выбрать, что пользователи смогут делать. Например, если вы создаете фотоприложение, пользователю понадобятся инструменты для редактирования фотографий. Если же вы создаете приложение для социальных сетей, которое отображает фотографии, возможно, редактирование изображений не так уж важно, и инструменты для редактирования можно опустить для экономии места. Решите, чем должны заниматься пользователи, и предоставьте им необходимые для этого инструменты.
 

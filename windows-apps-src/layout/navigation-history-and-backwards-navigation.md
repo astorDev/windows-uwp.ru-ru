@@ -8,20 +8,24 @@ label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: c2037c4b313b45309162ea4c0874418fe9463d17
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: cd3184ebe5e94c410d55a725129a38907aa6a01e
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 #  <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Журнал навигации и навигация в обратном направлении для приложений UWP
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 В Интернете отдельные веб-сайты предоставляют собственные системы навигации, такие как содержание, кнопки, меню, простые списки ссылок и т. д. Использование возможностей навигации разными сайтами может существенно различаться. Тем не менее один элемент навигации имеется везде: кнопка «Назад». Большинство веб-браузеров имеют кнопку «Назад», которая работает одинаково, независимо от веб-сайта.
+
+> **Важные API**: [Класс SystemNavigationManager](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager), [Событие BackRequested](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager#Windows_UI_Core_SystemNavigationManager_BackRequested), [OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/br227508)
 
 По этим же причинам, из соображений единообразия навигации, универсальная платформа Windows (UWP) предоставляет систему возврата на предыдущий уровень, позволяя пользователю перемещаться по журналу навигации в приложении и, в зависимости от устройства, из приложения в приложение.
 
@@ -111,7 +115,7 @@ Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
 Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
     BackRequested += ref new Windows::Foundation::EventHandler<
     Windows::UI::Core::BackRequestedEventArgs^>(
-        this, &amp;App::App_BackRequested);
+        this, &App::App_BackRequested);
 ```
 
 Вот соответствующий обработчик событий [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596), который вызывает [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) в корневом кадре приложения.
@@ -129,7 +133,7 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 >
 >    // Navigate back if possible, and if the event has not 
 >    // already been handled .
->    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
+>    if (rootFrame.CanGoBack && e.Handled == false)
 >    {
 >        e.Handled = true;
 >        rootFrame.GoBack();

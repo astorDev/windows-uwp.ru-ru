@@ -6,14 +6,16 @@ ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 27d3de280201d92ee98f6e8a17afd85f76acd7d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b80772109f0349f23feb6ff7f7440ab2e9242288
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="create-adaptive-tiles"></a>Создание адаптивных плиток
 
@@ -34,7 +36,7 @@ translationtype: HT
 
 ## <a name="how-to-send-a-tile-notification"></a>Отправка уведомления на плитке
 
-Ознакомьтесь с нашим [Кратким руководством по отправке локальных уведомлений на плитке](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/10/05/quickstart-sending-a-local-tile-notification-in-windows-10/). В документации на этой странице рассказывается обо всех возможностях создания визуального пользовательского интерфейса, доступных при работе с адаптивными плитками.
+Ознакомьтесь с нашим [Кратким руководством по отправке локальных уведомлений на плитке](tiles-and-notifications-sending-a-local-tile-notification.md). В документации на этой странице рассказывается обо всех возможностях создания визуального пользовательского интерфейса, доступных при работе с адаптивными плитками.
 
 
 ## <a name="usage-guidance"></a>Руководство по использованию
@@ -1395,7 +1397,7 @@ TileWide = new TileBinding()
 
 
 * [Схема адаптивных плиток](tiles-and-notifications-adaptive-tiles-schema.md)
-* [Краткое руководство: отправка локального уведомления на плитке](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/10/05/quickstart-sending-a-local-tile-notification-in-windows-10/)
+* [Краткое руководство: отправка локального уведомления на плитке](tiles-and-notifications-sending-a-local-tile-notification.md)
 * [Библиотека уведомлений на GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 * [Каталог специальных шаблонов плиток](tiles-and-notifications-special-tile-templates-catalog.md)
  

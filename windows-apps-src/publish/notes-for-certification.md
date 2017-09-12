@@ -1,17 +1,19 @@
 ---
 author: jnHs
-Description: "При отправке приложения вы можете предоставить дополнительные сведения тест-инженерам по сертификации, воспользовавшись для этого страницей &quot;Заметки по сертификации&quot;. Эти сведения помогут обеспечить правильность тестирования вашего приложения."
+Description: "При отправке приложения вы можете предоставить дополнительные сведения тест-инженерам по сертификации, воспользовавшись для этого страницей \"Заметки по сертификации\". Эти сведения помогут обеспечить правильность тестирования вашего приложения."
 title: "Заметки по сертификации"
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 6b2973e2f7303ac39571fd69a0e14fa0dfacef32
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f342329e32aa4377696330c39920119c0ad7ecdb
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="notes-for-certification"></a>Заметки по сертификации
 

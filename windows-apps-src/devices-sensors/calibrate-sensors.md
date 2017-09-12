@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: ECE848C2-33DE-46B0-BAE7-647DB62779BB
 title: "Калибровка датчиков"
 description: "Датчикам устройства, которые работают на основе магнитометра (компас, датчик наклона и датчик ориентации), может потребоваться калибровка из-за воздействия на них факторов окружающей среды."
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: d67146cd0382032eddf8cfe1b47f9348727cb79a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 066332395dde8d52d970bc79e2597ccaacaddb18
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="calibrate-sensors"></a>Калибровка датчиков
 

@@ -8,18 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Размещенные веб-приложения, API WinRT для JavaScript, веб-приложение для Win10, приложение на JavaScript для Windows, ApplicationContentUriRules, ACURs, msapplication-cortanavcd, Cortana для веб-приложений"
-ms.assetid: 86ca4590-2675-4de2-b825-c586d9669b8e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ccb59581227db82b8566da11d6db731b362ec258
-ms.lasthandoff: 02/08/2017
-
+keywords: "Размещенные веб-приложения, API WinRT для JavaScript, веб-приложение для Win10, приложение на JavaScript для Windows, ApplicationContentUriRules, ACURs, msapplication-cortanavcd, Кортана для веб-приложений"
+ms.openlocfilehash: 86661353916e64cb2ed4d7f0ca7b8830bfe95685
+ms.sourcegitcommit: a704e3c259400fc6fbfa5c756c54c12c30692a31
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/12/2017
 ---
+# <a name="accessing-uwp-features"></a>Доступ к возможностям UWP
 
-# <a name="accessing-universal-windows-platform-uwp-features"></a>Доступ к функциям универсальной платформы Windows (UWP)
-
-Ваше веб-приложение может получать полный доступ к универсальной платформе Windows (UWP), активировать собственные функции устройств с Windows, [использовать преимущества средств обеспечения безопасности Windows](#keep-your-app-secure--setting-application-content-uri-rules-acurs), [вызывать API среды выполнения Windows](#call-windows-runtime-apis) непосредственно из размещенного на сервере сценария, использовать [интеграцию с Кортаной](#integrate-cortana-voice-commands), а также работать с [поставщиком проверки подлинности в Интернете](#web-authentication-broker). Также поддерживаются [гибридные приложения](#create-hybrid-apps--packaged-web-apps-vs-hosted-web-apps). Вы можете включить локальный код, который будет вызываться из размещенного сценария, и управлять навигацией по приложению на удаленных и локальных страницах.
+Ваше веб-приложение может получать полный доступ к универсальной платформе Windows (UWP), активировать собственные функции устройств с Windows, [использовать преимущества средств обеспечения безопасности Windows](#keep-your-app-secure--setting-application-content-uri-rules-acurs), [вызывать API среды выполнения Windows](#call-windows-runtime-apis) непосредственно из размещенного на сервере сценария, использовать [интеграцию с Кортаной](#integrate-cortana-voice-commands), а также работать с [поставщиком проверки подлинности в Интернете](#web-authentication-broker). Также поддерживаются [гибридные приложения](##create-hybrid-apps--packaged-web-apps-vs-hosted-web-apps). Вы можете включить локальный код, который будет вызываться из размещенного сценария, и управлять навигацией по приложению на удаленных и локальных страницах.
 
 ## <a name="keep-your-app-secure--setting-application-content-uri-rules-acurs"></a>Обеспечение безопасности приложения. Настройка правил универсального кода ресурса (URI) для содержимого приложения (ACUR)
 
@@ -41,7 +39,7 @@ ms.lasthandoff: 02/08/2017
 ```HTML
 <Application
 Id="App"
-StartPage="http://contoso.com/home">
+StartPage="https://contoso.com/home">
 <uap:ApplicationContentUriRules>
     <uap:Rule Type="include" Match="https://contoso.com/" WindowsRuntimeAccess="all" />
     <uap:Rule Type="include" Match="https://*.contoso.com/" WindowsRuntimeAccess="all" />
@@ -67,7 +65,7 @@ StartPage="http://contoso.com/home">
 </uap:ApplicationContentUriRules>
 ```
 
-Этот код дает сценарию, запущенному на сайте http://contoso.com/, доступ к пространствам имен среды выполнения Windows и пользовательским компонентам в пакете. См. пример [Windows.UI.Notifications.js](https://gist.github.com/Gr8Gatsby/3d471150e5b317eb1813#file-windows-ui-notifications-js) на GitHub для ознакомления со всплывающими уведомлениями.
+Этот код дает сценарию, запущенному на сайте https://contoso.com/, доступ к пространствам имен среды выполнения Windows и пользовательским компонентам в пакете. См. пример [Windows.UI.Notifications.js](https://gist.github.com/Gr8Gatsby/3d471150e5b317eb1813#file-windows-ui-notifications-js) на GitHub для ознакомления со всплывающими уведомлениями.
 
 В следующем примере показано, как создавать живую плитку и обновлять ее из удаленного кода JavaScript.
 
@@ -77,12 +75,12 @@ function updateTile(message, imgUrl, imgAlt) {
 
     if (typeof Windows !== 'undefined'&&
             typeof Windows.UI !== 'undefined' &&
-            typeof Windows.UI.Notifications !== 'undefined') {    
+            typeof Windows.UI.Notifications !== 'undefined') {  
         var notifications = Windows.UI.Notifications,
         tile = notifications.TileTemplateType.tileSquare150x150PeekImageAndText01,
         tileContent = notifications.TileUpdateManager.getTemplateContent(tile),
         tileText = tileContent.getElementsByTagName('text'),
-        tileImage = tileContent.getElementsByTagName('image');    
+        tileImage = tileContent.getElementsByTagName('image');  
         tileText[0].appendChild(tileContent.createTextNode(message || 'Demo Message'));
         tileImage[0].setAttribute('src', imgUrl || 'https://unsplash.it/150/150/?random');
         tileImage[0].setAttribute('alt', imgAlt || 'Random demo image');    
@@ -112,7 +110,7 @@ function updateTile(message, imgUrl, imgAlt) {
 Вот пример использования тега на HTML-странице в размещенном веб-приложении.
 
 ```HTML
-<meta name="msapplication-cortanavcd" content="http:// contoso.com/vcd.xml"/>
+<meta name="msapplication-cortanavcd" content="https:// contoso.com/vcd.xml"/>
 ```
 
 Подробнее об интеграции Кортаны и VCD-файлов см. в руководстве «Взаимодействие с Кортаной, а также элементы и атрибуты определения голосовых команд (VCD), вер. 1.2».
@@ -129,33 +127,33 @@ function updateTile(message, imgUrl, imgAlt) {
 <meta name="ms-webauth-uris" content="https://<providerstartpoint>?client_id=<clientid>&response_type=token, https://<appendpoint>"/>
 ```
 
-Дополнительные рекомендации см. в разделе [Рекомендации по брокеру веб-проверки подлинности для сетевых поставщиков](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx).
+Дополнительные рекомендации см. в разделе [Рекомендации по брокеру веб-проверки подлинности для сетевых поставщиков](../security/web-authentication-broker.md).
 
 ## <a name="app-capability-declarations"></a>Объявления возможностей приложения
 
 Для приложений, которым необходим программный доступ к ресурсам пользователя, например к изображениям или музыке, или к таким устройствам, как камера или микрофон, необходимо объявить соответствующую возможность. Ниже приводятся три категории объявления возможностей приложения. 
 
-- [Возможности общего применения](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#General-use_capabilities), которые используются в большей части сценариев приложений. 
-- [Возможности устройства](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Device_capabilities), которые позволяют вашему приложению получать доступ к периферийным и внутренним устройствам. 
-- [Особые возможности](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Special_and_restricted_capabilities), для использования которых приложение необходимо отправить в Магазин с помощью особой учетной записи компании. 
+- [Возможности общего применения](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#general-use-capabilities), которые используются в большей части сценариев приложений. 
+- [Возможности устройства](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#device-capabilities), которые позволяют вашему приложению получать доступ к периферийным и внутренним устройствам. 
+- [Особые возможности](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities), для использования которых приложение необходимо отправить в Магазин с помощью особой учетной записи компании. 
 
-Подробнее об учетных записях компаний см. в разделе [Типы, доступность и стоимость учетных записей](https://msdn.microsoft.com/library/windows/apps/jj863494.aspx).
+Подробнее об учетных записях компаний см. в разделе [Типы, доступность и стоимость учетных записей](https://docs.microsoft.com/en-us/windows/uwp/publish/account-types-locations-and-fees).
 
 > [!NOTE]
 > Не забывайте, что когда пользователи загружают ваше приложение из Магазина Windows, они получают уведомление обо всех объявленных возможностях приложения. Поэтому не используйте возможности, которые вашему приложению не требуются.
 
-Запрос доступа осуществляется с помощью объявления возможностей в [манифесте пакета](https://msdn.microsoft.com/library/windows/apps/br211474.aspx) приложения. Общие возможности можно объявить с помощью [конструктора манифестов](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx#Configure) в Microsoft Visual Studio или добавить вручную (см. раздел [Определение возможностей в манифесте пакета](https://msdn.microsoft.com/library/windows/apps/br211477.aspx)).
+Запрос доступа осуществляется с помощью объявления возможностей в [манифесте пакета](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest) приложения. Дополнительные сведения см. в этих статьях, приведенных в разделе [Формирование пакетов приложений универсальной платформы Windows (UWP)](https://docs.microsoft.com/en-us/windows/uwp/packaging/index).
 
-Некоторые возможности обеспечивают приложениям доступ к конфиденциальным ресурсам. Эти ресурсы считаются конфиденциальными, так как они могут получать доступ к личным данным пользователя или стоить пользователю денег. Настройки конфиденциальности, управляемые приложением «Параметры», позволяют пользователю динамически управлять доступом к конфиденциальным ресурсам. Таким образом, важно, чтобы приложение не считало конфиденциальные ресурсы всегда доступными. Подробнее о доступе к конфиденциальным ресурсам см. в разделе [Руководство по приложениям, учитывающим требования конфиденциальности](https://msdn.microsoft.com/library/windows/apps/hh768223.aspx).
+Некоторые возможности предоставляют приложениям доступ к конфиденциальным ресурсам. Эти ресурсы считаются конфиденциальными, так как они могут получать доступ к личным данным пользователя или стоить пользователю денег. Настройки конфиденциальности, управляемые приложением «Параметры», позволяют пользователю динамически управлять доступом к конфиденциальным ресурсам. Таким образом, важно, чтобы приложение не считало конфиденциальные ресурсы всегда доступными. Подробнее о доступе к конфиденциальным ресурсам см. в разделе [Руководство по приложениям, учитывающим требования конфиденциальности](https://msdn.microsoft.com/library/windows/apps/hh768223.aspx).
 
 ## <a name="manifoldjs-and-the-app-manifest"></a>manifoldjs и манифест приложения
 
 Простой способ превратить ваш веб-сайт в приложение UWP — использовать **манифест приложения** и **manifoldjs**. Манифест приложения — это XML-файл, содержащий метаданные о приложении. В нем указаны имя приложения, ссылки на ресурсы, режим отображения, URL-адреса и другие данные, описывающие то, как необходимо развертывать и запускать приложение. manifoldjs значительно упрощает этот процесс даже на системах, не поддерживающих веб-приложения. Дополнительные сведения о принципах работы manifoldjs см. на веб-сайте [manifoldjs.com](http://www.manifoldjs.com/). Кроме того, можно посмотреть демонстрацию manifoldjs, входящую в состав презентации [Веб-приложения Windows 10](http://channel9.msdn.com/Events/WebPlatformSummit/2015/Hosted-web-apps-and-web-platform-innovations?wt.mc_id=relatedsession).
 
 ## <a name="related-topics"></a>Связанные разделы
-- [API среды выполнения Windows: примеры кода на JavaScript](http://rjs.azurewebsites.net/)
+- [API среды выполнения Windows: примеры кода на JavaScript](https://microsoft.github.io/WindowsRuntimeAPIs_Javascript_snippets/)
 - [Codepen: песочница для использования при вызовах интерфейсов API среды выполнения Windows](http://codepen.io/seksenov/pen/wBbVyb/)
-- [Взаимодействие с Кортаной](https://msdn.microsoft.com/library/windows/apps/dn974231.aspx)
+- [Взаимодействие с Кортаной](https://developer.microsoft.com/en-us/cortana)
 - [Элементы и атрибуты определения голосовых команд (VCD), версия 1.2](https://msdn.microsoft.com/library/windows/apps/dn954977.aspx)
-- [Рекомендации по брокеру веб-проверки подлинности для сетевых поставщиков](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx)
-- [Объявления возможностей приложения](https://msdn.microsoft.com/ibrary/windows/apps/hh464936.aspx)
+- [Рекомендации по брокеру веб-проверки подлинности для сетевых поставщиков](https://docs.microsoft.com/en-us/windows/uwp/security/web-authentication-broker)
+- [Объявления возможностей приложения](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations)

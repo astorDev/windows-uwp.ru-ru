@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
 title: "Виртуализация данных ListView и GridView"
 description: "Улучшите производительность и время запуска ListView и GridView с помощью виртуализации данных."
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 722389a7440110eaffa5458e8ef5e85fccb39671
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: eab90ebf2bcb1912292af6503f833e3bfa334d8b
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>Виртуализация данных ListView и GridView
 

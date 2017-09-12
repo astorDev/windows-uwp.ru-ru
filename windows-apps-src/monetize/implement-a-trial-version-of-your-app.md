@@ -3,24 +3,26 @@ author: mcleanbyron
 ms.assetid: 571697B7-6064-4C50-9A68-1374F2C3F931
 description: "Узнайте, как использовать пространство имен Windows.Services.Store для предоставления пользователям пробной версии приложения."
 title: "Внедрение пробной версии приложения"
-keywords: "windows 10, uwp, пробная версия, покупки из приложения, IAP, Windows.Services.Store"
+keywords: "windows 10, uwp, пробная версия, покупки из приложения, Windows.Services.Store"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 7cc8ae05bdf496b9d3a9973f8ebd09a7d3f0210a
-ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
-translationtype: HT
+ms.openlocfilehash: 2419c78e74a69d986ae23e70ced86683a7543cb4
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>Внедрение пробной версии приложения
 
 Если приложение настроено на [информационной панели Центра разработки для Windows в качестве бесплатной пробной версии](../publish/set-app-pricing-and-availability.md#free-trial) (то есть клиенты могут пользоваться им бесплатно в течение пробного периода), можно убедить клиентов выполнить обновление до полной версии приложения, исключив или ограничив определенные функции в течение пробного периода. До начала программирования решите, какие функции лучше ограничить, и сделайте так, чтобы они были доступны только после покупки полной лицензии. Вы можете также включить такие компоненты, как баннеры или водяные знаки, которые будут отображаться только во время испытательного срока, пока пользователь не купит приложение.
 
-Приложения, предназначенные для Windows 10 версии 1607 или старше, могут использовать члены класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), чтобы определять, есть ли у пользователя лицензия на пробную версию приложения, и получать уведомления в случае изменения состояния лицензии во время работы приложения.
+В этой статье описывается, как использовать члены класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), чтобы определить, есть ли у пользователя лицензия на пробную версию приложения, и получать уведомления в случае изменения состояния лицензии во время работы приложения. Это пространство имен доступно приложениям, предназначенным для Windows 10 версии 1607 или старше. 
 
 > [!NOTE]
-> Эта статья относится к приложениям, предназначенным для Windows10 версии 1607 или старше. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Подробнее см. в разделе [Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+> Эта статья относится к приложениям, предназначенным для Windows 10 версии 1607 или старше. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Дополнительные сведения см. в [этой статье](exclude-or-limit-features-in-a-trial-version-of-your-app.md).
 
 ## <a name="guidelines-for-implementing-a-trial-version"></a>Рекомендации по реализации пробной версии
 
@@ -61,7 +63,7 @@ translationtype: HT
 
 Для этого примера необходимо выполнение следующих предварительных условий:
 * Создан проект Visual Studio для приложения универсальной платформы Windows (UWP), предназначенный для Windows 10 версии 1607 и выше.
-* На информационной панели Центра разработки для Windows создано приложение, которое настроено как [бесплатная пробная версия](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) без ограничения времени, и это приложение опубликовано и доступно в Магазине. Это может быть приложение, которое вы хотите предложить пользователям, или базовое приложение, соответствующее минимальным требованиям [комплекта сертификации приложений для Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) и используемое только для тестирования. Подробнее см. в [руководстве по тестированию](in-app-purchases-and-trials.md#testing).
+* На информационной панели Центра разработки для Windows создано приложение, которое настроено как [бесплатная пробная версия](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) без ограничения времени, и это приложение опубликовано в Магазине. При необходимости можно настроить приложение, чтобы его нельзя было найти в Магазине, пока вы его тестируете. Подробнее см. в [руководстве по тестированию](in-app-purchases-and-trials.md#testing).
 
 В коде из этого примера предполагается следующее:
 * Код выполняется в контексте страницы [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx), которая содержит [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) с именем ```workingProgressRing``` и [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) с именем ```textBlock```. Эти объекты используются для индикации выполнения асинхронной операции и отображения выводимых сообщений, соответственно.

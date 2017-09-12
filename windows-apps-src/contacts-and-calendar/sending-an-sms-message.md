@@ -1,17 +1,19 @@
 ---
-author: Xansky
+author: normesta
 description: "В данной статье рассказывается, как запустить диалоговое окно составления SMS, с помощью которого пользователь может отправить SMS-сообщение. Перед отображением диалогового окна вы можете заполнить поля SMS-сообщения значениями по умолчанию. Сообщение не будет отправлено до тех пор, пока пользователь не нажмет кнопку отправки."
 title: "Отправка SMS-сообщения"
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
 keywords: "контакты, SMS, отправка"
-ms.author: mhopkins
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 3d2edd2e26633abacce07a2a6fe9f8c9d14b0afe
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e5c3678e6c12a65b6821d2fc2a54e0710f7dcef3
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="send-an-sms-message"></a>Отправка SMS-сообщения
 

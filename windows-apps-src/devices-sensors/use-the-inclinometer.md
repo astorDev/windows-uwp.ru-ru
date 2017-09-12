@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: "Использование инклинометра"
 description: "Узнайте, как использовать инклинометр для определения поворотов относительно поперечной, продольной и вертикальной осей."
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 6544d4a598edb12d8d114bb27fac84831ce31d14
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b0fcc9e45d1a9e1921e77ce8b59817a5ca1c0dd2
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="use-the-inclinometer"></a>Использование инклинометра
 
@@ -21,6 +23,10 @@ translationtype: HT
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Инклинометр**](https://msdn.microsoft.com/library/windows/apps/BR225766)
+
+**Пример**
+
+-   Более полные сведения о внедрении см. в [примере с уклономером](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
 
 Узнайте, как использовать инклинометр для определения поворотов относительно поперечной, продольной и вертикальной осей.
 
@@ -175,6 +181,3 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
 
- ## <a name="related-topics"></a>Еще по теме
-
-* [Пример работы с инклинометром](http://go.microsoft.com/fwlink/p/?linkid=241380)

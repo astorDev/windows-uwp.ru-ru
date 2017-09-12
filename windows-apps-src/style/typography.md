@@ -5,14 +5,16 @@ title: "Шрифтовое оформление"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 92fd3ee66768fcf1c98d9760ecb44811c9b0f9b3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0609622053d0ae25b5039766137db1b195c0d69d
+ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/22/2017
 ---
 # <a name="typography"></a>Шрифтовое оформление
 
@@ -50,7 +52,7 @@ translationtype: HT
          puts the baseline of the body text exactly 24px
          below the baseline of the header. 24px is the
          recommended line height for a 20px font size,
-         which is what's set in SubtitleTextBlockStyle.
+         which is what’s set in SubtitleTextBlockStyle.
          The bottom margin will be different for
          different font size pairings. -->
     <TextBlock
@@ -172,9 +174,11 @@ Segoe предоставляет широкий диапазон символо�
 >Большинство уровней набора шрифтов доступны в виде [статических ресурсов](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) XAML, которые именуются в рамках соглашения `*TextBlockStyle` (например, `HeaderTextBlockStyle`).
 
 
+<!--
 <div class="microsoft-internal-note">
-SubtitleAlt, BaseAlt и CaptionAlt в настоящее время недоступны. Используя фрагменты кода по ссылке выше, можно создавать стили в собственном приложении. Обратите внимание, что XAML в настоящее время не точно соответствует высоте строки.
+SubtitleAlt, BaseAlt, and CaptionAlt are not currently included. You can create the styles in your own app following the code snippets in the above link. Also note that XAML does not currently match the line height exactly.
 </div>
+-->
 
 
 ## <a name="primary-and-secondary-text"></a>Основной и второстепенный текст
@@ -210,7 +214,7 @@ Green shows where all caps should be used. Red shows where it should not.
 * Не совмещайте Subtitle and SubtitleAlt на одной странице
 
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Статьи по теме
 
 * [Текстовые элементы управления](../controls-and-patterns/text-controls.md)
 * [Шрифты](fonts.md)

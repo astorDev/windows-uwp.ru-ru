@@ -6,14 +6,19 @@ ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: b85d14b037fc65f10a6a24ed6c1a04b4be3ff6d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 9a12e7490cc1cf7bd1aa65b694a3aeb345ba1128
+ms.sourcegitcommit: 45490bd85e6f8d247a041841d547ecac2ff48250
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/23/2017
 ---
 # <a name="search-and-find-in-page"></a>Поиск и функция «найти на странице»
 
@@ -21,12 +26,7 @@ translationtype: HT
 
 Поиск — это один из лучших способов обнаружения содержимого в вашем приложении. Рекомендации в этой статье охватывают элементы работы поиска, области поиска, реализацию и примеры поиска в контексте.
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс AutoSuggestBox (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)</li>
-</ul>
-</div>
+> **Важные API-интерфейсы**: [класс AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
 ## <a name="elements-of-the-search-experience"></a>Элементы работы поиска
 
@@ -209,23 +209,12 @@ translationtype: HT
 
 Дополнительные сведения о добавлении команд на панель команд см. в разделе [Панель команд](app-bars.md).
 
-<div class="microsoft-internal-note">
-## Глобализация и локализация: контрольный список
-
-<table>
-<tr>
-<th>Вертикальный интервал</th><td>Используйте для вертикального интервала символы, не входящие в латинский алфавит, чтобы символы других алфавитов (включая цифры) отображались правильно.</td>
-</tr>
-<tr>
-<th>Вопросы, связанные с двунаправленностью</th><td>Значок лупы не должен отображаться в зеркальной форме в двунаправленном письме.</td>
-</tr>
-</table>
-</div>
+ 
 
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Статьи по теме
 
-* [**Поле автозаполнения**](auto-suggest-box.md)
+* [Поле автозаполнения](auto-suggest-box.md)
 
 
  

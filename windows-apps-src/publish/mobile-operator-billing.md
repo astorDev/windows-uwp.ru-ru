@@ -4,23 +4,26 @@ Description: "Магазин Windows предлагает выставление
 title: "Выставление счетов мобильным оператором"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 03/03/2017
+ms.date: 07/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 5d3dbe205fd3f4260f761d9372a573fe568b3638
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 431d61b087bd59aea8f9a6bc1a7197b603022504
+ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/06/2017
 ---
 # <a name="mobile-operator-billing"></a>Выставление счетов мобильным оператором
 
 
-Магазин Windows предлагает выставление счетов оператором мобильной связи в качестве метода оплаты для операторов мобильной связи, которые поддерживают эту возможность. Если оператор мобильной связи клиента поддерживает эту возможность, клиент может осуществлять приобретения в Магазине с помощью своей мобильной учетной записи.
+Магазин Windows предлагает выставление счетов мобильным оператором в качестве метода оплаты. Если оператор мобильной связи клиента поддерживает эту возможность, клиент может осуществлять приобретения в Магазине с помощью своей мобильной учетной записи.
 
-> **Примечание.** Если мобильный оператор клиента предлагает выставление счетов мобильным оператором, но клиент не может найти этот параметр на своем устройстве, ознакомьтесь с описанными далее [шагами](http://go.microsoft.com/fwlink/p/?LinkId=523993).
+> [!TIP]
+>  Если мобильный оператор клиента предлагает выставление счетов мобильным оператором, но клиент не может найти этот параметр на своем устройстве, ознакомьтесь с [описанными далее шагами](http://go.microsoft.com/fwlink/p/?LinkId=523993).
 
-Мы регулярно работаем с операторами мобильной связи, чтобы обеспечивать доступность этого способа оплаты. Если вы хотите предложить оператора мобильной связи, который отсутствует в списке поддерживаемых операторов, обратитесь к оператору мобильной связи.
+Мы регулярно работаем с операторами мобильной связи, чтобы обеспечивать доступность этого способа оплаты. Если вы хотите предложить оператора мобильной связи, который отсутствует в списке ниже, обратитесь к этому оператору мобильной связи и попросите его добавить этот способ оплаты.
 
 ## <a name="mobile-operator-billing-for-windows-10-and-xbox-one-devices"></a>Выставление счетов оператором мобильной связи для устройств под управлением Windows 10 и Xbox One
 
@@ -30,18 +33,24 @@ translationtype: HT
 
 | Страна или регион  | Мобильные операторы     |
 |-----------------|----------------------|
-| Австрия         | Hutchison 3G Austria |
+| Австрия         | Hutchison 3G Austria, A1 Telekom |
+| Бельгия         | Base, Proximus       |
+| Канада          | Telus                |
+| Дания         | 3                    |
 | Финляндия         | DNA, Elisa           |
 | Франция          | Orange               |
 | Германия         | O2                   |
 | Венгрия         | Telenor              |
-| Италия           | Wind                 |
+| Италия           | Wind, Tre            |
 | Норвегия          | Telenor              |
 | Польша          | Orange               |
+| Румыния         | Orange               |
 | Россия          | Билайн              |
-| Швеция          | Telenor              |
+| Испания           | Orange               |
+| Швеция          | Telenor, 3           |
 | Швейцария     | Swisscom             |
-| США   | Sprint               |
+| Турция          | Turkcell             |
+| Соединенные Штаты   | Sprint, Verizon      |
 | Великобритания  | O2, 3 UK             |
 
  
@@ -56,17 +65,13 @@ translationtype: HT
 | Страна или регион       | Мобильные операторы                                                   |
 |----------------------|--------------------------------------------------------------------|
 | Австралия            | Telstra                                                            |
-| Австрия              | A1 Telekom, T-Mobile                                               |
-| Бельгия              | BASE, Mobistar, Proximus                                           |
-| Канада               | Fido, Rogers                                                       |
+| Австрия              | T-Mobile                                                           |
+| Бельгия              | Mobistar                                                           |
 | Чешская Республика       | T-Mobile, Vodafone                                                 |
-| Финляндия              | TeliaSonera                                                        |
-| Франция               | Orange, SFR, Bouygues                                              |
+| Франция               | Orange, Bouygues                                              |
 | Германия              | Telefonica, Telekom Deutschland, Vodafone                          |
 | Греция               | Vodafone                                                           |
-| Венгрия              | Telenor, T-Mobile                                                  |
-| Индия                | Idea                                                               |
-| Индонезия            | Telkomsel, Hutchinson CP Telecommunications (HCPT)                 |
+| Венгрия              | T-Mobile                                                           |
 | Ирландия              | O2, Vodafone, Three                                                |
 | Италия                | Telecom Italia, Vodafone, Wind, 3 Italia                           |
 | Нидерланды          | T-Mobile, Vodafone                                                 |
@@ -76,9 +81,9 @@ translationtype: HT
 | Словакия             | T-Mobile                                                           |
 | Южно-Африканская Республика         | Vodacom                                                            |
 | Испания                | Movistar, Vodafone, Orange                                         |
-| Великобритания       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
-| Соединенные Штаты Америки        | AT&T, T-Mobile                                                     |
-| Вьетнам              | Viettel, Vinaphone, Mobifone                                       |
+| Великобритания       | Telefonica (O2), Vodafone        |
+| Соединенные Штаты        | AT&T, T-Mobile                                                     |
+
 
  
 

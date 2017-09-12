@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: a5a0a20ffa8ca27c123d139f25f636587db07aba
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 73fe48744346b2fd784b36d1fa29bd419c0fea02
+ms.sourcegitcommit: f6dd9568eafa10ee5cb2b849c0d82d84a1c5fb93
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/02/2017
 ---
 # <a name="accessibility-testing"></a>Проверка специальных возможностей  
 
@@ -82,15 +84,18 @@ translationtype: HT
 <span id="verify_your_app_with_make_everything_on_your_screen_bigger"/>
 <span id="VERIFY_YOUR_APP_WITH_MAKE_EVERYTHING_ON_YOUR_SCREEN_BIGGER"/>
 ## <a name="verify-your-app-with-display-settings"></a>Проверка приложения с параметрами экрана  
+
 Используя системные параметры отображения, регулирующие количество точек на дюйм, убедитесь в правильности масштабирования пользовательского интерфейса вашего приложения при изменении этого значения. (Некоторые пользователи меняют значения DPI в качестве параметра специальных возможностей; эта функция доступна в разделе **Специальные возможности** и в свойствах экрана.) При возникновении любых проблем следуйте [рекомендациям по масштабированию макетов](https://msdn.microsoft.com/library/windows/apps/Dn611863) и предоставьте дополнительные ресурсы для разных коэффициентов масштабирования.
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
 ## <a name="verify-main-app-scenarios-by-using-narrator"></a>Проверка основных сценариев приложения с помощью экранного диктора  
-Протестируйте качество считывания с экрана с помощью экранного диктора, последовательно выполнив следующие действия.
+Протестируйте качество считывания экрана с помощью экранного диктора.
+
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 **Чтобы протестировать ваше приложение с помощью экранного диктора, выполните следующие действия с клавиатурой и мышью.**
-1.  Включите экранный диктор, нажав клавиши _Windows+ВВОД_.
+1.  Включите экранный диктор, нажав клавиши _Windows + Ctrl + ВВОД_. В версиях, предшествующих Windows 10 версии 1607, используйте для запуска экранного диктора _Windows + ВВОД_.
 2.  Переходите к разным элементам приложения с помощью клавиши _TAB_, клавиш со стрелками, а также клавиши _CAPS LOCK+клавиш со стрелками_.
 3.  При этом внимательно слушайте, как экранный диктор озвучивает элементы пользовательского интерфейса, проверяя следующие моменты.
     * Для каждого элемента управления убедитесь, что экранный диктор читает все видимое содержимое. Проверьте также, озвучивает ли экранный диктор имя каждого элемента управления, все применимые состояния (установлен, выбран ит.д.) и тип элемента управления (кнопка, флажок, элемент списка ит.д.).
@@ -145,4 +150,5 @@ translationtype: HT
 * [Специальные возможности](accessibility.md)
 * [Нерекомендуемые методики](practices-to-avoid.md)
 * [Модель автоматизации пользовательского интерфейса](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Специальные возможности в Windows](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
+* [Специальные возможности в Windows](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [Начало работы с экранным диктором](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

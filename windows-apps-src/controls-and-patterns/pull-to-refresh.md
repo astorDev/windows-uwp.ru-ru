@@ -5,21 +5,29 @@ title: "Обновление путем оттягивания"
 label: Pull-to-refresh
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
-ms.openlocfilehash: 0d10a0c7f269cc6c7d0b2e9476a926226fe94f82
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: stpete
+doc-status: Published
+ms.openlocfilehash: 51a8c9a2e4618e054374308918a74cf2095119ef
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="pull-to-refresh"></a>Обновление путем оттягивания
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Схема с обновлением путем оттягивания позволяет пользователю потянуть список данных вниз, чтобы получить дополнительные данные. Обновление путем оттягивания широко используется в мобильных приложениях, но имеет смысл только на устройствах с сенсорным экраном. Вы можете обрабатывать [события манипуляции](../input-and-devices/touch-interactions.md#manipulation-events) для реализации запроса на обновление путем оттягивания в своем приложении.
+
+> **Важные API-интерфейсы**: [класс ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 [Пример обновления путем оттягивания](http://go.microsoft.com/fwlink/p/?LinkId=620635) демонстрирует, как дополнить элемент управления [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), чтобы он поддерживал такую возможность. В этой статье мы используем этот пример для пояснения основных моментов реализации обновления путем оттягивания.
 
@@ -39,7 +47,7 @@ RefreshableListView предоставляет режим автоматичес
 - Выкл.: обновление запрашивается, только если пользователь отпускает список, когда значение `PullThreshold` превышено. Индикатор в анимированном виде выводится из представления, когда пользователь отпускает средство прокрутки. Отображается индикатор строки состояния, если она есть (на телефоне).
 - Вкл.: обновление запрашивается, как только превышается значение `PullThreshold`, независимо от того, отпустил пользователь список или нет. Индикатор остается виден, пока новые данные подгружаются, а затем в анимированном виде выводится из представления. Параметр отсрочки **Deferral** используется для уведомления приложения о завершении получения данных.
 
-> **Примечание.**&nbsp;&nbsp;Код в примере также подходит для [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). Для изменения GridView создайте производный класс от GridView, а не от ListView и измените шаблон GridView по умолчанию.
+> **Примечание.**&nbsp;&nbsp;Код в примере также подходит для [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). Для изменения GridView создайте производный класс от GridView, а не от ListView и измените шаблон GridView по умолчанию.
 
 ## <a name="add-a-refresh-indicator"></a>Добавление индикатора обновления
 
@@ -51,7 +59,7 @@ RefreshableListView предоставляет режим автоматичес
 
 **Изменение шаблона представления списка**
 
-В примере обновления путем оттягивания шаблон элемента управления `RefreshableListView` изменяет стандартный шаблон **ListView** путем добавления индикатора обновления. Индикатор обновления помещается в [**Grid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) над элементом [**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx), который отвечает за отображение элементов списка.
+В примере обновления путем оттягивания шаблон элемента управления `RefreshableListView` изменяет стандартный шаблон **ListView** путем добавления индикатора обновления. Индикатор обновления помещается в [Grid](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) над элементом [ItemsPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx), который отвечает за отображение элементов списка.
 
 > **Примечание.**&nbsp;&nbsp;Текстовое поле `DefaultRefreshIndicatorContent` содержит резервный текстовый индикатор, который отображается, только если свойство `RefreshIndicatorContent` не задано.
 
@@ -123,7 +131,7 @@ RefreshableListView предоставляет режим автоматичес
 
 **Анимирование вращающегося индикатора**
 
-Когда список оттягивается вниз, возникает событие `PullProgressChanged` элемента RefreshableListView. Вы обрабатываете это событие в своем приложении для управления индикатором обновления. В примере фрагмент кода Storyboard выполняется для анимирования объекта [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.aspx) индикатора и вращения индикатора обновления. 
+Когда список оттягивается вниз, возникает событие `PullProgressChanged` элемента RefreshableListView. Вы обрабатываете это событие в своем приложении для управления индикатором обновления. В примере фрагмент кода Storyboard выполняется для анимирования объекта [RotateTransform](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.aspx) индикатора и вращения индикатора обновления. 
 
 **XAML**
 ```xaml
@@ -142,13 +150,13 @@ RefreshableListView предоставляет режим автоматичес
 
 ## <a name="handle-scroll-viewer-manipulation-events"></a>Обработка событий манипуляции средством прокрутки
 
-Шаблон элемента управления listview включает в себя встроенный компонент [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), позволяющий пользователю прокручивать элементы списка. Для реализации обновления путем оттягивания необходимо обрабатывать события манипуляции на встроенном средстве прокрутки, а также ряд связанных событий. Подробные сведения о событиях манипуляции см. в разделе [Сенсорное управление](../input-and-devices/touch-interactions.md).
+Шаблон элемента управления listview включает в себя встроенный компонент [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), позволяющий пользователю прокручивать элементы списка. Для реализации обновления путем оттягивания необходимо обрабатывать события манипуляции на встроенном средстве прокрутки, а также ряд связанных событий. Подробные сведения о событиях манипуляции см. в разделе [Сенсорное управление](../input-and-devices/touch-interactions.md).
 
 ** OnApplyTemplate**
 
-Для доступа к средству прокрутки и другим частям шаблона в целях добавления обработчиков событий и вызова их в коде в дальнейшем необходимо переопределить метод [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx). В OnApplyTemplate вызовите [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx), чтобы получить ссылку на именованную часть в шаблоне элемента управления, которую можно сохранить для дальнейшего использования в коде.
+Для доступа к средству прокрутки и другим частям шаблона в целях добавления обработчиков событий и вызова их в коде в дальнейшем необходимо переопределить метод [OnApplyTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx). В OnApplyTemplate вызовите [GetTemplateChild](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx), чтобы получить ссылку на именованную часть в шаблоне элемента управления, которую можно сохранить для дальнейшего использования в коде.
 
-В примере переменные, используемые для хранения частей шаблона, объявлены в области частных переменных. После их получения в методе OnApplyTemplate добавляются обработчики для событий [**DirectManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx), [**DirectManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx), [**ViewChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.viewchanged.aspx) и [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx).
+В примере переменные, используемые для хранения частей шаблона, объявлены в области частных переменных. После их получения в методе OnApplyTemplate добавляются обработчики для событий [DirectManipulationStarted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx), [DirectManipulationCompleted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx), [ViewChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.viewchanged.aspx) и [PointerPressed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx).
 
 **DirectManipulationStarted**
 
@@ -162,7 +170,7 @@ RefreshableListView предоставляет режим автоматичес
 
 Обработчики событий для анимаций также удаляются.
 
-В соответствии со значением свойства `AutoRefresh` список может с использованием анимации немедленно вернуться вверх либо дождаться завершения обновления и затем вернуться вверх. Объект [**Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) используется для индикации завершения обновления. В этот момент индикатор обновления в пользовательском интерфейсе исчезает.
+В соответствии со значением свойства `AutoRefresh` список может с использованием анимации немедленно вернуться вверх либо дождаться завершения обновления и затем вернуться вверх. Объект [Deferral](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) Deferral используется для индикации завершения обновления. В этот момент индикатор обновления в пользовательском интерфейсе исчезает.
 
 Эта часть обработчика событий DirectManipulationCompleted создает событие `RefreshRequested` и при необходимости получает объект Deferral.
 
@@ -232,7 +240,7 @@ private async void listView_RefreshRequested(object sender, RefreshableListView.
 
 ## <a name="composition-animations"></a>Анимации композиции
 
-По умолчанию содержимое в средстве прокрутки останавливается, когда полоса прокрутки достигает верхней точки. Чтобы пользователь мог продолжить оттягивать список вниз, вам необходимо получить доступ в визуальному уровню и анимировать содержимое списка. В примере для этого используются [анимации композиции](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation), в частности, [анимации с помощью выражений](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations).
+По умолчанию содержимое в средстве прокрутки останавливается, когда полоса прокрутки достигает верхней точки. Чтобы пользователь мог продолжить оттягивать список вниз, вам необходимо получить доступ в визуальному уровню и анимировать содержимое списка. В примере для этого используются [анимации композиции](https://msdn.microsoft.com/windows/uwp/composition/composition-animation), в частности, [анимации с помощью выражений](https://msdn.microsoft.com/windows/uwp/composition/composition-animation#expression-animations).
 
 В примере эта работа выполняется преимущественно в обработчике событий `CompositionTarget_Rendering` и методе `UpdateCompositionAnimations`.
 
@@ -242,4 +250,4 @@ private async void listView_RefreshRequested(object sender, RefreshableListView.
 - [Взаимодействие с помощью сенсорного экрана](../input-and-devices/touch-interactions.md)
 - [Представление списка и сетки](listview-and-gridview.md)
 - [Шаблоны элементов представления списка](listview-item-templates.md)
-- [Анимация с помощью выражений](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)
+- [Анимация с помощью выражений](https://msdn.microsoft.com/windows/uwp/composition/composition-animation#expression-animations)

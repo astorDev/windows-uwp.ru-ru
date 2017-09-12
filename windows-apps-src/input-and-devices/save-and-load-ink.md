@@ -11,14 +11,19 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 81d3a37103f1dcea6b68850d163fa5cc9aded5bc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 52a8a309758a02db072de5f8050b4e7183ff629d
+ms.sourcegitcommit: c519e3d34bef37f87bb44f02b295187849bb5eea
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/25/2017
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>Хранение и извлечение данных о росчерках пера Windows Ink
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Приложения UWP с поддержкой Windows Ink могут сериализовать и десериализовать росчерки пера в файл ISF. Файл ISF— это изображение GIF с дополнительными метаданными для всех свойств и поведений росчерков пера. Приложения без соответствующей функции могут просматривать статическое изображение GIF, включая прозрачный фон альфа-канала.
+
+> [!NOTE]
+> Формат ISF — наиболее компактное постоянное представление рукописного ввода. Он может быть встроен в двоичный формат документа, например GIF-файл, или помещен непосредственно в буфер обмена.
 
 <div class="important-apis" >
 <b>Важные API</b><br/>
@@ -28,9 +33,6 @@ translationtype: HT
 </ul>
 </div>
 
-
-> [!NOTE]
-> Формат ISF — наиболее компактное постоянное представление рукописного ввода. Он может быть встроен в двоичный формат документа, например GIF-файл, или помещен непосредственно в буфер обмена.
 
  
 
@@ -149,7 +151,7 @@ public MainPage()
                 }
                 else
                 {
-                    // File couldn&#39;t be saved.
+                    // File couldn't be saved.
                 }
             }
             // User selects Cancel and picker returns null.
@@ -437,15 +439,12 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 * [Взаимодействие с помощью пера](pen-and-stylus-interactions.md)
 
 **Примеры**
-* [Пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Простой пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Простой пример рукописного ввода (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Сложный пример рукописного ввода (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Пример рукописного ввода (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Руководство по началу работы: поддержка рукописного ввода в приложении UWP](https://aka.ms/appsample-ink)
 * [Пример раскраски](https://aka.ms/cpubsample-coloringbook)
 * [Пример семейных заметок](https://aka.ms/cpubsample-familynotessample)
-
-
- 
-
 
 
 

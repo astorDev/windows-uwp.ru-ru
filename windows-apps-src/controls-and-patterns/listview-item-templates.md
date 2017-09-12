@@ -5,39 +5,38 @@ title: "Шаблоны элементов представления списк�
 label: List view item templates
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: d8eb818d-b62e-4314-a612-f29142dbd93f
-ms.openlocfilehash: b63b3a67db3b07cbfef6a89bdffb436605ab91ed
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: ranjeshj
+doc-status: Published
+ms.openlocfilehash: 50ee45afe29070400c6955436e295d2d75ded984
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="item-containers-and-templates"></a>Контейнеры и шаблоны элементов
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Элементы управления **ListView** и **GridView** управляют расположением своих элементов (горизонтально, вертикально, обтекание и так далее) и взаимодействием пользователя с этими элементами, но не тем, как отдельные элементы отображаются на экране. Визуализацией элементов управляют контейнеры элементов. При добавлении элементов в представление списка они автоматически помещаются в контейнер. По умолчанию для ListView используется контейнер элементов [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listviewitem.aspx), а для GridView— [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridviewitem.aspx).
+Элементы управления **ListView** и **GridView** управляют расположением своих элементов (горизонтально, вертикально, обтекание и так далее) и взаимодействием пользователя с этими элементами, но не тем, как отдельные элементы отображаются на экране. Визуализацией элементов управляют контейнеры элементов. При добавлении элементов в представление списка они автоматически помещаются в контейнер. По умолчанию для ListView используется контейнер элементов [ListViewItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listviewitem.aspx); а для GridView — [GridViewItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridviewitem.aspx).
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)</li>
-<li>[**Класс GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)</li>
-<li>[**Свойство ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)</li>
-<li>[**Свойство ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx)</li>
-</ul>
-</div>
+> **Важные API-интерфейсы**: [класс ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [свойство ItemTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx), [свойство ItemContainerStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx)
 
 
-> Элементы управления ListView и GridView являются производными от класса [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), поэтому они имеют аналогичные функции, но отображают данные по-другому. В этой статье вся информация о представлении списка актуальна для обоих элементов управления (ListView и GridView), если не указано иное. Когда упоминаются классы ListView или ListViewItem, нужно помнить, что префикс *List* может быть заменен префиксом *Grid* для соответствующего эквивалента сетки (GridView или GridViewItem). 
+> [!NOTE]
+> Элементы управления ListView и GridView являются производными от класса [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), поэтому они имеют аналогичные функции, но отображают данные по-другому. В этой статье вся информация о представлении списка актуальна для обоих элементов управления (ListView и GridView), если не указано иное. Когда упоминаются классы ListView или ListViewItem, нужно помнить, что префикс *List* может быть заменен префиксом *Grid* для соответствующего эквивалента сетки (GridView или GridViewItem). 
 
 Эти контейнерные элементы управления состоят из двух важных частей, сочетание которых формирует окончательное визуальное оформление элемента: *шаблон данных* и *шаблон элемента управления*.
 
-- **Шаблон данных**. Класс [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx) назначается свойству [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) представления списка, чтобы указать способ отображения отдельных элементов данных.
-- **Шаблон элемента управления**. Шаблон элемента управления предоставляет часть визуализации элемента, за которую отвечает платформа, например визуальные состояния. Вы можете изменять шаблон элемента управления с помощью свойства [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx). Как правило, таким образом изменяются цвета представления списка в соответствии с фирменной символикой или способ отображения выбранных элементов.
+- **Шаблон данных** Класс [DataTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx) назначается свойству [ItemTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) представления списка, чтобы указать способ отображения отдельных элементов данных.
+- **Шаблон элемента управления**. Шаблон элемента управления предоставляет часть визуализации элемента, за которую отвечает платформа, например визуальные состояния. Вы можете изменять шаблон элемента управления с помощью свойства [ItemContainerStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx). Как правило, таким образом изменяются цвета представления списка в соответствии с фирменной символикой или способ отображения выбранных элементов.
 
 На этом изображении показано сочетание шаблонов элементов управления и данных для формирования окончательного визуального оформления элемента.
 
@@ -54,16 +53,18 @@ translationtype: HT
                     <ColumnDefinition Width="54"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Image Source="Assets/placeholder.png" Width="44" Height="44" 
+                <Image Source="Assets/placeholder.png" Width="44" Height="44"
                        HorizontalAlignment="Left"/>
-                <TextBlock Text="{x:Bind}" Foreground="Blue" 
-                           FontSize="36" Grid.Column="1"/>
+                <TextBlock Text="{x:Bind}" Foreground="Black"
+                           FontSize="15" Grid.Column="1"
+                           VerticalAlignment="Center"
+                           Padding="0,0,54,0"/>
             </Grid>
         </DataTemplate>
     </ListView.ItemTemplate>
     <ListView.ItemContainerStyle>
         <Style TargetType="ListViewItem">
-            <Setter Property="Background" Value="Green"/>
+            <Setter Property="Background" Value="LightGreen"/>
         </Style>
     </ListView.ItemContainerStyle>
     <x:String>Item 1</x:String>
@@ -83,7 +84,7 @@ translationtype: HT
 
 Прежде чем углубляться в процесс отображения элементов данных в представлении списка, необходимо разобраться в отображаемых данных. В этом примере мы создаем тип данных с именем `NamedColor`. Он сочетает название и значение цвета, а также класс **SolidColorBrush** для цвета, которые предоставляются в виде трех свойств: `Name`, `Color` и `Brush`.
  
-Затем мы заполняем класс **List** объектом `NamedColor` для каждого именованного цвета в классе [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors.aspx). Этот список устанавливается как свойство [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) для представления списка
+Затем мы заполняем класс **List** объектом `NamedColor` для каждого именованного цвета в классе [Colors](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors.aspx). Этот список устанавливается как свойство [ItemsSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) для представления списка.
 
 Вот код для определения класса и заполнения списка `NamedColors`.
 
@@ -156,7 +157,7 @@ namespace ColorsListApp
 
 ![представление списка, отображающее строковое представление элементов](images/listview-no-template.png)
 
-Вы можете отображать строковое представление конкретного свойства элемента данных, установив [**DisplayMemberPath**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) для этого свойства. Здесь свойству `Name` элемента `NamedColor` назначается свойство DisplayMemberPath.
+Вы можете отображать строковое представление конкретного свойства элемента данных, установив [DisplayMemberPath](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) для этого свойства. Здесь свойству `Name` элемента `NamedColor` назначается свойство DisplayMemberPath.
 
 **XAML**
 ```xaml
@@ -167,12 +168,12 @@ namespace ColorsListApp
 
 ![Представление списка с отображением строкового представления свойства элемента](images/listview-display-member-path.png)
 
-Как правило, хочется показать более сложно оформленное представление данных. Чтобы точно определить, как должны отображаться элементы в представлении списка, вы создаете [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx). В DataTemplate с помощью языка XAML задается макет и внешний вид элементов управления, используемых для отображения отдельного элемента. Элементы управления в макете могут быть привязаны к свойствам объекта данных или иметь статическое содержимое, задаваемое внутри кода. Вы назначаете DataTemplate свойству [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) элемента управления списком.
+Как правило, хочется показать более сложно оформленное представление данных. Чтобы точно определить, как должны отображаться элементы в представлении списка, вы создаете [DataTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx). В DataTemplate с помощью языка XAML задается макет и внешний вид элементов управления, используемых для отображения отдельного элемента. Элементы управления в макете могут быть привязаны к свойствам объекта данных или иметь статическое содержимое, задаваемое внутри кода. Вы назначаете DataTemplate свойству [ItemTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) элемента управления списком.
 
 > [!IMPORTANT]
 > Свойства **ItemTemplate** и **DisplayMemberPath** нельзя использовать одновременно. Если установлены оба свойства, возникает исключение.
 
-Здесь определяется свойство DataTemplate, отображающее класс [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.aspx) в цвете элемента, а также название цвета и значения RGB. 
+Здесь определяется свойство DataTemplate, отображающее класс [Rectangle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.aspx) в цвете элемента, а также название цвета и значения RGB. 
 
 > [!NOTE]
 > При использовании [расширения разметки x:Bind](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) в DataTemplate необходимо задать DataType (`x:DataType`) в DataTemplate.
@@ -300,12 +301,12 @@ namespace ColorsListApp
 
 Как мы уже говорили о шаблонах данных, количество элементов XAML, созданных для каждого элемента, может сильно сказаться на производительности представления списка. Так как шаблоны данных и элемента управления совмещаются при отображении каждого элемента, фактическое число элементов, требуемых для отображения элемента, включает количество элементов в обоих шаблонах.
 
-Элементы управления ListView и GridView оптимизированы для сокращения числа элементов XAML, создаваемых для каждого элемента. Визуальные элементы **ListViewItem** создаются классом [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx). Это особый элемент XAML для отображения сложных визуальных элементов фокуса, выделения и других визуальных состояний без излишней нагрузки многочисленных элементов пользовательского интерфейса.
+Элементы управления ListView и GridView оптимизированы для сокращения числа элементов XAML, создаваемых для каждого элемента. Визуальные элементы **ListViewItem** создаются классом [ListViewItemPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx). Это особый элемент XAML для отображения сложных визуальных элементов фокуса, выделения и других визуальных состояний без излишней нагрузки многочисленных элементов пользовательского интерфейса.
  
 > [!NOTE]
 > В приложениях UWP для Windows 10 в **ListViewItem** и **GridViewItem** используется **ListViewItemPresenter**. Класс GridViewItemPresenter использовать не рекомендуется. Классы ListViewItem и GridViewItem устанавливают разные значения свойств в ListViewItemPresenter для получения разного визуального оформления по умолчанию.
 
-Для изменения оформления контейнера элемента используйте свойство [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) и предоставьте класс [**Style**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx), при этом его свойству [**TargetType**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.targettype.aspx) следует задать значение **ListViewItem** или **GridViewItem**.
+Для изменения оформления контейнера элемента используйте свойство [ItemContainerStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) и предоставьте класс [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx), при этом его свойству [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.targettype.aspx) следует задать значение **ListViewItem** или **GridViewItem**.
 
 В этом примере к классу ListViewItem добавляется отбивка, чтобы оставить место между элементами списка.
 
@@ -327,7 +328,7 @@ namespace ColorsListApp
 
 ![Элементы представления списка с отбивкой](images/listview-data-template-1.png)
 
-В стиле по умолчанию ListViewItem свойство **ContentMargin** класса имеет привязку [**TemplateBinding**](https://msdn.microsoft.com/windows/uwp/xaml-platform/templatebinding-markup-extension) к свойству **Padding** класса ListViewItem (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`). При установке свойства Padding его значение фактически передается свойству ContentMargin класса ListViewItemPresenter.
+В стиле по умолчанию ListViewItem свойство ListViewItemPresenter **ContentMargin** имеет привязку [TemplateBinding](https://msdn.microsoft.com/windows/uwp/xaml-platform/templatebinding-markup-extension) к свойству ListViewItem **Padding** (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`). При установке свойства Padding его значение фактически передается свойству ContentMargin класса ListViewItemPresenter.
 
 Для изменения других свойств ListViewItemPresenter, не привязанных к свойствам ListViewItem по шаблону, вам потребуется изменить шаблон ListViewItem с помощью нового класса ListViewItemPresenter, в котором можно изменять свойства. 
 
@@ -399,11 +400,11 @@ namespace ColorsListApp
 
 #### <a name="inline-and-overlay-selection-visuals"></a>Визуальные элементы выделения Inline и Overlay
 
-Классы ListView и GridView указывают выделенные элементы по-разному в зависимости от элемента управления и [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx). Подробнее о выделении в представлении списка см. в разделе [ListView and GridView](listview-and-gridview.md). 
+Классы ListView и GridView указывают выделенные элементы по-разному в зависимости от элемента управления и [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx). Подробнее о выделении в представлении списка см. в разделе [ListView and GridView](listview-and-gridview.md). 
 
-Если для **SelectionMode** установлено значение **Multiple**, в составе шаблона элемента управления элемента отображается флажок выделения. Вы можете использовать свойство [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) для отключения флажка выделения в режиме выделения нескольких элементов. Но это свойство игнорируется в других режимах выделения. Так, флажок нельзя включить в режиме расширенного выделения или выделения одного элемента.
+Если для **SelectionMode** установлено значение **Multiple**, в составе шаблона элемента управления элемента отображается флажок выделения. Вы можете использовать свойство [SelectionCheckMarkVisualEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) для отключения флажка выделения в режиме выделения нескольких элементов. Но это свойство игнорируется в других режимах выделения. Так, флажок нельзя включить в режиме расширенного выделения или выделения одного элемента.
 
-Вы можете установить свойство [**CheckMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode.aspx), чтобы указать, следует ли отображать флажок в стиле наложения или встроенном стиле.
+Вы можете установить свойство [CheckMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode.aspx), чтобы указать, следует ли отображать флажок в стиле наложения или встроенном стиле.
 
 - **Inline**. Этот стиль отображает флажок слева от содержимого, при этом фон контейнера элемента закрашивается для обозначения выделения. Это стиль по умолчанию для ListView.
 - **Overlay**. Этот стиль отображает флажок над содержимым, при этом закрашивается только рамка контейнера элемента для обозначения выделения. Это стиль по умолчанию для GridView.
@@ -448,7 +449,7 @@ ListViewItemPresenter имеет другие свойства кисти для
 Как упоминалось ранее, количество элементов пользовательского интерфейса в шаблоне элемента заметно сказывается на производительности представления списка Замена ListViewItemPresenter расширенными шаблонами XAML приводит к резкому увеличению числа элементов, поэтому ее не рекомендуется выполнять, если в представлении списка должно отображаться большое число элементов или производительности недостаточно.
 
 > [!NOTE]
-> **ListViewItemPresenter** поддерживается только если свойству [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) представления списка задано значение [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemswrapgrid.aspx) или [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx). Если вы измените значение свойства ItemsPanel на [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.variablesizedwrapgrid.aspx), [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.wrapgrid.aspx) или [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx), шаблон элемента автоматически переключится на расширенный шаблон XAML. Подробнее см. в разделе [Оптимизация пользовательского интерфейса ListView и GridView](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
+> **ListViewItemPresenter** поддерживается только, если свойству [ItemsPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) представления списка задано значение [ItemsWrapGrid](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemswrapgrid.aspx) или [ItemsStackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx). Если вы измените значение свойства ItemsPanel на [VariableSizedWrapGrid](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.variablesizedwrapgrid.aspx), [WrapGrid](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.wrapgrid.aspx) или [StackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx), шаблон элемента автоматически переключится на расширенный шаблон XAML. Подробнее см. в разделе [Оптимизация пользовательского интерфейса ListView и GridView](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
 
 Для настройки расширенного шаблона XAML вам потребуется создать его копию в приложении и привязать свойство **ItemContainerStyle** к копии.
 

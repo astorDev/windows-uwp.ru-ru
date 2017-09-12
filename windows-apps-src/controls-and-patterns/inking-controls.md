@@ -5,21 +5,23 @@ title: "Элементы управления рукописным вводом"
 label: Inking Controls
 template: detail.hbs
 ms.author: kbridge
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
-ms.openlocfilehash: 50c18f0ef72ad990971323921eae282c76c70be3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 3efbda64a872a59cd1e3e5da03cd9ab896642766
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="inking-controls"></a>Элементы управления рукописным вводом
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-В приложениях универсальной платформы Windows (UWP) рукописный ввод контролируется с помощью двух разных элементов управления: [**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) и [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
+В приложениях универсальной платформы Windows (UWP) рукописный ввод контролируется с помощью двух разных элементов управления: [InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) и [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
 
 Элемент управления InkCanvas отображает ввод с помощью пера в виде росчерка пера (используя параметры цвета и толщины штриха по умолчанию) или росчерка стирания. Этот элемент управления представляет собой прозрачное наложение, которое не содержит никаких встроенных элементов пользовательского интерфейса для изменения свойств росчерка пера по умолчанию.
 
@@ -33,18 +35,9 @@ translationtype: HT
 > [!NOTE]
 > Элемент управления InkToolbar поддерживает ввод с помощью мыши и пера; кроме того, его можно настроить для распознавания сенсорного ввода.
 
-<img src="images/ink-tools-invoked-toolbar.png" width="300">
+<img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)</li>
-<li>[**Класс InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)</li>
-<li>[**Класс InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)</li>
-<li>[**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)</li>
-</ul>
-</div>
-
+> **Важные API-интерфейсы**: [класс InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx), [класс InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx), [класс InkPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx), [Windows.UI.Input.Inking](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
@@ -56,7 +49,7 @@ InkCanvas позволяет включить в приложении базов
 Свяжите элементы управления InkCanvas и InkToolbar, чтобы предоставить пользователям интерфейс для активации функций рукописного ввода и настройки основных свойств пера, таких как размер штриха, цвет и форма кончика пера.
 
 > [!NOTE] 
-> Для более детальной настройки отображения росчерков пера с помощью элемента управления InkCanvas воспользуйтесь объектом [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx).
+> Для более детальной настройки отображения росчерков пера с помощью элемента управления InkCanvas воспользуйтесь объектом [InkPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx).
 
 ## <a name="examples"></a>Примеры
 
@@ -88,7 +81,7 @@ InkCanvas позволяет включить в приложении базов
  ```
 
 Она позволяет отобразить следующий элемент управления InkToolbar:
-<img src="images/ink-tools-uninvoked-toolbar.png" width="250">
+<img src="images/ink-tools-uninvoked-toolbar.png" width="250" alt="Basic InkToolbar">
 
 ### <a name="built-in-buttons"></a>Встроенные кнопки
 

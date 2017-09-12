@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 8c41f85c7d49d9019a2dc3a94242271a6fa9eb9a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bc0cfc468613429d7989c9c0d93bd98246c0195b
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/26/2017
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Обработка кадров мультимедиа с помощью MediaFrameReader
 
@@ -156,7 +158,48 @@ translationtype: HT
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources"></a>Используйте MultiSourceMediaFrameReader для получения коррелирующих по времени кадров из нескольких источников.
+Начиная с Windows 10 версии 1607, можно использовать [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.multisourcemediaframereader) для получения коррелирующих по времени кадров из нескольких источников. Этот API упрощает обработку, если требуются кадры из нескольких источников, сделанные примерно в одно время, например с использованием класса [**DepthCorrelatedCoordinateMapper**](https://docs.microsoft.com/en-us/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper). Одним из ограничений этого нового метода является то, что события поступления кадра создаются со скоростью самого медленного источника записи. Дополнительные кадры из более быстрых источников не обрабатываются. Кроме того, поскольку система ожидает, что кадры будут поступать из разных источников с разной скоростью, она автоматически не распознает, прекратил ли источник генерировать кадры. В примере кода из этого раздела показано, как использовать событие для создания собственной логики тайм-аута, которая вызывается, если коррелирующие кадры не поступают в течение определяемого приложением лимита времени.
+
+Действия по использованию [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.multisourcemediaframereader) совпадают с действиями по использованию [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader), описанного ранее в этой статье. В этом примере будет использоваться источник цвета и источник глубины. Объявите несколько строчных переменных, чтобы сохранить идентификаторы источников мультимедийных кадров, которые будут использоваться для выбора кадров из каждого источника. Затем объявите [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim?view=netframework-4.7), [**CancellationTokenSource**](https://msdn.microsoft.com/library/system.threading.cancellationtokensource.aspx) и [**EventHandler**](https://msdn.microsoft.com/library/system.eventhandler.aspx), которые будут использоваться для реализации логики тайм-аута в этом примере. 
+
+[!code-cs[MultiFrameDeclarations](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameDeclarations)]
+
+Используя описанные ранее в этой статье техники, запросите [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup), которая включает источники цвета и глубины, необходимые для этого сценария из примера. Выбрав нужную группу источника кадров, получите [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) для каждого источника кадров.
+
+[!code-cs[SelectColorAndDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSelectColorAndDepth)]
+
+Создайте и инициализируйте объект **MediaCapture** передавая выбранную группу источника кадров в параметрах инициализации.
+
+[!code-cs[MultiFrameInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameInitMediaCapture)]
+
+После инициализации объекта **MediaCapture** извлеките объекты [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) для камер цвета и глубины. Сохраните идентификатор для каждого источника, чтобы можно было выбрать входящий кадр для соответствующего источника.
+
+[!code-cs[GetColorAndDepthSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetColorAndDepthSource)]
+
+Создайте и инициализируйте **MultiSourceMediaFrameReader**, вызвав [**CreateMultiSourceFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture#Windows_Media_Capture_MediaCapture_CreateMultiSourceFrameReaderAsync_Windows_Foundation_Collections_IIterable_Windows_Media_Capture_Frames_MediaFrameSource__) и передав массив источников кадров, который будет использоваться считывателем. Зарегистрируйте обработчик событий для события [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_FrameArrived). В этом примере создается экземпляр вспомогательного класса **FrameRenderer**, описанный ранее в этой статье, для отображения кадров элементу управления **Image**. Запустите ридер кадров вызовом метода [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_StartAsync).
+
+Зарегистрируйте обработчик событий для события **CorellationFailed**, объявленного ранее в этом примере. Мы сигнализируем это событие, если один из используемых источников мультимедийных кадров прекратит создание кадров. Наконец, вызовите метод [**Task.Run**](https://msdn.microsoft.com/en-us/library/hh195051.aspx), чтобы вызвать вспомогательный метод тайм-аута (**NotifyAboutCorrelationFailure**) в отдельном потоке. Реализации этого метода приводится далее в этой статье.
+
+[!code-cs[InitMultiFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMultiFrameReader)]
+
+Событие **FrameArrived** создается всякий раз, когда новый кадр поступает из всех источников мультимедийных кадров, управление которыми осуществляется с помощью **MultiSourceMediaFrameReader**. Это означает, что это событие будет вызвано с интервалом, соответствующим скорости самого медленного мультимедийного источника. Если один источник создает несколько кадров за время, когда более медленный источник создаст один кадр, дополнительные кадры более быстрого источника удаляются. 
+
+Получите метод [**MultiSourceMediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference), связанный с событием, вызвав метод [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_TryAcquireLatestFrame). Получите метод **MediaFrameReference**, связанный с каждым источником мультимедийных кадров, вызвав [**TryGetFrameReferenceBySourceId**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference#Windows_Media_Capture_Frames_MultiSourceMediaFrameReference_TryGetFrameReferenceBySourceId_System_String_) путем передачи строк идентификаторов, сохраненных при инициализации ридера кадров.
+
+Вызовите метод [**Set**](https://msdn.microsoft.com/library/system.threading.manualreseteventslim.set.aspx) объекта **ManualResetEventSlim**, чтобы указать на поступление кадров. Мы проверим это событие в методе **NotifyCorrelationFailure**, который выполняется в отдельном потоке. 
+
+Наконец, выполните обработку в коррелирующих по времени мультимедийных кадрах. В этом примере отображается кадр из источника глубины.
+
+[!code-cs[MultiFrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameArrived)]
+
+Вспомогательный метод **NotifyCorrelationFailure** выполнялся в отдельном потоке после запуска ридера кадров. В этом методе необходимо убедиться в том, что событие поступления кадра сигнализируется. Помните, что в обработчике **FrameArrived** мы задаем это событие при каждом получении набора коррелирующих кадров. Если событие не сигнализируется в течение некоторого определяемого приложением времени (целесообразно задать значение 5 секунд) и задача не отменена с помощью метода **CancellationToken**, высока вероятность, что один из источников мультимедийных кадров перестал считывать кадры. В этом случае рекомендуется завершить работу ридера кадров и вызвать определяемое приложением событие **CorrelationFailed**. В обработчике для этого события можно остановить ридер кадров и очистить соответствующие ресурсы, как показано ранее в этой статье.
+
+[!code-cs[NotifyCorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetNotifyCorrelationFailure)]
+
+[!code-cs[CorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCorrelationFailure)]
+
+## <a name="related-topics"></a>Связанные статьи
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)

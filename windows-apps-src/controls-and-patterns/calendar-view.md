@@ -6,14 +6,20 @@ ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: b033c58fed79db197858db99d71ad6a174a9a662
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: joyate
+doc-status: Published
+ms.openlocfilehash: 570aa40b691b6ad259ba381a6ef6060b430787a1
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="calendar-view"></a>Представление календаря
 
@@ -21,14 +27,7 @@ translationtype: HT
 
 Представление календаря позволяет пользователю просматривать календарь и взаимодействовать с ним, перемещаясь по месяцам, годам и десятилетиям. Пользователь может выбрать отдельную дату или диапазон дат. Не имеет поверхности выбора, и календарь всегда виден. 
 
-
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
-<li>[**Событие SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)</li>
-</ul>
-</div>
+> **Важные API-интерфейсы**: [класс CalendarView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx), [событие SelectedDatesChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
@@ -40,7 +39,7 @@ translationtype: HT
 
 ## <a name="examples"></a>Примеры
 
-Представление календаря состоит из 3 отдельных представлений: представление месяца, представление года и представление десятилетия. По умолчанию он запускается с открытым представлением месяца. Чтобы указать желаемое начальное представление, задав свойство [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx).
+Представление календаря состоит из 3 отдельных представлений: представление месяца, представление года и представление десятилетия. По умолчанию он запускается с открытым представлением месяца. Чтобы указать желаемое начальное представление, задав свойство [DisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx).
 
 ![3 представления представления календаря](images/calendar-view-3-views.png)
 
@@ -60,9 +59,9 @@ translationtype: HT
 
 ### <a name="selecting-dates"></a>Выбора дат
 
-По умолчанию для свойства [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) задано значение **Single**. Это позволяет пользователю выбрать дату в календаре. Установите для SelectionMode значение **None**, чтобы отключить выбор даты. 
+По умолчанию для свойства [SelectionMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) задано значение **Single**. Это позволяет пользователю выбрать дату в календаре. Установите для SelectionMode значение **None**, чтобы отключить выбор даты. 
 
-Установите для SelectionMode значение **Multiple**, чтобы пользователь мог выбрать несколько дат. Чтобы программно обеспечить выбор нескольких дат, добавьте объекты [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)/[DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) в коллекцию [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx), как показано здесь:
+Установите для SelectionMode значение **Multiple**, чтобы пользователь мог выбрать несколько дат. Чтобы программно обеспечить выбор нескольких дат, добавьте объекты [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)/[DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) в коллекцию [SelectedDates](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx), как показано здесь:
 
 ```csharp
 calendarView1.SelectedDates.Add(DateTimeOffset.Now);
@@ -71,7 +70,7 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 Пользователь может отменить выбор даты, нажав эту дату в сетке календаря.
 
-Можно обработать событие [**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) так, чтобы оно получало оповещение в случае изменения коллекции [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx).
+Можно обработать событие [SelectedDatesChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) так, чтобы оно получало оповещение в случае изменения коллекции [SelectedDates](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx).
 
 > [!NOTE]
 > Важные сведения о значениях даты см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи "Элементы управления датой и временем".
@@ -80,9 +79,9 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 Представление календаря состоит как из элементов XAML , определенных в ControlTemplate, так и визуальных элементов, обработанных непосредственно элементом управления. 
 - Элементы XAML, определенные в шаблоне элементов управления, включают границу, которая содержит элемент управления, заголовок, кнопки "Назад" и "Далее", а также элементы DayOfWeek. Можно задать стиль и изменить шаблон этих элементов, как и любого другого элемента управления XAML. 
-- Сетка календаря состоит из объектов [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx). Задать стиль и изменить шаблон этих элементов невозможно, но для настройки их внешнего вида предоставляются различные свойства.
+- Сетка календаря состоит из объектов [CalendarViewDayItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx). Задать стиль и изменить шаблон этих элементов невозможно, но для настройки их внешнего вида предоставляются различные свойства.
 
-На данной диаграмме показаны элементы, которые составляют представление месяца в календаре. Дополнительные сведения см. в разделе "Примечания" в классе [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx).
+На данной диаграмме показаны элементы, которые составляют представление месяца в календаре. Дополнительные сведения см. в разделе "Примечания" в классе [CalendarViewDayItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx).
 
 ![Элементы представления месяца в календаре](images/calendar-view-month-elements.png)
 
@@ -100,9 +99,9 @@ FirstofYearDecadeLabel (в представлениях года и десяти
 OutofScope | [IsOutOfScopeEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.isoutofscopeenabled.aspx), [OutOfScopeBackground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopebackground.aspx), [OutOfScopeForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopeforeground.aspx)  
 Сегодня | [IsTodayHighlighted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.istodayhighlighted.aspx), [TodayFontWeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayfontweight.aspx), [TodayForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayforeground.aspx)  
 
- По умолчанию в представлении месяца отображается одновременно 6недель. Чтобы изменить количество отображаемых недель, задайте свойство [**NumberOfWeeksInView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.numberofweeksinview.aspx). Минимальное количество отображаемых недель— 2; максимальное— 8.
+ По умолчанию в представлении месяца отображается одновременно 6недель. Чтобы изменить количество отображаемых недель, задайте свойство [NumberOfWeeksInView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.numberofweeksinview.aspx). Минимальное количество отображаемых недель— 2; максимальное— 8.
 
-По умолчанию представления года и десятилетия отображаются в сетке 4x4. Чтобы изменить количество строк или столбцов, вызовите [**SetYearDecadeDisplayDimensions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions.aspx) с желаемым количеством строк и столбцов. Это изменит сетку для представлений и года, и десятилетия.
+По умолчанию представления года и десятилетия отображаются в сетке 4x4. Чтобы изменить количество строк или столбцов, вызовите [SetYearDecadeDisplayDimensions](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions.aspx) с желаемым количеством строк и столбцов. Это изменит сетку для представлений и года, и десятилетия.
 
 Здесь представления года и десятилетия устанавливаются для отображения в сетке 3x4.
 
@@ -110,7 +109,7 @@ OutofScope | [IsOutOfScopeEnabled](https://msdn.microsoft.com/library/windows/ap
 calendarView1.SetYearDecadeDisplayDimensions(3, 4);
 ```
 
-По умолчанию минимальная дата, отображаемая в представлении календаря,—100 лет до текущей даты, а максимальная дата— 100 лет после текущей даты. Чтобы изменить минимальную и максимальную даты, отображаемые в календаре, задайте свойства [**MinDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.mindate.aspx) и [**MaxDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.maxdate.aspx).
+По умолчанию минимальная дата, отображаемая в представлении календаря,—100 лет до текущей даты, а максимальная дата— 100 лет после текущей даты. Чтобы изменить минимальную и максимальную даты, отображаемые в календаре, задайте свойства [MinDate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.mindate.aspx) и [MaxDate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.maxdate.aspx).
 
 ```csharp
 calendarView1.MinDate = new DateTime(2000, 1, 1);
@@ -119,11 +118,11 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 ### <a name="updating-calendar-day-items"></a>Обновление элементов дня в календаре
 
-Каждый день в календаре представляется объектом [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx). Для получения доступа к отдельному элементу дня и использования его свойств и методов, обработайте событие [**CalendarViewDayItemChanging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) и используйте свойство Item аргументов события для доступа к CalendarViewDayItem.
+Каждый день в календаре представляется объектом [CalendarViewDayItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx). Для получения доступа к отдельному элементу дня и использования его свойств и методов, обработайте событие [CalendarViewDayItemChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) и используйте свойство Item аргументов события для доступа к CalendarViewDayItem.
 
-Чтобы запретить выбор дня в представлении календаря, установите для свойства [**CalendarViewDayItem.IsBlackout**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.isblackout.aspx) значение **true**. 
+Чтобы запретить выбор дня в представлении календаря, установите для свойства [CalendarViewDayItem.IsBlackout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.isblackout.aspx) значение **true**. 
 
-Чтобы отобразить контекстные данные о плотности событий дня, вызовите метод [**CalendarViewDayItem.SetDensityColors**](https://msdn.microsoft.com/library/windows/apps/xaml/dn890067.aspx). Можно отобразить от 0 до 10 шкал плотности для каждого дня и установить цвет для каждой шкалы. 
+Чтобы отобразить контекстные данные о плотности событий дня, вызовите метод [CalendarViewDayItem.SetDensityColors](https://msdn.microsoft.com/library/windows/apps/xaml/dn890067.aspx). Можно отобразить от 0 до 10 шкал плотности для каждого дня и установить цвет для каждой шкалы. 
 
 Вот некоторые элементы дня в календаре. Дни 1 и 2 затемнены. Для дней 2, 3 и 4 установлены разные шкалы плотности.
 

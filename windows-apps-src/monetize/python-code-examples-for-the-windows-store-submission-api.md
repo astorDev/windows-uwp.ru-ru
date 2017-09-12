@@ -2,24 +2,24 @@
 author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: "Используйте примеры кода на языке Python, приведенные в этом разделе, чтобы более подробно ознакомиться с работой API отправки Магазина Windows."
-title: "Примеры кода на языке Python для API отправки"
+title: "Пример на языке Python — отправки для приложений, надстроек и тестовых пакетов"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, API отправки Магазина Windows, примеры кода"
-ms.openlocfilehash: a46907ecfea1de60b8a32cdaea7076f056a41ff5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10, UWP, API отправки Магазина Windows, примеры кода, python"
+ms.openlocfilehash: 01d40aa31531aa4d5b75f02627bc7e6234963c7e
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/09/2017
 ---
-# <a name="python-code-examples-for-the-submission-api"></a>Примеры кода на языке Python для API отправки
+# <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Пример на языке Python: отправки для приложений, надстроек и тестовых пакетов
 
-В этой статье представлены примеры кода на языке Python для использования *API отправки Магазина Windows*. Дополнительные сведения об этом API-интерфейсе см. в разделе [Создание отправок и управление ими с помощью служб Магазина Windows](create-and-manage-submissions-using-windows-store-services.md).
+В этой статье представлены примеры кода на Python по использованию [API отправки в Магазин Windows](create-and-manage-submissions-using-windows-store-services.md) для решения этих задач.
 
-В этих примерах кода демонстрируются следующие задачи:
-
-* [Получение токена доступа Azure AD](#token)
+* [Получение маркера доступа Azure AD](#token)
 * [Создание надстройки](#create-add-on)
 * [Создание тестового пакета](#create-package-flight)
 * [Создание отправки приложения](#create-app-submission)
@@ -36,7 +36,7 @@ translationtype: HT
 <span id="create-add-on" />
 ## <a name="create-an-add-on"></a>Создание надстройки
 
-В следующем примере показано, как [создать](create-an-add-on.md), а затем [удалить](delete-an-add-on.md) надстройку (надстройки также известны как внутренние продукты приложений или IAP).
+В следующем примере показано, как [создать](create-an-add-on.md), а затем [удалить](delete-an-add-on.md) надстройку.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 

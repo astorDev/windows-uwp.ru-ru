@@ -1,57 +1,59 @@
 ---
 author: normesta
-Description: "В этой статье описывается процедура подписывания классического приложения, преобразованного в приложение универсальной платформы Windows (UWP)."
+Description: "Упакованные классические приложения могут использовать широкий спектр API-интерфейсов универсальной платформы Windows (UWP), даже если они не полностью преобразованы в приложение UWP. В этой статье перечисляются доступные классы, которые может использовать упакованное приложение."
 Search.Product: eADQiWindows 10XVcnh
-title: "Мост переноса классических приложений на UWP: поддерживаемые API UWP"
+title: "API-интерфейсы UWP, доступные упакованным классическим приложениям (мост для классических приложений)"
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
-ms.openlocfilehash: 34b29f8e68c77acdb19a1b0005f039097c8d2cbb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 796e47167c8462357764c78223dca34a11888aaf
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/26/2017
 ---
-# <a name="desktop-to-uwp-bridge-supported-uwp-apis"></a>Мост переноса классических приложений на UWP: поддерживаемые API UWP
+# <a name="uwp-apis-available-to-a-packaged-desktop-app-desktop-bridge"></a>API-интерфейсы UWP, доступные упакованным классическим приложениям (мост для классических приложений)
 
-Преобразованные классические приложения могут использовать широкий спектр API универсальной платформы Windows (UWP), даже если они не полностью преобразованы в приложение UWP. В этой статье перечисляются доступные классы, которые может использовать ваше преобразованное приложение.
+Упакованные классические приложения могут использовать широкий спектр API-интерфейсов универсальной платформы Windows (UWP), даже если они не полностью преобразованы в приложение UWP. В этой статье перечисляются доступные классы, которые может использовать упакованное приложение.
 
-Большинство API UWP хорошо работают с преобразованными классическими приложениями. Однако некоторые функциональные области пока еще не прошли полное тестирование или работают неправильно.
+Большинство API-интерфейсов UWP хорошо работают с упакованными классическими приложениями. Однако некоторые функциональные области пока еще не прошли полное тестирование или работают неправильно.
 
 <table><tr><th>Область применения компонента</th><th>Сведения</th><tr>
-<tr><td>Встречи, контакты и сообщения электронной почты</td><td>В настоящее время не все API поддерживаются для преобразованных приложений.</td></tr>
-<tr><td>Проверка подлинности и удостоверение пользователя</td><td>В настоящее время не все API поддерживаются для преобразованных приложений.</td></tr>
-<tr><td>Фоновые задачи</td><td>Хотя преобразованные приложения могут регистрировать фоновые задачи, только полностью совместимые приложения UWP могут выполняться *как* фоновая задача. Дополнительные сведения см. в разделе [Пример фоновой задачи на GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample).</td></tr>
-<tr><td>Bluetooth</td><td>В настоящее время не все API поддерживаются для преобразованных приложений.</td></tr>
-<tr><td>Чат и телефонные звонки</td><td>Преобразованные приложения не могут выполняться на мобильных устройствах, пока они не будут полностью перенесены в UWP.</td></tr>
+<tr><td>Встречи, контакты и сообщения электронной почты</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
+<tr><td>Проверка подлинности и удостоверение пользователя</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
+<tr><td>Фоновые задачи</td><td>Хотя упакованные приложения могут регистрировать фоновые задачи, только полностью совместимые приложения UWP могут выполняться *как* фоновая задача. Дополнительные сведения см. в разделе [Пример фоновой задачи на GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample).</td></tr>
+<tr><td>Bluetooth</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
+<tr><td>Чат и телефонные звонки</td><td>Упакованные приложения не могут выполняться на мобильных устройствах, пока они не будут полностью перенесены в UWP.</td></tr>
 <tr><td>Активация контракта</td><td>Только полностью совместимые приложения UWP могут быть активированы контрактом.</td></tr>
-<tr><td>Шифрование</td><td>В настоящее время не все API поддерживаются для преобразованных приложений.</td></tr>
-<tr><td>Геолокация</td><td>В настоящее время не все API поддерживаются для преобразованных приложений.</td></tr>
-<tr><td>Средства выбора файлов и папок</td><td>Преобразованные приложения имеют полный доступ к файловой системе, и для них не требуются средства выбора UWP.</td></tr>
-<tr><td>Мультимедиа</td><td>В настоящее время не все API поддерживаются для преобразованных приложений.</td></tr>
-<tr><td>POS-терминал</td><td>В настоящее время не все API поддерживаются для преобразованных приложений.</td></tr>
-<tr><td>Смарт-карты</td><td>В настоящее время не все API поддерживаются для преобразованных приложений.</td></tr>
-<tr><td>PlayReady</td><td>В настоящее время не все API поддерживаются для преобразованных приложений.</td></tr>
-<tr><td>VPN</td><td>В настоящее время не все API поддерживаются для преобразованных приложений.</td></tr>
-<tr><td>Кошелек</td><td>Преобразованные приложения не могут выполняться на мобильных устройствах, пока они не будут полностью перенесены в UWP.</td></tr>
+<tr><td>Шифрование</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
+<tr><td>Геолокация</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
+<tr><td>Средства выбора файлов и папок</td><td>Упакованные приложения имеют полный доступ к файловой системе, и для них не требуются средства выбора UWP.</td></tr>
+<tr><td>Мультимедиа</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
+<tr><td>Точка обслуживания</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
+<tr><td>Смарт-карты</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
+<tr><td>PlayReady</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
+<tr><td>VPN</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
+<tr><td>Кошелек</td><td>Упакованные приложения не могут выполняться на мобильных устройствах, пока они не будут полностью перенесены в UWP.</td></tr>
 <tr><td>Пользовательский интерфейс XAML</td><td>Добавление пользовательского интерфейса XAML в процесс приложения Win32 невозможно.</td></tr>
 </table>
 
 
 Иногда API в этих областях могут работать правильно. Однако если API явно не указан в списке поддерживаемых, следует избегать его использования, так как возможны непредусмотренные побочные эффекты или поведение. Поддержка этих API может появиться в будущих выпусках. Пока же следует использовать в вашем приложении соответствующие API Win32 или .NET.
 
-Некоторые API UWP, доступные для полностью классических приложений, не поддерживаются для преобразованных приложений. Если ваше классическое приложение использовало API UWP до преобразования, необходимо убедиться, что эти API по-прежнему поддерживаются. Подробнее см. в разделе [API среды выполнения Windows для классических приложений](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx).
+Некоторые API UWP, доступные для полностью классических приложений, не поддерживаются для упакованных приложений. Если ваше классическое приложение использовало API UWP до преобразования, необходимо убедиться, что эти API по-прежнему поддерживаются. Подробнее см. в разделе [API среды выполнения Windows для классических приложений](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx).
 
 ## <a name="list-of-apis"></a>Список API
 
-Ниже приведен полный список API UWP, поддерживаемых в преобразованных приложениях. Можно просмотреть [API, поддерживаемые в новых преобразованных приложениях](#new) или [API, поддерживаемые как в преобразованных, так и в классических приложениях](#both).
+Ниже приведен полный список API UWP, поддерживаемых в упакованных приложениях. Можно просмотреть [API, поддерживаемые в новых упакованных приложениях](#new) или [API, поддерживаемые как в упакованных, так и в классических приложениях](#both).
 
-Примеры использования API WinRT см. в [примерах преобразования классических приложений в приложения UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) и [примерах приложений для универсальной платформы Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples) на GitHub. Вы также можете ознакомиться с записью блока "Разработка приложения для Windows" [Вызов API Windows 10 из классического приложения](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
+Примеры использования API WinRT см. в [примерах моста для классических приложений](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) и [примерах приложений для универсальной платформы Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples) на GitHub. Вы также можете ознакомиться с записью блога "Разработка приложения для Windows" [Вызов API Windows 10 из классического приложения](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
 
 <span id="new" />
-### <a name="apis-supported-in-newly-converted-apps"></a>API, поддерживаемые в новых преобразованных приложениях
+### <a name="apis-supported-in-newly-packaged-apps"></a>API, поддерживаемые в новых упакованных приложениях
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataProviderHandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -134,7 +136,7 @@ translationtype: HT
 * [Windows.Foundation.AsyncActionProgressHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionProgressHandler<TProgress>)
 * [Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>)
 * [Windows.Foundation.AsyncOperationCompletedHandler<TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationCompletedHandler<TResult>)
-* [Windows.Foundation.Collections.VectorChangedEventHandler<T>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.VectorChangedEventHandler<T>)
+* [Windows.Foundation.Collections.VectorChangedEventHandler<T>](https://msdn.microsoft.com/library/windows/apps/br206656.aspx)
 * [Windows.Foundation.DeferralCompletedHandler](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.DeferralCompletedHandler)
 * [Windows.Foundation.Diagnostics.FileLoggingSession](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Diagnostics.FileLoggingSession)
 * [Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)
@@ -302,7 +304,6 @@ translationtype: HT
 * [Windows.Services.Store.StoreRequestHelper](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreRequestHelper)
 * [Windows.Services.Store.StoreSendRequestResult](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSendRequestResult)
 * [Windows.Services.Store.StoreSku](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSku)
-* [Windows.Services.Store.StoreSubscriptionData](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSubscriptionData)
 * [Windows.Services.Store.StoreVideo](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreVideo)
 * [Windows.Storage.ApplicationDataSetVersionHandler](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.ApplicationDataSetVersionHandler)
 * [Windows.Storage.CachedFileManager](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.CachedFileManager)
@@ -377,7 +378,7 @@ translationtype: HT
 * [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/Windows.UI.StartScreen.JumpListItem)
 
 <span id="both" />
-### <a name="apis-supported-in-both-converted-apps-and-desktop-applications"></a>API, поддерживаемые как в преобразованных, так и в классических приложениях
+### <a name="apis-supported-in-both-packaged-apps-and-desktop-applications"></a>API, поддерживаемые как в упакованных, так и в классических приложениях
 
 * [Windows.ApplicationModel.Core.AppListEntry](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.AppListEntry)
 * [Windows.ApplicationModel.DataTransfer.DataPackage](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)
@@ -632,15 +633,15 @@ translationtype: HT
 * [Windows.Devices.WiFiDirect.WiFiDirectDevice](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectDevice)
 * [Windows.Devices.WiFiDirect.WiFiDirectInformationElement](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectInformationElement)
 * [Windows.Devices.WiFiDirect.WiFiDirectLegacySettings](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectLegacySettings)
-* [Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>)
+* [Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/br206573.aspx(d=robot))
 * [Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
-* [Windows.Foundation.Collections.MapChangedEventHandler<K,.V>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.MapChangedEventHandler<K,.V>)
+* [Windows.Foundation.Collections.MapChangedEventHandler<K,.V>](https://msdn.microsoft.com/library/windows/apps/br206644.aspx)
 * [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet)
 * [Windows.Foundation.Collections.StringMap](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.StringMap)
 * [Windows.Foundation.Collections.ValueSet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.ValueSet)
 * [Windows.Foundation.Deferral](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral)
 * [Windows.Foundation.PropertyValue](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.PropertyValue)
-* [Windows.Foundation.TypedEventHandler<Tsender,.TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.TypedEventHandler<Tsender,.TResult>)
+* [Windows.Foundation.TypedEventHandler<Tsender,.TResult>](https://msdn.microsoft.com/library/windows/apps/br225997.aspx(d=robot))
 * [Windows.Foundation.Uri](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Uri)
 * [Windows.Foundation.WwwFormUrlDecoder](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoder)
 * [Windows.Foundation.WwwFormUrlDecoderEntry](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoderEntry)
@@ -947,7 +948,7 @@ translationtype: HT
 * [Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties)
 * [Windows.UI.Input.Inking.InkInputProcessingConfiguration](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkInputProcessingConfiguration)
 * [Windows.UI.Input.Inking.InkManager](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkManager)
-* [Windows.UI.Input.Inking.InkPoint](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPoint)
+* [Windows.UI.Input.Inking.InkPoint](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPoint)
 * [Windows.UI.Input.Inking.InkPresenter](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenter)
 * [Windows.UI.Input.Inking.InkPresenterRuler](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenterRuler)
 * [Windows.UI.Input.Inking.InkRecognitionResult](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkRecognitionResult)

@@ -6,14 +6,19 @@ ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: c5a34805941d72981f84a5d515e01d404fb30650
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: predavid
+design-contact: kimsea
+doc-status: Published
+ms.openlocfilehash: 8b901f6077b3f2eb765b53caf9bba188eae5ff0e
+ms.sourcegitcommit: 10f8dcf69d37cdb61562fc9f4d268ccb499c368f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/07/2017
 ---
 # <a name="semantic-zoom"></a>Контекстное масштабирование
 
@@ -26,14 +31,7 @@ translationtype: HT
 
 Например, при просмотре адресной книги пользователь может уменьшить масштаб, чтобы быстро перейти к списку имен на букву "Б", а затем, увеличив масштаб представления, просмотреть имена на эту букву. 
 
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601)</li>
-<li>[**Класс ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)</li>
-<li>[**Класс GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)</li>
-</ul>
-</div>
+> **Важные API-интерфейсы**: [класс SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601), [класс ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)
 
 **Возможности**:
 
@@ -45,7 +43,7 @@ translationtype: HT
 
 Используйте элемент управления **SemanticZoom**, если необходимо отображать набор сгруппированных данных, который настолько большой, что его не возможно полностью показать на одной или двух страницах.
 
-Не путайте контекстное масштабирование с оптическим масштабированием. Хотя обе технологии используют одни и те же механизмы взаимодействия и базовое поведение (отображение более или менее детализированного представления с учетом коэффициента масштабирования), оптическим масштабированием называется настройка увеличения какой-либо области содержимого или объекта, например фотографии.  Подробнее об элементах управления для визуального масштабирования см. в разделе об элементе управления [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx).
+Не путайте контекстное масштабирование с оптическим масштабированием. Хотя обе технологии используют одни и те же механизмы взаимодействия и базовое поведение (отображение более или менее детализированного представления с учетом коэффициента масштабирования), оптическим масштабированием называется настройка увеличения какой-либо области содержимого или объекта, например фотографии.  Подробнее об элементах управления для визуального масштабирования см. в разделе об элементе управления [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx).
 
 ## <a name="examples"></a>Примеры
 
@@ -63,7 +61,7 @@ translationtype: HT
 
 ## <a name="create-a-semantic-zoom"></a>Создание контекстного масштабирования
 
-Элемент управления **SemanticZoom** не имеет собственного визуального представления. Это размещающий элемент управления, который управляет переходами между двумя другими элементами управления, позволяющими просматривать содержимое. Как правило, это элементы **ListView** или **GridView**.  Для элементов управления просмотром необходимо задать свойства [**ZoomedInView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedinview.aspx) и [**ZoomedOutView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedoutview.aspx) объекта SemanticZoom.
+Элемент управления **SemanticZoom** не имеет собственного визуального представления. Это размещающий элемент управления, который управляет переходами между двумя другими элементами управления, позволяющими просматривать содержимое. Как правило, это элементы **ListView** или **GridView**.  Для элементов управления просмотром необходимо задать свойства [ZoomedInView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedinview.aspx) и [ZoomedOutView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedoutview.aspx) объекта SemanticZoom.
 
 Для контекстного масштабирования необходимы три элемента:
 - Сгруппированный источник данных
@@ -72,19 +70,18 @@ translationtype: HT
 
 Прежде чем использовать контекстное масштабирование, вы должны знать, как использовать представление списка со сгруппированными данными. Дополнительные сведения см. в разделах [Представление списка и представление сетки](listview-and-gridview.md) и [Группировка элементов в списке](). 
 
-> **Примечание.**&nbsp;&nbsp;Чтобы определить увеличенное и уменьшенное представление элемента управления SemanticZoom, можно использовать любые два элемента управления, реализующие интерфейс [**ISemanticZoomInformation**](). Платформа XAML предоставляет три элемента управления, которые реализуют этот интерфейс: ListView, GridView и Hub.
+> **Примечание.**&nbsp;&nbsp;Чтобы определить увеличенное и уменьшенное представление элемента управления SemanticZoom, можно использовать любые два элемента управления, реализующие интерфейс [ISemanticZoomInformation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.isemanticzoominformation.aspx). Платформа XAML предоставляет три элемента управления, которые реализуют этот интерфейс: ListView, GridView и Hub.
  
  Данный пример XAML демонстрирует структуру элемента управления SemanticZoom. Другие элементы управления назначаются свойствам ZoomedInView и ZoomedOutView.
  
- **XAML**
  ```xaml
 <SemanticZoom>
     <SemanticZoom.ZoomedInView>
-        <!-- Put the GridView for the zoomed out view here. -->   
+        <!-- Put the GridView for the zoomed in view here. -->   
     </SemanticZoom.ZoomedInView>
 
     <SemanticZoom.ZoomedOutView>
-        <!-- Put the ListView for the zoomed in view here. -->       
+        <!-- Put the ListView for the zoomed out view here. -->       
     </SemanticZoom.ZoomedOutView>
 </SemanticZoom>
  ```
@@ -95,7 +92,6 @@ translationtype: HT
 
 Это элемент управления GridView для увеличенного представления. Увеличенное представление должно отображать отдельные элементы данных в группах. В этом примере показано, как отображать элементы в сетке с изображением и текстом. 
 
-**XAML**
 ```xaml
 <SemanticZoom.ZoomedInView>
     <GridView ItemsSource="{x:Bind cvsGroups.View}" 
@@ -111,7 +107,6 @@ translationtype: HT
  
 Внешний вид заголовков группы определяется в ресурсе `ZoomedInGroupHeaderTemplate`. Внешний вид элементов определяется в ресурсе `ZoomedInTemplate`. 
 
-**XAML**   
 ```xaml
 <DataTemplate x:Key="" x:DataType="data:ControlInfoDataGroup">
     <TextBlock Text="{x:Bind Title}" 
@@ -137,7 +132,6 @@ translationtype: HT
 
 Этот код XAML определяет элемент управления ListView для уменьшенного представления. Этот пример показывает, как отобразить заголовки группы в качестве текста в списке.
 
-**XAML**
 ```xaml
 <SemanticZoom.ZoomedOutView>
     <ListView ItemsSource="{x:Bind cvsGroups.View.CollectionGroups}" 
@@ -148,7 +142,6 @@ translationtype: HT
 
  Внешний вид определяется в ресурсе `ZoomedOutTemplate`.
  
- **XAML**   
 ```xaml    
 <DataTemplate x:Key="ZoomedOutTemplate" x:DataType="wuxdata:ICollectionViewGroup">
     <TextBlock Text="{x:Bind Group.(data:ControlInfoDataGroup.Title)}" 
@@ -158,18 +151,16 @@ translationtype: HT
 
 **Синхронизация представлений**
 
-Представления с увеличенным и с уменьшенным масштабом следует синхронизировать. Тогда, если пользователь выбирает группу в представлении с уменьшенным масштабом, подробная информация о той же группе выводится в представлении с увеличенным масштабом. Для синхронизации представлений можно использовать класс [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx) или добавить код.
+Представления с увеличенным и с уменьшенным масштабом следует синхронизировать. Тогда, если пользователь выбирает группу в представлении с уменьшенным масштабом, подробная информация о той же группе выводится в представлении с увеличенным масштабом. Для синхронизации представлений можно использовать класс [CollectionViewSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx) или добавить код.
 
-Любые элементы управления, привязанные к одному и тому же классу CollectionViewSource, будут всегда иметь один и тот же текущий элемент. Если оба представления используют один и тот же CollectionViewSource в качестве источника данных, CollectionViewSource синхронизирует представления автоматически. Дополнительные сведения см. в разделе [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx).
+Любые элементы управления, привязанные к одному и тому же классу CollectionViewSource, будут всегда иметь один и тот же текущий элемент. Если оба представления используют один и тот же CollectionViewSource в качестве источника данных, CollectionViewSource синхронизирует представления автоматически. Дополнительные сведения см. в разделе [CollectionViewSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx).
 
-Если вы не используете [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.viewchangestarted.aspx) для синхронизации представлений, вы должны обработать событие ViewChangeStarted и синхронизировать элементы в обработчике событий, как показано здесь.
+Если вы не используете [CollectionViewSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.viewchangestarted.aspx) для синхронизации представлений, вы должны обработать событие ViewChangeStarted и синхронизировать элементы в обработчике событий, как показано здесь.
 
-**XAML**
 ```xaml
 <SemanticZoom x:Name="semanticZoom" ViewChangeStarted="SemanticZoom_ViewChangeStarted">
 ```
 
-**C#**
 ```csharp
 private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChangedEventArgs e)
 {

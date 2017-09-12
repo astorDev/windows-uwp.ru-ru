@@ -9,14 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, рекламы, реклама, AdControl, javascript"
-ms.openlocfilehash: b669925c3b630ddbfe82086231c46c951072244b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 5a64f58c7f66dd1177549562364a483641b1fd32
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="create-an-adcontrol-in-javascript"></a>Создание AdControl на Javascript
-
-
-
 
 В примерах в данной статье показано, как программным способом создать [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) на JavaScript. В этой статье предполагается, что вы уже добавили в свой проект ссылки, необходимые для использования **AdControl**. Дополнительные сведения, включая подробное пошаговое руководство по созданию и инициализации **AdControl** в разметке HTML вместо JavaScript, см. в разделе [AdControl в HTML 5 и JavaScript](adcontrol-in-html-5-and-javascript.md).
 
@@ -42,7 +41,8 @@ translationtype: HT
 
 В этом примере предполагается, что вы уже объявили методы обработчика событий с названиями **myAdError**, **myAdRefreshed** и **myAdEngagedChanged**.
 
->**Примечание.**&nbsp;&nbsp;Значения *applicationId* и *adUnitId*, приведенные в данном примере, являются [значениями тестового режима](test-mode-values.md). Перед отправкой приложения необходимо [заменить эти тестовые значения действительными значениями](set-up-ad-units-in-your-app.md) из Центра разработки для Windows.
+> [!NOTE]
+> Значения *applicationId* и *adUnitId*, приведенные в данном примере, являются [значениями тестового режима](test-mode-values.md). Перед отправкой приложения необходимо [заменить эти тестовые значения действительными значениями](set-up-ad-units-in-your-app.md) из Центра разработки для Windows.
 
 Если вы используете этот код и не видите рекламу, попробуйте задать атрибут **position:relative** в элементе **div**, содержащем **AdControl**. Это переопределяет параметр по умолчанию для **IFrame**. Объявления будут отображаться правильно, если их отображение не отключено значением этого атрибута. Обратите внимание, что новые рекламные блоки, могут быть недоступны до 30 минут.
 

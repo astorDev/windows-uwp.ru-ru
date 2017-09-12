@@ -6,14 +6,20 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 33a8b62a378e4a9abe20be04a49c94d886144cc5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: 370c5266277ff442f26c9aeb951d869ec70b31c5
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="radio-buttons"></a>Переключатели
 
@@ -21,19 +27,11 @@ translationtype: HT
 
 Переключатели типа Radio Button позволяют пользователю выбрать один параметр из двух или более предлагаемых вариантов. Каждый параметр представлен одним переключателем, пользователь может выбрать только один переключатель из группы.
 
+> **Важные API-интерфейсы**: [класс RadioButton](https://msdn.microsoft.com/library/windows/apps/br227544), [событие Checked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx), [свойство IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+
 (Если вам интересно, откуда взялось название этого переключателя на английском (Radio Button) — оно происходит от названия кнопок настройки каналов на радиоприемниках.)
 
 ![Переключатели](images/controls/radio-button.png)
-
-<div class="important-apis" >
-<b>Важные API</b><br/>
-<ul>
-<li>[**Класс RadioButton**](https://msdn.microsoft.com/library/windows/apps/br227544)</li>
-<li>[**Событие Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
-<li>[**Свойство IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)</li>
-</ul>
-</div>
-
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -68,7 +66,7 @@ translationtype: HT
 
 Переключатели работают в группах. Существует два способа группировки переключателей.
 - Размещение в одном родительском контейнере.
-- Установка одинакового значения свойства [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) для всех переключателей.
+- Установка одинакового значения свойства [GroupName](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) для всех переключателей.
 
 > **Примечание.**&nbsp;&nbsp;При доступе с клавиатуры группа переключателей ведет себя как единый элемент управления. Выделение переключателя выполняется только с помощью клавиши TAB, но пользователи могут по циклу переходить по всей группе при помощи клавиш со стрелками.
 
@@ -158,7 +156,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 ![Переключатели в двух группах](images/radio-button-groups.png)
 
-Переключатель может иметь два состояния: *selected* или *cleared*. Если переключатель выбран, его свойство [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) имеет значение **true**. Если переключатель не выбран, его свойство **IsChecked** имеет значение **false**. Выбор переключателя можно отменить, выбрав другой переключатель в той же группе, но нельзя отменить выбор, щелкнув переключатель еще раз. Однако можно отменить выбор переключателя программным способом, установив для свойства IsChecked значение **false**.
+Переключатель может иметь два состояния: *selected* или *cleared*. Если переключатель выбран, его свойство [IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) имеет значение **true**. Если переключатель не выбран, его свойство **IsChecked** имеет значение **false**. Выбор переключателя можно отменить, выбрав другой переключатель в той же группе, но нельзя отменить выбор, щелкнув переключатель еще раз. Однако можно отменить выбор переключателя программным способом, установив для свойства IsChecked значение **false**.
 
 ## <a name="recommendations"></a>Рекомендации
 
@@ -193,4 +191,4 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 
 **Разработчикам (XAML)**
-- [**Класс переключателей Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227544)
+- [Класс переключателей Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/br227544)

@@ -5,20 +5,22 @@ description: "Узнайте, как использовать пространс
 title: "Поддержка покупок потребляемых надстроек"
 keywords: "windows 10, uwp, потребляемые, надстройки, покупки из приложения, IAP, Windows.Services.Store"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 534c03287d39916d5fa357307b7479f895240b02
-ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
-translationtype: HT
+ms.openlocfilehash: 6fe73068f3a4a0588e3d7959054879a92ff23c0f
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="enable-consumable-add-on-purchases"></a>Поддержка покупок потребляемых надстроек
 
-Приложения, предназначенные для Windows 10 версии 1607 и выше, могут использовать методы класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) для управления покупкой пользователями потребляемых надстроек в приложениях UWP (надстройки также называются внутренними продуктами приложения или IAP). Используйте потребляемые надстройки для элементов, которые можно приобретать, использовать и снова приобретать. Это особенно удобно при покупке виртуальной валюты для игр (золота, монет и др.), которую можно потом использовать в процессе игры.
+Приложения, предназначенные для Windows 10 версии 1607 и выше, могут использовать методы класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) для управления покупкой пользователями потребляемых надстроек в приложениях UWP. Используйте потребляемые надстройки для элементов, которые можно приобретать, использовать и снова приобретать. Это особенно удобно при покупке виртуальной валюты для игр (золота, монет и др.), которую можно потом использовать в процессе игры.
 
 > [!NOTE]
-> Эта статья относится к приложениям, предназначенным для Windows10 версии 1607 или старше. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Подробнее см. в разделе [Внутренние покупки приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+> Эта статья относится к приложениям, предназначенным для Windows10 версии 1607 или старше. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Дополнительные сведения см. в [этой статье](enable-consumable-in-app-product-purchases.md).
 
 ## <a name="overview-of-consumable-add-ons"></a>Обзор потребляемых надстроек
 
@@ -32,9 +34,6 @@ translationtype: HT
 
   Например, если надстройка представляет начальную сумму в 100 игровых монет и пользователь израсходовал 10 монет, приложение сообщает Магазину, что израсходованы 10 единиц надстройки, и Магазин обновляет баланс. Когда пользователь израсходует все 100 монет, он сможет снова купить 100 монет надстройки.
 
-  > [!NOTE]
-  > Потребляемые надстройки, управляемые Магазином, доступны начиная с Windows 10 (версия 1607). Скоро будет реализована возможность создавать потребляемые элементы, управляемые Магазином, на информационной панели Центра разработки для Windows.
-
 Чтобы предложить пользователю потребляемую надстройку, следуйте приведенному ниже общему процессу.
 
 1. Разрешите пользователями [приобретать надстройку](enable-in-app-purchases-of-apps-and-add-ons.md) из приложения.
@@ -46,7 +45,8 @@ translationtype: HT
 
 Для этих примеров необходимо выполнение следующих предварительных условий:
 * Создан проект Visual Studio для приложения универсальной платформы Windows (UWP), предназначенный для Windows 10 версии 1607 и выше.
-* На панели Центра разработки для Windows создано приложение с потребляемыми надстройками (также называемыми внутренними продуктами приложения или IAP), и это приложение опубликовано и доступно в Магазине. Это может быть приложение, которое вы хотите предложить пользователям, или базовое приложение, соответствующее минимальным требованиям [комплекта сертификации приложений для Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) и используемое только для тестирования. Подробнее см. в [руководстве по тестированию](in-app-purchases-and-trials.md#testing).
+* Создана [отправка приложения](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) на информационной панели Центра разработки для Windows, и это приложение опубликовано в Магазине. При необходимости можно настроить приложение, чтобы его нельзя было найти в Магазине, пока вы его тестируете. Подробнее см. в [руководстве по тестированию](in-app-purchases-and-trials.md#testing).
+* Создана [потребляемая надстройка для приложения](../publish/add-on-submissions.md) на информационной панели Центра разработки.
 
 В коде из этих примеров предполагается следующее:
 * Код выполняется в контексте страницы [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx), которая содержит [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) с именем ```workingProgressRing``` и [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) с именем ```textBlock```. Эти объекты используются для индикации выполнения асинхронной операции и отображения выводимых сообщений, соответственно.

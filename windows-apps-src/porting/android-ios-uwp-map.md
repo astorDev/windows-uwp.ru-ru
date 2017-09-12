@@ -2,7 +2,7 @@
 author: GrantMeStrength
 Description: "Сравнение возможностей платформ iOS, Android и Windows 10."
 Search.Product: eADQiWindows 10XVcnh
-title: "Концепции Windows для разработчиков Android и iOS"
+title: "Сопоставление концепций приложений для Windows для разработчиков iOS и Android"
 ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
@@ -10,11 +10,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
-ms.openlocfilehash: ce32bd7ebaca20827a637c456b2dbe82811817cb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 72bb41939b0676dab7c212770cc9eddaef538c3f
+ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/28/2017
 ---
-#<a name="windows-concepts-for-android-and-ios-developers"></a>Концепции Windows для разработчиков Android и iOS
+#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Сопоставление концепций приложений для Windows для разработчиков iOS и Android
 
 Если вы являетесь разработчиком с навыками разработки или готовым кодом для Android и iOS и хотите перейти на Windows 10 и универсальную платформу Windows (UWP), этот ресурс содержит всю необходимую информацию для сопоставления функций — и ваших знаний — между тремя платформами.
 
@@ -128,13 +130,13 @@ translationtype: HT
 <td align="left"><strong>Навигация по одноранговым элементам.</strong> <br><br>Представление пользователю методов навигации между страницами, находящимися на одном уровне иерархии.</td>
 <td align="left"><strong>Боковая навигация</strong> осуществляется с помощью <strong>вкладок</strong>, <strong>представлений прокрутки</strong> и <strong>навигационных секций</strong>.</td>
 <td align="left"><strong>Контроллеры панели вкладок</strong>, <strong>контроллеры разделенного представления</strong> и <strong>контроллеры представления страниц</strong> обеспечивают навигацию между представлениями одного уровня иерархии.</td>
-<td align="left">С помощью <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">вкладок и сводок</a></strong> можно отобразить постоянный список ссылок или вкладок над содержимым. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">Панель навигации и комбинированный режим</a></strong> позволяют отображать список ссылок рядом с содержимым.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Навигация</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Навигация между двумя страницами</a></td>
+<td align="left">С помощью <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">вкладок и сводок</a></strong> можно отобразить постоянный список ссылок или вкладок над содержимым. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">Панель навигации и комбинированный режим</a></strong> позволяют отображать список ссылок рядом с содержимым.<br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigation-basics">Навигация</a><br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigate-between-two-pages">Навигация между двумя страницами</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Иерархическая навигация.</strong> <br><br>Навигация между родительскими и дочерними страницами иерархии.</td>
 <td align="left"><strong>Списки</strong>, <strong>сетки</strong>, <strong>кнопки</strong> и другие элементы управления обеспечивают <strong>нисходящую навигацию</strong> при использовании объектов <strong>Intent</strong> для загрузки других классов <strong>Activity</strong>.</td>
 <td align="left"><strong>Контроллеры навигации</strong> дают возможность пользователям выполнять переход между уровнями иерархии.</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">Центры</a></strong> дают возможность предварительно показать пользователю содержимое, которое можно выбирать для перехода на дочерние страницы. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">Шаблон основных и подробных данных</a></strong> дает возможность пользователям выбирать из списка сводок элементов, отображаемых рядом с соответствующим разделом сведений.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Навигация</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Навигация между двумя страницами</a></td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">Центры</a></strong> дают возможность предварительно показать пользователю содержимое, которое можно выбирать для перехода на дочерние страницы. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">Шаблон основных и подробных данных</a></strong> дает возможность пользователям выбирать из списка сводок элементов, отображаемых рядом с соответствующим разделом сведений.<br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigation-basics">Навигация</a><br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigate-between-two-pages">Навигация между двумя страницами</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Навигация с помощью кнопки "Назад".</strong> <br><br>Переход назад в приложении.</td>
@@ -170,7 +172,7 @@ translationtype: HT
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Речь.</strong> <br><br>Распознавание речи для голосового ввода и дополнительные голосовые возможности.</td>
 <td align="left">Голосовой ввод может обеспечиваться любым приложением, в котором реализован класс <strong>RecognizerIntent</strong>, таким как <strong>Голосовой поиск Google</strong>. Класс <strong>SpeechRecognizer</strong> позволяет приложениям использовать API распознавания речи Google.</td>
-<td align="left">Встроенные API распознавания речи и речевого ввода отсутствуют.</td>
+<td align="left">Приложения могут использовать класс <strong>SFSpeechRecognizer</strong> для реализации речевого ввода и распознавания речи.</td>
 <td align="left">Можно использовать API <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">распознавания речи</a></strong> для взаимодействия с приложением, выполняемым на переднем плане. Вы можете использовать голосовые <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">взаимодействия с Кортаной</a></strong> для запуска приложений на переднем плане или в фоновом режиме, а также для взаимодействия с фоновыми приложениями.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">Взаимодействие с помощью голосовых функций</a></td>
 </tr>
 <tr class="even">

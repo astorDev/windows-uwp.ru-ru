@@ -1,17 +1,19 @@
 ---
-author: rmpablos
+author: laurenhughes
 title: "Настройка автоматических сборок для приложения UWP"
 description: "Узнайте, как настроить автоматические сборки для создания неопубликованных пакетов и пакетов для Магазина."
-ms.author: wdg-dev-content
-ms.date: 02/15/2017
+ms.author: lahugh
+ms.date: 08/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
-ms.openlocfilehash: f4c68af97e5d5b11a0c5320c9fa6040b9ab94e5a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c8c1765e2983484ddc57e47a995867aa3b401ad4
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/10/2017
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Настройка автоматических сборок для приложения UWP
 
@@ -39,7 +41,7 @@ translationtype: HT
 
 Дополнительные сведения см. в разделе [Развертывание агента в Windows.](https://www.visualstudio.com/docs/build/admin/agents/v2-windows) 
 
-Для выполнения модульных тестов UWP необходимо следующее: • развернуть и запустить приложение; • запустить агент VSTS в интерактивном режиме; • настроить агент для автоматического входа после перезагрузки.
+Для выполнения модульных тестов UWP необходимо следующее: • развернуть и запустить приложение; •   запустить агент VSTS в интерактивном режиме; •   настроить агент для автоматического входа после перезагрузки.
 
 Теперь мы поговорим о том, как настроить автоматическую сборку.
 
@@ -104,11 +106,11 @@ VSTS работает с репозиториями на основе TFS и GIT
 Все стандартные переменные см. в разделе [Использование переменных сборки.](https://www.visualstudio.com/docs/build/define/variables)
 
 #### <a name="configure-the-publish-artifact-build-task"></a>Настройка задачи построения "Публикация артефакта" 
-Эта задача сохраняет созданные артефакты в VSTS. Их можно увидеть на вкладке "Артефакты" на странице результатов сборки. VSTS использует папку `$Build.ArtifactStagingDirectory)\AppxPackages`, которую мы указали ранее.
+Эта задача сохраняет созданные артефакты в VSTS. Их можно увидеть на вкладке "Артефакты" на странице результатов сборки. VSTS использует папку `$(Build.ArtifactStagingDirectory)\AppxPackages`, которую мы указали ранее.
 
 ![артефакты](images/building-screen6.png)
 
-Так как мы присвоили свойству `UapAppxPackageBuildMode` значение `StoreUpload`, папка артефактов содержит пакет, который можно отправить в Магазин (appxupload), а также пакеты для загрузки неопубликованных приложений (appxbundle).
+Так как мы присвоили свойству `UapAppxPackageBuildMode` значение `StoreUpload`, папка артефактов содержит пакет, который рекомендуется использовать для отправки в Магазин (.appxupload). Обратите внимание, что можно также отправить в Магазин стандартный пакет приложения (.appx) или пакет приложений (.appxbundle). В этой статье мы будем использовать файл .appxupload.
 
 
 >Примечание. По умолчанию агент VSTS поддерживает последние созданные APPX-пакеты. Если вы хотите сохранить только артефакты текущей сборки, включите очистку каталога двоичных файлов. Для этого добавьте переменную `Build.Clean` и задайте для нее значение `all`. Дополнительные сведения см. в разделе [Указание репозитория.](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)
@@ -172,10 +174,10 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.Un
 Если вы хотите использовать сборку CI только для наблюдения за качеством возвратов, вы можете сократить время сборки.
 
 #### <a name="to-improve-the-speed-of-a-ci-build"></a>Ускорение сборки CI
-1.    Выполняйте сборку только для одной платформы.
-2.    Измените переменную BuildPlatform, чтобы использовать только архитектуру x86. ![настройка ci](images/building-screen10.png) 
-3.    На этапе сборки добавьте /p:AppxBundle=Never в свойство "Аргументы MSBuild", а затем задать значение свойства "Платформа". ![настройка платформы](images/building-screen11.png)
-4.    В проекте модульных тестов отключите .NET Native. 
+1.  Выполняйте сборку только для одной платформы.
+2.  Измените переменную BuildPlatform, чтобы использовать только архитектуру x86. ![настройка ci](images/building-screen10.png) 
+3.  На этапе сборки добавьте /p:AppxBundle=Never в свойство "Аргументы MSBuild", а затем задать значение свойства "Платформа". ![настройка платформы](images/building-screen11.png)
+4.  В проекте модульных тестов отключите .NET Native. 
 
 Для этого откройте файл проекта и в свойствах установите для свойства `UseDotNetNativeToolchain` значение `false`.
 
@@ -279,7 +281,7 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 
 #### <a name="configure-automatic-store-submission"></a>Настройка автоматической отправки в Магазин
 
-Используйте расширение Visual Studio Team Services для Магазина Windows для интеграции API Магазина и отправьте APPXUPLOAD-пакет в Магазин.
+Используйте расширение Visual Studio Team Services для Магазина Windows для интеграции API Магазина и отправьте пакет приложения в Магазин.
 
 Вам необходимо связать учетную запись Центра разработки с Azure Active Directory (AD), а затем создать приложение в AD для проверки подлинности запросов. Для этого следуйте рекомендациям на странице расширения. 
 
@@ -301,7 +303,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 <span id="sideloading-best-practices"/>
 ### <a name="best-practices-for-sideloading-apps"></a>Рекомендации для загрузки неопубликованных приложений
 
-Если вы хотите распространять приложение без публикация в магазине, вы можете отправлять его непосредственно на устройства, если они доверяют сертификату, который использовался для подписи пакета приложения. 
+Если вы хотите распространять приложение без публикации в Магазине, вы можете отправлять его непосредственно на устройства, если они доверяют сертификату, который использовался для подписи пакета приложения. 
 
 Используйте сценарий PowerShell `Add-AppDevPackage.ps1` для установки приложений. Этот сценарий добавляет сертификат в разделе доверенного корневого центра сертификации локального компьютера и устанавливает или обновляет APPX-файл.
 
@@ -317,10 +319,10 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 <span id="certificates-best-practices"/>
 ### <a name="best-practices-for-signing-certificates"></a>Рекомендации для подписи сертификатов 
-Visual Studio создает сертификат для каждого проекта. Это затрудняет поддержку контролируемого списка действительных сертификатов. Если вы собираетесь создать несколько приложений, можно использовать один сертификат для подписи всех приложений. Каждое устройство, которое доверяет вашему сертификату, сможет загружать неопубликованные приложения без установки другого сертификата. Дополнительные сведения см. в разделе [Создание сертификата подписи пакета приложения.](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
+Visual Studio создает сертификат для каждого проекта. Это затрудняет поддержку контролируемого списка действительных сертификатов. Если вы собираетесь создать несколько приложений, можно использовать один сертификат для подписи всех приложений. Каждое устройство, которое доверяет вашему сертификату, сможет загружать неопубликованные приложения без установки другого сертификата. Дополнительные сведения см. в разделе [Создание сертификата для подписания пакета](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing).
 
 
-#### <a name="create-a-signing-certificate"></a>Создание сертификата подписи
+#### <a name="create-a-signing-certificate"></a>Создание сертификата для подписания
 Используйте средство [MakeCert.exe](https://msdn.microsoft.com/library/windows/desktop/ff548309.aspx) для создания сертификата. В следующем примере сертификат создается с помощью средства MakeCert.exe.
 
 ```
@@ -360,4 +362,4 @@ MakeCert /n publisherName /r /h 0 /eku "1.3.6.1.5.5.7.3.3,1.3.6.1.4.1.311.10.3.1
 * [Сборка приложения .NET для Windows](https://www.visualstudio.com/docs/build/get-started/dot-net) 
 * [Формирование пакетов приложений UWP](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
 * [Загрузка неопубликованных бизнес-приложений в Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
-* [Создание сертификата подписи для пакета приложения](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
+* [Создание сертификата для подписания пакета](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

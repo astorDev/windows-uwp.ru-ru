@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: "Обеспечение быстрого отклика потока пользовательского интерфейса"
 description: "Пользователи, независимо от типа компьютера, ожидают от приложений быстрого отклика во время вычислений."
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 921af1b7f408bed5f846af631592755d48a37dd4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d5be2a8ea14f35d048b4402f2cfb1018d5998c3d
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="keep-the-ui-thread-responsive"></a>Обеспечение быстрого отклика потока пользовательского интерфейса
 
@@ -29,7 +31,7 @@ translationtype: HT
 
 Некоторые наиболее медленные этапы в приложении могут включать запуск и переключение между представлениями. Не выполняйте лишнюю работу при выводе на экран пользовательского интерфейса, который изначально виден пользователю. Например, не создавайте пользовательский интерфейс для открывающегося по порядку пользовательского интерфейса и содержимого всплывающих окон.
 
--   Для создания экземпляров элементов задержки используйте [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785).
+-   Создавайте экземпляры элементов задержки с помощью [атрибута x:Load](../xaml-platform/x-load-attribute.md) или [x: DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785).
 -   Вставьте программным путем элементы в дерево по запросу.
 
 Очереди [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) работают для обработки потока пользовательского интерфейса, когда он не занят.
@@ -107,4 +109,3 @@ public class AsyncExample
 ## <a name="related-topics"></a>Еще по теме
 
 * [Настраиваемые взаимодействия с пользователем](https://msdn.microsoft.com/library/windows/apps/Mt185599)
-

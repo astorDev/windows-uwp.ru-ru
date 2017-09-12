@@ -1,17 +1,19 @@
 ---
-author: msatranjr
+author: normesta
 title: "Наложение мозаичных изображений на карту"
 description: "Наложение сторонних или настраиваемых мозаичных изображений на карте с помощью источников мозаичных данных. Используйте источники мозаичных данных для наложения специальных сведений, таких как данные о погоде, населении или сейсмические данные, а также для полной замены карты по умолчанию."
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
-ms.author: misatran
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, карта, расположение, изображения, наложение"
-ms.openlocfilehash: dd52df5f95b25e26ddb0fb8db50c9faf27df02ee
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d6def6405c8a5d731259b4522dff10cb996d178c
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>Наложение плиточных изображений на карту
 
@@ -97,13 +99,12 @@ translationtype: HT
         http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
-    Веб-служба должна поддерживать универсальный код ресурса (URI), который содержит заменяемые параметры {x}, {y} и {zoomlevel}. Большинство веб-служб (например, Nokia, Bing и Google) поддерживают URI такого формата. Если веб-служба требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993). Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#provide-a-custom-uri) далее в данной статье.
+    Веб-служба должна поддерживать универсальный код ресурса (URI), который содержит заменяемые параметры {x}, {y} и {zoomlevel}. Большинство веб-служб (например, Nokia, Bing и Google) поддерживают URI такого формата. Если веб-служба требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993). Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#customuri) далее в данной статье.
 
-3.  Затем выполните оставшиеся шаги, описанные ранее в разделе [Общие сведения о мозаичных изображениях](#tiled-image-overview).
+3.  Затем выполните оставшиеся шаги, описанные ранее в разделе [Общие сведения о мозаичных изображениях](#tileintro).
 
 В следующем примере показано наложение плиток из вымышленной веб-службы на карту Северной Америки. Значение для [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) указано в конструкторе [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). В этом примере плитки отображаются только внутри географических границ, заданных необязательным свойством [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147).
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
         private void AddHttpMapTileSource()
         {
@@ -129,6 +130,7 @@ translationtype: HT
             MapControl1.TileSources.Add(tileSource);
         }
 ```
+
 ```cpp
 void MainPage::AddHttpMapTileSource()
 {
@@ -160,9 +162,9 @@ void MainPage::AddHttpMapTileSource()
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    Если формат имен файлов требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001). Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#provide-a-custom-uri) далее в данной статье.
+    Если формат имен файлов требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001). Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#customuri) далее в данной статье.
 
-3.  Затем выполните оставшиеся шаги, описанные ранее в разделе [Общие сведения о мозаичных изображениях](#tiled-image-overview).
+3.  Затем выполните оставшиеся шаги, описанные ранее в разделе [Общие сведения о мозаичных изображениях](#tileintro).
 
 Для загрузки мозаичных данных из локального хранилища можно использовать следующие протоколы и адреса:
 

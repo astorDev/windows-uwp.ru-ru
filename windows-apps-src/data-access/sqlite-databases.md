@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: normesta
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
 title: "Базы данных SQLite"
 description: "SQLite–это бессерверное встраиваемое ядро СУБД. В этой статье описано, как использовать библиотеку SQLite, входящую в состав пакета SDK, а также как упаковывать собственную библиотеку SQLite в универсальном приложении для Windows или выполнять ее сборку из источника."
-ms.author: markl
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, SQLite, базы данных"
-ms.openlocfilehash: 70f0ae8d4f67e0b24199d7dd56ddebe5a643fae5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 3b075a6c55373e91e9f12fb5359f5aa4a985f602
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="sqlite-databases"></a>Базы данных SQLite
 
