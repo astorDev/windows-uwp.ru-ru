@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "Windows 10, UWP, игра, DirectX, XAML, поворот экрана, ввод"
 ms.openlocfilehash: 0fe07d43c5da86d323136f3305166bd51d963756
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: ru-RU
 ---
 # <a name="add-features-to-directx-games"></a>Добавление возможностей в игры, использующие DirectX
 

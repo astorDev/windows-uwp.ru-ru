@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.openlocfilehash: c0426320e978c88bc2db67398e626c0ed3794edc
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: ru-RU
 ---
 # <a name="launch-an-app-through-file-activation"></a>Запуск приложения через активацию файла
 

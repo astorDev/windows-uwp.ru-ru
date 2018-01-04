@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.openlocfilehash: 0992c0fc3c6fe9d70b7867275d28e6bba78171ab
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: ru-RU
 ---
 # <a name="audio-device-information-properties"></a>Свойства сведений о звуковых устройствах
 

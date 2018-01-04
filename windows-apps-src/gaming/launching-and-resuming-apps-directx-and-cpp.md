@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "windows 10, uwp, игры, directx, запуск, возобновление"
 ms.openlocfilehash: c3557a11f8f18262f0b5e0c6ad6cac88d5274f73
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: ru-RU
 ---
 # <a name="launching-and-resuming-apps-directx-and-c"></a>Запуск и возобновление работы приложений (DirectX и C++)
 

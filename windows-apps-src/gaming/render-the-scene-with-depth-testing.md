@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "windows 10, uwp, игры, отрисовка, сцена, тестирование глубины, direct3d, тени"
 ms.openlocfilehash: 538ebe9a604daaa5a444b0f7f1764770eec8ce7c
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: ru-RU
 ---
 # <a name="render-the-scene-with-depth-testing"></a>Прорисовка сцены с тестированием глубины
 

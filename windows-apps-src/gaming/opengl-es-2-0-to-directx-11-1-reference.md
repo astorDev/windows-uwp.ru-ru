@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "windows 10, uwp, игры, opengl, direct3d 11"
 ms.openlocfilehash: 03d06a7d6df558552be67288909a1dad93369e12
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: ru-RU
 ---
 # <a name="opengl-es-20-to-direct3d-11-reference"></a>Справочник по переходу с OpenGL ES 2.0 на Direct3D 11
 

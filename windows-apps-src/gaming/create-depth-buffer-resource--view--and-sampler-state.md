@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "windows 10, uwp, игры, direct3d, буфер глубины"
 ms.openlocfilehash: 87e4248545288f4725e0cf0b104a75f1925ad3a3
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: ru-RU
 ---
 # <a name="create-depth-buffer-device-resources"></a>Создание ресурсов устройства буфера глубины
 

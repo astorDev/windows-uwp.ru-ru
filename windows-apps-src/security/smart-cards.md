@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.openlocfilehash: 9eb45cd5e8f30e530cd88e05c7e7ed5f3d5ac1cd
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: ru-RU
 ---
 # <a name="smart-cards"></a>Смарт-карты
 
