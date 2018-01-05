@@ -9,10 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, игра, DirectX, примеры, трехмерный"
-ms.openlocfilehash: 3bd5f6ced66ba52aef4a0aa0580f348e3faa0a09
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 51aac640791884c80503464b75b5ebbd736382f6
+ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="directx-samples"></a>Примеры DirectX
 
@@ -31,7 +33,7 @@ ms.contentlocale: ru-RU
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Создание простой игры UWP с использованием DirectX](tutorial--create-your-first-metro-style-directx-game.md)</p></td>
+<td align="left"><p>[Создание простой игры UWP с использованием DirectX](tutorial--create-your-first-uwp-directx-game.md)</p></td>
 <td align="left"><p>Создание простой игры универсальной платформы Windows (UWP) с использованием DirectX и C++. Этот набор учебников ориентируется на основные рекомендации и технические приемы для разработки игр UWP с использованием DirectX.</p></td>
 </tr>
 <tr class="even">
