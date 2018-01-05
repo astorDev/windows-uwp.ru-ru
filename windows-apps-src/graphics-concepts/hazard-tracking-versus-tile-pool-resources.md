@@ -3,15 +3,18 @@ title: "Отслеживание рисков и ресурсы пула пли�
 description: "Для ресурсов, не относящихся к потоковым, Direct3D может предотвратить определенные опасности во время отрисовки, но, поскольку отслеживание рисков для потоковых ресурсов требовалось бы на уровне плиток, отслеживание рисков во время отрисовки потоковых ресурсов может быть слишком дорогим."
 ms.assetid: 8B0C73D3-3F77-41E8-B17D-C595DEE39E49
 keywords: "Отслеживание рисков и ресурсы пула плиток"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 2bdec458e13e3f2df54555716d59aefcc946ef7b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 982a590f602aa1692de91536d50cbadb19f8f1d1
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hazard-tracking-versus-tile-pool-resources"></a>Отслеживание рисков и ресурсы пула плиток
 

@@ -3,15 +3,18 @@ title: "Общие сведения о правилах растеризации
 description: "Довольно часто точки, заданные для вершин, не имеют точного соответствия с пикселями на экране. В этом случае Direct3D применяет правила растеризации по треугольнику, чтобы определить, какие пиксели относятся к определенному треугольнику."
 ms.assetid: 4232CDBA-F669-4417-9378-F9013E83462C
 keywords: "Общие сведения о правилах растеризации"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 1c22f17991462ddf190ece2baa0360fa3e1d12a5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 6eea8810fd1fec9df405e4c16272a468d4272210
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="introduction-to-rasterization-rules"></a>Общие сведения о правилах растеризации
 

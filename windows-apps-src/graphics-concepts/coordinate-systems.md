@@ -3,15 +3,18 @@ title: "Системы координат"
 description: "Как правило, в приложениях с трехмерной графикой используется один или два типа Декартовой системы координат (левостороннюю и правостороннюю). В обеих системах координат положительная ось x указывает вправо, а положительная ось y— вверх."
 ms.assetid: 138D9B81-146F-4E9F-B742-1EDED8FBF2AE
 keywords: "Системы координат"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 64ee2dee2944af1d256b825fc08fb01c992d3218
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 738f9f5852642bdc1431358979f633cd91d1399d
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="coordinate-systems"></a>Системы координат
 

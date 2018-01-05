@@ -3,15 +3,18 @@ title: "Представление трафарета глубины (DSV)"
 description: "Представление трафарета глубины предоставляет формат и буфер для хранения сведений о глубине и трафарете."
 ms.assetid: 2E8BFF7F-76F8-408E-B8E6-A71B9DF46281
 keywords: "Представление трафарета глубины (DSV)"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: a1488d91585bea186831573a889cce1239ce422c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: eee30882373513bd352777aff0ae6399f047bbec
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="depth-stencil-view-dsv"></a>Представление трафарета глубины (DSV)
 

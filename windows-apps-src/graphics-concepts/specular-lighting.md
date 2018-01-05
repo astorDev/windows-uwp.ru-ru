@@ -3,15 +3,18 @@ title: "Отраженное освещение"
 description: "Отраженное освещение определяет яркие блики, которые возникают когда свет падает на плоскость объекта и отражается обратно в камеру."
 ms.assetid: 71F87137-B00F-48CE-8E6A-F98A139A742A
 keywords: "Отраженное освещение"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: c57edefa190fbb56b8bbe2a0c06ef2828b780927
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 305924b19914bf4e85366695add2476c3c81c281
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specular-lighting"></a>Отраженное освещение
 

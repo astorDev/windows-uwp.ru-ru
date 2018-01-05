@@ -3,15 +3,18 @@ title: "Типы ресурсов"
 description: "У различных типов ресурсов разный макет (или тип размещения в памяти)."
 ms.assetid: BCDDF227-1837-44DA-ABD4-E39BCFF2B8EF
 keywords: "Типы ресурсов"
-author: mtoepke
-ms.author: mtoepke
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 77f1b408533d37ecf18bdc1c6c364e6d6c88b94d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 1412ce6567687a5ee95ca4df384b8cf109809754
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="resource-types"></a>Типы ресурсов
 

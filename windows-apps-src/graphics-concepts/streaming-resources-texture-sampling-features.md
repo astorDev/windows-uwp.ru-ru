@@ -3,15 +3,18 @@ title: "Функции выборки текстур потоковых ресу
 description: "К функциям выборки текстур потоковых ресурсов относится следующее: получение ответа от шейдера о статусе сопоставленных областей, проверка сопоставлены ли в ресурсе все обрабатываемые данные, скрепление, чтобы помочь шейдерам обойти области в потоковых ресурсах с MIP-картой, которые не сопоставлены, вычисление, того каким будет отпечаток минимального уровня детализации, полностью сопоставленного с фильтром всей текстуры."
 ms.assetid: C2B2DD69-8354-417A-894D-6235A8B48B53
 keywords: "Функции выборки текстур потоковых ресурсов"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 7d03ba6eec780a3c05e4d15247c423852d7d75f6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: ee5dc703fe52b0ac8b7163a8067e8b8b87ac8103
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="streaming-resources-texture-sampling-features"></a>Функции выборки текстур потоковых ресурсов
 

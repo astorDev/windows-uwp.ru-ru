@@ -3,15 +3,18 @@ title: "Освещение"
 description: "Для освещения объектов в сцене используются источники света. Цвет каждой вершины объекта основан на текущей карте текстур, цветах вершин и источниках света."
 ms.assetid: AB16CF5B-47CE-455C-A8BD-36305E54BEA9
 keywords: "Освещение"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 6102c070a10d44e8882fe72c8168fb244353fd68
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 28e27246474c0e65445c3eeefafb25ead618522b
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lighting"></a>Освещение
 

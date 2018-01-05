@@ -3,15 +3,18 @@ title: "Выборка в ближайшей точке"
 description: "От приложений не требуется использовать фильтрацию текстур."
 ms.assetid: D7F88320-2C61-47E9-9B92-EC31D48DB079
 keywords: "Выборка в ближайшей точке"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 351acc87764fadc2cd967aaf1d918f4b4837c81f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 048ff2755343e5e6230900ea9acb819e85ba654b
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="span-iddirect3dconceptsnearest-pointsamplingspannearest-point-sampling"></a><span id="direct3dconcepts.nearest-point_sampling"></span>Выборка в ближайшей точке
 

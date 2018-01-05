@@ -3,15 +3,18 @@ title: "Сопоставления производятся в пуле плит
 description: "При создании ресурса как потокового ресурса плитки, составляющие ресурс, поступают при указании на расположения в пуле плиток. Пул плиток — это пул памяти (резервируемый одним или несколькими незаметными выделениями ресурсов; незаметно это происходит для приложения)."
 ms.assetid: 58B8DBD5-62F5-4B94-8DD1-C7D57A812185
 keywords: "Сопоставления производятся в пуле плиток"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: bc5787333c266491e432abbb3c5039f73bdeb1f2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 91d16dbda474927bc36beaacb255362f6e1840dd
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>Сопоставления производятся в пуле плиток
 

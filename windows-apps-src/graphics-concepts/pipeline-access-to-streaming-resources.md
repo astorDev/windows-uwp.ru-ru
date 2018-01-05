@@ -3,15 +3,18 @@ title: "Конвейерный доступ к потоковым ресурса
 description: "Потоковые ресурсы можно использовать в представлениях ресурсов шейдера (SRV), представлениях целевого объекта отрисовки (RTV), представлениях трафарета глубины (DSV) и представлениях неупорядоченного доступа (UAV), а также как точки привязки, где представления не используются, например как привязки буфера вершин."
 ms.assetid: 18DA5D61-930D-4466-8EFE-0CED566EA4A6
 keywords: "Конвейерный доступ к потоковым ресурсам"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: b730a8c15f4327397e945b616c6c1edc2e1ad5a9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 2eabbe1b5b7ffc848243f75237e90bc69d8a43dc
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="pipeline-access-to-streaming-resources"></a>Конвейерный доступ к потоковым ресурсам
 

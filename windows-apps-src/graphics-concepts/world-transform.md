@@ -3,15 +3,18 @@ title: "Мировое преобразование"
 description: "Мировое преобразование переносит координаты из модельного пространства, где вершины определены относительно локального начала координат модели, в мировое пространство."
 ms.assetid: 767B032C-69D0-4583-8FEB-247F4C41E31D
 keywords: "Мировое преобразование"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 6218747e0522235f1d71510a4ad4b6ce60def4a3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 1f4d40360833596b9ef9eed97c426a5ec90db353
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="world-transform"></a>Мировое преобразование
 

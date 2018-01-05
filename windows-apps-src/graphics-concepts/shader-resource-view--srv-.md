@@ -3,15 +3,18 @@ title: "Представление ресурсов шейдера (SRV) и пр
 description: "Представления ресурсов шейдера обычно оборачивают текстуры в формат, позволяющий шейдерам осуществлять к ним доступ. Представления неупорядоченного доступа имеют сходную функциональность, но обеспечивают чтение и запись в текстуру (или другой ресурс) в любом порядке."
 ms.assetid: 4505BCD2-0EDA-40F2-887C-EC081FE32E8F
 keywords: "Представление ресурсов шейдера (SRV)"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 2413c37dc7a19f110597a4e5664c6d4ac7b5508c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 213ff4e2a120c91211720d887ab8f777b9265106
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="shader-resource-view-srv-and-unordered-access-view-uav"></a>Представление ресурсов шейдера (SRV) и представления неупорядоченного доступа (UAV)
 

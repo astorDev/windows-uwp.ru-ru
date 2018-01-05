@@ -3,15 +3,18 @@ title: "Текстуры"
 description: "Текстуры — это очень мощное средство для обеспечения реалистичности созданных на компьютере трехмерных изображений. Direct3D поддерживает широкий набор функций для работы с текстурами, предоставляя разработчикам удобный доступ к дополнительным методам обработки текстур."
 ms.assetid: B9E85C9E-B779-4852-9166-6FA2240B7046
 keywords: "Текстуры"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: ef5c72f3c667c63cb48c469349ae26c364050c19
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: b52aeb2c697389d9d5d15cb05701082ad11c94e8
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textures"></a>Текстуры
 

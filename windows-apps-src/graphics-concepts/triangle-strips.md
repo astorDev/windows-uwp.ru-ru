@@ -3,15 +3,18 @@ title: "Полосы треугольников"
 description: "Полоса треугольников — это ряд соединенных треугольников. Поскольку треугольники соединены, приложению не нужно постоянно указывать все три вершины для каждого треугольника."
 ms.assetid: BACC74C5-14E5-4ECC-9139-C2FD1808DB82
 keywords: "Полосы треугольников"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: fa94534e10bcf124f0a5ba24e59a51b525f2d44e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 5032ee6cc592be61422903df96c8beabcf4ffe06
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="triangle-strips"></a>Полосы треугольников
 

@@ -3,15 +3,18 @@ title: "Вводные сведения о текстурах"
 description: "Текстурный ресурс — это структура данных для хранения текселей, представляющих собой наименьшие элементы текстуры, которые можно использовать для чтения или записи. При чтении текстуры шейдером ее можно фильтровать по дискретизаторам текстур."
 ms.assetid: 6F3C76A8-F762-4296-AE02-BFBD6476A5A8
 keywords: "Вводные сведения о текстурах"
-author: mtoepke
-ms.author: mtoepke
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: d642668a9af1e62f232e13e411e51e6d850de7f5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d2390568efc43e89da8aa8df73767bbd7b752538
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="introduction-to-textures"></a>Вводные сведения о текстурах
 

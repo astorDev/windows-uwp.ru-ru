@@ -3,15 +3,18 @@ title: "Билинейная фильтрация текстур"
 description: "Билинейная фильтрация вычисляет средневзвешенное значение 4 текселей, которые расположены ближе всего к точке выборки."
 ms.assetid: 0851AD28-8246-4547-A663-47884DDDFC3E
 keywords: "Билинейная фильтрация текстур"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: f2b23fc0665695663875125f4e226e233c3ef7e2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 8dcbd5b96dfb3e32ec2621df98cffd9e871ed8b3
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bilinear-texture-filtering"></a>Билинейная фильтрация текстур
 

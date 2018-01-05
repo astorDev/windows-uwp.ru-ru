@@ -3,15 +3,18 @@ title: "Правила растеризации"
 description: "Правила растеризации определяют, как векторные данные сопоставляются с растровыми."
 ms.assetid: B604725F-96A5-4DB6-B597-9EC57FBBC024
 keywords: "Правила растеризации"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: c7385f936f8e7bed23433e241aea3806a0d75bdf
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 3781c5c907ad90cc3f587e26cdece9d1646db53e
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="rasterization-rules"></a>Правила растеризации
 

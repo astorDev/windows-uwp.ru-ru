@@ -1,17 +1,20 @@
 ---
 title: "Представления"
-description: "Термин \\ 0034;представление \\ 0034; используется для обозначения данных в требуемом формате. Например, &quot;представление буфера констант&quot; (CBV) — это данные буфера констант в правильном формате. В этом разделе описаны наиболее распространенные и полезные представления."
+description: "Термин \\ 0034;представление \\ 0034; используется для обозначения данных в требуемом формате. Например, \"представление буфера констант\" (CBV) — это данные буфера констант в правильном формате. В этом разделе описаны наиболее распространенные и полезные представления."
 ms.assetid: 0C7FB99F-7391-472F-BA53-576888DFC171
 keywords: "Представления"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 0091afb549c778f367e12726054cb908eb0c3eba
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 270fdafb0383b73eb6b47d721bae4d994b3ad393
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="views"></a>Представления
 
