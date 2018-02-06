@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "Вы можете скачать TSV-файлы, содержащие аналитические данные, чтобы затем просматривать статистику и данные в автономном режиме."
+Description: You can download .tsv files that contain your analytics data so that you can review your stats and info offline.
 title: "Скачивание аналитических отчетов"
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: f18dd0f240644c0a962b73e78c5c4dd9b1bc8682
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: 72dcf823c62065514cceb0744b4efcd705209a75
+ms.sourcegitcommit: 67cb03db41556cf0d58993073654cd0706aede84
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="download-analytics-reports"></a>Скачивание аналитических отчетов
 
@@ -24,3 +25,5 @@ ms.lasthandoff: 06/21/2017
 
 Можно также скачать отчеты для всех ваших приложений или для конкретного приложения, развернув узел **Анализ** в левом меню навигации и выбрав пункт **Скачать отчеты**. В раскрывающемся списке **Выбор приложения** выберите **Все приложения** или конкретное приложение. Выберите отчет, который требуется скачать, а затем выберите необходимый уровень агрегирования и диапазон дат. Нажмите кнопку **Скачать отчеты**, чтобы сформировать скачиваемый TSV-файл, который вы сможете открыть в Microsoft Excel или другом приложении, которое поддерживает файлы со значениями, разделенными табуляцией (TSV).
 
+> [!NOTE]
+> Данные об эффективности рекламы в данный момент недоступны на странице **Скачать отчеты**. Чтобы скачать эти данные для использования в автономном режиме, перейдите на страницу [Отчет об эффективности рекламы](advertising-performance-report.md) и используйте кнопки со стрелками на этой странице. 
