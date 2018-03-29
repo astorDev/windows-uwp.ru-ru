@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: Add users to your Dev Center account and assign them roles with specific permissions.
-title: "Управление пользователями учетных записей"
+title: Управление пользователями учетных записей
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.author: wdg-dev-content
-ms.date: 01/10/2018
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, пользователи учетных записей, azure ad, несколько пользователей"
+keywords: Windows 10, uwp, пользователи учетных записей, azure ad, несколько пользователей
 ms.localizationpriority: high
-ms.openlocfilehash: e9a08225f0eac5018b3634df3bfb055d38ccb895
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: efc7ad17a7a018b86748c31bc7423e4d841a0b6d
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="manage-account-users"></a>Управление пользователями учетных записей
 
@@ -29,4 +29,4 @@ ms.lasthandoff: 01/12/2018
 -   [Настройка ролей и пользовательских разрешений для пользователей учетных записей](set-custom-permissions-for-account-users.md)
 
 > [!TIP]
-> Этот раздел относится к программе для разработчиков приложений для Windows, но сопоставление клиента и управление пользователями работают аналогично для учетных записей в программе для разработчиков оборудования для Windows. Подробнее об управлении пользователями в программе для разработчиков оборудования см. в разделе [Администрирование информационной панели](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration).
+> В этом разделе описана программа для разработчиков приложений для Windows, однако связывание клиента и управление пользователями работает аналогично для учетных записей Программы для разработчиков оборудования для Windows (см. дополнительные сведения в разделе [Администрирование информационной панели](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)) или Программы классических приложений для Windows (см. дополнительные сведения в разделе [Программа классических приложений для Windows](https://msdn.microsoft.com/library/windows/desktop/mt826504#users)).

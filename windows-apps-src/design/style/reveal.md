@@ -1,7 +1,7 @@
 ---
 author: mijacobs
-description: "Отображение— это световой эффект, который добавляет приложению глубины и помогает привлечь внимание к интерактивным элементам приложения."
-title: "Эффект отображения"
+description: Отображение— это световой эффект, который добавляет приложению глубины и помогает привлечь внимание к интерактивным элементам приложения.
+title: Эффект отображения
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
@@ -14,19 +14,20 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: high
-ms.openlocfilehash: 8ba0d9939d7ab1d9826ed2848e476499f09c628f
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: 2ec95f757b041b74dda8bc0606ad8113881809d5
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="reveal-highlight"></a>Эффект отображения
 
-Отображение— это световой эффект, который добавляет приложению глубины и помогает привлечь внимание к интерактивным элементам приложения.
+Эффект отображения— это световой эффект, выделяющий интерактивные элементы, такие как панели команд, когда пользователь наводит на них указатель. 
 
 > **Важные API**: [класс RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [класс RevealBackgroundBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [класс RevealBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [класс VisualState](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
-Поведение отображения достигается за счет выделения реагирующего на щелчок содержимого контейнера, когда указатель находится поблизости от него.
+## <a name="how-it-works"></a>Принцип работы
+Эффект отображения привлекает внимание к интерактивным элементам, отображая контейнер элемента, когда указатель находится рядом, как показано на следующем рисунке:
 
 ![Наглядное представление эффекта отображения](images/Nav_Reveal_Animation.gif)
 
@@ -52,13 +53,9 @@ ms.lasthandoff: 01/08/2018
 
 > [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev013/player]
 
-## <a name="reveal-and-the-fluent-design-system"></a>Отображение и система проектирования Fluent
-
- Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Эффект отображения— это компонент системы проектирования Fluent, добавляющий свет в ваше приложение. Дополнительные сведения см. в разделе [Обзор системы проектирования Fluent для UWP](../fluent-design-system/index.md).
-
 ## <a name="how-to-use-it"></a>Использование
 
-Отображение автоматически работает для некоторых элементов управления. Для других элементов управления можно включить эффект отображения, назначив специальный стиль для элемента управления.
+Отображение автоматически работает для некоторых элементов управления. Чтобы включить отображение для других элементов управления, можно назначить им особый стиль, как описано в разделах [Включение эффекта отображения для других элементов управления](#enabling-reveal-on-other-controls) и [Включение эффекта отображения для пользовательских элементов управления](#enabling-reveal-on-custom-controls) этой статьи.
 
 ## <a name="controls-that-automatically-use-reveal"></a>Элементы управления, автоматически использующие эффект отображения
 
@@ -66,16 +63,15 @@ ms.lasthandoff: 01/08/2018
 - [**GridView**](../controls-and-patterns/lists.md)
 - [**TreeView**](../controls-and-patterns/tree-view.md)
 - [**NavigationView**](../controls-and-patterns/navigationview.md)
-- [**AutosuggestBox**](../controls-and-patterns/auto-suggest-box.md)
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
-- [**ComboBox**](../controls-and-patterns/lists.md)
 
 На этих иллюстрациях показан эффект отображения на нескольких различных элементах управления.
 
 ![Примеры эффекта отображения](images/RevealExamples_Collage.png)
 
-## <a name="enabling-reveal-on-other-common-controls"></a>Включение эффекта отображения для других распространенных элементов управления
+
+## <a name="enabling-reveal-on-other-controls"></a>Включение эффекта отображения для других элементов управления
 
 Если вы используете подходящий для отображения сценарий (элементы управления представляют основное содержимое и/или расположены в виде списка или коллекции), вы можете воспользоваться стилями из нашего ресурса, чтобы включить отображение в таком сценарии.
 
@@ -87,23 +83,74 @@ ms.lasthandoff: 01/08/2018
 | ToggleButton | ToggleButtonRevealStyle |
 | RepeatButton | RepeatButtonRevealStyle |
 | AppBarButton | AppBarButtonRevealStyle |
-| SemanticZoom | SemanticZoomRevealStyle |
+| AppBarToggleButton | AppBarToggleButtonRevealStyle |
+| GridViewItem (эффект отображения поверх содержимого) | GridViewItemRevealBackgroundShowsAboveContentStyle |
 
-Чтобы применить эти стили, просто обновите свойство Style следующим образом:
+Чтобы применить эти стили, просто задайте свойство [Стиль](/uwp/api/Windows.UI.Xaml.Style) элемента управления:
 
-```XAML
+```xaml
 <Button Content="Button Content" Style="{StaticResource ButtonRevealStyle}"/>
 ```
 
-## <a name="enabling-reveal-on-custom-controls"></a>Включение отображения для настраиваемых элементов управления
+### <a name="reveal-in-themes"></a>Эффект отображения в темах
 
-При принятии решения об использовании эффекта отображения для того или иного пользовательского элемента управления следует учитывать следующее правило: должна существовать совокупность интерактивных элементов, которые все относятся к общей функции или действию, которое вы хотите выполнить в вашем приложении.
+Эффект отображения незначительно меняется в зависимости от запрошенной темы элемента управления, приложения или пользовательской настройки. В темной теме граница эффекта отображения и свет при наведении курсора белый, а в светлой теме границы затеняются до светло-серого.
 
-Например элементы NavigationView относятся к навигации по страницам. Кнопки CommandBar связаны с действиями меню или действиями на странице компонента. Кнопки MediaTransportControl связаны с воспроизводимым элементом мультимедиа.
+![Эффект отображения в темной и светлой теме](images/Dark_vs_LightReveal.png)
 
-Элементы управления, получающие эффект отображения, могут быть не связаны друг с другом, они лишь должны находиться в зоне высокой плотности и служить для выполнения одной более важной функции.
+Чтобы включить белые границы в светлой теме, просто задайте для запрошенной темы элемента управления значение "Темная".
 
-Чтобы включить эффект отображения для пользовательских элементов управления или элементов с измененным шаблоном, перейдите к настройкам стиля нужного элемента в разделе визуальных состояний его шаблона и укажите эффект отображения в корневой сетке:
+```xaml
+<Grid RequestedTheme="Dark">
+    <Button Content="Button" Click="Button_Click" Style="{ThemeResource ButtonRevealStyle}"/>
+</Grid>
+```
+
+Или измените параметр TargetTheme элемента RevealBorderBrush на "Темная". Помните: если TargetTheme имеет значение "Темная", эффект отображения будет белым, но если тема светлая, границы эффекта отображения будут серыми.
+
+```xaml
+ <RevealBorderBrush x:Key="MyLightBorderBrush" TargetTheme="Dark" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}" />
+```
+
+## <a name="enabling-reveal-on-custom-controls"></a>Включение эффекта отображения для пользовательских элементов управления
+
+Можно добавить эффект отображения в пользовательские элементы управления До этого полезно знать чуть больше о том, как работает эффект отображения. Эффект отображения состоит из двух отдельных эффектов: **Эффект отображения границы** и **Эффект отображения при наведении**.
+
+- **Эффект отображения границы** показывает границы интерактивных элементов, когда указатель рядом. Этот эффект показывает, что такие соседние объекты могут выполнять действия аналогично элементу в фокусе.
+- **Эффект отображения при наведении** добавляет легкий ореол вокруг элемента в фокусе или элемента, на который наведен указатель, и воспроизводит анимацию нажатия при щелчке. 
+
+![Слои отображения](images/RevealLayers.png)
+
+<!-- The Reveal recipe breakdown is:
+
+- Border reveal will be on top of all content but on the designated edges
+- Text and content will be displayed directly under Border Reveal
+- Hover reveal will be beneath content and text
+- The backplate (that turns on and enables Hover Reveal)
+- The background (background of control) -->
+
+
+Эти эффекты определяются двумя кистями: 
+* Эффект отображения границы определяется кистью **RevealBorderBrush**
+* Эффект отображения при наведении определяется кистью **RevealBackgroundBrush**
+
+```xaml
+<RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
+<RevealBackgroundBrush x:Key="MyRevealBackgroundBrush" TargetTheme="Light" Color="{StaticResource SystemAccentColor}" FallbackColor="{StaticResource SystemAccentColor}" />
+```
+В большинстве случаев мы пользуемся обеими этими кистями, включая автоматическое применение эффекта отображения для определенных элементов управления. Однако для включения этого эффекта на других элемента управления необходимо применить стиль или внести изменения в шаблоны этих элементов непосредственно.
+
+### <a name="when-to-add-reveal"></a>Когда следует добавлять эффект отображения
+Можно добавить эффект отображения в пользовательские элементы управления, но до этого необходимо учесть тип элемента управления и его поведение. 
+* Если пользовательский элемент управления представляет собой отдельный интерактивный элемент и не делит пространство с другими схожими элементами управления (пункты меню в меню, например), велика вероятность, что настраиваемому элементу управления не требуется эффект отображения.  
+* Если имеется группа связанных интерактивных элементов или содержимого, велика вероятность, что область вашего приложения действительно требует использовать эффект отображения— как правило, в этом случае он называется [командной поверхностью](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/collection-commanding).
+
+Так, для отдельной кнопки использовать эффект отображения не следует, а вот для набора кнопок на панели команд— следует.
+
+<!-- For example, NavigationView's items are related to page navigation. CommandBar's buttons relate to menu actions or page feature actions. MediaTransportControl's buttons beneath all relate to the media being played. -->
+
+### <a name="using-the-control-template-to-add-reveal"></a>Использование шаблона управления для добавления эффекта отображения 
+Чтобы включить эффект отображения для пользовательских элементов управления или элементов управления на основе шаблонов, необходимо внести изменения в шаблон элемента управления. В основе большинства шаблонов элементов управления лежит сетка; обновите параметр [VisualState](/uwp/api/windows.ui.xaml.visualstate) этой сетки, чтобы использовать эффект отображения:
 
 ```xaml
 <VisualState x:Name="PointerOver">
@@ -116,94 +163,17 @@ ms.lasthandoff: 01/08/2018
 </VisualState>
 ```
 
-Важно отметить, что для работы эффекта отображения в визуальном состоянии должны присутствовать как кисть, так и метод задания свойств. Для включения эффекта отображения для элемента управления недостаточно установить один из ресурсов кисти отображения для кисти элемента управления. И наоборот, наличие только целевых объектов или параметров без значений, соответствующих кистям отображения, также не включит эффект отображения.
+важно отметить, что для правильной работы эффекта отображения в визуальном состоянии (VisualState) требуются и кисть, и методы задания. Если просто задать для кисти элемента управления один из ресурсов кисти эффекта отображения, эффект отображения для этого элемента управления включен не будет. Напротив, если задать только целевые значения или параметры, не указав в качестве значений кисти эффекта отображения, эффект отображения работать не будет.
 
-Мы создали набор системных кистей отображения, которые можно использовать для настройки пользовательского интерфейса. Например, можно использовать кисть **ButtonRevealBackground** для создания пользовательского фона кнопки или кисть **ListViewItemRevealBackground** для пользовательских списков и т. д.
+Чтобы узнать больше об изменении шаблонов элементов управления, см. статью [Шаблоны XAML элементов управления](../controls-and-patterns/control-templates.md).
 
-(Дополнительные сведения о работе ресурсов в XAML см. в статье [Словарь ресурсов XAML](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md).)
-
-### <a name="reveal-on-listview-controls-with-nested-buttons"></a>Эффект отображения для элементов управления ListView с вложенными кнопками
-
-Если у вас есть элемент [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) и кнопки или вызываемое содержимое, вложенное в его элементы [ListViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewitem), необходимо включить эффект отображения для вложенных элементов.
-
-При наличии кнопок или аналогичных кнопкам элементов управления в ListViewItem просто установите для свойства [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_Style) элемента управления статический ресурс **ButtonRevealStyle**. 
-
-![Эффект отображения для вложенных элементов](images/NestedListContent.png)
-
-В этом примере включается эффект отображения для нескольких кнопок внутри ListViewItem. 
-
-```XAML
-<ListViewItem>
-    <StackPanel Orientation="Horizontal">
-        <TextBlock Margin="5">Test Text: lorem ipsum.</TextBlock>
-        <StackPanel Orientation="Horizontal">
-            <Button Content="&#xE71B;" FontFamily="Segoe MDL2 Assets" Width="45" Height="45" Margin="5" Style="{StaticResource ButtonRevealStyle}"/>
-            <Button Content="&#xE728;" FontFamily="Segoe MDL2 Assets" Width="45" Height="45" Margin="5" Style="{StaticResource ButtonRevealStyle}"/>
-            <Button Content="&#xE74D;" FontFamily="Segoe MDL2 Assets" Width="45" Height="45" Margin="5" Style="{StaticResource ButtonRevealStyle}"/>
-         </StackPanel>
-    </StackPanel>
-</ListViewItem>
-```
-
-### <a name="listviewitempresenter-with-reveal"></a>ListViewItemPresenter с эффектом отображения
-
-Списки в XAML немного отличаются, и для включения эффекта отображения потребуется определить диспетчер визуальных состояний для эффекта отображения только внутри ListViewItemPresenter:
-
-```XAML
-<ListViewItemPresenter>
-<!-- ContentTransitions, SelectedForeground, etc. properties -->
-RevealBackground="{ThemeResource ListViewItemRevealBackground}"
-RevealBorderThickness="{ThemeResource ListViewItemRevealBorderThemeThickness}"
-RevealBorderBrush="{ThemeResource ListViewItemRevealBorderBrush}">
-    <VisualStateManager.VisualStateGroups>
-        <VisualStateGroup x:Name="CommonStates">
-        <VisualState x:Name="Normal" />
-        <VisualState x:Name="Selected" />
-        <VisualState x:Name="PointerOver">
-            <VisualState.Setters>
-                <Setter Target="Root.(RevealBrush.State)" Value="PointerOver" />
-            </VisualState.Setters>
-            </VisualState>
-            <VisualState x:Name="PointerOverSelected">
-                <VisualState.Setters>
-                    <Setter Target="Root.(RevealBrush.State)" Value="PointerOver" />
-                </VisualState.Setters>
-            </VisualState>
-            <VisualState x:Name="PointerOverPressed">
-                <VisualState.Setters>
-                    <Setter Target="Root.(RevealBrush.State)" Value="Pressed" />
-                </VisualState.Setters>
-            </VisualState>
-            <VisualState x:Name="Pressed">
-                <VisualState.Setters>
-                    <Setter Target="Root.(RevealBrush.State)" Value="Pressed" />
-                </VisualState.Setters>
-            </VisualState>
-            <VisualState x:Name="PressedSelected">
-                <VisualState.Setters>
-                    <Setter Target="Root.(RevealBrush.State)" Value="Pressed" />
-                </VisualState.Setters>
-            </VisualState>
-            </VisualStateGroup>
-                <VisualStateGroup x:Name="EnabledGroup">
-                    <VisualState x:Name="Enabled" />
-                    <VisualState x:Name="Disabled">
-                        <VisualState.Setters>
-                             <Setter Target="Root.RevealBorderThickness" Value="0"/>
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-    </VisualStateManager.VisualStateGroups>
-</ListViewItemPresenter>
-```
-
-Это означает, что необходимо добавить в конец набора свойств в ListViewItemPresenter методы установки значений визуального состояния, связанные с эффектом Reveal.
+Мы создали набор системных кистей эффекта отображения, которые можно использовать для настройки вашего шаблона. Например, можно использовать кисть **ButtonRevealBackground** для создания пользовательского фона кнопки или кисть **ListViewItemRevealBackground** для пользовательских списков и т. д. (Дополнительные сведения о работе ресурсов в XAML см. в статье [Словарь ресурсов XAML](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md).)
 
 ### <a name="full-template-example"></a>Полный пример шаблона
 
 Далее представлен полный шаблон для кнопки с эффектом отображения:
 
-```XAML
+```xaml
 <Style TargetType="Button" x:Key="ButtonStyle1">
     <Setter Property="Background" Value="{ThemeResource ButtonRevealBackground}" />
     <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}" />
@@ -284,44 +254,35 @@ RevealBorderBrush="{ThemeResource ListViewItemRevealBorderBrush}">
 </Style>
 ```
 
+### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>Настройка эффекта отображения для пользовательского элемента управления 
+
+При включении эффекта отображения для пользовательского или созданного по шаблону элемента управления или пользовательской командной поверхности оптимизировать эффект помогут следующие советы:
+ 
+* На смежных элементах, не схожих по высоте или ширине (особенно в списках): удалите эффект отображения при приближении границы и показывайте границы только при наведении.
+* Для элементов управления, которые часто отключаются и включаются: поместите кисть отображения при приближении к границе на основы элементов, а также на их границы, чтобы привлечь внимание к состоянию элемента.
+* Для смежных элементов управления, которые касаются друг друга: добавьте поле 1 пиксель между двумя элементами. 
+
 ## <a name="dos-and-donts"></a>Рекомендации
-- Используйте эффект отображения для элементов, позволяющих пользователю выполнить действие (кнопки, элементы выбора).
-- Используйте эффект отображения в группах интерактивных элементов, которые не имеют видимых разделителей по умолчанию (списки, панели команд)
-- Используйте эффект отображения в областях с высокой плотности интерактивных элементов
+- Используйте эффект отображения для элементов, позволяющих пользователю выполнять много действий (панели команд, меню навигации)
+- Используйте эффект отображения в группах интерактивных элементов, которые не имеют видимых разделителей по умолчанию (списки, ленты)
+- Используйте эффект отображения в областях с высокой плотности интерактивных элементов (сценарии управления)
+- Разделите элементы отображения полями по 1 пикселю
 - Не используйте эффект отображения со статическим содержимым (фон, текст)
+- Не используйте эффект отображения во всплывающих окнах, всплывающих элементах или раскрывающихся списках
 - Не используйте эффект отображения для однократных, независимых сценариев
 - Не используйте эффект отображения для очень больших элементов (более 500 epx)
 - Не используйте отображение для элементов, связанных с вопросами безопасности. Это может отвлечь внимание от самого сообщения, которое нужно донести до пользователя.
 
-## <a name="how-we-designed-reveal"></a>История создания эффекта отображения
-
-Отображение содержит два визуальных компонента: **отображение при наведении указателя** и **отображение границ**.
-
-![Слои отображения](images/RevealLayers.png)
-
-Отображение при наведении указателя связано непосредственно с содержимым, на которое наводится указатель (или содержимым в фокусе ввода). Вокруг такого элемента появляется легкий ореол, показывающий, что с этим элементом можно взаимодействовать.
-
-Отображение границ применяется к элементу в фокусе и соседним с ним элементам. Это показывает, что такие соседние объекты могут выполнять действия аналогично элементу в фокусе.
-
-Разложив эффект отображения на составляющие, получим:
-
-- отображение границ поверх всего содержимого, но в соответствии с предусмотренными краями;
-- текст и содержимое непосредственно под отображаемыми границами;
-- слой, обеспечивающий отображение при наведении, под содержимым и текстом;
-- основа (активирующая отображение при наведении);
-- фон (фон элемента управления).
-
-<!--
-<div class=”microsoft-internal-note”>
-To create your own Reveal lighting effect for static comps or prototype purposes, see the full [uni design guidance](http://uni/DesignDepot.FrontEnd/#/ProductNav/3020/1/dv/?t=Resources%7CToolkit%7CReveal&f=Neon) for this effect in illustrator.
-</div>
--->  
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="reveal-and-the-fluent-design-system"></a>Эффект отображения и система проектирования Fluent Design
+
+ Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Эффект отображения— это компонент системы проектирования Fluent, добавляющий свет в ваше приложение. Дополнительные сведения см. в разделе [Обзор системы проектирования Fluent Design для UWP](../fluent-design-system/index.md).
+
+## <a name="related-articles"></a>Статьи по теме
 
 - [Класс RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
 - [Акрил](acrylic.md)

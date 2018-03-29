@@ -1,19 +1,19 @@
 ---
 author: QuinnRadich
-title: "Новые возможности в Windows 10 для разработчиков, средства и компоненты"
-description: "Сборка 16299 Windows10 и новые средства разработчика предоставляют доступ к инструментам, компонентам и возможностям универсальной платформы Windows."
-keywords: "что нового, новые возможности, обновление, обновления, функции, новая, Windows 10, 1709, октябрь, новейшая, разработчики, 16299, Fall Creators"
+title: Новые возможности в Windows 10 для разработчиков, средства и компоненты
+description: Сборка 16299 Windows10 и новые средства разработчика предоставляют доступ к инструментам, компонентам и возможностям универсальной платформы Windows.
+keywords: что нового, новые возможности, обновление, обновления, функции, новая, Windows 10, 1709, октябрь, новейшая, разработчики, 16299, Fall Creators
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 852d59433f3dfe24da6509e588e350dbe1011bbf
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 1e61ede3d16d9c92c28a0e40a0dd65951444ef3a
+ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Новые возможности для разработчиков в Windows 10, сборка 16299
 
@@ -31,6 +31,8 @@ ms.lasthandoff: 12/12/2017
 Ускорители клавиатуры | Повысьте доступность и удобство использования приложения с помощью [ускорителей клавиатуры](../design/input/keyboard-accelerators.md) или сочетаний клавиш. Они обеспечивают интуитивно понятный способ вызова пользователями распространенных действий или команд без перемещения по пользовательскому интерфейсу приложения. Их можно настроить в соответствии с областью, необходимой для их функционирования.
 Рукописный ввод | API-интерфейсы [CoreIncrementalInkStroke](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.coreincrementalinkstroke) позволяют создавать отдельные росчерки пера, которые могут обрабатываться постепенно с помощью отдельных объектов **InkPoint**. </br></br> API-интерфейсы [CoreInkPresenterHost](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.coreinkpresenterhost) позволяют размещать объект **InkPresenter** без связанного элемента управления **InkCanvas**.
 Радиальный контроллер | В API-интерфейсы [RadialControllerConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration) была добавлена возможность определения области меню **RadialController** для представления или процесса приложения.
+Живые плитки | Закрепление [вспомогательных плиток из приложений Win32 моста для классических приложений](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md).
+Всплывающие уведомления | Используйте надпись [ожидает обновления](../design/shell/tiles-and-notifications/toast-pending-update.md) на кнопках, чтобы обеспечить многоэтапную интерактивность всплывающих уведомлений.
 Элементы управления пользовательским интерфейсом | Новые элементы управления позволяют легко и быстро создавать привлекательный пользовательский интерфейс. </br>* [Элемент управления "Палитра"](../design/controls-and-patterns/color-picker.md) позволяет пользователям просматривать и выбирать цвета. </br>* [Элемент управления "Представление навигации"](../design/controls-and-patterns/navigationview.md) упрощает добавление навигации верхнего уровня в приложение. </br>* [Элемент управления "Аватар пользователя"](../design/controls-and-patterns/person-picture.md) отображает аватар пользователя. </br>* [Элемент управления "Оценка"](../design/controls-and-patterns/rating.md) позволяет пользователям легко просматривать и ставить оценки, отражающие степень удовлетворенности содержимым и службами.
 Стиль и тон | Мы добавили новые [рекомендации по стилю и тону в приложениях UWP](../design/style/voice-and-tone.md), чтобы дать вам советы по написанию текста для вашего приложения. Независимо от того, что вы разрабатываете, важно использовать доступный, понятный и информативный язык.
 

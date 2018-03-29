@@ -2,7 +2,7 @@
 author: normesta
 Description: Create a modern Windows app package for your existing Windows Forms, WPF, or Win32 app or game. Add modern experiences for Windows 10 users and simplify deployment and monitization.
 Search.Product: eADQiWindows 10XVcnh
-title: "Мост для классических приложений"
+title: Мост для классических приложений
 ms.author: normesta
 ms.date: 08/30/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: b8a70a249a91f654354d27faeffdf5f605fd9c26
-ms.sourcegitcommit: 12cc05b59b2a249a7683a8692ed453da03a91b28
+ms.openlocfilehash: 3cbaa8a8e78ad14472a34e107521d9c966ba434f
+ms.sourcegitcommit: 884b79b4c6fd8014fab9953faca557e56bb8c400
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="desktop-bridge"></a>Мост для классических приложений
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 01/04/2018
 Помимо кода, который используется для активации возможностей Windows 10, ваше приложение остается неизменным, и вы можете продолжать распространять его среди пользователей Windows 7, Windows Vista или Windows XP. В Windows 10 ваше приложение продолжит работу в режиме полного доверия пользователя так же, как и сейчас.
 
 >[!IMPORTANT]
->Мост для классических приложений впервые появился в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для Windows 10 Anniversary Edition (10.0; сборка 14393) или более поздней версии в Visual Studio.
+>Мост для классических приложений впервые появился в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для юбилейного обновления Windows 10 (10.0; сборка 14393) или более поздней версии в Visual Studio.
 
 > [!NOTE]
 > Ознакомьтесь с <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">этой серией</a> коротких видеозаписей, опубликованных академией Microsoft Virtual Academy. Эти видеозаписи проведут вас через весь процесс переноса классического приложения на универсальную платформу Windows (UWP).

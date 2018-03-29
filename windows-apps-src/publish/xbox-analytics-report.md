@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: The Xbox analytics report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your product.
-title: "Аналитический отчет Xbox"
+title: Аналитический отчет Xbox
 ms.author: wdg-dev-content
-ms.date: 10/30/2017
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, аналитика xbox, аналитика xbox live, статистика xbox"
+keywords: windows 10, uwp, аналитика xbox, аналитика xbox live, статистика xbox
 ms.localizationpriority: high
-ms.openlocfilehash: ad40d33d51287126cd1940eb830b1be0c5ba7812
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 2b6ab5c15b4683456502ce1b94b1bf3ca74c239c
+ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="xbox-analytics-report"></a>Аналитический отчет Xbox
 
@@ -55,7 +55,6 @@ ms.lasthandoff: 12/12/2017
 В этом разделе содержатся вкладки, на которым представлены различные данные об игроках. Обратите внимание, что статистические данные в этом разделе отображают общее использование возможностей, а не в пределах именно вашего продукта.
 
 - На вкладке **Использование социальных возможностей** представлены данные о социальном взаимодействии пользователей.
-   - **Центр игр** отображает процент пользователей, взаимодействующих с центрами игр. Эти данные доступны только для продуктов на платформе Xbox и дают представление о количестве игроков, пользующихся центрами игр в общем, а не центром игр именно вашего продукта.
    - На вкладке **Приглашения в игру** показан процент пользователей, отправивших приглашения (в любую игру).
    - На вкладке **Командный чат** показан процент игроков, использующих командный чат (в любой игре).
    - На вкладке **Текстовые сообщения** показа процент пользователей, отправляющих сообщения с помощью оболочки Xbox (в любой игре).

@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: In order to add and manage account users, you must first associate your Dev Center account with your organization's Azure Active Directory.
-title: "Связывание Azure Active Directory с учетной записью Центра разработки"
+title: Связывание Azure Active Directory с учетной записью Центра разработки
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, azure ad, клиент azure, клиент aad, клиент azure ad, управление клиентами, клиенты"
+keywords: Windows 10, uwp, azure ad, клиент azure, клиент aad, клиент azure ad, управление клиентами, клиенты
 ms.localizationpriority: high
-ms.openlocfilehash: ef53a8b339f7f6444373d7445721b641926f00a3
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: c430bb279d0b9da6126212a8af7400df8cd1693e
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>Связывание Azure Active Directory с учетной записью Центра разработки
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 01/12/2018
 Центр разработки для Windows использует Azure AD для управления доступом нескольких пользователей к учетной записи и управления ими. Если ваша организация уже использует Office 365 или другие бизнес-службы от Майкрософт, то у вас уже есть Azure AD. В противном случае можно создать новый клиент Azure AD из Центра разработки без дополнительной платы.
 
 > [!TIP]
-> Этот раздел относится к программе для разработчиков приложений для Windows, но сопоставление клиента и управление пользователями работают аналогично для учетных записей в программе для разработчиков оборудования для Windows. В этом разделе ссылки на роль **Менеджер** также применимы к учетным записям разработчиков оборудования с ролью **Администратор**. Подробнее об управлении пользователями в программе для разработчиков оборудования см. в разделе [Администрирование информационной панели](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration).
+> В этом разделе описана программа для разработчиков приложений для Windows, однако связывание клиента и управление пользователями работает аналогично для учетных записей Программы классических приложений для Windows (см. дополнительные сведения в разделе [Программа классических приложений для Windows](https://msdn.microsoft.com/library/windows/desktop/mt826504#users)) и Программы для разработчиков оборудования для Windows (где ссылки на роль **Менеджер** также применимы к аппаратным учетным записям с ролью **Администратор**; см. дополнительные сведения в разделе [Администрирование информационной панели](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)).
 
 Один клиент Azure AD можно связать с несколькими учетными записями Центра разработки. Для добавления нескольких пользователей учетной записи достаточно иметь один клиент Azure AD, связанный с учетной записью Центра разработки, однако вы также можете добавить несколько клиентов Azure AD к одной учетной записи Центра разработки. Любой пользователь с ролью **Менеджер** в учетной записи Центра разработки будет иметь возможность добавления и удаления клиентов Azure AD.
 
