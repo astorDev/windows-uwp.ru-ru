@@ -1,21 +1,22 @@
 ---
 author: jnHs
 Description: You can create Store listings for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file.
-title: "Импорт и экспорт описаний в Store"
+title: Импорт и экспорт описаний в Store
 ms.author: wdg-dev-content
-ms.date: 12/22/2017
+ms.date: 03/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, импорт описаний в store, экспорт описаний в store, импорт, экспорт, csv описаний в store"
+keywords: windows 10, uwp, импорт описаний в store, экспорт описаний в store, импорт, экспорт, csv описаний в store
 ms.localizationpriority: high
-ms.openlocfilehash: f003ab35fa968e7b4be8e6e0591d97baafaa8648
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: fb9a3e6fd93600392ef724226368d33ed1585c76
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="import-and-export-store-listings"></a>Импорт и экспорт описаний в Store
+
 Вместо ввода [сведений для описаний в Store напрямую в информационной панели](create-app-store-listings.md) вы можете добавлять или обновлять сведения путем экспорта описаний в виде CSV-файла, ввода ваших сведений и ресурсов и последующего импорта обновленного файла. Этот способ можно использовать для создания описаний с нуля или для обновления уже созданных описаний.
 
 Эта возможность особенно полезна, если вы хотите создать описания в Store для вашего продукта на нескольких языках, так как можно скопировать и вставить одни и те же сведения в нескольких полей и легко внести любые изменения, которые должны применяться для определенных языков. Однако этот способ нельзя использовать для создания и обновления [описаний в Store для определенной платформы](create-platform-specific-store-listings.md) вашего приложения. 

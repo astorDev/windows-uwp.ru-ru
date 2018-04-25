@@ -1,17 +1,20 @@
 ---
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
-title: "Создание приложения Hello, world (XAML)"
-description: "В этом учебнике описано, как использовать XAML с C# для создания простого приложения Hello, world, предназначенного для универсальной платформы Windows (UWP) в ОС Windows10."
+title: Создание приложения "Hello, world" на XAML
+description: Используйте XAML с C# для создания простого приложения "Hello, world", предназначенного для универсальной платформы Windows (UWP) в ОС Windows 10.
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: 95e447550705d606483c20ec34cca6c97b03785c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows 10, uwp, первое приложение, hello world
+ms.localizationpriority: high
+ms.openlocfilehash: e6fb25572213947aa7c536cde552aca3c572f0cf
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Создание приложения "Hello, world" (XAML)
 
@@ -27,8 +30,8 @@ translationtype: HT
 
 ## <a name="before-you-start"></a>Перед началом работы...
 
--   [Что представляет собой универсальное приложение для Windows](whats-a-uwp.md)?
--   Для работы с этим учебником вам потребуются Windows10 и Visual Studio 2017. [Подготовка](get-set-up.md).
+-   [Что такое универсальное приложение для Windows?](universal-application-platform-guide.md)
+-   [Скачать Visual Studio 2017 (и Windows 10)](https://developer.microsoft.com/windows/downloads). Если вам требуется помощь, узнайте, как [выполнить настройку](get-set-up.md).
 -   Мы также предполагаем, что в Visual Studio используется компоновка окна по умолчанию. Если макет по умолчанию изменен, его можно сбросить в меню **Окно** с помощью команды **Сбросить макет окна**.
 
 > [!NOTE]
@@ -97,7 +100,7 @@ translationtype: HT
 
 *Набор изображений логотипов*
 -   Файл Assets/Square150x150Logo.scale-200.png отвечает за отображение вашего приложения в меню "Пуск".
--   Файл Assets/StoreLogo.png представляет ваше приложение в Магазине Windows.
+-   Файл Assets/StoreLogo.png представляет ваше приложение в Microsoft Store.
 -   Файл Assets/SplashScreen.scale-200.png— это экран-заставка, отображающаяся при запуске вашего приложения.
 
 ## <a name="step-2-adding-a-button"></a>Шаг 2. Добавление кнопки
@@ -188,7 +191,7 @@ translationtype: HT
 
    Закройте окно приложения.
 
-## <a name="step-3-event-handlers"></a>Шаг 3. Обработчики событий
+## <a name="step-4-event-handlers"></a>Шаг 4. Обработчики событий
 
 Термин "обработчик событий" звучит непонятно, однако это просто еще одно имя кода, который вызывается при возникновении события (например, когда пользователь нажимает кнопку).
 
@@ -231,17 +234,15 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="summary"></a>Резюме
 
-
 Поздравляем! Вы создали свое первое приложение для Windows10 и платформы UWP!
 
-Чтобы узнать, как использовать XAML для размещения элементов управления, которые будут использоваться в вашем приложении, изучите [учебник по сетке](../layout/grid-tutorial.md) или сразу перейдите к [следующему шагу](learn-more.md).
-
+Чтобы узнать, как использовать XAML для размещения элементов управления, которые будут использоваться в вашем приложении, изучите [учебник по сетке](../design/layout/grid-tutorial.md) или сразу перейдите к [следующему шагу](learn-more.md).
 
 ## <a name="see-also"></a>См. также
 
 * [Ваше первое приложение](your-first-app.md)
-* [Публикация приложения Магазина Windows](https://developer.microsoft.com/store/publish-apps)
+* [Публикация вашего приложения UWP](https://developer.microsoft.com/store/publish-apps).
 * [Практические руководства по разработке приложений UWP](https://developer.microsoft.com/windows/apps/develop)
 * [Примеры кода для разработчиков UWP](https://developer.microsoft.com/windows/samples)
-* [Что такое универсальное приложение для Windows?](whats-a-uwp.md)
+* [Что такое универсальное приложение для Windows?](universal-application-platform-guide.md)
 * [Регистрация учетной записи Windows](sign-up.md)

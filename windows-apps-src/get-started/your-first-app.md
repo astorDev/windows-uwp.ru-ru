@@ -8,17 +8,17 @@ ms.date: 1/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, начало работы, начало, c#, c++, JavaScript
+keywords: windows 10, uwp, первое приложение, c#, c++, JavaScript
 ms.localizationpriority: high
-ms.openlocfilehash: 39c9a6c65f5eb6ca828b782e6550d92601165481
-ms.sourcegitcommit: 444eaccbdcd4be2f1a1e6d4ce5525ba57e363b56
+ms.openlocfilehash: 124c5e89923945ae740dfdc3e658b8d20bbd1286
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-your-first-app"></a>Создание первого приложения
 
-Вас приветствует платформа UWP ([что такое UWP?](whats-a-uwp.md))! Эти учебники помогут вам создать первое приложение UWP на удобном для вас языке.
+Добро пожаловать на [платформу UWP](universal-application-platform-guide.md)! Эти учебники помогут вам создать первое приложение UWP на удобном для вас языке.
 
 Чтобы начать, выберите любимый язык!
 
@@ -84,6 +84,6 @@ ms.lasthandoff: 01/29/2018
 * [Публикация вашего приложения UWP](https://developer.microsoft.com/store/publish-apps).
 * [Практические руководства по разработке приложений UWP](https://developer.microsoft.com/windows/apps/develop)
 * [Примеры кода для разработчиков UWP](https://developer.microsoft.com/windows/samples)
-* [Что такое универсальное приложение для Windows?](whats-a-uwp.md)
+* [Что такое приложение UWP?](universal-application-platform-guide.md)
 * [Подготовка](get-set-up.md)
 * [Регистрация учетной записи Windows](sign-up.md)

@@ -9,17 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 5d416ad13c2e689c5265164c0269244a387a6c7f
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 518cc64fec2524bb3cc02daca72a990d016c8ce5
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="whats-new-in-windows-10-for-developers-sdk-preview-build-17110"></a>Новые возможности для разработчиков в Windows 10, предварительная сборка SDK 17110
 
 Windows 10, предварительная сборка SDK 17110, в сочетании с Visual Studio 2017 и обновленным пакетом SDK предоставляет инструменты, функции и возможности для создания удивительных приложений универсальной платформы Windows. [Установив средства и пакет SDK](http://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md), либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
-В этом разделе приводится подборка новых и улучшенных функций этой предварительной версии SDK, а также руководств, представляющих интерес для разработчиков Windows. Сейчас эти функции доступны участникам [Программы предварительной оценки Windows](https://insider.windows.com/en-us/), а в следующем крупной обновлении Windows эти функции станут общедоступными. Полный список новых пространств имен, добавленных в Windows SDK, см. в разделе [17110 изменения API в Windows 10, сборка 17110](windows-10-build-17110-api-diff.md). Дополнительные сведения об основных функциях Windows 10 см. в разделе [Потрясающие возможности Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181). Кроме того, в списке [возможностей платформы разработки Windows](https://developer.microsoft.com/windows/platform/features) можно найти краткий обзор прошлых и будущих дополнений к ней.
+В этом разделе приводится подборка новых и улучшенных функций этой предварительной версии SDK, а также руководств, представляющих интерес для разработчиков Windows. Сейчас эти функции доступны участникам [Программы предварительной оценки Windows](https://insider.windows.com/), а в следующем крупной обновлении Windows эти функции станут общедоступными. Полный список новых пространств имен, добавленных в Windows SDK, см. в разделе [17110 изменения API в Windows 10, сборка 17110](windows-10-build-17110-api-diff.md). Дополнительные сведения об основных функциях Windows 10 см. в разделе [Потрясающие возможности Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181). Кроме того, в списке [возможностей платформы разработки Windows](https://developer.microsoft.com/windows/platform/features) можно найти краткий обзор прошлых и будущих дополнений к ней.
 
 ## <a name="design--ui"></a>Оформление и пользовательский интерфейс
 
@@ -63,7 +63,7 @@ Windows 10, предварительная сборка SDK 17110, в сочет
 PlayReady | Microsoft PlayReady— это набор технологий для защиты цифрового содержимого от несанкционированного использования. PlayReady работает на всех типах устройств и приложений и во всех операционных системах. [Узнайте, как интегрировать PlayReady в свое приложение.](https://docs.microsoft.com/playready/)
 Снимок экрана | Пространство имен [Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) предоставляет API-интерфейсы для извлечения кадров из окна отображения или приложения, создания видеопотоков или снимков в рамках формирования интерактивного интерфейса для совместной работы. См. дополнительные сведения в разделе [Захват экрана](../audio-video-camera/screen-capture.md).
 Системные триггеры | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) позволяет определить системный триггер, если ОС не предоставляет нужный триггер. Например, если драйвер оборудования и приложение UWP сторонние, а драйверу оборудования нужно создать пользовательское событие, обрабатываемое приложением. Например, звуковая карта, которая должна уведомить пользователя о том, что в аудиоразъем выполнено подключение.
-Действия пользователей | Класс **UserActivitySessionHistoryItem** имеет новые методы, извлекающие недавние действия пользователей. См. подробные сведения в разделе о классе [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel#Windows_ApplicationModel_UserActivities_UserActivityChannel_GetRecentUserActivitiesAsync_System_Int32_) и его перегрузке.
+Действия пользователей | Класс **UserActivitySessionHistoryItem** имеет новые методы, извлекающие недавние действия пользователей. См. подробные сведения в разделе о классе [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) и его перегрузке.
 Windows Mixed Reality | Чтобы поддержать растущую платформу Windows Mixed Reality, в пространства имен [Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) и [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial) были добавлены новые API.
 
 ## <a name="publish--monetize-windows-apps"></a>Публикация и монетизация приложений для Windows

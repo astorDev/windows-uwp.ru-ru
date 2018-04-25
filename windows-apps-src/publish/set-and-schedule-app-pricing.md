@@ -3,17 +3,17 @@ author: jnHs
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: Настройка и планирование цены приложения
 ms.author: wdg-dev-content
-ms.date: 02/05/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, цена, цены на приложения, цена приложения, продажа приложений, изменение цены, рассчитываемая цена, цена, цены, стоимость, переопределить базовую цену, цена в произвольной форме, произвольная форма
 ms.localizationpriority: high
-ms.openlocfilehash: 2be7e664279cb19527a262ad3c170d04f8d026fb
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
+ms.openlocfilehash: 44ded7baf563d0253c2cca6b7937cb5c8fea74e3
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="set-and-schedule-app-pricing"></a>Настройка и планирование цены приложения
 
@@ -37,6 +37,8 @@ ms.lasthandoff: 02/09/2018
 
 Помните, что выбранный набор цен может включать в себя налог с продажи или налог на добавленную стоимость, которые должны оплачиваться вашими клиентами. Дополнительные сведения о налоговых вопросах на отдельных рынках см. в разделе [Налогообложение для платных приложений](tax-details-for-paid-apps.md). Также ознакомьтесь с [факторами, которые необходимо учитывать при выборе цен для отдельных рынков](define-pricing-and-market-selection.md#price-considerations-for-specific-markets).
 
+> [!NOTE]
+> При выборе параметра **Остановить приобретение** в подразделе **Отправить продукт в Store, но запретить его поиск там** раздела [Видимость](choose-visibility-options.md#discoverability) ) вы не сможете задать цену для отправки (так как никто не сможет приобрести приложение, если у пользователя нет рекламного кода, чтобы бесплатно получить его).
 
 ## <a name="schedule-price-changes"></a>Планирование изменения цен
 

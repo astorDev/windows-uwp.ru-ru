@@ -1,20 +1,20 @@
 ---
 author: mcleanbyron
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
-title: "Скачивание и установка обновлений пакетов для приложения"
-description: "Узнайте, как пометить пакеты как обязательные на информационной панели Центра разработки и написать код в приложении для загрузки и установки обновлений пакетов."
+title: Скачивание и установка обновлений пакетов для приложения
+description: Узнайте, как пометить пакеты как обязательные на информационной панели Центра разработки и написать код в приложении для загрузки и установки обновлений пакетов.
 ms.author: mcleans
-ms.date: 03/15/2017
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 62dc1cf81bd26ca5ba4adf181cc9f710e41565c2
-ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.openlocfilehash: ce2f6d6607f09186a3969f37b6808fa1f04fb338
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="download-and-install-package-updates-for-your-app"></a>Скачивание и установка обновлений пакетов для приложения
 
@@ -29,9 +29,9 @@ ms.lasthandoff: 12/22/2017
 
 |  Метод  |  Описание  |
 |----------|---------------|
-| [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetAppAndOptionalStorePackageUpdatesAsync) | Вызовите этот метод, чтобы получить список доступных обновлений пакетов. Обратите внимание, что может быть задержка продолжительности до одного дня между временем прохождения процесса сертификации приложением и временем, когда метод **GetAppAndOptionalStorePackageUpdatesAsync** обнаружит обновление пакета для приложения. |
-| [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_RequestDownloadStorePackageUpdatesAsync_Windows_Foundation_Collections_IIterable_Windows_Services_Store_StorePackageUpdate__) | Вызовите этот метод, чтобы скачать (но не устанавливать) доступные обновления пакета. Эта операционная система отображает диалоговое окно с запросом разрешения пользователя на скачивание обновлений. |
-| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_RequestDownloadAndInstallStorePackageUpdatesAsync_Windows_Foundation_Collections_IIterable_Windows_Services_Store_StorePackageUpdate__) | Вызовите этот метод, чтобы скачать и установить доступные обновления пакета. Операционная система отображает диалоговые окна с запросом разрешения пользователя на скачивание и установку обновлений. Если вы уже скачали обновления пакета, вызвав метод **RequestDownloadStorePackageUpdatesAsync**, этот метод пропускает процесс скачивания и только устанавливает обновления.  |
+| [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetAppAndOptionalStorePackageUpdatesAsync) | Вызовите этот метод, чтобы получить список доступных обновлений пакетов. Обратите внимание, что может быть задержка продолжительности до одного дня между временем прохождения процесса сертификации приложением и временем, когда метод **GetAppAndOptionalStorePackageUpdatesAsync** обнаружит обновление пакета для приложения. |
+| [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) | Вызовите этот метод, чтобы скачать (но не устанавливать) доступные обновления пакета. Эта операционная система отображает диалоговое окно с запросом разрешения пользователя на скачивание обновлений. |
+| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) | Вызовите этот метод, чтобы скачать и установить доступные обновления пакета. Операционная система отображает диалоговые окна с запросом разрешения пользователя на скачивание и установку обновлений. Если вы уже скачали обновления пакета, вызвав метод **RequestDownloadStorePackageUpdatesAsync**, этот метод пропускает процесс скачивания и только устанавливает обновления.  |
 
 <span/>
 
@@ -39,8 +39,8 @@ ms.lasthandoff: 12/22/2017
 
 |  Свойство  |  Описание  |
 |----------|---------------|
-| [Обязательное](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate#Windows_Services_Store_StorePackageUpdate_Mandatory) | Используйте это свойство, чтобы определить, помечен ли пакет как обязательный на панели мониторинга Центра разработки. |
-| [Package](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate#Windows_Services_Store_StorePackageUpdate_Package) | Используйте этой свойство, чтобы получить доступ к базовым данным пакета. |
+| [Обязательное](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate.Mandatory) | Используйте это свойство, чтобы определить, помечен ли пакет как обязательный на панели мониторинга Центра разработки. |
+| [Package](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate.Package) | Используйте этой свойство, чтобы получить доступ к базовым данным пакета. |
 
 <span/>
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 12/22/2017
 * Код выполняется в контексте [страницы](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx).
 * **Страница** содержит панель [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) с именем ```downloadProgressBar``` для предоставления состояния операции загрузки.
 * Файл кода имеет заявление **using** для пространств имен **Windows.Services.Store**, **Windows.Threading.Tasks** и **Windows.UI.Popups**.
-* Приложение — однопользовательское и выполняется только в контексте пользователя, запустившего его. Для [многопользовательского приложения](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) используйте метод [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetForUser_Windows_System_User_), чтобы получить объект **StoreContext**, а не метод [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetDefault).
+* Приложение — однопользовательское и выполняется только в контексте пользователя, запустившего его. Для [многопользовательского приложения](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) используйте метод [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User), чтобы получить объект **StoreContext**, а не метод [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault).
 
 <span/>
 
@@ -221,11 +221,12 @@ private void HandleMandatoryPackageError()
 
 ### <a name="display-progress-info-for-the-download-and-install"></a>Отображение хода выполнения скачивания и установки
 
-При вызове **RequestDownloadStorePackageUpdatesAsync** или **RequestDownloadAndInstallStorePackageUpdatesAsync** можно назначить обработчик [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress), который будет вызываться один раз для каждого шага при скачивании (или скачивании и установке) для каждого пакета в этом запросе. Обработчик получает объект [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus), который предоставляет сведения о пакете обновления, создавшем уведомление о ходе выполнения. В предыдущих примерах используется поле **PackageDownloadProgress** объекта **StorePackageUpdateStatus** для отображения хода выполнения скачивания и установки.
+При вызове **RequestDownloadStorePackageUpdatesAsync** или **RequestDownloadAndInstallStorePackageUpdatesAsync** можно назначить обработчик [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress-2.progress), который будет вызываться один раз для каждого шага при скачивании (или скачивании и установке) для каждого пакета в этом запросе. Обработчик получает объект [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus), который предоставляет сведения о пакете обновления, создавшем уведомление о ходе выполнения. В предыдущих примерах используется поле **PackageDownloadProgress** объекта **StorePackageUpdateStatus** для отображения хода выполнения скачивания и установки.
 
 Не забывайте, что при вызове **RequestDownloadAndInstallStorePackageUpdatesAsync** для скачивания и установки обновлений пакета в одной операции поле **PackageDownloadProgress** увеличивается с 0.0 до 0.8 во время скачивания для пакета, а затем увеличивается с 0.8 до 1.0 во время установки. Поэтому при сопоставлении процента, показанного в специальном интерфейсе хода выполнения для значения поля **PackageDownloadProgress** ваш интерфейс будет отображать 80%, когда скачивание пакета закончится, а ОС отобразит диалоговое окно установки. Если вы хотите, чтобы специальный интерфейс хода выполнения отображал 100%, когда пакет будет скачан и готов к установке, вы можете изменить код и назначить 100% интерфейсу хода выполнения, когда значение поля **PackageDownloadProgress** достигнет 0.8.
 
 <span id="mandatory-dashboard" />
+
 ## <a name="make-a-package-submission-mandatory-in-the-dev-center-dashboard"></a>Как сделать отправку пакета обязательной на информационной панели Центра разработки
 
 При создании отправки пакета для приложения, которое предназначено для Windows 10 версии 1607 или выше, можно пометить пакет как обязательный и указать дату и время, когда он становится обязательным. Если это свойство задано и приложение обнаружит, что обновление пакета доступно, используя API-интерфейс, описанный ранее в этой статье, приложение может определить, является ли пакет обновлений одинаковым, и изменить его поведение до тех пор, пока обновление не будет установлено (например, приложение может отключить те или иные компоненты).

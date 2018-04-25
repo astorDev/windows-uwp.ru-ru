@@ -1,17 +1,20 @@
 ---
 author: GrantMeStrength
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
-title: "Подготовка"
-description: "Подготовка на самом деле проще, чем может показаться. Ознакомьтесь с этими инструкциями и приступите к созданию приложений универсальной платформы Windows (UWP) для Windows10."
+title: Подготовка
+description: Подготовка на самом деле проще, чем может показаться. Ознакомьтесь с этими инструкциями и приступите к созданию приложений универсальной платформы Windows (UWP) для Windows10.
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp
-ms.openlocfilehash: 202480cd8e9107e18c7fa8c84a17089177f91dcb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: high
+ms.openlocfilehash: 85c949307183cf71f8b770d190d983db28b61a9f
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="get-set-up"></a>Подготовка
 
@@ -29,7 +32,6 @@ translationtype: HT
 Вы— подписчик MSDN? Вы можете скачать ISO здесь:
 
 -   Скачайте Windows10 [на веб-сайте скачиваемых файлов для подписчиков MSDN](http://go.microsoft.com/fwlink/p/?LinkId=266384)
-
 
 
 ## <a name="2-download-or-update-visual-studio"></a>2. Скачайте или обновите Visual Studio
@@ -65,7 +67,7 @@ Microsoft Visual Studio2017 помогает в проектировании, п
 
 ## <a name="whats-next"></a>Дальнейшие действия
 
-После установки инструментов и получения лицензии разработчика или учетной записи разработчика создайте свое первое приложение с помощью наших учебников:
+После установки инструментов и активации устройства для разработки создайте свое первое приложение с помощью наших учебников:
 
 -   Учебники [Создание первого приложения](your-first-app.md)
 
@@ -77,8 +79,8 @@ Microsoft Visual Studio2017 помогает в проектировании, п
 ## <a name="see-also"></a>См. также
 
 * [Ваше первое приложение](your-first-app.md)
-* [Публикация приложения Магазина Windows](https://developer.microsoft.com/store/publish-apps)
+* [Публикация вашего приложения UWP](https://developer.microsoft.com/store/publish-apps).
 * [Практические руководства по разработке приложений UWP](https://developer.microsoft.com/windows/apps/develop)
 * [Примеры кода для разработчиков UWP](https://developer.microsoft.com/windows/samples)
-* [Что такое универсальное приложение для Windows?](whats-a-uwp.md)
+* [Что такое приложение UWP?](universal-application-platform-guide.md)
 * [Регистрация учетной записи Windows](sign-up.md)

@@ -1,8 +1,8 @@
 ---
 author: mijacobs
 Description: Use the ParallaxView control to add depth and movement to your app.
-title: "Сведения об использовании элемента управления ParallaxView для добавления в приложение глубины и движения."
-ms.assetid: 
+title: Сведения об использовании элемента управления ParallaxView для добавления в приложение глубины и движения.
+ms.assetid: ''
 label: Parallax View
 template: detail.hbs
 ms.author: mijacobs
@@ -16,17 +16,17 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: high
-ms.openlocfilehash: ae11bb0c3d2d3230f4111a08d33b4fa839ffedd7
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: 69bb202a7e13f087ead7ea2a379f803219bbd2d4
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="parallax"></a>Параллакс
 
 Параллакс— это визуальный эффект, при котором элементы, расположенные ближе к зрителю, перемещаются быстрее элементов фона. Эффект параллакса создает ощущение глубины, перспективы и движения. В приложении UWP для создания эффекта параллакса можно использовать элемент управления ParallaxView.  
 
-> **Важные API**: [класс ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [свойство VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview#Windows_UI_Xaml_Controls_ParallaxView_VerticalShift), [свойство HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview#Windows_UI_Xaml_Controls_ParallaxView_HorizontalShift)
+> **Важные API**: [класс ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [свойство VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift), [свойство HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 
 ## <a name="examples"></a>Примеры
 
@@ -59,7 +59,7 @@ ms.lasthandoff: 01/08/2018
 
 Для создания эффекта параллакса используется элемент управления [ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview). Он привязывает положение прокрутки элемента переднего плана, например списка, к фоновому элементу, например изображению. При прокрутке элемента переднего плана он анимирует фоновый элемент, создавая эффект параллакса. 
 
-Чтобы использовать элемент управления ParallaxView, выберите элемент Source, фоновый элемент и установите для свойств [VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview#Windows_UI_Xaml_Controls_ParallaxView_VerticalShift) (для вертикальной прокрутки) и/или [HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview#Windows_UI_Xaml_Controls_ParallaxView_HorizontalShift) (для горизонтальной прокрутки) значения выше нуля. 
+Чтобы использовать элемент управления ParallaxView, выберите элемент Source, фоновый элемент и установите для свойств [VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift) (для вертикальной прокрутки) и/или [HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift) (для горизонтальной прокрутки) значения выше нуля. 
 * Свойство Source принимает ссылку на элемент переднего плана. Чтобы добиться эффекта параллакса, объектом переднего плана должен быть объект [ScrollViewer](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) или элемент, содержащий объект ScrollViewer, например [ListView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview) или [RichTextBox](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.RichEditBox). 
 
 * Чтобы задать фоновый элемент, добавьте его в качестве дочернего элемента управления ParallaxView. Фоновым элементом может быть любой объект [UIElement](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.uielement), например [изображение](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Image) или панель, содержащая дополнительные элементы пользовательского интерфейса. 

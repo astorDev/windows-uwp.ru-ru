@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
-title: "Ввод свойств надстройки"
+title: Ввод свойств надстройки
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
 ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, надстройки, свойства, период подписки, срок действия продукта, тип содержимого, iap, покупки из приложения, внутренний продукт приложения"
+keywords: windows 10, uwp, надстройки, свойства, период подписки, срок действия продукта, тип содержимого, iap, покупки из приложения, внутренний продукт приложения
 ms.localizationpriority: high
-ms.openlocfilehash: 63fc414c230e5a988013b1509280bfdb083a93c0
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: c3f5de17dc090989572d72c30bd9d8b85e385316
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="enter-add-on-properties"></a>Ввод свойств надстройки
 
@@ -80,16 +80,18 @@ ms.lasthandoff: 01/12/2018
 Эти поля являются необязательными для всех типов надстроек.
 
 <span id="keywords" />
+
 ### <a name="keywords"></a>Ключевые слова
 
 Для каждой надстройки можно предоставить до десяти ключевых слов длиной не более 30 символов. После этого приложение сможет запрашивать надстройки, соответствующие этим ключевым словам. Эта функция позволяет создавать экраны в приложении, которые смогут загружать надстройки без непосредственного указания с вашей стороны кода продукта в коде самого приложения. В любое время можно изменить ключевые слова надстройки без необходимости внесения изменений в код вашего приложения или повторной отправки этого приложения.
 
-Для запроса этого поля используйте свойство [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct#Windows_Services_Store_StoreProduct_Keywords) в [пространстве имен Windows.Services.Store](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx). (Либо, если вы используете [пространство имен Windows.ApplicationModel.Store](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx), используйте свойство [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting#Windows_ApplicationModel_Store_ProductListing_Keywords).)
+Для запроса этого поля используйте свойство [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) в [пространстве имен Windows.Services.Store](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx). (Либо, если вы используете [пространство имен Windows.ApplicationModel.Store](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx), используйте свойство [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords).)
 
 > [!NOTE]
 > Ключевые слова недоступны для использования в пакетах для Windows8 и Windows8.1.
 
 <span id="custom-developer-data" />
+
 ### <a name="custom-developer-data"></a>Пользовательские данные, определенные разработчиком
 
 Можно ввести до 3000 символов в поле **Пользовательские данные, определенные разработчиком** (раньше это поле называлось **Тэг**), чтобы предоставить дополнительный контекст для внутреннего продукта приложения. Чаще всего используется форма строки XML, но вы можете ввести в это поле любые данные. Ваше приложение сможет в последствии запрашивать это поле для чтения его содержимого (несмотря на то, что приложение не может изменять данные и передать изменения обратно.)

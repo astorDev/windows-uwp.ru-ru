@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: 3cbaa8a8e78ad14472a34e107521d9c966ba434f
-ms.sourcegitcommit: 884b79b4c6fd8014fab9953faca557e56bb8c400
+ms.openlocfilehash: a16f86512a3c33055cb4825966282f1487ea158d
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="desktop-bridge"></a>Мост для классических приложений
 
@@ -58,6 +58,7 @@ ms.lasthandoff: 02/15/2018
 Далее ознакомьтесь с разделом [Подготовка классического приложения к упаковке](desktop-to-uwp-prepare.md) и устраните все проблемы, применимые к вашему приложению, до создания для него пакета приложения для Windows. Возможно, для создания пакета в приложение не придется вносить никакие изменения. Однако в некоторых ситуациях для создания пакета для приложения может потребоваться его предварительная оптимизация.
 
 <a id="convert" />
+
 ## <a name="package"></a>Пакет
 
 Ниже приведены некоторые средства, которые можно использовать в целях создания пакета приложения для Windows для вашего приложения.
@@ -114,6 +115,9 @@ Desktop App Converter также интегрируется с Hyper-V и [VMwar
 Advanced Installer также предоставляет расширение для Visual Studio 2017 и 2015, которое можно использовать для [сборки и отладки приложений, перенесенных с помощью моста для классических приложений](http://www.advancedinstaller.com/debug-desktop-bridge-apps.html).
 
 Краткий обзор см. в этом [видео](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be).
+
+> [!TIP]
+> Ознакомьтесь с недавно выпущенным выпуском [Advanced Installer Express Edition](https://www.advancedinstaller.com/express-edition.html).
 
 #### <a name="cloudhouse-compatibility-containers"></a>Контейнеры совместимости Cloudhouse
 

@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
-title: "Доступность семейства устройств"
+title: Доступность семейства устройств
 ms.author: wdg-dev-content
-ms.date: 10/12/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, пакеты, отправка, доступность семейства устройств"
+keywords: windows 10, uwp, пакеты, отправка, доступность семейства устройств
 ms.localizationpriority: high
-ms.openlocfilehash: a3ae23a08ec305285569de8b6d55e805beaa86ba
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 44c20c05457669edb31067b6d7ac8bc60f09e72e
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="device-family-availability"></a>Доступность семейства устройств
 
@@ -36,6 +36,7 @@ ms.lasthandoff: 12/12/2017
 Если ваше приложение из поддерживает, мы рекомендуем оставить все флажки установленными, если у вас нет определенной причины для ограничения типов устройствWindows 10, пользователи которых могут приобрести ваше приложение. Например, если вы знаете, что вашим приложением неудобно пользоваться на [Surface Hub](https://developer.microsoft.com/windows/surfacehub) и/или [Microsoft HoloLens](http://dev.windows.com/holographic/development_overview), можно снять флажок **Windows 10 для совместной работы** и/или **Windows 10 Holographic**. При этом новые пользователи на указанных устройствах не смогут получить приложение. Если в дальнейшем вы решите, что готовы предоставлять приложение этим пользователям, вы можете создать новую отправку с установленными флажками.
 
 <span id="xbox" />
+
 Единственное семейство устройств Windows 10, флажок которого не установлен по умолчанию для пакетов Windows.Universal,— **Xbox с Windows 10**. Если ваше приложение не является игрой (или если оно является игрой и вы включили программу [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) или прошли процесс [утверждения концепции](../gaming/concept-approval.md)) и отправка содержит нейтральные и/или x64-разрядные пакеты UWP, скомпилированные с использованием SDK для Windows 10 версии 14393 или более поздней версии, вы можете установить флажок **Xbox с Windows 10**, чтобы предлагать приложение клиентам, использующим Xbox One.
 
 > [!IMPORTANT]
@@ -48,6 +49,8 @@ ms.lasthandoff: 12/12/2017
 >   
 > Если вам по-прежнему не удается устранить проблему, обратитесь в службу поддержки.
 
+Если вы отправляете приложение UWP для Windows 10 IoT Базовая, вам не следует вносить изменения в выбранные по умолчанию параметры после отправки пакетов; для Windows 10 IoT отдельный флажок отсутствует. Дополнительные сведения о публикации приложений Интернета вещей Core UWP см. в разделе [Поддержка Microsoft Store для приложений Интернета вещей Core UWP](https://docs.microsoft.com/windows/iot-core/commercialize-your-device/installingandservicing).
+
 Если ваша отправка включает в себя пакеты, которые можно запустить в **Windows 8/8.1** и **Windows Phone 8.x и более ранних версий**, эти пакеты станут доступны пользователям, как показано в таблице. Флажки для этих версий ОС отсутствуют. Чтобы перестать предоставлять приложение этим пользователям, удалите соответствующие пакеты из отправки.
 
 > [!IMPORTANT]
@@ -57,8 +60,7 @@ ms.lasthandoff: 12/12/2017
 
 Например, если вы опубликовали приложение с пакетами Windows Phone 8.1 и позже добавили пакетWindows 10 (UWP) для того же приложения, которое ориентировано на универсальное семейство устройств, пользователямWindows 10 для мобильных устройств с пакетом Windows Phone 8.1 будет предложено обновление до этого пакетаWindows 10 (UWP), даже если вы сняли флажок **Windows 10 Mobile** (поскольку это не новое приобретение, а обновление). Однако если вы не предоставляете пакетWindows 10 (UWP), ориентированный на универсальное или мобильное семейство устройств, у пользователейWindows 10 Mobile останется пакет Windows Phone 8.1.
 
-Подробнее о семействах устройств: [Введение в работу с универсальной платформой Windows](../get-started/universal-application-platform-guide.md) и [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
-
+Дополнительные сведения о семействах устройств см. в разделе [**Общие сведения о семействах устройств **](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview).
 
 ## <a name="understanding-ranking"></a>Общие сведения о ранжировании
 
