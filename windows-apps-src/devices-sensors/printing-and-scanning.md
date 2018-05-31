@@ -1,0 +1,38 @@
+---
+author: PatrickFarley
+ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
+title: Печать и сканирование
+description: В этом разделе описываются печать и сканирование из вашего универсального приложения для Windows.
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: 8f02d0c9dc006a77d6b532713f4678d4faa2af3e
+ms.sourcegitcommit: db57a716b1ba680391c167be8ffa42edc0104720
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/21/2018
+ms.locfileid: "1610943"
+---
+# <a name="printing-and-scanning"></a>Печать и сканирование
+
+
+В этом разделе описываются печать и сканирование из вашего универсального приложения для Windows.
+
+| Тема | Описание | 
+|-------|-------------|
+| [Печать из приложения](print-from-your-app.md) | Узнайте, как печатать документы из универсального приложения для Windows. В этом разделе также показано, как печатать отдельные страницы. |
+| [Настройка пользовательского интерфейса предварительного просмотра](customize-the-print-preview-ui.md) | В этом разделе описывается настройка параметров печати в пользовательском интерфейсе предварительного просмотра. |
+| [Создание пользовательского рабочего процесса печати](print-workflow-customize.md) | В этом разделе рассматривается, как создать собственные рабочие процессы печати, соответствующие потребностям вашей организации.  |
+| [Сканирование из приложения](scan-from-your-app.md) | Узнайте, как сканировать содержимое из приложения с помощью планшетного сканера, сканера с модулем подачи или автоматически настраиваемого источника сканирования.|
+
+## <a name="related-topics"></a>Ссылки по теме
+
+* [Руководство по проектированию печати](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [//Видео c конференции Build 2015: разработка приложений для печати в Windows10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [Пример печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+ 
+

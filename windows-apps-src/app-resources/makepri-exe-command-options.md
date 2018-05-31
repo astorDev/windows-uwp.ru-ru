@@ -1,23 +1,22 @@
 ---
 author: stevewhims
-Description: "MakePri.exe имеет следующий набор команд: createconfig, dump, new, resourcepack и versioned. В этом разделе описывается их использование."
-title: "Параметры командной строки MakePRI.exe"
+Description: MakePri.exe has the set of commands createconfig, dump, new, resourcepack, and versioned. This topic details their use.
+title: Параметры командной строки MakePRI.exe
 template: detail.hbs
 ms.author: stwhi
-ms.date: 10/18/2017
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор"
-localizationpriority: medium
-ms.openlocfilehash: e269984134c7313b6ea6464cd04a3ef60254d537
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
+ms.localizationpriority: medium
+ms.openlocfilehash: fbfb5f6626f799878c294b0a4e21efb673147a50
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1817545"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="makepriexe-command-line-options"></a>Параметры командной строки MakePRI.exe
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) имеет следующий набор команд: `createconfig`, `dump`, `new`, `resourcepack` и `versioned`. В данном разделе описаны параметры командной строки для их использования.
@@ -113,6 +112,9 @@ Help:
 ## <a name="dump-command"></a>Команда Dump
 
 Команда `dump` выводит содержащий дамп XML-файл со списком всех ресурсов в указанном файле PRI. Запустите `MakePri.exe dump /?`, чтобы увидеть подробную справку для этой команды.
+
+> [!NOTE]
+> Пакет ресурсов без схемы был создан с помощью параметра *omitSchemaFromResourcePacks* в PRI-файле конфигурации. Чтобы создать дамп пакета ресурсов без схемы, используйте параметр `/es <main_package_PRI_file>`. Если основной файл не указан, появится сообщение об ошибке "*Файл resources.pri в пакете поврежден, что привело к сбою шифрования (ошибка PRI222: 0xdef0000f— произошла неизвестная ошибка)* ".
 
 ```
 C:\>makepri dump /?

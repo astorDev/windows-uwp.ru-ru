@@ -1,6 +1,6 @@
 ---
-description: "В этой статье объясняется, как обеспечить поддержку контракта отправки данных в приложении универсальной платформы Windows (UWP)."
-title: "Предоставление общего доступа к данным"
+description: В этой статье объясняется, как обеспечить поддержку контракта отправки данных в приложении универсальной платформы Windows (UWP).
+title: Предоставление общего доступа к данным
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: msatranjr
 ms.author: misatran
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: fe6da350fbfe006b55e90aee8c12da90967f5711
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: d283ce0211b28f9d41e4689c978e8731c677698d
+ms.sourcegitcommit: c11e7163010cb7547aeaca96e9b90a3c3a8ef31e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 01/25/2018
+ms.locfileid: "1541117"
 ---
 # <a name="share-data"></a>Предоставление общего доступа к данным
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этой статье объясняется, как обеспечить поддержку контракта отправки данных в приложении универсальной платформы Windows (UWP). Контракт отправки данных— это простой способ, которым приложения могут быстро предоставлять друг другу общий доступ к данным, например к тексту, ссылкам, фотографиям и видео. Например, пользователю может быть необходимо поделиться со своими друзьями ссылкой на веб-страницу в приложении социальной сети или сохранить ее в приложении для заметок, чтобы вернуться к ней позже.
 
@@ -25,11 +26,11 @@ ms.lasthandoff: 07/19/2017
 
 Добавьте обработчик событий [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested), который будет срабатывать при каждом вызове функции общего доступа пользователем. Это может происходить, когда пользователь касается элемента управления в приложении (например, кнопки или команды на панели приложения), или автоматически в определенном сценарии (если, например, пользователь заканчивает уровень и получает рекордный результат).
 
-[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
 При возникновении события [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) приложение получает объект [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest). Этот объект содержит объект [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage), который можно использовать, чтобы предоставить содержимое, которым пользователь хочет поделиться. Вы должны указать название и данные, к которым необходимо предоставить общий доступ. Описание необязательно, но рекомендуется.
 
-[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
 ## <a name="choose-data"></a>Выбор данных
 
@@ -40,13 +41,12 @@ ms.lasthandoff: 07/19/2017
 -   HTML
 -   Форматированный текст
 -   Растровые изображения
--   Обычный текст
 -   Файлы
 -   Пользовательские данные, определенные разработчиком
 
 Объект [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) может содержать один или несколько указанных форматов в любом сочетании. В примере ниже показано, как предоставить общий доступ к тексту.
 
-[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
 ## <a name="set-properties"></a>Задание свойств
 
@@ -54,13 +54,13 @@ ms.lasthandoff: 07/19/2017
 
 Все свойства, кроме заголовка, не являются обязательными. Свойство заголовка является обязательным и должно быть задано.
 
-[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
 ## <a name="launch-the-share-ui"></a>Запуск пользовательского интерфейса общего доступа
 
 Пользовательский интерфейс для общего доступа предоставляется системой. Чтобы запустить его, вызовите метод [**ShowShareUI**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI).
 
-[!code-cs[Основной блок](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
 ## <a name="handle-errors"></a>Обработка ошибок
 

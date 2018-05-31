@@ -1,0 +1,77 @@
+---
+title: Уровни функций для потоковых ресурсов
+description: Direct3D поддерживает три уровня возможностей, касающихся потоковых ресурсов.
+ms.assetid: 6AE7EA72-3929-4BB4-8780-F0CF26192D87
+keywords:
+- Уровни функций для потоковых ресурсов
+author: michaelfromredmond
+ms.author: mithom
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: 35fcedcdfa6470a4c17c964cd0ae341e1ccf3b3a
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/15/2018
+ms.locfileid: "1652873"
+---
+# <a name="streaming-resources-features-tiers"></a>Уровни функций для потоковых ресурсов
+
+
+Direct3D поддерживает три уровня возможностей, касающихся потоковых ресурсов.
+
+Уровень 1 предоставляет базовые возможности для потоковых ресурсов.
+
+Уровень 2 добавляет новых возможности поверх уровня 1, например, гарантированная незапакованная MIP-карта текстуры, когда размер не меньше одной стандартной формы плитки; инструкции шейдеру для закрепления уровня детализации (LOD) и для получения состояния операции шейдера; также, при считывании из плиток, сопоставленных с NULL, измеренное значение будет равно нулю.
+
+3-й уровень добавляет функции Texture3D поверх 2-го уровня.
+
+В версиях Direct3D есть опрашивающие функции для проверки уровня поддержки потоковых ресурсов оборудованием и драйверами и на каком конкретном уровне.
+
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>В этом разделе
+
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Раздел</th>
+<th align="left">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p><a href="tier-1.md">Уровень 1</a></p></td>
+<td align="left"><p>В этом разделе описывается поддержка 1-го уровня.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p><a href="tier-2.md">Уровень 2</a></p></td>
+<td align="left"><p>Уровень 2 поддержки потоковых ресурсов добавляет возможности поверх уровня 1, например, гарантированная незапакованная MIP-карта текстуры, когда размер не меньше одной стандартной формы плитки; инструкции шейдеру для закрепления уровня детализации (LOD) и для получения состояния операции шейдера; также, при считывании из плиток, сопоставленных с NULL, измеренное значение будет равно нулю.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p><a href="tier-3.md">Уровень 3</a></p></td>
+<td align="left"><p>Уровень 3 добавляет поддержку Texture3D для потоковой передачи ресурсов, в дополнение к возможностям <a href="tier-2.md">уровня 2</a> .</p></td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+
+
+[Потоковые ресурсы](streaming-resources.md)
+
+ 
+
+ 
+
+
+
+

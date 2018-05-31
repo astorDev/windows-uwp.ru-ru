@@ -1,19 +1,20 @@
 ---
 author: ptorr-msft
-title: "Использование MRT для преобразованных классических приложений и игр"
-description: "Упаковав свое приложение или игру .NET или Win32 в виде пакета AppX, можно использовать Систему управления ресурсами для загрузки ресурсов приложения, адаптированных к контексту во время выполнения. В этой статье подробно рассматриваются соответствующие методы."
+title: Использование MRT для преобразованных классических приложений и игр
+description: Упаковав свое приложение или игру .NET или Win32 в виде пакета AppX, можно использовать Систему управления ресурсами для загрузки ресурсов приложения, адаптированных к контексту во время выполнения. В этой статье подробно рассматриваются соответствующие методы.
 ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, mrt, pri. ресурсы, игры, centennial, desktop app converter, mui, вспомогательная сборка"
+keywords: windows 10, uwp, mrt, pri. ресурсы, игры, centennial, desktop app converter, mui, вспомогательная сборка
 ms.localizationpriority: medium
 ms.openlocfilehash: 098ec71f2f3e487b76f9992c297ad7cba9ac5538
 ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/12/2017
+ms.locfileid: "1396483"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Использование Системы управления ресурсами Windows 10 в устаревшем приложении или игре
 

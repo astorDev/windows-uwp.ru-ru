@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
-description: "В этой статье показано, как с помощью API в пространстве имен Windows.Media.Audio создавать звуковые графы для передачи, микширования и обработки звука."
-title: "Звуковые графы"
+description: В этой статье показано, как с помощью API в пространстве имен Windows.Media.Audio создавать звуковые графы для передачи, микширования и обработки звука.
+title: Звуковые графы
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 1b286a9fcfd71bb2dc219fb3c03a363a41d24346
-ms.sourcegitcommit: bccf9bcc39f0c4ee8801d90e2d7fcae3ad6e3b3e
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 26b9f49c8f21c7c60fb99fd8eaf24156a8aed3d9
+ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "1832505"
 ---
 # <a name="audio-graphs"></a>Звуковые графы
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье показано, как с помощью API в пространстве имен [**Windows.Media.Audio**](https://msdn.microsoft.com/library/windows/apps/dn914341) создавать звуковые графы для передачи, микширования и обработки звука.
@@ -32,7 +35,7 @@ translationtype: HT
 
 При добавлении к звуковому графу звуковых эффектов реализуются дополнительные сценарии. Каждый узел звукового графа можно при необходимости заполнить звуковыми эффектами, которые отвечают за обработку звука, проходящего через узел. Написав всего несколько строк кода, вы можете подключить к звуковому узлу несколько встроенных эффектов, таких как эхо, эквалайзер, ограничение и реверберация. Кроме того, вы можете создать собственные пользовательские звуковые эффекты, которые работают точно так же, как и встроенные эффекты.
 
-> [!NOTE]  
+> [!NOTE]
 > В [примере UWP AudioGraph](http://go.microsoft.com/fwlink/?LinkId=619481) реализован код, описанный в этом обзоре. Скачайте этот пример, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки вашего приложения.
 
 ## <a name="choosing-windows-runtime-audiograph-or-xaudio2"></a>Выбор между звуковым графом среды выполнения Windows и интерфейсом XAudio2
@@ -65,6 +68,7 @@ API звуковых графов среды выполнения Windows:
 -   Если вы планируете всего лишь использовать звуковой граф с файлами без вывода на звуковое устройство, мы рекомендуем использовать размер кванта времени по умолчанию, не задавая свойство [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205).
 -   Свойство [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) определяет объем выходных данных звукового графа, обрабатываемых первичным устройством рендеринга. Параметр **Default** позволяет системе использовать обработку звука по умолчанию для определенной категории рендеринга звуковых данных. С помощью такой обработки вы можете значительно улучшить качество звука на некоторых устройствах, особенно мобильных устройствах с небольшими динамиками. Параметр **Raw** позволяет повысить производительность благодаря уменьшению количества обрабатываемых сигналов, но также может привести к ухудшению качества звука на некоторых устройствах.
 -   Если для режима [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) задано значение **LowestLatency**, звуковой граф автоматически будет использовать параметр **Raw** для [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522).
+- Начиная с Windows 10 версии 1803, можно использовать свойство [**AudioGraphSettings.MaxPlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.maxplaybackspeedfactor), чтобы задать максимальное значение для свойств [**AudioFileInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiofileinputnode.playbackspeedfactor), [**AudioFrameInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.playbackspeedfactor), и [**MediaSourceInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceinputnode.playbackspeedfactor). Если звуковой граф поддерживает коэффициент скорости воспроизведения больше 1, то система должна выделить дополнительную память для поддержки буфера звуковых данных достаточного размера. По этой причине установка параметра **MaxPlaybackSpeedFactor** до самого низкого значения, необходимого приложению, сократит потребление памяти вашим приложением. Если ваше приложение будет воспроизводить содержимое с обычной скоростью, то рекомендуется присвоить параметру MaxPlaybackSpeedFactor значение равное 1.
 -   Свойство [**EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) определяет формат звуковых данных, используемый графом. Поддерживаются только 32-разрядные форматы с плавающей точкой.
 -   [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) устанавливает первичное устройство рендеринга для звукового графа. Если это свойство не задано, будет использоваться системное устройство по умолчанию. Первичное устройство рендеринга используется для подсчета размеров квантов времени для других узлов графа. Если в системе нет устройств рендеринга звуковых данных, звуковой граф не будет создан.
 
@@ -108,6 +112,26 @@ API звуковых графов среды выполнения Windows:
 -   Включите повторение звукового файла, установив свойство [**LoopCount**](https://msdn.microsoft.com/library/windows/apps/dn914120). Если это значение отлично от Null, оно указывает на количество раз, в течение которых файл будет воспроизведен после первого раза. Например, если задать для свойства **LoopCount** значение 1 или 5, файл будет воспроизведен 2 и 6 раз соответственно. Если указать для свойства **LoopCount** значение Null, файл будет воспроизведен неограниченное количество раз. Чтобы остановить повторное воспроизведение, задайте значение 0.
 -   Регулируйте скорость воспроизведения звукового файла путем установки свойства [**PlaybackSpeedFactor**](https://msdn.microsoft.com/library/windows/apps/dn914123). Значение 1 указывает на первоначальную скорость передачи файла, а значения 0,5 и 2— на скорость, меньшую и большую в два раза соответственно.
 
+##  <a name="mediasource-input-node"></a>Узел ввода MediaSource
+
+Класс [**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource) используется для указания данных мультимедиа из других источников. Класс предоставляет общую модель для обращения к данным мультимедиа независимо от используемого медиаформата — это может быть файл на диске, потоковая передача или сетевой источник адаптивной потоковой передачи. Узел [**MediaSourceAudioInputNode](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceaudioinputnode) применяется для направления аудиоданных из в **MediaSource** в звуковой граф. Создайте **MediaSourceAudioInputNode**, вызвав метод [**CreateMediaSourceAudioInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_) и передав объект **MediaSource**, представляющий воспроизводимое содержимое. Метод возвращает результат [** CreateMediaSourceAudioInputNodeResult](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult), с помощью которого можно выяснить состояние операции, проверив его свойство [**Status**](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status). Если статус — **Success**, то вы можете получить созданный **MediaSourceAudioInputNode**, обратившись к свойству [**Node**](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node). В следующем примере показано создание узла из объекта AdaptiveMediaSource, который представляет содержимое сетевой потоковой передачи. Дополнительные сведения о работе с **MediaSource** см. в разделе [Элементы медиа, списки воспроизведения и треки](media-playback-with-mediasource.md). Дополнительные сведения о потоковой передаче мультимедиа через Интернет см. в разделе [Адаптивная потоковая передача](adaptive-streaming.md).
+
+[!code-cs[DeclareMediaSourceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareMediaSourceInputNode)]
+
+[!code-cs[CreateMediaSourceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateMediaSourceInputNode)]
+
+Чтобы получать уведомления при достижении конца воспроизведения содержимого **MediaSource**, зарегистрируйте обработчик события [**MediaSourceCompleted**](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceaudioinputnode.mediasourcecompleted). 
+
+[!code-cs[RegisterMediaSourceCompleted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetRegisterMediaSourceCompleted)]
+
+[!code-cs[MediaSourceCompleted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetMediaSourceCompleted)]
+
+Воспроизведение файла с диска, скорее всего, всегда будет выполняться успешно, а вот потоковая передача медиа из сетевого источника во время воспроизведения может дать сбой из-за изменений в сети или других проблем, которые находятся вне зоны контроля звукового графа. Если **MediaSource** больше невозможно воспроизводить, то звуковой граф отправляет событие [**UnrecoverableErrorOccurred**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.unrecoverableerroroccurred). Используйте обработчик этого события для остановки и удаления звукового графа, чтобы затем повторно его инициализировать. 
+
+[!code-cs[RegisterUnrecoverableError](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetRegisterUnrecoverableError)]
+
+[!code-cs[UnrecoverableError](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetUnrecoverableError)]
+
 ##  <a name="file-output-node"></a>Узел вывода файла
 
 Узел вывода файла позволяет направить звуковые данные из графа в звуковой файл. Создайте узел [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133), вызвав метод [**CreateFileOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914227).
@@ -135,6 +159,7 @@ API звуковых графов среды выполнения Windows:
 
 -   Объект [**FrameInputNodeQuantumStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958533), переданный в обработчик событий **QuantumStarted**, предоставляет свойство [**RequiredSamples**](https://msdn.microsoft.com/library/windows/apps/dn958534), которое указывает, сколько примеров необходимо заполнить звуковому графу для обработки кванта времени.
 -   Вызовите метод [**AudioFrameInputNode.AddFrame**](https://msdn.microsoft.com/library/windows/apps/dn914148), чтобы передать в граф объект [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871), заполненный звуковыми данными.
+- Новый набор API-интерфейсов для использования **MediaFrameReader** со звуковыми данными появился в Windows 10 версии 1803. Эти API позволяют получить объекты **AudioFrame** из источника кадров мультимедиа, которые можно передать в **FrameInputNode** с помощью метода **AddFrame**. Дополнительные сведения см. в разделе [Обработка аудиокадров с помощью MediaFrameReader](process-audio-frames-with-mediaframereader.md).
 -   Ниже приведен пример реализации вспомогательного метода **GenerateAudioData**.
 
 Чтобы заполнить класс [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) звуковыми данными, необходимо получить доступ к базовому буферу памяти аудиокадра. Для этого нужно инициализировать COM-интерфейс **IMemoryBufferByteAccess**, добавив следующий код в ваше пространство имен.
@@ -160,10 +185,10 @@ API звуковых графов среды выполнения Windows:
 
 [!code-cs[CreateFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
 
-Событие [**AudioGraph.QuantumStarted**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Audio.AudioGraph#Windows_Media_Audio_AudioGraph_QuantumStarted) возникает, когда звуковой граф начинает обработку кванта времени звуковых данных. Вы можете получить доступ к звуковым данным в обработчике для этого события. 
+Событие [**AudioGraph.QuantumStarted**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph.QuantumStarted) возникает, когда звуковой граф начинает обработку кванта времени звуковых данных. Вы можете получить доступ к звуковым данным в обработчике для этого события. 
 
-> [!NOTE]  
-> Если вы хотите получать аудиокадры на регулярной основе в синхронизации со звуковым графом, вызовите [AudioFrameOutputNode.GetFrame](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeoutputnode#Windows_Media_Audio_AudioFrameOutputNode_GetFrame) из синхронного обработчика событий **QuantumStarted**. Событие **QuantumProcessed** возникает асинхронно после того, как обработчик звука завершает аудиообработку. Это означает, что событие может возникать нерегулярно. Таким образом, событие **QuantumProcessed** не следует использовать для синхронизированной обработки данных аудиокадров.
+> [!NOTE]
+> Если вы хотите получать аудиокадры на регулярной основе в синхронизации со звуковым графом, вызовите [AudioFrameOutputNode.GetFrame](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeoutputnode.GetFrame) из синхронного обработчика событий **QuantumStarted**. Событие **QuantumProcessed** возникает асинхронно после того, как обработчик звука завершает аудиообработку. Это означает, что событие может возникать нерегулярно. Таким образом, событие **QuantumProcessed** не следует использовать для синхронизированной обработки данных аудиокадров.
 
 [!code-cs[SnippetQuantumStartedFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStartedFrameOutput)]
 
@@ -221,9 +246,9 @@ API звукового графа позволяет добавить звуко
 ## <a name="spatial-audio"></a>Пространственный звук
 Начиная с Windows 10 версии 1607 **AudioGraph** поддерживает пространственный звук, который позволяет указать расположение источника звука (любого узла ввода или субмикширования) в трехмерном пространстве. Можно также указать форму и направление, в котором испущен звук, скорость, которая будет использоваться для доплеровского сдвига звука узла, и определить модель затухания, которая описывает ослабление звука с увеличением расстояния. 
 
-Для создания излучателя вы можете сначала создать форму, с которой звук проецируется из излучателя — коническую или всенаправленную. Класс [**AudioNodeEmitterShape**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterShape) предоставляет статические методы создания каждой из этих форм. Далее создайте модель затухания. Она определяет, как громкость звука из излучателя снижается при увеличении расстояния от слушателя. Метод [**CreateNatural**](https://msdn.microsoft.com/library/windows/apps/mt711740) создает модель затухания, которая имитирует естественное ослабление звука с помощью модели ослабления звука пропорционально квадрату расстояния. Наконец, создайте объект [**AudioNodeEmitterSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterSettings). Сейчас он используется только для включения и отключения допплеровского ослабления звука излучателя в зависимости от скорости. Вызовите конструктор [**AudioNodeEmitter**](https://msdn.microsoft.com/en-us/library/windows/apps/mt694324.aspx), передав созданные объекты инициализации. По умолчанию излучатель помещается в начале координат, но вы можете изменить его положение с помощью свойства [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter.Position).
+Для создания излучателя вы можете сначала создать форму, с которой звук проецируется из излучателя — коническую или всенаправленную. Класс [**AudioNodeEmitterShape**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterShape) предоставляет статические методы создания каждой из этих форм. Далее создайте модель затухания. Она определяет, как громкость звука из излучателя снижается при увеличении расстояния от слушателя. Метод [**CreateNatural**](https://msdn.microsoft.com/library/windows/apps/mt711740) создает модель затухания, которая имитирует естественное ослабление звука с помощью модели ослабления звука пропорционально квадрату расстояния. Наконец, создайте объект [**AudioNodeEmitterSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterSettings). Сейчас он используется только для включения и отключения допплеровского ослабления звука излучателя в зависимости от скорости. Вызовите конструктор [**AudioNodeEmitter**](https://msdn.microsoft.com/library/windows/apps/mt694324.aspx), передав созданные объекты инициализации. По умолчанию излучатель помещается в начале координат, но вы можете изменить его положение с помощью свойства [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter.Position).
 
-> [!NOTE] 
+> [!NOTE]
 > Излучатели звуковых узлов могут обрабатывать только монофонический звук с частотой дискретизации 48кГц. Попытка использовать стереофонический звук или звук с другой частотой дискретизации вызовет исключение.
 
 Вы назначаете излучатель звуковому узлу при его создании с помощью перегруженного метода создания нужного типа узла. В этом примере для создания узла ввода из указанного файла используются метод [**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914225) и объект [**AudioNodeEmitter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter), с которым следует связать узел.
@@ -232,7 +257,7 @@ API звукового графа позволяет добавить звуко
 
 Объект [**AudioDeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioDeviceOutputNode), который выводит аудио с графа для пользователя, содержит объект слушателя, доступный через свойство [**Listener**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioDeviceOutputNode.Listener). Он представляет расположение, ориентацию и скорость пользователя в трехмерном пространстве. Позиции всех излучателей на графе указываются относительно положения и ориентации объекта излучателя. По умолчанию слушатель расположен в начале координат (0,0,0) лицом к оси Z, но вы можете изменить положение и ориентацию с помощью свойств [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeListener.Position) и [**Orientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeListener.Orientation).
 
-[!code-cs[Слушатель](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetListener)]
+[!code-cs[Listener](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetListener)]
 
 Вы можете изменить расположение, скорость и направление излучателей во время выполнения, чтобы имитировать движение источника звука в трехмерном пространстве.
 

@@ -1,18 +1,21 @@
 ---
 author: drewbatgit
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
-description: "В этой статье перечислены свойства DeviceInformation, связанные со звуковыми устройствами"
-title: "Свойства сведений о звуковых устройствах"
+description: В этой статье перечислены свойства DeviceInformation, связанные со звуковыми устройствами
+title: Свойства сведений о звуковых устройствах
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 0992c0fc3c6fe9d70b7867275d28e6bba78171ab
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: c221e3d77419ca02b46e8be227f3b943fe8dc241
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
+ms.lasthandoff: 03/08/2018
+ms.locfileid: "1639014"
 ---
 # <a name="audio-device-information-properties"></a>Свойства сведений о звуковых устройствах
 
@@ -22,7 +25,7 @@ ms.contentlocale: ru-RU
 |Имя|Тип|Описание|
 |------------------------------------------------------------|------------|------------------------------------------------------|
 |**System.Devices.AudioDevice.Microphone.SensitivityInDbfs**|Double|Определяет чувствительность микрофона в децибелах относительно полной шкалы (dBFS).|
-|**System.Devices.AudioDevice.Microphone.SignalToNoiseRationInDb**|Double|Определяет отношения сигнал-шум (SNR) микрофона, измеренное в децибелах (дБ).|
+|**System.Devices.AudioDevice.Microphone.SignalToNoiseRatioInDb**|Double|Определяет отношения сигнал-шум (SNR) микрофона, измеренное в децибелах (дБ).|
 |**System.Devices.AudioDevice.SpeechProcessingSupported**|Логическое|Указывает, поддерживает ли звуковое устройство обработку речи.|
 |**System.Devices.AudioDevice.RawProcessingSupported**|Логическое|Указывает, поддерживает ли звуковое устройство обработку необработанных данных.|
 |**System.Devices.MicrophoneArray.Geometry**|неподписанный символ[]|Геометрические данные для набора микрофонов.|

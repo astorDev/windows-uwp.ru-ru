@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: 66d0c3dc-81f6-4d9a-904b-281f8a334dd0
-description: "В этой статье описан самый простой способ записи фотографий и видео с помощью класса MediaCapture."
-title: "Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture"
+description: В этой статье описан самый простой способ записи фотографий и видео с помощью класса MediaCapture.
+title: Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: dbdc65fb842c6f8d6439f0041a33d991e27bd6b6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d6e5d69c2f86c0d57c0c1be938799d5e81bb8f00
+ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "1832278"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этой статье описан самый простой способ записи фотографий и видео с помощью класса [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture). Класс **MediaCapture** предоставляет широкий набор API, которые обеспечивают низкоуровневое управление конвейером захвата и поддерживают расширенные сценарии захвата, но цель этой статьи— помочь быстро и просто добавлять в приложение основные функции захвата мультимедиа. Дополнительные сведения о возможностях класса **MediaCapture** см. в разделе [**Камера**](camera.md).
 
@@ -54,7 +57,13 @@ translationtype: HT
 
 [!code-cs[CaptureToSoftwareBitmap](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureToSoftwareBitmap)]
 
-Сведения о работе с объектом **SoftwareBitmap**, в том числе о его отображении на XAML-странице, см. в разделе [**Создание, редактирование и сохраните точечных рисунков**](imaging.md).
+Начиная с Windows версии 1803, вы можете получить доступ к свойству [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) класса **CapturedFrame**, полученного из метода **CaptureAsync** для извлечения метаданных о записанной фотографии. Эти данные можно передать в **BitmapEncoder**, чтобы сохранения метаданные в файл. Ранее не было возможности получить доступ к этим данным для изображений в несжатых форматах. Также вы можете использовать свойство [**ControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.controlvalues), чтобы получить объект [**CapturedFrameControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframecontrolvalues), который описывает контрольные значения, например, экспозицию и баланс белого в записанном кадре.
+
+Дополнительные сведения о работе с **BitmapEncoder** и объектом **SoftwareBitmap**, включая метод отображения такого объекта на XAML-странице, см. в статье [**Создание, редактирование и запись растровых изображений**](imaging.md). 
+
+Дополнительные сведения о задании контрольных значений устройства захвата см. в разделе [Контрольные значения устройства захвата фотографий и видео](capture-device-controls-for-photo-and-video.md).
+
+Начиная с Windows 10 версии 1803, вы можете получить метаданные, такие как EXIF, для фотографий, записанных в формате без сжатия, использовав свойство [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) свойство объекта **CapturedFrame**, возвращаемого **MediaCapture**. В предыдущих выпусках эти данные были доступны только в заголовке фотографий, записанных в файловых форматах со сжатием. Эти данные можно передать в [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) при записи файла изображения вручную. Дополнительные сведения про запись растровых изображений см. в статье [Создание, редактирование и запись растровых изображений](imaging.md).  Можно также получить доступ к контрольным значениям кадра, например, параметрам экспозиции и вспышки, которые применялись при записи кадра, обратившись к свойству [**ControlValues**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.capturedframe.controlvalues). Дополнительные сведения см. в разделе [Контрольные значения устройства захвата фотографий и видео](capture-device-controls-for-photo-and-video-capture.md).
 
 ## <a name="capture-a-photo-to-a-file"></a>Фотозахват в файл
 Типичное фотоприложение сохраняет полученные фотографии на диск или в облачное хранилище, а также добавляет метаданные, например сведения об ориентации фотографии, в файл. В следующем примере показано, как записать фотографию в файл. Вы по-прежнему сможете создать объект **SoftwareBitmap** на основе изображения позже. 
@@ -86,7 +95,7 @@ translationtype: HT
 
 [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
 
-Вы можете продолжить вызывать методы **StartAsync** и **StopAsync** для записи дополнительных видео. Закончив захват видео, вызовите метод [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.FinishAsync), чтобы закрыть сеанса захвата и освободить связанные ресурсы. Затем необходимо вызвать метод **PrepareLowLagRecordToStorageFileAsync** снова, чтобы повторно инициализировать сеанса захват перед вызовом **StartAsync**.
+Вы можете продолжить вызывать методы **StartAsync** и **StopAsync** для записи дополнительных видео. Закончив захват видео, вызовите метод [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.FinishAsync), чтобы закрыть сеанса захвата и освободить связанные ресурсы. Затем необходимо вызвать метод **PrepareLowLagRecordToStorageFileAsync** снова, чтобы повторно инициализировать сеанс захвата перед вызовом **StartAsync**.
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
@@ -95,6 +104,11 @@ translationtype: HT
 [!code-cs[RecordLimitationExceeded](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceeded)]
 
 [!code-cs[RecordLimitationExceededHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceededHandler)]
+
+### <a name="play-and-edit-captured-video-files"></a>Воспроизведение и редактирование записанных видеофайлов
+Записав видео в файл, его можно загрузить и воспроизвести в пользовательском интерфейсе вашего приложения. Это можно сделать с помощью элемента управления XAML **[MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)** и связанным с ним **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)**. Дополнительные сведения о воспроизведения медиа на XAML-странице см. в разделе [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md).
+
+Вы также можете создать объект **[MediaClip](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip)** из видеофайла, вызвав метод **[CreateFromFileAsync](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.createfromfileasync)**.  Объект **[MediaComposition](https://docs.microsoft.com/uwp/api/windows.media.editing.mediacomposition)** предоставляет основные функции для редактирования видео, например, расстановка последовательности объектов **MediaClip**, уменьшение продолжительности видео, создание слоев, добавление фоновой музыки и применение видеоэффектов. Дополнительные сведения о работе с медиакомпозициями см. в разделе [Медиакомпозиции и их редактирование](media-compositions-and-editing.md).
 
 ## <a name="pause-and-resume-video-recording"></a>Приостановка и возобновление видеозаписи
 Вы можете приостановить видеозапись, а затем продолжить ее, не создавая отдельный выходной файл, вызвав метод [**PauseAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.PauseAsync), а затем — [**ResumeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.ResumeAsync).
@@ -124,16 +138,35 @@ translationtype: HT
 
 Вызовите метод [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoSequenceCapture.StopAsync), чтобы остановить запись звука.
 
+## <a name="related-topics"></a>Статьи по теме
+
+* [Камера](camera.md)
 [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
 
-Вы можете вызвать методы **StartAsync** и **StopAsync** несколько раз, чтобы записать множество звуковых файлов. Закончив захват звука, вызовите метод [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.FinishAsync), чтобы закрыть сеанса захвата и освободить связанные ресурсы. Затем необходимо вызвать метод **PrepareLowLagRecordToStorageFileAsync** снова, чтобы повторно инициализировать сеанса захват перед вызовом **StartAsync**.
+Вы можете вызвать методы **StartAsync** и **StopAsync** несколько раз, чтобы записать несколько звуковых файлов. Закончив захват звука, вызовите метод [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.FinishAsync), чтобы закрыть сеанса захвата и освободить связанные ресурсы. Затем необходимо вызвать метод **PrepareLowLagRecordToStorageFileAsync** снова, чтобы повторно инициализировать сеанс захвата перед вызовом **StartAsync**.
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
-## <a name="related-topics"></a>Связанные статьи
 
-* [Камера](camera.md)
-* [Фото- и видеосъемка с помощью с использованием встроенного пользовательского интерфейса камеры в Windows](capture-photos-and-video-with-cameracaptureui.md)
+## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>Обнаружение изменения громкости звука системой и реагирование на это событие
+Начиная с Windows 10 версии 1803, ваше приложение может обнаружить, что система уменьшила громкость звука или отключило звук для потоков записи и обработки вашего приложения. Например, система может отключить звук в потоках вашего приложения, при переводе последнего в фоновый режим. В классе [**AudioStateMonitor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor) можно зарегистрировать обработчик события, отправляемого когда система изменяет громкость звукового потока. Получите экземпляр **AudioStateMonitor** для отслеживания потоков записи звука, вызвав метод [**CreateForCaptureMonitoring**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.createforcapturemonitoring#Windows_Media_Audio_AudioStateMonitor_CreateForCaptureMonitoring). Получите экземпляр для наблюдения за потоками обработки звуковых данных, вызвав метод [**CreateForRenderMonitoring**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.createforrendermonitoring). Зарегистрируйте обработчик для события [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) каждого средства наблюдения, чтобы получать уведомления про изменение системой громкости звука для потоков соответствующей категории.
+
+[!code-cs[AudioStateMonitorUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAudioStateMonitorUsing)]
+
+[!code-cs[AudioStateVars](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAudioStateVars)]
+
+[!code-cs[RegisterAudioStateMonitor](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterAudioStateMonitor)]
+
+В обработчике **SoundLevelChanged** для потока записи вы можете проверить свойство [**SoundLevel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel) отправителя **AudioStateMonitor**, и определить новую уровень громкости. Обратите внимание, что система никогда не должна уменьшать уровень громкости потока записи. Он должен либо отключаться совсем либо включаться обратно с полной громкостью. Если звуковой поток выключен, вы можете остановить процесс идущей записи. Если громкость звукового потока восстановлена до полного уровня, вы можете возобновить запись. В следующем примере в нескольких переменных класса Boolean отслеживается процесс записи звука приложением и была ли запись остановлена из-за изменения громкости звука. С помощью этих переменных можно определить, когда стоит программно запустить или остановить аудиозапись.
+
+[!code-cs[CaptureSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureSoundLevelChanged)]
+
+В следующем примере кода показана реализация обработчика **SoundLevelChanged** для вывода звука. В зависимости от вашего сценария приложения и типа воспроизводимого содержимого, возможно, потребуется приостановить воспроизведение при выключении звука. Дополнительные сведения о том, как реагировать на изменение громкости звука при воспроизведении мультимедиа см. в разделе [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md).
+
+[!code-cs[RenderSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRenderSoundLevelChanged)]
+
+
+* [Запись фотографий и видео с помощью встроенного пользовательского интерфейса Windows для веб-камер](capture-photos-and-video-with-cameracaptureui.md)
 * [Обработка ориентации устройства с помощью MediaCapture](handle-device-orientation-with-mediacapture.md)
 * [Создание, редактирование и сохраните точечных рисунков](imaging.md)
 * [Файлы, папки и библиотеки](https://msdn.microsoft.com/windows/uwp/files/index)
