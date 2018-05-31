@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-description: "В этой статье описано, как использовать класс CameraCaptureUI, чтобы фотографировать и снимать видео с помощью пользовательского интерфейса камеры, встроенного в Windows."
-title: "Фото- и видеосъемка с использованием встроенного пользовательского интерфейса камеры в Windows"
+description: В этой статье описано, как использовать класс CameraCaptureUI, чтобы фотографировать и снимать видео с помощью пользовательского интерфейса камеры, встроенного в Windows.
+title: Фото- и видеосъемка с использованием встроенного пользовательского интерфейса камеры в Windows
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 7be9a38bdb4d9489c08cd53c5b24348e16d7a74f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: acd14b63bb877dca2f801423f9d0de73ec994acf
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1691973"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Фото- и видеосъемка с использованием встроенного пользовательского интерфейса камеры в Windows
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье описано, как использовать класс CameraCaptureUI, чтобы фотографировать и снимать видео с помощью пользовательского интерфейса камеры, встроенного в Windows. Эта функция проста в использовании и позволяет приложению получать захваченные пользователем фотографии и видео с помощью всего нескольких строк кода.
@@ -77,41 +80,17 @@ translationtype: HT
 
 Доступные действия с захваченным видеофайлом зависят от сценария вашего приложения. Далее в этой статье объясняется, как быстро создать композицию мультимедиа из одного или нескольких захваченных видео и отобразить ее в пользовательском интерфейсе.
 
-Сначала добавьте элемент управления [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), в котором композиция видеороликов будет отображаться на вашей странице XAML.
+Сначала добавьте элемент управления [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement), в котором композиция видеороликов будет отображаться на вашей странице XAML.
 
 [!code-xml[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
-Добавьте в проект пространства имен [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) и [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962).
 
+Создайте объект [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) с помощью видеофайла, возвращенного пользовательским интерфейсом захвата с камеры, вызвав метод **[CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromstoragefile)**. Вызовите метод **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play)** метод для **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** по умолчанию, связанного с **MediaPlayerElement**, для воспроизведения видео.
 
-[!code-cs[UsingMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingMediaComposition)]
-
-Объявите переменные-члены для объекта [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) и [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716), которые нужно оставить в области на время существования страницы.
-
-[!code-cs[DeclareMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
-
-Прежде чем осуществлять видеозахват, создайте новый экземпляр класса **MediaComposition**.
-
-[!code-cs[InitComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetInitComposition)]
-
-Создайте объект [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) с помощью видеофайла, возвращенного пользовательским интерфейсом захвата с камеры, вызвав метод [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607). Добавьте мультимедийный клип в коллекцию [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) композиции.
-
-Вызовите метод [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674), чтобы создать из композиции объект **MediaStreamSource**.
-
-[!code-cs[AddToComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetAddToComposition)]
-
-Затем задайте для источника потока использование метода [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) элемента мультимедиа, чтобы отобразить композицию в пользовательском интерфейсе.
-
-[!code-cs[SetMediaElementSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetMediaElementSource)]
-
-Вы можете продолжать записывать видеоклипы и добавлять их в композицию. Дополнительные сведения о композициях мультимедиа см. в статье [Создание и редактирование мультимедиа](media-compositions-and-editing.md).
-
-> [!NOTE] 
-> Эта статья адресована разработчикам приложений для Windows 10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
+[!code-cs[PlayVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetPlayVideo)]
  
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
