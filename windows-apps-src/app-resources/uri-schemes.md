@@ -1,26 +1,25 @@
 ---
 author: stevewhims
-Description: "Существует несколько схем URI (универсального кода ресурсов), которые можно использовать для формирования ссылок на файлы приложения, получаемые из пакета приложения, папок данных приложения или облака. Можно также использовать схему URI для обозначения строк, загружаемых из файлов ресурсов (.resw) приложения."
-title: "Схемы URI"
+Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw).
+title: Схемы URI
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор"
-localizationpriority: medium
-ms.openlocfilehash: 7cbd4a6fea3ca7d179eae9857c6e98010d11439e
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
+ms.localizationpriority: medium
+ms.openlocfilehash: 445f053b0243f1b9c2e54e6e9fcfa332d49cbec5
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 03/22/2018
+ms.locfileid: "1674521"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="uri-schemes"></a>Схемы URI
 
-Существует несколько схем URI (универсального кода ресурсов), которые можно использовать для формирования ссылок на файлы приложения, получаемые из пакета приложения, папок данных приложения или облака. Можно также использовать схему URI для обозначения строк, загружаемых из файлов ресурсов (.resw) приложения. Можно использовать эти схемы URI, в коде, в разметке XAML, в манифесте пакета приложения или в шаблонах плитки и всплывающих уведомлений.
+Существует несколько схем URI (универсального кода ресурсов), которые можно использовать для формирования ссылок на файлы приложения, получаемые из пакета приложения, папок данных приложения или облака. Можно также использовать схему URI для обозначения строк, загружаемых из файлов ресурсов (.resw) приложения. Можно использовать эти схемы URI в коде, в разметке XAML, в манифесте пакета приложения или в шаблонах плитки и всплывающих уведомлений.
 
 ## <a name="common-features-of-the-uri-schemes"></a>Общие компоненты схем URI
 
@@ -28,7 +27,7 @@ ms.lasthandoff: 11/03/2017
 
 Все схемы URI определяют иерархическую часть в соответствии с [RFC 3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) как компоненты полномочий и пути URI.
 
-```
+```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
 hier-part   = "//" authority path-abempty
             / path-absolute
@@ -109,8 +108,7 @@ ms-appx:///images/logo.png
 
 Естественно, можно также получить тот же физический файл путем обращения к нему напрямую с полным именем.
 
-**XAML**
-```xml
+```xaml
 <Image Source="ms-appx:///images/fr-FR/logo.scale-100_contrast-white.png"/>
 ```
 
@@ -128,9 +126,9 @@ ms-appx:///Hello%23World.html
 
 ## <a name="ms-appdata"></a>ms-appdata
 
-Схема URI `ms-appdata` используется для формирования ссылки на файлы приложения из локальной, перемещаемой и временной папок данных приложения. Подробнее об этих папках данных приложения: [Хранение и извлечение параметров и прочих данных приложения](../app-settings/store-and-retrieve-app-data.md).
+Схема URI `ms-appdata` используется для формирования ссылки на файлы приложения из локальной, перемещаемой и временной папок данных приложения. Подробнее об этих папках данных приложения: [Хранение и извлечение параметров и прочих данных приложения](../design/app-settings/store-and-retrieve-app-data.md).
 
-Схема URI `ms-appdata` не выполняет согласование содержимого среды выполнения, которое проводят [ms-appx и ms-appx-web](#ms-appx-and-ms-appx-web). Но вы можете реагировать на содержимое [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) и загружать соответствующие ресурсы из данных приложения с помощью их полных имен физических файлов в URI.
+Схема URI `ms-appdata` не выполняет согласование содержимого среды выполнения, которое проводят [ms-appx и ms-appx-web](#ms-appx-and-ms-appx-web). Но вы можете реагировать на содержимое [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) и загружать соответствующие ресурсы из данных приложения с помощью их полных имен физических файлов в URI.
 
 ### <a name="scheme-name-ms-appdata"></a>Имя схемы (ms-appdata)
 
@@ -253,9 +251,9 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 ### <a name="path-ms-resource"></a>Путь (ms-resource)
 
-Путь определяет иерархическое расположение поддерева [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) (см. раздел [Система управления ресурсами](https://msdn.microsoft.com/library/windows/apps/jj552947)) и подраздел [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResourcebranch=live) в нем. Обычно путь соответствует имени файлов ресурса (без расширения .resw) и идентификатору строкового ресурса в этом файле.
+Путь определяет иерархическое расположение поддерева [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) (см. раздел [Система управления ресурсами](https://msdn.microsoft.com/library/windows/apps/jj552947)) и подраздел [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) в нем. Обычно путь соответствует имени файлов ресурса (без расширения .resw) и идентификатору строкового ресурса в этом файле.
 
-Дополнительные сведения и примеры см. в разделах [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md) и [Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности](tile-toast-language-scale-contrast.md).
+Дополнительные сведения и примеры см. в разделах [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md) и [Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
 
 Компонент пути схемы `ms-resource`, как и стандартные URI, учитывает регистр. Однако если файловая система, с помощью которой выполняется доступ к ресурсу, не учитывает регистр, выполняется сравнение [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628), а *ignoreCase* имеет значение `true`.
 
@@ -276,7 +274,7 @@ ms-resource:///Hello%23World/String1
 * [Универсальный код ресурса (URI): общий синтаксис](http://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [Создание пакетов приложений](../packaging/index.md)
 * [Ссылки на изображения и другие ресурсы из кода и разметки XAML](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
-* [Хранение и извлечение параметров и прочих данных приложения](../app-settings/store-and-retrieve-app-data.md)
+* [Хранение и извлечение параметров и прочих данных приложения](../design/app-settings/store-and-retrieve-app-data.md)
 * [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md)
 * [Система управления ресурсами](https://msdn.microsoft.com/library/windows/apps/jj552947)
-* [Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности](tile-toast-language-scale-contrast.md)
+* [Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
