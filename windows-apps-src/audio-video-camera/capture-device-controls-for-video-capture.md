@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
-description: "В этой статье рассказывается, как с помощью ручных элементов управления устройства включить расширенные сценарии видеозахвата, в том числе видеосъемку с расширенным динамическим диапазоном (HDR) и приоритетом экспозиции."
-title: "Ручные элементы управления для видеозахвата на камере"
+description: В этой статье рассказывается, как с помощью ручных элементов управления устройства включить расширенные сценарии видеозахвата, в том числе видеосъемку с расширенным динамическим диапазоном (HDR) и приоритетом экспозиции.
+title: Ручные элементы управления для видеозахвата на камере
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: cd2adcffa233b76563e47f93f298cf954154adef
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: e4bad8d38676c8298026e66be31e2493ae7d4117
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1816039"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>Ручные элементы управления для видеозахвата на камере
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье рассказывается, как с помощью ручных элементов управления устройства включить расширенные сценарии видеозахвата, в том числе видеосъемку с расширенным динамическим диапазоном (HDR) и приоритетом экспозиции.
@@ -49,12 +52,48 @@ translationtype: HT
 
 [!code-cs[EnableExposurePriority](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEnableExposurePriority)]
 
-## <a name="related-topics"></a>Связанные статьи
+## <a name="temporal-denoising"></a>Временное шумоподавление
+Начиная с Windows 10 версии 1803 вы можете включить временное шумоподавление для видео на устройствах, которые его поддерживают. Эта функция объединяет данные из нескольких смежных кадров в режиме реального времени для получения видеокадров без шумов.
+
+[**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) позволяет приложению определить, поддерживается ли временное шумоподавление на текущем устройстве, и, если да, какие режимы шумоподавления поддерживаются. Доступны следующие режимы шумоподавления: [**Off**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode), [**On**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode) и [**Auto**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode). Устройство может не поддерживать все режимы, но каждое устройство должно поддерживать режим **Auto** или **On** и **Off**.
+
+В следующем примере представлен простой пользовательский интерфейс для предоставления переключателей, которые позволяют пользователю переключаться между режимами шумоподавления.
+
+[!code-cs[SnippetDenoiseXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetDenoiseXAML)]
+
+В следующем методе проверяется свойство [**VideoTemporalDenoisingControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported), чтобы определить, поддерживается ли временное шумоподавление на текущем устройстве. Если это так, мы проверяем, поддерживаются ли режимы **Off** и **Auto** или **On**. Если это так, мы отображаем наши переключатели. Затем кнопки **Auto** и **On** становятся видимыми, если эти методы поддерживаются.
+
+[!code-cs[SnippetUpdateDenoiseCapabilities](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetUpdateDenoiseCapabilities)]
+
+В обработчике события **Checked** для переключателей проверяется имя кнопки и устанавливается соответствующий режим с помощью свойства [**VideoTemporalDenoisingControl.Mode**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.mode).
+
+[!code-cs[SnippetDenoiseButtonChecked](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseButtonChecked)]
+
+### <a name="disabling-temporal-denoising-while-processing-frames"></a>Отключение временного шумоподавления при обработке кадров
+Видео, которое было обработано с помощью временного шумоподавления, может быть более приятным для просмотра. Однако поскольку временное шумоподавление может повлиять на согласованность изображения и уменьшить объем деталей в кадре, приложения, которые используют обработку изображений на кадрах, например регистрацию или распознавание символов, могут программно отключать шумоподавление, если обработка изображений включена.
+
+Следующий пример определяет, какие режимы шумоподавления поддерживаются, и сохраняет эту информацию в переменных класса.
+
+[!code-cs[SnippetDenoiseFrameReaderVars](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseFrameReaderVars)]
+
+[!code-cs[SnippetDenoiseCapabilitiesForFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseCapabilitiesForFrameProcessing)]
+
+Если приложение включает обработку кадров, режиму шумоподавления присваивается значение **Off**, если этот режим поддерживается, чтобы при обработке кадров можно было использовать необработанные кадры.
+
+[!code-cs[SnippetEnableFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEnableFrameProcessing)]
+
+Если приложение отключает обработку кадра, для режима шумоподавления устанавливается значение **On** или **Auto** в зависимости от того, какой режим поддерживается.
+
+[!code-cs[SnippetDisableFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDisableFrameProcessing)]
+
+Дополнительные сведения о получении видеокадров для обработки изображений см. в разделе [Обработка кадров мультимедиа с помощью MediaFrameReader](process-media-frames-with-mediaframereader.md).
+
+## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
- 
-
+* [Обработка кадров мультимедиа с помощью MediaFrameReader](process-media-frames-with-mediaframereader.md)
+*  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
 
 

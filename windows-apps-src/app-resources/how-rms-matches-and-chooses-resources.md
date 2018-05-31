@@ -1,28 +1,28 @@
 ---
 author: stevewhims
-Description: "В момент запроса ресурса текущему контексту ресурса может в той или иной степени соответствовать несколько кандидатов. Система управления ресурсами анализирует все кандидаты и выбирает из них лучший, который будет возвращен. В этом разделе этот процесс описывается подробно, а также приводятся примеры."
-title: "Как система управления ресурсами сопоставляет и выбирает ресурсы"
+Description: When a resource is requested, there may be several candidates that match the current resource context to some degree. The Resource Management System will analyze all of the candidates and determine the best candidate to return. This topic describes that process in detail and gives examples.
+title: Как система управления ресурсами сопоставляет и выбирает ресурсы
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор"
-localizationpriority: medium
-ms.openlocfilehash: 4731ae7add7d5b969ab98da60b3f6740dbbbee1b
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
+ms.localizationpriority: medium
+ms.openlocfilehash: bb1168401aaa715f8d1c459691dfa1b1ca38ccbe
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1690430"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>Как система управления ресурсами сопоставляет и выбирает ресурсы
-
 В момент запроса ресурса текущему контексту ресурса может в той или иной степени соответствовать несколько кандидатов. Система управления ресурсами анализирует все кандидаты и выбирает из них лучший, который будет возвращен. Для ранжирования всех кандидатов учитываются все квалификаторы.
 
 В процессе ранжирования разным квалификаторам назначаются разные приоритеты: язык оказывает наибольшее влияние на общее ранжирование, за ним идут контрастность, масштаб и т. д. Для каждого квалификатора квалификаторы кандидатов сравниваются со значением квалификатора контекста, чтобы определить степень соответствия. Порядок сравнения зависит от квалификатора.
+
+Дополнительные сведения о том, как выполняется сопоставление языков тегов, см. в разделе [Как система управления ресурсами сопоставляет языковые теги](how-rms-matches-lang-tags.md).
 
 Для некоторых квалификаторов, например масштаба и контрастности, всегда есть минимальная степень соответствия. Например, кандидат с квалификатором масштаба-100 в небольшой степени соответствует контексту масштаба-400, хотя и не в такой степени, как кандидат с квалификатором масштаба-200 или (идеальное соответствие) масштаба-400.
 
@@ -41,7 +41,6 @@ ms.lasthandoff: 10/31/2017
 Если появляется привязка, то проверяется значение квалификатора контекста со следующим по уровню приоритетом и процесс повторяется, пока не будет найдено наилучшее соответствие.
 
 ## <a name="example-of-choosing-a-resource-candidate"></a>Пример выбора потенциального ресурса
-
 Рассмотрим эти файлы.
 
 ```
@@ -85,7 +84,7 @@ en/images/logo.scale-100.jpg
 en/images/logo.scale-400.jpg
 ```
 
-Можно использовать особый метод [**NamedResource.ResolveAll**](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_) для возвращения всех потенциальных ресурсов в порядке их соответствия контекстным установкам. В рассмотренном нами примере **ResolveAll** возвращает кандидаты в указанном порядке.
+Можно использовать особый метод [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) для возвращения всех потенциальных ресурсов в порядке их соответствия контекстным установкам. В рассмотренном нами примере **ResolveAll** возвращает кандидаты в указанном порядке.
 
 ```
 en/images/logo.scale-400.jpg
@@ -95,7 +94,6 @@ fr/images/logo.scale-100.jpg
 ```
 
 ## <a name="example-of-producing-a-fallback-choice"></a>Пример выбора запасного варианта
-
 Рассмотрим эти файлы.
 
 ```
@@ -138,9 +136,7 @@ de/images/contrast-standard/logo.jpg
 ```
 
 ## <a name="important-apis"></a>Важные API
-
-* [NamedResource.ResolveAll](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_)
+* [NamedResource.ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
 
 ## <a name="related-topics"></a>Статьи по теме
-
 * [Компиляция ресурсов вручную с помощью MakePri.exe](compile-resources-manually-with-makepri.md)

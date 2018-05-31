@@ -1,26 +1,34 @@
 ---
 author: stevewhims
-Description: "MakePri.exe — инструмент командной строки, который можно использовать для создания и наполнения PRI-файлов. Он интегрирован как часть MSBuild в Microsoft Visual Studio, но разработчики могут использовать его для создания пакетов вручную или с помощью пользовательских систем сборки."
-title: "Компиляция ресурсов вручную с помощью MakePri.exe"
+Description: MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system.
+title: Компиляция ресурсов вручную с помощью MakePri.exe
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор"
-localizationpriority: medium
-ms.openlocfilehash: 16d2a270a69497bc66f7b17109bc28b062f14b5e
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
+ms.localizationpriority: medium
+ms.openlocfilehash: 261a2b747d25284351bb6f4e51f108158b6e2bc5
+ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 04/05/2018
+ms.locfileid: "1707029"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="compile-resources-manually-with-makepriexe"></a>Компиляция ресурсов вручную с помощью MakePri.exe
 
 MakePri.exe — инструмент командной строки, который можно использовать для создания и наполнения PRI-файлов. Он интегрирован как часть MSBuild в Microsoft Visual Studio, но разработчики могут использовать его для создания пакетов вручную или с помощью пользовательских систем сборки.
+
+Ограничение на размер PRI-файла— 64КБ.
+
+## <a name="in-this-section"></a>В этом разделе
+|Раздел|Описание|
+|-|-|
+| [Параметры командной строки MakePRI.exe](makepri-exe-command-options.md) | MakePri.exe имеет набор команд `createconfig`, `dump`, `new`, `resourcepack` и `versioned`. В данном разделе описаны параметры командной строки для их использования. |
+| [Файл конфигурации MakePri.exe](makepri-exe-configuration.md) | В этом разделе дается описание схемы XML-файла конфигурации MakePri.exe. |
+| [Индексаторы для конкретных форматов MakePri.exe](makepri-exe-format-specific-indexers.md) | В этом разделе описываются специальные индексаторы, которые используются средством MakePri.exe для создания указателя ресурсов. |
 
 ## <a name="makepriexe-command-line-options"></a>Параметры командной строки MakePRI.exe
 
@@ -59,7 +67,6 @@ No default or neutral resource given for '<resource identifier>'. The applicatio
 Когда PRI-файлы создаются для других компонентов, библиотек классов, сборок, библиотек DLL и пакетов SDK, следует применять конфигурацию **initialPath**, чтобы обеспечить, что ресурсы компонентов имеют свои собственные подкарты ресурсов, не конфликтующие с приложением, в которое их добавляют.
 
 ## <a name="related-topics"></a>Статьи по теме
-
 * [Параметры командной строки MakePRI.exe](makepri-exe-command-options.md)
 * [Настройка MakePri.exe](makepri-exe-configuration.md)
 * [Индексаторы для конкретных форматов MakePri.exe](makepri-exe-format-specific-indexers.md)

@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
-description: "В этой статье рассказывается, как использовать профили камеры для обнаружения возможностей различных устройств видеозахвата и управления ими. Сюда входят такие задачи, как выбор профилей, которые поддерживают определенные значения разрешения и частоты кадров, профилей, которые поддерживают одновременный доступ к нескольким камерам, и профилей, которые поддерживают HDR."
-title: "Обнаружение и выбор возможностей камеры с помощью профилей камеры"
+description: В этой статье рассказывается, как использовать профили камеры для обнаружения возможностей различных устройств видеозахвата и управления ими. Сюда входят такие задачи, как выбор профилей, которые поддерживают определенные значения разрешения и частоты кадров, профилей, которые поддерживают одновременный доступ к нескольким камерам, и профилей, которые поддерживают HDR.
+title: Обнаружение и выбор возможностей камеры с помощью профилей камеры
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: f45fea396c775a7d9e783be1d0a821ff68716279
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f842b10ce056d02d1c30c2fe285a87d5fe20dca8
+ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "1832258"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>Обнаружение и выбор возможностей камеры с помощью профилей камеры
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье рассказывается, как использовать профили камеры для обнаружения возможностей различных устройств видеозахвата и управления ими. Сюда входят такие задачи, как выбор профилей, которые поддерживают определенные значения разрешения и частоты кадров, профилей, которые поддерживают одновременный доступ к нескольким камерам, и профилей, которые поддерживают HDR.
@@ -61,21 +64,18 @@ translationtype: HT
 
 [!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
 
-## <a name="select-a-profile-that-supports-concurrence"></a>Выбор профиля с поддержкой синхронного захвата
+## <a name="use-media-frame-source-groups-to-get-profiles"></a>Использование групп источников кадров мультимедиа для получения профилей
 
-Профили камеры можно использовать для того, чтобы определить, поддерживает ли устройство видеозахват одновременно с нескольких камер. В этом сценарии необходимо создать два набора объектов захвата: для передней и задней камеры. Для каждой камеры создайте **MediaCapture**, **MediaCaptureInitializationSettings** и строку для идентификатора устройства захвата. Кроме того, добавьте логическую переменную, которая будет отслеживать, поддерживается ли синхронный захват.
+Начиная с Windows 10 версии 1803 вы можете использовать класс [**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup) для получения профилей камеры с определенными возможностями перед инициализацией объекта **MediaCapture**. Групп источников кадров позволяют производителям устройств, представлять группы датчиков или получать возможности как одно виртуальное устройство. Это позволяет реализовать сценарии вычислительной фотографии, такие как совместное использование камер глубины и цветных камер, но также может использоваться для выбора профилей камеры для простых сценариев захвата. Дополнительные сведения об использовании **MediaFrameSourceGroup** см. в разделе [Обработка кадров мультимедиа с помощью MediaFrameReader](process-media-frames-with-mediaframereader.md).
 
-[!code-cs[ConcurrencySetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConcurrencySetup)]
+В примере метода ниже показано, как использовать объекты **MediaFrameSourceGroup**, чтобы найти профиль камеры, который поддерживает известный профиль видео, например с поддержкой HDR или переменной последовательности фотографий. Сначала вызовите метод [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync), чтобы получить список всех групп источников кадров мультимедиа, доступных на текущем устройстве. В цикле пройдитесь по каждой группе источников и вызовите метод [**MediaCapture.FindKnownVideoProfiles**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles), чтобы получить список всех профилей видео для текущей группы источников, которые поддерживают указанный профиль (в данном случае это HDR с фотографией WCG). Если найден профиль, который соответствует критериям, создайте объект **MediaCaptureInitializationSettings** и укажите значение **VideoProfile**, чтобы выбрать профиль, а в значении **VideoDeviceId** свойства **Id** укажите текущую группу источников кадров мультимедиа. Например, в этот метод можно передать значение **KnownVideoProfile.HdrWithWcgVideo**, чтобы получить параметры захвата мультимедиа, которые поддерживают видео в формате HDR. Передайте **KnownVideoProfile.VariablePhotoSequence** для получения параметров, которые поддерживают переменную последовательность фотографий.
 
-Статический метод [**MediaCapture.FindConcurrentProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926709) возвращает список профилей камеры, поддерживаемых определенным устройством захвата, с помощью которого также можно осуществлять синхронный захват с нескольких камер. Используйте запрос Linq, чтобы найти профиль, который поддерживает синхронный захват, а также поддерживается как передней, так и задней камерой. Если найден профиль, который соответствует этим требованиям, установите его на каждом из объектов **MediaCaptureInitializationSettings** и задайте для логической переменной отслеживания синхронного захвата значение «true».
+ [!code-cs[FindKnownVideoProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindKnownVideoProfile)]
 
-[!code-cs[FindConcurrencyDevices](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindConcurrencyDevices)]
+## <a name="use-known-profiles-to-find-a-profile-that-supports-hdr-video-legacy-technique"></a>Как найти профиль с поддержкой видео HDR с помощью известных профилей (старый способ)
 
-Вызовите **MediaCapture.InitializeAsync** для основной камеры в сценарии приложения. Если поддерживается синхронный захват, инициализируйте также и вторую камеру.
-
-[!code-cs[InitConcurrentMediaCaptures](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
-
-## <a name="use-known-profiles-to-find-a-profile-that-supports-hdr-video"></a>Как найти профиль с поддержкой видео HDR с помощью известных профилей
+> [!NOTE] 
+> API-интерфейсы, описанные в этом разделе, являются устаревшими начиная с Windows 10 версии 1803. См. предыдущий раздел **Использование групп источников кадров мультимедиа для получения профилей**.
 
 Выбор профиля, который поддерживает HDR, начинается так же, как и другие сценарии. Создайте **MediaCaptureInitializationSettings** и строку для идентификатора устройства захвата. Добавьте логическую переменную, которая будет отслеживать, поддерживается ли видео HDR.
 
