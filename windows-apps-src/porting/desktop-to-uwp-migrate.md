@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ec676446562d5d97ff2a7020fc494f248323450b
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.openlocfilehash: e0931440977c33642a3154cfa1b0adca42032df0
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691943"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018630"
 ---
 # <a name="share-code-between-a-desktop-app-and-a-uwp-app"></a>Совместное использование кода в классическом приложении и приложении UWP
 
@@ -26,8 +26,8 @@ ms.locfileid: "1691943"
 Помещайте максимально возможный объем кода в библиотеки классов .NET Standard 2.0.  Если в коде используются API-интерфейсы, определенные в этом стандарте, код можно многократно использовать в приложениях UWP. В стандарт .NET Standard 2.0 входит гораздо больше API-интерфейсов, поэтому совместное использование кода в библиотеках .NET Standard стало еще удобнее.
 
 Вот видео, в котором рассказывается об этом подробнее.
-<br><br>
-<iframe src="https://www.youtube.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/YI4MurjfMn8]
 
 ### <a name="add-net-standard-libraries"></a>Добавление библиотек .NET Standard
 
@@ -56,10 +56,10 @@ ms.locfileid: "1691943"
 Если в вашем приложении используются такие файлы, определите, совместимы ли они со стандартом .NET Standard 2.0. Для этого можно использовать расширение Visual Studio или служебную программу командной строки.
 
 Используйте эти же инструменты для анализа кода. Скачайте инструменты по этой ссылке ([dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/releases)) и просмотрите это видео, чтобы научиться ими пользоваться.
-<br><br>
-<iframe src="https://www.youtube.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/rzs_FGPyAlY]
 
- Если ваш код не соответствует стандарту, рассмотрите другие варианты использования этого кода. В первую очередь, откройте [обозреватель API-интерфейсов .NET](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). С его помощью можно просматривать API-интерфейсы, доступные в стандарте .NET Standard 2.0. В качестве области списка выберите .NET Standard 2.0.
+Если ваш код не соответствует стандарту, рассмотрите другие варианты использования этого кода. В первую очередь, откройте [обозреватель API-интерфейсов .NET](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). С его помощью можно просматривать API-интерфейсы, доступные в стандарте .NET Standard 2.0. В качестве области списка выберите .NET Standard 2.0.
 
 ![вариант dot net](images/desktop-to-uwp/dot-net-option.png)
 
@@ -101,7 +101,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-Тем не менее, [обозреватель API-интерфейсов .NET](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) предоставляет альтернативный вариант. Можно использовать классы ``DbConnection``, ``DbCommand`` и ``DbDataReader``, так как они доступны в .NET Standard 2.0.  
+Мы можем использовать [обозреватель API-интерфейсов .NET](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) для получения альтернативного варианта. Классы ``DbConnection``, ``DbCommand`` и ``DbDataReader`` они доступны в .NET Standard 2.0, поэтому можно использовать их.  
 
 В данной исправленной версии эти классы используются для получения списка пользователей, но для создания класса ``DbConnection`` потребуется передать объект фабрики, созданный в клиентском приложении.
 
@@ -158,9 +158,9 @@ public partial class Customers : Form
 ## <a name="reach-all-windows-devices"></a>Доступ ко всем устройствам с Windows
 
 Теперь все готово для добавления приложения UWP в решение.
-<div style="float: left; padding: 10px">
-    ![изображение моста переноса классических приложений на UWP](images/desktop-to-uwp/adaptive-ui.png)
-</div>
+
+![изображение моста переноса классических приложений на UWP](images/desktop-to-uwp/adaptive-ui.png)
+
 Все равно потребуется спроектировать страницы пользовательского интерфейса в XAML и написать код для конкретного устройства или платформы, но после этого вы получите доступ к полному спектру устройств Windows 10, а страницы вашего приложения буду выполнены в современном стиле с эффективной адаптацией под различные размеры и разрешение экрана.
 
 Приложение будет реагировать на механизмы ввода, отличные от клавиатуры с мышью, а пользоваться его возможностями и параметрами будет удобно на любых устройствах. Это означает, что пользователям нужно научиться пользоваться приложением только один раз, так как оно работает практически одинаково независимо от устройства.
@@ -211,9 +211,8 @@ public sealed partial class MainPage : Page
 ## <a name="reach-ios-and-android-devices"></a>Доступ к устройствам iOS и Android
 
 Получить доступ к устройствам Android и iOS можно путем добавления проектов Xamarin.  
-<div style="float: left; padding: 10px">
-    ![Приложения Xamarin](images/desktop-to-uwp/xamarin-apps.png)
-</div>
+
+![Приложения Xamarin](images/desktop-to-uwp/xamarin-apps.png)
 
 С помощью этих проектов можно использовать C# для создания приложений Android и iOS с полным доступом к API-интерфейсам для конкретных платформ и устройств. Эти приложения используют средства аппаратного ускорения с учетом конкретной платформы и компилируются для достижения естественной производительности.
 

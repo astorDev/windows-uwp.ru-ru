@@ -4,24 +4,27 @@ title: Снимок экрана
 description: Пространство имен Windows.Graphics.Capture предоставляет API-интерфейсы для извлечения кадров из окна отображения или приложения, создания видеопотоков или снимков в рамках формирования интерактивного интерфейса для совместной работы.
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
 ms.author: elcowle
-ms.date: 3/1/2018
+ms.date: 5/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, снимок экрана
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b7883acd351c721b4539141cd46e3c199a8d8a1
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: e407842711d1bfcac0a54fdf484a38d39bc2b237
+ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1640069"
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "1912912"
 ---
 # <a name="screen-capture"></a>Снимок экрана
 
 Начиная с Windows 10 версии 1803 пространство имен [Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) предоставляет API-интерфейсы для извлечения кадров из окна отображения или приложения, создания видеопотоков или снимков в рамках формирования интерактивного интерфейса для совместной работы.
 
 Снимок экрана позволяет разработчикам вызывать безопасный системный интерфейс, чтобы конечные пользователи могли выбрать экран или окно приложения для захвата, после чего систему рисует желтую границу уведомления вокруг активного элемента. В случае синхронных сеансов захвата желтая граница рисуется вокруг каждого элемента, снимок которого создается.
+
+> [!NOTE]
+> Для использования API-интерфейсов захвата экрана требуется Windows 10 Pro или Windows 10 Корпоративная.
 
 ## <a name="add-the-screen-capture-capability"></a>Добавление возможности захвата экрана
 
@@ -158,23 +161,24 @@ _framePool.FrameArrived += (s, a) =>
 Следующий фрагмент кода— это полный пример реализации снимка экрана в приложении UWP.
 
 ```cs
-using Microsoft.Graphics.Canvas; 
-using System; 
-using System.Threading.Tasks; 
-using Windows.Graphics.Capture; 
-using Windows.Graphics.DirectX; 
-using Windows.UI.Composition; 
- 
+using Microsoft.Graphics.Canvas;
+using System;
+using System.Threading.Tasks;
+using Windows.Graphics;
+using Windows.Graphics.Capture;
+using Windows.Graphics.DirectX;
+using Windows.UI.Composition;
+
 namespace CaptureSamples 
-{ 
+{
     class Sample
     {
         // Capture API objects.
-        private Vector2 _lastSize; 
+        private SizeInt32 _lastSize; 
         private GraphicsCaptureItem _item; 
         private Direct3D11CaptureFramePool _framePool; 
         private GraphicsCaptureSession _session; 
- 
+
         // Non-API related members.
         private CanvasDevice _canvasDevice; 
         private CompositionDrawingSurface _surface; 
@@ -252,7 +256,8 @@ namespace CaptureSamples
             bool needsReset = false; 
             bool recreateDevice = false; 
  
-            if (frame.ContentSize != _lastSize) 
+            if ((frame.ContentSize.Width != _lastSize.Width) || 
+                (frame.ContentSize.Height != _lastSize.Height)) 
             { 
                 needsReset = true; 
                 _lastSize = frame.ContentSize; 

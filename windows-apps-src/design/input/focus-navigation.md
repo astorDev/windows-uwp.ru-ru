@@ -15,14 +15,16 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1737408386628ea7ecf1bb42256976c5fd28cb77
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 73b1c73fdd971eb4448aea62bc8c64ceac17a2b4
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707245"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843354"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>Перемещение фокуса с помощью клавиатуры, геймпада, пульта дистанционного управления и средств специальных возможностей
+
+![Клавиатура, пульт управления и крестовина](images/dpad-remote/dpad-remote-keyboard.png)
 
 Используйте навигацию с помощью клавиатуры для обеспечения полного и согласованного взаимодействия в приложениях UWP и настраиваемых элементах управления как для опытных пользователей клавиатуры, так и для людей с ограниченными возможностями, а также для соблюдения других требований к специальным возможностям; при работе с содержимым на большом расстоянии на телевизионных экранах и консоли Xbox One.
 

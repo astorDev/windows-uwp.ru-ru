@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, SQL Server, база данных
 ms.localizationpriority: medium
-ms.openlocfilehash: 461e3578aad11dea0d9afcd7c93dfda9a246bb10
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 31a173efbe30cffed85336a302ced504a4cad50d
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662184"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983495"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Использование базы данных SQL Server в приложении UWP
 Ваше приложение может подключаться напрямую к базе данных SQL Server и затем хранить и извлекать данные с помощью классов в пространстве имен [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx).
@@ -68,7 +68,7 @@ sealed partial class App : Application
     private string connectionString =
         @"Data Source=YourServerName\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
 
-    public string ConnectionString { get => connectionString; set => connectionString = value;  
+    public string ConnectionString { get => connectionString; set => connectionString = value; }
 
     ...
 }
@@ -222,6 +222,16 @@ public MainPage()
 ![Продукты Northwind](images/products-northwind.png)
 
 Изучите пространство имен [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx), чтобы узнать, что еще можно сделать с данными в базе данных SQL Server.
+
+## <a name="trouble-connecting-to-your-database"></a>Проблемы с подключением к базе данных?
+
+В большинстве случаев необходимо изменить некоторые аспекты конфигурации SQL Server. Если вы можете подключиться к базе данных из другого типа классического приложения, например приложения Windows Forms или WPF, убедитесь, что вы включили TCP/IP для SQL Server. Это можно сделать в консоли **Управление компьютером**.
+
+![Управление компьютерами](images/computer-management.png)
+
+Затем убедитесь в том, что запущена служба обозревателя SQL Server.
+
+![Служба обозревателя SQL Server](images/sql-browser-service.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

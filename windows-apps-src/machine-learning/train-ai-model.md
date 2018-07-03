@@ -9,17 +9,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, winml, машинное обучение в Windows, visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d8b50b6b8779b98de1d93f449aa560b5dcda893
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 1b54b0665a2483b8a0be710f505e928c852f4dba
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690220"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842671"
 ---
 # <a name="how-to-train-a-model-for-windows-ml-in-visual-studio"></a>Способы обучения модели для Windows ML в Visual Studio
+
 В этом руководстве мы будем использовать [Visual Studio Tools for AI](http://aka.ms/vstoolsforai), расширение разработки для создания, тестирования и развертывания решений глубинного обучения и ИИ в целях обучения модели для примера приложения MNIST раздела [Начало работы](get-started.md).
 
-Мы будем обучать модель с помощью платформы [Microsoft Cognitive Toolkit (CNTK)](http://www.microsoft.com/en-us/cognitive-toolkit) и [набора данных MNIST](http://yann.lecun.com/exdb/mnist/), содержащего учебный набор с 60 000 примеров и тестовый набор с 10 000 примеров рукописных цифр. Затем мы сохраним модель в формате [Open Neural Network Exchange (ONNX)](https://onnx.ai/) для использования с Windows ML. 
+Мы будем обучать модель с помощью платформы [Microsoft Cognitive Toolkit (CNTK)](http://www.microsoft.com/en-us/cognitive-toolkit) и [набора данных MNIST](http://yann.lecun.com/exdb/mnist/), содержащего учебный набор с 60 000 примеров и тестовый набор с 10 000 примеров рукописных цифр. Затем мы сохраним модель в формате [Open Neural Network Exchange (ONNX)](https://onnx.ai/) для использования с Windows ML.
 
 ## <a name="prerequisites"></a>Что вам понадобится
 ### <a name="install-visual-studio-tools-for-ai"></a>Установите Visual Studio Tools for AI
@@ -53,15 +54,11 @@ ms.locfileid: "1690220"
 
 ![Откройте решение](images/mnist-startup.png)
 
-Затем откройте файл ConvNet_MNIST.py и **Запустите** проект, нажав клавишу F5 или зеленую кнопку "Запустить".
+Затем откройте файл train_mnist_onnx.py и **Запустите** проект, нажав клавишу F5 или зеленую кнопку "Запустить".
 
 ## <a name="3-view-the-model-and-add-it-to-your-app"></a>3. Просмотрите модель и добавьте ее в приложение
 
-Откройте папку **output/Models** папки в репозитории "Примеры для ИИ". В ней будет один файл обученной DNN-модели для каждой стадии эксперимента обучения, и на последнем шаге будет записан файл модели **MNIST.onnx**. 
-
-![Откройте решение](images/onnx-model-output.png)
-
-Теперь можно использовать этот файл обученной модели **MNIST.onnx** для создания примера приложения MNIST в примере [Начало работы](get-started.md)! 
+Теперь файл обученной модели **mnist.onnx** должен размещаться в папке samples-for-ai/examples/cntk/python/MNIST. Можно использовать этот файл обученной модели **mnist.onnx** для создания примера приложения MNIST в примере [Начало работы](get-started.md)! 
 
 ## <a name="4-learn-more"></a>4. Подробнее
 Чтобы узнать, как ускорить обучение моделей глубинного обучения с помощью [Виртуальных машин с графическими процессорами Azure](https://docs.microsoft.com/en-us/visualstudio/ai/tensorflow-vm) и получить другую информацию, посетите страницу [Искусственный интеллект в корпорации Майкрософт](https://www.microsoft.com/ai) и [Технологии машинного обучения Майкрософт](https://docs.microsoft.com/en-us/azure/machine-learning/#More-Microsoft-Machine-Learning-Technologies).

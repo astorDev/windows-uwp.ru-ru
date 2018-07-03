@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e5b30e9fe2fb4f3bfbec81366a920cd74a19dcec
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.openlocfilehash: 724e2ce05dc439ba440f46697b736faabb1e8df0
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673881"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018498"
 ---
 # <a name="discover-remote-devices"></a>Обнаружение удаленных устройств
 Ваше приложение может использовать беспроводную сеть, Bluetooth и облачное подключение для обнаружения устройств с Windows, вход с которых выполнен с той же учетной записью Майкрософт, что и у обнаруживающего устройства. Обнаружение удаленных устройств возможно без установки на них какого-либо специального программного обеспечения.
@@ -33,9 +33,12 @@ ms.locfileid: "1673881"
 
 [!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
 
-> [!TIP]
+> [!NOTE]
 > Значение фильтра "proximal" не гарантирует степень физической близости. Для сценариев, которым требуется надежная физическая близость, используйте значение [**RemoteSystemDiscoveryType.SpatiallyProximal**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype) в своем фильтре. В настоящее время этот фильтр допускает только устройства, которые обнаружены с помощью Bluetooth. Так как новые механизмы обнаружения и протоколы, которые гарантируют физическую близость, поддерживаются, они также будут включены здесь.  
 Также существует свойство в классе [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem), которое указывает, находится ли обнаруженное устройство на самом деле в пределах физической близости: [**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity).
+
+> [!NOTE]
+> Если требуется обнаруживать устройства по локальной сети (определяется фильтром выбора типа обнаружения), в вашей сети необходимо использовать профиль «частная» или «доменная». Устройство не будет обнаруживать другие устройства в «общедоступной» сети.
 
 После создания списка объектов [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter) его можно передать в конструктор объекта **RemoteSystemWatcher**.
 
@@ -65,9 +68,6 @@ bool isRemoteSystemLaunchUriCapable = remoteSystem.GetCapabilitySupportedAsync(K
 ```
 
 ## <a name="cross-user-discovery"></a>Обнаружение между пользователями
-
-> [!WARNING]
-> Компоненты в этом разделе в настоящее время не доступны для разработчиков.
 
 Разработчики могут указать обнаружение _всех_ устройств по близости к клиентскому устройству, а не только к устройствам, зарегистрированным на одного и того же пользователя. Это реализуется через специальный **IRemoteSystemFilter**, [**RemoteSystemAuthorizationKindFilter**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemauthorizationkindfilter). Это реализуется как и другие типы фильтра:
 

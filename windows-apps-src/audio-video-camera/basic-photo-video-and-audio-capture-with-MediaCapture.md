@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6e5d69c2f86c0d57c0c1be938799d5e81bb8f00
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 81205dc7122c75345b686240f79200d8304704b7
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832278"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843424"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture
 
@@ -61,7 +61,7 @@ ms.locfileid: "1832278"
 
 Дополнительные сведения о работе с **BitmapEncoder** и объектом **SoftwareBitmap**, включая метод отображения такого объекта на XAML-странице, см. в статье [**Создание, редактирование и запись растровых изображений**](imaging.md). 
 
-Дополнительные сведения о задании контрольных значений устройства захвата см. в разделе [Контрольные значения устройства захвата фотографий и видео](capture-device-controls-for-photo-and-video.md).
+Дополнительные сведения о задании контрольных значений устройства захвата см. в разделе [Контрольные значения устройства захвата фотографий и видео](capture-device-controls-for-photo-and-video-capture.md).
 
 Начиная с Windows 10 версии 1803, вы можете получить метаданные, такие как EXIF, для фотографий, записанных в формате без сжатия, использовав свойство [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) свойство объекта **CapturedFrame**, возвращаемого **MediaCapture**. В предыдущих выпусках эти данные были доступны только в заголовке фотографий, записанных в файловых форматах со сжатием. Эти данные можно передать в [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) при записи файла изображения вручную. Дополнительные сведения про запись растровых изображений см. в статье [Создание, редактирование и запись растровых изображений](imaging.md).  Можно также получить доступ к контрольным значениям кадра, например, параметрам экспозиции и вспышки, которые применялись при записи кадра, обратившись к свойству [**ControlValues**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.capturedframe.controlvalues). Дополнительные сведения см. в разделе [Контрольные значения устройства захвата фотографий и видео](capture-device-controls-for-photo-and-video-capture.md).
 

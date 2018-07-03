@@ -10,17 +10,17 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ac00104917d41a48abda97c2d5d37c0ced3ab5e9
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: ae99a7a92ce933c8536dc30f9807d60a1441a809
+ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816649"
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "1912972"
 ---
 # <a name="adaptive-streaming"></a>Адаптивная потоковая передача
 
 
-В этой статье описано, как добавить функцию воспроизведения мультимедийного содержимого адаптивной потоковой передачи в приложения универсальной платформы Windows (UWP). В настоящее время эта функция поддерживает воспроизведение содержимого Http Live Streaming (HLS) и Dynamic Adaptive Streaming over HTTP (DASH).
+В этой статье описано, как добавить функцию воспроизведения мультимедийного содержимого адаптивной потоковой передачи в приложения универсальной платформы Windows (UWP). Эта функция поддерживает воспроизведение содержимого Http Live Streaming (HLS) и Dynamic Adaptive Streaming over HTTP (DASH). Начиная с Windows 10 версии 1803 Smooth Streaming поддерживается в **[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)**.
 
 Список поддерживаемых тегов протокола HLS см. в разделе [Поддержка тегов HLS](hls-tag-support.md). 
 

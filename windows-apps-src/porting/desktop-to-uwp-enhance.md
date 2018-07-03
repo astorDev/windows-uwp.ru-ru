@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 21dc29758a4622f810a02e7e5bb0ec117e4dbc2a
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: aafe2d09fc27a2693ccf2c4c9d8f189aa0164a3c
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638558"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976512"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Улучшите свое классическое приложение для Windows 10
 
@@ -54,16 +54,14 @@ API-интерфейсы UWP можно использовать для доба
 
 В разделе **Общие** группы параметров **C/C++** установите в поле **Использовать расширение среды выполнения Windows** значение **Да (/ZW)**.
 
-   ![Использовать расширение среды выполнения Windows](images/desktop-to-uwp/enable-winrt-objects.png)
+   ![Использовать расширение среды выполнения Windows](images/desktop-to-uwp/consume-runtime-extensions.png)
 
 Откройте диалоговое окно **Дополнительные каталоги #using** и добавьте эти каталоги.
 
-* C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcpackages
+* %VSInstallDir%\Common7\IDE\VC\vcpackages
 * C:\Program Files (x86)\Windows Kits\10\UnionMetadata
 * C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\<*последняя версия*>
 * C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\<*последняя версия*>
-
-![Дополнительные каталоги использования](images/desktop-to-uwp/additional-using.png)
 
 Откройте диалоговое окно **Дополнительные каталоги включаемых файлов** и добавьте этот каталог: C:\Program Files (x86) \Windows Kits\10\Include\<*последняя версия*>\um
 

@@ -3,30 +3,32 @@ author: stevewhims
 description: В этом разделе показано, как выполнять преобразование между объектами двоичного интерфейса приложений (ABI) и C++/WinRT.
 title: Взаимодействие между C++/WinRT и интерфейсом ABI
 ms.author: stwhi
-ms.date: 05/01/2018
+ms.date: 05/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, взаимодействие, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 84f9f557134e69c396ed63ace3474325856c6cd0
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: af9c14043fdfcc10828f87e8c954430f8f587412
+ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832048"
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "1912902"
 ---
 # <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-the-abi"></a>Взаимодействие между [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) и интерфейсом ABI
-В этом разделе показано, как выполнять преобразование между объектами двоичного интерфейса приложений (ABI) и C++/WinRT. Эти техники можно использовать для взаимодействия между кодом, который использует эти два способа программирования с помощью среды выполнения Windows, или для постепенного переноса кода с ABI на C++/WinRT.
+В этом разделе показано, как выполнять преобразование между объектами двоичного интерфейса приложений SDK (ABI) и C++/WinRT. Эти техники можно использовать для взаимодействия между кодом, который использует эти два способа программирования с помощью среды выполнения Windows, или для постепенного переноса кода с ABI на C++/WinRT.
 
-## <a name="what-are-windows-runtime-abi-types"></a>Что такое типы интерфейса ABI среды выполнения Windows?
+## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>Что такое ABI среды выполнения Windows и что такое типы ABI?
+Класс среды выполнения Windows (класс среды выполнения)— это, на самом деле, абстракция. Такая абстракция определяет двоичный интерфейс (двоичный интерфейс приложения или ABI), позволяющий различным языкам программирования взаимодействовать с объектом. Независимо от языка программирования, взаимодействие клиентского кода с объектом среды выполнения Windows происходит на самом низком уровне, при этом языковые конструкции клиента преобразуются в вызовы ABI объекта.
+
 Заголовки пакета Windows SDK в папке "%WindowsSdkDir%Include\10.0.17134.0\winrt" (при необходимости измените номер версии пакета SDK на используемый), представляют собой файлы заголовков ABI среды выполнения Windows. Они были созданы с помощью компилятора MIDL. Вот пример включения одного из таких заголовков.
 
 ```
 #include <windows.foundation.h>
 ```
 
-А вот упрощенный пример одного из типов ABI, которые можно найти в этом конкретном заголовке.
+А вот упрощенный пример одного из типов ABI, которые можно найти в этом конкретном заголовке SDK. Обратите внимание, что пространство имен **ABI**, **Windows::Foundation** и все остальные пространства имен Windows объявляются заголовками SDK внутри пространства имен **ABI**.
 
 ```
 namespace ABI::Windows::Foundation
@@ -65,8 +67,10 @@ namespace winrt::Windows::Foundation
 
 Интерфейс здесь представляет собой современный стандартный C++. Он избавляет от необходимости в **HRESULT** (при необходимости C++/ WinRT вызывает исключения). Функция доступа возвращает простой строковый объект, который очищается в конце его области видимости.
 
+Этот раздел предназначен для тех случаев, когда вам требуется взаимодействие с кодом, который работает на уровне двоичного интерфейса приложения (ABI), и необходимо портировать этот код.
+
 ## <a name="converting-to-and-from-abi-types-in-code"></a>Преобразование в типы ABI и обратно в коде
-Для безопасности и простоты для преобразования в обоих направлениях можно использовать [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr), [**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function) и [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function). Вот пример кода (на основе шаблона проекта **Консольное приложение**), который также показывает, как работать с конфликтами пространств имен между проекцией и ABI.
+Для безопасности и простоты для преобразования в обоих направлениях можно использовать [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr), [**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function) и [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function). Вот пример кода (на основе шаблона проекта **Консольное приложение**), который также показывает, как использовать псевдонимы пространств имен для различных островов, чтобы справиться с конфликтами пространств имен между проекцией C++/WinRT и ABI.
 
 ```cppwinrt
 // main.cpp
@@ -88,7 +92,7 @@ namespace abi
 int main()
 {
     winrt::init_apartment();
-    
+
     winrt::Uri uri(L"http://aka.ms/cppwinrt");
 
     // Convert to an ABI type.
@@ -124,11 +128,11 @@ int main()
 
 ```cppwinrt
     ...
-    
+
     // Copy to an owning raw ABI pointer with copy_to_abi.
     abi::IStringable* owning = nullptr;
     winrt::copy_to_abi(uri, *reinterpret_cast<void**>(&owning));
-    
+
     // Copy from a raw ABI pointer.
     uri = nullptr;
     winrt::copy_from_abi(uri, owning);
@@ -139,13 +143,13 @@ int main()
 
 ```cppwinrt
     ...
-    
+
     // Lowest-level conversions that only copy addresses
-    
+
     // Convert to a non-owning ABI object with get_abi.
     abi::IStringable* non_owning = static_cast<abi::IStringable*>(winrt::get_abi(uri));
     WINRT_ASSERT(non_owning);
-    
+
     // Avoid interlocks this way.
     owning = static_cast<abi::IStringable*>(winrt::detach_abi(uri));
     WINRT_ASSERT(!uri);

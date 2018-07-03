@@ -4,19 +4,19 @@ Description: Shows how to manually package a Windows desktop application (like W
 Search.Product: eADQiWindows 10XVcnh
 title: Упаковка приложения вручную (мост для классических приложений)
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 81d5b9b0b52ef0f7529b277215e7fe0b95683f0a
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: eeadd41debcfcf5cfde23948c52bdfe1ce32e9df
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689770"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989648"
 ---
 # <a name="package-an-app-manually-desktop-bridge"></a>Упаковка приложения вручную (мост для классических приложений)
 
@@ -31,8 +31,9 @@ ms.locfileid: "1689770"
 >[!IMPORTANT]
 >Мост для классических приложений впервые появился в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для юбилейного обновления Windows 10 (10.0; сборка 14393) или более поздней версии в Visual Studio.
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>Выбор способа распространения приложения
-Если вы планируете опубликовать свое приложение в [Microsoft Store](https://www.microsoft.com/store/apps), начните с заполнения [этой формы](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). После этого Microsoft свяжется с вами, чтобы начать процесс публикации. В рамках этого процесса вы зарезервируете имя в Store и получите информацию, необходимую для упаковки приложения.
+## <a name="first-prepare-your-application"></a>Сначала подготовьте свое приложение
+
+Не забудьте изучить это руководство, прежде чем начинать создание пакета приложения: [Подготовка к упаковке приложения (мост для классических приложений)](desktop-to-uwp-prepare.md).
 
 ## <a name="create-a-package-manifest"></a>Создание пакета манифеста
 
@@ -111,7 +112,7 @@ ms.locfileid: "1689770"
 ```
 ### <a name="dependencies"></a>Зависимости
 
-Для приложений, перенесенных из классических приложений, всегда устанавливайте атрибуту ``Name`` значение ``Windows.Desktop``.
+Для классических приложений, которые вы упаковываете с помощью моста для классических приложений, всегда устанавливайте для атрибута ``Name`` значение ``Windows.Desktop``.
 
 ```XML
 <Dependencies>
@@ -120,7 +121,7 @@ ms.locfileid: "1689770"
 ```
 
 ### <a name="capabilities"></a>Возможности
-Для приложений, перенесенных из классического приложения, необходимо добавить возможность ``runFullTrust``.
+Для классических приложений, которые вы упаковываете с помощью моста для классических приложений, потребуется добавить возможность ``runFullTrust``.
 
 ```XML
 <Capabilities>
@@ -133,7 +134,7 @@ ms.locfileid: "1689770"
 
 ### <a name="application-element"></a>Элемент приложения
 
-Для приложений, перенесенных из классических приложений, атрибут ``EntryPoint`` элемента Application всегда имеет значение ``Windows.FullTrustApplication``.
+Для классических приложений, которые вы упаковываете с помощью моста для классических приложений, атрибут ``EntryPoint`` элемента Application всегда имеет значение ``Windows.FullTrustApplication``.
 
 ```XML
 <Applications>

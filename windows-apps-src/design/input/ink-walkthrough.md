@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cac6caf7f8feab86103e27d7947209bb3fd5c0a8
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 68624288ea223d0882ef0b8c33b174f000081411
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707099"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983390"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>Учебник: поддержка рукописного ввода в приложении UWP
 
@@ -41,10 +41,10 @@ ms.locfileid: "1707099"
 
 * Компьютер (или виртуальная машина) под управлением текущей версии Windows10
 * [Visual Studio 2017 и пакет SDK RS2](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Если вы еще не знакомы с разработкой приложений универсальной платформы Windows (UWP) с помощью Visual Studio, изучите следующие разделы, прежде чем использовать этот учебник.  
-    * [Подготовка](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)
-    * [Создание приложения "Hello, world" (XAML)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [Подготовка](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
+    * [Создание приложения "Hello, world" (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * **[НЕОБЯЗАТЕЛЬНО]** Цифровое перо и компьютер с монитором, который поддерживает ввод от этого цифрового пера.
 
 > [!NOTE] 
@@ -70,7 +70,7 @@ ms.locfileid: "1707099"
 | Компонент | Описание |
 | --- | --- |
 | [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | Элемент управления платформы пользовательского интерфейса XAML, который по умолчанию получает и отображает все входные данные от пера как росчерк пера или росчерк стирания. |
-| [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | Объект кода программной части, создаваемый вместе с элементом управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (предоставляется свойством [**InkCanvas.InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)). Этот объект обеспечивает все возможности рукописного ввода по умолчанию, предоставляемые элементом [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), вместе с полным набором API для дополнительной настройки и персонализации. |
+| [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | Объект кода программной части, создаваемый вместе с элементом управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (предоставляется свойством [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)). Этот объект обеспечивает все возможности рукописного ввода по умолчанию, предоставляемые элементом [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), вместе с полным набором API для дополнительной настройки и персонализации. |
 | [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Платформа управления пользовательским интерфейсом XAML содержит настраиваемую и расширяемую коллекцию кнопок, которые включают связанные с рукописным вводом функции в связанном элементе управления [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas). |
 | [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263)<br/>Здесь не описаны эти функции. Дополнительные сведения см. в разделе [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314). | Позволяет преобразовать росчерки пера в специальный контекст устройства Direct2D универсального приложения для Windows вместо элемента управления по умолчанию [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535). |
 
@@ -134,12 +134,12 @@ ms.locfileid: "1707099"
 
 Чтобы устранить эту неприятность, необходимо добавить вторую строку кода. Сейчас он находится в коде программной части для XAML-файла, в котором объявляется ваш [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas). 
 
-На этом этапе мы представляем объект [**InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter), который обеспечивает управление вводом, обработку и отрисовку рукописного ввода (стандартного и модифицированного) на более детальном уровне на вашем [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas).
+На этом этапе мы представляем объект [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), который обеспечивает управление вводом, обработку и отрисовку рукописного ввода (стандартного и модифицированного) на более детальном уровне на вашем [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas).
 
 > [!NOTE]
 > Стандартный рукописный ввод (кончик пера или кнопка/кончик ластика) не изменены с помощью таких дополнительных возможностей, как кнопка пера, правая кнопка мыши или подобные механизмы. 
 
-Чтобы включить рукописный ввод с помощью мыши и сенсорного ввода, задайте свойство [**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes) [**InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter) для сочетания значений [**CoreInputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.core.coreinputdevicetypes), которые вам необходимы.
+Чтобы включить рукописный ввод с помощью мыши и сенсорного ввода, задайте свойство [**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes) [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter) для сочетания значений [**CoreInputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.core.coreinputdevicetypes), которые вам необходимы.
 
 ### <a name="in-the-sample"></a>В примере:
 1. Откройте файл MainPage.xaml.cs.
@@ -196,11 +196,11 @@ ms.locfileid: "1707099"
 </td>
 <td>
 
-Вот пример настраиваемого элемента <strong><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar">InkToolbar</a></strong> (из альбома в Windows Ink Workspace).
+Вот пример настраиваемого элемента **[InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)** (из альбома в Windows Ink Workspace).
 
 ![InkToolbar из альбома в Ink Workspace](images/ink/ink-inktoolbar-sketchpad-small.png)
 
-Дополнительные сведения о настройке [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) см. в разделе [Добавление InkToolbar в приложение универсальной платформы Windows (UWP) для рукописного ввода](https://docs.microsoft.com/en-us/windows/uwp/input/ink-toolbar).
+Дополнительные сведения о настройке [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) см. в разделе [Добавление InkToolbar в приложение универсальной платформы Windows (UWP) для рукописного ввода](ink-toolbar.md).
 
 </td>
 </tr>
@@ -294,11 +294,11 @@ ms.locfileid: "1707099"
 </td>
 <td>
 
-<p>Windows Ink поддерживает распознавание текста для многих языков, поддерживаемых Windows. Каждый языковой пакет включает модуль распознавания рукописного ввода, который можно установить с языковым пакетом.</p>
+Windows Ink поддерживает распознавание текста для многих языков, поддерживаемых Windows. Каждый языковой пакет включает модуль распознавания рукописного ввода, который можно установить с языковым пакетом.
 
-<p>Выберите необходимый язык путем запроса установленных модулей распознавания рукописного ввода.</p>
+Выберите необходимый язык путем запроса установленных модулей распознавания рукописного ввода.
 
-<p>Дополнительные сведения о международном распознавании рукописного входа см. в разделе <a href="https://docs.microsoft.com/windows/uwp/input/convert-ink-to-text">Распознавание росчерков пера Windows Ink как текста</a>.</p>
+Дополнительные сведения о международном распознавании рукописного входа см. в разделе [Распознавание росчерков пера Windows Ink как текста](convert-ink-to-text.md).
 
 </td>
 </tr>
@@ -314,9 +314,9 @@ ms.locfileid: "1707099"
 </td>
 <td>
 
-<p>В этом руководстве требуется, чтобы кнопка была нажата для запуска распознавания. Вы также можете выполнить динамическое распознавание, используя основную функцию синхронизации.</p>
+В этом руководстве требуется, чтобы кнопка была нажата для запуска распознавания. Вы также можете выполнить динамическое распознавание, используя основную функцию синхронизации.
 
-<p>Дополнительные сведения о динамическом распознавании см. в разделе <a href="https://docs.microsoft.com/windows/uwp/input/convert-ink-to-text">Распознавание росчерков пера Windows Ink как текста</a>.</p>
+Дополнительные сведения о динамическом распознавании см. в разделе [Распознавание росчерков пера Windows Ink как текста](convert-ink-to-text.md).
 
 </td>
 </tr>
@@ -327,6 +327,7 @@ ms.locfileid: "1707099"
 Хорошо! Теперь можно преобразовать рукописные заметки во что-нибудь более разборчивое. Но как насчет этих дрожащих, кофеиносодержащих записок с утреннего собрания "Flowcharters Anonymous"?
 
 С помощью анализа рукописного текста ваше приложение также может распознавать ряд основных фигур, в том числе:
+
 - Круг
 - Ромб
 - Рисунок
@@ -452,9 +453,9 @@ ms.locfileid: "1707099"
 
 <td>
 
-<p>Рукописный ввод Windows также поддерживает копирование и вставку росчерков пера в буфер обмена и из него.</p>
+Рукописный ввод Windows также поддерживает копирование и вставку росчерков пера в буфер обмена и из него.
 
-<p>Дополнительные сведения об использовании буфера обмена с рукописным вводом см. в разделе <a href="https://docs.microsoft.com/en-us/windows/uwp/input/save-and-load-ink">Хранение и извлечение данных движения пера Windows Ink</a>.</p>
+Дополнительные сведения об использовании буфера обмена с рукописным вводом см. в разделе [Хранение и извлечение данных движения пера Windows Ink](save-and-load-ink.md).
 
 </td>
 </tr>
@@ -466,9 +467,16 @@ ms.locfileid: "1707099"
 
 ## <a name="related-articles"></a>Статьи по теме
 
-* [Взаимодействие с пером и Windows Ink в приложениях UWP](https://docs.microsoft.com/windows/uwp/input/pen-and-stylus-interactions)
+* [Взаимодействие с пером и Windows Ink в приложениях UWP](pen-and-stylus-interactions.md)
 
-**Примеры**
+### <a name="samples"></a>Примеры
+
+* [Пример анализа рукописного ввода (базовый) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+* [Пример распознавания рукописного ввода (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
+* [Сохранение и загрузка росчерков пера из файла Ink Serialized Format (ISF)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+* [Сохранение и загрузка росчерков пера из буфера обмена](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
+* [Пример расположения и ориентации панели инструментов рукописного ввода (базовый)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
+* [Пример расположения и ориентации панели инструментов рукописного ввода (динамичный)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
 * [Простой пример рукописного ввода (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [Сложный пример рукописного ввода (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
 * [Пример рукописного ввода (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)

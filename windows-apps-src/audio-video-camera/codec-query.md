@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, кодек, кодировщик, декодер, запрос
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e6a44bda55fc6c01e75940d9d4446160e708627
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692475"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842351"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>Запрос кодеков, установленных на устройстве
 Класс **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** позволяет запрашивать кодеки, установленные на текущем устройстве. Список кодеков, которые входят в состав Windows 10 для различных семейств устройств, перечислен в статье [Поддерживаемые кодеки](supported-codecs.md), но поскольку пользователи и приложения могут устанавливать дополнительные кодеки на устройство, можно запросить поддержку кодеков во время выполнения, чтобы определить, какие кодеки доступны на текущем устройстве.

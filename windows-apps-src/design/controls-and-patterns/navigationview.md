@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fc365a7dbc69819ce88a22db2490b327412c8b4
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.openlocfilehash: c7817bf7ff60a52ea48c988bdebd6d4d2eeacdb7
+ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675371"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "1992153"
 ---
 # <a name="navigation-view"></a>Представление навигации
 
@@ -151,9 +151,9 @@ NavigationView — это только один из нескольких эле
 
 NavigationView автоматически изменяет режим отображения в зависимости от доступного экранного пространства.
 
-> [!NOTE] 
-NavigationView следует использовать в качестве корневого контейнера приложения. Этот элемент управления предназначен для развертывания по всей ширине и высоте окна приложения.
-Вы можете переопределить ширину, при которой представление навигации изменяет режим отображения с помощью свойств [CompactModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.CompactModeThresholdWidth) и [ExpandedModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ExpandedModeThresholdWidth) 
+> [!NOTE]
+> NavigationView следует использовать в качестве корневого контейнера приложения. Этот элемент управления предназначен для развертывания по всей ширине и высоте окна приложения.
+Вы можете переопределить ширину, при которой представление навигации изменяет режим отображения с помощью свойств [CompactModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.CompactModeThresholdWidth) и [ExpandedModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ExpandedModeThresholdWidth)
 
 Рассмотрим следующие сценарии, в которых показано, когда может потребоваться изменить поведение режима отображения по умолчанию.
 
@@ -448,13 +448,13 @@ viewTitleBar.ButtonForegroundColor = (Color)Resources["SystemBaseHighColor"];
 
 ```xaml
 <Grid>
-
-    <TextBlock x:Name="AppTitle" 
+    <TextBlock x:Name="AppTitle"
         xmlns:appmodel="using:Windows.ApplicationModel"
-        Text="{x:Bind appmodel:Package.Current.DisplayName}" 
-        Style="{StaticResource CaptionTextBlockStyle}" 
-        IsHitTestVisible="False" 
+        Text="{x:Bind appmodel:Package.Current.DisplayName}"
+        Style="{StaticResource CaptionTextBlockStyle}"
+        IsHitTestVisible="False"
         Canvas.ZIndex="1"/>
+    
 
     <NavigationView Canvas.ZIndex="0" ... />
 
@@ -464,6 +464,10 @@ viewTitleBar.ButtonForegroundColor = (Color)Resources["SystemBaseHighColor"];
 Вам также потребуется настроить поля AppTitle в зависимости от видимости кнопки "Назад". Когда приложение находится в режиме FullScreenMode, необходимо удалить пространство для стрелки назад, даже если в элементе TitleBar зарезервировано место для нее.
 
 ```csharp
+var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+Window.Current.SetTitleBar(AppTitle);
+coreTitleBar.ExtendViewIntoTitleBar = true;
+
 void UpdateAppTitle()
 {
     var full = (ApplicationView.GetForCurrentView().IsFullScreenMode);

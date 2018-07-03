@@ -13,12 +13,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: d1e28445a665e9d805b8633963784c08b63af6ca
-ms.sourcegitcommit: 4e39a2bdb5b895ed09b64957dc1a86ccf1f8e1af
+ms.openlocfilehash: 1699efed48c4b62a4c7d145bb2f0903cddd5897e
+ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "1718754"
+ms.lasthandoff: 05/18/2018
+ms.locfileid: "1896924"
 ---
 # <a name="input-and-interactions"></a>Методы ввода и взаимодействие
 
@@ -63,8 +63,8 @@ ms.locfileid: "1718754"
                         </div>
                     </div> -->
                     <div class="cardText">
-                        <h3><a href="identify-input-devices.md">Определение устройств ввода</a></h3>
-                        <p>Определение устройств ввода, подключенных к устройству с универсальной платформой Windows (UWP), а также их возможностей и атрибутов.</p>
+                        <h3><a href="gaze-interactions.md">НОВИНКА! Ввод взглядом</a></h3>
+                        <p>Отслеживайте взгляд пользователя в зависимости от расположения и движения глаз и головы.</p>
                     </div>
                 </div>
             </div>
@@ -85,15 +85,17 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Ввод</h3>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">Определение устройств ввода</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">Указатель</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">Перо и Windows Ink</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">Сенсорное устройство</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">Сенсорный ввод</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/mouse-interactions">Мышь</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/keyboard-interactions">Клавиатура</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">Геймпад и пульт дистанционного управления</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/touchpad-interactions">Сенсорная панель</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">Несколько типов ввода</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/input-injection">Вставка ввода</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/custom-text-input">Ввод пользовательского текста</a></p>                        
                     </div>
                 </div>

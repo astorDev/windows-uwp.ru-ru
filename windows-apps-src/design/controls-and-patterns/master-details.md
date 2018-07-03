@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c39243217f28dd4f88c4776c058a1b93c145c50
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 68a8a812c6e5080630254014552a8bb05747749b
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393533"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983525"
 ---
 # <a name="masterdetails-pattern"></a>Шаблон основных и подробных данных
 
@@ -99,7 +99,7 @@ ms.locfileid: "1393533"
 В следующих примерах показана реализация шаблона основных и подробных данных с помощью адаптивных макетов, а также демонстрируется привязывание данных к статическим, веб-ресурсам и ресурсам базы данных. 
 - [Пример основных и подробных данных](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
 - [Пример основных и подробных данных и пример элемента выбора](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Пример основных и подробных данных в Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Pages/MasterDetail)
+- [Пример основных и подробных данных в Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [Пример базы данных заказов клиента](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [Пример средства чтения RSS](https://github.com/Microsoft/Windows-appsample-rssreader)
 

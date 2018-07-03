@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, машинное обучение в windows, winml, windows ML
 ms.localizationpriority: medium
-ms.openlocfilehash: e30786f775a66bcf5c8e6dce0b4aab4f1f239be6
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: eec2ada8e3aadad134381a93bca2652133912b2e
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816589"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843627"
 ---
 # <a name="get-started-with-windows-ml"></a>Начало работы с Windows ML
 
@@ -22,10 +22,8 @@ ms.locfileid: "1816589"
 
 ## <a name="prerequisites"></a>Что вам понадобится
 
-- [Windows SDK — сборка 17110+](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK)
-- [Visual Studio (версия 15.7 — ознакомительная версия 1)](https://www.visualstudio.com/vs/preview/) 
-
-    **Примечание**: внутри установщика Visual Studio вам потребуется снять флажок с необязательного компонента Windows 10 Preview SDK (10.0.17110.0).
+- [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) (сборка 17110 или более поздняя версия)
+- [Visual Studio](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="1-download-the-sample"></a>1. Скачайте пример
 
@@ -69,7 +67,7 @@ ms.locfileid: "1816589"
 
 ## <a name="5-add-the-model"></a>5. Добавьте модель
 
-После загрузки модели MNIST щелкните правой кнопкой мыши в папке Assets в обозревателе решений и выберите **Добавить** > **Существующий элемент**. Наведите указатель выбора файлов на то местоположение, где находится ваша модель ONNX, и нажмите кнопку "Добавить". 
+После загрузки модели MNIST щелкните правой кнопкой мыши в папке Assets в обозревателе решений и выберите **Добавить** > **Существующий элемент**. Наведите указатель выбора файлов на то местоположение, где находится ваша модель ONNX, и нажмите кнопку "Добавить".
 
 В проекте должны появиться два новых файла:
 

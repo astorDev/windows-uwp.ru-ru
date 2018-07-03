@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, игра, обзор, программирование, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 950733ecd361c35bb9b06492aac5521a96f04b25
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.openlocfilehash: 7c4fab80753426bda6f31fcab5007583ba7dfe99
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692945"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862353"
 ---
 # <a name="directx-programming"></a>Программирование в DirectX
 
@@ -65,7 +65,7 @@ ms.locfileid: "1692945"
 </table>
 
 
-Руководства по программированию с использованием DirectX см. в раздела [Графика Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080.aspx) и [Графика Direct3D 12](https://msdn.microsoft.com/library/windows/desktop/dn903821.aspx).
+Руководства по программированию с использованием DirectX см. в разделах [Графика Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080.aspx) и [Графика Direct3D 12](https://msdn.microsoft.com/library/windows/desktop/dn903821.aspx).
  
 
 

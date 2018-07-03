@@ -4,26 +4,32 @@ ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: Сведения о добавлении в приложение значений идентификатора приложения и идентификатора рекламного блока из информационной панели Центра разработки для Windows перед отправкой приложения в Магазин.
 title: Настройка рекламных блоков в приложении
 ms.author: mcleans
-ms.date: 10/04/2017
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, рекламные объявления, реклама, рекламные блоки, тестирование
 ms.localizationpriority: medium
-ms.openlocfilehash: 6473d571ed44f60f8001b8a565d70c58d43407d1
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 978f0599ec783b5dcfade82b97c92d1dec9fb541
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654663"
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1880955"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>Настройка рекламных блоков в приложении
 
-Каждому элементу управления собственной рекламой в вашем приложении универсальной платформы Windows (UWP) соответствует *группа объявлений*, используемая нашими службами для передачи рекламы в элемент управления. Каждая группа объявлений состоит из *идентификатора группы объявлений* и *идентификатора приложения*, которые необходимо назначить элементу [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) или [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) в вашем приложении.
+Каждому элементу управления собственной рекламой в вашем приложении универсальной платформы Windows (UWP) соответствует *группа объявлений*, используемая нашими службами для передачи рекламы в элемент управления. Каждая группа объявлений состоит из *идентификатора группы объявлений* и *идентификатора приложения*, которые необходимо назначить коду в вашем приложении.
 
 Мы предоставляем [тестовые значения группы объявлений](#test-ad-units), которые можно использовать во время тестирования для подтверждения того, что в вашем приложении отображается тестовая реклама. Эти тестовые значения можно использовать только в тестовой версии приложения. При использовании тестовых значений в опубликованном приложении оно не будет получать рекламу.
 
 После завершения тестирования приложения UWP и перед отправкой его в Центр разработки для Windows необходимо [создать реальную группу объявлений](#live-ad-units) на странице [Реклама в приложении](../publish/in-app-ads.md) для приложения на информационной панели Центра разработки для Windows, а затем обновить код приложения для использования этих значений для данной группы объявлений.
+
+Дополнительные сведения о назначении значений "Идентификатор приложения" и "Идентификатор группы объявлений" в коде приложения см. в следующих статьях:
+* [AdControl в XAML и .NET](adcontrol-in-xaml-and--net.md)
+* [AdControl в HTML 5 и JavaScript](adcontrol-in-html-5-and-javascript.md)
+* [Межстраничные объявления](../monetize/interstitial-ads.md)
+* [Собственные объявления](../monetize/native-ads.md)
 
 <span id="test-ad-units" />
 
@@ -58,13 +64,11 @@ ms.locfileid: "1654663"
     > [!NOTE]
     > Значения идентификатора приложения для тестовых рекламных блоков и реальных рекламных блоков UWP имеют разные форматы. Тестовые значения идентификатора приложения представляют собой элементы GUID. При создании реального рекламного блока UWP на информационной панели значение идентификатора приложения для рекламного блока всегда соответствует коду продукта в Store для вашего приложения (пример значения кода продукта в Store: 9NBLGGH4R315).
 
-3.  Назначьте значения **Идентификатора приложения** и **Идентификатора группы объявлений** в коде приложения:
-
-    * Если ваше приложение отображает баннеры, установите эти значения для свойств [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) и [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) вашего объекта [AdControl](https://msdn.microsoft.com/library/mt313154.aspx). Дополнительные сведения см. в разделах [AdControl в XAML и .NET](../monetize/adcontrol-in-xaml-and--net.md) и [AdControl в HTML5 и JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
-
-    * Если в вашем приложении содержится межстраничное объявление, установите эти значения для метода [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) объекта [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx). Дополнительные сведения см. в разделе [Межстраничные объявления](../monetize/interstitial-ads.md).
-
-    * Если ваше приложение отображает собственные объявления, передайте эти значения параметрам *applicationId* и *adUnitId* конструктора [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx). Дополнительные сведения см. в разделе [Собственные объявления](../monetize/native-ads.md).
+3.  Назначьте значения "Идентификатора приложения" и "Идентификатора группы объявлений" в коде приложения. Дополнительные сведения доступны в следующих статьях.
+    * [AdControl в XAML и .NET](adcontrol-in-xaml-and--net.md)
+    * [AdControl в HTML 5 и JavaScript](adcontrol-in-html-5-and-javascript.md)
+    * [Межстраничные объявления](../monetize/interstitial-ads.md)
+    * [Собственные объявления](../monetize/native-ads.md)
 
 <span id="manage" />
 

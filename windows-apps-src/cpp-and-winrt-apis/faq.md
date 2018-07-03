@@ -3,27 +3,27 @@ author: stevewhims
 description: Ответы на часто возникающие вопросы о разработке и использовании API среды выполнения Windows с помощью C++/WinRT.
 title: Ответы на часто задаваемые вопросы о C++/WinRT
 ms.author: stwhi
-ms.date: 04/10/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, вопросы и ответы, чаво
+keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, вопросы и ответы, вопросы и ответы
 ms.localizationpriority: medium
-ms.openlocfilehash: aad5c5ed2123af39ebb6aff0c9098586ce958196
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 617f9ee49130a55cf0378f2a70b72296224dcefc
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832039"
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1881025"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Ответы на часто задаваемые вопросы о [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-> [!NOTE]
-> **Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.**
-
 Ответы на часто возникающие вопросы о разработке и использовании API среды выполнения Windows с помощью C++/WinRT.
 
-## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>Каковы требования для [расширения Visual Studio (VSIX)](https://aka.ms/cppwinrt/vsix) C++/WinRT?
-[VSIX](https://aka.ms/cppwinrt/vsix) требует минимальную целевую версию пакета Windows SDK 10.0.17134.0 (Windows 10, версия 1803). Также потребуется версии Visual Studio 2017 версии 15.6 или более поздней. Проект, использующий VSIX, можно определить по наличию `<CppWinRTEnabled>true</CppWinRTEnabled>`в `<PropertyGroup Label="Globals">` в файле `.vcxproj`. Дополнительные сведения см. в разделе [поддержка Visual Studio для C++/WinRT и VSIX ](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> [!NOTE]
+> Если ваш вопрос связан с сообщением об ошибке, которое вы увидели, см. также раздел [Устранение неполадок C++/WinRT](troubleshooting.md).
+
+## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>Каковы требования для [расширения Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix)?
+[VSIX](https://aka.ms/cppwinrt/vsix) требует минимальную целевую версию пакета Windows SDK 10.0.17134.0 (Windows 10, версия 1803). Вам также потребуется Visual Studio 2017 (по крайней мере версия 15.6; рекомендуется версия не младше 15.7). Проект, использующий VSIX, можно определить по наличию `<CppWinRTEnabled>true</CppWinRTEnabled>`в `<PropertyGroup Label="Globals">` в файле `.vcxproj`. Дополнительные сведения см. в разделе [поддержка Visual Studio для C++/WinRT и VSIX ](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 ## <a name="whats-a-runtime-class"></a>Что такое *класс среды выполнения*?
 Класс среды выполнения — это тип, который можно активировать и использовать через современные интерфейсы COM, обычно через границы исполняемого файла. Тем не менее, класс среды выполнения может также использоваться в единице компиляции, которая его реализует. Класс среды выполнения объявляется в языке описания интерфейса (IDL) и может реализоваться в стандартной версии C++ с использованием C++/WinRT.
@@ -33,11 +33,57 @@ ms.locfileid: "1832039"
 
 *Тип реализации* содержит реализацию класса среды выполнения, поэтому он доступен только в проекте, который реализует класс среды выполнения. При работе в проекте, который реализует классы среды выполнения (проекте компонента среды выполнения Windows или проекте, использующем пользовательский интерфейс XAML), очень важно понимать различия между вашим типом реализации класса среды выполнения и типом проекции, представляющим класс среды выполнения, проецируемый в C++/WinRT. Дополнительные сведения см. в разделе [Создание API-интерфейсов в C++/WinRT](author-apis.md).
 
+## <a name="do-i-need-to-declare-a-constructor-in-my-runtime-classs-idl"></a>Нужно ли объявлять конструктор в IDL моего класса среды выполнения?
+Только в том случае, если класс среды выполнения предназначен для использования извне его единицы компиляции (это компонент среды выполнения Windows, предназначенный для общего использования клиентскими приложениями среды выполнения Windows). Дополнительные сведения о назначении и последствиях объявления конструкторов в IDL см. в разделе [Конструкторы классов среды выполнения](author-apis.md#runtime-class-constructors).
+
+## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>Почему компоновщик отображает сообщение об ошибке "LNK2019: неразрешенный внешний символ"?
+Если неразрешенный символ— это API из заголовков пространства имен Windows для проекции C++/WinRT (в пространстве имен **winrt**), то этот API объявляется в заголовке, который вы включили, но его определения находится в заголовке, который еще не включен. Включите заголовок с именем для пространства имен API и повторно выполните сборку. Дополнительные сведения см. в разделе [Заголовки проекции C++/WinRT](consume-apis.md#cwinrt-projection-headers).
+
+Если неразрешенный символ— свободная функция среды выполнения Windows, такая как [RoInitialize](https://msdn.microsoft.com/library/br224650), необходимо явно включить библиотеку [WindowsApp.lib](/uwp/win32-and-com/win32-apis) в проект. Проекция C++/WinRT зависит от некоторых из этих свободных (не являющихся членами) функций и точек входа. Если вы используете один из шаблонов проектов [расширения Visual Studio для C++/WinRT (VSIX)](https://aka.ms/cppwinrt/vsix) для вашего приложения, `WindowsApp.lib` компонуется автоматически. В противном случае вы можете использовать параметры компоновки проекта, чтобы включить библиотеку, или можете сделать это в исходном коде.
+
+```cppwinrt
+#pragma comment(lib, "windowsapp")
+```
+
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>Следует ли реализовывать [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) и если да, та каким образом?
 Если у вас есть класс среды выполнения, который освобождает ресурсы в своем деструкторе, и этот класс среды предназначен для использования извне его единицы компиляции (это компонент среды выполнения Windows, предназначенный для общего использования клиентскими приложениями среды выполнения Windows), рекомендуется также реализовать **IClosable** для поддержки использования вашего класса среды выполнения языками, в которых отсутствует детерминированная финализация. Убедитесь, что ресурсы освобождаются при вызове деструктора, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.Close) или и того, и другого сразу. **IClosable::Close** можно вызывать произвольное число раз.
 
 ## <a name="do-i-need-to-call-iclosablecloseuwpapiwindowsfoundationiclosablewindowsfoundationiclosableclose-on-runtime-classes-that-i-consume"></a>Нужно ли вызывать [**IClosable::Close**](/uwp/api/windows.foundation.iclosable#Windows_Foundation_IClosable_Close_) для классов среды выполнения, которые я использую?
 **IClosable** существует для поддержки языков, в которых отсутствует детерминированная финализация. Таким образом, не следует вызывать метод **IClosable::Close** из C++/WinRT, за исключением очень редких случаев полувзаимной блокировки. К примеру, если вы используете типы **Windows.UI.Composition**, может возникнуть ситуация, в которой вам понадобится удалить объекты в установленной последовательности, а не оставлять задачу их уничтожения программе-оболочке C++/WinRT.
 
-## <a name="do-i-need-to-declare-a-constructor-in-my-runtime-classs-idl"></a>Нужно ли объявлять конструктор в IDL моего класса среды выполнения?
-Только в том случае, если класс среды выполнения предназначен для использования извне его единицы компиляции (это компонент среды выполнения Windows, предназначенный для общего использования клиентскими приложениями среды выполнения Windows). Дополнительные сведения о назначении и последствиях объявления конструкторов в IDL см. в разделе [Конструкторы классов среды выполнения](author-apis.md#runtime-class-constructors).
+## <a name="can-i-use-llvmclang-to-compile-with-cwinrt"></a>Можно ли использовать LLVM/Clang для компиляции с C++/WinRT?
+Мы не поддерживаем цепочку инструментов LLVM и Clang для C++/WinRT, но мы используем ее для внутренней проверки соответствия стандартам C++/WinRT. Например, если вы хотите имитировать то, что мы делаем внутри, вы можете поэкспериментировать, как описано ниже.
+
+Перейдите на [страницу загрузки LLVM](https://releases.llvm.org/download.html), найдите пункт **Скачать LLVM 6.0.0** > **Стандартные двоичные файлы** и скачайте **Clang для Windows (64-разрядная версия)**. Во время установки добавьте LLVM в системную переменную PATH, чтобы вызывать библиотеку из командной строки. В целях этого эксперимента можно пропустить любые ошибки "Не удалось найти каталог цепочки инструментов MSBuild" и "Не удалось установить интеграцию MSVC", если они отображаются. Существует множество способов вызова LLVM/Clang, в примере ниже показан только один из них.
+
+```
+C:\ExperimentWithLLVMClang>type main.cpp
+// main.cpp
+#pragma comment(lib, "windowsapp")
+#pragma comment(lib, "ole32")
+
+#include "winrt/Windows.Foundation.h"
+#include <stdio.h>
+#include <iostream>
+
+using namespace winrt;
+
+int main()
+{
+    winrt::init_apartment();
+    Windows::Foundation::Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
+    std::wcout << rssFeedUri.Domain().c_str() << std::endl;
+}
+
+C:\ExperimentWithLLVMClang>clang-cl main.cpp /EHsc /I ..\.. -Xclang -std=c++17 -Xclang -Wno-delete-non-virtual-dtor -o app.exe
+
+C:\ExperimentWithLLVMClang>app
+windows.com
+```
+
+Поскольку C++/WinRT использует функции стандарта C++ 17, вам потребуется использовать все флаги компилятора, необходимые для обеспечения такой поддержки. Эти флаги в разных компиляторах отличаются.
+
+Visual Studio — это средство разработки, которое мы поддерживаем и рекомендуем для C++/WinRT. См. раздел [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+
+> [!NOTE]
+> Если вы не нашли ответы на ваши вопросы в этом разделе, используйте тег [`c++-winrt` на портале Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: f867861537ddfb7fe346011cd637156854e2f7d8
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 141d87bf48b5b4835055375320f1e4a79498a42f
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817189"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989678"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>Упаковка приложения с помощью Desktop App Converter (мост для классических приложений)
 
@@ -60,10 +60,9 @@ ms.locfileid: "1817189"
 
 Если вы готовы приступить к созданию пакета, давайте начнем.
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>Выбор способа распространения приложения
-Если вы планируете опубликовать свое приложение в [Microsoft Store](https://www.microsoft.com/store/apps), начните с заполнения [этой формы](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). После этого Microsoft свяжется с вами, чтобы начать процесс публикации. В рамках этого процесса вы зарезервируете имя в Store и получите информацию, необходимую для упаковки приложения.
+## <a name="first-prepare-your-application"></a>Сначала подготовьте свое приложение
 
-Кроме того, не забудьте изучить это руководство, прежде чем начинать создание пакета приложения: [Подготовка к упаковке приложения (мост для классических приложений)](desktop-to-uwp-prepare.md).
+Не забудьте изучить это руководство, прежде чем начинать создание пакета приложения: [Подготовка к упаковке приложения (мост для классических приложений)](desktop-to-uwp-prepare.md).
 
 ## <a name="make-sure-that-your-system-can-run-the-converter"></a>Системные требования для преобразователя
 
@@ -74,7 +73,6 @@ ms.locfileid: "1817189"
 * Аппаратная виртуализация
 * Преобразование адресов второго уровня (SLAT).
 * [Пакет средств разработки программного обеспечения (SDK) для Windows10](https://go.microsoft.com/fwlink/?linkid=821375).
-
 
 ## <a name="start-the-desktop-app-converter"></a>Запуск Desktop App Converter
 

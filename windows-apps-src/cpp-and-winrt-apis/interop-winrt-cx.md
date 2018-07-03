@@ -3,18 +3,18 @@ author: stevewhims
 description: В этом разделе описаны две вспомогательные функции, которые могут использоваться для преобразования между объектами C++/ CX и C++/WinRT.
 title: Взаимодействие между C++/WinRT и C++/CX
 ms.author: stwhi
-ms.date: 04/10/2018
+ms.date: 05/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, взаимодействие, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 616bd9ea8c4b89599e703ef9467206b028fd596b
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 5e1e939f6df9bd35e3717b9cc0ce810e97275494
+ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1831788"
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "1912922"
 ---
 # <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-ccx"></a>Взаимодействие между [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) и C++/CX
 В этом разделе описаны две вспомогательные функции, которые могут использоваться для преобразования между объектами [C++/ CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) и C++/WinRT. Их можно использовать для взаимодействия между кодом, который использует эти две языковых проекции, или для постепенного переноса кода с C++/CX на C++/WinRT.
@@ -27,11 +27,11 @@ template <typename T>
 T from_cx(Platform::Object^ from)
 {
     T to{ nullptr };
- 
+
     winrt::check_hresult(reinterpret_cast<::IUnknown*>(from)
         ->QueryInterface(winrt::guid_of<T>(),
-                         reinterpret_cast<void**>(winrt::put_abi(to))));
- 
+            reinterpret_cast<void**>(winrt::put_abi(to))));
+
     return to;
 }
 ```
@@ -47,7 +47,7 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 ```
 
 ## <a name="code-example"></a>Пример кода
-Ниже приведен пример кода (на основе шаблона проекта C++/CX **Пустое приложение**), который показывает использование двух вспомогательных функций. Он также демонстрирует, как можно обработать конфликты пространств имен между двумя проекциями.
+Ниже приведен пример кода (на основе шаблона проекта C++/CX **Пустое приложение**), который показывает использование двух вспомогательных функций. В нем также показано, как использовать псевдонимы пространств имен для различных островов, чтобы справиться с конфликтами пространств имен между проекцией C++/WinRT и ABI, а также проекцией C++/CX.
 
 ```cppwinrt
 // MainPage.xaml.cpp

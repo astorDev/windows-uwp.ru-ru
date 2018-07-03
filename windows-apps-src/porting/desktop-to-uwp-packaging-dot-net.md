@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: d7ae77c499cb8398aa5557f0d422899fbe8b252d
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 5e3dce1950de907462b62967291d456fb062bd9c
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816259"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989275"
 ---
 # <a name="package-an-app-by-using-visual-studio-desktop-bridge"></a>Упаковка приложения с помощью Visual Studio (мост для классических приложений)
 
@@ -27,11 +27,9 @@ Visual Studio можно использовать для создания пак
 >[!IMPORTANT]
 >Мост для классических приложений впервые появился в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для юбилейного обновления Windows 10 (10.0; сборка 14393) или более поздней версии в Visual Studio.
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>Выбор способа распространения приложения
+## <a name="first-prepare-your-application"></a>Сначала подготовьте свое приложение
 
-Если вы планируете опубликовать свое приложение в [Microsoft Store](https://www.microsoft.com/store/apps), начните с заполнения [этой формы](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). После этого Microsoft свяжется с вами, чтобы начать процесс публикации. В рамках этого процесса вы зарезервируете имя в Store и получите информацию, необходимую для упаковки приложения.
-
-Кроме того, не забудьте изучить это руководство, прежде чем начинать создание пакета приложения: [Подготовка к упаковке приложения (мост для классических приложений)](desktop-to-uwp-prepare.md).
+Не забудьте изучить это руководство, прежде чем начинать создание пакета приложения: [Подготовка к упаковке приложения (мост для классических приложений)](desktop-to-uwp-prepare.md).
 
 <a id="new-packaging-project"/>
 
@@ -72,7 +70,8 @@ Visual Studio можно использовать для создания пак
 
 **Видео**
 
-<iframe src="https://www.youtube.com/embed/fJkbYPyd08w" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/fJkbYPyd08w]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

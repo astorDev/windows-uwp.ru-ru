@@ -3,18 +3,18 @@ author: normesta
 title: Использование базы данных SQLite в приложении UWP
 description: Использование базы данных SQLite в приложении UWP.
 ms.author: normesta
-ms.date: 11/08/2017
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, SQLite, базы данных
 ms.localizationpriority: medium
-ms.openlocfilehash: d10347bb1bd2eb33bfc58a7bc09b6eb5d1ac7a58
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 01cac3c1b8c18e968c35acb01b3d3918d9efe60d
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663624"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018600"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Использование базы данных SQLite в приложении UWP
 SQLite можно использовать для хранения и извлечения данных из облегченной базы данных на устройстве пользователя. Это руководство содержит соответствующие инструкции.
@@ -145,7 +145,7 @@ EntityFramework (EF)— это объектно-реляционный моду�
 
 ![Библиотека классов для доступа к данным](images/ref-class-library.png)
 
-Добавьте следующий оператор ``using`` в файлы **App.xaml.cs** и **MainPage.xaml** в проекте UWP.
+Добавьте следующий оператор ``using`` в файлы **App.xaml.cs** и **MainPage.xaml.cs** в проекте UWP.
 
 ```csharp
 using DataAccessLibrary;
@@ -188,7 +188,7 @@ public static void InitializeDatabase()
         db.Open();
 
         String tableCommand = "CREATE TABLE IF NOT " +
-            "EXISTS MyTable (Primary_Key INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "EXISTS MyTable (Primary_Key INTEGER PRIMARY KEY, " +
             "Text_Entry NVARCHAR(2048) NULL)";
 
         SqliteCommand createTable = new SqliteCommand(tableCommand, db);

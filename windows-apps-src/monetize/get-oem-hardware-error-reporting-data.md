@@ -4,18 +4,18 @@ ms.assetid: AE3E003F-BDEC-438B-A80A-3CE1675B369C
 description: Используйте этот метод в API аналитики для Microsoft Store, чтобы получить сводные данные отчетов об ошибках оборудования в заданном диапазоне дат или с учетом других дополнительных фильтров. Этот метод предназначен только для изготовителей оборудования.
 title: Получение данных системы отчетов об ошибках оборудования OEM
 ms.author: mcleans
-ms.date: 01/18/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, службы Store, API аналитики для Microsoft Store, ошибки
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e1e7d83b8094a79cb87a6611e2e6d8b8f05159e
-ms.sourcegitcommit: b7032f083bcbb71f5a7dd1a200dcc81dba496a81
+ms.openlocfilehash: f8d7a85a37272eb7046ca1e7f64476f94d9556e2
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
-ms.locfileid: "1527342"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989458"
 ---
 # <a name="get-oem-hardware-error-reporting-data"></a>Получение данных системы отчетов об ошибках оборудования OEM
 
@@ -46,7 +46,7 @@ ms.locfileid: "1527342"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 <span/> 
 
@@ -55,10 +55,10 @@ ms.locfileid: "1527342"
 | Параметр        | Тип   |  Описание      |  Обязательный  
 |---------------|--------|---------------|------|
 | startDate | date | Начальная дата диапазона дат, для которого требуется получить данные отчетов об ошибках. По умолчанию используется текущая дата |  Нет  |
-| endDate | date | Конечная дата диапазона дат, для которого требуется получить данные отчетов об ошибках. По умолчанию используется текущая дата |  Нет  |
-| top | целое число | Количество строк данных, возвращаемых в запросе. Максимальное значение и значение по умолчанию (если параметр не указан) — 10 000. Если в запросе содержится больше строк, то тело ответа будет содержать ссылку «Далее», которую можно использовать для запроса следующей страницы данных |  Нет  |
+| endDate | date | Конечная дата диапазона дат, для которого требуется получить данные отчетов об ошибках. По умолчанию используется текущая дата. |  Нет  |
+| top | int | Количество строк данных, возвращаемых в запросе. Максимальное значение и значение по умолчанию (если параметр не указан) — 10 000. Если в запросе содержится больше строк, то тело ответа будет содержать ссылку «Далее», которую можно использовать для запроса следующей страницы данных |  Нет  |
 | skip | int | Количество строк, пропускаемых в запросе. Используйте этот параметр для постраничного перемещения по большим наборам данных. Например, при top=10000 и skip=0 извлекаются первые 10 000 строк данных; при top=10000 и skip=10000 извлекаются следующие 10 000 строк данных и т. д. |  Нет  |
-| filter |строка  | Одно или несколько выражений для фильтрации строк в ответе. Каждое выражение содержит имя поля из тела ответа и значение, которое связано с помощью операторов **eq** или **ne**; выражения можно комбинировать, используя операторы **and** или **or**. В параметре *filter* строковые значения должны быть заключены в одиночные кавычки. Можно указать следующие поля:<p/><ul><li><strong>failureName,</strong></li><li><strong>failureHash,</strong></li><li><strong>symbol,</strong></li><li><strong>osVersion,</strong></li><li><strong>eventType,</strong></li><li><strong>market,</strong></li><li><strong>deviceType,</strong></li><li><strong>moduleName,</strong></li><li><strong>moduleVersion,</strong></li><li><strong>mode,</strong></li><li><strong>architecture,</strong></li><li><strong>model,</strong></li><li><strong>baseboard,</strong></li><li><strong>modelFamily,</strong></li><li><strong>flightRing.</strong></li></ul> | Нет   |
+| filter |строка  | Одно или несколько выражений для фильтрации строк в ответе. Каждое выражение содержит имя поля из тела ответа и значение, которое связано с помощью операторов **eq** или **ne**; выражения можно комбинировать, используя операторы **and** или **or**. В параметре *filter* строковые значения должны быть заключены в одиночные кавычки. Можно указать следующие поля:<p/><ul><li><strong>failureName,</strong></li><li><strong>failureHash,</strong></li><li><strong>symbol,</strong></li><li><strong>osVersion,</strong></li><li><strong>eventType,</strong></li><li><strong>market,</strong></li><li><strong>deviceType,</strong></li><li><strong>moduleName,</strong></li><li><strong>moduleVersion,</strong></li><li><strong>mode,</strong></li><li><strong>architecture</strong></li><li><strong>model,</strong></li><li><strong>baseboard,</strong></li><li><strong>modelFamily,</strong></li><li><strong>flightRing.</strong></li></ul> | Нет   |
 | aggregationLevel | строка | Определяет диапазон времени, для которого требуется получить сводные данные. Можно использовать следующие строки: <strong>day</strong>, <strong>week</strong> или <strong>month</strong>. Если параметр не задан, значение по умолчанию — <strong>day</strong>. Если указать <strong>week</strong> или <strong>month</strong>, значения <em>failureName</em> и <em>failureHash</em> будут ограничены 1000 сегментов. | Нет |
 | orderby | строка | Выражение, которое определяет порядок полученных значений данных. Используется следующий синтаксис: <em>orderby=field [order],field [order],...,</em>. Можно задать следующие поля из тела ответа:<p/><ul><li><strong>date,</strong></li><li><strong>failureName,</strong></li><li><strong>failureHash,</strong></li><li><strong>symbol,</strong></li><li><strong>osVersion,</strong></li><li><strong>eventType,</strong></li><li><strong>market,</strong></li><li><strong>deviceType,</strong></li><li><strong>moduleName,</strong></li><li><strong>moduleVersion,</strong></li><li><strong>mode,</strong></li><li><strong>architecture</strong></li><li><strong>model,</strong></li><li><strong>baseboard,</strong></li><li><strong>modelFamily,</strong></li><li><strong>flightRing.</strong></li></ul><p>Параметр <em>order</em> является необязательным и может принимать значения <strong>asc</strong> или <strong>desc</strong>, которые указывают, соответственно, порядок сортировки по возрастанию или по убыванию для каждого поля. Значение по умолчанию — <strong>asc</strong>.</p><p>Пример: строка <em>orderby</em>: <em>orderby=date,market</em></p> |  Нет  |
 | groupby | строка | Выражение, которое применяет агрегирование данных только к указанным полям. Вы можете указать следующие поля из тела ответа:<p/><ul><li><strong>failureName,</strong></li><li><strong>failureHash,</strong></li><li><strong>symbol,</strong></li><li><strong>osVersion,</strong></li><li><strong>eventType,</strong></li><li><strong>market,</strong></li><li><strong>deviceType,</strong></li><li><strong>moduleName,</strong></li><li><strong>moduleVersion,</strong></li><li><strong>mode,</strong></li><li><strong>architecture</strong></li><li><strong>model,</strong></li><li><strong>baseboard,</strong></li><li><strong>modelFamily,</strong></li><li><strong>flightRing.</strong></li></ul><p>Возвращенные строки данных будут содержать поля, указанные в параметре <em>groupby</em>, а также:</p><ul><li><strong>date,</strong></li><li><strong>eventCount.</strong></li></ul><p>Параметр <em>groupby</em> можно использовать вместе с параметром <em>aggregationLevel</em>. Например: <em>&amp;groupby=failureName,market&amp;aggregationLevel=week</em></p></p> |  Нет  |
@@ -87,7 +87,7 @@ Authorization: Bearer <your access token>
 |------------|---------|--------------|
 | Значение      | array   | Массив объектов, содержащий сводные данные отчетов об ошибках. Дополнительные сведения о данных в каждом объекте см. в следующей таблице.     |
 | @nextLink  | string  | При наличии дополнительных страниц данных эта строка содержит URI-адрес, который можно использовать для запроса следующей страницы данных. Например, это значение возвращается в том случае, если параметр **top** запроса имеет значение 10 000, но для данного запроса имеется больше 10 000 строк с информацией об ошибках |
-| TotalCount | inumber | Общее количество строк в результирующих данных для запроса.     |
+| TotalCount | integer | Общее количество строк в результирующих данных для запроса.     |
 
 <span/>
 
@@ -103,7 +103,7 @@ Authorization: Bearer <your access token>
 | osVersion       | string  | Версия сборки из четырех частей для операционной системы, в которой произошла ошибка.  |
 | eventType       | string  | Тип возникшей ошибки.       |
 | market          | строка  | Код страны рынка устройства по стандарту ISO 3166   |
-| deviceType      | string  | Одна из следующих строк, указывающая тип устройства, на котором произошла ошибка:<p/><ul><li><strong>PC (компьютер),</strong></li><li><strong>Телефон</strong></li><li><strong>Console (консоль),</strong></li><li><strong>Интернет вещей</strong></li><li><strong>Holographic (голография),</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>    |
+| deviceType      | string  | Одна из следующих строк, указывающая тип устройства, на котором произошла ошибка:<p/><ul><li><strong>ПК</strong></li><li><strong>Телефон</strong></li><li><strong>Console (консоль),</strong></li><li><strong>Интернет вещей</strong></li><li><strong>Holographic (голография),</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>    |
 | moduleName     | string  | Уникальное имя модуля, связанного с этой ошибкой.      |
 | moduleVersion  | string  | Версия модуля, связанного с этой ошибкой.   |
 | architecture | string |  Архитектура устройства, в котором произошла ошибка.  |
@@ -112,7 +112,7 @@ Authorization: Bearer <your access token>
 | modelFamily | string | Название семейства модели устройства, в котором произошла ошибка. |
 | flightRing | string | Название тестируемой возможности ОС, в которой произошла ошибка. |
 | mode | string | Это значение всегда равно *kernel*. |
-| eventCount      | inumber | Количество событий, которые вызваны этой ошибкой, на указанном уровне агрегирования.      |
+| eventCount      | integer | Количество событий, которые вызваны этой ошибкой, на указанном уровне агрегирования.      |
 
 <span/> 
 

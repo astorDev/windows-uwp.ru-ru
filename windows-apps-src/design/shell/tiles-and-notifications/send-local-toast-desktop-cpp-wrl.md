@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, win32, настольный компьютер, всплывающие уведомления, отправка уведомления, отправка локального уведомления, мост для классических приложений, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: e3eecf6e6263e0126dbdf8c50f7ddb0431b66116
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 00d6d67bccf9eb91e1d90aa547d9e857cfa83c19
+ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817029"
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "1917733"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Отправка локального всплывающего уведомлений из классических приложений C++ WRL
 
@@ -103,7 +103,7 @@ CoCreatableClass(NotificationActivator);
 1. Объявление для **xmlns:com**
 2. Объявление для **xmlns:desktop**
 3. В атрибуте **IgnorableNamespaces** : **com** и **desktop**
-4. **com:Extension** для COM-сервера с использованием GUID из шага 4. Не забудьте добавить `Arguments="-ToastActivated"`, чтобы знать, что запуск произошел из всплывающего уведомления
+4. **com:Extension** для COM-активатора с использованием GUID из шага 4. Не забудьте добавить `Arguments="-ToastActivated"`, чтобы знать, что запуск произошел из всплывающего уведомления
 5. **desktop:Extension** для **windows.toastNotificationActivation**, чтобы объявить CLSID активатора уведомления (GUID из шага 4).
 
 **Package.appxmanifest**
@@ -220,9 +220,9 @@ if (SUCCEEDED(hr))
     hr = DesktopNotificationManagerCompat::CreateToastNotifier(&notifier);
     if (SUCCEEDED(hr))
     {
-        // Create the notification itself
+        // Create the notification itself (using helper method from compat library)
         ComPtr<IToastNotification> toast;
-        hr = MakeAndInitialize<ToastNotification>(&toast, doc.Get());
+        hr = DesktopNotificationManagerCompat::CreateToastNotification(doc, &toast);
         if (SUCCEEDED(hr))
         {
             // And show it!
@@ -231,6 +231,9 @@ if (SUCCEEDED(hr))
     }
 }
 ```
+
+> [!IMPORTANT]
+> Классические приложения Win32 не могут использовать устаревшие шаблоны всплывающих уведомлений (например, ToastText02). При указании COM CLSID активация традиционных шаблонов завершится ошибкой. Необходимо использовать шаблоны ToastGeneric для Windows 10, как показано выше.
 
 
 ## <a name="step-8-handling-activation"></a>Шаг 8. Обработка активации
@@ -439,10 +442,11 @@ if (IsWindows10OrGreater())
 
 ## <a name="known-issues"></a>Известные проблемы
 
-**ИСПРАВЛЕНО. Приложение не получает фокус после щелчка всплывающего уведомления**: в сборках 15063 и более ранних версиях права переднего плана не передавались приложению при активации COM-сервера. Поэтому приложение просто мигало при попытке переместить его на передний план. В то время решения этой проблемы не существовало. Мы исправили это сборках 16299 и более поздних версиях.
+**ИСПРАВЛЕНО. Приложение не получает фокус после щелчка всплывающего уведомления**: в сборках 15063 и более ранних версиях права переднего плана не передавались приложению при активации COM-сервера. Поэтому приложение просто мигало при попытке переместить его на передний план. В то время решения этой проблемы не существовало. Мы исправили это в сборках 16299 и более поздних версиях.
 
 
 ## <a name="resources"></a>Ресурсы
 
 * [Полный пример кода на GitHub](https://github.com/WindowsNotifications/desktop-toasts)
+* [Всплывающие уведомления из классических приложений](toast-desktop-apps.md)
 * [Документация по содержимому всплывающего уведомления](adaptive-interactive-toasts.md)

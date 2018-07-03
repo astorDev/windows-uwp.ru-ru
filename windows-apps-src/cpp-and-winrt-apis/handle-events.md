@@ -3,27 +3,24 @@ author: stevewhims
 description: В этом разделе показано, как регистрировать и отзывать делегаты обработки событий с помощью C++/WinRT.
 title: Обработка событий с помощью делегатов в C++/WinRT
 ms.author: stwhi
-ms.date: 04/23/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, маркер, событие, делегат
 ms.localizationpriority: medium
-ms.openlocfilehash: 44eb49e0e9797ec363c160ef701e19b58f8227a1
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 1cf3c87411bb6d8eb5886e7205f96c466d707220
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832018"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976492"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Обработка событий с помощью делегатов в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-> [!NOTE]
-> **Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.**
-
 В этом разделе показано, как регистрировать и отзывать делегаты обработки событий с помощью C++/WinRT. Вы можете обрабатывать события с помощью любого стандартного подобного функции объекта C++.
 
 > [!NOTE]
-> Сведения о текущей доступности расширения C++/WinRT для Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также свойств и целевых объектов MSBuild C++/WinRT), см. в разделе [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> Сведения об установке и использовании расширения C++/WinRT для Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также свойств и целевых объектов MSBuild C++/WinRT) см. в разделе [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>Регистрация делегата для обработки события
 Простым примером является обработка события нажатия кнопки. Обычно используется разметка XAML, чтобы зарегистрировать функцию-член для обработки события следующим образом.
@@ -123,7 +120,9 @@ private:
 };
 ```
 
-Кроме того, когда вы регистрируете делегата, вы можете указать **winrt::auto_revoke** (которое является значением типа [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) для запроса отзыва событий. Когда такой отзыв выходит за пределы области, он автоматически отзывает ваш делегат. В этом примере нет необходимости хранить источник событий, а также не требуется деструктор.
+Вместо строгой ссылки, как в примере выше, вы можете хранить слабую ссылку на кнопку (см. раздел [Слабые ссылки в C++/WinRT](weak-references.md)).
+
+Кроме того, когда вы регистрируете делегата, вы можете указать **winrt::auto_revoke** (которое является значением типа [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) для запроса отзыва событий (типа **winrt::event_revoker**). Объект отзыва событий содержит слабую ссылку на источник события (объект, который вызвал событие). Вы можете вручную отозвать событие, вызвав функцию-член **event_revoker::revoke**; но объект отзыва события вызывает эту функцию автоматически при выходе за пределы области действия. Функция **revoke** проверяет, существует ли источник события, и, если это так, отзывает ваш делегат. В этом примере нет необходимости хранить источник событий, а также не требуется деструктор.
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -151,7 +150,7 @@ winrt::event_token Click(winrt::Windows::UI::Xaml::RoutedEventHandler const& han
 void Click(winrt::event_token const& token) const;
 
 // Revoke with event_revoker
-event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click(winrt::auto_revoke_t,
+winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click(winrt::auto_revoke_t,
     winrt::Windows::UI::Xaml::RoutedEventHandler const& handler) const;
 ```
 
@@ -188,12 +187,22 @@ void ProcessFeedAsync()
         // use syndicationFeed;
     });
     
-    // or (but this function must then return IAsyncAction)
+    // or (but this function must then be a coroutine and return IAsyncAction)
     // SyndicationFeed syndicationFeed = co_await async_op_with_progress;
 }
 ```
 
-Как предполагает комментарий выше, вместо использования делегата с завершенными событиями асинхронных действий и операций, вы можете счесть более естественным использование сопрограмм. Подробные сведения и примеры кода см. в разделе [Параллельная обработка и асинхронные операции с помощью C++/WinRT](concurrency.md).
+Как предполагает комментарий о сопрограмме выше, вместо использования делегата с завершенными событиями асинхронных действий и операций, вы можете счесть более естественным использование сопрограмм. Подробные сведения и примеры кода см. в разделе [Параллельная обработка и асинхронные операции с помощью C++/WinRT](concurrency.md).
+
+Но если вы решили выбрать делегаты, можно использовать более простой синтаксис.
+
+```cppwinrt
+async_op_with_progress.Completed(
+    [](auto&& /*sender*/, AsyncStatus const)
+{
+    ....
+});
+```
 
 ## <a name="delegate-types-that-return-a-value"></a>Типы делегатов, которые возвращают значение
 Некоторые типы делегатов должны сами возвращать значение. Примером может служить [**ListViewItemToKeyHandler**](/uwp/api/windows.ui.xaml.controls.listviewitemtokeyhandler), который возвращает строку. Ниже приведен пример создания делегата этого типа (обратите внимание, что лямбда-функция возвращает значение).
@@ -261,5 +270,5 @@ void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const
 
 ## <a name="related-topics"></a>Статьи по теме
 * [Создание событий в C++/WinRT](author-events.md)
+* [Параллельная обработка и асинхронные операции с помощью C++/WinRT](concurrency.md)
 * [Слабые ссылки в C++/WinRT](weak-references.md)
-

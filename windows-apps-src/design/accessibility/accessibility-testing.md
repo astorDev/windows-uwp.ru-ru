@@ -6,18 +6,18 @@ title: Проверка специальных возможностей
 label: Accessibility testing
 template: detail.hbs
 ms.author: mhopkins
-ms.date: 02/08/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b059a3088f3f8f9491cb3cccfdddee0a3eeb707
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 02ba4a94bdca7ae9964cc40e7aba40f72beb5429
+ms.sourcegitcommit: e020e9a4d947368a68e4eeba1eea65e9b3a725af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655223"
+ms.lasthandoff: 05/28/2018
+ms.locfileid: "1924357"
 ---
 # <a name="accessibility-testing"></a>Проверка специальных возможностей  
 
@@ -30,7 +30,9 @@ ms.locfileid: "1655223"
 Пакет средств разработки программного обеспечения для Windows (SDK) включает несколько средств проверки работоспособности специальных возможностей, например [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239), [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) и [**UI Accessibility Checker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985). Эти средства помогут вам проверить работу специальных возможностей приложения. Обязательно проверьте все сценарии приложения и элементы пользовательского интерфейса.
 
 Можно запустить средства проверки специальных возможностей из командной строки Microsoft Visual Studio или из папки средств Windows SDK (вложенная папка bin, в которой на компьютере разработки установлен пакет Windows SDK).
-
+  
+> [!VIDEO https://www.youtube.com/embed/ce0hKQfY9B8]
+  
 <span id="AccScope"/>
 <span id="accscope"/>
 <span id="ACCSCOPE"/>

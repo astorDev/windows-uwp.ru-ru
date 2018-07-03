@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, упаковка, скалярное, значение
 ms.localizationpriority: medium
-ms.openlocfilehash: 61d5c7a35fb7a6ff9952f3fe768f4faa3f6c6347
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 9548776fe1be06c9b622870c4d3331b04a943789
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832009"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935792"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Упаковка-преобразование и распаковка-преобразование скалярных значений в IInspectable с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 
 [**Интерфейс IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) — это корневой интерфейс любого класса среды выполнения Windows (WinRT). Эта идея аналогична тому, что в корне каждого COM-интерфейса и класса находится [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509), а **System.Object** находится в корне каждого класса [Common Type System](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system).
@@ -30,7 +30,7 @@ C++/WinRT предоставляет функцию [**winrt::box_value**](/uwp/
 void App::OnLaunched(LaunchActivatedEventArgs const& e)
 {
     ...
-    rootFrame.Navigate(xaml_typename<BlankApp1::MainPage>(), winrt::box_value(e.Arguments()));
+    rootFrame.Navigate(winrt::xaml_typename<BlankApp1::MainPage>(), winrt::box_value(e.Arguments()));
     ...
 }
 ```
@@ -41,13 +41,13 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
 Button().Content(winrt::box_value(L"Clicked"));
 ```
 
-Сначала конструктор преобразования **hstring** преобразует строковый литерал в **hstring**. Затем вызывается перегрузка **winrt::box_value**, которая принимает значение **hstring**.
+Сначала конструктор преобразования [**hstring**](/uwp/cpp-ref-for-winrt/hstring) преобразует строковый литерал в **hstring**. Затем вызывается перегрузка **winrt::box_value**, которая принимает значение **hstring**.
 
 ## <a name="examples-of-unboxing-an-iinspectable"></a>Примеры распаковки IInspectable
 В ваших собственных функциях, которые ожидают **IInspectable**, можно использовать для распаковки [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) и [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) для распаковки со значением по умолчанию.
 
 ```cppwinrt
-void Unbox(Windows::Foundation::IInspectable const& object)
+void Unbox(winrt::Windows::Foundation::IInspectable const& object)
 {
     hstring hstringValue = unbox_value<hstring>(object); // Throws if object is not a boxed string.
     hstringValue = unbox_value_or<hstring>(object, L"Default"); // Returns L"Default" if object is not a boxed string.
@@ -55,8 +55,19 @@ void Unbox(Windows::Foundation::IInspectable const& object)
 }
 ```
 
+## <a name="determine-the-type-of-a-boxed-value"></a>Определение типа упакованного значения
+Если вы получили упакованное значение и не знаете, какого типа его содержимое (необходимо знать его тип, чтобы распаковать его), можно запросить у упакованного значения его интерфейс [**IPropertyValue**](/uwp/api/windows.foundation.ipropertyvalue), а затем вызвать **Type** для него. Приведем пример кода.
+
+```cppwinrt
+float pi = 3.14f;
+auto piInspectable = winrt::box_value(pi);
+auto piPropertyValue = piInspectable.as<winrt::Windows::Foundation::IPropertyValue>();
+WINRT_ASSERT(piPropertyValue.Type() == winrt::Windows::Foundation::PropertyType::Single);
+```
+
 ## <a name="important-apis"></a>Важные API
 * [Интерфейс IInspectable](https://msdn.microsoft.com/library/windows/desktop/br205821)
 * [Шаблон функции winrt::box_value](/uwp/cpp-ref-for-winrt/box-value)
+* [Структура winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
 * [Шаблон функции winrt::unbox_value](/uwp/cpp-ref-for-winrt/unbox-value)
 * [Шаблон функции winrt::unbox_value_or](/uwp/cpp-ref-for-winrt/unbox-value-or)

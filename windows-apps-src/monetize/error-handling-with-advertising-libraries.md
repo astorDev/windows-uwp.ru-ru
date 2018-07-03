@@ -4,22 +4,22 @@ ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: Узнайте, как обрабатывать ошибки, созданные классом AdControl в библиотеках Microsoft Advertising.
 title: Обработка ошибок рекламы
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, рекламные объявления, реклама, обработка ошибок, javascript, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bdbf33cba031bfbeca2216affe7c560b5521b24
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: fb60f870aa220a123bab185ef98ccca1f6a8881a
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654123"
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1880975"
 ---
 # <a name="handle-ad-errors"></a>Обработка ошибок рекламы
 
-Классы [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) и [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.aspx) имеют событие **ErrorOccurred**, которое возникает при возникновении связанной с рекламой ошибки. Код приложения может обрабатывать это событие и изучать свойства [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errorcode.aspx) и [ErrorMessage](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errormessage.aspx) объекта аргументов события для определения причины ошибки.
+Классы [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) и **NativeAdsManagerV2** имеют событие **ErrorOccurred**, которое возникает при возникновении связанной с рекламой ошибки. Код приложения может обрабатывать это событие и изучать свойства [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errorcode.aspx) и [ErrorMessage](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errormessage.aspx) объекта аргументов события для определения причины ошибки.
 
 <span id="bkmk-dotnet"/>
 
@@ -27,7 +27,7 @@ ms.locfileid: "1654123"
 
 Чтобы обработать связанные с рекламой ошибки в приложении XAML, выполните следующие действия:
 
-1. Назначьте событие **ErrorOccurred** вашего объекта **AdControl**, **InterstitialAd** или **NativeAdsManager** имени делегата обработчика событий.
+1. Назначьте событие **ErrorOccurred** вашего объекта **AdControl**, **InterstitialAd** или **NativeAdsManagerV2** имени делегата обработчика событий.
 
 2. Создайте код для делегата обработки события ошибки так, чтобы он принимал два параметра: **Object** для отправителя и объект [AdErrorEventArgs](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.aspx).
 

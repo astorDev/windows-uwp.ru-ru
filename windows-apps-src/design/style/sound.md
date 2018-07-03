@@ -16,16 +16,16 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: dbe59b422a83ad31727928c406a1f4a6dd550301
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: c6e85bcbf131755af6909fd0ae7ee42bc36544b8
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638398"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842804"
 ---
 # <a name="sound"></a>Звук
 
- 
+![главное изображение](images/header-sound.svg)
 
 Существует множество способов использования звука для улучшения приложения. Звук может дополнять другие элементы интерфейса, чтобы пользователи легко распознавали разные события. Звук может стать эффективным элементом интерфейса для пользователей с нарушениями зрения. Вы можете использовать звук для создания атмосферы, в которую погружается пользователь. Например, можно воспроизводить причудливую мелодию в фоновом режиме в игре-головоломке или использовать зловещие звуковые эффекты для игр в стиле "хоррор" и игр на выживание.
 

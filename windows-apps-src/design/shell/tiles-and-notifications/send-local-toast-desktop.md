@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, win32, настольный компьютер, всплывающие уведомления, отправка уведомления, отправка локального уведомления, мост для классических приложений, C#, c sharp
 ms.localizationpriority: medium
-ms.openlocfilehash: e869ebb4fad7be55ef4f31c1c7e544ce8c290e4a
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 44457221d7b108563e7df030125a909da6609cbe
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816669"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983460"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Отправка локального всплывающего уведомлений из классических приложений C#
 
@@ -101,7 +101,7 @@ public class MyNotificationActivator : NotificationActivator
 1. Объявление для **xmlns:com**
 2. Объявление для **xmlns:desktop**
 3. В атрибуте **IgnorableNamespaces** : **com** и **desktop**
-4. **com:Extension** для COM-сервера с использованием GUID из шага 4. Не забудьте добавить `Arguments="-ToastActivated"`, чтобы знать, что запуск произошел из всплывающего уведомления
+4. **com:Extension** для COM-активатора с использованием GUID из шага 4. Не забудьте добавить `Arguments="-ToastActivated"`, чтобы знать, что запуск произошел из всплывающего уведомления
 5. **desktop:Extension** для **windows.toastNotificationActivation**, чтобы объявить CLSID активатора уведомления (GUID из шага 4).
 
 **Package.appxmanifest**
@@ -238,6 +238,9 @@ var toast = new ToastNotification(doc);
 DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
 ```
 
+> [!IMPORTANT]
+> Классические приложения Win32 не могут использовать устаревшие шаблоны всплывающих уведомлений (например, ToastText02). При указании COM CLSID активация традиционных шаблонов завершится ошибкой. Необходимо использовать шаблоны ToastGeneric для Windows 10, как показано выше.
+
 
 ## <a name="step-8-handling-activation"></a>Шаг 8. Обработка активации
 
@@ -260,7 +263,7 @@ public class MyNotificationActivator : NotificationActivator
         Application.Current.Dispatcher.Invoke(delegate
         {
             // Tapping on the top-level header launches with empty args
-            if (arguments.Length = 0)
+            if (arguments.Length == 0)
             {
                 // Perform a normal launch
                 OpenWindowIfNeeded();
@@ -406,4 +409,6 @@ DesktopNotificationManagerCompat.History.Clear();
 ## <a name="resources"></a>Ресурсы
 
 * [Полный пример кода на GitHub](https://github.com/WindowsNotifications/desktop-toasts)
+* [Всплывающие уведомления из классических приложений](toast-desktop-apps.md)
 * [Документация по содержимому всплывающего уведомления](adaptive-interactive-toasts.md)
+

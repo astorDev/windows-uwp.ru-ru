@@ -10,28 +10,28 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd24bb951619e086a69a5bb0dd7752bfa3fe41dc
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: e08208b7086023654b0b2404cccc8664e123d9ec
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707119"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983619"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Учебник: "Поддержка Surface Dial (и других устройств с колесиком) в приложении UWP"
 
 ![Изображение Surface Dial с Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)  
 *Surface Dial с Surface Studio и ручкой Surface* (доступны для приобретения в [магазине Майкрософт](https://aka.ms/purchasesurfacedial)).
 
-В данной статье приводится пошаговое руководство по настройке способов взаимодействия с пользователем, поддерживаемых устройствами с колесиком, такими как Surface Dial. Мы используем фрагменты из примера приложения, который можно скачать с GitHub (см. [Пример кода](#sample-code)), чтобы продемонстрировать различные функции и связанные API-интерфейсы [**RadialController**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller), описанные в каждом шаге.
+В данной статье приводится пошаговое руководство по настройке способов взаимодействия с пользователем, поддерживаемых устройствами с колесиком, такими как Surface Dial. Мы используем фрагменты из примера приложения, который можно скачать с GitHub (см. [Пример кода](#sample-code)), чтобы продемонстрировать различные функции и связанные API-интерфейсы [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller), описанные в каждом шаге.
 
 Мы обращаем внимание на следующее:
-* указание встроенных средств, которые отображаются в меню [**RadialController**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller);
+* указание встроенных средств, которые отображаются в меню [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller);
 * добавление в меню специального инструмента;
 * управление тактильной обратной связью;
 * настройка взаимодействий с помощью нажатия;
 * настройка взаимодействий с помощью поворота.
 
-Дополнительные сведения об использовании этих и других функций см. в разделе [Взаимодействие с Surface Dial в приложениях UWP](https://docs.microsoft.com/en-us/windows/uwp/input/windows-wheel-interactions).
+Дополнительные сведения об использовании этих и других функций см. в разделе [Взаимодействие с Surface Dial в приложениях UWP](windows-wheel-interactions.md).
 
 ## <a name="introduction"></a>Введение
 
@@ -46,11 +46,11 @@ Dial поддерживает три основных жеста.
 
 * Компьютер (или виртуальная машина) под управлением Windows10 Creators Update или более поздней версии
 * [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Устройство с колесиком (в настоящее время только [Surface Dial](https://aka.ms/purchasesurfacedial))
 * Если вы еще не знакомы с разработкой приложений универсальной платформы Windows (UWP) с помощью Visual Studio, изучите следующие разделы, прежде чем использовать этот учебник.  
-    * [Подготовка](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)
-    * [Создание приложения Hello, world (XAML)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [Подготовка](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
+    * [Создание приложения Hello, world (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 
 ## <a name="set-up-your-devices"></a>Настройка устройств
 
@@ -67,7 +67,7 @@ Dial поддерживает три основных жеста.
 > [!NOTE]
 > Устройства с колесиком можно настроить с помощью параметров **колесика**.
 > 1. В меню **Пуск** выберите **Параметры**.
-> Выберите **Устройства** > **Колесико**.    
+> 2. Выберите **Устройства** > **Колесико**.    
 > ![Экран параметров колесика](images/radialcontroller/wheel-settings.png)
 
 Теперь вы готовы запускать этот учебник. 
@@ -177,7 +177,7 @@ Dial поддерживает три основных жеста.
         using Windows.UI.Input;
         ```
 
-    - Эти глобальные объекты ([RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller), [RadialControllerConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration), [RadialControllerMenuItem](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem)) используются в нашем приложении.
+    - Эти глобальные объекты ([RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller), [RadialControllerConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration), [RadialControllerMenuItem](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem)) используются в нашем приложении.
     
         ```csharp
         private RadialController radialController;
@@ -192,7 +192,7 @@ Dial поддерживает три основных жеста.
         { InitializeSample(sender, args); };
         ``` 
 
-    - Затем мы инициализируем объект [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) и задаем обработчики для событий [RotationChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.RotationChanged) и [ButtonClicked](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ButtonClicked).
+    - Затем мы инициализируем объект [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) и задаем обработчики для событий [RotationChanged](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationChanged) и [ButtonClicked](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ButtonClicked).
 
         ```csharp
         // Set up the app UI and RadialController.
@@ -210,7 +210,7 @@ Dial поддерживает три основных жеста.
         }
         ```
 
-    - Здесь мы инициализируем пользовательский пункт меню RadialController. Мы используем [CreateForCurrentView](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) для получения ссылки на объект [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller), устанавливаем значение «1» для чувствительности вращения, используя свойство [RotationResolutionInDegrees](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees), после чего создаем [RadialControllerMenuItem](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem) с помощью [CreateFromFontGlyph](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph), добавляем пункт меню в коллекцию пунктов меню **RadialController** и, наконец, используем [SetDefaultMenuItems](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems) для удаления пунктов меню по умолчанию и оставляем только специальный инструмент. 
+    - Здесь мы инициализируем пользовательский пункт меню RadialController. Мы используем [CreateForCurrentView](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) для получения ссылки на объект [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller), устанавливаем значение «1» для чувствительности вращения, используя свойство [RotationResolutionInDegrees](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees), после чего создаем [RadialControllerMenuItem](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem) с помощью [CreateFromFontGlyph](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph), добавляем пункт меню в коллекцию пунктов меню **RadialController** и, наконец, используем [SetDefaultMenuItems](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems) для удаления пунктов меню по умолчанию и оставляем только специальный инструмент. 
 
         ```csharp
         // Configure RadialController menu and custom tool.
@@ -444,14 +444,14 @@ Surface Dial и другие устройства с колесиком могу
         using Windows.Devices.Haptics;
         ```
 
-    - Здесь мы определяем обработчика для события [ControlAcquired](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ControlAcquired), которое инициируется при выборе пункта настраиваемого меню **RadialController**.
+    - Здесь мы определяем обработчика для события [ControlAcquired](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ControlAcquired), которое инициируется при выборе пункта настраиваемого меню **RadialController**.
 
         ```csharp
         radialController.ControlAcquired += (rc_sender, args) =>
         { RadialController_ControlAcquired(rc_sender, args); };
         ``` 
 
-    - Затем мы определяем обработчика [ControlAcquired](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ControlAcquired), где отключаем тактильную обратную связь по умолчанию и инициализируем тактильную обратную пользовательского интерфейса.
+    - Затем мы определяем обработчика [ControlAcquired](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ControlAcquired), где отключаем тактильную обратную связь по умолчанию и инициализируем тактильную обратную пользовательского интерфейса.
 
         ```csharp
         private void RadialController_ControlAcquired(
@@ -520,7 +520,7 @@ Surface Dial и другие устройства с колесиком могу
         }
         ```
 
-    - В обработчиках событий [RotationChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.RotationChanged) и [ButtonClicked](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) мы подключаем соответствующие элементы управления ползунка и переключателя к нашей настраиваемой тактильной обратной связи. 
+    - В обработчиках событий [RotationChanged](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationChanged) и [ButtonClicked](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) мы подключаем соответствующие элементы управления ползунка и переключателя к нашей настраиваемой тактильной обратной связи. 
 
         ```csharp
         // Connect wheel device rotation to slider control.

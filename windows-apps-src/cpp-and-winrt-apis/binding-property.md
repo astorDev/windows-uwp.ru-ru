@@ -3,23 +3,20 @@ author: stevewhims
 description: Свойство, которое может быть эффективно привязано к элементу управления XAML, называется *отслеживаемым*. В этом разделе показано, как реализовать и использовать отслеживаемое свойство и привязать к нему элемент управления XAML.
 title: Элементы управления XAML; привязка к свойству C++/WinRT
 ms.author: stwhi
-ms.date: 03/07/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, привязка, свойство
 ms.localizationpriority: medium
-ms.openlocfilehash: b54f0dd60a90cd13e5b3586a956b09e30f6d9755
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 25ea4c4caf5135b13b88eeea6f43bb36bd691c11
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832288"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1863220"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-property"></a>Элементы управления XAML; привязка к свойству [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-> [!NOTE]
-> **Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.**
-
 Свойство, которое может быть эффективно привязано к элементу управления XAML, называется *отслеживаемым*. Эта идея основана на шаблоне проектирования программного обеспечения, известном как *шаблон наблюдателя *. В этом разделе показано, как реализовывать отслеживаемые свойства в C++/WinRT и привязывать к ним элементы управления XAML.
 
 > [!IMPORTANT]
@@ -28,10 +25,10 @@ ms.locfileid: "1832288"
 ## <a name="what-does-observable-mean-for-a-property"></a>Что означает понятие *отслеживаемое* для свойства?
 Предположим, что класс среды выполнения с именем **BookSku** имеет свойство с именем **Title**. Если **BookSku** вызывает событие [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) событие всякий раз, когда меняется значение **Title**, то **Title** является отслеживаемым свойством. Поведение **BookSku** (вызов или не вызов события) определяет, является ли какое-либо из его свойств, отслеживаемым, и если да, то какое.
 
-Текстовый элементы или элемент управления XAML может привязываться к этим событиям и обрабатывать их путем получения обновленных значений и последующего самообновления для показа новых значений.
+Текстовый элемент или элемент управления XAML может привязываться к этим событиям и обрабатывать их путем получения обновленных значений и последующего самообновления для показа новых значений.
 
 > [!NOTE]
-> Сведения о текущей доступности расширения C++/WinRT для Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также свойств и целевых объектов MSBuild C++/WinRT), см. в разделе [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> Сведения об установке и использовании расширения C++/WinRT для Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также свойств и целевых объектов MSBuild C++/WinRT) см. в разделе [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 ## <a name="create-a-blank-app-bookstore"></a>Создайте пустое приложение (Bookstore)
 Начните с создания нового проекта в Microsoft Visual Studio. Создайте проект **Пустое приложение Visual C++ (C++/WinRT)** и назовите его *Bookstore*.
@@ -211,7 +208,7 @@ namespace BookstoreCPPWinRT
 
 Выполните сборку проекта для повторного создания файлов исходного кода, в которых реализован класс **MainPage** (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` и `MainPage.cpp`). Скопируйте заглушки доступа для свойства ViewModel из созданных файлов в `\Bookstore\Bookstore\MainPage.h` и `MainPage.cpp`.
 
-Добавьте частный член для хранения модели представления в `\Bookstore\Bookstore\MainPage.h`. Обратите внимание, что функция доступа свойства (и член m_mainViewModel) реализуется относительно **Bookstore::BookstoreViewModel**, который является проецируемым типом. Тип реализации находится в том же проекте (единице компиляции), поэтому мы создаем m_mainViewModel через перегрузку конструктора, которая принимает `nullptr`.
+Добавьте частный член для хранения модели представления в `\Bookstore\Bookstore\MainPage.h`. Обратите внимание, что функция доступа свойства (и член m_mainViewModel) реализуется относительно **Bookstore::BookstoreViewModel**, который является проецируемым типом. Тип реализации находится в том же проекте (единице компиляции), поэтому мы создаем m_mainViewModel через перегрузку конструктора, которая принимает `nullptr_t`.
 
 ```cppwinrt
 // MainPage.h

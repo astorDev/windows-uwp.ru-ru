@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: 61711098d07d830d4f6a1a6cdabed1a31217d2ea
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: a443dd7505ce399d82cbd33c5691ec9b35a18b93
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396713"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983701"
 ---
 # <a name="surface-dial-interactions"></a>Взаимодействие с Surface Dial
 
@@ -29,11 +29,11 @@ ms.locfileid: "1396713"
 Такие устройства Windows Wheel, как Surface Dial, — это новые категории устройств ввода, предоставляющие удобные и уникальные возможности взаимодействия с Windows и приложениями для Windows. 
 
 > [!IMPORTANT]
-> В этом разделе мы рассмотрим использование Surface Dial, но эта информация применима ко всем устройствам Windows Wheel.
+> В этом разделе мы рассмотрим использование Surface Dial, но эта информация применима ко всем устройствам Windows Wheel. 
 
 | Видео |   |
 | --- | --- |
-| <iframe width="300" height="200" src="https://www.youtube.com/embed/WMklcdzcNcU" frameborder="0" allowfullscreen></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
+| <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> |
 | *Партнеры приложений Surface Dial* | *Surface Dial для разработчиков* |
 
 Surface Dial служит вспомогательным многомодальным устройством ввода, дополняющим основное устройство, с помощью *вращательных* действий (или жестов). В большинстве случаев пользователь вращает устройство недоминантной рукой, выполняя задачу доминантной рукой (например, используя перо). Оно не предназначено для точного ввода, как сенсорный экран, перо или мышь. 

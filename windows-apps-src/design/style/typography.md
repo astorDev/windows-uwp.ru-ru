@@ -1,24 +1,24 @@
 ---
 author: mijacobs
 description: Узнайте, как использовать шрифтовое оформление текста в приложении, чтобы помочь пользователям понимать содержимое.
-title: Шрифтовое текста в приложениях UWP
+title: Шрифтовое оформление текста в приложениях UWP
 ms.author: mijacobs
 ms.date: 04/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd5e6f3dbddca2f6a944ee18e32463afe029f89
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 505167775b61908be7f47068dbf3221c293f6112
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816779"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843374"
 ---
 # <a name="typography"></a>Шрифтовое оформление
 
-![Изображение заголовка оформления текста](images/type/header-typography.svg)
+![главное изображение](images/header-typography.svg)
 
 Основная цель шрифтового оформления как визуального представления языка — передача информации. Стиль шрифтов никогда не должен затмевать эту цель. В этой статье мы обсудим, как использовать шрифтовое оформление в вашем приложение UWP, чтобы помочь пользователям легко понимать содержимое.
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, игры, разработка игр
 ms.localizationpriority: medium
-ms.openlocfilehash: de899d95e25489fa815f099d696752389cc3f94e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: b351b5072c6bba228d81a65b51656a81bd564daf
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817455"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862263"
 ---
 # <a name="windows-10-game-development-guide"></a>Руководство по разработке игр для Windows 10
 
@@ -93,12 +93,12 @@ ms.locfileid: "1817455"
         <td><a href="../xbox-live/index.md">Руководство по Xbox Live для разработчиков</a></td>
     </tr>
     <tr>
-        <td>Документация для разработчиков по Xbox One (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/documentation/Pages/home.aspx">Документация по Xbox One XDK</a></td>
+        <td>Документация для разработчиков по Xbox One (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-home">Разработка для Xbox One</a></td>
     </tr>
     <tr>
-        <td>Технические документы для разработчиков по Xbox One (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx">Технические документы</a></td>
+        <td>Технические документы для разработчиков по Xbox One (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-whitepapers">Технические документы</a></td>
     </tr>
     <tr>
         <td>Интерактивная документация по Mixer</td>
@@ -227,8 +227,8 @@ ms.locfileid: "1817455"
         <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
     </tr>
     <tr>
-        <td>Примеры игр для Xbox One (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx">Примеры</a></td>
+        <td>Примеры игр для Xbox One (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-samples">Примеры</a></td>
     </tr>
     <tr>
         <td>Примеры игр для Windows (коллекция исходных кодов MSDN)</td>

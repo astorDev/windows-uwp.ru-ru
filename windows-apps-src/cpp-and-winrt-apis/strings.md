@@ -3,26 +3,25 @@ author: stevewhims
 description: С помощью C++/WinRT можно вызывать API среды выполнения Windows, используя стандартные типы широких строк C++ или тип winrt::hstring.
 title: Обработка строк в C++/WinRT
 ms.author: stwhi
-ms.date: 04/10/2018
+ms.date: 05/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, строка
 ms.localizationpriority: medium
-ms.openlocfilehash: 433b3423c27910f1c680bba4ae2ede5a1e13f8ea
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 6e41abffdfa79847353af4de47bcbfa050c00627
+ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832058"
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "1912942"
 ---
 # <a name="string-handling-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Обработка строк в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 С помощью C++/WinRT можно вызывать API среды выполнения Windows, используя типы широких строк стандартной библиотеки C++, такие как **std::wstring** (но не типы узких строк, такие как **std::string**). C++/WinRT имеет настраиваемый тип строки под названием [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) (определяется в базовой библиотеке C++/WinRT — `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`). Этот тип строки, который конструкторы, функции и свойства среды выполнения Windows фактически принимают и возвращают. Однако во многих случаях &mdash; благодаря конструкторам преобразования **hstring** и операторам преобразования &mdash; можно выбирать, следует ли учитывать **hstring** в клиентском коде. Если вы *разрабатываете* API-интерфейсы, вероятность того, что вам нужно знать о **hstring**, возрастает.
 
-В C++ существует множество типов строки. Различные варианты существуют во множестве библиотек в дополнение к **std::basic_string** из стандартной библиотеки C++. С++17 имеет служебные программы для преобразования строк и **std::basic_string_view**, чтобы ликвидировать пробелы между всеми типами строк. **hstring** дает возможность преобразования с **std::wstring_view** для обеспечения взаимодействия, для которого был создан **std::basic_string_view**.
+В C++ существует множество типов строки. Различные варианты существуют во множестве библиотек в дополнение к **std::basic_string** из стандартной библиотеки C++. С++17 имеет служебные программы для преобразования строк и **std::basic_string_view**, чтобы ликвидировать пробелы между всеми типами строк.  [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) дает возможность преобразования с **std::wstring_view** для обеспечения взаимодействия, для которого был создан **std::basic_string_view**.
 
 ## <a name="using-stdwstring-and-optionally-winrthstringuwpcpp-ref-for-winrthstring-with-uriuwpapiwindowsfoundationuri"></a>Использование **std::wstring** (и, при необходимости, [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)) с [**Uri**](/uwp/api/windows.foundation.uri)
-
 [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) формируется из [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring).
 
 ```cppwinrt
@@ -64,7 +63,7 @@ public:
     winrt::hstring Domain();
 ```
 
-Но опять же, знать об этом не обязательно благодаря [оператору преобразования **hstring** в **std::wstring_view**](/uwp/api/windows.foundation.uri#hstringoperator-stdwstringview).
+Но опять же, знать об этом не обязательно благодаря [оператору преобразования **hstring** в **std::wstring_view**](/uwp/api/hstring#hstringoperator-stdwstringview).
 
 ```cppwinrt
 // Access a property of type hstring, via a conversion operator to a standard type.
@@ -95,7 +94,7 @@ hstring tostringHstring{ contosoUri.ToString() }; // L"http://www.contoso.com/"
 tostringHstring = awUri.ToString(); // L"http://www.adventure-works.com/"
 ```
 
-Можно использовать [функцию hstring::c_str](/uwp/api/windows.foundation.uri#hstringcstr-function) для получения стандартной широкой строки из **hstring** (так же, как и из **std::wstring**).
+Можно использовать функцию [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) для получения стандартной широкой строки из **hstring** (так же, как и из **std::wstring**).
 
 ```cppwinrt
 #include <iostream>
@@ -135,18 +134,20 @@ void Print(winrt::hstring const& hstring)
 ```
 
 ## <a name="winrthstring-functions-and-operators"></a>Функции и операторы **winrt::hstring**
-Для **hstring** реализован ряд конструкторов, операторов, функций и итераторов.
+Для [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) реализован ряд конструкторов, операторов, функций и итераторов.
 
-**hstring** является диапазоном, поэтому вы можете использовать его с основанным на диапазоне `for` или с `std::for_each`. Он также предоставляет операторы сравнения для естественного и эффективного сравнения с его аналогами в стандартной библиотеке C++. Кроме того, он включает все, что необходимо для использования **hstring** в качестве ключа для ассоциативных контейнеров. Мы понимаем, что многие библиотеки C++ используют **std::basic_string**и работают только с текстом UTF-8. Для удобства мы предоставляем вспомогательные методы для двустороннего преобразования.
+**hstring** является диапазоном, поэтому вы можете использовать его с основанным на диапазоне `for` или с `std::for_each`. Он также предоставляет операторы сравнения для естественного и эффективного сравнения с его аналогами в стандартной библиотеке C++. Кроме того, он включает все, что необходимо для использования **hstring** в качестве ключа для ассоциативных контейнеров.
+
+Мы понимаем, что многие библиотеки C++ используют **std::string** и работают только с текстом UTF-8. Для удобства мы предоставляем вспомогательные методы, такие как [**winrt::to_string**](/uwp/cpp-ref-for-winrt/to-string) и [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring), для двустороннего преобразования.
 
 ```cppwinrt
-hstring w{ L"hello world" };
- 
-std::string c = to_string(w);
-assert(c == "hello world");
- 
-w = to_hstring(c);
-assert(w == L"hello world");
+winrt::hstring w{ L"Hello, World!" };
+
+std::string c = winrt::to_string(w);
+WINRT_ASSERT(c == "Hello, World!");
+
+w = winrt::to_hstring(c);
+WINRT_ASSERT(w == L"Hello, World!");
 ```
 
 Дополнительные примеры и сведения о функциях и операторах **hstring** см. в справочнике по API в разделе [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring).
@@ -174,4 +175,6 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 ```
 
 ## <a name="important-apis"></a>Важные API
-* [Структура winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::to_string](/uwp/cpp-ref-for-winrt/to-string)
+* [winrt::to_hstring](/uwp/cpp-ref-for-winrt/to-hstring)

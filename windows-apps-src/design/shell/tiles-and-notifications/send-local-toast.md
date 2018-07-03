@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, отправка всплывающих уведомлений, уведомления, отправка уведомлений, всплывающие уведомления, руководство, краткое руководство, начало работы, пример кода, пошаговое руководство
 ms.localizationpriority: medium
-ms.openlocfilehash: e59c90bae19116f725b58fc6ec9fdbb41e5dccb3
-ms.sourcegitcommit: 0ee9c6848cb9d624f15cdab1d0c5991ca7245e70
+ms.openlocfilehash: 4f76bc94c80a5191cf7bad86b43230f0d03e81b1
+ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2018
-ms.locfileid: "1641694"
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "1917713"
 ---
 # <a name="send-a-local-toast-notification"></a>Отправка локального всплывающего уведомления
 
@@ -25,7 +25,7 @@ ms.locfileid: "1641694"
 Всплывающее уведомление — это сообщение, которое приложение может создавать и доставлять пользователю, когда он или она в настоящее время не находится в вашем приложении. В этом руководстве описаны действия для создания, доставки и отображения всплывающего уведомления с новыми адаптивными шаблонами и интерактивными действиями Windows 10. Описанные действия демонстрируются на примере локальных уведомлений, которые реализуются проще всего.
 
 > [!IMPORTANT]
-> Для классических приложений (моста для классических приложений и классических приложений Win32) применяются другие действия для отправки уведомлений и обработки активации. См. документацию по [C# для настольного компьютера](send-local-toast-desktop.md) и [C++ WRL для настольного компьютера](send-local-toast-desktop-cpp-wrl.md), чтобы узнать, как реализовать всплывающие уведомления.
+> Для классических приложений (моста для классических приложений и классических приложений Win32) применяются другие действия для отправки уведомлений и обработки активации. См. документацию по [Классическим приложениям](toast-desktop-apps.md), чтобы узнать, как реализовать всплывающие уведомления.
 
 Рассмотрим следующие действия:
 
@@ -382,7 +382,7 @@ BackgroundAccessStatus status = await BackgroundExecutionManager.RequestAccessAs
 // Create the background task
 BackgroundTaskBuilder builder = new BackgroundTaskBuilder()
 {
-    Name = "MyToastNotificationActionTrigger",
+    Name = taskName
 };
 
 // Assign the toast action trigger

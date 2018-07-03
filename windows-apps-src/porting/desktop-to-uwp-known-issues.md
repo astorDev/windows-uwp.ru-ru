@@ -4,19 +4,19 @@ Description: This article contains known issues with the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
 title: Известные проблемы (мост для классических приложений)
 ms.author: normesta
-ms.date: 07/18/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 78e5ffddfa1c5005bb640baeafed7023ebdd74a3
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 76ff4fb4b7933c54e5137507e7996eefa7b46d5a
+ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662854"
+ms.lasthandoff: 05/21/2018
+ms.locfileid: "1905385"
 ---
 # <a name="known-issues-desktop-bridge"></a>Известные проблемы (мост для классических приложений)
 
@@ -95,7 +95,7 @@ ms.locfileid: "1662854"
 
 Если обновление не устраняет проблему или вы не знаете, как восстановить компьютер, обратитесь в [службу поддержки Microsoft](https://support.microsoft.com/contactus/).
 
-Если вы разработчик, вы можете запретить установку своих преобразованных с помощью Desktop Bridge приложений в версиях Windows, в которых нет этого обновления. Обратите внимание, что при этом ваше приложение не будет доступно пользователям, которые еще не установили обновление. Чтобы сделать приложением доступным только пользователям, которые установили обновления, внесите в файл AppxManifest.xml следующие исправления:
+Если вы разработчик, вы можете запретить установку своих упакованных приложений в версиях Windows, в которых нет этого обновления. Обратите внимание, что при этом ваше приложение не будет доступно пользователям, которые еще не установили обновление. Чтобы сделать приложением доступным только пользователям, которые установили обновления, внесите в файл AppxManifest.xml следующие исправления:
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 

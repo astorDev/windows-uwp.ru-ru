@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, слабая, ссылка
 ms.localizationpriority: medium
-ms.openlocfilehash: 63ffad19c0ae8a52737ae13a54e5657df875d0b5
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 69294115af93ec464abfe908df948c8ff5504efc
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832608"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842458"
 ---
 # <a name="weak-references-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Слабые ссылки в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Проектирование API-интерфейсов C++/WinRT чаще всего можно произвести таким образом, чтобы избежать необходимости циклических и слабых ссылок. Тем не менее, когда речь идет о собственной реализации инфраструктуры пользовательского интерфейса на основе XAML &mdash; ввиду исторических особенностей проектирования инфраструктуры &mdash; механизма слабых ссылок в C++/WinRT необходим для обработки циклических ссылок. За пределами XAML вам, скорее всего, не потребуется использовать слабые ссылки (хотя в теории в них нет ничего, относящегося непосредственно к XAML).

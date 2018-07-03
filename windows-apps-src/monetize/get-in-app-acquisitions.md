@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, покупки надстройки
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f6da2ae68ab2b40f11d1a9d092eb8ff447f2844
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: b881d3bdaa9adec28b78a72e127dcebd49ee1df6
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664014"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976429"
 ---
 # <a name="get-add-on-acquisitions"></a>Получение сведений о покупках надстройки
 
@@ -42,7 +42,7 @@ ms.locfileid: "1664014"
 
 | Заголовок        | Тип   | Описание          |
 |---------------|--------|--------------|
-| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
@@ -55,7 +55,7 @@ ms.locfileid: "1664014"
 | inAppProductId | строка | [Код продукта в Store](in-app-purchases-and-trials.md#store-ids) для надстройки, по которой требуется получить данные о покупках.  | Да  |
 | startDate | date | Начальная дата диапазона дат, для которого требуется получить данные о покупках надстройки. По умолчанию используется текущая дата. |  Нет  |
 | endDate | date | Конечная дата диапазона дат, для которого требуется получить данные о покупках надстройки. По умолчанию используется текущая дата |  Нет  |
-| top | целое число | Количество строк данных, возвращаемых в запросе. Максимальное значение и значение по умолчанию (если параметр не указан) — 10 000. Если в запросе содержится больше строк, то тело ответа будет содержать ссылку «Далее», которую можно использовать для запроса следующей страницы данных |  Нет  |
+| top | int | Количество строк данных, возвращаемых в запросе. Максимальное значение и значение по умолчанию (если параметр не указан) — 10 000. Если в запросе содержится больше строк, то тело ответа будет содержать ссылку «Далее», которую можно использовать для запроса следующей страницы данных |  Нет  |
 | skip | int | Количество строк, пропускаемых в запросе. Используйте этот параметр для постраничного перемещения по большим наборам данных. Например, при top=10000 и skip=0 извлекаются первые 10 000 строк данных; при top=10000 и skip=10000 извлекаются следующие 10 000 строк данных и т. д. |  Нет  |
 | filter |строка  | Один или несколько операторов для фильтрации строк в ответе. Дополнительные сведения см. далее в разделе [фильтрация полей](#filter-fields) | Нет   |
 | aggregationLevel | строка | Определяет диапазон времени, для которого требуется получить сводные данные. Можно использовать следующие строки: <strong>day</strong>, <strong>week</strong> или <strong>month</strong>. Если параметр не задан, значение по умолчанию — <strong>day</strong> | Нет |
@@ -77,9 +77,9 @@ ms.locfileid: "1664014"
 | acquisitionType | Одна из следующих строк:<ul><li><strong>free,</strong></li><li><strong>trial,</strong></li><li><strong>paid,</strong></li><li><strong>promotional code,</strong></li><li><strong>iap</strong></li></ul> |
 | ageGroup | Одна из следующих строк:<ul><li><strong>less than 13,</strong></li><li><strong>13-17,</strong></li><li><strong>18-24,</strong></li><li><strong>25-34,</strong></li><li><strong>35-44,</strong></li><li><strong>44-55,</strong></li><li><strong>greater than 55,</strong></li><li><strong>Unknown</strong></li></ul> |
 | storeClient | Одна из следующих строк:<ul><li><strong>Windows Phone Store (client);</strong></li><li><strong>Microsoft Store (client)</strong></li><li><strong>Microsoft Store (web)</strong></li><li><strong>Volume purchase by organizations;</strong></li><li><strong>Other</strong></li></ul> |
-| gender | Одна из следующих строк:<ul><li><strong>m,</strong></li><li><strong>f,</strong></li><li><strong>Unknown</strong></li></ul> |
+| gender | Одна из следующих строк:<ul><li><strong>m,</strong></li><li><strong>f,</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul> |
 | market | Строка, содержащая код страны по стандарту ISO 3166 для рынка, на котором произошла покупка |
-| osVersion | Одна из следующих строк:<ul><li><strong>Windows Phone 7.5;</strong></li><li><strong>Windows Phone 8;</strong></li><li><strong>Windows Phone8.1;</strong></li><li><strong>Windows Phone 10;</strong></li><li><strong>Windows 8;</strong></li><li><strong>Windows8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Неизвестно</strong></li></ul> |
+| osVersion | Одна из следующих строк:<ul><li><strong>Windows Phone 7.5;</strong></li><li><strong>Windows Phone 8;</strong></li><li><strong>Windows Phone8.1;</strong></li><li><strong>Windows Phone 10;</strong></li><li><strong>Windows 8;</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul> |
 | deviceType | Одна из следующих строк:<ul><li><strong>Компьютер</strong></li><li><strong>Телефон</strong></li><li><strong>Console (консоль),</strong></li><li><strong>Интернет вещей</strong></li><li><strong>Holographic (голография),</strong></li><li><strong>Неизвестно</strong></li></ul> |
 | orderName | Строка, содержащая имя заказа для рекламного кода, который использовался для приобретения надстройки (применимо только в том случае, если пользователь приобрел надстройку, активировав рекламный код) |
 
@@ -108,7 +108,7 @@ Authorization: Bearer <your access token>
 |------------|--------|------------------|
 | Значение      | array  | Массив объектов, содержащий сводную информацию о покупках надстройки. Дополнительные сведения о данных в каждом объекте см. далее в разделе [Значения информации о покупке надстройки](#add-on-acquisition-values).                                                                                                              |
 | @nextLink  | string | При наличии дополнительных страниц данных эта строка содержит URI-адрес, который можно использовать для запроса следующей страницы данных. Например, это значение возвращается в том случае, если параметр **top** запроса имеет значение 10 000, но для данного запроса имеется больше 10 000 строк с информацией о покупках надстроек. |
-| TotalCount | целое число    | Общее количество строк в результирующих данных для запроса.    |
+| TotalCount | int    | Общее количество строк в результирующих данных для запроса.    |
 
 
 <span id="add-on-acquisition-values" />
@@ -132,7 +132,7 @@ Authorization: Bearer <your access token>
 | gender              | string  | Пол пользователя, совершившего покупку. Список поддерживаемых строк см. выше в разделе [Поля фильтра](#filter-fields)                                                                                                    |
 | ageGroup            | string  | Возрастная группа пользователя, совершившего покупку. Список поддерживаемых строк см. выше в разделе [Поля фильтра](#filter-fields)                                                                                                 |
 | acquisitionType     | string  | Тип приобретения (бесплатное, платное и т. д.). Список поддерживаемых строк см. выше в разделе [Поля фильтра](#filter-fields)                                                                                                    |
-| acquisitionQuantity | inumber | Количество покупок                        |
+| acquisitionQuantity | integer | Количество покупок.                        |
 
 
 ### <a name="response-example"></a>Пример ответа

@@ -6,7 +6,7 @@ label: Access keys design guidelines
 keywords: клавиатура, клавиша доступа, подсказка клавиши, специальные возможности, навигация, фокус, текст, ввод, взаимодействие с пользователем
 template: detail.hbs
 ms.author: kbridge
-ms.date: 02/08/2017
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,12 +15,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b335068762dd3999e07526962b0d6629825ad68d
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: a336109e9464052a33f5a0d8548e13b260b387a3
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707059"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018518"
 ---
 # <a name="access-keys"></a>Ключи доступа
 
@@ -77,12 +77,10 @@ _Значки подсказок клавиш доступа в Microsoft Word_
 На следующих изображениях показаны две области клавиш доступа в Word. В первой отображаются основные клавиши доступа, с помощью которых пользователь может выбрать вкладку и команды верхнего уровня, а во второй отображаются дополнительные клавиши доступа для вкладки "Главная".
 
 ![Основные клавиши доступа в Microsoft Word](images/accesskeys/primary-access-keys-word.png)
-
 _Основные клавиши доступа в Microsoft Word_
 
 ![Дополнительные клавиши доступа в Microsoft Word](images/accesskeys/secondary-access-keys-word.png)
-
-Дополнительные клавиши доступа в Microsoft Word
+_Дополнительные клавиши доступа в Microsoft Word_
 
 Клавиши доступа можно дублировать для элементов в различных областях. В предыдущем примере "2" — это клавиша доступа для команды "Отмена" в основной области, а также "Курсив" в дополнительной области.
 
@@ -122,10 +120,11 @@ _Основная область CommandBar и поддерживаемые кл
 
 _Дополнительная область CommandBar и поддерживаемые клавиши доступа_
 
-> [!NOTE]
-> До выхода Windows 10 Fall Creators Update некоторые элементы управления, например, CommandBar, не поддерживали встроенные области клавиш доступа. В этом случае необходимо реализовать области клавиш доступа, как показано в следующем примере.   
->
-> Здесь показано, как поддерживать SecondaryCommands в CommandBar с клавишами доступа, доступными после вызова родительской команды (аналогично ленте в Microsoft Word).
+### <a name="windows-10-creators-update-and-older"></a>Windows 10 Creators Update и более ранние версии
+
+До выхода Windows 10 Fall Creators Update некоторые элементы управления, например CommandBar, не поддерживали встроенные области клавиш доступа.
+
+В примере ниже рассматривается, как поддерживать SecondaryCommands в CommandBar с клавишами доступа, доступными после вызова родительской команды (аналогично ленте в Microsoft Word).
 
 ```xaml
 <local:CommandBarHack x:Name="MainCommandBar" AccessKey="M" >
@@ -178,11 +177,10 @@ public class CommandBarHack : CommandBar
         secondaryItemsControl.AccessKeyScopeOwner = moreButton;
 
         overflowPopup = GetTemplateChild("OverflowPopup") as Popup;
-
     }
+
     private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
     {
-
         if (overflowPopup != null)
         {
             overflowPopup.Opened += SecondaryMenuOpened;

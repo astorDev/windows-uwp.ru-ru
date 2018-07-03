@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e54af14d23b255718f5247605b9bdd611f172308
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 424ca52020bd5b9aeab745030dd6eef4cd4430b6
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663844"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862423"
 ---
 # <a name="create-and-host-an-app-extension"></a>Создание и размещение расширения приложения
 
@@ -27,7 +27,7 @@ ms.locfileid: "1663844"
 
 ## <a name="introduction-to-app-extensions"></a>Введение в расширения приложений
 
-Возможно, вам знакомы понятия "подключаемый модуль" и "надстройка". Эти понятия обозначают расширения приложений в универсальной платформе Windows (UWP). Расширения Microsoft Edge являются расширениями приложений UWP. Расширения приложений UWP появились в юбилейном обновлении Windows 10 (версия 1607, сборка 10.0.14393).
+На универсальной платформе Windows (UWP) расширения приложений предоставляют возможности, аналогичные подключаемым модулям и надстройкам на других платформах. Например, расширения Microsoft Edge являются расширениями приложений UWP. Расширения приложений UWP появились в юбилейном обновлении Windows 10 (версия 1607, сборка 10.0.14393).
 
 Расширения приложений UWP— это приложения UWP с объявлением расширения, которое позволяет им обмениваться содержимым и событиями развертывания с основным приложением. Приложение расширения может предоставить несколько расширений.
 
@@ -423,6 +423,7 @@ _Package.appxmanifest в проекте MathExtension:_
 
 ## <a name="related-topics"></a>Статьи по теме
 
+* [Введение в расширения приложений](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
 * [Сеанс Build 2016, посвященный расширениям приложений](https://channel9.msdn.com/Events/Build/2016/B808)
 * [Пример кода расширения приложения в Build 2016](https://github.com/Microsoft/App-Extensibility-Sample)
 * [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md)

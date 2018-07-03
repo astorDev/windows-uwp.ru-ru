@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 24b54e202835bb3dba9098591ae08527e12565bf
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: c06a4348ba1f974aaf7151456267ce7585b56a10
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832588"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983609"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Воспроизведение аудио и видео с помощью MediaPlayer
 
@@ -23,6 +23,8 @@ ms.locfileid: "1832588"
 
 Эта статья содержит подробный разбор функций **MediaPlayer**, которые обычно используются в приложениях для воспроизведения мультимедиа. Обратите внимание, что **MediaPlayer** использует класс [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) в качестве контейнера для всех элементов мультимедиа. Этот класс позволяет загружать и воспроизводить мультимедиа из множества различных источников, включая локальные файлы, потоки в памяти и сетевые источники, с использованием одного интерфейса. Также существуют классы более высокого уровня, совместимые с **MediaSource**, например [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) и [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList), которые предоставляют расширенные возможности, такие как списки воспроизведения, и обеспечивают способность работать с источниками мультимедиа, содержащими несколько дорожек видео-, аудио- и метаданных. Подробные сведения о классе **MediaSource** и связанных с ним API см. в разделе [Элементы, плей-листы и звуковые дорожки мультимедиа](media-playback-with-mediasource.md).
 
+> [!NOTE] 
+> В выпусках Windows 10 N и Windows 10 KN нет компонентов мультимедиа, необходимых для использования **MediaPlayer** для воспроизведения. Эти компоненты можно установить вручную. Дополнительные сведения см. в разделе [Пакет дополнительных компонентов для работы с мультимедиа для выпусков Windows10N и Windows10KN](https://support.microsoft.com/en-us/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions).
 
 ## <a name="play-a-media-file-with-mediaplayer"></a>Воспроизведение файла мультимедиа с помощью MediaPlayer  
 Простое воспроизведение мультимедиа с помощью **MediaPlayer** реализовать очень легко. Сначала создайте новый экземпляр класса **MediaPlayer**. Ваше приложение может содержать несколько активных экземпляров **MediaPlayer** одновременно. Затем задайте свойству [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) проигрывателя значение объекта, реализующего [**IMediaPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.IMediaPlaybackSource), такого как [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource), [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) или [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList). В этом примере **MediaSource** создается из файла в локальном хранилище приложения, затем из источника создается **MediaPlaybackItem** и далее назначается свойству **Source** проигрывателя.
@@ -78,6 +80,10 @@ ms.locfileid: "1832588"
 Следующий пример иллюстрирует использование кнопки-переключателя для выбора обычной или двукратной скорости воспроизведения путем изменения свойства [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.PlaybackRate) этого сеанса.
 
 [!code-cs[SpeedChecked](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSpeedChecked)]
+
+Начиная с Windows 10 версии 1803 можно настроить поворот видео в **MediaPlayer** с шагом 90 градусов.
+
+[!code-cs[SetRotation](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetRotation)]
 
 ### <a name="detect-expected-and-unexpected-buffering"></a>Обнаружение ожидаемой и непредвиденной буферизации
 Объект **MediaPlaybackSession**, описанный в предыдущем разделе предоставляет два события для обнаружения момента начала и окончания буферизации проигрываемого в данный момент файла мультимедиа: **[BufferingStarted](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingStarted)** и **[BufferingEnded](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingEnded)**. Это позволяет показывать в пользовательском интерфейсе состояние буферизации. Момент начала буферизации ожидается при первом открытии файла мультимедиа, а также при включении пользователем нового элемента в списке воспроизведения. Непредвиденная буферизации может произойти при ухудшения скорости сетевой передачи или при возникновении технических сбоев в системе управления содержимым. Начиная с RS3, можно использовать событие **BufferingStarted**, чтобы определить, является событие буферизации ожидаемым или непредвиденным, и прерывает ли оно воспроизведение. Эти сведения можно использовать в качестве данных телеметрии для вашего приложения или службы доставки содержимого. 

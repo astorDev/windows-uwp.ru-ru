@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bbb26fb3c977917732a079f28d274f7f2bfba41
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 861233de6967a6199bae5d81c1a3938bf8645246
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833327"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976036"
 ---
 # <a name="getting-started-with-a-camera-barcode-scanner"></a>Начало работы со сканерами штрихкодов на базе камеры
 ## <a name="step-1-add-capability-declarations-to-your-app-manifest"></a>Шаг 1. Добавление объявлений возможностей в манифест приложения
@@ -84,7 +84,7 @@ DeviceWatcher deviceWatcher = DeviceInformation.CreateWatcher(selector);
 Используйте метод [BarcodeScanner.ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync) для получения права на исключительное использование сканера штрихкодов на базе камеры.
 
 ## <a name="step-7-system-provided-preview"></a>Шаг 7: Предварительное изображение, предоставляемое системой
-Предварительное изображение с камеры необходимо, чтобы пользователь мог успешно наводить камеру на штрихкоды.  Windows предоставляет простой механизм предварительного просмотра, который запускает диалоговое окно для простейшего управления сканером штрихкодов на базе камеры.  Просто вызовите метод [ClaimedBarcodeScanner.ShowideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync), чтобы открыть диалоговое окно, и метод [ClaimedBarcodeScanner.HideVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview), чтобы закрыть его после завершения.
+Предварительное изображение с камеры необходимо, чтобы пользователь мог успешно наводить камеру на штрихкоды.  Windows предоставляет простой механизм предварительного просмотра, который запускает диалоговое окно для простейшего управления сканером штрихкодов на базе камеры.  Просто вызовите метод [ClaimedBarcodeScanner.ShowVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync), чтобы открыть диалоговое окно, и метод [ClaimedBarcodeScanner.HideVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview), чтобы закрыть его после завершения.
 
 > [!TIP]
 > О том, как разместить в своем приложении предварительное изображение со сканера штрихкодов на базе камеры, см. в статье [Размещение предварительного изображения](pos-camerabarcode-hosting-preview.md).

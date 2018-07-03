@@ -13,12 +13,12 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 434229c7d66ccd4c1a16750750d592c5bc4a89e6
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.openlocfilehash: 9ed520c8ad71203a2f2f9888f775d7ca51d0089f
+ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673681"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1874342"
 ---
 # <a name="contact-card"></a>Карточка контакта
 
@@ -70,7 +70,7 @@ ms.locfileid: "1673681"
 1. Как правило, карточка контакта отображается, когда пользователь щелкает какой-то элемент: кнопку или, возможно, [элемент управления аватаром пользователя](person-picture.md). Мы не хотим скрывать этот элемент. Чтобы он не скрывался, необходимо создать [Rect](/uwp/api/windows.foundation.rect), описывающий расположение и размер элемента. 
 
     Давайте создадим служебную функцию для этого. Мы используем ее позже.
-    ``` C#
+    ```csharp
     // Gets the rectangle of the element 
     public static Rect GetElementRectHelper(FrameworkElement element) 
     { 
@@ -83,7 +83,7 @@ ms.locfileid: "1673681"
     ```
 
 2. Определите, отображается ли карточка контакта путем вызова метода [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported). Если этот способ не поддерживается, отобразите сообщение об ошибке. (В этом примере предполагается, что карточка контакта будет отображаться в ответ на событие "click" (щелчок))
-    ``` C#
+    ```csharp
     // Contact and Contact Managers are existing classes 
     private void OnUserClickShowContactCard(object sender, RoutedEventArgs e) 
     { 
@@ -94,13 +94,13 @@ ms.locfileid: "1673681"
 
 3. Используйте служебную функцию, которую вы создали в шаге 1, чтобы получить границы элемента управления, который вызвал событие.
 
-    ``` C#
+    ```csharp
             Rect selectionRect = GetElementRect((FrameworkElement)sender); 
     ```
 
 4. Получите объект [Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) для отображения. В этом примере создается простой контакт, но код должен извлекать фактический контакт. 
 
-    ``` C#
+    ```csharp
                 // Retrieve the contact to display
                 var contact = new Contact(); 
                 var email = new ContactEmail(); 
@@ -109,7 +109,7 @@ ms.locfileid: "1673681"
     ```
 5. Отобразите карточку контакта, вызвав метод [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowFullContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_Foundation_Rect_). 
 
-    ``` C#
+    ```csharp
             ContactManager.ShowFullContactCard(
                 contact, selectionRect, Placement.Default); 
         } 
@@ -118,7 +118,7 @@ ms.locfileid: "1673681"
 
 Далее представлен полный код примера:
 
-``` C#
+```csharp
 // Gets the rectangle of the element 
 public static Rect GetElementRect(FrameworkElement element) 
 { 
@@ -152,7 +152,7 @@ private void OnUserClickShowContactCard(object sender, RoutedEventArgs e)
 
 Чтобы отобразить полную карточку контакта, вызовите метод [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_) вместо метода [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowFullContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_Foundation_Rect_).
 
-``` C#
+```csharp
 private void onUserClickShowContactCard() 
 { 
    

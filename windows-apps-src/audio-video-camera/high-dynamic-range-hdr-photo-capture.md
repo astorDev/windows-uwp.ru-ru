@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ffdba499d8e38bb9248071daeddd850f921e931e
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692229"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843364"
 ---
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>Фотозахват с расширенным динамическим диапазоном (HDR) и в условиях низкой освещенности
 

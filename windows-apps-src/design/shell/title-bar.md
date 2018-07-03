@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp, заголовок окна
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 556234eb4047418b0798a432d917268fb3634996
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: d7c620d5e6a45d48442a2761285f8509db91961d
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691010"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1863170"
 ---
 # <a name="title-bar-customization"></a>Настройка заголовка окна
 
@@ -71,7 +71,7 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 > Этот код можно разместить в методе [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) приложения (_App.xaml.cs_) после вызова [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) или на первой странице приложения.
 
 > [!TIP]
-> Набор средств сообщества UWP предоставляет расширения, которые позволяют задать эти свойства цветов в XAML. Дополнительные сведения см. в [документации по набору средств сообщества UWP](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions).
+> Набор средств сообщества Windows предоставляет расширения, которые позволяют задать эти свойства цветов в XAML. Дополнительные сведения см. в [документации по набору средств сообщества Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions).
 
 При настройке цветов заголовка окна следует учитывать несколько особенностей.
 

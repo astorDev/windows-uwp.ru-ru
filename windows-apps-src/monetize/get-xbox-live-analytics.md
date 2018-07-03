@@ -3,25 +3,25 @@ author: mcleanbyron
 description: Используйте этот метод в API аналитики для Microsoft Store для получения данных аналитики Xbox Live.
 title: Получение аналитических данных Xbox Live
 ms.author: mcleans
-ms.date: 04/16/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live
 ms.localizationpriority: medium
-ms.openlocfilehash: 82c24ee285070d733f3310b4ccec210adeafc27f
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 4ba81f88b583a2d13785b3efe8d7008bac759a2d
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817272"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976572"
 ---
 # <a name="get-xbox-live-analytics-data"></a>Получение аналитических данных Xbox Live
 
 Используйте этот метод в API аналитики для Microsoft Store, чтобы получить общие аналитические данные за последние 30 дней для пользователей, игравших в вашу [игру с поддержкой Xbox Live](../xbox-live/index.md), в том числе об использовании периферийных устройств, типе подключения к Интернету, распределении игровых баллов, статистики по игре и данных по друзьям и подписчикам. Эта информация также доступна в [отчете аналитики Xbox](../publish/xbox-analytics-report.md) на информационной панели Центра разработки для Windows.
 
 > [!IMPORTANT]
-> Сейчас этот метод работает только для игр с поддержкой для Xbox Live, опубликованных [партнерами Майкрософт](../xbox-live/developer-program-overview.md#microsoft-partners) или отправленных по этой [ID@Xbox программе](../xbox-live/developer-program-overview.md#id). Он не возвращает данные для игр, которые были отправлены с использованием [Xbox Live Creators Program](../xbox-live/developer-program-overview.md#xbox-live-creators-program).
+> Этот метод поддерживает только игры для Xbox или игры, использующие службы Xbox Live. Эти игры, в том числе игры, опубликованные [партнерами Майкрософт](../xbox-live/developer-program-overview.md#microsoft-partners), и отправленные в рамках программы [ID@Xbox, должны пройти [процесс утверждения концепции](../gaming/concept-approval.md)](../xbox-live/developer-program-overview.md#id). В настоящее время этот метод не поддерживает игры, опубликованные в рамках программы [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 Дополнительные аналитические данные для игр с поддержкой Xbox Live доступны с помощью следующих методов:
 * [Получение данных о достижениях в Xbox Live](get-xbox-live-achievements-data.md)
@@ -36,7 +36,7 @@ ms.locfileid: "1817272"
 Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](access-analytics-data-using-windows-store-services.md#prerequisites) для API аналитики для Microsoft Store.
-* [Получите токен доступа Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
+* [Получите маркер доступа Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
 
 ## <a name="request"></a>Запрос
 
@@ -52,7 +52,7 @@ ms.locfileid: "1817272"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Авторизация | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса

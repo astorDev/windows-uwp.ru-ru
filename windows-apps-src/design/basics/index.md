@@ -2,7 +2,6 @@
 description: Научитесь проектировать и писать код для приложения UWP, с которым удобно работать и которое прекрасно выглядит на различных устройствах и экранах разного размера.
 title: Основы проектирования
 author: mijacobs
-layout: LandingPage
 keywords: макет приложения uwp, универсальная платформа Windows, проектирование приложений, интерфейс
 ms.author: mijacobs
 ms.date: 3/7/2018
@@ -10,182 +9,58 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e07c49e141841b8ef1eb44c6b421739951bb866d
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: d092a3fe1120dc5763b5c30ed834c1902a1f8752
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654313"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842381"
 ---
 # <a name="design-basics-for-uwp-apps"></a>Основы проектирования в приложениях UWP
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage" style="background-color: #f2f2f2" >
-                        <a href="design-and-ui-intro.md">
-                            <img src="images/landing-page/reposition-sm.png" alt=" " style="display: block; width: 100%; height: auto;" />
-                            </a>
-                        </div>
-                    </div> 
-                    <div class="cardText">
-                        <h3><a href="design-and-ui-intro.md">Введение в проектирование приложений UWP</a></h3>
-                        <p>Общие сведения о компонентах пользовательского интерфейса, включенных в каждое приложение UWP, и обзор нашей документации.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage" style="background-color: #f2f2f2">
-                        <a href="../fluent-design-system/index.md">
-                            <img src="images/landing-page/fluentdesign-app-sm.png" alt=" " style="display: block; width: 100%; height: auto;"/>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3><a href="../fluent-design-system/index.md">Обзор системы проектирования Fluent Design</a></h3>
-                        <p>Система проектирования Fluent Design — это набор инновационных функций UWP и рекомендаций по созданию приложений, которые прекрасно смотрятся на всех типах устройств под управлением Windows.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+![главное изображение](images/header-design-basics.svg)
 
+Руководство по проектированию для универсальной платформы Windows (UWP) — это ресурс, который поможет проектировать и разрабатывать прекрасные, тщательно проработанные приложения. Это не список нормативных правил — это постоянно обновляемый документ, изменения в который вносятся по мере развития нашей системы проектирования Fluent Design и с учетом меняющихся потребностей нашего сообщества разработчиков приложений. 
 
-<h2>Структура приложения</h2>
-<ul class="panelContent cardsH" style="margin-left: 1px">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage">
-                        <a href="design-and-ui-intro.md">
-                            <img src="images/1910808-hig-uap-toolkit-03.png" alt=" " style="display: block; width: 100%; height: auto;" />
-                            </a>
-                        </div>
-                    </div>  -->
-                    <div class="cardText">
-                        <h3><a href="navigation-basics.md">Основы навигации</a></h3>
-                        <p>Навигация в приложениях UWP основана на гибкой модели структур навигации, элементов навигации и функций системного уровня. В этой статье вы узнаете об этих компонентах и увидите, как использовать их совместно для обеспечения удобной навигации.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage">
-                        <a href="design-and-ui-intro.md">
-                            <img src="images/1910808-hig-uap-toolkit-03.png" alt=" " style="display: block; width: 100%; height: auto;" />
-                            </a>
-                        </div>
-                    </div>  -->
-                    <div class="cardText">
-                        <h3><a href="commanding-basics.md">Основные сведения о командных элементах</a></h3>
-                        <p>Командные элементы — это интерактивные элементы пользовательского интерфейса, которые позволяют пользователю выполнять действия, например отправлять электронное сообщение, удалять элемент или отправлять форму. В этой статье описаны командные элементы, такие как кнопки и флажки, взаимодействия, которые они поддерживают, и поверхности для команд (например, панели команд и контекстные меню) для их размещения.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage">
-                        <a href="design-and-ui-intro.md">
-                            <img src="images/1910808-hig-uap-toolkit-03.png" alt=" " style="display: block; width: 100%; height: auto;" />
-                            </a>
-                        </div>
-                    </div>  -->
-                    <div class="cardText">
-                        <h3><a href="content-basics.md">Основные сведения о содержимом</a></h3>
-                        <p>Основная функция любого приложения заключается в предоставлении доступа к содержимому: в приложении для редактирования фотографий содержимым является фотография, в приложении для путешествий — карты и сведения о достопримечательностях и т. д. Эта статья содержит рекомендации по оформлению содержимого в трех сценариях его использования: потребление, создание и взаимодействие.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+<!-- This introduction provides an overview of the Fluent Design System, UWP app design basics, and the XAML platform, helping you build user interfaces (UI) that scale beautifully across a range of devices. -->
 
-<h2>Руководства по созданию приложений для обработки фотографий</h2>
-<p>Узнайте, как создать простое приложение для редактирования фотографий в XAML и C#.</p>
-<img src="images/landing-page/photolab-50.png" style="{height: 339px}" alt=" " />
+## <a name="overview"></a>Обзор
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage"  >
-                        <a href="xaml-basics-ui.md">
-                            <img src="images/xaml-basics/detailpage.png" alt=" " style="display: block; width: 100%; height: auto;" />
-                            </a>
-                        </div>
-                    </div>  -->
-                    <div class="cardText">
-                        <h3><a href="xaml-basics-ui.md">1. Создание базового пользовательского интерфейса</a></h3>
-                        <p>Используйте XAML для создания базового интерфейса пользователя.</p> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage"  >
-                        <a href="xaml-basics-adaptive-layout.md">
-                            <img src="images/xaml-basics/detailpage.png" alt=" " style="display: block; width: 100%; height: auto;" />
-                            </a>
-                        </div>
-                    </div>  -->
-                    <div class="cardText">
-                        <h3><a href="xaml-basics-adaptive-layout.md">2. Создание адаптивных макетов</a></h3>
-                        <p>Создайте адаптивный макет для приложения для редактирования фотографий.</p> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage"  >
-                        <a href="xaml-basics-style.md">
-                            <img src="images/xaml-basics/detailpage.png" alt=" " style="display: block; width: 100%; height: auto;" />
-                            </a>
-                        </div>
-                    </div>  -->
-                    <div class="cardText">
-                        <h3><a href="xaml-basics-style.md">3. Создание пользовательских стилей</a></h3>
-                        <p>Используйте пользовательские стили оформления для создания индивидуального внешнего вида для наших элементов управления UWP.</p>  
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>    
-</ul>
+[**Введение в проектирование приложений UWP**](design-and-ui-intro.md)
 
+Введение в функции UWP и рекомендации по созданию приложений, которые будут прекрасно смотреться на всех типах устройств под управлением Windows.
 
+[**Система Fluent Design**](../fluent-design-system/index.md)
 
+Система Fluent Design представляет наши цели и принципы создания адаптивных, привлекательных и красивых пользовательских интерфейсов.
 
+## <a name="basics"></a>Основы
+
+[**Основы навигации**](navigation-basics.md)
+
+Навигация в приложениях UWP основана на гибкой модели структур навигации, элементов навигации и функций системного уровня. В этой статье вы узнаете об этих компонентах и увидите, как использовать их совместно для обеспечения удобной навигации.
+
+[**Основные сведения о командных элементах**](commanding-basics.md)
+
+Командные элементы — это интерактивные элементы пользовательского интерфейса, которые позволяют пользователю выполнять действия, например отправлять электронное сообщение, удалять элемент или отправлять форму. В этой статье описаны командные элементы, такие как кнопки и флажки, взаимодействия, которые они поддерживают, и поверхности для команд (например, панели команд и контекстные меню) для их размещения.
+
+[**Основные сведения о содержимом**](content-basics.md)
+
+Основная функция любого приложения заключается в предоставлении доступа к содержимому: в приложении для редактирования фотографий содержимым является фотография, в приложении для путешествий — карты и сведения о достопримечательностях и т. д. Эта статья содержит рекомендации по оформлению содержимого в трех сценариях его использования: потребление, создание и взаимодействие.
+
+## <a name="tutorials"></a>Учебники
+
+Узнайте, как создать простое приложение для редактирования фотографий в XAML и C#.
+<!-- <img src="images/landing-page/photolab-50.png" style="{height: 339px}" alt=" " /> -->
+
+[**1. Создание базового пользовательского интерфейса**](xaml-basics-ui.md)
+
+Используйте XAML для создания базового интерфейса пользователя.
+
+[**2. Создание адаптивных макетов**](xaml-basics-adaptive-layout.md)
+
+Создайте адаптивный макет для приложения для редактирования фотографий.
+
+[**3. Создание пользовательских стилей**](xaml-basics-style.md)
+
+Используйте пользовательские стили оформления для создания индивидуального внешнего вида для наших элементов управления UWP.

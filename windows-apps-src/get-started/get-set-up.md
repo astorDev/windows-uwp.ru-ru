@@ -1,21 +1,21 @@
 ---
-author: GrantMeStrength
+author: QuinnRadich
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: Подготовка
 description: Подготовка на самом деле проще, чем может показаться. Ознакомьтесь с этими инструкциями и приступите к созданию приложений универсальной платформы Windows (UWP) для Windows10.
-ms.author: jken
-ms.date: 03/06/2017
+ms.author: quradic
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp
 ms.localizationpriority: high
-ms.openlocfilehash: ac918fac5d2733a39f3f5d9a469105c61328a676
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 86603443aefe08ddf684e4dc8a2df8541074e0b4
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817675"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935664"
 ---
 # <a name="get-set-up"></a>Подготовка
 
@@ -56,20 +56,22 @@ Microsoft Visual Studio2017 помогает в проектировании, п
 
 ## <a name="whats-next"></a>Дальнейшие действия
 
-После установки инструментов и активации устройства для разработки создайте свое первое приложение с помощью наших учебников:
+После установки инструментов и активации устройства для разработки ознакомьтесь с инструкциями по созданию приложений для Windows 10.
 
--   Учебники [Создание первого приложения](your-first-app.md)
+-   [Начало разработки](create-uwp-apps.md)
+
+## <a name="windows-development-setup-scripts"></a>Сценарии настройки разработки для Windows
+
+Если вы хотите настроить устройство и установить другие компоненты и пакеты, ознакомьтесь со сценариями настройки системы в этом проекте.
+
+- [Сценарии настройки для разработчика](https://github.com/Microsoft/windows-dev-box-setup-scripts)
 
 ## <a name="want-more-tools-and-downloads"></a>Нужны дополнительные инструменты и скачиваемые файлы?
 
 Полный список инструментов и скачиваемых файлов см. на странице [скачиваемых файлов](http://go.microsoft.com/fwlink/p/?linkid=285935).
 
-
 ## <a name="see-also"></a>См. также
 
-* [Создание приложений UWP](create-uwp-apps.md)
-* [Публикация вашего приложения UWP](https://developer.microsoft.com/store/publish-apps).
-* [Практические руководства по разработке приложений UWP](https://developer.microsoft.com/windows/apps/develop)
 * [Примеры кода для разработчиков UWP](https://developer.microsoft.com/windows/samples)
 * [Что такое приложение UWP?](universal-application-platform-guide.md)
 * [Регистрация учетной записи Windows](sign-up.md)

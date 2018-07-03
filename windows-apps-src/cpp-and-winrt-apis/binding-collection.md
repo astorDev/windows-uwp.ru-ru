@@ -3,18 +3,18 @@ author: stevewhims
 description: Коллекция, которая может быть эффективно привязана к элементам управления XAML, называется *отслеживаемой*. В этом разделе показано, как реализовать и использовать отслеживаемую коллекцию и привязать к ней элементы управления XAML.
 title: Элементы управления XAML; привязка к коллекции C++/WinRT
 ms.author: stwhi
-ms.date: 03/07/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, привязка, коллекция
 ms.localizationpriority: medium
-ms.openlocfilehash: 2384dd385208574276dc0b6d03a56f838aad7b84
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 3d9f74e6d0c755e0a247a65751bdab65964ac1f7
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832308"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935730"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a>Элементы управления XAML; привязка к коллекции [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 > [!NOTE]
@@ -33,10 +33,13 @@ ms.locfileid: "1832308"
 Элементы управления XAML могут привязываться к этим событиям и обрабатывать их путем получения обновленной коллекции и последующего самообновления для показа текущих элементов.
 
 > [!NOTE]
-> Сведения о текущей доступности расширения C++/WinRT для Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также свойств и целевых объектов MSBuild C++/WinRT), см. в разделе [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> Сведения об установке и использовании расширения C++/WinRT для Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также свойств и целевых объектов MSBuild C++/WinRT) см. в разделе [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 ## <a name="implement-singlethreadedobservablevectorlttgt"></a>Реализация **single_threaded_observable_vector&lt;T&gt;**
-Полезно иметь отслеживаемый шаблон вектора, который служит реализацией общего назначения [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_). Далее приведен код класса под названием **single_threaded_observable_vector&lt;T&gt;**. В будущем, если он станет типом C++/WinRT, будет легко перейти к использованию его официальной версии.
+Полезно иметь отслеживаемый шаблон вектора, который служит реализацией общего назначения [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_). Ниже приведен код класса под названием **single_threaded_observable_vector\<T\>**.
+
+> [!NOTE]
+> Если вы установили [предварительную сборку 17661 пакета Windows 10 SDK](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK) или более позднюю версию, то вы можете просто напрямую использовать тип **winrt::single_threaded_observable_vector\<T\>** вместо приведенного ниже кода. Если вы еще не используете эту версию пакета SDK, перейти с использования версии с описанием кода на тип **winrt** будет просто, когда вы на нее перейдете.
 
 ```cppwinrt
 // single_threaded_observable_vector.h

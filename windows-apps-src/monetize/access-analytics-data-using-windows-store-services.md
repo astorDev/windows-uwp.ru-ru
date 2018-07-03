@@ -4,18 +4,18 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Используйте API аналитики для Microsoft Store для программного извлечения аналитических данных по приложениям, зарегистрированным на вашу учетную запись или учетную запись вашей организации в Центре разработки для Windows.
 title: Доступ к аналитическим данным с помощью служб Магазина
 ms.author: mcleans
-ms.date: 03/23/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, службы Store, API аналитики дляMicrosoft Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a8523acb06a0bda48f85221f384d8a3d554c7dc
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: f7ca3c23179d97816fc54fdbacb951915aecf71f
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707159"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976399"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Доступ к аналитическим данным с помощью служб Магазина
 
@@ -41,11 +41,11 @@ ms.locfileid: "1707159"
 
 Чтобы привязать приложение Azure AD к учетной записи Центра разработки и получить необходимые значения, выполните следующие действия.
 
-1.  В Центре разработки перейдите в раздел **Параметры учетной записи**, щелкните **Управление пользователями** и [привяжите учетную запись своей организации в Центре разработки к каталогу Azure AD вашей организации](../publish/associate-azure-ad-with-dev-center.md).
+1.  В Центре разработки [привяжите учетную запись своей организации к каталогу Azure AD организации](../publish/associate-azure-ad-with-dev-center.md).
 
-2.  На странице **Управление пользователями** нажмите кнопку **Добавить приложения Azure AD**, добавьте приложение Azure AD, представляющее собой приложение или службу, которые вы будете использовать для доступа к аналитическим данным вашей учетной записи Центра разработки, и назначьте ему роль **Менеджер**. Если приложение уже есть в каталоге Azure AD, вы можете выбрать его на странице **Добавление приложений Azure AD**, чтобы добавить его к учетной записи Центра разработки. Также можно создать приложение Azure AD на странице **Добавление приложений Azure AD**. Дополнительные сведения см. в разделе [Добавление приложений Azure AD к учетной записи в Центре разработки](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications).
+2.  Затем на странице **Пользователи** в разделе **Параметры учетной записи** Центра разработки [добавьте приложение Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-dev-center-account), представляющее собой приложение или службу, которые вы будете использовать для доступа к аналитическим данным вашей учетной записи Центра разработки. Обязательно назначьте этому приложению роль **Менеджер**. Если приложение еще не существует в каталоге Azure AD, вы можете [создать новое приложение Azure AD в Центре разработки](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-dev-center-account).
 
-3.  Вернитесь на страницу **Управление пользователями**, щелкните имя приложения Azure AD, чтобы перейти к параметрам приложения и скопируйте **идентификатора владельца** и **идентификатор клиента**.
+3.  Вернитесь на страницу **Пользователи**, щелкните имя приложения Azure AD, чтобы перейти к параметрам приложения, и скопируйте значения **идентификатора владельца** и **идентификатора клиента**.
 
 4. Нажмите кнопку **Добавить новый ключ**. На следующем экране скопируйте **ключ**. Вы не сможете получить доступ к этой информации после закрытия страницы. Дополнительные сведения см. в разделе [Управление ключами для приложения Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys).
 
@@ -98,16 +98,6 @@ grant_type=client_credentials
 | Установки |  <ul><li>[Получение установок классического приложения](get-desktop-app-installs.md)</li></ul> |
 | Ошибки приложений |  <ul><li>[Получение данных отчетов об ошибках для классического приложения](get-desktop-application-error-reporting-data.md)</li><li>[Получение сведений об ошибке в классическом приложении](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Получение трассировки стека при возникновении ошибки в классическом приложении](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Скачивание CAB-файла для ошибки в классическом приложении](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
 
-### <a name="methods-for-hardware-and-drivers"></a>Методы для оборудования и драйверов
-
-Для учетных записей разработчиков, которые связаны с [программой Центра разработки оборудования для Windows](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard), доступны следующие методы аналитики.
-
-| Сценарий       | Методы      |
-|---------------|--------------------|
-| Ошибки в драйверах для Windows 10 (для независимых поставщиков оборудования) |  <ul><li>[Получение данных системы отчетов об ошибках для драйверов для Windows10](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[Получение сведений об ошибке драйвера для Windows10](get-details-for-a-windows-10-driver-error.md)</li><li>[Скачивание CAB-файла для ошибки драйвера для Windows10](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
-| Ошибки в драйверах для Windows7 или Windows8.x (для независимых поставщиков оборудования) |  <ul><li>[Получение данных системы отчетов для драйверов для Windows7 и Windows8.x](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[Получение сведений об ошибке драйвера для Windows7 или Windows 8.x](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[Скачивание CAB-файла для ошибки драйвера для Windows7 или Windows8.x](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
-| Ошибки оборудования (для изготовителей оборудования) |  <ul><li>[Получение данных системы отчетов об ошибках оборудования OEM](get-oem-hardware-error-reporting-data.md)</li><li>[Получение сведений об ошибке оборудования OEM](get-details-for-an-oem-hardware-error.md)</li><li>[Скачивание CAB-файла для ошибки оборудования OEM](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
-
 ### <a name="methods-for-xbox-live-services"></a>Методы для служб Xbox Live
 
 Доступны следующие дополнительные методы для использования учетными записями разработчиков в играх, использующих [службы Xbox Live](../xbox-live/developer-program-overview.md).
@@ -125,6 +115,16 @@ grant_type=client_credentials
 | Сценарий       | Методы      |
 |---------------|--------------------|
 | Приобретения |  <ul><li>[Получение сведений о покупках игр на Xbox One](get-xbox-one-game-acquisitions.md)</li></ul> |
+
+### <a name="methods-for-hardware-and-drivers"></a>Методы для оборудования и драйверов
+
+Для учетных записей разработчиков, которые связаны с [программой Центра разработки оборудования для Windows](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard), доступны следующие методы аналитики.
+
+| Сценарий       | Методы      |
+|---------------|--------------------|
+| Ошибки в драйверах для Windows 10 (для независимых поставщиков оборудования) |  <ul><li>[Получение данных системы отчетов об ошибках для драйверов для Windows10](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[Получение сведений об ошибке драйвера для Windows10](get-details-for-a-windows-10-driver-error.md)</li><li>[Скачивание CAB-файла для ошибки драйвера для Windows10](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
+| Ошибки в драйверах для Windows7 или Windows8.x (для независимых поставщиков оборудования) |  <ul><li>[Получение данных системы отчетов для драйверов для Windows7 и Windows8.x](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[Получение сведений об ошибке драйвера для Windows7 или Windows 8.x](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[Скачивание CAB-файла для ошибки драйвера для Windows7 или Windows8.x](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
+| Ошибки оборудования (для изготовителей оборудования) |  <ul><li>[Получение данных системы отчетов об ошибках оборудования OEM](get-oem-hardware-error-reporting-data.md)</li><li>[Получение сведений об ошибке оборудования OEM](get-details-for-an-oem-hardware-error.md)</li><li>[Скачивание CAB-файла для ошибки оборудования OEM](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
 
 ## <a name="code-example"></a>Пример кода
 

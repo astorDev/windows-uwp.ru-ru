@@ -12,12 +12,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a5da807d430683689cf38f2db6920af2dc058a99
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: a0753081af4128cf2cad3eeff9d8c919c42eb596
+ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707295"
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "1895143"
 ---
 # <a name="handle-pointer-input"></a>Работа с входными данными указателя
 
@@ -704,9 +704,11 @@ String QueryPointer(PointerPoint ptrPt)
 **Скачайте этот пример в разделе [Пример ввода указателя (UserControl с анимацией)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)**
 
 ### <a name="visual-feedback"></a>Визуальная обратная связь
+
 Мы определяем **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** в зависимости от XAML-объекта **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)**, который выделяет место каждого указателя на полотне и использует **[Storyboard](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.animation.storyboard)** для анимации эллипса, который соответствует основному указателю.
 
 **Вот код XAML.**
+
 ```xaml
 <UserControl
     x:Class="UWP_Pointers.PointerEllipse"

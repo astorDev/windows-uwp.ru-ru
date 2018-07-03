@@ -6,7 +6,7 @@ ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 05/19/2017
+ms.date: 05/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,175 +14,147 @@ keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 61157ad23eb55447137531922ea23fa0120e2b98
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 077967c37f76c8f1d0942f365344de65db13b041
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653923"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983577"
 ---
 # <a name="icons-for-uwp-apps"></a>Значки для приложений UWP
 
+![Значки изображений заголовка](images/icons/header-icons.png)
+
+Значки— это визуальный ярлык для действий, концепций или продуктов. Передача значения в символическом изображении (значке) позволяет преодолеть языковые барьеры и сэкономить крайне ценный ресурс: пространство на экране. 
+
+Значки могут отображаться в приложениях и за их пределами. 
+
+:::row::: :::column::: **Значки в приложении**
+
+        ![icons inside the app](images/icons/inside-icons.png)
+        Inside your app, you use icons to represent an action, such as copying text or navigating to the settings page.
+    :::column-end:::
+    :::column:::
+        **Icons outside the app**
+
+        ![icons outside the app](images/icons/outside-icons.jpg)
+         Outside your app, Windows uses an icon to represent your app in the start menu and in the taskbar. If the user chooses to pin your app to the start menu, your app's start tile can feature your app's icon. Your app's icon appears in the title bar and you can choose to create a splash screen with your app's logo.
+    :::column-end:::
+:::row-end:::
+
+В этой статье описываются значки в вашем приложении. Дополнительные сведения о значках вне приложений (значки приложения) см. в [статье, посвященной значкам плитки и приложения](/windows/uwp/design/shell/tiles-and-notifications/app-assets).
+
+## <a name="when-to-use-icons"></a>Когда использовать значки
+
+Значки позволяют сэкономить место, но когда их следует использовать? 
+
+:::row::: :::column::: ![do](images/do.svg) ![Стандартное изображение значка](images/icons/icons-standard.svg)<br>
+
+        Use an icon for actions, like cut, copy, paste, and save, or for navigation items in a navigation menu.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        ![icons concept image](images/icons/icons-concept.svg)<br>
+
+        Use an icon if one already exists for the concept you want to represent. (To see whether an icon exists, check the Segoe icon list.)
+    :::column-end:::
+:::row-end:::
+
+:::row::: :::column::: ![do](images/do.svg) ![Значок корзины](images/icons/icon-shopping-cart.svg)<br>
+
+        Use an icon if it's easy for the user to understand what the icon means and it's simple enough to be clear at small sizes.
+    :::column-end:::
+    :::column:::
+        ![dont](images/dont.svg)
+        ![icons concept image](images/icons/icon-bad-example.png)<br>
+
+        Don't use an icon if its meaning isn't clear, or if making it clear requires a complex shape.
+    :::column-end:::
+:::row-end:::
 
 
-Хорошие значки согласуются со шрифтовым оформлением и языком проектирования в целом. В них метафоры не смешиваются— они сообщают только то, что нужно, как можно скорее и проще. 
 
-## <a name="linear-scaling-size-ramps"></a>Линейное изменение размера 
+## <a name="using-the-right-type-of-icon"></a>Использование правильного типа значка
 
-<table>
-    <tr> 
-        <td>16×16 пкс</td>
-        <td>24×24 пкс</td>
-        <td>32×32 пкс</td>
-        <td>48×48 пкс</td>
-    </tr>
-    <tr> 
-        <td><img src="images/icons-16x16.png" alt="Icons at 16x16 effective pixels" /></td>
-        <td><img src="images/icons-24x24.png" alt="Icons at 24x24 effective pixels" /></td>
-        <td><img src="images/icons-32x32.png" alt="Icons at 32x32 effective pixels" /></td>
-        <td><img src="images/icons-48x48.png" alt="Icons at 48x48 effective pixels" /></td>
-    </tr>
-</table>
+Существует множество способов создания значка. Вы можете использовать символьный шрифт, например Segoe MDL2 Assets. Вы можете создать собственное векторное изображение. Вы можете даже использовать растровое изображение, хотя это не рекомендуется. Далее представлен обзор различных способов добавления значка в приложение. 
 
-## <a name="common-shapes"></a>Общие фигуры
+### <a name="use-a-predefined-icon"></a>Использование стандартного значка.
+:::row::: :::column::: Корпорация Майкрософт предоставляет более 1000 значков в виде шрифта Segoe MDL2 Assets. Получить значок из шрифта может быть не так просто, но наша технология отображения шрифта гарантирует, что эти значки будут выглядеть четко и резко на любом дисплее, при любом разрешении и в любом размере. :::column-end::: :::column::: ![стандартное изображение значка](images/icons/predefined-icon.png) :::column-end::: :::row-end:::
 
-Как правило, значки должны заполнять все отведенное им пространство с небольшой отбивкой. Эти формы— начальная точка для работы с размерами базовых фигур. 
+### <a name="use-a-font"></a>Использование шрифта.
+:::row::: :::column::: Вам необязательно использовать шрифт Segoe MDL2 Assets, вы можете выбрать любой шрифт, установленный пользователем в системе, например Wingdings или Webdings.
+:::column-end::: :::column::: ![изображение wingdings](images/icons/wingdings.png) :::column-end::: :::row-end:::
 
-![Сетка 32×32 пкс](images/icons-common-shapes.png)
+### <a name="use-a-scalable-vector-graphics-svg-file"></a>Использование файла векторной графики SVG.
+:::row::: :::column::: Ресурсы SVG идеально подходят для значков, потому они всегда четко выглядят при любом размере или разрешении. Большинство приложений для рисования поддерживают экспорт файлов в формате SVG. :::column-end::: :::column::: ![Изображение SVG](images/icons/icon-scale.gif) :::column-end::: :::row-end:::
 
-Используйте фигуру, которая соответствует ориентации значка, и учитывайте в разработке следующие базовые параметры. Значки не обязательно должны полностью соответствовать очертаниям фигуры — при необходимости их можно корректировать для достижения оптимального равновесия. 
+### <a name="use-geometry-objects"></a>Использование объектов Geometry.
+:::row::: :::column::: Подобно SVG-файлам геометрии являются векторными ресурсами, поэтому они всегда выглядят четко. Однако создать геометрию не так просто, так как вам необходимо отдельно указать все точки и кривые. Этот вариант следует использовать, только если вам нужно изменить значок во время выполнения приложения (например, для анимации). Инструкции см. в разделе [Команды перемещения и рисования для геометрии](../../xaml-platform/move-draw-commands-syntax.md). :::column-end::: :::column::: ![изображение объектов Geometry](images/icons/geometry-objects.png) :::column-end::: :::row-end:::
 
-<table class="uwpd-noborder">
-    <tr>
-        <td>Круг<td>
-        <td>Квадрат</td>
-        <td>Треугольник</td>
-    </tr>
-    <tr>
-        <td><img src="images/icons-common-shapes-examples-1.png" alt="A circle" /><td>
-        <td><img src="images/icons-common-shapes-examples-2.png" alt="A square" /></td>
-        <td><img src="images/icons-common-shapes-examples-3.png" alt="A triangle " /></td>
-    </tr>
-        <tr>
-        <td>Горизонтальный прямоугольник<td>
-        <td colspan="2">Вертикальный прямоугольник</td>        
-        </tr>
-    <tr>
-        <td><img src="images/icons-common-shapes-examples-4.png" alt="A horizontal rectangle" /><td>
-        <td colspan="2"><img src="images/icons-common-shapes-examples-5.png" alt="A vertical rectangle" /></td>
-         
-    </tr>
+### <a name="you-can-also-use-a-bitmap-image-such-as-png-gif-or-jpeg-although-we-dont-recommend-it"></a>Вы также можете использовать растровое изображение (например, в формате PNG, GIF и JPEG),, хотя это не рекомендуется.
+:::row::: :::column::: Растровые изображения создаются в определенном размере, поэтому их необходимо масштабировать в зависимости от требуемого размера значка и разрешения экрана. При уменьшении (сжатии) размера значка, он может оказаться размытым. При увеличении размера, он может стать угловато и пикселизированным. Если вам необходимо использовать растровое изображение, рекомендуется формат PNG или GIF, а не JPEG. :::column-end::: :::column::: ![don't](images/dont.svg) ![Растровое изображение](images/icons/bitmap-image.png) :::column-end::: :::row-end:::
 
-</table>
+## <a name="make-the-icon-do-something"></a>Привязка функции к значку
 
-## <a name="angles"></a>Углы
+После создания значка следующим шагом является привязка к нему команды или действия навигации. Для этого рекомендуется добавить значок в кнопку или панель команд. 
 
-Помимо использования одинаковых сеток и толщины линий при создании значков важно использовать общие элементы. 
+![Изображение панели команд](images/icons/app-bar-desktop.svg)
 
-Использование только этих углов при создании фигур обеспечивает единообразие всех значков и их правильную отрисовку. 
+## <a name="create-an-icon-button"></a>Создание кнопки значка
 
-При создании значков эти линии можно объединять, комбинировать, поворачивать и отражать. 
+Значок можно поместить в стандартную кнопку. Так как кнопки можно использовать в различных местах, это дает больше гибкости при выборе отображения значка. 
 
-<table>
-    <tr>
-        <td><b>1:1</b><br/>45°</td>
-        <td><b>1:2</b><br />26,57° (вертикальн.)<br/>63,43°(горизонтальн.)</td>
-        <td><b>1:3</b><br/>18,43° (вертикальн.)<br/>71,57°(горизонтальн.)</td>
-        <td><b>1:4</b><br/>14,04° (вертикальн.)<br/>75,96°(горизонтальн.)</td>
-    </tr>
-    <tr>
-        
-        <td><img src="images/icons-grid-1-1.png" alt="1:1" /></td>
-        <td><img src="images/icons-grid-1-2.png" alt="1:2" /></td>
-        <td><img src="images/icons-grid-1-3.png" alt="1:3" /></td>
-        <td><img src="images/icons-grid-1-4.png" alt="1:4" /></td>
-    </tr>  
-</table>
+Вот несколько способов добавления значка в кнопку.
 
-<p>Вот несколько примеров:</p>
+:::row::: :::column span="2"::: <b>Шаг 1</b><br>
+        Выберите для кнопки семейство шрифтов `Segoe MDL2 Assets` и задайте свойству content значение Юникода, соответствующее глифу, который вы хотите использовать :::column-end::: :::column::: ![Создание кнопки значка, шаг 1](images/icons/create-icon-step-1.svg) :::column-end::: :::row-end:::
 
-<table>
-    <tr>
-        <td><img src="images/icons-angles-examples-1.png" alt="A 1:1 angle example" /></td>
-        <td><img src="images/icons-angles-examples-2.png" alt="A 1:2 angle example" /></td>
-        <td><img src="images/icons-angles-examples-3.png" alt="A 1:3 angle example" /></td>
-        <td><img src="images/icons-angles-examples-4.png" alt="A 1:4 angle example" /></td>
-    </tr>
-</table>
+```xaml 
+<Button FontFamily="Segoe MDL2 Assets" Content="&#xE102;" />
+```
 
-## <a name="curves"></a>Кривые
+:::row::: :::column span="2"::: <b>Шаг 2</b><br>
+        Вы можете использовать один из объектов элемента значка: [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon), [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon), [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) и [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon). Это позволяет получить более широкий выбор значков и объединять разные значки и другие типы содержимого, например текст: want: :::column-end::: :::column::: ![Создание кнопки значка, шаг 2](images/icons/icon-text-step-2.svg) :::column-end::: :::row-end:::
 
-Кривые линии создаются из секций круга. Наклонять их следует исключительно для прикрепления к пиксельной сетке. 
+```xaml 
+<Button>
+    <StackPanel>
+        <SymbolIcon Symbol="Play" />
+        <TextBlock>Play the movie</TextBlock>
+    </StackPanel>
+</Button>
+```
 
-<table>
-    <tr>
-        <td>1/4 круга</td>
-        <td>1/8 круга</td>
-    </tr>
-    <tr>
-        <td><img src="images/icons-curves-14circle.png" alt="1/4 circle" /></td>
-        <td><img src="images/icons-curves-18circle.png" alt="1/8 circle" /></td>
-    </tr>
-    <tr>
-        <td><img src="images/icons-curves-examples-1.png" alt="1/4 cirlce example" /></td>
-        <td><img src="images/icons-curves-examples-2.png" alt="1/8 circle example" /></td>
-    </tr>    
-</table>
+## <a name="create-a-series-of-icons-in-a-command-bar"></a>Создание серии значков на панели команд
 
-## <a name="geometric-construction"></a>Создание объектов по принципам геометрии
+:::row::: :::column span::: Если у вас есть несколько похожих команд, таких как вырезать, скопировать и вставить, или набор команд рисования для программы редактирования фотографий, объедините их на [панели команд](../controls-and-patterns/app-bars.md). На панели команд размещается одна или несколько кнопок панели приложения или кнопок-переключателей панели приложения, каждая из которых представляет действие. У каждой кнопки есть свойство [Icon](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon), которое используется для выбора отображаемого значка. Существует множество способов указать значок. :::column-end::: :::column::: ![Пример панели команд со значками](images/icons/create-icon-command-bar.svg) :::column-end::: :::row-end:::
 
-При создании значков рекомендуется использовать исключительно геометрические фигуры.
+Проще всего использовать список стандартных значков, которые предоставляем мы,— просто укажите имя значка, например "Назад" или "Стоп", и система его нарисует: 
 
-![Значок гитары с геометрическим наложением ](images/icons-geometric-construction.png)
+``` xaml
+<CommandBar>
+    <AppBarToggleButton Icon="Shuffle" Label="Shuffle" Click="AppBarButton_Click" />
+    <AppBarToggleButton Icon="RepeatAll" Label="Repeat" Click="AppBarButton_Click"/>
+    <AppBarSeparator/>
+    <AppBarButton Icon="Back" Label="Back" Click="AppBarButton_Click"/>
+    <AppBarButton Icon="Stop" Label="Stop" Click="AppBarButton_Click"/>
+    <AppBarButton Icon="Play" Label="Play" Click="AppBarButton_Click"/>
+    <AppBarButton Icon="Forward" Label="Forward" Click="AppBarButton_Click"/>
+</CommandBar>
 
-## <a name="filled-shapes"></a>Заполненные фигуры 
+```
+Полный список имен значков см. в разделе [Перечисление Symbol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
 
-Значки при необходимости могут содержать заполненные фигуры, но их размер не должен превышать 4 пкс в значке размером 32×32 пкс. Размер заполненных кругов не должен превышать 6×6 пкс. 
+Существуют и другие способы указания значков для кнопок на панели команд:
 
-![Заполнение 5×8 пкс ](images/icons-filled-shapes.png)
++ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon) — основой значка служит глиф из указанного семейства шрифтов.
++ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon)— основой значка служит файл растрового изображения с указанным **Uri**.
++ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon)— основой значка служат данные [Path](/uwp/api/windows.ui.xaml.shapes.path).
 
-## <a name="badges"></a>Индикаторы событий
+Дополнительные сведения о панелях команд см. в [статье, посвященной панели команд](../controls-and-patterns/app-bars.md). 
 
-"Индикатор событий"— это общий термин, используемый для обозначения элемента, который добавляется к значку, но который не предназначен для интеграции с основным элементом значка. Как правило, эмблема содержит другие сведения о значке, например его состояние или выполняемое действие. Для обозначения этого элемента используются и другие термины: наложение, аннотация или модификатор. 
 
-![Индикатор событий состояния ](images/icons-badge-status.png)
 
-![Индикатор действий ](images/icons-badge-action.png)
-
-Индикаторы событий состояния используют заполненный цветной объект, который расположен поверх значка, в то время как индикаторы действий интегрируются со значком и совпадают с ним по цвету и толщине линий.
-
-<table>
-<tr>
-    <td>Стандартные индикаторы событий состояния</td>
-    <td>Стандартные индикаторы действий</td>
-</tr>
-<tr>
-    <td><img src="images/icons-badge-common-states-1.png" alt="Status badge " /></td>
-    <td><img src="images/icons-badge-common-states-2.png" alt="Action badge " /></td>
-</tr>
-</table>
-<p></p>
-
-### <a name="badge-color"></a>Цвет индикатора событий 
-
-Цвета должны использоваться в индикаторах событий только для обозначения состояния значка. Цвета, используемые в индикаторах событий состояния, передают пользователю определенные эмоционально насыщенные сообщения. 
-
-<table>
-<tr><td>Зеленый— #128B44</td><td>Синий— #2C71B9</td><td>Желтый— #FDC214</td></tr>
-<tr><td>Положительное: выполнено, завершено </td><td>Нейтральное: справка, уведомление </td><td>Предупреждающие: оповещение, предупреждение </td></tr>
-<tr><td><img src="images/icons-color-inbadging-1.png" alt="Green status" /></td><td><img src="images/icons-color-inbadging-2.png" alt="Blue status" /></td>
-<td><img src="images/icons-color-inbadging-3.png" alt="Yellow status" /></td></tr>
-</table>
-<p></p>
-
-### <a name="badge-position"></a>Положение индикатора событий
-
-Положение по умолчанию для любого индикатора событий состояния или действия — внизу справа. Располагать индикаторы иначе следует только при отсутствии технической возможности расположить их указанным способом. 
-
-### <a name="badge-sizing"></a>Размер индикатора событий
-
-Индикаторы событий должны иметь размер 10–18 пкс в сетке 32×32 пкс. 
-
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Статьи по теме
 
 * [Руководство по работе с ресурсами плиток и значков](../shell/tiles-and-notifications/app-assets.md)
