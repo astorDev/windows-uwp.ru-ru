@@ -4,19 +4,19 @@ Description: Create a modern Windows app package for your existing Windows Forms
 Search.Product: eADQiWindows 10XVcnh
 title: Мост для классических приложений
 ms.author: normesta
-ms.date: 08/30/2017
+ms.date: 05/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: 3c4285d6717c27e78c13ac6588fe634c566138d9
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 321fb71d44e1298b29b6119168f67207e6df4a8d
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832375"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989698"
 ---
 # <a name="desktop-bridge"></a>Мост для классических приложений
 
@@ -54,9 +54,7 @@ ms.locfileid: "1832375"
 
 ## <a name="prepare"></a>Подготовка
 
-Вы планируете опубликовать свое приложение в [Store приложений для Windows](https://www.microsoft.com/store/apps)? Если да, то начните с заполнения [этой формы](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). После этого Microsoft свяжется с вами, чтобы начать процесс публикации. В рамках этого процесса вы зарезервируете имя в Store и получите информацию, необходимую для создания пакета приложения для Windows.
-
-Далее ознакомьтесь с разделом [Подготовка классического приложения к упаковке](desktop-to-uwp-prepare.md) и устраните все проблемы, применимые к вашему приложению, до создания для него пакета приложения для Windows. Возможно, для создания пакета в приложение не придется вносить никакие изменения. Однако в некоторых ситуациях для создания пакета для приложения может потребоваться его предварительная оптимизация.
+Сначала подготовьте приложение, ознакомившись с разделом [Подготовка классического приложения к упаковке](desktop-to-uwp-prepare.md) и устранив все проблемы, применимые к вашему приложению, после чего можно будет создать соответствующий пакет приложения для Windows. Возможно, для создания пакета в приложение не придется вносить никакие изменения. Однако в некоторых ситуациях для создания пакета для приложения может потребоваться его предварительная оптимизация.
 
 <a id="convert" />
 
@@ -188,6 +186,30 @@ InstallShield предоставляет единое решение для ра
 
 См. [RAD Studio от Embarcadero](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge)
 
+#### <a name="raypack-studio"></a>RayPack Studio
+
+Решение для упаковки [RayPack Studio](https://raynet.de/Raynet-Products/RayPackStudio) от Raynet поддерживает мост для классических приложений как один из нескольких возможных результатов применения эффективной, быстро настраиваемой платформы преобразования и повторной упаковки.
+
+<img width="20%" src="images/desktop-to-uwp/RaynetLogo_v3.png">
+
+Существующие виртуальные среды (VMware Workstation, Hyper-V) могут быть использованы для выполнения автоматического/группового преобразования без длительной настройки среды. Компонент студии ([RayQC Advanced](https://raynet.de/Raynet-Products/RayQCad)) выполняет предварительные проверки и тесты на совместимость, чтобы подтвердить пригодность программного обеспечения для преобразования. Кроме того, пользователи теперь могут выполнять полные проверки на совместимость и наличие конфликтов для различных выпусков Windows 10, включая юбилейное обновление и обновление Creators.
+
+Помимо программных пакетов в формате APPX/UWP для Windows 10, RayPack Studio также позволяет создавать классические пакеты установщика Windows (MSI), исправления (MSP), преобразования (MST) и пакеты App-V. Кроме того, данное решение включает набор программных продуктов и компонентов для упаковки профессионального программного обеспечения предприятий. RayPack Studio позволяет выполнять не только упаковку и виртуализацию программного обеспечения, но и все связанные с упаковкой задачи: проверку приложений и пакетов на совместимость и наличие конфликтов ([RayQC Advanced](https://raynet.de/Raynet-Products/RayQCad)), оценку программного обеспечения ([RayEval](https://raynet.de/Raynet-Products/RayEval)), контроль качества ([RayQC](https://raynet.de/Raynet-Products/RayQC)).
+
+С помощью системы корпоративных рабочих процессов [RayFlow](https://raynet.de/Raynet-Products/RayFlow) от Raynet пользователи могут эффективно работать с программным обеспечением на каждом этапе жизненного цикла корпоративного приложения, включая заказ пакетов, оценку, анализ, упаковку, контроль качества, тесты на приемлемость для пользователя и разработку. Все пакеты и форматы можно хранить и развертывать непосредственно в SCCM или с помощью других решений. Прохождение приложением всего жизненного цикла отслеживается и контролируется через систему RayFlow. Можно также интегрировать любые системы заказов, например ServiceNow. Используя свои инструменты для поставщиков услуг, Raynet создает фабрики по упаковке программного обеспечения по всему миру.
+
+Убедитесь во всем сами, получив [лицензию на бесплатную пробную версию](https://raynet.de/contact?init=license) RayPack Studio и RayFlow от Raynet. Подробнее см. на сайте [www.raynet.de](https://raynet.de/home).
+
+**Дополнительные ссылки**:
+
+* Raynet: [https://raynet.de/home](https://raynet.de/home)
+* RayPack Studio: [https://raynet.de/Raynet-Products/RayPackStudio](https://raynet.de/Raynet-Products/RayPackStudio)
+* RayFlow: [https://raynet.de/Raynet-Products/RayFlow](https://raynet.de/Raynet-Products/RayFlow)
+* RayEval: [https://raynet.de/Raynet-Products/RayEval](https://raynet.de/Raynet-Products/RayEval)
+* RayQC: [https://raynet.de/Raynet-Products/RayQC](https://raynet.de/Raynet-Products/RayQC)
+* RayQC Advanced: [https://raynet.de/Raynet-Products/RayQCad](https://raynet.de/Raynet-Products/RayQCad)
+* Лицензия на бесплатную пробную версию: [https://raynet.de/contact?init=license](https://raynet.de/contact?init=license)
+
 ### <a name="manual-packaging"></a>Упаковка вручную
 
 Помимо прочего вы можете преобразовать приложение без использования этих средств. Если вы предпочитаете детальный контроль над преобразованием, можно создать файл манифеста и затем запустить средство **MakeAppx.exe**, чтобы создать пакет приложения для Windows.
@@ -228,7 +250,7 @@ InstallShield предоставляет единое решение для ра
 Чтобы протестировать приложение в реалистичной среде во время подготовки к распространению, лучше всего подписать приложение и затем установить его. См. [Тестирование приложения](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app).
 
 >[!IMPORTANT]
-> Если вы планируете опубликовать приложение в Microsoft Store, проверьте исправность его работы на устройствах под управлением Windows 10 S. Это требование Store. См. статью [Тестирование приложения для Windows на Windows 10 S](desktop-to-uwp-test-windows-s.md).
+> Если вы планируете опубликовать приложение в Microsoft Store, проверьте исправность его работы на устройствах под управлением Windows 10 в S-режиме. Это требование магазина. См. [Тестирование приложения для Windows 10 в S-режиме](desktop-to-uwp-test-windows-s.md).
 
 ## <a name="validate"></a>Проверка
 
