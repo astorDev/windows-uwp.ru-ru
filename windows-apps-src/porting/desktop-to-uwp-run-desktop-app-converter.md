@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 141d87bf48b5b4835055375320f1e4a79498a42f
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: 3d03ad8aa066a4d3b8f5aaaf2532f09d9ce0acbe
+ms.sourcegitcommit: 6382f751f09e2f4aa8406c1ceeb25b5189e23da3
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989678"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "2411204"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>Упаковка приложения с помощью Desktop App Converter (мост для классических приложений)
 
@@ -363,7 +363,7 @@ Desktop App Converter использует очень консервативны
 В процессе преобразования DesktopAppConverter автоматически запускает PEHeaderCertFixTool, чтобы исправить все поврежденные PE-заголовки. Но вы также можете запустить PEHeaderCertFixTool для пакета приложения UWP для Windows, свободных файлов или определенного двоичного файла. Вот пример.
 
 ```CMD
-PEHeaderCertFixTool.exe <binary file>|<.appx package>|&lt;folder> [/c] [/v]
+PEHeaderCertFixTool.exe <binary file>|<.appx package>|<folder> [/c] [/v]
  /c   -- check for corrupted certificate but do not fix (optional)
  /v   -- verbose (optional)
 example1: PEHeaderCertFixTool app.exe
