@@ -1,8 +1,8 @@
 ---
 author: drewbatgit
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
-description: "В этой статье описывается, как добавить возможности адаптивной потоковой передачи мультимедийного содержимого с защитой Microsoft PlayReady в приложение универсальной платформы Windows (UWP)."
-title: "Адаптивная потоковая передача с защитой PlayReady"
+description: В этой статье описывается, как добавить возможности адаптивной потоковой передачи мультимедийного содержимого с защитой Microsoft PlayReady в приложение универсальной платформы Windows (UWP).
+title: Адаптивная потоковая передача с защитой PlayReady
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.openlocfilehash: aebd2e2de0b1c4991b69b02f1f215ab58feef4a9
 ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/21/2017
+ms.locfileid: "907110"
 ---
 # <a name="adaptive-streaming-with-playready"></a>Адаптивная потоковая передача с защитой PlayReady
 
