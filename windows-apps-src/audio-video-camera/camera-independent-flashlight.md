@@ -1,8 +1,8 @@
 ---
 author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
-description: "В этой статье можно найти информацию о том, как получить доступ к фонарику устройства (при наличии) и использовать его. Управление фонариком осуществляется отдельно от управления камерой и вспышкой устройства."
-title: "Независимый от камеры фонарик"
+description: В этой статье можно найти информацию о том, как получить доступ к фонарику устройства (при наличии) и использовать его. Управление фонариком осуществляется отдельно от управления камерой и вспышкой устройства.
+title: Независимый от камеры фонарик
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,9 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.openlocfilehash: 7777b1b3f72090667f1e75f3c9e23b6adcd9f2d5
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.locfileid: "223809"
 ---
 # <a name="camera-independent-flashlight"></a>Независимый от камеры фонарик
 
