@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
-ms.openlocfilehash: c96a90e458d2363bc3bc748e80728df30ff55a5c
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 8d6ebe8e3344f5276939471d7ac569ae83d48311
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1701140"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792884"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>Системные ресурсы для приложений UWP и игр для Xbox One
 
@@ -59,3 +59,5 @@ ms.locfileid: "1701140"
 ## <a name="see-also"></a>См. также:
 - [UWP на Xbox One](index.md)
 - [Начало работы с программой Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)
+- [DirectX и UWP на Xbox один](https://blogs.msdn.microsoft.com/chuckw/2017/12/15/directx-and-uwp-on-xbox-one/)
+

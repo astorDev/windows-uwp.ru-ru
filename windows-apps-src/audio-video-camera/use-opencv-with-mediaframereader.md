@@ -10,16 +10,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: d9c2ac6ad4de6dc67cc4c661e055ad43ecb143ec
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 43545f2a8e1965124560479d399df79d247c5f05
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692805"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2789809"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Использование библиотеки компьютерного зрения с открытым исходным кодом (OpenCV) с MediaFrameReader
 
-В этой статье рассказывается, как использовать библиотеку компьютерного зрения с открытым исходным кодом (OpenCV), библиотеку собственного кода, которая предоставляет широкий набор алгоритмов обработки изображений с классом [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader), который может считывать мультимедиа-кадры из нескольких источников одновременно. В примере кода в этой статье рассматривается создание простого приложения, которое получает кадры с цветной камеры, размывает каждый кадр, используя библиотеку OpenCV, и затем отображает обработанное изображение в элементе управления XAML **Image**.
+В этой статье рассказывается, как использовать библиотеку компьютерного зрения с открытым исходным кодом (OpenCV), библиотеку собственного кода, которая предоставляет широкий набор алгоритмов обработки изображений с классом [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader), который может считывать мультимедиа-кадры из нескольких источников одновременно. В примере кода в этой статье рассматривается создание простого приложения, которое получает кадры с цветной камеры, размывает каждый кадр, используя библиотеку OpenCV, и затем отображает обработанное изображение в элементе управления XAML **Image**. 
+
+>[!NOTE]
+>OpenCV.Win.Core и OpenCV.Win. ImgProc не обновляются регулярно, но по-прежнему рекомендуются для создания OpenCVHelper, как описано на этой странице.
 
 Эта статья основана на содержимом двух других статей:
 
@@ -29,7 +32,8 @@ ms.locfileid: "1692805"
 
 Помимо этих статей, чтобы просмотреть и скачать полный рабочий пример сценария, описанного в этой статье, см. раздел [Пример кадров камеры + OpenCV](https://go.microsoft.com/fwlink/?linkid=854003) в репозитории универсальных примеров Windows на GitHub.
 
-Включение библиотеки OpenCV в проект приложения UWP с помощью пакетов NuGet. В примере в этой статье используются пакеты NuGet OpenCV.Win.Core и OpenCV.Win.ImgProc. Статья [Обработка программных точечных рисунков с помощью OpenCV](process-software-bitmaps-with-opencv.md) содержит инструкции по добавлению этих пакетов в решение. Сведения по разработке с помощью OpenCV можно найти на сайте [http://opencv.org](http://opencv.org)
+Для начала разработки быстро, можно включить в библиотеку OpenCV в проект приложения UWP при помощи пакетов NuGet, но эти пакеты не может передать процесс certficication приложения при отправке приложения в магазин, поэтому рекомендуется, что вы загрузили OpenCV Библиотека исходного кода и построения двоичные файлы себя перед отправкой приложения. Сведения по разработке с помощью OpenCV можно найти на сайте [http://opencv.org](http://opencv.org)
+
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>Реализация компонента среды выполнения Windows с собственным кодом OpenCVHelper
 Выполните действия, описанные в разделе [Обработка программных точечных рисунков с помощью OpenCV](process-software-bitmaps-with-opencv.md), для создания вспомогательного компонента среды выполнения Windows OpenCV и добавьте ссылку на проект компонента в ваше решение для приложения UWP.

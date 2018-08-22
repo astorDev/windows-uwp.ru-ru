@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, начать, начало, работы
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ed578f40417f72adb080f41703711e47c858c1f
-ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
-ms.translationtype: HT
+ms.openlocfilehash: 13aa1e61a2d81cfa7faed0236551dad41bd00057
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "1912952"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791549"
 ---
 # <a name="get-started-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Начало работы с [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Чтобы приступить к работе с C++/WinRT, в этой статье описывается простой пример кода.
@@ -51,7 +51,7 @@ int main()
     SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
     for (const SyndicationItem syndicationItem : syndicationFeed.Items())
     {
-        hstring titleAsHstring = syndicationItem.Title().Text();
+        winrt::hstring titleAsHstring = syndicationItem.Title().Text();
         std::wcout << titleAsHstring.c_str() << std::endl;
     }
 }
@@ -103,7 +103,7 @@ for (const SyndicationItem syndicationItem : syndicationFeed.Items()) { ... }
 [**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) является диапазоном, определяемым итераторами, возвращенными функциями **begin** и **end** (или их постоянными, обратными, либо постоянно-обратными вариантами). По этой причине вы может перечислять **Items** через основанный на диапазоне оператор `for` или с помощью функции шаблона **std::for_each**.
 
 ```cppwinrt
-hstring titleAsHstring = syndicationItem.Title().Text();
+winrt::hstring titleAsHstring = syndicationItem.Title().Text();
 std::wcout << titleAsHstring.c_str() << std::endl;
 ```
 

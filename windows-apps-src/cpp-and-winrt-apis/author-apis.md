@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf5d196d6dfa390fc537a0f14c041049d4ef714
-ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
-ms.translationtype: HT
+ms.openlocfilehash: d2f9b336d9a95efe28668991d66ab0a9e48e96e7
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1877326"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792026"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Создание API-интерфейсов с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 В этом разделе показано, как создавать API-интерфейсы C++/ WinRT, используя базовую структуру [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) прямо или косвенно. Синонимами для *создавать* в данном контексте являются понятия *производить* и *реализовывать*. В этом разделе рассматриваются следующие сценарии реализации интерфейсов API на C++/WinRT в указанном порядке.
@@ -252,14 +252,14 @@ namespace MyProject
 }
 ```
 
-Чтобы перейти от **MyType** к объекту **IStringable** или **IClosable**, который можно использовать или вернуть в качестве части вашей проекции, можно вызвать шаблон функции [**winrt::make**](/uwp/cpp-ref-for-winrt/make) шаблона функции. [**make**] возвращает интерфейс по умолчанию типа реализации.
+Чтобы перейти от **MyType** к объекту **IStringable** или **IClosable**, который можно использовать или вернуть в качестве части вашей проекции, можно вызвать шаблон функции [**winrt::make**](/uwp/cpp-ref-for-winrt/make) шаблона функции. **сделать** возвращает тип реализации интерфейса по умолчанию.
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
 ```
 
 > [!NOTE]
-> Однако если вы ссылаетесь на тип из пользовательского интерфейса XAML, то в одном проекте будут и тип реализации, и тип проекции. В этом случае [**make**] возвращает экземпляр проецируемого типа. Пример кода для этого сценария см. в разделе [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
+> Однако если вы ссылаетесь на тип из пользовательского интерфейса XAML, то в одном проекте будут и тип реализации, и тип проекции. В этом случае **сделать** возвращает экземпляр планируемый типа. Пример кода для этого сценария см. в разделе [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
 Мы можем использовать `istringable` (в примере выше) только для вызова членов интерфейса **IStringable**. Но интерфейс C++/WinRT (представляющий собой проецируемый интерфейс) является производным от [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). Поэтому вы можете вызвать для него [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function), чтобы запросить другие интерфейсы, которые также можно использовать или вернуть.
 

@@ -10,16 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0be1a9ff09593676ded28f5024b0338df966da67
-ms.sourcegitcommit: e4627686138ec8c885696c4c511f2f05195cf8ff
-ms.translationtype: HT
+ms.openlocfilehash: 79c2bd63c326b90b0b5d6e5007c4610f22bff670
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1893663"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2789798"
 ---
 # <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a>Пошаговое руководство: создание компонента среды выполнения Windows на C++/CX и его вызов из JavaScript или C#
 > [!NOTE]
-> В этом разделе представлена вспомогательная информация для поддержки приложений на C++/CX. Однако в новых приложениях мы рекомендуем использовать [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md). C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным API-интерфейсам Windows.
+> В этом разделе представлена вспомогательная информация для поддержки приложений на C++/CX. Однако в новых приложениях мы рекомендуем использовать [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md). C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным API-интерфейсам Windows. Чтобы узнать, как создать компонент среды выполнения Windows, с помощью C + +/ WinRT, видеть [создавать события в C + +/ WinRT](../cpp-and-winrt-apis/author-events.md).
 
 В этом пошаговом руководстве описан процесс создания базового компонента среды выполнения Windows, являющегося библиотекой DLL, которую можно вызвать из JavaScript, C# или VisualBasic. Прежде чем приступить к изучению этого пошагового руководства, убедитесь, что вы знакомы с такими понятиями, как абстрактный двоичный интерфейс (ABI), ссылочные классы и расширения компонентов Visual C++, которые упрощают работу со ссылочными классами. Дополнительные сведения см. в статье [Создание компонентов среды выполнения Windows в C++](creating-windows-runtime-components-in-cpp.md) и [Справочник по языку Visual C++ (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
 

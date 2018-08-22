@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 68c22c12ac5c5dbd90878e8828160e0f56831898
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.openlocfilehash: e38e9d61e8546d412cc30bad26680243f3a188e4
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638994"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792347"
 ---
 # <a name="menus-and-context-menus"></a>Меню и контекстные меню
 
@@ -78,7 +78,7 @@ ms.locfileid: "1638994"
 <ul>
 <li>обладают одной точкой входа (например, меню "Файл" в верхней части экрана), которая отображается постоянно;</li>
 <li>обычно прикреплены к кнопке или родительскому элементу меню;</li>
-<li>вызываются левым щелчком мыши (или эквивалентным действием, например нажатием пальцем);</li><li>связаны с элементом посредством его свойств [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) или [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx).</li>
+<li>вызываются левым щелчком мыши (или эквивалентным действием, например нажатием пальцем);</li><li>связаны с элементом посредством его свойств <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx">Flyout</a> или <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx">FlyoutBase.AttachedFlyout</a>.</li>
 </ul>
 </div>
   <div class="side-by-side-content-right">
@@ -86,7 +86,7 @@ ms.locfileid: "1638994"
 
 <ul>
 <li>Подключаются к одному элементу и отображают вспомогательные команды.</li>
-<li>Вызываются правым щелчком мыши (или эквивалентным действием, например нажатием и удерживанием пальцем);</li><li>связаны с элементом посредством его свойства [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx).</li>
+<li>Вызываются правым щелчком мыши (или эквивалентным действием, например нажатием и удерживанием пальцем);</li><li>связаны с элементом посредством его свойства <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx">ContextFlyout</a>.</li>
 </ul>
   </div>
 </div>

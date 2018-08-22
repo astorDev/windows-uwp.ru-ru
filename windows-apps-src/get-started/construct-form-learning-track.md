@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: начало работы, uwp, windows 10, обучающий курс, макет, форма
 ms.localizationpriority: medium
-ms.openlocfilehash: 20146c8a1bae92a46fc8cf878acd4d2dc5d2fb1e
-ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
-ms.translationtype: HT
+ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "1992100"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795456"
 ---
 # <a name="create-and-customize-a-form"></a>Создание и настройка формы
 
@@ -48,9 +48,9 @@ ms.locfileid: "1992100"
 
 ## <a name="what-goes-in-a-form"></a>Какие компоненты составляют форму?
 
-Вам потребуется заполнить форму различными [элементами управления XAML](../design/controls-and-patterns/controls-and-events-intro.md). Вероятно, они вам знакомы, но при необходимости вы всегда можете освежить свои знания, прочитав соответствующий раздел. В частности, вам потребуются элементы управления, позволяющие пользователю вводить текст или выбирать какое-либо значение из списка. Это основной список элементов, которые можно добавить. Вам не требуется читать о них все, просто ознакомьтесь с ними, чтобы понять, как они выглядят и работают.
+Вам потребуется заполнить форму различными [элементами управления XAML](../design/controls-and-patterns/controls-and-events-intro.md). Вероятно, они вам знакомы, но при необходимости вы всегда можете освежить свои знания, прочитав соответствующий раздел. В частности, вам потребуются элементы управления, позволяющие пользователю вводить текст или выбирать какое-либо значение из списка. Это простой список параметров, которые можно добавить — вам не нужно читать все о них, просто достаточно, чтобы понять, как они выглядят и принципы их работы.
 
-* [TextBox](../design/controls-and-patterns/text-box.md) позволяет пользователю вводить текст в вашем приложении.
+* [Текстовое поле](../design/controls-and-patterns/text-box.md) позволяет вводимый текст пользователя в веб-приложения.
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) позволяет пользователю выбрать один из двух вариантов.
 * [DatePicker](../design/controls-and-patterns/date-picker.md) дает пользователю возможность выбора даты.
 * [TimePicker](../design/controls-and-patterns/time-picker.md) дает пользователю возможность выбора времени.
@@ -71,18 +71,18 @@ ms.locfileid: "1992100"
         <TextBox x:Name="Address" Header="Address" PlaceholderText="Address" Margin="0,24,0,0" HorizontalAlignment="Left" />
         <TextBox x:Name="Address2" Margin="0,24,0,0" PlaceholderText="Address 2" HorizontalAlignment="Left" />
             <RelativePanel>
-                <TextBox x:Name="City" PlaceholderText="City" Margin="0,24,0,0"HorizontalAlignment="Left" />
+                <TextBox x:Name="City" PlaceholderText="City" Margin="0,24,0,0" HorizontalAlignment="Left" />
                 <ComboBox x:Name="State" PlaceholderText="State" Margin="24,24,0,0" RelativePanel.RightOf="City">
                     <!--List of valid states-->
                 </ComboBox>
             </RelativePanel>
     </StackPanel>
-    <StackPanel x:Name="Associate" Margin="20" RelativePanel.RightOf="Customer">
+    <StackPanel x:Name="Associate" Margin="20" RelativePanel.Below="Customer">
         <TextBox x:Name="AssociateName" Header= "Associate" Margin="0,24,0,0" HorizontalAlignment="Left" />
         <DatePicker x:Name="TargetInstallDate" Header="Target install Date" HorizontalAlignment="Left" Margin="0,24,0,0"></DatePicker>
         <TimePicker x:Name="InstallTime" Header="Install Time" HorizontalAlignment="Left" Margin="0,24,0,0"></TimePicker>
     </StackPanel>
-    <StackPanel x:Name="Save" Orientation="Horizontal" RelativePanel.Below="Customer">
+    <StackPanel x:Name="Save" Orientation="Horizontal" RelativePanel.Below="Associate">
         <Button Content="Save" Margin="24" />
         <Button Content="Cancel" Margin="24" />
     </StackPanel>
@@ -110,9 +110,9 @@ ms.locfileid: "1992100"
             </VisualState.StateTriggers>
 
             <VisualState.Setters>
-                <Setter Target="Associate.(RelativePanel.RightOf)" Value=""/>
-                <Setter Target="Associate.(RelativePanel.Below)" Value="Customer"/>
-                <Setter Target="Save.(RelativePanel.Below)" Value="Associate"/>
+                <Setter Target="Associate.(RelativePanel.RightOf)" Value="Customer"/>
+                <Setter Target="Associate.(RelativePanel.Below)" Value=""/>
+                <Setter Target="Save.(RelativePanel.Below)" Value="Customer"/>
             </VisualState.Setters>
         </VisualState>
     </VisualStateGroup>
@@ -136,7 +136,7 @@ ms.locfileid: "1992100"
 
 ## <a name="going-further"></a>Дальнейшая работа
 
-Несмотря на то что здесь вы создали форму, концепции макетов и элементов управления применяются во всех пользовательских интерфейсах на XAML, которые можно создать. Вы всегда можете снова прочесть документы, ссылки на которые мы здесь приводим, и поэкспериментировать со своей формой, добавляя новые функции пользовательского интерфейса и отлаживая работу пользователя с ним. Пошаговое руководство в виде более подробных описаний функций макета см. в нашем [учебнике по адаптивному макету](../design/basics/xaml-basics-adaptive-layout.md)
+Несмотря на то что здесь вы создали форму, концепции макетов и элементов управления применяются во всех пользовательских интерфейсах на XAML, которые можно создать. Вы можете прочитать документы мы ссылается на и поэкспериментируйте с формой, у вас, добавление новых компонентов пользовательского интерфейса и дальнейшей оптимизация удобство работы пользователей. Пошаговое руководство дополнительные возможности макета, см наших [при помощи учебника по адаптивное макета](../design/basics/xaml-basics-adaptive-layout.md)
 
 Формы также существуют не в вакууме — можно пройти на один шаг дальше и включить свою форму в [шаблон основных и подробных данных](../design/controls-and-patterns/master-details.md) или [элемент управления Pivot](../design/controls-and-patterns/tabs-pivot.md). Также, если вы хотите поработать с кодом программной части вашей формы, можете приступить к работе с разделом [общих сведений о событиях](../xaml-platform/events-and-routed-events-overview.md).
 

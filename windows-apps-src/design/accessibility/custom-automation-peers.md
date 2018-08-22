@@ -6,18 +6,18 @@ title: Настраиваемые одноранговые элементы ав
 label: Custom automation peers
 template: detail.hbs
 ms.author: mhopkins
-ms.date: 09/25/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bab0ac8b89815a67be2c963979b3712f022248b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a2f9caf8519aa76ef9487e5318a238a6e1d53fe2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1656569"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800540"
 ---
 # <a name="custom-automation-peers"></a>Настраиваемые одноранговые элементы автоматизации  
 
@@ -122,7 +122,6 @@ UWP основывается на существующих методах авт
 
 Например, следующий код объявляет, что пользовательский элемент управления `NumericUpDown` должен использовать одноранговый элемент `NumericUpDownPeer` для целей модели автоматизации пользовательского интерфейса.
 
-C#
 ```csharp
 using Windows.UI.Xaml.Automation.Peers;
 ...
@@ -138,7 +137,6 @@ public class NumericUpDown : RangeBase {
 }
 ```
 
-Visual Basic
 ```vb
 Public Class NumericUpDown
     Inherits RangeBase
@@ -151,7 +149,29 @@ Public Class NumericUpDown
 End Class
 ```
 
-C++
+```cppwinrt
+// NumericUpDown.idl
+namespace MyNamespace
+{
+    runtimeclass NumericUpDown : Windows.UI.Xaml.Controls.Primitives.RangeBase
+    {
+        NumericUpDown();
+        Int32 MyProperty;
+    }
+}
+
+// NumericUpDown.h
+...
+struct NumericUpDown : NumericUpDownT<NumericUpDown>
+{
+    ...
+    Windows::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer()
+    {
+        return winrt::make<MyNamespace::implementation::NumericUpDownAutomationPeer>(*this);
+    }
+};
+```
+
 ```cpp
 //.h
 public ref class NumericUpDown sealed : Windows::UI::Xaml::Controls::Primitives::RangeBase
@@ -160,7 +180,7 @@ public ref class NumericUpDown sealed : Windows::UI::Xaml::Controls::Primitives:
 protected:
     virtual AutomationPeer^ OnCreateAutomationPeer() override
     {
-         return ref new NumericUpDown(this);
+         return ref new NumericUpDownAutomationPeer(this);
     }
 };
 ```
@@ -193,20 +213,38 @@ protected:
 ## <a name="initialization-of-a-custom-peer-class"></a>Инициализация пользовательского класса одноранговых элементов  
 Одноранговый элемент автоматизации должен определять типобезопасный конструктор, который использует экземпляр элемента управления владельца для базовой инициализации. В следующем примере реализация передает значение *owner* на базу [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506), и в итоге именно [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) фактически использует *owner* для задания [**FrameworkElementAutomationPeer.Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner).
 
-C#
 ```csharp
 public NumericUpDownAutomationPeer(NumericUpDown owner): base(owner)
 {}
 ```
 
-Visual Basic
 ```vb
 Public Sub New(owner As NumericUpDown)
     MyBase.New(owner)
 End Sub
 ```
 
-C++
+```cppwinrt
+// NumericUpDownAutomationPeer.idl
+import "NumericUpDown.idl";
+namespace MyNamespace
+{
+    runtimeclass NumericUpDownAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer
+    {
+        NumericUpDownAutomationPeer(NumericUpDown owner);
+        Int32 MyProperty;
+    }
+}
+
+// NumericUpDownAutomationPeer.h
+...
+struct NumericUpDownAutomationPeer : NumericUpDownAutomationPeerT<NumericUpDownAutomationPeer>
+{
+    ...
+    NumericUpDownAutomationPeer(MyNamespace::NumericUpDown const& owner);
+};
+```
+
 ```cpp
 //.h
 public ref class NumericUpDownAutomationPeer sealed :  Windows::UI::Xaml::Automation::Peers::RangeBaseAutomationPeer
@@ -225,7 +263,6 @@ public:    NumericUpDownAutomationPeer(NumericUpDown^ owner);
 
 Как минимум, при каждом определении нового однорангового класса следует реализовать метод [**GetClassNameCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getclassnamecore), как показано в следующем примере.
 
-C#
 ```csharp
 protected override string GetClassNameCore()
 {
@@ -244,7 +281,6 @@ protected override string GetClassNameCore()
 
 Реализация [**GetAutomationControlTypeCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) описывает элемент управления, возвращая значение [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182). Несмотря на то что вы можете вернуть **AutomationControlType.Custom**, необходимо возвращать один из более конкретных типов элементов управления, если он точно описывает основные сценарии вашего элемента управления. Вот пример.
 
-C#
 ```csharp
 protected override AutomationControlType GetAutomationControlTypeCore()
 {
@@ -268,7 +304,7 @@ protected override AutomationControlType GetAutomationControlTypeCore()
 
 Хотя это не буквенный код, данный пример приближается к реализации [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore), уже присутствующей в [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506).
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -288,7 +324,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 
 Вот пример переопределения [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) для настраиваемого однорангового элемента. Сообщается о поддержке двух шаблонов — [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) и [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653). Элементом управления здесь выступает элемент управления отображением мультимедиа, которое может отображаться в полноэкранном режиме (режим переключения) и имеет индикатор выполнения, в пределах которого пользователи могут выбирать положение (элемент управления диапазоном). Этот код взят из [примера реализации специальных возможностей на языке XAML](http://go.microsoft.com/fwlink/p/?linkid=238570).
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -311,7 +347,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 ### <a name="forwarding-patterns-from-sub-elements"></a>Пересылка шаблонов из подэлементов  
 Реализация метода [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) может также указывать подэлемент или часть в качестве поставщика шаблона для своего основного элемента. В этом примере имитируется передача элементом [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) обработки шаблона прокрутки одноранговому элементу внутреннего элемента управления [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527). Чтобы указать подэлемент для обработки шаблона, этот код получает объект подэлемента, создает для подэлемента одноранговый элемент с помощью метода [**FrameworkElementAutomationPeer.CreatePeerForElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.createpeerforelement) и возвращает новый одноранговый элемент.
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -403,7 +439,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 
 Типичная реализация подразумевает, что API поставщика сначала вызывают [**Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner) для получения доступа к экземпляру элемента управления во время выполнения. Затем на этом объекте можно вызывать необходимый метод поведения.
 
-C#
+
 ```csharp
 public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCollapseProvider {
     private IndexCard ownerIndexCard;
@@ -447,7 +483,7 @@ public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCo
 
 Следующий образец кода показывает, как получить одноранговый объект из кода определения элемента управления и вызвать метод для создания события из этого однорангового элемента. В качестве оптимизации код определяет, есть ли какие-либо прослушиватели для данного типа события. Инициация события и создание объекта однорангового элемента только при наличии прослушивателей позволяет избежать лишних действий и обеспечивает готовность элемента управления к отклику.
 
-C#
+
 ```csharp
 if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 {

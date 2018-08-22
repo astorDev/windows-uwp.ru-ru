@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: Microsoft Edge, Azure, Visual Studio Code
 ms.technology: web
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d20d0b8f9c3e14bf341d2cc507af45b9138b014
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 42f11cbdd749a44c4ba0d8bc1a0397a4f2882257
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691253"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792171"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Создание одностраничного веб-приложения с серверной частью на основе API REST
 
@@ -298,7 +298,7 @@ for (var i=0; i < board.length; i++){
 
  - [Документация Azure DocumentDB](https://docs.microsoft.com/en-us/azure/documentdb/index)
 
-## <a name="part-ii-build-a-single-page-web-appl"></a>Часть II. Сборка одностраничного веб-приложения
+## <a name="part-ii-build-a-single-page-web-application"></a>Часть II: Построение одной страницы веб-приложения
 
 После того, как вы создали (или [загрузили](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) [серверную часть API REST](#part-i-build-a-rest-api-backend) из части I, вы готовы приступить к разработке клиентской части одностраничной игры для развития памяти с помощью [Node](https://nodejs.org/en/), [Express](http://expressjs.com/) и [Bootstrap ](http://getbootstrap.com/).
 

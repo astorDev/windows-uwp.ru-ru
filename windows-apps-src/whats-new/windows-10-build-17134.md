@@ -8,13 +8,13 @@ ms.date: 4/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: high
-ms.openlocfilehash: 7652e45cd4c5fc416429248929889eeffc04dba3
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: e2f12190c405ad611cf5b884b82c4a430aa5264f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832578"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792081"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Новые возможности для разработчиков в Windows 10, сборка 17134
 
@@ -38,7 +38,7 @@ ms.locfileid: "1832578"
 Представление навигации | Элемент управления [Представление навигации](../design/controls-and-patterns/navigationview.md) предоставляет сворачиваемое меню навигации для навигации верхнего уровня в вашем приложении. Этот элемент управления реализует шаблон панели навигации или меню типа "гамбургер" и автоматически адаптирует режим отображения области к разным размерам окон.
 Фокус отображения | Новый эффект [Фокус отображения](../design/style/reveal-focus.md) освещает нужные элементы при использовании Xbox One или экрана телевизора. Этот эффект анимирует границу элементов для фокусировки, например кнопок, когда пользователь наводит на них фокус с геймпада или клавиатуры.
 Звук | Благодаря свойству **SpatialAudioMode** XAML теперь поддерживает трехмерный звук. См. сведения о настройке в разделе [Звук](../design/style/sound.md).
-Плитки | [Уведомления на отслеживаемых плитках](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md) теперь поддерживаются в приложениях UWP на базе JavaScript.
+Плитки | [Уведомления на отслеживаемых плитках](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md) теперь поддерживаются в приложениях UWP на базе JavaScript.<br><br>Дополнительный заголовков и значка уведомлений, [теперь поддерживается из приложения Bridge рабочего стола](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications).
 Представление дерева | Элемент управления [TreeView](../design/controls-and-patterns/tree-view.md) создает иерархический список с разворачиваемыми и сворачиваемыми узлами, которые содержат вложенные элементы. Его можно использовать для демонстрации структуры папок или вложенных отношений в пользовательском интерфейсе.
 Стиль письма | Мы обновили и расширили статью о голосе и тоне, превратив ее в [Руководство по стилю письма](../design/style/writing-style.md). В нем содержится новая информация о принципах создания эффективного текста в приложении и даются рекомендации на основе передовых практик по составлению элементов управления (сообщений об ошибках и диалоговых окон).
 
@@ -59,7 +59,7 @@ C++/WinRT | [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-api
 Консольные приложения UWP | Теперь можно создавать консольные приложения C++ /WinRT или /CX UWP, выполняющиеся в окне консоли, например DOS или PowerShell. Консольные приложения используют окно консоли для ввода и вывода. Консольные приложения UWP можно публиковать в Microsoft Store, они имеют запись в списке приложений, а основную плитку можно закрепить в меню "Пуск". Дополнительные сведения см. в разделе [Создание консольного приложения универсальной платформы Windows](../launch-resume/console-uwp.md)
 Расширенные возможности манифеста приложений | В схему манифеста пакета приложения было добавлено несколько функций, включая широкий доступ к файловой системе, включение сканеров штрихкодов для устройств в месте обслуживания, определение консольного приложения UWP и многое другое. См. дополнительные сведения в разделе [Изменения манифеста приложения в Windows 10](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/what-s-changed-in-windows-10).
 Ориентиры и заголовки, поддерживаемые для специальных возможностей | Ориентиры и заголовки определяют разделы пользовательского интерфейса, которые способствуют эффективной навигации для пользователей специальных возможностей, таких как средства чтения с экрана. Дополнительные сведения см. в разделе [Ориентиры и заголовки](../design/accessibility/landmarks-and-headings.md).
-Машинное обучение | Машинное обучение Windows позволяет создавать приложения, оценивающие модели машинного обучения с предварительной подготовкой локально на устройствах Windows 10. Дополнительные сведения о платформе см. в разделе [Машинное обучение Windows](../machine-learning/index.md). </br> Пространство имен [MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.preview) содержит классы, позволяющие приложениям загружать модели машинного обучения, привязывать данные в качестве входных и оценивать результаты.
+Машинное обучение | Машинное обучение Windows позволяет создавать приложения, оценивающие модели машинного обучения с предварительной подготовкой локально на устройствах Windows 10. Дополнительные сведения о платформе см. в разделе [Машинное обучение Windows](https://docs.microsoft.com/windows/ai/). </br> Пространство имен [MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.preview) содержит классы, позволяющие приложениям загружать модели машинного обучения, привязывать данные в качестве входных и оценивать результаты.
 Элемент управления картой | Класс [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) имеет новое свойство **Region**, которое можно использовать для отображения содержимого в элемента управления "Карта" в зависимости от языка выбранного региона (например, области или края).
 Элементы карты | Класс [MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement) имеет новое свойство **IsEnabled**, которое можно использовать, чтобы указать, могут ли пользователи взаимодействовать с классом [MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement).
 Информация о месте на карте | Класс [PlaceInfo](https://docs.microsoft.com/uwp/api/windows.services.maps.placeinfo) содержит новый метод **CreateFromAddress**, который можно использовать для создания [PlaceInfo](https://docs.microsoft.com/uwp/api/windows.services.maps.placeinfo) с помощью адреса и отображаемого имени.
@@ -73,7 +73,7 @@ PlayReady | Microsoft PlayReady— это набор технологий для
 Системные триггеры | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) позволяет определить системный триггер, если ОС не предоставляет нужный триггер. Например, если драйвер оборудования и приложение UWP сторонние, а драйверу оборудования нужно создать пользовательское событие, обрабатываемое приложением. Например, звуковая карта, которая должна уведомить пользователя о том, что в аудиоразъем выполнено подключение.
 Действия пользователей | В [документации по UserActivity](../launch-resume/useractivities.md) рассказывается, как помочь пользователям возобновить свою активность в вашем приложении даже на нескольких устройствах.</br>Класс **UserActivitySessionHistoryItem** имеет новые методы, извлекающие недавние действия пользователей. См. подробные сведения в разделе о классе [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) и его перегрузке.
 API-интерфейсы Windows Mixed Reality | Чтобы поддержать растущую платформу Windows Mixed Reality, в пространства имен [Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) и [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial) были добавлены новые API.
-Документы Windows Mixed Reality | Руководство для разработчиков Windows Mixed Reality [теперь доступно на сайте docs.microsoft.com.](https://docs.microsoft.com/windows/mixed-reality/) Как и в этих документах UWP, теперь можно отправлять отзывы о проблемах с GitHub или предоставлять собственные разработки, используя запрос на включение внесенных изменений.
+Документы Windows Mixed Reality | Инструкции для разработчиков Windows смешанные реальности [теперь размещенного на docs.microsoft.com.](https://docs.microsoft.com/windows/mixed-reality/) Так же, как в этих документах UWP можно теперь файл свои отзывы и предложения с репозиториев проблемы или отправка публикаций через запрос репликации по запросу.
 
 ## <a name="publish--monetize-windows-apps"></a>Публикация и монетизация приложений для Windows
 

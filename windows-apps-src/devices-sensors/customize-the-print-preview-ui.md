@@ -8,17 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: 6a4088c24f801db3b25dc1d9740d261e12853d63
-ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+keywords: Windows 10, uwp, печати
+ms.localizationpriority: medium
+ms.openlocfilehash: fe4086cc87699083304594eb4ccc8e7bb137b19f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2017
-ms.locfileid: "696109"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2797470"
 ---
 # <a name="customize-the-print-preview-ui"></a>Настройка пользовательского интерфейса предварительного просмотра
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**

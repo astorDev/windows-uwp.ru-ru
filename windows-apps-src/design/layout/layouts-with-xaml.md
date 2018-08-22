@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a175ad48255c0179335ce9204f51a0a62fd2b4f3
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: 0b45196a83edf45a69f6b79ab82542cef6817703
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707225"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795170"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Гибкие макеты в XAML
 
@@ -98,7 +98,8 @@ Column_4 | **2**\* | После вычисления значений ширин
 
 Можно изменить свойство Visibility элемента в коде или в визуальном состоянии. Когда свойство Visibility элемента изменено, все его дочерние элементы также изменяются. Вы можете заменить разделы своего пользовательского интерфейса путем отображения одной панели и сворачивания другой.
 
-> **Совет.**&nbsp;&nbsp;Когда вы используете элементы в пользовательском интерфейсе, которые свернуты (**Collapsed**) по умолчанию, объекты продолжают создаваться при запуске, даже если они невидимы. Вы можете отложить загрузку этих элементов до их отображения, установив для атрибута **x:DeferLoadStrategy** значение «Lazy». Это может улучшить производительность при запуске. Подробнее см. в разделе [Атрибут x:DeferLoadStrategy](../../xaml-platform/x-deferloadstrategy-attribute.md).
+> [!Tip]
+> При наличии элементы из вашего пользовательского интерфейса, которые являются **свернуто** по умолчанию, по-прежнему создания объектов при запуске, даже если они не отображаются. Вы можете отложить загрузку этих элементов до их отображения, установив для атрибута **x:DeferLoadStrategy** значение «Lazy». Это может улучшить производительность при запуске. Подробнее см. в разделе [Атрибут x:DeferLoadStrategy](../../xaml-platform/x-deferloadstrategy-attribute.md).
 
 ### <a name="style-resources"></a>Ресурсы стиля
 
@@ -138,7 +139,7 @@ Column_4 | **2**\* | После вычисления значений ширин
 Здесь [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstategroup.aspx) содержит два определения VisualState. Первое, `DefaultState`, пустое. Если оно применяется, применяются значения, определенные на странице XAML. Второе, `WideState`, изменяет свойство [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.displaymode.aspx) параметра [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) на **Inline** и открывает панель. Это состояние применяется в обработчике событий SizeChanged, если ширина окна превышает 640 эффективных пикселей.
 
 > [!NOTE]
-Windows не предоставляет средств, благодаря которым приложение могло бы определить конкретное устройство, на котором оно запущено. Система способна определить тип устройства (мобильное, настольное и т. д.), на котором запущено приложение, эффективное разрешение и размер экранного пространства, доступного для приложения (размер окна приложения). Мы рекомендуем задавать визуальные состояния для [размеров экрана и точек прерывания](screen-sizes-and-breakpoints-for-responsive-design.md).
+> Windows не предоставляет средств, благодаря которым приложение могло бы определить конкретное устройство, на котором оно запущено. Система способна определить тип устройства (мобильное, настольное и т. д.), на котором запущено приложение, эффективное разрешение и размер экранного пространства, доступного для приложения (размер окна приложения). Мы рекомендуем задавать визуальные состояния для [размеров экрана и точек прерывания](screen-sizes-and-breakpoints-for-responsive-design.md).
 
 
 ```xaml
@@ -234,7 +235,8 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 </Page>
 ```
 
-> **Важно!**&nbsp;&nbsp;В предыдущем примере прикрепленное свойство VisualStateManager.VisualStateGroups настраивается для элемента **Grid**. При использовании StateTriggers всегда следует убедиться, что свойство VisualStateGroups является присоединенным к первому дочернему элементу корня, чтобы триггеры запускались автоматически. (Здесь **Grid** — это первый дочерний элемент корня **Page**).
+> [!Important]
+> В предыдущем примере VisualStateManager.VisualStateGroups вложенное свойство имеет значение в элемент **Grid** . При использовании StateTriggers всегда следует убедиться, что свойство VisualStateGroups является присоединенным к первому дочернему элементу корня, чтобы триггеры запускались автоматически. (Здесь **Grid** — это первый дочерний элемент корня **Page**).
 
 ### <a name="attached-property-syntax"></a>Синтаксис присоединенного свойства
 

@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: Windows 10, uwp, подключенных устройств, удаленных систем, Рим, рим проекта
 ms.localizationpriority: medium
-ms.openlocfilehash: 724e2ce05dc439ba440f46697b736faabb1e8df0
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: 02d04074ece0033da8c3454a95bc35af201903f3
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018498"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794665"
 ---
 # <a name="discover-remote-devices"></a>Обнаружение удаленных устройств
 Ваше приложение может использовать беспроводную сеть, Bluetooth и облачное подключение для обнаружения устройств с Windows, вход с которых выполнен с той же учетной записью Майкрософт, что и у обнаруживающего устройства. Обнаружение удаленных устройств возможно без установки на них какого-либо специального программного обеспечения.
@@ -60,7 +60,7 @@ ms.locfileid: "2018498"
 
 ## <a name="querying-a-capability-on-a-remote-system"></a>Запрос возможности на удаленной системе
 
-Несмотря на то что возможности запрашивания устройств отделены от фильтрации обнаружения, они могут быть важной частью процесса обнаружения. С помощью метода [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem#Windows_System_RemoteSystems_RemoteSystem_GetCapabilitySupportedAsync_System_String_) вы можете запрашивать обнаруженные удаленные системы для поддержки некоторых возможностей, например, подключения удаленного сеанса или совместного использования пространственных (голографических) объектов. Список запрашиваемых возможностей см. в классе [**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities).
+Несмотря на то что возможности запрашивания устройств отделены от фильтрации обнаружения, они могут быть важной частью процесса обнаружения. С помощью метода [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem.GetCapabilitySupportedAsync) вы можете запрашивать обнаруженные удаленные системы для поддержки некоторых возможностей, например, подключения удаленного сеанса или совместного использования пространственных (голографических) объектов. Список запрашиваемых возможностей см. в классе [**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities).
 
 ```csharp
 // Check to see if the given remote system can accept LaunchUri requests

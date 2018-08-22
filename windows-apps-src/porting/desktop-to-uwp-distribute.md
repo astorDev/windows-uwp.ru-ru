@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: 682d7dfcef1ea8037b113499362f0664c388d987
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: fe36fec72645558c539dd8270fd15d35d92b66b5
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989628"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792683"
 ---
 # <a name="distribute-a-packaged-desktop-app-desktop-bridge"></a>Распространение упакованного классического приложения (мост для классических приложений)
 
@@ -31,7 +31,7 @@ ms.locfileid: "1989628"
 
 Опубликуйте ваше приложение в Store, чтобы охватить самую широкую аудиторию. Кроме того, корпоративные клиенты могут приобрести ваше приложение через [Microsoft Store для бизнеса](https://www.microsoft.com/business-store), чтобы распространять его внутри своих организаций.
 
-Если вы планируете публиковать в Microsoft Store, вам будет предложено ответить на несколько дополнительных вопросов в ходе процесса отправки. Это означает, что манифест пакета объявляет возможность с ограниченным доступом под названием **runFullTrust**, и мы должны утвердить использование этой возможности приложением. Подробнее об этом сценарии требовании см. здесь [Ограниченные возможности](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#restricted-capabilities.html).
+Если вы планируете публиковать в Microsoft Store, вам будет предложено ответить на несколько дополнительных вопросов в ходе процесса отправки. Это означает, что манифест пакета объявляет возможность с ограниченным доступом под названием **runFullTrust**, и мы должны утвердить использование этой возможности приложением. Подробнее об этом сценарии требовании см. здесь [Ограниченные возможности](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
 Подписывать приложение перед отправкой в Store не требуется.
 

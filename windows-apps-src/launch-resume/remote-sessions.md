@@ -8,14 +8,14 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, uwp, подключенных устройств, удаленных систем, Рим, рим проекта
 ms.localizationpriority: medium
-ms.openlocfilehash: 0539c9b50196d98809fc01ea3f2a1950cbf27599
-ms.sourcegitcommit: 12cc283e821cbf978debf24914490982f076b4b4
-ms.translationtype: HT
+ms.openlocfilehash: 8e5226b23a454bf48add22d590a3ff247c629e4f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
-ms.locfileid: "1658090"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794887"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>Подключение устройств с помощью удаленных сеансов
 
@@ -124,7 +124,7 @@ RemoteSystemSessionController manager = new RemoteSystemSessionController("Bob's
 //...
 ```
 
-Для отправки приглашения необходима ссылка на принимающую удаленную систему (получается путем обычного обнаружения удаленной системы). Передайте эту ссылку методу **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession#remotesystemsession_sendinvitationasync_1664759118)** объекта сеанса. Все участники сеанса получают ссылку на удаленный сеанс (см. следующий раздел), поэтому любой участник может отправить приглашение.
+Для отправки приглашения необходима ссылка на принимающую удаленную систему (получается путем обычного обнаружения удаленной системы). Передайте эту ссылку методу **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** объекта сеанса. Все участники сеанса получают ссылку на удаленный сеанс (см. следующий раздел), поэтому любой участник может отправить приглашение.
 
 ```csharp
 // "currentSession" is a reference to a RemoteSystemSession.

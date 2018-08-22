@@ -7,18 +7,22 @@ label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
 ms.author: sezhen
-ms.date: 05/19/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a4081535cf8b9889a1f6864637c7fdefc982e9a5
-ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
-ms.translationtype: HT
+dev_langs:
+- csharp
+- cppwinrt
+- cpp
+ms.openlocfilehash: 7372f296658f9213ccc50bd6388a4f25ad47a946
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2018
-ms.locfileid: "1672741"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2796017"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Реализация навигации между двумя страницами
 
@@ -80,8 +84,6 @@ ms.locfileid: "1672741"
 </tbody>
 </table>
 
- 
-
 В файле Page1.xaml добавьте следующее содержимое:
 
 -   Добавьте элемент [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) с именем `pageTitle` в качестве дочернего элемента корневого элемента [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). Измените значение свойства [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676), указав `Page 1`.
@@ -104,6 +106,14 @@ private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
     this.Frame.Navigate(typeof(Page2));
 }
 ```
+
+```cppwinrt
+void Page1::HyperlinkButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args)
+{
+    Frame().Navigate(winrt::xaml_typename<NavApp1::Page2>());
+}
+```
+
 ```cpp
 void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 {
@@ -127,19 +137,27 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 
 В файле кода программной части Page2.xaml добавьте следующий код для обработки события `Click` для [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), которое было добавлено для перехода в файл Page1.xaml.
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
 {
     this.Frame.Navigate(typeof(Page1));
 }
 ```
+
+```cppwinrt
+void Page2::HyperlinkButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args)
+{
+    Frame().Navigate(winrt::xaml_typename<NavApp1::Page1>());
+}
+```
+
 ```cpp
 void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 {
     this->Frame->Navigate(Windows::UI::Xaml::Interop::TypeName(Page1::typeid));
 }
 ```
+
 > [!NOTE]
 > Для проектов C++ необходимо добавить директиву `#include` в файл заголовка каждой страницы, которая ссылается на другую страницу. В целях представленного здесь примера навигации между страницами файл page1.xaml.h содержит `#include "Page2.xaml.h"`, файл page2.xaml.h, в свою очередь, содержит `#include "Page1.xaml.h"`.
 
@@ -148,7 +166,6 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 Откройте файл кода программной части App.xaml и измените обработчик `OnLaunched`.
 
 Здесь мы определяем `Page1` в вызове [**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) вместо `MainPage`.
-
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -183,6 +200,66 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
     Window.Current.Activate();
 }
 ```
+
+```cppwinrt
+void App::OnLaunched(LaunchActivatedEventArgs const& e)
+{
+    Frame rootFrame{ nullptr };
+    auto content = Window::Current().Content();
+    if (content)
+    {
+        rootFrame = content.try_as<Frame>();
+    }
+
+    // Do not repeat app initialization when the Window already has content,
+    // just ensure that the window is active
+    if (rootFrame == nullptr)
+    {
+        // Create a Frame to act as the navigation context and associate it with
+        // a SuspensionManager key
+        rootFrame = Frame();
+
+        rootFrame.NavigationFailed({ this, &App::OnNavigationFailed });
+
+        if (e.PreviousExecutionState() == ApplicationExecutionState::Terminated)
+        {
+            // Restore the saved session state only when appropriate, scheduling the
+            // final launch steps after the restore is complete
+        }
+
+        if (e.PrelaunchActivated() == false)
+        {
+            if (rootFrame.Content() == nullptr)
+            {
+                // When the navigation stack isn't restored navigate to the first page,
+                // configuring the new page by passing required information as a navigation
+                // parameter
+                rootFrame.Navigate(xaml_typename<NavApp1::Page1>(), box_value(e.Arguments()));
+            }
+            // Place the frame in the current Window
+            Window::Current().Content(rootFrame);
+            // Ensure the current window is active
+            Window::Current().Activate();
+        }
+    }
+    else
+    {
+        if (e.PrelaunchActivated() == false)
+        {
+            if (rootFrame.Content() == nullptr)
+            {
+                // When the navigation stack isn't restored navigate to the first page,
+                // configuring the new page by passing required information as a navigation
+                // parameter
+                rootFrame.Navigate(xaml_typename<NavApp1::Page1>(), box_value(e.Arguments()));
+            }
+            // Ensure the current window is active
+            Window::Current().Activate();
+        }
+    }
+}
+```
+
 ```cpp
 void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs^ e)
 {
@@ -222,7 +299,8 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 }
 ```
 
-**Примечание.** В этом коде используется возвращаемое значение [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694), чтобы вызвать исключение приложения, если при переходе в начальный фрейм приложения происходит сбой. Если **Navigate** возвращает значение **true**, выполняется переход.
+> [!NOTE]
+> Этот код использует возвращаемое значение [**Навигатор**](https://msdn.microsoft.com/library/windows/apps/br242694) исключение приложения в случае сбоя навигации для начального окна приложения. Если **Navigate** возвращает значение **true**, выполняется переход.
 
 Теперь выполните сборку и запустите приложение. Щелкните ссылку «Click to go to page 2» (Нажмите, чтобы перейти к странице 2). Вторая страница с надписью "Page 2" (Страница 2) в верхней части загрузится и появится в фрейме.
 
@@ -231,7 +309,6 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 Прежде чем расширить функциональные возможности приложения, посмотрим, как добавленные нами страницы обеспечивают поддержку навигации в приложении.
 
 Сначала для приложения создается [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) под названием(`rootFrame`) в методе `App.OnLaunched` файла кода программной части App.xaml. Класс **Frame** поддерживает различные методы навигации, например [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694), [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) и [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), а также свойства, такие как [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543), [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) и [**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995).
-
  
 Метод [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) используется для отображения содержимого в этом **Frame**. По умолчанию этот метод загружает MainPage.xaml. В нашем примере `Page1`передается методу **Navigate**, поэтому метод загружает `Page1` в **Frame**. 
 
@@ -259,13 +336,20 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 В обработчике событий `HyperlinkButton_Click` для файла кода программной части Page1.xaml добавьте параметр, ссылающийся на свойство `Text` для `name` **TextBox**, в метод `Navigate`.
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
 {
     this.Frame.Navigate(typeof(Page2), name.Text);
 }
 ```
+
+```cppwinrt
+void Page1::HyperlinkButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args)
+{
+    Frame().Navigate(winrt::xaml_typename<NavApp1::Page2>(), winrt::box_value(name().Text()));
+}
+```
+
 ```cpp
 void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 {
@@ -302,12 +386,29 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
     base.OnNavigatedTo(e);
 }
 ```
+
+```cppwinrt
+void Page2::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e)
+{
+    auto propertyValue{ e.Parameter().as<Windows::Foundation::IPropertyValue>() };
+    if (propertyValue.Type() == Windows::Foundation::PropertyType::String)
+    {
+        greeting().Text(L"Hi, " + winrt::unbox_value<winrt::hstring>(e.Parameter()));
+    }
+    else
+    {
+        greeting().Text(L"Hi!");
+    }
+    __super::OnNavigatedTo(e);
+}
+```
+
 ```cpp
 void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 {
     if (dynamic_cast<Platform::String^>(e->Parameter) != nullptr)
     {
-        greeting->Text = "Hi," + e->Parameter->ToString();
+        greeting->Text = "Hi, " + e->Parameter->ToString();
     }
     else
     {
@@ -336,6 +437,15 @@ public Page1()
     this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
 }
 ```
+
+```cppwinrt
+Page1::Page1()
+{
+    InitializeComponent();
+    NavigationCacheMode(Windows::UI::Xaml::Navigation::NavigationCacheMode::Enabled);
+}
+```
+
 ```cpp
 Page1::Page1()
 {
@@ -348,10 +458,3 @@ Page1::Page1()
 * [Основы проектирования навигации для приложений UWP](https://msdn.microsoft.com/library/windows/apps/dn958438)
 * [Руководство по элементам управления «Сводка» и вкладкам](https://msdn.microsoft.com/library/windows/apps/dn997788)
 * [Руководство по панелям навигации](https://msdn.microsoft.com/library/windows/apps/dn997766)
- 
-
- 
-
-
-
-

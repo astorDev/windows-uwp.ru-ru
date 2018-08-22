@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, привязка, коллекция
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d9f74e6d0c755e0a247a65751bdab65964ac1f7
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.openlocfilehash: 9337c0625c68970d9e68df74fa13228369e8bf41
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935730"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800334"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a>Элементы управления XAML; привязка к коллекции [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 > [!NOTE]
@@ -39,7 +39,7 @@ ms.locfileid: "1935730"
 Полезно иметь отслеживаемый шаблон вектора, который служит реализацией общего назначения [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_). Ниже приведен код класса под названием **single_threaded_observable_vector\<T\>**.
 
 > [!NOTE]
-> Если вы установили [предварительную сборку 17661 пакета Windows 10 SDK](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK) или более позднюю версию, то вы можете просто напрямую использовать тип **winrt::single_threaded_observable_vector\<T\>** вместо приведенного ниже кода. Если вы еще не используете эту версию пакета SDK, перейти с использования версии с описанием кода на тип **winrt** будет просто, когда вы на нее перейдете.
+> Если вы установили [Windows 10 пакет SDK для предварительной версии построения 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)или более поздней версии, после этого можно выполнить только что непосредственно используйте функцию фабрики **winrt::single_threaded_observable_vector\ < T\ >** вместо кода ниже. Если вы не уже с этой версией пакета SDK, оно будет легко переключаться с с помощью версии листинг кода в функцию **winrt** , если все. Необходимо помните, что вместо вызова [**winrt::make**]() с типом, перечисленных ниже, вместо вызова **winrt::single_threaded_observable_vector\ < T\ >** функции.
 
 ```cppwinrt
 // single_threaded_observable_vector.h
@@ -310,6 +310,8 @@ m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
 
 ```cppwinrt
 // BookstoreViewModel.h
+...
+#include "single_threaded_observable_vector.h"
 ...
     struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
     {

@@ -4,18 +4,18 @@ Description: Follow these guidelines to prepare your app's packages for submissi
 title: Требования к пакету приложения
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.author: wdg-dev-content
-ms.date: 04/30/2018
+ms.date: 05/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, требования к пакету, пакеты, формат пакета, поддерживаемая версия, отправить
-ms.localizationpriority: high
-ms.openlocfilehash: 76dd0a5f9ebcb1e92ac7874b535d286cb051df22
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d7d748f36dafd93066928f01f9aa42414f2ffc1f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832318"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791379"
 ---
 # <a name="app-package-requirements"></a>Требования к пакетам приложения
 
@@ -41,7 +41,7 @@ ms.locfileid: "1832318"
 
 ### <a name="app-bundles"></a>Пакеты приложений
 
-В случае приложений для Windows 8.1, Windows Phone 8.1 и более поздних версий с помощью Visual Studio можно создать пакет приложений (.appxbundle), чтобы уменьшить размер приложения, скачиваемого пользователями. Это полезно, если вы определили ресурсы, связанные с конкретным языком, множество различных ресурсов с определенным масштабом изображений или ресурсы, которые применяются к конкретным версиям DirectX.
+Для приложений, предназначенных для Windows 10, Windows 8.1 и/или 8.1 Windows Phone Visual Studio можно создать пакета приложений (.appxbundle), чтобы уменьшить размер приложение, которое пользователи загружать. Это полезно, если вы определили ресурсы, связанные с конкретным языком, множество различных ресурсов с определенным масштабом изображений или ресурсы, которые применяются к конкретным версиям DirectX.
 
 > [!NOTE]
 > Один пакет приложений может содержать пакеты для всех архитектур. Вам нужно будет отправить только один пакет для каждой целевой ОС.
@@ -61,16 +61,10 @@ ms.locfileid: "1832318"
 > Значения в манифесте вводятся с учетом регистра. Пробелы и знаки препинания тоже должны совпадать. Правильно введите значения и внимательно проверьте их.
 
 
-В пакете приложений используется другой манифест. Подробнее о манифестах пакетов приложений и требованиях к ним см. в разделе о [манифесте пакета приложений](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest).
+Пакеты приложений (.appxbundle) с помощью различных манифеста. Подробнее о манифестах пакетов приложений и требованиях к ним см. в разделе о [манифесте пакета приложений](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest). Обратите внимание, что в .appxbundle .appxmanifest каждого включенного пакета необходимо использовать же элементы и атрибуты, за исключением атрибута **processorArchitecture –** [идентификатора](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) элемента.
 
 > [!TIP]
 > Перед отправкой протестируйте пакеты с помощью [комплекта сертификации приложений для Windows](../debug-test-perf/windows-app-certification-kit.md). Это поможет вам выявить в манифесте проблемы, способные привести к сбою сертификации или отправки.
-
-Если ваше приложение состоит из нескольких пакетов, эти элементы манифеста приложения должны быть одинаковыми во всех пакетах (для каждой ОС):
-
--   [**Package/Capabilities**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)
--   [**Package/Dependencies**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-dependencies)
--   [**Package/Resources**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources)
 
 
 ## <a name="package-format-requirements"></a>Требования к формату пакета
@@ -94,7 +88,7 @@ ms.locfileid: "1832318"
 
 ## <a name="storemanifest-xml-file"></a>XML-файл StoreManifest
 
-StoreManifest.xml — это необязательный файл конфигурации, который может быть включен в пакет приложения. Его предназначение — реализовать такие функции, как объявление приложения как приложения Microsoft Store для устройства или объявление требований, от которых зависит применимость пакета на устройстве и которые не указаны в манифесте пакета. Файл StoreManifest.xml отправляется с пакетом приложения и должен находиться в корневой папке основного проекта приложения. Подробнее: [Схема StoreManifest](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal).
+StoreManifest.xml — это необязательный файл конфигурации, который может быть включен в пакет приложения. Его предназначение — реализовать такие функции, как объявление приложения как приложения Microsoft Store для устройства или объявление требований, от которых зависит применимость пакета на устройстве и которые не указаны в манифесте пакета. При использовании StoreManifest.xml отправляется с помощью пакета приложения и должен быть в корневой папке главного проекта вашего приложения. Подробнее: [Схема StoreManifest](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal).
 
  
 

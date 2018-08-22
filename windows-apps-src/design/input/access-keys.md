@@ -15,12 +15,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a336109e9464052a33f5a0d8548e13b260b387a3
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: 8e842d6c5b8e62a9c043c97849fdf17f524ccfc7
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018518"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800811"
 ---
 # <a name="access-keys"></a>Ключи доступа
 
@@ -358,3 +358,13 @@ _Параметры настройки подсказки клавиши_
 Платформа XAML предоставляет свойства автоматизации, с помощью которых клиенты автоматизации пользовательского интерфейса могут получать информацию об элементах пользовательского интерфейса.
 
 Если задать свойство AccessKey на элементе управления UIElement или TextElement, можно использовать свойство [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) для получения этого значения. Помощники, такие как экранный диктор, считывают значение этого свойства каждый раз, когда элемент получает фокус.
+
+## <a name="related-articles"></a>Еще по теме
+
+* [Взаимодействие с помощью клавиатуры](keyboard-interactions.md)
+* [Ускорители клавиатуры](keyboard-accelerators.md)
+
+**Примеры**
+* [Коллекция элементов управления XAML (также называемого XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+
+

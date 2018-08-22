@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, маркер, событие, делегат
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cf3c87411bb6d8eb5886e7205f96c466d707220
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: a29c095e49b49baa63bd547c0bb928ad7f78aa86
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976492"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794645"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Обработка событий с помощью делегатов в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 В этом разделе показано, как регистрировать и отзывать делегаты обработки событий с помощью C++/WinRT. Вы можете обрабатывать события с помощью любого стандартного подобного функции объекта C++.
@@ -122,7 +122,7 @@ private:
 
 Вместо строгой ссылки, как в примере выше, вы можете хранить слабую ссылку на кнопку (см. раздел [Слабые ссылки в C++/WinRT](weak-references.md)).
 
-Кроме того, когда вы регистрируете делегата, вы можете указать **winrt::auto_revoke** (которое является значением типа [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) для запроса отзыва событий (типа **winrt::event_revoker**). Объект отзыва событий содержит слабую ссылку на источник события (объект, который вызвал событие). Вы можете вручную отозвать событие, вызвав функцию-член **event_revoker::revoke**; но объект отзыва события вызывает эту функцию автоматически при выходе за пределы области действия. Функция **revoke** проверяет, существует ли источник события, и, если это так, отзывает ваш делегат. В этом примере нет необходимости хранить источник событий, а также не требуется деструктор.
+Кроме того при регистрации делегата можно указать **winrt::auto_revoke** (который является значением типа [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) для запроса события revoker (из типа [**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)). Событие revoker хранит слабой ссылки источником событий (объект, который вызывает событие). Вы можете вручную отозвать событие, вызвав функцию-член **event_revoker::revoke**; но объект отзыва события вызывает эту функцию автоматически при выходе за пределы области действия. Функция **revoke** проверяет, существует ли источник события, и, если это так, отзывает ваш делегат. В этом примере нет необходимости хранить источник событий, а также не требуется деструктор.
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -188,7 +188,7 @@ void ProcessFeedAsync()
     });
     
     // or (but this function must then be a coroutine and return IAsyncAction)
-    // SyndicationFeed syndicationFeed = co_await async_op_with_progress;
+    // SyndicationFeed syndicationFeed{ co_await async_op_with_progress };
 }
 ```
 

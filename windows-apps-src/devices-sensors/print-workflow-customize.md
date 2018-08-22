@@ -8,14 +8,14 @@ ms.date: 08/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, uwp, печати
 ms.localizationpriority: medium
-ms.openlocfilehash: 470984ce9f9a3304350a3479a01bc31a403bd8af
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 9e53c15b01a08c8c617529fe074929ce89a68ce9
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674981"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800318"
 ---
 # <a name="customize-the-print-workflow"></a>Создание пользовательского рабочего процесса печати
 
@@ -220,7 +220,7 @@ internal async void OnXpsDataAvailable(PrintWorkflowForegroundSession sessionMan
 }
 ```
 
-Кроме того, экземпляр **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)**, предоставляемый аргументами события, позволяет отменить задание печати или указать, что задание выполнено успешно, но выходное задание печати не требуется. Для этого нужно вызвать метод **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation#Windows_Graphics_Printing_Workflow_PrintWorkflowSubmittedOperation_Complete_Windows_Graphics_Printing_Workflow_PrintWorkflowSubmittedStatus_)** со значением **[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)**.
+Кроме того, экземпляр **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)**, предоставляемый аргументами события, позволяет отменить задание печати или указать, что задание выполнено успешно, но выходное задание печати не требуется. Для этого нужно вызвать метод **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation.Complete)** со значением **[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)**.
 
 > [!NOTE]
 > Если приложение рабочего процесса отменит задание печати, настоятельно рекомендуется, чтобы всплывающее уведомление проинформировало пользователя о причинах отмены задания. 
@@ -244,9 +244,9 @@ internal async void OnXpsDataAvailable(PrintWorkflowForegroundSession sessionMan
 
 ### <a name="set-the-workflow-apps-policy"></a>Настройка политики приложения рабочего процесса
 Политика приложения рабочего процесса задается командами PowerShell на устройстве, которое будет выполнять приложение рабочего процесса. Команды Set-Printer, Add-Printer (существующий порт) и Add-Printer (новый порт WSD) будут изменены, чтобы можно было задать политики рабочего процесса. 
-* `Off`: приложения рабочего процесса не будут активированы.
-* `Optional`: приложения рабочего процесса будут активированы, если DCA рабочих процессов установлена в системе. Если приложение не установлено, печать продолжится. 
-* `On`: контракт рабочего процесса будет активирован, если DCA рабочих процессов установлена в системе. Если приложение не установлено, произойдет сбой печати. 
+* `Disabled`: приложения рабочего процесса не будут активированы.
+* `Uninitialized`: приложения рабочего процесса будут активированы, если DCA рабочих процессов установлена в системе. Если приложение не установлено, печать продолжится. 
+* `Enabled`: контракт рабочего процесса будет активирован, если DCA рабочих процессов установлена в системе. Если приложение не установлено, произойдет сбой печати. 
 
 Следующая команда делает приложение рабочего процесса обязательным на указанном принтере.
 ```Powershell

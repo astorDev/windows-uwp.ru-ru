@@ -4,22 +4,20 @@ ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: Раскадрованные анимации
 description: Раскадрованные анимации— это не просто анимации в визуальном смысле.
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e5fad5bdea602767484fa55e943d262e7a1798fa
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 8c03d99781114c4fefff04cc25930748ec16182f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675581"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2797868"
 ---
 # <a name="storyboarded-animations"></a>Раскадрованные анимации
-
-
 
 Раскадрованные анимации— это не просто анимации в визуальном смысле. Раскадрованная анимация— это способ изменить значение свойства зависимостей как функцию времени. Раскадрованная анимация, не входящая в состав библиотеки анимации, может потребоваться вам, например, чтобы определить состояние для элемента управления как части шаблона элемента управления или определения страницы.
 
@@ -49,17 +47,23 @@ ms.locfileid: "1675581"
 Рассмотрим простой пример. В этом примере XAML свойство [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) анимируется для отдельного объекта [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle).
 
 ```xaml
-<!-- Animates the rectangle's opacity. -->
-<Storyboard x:Name="myStoryboard">
-  <DoubleAnimation
-    Storyboard.TargetName="MyAnimatedRectangle"
-    Storyboard.TargetProperty="Opacity"
-    From="1.0" To="0.0" Duration="0:0:1"/>
-</Storyboard>
+<Page ...>
+  <Page.Resources>
+    <!-- Storyboard resource: Animates a rectangle's opacity. -->
+    <Storyboard x:Name="myStoryboard">
+      <DoubleAnimation
+        Storyboard.TargetName="MyAnimatedRectangle"
+        Storyboard.TargetProperty="Opacity"
+        From="1.0" To="0.0" Duration="0:0:1"/>
+    </Storyboard>
+  </Page.Resources>
 
-<!-- A different area of the XAML. -->
-<Rectangle x:Name="MyAnimatedRectangle"
-  Width="300" Height="200" Fill="Blue"/>
+  <!--Page root element, UI definition-->
+  <Grid>
+    <Rectangle x:Name="MyAnimatedRectangle"
+      Width="300" Height="200" Fill="Blue"/>
+  </Grid>
+</Page>
 ```
 
 ### <a name="identifying-the-object-to-animate"></a>Идентификация объекта для анимации
@@ -213,10 +217,10 @@ ms.locfileid: "1675581"
     </Storyboard>
   </Page.Resources>
   <!--Page root element, UI definition-->
-  <StackPanel>
+  <Grid>
     <Rectangle x:Name="MyAnimatedRectangle"
       Width="300" Height="200" Fill="Blue"/>
-  </StackPanel>
+  </Grid>
 </Page>
 ```
 
@@ -291,6 +295,10 @@ ms.locfileid: "1675581"
 
 ```csharp
 myStoryboard.Begin();
+```
+
+```cppwinrt
+myStoryboard().Begin();
 ```
 
 ```cpp

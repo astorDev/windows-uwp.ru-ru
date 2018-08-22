@@ -3,18 +3,18 @@ author: jnHs
 Description: Set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
 title: Выбор параметров видимости
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 08/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, видимость, частная аудитория, доступен, доступен для обнаружения
-ms.localizationpriority: high
-ms.openlocfilehash: 548b25d4e74945eadfcc8ebe8a5cb2f8d870d38f
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 07986353be41fcc9ef9dd9406fb0b30c4aa3d7f2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832088"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2801860"
 ---
 # <a name="choose-visibility-options"></a>Выбор параметров видимости
 
@@ -75,7 +75,7 @@ ms.locfileid: "1832088"
 
 ### <a name="make-this-product-available-and-discoverable-in-the-store"></a>Параметр "Сделать это приложение доступным и обнаруживаемым в Store"
 
-Это параметр по умолчанию. Оставьте этот параметр включенным, если требуется, чтобы ваше приложение было зарегистрировано в Store, и пользователи могли найти его по прямой ссылке и другими способами, включая поиск и просмотр каталога и списков приложений. 
+Это параметр по умолчанию. Оставьте этот параметр, если будет использоваться приложением и будет включено в хранилище для клиентов для поиска с помощью прямая ссылка приложения и/или другими способами, включая поиск, просмотр и включения в curated списков. 
 
 ### <a name="make-this-product-available-but-not-discoverable-in-the-store"></a>Параметр "Сделать это приложение доступным, но не обнаруживаемым в Store"
 

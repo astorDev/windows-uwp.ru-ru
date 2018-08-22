@@ -14,12 +14,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 051d3d5251a135dcb1a41e1cd005f462fb074c3b
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: ce84debc3422f923c7c88aae1fa216665ef1ef0f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983641"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792202"
 ---
 # <a name="keyboard-accelerators"></a>Ускорители клавиатуры
 
@@ -355,35 +355,98 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 Так как обычно ускорители клавиатуры не описаны непосредственно в пользовательском интерфейсе приложения UWP, можно улучшить их обнаружение с помощью [подсказок](../controls-and-patterns/tooltips.md), которые автоматически появляются, когда пользователь перемещает фокус, нажимает и удерживает кнопку мыши или наводит указатель мыши на элемент управления. Всплывающая подсказка помогает определить, есть ли у элемента управления связанные с ним ускорители клавиатуры, и если они есть — указывает, какая для этого используется клавиша ускорителя клавиатуры.
 
-Начиная с Windows 10 версии 1803, если KeyboardAccelerators объявлены, элементы управления предоставляют соответствующие сочетания клавиш в подсказке по умолчанию (если только они не связанны с объектами [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), см. раздел [Метки]()). Если для элемента управления определено несколько ускорителей, в подсказке будет отображаться только первый из них.
+**Windows 10, 1803 версии (апрель 2018 обновление) и более поздней версии**
+
+По умолчанию при объявляются сочетания клавиш, все элементы управления (за исключением [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) представить соответствующего сочетания клавиш в подсказке.
+
+> [!NOTE] 
+> Если элемент управления имеет несколько определенные сочетания клавиш, представлены только первые.
 
 ![Подсказка сочетания клавиш](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
 *Комбинация сочетаний клавиш в подсказке*
 
-Для объектов [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) ускоритель клавиатуры добавляется к метке.
+Сочетания клавиш для [кнопки](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)и [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) объекты, добавляется всплывающей подсказки элемента управления по умолчанию. Для [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) объектов с текстом всплывающее окно отображается сочетания клавиш.
+
+> [!NOTE]
+> Указание подсказки (см Button1 в следующем примере) переопределяет это поведение.
 
 ```xaml
-<AppBarButton Label="Save" Icon="Save">
-  <Button.KeyboardAccelerators>
-    <KeyboardAccelerator Key="S" Modifiers="Control" />
-  </Button.KeyboardAccelerators>
+<StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">
+    <Button Content="Button1" Margin="20"
+            Click="OnSave" 
+            KeyboardAcceleratorPlacementMode="Auto" 
+            ToolTipService.ToolTip="Tooltip">
+        <Button.KeyboardAccelerators>
+            <KeyboardAccelerator  Key="A" Modifiers="Windows"/>
+        </Button.KeyboardAccelerators>
+    </Button>
+    <Button Content="Button2"  Margin="20"
+            Click="OnSave" 
+            KeyboardAcceleratorPlacementMode="Auto">
+        <Button.KeyboardAccelerators>
+            <KeyboardAccelerator  Key="B" Modifiers="Windows"/>
+        </Button.KeyboardAccelerators>
+    </Button>
+    <Button Content="Button3"  Margin="20"
+            Click="OnSave" 
+            KeyboardAcceleratorPlacementMode="Auto">
+        <Button.KeyboardAccelerators>
+            <KeyboardAccelerator  Key="C" Modifiers="Windows"/>
+        </Button.KeyboardAccelerators>
+    </Button>
+</StackPanel>
+```
+
+![Подсказка сочетания клавиш](images/accelerators/accelerators-button-small.png)
+
+*Сочетания клавиш со списком ключевых добавляется в конец всплывающей подсказки по умолчанию кнопки*
+
+```xaml
+<AppBarButton Icon="Save" Label="Save">
+    <AppBarButton.KeyboardAccelerators>
+        <KeyboardAccelerator Key="S" Modifiers="Control"/>
+    </AppBarButton.KeyboardAccelerators>
 </AppBarButton>
 ```
 
 ![Подсказка сочетания клавиш](images/accelerators/accelerators-appbarbutton-small.png)
 
-*Комбинация сочетаний клавиш, добавленная к метке элемента управления*
+*Сочетаний клавиш со списком ключевых добавляется в конец всплывающей подсказки AppBarButton пользователя по умолчанию*
+
+```xaml
+<AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
+    <AppBarButton.Flyout>
+        <MenuFlyout>
+            <MenuFlyoutItem AccessKey="A" Icon="Refresh" Text="Refresh A">
+                <MenuFlyoutItem.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="R" Modifiers="Control"/>
+                </MenuFlyoutItem.KeyboardAccelerators>
+            </MenuFlyoutItem>
+            <MenuFlyoutItem AccessKey="B" Icon="Globe" Text="Refresh B" />
+            <MenuFlyoutItem AccessKey="C" Icon="Globe" Text="Refresh C" />
+            <MenuFlyoutItem AccessKey="D" Icon="Globe" Text="Refresh D" />
+            <ToggleMenuFlyoutItem AccessKey="E" Icon="Globe" Text="ToggleMe">
+                <MenuFlyoutItem.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Q" Modifiers="Control"/>
+                </MenuFlyoutItem.KeyboardAccelerators>
+            </ToggleMenuFlyoutItem>
+        </MenuFlyout>
+    </AppBarButton.Flyout>
+</AppBarButton>
+```
+
+![Подсказка сочетания клавиш](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
+
+*Сочетания клавиш со списком ключевых добавляется в конец текста в MenuFlyoutItem*
 
 Управление поведением отображения осуществляется с помощью свойства [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode), которое принимает два значения: [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) или [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
 
 ```xaml
-<Button Content="Save" Click="OnSave">
-  <Button.KeyboardAccelerators> 
-    <KeyboardAccelerator 
-      Key="S" Modifiers="Control" 
-      KeyboardAcceleratorPlacementMode="Hidden" /> 
-  </Button.KeyboardAccelerators>  
+<Button Content="Save" Click="OnSave" KeyboardAcceleratorPlacementMode="Auto">
+    <Button.KeyboardAccelerators>
+        <KeyboardAccelerator Key="S" Modifiers="Control" />
+    </Button.KeyboardAccelerators>
 </Button>
 ```
 
@@ -393,10 +456,12 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ```xaml
 <Grid x:Name="Container" Padding="30">
-  <Button Content="Save" Click="OnSave">
+  <Button Content="Save"
+    Click="OnSave"
+    KeyboardAcceleratorPlacementMode="Auto"
+    KeyboardAcceleratorPlacementTarget="{x:Bind Container}">
     <Button.KeyboardAccelerators>
-      <KeyboardAccelerator  Key="S" Modifiers="Control" 
-        KeyboardAcceleratorPlacementTarget="{x:Bind Container}"/>
+      <KeyboardAccelerator  Key="S" Modifiers="Control" />
     </Button.KeyboardAccelerators>
   </Button>
 </Grid>
@@ -547,3 +612,15 @@ public class MyListView : ListView
   …
 }
 ```
+
+## <a name="related-articles"></a>Еще по теме
+
+* [Взаимодействие с помощью клавиатуры](keyboard-interactions.md)
+* [Ключи доступа](access-keys.md)
+
+**Примеры**
+* [Коллекция элементов управления XAML (также называемого XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+
+
+ 
+
