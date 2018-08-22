@@ -4,31 +4,33 @@ description: Узнайте, как определять и реализовыв
 title: Пользовательские свойства зависимостей
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f1b17f4ea61e28b1ba43d886455d8a3373efb79
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+dev_langs:
+- csharp
+- vb
+- cppwinrt
+- cpp
+ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675631"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2801955"
 ---
 # <a name="custom-dependency-properties"></a>Пользовательские свойства зависимостей
-
 
 В этом разделе показано, как определять и реализовывать собственные свойства зависимостей для приложения среды выполнения Windows на C++, C# или Visual Basic. Перечислены причины, по которым разработчики приложений и авторы компонентов могут пожелать создавать пользовательские свойства зависимостей. Также описаны действия по реализации пользовательского свойства зависимостей и приведены некоторые рекомендации по повышению производительности, удобства или гибкости свойства зависимостей.
 
 ## <a name="prerequisites"></a>Необходимые условия
 
-
 Мы предполагаем, что вы ознакомились с разделом [Общая информация о свойствах зависимостей](dependency-properties-overview.md) и понимаете свойства зависимостей с точки зрения потребителя существующих свойств зависимостей. Чтобы читать примеры в этом разделе, необходимо также разбираться в языке XAML и знать, как написать простое приложение среды выполнения Windows на C++, C# или Visual Basic.
 
 ## <a name="what-is-a-dependency-property"></a>Что такое свойство зависимостей?
-
 
 Чтобы поддерживать стили, привязку данных, анимацию и значения по умолчанию для свойства, оно должно быть реализовано как свойство зависимостей. Значения свойства зависимостей не хранятся как поля класса, они хранятся в платформе XAML; для ссылки на них используется ключ, который получается при регистрации свойства в системе свойств среды выполнения Windows путем вызова метода [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829).   Свойства зависимостей могут использоваться только типами, производными от [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). Но **DependencyObject** находится довольно высоко в иерархии классов, так что большинство классов, предназначенных для поддержки пользовательского интерфейса и презентаций, могут поддерживать свойства зависимостей. Подробнее о свойствах зависимостей и некоторых терминов и правил их описания в этой документации см. в разделе [Общие сведения о свойствах зависимостей](dependency-properties-overview.md).
 
@@ -36,7 +38,7 @@ ms.locfileid: "1675631"
 
 В соответствии с соглашением, каждое свойство зависимостей, предоставляемое классом, имеет соответствующее свойство **public static readonly** типа [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362), которое предоставляется этим же классом и обеспечивает идентификатор для свойства зависимостей. Имя идентификатора формируется следующим образом: имя свойства зависимостей, со строкой "Property", добавленной к концу имени. Например, идентификатором **DependencyProperty**, соответствующим свойству **Control.Background**, является [**Control.BackgroundProperty**](https://msdn.microsoft.com/library/windows/apps/br209396). Идентификатор сохраняет информацию о свойстве зависимостей, как оно было зарегистрировано, после чего идентификатор можно использовать для других операций, в которые вовлечено свойство зависимостей, например для вызова [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361).
 
-##  <a name="property-wrappers"></a>Оболочки свойств
+## <a name="property-wrappers"></a>Оболочки свойств
 
 Свойства зависимостей обычно имеют реализацию в виде оболочки. Без оболочки единственным способом получения или задания свойств будет использование служебных методов свойств зависимостей [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) и [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) и передача им идентификатора в качестве параметра. Это весьма противоестественный способ использования того, что предположительно является свойством. Но при использовании программы-оболочки ваш код и любой иной код, ссылающийся на свойство зависимостей, может использовать прямолинейный синтаксис объект-свойство, который естественен для используемого языка.
 
@@ -48,26 +50,27 @@ ms.locfileid: "1675631"
 
 Реализацию свойства в качестве свойства зависимостей стоит рассмотреть, если оно должно поддерживать одну или несколько следующих функций среды выполнения Windows или приложений среды выполнения Windows.
 
--   Задание свойства через [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849)
--   Выполнение функции допустимого целевого свойства для привязки данных с [**{Binding}**](binding-markup-extension.md)
--   Поддержка анимированных значений посредством [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)
--   Сообщение об изменении значения свойства:
-    -   действиями самой системы свойств;
-    -   средой;
-    -   действиями пользователя;
-    -   чтением и записью стилей.
+- Задание свойства через [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849)
+- Выполнение функции допустимого целевого свойства для привязки данных с [**{Binding}**](binding-markup-extension.md)
+- Поддержка анимированных значений посредством [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)
+- Сообщение об изменении значения свойства:
+  - действиями самой системы свойств;
+  - средой;
+  - действиями пользователя;
+  - чтением и записью стилей.
 
 ## <a name="checklist-for-defining-a-dependency-property"></a>Контрольный список для определения свойства зависимостей
 
 Определение свойства зависимостей можно рассматривать как набор концепций. Эти концепции не обязательно являются этапами процедуры, поскольку в реализации нескольким из них может соответствовать одна строка кода. Данный список предоставляет лишь краткий обзор. Ниже в этом разделе мы расскажем о каждой из концепций подробнее, иллюстрируя их примерами кода на нескольких языках.
 
--   Зарегистрируйте имя свойства в системе свойств (путем вызова функции [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)), указав тип владельца и тип значения свойства. 
-    -  Существует обязательный параметр функции [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829), который принимает метаданные свойства. Укажите для него значение **null** или, если требуется поведение при изменении свойства или значение по умолчанию на основе метаданных, которое можно восстановить вызовом метода [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), укажите экземпляр [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.propertymetadata).
--   Определите идентификатор [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) как член свойства **public static readonly** в типе владельца.
--   Определите свойство-оболочку, следуя модели метода доступа к свойству, применяемой в используемом языке. Имя свойства-оболочки должно совпадать со строкой *name*, используемой в [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). Реализуйте методы доступа **get** и **set** для соединения оболочки с заключенным в нее свойством зависимостей, вызывая [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) и [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) и передавая в качестве параметра идентификатор вашего свойства.
--   (Необязательно) Разместите в оболочке такие атрибуты как [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011).
+- Зарегистрируйте имя свойства в системе свойств (путем вызова функции [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)), указав тип владельца и тип значения свойства.
+  - Существует обязательный параметр функции [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829), который принимает метаданные свойства. Укажите для него значение **null** или, если требуется поведение при изменении свойства или значение по умолчанию на основе метаданных, которое можно восстановить вызовом метода [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), укажите экземпляр [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.propertymetadata).
+- Определите идентификатор [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) как член свойства **public static readonly** в типе владельца.
+- Определите свойство-оболочку, следуя модели метода доступа к свойству, применяемой в используемом языке. Имя свойства-оболочки должно совпадать со строкой *name*, используемой в [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). Реализуйте методы доступа **get** и **set** для соединения оболочки с заключенным в нее свойством зависимостей, вызывая [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) и [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) и передавая в качестве параметра идентификатор вашего свойства.
+- (Необязательно) Разместите в оболочке такие атрибуты как [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011).
 
-**Примечание.** Если вы определяете пользовательское присоединенное свойство, оболочка, как правило, не используется. Вместо нее вы создаете метод доступа в другом стиле, который может использоваться обработчиком XAML. См. раздел [Пользовательские присоединенные свойства](custom-attached-properties.md). 
+> [!NOTE]
+> При определении настраиваемого вложенное свойство, обычно опустить оболочки. Вместо нее вы создаете метод доступа в другом стиле, который может использоваться обработчиком XAML. См. раздел [Пользовательские присоединенные свойства](custom-attached-properties.md). 
 
 ## <a name="registering-the-property"></a>Регистрация свойства
 
@@ -75,7 +78,11 @@ ms.locfileid: "1675631"
 
 Для языков Microsoft .NET (C# и Microsoft Visual Basic) мы вызываем [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) внутри тела класса (внутри класса, но вне любых определений членов). Идентификатор предоставляется как возвращаемое значение метода [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). Вызов метода [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) обычно выполняется в виде статического конструктора или в процессе инициализации свойства **public static readonly** типа [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) в рамках вашего класса. Это свойство предоставляет идентификатор для свойства зависимостей. Вот примеры вызова [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829).
 
-> [!div class="tabbedCodeSnippets"]
+> [!NOTE]
+> Регистрации свойства зависимостей как часть идентификатор определения свойства является обычной реализацией, но также можно зарегистрировать свойство зависимости в статическом конструкторе класса. Такой подход может иметь смысл, если для инициализации свойства зависимостей необходимо более одной строки кода.
+
+C + +/ CX, у вас есть параметры как разделение реализации между заголовком и файл кода. Обычным вариантом является объявление самого идентификатора как свойства **public static** в заголовке, с реализацией **get**, но без **set**. Реализация **get** ссылается на закрытое поле, которым является неинициализированный экземпляр [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). Также можно объявить оболочки и реализации **get** и **set** для оболочки. В этом случае заголовок включает некоторую минимальную реализацию. Если оболочке нужно определение объекта среды выполнения Windows, выполните его также и в заголовке. Поместите вызов функции [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) в файл кода во вспомогательную функцию, которая выполняется только в момент первой инициализации приложения. Используйте возвращаемое значение **Register** для заполнения статических, но еще не инициализированных идентификаторов, объявленных в заголовочном файле, которым первоначально было присвоено значение **nullptr** в корневой области файла реализации.
+
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
   "Label",
@@ -84,6 +91,7 @@ public static readonly DependencyProperty LabelProperty = DependencyProperty.Reg
   new PropertyMetadata(null)
 );
 ```
+
 ```vb
 Public Shared ReadOnly LabelProperty As DependencyProperty = 
     DependencyProperty.Register("Label", 
@@ -92,9 +100,35 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
       New PropertyMetadata(Nothing))
 ```
 
-**Примечание.** Обычной реализацией является регистрация свойства зависимостей в рамках определения свойства идентификатора, но свойство зависимостей также можно зарегистрировать в статическом конструкторе класса. Такой подход может иметь смысл, если для инициализации свойства зависимостей необходимо более одной строки кода.
+```cppwinrt
+// ImageWithLabelControl.idl
+namespace ImageWithLabelControlApp
+{
+    runtimeclass ImageWithLabelControl : Windows.UI.Xaml.Controls.Control
+    {
+        ImageWithLabelControl();
+        static Windows.UI.Xaml.DependencyProperty LabelProperty{ get; };
+        String Label;
+    }
+}
 
-Для языка C++ имеются различные варианты разделения реализации между заголовочным файлом и файлом кода. Обычным вариантом является объявление самого идентификатора как свойства **public static** в заголовке, с реализацией **get**, но без **set**. Реализация **get** ссылается на закрытое поле, которым является неинициализированный экземпляр [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). Также можно объявить оболочки и реализации **get** и **set** для оболочки. В этом случае заголовок включает некоторую минимальную реализацию. Если оболочке нужно определение объекта среды выполнения Windows, выполните его также и в заголовке. Поместите вызов функции [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) в файл кода во вспомогательную функцию, которая выполняется только в момент первой инициализации приложения. Используйте возвращаемое значение **Register** для заполнения статических, но еще не инициализированных идентификаторов, объявленных в заголовочном файле, которым первоначально было присвоено значение **nullptr** в корневой области файла реализации.
+// ImageWithLabelControl.h
+...
+private:
+    static Windows::UI::Xaml::DependencyProperty m_labelProperty;
+...
+
+// ImageWithLabelControl.cpp
+...
+Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Windows::UI::Xaml::DependencyProperty::Register(
+        L"Label",
+        winrt::xaml_typename<winrt::hstring>(),
+        winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
+        Windows::UI::Xaml::PropertyMetadata{ nullptr }
+);
+...
+```
 
 ```cpp
 //.h file
@@ -104,46 +138,46 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
 //using namespace Platform;
 
 public ref class ImageWithLabelControl sealed : public Control
-{  
+{
 private:
     static DependencyProperty^ _LabelProperty;
 ...
 public:
-    static void RegisterDependencyProperties(); 
+    static void RegisterDependencyProperties();
     static property DependencyProperty^ LabelProperty
     {
         DependencyProperty^ get() {return _LabelProperty;}
     }
 ...
 };
-```
 
-```cpp
 //.cpp file
 using namespace Windows::UI::Xaml;
 using namespace Windows::UI::Xaml.Interop;
 
 DependencyProperty^ ImageWithLabelControl::_LabelProperty = nullptr;
 
-// This function is called from the App constructor in App.xaml.cpp 
+// This function is called from the App constructor in App.xaml.cpp
 // to register the properties
-void ImageWithLabelControl::RegisterDependencyProperties() 
+void ImageWithLabelControl::RegisterDependencyProperties()
 { 
-    if (_LabelProperty == nullptr) 
+    if (_LabelProperty == nullptr)
     { 
         _LabelProperty = DependencyProperty::Register(
-          "Label", Platform::String::typeid, ImageWithLabelControl::typeid, nullptr); 
+          "Label", Platform::String::typeid, ImageWithLabelControl::typeid, nullptr);
     } 
 }
 ```
 
-**Примечание.** В коде на C++ и закрытое поле, и открытое свойство только для чтения, доступное в [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362), предусмотрены для того, чтобы другие вызывающие стороны, которые используют ваше свойство зависимостей, могли также использовать служебные API системы свойств, которым требуется открытый идентификатор. Если оставить идентификатор закрытым, то другие пользователи не смогут использовать служебные API. Примеры таких API и сценариев включают [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) или [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) (по выбору), [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) и [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). Для этого невозможно использовать открытое поле, поскольку правила метаданных среды выполнения Windows не допускают открытые поля.
+> [!NOTE]
+> C + +/ CX кода, причину, почему закрытое поле и открытое свойство только для чтения, используемый [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) , чтобы другие абоненты, которые используют свойство зависимости также можно использовать свойство системы API, которые требуют идентификатор, должны быть открытыми. Если оставить идентификатор закрытым, то другие пользователи не смогут использовать служебные API. Примеры таких API и сценариев включают [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) или [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) (по выбору), [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) и [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). Для этого невозможно использовать открытое поле, поскольку правила метаданных среды выполнения Windows не допускают открытые поля.
 
 ## <a name="dependency-property-name-conventions"></a>Соглашения об именовании свойств зависимостей
 
 Для свойств зависимостей существуют соглашения об именовании; следуйте им, если не возникает каких-либо исключительных обстоятельств. У самого свойства зависимостей имеется простое имя ("Label" в предыдущем примере), которое задается как первый параметр функции [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). Это имя должно быть уникально внутри каждого регистрирующего типа, и это требование уникальности также относится к любым унаследованным членам. Свойства зависимостей, унаследованные через базовые типы, уже считаются частью регистрирующего типа; имена унаследованных свойств нельзя зарегистрировать снова.
 
-**Внимание!** Хотя предоставляемое здесь имя может быть любым идентификатором строки, допустимым при программировании на используемом языке, желательно также иметь возможность задать свойство зависимостей и в коде XAML. Для задания в XAML выбранное имя свойства должно быть допустимым именем XAML. Подробнее см. в разделе [Обзор XAML](xaml-overview.md).
+> [!WARNING]
+> Несмотря на то, что имя, предоставляющие здесь может быть любой строковый идентификатор, который является допустимым программирования для выбранного языка, обычно требуется иметь возможность слишком задать свойство зависимости в XAML. Для задания в XAML выбранное имя свойства должно быть допустимым именем XAML. Подробнее см. в разделе [Обзор XAML](xaml-overview.md).
 
 При создании свойства-идентификатора соедините имя свойства в том виде, в котором оно было зарегистрировано, с суффиксом "Property" (например, "LabelProperty"). Данное свойство является идентификатором для свойства зависимостей и используется в качестве входных данных для вызовов [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) и [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359), выполняемых в ваших оболочках свойств. Оно также используется системой свойств и другими обработчиками XAML, такими как [**{x:Bind}**](x-bind-markup-extension.md)
 
@@ -151,9 +185,9 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 
 Программе-оболочке свойства следует вызывать [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) в реализации **get** и [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) в реализации **set**.
 
-**Внимание!** Во всех неисключительных ситуациях реализация оболочки должна выполнять только операции [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) и [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361). В ином случае поведение при задании свойства через разметку XAML и при его задании через код будет различным. Для эффективности средство синтаксического анализа XAML обходит программы-оболочки при установке свойств зависимостей; оно обменивается данными с резервным хранилищем через **SetValue**.
+> [!WARNING]
+> В лишь исключительных обстоятельствах программы-оболочки для реализации должен выполнять только операции [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) и [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) . В ином случае поведение при задании свойства через разметку XAML и при его задании через код будет различным. Для эффективности средство синтаксического анализа XAML обходит программы-оболочки при установке свойств зависимостей; оно обменивается данными с резервным хранилищем через **SetValue**.
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 public String Label
 {
@@ -161,16 +195,33 @@ public String Label
     set { SetValue(LabelProperty, value); }
 }
 ```
+
 ```vb
-Public Property Label() As String 
-    Get 
+Public Property Label() As String
+    Get
         Return DirectCast(GetValue(LabelProperty), String) 
     End Get 
-    Set(ByVal value As String) 
-        SetValue(LabelProperty, value) 
-    End Set 
+    Set(ByVal value As String)
+        SetValue(LabelProperty, value)
+    End Set
 End Property
 ```
+
+```cppwinrt
+// ImageWithLabelControl.h
+...
+winrt::hstring Label()
+{
+    return winrt::unbox_value<winrt::hstring>(GetValue(m_labelProperty));
+}
+
+void Label(winrt::hstring const& value)
+{
+    SetValue(m_labelProperty, winrt::box_value(value));
+}
+...
+```
+
 ```cpp
 //using namespace Platform;
 public:
@@ -181,7 +232,7 @@ public:
       return (String^)GetValue(LabelProperty);
     }
     void set(String^ value) {
-      SetValue(LabelProperty, value); 
+      SetValue(LabelProperty, value);
     }
   }
 ```
@@ -190,8 +241,8 @@ public:
 
 Когда свойству зависимостей назначаются метаданные свойства, эти же метаданные применяются к этому свойству для каждого экземпляра типа, которому принадлежит свойство, или его подклассов. В метаданных свойства можно указать два поведения:
 
--   значение по умолчанию, назначаемое системой свойств всем случаям данного свойства;
--   статический метод обратного вызова, автоматически вызываемый в системе свойств при обнаружении изменения значения свойства.
+- значение по умолчанию, назначаемое системой свойств всем случаям данного свойства;
+- статический метод обратного вызова, автоматически вызываемый в системе свойств при обнаружении изменения значения свойства.
 
 ### <a name="calling-register-with-property-metadata"></a>Вызов метода Register с метаданными свойства
 
@@ -199,11 +250,11 @@ public:
 
 Как правило, вы предоставляете [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) как внутренне созданный экземпляр в параметрах для [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829).
 
-**Примечание.** Если вы определяете реализацию [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812), необходимо использовать вспомогательный метод [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099), а не вызывать конструктор [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771), чтобы определить экземпляр **PropertyMetadata**.
+> [!NOTE]
+> При указании реализации [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) необходимо использовать метод служебной программы [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099) вместо вызова конструктора [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) для определения экземпляра **PropertyMetadata** .
 
 Следующий пример отличается от предыдущих примеров [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) ссылкой на экземпляр [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) с помощью значения [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770). Реализация обратного вызова OnLabelChanged показана далее в этом разделе.
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
   "Label",
@@ -212,19 +263,34 @@ public static readonly DependencyProperty LabelProperty = DependencyProperty.Reg
   new PropertyMetadata(null,new PropertyChangedCallback(OnLabelChanged))
 );
 ```
+
 ```vb
-Public Shared ReadOnly LabelProperty As DependencyProperty = 
-    DependencyProperty.Register("Label", 
-      GetType(String), 
-      GetType(ImageWithLabelControl), 
+Public Shared ReadOnly LabelProperty As DependencyProperty =
+    DependencyProperty.Register("Label",
+      GetType(String),
+      GetType(ImageWithLabelControl),
       New PropertyMetadata(
         Nothing, new PropertyChangedCallback(AddressOf OnLabelChanged)))
 ```
+
+```cppwinrt
+// ImageWithLabelControl.cpp
+...
+Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Windows::UI::Xaml::DependencyProperty::Register(
+        L"Label",
+        winrt::xaml_typename<winrt::hstring>(),
+        winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
+        Windows::UI::Xaml::PropertyMetadata{ nullptr, Windows::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
+);
+...
+```
+
 ```cpp
-DependencyProperty^ ImageWithLabelControl::_LabelProperty = 
-    DependencyProperty::Register("Label", 
+DependencyProperty^ ImageWithLabelControl::_LabelProperty =
+    DependencyProperty::Register("Label",
     Platform::String::typeid,
-    ImageWithLabelControl::typeid, 
+    ImageWithLabelControl::typeid,
     ref new PropertyMetadata(nullptr,
       ref new PropertyChangedCallback(&ImageWithLabelControl::OnLabelChanged))
     );
@@ -236,7 +302,21 @@ DependencyProperty^ ImageWithLabelControl::_LabelProperty =
 
 Если значение по умолчанию не указано, то значением по умолчанию для свойства зависимостей будет null для ссылочного типа, значение по умолчанию типа для типа значения или примитив языка (например, 0 для целого числа или пустая строка для строки). Основная причина для установки значения по умолчанию состоит в том, что это значение восстанавливается при вызове [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) на свойстве. Установка значений по умолчанию для отдельных свойств может быть удобнее установки значений по умолчанию в конструкторах, особенно для типов значений. Однако для ссылочных типов следует убедиться, что установка значения по умолчанию не создает непредвиденного шаблона одноэлементного объекта. Подробнее см. далее в разделе [Рекомендации](#best-practices).
 
-**Примечание.** При регистрации не следует использовать значение по умолчанию [**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371). Это может запутать объект-получатель свойств и повлечет непредвиденные последствия внутри системы свойств.
+```cppwinrt
+// ImageWithLabelControl.cpp
+...
+Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Windows::UI::Xaml::DependencyProperty::Register(
+        L"Label",
+        winrt::xaml_typename<winrt::hstring>(),
+        winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
+        Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Windows::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
+);
+...
+```
+
+> [!NOTE]
+> Регистрация не значение по умолчанию [**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371). Это может запутать объект-получатель свойств и повлечет непредвиденные последствия внутри системы свойств.
 
 ### <a name="createdefaultvaluecallback"></a>CreateDefaultValueCallback
 
@@ -252,7 +332,6 @@ DependencyProperty^ ImageWithLabelControl::_LabelProperty =
 
 Следующий пример показывает реализацию [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770). Он реализует метод, ссылки на который можно было заметить в предыдущих примерах [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829), в качестве части аргументов создания для [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771). Ситуация, которой касается данный обратный вызов, заключается в том, что у класса также имеется вычисляемое свойство только для чтения под названием HasLabelValue (реализация не показана). При каждой переоценке значения свойства Label вызывается метод обратного вызова, и обратный вызов обеспечивает синхронизацию между независимым вычисленным значением и изменениями в свойстве зависимостей.
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 private static void OnLabelChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
     ImageWithLabelControl iwlc = d as ImageWithLabelControl; //null checks omitted
@@ -265,6 +344,7 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
     }
 }
 ```
+
 ```vb
     Private Shared Sub OnLabelChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
         Dim iwlc As ImageWithLabelControl = CType(d, ImageWithLabelControl) ' null checks omitted
@@ -276,6 +356,16 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
         End If
     End Sub
 ```
+
+```cppwinrt
+void ImageWithLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+{
+    auto iwlc{ d.as<ImageWithLabelControlApp::ImageWithLabelControl>() };
+    auto s{ winrt::unbox_value<winrt::hstring>(e.NewValue()) };
+    iwlc.HasLabelValue(s.size() != 0);
+}
+```
+
 ```cpp
 static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventArgs^ e)
 {
@@ -291,7 +381,6 @@ static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventAr
 
 Если тип [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) является перечислением или структурой, обратный вызов может выполняться, даже если внутренние значения структуры или перечисления не менялись. Этим он отличается от примитивов системы, например строки, где обратный вызов выполняется только в случае, если значение было изменено. Это побочный эффект, оказываемый на эти значения внутренними операциями упаковки-преобразования и распаковки-преобразования. Если вы используете метод [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) для свойства со значением, представленным перечислением или структурой, необходимо сравнить [**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365) и [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364), приведя значения самостоятельно и используя перегруженные операторы сравнения, доступные для только что приведенных значений. Или, если такой оператор недоступен (что возможно в случае пользовательской структуры), может потребоваться сравнить индивидуальные значения. Если в результате значения не меняются, то, как правило, предпринимать ничего не нужно.
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 private static void OnVisibilityValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
     if ((Visibility)e.NewValue != (Visibility)e.OldValue)
@@ -300,6 +389,7 @@ private static void OnVisibilityValueChanged(DependencyObject d, DependencyPrope
     } // else this was invoked because of boxing, do nothing
 }
 ```
+
 ```vb
 Private Shared Sub OnVisibilityValueChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
     If CType(e.NewValue,Visibility) != CType(e.OldValue,Visibility) Then
@@ -308,6 +398,21 @@ Private Shared Sub OnVisibilityValueChanged(d As DependencyObject, e As Dependen
     '  else this was invoked because of boxing, do nothing
 End Sub
 ```
+
+```cppwinrt
+static void OnVisibilityValueChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+{
+    auto oldVisibility{ winrt::unbox_value<Windows::UI::Xaml::Visibility>(e.OldValue()) };
+    auto newVisibility{ winrt::unbox_value<Windows::UI::Xaml::Visibility>(e.NewValue()) };
+
+    if (newVisibility != oldVisibility)
+    {
+        // The value really changed; invoke your property-changed logic here.
+    }
+    // Otherwise, OnVisibilityValueChanged was invoked because of boxing; do nothing.
+}
+```
+
 ```cpp
 static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChangedEventArgs^ e)
 {
@@ -342,10 +447,10 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 
 Свойства зависимостей типа коллекции довольно редки в API среды выполнения Windows. В большинстве случаев коллекции можно использовать там, где элементы относятся к подклассу [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), но само свойство коллекции реализовано как свойство среды CLR или C++. Это вызвано тем, что коллекции не обязательно подходят некоторым типовым сценариям, включающим свойства зависимостей. Пример.
 
--   Мы обычно не анимируем коллекции.
--   Мы обычно не выполняем предварительного заполнения элемента в коллекции стилями или шаблоном.
--   Хотя привязка к коллекциям является распространенным сценарием, коллекция не обязана быть свойством зависимостей, чтобы быть источником привязки. Для целевых объектов привязки более типично использование подклассов [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) или [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) для поддержки элементов коллекции или использования схем моделей просмотра. Подробнее о привязке коллекций и к коллекциям см. в разделе [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
--   Для уведомлений об изменении коллекций лучше использовать такие интерфейсы, как **INotifyPropertyChanged** или **INotifyCollectionChanged**, либо наследовать тип коллекции от [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx).
+- Мы обычно не анимируем коллекции.
+- Мы обычно не выполняем предварительного заполнения элемента в коллекции стилями или шаблоном.
+- Хотя привязка к коллекциям является распространенным сценарием, коллекция не обязана быть свойством зависимостей, чтобы быть источником привязки. Для целевых объектов привязки более типично использование подклассов [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) или [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) для поддержки элементов коллекции или использования схем моделей просмотра. Подробнее о привязке коллекций и к коллекциям см. в разделе [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
+- Для уведомлений об изменении коллекций лучше использовать такие интерфейсы, как **INotifyPropertyChanged** или **INotifyCollectionChanged**, либо наследовать тип коллекции от [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx).
 
 Тем не менее сценарии для свойств зависимостей типа коллекции существуют. Следующие три раздела предоставляют некоторые рекомендации по реализации свойства зависимостей типа коллекции.
 
@@ -375,9 +480,8 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 
 ## <a name="related-topics"></a>Еще по теме
 
-* [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
-* [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)
-* [Общие сведения о свойствах зависимостей](dependency-properties-overview.md)
-* [Пример пользовательских и настраиваемых элементов управления XAML](http://go.microsoft.com/fwlink/p/?linkid=238581)
+- [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
+- [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)
+- [Общие сведения о свойствах зависимостей](dependency-properties-overview.md)
+- [Пример пользовательских и настраиваемых элементов управления XAML](http://go.microsoft.com/fwlink/p/?linkid=238581)
  
-

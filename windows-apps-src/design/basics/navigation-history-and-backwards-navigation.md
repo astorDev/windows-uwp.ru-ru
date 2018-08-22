@@ -1,6 +1,6 @@
 ---
 author: serenaz
-Description: The Universal Windows Platform (UWP) provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
+Description: Learn how to implement backwards navigation for traversing the user's navigation history within an UWP app.
 title: Журнал навигации и навигация в обратном направлении (приложения для Windows)
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
@@ -8,32 +8,32 @@ label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
 ms.author: sezhen
-ms.date: 11/22/2017
+ms.date: 06/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 824f0e83408893bf95d856067282b1fea1313876
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: 0400e04a86675adccd1da14d8cb2652028fbfd30
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895411"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800969"
 ---
-#  <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Журнал навигации и навигация в обратном направлении для приложений UWP
+# <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Журнал навигации и навигация в обратном направлении для приложений UWP
 
 > **Важные API**: событие [BackRequested](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), класс [SystemNavigationManager](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 Универсальная платформа Windows (UWP) обеспечивает единообразие навигации в обратном направлении в виде системы возврата на предыдущий уровень, позволяя пользователю перемещаться по журналу навигации в приложении и, в зависимости от устройства, из приложения в приложение.
 
-Чтобы реализовать обратную навигацию в приложении, разместите [кнопку "Назад"](#Back-button) в верхнем левом углу пользовательского интерфейса приложения. Если в приложении используется элемент управления [NavigationView](../controls-and-patterns/navigationview.md), вы можете использовать [встроенную кнопку "Назад" для NavigationView](../controls-and-patterns/navigationview.md#backwards-navigation). 
+Чтобы реализовать обратную навигацию в приложении, разместите [кнопку "Назад"](#Back-button) в верхнем левом углу пользовательского интерфейса приложения. Если в приложении используется элемент управления [NavigationView](../controls-and-patterns/navigationview.md), вы можете использовать [встроенную кнопку "Назад" для NavigationView](../controls-and-patterns/navigationview.md#backwards-navigation).
 
 Пользователь ожидает что кнопка «Назад» позволит ему перейти на предыдущую страницу истории навигации приложения. Обратите внимание, что именно вы решаете, какие действия навигации добавлять в журнал навигации и как реагировать на нажатие кнопки «Назад».
 
 ## <a name="back-button"></a>Кнопка "Назад"
 
-Чтобы создать кнопку "Назад", используйте элемент управления [Кнопка](../controls-and-patterns/buttons.md) со стилем `NavigationBackButtonNormalStyle` и разместите кнопку в верхней левой части пользовательского интерфейса приложения.
+Для создания кнопки "Назад", используйте элемент управления [Button](../controls-and-patterns/buttons.md) с `NavigationBackButtonNormalStyle` стиля и разместите кнопку в верхнем левом углу пользовательского интерфейса вашего приложения (Дополнительные сведения см в примерах кода XAML ниже).
 
 ![Кнопка "Назад" в верхнем левом углу пользовательского интерфейса приложения](images/back-nav/BackEnabled.png)
 
@@ -59,6 +59,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 В следующем примере кода показано, как реализовать поведение обратной навигации с помощью кнопки "Назад". Код реагирует на событие [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) кнопки и отключает/включает видимость кнопки в [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_), который вызывается при переходе к новой странице. В примере кода также представлена обработка данных, вводимых с помощью аппаратных и программных клавиш "Назад" системы, за счет регистрации прослушивателя для события [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested).
 
 ```xaml
+<!-- MainPage.xaml -->
 <Page x:Class="AppName.MainPage">
 ...
 <Button x:Name="BackButton" Click="Back_Click" Style="{StaticResource NavigationBackButtonNormalStyle}"/>
@@ -69,6 +70,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 Поддерживающий код
 
 ```csharp
+// MainPage.xaml.cs
 public MainPage()
 {
     KeyboardAccelerator GoBack = new KeyboardAccelerator();
@@ -111,11 +113,75 @@ private void BackInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvoked
 }
 ```
 
-Здесь мы регистрируем глобальный прослушиватель для события [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) в файле кода программной части `App.xaml`. Вы можете зарегистрировать это событие на каждой странице, которую нужно исключить из обратной навигации, или выполнить код на уровне страницы перед отображением страницы.
+```cppwinrt
+// MainPage.cpp
+#include "pch.h"
+#include "MainPage.h"
+
+#include "winrt/Windows.System.h"
+#include "winrt/Windows.UI.Xaml.Controls.h"
+#include "winrt/Windows.UI.Xaml.Input.h"
+#include "winrt/Windows.UI.Xaml.Navigation.h"
+
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace Windows::UI::Xaml;
+
+namespace winrt::PageNavTest::implementation
+{
+    MainPage::MainPage()
+    {
+        InitializeComponent();
+
+        Windows::UI::Xaml::Input::KeyboardAccelerator goBack;
+        goBack.Key(Windows::System::VirtualKey::GoBack);
+        goBack.Invoked({ this, &MainPage::BackInvoked });
+        Windows::UI::Xaml::Input::KeyboardAccelerator altLeft;
+        altLeft.Key(Windows::System::VirtualKey::Left);
+        altLeft.Invoked({ this, &MainPage::BackInvoked });
+        KeyboardAccelerators().Append(goBack);
+        KeyboardAccelerators().Append(altLeft);
+        // ALT routes here.
+        altLeft.Modifiers(Windows::System::VirtualKeyModifiers::Menu);
+    }
+
+    void MainPage::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e)
+    {
+        BackButton().IsEnabled(Frame().CanGoBack());
+    }
+
+    void MainPage::Back_Click(IInspectable const&, RoutedEventArgs const&)
+    {
+        On_BackRequested();
+    }
+
+    // Handles system-level BackRequested events and page-level back button Click events.
+    bool MainPage::On_BackRequested()
+    {
+        if (Frame().CanGoBack())
+        {
+            Frame().GoBack();
+            return true;
+        }
+        return false;
+    }
+
+    void MainPage::BackInvoked(Windows::UI::Xaml::Input::KeyboardAccelerator const& sender,
+        Windows::UI::Xaml::Input::KeyboardAcceleratorInvokedEventArgs const& args)
+    {
+        args.Handled(On_BackRequested());
+    }
+}
+```
+
+Выше мы обработка обратной навигации на одной странице. Если требуется исключить определенных страниц из переходов назад или необходимо выполнить код уровня страницы перед отображением страницы, которые можно обрабатывать навигации на каждой странице.
+
+Обработка обратной навигации для всего приложения, вы регистрируете глобального прослушиватель для события [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) в `App.xaml` файл фонового кода.
 
 Код программной части App.xaml
 
 ```csharp
+// App.xaml.cs
 Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
 Frame rootFrame = Window.Current.Content;
 rootFrame.PointerPressed += On_PointerPressed;
@@ -127,12 +193,74 @@ private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEvent
 
 private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 {
-    bool isXButton1Pressed = e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
+    bool isXButton1Pressed =
+        e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
 
     if (isXButton1Pressed)
     {
         e.Handled = On_BackRequested();
     }
+}
+
+private bool On_BackRequested()
+{
+    Frame rootFrame = Window.Current.Content as Frame;
+    if (rootFrame.CanGoBack)
+    {
+        rootFrame.GoBack();
+        return true;
+    }
+    return false;
+}
+```
+
+```cppwinrt
+// App.cpp
+#include <winrt/Windows.UI.Core.h>
+#include "winrt/Windows.UI.Input.h"
+#include "winrt/Windows.UI.Xaml.Input.h"
+
+#include "App.h"
+#include "MainPage.h"
+
+using namespace winrt;
+...
+
+    Windows::UI::Core::SystemNavigationManager::GetForCurrentView().BackRequested({ this, &App::App_BackRequested });
+    Frame rootFrame{ nullptr };
+    auto content = Window::Current().Content();
+    if (content)
+    {
+        rootFrame = content.try_as<Frame>();
+    }
+    rootFrame.PointerPressed({ this, &App::On_PointerPressed });
+...
+
+void App::App_BackRequested(IInspectable const& /* sender */, Windows::UI::Core::BackRequestedEventArgs const& e)
+{
+    e.Handled(On_BackRequested());
+}
+
+void App::On_PointerPressed(IInspectable const& sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs const& e)
+{
+    bool isXButton1Pressed =
+        e.GetCurrentPoint(sender.as<UIElement>()).Properties().PointerUpdateKind() == Windows::UI::Input::PointerUpdateKind::XButton1Pressed;
+
+    if (isXButton1Pressed)
+    {
+        e.Handled(On_BackRequested());
+    }
+}
+
+// Handles system-level BackRequested events.
+bool App::On_BackRequested()
+{
+    if (Frame().CanGoBack())
+    {
+        Frame().GoBack();
+        return true;
+    }
+    return false;
 }
 ```
 
@@ -165,7 +293,24 @@ private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 
 Если в приложении продолжает использоваться API [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), кнопка "Назад" будет отображается внутри строки заголовка, как обычно.
 
-![Кнопка "Назад" в строке заголовка](images/nav-back-pc.png)
+- Если приложение является **не с вкладками**, кнопки "Назад" отображается в строке заголовка. Visual взаимодействия взаимодействия и пользователя для кнопки "Назад" не отличаются от предыдущей сборки.
+
+    ![Заголовка кнопки "Назад"](images/nav-back-pc.png)
+
+- Если приложение **с вкладками**, то кнопки "Назад" отображается внутри новой системы назад панели.
+
+    ![Система представляют собой обратно кнопки панели](images/back-nav/tabs.png)
+
+### <a name="system-back-bar"></a>Система задний план панели
+
+> [!NOTE]
+> «Назад Система панели» имеет только описание, не является официальным именем.
+
+Назад Система панели — это зона, которая вставляется между полосе вкладки и областью контента приложения s. Полоса проходит по ширине приложения, а кнопка «Назад» находится у левой границы. Диапазон имеет вертикальной высота 32 пикселей для обеспечения целевой размер достаточное количество сенсорного ввода для кнопки "Назад".
+
+Системная строка возврата отображается динамически в зависимости от видимости кнопки «Назад». Кнопки "Назад" отображается, если снова системы вставлен панели сдвиг контента приложения на 32 пикселей под полосе вкладки. Если скрыт кнопки "Назад", задней панели системы динамически удалена панель, сдвиг контента приложения на 32 пикселей в соответствии с полосе вкладки. Чтобы избежать необходимости shift пользовательского интерфейса вашего приложения вверх или вниз, мы рекомендуем рисования на [кнопку возврата в приложение](#back-button).
+
+[Пользовательские настройки панели заголовка](../shell/title-bar.md) будет перенесено на вкладке приложения и системы обратно панели. Если ваше приложение задает свойства цвета фона и переднего плана с [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), а затем цвета применяется на задний план вкладки и системы панели.
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>Рекомендации по пользовательской настройке обратной навигации
 
@@ -190,16 +335,16 @@ private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Со страницы на страницу; одна и та же группа одноранговых элементов; элементы навигации не отображаются на экране</strong>
-<p>Пользователь переходит от одной страницы к другой в пределах одной и той же группы одноранговых элементов. Постоянно присутствующего элемента навигации (такого как верхняя панель навигации или левая закрепленная панель навигации), который обеспечивал бы непосредственное перемещение между двумя страницами, нет.</p></td>
+<p>Пользователь переходит от одной страницы к другой в пределах одной и той же группы одноранговых элементов. Существует нет на экране элемент навигации (например, [NavigationView](../controls-and-patterns/navigationview.md)), который предоставляет прямое навигации на обоих страницы.</p></td>
 <td style="vertical-align:top;"><strong>Да</strong>
-<p>На следующем рисунке пользователь переходит между страницами одной и той же одноранговой группы. Страницы не используют верхнюю панель навигации или левую закрепленную панель навигации, поэтому перемещения добавляются в журнал навигации.</p>
+<p>На следующем рисунке переходы между двумя страницами в ту же группу peer и навигации будет добавлен в журнал переходов.</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Со страницы на страницу; одна и та же группа одноранговых элементов; элементы навигации отображаются на экране</strong>
-<p>Пользователь переходит от одной страницы к другой в пределах одной и той же группы одноранговых элементов. Обе страницы отображаются в одном и том же элементе навигации. Например, обе страницы используют один и тот же элемент верхней панели навигации, или же обе страницы отображаются на левой закрепленной панели навигации.</p></td>
+<p>Пользователь переходит от одной страницы к другой в пределах одной и той же группы одноранговых элементов. Обе страницы отображаются в том же элементе навигации, например [NavigationView](../controls-and-patterns/navigationview.md).</p></td>
 <td style="vertical-align:top;"><strong>Это зависит от обстоятельств.</strong>
-<p>Да, добавить в журнал навигации, но с 2 исключениями. Если ожидается, что пользователи вашего приложения будут часто переключаться между страницами в одноранговой группе, или если вы хотите сохранить состояние/журнал переходов в пределах страницы одноранговой группы, не добавляйте в журнал навигации. В этом случае, когда пользователь нажимает кнопку "Назад", выполните переход к последней странице, на которой он находился перед переходом к текущей одноранговой группе. </p>
+<p>Да, добавьте в журнале переходов с двумя исключениями. Если пользователи вашего приложения могут переключаться между страницами в одноранговой группы часто или если вы хотите сохранить иерархии навигации, затем не следует добавлять в журнал переходов. В этом случае, когда пользователь нажимает кнопку "Назад", выполните переход к последней странице, на которой он находился перед переходом к текущей одноранговой группе. </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
