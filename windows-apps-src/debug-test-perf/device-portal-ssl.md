@@ -2,20 +2,20 @@
 author: PatrickFarley
 ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
 title: Подготовка к работе устройства портала с настраиваемой SSL-сертификата
-description: Подлежит уточнению
+description: TBD
 ms.author: pafarley
 ms.date: 07/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, uwp, портал устройства
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ccdef5c9462f18c1a7044fcc3a683c749177349
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 1192c200cd42ab28cc7e763c06fd8a5638aa3400
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1070939"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2786703"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>Подготовка к работе устройства портала с настраиваемой SSL-сертификата
 В обновлении создателей 10 Windows портал устройства Windows добавлен администраторам устройства для установки пользовательских сертификатов для использования в HTTPS-соединений. 

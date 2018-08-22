@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, привязка, свойство
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ea4c4caf5135b13b88eeea6f43bb36bd691c11
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: 367bf5d5d554bd094ce3d5b726b818c8c388d398
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1863220"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2787161"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-property"></a>Элементы управления XAML; привязка к свойству [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Свойство, которое может быть эффективно привязано к элементу управления XAML, называется *отслеживаемым*. Эта идея основана на шаблоне проектирования программного обеспечения, известном как *шаблон наблюдателя *. В этом разделе показано, как реализовывать отслеживаемые свойства в C++/WinRT и привязывать к ним элементы управления XAML.
@@ -49,7 +49,7 @@ namespace Bookstore
 ```
 
 > [!IMPORTANT]
-> Чтобы приложение могло пройти тесты [комплекта сертификации приложений для Windows](../debug-test-perf/windows-app-certification-kit.md) и быть успешно добавлено в Microsoft Store, первичный базовый для каждого класса среды выполнения, *объявленного в приложении*, должен иметь тип из пространства имен Windows.*.
+> Приложения для передачи [Комплект сертификации приложений для Windows](../debug-test-perf/windows-app-certification-kit.md) тестов используется хранилище Microsoft проверить отправленные данные и таким образом для успешного быть ingested в хранилище данных Майкрософт, первичный базовый класс для каждого класса среды выполнения *объявляются в приложение* должен иметь тип, поступающих в пространстве имен Windows.*.
 
 Для выполнения этого требования, классы модели представления должны быть производными от [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject). Кроме того, объявите привязываемый базовый класс, производный от **DependencyObject**и наследуйте модели представления от него. Модели данных можно объявить в качестве структур C++; их не нужно объявлять в MIDL (при условии, что они используются только из ваших моделей представления, и к ним не осуществляется непосредственная привязка XAML; в случае чего они, возможно, по определению не являлись бы моделями представлений).
 
@@ -71,16 +71,16 @@ namespace winrt::Bookstore::implementation
     struct BookSku : BookSkuT<BookSku>
     {
         BookSku() = delete;
-        BookSku(hstring const& title);
+        BookSku(winrt::hstring const& title);
 
         hstring Title();
-        void Title(hstring const& value);
+        void Title(winrt::hstring const& value);
         event_token PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& value);
-        void PropertyChanged(event_token const& token);
+        void PropertyChanged(winrt::event_token const& token);
     
     private:
-        hstring title;
-        event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> propertyChanged;
+        hstring m_title;
+        event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
     };
 }
 ```
@@ -94,33 +94,33 @@ namespace winrt::Bookstore::implementation
 
 namespace winrt::Bookstore::implementation
 {
-    BookSku::BookSku(hstring const& title)
+    hstring BookSku::Title()
+    {
+        return m_title;
+    }
+
+    BookSku::BookSku(winrt::hstring const& title)
     {
         Title(title);
     }
 
-    hstring BookSku::Title()
+    void BookSku::Title(winrt::hstring const& value)
     {
-        return title;
-    }
-
-    void BookSku::Title(hstring const& value)
-    {
-        if (title != value)
+        if (m_title != value)
         {
-            title = value;
-            propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"Title" });
+            m_title = value;
+            m_propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"Title" });
         }
     }
 
     event_token BookSku::PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& handler)
     {
-        return propertyChanged.add(handler);
+        return m_propertyChanged.add(handler);
     }
 
-    void BookSku::PropertyChanged(event_token const& token)
+    void BookSku::PropertyChanged(winrt::event_token const& token)
     {
-        propertyChanged.remove(token);
+        m_propertyChanged.remove(token);
     }
 }
 ```
@@ -190,13 +190,13 @@ namespace winrt::Bookstore::implementation
 > Тип `m_bookSku` является проецируемым типом (**winrt::Bookstore::BookSku**), а параметр шаблона, который используется с **make**, является типом реализации (**winrt::Bookstore::implementation::BookSku**) . Даже в этом случае **make** возвращает экземпляр проецируемого типа.
 
 ## <a name="add-a-property-of-type-bookstoreviewmodel-to-mainpage"></a>Добавьте свойство типа **BookstoreViewModel** в **MainPage**
-Откройте `MainPage.idl`, где объявляется класс среды выполнения, представляющий собой главную страницу пользовательского интерфейса. Добавьте оператор import для импорта `BookstoreViewModel.idl` и свойство только для чтения с именем MainViewModel типа **BookstoreViewModel**.
+Откройте `MainPage.idl`, где объявляется класс среды выполнения, представляющий собой главную страницу пользовательского интерфейса. Добавьте оператор import для импорта `BookstoreViewModel.idl` и свойство только для чтения с именем MainViewModel типа **BookstoreViewModel**. Также удалите свойство **MyProperty** . Кроме директивы **импорта** в следующем списке.
 
 ```idl
 // MainPage.idl
 import "BookstoreViewModel.idl";
 
-namespace BookstoreCPPWinRT
+namespace Bookstore
 {
     runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
     {
@@ -206,9 +206,13 @@ namespace BookstoreCPPWinRT
 }
 ```
 
-Выполните сборку проекта для повторного создания файлов исходного кода, в которых реализован класс **MainPage** (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` и `MainPage.cpp`). Скопируйте заглушки доступа для свойства ViewModel из созданных файлов в `\Bookstore\Bookstore\MainPage.h` и `MainPage.cpp`.
+Сохраните файл. Не выполняется построение проекта до завершения в данный момент, но теперь построение — это полезно что следует сделать так, как повторно файлы исходного кода, в которых реализуется класс **MainPage** среды выполнения (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` и `MainPage.cpp`). Поэтому отключать построить сейчас. Ошибка построения можно ожидать на этом этапе **'MainViewModel': не является членом «winrt::Bookstore::implementation::MainPage»**.
 
-Добавьте частный член для хранения модели представления в `\Bookstore\Bookstore\MainPage.h`. Обратите внимание, что функция доступа свойства (и член m_mainViewModel) реализуется относительно **Bookstore::BookstoreViewModel**, который является проецируемым типом. Тип реализации находится в том же проекте (единице компиляции), поэтому мы создаем m_mainViewModel через перегрузку конструктора, которая принимает `nullptr_t`.
+Если опустить include из `BookstoreViewModel.idl` (список `MainPage.idl` выше), а затем вы увидите ошибки **ожидается \ < около «MainViewModel»**. Другой совет – убедитесь в том, что все типы остается в то же пространство имен: пространство имен, которая отображается в списке кода.
+
+Чтобы устранить ошибку, мы рассчитываем, теперь необходимо скопировать заглушки доступа к данным для свойства **MainViewModel** из него созданные файлы и в `\Bookstore\Bookstore\MainPage.h` и `MainPage.cpp`.
+
+Добавьте частный член для хранения модели представления в `\Bookstore\Bookstore\MainPage.h`. Обратите внимание, что функция доступа свойства (и член m_mainViewModel) реализуется относительно **Bookstore::BookstoreViewModel**, который является проецируемым типом. Тип реализации находится в том же проекте (единице компиляции), поэтому мы создаем m_mainViewModel через перегрузку конструктора, которая принимает `nullptr_t`. Также удалите свойство **MyProperty** .
 
 ```cppwinrt
 // MainPage.h
@@ -221,18 +225,16 @@ namespace winrt::Bookstore::implementation
 
         Bookstore::BookstoreViewModel MainViewModel();
 
-    private:
         void ClickHandler(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args);
 
+    private:
         Bookstore::BookstoreViewModel m_mainViewModel{ nullptr };
-
-        friend class MainPageT<MainPage>;
     };
 }
 ...
 ```
 
-В `\Bookstore\Bookstore\MainPage.cpp` включите `BookstoreViewModel.h`, который объявляет тип реализации. Вызовите [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (с типом реализации) для назначения нового экземпляра проецируемого типа для m_mainViewModel. Назначьте начальное значение для названия книги. Реализуйте метод доступа для свойства MainViewModel. И, наконец, обновите название книги в обработчике событий кнопки.
+В `\Bookstore\Bookstore\MainPage.cpp` включите `BookstoreViewModel.h`, который объявляет тип реализации. Вызовите [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (с типом реализации) для назначения нового экземпляра проецируемого типа для m_mainViewModel. Назначьте начальное значение для названия книги. Реализуйте метод доступа для свойства MainViewModel. И, наконец, обновите название книги в обработчике событий кнопки. Также удалите свойство **MyProperty** .
 
 ```cppwinrt
 // MainPage.cpp
@@ -251,14 +253,14 @@ namespace winrt::Bookstore::implementation
         InitializeComponent();
     }
 
-    Bookstore::BookstoreViewModel MainPage::MainViewModel()
-    {
-        return m_mainViewModel;
-    }
-
     void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
     {
         MainViewModel().BookSku().Title(L"To Kill a Mockingbird");
+    }
+
+    Bookstore::BookstoreViewModel MainPage::MainViewModel()
+    {
+        return m_mainViewModel;
     }
 }
 ```
@@ -271,6 +273,9 @@ namespace winrt::Bookstore::implementation
 ```
 
 Выполните сборку и запуск проекта. Нажмите кнопку, чтобы запустить обработчик события **Click**. Этот обработчик вызывает функция мутатора названия книги; этот мутатор вызывает событие, чтобы сообщить пользовательскому интерфейсу о том, что свойство **Title** изменилось; а кнопка повторно запрашивает значение этого свойства, чтобы обновить свое собственное значение **Content**.
+
+## <a name="using-the-binding-markup-extension-with-cwinrt"></a>Использование расширения разметки {Binding} с C + +/ WinRT
+В настоящее время выпущенной версии C + +/ WinRT, чтобы иметь возможность использовать расширения разметки {Binding}, необходимые для реализации интерфейсов [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) и [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) .
 
 ## <a name="important-apis"></a>Важные API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)

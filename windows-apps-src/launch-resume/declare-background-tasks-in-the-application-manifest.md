@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: 65ee6cd32e1fdb6900c859725b8deb6b5031d297
-ms.sourcegitcommit: ba0d20f6fad75ce98c25ceead78aab6661250571
+keywords: Windows 10, uwp, фона задач
+ms.localizationpriority: medium
+ms.openlocfilehash: 00e685085c004cced24b9a42ef2261a26eef10bb
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2017
-ms.locfileid: "848429"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788309"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Объявление фоновых задач в манифесте приложения
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -213,7 +213,7 @@ ms.locfileid: "848429"
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>Запуск в новом процессе каждый раз, когда активируется  триггер, с помощью атрибута SupportsMultipleInstances
 
-В этом примере объявляется, что фоновая задача, которая выполняется в новом процессе, который получает собственные ограничения на ресурсы (память и ЦП) каждый раз, когда активируется новый триггер. Обратите внимание на использование `SupportsMultipleInstances`, который обеспечивает это поведение. Для использования этого атрибута необходимо в качестве целевого SDK выбрать версию "10.0.15063" (Windows 10 Creator Update) или более позднюю версию.
+В этом примере объявляется, что фоновая задача, которая выполняется в новом процессе, который получает собственные ограничения на ресурсы (память и ЦП) каждый раз, когда активируется новый триггер. Обратите внимание на использование `SupportsMultipleInstances`, который обеспечивает это поведение. Перед использованием этого атрибута следует задать SDK версии "10.0.15063» (обновление создателей 10 Windows) или более поздней версии.
 
 ```xml
 <Package

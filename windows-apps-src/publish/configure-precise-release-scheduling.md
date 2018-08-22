@@ -8,13 +8,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, расписание, дата выпуска, даты, запуск
-ms.localizationpriority: high
-ms.openlocfilehash: 87beb3d3e5303528f8b80049aacecedb0212b9a7
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 84466f907bad7e38506e1bf81b89eb631675093c
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832068"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2787959"
 ---
 # <a name="configure-precise-release-scheduling"></a>Настройка точного расписания выпуска
 

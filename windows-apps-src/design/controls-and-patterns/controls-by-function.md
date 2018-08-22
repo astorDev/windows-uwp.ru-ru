@@ -12,22 +12,35 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 21539d625dc70ded7bec77b9916c7ea4bff72536
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396813"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788529"
 ---
 # <a name="controls-by-function"></a>Элементы управления по функциям
 
- 
-
 Инфраструктура пользовательского интерфейса XAML для Windows предоставляет обширную библиотеку элементов управления, поддерживающих разработку интерфейса. Часть элементов управления имеет визуальное представление, а остальные используются в качестве контейнеров для других элементов управления или содержимого — например, для изображений и мультимедиа. 
 
-Чтобы просмотреть элементы управления интерфейса Windows в действии, скачайте [Пример основных элементов пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992). 
+Чтобы просмотреть элементы управления интерфейса Windows в действии, скачайте [Пример основных элементов пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992).
 
-Ниже перечисленысгруппированные по функциям типовые элементы управления XAML, которые можно использовать в приложении. 
+<table>
+<th align="left">Галерея элементов управления XAML<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>При наличии установленного приложения <strong style="font-weight: semi-bold">Коллекция элементов управления XAML</strong> , щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/NavigationView">открыть приложение и посмотрите, NavigationView в действии</a> </p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Получить исходный код (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
+
+Ниже перечисленысгруппированные по функциям типовые элементы управления XAML, которые можно использовать в приложении.
 
 ## <a name="appbars-and-commands"></a>Панели приложения и команды
 
@@ -257,7 +270,7 @@ ms.locfileid: "1396813"
 
 Справка: [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-Проектирование и инструкции: [Контекстное меню и диалоги](dialogs.md) 
+Проектирование и инструкций по: [всплывающие окна](dialogs-and-flyouts/flyouts.md) 
 
 ### <a name="menu-flyout"></a>Всплывающее меню
 Временно отображает список команд или параметров, относящихся к текущим действиям пользователя.
@@ -277,7 +290,7 @@ ms.locfileid: "1396813"
 
 Справка: [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx), [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-Проектирование и инструкции: [Контекстное меню и диалоги](dialogs.md) 
+Проектирование и инструкций по: [меню и контекстные меню](menus.md) 
 
 Пример кода: [Пример контекстного меню XAML](http://go.microsoft.com/fwlink/p/?LinkId=620021)
 
@@ -286,7 +299,7 @@ ms.locfileid: "1396813"
 
 Справка: [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-Проектирование и инструкции: [Контекстное меню и диалоги](dialogs.md) 
+Проектирование и инструкций по: [диалоговых окон](dialogs-and-flyouts/dialogs.md) 
 
 ### <a name="tooltip"></a>Всплывающая подсказка
 Всплывающее окно, которое содержит сведения об элементе. 
@@ -540,58 +553,16 @@ ms.locfileid: "1396813"
 
 ## <a name="navigation"></a>Навигация
 
-### <a name="hub"></a>Концентратор
-Контейнерный элемент управления, который позволяет пользователю просматривать различные разделы содержимого и перемещаться между ними.
+### <a name="navigationview"></a>NavigationView
 
-```xaml
-<Hub>
-    <HubSection>
-        <!--- hub section content -->
-    </HubSection>
-    <HubSection>
-        <!--- hub section content -->
-    </HubSection>
-</Hub>
-```
+Контейнер адаптируемых и модель гибкие навигации, который реализует левой панели переходов, верхней панели навигации и шаблон вкладок.
 
-Справка: [Hub](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 
+Ссылка: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-Проектирование и инструкции: [Руководство по элементам управления "Главный раздел"](hub.md) 
-
-Пример кода:[Пример элемента управления "Главный раздел" для XAML](http://go.microsoft.com/fwlink/p/?LinkID=309828)
-
-### <a name="pivot"></a>Сводка
-Полноэкранный контейнер и модель навигации, которые также позволяют быстро перемещаться между различными сводками (представлениями или фильтрами), обычно в пределах одного и того же набора данных.
-
-Элементу управления сводкой можно задать стиль макета вкладки.
-
-Справка: [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 
-
-Проектирование и инструкции: [Руководство по элементам управления вкладками и сводками](tabs-pivot.md) 
-
-Пример кода: [Пример сводки](http://go.microsoft.com/fwlink/p/?LinkId=619903&amp;clcid=0x409)
-
-### <a name="semantic-zoom"></a>Контекстное масштабирование
-Контейнерный элемент управления, позволяющий пользователю выполнять масштабирование между двумя представлениями коллекции элементов.
-
-```xaml
-<SemanticZoom>
-    <ZoomedInView>
-        <GridView></GridView>
-    </ZoomedInView>
-    <ZoomedOutView>
-        <GridView></GridView>
-    </ZoomedOutView>
-</SemanticZoom>
-```
-
-Справка: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
-
-Проектирование и инструкции: [Руководство по элементам управления контекстным масштабированием](semantic-zoom.md) 
-
-Пример кода: [Пример группировки GridView и элемент управления SemanticZoom на языке XAML](http://go.microsoft.com/fwlink/p/?linkid=226564)
+Проектирование и инструкций по: [руководство по NavigationView элемента управления](navigationview.md)
 
 ### <a name="splitview"></a>SplitView
+
 Контейнерный элемент управления с двумя представлениями: одно представление предназначено для основного содержимого, второе обычно используется для меню навигации.
 
 ![Элемент управления "Комбинированный режим"](images/controls/split-view.png) 
@@ -612,6 +583,7 @@ ms.locfileid: "1396813"
 Проектирование и инструкции: [Руководство по элементам управления "Комбинированный режим"](split-view.md)
 
 ### <a name="web-view"></a>Представление веб-страницы
+
 Контейнерный элемент управления, содержащий веб-страницу.
 
 ```xaml
@@ -624,6 +596,27 @@ ms.locfileid: "1396813"
 Проектирование и инструкции: Руководство по представлениям веб-страниц 
 
 Пример кода: [Пример элемента управления WebView на языке XAML](http://go.microsoft.com/fwlink/p/?linkid=238582)
+
+### <a name="semantic-zoom"></a>Контекстное масштабирование
+
+Контейнерный элемент управления, позволяющий пользователю выполнять масштабирование между двумя представлениями коллекции элементов.
+
+```xaml
+<SemanticZoom>
+    <ZoomedInView>
+        <GridView></GridView>
+    </ZoomedInView>
+    <ZoomedOutView>
+        <GridView></GridView>
+    </ZoomedOutView>
+</SemanticZoom>
+```
+
+Справка: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
+
+Проектирование и инструкции: [Руководство по элементам управления контекстным масштабированием](semantic-zoom.md)
+
+Пример кода: [Пример группировки GridView и элемент управления SemanticZoom на языке XAML](http://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## <a name="progress-controls"></a>Элементы управления "Ход выполнения"
 

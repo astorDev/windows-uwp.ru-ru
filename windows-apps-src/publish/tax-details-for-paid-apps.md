@@ -9,13 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, налоги, налоги на приложение, налоговые требования, расширение торговли, ставка налога
-ms.localizationpriority: high
-ms.openlocfilehash: 7e269a8cd4c0f4203a1117a23ec3f7b6e5833723
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 461c9303bbb26e5c4739ca60c03343008377df6c
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935824"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788489"
 ---
 # <a name="tax-details-for-paid-apps"></a>Налогообложение для платных приложений
 
