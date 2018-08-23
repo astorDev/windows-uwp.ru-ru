@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f41d25fd6757e5d3f80d00de341168de4f34e946
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2802065"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2822776"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Новые возможности документация для разработчиков Windows в 2018 июля
 
@@ -82,9 +82,9 @@ ms.locfileid: "2802065"
 
 Чата индивидуальность Project позволяет добавлять настраиваемые пользователя для ваших роботов чата. Благодаря интеграции с Microsoft программа-робот Framework SDK, можно добавить возможности небольшим talk для более естественного способ взаимодействия с клиентами. [Просмотр видео](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) , чтобы узнать, как реализовать ее, а затем [попробовать Интерактивная демонстрация](http://aka.ms/PersonalityChat) для практические навыки.
 
-### <a name="one-dev-question"></a>Один вопрос разработчиков
+### <a name="one-dev-question"></a>Один вопрос разработки
 
-Один вопрос Dev серии видео привыкшим разработчиков Microsoft охватывают ряд вопросов о разработки, языка и региональных параметров группы и журнал Windows. Вот последние вопросы мы!
+В этой серии видео один вопрос Dev привыкшим разработчиков корпорации Майкрософт охватывают ряд вопросов об истории, языка и региональных параметров группы и разработки Windows. Вот последние вопросы, которые мы выбрали ответ!
 
 Рэймонд Чен:
 
