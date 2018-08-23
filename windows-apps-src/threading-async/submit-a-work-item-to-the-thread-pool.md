@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, потоки, пул потоков
 ms.localizationpriority: medium
 ms.openlocfilehash: 29d7fc361e446207c8e14f83ca3f663bd5072e6e
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2800021"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2815426"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Отправка рабочего элемента в пул потоков
 

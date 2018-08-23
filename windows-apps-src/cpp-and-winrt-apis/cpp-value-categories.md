@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартный, c ++, cpp, winrt, проекции, перемещение, пересылки, значение категорий, семантика перемещения, точную пересылку, lvalue, rvalue, glvalue, prvalue, xvalue
 ms.localizationpriority: medium
 ms.openlocfilehash: cbccaf78b45d85d93619977d149431c4eec9e10a
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2796951"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2814676"
 ---
 # <a name="value-categories-and-references-to-them"></a>Значение категории и ссылки на них
 В этом разделе описываются различные категории значения (и справочные материалы, которые значения), существующих в C++. Вы несомненно Херд *значениями* и *rvalues*, но вы думаете их в условия, которые в данном разделе приведено. А также существуют другие виды значений, слишком.

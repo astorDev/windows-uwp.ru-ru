@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 464da3dd3a9a181555f7b4bfd1059e9834fe7338
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2792795"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2816252"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Основы проектирования навигации для приложений UWP
 
@@ -30,7 +30,7 @@ ms.locfileid: "2792795"
 
 :::row:::
     :::column:::
-        ![Навигация в примере 1](images/nav/nav-1.svg)
+        ![Пример перехода 1](images/nav/nav-1.svg)
 
         Require users to go through a series of pages in order.
     :::column-end:::
@@ -58,7 +58,7 @@ ms.locfileid: "2792795"
 
 ### <a name="consistency"></a>Единообразие
 
-Навигация должна быть согласована с ожиданиями пользователей. С помощью [стандартных элементов управления](#use-the-right-controls) , которыми пользователи, знаком с и следующие стандартные условные обозначения для значков, расположение и стиля сделает навигации прогнозируемый и удобной для пользователей.
+Навигация должна быть согласована с ожиданиями пользователей. С помощью [стандартных элементов управления](#use-the-right-controls) , что пользователи, знакомые с и следующие стандартные соглашения для значков, расположения и стиля сделает навигации предсказуемой и интуитивно понятным для пользователей.
 
 ![изображение с компонентами страницы](images/nav/page-components.svg)
 
@@ -99,7 +99,7 @@ ms.locfileid: "2792795"
 
 1. Подумайте о пользователях. Подумайте над тем, какие пути пользователи могут часто использовать для навигации в вашем приложении, а применительно к страницам, поразмышляйте о том, почему пользователь находится на конкретной странице и куда он собирается перейти в последствии.
 
-2. Избегайте иерархий глубокой навигации. Если уровней навигации будет больше трех, вы рискуете тем, что пользователь завязнет в многоуровневой иерархии, которую ему сложно будет покинуть.
+2. Избегайте иерархий навигации глубокий. Если уровней навигации будет больше трех, вы рискуете тем, что пользователь завязнет в многоуровневой иерархии, которую ему сложно будет покинуть.
 
 3. Избегайте прыжков вверх и вниз. Прыжки вверх и вниз возникают, когда есть связанное содержимое, но для перехода к нему необходимо, чтобы пользователь перешел на один уровень вверх, а затем снова вниз.
 
@@ -168,18 +168,18 @@ ms.locfileid: "2792795"
 
 :::row:::
     :::column:::
-        ![Изображение кадра](images/nav/thumbnail-frame.svg)
+        ![Рамка рисунка](images/nav/thumbnail-frame.svg)
     :::column-end:::
-    ::: диапазон столбцов = «2»::: [ **кадров**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+    ::: диапазон столбцов = «2»::: [ **рамки**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
         With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![вкладки и pivot изображения](images/nav/thumbnail-tabs-pivot.svg)
+        ![вкладки и вращения изображения](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
-    ::: диапазон столбцов = «2»::: [ **верхней панели навигации и вкладок**](../controls-and-patterns/navigationview.md)
+    ::: диапазон столбцов = «2»::: [ **верхней навигационной и вкладки**](../controls-and-patterns/navigationview.md)
 
         Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
         
@@ -198,9 +198,9 @@ ms.locfileid: "2792795"
 
 :::row:::
     :::column:::
-        ![изображение navview](images/nav/thumbnail-navview.svg)
+        ![navview изображение](images/nav/thumbnail-navview.svg)
     :::column-end:::
-    ::: диапазон столбцов = «2»::: [ **левой области переходов**](../controls-and-patterns/navigationview.md)
+    ::: диапазон столбцов = «2»::: [ **левой панели переходов**](../controls-and-patterns/navigationview.md)
 
         Displays a vertical list of links to top-level pages. Use when:
         
@@ -212,9 +212,9 @@ ms.locfileid: "2792795"
 
 :::row:::
     :::column:::
-        ![Сведения о главных изображения](images/nav/thumbnail-master-detail.svg)
+        ![Главные детали изображения](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
-    ::: диапазон столбцов = «2»::: [ **основной/подробности**](../controls-and-patterns/master-details.md)
+    ::: диапазон столбцов = «2»::: [ **сведения об образце**](../controls-and-patterns/master-details.md)
 
         Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
         
@@ -226,7 +226,7 @@ ms.locfileid: "2792795"
 
 :::row:::
     :::column:::
-        ![Изображение кнопки и гиперссылок](images/nav/thumbnail-hyperlinks-buttons.svg)
+        ![Изображение кнопки и гиперссылки](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
     ::: диапазон столбцов = «2»::: [ **гиперссылки**](../controls-and-patterns/hyperlinks.md)
 

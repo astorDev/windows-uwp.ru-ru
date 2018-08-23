@@ -9,18 +9,20 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, введение
 ms.localizationpriority: medium
-ms.openlocfilehash: b22f331c1b39d85baa8a38975aef925576226eaa
-ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
-ms.translationtype: HT
+ms.openlocfilehash: 03abe68fd19573d7b2deba9937c515a8641e8fca
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "1992090"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2810937"
 ---
 # <a name="introduction-to-cwinrt"></a>Введение в C++/WinRT
 &nbsp;
 > [!VIDEO https://www.youtube.com/embed/nOFNc2uTmGs]
 
 C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным API-интерфейсам Windows. С помощью C++/WinRT можно создавать и использовать API среды выполнения Windows, используя любой совместимый со стандартами компилятор C++17. В пакет Windows SDK входит среда C++/WinRT, которая впервые появилась в версии 10.0.17134.0 (Windows 10, версия 1803).
+
+C + +/ WinRT — это рекомендуемое замены корпорации Майкрософт для [C + +/ CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) проекции языка и [Библиотеку шаблонов C++ (WRL) среды выполнения Windows](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live). Полный список [разделы, посвященные C + +/ WinRT](index.md#topics-about-cwinrt) содержит сведения о взаимодействии с и перенос из, C + +/ CX и WRL.
 
 > [!IMPORTANT]
 > Два наиболее важных аспектах C++/ WinRT, которые следует учитывать, описаны в разделах [Поддержка пакетов SDK для C++/WinRT](#sdk-support-for-cwinrt) и [Поддержка Visual Studio для C++/ WinRT и VSIX](#visual-studio-support-for-cwinrt-and-the-vsix).
@@ -39,7 +41,18 @@ C++/WinRT — это полностью стандартная проекция 
 ## <a name="visual-studio-support-for-cwinrt-and-the-vsix"></a>Поддержка Visual Studio для C++/WinRT и VSIX
 Для шаблонов проектов C++/WinRT в Visual Studio, а также свойств и целей MSBuild C++/WinRT скачайте и установите [расширение Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix) из [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
-Вам потребуется Visual Studio 2017 (по крайней мере версия 15,6; рекомендуется версия не младше 15.7) и Windows SDK версии 10.0.17134.0 (Windows 10, версия 1803). Затем можно создать новый проект в Visual Studio или преобразовать существующий проект, добавив свойство `<CppWinRTEnabled>true</CppWinRTEnabled>` в его файл `.vcxproj` в разделе Project > PropertyGroup. После добавления этого свойства вы получите поддержку MSBuild C++/WinRT для проекта, включая вызов инструмента `cppwinrt.exe`.
+Вам потребуется Visual Studio 2017 (по крайней мере версия 15,6; рекомендуется версия не младше 15.7) и Windows SDK версии 10.0.17134.0 (Windows 10, версия 1803). Если вы еще не установлен, необходимо установить параметр **средства C++ универсальные платформы Windows** в установщик Visual Studio. И в Windows **Параметры** > **обновление \ & безопасности** > **для разработчиков (en)**, выберите параметр **режим разработчика** , а не параметр **Sideload приложения** .
+
+Затем будет иметь возможность создавать и создавать или открывать, C + +/ WinRT проекта в Visual Studio и его развертывание. Кроме того, можно преобразовать существующего проекта, добавив `<CppWinRTEnabled>true</CppWinRTEnabled>` свойство, чтобы его `.vcxproj` файла.
+
+```xml
+<Project ...>
+    <PropertyGroup Label="Globals">
+        <CppWinRTEnabled>true</CppWinRTEnabled>
+...
+```
+
+После добавления этого свойства вы получите поддержку MSBuild C++/WinRT для проекта, включая вызов инструмента `cppwinrt.exe`.
 
 Поскольку C++/ WinRT использует функции стандарта C++17, необходимо проецировать свойство **C/C++** > **Language** > **ISO C++17 Standard (/std:c++17)**. Вы также можете установить **Conformance mode: Yes (/permissive-)**, что дополнительно обеспечит соответствие стандартам вашего кода.
 

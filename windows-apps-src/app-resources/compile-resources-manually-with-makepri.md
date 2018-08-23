@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: d065fdffe2fcb32a9d574c90f59eb7115597167a
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2787300"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2815934"
 ---
 # <a name="compile-resources-manually-with-makepriexe"></a>Компиляция ресурсов вручную с помощью MakePri.exe
 
 MakePri.exe — инструмент командной строки, который можно использовать для создания и наполнения PRI-файлов. Он интегрирован как часть MSBuild в Microsoft Visual Studio, но разработчики могут использовать его для создания пакетов вручную или с помощью пользовательских систем сборки.
 
 > [!NOTE]
-> MakePri.exe установлен, если выбрать вариант **Windows SDK для приложений, управляемых UWP** при установке пакета SDK. Устанавливается в папку `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именами для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe устанавливается, когда флажок **Windows SDK для приложений, управляемых UWP** при установке Windows Software Development Kit. Устанавливается в папку `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (также как и в папках с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 Ограничение на размер PRI-файла— 64КБ.
 
 ## <a name="in-this-section"></a>В этом разделе
-|Раздел|Описание|
+|Статья|Описание|
 |-|-|
 | [Параметры командной строки MakePRI.exe](makepri-exe-command-options.md) | MakePri.exe имеет набор команд `createconfig`, `dump`, `new`, `resourcepack` и `versioned`. В данном разделе описаны параметры командной строки для их использования. |
 | [Файл конфигурации MakePri.exe](makepri-exe-configuration.md) | В этом разделе дается описание схемы XML-файла конфигурации MakePri.exe. |
