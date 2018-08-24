@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: начало работы, uwp, windows 10, обучающий курс, макет, форма
 ms.localizationpriority: medium
 ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2813646"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2836787"
 ---
 # <a name="create-and-customize-a-form"></a>Создание и настройка формы
 

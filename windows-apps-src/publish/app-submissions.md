@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf1e647931b6e7680fb65ddcf200bf2a74be716a
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2815026"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2832030"
 ---
 # <a name="app-submissions"></a>Отправка приложений
 
@@ -113,7 +113,7 @@ ms.locfileid: "2815026"
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Параметры удержания публикации**     | По умолчанию: опубликуйте эту отправку, как только она пройдет сертификацию (или в соответствии с датами, выбранными в разделе "Расписание")      | [Параметры удержания публикации](manage-submission-options.md#publishing-hold-options)    
 | **Заметки по сертификации**     | Рекомендуется          | [Заметки по сертификации](notes-for-certification.md)             |
-| **Ограниченные возможности**     | Требуется, если продукт объявляет любые [ограниченные возможности] (.. /Packaging/App-capability-Declarations.md#Restricted-Capabilities    | [Ограниченные возможности](manage-submission-options.md#publishing-hold-options)       
+| **Ограниченные возможности**     | Требуется, если продукт объявляет любые [ограниченными возможностями](../packaging/app-capability-declarations.md#restricted-capabilities)    | [Ограниченные возможности](manage-submission-options.md#publishing-hold-options)       
 
 <span/>
 

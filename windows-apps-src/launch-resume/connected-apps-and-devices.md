@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10, uwp, подключенных устройств, удаленных систем, Рим, рим проекта
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
-ms.openlocfilehash: 51f11dd7b3d44e39da86e7b8c33aa59ef5bdda4e
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.openlocfilehash: d3efb7e094ce1464028dadaa14c6f0bfb3f3b214
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2820138"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2830443"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>Подключенные приложения и устройства (Project Rome)
 
@@ -39,3 +39,5 @@ ms.locfileid: "2820138"
 | [Обнаружение удаленных устройств](discover-remote-devices.md)  | Узнайте, как обнаруживать устройства, к которым можно подключиться. |
 | [Обмен данными с удаленной службой приложений](communicate-with-a-remote-app-service.md) | Узнайте, как взаимодействовать с приложением на удаленном устройстве. |
 | [Подключение устройств с помощью удаленных сеансов](remote-sessions.md) | Предоставляйте общие возможности на нескольких устройствах за счет их объединения через удаленный сеанс. |
+| [Продолжение активности пользователей даже на разных устройствах](useractivities.md)| Помочь пользователям возобновления они действия в приложении, даже через несколько устройств.|
+| [Рекомендации по обеспечению действий пользователя](useractivities-best-practices.md)| Узнайте, рекомендации по созданию и обновление работу пользователей.|

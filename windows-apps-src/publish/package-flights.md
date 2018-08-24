@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: ОС Windows10, UWP, фокус-тестирование
 ms.localizationpriority: medium
 ms.openlocfilehash: d5f43173c85bc8a696d7dbc9967e704f79db2b3f
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2813526"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2830130"
 ---
 # <a name="package-flights"></a>Тестовые пакеты
 
