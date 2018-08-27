@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, фона задач
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bd0361886181d3c5a3395112c728db3bf57d58f
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2840106"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2867803"
 ---
 # <a name="register-a-background-task"></a>Регистрация фоновой задачи
 
