@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, просмотр, комментарий, редактор
 ms.localizationpriority: medium
 ms.openlocfilehash: 8891aecb904f69e3f77ec5892d9234f79db46ff0
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2839026"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2860708"
 ---
 # <a name="reviews-report"></a>Отчет "Отзывы"
 
