@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b11151df981a4b5ce233458581d21e405be9844c
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2854987"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2891780"
 ---
 # <a name="user-activities-best-practices"></a>Рекомендации по обеспечению действий пользователя
 
@@ -101,7 +101,7 @@ ms.locfileid: "2854987"
 
 * [Пространство имен UserActivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 
 * [Действия пользователя (рим проекта: документы)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Адаптивные карты](https://docs.microsoft.com/adaptive-cards/)

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, портал устройства
 ms.localizationpriority: medium
 ms.openlocfilehash: 404db3963d2f9508d7c81053abf96b0e742103f7
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2864943"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2888303"
 ---
 # <a name="device-portal-for-xbox"></a>Портал устройств для Xbox
 
@@ -203,7 +203,7 @@ ms.locfileid: "2864943"
 
 ![Данные игры события](images/device-portal-xbox-22.PNG)
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 
 * [Обзор портала устройств Windows](device-portal.md)
 * [Справочные материалы по базовому API портала устройств](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, печать, 3dprinting 3d печати
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c4ada5d58743bf19ed27dfbdd2676f2a267129f
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2861553"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2885073"
 ---
 # <a name="printing-and-scanning"></a>Печать и сканирование
 

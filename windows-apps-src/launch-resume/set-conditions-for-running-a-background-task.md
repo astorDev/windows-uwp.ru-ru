@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 556a787eb1e92e4c8adb7457235afb45c02df2dc
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2861573"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2894082"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Задание условий выполнения фоновой задачи
 
@@ -184,7 +184,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 > [!NOTE]
 > Выберите условия для фоновой задачи, чтобы выполняется только при необходимости, а не выполняется, если его не следует. Обзор различных условий выполнения фоновых задач см. в разделе [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 
 * [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
 * [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)

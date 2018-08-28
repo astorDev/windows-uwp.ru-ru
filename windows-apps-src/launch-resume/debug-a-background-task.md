@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, фона задач
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2866337"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2894093"
 ---
 # <a name="debug-a-background-task"></a>Отладка фоновой задачи
 
@@ -107,7 +107,7 @@ ms.locfileid: "2866337"
 
 Дополнительные сведения об использовании VS отладка в фоновом режиме в разделе [Запуск Приостановка, возобновление и фона событий в приложениях UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 
 * [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
 * [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)

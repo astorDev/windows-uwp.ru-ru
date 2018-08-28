@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартный, c ++, cpp, winrt, проекции, XAML, настраиваемые, шаблонного, элемент управления
 ms.localizationpriority: medium
 ms.openlocfilehash: c108175c66d27b2cdbd910a0f7653ca1befb68e9
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2856974"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2885568"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>(XAML шаблонных) элементов управления с [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -154,6 +154,6 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 * [Элемент управления](/uwp/api/windows.ui.xaml.controls.control)
 * [DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 * [Шаблоны элементов управления](/windows/uwp/design/controls-and-patterns/control-templates)
 * [Пользовательские свойства зависимостей](/windows/uwp/xaml-platform/custom-dependency-properties)
