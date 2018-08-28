@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ada2e0610e81e986deba3ddab5e87547e05fe108
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2864883"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2883614"
 ---
 # <a name="about-community-ads"></a>О рекламе от сообщества
 
@@ -48,7 +48,7 @@ ms.locfileid: "2864883"
 
 После настройки необходимых параметров повторно публиковать приложение не требуется. После регистрации в программе вы сможете выбрать пункт **Объявление в сообществе (бесплатно)** в качестве типа кампании при [создании рекламной кампании](create-an-ad-campaign-for-your-app.md).
 
-### <a name="related-topics"></a>Статьи по теме
+### <a name="related-topics"></a>Еще по теме
 
 * [Реклама в приложении](in-app-ads.md)
 * [Создание рекламной кампании для своего приложения](create-an-ad-campaign-for-your-app.md)

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, данные, типы
 ms.localizationpriority: medium
 ms.openlocfilehash: 729a3c30f84e20a89912b728db1efecc3e54ad9e
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2867593"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2882517"
 ---
 # <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Стандартные типы данных [C++ и C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 С помощью C++/WinRT можно вызывать API среды выполнения Windows с использованием стандартных типов данных C++, включая некоторые типы данных стандартной библиотеки C++. Вы можете передать стандартных строк для API-интерфейсы (просмотреть [обработки в C + строк +/ WinRT](strings.md)), и можно передать инициализации списки и стандартных контейнеров API, ожидающих семантически эквивалентный семейства сайтов.
@@ -159,5 +159,5 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 * [IVector&lt;T&gt;](/uwp/api/windows.foundation.collections.ivector_t_)
 * [Шаблон структуры winrt::array_view struct template](/uwp/cpp-ref-for-winrt/array-view)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Еще по теме
 * [Обработка строк в C++/WinRT](strings.md)

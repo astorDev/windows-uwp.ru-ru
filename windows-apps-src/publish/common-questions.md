@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 89745d0bb93b76e4497d6cb5c57f4e6c091c8bd7
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2862426"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2881837"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>Общие вопросы о рекламных кампаниях
 
@@ -65,7 +65,7 @@ ms.locfileid: "2862426"
 
 Последовательно выберите пункты <http://commerce.microsoft.com>, войдите в систему с учетные данные учетной записи Майкрософт и внесите необходимые изменения.
 
-### <a name="related-topics"></a>Статьи по теме
+### <a name="related-topics"></a>Еще по теме
 
 * [Создание рекламной кампании для вашего приложения](create-an-ad-campaign-for-your-app.md)
 * [Управление рекламной кампанией](managing-your-ad-campaign.md)
