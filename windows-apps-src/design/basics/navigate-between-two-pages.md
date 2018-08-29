@@ -18,11 +18,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 7372f296658f9213ccc50bd6388a4f25ad47a946
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2890530"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918945"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Реализация навигации между двумя страницами
 
@@ -300,7 +300,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> Этот код использует возвращаемое значение [**Навигатор**](https://msdn.microsoft.com/library/windows/apps/br242694) исключение приложения в случае сбоя навигации для начального окна приложения. Если **Navigate** возвращает значение **true**, выполняется переход.
+> Создает исключение приложения, если начальный фрейм приложения происходит сбой в этом коде используется возвращаемое значение [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) . Если **Navigate** возвращает значение **true**, выполняется переход.
 
 Теперь выполните сборку и запустите приложение. Щелкните ссылку «Click to go to page 2» (Нажмите, чтобы перейти к странице 2). Вторая страница с надписью "Page 2" (Страница 2) в верхней части загрузится и появится в фрейме.
 

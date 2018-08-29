@@ -7,15 +7,15 @@ ms.date: 11/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, фона задач
+keywords: Windows 10, uwp, фоновой задачи
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 5879977662dc2bd609d09e5fe53fc2a2f0b9180f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2894806"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918895"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>Создание и регистрация фоновой задачи, выполняемой внутри процесса
 
@@ -72,7 +72,7 @@ ms.locfileid: "2894806"
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>Размещение кода фонового действия в методе OnBackgroundActivated()
 
-Поместите код активности фона на [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) реагировать на триггер фона при его активации. **OnBackgroundActivated** может рассматриваться как [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). Метод имеет параметр [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) , который содержит все, что предоставляет метод **Run** . Например в файл App.xaml.cs:
+Поместите код фонового действия в [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) реагировать на ваш фоновый триггер при его срабатывании. **OnBackgroundActivated** можно рассматривать как [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). Метод имеет [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) параметра, который содержит все, что обеспечивает метод **Run** . Например в файле App.xaml.cs:
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -92,7 +92,7 @@ sealed partial class App : Application
 }
 ```
 
-Более подробный пример **OnBackgroundActivated** см [приложения-службы для выполнения в одном процессе его размещения приложения](convert-app-service-in-process.md).
+Более подробный пример **OnBackgroundActivated** см. в разделе [Преобразование службы приложения для запуска в одном процессе с ее основным приложением](convert-app-service-in-process.md).
 
 ## <a name="handle-background-task-progress-and-completion"></a>Обработка хода выполнения и завершения фоновых задач
 
