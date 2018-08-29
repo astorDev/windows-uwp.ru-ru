@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-description: Можно создать представлением расширяемого дерева путем привязки ItemsSource иерархического источника данных, или можно создавать и управлять объектами TreeViewNode самостоятельно.
+description: Вы можете создать разворачиваемое дерево, привязка ItemsSource иерархического источника данных, или можно создать и самостоятельно управлять объекты TreeViewNode.
 title: Представление в виде дерева
 label: Tree view
 template: detail.hbs
@@ -14,16 +14,16 @@ dev_langs:
 - csharp
 - vb
 ms.openlocfilehash: 20de58d13c4ace6b71ec952dc88cd59d1ab6114f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2885258"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905837"
 ---
 # <a name="treeview"></a>Иерархическое представление (представление в виде дерева)
 
 > [!IMPORTANT]
-> В этой статье описана еще не выпущенная функция, которая может быть существенно изменена до коммерческого выпуска. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации. Функции предварительной версии или их версии требуется [последние построения предварительного просмотра внутренних 10 Windows и пакет SDK для](https://insider.windows.com/for-developers/) [Библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> В этой статье описана еще не выпущенная функция, которая может быть существенно изменена до коммерческого выпуска. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации. Функции предварительного просмотра, требуют [последние сборки Windows 10 Insider Preview и пакет SDK](https://insider.windows.com/for-developers/) или [Библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Элемент управления XAML TreeView создает иерархический список с разворачиваемыми и сворачиваемыми узлами, которые содержат вложенные элементы. Его можно использовать для демонстрации структуры папок или вложенных отношений в пользовательском интерфейсе.
 
@@ -31,16 +31,16 @@ API TreeView поддерживают следующие компоненты:
 
 - Многоуровневые вложения
 - Выбор одного или нескольких узлов
-- (Предварительная версия) Привязка данных к свойству ItemsSource на TreeView и TreeViewItem
-- (Предварительная версия) TreeViewItem в корневом шаблон элемента TreeView
-- (Предварительная версия) Произвольный типов контента в TreeViewItem
-- (Предварительная версия) Перетаскивание между представлениями в виде дерева
+- (Ознакомительная версия) Привязка данных для свойства ItemsSource TreeView и TreeViewItem
+- (Ознакомительная версия) TreeViewItem как корневой части шаблона элемента TreeView
+- (Ознакомительная версия) Произвольные типы содержимого в TreeViewItem
+- (Ознакомительная версия) Функции перетаскивания между представлениями в виде дерева
 
-| **Получение библиотека интерфейса пользователя Windows** |
+| **Получить библиотеку пользовательского интерфейса Windows** |
 | - |
-| Этот элемент управления включается в состав библиотека интерфейса пользователя Windows, NuGet пакет, содержащий новые элементы управления и возможности пользовательского интерфейса приложений UWP. Дополнительные сведения, включая инструкции по установке в разделе [Общие сведения о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| Этот элемент управления не включен в библиотеке Windows пользовательского интерфейса, пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке см. в разделе [Общие сведения о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
-| **Интерфейсы API платформы** | **Windows API-интерфейсы библиотеки пользовательского интерфейса** |
+| **API-интерфейсы платформы** | **API библиотеки пользовательского интерфейса Windows** |
 | - | - |
 | [Класс TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [класс TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode), [свойство TreeView.ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) | [Класс TreeView](/uwp/api/microsoft.ui.xaml.controls.treeview), [класс TreeViewNode](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [свойство TreeView.ItemsSource](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource) |
 
@@ -57,7 +57,7 @@ API TreeView поддерживают следующие компоненты:
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>При наличии установленного приложения <strong style="font-weight: semi-bold">Коллекция элементов управления XAML</strong> , щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/TreeView">открыть приложение и посмотрите, TreeView в действии</a>.</p>
+    <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">Галереи элементов управления XAML</strong> , щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/TreeView">открыть приложение и увидеть TreeView в действии</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Получить исходный код (GitHub)</a></li>
@@ -78,14 +78,14 @@ API TreeView поддерживают следующие компоненты:
 
 ## <a name="create-a-tree-view"></a>Создание иерархического представления
 
-Можно создать представление в виде дерева путем привязки [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) иерархического источника данных, или можно создавать и управлять объектами TreeViewNode самостоятельно.
+Можно создать иерархическое представление, привязка [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) иерархического источника данных, или можно создать и самостоятельно управлять объекты TreeViewNode.
 
-Чтобы создать иерархическое представление, используйте элемент управления [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) и иерархию объектов [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode). Создание иерархии узлов, добавив один или несколько узлов в коллекции [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) элемента управления TreeView. Затем каждый элемент TreeViewNode может иметь больше узлов, добавленных в его дочернюю (Children) коллекцию. Узлы иерархического представления можно вложить на любую необходимую глубину.
+Чтобы создать иерархическое представление, используйте элемент управления [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) и иерархию объектов [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode). Иерархия узла путем добавления одного или нескольких корневых узлов в коллекцию [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) элемента управления TreeView. Затем каждый элемент TreeViewNode может иметь больше узлов, добавленных в его дочернюю (Children) коллекцию. Узлы иерархического представления можно вложить на любую необходимую глубину.
 
-Начиная в предварительной версии изнутри Windows, можно привязать иерархического источника данных для свойства [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) содержимое представления дерева, так же, как с помощью элемента списка автофильтра ItemsSource. Аналогично используйте [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (и необязательные [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) для предоставления DataTemplate, отображающий элемент.
+Начиная с Windows Insider Preview, вы можно привязать иерархический источник данных для свойства [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) для предоставления содержимого представления дерева, так же, как с помощью ListView ItemsSource. Аналогичным образом используйте [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (и дополнительных [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) для предоставления DataTemplate, которая отрисовывается элемент.
 
 > [!IMPORTANT]
-> ItemsSource — это альтернативный механизм TreeView.RootNodes для занесения содержимого в элементе управления TreeView. В то же время нельзя задать ItemsSource и RootNodes. При использовании ItemsSource узлы созданы для вас и доступа к ним из свойства TreeView.RootNodes.
+> ItemsSource — это альтернативный механизм для TreeView.RootNodes за размещение содержимого в элемент управления TreeView. В то же время невозможно настроить ItemsSource и RootNodes. При использовании ItemsSource узлов, создаваемое для вас и доступ к ним из свойства TreeView.RootNodes.
 
 Вот пример простого иерархического представления, объявленного в XAML. Как правило, узлы добавляются в код, но здесь мы продемонстрируем иерархию XAML, так как это может быть полезно для обеспечения наглядности процесса создания иерархии узлов.
 
@@ -103,11 +103,11 @@ API TreeView поддерживают следующие компоненты:
 </TreeView>
 ```
 
-В большинстве случаев древовидном представлении отображаются данные из источника данных, обычно объявляется корневой элемент управления TreeView в XAML, но добавьте объекты TreeViewNode программно или с помощью привязки данных.
+В большинстве случаев в иерархическом представлении отображаются данные из источника данных, поэтому обычно следует объявлять корневой элемент управления TreeView в XAML, но добавлять объекты TreeViewNode в коде или с помощью привязки данных.
 
-### <a name="bind-to-a-hierarchical-data-source"></a>Привязка к источнику иерархических данных
+### <a name="bind-to-a-hierarchical-data-source"></a>Привязка к иерархическим данным источника
 
-Для создания представления дерева, с помощью привязки данных, значение свойства TreeView.ItemsSource иерархическую структуру. Затем в ItemTemplate, установите дочерний элемент коллекции элементов в свойство TreeViewItem.ItemsSource.
+Чтобы создать иерархическое представление с помощью привязки данных, задайте иерархическую структуру к свойству TreeView.ItemsSource. В ItemTemplate, задайте дочерних элементов коллекции к свойству TreeViewItem.ItemsSource.
 
 ```xaml
 <TreeView ItemsSource="{x:Bind DataSource}">
@@ -120,23 +120,23 @@ API TreeView поддерживают следующие компоненты:
 </TreeView>
 ```
 
-В разделе _представления дерева, с помощью привязки данных_ в разделе примеры полный код.
+Для просмотра _Иерархическое представление, используя привязку данных_ "Примеры" Полный код.
 
 #### <a name="items-and-item-containers"></a>Элементы и контейнеры элементов
 
-Если вы используете TreeView.ItemsSource, эти интерфейсы API доступны для получения элемента узла или данных из контейнера и наоборот.
+Если вы используете TreeView.ItemsSource, доступны следующие API для получения узла или элементом данных из контейнера и наоборот.
 
 | **[TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)** | |
 | - | - |
-| [TreeView.ItemFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.itemfromcontainer) | Возвращает элемент данных для указанного контейнера TreeViewItem. |
-| [TreeView.ContainerFromItem](/uwp/api/windows.ui.xaml.controls.treeview.containerfromitem) | Получает контейнер TreeViewItem для заданного элемента данных. |
+| [TreeView.ItemFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.itemfromcontainer) | Возвращает элемент данных для указанного TreeViewItem контейнера. |
+| [TreeView.ContainerFromItem](/uwp/api/windows.ui.xaml.controls.treeview.containerfromitem) | Получает контейнер TreeViewItem для указанного элемента данных. |
 
 | **[TreeViewNode (узел иерархического представления)](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
 | - | - |
-| [TreeView.NodeFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.nodefromcontainer) | Получает указанный контейнер TreeViewItem TreeViewNode. |
+| [TreeView.NodeFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.nodefromcontainer) | Получает TreeViewNode для указанного TreeViewItem контейнера. |
 | [TreeView.ContainerFromNode](/uwp/api/windows.ui.xaml.controls.treeview.containerfromnode) | Получает контейнер TreeViewItem для указанного TreeViewNode. |
 
-### <a name="manage-tree-view-nodes"></a>Управление узлов дерева
+### <a name="manage-tree-view-nodes"></a>Управление узлы иерархического представления
 
 Это иерархическое представление аналогично созданному ранее в XAML, однако в этом примере узлы созданы в коде.
 
@@ -205,19 +205,19 @@ Dim pictureNode As New TreeViewNode With {.Content = picturesFolder}
 Можно предоставить [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate), чтобы указать, как элемент данных должен отображаться в иерархическом представлении.
 
 > [!NOTE]
-> В Windows 10 версии 1803 необходимо изменить шаблон элемента управления TreeView и указать пользовательский ItemTemplate, если ваше содержимое не является строкой. Дополнительные сведения см. в полном примере в конце этой статьи. В более поздние версии присвойте свойству [TreeView.ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) .
+> В Windows 10 версии 1803 необходимо изменить шаблон элемента управления TreeView и указать пользовательский ItemTemplate, если ваше содержимое не является строкой. Дополнительные сведения см. в полном примере в конце этой статьи. В более поздних версиях задайте для свойства [TreeView.ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) .
 
-### <a name="item-container-style"></a>Контейнер стиля элемента
+### <a name="item-container-style"></a>Стиля контейнера элементов
 
-Использование ItemsSource или RootNodes, фактический элементов, используемых для отображения каждого узла – называется «контейнер» – — это объект [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) . Задать стиль контейнера, с помощью TreeView ItemContainerStyle используется или ItemContainerStyleSelector свойств.
+Использование ItemsSource или RootNodes, фактические элементы, используемые для отображения каждого узла — под названием «контейнер» – — это объект [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) . Задать стиль контейнера при помощи TreeView ItemContainerStyle или ItemContainerStyleSelector свойств.
 
 ### <a name="item-template-selectors"></a>Селекторы шаблона элемента
 
-Можно установить разные DataTemplate для элементов представления дерева, на основе типа элемента. Например в приложении explorer файла можно использовать один шаблон данных для папок, а другой для файлов.
+Вы можете задать различные DataTemplate элементов иерархического представления, в зависимости от типа элемента. Например в приложении explorer файл может использовать один шаблон данных для папок и файлов.
 
-![Папки и файлы, используя различные шаблоны данных](images/treeview-icons.png)
+![Папки и файлы с помощью разных шаблонов данных](images/treeview-icons.png)
 
-Ниже приведен пример того, как создавать и использовать элемент выбора шаблона.
+Вот пример того, как создать и использовать селектор шаблонов элементов.
 
 ```xaml
 <Page.Resources>
@@ -384,9 +384,9 @@ End Sub
 
 Когда возможность выбора включена, рядом с каждым узлом иерархического представления отображается флажок, а выбранные элементы выделены. Пользователь может выбрать элемент или отменить его выбор, используя этот флажок; щелчок по элементу приводит к его вызову.
 
-Выбор или Отмена выбора родительского узла будет установите или снимите флажок все дочерние элементы в этом узле. Если некоторые, но не всех дочерних элементов в родительский узел выбраны, флажок для родительского узла отображается как неопределенное (заполняются черного прямоугольника).
+Выбор или Отмена выбора родительский узел будет выбрать или отменить выбор всех дочерних элементов этого узла. Если некоторые, но не все из выбраны дочерние элементы, принадлежащие родительский узел, флажок для родительского узла отображается как неопределенное состояние (заполненный черный ящик).
 
-![Несколько фрагментов в виде дерева](images/treeview-selection.png)
+![Выделение нескольких элементов в виде дерева](images/treeview-selection.png)
 
 Выбранные узлы добавляются в коллекцию [SelectedNodes](/uwp/api/windows.ui.xaml.controls.treeview.selectednodes) иерархического представления. Вы можете вызвать метод [SelectAll](/uwp/api/windows.ui.xaml.controls.treeview.selectall), чтобы выбрать все узлы в иерархическом представлении.
 
@@ -403,7 +403,7 @@ End Sub
 
 ## <a name="code-examples"></a>Примеры кода
 
-### <a name="tree-view-using-xaml"></a>Представления дерева, с помощью XAML
+### <a name="tree-view-using-xaml"></a>Иерархическое представление, с помощью XAML
 
 Этот пример демонстрирует, как создать простую иерархическую структуру в XAML. Иерархическое представление содержит вкусы мороженого и поливки для него, которые пользователь может выбирать. Они распределены по категориям. Включена возможность выбора нескольких элементов, и когда пользователь нажимает кнопку, в пользовательском интерфейсе основного приложения отображаются элементы SelectedItems.
 
@@ -512,9 +512,9 @@ Private Sub SelectAllButton_Click(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-### <a name="tree-view-using-data-binding"></a>Представления дерева, с помощью привязки данных
+### <a name="tree-view-using-data-binding"></a>Иерархическое представление, используя привязку данных
 
-В этом примере показано, как создать дерево же, что и в предыдущем примере. Тем не менее вместо создания иерархии данных в XAML, данных создается в коде и привязать свойство ItemsSource представлении дерева. (Кнопка обработчиков событий, приведенные в предыдущем примере относится к в этом примере также).
+В этом примере показано, как создать такое же представление дерева аналогичен предыдущему примеру. Тем не менее вместо создания иерархии данных в XAML, данные создается в коде и привязывается к свойству ItemsSource иерархическом представлении. (Обработчики событий кнопки, показанный в предыдущем примере применимы к в этом примере также).
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="100">

@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 53aac2375d60df3cd9493f315b20431961378fe8
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886702"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905227"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Продолжение активности пользователей даже на разных устройствах
 
@@ -171,7 +171,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="related-topics"></a>Еще по теме
 
-* [Действия пользователя (рим проекта: документы)](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [Действия пользователей (документы Project Rome)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Адаптивные карты](https://docs.microsoft.com/adaptive-cards/)
 * [Визуализатор адаптивных карт, примеры](http://adaptivecards.io/)
 * [Обработка активации универсального кода ресурса (URI)](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)

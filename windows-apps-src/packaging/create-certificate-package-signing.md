@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ms.openlocfilehash: db2c360a881071db14a1e65ffe2cd9a5bb16f0fe
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881617"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913965"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>Создание сертификата для подписывания пакета
 
@@ -58,7 +58,7 @@ ms.locfileid: "2881617"
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
 ```
 
-После выполнения этой команды сертификат будет добавлен в локальное хранилище сертификатов, как указано в параметре "-CertStoreLocation". В результате выполнения команды будет также создается отпечаток сертификата.  
+После выполнения этой команды сертификат будет добавлен в локальное хранилище сертификатов, как указано в параметре "-CertStoreLocation". Результат выполнения команды будет также создан отпечаток сертификата.  
 
 **Примечание.**  
 Сертификат можно просмотреть в окне PowerShell, выполнив следующие команды:

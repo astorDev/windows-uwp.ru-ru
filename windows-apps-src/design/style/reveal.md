@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 description: Отображение— это световой эффект, который добавляет приложению глубины и помогает привлечь внимание к интерактивным элементам приложения.
-title: Показать выделение
+title: Эффект
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
@@ -15,22 +15,22 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888903"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2915318"
 ---
-# <a name="reveal-highlight"></a>Показать выделение
+# <a name="reveal-highlight"></a>Эффект
 
 ![главное изображение](images/header-reveal-highlight.svg)
 
-Показать выделение является эффекта освещения, в котором интерактивные элементы, такие как панели команд, когда пользователь наводит курсор рядом с ними. 
+Эффект отображения — это световой эффект, выделяющий интерактивные элементы, такие как панели команд, когда пользователь наводит на них указатель. 
 
 > **Важные API**: [класс RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [класс RevealBackgroundBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [класс RevealBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [класс VisualState](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>Принцип работы
-Показать выделение внимание звонки интерактивные элементы с раскрытия контейнер элемента при наведении указателя рядом, как показано на этом рисунке:
+Эффект отображения привлекает внимание к интерактивным элементам, отображая контейнер элемента, когда указатель находится рядом, как показано на следующем рисунке:
 
 ![Наглядное представление эффекта отображения](images/Nav_Reveal_Animation.gif)
 
@@ -58,7 +58,7 @@ ms.locfileid: "2888903"
 
 ## <a name="how-to-use-it"></a>Использование
 
-Отображение автоматически работает для некоторых элементов управления. Для других элементов управления можно включить Показать с назначением особые стиля элемента управления, как описано в разделах [Включение Показать на другие элементы управления](#enabling-reveal-on-other-controls) и [Включение Показать на пользовательские элементы управления](#enabling-reveal-on-custom-controls) в этой статье.
+Отображение автоматически работает для некоторых элементов управления. Для других элементов управления можно включить эффект отображения, назначив специальный стиль для элемента управления, как описано в разделах этой статьи [Включение эффекта отображения для других элементов управления](#enabling-reveal-on-other-controls) и [Включение эффекта отображения для пользовательских элементов управления](#enabling-reveal-on-custom-controls) .
 
 ## <a name="controls-that-automatically-use-reveal"></a>Элементы управления, автоматически использующие эффект отображения
 
@@ -69,7 +69,7 @@ ms.locfileid: "2888903"
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-Следующие иллюстрации показывают Показать выделите на несколько различных элементов управления:
+На этих иллюстрациях показан эффект отображения выделения на нескольких различных элементах управления:
 
 ![Примеры эффекта отображения](images/RevealExamples_Collage.png)
 
@@ -134,8 +134,8 @@ ms.locfileid: "2888903"
 
 
 Эти эффекты определяются двумя кистями: 
-* Показать границы определяется **RevealBorderBrush**
-* Показать меняющейся определяется **RevealBackgroundBrush**
+* Отображение границ определяется **RevealBorderBrush**
+* Отображение при наведении определяется **RevealBackgroundBrush**
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
@@ -259,7 +259,7 @@ ms.locfileid: "2888903"
 
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>Настройка эффекта отображения для пользовательского элемента управления 
 
-При включении Показать на элемент управления настраиваемого или шаблонного re или настраиваемых команд поверхность советы помогут оптимизировать влияние.
+При включить эффект отображения для пользовательских или re шаблону элемента управления или поверхности пользовательских команд, эти советы помогут вам оптимизировать эффекта.
  
 * На смежных элементах, не схожих по высоте или ширине (особенно в списках): удалите эффект отображения при приближении границы и показывайте границы только при наведении.
 * Для элементов управления, которые часто отключаются и включаются: поместите кисть отображения при приближении к границе на основы элементов, а также на их границы, чтобы привлечь внимание к состоянию элемента.

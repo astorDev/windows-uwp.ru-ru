@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, фона задач
+keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2894093"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2909301"
 ---
 # <a name="debug-a-background-task"></a>Отладка фоновой задачи
 
@@ -34,7 +34,7 @@ ms.locfileid: "2894093"
 
 -   Для приложений на языках C# и C++ основной проект должен ссылаться на проект фоновой задачи. Если такой ссылки нет, то фоновая задача не будет включена в пакет приложения.
 -   В коде на языке C# или C++ параметр **Тип вывода** проекта фоновой задачи должен иметь значение "Компонент среды выполнения Windows".
--   Класс фонового должен быть объявлен в атрибуте точки входа в манифест пакета.
+-   Класс фоновой должен быть объявлен в атрибуте точки входа в манифесте пакета.
 
 ## <a name="trigger-background-tasks-manually-to-debug-background-task-code"></a>Ручная активация фоновых задач для отладки их кода
 
@@ -52,7 +52,7 @@ ms.locfileid: "2894093"
 > Таким способом невозможно запустить фоновые задачи, использующие следующие триггеры: [**ApplicationTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx), [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx), [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) и фоновые задачи, использующие [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) с типом триггера [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839).  
 > **ApplicationTrigger** и **MediaProcessingTrigger** можно установить в коде вручную с помощью `trigger.RequestAsync()`.
 
-![Отладка фоновых задач](images/debugging-activation.png)
+![Отладка фоновой задачи](images/debugging-activation.png)
 
 3.  При активации фоновой задачи отладчик подключается к ней и отображает отладочный вывод в Visual Studio.
 
@@ -82,8 +82,8 @@ ms.locfileid: "2894093"
     Если после выполнения этой процедуры в журнале событий отображается неправильная точка входа или триггер фоновой задачи, это означает, что приложение неправильно регистрирует фоновую задачу. Разобраться с такой задачей поможет статья [Регистрация фоновой задачи](register-a-background-task.md).
 
     1.  Перейдите на начальный экран и откройте просмотр событий (для этого найдите и запустите файл eventvwr.exe).
-    2.  Последовательно выберите пункты **служб журналы приложений и**  - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure** в средстве просмотра событий.
-    3.  В области действий выберите **представление**  - &gt; **Отобразить аналитический и отладочный журналы** для включения ведения журнала диагностики.
+    2.  Последовательно выберите пункты **Журналы приложений и служб**  - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure** в средстве просмотра событий.
+    3.  На панели действий выберите **представление**  - &gt; **Отобразить аналитический и отладочный журналы** для включения ведения журнала диагностики.
     4.  Выберите **Журнал диагностики** и щелкните **Включить журнал**.
     5.  Теперь попробуйте еще раз использовать ваше приложение для регистрации и активации фоновой задачи.
     6.  Просмотрите в журналах диагностики подробную информацию об ошибке. Эта информация будет содержать точку входа, зарегистрированную для фоновой задачи.
@@ -105,7 +105,7 @@ ms.locfileid: "2894093"
 -   Если фоновой задаче требуется доступ к экрану блокировки, то перед выполнением ее отладки необходимо, чтобы приложение было размещено на экране блокировки. Сведения о том, как указывать параметры манифеста для приложений с возможностью размещения на экране блокировки, см. в статье [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md).
 -   Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации оказываются недопустимыми, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
 
-Дополнительные сведения об использовании VS отладка в фоновом режиме в разделе [Запуск Приостановка, возобновление и фона событий в приложениях UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
+Дополнительные сведения об использовании Visual STUDIO для отладки фоновых задач см. в разделе [Активация приостановки, возобновления и фоновых событий в приложениях UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
 
 ## <a name="related-topics"></a>Еще по теме
 
@@ -114,8 +114,8 @@ ms.locfileid: "2894093"
 * [Регистрация фоновой задачи](register-a-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Запуск Приостановка, возобновление и фона событий в приложениях UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
-* [Анализ качества кода UWP приложений с анализом кода Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
+* [Активация приостановки, возобновления и фоновых событий в приложениях UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
+* [Анализ качества кода приложений UWP с помощью средства анализа кода Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
  
 

@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f12190c405ad611cf5b884b82c4a430aa5264f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2884293"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906204"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Новые возможности для разработчиков в Windows 10, сборка 17134
 
@@ -38,7 +38,7 @@ ms.locfileid: "2884293"
 Представление навигации | Элемент управления [Представление навигации](../design/controls-and-patterns/navigationview.md) предоставляет сворачиваемое меню навигации для навигации верхнего уровня в вашем приложении. Этот элемент управления реализует шаблон панели навигации или меню типа "гамбургер" и автоматически адаптирует режим отображения области к разным размерам окон.
 Фокус отображения | Новый эффект [Фокус отображения](../design/style/reveal-focus.md) освещает нужные элементы при использовании Xbox One или экрана телевизора. Этот эффект анимирует границу элементов для фокусировки, например кнопок, когда пользователь наводит на них фокус с геймпада или клавиатуры.
 Звук | Благодаря свойству **SpatialAudioMode** XAML теперь поддерживает трехмерный звук. См. сведения о настройке в разделе [Звук](../design/style/sound.md).
-Плитки | [Уведомления на отслеживаемых плитках](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md) теперь поддерживаются в приложениях UWP на базе JavaScript.<br><br>Дополнительный заголовков и значка уведомлений, [теперь поддерживается из приложения Bridge рабочего стола](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications).
+Плитки | [Уведомления на отслеживаемых плитках](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md) теперь поддерживаются в приложениях UWP на базе JavaScript.<br><br>Вспомогательные уведомления плиток и индикаторов событий, [теперь поддерживается из приложений моста для классических приложений](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications).
 Представление дерева | Элемент управления [TreeView](../design/controls-and-patterns/tree-view.md) создает иерархический список с разворачиваемыми и сворачиваемыми узлами, которые содержат вложенные элементы. Его можно использовать для демонстрации структуры папок или вложенных отношений в пользовательском интерфейсе.
 Стиль письма | Мы обновили и расширили статью о голосе и тоне, превратив ее в [Руководство по стилю письма](../design/style/writing-style.md). В нем содержится новая информация о принципах создания эффективного текста в приложении и даются рекомендации на основе передовых практик по составлению элементов управления (сообщений об ошибках и диалоговых окон).
 
@@ -73,7 +73,7 @@ PlayReady | Microsoft PlayReady— это набор технологий для
 Системные триггеры | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) позволяет определить системный триггер, если ОС не предоставляет нужный триггер. Например, если драйвер оборудования и приложение UWP сторонние, а драйверу оборудования нужно создать пользовательское событие, обрабатываемое приложением. Например, звуковая карта, которая должна уведомить пользователя о том, что в аудиоразъем выполнено подключение.
 Действия пользователей | В [документации по UserActivity](../launch-resume/useractivities.md) рассказывается, как помочь пользователям возобновить свою активность в вашем приложении даже на нескольких устройствах.</br>Класс **UserActivitySessionHistoryItem** имеет новые методы, извлекающие недавние действия пользователей. См. подробные сведения в разделе о классе [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) и его перегрузке.
 API-интерфейсы Windows Mixed Reality | Чтобы поддержать растущую платформу Windows Mixed Reality, в пространства имен [Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) и [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial) были добавлены новые API.
-Документы Windows Mixed Reality | Инструкции для разработчиков Windows смешанные реальности [теперь размещенного на docs.microsoft.com.](https://docs.microsoft.com/windows/mixed-reality/) Так же, как в этих документах UWP можно теперь файл свои отзывы и предложения с репозиториев проблемы или отправка публикаций через запрос репликации по запросу.
+Документы Windows Mixed Reality | Руководство для разработчиков Windows Mixed Reality [теперь доступно на сайте docs.microsoft.com.](https://docs.microsoft.com/windows/mixed-reality/) Так же, как в этих документах UWP теперь могут отправлять отзывы о проблемах с GitHub или предоставлять собственные разработки, используя запрос на включение внесенных изменений.
 
 ## <a name="publish--monetize-windows-apps"></a>Публикация и монетизация приложений для Windows
 

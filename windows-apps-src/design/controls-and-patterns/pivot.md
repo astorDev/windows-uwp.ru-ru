@@ -15,15 +15,15 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e8f0fbbfacc3fa4edb602f7505ea1e88f211a81a
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889414"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913021"
 ---
 # <a name="pivot"></a>Pivot
 
-Элемент управления [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) позволяет сенсорного ввода считывания между небольшой набор разделов содержимого.
+Элемент управления ["Сводка"](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) позволяет сенсорный ввод прокрутка между небольшой набор разделы содержимого.
 
 > **Важные API -интерфейсы**: [класс Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [класс NavigationView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
@@ -34,7 +34,7 @@ ms.locfileid: "2889414"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>При наличии установленного приложения <strong style="font-weight: semi-bold">Коллекция элементов управления XAML</strong> , щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/Pivot">открыть приложение и посмотрите, элемент управления Pivot в действии</a>.</p>
+    <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">Галереи элементов управления XAML</strong> , щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/Pivot">открыть приложение и увидеть Pivot в действии</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Получить исходный код (GitHub)</a></li>
@@ -43,26 +43,26 @@ ms.locfileid: "2889414"
 </tr>
 </table>
 
-Элемент управления Pivot, так же, как [NavigationView](navigationview.md), подчеркивание выбранного элемента.
+Элемент управления "Сводка", так же, как [NavigationView](navigationview.md), подчеркивает выбранный элемент.
 
 ![Фокус по умолчанию подчеркивает выбранный заголовок](images/pivot_focus_selectedHeader.png)
 
 ## <a name="is-this-the-right-control"></a>Выбор подходящего элемента управления
 
-Для достижения распространенных верхней панели навигации и шаблоны вкладок, рекомендуется использовать [NavigationView](navigationview.md), которая автоматически преобразует для различных размеров экрана и позволяет настраивать более высокой версии.
+Для достижения общих верхней навигационной и шаблоны вкладки, мы рекомендуем использовать [NavigationView](navigationview.md), который автоматически адаптируется к различным размерам экрана и позволяет более настройки.
 
-Тем не менее если ваше навигации требуется для считывания сенсорного ввода, рекомендуется использовать Pivot.
+Тем не менее если навигации требуется прокрутка сенсорного ввода, мы рекомендуем использовать "Сводка".
 
-Основные различия между элементами управления NavigationView и Pivot являются переполнения поведение по умолчанию и навигации API:
+Основные различия между элементами управления NavigationView и "Сводка" — это поведение по умолчанию переполнения и навигации API:
 
-- Сводить обойм переполнения, элементов, а NavigationView в раскрывающемся меню переполнения, чтобы пользователи могут видеть все элементы.
-- PIVOT обрабатывает переходов между разделами контента, хотя NavigationView позволяет лучше контролировать поведение навигации.
+- Сводки переполнения обойм, которые элементов, когда NavigationView использует раскрывающееся меню переполнения, чтобы пользователи могли видеть все элементы.
+- "Сводка" обрабатывает навигацию между разделами содержимого, когда NavigationView обеспечивает больше контроля над поведение навигации с помощью.
 
-## <a name="use-navigationview-instead-of-pivot"></a>Использование NavigationView вместо Pivot
+## <a name="use-navigationview-instead-of-pivot"></a>Использовать NavigationView вместо "Сводка"
 
-Если ваше приложение пользовательский Интерфейс использует управления Pivot, затем можно преобразовать Pivot NavigationView следующим кодом.
+Если пользовательский Интерфейс приложения используется элемент управления "Сводка", затем можно преобразовать "Сводка" для NavigationView следующим кодом.
 
-Этот код XAML создает NavigationView 3 разделы содержимого, как пример Pivot в разделе [Создание элемента управления pivot](#create-a-pivot-control).
+Этот код XAML создает NavigationView с 3 разделами содержимого, как и в примере Pivot в [Создать элемент управления "Сводка"](#create-a-pivot-control).
 
 ```xaml
 <NavigationView x:Name="rootNavigationView" Header="Category Title"
@@ -87,7 +87,7 @@ ms.locfileid: "2889414"
 </Page>
 ```
 
-NavigationView позволяет лучше контролировать настройки навигации и требует соответствующего кода. Поясняющая выше XAML, используйте следующие кода:
+NavigationView обеспечивает больший контроль над настройки навигации и требует соответствующего кода программной части. Для описания выше XAML, используйте следующий код программной части:
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -116,11 +116,11 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-Этот код напоминающего интерфейс управления Pivot встроенных навигации, минус считывания сенсорного ввода взаимодействия между разделами контента. Как вы видите, можно также настроить несколько точек, включая анимационной перехода, параметры навигации и возможности стека.
+Этот код имитирует взаимодействия при навигации встроенный элемент управления Pivot, минус прокрутка сенсорного взаимодействия между разделами содержимого. Как видно, можно также настроить несколько точек, включая анимированный переход, параметров навигации и возможности стека.
 
 ## <a name="create-a-pivot-control"></a>Создание элемента управления "Cводка"
 
-Этот код создает базовый элемент управления Pivot с 3 разделы содержимого.
+Этот код создает базовый элемент управления "Сводка" с 3 разделами содержимого.
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="Category Title">

@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, фона задач
+keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e685085c004cced24b9a42ef2261a26eef10bb
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882508"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910237"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Объявление фоновых задач в манифесте приложения
 
@@ -213,7 +213,7 @@ ms.locfileid: "2882508"
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>Запуск в новом процессе каждый раз, когда активируется  триггер, с помощью атрибута SupportsMultipleInstances
 
-В этом примере объявляется, что фоновая задача, которая выполняется в новом процессе, который получает собственные ограничения на ресурсы (память и ЦП) каждый раз, когда активируется новый триггер. Обратите внимание на использование `SupportsMultipleInstances`, который обеспечивает это поведение. Перед использованием этого атрибута следует задать SDK версии "10.0.15063» (обновление создателей 10 Windows) или более поздней версии.
+В этом примере объявляется, что фоновая задача, которая выполняется в новом процессе, который получает собственные ограничения на ресурсы (память и ЦП) каждый раз, когда активируется новый триггер. Обратите внимание на использование `SupportsMultipleInstances`, который обеспечивает это поведение. Для использования этого атрибута необходимо выбрать целевой пакет SDK версию "10.0.15063» (Windows 10 Creators Update) или более поздней версии.
 
 ```xml
 <Package

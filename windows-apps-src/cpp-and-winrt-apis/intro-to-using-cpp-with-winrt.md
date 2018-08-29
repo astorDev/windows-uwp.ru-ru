@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, введение
 ms.localizationpriority: medium
 ms.openlocfilehash: 03abe68fd19573d7b2deba9937c515a8641e8fca
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2885909"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913101"
 ---
 # <a name="introduction-to-cwinrt"></a>Введение в C++/WinRT
 &nbsp;
@@ -22,7 +22,7 @@ ms.locfileid: "2885909"
 
 C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным API-интерфейсам Windows. С помощью C++/WinRT можно создавать и использовать API среды выполнения Windows, используя любой совместимый со стандартами компилятор C++17. В пакет Windows SDK входит среда C++/WinRT, которая впервые появилась в версии 10.0.17134.0 (Windows 10, версия 1803).
 
-C + +/ WinRT — это рекомендуемое замены корпорации Майкрософт для [C + +/ CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) проекции языка и [Библиотеку шаблонов C++ (WRL) среды выполнения Windows](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live). Полный список [разделы, посвященные C + +/ WinRT](index.md#topics-about-cwinrt) содержит сведения о взаимодействии с и перенос из, C + +/ CX и WRL.
+C + +/ WinRT — Это рекомендуемая корпорацией Майкрософт замена для [C + +/ CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) проекция языка и [Библиотеки шаблонов C++ (WRL) среды выполнения Windows](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live). Полный список [разделы, посвященные C + +/ WinRT](index.md#topics-about-cwinrt) представлены сведения о взаимодействии с, а также перенос из C + +/ CX и WRL.
 
 > [!IMPORTANT]
 > Два наиболее важных аспектах C++/ WinRT, которые следует учитывать, описаны в разделах [Поддержка пакетов SDK для C++/WinRT](#sdk-support-for-cwinrt) и [Поддержка Visual Studio для C++/ WinRT и VSIX](#visual-studio-support-for-cwinrt-and-the-vsix).
@@ -41,9 +41,9 @@ C + +/ WinRT — это рекомендуемое замены корпорац
 ## <a name="visual-studio-support-for-cwinrt-and-the-vsix"></a>Поддержка Visual Studio для C++/WinRT и VSIX
 Для шаблонов проектов C++/WinRT в Visual Studio, а также свойств и целей MSBuild C++/WinRT скачайте и установите [расширение Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix) из [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
-Вам потребуется Visual Studio 2017 (по крайней мере версия 15,6; рекомендуется версия не младше 15.7) и Windows SDK версии 10.0.17134.0 (Windows 10, версия 1803). Если вы еще не установлен, необходимо установить параметр **средства C++ универсальные платформы Windows** в установщик Visual Studio. И в Windows **Параметры** > **обновление \ & безопасности** > **для разработчиков (en)**, выберите параметр **режим разработчика** , а не параметр **Sideload приложения** .
+Вам потребуется Visual Studio 2017 (по крайней мере версия 15,6; рекомендуется версия не младше 15.7) и Windows SDK версии 10.0.17134.0 (Windows 10, версия 1803). Если вы еще не установили его, необходимо установить параметр **Инструменты C++ универсальной платформы Windows** внутри установщика Visual Studio. И, в Windows **Параметры** > **обновление \ & безопасности** > **для разработчиков**, выберите параметр **режим разработчика** , а не параметр **Неопубликованные приложения** .
 
-Затем будет иметь возможность создавать и создавать или открывать, C + +/ WinRT проекта в Visual Studio и его развертывание. Кроме того, можно преобразовать существующего проекта, добавив `<CppWinRTEnabled>true</CppWinRTEnabled>` свойство, чтобы его `.vcxproj` файла.
+Затем можно создать и создавать или открыть, C + +/ WinRT проекта в Visual Studio и развернуть его. Кроме того, вы можете преобразовать существующий проект, добавив `<CppWinRTEnabled>true</CppWinRTEnabled>` свойства его `.vcxproj` файла.
 
 ```xml
 <Project ...>

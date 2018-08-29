@@ -10,14 +10,14 @@ ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, данные, типы
 ms.localizationpriority: medium
 ms.openlocfilehash: 729a3c30f84e20a89912b728db1efecc3e54ad9e
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882517"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2907223"
 ---
 # <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Стандартные типы данных [C++ и C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-С помощью C++/WinRT можно вызывать API среды выполнения Windows с использованием стандартных типов данных C++, включая некоторые типы данных стандартной библиотеки C++. Вы можете передать стандартных строк для API-интерфейсы (просмотреть [обработки в C + строк +/ WinRT](strings.md)), и можно передать инициализации списки и стандартных контейнеров API, ожидающих семантически эквивалентный семейства сайтов.
+С помощью C++/WinRT можно вызывать API среды выполнения Windows с использованием стандартных типов данных C++, включая некоторые типы данных стандартной библиотеки C++. API-интерфейсы можно передать стандартных строк (см. в разделе [Обработка строк в C + +/ WinRT](strings.md)), и можно передать инициализатора списков и стандартных контейнеров для API, которые ожидают семантически эквивалентные коллекции.
 
 ## <a name="standard-initializer-lists"></a>Стандартные списки инициализатора
 Список инициализатора (**std::initializer_list**) — это конструкция стандартной библиотеки C++. Списки инициализатора можно использовать при вызове определенных конструкторов и методов среды выполнения Windows. Например, с помощью одного из них можно вызвать [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes).
@@ -92,7 +92,7 @@ std::array<byte, 3> theArray{ 99, 98, 97 };
 dataWriter.WriteBytes(theArray); // theArray is converted to an array_view before being passed to WriteBytes.
 ```
 
-C++/WinRT привязывает **std::vector** в качестве параметра коллекции среды выполнения Windows. Таким образом, можно передать **std::vector&lt;winrt::hstring&gt;**, и он будет преобразована в соответствующую коллекцию среды выполнения Windows **winrt::hstring**. Нет дополнительных сведений необходимо иметь в виду, если асинхронного вызываемого абонента. Из-за реализацию этого варианта вам потребуются для предоставления rvalue, поэтому необходимо указать операцию копирования или перемещения вектор. В следующем примере кода мы перемещение владения вектор объект типа параметра, обслуживаемых вызываемым async (и затем мы не следует получить доступ к `vecH` после перемещения). Если вы хотите узнать больше о rvalues, просмотрите [значение категорий и ссылки на них](cpp-value-categories.md).
+C++/WinRT привязывает **std::vector** в качестве параметра коллекции среды выполнения Windows. Таким образом, можно передать **std::vector&lt;winrt::hstring&gt;**, и он будет преобразована в соответствующую коллекцию среды выполнения Windows **winrt::hstring**. Существует дополнительный сведений необходимо иметь в виду, если вызываемый является асинхронным. Из-за сведения о реализации этого варианта необходимо предоставить rvalue, поэтому вы должны предоставить копию перемещения вектора. В следующем примере кода мы переносим владение вектора объект типа параметра, принимаемый асинхронный вызываемый (и мы не должно получить доступ к `vecH` еще раз после перемещения его). Если вы хотите узнать больше о rvalues, см. в разделе [категории значение и ссылки на них](cpp-value-categories.md).
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<winrt::hstring> vecH)
@@ -101,7 +101,7 @@ IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vecto
 }
 ```
 
-При этом нельзя передавать **std::vector&lt;std::wstring&gt;** там, где требуется коллекция среды выполнения Windows. Это связано с тем, что после преобразования в соответствующую коллекцию среды выполнения Windows **std::wstring** язык C++ не преобразует параметры типов этой коллекции. Следовательно, не скомпилируется в следующем примере кода (и — это решение для передачи **std::vector&lt;winrt::hstring&gt; ** вместо этого, как показано выше).
+При этом нельзя передавать **std::vector&lt;std::wstring&gt;** там, где требуется коллекция среды выполнения Windows. Это связано с тем, что после преобразования в соответствующую коллекцию среды выполнения Windows **std::wstring** язык C++ не преобразует параметры типов этой коллекции. Следовательно, не будет скомпилирован в следующем примере кода (и решением является передать **std::vector&lt;winrt::hstring&gt; ** вместо этого, как показано выше).
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)
@@ -113,7 +113,7 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vect
 ## <a name="raw-arrays-and-pointer-ranges"></a>Необработанные массивы и диапазоны указателей
 Имея в виду, что эквивалентный тип может появиться в стандартной библиотеке C++ в будущем, можно также работать непосредственно с **array_view**, если это необходимо.
 
-**array_view** имеет конструкторов преобразования из необработанные массива и из него **T&ast; ** (указатели на тип элемента).
+**array_view** имеет конструкторы преобразования из необработанных массивов и из диапазона **T&ast; ** (указатели на тип элемента).
 
 ```cppwinrt
 using namespace winrt;
@@ -131,8 +131,8 @@ dataWriter.WriteBytes(fromRange); // the array_view is passed to WriteBytes.
 
 Дополнительные примеры и сведения см. в справочнике по API [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view).
 
-## <a name="ivectorlttgt-and-standard-iteration-constructs"></a>**IVector&lt;T&gt; ** и конструкции стандартных итерации
-[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) является примером API среды выполнения Windows, который возвращает коллекцию типа [**IVector&lt;T&gt; **](/uwp/api/windows.foundation.collections.ivector_t_) (проекции в C + +/ WinRT как **winrt::Windows::Foundation::Collections::IVector&lt;T&gt; ** ). Можно использовать этот тип с standard итерации конструкции, такие как на базе диапазона `for`.
+## <a name="ivectorlttgt-and-standard-iteration-constructs"></a>**IVector&lt;T&gt; ** и стандартные итерации конструкции
+[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) является примером API среды выполнения Windows, который возвращает коллекцию типа [**IVector&lt;T&gt; **](/uwp/api/windows.foundation.collections.ivector_t_) (проецируемые в C + +/ WinRT как **winrt::Windows::Foundation::Collections::IVector&lt;T&gt; ** ). Можно использовать этот тип с помощью стандартных итерации конструкций, такие как основанным на диапазоне `for`.
 
 ```cppwinrt
 // main.cpp
@@ -152,8 +152,8 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 }
 ```
 
-## <a name="c-coroutines-with-asynchronous-windows-runtime-apis"></a>Сопрограммы C++ с помощью интерфейсов API среды выполнения асинхронного Windows
-Можно продолжить использование [Библиотеки параллельных шаблонов (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) при вызове асинхронного API среды выполнения Windows. Тем не менее во многих случаях сопрограммы C++ предоставляют эффективным и более легко закодированных идиом для взаимодействия с объектами асинхронный. Дополнительные сведения и примеры кода, в разделе [параллелизм и асинхронной операции с помощью C + +/ WinRT](concurrency.md).
+## <a name="c-coroutines-with-asynchronous-windows-runtime-apis"></a>Сопрограммы C++ с асинхронными API среды выполнения Windows
+Вы можете продолжать использовать [Библиотеки параллельных шаблонов (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) при вызове асинхронных API среды выполнения Windows. Тем не менее во многих случаях сопрограммы C++ обеспечивают эффективный и более легко закодированных идиом для взаимодействия с асинхронной объектов. Дополнительные сведения и примеры кода, см. в разделе [параллельная обработка и асинхронные операции с помощью C + +/ WinRT](concurrency.md).
 
 ## <a name="important-apis"></a>Важные API
 * [IVector&lt;T&gt;](/uwp/api/windows.foundation.collections.ivector_t_)

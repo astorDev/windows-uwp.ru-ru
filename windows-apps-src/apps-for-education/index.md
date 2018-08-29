@@ -7,18 +7,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, образовательных заведений
+keywords: Windows 10, uwp, для образовательных учреждений
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
 ms.openlocfilehash: da03a3c478ca45cc2d2b518988738e510a6c5ea9
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882680"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905427"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>Разработка образовательных универсальных приложений для Windows
-![Снимок экрана Take a тестовое приложение](images/take-a-test-screen-small.png)
+![Снимок экрана приложения тестирование](images/take-a-test-screen-small.png)
 
 Следующие ресурсы помогут в написании образовательного универсального приложения для Windows.
 

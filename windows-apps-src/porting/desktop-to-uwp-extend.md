@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e1d808dd2991aa2ffd1e30967d329b3eced9f99
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018570"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2914102"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Расширение классических приложений с помощью современных компонентов UWP
 
@@ -140,7 +140,7 @@ ms.locfileid: "2018570"
 
 ### <a name="add-a-protocol-extension"></a>Добавление расширение протокола
 
-В **Обозревателе решений** откройте файл **package.appxmanifest** проекта UWP в вашем решении и добавьте это расширение.
+В **Обозревателе решений**откройте файл **package.appxmanifest** проекта упаковки в вашем решении и добавьте это расширение.
 
 ```xml
 <Extensions>
@@ -311,9 +311,9 @@ public sealed class AppServiceTask : IBackgroundTask
 
 <a id="extension" />
 
-### <a name="add-an-app-service-extension-to-the-uwp-project"></a>Добавление в проект UWP расширения службы приложений
+### <a name="add-an-app-service-extension-to-the-packaging-project"></a>Добавление расширения службы приложений в проект упаковки
 
-Откройте файл **package.appxmanifest** проекта UWP и добавьте расширение службы приложения в элемент ``<Application>``.
+Откройте файл **package.appxmanifest** проекта упаковки и добавьте расширение службы приложения для ``<Application>`` элемента.
 
 ```xml
 <Extensions>
@@ -398,7 +398,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 ### <a name="add-a-share-target-extension"></a>Добавление расширения получателя данных
 
-В **Обозревателе решений** откройте файл **package.appxmanifest** проекта UWP в вашем решении и добавьте это расширение.
+В **Обозревателе решений**откройте файл **package.appxmanifest** проекта упаковки в вашем решении и добавьте расширение.
 
 ```xml
 <Extensions>
@@ -512,7 +512,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 ### <a name="configure-the-background-task"></a>Настройка фоновой задачи
 
-В конструкторе манифестов откройте файл **package.appxmanifest** проекта UWP в своем решении.
+В конструкторе манифеста откройте файл **package.appxmanifest** проекта упаковки в вашем решении.
 
 На вкладке **Объявления** добавьте объявление **Фоновые задачи**.
 

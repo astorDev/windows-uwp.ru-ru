@@ -15,47 +15,47 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c0857005d584b1fde0eb52a6ab0ef5ec29eaf44
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886348"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906144"
 ---
-# <a name="navigation-view-preview-version"></a>Представление "Навигация" (Предварительная версия)
+# <a name="navigation-view-preview-version"></a>Представление переходов (Предварительная версия)
 
-> **Это версия preview**: в этой статье описываются новые версии элемента управления NavigationView, который находится в разработке. Для использования этой теперь требуется [последние построения изнутри Windows и пакет SDK](https://insider.windows.com/for-developers/) или [Библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> **Это предварительная версия**: в этой статье описывается новая версия элемента управления NavigationView, находящегося в разработке. Он теперь требуется [последние сборки программы предварительной оценки Windows и пакет SDK](https://insider.windows.com/for-developers/) или [Библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-Элемент управления NavigationView содержит навигации верхнего уровня для вашего приложения. Он преобразует различных размеров экрана поддерживает несколько стилей навигации.
+Элемент управления NavigationView обеспечивает навигацию верхнего уровня для вашего приложения. Его адаптируется к различным поддерживает размеров экрана несколько стилей навигации.
 
 > **API -интерфейсы библиотеки пользовательского интерфейса Windows**: [класс Microsoft.UI.Xaml.Controls.NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 
-> **Интерфейсы API платформы**: [класс Windows.UI.Xaml.Controls.NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
+> **API -интерфейсы платформы**: [класс Windows.UI.Xaml.Controls.NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-## <a name="get-the-windows-ui-library"></a>Получение библиотека интерфейса пользователя Windows
+## <a name="get-the-windows-ui-library"></a>Получить библиотеку пользовательского интерфейса Windows
 
-Этот элемент управления включается в состав библиотека интерфейса пользователя Windows, NuGet пакет, содержащий новые элементы управления и возможности пользовательского интерфейса приложений UWP. Дополнительные сведения, включая инструкции по установке в разделе [Общие сведения о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). 
+Этот элемент управления не включен в библиотеке Windows пользовательского интерфейса, пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке см. в разделе [Общие сведения о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). 
 
 ## <a name="navigation-styles"></a>Стили навигации
 
-Поддерживает NavigationView:
+Поддерживает NavigationView.
 
-**Меню или левой панели переходов**
+**Левой панели навигации или меню**
 
-![Расширенное области переходов](images/displaymode-left.png)
+![расширены панель навигации](images/displaymode-left.png)
 
-**Панель навигации верхнего уровня или в меню**
+**Верхняя панель навигации или меню**
 
-![верхней панели навигации](images/displaymode-top.png)
+![Основные навигации](images/displaymode-top.png)
 
 ## <a name="is-this-the-right-control"></a>Выбор подходящего элемента управления
 
-NavigationView является элементом управления адаптивный навигации, который хорошо подходит для:
+NavigationView — это элемент управления адаптивной навигации, который лучше всего подойдет для:
 
-- Предоставление единообразная переходов во всем вашего приложения.
-- Сохранение недвижимость экрана на окна меньшего размера.
-- Упорядочение доступ к многие категории навигации.
+- Предоставление единообразия интерфейса навигации во всем приложении.
+- Экономия свободного экранного пространства для окон меньшего размера.
+- Организации доступа к многие категории навигации.
 
-Другие элементы навигации в разделе [основы структуры навигации](../basics/navigation-basics.md).
+Для других элементов навигации см. в разделе [основы проектирования навигации](../basics/navigation-basics.md).
 
 Если для навигации требуется более сложное поведение, которое не поддерживается в NavigationView, можно попробовать использовать шаблон [Основные и подробные данные](master-details.md).
 
@@ -63,8 +63,8 @@ NavigationView является элементом управления адап
     :::column:::
         ![Некоторые изображения](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
-    ::: диапазон столбцов = «2»::: **Коллекция элементов управления XAML**<br>
-        При наличии установленного приложения коллекция элементов управления XAML, щелкните <a href="xamlcontrolsgallery:/item/NavigationView">здесь</a> для открытия приложения и просмотреть NavigationView в действии.
+    ::: column span = «2»::: **Галереи элементов управления XAML**<br>
+        Если у вас установлено приложение галереи элементов управления XAML, щелкните <a href="xamlcontrolsgallery:/item/NavigationView">здесь</a> , чтобы открыть приложение и увидеть NavigationView в действии.
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
         <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
@@ -73,7 +73,7 @@ NavigationView является элементом управления адап
 
 ## <a name="display-modes"></a>Режимы отображения
 
-NavigationView может быть задано в различных режимах посредством `PaneDisplayMode` свойства:
+NavigationView может быть задано для различных режимов отображения, посредством `PaneDisplayMode` свойства:
 
 :::row:::
     :::column:::
@@ -85,10 +85,10 @@ NavigationView может быть задано в различных режим
     :::column-end:::
 :::row-end:::
 
-Мы рекомендуем левой панели навигации при:
+Мы рекомендуем левой навигационной при:
 
-- Имеется несколько среднего (5-10) категорий менее важно навигации верхнего уровня.
-- Вы можете очень наиболее важные навигационных категорий с меньше места для другого контента приложения.
+- У вас есть среднего и высокого количества (5-10) категорий менее важно навигации верхнего уровня.
+- Желание очень четкой навигационных категорий, используя меньше пространства для другого содержимого приложения.
 
 :::row:::
     :::column:::
@@ -100,12 +100,12 @@ NavigationView может быть задано в различных режим
     :::column-end:::
 :::row-end:::
 
-Мы рекомендуем верхней панели навигации при:
+Мы рекомендуем верхней части при:
 
-- 5 или меньше категорий менее важно навигации верхнего уровня, таким образом, что все категории Дополнительные навигации верхнего уровня, в итоге в раскрывающемся списке переполнения меню считается менее важных.
-- Вам нужно показать все параметры навигации на экране.
-- Вы можете больше пространства для содержимого приложения.
-- Значки нельзя четко описаны категории навигации вашего приложения.
+- У вас есть 5 или менее категории менее важно навигации верхнего уровня, таким образом, чтобы все категории дополнительных навигации верхнего уровня, в раскрывающемся списке переполнения меню считаются столь важны.
+- Вам необходимо отобразить все параметры навигации на экране.
+- Желание больше места для содержимого приложения.
+- Значки невозможно описать четко категорий навигации вашего приложения.
 
 :::row:::
     :::column:::
@@ -129,121 +129,121 @@ NavigationView может быть задано в различных режим
 
 ### <a name="auto"></a>Auto (автоматически)
 
-![Адаптивное поведение по умолчанию левая GIF](images/displaymode-auto.png)
+![Адаптивное поведение GIF левая по умолчанию](images/displaymode-auto.png)
 
-Преобразует между LeftMinimal на небольших экранов, LeftCompact на средней экранов и слева на больших экранах. Для получения дополнительных сведений в разделе [адаптивное поведение](#adaptive-behavior) .
+Адаптирует между LeftMinimal на небольшими, LeftCompact на средних экранов и влево на больших экранах. Дополнительные сведения в разделе [адаптивное поведение](#adaptive-behavior) .
 
 ## <a name="anatomy"></a>Структура
 
-<b>Левая навигационная панель</b><br>
+<b>Левая панель навигации</b><br>
 
-![слева NavigationView разделы](images/leftnav-anatomy.png)
+![левый разделы представления навигации](images/leftnav-anatomy.png)
 
-<b>Верхняя панель навигации</b><br>
+<b>Верхней панели навигации</b><br>
 
-![наиболее распространенные NavigationView разделы](images/topnav-anatomy.png)
+![основные разделы представления навигации](images/topnav-anatomy.png)
 
 ## <a name="pane"></a>Панель
 
-Области могут располагаться на верхней или слева, с помощью `PanePosition` свойство.
+Панель может располагаться на верхней или левой части окна, через `PanePosition` свойства.
 
-Ниже приводится подробное области устройство для положения верхней и левой области:
+Вот Анатомия подробные панели для позиции верхний и области.
 
-<b>Левая навигационная панель</b><br>
+<b>Левая панель навигации</b><br>
 
-![Устройство NavigationView](images/navview-pane-anatomy-vertical.png)
+![Анатомия NavigationView](images/navview-pane-anatomy-vertical.png)
 
 1. Кнопка меню
 1. Элементы навигации
 1. Разделители
 1. Заголовки
 1. AutoSuggestBox (необязательно)
-1. Кнопка параметров (необязательно)
+1. Кнопка «Параметры» (необязательно)
 
-<b>Верхняя панель навигации</b><br>
+<b>Верхней панели навигации</b><br>
 
-![Устройство NavigationView](images/navview-pane-anatomy-horizontal.png)
+![Анатомия NavigationView](images/navview-pane-anatomy-horizontal.png)
 
 1. Заголовки
 1. Элементы навигации
 1. Разделители
 1. AutoSuggestBox (необязательно)
-1. Кнопка параметров (необязательно)
+1. Кнопка «Параметры» (необязательно)
 
-Кнопки "Назад" отображается в левом верхнем углу области, но NavigationView не создается автоматически содержимое назад. Чтобы включить обратной навигации, обратитесь к разделу [обратной навигации](#backwards-navigation) раздел.
+Кнопка «Назад» отображается в верхнем левом углу панели, но NavigationView не добавляет автоматически содержимое в стеке переходов назад. Чтобы реализовать навигацию в обратном направлении, см. в разделе [обратной навигации](#backwards-navigation) раздел.
 
-В области NavigationView также может содержать:
+Панель NavigationView может также содержать:
 
-1. Элементы навигации в форме [NavigationViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem)для перехода на отдельные страницы.
-2. Разделители, в виде [NavigationViewItemSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)для группировки элементов навигации. Присвойте свойству [непрозрачность](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity) значение 0, чтобы отобразить разделителя групп разрядов как пространство.
+1. Навигационные элементы в виде [NavigationViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem), для перехода на определенные страницы.
+2. Разделители в виде [NavigationViewItemSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)для группировки элементов навигации. Задайте свойства [Opacity](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity) 0 для отрисовки в качестве разделителя места.
 3. Заголовки в виде [NavigationViewItemHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemheader)для маркировки групп элементов.
 4. Необязательные [AutoSuggestBox](auto-suggest-box.md) для поиска на уровне приложения.
-5. Необязательная точка входа для [параметров приложения](../app-settings/app-settings-and-data.md). Чтобы скрыть параметры элемента, используйте свойство [IsSettingsVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) .
+5. Необязательная точка входа для [параметров приложения](../app-settings/app-settings-and-data.md). Чтобы скрыть элемент параметров, используйте свойство [IsSettingsVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) .
 
-Левая панель содержит:
+Содержит расположенной слева области:
 
-6. Кнопка меню для включения и отключения области открытия и закрытия. Когда панель открыта в более крупных окнах приложения, вы можете скрыть эту кнопку с помощью свойства [IsPaneToggleButtonVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible).
+6. Кнопка меню для включения и выключения области Открытие и закрытие. Когда панель открыта в более крупных окнах приложения, вы можете скрыть эту кнопку с помощью свойства [IsPaneToggleButtonVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible).
 
-### <a name="pane-footer"></a>Область нижнего колонтитула
+### <a name="pane-footer"></a>Нижнем колонтитуле панели
 
 содержимое в произвольном формате в нижнем колонтитуле панели при добавлении в свойство [PaneFooter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter).
 
 :::row:::
     :::column:::
-    <b>Левая навигационная панель</b><br>
-    ![Левая навигационная панель нижний колонтитул области](images/navview-freeform-footer-left.png)<br>
+    <b>Левая панель навигации</b><br>
+    ![Навигации левом нижнем колонтитуле панели](images/navview-freeform-footer-left.png)<br>
     :::column-end:::
     :::column:::
-     <b>Верхняя панель навигации</b><br>
-    ![Верхняя панель навигации по области заголовка](images/navview-freeform-footer-top.png)<br>
-    :::column-end:::
-:::row-end:::
-
-### <a name="pane-header"></a>Область заголовка
-
-Произвольный контента в область заголовка, при добавлении свойство [PaneHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader)
-
-:::row:::
-    :::column:::
-    <b>Левая навигационная панель</b><br>
-    ![Левая навигационная панель заголовка области](images/navview-freeform-header-left.png)<br>
-    :::column-end:::
-    :::column:::
-     <b>Верхняя панель навигации</b><br>
-    ![Верхняя панель навигации по области заголовка](images/navview-freeform-header-top.png)<br>
+     <b>Верхней панели навигации</b><br>
+    ![Верхняя заголовка панели](images/navview-freeform-footer-top.png)<br>
     :::column-end:::
 :::row-end:::
 
-### <a name="pane-content"></a>Области контента
+### <a name="pane-header"></a>Области заголовка
 
-Произвольный контента в области при добавлении свойство [PaneCustomContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent)
+Содержимое в области заголовка, при добавлении к свойству [PaneHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader)
 
 :::row:::
     :::column:::
-    <b>Левая навигационная панель</b><br>
-    ![Панель навигации contentleft настраиваемые области](images/navview-freeform-pane-left.png)<br>
+    <b>Левая панель навигации</b><br>
+    ![Навигации слева области заголовка](images/navview-freeform-header-left.png)<br>
     :::column-end:::
     :::column:::
-     <b>Верхняя панель навигации</b><br>
-    ![Область настраиваемого контента верхняя](images/navview-freeform-pane-top.png)<br>
+     <b>Верхней панели навигации</b><br>
+    ![Верхняя заголовка панели](images/navview-freeform-header-top.png)<br>
+    :::column-end:::
+:::row-end:::
+
+### <a name="pane-content"></a>Область содержимого
+
+Содержимое в области, при добавлении к свойству [PaneCustomContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent)
+
+:::row:::
+    :::column:::
+    <b>Левая панель навигации</b><br>
+    ![Панель навигации настраиваемых contentleft](images/navview-freeform-pane-left.png)<br>
+    :::column-end:::
+    :::column:::
+     <b>Верхней панели навигации</b><br>
+    ![Область пользовательского содержимого верхняя](images/navview-freeform-pane-top.png)<br>
     :::column-end:::
 :::row-end:::
 
 ### <a name="visual-style"></a>Визуальный стиль
 
-При соблюдении требований к оборудованию и программному обеспечению, NavigationView автоматически использует [Acrylic материалов](../style/acrylic.md) в его области и [Показать выделение](../style/reveal.md) только в ее левой панели.
+При соблюдении требований к оборудованию и программному обеспечению NavigationView автоматически использует [Акриловый материал](../style/acrylic.md) на панели и [эффект](../style/reveal.md) только на левой панели.
 
 ## <a name="header"></a>Заголовок
 
-![Универсальный изображение navview области заголовка](images/nav-header.png)
+![navview стандартное изображение области заголовка](images/nav-header.png)
 
-Область заголовка выравнивается по вертикали кнопку навигации в левой области положение и располагается под область в положение верхней области. Она имеет фиксированную высоту 52 точек. Она содержит заголовок страницы категории выбранного навигации. Заголовок закреплен в верхней части страницы и выступает в качестве точки отсечения прокрутки для области содержимого.
+Области заголовка вертикально выравнивается с кнопкой навигацией в левой области положении и располагается под области в положении верхней панели. Он имеет фиксированную высоту в 52 пикс. Она содержит заголовок страницы категории выбранного навигации. Заголовок закреплен в верхней части страницы и выступает в качестве точки отсечения прокрутки для области содержимого.
 
-Заголовок должен быть видны при NavigationView находится в режиме отображения минимальной. Вы можете скрыть заголовок в других режимах, используемых для окон большей ширины. Для этого задайте свойству [AlwaysShowHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader) значение **false**.
+Заголовок должен быть видимым, когда NavigationView находится в режиме минимальной отображения. Вы можете скрыть заголовок в других режимах, используемых для окон большей ширины. Для этого задайте свойству [AlwaysShowHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader) значение **false**.
 
 ## <a name="content"></a>Содержимое
 
-![Универсальный изображение navview области содержимого](images/nav-content.png)
+![navview стандартное изображение области содержимого](images/nav-content.png)
 
 Область содержимого — это область, в которой отображаются основные сведения для выбранной категории навигации.
 
@@ -251,13 +251,13 @@ NavigationView может быть задано в различных режим
 
 ## <a name="adaptive-behavior"></a>Адаптивное поведение
 
-NavigationView автоматически изменяет режим отображения в зависимости от доступного экранного пространства. Тем не менее можно настроить поведение режима адаптивный экран.
+NavigationView автоматически изменяет режим отображения в зависимости от доступного экранного пространства. Тем не менее может потребоваться настроить поведение режима адаптивный экран.
 
 ### <a name="default"></a>По умолчанию
 
-Адаптивное поведение по умолчанию NavigationView — Показать расширенное левой панели на ширину окна больших, в средней окно ширины области левая навигационная панель только значок и кнопки меню гамбургер в небольшом окне ширины. Дополнительные сведения о размеров окна для адаптивное поведение можно [размеров экрана и точки останова](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).
+Адаптивное поведение по умолчанию NavigationView — это для отображения развернутого левой для больших окон ширины панели навигации слева только значок для ширины среднее окно и кнопки меню гамбургер на небольшой окон ширины. Дополнительные сведения о размеров окон для адаптивное поведение см. в разделе [размеров экрана и точки останова](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
-![Адаптивное поведение по умолчанию левая GIF](images/displaymode-auto.png)
+![Адаптивное поведение GIF левая по умолчанию](images/displaymode-auto.png)
 
 ```xaml
 <NavigationView />
@@ -265,7 +265,7 @@ NavigationView автоматически изменяет режим отобр
 
 ### <a name="minimal"></a>Минимальный
 
-Второй общий принцип адаптивный является использование расширенной левой панели на большие окна ширины и меню гамбургер на обоих ширину окна малого и среднего размера.
+Второй распространенный шаблон адаптивного — использовать расширенные расположенной слева области на больших окон ширины и гамбургера для обоих ширины окна средних и мелких.
 
 ![Адаптивное поведение левая GIF 2](images/adaptive-behavior-minimal.png)
 
@@ -273,14 +273,14 @@ NavigationView автоматически изменяет режим отобр
 <NavigationView CompactModeThresholdWidth="1008" ExpandedModeThresholdWidth="1007" />
 ```
 
-Рекомендуется использовать этот формат, если:
+Мы рекомендуем использовать этот формат, если:
 
-- Вы можете пространство для контента приложения на небольших ширина окна.
-- Значки навигационных категорий не может быть четко представлено.
+- Желание больше места для содержимого приложения на более мелкие ширины окна.
+- Категории навигации не могут быть представлены четко со значками.
 
 ### <a name="compact"></a>Компактный
 
-Третий общий принцип адаптивный является использование расширенной левой области ширину окна больших и левая навигационная панель только значок область на обоих ширину окна малого и среднего размера. Хороший пример — это почтовое приложение.
+Третий распространенный шаблон адаптивного — использовать расширенные расположенной слева области на больших окон ширины и левую только значок панель навигации для обоих ширины окна средних и мелких. Хорошим примером этого является приложение "Почта".
 
 ![Адаптивное поведение левая GIF 3](images/adaptive-behavior-compact.png)
 
@@ -288,14 +288,14 @@ NavigationView автоматически изменяет режим отобр
 <NavigationView CompactModeThresholdWidth="0" ExpandedModeThresholdWidth="1007" />
 ```
 
-Рекомендуется использовать этот формат, если:
+Мы рекомендуем использовать этот формат, если:
 
-- Важно всегда отображать все параметры навигации на экране.
-- навигационных категорий может быть четко представлена в виде значков.
+- Очень важно всегда отображаться все параметры навигации на экране.
+- категории навигации могут появляться четко со значками.
 
-### <a name="no-adaptive-behavior"></a>Адаптивное поведение не
+### <a name="no-adaptive-behavior"></a>Нет адаптивное поведение
 
-В некоторых случаях может не необходимыми для работы любой адаптивное поведение вообще. Можно задать области, чтобы быть всегда расширенной, всегда compact или всегда минимальной.
+Иногда вам может не требоваться все адаптивное поведение вообще. Вы можете задать панель всегда быть развернут, всегда compact или всегда минимальной.
 
 ![Адаптивное поведение левая GIF 4](images/adaptive-behavior-none.png)
 
@@ -303,16 +303,16 @@ NavigationView автоматически изменяет режим отобр
 <NavigationView PaneDisplayMode="LeftMinimal" />
 ```
 
-### <a name="top-to-left-navigation"></a>На левой панели навигации в начало
+### <a name="top-to-left-navigation"></a>Сверху левой навигационной
 
-Рекомендуется использовать верхней панели навигации на крупные размеры и левой области переходов на небольших размеров окна, когда:
+Мы рекомендуем использовать большие размеры экрана и навигации слева от небольшого верхней части окна размеры, когда:
 
-- У вас есть набор одинаково важных навигации верхнего уровня категорий будет отображаться вместе, таким образом, если на экране не подходит одну категорию в этот набор, свернуть для навигации слева, чтобы дать им равно важности.
-- Вы хотите сохранить как намного контента пространства по мере возможности в небольшом окне размеры.
+- У вас есть набор одинаково важные навигации верхнего уровня категорий для отображения друг с другом, таким образом, если одну категорию в этот набор не помещаются на экране, можно свернуть, чтобы левой навигационной, чтобы предоставить им одинаково важны.
+- Вы хотите сохранить доступного содержимого места максимально небольшое окно размеров.
 
 Пример.
 
-![Адаптивное поведение верхняя или левая навигационная панель GIF 1](images/navigation-top-to-left.png)
+![Адаптивное поведение GIF верхней или левой навигации 1](images/navigation-top-to-left.png)
 
 ```xaml
 <Grid >
@@ -341,11 +341,11 @@ NavigationView автоматически изменяет режим отобр
 
 ```
 
-В некоторых случаях приложения нужно привязка данных к верхней области и левой панели. Часто левой области включает в себя дополнительные элементы навигации.
+Иногда приложения необходимо привязать к верхней панели и расположенной слева области различных данных. Представитель дополнительные элементы навигации в левой области.
 
 Пример.
 
-![Адаптивное поведение верхняя или левая навигационная панель GIF 2](images/navigation-top-to-left2.png)
+![Адаптивное поведение навигации верхней или левой GIF 2](images/navigation-top-to-left2.png)
 
 ```xaml
 <Page >
@@ -443,11 +443,11 @@ public class NavViewDataTemplateSelector : DataTemplateSelector
 
 ### <a name="tabs"></a>Вкладки
 
-В этой модели вкладок связаны Выбор и фокус. Действия, что обычно смены фокуса также сместится выбора. В следующем примере правом arrowing перемещает индикатор выделения из отображения для Экранная лупа. Для этого свойства [SelectionFollowsFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.selectionfollowsfocus) значение включено.
+В модели вкладки которые привязаны выбора и фокусировки. Действие, обычно смены фокус также сместится выбора. В следующем примере правой arrowing бы переместите выбора индикатор отображается Экранная лупа. Этого можно достичь, задав свойство [SelectionFollowsFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.selectionfollowsfocus) включена.
 
-![Снимок экрана с текстовыми верхней navview](images/nav-tabs.png)
+![Снимок экрана только текст верхнего navview](images/nav-tabs.png)
 
-Ниже приведен пример XAML, которые:
+Ниже приведен пример XAML для этого:
 
 ```xaml
 <NavigationView PanePosition="Top" SelectionFollowsFocus="Enabled" >
@@ -460,9 +460,9 @@ public class NavViewDataTemplateSelector : DataTemplateSelector
 
 ```
 
-Замена содержимого при изменении выбора вкладки, можно использовать метод [NavigateWithOptions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.NavigateToType) фрейма FrameNavigationOptions.IsNavigationStackEnabled имеет значение False и NavigateOptions.TransitionInfoOverride установите соответствующие для параллельных анимация слайда. Например см в следующем [примере кода](#code-example) .
+Для замены содержимого при изменении Выбор вкладки, кадра [NavigateWithOptions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.NavigateToType) метод можно использовать с FrameNavigationOptions.IsNavigationStackEnabled задано значение False и NavigateOptions.TransitionInfoOverride равным соответствующие стороны в сторону Анимация перетаскивания. Например см. в [примере кода](#code-example) ниже.
 
-Если вы хотите изменить стиль по умолчанию, можно переопределить свойство [MenuItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.menuitemcontainerstyle) NavigationView's. Можно также установить свойство [MenuItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.menuitemtemplate) для указания шаблона данных.
+Если вы хотите изменить стиль по умолчанию, вы можете переопределить свойство [MenuItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.menuitemcontainerstyle) NavigationView. Кроме того, можно задать свойство [MenuItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.menuitemtemplate) для указания шаблона различных данных.
 
 ## <a name="backwards-navigation"></a>Навигация в обратном направлении
 
@@ -476,12 +476,12 @@ public class NavViewDataTemplateSelector : DataTemplateSelector
 
 :::row:::
     :::column:::
-    <b>Левая навигационная панель</b><br>
-    ![Слева NavigationView кнопку возврата на панель навигации](images/leftnav-back.png)
+    <b>Левая панель навигации</b><br>
+    ![NavigationView кнопки "Назад" на левый навигации](images/leftnav-back.png)
     :::column-end:::
     :::column:::
-     <b>Верхняя панель навигации</b><br>
-    ![Кнопку возврата NavigationView на верхней панели навигации](images/topnav-back.png)
+     <b>Верхней панели навигации</b><br>
+    ![NavigationView кнопки "Назад" на верхней панели навигации](images/topnav-back.png)
     :::column-end:::
 :::row-end:::
 
@@ -491,24 +491,24 @@ public class NavViewDataTemplateSelector : DataTemplateSelector
 > NavigationView следует использовать в качестве корневого контейнера приложения. Этот элемент управления предназначен для развертывания по всей ширине и высоте окна приложения.
 Вы можете переопределить ширину, при которой представление навигации изменяет режим отображения с помощью свойств [CompactModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.CompactModeThresholdWidth) и [ExpandedModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ExpandedModeThresholdWidth)
 
-Ниже приведен пример начала до конца как можно использовать NavigationView с на размеров окна больших панели навигации верхнего уровня и в небольшом окне размеры области навигации слева.
+Ниже приведен пример начала до конца как вы можете внедрить NavigationView верхняя панель навигации на большие размеры экрана и левой навигационной панели на небольших размеры экрана.
 
-В этом примере мы рассчитываем конечным пользователям часто выберите новые категории навигации и поэтому мы:
+В этом примере мы ожидаем, что конечные пользователи часто выбрать новые категории навигации и поэтому мы:
 
-- Задайте для свойства [SelectionFollowsFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PanePostion) значение включено
-- Используйте переходы кадров, которые не следует добавлять в стеке навигации.
-- Оставьте значение по умолчанию на свойство [ShoulderNavigationEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PanePostion) , которое используется для указания, если нему влево или вправо на игровой последовательно выберите категории навигации верхнего уровня приложения. Значение по умолчанию — «WhenSelectionFollowsFocus». Возможные значения, «Всегда» и «Никогда».
+- Присвойте свойству [SelectionFollowsFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PanePostion) включено
+- Используйте переходы кадров, не добавляйте в стеке навигации.
+- Оставьте значение по умолчанию в свойстве [ShoulderNavigationEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PanePostion) , который используется для указания, если левый и правый бамперы на игровом перейдите категории навигации верхнего уровня вашего приложения. Значение по умолчанию — «WhenSelectionFollowsFocus». Другие возможные значения: «Всегда» и «Никогда».
 
-Мы также приведены инструкции по реализации обратной переходов с помощью элемента NavigationView кнопки "Назад".
+Кроме того, мы покажем, как реализовать обратную навигацию с помощью кнопки "Назад" элемента NavigationView.
 
-Ниже приведен пример демонстрирует запись.
+Ниже приведен в этом образце демонстрируются запись.
 
-![Пример NavigationView-конца](images/nav-code-example.gif)
+![Пример NavigationView End до конца](images/nav-code-example.gif)
 
-Ниже приведен пример кода:
+Вот пример кода:
 
 > [!NOTE]
-> Если вы используете [Библиотека интерфейса пользователя Windows](https://docs.microsoft.com/uwp/toolkits/winui/), то необходимо добавить ссылку на набор средств: `xmlns:controls="using:Microsoft.UI.Xaml.Controls"`.
+> Если вы используете [Библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/), то вам потребуется добавить ссылку на набор средств: `xmlns:controls="using:Microsoft.UI.Xaml.Controls"`.
 
 ```xaml
 <Page
@@ -591,7 +591,7 @@ public class NavViewDataTemplateSelector : DataTemplateSelector
 ```
 
 > [!NOTE]
-> Если вы используете [Библиотека интерфейса пользователя Windows](https://docs.microsoft.com/uwp/toolkits/winui/), то необходимо добавить ссылку на набор средств: `using MUXC = Microsoft.UI.Xaml.Controls;`.
+> Если вы используете [Библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/), то вам потребуется добавить ссылку на набор средств: `using MUXC = Microsoft.UI.Xaml.Controls;`.
 
 ```csharp
 // List of ValueTuple holding the Navigation Tag and the relative Navigation Page 
@@ -708,7 +708,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 
 Чтобы изменить фон главной области NavigationView, задайте его свойству `Background` значение выбранной вами кисти.
 
-Фоновые области показано acrylic из приложения, когда NavigationView находится в верхней минимальной, или режим. Чтобы изменить это поведение или настроить внешний вид акрила панели, измените два ресурс темы, заменив их в файле App.xaml.
+Фон панели показывает акрил приложения, когда NavigationView находится в верхней части страницы минимальный, или компактный режим. Чтобы изменить это поведение или настроить внешний вид акрила панели, измените два ресурс темы, заменив их в файле App.xaml.
 
 ```xaml
 <Application.Resources>
@@ -723,23 +723,23 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 </Application.Resources>
 ```
 
-## <a name="scroll-content-under-top-pane"></a>Прокручивание содержимого в разделе верхней области
+## <a name="scroll-content-under-top-pane"></a>Содержимое прокрутки в верхней панели
 
-Для облегчения внешний вид + интерфейса пользователя Если ваше приложение имеет страницы, которые используют ScrollViewer и области переходов в начало размещенный, мы рекомендуем необходимости контента прокрутки ниже области верхней панели навигации.
+Скользил + вид Если ваше приложение содержит страницы, использующие ScrollViewer и панели навигации верхнего в заданное положение, мы рекомендуем наличие содержимого прокрутки ниже области верхней панели навигации.
 
-Это можно сделать путем установки свойства [CanContentRenderOutsideBounds](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.cancontentrenderoutsidebounds) соответствующих ScrollViewer имеет значение true.
+Этого можно достичь, задав свойство [CanContentRenderOutsideBounds](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.cancontentrenderoutsidebounds) на соответствующих ScrollViewer значение true.
 
-![navview прокрутки области переходов](images/nav-scroll-content.png)
+![области переходов navview прокрутки](images/nav-scroll-content.png)
 
-Если ваше приложение имеет слишком долго прокрутка содержимого, может потребоваться стремиться решения о заголовков, которые присоединяются к области верхней панели навигации и формы поверхность гладким. 
+Если ваше приложение имеет очень длинным прокрутке содержимого, может потребоваться следует рассмотреть возможность включения закрепленные заголовки, которые присоединяются к верхней навигационной панели и форме плавного поверхности. 
 
-![решения о заголовке navview прокрутки](images/nav-scroll-stickyheader.png)
+![Залипание заголовок navview прокрутки](images/nav-scroll-stickyheader.png)
 
-Этого можно достичь путем установки свойства [ContentOverlay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ContentOverlay) NavigationView. 
+Этого можно достичь, задав свойство [ContentOverlay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ContentOverlay) в NavigationView. 
 
-В некоторых случаях если пользователь прокрутки вниз, можно скрыть область навигации, полученной за путем установки свойства [IsPaneVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ContentOverlay) NavigationView значение false.
+Иногда Если пользователь прокрутку, может потребоваться скрыть панель навигации, достичь, задав свойство [IsPaneVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ContentOverlay) на NavigationView значение "false".
 
-![navview прокрутки скрыть панель навигации](images/nav-scroll-hidepane.png)
+![navview прокрутки скрыть навигации](images/nav-scroll-hidepane.png)
 
 ## <a name="related-topics"></a>Еще по теме:
 

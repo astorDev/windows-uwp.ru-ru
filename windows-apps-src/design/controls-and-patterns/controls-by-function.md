@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887913"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2908795"
 ---
 # <a name="controls-by-function"></a>Элементы управления по функциям
 
@@ -30,7 +30,7 @@ ms.locfileid: "2887913"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>При наличии установленного приложения <strong style="font-weight: semi-bold">Коллекция элементов управления XAML</strong> , щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/NavigationView">открыть приложение и посмотрите, NavigationView в действии</a> </p>
+    <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">Галереи элементов управления XAML</strong> , щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/NavigationView">открыть приложение и увидеть NavigationView в действии</a> </p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Получить исходный код (GitHub)</a></li>
@@ -270,7 +270,7 @@ ms.locfileid: "2887913"
 
 Справка: [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-Проектирование и инструкций по: [всплывающие окна](dialogs-and-flyouts/flyouts.md) 
+Проектирование и инструкции: [всплывающие элементы](dialogs-and-flyouts/flyouts.md) 
 
 ### <a name="menu-flyout"></a>Всплывающее меню
 Временно отображает список команд или параметров, относящихся к текущим действиям пользователя.
@@ -290,7 +290,7 @@ ms.locfileid: "2887913"
 
 Справка: [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx), [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-Проектирование и инструкций по: [меню и контекстные меню](menus.md) 
+Проектирование и инструкции: [меню и контекстные меню](menus.md) 
 
 Пример кода: [Пример контекстного меню XAML](http://go.microsoft.com/fwlink/p/?LinkId=620021)
 
@@ -299,7 +299,7 @@ ms.locfileid: "2887913"
 
 Справка: [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-Проектирование и инструкций по: [диалоговых окон](dialogs-and-flyouts/dialogs.md) 
+Проектирование и инструкции: [диалоговые окна](dialogs-and-flyouts/dialogs.md) 
 
 ### <a name="tooltip"></a>Всплывающая подсказка
 Всплывающее окно, которое содержит сведения об элементе. 
@@ -555,11 +555,11 @@ ms.locfileid: "2887913"
 
 ### <a name="navigationview"></a>NavigationView
 
-Контейнер адаптируемых и модель гибкие навигации, который реализует левой панели переходов, верхней панели навигации и шаблон вкладок.
+Адаптируемые контейнер и модель гибкие навигации, реализующий левой панели навигации, верхней части и вкладок.
 
-Ссылка: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
+Справка: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-Проектирование и инструкций по: [руководство по NavigationView элемента управления](navigationview.md)
+Проектирование и инструкции: [руководство по элементу управления NavigationView](navigationview.md)
 
 ### <a name="splitview"></a>SplitView
 

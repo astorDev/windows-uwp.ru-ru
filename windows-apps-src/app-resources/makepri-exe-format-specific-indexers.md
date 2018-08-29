@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ec6b2a31f4f577de30dac1c96a411c6aee6e9dc
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892610"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905797"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Индексаторы для конкретных форматов MakePri.exe
 
 В этом разделе описываются специальные индексаторы, которые используются средством [MakePri.exe](compile-resources-manually-with-makepri.md) для создания указателя ресурсов.
 
 > [!NOTE]
-> MakePri.exe установлен, если выбрать вариант **Windows SDK для приложений, управляемых UWP** при установке пакета SDK. Устанавливается в папку `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именами для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe устанавливается при проверке параметр **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается на путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 MakePri.exe обычно используется вместе с командами `new`, `versioned` и `resourcepack`. См. [Параметры командной строки MakePRI.exe](makepri-exe-command-options.md). В таких случаях программа индексирует исходные файлы, чтобы создать индекс ресурсов. MakePri.exe использует различные отдельные индексаторы для чтения различных исходных файлов ресурсов или контейнеров для ресурсов. Самый простой индексатор — это индексатор папки, который индексирует содержимое папки, например изображения в форматах `.jpg` или `.png`.
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: 284609399f167a7229d0c7bb5858d0f0eda451ce
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2885678"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2907440"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Создание приложения для входа с использованием Windows Hello
 
@@ -33,7 +33,7 @@ ms.locfileid: "2885678"
 ## <a name="get-started"></a>Приступая к работе
 
 
-Для создания этого проекта необходим опыт работы с C# и XAML. Необходимо также использовать Visual Studio 2015 (сообщества Edition или более высокой версии), или более поздней версии Visual Studio на компьютере Windows 10. Хотя Visual Studio 2015 минимальную требуемую версию, мы рекомендуем использовать последнюю версию Visual Studio для получения последних обновлений для разработчиков и безопасности.
+Для создания этого проекта необходим опыт работы с C# и XAML. Вам также потребуется использовать Visual Studio 2015 (Community Edition или более поздней версии), или более поздней версии Visual Studio на компьютере под управлением Windows 10. Хотя Минимальная требуемая версия Visual Studio 2015, мы рекомендуем использовать последнюю версию Visual Studio для последних обновлений безопасности и разработчиков.
 
 -   Откройте Visual Studio и выберите Файл > Создать > проект.
 -   Откроется окно «Новый проект». Перейдите в раздел «Шаблоны > Visual C#».

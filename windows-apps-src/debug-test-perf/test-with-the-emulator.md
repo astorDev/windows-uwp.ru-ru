@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892012"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2904799"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Тестирование с помощью эмулятора устройства с Windows 10 Mobile (Майкрософт)
 
@@ -29,9 +29,9 @@ ms.locfileid: "2892012"
 
 Компьютер должен отвечать следующим требованиям:
 
-Загрузка ЦП (эти параметры, если он доступен, можно включить в BIOS)
+ЦП (эти параметры, если они доступны, можно включить в BIOS)
 
--   Аппаратная технология виртуализации ([Проверка совместимости](https://www.microsoft.com/download/details.aspx?id=592)).
+-   Аппаратная виртуализация ([Проверка совместимости](https://www.microsoft.com/download/details.aspx?id=592)).
 -   Преобразование адресов второго уровня (SLAT).
 -   Аппаратное предотвращение выполнения данных (DEP).
 
@@ -49,7 +49,7 @@ ms.locfileid: "2892012"
 
 Чтобы получить сведения о требованиях к ОЗУ и операционной системе, на панели управления щелкните **Система и безопасность** и выберите **Система**.
 
-Эмулятора Microsoft для Windows 10 Mobile требуется Visual Studio 2015 или более поздняя версия; Это не обратная совместимость с предыдущими версиями Visual Studio.
+Эмулятор Microsoft для Windows 10 Mobile требуется Visual Studio 2015 или более поздней версии; Это не совместимы с более ранних версиях Visual Studio.
 
 Эмулятор устройства с Windows 10 Mobile (Майкрософт) не может загружать приложения, предназначенные для версии ОС Windows Phone, предшествующей Windows Phone 7.1.
 
@@ -68,7 +68,7 @@ ms.locfileid: "2892012"
 
 ### <a name="running"></a>Running
 
-Чтобы запустить приложение в эмуляторе, просто выберите эмулируемого устройства из раскрывающееся меню **запуска** в Visual Studio.
+Чтобы запустить приложение в эмуляторе, просто выберите эмулированных устройство из раскрывающегося меню **выполнить** в Visual Studio.
 
 ![Доступные эмуляторы с разрешением, размером и памятью](images/em-list.png)
 
