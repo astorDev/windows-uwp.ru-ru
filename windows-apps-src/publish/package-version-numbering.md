@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a16339e0918f8291f7b1cc7a3a6dfef3ccf375d
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2918875"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3124479"
 ---
 # <a name="package-version-numbering"></a>Нумерация версий пакета
 
@@ -77,7 +77,7 @@ Windows10 позволяет создать единую базу кода, ко
 Кроме того, номер версии пакетов Windows8.1 должен быть больше, чем номера версий всех пакетов Windows8 того же приложения. Другими словами, номер версии отправляемого пакета Windows8 должен быть меньше номера версии любого отправляемого пакета Windows8.1 для того же приложения.
 
 > [!NOTE]
-> Если ваше приложение также есть пакеты для Windows 10, номер версии пакетов Windows 10 должен быть больше, чем для всех пакетов Windows 8, Windows 8.1 и Windows Phone 8.1. (Подробнее см. в разделе [Добавление пакетов для Windows 10 в ранее опубликованное приложение](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
+> Если ваше приложение также имеет пакетов Windows 10, номер версии пакетов Windows 10 должен быть больше, чем для всех пакетов Windows 8, Windows 8.1 и Windows Phone 8.1. (Подробнее см. в разделе [Добавление пакетов для Windows 10 в ранее опубликованное приложение](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
 
 Вот несколько примеров того, что происходит в различных сценариях обновления номеров версий для Windows8и Windows 8.1.
 

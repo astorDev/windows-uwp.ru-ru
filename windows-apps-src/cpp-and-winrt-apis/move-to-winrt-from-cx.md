@@ -9,23 +9,23 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aba8f559b7b6f0518a620d5127692d541953255
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 63f730e5256cb88c04549cc64e36003885e02fb6
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2905947"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3113304"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>Переход на [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) из C++/CX
 В это разделе объясняется, как перенести код [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) в его эквивалент на C++/WinRT.
 
 > [!IMPORTANT]
-> Если вы хотите перенести постепенно вашего [C + +/ CX](/cpp/cppcx/visual-c-language-reference-c-cx) кода на C + +/ WinRT, то можете. C + +/ CX и C + +/ WinRT кода могут сосуществовать в том же проекте, за исключением поддержку компилятора XAML и компоненты среды выполнения Windows. Для этих исключений, вам потребуется выбрать любой из C + +/ CX или C + +/ WinRT в том же проекте. Однако вы можете использовать компонент среды выполнения Windows на коэффициент код из вашего приложения на XAML, как его переноса. Либо переместите столько C + +/ CX кода, как и в компоненте и затем измените проект XAML с C + +/ WinRT. Или в противном случае оставьте проект XAML как C + +/ CX, создайте новый C + +/ компонента WinRT и переносом C + +/ CX код из проектов XAML в компоненте. Также возможны C + +/ CX проект компонента вместе с C + +/ WinRT проект компонента в одном решении, оба из них ссылки из проекта приложения и постепенно порта от одного к другому.
+> Если вы хотите перенести постепенно вашего [C + +/ CX](/cpp/cppcx/visual-c-language-reference-c-cx) кода на C + +/ WinRT, то можете. C + +/ CX и C + +/ WinRT кода могут сосуществовать в одном проекте, за исключением поддержку компилятора XAML и компоненты среды выполнения Windows. Для этих исключений, вам потребуется выбрать либо C + +/ CX или C + +/ WinRT в пределах одного и того же проекта. Однако вы можете использовать компонент среды выполнения Windows на коэффициент код за пределы вашего приложения на XAML, как его переноса. Либо переместите столько C + +/ CX кода, как и в компоненте и затем измените XAML проекта на C + +/ WinRT. Или в противном случае оставьте проект XAML как C + +/ CX, создайте новый C + +/ компонента WinRT и переносом C + +/ CX кода из проекта XAML и в компонент. Также возможны C + +/ CX проект компонента вместе с C + +/ WinRT проект компонента в одном решении, оба из них ссылки из проекта приложения и постепенно порта от одного к другому.
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) и Windows SDK объявляют типы в корневом пространстве имен **Windows**. Тип Windows, проецируемый в C++/WinRT, имеет то же полное имя, что и тип Windows, но он размещается в пространстве имен C++ **winrt**. Эти различные пространства имен позволяют выполнять перенос из C++/CX в C++/WinRT в удобном вам темпе.
 
-Имея в виду упомянутые выше исключения, первый шаг в перенос в проект C + +/ WinRT — вручную добавить C + +/ WinRT поддержки (см. в разделе [Поддержка Visual Studio для C + +/ WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)). Чтобы это сделать, измените файл `.vcxproj`, найдите `<PropertyGroup Label="Globals">` и внутри этой группы свойств настройте свойство `<CppWinRTEnabled>true</CppWinRTEnabled>`. Одним из последствий этого изменения является отключение поддержки для C++/CX в проекте. Рекомендуется оставить поддержку отключенной таким образом, чтобы сообщения о построении помогут вам найти (и порт) все зависимости на C + +/ CX. либо можно включить поддержку (в свойствах проекта **C/C++** \> **Общие** \> **потребления среды выполнения Windows Расширение** \> **Да (/ZW)**) и постепенный перенос.
+Имея в виду упомянутые выше исключения, первый шаг в перенос в проект C + +/ WinRT — вручную добавить C + +/ WinRT поддержки (см. в разделе [Поддержка Visual Studio для C + +/ WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)). Чтобы это сделать, измените файл `.vcxproj`, найдите `<PropertyGroup Label="Globals">` и внутри этой группы свойств настройте свойство `<CppWinRTEnabled>true</CppWinRTEnabled>`. Одним из последствий этого изменения является отключение поддержки для C++/CX в проекте. Рекомендуется оставить поддержку отключенной, чтобы сообщения о построении помогут вам найти (и порт) все зависимости на C + +/ CX. либо можно включить поддержку (в свойствах проекта **C/C++** \> **Общие** \> **потребления среды выполнения Windows Расширение** \> **Да (/ZW)**) и постепенно порта.
 
 Задайте свойству проекта **Общие** \> **Версия целевой платформы** значение 10.0.17134.0 (Windows 10, версия 1803) или более позднюю версию.
 
@@ -67,7 +67,7 @@ if (userList != nullptr)
     ...
 ```
 
-При преобразовании в эквивалентный код C++/WinRT по сути вы удаляете циркумфлексы и изменяете оператор косвенного обращения (-&gt;) на оператор-точку (.), так как проецируемые типы C++/WinRT являются значениями, а не указателями.
+При переносе в эквивалентный C + +/ WinRT кода, по сути вы удаляете циркумфлексы и изменяете оператор косвенного (-&gt;) оператор-точку (.), так как C + +/ WinRT проецируемые типы являются значениями, а не указателями.
 
 ```cppwinrt
 IVectorView<User> userList = User::Users();
@@ -183,6 +183,43 @@ private:
 };
 ```
 
+## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>Преобразование из класса среды выполнения базового производного один
+Это обычно существует ссылка для базового, вы знаете, что ссылается на объект производного типа. В C + +/ CX, можно использовать `dynamic_cast` к *приведите* ссылку для базового в ссылки к производным. `dynamic_cast` — Это лишь скрытые вызов [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Ниже приведен стандартный пример&mdash;обрабатывать событие изменения свойства зависимостей, и вы хотите приведение **DependencyObject** вернуться к фактического типа, которому принадлежит свойство зависимостей.
+
+```cpp
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
+{
+    BgLabelControl^ theControl{ dynamic_cast<BgLabelControl^>(d) };
+
+    if (theControl != nullptr)
+    {
+        // succeeded ...
+    }
+}
+```
+
+Эквивалент C + +/ WinRT код заменяет `dynamic_cast` с помощью вызова функции [**IUnknown::_try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function) , который инкапсулирует **QueryInterface**. У вас также есть возможность вместо этого вызовите метод [**IUnknown::_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function), который создает исключение, если запрашиваются необходимый интерфейс (интерфейс по умолчанию для типа, который запрашивается) не возвращается. Вот C + +/ WinRT пример кода.
+
+```cppwinrt
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+{
+    if (BgLabelControlApp::BgLabelControl theControl{ d.try_as<BgLabelControlApp::BgLabelControl>() })
+    {
+        // succeeded ...
+    }
+
+    try
+    {
+        BgLabelControlApp::BgLabelControl theControl{ d.as<BgLabelControlApp::BgLabelControl>() };
+        // succeeded ...
+    }
+    catch (winrt::hresult_no_interface const&)
+    {
+        // failed ...
+    }
+}
+```
+
 ## <a name="event-handling-with-a-delegate"></a>Обработка событий с помощью делегата
 Ниже приведен стандартный пример обработки события в C++/CX с помощью лямбда-функции в качестве делегата в этом случае.
 
@@ -204,7 +241,7 @@ auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs co
 
 Вместо лямбда-функции вы можете реализовать делегат в качестве свободной функции или в качестве указателя на функцию-член. Дополнительные сведения см. в разделе [Обработка событий с помощью делегатов в C++/WinRT](handle-events.md).
 
-При переносе из кода на C++/CX, где события и делегаты используются для внутренних целей (а не в разных двоичных файлах) [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) поможет вам выполнить репликацию этой модели в C++/WinRT. См. также [параметризованные делегаты, простых сигналы и обратные вызовы в проекте](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project).
+При переносе из кода на C++/CX, где события и делегаты используются для внутренних целей (а не в разных двоичных файлах) [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) поможет вам выполнить репликацию этой модели в C++/WinRT. См. также [параметризованные делегаты, простой сигналы и обратные вызовы в проекте](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project).
 
 ## <a name="revoking-a-delegate"></a>Отзыв делегата
 В C++/CX можно использовать оператор `-=`, чтобы отозвать регистрацию предыдущих событий.
@@ -233,7 +270,7 @@ C++/CX предоставляет несколько типов данных в 
 | **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
 ### <a name="port-platformagile-to-winrtagileref"></a>Порт **платформы:: Agile\ ^** для **winrt::agile_ref**
-**Платформы:: Agile\ ^** типа в C + +/ CX представляет собой класс среды выполнения Windows, который может осуществляться из любого потока. C + +/ WinRT эквивалентом является [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref).
+**Платформы:: Agile\ ^** типа в C + +/ CX представляет класс среды выполнения Windows, который может осуществляться из любого потока. C + +/ WinRT эквивалентом является [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref).
 
 В C++/CX.
 

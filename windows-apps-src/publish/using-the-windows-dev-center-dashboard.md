@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, информационная панель, центр разработки
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5357b038091b72681915e46875f92077bb3c9e
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2910098"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3126571"
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>Использование информационной панели Центра разработки для Windows
 
@@ -37,7 +37,7 @@ ms.locfileid: "2910098"
 
 [Надстройки (внутренние продукты приложения)](add-on-submissions.md) управляются независимо от отправки приложения. Это обеспечивает большую гибкость и возможность независимого внесения изменений.
 
-Центр разработки для Windows также предлагает возможности для [добавления нескольких пользователей](manage-account-users.md)[Управление приложениями и настройки служб](app-management-and-services.md), [просмотра аналитических данных](analytics.md), [формирования отчетов о выплатах](payout-summary.md), [рекламы ваших приложений](attract-customers-and-promote-your-apps.md), [, которые работают с вашей Клиенты](engage-with-your-customers.md), [бета-тестирование](beta-testing-and-targeted-distribution.md), [распространения бизнес-приложений для предприятий](distribute-lob-apps-to-enterprises.md)и многое другое.
+Центр разработки для Windows также предлагает возможности для [добавления нескольких пользователей](manage-account-users.md)[Управление приложениями и настройки служб](app-management-and-services.md), [просмотра аналитических данных](analytics.md), [формирования отчетов о выплатах](payout-summary.md), [рекламы ваших приложений](attract-customers-and-promote-your-apps.md), [привлечения вашего Клиенты](engage-with-your-customers.md), [бета-тестирование](beta-testing-and-targeted-distribution.md), [распространения бизнес-приложений для предприятий](distribute-lob-apps-to-enterprises.md)и многое другое.
 
 Ваши отзывы помогают нам создавать самые лучшие функции и возможности. При работе в информационной панели, используйте ссылку **обратная связь** в правом верхнем углу информационной панели, чтобы делиться своими идеями и предложениями.
 

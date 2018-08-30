@@ -8,14 +8,14 @@ ms.date: 07/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, пользователей, управление пользователей, azure ad, многопользовательской, несколько пользователей
+keywords: Управление Windows 10, uwp, учетные записи пользователей, пользователей, azure ad, многопользовательской, несколько пользователей
 ms.localizationpriority: medium
 ms.openlocfilehash: bef703958f8f04cd55d887dfa8840d1ed3fbeba5
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2918955"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3115872"
 ---
 # <a name="manage-account-users"></a>Управление пользователями учетных записей
 

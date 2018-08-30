@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2905447"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3118107"
 ---
 # <a name="app-management-and-services"></a>Управление приложениями и службы
 
@@ -29,9 +29,9 @@ ms.locfileid: "2905447"
 
 ## <a name="xbox-live"></a>Xbox Live
 
-Если вы публикуете игру, вы можете включить в [Xbox Live Creators Program](http://xbox.com/developers/creators-program) на этой странице. Это позволяет начать настройки и тестирования функций Xbox Live и в конечном итоге публикация игры Xbox Live Creators Program.
+Если вы публикуете игру, вы можете включить [Xbox Live создателям программы](http://xbox.com/developers/creators-program) на этой странице. Это позволяет начать настройки и тестирования функций Xbox Live и в конечном итоге публикация игры Xbox Live Creators Program.
 
-Дополнительные сведения см. в разделе [Начало работы с Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) и [Создать новый Xbox Live Creators Program заголовок и опубликовать ее для тестовой среды](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
+Дополнительные сведения см. в разделе [Начало работы с Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) и [Создать новый заголовок Xbox Live Creators Program и опубликовать в тестовой среде](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
 
 ## <a name="experimentation"></a>Эксперименты
 
@@ -50,7 +50,7 @@ ms.locfileid: "2905447"
 
 ## <a name="product-collections-and-purchases"></a>Коллекции и покупки продуктов
 
-Чтобы использовать в Microsoft Store, API коллекции и API покупок Microsoft Store для доступа к информации о принадлежности для приложений и надстроек, необходимо ввести связанные идентификаторы клиента Azure AD здесь. Заметьте, что для вступления изменений в силу может потребоваться до 16 часов.
+Чтобы использовать в Microsoft Store, API коллекции и API покупок Microsoft Store для получения доступа к информации о владении продуктами для приложений и надстроек, необходимо ввести связанные идентификаторы клиента Azure AD здесь. Заметьте, что для вступления изменений в силу может потребоваться до 16 часов.
 
 Дополнительные сведения см. в разделе [Управление правами на продукты из службы](../monetize/view-and-grant-products-from-a-service.md).
 
@@ -92,9 +92,9 @@ f ваш продукт интегрируется с Azure AD и вызыват
 В этом разделе **WNS и MPNS** находятся параметры помогают создавать и отправлять уведомления пользователям вашего приложения. 
 
 > [!TIP]
-> Для приложений UWP мы рекомендуем вам использовать параметр **уведомления** на информационной панели. Эта функция позволяет отправлять уведомления всем пользователям приложения или целевых подмножеству клиентов Windows 10, которые соответствуют критериям, заданным в [сегменте](create-customer-segments.md). Дополнительные сведения см. в разделе [Отправка push-уведомлений пользователям вашего приложения](send-push-notifications-to-your-apps-customers.md).
+> Для приложений UWP мы предлагаем, с помощью параметра **уведомления** на информационной панели. Эта функция позволяет отправлять уведомления всем клиентам вашего приложения или целевых подмножеству клиентов Windows 10, которые соответствуют критериям, которые вы определили в [сегменте](create-customer-segments.md). Дополнительные сведения см. в разделе [Отправка push-уведомлений пользователям вашего приложения](send-push-notifications-to-your-apps-customers.md).
 
-В зависимости от типа пакета приложения и его требований можно также использовать один из следующих вариантов: 
+В зависимости от типа пакета приложения и его требований вы также можете воспользоваться одним из следующих вариантов: 
 
 -   **Службы push-уведомлений Windows (WNS)** позволяют отправлять обновления всплывающих уведомлений, плиток, индикаторов событий и необработанные обновления. Дополнительные сведения можно найти в [обзоре служб push-уведомлений Windows (WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
 

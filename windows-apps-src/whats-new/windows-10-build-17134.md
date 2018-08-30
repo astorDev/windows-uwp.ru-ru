@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f12190c405ad611cf5b884b82c4a430aa5264f
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2906204"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3118917"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Новые возможности для разработчиков в Windows 10, сборка 17134
 
@@ -73,7 +73,7 @@ PlayReady | Microsoft PlayReady— это набор технологий для
 Системные триггеры | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) позволяет определить системный триггер, если ОС не предоставляет нужный триггер. Например, если драйвер оборудования и приложение UWP сторонние, а драйверу оборудования нужно создать пользовательское событие, обрабатываемое приложением. Например, звуковая карта, которая должна уведомить пользователя о том, что в аудиоразъем выполнено подключение.
 Действия пользователей | В [документации по UserActivity](../launch-resume/useractivities.md) рассказывается, как помочь пользователям возобновить свою активность в вашем приложении даже на нескольких устройствах.</br>Класс **UserActivitySessionHistoryItem** имеет новые методы, извлекающие недавние действия пользователей. См. подробные сведения в разделе о классе [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) и его перегрузке.
 API-интерфейсы Windows Mixed Reality | Чтобы поддержать растущую платформу Windows Mixed Reality, в пространства имен [Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) и [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial) были добавлены новые API.
-Документы Windows Mixed Reality | Руководство для разработчиков Windows Mixed Reality [теперь доступно на сайте docs.microsoft.com.](https://docs.microsoft.com/windows/mixed-reality/) Так же, как в этих документах UWP теперь могут отправлять отзывы о проблемах с GitHub или предоставлять собственные разработки, используя запрос на включение внесенных изменений.
+Документы Windows Mixed Reality | Руководство для разработчиков Windows Mixed Reality [теперь доступно на сайте docs.microsoft.com.](https://docs.microsoft.com/windows/mixed-reality/) Так же, как в этих документах UWP, теперь могут отправлять отзывы о проблемах с GitHub или предоставлять собственные разработки, используя запрос на включение внесенных изменений.
 
 ## <a name="publish--monetize-windows-apps"></a>Публикация и монетизация приложений для Windows
 

@@ -1,9 +1,9 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Learn how to use page transitions in your UWP apps.
 title: Переходы между страницами в приложениях UWP
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 04/08/2018
 ms.topic: article
 ms.prod: windows
@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows10, UWP
 pm-contact: stmoy
 ms.localizationpriority: medium
-ms.openlocfilehash: cba05cd9106d64f443e87b1e8373b2501d0ce451
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 0afc2c55ab0d0bdd2bee0206f986b2724d331eaf
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842241"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3116342"
 ---
 # <a name="page-transitions"></a>Смена страниц
 
 Смена страниц — это перемещение пользователей между страницами в приложении с демонстрацией связи между страницами. Переходы страниц помогают пользователям понять, находятся ли они на верхнем уровне иерархии, перемещаются между страницами одного уровня или спускаются на более низкий уровень иерархии страниц.
 
-Для навигации между страницами в приложении предоставляются две разные анимации: *Обновление страницы* и *Винт*. Они представлены подклассами [**NavigationTransitionInfo**](/api/windows.ui.xaml.media.animation.navigationtransitioninfo).
+Для навигации между страницами в приложении предоставляются две разные анимации: *Обновление страницы* и *Винт*. Они представлены подклассами [**NavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo).
 
 ## <a name="page-refresh"></a>Обновление страницы
 
@@ -32,7 +32,7 @@ ms.locfileid: "1842241"
 
 ![анимация обновления страницы](images/page-refresh.gif)
 
-Анимация обновления страницы представлена классом [**EntranceNavigationTransitionInfoClass**](/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo).
+Анимация обновления страницы представлена классом [**EntranceNavigationTransitionInfoClass**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo).
 
 ```csharp
 // Explicitly play the page refresh animation
@@ -50,7 +50,7 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ![анимация "винт"](images/drill.gif)
 
-Анимация "винт" представлена классом [**DrillInNavigationTransitionInfo**](/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo).
+Анимация "винт" представлена классом [**DrillInNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo).
 
 ```csharp
 // Play the drill in animation
@@ -59,7 +59,7 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## <a name="suppress"></a>Подавление
 
-Чтобы избежать воспроизведения анимации во время перехода, используйте [**SuppressNavigationTransitionInfo**](/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) вместо других подтипов **NavigationTransitionInfo**.
+Чтобы избежать воспроизведения анимации во время перехода, используйте [**SuppressNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) вместо других подтипов **NavigationTransitionInfo**.
 
 ```csharp
 // Suppress the default animation

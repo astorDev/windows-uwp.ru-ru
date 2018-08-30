@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, роли пользователей, разрешение пользователя, пользовательские роли, доступ пользователей, настроить разрешения, стандартные роли
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2913512"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3125084"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Настройка ролей и пользовательских разрешений для пользователей учетных записей
 
@@ -170,7 +170,7 @@ ms.locfileid: "2913512"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>Приобретения</b>     </td><td>    Можно просматривать отчеты <a href="acquisitions-report.md">Приобретения</a> и <a href="add-on-acquisitions-report.md">Приобретения надстроек</a> для продукта.        </td><td>    Н/Д    </td><td>    Н/д (параметры родительского продукта включают отчет о **приобретениях надстроек** )        </td><td>    Н/Д                         </td></tr>
+    <tr><td align="left">    <b>Приобретения</b>     </td><td>    Можно просматривать отчеты <a href="acquisitions-report.md">Приобретения</a> и <a href="add-on-acquisitions-report.md">Приобретения надстроек</a> для продукта.        </td><td>    Н/Д    </td><td>    Н/д (параметры родительского продукта включают отчет о **приобретениях надстройки** )        </td><td>    Н/Д                         </td></tr>
     <tr><td align="left">    <b>Использование</b> </td><td>    Можно просматривать <a href="usage-report.md">Отчет об использовании</a> для продукта.     </td><td>    Н/Д       </td><td>    Н/Д     </td><td>    Н/Д         </td></tr>
     <tr><td align="left">    <b>Health</b> </td><td>    Можно просматривать <a href="health-report.md">Отчет о работоспособности</a> для продукта.    </td><td>    Н/Д     </td><td>    Н/Д     </td><td>    Н/Д         </td></tr>
     <tr><td align="left">    <b>Отзывы пользователей</b>    </td><td>    Можно просматривать отчеты <a href="reviews-report.md">Рецензии</a> и <a href="feedback-report.md">Отзывы</a> для продукта.       </td><td>    Н/Д (для ответа на отзывы или рецензии должно быть предоставлено разрешение <b>Связаться с клиентом</b>)   </td><td>    Н/Д     </td><td>    Н/Д         </td></tr>

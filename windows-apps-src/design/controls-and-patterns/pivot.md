@@ -1,9 +1,9 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: The Pivot control enables touch-swiping between a small set of content sections.
 title: Pivot
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 06/19/2018
 ms.topic: article
 ms.prod: windows
@@ -14,16 +14,16 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e8f0fbbfacc3fa4edb602f7505ea1e88f211a81a
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2913021"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3116119"
 ---
 # <a name="pivot"></a>Pivot
 
-Элемент управления ["Сводка"](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) позволяет сенсорный ввод прокрутка между небольшой набор разделы содержимого.
+Элемент управления ["Сводка"](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) позволяет прокрутка сенсорного ввода между небольшой набор разделы содержимого.
 
 > **Важные API -интерфейсы**: [класс Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [класс NavigationView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
@@ -49,14 +49,14 @@ ms.locfileid: "2913021"
 
 ## <a name="is-this-the-right-control"></a>Выбор подходящего элемента управления
 
-Для достижения общих верхней навигационной и шаблоны вкладки, мы рекомендуем использовать [NavigationView](navigationview.md), который автоматически адаптируется к различным размерам экрана и позволяет более настройки.
+Для достижения распространенных верхней навигационной и шаблонов вкладки, мы рекомендуем использовать [NavigationView](navigationview.md), который автоматически адаптируется к различным размерам экрана и позволяет более настройки.
 
 Тем не менее если навигации требуется прокрутка сенсорного ввода, мы рекомендуем использовать "Сводка".
 
 Основные различия между элементами управления NavigationView и "Сводка" — это поведение по умолчанию переполнения и навигации API:
 
-- Сводки переполнения обойм, которые элементов, когда NavigationView использует раскрывающееся меню переполнения, чтобы пользователи могли видеть все элементы.
-- "Сводка" обрабатывает навигацию между разделами содержимого, когда NavigationView обеспечивает больше контроля над поведение навигации с помощью.
+- Сводки обойм переполнения, элементов, когда NavigationView использует раскрывающемся меню переполнения, чтобы пользователи могли видеть все элементы.
+- "Сводка" обрабатывает переходов между разделами содержимого, хотя NavigationView позволяет больше контроля над поведение навигации.
 
 ## <a name="use-navigationview-instead-of-pivot"></a>Использовать NavigationView вместо "Сводка"
 
@@ -87,7 +87,7 @@ ms.locfileid: "2913021"
 </Page>
 ```
 
-NavigationView обеспечивает больший контроль над настройки навигации и требует соответствующего кода программной части. Для описания выше XAML, используйте следующий код программной части:
+NavigationView обеспечивает больший контроль над настройки навигации и требует соответствующего кода программной части. Чтобы лицензированное выше XAML, используйте следующий код программной:
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -116,7 +116,7 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-Этот код имитирует взаимодействия при навигации встроенный элемент управления Pivot, минус прокрутка сенсорного взаимодействия между разделами содержимого. Как видно, можно также настроить несколько точек, включая анимированный переход, параметров навигации и возможности стека.
+Этот код имитирует взаимодействия при навигации встроенный элемент управления "Сводка", минус прокрутка сенсорного взаимодействия между разделами содержимого. Тем не менее как видно, можно также настроить несколько точек, включая анимированный переход в ситуациях, параметров навигации и возможности стека.
 
 ## <a name="create-a-pivot-control"></a>Создание элемента управления "Cводка"
 

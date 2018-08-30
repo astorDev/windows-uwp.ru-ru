@@ -1,24 +1,24 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
 title: Основы навигации для приложений UWP
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
-ms.author: sezhen
+ms.author: quradic
 ms.date: 7/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 464da3dd3a9a181555f7b4bfd1059e9834fe7338
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2909892"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3117801"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Основы проектирования навигации для приложений UWP
 
@@ -168,7 +168,7 @@ ms.locfileid: "2909892"
 
 :::row:::
     :::column:::
-        ![Изображение рамки](images/nav/thumbnail-frame.svg)
+        ![Изображение](images/nav/thumbnail-frame.svg)
     :::column-end:::
     ::: column span = «2»::: [ **кадров**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
@@ -200,7 +200,7 @@ ms.locfileid: "2909892"
     :::column:::
         ![изображение navview](images/nav/thumbnail-navview.svg)
     :::column-end:::
-    ::: column span = «2»::: [ **левой навигационной**](../controls-and-patterns/navigationview.md)
+    ::: column span = «2»::: [ **Левое меню навигации**](../controls-and-patterns/navigationview.md)
 
         Displays a vertical list of links to top-level pages. Use when:
         
@@ -214,7 +214,7 @@ ms.locfileid: "2909892"
     :::column:::
         ![Основные и подробные данные изображения](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
-    ::: column span = «2»::: [ **Основные и подробные данные**](../controls-and-patterns/master-details.md)
+    ::: column span = «2»::: [ **подробных данных**](../controls-and-patterns/master-details.md)
 
         Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
         

@@ -1,8 +1,8 @@
 ---
-author: serenaz
+author: QuinnRadich
 description: Узнайте, как использовать цвета элементов и темы в приложениях UWP.
 title: Цвет в приложениях UWP
-ms.author: sezhen
+ms.author: quradic
 ms.date: 4/7/2018
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
-ms.openlocfilehash: fc348dc4f4733feae86a94e0ada1693326a201d8
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 19f4d9cde6ee2bc9615f044f18bc5e8828ca1985
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843194"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3123433"
 ---
 # <a name="color"></a>Цвет
 
@@ -27,17 +27,27 @@ ms.locfileid: "1843194"
 
 ## <a name="color-principles"></a>Цветовые принципы
 
-:::row::: :::column::: **Используйте цвет осмысленно.**
+:::row:::
+    :::column:::
+        **Используйте цвет осмысленно.**
 Если цвет используется для выделения важных элементов, это поможет создать гибкий и интуитивно понятный интерфейс.
-:::column-end::: :::column::: **Используйте цвет для обозначения интерактивных возможностей.**
+    :::column-end:::
+    :::column:::
+        **Используйте цвет для обозначения интерактивных возможностей.**
 Вы можете выбрать один цвет для обозначения интерактивных элементов приложения. Например, на многих веб-страницах синий текст обозначает гиперссылки.
-:::column-end::: :::row-end:::
+    :::column-end:::
+:::row-end:::
 
-:::row::: :::column::: **Цвет отражает личные предпочтения.**
+:::row:::
+    :::column:::
+        **Цвет отражает личные предпочтения.**
 В Windows пользователи могут выбрать цвет элементов и светлую либо темную тему, чтобы она проявлялась при каждом их взаимодействии с устройством. Вы можете выбрать способ применения цвета элементов и темы пользователя в приложении для персонализации взаимодействия.
-:::column-end::: :::column::: **Цвет имеет культурное значение.**
+    :::column-end:::
+    :::column:::
+        **Цвет имеет Культурное значение.**
 Подумайте о том, как применяемые цвета будут интерпретироваться пользователями из разных культур. Например, в некоторых странах синий цвет ассоциируется с достоинствами и защитой, а в других странах он означает печаль.
-:::column-end::: :::row-end:::
+    :::column-end:::
+:::row-end:::
 
 ## <a name="themes"></a>Темы
 
@@ -96,7 +106,9 @@ ms.locfileid: "1843194"
 
 ### <a name="using-theme-brushes"></a>Использование кистей темы
 
-:::row::: :::column::: При создании шаблонов для пользовательских элементов управления, применяйте кисти темы, а не жестко закодированные значения цветов. Таким образом, приложение сможет легко адаптироваться к любой теме.
+:::row:::
+    :::column:::
+        При создании шаблонов для пользовательских элементов управления, применяйте кисти темы, а не жестко закодированные значения цветов. Таким образом, приложение сможет легко адаптироваться к любой теме.
 
         For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
     :::column-end:::
@@ -133,7 +145,14 @@ ms.locfileid: "1843194"
 
 ![элементы управления windows](images/color/windows-controls.svg)
 
-:::row::: :::column::: ![user-selected accent header](images/color/user-accent.svg) ![user-selected accent color](images/color/user-selected-accent.svg) :::column-end::: :::column::: ![custom accent header](images/color/custom-accent.svg) ![custom brand accent color](images/color/brand-color.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![выбранный пользователем элементов заголовка](images/color/user-accent.svg) ![выбранный пользователем цвет](images/color/user-selected-accent.svg)
+    :::column-end:::
+    :::column:::
+        ![Заголовок настраиваемых элементов](images/color/custom-accent.svg) ![цвет элементов пользовательской фирменной символики](images/color/brand-color.svg)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="overriding-the-accent-color"></a>Переопределение цвета элементов
 
@@ -237,7 +256,11 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 ## <a name="usability"></a>Удобство использования
 
-:::row::: :::column::: ![contrast illustration](images/color/illo-contrast.svg) :::column-end::: :::column span="2"::: **Контрастность**
+:::row:::
+    :::column:::
+        ![Иллюстрация контрастности](images/color/illo-contrast.svg)
+    :::column-end:::
+    ::: column span = «2»::: **контрастности**
 
         Make sure that elements and images have sufficient contrast to differentiate between them, regardless of the accent color or theme.
 
@@ -245,19 +268,27 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
     :::column-end:::
 :::row-end:::
 
-:::row::: :::column::: ![contrast illustration](images/color/illo-lighting.svg) :::column-end::: :::column span="2"::: **Освещение**
+:::row:::
+    :::column:::
+        ![Иллюстрация контрастности](images/color/illo-lighting.svg)
+    :::column-end:::
+    ::: column span = «2»::: **освещения**
 
         Be aware that variation in ambient lighting can affect the useability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
     :::column-end:::
 :::row-end:::
 
-:::row::: :::column::: ![contrast illustration](images/color/illo-colorblindness.svg) :::column-end::: :::column span="2"::: **Дальтонизм**
+:::row:::
+    :::column:::
+        ![Иллюстрация контрастности](images/color/illo-colorblindness.svg)
+    :::column-end:::
+    ::: column span = «2»::: **Дальтонизма**
 
         Be aware of how colorblindness could affect the useability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About **8 percent of men** and **0.5 percent of women** are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.
     :::column-end:::
 :::row-end:::
 
-## <a name="related-articles"></a>Статьи по теме
+## <a name="related-articles"></a>Еще по теме
 
 - [Стили XAML](../controls-and-patterns/xaml-styles.md)
 - [Ресурсы темы XAML](../controls-and-patterns/xaml-theme-resources.md)
