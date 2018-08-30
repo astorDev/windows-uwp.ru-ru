@@ -1,21 +1,21 @@
 ---
-author: serenaz
-Description: An overview of the universal design features that are included in every UWP app to help you build apps that scale beautifully across a range of devices.
+author: mijacobs
+Description: The universal design features included in every UWP app help you build apps that scale beautifully across a range of devices.
 title: Введение в проектирование приложений универсальной платформы Windows (UWP) (приложений для Windows)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-ms.author: sezhen
+ms.author: mijacobs
 ms.date: 05/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e6f5d17a9fbdc044c3e1c0fcd152e6bafe2705a7
-ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
-ms.translationtype: HT
+ms.openlocfilehash: 952db87d0dabdb927a472de17f0c0d7b345bde4e
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1877276"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3126751"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Введение в проектирование приложений UWP
 
@@ -48,9 +48,10 @@ ms.locfileid: "1877276"
 
 ### <a name="multiples-of-four"></a>Кратность 4
 
-:::row::: :::column span::: Система масштабирует пользовательский интерфейс приложения в величинах, кратных 4.
+:::row:::
+    ::: column span::: размеры, поля и положения элементов пользовательского интерфейса должны быть **кратны 4 epx** в приложениях UWP.
 
-        As a result, the sizes, margins, and positions of **UI elements should always be in multiples of 4 epx**. This results in the best rendering by aligning with whole pixels. It also ensures that UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
+        UWP scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it's the only integer that can be scaled by non-whole numbers (e.g. 4*1.5 = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
     :::column-end:::
     :::column:::
         ![grid](images/4epx.svg)
@@ -63,10 +64,18 @@ ms.locfileid: "1877276"
 
 ### <a name="windows-frames-and-pages"></a>Окна, кадры и страницы
 
-:::row::: :::column::: Когда приложение UWP запускается на каком-либо устройстве с Windows 10, оно запускается в [окне](/uwp/api/Windows.UI.Xaml.Controls.Window) с [кадром](/uwp/api/Windows.UI.Xaml.Controls.Frame), в котором возможна навигация между экземплярами [страниц](/uwp/api/Windows.UI.Xaml.Controls.Page).
-:::column-end::: :::column::: ![Кадр](images/frame.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        При запуске приложения UWP на любом устройстве с Windows 10, оно запускается в [окне](/uwp/api/Windows.UI.Xaml.Controls.Window) [кадра](/uwp/api/Windows.UI.Xaml.Controls.Frame), который может перемещаться между экземплярами [страницы](/uwp/api/Windows.UI.Xaml.Controls.Page) .
+    :::column-end:::
+    :::column:::
+        ![Кадр](images/frame.svg)
+    :::column-end:::
+:::row-end:::
 
-:::row::: :::column::: Пользовательский интерфейс приложения можно рассматривать как набор страниц. Вам решать, что появится на каждой странице и как страницы будут связаны между собой.
+:::row:::
+    :::column:::
+        Пользовательский Интерфейс приложения можно считать коллекцию страниц. Вам решать, что появится на каждой странице и как страницы будут связаны между собой.
 
         To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
     :::column-end:::
@@ -107,7 +116,9 @@ ms.locfileid: "1877276"
 
 ## <a name="shell"></a>Оболочка
 
-:::row::: :::column::: Ваше приложение UWP будет взаимодействовать с общим интерфейсом Windows с помощью плиток и уведомлений в [оболочке](../shell/tiles-and-notifications/creating-tiles.md) Windows.
+:::row:::
+    :::column:::
+        Приложение UWP будет взаимодействовать с общим интерфейсом Windows, с помощью плиток и уведомлений в [оболочке](../shell/tiles-and-notifications/creating-tiles.md)Windows.
 
         Tiles are displayed in the Start menu and when your app launches, and they provide a glimpse of what's going on in your app. Their power comes from the content behind them, and the intelligence and craft with which they're offered up.
 
@@ -118,10 +129,16 @@ ms.locfileid: "1877276"
     :::column-end:::
 :::row-end:::
 
-## <a name="inputs"></a>Ввод данных
+## <a name="inputs"></a>Элементы ввода данных
 
-:::row::: :::column::: В основе приложений UWP лежит интеллектуальное взаимодействие с пользователем. Вы можете выполнять обработку нажатия и при этом вам будет все равно, осуществляется ли это нажатие с помощью щелчка мыши, пера или прикосновения пальца. Тем не менее вы также можете разработать приложения для [конкретных режимов ввода](../input/input-primer.md).
-:::column-end::: :::column::: ![ввод данных](images/inputs.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        В основе приложений UWP лежит интеллектуальное взаимодействие с пользователем. Вы можете выполнять обработку нажатия и при этом вам будет все равно, осуществляется ли это нажатие с помощью щелчка мыши, пера или прикосновения пальца. Тем не менее вы также можете разработать приложения для [конкретных режимов ввода](../input/input-primer.md).
+    :::column-end:::
+    :::column:::
+        ![Способы ввода](images/inputs.svg)
+    :::column-end:::
+:::row-end:::
 
 ## <a name="devices"></a>Устройства
 

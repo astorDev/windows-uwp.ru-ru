@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ca47bfb26649f2e8a9fc1344c3264d90548eb836
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2918785"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3126970"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>Привлечение клиентов и продвижение приложений
 
-После добавления приложения в Microsoft Store, пришло время максимальному его количеству пользователей. Мы предлагаем множество функций, которые помогут вам продвигать ваши продукты и расширить клиентскую базу, включая рекламные кампании, промокоды, распродажи и многое другое.
+После добавления приложения в Microsoft Store, самое время максимальному его количеству пользователей. Мы предлагаем множество функций, которые помогут вам продвигать ваши продукты и расширить клиентскую базу, включая рекламные кампании, промокоды, распродажи и многое другое.
 
 -   [Создание промокодов](generate-promotional-codes.md)
 -   [Создание рекламной кампании для вашего приложения](create-an-ad-campaign-for-your-app.md)
