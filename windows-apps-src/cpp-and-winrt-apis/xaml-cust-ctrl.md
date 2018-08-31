@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, XAML, пользовательский, шаблон, элемент управления
 ms.localizationpriority: medium
-ms.openlocfilehash: 81eb7f29e511f76d1126c1e4a43a2b96f1fa6f9f
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.openlocfilehash: 25e17888c3292cbaf7b84c8a4bdd7c411530b558
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3119106"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3233066"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>(XAML шаблонных) элементов управления с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -189,7 +189,7 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 };
 ```
 
-*Переопределяемые* функции представить себя по-разному в разных языках проекции. В C# например, переопределяемые функции обычно отображаются как защищенные виртуальные функции. В C + +/ WinRT, они не защищенные ни виртуальный, но по-прежнему можно переопределить их и предоставить собственную реализацию, как показано выше.
+*Переопределяемые* функции отсутствует себя по-разному в различных языковых проекции. В C# например, переопределяемые функции обычно отображаются как защищенные виртуальные функции. В C + +/ WinRT, они не защищенные ни виртуальный, но по-прежнему можно переопределить их и предоставить собственную реализацию, как показано выше.
 
 ## <a name="important-apis"></a>Важные API
 * [Элемент управления](/uwp/api/windows.ui.xaml.controls.control)
