@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, бета-тестирование, ограниченное распространение, бета-версия, бета-версии, тестирование, тест-инженеры
 ms.localizationpriority: medium
 ms.openlocfilehash: e453be22d752ed78263cb34011cdf9a333057e03
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3117361"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3239481"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>Бета-тестирование и целевое распространение
 
