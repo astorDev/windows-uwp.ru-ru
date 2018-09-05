@@ -1,7 +1,7 @@
 ---
 author: eliotcowley
 title: Использование триггера программного обеспечения
-description: Узнайте, как управлять действием сканирования из программного обеспечения.
+description: Научитесь контролировать процесс сканирования из программного обеспечения.
 ms.author: elcowle
 ms.date: 08/29/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: ddd8ec979cb6d5a72b48b9b8b6a60adb73c35657
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3228893"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3376262"
 ---
 # <a name="use-a-software-trigger"></a>Использование триггера программного обеспечения
 
@@ -33,7 +33,7 @@ ms.locfileid: "3228893"
 > [!Important]
 > Убедитесь, что сканер штрихкодов поддерживает использование программного триггера, проверив сначала свойство [IsSoftwareTriggerSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannercapabilities.issoftwaretriggersupported#Windows_Devices_PointOfService_BarcodeScannerCapabilities_IsSoftwareTriggerSupported).
 
-Приведенный ниже показано, как инициировать сканирование с помощью триггера программное обеспечение, которое остановит сканирования после его сканирует один штрихкод.
+Следующий пример показывает, как инициировать сканирование с помощью триггера программное обеспечение, которое будет остановить сканирование после он проверяет один штрих-код:
 
 ```cs
 private void SoftwareTrigger(BarcodeScanner barcodeScanner, ClaimedBarcodeScanner claimedBarcodeScanner) 
