@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, взаимодействие, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 02aa86231cd611bd20a386d3da2f9d2b6dc5df66
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3385096"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3391429"
 ---
 # <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-ccx"></a>Взаимодействие между [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) и C++/CX
 В этом разделе описаны две вспомогательные функции, которые могут использоваться для преобразования между объектами [C++/ CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) и C++/WinRT. Их можно использовать для взаимодействия между кодом, который использует эти две языковых проекции, или можно использовать функции, как вы постепенного переноса кода из C + +/ CX в C + +/ WinRT (см. в разделе [Переход на C + +/ WinRT из C + +/ CX](move-to-winrt-from-cx.md)).

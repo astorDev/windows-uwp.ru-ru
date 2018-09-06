@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, фоновые задачи
+keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e685085c004cced24b9a42ef2261a26eef10bb
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3377807"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3393533"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Объявление фоновых задач в манифесте приложения
 

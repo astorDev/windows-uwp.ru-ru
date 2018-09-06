@@ -9,13 +9,13 @@ ms.prod: windows
 ms.topic: article
 keywords: начало работы, windows 10, uwp, xaml, c#
 ms.technology: uwp
-ms.localizationpriority: high
-ms.openlocfilehash: 9e2cd95cfc74273f4c9f6c949a5a618542b99acf
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 8d7ad7835e56b874c37b9376eb00278fea055dd1
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815749"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3398486"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Начало работы с приложениями для Windows 10 
  
@@ -75,7 +75,7 @@ ms.locfileid: "1815749"
                         <h3>Начало разработки</h3>
                         <p>Независимо от того, являетесь ли вы опытным разработчиком или просто создаете ваше первое приложение, вы можете получить помощь по платформе Windows 10 и доступ к обучающей документации.</p>
                         <ul>
-                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Создание приложений для Windows</a></li>
+                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Начало разработки</a></li>
                         </ul>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ ms.locfileid: "1815749"
                     <br>
                     <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">Основы создания пользовательского интерфейса</a></p>
                     <p><a href="//docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding">Привязка данных</a></p>
-                    <p><a href="//docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-basics-style">Пользовательские стили</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-style">Пользовательские стили</a></p>
                 </div>
             </div>
         </div>
