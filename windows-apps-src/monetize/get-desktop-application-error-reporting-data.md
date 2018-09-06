@@ -3,18 +3,18 @@ author: mcleanbyron
 description: Используйте этот метод в API аналитики для Microsoft Store, чтобы получить сводные данные отчетов об ошибках классического приложения в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение данных отчетов об ошибках для классического приложения
 ms.author: mcleans
-ms.date: 06/05/2018
+ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, службы Store, API аналитики для Microsoft Store, ошибки, классическое приложение
 ms.localizationpriority: medium
-ms.openlocfilehash: 71c566ff375f36108d724f3c550570b3332f4c6b
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.openlocfilehash: 66594fd6f59281011fccab21ad5618827db322dd
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3382360"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3402047"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>Получение данных отчетов об ошибках для классического приложения
 
@@ -104,7 +104,7 @@ Authorization: Bearer <your access token>
 | market          | string  | Код страны рынка устройства по стандарту ISO 3166   |
 | deviceType      | string  | Одна из следующих строк, указывающая тип устройства, на котором произошла ошибка:<p/><ul><li><strong>ПК</strong></li><li><strong>Сервер</strong></li><li><strong>Планшет</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>    |
 | applicationVersion     | строка  |   Версия исполняемого файла приложения, в котором произошла ошибка.    |
-| eventCount      | integer | Количество событий, которые вызваны этой ошибкой, на указанном уровне агрегирования.      |
+| eventCount      | число | Количество событий, которые вызваны этой ошибкой, на указанном уровне агрегирования.      |
 
 
 ### <a name="response-example"></a>Пример ответа

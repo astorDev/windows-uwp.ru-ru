@@ -4,18 +4,18 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных отчетов об ошибках в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение данных отчетов об ошибках для вашего приложения
 ms.author: mcleans
-ms.date: 06/05/2018
+ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, службы Store, API аналитики для Microsoft Store, ошибки
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c03ea17e111f86ad390dafe5360db9d10864edc
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.openlocfilehash: 15dd4d5febe0b57e164f0aadeeb8d7b816dcdd66
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3381850"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3399252"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>Получение данных отчетов об ошибках для вашего приложения
 
@@ -106,8 +106,8 @@ Authorization: Bearer <your access token>
 | deviceType      | строка  | Одна из следующих строк, указывающая тип устройства, на котором произошла ошибка:<ul><li>**ПК**</li><li>**Телефон**</li><li>**Console (консоль),**</li><li>**Интернет вещей**</li><li>**Holographic (голография),**</li><li>**Неизвестно**</li></ul>    |
 | packageName     | string  | Уникальное имя пакета приложения, связанного с этой ошибкой      |
 | packageVersion  | string  | Версия пакета приложения, связанного с этой ошибкой.   |
-| deviceCount     | integer | Количество уникальных устройств, соответствующих этой ошибке, на указанном уровне агрегирования.  |
-| eventCount      | integer | Количество событий, которые вызваны этой ошибкой, на указанном уровне агрегирования.      |
+| deviceCount     | число | Количество уникальных устройств, соответствующих этой ошибке, на указанном уровне агрегирования.  |
+| eventCount      | число | Количество событий, которые вызваны этой ошибкой, на указанном уровне агрегирования.      |
 
 
 ### <a name="response-example"></a>Пример ответа
