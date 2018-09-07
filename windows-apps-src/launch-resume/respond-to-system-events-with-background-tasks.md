@@ -8,18 +8,18 @@ ms.date: 07/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, фоновой задачи
+keywords: Windows 10, uwp, фоновые задачи
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 45f6e10bc355e3a2dc054d54fef35fbeb1095dc7
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3398706"
+ms.locfileid: "3410972"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a>Реагирование на системные события с помощью фоновых задач
 

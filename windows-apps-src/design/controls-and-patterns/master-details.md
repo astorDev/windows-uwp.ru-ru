@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 28a6160019fd3bf64dd1f75bc5c6df29cd3165ad
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3398786"
+ms.locfileid: "3411931"
 ---
 # <a name="masterdetails-pattern"></a>Шаблон основных и подробных данных
 

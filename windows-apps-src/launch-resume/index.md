@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, фоновой задачи службы приложения, подключенных устройств, удаленных систем
 ms.localizationpriority: medium
 ms.openlocfilehash: 142eba8eb919ed25632f44a6f185ae40e16dec6b
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3401990"
+ms.locfileid: "3410605"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>Запуск, возобновление и фоновые задачи
 
