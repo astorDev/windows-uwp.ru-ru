@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартные, c ++, cpp, winrt, проекция, коллекции
 ms.localizationpriority: medium
-ms.openlocfilehash: 5495649a6b7fad633e24e244aa3f6efbcc05e441
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: dc52274c80f3689d2cb10b98bda38788e3400b4e
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3421102"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3661579"
 ---
 # <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Коллекции с [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -58,7 +58,7 @@ int main()
 }
 ```
 
-Как видно в приведенном выше примере кода, после создания коллекции можно добавить элементы, итерацию их и обычно обрабатывают объекта, как и любой объект коллекции среды выполнения Windows, который вы получили из API-интерфейса. Если вам требуется постоянный представление коллекции, можно вызвать [**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview), как показано. Приведенный выше шаблон&mdash;создания и использования коллекции&mdash;подходит для простых сценариях, где требуется передавать данные в или получить данные из API-интерфейса.
+Как видно в приведенном выше примере кода, после создания коллекции можно добавить элементы, итерацию их и обычно обрабатывают объекта, как и любой объект коллекции среды выполнения Windows, который вы получили из API-интерфейса. Если вам требуется постоянный представление коллекции, можно вызвать [**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview), как показано. Приведенный выше шаблон&mdash;создания и использования коллекции&mdash;подходит для простых сценариях, где требуется передавать данные в или получить данные из API-интерфейса. Вы можете передать **IVector**или **IVectorView**, в любом ожидается, что [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_) .
 
 ### <a name="general-purpose-collection-primed-from-data"></a>Коллекции общего назначения, заполняется из данных
 
@@ -85,7 +85,14 @@ auto bookSkus{ winrt::single_threaded_vector<Windows::Foundation::IInspectable>(
 bookSkus.Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
 ```
 
-Коллекции выше *могут* быть привязаны к элементы управления XAML; Однако не отслеживаемым коллекции.
+Можно создать коллекцию среды выполнения Windows из данных и получить представление на нем все готово для передачи API, без копирования никаких действий.
+
+```cppwinrt
+std::vector<float> values{ 0.1f, 0.2f, 0.3f };
+IVectorView<float> view{ winrt::single_threaded_vector(std::move(values)).GetView() };
+```
+
+В примерах выше коллекции, мы создаем *могут* быть привязаны к элементы управления XAML; Однако не отслеживаемым коллекции.
 
 ### <a name="observable-collection"></a>Отслеживаемую коллекцию
 

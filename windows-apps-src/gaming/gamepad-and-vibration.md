@@ -4,18 +4,18 @@ title: Геймпад и вибрация
 description: Используйте API Windows.Gaming.Input геймпада для определения, считывания и отправки команд вибрации и импульсов на геймпады.
 ms.assetid: BB03BB8E-255F-4AE8-AC43-1E519CA860FE
 ms.author: wdg-dev-content
-ms.date: 8/23/2018
+ms.date: 09/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, игры, геймпад, вибрация
 ms.localizationpriority: medium
-ms.openlocfilehash: f44d5f4dee8293ed40d22a301f2a3d2a9611e15d
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 2bf78b43bb09f97c196858d7cc4fcdb1e71462fc
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3421706"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3666025"
 ---
 # <a name="gamepad-and-vibration"></a>Геймпад и вибрация
 
@@ -120,6 +120,30 @@ for (auto gamepad : Gamepad::Gamepads)
 }
 ```
 
+```cs
+private readonly object myLock = new object();
+private List<Gamepad> myGamepads = new List<Gamepad>();
+private Gamepad mainGamepad;
+
+private void GetGamepads()
+{
+    lock (myLock)
+    {
+        foreach (var gamepad in Gamepad.Gamepads)
+        {
+            // Check if the gamepad is already in myGamepads; if it isn't, add it.
+            bool gamepadInList = myGamepads.Contains(gamepad);
+
+            if (!gamepadInList)
+            {
+                // This code assumes that you're interested in all gamepads.
+                myGamepads.Add(gamepad);
+            }
+        }
+    }   
+}
+```
+
 ### <a name="adding-and-removing-gamepads"></a>Добавление и удаление геймпадов
 
 При добавлении или удалении геймпада, [GamepadAdded][] и [GamepadRemoved][] событий. Можно зарегистрировать обработчики для этих событий, чтобы отслеживать подключенные в данный момент геймпады.
@@ -142,6 +166,23 @@ Gamepad::GamepadAdded += ref new EventHandler<Gamepad^>(Platform::Object^, Gamep
 }
 ```
 
+```cs
+Gamepad.GamepadAdded += (object sender, Gamepad e) =>
+{
+    // Check if the just-added gamepad is already in myGamepads; if it isn't, add
+    // it.
+    lock (myLock)
+    {
+        bool gamepadInList = myGamepads.Contains(e);
+
+        if (!gamepadInList)
+        {
+            myGamepads.Add(e);
+        }
+    }
+};
+```
+
 Следующий пример кода останавливает отслеживание удаленного геймпада. Вам также потребуется для обработки действий на геймпады, вы отслеживаете после их удаления; Например, этот код только отслеживает входные данные с одного геймпада, а просто задает для него `nullptr` когда приложение удаляется. Вам потребуется проверить каждый кадр, если активно вашего игрового контроллера и обновления, какие игровой ввод от сбор, при контроллеров подключения и отключения.
 
 ```cpp
@@ -160,6 +201,26 @@ Gamepad::GamepadRemoved += ref new EventHandler<Gamepad^>(Platform::Object^, Gam
         myGamepads->RemoveAt(indexRemoved);
     }
 }
+```
+
+```cs
+Gamepad.GamepadRemoved += (object sender, Gamepad e) =>
+{
+    lock (myLock)
+    {
+        int indexRemoved = myGamepads.IndexOf(e);
+
+        if (indexRemoved > -1)
+        {
+            if (mainGamepad == myGamepads[indexRemoved])
+            {
+                mainGamepad = null;
+            }
+
+            myGamepads.RemoveAt(indexRemoved);
+        }
+    }
+};
 ```
 
 Дополнительные сведения см. [способы ввода в играх](input-practices-for-games.md) .
@@ -186,6 +247,12 @@ auto gamepad = myGamepads[0];
 GamepadReading reading = gamepad->GetCurrentReading();
 ```
 
+```cs
+Gamepad gamepad = myGamepads[0];
+
+GamepadReading reading = gamepad.GetCurrentReading();
+```
+
 Помимо состояния геймпада, считанные данные содержат метку времени, указывающую точное время получения сведений о состоянии. Метку времени удобно использовать для обращения ко времени предыдущего события считывания данных или ко времени моделирования конкретного игрового момента.
 
 ### <a name="reading-the-thumbsticks"></a>Считывание данных с аналоговых стиков
@@ -199,6 +266,13 @@ float leftStickX = reading.LeftThumbstickX;   // returns a value between -1.0 an
 float leftStickY = reading.LeftThumbstickY;   // returns a value between -1.0 and +1.0
 float rightStickX = reading.RightThumbstickX; // returns a value between -1.0 and +1.0
 float rightStickY = reading.RightThumbstickY; // returns a value between -1.0 and +1.0
+```
+
+```cs
+double leftStickX = reading.LeftThumbstickX;   // returns a value between -1.0 and +1.0
+double leftStickY = reading.LeftThumbstickY;   // returns a value between -1.0 and +1.0
+double rightStickX = reading.RightThumbstickX; // returns a value between -1.0 and +1.0
+double rightStickY = reading.RightThumbstickY; // returns a value between -1.0 and +1.0
 ```
 
 При считывании значений аналогового стика можно заметить, что когда манипулятор находится в состоянии покоя в центральном положении, значения могут быть не равны 0,0. Вместо этого вы будете получать различные значения, близкие к 0,0, каждый раз, когда манипулятор перемещается и возвращается в центральное положение. Для устранения данной проблемы можно установить небольшую _мертвую зону_ — диапазон значений рядом с идеальным центральным положением, которые будут игнорироваться. Один из способов создания мертвой зоны — определить, насколько далеко от центра сдвинулся стик, и игнорировать смещения на расстояние, которое окажется меньше выбранного вами. Расстояние можно вычислить&mdash;это не точное поскольку показания джойстика по сути полярные, а не плоскостными&mdash;с помощью теоремы Пифагора. В результате вы получите радиальную мертвую зону.
@@ -224,6 +298,25 @@ if ((oppositeSquared + adjacentSquared) > deadzoneSquared)
 }
 ```
 
+```cs
+double leftStickX = reading.LeftThumbstickX;   // returns a value between -1.0 and +1.0
+double leftStickY = reading.LeftThumbstickY;   // returns a value between -1.0 and +1.0
+
+// choose a deadzone -- readings inside this radius are ignored.
+const double deadzoneRadius = 0.1;
+const double deadzoneSquared = deadzoneRadius * deadzoneRadius;
+
+// Pythagorean theorem -- for a right triangle, hypotenuse^2 = (opposite side)^2 + (adjacent side)^2
+double oppositeSquared = leftStickY * leftStickY;
+double adjacentSquared = leftStickX * leftStickX;
+
+// accept and process input if true; otherwise, reject and ignore it.
+if ((oppositeSquared + adjacentSquared) > deadzoneSquared)
+{
+    // input accepted, process it
+}
+```
+
 Каждый аналоговый стик также действует как кнопка при нажатии вниз. Дополнительные сведения о чтении этих входных данных см. в разделе [Считывание данных с кнопок](#reading-the-buttons).
 
 ### <a name="reading-the-triggers"></a>Считывание данных с триггеров
@@ -233,6 +326,11 @@ if ((oppositeSquared + adjacentSquared) > deadzoneSquared)
 ```cpp
 float leftTrigger  = reading.LeftTrigger;  // returns a value between 0.0 and 1.0
 float rightTrigger = reading.RightTrigger; // returns a value between 0.0 and 1.0
+```
+
+```cs
+double leftTrigger = reading.LeftTrigger;  // returns a value between 0.0 and 1.0
+double rightTrigger = reading.RightTrigger; // returns a value between 0.0 and 1.0
 ```
 
 ### <a name="reading-the-buttons"></a>Считывание данных с кнопок
@@ -253,12 +351,26 @@ if (GamepadButtons::A == (reading.Buttons & GamepadButtons::A))
 }
 ```
 
+```cs
+if (GamepadButtons.A == (reading.Buttons & GamepadButtons.A))
+{
+    // button A is pressed
+}
+```
+
 Следующий пример кода определяет, отпущена ли кнопка A.
 
 ```cpp
 if (GamepadButtons::None == (reading.Buttons & GamepadButtons::A))
 {
-    // button A is pressed
+    // button A is released
+}
+```
+
+```cs
+if (GamepadButtons.None == (reading.Buttons & GamepadButtons.A))
+{
+    // button A is released
 }
 ```
 
@@ -295,6 +407,19 @@ GamepadVibration vibration;
 gamepad.Vibration = vibration;
 ```
 
+```cs
+// get the first gamepad
+Gamepad gamepad = Gamepad.Gamepads[0];
+
+// create an instance of GamepadVibration
+GamepadVibration vibration = new GamepadVibration();
+
+// ... set vibration levels on vibration struct here
+
+// copy the GamepadVibration struct to the gamepad
+gamepad.Vibration = vibration;
+```
+
 ### <a name="using-the-vibration-motors"></a>Использование вибромоторов
 
 Левый и правый вибромоторы получают значения с плавающей запятой от 0,0 (без вибрации) до 1,0 (наиболее сильная вибрация). Интенсивность работы левого мотора задается с помощью свойства `LeftMotor` структуры [GamepadVibration][], а интенсивность работы правого мотора — с помощью свойства `RightMotor`.
@@ -306,6 +431,13 @@ GamepadVibration vibration;
 vibration.LeftMotor = 0.80;  // sets the intensity of the left motor to 80%
 vibration.RightMotor = 0.25; // sets the intensity of the right motor to 25%
 gamepad.Vibration = vibration;
+```
+
+```cs
+GamepadVibration vibration = new GamepadVibration();
+vibration.LeftMotor = 0.80;  // sets the intensity of the left motor to 80%
+vibration.RightMotor = 0.25; // sets the intensity of the right motor to 25%
+mainGamepad.Vibration = vibration;
 ```
 
 Помните, что эти два мотора не идентичны, и установка одинаковых значений для этих свойств не приведет к возникновению одинакового уровня вибрации в этих моторах. При любых значениях левый мотор создает сильную вибрацию более низкой частотой, чем мотор вправо, который&mdash;для одного и того же значения&mdash;создает позволяет получить более плавную вибрацию с более высокой частотой. Даже при максимальных значениях левый мотор не сможет обеспечить такую же высокую частоту вибрации, как правый, а правый — не сможет обеспечить такую же сильную вибрацию, как левый. При этом, так как моторы жестко прикреплены к корпусу геймпада, игроки не воспринимают вибрацию как идущую от двух разных источников, несмотря на то, что моторы имеют различные характеристики и вибрируют с разной интенсивностью. Это позволяет получить более широкий диапазон ощущений, чем в случае использования одинаковых моторов.
@@ -321,6 +453,13 @@ GamepadVibration vibration;
 vibration.LeftTrigger = 0.75;  // sets the intensity of the left trigger to 75%
 vibration.RightTrigger = 0.50; // sets the intensity of the right trigger to 50%
 gamepad.Vibration = vibration;
+```
+
+```cs
+GamepadVibration vibration = new GamepadVibration();
+vibration.LeftTrigger = 0.75;  // sets the intensity of the left trigger to 75%
+vibration.RightTrigger = 0.50; // sets the intensity of the right trigger to 50%
+mainGamepad.Vibration = vibration;
 ```
 
 В отличие от первых двух моторов, эти два вибромотора внутри триггеров идентичны друг другу, и установка одинаковых значений приведет к одинаковой вибрации этих моторов. Однако, так как эти моторы не имеют жесткого сцепления друг с другом, игроки чувствуют их вибрацию независимо. Это позволяет одновременно создавать с помощью обоих триггеров полностью независимые ощущения и помогает им передавать более подробную информацию, чем та информация, которую передают моторы в корпусе геймпада.

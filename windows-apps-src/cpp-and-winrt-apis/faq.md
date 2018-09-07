@@ -9,18 +9,22 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, вопросы и ответы, вопросы и ответы
 ms.localizationpriority: medium
-ms.openlocfilehash: 80c27332c05e285fdad6b8ec8deddd82d24a6e4a
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 9316a29a50970bdaa288a4744f3aab7d873cbe4e
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3416859"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3659568"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Ответы на часто задаваемые вопросы о [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Ответы на часто возникающие вопросы о разработке и использовании API среды выполнения Windows с помощью C++/WinRT.
 
 > [!NOTE]
 > Если ваш вопрос связан с сообщением об ошибке, которое вы увидели, см. также раздел [Устранение неполадок C++/WinRT](troubleshooting.md).
+
+## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>Почему не будет скомпилирован, создать новый проект? Я использую Visual Studio 2017 (версии 15.8.0 или более поздней версии) и пакет SDK версии 17134
+
+Если вы используете Visual Studio 2017 (версии 15.8.0 или более поздней версии) и пакет Windows SDK версии 10.0.17134.0 (Windows 10, версия 1803), выберите только что созданный C + +/ WinRT проекта может завершиться с ошибкой для компиляции с ошибкой «ошибка*C3861: «from_abi»: идентификатор не найти*» и с другими привилегированной в *base.h*ошибок. Решением является более поздней версии (более совместимые) либо целевой версии пакета SDK для Windows, или задать свойство проекта **C/C++** > **язык** > **режим совместимости: нет** (Кроме того, если **/ permissive-** отображается в свойство проекта ** C/C++** > **язык** > **командной строки** в **Дополнительных параметров**, удалите его).
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>Каковы требования для [расширения Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix)?
 [VSIX](https://aka.ms/cppwinrt/vsix) требует минимальную целевую версию пакета Windows SDK 10.0.17134.0 (Windows 10, версия 1803). Вам также потребуется Visual Studio 2017 (по крайней мере версия 15.6; рекомендуется версия не младше 15.7). Проект, использующий VSIX, можно определить по наличию `<CppWinRTEnabled>true</CppWinRTEnabled>`в `<PropertyGroup Label="Globals">` в файле `.vcxproj`. Дополнительные сведения см. в разделе [поддержка Visual Studio для C++/WinRT и VSIX ](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, видимость, частная аудитория, доступен, доступен для обнаружения
 ms.localizationpriority: medium
 ms.openlocfilehash: 07986353be41fcc9ef9dd9406fb0b30c4aa3d7f2
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3411341"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3662031"
 ---
 # <a name="choose-visibility-options"></a>Выбор параметров видимости
 
@@ -75,7 +75,7 @@ ms.locfileid: "3411341"
 
 ### <a name="make-this-product-available-and-discoverable-in-the-store"></a>Параметр "Сделать это приложение доступным и обнаруживаемым в Store"
 
-Это параметр по умолчанию. Оставьте этот параметр, если требуется, чтобы приложение в хранилище для клиентов найти через прямую ссылку приложения и/или другими способами, включая поиск, просмотр и включения в списки curated. 
+Это параметр по умолчанию. Оставьте этот параметр включенным, если вы хотите, чтобы ваше приложение в магазине для пользователей, для поиска приложения по прямой ссылке и с другими способами, включая поиск, просмотр и включения в списках каталога. 
 
 ### <a name="make-this-product-available-but-not-discoverable-in-the-store"></a>Параметр "Сделать это приложение доступным, но не обнаруживаемым в Store"
 

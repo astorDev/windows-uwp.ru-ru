@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, начать, начало, работы
 ms.localizationpriority: medium
-ms.openlocfilehash: 13aa1e61a2d81cfa7faed0236551dad41bd00057
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: ebb71b91af7e1490099898084f42ce04e698ef20
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3418823"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3658797"
 ---
 # <a name="get-started-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Начало работы с [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Чтобы приступить к работе с C++/WinRT, в этой статье описывается простой пример кода.
@@ -23,7 +23,13 @@ ms.locfileid: "3418823"
 > [!NOTE]
 > Сведения об установке и использовании расширения C++/WinRT для Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также свойств и целевых объектов MSBuild C++/WinRT) см. в разделе [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
-Создайте новый проект **консольного приложение для Windows (C++/WinRT)**. Отредактируйте файлы `pch.h` и `main.cpp` следующим образом.
+Создайте новый проект **консольного приложение для Windows (C++/WinRT)**.
+
+> [!IMPORTANT]
+> Если вы используете Visual Studio 2017 (версии 15.8.0 или более поздней версии) и пакет Windows SDK версии 10.0.17134.0 (Windows 10, версия 1803), выберите только что созданный C + +/ WinRT проекта может завершиться с ошибкой для компиляции с ошибкой «ошибка*C3861: «from_abi»: идентификатор не найти*» и с другими привилегированной в *base.h*ошибок. Решением является более поздней версии (более совместимые) либо целевой версии пакета SDK для Windows, или задать свойство проекта **C/C++** > **язык** > **режим совместимости: нет** (Кроме того, если **/ permissive-** отображается в свойство проекта ** C/C++** > **язык** > **командной строки** в **Дополнительных параметров**, удалите его).
+
+
+Отредактируйте файлы `pch.h` и `main.cpp` следующим образом.
 
 ```cppwinrt
 // pch.h

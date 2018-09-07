@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, стандартная, c++, cpp, winrt, проекция, создание, событие
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b52bf8e33bbf111dd02c695d8c3baf77e1338ac
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 1b0aa1a53ce69369c442cef7f3b5912631593242
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3413597"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3660656"
 ---
 # <a name="author-events-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Создание событий в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -28,7 +28,7 @@ ms.locfileid: "3413597"
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>Создание компонента среды выполнения Windows (BankAccountWRC)
 
-Начните с создания нового проекта в Microsoft Visual Studio. Создайте проект **Visual C++ компонента среды выполнения Windows (C++/ WinRT)** и назовите его *BankAccountWRC* (компонент среды выполнения Windows банковского счета).
+Начните с создания нового проекта в Microsoft Visual Studio. Создание **Visual C++** > **Универсальные приложения для Windows** > **компонента среды выполнения Windows (C + +/ WinRT)** проект и назовите его *BankAccountWRC* (для «банковский счет компонента среды выполнения Windows)».
 
 Созданный проект содержит файл с именем `Class.idl`. Переименуйте этот файл `BankAccount.idl` (Переименование `.idl` файл автоматически переименует зависит от `.h` и `.cpp` файлы, слишком). Замените содержимое `BankAccount.idl` с описанием ниже.
 
@@ -101,7 +101,7 @@ namespace winrt::BankAccountWRC::implementation
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>Создайте приложение основных компонентов (BankAccountCoreApp) для тестирования компонента среды выполнения Windows.
 
-Теперь создайте новый проект (в вашем решении `BankAccountWRC` или в новом). Создайте проект **приложения основных компонентов Visual C++ (C++/WinRT)** и назовите его *BankAccountCoreApp*.
+Теперь создайте новый проект (в вашем решении `BankAccountWRC` или в новом). Создание **Visual C++** > **Универсальные приложения для Windows** > **приложения основных компонентов (C + +/ WinRT)** проект и назовите его *BankAccountCoreApp*.
 
 Добавьте ссылку и перейдите к `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (или добавьте ссылку на проект, если два проекта находятся в одном решении). Нажмите кнопку **Добавить**, а затем кнопку **OK**. Теперь выполните сборку BankAccountCoreApp. Маловероятно, что вы видите сообщение, файл полезных данных `readme.txt` не существует, исключите этот файл из проекта компонента среды выполнения Windows, заново выполните сборку, а затем снова выполните сборку BankAccountCoreApp.
 

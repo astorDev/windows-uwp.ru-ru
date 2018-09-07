@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, описание, страница store, заметки о выпуске, заголовок
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3417512"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3661736"
 ---
 # <a name="create-app-store-listings"></a>Создание описаний приложения в Store
 
