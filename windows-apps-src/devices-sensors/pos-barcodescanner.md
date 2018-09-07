@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cd6f8391de9375ddd1c20471dd10c37e99f782f
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3400609"
+ms.locfileid: "3411850"
 ---
 # <a name="barcode-scanner"></a>Сканер штрихкодов
 
@@ -27,7 +27,7 @@ ms.locfileid: "3400609"
 | [Настройка сканера штрихкодов](../devices-sensors/pos-barcodescanner-configure.md)  | Узнайте, как настроить сканер штрихкодов его предполагаемым. |
 | [Использование триггера программного обеспечения](../devices-sensors/pos-barcodescanner-software-trigger.md) | Узнайте, как управлять действием сканирования из программного обеспечения. |
 | [Работа с символиками](pos-barcodescanner-symbologies.md) | Узнайте, как определить, какие типы штрихкодов поддерживает сканер штрихкодов, и как управлять тем, какие типы штрихкодов ваш сканер штрихкодов будет распознавать. |
-| [Получение и понимать данные штрих-кода](pos-barcodescanner-scan-data.md) | Узнайте, как получить и интерпретации данных штрих-кода при сканировании. |
+| [Получение и понять данные штрих-кода](pos-barcodescanner-scan-data.md) | Узнайте, как получить и интерпретации данных при сканировании штрихкода. |
 | [Сканер штрихкодов на базе камеры](pos-camerabarcode.md) | Сканирование штрихкодов с помощью стандартной камеры из приложения универсальной платформы Windows. Требуется обновление Windows 10 за апрель 2018 года (сборка 17134 или более поздняя версия). |
 |
  

@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c294dedc8e19605bc2cee0308022bed8624df57e
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3401756"
+ms.locfileid: "3417939"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Что нового в документации для разработчиков Windows в августе 2018 г.
 
@@ -32,7 +32,7 @@ ms.locfileid: "3401756"
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [кнопкой-разделителем](../design/controls-and-patterns/buttons.md#create-a-split-button)и [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) предоставляют кнопок с специальные возможности для улучшения пользовательского интерфейса вашего приложения.
 
-![Разворачивающаяся кнопка для выбора основного цвета](../design/controls-and-patterns/images/split-button-rtb.png)
+![Разворачивающуюся кнопку для выбора цвета переднего плана](../design/controls-and-patterns/images/split-button-rtb.png)
 
 * NavigationView теперь поддерживает [Основные навигации](../design/controls-and-patterns/navigationview.md), для случаев, в которых ваше приложение имеет меньшего количества параметров навигации и потребуется больше места для содержимого вашего приложения.
 
