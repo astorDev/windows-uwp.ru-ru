@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, XAML, пользовательский, шаблон, элемент управления
 ms.localizationpriority: medium
-ms.openlocfilehash: 25e17888c3292cbaf7b84c8a4bdd7c411530b558
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 4354f3371807a7000160976b6f8af5b87e1ad3f8
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3422199"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3664861"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>(XAML шаблонных) элементов управления с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -27,7 +27,7 @@ ms.locfileid: "3422199"
 Одним из наиболее важных возможностей универсальной платформы Windows (UWP) является гибкость, что в стек пользовательского интерфейса (UI) для создания пользовательских элементов управления, в зависимости от типа XAML [**элемента управления**](/uwp/api/windows.ui.xaml.controls.control) . Платформа пользовательского интерфейса XAML предоставляет функции, такие как [пользовательские свойства зависимостей](/windows/uwp/xaml-platform/custom-dependency-properties) и присоединенных свойств и [шаблоны элементов управления](/windows/uwp/design/controls-and-patterns/control-templates), которые упрощают создание многофункциональных и настраиваемых элементов управления. В этом разделе описана инструкции по созданию пользовательского элемента управления (шаблона) с помощью C + +/ WinRT.
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>Создайте пустое приложение (BgLabelControlApp)
-Начните с создания нового проекта в Microsoft Visual Studio. Создание **пустое приложение Visual C++ (C + +/ WinRT)** проект и назовите его *BgLabelControlApp*.
+Начните с создания нового проекта в Microsoft Visual Studio. Создание **Visual C++** > **Универсальные приложения для Windows** > **пустое приложение (C + +/ WinRT)** проект и назовите его *BgLabelControlApp*.
 
 Мы создадим новый класс, представляющий пользовательского элемента управления (шаблона). Класс создается и используется в рамках одной и той же единицы компиляции. Но мы хотим иметь возможность создавать экземпляры этот класс из разметки XAML, поэтому, это будет представлять собой класс среды выполнения. Кроме того, мы применим C++/WinRT для его создания и использования.
 

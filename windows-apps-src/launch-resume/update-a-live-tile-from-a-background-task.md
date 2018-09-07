@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 3042a6f52453fa4a4c50334b605f637f1dec92aa
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3413584"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3664716"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Обновление живой плитки из фоновой задачи
 
