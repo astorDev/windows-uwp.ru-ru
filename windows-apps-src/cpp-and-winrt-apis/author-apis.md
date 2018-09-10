@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: 9829144a23d96f9bb53332b12181b67ba6a58565
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 051c24e0acc645150f4ca7ff74480f7de3ce456b
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3658843"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3825334"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Создание API-интерфейсов с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -380,13 +380,13 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 
 ## <a name="important-apis"></a>Важные API
 * [Шаблон структуры winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::com_ptr::copy_from](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
+* [функция WinRT::com_ptr::copy_from](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
 * [Шаблон функции winrt::from_abi](/uwp/cpp-ref-for-winrt/from-abi)
 * [Шаблон функции WinRT::get_self](/uwp/cpp-ref-for-winrt/get-self)
 * [Шаблон структуры winrt::implements](/uwp/cpp-ref-for-winrt/implements)
 * [Шаблон функции winrt::make](/uwp/cpp-ref-for-winrt/make)
 * [Шаблон функции winrt::make_self](/uwp/cpp-ref-for-winrt/make-self)
-* [winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [Функция winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>Статьи по теме
 * [Использование API-интерфейсов в C++/WinRT](consume-apis.md)

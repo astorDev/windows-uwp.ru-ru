@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, маркер, событие, делегат
 ms.localizationpriority: medium
-ms.openlocfilehash: a29c095e49b49baa63bd547c0bb928ad7f78aa86
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 7af66c3f0586f2fb99a2a742f6da0144ed69d253
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3664657"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3821998"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Обработка событий с помощью делегатов в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 В этом разделе показано, как регистрировать и отзывать делегаты обработки событий с помощью C++/WinRT. Вы можете обрабатывать события с помощью любого стандартного подобного функции объекта C++.
@@ -264,7 +264,7 @@ void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const
 В предложении захвата лямбда-функции создается временная переменная, представляющая собой слабую ссылки на объект *this*. В теле лямбда-функции, если можно получить строгую ссылку на объект *this*, вызывается функция **OnCompositionScaleChanged**. Таким образом внутри **OnCompositionScaleChanged** можно безопасно использовать объект *this*.
 
 ## <a name="important-apis"></a>Важные API
-* [winrt::auto_revoke_t](/uwp/cpp-ref-for-winrt/auto-revoke-t)
+* [Структура маркера WinRT::auto_revoke_t](/uwp/cpp-ref-for-winrt/auto-revoke-t)
 * [Функция winrt::implements::get_weak](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
 * [Функция winrt::implements::get_strong](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)
 

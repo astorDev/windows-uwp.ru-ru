@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, XAML, пользовательский, шаблон, элемент управления
 ms.localizationpriority: medium
-ms.openlocfilehash: 4354f3371807a7000160976b6f8af5b87e1ad3f8
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: fd1843afc58bc758db1c6e575f3733bdc4f47b4e
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3664861"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3821038"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>(XAML шаблонных) элементов управления с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -192,10 +192,10 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 *Переопределяемые* функции отсутствует себя по-разному в различных языковых проекции. В C# например, переопределяемые функции обычно отображаются как защищенные виртуальные функции. В C + +/ WinRT, они не защищенные ни виртуальный, но по-прежнему можно переопределить их и предоставить собственную реализацию, как показано выше.
 
 ## <a name="important-apis"></a>Важные API
-* [Элемент управления](/uwp/api/windows.ui.xaml.controls.control)
-* [DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty)
-* [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)
-* [UIElement](/uwp/api/windows.ui.xaml.uielement)
+* [Класс элементов управления](/uwp/api/windows.ui.xaml.controls.control)
+* [Класс DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty)
+* [Класс FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)
+* [Класс UIElement](/uwp/api/windows.ui.xaml.uielement)
 
 ## <a name="related-topics"></a>Еще по теме
 * [Шаблоны элементов управления](/windows/uwp/design/controls-and-patterns/control-templates)
