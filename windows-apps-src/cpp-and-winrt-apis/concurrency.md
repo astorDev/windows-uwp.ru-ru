@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, параллелизм, async, асинхронный, асинхронность
 ms.localizationpriority: medium
 ms.openlocfilehash: 85071fb28cb87c991e2f5ba7f64b681c6850c819
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3824798"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3851484"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Параллельная обработка и асинхронные операции с использованием [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 > [!NOTE]
@@ -69,7 +69,7 @@ int main()
 C++/WinRT интегрирует сопрограммы C++ в модель программирования для обеспечения естественного способа совместно ожидать результата. Вы можете создать свою собственную асинхронную операцию среды выполнения Windows путем написания сопрограммы. В следующем примере кода **ProcessFeedAsync** является сопрограммой.
 
 > [!NOTE]
-> Существует функция **get** на C + +/ WinRT проекции введите **winrt::Windows::Foundation::IAsyncAction**, поэтому можно вызывать функции в C + +/ WinRT проекта. Не удастся найти функцию в списке член интерфейса [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) , так как **получить** не является частью области приложения двоичный интерфейс (ABI) фактический тип среды выполнения Windows **IAsyncAction**.
+> Функция **get** существует на C + +/ WinRT проекции введите **winrt::Windows::Foundation::IAsyncAction**, поэтому можно вызвать функцию в C + +/ WinRT проекта. Вы найдете в списке как член интерфейса [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) , функция не так, как **получить** не является частью поверхности приложения двоичный интерфейс (ABI) фактического типа среды выполнения Windows **IAsyncAction**.
 
 ```cppwinrt
 // main.cpp
@@ -322,7 +322,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 
 ## <a name="important-apis"></a>Важные API
 * [Класс Concurrency::Task](/cpp/parallel/concrt/reference/task-class)
-* [IAsyncAction интерфейс](/uwp/api/windows.foundation.iasyncaction)
+* [Интерфейс IAsyncAction](/uwp/api/windows.foundation.iasyncaction)
 * [IAsyncActionWithProgress&lt;TProgress&gt; интерфейс](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
 * [IAsyncOperation&lt;TResult&gt; интерфейс](/uwp/api/windows.foundation.iasyncoperation_tresult_)
 * [IAsyncOperationWithProgress&lt;TResult, TProgress&gt; интерфейс](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)

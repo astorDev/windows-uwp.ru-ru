@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, данные, типы
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b004b5dfbeaa1d123398db780582382857eec25
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3823628"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3846648"
 ---
 # <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Стандартные типы данных [C++ и C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 С помощью C++/WinRT можно вызывать API среды выполнения Windows с использованием стандартных типов данных C++, включая некоторые типы данных стандартной библиотеки C++. API-интерфейсы можно передать стандартных строк (см. в разделе [Обработка строк в C + +/ WinRT](strings.md)), и можно передать инициализатора списки и стандартных контейнеров API, которые ожидают семантически эквивалентные коллекции.

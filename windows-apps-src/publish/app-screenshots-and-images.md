@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, анонс, видео, снимок экрана, изображение, значок, описание в Store, изображения для описания в Store
 ms.localizationpriority: medium
 ms.openlocfilehash: d787ac620f9d0114d67d85def758416afd9f5f15
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3824088"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3846388"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Снимки экрана, изображения и трейлеры приложения
 

@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: c0a3892348baff56bbef8d40dd9aade4e612c50d
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3824248"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3847548"
 ---
 # <a name="makepriexe-command-line-options"></a>Параметры командной строки MakePRI.exe
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) имеет следующий набор команд: `createconfig`, `dump`, `new`, `resourcepack` и `versioned`. В данном разделе описаны параметры командной строки для их использования.
 
 > [!NOTE]
-> MakePri.exe устанавливается, когда флажок **Windows SDK для приложений, управляемых UWP** при установке Windows Software Development Kit. Устанавливается в папку `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (также как и в папках с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe устанавливается при проверке параметр **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 ## <a name="makepri-commands"></a>Команды MakePri
 

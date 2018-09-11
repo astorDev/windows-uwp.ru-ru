@@ -11,11 +11,11 @@ keywords: Windows 10, UWP, сегмент, сегменты, целевая гр
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ec3bdd1d46927c9d6037906ebdb07e7a5c8f3f1
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3825944"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3847388"
 ---
 # <a name="create-customer-segments"></a>Создание сегментов пользователей
 

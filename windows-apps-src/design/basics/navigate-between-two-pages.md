@@ -18,11 +18,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 02b2c0d24c3f963025774c87c0c0a1c588c8a249
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3820408"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3847568"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Реализация навигации между двумя страницами
 

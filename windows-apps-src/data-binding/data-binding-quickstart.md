@@ -10,14 +10,17 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e070acdfcc6dded12ae48cc34fe46f099da6401
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.openlocfilehash: 9cf12bc5c875e4ce3be2d627c87e15770e4cc214
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3821068"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3846618"
 ---
 # <a name="data-binding-overview"></a>Общие сведения о привязке данных
+
+> [!NOTE]
+> **Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.**
 
 В этом разделе показано, как привязать элемент управления (или другой элемент пользовательского интерфейса) к отдельному элементу или как привязать элемент управления к коллекции элементов в приложении универсальной платформы Windows (UWP). Кроме того, здесь объясняется, как управлять обработкой элементов, реализовать представление подробностей на основе выбранных данных и преобразовать данные для отображения. Дополнительные сведения см. в статье [Подробно о привязке данных](data-binding-in-depth.md).
 
@@ -144,9 +147,9 @@ private:
 Quickstart::Recording RecordingViewModel::DefaultRecording()
 {
     Windows::Globalization::Calendar releaseDateTime;
+    releaseDateTime.Year(1761);
     releaseDateTime.Month(1);
     releaseDateTime.Day(1);
-    releaseDateTime.Year(1761);
     m_defaultRecording = winrt::make<Recording>(L"Wolfgang Amadeus Mozart", L"Andante in C for Piano", releaseDateTime);
     return m_defaultRecording;
 }
@@ -203,9 +206,9 @@ namespace Quickstart
         RecordingViewModel()
         {
             Windows::Globalization::Calendar^ releaseDateTime = ref new Windows::Globalization::Calendar();
+            releaseDateTime->Year = 1761;
             releaseDateTime->Month = 1;
             releaseDateTime->Day = 1;
-            releaseDateTime->Year = 1761;
             this->defaultRecording = ref new Recording{ L"Wolfgang Amadeus Mozart", L"Andante in C for Piano", releaseDateTime };
         }
         property Recording^ DefaultRecording
@@ -312,7 +315,7 @@ namespace Quickstart
 
 Распространенный сценарий— привязка к коллекции бизнес-объектов. В C# и Visual Basic универсальный класс [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) является хорошим вариантом коллекции для привязки данных, поскольку реализует интерфейсы [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) и [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx). Эти интерфейсы предоставляют уведомления об изменении для привязок при добавлении или удалении элементов, а также при изменении свойства самого списка. Если необходимо обновлять привязанные элементы управления при изменениях свойств объектов в коллекции, бизнес-объект также должен реализовать интерфейс **INotifyPropertyChanged**. Дополнительные сведения см. в статье [Подробно о привязке данных](data-binding-in-depth.md).
 
-Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), а затем вы можете прочитать о привязке к отслеживаемой коллекции в [элементы управления XAML; привязка к C + +/ WinRT коллекции](/windows/uwp/cpp-and-winrt-apis/binding-collection).
+Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), а затем Дополнительные сведения о привязке к отслеживаемой коллекции в [элементы управления XAML; привязка к C + +/ WinRT коллекции](/windows/uwp/cpp-and-winrt-apis/binding-collection). Если вы Прочитайте этот раздел, во-первых, затем намерение C + +/ WinRT описание кода, ниже будет более четкими.
 
 В следующем примере выполняется привязка класса [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) к коллекции объектов `Recording`. Сначала добавим коллекцию к нашей модели представления. Просто добавьте эти новые члены в класс **RecordingViewModel**.
 
@@ -320,9 +323,9 @@ namespace Quickstart
 public class RecordingViewModel
 {
     ...
-        private ObservableCollection<Recording> recordings = new ObservableCollection<Recording>();
+    private ObservableCollection<Recording> recordings = new ObservableCollection<Recording>();
     public ObservableCollection<Recording> Recordings{ get{ return this.recordings; } }
-        public RecordingViewModel()
+    public RecordingViewModel()
     {
         this.recordings.Add(new Recording(){ ArtistName = "Johann Sebastian Bach",
             CompositionName = "Mass in B minor", ReleaseDateTime = new DateTime(1748, 7, 8) });
@@ -332,6 +335,49 @@ public class RecordingViewModel
             CompositionName = "Serse", ReleaseDateTime = new DateTime(1737, 12, 3) });
     }
 }
+```
+
+```cppwinrt
+// RecordingViewModel.idl
+// Add this property:
+...
+Windows.Foundation.Collections.IVector<IInspectable> Recordings{ get; };
+...
+
+// RecordingViewModel.h
+// Change the constructor declaration, and add this property and this field:
+...
+    RecordingViewModel();
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Recordings();
+
+private:
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> m_recordings;
+...
+
+// RecordingViewModel.cpp
+// Implement like this:
+...
+RecordingViewModel::RecordingViewModel()
+{
+    std::vector<Windows::Foundation::IInspectable> recordings;
+
+    Windows::Globalization::Calendar releaseDateTime;
+    releaseDateTime.Month(7); releaseDateTime.Day(8); releaseDateTime.Year(1748);
+    recordings.push_back(winrt::make<Recording>(L"Johann Sebastian Bach", L"Mass in B minor", releaseDateTime));
+
+    releaseDateTime = Windows::Globalization::Calendar{};
+    releaseDateTime.Month(11); releaseDateTime.Day(2); releaseDateTime.Year(1805);
+    recordings.push_back(winrt::make<Recording>(L"Ludwig van Beethoven", L"Third Symphony", releaseDateTime));
+
+    releaseDateTime = Windows::Globalization::Calendar{};
+    releaseDateTime.Month(3); releaseDateTime.Day(12); releaseDateTime.Year(1737);
+    recordings.push_back(winrt::make<Recording>(L"George Frideric Handel", L"Serse", releaseDateTime));
+
+    m_recordings = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>(std::move(recordings));
+}
+
+Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> RecordingViewModel::Recordings() { return m_recordings; }
+...
 ```
 
 ```cpp
@@ -345,21 +391,21 @@ public:
     {
         ...
         releaseDateTime = ref new Windows::Globalization::Calendar();
+        releaseDateTime->Year = 1748;
         releaseDateTime->Month = 7;
         releaseDateTime->Day = 8;
-        releaseDateTime->Year = 1748;
         Recording^ recording = ref new Recording{ L"Johann Sebastian Bach", L"Mass in B minor", releaseDateTime };
         this->Recordings->Append(recording);
         releaseDateTime = ref new Windows::Globalization::Calendar();
+        releaseDateTime->Year = 1805;
         releaseDateTime->Month = 2;
         releaseDateTime->Day = 11;
-        releaseDateTime->Year = 1805;
         recording = ref new Recording{ L"Ludwig van Beethoven", L"Third Symphony", releaseDateTime };
         this->Recordings->Append(recording);
         releaseDateTime = ref new Windows::Globalization::Calendar();
+        releaseDateTime->Year = 1737;
         releaseDateTime->Month = 12;
         releaseDateTime->Day = 3;
-        releaseDateTime->Year = 1737;
         recording = ref new Recording{ L"George Frideric Handel", L"Serse", releaseDateTime };
         this->Recordings->Append(recording);
     }
@@ -393,7 +439,7 @@ public:
 
 ![Привязка списка](images/xaml-databinding1.png)
 
-Чтобы решить эту проблему, мы можем переопределить метод [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) таким образом, чтобы он возвращал значение **OneLineSummary**, или указать шаблон данных. Шаблон данных— более распространенное и, возможно, гибкое решение. Шаблон данных задается с помощью свойства [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) элемента управления содержимым или с помощью свойства [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) элемента управления элементами. Ниже приведены два способа разработки шаблона данных для класса **Recording**, а также показан результат его применения.
+Чтобы решить эту проблему, мы либо можно переопределить [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) возвращает значение **OneLineSummary**или предусмотрен шаблон данных. Шаблон данных — более обычных решения и более гибкое один. Шаблон данных задается с помощью свойства [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) элемента управления содержимым или с помощью свойства [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) элемента управления элементами. Ниже приведены два способа разработки шаблона данных для класса **Recording**, а также показан результат его применения.
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -433,17 +479,31 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 
 Вы можете отобразить все сведения объектов **Recording** в элементах [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878), но они занимают много места. Вместо этого в элементе можно отобразить данные об объеме, достаточном для определения элемента. Затем, когда пользователь выберет содержимое, вы можете отобразить все сведения о выбранном элементе в отдельном элементе пользовательского интерфейса, известном как представление подробностей. Оно также называется главным представлением либо представлением списка или сведений.
 
-Этот вопрос можно решить двумя способами. Вы можете привязать представление подробностей к свойству [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) класса [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Вы также можете использовать класс [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833): привязать как класс **ListView**, так и представление подробностей к классу **CollectionViewSource** (который обеспечит обработку выбранного в настоящее время элемента). Оба способа описаны ниже. Они дают аналогичные результаты, показанные на иллюстрации.
+Этот вопрос можно решить двумя способами. Вы можете привязать представление подробностей к свойству [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) класса [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Или можно использовать [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), в этом случае привязать **ListView** и представление подробностей к **CollectionViewSource** (проводя так позаботится элемента выбранного в настоящее время для вас). Оба способа показаны ниже, и оба они дают аналогичные результаты (как показано на рисунке).
 
 > [!NOTE]
 > Пока что в этом разделе мы использовали только [расширение разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), но для обоих приведенных ниже методов требуется более гибкое (но менее производительное) [расширение разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782).
 
+> [!IMPORTANT]
+> Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) (см. ниже) доступна только в том случае, если вы установили [Windows 10 SDK предварительную сборку 17661 пакета](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)или более поздней версии. Без этого атрибута необходимо реализовывать интерфейсы [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) и [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) , чтобы иметь возможность использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) .
 
-Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), вам потребуется реализовать [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) и [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) интерфейсы, чтобы иметь возможность использовать расширение разметки {Binding}.
-
-Если вы используете расширениякомпонентов Visual C++ (C++/CX), вам потребуется добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) в класс **Recording**, так как мы будем использовать [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782).
+Если вы используете C + +/ расширения компонентов WinRT или Visual C++ (C + +/ CX), так как мы будем использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , вам потребуется добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) в классе **записи** .
 
 Сначала рассмотрим способ с использованием свойства [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770).
+
+```csharp
+// No code changes necessary for C#.
+```
+
+```cppwinrt
+// Recording.idl
+// Add this attribute:
+...
+[Windows.UI.Xaml.Data.Bindable]
+runtimeclass Recording : Windows.UI.Xaml.DependencyObject
+...
+```
+
 ```cpp
 [Windows::UI::Xaml::Data::Bindable]
 public ref class Recording sealed
@@ -493,11 +553,8 @@ public ref class Recording sealed
 
 ```xml
 ...
-
 <ListView ItemsSource="{Binding Source={StaticResource RecordingsCollection}}">
-
 ...
-
 <StackPanel DataContext="{Binding Source={StaticResource RecordingsCollection}}" ...>
 ...
 ```
@@ -548,11 +605,9 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
     <local:StringFormatter x:Key="StringFormatterValueConverter"/>
 </Page.Resources>
 ...
-
 <TextBlock Text="{Binding ReleaseDateTime,
     Converter={StaticResource StringFormatterValueConverter},
     ConverterParameter=Released: \{0:d\}}"/>
-
 ...
 ```
 
@@ -561,7 +616,7 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 ![отображение даты в пользовательском форматировании](images/xaml-databinding5.png)
 
 > [!NOTE]
-> Начиная с Windows 10 версии 1607, платформа XAML предоставляет встроенный преобразователь Boolean в Visibility. Преобразователь сопоставляет значение **true** значению перечисления **Visible**, а значение **false** значению **Collapsed**, поэтому можно осуществить привязку свойства Visibility к Boolean без создания преобразователя. Для использования встроенного преобразователя минимальная версия целевого пакета SDK вашего приложения должна быть 14393 или более поздней. Вы не сможете использовать преобразователь, если ваше приложение предназначено для более ранних версий Windows 10. Дополнительные сведения о целевых версиях см. в статье [Адаптивный к версии код](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Начиная с Windows 10 версии 1607, платформа XAML предоставляет встроенный преобразователь Boolean в Visibility. Преобразователь сопоставляет **значение true,** значение перечисления **Visibility.Visible** и **значение false,** чтобы **Visibility.Collapsed** , чтобы привязать свойство Visibility к Boolean без создания преобразователя. Для использования встроенного преобразователя минимальная версия целевого пакета SDK вашего приложения должна быть 14393 или более поздней. Вы не сможете использовать преобразователь, если ваше приложение предназначено для более ранних версий Windows 10. См. Дополнительные сведения о версиях целевой [версии адаптивного кода](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 ## <a name="see-also"></a>См. также
-- [Привязка данных](index.md)
+* [Привязка данных](index.md)

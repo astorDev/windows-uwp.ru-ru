@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c021bb2c094aafc9b534acef9b009817669461
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3825814"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3846238"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>Создание событий в компонентах среды выполнения Windows
 > [!NOTE]
