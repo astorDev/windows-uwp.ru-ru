@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use Notification Listener to access all of the user's notifications.
 title: Прослушиватель уведомлений
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, прослушиватель уведомлений, usernotificationlistener, документация, уведомления о доступе
 ms.localizationpriority: medium
-ms.openlocfilehash: 00774817574c209826050a084bba77084d404ace
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: f4d8cb9ef7589bd8f0c56586ab8fcfec7c1f01e3
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674621"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3850588"
 ---
 # <a name="notification-listener-access-all-notifications"></a>Прослушиватель уведомлений: доступ ко всем уведомлениям
 
@@ -281,19 +281,17 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>Событие переднего плана для добавленных/удаленных уведомлений
 
 > [!IMPORTANT] 
-> Известная проблема: событие переднего плана не работает (и мы не планируем решать эту проблему в ближайшем будущем). 
+> Известная проблема: событие переднего плана приведет к цикл ЦП в последних версиях Windows и ранее не работает до этого. НЕ используйте событие переднего плана. В ближайшие обновления для Windows мы будет устранить эту проблему.
 
-Если ваш сценарий требует события переднего плана, сообщите нам. Однако большинство сценариев (если не все) должны в любом случае использовать фоновую задачу, поскольку велика вероятность, что для событий уведомлений ваше приложение должно быть выведено из неактивности в фоновом режиме. Например, приложение вашего носимого аксессуара редко выполняется на переднем плане, ему нужна информация о новых уведомлениях из фонового режима.
-
-Кроме того, благодаря [однопроцессной модели](../../../launch-resume/create-and-register-an-inproc-background-task.md) легко использовать триггеры фоновых задач из приложения переднего плана. Поэтому если вам нужно получить события переднего плана. просто используйте фоновый триггер с однопроцессной моделью.
+Вместо использования событие переднего плана, используйте код, показанный ранее для фоновой задачи [модель с одним процессом](../../../launch-resume/create-and-register-an-inproc-background-task.md) . Фоновая задача также позволяют получать уведомления об изменении обоих во время работы приложения скрытые или не выполняется.
 
 ```csharp
-// Subscribe to foreground event
+// Subscribe to foreground event (DON'T USE THIS)
 listener.NotificationChanged += Listener_NotificationChanged;
  
 private void Listener_NotificationChanged(UserNotificationListener sender, UserNotificationChangedEventArgs args)
 {
-    // NOTE: This event DOES NOT WORK. Use the background task instead.
+    // NOTE: This event WILL CAUSE CPU LOOPS, DO NOT USE. Use the background task instead.
 }
 ```
 

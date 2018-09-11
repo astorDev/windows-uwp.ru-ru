@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, COM, компонент, класс, интерфейс
 ms.localizationpriority: medium
 ms.openlocfilehash: 598d0e7b4a374c18ece48f52947cec64a0f79dab
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3824828"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3848298"
 ---
 # <a name="consume-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Использование компонентов COM с [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 

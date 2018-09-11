@@ -18,11 +18,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: ce64e6002bd71bd0806fb5574dc404ac4df856a9
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3825354"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3848098"
 ---
 # <a name="command-bar"></a>Панель команд
 

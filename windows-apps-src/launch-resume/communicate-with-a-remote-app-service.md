@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: устройства с Windows 10, uwp, подключенных, удаленными системами, Рим, project rome, фоновая задача, службы приложений
 ms.localizationpriority: medium
 ms.openlocfilehash: 72a8a02d14a4fa9287c987150a526745b294b65f
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3825404"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3849278"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>Обмен данными с удаленной службой приложения
 

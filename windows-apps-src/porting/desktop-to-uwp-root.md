@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d6565f56f7105872d14b7b1ce768f4240e0b83b
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.openlocfilehash: 9ded8fb8a9d391ec48b46b0795b901dc403e1f30
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3821308"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3848798"
 ---
 # <a name="desktop-bridge"></a>Мост для классических приложений
 
@@ -74,7 +74,7 @@ Desktop App Converter переводит действия установщика
 
 :heavy_check_mark: Регистрация ваших общедоступных COM-серверов.
 
-:heavy_check_mark: Создание сертификата, который можно использовать для запуска вашего приложения.
+: heavy_check_mark: создает сертификат, который можно использовать для запуска вашего приложения.
 
 :heavy_check_mark: Проверка вашего приложения на соответствие требованиям моста для классических приложений и Microsoft Store.
 

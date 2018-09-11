@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to create multi-step interactions in your notifications.
 title: Всплывающее уведомление с ожидающей активацией обновления
 label: Toast with pending update activation
@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, всплывающее уведомление, ожидающее обновления, pendingupdate, многоэтапное взаимодействие, многоэтапная интерактивность
 ms.localizationpriority: medium
-ms.openlocfilehash: ae99e758a8497cce4395fd7cf4f79533fd6a27e9
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
-ms.translationtype: HT
+ms.openlocfilehash: f5efccbb73758d0e6541e59812801c22a22c87b5
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
-ms.locfileid: "1523353"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3847728"
 ---
 # <a name="toast-with-pending-update-activation"></a>Всплывающее уведомление с ожидающей активацией обновления
 

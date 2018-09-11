@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c03d99781114c4fefff04cc25930748ec16182f
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3823058"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3849718"
 ---
 # <a name="storyboarded-animations"></a>Раскадрованные анимации
 

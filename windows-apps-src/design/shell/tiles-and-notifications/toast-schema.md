@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: The following article describes all of the properties and elements within toast content.
 title: Схема содержимого всплывающего уведомления
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e51f9e837b64e019c4b6dc1d87e5bf99f5bcf5bb
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
-ms.translationtype: HT
+ms.openlocfilehash: ad1700d58ab3568aa3aefa46b5950d0a8bf3c320
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
-ms.locfileid: "1522953"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3850198"
 ---
 # <a name="toast-content-schema"></a>Схема содержимого всплывающего уведомления
 
@@ -475,7 +475,7 @@ TextStacking задает вертикальное выравнивание со
 | Свойство | Тип | Обязательный | Описание |
 |---|---|---|---|
 | **Id** | строка | true | Идентификатор, созданный разработчиком, который уникально определяет этот заголовок. Если два уведомления имеют один и тот же идентификатор заголовка, то они будет отображаться под одним и тем же заголовком в центре уведомлений. |
-| **Title** | строка | true | Название для заголовка. |
+| **Title** | string | true | Название для заголовка. |
 | **Arguments**| строка | true | Возвращает или задает определяемую разработчиком строку аргументов, которая возвращается приложению, когда пользователь щелкает этот заголовок. Не может быть равно null. |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | Возвращает или задает тип активации этого заголовка при его нажатии. По умолчанию — Foreground (передний план). Обратите внимание, что поддерживаются только варианты Foreground и Protocol. |
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | Возвращает и получает дополнительные параметры активации заголовка всплывающего уведомления. |

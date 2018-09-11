@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: ac7affb044c6b60a249b154cc62379c7517161b0
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3825148"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3848808"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>Переход на [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) из C++/CX
 В это разделе объясняется, как перенести код [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) в его эквивалент на C++/WinRT.

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, подключенных устройств, удаленными системами, Рим, project rome
 ms.localizationpriority: medium
 ms.openlocfilehash: 02d04074ece0033da8c3454a95bc35af201903f3
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3823248"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3847768"
 ---
 # <a name="discover-remote-devices"></a>Обнаружение удаленных устройств
 Ваше приложение может использовать беспроводную сеть, Bluetooth и облачное подключение для обнаружения устройств с Windows, вход с которых выполнен с той же учетной записью Майкрософт, что и у обнаруживающего устройства. Обнаружение удаленных устройств возможно без установки на них какого-либо специального программного обеспечения.

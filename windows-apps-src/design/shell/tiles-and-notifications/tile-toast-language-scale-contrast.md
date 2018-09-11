@@ -10,16 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b0992a8d86b17648b748bb792fdf250f29801d0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 87aafe36d05298a8fa157426e39c530190f98908
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673221"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3849448"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности
 
-Плитки и всплывающие уведомления могут загружать строки и изображения, адаптированные по контексту языка, [коэффициента масштабирования дисплея](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), темы, высокой контрастности и другим аспектам. Общие сведения об использовании квалификаторов в именах файлов ресурсов изображений приводятся в разделах [Адаптация ресурсов для языка, масштаба и других квалификаторов](../../../app-resources/tailor-resources-lang-scale-contrast.md) и [Таблицы размеров ресурсов](app-assets.md#asset-size-tables).
+Плитки и всплывающие уведомления могут загружать строки и изображения, адаптированные по контексту языка, [коэффициента масштабирования дисплея](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), темы, высокой контрастности и другим аспектам. О том, как Использование квалификаторов в именах файлов ресурсов приводятся [адаптация ресурсов с учетом языка, масштаба и других квалификаторов](../../../app-resources/tailor-resources-lang-scale-contrast.md) и [значков приложений и логотипы](/windows/uwp/design/style/app-icons-and-logos).
 
 Дополнительные сведения о преимуществах локализации приложений см. в разделе [Глобализация и локализация](../../globalizing/globalizing-portal.md).
 
@@ -74,7 +74,7 @@ ms.locfileid: "1673221"
 
 Это строки запросов, которые можно использовать.
 
-| Квалификатор | Строка запроса | Пример |
+| Квалификатор | Строка запроса | Пример. |
 | --------- | ------------ | ------- |
 | Масштаб | ms-scale | ?ms-scale=400 |
 | Язык | ms-lang | ?ms-lang=en-US |
