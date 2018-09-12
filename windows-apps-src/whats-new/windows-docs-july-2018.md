@@ -1,7 +1,7 @@
 ---
 author: QuinnRadich
 title: Что нового в документации Windows в июле 2018 г. — Разработка приложений UWP
-description: Новые возможности, видео, примеры и руководства для разработчиков добавлены в документации разработчика Windows 10 июля 2018 г.
+description: Новые возможности, видео, примеры и руководства для разработчиков добавлены в документацию для июля 2018 г. разработчиков Windows 10.
 keywords: новые возможности, обновления, компоненты, руководство разработчика, Windows 10 июля
 ms.author: quradic
 ms.date: 7/11/2018
@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f41d25fd6757e5d3f80d00de341168de4f34e946
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850438"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929996"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Что нового в документации для разработчиков Windows в июле 2018 г.
 
@@ -26,7 +26,7 @@ ms.locfileid: "3850438"
 
 ### <a name="progressive-web-apps-on-windows"></a>Прогрессивные веб-приложения в Windows
 
-[Прогрессивные веб-приложения (PWA)](https://developer.microsoft.com/windows/pwa) — это просто веб-приложений, которые [постепенно расширенный](https://wikipedia.org/wiki/Progressive_enhancement) с собственные функции подобного приложения с поддержкой платформ и движков браузера, такие как установка запуска из homescreen, автономную поддержку и Push-уведомлений уведомления. В Windows 10 с помощью модуля Microsoft Edge (EdgeHTML), PWA наслаждаться дополнительное преимущество запуск [независимо от окна браузера, как и для приложений UWP.](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
+[Прогрессивные веб-приложения (PWA)](https://developer.microsoft.com/windows/pwa) — это просто веб-приложений, которые [прогрессивное расширенный](https://wikipedia.org/wiki/Progressive_enhancement) с собственные функции подобного приложения с поддержкой платформ и движков браузера, такие как установка запуска из homescreen, автономную поддержку и Push-уведомлений уведомления. В Windows 10 с помощью модуля Microsoft Edge (EdgeHTML), PWA хотят дополнительное преимущество запущено [независимо от окно браузера, как приложения UWP.](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
 
 ![Изображение PWA в действии](images/progressive-web-apps.jpg)
 
@@ -38,17 +38,17 @@ ms.locfileid: "3850438"
 
 ### <a name="notepad"></a>Блокнот
 
-Доступно в Windows 10 Insider Preview сборки 17713, ["Блокнот" был переписан с использованием множество новых функций](http://aka.ms/ant-man). Масштабирование, обтеканием поиска и замены и поддержка окончания строк Unix/Linux (перевод строки) и Mac (CR) теперь доступны участникам [Программы предварительной оценки](https://insider.windows.com/). 
+Доступно в Windows 10 Insider Preview сборки 17713, ["Блокнот" дополнен множество новых функций](http://aka.ms/ant-man). Масштабирование, обтеканием поиска и замены и поддержка окончания строк Unix/Linux (перевод строки) и Mac (CR) теперь доступны участникам [Программы предварительной оценки](https://insider.windows.com/). 
 
 ## <a name="developer-guidance"></a>Руководство для разработчиков
 
-### <a name="design-landing-page"></a>Целевая страница проектирования
+### <a name="design-landing-page"></a>Проектирование целевая страница
 
-Ознакомьтесь с [обновлены проектирования, начальная страница](https://developer.microsoft.com/windows/apps/design) Обзор на отделом области разработки UWP и сведения о последние изменения в систему проектирования Fluent Design.
+Ознакомьтесь с [обновлены проектирования, целевая страница](https://developer.microsoft.com/windows/apps/design) для Обзор в отделом области разработки UWP и сведения о последние изменения в систему проектирования Fluent Design.
 
 ### <a name="design-toolkits"></a>Наборы инструментов для проектирования
 
-Наборы инструментов Adobe Illustrator и Adobe XD были обновлены с добавлением новых функций. Эти проектирования предоставляют элементы управления и макеты для проектирования приложений UWP. [Ознакомьтесь с их здесь.](../design/downloads/index.md)
+Наборы инструментов Adobe XD и Adobe Illustrator были обновлены с добавлением новых функций. Эти проектирования предоставляют элементы управления и макеты для проектирования приложений UWP. [Ознакомьтесь с их здесь.](../design/downloads/index.md)
 
 ### <a name="webvr"></a>WebVR
 
@@ -56,49 +56,49 @@ ms.locfileid: "3850438"
 ):
 
 * [Что такое WebVR?](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr
-) Объясняется, что такое WebVR, почему их следует использовать и как приступим к разработке для него.
+) Объясняется, что WebVR, почему его следует использовать и как приступим к разработке для него.
 
-* [WebVR в прогрессивные веб-приложения](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas): Узнайте, как добавить WebVR в последовательной Web App (PWA).
+* [WebVR в прогрессивные веб-приложения](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas): сведения о добавлении WebVR для прогрессивного Web App (PWA).
 
-* [WebVR в WebView](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-webview): Узнайте, как добавить WebVR в элемент управления WebView в приложении Windows 10.
+* [WebVR в WebView](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-webview): Узнайте, как добавить WebVR элемент управления WebView в приложении Windows 10.
 
-* [WebVR демонстрации](https://docs.microsoft.com/microsoft-edge/webvr/demos): Ознакомьтесь с некоторыми демонстрации WebVR с помощью Microsoft Edge и иммерсивной гарнитуры смешанной реальности Windows.
+* [WebVR демонстрации](https://docs.microsoft.com/microsoft-edge/webvr/demos): предлагаем вашему вниманию некоторые демонстрации WebVR, с помощью Microsoft Edge и иммерсивной гарнитуры смешанной реальности.
 
 Кроме того которые мы внесли некоторые обновления существующих страниц:
 
-* Содержание теперь лучше организованы в четырех различных сегменты верхнего уровня: **основы** **разработки**, **ресурсы**и **демонстрации**.
+* Содержание теперь лучше организованы в четырех различных верхнего уровня сегменты: **основы**, **разработки**, **ресурсы**и **демонстрации**.
 
-* [WebVR руководства разработчика (начальная страница)](https://docs.microsoft.com/microsoft-edge/webvr/): обновленный внешний вид больших изображений и значков и новая Демонстрация.
+* [WebVR руководства разработчика (целевая страница)](https://docs.microsoft.com/microsoft-edge/webvr/): обновленный внешний вид и больших изображений и значков и новая Демонстрация.
 
-* [С помощью WebVR с Microsoft Edge](https://docs.microsoft.com/microsoft-edge/webvr/webvr-with-edge): обновлен, чтобы включить сведения о Windows 10 за апрель 2018 г..
+* [С помощью WebVR с Microsoft Edge](https://docs.microsoft.com/microsoft-edge/webvr/webvr-with-edge): обновлен, чтобы включить информацию о Windows 10 за апрель 2018 г..
 
 ## <a name="videos"></a>Видеоролики
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>Начало работы для разработчиков: Создание и настройка формы в Windows 10
 
-[Начало работы документы](../get-started/index.md) для разработчиков Windows теперь обеспечивают отличную возможность поэкспериментировать с задачей разработки простого приложения. В этом видео пошаговое через один из этих разделах и рассматриваются основы создания пользовательского интерфейса формы в вашем приложении. [Посмотрите видео,](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) Чтобы просмотреть код в действии, затем [изучите раздел самостоятельно.](http://aka.ms/CreateForms)
+[Начало работы документы](../get-started/index.md) для разработчиков Windows предоставляют практический опыт под задачи разработки простого приложения. В этом видео пошаговое через один из этих разделах и рассматриваются основы создания формы пользовательского интерфейса в приложении. [Посмотрите видео,](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) Чтобы просмотреть код в действии, затем [изучите раздел самостоятельно.](http://aka.ms/CreateForms)
 
-### <a name="enhance-your-bot-with-project-personality-chat"></a>Улучшение вашей Боту с чата индивидуальности проекта
+### <a name="enhance-your-bot-with-project-personality-chat"></a>Улучшить ваше бота с чата индивидуальности проекта
 
-Project, чат индивидуальности позволяет вам добавлять настраиваемые персонажа в вашей программ чата. Путем интеграции с Microsoft Боту Framework SDK, вы можете добавить небольшой поговорим возможности более неестественно способ взаимодействия с пользователями. [Посмотрите видео](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) , чтобы узнать, как реализовать его, а затем [попробуйте интерактивную демонстрацию](http://aka.ms/PersonalityChat) для практического опыта.
+Project, чат индивидуальности позволяет вам добавлять настраиваемые персонажа в вашей программ чата. Путем интеграции с Microsoft бота Framework SDK, вы можете добавить небольшой поговорим возможности более неестественно способ взаимодействия с пользователями. [Посмотрите видео](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) , чтобы узнать, как реализовать его, а затем [попробуйте интерактивную демонстрацию](http://aka.ms/PersonalityChat) для практического опыта.
 
 ### <a name="one-dev-question"></a>Вопрос
 
-В серии видео вопрос привыкшим разработчики Майкрософт охватывает ряд вопросов о разработке Windows, язык и региональные параметры для совместной работы и журнал. Вот последние вопросы, на которые мы ответили!
+В серии видео вопрос привыкшим разработчики Майкрософт охватывает ряд вопросов о разработке Windows, язык и региональные параметры для совместной работы и журнал. Вот последние вопросы, которые мы ответили!
 
 Рэймонд Чен:
 
-* [Почему вы применил корпорации Майкрософт?](https://www.youtube.com/watch?v=oL8ymamkEMU&feature=youtu.be)
+* [Почему вы применил в корпорацию Майкрософт?](https://www.youtube.com/watch?v=oL8ymamkEMU&feature=youtu.be)
 
 Ларри Osterman:
 
 * [Почему мы не позволяют разработчикам изменить звуковое устройство по умолчанию?](https://www.youtube.com/watch?v=6aNUoVfbnmg&feature=youtu.be)
-* [Почему используются так много асинхронных функций UWP?](https://www.youtube.com/watch?v=5M724QIy1Mk&feature=youtu.be)
+* [Почему являются асинхронной функции так много UWP?](https://www.youtube.com/watch?v=5M724QIy1Mk&feature=youtu.be)
 
 ## <a name="samples"></a>Примеры
 
 ### <a name="photo-editor-cwinrt"></a>Редактор фотографий C + +/ WinRT
 
-Образец приложения редактор фотографий, демонстрирующего возможности разработки с [C + +/ WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) проекция языка. Приложения позволяет извлекать фотографии из библиотеки **изображений** , а затем редактировать выделенные изображения с эффектами связанных фотографий. [Клонировать или скачать пример ниже.](https://github.com/Microsoft/Windows-appsample-photo-editor)
+Пример приложения редактор фотографий, демонстрирующего возможности разработки с [C + +/ WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) проекция языка. Приложения позволяет извлекать фотографии из библиотеки **изображений** , а затем редактировать выделенная изображение с эффектами связанных фотографий. [Клонировать или скачать пример ниже.](https://github.com/Microsoft/Windows-appsample-photo-editor)
 
 ![Пример этого примера в действии](images/photo-editor-banner.png)

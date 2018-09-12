@@ -2,20 +2,20 @@
 author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Тесты комплекта сертификации приложений для Windows
-description: Комплекта сертификации приложений для Windows содержит ряд тестов, позволяющих убедиться, что ваше приложение будет готово к публикации в Microsoft Store.
+description: Комплект сертификации приложений Windows содержит ряд тестов, позволяющих убедиться, что ваше приложение будет готово к публикации в Microsoft Store.
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, сертификации приложений
+keywords: Windows 10, uwp, сертификации приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850964"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933653"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Тесты комплекта сертификации приложений для Windows
 
@@ -321,7 +321,7 @@ The AppContainerCheck проверяет, установлен ли бит **app
 
 > **Примечание**  Отладочная сборка приложения не пройдет этот тест, даже если приложение использует только [API-интерфейсы для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-Просмотрите сообщения об ошибках для идентификации API использует приложения, которые не [API для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+Просмотрите сообщения об ошибках для идентификации API использует приложения, которые не является [API для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
 > **Примечание**  Приложения на C++, которые встроены в конфигурации отладки не пройдет этот тест, даже если в конфигурации используются только API из пакета Windows SDK для приложений UWP. См. в разделе, [альтернативы API Windows в приложениях UWP](http://go.microsoft.com/fwlink/p/?LinkID=244022) подробнее.
 
@@ -509,7 +509,7 @@ The AppContainerCheck проверяет, установлен ли бит **app
 
 ### <a name="corrective-actions"></a>Корректирующие действия
 
--   Построение приложения в виде сборки выпуска, перед его отправкой в Microsoft Store.
+-   Построение приложения в виде сборки выпуска, перед отправкой в Microsoft Store.
 -   Убедитесь, что у вас установлена правильная версия платформы .NET Framework.
 -   Убедитесь, что приложение не содержит ссылок на отладочные версии платформы, а его сборка выполняется с использованием окончательной версии. Если приложение содержит компоненты .NET, убедитесь, что у вас установлена правильная версия платформы .NET Framework.
 

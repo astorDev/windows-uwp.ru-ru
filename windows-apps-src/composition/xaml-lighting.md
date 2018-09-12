@@ -15,11 +15,11 @@ dev_langs:
 - cpp
 - cppwinrt
 ms.openlocfilehash: b4e3678e17e7545dfe9cb4049ace7ff864198156
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850468"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3931613"
 ---
 # <a name="xaml-lighting"></a>Освещение XAML
 
@@ -29,7 +29,7 @@ ms.locfileid: "3850468"
 
 ## <a name="applying-lights-to-xaml-uielements"></a>Применение освещения к XAML UIElements
 
-Объекты [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) позволяют применять [**CompositionLights**](/uwp/api/Windows.UI.Composition.CompositionLight) для динамического освещения объектов XAML UIElement. XamlLight предоставляет методы для целевых объектов UIElement или кистей XAML, к деревьям объектов UIElement, и помогает управлять жизненным циклом CompositionLight использовать ресурсы с учетом ли они в данный момент.
+Объекты [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) позволяют применять [**CompositionLights**](/uwp/api/Windows.UI.Composition.CompositionLight) для динамического освещения объектов XAML UIElement. XamlLight предоставляет методы для целевых объектов UIElement или кистей XAML, применение освещения к деревьям объектов UIElement, и помогает управлять жизненным циклом CompositionLight использовать ресурсы с учетом ли они в данный момент.
 
 - Если в качестве целевого объекта XamlLight выбрана кисть (**Brush**), будут освещены все части объектов UIElements, для которых использовалась эта кисть.
 - Если в качестве целевого объекта XamlLight выбран **UIElement**, будет освещен весь этот объект UIElement вместе со своими дочерними объектами UIElement.
@@ -38,7 +38,7 @@ ms.locfileid: "3850468"
 
 [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight)— это базовый класс, который можно использовать для создания пользовательских источников света.
 
-В этом примере показано определение пользовательского класса XamlLight, который применяет разноцветных вспышки целевых объектов UIElement и кисти.
+В этом примере показано определение пользовательского класса XamlLight, который применяет разноцветных прожектора целевых объектов UIElement и кисти.
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight
@@ -493,9 +493,9 @@ Platform::String^ OrangeSpotLight::GetId()
 </StackPanel>
 ```
 
-Результаты этого фрагмента XAML будет выглядеть следующим образом.
+Результаты этот код XAML будет выглядеть следующим образом.
 
-![Примеры элементов освещении с xaml источник света](images/orange-spot-light.png)
+![Примеры элементов освещении с xaml света](images/orange-spot-light.png)
 
 > [!Important]
 > Элемент разметки UIElement.Lights, показанный в приведенном выше примере, поддерживается только для приложений, минимальная версия которых соответствует Windows 10 Creators Update или более поздней версии. Для приложений, предназначенных для более ранних версий, необходимо создать источники освещения в программной части кода.

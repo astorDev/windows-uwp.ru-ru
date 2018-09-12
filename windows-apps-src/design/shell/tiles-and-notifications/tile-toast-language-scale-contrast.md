@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 87aafe36d05298a8fa157426e39c530190f98908
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849448"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935923"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности
 
-Плитки и всплывающие уведомления могут загружать строки и изображения, адаптированные по контексту языка, [коэффициента масштабирования дисплея](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), темы, высокой контрастности и другим аспектам. О том, как Использование квалификаторов в именах файлов ресурсов приводятся [адаптация ресурсов с учетом языка, масштаба и других квалификаторов](../../../app-resources/tailor-resources-lang-scale-contrast.md) и [значков приложений и логотипы](/windows/uwp/design/style/app-icons-and-logos).
+Плитки и всплывающие уведомления могут загружать строки и изображения, адаптированные по контексту языка, [коэффициента масштабирования дисплея](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), темы, высокой контрастности и другим аспектам. Дополнительные сведения об использовании квалификаторов в именах файлов ресурсов см. в разделе [адаптация ресурсов с учетом языка, масштаба и других квалификаторов](../../../app-resources/tailor-resources-lang-scale-contrast.md) и [значков приложений и логотипы](/windows/uwp/design/style/app-icons-and-logos).
 
 Дополнительные сведения о преимуществах локализации приложений см. в разделе [Глобализация и локализация](../../globalizing/globalizing-portal.md).
 

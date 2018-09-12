@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, службы Store, API аналитики для Microsoft Store, ошибки, подробные сведения
 ms.localizationpriority: medium
 ms.openlocfilehash: b3c9994d2738dbcd283ac7458fdde6979d43ee2f
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848308"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3936227"
 ---
 # <a name="get-details-for-an-error-in-your-app"></a>Получение сведений об ошибке в приложении
 

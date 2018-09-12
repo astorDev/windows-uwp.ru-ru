@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851304"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929772"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Расширение классических приложений с помощью современных компонентов UWP
 
@@ -313,7 +313,7 @@ public sealed class AppServiceTask : IBackgroundTask
 
 ### <a name="add-an-app-service-extension-to-the-packaging-project"></a>Добавление расширения службы приложений в проект упаковки
 
-Откройте файл **package.appxmanifest** проекта упаковки и добавьте расширение службы приложения для ``<Application>`` элемента.
+Откройте файл **package.appxmanifest** проекта упаковки и добавьте расширение службы приложения, чтобы ``<Application>`` элемента.
 
 ```xml
 <Extensions>
@@ -512,7 +512,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 ### <a name="configure-the-background-task"></a>Настройка фоновой задачи
 
-В конструкторе манифеста откройте файл **package.appxmanifest** проекта упаковки в вашем решении.
+В конструкторе манифестов откройте файл **package.appxmanifest** проекта упаковки в вашем решении.
 
 На вкладке **Объявления** добавьте объявление **Фоновые задачи**.
 

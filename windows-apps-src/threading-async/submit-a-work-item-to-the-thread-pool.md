@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, потоки, пул потоков
 ms.localizationpriority: medium
 ms.openlocfilehash: 29d7fc361e446207c8e14f83ca3f663bd5072e6e
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848758"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3936281"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Отправка рабочего элемента в пул потоков
 
@@ -35,7 +35,7 @@ ms.locfileid: "3848758"
 Доступны три версии функции [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593), поэтому вы можете при необходимости задать приоритет рабочего элемента и контролировать, выполняется ли он параллельно с другими рабочими элементами.
 
 >[!NOTE]
->Используйте [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) для доступа к потоку пользовательского интерфейса и отображения хода выполнения из рабочего элемента.
+>Используйте [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) для доступа к потоку пользовательского интерфейса и отображения хода выполнения рабочего элемента.
 
 В примере ниже создается рабочий элемент и предоставляется лямбда-функция для выполнения работы.
 

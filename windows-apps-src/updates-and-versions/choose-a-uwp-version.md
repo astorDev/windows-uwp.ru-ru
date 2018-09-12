@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, версия, сборка, версии, windows, в
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: c7951098e576047b5c82da72b7c4e9118ffb7569
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848708"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934007"
 ---
 # <a name="choose-a-uwp-version"></a>Выбор версии UWP
 
@@ -35,7 +35,7 @@ ms.locfileid: "3848708"
 | Сборка 10586 (ноябрьское обновление, версия 1511) | Эта версия Windows 10 была выпущена в ноябре 2015 г. Среди новых функций интерфейс API ORTC для видеосвязи в Microsoft Edge и API для поставщиков, которые позволяют приложениям использовать распознавание лиц Windows Hello для проверки подлинности. [Дополнительные сведения о функциях в этой сборке.](../whats-new/windows-10-build-10586.md) |
 | Сборка 10240 (Windows 10, версия 1507) | Это исходная версия Windows 10, выпущенная в июле 2015 г. [Дополнительные сведения о функциях в этой сборке.](../whats-new/windows-10-build-10240.md) |
 
-Мы настоятельно рекомендуем новым разработчикам и разработчикам писать код для общей аудитории, всегда использовать последнюю сборку Windows (17134). Разработчикам корпоративных приложений настоятельно рекомендуется обеспечивать поддержку более ранней **минимальной версии**.
+Мы настоятельно рекомендуем, новым разработчикам и разработчикам писать код для общей аудитории, всегда использовать последнюю сборку Windows (17134). Разработчикам корпоративных приложений настоятельно рекомендуется обеспечивать поддержку более ранней **минимальной версии**.
 
 ## <a name="whats-different-in-each-uwp-version"></a>Чем отличаются разные версии UWP?
 
@@ -43,13 +43,13 @@ ms.locfileid: "3848708"
 
 Разделы справки со всеми семействами устройств и их версиями, а также контрактами API и их версиями см в разделе [Семейства устройств](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx) и [Контракты API](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx).
 
-## <a name="net-api-availability-in-uwp-versions"></a>Доступность .NET API в версии UWP
+## <a name="net-api-availability-in-uwp-versions"></a>Доступность API-интерфейсы .NET в версии UWP
 
-UWP поддерживает ограниченный набор API-интерфейсы .NET, которые доступны независимо от **Версия целевой** и **Минимальной версии** проекта. [На этой странице приведены дополнительные сведения о доступных типов](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx).
+UWP поддерживает ограниченный набор API-интерфейсов .NET, которые доступны независимо от **Версия целевой** и **Минимальной версии** проекта. [На этой странице приведены дополнительные сведения о доступных типов](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx).
 
-Если вы хотите создавать многократно используемые библиотеки кросс платформенной, .NET Standard поддерживается на UWP. В [.NET Standard документации](https://docs.microsoft.com/dotnet/standard/net-standard) содержит сведения, на котором .NET Standard поддерживается в какие версии UWP.
+Если вы хотите создавать многократно используемые библиотеки кросс платформенной, .NET Standard поддерживается на UWP. [.NET Standard документации](https://docs.microsoft.com/dotnet/standard/net-standard) содержит сведения, на котором .NET Standard поддерживается в какие версии UWP.
 
-Если вы разрабатываете классического приложения, см. Вместо этого [версии .NET Framework и зависимостей](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies) подробные сведения о доступности .NET framework.
+Если вы разрабатываете классического приложения, см. в разделе вместо [версии .NET Framework и зависимостей](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies) подробные сведения о доступности .NET framework.
 
 ## <a name="choose-which-version-to-use-for-your-app"></a>Выбор версии для вашего приложения
 

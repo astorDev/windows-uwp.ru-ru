@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, параллелизм, async, асинхронный, асинхронность
 ms.localizationpriority: medium
 ms.openlocfilehash: 85071fb28cb87c991e2f5ba7f64b681c6850c819
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851484"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3936411"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Параллельная обработка и асинхронные операции с использованием [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 > [!NOTE]
@@ -69,7 +69,7 @@ int main()
 C++/WinRT интегрирует сопрограммы C++ в модель программирования для обеспечения естественного способа совместно ожидать результата. Вы можете создать свою собственную асинхронную операцию среды выполнения Windows путем написания сопрограммы. В следующем примере кода **ProcessFeedAsync** является сопрограммой.
 
 > [!NOTE]
-> Функция **get** существует на C + +/ WinRT проекции введите **winrt::Windows::Foundation::IAsyncAction**, поэтому можно вызвать функцию в C + +/ WinRT проекта. Вы найдете в списке как член интерфейса [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) , функция не так, как **получить** не является частью поверхности приложения двоичный интерфейс (ABI) фактического типа среды выполнения Windows **IAsyncAction**.
+> Функция **get** существует на C + +/ WinRT проекции введите **winrt::Windows::Foundation::IAsyncAction**, поэтому можно вызвать функцию в C + +/ WinRT проекта. Не позволит найти функцию указаны в является членом интерфейса [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) , так как **получить** не является частью поверхности приложения двоичный интерфейс (ABI) фактического типа среды выполнения Windows **IAsyncAction**.
 
 ```cppwinrt
 // main.cpp

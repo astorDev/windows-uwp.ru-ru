@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: триггер фоновой задачи, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ccd171f53795ef71830ffb022d0468facb3ac4f
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3845638"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3932979"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Запуск фоновой задачи в приложении
 
@@ -22,15 +22,15 @@ ms.locfileid: "3845638"
 
 Пример того, как создать триггер приложения см. в этом [примере](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs).
 
-В этом разделе предполагается, что у вас есть фоновая задача, которая требуется активировать из вашего приложения. Если у вас еще нет фоновой задачи, существует пример фоновой задачи в [BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs). Или, следуйте инструкциям в [Создание и регистрация задачи, выполняемой вне процесса фоновые](create-and-register-a-background-task.md) создайте его.
+В этом разделе предполагается, что у вас есть фоновая задача, которая требуется активировать из вашего приложения. Если у вас еще нет фоновой задачи, не в [BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)пример фоновой задачи. Или, следуйте инструкциям в [Создание и регистрация задачи, выполняемой вне процесса](create-and-register-a-background-task.md) создайте его.
 
 ## <a name="why-use-an-application-trigger"></a>Зачем использовать триггер приложений
 
-Используйте **ApplicationTrigger** для выполнения кода в виде отдельного процесса из приложения переднего плана. **ApplicationTrigger** подходит, если ваше приложение содержит работы, которая должна выполняться в фоновом режиме, даже если пользователь закроет приложение переднего плана. Если необходимо остановить фоновой работы при приложение закрывается, или должна быть привязана к состоянию процесса переднего плана, [Средство расширенного сеанса выполнения](run-minimized-with-extended-execution.md) следует использовать, а затем.
+Используйте **ApplicationTrigger** для выполнения кода в виде отдельного процесса из приложения переднего плана. **ApplicationTrigger** подходит, если ваше приложение содержит работы, которая должна выполняться в фоновом режиме — даже если пользователь закроет приложение переднего плана. Если необходимо остановить фоновой работы при приложение закрывается, или должна быть привязана к состоянию процесса переднего плана, [Средство расширенного сеанса выполнения](run-minimized-with-extended-execution.md) следует использовать, а затем.
 
 ## <a name="create-an-application-trigger"></a>Создать триггер приложений
 
-Создайте новый [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger). Вы можете сохранить его в поле как сделано в следующем фрагменте кода. Это для удобства таким образом, нам не нужно создать новый экземпляр позже, когда мы хотим сигнала триггер. Однако вы можете использовать любой экземпляр **ApplicationTrigger** сигнала триггера.
+Создайте новый [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger). Вы можете сохранить его в поле как сделано в следующем фрагменте кода. Это для удобства мы не нужно создать новый экземпляр позже, когда мы хотим сигнала триггера. Однако вы можете использовать любой экземпляр **ApplicationTrigger** сигнала триггера.
 
 ```csharp
 // _AppTrigger is an ApplicationTrigger field defined at a scope that will keep it alive
@@ -79,7 +79,7 @@ SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionTyp
 
 ##  <a name="call-requestaccessasync"></a>Вызов RequestAccessAsync()
 
-Перед регистрацией фоновой задачи **ApplicationTrigger** , вызовите метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) для определения уровня фоновой активности, который позволяет пользователю, так как пользователь отключил фоновую активность для вашего приложения. [Оптимизация фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) Дополнительные сведения о пользователях, способы управления параметрами для фоновых задач, см.
+Перед регистрацией фоновой задачи **ApplicationTrigger** , вызовите метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) , чтобы определить уровень фоновой активности, который позволяет пользователю, так как пользователь отключил фоновую активность вашего приложения. См. в разделе, что [Оптимизация фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) Дополнительные сведения о пользователях способов можно управлять параметрами для фоновых задач.
 
 ```csharp
 var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
@@ -92,9 +92,9 @@ if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
 
 ## <a name="register-the-background-task"></a>Регистрация фоновой задачи
 
-Зарегистрируйте фоновую задачу, вызвав функцию регистрации фоновой задачи. Дополнительные сведения о регистрации фоновых задач, а также просмотреть определение метода **RegisterBackgroundTask()** в приведенном ниже примере кода см. [Регистрация фоновой задачи](register-a-background-task.md).
+Зарегистрируйте фоновую задачу, вызвав функцию регистрации фоновой задачи. Дополнительные сведения о регистрации фоновых задач, а также просмотреть определение метода **RegisterBackgroundTask()** в приведенном ниже примере кода см. в разделе [Регистрация фоновой задачи](register-a-background-task.md).
 
-Если вы собираетесь с помощью триггера приложения для расширения жизненным циклом процесса вашего переднего плана, попробуйте использовать [Средство расширенного сеанса выполнения](run-minimized-with-extended-execution.md) . Триггер приложения для работы в разработан для создания отдельно размещенный процесс. В следующем фрагменте кода регистрирует триггер вне процесса.
+Если вы собираетесь с помощью триггер приложения для расширения жизненным циклом процесса вашего переднего плана, попробуйте использовать [Средство расширенного сеанса выполнения](run-minimized-with-extended-execution.md) . Триггер приложения предназначен для создания отдельно размещенный процесс будет работать в. В следующем фрагменте кода регистрирует триггер вне процесса.
 
 ```csharp
 string entryPoint = "Tasks.ExampleBackgroundTaskClass";
@@ -122,13 +122,13 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 ## <a name="trigger-the-background-task"></a>Запустите фоновую задачу
 
-Прежде чем вы запустите фоновую задачу, используйте [BackgroundTaskRegistration](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) , чтобы убедиться, что фоновая задача зарегистрирована. Во время запуска приложения является подходящим моментом для проверки всех фоновых задач регистрации.
+Прежде чем запустить фоновую задачу, используйте [BackgroundTaskRegistration](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) , чтобы убедиться, что фоновая задача зарегистрирована. Во время запуска приложения является подходящим моментом для проверки всех фоновых задач регистрации.
 
 Запустите фоновую задачу, вызвав метод [ApplicationTrigger.RequestAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger). Любой экземпляр **ApplicationTrigger** сделает.
 
-Обратите внимание, что **ApplicationTrigger.RequestAsync** невозможно вызвать из фоновой задачи сам, или когда приложение находится в фоновом режиме под управлением состояния ( [жизненный цикл приложения](app-lifecycle.md) более подробные сведения о состояниях приложения).
+Обратите внимание, что **ApplicationTrigger.RequestAsync** невозможно вызвать из фоновой задачи сам, или когда приложение находится в фоновом режиме, в рабочее состояние ( [жизненный цикл приложения](app-lifecycle.md) более подробные сведения о состояниях приложения).
 Он может возвращать [DisabledByPolicy](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult) , если пользователь задал энергии или конфиденциальности политик, которые предотвратить выполнение фоновой активности приложения.
-Кроме того одновременно может выполняться только одна AppTrigger. Если при попытке запустить AppTrigger во время выполнения уже другой, функция вернет [CurrentlyRunning](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult).
+Кроме того одновременно может выполняться только один AppTrigger. Если при попытке запустить AppTrigger, когда другой уже работает, функция вернет [CurrentlyRunning](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult).
 
 ```csharp
 var result = await _AppTrigger.RequestAsync();
@@ -136,9 +136,9 @@ var result = await _AppTrigger.RequestAsync();
 
 ## <a name="manage-resources-for-your-background-task"></a>Управление ресурсами для фоновой задачи
 
-Используйте метод [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx), чтобы определить, принял ли пользователь решение ограничить фоновую активность вашего приложения. Следите за расходом заряда батареи и запускайте приложения в фоновом режиме только тогда, когда необходимо завершить интересующее пользователя действие. [Оптимизация фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) Дополнительные сведения о пользователях, способы управления параметрами для фоновых задач, см.  
+Используйте метод [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx), чтобы определить, принял ли пользователь решение ограничить фоновую активность вашего приложения. Следите за расходом заряда батареи и запускайте приложения в фоновом режиме только тогда, когда необходимо завершить интересующее пользователя действие. См. в разделе, что [Оптимизация фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) Дополнительные сведения о пользователях способов можно управлять параметрами для фоновых задач.  
 
-- Память: Настройка использования памяти и электроэнергии вашим приложением является ключом подтверждение того, что операционная система будет разрешать запуск фоновой задачи. Используйте [API -интерфейсы управления памятью](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) , чтобы узнать, сколько памяти потребляет фоновой задачи. Чем больше памяти потребляет фоновой задачи, тем сложнее операционной системе поддерживать его выполнение, когда другое приложение работает на переднем плане. Пользователь полностью контролирует все фоновые действия, которые может выполнять ваше приложение, и видит, как ваше приложение влияет на расход заряда батареи.  
+- Память: Настройка использования памяти и электроэнергии вашим приложением является ключом подтверждение того, что операционная система будет разрешать фоновую задачу для запуска. Используйте [API -интерфейсы управления памятью](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) , чтобы узнать, сколько памяти потребляет фоновой задачи. Чем больше памяти потребляет фоновой задачи, тем сложнее операционной системе поддерживать его выполнение, когда другое приложение работает на переднем плане. Пользователь полностью контролирует все фоновые действия, которые может выполнять ваше приложение, и видит, как ваше приложение влияет на расход заряда батареи.  
 - Времени ЦП: фоновые задачи ограничены по времени секундами использования, они получают в зависимости от типа триггера. Фоновые задачи, инициируемые триггером приложения ограничены около 10 минут.
 
 Сведения об ограничениях ресурсов для фоновых задач см. в статье [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
@@ -147,7 +147,7 @@ var result = await _AppTrigger.RequestAsync();
 
 Начиная с Windows 10, он больше не пользователю возможность добавлять приложения на экран блокировки, чтобы использовать фоновые задачи.
 
-Фоновая задача будет запускаться только с помощью **ApplicationTrigger** Если сначала был вызван [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) .
+Фоновая задача будет запускаться только с помощью **ApplicationTrigger** Если был вызван [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) сначала.
 
 ## <a name="related-topics"></a>Еще по теме
 

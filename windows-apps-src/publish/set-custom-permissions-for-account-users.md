@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, роли пользователей, разрешение пользователя, пользовательские роли, доступ пользователей, настроить разрешения, стандартные роли
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3845138"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929956"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Настройка ролей и пользовательских разрешений для пользователей учетных записей
 
@@ -194,7 +194,7 @@ ms.locfileid: "3845138"
     <tbody>
     <tr><td align="left">    <b>Промокоды</b>     </td><td>    Можно просматривать сведения о заказах и использовании <a href="generate-promotional-codes.md">рекламных кодов</a> для продукта и его надстроек, а также просматривать сведения об использовании.         </td><td>    Можно просматривать, создавать сведения о заказах <a href="generate-promotional-codes.md">рекламных кодов</a> для продукта и его надстроек, а также просматривать сведения об использовании и управлять этими данными.          </td><td>    Н/Д (параметры для родительского продукта влияют на все надстройки)     </td><td>    Н/Д (параметры для родительского продукта влияют на все надстройки)     </td></tr>
     <tr><td align="left">    <b>Целевые предложения</b>     </td><td>    Можно просматривать <a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">целевые предложения</a> для продукта.         </td><td>    Можно просматривать, администрировать и создавать <a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">целевые предложения</a> для продукта.          </td><td>    Н/Д     </td><td>    Н/Д      </td></tr>
-    <tr><td align="left">    <b>Связаться с клиентом</b>  </td><td>    Можно просматривать <a href="respond-to-customer-feedback.md">ответы на отзывы клиентов</a> и <a href="respond-to-customer-reviews.md">ответы на рецензии клиентов</a>, если также предоставлено разрешение <b>Отзывы клиентов</b>. Можно также просматривать <a href="send-push-notifications-to-your-apps-customers.md">целевые уведомления</a>, созданные для этого продукта.    </td><td>    Можно <a href="respond-to-customer-feedback.md">отвечать на отзывы клиентов</a> и <a href="respond-to-customer-reviews.md">отвечать на отзывы клиентов</a>, при условии, что также предоставлено разрешение на <b>отзывы клиентов</b> . Можно также <a href="send-push-notifications-to-your-apps-customers.md">создавать и отправлять целевые уведомления</a> для продукта.                   </td><td>    Н/Д         </td><td>    Н/Д                          </td></tr>
+    <tr><td align="left">    <b>Связаться с клиентом</b>  </td><td>    Можно просматривать <a href="respond-to-customer-feedback.md">ответы на отзывы клиентов</a> и <a href="respond-to-customer-reviews.md">ответы на рецензии клиентов</a>, если также предоставлено разрешение <b>Отзывы клиентов</b>. Можно также просматривать <a href="send-push-notifications-to-your-apps-customers.md">целевые уведомления</a>, созданные для этого продукта.    </td><td>    Можно <a href="respond-to-customer-feedback.md">отвечать на отзывы клиентов</a> и <a href="respond-to-customer-reviews.md">отвечать на отзывы клиентов</a>, до тех пор, пока также предоставлено разрешение <b>отзывов клиентов</b> . Можно также <a href="send-push-notifications-to-your-apps-customers.md">создавать и отправлять целевые уведомления</a> для продукта.                   </td><td>    Н/Д         </td><td>    Н/Д                          </td></tr>
     <tr><td align="left">    <b>Эксперименты</b></td><td>    Можно просматривать <a href="../monetize/run-app-experiments-with-a-b-testing.md">эксперименты (A/B-тестирование)</a> и просматривать данные экспериментов для этого продукта.   </td><td>    Можно создавать, просматривать <a href="../monetize/run-app-experiments-with-a-b-testing.md">эксперименты (A/B-тестирование)</a> и управлять ими для конкретного продукта, а также просматривать данные экспериментов.     </td><td>    Н/Д  </td><td>    Недоступно                 </td></tr>
     <tr><td align="left">    <b>События продажи в Store</b>&nbsp;*</td><td>    Можно просматривать состояние событий продажи для продукта.   </td><td>    Можно добавить продукт к событиям продажи и настроить скидки.      </td><td>    Можно просматривать состояние событий продажи для продукта.   </td><td>    Можно добавить продукт к событиям продажи и настроить скидки.      </td></tr>
     </tbody>

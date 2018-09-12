@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b45196a83edf45a69f6b79ab82542cef6817703
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851274"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933883"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Гибкие макеты в XAML
 
@@ -236,7 +236,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 ```
 
 > [!Important]
-> В предыдущем примере прикрепленное свойство настраивается элемент **Grid** . При использовании StateTriggers всегда следует убедиться, что свойство VisualStateGroups является присоединенным к первому дочернему элементу корня, чтобы триггеры запускались автоматически. (Здесь **Grid** — это первый дочерний элемент корня **Page**).
+> В предыдущем примере прикрепленное свойство VisualStateManager.visualstategroups настраивается элемент **Grid** . При использовании StateTriggers всегда следует убедиться, что свойство VisualStateGroups является присоединенным к первому дочернему элементу корня, чтобы триггеры запускались автоматически. (Здесь **Grid** — это первый дочерний элемент корня **Page**).
 
 ### <a name="attached-property-syntax"></a>Синтаксис присоединенного свойства
 

@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f4d9cde6ee2bc9615f044f18bc5e8828ca1985
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850931"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929796"
 ---
 # <a name="color"></a>Цвет
 
@@ -150,7 +150,7 @@ ms.locfileid: "3850931"
         ![выбранный пользователем элементов заголовка](images/color/user-accent.svg) ![выбранный пользователем цвет](images/color/user-selected-accent.svg)
     :::column-end:::
     :::column:::
-        ![Заголовок настраиваемых элементов](images/color/custom-accent.svg) ![цвет элементов пользовательской фирменной символики](images/color/brand-color.svg)
+        ![Заголовок настраиваемых элементов](images/color/custom-accent.svg) ![пользовательские торговой марки контрастный цвет](images/color/brand-color.svg)
     :::column-end:::
 :::row-end:::
 
@@ -282,7 +282,7 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
     :::column:::
         ![Иллюстрация контрастности](images/color/illo-colorblindness.svg)
     :::column-end:::
-    ::: column span = «2»::: **Дальтонизма**
+    ::: column span = «2»::: **Дальтонизм**
 
         Be aware of how colorblindness could affect the useability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About **8 percent of men** and **0.5 percent of women** are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.
     :::column-end:::

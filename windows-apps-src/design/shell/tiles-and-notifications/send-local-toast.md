@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, отправка всплывающих уведомлений, уведомления, отправка уведомлений, всплывающие уведомления, руководство, краткое руководство, начало работы, пример кода, пошаговое руководство
 ms.localizationpriority: medium
 ms.openlocfilehash: 3004b7041838656890b3a967e858dddc64c29ee5
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846878"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933553"
 ---
 # <a name="send-a-local-toast-notification"></a>Отправка локального всплывающего уведомления
 

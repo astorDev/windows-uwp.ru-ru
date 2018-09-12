@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, directx, объект приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: fcbe68516e3ad8b2643faf68900e3305f18e8bbf
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848838"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929020"
 ---
 # <a name="the-app-object-and-directx"></a>Объект приложения и DirectX
 
@@ -23,7 +23,7 @@ ms.locfileid: "3848838"
 
 В играх универсальной платформы Windows (UWP) с DirectX используется мало элементов и объектов интерфейса Windows. Поскольку они выполняются на более низком уровне в стеке среды выполнения Windows, они должны взаимодействовать со структурой пользовательского интерфейса более фундаментальным способом: напрямую получая доступ и взаимодействуя с объектом приложения. Узнайте, когда и как происходит такое взаимодействие и как вы, как разработчик DirectX, можете эффективно использовать эту модель при разработке приложений UWP.
 
-См. сведения о графики незнакомых терминов и понятия, которые могут возникнуть при чтении [глоссарий графики Direct3D](../graphics-concepts/index.md) .
+См. сведения о условия незнакомых графики или понятия, которые могут возникнуть при чтении [глоссарий графики Direct3D](../graphics-concepts/index.md) .
 
 ## <a name="the-important-core-user-interface-namespaces"></a>Важные основные пространства имен пользовательского интерфейса
 

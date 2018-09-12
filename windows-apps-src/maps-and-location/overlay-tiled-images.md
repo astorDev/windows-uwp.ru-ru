@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, карта, расположение, изображения, наложение
 ms.localizationpriority: medium
 ms.openlocfilehash: ba1f7d52a1b16fbb421202229ce724dab384ffa0
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848123"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935748"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>Наложение плиточных изображений на карту
 

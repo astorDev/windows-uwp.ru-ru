@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, UWP, Microsoft Store Services SDK, A/B-тесты, эксперименты
 ms.localizationpriority: medium
 ms.openlocfilehash: b0931d712ca99b429e2aaa7dec4b855f41ce55ef
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851224"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934117"
 ---
 # <a name="code-your-app-for-experimentation"></a>Кодирование приложения для экспериментов
 
@@ -60,7 +60,7 @@ ms.locfileid: "3851224"
 
 2. Объявите переменную типа string и присвойте в качестве значения [идентификатор проекта](run-app-experiments-with-a-b-testing.md#terms) для эксперимента, который вы хотите получить.
     > [!NOTE]
-    > Проекта вы получаете идентификатор время [создания проекта в информационной панели центра разработки](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). Указанный ниже идентификатор проекта используется только в качестве примера.
+    > Проекта вы получаете идентификатор, время [создания проекта в информационной панели центра разработки](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). Указанный ниже идентификатор проекта используется только в качестве примера.
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
 

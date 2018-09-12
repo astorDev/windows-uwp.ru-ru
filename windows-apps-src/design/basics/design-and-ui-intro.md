@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 952db87d0dabdb927a472de17f0c0d7b345bde4e
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849068"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3936381"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Введение в проектирование приложений UWP
 
@@ -66,7 +66,7 @@ ms.locfileid: "3849068"
 
 :::row:::
     :::column:::
-        При запуске приложения UWP на любом устройстве с Windows 10, оно запускается в [окне](/uwp/api/Windows.UI.Xaml.Controls.Window) [кадра](/uwp/api/Windows.UI.Xaml.Controls.Frame), который может перемещаться между экземплярами [страницы](/uwp/api/Windows.UI.Xaml.Controls.Page) .
+        При запуске приложения UWP на любом устройстве с Windows 10, оно запускается в [окне](/uwp/api/Windows.UI.Xaml.Controls.Window) с [кадра](/uwp/api/Windows.UI.Xaml.Controls.Frame), который может перемещаться между экземплярами [страницы](/uwp/api/Windows.UI.Xaml.Controls.Page) .
     :::column-end:::
     :::column:::
         ![Кадр](images/frame.svg)
@@ -75,7 +75,7 @@ ms.locfileid: "3849068"
 
 :::row:::
     :::column:::
-        Пользовательский Интерфейс приложения можно считать коллекцию страниц. Вам решать, что появится на каждой странице и как страницы будут связаны между собой.
+        Пользовательский Интерфейс приложения можно представить как набор страниц. Вам решать, что появится на каждой странице и как страницы будут связаны между собой.
 
         To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
     :::column-end:::

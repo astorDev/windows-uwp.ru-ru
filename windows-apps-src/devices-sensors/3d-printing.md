@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 3dprinting, трехмерной печати
 ms.localizationpriority: medium
 ms.openlocfilehash: acf0c9856328e26f8c39adf3f062a3516e7189e2
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851234"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935673"
 ---
 # <a name="3d-printing"></a>3D Printing
 
 
-В этом разделе описывается, как использовать [пространство имен Windows.Graphics.Printing3D](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) так, чтобы добавить функцию трехмерной печати в универсальное приложение для Windows.  
+В этом разделе описывается использование пространства [имен Windows.Graphics.Printing3D](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) , чтобы добавить функцию трехмерной печати в универсальное приложение для Windows.  
 
 Дополнительные сведения о трехмерной печати в Windows 10, включая ресурсы для партнеров оборудования, форумы обсуждений и общие сведения о возможностях трехмерной печати см. на сайте [трехмерной печати с Windows 10](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10) в центре разработки оборудования.
 
 | Статья | Описание |
 |-------|-------------|
 | [Трехмерная печать из приложения](3d-print-from-app.md) | Узнайте, как добавить функцию трехмерной печати в приложение UWP. Эта статья содержит сведения о том, как вызвать диалоговое окно трехмерной печати, убедившись в том, что трехмерная модель пригодна для печати и представлена в нужном формате. |
-| [Создание пакета 3MF](generate-3mf.md) | Описание структуры типа файлов формате создания 3D и как его можно создания и обработки с помощью Windows.Graphics.Printing3D API-интерфейсы. |
+| [Создание пакета 3MF](generate-3mf.md) | Описание структуры типа файлов формате создания 3D и его может быть создан и обработки с помощью Windows.Graphics.Printing3D API. |
 
 ## <a name="related-topics"></a>Связанные статьи
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 79c2bd63c326b90b0b5d6e5007c4610f22bff670
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3847888"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3928206"
 ---
 # <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a>Пошаговое руководство: создание компонента среды выполнения Windows на C++/CX и его вызов из JavaScript или C#
 > [!NOTE]

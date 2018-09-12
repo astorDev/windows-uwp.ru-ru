@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849368"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929284"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Основы проектирования навигации для приложений UWP
 
@@ -168,7 +168,7 @@ ms.locfileid: "3849368"
 
 :::row:::
     :::column:::
-        ![Изображение](images/nav/thumbnail-frame.svg)
+        ![Изображение рамки](images/nav/thumbnail-frame.svg)
     :::column-end:::
     ::: column span = «2»::: [ **кадров**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
@@ -200,7 +200,7 @@ ms.locfileid: "3849368"
     :::column:::
         ![изображение navview](images/nav/thumbnail-navview.svg)
     :::column-end:::
-    ::: column span = «2»::: [ **Левое меню навигации**](../controls-and-patterns/navigationview.md)
+    ::: column span = «2»::: [ **левой навигационной**](../controls-and-patterns/navigationview.md)
 
         Displays a vertical list of links to top-level pages. Use when:
         

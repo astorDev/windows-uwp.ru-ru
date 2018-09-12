@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cf12bc5c875e4ce3be2d627c87e15770e4cc214
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846618"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3932809"
 ---
 # <a name="data-binding-overview"></a>Общие сведения о привязке данных
 
@@ -36,7 +36,7 @@ ms.locfileid: "3846618"
 
 Каждая привязка состоит из целевого объекта привязки и источника привязки. Как правило, целевым объектом является свойство элемента управления или другой элемент пользовательского интерфейса, а источником— свойство экземпляра класса (модель данных или модель представления). В этом примере показано, как привязать элемент управления к отдельному элементу. Целью является свойство **Text** элемента **TextBlock**. Источник— это экземпляр простого класса с именем **Recording**, который представляет собой аудиозапись. Сначала рассмотрим класс.
 
-Если вы используете C#, затем добавьте новый класс в проект и назовите его `Recording.cs`.
+Если вы используете C#, затем добавьте новый класс в свой проект и назовите его `Recording.cs`.
 
 Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), затем добавит новые элементы **Файла Midl (.idl)** в проект с именем, как показано в C + +/ WinRT код примера ниже. Замените содержимое этих новых файлов с кодом [MIDL 3.0](/uwp/midl-3/intro) , отображаются в описании, соберите проект, чтобы создать `Recording.h` и `.cpp` и `RecordingViewModel.h` и `.cpp`, а затем добавьте код для созданных файлов в соответствии с описанием. Дополнительные сведения об этих созданных файлов и как копировать их в свой проект, см. в разделе [элементы управления XAML; привязка к C + +/ WinRT свойства](/windows/uwp/cpp-and-winrt-apis/binding-property).
 
@@ -221,7 +221,7 @@ namespace Quickstart
 
 После этого предоставьте класс источника привязки из класса, представляющего страницу разметки. Для этого следует добавить свойство типа **RecordingViewModel** к **MainPage**.
 
-Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), а затем Первое обновление `MainPage.idl`. Создание проекта для повторного создания `MainPage.h` и `.cpp`и внести изменения в этих файлах, созданный в те в свой проект.
+Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), а затем Первое обновление `MainPage.idl`. Создание проекта для повторного создания `MainPage.h` и `.cpp`и объединение изменений в этих файлах, созданный в те в свой проект.
 
 ```csharp
 namespace Quickstart
@@ -305,7 +305,7 @@ namespace Quickstart
 </Page>
 ```
 
-Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), вам следует удалить функцию **MainPage::ClickHandler** в порядке для сборки проекта.
+Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), вам следует удалить функцию **MainPage::ClickHandler** в для сборки проекта.
 
 Вот результат.
 
@@ -439,7 +439,7 @@ public:
 
 ![Привязка списка](images/xaml-databinding1.png)
 
-Чтобы решить эту проблему, мы либо можно переопределить [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) возвращает значение **OneLineSummary**или предусмотрен шаблон данных. Шаблон данных — более обычных решения и более гибкое один. Шаблон данных задается с помощью свойства [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) элемента управления содержимым или с помощью свойства [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) элемента управления элементами. Ниже приведены два способа разработки шаблона данных для класса **Recording**, а также показан результат его применения.
+Чтобы решить эту проблему, мы либо можно переопределить [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) возвращает значение **OneLineSummary**или предусмотрен шаблон данных. Шаблон данных — более обычных решения и более гибкое из них. Шаблон данных задается с помощью свойства [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) элемента управления содержимым или с помощью свойства [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) элемента управления элементами. Ниже приведены два способа разработки шаблона данных для класса **Recording**, а также показан результат его применения.
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -479,7 +479,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 
 Вы можете отобразить все сведения объектов **Recording** в элементах [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878), но они занимают много места. Вместо этого в элементе можно отобразить данные об объеме, достаточном для определения элемента. Затем, когда пользователь выберет содержимое, вы можете отобразить все сведения о выбранном элементе в отдельном элементе пользовательского интерфейса, известном как представление подробностей. Оно также называется главным представлением либо представлением списка или сведений.
 
-Этот вопрос можно решить двумя способами. Вы можете привязать представление подробностей к свойству [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) класса [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Или можно использовать [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), в этом случае привязать **ListView** и представление подробностей к **CollectionViewSource** (проводя так позаботится элемента выбранного в настоящее время для вас). Оба способа показаны ниже, и оба они дают аналогичные результаты (как показано на рисунке).
+Этот вопрос можно решить двумя способами. Вы можете привязать представление подробностей к свойству [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) класса [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Или можно использовать [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), в этом случае привязать **ListView** и представление подробностей к **CollectionViewSource** (выполнив так позаботится элемента выбранного в настоящее время для вас). Оба способа показаны ниже, и они дают аналогичные результаты, (показанные на рисунке).
 
 > [!NOTE]
 > Пока что в этом разделе мы использовали только [расширение разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), но для обоих приведенных ниже методов требуется более гибкое (но менее производительное) [расширение разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782).
@@ -487,7 +487,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 > [!IMPORTANT]
 > Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) (см. ниже) доступна только в том случае, если вы установили [Windows 10 SDK предварительную сборку 17661 пакета](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)или более поздней версии. Без этого атрибута необходимо реализовывать интерфейсы [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) и [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) , чтобы иметь возможность использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) .
 
-Если вы используете C + +/ расширения компонентов WinRT или Visual C++ (C + +/ CX), так как мы будем использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , вам потребуется добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) в классе **записи** .
+Если вы используете C + +/ WinRT или Visual C++ расширения компонентов (C + +/ CX) затем, так как мы будем использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , вам потребуется добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) к классу **записи** .
 
 Сначала рассмотрим способ с использованием свойства [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770).
 
@@ -616,7 +616,7 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 ![отображение даты в пользовательском форматировании](images/xaml-databinding5.png)
 
 > [!NOTE]
-> Начиная с Windows 10 версии 1607, платформа XAML предоставляет встроенный преобразователь Boolean в Visibility. Преобразователь сопоставляет **значение true,** значение перечисления **Visibility.Visible** и **значение false,** чтобы **Visibility.Collapsed** , чтобы привязать свойство Visibility к Boolean без создания преобразователя. Для использования встроенного преобразователя минимальная версия целевого пакета SDK вашего приложения должна быть 14393 или более поздней. Вы не сможете использовать преобразователь, если ваше приложение предназначено для более ранних версий Windows 10. См. Дополнительные сведения о версиях целевой [версии адаптивного кода](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Начиная с Windows 10 версии 1607, платформа XAML предоставляет встроенный преобразователь Boolean в Visibility. Преобразователь сопоставляет **значение true,** значение перечисления **Visibility.Visible** и **значение false,** чтобы **Visibility.Collapsed** таким образом вы можете привязать свойство Visibility к Boolean без создания преобразователя. Для использования встроенного преобразователя минимальная версия целевого пакета SDK вашего приложения должна быть 14393 или более поздней. Вы не сможете использовать преобразователь, если ваше приложение предназначено для более ранних версий Windows 10. Дополнительные сведения о целевой версии см. в разделе [версии адаптивного кода](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 ## <a name="see-also"></a>См. также
 * [Привязка данных](index.md)

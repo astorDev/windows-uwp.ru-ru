@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, первое приложение, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: 950b2f3fac44c8350a51fd5c1b7071f05c92d746
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850118"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3930648"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Создание приложения "Hello, world" (XAML)
 
@@ -50,7 +50,7 @@ ms.locfileid: "3850118"
 
 2.  В меню " **файл** ", выберите **Создать > проект** чтобы открыть диалоговое окно *Новый проект* .
 
-3.  В списке шаблонов слева выберите **Установленные > Visual C# > Windows Universal** чтобы увидеть список шаблонов проектов UWP.
+3.  В списке шаблонов слева выберите **Установленные > Visual C# > Windows Universal** список шаблонов проектов UWP.
 
     (Если универсальные шаблоны не отображаются, возможно, у вас нет компонентов для создания приложений UWP. Вы можете повторить процесс установки и добавить поддержку UWP. Для этого нажмите **Открыть установщик Visual Studio** в диалоговом окне *Новый проект*. См. [Подготовка](get-set-up.md)).
 

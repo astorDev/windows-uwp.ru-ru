@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, портала устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: e70ab7c7fba8b8da9a0115a86a13f08e4ef3ebe2
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846248"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3932199"
 ---
 # <a name="device-portal-for-hololens"></a>Портал устройств для HoloLens
 
@@ -51,7 +51,7 @@ ms.locfileid: "3846248"
 3. В веб-браузере вашего ПК откройте `http://127.0.0.1:10080`.
 
 > [!IMPORTANT]
-> Если компьютер не удается найти устройство, попробуйте использовать реальной сети IP-адрес устройства HoloLens, а не `http://127.0.0.1:10080`.
+> Если компьютер не удалось найти устройство, попробуйте выполнить реальной сети IP-адрес устройства HoloLens, а не от `http://127.0.0.1:10080`.
 
 #### <a name="connect-to-an-emulator"></a>Подключение к эмулятору 
 

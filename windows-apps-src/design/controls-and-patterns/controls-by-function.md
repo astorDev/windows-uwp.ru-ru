@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848508"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3936421"
 ---
 # <a name="controls-by-function"></a>Элементы управления по функциям
 
@@ -555,7 +555,7 @@ ms.locfileid: "3848508"
 
 ### <a name="navigationview"></a>NavigationView
 
-Адаптивность контейнеров и модель навигации с помощью гибкой, реализующий левой панели навигации, верхней части и вкладок.
+Адаптируемых контейнера и гибкие навигации модель, которая реализует левой панели навигации, верхней навигационной и вкладок.
 
 Справка: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 

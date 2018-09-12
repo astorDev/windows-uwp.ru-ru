@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 259b171ea490272241fcef1170e2413cb40d7330
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3845328"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935469"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Наборы инструментов для проектирования и образцы приложений UWP
  
@@ -30,12 +30,12 @@ ms.locfileid: "3845328"
 :::row:::
     :::column:::
         ![главное изображение](images/adobe-xd.png) <b>набор средств Adobe XD</b><br>
-        v1806 июня 2018 г.<br>
+        v1806, июня 2018 г.<br>
         <a href="https://aka.ms/adobexdtoolkit">Скачивание</a>
     :::column-end:::
     :::column:::
         ![главное изображение](images/adobe-illustrator.png) <b>набор инструментов Adobe Illustrator</b><br>
-        v1806 июня 2018 г.<br>
+        v1806, июня 2018 г.<br>
         <a href="https://aka.ms/adobeillustratortoolkit">Скачивание</a>
     :::column-end:::
     :::column:::
@@ -52,8 +52,8 @@ ms.locfileid: "3845328"
         <a href="https://aka.ms/adobephotoshoptoolkit">Скачивание</a>
     :::column-end:::
     :::column:::
-        ![главное изображение](images/framer.png) <b>набор инструментов Framer</b><br>
-        v1806 июня 2018 г.<br>
+        ![главное изображение](images/framer.png) <b>Framer toolkit</b><br>
+        v1806, июня 2018 г.<br>
         <a href="https://aka.ms/framertoolkit">Скачивание</a>
     :::column-end:::
     :::column:::
@@ -70,7 +70,7 @@ ms.locfileid: "3845328"
     :::column-end:::
     :::column:::
         ![Эскиз сообщества Windows](images/Windows-community-toolkit.png) <b>Набора средств сообщества Windows</b><br>
-        Вспомогательные функции, пользовательские элементы управления и службы приложений.<br />
+        Вспомогательные функции, пользовательских элементов управления и службы приложений.<br />
         <a href="/windows/uwpcommunitytoolkit/getting-started">Инструкции по установке</a>
     :::column-end:::
     :::column:::
@@ -95,7 +95,7 @@ ms.locfileid: "3845328"
     
 ## <a name="samples"></a>Примеры
 
-![Создайте образ приведения](images/buildcast.png)
+![создать образ приведите](images/buildcast.png)
 **BuildCast**<br>
 BuildCast — это пример начала до конца, созданный для демонстрации системы проектирования Fluent Design, а также других возможностей универсальной платформы Windows. Он позволяет искать, скачивать и воспроизводить видеоподкасты, включая подборку самых популярных подкастов Channel 9 и каналы некоторых технических экспертов по Windows. Он также поддерживает рукописные заметки, закладки и удаленное воспроизведение. Пример был первоначально показан на конференции Build 2017 г. во время обсуждения <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Создание потрясающих приложений с помощью системы проектирования Fluent</a>. <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">Скачать пример BuildCast</a> <br><a href="https://github.com/Microsoft/BuildCast">Посмотреть пример BuildCast на GitHub</a>

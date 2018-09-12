@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 283856ad163d2e67078c61559f6f8ec667e92b87
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846598"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935824"
 ---
 # <a name="avoid-common-certification-failures"></a>Недопущение распространенных ошибок при сертификации
 
@@ -23,7 +23,7 @@ ms.locfileid: "3846598"
 Изучите этот список, чтобы избежать часто возникающих проблем, из-за которых приложения не проходят сертификацию, а также тех проблем, которые могут быть обнаружены при выборочной проверке после публикации приложения.
 
 > [!NOTE]
-> Обязательно изучите [Политик Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies) , чтобы убедиться, что ваше приложение соответствует всем требованиям, перечисленным существует.
+> Обязательно изучите [Политик Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies) , чтобы убедиться, что ваше приложение соответствует всем здесь требованиям.
 
 -   Отправляйте приложение, только когда оно закончено. Вы можете упоминать о планируемых возможностях в описании приложения, однако необходимо исключить из приложения незавершенные разделы, ссылки на веб-страницы, находящиеся в разработке, и прочие элементы, которые вызовут у пользователя ощущение незаконченности приложения.
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c7286493e08fd62ad4b207d0e014dd4fbd5318
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3847208"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3932289"
 ---
 # <a name="handle-uri-activation"></a>Обработка активации универсального кода ресурса (URI)
 
@@ -138,7 +138,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 ```
 
 > [!NOTE]
-> При запуске через контракт протокола, убедитесь, что кнопка "Назад" возвращать пользователя обратно на экран, который запустил это приложение, а не к предыдущему содержимому приложения.
+> При запуске через контракт протокола, убедитесь, что этот кнопку "Назад" должна возвращать пользователя обратно на экран, который запустил это приложение, а не к предыдущему содержимому приложения.
 
 Следующий код запускает приложение программным способом, используя его URI:
 
@@ -162,7 +162,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 > Если вы создаете новое имя схемы URI для вашего приложения, обязательно следуйте рекомендациям в [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550). Это гарантирует, что созданное вами имя будет соответствовать стандартам для схем URI.
 
 > [!NOTE]
-> При запуске через контракт протокола, убедитесь, что кнопка "Назад" возвращать пользователя обратно на экран, который запустил это приложение, а не к предыдущему содержимому приложения.
+> При запуске через контракт протокола, убедитесь, что этот кнопку "Назад" должна возвращать пользователя обратно на экран, который запустил это приложение, а не к предыдущему содержимому приложения.
 
 Рекомендуется, чтобы приложения создавали новый элемент XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) для каждого события активации, открывающего новый целевой объект URI. Тогда стек переходов назад для нового элемента XAML **Frame** не будет включать предыдущее содержимое, которое могло отображаться в текущем окне во время приостановки приложения.
 
@@ -170,7 +170,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 
 ## <a name="related-topics"></a>Статьи по теме
 
-### <a name="complete-sample-app"></a>Полный пример кода приложения
+### <a name="complete-sample-app"></a>Полный пример приложения
 
 - [Пример запуска с сопоставлением](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 
