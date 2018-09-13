@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 39b3ba05b06b6d484804999a935accc7223b5c60
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928534"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964638"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>Скачивание и установка обновлений пакетов из Store
 

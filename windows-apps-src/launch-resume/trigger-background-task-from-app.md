@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: триггер фоновой задачи, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ccd171f53795ef71830ffb022d0468facb3ac4f
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932979"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3963862"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Запуск фоновой задачи в приложении
 

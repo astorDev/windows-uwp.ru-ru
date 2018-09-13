@@ -16,11 +16,11 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fecff4fdd836f271b9fb066c58f159111c37772
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928750"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958488"
 ---
 # <a name="hub-controlpattern"></a>Шаблон/элемент управления "Главный раздел"
 

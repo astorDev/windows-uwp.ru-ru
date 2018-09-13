@@ -16,11 +16,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e842d6c5b8e62a9c043c97849fdf17f524ccfc7
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3931513"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964778"
 ---
 # <a name="access-keys"></a>Ключи доступа
 

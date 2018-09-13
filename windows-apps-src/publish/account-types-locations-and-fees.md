@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, учетная запись разработчика, отдельное лицо, компания, бизнес
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928960"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962620"
 ---
 # <a name="account-types-locations-and-fees"></a>Типы, доступность и стоимость учетных записей
 

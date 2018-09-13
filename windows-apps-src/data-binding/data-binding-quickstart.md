@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cf12bc5c875e4ce3be2d627c87e15770e4cc214
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932809"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3960196"
 ---
 # <a name="data-binding-overview"></a>Общие сведения о привязке данных
 

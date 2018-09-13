@@ -12,12 +12,12 @@ keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 136a52cedd7d4b0599adaff08fd0860260da4ce3
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.openlocfilehash: e947b00c3a070a8d95a21e38c56bda07cd45d3c4
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928392"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964708"
 ---
 # <a name="app-icons-and-logos"></a>Значки приложений и логотипы 
 
@@ -129,7 +129,7 @@ Visual Studio предоставляет средство очень полез�
 :::row-end:::
 :::row:::
     :::column:::
-        2. в окне **Обозревателя решений**дважды щелкните файл package.appmanifest.
+        2. в окне **Обозревателя решений**дважды щелкните файл Package.appmxanifest.
     :::column-end:::
     :::column:::
         ![Конструктор манифеста Visual Studio 2017 г.](images/icons/vs-solution-explorer.png)

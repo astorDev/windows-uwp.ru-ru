@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ec6b2a31f4f577de30dac1c96a411c6aee6e9dc
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932245"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958858"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Индексаторы для конкретных форматов MakePri.exe
 

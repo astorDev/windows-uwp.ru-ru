@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3690e294a3af29d1af261189310dca1a13ac5130
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928628"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958660"
 ---
 # <a name="engage-with-your-customers"></a>Привлечение клиентов
 
