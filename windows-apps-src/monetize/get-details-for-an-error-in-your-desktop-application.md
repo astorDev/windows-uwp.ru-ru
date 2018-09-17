@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, службы Store, API аналитики для Microsoft Store, ошибки, подробные сведения, классическое приложение
 ms.localizationpriority: medium
 ms.openlocfilehash: 31b7684878eb0f8921d81c8fda9d262a21e12132
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963386"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984351"
 ---
 # <a name="get-details-for-an-error-in-your-desktop-application"></a>Получение сведений об ошибке в классическом приложении
 
@@ -104,7 +104,7 @@ Authorization: Bearer <your access token>
 | osBuild         | string  | Номер сборки операционной системы, в которой произошла ошибка.       |
 | applicationVersion         | строка  |   Версия исполняемого файла приложения, в котором произошла ошибка.     |
 | deviceModel           | string  | Строка, указывающая модель устройства, на котором выполнялось приложение в момент возникновения ошибки.   |
-| osVersion       | строка  | Одна из следующих строк, указывающая версию ОС, в которую произведена установка классического приложения:<p/><ul><li><strong>Windows 7</strong></li><li><strong>Windows8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>WindowsServer2016</strong></li><li><strong>WindowsServer1709</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>    |
+| osVersion       | строка  | Одна из следующих строк, указывающая версию ОС, в которую произведена установка классического приложения:<p/><ul><li><strong>Windows 7</strong></li><li><strong>Windows8.1</strong></li><li><strong>Windows10</strong></li><li><strong>WindowsServer2016</strong></li><li><strong>WindowsServer1709</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>    |
 | osRelease       | string  |  Одна из следующих строк, задающих выпуск операционной системы или цикл фокус-тестирования (как подмножество в версиях ОС), в котором возникла ошибка.<p/><p>Для Windows 10.</p><ul><li><strong>Версия 1507</strong></li><li><strong>Версия 1511</strong></li><li><strong>Версия 1607</strong></li><li><strong>Версия 1703</strong></li><li><strong>Версия 1709</strong></li><li><strong>Версия 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>Предварительная оценка — ранний доступ</strong></li><li><strong>Предварительная оценка Windows— поздний доступ</strong></li></ul><p/><p>Для Windows Server 1709</p><ul><li><strong>RTM</strong></li></ul><p>Для Windows Server 2016</p><ul><li><strong>Версия 1607</strong></li></ul><p>Для Windows 8.1.</p><ul><li><strong>Обновление 1</strong></li></ul><p>Для Windows 7.</p><ul><li><strong>Пакет обновления 1</strong></li></ul><p>Если выпуск операционной системы или цикл фокус-тестирования неизвестны, это поле имеет значение <strong>Unknown</strong>.</p>    |
 | deviceType      | строка  | Одна из следующих строк, указывающая тип устройства, на котором произошла ошибка: <p/><ul><li><strong>ПК</strong></li><li><strong>Сервер</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>     |
 | cabDownloadable           | Boolean  | Указывает, может ли этот пользователь скачать CAB-файл.   |

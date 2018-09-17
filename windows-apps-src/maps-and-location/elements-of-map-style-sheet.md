@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, карты, таблица стилей карты
 ms.localizationpriority: medium
 ms.openlocfilehash: 11360f9d76fc07d7a6b24bd1e0bfb78df4f1d22d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957962"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981683"
 ---
 # <a name="map-style-sheet-reference"></a>Справка о таблицах стилей карты
 
@@ -104,7 +104,7 @@ ms.locfileid: "3957962"
 | >>>>> communityPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют расположение общего использования в сообществе. |
 | >>>>> educationPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют учебных заведений и других для образовательных учреждений, связанные с расположениями. |
 | >>>>> entertainmentPoint     | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют развлечения ресурсах, таких как театры, кинотеатрах, и т. д. |
-| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icons that represent essential services such as parking, banks, gas, etc. |
+| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют основных служб, таких как парковки, банки, газа и т. д. |
 | >>>>> foodPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют рестораны, кафе и т. д. |
 | >>>>> lodgingPoint           | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют отелей и других проживание организациями. |
 | >>>>> realEstatePoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют недвижимости компаний. |
@@ -185,7 +185,7 @@ ms.locfileid: "3957962"
 | shadedReliefVisible          | Логический    |  ✔   |  ✔   |  ✔   |  ✔   | Флажок, который указывает, следует ли рисовать затенение подъема на карте. |
 | shadedReliefDarkColor        | Color (Цвет)   |  ✔   |  ✔   |  ✔   |  ✔   | Цвет темной части затененного рельефа.  Альфа-канал представляет максимальное значение альфа-канала. |
 | shadedReliefLightColor       | Color (Цвет)   |  ✔   |  ✔   |  ✔   |  ✔   | Цвет светлой части затененного рельефа.  Альфа-канал представляет максимальное значение альфа-канала. |
-| shadowColor                  | Color (Цвет)   |      |      |      |  ✔️   | Цвет тени за значки, которые используют тени. |
+| shadowColor                  | Цвет   |      |      |      |  ✔️   | Цвет тени за значки, которые используют тени. |
 | spaceColor                   | Color (Цвет)   |  ✔   |  ✔   |  ✔   |  ✔   | Значение цвета ARGB для области вокруг карты. |
 | useDefaultImageColors        | Логический    |  ✔   |  ✔   |  ✔   |  ✔   | Флаг, указывающий, следует ли цвета в SVG используется, а не привлекательный вверх в палитре цветов изображения. |
 

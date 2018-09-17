@@ -1,7 +1,7 @@
 ---
 author: jnHs
 Description: You can respond directly to reviews of your app to let customers know you’re listening to their feedback.
-title: Реакция на отзывы пользователей
+title: Ответ на оценки пользователей
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.author: wdg-dev-content
 ms.date: 7/17/2018
@@ -11,13 +11,13 @@ ms.technology: uwp
 keywords: Ознакомьтесь с Windows 10, uwp, отвечать на запросы, ответы,
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a043a0b721ee6eabdc3520960ae6da253587c33
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963944"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981499"
 ---
-# <a name="respond-to-customer-reviews"></a>Реакция на отзывы пользователей
+# <a name="respond-to-customer-reviews"></a>Ответ на оценки пользователей
 
 
 Вы можете реагировать на отзывы о приложении, чтобы ваши пользователи знали, что вы прислушиваетесь к их мнению. Отвечая на отзывы, можно сообщить клиентам о добавленных функциях или исправленных ошибках на основе их комментариев, а также получить более конкретные пожелания о том, как можно улучшить приложение. Ваши ответы отображаются в магазине Майкрософт для всех пользователей Windows 10. Кроме того, вы можете отправить ваш ответ по электронной почте клиенту (если они не отказались от и он использует устройство под управлением Windows 10 версии 1803 или более поздней версии).

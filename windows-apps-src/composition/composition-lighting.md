@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e634b18fffc4f601f6512d6ceeed51efbe9c1886
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960770"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981741"
 ---
 # <a name="using-lights-in-windows-ui"></a>С помощью источников света в пользовательском Интерфейсе Windows
 
@@ -87,7 +87,7 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 
 Свойство | Описание
 --- | ---
-**Color (Цвет)** | [Цвет](/uwp/api/windows.ui.color) источника света. Освещение цвет, который значения определяются [D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties) Диффузия температура при работе и Specular, которая определяет отображаемый цвет. Освещение использует значения RGBA для источников света; цветовой альфа-компонент не используется.
+**Цвет** | [Цвет](/uwp/api/windows.ui.color) источника света. Освещение цвет, который значения определяются [D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties) Диффузия температура при работе и Specular, которая определяет отображаемый цвет. Освещение использует значения RGBA для источников света; цветовой альфа-компонент не используется.
 **Direction** | Направления света. Направление, в котором указывает источник света задается относительно его Visual [CoordinateSpace](/uwp/api/windows.ui.composition.distantlight.coordinatespace) .
 **Пространство координат** | Каждый визуальный элемент имеет неявный трехмерном пространстве координат. Оси X — слева направо. Вдоль оси Y — сверху вниз. Направлении Z является точкой за пределы плоскости. Исходное точки координаты — верхний левый угол визуального объекта, а единицы — независимых пикселей устройства (DIP). Смещение света, определенные в этом координат.
 **Внутренние и внешние конусы** | Прожекторы излучают свет, состоящий из двух частей: яркий внутренний конус и внешний конус. Композиция позволяет контроль над углов внутреннего и внешнего цвета.
