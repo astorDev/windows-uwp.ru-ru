@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, просмотр, комментарий, редактор
 ms.localizationpriority: medium
-ms.openlocfilehash: 8891aecb904f69e3f77ec5892d9234f79db46ff0
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958692"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989543"
 ---
 # <a name="reviews-report"></a>Отчет "Отзывы"
 
@@ -68,7 +68,7 @@ ms.locfileid: "3958692"
 На этой диаграмме также будут отображаться в [отчете об оценках](ratings-report.md), а также дополнительные сведения о оценки вашего приложения.
 
 
-< span id = «Просмотр представление категории / >
+<span id = "review-insight-categories" />
 
 ## <a name="insight-categories"></a>Представление категории
 
