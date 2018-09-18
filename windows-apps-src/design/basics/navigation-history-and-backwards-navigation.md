@@ -14,12 +14,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 714a1af932dfb8d5b0aab5c84437f92d5c2bd90e
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.openlocfilehash: 4eb8bc40c2e9066487a14d217f53a6433266b308
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983819"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4016066"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Журнал навигации и навигация в обратном направлении для приложений UWP
 
@@ -335,14 +335,14 @@ bool App::On_BackRequested()
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Со страницы на страницу; одна и та же группа одноранговых элементов; элементы навигации не отображаются на экране</strong>
-<p>Пользователь переходит от одной страницы к другой в пределах одной и той же группы одноранговых элементов. Существует не на экране элемента навигации (например, [NavigationView](../controls-and-patterns/navigationview.md)), который обеспечивает непосредственное перемещение обе страницы.</p></td>
+<p>Пользователь переходит от одной страницы к другой в пределах одной и той же группы одноранговых элементов. Существует не на экране элемента навигации (например, <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>), который обеспечивает непосредственное перемещение обе страницы.</p></td>
 <td style="vertical-align:top;"><strong>Да</strong>
 <p>На следующем рисунке пользователь переходит между двумя страницами в той же группы одноранговых элементов и навигации следует добавить в журнал навигации.</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Со страницы на страницу; одна и та же группа одноранговых элементов; элементы навигации отображаются на экране</strong>
-<p>Пользователь переходит от одной страницы к другой в пределах одной и той же группы одноранговых элементов. Обе страницы отображаются в том же элементе навигации, например [NavigationView](../controls-and-patterns/navigationview.md).</p></td>
+<p>Пользователь переходит от одной страницы к другой в пределах одной и той же группы одноранговых элементов. Обе страницы отображаются в том же элементе навигации, например <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>.</p></td>
 <td style="vertical-align:top;"><strong>Это зависит от обстоятельств.</strong>
 <p>Да, добавьте в журнал навигации, с двумя исключениями. Если предполагается, что пользователи вашего приложения переключаться между страницами в одноранговой группе часто или если вы хотите сохранить навигации иерархии, не добавляйте в журнал навигации. В этом случае, когда пользователь нажимает кнопку "Назад", выполните переход к последней странице, на которой он находился перед переходом к текущей одноранговой группе. </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>

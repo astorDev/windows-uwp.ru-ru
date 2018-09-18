@@ -3,18 +3,18 @@ author: jwmsft
 title: Приложения с адаптивным к версии кодом
 description: Узнайте, как воспользоваться новыми API, при этом сохраняя совместимость с предыдущими версиями
 ms.author: jimwalk
-ms.date: 10/10/2017
+ms.date: 09/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d43cd9d03977e34b57d78e1f22bd7e8b340ff4ab
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: f2485eab4b192fe4a65c68d957de1ec9192f8c20
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1701040"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4019650"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Адаптивные к версии приложения: используйте новые API, сохраняя совместимость с предыдущими версиями
 
@@ -48,19 +48,23 @@ ms.locfileid: "1701040"
 
 Чтобы изменить минимальную и целевую версию для проекта, который уже создан в Visual Studio, перейдите в меню "Проект -> Свойства -> вкладка «Приложения» > Нацеливание".
 
-![Изменение целевой версии SDK в Visual Studio](images/vs-target-sdk-2.png) 
+![Изменение целевой версии SDK в Visual Studio](images/vs-target-sdk-2.png)
 
-В следующей таблице для справки представлены номера сборки для каждого SDK. Дополнительные сведения об обновлениях Windows 10 см. в разделе [Сведения о выпуске Windows 10](https://technet.microsoft.com/windows/release-info) на TechNet.
+В следующей таблице для справки представлены номера сборки для каждого SDK.
 
-Понятное имя | Версия | Сборка ОС/SDK | Заметки
----- | ---- | ---- | ----
-RTM | 1507 | 10240 | См. важные сведения о [поддержке](https://support.microsoft.com/help/4015562/windows-10-version-1507-will-no-longer-receive-security-updates).
-Ноябрьское обновление | 1511 | 10586 | См. важные сведения о [поддержке](https://support.microsoft.com/help/4035050/windows-10-version-1511-will-no-longer-receive-security-updates).
-Юбилейное обновление | 1607 | 14393 |
-Creators Update | 1703 | 15063 |
-Fall Creators Update | 1709 | 16299 |
+| Понятное имя | Версия | Сборка ОС/SDK |
+| ---- | ---- | ---- |
+| RTM | 1507 | 10240 |
+| Ноябрьское обновление | 1511 | 10586 |
+| Юбилейное обновление | 1607 | 14393 |
+| Creators Update | 1703 | 15063 |
+| Fall Creators Update | 1709 | 16299 |
+| Обновление за апрель 2018 г. | 1803 | 17134 |
+| Обновление октября 2018 г. | 1809 | _Insider Preview_ |
 
 Вы можете скачать все выпущенные версии SDK из [архива Windows SDK и эмулятора](https://developer.microsoft.com/downloads/sdk-archive). Последнюю версию Windows Insider Preview SDK можно скачать в разделе для разработчиков сайта [Windows Insider](https://insider.windows.com/Home/BuildWithWindows).
+
+ Дополнительные сведения об обновлениях Windows 10 см. [сведения о выпуске Windows 10](https://technet.microsoft.com/windows/release-info). Важные сведения о Windows 10 поддерживает жизненного цикла, [Windows жизненного цикла справочные материалы](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
 
 ## <a name="perform-api-checks"></a>Проверки API
 
