@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, приложение azure ad, aad, пользователь, группа, несколько пользователей, многопользовательской
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4016312"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4054210"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>Добавление пользователей, групп и приложений AzureAD в учетную запись Центра разработки
 

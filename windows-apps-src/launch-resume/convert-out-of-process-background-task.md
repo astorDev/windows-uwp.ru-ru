@@ -1,25 +1,25 @@
 ---
 author: TylerMSFT
-title: Преобразование фоновой задачи, выполняемой вне процесса, в фоновую задачу внутри процесса
-description: Преобразуйте фоновую задачу, которая выполняется вне процесса, в фоновую задачу, которая выполняется внутри процесса вашего приложения переднего плана.
+title: Перенос вне процесса фоновую задачу в фоновую задачу в процессе
+description: Перенос вне процесса фоновые задачи, выполняемой внутри процесса фоновую задачу, которая выполняется внутри процесса вашего приложения переднего плана.
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 09/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, фоновая задача, службы приложений
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
-ms.openlocfilehash: 1144443f943f134991d050dea1457f252eaaf36d
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.openlocfilehash: b9010f82b0460bd46757bc1e0d58c01dec459104
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4020274"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4055784"
 ---
-# <a name="convert-an-out-of-process-background-task-to-an-in-process-background-task"></a>Преобразование фоновой задачи, выполняемой вне процесса, в фоновую задачу внутри процесса
+# <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>Перенос вне процесса фоновую задачу в фоновую задачу в процессе
 
-Самый простой способ преобразовать фоновую задачу, выполняемую вне процесса, в активность внутри процесса — это перенести код метода [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) внутрь вашего приложения и инициировать его из метода [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).
+Самый простой способ перенести вне процесса (OOP) фоновую активность внутри процесса действие — это перенести код метода [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) внутрь вашего приложения и инициировать его из [OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated). Технология описываемого здесь не является о создании оболочка из фоновой задачи, выполняемой OOP в процесс фоновой задачи; его о перезаписи (или перенос) для версии OOP в версии внутри процесса.
 
 Если в вашем приложении используются несколько фоновых задач, [пример фоновой активации](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BackgroundActivation) показывает, как можно использовать `BackgroundActivatedEventArgs.TaskInstance.Task.Name` для определения, какая задача инициируется.
 
