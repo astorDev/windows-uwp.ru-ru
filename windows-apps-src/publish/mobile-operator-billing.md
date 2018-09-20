@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, мобильные операторы, мобильные счета, выставление счетов мобильным оператором
 ms.localizationpriority: medium
 ms.openlocfilehash: c8d0e3093a6a44f748ca78ff3fad977f2cc94d77
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4060078"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4089309"
 ---
 # <a name="mobile-operator-billing"></a>Выставление счетов мобильным оператором
 

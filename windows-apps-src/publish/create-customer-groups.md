@@ -11,11 +11,11 @@ keywords: Windows 10, UWP, группы пользователей, сегмен
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
 ms.openlocfilehash: 88101d9f8cc7ca40d37f88202667f36ecf5d8a3f
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4056680"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4089959"
 ---
 # <a name="create-customer-groups"></a>Создание групп пользователей
 
