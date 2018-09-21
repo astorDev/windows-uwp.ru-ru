@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, машинный образ компилятора
 ms.localizationpriority: medium
 ms.openlocfilehash: d98b576fb51a8f9507802796ab359d0d00d21998
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4114758"
+ms.locfileid: "4121979"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>Оптимизируйте свои приложений .NET рабочего стола с помощью собственных образов
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 87aafe36d05298a8fa157426e39c530190f98908
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4113164"
+ms.locfileid: "4124789"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности
 
