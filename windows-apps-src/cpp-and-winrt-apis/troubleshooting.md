@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, устранение неполадок, HRESULT, ошибка
 ms.localizationpriority: medium
-ms.openlocfilehash: 4129c50a2273c8ac425f6ea972898aa09fe0fcf3
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.openlocfilehash: cccc58c0b9dd5f922c87d3e6860bb2f2045ea767
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4085731"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4115308"
 ---
 # <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>Устранение неполадок [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 > [!NOTE]
@@ -37,7 +37,7 @@ ms.locfileid: "4085731"
 | Компилятор C++ выдает ошибку "*attempting to reference a deleted function*". | Это может произойти, когда вы вызываете **make**, и тип реализации, который вы передаете в качестве параметра шаблона имеет конструктор по умолчанию `= delete`. Измените файл заголовка типа реализации и замените `= delete` на `= default`. Также можно добавить в IDL конструктор для класса среды выполнения. |
 | Вы реализовали [**INotifyPropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged), но привязки XAML не обновляются (и пользовательский интерфейс не подписывается на [**PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)). | Не забудьте установить `Mode=OneWay` (или TwoWay) в выражении привязки в разметке XAML. См. раздел [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md). |
 | Вы привязываете элемент управления элементами XAML к отслеживаемой коллекции, и при выполнении создается исключение "The parameter is incorrect". | В вашем IDL и реализации объявите отслеживаемые коллекции в качестве типа **Windows.Foundation.Collections.IVector<IInspectable>**. Но возвращайте объект, реализующий **Windows.Foundation.Collections.IObservableVector<T>**, где T — тип вашего элемента. См. раздел [Элементы управления XAML; привязка к коллекции C++/WinRT](binding-collection.md).  |
-| Компилятор C++ выдает ошибку формы "*'MyImplementationType_base&lt;MyImplementationType&gt;': no appropriate default constructor available*".|Это может произойти, когда вы получили производное от типа, который имеет нестандартный конструктор. Конструктор производного типа должен передать параметры, которые требуются конструктору базового типа. Рабочий пример см. в разделе [Получение производного от типа, имеющего нестандартный конструктор](author-apis.md#deriving-from-a-type-that-has-a-non-trivial-constructor).|
+| Компилятор C++ выдает ошибку формы "*'MyImplementationType_base&lt;MyImplementationType&gt;': no appropriate default constructor available*".|Это может произойти, когда вы получили производное от типа, который имеет нестандартный конструктор. Конструктор производного типа должен передать параметры, которые требуются конструктору базового типа. Рабочий пример см. в разделе [Получение производного от типа, имеющего нестандартный конструктор](author-apis.md#deriving-from-a-type-that-has-a-non-default-constructor).|
 | Компилятор C++ выдает ошибку "*cannot convert from 'const std::vector&lt;std::wstring,std::allocator&lt;_Ty&gt;&gt;' to 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'*".|Это может произойти при передаче std::vector std::wstring API-интерфейсу среды выполнения Windows, который ожидает коллекцию. Дополнительные сведения см. в разделе [Стандартные типы данных C++ и C++/WinRT](std-cpp-data-types.md).|
 | Компилятор C++ выдает ошибку "*cannot convert from 'const std::vector&lt;winrt::hstring,std::allocator&lt;_Ty&gt;&gt;' to 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'*".|Это может произойти при передаче std::vector winrt::hstring асинхронному API-интерфейсу среды выполнения Windows, который ожидает коллекцию, при этом вектор не скопирован и не перемещен в асинхронный вызываемый. Дополнительные сведения см. в разделе [Стандартные типы данных C++ и C++/WinRT](std-cpp-data-types.md).|
 | При открытии проекта Visual Studio выдает ошибку "*The application for the project is not installed*".|Если вы еще не сделали этого, необходимо установить **средства универсальной платформы Windows для разработки на C++** в диалоговом окне Visual Studio **Новый проект**. Если это не устраняет проблему, то проект может зависеть от расширения Visual Studio (VSIX) C++/WinRT (см. раздел [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)).|
