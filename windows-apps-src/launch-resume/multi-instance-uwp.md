@@ -4,23 +4,26 @@ title: Создание универсального приложения для
 description: В этом разделе приводится методика создания приложений UWP, поддерживающих запуск нескольких экземпляров.
 keywords: UWP с несколькими экземплярами
 ms.author: twhitney
-ms.date: 09/19/2018
+ms.date: 09/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9302ed0375739153eb95ac2b54c1ed396b14daee
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.openlocfilehash: dd4e0ced4de2419858424a88f5fa5ce66f5b4286
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4126999"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4156099"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>Создание универсального приложения для Windows с несколькими экземплярами
 
 В этом разделе приводится методика создания приложений универсальной платформы Windows (UWP) с несколькими экземплярами.
 
 В Windows 10 версии 1803 (10.0; Сборка 17134) и Далее, приложения UWP могут принять участие в поддержку нескольких экземпляров. Если запущен экземпляр приложения UWP с несколькими экземплярами и поступают последующие запросы на активацию, платформа не будет активировать существующий экземпляр. Вместо этого будет создан новый экземпляр, выполняемый в отдельном процессе.
+
+> [!IMPORTANT]
+> Создание нескольких экземпляров поддерживается для приложений JavaScript, но не является перенаправления нескольких экземпляров. Поскольку перенаправления нескольких экземпляров для приложений JavaScript не поддерживается, класс [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance) не является полезным для таких приложений.
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>Согласие на использование поведения с несколькими экземплярами
 
@@ -59,7 +62,7 @@ ms.locfileid: "4126999"
 
 Шаблон **Приложения UWP с несколькими экземплярами и перенаправлением** добавляет `SupportsMultipleInstances` в файл package.appxmanifest, как показано выше, а также добавляет **Program.cs** (или **Program.cpp**, если вы используете версию шаблона для C++) в ваш проект, содержащий функцию `Main()`. Логика перенаправления с активацией выполняется в функции `Main`. Ниже показан шаблон для **Program.cs** .
 
-Свойство [AppInstance.RecommendedInstance](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance) показатель оболочки предусмотренной предпочтительный для данного запроса активации, если таковой имеется (или `null` Если не существует один). Если оболочке предоставляет предпочтения, затем можно можно перенаправить активации этого экземпляра, или вы можете проигнорировать ее, если вы решили.
+Свойство [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance) показатель оболочки предусмотренной предпочтительный для данного запроса активации, если таковой имеется (или `null` Если не существует один). Если оболочке предоставляет предпочтения, затем можно можно перенаправить активации этого экземпляра, или вы можете проигнорировать ее, если вы решили.
 
 ``` csharp
 public static class Program
@@ -109,7 +112,7 @@ public static class Program
 }
 ```
 
-`Main()` — первое, что выполняется. Этот элемент выполняется перед [OnLaunched()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) и [OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_). Это позволяет вам определить, следует ли активировать этот или другой экземпляр, перед выполнением какого-либо кода инициализации в вашем приложении.
+`Main()` — первое, что выполняется. Этот элемент выполняется перед [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) и [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_). Это позволяет вам определить, следует ли активировать этот или другой экземпляр, перед выполнением какого-либо кода инициализации в вашем приложении.
 
 Приведенный выше код определяет, какой экземпляр вашего приложения активируется: существующий или новый. Для определения наличия существующего экземпляра, который требуется активировать, используется ключ. Например, если ваше приложение может запускаться для [Обработки активации файла](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation), в качестве ключа можно использовать имя файла. Затем можно проверить, зарегистрирован ли экземпляр вашего приложения с таким ключом, и активировать его вместо открытия нового экземпляра. Вот на каких идеях основан этот код. `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
@@ -129,7 +132,7 @@ public static class Program
 - Во избежание состояний гонки и конфликтов многоэкземплярным приложениям необходимо выполнять действия по синхронизации и разделению доступа к параметрам, локальному хранилищу приложения и другим ресурсам (например, файлам пользователей, хранилищу данных и т. д.), которые могут совместно использоваться несколькими экземплярами. Доступны стандартные механизмы синхронизации, такие как мьютексы, события, семафоры и т. д.
 - Если приложение содержит `SupportsMultipleInstances` в файле Package.appxmanifest, в его расширениях не нужно объявлять `SupportsMultipleInstances`. 
 - Если вы добавляете `SupportsMultipleInstances` в другие расширения помимо фоновых задач и служб приложения, а приложение, в котором размещается расширение, также не объявляет `SupportsMultipleInstances` в своем файле Package.appxmanifest, возникает ошибка схемы.
-- Приложения могут использовать объявление [ResourceGroup](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest) в своем манифесте для группировки нескольких фоновых задач в одном узле. Это конфликтует с моделью с несколькими экземплярами, где каждая активация переходит в отдельный хост-процесс. Поэтому приложения не могут объявлять и `SupportsMultipleInstances`, и `ResourceGroup` в манифесте.
+- Приложения могут использовать объявление [**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest) в своем манифесте для группировки нескольких фоновых задач в одном узле. Это конфликтует с моделью с несколькими экземплярами, где каждая активация переходит в отдельный хост-процесс. Поэтому приложения не могут объявлять и `SupportsMultipleInstances`, и `ResourceGroup` в манифесте.
 
 ## <a name="sample"></a>Пример
 

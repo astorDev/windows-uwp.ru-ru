@@ -3,18 +3,18 @@ author: stevewhims
 description: C + +/ WinRT предоставляет функции и базовые классы, которые вам сэкономить много времени и усилий, если вы хотите реализовать и/или передать коллекции.
 title: Коллекции с помощью C + +/ WinRT
 ms.author: stwhi
-ms.date: 08/24/2018
+ms.date: 09/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартные, c ++, cpp, winrt, проекция, коллекции
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ef6fbfab45197c868296186363c168a6c443247
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.openlocfilehash: c7ac3635a96b8dd3d757f25da1b826ea318c1ad4
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4126349"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155397"
 ---
 # <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Коллекции с [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -32,6 +32,8 @@ ms.locfileid: "4126349"
 
 ### <a name="general-purpose-collection-empty"></a>Коллекции общего назначения, пустой
 
+В этом разделе рассматриваются сценарий, которую вы хотите создать коллекцию, изначально пуста; и заполните его *после* создания.
+
 Чтобы получить новый объект типа, который реализует общего назначения коллекции, можно вызвать шаблон функции [**winrt::single_threaded_vector**](/uwp/cpp-ref-for-winrt/single-threaded-vector) . Объект возвращается в виде [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_), и это интерфейса, через который вы вызываете функций и свойств возвращенный объект.
 
 ```cppwinrt
@@ -42,7 +44,7 @@ using namespace winrt;
 ...
 int main()
 {
-    init_apartment();
+    winrt::init_apartment();
 
     Windows::Foundation::Collections::IVector<int> coll{ winrt::single_threaded_vector<int>() };
     coll.Append(1);
@@ -60,9 +62,13 @@ int main()
 
 Как видно в приведенном выше примере кода, после создания коллекции можно добавить элементы, итерацию их и обычно обрабатывают объекта, как и любой объект коллекции среды выполнения Windows, который вы получили из API-интерфейса. Если вам требуется постоянный представления по коллекции, можно вызвать [**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview), как показано. Приведенный выше шаблон&mdash;создания и использования коллекции&mdash;подходит для простых сценариях, где требуется передавать данные в или получить данные из API-интерфейса. Вы можете передать **IVector**или **IVectorView**, в любом ожидается, что [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_) .
 
+В примере выше вызов **winrt::init_apartment** инициализирует COM; по умолчанию в многопотокового подразделения.
+
 ### <a name="general-purpose-collection-primed-from-data"></a>Общего назначения коллекции, и заполняется из данных
 
-Вы также можете избежать вызовы **Append** , который можно увидеть в приведенном выше примере кода. Возможно, уже владеете исходным данным, или вы предпочитаете могут заполнить ее до вступления в силу создание объекта коллекции среды выполнения Windows. Вот как это сделать.
+В этом разделе рассматриваются сценарии, где вы хотите создать коллекцию и заполните его в то же время.
+
+Вы можете избежать затрат вызовов **Append** в предыдущем примере кода. Возможно, уже владеете исходным данным, или вы предпочитаете могут заполнить исходных данных до вступления в силу создание объекта коллекции среды выполнения Windows. Вот как это сделать.
 
 ```cppwinrt
 auto coll1{ winrt::single_threaded_vector<int>({ 1,2,3 }) };
