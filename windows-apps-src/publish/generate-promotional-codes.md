@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, промокод, промокоды, токен, токены
 ms.localizationpriority: medium
 ms.openlocfilehash: 37263794ffed6660f71c5e16195e992588c16d4a
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4127129"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149809"
 ---
 # <a name="generate-promotional-codes"></a>Создание промокодов
 

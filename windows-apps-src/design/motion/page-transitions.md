@@ -12,11 +12,11 @@ keywords: Windows10, UWP
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.openlocfilehash: 0afc2c55ab0d0bdd2bee0206f986b2724d331eaf
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4125949"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152653"
 ---
 # <a name="page-transitions"></a>Смена страниц
 

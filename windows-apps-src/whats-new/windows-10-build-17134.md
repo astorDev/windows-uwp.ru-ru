@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f12190c405ad611cf5b884b82c4a430aa5264f
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4122857"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149565"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Новые возможности для разработчиков в Windows 10, сборка 17134
 

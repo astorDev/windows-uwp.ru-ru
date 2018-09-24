@@ -3,18 +3,18 @@ author: stevewhims
 description: Чтобы приступить к работе с C++/WinRT, в этой статье описывается простой пример кода.
 title: Начало работы с C++/WinRT
 ms.author: stwhi
-ms.date: 05/21/2018
+ms.date: 09/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, начать, начало, работы
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e1bd5f23f40c5d0238f8089c91ee69c6a52313f
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.openlocfilehash: f058ece64e6f041b5b0e8731a7891968f573f744
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4124283"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149767"
 ---
 # <a name="get-started-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Начало работы с [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Чтобы приступить к работе с C++/WinRT, в этой статье описывается простой пример кода.
@@ -27,7 +27,6 @@ ms.locfileid: "4124283"
 
 > [!IMPORTANT]
 > Если вы используете Visual Studio 2017 (версии 15.8.0 или более поздней версии) и пакет Windows SDK версии 10.0.17134.0 (Windows 10, версия 1803), затем только что созданного C + +/ WinRT проект может не удаться компиляции с ошибкой «ошибка*C3861: «from_abi»: идентификатор не найти*» и другие ошибки, которые происходят *base.h*. Решением является более поздней версии (Дополнительные совместимые) либо целевой версии Windows SDK, или задать свойство проекта **C/C++** > **язык** > **режим совместимости: нет** (Кроме того, если **/ permissive-** отображается в свойство проекта ** C/C++** > **язык** > **командной строки** в группе **Дополнительные параметры**, удалите его).
-
 
 Отредактируйте файлы `pch.h` и `main.cpp` следующим образом.
 

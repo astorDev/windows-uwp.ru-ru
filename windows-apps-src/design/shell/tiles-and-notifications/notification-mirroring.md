@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, всплывающее уведомление, центр уведомлений в облаке, зеркальное отображения уведомлений, уведомление, разные устройства
 ms.localizationpriority: medium
 ms.openlocfilehash: eb8e2ceb16add551f3c8e3a71a69d36b99f21c62
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4121905"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149525"
 ---
 # <a name="notification-mirroring"></a>Зеркальное отображение уведомлений
 

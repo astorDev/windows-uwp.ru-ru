@@ -10,12 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cf12bc5c875e4ce3be2d627c87e15770e4cc214
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+dev_langs:
+- csharp
+- cppwinrt
+- cpp
+ms.openlocfilehash: ff104bfb5114cd51eb04d75af3c096f47a7d286d
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4122515"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153627"
 ---
 # <a name="data-binding-overview"></a>Общие сведения о привязке данных
 
@@ -36,7 +40,7 @@ ms.locfileid: "4122515"
 
 Каждая привязка состоит из целевого объекта привязки и источника привязки. Как правило, целевым объектом является свойство элемента управления или другой элемент пользовательского интерфейса, а источником— свойство экземпляра класса (модель данных или модель представления). В этом примере показано, как привязать элемент управления к отдельному элементу. Целью является свойство **Text** элемента **TextBlock**. Источник— это экземпляр простого класса с именем **Recording**, который представляет собой аудиозапись. Сначала рассмотрим класс.
 
-Если вы используете C#, затем добавьте новый класс в свой проект и назовите его `Recording.cs`.
+Если вы используете C# или C + +/ CX, затем добавьте новый класс в свой проект и назовите класс **записи**.
 
 Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), затем добавит новые элементы **Файла Midl (.idl)** в проект с именем, как показано в C + +/ WinRT код примера ниже. Замените содержимое этих новых файлов с кодом [MIDL 3.0](/uwp/midl-3/intro) , отображаются в описании, соберите проект, чтобы создать `Recording.h` и `.cpp` и `RecordingViewModel.h` и `.cpp`, а затем добавьте код для созданных файлов в соответствии с описанием. Дополнительные сведения об этих созданных файлов и как копировать их в свой проект, см. в разделе [элементы управления XAML; привязка к C + +/ WinRT свойства](/windows/uwp/cpp-and-winrt-apis/binding-property).
 
@@ -157,6 +161,7 @@ Quickstart::Recording RecordingViewModel::DefaultRecording()
 ```
 
 ```cpp
+// Recording.h
 #include <sstream>
 namespace Quickstart
 {
@@ -217,6 +222,10 @@ namespace Quickstart
         }
     };
 }
+
+// Recording.cpp
+#include "pch.h"
+#include "Recording.h"
 ```
 
 После этого предоставьте класс источника привязки из класса, представляющего страницу разметки. Для этого следует добавить свойство типа **RecordingViewModel** к **MainPage**.
@@ -273,6 +282,10 @@ Quickstart::RecordingViewModel MainPage::ViewModel()
 ```
 
 ```cpp
+// MainPage.h
+...
+#include "Recording.h"
+
 namespace Quickstart
 {
     public ref class MainPage sealed
@@ -280,16 +293,21 @@ namespace Quickstart
     private:
         RecordingViewModel ^ viewModel;
     public:
-        MainPage()
-        {
-            InitializeComponent();
-            this->viewModel = ref new RecordingViewModel();
-        }
+        MainPage();
+
         property RecordingViewModel^ ViewModel
         {
             RecordingViewModel^ get() { return this->viewModel; };
         }
     };
+}
+
+// MainPage.cpp
+...
+MainPage::MainPage()
+{
+    InitializeComponent();
+    this->viewModel = ref new RecordingViewModel();
 }
 ```
 
@@ -381,6 +399,8 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Rec
 ```
 
 ```cpp
+// Recording.h
+...
 public ref class RecordingViewModel sealed
 {
 private:
@@ -561,11 +581,14 @@ public ref class Recording sealed
 
 Ниже приведены аналогичные результаты, полученные в каждом случае.
 
+> [!NOTE]
+> Если вы используете C++, пользовательский Интерфейс не будет выглядеть так же, как на рисунке ниже: отрисовки **ReleaseDateTime** свойства отличается. В следующем разделе более подробное описание этого.
+
 ![Привязка списка](images/xaml-databinding4.png)
 
 ## <a name="formatting-or-converting-data-values-for-display"></a>Форматирование или преобразование значений данных для отображения
 
-С описанной выше обработкой возникает одна небольшая проблема. Свойство **ReleaseDateTime** — это не просто дата, а [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx), поэтому оно отображается с большей точностью, чем нам нужно. Возможное решение проблемы— добавить строковое свойство в класс **Recording**, который возвращает `this.ReleaseDateTime.ToString("d")`. Присвоение этому свойству имени **ReleaseDate** указывает, что оно возвращает дату, а не дату и время. Присвоение ему имени **ReleaseDateAsString** дополнительно указывает, что оно возвращает строку.
+Существует проблема с описанной выше. Свойство **ReleaseDateTime** не просто Дата, это [**Дата и время**](/uwp/api/windows.foundation.datetime) (Если вы используете C++, то, [**Календарь**](/uwp/api/windows.globalization.calendar)). Таким образом в C#, оно отображается с большей точностью, чем нам нужно. И на языке C++ оно будет отображаться как имя типа. Возможное решение проблемы — добавить строковое свойство в класс **записи** , который возвращает эквивалент `this.ReleaseDateTime.ToString("d")`. Присвоение этому свойству **ReleaseDate** указывает, что оно возвращает дату, а не даты и времени. Присвоение ему имени **ReleaseDateAsString** дополнительно указывает, что оно возвращает строку.
 
 Более гибкое решение— использовать преобразователь величин. Вот пример того, как создать собственный преобразователь величин. Добавьте следующий код в файл исходного кода Recording.cs.
 
@@ -598,7 +621,94 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 }
 ```
 
-Теперь мы можем добавить экземпляр **StringFormatter** в качестве ресурса страницы и использовать его в нашей привязке. В преобразователь мы передаем строку формата из разметки, чтобы максимально увеличить гибкость форматирования.
+```cppwinrt
+// StringFormatter.idl
+namespace Quickstart
+{
+    runtimeclass StringFormatter : Windows.UI.Xaml.Data.IValueConverter
+    {
+        StringFormatter();
+    }
+}
+
+// StringFormatter.h
+#pragma once
+
+#include "StringFormatter.g.h"
+#include <sstream>
+
+namespace winrt::Quickstart::implementation
+{
+    struct StringFormatter : StringFormatterT<StringFormatter>
+    {
+        StringFormatter() = default;
+
+        Windows::Foundation::IInspectable Convert(Windows::Foundation::IInspectable const& value, Windows::UI::Xaml::Interop::TypeName const& targetType, Windows::Foundation::IInspectable const& parameter, hstring const& language);
+        Windows::Foundation::IInspectable ConvertBack(Windows::Foundation::IInspectable const& value, Windows::UI::Xaml::Interop::TypeName const& targetType, Windows::Foundation::IInspectable const& parameter, hstring const& language);
+    };
+}
+
+namespace winrt::Quickstart::factory_implementation
+{
+    struct StringFormatter : StringFormatterT<StringFormatter, implementation::StringFormatter>
+    {
+    };
+}
+
+// StringFormatter.cpp
+#include "pch.h"
+#include "StringFormatter.h"
+
+namespace winrt::Quickstart::implementation
+{
+    Windows::Foundation::IInspectable StringFormatter::Convert(Windows::Foundation::IInspectable const& value, Windows::UI::Xaml::Interop::TypeName const& /* targetType */, Windows::Foundation::IInspectable const& /* parameter */, hstring const& /* language */)
+    {
+        // Retrieve the value as a Calendar.
+        Windows::Globalization::Calendar valueAsCalendar{ value.as<Windows::Globalization::Calendar>() };
+
+        std::wstringstream wstringstream;
+        wstringstream << L"Released: ";
+        wstringstream << valueAsCalendar.MonthAsNumericString().c_str();
+        wstringstream << L"/" << valueAsCalendar.DayAsString().c_str();
+        wstringstream << L"/" << valueAsCalendar.YearAsString().c_str();
+        return winrt::box_value(hstring{ wstringstream.str().c_str() });
+    }
+
+    Windows::Foundation::IInspectable StringFormatter::ConvertBack(Windows::Foundation::IInspectable const& /* value */, Windows::UI::Xaml::Interop::TypeName const& /* targetType */, Windows::Foundation::IInspectable const& /* parameter */, hstring const& /* language */)
+    {
+        throw hresult_not_implemented();
+    }
+}
+```
+
+```cpp
+...
+public ref class StringFormatter sealed : Windows::UI::Xaml::Data::IValueConverter
+{
+public:
+    virtual Platform::Object^ Convert(Platform::Object^ value, TypeName targetType, Platform::Object^ parameter, Platform::String^ language)
+    {
+        // Retrieve the value as a Calendar.
+        Windows::Globalization::Calendar^ valueAsCalendar = dynamic_cast<Windows::Globalization::Calendar^>(value);
+
+        std::wstringstream wstringstream;
+        wstringstream << L"Released: ";
+        wstringstream << valueAsCalendar->MonthAsNumericString()->Data();
+        wstringstream << L"/" << valueAsCalendar->DayAsString()->Data();
+        wstringstream << L"/" << valueAsCalendar->YearAsString()->Data();
+        return ref new Platform::String(wstringstream.str().c_str());
+    }
+
+    // No need to implement converting back on a one-way binding
+    virtual Platform::Object^ ConvertBack(Platform::Object^ value, TypeName targetType, Platform::Object^ parameter, Platform::String^ language)
+    {
+        throw ref new Platform::NotImplementedException();
+    }
+};
+...
+```
+
+Теперь мы можем добавить экземпляр **StringFormatter** в качестве ресурса страницы и использовать его в нашей привязке.
 
 ```xml
 <Page.Resources>
@@ -610,6 +720,8 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
     ConverterParameter=Released: \{0:d\}}"/>
 ...
 ```
+
+Как видно выше, форматирование гибкость для мы используем разметку в преобразователь через параметр преобразователя передаем строку формата. В примерах кода, показанный в этом разделе, только C# преобразователь значений упрощает использование этого параметра. Но можно легко передавать строку формата стиле C++ в качестве параметра преобразователя и использовать его в преобразователь значений с помощью функции форматирования, например **wprintf** или **swprintf**.
 
 Вот результат.
 

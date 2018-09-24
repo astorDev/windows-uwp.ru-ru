@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, маркер, событие, делегат
 ms.localizationpriority: medium
-ms.openlocfilehash: 7af66c3f0586f2fb99a2a742f6da0144ed69d253
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.openlocfilehash: 6b8749b53e28047842343bd2a1e0c005f588d79d
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4130119"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152529"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Обработка событий с помощью делегатов в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 В этом разделе показано, как регистрировать и отзывать делегаты обработки событий с помощью C++/WinRT. Вы можете обрабатывать события с помощью любого стандартного подобного функции объекта C++.
@@ -187,14 +187,17 @@ void ProcessFeedAsync()
         // use syndicationFeed;
     });
     
-    // or (but this function must then be a coroutine and return IAsyncAction)
+    // or (but this function must then be a coroutine, and return IAsyncAction)
     // SyndicationFeed syndicationFeed{ co_await async_op_with_progress };
 }
 ```
 
 Как предполагает комментарий о сопрограмме выше, вместо использования делегата с завершенными событиями асинхронных действий и операций, вы можете счесть более естественным использование сопрограмм. Подробные сведения и примеры кода см. в разделе [Параллельная обработка и асинхронные операции с помощью C++/WinRT](concurrency.md).
 
-Но если вы решили выбрать делегаты, можно использовать более простой синтаксис.
+> [!NOTE]
+> Это не так, для реализации более одного *обработчик завершения* асинхронные действия или операции. У вас есть только один делегат для события завершения, или вы можете `co_await` его. Если у вас есть оба, второй завершится ошибкой.
+
+Если вы делегаты вместо сопрограммы, затем вы можете отказаться от более простой синтаксис.
 
 ```cppwinrt
 async_op_with_progress.Completed(
