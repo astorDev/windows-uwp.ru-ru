@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17f40055f22d8d065ac85d207f3ea17a58a14519
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148329"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4180549"
 ---
 # <a name="app-capability-declarations"></a>Объявления возможностей приложения
 

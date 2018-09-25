@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Управление Windows 10, uwp, пользователей учетной записи пользователей, azure ad, многопользовательской, несколько пользователей
 ms.localizationpriority: medium
 ms.openlocfilehash: bef703958f8f04cd55d887dfa8840d1ed3fbeba5
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4155377"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181485"
 ---
 # <a name="manage-account-users"></a>Управление пользователями учетных записей
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, реклама, продвижение, подборка, демонстрация, store
 ms.localizationpriority: medium
 ms.openlocfilehash: 18b2212a0b063611a546c3f627016fc7d3179071
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4150735"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181595"
 ---
 # <a name="make-your-app-easier-to-promote"></a>Повысьте популярность своего приложения
 

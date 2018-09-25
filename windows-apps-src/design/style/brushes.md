@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0473ee984461bf46be4ebf866a564f0d51e0cfc5
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4155317"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181635"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>Использование кистей для рисования фона, переднего плана и контуров
 

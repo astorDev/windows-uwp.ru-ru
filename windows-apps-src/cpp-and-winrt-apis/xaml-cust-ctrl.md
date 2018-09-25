@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, XAML, пользовательский, шаблон, элемент управления
 ms.localizationpriority: medium
 ms.openlocfilehash: fd1843afc58bc758db1c6e575f3733bdc4f47b4e
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4152235"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174441"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>(XAML шаблонных) элементов управления с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 

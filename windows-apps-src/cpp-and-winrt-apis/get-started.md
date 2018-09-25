@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, начать, начало, работы
 ms.localizationpriority: medium
 ms.openlocfilehash: f058ece64e6f041b5b0e8731a7891968f573f744
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149767"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177165"
 ---
 # <a name="get-started-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Начало работы с [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Чтобы приступить к работе с C++/WinRT, в этой статье описывается простой пример кода.

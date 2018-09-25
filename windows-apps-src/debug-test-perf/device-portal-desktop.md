@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, портала устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: 146cce82275047c112d70cfb3d022eab723f49e6
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156143"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174797"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Портал устройств для компьютеров с Windows
 

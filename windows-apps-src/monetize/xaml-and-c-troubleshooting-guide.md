@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, устранение неполадок, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: d20f816bc6e4010daf01ebad87c0138df0f1243d
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149403"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177249"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>Руководство по устранению неполадок в XAML и C#
 

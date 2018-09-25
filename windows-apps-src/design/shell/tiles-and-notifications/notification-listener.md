@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, прослушиватель уведомлений, usernotificationlistener, документация, уведомления о доступе
 ms.localizationpriority: medium
 ms.openlocfilehash: f4d8cb9ef7589bd8f0c56586ab8fcfec7c1f01e3
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4155161"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181019"
 ---
 # <a name="notification-listener-access-all-notifications"></a>Прослушиватель уведомлений: доступ ко всем уведомлениям
 

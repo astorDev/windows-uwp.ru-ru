@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API коллекции Microsoft Store, API покупки Microsoft Store, просмотр продуктов, предоставление продуктов
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a0766830bc2110dffcf5baf886e8ccb98ac6446
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149859"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4178243"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Управление правами на продукты из службы
 

@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, фоновая задача, службы прило�
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: b9010f82b0460bd46757bc1e0d58c01dec459104
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4153739"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174659"
 ---
 # <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>Перенос вне процесса фоновую задачу в фоновую задачу в процессе
 

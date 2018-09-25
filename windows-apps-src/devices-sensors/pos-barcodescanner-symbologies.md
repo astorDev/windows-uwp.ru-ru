@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bd1dffe4da7b3725ef7716fe9cf28bdf8eaf34f
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151089"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4176653"
 ---
 # <a name="working-with-symbologies"></a>Работа с символиками
 [Символика штрихкодов](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies) — это сопоставление данных с конкретным форматом штрихкодов. Распространенным символикам относятся UPC, Code 128, QR Code и т. д.  Сканер штрихкодов универсальной платформы Windows API-интерфейсы позволяют приложению управлять тем, как сканер обрабатывает эти символики, без ручной настройки сканера. 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Ознакомьтесь с Windows 10, uwp, отвечать на запросы, ответы,
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a043a0b721ee6eabdc3520960ae6da253587c33
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4152033"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174721"
 ---
 # <a name="respond-to-customer-reviews"></a>Ответ на оценки пользователей
 
