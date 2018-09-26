@@ -15,24 +15,21 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d68d0a5e6f2a22bc0012b3245ba050df271f7f92
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: fc18db25e6404e5236038badd8169ef7bcfc4817
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817412"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4210996"
 ---
 # <a name="text-controls"></a>Текстовые элементы управления
-
- 
 
 Элементы управления текстом состоят из текстовых полей ввода, полей паролей, полей автозаполнения и блоков текста. Инфраструктура XAML предоставляет несколько элементов управления отображением, вводом и редактированием текста, а также набор свойств для его форматирования.
 
 - Для отображения текста, доступного только для чтения, применяются элементы управления [TextBlock](text-block.md) и [RichTextBlock](rich-text-block.md).
-- Элементы управления для ввода и редактирования текста: [TextBox](text-box.md), [AutoSuggestBox](auto-suggest-box.md), [PasswordBox](password-box.md) и [RichEditBox](rich-edit-box.md).
+- Элементы управления для ввода и редактирования текста: [TextBox](text-box.md), [RichEditBox](rich-edit-box.md), [AutoSuggestBox](auto-suggest-box.md)и [PasswordBox](password-box.md).
 
-> **Важные API-интерфейсы**: [класс AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [класс PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx), [класс RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [класс RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [класс TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [класс TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
-
+> **Важные API -интерфейсы**: [класс TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [класс RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [класс TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [класс RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [AutoSuggestBox класса](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [класс PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -124,28 +121,13 @@ ms.locfileid: "1817412"
 
 ## <a name="pen-input"></a>Ввод с помощью пера
 
-> Функция ввода с помощью пера в настоящее время доступна только в Windows Insider Preview. Названия компонентов, терминология и функциональные возможности могут меняться.
-
 **Применимо к:** TextBox, RichEditBox, AutoSuggestBox
 
 Начиная с Windows 10 версии 1803, в функции поля для ввода текста XAML реализована поддержка ввода с помощью пера при использовании [Windows Ink](../input/pen-and-stylus-interactions.md). Когда пользователь касается пером Windows поля текстового ввода, текстовое поле преобразуется, чтобы пользователь мог писать непосредственно в поле с помощью пера, а не в отдельной панели ввода.
 
 ![Текстовое поле разворачивается при касании пером](images/pen-input-expand.gif)
 
-Текст распознается, когда пользователь пишет в любом месте текстового поля, а в окнах подбора слов-кандидатов отображаются результаты распознавания. Пользователь может коснуться результата, чтобы выбрать его, или продолжить писать, чтобы выбрать предлагаемое слово-кандидат. Буквальные (побуквенные) результаты распознавания добавляются в окно слов-кандидатов, поэтому распознавание не ограничивается словами из словаря. Когда пользователь пишет, текст преобразуется в рукописный шрифт, создавая ощущение естественного письма.
-
-![Текстовое поле и ввод с помощью пера](images/pen-input-1.png)
-
-Пользователь может изменить свой текст, используя стандартные жесты и действия, такие как:
-
-- _зачеркнуть_ или _вычеркнуть_ — провести линию поверх слова, чтобы удалить слово или его часть
-- _соединить_ — нарисовать дугу между словами, чтобы удалить пробел между ними
-- _вставить_ — нарисовать символ вставки, чтобы вставить пробел
-- _перезапись_ — запись поверх существующего текста для его замены
-
-![Перезапись ввода с помощью пера](images/pen-input-2.png)
-
-Встроенная функция ввода текста включена по умолчанию, если ваше приложение предназначено для Windows 10 версии 1803 или более поздней версии. Вы можете отменить ввод текста в текстовом поле, отключив эту функцию, и вернуться к использованию панели ввода текста. Чтобы отключить встроенную функцию ввода текста, установите для свойства элемента управления текстом **IsHandwritingViewEnabled** значение **false**.
+Дополнительные сведения см. в разделе [Ввод текста с представлением рукописного ввода](text-handwriting-view.md).
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>Выбор подходящей клавиатуры для элемента управления текстом
 

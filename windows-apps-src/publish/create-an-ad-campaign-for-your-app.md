@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, реклама, кампания, продвижение
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c7e7c1e2cd9a2ca083cef5fed27a9067cf1e7e7
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4173837"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4209072"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Создание рекламной кампании для своего приложения
 
