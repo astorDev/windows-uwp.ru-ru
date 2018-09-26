@@ -9,40 +9,37 @@ ms.prod: windows
 ms.technology: uwp, windows forms, wpf
 keywords: Windows 10, uwp, windows forms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b8c263b030cbb8f945ffb13a24b6dff3af28fcc
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.openlocfilehash: 67669dd30f376df823f2f9ad08ad69c193cdb602
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4173637"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4204676"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>Элементы управления UWP в классических приложениях
 
 > [!NOTE]
 > API-интерфейсы и элементы управления, описанные в этой статье в настоящее время доступны как ознакомительная версия для разработчиков. Несмотря на то, что мы рекомендуем вам оценить их в коде прототипа теперь, мы не рекомендуем использовать их в рабочем коде в данный момент. Эти API-интерфейсы и элементы управления будет продолжать улучшаться и стабилизация в будущих выпусках Windows. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.
 
-Windows 10 теперь позволяет использовать элементы управления UWP в классических приложениях не UWP, таким образом, вы можете улучшить внешний вид и функциональные возможности своих существующих классических приложений с помощью новейшие возможности пользовательского интерфейса Windows 10, которые доступны только через элементы управления UWP. Это означает, что можно использовать функции UWP, такие как [Системы проектирования Fluent](../design/fluent-design-system/index.md) и [Windows Ink](../design/input/pen-and-stylus-interactions.md) в существующих WPF, Windows Forms и приложения C++ Win32. Этот сценарий разработчика иногда называется *острова XAML*.
+Windows 10 теперь позволяет использовать элементы управления UWP в классических приложениях не UWP, таким образом, вы можете улучшить внешний вид и функциональные возможности своих существующих классических приложений с помощью новейшие возможности пользовательского интерфейса Windows 10, которые доступны только через элементы управления UWP. Это означает, что можно использовать функции UWP, например [Windows Ink](../design/input/pen-and-stylus-interactions.md) и элементы управления, которые поддерживают [Системы проектирования Fluent Design](../design/fluent-design-system/index.md) в существующих WPF, Windows Forms и приложения C++ Win32. Этот сценарий разработчика иногда называется *острова XAML*.
 
-Мы предоставляем несколько способов использования XAML, о-ва в классических приложениях, в зависимости от технологии или framework, которую вы используете.
+Мы предоставляем несколько способов использования в приложениях WPF, Windows Forms и C++ Win32, в зависимости от технологии или framework, которую вы используете, о-ва XAML.
 
 ## <a name="wrapped-controls"></a>Перенос элементов управления
 
-WPF и Windows Forms можно использовать ряд оболочку элементы управления UWP в наборе [Средств сообщества Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). Можно добавить эти элементы управления в область проектирования вашего проекта WPF или Windows Forms и затем использовать как любой другой WPF и Windows Forms элемент управления в конструкторе. Упоминаться эти элементы управления как *элементы управления в оболочку* из-за них упакованы интерфейс и функциональные возможности определенные элементы управления UWP.
-
-Следующие оболочку элементы управления поддерживают Windows 10 версии 1803 и более поздних версий.
-
-* [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview). Этот элемент управления использует механизм визуализации Microsoft Edge для отображения содержимого веб-страницы в приложении WPF или Windows Forms.
-* [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible). Этот элемент управления является версию **WebView** , совместимая с Windows 10 и предыдущих версий Windows. Этот элемент управления использует механизм визуализации Microsoft Edge для отображения веб-содержимого в Windows 10 (версия 1803 и более поздние версии) и Internet Explorer механизм визуализации для отображения веб-содержимого в Windows 7 и Windows 8.x.
-
-Следующие оболочку элементы управления поддерживают 17709 и более поздних выпусков Windows 10 Insider Preview SDK сборки.
-
-* [Элементы управления InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) и [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar). Эти элементы управления обеспечивают surface и связанное с панели инструментов для взаимодействия с пользователем на основе Windows Ink в классическом приложении Windows Forms или WPF.
-* [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement). Этот элемент управления внедряет представление, которое создает поток и отрисовывает мультимедийного содержимого, например видео в свое классическое приложение Windows Forms или WPF.
-
-Дополнительные UWP по словам элементы управления для WPF и Windows Forms приложений должны будущих выпусках набора средств сообщества Windows.
+WPF и Windows Forms можно использовать ряд оболочку элементы управления UWP в наборе [Средств сообщества Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). Упоминаться эти элементы управления как *элементы управления в оболочку* из-за них упакованы интерфейс и функциональные возможности определенные элементы управления UWP. Можно добавить эти элементы управления в область проектирования вашего проекта WPF или Windows Forms и затем использовать их как любой другой WPF и Windows Forms элемент управления в конструкторе.
 
 > [!NOTE]
 > Оболочку элементы управления доступны не для классических приложений C++ Win32. Приложения такого типа необходимо использовать [XAML UWP, API размещения](#uwp-xaml-hosting-api).
+
+Следующие элементы управления оболочку UWP в настоящее время доступны для приложений WPF и Windows Forms. Дополнительные элементы управления UWP в оболочку планируются для будущих выпусках набора средств сообщества Windows.
+
+| Элемент управления | Минимальная версия ОС | Описание |
+|-----------------|-------------------------------|-------------|
+| [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows10 версии1803 | Использует механизм визуализации Microsoft Edge для отображения содержимого веб-страницы. |
+| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows7 | Предоставляет версию **WebView** , совместимый с несколько версий ОС. Этот элемент управления использует механизм визуализации Microsoft Edge для отображения веб-содержимого в Windows 10 версии 1803 и более поздней версии, а также механизм визуализации Internet Explorer для отображения веб-содержимого в более ранних версиях Windows 10, Windows 8.x и Windows 7. |
+| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 Insider Preview SDK сборки 17709 | Предоставить surface и связанное с панели инструментов для взаимодействия с пользователем на основе Windows Ink в классического приложения Windows Forms или WPF. |
+| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 Insider Preview SDK сборки 17709 | Внедряет представление, которое создает поток и отрисовывает мультимедийного содержимого, например видео в свое классическое приложение Windows Forms или WPF. |
 
 ## <a name="host-controls"></a>Стандартные элементы управления
 
