@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, состояние, сбои, отсутствие отклика, работоспособность приложения, сведения о работоспособности, трассировка стека, cab-файл, сбой, сбои, pdb, символы
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f5bf63eae4b1504642e764265a7936bcd67c645
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4173887"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4208832"
 ---
 # <a name="health-report"></a>Отчет о работоспособности
 
