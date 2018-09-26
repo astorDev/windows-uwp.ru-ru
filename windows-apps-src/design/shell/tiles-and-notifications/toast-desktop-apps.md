@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, win32, классический, всплывающие уведомления, мост для классических приложений, параметры для отправки всплывающих уведомлений, com-сервер, com-активатор, com, фиктивный com, не com, без com, отправка всплывающего уведомления
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f54519fd0ddc975c1e57c2aebde583ef971850d
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4153579"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4180107"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Всплывающие уведомления из классических приложений
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, рынки, страны, регионы
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151881"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4180039"
 ---
 # <a name="define-market-selection"></a>Выбор определенных стран
 
