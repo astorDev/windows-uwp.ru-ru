@@ -9,15 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, данные, типы
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b004b5dfbeaa1d123398db780582382857eec25
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: f9763e7f69b143dffe8fea611f25ae75284929cb
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4262093"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4316608"
 ---
-# <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Стандартные типы данных [C++ и C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-С помощью C++/WinRT можно вызывать API среды выполнения Windows с использованием стандартных типов данных C++, включая некоторые типы данных стандартной библиотеки C++. Стандартные строки можно передать в API-интерфейсы (см. в разделе [Обработка строк в C + +/ WinRT](strings.md)), и можно передать инициализатора списков и стандартных контейнеров для API, которые ожидают семантически эквивалентные коллекции.
+# <a name="standard-c-data-types-and-cwinrt"></a>Стандартные типы данных C++ и C++/WinRT
+
+С помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), можно вызывать API среды выполнения Windows, используя стандартные типы данных C++, включая некоторые типы данных стандартной библиотеки C++. Стандартные строки можно передать в API-интерфейсы (см. в разделе [Обработка строк в C + +/ WinRT](strings.md)), и можно передать инициализатора списков и стандартных контейнеров для API, которые ожидают семантически эквивалентные коллекции.
 
 ## <a name="standard-initializer-lists"></a>Стандартные списки инициализатора
 Список инициализатора (**std::initializer_list**) — это конструкция стандартной библиотеки C++. Списки инициализатора можно использовать при вызове определенных конструкторов и методов среды выполнения Windows. Например, с помощью одного из них можно вызвать [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes).

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, введение
 ms.localizationpriority: medium
-ms.openlocfilehash: 220c5c7395ed9388b02b74e0cbed5b913971bbba
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 3e1563f85df6d437ce313c99df52ea319ef94a30
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4259613"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4318746"
 ---
 # <a name="introduction-to-cwinrt"></a>Введение в C++/WinRT
 &nbsp;
@@ -41,7 +41,7 @@ C + +/ WinRT — Это рекомендуемая корпорацией Май
 ## <a name="visual-studio-support-for-cwinrt-and-the-vsix"></a>Поддержка Visual Studio для C++/WinRT и VSIX
 Для шаблонов проектов C++/WinRT в Visual Studio, а также свойств и целей MSBuild C++/WinRT скачайте и установите [расширение Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix) из [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
-Вам потребуется Visual Studio 2017 (по крайней мере версия 15,6; рекомендуется версия не младше 15.7) и Windows SDK версии 10.0.17134.0 (Windows 10, версия 1803). Если вы еще не установили его, необходимо установить параметр **Инструменты C++ универсальной платформы Windows** из внутри установщика Visual Studio. И, в Windows **Параметры** > **обновление \ & безопасности** > **для разработчиков**, выберите параметр **режим разработчика** , а не возможность **загрузки неопубликованных приложений** .
+Вам потребуется Visual Studio 2017 (требуется по крайней мере версия 15,6, однако рекомендуется версия не младше 15.7) и Windows SDK версии 10.0.17134.0 (Windows 10, версия 1803). Если вы еще не установили его, необходимо установить параметр **Инструменты C++ универсальной платформы Windows** из внутри установщика Visual Studio. И, в Windows **Параметры** > **обновление \ & безопасности** > **для разработчиков**, выберите параметр **режим разработчика** , а не возможность **загрузки неопубликованных приложений** .
 
 Затем можно создать и создавать или открыть, C + +/ WinRT проекта в Visual Studio и развернуть его. Кроме того, вы можете преобразовать существующий проект, добавив `<CppWinRTEnabled>true</CppWinRTEnabled>` свойства его `.vcxproj` файла.
 

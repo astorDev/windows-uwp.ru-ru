@@ -9,15 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: ac7affb044c6b60a249b154cc62379c7517161b0
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 68a631153c104f14f22839077c4c62d34626ed2a
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4267119"
+ms.locfileid: "4318066"
 ---
-# <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>Переход на [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) из C++/CX
-В это разделе объясняется, как перенести код [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) в его эквивалент на C++/WinRT.
+# <a name="move-to-cwinrt-from-ccx"></a>Переход на C++/WinRT из C++/CX
+
+В этом разделе показано, как перенести [C + +/ CX](/cpp/cppcx/visual-c-language-reference-c-cx) кода в его эквивалент на [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 > [!IMPORTANT]
 > Если вы хотите перенести постепенно вашего [C + +/ CX](/cpp/cppcx/visual-c-language-reference-c-cx) кода на C + +/ WinRT, то можете. C + +/ CX и C + +/ WinRT кода могут сосуществовать в том же проекте, за исключением поддержку компилятора XAML и компоненты среды выполнения Windows. Для этих исключений, вам потребуется выбрать любой из C + +/ CX или C + +/ WinRT в том же проекте. Однако вы можете использовать компонент среды выполнения Windows на коэффициент код из вашего приложения на XAML, как его переноса. Либо переместите столько C + +/ CX кода, как и в компоненте и затем измените проект XAML с C + +/ WinRT. Или в противном случае оставьте проект XAML как C + +/ CX, создайте новый C + +/ компонента WinRT и переносом C + +/ CX код из проектов XAML в компоненте. Также возможны C + +/ CX проект компонента вместе с C + +/ WinRT проект компонента в одном решении, оба из них ссылки из проекта приложения и постепенно переносить от одного к другому.

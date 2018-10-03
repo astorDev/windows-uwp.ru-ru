@@ -9,16 +9,17 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, устранение неполадок, HRESULT, ошибка
 ms.localizationpriority: medium
-ms.openlocfilehash: bc2e7a8f28de4b43a42ff180fe0b12493c398dd0
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 05542a42e362f024e92547d9eb496b936b85236c
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4259589"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4314668"
 ---
-# <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>Устранение неполадок [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="troubleshooting-cwinrt-issues"></a>Устранение неполадок C++/WinRT
+
 > [!NOTE]
-> Сведения об установке и использовании расширения C++/WinRT для Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также свойств и целевых объектов MSBuild C++/WinRT) см. в разделе [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> Сведения об установке и использовании [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) расширения Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также C + +/ WinRT MSBuild свойств и целевых объектов) см. в разделе [Поддержка Visual Studio для C + +/ WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 Этот раздел представлен заранее, чтобы вы знали о нем уже сейчас; даже если он еще не требуется. Таблица симптомов и способов их устранения ниже может быть полезна при создании нового кода и переносе существующего приложения. Если вы переносите приложение и жаждете двигаться вперед и добраться до этапа, на котором выполняется построение и запуск вашего проекта, вы можете достичь временного прогресса с помощью комментирования и создания заглушек для любого некритичного кода, вызывающего неполадки, а затем вернуться, чтобы уплатить этот долг позже.
 
@@ -45,15 +46,14 @@ ms.locfileid: "4259589"
 | Компилятор C++ создает ошибку "*must be WinRT type*" для специализации делегата EventHandler или TypedEventHandler.|Рассмотрите возможность использования **winrt::delegate&lt;...T&gt;**. См. раздел [Создание событий в C++/WinRT](author-events.md).|
 | Компилятор C++ создает ошибку "*must be WinRT type*" для специализации асинхронной операции среды выполнения Windows.|Рассмотрите возможность возврата шаблона [**task**](https://msdn.microsoft.com/library/hh750113) библиотеки параллельных шаблонов (PPL). См. раздел [Параллельная обработка и асинхронные операции](concurrency.md).|
 | Компилятор C++ создает ошибку "*error C2220: warning treated as error - no 'object' file generated*".|Исправьте предупреждение или установите параметру **C/C++** > **Общие** > **Обрабатывать предупреждения как ошибки** значение **Нет (/WX-)**.|
-| В приложении возникает сбой, так как обработчик событий в объекте C++/WinRT вызывается после удаления объекта.|См. раздел [Использование объекта *this* в обработчике событий](handle-events.md#using-the-this-object-in-an-event-handler).|
-| Компилятор C++ создает ошибку "*error C2338: This is only for weak ref support*".|Запрашивается слабая ссылка для типа, который передал структуру маркера **winrt::no_weak_ref** как аргумент шаблона базовому классу. См. раздел [Отказ от поддержки слабых ссылок](weak-references.md#opting-out-of-weak-reference-support)|
-| Компоновщик C++ создает ошибку "*error LNK2019: неразрешенный внешний символ*»|См. в разделе [Почему компоновщик мы получаем мне «LNK2019: неразрешенный внешний символ «ошибка?](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error)|
+| В приложении возникает сбой, так как обработчик событий в объекте C++/WinRT вызывается после удаления объекта.|См. в разделе, [безопасно доступ к *Этот* указатель с помощью делегата обработки события](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).|
+| Компилятор C++ создает ошибку "*error C2338: This is only for weak ref support*".|Запрашивается слабая ссылка для типа, который передал структуру маркера **winrt::no_weak_ref** как аргумент шаблона базовому классу. См. в разделе, [отказ от поддержки слабых ссылок](weak-references.md#opting-out-of-weak-reference-support).|
+| Компоновщик C++ создает ошибку "*error LNK2019: неразрешенный внешний символ*»|См. в разделе [Почему компоновщик мы получаем мне «LNK2019: неразрешенный внешний символ «ошибка?](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).|
 | Создает цепочку инструментов LLVM и Clang ошибок при использовании C + +/ WinRT.|Мы не поддерживаем цепочку инструментов LLVM и Clang для C + +/ WinRT, но если вы хотите имитировать, как мы используем его внутри организации, а затем вы можете поэкспериментировать, таких как кандидат, описанные в [можно ли использовать LLVM/Clang для компиляции с C + +/ WinRT?](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt).|
 | Компилятор C++ выдает «*Нет подходящего конструктора по умолчанию доступны*» для проецируемого типа. | Если вы пытаетесь отложить инициализацию объекта класса среды выполнения, или использовать и реализуем класс среды выполнения в том же проекте, а затем необходимо вызвать `nullptr_t` конструктор. Дополнительные сведения см. в разделе [Использование API-интерфейсов в C++/WinRT](consume-apis.md). |
 | Компилятор C++ выдает «*Ошибка C3861: «from_abi»: идентификатор не найден*» и другие ошибки, которые происходят *base.h*. Вы можете увидеть эту ошибку, если вы используете Visual Studio 2017 (версии 15.8.0 или более поздней версии) и пакет Windows SDK версии 10.0.17134.0 (Windows 10, версия 1803). | Либо предназначенные для более поздней версии (Дополнительные совместимые) версии пакета SDK для Windows, или задать свойство проекта **C/C++** > **язык** > **режим совместимости: нет** (Кроме того, если **/ permissive-** отображается в свойство проекта **C/C++**  >  **Язык** > **командной строки** в группе **Дополнительные параметры**, удалите его). |
-| Компилятор C++ выдает «*Ошибка C2039: «IUnknown»: не является членом "\'global имен ''*». | См. в разделе [как Перенацелить C + +/ WinRT проект до более поздней версии Windows SDK?](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
-| Компоновщик C++ создает ошибку "*error LNK2019: неразрешенный внешний символ _WINRT_CanUnloadNow@0 в функции _VSDesignerCanUnloadNow@0 *» | См. в разделе [как Перенацелить C + +/ WinRT проект до более поздней версии Windows SDK?](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
-
+| Компилятор C++ выдает «*Ошибка C2039: «IUnknown»: не является членом "\'global имен ''*». | См. в разделе [как Перенацелить C + +/ WinRT проект до более поздней версии Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
+| Компоновщик C++ создает ошибку "*error LNK2019: неразрешенный внешний символ _WINRT_CanUnloadNow@0 в функции _VSDesignerCanUnloadNow@0 *» | См. в разделе [как Перенацелить C + +/ WinRT проект до более поздней версии Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 
 > [!NOTE]
-> Если вы не нашли ответы на ваши вопросы в этом разделе, используйте тег [`c++-winrt` на портале Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).
+> Если в этом разделе не ответить на вопрос, то может оказаться справки, перейдя к [сообществу разработчиков Visual Studio C++](https://developercommunity.visualstudio.com/spaces/62/index.html)или с помощью [ `c++-winrt` метки на Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).
