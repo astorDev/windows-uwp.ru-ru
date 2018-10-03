@@ -3,18 +3,18 @@ author: c-don
 title: Установка приложения UWP из веб-сервера Azure
 description: 'Этот учебник посвящен следующим процедурам: настройка веб-сервера Azure, проверка того, может ли ваше веб-приложение размещать пакеты приложений, а также вызов и эффективное использование Установщика приложений.'
 ms.author: cdon
-ms.date: 06/05/2018
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованных приложений, связанный набор, дополнительные пакеты, веб-сервер Azure
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e97cb4bc6d3a58115ce467f05ef29dd0710844
-ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
-ms.translationtype: HT
+ms.openlocfilehash: b98ca6316f733210dbdbc5201178b3a89a2b5982
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "1992233"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267971"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>Установка приложения UWP из веб-приложения Azure
 
@@ -81,10 +81,12 @@ ms.locfileid: "1992233"
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <system.webServer>
-    <!--This is to allow the web server to serve resources with the appx/appxbundle/appinstaller extension-->
+    <!--This is to allow the web server to serve resources with the appropriate file extension-->
     <staticContent>
       <mimeMap fileExtension=".appx" mimeType="application/appx" />
+      <mimeMap fileExtension=".msix" mimeType="application/msix" />
       <mimeMap fileExtension=".appxbundle" mimeType="application/appxbundle" />
+      <mimeMap fileExtension=".msixbundle" mimeType="application/msixbundle" />
       <mimeMap fileExtension=".appinstaller" mimeType="application/appinstaller" />
     </staticContent>
   </system.webServer>

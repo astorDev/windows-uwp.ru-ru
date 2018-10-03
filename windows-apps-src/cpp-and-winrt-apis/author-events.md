@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, стандартная, c++, cpp, winrt, проекция, создание, событие
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b0aa1a53ce69369c442cef7f3b5912631593242
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209680"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266783"
 ---
 # <a name="author-events-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Создание событий в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 

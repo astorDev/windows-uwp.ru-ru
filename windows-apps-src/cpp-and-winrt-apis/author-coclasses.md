@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, author, COM, компонент
 ms.localizationpriority: medium
-ms.openlocfilehash: 227ffcd72150e37a513649e69bc7a6709581d65c
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 2e273d593d7b2e24cc82063ce25b66771b8221e1
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205330"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267183"
 ---
 # <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Создание компонентов COM с [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -49,7 +49,7 @@ int main()
 
 ## <a name="a-more-realistic-and-interesting-example"></a>Более реалистичные и интересные пример
 
-Далее в этой статье выполняется создание проекта минимальный консольного приложения, использующего C + +/ WinRT для реализации фабрики базовые компонентный класс и класс. Пример приложения показано, как получить всплывающее уведомление с кнопкой обратного вызова на нем, а компонентного (в котором реализован интерфейс **INotificationActivationCallback** COM) позволяет приложению для запуска и под названием "Назад" при пользователя нажимает эту кнопку на всплывающем уведомлении.
+Далее в этой статье выполняется создание проекта минимальный консольного приложения, использующего C + +/ WinRT для реализации компонентный базовый класс (COM-компонент или класс COM) и фабрики классов. Пример приложения показано, как получить всплывающее уведомление с кнопкой обратного вызова на нем, а компонентного (в котором реализован интерфейс **INotificationActivationCallback** COM) позволяет приложению для запуска и под названием "Назад" при пользователя нажимает эту кнопку на всплывающем уведомлении.
 
 Дополнительные сведения об области всплывающее уведомление функции можно найти в [Отправка локального всплывающего уведомления](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast). Ни один из примеров кода в этом разделе документации использовать C + +/ WinRT, тем не менее, поэтому мы рекомендуем, что вы предпочитаете код, показанный в этом разделе.
 
@@ -134,7 +134,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-Реализация выше компонентного применяется та же схема, представленный в [Создание API-интерфейсов в C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). Обратите внимание, что можно использовать этот способ не только для интерфейсов среды выполнения Windows (любой интерфейс, который в конечном счете является производным от [**IInspectable**](https://msdn.microsoft.com/library/br205821)), но также реализовать COM-интерфейсы (любой интерфейс, который в конечном счете является производным от [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)).
+Реализация выше компонентного применяется та же схема, представленный в [Создание API-интерфейсов в C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). Таким образом можно использовать этот же способ реализации COM-интерфейсов, а также интерфейсы среды выполнения Windows. Компоненты COM и классов среды выполнения Windows предоставляют своих компонентов через интерфейсы. Каждый COM-интерфейс в конечном счете является производным от интерфейса [**интерфейс IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) . Среда выполнения Windows основывается на COM&mdash;одно различие, который интерфейсов среды выполнения Windows наследоваться от [**интерфейса IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) (и **IInspectable** является производным от **IUnknown**).
 
 В компонентный класс в приведенном выше коде мы реализуем метод **INotificationActivationCallback::Activate** , который функция, которая вызывается, когда пользователь нажимает кнопку обратного вызова на всплывающее уведомление. Но прежде чем можно вызвать эту функцию, необходимо создать экземпляр компонентного, и это задание **IClassFactory::CreateInstance** функции.
 

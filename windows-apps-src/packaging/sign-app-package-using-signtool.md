@@ -3,19 +3,19 @@ author: laurenhughes
 title: Подписание пакета приложения с помощью SignTool
 description: Используйте SignTool для ручного подписывания пакета приложения сертификатом.
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: b0aab34b187e06ba2b87a1537d6e30df09b35d7e
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: c238855f4f018e8e3142509842221c6b9d97fae3
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663014"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267855"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>Подписание пакета приложения с помощью SignTool
 
@@ -79,16 +79,25 @@ SignTool sign [options] <filename(s)>
 ```
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.appx
 ```
+```
+SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.msix
+```
 Обратите внимание, что параметр `/a` позволяет **SignTool** автоматически выбрать наиболее подходящий сертификат.
 
 Если ваш сертификат не является PFX-файлом, используйте следующий синтаксис:
 ```
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.appx
 ```
+```
+SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.msix
+```
 
 Кроме того, вы можете указать хэш SHA1 нужного сертификата вместо &lt;Имя сертификата&gt;, с помощью следующего синтаксиса:
 ```
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.appx
+```
+```
+SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ```
 
 Обратите внимание, что с некоторыми сертификатами пароль не используется. Если для вашего сертификата не требуется пароль, опустите параметр "/p &lt;Ваш пароль&gt;" в примерах команд.

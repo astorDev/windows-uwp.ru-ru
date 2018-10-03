@@ -13,11 +13,11 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e947b00c3a070a8d95a21e38c56bda07cd45d3c4
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205290"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268169"
 ---
 # <a name="app-icons-and-logos"></a>Значки приложений и логотипы 
 
@@ -25,9 +25,15 @@ ms.locfileid: "4205290"
 
 :::row:::
     :::column:::
-        * Строке заголовка окна приложения * список приложений в меню "Пуск" * Диспетчер задач и задач * плитки приложения * экрана-заставки вашего приложения * в Microsoft Store :::column-end:::
+        * Панели заголовка окна приложения
+        * Список приложений в меню "Пуск"
+        * Диспетчер задач и задач
+        * Плитки вашего приложения
+        * Экран-заставку вашего приложения
+        * В Microsoft Store
+    :::column-end:::
     :::column:::
-        ![начальный экран и плитки windows 10](images/assetguidance01.jpg)
+        ![windows 10 start and tiles](images/assetguidance01.jpg)
     :::column-end:::
 :::row-end:::
 
@@ -58,7 +64,7 @@ ms.locfileid: "4205290"
 
 :::row:::
     :::column:::
-        Windows автоматически устанавливает коэффициент масштабирования для каждого дисплея на основе его показателя DPI (точек на дюйм) и расстояния от экрана устройства. 
+        Windows automatically sets the scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. 
 
         (Users can override the default value by going to the **Settings &gt; Display &gt; Scale and layout** page.)
     :::column-end:::
@@ -121,7 +127,7 @@ Visual Studio предоставляет средство очень полез�
 
 :::row:::
     :::column:::
-        1. Использование Visual Studio, чтобы открыть проект UWP.
+        1. Используете Visual Studio, чтобы открыть проект UWP.
     :::column-end:::
     :::column:::
         
@@ -129,25 +135,26 @@ Visual Studio предоставляет средство очень полез�
 :::row-end:::
 :::row:::
     :::column:::
-        2. в окне **Обозревателя решений**дважды щелкните файл Package.appmxanifest.
+        2. В **Обозревателе решений**дважды щелкните файл Package.appmxanifest.
     :::column-end:::
     :::column:::
-        ![Конструктор манифеста Visual Studio 2017 г.](images/icons/vs-solution-explorer.png)
+        ![The Visual Studio 2017 Manifest Designer](images/icons/vs-solution-explorer.png)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-            Visual Studio отображается в конструкторе манифеста.
+            Visual Studio displays the Manifest Designer.
     :::column-end:::
     :::column:::
-            ![На вкладке "визуальные ресурсы"](images/icons/vs-manfiest-designer.png)
+            ![The Visual Assets tab](images/icons/vs-manfiest-designer.png)
     :::column-end:::
 :::row-end:::    
 :::row:::
     :::column:::
-        3. Щелкните вкладку **Визуальные ресурсы** . :::column-end:::
+        3. Перейдите на вкладку **Визуальные ресурсы** .
+    :::column-end:::
     :::column:::
-        ![На вкладке "визуальные ресурсы"](images/icons/vs-manfiest-designer-visual-assets.png)
+        ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png)
     :::column-end:::
 :::row-end:::        
 

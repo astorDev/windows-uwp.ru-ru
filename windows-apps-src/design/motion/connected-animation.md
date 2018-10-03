@@ -13,25 +13,26 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a789a8f082192b79b3e96990827f9a4f6a0eacbc
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 31e940c87626a05ee6911d3ffda36ab8dfd3fad0
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206400"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267237"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>Подключенная анимация для приложений UWP
 
-## <a name="what-is-connected-animation"></a>Что такое подключенная анимация?
-
 Подключенные анимации позволяют сделать навигацию динамичной и наглядной, анимируя переход элемента от одного представления к другому. Это помогает пользователю сохранять контекст и обеспечивает преемственность представлений.
-В случае подключенной анимации элемент сохраняется между представлениями во время смены содержимого пользовательского интерфейса, двигаясь по экрану от места расположения в исходном представлении до места назначения в новом. Это подчеркивает общность содержимого в представлениях и создает прекрасный динамический эффект в рамках перехода.
+
+В случае подключенной анимации элемент отображается «продолжить» между двумя представлениями во время смены содержимого пользовательского интерфейса, двигаясь по экрану от места расположения в исходном представлении до места назначения в новом. Это подчеркивает содержимого между представлениями и создает прекрасный динамический эффект в рамках перехода.
+
+> **Важные API -интерфейсы**: [ConnectedAnimation класс](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [класс ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
 ## <a name="see-it-in-action"></a>Подключенная анимация в действии
 
-В этом коротком видео приложение использует подключенную анимацию, чтобы анимировать изображение, которое сохраняется и становится частью заголовка следующей страницы. Этот эффект помогает сохранить контекст пользователя во время перехода.
+В этом коротком видео приложение использует подключенную анимацию, чтобы анимировать изображение элемента, так как он «продолжают» становится частью заголовка следующей страницы. Этот эффект помогает сохранить контекст пользователя во время перехода.
 
-![Пример непрерывного движения в пользовательском интерфейсе](images/continuous3.gif)
+![Подключенная анимация](images/connected-animations/example.gif)
 
 <!-- 
 <iframe width=640 height=360 src='https://microsoft.sharepoint.com/portals/hub/_layouts/15/VideoEmbedHost.aspx?chId=552c725c%2De353%2D4118%2Dbd2b%2Dc2d0584c9848&amp;vId=b2daa5ee%2Dbe15%2D4503%2Db541%2D1328a6587c36&amp;width=640&amp;height=360&amp;autoPlay=false&amp;showInfo=true' allowfullscreen></iframe>
@@ -53,83 +54,185 @@ ms.locfileid: "4206400"
 
 Подключенные анимации обычно используются при переходе на другую страницу, хотя их можно применять при любой смене контента в пользовательском интерфейсе, если нужно сохранить контекст пользователя. Рекомендуем использовать подключенную анимацию вместо [эффекта винта в переходах навигации](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.navigationthemetransition.aspx), если исходное и целевое представления содержат общее изображение или другой элемент пользовательского интерфейса.
 
-## <a name="how-to-implement"></a>Реализация
+## <a name="configure-connected-animation"></a>Настройка подключенной анимации
+
+> [!IMPORTANT]
+> Эта функция также требуется целевую версию вашего приложения RS5 (Windows SDK версии 10.0.NNNNN.0 (Windows 10 версии YYMM) или более поздней версии. Свойства конфигурации недоступен в более ранних версий пакетов SDK. Вы можете выбрать минимальной версией ниже, чем RS5 (10.0.NNNNN.0 (Windows 10, версии YYMM) версии пакета SDK для Windows с помощью адаптивного кода или условного XAML. Дополнительные сведения см. в разделе [адаптивные к версии приложения](/debug-test-perf/version-adaptive-apps).
+
+Начиная с RS5, включающих дальнейшего подключенные анимации проектирования Fluent, предоставляя анимации конфигураций, адаптированных специально для перемещения вперед и назад навигации по страницам.
+
+Укажите XML конфигурации анимации, задав свойство конфигурации на ConnectedAnimation. (Мы покажем в качестве примера в следующем разделе.)
+
+В этой таблице описаны доступные конфигурации. Дополнительные сведения о принципах движения, применяется в эти анимации см. в разделе [направление и сила притяжения](index.md).
+
+| [GravityConnectedAnimationConfiguration]() |
+| - |
+| Это конфигурация по умолчанию и рекомендуется для переходов вперед. |
+Когда пользователь переходит вперед в приложении (A-B), подключенных элемент отображается физически «оттягивать за пределы страницы». Соответственно, элемент отображается для перемещения вперед в z пространстве и немного опускается как эффект перевод удержание сила притяжения. Чтобы преодолеть последствия тяжести, элемент получает скорости и ускоряет в его конечное расположение. В результате получается анимацию «scale и dip». |
+
+| [DirectConnectedAnimationConfiguration]() |
+| - |
+| Когда пользователь переходит назад в приложении (B A), более прямолинейно анимации. Элемент подключенных линейно преобразуется из B замедлением кривая Безье третьего порядка функции для реалистичной анимации с помощью. Навигация в обратном визуальная возможность пользователь возвращается в предыдущее состояние как можно скорее сохраняя при этом контексте потока навигации. |
+
+| [BasicConnectedAnimationConfiguration]() |
+| - |
+| Это значение по умолчанию (и только) анимации, используемые в версиях SDK до RS5 (Windows SDK версии 10.0.NNNNN.0 (Windows 10 версии YYMM). |
+
+### <a name="connectedanimationservice-configuration"></a>ConnectedAnimationService конфигурации
+
+Класс [ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) имеет два свойства, которые применяются к отдельных анимаций, а не общую службу.
+
+- [DefaultDuration](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaultduration)
+- [DefaultEasingFunction](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaulteasingfunction)
+
+Для достижения разных эффектов, в некоторых конфигурациях игнорировать эти свойства ConnectedAnimationService и использовать свои собственные значения, как описано в следующей таблице.
+
+| Настройка | DefaultDuration отношениях? | DefaultEasingFunction отношениях? |
+| - | - | - |
+| Сила тяготения | Да | Да* <br/> **Базовый перевод от A к B использует эту функцию для реалистичной анимации, но «dip силы тяжести» имеет собственные функции для реалистичной анимации.*  |
+| Прямой | Нет <br/> *Анимируется более 150 мс.*| Нет <br/> *Использует замедлением, функция для реалистичной анимации.* |
+| Базовые сведения | Да | Да |
+
+## <a name="how-to-implement-connected-animation"></a>Как реализовать подключенной анимации
 
 Настройка подключенной анимации включает два этапа:
 
-1.  *подготовка* объекта анимации на исходной странице, которая показывает системе, что исходный элемент участвует в подключенной анимации; 
-2.  *запуск* анимации на странице назначения с передачей ссылки элементу назначения.
+1. *Подготовка* объекта анимации на исходной странице, которая показывает системе, что исходный элемент участвует в подключенной анимации.
+1. *Запустите* анимацию на странице назначения передачей ссылки элементу назначения.
 
-Между этими этапами исходный элемент будет казаться зависшим над другими элементами пользовательского интерфейса, давая вам возможность одновременно выполнять другие анимации перехода. По этой причине между этапами не стоит ждать дольше 250миллисекунд, поскольку наличие исходного элемента может отвлекать пользователя. Если анимация подготовлена, но не запущена в течение трех секунд, она удаляется из системы и любые последующие вызовы **TryStart** будут отклонены.
-
-Доступ к текущему экземпляру ConnectedAnimationService можно получить, вызвав метод **ConnectedAnimationService.GetForCurrentView**. Чтобы подготовить анимацию, вызовите **PrepareToAnimate** в данном экземпляре, передав ссылку на уникальный ключ и элемент пользовательского интерфейса, который вы хотите использовать во время перехода. Уникальный ключ позволяет получить анимацию позже, например на другой странице.
+При переходе от исходной странице, вызовите метод [ConnectedAnimationService.GetForCurrentView](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getforcurrentview) , чтобы получить экземпляр класса ConnectedAnimationService. Чтобы подготовить анимацию, вызовите [PrepareToAnimate](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.preparetoanimate) в данном экземпляре и передайте в уникальный ключ и элемент пользовательского интерфейса, который вы хотите использовать во время перехода. Уникальный ключ позволяет получить анимацию позже на странице назначения.
 
 ```csharp
-ConnectedAnimationService.GetForCurrentView().PrepareToAnimate("image", SourceImage);
+ConnectedAnimationService.GetForCurrentView()
+    .PrepareToAnimate("forwardAnimation", SourceImage);
 ```
 
-Чтобы запустить анимацию, вызовите **ConnectedAnimation.TryStart**. Правильный экземпляр анимации можно извлечь, вызвав **ConnectedAnimationService.GetAnimation** с помощью уникального ключа, который вы предоставили при создании анимации.
+Когда происходит переход, запустите анимацию на странице назначения. Чтобы запустить анимацию, вызовите [ConnectedAnimation.TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart). Правильный экземпляр анимации можно извлечь, вызвав [ConnectedAnimationService.GetAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getanimation) с помощью уникального ключа, который вы предоставили при создании анимации.
 
 ```csharp
-ConnectedAnimation imageAnimation = 
-    ConnectedAnimationService.GetForCurrentView().GetAnimation("image");
-if (imageAnimation != null)
+ConnectedAnimation animation =
+    ConnectedAnimationService.GetForCurrentView().GetAnimation("forwardAnimation");
+if (animation != null)
 {
-    imageAnimation.TryStart(DestinationImage);
+    animation.TryStart(DestinationImage);
 }
 ```
 
-Вот полный пример использования ConnectedAnimationService для создания перехода между двумя страницами.
+### <a name="forward-navigation"></a>Переходов вперед
 
-*SourcePage.xaml*
+В этом примере показано, как использовать ConnectedAnimationService для создания перехода вперед навигации между двумя страницами (Page_A для Page_B).
+
+Рекомендованная анимация переходов вперед отдает [GravityConnectedAnimationConfiguration](). Это значение по умолчанию, поэтому вам не нужно задавать свойство [конфигурации](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration) , если это не требуется указать различные конфигурации.
+
+Настройка анимации на исходной странице.
 
 ```xaml
+<!-- Page_A.xaml -->
+
 <Image x:Name="SourceImage"
-       Width="200"
-       Height="200"
+       HorizontalAlignment="Left" VerticalAlignment="Top"
+       Width="200" Height="200"
        Stretch="Fill"
-       Source="Assets/StoreLogo.png" />
+       Source="Assets/StoreLogo.png"
+       PointerPressed="SourceImage_PointerPressed"/>
 ```
 
-*SourcePage.xaml.cs*
-
 ```csharp
-private void NavigateToDestinationPage()
+// Page_A.xaml.cs
+
+private void SourceImage_PointerPressed(object sender, PointerRoutedEventArgs e)
 {
-    ConnectedAnimationService.GetForCurrentView().PrepareToAnimate("image", SourceImage);
-    Frame.Navigate(typeof(DestinationPage));
+    // Navigate to detail page.
+    // Suppress the default animation to avoid conflict with the connected animation.
+    Frame.Navigate(typeof(Page_B), null, new SuppressNavigationTransitionInfo());
+}
+
+protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+{
+    ConnectedAnimationService.GetForCurrentView()
+        .PrepareToAnimate("forwardAnimation", SourceImage);
+    // You don't need to explicitly set the Configuration property because
+    // the recommended Gravity configuration is default.
+    // For custom animation, use:
+    // animation.Configuration = new BasicConnectedAnimationConfiguration();
 }
 ```
 
-*DestinationPage.xaml*
+Запустите анимацию на странице назначения.
 
 ```xaml
+<!-- Page_B.xaml -->
+
 <Image x:Name="DestinationImage"
-       Width="400"
-       Height="400"
+       Width="400" Height="400"
        Stretch="Fill"
        Source="Assets/StoreLogo.png" />
 ```
 
-*DestinationPage.xaml.cs*
-
 ```csharp
+// Page_B.xaml.cs
+
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
     base.OnNavigatedTo(e);
 
-    ConnectedAnimation imageAnimation = 
-        ConnectedAnimationService.GetForCurrentView().GetAnimation("image");
-    if (imageAnimation != null)
+    ConnectedAnimation animation =
+        ConnectedAnimationService.GetForCurrentView().GetAnimation("forwardAnimation");
+    if (animation != null)
     {
-        imageAnimation.TryStart(DestinationImage);
+        animation.TryStart(DestinationImage);
     }
 }
 ```
 
+### <a name="back-navigation"></a>Обратная Навигация
+
+Для переходов назад (Page_B для Page_A), выполните те же действия, но отменяются страниц источника и назначения.
+
+Когда пользователь переходит назад, они ожидают, что приложение возвращается к предыдущему состоянию, как можно скорее. Таким образом Рекомендуемая конфигурация, [DirectConnectedAnimationConfiguration](). Эта анимация быстрее, более прямолинейно и замедлением в анимации.
+
+Настройка анимации на исходной странице.
+
+```csharp
+// Page_B.xaml.cs
+
+protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+{
+    if (e.NavigationMode == NavigationMode.Back)
+    {
+        ConnectedAnimationService.GetForCurrentView()
+            .PrepareToAnimate("backAnimation", DestinationImage);
+
+        // Use the recommended configuration for back animation.
+        animation.Configuration = new DirectConnectedAnimationConfiguration();
+    }
+}
+```
+
+Запустите анимацию на странице назначения.
+
+```csharp
+// Page_A.xaml.cs
+
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    base.OnNavigatedTo(e);
+
+    ConnectedAnimation animation =
+        ConnectedAnimationService.GetForCurrentView().GetAnimation("backAnimation");
+    if (animation != null)
+    {
+        animation.TryStart(SourceImage);
+    }
+}
+```
+
+Между временем, Настройка анимации и при запуске исходный элемент отображается зависшим над другими элементами пользовательского интерфейса приложения. Это позволяет одновременно выполнять другие анимации перехода. По этой причине не стоит ждать дольше 250 миллисекунд этапами, поскольку наличие исходного элемента может отвлекать. Если анимация подготовлена, но не запущена в течение трех секунд, она удаляется из системы и любые последующие вызовы [TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) будут отклонены.
+
 ## <a name="connected-animation-in-list-and-grid-experiences"></a>Подключенная анимация при использовании списка и сетки
 
-Часто нужно будет использовать подключенную анимацию для перехода к элементу управления списком или сеткой либо от него. Чтобы упростить этот процесс, можно использовать новые методы **ListView** и **GridView**, **PrepareConnectedAnimation** и **TryStartConnectedAnimationAsync**.
+Часто нужно будет использовать подключенную анимацию для перехода к элементу управления списком или сеткой либо от него. Можно использовать два метода в [ListView](/uwp/api/windows.ui.xaml.controls.listview) и [GridView](/uwp/api/windows.ui.xaml.controls.gridview), [PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation) и [TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync), чтобы упростить этот процесс.
+
 Предположим, **ListView** содержит элемент с именем PortraitEllipse в шаблоне данных.
 
 ```xaml
@@ -140,12 +243,12 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
                 …
                 <Ellipse x:Name="PortraitEllipse" … />
             </Grid>
-        </DataTemplate> 
+        </DataTemplate>
     </ListView.ItemTemplate>
 </ListView>
 ```
 
-Чтобы подготовить подключенную анимацию с эллипсом в соответствии с данным элементом списка, вызовите метод **PrepareConnectedAnimation** с уникальным ключом, элементом и именем PortraitEllipse.
+Чтобы подготовить подключенную анимацию с эллипсом соответствующий элемент данного списка, вызовите метод [PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation) с уникальный ключ, элемент и имя «PortraitEllipse».
 
 ```csharp
 void PrepareAnimationWithItem(ContactsItem item)
@@ -154,7 +257,7 @@ void PrepareAnimationWithItem(ContactsItem item)
 }
 ```
 
-Кроме того, можно использовать **TryStartConnectedAnimationAsync**, чтобы запустить анимацию, используя этот элемент в качестве назначения (например, при возврате из представления подробных сведений). Если вы только что загрузили источник данных для **ListView**, **TryStartConnectedAnimationAsync** не запустит анимацию, пока не будет создан соответствующий контейнер элементов.
+Чтобы запустить анимацию с помощью этого элемента в качестве цели, например при переходе "Назад" из представления подробных сведений, используйте [TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync). Если вы только что загрузили источник данных для ListView, TryStartConnectedAnimationAsync не запустит анимацию, пока не будет создан соответствующий контейнер элементов.
 
 ```csharp
 private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
@@ -163,7 +266,7 @@ private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
     if (item != null)
     {
         ContactsListView.ScrollIntoView(item);
-        ConnectedAnimation animation = 
+        ConnectedAnimation animation =
             ConnectedAnimationService.GetForCurrentView().GetAnimation("portrait");
         if (animation != null)
         {
@@ -182,27 +285,27 @@ private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 <iframe width=640 height=360 src='https://microsoft.sharepoint.com/portals/hub/_layouts/15/VideoEmbedHost.aspx?chId=552c725c%2De353%2D4118%2Dbd2b%2Dc2d0584c9848&amp;vId=9066bbbe%2Dcf58%2D4ab4%2Db274%2D595616f5d0a0&amp;width=640&amp;height=360&amp;autoPlay=false&amp;showInfo=true' allowfullscreen></iframe>
 -->
 
-*Согласованная анимация*— особый тип анимации открытия, когда элемент отображается рядом с целью подключенной анимации, добавляя анимацию в сочетании с элементом подключенной анимации во время его движения по экрану. Согласованная анимация может сделать переход визуально интереснее и привлечь внимание пользователя к контексту, общему для исходного и целевого представлений. На этих изображениях интерфейс подписи элемента анимирует использование согласованной анимации.
+*Согласованная анимация* — это специальный тип анимационный где элемент отображается вместе с целью подключенной анимации, анимацию в сочетании с элементом подключенной анимации при его перемещении по экрану. Согласованная анимация может сделать переход визуально интереснее и привлечь внимание пользователя к контексту, общему для исходного и целевого представлений. На этих изображениях интерфейс подписи элемента анимирует использование согласованной анимации.
 
-Используйте перегрузку двух параметров **TryStart**, чтобы добавить согласованные элементы в подключенную анимацию. Этот пример показывает согласованную анимацию макета "Сетка" с именем "DescriptionRoot", которая откроется вместе с элементом подключенной анимации "CoverImage".
+Когда согласованной анимации использует конфигурации силы тяжести, сила притяжения применяется к элементом подключенной анимации и согласованные элементы. Согласованные элементы будут «swoop» вместе с подключенного элемента Чтобы действительно скоординированы элементов.
 
-*DestinationPage.xaml*
+Используйте перегрузку двух параметров **TryStart**, чтобы добавить согласованные элементы в подключенную анимацию. Этот пример показывает согласованную анимацию макета сетки с именем «DescriptionRoot», который входит в сочетании с элементом подключенной анимации «Coverimage».
 
 ```xaml
+<!-- DestinationPage.xaml -->
 <Grid>
     <Image x:Name="CoverImage" />
     <Grid x:Name="DescriptionRoot" />
 </Grid>
 ```
 
-*DestinationPage.xaml.cs*
-
 ```csharp
+// DestinationPage.xaml.cs
 void OnNavigatedTo(NavigationEventArgs e)
 {
     var animationService = ConnectedAnimationService.GetForCurrentView();
     var animation = animationService.GetAnimation("coverImage");
-    
+
     if (animation != null)
     {
         // Don’t need to capture the return value as we are not scheduling any subsequent
@@ -215,9 +318,10 @@ void OnNavigatedTo(NavigationEventArgs e)
 ## <a name="dos-and-donts"></a>Рекомендации
 
 - Используйте подключенную анимацию для переходов между страницами, когда исходная и целевая страница содержат общий элемент.
+- Используйте [GravityConnectedAnimationConfiguration]() для переходов вперед.
+- Используйте [DirectConnectedAnimationConfiguration]() для переходов назад.
 - Не ждите сетевые запросы или другие долго выполняющиеся асинхронные операции между подготовкой и запуском подключенной анимации. Может потребоваться предварительно загрузить данные, необходимые для выполнения перехода, или использовать изображение-заполнитель с низким разрешением во время загрузки в представлении назначения изображения с высоким разрешением.
-- Используйте [SuppressNavigationTransitionInfo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo), чтобы избежать анимации перехода во **фрейме**, если применяется **ConnectedAnimationService**, поскольку подключенная анимация не предназначена для использования одновременно с переходами навигации по умолчанию. Дополнительную информацию об использовании переходов навигации см. [NavigationThemeTransition](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.navigationthemetransition.aspx).
-
+- Используйте [SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) , чтобы избежать анимации перехода в **кадра** , если вы используете **ConnectedAnimationService**, поскольку подключенная анимация не предназначена для использования одновременно с навигацией по умолчанию переходы. Дополнительную информацию об использовании переходов навигации см. [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition).
 
 ## <a name="download-the-code-samples"></a>Загрузка примеров кода
 
@@ -225,6 +329,8 @@ void OnNavigatedTo(NavigationEventArgs e)
 
 ## <a name="related-articles"></a>Статьи по теме
 
-- [ConnectedAnimation](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimation)
-- [ConnectedAnimationService](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.connectedanimation.aspx)
-- [NavigationThemeTransition](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.navigationthemetransition.aspx)
+[ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation)
+
+[ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+
+[NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition)

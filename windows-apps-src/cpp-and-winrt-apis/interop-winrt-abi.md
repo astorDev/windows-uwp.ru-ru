@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, взаимодействие, ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: b641591e7be23226edc354e02513d723fbe8afba
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205574"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266633"
 ---
 # <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-the-abi"></a>Взаимодействие между [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) и интерфейсом ABI
 В этом разделе показано, как выполнять преобразование между объектами двоичного интерфейса приложений SDK (ABI) и C++/WinRT. Эти техники можно использовать для взаимодействия между кодом, который использует эти два способа программирования с помощью среды выполнения Windows, или для постепенного переноса кода с ABI на C++/WinRT.

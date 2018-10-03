@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, портала устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: 08e7d8fcfbab0d0b22fffa3e3e0aecc38d5b095c
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207338"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268191"
 ---
 # <a name="windows-device-portal-overview"></a>Обзор портала устройств Windows
 
