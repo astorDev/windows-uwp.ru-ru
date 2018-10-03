@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
-ms.openlocfilehash: 19f4d9cde6ee2bc9615f044f18bc5e8828ca1985
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: ca59855456abe366ec681404b3bf6253bc182f79
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209324"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258693"
 ---
 # <a name="color"></a>Цвет
 
@@ -29,23 +29,23 @@ ms.locfileid: "4209324"
 
 :::row:::
     :::column:::
-        **Используйте цвет осмысленно.**
-Если цвет используется для выделения важных элементов, это поможет создать гибкий и интуитивно понятный интерфейс.
+        **Use color meaningfully.**
+        When color is used sparingly to highlight important elements, it can help create a user interface that is fluid and intuitive.
     :::column-end:::
     :::column:::
-        **Используйте цвет для обозначения интерактивных возможностей.**
-Вы можете выбрать один цвет для обозначения интерактивных элементов приложения. Например, на многих веб-страницах синий текст обозначает гиперссылки.
+        **Use color to indicate interactivity.**
+        It's a good idea to choose one color to indicate elements of your application that are interactive. For example, many web pages use blue text to denote a hyperlink.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        **Цвет отражает личные предпочтения.**
-В Windows пользователи могут выбрать цвет элементов и светлую либо темную тему, чтобы она проявлялась при каждом их взаимодействии с устройством. Вы можете выбрать способ применения цвета элементов и темы пользователя в приложении для персонализации взаимодействия.
+        **Color is personal.**
+        In Windows, users can choose an accent color and a light or dark theme, which are reflected throughout their experience. You can choose how to incorporate the user's accent color and theme into your application, personalizing their experience.
     :::column-end:::
     :::column:::
-        **Цвет имеет Культурное значение.**
-Подумайте о том, как применяемые цвета будут интерпретироваться пользователями из разных культур. Например, в некоторых странах синий цвет ассоциируется с достоинствами и защитой, а в других странах он означает печаль.
+        **Color is cultural.**
+        Consider how the colors you use will be interpreted by people from different cultures. For example, in some cultures the color blue is associated with virtue and protection, while in others it represents mourning.
     :::column-end:::
 :::row-end:::
 
@@ -108,7 +108,7 @@ ms.locfileid: "4209324"
 
 :::row:::
     :::column:::
-        При создании шаблонов для пользовательских элементов управления, применяйте кисти темы, а не жестко закодированные значения цветов. Таким образом, приложение сможет легко адаптироваться к любой теме.
+        When creating templates for custom controls, use theme brushes rather than hard code color values. This way, your app can easily adapt to any theme.
 
         For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
     :::column-end:::
@@ -147,10 +147,12 @@ ms.locfileid: "4209324"
 
 :::row:::
     :::column:::
-        ![выбранный пользователем элементов заголовка](images/color/user-accent.svg) ![выбранный пользователем цвет](images/color/user-selected-accent.svg)
+        ![user-selected accent header](images/color/user-accent.svg)
+        ![user-selected accent color](images/color/user-selected-accent.svg)
     :::column-end:::
     :::column:::
-        ![Заголовок настраиваемых элементов](images/color/custom-accent.svg) ![пользовательские торговой марки контрастный цвет](images/color/brand-color.svg)
+        ![custom accent header](images/color/custom-accent.svg)
+        ![custom brand accent color](images/color/brand-color.svg)
     :::column-end:::
 :::row-end:::
 
@@ -254,13 +256,160 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 Дополнительные сведения об использовании кистей см. в разделе [Кисти XAML](brushes.md).
 
+## <a name="scoping-system-colors"></a>Определение системных цветов
+
+Помимо определения собственные цвета в приложении, можно также определить область наших systematized цвета для нужного регионов во всем приложении с помощью тега **ColorSchemeResources** . Этот API позволяет вам не только колоризации и темы больших групп элементов управления одновременно, задав несколько свойств, но также предоставляет вам множество других систем преимущества, которые обычно вряд ли с определением собственные цвета вручную:
+
+- Не повлияет на любой цвет, настраиваются с помощью **ColorSchemeResources** высокой контрастности
+  * То есть приложение, будут доступны другим пользователям без дополнительных проектирования и разработки затраты
+- Можно легко установить цвета светлой, темной или распространено на обоих темы, задав одно свойство в API
+- Установите на **ColorSchemeResources** цвета каскадом до все похожие элементы управления, которые также используют этот системный цвет
+  * Это гарантирует, что у вас будет новости единообразной цветовой вашего приложения при сохранении его внешний вид вашего фирменного стиля
+- Влияет на все визуальные состояния, анимации и варианты непрозрачности без необходимости изменить шаблон
+
+### <a name="how-to-use-colorschemeresources"></a>Как использовать ColorSchemeResources
+
+ColorSchemeResources — это API, который сообщает, что система потоковом какие ресурсы область, где. ColorSchemeResources должен выполнить с [x: Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute), может быть один из трех вариантов:
+- По умолчанию
+  * Отобразит изменения цвета [света](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) и [Темная](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme) тема
+- Light
+  * Будет отображать изменения цвета только в [светлой теме](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) 
+- Dark
+  * Отобразит изменения цвета только в [темной теме](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)
+
+Параметр x: Key гарантирует, что цветов соответствующим образом изменить тему системы или приложения, вы хотите различных пользовательское оформление при в двух цветовых.
+
+### <a name="how-to-apply-scoped-colors"></a>Способ применения цвета с областью действия
+
+Определение области действия ресурсы с помощью **ColorSchemeResources** API в XAML позволяет воспользоваться любой системный цвет или кисти, которая находится в нашей библиотеке [ресурсов темы](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources) и переопределить их в рамках области страницы или контейнера.
+
+Например, если определяются два системных цветов - **SystemBaseLowColor** и **SystemBaseMediumLowColor** внутри grid и затем помещается на странице две кнопки: одна внутри этой сетки и один за пределами:
+
+```xaml
+<Grid x:Name="Grid_A">
+    <Grid.Resources>
+        <ColorSchemeResources x:Key="Default" 
+        SystemBaseLowColor="LightGreen" 
+        SystemBaseMediumLowColor="DarkCyan"/>
+    </Grid.Resources>
+
+    <Buton Content="Button_A"/>
+</Grid>
+<Buton Content="Button_B"/>
+```
+
+Получите **Button_A** , примененные новые цвета и **Button_B** останется привлекательный как кнопка по умолчанию нашей системы:
+
+![с областью системных цветов на кнопке](images/color/scopedcolors_cyan_button.png)
+
+Тем не менее так как все наши системных цветов располагаться сверху вниз, чтобы другие элементы управления слишком, задав **SystemBaseLowColor** и **SystemBaseMediumLowColor** повлияет на больше, чем просто кнопки. В этом случае элементы управления, как **ToggleButton**, **RadioButton** и **ползунок** будет также быть влияет эти изменения цвета системы, следует этих элементов управления можно поместить в выше области exampl сетки.
+Если вы хотите определить область системы цвет изменение *только один элементы управления* можно сделать путем определения **ColorSchemeResources** внутри этого элемента управления ресурсами:
+
+```xaml
+<Grid x:Name="Grid_A">
+    <Button Content="Button_A">
+        <Button.Resources>
+            <ColorSchemeResources x:Key="Default" 
+                SystemBaseLowColor="LightGreen" 
+                SystemBaseMediumLowColor="DarkCyan"/>
+        </Button.Resources>
+    </Button>
+</Grid>
+<Button Content="Button_B"/>
+```
+По сути у вас есть то же самое как перед, но теперь любых других элементов управления, добавлен к сетке не ответит изменения цвета. Это связано с эти системные цвета относятся к **Button_A** только.
+
+### <a name="nesting-scoped-resources"></a>Ресурсы предусматривать вложения
+
+Системные цвета, вложенное также возможно и — это сделано, переключив **ColorSchemeResources** в ресурсах вложенных элементов внутри разметки макет вашего приложения:
+
+```xaml
+<Grid x:Name="Grid_A">
+    <Grid.Resources>
+        <ColorSchemeResources x:Key="Default"
+            SystemBaseLowColor="LightGreen"
+            SystemBaseMediumLowColor="DarkCyan"/>
+    </Grid.Resources>
+
+    <Button Content="Button_A"/>
+    <Grid x:Name="Grid_B">
+        <Grid.Resources>
+            <ColorSchemeResources x:Key="Default"
+                SystemBaseLowColor="Goldenrod"
+                SystemBaseMediumLowColor="DarkGoldenrod"/>
+        </Grid.Resources>
+
+        <Button Content="Nested Button"/>
+    </Grid>
+</Grid>
+```
+
+В этом примере наследования **Button_A** цвета определить в ресурсах **Grid_A**пользователя и **Вложенные кнопки** — это наследовании **Grid_B**элемента ресурсов цвета. С помощью расширения, это означает, что любые другие элементы управления размещаются внутри **Grid_B** будет проверить или применить **Grid_B**элемента ресурсов во-первых, перед проверкой или применения ресурсов **Grid_A**пользователя, и наконец применения наших цвета по умолчанию, если ничего не определены на уровне страницы или приложения.
+
+Это работает для любого числа вложенных элементов, ресурсы которого имеют определения цвета.
+
+### <a name="scoping-with-a-resourcedictionary"></a>Определение области действия с ResourceDictionary
+
+Не ограничиваются контейнера или ресурсы страницы, а также можно определить эти системные цвета в ResourceDictionary, могут быть объединены в любой области так, как вы обычно бы объединить словарь.
+
+#### <a name="mycustomthemexaml"></a>MyCustomTheme.xaml
+
+Во-первых необходимо создать ResourceDictionary. Затем поместите **ColorSchemeResources** в ThemeDictionaries и переопределить нужные системные цвета:
+
+```xaml
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TestApp">
+
+    <ResourceDictionary.ThemeDictionaries>
+
+        <ColorSchemeResources x:Key="Default"
+            SystemBaseLowColor="LightGreen"
+            SystemBaseMediumLowColor="DarkCyan"/>
+        
+    </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>
+```
+
+#### <a name="mainpagexaml"></a>MainPage.xaml
+
+На странице, содержащий макет просто объедините этого словаря в в области, которые требуется:
+
+```xaml
+<Grid x:Name="Grid_A">
+    <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="MyCustomTheme.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </Grid.Resources>
+             
+    <Button Content="Button_A"/>
+</Grid>
+```
+
+Теперь все ресурсы темы и пользовательские цвета можно разместить в один словарь ресурсов **MyCustomTheme** и предусматривать там, где требуется не нужно беспокоиться о дополнительных помех в разметке макета.
+
+### <a name="other-ways-to-define-color-resources"></a>Другие способы определить ресурсы цвета
+
+ColorSchemeResources также позволяет системных цветов, чтобы разместить и определение непосредственно в качестве оболочки, а не в строке:
+
+``` xaml
+<ColorSchemeResources x:Key="Dark">
+    <Color x:Key="SystemBaseLowColor">Goldenrod</Color>
+</ColorSchemeResources>
+```
+
 ## <a name="usability"></a>Удобство использования
 
 :::row:::
     :::column:::
-        ![Иллюстрация контрастности](images/color/illo-contrast.svg)
+        ![contrast illustration](images/color/illo-contrast.svg)
     :::column-end:::
-    ::: column span = «2»::: **контрастности**
+    :::column span="2":::
+        **Contrast**
 
         Make sure that elements and images have sufficient contrast to differentiate between them, regardless of the accent color or theme.
 
@@ -270,9 +419,10 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 :::row:::
     :::column:::
-        ![Иллюстрация контрастности](images/color/illo-lighting.svg)
+        ![contrast illustration](images/color/illo-lighting.svg)
     :::column-end:::
-    ::: column span = «2»::: **освещения**
+    :::column span="2":::
+        **Lighting**
 
         Be aware that variation in ambient lighting can affect the useability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
     :::column-end:::
@@ -280,9 +430,10 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 :::row:::
     :::column:::
-        ![Иллюстрация контрастности](images/color/illo-colorblindness.svg)
+        ![contrast illustration](images/color/illo-colorblindness.svg)
     :::column-end:::
-    ::: column span = «2»::: **Дальтонизм**
+    :::column span="2":::
+        **Colorblindness**
 
         Be aware of how colorblindness could affect the useability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About **8 percent of men** and **0.5 percent of women** are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.
     :::column-end:::

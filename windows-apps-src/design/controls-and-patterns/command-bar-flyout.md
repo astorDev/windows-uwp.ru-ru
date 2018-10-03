@@ -5,7 +5,7 @@ title: Всплывающий элемент панели команд
 label: Command bar flyout
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 07/19/2018
+ms.date: 10/2/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,17 +15,14 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: ec532749fc2dacfc56e80ee2830da36f71c75b2f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: ed17299051ae7da32f238eb57876b81597c8effa
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205176"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258517"
 ---
 # <a name="command-bar-flyout"></a>Всплывающий элемент панели команд
-
-> [!IMPORTANT]
-> В этой статье описана еще не выпущенная функция, которая может быть существенно изменена до коммерческого выпуска. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации. Функции предварительного просмотра, требуют [последние сборки Windows 10 Insider Preview и пакет SDK](https://insider.windows.com/for-developers/) или [Библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Всплывающий элемент панели команд позволяет предоставляют пользователям удобный доступ к распространенным задачам, отображая команды в перемещаемом инструментов, связанных с элементом на холст пользовательского интерфейса.
 
@@ -94,12 +91,12 @@ TextCommandBarFlyout отображает текст команды в элем�
 
 :::row:::
     :::column:::
-        Всплывающий элемент свернуто командной строке<br/>
-        ![Пример свернуто командной строке всплывающего элемента](images/command-bar-flyout-img-collapsed.png)
+        A collapsed command bar flyout<br/>
+        ![Example of a collapsed command bar flyout](images/command-bar-flyout-img-collapsed.png)
     :::column-end:::
     :::column:::
-        Всплывающий элемент панели расширенная команда<br/>
-        ![Пример панели всплывающем элементе расширенная команда](images/command-bar-flyout-img-expanded.png)
+        An expanded command bar flyout<br/>
+        ![Example of an expanded command bar flyout](images/command-bar-flyout-img-expanded.png)
     :::column-end:::
 :::row-end:::
 
@@ -191,12 +188,12 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 :::row:::
     :::column:::
-        Всплывающий элемент панели свернуто команду с открытым SplitButton<br/>
-        ![Всплывающий элемент панели команд с кнопкой "комбинированный режим"](images/command-bar-flyout-split-button.png)
+        A collapsed command bar flyout with an open SplitButton<br/>
+        ![A command bar flyout with a split button](images/command-bar-flyout-split-button.png)
     :::column-end:::
     :::column:::
-        Расширенная команда окна всплывающий элемент с пользовательской масштабирования пользовательского интерфейса в меню<br/>
-        ![Всплывающий элемент панели команд с сложный пользовательский Интерфейс](images/command-bar-flyout-complex-ui.png)
+        An expanded command bar flyout with custom zoom UI in the menu<br/>
+        ![A command bar flyout with complex UI](images/command-bar-flyout-complex-ui.png)
     :::column-end:::
 :::row-end:::
 
@@ -317,12 +314,12 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 :::row:::
     :::column:::
-        Всплывающий элемент панели команд текст на выделение текста<br/>
-        ![Всплывающий элемент панели команд свернутого текста](images/command-bar-flyout-text-selection.png)
+        A text command bar flyout on text selection<br/>
+        ![A collapsed text command bar flyout](images/command-bar-flyout-text-selection.png)
     :::column-end:::
     :::column:::
-        Всплывающий элемент развернутое текстовое командной строке<br/>
-        ![Всплывающий элемент развернутое текстовое командной строке](images/command-bar-flyout-text-full.png)
+        An expanded text command bar flyout<br/>
+        ![An expanded text command bar flyout](images/command-bar-flyout-text-full.png)
     :::column-end:::
 :::row-end:::
 
