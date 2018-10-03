@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, упаковка, макет пакета, пакет активов
 ms.localizationpriority: medium
 ms.openlocfilehash: 31c27430c850f861c8b97863521202a6dcab80f7
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4268091"
+ms.locfileid: "4310832"
 ---
 # <a name="developing-with-asset-packages-and-package-folding"></a>Разработка пакетов активов 
 

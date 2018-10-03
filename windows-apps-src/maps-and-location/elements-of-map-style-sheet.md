@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, карты, таблица стилей карты
 ms.localizationpriority: medium
 ms.openlocfilehash: 11360f9d76fc07d7a6b24bd1e0bfb78df4f1d22d
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4266385"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4313606"
 ---
 # <a name="map-style-sheet-reference"></a>Справка о таблицах стилей карты
 
@@ -104,7 +104,7 @@ ms.locfileid: "4266385"
 | >>>>> communityPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют расположение общего использования в сообществе. |
 | >>>>> educationPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют учебных заведений и других для образовательных учреждений, связанные с расположениями. |
 | >>>>> entertainmentPoint     | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют развлечения ресурсах, таких как театры, кинотеатрах, и т. д. |
-| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icons that represent essential services such as parking, banks, gas, etc. |
+| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют основных служб, таких как парковки, банки, газа и т. д. |
 | >>>>> foodPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют рестораны, кафе и т. д. |
 | >>>>> lodgingPoint           | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют отелей и других проживание организациями. |
 | >>>>> realEstatePoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют недвижимости компаний. |

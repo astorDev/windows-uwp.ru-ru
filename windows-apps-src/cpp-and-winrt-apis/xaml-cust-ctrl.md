@@ -3,26 +3,23 @@ author: stevewhims
 description: В этом разделе описана этапы создания простого пользовательского элемента управления с помощью C + +/ WinRT. Вы можете создать на со статьей для создания собственных многофункциональных и настраиваемые элементы управления пользовательского интерфейса.
 title: (XAML шаблонных) элементов управления с помощью C + +/ WinRT
 ms.author: stwhi
-ms.date: 08/01/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, XAML, пользовательский, шаблон, элемент управления
 ms.localizationpriority: medium
-ms.openlocfilehash: fd1843afc58bc758db1c6e575f3733bdc4f47b4e
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 539876113ce2aba563cfa65b13571cbf3998cc2d
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4265833"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4313878"
 ---
-# <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>(XAML шаблонных) элементов управления с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-
-> [!NOTE]
-> **Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.**
+# <a name="xaml-custom-templated-controls-with-cwinrt"></a>(XAML шаблонных) элементов управления с помощью C + +/ WinRT
 
 > [!IMPORTANT]
-> Основные понятия и термины, которые помогают понять, как использовать и создавать классы среды выполнения с помощью C++/WinRT, см. в разделах [Использование API-интерфейсов в C++/WinRT](consume-apis.md) и [Создание API-интерфейсов в C++/WinRT ](author-apis.md).
+> Основные понятия и термины, которые помогают понять, как использовать и создавать классы среды выполнения с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), см. в разделе [Использование API-интерфейсов в C + +/ WinRT](consume-apis.md) и [Создание API-интерфейсов в C + +/ WinRT](author-apis.md).
 
 Одним из наиболее важных возможностей универсальной платформы Windows (UWP) является гибкость, что в стеке пользовательского интерфейса (UI) для создания пользовательских элементов управления, в зависимости от типа XAML [**элемента управления**](/uwp/api/windows.ui.xaml.controls.control) . Платформа пользовательского интерфейса XAML предоставляет функции, такие как [пользовательские свойства зависимостей](/windows/uwp/xaml-platform/custom-dependency-properties) и присоединенных свойств и [шаблоны элементов управления](/windows/uwp/design/controls-and-patterns/control-templates), которые упрощают создание многофункциональных и настраиваемых элементов управления. В этом разделе описана процедура инструкции по созданию пользовательского элемента управления (шаблона) с помощью C + +/ WinRT.
 
@@ -106,7 +103,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
     {
         // Call members of the projected type via theControl.
 
-        BgLabelControlApp::implementation::BgLabelControl* ptr{ winrt::from_abi<BgLabelControlApp::implementation::BgLabelControl>(theControl) };
+        BgLabelControlApp::implementation::BgLabelControl* ptr{ winrt::get_self<BgLabelControlApp::implementation::BgLabelControl>(theControl) };
         // Call members of the implementation type via ptr.
     }
 }
@@ -116,7 +113,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 В этом пошаговом руководстве мы не используем **OnLabelChanged**. Но есть таким образом, можно узнать, как зарегистрировать свойство зависимостей с помощью обратного вызова при изменении свойства. Реализация **OnLabelChanged** также показано, как получить производный тип проекции от базового типа проекции (базовый тип проекции — это **DependencyObject**, в данном случае). И показано, как затем получить указатель на тип, реализующий тип проекции. Эта операция второй естественным образом будет только возможно в проекте, который реализует проецируемого типа (то есть проект, который реализует класс среды выполнения).
 
 > [!NOTE]
-> Если вы установили [Windows 10 SDK предварительную сборку 17661 пакета](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)или более поздней версии, затем можно вызвать [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) в обработчик события изменения свойств зависимостей выше, вместо [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi).
+> Если вы еще не установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, необходимо вызвать [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) в обработчик события изменения свойств зависимостей выше, вместо [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self).
 
 ## <a name="design-the-default-style-for-bglabelcontrol"></a>Проектирование стиль по умолчанию **BgLabelControl**
 

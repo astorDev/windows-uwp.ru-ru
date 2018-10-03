@@ -3,24 +3,22 @@ author: stevewhims
 description: В этом разделе показаны способы, которыми можно создавать и использовать асинхронные объекты среды выполнения Windows с помощью C++/WinRT.
 title: Параллельная обработка и асинхронные операции с помощью C++/WinRT
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, параллелизм, async, асинхронный, асинхронность
 ms.localizationpriority: medium
-ms.openlocfilehash: fab1e83f212675b2c0bb28e0b1ae449f271edec7
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 9f29828a800795aba70c17bcab19b56b85d56382
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4266311"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4314760"
 ---
-# <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Параллельная обработка и асинхронные операции с использованием [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-> [!NOTE]
-> **Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.**
+# <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Параллельная обработка и асинхронные операции с помощью C++/WinRT
 
-В этом разделе показаны способы, которыми можно создавать и использовать асинхронные объекты среды выполнения Windows с помощью C++/WinRT.
+В этом разделе показано способами, которые можно выполнить оба Создание и использование асинхронных объектов среды выполнения Windows с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 ## <a name="asynchronous-operations-and-windows-runtime-async-functions"></a>Асинхронные операции и функции "Async" среды выполнения Windows
 Любой API-интерфейс среды выполнения Windows, завершение которого может занять более 50 миллисекунд, реализуется как асинхронная функция (с именем, оканчивающимся на "Async"). Реализация асинхронной функции инициирует работу в другом потоке и немедленно возвращает объект, представляющий асинхронную операцию. После завершения асинхронной операции возвращаемый объект, содержит любое значение, которое является результатом работы. Пространство имен среды выполнения Windows **Windows::Foundation** содержит четыре типа объектов асинхронной операции.
@@ -30,7 +28,7 @@ ms.locfileid: "4266311"
 - [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation_tresult_) и
 - [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_).
 
-Каждый из этих типов асинхронной операции проецируется в соответствующий тип в пространстве имен C++/WinRT **winrt::Windows::Foundation**. C++/WinRT также содержит внутреннюю структуру адаптера await. Она не используется напрямую, но благодаря этой структуре вы можете написать оператор co_await, чтобы совместно ожидать результата любой функции, которая возвращает один из этих типов асинхронной операции. И вы можете создавать свои собственные сопрограммы, возвращающие эти типы.
+Каждый из этих типов асинхронной операции проецируется в соответствующий тип в пространстве имен C++/WinRT **winrt::Windows::Foundation**. C++/WinRT также содержит внутреннюю структуру адаптера await. Она не используется напрямую, но благодаря этой структуре, можно написать `co_await` инструкцию, чтобы совместно ожидать результата любой функции, которая возвращает один из этих типов асинхронной операции. И вы можете создавать свои собственные сопрограммы, возвращающие эти типы.
 
 Пример асинхронной функции Windows — [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), который возвращает объект асинхронной операции типа [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_). Рассмотрим некоторые блокирующие и не блокирующие способы использования C++/WinRT для вызова подобного API.
 
@@ -303,10 +301,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 
 Если приведенная выше сопрограмма вызывается из потока пользовательского интерфейса, создавшего **TextBlock**, этот метод работает. В вашем приложении будет множество ситуаций, где вы будете уверены в этом.
 
-> [!NOTE]
-> **Приведенный ниже код относится к предварительной версии продукта, в которую к моменту выпуска официальной версии могут быть внесены значительные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.**
-
-Для получения более универсального решения для обновления пользовательского интерфейса, в котором рассматриваются случаи, где у вас нет уверенности по поводу вызывающего потока, можно установить [предварительную сборку 17661 пакета SDK Windows 10](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK) или более позднюю версию. Затем вы сможете применить `co-await` к функции **winrt::resume_foreground**, чтобы переключиться на определенный поток переднего плана. В следующем примере кода мы указываем поток переднего плана, передавая объект-диспетчер, связанный с **TextBlock** (обращаясь к его свойству [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher)). Реализация **winrt::resume_foreground** вызывает [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) на этом объекте-диспетчере для выполнения работы, поступающей далее в сопрограмме.
+Для получения более универсального решения для обновления пользовательского интерфейса, в котором рассматриваются случаи, где у вас нет уверенности по поводу вызывающего потока, можно `co-await` функцию **winrt::resume_foreground** переключиться на определенный поток переднего плана. В следующем примере кода мы указываем поток переднего плана, передавая объект-диспетчер, связанный с **TextBlock** (обращаясь к его свойству [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher)). Реализация **winrt::resume_foreground** вызывает [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) на этом объекте-диспетчере для выполнения работы, поступающей далее в сопрограмме.
 
 ```cppwinrt
 IAsyncAction DoWorkAsync(TextBlock textblock)
@@ -320,16 +315,142 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 }
 ```
 
-## <a name="reporting-progress"></a>Отчеты о ходе выполнения
+## <a name="canceling-an-asychronous-operation-and-cancellation-callbacks"></a>Отмена асинхронной операции и обратные вызовы отмены
 
-Если ваша сопрограмма возвращает [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)или [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_), затем можно получить объект, возвращенный функцией **winrt::get_progress_token** и использовать его для сообщения о ходе выполнения обратно на ход выполнения обработчик. Приведем пример кода.
+Компоненты среды выполнения Windows для асинхронного программирования дают возможность отменить переадресации асинхронные действия или операции. Начнем с простого примера.
 
 ```cppwinrt
-// main.cpp : Defines the entry point for the console application.
-//
-
-#include "pch.h"
+// pch.h
+#pragma once
 #include <iostream>
+#include <winrt/Windows.Foundation.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace std::chrono_literals;
+
+IAsyncAction ImplicitCancellationAsync()
+{
+    while (true)
+    {
+        std::cout << "ImplicitCancellationAsync: do some work for 1 second" << std::endl;
+        co_await 1s;
+    }
+}
+
+IAsyncAction MainCoroutineAsync()
+{
+    auto implicit_cancellation{ ImplicitCancellationAsync() };
+    co_await 3s;
+    implicit_cancellation.Cancel();
+}
+
+int main()
+{
+    winrt::init_apartment();
+    MainCoroutineAsync().get();
+}
+```
+
+При запуске в примере выше, то увидите **ImplicitCancellationAsync** печати одно сообщение в секунду в течение трех секунд, после чего время автоматически завершает работу в результате отмены. Это работает, поскольку, на которых успешно выполняется действие `co_await` выражение, сопрограммы проверяет, является ли она была отменена. Если было, затем он игнорирует и если нет, затем она приостанавливает в обычном режиме.
+
+Отмена Конечно, возможно, во время приостановки сопрограммы. Только в том случае, когда возобновления сопрограммы, или обращений к другой `co_await`, будет проверять для отмены. Проблема — это один из потенциально слишком грубым точное задержка реагирования на отмену.
+
+Таким образом другой вариант — явным образом запросить отмену из в пределах вашего сопрограммы. Указывайте приведенном выше примере кода в примере ниже. В этом примере новый **ExplicitCancellationAsync** получает объект, возвращенный функцией [**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token) и использует его для периодической проверки, был ли отменен сопрограммы. До тех пор, пока не отменяется, сопрограммы выполняется в бесконечном цикле; После отмены цикла и функции будут выхода обычным образом. Результат — так же, как предыдущего примера, но здесь выхода из происходит явным образом и полный контроль.
+
+```cppwinrt
+...
+IAsyncAction ExplicitCancellationAsync()
+{
+    auto cancellation_token{ co_await winrt::get_cancellation_token() };
+
+    while (!cancellation_token())
+    {
+        std::cout << "ExplicitCancellationAsync: do some work for 1 second" << std::endl;
+        co_await 1s;
+    }
+}
+
+IAsyncAction MainCoroutineAsync()
+{
+    auto explicit_cancellation{ ExplicitCancellationAsync() };
+    co_await 3s;
+    explicit_cancellation.Cancel();
+}
+...
+```
+
+Ожидание **winrt::get_cancellation_token** извлекает токен отмены изучения **IAsyncAction** , который сопрограмма выдает от вашего имени. Можно использовать оператор вызова функции на этот маркер запрашивать состояние отмены&mdash;по сути опрос для отмены. При выполнении определенных операций передачей или выполните итерацию большой коллекции, то это разумный метод.
+
+### <a name="register-a-cancellation-callback"></a>Зарегистрировать обратный вызов отмены
+Отмена среды выполнения Windows не затрагивают автоматически другие асинхронные объекты. Но&mdash;появились в Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809)&mdash;вы можете зарегистрировать обратный вызов отмены. Это вытеснением заинтересовать клиента, который может распространяться отмены и делает возможным для интеграции с существующей библиотеки параллельная обработка.
+
+В следующем примере кода выполняющий **NestedCoroutineAsync** , но он имеет не логики специальные отмены в нем. **CancellationPropagatorAsync** является по сути оболочкой на вложенных сопрограммы; оболочка pre-emptively пересылает отмены.
+
+```cppwinrt
+// pch.h
+#pragma once
+#include <iostream>
+#include <winrt/Windows.Foundation.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace std::chrono_literals;
+
+IAsyncAction NestedCoroutineAsync()
+{
+    while (true)
+    {
+        std::cout << "NestedCoroutineAsync: do some work for 1 second" << std::endl;
+        co_await 1s;
+    }
+}
+
+IAsyncAction CancellationPropagatorAsync()
+{
+    auto cancellation_token{ co_await winrt::get_cancellation_token() };
+    auto nested_coroutine{ NestedCoroutineAsync() };
+
+    cancellation_token.callback([&]
+    {
+        nested_coroutine.Cancel();
+    });
+
+    co_await nested_coroutine;
+}
+
+IAsyncAction MainCoroutineAsync()
+{
+    auto cancellation_propagator{ CancellationPropagatorAsync() };
+    co_await 3s;
+    cancellation_propagator.Cancel();
+}
+
+int main()
+{
+    winrt::init_apartment();
+    MainCoroutineAsync().get();
+}
+```
+
+**CancellationPropagatorAsync** регистрирует лямбда-функция для обратного вызова собственный отмены, а затем он ждет (она приостанавливает) до завершения работы вложенной. Когда или **CancellationPropagatorAsync** отменяется, его можно распространять об отмене вложенных сопрограммы. Нет необходимости будет опрашивать для отмены; ни отмены блокируется неограниченное количество раз. Этот механизм отличается достаточной гибкостью, можно использовать его для взаимодействия с библиотекой сопрограммы или параллелизма, ничего не знает о C + +/ WinRT.
+
+## <a name="reporting-progress"></a>Отчеты о ходе выполнения
+
+Если ваша сопрограмма возвращает [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)или [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_), затем можно получить объект, возвращенный функцией [**winrt::get_progress_token**](/uwp/cpp-ref-for-winrt/get-progress-token) и использовать его для сообщения о ходе выполнения обратно на ход выполнения обработчик. Приведем пример кода.
+
+```cppwinrt
+// pch.h
+#pragma once
+#include <iostream>
+#include <winrt/Windows.Foundation.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace std::chrono_literals;
@@ -374,7 +495,7 @@ IAsyncAction DoMath()
 
 int main()
 {
-    init_apartment();
+    winrt::init_apartment();
     DoMath().get();
 }
 ```
@@ -397,6 +518,33 @@ double pi{ co_await async_op_with_progress };
 
 Дополнительные сведения о обработчики завершения см. в разделе [типы делегатов для асинхронных действий и операций](handle-events.md#delegate-types-for-asynchronous-actions-and-operations).
 
+## <a name="fire-and-forget"></a>Запущена и забыть
+
+В некоторых случаях у вас есть задачи, которая может выполняться параллельно другую работу, и вам не нужно ждать завершения этой задачи (никакой другой работы зависит от него), и вам требуется его, чтобы возвращать значение. В этом случае можно запускать задачу и его забудете. Что можно сделать путем написания сопрограммы, чей тип возвращаемого значения является [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) (вместо одного из типов асинхронной операции среды выполнения Windows, или **concurrency::task**).
+
+```cppwinrt
+// pch.h
+#pragma once
+#include <winrt/Windows.Foundation.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
+using namespace winrt;
+using namespace std::chrono_literals;
+
+winrt::fire_and_forget CompleteInFiveSeconds()
+{
+    co_await 5s;
+}
+
+int main()
+{
+    winrt::init_apartment();
+    CompleteInFiveSeconds();
+    // Do other work here.
+}
+```
+
 ## <a name="important-apis"></a>Важные API
 * [Класс Concurrency::Task](/cpp/parallel/concrt/reference/task-class)
 * [Интерфейс IAsyncAction](/uwp/api/windows.foundation.iasyncaction)
@@ -405,6 +553,9 @@ double pi{ co_await async_op_with_progress };
 * [IAsyncOperationWithProgress&lt;TResult, TProgress&gt; интерфейс](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
 * [Метод SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [Класс SyndicationFeed](/uwp/api/windows.web.syndication.syndicationfeed)
+* [WinRT::get_cancellation_token](/uwp/cpp-ref-for-winrt/get-cancellation-token)
+* [WinRT::get_progress_token](/uwp/cpp-ref-for-winrt/get-progress-token)
+* [WinRT::fire_and_forget](/uwp/cpp-ref-for-winrt/fire-and-forget)
 
 ## <a name="related-topics"></a>Смежные разделы
 * [Обработка событий с помощью делегатов в C++/WinRT](handle-events.md)

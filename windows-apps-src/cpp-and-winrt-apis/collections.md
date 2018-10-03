@@ -3,30 +3,29 @@ author: stevewhims
 description: C + +/ WinRT предоставляет функции и базовые классы, которые вам сэкономить много времени и усилий, если вы хотите реализовать и/или передать коллекции.
 title: Коллекции с помощью C + +/ WinRT
 ms.author: stwhi
-ms.date: 09/21/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартные, c ++, cpp, winrt, проекция, коллекции
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ac3635a96b8dd3d757f25da1b826ea318c1ad4
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: e6a0cf8c2798adc59ffcf84381d6bbf64f2ce80e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4265369"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4312318"
 ---
-# <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Коллекции с [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="collections-with-cwinrt"></a>Коллекции с помощью C + +/ WinRT
 
-> [!NOTE]
-> **Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.**
-
-Внутри системы требуется коллекция среды выполнения Windows имеет множество сложной движущихся частей. Но когда нужно передать объект коллекции функции среды выполнения Windows, или реализовать собственные свойства коллекции и типы коллекций, функции и базовые классы в C + +/ WinRT для поддержки. Эти функции выполнить сложности из рук и сохраните много ресурсов в времени и усилий.
-
-> [!IMPORTANT]
-> Функции, описанные в этом разделе, доступно, если вы установили [Windows 10 SDK предварительную сборку 17661 пакета](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)или более поздней версии.
+Внутри системы требуется коллекция среды выполнения Windows имеет множество сложной движущихся частей. Но когда нужно передать объект коллекции функции среды выполнения Windows, или реализовать собственные свойства коллекции и типы коллекций, функции и базовые классы в [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) для поддержки. Эти функции выполнить сложности из рук и сохраните много ресурсов в времени и усилий.
 
 [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) — это интерфейс среды выполнения Windows, реализованный коллекцию элементов любого произвольного доступа. Если вы решите реализовывать **IVector** , необходимо также реализовать [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_), [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_)и [**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_). Даже если вам *нужны* пользовательской коллекции типов, это много работы. Но если у вас есть данных **std::vector** ( **std::map**или **std::unordered_map**) и все, что вам потребуется сделать передайте этот API-интерфейс среды выполнения Windows, затем следует избегать такой уровень работы, если это возможно. И избегать его использования *— это* возможно, так как C + +/ WinRT поможет вам создать коллекций эффективно и с минимальными усилиями.
+
+См. также [элементы управления XAML; привязка к C + +/ WinRT коллекции](binding-collection.md).
+
+> [!NOTE]
+> Если вы еще не установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, затем не имеют доступа к функциям и базовые классы, которые описаны в этом разделе. Вместо этого см. [Если у вас есть более ранней версии Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) перечень отслеживаемый шаблон вектора, которую можно использовать вместо него.
 
 ## <a name="helper-functions-for-collections"></a>Вспомогательные функции для коллекций
 

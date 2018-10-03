@@ -3,25 +3,22 @@ author: stevewhims
 description: В этом разделе показано, как создавать API-интерфейсы C++/ WinRT, используя базовую структуру **winrt::implements** прямо или косвенно.
 title: Создание API-интерфейсов с помощью C++/WinRT
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: d613cb87297cdc810e4d8e16dfeb36d4804678d1
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 2476161954c1d4d49fcf9f8f74cd1b7cf9180c0a
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4261163"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4309274"
 ---
-# <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Создание API-интерфейсов с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="author-apis-with-cwinrt"></a>Создание API-интерфейсов с помощью C++/WinRT
 
-> [!NOTE]
-> **Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.**
-
-В этом разделе показано, как создавать API-интерфейсы C++/ WinRT, используя базовую структуру [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) прямо или косвенно. Синонимами для *создавать* в данном контексте являются понятия *производить* и *реализовывать*. В этом разделе рассматриваются следующие сценарии реализации интерфейсов API на C++/WinRT в указанном порядке.
+В этом разделе показано, как создать [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API-интерфейсов с помощью [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) базовую структуру прямо или косвенно. Синонимами для *создавать* в данном контексте являются понятия *производить* и *реализовывать*. В этом разделе рассматриваются следующие сценарии реализации интерфейсов API на C++/WinRT в указанном порядке.
 
 - Вы *не* разрабатываете класс среды выполнения Windows; а просто реализуете один или нескольких интерфейсов среды выполнения Windows для локального использования в вашем приложении. В этом случае вы создаете производный класс непосредственно от **winrt::implements** и реализуете функции.
 - Вы *создаете* класс среды выполнения. Возможно, вы разрабатываете компонент для использования в приложении. А возможно, вы создаете тип для использования из пользовательского интерфейса XAML, и в этом случае вы одновременно реализуете и используете класс среды выполнения в рамках одной и той же единицы компиляции. В этих случаях вы позволяете инструментам создавать для вас классы, производные от **winrt::implements **.
@@ -285,17 +282,17 @@ iclosable.Close();
 
 Класс **MyType** не является частью проекции; он представляет собой реализацию. Однако таким образом можно вызвать его методы реализации напрямую, без необходимости вызова виртуальной функции. В примере выше, даже если **MyType::ToString** использует ту же подпись, что и проецируемый метод в **IStringable**, мы вызываем невиртуальный метод напрямую, без пересечения границы двоичного интерфейса приложения (ABI). **Com_ptr** просто содержит указатель на структуру **MyType**, поэтому можно также получить доступ к любым внутренним сведениям **MyType** через переменную `myimpl` и оператор косвенного обращения.
 
-В случае, когда у вас есть объект интерфейса, и вам известно, что это интерфейс в вашей реализации, вы можете вернуться к реализации с помощью шаблона функции [**from_abi**](/uwp/cpp-ref-for-winrt/from-abi). Опять же, это метод, который позволяет избежать вызовов виртуальных функций и перейти непосредственно к реализации.
+В случае, когда у вас есть объект интерфейса, и повлияет на том, что интерфейс от вашей реализации затем вы можете получить обратно с помощью шаблона функции [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) реализации. Опять же, это метод, который позволяет избежать вызовов виртуальных функций и перейти непосредственно к реализации.
 
 > [!NOTE]
-> Если вы установили [Windows 10 SDK предварительную сборку 17661 пакета](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)или более поздней версии, затем вы можете вызвать [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) вместо [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi).
+> Если вы еще не установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, затем необходимо вызвать [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) вместо [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self).
 
 Вот пример. Существует еще один пример в [Реализуйте класс пользовательского элемента управления **BgLabelControl** ](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
 {
-    MyType* myimpl = winrt::from_abi<MyType>(from);
+    MyType* myimpl = winrt::get_self<MyType>(from);
     myimpl->ToString();
     myimpl->Close();
 }
@@ -305,7 +302,7 @@ void ImplFromIClosable(IClosable const& from)
 
 ```cppwinrt
 winrt::com_ptr<MyType> impl;
-impl.copy_from(winrt::from_abi<MyType>(from));
+impl.copy_from(winrt::get_self<MyType>(from));
 // com_ptr::copy_from ensures that AddRef is called.
 ```
 

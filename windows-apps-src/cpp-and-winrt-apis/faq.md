@@ -9,36 +9,22 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, вопросы и ответы, вопросы и ответы
 ms.localizationpriority: medium
-ms.openlocfilehash: eb4b7b78bf3ef0a561d102804a245c59b6519796
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 4f1d2bdfe5ce88ed4e3f5f3e618fb7034f4eb0bb
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4264359"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4313888"
 ---
-# <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Ответы на часто задаваемые вопросы о [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-Ответы на часто возникающие вопросы о разработке и использовании API среды выполнения Windows с помощью C++/WinRT.
+# <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
+Ответы на вопросы, которые вы, скорее всего имеют о разработке и использовании API среды выполнения Windows с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 > [!NOTE]
 > Если ваш вопрос связан с сообщением об ошибке, которое вы увидели, см. также раздел [Устранение неполадок C++/WinRT](troubleshooting.md).
 
 ## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>Как Перенацелить C + +/ WinRT проекта на более позднюю версию пакета SDK для Windows?
 
-Обычно доступны последнюю версию Windows SDK — 10.0.17763.0 (Windows 10, версия 1809). Метод переназначение проекта, который, скорее всего результата в выпуске за меньшее компилятора и компоновщика также является наиболее трудоемкого. Этот метод предусматривает создание нового проекта (предназначенных для Windows SDK версии по вашему выбору), а затем скопировать файлы по в новый проект из старой. Разделы старые будет `.vcxproj` и `.vcxproj.filters` файлы, которые можно просто скопировать более чем сэкономить добавления файлов в Visual Studio.
-
-Тем не менее существует два других способа Перенацелить проекта в Visual Studio.
-
-- Последовательно выберите пункты проекта **Общие**свойства \> **Версия Windows SDK**и выберите **Все конфигурации** и **Всех платформах**. Установите **Версия Windows SDK** версии, который вы хотите обратиться.
-- В **Обозревателе решений**щелкните правой кнопкой мыши узел проекта, щелкните **Перенацелить проекты**, выберите версий, которые вы хотите выбрать и нажмите кнопку **ОК**.
-
-При возникновении все компилятора и компоновщика ошибки после применения любого из этих двух методов, а затем вы можете попробовать очистки решение (**сборка** > **Очистить решение** и/или вручную удалить все временные папки и файлы) перед попыткой повторного построения.
-
-Если компилятор C++ выдает «*Ошибка C2039: «IUnknown»: не является членом "\'global имен ''*», затем добавьте `#include <unknwn.h>` в верхнюю часть вашей `pch.h` файла.
-
-Также может потребоваться добавить `#include <hstring.h>` после этого.
-
-Если компоновщик C++ создает ошибку "*error LNK2019: неразрешенный внешний символ _WINRT_CanUnloadNow@0 в функции _VSDesignerCanUnloadNow@0 *», затем вы можете устранить, добавив `#define _VSDESIGNER_DONT_LOAD_AS_DLL` для вашего `pch.h` файл.
-
+См. в разделе [как Перенацелить C + +/ WinRT проект до более поздней версии Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>Почему не будет скомпилирован, создать новый проект? Я использую Visual Studio 2017 (версии 15.8.0 или более поздней версии) и пакет SDK версии 17134
 
@@ -84,7 +70,7 @@ C:\ExperimentWithLLVMClang>type main.cpp
 #pragma comment(lib, "windowsapp")
 #pragma comment(lib, "ole32")
 
-#include "winrt/Windows.Foundation.h"
+#include <winrt/Windows.Foundation.h>
 #include <stdio.h>
 #include <iostream>
 
@@ -167,4 +153,4 @@ a.f();
 Рекомендуемые приведенный выше шаблон применяется не только к C + +/ WinRT, но все языковые проекции среды выполнения Windows.
 
 > [!NOTE]
-> Если вы не нашли ответы на ваши вопросы в этом разделе, используйте тег [`c++-winrt` на портале Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).
+> Если в этом разделе не ответить на вопрос, то может оказаться справки, перейдя к [сообществу разработчиков Visual Studio C++](https://developercommunity.visualstudio.com/spaces/62/index.html)или с помощью [ `c++-winrt` метки на Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).
