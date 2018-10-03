@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, устранение неполадок, HRESULT, ошибка
 ms.localizationpriority: medium
-ms.openlocfilehash: cccc58c0b9dd5f922c87d3e6860bb2f2045ea767
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: bc2e7a8f28de4b43a42ff180fe0b12493c398dd0
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208296"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259589"
 ---
 # <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>Устранение неполадок [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 > [!NOTE]
@@ -51,6 +51,9 @@ ms.locfileid: "4208296"
 | Создает цепочку инструментов LLVM и Clang ошибок при использовании C + +/ WinRT.|Мы не поддерживаем цепочку инструментов LLVM и Clang для C + +/ WinRT, но если вы хотите имитировать, как мы используем его внутри организации, а затем вы можете поэкспериментировать, таких как кандидат, описанные в [можно ли использовать LLVM/Clang для компиляции с C + +/ WinRT?](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt).|
 | Компилятор C++ выдает «*Нет подходящего конструктора по умолчанию доступны*» для проецируемого типа. | Если вы пытаетесь отложить инициализацию объекта класса среды выполнения, или использовать и реализуем класс среды выполнения в том же проекте, а затем необходимо вызвать `nullptr_t` конструктор. Дополнительные сведения см. в разделе [Использование API-интерфейсов в C++/WinRT](consume-apis.md). |
 | Компилятор C++ выдает «*Ошибка C3861: «from_abi»: идентификатор не найден*» и другие ошибки, которые происходят *base.h*. Вы можете увидеть эту ошибку, если вы используете Visual Studio 2017 (версии 15.8.0 или более поздней версии) и пакет Windows SDK версии 10.0.17134.0 (Windows 10, версия 1803). | Либо предназначенные для более поздней версии (Дополнительные совместимые) версии пакета SDK для Windows, или задать свойство проекта **C/C++** > **язык** > **режим совместимости: нет** (Кроме того, если **/ permissive-** отображается в свойство проекта **C/C++**  >  **Язык** > **командной строки** в группе **Дополнительные параметры**, удалите его). |
+| Компилятор C++ выдает «*Ошибка C2039: «IUnknown»: не является членом "\'global имен ''*». | См. в разделе [как Перенацелить C + +/ WinRT проект до более поздней версии Windows SDK?](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
+| Компоновщик C++ создает ошибку "*error LNK2019: неразрешенный внешний символ _WINRT_CanUnloadNow@0 в функции _VSDesignerCanUnloadNow@0 *» | См. в разделе [как Перенацелить C + +/ WinRT проект до более поздней версии Windows SDK?](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
+
 
 > [!NOTE]
 > Если вы не нашли ответы на ваши вопросы в этом разделе, используйте тег [`c++-winrt` на портале Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

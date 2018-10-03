@@ -5,7 +5,7 @@ title: Движение на практике — анимация в прило
 label: Motion in practice
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 05/19/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,23 +14,22 @@ pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 87a17d3f73887c9b1b5029e2096c5b41c9444c4e
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 6001f955b3ab6a60446eb84296dc3bc52ad3a99e
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843917"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260019"
 ---
 # <a name="bringing-it-together"></a>Реализация
-
-> [!IMPORTANT]
-> В этой статье описана еще не выпущенная функция, которая может быть существенно изменена до коммерческого выпуска. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.
 
 Синхронность, реалистичность анимации, направление и сила притяжения лежат в основе движения Fluent (плавность). Каждую характеристику следует учитывать в контексте других и применять соответствующим образом в контексте вашего приложения.
 
 Ниже приведены три способа применения основных принципов движения Fluent в вашем приложении.
 
-:::row::: :::column::: **Неявная анимация**
+:::row:::
+    :::column:::
+        **Implicit animation**
 
         Automatic tween and timing between values in a parameter change to achieve very simple Fluent motion using the standardized values.
     :::column-end:::
@@ -46,12 +45,14 @@ ms.locfileid: "1843917"
     :::column-end:::
 :::row-end:::
 
-### **<a name="transition-example"></a>Пример перехода**
+**Пример перехода**
 
 ![функциональная анимация](images/pageRefresh.gif)
 
-:::row::: :::column::: <b>Направление вперед:</b><br>
-        Исчезание: 150 м; Реалистичная анимация: ускорение по умолчанию
+:::row:::
+    :::column:::
+        <b>Direction Forward Out:</b><br>
+        Fade out: 150m; Easing: Default Accelerate
 
         <b>Direction Forward In:</b><br>
         Slide up 150px: 300ms; Easing: Default Decelerate
@@ -59,19 +60,74 @@ ms.locfileid: "1843917"
     :::column:::
          <b>Direction Backward Out:</b><br>
         Slide down 150px: 150ms; Easing: Default Accelerate
-      
+
         <b>Direction Backward In:</b><br>
         Fade in: 300ms; Easing: Default Decelerate
     :::column-end:::
 :::row-end:::
 
- ### **<a name="object-example"></a>Пример объекта**
+**Пример объекта**
 
  ![Движение 300 мс](images/control.gif)
- 
-:::row::: :::column::: <b>Направление развертывания:</b><br>
-        Увеличение: 300 мс; Реалистичная анимация: стандарт :::column-end::: :::column::: <b>Направление стягивания:</b><br>
-        Увеличение: 150 мс; Реалистичная анимация: ускорение по умолчанию :::column-end::: :::row-end:::
+
+:::row:::
+    :::column:::
+        <b>Direction Expand:</b><br>
+        Grow: 300ms; Easing: Standard
+    :::column-end:::
+    :::column:::
+        <b>Direction Contract:</b><br>
+        Grow: 150ms; Easing: Default Accelerate
+    :::column-end:::
+:::row-end:::
+
+## <a name="implicit-animations"></a>Неявные анимации
+
+> **Предварительный просмотр**: неявная анимация требуются [последние сборки Windows 10 Insider Preview и SDK](https://insider.windows.com/for-developers/).
+
+Неявные анимации — это простой способ достижения движения Fluent, автоматически выполняя интерполяцию между старых и новых значений во время смены параметра.
+
+Неявно, вы можете анимировать изменения в следующие свойства:
+
+- [UIElement](/uwp/api/windows.ui.xaml.uielement)
+  - **Opacity (Прозрачность)**
+  - **Поворот**
+  - **Масштаб**
+  - **Translation (Преобразование)**
+
+- [Границы](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)или [Панель](/uwp/api/windows.ui.xaml.controls.panel)
+  - **Фон**
+
+Каждое свойство, которое может быть неявно анимировать изменения имеет соответствующее свойство _перехода_ . Анимировать свойство, назначьте тип перехода к соответствующему свойству _перехода_ . В этой таблице показаны свойства _перехода_ и тип перехода для каждого из них.
+
+| Анимируемого свойства | Свойства перехода | Тип неявный перехода |
+| -- | -- | -- |
+| [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
+| [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
+| [UIElement.Scale](/uwp/api/windows.ui.xaml.uielement.scale) | [ScaleTransition](/uwp/api/windows.ui.xaml.uielement.scaletransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.uielement.vector3transition) |
+| [UIElement.Translation](/uwp/api/windows.ui.xaml.uielement.scale) | [TranslationTransition](/uwp/api/windows.ui.xaml.uielement.translationtransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.uielement.vector3transition) |
+| [Border.Background](/uwp/api/windows.ui.xaml.controls.border.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.border.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+
+В этом примере показано, как использовать свойства Opacity и перехода, чтобы сделать кнопку затемняются, когда включен элемент управления и исчезать, когда она отключена.
+
+```xaml
+<Button x:Name="SubmitButton"
+        Content="Submit"
+        Opacity="{x:Bind OpaqueIfEnabled(SubmitButton.IsEnabled), Mode=OneWay}">
+    <Button.OpacityTransition>
+        <ScalarTransition />
+    </Button.OpacityTransition>
+</Button>
+```
+
+```csharp
+public double OpaqueIfEnabled(bool IsEnabled)
+{
+    return IsEnabled ? 1.0 : 0.2;
+}
+```
 
 ## <a name="related-articles"></a>Смежные разделы
 

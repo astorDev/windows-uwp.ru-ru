@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованных приложений, связанный набор, дополнительные пакеты
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7ef1d1a9eb3e268e642cf9b0889df71a59fb44
-ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
-ms.translationtype: HT
+ms.openlocfilehash: 965ef217fa00131504841ef2209dbe6aa54f50af
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2018
-ms.locfileid: "1917619"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4265993"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>Установка связанного набора с помощью файла Установщика приложений
 
@@ -91,7 +91,7 @@ ms.locfileid: "1917619"
 ```
 
 ### <a name="step-3-add-the-main-package-information"></a>Шаг 3. Добавление сведений об основном пакете 
-Если основной пакет приложения является файлом .appxbundle, используйте `<MainBundle>`, как показано ниже. Если основной пакет приложения является файлом .appx file, используйте `<MainPackage>` вместо `<MainBundle>` в фрагменте кода. 
+Если основной пакет приложения является файлом .appxbundle или .msixbundle, используйте `<MainBundle>` показано ниже. Если основной пакет приложения является файлом .appx или .msix, используйте `<MainPackage>` вместо `<MainBundle>` в фрагменте кода. 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

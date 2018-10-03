@@ -4,18 +4,18 @@ Description: Learn how your app's packages are made available to your customers,
 title: Руководство по управлению пакетами приложения
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b0b6315b1177138c3ede7834e2dbc792ee106dd
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: a43f3b4c5684d93ea6986c4d1f1e4dae46c1a959
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205144"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266199"
 ---
 # <a name="guidance-for-app-package-management"></a>Руководство по управлению пакетами приложения
 
@@ -110,30 +110,11 @@ ms.locfileid: "4205144"
 
 ## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>Добавление пакетов для Windows 10 в ранее опубликованное приложение
 
-Если ваше приложение для Windows8.x и/или WindowsPhone8.x опубликовано в Магазине и вы хотите обновить его для Windows10, создайте новую отправку и добавьте пакеты .appxupload UWP на этапе [Пакеты](upload-app-packages.md). После ваше приложение должно пройти сертификацию, клиенты, которые уже было приложение и, теперь представлены в Windows 10 смогут получить пакет UWP виде обновления из магазина. Пакет UWP также будет доступен для новых приобретений пользователями, использующими Windows 10.
+Если у вас есть приложение магазина, которое включено только пакеты для Windows 8.x и/или Windows Phone 8.x и вы хотите обновить приложение для Windows 10, создайте новую отправку и добавьте пакеты .msixupload или .appxupload UWP на этапе [пакетов](upload-app-packages.md) . После ваше приложение должно пройти сертификацию, пакет UWP также будут доступны для новых приобретений пользователями, использующими Windows 10.
 
 > [!NOTE]
 > Как только клиент, использующий ОС Windows10, получит ваш пакет UWP, вы не можете вернуть данного клиента к использованию пакета для предыдущей версии ОС. 
 
-Обратите внимание, что номер версии пакетов ОС Windows10 должен быть больше, чем номер версии включаемых вами пакетов Windows8, Windows8.1 и WindowsPhone8.1 (или ранее опубликованных вами пакетов для этих версий ОС). Дополнительные сведения см. в разделе [Нумерация версий пакета](package-version-numbering.md).
+Обратите внимание, что номер версии пакетов Windows 10 должен быть больше, чем для каких-либо пакетов Windows 8, Windows 8.1 и Windows Phone 8.1, которые вы использовали. Дополнительные сведения см. в разделе [Нумерация версий пакета](package-version-numbering.md).
 
 Дополнительные сведения о создании пакетов приложений UWP для Магазина см. в разделе [Создание пакетов приложений](../packaging/index.md).
-
-> [!IMPORTANT]
-> Помните, что если предоставить пакеты, предназначенные для семейства универсальных устройств, каждый клиент, который использовал ваше приложение в любых более ранних версиях операционной системы (ОС WindowsPhone8, Windows8.1 и т.д.) и перешел на ОС Windows10, получит обновление до пакета ОС Windows10.
-> 
-> Это происходит, даже если вы исключили определенное Семейство устройств на этапе [доступность семейства устройств](device-family-availability.md) отправки, поскольку что раздел относится только к новым приобретениям. Если вы не хотите, чтобы любой пользователь предыдущих версий ОС получил ваш универсальный пакет Windows 10, обязательно обновите элемент [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) в манифесте APPX для включения только определенного семейства устройств, которое нужно поддерживать.
-> 
-> Предположим, вы хотите, чтобы Windows 8 и Windows 8.1 пользователей, перешедших настольный Windows 10, чтобы получить новое приложение UWP, но вы хотите, чтобы пользователи Windows Phone, которые на устройствах Windows 10 Mobile для сохранения пакетов, которые вы бы ранее осуществляются он доступе e (предназначенных для Windows Phone 8 или Windows Phone 8.1). Для этого вам понадобится обновить [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) в манифесте appx для включения только **Windows.Desktop** (для семейства настольных устройств), а не оставлять значение **Windows.Universal** (для универсального семейства устройств) что Microsoft Visual Studio включает в манифест по умолчанию. Не отправляйте пакеты UWP, ориентированные на семейства универсальных или мобильных устройств (**Windows.Universal** или **Windows.Universal**). Таким образом ваши пользователи Windows 10 Mobile не получат пакетов UWP.
-
-
-## <a name="maintaining-package-compatibility-for-windows-phone-81"></a>Поддержка совместимости пакетов для Windows Phone 8.1
-
-При обновлении приложений, которые ранее были опубликованы для Windows Phone 8.1, применяются некоторые требования для типов пакетов:
-
--   Если для приложения опубликован пакет Windows Phone 8.1, все последующие обновления должны содержать пакет Windows Phone 8.1.
--   Если для приложения опубликован пакет Windows Phone 8.1 XAP, последующие обновления должны содержать пакет Windows Phone 8.1 XAP, Windows Phone 8.1 APPX или Windows Phone 8.1 APPXBUNDLE.
--   Если для приложения опубликован пакет Windows Phone 8.1 APPX, последующие обновления должны содержать Windows Phone 8.1 APPX или Windows Phone 8.1 APPXBUNDLE. Другими словами, они не могут содержать пакет Windows Phone 8.1 XAP. Это касается расширения APPXUPLOAD, содержащего также APPX Windows Phone 8.1.
--   Если для приложения опубликован пакет APPXBUNDLE Windows Phone 8.1, последующие обновления должны содержать пакет Windows Phone 8.1 APPXBUNDLE. Другими словами, они не могут содержать пакет Windows Phone 8.1 XAP или Windows Phone 8.1 APPX. Это касается расширения APPXUPLOAD, содержащего также APPXBUNDLE Windows Phone 8.1.
-
-Если не следовать этим правилам, при отправке пакетов возникнут ошибки, которые помешают выполнить отправку.

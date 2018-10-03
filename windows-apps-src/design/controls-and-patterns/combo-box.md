@@ -5,7 +5,7 @@ title: Поле со списком (раскрывающийся список)
 label: Combo box
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 05/19/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,17 +14,14 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f7592f584227d9b3a93a0ef4cea3ce53cd203ea
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 518ce49ddb631e3e914a6c7662b4e74de247c29c
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205022"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259743"
 ---
 # <a name="combo-box"></a>Поле со списком
-
-> [!IMPORTANT]
-> В этой статье описана еще не выпущенная функция, которая может быть существенно изменена до коммерческого выпуска. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.
 
 Используйте поле со списком (также известной как раскрывающегося списка) для представления списка элементов, которые пользователь может выбрать из. Поле со списком начинается в компактном состоянии и разворачивается для отображения списка предлагаемых.
 

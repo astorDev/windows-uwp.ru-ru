@@ -3,19 +3,19 @@ author: laurenhughes
 title: Создание пакета приложений с помощью средства MakeAppx.exe
 description: MakeAppx.exe создает, шифрует, расшифровывает и извлекает файлы из пакетов приложения и пакетов приложений.
 ms.author: lahugh
-ms.date: 03/07/2017
+ms.date: 06/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, упаковка
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
-ms.openlocfilehash: 94972915e5fc80a477d8d647212ab3b91e0aa384
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: dbde8f2f11276ded6ad0994a1cd52f7f12de229e
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817795"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264329"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>Создание пакета приложения с помощью средства MakeAppx.exe
 
@@ -25,10 +25,12 @@ ms.locfileid: "1817795"
 > [!IMPORTANT] 
 > Если для разработки приложения использовали Visual Studio, рекомендуется применять мастер Visual Studio для создания пакета приложения. Дополнительные сведения см. в разделе [Упаковка приложения UWP с помощью Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-Обратите внимание, что **MakeAppx.exe** не создает файл .appxupload. Файл .appxupload создается во время процесса формирования пакета в Visual Studio и содержит два других файла: .appx и .appxsym. Файл .appxsym — это сжатый файл .pdb, содержащий общедоступные символы вашего приложения, используемые для [аналитики по сбоям](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) в Центре разработки для Windows. Можно также отправить обычный файл .appx, но аналитика по сбоям или сведения отладки не будут доступны. Подробнее об отправке пакетов в Store см. в разделе [Отправка пакетов приложений](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages). 
+Обратите внимание, что **MakeAppx.exe** не создает файл .appxupload. Файл .appxupload создается в процессе упаковки Visual Studio и содержит два других файла: .msix или .appx и .appxsym. Файл .appxsym — это сжатый файл .pdb, содержащий общедоступные символы вашего приложения, используемые для [аналитики по сбоям](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) в Центре разработки для Windows. Можно также отправить обычный файл .appx, но аналитика по сбоям или сведения отладки не будут доступны. Подробнее об отправке пакетов в Store см. в разделе [Отправка пакетов приложений](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages). 
+
+ Обновления для данного средства в последней версии Windows 10 не влияют на использование пакета .appx. Можно продолжать использовать это средство с AppX-пакеты приложений, или использовать средство с поддержкой для пакетов .msix, как описано ниже.
 
 Создание файла .appxupload вручную:
-- Поместите файлы .appx и .appxsym в папку
+- Поместите .msix и .appxsym в папку
 - Упакуйте папку в ZIP-архив
 - Измените расширение ZIP-архива с .zip на .appxupload
 
@@ -58,7 +60,6 @@ MakeAppx <command> [options]
 | unbundle      | Распаковывает все пакеты в подкаталог по указанному выходному пути, названный полным именем пакета. |
 | encrypt       | Создает зашифрованный пакет приложения или пакет приложений из входного пакета приложения/пакета приложений по указанному выходному пакету приложения/пакету приложений. |
 | decrypt       | Создает расшифрованный пакет приложения или пакет приложений из входного пакета приложения/пакета приложений по указанному выходному пакету приложения/пакету приложений. |
-| сборка         |  |
 
 
 Этот список параметров применим ко всем командам:
@@ -81,14 +82,14 @@ MakeAppx <command> [options]
 
 | **Аргумент**                          | **Описание**                       |
 |---------------------------------------|---------------------------------------|
-| &lt;output package name&gt;           | Имя созданного пакета. Это имя файла с добавлением .appx. |
-| &lt;encrypted output package name&gt; | Имя созданного зашифрованного пакета. Это имя файла с добавлением .eappx. |
-| &lt;input package name&gt;            | Имя пакета. Это имя файла с добавлением .appx. |
-| &lt;encrypted input package name&gt;  | Имя зашифрованного пакета. Это имя файла с добавлением .eappx. |
-| &lt;output bundle name&gt;            | Имя созданного пакета приложений. Это имя файла с добавлением .appxbundle. |
-| &lt;encrypted output bundle name&gt;  | Имя созданного зашифрованного пакета приложений. Это имя файла с добавлением .eappxbundle. |
-| &lt;input bundle name&gt;             | Имя пакета приложений. Это имя файла с добавлением .appxbundle. |
-| &lt;encrypted input bundle name&gt;   | Имя зашифрованного пакета приложений. Это имя файла с добавлением .eappxbundle. |
+| &lt;output package name&gt;           | Имя созданного пакета. Это имя файла с .msix или .appx. |
+| &lt;encrypted output package name&gt; | Имя созданного зашифрованного пакета. Это имя файла с .emsix или добавлением .eappx. |
+| &lt;input package name&gt;            | Имя пакета. Это имя файла с .msix или .appx. |
+| &lt;encrypted input package name&gt;  | Имя зашифрованного пакета. Это имя файла с .emsix или добавлением .eappx. |
+| &lt;output bundle name&gt;            | Имя созданного пакета приложений. Это имя файла с .msixbundle или appxbundle. |
+| &lt;encrypted output bundle name&gt;  | Имя созданного зашифрованного пакета приложений. Это имя файла с .emsixbundle или добавлением .eappxbundle. |
+| &lt;input bundle name&gt;             | Имя пакета приложений. Это имя файла с .msixbundle или appxbundle. |
+| &lt;encrypted input bundle name&gt;   | Имя зашифрованного пакета приложений. Это имя файла с .emsixbundle или добавлением .eappxbundle. |
 | &lt;content directory&gt;             | Путь для содержимого пакета приложения или пакета приложений. |
 | &lt;mapping file&gt;                  | Имя файла, в котором указаны источник и назначение пакета. |
 | &lt;output directory&gt;              | Путь к каталогу для выходных пакетов приложения и пакетов приложений. |
@@ -98,7 +99,7 @@ MakeAppx <command> [options]
 
 ### <a name="create-an-app-package"></a>Создание пакета приложения
 
-Пакет приложения — это полноценный набор файлов приложения, упакованный в файл пакета .appx. Чтобы создать пакет приложения с помощью команды **pack**, необходимо предоставить каталог содержимого или файл сопоставления для расположения пакета. Вы также можете зашифровать пакет во время создания. Если вам требуется зашифровать пакет, необходимо использовать параметр /ep и указать, используете ли вы файл ключа (/kf) или глобальный тестовый ключ (/kt). Подробнее о создании зашифрованного пакета см. в разделе [Шифрование и расшифровка пакета приложения или пакета приложений](#encrypt-or-decrypt-a-package-or-bundle).
+Пакет приложения — это полный набор файлов приложения, упакованный в файл пакета .msix или .appx. Чтобы создать пакет приложения с помощью команды **pack**, необходимо предоставить каталог содержимого или файл сопоставления для расположения пакета. Вы также можете зашифровать пакет во время создания. Если вам требуется зашифровать пакет, необходимо использовать параметр /ep и указать, используете ли вы файл ключа (/kf) или глобальный тестовый ключ (/kt). Подробнее о создании зашифрованного пакета см. в разделе [Шифрование и расшифровка пакета приложения или пакета приложений](#encrypt-or-decrypt-a-package-or-bundle).
 
 Параметры, относящиеся к команде **pack**:
 
@@ -125,12 +126,12 @@ MakeAppx pack [options] /d <content directory> /ep <encrypted output package nam
 Далее приведены примеры командной строки для команды **pack**:
 
 ``` examples
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /p MyPackage.appx
-MakeAppx pack /v /o /f MyMapping.txt /p MyPackage.appx
-MakeAppx pack /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p AppPackage.appx
-MakeAppx pack /r /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p ResourcePackage.appx
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.eappx /kf MyKeyFile.txt
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.eappx /kt
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /p MyPackage.msix
+MakeAppx pack /v /o /f MyMapping.txt /p MyPackage.msix
+MakeAppx pack /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p AppPackage.msix
+MakeAppx pack /r /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p ResourcePackage.msix
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kf MyKeyFile.txt
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kt
 ```
 
 ### <a name="create-an-app-bundle"></a>Создание пакета приложений
@@ -157,10 +158,10 @@ MakeAppx bundle [options] /f <mapping file> /ep <encrypted output bundle name> /
 В следующем блоке содержатся примеры для команды **bundle**:
 
 ``` examples
-MakeAppx bundle /v /d "C:\My Files" /p MyBundle.appxbundle
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /p MyBundle.appxbundle
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.eappxbundle /kf MyKeyFile.txt
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.eappxbundle /kt
+MakeAppx bundle /v /d "C:\My Files" /p MyBundle.msixbundle
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /p MyBundle.msixbundle
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.emsixbundle /kf MyKeyFile.txt
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.emsixbundle /kt
 ```
 
 ### <a name="extract-files-from-a-package-or-bundle"></a>Извлечение файлов из пакета приложения или пакета приложений
@@ -189,13 +190,13 @@ MakeAppx unbundle [options] /ep <encrypted input bundle name> /d <output directo
 В следующем блоке содержатся примеры использования команд **unpack** и **unbundle**:
 
 ``` examples
-MakeAppx unpack /v /p MyPackage.appx /d "C:\My Files"
-MakeAppx unpack /v /ep MyPackage.eappx /d "C:\My Files" /kf MyKeyFile.txt
-MakeAppx unpack /v /ep MyPackage.eappx /d "C:\My Files" /kt
+MakeAppx unpack /v /p MyPackage.msix /d "C:\My Files"
+MakeAppx unpack /v /ep MyPackage.emsix /d "C:\My Files" /kf MyKeyFile.txt
+MakeAppx unpack /v /ep MyPackage.emsix /d "C:\My Files" /kt
 
-MakeAppx unbundle /v /p MyBundle.appxbundle /d "C:\My Files"
-MakeAppx unbundle /v /ep MyBundle.eappxbundle /d "C:\My Files" /kf MyKeyFile.txt
-MakeAppx unbundle /v /ep MyBundle.eappxbundle /d "C:\My Files" /kt
+MakeAppx unbundle /v /p MyBundle.msixbundle /d "C:\My Files"
+MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kf MyKeyFile.txt
+MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kt
 ```
 
 ### <a name="encrypt-or-decrypt-a-package-or-bundle"></a>Шифрование и расшифровка пакета приложения или пакета приложений
@@ -223,28 +224,12 @@ MakeAppx decrypt [options] /ep <package name> /p <output package name> /kt
 Следующий блок содержит примеры использования команд **encrypt** и **decrypt**:
 
 ``` examples
-MakeAppx.exe encrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kt
-MakeAppx.exe encrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile.txt
+MakeAppx.exe encrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kt
+MakeAppx.exe encrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile.txt
 
-MakeAppx.exe decrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kt
-MakeAppx.exe decrypt p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile.txt
+MakeAppx.exe decrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kt
+MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile.txt
 ```
-
-### <a name="build-an-app-package"></a>Создание пакета приложения 
-
-**MakeAppx.exe** может создать приложение с помощью файла макета пакета приложения. Чтобы узнать, как создать файл макета пакета и как использовать **MakeAppx.exe** для его сборки, изучите раздел [Создание пакета с помощью макета упаковки](packaging-layout.md).  
-
-Параметры, относящиеся к команде **build**:
-
-| **Параметр**    | **Описание**                       |
-|---------------|---------------------------------------|
-| /bc           | Задает, какие вложенные пакеты необходимо создать в семействе пакетов.  |
-| /id           | Служит для выбора пакетов, которые необходимо создать с атрибутом **ID** пакета. |
-| /ip           | Указывает на расположение предыдущих версий пакета приложения. |
-| /iv           | Автоматически увеличит номер версии создаваемого пакета. |
-| /f            | Задает файл макета пакета. |
-| /nbp          | Указывает, что пакет приложения не должен быть создан. |
-| /op           | Расположение пакета на выходе. |
 
 ## <a name="key-files"></a>Файлы ключей
 

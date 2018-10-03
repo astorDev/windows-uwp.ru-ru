@@ -4,18 +4,18 @@ Description: If you encounter errors after submitting your app to the Store, you
 title: Устранение ошибок отправки
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 ms.author: wdg-dev-content
-ms.date: 09/13/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d027e35f8fe76a0d4139301f1a7dabc7798348a
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 2aa30af537874f3c3f4845706de6f6788c7b08fb
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210230"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260779"
 ---
 # <a name="resolve-submission-errors"></a>Устранение ошибок отправки
 
@@ -23,7 +23,7 @@ ms.locfileid: "4210230"
 
 ## <a name="uwp-apps"></a>Приложения UWP
 
-Если вы отправляете приложение UWP, вы можете заметить ошибку в процессе предварительной обработки, если файл пакета не является .appxupload, созданным Visual Studio для Магазина. Убедитесь, что вы выполните действия, описанные в [пакет приложения UWP с помощью Visual Studio](../packaging/packaging-uwp-apps.md) при создании файла пакета приложения что только отправить файл appxupload на странице [пакеты](upload-app-packages.md) из отправки, а не appx или appxbundle.
+Если вы отправляете приложение UWP, вы можете увидеть ошибку во время предварительной обработки, если файл пакета не является файлом .msixupload или .appxupload, созданным Visual Studio для магазина. Убедитесь, что вы выполните действия, описанные в [пакет приложения UWP с помощью Visual Studio](../packaging/packaging-uwp-apps.md) при создании файла пакета приложения что только отправить файл .msixupload или .appxupload на странице " [пакеты](upload-app-packages.md) " отправки, не является .msix/appx или .msixbundle/appxbundle .
 
 Если отображается ошибка компиляции, убедитесь, что вы можете успешно выполнить сборку приложения в режиме выпуска. Дополнительную информацию см. в статье [Внутренние ошибки компилятора .NET](http://go.microsoft.com/fwlink/p/?LinkID=613098).
 
@@ -31,7 +31,7 @@ ms.locfileid: "4210230"
 
 Если вы планируете отправить пакет, который содержит двоичные файлы UWP и Win32, убедитесь, что создать этот пакет с помощью проект упаковки для Windows, доступный в Visual Studio 2017 обновления Update 4. При создании пакета с помощью шаблона проекта UWP, может не быть возможность отправки, пакет магазина или загрузите его на других компьютерах. Даже если пакет публикует успешно, он может работать непредсказуемо на Компьютере пользователя. Дополнительные сведения см. в разделе [пакета приложения с помощью Visual Studio (мост)]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
 
-## <a name="windows-phone-apps"></a>Приложения Windows Phone
+## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x и более ранних версий
 
 Вы можете увидеть **ошибку 2001** в случае обнаружения проблем с пакетами Windows Phone в процессе предварительной обработки. В большинстве случаев для исправления этой ошибки потребуется перестроить пакет приложения. После этого замените старый пакет на новый на странице отправки [Пакеты](upload-app-packages.md), а затем снова нажмите **Отправить в магазин**.
 

@@ -1,8 +1,8 @@
 ---
 author: normesta
-Description: Share code between a desktop app and a UWP app
+Description: Share code between a desktop application and a UWP app
 Search.Product: eADQiWindows 10XVcnh
-title: Совместное использование кода в классическом приложении и приложении UWP
+title: Совместное использование кода классического приложения и приложения UWP
 ms.author: normesta
 ms.date: 10/03/2017
 ms.topic: article
@@ -10,14 +10,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e0931440977c33642a3154cfa1b0adca42032df0
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: ca5b722ea97202d57f05613bec88ae6bee1db5f2
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018630"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260113"
 ---
-# <a name="share-code-between-a-desktop-app-and-a-uwp-app"></a>Совместное использование кода в классическом приложении и приложении UWP
+# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>Совместное использование кода классического приложения и приложения UWP
 
 Можно переместить код в библиотеки .NET Standard, а затем создать приложение универсальной платформы Windows (UWP) для поддержки всех устройств с Windows 10. Несмотря на отсутствие инструмента для преобразования классического приложения в приложение UWP, можно многократно использовать существующий код, чтобы сократить расходы на разработку такого приложения. В данном руководстве показано, как это сделать.
 
@@ -67,7 +67,7 @@ ms.locfileid: "2018630"
 
 ### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>Пример. Перенос кода доступа к данным в библиотеку .NET Standard 2.0
 
-Предположим, имеется предельно простое приложение Windows Forms, отображающее пользователей из примера базы данных Northwind.
+Предположим, что у нас есть очень простое приложение Windows Forms, отображающее пользователей из примера базы данных Northwind.
 
 ![Приложение Windows Forms](images/desktop-to-uwp/win-forms-app.png)
 

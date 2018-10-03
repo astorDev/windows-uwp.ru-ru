@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: Windows10, UWP
 pm-contact: stmoy
 ms.localizationpriority: medium
-ms.openlocfilehash: 0afc2c55ab0d0bdd2bee0206f986b2724d331eaf
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: a2923834fd968114a4ed607de214763fb2575697
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211416"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261907"
 ---
 # <a name="page-transitions"></a>Смена страниц
 
@@ -55,6 +55,20 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 ```csharp
 // Play the drill in animation
 myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
+```
+
+## <a name="horizontal-slide"></a>Скользящее движение по горизонтали
+
+Используйте горизонтальный слайд для отображения, страницами одного уровня отображаются рядом друг с другом. Элемент управления [NavigationView](../controls-and-patterns/navigationview.md) автоматически использует эту анимацию для верхней панели навигации, но если вы создаете собственный горизонтальной навигацию, затем можно реализовать горизонтальное слайд с SlideNavigationTransitionInfo.
+
+Создать ощущение, что переход между страницами, которые являются рядом друг с другом. 
+
+```csharp
+// Navigate to the right, ie. from LeftPage to RightPage
+myFrame.Navigate(typeof(RightPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromRight } );
+
+// Navigate to the left, ie. from RightPage to LeftPage
+myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromLeft } );
 ```
 
 ## <a name="suppress"></a>Подавление

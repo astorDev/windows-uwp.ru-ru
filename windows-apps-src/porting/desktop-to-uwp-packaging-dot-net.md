@@ -1,8 +1,8 @@
 ---
 author: normesta
-Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop app for the Desktop Bridge.
+Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop application.
 Search.Product: eADQiWindows 10XVcnh
-title: Упаковка приложения с помощью Visual Studio (мост для классических приложений)
+title: Упаковки классического приложения с помощью Visual Studio
 ms.author: normesta
 ms.date: 08/30/2017
 ms.topic: article
@@ -11,25 +11,25 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f7ff53aeffced746e78d8b27243469dc547097
-ms.sourcegitcommit: 6382f751f09e2f4aa8406c1ceeb25b5189e23da3
+ms.openlocfilehash: 2c9b7a30a50c26d2dbdaf6df04e85549addaf181
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "2410711"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259813"
 ---
-# <a name="package-an-app-by-using-visual-studio-desktop-bridge"></a>Упаковка приложения с помощью Visual Studio (мост для классических приложений)
+# <a name="package-a-desktop-application-by-using-visual-studio"></a>Упаковки классического приложения с помощью Visual Studio
 
 Visual Studio можно использовать для создания пакета для классического приложения. Затем вы можете опубликовать этот пакет в Store Windows или установить его на один или несколько компьютеров без публикации.
 
 В последней версии Visual Studio предоставляется новая версия пакета упаковки, исключающая все выполняемые вручную шаги, которые раньше требовались для упаковки приложения. Просто добавьте проект упаковки и ссылку на проект классического приложения, а затем нажмите клавишу F5, чтобы выполнить отладку приложения. Вносить изменения вручную не требуется. Это новое упрощенное взаимодействие представляет собой значительное улучшение по сравнению с возможностями предыдущей версии Visual Studio.
 
 >[!IMPORTANT]
->Мост для классических приложений впервые появился в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для юбилейного обновления Windows 10 (10.0; сборка 14393) или более поздней версии в Visual Studio.
+>Возможность создания пакета приложения для Windows для классического приложения (в противном случае известную как моста для классических приложений впервые появился в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для Юбилейного обновления Windows 10 (10.0; Сборка 14393) или более поздней версии в Visual Studio.
 
 ## <a name="first-prepare-your-application"></a>Сначала подготовьте свое приложение
 
-Не забудьте изучить это руководство, прежде чем начинать создание пакета приложения: [Подготовка к упаковке приложения (мост для классических приложений)](desktop-to-uwp-prepare.md).
+Изучить это руководство, прежде чем начинать создание пакета приложения: [Подготовка для упаковки классического приложения](desktop-to-uwp-prepare.md).
 
 <a id="new-packaging-project"/>
 
@@ -83,9 +83,9 @@ Visual Studio можно использовать для создания пак
 
 См. раздел [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)
 
-**Запуск, тестирование и отладка приложения**
+**Запуск, тестирование и отладка приложения для настольных компьютеров**
 
-См. [Запуск, отладка и тестирование упакованного классического приложения (мост для классических приложений)](desktop-to-uwp-debug.md)
+См. в разделе [Запуск, отладка и тестирование упакованного классического приложения](desktop-to-uwp-debug.md)
 
 **Улучшение классического приложения путем добавления API-интерфейсов UWP**
 
@@ -97,4 +97,4 @@ Visual Studio можно использовать для создания пак
 
 **Распространение вашего приложения**
 
-См. [Распространение упакованного классического приложения (мост для классических приложений)](desktop-to-uwp-distribute.md)
+См. в разделе [Распространение упакованного классического приложения](desktop-to-uwp-distribute.md)

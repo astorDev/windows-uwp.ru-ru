@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованного приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: f8cd18296e0e443b98d6de586d7103dd2eb6d894
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 6158b804e1d4ece3c76099a3f8d33d5fa562078d
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833321"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258547"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>Создание файла установщика приложений в Visual Studio
 
@@ -34,7 +34,7 @@ ms.locfileid: "1833321"
 
 ### <a name="create-packages"></a>Создание пакетов
 
-Для распространения приложения путем загрузки неопубликованных приложений необходимо создать пакет приложения (.appx) или пакет приложений (.appxbundle) и опубликовать его в общем местоположении.
+Для распространения приложения путем загрузки неопубликованных приложений, необходимо создать пакет приложения (.appx/.msix) или пакет приложений (.appxbundle/.msixbundle) и опубликовать его в общую папку.
 
 Для этого используйте мастер **создания пакетов приложения** в Visual Studio и выполните следующие шаги.
 

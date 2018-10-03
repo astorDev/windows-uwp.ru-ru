@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, расписание, дата выпуска, даты, запуск
 ms.localizationpriority: medium
 ms.openlocfilehash: 84466f907bad7e38506e1bf81b89eb631675093c
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206524"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259599"
 ---
 # <a name="configure-precise-release-scheduling"></a>Настройка точного расписания выпуска
 

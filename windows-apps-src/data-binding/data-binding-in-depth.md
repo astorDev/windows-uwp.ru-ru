@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c77450c3885f8a9bcd698e25ca721c4c3fe1305
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 72c7037e9e99ad69ff13c65fb2195bc6e3f8110f
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817835"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259159"
 ---
 # <a name="data-binding-in-depth"></a>Подробно о привязке данных
 
@@ -23,6 +23,7 @@ ms.locfileid: "1817835"
 
 **Важные API**
 
+-   [**Расширение разметки {x:Bind}**](../xaml-platform/x-bind-markup-extension.md)
 -   [**Класс Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820)
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
@@ -64,7 +65,8 @@ ms.locfileid: "1817835"
 
 Здесь приведен простейший пример реализации класса, который можно использовать в качестве источника привязки.
 
-**Примечание.** Если вы используете [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) с расширениямикомпонентов Visual C++ (C++/CX), вам также понадобится добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) в класс источника привязки. Если вы используете [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), этот атрибут не нужен. Фрагмент кода см. в разделе [Добавление представления подробностей](data-binding-quickstart.md#adding-a-details-view).
+> [!Note]
+> Если вы используете [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) с расширениями компонентов Visual C++ (C + +/ CX), вам также понадобится добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) класс источника привязки. Если вы используете [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), этот атрибут не нужен. Фрагмент кода см. в разделе [Добавление представления подробностей](data-binding-quickstart.md#adding-a-details-view).
 
 ```csharp
 public class HostViewModel
@@ -84,7 +86,8 @@ public class HostViewModel
 
 Более легким способом сделать класс доступным для отслеживания (что также необходимо для классов, уже имеющих базовый класс) является реализация интерфейса [**System.ComponentModel.INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx). Для этого необходимо всего лишь реализовать одно событие с именем **PropertyChanged**. Пример использования класса **HostViewModel** см. ниже.
 
-**Примечание.** При использовании C++/CX необходимо реализовать интерфейс [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899), а класс источника привязки должен либо иметь атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872), либо реализовывать интерфейс [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
+> [!Note]
+> Для C + +/ CX необходимо реализовать [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899), и класс источника привязки не должны иметь [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) или реализовать [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
 
 ```csharp
 public class HostViewModel : INotifyPropertyChanged
@@ -158,12 +161,11 @@ public class HostViewModel : BindableBase
 
 В двух примерах ниже свойство **Button.Content** представляет собой целевой объект привязки, и в качестве его значения устанавливается расширение разметки, которое объявляет объект привязки. Сначала отображается расширение разметки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), а затем— [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Объявления привязок в разметке используется очень часто (благодаря удобству и удобочитаемости). Однако вы можете не использовать разметку, а вместо этого при необходимости императивно (программными средствами) создать экземпляр класса [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820).
 
-<!-- XAML lang specifier not yet supported in OP. Using XML for now. -->
-```xml
+```xaml
 <Button Content="{x:Bind ...}" ... />
 ```
 
-```xml
+```xaml
 <Button Content="{Binding ...}" ... />
 ```
 
@@ -189,7 +191,7 @@ namespace QuizGame.View
 
 После этого мы можем подробнее рассмотреть разметку, объявляющую объект привязки. В приведенном ниже примере используется целевой объект привязки **Button.Content**, который мы ранее применяли в разделе "Целевой объект привязки". Он уже привязан к свойству **HostViewModel.NextButtonText**.
 
-```xml
+```xaml
 <Page x:Class="QuizGame.View.HostView" ... >
     <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
 </Page>
@@ -199,13 +201,14 @@ namespace QuizGame.View
 
 Свойство [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) поддерживает несколько вариантов синтаксиса для привязки к вложенным и подключенным свойствам, а также целочисленным и строковым индексаторам. Дополнительные сведения см. в разделе [Синтаксис Property-path](https://msdn.microsoft.com/library/windows/apps/Mt185586). Привязка к строковым индексаторам позволяет выполнять привязку к динамическим свойствам без реализации интерфейса [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). Другие параметры см. в [статье о расширении разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783).
 
-**Примечание.** Изменения, внесенные в свойство [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text), отправляются в источник двусторонней привязки, когда фокус переключается с класса [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), а не после каждого нажатия клавиши пользователем.
+> [!Note]
+> Изменения [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) отправляются в источник двусторонней привязанного когда [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) теряет фокус и не после каждого нажатия клавиши пользователем.
 
 **DataTemplate и x:DataType**
 
 В классе [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) (который используется как шаблон элемента, содержимого или заголовка) значение **Path** интерпретируется не в контексте страницы, а в контексте объекта данных, для которого создается шаблон. При использовании {x:Bind} класс **DataTemplate** должен объявлять тип своего объекта данных с помощью атрибута **x:DataType**, чтобы его привязки (и созданный для них эффективный код) можно было проверить во время компиляции. Приведенный ниже пример можно использовать в качестве свойства **ItemTemplate** элемента управления, привязанного к коллекции объектов **SampleDataGroup**.
 
-```xml
+```xaml
 <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{x:Bind Title}"/>
@@ -222,15 +225,14 @@ namespace QuizGame.View
 
 Код для поддержки **{x:Bind}** создается во время компиляции в разделяемых классах для ваших страниц. Эти файлы можно найти в папке `obj` с такими именами, как `<view name>.g.cs` (для C#). Созданный код содержит обработчик события [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) страницы, который вызывает метод **Initialize** в созданном классе, представляющем привязки вашей страницы. **Initialize** в свою очередь вызывает **Update** для перемещения данных между источником и целевым объектом привязки. **Loading** создается только перед первым этапом измерения страницы или пользовательского элемента управления. Поэтому если ваши данные загружаются асинхронно, они могут быть не готовы к моменту вызова **Initialize**. Поэтому после загрузки данных вы можете принудительно инициализировать однократные привязки, вызвав `this.Bindings.Update();`. Если вам нужны однократные привязки только для асинхронно загружаемых данных, намного эффективнее инициализировать их так, чем создать односторонние привязки и ожидать изменений. Если в ваши данные не вносятся точечные изменения и они будут обновляться в рамках определенного действия, вы можете сделать привязки однократными и принудительно выполнять обновление вручную с помощью вызова **Update**.
 
-**Ограничения**
-
-**{x:Bind}** не подходит для сценариев позднего связывания, таких как перемещение по структуре словаря объекта JSON или "утиная типизация", которая представляет собой слабую форму типизации на основе словарных соответствий имен свойств ("если это ходит, плавает и крякает как утка, это утка"). С утиной типизацией привязка к свойству Age одинаково удовлетворяется объектом Person или Wine. В этих сценариях используйте **{Binding}**.
+> [!Note]
+> **{x:Bind}** не подходит для сценариев позднего связывания, таких как перемещение по структуре словаря объекта JSON или "утиная типизация", которая представляет собой слабую форму типизации на основе словарных соответствий имен свойств ("если это ходит, плавает и крякает как утка, это утка"). С утиной типизацией привязка к свойству Age одинаково удовлетворяется объектом Person или Wine. В этих сценариях используйте **{Binding}**.
 
 ### <a name="binding-object-declared-using-binding"></a>Объект привязки, объявленный с использованием расширения разметки {Binding}
 
 Расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) по умолчанию предполагает, что вы выполняете привязку к свойству [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) страницы разметки. Поэтому в качестве свойства **DataContext** страницы мы установим экземпляр нашего класса источника привязки (типа **HostViewModel** в данном случае). В примере ниже показана разметка, объявляющая объект привязки. Мы используем тот же целевой объект привязки **Button.Content**, который ранее использовался в разделе "Целевой объект привязки", и выполняем привязку к свойству **HostViewModel.NextButtonText**.
 
-```xml
+```xaml
 <Page xmlns:viewmodel="using:QuizGame.ViewModel" ... >
     <Page.DataContext>
         <viewmodel:HostViewModel/>
@@ -248,7 +250,7 @@ namespace QuizGame.View
 
 В классе [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) для свойства [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) устанавливается шаблонный объект данных. Приведенный ниже пример можно использовать в качестве свойства **ItemTemplate** элемента управления, привязанного к коллекции любого типа, содержащей строковые свойства **Title** и **Description**.
 
-```xml
+```xaml
 <DataTemplate x:Key="SimpleItemTemplate">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{Binding Title}"/>
@@ -257,7 +259,8 @@ namespace QuizGame.View
   </DataTemplate>
 ```
 
-**Примечание.** По умолчанию изменения, внесенные в свойство [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text), отправляются в источник двусторонней привязки, когда фокус переключается с класса [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683). Чтобы изменения отправлялись после каждого нажатия клавиши пользователем, установите для перечисления **UpdateSourceTrigger** событие **PropertyChanged** в привязке разметки. Вы также можете полностью взять на себя управление отправкой изменений в источник, установив для перечисления **UpdateSourceTrigger** значение **Explicit**. Затем необходимо обработать события в текстовом поле (обычно с помощью события [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)), вызвать метод [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) для целевого объекта, чтобы получить объект [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx), а в самом конце вызвать метод [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) для обновления источника данных программными средствами.
+> [!Note]
+> По умолчанию изменения [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) отправляются в источник двусторонней привязанного, когда [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) теряет фокус. Чтобы изменения отправлялись после каждого нажатия клавиши пользователем, установите для перечисления **UpdateSourceTrigger** событие **PropertyChanged** в привязке разметки. Вы также можете полностью взять на себя управление отправкой изменений в источник, установив для перечисления **UpdateSourceTrigger** значение **Explicit**. Затем необходимо обработать события в текстовом поле (обычно с помощью события [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)), вызвать метод [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) для целевого объекта, чтобы получить объект [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx), а в самом конце вызвать метод [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) для обновления источника данных программными средствами.
 
 Свойство [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) поддерживает несколько вариантов синтаксиса для привязки к вложенным и подключенным свойствам, а также целочисленным и строковым индексаторам. Дополнительные сведения см. в разделе [Синтаксис Property-path](https://msdn.microsoft.com/library/windows/apps/Mt185586). Привязка к строковым индексаторам позволяет выполнять привязку к динамическим свойствам без реализации интерфейса [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). Свойство [**ElementName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.elementname) позволяет эффективно привязывать элементы один к другому. Свойство [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.relativesource) можно использовать в различных целях, в том числе в качестве более эффективной альтернативы привязке шаблона внутри класса [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391). Описание других параметров см. в статьях о [расширении разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) и классе [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820).
 
@@ -351,7 +354,7 @@ End Class
 
 Ниже показано, как использовать этот преобразователь величин в разметке объекта привязки.
 
-```xml
+```xaml
 <UserControl.Resources>
   <local:DateToStringConverter x:Key="Converter1"/>
 </UserControl.Resources>
@@ -369,7 +372,8 @@ End Class
 
 Преобразователь также включает дополнительные параметры: [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterlanguage), позволяющий указать язык, который используется в преобразовании, и [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterparameter), позволяющий передать параметр для логики преобразования. Пример использования параметра преобразователя см. в описании [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903).
 
-**Примечание.** Если в преобразовании возникает ошибка, не выдавайте исключение. Вместо этого возвращайте свойство [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue), которое остановит передачу данных.
+> [!Note]
+> Если в преобразовании возникает ошибка, не создавайте исключение. Вместо этого возвращайте свойство [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue), которое остановит передачу данных.
 
 Чтобы отображать значение по умолчанию, которое используется, когда невозможно разрешить источник привязки, задайте свойство **FallbackValue** для объекта привязки в разметке. Это полезно при обработке ошибок преобразования и форматирования. Это также полезно при привязке к свойствам источника, которые могут существовать не у всех объектов в привязанной коллекции различных типов.
 
@@ -380,7 +384,7 @@ End Class
 
 ## <a name="function-binding-in-xbind"></a>Привязка функций в {x:Bind}
 
-{x:Bind} позволяет использовать функцию на последнем этапе привязки. Этим можно пользоваться для выполнения преобразований, а также привязок, зависящих от нескольких свойств. См. раздел [**Расширение разметки {x:Bind}**](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
+{x:Bind} позволяет использовать функцию на последнем этапе привязки. Этим можно пользоваться для выполнения преобразований, а также привязок, зависящих от нескольких свойств. См. в разделе [ **функции в расширении разметки x: Bind**](function-bindings.md)
 
 <span id="resource-dictionaries-with-x-bind"/>
 
@@ -390,7 +394,7 @@ End Class
 
 TemplatesResourceDictionary.xaml
 
-```xml
+```xaml
 <ResourceDictionary
     x:Class="ExampleNamespace.TemplatesResourceDictionary"
     .....
@@ -423,7 +427,7 @@ namespace ExampleNamespace
 
 MainPage.xaml
 
-```xml
+```xaml
 <Page x:Class="ExampleNamespace.MainPage"
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
@@ -453,7 +457,7 @@ MainPage.xaml
 
 Затем вы можете привязать событие **Click** кнопки к методу объекта **Frame**, возвращенного свойством **RootFrame**, как показано ниже. Обратите внимание, что мы также привязываем свойство **IsEnabled** кнопки к другому члену того же объекта **Frame**.
 
-```xml
+```xaml
     <AppBarButton Icon="Forward" IsCompact="True"
     IsEnabled="{x:Bind RootFrame.CanGoForward, Mode=OneWay}"
     Click="{x:Bind RootFrame.GoForward}"/>
@@ -518,15 +522,13 @@ MainPage.xaml
     ...
 
     <GridView
-    ItemsSource="{Binding Source={StaticResource AuthorHasACollectionOfBookSku}}" ...>
+    ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
         <GridView.GroupStyle>
             <GroupStyle
                 HeaderTemplate="{StaticResource AuthorGroupHeaderTemplateWide}" ... />
         </GridView.GroupStyle>
     </GridView>
 ```
-
-Обратите внимание, что свойство [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) должно использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) (а не [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)), чтобы задать свойство **Source** для ресурса. Чтобы просмотреть приведенный выше пример в контексте готового приложения, скачайте пример приложения [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952). В отличие от показанной выше разметки, приложение [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) использует исключительно расширение разметки {Binding}.
 
 Вы можете реализовать шаблон "is-a-group" одним из двух способов. Первый способ — создать собственный класс группы. Создайте класс на основе **List&lt;T&gt;** (где *T*— это тип элементов). Например, `public class Author : List<BookSku>`. Второй способ — использовать выражение [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) для динамического создания объектов группы (и класса группы) из вероятных значений свойств элементов **BookSku**. Этот подход с поддержкой только плоского списка элементов и их группированием в ходе процесса обычно используется приложением, которое получает доступ к данным из облачной службы. Это позволяет гибко группировать книги по авторам или жанрам (к примеру) без специальных классов групп, таких как **Author** и **Genre**.
 
@@ -556,13 +558,13 @@ MainPage.xaml
 
 Помните, что при использовании расширения разметки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) с шаблонами данных необходимо указать тип, к которому выполняется привязка, установив значение **x:DataType**. Если это универсальный тип, мы не сможем отобразить это в разметке, поэтому в шаблоне заголовка стиля группы необходимо использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782).
 
-```xml
+```xaml
     <Grid.Resources>
         <CollectionViewSource x:Name="GenreIsACollectionOfBookSku"
-        Source="{Binding Genres}"
+        Source="{x:Bind Genres}"
         IsSourceGrouped="true"/>
     </Grid.Resources>
-    <GridView ItemsSource="{Binding Source={StaticResource GenreIsACollectionOfBookSku}}">
+    <GridView ItemsSource="{x:Bind GenreIsACollectionOfBookSku}">
         <GridView.ItemTemplate x:DataType="local:BookTemplate">
             <DataTemplate>
                 <TextBlock Text="{x:Bind Title}"/>
@@ -604,7 +606,7 @@ MainPage.xaml
 
 В следующем примере показано, как реализовать привязку в коде.
 
-```xml
+```xaml
 <TextBox x:Name="MyTextBox" Text="Text"/>
 ```
 
@@ -655,8 +657,8 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | Используется, когда любая часть пути для привязки (кроме конечного объекта) имеет значение Null. | 
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | Если используется расширение разметки {x:Bind}, выполняется привязка к полю. Свойство Path по умолчанию размещается в корне класса Page, поэтому данное поле позволяет получить доступ к любому именованному элементу. | 
 | RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | Если используется расширение разметки {x:Bind}, присвойте элементу имя и укажите его в свойстве Path. | 
-| RelativeSource: TemplatedParent | Не поддерживается. | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | Обычную привязку шаблонов можно использовать в шаблонах элементов управления в большинстве сценариев. Однако, если вам требуется преобразователь или двусторонняя привязка, используйте TemplatedParent.< | 
-| Источник | Не поддерживается | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | Для расширения разметки {x:Bind} используйте свойство или статический путь. | 
+| RelativeSource: TemplatedParent | Не требуется | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | {X: Bind} TargetType на ControlTemplate означает привязку к родительского шаблона. Для {Binding} обычную привязку шаблонов можно использовать в шаблонах элементов управления в большинстве сценариев. Однако, если вам требуется преобразователь или двусторонняя привязка, используйте TemplatedParent.< | 
+| Источник | Не требуется | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | Для {x: Bind} можно напрямую использовать именованный элемент, используйте свойство или статический путь. | 
 | Режим | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | "Режим" может иметь значение OneTime, OneWay или TwoWay. В расширении разметки {x:Bind} по умолчанию используется значение OneTime, а в расширении разметки {Binding} — значение OneWay. | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | У UpdateSourceTrigger может быть значение "По умолчанию", LostFocus или PropertyChanged. Поведение разметки {x:Bind} не поддерживает UpdateSourceTrigger=Explicit. В расширении разметки {x:Bind} поведение PropertyChanged используется во всех случаях, кроме TextBox.Text, где используется поведение LostFocus. | 
 

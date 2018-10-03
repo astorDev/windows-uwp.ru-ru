@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
-ms.openlocfilehash: 259b171ea490272241fcef1170e2413cb40d7330
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 88a07db357125d3f9cb35a5e133e9b0add350069
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210454"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259983"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Наборы инструментов для проектирования и образцы приложений UWP
  
@@ -29,32 +29,37 @@ ms.locfileid: "4210454"
 
 :::row:::
     :::column:::
-        ![главное изображение](images/adobe-xd.png) <b>набор средств Adobe XD</b><br>
-        v1806, июня 2018 г.<br>
-        <a href="https://aka.ms/adobexdtoolkit">Скачивание</a>
+        ![hero image](images/adobe-xd.png)
+        <b>Adobe XD toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/adobexdtoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![главное изображение](images/adobe-illustrator.png) <b>набор инструментов Adobe Illustrator</b><br>
-        v1806, июня 2018 г.<br>
-        <a href="https://aka.ms/adobeillustratortoolkit">Скачивание</a>
+        ![hero image](images/adobe-illustrator.png)
+        <b>Adobe Illustrator toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/adobeillustratortoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![главное изображение](images/sketch.png) <b>эскиза</b><br>
-        версия 1803, март 2018 г.<br>
-        <a href="https://aka.ms/sketchtoolkit">Скачивание</a>
+        ![hero image](images/sketch.png)
+        <b>Sketch</b><br>
+        v1803, March 2018<br>
+        <a href="https://aka.ms/sketchtoolkit">Download</a>
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![главное изображение](images/adobe-photoshop.png) <b>набор инструментов Adobe Photoshop</b><br>
-        версия 1705, май 2017 г.<br>
-        <a href="https://aka.ms/adobephotoshoptoolkit">Скачивание</a>
+        ![hero image](images/adobe-photoshop.png)
+        <b>Adobe Photoshop toolkit</b><br>
+        v1705, May 2017<br>
+        <a href="https://aka.ms/adobephotoshoptoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![главное изображение](images/framer.png) <b>Framer toolkit</b><br>
-        v1806, июня 2018 г.<br>
-        <a href="https://aka.ms/framertoolkit">Скачивание</a>
+        ![hero image](images/framer.png)
+        <b>Framer toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/framertoolkit">Download</a>
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -64,14 +69,16 @@ ms.locfileid: "4210454"
 
 :::row:::
     :::column:::
-        ![Эскиз библиотеки WinUI](images/WinUI-library.png) <b>Библиотека пользовательского интерфейса Windows</b><br>
-        Элементы управления и других элементов пользовательского интерфейса для приложений UWP.<br/>
-        <a href="/uwp/toolkits/winui/getting-started">Инструкции по установке</a><br/>
+        ![WinUI library thumbnail](images/WinUI-library.png)
+        <b>Windows UI Library</b><br>
+        Controls and other UI elements for UWP apps.<br/>
+        <a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
     :::column-end:::
     :::column:::
-        ![Эскиз сообщества Windows](images/Windows-community-toolkit.png) <b>Набора средств сообщества Windows</b><br>
-        Вспомогательные функции, пользовательских элементов управления и службы приложений.<br />
-        <a href="/windows/uwpcommunitytoolkit/getting-started">Инструкции по установке</a>
+        ![Windows community thumbnail](images/Windows-community-toolkit.png)
+        <b>Windows Community Toolkit</b><br>
+        Helper functions, custom controls, and app services.<br />
+        <a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -88,16 +95,22 @@ ms.locfileid: "4210454"
     :::column:::
         <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
-    ::: column span = «2»::: **Генератор плиток и значков для Adobe Photoshop** этот набор действий для Adobe Photoshop позволяет сгенерировать 68 рекомендуемых плиток и значков из семи файлов. <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">Скачать генератор плиток и значков</a></p>
+    :::column span="2":::
+      **Генератор плиток и значков для Adobe Photoshop** Этот набор действий для Adobe Photoshop позволяет сгенерировать 68 рекомендуемых плиток и значков из семи файлов. <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">Скачать генератор плиток и значков</a></p>
     :::column-end:::
 :::row-end:::
 
     
 ## <a name="samples"></a>Примеры
 
+![Изображение VanArsdel](images/VanArsdel_Screenshot.png)
+**VanArsdel**<br>
+Пример приложения UWP начала до конца Van Arsdel, Ltd. был создан для демонстрации следующее поколение Microsoft системы проектирования Fluent Design. В случае всесторонней широко используются улучшенные плотность и новые элементы управления в <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Библиотеке пользовательского интерфейса Windows</a> , а также важных базовых возможностей взаимодействия с пользователем платформы и композиции. В примере показано, как вы можете создать сложное эффективной работы взаимодействие с для приобретения устройства IoT (в данном случае лампы) и управления ими.<br>
+<a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Скачать пример VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">Посмотреть пример VanArsdel на GitHub</a>
+
 ![создать образ приведите](images/buildcast.png)
 **BuildCast**<br>
-BuildCast — это пример начала до конца, созданный для демонстрации системы проектирования Fluent Design, а также других возможностей универсальной платформы Windows. Он позволяет искать, скачивать и воспроизводить видеоподкасты, включая подборку самых популярных подкастов Channel 9 и каналы некоторых технических экспертов по Windows. Он также поддерживает рукописные заметки, закладки и удаленное воспроизведение. Пример был первоначально показан на конференции Build 2017 г. во время обсуждения <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Создание потрясающих приложений с помощью системы проектирования Fluent</a>. <br>
+BuildCast — это пример начала до конца, созданный для демонстрации системы проектирования Fluent и UWP. Он позволяет искать, скачивать и воспроизводить видеоподкасты, включая подборку самых популярных подкастов Channel 9 и каналы некоторых технических экспертов по Windows. Он также поддерживает рукописные заметки, закладки и удаленное воспроизведение. Пример был первоначально показан на конференции Build 2017 г. во время обсуждения <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Создание потрясающих приложений с помощью системы проектирования Fluent</a>. <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">Скачать пример BuildCast</a> <br><a href="https://github.com/Microsoft/BuildCast">Посмотреть пример BuildCast на GitHub</a>
 
 ![Планировщик обедов](images/lunchscheduler.png)

@@ -15,12 +15,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c69f516ab3bd412453883d6384237c8ee5446a09
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: ae344e9f10c5d1dbfd530950851e402da4bc2a0d
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674601"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259753"
 ---
 # <a name="control-templates"></a>Шаблоны элементов управления
 
@@ -60,6 +60,9 @@ ms.locfileid: "1674601"
 Данный код XAML создает [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) для [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316), указывающий, что содержимое элемента управления находится под полем выбора. Корневой элемент — [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250). Этот пример предлагает [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) создать **X**, указывающий на то, что пользователь выбрал **CheckBox**, и [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse), указывающий на неопределенное состояние. Обратите внимание, что свойству [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) задано значение 0 в **Path** и **Ellipse**, так что по умолчанию последние не выводятся.
 
 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) связывает значение свойства в шаблоне элемента управления и значение какого-либо другого предоставленного свойства элемента управления-шаблона. TemplateBinding может использоваться только в пределах определения ControlTemplate в XAML. Подробнее см. в разделе [Расширение разметки TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md).
+
+> [!NOTE]
+> Начиная с следующем крупной обновлении до Windows 10, можно использовать расширения разметки [**x: Bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783) в местах использовать [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Подробнее см. в разделе [Расширение разметки TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md).
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">

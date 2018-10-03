@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованного приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ddcac274fb970de5c9afd1a536035bd21124547
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: e94eb0e819796dda456899bb877057e4532f5ce9
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833324"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4265155"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>Диагностика и устранение проблем с установкой в файле установщика приложений
 
@@ -74,9 +74,9 @@ ms.locfileid: "1833324"
 
 Если установщик приложений не может установить приложение, эти шаги помогут определить проблему с установкой.
 
-### <a name="verify-appxappxbundle-file-installation"></a>Проверьте установку файла .appx/.appxbundle
+### <a name="verify-app-package-file-installation"></a>Проверьте установку файла пакета приложения
 
-- Скачайте файл `.appx`/`.appxbundle` и сохраните его в локальную папку. Попробуйте установить его с помощью команды PowerShell [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps).
+- Загрузите файл пакета приложения в локальную папку и попробуйте установить его с помощью команды [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell.
 
 - Скачайте файл `.appinstaller` и сохраните его в локальную папку. Попробуйте установить его с помощью команды PowerShell `Add-AppxPackage -Appinstaller`.
 
