@@ -11,19 +11,19 @@ ms.technology: uwp
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 25e3c76ae09ed6835f89f0d98c308f11c7a99624
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318096"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4350730"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>Запуск фоновой задачи по таймеру
 
-Узнайте, как использовать [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) планировать однократное выполнение фоновой задачи или запуск периодической фоновой задачи.
+Узнайте, как использовать [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) планировать однократное выполнение фоновой задачи или запускать периодическое фоновой задачи.
 
 См. в разделе **Scenario4** в [пример фоновой активации](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation) , чтобы просмотреть пример реализации времени, подключение, инициируемое фоновой задачи, описанные в этом разделе.
 
-В этом разделе предполагается, что у вас есть фоновая задача, которая должна выполняться периодически или в определенное время. Если у вас еще нет фоновой задачи, не в [BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)пример фоновой задачи. Или, следуйте инструкциям в [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md) или [Создание и регистрация задачи, выполняемой вне процесса](create-and-register-a-background-task.md) создания один.
+В этом разделе предполагается, что у вас есть фоновая задача, которая должна выполняться периодически или в определенное время. Если у вас еще нет в фоновом режиме, не в [BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)пример фоновой задачи. Или выполните действия, описанные в [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md) или [Создание и регистрация задачи, выполняемой вне процесса](create-and-register-a-background-task.md) создания один.
 
 ## <a name="create-a-time-trigger"></a>Создание триггера времени
 
@@ -36,7 +36,7 @@ ms.locfileid: "4318096"
 - Если параметру *FreshnessTime* задано значение 15 минут, а параметру *OneShot* — false, задача будет запланирована для выполнения каждые 15минут через 15–30минут с момента ее регистрации. Если задано значение "n минут" и *OneShot* имеет значение false, задача будет запланирована для выполнения каждые n минут, начиная с промежутка между n и n+15 после регистрации.
 
 > [!NOTE]
-> Если *FreshnessTime* задано значение меньше 15 минут, — это исключение при попытке зарегистрировать фоновую задачу.
+> Если *FreshnessTime* задано значение меньше 15 минут, исключение при попытке зарегистрировать фоновую задачу.
  
 Например этот триггер приведет к фоновой задачи для выполнения один раз в час.
 
@@ -54,7 +54,7 @@ TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
 
 ## <a name="optional-add-a-condition"></a>Добавление условия (необязательно)
 
-Можно создать условие фоновой задачи, чтобы контролировать время запуска задачи. Условие предотвращает запуск, пока не будет выполнено условие фоновой задачи. Дополнительные сведения см. в разделе [Задание условий для выполнения фоновой задачи](set-conditions-for-running-a-background-task.md).
+При выполнении задачи можно создать условие фоновой задачи для элемента управления. Это предотвращает запуск пока это условие выполнено фоновой задачи. Дополнительные сведения см. в разделе [Задание условий для выполнения фоновой задачи](set-conditions-for-running-a-background-task.md).
 
 В этом примере условию присвоено значение **UserPresent**, поэтому после срабатывания триггера задача выполняется, только если пользователь активен. Список возможных условий см. в статье [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
@@ -75,7 +75,7 @@ SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::U
 
 ##  <a name="call-requestaccessasync"></a>Вызов RequestAccessAsync()
 
-Перед регистрацией фоновой задачи **ApplicationTrigger** , вызовите метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) , чтобы определить уровень фоновой активности, который позволяет пользователю, так как пользователь отключил фоновую активность вашего приложения. См. в разделе, что [Оптимизация фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) Дополнительные сведения о пользователях способов можно управлять параметрами для фоновых задач.
+Перед регистрацией фоновой задачи **ApplicationTrigger** , вызовите метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) для определения уровня фоновой активности, который позволяет пользователю, так как пользователь отключил фоновую активность вашего приложения. [Оптимизация фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) Дополнительные сведения о пользователях, способы управления параметрами для фоновых задач, см.
 
 ```cs
 var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
@@ -91,7 +91,7 @@ if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
 Зарегистрируйте фоновую задачу, вызвав функцию регистрации фоновой задачи. Дополнительные сведения о регистрации фоновых задач, а также просмотреть определение метода **RegisterBackgroundTask()** в приведенном ниже примере кода см. в разделе [Регистрация фоновой задачи](register-a-background-task.md).
 
 > [!IMPORTANT]
-> Для фоновых задач, которые выполняются в том же процессе, что ваше приложение, не устанавливайте `entryPoint`. Для фоновых задач, которые выполняются в отдельном процессе из вашего приложения, задайте `entryPoint` в качестве пространства имен "." и имя класса, который содержит реализацию вашей фоновой задачи.
+> Для фоновых задач, которые выполняются в том же процессе, что и приложение, не устанавливайте `entryPoint`. Для фоновых задач, которые выполняются в отдельном процессе из вашего приложения, установите `entryPoint` в качестве пространства имен "." и имя класса, который содержит реализацию вашей фоновой задачи.
 
 ```cs
 string entryPoint = "Tasks.ExampleBackgroundTaskClass";
@@ -119,9 +119,9 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 ## <a name="manage-resources-for-your-background-task"></a>Управление ресурсами для фоновой задачи
 
-Используйте метод [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx), чтобы определить, принял ли пользователь решение ограничить фоновую активность вашего приложения. Следите за расходом заряда батареи и запускайте приложения в фоновом режиме только тогда, когда необходимо завершить интересующее пользователя действие. См. в разделе, что [Оптимизация фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) Дополнительные сведения о пользователях способов можно управлять параметрами для фоновых задач.
+Используйте метод [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx), чтобы определить, принял ли пользователь решение ограничить фоновую активность вашего приложения. Следите за расходом заряда батареи и запускайте приложения в фоновом режиме только тогда, когда необходимо завершить интересующее пользователя действие. [Оптимизация фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) Дополнительные сведения о пользователях, способы управления параметрами для фоновых задач, см.
 
-- Память: Настройка использования памяти и электроэнергии вашим приложением является ключом подтверждение того, что операционная система будет разрешать фоновую задачу для запуска. Используйте [API -интерфейсы управления памятью](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) , чтобы узнать, сколько памяти потребляет фоновой задачи. Чем больше памяти потребляет фоновой задачи, тем сложнее операционной системе поддерживать его выполнение, когда другое приложение работает на переднем плане. Пользователь полностью контролирует все фоновые действия, которые может выполнять ваше приложение, и видит, как ваше приложение влияет на расход заряда батареи.  
+- Память: Настройка использования памяти и электроэнергии вашим приложением — для обеспечения того, что операционная система будет разрешать запуск фоновой задачи. Используйте [API -интерфейсы управления памятью](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) , чтобы узнать, сколько памяти потребляет фоновой задачи. Чем больше памяти потребляет фоновой задачи, тем сложнее операционной системе поддерживать его выполнение, когда другое приложение работает на переднем плане. Пользователь полностью контролирует все фоновые действия, которые может выполнять ваше приложение, и видит, как ваше приложение влияет на расход заряда батареи.  
 - Времени ЦП: фоновые задачи ограничены по времени секундами использования, они получают в зависимости от типа триггера.
 
 Сведения об ограничениях ресурсов для фоновых задач см. в статье [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
@@ -130,7 +130,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 Начиная с Windows 10, он больше не пользователю возможность добавлять приложения на экран блокировки, чтобы использовать фоновые задачи.
 
-Фоновая задача будет отображаться только с помощью **TimeTrigger** , если вы вызвали [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) сначала.
+Фоновая задача запускается только с помощью **TimeTrigger** , если вы вызвали [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) сначала.
 
 ## <a name="related-topics"></a>Еще по теме
 

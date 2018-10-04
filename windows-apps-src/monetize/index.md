@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, монетизация, привлечение, продвижение, службы Магазина
 ms.localizationpriority: medium
-ms.openlocfilehash: 58993f3a62f6fd85589aeac931e3abbb42a6cda6
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 02ef073e319af3fe2cf3bdd7906a7027200c4854
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689050"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352513"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Монетизация, привлечение и службы Магазина
 
@@ -25,7 +25,7 @@ Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK и Microsof
 
 ## <a name="in-this-section"></a>В этом разделе
 
-| Раздел                | Описание                 |
+| Статья                | Описание                 |
 |--------------------|-----------------------------|
 | [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)      | Узнайте, как использовать API в Windows SDK для добавления в ваши приложения покупок продуктов из приложения и возможностей пробной версии.  |
 | [Показ рекламы в приложении с помощью Microsoft Advertising SDK](display-ads-in-your-app.md)      |   Повышайте свой доход, отображая в приложении рекламные баннеры или межстраничные объявления. Для этой функции требуется Microsoft Advertising SDK. |
@@ -36,7 +36,7 @@ Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK и Microsof
 | [Регистрация пользовательских событий в журнале для Центра разработки](log-custom-events-for-dev-center.md)  | Регистрируйте пользовательские события из приложения UWP в журнале и просматривайте эти события в [Отчете об использовании](../publish/usage-report.md) в информационной панели Центра разработки. Для этой функции требуется пакет Microsoft Store Services SDK. |
 | [Запрос оценок и отзывов](request-ratings-and-reviews.md) |  Побудите пользователей оставить оценки или отзывы на ваше приложение, отображая программными средствами пользовательский интерфейс для оценок и отзывов.  |
 | [Службы Microsoft Store](using-windows-store-services.md)    |  Узнайте, как использовать API-интерфейсы RESTful для автоматизации процесса отправок в Магазин, осуществления доступа к аналитическим данным ваших приложений, а также автоматизации выполнения других задач, связанных с Магазином.    |
-| [Создание приложения для демонстрации в розничных магазинах (RDX)](retail-demo-experience.md)        |  Узнайте, как создать приложение для демонстрации в рознице, которое можно установить на компьютерах и мобильных демонстрационных устройствах в розничном магазине.  |
+| [Добавление функций розничных магазинах (RDX) в приложение](retail-demo-experience.md)        |  Включите коммерческом режиме демонстрации в приложении для Windows, таким образом пользователи, которые испытать компьютеров и устройств на продажу низ можно перейти непосредственно к.  |
 
 ## <a name="related-topics"></a>Статьи по теме
 

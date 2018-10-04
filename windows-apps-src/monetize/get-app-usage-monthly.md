@@ -2,7 +2,7 @@
 author: Xansky
 ms.assetid: 4E4CB1E3-D213-4324-91E4-7D4A0EA19C53
 description: Используйте этот метод в API аналитики для Microsoft Store для получения ежемесячных данные об использовании приложений в диапазоне дат или с учетом других дополнительных фильтров.
-title: Получение ежемесячные использование приложений
+title: Получение сведений о ежемесячном использовании приложения
 ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
@@ -11,13 +11,13 @@ ms.technology: uwp
 keywords: Windows 10, uwp, службы магазина, API, использование аналитики Microsoft Store
 ms.localizationpriority: medium
 ms.openlocfilehash: ad45422dea9b0c4335fa3cf67a594f819a60ca9c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4310682"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351390"
 ---
-# <a name="get-monthly-app-usage"></a>Получение ежемесячные использование приложений
+# <a name="get-monthly-app-usage"></a>Получение сведений о ежемесячном использовании приложения
 
 Используйте этот метод в API аналитики для Microsoft Store для получения сводных использования данных (не включая многопользовательских Xbox) в формате JSON для приложения во время в заданном диапазоне дат (за последние 90 дней только) и других дополнительных фильтров. Эта информация также доступна в [отчете об использовании](../publish/usage-report.md) на информационной панели центра разработки для Windows.
 
@@ -97,7 +97,7 @@ Authorization: Bearer <your access token>
 | monthlyActiveUsers        | long    | Количество пользователей, с помощью приложения соответствующего месяца.                                           |
 | monthlyActiveDevices      | long    | Количество устройств с запуском приложения для определенный период времени, начиная с при запуске приложения (Начало процесса) и завершение завершением работы (завершение процесса) или после периода неактивности.                                                        |
 | monthlyNewUsers           | long    | Количество пользователей, которые использовали приложение в первый раз соответствующего месяца.                    |
-| averageDailyActiveUsers   | double  | Среднее количество пользователей, с помощью приложения ежедневно.                             |
+| averageDailyActiveUsers   | double  | Среднее число клиентов, использующих приложение ежедневно.                             |
 | averageDailyActiveDevices | double  | Среднее количество устройств, используемых для взаимодействия с вашим приложением по всем пользователям ежедневно. |
 
 

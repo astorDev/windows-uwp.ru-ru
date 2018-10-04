@@ -10,15 +10,15 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 178bee54296c355a17a78cb63d17986f51132893
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317584"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351298"
 ---
 # <a name="new-apis-in-windows-10-build-17763"></a>Новые API в Windows 10 сборки 17763
 
-Новые и обновленные API для пространств имен, которые стали доступны для разработчиков в Windows 10 сборки 17763 (также известной как 2018 октября Update или версия 1809). Ниже приведен полный список документации, опубликованной для пространств имен, которые были добавлены или изменены в этом выпуске.
+Новые и обновленные API для пространств имен, которые стали доступны для разработчиков в Windows 10 сборки 17763 (также известной как 2018 г. октября Update или версия 1809). Ниже приведен полный список документации, опубликованной для пространств имен, которые были добавлены или изменены в этом выпуске.
 
 Сведения об API, добавленных в предыдущем официальном выпуске см. в разделе [Новые API в Windows 10 за апрель Update](windows-10-build-17134-api-diff.md).
 

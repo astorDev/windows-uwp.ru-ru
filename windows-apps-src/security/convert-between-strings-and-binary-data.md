@@ -11,13 +11,13 @@ ms.technology: uwp
 keywords: Windows 10, uwp, безопасности
 ms.localizationpriority: medium
 ms.openlocfilehash: b3c3a3f6f831186302fc32b1f510919da40c57cc
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4320744"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352503"
 ---
-# <a name="convert-between-strings-and-binary-data"></a>Преобразование между строками и двоичными данными
+# <a name="convert-between-strings-and-binary-data"></a>Преобразования между строками и двоичными данными
 
 
 

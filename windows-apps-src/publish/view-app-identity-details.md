@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b04033fb53a90015427feb820c91d0f4a1de7d5
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4308690"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355330"
 ---
 # <a name="view-app-identity-details"></a>Просмотр сведений об идентификации приложений
 
@@ -27,7 +27,7 @@ ms.locfileid: "4308690"
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>Значения, которые должны быть включены в манифест пакета приложения
 
-Следующие значения должны быть включены в манифесте пакета. Если вы [используете Microsoft Visual Studio для сборки пакетов](../packaging/packaging-uwp-apps.md) и выполнили вход, используя ту же учетную запись Майкрософт, которая связана с вашей учетной записью разработчика, эти сведения будут включены автоматически. Если вы создаете пакет вручную, необходимо добавить следующие сведения.
+Следующие значения должны быть включены в манифест пакета. Если вы [используете Microsoft Visual Studio для сборки пакетов](../packaging/packaging-uwp-apps.md) и выполнили вход, используя ту же учетную запись Майкрософт, которая связана с вашей учетной записью разработчика, эти сведения будут включены автоматически. Если вы создаете пакет вручную, необходимо добавить следующие сведения.
 
 -   **Пакет/идентификатор/имя**
 -   **Пакет/идентификатор/издатель**

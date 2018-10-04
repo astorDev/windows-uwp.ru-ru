@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4320121"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351772"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store, маркетинг руководство по приложениям
 
@@ -25,7 +25,7 @@ ms.locfileid: "4320121"
 
 Мы создали специальные рекламные эмблемы, которые помогут привлечь больше клиентов на страницу с описанием вашего приложения в Microsoft Store. Эти эмблемы доступны на 44 языках. Помните, что существуют некоторые требования, которые вы должны соблюдать при использовании этих изображений. Эти требования вместе с примерами использования и рекомендациями доступны в PDF-файле.
 
-[ ![Кнопка загрузки](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) **Рекомендации по эмблемы магазина Майкрософт (PDF, на английском языке)**
+[ ![Кнопку загрузки](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) **Рекомендации по эмблемы магазина Майкрософт (PDF, на английском языке)**
 
 
 ## <a name="badge-generator-and-images"></a>Генератор эмблем и изображений
@@ -45,7 +45,7 @@ ms.locfileid: "4320121"
 
 ## <a name="license-to-microsoft-marks"></a>Лицензия на маркировку Майкрософт
 
-*Маркировку Майкрософт* означает *эмблему Microsoft* , описанные на странице [генератором](http://go.microsoft.com/fwlink/p/?LinkID=534236) . Чтобы использовать эти эмблемы:
+*Маркировку Майкрософт* означает, что *эмблему Microsoft* , описанные на странице [генератором](http://go.microsoft.com/fwlink/p/?LinkID=534236) . Чтобы использовать эти эмблемы:
 
 -   Сделайте свое приложение или другое содержимое доступным в Microsoft Store, или станьте участником [Партнерской программы Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=624463).
 

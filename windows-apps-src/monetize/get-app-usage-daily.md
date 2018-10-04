@@ -2,7 +2,7 @@
 author: Xansky
 ms.assetid: 99DB5622-3700-4FB2-803B-DA447A1FD7B7
 description: Используйте этот метод в API аналитики для Microsoft Store для получения ежедневных данные об использовании приложений в диапазоне дат или с учетом других дополнительных фильтров.
-title: Получение ежедневных использование приложений
+title: Получение сведений о ежедневном использовании приложения
 ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
@@ -11,13 +11,13 @@ ms.technology: uwp
 keywords: Windows 10, uwp, службы магазина, API, использование аналитики Microsoft Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4310178"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4350800"
 ---
-# <a name="get-daily-app-usage"></a>Получение ежедневных использование приложений
+# <a name="get-daily-app-usage"></a>Получение сведений о ежедневном использовании приложения
 
 Используйте этот метод в API аналитики для Microsoft Store для получения сводных использования данных (не включая многопользовательских Xbox) в формате JSON для приложения во время в заданном диапазоне дат (за последние 90 дней только) и других дополнительных фильтров. Эта информация также доступна в [отчете об использовании](../publish/usage-report.md) на информационной панели центра разработки для Windows.
 

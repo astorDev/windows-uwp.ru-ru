@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, первое приложение, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: 950b2f3fac44c8350a51fd5c1b7071f05c92d746
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312842"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355649"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Создание приложения "Hello, world" (XAML)
 
@@ -48,7 +48,7 @@ ms.locfileid: "4312842"
 
 1.  Запустите Visual Studio2017.
 
-2.  В меню " **файл** ", выберите **Создать > проект** чтобы открыть диалоговое окно *Новый проект* .
+2.  В меню " **файл** " выберите **Создать > проект** чтобы открыть диалоговое окно *Новый проект* .
 
 3.  В списке шаблонов слева выберите **Установленные > Visual C# > Windows Universal** список шаблонов проектов UWP.
 

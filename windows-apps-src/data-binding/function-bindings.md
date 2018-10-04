@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315151"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355659"
 ---
 # <a name="functions-in-xbind"></a>Функции в расширении разметки x: Bind
 
@@ -66,7 +66,7 @@ class ColorEntry
 
 Путь к функции определяется аналогично другим путям свойств и может содержать точки (.), индексаторы или приведения.
 
-Статические функции можно указывать с помощью синтаксиса XMLNamespace:ClassName.MethodName. Например, используйте ниже синтаксис для привязки к статические функции в коде программной.
+Статические функции можно указывать с помощью синтаксиса XMLNamespace:ClassName.MethodName. Например, используйте ниже синтаксис для привязки к статические функции в коде.
 
 ```xaml
 <Page 
@@ -88,7 +88,7 @@ public class MyPage : Page
 }
 ```
 
-Можно также использовать системные функции непосредственно в разметке для выполнения простых сценариев, таких как форматирование дат форматирование текста, сцепление текста, и пр., например:
+Можно также использовать системные функции непосредственно в разметке для выполнения простых сценариев, таких как форматирование дат, форматирование текста, сцепление текста, и т. д, например:
 ```xaml
 <Page 
      xmlns:sys="using:System"

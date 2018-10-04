@@ -8,14 +8,14 @@ ms.date: 01/29/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, печать
+keywords: Windows 10, uwp, печати
 ms.localizationpriority: medium
 ms.openlocfilehash: cff96c0b8daf9f3ef32815437b510a5b94641527
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312586"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355729"
 ---
 # <a name="print-from-your-app"></a>Печать из приложения
 

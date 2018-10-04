@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a07db357125d3f9cb35a5e133e9b0add350069
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319714"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351266"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Наборы инструментов для проектирования и образцы приложений UWP
  
@@ -105,10 +105,10 @@ ms.locfileid: "4319714"
 
 ![Изображение VanArsdel](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-Пример приложения UWP начала до конца Van Arsdel, Ltd. был создан для демонстрации следующее поколение Microsoft системы проектирования Fluent Design. В случае всесторонней широко используются улучшенные плотность и новые элементы управления в <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Библиотеке пользовательского интерфейса Windows</a> , а также важных базовых возможностей взаимодействия с пользователем платформы и композиции. В примере показано, как вы можете создать сложное эффективной работы взаимодействие с для приобретения устройства IoT (в данном случае лампы) и управления ими.<br>
+Пример приложения UWP начала до конца Van Arsdel, Ltd. был создан для демонстрации следующего поколения системы проектирования Fluent корпорации Майкрософт. В случае всесторонней широко используются улучшенные плотность и новые элементы управления в <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Библиотеку пользовательского интерфейса Windows</a> , а также важных базовых возможностей взаимодействия с пользователем платформы и композиции. В примере показано, как можно создавать широкий эффективной работы взаимодействие с для приобретения устройства IoT (в данном случае лампы) и управления ими.<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Скачать пример VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">Посмотреть пример VanArsdel на GitHub</a>
 
-![создать образ приведите](images/buildcast.png)
+![Создание образа приведите](images/buildcast.png)
 **BuildCast**<br>
 BuildCast — это пример начала до конца, созданный для демонстрации системы проектирования Fluent и UWP. Он позволяет искать, скачивать и воспроизводить видеоподкасты, включая подборку самых популярных подкастов Channel 9 и каналы некоторых технических экспертов по Windows. Он также поддерживает рукописные заметки, закладки и удаленное воспроизведение. Пример был первоначально показан на конференции Build 2017 г. во время обсуждения <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Создание потрясающих приложений с помощью системы проектирования Fluent</a>. <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">Скачать пример BuildCast</a> <br><a href="https://github.com/Microsoft/BuildCast">Посмотреть пример BuildCast на GitHub</a>
