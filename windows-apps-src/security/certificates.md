@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, безопасности
 ms.localizationpriority: medium
 ms.openlocfilehash: 1db3af004831f010a3dd4918898ce5f7cf70bb1a
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4259021"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4319927"
 ---
 # <a name="intro-to-certificates"></a>Введение в сертификаты
 

@@ -9,15 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, ошибка, обработка, исключение
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d9eccbee14da3fb21a00e923c3491b2266c698c
-ms.sourcegitcommit: 43ce38a4789e0a5194069cc3307cbbc20aa0367e
-ms.translationtype: HT
+ms.openlocfilehash: 9a4cf60fea70722e66eb44d52542be248e9ad01c
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2018
-ms.locfileid: "1934457"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4319496"
 ---
-# <a name="error-handling-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Обработка ошибок в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-В этом разделе обсуждаются стратегии обработки ошибок при программировании на C++/WinRT. Общие и дополнительные сведения см. в разделе [Обработка ошибок и исключений (современный C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp).
+# <a name="error-handling-with-cwinrt"></a>Обработка ошибок в C++/WinRT
+
+В этом разделе обсуждаются стратегии обработки ошибок при программировании с [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Общие и дополнительные сведения см. в разделе [Обработка ошибок и исключений (современный C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp).
 
 ## <a name="avoid-catching-and-throwing-exceptions"></a>Избегайте создания и перехвата исключений
 Мы рекомендуем по-прежнему писать [код с обработкой исключений](/cpp/cpp/how-to-design-for-exception-safety), но при этом избегать создания и перехват исключений, когда это возможно. Если для исключения обработчика нет, Windows автоматически создает отчет об ошибках (в том числе минидамп сбоя), который поможет вам отследить проблему.
@@ -45,14 +46,14 @@ using namespace Windows::UI::Xaml::Media::Imaging;
 
 IAsyncAction MakeThumbnailsAsync()
 {
-    auto imageFiles = co_await KnownFolders::PicturesLibrary().GetFilesAsync();
+    auto imageFiles{ co_await KnownFolders::PicturesLibrary().GetFilesAsync() };
 
     for (StorageFile const& imageFile : imageFiles)
     {
         BitmapImage bitmapImage;
         try
         {
-            auto thumbnail = co_await imageFile.GetThumbnailAsync(FileProperties::ThumbnailMode::PicturesView);
+            auto thumbnail{ co_await imageFile.GetThumbnailAsync(FileProperties::ThumbnailMode::PicturesView) };
             if (thumbnail) bitmapImage.SetSource(thumbnail);
         }
         catch (winrt::hresult_error const& ex)

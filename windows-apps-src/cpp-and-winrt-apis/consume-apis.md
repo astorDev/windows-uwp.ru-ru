@@ -9,15 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная c++, cpp, winrt, проецируемый, проекция, реализация, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: 136abd5e3312b7a387ccc3b7c993d4e70d8ef0d4
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 9b1cd05f974bf9193e84919a5e679ef996746d7e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4258989"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4320428"
 ---
-# <a name="consume-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Использование API-интерфейсов с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-В этом разделе показано, как использовать API-интерфейсы C++/WinRT, если они являются компонентом Windows, реализованы сторонним поставщиком компонентов или вами самостоятельно.
+# <a name="consume-apis-with-cwinrt"></a>Использование API-интерфейсов с помощью C++/WinRT
+
+В этом разделе показано, как использовать [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API-интерфейсы, они являются компонентом Windows, реализованный поставщиком сторонних компонентов или вами самостоятельно.
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>Если API находится в пространстве имен Windows
 Это наиболее распространенный случай, в котором вы будете использовать API среды выполнения Windows. Для каждого типа в пространстве имен Windows, указанного в метаданных, C++/WinRT определяет подходящий для C++ эквивалент (называемый *проецируемым типом*). Проецируемый тип имеет то же полное доменное имя, что и тип в Windows, но он размещается в пространстве имен C++ **winrt** с использованием синтаксиса C++. Например, [**Windows::Foundation:: URI**](/uwp/api/windows.foundation.uri) проецируется в C++/WinRT как **winrt::Windows::Foundation::Uri**.
