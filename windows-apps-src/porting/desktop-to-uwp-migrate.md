@@ -2,7 +2,7 @@
 author: normesta
 Description: Share code between a desktop application and a UWP app
 Search.Product: eADQiWindows 10XVcnh
-title: Совместное использование кода классического приложения и приложения UWP
+title: Совместное использование кода в приложение UWP и классического приложения
 ms.author: normesta
 ms.date: 10/03/2017
 ms.topic: article
@@ -11,13 +11,13 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ca5b722ea97202d57f05613bec88ae6bee1db5f2
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315588"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4359229"
 ---
-# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>Совместное использование кода классического приложения и приложения UWP
+# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>Совместное использование кода в приложение UWP и классического приложения
 
 Можно переместить код в библиотеки .NET Standard, а затем создать приложение универсальной платформы Windows (UWP) для поддержки всех устройств с Windows 10. Несмотря на отсутствие инструмента для преобразования классического приложения в приложение UWP, можно многократно использовать существующий код, чтобы сократить расходы на разработку такого приложения. В данном руководстве показано, как это сделать.
 

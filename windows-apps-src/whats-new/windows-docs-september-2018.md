@@ -10,15 +10,15 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f017dbb30586d3ec3c2da54d0f262c4b159328cc
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311094"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358514"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Что нового в документации для разработчиков Windows в сентябре 2018 г.
 
-Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. Обзоры, руководства для разработчиков и видео, которые стали доступны в месяц сентября.
+Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. Обзоры, руководства для разработчиков и видео, которые стали доступны в сентября.
 
 [Установив средства и пакет SDK](http://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md), либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
@@ -26,11 +26,11 @@ ms.locfileid: "4311094"
 
 ### <a name="windows-machine-learning"></a>Машинное обучение Windows
 
-[Машинное обучение Windows документы](https://docs.microsoft.com/windows/ai/) теперь находятся на свой узел и обновляются при последнюю версию SDK программы предварительной оценки Windows. Существует рабочего стола и учебники по UWP на C++ и C# помогут вам приступить к Добавление WinML к вашему приложению.
+[Документы машинное обучение Windows](https://docs.microsoft.com/windows/ai/) теперь находятся на свой узел и обновляются при последнюю версию SDK программы предварительной оценки Windows. Существует рабочего стола и учебники по UWP на C++ и C# помогут вам начать добавление WinML в приложение.
 
 [Справочник по API Windows.AI.MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning) был обновлен для последней версии SDK программы предварительной оценки Windows.
 
-[Репозиторий GitHub машинное обучение Windows](https://github.com/Microsoft/Windows-Machine-Learning) были добавлены новые примеры, которые работают с последнюю версию SDK.
+[Репозитории GitHub машинное обучение Windows](https://github.com/Microsoft/Windows-Machine-Learning) были добавлены новые примеры, которые работают с последней версии SDK.
 
 ![Рисунок машинное обучение Windows](images/winml-graphic.png)
 
@@ -44,13 +44,13 @@ ms.locfileid: "4311094"
 
 ### <a name="how-blur-effects-work"></a>Как размытие рабочих эффектов
 
-Один из наших записи esteemed Джекобс Михаил, начнет серия статей в средний о размытия с ослабленным для фотографирования для разработки приложений и игр. Если вы хотите подробнее узнать об этом распространенная визуальный эффект, ознакомьтесь с [первой статьи на концепции и определять ориентацию](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) и [второй на сглаживания в графике.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+Один из наших записи esteemed Джекобс Михаил, начнет серия статей на носителе о размытия из зрением фотографии для разработки приложений и игр. Если вы хотите узнать больше о это распространенная визуальный эффект, ознакомьтесь с [первой статьи на концепции и фотографии](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) и [второй сглаживание в графике.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
 ![Размытие в действии](images/blur-example.jpg)
 
 ### <a name="contributing-guidance"></a>Дополнение рекомендации
 
-Мы обновили [наши вклад рекомендации](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) для нашей документации UWP. Эти новые рекомендации поясняющий рабочего процесса и ожиданиям для внешних вклад в нашей документации.
+Мы обновили [Наши рекомендации по вклад](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) для нашей документации UWP. Эти новые инструкции об рабочего процесса и ожидания для внешних вклад в нашей документации.
 
 ## <a name="videos"></a>Видеоролики
 

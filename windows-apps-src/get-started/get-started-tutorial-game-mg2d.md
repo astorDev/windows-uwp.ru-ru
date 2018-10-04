@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: d38465ce02e0aedf854094ede75fc33701b226a6
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319836"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4360385"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Создание игры UWP на 2D-платформе MonoGame
 
@@ -383,7 +383,7 @@ public void StartGame()
 ```
 
 ### <a name="7-handle-keyboard-input"></a>7. Обработка ввода с клавиатуры
-Затем нам понадобится новый метод для обработки ввода с клавиатуры. Добавьте этот метод в файл **Game1.cs**:
+Далее нам понадобится новый метод для обработки ввода с клавиатуры. Добавьте этот метод в файл **Game1.cs**:
 
 ```CSharp
 void KeyboardHandler()
@@ -688,7 +688,7 @@ if (gameOver)
 ![Игра закончена](images/monogame-tutorial-4.png)
 
 ## <a name="publish-to-the-microsoft-store"></a>Публикации в Microsoft Store
-Поскольку мы создали эту игру как приложение UWP, можно опубликовать этот проект в Microsoft Store. Для этого нужно выполнить несколько шагов.
+Так как мы создали эту игру как приложение UWP, можно опубликовать этот проект в Microsoft Store. Для этого нужно выполнить несколько шагов.
 
 [Зарегистрируйтесь](https://developer.microsoft.com/en-us/store/register) в качестве разработчика приложений для Windows.
 

@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 556a787eb1e92e4c8adb7457235afb45c02df2dc
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316756"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358560"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Задание условий выполнения фоновой задачи
 
@@ -31,11 +31,11 @@ ms.locfileid: "4316756"
 
 Узнайте, как задать условия, которые управляют запуском выполнения фоновой задачи.
 
-В некоторых случаях фоновых задач требуется соблюдение определенных условий должны быть выполнены для успешного выполнения фоновой задачи. При регистрации фоновой задачи можно указать одно или несколько условий, определяемых типом [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835). Условия проверяются после триггера. Фоновая задача будет затем очередь, но она не будет выполняться при соблюдении всех требуемых условий.
+В некоторых случаях фоновых задач требуется соблюдение определенных условий должны быть выполнены для успешного выполнения фоновой задачи. При регистрации фоновой задачи можно указать одно или несколько условий, определяемых типом [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835). Условия проверяются после триггера. Фоновая задача будет затем очередь, но она не будет выполняться, пока не будут выполнены все необходимые условия.
 
 Настройка условий для фоновых задач продлевает время работы от батареи и ЦП, так как задач без необходимости запускать. Например, если фоновая задача запускается по таймеру и требует подключения к Интернету, перед регистрацией задачи добавьте условие **InternetAvailable** в [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Это помогает избежать ненужного использования системных ресурсов или заряда батареи, запуская выполнение фоновой задачи только при срабатывании таймера *и* наличии доступа к Интернету.
 
-Это также можно скомбинировать несколько условий, вызвав **AddCondition** несколько раз в одном [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Следите за тем, чтобы не добавить конфликтующие условия, например **UserPresent** и **UserNotPresent**.
+Можно также объединить несколько условий, вызвав **AddCondition** несколько раз в одном [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Следите за тем, чтобы не добавить конфликтующие условия, например **UserPresent** и **UserNotPresent**.
 
 ## <a name="create-a-systemcondition-object"></a>Создание объекта SystemCondition
 
@@ -45,7 +45,7 @@ ms.locfileid: "4316756"
 
 Прежде чем добавлять само условие, создание объекта [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) для представления условия, которое должно быть в силу для фоновой задачи для выполнения. В конструкторе укажите условия, которое необходимо обеспечить выполнение со значением перечисления [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) .
 
-Следующий код создает объект [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) , который задает **InternetAvailable** условие:
+Следующий код создает объект [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) , который задает условие **InternetAvailable** :
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -64,7 +64,7 @@ SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionTyp
 
 Чтобы добавить условие, вызовите метод [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) применительно к объекту [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) и передайте его объекту [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834).
 
-Следующий код использует **taskBuilder** , чтобы добавить условие **InternetAvailable** .
+В следующем коде используется **taskBuilder** добавить условие **InternetAvailable** .
 
 ```csharp
 taskBuilder.AddCondition(internetCondition);
@@ -182,7 +182,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>Комментарии
 
 > [!NOTE]
-> Выберите условия для фоновой задачи, чтобы его только выполняется, когда он необходим и не выполнялась, когда он не следует. Обзор различных условий выполнения фоновых задач см. в разделе [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+> Выберите условия для фоновой задачи, чтобы запускаются только при необходим и не выполнялась, когда он не следует. Обзор различных условий выполнения фоновых задач см. в разделе [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
 ## <a name="related-topics"></a>Еще по теме
 
