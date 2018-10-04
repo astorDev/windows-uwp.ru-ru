@@ -39,6 +39,7 @@
 ## [Кнопки](controls-and-patterns/buttons.md)
 ## [Флажок](controls-and-patterns/checkbox.md)
 ## [Палитра](controls-and-patterns/color-picker.md)
+## [Всплывающий элемент панели команд](controls-and-patterns/command-bar-flyout.md)
 ## [Карточка контакта](controls-and-patterns/contact-card.md)
 ## [Дата и время](controls-and-patterns/date-and-time.md)
 ### [Управляющий элемент выбора даты в календаре](controls-and-patterns/calendar-date-picker.md)
@@ -56,6 +57,7 @@
 ## [Изображения и кисти изображений](controls-and-patterns/images-imagebrushes.md)
 ## [Элементы управления рукописным вводом](controls-and-patterns/inking-controls.md)
 ## [Списки](controls-and-patterns/lists.md)
+### [Поле со списком](controls-and-patterns/combo-box.md)
 ### [Представления списка и сетки](controls-and-patterns/listview-and-gridview.md)
 ### [Контейнеры и шаблоны элементов](controls-and-patterns/item-containers-templates.md)
 ### [Шаблоны элементов для представления списка](controls-and-patterns/item-templates-listview.md)
@@ -100,6 +102,7 @@
 ## [Оформление текста](style/typography.md)
 ## Значки
 ### [Обзор](style/icons.md)
+### [Значки и логотипы приложений](style/app-icons-and-logos.md)
 ### [Значки Segoe MDL2](style/segoe-ui-symbol-font.md)
 ## [Акрил](style/acrylic.md)
 ## [Эффект отображения](style/reveal.md)
@@ -126,7 +129,6 @@
 
 # Оболочка
 ## [Плитки](shell/tiles-and-notifications/creating-tiles.md)
-### [Руководство по работе с ресурсами плиток и значков](shell/tiles-and-notifications/app-assets.md)
 ### [Вспомогательные плитки](shell/tiles-and-notifications/secondary-tiles.md)
 #### [Руководство](shell/tiles-and-notifications/secondary-tiles-guidance.md)
 #### [Закрепление вспомогательных плиток](shell/tiles-and-notifications/secondary-tiles-pinning.md)
