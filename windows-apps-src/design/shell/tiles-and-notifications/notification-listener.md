@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, прослушиватель уведомлений, usernotificationlistener, документация, уведомления о доступе
 ms.localizationpriority: medium
 ms.openlocfilehash: f4d8cb9ef7589bd8f0c56586ab8fcfec7c1f01e3
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309369"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354661"
 ---
 # <a name="notification-listener-access-all-notifications"></a>Прослушиватель уведомлений: доступ ко всем уведомлениям
 
@@ -281,7 +281,7 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>Событие переднего плана для добавленных/удаленных уведомлений
 
 > [!IMPORTANT] 
-> Известная проблема: событие переднего плана будут зацикливание ЦП в последних версиях Windows и ранее данные не подошли до этого. НЕ используйте событие переднего плана. В ближайшие обновления для Windows мы будет устранить эту проблему.
+> Известная проблема: событие переднего плана будут зацикливание ЦП в последних версиях Windows и ранее не работает до этого. НЕ используйте событие переднего плана. В ближайшие обновления для Windows мы будет решить эту проблему.
 
 Вместо использования событие переднего плана, используйте код, показанный ранее для фоновой задачи [модель с одним процессом](../../../launch-resume/create-and-register-an-inproc-background-task.md) . Фоновая задача также позволяют получать уведомления об изменении обоих во время работы приложения скрытые или не выполняется.
 

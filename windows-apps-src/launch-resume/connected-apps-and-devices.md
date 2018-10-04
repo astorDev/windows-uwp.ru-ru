@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, подключенных устройств, удал
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: d3efb7e094ce1464028dadaa14c6f0bfb3f3b214
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315744"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355619"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>Подключенные приложения и устройства (Project Rome)
 
@@ -40,4 +40,4 @@ ms.locfileid: "4315744"
 | [Обмен данными с удаленной службой приложений](communicate-with-a-remote-app-service.md) | Узнайте, как взаимодействовать с приложением на удаленном устройстве. |
 | [Подключение устройств с помощью удаленных сеансов](remote-sessions.md) | Предоставляйте общие возможности на нескольких устройствах за счет их объединения через удаленный сеанс. |
 | [Продолжение активности пользователей даже на разных устройствах](useractivities.md)| Помочь пользователям возобновить, что они делали в вашем приложении даже на нескольких устройствах.|
-| [Рекомендации по действий пользователя](useractivities-best-practices.md)| Дополнительные рекомендации для создания и обновления действий пользователя.|
+| [Рекомендации для пользователя](useractivities-best-practices.md)| Дополнительные рекомендации для создания и обновления действий пользователя.|

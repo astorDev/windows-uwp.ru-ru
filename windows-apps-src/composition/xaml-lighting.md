@@ -15,11 +15,11 @@ dev_langs:
 - cpp
 - cppwinrt
 ms.openlocfilehash: b4e3678e17e7545dfe9cb4049ace7ff864198156
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319476"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355576"
 ---
 # <a name="xaml-lighting"></a>Освещение XAML
 
@@ -29,7 +29,7 @@ ms.locfileid: "4319476"
 
 ## <a name="applying-lights-to-xaml-uielements"></a>Применение освещения к XAML UIElements
 
-Объекты [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) позволяют применять [**CompositionLights**](/uwp/api/Windows.UI.Composition.CompositionLight) для динамического освещения объектов XAML UIElement. XamlLight предоставляет методы для целевых объектов UIElement или кистей XAML, применение освещения к деревьям объектов UIElement, и помогает управлять жизненным циклом CompositionLight использовать ресурсы с учетом ли они в данный момент.
+Объекты [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) позволяют применять [**CompositionLights**](/uwp/api/Windows.UI.Composition.CompositionLight) для динамического освещения объектов XAML UIElement. XamlLight предоставляет методы для целевых объектов UIElement или кистей XAML, к деревьям объектов UIElement, и помогает управлять жизненным циклом CompositionLight использовать ресурсы с учетом ли они в данный момент.
 
 - Если в качестве целевого объекта XamlLight выбрана кисть (**Brush**), будут освещены все части объектов UIElements, для которых использовалась эта кисть.
 - Если в качестве целевого объекта XamlLight выбран **UIElement**, будет освещен весь этот объект UIElement вместе со своими дочерними объектами UIElement.
@@ -461,7 +461,7 @@ Platform::String^ OrangeSpotLight::GetId()
 }
 ```
 
-Затем можно применить этот светлый UIElement для XAML или кисть для их. В этом примере показано использование различных потенциальных.
+Затем можно применить этот индикатор UIElement для XAML или кисть для них. В этом примере показано различные возможные варианты использования.
 
 > [!Important]
 > Для [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), удалите два вхождения `local:OrangeSpotLight.IsTarget="True"` из разметки ниже. Уже присоединенные свойства задаются в коде программной.
