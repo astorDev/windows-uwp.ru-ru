@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: windows 10, uwp, карты, таблица стилей карты
 ms.localizationpriority: medium
 ms.openlocfilehash: f0a657ada755b77abe8ffef6a38bfa1f9ece8fcd
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353401"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4385723"
 ---
 # <a name="map-style-sheet-reference"></a>Справка о таблицах стилей карты
 
-Сопоставление технологий Майкрософт использовать _стилей карты_ для определения внешнего вида карты.  Стилей карты определяется с помощью JavaScript Object Notation (JSON) и может использоваться в различных способов в том числе в приложении магазина Windows [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) через метод [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) .
+Сопоставление технологий Майкрософт использовать _стилей карты_ для определения внешнего вида карты.  Стилей карты определяются с помощью JavaScript Object Notation (JSON) и может использоваться в различных способов включения в приложении магазин Windows [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) через метод [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) .
 
-Таблицы стилей могут создаваться в интерактивном режиме с помощью приложения [Редактор таблиц стилей карты](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) .
+Таблицы стилей могут создаваться в интерактивном режиме с помощью приложения, [Редактор таблиц стилей карты](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) .
 
 Можно использовать указанный ниже JSON для области воды отображались красным цветом, отображаться метки воды — зеленым цветом, а области Земли синего цвета:
 
@@ -33,7 +33,7 @@ ms.locfileid: "4353401"
     }
 ```
 
-Этот JSON может использоваться для удаления всех меток и точек на карте.
+Можно использовать этот JSON для удалите все метки и точек на карте.
 
 ```json
 
@@ -54,7 +54,7 @@ ms.locfileid: "4353401"
 <a id="entries" />
 
 ## <a name="entries"></a>Записи
-В этой таблице символы ">" используются для представления уровней в иерархии записей.  Он также показано, какие версии Windows поддерживает каждой записи и который проигнорировать ее.
+В этой таблице символы ">" используются для представления уровней в иерархии записей.  Также показано, какие версии Windows поддерживает каждой записи и который проигнорировать ее.
 
 | Version | Имя выпуска Windows |
 |---------|----------------------|
@@ -69,13 +69,13 @@ ms.locfileid: "4353401"
 | settings                     | [Settings](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   | Параметры, которые применяются ко всей таблице стилей. |
 | mapElement                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Родительский элемент для всех записей карты. |
 | > baseMapElement             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Родительский элемент для всех записей, которые не относятся к пользователям. |
-| >> area                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Использование области, описывающего Земли.  Они должны не следует путать с физической здания, которые относятся к записи структуры. |
+| >> area                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Использование области, описывающий Земли.  Они должны не следует путать с физической здания, которые относятся к записи структуры. |
 | >>> airport                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Области, аэропорт. |
 | >>> areaOfInterest           | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Области с высокой концентрацией компаний или точек интереса. |
 | >>> cemetery                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Области, составляющих cemeteries. |
 | >>> continent                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Метки континент области. |
 | >>> education                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Области, составляющих учебных заведений и других образовательных взаимодействовать со встроенными. |
-| >>> indigenousPeoplesReserve | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Области, составляющих коренному люди заповедников. |
+| >>> indigenousPeoplesReserve | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Области, которые охватывают коренному люди оставляет за собой. |
 | >>> industrial               | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Области, которые используются для промышленных целей. |
 | >>> island                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Метки области остров. |
 | >>> medical                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Области, которые используются для медицинских целей (например: географически больницы). |
@@ -92,24 +92,24 @@ ms.locfileid: "4353401"
 | >>>> golfCourse              | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Области, составляющих Гольф курсы. |
 | >>>> park                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Области, составляющих парков. |
 | >>>> playingField            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Спортивные поля, например поле для игры в бейсбол или теннисный корт. |
-| >>>> reserve                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Резервирует областей, которые охватывают характера. |
-| >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Все функции точки, которые рисуются с определенным значком. |
-| >>> address                  | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   | Метки цифры адреса. |
+| >>>> reserve                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Оставляет за собой областей, которые охватывают характера. |
+| >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Все функции, которые рисуются с помощью значка какого-либо точки. |
+| >>> address                  | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   | Адрес номера метки. |
 | >>> naturalPoint             | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют естественный функции. |
 | >>>> peak                    | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют вершины гор. |
 | >>>>> volcanicPeak           | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют вершины вулканов. |
 | >>>> waterPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют расположение водных точек, например водопадов. |
 | >>> pointOfInterest          | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют любого интересные места. |
 | >>>> business                | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют все locaiton бизнеса. |
-| >>>>> attractionPoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют туристов сеанса, например музеи, zoos и т. д. |
+| >>>>> attractionPoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют туристов сеанса, таких как музеи, zoos, и т. д. |
 | >>>>> communityPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют расположение общего использования в сообществе. |
 | >>>>> educationPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют учебных заведений и других для образовательных учреждений, связанные с расположениями. |
 | >>>>> entertainmentPoint     | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют развлечения ресурсах, таких как театры, кинотеатрах, и т. д. |
-| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icons that represent essential services such as parking, banks, gas, etc. |
+| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют основных служб, таких как парковки, банков, газа и т. д. |
 | >>>>> foodPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют рестораны, кафе и т. д. |
-| >>>>> lodgingPoint           | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют отелей и других проживание организациями. |
+| >>>>> lodgingPoint           | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые будут представлять собой отелей и других организаций проживание. |
 | >>>>> realEstatePoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют недвижимости компаний. |
-| >>>>> shoppingPoint          | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют отелей и других проживание организациями. |
+| >>>>> shoppingPoint          | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые будут представлять собой отелей и других организаций проживание. |
 | >>> populatedPlace           | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют размер населенных пунктов (например, город или поселок). |
 | >>>> capital                 | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют столицу населенного пункта. |
 | >>>>> adminDistrictCapital   | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют столицу штата или провинции. |
@@ -125,13 +125,13 @@ ms.locfileid: "4353401"
 | >>> building                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Здания. |
 | >>>> educationBuilding       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Здания, используемый для образовательных учреждений. |
 | >>>> medicalBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Здания, используются для медицинских целей, например больницы. |
-| >>>> transitBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Используется для передачи, таких как аэропорт зданий. |
+| >>>> transitBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Здания, используемый для передачи, таких как аэропорт. |
 | >> transportation            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые являются частью транспортной сети (например, дороги, поезда и паромы). |
 | >>> road                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют все дороги. |
 | >>>> controlledAccessHighway | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют большой, управляемый доступ к магистрали. |
-| >>>>> highSpeedRamp          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют съезды высокой скорости, которые обычно подключаются к управляемый въездом. |
-| >>>> highway                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют автомагистралях. |
-| >>>> majorRoad               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют основных дороги. |
+| >>>>> highSpeedRamp          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют съезды высокой скорости, которые обычно подключаются к управляемый доступ к магистрали. |
+| >>>> highway                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют магистрали. |
+| >>>> majorRoad               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют основные дороги. |
 | >>>> arterialRoad            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют arterial дороги. |
 | >>>> street                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют улиц. |
 | >>>>> ramp                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют съезды, обычно подключаются к магистрали. |
@@ -146,8 +146,8 @@ ms.locfileid: "4353401"
 | > routeMapElement            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Все записи о маршрутах связанные. |
 | >> routeLine                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии маршрута связанных записей. |
 | >>> drivingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют автомобильного маршрутов. |
-| >>> scenicRoute              | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Линии, которые представляют живописных автомобильного маршрутов. |
-| >>> walkingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, представляющие прохода маршрутов. |
+| >>> scenicRoute              | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Линии, которые представляют живописных дорог движения. |
+| >>> walkingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Строки, представляющие прохода маршрутов. |
 | > userMapElement             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Все записи пользователя. |
 | >> userBillboard             | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Оформление экземпляров [MapBillboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) по умолчанию. |
 | >> userLine                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Оформление экземпляров [MapPolyline](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mappolyline) по умолчанию. |
@@ -182,7 +182,7 @@ ms.locfileid: "4353401"
 | landColor                    | Color (Цвет)   |  ✔   |  ✔   |  ✔   |  ✔   | Значение цвета ARGB для земли до того, как что-либо нарисовано на этой земле. |
 | logosVisible                 | Логический    |  ✔   |  ✔   |  ✔   |  ✔   | Флажок, который указывает, нужно ли для элементов со свойством **Organization** рисовать соответствующий логотип или следует использовать общий значок. |
 | officialColorVisible         | Логический    |  ✔   |  ✔   |  ✔   |  ✔   | Флажок, который указывает, нужно ли рисовать цветом элементы, у которых есть официальное свойство цвета (например, линии транспорта в Китае). Например, отключите это значение для черно-белой карты. |
-| rasterRegionsVisible         | Логический    |  ✔   |  ✔   |  ✔   |  ✔   | Флаг, указывающий, следует ли рисовать растровые регионы, где они имеют представление лучше, чем векторы (Япония и Корея). |
+| rasterRegionsVisible         | Логический    |  ✔   |  ✔   |  ✔   |  ✔   | Флаг, указывающий, следует ли рисовать растровые регионы, где они имеют лучшее представление чем векторы (Япония и Корея). |
 | shadedReliefVisible          | Логический    |  ✔   |  ✔   |  ✔   |  ✔   | Флажок, который указывает, следует ли рисовать затенение подъема на карте. |
 | shadedReliefDarkColor        | Color (Цвет)   |  ✔   |  ✔   |  ✔   |  ✔   | Цвет темной части затененного рельефа.  Альфа-канал представляет максимальное значение альфа-канала. |
 | shadedReliefLightColor       | Color (Цвет)   |  ✔   |  ✔   |  ✔   |  ✔   | Цвет светлой части затененного рельефа.  Альфа-канал представляет максимальное значение альфа-канала. |
@@ -232,7 +232,7 @@ ms.locfileid: "4353401"
 
 | Свойство                     | Тип    | 1703 | 1709 | 1803 | 1809 | Описание |
 |------------------------------|---------|------|------|------|------|-------------|
-| Фон формы             | Плавающий   |      |      |      |  ✔️   | Форма для использования в качестве фона значок--заменить любой формы, которую там имеется. |
+| Фон формы             | Плавающий   |      |      |      |  ✔️   | Форма для использования в качестве фона значок--заменить любой формы, которую существует. |
 | stemAnchorRadiusScale        | Плавающий   |      |      |  ✔   |  ✔   | Уровень масштабирования точки привязки основы значка.  Например, используйте значение *1* для стандартного размера и значение *2* для вдвое большего размера. |
 | stemColor                    | Color (Цвет)   |  ✔   |  ✔   |  ✔   |  ✔   | Цвет основы, которая выступает в нижней части значка в трехмерном режиме. |
 | stemHeightScale              | Плавающий   |      |      |  ✔   |  ✔   | Уровень масштабирования длины основы значка.  Например, используйте значение *1* для стандартного размера и значение *2* для вдвое большего размера. |

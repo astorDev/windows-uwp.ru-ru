@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, azure ad, клиент azure, клиент aad, клиент azure ad, управление клиентами, клиенты
 ms.localizationpriority: medium
 ms.openlocfilehash: dd729d76705849c981516109da39bbd27c140286
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4355456"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4384999"
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>Связывание Azure Active Directory с учетной записью Центра разработки
 

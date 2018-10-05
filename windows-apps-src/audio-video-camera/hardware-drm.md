@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 160a4ab0ff5bdc40ea46ff6d8fb9fd8e47f560e3
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4356872"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4383503"
 ---
 # <a name="hardware-drm"></a>Аппаратное управление цифровыми правами (DRM)
 
@@ -83,7 +83,7 @@ localSettings.values["SoftwareOverride"] = 1;
 mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-Лучший способ программного управления цифровыми правами используется рассмотрим C:\\Users\\, если вы являетесь аппаратным управлением цифровыми правами или&lt;имя пользователя&gt;\\AppData\\Local\\Packages\\&lt;имя приложения&gt;\\LocalCache\\PlayReady\\\*
+Лучший способ программного управления цифровыми правами используется изучить C:\\Users\\, если вы являетесь аппаратным управлением цифровыми правами или&lt;имя пользователя&gt;\\AppData\\Local\\Packages\\&lt;имя приложения&gt;\\LocalCache\\PlayReady\\\*
 
 -   Если там присутствует файл mspr.hds, используется программное управление цифровыми правами DRM.
 -   Если там имеется другой файл \*.hds, используется аппаратное управление DRM.

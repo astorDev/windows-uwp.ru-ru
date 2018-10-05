@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, упаковка, макет пакета, пакет активов
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f8cbb3989b58b726336b4bd757902bd9ea3f8c0
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353960"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4386843"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>Создание пакета с использованием макета упаковки  
 

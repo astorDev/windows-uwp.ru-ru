@@ -10,17 +10,17 @@ ms.technology: uwp
 keywords: Windows 10, uwp, службы Store, аналитика API аналитики для Microsoft Store
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4355129"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4383721"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>Получение аналитических данных о классическом приложении
 
 Используйте этот метод в API аналитики для Microsoft Store для получения аналитические данные, данные, связанные с показатели работоспособности для классического приложения, которое вы добавили в [программе классических приложений для Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). Эти данные также доступна в [отчете о работоспособности](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report) для классических приложений на информационной панели центра разработки для Windows.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Что вам понадобится
 
 Для использования этого метода сначала необходимо сделать следующее:
 

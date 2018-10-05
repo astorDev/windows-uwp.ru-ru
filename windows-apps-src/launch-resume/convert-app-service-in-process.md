@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, службы приложений
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: a77ea3cefcc423e710ab0afebb3fa064e61507ec
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4350678"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4386470"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>Преобразование службы приложений для ее запуска в одном процессе с ведущим приложением
 
@@ -42,7 +42,7 @@ ms.locfileid: "4350678"
 >   </Applications>
 > ```
 
-Удалить `EntryPoint` атрибут из `<Extension>` элемента, так как теперь [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) является точкой входа, который будет использоваться при вызове службы приложения.
+Удаление `EntryPoint` атрибут из `<Extension>` элемента, так как теперь [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) является точкой входа, который будет использоваться при вызове службы приложения.
 
 Второе изменение заключается в переносе логики службы из отдельного проекта фоновой задачи в методы, которые можно вызывать из метода **OnBackgroundActivated()**.
 

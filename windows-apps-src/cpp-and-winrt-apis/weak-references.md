@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартные, c ++, cpp, winrt, проекция, надежную, слабая, ссылка
 ms.localizationpriority: medium
 ms.openlocfilehash: 414a73c8df31e4547b8bd154945a8e9960529320
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4354762"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4384953"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Надежные и слабые ссылки в C + +/ WinRT
 
