@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, карта, расположение, элемент управления картой, представления карты
 ms.localizationpriority: medium
 ms.openlocfilehash: ba03d430031ad2bdad6959e2c59500dc6f2d2666
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4352855"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4394355"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside
 
@@ -226,7 +226,7 @@ myMap.StyleSheet = MapStyleSheet.RoadDark();
 
 Можно также использовать JSON для определения пользовательских стилей и затем использовать этот JSON для создания объекта [**MapStyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet).
 
-Таблицы стилей JSON могут создаваться в интерактивном режиме с помощью приложения [Редактор таблиц стилей карты](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) .
+Таблицы стилей JSON могут создаваться в интерактивном режиме с помощью приложения, [Редактор таблиц стилей карты](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) .
 
 ```csharp
 myMap.StyleSheet = MapStyleSheet.ParseFromJson(@"

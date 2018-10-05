@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, аналитика, отчеты, панели мониторинга, приложений, данных, метрик
 ms.localizationpriority: medium
 ms.openlocfilehash: 090ddfdfbed1ae49e87f4dc419765e006913764f
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4351370"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4392575"
 ---
 # <a name="analyze-app-performance"></a>Анализ эффективности приложений
 

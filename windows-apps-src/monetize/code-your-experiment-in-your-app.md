@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, UWP, Microsoft Store Services SDK, A/B-тесты, эксперименты
 ms.localizationpriority: medium
 ms.openlocfilehash: b0931d712ca99b429e2aaa7dec4b855f41ce55ef
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4352822"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4391222"
 ---
 # <a name="code-your-app-for-experimentation"></a>Кодирование приложения для экспериментов
 
@@ -29,7 +29,7 @@ ms.locfileid: "4352822"
 В следующих разделах описывается общий процесс получения вариантов для эксперимента и ведения журнала событий в Центре разработки. После завершения кодирования приложения для экспериментов можно [определить эксперимент на панели мониторинга Центра разработки](define-your-experiment-in-the-dev-center-dashboard.md). Пошаговое руководство, демонстрирующее весь процесс создания и выполнения эксперимента, можно найти в разделе [Создание и проведение первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md).
 
 > [!NOTE]
-> Некоторые экспериментальные API-интерфейсы в Microsoft Store Services SDK используют [асинхронной модели](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) для извлечения данных из центра разработки. Это означает, что эти методы могут частично выполняться после их вызова, чтобы интерфейс приложения реагировал на действия пользователя во время выполнения операции. В рамках асинхронной модели приложение должно использовать ключевое слово **async** и оператор **await** при вызове API-интерфейсов, как показано в примерах кода в этой статье. По соглашению асинхронные методы заканчиваются на **Async**.
+> Некоторые экспериментальные API-интерфейсов в Microsoft Store Services SDK используют [асинхронной модели](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) для извлечения данных из центра разработки. Это означает, что эти методы могут частично выполняться после их вызова, чтобы интерфейс приложения реагировал на действия пользователя во время выполнения операции. В рамках асинхронной модели приложение должно использовать ключевое слово **async** и оператор **await** при вызове API-интерфейсов, как показано в примерах кода в этой статье. По соглашению асинхронные методы заканчиваются на **Async**.
 
 ## <a name="configure-your-project"></a>Настройка проекта
 
@@ -60,7 +60,7 @@ ms.locfileid: "4352822"
 
 2. Объявите переменную типа string и присвойте в качестве значения [идентификатор проекта](run-app-experiments-with-a-b-testing.md#terms) для эксперимента, который вы хотите получить.
     > [!NOTE]
-    > Проекта вы получаете идентификатор, время [создания проекта в информационной панели центра разработки](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). Указанный ниже идентификатор проекта используется только в качестве примера.
+    > Проекта вы получаете идентификатор время [создания проекта в информационной панели центра разработки](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). Указанный ниже идентификатор проекта используется только в качестве примера.
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
 

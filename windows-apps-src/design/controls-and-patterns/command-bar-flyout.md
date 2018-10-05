@@ -16,11 +16,11 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: ed17299051ae7da32f238eb57876b81597c8effa
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4355116"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4390233"
 ---
 # <a name="command-bar-flyout"></a>Всплывающий элемент панели команд
 
@@ -39,7 +39,7 @@ ms.locfileid: "4355116"
 
 | **Получить библиотеку пользовательского интерфейса Windows** |
 | - |
-| Этот элемент управления не включен в библиотеке Windows пользовательского интерфейса, пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке см. в разделе [Общие сведения о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| Этот элемент управления не включен в библиотеке пользовательского интерфейса Windows, пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке см. в разделе [Общие сведения о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 | **API-интерфейсы платформы** | **API библиотеки пользовательского интерфейса Windows** |
 | - | - |

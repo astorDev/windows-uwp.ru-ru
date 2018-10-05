@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: d354f0babec3ec2346c6e76fcae8666f40f3f6be
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353621"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4389818"
 ---
 # <a name="web-authentication-broker"></a>Брокер веб-проверки подлинности
 
@@ -159,7 +159,7 @@ catch (Exception ex)
 
 Веб-отладчик Fiddler можно использовать с приложениями.
 
-1.  Так как AuthHost работает в собственном контейнере приложения, чтобы предоставить ему возможность частной сети необходимо задать раздел реестра: редактор реестра Windows версии 5.00
+1.  Так как AuthHost работает в собственном контейнере приложения, чтобы предоставить ему возможность частной сети необходимо настроить раздел реестра: редактор реестра Windows версии 5.00
 
     **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 

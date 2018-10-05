@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 104788b98377b55564fcc204ecc161521d071c6b
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353345"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4392104"
 ---
 #  <a name="command-design-basics-for-uwp-apps"></a>Основы проектирования команд в приложениях UWP
 
@@ -157,7 +157,7 @@ ms.locfileid: "4353345"
     :::column span="2":::
         <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Всплывающие элементы</a> — это облегченное контекстно-зависимые всплывающих окон, которые можно закрыть нажатием или щелчком за его пределами.
+       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Всплывающие элементы</a> — это облегченная контекстно-зависимые всплывающих окон, которые можно закрыть нажатием или щелчком за его пределами.
 :::row-end:::
 
 :::row:::

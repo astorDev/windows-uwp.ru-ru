@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, версия, сборка, версии, windows, в
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: d2909e6e674d524327b676441f7f08fc51595772
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4350613"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4387703"
 ---
 # <a name="choose-a-uwp-version"></a>Выбор версии UWP
 

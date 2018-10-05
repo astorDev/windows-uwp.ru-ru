@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ffe7de94e4a8564b4971fda0b64f6648d9b6088b
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4361259"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4394525"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Новые возможности для разработчиков в Windows 10, сборка 16299
 

@@ -15,26 +15,26 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aeb400da4b3abe61e086732eaceb0e53fd1b005
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4352976"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4391072"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Ввод текста с представлением рукописного ввода
 
 ![Текстовое поле разворачивается при касании пером](images/pen-input-expand-cropped.gif)
 
-Настройка представления встроенных рукописного ввода для рукописного ввода для ввода текста, которое поддерживается элементов управления текстом UWP, таких как [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)и других элементов управления, которые аналогично возможности ввода текста (например, [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)).
+Настройка представления встроенных рукописного ввода для рукописного ввода для ввода текста, поддерживаемые элементы управления текстом UWP, такие как [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)и другие элементы управления, аналогичные возможности ввода текста (например, [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)).
 
 ## <a name="overview"></a>Обзор
 
-Поля для ввода текста XAML функции реализована поддержка ввод с помощью [Windows Ink](../input/pen-and-stylus-interactions.md)с помощью пера. Когда пользователь касается в поле текстового ввода с помощью пера Windows, текстовое поле преобразуется в поверхности рукописного ввода, а не в отдельной панели ввода.
+Поля для ввода текста XAML функции реализована поддержка ввод с помощью [Windows Ink](../input/pen-and-stylus-interactions.md)с помощью пера. Когда пользователь касается в текстовое поле ввода с помощью пера Windows, текстовое поле преобразует в поверхности рукописного ввода, а не в отдельной панели ввода.
 
-Текст распознается, когда пользователь пишет в любом месте в текстовом поле, а кандидат, что окна отображаются результаты распознавания. Пользователь может коснуться результата, чтобы выбрать его, или продолжить писать, чтобы выбрать предлагаемое слово-кандидат. Буквальные (побуквенные) результаты распознавания добавляются в окно слов-кандидатов, поэтому распознавание не ограничивается словами из словаря. Когда пользователь пишет, текст преобразуется в рукописный шрифт, создавая ощущение естественного письма.
+Текст распознается, когда пользователь пишет в любом месте в текстовое поле, а кандидат, что окна отображаются результаты распознавания. Пользователь может коснуться результата, чтобы выбрать его, или продолжить писать, чтобы выбрать предлагаемое слово-кандидат. Буквальные (побуквенные) результаты распознавания добавляются в окно слов-кандидатов, поэтому распознавание не ограничивается словами из словаря. Когда пользователь пишет, текст преобразуется в рукописный шрифт, создавая ощущение естественного письма.
 
 > [!NOTE]
-> Представление рукописного текста включена по умолчанию, но вы можете отключить его отдельно для каждого элемента управления и вернуться к панели ввода текста, вместо этого.
+> Представление рукописного ввода по умолчанию включена, но вы можете отключить его отдельно для каждого элемента управления и вернуться к панели ввода текста, вместо этого.
 
 
 ![Текстовое поле и ввод с помощью пера](images/pen-input-1.png)
@@ -54,7 +54,7 @@ ms.locfileid: "4352976"
 
 Может потребоваться отключить представление рукописного ввода, если предоставляется эквивалентные функции рукописного ввода в текст в приложении или работы ввода текста зависит от каких-либо форматирования или специальных знаков (например, вкладка) не доступно рукописного ввода.
 
-В этом примере мы отключаем представление рукописного ввода, задав свойство [IsHandwritingViewEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled) элемента управления [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) значение "false". Все элементы управления текстом, поддерживающие представление рукописного ввода поддержки аналогичные свойства.
+В этом примере мы отключаем представление рукописного ввода, задав для свойства [IsHandwritingViewEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled) элемента управления [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) значение "false". Все элементы управления текстом, поддерживающих представление рукописного ввода поддержки аналогичные свойства.
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -67,9 +67,9 @@ ms.locfileid: "4352976"
 
 ## <a name="specify-the-alignment-of-the-handwriting-view"></a>Задать выравнивание представление рукописного ввода
 
-Представление рукописного ввода находится над основной текстовый элемент управления и изменяются, чтобы вместить пользовательских настроек рукописного ввода (см. в разделе параметров **-> устройства -> перо и Windows Ink рукописного ввода, "->" -> размер шрифта, при написании непосредственно в текстовое поле **). Представления также автоматически выровнена относительно текстовый элемент управления и его расположение в приложении.
+Представление рукописного ввода над основной текстовый элемент управления и размера для реализации пользовательских настроек рукописного ввода (см. в разделе параметров **-> устройства -> перо и Windows Ink рукописного ввода, "->" -> размер шрифта, при написании непосредственно в текстовое поле **). Представления также автоматически выровнена относительно текстовый элемент управления и его расположение в приложении.
 
-Пользовательского интерфейса приложения не адаптируется для размещения больших элемента управления, система может привести к представление, чтобы загородить важные пользовательского интерфейса.
+Пользовательский Интерфейс приложения не адаптируется для размещения больших элемента управления, система может привести к представление, чтобы загородить важные пользовательского интерфейса.
 
 Здесь мы покажем, как использовать свойство [PlacementAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.placementalignment) [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) для указания того, какие привязки на основной текстовый элемент управления используется для выравнивания представление рукописного ввода.
 
@@ -86,9 +86,9 @@ ms.locfileid: "4352976"
 
 ## <a name="disable-auto-completion-candidates"></a>Отключите автоматическое заполнение кандидаты
 
-Всплывающее окно вариантов текста включена по умолчанию для предоставления кандидаты распознавания, из которых пользователь может выбрать на случай, если предпочтительных неправильный список верхнем рукописного ввода.
+Всплывающее окно вариантов текста включена по умолчанию для предоставления кандидаты распознавания, из которых пользователь может выбрать на случай, если предпочтительных неправильный список основные рукописного ввода.
 
-Если ваше приложение уже предоставляет надежную, функциональные возможности настраиваемого распознавания, воспользуйтесь свойство [AreCandidatesEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.arecandidatesenabled) отключить встроенную предложения, как показано в следующем примере.
+Если приложение уже предоставляет надежную, настраиваемого распознавания функциональные возможности, воспользуйтесь свойство [AreCandidatesEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.arecandidatesenabled) отключить встроенную предложения как показано в следующем примере.
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -103,15 +103,15 @@ ms.locfileid: "4352976"
 
 ## <a name="use-handwriting-font-preferences"></a>Используйте шрифт настроек рукописного ввода
 
-Пользователь может выбрать из предопределенных набор шрифтов на основе рукописного ввода для использования при отрисовки текст, в зависимости от распознавания рукописного ввода (см. в разделе **Параметры -> устройства -> перо и Windows Ink рукописного ввода, "->" -> шрифта, при использовании рукописного ввода**).
+Пользователь может выбрать из предварительно определенный набор шрифтов на основе рукописного ввода для использования при отрисовки текст, в зависимости от распознавание рукописного ввода (см. в разделе **Параметры -> устройства -> перо и Windows Ink рукописного ввода, "->" -> шрифта, при использовании рукописного ввода**).
 
 > [!NOTE]
-> Пользователи могут даже создавать шрифтов, в зависимости от собственные рукописного ввода.
+> Пользователи могут даже создавать шрифтов, в зависимости от руки.
 > [!VIDEO https://www.youtube.com/embed/YRR4qd4HCw8]
 
-Ваше приложение может получить доступ к этот параметр и выбранный шрифт для распознанный текст в элементе управления текстом.
+Ваше приложение может получить доступ к этот параметр и шрифт для распознанный текст в текстовом элементе управления.
 
-В этом примере мы прослушивать событие [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) и применить выбранный шрифт пользователя, если изменение текста, происходят из HandwritingView (или шрифта по умолчанию, если это не так).
+В этом примере мы прослушивать событие [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) [текстовое поле](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) и применять пользователя шрифт, если изменение текста, происходят из HandwritingView (или шрифт по умолчанию, если это не так).
 
 ```csharp
 private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -127,7 +127,7 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 
 Составные элементы управления, которые также используют [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) или [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) элементы управления, такие как [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox) поддерживает [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview).
 
-Для доступа к [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) в составной элемент управления, используйте [VisualTreeHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper) API.
+Для доступа к [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) составного элемента управления, используйте [VisualTreeHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper) API.
 
 В следующем фрагменте кода XAML отображает элемент управления [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox) .
 
@@ -142,7 +142,7 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 
 В соответствующий код программной части мы покажем, как отключить [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) на [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox).
 
-1. Во-первых мы обрабатываем событие Loaded приложения где мы вызываем функцию FindInnerTextBox для запуска обходом визуального дерева.
+1. Во-первых мы обрабатываем событие Loaded приложения где мы вызываем функцию FindInnerTextBox для запуска прохождения визуального дерева.
 
     ```csharp
     private void SampleAutoSuggestBox_Loaded(object sender, RoutedEventArgs e)
@@ -167,7 +167,7 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
     }
     ```
 
-3. Наконец эта функция повторяет по визуальному дереву, пока извлекается TextBox.
+3. И, наконец эта функция повторяет по визуальному дереву, пока извлекается текстовое поле.
 
     ```csharp
     private FrameworkElement FindVisualChildByName<T>(DependencyObject obj)
@@ -192,9 +192,9 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
     }
     ```
 
-## <a name="reposition-the-handwritingview"></a>Изменения положения HandwritingView
+## <a name="reposition-the-handwritingview"></a>Изменение положения HandwritingView
 
-В некоторых случаях необходимо убедиться, что [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) рассматриваются элементов пользовательского интерфейса, это в противном случае не всегда возможно.
+В некоторых случаях необходимо убедиться, что [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) рассматриваются элементов пользовательского интерфейса, в противном случае — возможно, он не.
 
 Здесь мы создаем TextBox, который поддерживает диктовки (реализован помещением текстовое поле и кнопку диктовки в StackPanel).
 
@@ -231,13 +231,13 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 
 ## <a name="resize-the-handwritingview"></a>Изменение размера HandwritingView
 
-Можно также задать размер [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview), которые могут быть полезны при необходимо убедиться, что представление не загородить важные пользовательского интерфейса.
+Кроме того, можно задать размер [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview), которые могут быть полезны при необходимо убедиться, что представление не загородить важные пользовательского интерфейса.
 
 Как и в предыдущем примере мы создаем TextBox, который поддерживает диктовки (реализован помещением текстовое поле и кнопку диктовки в StackPanel).
 
 ![TextBox с диктовки](images/handwritingview/textbox-with-dictation.png)
 
-В этом случае необходимо убедиться, что кнопка панели диктовки всегда является видимой.
+В этом случае необходимо убедиться, что кнопка диктовки всегда является видимой.
 
 ![TextBox с диктовки](images/handwritingview/textbox-with-dictation-handwritingview-resize.png)
 
@@ -273,14 +273,14 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 </StackPanel>
 ```
 
-## <a name="reposition-custom-ui"></a>Перемещать пользовательский Интерфейс
+## <a name="reposition-custom-ui"></a>Изменить положение пользовательского интерфейса
 
-Если у вас есть пользовательский Интерфейс, который отображается в ответ на ввод текста, такие как информационные всплывающее окно, может потребоваться изменить положение этого интерфейса, поэтому он не загородить представление рукописного ввода.
+Если у вас есть пользовательский Интерфейс, который отображается в ответ на ввод текста, такие как информационные контекстное меню, может потребоваться изменить положение этого интерфейса, поэтому он не загородить представление рукописного ввода.
 
-![TextBox с помощью пользовательского интерфейса](images/handwritingview/textbox-with-customui.png)
+![Текстовое поле с помощью пользовательского интерфейса](images/handwritingview/textbox-with-customui.png)
 
 Приведенный ниже показано, как для прослушивания событий [SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) , [Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.opened)и [Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.closed
-)из [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) , чтобы установить положение [всплывающего окна](https://docs.microsoft.com/uwp/api/windows.ui.popups).
+) [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) , чтобы установить положение [всплывающего окна](https://docs.microsoft.com/uwp/api/windows.ui.popups).
 
 ```csharp
 private void Search_HandwritingViewOpened(
