@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: a599fdef47bb681ef4909fe5bba2a01a1687ba66
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389199"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4418842"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>Создание и регистрация фоновой задачи, выполняемой вне процесса
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 069f13926fda125ebb383f16bf96eab333a28523
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: f2bddb9ae3adf8ef6cfdf1b6c078db5eb026c93d
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958659"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4420303"
 ---
 # <a name="use-the-compass"></a>Использование компаса
 
@@ -28,8 +28,6 @@ ms.locfileid: "958659"
 **Пример**
 
 -   Более полные сведения о внедрении см. в [примере с компасом](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass).
-
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.\]
 
 Узнайте, как с помощью компаса можно определить текущее направление движения.
 

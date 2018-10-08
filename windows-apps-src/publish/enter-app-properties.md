@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, параметры игр, режим отображения, системные требования, аппаратные требования, минимальное оборудование, рекомендованное оборудование, политика конфиденциальности, контактные данные поддержки, веб-сайт приложений, сведения поддержки
 ms.localizationpriority: medium
 ms.openlocfilehash: d23fb0cb3fb4668682df1957cbf0c88bcf8649c1
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4391376"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4416019"
 ---
 # <a name="enter-app-properties"></a>Ввод свойств приложения
 

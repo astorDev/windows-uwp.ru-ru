@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, требования к пакету, пакеты, формат пакета, поддерживаемая версия, отправить
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e294fdf5a9b2d98f09d839fa62499b556de3a5
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4392472"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4418072"
 ---
 # <a name="app-package-requirements"></a>Требования к пакетам приложения
 

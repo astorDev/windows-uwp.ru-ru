@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4387027"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4421675"
 ---
 # <a name="support-your-app-with-background-tasks"></a>Поддержка приложения с помощью фоновых задач
 
