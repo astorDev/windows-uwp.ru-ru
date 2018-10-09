@@ -13,23 +13,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c48e054a0b00300df10a676b5d185411de06b505
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 02eb6442b4769e92bec2b41ed9ab0e91a6a98a7f
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "301788"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4430278"
 ---
 # <a name="generate-a-3mf-package"></a>Создание пакета 3MF
-
-
-
 
 **Важные API**
 
 -   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
-
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Microsoft не дает никаких гарантий, прямых или косвенных, в отношении указанной здесь информации.\]
 
 В этом руководстве приводится описание структуры документа формата создания 3D и способов его создания и обработки с помощью API [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx).
 
