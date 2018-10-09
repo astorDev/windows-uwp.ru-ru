@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, универсальная
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f0168f0a1baef5e68bccdf0a33c3ac7eb7683a7
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4394395"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4427383"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Что такое приложение универсальной платформы Windows (UWP)?
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30de119b7c3a00730b698eb9d4938280669219a7
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 2848b9a7326bdac084120ec9b75f067718f14853
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958709"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4428885"
 ---
 # <a name="use-the-accelerometer"></a>Использование акселерометра
 
@@ -28,8 +28,6 @@ ms.locfileid: "958709"
 **Пример**
 
 -   Более полные сведения о внедрении см. в [примере с акселерометром](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer).
-
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.\]
 
 Научитесь использовать акселерометр для реагирования на движения пользователя.
 

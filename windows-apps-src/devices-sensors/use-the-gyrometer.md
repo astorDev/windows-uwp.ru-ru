@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 42b0d2ccb2eb00c9b4ca1e69d15ce12ca08d9f89
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 25be2cfab15378f14aed61dcaae1e7e85159f36e
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958689"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4423238"
 ---
 # <a name="use-the-gyrometer"></a>Использование гирометра
 
@@ -28,8 +28,6 @@ ms.locfileid: "958689"
 **Пример**
 
 -   Более полные сведения о внедрении см. в [примере с гирометром](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer).
-
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.\]
 
 Узнайте, как использовать гирометр для отслеживания изменений в движениях пользователя.
 

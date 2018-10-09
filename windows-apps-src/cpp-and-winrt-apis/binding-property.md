@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, привязка, свойство
 ms.localizationpriority: medium
-ms.openlocfilehash: f2b9d342e775b2834c6b3e7eb02a8b2e3d71728d
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.openlocfilehash: 2caec1c245514f7c1596d2a40749e974998fadcd
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4383224"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4445602"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Элементы управления XAML; привязка к свойству C++/WinRT
 Свойство, которое может быть эффективно привязано к элементу управления XAML, называется *отслеживаемым*. Эта идея основана на шаблоне проектирования программного обеспечения, известном как *шаблон наблюдателя *. В этом разделе показано, как реализовать наблюдаемым свойствам в [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)и привязать к ним элементы управления XAML.
@@ -178,7 +178,7 @@ namespace winrt::Bookstore::implementation
 {
     BookstoreViewModel::BookstoreViewModel()
     {
-        m_bookSku = make<Bookstore::implementation::BookSku>(L"Atticus");
+        m_bookSku = winrt::make<Bookstore::implementation::BookSku>(L"Atticus");
     }
 
     Bookstore::BookSku BookstoreViewModel::BookSku()
@@ -189,7 +189,7 @@ namespace winrt::Bookstore::implementation
 ```
 
 > [!NOTE]
-> Тип `m_bookSku` является проецируемым типом (**winrt::Bookstore::BookSku**), а параметр шаблона, который используется с **make**, является типом реализации (**winrt::Bookstore::implementation::BookSku**) . Даже в этом случае **make** возвращает экземпляр проецируемого типа.
+> Тип `m_bookSku` является проецируемым типом (**WinRT::Bookstore:: booksku**), а параметр шаблона, который можно использовать с [**winrt::make**](/uwp/cpp-ref-for-winrt/make) является типом реализации (**winrt::Bookstore::implementation::BookSku**). Даже в этом случае **make** возвращает экземпляр проецируемого типа.
 
 ## <a name="add-a-property-of-type-bookstoreviewmodel-to-mainpage"></a>Добавьте свойство типа **BookstoreViewModel** в **MainPage**
 Откройте `MainPage.idl`, где объявляется класс среды выполнения, представляющий собой главную страницу пользовательского интерфейса. Добавьте оператор import для импорта `BookstoreViewModel.idl` и свойство только для чтения с именем MainViewModel типа **BookstoreViewModel**. Также удалите свойство **MyProperty** . Также Обратите внимание, `import` директиву в списке ниже.
@@ -252,7 +252,7 @@ namespace winrt::Bookstore::implementation
 {
     MainPage::MainPage()
     {
-        m_mainViewModel = make<Bookstore::implementation::BookstoreViewModel>();
+        m_mainViewModel = winrt::make<Bookstore::implementation::BookstoreViewModel>();
         InitializeComponent();
     }
 

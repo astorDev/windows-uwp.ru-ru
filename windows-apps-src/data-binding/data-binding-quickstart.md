@@ -1,10 +1,10 @@
 ---
-author: mcleblanc
+author: stevewhims
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: Обзор привязки данных
 description: В этом разделе показано, как привязать элемент управления (или другой элемент пользовательского интерфейса) к отдельному элементу или как привязать элемент управления к коллекции элементов в приложении универсальной платформы Windows (UWP).
-ms.author: markl
-ms.date: 07/06/2018
+ms.author: stwhi
+ms.date: 10/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,13 +13,13 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-- cpp
-ms.openlocfilehash: c088aa6a2a8b1922eb93ec758dcda8c9a5ec8965
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+- cppcx
+ms.openlocfilehash: 8375cc54e75df71b28cfd3f550f47914b4b65519
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389870"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4426952"
 ---
 # <a name="data-binding-overview"></a>Общие сведения о привязке данных
 
@@ -76,7 +76,7 @@ namespace Quickstart
 // Recording.idl
 namespace Quickstart
 {
-    runtimeclass Recording : Windows.UI.Xaml.DependencyObject
+    runtimeclass Recording
     {
         Recording(String artistName, String compositionName, Windows.Globalization.Calendar releaseDateTime);
         String ArtistName{ get; };
@@ -91,7 +91,7 @@ import "Recording.idl";
 
 namespace Quickstart
 {
-    runtimeclass RecordingViewModel : Windows.UI.Xaml.DependencyObject
+    runtimeclass RecordingViewModel
     {
         RecordingViewModel();
         Quickstart.Recording DefaultRecording{ get; };
@@ -157,7 +157,7 @@ Quickstart::Recording RecordingViewModel::DefaultRecording()
 ...
 ```
 
-```cpp
+```cppcx
 // Recording.h
 #include <sstream>
 namespace Quickstart
@@ -278,7 +278,7 @@ Quickstart::RecordingViewModel MainPage::ViewModel()
 ...
 ```
 
-```cpp
+```cppcx
 // MainPage.h
 ...
 #include "Recording.h"
@@ -395,7 +395,7 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Rec
 ...
 ```
 
-```cpp
+```cppcx
 // Recording.h
 ...
 public ref class RecordingViewModel sealed
@@ -501,10 +501,10 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 > [!NOTE]
 > Пока что в этом разделе мы использовали только [расширение разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), но для обоих приведенных ниже методов требуется более гибкое (но менее производительное) [расширение разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782).
 
-> [!IMPORTANT]
-> Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) (см. ниже) доступен, если вы установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии. Без этого атрибута необходимо реализовывать интерфейсы [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) и [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) , чтобы иметь возможность использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) .
+Если вы используете C + +/ WinRT или Visual C++ расширения компонентов (C + +/ CX), чтобы использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , вам потребуется добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) для любого класса среды выполнения, которое вы хотите выполнить привязку к. Чтобы использовать [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), этот атрибут не нужен.
 
-Если вы используете C + +/ WinRT или Visual C++ расширения компонентов (C + +/ CX), так как мы будем использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , вам потребуется добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) к классу **записи** .
+> [!IMPORTANT]
+> Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), а затем атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) доступен, если вы установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809), или более поздней версии. Без этого атрибута необходимо реализовывать интерфейсы [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) и [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) , чтобы иметь возможность использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) .
 
 Сначала рассмотрим способ с использованием свойства [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770).
 
@@ -517,11 +517,11 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 // Add this attribute:
 ...
 [Windows.UI.Xaml.Data.Bindable]
-runtimeclass Recording : Windows.UI.Xaml.DependencyObject
+runtimeclass Recording
 ...
 ```
 
-```cpp
+```cppcx
 [Windows::UI::Xaml::Data::Bindable]
 public ref class Recording sealed
 {
@@ -678,7 +678,7 @@ namespace winrt::Quickstart::implementation
 }
 ```
 
-```cpp
+```cppcx
 ...
 public ref class StringFormatter sealed : Windows::UI::Xaml::Data::IValueConverter
 {

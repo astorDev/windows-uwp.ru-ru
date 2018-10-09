@@ -10,19 +10,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
-ms.openlocfilehash: 284609399f167a7229d0c7bb5858d0f0eda451ce
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.openlocfilehash: 106ea458502a95c53ecbf02d9118f3c31ff43978
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389448"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4429077"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Создание приложения для входа с использованием Windows Hello
-
-
-
-
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.\]
 
 Это первая часть полного пошагового руководства по созданию приложения Windows 10 UWP (универсальной платформы Windows), которое использует Windows Hello в качестве альтернативы традиционным системам проверки подлинности с помощью имени пользователя и пароля. Приложение применяет имя пользователя для входа и создает ключ Hello для каждой учетной записи. Эти учетные записи будут защищены ПИН-кодом, который задается в параметрах Windows в конфигурации Windows Hello.
 

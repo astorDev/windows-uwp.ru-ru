@@ -10,16 +10,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fdc9073da5db0607f57b52ce9d9f3be1c0f2959
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.openlocfilehash: 2c69edc018ae01beba50b93b7dd9f4125544a001
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4394405"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4429067"
 ---
 # <a name="create-a-windows-hello-login-service"></a>Создание службы входа Windows Hello
-
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.\]
 
 Это вторая часть полного пошагового руководства по использованию Windows Hello в качестве альтернативы традиционным системам проверки подлинности с помощью имени пользователя и пароля в приложениях универсальной платформы Windows 10 (UWP). Эта статья является продолжением первой части [Приложение для входа с использованием Windows Hello](microsoft-passport-login.md) и описывает расширение функций, чтобы продемонстрировать интеграцию Windows Hello в существующие приложения.
 

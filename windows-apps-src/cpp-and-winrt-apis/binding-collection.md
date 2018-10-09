@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, привязка, коллекция
 ms.localizationpriority: medium
-ms.openlocfilehash: bdae6ca018670109120c85945d78806158b6c1b7
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.openlocfilehash: 22594c1cfc503b28163d9fca1f46a6861a4f59ad
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4391664"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4445589"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>Элементы управления XAML; привязка к коллекции C++/WinRT
 
@@ -46,20 +46,18 @@ ms.locfileid: "4391664"
 runtimeclass BookstoreViewModel
 {
     BookSku BookSku{ get; };
-    Windows.Foundation.Collections.IVector<IInspectable> BookSkus{ get; };
+    Windows.Foundation.Collections.IObservableVector<IInspectable> BookSkus{ get; };
 }
 ...
 ```
 
 > [!IMPORTANT]
-> В приведенном выше описании MIDL 3.0, обратите внимание, что тип свойства **BookSkus** [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) из [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). В следующем разделе этой статьи мы будем привязка источника элементов [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) **BookSkus**. Поле со списком — это элемент управления, и правильно задать свойство [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) , необходимо задать значение типа **IVector** **IInspectable**или тип взаимодействия, таких как [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
+> В приведенном выше описании MIDL 3.0, обратите внимание, что тип свойства **BookSkus** [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) из [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). В следующем разделе этой статьи мы будем привязка источника элементов [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) **BookSkus**. Поле со списком — это элемент управления, и правильно задать свойство [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) , необходимо задать его значение с типом **IObservableVector** (или **IVector**) **IInspectable**или тип взаимодействия, таких как [** IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
 
 Сохраните и выполните сборку. Скопируйте заглушки доступа из `BookstoreViewModel.h` и `BookstoreViewModel.cpp` в папку `Generated Files` и реализуйте их.
 
 ```cppwinrt
 // BookstoreViewModel.h
-...
-#include "single_threaded_observable_vector.h"
 ...
 struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
 {
@@ -67,11 +65,11 @@ struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
 
     Bookstore::BookSku BookSku();
 
-    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> BookSkus();
+    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookSkus();
 
 private:
     Bookstore::BookSku m_bookSku{ nullptr };
-    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> m_bookSkus;
+    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> m_bookSkus;
 };
 ...
 ```
@@ -81,7 +79,7 @@ private:
 ...
 BookstoreViewModel::BookstoreViewModel()
 {
-    m_bookSku = make<Bookstore::implementation::BookSku>(L"Atticus");
+    m_bookSku = winrt::make<Bookstore::implementation::BookSku>(L"Atticus");
     m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
     m_bookSkus.Append(m_bookSku);
 }
@@ -91,7 +89,7 @@ Bookstore::BookSku BookstoreViewModel::BookSku()
     return m_bookSku;
 }
 
-Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> BookstoreViewModel::BookSkus()
+Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookstoreViewModel::BookSkus()
 {
     return m_bookSkus;
 }
@@ -119,7 +117,7 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Boo
 void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 {
     MainViewModel().BookSku().Title(L"To Kill a Mockingbird");
-    MainViewModel().BookSkus().Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
+    MainViewModel().BookSkus().Append(winrt::make<Bookstore::implementation::BookSku>(L"Moby Dick"));
 }
 ...
 ```
