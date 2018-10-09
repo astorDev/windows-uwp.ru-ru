@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, имена приложений, измените имя приложения, обновление приложения имя, игры, имя продукта
 ms.localizationpriority: medium
 ms.openlocfilehash: 878b105541691834dbbe35b5210f33045afdc47b
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4417475"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4464451"
 ---
 # <a name="manage-app-names"></a>Управление именами приложений
 
