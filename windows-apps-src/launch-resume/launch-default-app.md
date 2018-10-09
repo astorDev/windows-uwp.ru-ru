@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cdfc2beabb640764f85a5ee9f1b24e390b2f87a
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: dff7b641cad99407ce22e7a4d4b58c10e0ae94d1
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664074"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4470004"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Запуск приложения по умолчанию для URI
 
@@ -45,6 +45,7 @@ ms.locfileid: "1664074"
 |[ms-store:](#store-app-uri-scheme)  | Приложение «Магазин» |
 |[ms-tonepicker:](#tone-picker-uri-scheme) | Средство выбора звуковых сигналов |
 |[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | Приложения «Телефоны мест по соседству» |
+|[msnweather:](#weather-app-uri-scheme) | Приложения "Погода" |
 
 <br>
 Например, следующая схема URI открывает браузер, заданный по умолчанию, и отображает веб-сайт Bing.
@@ -240,3 +241,11 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 `ms-windows-store://home/`
 
 Дополнительные сведения см. в разделе [Запуск приложения UWP](launch-store-app.md).
+
+### <a name="weather-app-uri-scheme"></a>Схема URI приложения "Погода"
+
+Используйте **msnweather:** схему URI для запуска приложения "Погода".
+
+| Схема URI | Результаты |
+|------------|---------|
+| msnweather://forecast?LA= \[latitude\] & lo = \ [longitude\] | Запускает приложение "Погода" на странице прогноз зависимости от координаты географическое расположение.<br>`latitude` относится к Широта расположения.<br> `longitude` относится к Долгота расположения.<br> |

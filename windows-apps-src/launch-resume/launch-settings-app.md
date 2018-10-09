@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 03ec6cf478097a6cd00af85d52112555650db35f
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 22727f8d09b3d68970301677cdf632a0981c616a
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817149"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468753"
 ---
 # <a name="launch-the-windows-settings-app"></a>Запуск приложения «Параметры» для Windows
 
@@ -70,12 +70,13 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |Страница параметров| URI |
 |-------------|-----|
-|Доступ на рабочем месте или в учебном учреждении | ms-settings:workplace |
-|Учетные записи электронной почты и приложений  | ms-settings:emailandaccounts |
-|Семья и другие пользователи | ms-settings:otherusers |
-|Параметры входа | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
-|Синхронизация параметров | ms-settings:sync |
-|Сведения | ms-settings:yourinfo |
+| Доступ на рабочем месте или в учебном учреждении | ms-settings:workplace |
+| Учетные записи электронной почты и приложений  | ms-settings:emailandaccounts |
+| Семья и другие пользователи | ms-settings:otherusers |
+| Параметры входа | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
+| Синхронизация параметров | ms-settings:sync |
+| Настройка функции Windows Hello | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
+| Сведения | ms-settings:yourinfo |
 
 ## <a name="apps"></a>Приложения
 
@@ -86,16 +87,21 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Приложения для веб-сайтов | ms-settings:appsforwebsites |
 | Приложения по умолчанию | ms-settings:defaultapps |
 | Управление дополнительными возможностями | ms-settings:optionalfeatures |
+| Карты для автономного использования | ms-settings:maps |
 | Автозагружаемые приложения | ms-settings:startupapps |
+| Воспроизведение видео | ms-settings:videoplayback |
 
 ## <a name="cortana"></a>Кортана
 
 |Страница параметров| URI |
 |-------------|-----|
-| Разрешения и журнал Кортаны | ms-settings:cortana-permissions |
+| Разрешения и журнал | ms-settings:cortana-permissions |
 | Подробности | ms-settings:cortana-moredetails |
-| Уведомления | ms-settings:cortana-notifications |
+| Кортана на разных устройствах | ms-settings:cortana-notifications |
 | Общение с Кортаной | ms-settings:cortana-language |
+
+> [!NOTE] 
+> В этом разделе параметров на рабочем столе будет вызываться поиска при настройке компьютера на регионах, где Кортаны в данный момент невозможен или Кортана отключена. Страницу Кортаны (Кортаны на разных устройствах) и общения с Кортана не будет отображаться в этом случае. 
 
 ## <a name="devices"></a>Устройства
 
@@ -158,7 +164,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Начальная страница параметров | ms-settings: |
 
 
-## <a name="network-wireless--internet"></a>Сеть, беспроводные подключения и интернет
+## <a name="network--internet"></a>Сеть и Интернет
 
 |Страница параметров| URI |
 |-------------|-----|
@@ -189,9 +195,14 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Панель навигации | ms-settings:personalization-navbar |
 | Персонализация (категория) | ms-settings:personalization |
 | Начальный экран | ms-settings:personalization-start |
-| Звуки | ms-settings:sounds |
 | Панель задач | ms-settings:taskbar |
 | Темы | ms-settings:themes |
+
+## <a name="phone"></a>Телефон
+
+|Страница параметров| URI |
+|-------------|-----|
+| Ваш телефон | ms-settings:mobile-devices  |
 
 ## <a name="privacy"></a>Конфиденциальность
 
@@ -257,7 +268,6 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Сообщения | ms-settings:messaging |
 | Многозадачность | ms-settings:multitasking |
 | Параметры ночного света | ms-settings:nightlight |
-| Карты для автономного использования | ms-settings:maps |
 | Телефон | ms-settings:phone-defaultapps |
 | Проецирование на этот компьютер | ms-settings:project |
 | Общие возможности | ms-settings:crossdevice |
@@ -267,9 +277,9 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Удаленный рабочий стол | ms-settings:remotedesktop |
 | Телефон | ms-settings:phone |
 | Питание и спящий режим | ms-settings:powersleep |
+| Звуки | ms-settings:sounds |
 | Память | ms-settings:storagesense |
 | Контроль памяти | ms-settings:storagepolicies |
-| Воспроизведение видео | ms-settings:videoplayback |
 
 ## <a name="time-and-language"></a>Время и язык
 
@@ -290,21 +300,15 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Архивация | ms-settings:backup |
 | Оптимизация доставки | ms-settings:delivery-optimization |
 | Поиск устройства | ms-settings:findmydevice |
+| Для разработчиков | ms-settings:developers |
 | Восстановление | ms-settings:recovery |
 | Устранение неполадок | ms-settings:troubleshoot |
-| Защитник Windows | ms-settings:windowsdefender |
-| Настройка функции Windows Hello | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
+| Безопасность Windows | ms-settings:windowsdefender |
 | Программа предварительной оценки Windows | ms-settings:windowsinsider (доступно, только если пользователь зарегистрирован в WIP) |
 | Центр обновления Windows | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Параметры Windows Update-Advanced | ms-settings:windowsupdate-options |
 | Параметры Windows Update-Restart | ms-settings:windowsupdate-restartoptions |
 | Журнал обновлений Windows Update-View | ms-settings:windowsupdate-history |
-
-## <a name="developers"></a>Разработчики
-
-|Страница параметров| URI |
-|-------------|-----|
-| Для разработчиков | ms-settings:developers |
 
 ## <a name="user--accounts"></a>Ученые записи пользователей
 

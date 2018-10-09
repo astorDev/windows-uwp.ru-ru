@@ -3,18 +3,18 @@ author: TerryWarwick
 title: Перечисление устройств PointOfService
 description: Узнайте, как перечислять устройства PointOfService
 ms.author: jken
-ms.date: 08/30/2018
+ms.date: 10/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e42ebb2eba7b6465be271e6095100c03798826f
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.openlocfilehash: 8796b2ea025a00015881d39449f2dd99d57121f8
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4445622"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468713"
 ---
 # <a name="enumerating-point-of-service-devices"></a>Перечисление POS-устройств
 В этом разделе вы узнайте, как [определить средство выбора устройств](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector), использующееся для запроса устройств, доступных системе, а также, как использовать это средство выбора для перечисления POS-устройств с помощью одного из следующих способов:
@@ -60,9 +60,6 @@ string selector = POSPrinter.GetDeviceSelector(PosConnectionTypes.Local);
 > Инструкции по созданию более сложных строк средства выбора см. в разделе [Создание средства выбора устройств](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector).
 
 ## <a name="method-1-use-a-device-picker"></a>Метод 1: Использование средства выбора устройства
-
-> [!NOTE]
-> Этот метод требует последней [Предварительной оценки Windows SDK](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK).
 
 Класс [DevicePicker](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker) позволяет отображать всплывающий элемент выбора, содержащий список устройств для пользователя на выбор. Свойства [фильтра](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.filter) можно использовать для выбора типов устройств, чтобы показать в средстве выбора. Это свойство имеет тип [DevicePickerFilter](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter). Типы устройств можно добавить в фильтр, с помощью свойства [SupportedDeviceClasses](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses) или [SupportedDeviceSelectors](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors) .
 
