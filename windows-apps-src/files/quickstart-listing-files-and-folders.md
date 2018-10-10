@@ -16,11 +16,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 312e351a39bf291e1fcd21921230a73ed10cfd17
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468743"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501824"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Перечисление и запрос файлов и папок
 
@@ -46,7 +46,7 @@ ms.locfileid: "4468743"
 > [!NOTE]
 > Обязательно объявите возможность **picturesLibrary**.
 
-В этом примере мы сначала используем метод [**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) для получения всех файлов в корневой папке [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (не во вложенных папках) и перечислить имена всех файлов. Затем мы используем метод [**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) для получения всех вложенных папок в **PicturesLibrary** и перечислить имена каждой из вложенных папок.
+В этом примере мы сначала используем метод [**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) для получения всех файлов в корневой папке [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (не во вложенных папках) и перечислить имена всех файлов. Затем мы используем метод [**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) для получения всех вложенных папок в **PicturesLibrary** и перечислить имена каждой вложенной папки.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;

@@ -10,18 +10,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, аналитика xbox, аналитика xbox live, статистика xbox
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e69c41ec2ae6dface93b9f3148e699e448faa18
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462434"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498719"
 ---
 # <a name="xbox-analytics-report"></a>Аналитический отчет Xbox
 
 **Аналитический отчет Xbox** на информационной панели Центра разработки для Windows показывает статистику взаимодействия пользователей с возможностями вашей игры, предназначенными для Xbox. Также он содержит сведения о работоспособности службы, чтобы помочь в устранении ошибок клиента.
 
 > [!IMPORTANT]
-> Этот отчет доступен только при публикации игры для Xbox или игры, в которой используются службы Xbox Live. Чтобы сделать это, необходимо пройти [процесс утверждения концепции](../gaming/concept-approval.md), который включает в себя игры, опубликованные [Партнеры корпорации Майкрософт](../xbox-live/developer-program-overview.md#microsoft-partners) и отправленные [ ID@Xbox программы](../xbox-live/developer-program-overview.md#id). Игры, опубликованные в [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) в настоящее время не отображаются в этом отчете.
+> Этот отчет доступен только при публикации игры для Xbox или игры, в которой используются службы Xbox Live. Чтобы сделать это, вы должны пройти [процесс утверждения концепции](../gaming/concept-approval.md), который включает в себя игры, опубликованные [Партнеры корпорации Майкрософт](../xbox-live/developer-program-overview.md#microsoft-partners) и отправленные [ ID@Xbox программы](../xbox-live/developer-program-overview.md#id). Игры, опубликованные в [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) в настоящее время не видны в этом отчете.
 
 Просмотреть **аналитический отчет Xbox** можно в левом меню навигации игры: разверните элемент **Аналитика** и выберите пункт **Аналитика Xbox**.  Можно просмотреть эти данные на информационной панели или [скачать отчет](download-analytic-reports.md), чтобы просмотреть его в автономном режиме.
 

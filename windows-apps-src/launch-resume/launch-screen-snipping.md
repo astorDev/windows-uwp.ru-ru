@@ -1,7 +1,7 @@
 ---
 author: QuinnRadich
 title: Запуск выделения экрана
-description: В этом разделе описываются схемы URI ms-screenclip и ms-screensketch. Ваше приложение может использовать эти схемы URI для запуска приложения фрагмент & эскиза или, чтобы открыть новый фрагмент.
+description: В этом разделе описываются схемы URI ms-screenclip и ms-screensketch. Ваше приложение может использовать эти схемы URI для запуска приложения фрагмент & эскиза или открытие нового фрагмент.
 ms.author: quradic
 ms.date: 8/1/2017
 ms.topic: article
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, uri, фрагмент, эскиза
 ms.localizationpriority: medium
 ms.openlocfilehash: e18662125ef72051a289b3f1d0f3dc09b452d256
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469710"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502380"
 ---
 # <a name="launch-screen-snipping"></a>Запуск выделения экрана
 
@@ -22,18 +22,18 @@ ms.locfileid: "4469710"
 
 ## <a name="open-a-new-snip-from-your-app"></a>Откройте новый фрагмент из вашего приложения
 
-**Ms-screenclip:** URI позволяет вашему приложению, чтобы автоматически открывать и начать новый фрагмент. Итоговый фрагмент копируется в буфер обмена пользователя, но не передаются автоматически обратно в открывающего приложения.
+**Ms-screenclip:** URI позволяет вашему приложению, чтобы автоматически открывать и начать новый фрагмент. Полученный фрагмент копируется в буфер обмена пользователя, но не передается автоматически возвращается открывающего приложения.
 
 **ms-screenclip:** принимает следующие параметры:
 
 | Параметр | Тип | Обязательный | Описание |
 | --- | --- | --- | --- |
 | источник | string | нет | Свободный строка для указания источника, который запустил URI. |
-| delayInSeconds | int | нет | Значение целое число от 1 до 30. Задержка в полной секунд между вызовом URI и начала выделения. |
+| delayInSeconds | int | нет | Целое число, от 1 до 30. Задержка в полной секунд, вызов URI, когда начинается выделения. |
 
 ## <a name="launching-the-snip--sketch-app"></a>Запуск фрагмент и эскиз приложений
 
-**Ms-screensketch:** URI позволяет программными средствами запуска приложения фрагмент и эскиз и откройте определенного изображения из этого приложения для аннотации.
+**Ms-screensketch:** URI позволяет программными средствами запуска приложения фрагмент и эскиз и откройте определенного изображения из этого приложения для заметок.
 
 **ms-screensketch:** принимает следующие параметры:
 
@@ -43,7 +43,7 @@ ms.locfileid: "4469710"
 | источник | string | нет | Свободный строка для указания источника, который запустил URI. |
 | isTemporary | bool | нет | Если задано значение True, наброска экрана пытается удалить файл после его открытия. |
 
-В следующем примере вызывается метод [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) для отправки изображения эскиза & фрагмент из приложения для пользователя.
+Следующий пример вызывает метод [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) для отправки образа фрагмент & эскиза из приложения для пользователя.
 
 ```csharp
 

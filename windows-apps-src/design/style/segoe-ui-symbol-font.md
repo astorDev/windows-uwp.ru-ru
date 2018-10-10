@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ac0b2094b17120af8a0c85505cd03af389f1f4
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462685"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501496"
 ---
 # <a name="segoe-mdl2-icons"></a>Значки Segoe MDL2
 
@@ -59,7 +59,7 @@ ms.locfileid: "4462685"
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-Вы также можете использовать статический ресурс `SymbolThemeFontFamily` для получения доступа к **Segoe MDL2 Assets**, вместо указания шрифта по имени:
+Вы также можете использовать статический ресурс `SymbolThemeFontFamily` доступа к **Segoe MDL2 Assets**, вместо указания шрифта по имени:
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
@@ -67,7 +67,7 @@ ms.locfileid: "4462685"
 
 ## <a name="how-do-i-get-this-font"></a>Как получить этот шрифт?
 * В Windows 10: Нет ничего, что нужно сделать, шрифт поставляется вместе с Windows.
-* На компьютере Mac, вам необходимо загрузить и установить шрифт: <a href="https://aka.ms/SegoeFonts">Получение Segoe UI и MDL2 шрифты значков</a>
+* На компьютере Mac, необходимо загрузить и установить шрифт: <a href="https://aka.ms/SegoeFonts">Получение Segoe UI и MDL2 шрифты значков</a>
 
 ## <a name="icon-list"></a>Список значков
 Помните, здесь по причине нехватки места показаны не все значки шрифта **Segoe MDL2 Assets** — их гораздо больше. Большая часть значков применяется со специальной целью, и обычно такие значки больше нигде не используются.
@@ -4746,7 +4746,7 @@ ms.locfileid: "4462685"
  </tr>
 <tr><td><img src="images/segoe-mdl/F540.png" width="32" height="32" alt="Safe" /></td>
   <td>F540</td>
-  <td>Безопасные</td>
+  <td>Безопасный</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F552.png" width="32" height="32" alt="LaptopSecure" /></td>
   <td>F552</td>

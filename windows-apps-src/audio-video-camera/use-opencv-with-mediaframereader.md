@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
 ms.openlocfilehash: 43545f2a8e1965124560479d399df79d247c5f05
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471760"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500193"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Использование библиотеки компьютерного зрения с открытым исходным кодом (OpenCV) с MediaFrameReader
 
@@ -32,7 +32,7 @@ ms.locfileid: "4471760"
 
 Помимо этих статей, чтобы просмотреть и скачать полный рабочий пример сценария, описанного в этой статье, см. раздел [Пример кадров камеры + OpenCV](https://go.microsoft.com/fwlink/?linkid=854003) в репозитории универсальных примеров Windows на GitHub.
 
-Чтобы начать разработку быстро, вы можете включить библиотеку OpenCV в проект приложения UWP с помощью пакетов NuGet, но эти пакеты не может пройти процесс certficication приложения при отправке приложения в Store, поэтому рекомендуется загрузить OpenCV Библиотека исходный код и сборки двоичных файлов вручную перед отправкой своего приложения. Сведения по разработке с помощью OpenCV можно найти на сайте [http://opencv.org](http://opencv.org)
+Для начала разработки быстро можно включить библиотеку OpenCV в проект приложения UWP с помощью пакетов NuGet, но эти пакеты не может пройти процесс certficication приложения, при отправке приложения в Store, поэтому рекомендуется загрузить OpenCV Библиотека исходный код и сборки двоичных файлов вручную перед отправкой своего приложения. Сведения по разработке с помощью OpenCV можно найти на сайте [http://opencv.org](http://opencv.org)
 
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>Реализация компонента среды выполнения Windows с собственным кодом OpenCVHelper

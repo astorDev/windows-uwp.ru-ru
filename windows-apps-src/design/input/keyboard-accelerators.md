@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b4693c4ed6c02db9e4fe3f5f7fee6fe569c0e79
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465464"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500538"
 ---
 # <a name="keyboard-accelerators"></a>Ускорители клавиатуры
 
@@ -252,7 +252,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="override-default-keyboard-behavior"></a>Переопределение поведения клавиатуры по умолчанию
 
-В некоторых случаях может потребоваться переопределить поведение по умолчанию специальные клавиши, такие как клавиша Backspace или клавишу ВВОД. Например: 
+В некоторых случаях может потребоваться переопределить поведение по умолчанию для определенных клавиши, такие как клавиша Backspace или клавишу ВВОД. Например: 
 
 ## <a name="disable-a-keyboard-accelerator"></a>Отключение ускорителя клавиатуры 
 
@@ -359,7 +359,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 Так как обычно ускорители клавиатуры не описаны непосредственно в пользовательском интерфейсе приложения UWP, можно улучшить их обнаружение с помощью [подсказок](../controls-and-patterns/tooltips.md), которые автоматически появляются, когда пользователь перемещает фокус, нажимает и удерживает кнопку мыши или наводит указатель мыши на элемент управления. Всплывающая подсказка помогает определить, есть ли у элемента управления связанные с ним ускорители клавиатуры, и если они есть — указывает, какая для этого используется клавиша ускорителя клавиатуры.
 
-**Windows 10, версия 1803 (обновление за апрель 2018 г.) и более поздних версиях**
+**Windows 10, версия 1803 (обновление за апрель 2018 г.) и более поздних версий**
 
 По умолчанию когда объявляются сочетания клавиш, все элементы управления (за исключением [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) предоставляют соответствующие сочетания клавиш в подсказке.
 
@@ -370,10 +370,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 *Комбинация сочетаний клавиш в подсказке*
 
-Для [кнопки](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button) [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)и [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) объектов ускоритель клавиатуры добавляется в подсказке по умолчанию элемента управления. Для [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) объекты, ускоритель клавиатуры отображается с текстом всплывающий элемент.
+Для [кнопки](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button) [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)и [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) объектов ускоритель клавиатуры добавляется к подсказки по умолчанию элемента управления. [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) объекты, ускоритель клавиатуры отображается текст всплывающий элемент.
 
 > [!NOTE]
-> Указание подсказки (см. Button1 в следующем примере) переопределяет это поведение.
+> Указание подсказки (см. раздел Button1 в следующем примере) переопределяет это поведение.
 
 ```xaml
 <StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">

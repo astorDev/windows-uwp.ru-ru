@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ec6b2a31f4f577de30dac1c96a411c6aee6e9dc
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468450"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504221"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Индексаторы для конкретных форматов MakePri.exe
 
 В этом разделе описываются специальные индексаторы, которые используются средством [MakePri.exe](compile-resources-manually-with-makepri.md) для создания указателя ресурсов.
 
 > [!NOTE]
-> MakePri.exe устанавливается при проверке параметр **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается на путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также, как показано в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe устанавливается во время проверки параметр **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается на путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 MakePri.exe обычно используется вместе с командами `new`, `versioned` и `resourcepack`. См. [Параметры командной строки MakePRI.exe](makepri-exe-command-options.md). В таких случаях программа индексирует исходные файлы, чтобы создать индекс ресурсов. MakePri.exe использует различные отдельные индексаторы для чтения различных исходных файлов ресурсов или контейнеров для ресурсов. Самый простой индексатор — это индексатор папки, который индексирует содержимое папки, например изображения в форматах `.jpg` или `.png`.
 

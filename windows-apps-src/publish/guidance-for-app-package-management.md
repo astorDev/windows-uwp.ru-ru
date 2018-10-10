@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a43f3b4c5684d93ea6986c4d1f1e4dae46c1a959
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469650"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498184"
 ---
 # <a name="guidance-for-app-package-management"></a>Руководство по управлению пакетами приложения
 
@@ -99,7 +99,7 @@ ms.locfileid: "4469650"
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>Удаление пакетов для ранее поддерживавшегося семейства устройств
 
-Если вы удалите все пакеты для определенного [семейства устройств](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) , ваше приложение ранее поддерживается, вам будет предложено подтвердить, что это свои действия, прежде чем вы сможете сохранить внесенные изменения на странице " **пакеты** ".
+При удалении всех пакетов для определенного [семейства устройств](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) , ваше приложение ранее поддерживается, вам будет предложено подтвердить, что это свои действия, прежде чем вы сможете сохранить внесенные изменения на странице " **пакеты** ".
 
 При публикации отправки, удаляющей все пакеты, которые могут выполняться на семейство устройств, ранее поддерживавшегося вашим приложением, новые клиенты не смогут приобрести приложение на этом семействе устройств. В дальнейшем вы можете в любое время опубликовать еще одно обновление, что вернуть пакеты для этого семейства устройств.
 

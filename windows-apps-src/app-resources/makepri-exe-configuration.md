@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 512880b7a7ea955a45697762cbbdb7f74ac70102
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461476"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500333"
 ---
 # <a name="makepriexe-configuration-file"></a>Файл конфигурации MakePri.exe
 
 В этом разделе описывается схема XML-файла конфигурации [MakePri.exe](compile-resources-manually-with-makepri.md); который также называют файлом конфигурации PRI. Средство MakePri.exe поддерживает [команду createconfig](makepri-exe-command-options.md#createconfig-command), которую можно использовать для создания нового инициализированного файла конфигурации PRI.
 
 > [!NOTE]
-> MakePri.exe устанавливается при проверке параметр **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается на путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также, как показано в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe устанавливается во время проверки параметр **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается на путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 В файле конфигурации PRI задается, какие ресурсы индексируются и каким образом. XML-файл конфигурации должен соответствовать следующей схеме.
 

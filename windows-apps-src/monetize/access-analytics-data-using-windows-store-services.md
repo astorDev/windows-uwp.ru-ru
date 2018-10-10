@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, службы Store, API аналитики дляMicrosoft Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 26bed64053e8de9a42ac01ed3262c7b0f41d1d42
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462951"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4503455"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Доступ к аналитическим данным с помощью служб Магазина
 
@@ -86,7 +86,7 @@ grant_type=client_credentials
 |---------------|--------------------|
 | Приобретение, преобразования, установки и использования |  <ul><li>[Получение сведений о покупках приложения](get-app-acquisitions.md)</li><li>[Получение данных воронки приобретений приложения](get-acquisition-funnel-data.md)</li><li>[Получение преобразований приложения по каналу](get-app-conversions-by-channel.md)</li><li>[Получение сведений о приобретениях надстройки](get-in-app-acquisitions.md)</li><li>[Получение сведений о приобретениях надстройки с подпиской](get-subscription-acquisitions.md)</li><li>[Получение конверсий надстройки по каналу](get-add-on-conversions-by-channel.md)</li><li>[Получение сведений об установках приложения](get-app-installs.md)</li><li>[Получение сведений о ежедневном использовании приложения](get-app-usage-daily.md)</li><li>[Получение сведений о ежемесячном использовании приложения](get-app-usage-monthly.md)</li></ul> |
 | Ошибки приложения | <ul><li>[Получение данных отчетов об ошибках](get-error-reporting-data.md)</li><li>[Получение сведений об ошибке в приложении](get-details-for-an-error-in-your-app.md)</li><li>[Получение трассировки стека при возникновении ошибки в приложении](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[Скачивание CAB-файла для ошибки в приложении](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
-| Дополнительная информация | <ul><li>[Получение аналитических данных о вашем приложении](get-insights-data-for-your-app.md)</li></ul>  |
+| Аналитика | <ul><li>[Получение аналитических данных о вашем приложении](get-insights-data-for-your-app.md)</li></ul>  |
 | Оценки и отзывы | <ul><li>[Получение сведений об оценках приложения](get-app-ratings.md)</li><li>[Получение отзывов о приложении](get-app-reviews.md)</li></ul> |
 | Реклама в приложении и рекламные кампании | <ul><li>[Получение данных об эффективности рекламы](get-ad-performance-data.md)</li><li>[Получение данных об эффективности рекламной кампании](get-ad-campaign-performance-data.md)</li></ul> |
 
@@ -99,7 +99,7 @@ grant_type=client_credentials
 | Установки |  <ul><li>[Получение установок классического приложения](get-desktop-app-installs.md)</li></ul> |
 | Блоки |  <ul><li>[Получение блоков обновлений для классического приложения](get-desktop-block-data.md)</li><li>[Получение сведений о блоках обновлений для классического приложения](get-desktop-block-data-details.md)</li></ul> |
 | Ошибки приложений |  <ul><li>[Получение данных отчетов об ошибках для классического приложения](get-desktop-application-error-reporting-data.md)</li><li>[Получение сведений об ошибке в классическом приложении](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Получение трассировки стека при возникновении ошибки в классическом приложении](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Скачивание CAB-файла для ошибки в классическом приложении](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
-| Дополнительная информация | <ul><li>[Получение аналитических данных о классическом приложении](get-insights-data-for-your-desktop-app.md)</li></ul>  |
+| Аналитика | <ul><li>[Получение аналитических данных о классическом приложении](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>Методы для служб Xbox Live
 
@@ -121,7 +121,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-hardware-and-drivers"></a>Методы для оборудования и драйверов
 
-Учетных записей разработчиков, которые связаны с [программой центра разработки оборудования Windows](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) иметь доступ к дополнительный набор методов для извлечения аналитических данных по оборудования и драйверов. Дополнительные сведения см. в разделе [панели мониторинга оборудования API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
+Учетных записей разработчиков, которые связаны с [программой центра разработки оборудования Windows](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) иметь доступ к дополнительный набор методов для извлечения аналитических данных по оборудования и драйверов. Дополнительные сведения см. в разделе [мониторинга оборудования API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
 
 ## <a name="code-example"></a>Пример кода
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471026"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499990"
 ---
 # <a name="debug-a-background-task"></a>Отладка фоновой задачи
 
@@ -34,7 +34,7 @@ ms.locfileid: "4471026"
 
 -   Для приложений на языках C# и C++ основной проект должен ссылаться на проект фоновой задачи. Если такой ссылки нет, то фоновая задача не будет включена в пакет приложения.
 -   В коде на языке C# или C++ параметр **Тип вывода** проекта фоновой задачи должен иметь значение "Компонент среды выполнения Windows".
--   Класс фоновой должен быть объявлен в атрибуте точки входа в манифесте пакета.
+-   Фонового класса должны объявляться в атрибут точки входа в манифесте пакета.
 
 ## <a name="trigger-background-tasks-manually-to-debug-background-task-code"></a>Ручная активация фоновых задач для отладки их кода
 

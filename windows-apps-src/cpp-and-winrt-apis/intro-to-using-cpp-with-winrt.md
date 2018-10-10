@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, введение
 ms.localizationpriority: medium
 ms.openlocfilehash: 7848a0b00e2f6a2bbaa84c413dc26f1ea7238e8e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462447"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4503306"
 ---
 # <a name="introduction-to-cwinrt"></a>Введение в C++/WinRT
 &nbsp;
@@ -42,9 +42,9 @@ C + +/ WinRT — Это рекомендуемая корпорацией Май
 Для шаблонов проектов C++/WinRT в Visual Studio, а также свойств и целей MSBuild C++/WinRT скачайте и установите [расширение Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix) из [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
 > [!NOTE]
-> Версия 1.0.181002.2 (или более поздней версии) из VSIX установлен, создав новый C + +/ WinRT проекта автоматически установит [пакет Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) для данного проекта. Пакет Microsoft.Windows.CppWinRT NuGet обеспечивает повышенную C + +/ WinRT проект поддержку при построении, что проект переносить с одного компьютера разработчика и агента построения (на котором только пакет NuGet, а не VSIX установлен).
+> Версия 1.0.181002.2 (или более поздней версии) из VSIX установлен, создав новый C + +/ WinRT проекта автоматически устанавливает [пакет Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) для данного проекта. Пакет Microsoft.Windows.CppWinRT NuGet обеспечивает повышенную C + +/ WinRT проекта построения поддержки, Создание проекта переносимые между компьютер для разработки и агента построения (на котором только пакет NuGet и не VSIX, установлены).
 >
-> Для существующего проекта&mdash;после установки версии 1.0.181002.2 (или более поздней версии) из VSIX&mdash;рекомендуется откройте проект в Visual Studio, щелкните **проект** \> **Управление пакетами NuGet …**  \>  **Обзор**, введите или вставьте **Microsoft.Windows.CppWinRT** в поле поиска, выберите элемент в результатах поиска и нажмите кнопку **установки** для установки пакета для данного проекта.
+> Для существующего проекта&mdash;после установки версии 1.0.181002.2 (или более поздней версии) из VSIX&mdash;рекомендуется откройте проект в Visual Studio, щелкните **проект** \> **Управление пакетами NuGet …**  \> , **Обзор**, введите или вставьте **Microsoft.Windows.CppWinRT** в поле поиска, выбрать элемент в результатах поиска и нажмите кнопку **установить** для установки пакета для этого проекта.
 
 Вам потребуется Visual Studio 2017 (требуется по крайней мере версия 15,6, однако рекомендуется версия не младше 15.7) и Windows SDK версии 10.0.17134.0 (Windows 10, версия 1803). Если вы еще не установили его, необходимо установить параметр **Инструменты C++ универсальной платформы Windows** внутри установщика Visual Studio. И, в Windows **Параметры** > **обновление \ & безопасности** > **для разработчиков**, выберите режим **разработчика** , а не параметр **Неопубликованные приложения** .
 

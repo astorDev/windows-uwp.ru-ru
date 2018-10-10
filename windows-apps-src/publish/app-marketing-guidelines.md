@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470355"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502337"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store, маркетинг руководство по приложениям
 
@@ -45,9 +45,9 @@ ms.locfileid: "4470355"
 
 ## <a name="license-to-microsoft-marks"></a>Лицензия на маркировку Майкрософт
 
-*Маркировку Майкрософт* означает, что *эмблему Microsoft* , описанные на странице [генератором](http://go.microsoft.com/fwlink/p/?LinkID=534236) . Чтобы использовать эти эмблемы:
+*Маркировку Майкрософт* означает *эмблему Microsoft* , описанные на странице [генератором](http://go.microsoft.com/fwlink/p/?LinkID=534236) . Чтобы использовать эти эмблемы:
 
--   Сделайте свое приложение или другое содержимое доступным в Microsoft Store, или станьте участником [Партнерской программы Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=624463).
+-   Сделайте свое приложение или другое содержимое доступным в Microsoft Store или быть частью [Партнерской программы Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=624463).
 
 -   Если вы зарегистрированы в Центре разработки, выполните условия раздела [Лицензия на маркировку Майкрософт](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark) соглашения с разработчиком приложений.
 

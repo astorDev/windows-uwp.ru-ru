@@ -1,6 +1,6 @@
 ---
 author: eliotcowley
-title: Получение и распознавать данные считывателя магнитных карт
+title: Получение и понять данные считывателя магнитных карт
 description: Узнайте, как получить и интерпретировать данные от считывателя магнитных карт.
 ms.author: elcowle
 ms.date: 10/04/2018
@@ -10,28 +10,28 @@ ms.technology: uwp
 keywords: Windows 10, uwp, точка службы, pos, считыватель магнитных карт
 ms.localizationpriority: medium
 ms.openlocfilehash: ad954e8c03d92307fa72ead236d5428ac2bdddab
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463561"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498641"
 ---
-# <a name="obtain-and-understand-magnetic-stripe-data"></a>Получение и распознавать данные считывателя магнитных карт
+# <a name="obtain-and-understand-magnetic-stripe-data"></a>Получение и понять данные считывателя магнитных карт
 
-После настройки вашей считыватель магнитных карт в приложении с помощью действий, описанных в [Начало работы с POS-устройствами](pos-basics.md), вы готовы начать извлечение данных из него.
+После настройки вашей считыватель магнитных карт в приложении с помощью действий, описанных в [Начало работы с POS-устройствами](pos-basics.md), следует начать извлечение данных из него.
 
-## <a name="subscribe-to-datareceived-events"></a>Подпишитесь на * DataReceived событий
+## <a name="subscribe-to-datareceived-events"></a>Подпишитесь на * DataReceived события
 
 Всякий раз, когда средство чтения распознает карту перетаскиваемым, он вызовет одно из трех событий:
 
-* [Событие AamvaCardDataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): происходит при проведении автомобилей.
+* [Событие AamvaCardDataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): происходит, когда сдвинуты карту автомобилей.
 * [Событие BankCardDataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): происходит, когда сдвинуты на банковскую карту.
 * [Событие VendorSpecificDataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.vendorspecificdatareceived): происходит, когда сдвинуты зависящие от поставщика карты.
 
 Только приложению необходимо подписаться на события, которые поддерживаются считыватель магнитных карт. Вы можете увидеть, какие типы карт поддерживаются с помощью [MagneticStripeReader.SupportedCardTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes
 ).
 
-Приведенный ниже код демонстрирует подписка на три ***DataReceived** событий:
+В следующем коде показано, подписка на три ***DataReceived** событий:
 
 ```cs
 private void SubscribeToEvents(ClaimedMagneticStripeReader claimedReader, MagneticStripeReader reader)
@@ -80,13 +80,13 @@ private void Reader_BankCardDataReceived(
 }
 ```
 
-Тем не менее некоторые данные, включая все данные с помощью события **VendorSpecificDataReceived** , необходимо получить через объект **отчета** , который является свойством параметра *аргументов* . Это тип [MagneticStripeReaderReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport).
+Тем не менее некоторые данные, включая все данные из события **VendorSpecificDataReceived** , необходимо получить через объект **отчета** , который является свойством параметра *аргументов* . Это тип [MagneticStripeReaderReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport).
 
-Используйте свойство [CardType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.cardtype) , чтобы определить, какой тип карточки были сдвинуты и использовать, чтобы сообщать, как интерпретировать данные от [Track1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track1), [Track2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track2), [Track3](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track3)и [Track4](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track4).
+Используйте свойство [CardType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.cardtype) , чтобы определить, какой тип карты был сдвинуты и затем использовать, чтобы сообщать, как интерпретировать данные от [Track1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track1), [Track2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track2), [Track3](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track3)и [Track4](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track4).
 
-Данные в каждом из дорожки представлены в виде объектов [MagneticStripeReaderTrackData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata) . От этого класса можно получить следующие типы данных:
+Данные в каждом из дорожки представлены в виде объектов [MagneticStripeReaderTrackData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata) . Из этого класса вы можете получить следующие типы данных:
 
-* [Данные](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.data): необработанные или декодированные данные.
+* [Данные](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.data): raw или декодированные данные.
 * [DiscretionaryData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.discretionarydata): избирательной данных. 
 * [EncryptedData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.encrypteddata): зашифрованные данные.
 

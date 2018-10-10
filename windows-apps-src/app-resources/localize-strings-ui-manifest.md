@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471347"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4503699"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 Дополнительные сведения о преимуществах локализации приложений см. в разделе [Глобализация и локализация](../design/globalizing/globalizing-portal.md).
@@ -92,7 +92,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 Тот же самый код можно использовать из проекта с библиотекой классов (Universal Windows) или [библиотекой среды выполнения Windows (универсальная платформа Windows)](../winrt-components/index.md). Во время выполнения загружаются ресурсы приложения, в котором размещается библиотека. Рекомендуется, чтобы библиотека загружала ресурсы из приложения, в котором она расположена, поскольку выше вероятность, что это приложение локализовано в большей степени. Если библиотеке не требуется предоставлять ресурсы, то она должна обеспечить приложению возможность заменять их при вызове.
 
-Если имя ресурса отделен (он содержит «.» символов), затем замены точек с помощью косой черты («/») знаков в имени ресурса. Идентификаторы свойств, например, содержать несколько точек; Поэтому вам потребуется сделать это substition, чтобы загрузить один из них из кода.
+Если имя ресурса делится (он содержит «.» символов), затем заменить точек с помощью косой черты («/») знаков в имени ресурса. Идентификаторы свойств, например, содержать точек; Поэтому вам необходимо будет сделать это substition, чтобы загрузить один из них из кода.
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
@@ -175,7 +175,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 Если вы решите переместить ресурс AppDisplayName из `Resources.resw` в `ManifestResources.resw`, то в манифесте пакета приложения необходимо изменить `ms-resource:AppDisplayName` на `ms-resource:/ManifestResources/AppDisplayName`.
 
-Если имя файла ресурсов делится (он содержит «.» символов), оставьте точек в имени при создании ссылок. **Не** точек замените символы косой черты («/»), как и для имени ресурса.
+Если использованы имени файла ресурсов (он содержит «.» символов), оставьте точек в имени при ссылке. **Не** точек замените символы косой черты («/»), как и для имени ресурса.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
@@ -268,7 +268,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-Для библиотеки среды выполнения Windows (универсальное приложение Windows), если пространство имен по умолчанию отделен (он содержит «.» символов), затем используйте точек в имя карты ресурсов.
+Для библиотеки среды выполнения Windows (универсальное приложение Windows), если пространство имен по умолчанию делится (он содержит «.» символов), затем используйте точек в имя карты ресурсов.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");

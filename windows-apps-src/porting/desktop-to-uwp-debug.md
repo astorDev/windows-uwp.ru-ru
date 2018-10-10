@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: b5110eebde087593f07704e89c2e4708b2fcbb8b
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463515"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501470"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>Запуск, отладка и тестирование упакованного классического приложения
 
@@ -24,9 +24,9 @@ ms.locfileid: "4463515"
 
 <a id="run-app" />
 
-## <a name="run-your-application"></a>Запустите приложение
+## <a name="run-your-application"></a>Запуск приложения
 
-Можно запустить приложение для проверки, локально без необходимости получать сертификат и подписывать его. Способ запуска приложения зависит от инструмента, можно использовать для создания пакета.
+Можно запустить приложение для проверки, локально не обязательно получать сертификат и подписывать его. Способ запуска приложения зависит от инструмента, можно использовать для создания пакета.
 
 ### <a name="you-created-the-package-by-using-visual-studio"></a>Вы создали пакет с помощью Visual Studio
 
@@ -68,7 +68,7 @@ Add-AppxPackage –Register AppxManifest.xml
 
 #### <a name="modify-your-application-in-between-debug-sessions"></a>Изменение приложения между сеансами отладки
 
-В случае внесения изменений в приложение для устранения неполадок распакуйте его с помощью средства MakeAppx. См. раздел [Запуск средства MakeAppx](desktop-to-uwp-manual-conversion.md#make-appx).
+В случае внесения изменений в приложение для устранения неполадок, распакуйте его с помощью средства MakeAppx. См. раздел [Запуск средства MakeAppx](desktop-to-uwp-manual-conversion.md#make-appx).
 
 ### <a name="debug-the-entire-application-lifecycle"></a>Отладка весь жизненный цикл приложения
 
@@ -80,7 +80,7 @@ Add-AppxPackage –Register AppxManifest.xml
 
 ## <a name="test-your-app"></a>Тестирование приложения
 
-Чтобы протестировать приложение в реалистичной среде как подготовки к распространению, лучше всего подписать приложение и затем установить его.
+Чтобы протестировать приложение в реалистичной среде, как подготовки к распространению, лучше всего подписать приложение и затем установить его.
 
 ### <a name="test-an-application-that-you-packaged-by-using-visual-studio"></a>Тестирование приложения, упакованного с помощью Visual Studio
 

@@ -11,16 +11,16 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a07db357125d3f9cb35a5e133e9b0add350069
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468978"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502745"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Наборы инструментов для проектирования и образцы приложений UWP
  
 
-Проектирование и загрузки, связанные с пользовательского интерфейса для приложений проектирования Fluent и UWP. Дополнительные инструменты, такие как Visual Studio, можно найти <a href="https://developer.microsoft.com/downloads">на главной странице загружаемых файлов</a>. 
+Проектирование и загрузки, связанные с Пользовательским интерфейсом, для Fluent оформление и приложений UWP. Дополнительные инструменты, такие как Visual Studio, можно найти <a href="https://developer.microsoft.com/downloads">на главной странице загружаемых файлов</a>. 
 
 
 ## <a name="design-toolkits"></a>Наборы инструментов для проектирования
@@ -105,10 +105,10 @@ ms.locfileid: "4468978"
 
 ![Изображение VanArsdel](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-Пример приложения UWP начала до конца Van Arsdel, Ltd. был создан для демонстрации следующего поколения системы проектирования Fluent корпорации Майкрософт. В случае всесторонней широко используются улучшенные плотность и новые элементы управления в <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Библиотеку пользовательского интерфейса Windows</a> , а также важных базовых возможностей взаимодействия с пользователем платформы и композиции. В примере показано, как можно создавать широкий эффективной работы взаимодействие с для приобретения устройства IoT (в данном случае лампы) и управления ими.<br>
+Пример приложения UWP начала до конца Van Arsdel, Ltd. был создан для демонстрации следующего поколения системы проектирования Fluent корпорации Майкрософт. В случае всесторонней широко используются улучшенные плотность и новые элементы управления в <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Библиотеки пользовательского интерфейса Windows</a> , а также важных базовых возможностей взаимодействия с пользователем платформы и композиции. В примере показано, как вы можете создать сложное эффективной работы взаимодействие с для приобретения устройства IoT (в данном случае лампы) и управления ими.<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Скачать пример VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">Посмотреть пример VanArsdel на GitHub</a>
 
-![Создание образа приведите](images/buildcast.png)
+![создать образ приведения](images/buildcast.png)
 **BuildCast**<br>
 BuildCast — это пример начала до конца, созданный для демонстрации системы проектирования Fluent и UWP. Он позволяет искать, скачивать и воспроизводить видеоподкасты, включая подборку самых популярных подкастов Channel 9 и каналы некоторых технических экспертов по Windows. Он также поддерживает рукописные заметки, закладки и удаленное воспроизведение. Пример был первоначально показан на конференции Build 2017 г. во время обсуждения <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Создание потрясающих приложений с помощью системы проектирования Fluent</a>. <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">Скачать пример BuildCast</a> <br><a href="https://github.com/Microsoft/BuildCast">Посмотреть пример BuildCast на GitHub</a>

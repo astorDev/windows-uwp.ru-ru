@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
 ms.openlocfilehash: 2476161954c1d4d49fcf9f8f74cd1b7cf9180c0a
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463620"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498507"
 ---
 # <a name="author-apis-with-cwinrt"></a>Создание API-интерфейсов с помощью C++/WinRT
 
@@ -34,7 +34,7 @@ ms.locfileid: "4463620"
 > [!NOTE]
 > Сведения об установке и использовании расширения C++/WinRT для Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также свойств и целевых объектов MSBuild C++/WinRT) см. в разделе [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
-В Visual Studio, **Visual C++** > **Универсальные приложения для Windows** > **приложения основных компонентов (C + +/ WinRT)** шаблон **CoreApplication** иллюстрирует шаблон проекта. Шаблон начинается с передачи реализации [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) в [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run).
+В Visual Studio, **Visual C++** > **Универсальные** > **приложения основных компонентов (C + +/ WinRT)** шаблон **CoreApplication** иллюстрирует шаблон проекта. Шаблон начинается с передачи реализации [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) в [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run).
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
@@ -285,7 +285,7 @@ iclosable.Close();
 В случае, когда у вас есть объект интерфейса, и повлияет на том, что интерфейс от вашей реализации затем вы можете получить обратно с помощью шаблона функции [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) реализации. Опять же, это метод, который позволяет избежать вызовов виртуальных функций и перейти непосредственно к реализации.
 
 > [!NOTE]
-> Если вы еще не установили Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, затем необходимо вызвать [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) вместо [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self).
+> Если вы еще не установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, необходимо вызвать [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) вместо [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self).
 
 Вот пример. Существует еще один пример в [реализации класс пользовательского элемента управления **BgLabelControl** ](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
 

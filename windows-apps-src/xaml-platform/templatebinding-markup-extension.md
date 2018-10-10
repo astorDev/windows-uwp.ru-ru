@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465800"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501057"
 ---
 # <a name="templatebinding-markup-extension"></a>Расширение разметки {TemplateBinding}
 
@@ -65,7 +65,7 @@ ms.locfileid: "4465800"
 
 Свойство [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType) будет необходимо (обязательно) на [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) при использовании **x: Bind**.
 
-Теперь с поддержкой **x: Bind** можно использовать для обеих [привязки функций](../data-binding/function-bindings.md) как хорошо, как двусторонней привязки в [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)
+С поддержкой **x: Bind** теперь вы можете использовать оба [функции привязки](../data-binding/function-bindings.md) как хорошо, как двусторонней привязки в [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)
 
 В следующем примере TextBlock.Text равен Button.Content.ToString(). TargetType на ControlTemplate выступает в качестве источника данных и выполняет тот же результат TemplateBinding родительскому элементу.
 

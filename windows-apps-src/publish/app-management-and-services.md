@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472005"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509331"
 ---
 # <a name="app-management-and-services"></a>Управление приложениями и службы
 
@@ -29,7 +29,7 @@ ms.locfileid: "4472005"
 
 ## <a name="xbox-live"></a>Xbox Live
 
-Если вы публикуете игру, вы можете включить в [Xbox Live Creators Program](http://xbox.com/developers/creators-program) на этой странице. Это позволяет начать настройки и тестирования функций Xbox Live и в конечном итоге публикация игры Xbox Live Creators Program.
+Если вы публикуете игру, вы можете включить в [Xbox Live создателям программы](http://xbox.com/developers/creators-program) на этой странице. Это позволяет начать настройки и тестирования функций Xbox Live и в конечном итоге публикация игры Xbox Live Creators Program.
 
 Дополнительные сведения см. в разделе [Начало работы с Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) и [Создание новой игры Xbox Live Creators Program и публикация в тестовой среде](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
 
@@ -50,13 +50,13 @@ ms.locfileid: "4472005"
 
 ## <a name="product-collections-and-purchases"></a>Коллекции и покупки продуктов
 
-Чтобы использовать Microsoft Store, API коллекции и API покупок Microsoft Store для доступа к информации о принадлежности для приложений и надстроек, необходимо ввести связанные идентификаторы клиента Azure AD здесь. Заметьте, что для вступления изменений в силу может потребоваться до 16 часов.
+Чтобы использовать Microsoft Store, API коллекции и API покупок Microsoft Store для получения доступа к информации о владении продуктами приложений и надстроек, необходимо ввести связанные идентификаторы клиента Azure AD здесь. Заметьте, что для вступления изменений в силу может потребоваться до 16 часов.
 
 Дополнительные сведения см. в разделе [Управление правами на продукты из службы](../monetize/view-and-grant-products-from-a-service.md).
 
 ## <a name="administrator-consent"></a>Разрешения администратора
 
-f ваш продукт интегрируется с Azure AD и вызывать API, запрос [разрешения приложения или делегированные разрешения](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) , требующие разрешения администратора введите идентификатор клиента Azure AD. Это позволяет администраторам, которые приобретают приложения на предоставление согласия пользователя организации для вашего продукта действовать от имени всех пользователей в клиенте.
+f ваш продукт интегрируется с Azure AD и вызывать API, запросить [делегированные разрешения или разрешения приложения](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) , требующие разрешения администратора, введите идентификатор клиента Azure AD. Это позволяет администраторам, которые приобретают приложения для предоставления согласия пользователя организации для вашего продукта действовать от имени всех пользователей в клиенте.
 
 Дополнительные сведения см. в разделе [Запрос согласия для всей клиента](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
 
