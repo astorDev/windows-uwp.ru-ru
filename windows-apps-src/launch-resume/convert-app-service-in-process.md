@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10, uwp, службы приложений
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
-ms.openlocfilehash: a77ea3cefcc423e710ab0afebb3fa064e61507ec
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.openlocfilehash: d259df2a65046acb1c34dd2958ab4513bc31f43b
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4425416"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4471370"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>Преобразование службы приложений для ее запуска в одном процессе с ведущим приложением
 
@@ -47,6 +47,8 @@ ms.locfileid: "4425416"
 Второе изменение заключается в переносе логики службы из отдельного проекта фоновой задачи в методы, которые можно вызывать из метода **OnBackgroundActivated()**.
 
 Теперь приложение может напрямую выполнять службу приложения. Например в файле App.xaml.cs:
+
+[!NOTE] В приведенном ниже коде отличается от включенный пример 1 (служба вне процесса). В следующем примере кода предоставляется только для иллюстрации и не следует использовать как часть пример 2 (в работе службы).  Для перехода в статье из примера по-прежнему 1 (служба вне процесса), в примере 2 (в работе службы) продолжать использовать кодом, предоставленным в примере 1 вместо демонстрационных приведенный ниже код.
 
 ``` cs
 using Windows.ApplicationModel.AppService;
