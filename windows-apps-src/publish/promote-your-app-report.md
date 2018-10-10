@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, продвижение, приложение, кампания, отчеты, установки
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f63b53fca8a97c4f6e61aa38f45a749ca0621b
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464216"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505252"
 ---
 # <a name="ad-campaign-report"></a>Отчет о рекламной кампании
 
-Отчет о **рекламной кампании** на информационной панели центра разработки для Windows позволяет оценить эффективность ваших для приложения [рекламных кампаний](create-an-ad-campaign-for-your-app.md) . Чтобы просмотреть отчет, разверните **привлечение** в левом меню навигации и выберите **рекламных кампаний**.
+Отчет о **рекламной кампании** на информационной панели центра разработки для Windows позволяет узнать показатели [рекламных кампаний](create-an-ad-campaign-for-your-app.md) по продвижению приложения. Чтобы просмотреть отчет, разверните **привлечение** в левом меню навигации и выберите **рекламных кампаний**.
 
 ## <a name="definitions"></a>Определения
 

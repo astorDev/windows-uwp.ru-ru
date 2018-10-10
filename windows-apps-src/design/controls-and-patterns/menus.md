@@ -17,15 +17,15 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 20b6f54f39be116ad77cb5a179ff8c3d188eb8c4
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472391"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504618"
 ---
 # <a name="menus-and-context-menus"></a>Меню и контекстные меню
 
-В меню и контекстных меню отображается список команд или параметров, когда пользователь запрашивает их. Используйте всплывающий элемент меню для отображения одного, встроенного меню. Используйте меню для отображения набор меню в горизонтальной строке, обычно в верхней части окна приложения. Каждое меню может иметь элементов меню и подменю.
+В меню и контекстных меню отображается список команд или параметров, когда пользователь запрашивает их. Используйте всплывающий элемент меню для отображения одного, встроенного меню. Используйте меню для отображения набора меню в горизонтальной строке, обычно в верхней части окна приложения. Каждое меню может иметь вложенных меню и элементов меню.
 
 ![Пример типичного контекстного меню](images/contextmenu_rs2_icons.png)
 
@@ -35,7 +35,7 @@ ms.locfileid: "4472391"
 
 | **API-интерфейсы платформы** | **API библиотеки пользовательского интерфейса Windows** |
 | - | - |
-| [Класс MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [класс в строке](/uwp/api/windows.ui.xaml.controls.menubar), [свойство ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [свойство FlyoutBase.AttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [Класс в строке](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [Класс MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [класс в строке](/uwp/api/windows.ui.xaml.controls.menubar), [свойство ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [свойство FlyoutBase.AttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [Класс строки меню](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -45,15 +45,15 @@ ms.locfileid: "4472391"
 
 ### <a name="menubar-vs-menuflyout"></a>В строке и MenuFlyout
 
-Для отображения меню во всплывающем элементе, присоединенного к элементу пользовательского интерфейса на холсте, используйте элемент управления MenuFlyout для размещения вашего элементов меню. Вы можете вызывать всплывающее меню, как обычный меню или контекстного меню. Всплывающее меню размещается одного меню верхнего уровня (и дополнительных дочерних меню).
+Для отображения меню в всплывающий элемент, подключенные к элементу пользовательского интерфейса на холст, используйте элемент управления MenuFlyout для размещения своих элементов меню. Вы можете вызывать всплывающее меню, как обычный меню или контекстного меню. Всплывающее меню размещается одного меню верхнего уровня (и дополнительных дочерних меню).
 
 Для отображения набора нескольких меню верхнего уровня в горизонтальной строке, используйте меню. Обычно располагаются в строке меню в верхней части окна приложения.
 
 ### <a name="menubar-vs-commandbar"></a>В строке и CommandBar
 
-В строке и CommandBar оба представляют поверхностей, которые можно использовать для предоставления пользователям команд. В строке предоставляет быстрый и простой способ предоставления набор команд для приложений, которые могут потребоваться дополнительные организации или группы, чем позволяет CommandBar.
+В строке и CommandBar оба представления поверхности, которые можно использовать для предоставления пользователям команд. В строке предоставляет быстрый и простой способ отображения набор команд для приложений, которые могут потребоваться дополнительные организации или группы, чем позволяет CommandBar.
 
-Также можно использовать в строке вместе с CommandBar. Используйте в строке для предоставления большую часть команды и CommandBar для выделения наиболее часто используемых команд.
+Также можно использовать в строке вместе с CommandBar. Используйте строки меню для предоставления большую часть команды и CommandBar для выделения наиболее часто используемых команд.
 
 ## <a name="examples"></a>Примеры.
 
@@ -129,7 +129,7 @@ ms.locfileid: "4472391"
 ````
 
 > [!TIP]
-> Размер значков в MenuFlyoutItem — 16 x 16 пикселей. Если вы используете SymbolIcon, FontIcon или PathIcon, значок автоматически масштабируется до правильного размера без потери качества. При использовании BitmapIcon убедитесь, что ваше средство равно 16x16 пикселей.  
+> Размер значков в MenuFlyoutItem составляет 16 x 16 пикселей. Если вы используете SymbolIcon, FontIcon или PathIcon, значок автоматически масштабируется до правильного размера без потери качества. При использовании BitmapIcon убедитесь, что ваше средство равно 16x16 пикселей.  
 
 ## <a name="create-a-menu-flyout-or-a-context-menu"></a>Создание всплывающего меню или контекстного меню
 
@@ -141,7 +141,7 @@ ms.locfileid: "4472391"
 - [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx)— включения или отключения параметра;
 - [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)— визуального разделения элементов меню.
 
-В этом примере создает [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) и использует свойство [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) , доступное для большинства элементов управления, чтобы показать MenuFlyout как контекстного меню.
+В этом примере создается [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) и использует свойство [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) , доступное для большинства элементов управления, чтобы показать MenuFlyout как контекстного меню.
 
 ````xaml
 <Rectangle
@@ -221,12 +221,12 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 > **Предварительный просмотр**: в строке требуется [последние сборки Windows 10 Insider Preview и пакет SDK](https://insider.windows.com/for-developers/) или [Библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-Используйте те же элементы для создания меню в строке меню как всплывающее меню. Тем не менее вместо группирование объектов MenuFlyoutItem в MenuFlyout, можно сгруппировать необходимые процедуры в элементе MenuBarItem. Каждый MenuBarItem добавляется в строке меню верхнего уровня.
+Используйте те же элементы для создания меню в строке меню как всплывающее меню. Тем не менее вместо группирование объектов MenuFlyoutItem в MenuFlyout, можно сгруппировать их в элементе MenuBarItem. Каждый MenuBarItem добавляется в строке меню верхнего уровня.
 
 ![Пример панели меню](images/menu-bar-submenu.png)
 
 > [!NOTE]
-> В этом примере показано, как только для создания со структурой пользовательского интерфейса, но не показывать реализации всех команд.
+> В этом примере показано, как только для создания структуры пользовательского интерфейса, но не показывать реализации всех команд.
 
 ```xaml
 <MenuBar>
@@ -263,4 +263,4 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ## <a name="related-articles"></a>Смежные разделы
 
 - [Класс MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)
-- [Класс в строке](/uwp/api/Windows.UI.Xaml.Controls.MenuBar)
+- [Класс строки меню](/uwp/api/Windows.UI.Xaml.Controls.MenuBar)

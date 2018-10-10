@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, монетизация, привлечение, продвижение, службы Магазина
 ms.localizationpriority: medium
 ms.openlocfilehash: 02ef073e319af3fe2cf3bdd7906a7027200c4854
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4460768"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505906"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Монетизация, привлечение и службы Магазина
 
@@ -36,7 +36,7 @@ Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK и Microsof
 | [Регистрация пользовательских событий в журнале для Центра разработки](log-custom-events-for-dev-center.md)  | Регистрируйте пользовательские события из приложения UWP в журнале и просматривайте эти события в [Отчете об использовании](../publish/usage-report.md) в информационной панели Центра разработки. Для этой функции требуется пакет Microsoft Store Services SDK. |
 | [Запрос оценок и отзывов](request-ratings-and-reviews.md) |  Побудите пользователей оставить оценки или отзывы на ваше приложение, отображая программными средствами пользовательский интерфейс для оценок и отзывов.  |
 | [Службы Microsoft Store](using-windows-store-services.md)    |  Узнайте, как использовать API-интерфейсы RESTful для автоматизации процесса отправок в Магазин, осуществления доступа к аналитическим данным ваших приложений, а также автоматизации выполнения других задач, связанных с Магазином.    |
-| [Добавление функций розничных магазинах (RDX) в приложение](retail-demo-experience.md)        |  Включите коммерческом режиме демонстрации в приложении для Windows, таким образом пользователи, которые испытать компьютеров и устройств на продажу низ можно перейти непосредственно к.  |
+| [Добавление функций розничных магазинах (RDX) в приложение](retail-demo-experience.md)        |  Включите режим розничных магазинах в приложении для Windows, таким образом пользователей, компьютеров и устройств на продажу низ можно перейти непосредственно к.  |
 
 ## <a name="related-topics"></a>Статьи по теме
 
