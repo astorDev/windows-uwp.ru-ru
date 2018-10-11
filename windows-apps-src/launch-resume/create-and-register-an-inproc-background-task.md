@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, фоновой задачи
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 5879977662dc2bd609d09e5fe53fc2a2f0b9180f
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4505926"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4535699"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>Создание и регистрация фоновой задачи, выполняемой внутри процесса
 

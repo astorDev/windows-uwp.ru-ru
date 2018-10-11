@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, регистрация, учетная запись разработчика
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ed54f1df2ace18d06f9273fb9e26459907f8542
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4507006"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4533814"
 ---
 # <a name="create-a-developer-account"></a>Создание учетной записи разработчика
 

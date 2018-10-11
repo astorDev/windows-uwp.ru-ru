@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, продажа надстроек, приобретение надстроек, продажи продуктов в приложении, продукты в приложении, iaps, надстройки
 ms.localizationpriority: medium
 ms.openlocfilehash: 019bb410e6ac65f9951f06052c78f40e9a5f32e2
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4509248"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4531255"
 ---
 # <a name="add-on-acquisitions-report"></a>Отчет о приобретении надстроек
 
