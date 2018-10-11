@@ -12,17 +12,17 @@ keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: fadd9c2b6a35a1418a782ab0a6ef419e3f127f42
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470269"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506850"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Интеграция упакованного классического приложения с Windows 10
 
 Используйте расширения для интеграции вашего упакованного классического приложения с Windows 10 предопределенными способами.
 
-Например используйте расширение исключение брандмауэра, сделать приложение приложение по умолчанию для типа файлов или определить плитки начального экрана на упакованную версию вашего приложения. Чтобы использовать расширение, просто добавьте разметку XML в файл манифеста пакета приложения. Никакой код не требуется.
+Например используйте расширение исключение брандмауэра, сделать ваше приложение приложение по умолчанию для типа файлов или определить плитки начального экрана на упакованную версию вашего приложения. Чтобы использовать расширение, просто добавьте разметку XML в файл манифеста пакета приложения. Никакой код не требуется.
 
 В этой статье описаны эти расширения и задачи, которые можно выполнить с их помощью.
 
@@ -96,7 +96,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="make-your-packaged-application-open-files-instead-of-your-desktop-app"></a>Сделать ваше упакованное приложение открывать файлы вместо классического приложения
 
-Можете убедиться, что пользователи открывают нового упакованного приложения по умолчанию для определенных типов файлов вместо открытия классическую версию вашего приложения.
+Можно убедитесь, что пользователи открывают нового упакованного приложения по умолчанию для определенных типов файлов, вместо открытия классическую версию вашего приложения.
 
 Для этого укажите [программный идентификатор (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) каждого приложения, из которого необходимо наследовать сопоставления файлов.
 
@@ -156,7 +156,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>Связать упакованного приложения с набором типов файлов
 
-Упакованные приложения могут связанные с расширениями типов файлов. Если пользователь щелкнет файл правой кнопкой мыши и затем выбирает **Открыть с помощью** параметра приложение появится в списке вариантов.
+Упакованные приложения могут связанные с расширениями типов файлов. Если пользователь щелкнет файл, а затем выбирает **Открыть с помощью** , приложение появится в списке вариантов.
 
 #### <a name="xml-namespace"></a>Пространство имен XML
 
@@ -282,7 +282,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="open-certain-types-of-files-directly-by-using-a-url"></a>Открытие определенных типов файлов напрямую с помощью URL-адреса
 
-Можете убедиться, что пользователи открывают нового упакованного приложения по умолчанию для определенных типов файлов вместо открытия классическую версию вашего приложения.
+Можно убедитесь, что пользователи открывают нового упакованного приложения по умолчанию для определенных типов файлов, вместо открытия классическую версию вашего приложения.
 
 #### <a name="xml-namespaces"></a>Пространства имен XML
 
@@ -307,7 +307,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |-------|-------------|
 |Категория |Всегда ``windows.fileTypeAssociation``.
 |Имя |Уникальный идентификатор для вашего приложения. |
-|UseUrl |Указывает, следует ли открывать файлы непосредственно из целевого URL-адреса. Если это значение не задано, попытки приложения открыть файл с помощью URL-адрес причина система сначала скачает этот файл локально. |
+|UseUrl |Указывает, следует ли открывать файлы непосредственно из целевого URL-адреса. Если это значение не задано, попытки приложения открыть файл с помощью серьезные URL-адрес, система сначала скачает этот файл локально. |
 |Parameters |Дополнительные параметры. |
 |FileType |Соответствующие расширения файлов. |
 
@@ -852,7 +852,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 ## <a name="start-your-application-in-different-ways"></a>Различные способы запуска приложения
 
 * [Запустите приложение с помощью протокола](#protocol)
-* [Запустите приложение с помощью псевдонима](#alias)
+* [Запуск приложения с помощью псевдонима](#alias)
 * [Запуск исполняемого файла при входе пользователей в Windows](#executable)
 * [Разрешите пользователям запускать приложение при подключении устройства к Компьютеру](#autoplay)
 * [Автоматический перезапуск после получения обновления из Microsoft Store](#updates)
@@ -909,9 +909,9 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 ```
 <a id="alias" />
 
-### <a name="start-your-application-by-using-an-alias"></a>Запустите приложение с помощью псевдонима
+### <a name="start-your-application-by-using-an-alias"></a>Запуск приложения с помощью псевдонима
 
-Пользователей и другие процессы могут использовать псевдоним можно запустить приложение без необходимости указывать полный путь к приложению. Вы можете указать имя этого псевдонима.
+Пользователей и другие процессы могут использовать псевдоним для запуска приложения не указывать полный путь к приложению. Вы можете указать имя этого псевдонима.
 
 #### <a name="xml-namespaces"></a>Пространства имен XML
 
@@ -1055,7 +1055,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |ContentEvent |Имя события содержимого, при котором ``ActionDisplayName``и ``ProviderDisplayName`` отправляют запрос пользователям. Событие содержимого возникает, когда к компьютеру подключается устройство тома, например карта памяти камеры, флэш-накопитель или DVD-диск. Полный список этих событий можно найти [здесь ](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference).  |
 |Verb |Параметр Verb определяет значение, передаваемое приложению для выбранного варианта. Для события автозапуска можно указать несколько действий при запуске и использовать параметр Verb, чтобы определить, какой вариант пользователь выбрал для приложения. Выбранный пользователем вариант можно узнать, проверив свойство verb аргументов события запуска, переданных приложению. Для параметра Verb можно использовать любое значение, кроме значения open, которое зарезервировано. |
 |DropTargetHandler |Идентификатор класса приложения, которое реализует интерфейс [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) . Файлы со съемного носителя передаются методу [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) вашей реализации [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017).  |
-|Параметры |Не требуется реализовывать интерфейс [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) для всех событий содержимого. Для любого из событий содержимого можно указать параметры командной строки вместо реализации интерфейса [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017). Для этих событий автозапуска запускать приложение с помощью этих параметров командной строки. Можно проанализировать эти параметры в коде инициализации приложения, чтобы определить, было ли оно запущено с помощью автозапуска, а затем предоставить пользовательскую реализацию. |
+|Параметры |Не требуется реализовывать интерфейс [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) для всех событий содержимого. Для любого из событий содержимого можно указать параметры командной строки вместо реализации интерфейса [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017). Для этих событий автозапуска будет запустить приложение с помощью этих параметров командной строки. Можно проанализировать эти параметры в коде инициализации приложения, чтобы определить, было ли оно запущено с помощью автозапуска, а затем предоставить пользовательскую реализацию. |
 |DeviceEvent |Имя события устройства, при котором ``ActionDisplayName``и ``ProviderDisplayName`` отправляют запрос пользователям. Событие устройства создается, если устройство подключено к ПК. События устройства начинаются со строки ``WPD`` и их можно найти [здесь](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference). |
 |HWEventHandler |Идентификатор класса приложения, которое реализует интерфейс [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) . |
 |InitCmdLine |Параметр строки, который требуется передать в метод [Initialize](https://msdn.microsoft.com/en-us/library/windows/desktop/bb775495.aspx) интерфейса [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx). |
@@ -1088,11 +1088,11 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 Если ваше приложение открыто, когда пользователи устанавливают обновление для него, приложение закрывается.
 
-Если вы хотите это приложение было перезапуститься после завершения обновления, вызовите функцию [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) в каждом процессе, который требуется перезапустить.
+Если требуется, чтобы это приложение было перезапуститься после завершения обновления, вызовите функцию [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) в каждом процессе, который требуется перезапустить.
 
 Каждое активное окно в приложении получает сообщение [WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx) . На этом этапе приложение может вызвать функцию [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) еще раз, чтобы при необходимости обновить командную строку.
 
-Когда каждое активное окно в приложении получает сообщение [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) , приложение должно сохранить данные и завершить работу.
+Когда каждое активное окно приложения получает сообщение [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) , приложение должно сохранить данные и завершить работу.
 
 >[!NOTE]
 Активные окна также получают сообщение [WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx) на случай, если приложение не обрабатывает сообщение [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) .
@@ -1113,7 +1113,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 ### <a name="make-your-application-appear-as-the-print-target-in-applications-that-support-printing"></a>Сделать ваше приложение отображалось как цель печати в приложениях, поддерживающих печать
 
-Когда пользователи хотят печать данных из другого приложения, такие как "Блокнот", его можно сделать ваше приложение отображалось как цель печати в приложении список доступных целевых объектов печати.
+Когда пользователи хотят печати данных из другого приложения, такие как "Блокнот", можно сделать ваше приложение отображалось как цель печати в приложении список доступных целевых объектов печати.
 
 Необходимо изменить приложение таким образом, чтобы оно получало данные для печати в формате XML Paper Specification (XPS).
 
@@ -1137,7 +1137,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 |-------|-------------|
 |Категория |Всегда ``windows.appPrinter``.
 |DisplayName |Имя, которое должно отображаться в списке целевых объектов печати для приложения. |
-|Parameters |Все параметры, которые требуются приложению для правильной обработки запроса. |
+|Parameters |Все параметры, которые вашему приложению требуется для правильной обработки запроса. |
 
 #### <a name="example"></a>Пример
 
@@ -1260,7 +1260,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
   </Applications>
 </Package>
 ```
-Это расширение может быть полезно, если вы хотите создать Windows пользовательский интерфейс универсальной платформы для работы на всех устройствах, но вы хотите, чтобы компоненты приложения Win32 продолжали работать с полным доверием.
+Это расширение может быть полезно, если вы хотите создать универсальной платформы пользовательский интерфейс Windows, работает на всех устройствах, но при этом необходимо компоненты приложения Win32 продолжали работать с полным доверием.
 
 Просто создайте пакета приложения для Windows для вашего приложения Win32. Затем добавьте это расширение в файл пакета вашего приложения UWP. Это расширение указывает, что вы хотите запустить исполняемый файл в пакете приложения для Windows.  Если вы хотите обмениваться данными между вашими приложениями UWP и Win32, для этого можно настроить одну или несколько [служб приложений](../launch-resume/app-services.md). Подробнее об этом сценарии см. [здесь](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
 

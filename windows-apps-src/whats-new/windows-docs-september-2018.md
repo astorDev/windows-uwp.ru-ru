@@ -10,15 +10,15 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f017dbb30586d3ec3c2da54d0f262c4b159328cc
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466668"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508229"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Что нового в документации для разработчиков Windows в сентябре 2018 г.
 
-Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. Обзоры, руководства для разработчиков и видео, которые стали доступны в сентября.
+Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. Обзоры, руководства для разработчиков и видео, которые стали доступны в намечен на сентябрь.
 
 [Установив средства и пакет SDK](http://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md), либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
@@ -26,7 +26,7 @@ ms.locfileid: "4466668"
 
 ### <a name="windows-machine-learning"></a>Машинное обучение Windows
 
-[Документы машинное обучение Windows](https://docs.microsoft.com/windows/ai/) теперь находятся на свой узел и обновляются при последнюю версию SDK программы предварительной оценки Windows. Существует рабочего стола и учебники по UWP на C++ и C# помогут вам начать добавление WinML в приложение.
+[Документы машинное обучение Windows](https://docs.microsoft.com/windows/ai/) теперь находятся на свой узел и обновляются последнюю версию SDK программы предварительной оценки Windows. Существует рабочего стола и учебники по UWP на C++ и C# помогут вам начать работу, добавление WinML к вашему приложению.
 
 [Справочник по API Windows.AI.MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning) был обновлен для последней версии SDK программы предварительной оценки Windows.
 
@@ -44,13 +44,13 @@ ms.locfileid: "4466668"
 
 ### <a name="how-blur-effects-work"></a>Как размытие рабочих эффектов
 
-Один из наших записи esteemed Джекобс Михаил, начнет серия статей на носителе о размытия из зрением фотографии для разработки приложений и игр. Если вы хотите узнать больше о это распространенная визуальный эффект, ознакомьтесь с [первой статьи на концепции и фотографии](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) и [второй сглаживание в графике.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+Один из наших записи esteemed Джекобс Михаил, начнет серия статей в средний о размытия, от концепции для фотографирования для разработки приложений и игр. Если вы хотите подробнее узнать об этом распространенная визуальный эффект, ознакомьтесь с [первой статьи на концепции и фотографии](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) и [второй сглаживание в графике.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
 ![Размытие в действии](images/blur-example.jpg)
 
 ### <a name="contributing-guidance"></a>Дополнение рекомендации
 
-Мы обновили [Наши рекомендации по вклад](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) для нашей документации UWP. Эти новые инструкции об рабочего процесса и ожидания для внешних вклад в нашей документации.
+Мы обновили [наши вклад рекомендации](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) для нашей документации UWP. Эти новые инструкции об рабочего процесса и ожиданиям для внешних вклад в нашей документации.
 
 ## <a name="videos"></a>Видеоролики
 
@@ -64,7 +64,7 @@ ms.locfileid: "4466668"
 
 Крис Heilmann
 
-* [4 видео о средстве webhint](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
+* [4 видео для средства webhint](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
 
 Ларри Osterman:
 

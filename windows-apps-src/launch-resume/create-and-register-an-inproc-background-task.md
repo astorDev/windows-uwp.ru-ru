@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, фоновой задачи
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 5879977662dc2bd609d09e5fe53fc2a2f0b9180f
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467726"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505926"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>Создание и регистрация фоновой задачи, выполняемой внутри процесса
 
@@ -72,7 +72,7 @@ ms.locfileid: "4467726"
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>Размещение кода фонового действия в методе OnBackgroundActivated()
 
-Поместите код фонового действия в [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) реагировать на ваш фоновый триггер при его срабатывании. **OnBackgroundActivated** можно рассматривать как [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). Метод имеет параметр [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) , который содержит все, что предоставляет метод **Run** . Например в файле App.xaml.cs:
+Поместите код фонового действия в [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) реагировать на ваш фоновый триггер при его срабатывании. **OnBackgroundActivated** можно рассматривать как [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). Метод имеет параметр [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) , который содержит все, что метод **Run** . Например в файле App.xaml.cs:
 
 ``` cs
 using Windows.ApplicationModel.Background;

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, упаковка, макет пакета, пакет активов
 ms.localizationpriority: medium
 ms.openlocfilehash: 31c27430c850f861c8b97863521202a6dcab80f7
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469921"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505896"
 ---
 # <a name="developing-with-asset-packages-and-package-folding"></a>Разработка пакетов активов 
 
@@ -36,7 +36,7 @@ ms.locfileid: "4469921"
 -   MyGame_1.0_language-fr.appx
 -   MyGame_1.0_language-de.appx
 
-Если игра устанавливается на компьютере пользователя, каждый файл пакета приложения будут иметь собственную папку в каталоге **WindowsApps** . Так, для французского пользователя с 64-разрядной Windows игра будет выглядеть следующим образом:
+Если игра устанавливается на компьютере пользователя, каждый файл пакета приложения будет иметь собственную папку в каталоге **WindowsApps** . Так, для французского пользователя с 64-разрядной Windows игра будет выглядеть следующим образом:
 
 ```example
 C:\Program Files\WindowsApps\

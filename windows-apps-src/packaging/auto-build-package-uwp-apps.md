@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462545"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507310"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Настройка автоматических сборок для приложения UWP
 
@@ -258,7 +258,7 @@ CI_MyUWPApp_1.1.2501.0
 
 Затем можно создать приложение HockeyApp вручную или загрузить существующий файл пакета приложения. Дополнительные сведения см. в разделе [Создание приложения.](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)  
 
-Чтобы использовать существующий файл пакета приложения, добавьте этап сборки и установите для параметра путь к двоичному файлу на этапе сборки. 
+Чтобы использовать существующий файл пакета приложения, добавьте этап сборки и задайте параметр путь к двоичному файлу на этапе сборки. 
 
 ![настройка hockey app](images/building-screen15.png) 
 
@@ -268,7 +268,7 @@ CI_MyUWPApp_1.1.2501.0
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUWPApp_$(AppxVersion)_x86_x64_ARM.appxbundle
 ```
 
-Хотя задача HockeyApp позволяет указать путь к файлу символов, рекомендуется включать символы в пакет.
+Несмотря на то, что задача HockeyApp позволяет указать путь к файлу символов, рекомендуется включать символы в пакет.
 
 ## <a name="set-up-a-continuous-deployment-build-that-submits-a-package-to-the-store"></a>Настройка сборки непрерывного развертывания, которая отправляет пакет в Store 
 
@@ -316,7 +316,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 Если вы хотите распространять приложение без публикации в Store, вы можете отправлять его непосредственно на устройства, если они доверяют сертификату, который использовался для подписи пакета приложения. 
 
-Используйте сценарий PowerShell `Add-AppDevPackage.ps1` для установки приложений. Этот сценарий добавить сертификат в разделе доверенного корневого центра сертификации локального компьютера и на ней затем установите или обновите файл пакета приложения.
+Используйте сценарий PowerShell `Add-AppDevPackage.ps1` для установки приложений. Этот сценарий будет добавить сертификат в разделе доверенного корневого центра сертификации локального компьютера и затем будет установите или обновите файл пакета приложения.
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>Загрузка неопубликованного приложения в юбилейном обновлении Windows 10
 В юбилейном обновлении Windows 10 можно дважды щелкните файл пакета приложения и установить приложение, нажав кнопку "установить" в диалоговом окне. 

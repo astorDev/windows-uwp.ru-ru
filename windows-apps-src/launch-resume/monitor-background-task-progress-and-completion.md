@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ef57c6293b37f91653b5f825881b1446e38a824b
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467443"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508710"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>Отслеживание хода выполнения и завершения фоновых задач
 
@@ -38,7 +38,7 @@ ms.locfileid: "4467443"
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>Создание обработчика событий для обработки завершенных фоновых задач
 
 ### <a name="step-1"></a>Шаг 1
-Создайте функцию обработчика событий для обработки завершенных фоновых задач. Этот код должен объем памяти, которая принимает объект [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) и [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) объекта.
+Создайте функцию обработчика событий для обработки завершенных фоновых задач. Этот код должен объем памяти, которая принимает объект [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) и [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) объекта.
 
 Используйте следующий объем памяти для **фоновых задач обработчика событий OnCompleted** .
 

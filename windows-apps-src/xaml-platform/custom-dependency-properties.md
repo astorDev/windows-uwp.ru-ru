@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468822"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506374"
 ---
 # <a name="custom-dependency-properties"></a>Пользовательские свойства зависимостей
 
@@ -170,14 +170,14 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 ```
 
 > [!NOTE]
-> Для C + +/ CX код, причину, почему у вас есть закрытое поле и открытое свойство только для чтения, которое поверхности [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) — таким образом, чтобы другие вызывающие стороны, которые используют ваше свойство зависимостей можно также использовать служебные API системы свойств, требуют открытый идентификатор. Если оставить идентификатор закрытым, то другие пользователи не смогут использовать служебные API. Примеры таких API и сценариев включают [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) или [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) (по выбору), [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) и [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). Для этого невозможно использовать открытое поле, поскольку правила метаданных среды выполнения Windows не допускают открытые поля.
+> Для C + +/ CX кода, причину, почему у вас есть закрытое поле и открытое свойство только для чтения, которое поверхности [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) является таким образом, чтобы другие вызывающие стороны, которые используют ваше свойство зависимостей можно также использовать служебные API системы свойств, требуют открытый идентификатор. Если оставить идентификатор закрытым, то другие пользователи не смогут использовать служебные API. Примеры таких API и сценариев включают [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) или [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) (по выбору), [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) и [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). Для этого невозможно использовать открытое поле, поскольку правила метаданных среды выполнения Windows не допускают открытые поля.
 
 ## <a name="dependency-property-name-conventions"></a>Соглашения об именовании свойств зависимостей
 
 Для свойств зависимостей существуют соглашения об именовании; следуйте им, если не возникает каких-либо исключительных обстоятельств. У самого свойства зависимостей имеется простое имя ("Label" в предыдущем примере), которое задается как первый параметр функции [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). Это имя должно быть уникально внутри каждого регистрирующего типа, и это требование уникальности также относится к любым унаследованным членам. Свойства зависимостей, унаследованные через базовые типы, уже считаются частью регистрирующего типа; имена унаследованных свойств нельзя зарегистрировать снова.
 
 > [!WARNING]
-> Несмотря на то, что имя, вы предоставляете, что здесь может быть любым идентификатором строки, допустимым при программировании на используемом языке, обычно необходимо иметь возможность задать свойство зависимостей в коде XAML. Для задания в XAML выбранное имя свойства должно быть допустимым именем XAML. Подробнее см. в разделе [Обзор XAML](xaml-overview.md).
+> Несмотря на то, что имя, необходимо предоставить здесь может быть любым идентификатором строки, допустимым при программировании на используемом языке, обычно необходимо иметь возможность задать свойство зависимостей в коде XAML. Для задания в XAML выбранное имя свойства должно быть допустимым именем XAML. Подробнее см. в разделе [Обзор XAML](xaml-overview.md).
 
 При создании свойства-идентификатора соедините имя свойства в том виде, в котором оно было зарегистрировано, с суффиксом "Property" (например, "LabelProperty"). Данное свойство является идентификатором для свойства зависимостей и используется в качестве входных данных для вызовов [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) и [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359), выполняемых в ваших оболочках свойств. Оно также используется системой свойств и другими обработчиками XAML, такими как [**{x:Bind}**](x-bind-markup-extension.md)
 
