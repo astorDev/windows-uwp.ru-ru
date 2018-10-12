@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, привязка, коллекция
 ms.localizationpriority: medium
 ms.openlocfilehash: 22594c1cfc503b28163d9fca1f46a6861a4f59ad
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4532868"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4564218"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>Элементы управления XAML; привязка к коллекции C++/WinRT
 
