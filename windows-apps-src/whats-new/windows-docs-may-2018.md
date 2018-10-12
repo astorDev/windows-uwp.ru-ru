@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 322bc056411095019dfc027078cbfef7de0883fb
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4529286"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4564324"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Что нового в документации для разработчиков Windows в мая 2018 г.
 

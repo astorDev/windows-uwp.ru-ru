@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, StartScreenManager, закрепление основной плитки, api основной плитки, проверка закрепления плитки, живая плитка
 ms.localizationpriority: medium
 ms.openlocfilehash: 42b4c014dfd49c42497b8846e37e37af53cc3885
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4539570"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4568973"
 ---
 # <a name="primary-tile-apis"></a>API для работы с основными плитками
  
