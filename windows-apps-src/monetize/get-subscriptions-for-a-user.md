@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 94B5B2E9-BAEE-4B7F-BAF1-DA4D491427D7
 description: Используйте этот метод в API покупок Microsoft Store для получения подписок, на которые имеет право определенный пользователь.
 title: Получение подписок для пользователя
-ms.author: mcleans
-ms.date: 03/16/2018
+ms.author: mhopkins
+ms.date: 07/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API покупок Microsoft Store, подписки
 ms.localizationpriority: medium
-ms.openlocfilehash: cebf4105d5e8b08f9b750f2a4938117dcd6fc084
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: c08964b991b0cecaef6d994d399ce97301a7e8e7
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664990"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612907"
 ---
 # <a name="get-subscriptions-for-a-user"></a>Получение подписок для пользователя
 
@@ -47,7 +47,7 @@ ms.locfileid: "1664990"
 
 | Заголовок         | Тип   | Описание      |
 |----------------|--------|-------------------|
-| Авторизация  | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;.                           |
+| Authorization  | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;.                           |
 | Host           | строка | Должен иметь значение **purchase.mp.microsoft.com**.                                            |
 | Content-Length | Число | Длина текста запроса.                                                                       |
 | Content-Type   | Строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
@@ -118,6 +118,7 @@ Host: https://purchase.mp.microsoft.com
 | autoRenew | Логическое |  Указывает, настроено ли в подписке автоматическое продление в конце текущего периода.   |
 | beneficiary | Строка |  Идентификатор бенефициара права, связанного с этой подпиской.   |
 | expirationTime | Строка | Дата и время завершения подписки в формате ISO 8601. Это поле доступно только при определенных состояниях подписки. Время окончания срока действия обычно означает окончание срока действия текущего состояния. Например, для активной подписки дата окончания срока действия указывает, когда произойдет следующее автоматическое продление.    |
+| expirationTimeWithGrace | string | Дата и время истечения срока действия подписки будет льготного периода, в том числе в формате ISO 8601. Это значение указывает, когда пользователь сможет получить доступ к подписки после сбоя для автоматического продления подписки.    |
 | id | Строка |  Идентификатор подписки. Используйте это значение для подписки, которую вы хотите изменить при вызове метода [изменение состояния выставления счетов подписки для пользователя](change-the-billing-state-of-a-subscription-for-a-user.md).    |
 | isTrial | Логическое |  Указывает, является ли подписка пробной версией.     |
 | lastModified | Строка |  Дата и время последнего изменения подписки в формате ISO 8601.      |

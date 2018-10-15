@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store, чтобы получить сводные данные отчетов об ошибках классического приложения в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение данных отчетов об ошибках для классического приложения
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, службы Store, API аналитики для Microsoft Store, ошибки, классическое приложение
 ms.localizationpriority: medium
-ms.openlocfilehash: 66594fd6f59281011fccab21ad5618827db322dd
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: d3f966d2026d32276fee2ed43a353c4a2898d6a1
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573828"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613449"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>Получение данных отчетов об ошибках для классического приложения
 

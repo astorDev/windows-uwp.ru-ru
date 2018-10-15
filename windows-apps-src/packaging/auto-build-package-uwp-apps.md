@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564637"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612521"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Настройка автоматических сборок для приложения UWP
 
@@ -258,7 +258,7 @@ CI_MyUWPApp_1.1.2501.0
 
 Затем можно создать приложение HockeyApp вручную или загрузить существующий файл пакета приложения. Дополнительные сведения см. в разделе [Создание приложения.](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)  
 
-Чтобы использовать существующий файл пакета приложения, добавьте этап сборки и задайте параметр путь к двоичному файлу на этапе сборки. 
+Чтобы использовать существующий файл пакета приложения, добавьте этап сборки и установите для параметра путь к двоичному файлу на этапе сборки. 
 
 ![настройка hockey app](images/building-screen15.png) 
 

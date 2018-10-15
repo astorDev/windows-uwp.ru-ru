@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, подключенных устройств, удал
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
 ms.openlocfilehash: 58a420d73ba4a0cd51f909fd5d7d417af1cfb38f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567704"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615172"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>Запуск приложения на удаленном устройстве
 

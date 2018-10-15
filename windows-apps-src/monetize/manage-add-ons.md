@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
 description: Используйте эти методы в API отправки в Microsoft Store, чтобы управлять надстройками для приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows.
 title: Управление надстройками
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, API отправки в Microsoft Store, надстройки, продукт внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d603ab8901eae16da92365042e3244202539586
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: be0d383fc271084fe20a958d20f6fa3a340da187
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663054"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610456"
 ---
 # <a name="manage-add-ons"></a>Управление надстройками
 

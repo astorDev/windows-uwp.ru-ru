@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570263"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614881"
 ---
 # <a name="templatebinding-markup-extension"></a>Расширение разметки {TemplateBinding}
 
@@ -63,9 +63,9 @@ ms.locfileid: "4570263"
 
 Начиная с следующем крупной обновлении до Windows 10, можно использовать расширение разметки **x: Bind** в любом использовалось **TemplateBinding** [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
 
-Свойство [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType) будет необходимо (обязательно) на [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) при использовании **x: Bind**.
+Свойство [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType) , должны будут (обязательно) на [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) при использовании **x: Bind**.
 
-С поддержкой **x: Bind** теперь вы можете использовать оба [функции привязки](../data-binding/function-bindings.md) как хорошо, как двусторонней привязки в [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)
+Благодаря поддержке **x: Bind** теперь вы можете использовать оба [привязки функций](../data-binding/function-bindings.md) как хорошо, как двусторонней привязки в [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)
 
 В следующем примере TextBlock.Text равен Button.Content.ToString(). TargetType на ControlTemplate выступает в качестве источника данных и выполняет тот же результат TemplateBinding родительскому элементу.
 

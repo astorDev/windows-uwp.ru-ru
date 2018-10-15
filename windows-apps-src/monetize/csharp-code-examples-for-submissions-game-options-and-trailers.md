@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Используйте приведенные в этом разделе примеры кода на C#, чтобы подробнее ознакомиться с использованием API отправки в Microsoft Store для отправки трейлеров и параметров игры.
 title: 'Пример на языке C#: отправка приложения с трейлерами и параметрами игры'
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API отправки в Microsoft Store, примеры кода, параметры игры, трейлеры, дополнительные предложения, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c13b8f0e65d7ca6715acc5ebcee5ca70605a668
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e22081435bea8c73f509719aec1ce31d9157a315
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653133"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614782"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a>Пример на языке C\#: отправка приложения с трейлерами и параметрами игры
 

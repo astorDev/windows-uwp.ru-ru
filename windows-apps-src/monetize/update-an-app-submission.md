@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: Используйте этот метод в API отправки Microsoft Store для обновления существующей отправки приложения.
 title: Обновление отправки приложения
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, API отправки Microsoft Store, отправка приложения, обновление
 ms.localizationpriority: medium
-ms.openlocfilehash: ad7830b1d05d386616d4368f59f266cdeafa2e01
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 5f6797c288f3ee85daba9f90f81a3d1d8aa15562
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816449"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615585"
 ---
 # <a name="update-an-app-submission"></a>Обновление отправки приложения
 
@@ -44,15 +44,15 @@ ms.locfileid: "1816449"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | Строка | Обязательный. Код продукта в Магазине для приложения, отправку которого необходимо обновить. Подробнее о коде продукта в Магазине см. в статье[Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | Строка | Обязательный. Идентификатор отправки для обновления. Этот идентификатор добавляется в данные ответов для запросов на [создание отправки приложения](create-an-app-submission.md). Для отправки, которая была создана в информационной панели центра разработки, этот код также доступен по URL-адресу страницы отправки на информационной панели.  |
+| applicationId | string | Обязательный. Код продукта в Магазине для приложения, отправку которого необходимо обновить. Подробнее о коде продукта в Магазине см. в статье[Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| submissionId | string | Обязательный. Идентификатор отправки для обновления. Этот идентификатор добавляется в данные ответов для запросов на [создание отправки приложения](create-an-app-submission.md). Для отправки, которая была создана в информационной панели центра разработки, этот код также доступен по URL-адресу страницы отправки на информационной панели.  |
 
 
 ### <a name="request-body"></a>Тело запроса

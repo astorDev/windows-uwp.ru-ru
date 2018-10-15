@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
 description: Используйте этот метод в API отправки Microsoft Store для создания тестового пакета для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows.
 title: Создание тестового пакета
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание тестируемой возможности
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c53addfb58006ec305d702716a29668440bb90e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 5e6a547c8baf0f8990415e303d6b69ca04986d3b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816699"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612019"
 ---
 # <a name="create-a-package-flight"></a>Создание тестового пакета
 
@@ -44,14 +44,14 @@ ms.locfileid: "1816699"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Авторизация | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | Строка | Обязательный. Код продукта в Магазине для приложения, для которого требуется создать тестовый пакет. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | string | Обязательный. Код продукта в Магазине для приложения, для которого требуется создать тестовый пакет. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 
 
 ### <a name="request-body"></a>Текст запроса

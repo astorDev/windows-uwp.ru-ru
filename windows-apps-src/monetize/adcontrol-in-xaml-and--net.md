@@ -1,26 +1,26 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: Узнайте, как использовать класс AdControl для показа баннеров в приложении на XAML для Windows 10 (UWP).
 title: AdControl в XAML и .NET
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, объявления, реклама, AdControl, элемент управления рекламным объявлением, XAML, .net, пошаговое руководство
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ec7cfe180ee5c83bd4c4084bf02834a265de026
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: d7549e2fc73bfd5ca3132146248747037c5fffc2
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689980"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614811"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>AdControl в XAML и .NET
 
 
-В этом пошаговом руководстве рассказывается, как использовать класс [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) для показа баннерной рекламы в приложении UWP на XAML для Windows 10, реализованном с использованием C#.
+В этом пошаговом руководстве рассказывается, как использовать класс [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) для показа баннерной рекламы в приложении UWP на XAML для Windows 10, реализованном с использованием C#.
 
 > [!NOTE]
 > Microsoft Advertising SDK также поддерживает приложения XAML, которые реализуются с использованием C++. Полный пример с проектом см. в разделе [примеры рекламы на GitHub](http://aka.ms/githubads).
@@ -79,7 +79,7 @@ ms.locfileid: "1689980"
     </Page>
     ```
 
-5. В раздел под тегом **Grid** добавьте код для **AdControl**. Назначьте свойствам [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) и [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) значения [тестовой группы объявлений](set-up-ad-units-in-your-app.md#test-ad-units). Кроме того, измените **высоту** и **ширину** элемента управления, чтобы эти параметры соответствовали одному из [поддерживаемых размеров объявлений для баннерной рекламы.](supported-ad-sizes-for-banner-ads.md)
+5. В раздел под тегом **Grid** добавьте код для **AdControl**. Назначьте свойствам [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) и [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) значения [тестовой группы объявлений](set-up-ad-units-in-your-app.md#test-ad-units). Кроме того, измените **высоту** и **ширину** элемента управления, чтобы эти параметры соответствовали одному из [поддерживаемых размеров объявлений для баннерной рекламы.](supported-ad-sizes-for-banner-ads.md)
 
     > [!NOTE]
     > Каждый элемент **AdControl** имеет соответствующую *группу объявлений*, используемую нашими службами для передачи рекламы этому элементу управления, и каждая группа объявлений состоит из *идентификатора группы объявлений* и *идентификатора приложения*. На этих этапах вы задаете тестовые значения идентификатора группы объявлений и идентификатора приложения для своего элемента управления. Эти тестовые значения можно использовать только в тестовой версии приложения. Перед публикацией приложения в Магазине [тестовые значения необходимо заменить на фактические значения](#release) из Центра разработки для Windows.

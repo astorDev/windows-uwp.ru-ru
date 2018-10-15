@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: Запрос оценок и отзывов для вашего приложения
-ms.author: mcleans
-ms.date: 03/22/2018
+ms.author: mhopkins
+ms.date: 06/15/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, оценки, отзывы
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f897eeaee835c1c1bcd96e9bd843ed8f6a85612
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: cc3dce673b434673f0e8a72158c2d3a593f02c52
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690380"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610130"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>Запрос оценок и отзывов для вашего приложения
 
@@ -23,6 +23,9 @@ ms.locfileid: "1690380"
 * Можно программным способом открыть страницу оценки и отзывов для вашего приложения в Microsoft Store.
 
 Когда вы будете готовы проанализировать данные оценок и отзывов, можете просмотреть эти данные на информационной панели центра разработки для Windows или использовать API аналитики Microsoft Store для программного получения этих данных.
+
+> [!IMPORTANT]
+> При добавлении функции оценки в вашем приложении, все отзывы необходимо отправить пользователю механизмов оценку магазина, независимо от выбранного по звездам. Если сбора отзывов или комментариев от пользователей, он должен быть очистить, что оно не относится к приложения оценки или отзывы в магазине, но отправляется непосредственно в разработчик приложения. См. в разделе, разработчика поведения Дополнительные сведения, связанные с [Fraudulent или хакеры действий](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>Показ диалогового окна оценки и отзыва в приложении
 

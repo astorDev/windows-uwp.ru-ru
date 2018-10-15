@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: Используйте примеры кода на языке Python, приведенные в этом разделе, чтобы более подробно ознакомиться с работой API отправки в Microsoft Store.
 title: Пример на языке Python — отправки для приложений, надстроек и тестовых пакетов
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, API отправки в Microsoft Store, примеры кода, python
 ms.localizationpriority: medium
-ms.openlocfilehash: d15c121747f3c2fb9da46df403cd971ba5038ddf
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 0dc6f9854ed3fabeb788b99297cd2b33cdc1b79b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654433"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615122"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Пример на языке Python: отправки для приложений, надстроек и тестовых пакетов
 

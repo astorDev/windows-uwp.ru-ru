@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e48d0b21d588ef7b4913e16b75f9d21c5d5209f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564148"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615293"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>Введение в разработку безопасных приложений для Windows
 

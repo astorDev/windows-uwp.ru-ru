@@ -16,11 +16,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e842d6c5b8e62a9c043c97849fdf17f524ccfc7
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570846"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614514"
 ---
 # <a name="access-keys"></a>Ключи доступа
 
@@ -365,6 +365,6 @@ _Параметры настройки подсказки клавиши_
 * [Ускорители клавиатуры](keyboard-accelerators.md)
 
 **Примеры**
-* [Галерея элементов управления XAML (то есть XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+* [Галереи элементов управления XAML (то есть XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 

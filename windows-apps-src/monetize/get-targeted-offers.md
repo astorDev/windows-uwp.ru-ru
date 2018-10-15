@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: A4C6098B-6CB9-4FAF-B2EA-50B03D027FF1
 description: Используйте этот метод API целевых предложений Microsoft Store, чтобы получить целевые предложения, доступные для текущего пользователя в контексте текущего приложения.
 title: Получение целевых предложений
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, службы Store, API целевых предложений Microsoft Store, получение целевых предложений
 ms.localizationpriority: medium
-ms.openlocfilehash: 188561fb5dc6dda318a0b2aa7f1d91aa04c32548
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 1032831492443460bd63671012a09edfceca2690
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1661894"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612756"
 ---
 # <a name="get-targeted-offers"></a>Получение целевых предложений
 
@@ -39,7 +39,7 @@ ms.locfileid: "1661894"
 
 | Заголовок        | Тип   | Описание  |
 |---------------|--------|--------------|
-| Авторизация | Строка | Обязательный. Маркер учетной записи Майкрософт для текущего пользователя приложения, который вошел в систему, в виде маркера **Bearer**&lt;**&gt;. |
+| Authorization | string | Обязательный. Маркер учетной записи Майкрософт для текущего пользователя приложения, который вошел в систему, в виде маркера **Bearer**&lt;**&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса

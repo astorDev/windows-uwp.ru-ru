@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: Узнайте, как использовать пространство имен Windows.Services.Store, чтобы получить связанные с Магазином сведения о продукте для текущего приложения или одной из его надстроек.
 title: Получение информации о продукте для приложений и надстроек
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, покупки из приложения, IAP, надстройки, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd8ab9cb86bfeb645f8d46e313c78c681901508
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 417478df3b82967656d2210b3b532c5341f1fb2e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689290"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612435"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>Получение информации о продукте для приложений и надстроек
 

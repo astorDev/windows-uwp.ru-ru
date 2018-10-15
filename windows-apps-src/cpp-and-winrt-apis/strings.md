@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, строка
 ms.localizationpriority: medium
 ms.openlocfilehash: 865267a6897a551613479a099d10dd6d5a91c315
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573624"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615306"
 ---
 # <a name="string-handling-in-cwinrt"></a>Обработка строк в C++/WinRT
 
-С помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), можно вызвать API среды выполнения Windows, используя типы широких строк стандартной библиотеки C++, такие как **std::wstring** (Примечание: не с типы узких строк, например **std::string**). C++/WinRT имеет настраиваемый тип строки под названием [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) (определяется в базовой библиотеке C++/WinRT — `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`). Этот тип строки, который конструкторы, функции и свойства среды выполнения Windows фактически принимают и возвращают. Однако во многих случаях &mdash; благодаря конструкторам преобразования **hstring** и операторам преобразования &mdash; можно выбирать, следует ли учитывать **hstring** в клиентском коде. Если вы *разрабатываете* API-интерфейсы, вероятность того, что вам нужно знать о **hstring**, возрастает.
+С помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), можно вызвать API среды выполнения Windows, используя типы широких строк стандартной библиотеки C++, такие как **std::wstring** (Примечание: не с типы узких строки, такие как **std::string**). C++/WinRT имеет настраиваемый тип строки под названием [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) (определяется в базовой библиотеке C++/WinRT — `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`). Этот тип строки, который конструкторы, функции и свойства среды выполнения Windows фактически принимают и возвращают. Однако во многих случаях &mdash; благодаря конструкторам преобразования **hstring** и операторам преобразования &mdash; можно выбирать, следует ли учитывать **hstring** в клиентском коде. Если вы *разрабатываете* API-интерфейсы, вероятность того, что вам нужно знать о **hstring**, возрастает.
 
 В C++ существует множество типов строки. Различные варианты существуют во множестве библиотек в дополнение к **std::basic_string** из стандартной библиотеки C++. С++17 имеет служебные программы для преобразования строк и **std::basic_string_view**, чтобы ликвидировать пробелы между всеми типами строк.  [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) дает возможность преобразования с **std::wstring_view** для обеспечения взаимодействия, для которого был создан **std::basic_string_view**.
 

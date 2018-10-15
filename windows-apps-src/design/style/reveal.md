@@ -15,17 +15,17 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574365"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611445"
 ---
 # <a name="reveal-highlight"></a>Эффект
 
 ![главное изображение](images/header-reveal-highlight.svg)
 
-Эффект отображения — это световой эффект, выделяющий интерактивные элементы, такие как панели команд, в том случае, когда пользователь наводит на них указатель. 
+Эффект отображения — это световой эффект, выделяющий интерактивные элементы, такие как панели команд, когда пользователь наводит на них указатель. 
 
 > **Важные API**: [класс RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [класс RevealBackgroundBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [класс RevealBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [класс VisualState](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
@@ -58,7 +58,7 @@ ms.locfileid: "4574365"
 
 ## <a name="how-to-use-it"></a>Использование
 
-Отображение автоматически работает для некоторых элементов управления. Для других элементов управления можно включить эффект отображения, назначив специальный стиль для элемента управления, как описано в разделах [Включение эффекта отображения для других элементов управления](#enabling-reveal-on-other-controls) и [Включение эффекта отображения для пользовательских элементов управления](#enabling-reveal-on-custom-controls) в этой статье.
+Отображение автоматически работает для некоторых элементов управления. Для других элементов управления можно включить эффект отображения, назначив специальный стиль для элемента управления, как описано в разделах [Включение эффекта отображения для других элементов управления](#enabling-reveal-on-other-controls) и [Включение эффекта отображения для пользовательских элементов управления](#enabling-reveal-on-custom-controls) этой статьи.
 
 ## <a name="controls-that-automatically-use-reveal"></a>Элементы управления, автоматически использующие эффект отображения
 
@@ -259,7 +259,7 @@ ms.locfileid: "4574365"
 
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>Настройка эффекта отображения для пользовательского элемента управления 
 
-Когда включить эффект отображения для пользовательских или с измененным элемента управления или поверхности пользовательских команд, эти советы помогут вам оптимизировать эффект.
+При включить эффект отображения для пользовательских или с измененным элемента управления или поверхности пользовательских команд, эти советы помогут вам оптимизировать эффекта.
  
 * На смежных элементах, не схожих по высоте или ширине (особенно в списках): удалите эффект отображения при приближении границы и показывайте границы только при наведении.
 * Для элементов управления, которые часто отключаются и включаются: поместите кисть отображения при приближении к границе на основы элементов, а также на их границы, чтобы привлечь внимание к состоянию элемента.

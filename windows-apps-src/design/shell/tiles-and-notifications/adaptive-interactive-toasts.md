@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, всплывающие уведомления, интерактивные всплывающие уведомления, адаптивные всплывающие уведомления, содержимое всплывающего уведомления, полезные данных во всплывающем уведомлении
 ms.localizationpriority: medium
 ms.openlocfilehash: de999528d07e6bd7d243e53708e9afc465004af7
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566602"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611102"
 ---
 # <a name="toast-content"></a>Содержимое всплывающего уведомления
 

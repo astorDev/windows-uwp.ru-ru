@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: Используйте этот метод в API покупок Microsoft Store, чтобы предоставить бесплатное приложение или надстройку определенному пользователю.
 title: Предоставление бесплатных продуктов
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API покупок Microsoft Store, предоставление продуктов
 ms.localizationpriority: medium
-ms.openlocfilehash: c1ecb1f7db755fd21014ebc7edf979e7a25e7c7f
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 432d5976cb018148ba0f53aae6446a046f0a3b2f
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1665030"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610600"
 ---
 # <a name="grant-free-products"></a>Предоставление бесплатных продуктов
 
@@ -46,7 +46,7 @@ ms.locfileid: "1665030"
 
 | Заголовок         | Тип   | Описание                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Авторизация  | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;.                           |
+| Authorization  | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;.                           |
 | Host           | строка | Должен иметь значение **purchase.mp.microsoft.com**.                                            |
 | Content-Length | Число | Длина текста запроса.                                                                       |
 | Content-Type   | Строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
@@ -62,9 +62,9 @@ ms.locfileid: "1665030"
 | language       | string | Язык пользователя.  | Да      |
 | market         | string | Рынок пользователя.       | Да      |
 | orderId        | Глобальный уникальный идентификатор   | GUID, созданный для заказа. Это значение должно быть уникальным для пользователя, но оно не обязательно должно быть уникальным для всех заказов.    | Да      |
-| productId      | строка | [Код продукта в Store](in-app-purchases-and-trials.md#store-ids) для [продукта](in-app-purchases-and-trials.md#products-skus-and-availabilities) в каталоге Microsoft Store. Пример кода продукта в Store: 9NBLGGH42CFD. | Да      |
+| productId      | string | [Код продукта в Store](in-app-purchases-and-trials.md#store-ids) для [продукта](in-app-purchases-and-trials.md#products-skus-and-availabilities) в каталоге Microsoft Store. Пример кода магазина продукта — 9NBLGGH42CFD. | Да      |
 | quantity       | int    | Объем покупки. На данный момент единственным поддерживаемым значением является «1». Если оно не указано, по умолчанию используется значение «1».   | Нет       |
-| skuId          | строка | [Код продукта в Store](in-app-purchases-and-trials.md#store-ids) для [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) продукта в каталоге Microsoft Store. Пример кода продукта в Store для номера SKU: 0010.     | Да      |
+| skuId          | string | [Код продукта в Store](in-app-purchases-and-trials.md#store-ids) для [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) продукта в каталоге Microsoft Store. Пример кода магазина для SKU — 0010.     | Да      |
 
 
 ### <a name="request-example"></a>Пример запроса

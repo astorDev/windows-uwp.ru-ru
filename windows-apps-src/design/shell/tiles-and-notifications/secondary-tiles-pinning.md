@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, вспомогательные плитки, закрепить, закрепление, краткое руководство, пример кода, пример, secondarytile
 ms.localizationpriority: medium
 ms.openlocfilehash: 437d149e22f035fdd0cb1f5251a114b6dd4765e4
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570145"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610097"
 ---
 # <a name="pin-secondary-tiles"></a>Закрепление вспомогательных плиток
 

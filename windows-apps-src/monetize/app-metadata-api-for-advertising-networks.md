@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Узнайте, как использовать API REST метаданных приложения для доступа к определенных типам метаданных приложений. Этот API-интерфейс предназначен для рекламных сетей, которым необходимо получать сведения о приложениях в Microsoft Store для повышения эффективности продажи рекламного пространства рекламодателям.
 title: API метаданных приложения для рекламных сетей
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows 10, uwp, рекламная сеть, метаданные приложения
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
-ms.openlocfilehash: bc5cb5bed964528b34339742e34b5d2761de2b95
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 16603bfe8c3fe0bfeaef1e19018798d0c6477b85
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654743"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613545"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>API метаданных приложения для рекламных сетей
 

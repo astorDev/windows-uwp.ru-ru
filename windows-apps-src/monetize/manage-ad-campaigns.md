@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7b07a6ca-4be1-497c-a901-0a2da3762555
 description: Используйте этот метод в API рекламных акций Microsoft Store для создания, редактирования и получения рекламных кампаний.
 title: Управление рекламными кампаниями
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, API рекламных акций Microsoft Store, рекламные кампании
 ms.localizationpriority: medium
-ms.openlocfilehash: 125e67e7b56ac4f8d7d15a36ceca3922ea58ac82
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: f707c252e404da3aaf6e82317c80a266f4d91d26
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664234"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611269"
 ---
 # <a name="manage-ad-campaigns"></a>Управление рекламными кампаниями
 
@@ -26,12 +26,12 @@ ms.locfileid: "1664234"
 Если вы используете эти методы для создания и обновления кампании, вы обычно также вызываете один или несколько из следующих методов для управления *линиями поставки*, *профилями таргетинга* и *рекламными материалами*, которые связаны с этой кампанией. Дополнительные сведения о связи между кампаниями, линиями поставки, профилями таргетинга и рекламными материалами см. в разделе [Проведение рекламных кампаний с помощью служб Microsoft Store](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
 
 * [Управление линиями поставки для рекламных кампаний](manage-delivery-lines-for-ad-campaigns.md)
-* [Управление профилями таргетинга рекламных кампаний](manage-targeting-profiles-for-ad-campaigns.md)
+* [Управление целевыми профилями для рекламных кампаний](manage-targeting-profiles-for-ad-campaigns.md)
 * [Управление рекламными материалами для рекламных кампаний](manage-creatives-for-ad-campaigns.md)
 
 ## <a name="prerequisites"></a>Предварительные условия
 
-Для использования этих методов сначала необходимо сделать следующее.
+Для использования этих методов сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](run-ad-campaigns-using-windows-store-services.md#prerequisites) для API рекламных акций Microsoft Store.
 
@@ -56,7 +56,7 @@ ms.locfileid: "1664234"
 
 | Заголовок        | Тип   | Описание         |
 |---------------|--------|---------------------|
-| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 | Tracking ID   | Код GUID   | Необязательный параметр. Идентификатор, который отслеживает поток вызовов.                                  |
 
 
@@ -149,12 +149,12 @@ Authorization: Bearer <your access token>
 
 Для этих методов тела запроса и ответа содержат следующие поля. В этой таблице показаны поля, которые доступны только для чтения (это означает, что они не могут изменяться в методе PUT), и поля, которые необходимы в теле запроса для метода POST.
 
-| Поле        | Тип   |  Описание      |  Только чтение  | Default (по умолчанию)  | Обязательный для POST |  
+| Поле        | Тип   |  Описание      |  Только чтение  | По умолчанию  | Обязательный для POST |  
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  целое число   |  Идентификатор рекламной кампании.     |   Да    |      |  Нет     |       
 |  name   |  строка   |   Название рекламной кампании.    |    Нет   |      |  Да     |       
-|  configuredStatus   |  строка   |  Одно из следующих значений, которое указывает статус рекламной кампании, заданный разработчиком: <ul><li>**Активный**</li><li>**Неактивный**</li></ul>     |  Нет     |  Активный    |   Да    |       
-|  effectiveStatus   |  строка   |   Одно из следующих значений, определяющих действующий статус рекламной кампании, в зависимости от проверки системы: <ul><li>**Активный**</li><li>**Неактивный**</li><li>**Обработка**</li></ul>    |    Да   |      |   Нет      |       
+|  configuredStatus   |  строка   |  Одно из следующих значений, которое указывает статус рекламной кампании, заданный разработчиком: <ul><li>**Активный**</li><li>**Inactive**</li></ul>     |  Нет     |  Активный    |   Да    |       
+|  effectiveStatus   |  строка   |   Одно из следующих значений, определяющих действующий статус рекламной кампании, в зависимости от проверки системы: <ul><li>**Активный**</li><li>**Inactive**</li><li>**Обработка**</li></ul>    |    Да   |      |   Нет      |       
 |  effectiveStatusReasons   |  массив   |  Одно или несколько из следующих значений, задающих причину нынешнего состояния рекламной кампании: <ul><li>**AdCreativesInactive,**</li><li>**BillingFailed,**</li><li>**AdLinesInactive,**</li><li>**ValidationFailed,**</li><li>**Failed.**</li></ul>      |  Да     |     |    Нет     |       
 |  storeProductId   |  string   |  [Код продукта в Магазине](in-app-purchases-and-trials.md#store-ids) для приложения, с которым связана эта рекламная кампания. Пример кода продукта в Магазине — 9nblggh42cfd.     |   Да    |      |  Да     |       
 |  labels   |  массив   |   Одна или несколько строк, представляющих пользовательские метки для кампании. Эти метки могут использоваться для поиска и добавления тегов кампании.    |   Нет    |  null    |    Нет     |       
@@ -168,6 +168,6 @@ Authorization: Bearer <your access token>
 
 * [Проведение рекламных кампаний с помощью служб Microsoft Store](run-ad-campaigns-using-windows-store-services.md)
 * [Управление линиями поставки для рекламных кампаний](manage-delivery-lines-for-ad-campaigns.md)
-* [Управление профилями таргетинга рекламных кампаний](manage-targeting-profiles-for-ad-campaigns.md)
+* [Управление целевыми профилями для рекламных кампаний](manage-targeting-profiles-for-ad-campaigns.md)
 * [Управление рекламными элементами для кампаний](manage-creatives-for-ad-campaigns.md)
 * [Получение данных об эффективности рекламной кампании](get-ad-campaign-performance-data.md)

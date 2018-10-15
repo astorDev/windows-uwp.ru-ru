@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: Сведения о решениях распространенных проблем разработки, связанными с библиотеками Microsoft Advertising в приложениях JavaScript и HTML.
 title: Руководство по устранению неполадок для HTML и JavaScript
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, устранение неполадок, HTML, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a2d94b769783bdc28c2218dcb9c07f678ba7bc9
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 5474ac51d57decfe2c4f4d5f1969da5b4436fd14
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654873"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610143"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>Руководство по устранению неполадок для HTML и JavaScript
 
@@ -74,7 +74,7 @@ ms.locfileid: "1654873"
     </div>
     ```
 
-5.  Проверьте расположение элемента. Элемент [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) должен находиться в пределах видимой области.
+5.  Проверьте расположение элемента. Элемент [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) должен находиться в пределах видимой области.
 
 6.  Проверьте свойство **visibility**. Это свойство не должно быть свернуто или скрыто. Это свойство может быть задано в одной строке (как показано ниже) или во внешней таблице стилей.
 
@@ -140,7 +140,7 @@ ms.locfileid: "1654873"
 
 11. Убедитесь, что элемент **AdControl** отображается в окне просмотра. Для правильного отображения элемента **AdControl** он должен быть видимым для рекламы.
 
-12. Динамические значения [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) и [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) не следует проверять в эмуляторе. Чтобы проверить, правильно ли работает элемент **AdControl**, используйте [тестовые значения](set-up-ad-units-in-your-app.md#test-ad-units) для **ApplicationId** и **AdUnitId**.
+12. Динамические значения [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) и [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) не следует проверять в эмуляторе. Чтобы проверить, правильно ли работает элемент **AdControl**, используйте [тестовые значения](set-up-ad-units-in-your-app.md#test-ad-units) для **ApplicationId** и **AdUnitId**.
 
 <span id="html-blackboxblinksdisappears"/>
 
@@ -342,9 +342,9 @@ ms.locfileid: "1654873"
 
 ### <a name="ads-not-refreshing"></a>Реклама не обновляется
 
-1.  Проверьте, задано ли для свойства [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) вашего элемента **AdControl** значение false. По умолчанию этому необязательному свойство задано значение **true**. Если установлено значение **false**, для извлечения другой рекламы необходимо использовать метод **Refresh**.
+1.  Проверьте, задано ли для свойства [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) вашего элемента **AdControl** значение false. По умолчанию этому необязательному свойство задано значение **true**. Если установлено значение **false**, для извлечения другой рекламы необходимо использовать метод **Refresh**.
 
-2.  Проверьте работоспособность вызовов метода [Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx). При использовании автоматического обновления (для свойства **IsAutoRefreshEnabled** задано значение **true**) применять метод **Refresh** для извлечения другой рекламы нельзя. При обновлении вручную (значением **IsAutoRefreshEnabled** является **false**) метод **Refresh** следует вызывать только по истечении не менее 30–60 секунд в зависимости от текущего типа подключения для передачи данных, настроенного на устройстве.
+2.  Проверьте работоспособность вызовов метода [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx). При использовании автоматического обновления (для свойства **IsAutoRefreshEnabled** задано значение **true**) применять метод **Refresh** для извлечения другой рекламы нельзя. При обновлении вручную (значением **IsAutoRefreshEnabled** является **false**) метод **Refresh** следует вызывать только по истечении не менее 30–60 секунд в зависимости от текущего типа подключения для передачи данных, настроенного на устройстве.
 
     В этом примере показано, как создать класс **div** для элемента **AdControl**.
 

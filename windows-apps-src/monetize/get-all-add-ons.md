@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
 description: Используйте этот метод в API отправки в Microsoft Store для получения всех данных надстроек для всех приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows.
 title: Получение всех надстроек
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, API отправки в Microsoft Store, надстройки, продукты внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 69ec59a39c91152788f757beb56afc75e7191922
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: c711e2443de4607d2266dcddf513a48ff11522a7
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663124"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614037"
 ---
 # <a name="get-all-add-ons"></a>Получение всех надстроек
 
@@ -41,7 +41,7 @@ ms.locfileid: "1663124"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: Используйте этот метод в API отправки в Microsoft Store, чтобы получить данные для существующей отправки приложения.
 title: Получение отправки приложения
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправка приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: c20e2ec72af848d76413d46a3941e10930f073bf
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 9838798778a2d66b2a52fcfe02defce0c9167d2d
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816619"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610107"
 ---
 # <a name="get-an-app-submission"></a>Получение отправки приложения
 
@@ -43,15 +43,15 @@ ms.locfileid: "1816619"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | Строка | Обязательный. Код приложения в Магазине с отправкой, которую требуется получить. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | Строка | Обязательный. Идентификатор отправки, которую требуется получить. Этот идентификатор добавляется в данные ответов для запросов на [создание отправки приложения](create-an-app-submission.md). Для отправки, которая была создана в информационной панели центра разработки, этот код также доступен по URL-адресу страницы отправки на информационной панели.  |
+| applicationId | string | Обязательный. Код приложения в Магазине с отправкой, которую требуется получить. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| submissionId | string | Обязательный. Идентификатор отправки, которую требуется получить. Этот идентификатор добавляется в данные ответов для запросов на [создание отправки приложения](create-an-app-submission.md). Для отправки, которая была создана в информационной панели центра разработки, этот код также доступен по URL-адресу страницы отправки на информационной панели.  |
 
 
 ### <a name="request-body"></a>Тело запроса

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571388"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610400"
 ---
 # <a name="app-management-and-services"></a>Управление приложениями и службы
 
@@ -29,7 +29,7 @@ ms.locfileid: "4571388"
 
 ## <a name="xbox-live"></a>Xbox Live
 
-Если вы публикуете игру, вы можете включить в [Xbox Live создателям программы](http://xbox.com/developers/creators-program) на этой странице. Это позволяет начать настройки и тестирования функций Xbox Live и в конечном итоге публикация игры Xbox Live Creators Program.
+Если вы публикуете игру, вы можете включить в [Xbox Live Creators Program](http://xbox.com/developers/creators-program) на этой странице. Это позволяет начать настройки и тестирования функций Xbox Live и в конечном итоге публикация игры Xbox Live Creators Program.
 
 Дополнительные сведения см. в разделе [Начало работы с Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) и [Создание новой игры Xbox Live Creators Program и публикация в тестовой среде](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
 
@@ -50,13 +50,13 @@ ms.locfileid: "4571388"
 
 ## <a name="product-collections-and-purchases"></a>Коллекции и покупки продуктов
 
-Чтобы использовать Microsoft Store, API коллекции и API покупок Microsoft Store для получения доступа к информации о владении продуктами приложений и надстроек, необходимо ввести связанные идентификаторы клиента Azure AD здесь. Заметьте, что для вступления изменений в силу может потребоваться до 16 часов.
+Чтобы использовать в Microsoft Store, API коллекции и API покупок Microsoft Store для получения доступа к информации о владении продуктами приложений и надстроек, необходимо ввести связанные идентификаторы клиента Azure AD здесь. Заметьте, что для вступления изменений в силу может потребоваться до 16 часов.
 
 Дополнительные сведения см. в разделе [Управление правами на продукты из службы](../monetize/view-and-grant-products-from-a-service.md).
 
 ## <a name="administrator-consent"></a>Разрешения администратора
 
-f ваш продукт интегрируется с Azure AD и вызывать API, запросить [делегированные разрешения или разрешения приложения](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) , требующие разрешения администратора, введите идентификатор клиента Azure AD. Это позволяет администраторам, которые приобретают приложения для предоставления согласия пользователя организации для вашего продукта действовать от имени всех пользователей в клиенте.
+f ваш продукт интегрируется с Azure AD и вызывать API, запрос [разрешения приложения или делегированные разрешения](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) , требующие разрешения администратора, введите идентификатор клиента Azure AD. Это позволяет администраторам, которые приобретают приложения на предоставление согласия пользователя организации для вашего продукта действовать от имени всех пользователей в клиенте.
 
 Дополнительные сведения см. в разделе [Запрос согласия для всей клиента](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
 
@@ -94,7 +94,7 @@ f ваш продукт интегрируется с Azure AD и вызыват
 > [!TIP]
 > Для приложений UWP мы предлагаем, с помощью параметра **уведомления** на информационной панели. Эта функция позволяет отправлять уведомления всем пользователям приложения или целевых подмножеству клиентов Windows 10, которые соответствуют критериям, заданным в [сегменте](create-customer-segments.md). Дополнительные сведения см. в разделе [Отправка push-уведомлений пользователям вашего приложения](send-push-notifications-to-your-apps-customers.md).
 
-В зависимости от типа пакета приложения и его требований можно также использовать один из следующих вариантов: 
+В зависимости от типа пакета приложения и его требований вы также можете воспользоваться одним из следующих вариантов: 
 
 -   **Службы push-уведомлений Windows (WNS)** позволяют отправлять обновления всплывающих уведомлений, плиток, индикаторов событий и необработанные обновления. Дополнительные сведения можно найти в [обзоре служб push-уведомлений Windows (WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
 

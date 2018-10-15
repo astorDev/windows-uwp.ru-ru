@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573699"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611709"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 Дополнительные сведения о преимуществах локализации приложений см. в разделе [Глобализация и локализация](../design/globalizing/globalizing-portal.md).
@@ -92,13 +92,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 Тот же самый код можно использовать из проекта с библиотекой классов (Universal Windows) или [библиотекой среды выполнения Windows (универсальная платформа Windows)](../winrt-components/index.md). Во время выполнения загружаются ресурсы приложения, в котором размещается библиотека. Рекомендуется, чтобы библиотека загружала ресурсы из приложения, в котором она расположена, поскольку выше вероятность, что это приложение локализовано в большей степени. Если библиотеке не требуется предоставлять ресурсы, то она должна обеспечить приложению возможность заменять их при вызове.
 
-Если имя ресурса делится (он содержит «.» символов), затем заменить точек с помощью косой черты («/») знаков в имени ресурса. Идентификаторы свойств, например, содержать точек; Поэтому вам необходимо будет сделать это substition, чтобы загрузить один из них из кода.
+Если имя ресурса отделен (он содержит «.» символов), затем замены точек с помощью косой черты («/») знаков в имени ресурса. Идентификаторы свойств, например, содержать несколько точек; Поэтому вам потребуется сделать это substition, чтобы загрузить одну из них из кода.
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп PRI-файл вашего приложения. Каждый ресурс `uri` отображается в файле дамп.
+Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп PRI-файл вашего приложения. Каждый ресурс `uri` отображаются в файле дамп.
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -175,13 +175,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 Если вы решите переместить ресурс AppDisplayName из `Resources.resw` в `ManifestResources.resw`, то в манифесте пакета приложения необходимо изменить `ms-resource:AppDisplayName` на `ms-resource:/ManifestResources/AppDisplayName`.
 
-Если использованы имени файла ресурсов (он содержит «.» символов), оставьте точек в имени при ссылке. **Не** точек замените символы косой черты («/»), как и для имени ресурса.
+Если отделен имени файла ресурсов (он содержит «.» символов), оставьте точек в имени при создании ссылок. **Не** точек замените символы косой черты («/»), как и для имени ресурса.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп PRI-файл вашего приложения. Каждый ресурс `uri` отображается в файле дамп.
+Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп PRI-файл вашего приложения. Каждый ресурс `uri` отображаются в файле дамп.
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -268,20 +268,20 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-Для библиотеки среды выполнения Windows (универсальное приложение Windows), если пространство имен по умолчанию делится (он содержит «.» символов), затем используйте точек в имя карты ресурсов.
+Для библиотеки среды выполнения Windows (универсальное приложение Windows), если пространство имен по умолчанию отделен (он содержит «.» символов), затем используйте точек в имя карты ресурсов.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-Вам не нужно сделать это для библиотеки классов (Universal Windows). Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп компонент или библиотеки PRI-файла. Каждый ресурс `uri` отображается в файле дамп.
+Вам не нужно сделать это для библиотеки классов (Universal Windows). Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп компонент или библиотеки PRI-файла. Каждый ресурс `uri` отображаются в файле дамп.
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>Загрузка строк из других пакетов
-Управляемые и доступ к которому осуществляется через пакета ресурсов для пакета приложения есть верхнего уровня [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) , доступной с текущей [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). В каждом пакете различные компоненты могут иметь собственные поддеревья ResourceMap, доступ к которым можно получить через [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
+Управляются и доступ к которому осуществляется через пакета ресурсов для пакета приложения есть верхнего уровня [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) , доступной с текущей [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). В каждом пакете различные компоненты могут иметь собственные поддеревья ResourceMap, доступ к которым можно получить через [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
 
 Платформенный пакет может обращаться к собственным ресурсам с использованием абсолютного идентификатора ресурса (URI). См. также раздел [Схемы URI](uri-schemes.md).
 

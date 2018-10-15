@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: ''
 description: Используйте этот метод в API аналитики для Microsoft Store, чтобы скачать CAB-файл для ошибки в вашем приложении.
 title: Скачивание CAB-файла для ошибки в приложении
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, API аналитики для Microsoft Store, скачать CAB-файл
 ms.localizationpriority: medium
-ms.openlocfilehash: a74a72e1d02a73d2b930179d9d2cb99ea09c7c40
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 671c5c1b187ac48c12988a00d66acb366cae72f1
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662064"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612710"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-app"></a>Скачивание CAB-файла для ошибки в приложении
 
@@ -46,7 +46,7 @@ ms.locfileid: "1662064"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса

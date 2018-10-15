@@ -10,11 +10,11 @@ ms.prod: Microsoft Edge, Azure, Visual Studio Code
 ms.technology: web
 ms.localizationpriority: medium
 ms.openlocfilehash: 42f11cbdd749a44c4ba0d8bc1a0397a4f2882257
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569811"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611311"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Создание одностраничного веб-приложения с серверной частью на основе API REST
 

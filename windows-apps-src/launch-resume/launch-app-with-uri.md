@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f801e9093676ec9fbf55c4ec4af7c5c444ed3ead
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4568036"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612344"
 ---
 # <a name="launch-an-app-with-a-uri"></a>Запуск приложения с помощью URI
 
@@ -32,7 +32,7 @@ ms.locfileid: "4568036"
 | [Запуск приложения «Карты Windows»](launch-maps-app.md) | Узнайте, как запустить приложение "Карты Windows" из вашего приложения. |
 | [Запуск приложения "Люди"](launch-people-apps.md) | В этом разделе приводится описание схемы URI ms-people. Ваше приложение может использовать эту схему URI для запуска приложения "Люди" для конкретных действий. |
 | [Запуск выделения экрана](launch-screen-snipping.md) | Узнайте, как использовать схемы URI для открытия нового фрагмент или открыть приложение фрагмент и эскиз. |
-| [Включение приложения для веб-сайтов с помощью обработчиков URI приложения](web-to-app-linking.md) | Интерес пользователей вашего приложения с помощью поддержки приложений для компонента веб-сайтов. |
+| [Включение приложения для веб-сайтов с помощью обработчиков URI приложения](web-to-app-linking.md) | Повышайте интерес пользователей вашего приложения с помощью поддержки приложений для компонента веб-сайтов. |
 
 ## <a name="related-topics"></a>Статьи по теме
 * [Запуск приложения на удаленном устройстве](launch-a-remote-app.md)

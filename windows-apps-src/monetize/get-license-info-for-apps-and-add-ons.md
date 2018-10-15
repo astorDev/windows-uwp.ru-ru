@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 9630AF6D-6887-4BE3-A3CB-D058F275B58F
 description: Узнайте, как использовать пространство имен Windows.Services.Store для получения информации о лицензии для текущего приложения и его надстроек.
 title: Получение информации о лицензии для приложения и надстроек
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 12/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, лицензии, приложения, надстройки, покупки из приложения, IAP, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 26a8ee69c291bd1b181cdc842175232a8310fd0d
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 83889dce2959a3d373081808864a6b7913fb142b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689380"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613151"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>Получение информации о лицензии для приложений и надстроек
 
@@ -24,7 +24,7 @@ ms.locfileid: "1689380"
 > [!NOTE]
 > Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Дополнительные сведения см. в [этой статье](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-## <a name="prerequisites"></a>Предварительные условия и необходимые компоненты
+## <a name="prerequisites"></a>Что вам понадобится
 
 Для этого примера необходимо выполнение следующих предварительных условий:
 * Создан проект Visual Studio для приложения универсальной платформы Windows (UWP), предназначенный для **Windows 10 Anniversary Edition (10.0; сборка 14393)** и более поздних выпусков.

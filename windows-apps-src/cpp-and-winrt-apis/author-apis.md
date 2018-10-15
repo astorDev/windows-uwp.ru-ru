@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
 ms.openlocfilehash: 2476161954c1d4d49fcf9f8f74cd1b7cf9180c0a
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4575283"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610968"
 ---
 # <a name="author-apis-with-cwinrt"></a>Создание API-интерфейсов с помощью C++/WinRT
 
@@ -262,7 +262,7 @@ IStringable istringable = winrt::make<MyType>();
 > [!NOTE]
 > Однако если вы ссылаетесь на тип из пользовательского интерфейса XAML, то в одном проекте будут и тип реализации, и тип проекции. В этом случае **сделать** возвращает экземпляр проецируемого типа. Пример кода для этого сценария см. в разделе [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
-Мы можем использовать `istringable` (в примере выше) только для вызова членов интерфейса **IStringable**. Но интерфейс C++/WinRT (представляющий собой проецируемый интерфейс) является производным от [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). Таким образом можно вызвать [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (или [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) на нем запрос для других проецируемых типов и интерфейсов, которые вы можете также использовать или вернуть.
+Мы можем использовать `istringable` (в примере выше) только для вызова членов интерфейса **IStringable**. Но интерфейс C++/WinRT (представляющий собой проецируемый интерфейс) является производным от [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). Таким образом можно вызвать [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (или [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) на нем для запроса для других проецируемых типов и интерфейсов, которые вы можете также использовать или вернуть.
 
 ```cppwinrt
 istringable.ToString();

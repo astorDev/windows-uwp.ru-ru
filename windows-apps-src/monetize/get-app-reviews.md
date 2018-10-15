@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: Используйте этот метод в API аналитики для Microsoft Store для получения отзывов о приложении в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение отзывов о приложении
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, отзывы
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f1e71fc0fb96344ab73c503de6fcc741673d8d9
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: ce1f9c3a360209bc9ac7b03ac162460a333c7192
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663854"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613578"
 ---
 # <a name="get-app-reviews"></a>Получение отзывов о приложении
 
@@ -44,7 +44,7 @@ ms.locfileid: "1663854"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|---------------------|
-| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
@@ -54,10 +54,10 @@ ms.locfileid: "1663854"
 | applicationId | string | [Код продукта в Store](in-app-purchases-and-trials.md#store-ids) для приложения, по которому требуется получить данные об отзывах.  |  Да  |
 | startDate | date | Начальная дата диапазона дат, для которого требуется получить данные об отзывах. По умолчанию используется текущая дата |  Нет  |
 | endDate | date | Конечная дата диапазона дат, для которого требуется получить данные об отзывах. По умолчанию используется текущая дата |  Нет  |
-| top | целое число | Количество строк данных, возвращаемых в запросе. Максимальное значение и значение по умолчанию (если параметр не указан) — 10 000. Если в запросе содержится больше строк, то тело ответа будет содержать ссылку «Далее», которую можно использовать для запроса следующей страницы данных |  Нет  |
+| top | int | Количество строк данных, возвращаемых в запросе. Максимальное значение и значение по умолчанию (если параметр не указан) — 10 000. Если в запросе содержится больше строк, то тело ответа будет содержать ссылку «Далее», которую можно использовать для запроса следующей страницы данных |  Нет  |
 | skip | int | Количество строк, пропускаемых в запросе. Используйте этот параметр для постраничного перемещения по большим наборам данных. Например, при top=10000 и skip=0 извлекаются первые 10 000 строк данных; при top=10000 и skip=10000 извлекаются следующие 10 000 строк данных и т. д. |  Нет  |
-| filter |строка  | Один или несколько операторов для фильтрации строк в ответе. Дополнительные сведения см. далее в разделе [фильтрация полей](#filter-fields) | Нет   |
-| orderby | строка | Оператор, который определяет порядок полученных значений данных. Используется следующий синтаксис: <em>orderby=field [order],field [order],...</em>, где параметр <em>field</em> может принимать одно из следующих строковых значений:<ul><li><strong>date,</strong></li><li><strong>osVersion,</strong></li><li><strong>market,</strong></li><li><strong>deviceType</strong></li><li><strong>isRevised,</strong></li><li><strong>packageVersion,</strong></li><li><strong>deviceModel,</strong></li><li><strong>productFamily,</strong></li><li><strong>deviceScreenResolution,</strong></li><li><strong>isTouchEnabled,</strong></li><li><strong>reviewerName,</strong></li><li><strong>reviewTitle,</strong></li><li><strong>reviewText,</strong></li><li><strong>helpfulCount,</strong></li><li><strong>notHelpfulCount,</strong></li><li><strong>responseDate,</strong></li><li><strong>responseText,</strong></li><li><strong>deviceRAM,</strong></li><li><strong>deviceStorageCapacity,</strong></li><li><strong>rating.</strong></li></ul><p>Параметр <em>order</em> является необязательным и может принимать значения <strong>asc</strong> или <strong>desc</strong>, которые указывают, соответственно, порядок сортировки по возрастанию или по убыванию для каждого поля. Значение по умолчанию — <strong>asc</strong>.</p><p>Пример: строка <em>orderby</em>: <em>orderby=date,market</em></p> |  Нет  |
+| filter |string  | Один или несколько операторов для фильтрации строк в ответе. Дополнительные сведения см. далее в разделе [фильтрация полей](#filter-fields) | Нет   |
+| orderby | string | Выражение, которое определяет порядок полученных значений данных. Используется следующий синтаксис: <em>orderby=field [order],field [order],...</em>, где параметр <em>field</em> может принимать одно из следующих строковых значений:<ul><li><strong>date,</strong></li><li><strong>osVersion,</strong></li><li><strong>market,</strong></li><li><strong>deviceType</strong></li><li><strong>isRevised,</strong></li><li><strong>packageVersion,</strong></li><li><strong>deviceModel,</strong></li><li><strong>productFamily,</strong></li><li><strong>deviceScreenResolution,</strong></li><li><strong>isTouchEnabled,</strong></li><li><strong>reviewerName,</strong></li><li><strong>reviewTitle,</strong></li><li><strong>reviewText,</strong></li><li><strong>helpfulCount,</strong></li><li><strong>notHelpfulCount,</strong></li><li><strong>responseDate,</strong></li><li><strong>responseText,</strong></li><li><strong>deviceRAM,</strong></li><li><strong>deviceStorageCapacity,</strong></li><li><strong>rating.</strong></li></ul><p>Параметр <em>order</em> является необязательным и может принимать значения <strong>asc</strong> или <strong>desc</strong>, которые указывают, соответственно, порядок сортировки по возрастанию или по убыванию для каждого поля. Значение по умолчанию — <strong>asc</strong>.</p><p>Пример: строка <em>orderby</em>: <em>orderby=date,market</em></p> |  Нет  |
 
 
 ### <a name="filter-fields"></a>Поля фильтра
@@ -71,7 +71,7 @@ ms.locfileid: "1663854"
 | Поля        | Поддерживаемые операторы   |  Описание        |
 |---------------|--------|-----------------|
 | market | eq, ne | Строка, которая содержит код страны рынка устройства по стандарту ISO 3166 |
-| osVersion  | eq, ne  | Одна из следующих строк:<ul><li><strong>Windows Phone 7.5;</strong></li><li><strong>Windows Phone 8;</strong></li><li><strong>Windows Phone8.1;</strong></li><li><strong>Windows Phone 10;</strong></li><li><strong>Windows 8;</strong></li><li><strong>Windows8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Неизвестно</strong></li></ul>  |
+| osVersion  | eq, ne  | Одна из следующих строк:<ul><li><strong>Windows Phone 7.5;</strong></li><li><strong>Windows Phone 8;</strong></li><li><strong>Windows Phone8.1;</strong></li><li><strong>Windows Phone 10;</strong></li><li><strong>Windows 8;</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>  |
 | deviceType  | eq, ne  | Одна из следующих строк:<ul><li><strong>Компьютер</strong></li><li><strong>Телефон</strong></li><li><strong>Console (консоль),</strong></li><li><strong>Интернет вещей</strong></li><li><strong>Holographic (голография),</strong></li><li><strong>Неизвестно</strong></li></ul>  |
 | isRevised  | eq, ne  | Если нужно отфильтровать пересмотренные отзывы, укажите значение <strong>true</strong>, в противном случае — <strong>false</strong>  |
 | packageVersion  | eq, ne  | Версия пакета приложения, на которую оставлен отзыв  |
@@ -113,7 +113,7 @@ Authorization: Bearer <your access token>
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Значение      | array  | Массив объектов, содержащий информацию об отзывах. Дополнительные сведения о данных в каждом объекте см. далее в разделе [Значения отзывов](#review-values).                                                                                                                                      |
 | @nextLink  | string | При наличии дополнительных страниц данных эта строка содержит URI-адрес, который можно использовать для запроса следующей страницы данных. Например, это значение возвращается в том случае, если параметр **top** запроса имеет значение 10 000, но для данного запроса имеется больше 10 000 строк с информацией об отзывах. |
-| TotalCount | целое число    | Общее количество строк в результирующих данных для запроса.                                    |
+| TotalCount | int    | Общее количество строк в результирующих данных для запроса.                                    |
 
  
 ### <a name="review-values"></a>Значения отзывов

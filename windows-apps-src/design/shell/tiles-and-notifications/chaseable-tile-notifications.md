@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, отслеживаемые плитки, живые плитки, уведомления на отслеживаемых плитках
 ms.localizationpriority: medium
 ms.openlocfilehash: b6d86d8881e0027a28f0f2a737e5f3fcb46a6ab5
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4568992"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614766"
 ---
 # <a name="chaseable-tile-notifications"></a>Уведомления на отслеживаемых плитках
 

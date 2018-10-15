@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
 description: Используйте этот метод в API отзывов Microsoft Store, чтобы отправлять ответы на отзывы о вашем приложении.
 title: Отправка ответов на отзывы
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, службы Store, API отзывов Microsoft Store, приобретение надстроек
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a757743bec947a5e8b0edf8c7a0d02e7c00942d
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 4ec6661ec0ef65174b6218957450540edceaa5a0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662604"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614831"
 ---
 # <a name="submit-responses-to-reviews"></a>Отправка ответов на отзывы
 
@@ -48,7 +48,7 @@ ms.locfileid: "1662604"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
@@ -73,7 +73,7 @@ ms.locfileid: "1662604"
 | ReviewId | string |  Идентификатор отзыва, на который вы хотите ответить (это GUID). Идентификаторы отзывов доступны в данных ответов метода [получения отзывов о приложении](get-app-reviews.md) в API аналитики для Microsoft Store и в [автономном](../publish/download-analytic-reports.md) [отчете об отзывах](../publish/reviews-report.md).   |  Да  |
 | ResponseText | string | Отправляемый вами ответ. Необходимо следовать [этим рекомендациям](../publish/respond-to-customer-reviews.md#guidelines-for-responses).   |  Да  |
 | SupportEmail | string | Адрес электронной почты службы поддержки вашего приложения, по которому клиент может связаться с вами напрямую. Это должен быть допустимый адрес электронной почты.     |  Да  |
-| IsPublic | Boolean |  Значение **true** показывает, что ваш ответ будет отображаться на странице описания приложения в Магазине, непосредственно под отзывом клиента и будет виден всем пользователям. Значение **false** показывает, что ваш ответ будет отправлен клиенту по электронной почте и не будет виден другим пользователям на странице описания приложения в Магазине.     |  Да  |
+| IsPublic | Boolean |  Если задать **значение true**, ваш ответ будет отображаться ваше приложение в описании в магазине, непосредственно под отзывом пользователя и будет виден всем пользователям. Если указать **значение false** и пользователь не отказался от получения ответов по электронной почте, ваш ответ будет отправлен клиенту по электронной почте, и он не будет виден другим пользователям в описании приложения в магазине. Если указать **значение false** и пользователь отказался от получения ответов на отзывы по электронной почте, будет возвращена ошибка.   |  Да  |
 
 
 ### <a name="request-example"></a>Пример запроса

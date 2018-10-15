@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
 description: Узнайте, как запускать промежуточную рекламу с помощью JavaScript И HTML.
 title: Пример кода промежуточной рекламы в JavaScript
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, реклама, рекламные объявления, промежуточная, javascript, пример кода
 ms.localizationpriority: medium
-ms.openlocfilehash: f0cd50a8d3a08053f04dd0e6e8afbfafc8ef34dd
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 894053298428818c2f3304220f14afb6c44ba2af
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690350"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611934"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>Пример кода промежуточной рекламы в JavaScript
 
@@ -30,7 +30,7 @@ ms.locfileid: "1690350"
 Замените значения переменных ```applicationId``` и ```adUnitId``` фактическими значениями из Центра разработки для Windows перед отправкой своего приложения в Microsoft Store. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
 > [!NOTE]
-> Чтобы изменить этот пример для отображения межстраничного баннера вместо межстраничной видеорекламы, передайте значение **InterstitialAdType.display** в качестве первого параметра для метода [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) вместо значения **InterstitialAdType.video**. Дополнительные сведения см. в разделе [Межстраничные объявления](interstitial-ads.md).
+> Чтобы изменить этот пример для отображения межстраничного баннера вместо межстраничной видеорекламы, передайте значение **InterstitialAdType.display** в качестве первого параметра для метода [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) вместо значения **InterstitialAdType.video**. Дополнительные сведения см. в разделе [Межстраничные объявления](interstitial-ads.md).
 
 ### <a name="indexhtml"></a>index.html
 

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
 description: Используйте этот метод в API отправки в Microsoft Store для получения информации о тестовых пакетах для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows.
 title: Получение тестовых пакетов для приложения
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, API отправки в Microsoft Store, тестируемые возможности, тестовые пакеты
 ms.localizationpriority: medium
-ms.openlocfilehash: aa9bbac25316fcebc630edd55aabd333e43e3e49
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: d6349e5c597b923ba05abe5ed74492409350e36e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1661984"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613645"
 ---
 # <a name="get-package-flights-for-an-app"></a>Получение тестовых пакетов для приложения
 
@@ -41,7 +41,7 @@ ms.locfileid: "1661984"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Авторизация | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса

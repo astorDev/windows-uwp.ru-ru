@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: Используйте этот метод, чтобы обновить ключ Microsoft Store.
 title: Обновление ключа идентификатора Microsoft Store
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API коллекции Microsoft Store, API покупок Microsoft Store, ключ Microsoft Store, обновление
 ms.localizationpriority: medium
-ms.openlocfilehash: 430eaaa040e731e429eba15d58f554e41349a959
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 70bda5022e52c0b18a43563a0492bd56d09b88a0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664827"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612448"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>Обновление ключа идентификатора Microsoft Store
 
@@ -56,7 +56,7 @@ ms.locfileid: "1664827"
 | Параметр     | Тип   | Описание                       | Обязательный |
 |---------------|--------|-----------------------------------|----------|
 | serviceTicket | строка | Маркер доступа Azure AD.        | Да      |
-| key           | строка | Ключ идентификатора Microsoft Store с истекшим сроком действия. | Нет       |
+| key           | строка | Ключ идентификатора Microsoft Store с истекшим сроком действия. | Да       |
 
 
 ### <a name="request-example"></a>Пример запроса
@@ -78,9 +78,9 @@ Host: collections.mp.microsoft.com
 
 ### <a name="response-body"></a>Тело ответа
 
-| Параметр | Тип   | Описание                                                                                                            | Обязательный |
-|-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
-| key       | строка | Обновленный ключ Microsoft Store, который можно использовать при последующих вызовах API-интерфейсов коллекций Microsoft Store или API покупок. | Нет       |
+| Параметр | Тип   | Описание                                                                                                            |
+|-----------|--------|------------------------------------------------------------------------------------------------------------------------|
+| key       | строка | Обновленный ключ Microsoft Store, который можно использовать при последующих вызовах API-интерфейсов коллекций Microsoft Store или API покупок. |
 
 
 ### <a name="response-example"></a>Пример ответа
@@ -103,8 +103,8 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 ## <a name="error-codes"></a>Коды ошибок
 
 
-| Код | Ошибка        | Внутренний код ошибки           | Описание                                                                                                                                                                           |
-|------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Код | Ошибка        | Внутренний код ошибки           | Описание   |
+|------|--------------|----------------------------|---------------|
 | 401  | Unauthorized | AuthenticationTokenInvalid | Маркер доступа Azure AD недействителен. В некоторых случаях сведения об ошибке ServiceError содержат больше информации, например если истек срок действия маркера или отсутствует утверждение *appid*. |
 | 401  | Unauthorized | InconsistentClientId       | Утверждение *clientId* в ключе идентификатора Microsoft Store и утверждение *appid* в маркере доступа Azure AD не совпадают.                                                                     |
 

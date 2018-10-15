@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Узнайте, как обновить ваше приложение для использования последних поддерживаемых версий библиотек Microsoft Advertising, чтобы приложение продолжало получать рекламные баннеры.
 title: Обновление приложения для использования последних рекламных библиотек для баннеров
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP, рекламные объявления, реклама, AdControl, AdMediatorControl, переход
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: 76581de948a4bb62597443e389122298f69c561d
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 87cd734196e66021555002a43cb41719c88a1cf8
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654813"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612176"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>Обновление приложения для использования последних рекламных библиотек для баннеров
 

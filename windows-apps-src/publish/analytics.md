@@ -8,14 +8,14 @@ ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, аналитика, отчеты, панели мониторинга, приложений, данных, показатели
+keywords: Windows 10, uwp, аналитика, отчеты, панели мониторинга, приложений, данных, метрик
 ms.localizationpriority: medium
 ms.openlocfilehash: 090ddfdfbed1ae49e87f4dc419765e006913764f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571898"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613512"
 ---
 # <a name="analyze-app-performance"></a>Анализ эффективности приложений
 

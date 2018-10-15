@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных о конверсиях по каждому каналу для приложения в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение конверсий приложения по каналу
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, конверсии приложения, канал
 ms.localizationpriority: medium
-ms.openlocfilehash: bc0253c7857c46d6a796da545e93d30805fcda2b
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 720b4a20d6fa46df0118cecb0c65dcef533e1659
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663714"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611558"
 ---
 # <a name="get-app-conversions-by-channel"></a>Получение конверсий приложения по каналу
 
@@ -47,7 +47,7 @@ ms.locfileid: "1663714"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
@@ -84,7 +84,7 @@ Authorization: Bearer <your access token>
 
 | Значение      | Тип   | Описание                  |
 |------------|--------|-------------------------------------------------------|
-| Value      | Массив  | Массив объектов, содержащий сводную информацию о конверсиях для данного приложения. Дополнительные сведения о данных в каждом объекте см. далее в разделе [Значения конверсии](#conversion-values).                                                                                                                      |
+| Значение      | Массив  | Массив объектов, содержащий сводную информацию о конверсиях для данного приложения. Дополнительные сведения о данных в каждом объекте см. далее в разделе [Значения конверсии](#conversion-values).                                                                                                                      |
 | @nextLink  | Строка | При наличии дополнительных страниц данных эта строка содержит универсальный код ресурса (URI), который можно использовать для запроса следующей страницы данных. Например, это значение возвращается в том случае, если параметр **top** запроса имеет значение 10 000, но для данного запроса имеется больше 10 000 строк с информацией о конверсиях. |
 | TotalCount | int    | Общее количество строк в результирующих данных для запроса      |
 
@@ -103,7 +103,7 @@ Authorization: Bearer <your access token>
 | referrerUriDomain           | Строка |  Указывает домен, на котором было активировано описание приложения с идентификатором настраиваемой кампании по продвижению приложения.   |
 | channelType           | Строка |  Одно из следующих строковых значений, определяющих канал конверсии:<ul><li><strong>CustomCampaignId</strong></li><li><strong>Трафик Магазина</strong></li><li><strong>Другое</strong></li></ul>    |
 | storeClient         | Строка | Версия Магазина, в котором произведена конверсия. На данный момент единственным поддерживаемым значением является **SFC**.    |
-| deviceType          | Строка | Одна из следующих строк:<ul><li><strong>Компьютер</strong></li><li><strong>Телефон</strong></li><li><strong>Console (консоль),</strong></li><li><strong>IoT (Интернет вещей),</strong></li><li><strong>Holographic (голография),</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>            |
+| deviceType          | строка | Одна из следующих строк:<ul><li><strong>Компьютер</strong></li><li><strong>Телефон</strong></li><li><strong>Console (консоль),</strong></li><li><strong>Интернет вещей</strong></li><li><strong>Holographic (голография),</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>            |
 | market              | Строка | Код страны по стандарту ISO 3166 для рынка, на котором произошла конверсия.    |
 | clickCount              | Число  |     Число пользователей, щелкнувших по ссылке на описание вашего приложения.      |           
 | conversionCount            | Число  |   Количество конверсий пользователей.         |          
@@ -140,4 +140,4 @@ Authorization: Bearer <your access token>
 
 * [Отчет "Приобретения"](../publish/acquisitions-report.md)
 * [Доступ к аналитическим данным с помощью служб Microsoft Store](access-analytics-data-using-windows-store-services.md)
-* [Получение сведений о приобретениях приложения](get-app-acquisitions.md)
+* [Получение сведений о покупках приложения](get-app-acquisitions.md)

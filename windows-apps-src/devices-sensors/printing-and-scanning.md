@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, печати, 3dprinting, трехмерной печати
+keywords: Windows 10, uwp, печать, 3dprinting, трехмерной печати
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c4ada5d58743bf19ed27dfbdd2676f2a267129f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4568046"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612211"
 ---
 # <a name="printing-and-scanning"></a>Печать и сканирование
 
