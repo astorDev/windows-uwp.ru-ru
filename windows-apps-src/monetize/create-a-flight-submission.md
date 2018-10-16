@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: Используйте этот метод в API отправки Microsoft Store для создания новой отправки тестового пакета для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows.
 title: Создание отправки тестового пакета
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание отправки тестируемой возможности
 ms.localizationpriority: medium
-ms.openlocfilehash: 807fef9170af5c18561d2e1ee0160b9029f77514
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 87e544c2d9d04e62f324fe14cd7aab3e1b7ee500
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664444"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624402"
 ---
 # <a name="create-a-package-flight-submission"></a>Создание отправки тестового пакета
 
@@ -47,15 +47,15 @@ ms.locfileid: "1664444"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | Строка | Обязательный. Код продукта в Магазине для приложения, отправку тестового пакета которого необходимо создать. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| flightId | Строка | Обязательный. Идентификатор тестового пакета, для которого необходимо добавить отправку. Этот идентификатор добавляется в данные ответов для запросов на [создание тестового пакета](create-a-flight.md) и [получение тестовых пакетов для приложения](get-flights-for-an-app.md).  |
+| applicationId | string | Обязательный. Код продукта в Магазине для приложения, отправку тестового пакета которого необходимо создать. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| flightId | string | Обязательный. Идентификатор тестового пакета, для которого необходимо добавить отправку. Этот идентификатор добавляется в данные ответов для запросов на [создание тестового пакета](create-a-flight.md) и [получение тестовых пакетов для приложения](get-flights-for-an-app.md).  |
 
 
 ### <a name="request-body"></a>Тело запроса

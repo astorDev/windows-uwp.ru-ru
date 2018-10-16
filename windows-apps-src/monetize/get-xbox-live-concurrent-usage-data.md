@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store для получения данных одновременного использования Xbox Live.
 title: Получение данных параллельного использования Xbox Live
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live, одновременное использование
 ms.localizationpriority: medium
-ms.openlocfilehash: 47e9a23ba046e70a4d755a3ac9dc1bbf4d62f307
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 0853d3fce7a3af7539cce26229942f2bc31cb1a0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976179"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623826"
 ---
 # <a name="get-xbox-live-concurrent-usage-data"></a>Получение данных параллельного использования Xbox Live
 

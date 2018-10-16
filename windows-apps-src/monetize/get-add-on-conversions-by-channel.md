@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных о конверсиях по каждому каналу для надстройки в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение конверсий надстройки по каналу
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, конверсии надстройки, канал
 ms.localizationpriority: medium
-ms.openlocfilehash: 43c32cc30d65c798c09592ac46d64c2c1c550b64
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: af29c790df5508a22c545cdc5a2ca2faac15e134
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663424"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623998"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>Получение конверсий надстройки по каналу
 
@@ -46,7 +46,7 @@ ms.locfileid: "1663424"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
@@ -61,7 +61,7 @@ ms.locfileid: "1663424"
 | skip | int | Количество строк, пропускаемых в запросе. Используйте этот параметр для постраничного перемещения по большим наборам данных. Например, при top=10000 и skip=0 извлекаются первые 10 000 строк данных; при top=10000 и skip=10000 извлекаются следующие 10 000 строк данных и т. д. |  Нет  |
 | filter | Строка  | Одно или несколько выражений для фильтрации текста ответа. Каждое выражение может использовать операторы **eq** или **ne**; кроме того, операторы можно объединять с помощью **и** или **или**. Можно указать следующие строки в инструкциях фильтра.  Описания см. в разделе [значения конверсии](#conversion-values) в этой статье. <ul><li><strong>applicationName</strong></li><li><strong>appType</strong></li><li><strong>customCampaignId</strong></li><li><strong>referrerUriDomain</strong></li><li><strong>channelType</strong></li><li><strong>storeClient</strong></li><li><strong>deviceType</strong></li><li><strong>market</strong></li></ul><p>Вот пример параметра *filter*: <em>filter=deviceType eq 'PC'</em>.</p> | Нет   |
 | aggregationLevel | string | Определяет диапазон времени, для которого требуется получить сводные данные. Можно использовать следующие строки: <strong>day</strong>, <strong>week</strong> или <strong>month</strong>. Если параметр не задан, значение по умолчанию — <strong>day</strong> | Нет |
-| orderby | Строка | Оператор, который определяет порядок полученных значений данных для каждой конверсии. Используется следующий синтаксис: <em>orderby=field [order],field [order],...</em>, где параметр <em>field</em> параметр может принимать одно из следующих строковых значений:<ul><li><strong>Дата</strong></li><li><strong>applicationName</strong></li><li><strong>inAppProductName</strong></li><li><strong>appType</strong></li><li><strong>customCampaignId</strong></li><li><strong>referrerUriDomain</strong></li><li><strong>channelType</strong></li><li><strong>storeClient</strong></li><li><strong>deviceType</strong></li><li><strong>market</strong></li></ul><p>Параметр <em>order</em> является необязательным и может принимать значения <strong>asc</strong> или <strong>desc</strong>, которые указывают, соответственно, порядок сортировки по возрастанию или по убыванию для каждого поля. Значение по умолчанию — <strong>asc</strong>.</p><p>Пример: строка <em>orderby</em>: <em>orderby=date,market</em></p> |  Нет  |
+| orderby | Строка | Оператор, который определяет порядок полученных значений данных для каждой конверсии. Используется следующий синтаксис: <em>orderby=field [order],field [order],...</em>, где параметр <em>field</em> может принимать одно из следующих строковых значений:<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>inAppProductName</strong></li><li><strong>appType</strong></li><li><strong>customCampaignId</strong></li><li><strong>referrerUriDomain</strong></li><li><strong>channelType</strong></li><li><strong>storeClient</strong></li><li><strong>deviceType</strong></li><li><strong>market</strong></li></ul><p>Параметр <em>order</em> является необязательным и может принимать значения <strong>asc</strong> или <strong>desc</strong>, которые указывают, соответственно, порядок сортировки по возрастанию или по убыванию для каждого поля. Значение по умолчанию — <strong>asc</strong>.</p><p>Пример: строка <em>orderby</em>: <em>orderby=date,market</em></p> |  Нет  |
 | groupby | string | Оператор, который применяет агрегирование данных только к указанным полям. Можно указать следующие поля:<p/><ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>inAppProductName</strong></li><li><strong>appType</strong></li><li><strong>customCampaignId</strong></li><li><strong>referrerUriDomain</strong></li><li><strong>channelType</strong></li><li><strong>storeClient</strong></li><li><strong>deviceType</strong></li><li><strong>market</strong></li></ul><p>Возвращенные строки данных будут содержать поля, указанные в параметре <em>groupby</em>, а также:</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>inAppProductId</strong></li><li><strong>inAppProductName</strong></li><li><strong>conversionCount</strong></li><li><strong>clickCount</strong></li></ul><p>Параметр <em>groupby</em> можно использовать вместе с параметром <em>aggregationLevel</em>. Например: <em>groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  Нет  |
 
 
@@ -84,7 +84,7 @@ Authorization: Bearer <your access token>
 
 | Значение      | Тип   | Описание                  |
 |------------|--------|-------------------------------------------------------|
-| Value      | Массив  | Массив объектов, содержащий сводную информацию о конверсиях для этой надстройки. Дополнительные сведения о данных в каждом объекте см. далее в разделе [значения конверсии](#conversion-values).                     |
+| Значение      | Массив  | Массив объектов, содержащий сводную информацию о конверсиях для этой надстройки. Дополнительные сведения о данных в каждом объекте см. далее в разделе [значения конверсии](#conversion-values).                     |
 | @nextLink  | Строка | При наличии дополнительных страниц данных эта строка содержит универсальный код ресурса (URI), который можно использовать для запроса следующей страницы данных. Например, это значение возвращается в том случае, если параметр **top** запроса имеет значение 10 000, но для данного запроса имеется больше 10 000 строк с информацией о конверсиях. |
 | TotalCount | int    | Общее количество строк в результирующих данных для запроса                                                                                                                                                                                                                             |
 
@@ -104,7 +104,7 @@ Authorization: Bearer <your access token>
 | referrerUriDomain           | Строка |  Указывает домен, на котором было активировано описание приложения с идентификатором настраиваемой кампании по продвижению приложения.   |
 | channelType           | Строка |  Одно из следующих строковых значений, определяющих канал конверсии:<ul><li><strong>CustomCampaignId</strong></li><li><strong>Трафик Магазина</strong></li><li><strong>Другое</strong></li></ul>    |
 | storeClient         | Строка | Версия Магазина, в котором произведена конверсия. На данный момент единственным поддерживаемым значением является **SFC**.    |
-| deviceType          | Строка | Одна из следующих строк:<ul><li><strong>Компьютер</strong></li><li><strong>Телефон</strong></li><li><strong>Console (консоль),</strong></li><li><strong>IoT (Интернет вещей),</strong></li><li><strong>Holographic (голография),</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>            |
+| deviceType          | строка | Одна из следующих строк:<ul><li><strong>Компьютер</strong></li><li><strong>Телефон</strong></li><li><strong>Console (консоль),</strong></li><li><strong>Интернет вещей</strong></li><li><strong>Holographic (голография),</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>            |
 | market              | Строка | Код страны по стандарту ISO 3166 для рынка, на котором произошла конверсия.    |
 | clickCount              | Число  |     Число пользователей, щелкнувших по ссылке на описание вашего приложения.      |           
 | conversionCount            | Число  |   Количество конверсий пользователей.         |         

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: Используйте этот метод в API коллекции Microsoft Store, чтобы объявить потребляемый продукт в качестве выполненного для указанного покупателя. Перед повторной покупкой продукта пользователем ваше приложение или служба должны сообщить о нем как о выполненном для этого пользователя.
 title: Объявление потребляемого продукта в качестве выполненного
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API коллекции Microsoft Store, исполнение, потребляемый продукт
 ms.localizationpriority: medium
-ms.openlocfilehash: cd3b060961271d834a165a8cc8fa4ca8beba047c
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 2cbacd35a25e8eaf9673d118fcbece835572e289
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690110"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623933"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>Объявление потребляемого продукта в качестве выполненного
 
@@ -50,7 +50,7 @@ ms.locfileid: "1690110"
 
 | Заголовок         | Тип   | Описание                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;.                           |
+| Authorization  | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;.                           |
 | Host           | Строка | Должен иметь значение **collections.mp.microsoft.com**.                                            |
 | Content-Length | Число | Длина текста запроса.                                                                       |
 | Content-Type   | Строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
