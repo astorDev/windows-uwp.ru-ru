@@ -9,18 +9,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 88040d6eb1c5d198de0a446348e114b7e59a2dad
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d6607f6464cc938e7edde7ab0317809fabfeee65
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654903"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4688527"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>Выбор правильного типа канала push-уведомлений
 
 В этой статье рассматриваются три типа каналов push-уведомлений UWP (основной, вспомогательный и альтернативный), которые помогут вам доставить содержимое в ваше приложение. 
 
-(Дополнительные сведения о создании push-уведомлений см. в разделе [Обзор служб push-уведомлений Windows (WNS)](../tiles-and-notifications/windows-push-notification-services--wns--overview.md).) 
+(Дополнительные сведения о том, как Push-уведомлений, см. раздел [Обзор служб Push-уведомлений Windows (WNS)](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)). 
 
 ## <a name="types-of-push-channels"></a>Типы каналов push-уведомлений 
 

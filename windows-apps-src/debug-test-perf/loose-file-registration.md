@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, портал устройств, диспетчер приложений, развертывание, sdk
 ms.localizationpriority: medium
 ms.openlocfilehash: a6a96a78cf03ce4994ddee1c929997b12a2d028f
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4622165"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4689727"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>Развертывание приложения через свободная регистрация файлов 
 

@@ -14,12 +14,12 @@ keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 077967c37f76c8f1d0942f365344de65db13b041
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 57856872fc664670756c310410223acaf9708bc5
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983577"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4688583"
 ---
 # <a name="icons-for-uwp-apps"></a>Значки для приложений UWP
 
@@ -29,7 +29,9 @@ ms.locfileid: "1983577"
 
 Значки могут отображаться в приложениях и за их пределами. 
 
-:::row::: :::column::: **Значки в приложении**
+:::row:::
+    :::column:::
+        **Icons inside the app**
 
         ![icons inside the app](images/icons/inside-icons.png)
         Inside your app, you use icons to represent an action, such as copying text or navigating to the settings page.
@@ -48,7 +50,10 @@ ms.locfileid: "1983577"
 
 Значки позволяют сэкономить место, но когда их следует использовать? 
 
-:::row::: :::column::: ![do](images/do.svg) ![Стандартное изображение значка](images/icons/icons-standard.svg)<br>
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        ![icons standard image](images/icons/icons-standard.svg)<br>
 
         Use an icon for actions, like cut, copy, paste, and save, or for navigation items in a navigation menu.
     :::column-end:::
@@ -60,7 +65,10 @@ ms.locfileid: "1983577"
     :::column-end:::
 :::row-end:::
 
-:::row::: :::column::: ![do](images/do.svg) ![Значок корзины](images/icons/icon-shopping-cart.svg)<br>
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        ![icon shopping cart](images/icons/icon-shopping-cart.svg)<br>
 
         Use an icon if it's easy for the user to understand what the icon means and it's simple enough to be clear at small sizes.
     :::column-end:::
@@ -79,20 +87,55 @@ ms.locfileid: "1983577"
 Существует множество способов создания значка. Вы можете использовать символьный шрифт, например Segoe MDL2 Assets. Вы можете создать собственное векторное изображение. Вы можете даже использовать растровое изображение, хотя это не рекомендуется. Далее представлен обзор различных способов добавления значка в приложение. 
 
 ### <a name="use-a-predefined-icon"></a>Использование стандартного значка.
-:::row::: :::column::: Корпорация Майкрософт предоставляет более 1000 значков в виде шрифта Segoe MDL2 Assets. Получить значок из шрифта может быть не так просто, но наша технология отображения шрифта гарантирует, что эти значки будут выглядеть четко и резко на любом дисплее, при любом разрешении и в любом размере. :::column-end::: :::column::: ![стандартное изображение значка](images/icons/predefined-icon.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Microsoft provides over 1000 icons in the form of the Segoe MDL2 Assets font. It might not be intuitive to get an icon from a font, but our font display technology means these icons will look crisp and sharp on any display, at any resolution, and at any size. 
+    :::column-end:::
+    :::column:::
+        ![pre-defined icon image](images/icons/predefined-icon.png)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="use-a-font"></a>Использование шрифта.
-:::row::: :::column::: Вам необязательно использовать шрифт Segoe MDL2 Assets, вы можете выбрать любой шрифт, установленный пользователем в системе, например Wingdings или Webdings.
-:::column-end::: :::column::: ![изображение wingdings](images/icons/wingdings.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        You don't have to use the Segoe MDL2 Assets font--you can use any font the user has installed on their system, such as Wingdings or Webdings.
+    :::column-end:::
+    :::column:::
+        ![wingdings image](images/icons/wingdings.png)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="use-a-scalable-vector-graphics-svg-file"></a>Использование файла векторной графики SVG.
-:::row::: :::column::: Ресурсы SVG идеально подходят для значков, потому они всегда четко выглядят при любом размере или разрешении. Большинство приложений для рисования поддерживают экспорт файлов в формате SVG. :::column-end::: :::column::: ![Изображение SVG](images/icons/icon-scale.gif) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        SVG resources are ideal for icons, because they always look sharp at any size or resolution. Most drawing applications can export to SVG. 
+    :::column-end:::
+    :::column:::
+        ![SVG image](images/icons/icon-scale.gif)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="use-geometry-objects"></a>Использование объектов Geometry.
-:::row::: :::column::: Подобно SVG-файлам геометрии являются векторными ресурсами, поэтому они всегда выглядят четко. Однако создать геометрию не так просто, так как вам необходимо отдельно указать все точки и кривые. Этот вариант следует использовать, только если вам нужно изменить значок во время выполнения приложения (например, для анимации). Инструкции см. в разделе [Команды перемещения и рисования для геометрии](../../xaml-platform/move-draw-commands-syntax.md). :::column-end::: :::column::: ![изображение объектов Geometry](images/icons/geometry-objects.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Like SVG files, geometries are a vector-based resource, so they always look sharp. However, creating a geometry is complicated because you have to individually specify each point and curve. It's really only a good choice if you need to modify the icon while your app is running (to animate it, for example). For instructions, see [Move and draw commands for geometries](../../xaml-platform/move-draw-commands-syntax.md). 
+    :::column-end:::
+    :::column:::
+        ![Geometry objects image](images/icons/geometry-objects.png)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="you-can-also-use-a-bitmap-image-such-as-png-gif-or-jpeg-although-we-dont-recommend-it"></a>Вы также можете использовать растровое изображение (например, в формате PNG, GIF и JPEG),, хотя это не рекомендуется.
-:::row::: :::column::: Растровые изображения создаются в определенном размере, поэтому их необходимо масштабировать в зависимости от требуемого размера значка и разрешения экрана. При уменьшении (сжатии) размера значка, он может оказаться размытым. При увеличении размера, он может стать угловато и пикселизированным. Если вам необходимо использовать растровое изображение, рекомендуется формат PNG или GIF, а не JPEG. :::column-end::: :::column::: ![don't](images/dont.svg) ![Растровое изображение](images/icons/bitmap-image.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Bitmap images are created at a specific size, so they have to be scaled up or down depending on how large you want the icon to be and the resolution of the screen. When the image is scaled down (shrunk), it can appear blurry; when it's scaled up, it can appear blocky and pixelated. If you have to use a bitmap image we recommend using a PNG or GIF over a JPEG. 
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        ![Bitmap image](images/icons/bitmap-image.png)
+    :::column-end:::
+:::row-end:::
 
 ## <a name="make-the-icon-do-something"></a>Привязка функции к значку
 
@@ -106,15 +149,32 @@ ms.locfileid: "1983577"
 
 Вот несколько способов добавления значка в кнопку.
 
-:::row::: :::column span="2"::: <b>Шаг 1</b><br>
-        Выберите для кнопки семейство шрифтов `Segoe MDL2 Assets` и задайте свойству content значение Юникода, соответствующее глифу, который вы хотите использовать :::column-end::: :::column::: ![Создание кнопки значка, шаг 1](images/icons/create-icon-step-1.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column span="2":::
+        <b>Step 1</b><br>
+        Set the button's font family to `Segoe MDL2 Assets` and its content property to the unicode value of the glyph you want to use:
+    :::column-end:::
+    :::column:::
+        ![Create an icon button step 1](images/icons/create-icon-step-1.svg)
+    :::column-end:::
+:::row-end:::
 
 ```xaml 
 <Button FontFamily="Segoe MDL2 Assets" Content="&#xE102;" />
 ```
 
-:::row::: :::column span="2"::: <b>Шаг 2</b><br>
-        Вы можете использовать один из объектов элемента значка: [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon), [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon), [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) и [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon). Это позволяет получить более широкий выбор значков и объединять разные значки и другие типы содержимого, например текст: want: :::column-end::: :::column::: ![Создание кнопки значка, шаг 2](images/icons/icon-text-step-2.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column span="2":::
+        <b>Step 2</b><br>
+        You can use one of the icon element objects: [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon),
+        [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon), 
+        [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon), or
+        [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon). This gives you more types of icons to choose from, and enables you to combine icons and other types of content, such as text, if you want:
+    :::column-end:::
+    :::column:::
+        ![Create an icon button step 2](images/icons/icon-text-step-2.svg)
+    :::column-end:::
+:::row-end:::
 
 ```xaml 
 <Button>
@@ -127,7 +187,14 @@ ms.locfileid: "1983577"
 
 ## <a name="create-a-series-of-icons-in-a-command-bar"></a>Создание серии значков на панели команд
 
-:::row::: :::column span::: Если у вас есть несколько похожих команд, таких как вырезать, скопировать и вставить, или набор команд рисования для программы редактирования фотографий, объедините их на [панели команд](../controls-and-patterns/app-bars.md). На панели команд размещается одна или несколько кнопок панели приложения или кнопок-переключателей панели приложения, каждая из которых представляет действие. У каждой кнопки есть свойство [Icon](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon), которое используется для выбора отображаемого значка. Существует множество способов указать значок. :::column-end::: :::column::: ![Пример панели команд со значками](images/icons/create-icon-command-bar.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column span:::
+        When you have a series of commands that go together, such as cut/copy/paste or a set of drawing commands for a photo-editing program, put them together in a [command bar](../controls-and-patterns/app-bars.md). A command bar takes one or more app bar buttons or app bar toggle buttons, each of which represents an action. Each button has an [Icon](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) property you use to control which icon it displays. There are a variety of ways to specify the icon. 
+    :::column-end:::
+    :::column:::
+        ![Example of a command bar with icons](images/icons/create-icon-command-bar.svg)
+    :::column-end:::
+:::row-end:::
 
 Проще всего использовать список стандартных значков, которые предоставляем мы,— просто укажите имя значка, например "Назад" или "Стоп", и система его нарисует: 
 

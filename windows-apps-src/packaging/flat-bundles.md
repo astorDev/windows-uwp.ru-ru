@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, упаковка, конфигурация пакета, плоский пакет
 ms.localizationpriority: medium
 ms.openlocfilehash: 63206619d75bedb92ad6c6d05c3188272c0760de
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4618251"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4689375"
 ---
 # <a name="flat-bundle-app-packages"></a>Пакеты приложений на основе плоских пакетов 
 

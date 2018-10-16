@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b4cae2e135f7a66cd68192faabeffdb309a909
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 1c8e4649fad0e467e0656415e2fd49a9fea05109
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4620985"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4689875"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Применение исправлений среды выполнения для пакета MSIX с помощью платформа поддержки пакетов
 
@@ -269,7 +269,7 @@ Visual Studio можно использовать для отладки испр
 
 | Проект | Описание |
 |-------|-----------|
-| DesktopApplicationPackage | Этот проект основана на [проект упаковки приложения Windows](desktop-to-uwp-packaging-dot-net.md) и выводит его пакета MSIX. |
+| DesktopApplicationPackage | Этот проект основана на [проект упаковки приложения Windows](desktop-to-uwp-packaging-dot-net.md) и он выводит пакета MSIX. |
 | Runtimefix | Это библиотека C++ Dynamic-Linked проект, который содержит одну или несколько функций замены, которые служат исправление среды выполнения. |
 | PSFLauncher | Это пустой проект C++. Этот проект является местом для сбора файлов среды выполнения распространяемый пакет поддержки инфраструктуры. Он выводит исполняемый файл. Этот исполняемый файл — первое, который выполняется при запуске решения. |
 | WinFormsDesktopApplication | Этот проект содержит исходный код классического приложения. |
