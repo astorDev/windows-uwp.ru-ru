@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, категория, подкатегория, жанр, категории, жанры
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f43ae7c70a9471f279927d87c9d55aac8519d6a
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4612062"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4685585"
 ---
 # <a name="category-and-subcategory-table"></a>Таблица категорий и подкатегорий
 
