@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ad1700d58ab3568aa3aefa46b5950d0a8bf3c320
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4612147"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4681982"
 ---
 # <a name="toast-content-schema"></a>Схема содержимого всплывающего уведомления
 

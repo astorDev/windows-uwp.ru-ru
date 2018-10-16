@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 36026eb812c4496f95f6708fd30dc1e1fcb35ca6
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: 78448081b81e7e28c4b97fcfdd7aa71ae32aeb0c
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895431"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4682158"
 ---
 # <a name="keyboard-events"></a>События клавиатуры
 
@@ -329,7 +329,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 Вы можете переопределить основные события для определенных элементов управления (таких как [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)) для обеспечения согласованного перемещения фокуса для различных устройств ввода, в том числе клавиатуры и игрового контроллера.
 
-В следующем примере мы создаем подкласс элемента управления и переопределяем поведение KeyDown, чтобы переместить фокус на содержимое GridView при нажатии любой клавиши со стрелками.
+В следующем примере мы создаем подкласс элемента управления и переопределяем поведение KeyDown, чтобы переместить фокус на GridView содержимого при нажатии любой клавиши со стрелками.
 
 ```csharp
 public class CustomGridView : GridView

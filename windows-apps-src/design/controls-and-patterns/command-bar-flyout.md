@@ -15,12 +15,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: ed17299051ae7da32f238eb57876b81597c8effa
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 22d965d14c4f10f904a4d94a18ce83721c49491c
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4617954"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680125"
 ---
 # <a name="command-bar-flyout"></a>Всплывающий элемент панели команд
 
@@ -149,7 +149,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 Для отображения команд в контекстном меню, вы обычно назначить всплывающий элемент свойство [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) элемента пользовательского интерфейса. Таким образом, открыв всплывающий элемент обрабатывается с помощью элемента, и больше ничего делать не нужно.
 
-Если нужно обработать, отображается всплывающий элемент самостоятельно (например, в событии [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped) ), задать всплывающий элемент [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) в **стандартной** открывать всплывающий элемент в развернутом режиме и установить на него фокус.
+Если нужно обработать, отображается всплывающий элемент самостоятельно (например, в событии [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped) ), задайте всплывающий элемент [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) в **стандартной** открывать всплывающий элемент в развернутом режиме и установить на него фокус.
 
 > [!TIP]
 > Дополнительные сведения о параметрах при отображении всплывающий элемент, а также как для размещения всплывающего элемента управления см. в разделе [всплывающие элементы](../controls-and-patterns/dialogs-and-flyouts/flyouts.md).

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованных приложений, связанный набор, дополнительные пакеты, веб-сервер Azure
 ms.localizationpriority: medium
 ms.openlocfilehash: b98ca6316f733210dbdbc5201178b3a89a2b5982
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4623428"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4681194"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>Установка приложения UWP из веб-приложения Azure
 

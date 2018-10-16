@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, игры, элементы управления, ввод
 ms.localizationpriority: medium
-ms.openlocfilehash: 84230759f03cb60b5b776d3407ac0f96e090d495
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 563ca17864f95cfa98313608f5a5c32e64f44a16
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675301"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680202"
 ---
 # <a name="add-controls"></a>Добавление элементов управления
 
@@ -99,7 +99,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 В состояние **WaitForInput** игра переходит в случае приостановки. Это случается, если игрок перемещает указатель за пределы главного окна игры или нажимает кнопку "Пауза" (клавиша P или кнопка **Пуск** на геймпаде). **MoveLookController** регистрирует нажатие и сообщает об этом игровому циклу, вызывая метод [**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127). Если **IsPauseRequested** возвращает значение **true**, игровой цикл вызывает метод **WaitForPress** экземпляра **MoveLookController**, чтобы перевести контроллер в состояние **WaitForInput**. 
 
 
-После перехода в состояние **WaitForInput** игра прекращает обработку практических всех событий ввода игрового процесса, пока не вернется в состояние **Active**. Исключением является кнопка "Пауза", при нажатии которой игра возвращается в активное состояние. Кроме кнопки "Пауза", для возврата игры в состояние **Active** игрок может выбрать пункт меню. 
+После перехода в состояние **WaitForInput** игра прекращает обработку практических всех событий ввода игрового процесса, пока не вернется в состояние **Active**. Исключением является кнопка "Пауза", при нажатии которой игра возвращается в активное состояние. Кроме "Пауза" в порядке для игры, чтобы вернуться в **активное** состояние игрок может выбрать пункт меню. 
 
 
 
@@ -579,7 +579,7 @@ window->KeyUp +=
 
 
 
-В методе [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) мы добавляем два новых события для проверки того, был ли геймпад [добавлен](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105) или [удален](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114). Эти события обновляют свойство **m_gamepadsChanged**. Оно используется методом **UpdatePollingDevices** для проверки того, изменился ли список известных геймпадов. 
+В методе [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) мы добавляем два новых события для проверки того, был ли геймпад [добавлен](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105) или [удален](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114). Эти события обновляют свойство **m_gamepadsChanged**. Этот параметр используется в методе **UpdatePollingDevices** для проверки, изменился ли список известных геймпадов. 
 
 ```cpp
     // Detect gamepad connection and disconnection events.

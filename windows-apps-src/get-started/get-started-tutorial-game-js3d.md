@@ -1,6 +1,6 @@
 ---
 title: 'Руководство по началу работы: трехмерная игра UWP на JavaScript'
-description: Игра UWP для Магазина Windows, написанная на JavaScript с использованием библиотеки three.js
+description: Игра UWP для Microsoft Store, написанная на JavaScript с использованием библиотеки three.js
 author: abbycar
 ms.author: abigailc
 ms.date: 03/06/2017
@@ -9,11 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
-ms.openlocfilehash: bb72e7787764fd549891651df47794dfe1948247
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: fa3722c5b011d16ca793b3541efe124b7c255dfd
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "225649"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4694651"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Создание трехмерной игры JavaScript с использованием библиотеки three.js
 
@@ -26,18 +28,18 @@ ms.locfileid: "225649"
 
 Хотите немного узнать о приложении, которое нам предстоит создать, прежде чем читать дальше? Ознакомьтесь с ним на CodePen!
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="NpKejy" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Dino game final" data-preview="true" data-editable="true" class="codepen">См. запись <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/NpKejy/">Dino game final</a> от Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) на <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='Последний динозавр игры' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpKejy/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. запись <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpKejy/'>Dino game final</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 > [!NOTE] 
-> Этот пример не претендует на то, чтобы считаться завершенной игрой. Его цель— продемонстрировать, как с помощью JavaScript и сторонней библиотеки создать приложение, готовое к публикации в Магазине Windows.
+> Этот пример не полный игрой. она предназначена для демонстрации с помощью JavaScript и сторонней библиотеки создать приложение, готовое к публикации в Microsoft Store.
 
 
 ## <a name="requirements"></a>Требования
 
 Для этого проекта понадобятся:
--    компьютер (или виртуальная машина) под управлением текущей версии Windows10;
--    копия Visual Studio. Бесплатный выпуск Visual Studio Community Edition можно скачать на [домашней странице Visual Studio](http://visualstudio.com/).
+-   компьютер (или виртуальная машина) под управлением текущей версии Windows10;
+-   копия Visual Studio. Бесплатный выпуск Visual Studio Community Edition можно скачать на [домашней странице Visual Studio](http://visualstudio.com/).
 В этом проекте используется библиотека JavaScript **three.js**. Библиотека **three.js** выпускается по лицензии MIT. Эта библиотека уже есть в проекте (ищите `js/libs` в представлении "Обозреватель решений"). Подробнее об этой библиотеке можно узнать на домашней странице [**three.js**](https://threejs.org/).
 
 ## <a name="getting-started"></a>Начало работы
@@ -50,11 +52,11 @@ ms.locfileid: "225649"
 
 Если вы не хотите клонировать проект, его можно скачать в виде ZIP-файла.
 Загрузив проект в Visual Studio, вы увидите несколько файлов, в том числе:
--    Images/— папка с различными значками для приложений UWP.
+-   Images/— папка с различными значками для приложений UWP.
 - css/— папка с используемыми таблицами стилей CSS.
--    js/— папку, содержащую файлы JavaScript, где файл main.js— это сама игра, а другие файлы— сторонние библиотеки.
--    models/— папка с трехмерными моделями. Для этой игры используется лишь одна модель—модель динозавра.
--    index.html— веб-страница, на которой размещен обработчик игры.
+-   js/— папку, содержащую файлы JavaScript, где файл main.js— это сама игра, а другие файлы— сторонние библиотеки.
+-   models/— папка с трехмерными моделями. Для этой игры используется лишь одна модель—модель динозавра.
+-   index.html— веб-страница, на которой размещен обработчик игры.
 
 Теперь можно запустить игру!
 
@@ -65,7 +67,7 @@ ms.locfileid: "225649"
 
 ## <a name="walkthrough"></a>Пошаговое руководство
 
-При запуске этой игры отобразится окно с предложением щелкнуть на экране. [API блокировки указателя]([Pointer Lock API](https://docs.microsoft.com/microsoft-edge/dev-guide/dom/pointer-lock)) используется, чтобы вы могли осматриваться с помощью мыши. Для перемещения используются клавиши W, A, S и D или клавиши со стрелками.
+При запуске этой игры отобразится окно с предложением щелкнуть на экране. [API блокировки указателя](https://developer.mozilla.org/docs/Web/API/Pointer_Lock_API) используется, чтобы вы могли осматриваться с помощью мыши. Для перемещения используются клавиши W, A, S и D или клавиши со стрелками.
 Цель этой игры— убегать от динозавра. Как только динозавр приблизится к вам на достаточное расстояние, он начнет вас преследовать, пока вы не убежите достаточно далеко или не подойдете слишком близко и проиграете.
 
 ### <a name="1-setting-up-your-initial-html-file"></a>1. Настройка исходного файла HTML
@@ -258,8 +260,8 @@ ___
 
 Вы можете скопировать и вставить весь код JavaScript в эту запись CodePen, чтобы не отстать, если вы столкнулись с проблемами, или отредактировать ее, чтобы настроить источники света и изменить цвета. 
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="648faf11da72fb302b1396ec14e19cfe" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Cube and player camera" data-preview="true" data-editable="true" class="codepen">См. запись <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/648faf11da72fb302b1396ec14e19cfe/">Cube and player camera</a> от Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) на <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='Источники света, камера, кубов!' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. запись <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>источников света, камера, кубов!</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 
 ### <a name="3-making-the-maze"></a>3. Создание лабиринта
@@ -352,7 +354,7 @@ function createGround() {
 
     var ground = new THREE.Mesh(groundGeo, groundMat);
     ground.position.set(0, 1, 0);
-    // Rotate the place to to ground level
+    // Rotate the place to ground level
     ground.rotation.x = degreesToRadians(90);
     scene.add(ground);
 }
@@ -401,8 +403,8 @@ ___
 Поэкспериментируйте в CodePen, например измените цвет кубов или удалите основание, снабдив комментарием `createGround()` в функции `init()`.
 
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="b3d668e78b6c8e1a5130d3276ecb054f" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Maze building" data-preview="true" data-editable="true" class="codepen">См. запись <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/b3d668e78b6c8e1a5130d3276ecb054f/">Maze building</a> от Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) на <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='Создание лабиринта' src='//codepen.io/MicrosoftEdgeDocumentation/embed/JWKYzG/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. запись <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/JWKYzG/'>Maze building</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ### <a name="4-allowing-the-player-to-look-around"></a>4. Предоставление игроку возможности осматриваться
 
@@ -488,8 +490,8 @@ animate();
 
 Теперь у нас есть возможность **осматриваться**, но интереснее всего **передвигаться**. Дальше придется прибегнуть к математическим вычислениям и векторам, но что за трехмерная графика без вычислений?
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="7672409f7218b18e13adb370fd2cf61d" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Look around" data-preview="true" data-editable="true" class="codepen">См. запись <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/7672409f7218b18e13adb370fd2cf61d/">Look around</a> от Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) на <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='Осматриваться' src='//codepen.io/MicrosoftEdgeDocumentation/embed/gmwbMo/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. запись <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/gmwbMo/'>Look around</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 
 ### <a name="5-adding-player-movement"></a>5. Добавление перемещения игрока
@@ -642,8 +644,8 @@ function animatePlayer(delta) {
 
 Поздравляем! Вы создали управляемую игроком камеру, которая может двигаться и осматриваться. Пока что мы по-прежнему проходим сквозь стены, но об этом позаботимся позже. Далее мы добавим динозавра.
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="ab804473fa3545d1153061a6078b346d" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Player movement" data-preview="true" data-editable="true" class="codepen">См. запись <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/ab804473fa3545d1153061a6078b346d">Player movement</a> от Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) на <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='Перемещения' src='//codepen.io/MicrosoftEdgeDocumentation/embed/qrbKZg/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. в разделе пера <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qrbKZg/'>перемещения</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 > [!NOTE]
 > Использование этих элементов управления в приложении UWP может привести к задержкам при движении и незарегистрированным событиям `keyUp`. Мы изучаем эту проблему и надеемся вскоре исправить эту часть примера.
@@ -700,8 +702,8 @@ var instructions = document.getElementById('instructions');
 
 Модель динозавра загружена. Посмотрите!
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="a90ba279ace9773635870d47c80400c4" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Adding the dino" data-preview="true" data-editable="true" class="codepen">См. запись <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/a90ba279ace9773635870d47c80400c4/">Adding the dino</a> от Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) на <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='Добавление динозавр' src='//codepen.io/MicrosoftEdgeDocumentation/embed/xqOwBw/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. запись <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/xqOwBw/'>Adding the dino</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ### <a name="7-move-that-dino"></a>7. Динозавр должен передвигаться!
 
@@ -731,8 +733,8 @@ function animateDino(delta) {
 
 Смотреть, как динозавр "уплывает", не очень интересно, но как только мы реализуем обнаружение столкновений, игра оживет.
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="65245a3abd2232ec0dbbfa153f309e7d" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Moving the dino - no collision" data-preview="true" data-editable="true" class="codepen">См. запись <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/65245a3abd2232ec0dbbfa153f309e7d/">Moving the dino - no collision</a> от Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) на <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='Перемещение dino - столкновения нет' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/jBMbbL/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. запись <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/jBMbbL/'>Moving the dino - no collision</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ### <a name="8-collision-detection-for-the-player"></a>8. Обнаружение столкновений для игрока
 
@@ -846,8 +848,8 @@ function animatePlayer(delta) {
 
 Мы реализовали обнаружение столкновений игрока. Попробуйте столкнуться со стеной!
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="106301953a2128c02283532026be9ab4" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Moving the player - collision" data-preview="true" data-editable="true" class="codepen">См. запись <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/106301953a2128c02283532026be9ab4/">Moving the player - collision</a> от Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) на <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='Переместить игрока - столкновения' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/qraOeO/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. запись <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qraOeO/'>Moving the player - collision</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 
 ### <a name="9-collision-detection-and-animation-for-dino"></a>9. Обнаружение столкновений и анимация для динозавра
@@ -933,8 +935,8 @@ function getRandomInt(min, max) {
 
 Получилось! Теперь у нас есть динозавр с ИИ, способным перемещаться по лабиринту.
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="dd6e3a8f7df08851034aa470fea5d208" data-default-tab="js,result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Moving the dino - collision and animation" data-preview="true" data-editable="true" class="codepen">См. запись <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/dd6e3a8f7df08851034aa470fea5d208/">Moving the dino - collision and animation</a> от Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) на <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='Перемещение dino - collision' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/bqwMXZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. в разделе пера <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/bqwMXZ/'>перемещения dino - collision</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ### <a name="10-starting-the-chase"></a>10. Начало погони
 
@@ -1001,8 +1003,8 @@ dinoAlert.style.display = 'none';
 У нас уже есть разъяренный динозавр, начинающий преследовать игрока, если тот подойдет слишком близко. Динозавр не остановится, пока не окажется над игроком.
 В конце нам нужно добавить условия окончания игры, как только динозавр окажется рядом с игроком со смещением `CATCHOFFSET`.
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="fa75ffb13070dd4245cc152cb513509a" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="The chase" data-preview="true" data-editable="true" class="codepen">См. запись <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/fa75ffb13070dd4245cc152cb513509a/">The chase</a> от Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) на <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='Это' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpRBqR/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. запись <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpRBqR/'>The chase</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 
 ### <a name="11-ending-the-game"></a>11. Окончание игры
@@ -1082,11 +1084,11 @@ function lockChange() {
 Вернитесь в начало страницы, чтобы просмотреть запись [final CodePen](#introduction)!
 
 
-## <a name="publishing-to-the-windows-store"></a>Публикация в Магазине Windows
-Теперь у вас есть приложение UWP, и его можно опубликовать в Магазине Windows (только сначала усовершенствуйте его). Этот процесс состоит из нескольких шагов.
+## <a name="publishing-to-the-microsoft-store"></a>Публикации в Microsoft Store
+Теперь у вас есть приложение UWP, его можно опубликовать в Microsoft Store (при условии, что вы сначала Усовершенствуйте его!) Существует несколько шагов в процесс.
 
-1.    [Зарегистрируйтесь](https://developer.microsoft.com/store/register) в качестве разработчика приложений для Windows.
-2.    Заполните [контрольный список](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) для отправки приложения.
-3.    Отправьте приложение на [сертификацию](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process).
-Дополнительные сведения см. в разделе [Публикация приложения Магазина Windows](https://developer.microsoft.com/store/publish-apps).
+1.  [Зарегистрируйтесь](https://developer.microsoft.com/store/register) в качестве разработчика приложений для Windows.
+2.  Заполните [контрольный список](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) для отправки приложения.
+3.  Отправьте приложение на [сертификацию](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process).
+Дополнительные сведения см. в разделе [Публикация вашего приложения UWP](https://developer.microsoft.com/store/publish-apps).
 

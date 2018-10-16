@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, API отправки в Microsoft Store, приложение
 ms.localizationpriority: medium
 ms.openlocfilehash: ce52e2d3b844052103f1055674869c19850ef59f
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4622058"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680580"
 ---
 # <a name="get-an-app"></a>Получение приложения
 

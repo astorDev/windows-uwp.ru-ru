@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: 44a41e42477de9d29f1d0443324fa83590c37caf
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4610568"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680003"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>Переход на C++/WinRT с WRL
 В этом разделе показано, как перенести код [Библиотеки шаблонов C++ (WRL) среды выполнения Windows](/cpp/windows/windows-runtime-cpp-template-library-wrl) в его эквивалент на [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).

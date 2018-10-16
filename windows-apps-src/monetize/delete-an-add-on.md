@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, API отправки в Microsoft Store, надстройка, удаление, продукт внутри приложения, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: ff108f3f7f09aa737f6a955d9cb91810f6047f8c
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4619221"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4681063"
 ---
 # <a name="delete-an-add-on"></a>Удаление надстройки
 

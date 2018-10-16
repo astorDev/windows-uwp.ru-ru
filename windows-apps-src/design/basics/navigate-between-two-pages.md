@@ -17,12 +17,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 359c6527c341a08eca23aa6dd28acd27ddb19205
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 7df91069615b77ab54745690accc8f9353ff0163
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4611369"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4679983"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Реализация навигации между двумя страницами
 
@@ -320,7 +320,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 Наше приложение переключается между страницами, но пока не умеет делать ничего интересного. Часто, если в приложении есть несколько страниц, необходим общий доступ к информации. Давайте передадим какую-нибудь информацию с первой страницы на вторую.
 
-В Page1.xaml замените элемент **HyperlinkButton**, добавленный вами ранее, следующим [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
+В Page1.xaml замените **HyperlinkButton** , который был добавлен ранее следующие [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
 
 Теперь добавим метку [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) и [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (`name`) для ввода текстовой строки.
 

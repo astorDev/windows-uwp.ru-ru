@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: d0d7a429cf702455d969e1ac1c62def6181e8dd0
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+ms.localizationpriority: medium
+ms.openlocfilehash: 4bed72b17ea59494a7eee6850d1ff4be2172c694
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "225927"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4681765"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>Ручные элементы управления фото- и видеозахватом на камере
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье рассказывается, как использовать ручные элементы управления устройства для включения расширенных сценариев фото- и видеозахвата, в том числе оптической стабилизации изображений и плавного масштабирования.
@@ -102,7 +103,7 @@ ms.locfileid: "225927"
 
 Наконец, в обработчике для флажка видеофонарика установите для свойства [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) соответствующее значение.
 
-[!code-cs[Фонарик](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTorch)]
+[!code-cs[Torch](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTorch)]
 
 > [!NOTE] 
 >  На некоторых устройствах фонарик не будет светить, даже если для [**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) установлено значение true, если на устройстве не запущен поток предварительного просмотра и в данный момент не выполняется запись видео. Рекомендуемый порядок действий: включить предварительный просмотр видео, затем включить фонарик, установив для **Enabled** значение true, а затем начать видеозапись. На некоторых устройствах фонарик включается после запуска предварительного просмотра. На других устройствах фонарик может не включаться, пока не начнется видеозапись.
@@ -205,7 +206,7 @@ ms.locfileid: "225927"
 
 Задайте в качестве значения элемента управления ползунком текущее значение **FocusControl** после отмены регистрации обработчика событий [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737), чтобы событие не активировалось при установке значения.
 
-[!code-cs[Фокус](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
+[!code-cs[Focus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
 
 В обработчике событий **Checked** для переключателя фокусировки вручную получите объект **FocusControl** и вызовите [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075), если приложение ранее разблокировало фокус путем вызова [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081).
 
@@ -268,7 +269,7 @@ ms.locfileid: "225927"
 ## <a name="powerline-frequency"></a>Частота линии питания
 Некоторые камеры поддерживают обработку для защиты от мерцания, которая зависит от частоты переменного тока в текущей среде. Некоторые устройства поддерживают автоматическое определение частоты питания, а на других ее необходимо задать вручную. В следующем примере кода показано, как определить частоты питания устройстве и, если требуется, задать частоту вручную. 
 
-Сначала вызовите метод [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898) класса **VideoDeviceController**, передав выходной параметр типа [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency). Если вызов завершается ошибкой, управление частотой питания на текущем устройстве не поддерживается. Если функция поддерживается, вы можете определить, доступен ли на устройстве автоматический режим, попытавшись установить автоматический режим. Для этого вызовите метод [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) и передайте ему значение **Auto**. Если вызов выполнен успешно, автоматическая установка частоты питания поддерживается. Если контроллер частоты питания поддерживается на устройстве, а автоматическое обнаружение частоты — нет, вы можете вручную задать частоту с помощью метода **TrySetPowerlineFrequency**. В этом примере **MyCustomFrequencyLookup** — это пользовательский метод, который реализуется, чтобы определить правильную частоту для текущего расположения устройства. 
+Сначала вызовите метод [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898) класса **VideoDeviceController**, передав выходной параметр типа [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency). Если вызов завершается ошибкой, управление частотой питания на текущем устройстве не поддерживается. Если функция поддерживается, вы можете определить, доступен ли на устройстве автоматический режим, попытавшись установить автоматический режим. Для этого, вызвав [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) и передайте ему значение **Auto**. Если вызов выполнен успешно, это означает, что автоматическая установка частоты питания поддерживается. Если контроллер частоты питания поддерживается на устройстве, а автоматическое обнаружение частоты — нет, вы можете вручную задать частоту с помощью метода **TrySetPowerlineFrequency**. В этом примере **MyCustomFrequencyLookup** — это пользовательский метод, который реализуется, чтобы определить правильную частоту для текущего расположения устройства. 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
@@ -338,13 +339,13 @@ ms.locfileid: "225927"
 
 В обработчике события **ManipulationDelta** обновите коэффициент масштабирования в зависимости от изменения жеста сжатия пользователя. Значение [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) указывает на изменение масштаба с помощью жеста сжатия. Например, небольшое увеличение масштаба обозначается значением, которое немного превышает 1, а небольшое уменьшение — значением, которое немного меньше 1. В этом примере текущее значение элемента управления масштабированием умножается на значение разницы масштаба.
 
-Прежде чем задавать коэффициент масштабирования, убедитесь, что его значение не меньше минимального значения, которое поддерживается устройством и указано свойством [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817). Кроме того, убедитесь, что значение коэффициента меньше или равно значению [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150). Кроме того, убедитесь, что коэффициент масштаба кратен размеру этапа масштабирования, который поддерживается устройством и указан свойством [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818). Если коэффициент масштабирования не соответствует этим требованиям, при попытке задать масштаб на устройстве захвата будет отображено исключение.
+Прежде чем задавать коэффициент масштабирования, убедитесь, что его значение не меньше минимального значения, которое поддерживается устройством и указано свойством [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817). Кроме того, убедитесь, что значение коэффициента меньше или равно значению [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150). Наконец необходимо убедиться, что коэффициент масштабирования является кратен размеру этапа масштабирования, поддерживаемых устройством, как указано в свойстве [**Шаг**](https://msdn.microsoft.com/library/windows/apps/dn633818) . Если коэффициент масштабирования не соответствует этим требованиям, при попытке задать масштаб на устройстве захвата будет отображено исключение.
 
 Чтобы установить масштаб на устройстве захвата, создайте новый объект [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722). Установите для свойства [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) значение [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726), а затем укажите требуемый коэффициент масштабирования в свойстве [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724). После этого вызовите метод [**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719), чтобы задать новое значение масштаба на устройстве. В результате устройство плавно перейдет на новый масштаб.
 
 [!code-cs[ManipulationDelta](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-## <a name="related-topics"></a>Связанные статьи
+## <a name="related-topics"></a>Еще по теме
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
