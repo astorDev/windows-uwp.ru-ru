@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ad817bbae2fb8b28b95095880aa1a65c391720f3
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574671"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622201"
 ---
 # <a name="enable-your-device-for-development"></a>Подготовка устройства к разработке
 
@@ -150,7 +150,7 @@ ms.locfileid: "4574671"
 Пути обхода этих проблем и другую информацию см. на форуме [Известные проблемы](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22). 
 
 > [!NOTE]
-> Если режим разработчика не установиться, мы рекомендуем вам файл запроса обратной связи. В приложении центр **Отзывов** выберите **Добавить новые отзывы**и выбрать **Платформы разработки** категории и подкатегории **Режим разработчика** . Отправка обратной связи поможет решить проблему, которую вы столкнулись с Майкрософт.
+> Если режим разработчика не установиться, мы рекомендуем вам в файл запроса на отзывы. В приложении **"Центр отзывов"** выберите **Добавить новые отзывы**и выбор **Платформы разработки** категории и подкатегории **Режим разработчика** . Отправка обратной связи, чтобы помочь Майкрософт устранить проблему, которыми вы столкнулись.
 
 ### <a name="failed-to-locate-the-package"></a>Сбой поиска пакета
 

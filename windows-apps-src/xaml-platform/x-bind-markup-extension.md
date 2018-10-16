@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: Расширение разметки xBind является вариантом высокую производительность для привязки. xBind - появившиеся в Windows 10 — выполняется быстрее и меньше памяти, чем Binding и поддерживает более отладки.
+description: Расширение разметки xBind является вариантом высокая производительность для привязки. xBind - появившиеся в Windows 10 — работает быстрее и меньше памяти, чем Binding и поддерживает более отладки.
 title: Расширение разметки xBind
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574418"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616114"
 ---
 # <a name="xbind-markup-extension"></a>Расширение разметки {x:Bind}
 

@@ -1,28 +1,28 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: Узнайте о том, как устанавливать Microsoft Advertising SDK.
 title: Установка Microsoft Advertising SDK
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, реклама, рекламные объявления, установка, SDK, рекламная библиотека
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c12d09fdc7643a2d2ac1c13fa2a4e6c92cad03
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e65b26006cbeb7f7fbd9bf95f83051873e6f1140
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654883"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620198"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Установка Microsoft Advertising SDK
 
 Для отображения рекламы в приложениях UWP для Windows 10 установите [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). Этот пакет SDK является расширением Visual Studio 2015 и последующих версий.
 
 > [!NOTE]
-> Если вы разрабатываете приложение UWP на JavaScript или HTML и установили пакет Windows 10 SDK версии 10.0.14393 (юбилейное обновление) или более новую версию, необходимо также установить библиотеку WinJS. Эта библиотека ранее включалась в предыдущие версии Windows 10 SDK, но, начиная с Windows 10 SDK версии 10.0.14393 (юбилейное обновление), ее необходимо устанавливать отдельно. Сведения по установке WinJS см. в разделе [Скачать WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> Если вы разрабатываете приложение UWP на JavaScript/HTML и установили пакет Windows 10 SDK версии 10.0.14393 (Юбилейное обновление) или более поздней версии, вам также потребуется установить библиотеку [WinJS](https://github.com/winjs/winjs) . Эта библиотека ранее включалась в предыдущие версии Windows 10 SDK, но, начиная с Windows 10 SDK версии 10.0.14393 (юбилейное обновление), ее необходимо устанавливать отдельно.
 
 <span id="install-msi" />
 
@@ -33,11 +33,11 @@ ms.locfileid: "1654883"
 1.  Закройте все экземпляры Visual Studio.
 
 2. Если вы ранее устанавливали какую-либо из предыдущих версий пакетов Microsoft Advertising SDK, Universal Ad Client SDK, расширения Ad Mediator или Microsoft Store Engagement and Monetization SDK, теперь необходимо удалить эти версии пакетов SDK. Другой вариант: откройте окно **командной строки** и выполните эти команды для удаления всех более ранних версий пакетов рекламных SDK, которые могли быть установлены вместе с Visual Studio, но, возможно, не отображаются в списке установленных программ на компьютере:
-  ```
-  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
-  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
-  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
-  ```
+    ```
+    MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+    MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+    MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+    ```
 
 3.  Скачайте и установите пакет [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). Установка может занять несколько минут. Обязательно дождитесь завершения процесса.
 
@@ -56,11 +56,11 @@ ms.locfileid: "1654883"
 1.  Закройте все экземпляры Visual Studio.
 
 2.  Если вы ранее устанавливали какую-либо из предыдущих версий пакетов Microsoft Advertising SDK, Universal Ad Client SDK, расширения Ad Mediator или Microsoft Store Engagement and Monetization SDK, теперь необходимо удалить эти версии пакетов SDK. Другой вариант: откройте окно **командной строки** и выполните эти команды для удаления всех более ранних версий пакетов рекламных SDK, которые могли быть установлены вместе с Visual Studio, но, возможно, не отображаются в списке установленных программ на компьютере:
-  ```
-  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
-  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
-  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
-  ```
+    ```
+    MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+    MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+    MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+    ```
 
 3.  Запустите Visual Studio и откройте проект, в котором вы хотите использовать библиотеки Microsoft Advertising SDK.
     > [!NOTE]
@@ -105,7 +105,7 @@ ms.locfileid: "1654883"
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>Общие сведения о пакетах платформы в Microsoft Advertising SDK
 
-Библиотека Microsoft.Advertising.dll в [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (только UWP) настроена как *пакет платформы*. Эта библиотека содержит рекламные API-интерфейсы в пространствах имен [Microsoft.Advertising](https://msdn.microsoft.com/library/windows/apps/mt313187.aspx) и [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx).
+Библиотека Microsoft.Advertising.dll в [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (только UWP) настроена как *пакет платформы*. Эта библиотека содержит рекламные API-интерфейсы в пространствах имен [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) и [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui).
 
 Поскольку библиотека представляет собой пакет платформы, это означает, что после установки пользователем версии вашего приложения, которое применяет эту библиотеку, библиотека будет автоматически обновляться на устройстве пользователя через Центр обновления Windows, когда мы опубликуем новую версию библиотеки с исправлениями и улучшенной производительностью. Это позволяет гарантировать, что ваши клиенты всегда будут иметь последнюю доступную версию библиотеки на своих устройствах.
 

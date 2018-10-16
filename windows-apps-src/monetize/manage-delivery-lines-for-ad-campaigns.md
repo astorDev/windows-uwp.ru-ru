@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: dc632a4c-ce48-400b-8e6e-1dddbd13afff
 description: Используйте этот метод в API рекламных акций Microsoft Store для управления строками поставки в рекламных кампаниях.
 title: Управление строками поставки
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, API рекламных акций Microsoft Store, рекламные кампании
 ms.localizationpriority: medium
-ms.openlocfilehash: a7dca49ee1ecaeb675127ea19191a028f6f7846f
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 387b5ccf999452780b89aa7edcc9b58bcc35ea8a
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664104"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622739"
 ---
 # <a name="manage-delivery-lines"></a>Управление строками поставки
 
@@ -51,7 +51,7 @@ ms.locfileid: "1664104"
 
 | Заголовок        | Тип   | Описание         |
 |---------------|--------|---------------------|
-| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 | Tracking ID   | Код GUID   | Необязательный параметр. Идентификатор, который отслеживает поток вызовов.                                  |
 
 
@@ -166,5 +166,5 @@ Authorization: Bearer <your access token>
 * [Проведение рекламных кампаний с помощью служб Microsoft Store](run-ad-campaigns-using-windows-store-services.md)
 * [Управление рекламными кампаниями](manage-ad-campaigns.md)
 * [Управление профилями таргетинга рекламных кампаний](manage-targeting-profiles-for-ad-campaigns.md)
-* [Управление рекламными средствами для рекламных кампаний](manage-creatives-for-ad-campaigns.md)
+* [Управление рекламными элементами для кампаний](manage-creatives-for-ad-campaigns.md)
 * [Получение данных об эффективности рекламной кампании](get-ad-campaign-performance-data.md)

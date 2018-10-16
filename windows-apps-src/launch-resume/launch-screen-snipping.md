@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, uri, фрагмент, эскиза
 ms.localizationpriority: medium
 ms.openlocfilehash: e18662125ef72051a289b3f1d0f3dc09b452d256
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566570"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621220"
 ---
 # <a name="launch-screen-snipping"></a>Запуск выделения экрана
 
@@ -29,11 +29,11 @@ ms.locfileid: "4566570"
 | Параметр | Тип | Обязательный | Описание |
 | --- | --- | --- | --- |
 | источник | string | нет | Свободный строка для указания источника, который запустил URI. |
-| delayInSeconds | int | нет | Целое число, от 1 до 30. Задержка в полной секунд, вызов URI, когда начинается выделения. |
+| delayInSeconds | int | нет | Целое число, от 1 до 30. Определяет задержку полного между в секундах вызов URI, когда начинается выделения. |
 
 ## <a name="launching-the-snip--sketch-app"></a>Запуск фрагмент и эскиз приложений
 
-**Ms-screensketch:** URI позволяет программными средствами запуска приложения фрагмент и эскиз и откройте определенного изображения из этого приложения для заметок.
+**Ms-screensketch:** URI позволяет программными средствами запуска приложения фрагмент и эскиз и откройте определенного изображения из этого приложения для аннотации.
 
 **ms-screensketch:** принимает следующие параметры:
 
@@ -43,7 +43,7 @@ ms.locfileid: "4566570"
 | источник | string | нет | Свободный строка для указания источника, который запустил URI. |
 | isTemporary | bool | нет | Если задано значение True, наброска экрана пытается удалить файл после его открытия. |
 
-Следующий пример вызывает метод [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) для отправки образа фрагмент & эскиза из приложения для пользователя.
+В следующем примере вызывается метод [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) для отправки изображения фрагмент & эскиза из приложения для пользователя.
 
 ```csharp
 

@@ -15,15 +15,15 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566050"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618192"
 ---
 # <a name="pivot"></a>Сводка
 
-Элемент управления ["Сводка"](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) позволяет сенсорный ввод прокрутки между небольшой набор разделы содержимого.
+Элемент управления ["Сводка"](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) позволяет сенсорный ввод прокрутка между небольшой набор разделы содержимого.
 
 > **Важные API -интерфейсы**: [класс Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [класс NavigationView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
@@ -49,18 +49,18 @@ ms.locfileid: "4566050"
 
 ## <a name="is-this-the-right-control"></a>Выбор подходящего элемента управления
 
-Для достижения общих верхней навигационной и шаблонов вкладки, мы рекомендуем использовать [NavigationView](navigationview.md), который автоматически адаптируется к различным размерам экрана и позволяет более настройки.
+Для достижения распространенных верхней навигационной и шаблоны вкладки, мы рекомендуем использовать [NavigationView](navigationview.md), который автоматически адаптируется к различным размерам экрана и позволяет более настройки.
 
 Тем не менее если навигации требуется прокрутка сенсорного ввода, мы рекомендуем использовать "Сводка".
 
 Основные различия между элементами управления NavigationView и "Сводка" — это поведение по умолчанию переполнения и навигации API:
 
 - Сводки переполнения обойм, которые элементов, когда NavigationView использует раскрывающееся меню переполнения, чтобы пользователи могли видеть все элементы.
-- "Сводка" обрабатывает переходов между разделами содержимого, когда NavigationView обеспечивает больше контроля над поведение навигации с помощью.
+- "Сводка" обрабатывает навигацию между разделы содержимого, когда NavigationView обеспечивает больше контроля над поведение навигации с помощью.
 
 ## <a name="use-navigationview-instead-of-pivot"></a>Использовать NavigationView вместо "Сводка"
 
-Если пользовательский Интерфейс приложения используется элемент управления "Сводка", затем можно преобразовать "Сводка" для NavigationView в следующем коде.
+Если пользовательский Интерфейс приложения используется элемент управления "Сводка", затем можно преобразовать "Сводка" для NavigationView следующим кодом.
 
 Этот код XAML создает NavigationView с 3 разделами содержимого, как и в примере Pivot в [Создать элемент управления "Сводка"](#create-a-pivot-control).
 
@@ -87,7 +87,7 @@ ms.locfileid: "4566050"
 </Page>
 ```
 
-NavigationView обеспечивает больше контроля над настройки навигации и требует соответствующего кода программной части. Для описания выше XAML, используйте следующий код программной части:
+NavigationView обеспечивает больший контроль над настройки навигации и требует соответствующего кода программной части. Для описания выше XAML, используйте следующий код программной части:
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)

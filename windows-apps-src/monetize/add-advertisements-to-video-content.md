@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
 description: Узнайте, как использовать класс AdScheduler для показа рекламы в видеосодержимом.
 title: Показ рекламы в видеосодержимом
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, реклама, рекламные материалы, видео, планировщик, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 9142770c6063aba34977c20309bcaeb6ac46450e
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: cc5dd40ca3d9fe6e20f5e79c95b59cef3bea9a34
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690650"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623153"
 ---
 # <a name="show-ads-in-video-content"></a>Показ рекламы в видеосодержимом
 
@@ -166,7 +166,7 @@ ms.locfileid: "1690650"
 
 ### <a name="onerroroccurred"></a>onErrorOccurred  
 
-Это событие возникает, когда **AdScheduler** сталкивается с ошибкой. Дополнительные сведения о значениях кодов ошибки см. в разделе [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.errorcode.aspx).
+Это событие возникает, когда **AdScheduler** сталкивается с ошибкой. Дополнительные сведения о значениях кодов ошибки см. в разделе [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.errorcode).
 
 ### <a name="onpodcountdown"></a>onPodCountdown
 

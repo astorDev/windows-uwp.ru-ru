@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 16D4C3B9-FC9B-46ED-9F87-1517E1B549FA
 description: Используйте этот метод в API отправки в Microsoft Store для удаления надстройки для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows.
 title: Удаление надстройки
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, API отправки в Microsoft Store, надстройка, удаление, продукт внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 95743f600b2f688a09f3fe96bd7e58acc93da5d2
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: ff108f3f7f09aa737f6a955d9cb91810f6047f8c
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1661994"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619221"
 ---
 # <a name="delete-an-add-on"></a>Удаление надстройки
 
@@ -41,14 +41,14 @@ ms.locfileid: "1661994"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Авторизация | Строка | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | Строка | Обязательный. Код продукта в Магазине для надстройки, которую требуется удалить. Код продукта в Магазине отображается на информационной панели Центра разработки.  |
+| id | string | Обязательный. Код продукта в Магазине для надстройки, которую требуется удалить. Код продукта в Магазине отображается на информационной панели Центра разработки.  |
 
 
 ### <a name="request-body"></a>Тело запроса

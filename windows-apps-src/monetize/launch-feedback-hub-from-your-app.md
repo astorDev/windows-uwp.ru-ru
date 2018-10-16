@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: You can encourage your customers to leave feedback by launching Feedback Hub from your app.
 title: Запуск Центра отзывов из приложения
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, центр отзывов, запуск
 ms.localizationpriority: medium
-ms.openlocfilehash: f4a5c6dab627a2022b36a4afee3dc155b345f855
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 6617c3d5901fbb1a1e9a7f271f4c80d4f38e41f6
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689220"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623533"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>Запуск Центра отзывов из приложения
 
@@ -48,7 +48,7 @@ ms.locfileid: "1689220"
     <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
     ```
 
-7. В коде инициализации страницы приложения, на которой размещен элемент управления отзывами, используйте статический метод [IsSupported](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported.aspx) класса [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx), чтобы определить, доступен ли Центр отзывов на устройстве пользователя. Центр отзывов доступен только на устройствах под управлением версии 10.0.14271 или более поздней версии ОС Windows 10, основанной на настольном и мобильном [семействах устройств](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families).
+7. В коде инициализации страницы приложения, на которой размещен элемент управления отзывами, используйте статический метод [IsSupported](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported) класса [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher), чтобы определить, доступен ли Центр отзывов на устройстве пользователя. Центр отзывов доступен только на устройствах под управлением версии 10.0.14271 или более поздней версии ОС Windows 10, основанной на настольном и мобильном [семействах устройств](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families).
 
     Если это свойство возвращает значение **true**, сделайте элемент управления видимым. В следующем примере кода показано, как это сделать для [кнопки](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
 
@@ -56,7 +56,7 @@ ms.locfileid: "1689220"
       > [!NOTE]
       > Хотя в настоящее время Центр отзывов не поддерживается на устройствах Xbox, свойство **IsSupported** возвращает значение **true** на устройствах Xbox под управлением Windows 10 версии 10.0.14271 или более поздней. Это известная проблема, которая будет устранена в следующей версии пакета Microsoft Store Services SDK.  
 
-8. В обработчике событий, который запускается, когда пользователь щелкает элемент управления, получите объект [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) и вызовите метод [LaunchAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync.aspx), чтобы открыть приложение Центр отзывов. У этого метода есть две перегруженные версии: одна без параметров и другая версия, которая принимает словарь пар «ключ-значение», содержащий метаданные, которые нужно связать с отзывом. В следующем примере показано, как запустить Центр отзывов в обработчике событий [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) элемента управления [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button).
+8. В обработчике событий, который запускается, когда пользователь щелкает элемент управления, получите объект [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) и вызовите метод [LaunchAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync), чтобы открыть приложение Центр отзывов. У этого метода есть две перегруженные версии: одна без параметров и другая версия, которая принимает словарь пар «ключ-значение», содержащий метаданные, которые нужно связать с отзывом. В следующем примере показано, как запустить Центр отзывов в обработчике событий [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) элемента управления [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button).
 
     [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
 

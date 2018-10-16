@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b388a196e1f5fa6649ac1fb072c80d01bba45e20
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4575333"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620793"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Основы проектирования навигации для приложений UWP
 
@@ -188,8 +188,8 @@ ms.locfileid: "4575333"
         Use top navigation when:
 
         - Вы хотите показать все параметры навигации на экране.
-        - Желание больше места для содержимого приложения.
-        - Значки не четко описаны категории навигации.
+        - Вы можете больше места для содержимого приложения.
+        - Значки не описывают четко навигационных категорий.
         
         Используйте вкладки, когда:
 

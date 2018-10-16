@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: Ознакомьтесь с рекомендациями по пользовательскому интерфейсу и взаимодействию с пользователем для рекламы в приложениях.
 title: Рекомендации по пользовательскому интерфейсу и взаимодействию с пользователем для рекламы
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, рекламные объявления, реклама, руководство, советы и рекомендации
 ms.localizationpriority: medium
-ms.openlocfilehash: 026ec28c609d62f59958f6ca804c67bb9ca3e109
-ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
-ms.translationtype: HT
+ms.openlocfilehash: c7f5e762593773e529610989741274d9fb5b9be7
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "1881075"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616923"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Рекомендации по пользовательскому интерфейсу и взаимодействию с пользователем для рекламы
 
@@ -37,7 +37,7 @@ ms.locfileid: "1881075"
 
 ## <a name="guidelines-for-banner-ads"></a>Рекомендации для баннеров
 
-В следующих разделах приводятся рекомендации по реализации [баннеров](banner-ads.md) в вашем приложении с использованием элемента [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), а также примеры реализаций, нарушающих [политику 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) Microsoft Store.
+В следующих разделах приводятся рекомендации по реализации [баннеров](banner-ads.md) в вашем приложении с использованием элемента [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol), а также примеры реализаций, нарушающих [политику 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) Microsoft Store.
 
 ### <a name="best-practices"></a>Рекомендации
 
@@ -53,7 +53,7 @@ ms.locfileid: "1881075"
 
 * Следует предусмотреть случаи, когда рекламные объявления недоступны. Могут быть случаи, когда объявления не отправляются в приложение. Создавайте макеты страниц таким образом, чтобы они хорошо выглядели как с рекламой, так и без нее. Дополнительные сведения см. в разделе [Обработка ошибок рекламы](error-handling-with-advertising-libraries.md).
 
-* Если удобнее всего оповестить пользователя о чем-либо с помощью наложения, вызовите метод [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx), пока отображается наложение, а затем вызовите метод [AdControl.Resume](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.resume.aspx), когда сценарий оповещения будет выполнен.
+* Если удобнее всего оповестить пользователя о чем-либо с помощью наложения, вызовите метод [AdControl.Suspend](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.suspend), пока отображается наложение, а затем вызовите метод [AdControl.Resume](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.resume), когда сценарий оповещения будет выполнен.
 
 ### <a name="practices-to-avoid"></a>Нерекомендуемые методики
 
@@ -69,11 +69,11 @@ ms.locfileid: "1881075"
 
 В этом разделе приводятся примеры использования рекламных баннеров с нарушением [политики 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) Microsoft Store. Эти примеры приводятся исключительно в справочных целях, чтобы помочь вам лучше понять политику. Эти примеры не являются исчерпывающими, существует множество других нарушений политики 10.10.1, не перечисленных здесь.
 
-* Запрещено совершать какие-либо действия, препятствующие просмотру рекламного баннера пользователем, например менять прозрачность [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) или размещать другой элемент управления поверх **AdControl** (кроме случаев, когда сначала вызывается метод [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx)).
+* Запрещено совершать какие-либо действия, препятствующие просмотру рекламного баннера пользователем, например менять прозрачность [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) или размещать другой элемент управления поверх **AdControl** (кроме случаев, когда сначала вызывается метод [AdControl.Suspend](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.suspend)).
 
 * Запрещено требовать, чтобы пользователи щелкнули рекламный баннер для выполнения какой-либо задачи в приложении, или принуждать пользователей щелкнуть рекламные баннеры потому, что таков дизайн вашего приложения.
 
-* Запрещено каким-либо образом обходить встроенный таймер минимального периода обновления рекламных баннеров, включая (среди прочего) замену объектов [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) или принудительное обновление страницы без вмешательства пользователя.
+* Запрещено каким-либо образом обходить встроенный таймер минимального периода обновления рекламных баннеров, включая (среди прочего) замену объектов [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) или принудительное обновление страницы без вмешательства пользователя.
 
 * Запрещено использовать готовые рекламные блоки (то есть рекламные блоки, полученные с информационной панели Центра разработки для Windows) на этапах разработки и тестирования или в эмуляторе.
 
@@ -87,7 +87,7 @@ ms.locfileid: "1881075"
 
 При аккуратном использовании [межстраничные объявления](interstitial-ads.md) могут значительно увеличить доход приложения без отрицательного влияния на удовлетворенность пользователей. Неправильное использование таких рекламных объявлений может привести к совершенно противоположному эффекту.
 
-В следующих разделах приводятся рекомендации по реализации межстраничной видеорекламы и межстраничных баннеров в вашем приложении с использованием элемента [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), а также примеры реализаций, нарушающих [политику 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) Microsoft Store. Поскольку вы знаете собственное приложение лучше других, окончательное решение остается за вами за исключением случаев, описанных в политике. Очень важно иметь в виду, что оценки вашего приложения и доход от него тесно связаны.
+В следующих разделах приводятся рекомендации по реализации межстраничной видеорекламы и межстраничных баннеров в вашем приложении с использованием элемента [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad), а также примеры реализаций, нарушающих [политику 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) Microsoft Store. Поскольку вы знаете собственное приложение лучше других, окончательное решение остается за вами за исключением случаев, описанных в политике. Очень важно иметь в виду, что оценки вашего приложения и доход от него тесно связаны.
 
 ### <a name="best-practices"></a>Рекомендации
 
@@ -105,9 +105,9 @@ ms.locfileid: "1881075"
 
 * Если в приложении требуется, чтобы межстраничная видеореклама была просмотрена до конца, упомяните об этом правиле заранее, чтобы пользователи, нажавшие на кнопку закрытия, не удивлялись сообщению об ошибке.
 
-* Получайте рекламное объявление предварительно (путем вызова [InterstitialAd.RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx)), лучше всего за 30–60 секунд до его отображения.
+* Получайте рекламное объявление предварительно (путем вызова [InterstitialAd.RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)), лучше всего за 30–60 секунд до его отображения.
 
-* Подпишитесь на все четыре события, представленные в классе [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) (**Canceled**, **Completed**, **AdReady**, and **ErrorOccurred**), и используйте их для принятия соответствующих решений в приложении.
+* Подпишитесь на все четыре события, представленные в классе [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) (**Canceled**, **Completed**, **AdReady**, and **ErrorOccurred**), и используйте их для принятия соответствующих решений в приложении.
 
 * Подготовьте встроенные возможности, которые можно использовать вместо полученного с сервера объявления. Это будет полезно в ряде случаев:
 
@@ -135,11 +135,11 @@ ms.locfileid: "1881075"
 
 * Не показывайте две или более промежуточные рекламы подряд. Пользователи будут расстроены, увидев, что индикатор выполнения показа объявления вернулся на начальную позицию. Многие из них сочтут, что это программная ошибка или ошибка доставки рекламы.
 
-* Не запрашивайте межстраничную видеорекламу более, чем за 5 минут до вызова метода [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx). Правильное размещение увеличит конверсию предварительно полученных рекламных объявлений в оплачиваемые показы.
+* Не запрашивайте межстраничную видеорекламу более, чем за 5 минут до вызова метода [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show). Правильное размещение увеличит конверсию предварительно полученных рекламных объявлений в оплачиваемые показы.
 
 * Не наказывайте пользователя за сбои при доставке рекламы, такие как недоступность объявлений. Например, если вы добавляете в пользовательский интерфейс элемент "Посмотрите рекламу, чтобы получить *xxx*", вы должны предоставить *xxx*, если пользователь выполнил свою часть условия. Существует два варианта решения задачи:
 
-    * Не отображать возможность до тех пор, пока не будет инициировано событие [InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx).
+    * Не отображать возможность до тех пор, пока не будет инициировано событие [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready).
 
     * Встройте в приложение возможности, дающие то же преимущество, что и просмотр реального объявления.
 
@@ -151,13 +151,13 @@ ms.locfileid: "1881075"
 
 * Размещение элемента пользовательского интерфейса над контейнером промежуточной рекламы.
 
-* Вызов метода [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx), пока пользователь взаимодействует с приложением.
+* Вызов метода [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show), пока пользователь взаимодействует с приложением.
 
 * Использование промежуточной рекламы для получения объектов, которые можно использовать в качестве валюты или для обмена с другими пользователями.
 
-* Запрос новой промежуточной рекламы в контексте обработчика события [InterstitialAd.ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx). Это может привести к образованию бесконечного цикла и возникновению проблем в работе службы рекламы.
+* Запрос новой промежуточной рекламы в контексте обработчика события [InterstitialAd.ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.erroroccurred). Это может привести к образованию бесконечного цикла и возникновению проблем в работе службы рекламы.
 
-* Запрос промежуточной рекламы только для того, чтобы получить резервную рекламу для бесконечной последовательности рекламных роликов. Если вы запросите промежуточную рекламу, а затем получите событие [InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx), следующей промежуточной рекламой, которая отображается в вашем приложении, должна стать реклама, подготовленная к показу с помощью метода [InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).
+* Запрос промежуточной рекламы только для того, чтобы получить резервную рекламу для бесконечной последовательности рекламных роликов. Если вы запросите промежуточную рекламу, а затем получите событие [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready), следующей промежуточной рекламой, которая отображается в вашем приложении, должна стать реклама, подготовленная к показу с помощью метода [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show).
 
 * Запрещено использовать готовые рекламные блоки (то есть рекламные блоки, полученные с информационной панели Центра разработки для Windows) на этапах разработки и тестирования или в эмуляторе.
 
@@ -171,7 +171,7 @@ ms.locfileid: "1881075"
 
 ### <a name="register-the-container-for-your-native-ad"></a>Зарегистрируйте контейнер для своего собственного объявления
 
-В коде необходимо вызвать метод [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) объекта **NativeAdV2** для регистрации элемента пользовательского интерфейса, который действует как контейнер для собственных рекламных объявлений, и при необходимости любые отдельные элементы управления, которые вы хотите зарегистрировать в качестве реагирующих на нажатия элементов при показе рекламы. Это требуется для правильного подсчета показов рекламных объявлений и нажатий по ним.
+В коде необходимо вызвать метод [RegisterAdContainer](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2.registeradcontainer) объекта [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) для регистрации элемента пользовательского интерфейса, который действует как контейнер для собственных рекламных объявлений, и при необходимости любые отдельные элементы управления, которые вы хотите зарегистрировать в качестве реагирующих на нажатия элементов при показе рекламы. Это требуется для правильного подсчета показов рекламных объявлений и нажатий по ним.
 
 Существует две перегрузки метода **RegisterAdContainer**, которые можно использовать.
 
@@ -181,7 +181,7 @@ ms.locfileid: "1881075"
 
 ### <a name="required-native-ad-elements"></a>Обязательные элементы собственной рекламы
 
-В ваших собственных рекламных конструкциях, как минимум, пользователю всегда должны отображаться следующие элементы собственных рекламных объявлений, предоставляемые свойствами объекта **NativeAdV2**. Если вы не включите эти элементы, вероятно, производительность рекламы и доходы от вашей группы объявлений будут низкими.
+В ваших собственных рекламных конструкциях, как минимум, пользователю всегда должны отображаться следующие элементы собственных рекламных объявлений, предоставляемые свойствами объекта [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2). Если вы не включите эти элементы, вероятно, производительность рекламы и доходы от вашей группы объявлений будут низкими.
 
 1. Всегда отображайте заголовок собственной рекламы (доступен в свойстве **Title**). Предоставляйте достаточно места для отображения как минимум 25 символов. Если заголовок длиннее, замените не помещающийся на экран текст многоточием.
 2. Всегда отображайте как минимум один из следующих элементов, чтобы помочь отличить собственную рекламу от остальных частей приложения и ясно указать, что определенное содержимое предоставляется рекламодателем.

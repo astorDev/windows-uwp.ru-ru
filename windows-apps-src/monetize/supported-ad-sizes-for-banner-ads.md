@@ -1,25 +1,25 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
 description: Узнайте о поддерживаемых размерах рекламных баннеров.
 title: Поддерживаемые размеры рекламных баннеров
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, объявления, реклама, размеры, баннеры
 ms.localizationpriority: medium
-ms.openlocfilehash: baeed2fd1bce779a2d7bb08d808e868eb3ababed
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a438f6df66b064004ad9664ce46280475dad83c6
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "927421"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616066"
 ---
 # <a name="supported-banner-ad-sizes"></a>Поддерживаемые размеры рекламных баннеров
 
-Универсальная платформа Windows (UWP) приложений поддерживаются следующие размеры ad заголовка. При создании экземпляра объекта **AdControl** в вашем приложении, убедитесь в том, что значение свойства height и width в соответствии с одним из следующих поддерживаемых размеров.
+Следующий размеров рекламных баннеров, поддерживаются для приложений универсальной платформы Windows (UWP). После создания экземпляра объекта **AdControl** в вашем приложении, убедитесь, что значение свойства высоты и ширины в соответствии с одним из этих поддерживаемых размеров.
 
 * 160x600
 * 300x50
@@ -30,9 +30,9 @@ ms.locfileid: "927421"
 * 728x90
 
 > [!NOTE]
-> Для обеспечения наилучшего взаимодействия рекомендуется использовать следующие размеры на устройствах Windows 10 Mobile: 300 x 50, 320 x 50 и 640 x 100.
+> Для оптимальной работы рекомендуется использовать на устройствах с Windows 10 Mobile следующих размеров: 300 x 50, 320 x 50 и 640 x 100.
 
-Ниже приведены примеры, иллюстрирующие размер каждого баннера ad.
+В таблице ниже приведены примеры иллюстрируют каждого размера рекламных баннеров.
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ ms.locfileid: "927421"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Размер рекламы</th>
+<th align="left">Размер объявления</th>
 <th align="left">Пример.</th>
 </tr>
 </thead>

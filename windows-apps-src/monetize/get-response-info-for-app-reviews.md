@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: fb6bb856-7a1b-4312-a602-f500646a3119
 description: Используйте этот метод в API отзывов для Microsoft Store, чтобы определять возможность ответа на определенный или любой отзыв о конкретном приложении.
 title: Получение сведений об ответах на отзывы
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, службы Store, API отзывов для Microsoft Store, сведения об ответах
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cc3bae99aebaf26074ba4f8b8a38e1a6e0ac428
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 0212d7457ab85749fd66397876144acecd5dfcf1
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1701090"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621115"
 ---
 # <a name="get-response-info-for-reviews"></a>Получение сведений об ответах на отзывы
 
@@ -44,7 +44,7 @@ ms.locfileid: "1701090"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательное. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
@@ -52,7 +52,7 @@ ms.locfileid: "1701090"
 | Параметр        | Тип   | Описание                                     |  Обязательный  |
 |---------------|--------|--------------------------------------------------|--------------|
 | applicationId | строка | Код продукта в Магазине для приложения, содержащего отзыв, возможность ответа на который требуется определить. Код продукта в Магазине доступен на [странице удостоверения приложения](../publish/view-app-identity-details.md) информационной панели Центра разработки. Пример кода продукта в Магазине: 9WZDNCRFJ3Q8 |  Да  |
-| reviewId | строка | ИД отзыва, на который требуется ответить (это GUID). Идентификаторы отзывов доступны в данных ответов метода [получения отзывов о приложении](get-app-reviews.md) в API аналитики для Microsoft Store и в [автономном](../publish/download-analytic-reports.md) [отчете об отзывах](../publish/reviews-report.md). <br/>Если вы опустите этот параметр, в тексте ответа для этого метода будет указано, есть ли у вас разрешения на ответ на какие-либо отзывы об указанном приложении. |  Нет  |
+| reviewId | строка | Идентификатор отзыва, на который вы хотите ответить (это GUID). Идентификаторы отзывов доступны в данных ответов метода [получения отзывов о приложении](get-app-reviews.md) в API аналитики для Microsoft Store и в [автономном](../publish/download-analytic-reports.md) [отчете об отзывах](../publish/reviews-report.md). <br/>Если вы опустите этот параметр, в тексте ответа для этого метода будет указано, есть ли у вас разрешения на ответ на какие-либо отзывы об указанном приложении. |  Нет  |
 
 
 ### <a name="request-example"></a>Пример запроса

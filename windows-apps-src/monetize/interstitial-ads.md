@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: Узнайте, как включить межстраничные объявления в приложение UWP для Windows 10 с помощью Microsoft Advertising SDK.
 title: Межстраничные объявления
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, рекламные объявления, реклама, элемент управления рекламой, межстраничные
 ms.localizationpriority: medium
-ms.openlocfilehash: 0915d1be4ea3de89265815d299ed7e60ead528ff
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 547a582064262d18467df4868df17a08e73b279c
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690870"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617319"
 ---
 # <a name="interstitial-ads"></a>Межстраничные объявления
 
@@ -72,7 +72,7 @@ ms.locfileid: "1690870"
 
     [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
 
-4.  В соответствующем месте вашего приложения (например, в ```MainPage``` или на другой странице) объявите объект [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) и несколько строковых полей, которые будут представлять собой идентификатор приложения и идентификатор рекламного блока вашей промежуточной рекламы. Следующий код присваивает полям `myAppId` и `myAdUnitId` [тестовые значения](set-up-ad-units-in-your-app.md#test-ad-units) для межстраничных объявлений.
+4.  В соответствующем месте вашего приложения (например, в ```MainPage``` или на другой странице) объявите объект [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) и несколько строковых полей, которые будут представлять собой идентификатор приложения и идентификатор рекламного блока вашей промежуточной рекламы. Следующий код присваивает полям `myAppId` и `myAdUnitId` [тестовые значения](set-up-ad-units-in-your-app.md#test-ad-units) для межстраничных объявлений.
 
     > [!NOTE]
     > Каждый элемент **InterstitialAd** имеет соответствующую *группу объявлений*, используемую нашими службами для передачи рекламы этому элементу управления, и каждая группа объявлений состоит из *идентификатора группы объявлений* и *идентификатора приложения*. На этих этапах вы задаете тестовые значения идентификатора группы объявлений и идентификатора приложения для своего элемента управления. Эти тестовые значения можно использовать только в тестовой версии приложения. Перед публикацией приложения в Магазине [тестовые значения необходимо заменить на фактические значения](#release) из Центра разработки для Windows.
@@ -83,17 +83,17 @@ ms.locfileid: "1690870"
 
     [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
 
-6.  Если вы хотите показать *межстраничную видеорекламу*, используйте метод [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) приблизительно за 30–60секунд до того, как она должна отобразиться, чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **AdType.Video** для этого типа рекламы.
+6.  Если вы хотите показать *межстраничную видеорекламу*, используйте метод [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) приблизительно за 30–60секунд до того, как она должна отобразиться, чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **AdType.Video** для этого типа рекламы.
 
     [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
 
-    Если вы хотите показать *межстраничный баннер*, используйте метод [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) приблизительно за 5–8секунд до того, как он должен отобразиться, чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **AdType.Display** для этого типа рекламы.
+    Если вы хотите показать *межстраничный баннер*, используйте метод [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) приблизительно за 5–8секунд до того, как он должен отобразиться, чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **AdType.Display** для этого типа рекламы.
 
     ```csharp
     myInterstitialAd.RequestAd(AdType.Display, myAppId, myAdUnitId);
     ```
 
-6.  Проверьте место в вашем коде, где должна отображаться межстраничная видеореклама или баннер. Убедитесь, что реклама **InterstitialAd** готова к отображению, а затем отобразите ее, используя метод [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).
+6.  Проверьте место в вашем коде, где должна отображаться межстраничная видеореклама или баннер. Убедитесь, что реклама **InterstitialAd** готова к отображению, а затем отобразите ее, используя метод [Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show).
 
     [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
 
@@ -125,7 +125,7 @@ ms.locfileid: "1690870"
     <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
     ```
 
-4.  В файле JS проекта объявите объект [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), а также несколько полей, которые будут содержать идентификатор приложения и идентификатор рекламного блока вашей промежуточной рекламы. Следующий код присваивает полям `applicationId` и `adUnitId` [тестовые значения](set-up-ad-units-in-your-app.md#test-ad-units) для межстраничных объявлений.
+4.  В файле JS проекта объявите объект [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad), а также несколько полей, которые будут содержать идентификатор приложения и идентификатор рекламного блока вашей промежуточной рекламы. Следующий код присваивает полям `applicationId` и `adUnitId` [тестовые значения](set-up-ad-units-in-your-app.md#test-ad-units) для межстраничных объявлений.
 
     > [!NOTE]
     > Каждый элемент **InterstitialAd** имеет соответствующую *группу объявлений*, используемую нашими службами для передачи рекламы этому элементу управления, и каждая группа объявлений состоит из *идентификатора группы объявлений* и *идентификатора приложения*. На этих этапах вы задаете тестовые значения идентификатора группы объявлений и идентификатора приложения для своего элемента управления. Эти тестовые значения можно использовать только в тестовой версии приложения. Перед публикацией приложения в Store [тестовые значения необходимо заменить на фактические значения](#release) из Центра разработки для Windows.
@@ -136,11 +136,11 @@ ms.locfileid: "1690870"
 
     [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet2)]
 
-5. Если вы хотите показать *межстраничную видеорекламу*, используйте метод [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) приблизительно за 30–60секунд до того, как она должна отобразиться, чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **InterstitialAdType.video** для этого типа рекламы.
+5. Если вы хотите показать *межстраничную видеорекламу*, используйте метод [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) приблизительно за 30–60секунд до того, как она должна отобразиться, чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **InterstitialAdType.video** для этого типа рекламы.
 
     [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet3)]
 
-    Если вы хотите показать *межстраничный баннер*, используйте метод [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) приблизительно за 5–8секунд до того, как он должен отобразиться, чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **InterstitialAdType.display** для этого типа рекламы.
+    Если вы хотите показать *межстраничный баннер*, используйте метод [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) приблизительно за 5–8секунд до того, как он должен отобразиться, чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **InterstitialAdType.display** для этого типа рекламы.
 
     ```js
     if (interstitialAd) {
@@ -148,7 +148,7 @@ ms.locfileid: "1690870"
     }
     ```
 
-6.  Проверьте то место вашего когда, в котором должна отображаться ваша реклама, на предмет того, что реклама **InterstitialAd** готова к отображению, а затем отобразите ее, используя метод [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).
+6.  Проверьте то место вашего когда, в котором должна отображаться ваша реклама, на предмет того, что реклама **InterstitialAd** готова к отображению, а затем отобразите ее, используя метод [Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show).
 
     [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/samples.js#Snippet4)]
 
@@ -172,7 +172,7 @@ ms.locfileid: "1690870"
     2.  В **Диспетчере ссылок** разверните раздел **Универсальная платформа Windows**, нажмите **Расширения** и выберите флажок рядом с **SDK Microsoft Advertising для XAML** (версия 10.0).
     3.  В **диспетчере ссылок** нажмите "ОК".
 
-2.  В соответствующем файле заголовка для приложения (например, в файле DirectXPage.xaml.h) объявите объект [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) и соответствующие методы обработчика событий.  
+2.  В соответствующем файле заголовка для приложения (например, в файле DirectXPage.xaml.h) объявите объект [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) и соответствующие методы обработчика событий.  
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet1)]
 
@@ -191,17 +191,17 @@ ms.locfileid: "1690870"
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet4)]
 
-7. Если вы хотите показать *межстраничную видеорекламу*, используйте метод [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) приблизительно за 30–60секунд до того, как она должна отобразиться, чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **AdType::Video** для этого типа рекламы.
+7. Если вы хотите показать *межстраничную видеорекламу*, используйте метод [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) приблизительно за 30–60секунд до того, как она должна отобразиться, чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **AdType::Video** для этого типа рекламы.
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet5)]
 
-    Если вы хотите показать *межстраничный баннер*, используйте метод [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) приблизительно за 5–8секунд до того, как он должен отобразиться, чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **AdType::Display** для этого типа рекламы.
+    Если вы хотите показать *межстраничный баннер*, используйте метод [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) приблизительно за 5–8секунд до того, как он должен отобразиться, чтобы предварительно получить рекламное объявление. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **AdType::Display** для этого типа рекламы.
 
     ```cpp
     m_interstitialAd->RequestAd(AdType::Display, myAppId, myAdUnitId);
     ```
 
-7.  Проверьте то место вашего когда, в котором должна отображаться ваша реклама, на предмет того, что реклама **InterstitialAd** готова к отображению, а затем отобразите ее, используя метод [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).
+7.  Проверьте то место вашего когда, в котором должна отображаться ваша реклама, на предмет того, что реклама **InterstitialAd** готова к отображению, а затем отобразите ее, используя метод [Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show).
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet6)]
 

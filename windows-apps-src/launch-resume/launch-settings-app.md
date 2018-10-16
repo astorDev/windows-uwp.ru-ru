@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 22727f8d09b3d68970301677cdf632a0981c616a
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571465"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621095"
 ---
 # <a name="launch-the-windows-settings-app"></a>Запуск приложения «Параметры» для Windows
 
@@ -101,7 +101,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Общение с Кортаной | ms-settings:cortana-language |
 
 > [!NOTE] 
-> В этом разделе параметров на рабочем столе будет вызываться поиска, при настройке компьютера на области, где Кортаны в данный момент невозможен или Кортана отключена. Страницу Кортаны (Кортаны на разных устройствах) и общения с Кортана не будет отображаться в этом случае. 
+> В этом разделе параметров на рабочем столе будет вызываться поиска при настройке компьютера на регионах, где Кортана не в настоящее время или Кортана отключена. Страницу Кортаны (Кортана на разных устройствах) и общения с Кортана не будет отображаться в этом случае. 
 
 ## <a name="devices"></a>Устройства
 
