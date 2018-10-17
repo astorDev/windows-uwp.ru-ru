@@ -10,11 +10,11 @@ ms.technology: uwp, windows forms, wpf
 keywords: Windows 10, uwp, windows forms, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: b9757466502283c673c7b2106b4a7775be412faf
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688537"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4746837"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>Элементы управления UWP в классических приложениях
 

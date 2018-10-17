@@ -13,13 +13,13 @@ pm-contact: chigy
 design-contact: balrayit
 ms.localizationpriority: medium
 ms.openlocfilehash: a1433b131b994ee2b1323909bc7c195e00f43cde
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691793"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4748516"
 ---
-# <a name="z-depth-and-shadow"></a>Z-глубины и тени
+# <a name="z-depth-and-shadow"></a>Глубина трехмерной сцены и тени
 
 ![значение true, глубины](images/elevation-shadow/depth.svg)
 
@@ -65,7 +65,7 @@ Z-depth — это расстояние между двумя поверхнос
 
 ## <a name="what-is-shadow"></a>Что такое тень?
 
-![тени](images/elevation-shadow/shadow.svg)
+![shadow](images/elevation-shadow/shadow.svg)
 
 Тени — это способ видеть повышение прав. Если индикатор над объект с повышенными привилегиями, существует тени на поверхности ниже. Чем больше объектов, более крупных и мягкий становится тени. Обратите внимание, что с повышенными привилегиями объекты не нужно будет тени, но тени указать повышение прав.
 

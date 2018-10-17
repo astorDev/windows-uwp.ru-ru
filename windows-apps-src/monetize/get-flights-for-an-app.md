@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, API отправки в Microsoft Store, тестируемые возможности, тестовые пакеты
 ms.localizationpriority: medium
 ms.openlocfilehash: d6349e5c597b923ba05abe5ed74492409350e36e
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/17/2018
-ms.locfileid: "4694076"
+ms.locfileid: "4748960"
 ---
 # <a name="get-package-flights-for-an-app"></a>Получение тестовых пакетов для приложения
 

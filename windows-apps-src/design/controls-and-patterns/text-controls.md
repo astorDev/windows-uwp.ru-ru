@@ -15,12 +15,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ad7326acf728aef66f10c72ee04461fd90e5f775
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.openlocfilehash: 2cd5f7e7022f246fce3d08286fe77c74503ddc5d
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691524"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4744879"
 ---
 # <a name="text-controls"></a>Текстовые элементы управления
 
@@ -125,7 +125,7 @@ ms.locfileid: "4691524"
 
 Начиная с Windows 10 версии 1803, в функции поля для ввода текста XAML реализована поддержка ввода с помощью пера при использовании [Windows Ink](../input/pen-and-stylus-interactions.md). Когда пользователь касается пером Windows поля текстового ввода, текстовое поле преобразуется, чтобы пользователь мог писать непосредственно в поле с помощью пера, а не в отдельной панели ввода.
 
-![Текстовое поле разворачивается при касании пером](images/pen-input-expand.gif)
+![Текстовое поле разворачивается при касании пером](images/handwritingview/handwritingview2.gif)
 
 Дополнительные сведения см. в разделе [Ввод текста с помощью представления для рукописного ввода](text-handwriting-view.md).
 

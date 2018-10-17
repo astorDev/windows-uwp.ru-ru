@@ -11,11 +11,11 @@ keywords: windows 10, uwp, участники программы предвар�
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium
 ms.openlocfilehash: 430d8588b83dd605848bba63f46dc5a440c28cf3
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4685194"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4748843"
 ---
 # <a name="dev-center-insider-program"></a>Программа предварительной оценки для Центра разработки
 
