@@ -24,77 +24,104 @@
 ## Панели макета
 ### [Обзор](layout/layout-panels.md)
 ### [Руководство: использование панелей макета](layout/grid-tutorial.md)
+### [Комбинированный режим](controls-and-patterns/split-view.md)
 ### [Настраиваемые панели](layout/custom-panels-overview.md)
 ### [Пример настраиваемой панели: BoxPanel](layout/boxpanel-example-custom-panel.md)
 ## Преобразования
 ### [Обзор](layout/transforms.md)
 ### [Трехмерные эффекты](layout/3-d-perspective-effects.md)
+## [Глубина трехмерной сцены и тени](layout/depth-shadow.md)
 
 # Элементы управления
 ## [Обзор](controls-and-patterns/index.md)
 ## [Введение в элементы управления и события](controls-and-patterns/controls-and-events-intro.md)
 ## [Указатель элементов управления по функциям](controls-and-patterns/controls-by-function.md)
-## [Панель приложения и панель команд](controls-and-patterns/app-bars.md)
-## [Поле автозаполнения](controls-and-patterns/auto-suggest-box.md)
-## [Кнопки](controls-and-patterns/buttons.md)
-## [Флажок](controls-and-patterns/checkbox.md)
-## [Палитра](controls-and-patterns/color-picker.md)
-## [Всплывающий элемент панели команд](controls-and-patterns/command-bar-flyout.md)
-## [Карточка контакта](controls-and-patterns/contact-card.md)
-## [Дата и время](controls-and-patterns/date-and-time.md)
-### [Управляющий элемент выбора даты в календаре](controls-and-patterns/calendar-date-picker.md)
-### [Представление календаря](controls-and-patterns/calendar-view.md)
-### [Управляющий элемент выбора даты](controls-and-patterns/date-picker.md)
-### [Управляющий элемент выбора времени](controls-and-patterns/time-picker.md)
-## Диалоговые окна и всплывающие элементы
-### [Обзор](controls-and-patterns/dialogs-and-flyouts/index.md)
-### [Диалоговые окна](controls-and-patterns/dialogs-and-flyouts/dialogs.md)
-### [Всплывающие элементы](controls-and-patterns/dialogs-and-flyouts/flyouts.md)
-## [Представление пролистывания](controls-and-patterns/flipview.md)
-## [Формы](controls-and-patterns/forms.md)
-## [Центр](controls-and-patterns/hub.md)
-## [Гиперссылки](controls-and-patterns/hyperlinks.md)
-## [Изображения и кисти изображений](controls-and-patterns/images-imagebrushes.md)
-## [Элементы управления рукописным вводом](controls-and-patterns/inking-controls.md)
-## [Списки](controls-and-patterns/lists.md)
+
+## Базовый ввод
+### [Кнопки](controls-and-patterns/buttons.md)
+### [Флажок](controls-and-patterns/checkbox.md)
 ### [Поле со списком](controls-and-patterns/combo-box.md)
+### [Гиперссылки](controls-and-patterns/hyperlinks.md)
+### [Переключатель](controls-and-patterns/radio-button.md)
+### [Элемент управления "Оценка"](controls-and-patterns/rating.md)
+### [Ползунок](controls-and-patterns/slider.md)
+### [Переключение](controls-and-patterns/toggles.md)
+
+## Коллекции
+### [Обзор](controls-and-patterns/lists.md)
+### [Представление пролистывания](controls-and-patterns/flipview.md)
 ### [Представления списка и сетки](controls-and-patterns/listview-and-gridview.md)
-### [Контейнеры и шаблоны элементов](controls-and-patterns/item-containers-templates.md)
-### [Шаблоны элементов для представления списка](controls-and-patterns/item-templates-listview.md)
-### [Шаблоны элементов для представления сетки](controls-and-patterns/item-templates-gridview.md)
+#### [Контейнеры и шаблоны элементов](controls-and-patterns/item-containers-templates.md)
+#### [Шаблоны элементов для представления списка](controls-and-patterns/item-templates-listview.md)
+#### [Шаблоны элементов для представления сетки](controls-and-patterns/item-templates-gridview.md)
 ### [Перевернутые списки](controls-and-patterns/inverted-lists.md)
 ### [Обновление путем перетаскивания](controls-and-patterns/pull-to-refresh.md)
 ### [Вложенные элементы пользовательского интерфейса](controls-and-patterns/nested-ui.md)
 ### [Командный интерфейс коллекции](controls-and-patterns/collection-commanding.md)
-## [Основные и подробные данные](controls-and-patterns/master-details.md)
-## [Воспроизведение мультимедиа](controls-and-patterns/media-playback.md)
+### [Прокрутка (сдвиг)](controls-and-patterns/swipe.md)
+### [Представление в виде дерева (иерархическое представление) ](controls-and-patterns/tree-view.md)
+
+## Диалоговые окна и всплывающие элементы
+### [Обзор](controls-and-patterns/dialogs-and-flyouts/index.md)
+### [Диалоговые окна](controls-and-patterns/dialogs-and-flyouts/dialogs.md)
+### [Всплывающие элементы](controls-and-patterns/dialogs-and-flyouts/flyouts.md)
+
+## [Формы](controls-and-patterns/forms.md)
+
+## Мультимедиа, графики и фигуры
+### [Изображения и кисти изображений](controls-and-patterns/images-imagebrushes.md)
+### [Рукописный ввод](controls-and-patterns/inking-controls.md)
+### [Воспроизведение мультимедиа](controls-and-patterns/media-playback.md)
 ### [Пользовательские элементы управления транспортировкой](controls-and-patterns/custom-transport-controls.md)
-## [Меню и контекстные меню](controls-and-patterns/menus.md)
-## [Представление навигации](controls-and-patterns/navigationview.md)
-## [Изображение пользователя](controls-and-patterns/person-picture.md)
-## [Сводка](controls-and-patterns/pivot.md)
-## [Ход выполнения](controls-and-patterns/progress-controls.md)
-## [Переключатель](controls-and-patterns/radio-button.md)
-## [Элемент управления "Оценка"](controls-and-patterns/rating.md)
-## [Элементы управления прокруткой и панорамированием](controls-and-patterns/scroll-controls.md)
+### [Фигуры](controls-and-patterns/shapes.md)
+### [Представление веб-страницы](controls-and-patterns/web-view.md)
+
+## Меню и панели инструментов
+### [Панель приложения и панель команд](controls-and-patterns/app-bars.md)
+### [Всплывающее меню панели команд](controls-and-patterns/command-bar-flyout.md)
+### [Меню и контекстные меню](controls-and-patterns/menus.md)
+
+## Навигация
+### [Центр](controls-and-patterns/hub.md)
+### [Основные и подробные данные](controls-and-patterns/master-details.md)
+### [Представление навигации](controls-and-patterns/navigationview.md)
+### [Сводка](controls-and-patterns/pivot.md)
+
+## Люди
+### [Карточка контакта](controls-and-patterns/contact-card.md)
+### [Изображение пользователя](controls-and-patterns/person-picture.md)
+
+## Средства выбора
+### [Палитра](controls-and-patterns/color-picker.md)
+### [Элементы управления датой и временем](controls-and-patterns/date-and-time.md)
+### [Управляющий элемент выбора даты в календаре](controls-and-patterns/calendar-date-picker.md)
+### [Представление календаря](controls-and-patterns/calendar-view.md)
+### [Управляющий элемент выбора даты](controls-and-patterns/date-picker.md)
+### [Выбор времени](controls-and-patterns/time-picker.md)
+
+## Прокрутка
+### [Элементы управления прокруткой и панорамированием](controls-and-patterns/scroll-controls.md)
+### [Контекстное масштабирование](controls-and-patterns/semantic-zoom.md)
+
 ## [Поиск](controls-and-patterns/search.md)
-## [Контекстное масштабирование](controls-and-patterns/semantic-zoom.md)
-## [Фигуры](controls-and-patterns/shapes.md)
-## [Ползунок](controls-and-patterns/slider.md)
-## [Комбинированный режим](controls-and-patterns/split-view.md)
-## [Прокрутка (сдвиг)](controls-and-patterns/swipe.md)
-## [Текст](controls-and-patterns/text-controls.md)
-### [Ссылки на содержимое](controls-and-patterns/content-links.md)
-### [Метки](controls-and-patterns/labels.md)
-### [Поле ввода пароля](controls-and-patterns/password-box.md)
-### [Блок форматируемого текста](controls-and-patterns/rich-edit-box.md)
-### [Блок форматированного текста](controls-and-patterns/rich-text-block.md)
+
+## Состояние и сведения
+### [Ход выполнения](controls-and-patterns/progress-controls.md)
+### [Подсказка](controls-and-patterns/tooltips.md)
+
+## Текст
+### [Обзор](controls-and-patterns/text-controls.md)
+### [Поле автозаполнения](controls-and-patterns/auto-suggest-box.md)
 ### [Блок текста](controls-and-patterns/text-block.md)
+### [Блок форматированного текста](controls-and-patterns/rich-text-block.md)
 ### [Текстовое поле](controls-and-patterns/text-box.md)
-## [Переключение](controls-and-patterns/toggles.md)
-## [Всплывающая подсказка](controls-and-patterns/tooltips.md)
-## [Представление в виде дерева ](controls-and-patterns/tree-view.md)
-## [Представление веб-страницы](controls-and-patterns/web-view.md)
+### [Поле с форматом](controls-and-patterns/rich-edit-box.md)
+### [Поле ввода пароля](controls-and-patterns/password-box.md)
+### [Метки](controls-and-patterns/labels.md)
+### [Ссылки на содержимое](controls-and-patterns/content-links.md)
+### [Представление рукописного ввода](controls-and-patterns/text-handwriting-view.md)
+
+
 
 # Стиль
 ## [Обзор](style/index.md)
@@ -124,6 +151,7 @@
 ## [Подключенная анимация](motion/connected-animation.md)
 ## [Параллакс](motion/parallax.md)
 ## [Анимации в XAML](motion/xaml-animation.md)
+### [Свойства анимации](motion/xaml-property-animations.md)
 ### [Раскадрованные анимации](motion/storyboarded-animations.md)
 ### [Анимации по ключевым кадрам и на основе функций для реалистичной анимации](motion/key-frame-and-easing-function-animations.md)
 
@@ -217,6 +245,7 @@
 ## [Вставка ввода](input/input-injection.md)
 ## [Определение устройств ввода](input/identify-input-devices.md)
 ## [Ввод пользовательского текста](input/custom-text-input.md)
+## [Масштабирование текста](input/text-scaling.md)
 ## [Перетаскивание](input/drag-and-drop.md)
 ## [Визуальное масштабирование и изменение размера](input/guidelines-for-optical-zoom.md)
 ## [Сдвиг](input/guidelines-for-panning.md)
