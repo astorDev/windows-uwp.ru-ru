@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d6ebe8e3344f5276939471d7ac569ae83d48311
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4694571"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4748210"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>Системные ресурсы для приложений UWP и игр для Xbox One
 

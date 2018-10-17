@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 description: Расширение разметки xBind позволяет функции, которые будут использоваться в разметке.
-title: 'Функции в расширении разметки x: Bind'
+title: Функции в x:Bind
 ms.author: jimwalk
 ms.date: 04/26/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691961"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4747022"
 ---
-# <a name="functions-in-xbind"></a>Функции в расширении разметки x: Bind
+# <a name="functions-in-xbind"></a>Функции в x:Bind
 
 **Примечание.**  Общие сведения об использовании привязки данных в приложении с **{x:Bind}** (и комплексное сравнение между **{x:Bind}** и **{Binding}**) см. в разделе [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
 

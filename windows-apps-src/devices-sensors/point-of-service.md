@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fa5d80040aac83e246d89a59086f4ad7e524dbb8
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688593"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4744376"
 ---
 # <a name="point-of-service"></a>POS-устройства
 Этот раздел содержит статьи о том, как использовать [Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice) для взаимодействия с периферийными устройствами, используемыми в розничной торговле и гостиничной индустрии, из универсальных приложений для Windows.
