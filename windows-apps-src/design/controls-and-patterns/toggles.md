@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: daffbc5ff74adc234ac6c2b414a7e1b85763849d
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 796ee4ffaa551c23286110ec7164f511655d6017
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4620734"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4694013"
 ---
 # <a name="toggle-switches"></a>Тумблеры
 
@@ -71,7 +71,7 @@ ms.locfileid: "4620734"
 - Используйте флажок, когда пользователю необходимо выполнить дополнительные действия, чтобы изменения вступили в силу. Например, если пользователю необходимо нажать кнопку "Отправить" или "Далее", чтобы применить изменения, используйте флажок.
 - Используйте флажки, когда пользователь может выбрать несколько элементов, которые связаны с одним и тем же параметром или функцией.
 
-## <a name="toggle-switches-in-the-the-windows-ui"></a>Переключение тумблеров в пользовательском интерфейсе Windows
+## <a name="toggle-switches-in-the-windows-ui"></a>Переключатели в пользовательском Интерфейсе Windows
 
 На этих изображениях показано, как пользовательский интерфейс Windows использует переключатели. Ниже показано, как переключатели используются на экране параметров смарт-хранилища:
 

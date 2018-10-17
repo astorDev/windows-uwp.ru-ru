@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a3348eb6c5355ba025745efecee8629f381778b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: fc09e7a9d98d04c53aac0d76293b9d8e4dc6ed91
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653623"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4691680"
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>Уведомления на индикаторах событий для приложений UWP
 
@@ -132,7 +132,7 @@ ms.locfileid: "1653623"
 
 ## <a name="create-a-badge"></a>Создание индикатора событий
 
-Эти примеры демонстрируют способ создания обновления индикатора событий.
+В этих примерах показано, как для создания обновления индикатора событий.
 
 ### <a name="create-a-numeric-badge"></a>Создание числового индикатора событий
 

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: начало работы, uwp, windows 10, обучающий курс, файлы, ввод-вывод файлов, чтение файла, запись файла, создание файла, запись текста, чтение текста
 ms.localizationpriority: medium
-ms.openlocfilehash: d5a6400a265cdf0bfe78a6982874dcc6747d662b
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: ae89b5c0e072eceec155009c07b3b3a7cf563a20
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895266"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4693319"
 ---
 # <a name="work-with-files"></a>Работа с файлами
 
@@ -64,7 +64,7 @@ await Windows.Storage.FileIO.AppendLinesAsync(file, listOfStrings); // each entr
 
 ## <a name="read-text-from-a-file"></a>Чтение текста из файла
 
-Как и при записи в файл, чтение файла начинается с указания его расположения. Мы будем использовать то же расположение, как и в примере выше. Затем мы используем класс **FileIO** для чтения содержимого файла.
+Как и при записи в файл, чтение файла начинается с указания его расположения. Мы будем использовать то же расположение, как и в примере выше. Затем мы используем класс **FileIO** для чтения его содержимого.
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
