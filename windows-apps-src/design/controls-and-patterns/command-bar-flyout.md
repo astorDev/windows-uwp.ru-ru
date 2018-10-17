@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 Description: Command bar flyouts give users inline access to your app's most common tasks.
-title: Всплывающий элемент панели команд
+title: Всплывающее меню панели команд
 label: Command bar flyout
 template: detail.hbs
 ms.author: jimwalk
@@ -16,13 +16,13 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 22d965d14c4f10f904a4d94a18ce83721c49491c
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4680125"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4743243"
 ---
-# <a name="command-bar-flyout"></a>Всплывающий элемент панели команд
+# <a name="command-bar-flyout"></a>Всплывающее меню панели команд
 
 Всплывающий элемент панели команд позволяет предоставляют пользователям удобный доступ к распространенным задачам, отображая команды в плавающей панели инструментов, связанные с элементом на холст пользовательского интерфейса.
 

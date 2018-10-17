@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, точка службы, pos, считыватель магнитных карт
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ce34623a0af9de6e0d678052719fb02f2a9672b
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679487"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4742001"
 ---
 # <a name="magnetic-stripe-reader"></a>Считыватель магнитных карт
 
@@ -28,4 +28,4 @@ ms.locfileid: "4679487"
 
 | Статья | Описание |
 |-------|-------------|
-| [Получение и данных считывателя магнитных карт](../devices-sensors/pos-magnetic-stripe-reader-data.md) | Узнайте, как получить и интерпретировать данные от считывателя магнитных карт. |
+| [Получение и распознавание данных магнитных карт](../devices-sensors/pos-magnetic-stripe-reader-data.md) | Узнайте, как получить и интерпретировать данные от считывателя магнитных карт. |

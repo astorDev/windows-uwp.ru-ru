@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, покупки игры для Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a175096860fe2d2e73259ab9e82cbd5c33b8b889
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.openlocfilehash: 39d932a49e573d55a0ccb9cb69568006feede8a7
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4686596"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4741691"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>Получение сведений о покупках игр на Xbox One
 
@@ -93,7 +93,7 @@ Authorization: Bearer <your access token>
 | date                | string | Первая дата в диапазоне дат, для которого требуется получить данные о покупках. Если в запросе указан один день, это значение равно соответствующей дате. Если запрос указывает неделю, месяц или другой диапазон дат, это значение равно первой дате в этом диапазоне дат |
 | applicationId       | строка | Код продукта для игры на Xbox One, для которой запрашиваются данные о покупках. |
 | applicationName     | строка | Отображаемое имя игры.       |
-| acquisitionType     | строка | Одна из следующих строк, указывающих тип приобретения:<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Pre-order</strong></li><li>**Xbox Game Pass** (или **Game Pass** при запросе данных до 23 марта 2018 г.)</li><li><strong>Disk</strong></li><li><strong>Prepaid Code</strong></li></ul>    |
+| acquisitionType     | строка | Одна из следующих строк, указывающих тип приобретения:<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li><li><strong>Iap подписки</strong></li><li><strong>Частная аудитория</strong></li><li><strong>Подготовка заказа</strong></li><li><strong>Xbox Game Pass</strong> (или <strong>Game Pass</strong> при запросе данных до 23 марта 2018 г.)</li><li><strong>Disk</strong></li><li><strong>Prepaid Code</strong></li><li><strong>Порядок оплаченных до выпуска</strong></li><li><strong>Отмененной состоянию заказа</strong></li><li><strong>Сбой состоянию заказа</strong></li></ul>    |
 | ageGroup            | строка | Одна из следующих строк, указывающая возрастную группу пользователя, совершившего приобретение:<ul><li><strong>less than 13</strong></li><li><strong>13-17,</strong></li><li><strong>18-24,</strong></li><li><strong>25-34,</strong></li><li><strong>35-44,</strong></li><li><strong>44-55,</strong></li><li><strong>greater than 55,</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>     |
 | deviceType          | строка | Одна из следующих строк, указывающая тип устройства, на котором было выполнено приобретение:<ul><li><strong>ПК</strong></li><li><strong>Телефон</strong></li><li><strong>Console (консоль),</strong></li><li><strong>IoT</strong></li><li><strong>Server</strong></li><li><strong>Tablet</strong></li><li><strong>Holographic</strong></li><li><strong>Неизвестно</strong></li></ul>  |
 | gender              | строка | Одна из следующих строк, указывающая пол пользователя, совершившего приобретение:<ul><li><strong>m</strong></li><li><strong>f,</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>     |
