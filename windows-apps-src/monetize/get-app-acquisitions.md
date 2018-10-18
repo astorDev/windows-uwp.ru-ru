@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, приобретения приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b712c41f8288502e9e2abd1f05396ef1720390e
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.openlocfilehash: 997f4e088edfced94189c2c0977bcfff60166059
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690073"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753709"
 ---
 # <a name="get-app-acquisitions"></a>Получение сведений о приобретениях приложения
 
@@ -101,7 +101,7 @@ Authorization: Bearer <your access token>
 | market              | string | Код страны по стандарту ISO 3166 для рынка, на котором произошла покупка  |
 | gender              | строка | Одна из следующих строк, указывающая пол пользователя, совершившего приобретение:<ul><li><strong>m</strong></li><li><strong>f,</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>    |
 | ageGroup            | строка | Одна из следующих строк, указывающая возрастную группу пользователя, совершившего приобретение:<ul><li><strong>less than 13,</strong></li><li><strong>13-17,</strong></li><li><strong>18-24,</strong></li><li><strong>25-34,</strong></li><li><strong>35-44,</strong></li><li><strong>44-55,</strong></li><li><strong>greater than 55,</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>  |
-| acquisitionType     | строка | Одна из следующих строк, указывающих тип приобретения:<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li></ul>   |
+| acquisitionType     | строка | Одна из следующих строк, указывающих тип приобретения:<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li><li><strong>Iap подписки</strong></li><li><strong>Частная аудитория</strong></li><li><strong>Подготовка заказа</strong></li><li><strong>Xbox Game Pass</strong> (или <strong>Game Pass</strong> при запросе данных до 23 марта 2018 г.)</li><li><strong>Disk</strong></li><li><strong>Prepaid Code</strong></li></ul>   |
 | acquisitionQuantity | number | Число покупок, выполненных на указанном уровне агрегирования    |
 
 

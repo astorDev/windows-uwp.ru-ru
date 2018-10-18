@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, win32, настольный компьютер, всплывающие уведомления, отправка уведомления, отправка локального уведомления, мост для классических приложений, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: a6134e65a27563f96c03880dea026bed11f46641
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4686553"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4755357"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Отправка локального всплывающего уведомлений из классических приложений C++ WRL
 
