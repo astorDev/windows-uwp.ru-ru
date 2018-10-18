@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API покупок Microsoft Store, подписки
 ms.localizationpriority: medium
 ms.openlocfilehash: c08964b991b0cecaef6d994d399ce97301a7e8e7
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4756085"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4966863"
 ---
 # <a name="get-subscriptions-for-a-user"></a>Получение подписок для пользователя
 

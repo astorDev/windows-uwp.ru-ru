@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a2f9caf8519aa76ef9487e5318a238a6e1d53fe2
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4755297"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4967604"
 ---
 # <a name="custom-automation-peers"></a>Настраиваемые одноранговые элементы автоматизации  
 
