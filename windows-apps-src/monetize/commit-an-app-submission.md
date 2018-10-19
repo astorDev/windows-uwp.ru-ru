@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, API отправки Microsoft Store, фиксация отправки приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e720e017eb77aad4a2696039b9fd076daf3db9e
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4742793"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4963492"
 ---
 # <a name="commit-an-app-submission"></a>Фиксация отправки приложения
 

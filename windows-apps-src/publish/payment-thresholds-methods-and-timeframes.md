@@ -3,19 +3,19 @@ author: jnHs
 Description: The estimated time to transfer payments, applicable payment thresholds, and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type.
 title: Пороговые значения, методы и сроки оплаты
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a7428b9278e4fc3264f652030f0409cab056d31
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.openlocfilehash: d8793f36459feb45f327b21941ea86965b905116
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4745600"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4962425"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>Пороговые значения, методы и сроки оплаты
 
@@ -1048,8 +1048,8 @@ ms.locfileid: "4745600"
   </tr>
   <tr>
     <td>Объединенные Арабские Эмираты</td>
-    <td>25 долл. США</td>
-    <td>ACH/SEPA</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
     <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
@@ -2111,7 +2111,7 @@ ms.locfileid: "4745600"
   <tr>
     <td>Объединенные Арабские Эмираты</td>
     <td>50 долл. США</td>
-    <td>ACH/SEPA</td>
+    <td>Банковский перевод</td>
     <td>50 долл. США</td>
     <td>PayPal</td>
   </tr>
@@ -3158,8 +3158,8 @@ ms.locfileid: "4745600"
   </tr>
   <tr>
     <td>Объединенные Арабские Эмираты</td>
-    <td>25 долл. США</td>
-    <td>ACH/SEPA</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
     <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
@@ -4121,8 +4121,8 @@ ms.locfileid: "4745600"
   </tr>
   <tr>
     <td>Объединенные Арабские Эмираты</td>
-    <td>25 долл. США</td>
-    <td>ACH/SEPA</td>
+    <td>200 долл. США</td>
+    <td>Банковский перевод</td>
     <td>25 долл. США</td>
     <td>PayPal</td>
   </tr>
